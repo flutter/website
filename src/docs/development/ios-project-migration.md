@@ -26,7 +26,7 @@ confirm `App.framework` and `Flutter.framework` are no longer present. Also conf
 in **Build Phases > Embed Frameworks**.
 {% include app-figure.md image="development/ios-project-migration/framework-build-phase.png" alt="Confirm Frameworks Removed from Build Phases" %}
 </li>
-<li markdown="1">Change the Runner target build settings > **Build Phases > Thin Binary** script as follows:
+<li markdown="1">Change the Runner target build settings **Build Phases > Thin Binary** script as follows:
 ```sh
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" embed
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" thin
