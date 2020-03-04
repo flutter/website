@@ -21,7 +21,7 @@ If you need to manually upgrade your project, use the following steps:
 and `Flutter.framework`.
 {% include app-figure.md image="development/ios-project-migration/navigator.png" alt="Remove Frameworks in Xcode Navigator" %}
 </li>
-<li markdown="1">In the Runner target build settings > **Build Phases > Link Binary With Libraries**
+<li markdown="1">In the Runner target build settings **Build Phases > Link Binary With Libraries**
 confirm `App.framework` and `Flutter.framework` are no longer present. Also confirm
 in **Build Phases > Embed Frameworks**.
 {% include app-figure.md image="development/ios-project-migration/framework-build-phase.png" alt="Confirm Frameworks Removed from Build Phases" %}
