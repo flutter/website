@@ -21,6 +21,12 @@
 
   &__category-winner {
     margin-top: 3rem;
+
+    @include media-breakpoint-up(md) {
+      h3 {
+        font-size: 1.9rem;
+      }
+    }
   }
 
   &__link-lightblue {
