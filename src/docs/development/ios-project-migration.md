@@ -35,4 +35,4 @@ in Build Phases > Embed Frameworks.
 add `$(inherited) -framework Flutter`.
 {% include app-figure.md image="development/ios-project-migration/linker-arguments.png" alt="Update Other Linker Arguments Build Setting" %}
 
-[experience issues switching between iOS devices and the simulator]: https://github.com/flutter/flutter/issues/50568
+[experience issues switching between iOS devices and simulators]: https://github.com/flutter/flutter/issues/50568
