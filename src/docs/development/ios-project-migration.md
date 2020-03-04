@@ -29,7 +29,7 @@ in Build Phases > Embed Frameworks.
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" embed
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" thin
 ```
-{% include app-figure.md image="development/ios-project-migration/script-phase.png"alt="Update Thin Binary Script Build Phase" %}
+{% include app-figure.md image="development/ios-project-migration/script-phase.png" alt="Update Thin Binary Script Build Phase" %}
 
 1. In the Runner target build settings > Build Settings > Other Linker Arguments (`OTHER_LDFLAGS`)
 add `$(inherited) -framework Flutter`.
