@@ -796,7 +796,11 @@
   //dropdown button
   .dropdown__button {
     box-shadow: none;
-    outline: none;
+
+    &:focus {
+      outline: 1px dotted #212121;
+      outline: 1px auto -webkit-focus-ring-color;
+    }
   }
 
   .code-font {
