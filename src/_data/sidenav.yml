@@ -244,7 +244,7 @@
           permalink: /docs/development/androidx-migration
         - title: Android plugin upgrade
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
-        - title: Supporting Xcode 11.4
+        - title: Xcode 11.4 support
           permalink: /docs/development/ios-project-migration
 
 - title: Testing & debugging
