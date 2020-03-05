@@ -1,5 +1,6 @@
 ---
 title: Read and write files
+description: How to read from and write to files on disk.
 prev:
   title: Persist data with SQLite
   path: /docs/cookbook/persistence/sqlite

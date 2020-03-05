@@ -1,5 +1,6 @@
 ---
 title: Handle taps
+description: How to handle tapping and dragging.
 prev:
   title: Add Material touch ripples
   path: /docs/cookbook/gestures/ripples

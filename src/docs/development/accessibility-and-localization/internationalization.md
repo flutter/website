@@ -47,9 +47,6 @@ an application must specify additional `MaterialApp` properties,
 and include a separate package called
 `flutter_localizations`.  As of February 2020,
 this package supports 77 languages.
-If you want your app to work smoothly on iOS,
-then you have to add the package
-`flutter_cupertino_localizations` as well.
 
 To use flutter_localizations,
 add the package as a dependency to your `pubspec.yaml` file:
@@ -60,7 +57,6 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  flutter_cupertino_localizations: ^1.0.1
 ```
 
 Next, import the flutter_localizations library and specify
@@ -68,7 +64,6 @@ Next, import the flutter_localizations library and specify
 
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_cupertino_localizations/flutter_cupertino_localizations.dart';
 
 MaterialApp(
  localizationsDelegates: [

@@ -1,6 +1,6 @@
 ---
 title: Navigate to a new screen and back
-description: How to navigate between routes
+description: How to navigate between routes.
 prev:
   title: Animate a widget across screens
   path: /docs/cookbook/navigation/hero-animations

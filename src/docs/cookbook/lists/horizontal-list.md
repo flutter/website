@@ -1,5 +1,6 @@
 ---
 title: Create a horizontal list
+description: How to implement a horizontal list.
 prev:
   title: Use lists
   path: /docs/cookbook/lists/basic-list

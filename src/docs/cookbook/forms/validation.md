@@ -1,5 +1,6 @@
 ---
 title: Build a form with validation
+description: How to build a form that validates input.
 prev:
   title: Work with tabs
   path: /docs/cookbook/design/tabs

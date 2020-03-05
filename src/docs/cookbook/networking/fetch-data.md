@@ -1,5 +1,6 @@
 ---
 title: Fetch data from the internet
+description: How to fetch data over the internet using the http package.
 prev:
   title: Send data to a new screen
   path: /docs/cookbook/navigation/passing-data
@@ -43,7 +44,7 @@ import 'package:http/http.dart' as http;
 ## 2. Make a network request
 
 In this example, fetch a sample album from the
-[JSONPlaceholder][] using the [http.get()][] method.
+[JSONPlaceholder][] using the [`http.get()`][] method.
 
 <!-- skip -->
 ```dart
@@ -298,8 +299,8 @@ Future<Album> futureAlbum;
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [`http`]: {{site.pub-pkg}}/http
-[http.get()]: {{site.pub-api}}/http/latest/http/get.html
-[http package]: {{site.pub}}/packages/http#-installing-tab-
+[`http.get()`]: {{site.pub-api}}/http/latest/http/get.html
+[http package]: {{site.pub-pkg}}/http#-installing-tab-
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html

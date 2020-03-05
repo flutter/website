@@ -1,5 +1,6 @@
 ---
 title: Animate a widget using a physics simulation
+description: How to implement a physics animation.
 prev:
   title: Animate a page route transition
   path: /docs/cookbook/animation/page-route-animation

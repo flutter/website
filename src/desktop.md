@@ -130,16 +130,6 @@ The following plugins have macos desktop support:
 * [connectivity]
 * [path_provider]
 
-[url_launcher] and [shared_preferences] are fully supported as normal plugins.
-To use [connectivity] and [path_provider] you need to declare an
-extra dependency in your pubspec.yaml with a `_macos` suffix
-(you don't need to add any additional imports):
-
-```yaml
-connectivity: ^0.4.6
-connectivity_macos: ^0.0.1
-```
-
 ### Creating plugins
 To create a plugin with desktop support you should use the following resources:
 * [Developing plugin packages]

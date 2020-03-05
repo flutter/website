@@ -1,5 +1,6 @@
 ---
 title: Send data to a new screen
+description: How to pass data to a new route.
 prev:
   title: Return data from a screen
   path: /docs/cookbook/navigation/returning-data

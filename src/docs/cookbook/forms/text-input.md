@@ -1,5 +1,6 @@
 ---
 title: Create and style a text field
+description: How to implement a text field.
 prev:
   title: Build a form with validation
   path: /docs/cookbook/forms/validation

@@ -1,5 +1,6 @@
 ---
 title: Parse JSON in the background
+description: How to perform a task in the background.
 prev:
   title: Make authenticated requests
   path: /docs/cookbook/networking/authenticated-requests
@@ -8,16 +9,19 @@ next:
   path: /docs/cookbook/networking/web-sockets
 ---
 
-By default, Dart apps do all of their work on a single thread. In many cases,
-this model simplifies coding and is fast enough that it does not result in
-poor app performance or stuttering animations, often called "jank."
+By default, Dart apps do all of their work on a single thread.
+In many cases, this model simplifies coding and is fast enough
+that it does not result in poor app performance or stuttering animations,
+often called "jank."
 
-However, you might need to perform an expensive computation, such as parsing a
-very large JSON document. If this work takes more than 16 milliseconds,
+However, you might need to perform an expensive computation,
+such as parsing a very large JSON document.
+If this work takes more than 16 milliseconds,
 your users experience jank.
 
-To avoid jank, you need to perform expensive computations like this in the
-background. On Android, this means scheduling work on a different thread.
+To avoid jank, you need to perform expensive computations
+like this in the background.
+On Android, this means scheduling work on a different thread.
 In Flutter, you can use a separate [Isolate][].
 This recipe uses the following steps:
 
@@ -41,7 +45,7 @@ dependencies:
 
 In this example, fetch a JSON large document that contains a list of
 5000 photo objects from the [JSONPlaceholder REST API][],
-using the [http.get()][] method.
+using the [`http.get()`][] method.
 
 <!-- skip -->
 ```dart
@@ -255,6 +259,6 @@ class PhotosList extends StatelessWidget {
 [`compute()`]: {{site.api}}/flutter/foundation/compute.html
 [Fetch data from the internet]: /docs/cookbook/networking/fetch-data
 [`http`]: {{site.pub-pkg}}/http
-[http.get()]: {{site.pub-api}}/http/latest/http/get.html
+[`http.get()`]: {{site.pub-api}}/http/latest/http/get.html
 [Isolate]: {{site.api}}/flutter/dart-isolate/Isolate-class.html
 [JSONPlaceholder REST API]: https://jsonplaceholder.typicode.com

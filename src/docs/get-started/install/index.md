@@ -1,5 +1,6 @@
 ---
 title: Install
+description: How to set up your code editor.
 next:
   title: Set up an editor
   path: /docs/get-started/editor
@@ -10,7 +11,7 @@ Select the operating system on which you are installing Flutter:
 {{site.alert.note}}
   **Are you on Chrome OS?**
 
-  If so, see the official [Chrome OS Flutter installation docs!](/docs/get-started/install/chromeos)
+  If so, see the official [Chrome OS Flutter installation docs][]!
 {{site.alert.end}}
 
 <div class="card-deck mb-8">
@@ -27,5 +28,8 @@ Select the operating system on which you are installing Flutter:
 </div>
 
 {{site.alert.important}}
-  If you're in China, first read [Using Flutter in China](/community/china).
+  If you're in China, first read [Using Flutter in China][].
 {{site.alert.end}}
+
+[Chrome OS Flutter installation docs]: /docs/get-started/install/chromeos
+[Using Flutter in China]: /community/china

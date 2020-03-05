@@ -1,5 +1,6 @@
 ---
 title: Use lists
+description: How to implement a list.
 prev:
   title: Work with cached images
   path: /docs/cookbook/images/cached-images

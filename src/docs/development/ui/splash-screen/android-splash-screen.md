@@ -17,17 +17,16 @@ use launch screens and splash screens in an Android app with Flutter.
 
 {{site.alert.note}}
   Strategies are available to minimize wait time related to Flutter
-  initialization. Consider [pre-warming a FlutterEngine]() and
-  [re-using a FlutterEngine throughout your app]() to avoid most wait time.
+  initialization. Consider [pre-warming a `FlutterEngine`][] and
+  reusing a FlutterEngine throughout your app to avoid most wait time.
 {{site.alert.end}}
 
 ## Android launch screen
 
-Every Android app requires initialization time while the operating system sets
-up the app's process. Android provides the concept of a [launch screen] to
+Every Android app requires initialization time while the
+operating system sets up the app's process.
+Android provides the concept of a [launch screen][] to
 display a `Drawable` while the app is initializing.
-
-[launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 
 Flutter provides support for displaying an Android launch screen before showing
 a `FlutterActivity`. The instructions to display an Android launch screen are discussed in the next sections.
@@ -224,3 +223,7 @@ public class SplashScreenWithTransition implements SplashScreen {
 With custom splash screens, the sky is the limit. In fact, you could create a
 splash screen that shows an animated sky! Have fun with this flexible splash
 system, and share your creations with the community!
+
+[launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
+[pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
+

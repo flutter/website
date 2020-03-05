@@ -1,5 +1,6 @@
 ---
 title: Update the UI based on orientation
+description: Respond to a change in the screen's orientation.
 prev:
   title: Export fonts from a package
   path: /docs/cookbook/design/package-fonts

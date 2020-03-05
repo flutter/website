@@ -1,5 +1,6 @@
 ---
 title: Create a grid list
+description: How to implement a grid list.
 prev:
   title: Create a horizontal list
   path: /docs/cookbook/lists/horizontal-list

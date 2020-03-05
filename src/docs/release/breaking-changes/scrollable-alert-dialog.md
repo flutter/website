@@ -22,7 +22,7 @@ This resulted in the following issues:
 ## Description of change
 
 The previous approach listed the title and content
-widgets consecutively in a `Row` widget.
+widgets consecutively in a `Column` widget.
 
 <!-- skip -->
 ```dart

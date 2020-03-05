@@ -1,5 +1,6 @@
 ---
 title: Display images from the internet
+description: How to display images from the internet.
 prev:
   title: Implement swipe to dismiss
   path: /docs/cookbook/gestures/dismissible
@@ -45,7 +46,7 @@ to the device after they're downloaded. To accomplish these tasks, see
 the following recipes:
 
 * [Fade in images with a placeholder][]
-* [Working with cached images][]
+* [Work with cached images][]
 
 ## Interactive example
 
@@ -82,4 +83,4 @@ class MyApp extends StatelessWidget {
 [Fade in images with a placeholder]: /docs/cookbook/images/fading-in-images
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`Image.network()`]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[Working with cached images]: /docs/cookbook/images/cached-images
+[Work with cached images]: /docs/cookbook/images/cached-images

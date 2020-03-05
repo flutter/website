@@ -1,5 +1,6 @@
 ---
 title: Export fonts from a package
+description: How to export fonts from a package.
 prev:
   title: Display a snackbars
   path: /docs/cookbook/design/snackbars
@@ -164,6 +165,6 @@ class MyHomePage extends StatelessWidget {
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
 [Google Fonts]: https://fonts.google.com
-[google_fonts]: {{site.pub}}/packages/google_fonts
+[google_fonts]: {{site.pub-pkg}}/google_fonts
 [pub.dev]: {{site.pub}}
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html

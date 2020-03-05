@@ -52,6 +52,9 @@ Docs added and updated since the last announcement include:
 * A new [write your first Flutter app on the web][] codelab
   is added to the [Get started][] docs, and includes
   instructions on setting breakpoints in DevTools!
+* We've introduced a program for recommending particular Dart and
+  Flutter plugins and packages. Learn more about the
+  [Flutter Favorite program][].
 * A new [implicit animations][] codelab is available
   featuring DartPad.
   (To run it, you don't need to download any software!)
@@ -79,6 +82,7 @@ Happy Fluttering!
 [building a web app with Flutter]: /docs/get-started/web
 [Desktop support for Flutter]: /desktop
 [Flutter: the first UI platform designed for ambient computing]: https://developers.googleblog.com/2019/12/flutter-ui-ambient-computing.html?m=1
+[Flutter Favorite program]: /docs/development/packages-and-plugins/favorites
 [Flutter 1.12.13]: /docs/development/tools/sdk/release-notes/release-notes-1.12.13
 [Flutter Gallery]: https://flutter.github.io/samples/#/
 [Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer
