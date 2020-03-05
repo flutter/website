@@ -68,7 +68,7 @@ testWidgets('Container color', (WidgetTester tester) async {
 
 ## Timeline
 
-This change was introduced in v1.TBD
+This change was introduced in v1.15.4
 
 ## References
 
