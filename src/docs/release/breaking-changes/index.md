@@ -9,6 +9,7 @@ for migrating code across a breaking change.
 The following guides (in alphabetical order) are available:
 
 * [Annotations return local position relative to object][]
+* [Container color optimization][]
 * [Generic type of ParentDataWidget changed to ParentData][]
 * [ImageCache large images][]
 * [MouseTracker no longer attaches annotations][]
@@ -25,6 +26,7 @@ The following guides (in alphabetical order) are available:
 [Adding `linux` and `windows` to `TargetPlatform` enum]: /docs/release/breaking-changes/target-platform-linux-windows
 [Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
 [breaking change policy]: /docs/resources/compatibility
+[Container color optimization]: /docs/release/breaking-changes/container-color
 [Generic type of ParentDataWidget changed to ParentData]: /docs/release/breaking-changes/parent-data-widget-generic-type
 [ImageCache and ImageProvider changes]: /docs/release/breaking-changes/image-cache-and-provider
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images
