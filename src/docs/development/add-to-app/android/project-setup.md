@@ -11,8 +11,8 @@ The integration flow can be done using the Android Studio IDE with the
 
 {{site.alert.warning}}
 Your existing Android app may support architectures such as `mips`
-or `x86`/`x86_64`. Flutter currently [only supports](/docs/resources/faq#what-devices-and-os-versions-does-flutter-run-on)
-building ahead-of-time (AOT) compiled libraries for `armeabi-v7a` and `arm64-v8a`.
+or `x86`. Flutter currently [only supports](/docs/resources/faq#what-devices-and-os-versions-does-flutter-run-on)
+building ahead-of-time (AOT) compiled libraries for `x86_64`, `armeabi-v7a` and `arm64-v8a`.
 
 Consider using the [`abiFilters`](http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.NdkOptions.html)
 Android Gradle Plugin API to limit the supported architectures in your APK. Doing this
@@ -25,7 +25,7 @@ android {
   defaultConfig {
     ndk {
       // Filter for architectures supported by Flutter.
-      abiFilters 'armeabi-v7a', 'arm64-v8a'
+      abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
     }
   }
 }
