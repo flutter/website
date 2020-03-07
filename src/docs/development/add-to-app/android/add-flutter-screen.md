@@ -33,8 +33,8 @@ registered in your `AndroidManifest.xml`. Add the following XML to your
 
 The reference to `@style/LaunchTheme` can be replaced by any Android theme that
 want to apply to your `FlutterActivity`. The choice of theme dictates the
-colors applied to Android's system chrome, like Android's navigation bar, and to  
-the background color of the `FlutterActivity` just before the Flutter UI renders 
+colors applied to Android's system chrome, like Android's navigation bar, and to
+the background color of the `FlutterActivity` just before the Flutter UI renders
 itself for the first time.
 
 ### Step 2: Launch FlutterActivity
@@ -45,7 +45,7 @@ example shows `FlutterActivity` being launched from an `OnClickListener`.
 
 {% samplecode default-activity-launch %}
 {% sample Java %}
-<?code-excerpt "ExistingActivity.java" title?>
+<!--code-excerpt "ExistingActivity.java" title-->
 ```java
 myButton.setOnClickListener(new OnClickListener() {
   @Override
@@ -57,7 +57,7 @@ myButton.setOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<?code-excerpt "ExistingActivity.kt" title?>
+<!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -75,7 +75,7 @@ route in Flutter.
 
 {% samplecode custom-activity-launch %}
 {% sample Java %}
-<?code-excerpt "ExistingActivity.java" title?>
+<!--code-excerpt "ExistingActivity.java" title-->
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -90,7 +90,7 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<?code-excerpt "ExistingActivity.kt" title?>
+<!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -106,7 +106,7 @@ myButton.setOnClickListener {
 Replace `"/my_route"` with your desired initial route.
 
 The use of the `withNewEngine()` factory method configures a `FlutterActivity`
-that internally create its own `FlutterEngine` instance. This comes with a 
+that internally create its own `FlutterEngine` instance. This comes with a
 non-trivial initialization time. The alternative approach is to instruct
 `FlutterActivity` to use a pre-warmed, cached `FlutterEngine`, which minimizes
 Flutter's initialization time. That approach is discussed next.
@@ -121,12 +121,12 @@ experience becomes visible. To minimize this delay, you can warm up a
 your pre-warmed `FlutterEngine` instead.
 
 To pre-warm a `FlutterEngine`, find a reasonable location in your app to
-instantiate a `FlutterEngine`. The following example arbitrarily pre-warms a 
+instantiate a `FlutterEngine`. The following example arbitrarily pre-warms a
 `FlutterEngine` in the `Application` class:
 
 {% samplecode prewarm-engine %}
 {% sample Java %}
-<?code-excerpt "MyApplication.java" title?>
+<!--code-excerpt "MyApplication.java" title-->
 ```java
 public class MyApplication extends Application {
   @Override
@@ -148,7 +148,7 @@ public class MyApplication extends Application {
 }
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyApplication.kt" title?>
+<!--code-excerpt "MyApplication.kt" title-->
 ```kotlin
 class MyApplication : Application() {
   lateinit var flutterEngine : FlutterEngine
@@ -196,7 +196,7 @@ builder:
 
 {% samplecode cached-engine-activity-launch %}
 {% sample Java %}
-<?code-excerpt "ExistingActivity.java" title?>
+<!--code-excerpt "ExistingActivity.java" title-->
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -210,7 +210,7 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<?code-excerpt "ExistingActivity.kt" title?>
+<!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -231,7 +231,7 @@ the display of Flutter content.
 {{site.alert.note}}
   When using a cached `FlutterEngine`, that `FlutterEngine` outlives any
   `FlutterActivity` or `FlutterFragment` that displays it. Keep in
-  mind that Dart code begins executing as soon as you pre-warm the 
+  mind that Dart code begins executing as soon as you pre-warm the
   `FlutterEngine`, and continues executing after the destruction of your
   `FlutterActivity`/`FlutterFragment`. To stop executing and clear resources,
   obtain your `FlutterEngine` from the `FlutterEngineCache` and destroy the
@@ -244,7 +244,7 @@ the display of Flutter content.
   from a `FlutterActivity`, which allows such a `FlutterEngine` to be used to
   execute arbitrary Dart code at any moment. Non-UI application logic
   can be executed in a `FlutterEngine`, like networking and data caching, and in background behavior within a `Service` or elsewhere. When using a
-  `FlutterEngine` to execute behavior in the background, be sure to adhere to all 
+  `FlutterEngine` to execute behavior in the background, be sure to adhere to all
   Android restrictions on background execution.
 {{site.alert.end}}
 
@@ -272,7 +272,7 @@ the regular process of creating and launching a `FlutterActivity`.
 
 ### Step 1: Use a theme with translucency
 
-Android requires a special theme property for `Activity`s that render 
+Android requires a special theme property for `Activity`s that render
 with a translucent background. Create or update an Android theme with the
 following property:
 
@@ -304,7 +304,7 @@ appropriate `BackgroundMode` to the `IntentBuilder`:
 
 {% samplecode transparent-activity-launch %}
 {% sample Java %}
-<?code-excerpt "ExistingActivity.java" title?>
+<!--code-excerpt "ExistingActivity.java" title-->
 ```java
 // Using a new FlutterEngine.
 startActivity(
@@ -323,7 +323,7 @@ startActivity(
 );
 ```
 {% sample Kotlin %}
-<?code-excerpt "ExistingActivity.kt" title?>
+<!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
 // Using a new FlutterEngine.
 startActivity(
@@ -346,7 +346,7 @@ startActivity(
 You now have a `FlutterActivity` with a transparent background.
 
 {{site.alert.note}} Make sure that your Flutter content also includes a
-  translucent background. If your Flutter UI paints a solid background color, 
+  translucent background. If your Flutter UI paints a solid background color,
   then it still appears as though your `FlutterActivity` has an opaque
-  background. 
+  background.
 {{site.alert.end}}

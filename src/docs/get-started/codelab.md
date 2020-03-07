@@ -202,7 +202,7 @@ as well as many other open source packages, on [pub.dev][].
        flutter:
          sdk: flutter
        cupertino_icons: ^0.1.2
-    +  english_words: ^3.1.5
+    +  english_words: ^3.1.0
     ```
 
  2. While viewing the `pubspec.yaml` file in Android Studio's editor view,

@@ -46,7 +46,7 @@ the app delegate.
 {% sample Objective-C %}
 **In `AppDelegate.h`:**
 
-<?code-excerpt "AppDelegate.h" title?>
+<!--code-excerpt "AppDelegate.h" title-->
 ```objectivec
 @import UIKit;
 @import Flutter;
@@ -58,7 +58,7 @@ the app delegate.
 
 **In `AppDelegate.m`:**
 
-<?code-excerpt "AppDelegate.m" title?>
+<!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Used to connect plugins.
 
@@ -80,7 +80,7 @@ the app delegate.
 {% sample Swift %}
 **In `AppDelegate.swift`:**
 
-<?code-excerpt "AppDelegate.swift" title?>
+<!--code-excerpt "AppDelegate.swift" title-->
 ```swift
 import UIKit
 import Flutter
@@ -109,7 +109,7 @@ created in the `AppDelegate`.
 
 {% samplecode vc %}
 {% sample Objective-C %}
-<?code-excerpt "ViewController.m" title?>
+<!--code-excerpt "ViewController.m" title-->
 ```objectivec
 @import Flutter;
 #import "AppDelegate.h"
@@ -140,7 +140,7 @@ created in the `AppDelegate`.
 @end
 ```
 {% sample Swift %}
-<?code-excerpt "ViewController.swift" title?>
+<!--code-excerpt "ViewController.swift" title-->
 ```swift
 import UIKit
 import Flutter
@@ -197,7 +197,7 @@ To let the `FlutterViewController` present without an existing
 
 {% samplecode no-engine-vc %}
 {% sample Objective-C %}
-<?code-excerpt "ViewController.m" title?>
+<!--code-excerpt "ViewController.m" title-->
 ```objectivec
 // Existing code omitted.
 - (void)showFlutter {
@@ -208,7 +208,7 @@ To let the `FlutterViewController` present without an existing
 @end
 ```
 {% sample Swift %}
-<?code-excerpt "ViewController.swift" title?>
+<!--code-excerpt "ViewController.swift" title-->
 ```swift
 // Existing code omitted.
 func showFlutter() {
@@ -241,7 +241,7 @@ Otherwise, plugins that depend on these events may have undefined behavior.
 
 For instance:
 
-<?code-excerpt "AppDelegate.h" title?>
+<!--code-excerpt "AppDelegate.h" title-->
 ```objectivec
 @import Flutter;
 @import UIKit;
@@ -256,7 +256,7 @@ For instance:
 The implementation should delegate mostly to a
 `FlutterPluginAppLifeCycleDelegate`:
 
-<?code-excerpt "AppDelegate.m" title?>
+<!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
 @interface AppDelegate ()
 @property (nonatomic, strong) FlutterPluginAppLifeCycleDelegate* lifeCycleDelegate;
@@ -387,7 +387,7 @@ a different Dart function.
   must be annotated with the following in order to
   not be [tree-shaken][] away when compiling:
 
-  <?code-excerpt "main.dart" title?>
+  <!--code-excerpt "main.dart" title-->
   ```dart
   @pragma('vm:entry-point')
   void myOtherEntrypoint() { ... };
@@ -404,12 +404,12 @@ in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 
 {% samplecode entrypoint-library %}
 {% sample Objective-C %}
-<?code-excerpt "Objective-C" title?>
+<!--code-excerpt "Objective-C" title-->
 ```objectivec
 [flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
 {% sample Swift %}
-<?code-excerpt "Swift" title?>
+<!--code-excerpt "Swift" title-->
 ```swift
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
 ```
@@ -423,7 +423,7 @@ when constructing the engine.
 
 {% samplecode initial-route %}
 {% sample Objective-C %}
-<?code-excerpt "Creating engine" title?>
+<!--code-excerpt "Creating engine" title-->
 ```objectivec
 FlutterEngine *flutterEngine =
     [[FlutterEngine alloc] initWithName:@"my flutter engine"];
@@ -432,7 +432,7 @@ FlutterEngine *flutterEngine =
 [flutterEngine run];
 ```
 {% sample Swift %}
-<?code-excerpt "Creating engine" title?>
+<!--code-excerpt "Creating engine" title-->
 ```swift
 let flutterEngine = FlutterEngine(name: "my flutter engine")
 flutterEngine.navigationChannel.invokeMethod("setInitialRoute", arguments:"/onboarding")
