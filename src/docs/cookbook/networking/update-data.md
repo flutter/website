@@ -40,7 +40,7 @@ import 'package:http/http.dart' as http;
 
 ## 2. Updating data over the internet
 
-In this example, let's update an album title to the
+In this example, you'll see how to update an album title to the
 [JSONPlaceholder][] using the [http.put()][] method
 
 <!-- skip -->
@@ -75,9 +75,9 @@ convert the `http.Response` into a Dart object.
 
 ### Create an Album class
 
-First, create a `Album` class that contains the data from the
+First, create an `Album` class that contains the data from the
 network request. It includes a factory constructor that
-creates a `Album` from JSON.
+creates an `Album` from JSON.
 
 Converting JSON by hand is only one option.
 For more information, see the full article on
@@ -100,7 +100,7 @@ class Album {
 }
 ```
 
-### Convert the `http.Response` to a `Album`
+### Convert the `http.Response` to an `Album`
 
 Now, use the following steps to update the `updateAlbum()`
 function to return a `Future<Album>`:
@@ -108,7 +108,7 @@ function to return a `Future<Album>`:
   1. Convert the response body into a JSON `Map` with the `dart:convert`
      package.
   2. If the server returns a `UPDATED` response with a status code of 200, then convert
-     the JSON `Map` into a `Album` using the `fromJson()` factory method.
+     the JSON `Map` into an `Album` using the `fromJson()` factory method.
   3. If the server doesn't return a `UPDATED` response with a status code of 200,
      then throw an exception. (Even in the case of a 404 Not Found server response,
      throw an exception. Do not return `null`. This is important when examining
@@ -140,7 +140,7 @@ Hooray! Now you've got a function that updates the title of an album.
 
 ### 4. Get the data from Internet
 
-Let's get the data from internet before we can update it. Check [Fetch Data][] recipe for a complete example.
+Get the data from internet before you can update it. Check [Fetch Data][] recipe for a complete example.
 
 ```dart
 Future<Album> fetchAlbum() async {
@@ -159,9 +159,9 @@ Future<Album> fetchAlbum() async {
 
 Ideally we will use this method to set `_futureAlbum` during `initState` to fetch the data from the internet.
 
-## 5. Let's get new title as input from user
+## 5. Get new title as input from user
 
-Let's create a `TextField` to enter a title and a `RaisedButton` to update data on server.
+Create a `TextField` to enter a title and a `RaisedButton` to update data on server.
 Also define a `TextEditingController` to read the user input from a `TextField`
 
 When the `RaisedButton` is pressed, the `_futureAlbum` is set to the value returned by `updateAlbum()` method.

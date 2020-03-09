@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/networking/authenticated-requests
 ---
 
-Let us see how to delete data on internet using the `http` package.
+You'll learn how to delete data on internet using the `http` package.
 
 This recipe uses the following steps:
 
@@ -37,7 +37,7 @@ import 'package:http/http.dart' as http;
 
 ## 2. Delete data on the server
 
-In this example, let's delete an album from the
+In this example, you'll delete an album from the
 [JSONPlaceholder][] using the
 `http.delete()` method. Note that we will require the `id` of the album which we want to delete. For this example, let's use something we already know, say `id = 1`.
 
@@ -113,7 +113,7 @@ Future<Album> deleteAlbum(String id) async {
 
 Our `FutureBuilder()` will then rebuild when it receives a response. Since our response will not have any data in its body if the request was successful, the `Album.fromJson()` method will create an instance of the Album object with default value(which will be null in our case). This behavior can be altered in any way you wish.
 
-That's all, folks! Now you've got a function that deletes the data from the internet.
+That's all! Now you've got a function that deletes the data from the internet.
 
 ## Complete example
 
