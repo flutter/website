@@ -157,7 +157,7 @@ Future<Album> fetchAlbum() async {
 }
 ```
 
-Ideally we will use this method to set `_futureAlbum` during `initState` to fetch the data from the internet.
+Ideally you will use this method to set `_futureAlbum` during `initState` to fetch the data from the internet.
 
 ## 5. Get new title as input from user
 
@@ -190,7 +190,7 @@ Column(
 )
 ```
 
-On pressing the button **Update Data**, we make the network request,
+On pressing the button **Update Data**, you make the network request,
 which sends the data in the `TextField` to the server with a `POST` request.
 This Future `_futureAlbum` will be used in the next step.
 

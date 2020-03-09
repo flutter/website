@@ -39,7 +39,7 @@ import 'package:http/http.dart' as http;
 
 In this example, you'll delete an album from the
 [JSONPlaceholder][] using the
-`http.delete()` method. Note that we will require the `id` of the album which we want to delete. For this example, let's use something we already know, say `id = 1`.
+`http.delete()` method. Note that you will require the `id` of the album which you want to delete. For this example, you'll use something you already know, say `id = 1`.
 
 <!-- skip -->
 ```dart
@@ -66,7 +66,7 @@ The `http.delete()` method returns a `Future` that contains a `Response`.
 
 ## 3. Update the screen
 
-In order to check whether the data has been deleted or not, we shall first fetch the data from the [JSONPlaceholder][] using the `http.get()` method and display it in the screen, check [Fetch Data][] for complete example. Then we shall have a button `Delete Data` which when pressed will call the `deleteAlbum()` method.
+In order to check whether the data has been deleted or not, you shall first fetch the data from the [JSONPlaceholder][] using the `http.get()` method and display it in the screen, check [Fetch Data][] for complete example. Then you shall have a button `Delete Data` which when pressed will call the `deleteAlbum()` method.
 
 <!-- skip -->
 ```dart
@@ -85,10 +85,10 @@ Column(
   ],
 );
 ```
-Now, when we click on the ***Delete Data*** button, the `deleteAlbum()` method will be called and the id we are passing will be the id of the data that we retrieved from the internet. This means we are going to delete the same data which we fetched from the internet.
+Now, when you click on the ***Delete Data*** button, the `deleteAlbum()` method will be called and the id you are passing will be the id of the data that you retrieved from the internet. This means you are going to delete the same data which you fetched from the internet.
 
 ### Returning a response from the deleteAlbum()
-Once the delete request has been made, we can return a response from the `deleteAlbum()` method to notify our screen that the data has been deleted. 
+Once the delete request has been made, you can return a response from the `deleteAlbum()` method to notify our screen that the data has been deleted. 
 
 <!-- skip -->
 ```dart
@@ -102,8 +102,8 @@ Future<Album> deleteAlbum(String id) async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    // After deleting,  we get an empty JSON `{}` response
-    // we do not return `null` here, if we did, `snapshot.hasData` would always return false on `FutureBuilder`
+    // After deleting,  you get an empty JSON `{}` response
+    // you do not return `null` here, if you did, `snapshot.hasData` would always return false on `FutureBuilder`
     return Album.fromJson(json.decode(response.body));
   } else {
     throw Exception('Failed to delete album.');
@@ -147,8 +147,8 @@ Future<Album> deleteAlbum(String id) async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    // After deleting,  we get an empty JSON `{}` response
-    // we do not return `null` here, if we did, `snapshot.hasData` would always return false on `FutureBuilder`
+    // After deleting,  you get an empty JSON `{}` response
+    // you do not return `null` here, if you did, `snapshot.hasData` would always return false on `FutureBuilder`
     return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response, then throw an exception.
