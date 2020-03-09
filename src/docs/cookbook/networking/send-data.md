@@ -40,7 +40,7 @@ import 'package:http/http.dart' as http;
 
 ## 2. Sending data to server
 
-In this example, let's send an album title to the
+In this example, you'll send an album title to the
 [JSONPlaceholder][] using the
 [`http.post()`][] method to create an Album.
 
@@ -139,9 +139,9 @@ Future<Album> createAlbum(String title) async {
 
 Hooray! Now you've got a function that sends the title to a server to create an album.
 
-## 4. Let's get the title as input from user
+## 4. Get the title as input from user
 
-Let's create a `TextField` to enter a title and a `RaisedButton` to send data to server.
+Create a `TextField` to enter a title and a `RaisedButton` to send data to server.
 Also define a `TextEditingController` to read the user input from a `TextField`
 
 When the `RaisedButton` is pressed, the `_futureAlbum` is set to the value returned by `createAlbum()` method.
@@ -170,7 +170,7 @@ Column(
 )
 ```
 
-On pressing the button **Create Data**, we make the network request,
+On pressing the button **Create Data**, you make the network request,
 which sends the data in the `TextField` to the server with a `POST` request.
 This Future `_futureAlbum` will be used in the next step.
 
