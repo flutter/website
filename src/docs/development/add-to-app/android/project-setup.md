@@ -18,7 +18,7 @@ Consider using the [`abiFilters`](http://google.github.io/android-gradle-dsl/cur
 Android Gradle Plugin API to limit the supported architectures in your APK. Doing this
 avoids a missing `libflutter.so` runtime crash, for example:
 
-<?code-excerpt "MyApp/app/build.gradle" title?>
+<!--code-excerpt "MyApp/app/build.gradle" title-->
 ```gradle
 android {
   //...
@@ -119,7 +119,7 @@ ensure that your host Android app declares the following source
 compatibility within your app's `build.gradle` file, under the `android { }`
 block, such as:
 
-<?code-excerpt "MyApp/app/build.gradle" title?>
+<!--code-excerpt "MyApp/app/build.gradle" title-->
 ```gradle
 android {
   //...
@@ -189,7 +189,7 @@ To depend on the AAR, the host app must be able to find these files.
 To do that, edit `app/build.gradle` in your host app such as it includes
 the local repository and the dependency:
 
-<?code-excerpt "MyApp/app/build.gradle" title?>
+<!--code-excerpt "MyApp/app/build.gradle" title-->
 ```gradle
 android {
   // ...
@@ -232,7 +232,7 @@ iterate, but your team must install the Flutter SDK to build the host app.
 
 Include the Flutter module as a subproject in the host app's `settings.gradle`:
 
-<?code-excerpt "MyApp/settings.gradle" title?>
+<!--code-excerpt "MyApp/settings.gradle" title-->
 ```groovy
 include ':app'                                     // assumed existing content
 setBinding(new Binding([gradle: this]))                                 // new
@@ -249,7 +249,7 @@ The binding and script evaluation allows the Flutter module to `include` itself
 `:video_player`, etc) in the evaluation context of your `settings.gradle`.
 
 Introduce an `implementation` dependency on the Flutter module from your app:
-<?code-excerpt "MyApp/app/build.gradle" title?>
+<!--code-excerpt "MyApp/app/build.gradle" title-->
 ```groovy
 dependencies {
   implementation project(':flutter')

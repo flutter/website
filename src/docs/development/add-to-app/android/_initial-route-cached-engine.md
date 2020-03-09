@@ -1,4 +1,4 @@
-The concept of an initial route is available when configuring a 
+The concept of an initial route is available when configuring a
 `FlutterActivity` or a `FlutterFragment` with a new `FlutterEngine`. However,
 `FlutterActivity` and `FlutterFragment` don't offer the concept of an initial
 route when using a cached engine. This is because a cached engine is expected
@@ -12,7 +12,7 @@ demonstrates the use of an initial route with a cached engine:
 
 {% samplecode cached-engine-with-initial-route %}
 {% sample Java %}
-<?code-excerpt "MyApplication.java" title?>
+<!--code-excerpt "MyApplication.java" title-->
 ```java
 public class MyApplication extends Application {
   @Override
@@ -34,7 +34,7 @@ public class MyApplication extends Application {
 }
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyApplication.kt" title?>
+<!--code-excerpt "MyApplication.kt" title-->
 ```kotlin
 class MyApplication : Application() {
   lateinit var flutterEngine : FlutterEngine
