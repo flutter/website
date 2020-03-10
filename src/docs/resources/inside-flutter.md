@@ -556,7 +556,7 @@ itself. When it is time to draw the intermediate steps during the animation,
 the start and end values are passed to the appropriate `lerp` function
 along with a _t_ value representing the point along the animation,
 where 0.0 represents the `start` and 1.0 represents the
-<sup><a href="#a8">8</a></sup>`end`,
+`end`<sup><a href="#a8">8</a></sup>,
 and the function returns a third immutable object representing the
 intermediate stage.
 
