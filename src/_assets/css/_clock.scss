@@ -21,6 +21,12 @@
 
   &__category-winner {
     margin-top: 3rem;
+
+    @include media-breakpoint-up(md) {
+      h3 {
+        font-size: 1.9rem;
+      }
+    }
   }
 
   &__link-lightblue {
@@ -317,34 +323,23 @@
   }
 
   &__wtm-logos {
-
     .logos-heading {
       font-size: 16px;
       margin-bottom: 24px;
     }
 
     .logos-container {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      height: 250px;
-      justify-content: space-around;
+      text-align: center;
     }
 
     .wtm-logo {
       max-height: 35px;
-    }
+      display: block;
+      margin: 45px auto 0;
 
-    @include media-breakpoint-up(sm) {
-
-      .logos-container {
-        flex-direction: row;
-        height: auto;
-        justify-content: space-evenly;
-      }
-
-      .wtm-logo {
-        max-width: 30%;
+      @include media-breakpoint-up(md) {
+        display: inline;
+        margin: 0 30px;
 
         &:first-of-type {
           max-height: 30px;
@@ -352,26 +347,6 @@
 
         &:last-of-type {
           max-height: 20px;
-        }
-      }
-    }
-
-    @include media-breakpoint-up(lg) {
-
-      .logos-heading {
-        font-size: 20px;
-        margin-bottom: 40px;
-      }
-
-      .wtm-logo {
-        max-height: initial;
-
-        &:first-of-type {
-          max-height: 40px;
-        }
-  
-        &:last-of-type {
-          max-height: initial;
         }
       }
     }
@@ -796,7 +771,11 @@
   //dropdown button
   .dropdown__button {
     box-shadow: none;
-    outline: none;
+
+    &:focus {
+      outline: 1px dotted #212121;
+      outline: 1px auto -webkit-focus-ring-color;
+    }
   }
 
   .code-font {
