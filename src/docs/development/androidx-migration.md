@@ -59,7 +59,7 @@ assets to the new project.
 To create a new project run:
 
 ```bash
-flutter create --androidx -t <project-type> <new-project-path>
+flutter create -t <project-type> <new-project-path>
 ```
 
 ### Add to App
