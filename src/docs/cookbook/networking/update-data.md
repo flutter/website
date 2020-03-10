@@ -1,5 +1,6 @@
 ---
 title: Update data over the internet
+description: How to use the http package to update data over the internet.
 prev:
   title: Send data to the internet
   path: /docs/cookbook/networking/send-data
@@ -9,39 +10,41 @@ next:
 ---
 
 Updating data over the internet is necessary for most apps.
-The `http` package has got it covered too.
+The `http` package has got that covered!
 
 This recipe uses the following steps:
 
-  1. Add the `http` package.
-  2. Update data over the internet using the `http` package.
-  3. Convert the response into a custom Dart object.
-  4. Get data from internet
-  5. Update existing `title` from user input
-  6. Update and display the response on screen.
+  1. Add the `http` package
+  2. Update data over the internet using the `http` package
+  3. Convert the response into a custom Dart object
+  4. Get the data from the internet
+  5. Update the existing `title` from user input
+  6. Update and display the response on screen
 
 ## 1. Add the `http` package
 
-To install the `http` package, add it to the dependencies section
-of the `pubspec.yaml`. You can find the latest version of the
-[http package][] on pub.dev.
+To install the `http` package,
+add it to the dependencies section
+of the `pubspec.yaml` file.
+You can find the latest version of the
+[`http` package][] on pub.dev.
 
 ```yaml
 dependencies:
   http: <latest_version>
 ```
 
-Import the http package.
+Import the `http` package.
 
 <!-- skip -->
 ```dart
 import 'package:http/http.dart' as http;
 ```
 
-## 2. Updating data over the internet
+## 2. Updating data over the internet using the `http` package
 
-In this example, you'll see how to update an album title to the
-[JSONPlaceholder][] using the [http.put()][] method
+In this example, you'll learn how to update an album title to the
+[JSONPlaceholder][] using the [`http.put()`][] method.
 
 <!-- skip -->
 ```dart
@@ -61,16 +64,18 @@ Future<http.Response> updateAlbum(String title) {
 The `http.put()` method returns a `Future` that contains a `Response`.
 
 * [`Future`][] is a core Dart class for working with
-  async operations. A Future object represents a potential
+  async operations. A `Future` object represents a potential
   value or error that will be available at some time in the future.
 * The `http.Response` class contains the data received from a successful
   http call.
-* The `updateAlbum()` method takes an argument `title` which is sent to the server to update the Album.
+* The `updateAlbum()` method takes an argument, `title`,
+  which is sent to the server to update the `Album`.
 
-## 3. Convert the `http.Response` to custom dart object
+## 3. Convert the `http.Response` to a custom Dart object
 
-While it's easy to make a network request, working with a raw
-`Future<http.Response>` isn't very convenient. To make your life easier,
+While it's easy to make a network request,
+working with a raw `Future<http.Response>`
+isn't very convenient. To make your life easier,
 convert the `http.Response` into a Dart object.
 
 ### Create an Album class
@@ -105,14 +110,17 @@ class Album {
 Now, use the following steps to update the `updateAlbum()`
 function to return a `Future<Album>`:
 
-  1. Convert the response body into a JSON `Map` with the `dart:convert`
-     package.
-  2. If the server returns a `UPDATED` response with a status code of 200, then convert
-     the JSON `Map` into an `Album` using the `fromJson()` factory method.
-  3. If the server doesn't return a `UPDATED` response with a status code of 200,
-     then throw an exception. (Even in the case of a 404 Not Found server response,
-     throw an exception. Do not return `null`. This is important when examining
-     the data in `snapshot` as shown below.)
+  1. Convert the response body into a JSON `Map` with the
+     `dart:convert` package.
+  2. If the server returns an `UPDATED` response with a status
+     code of 200, then convert the JSON `Map` into an `Album`
+     using the `fromJson()` factory method.
+  3. If the server doesn't return an `UPDATED` response with a
+     status code of 200, then throw an exception.
+     (Even in the case of a "404 Not Found" server response,
+     throw an exception. Do not return `null`.
+     This is important when examining
+     the data in `snapshot`, as shown below.)
 
 <!-- skip -->
 ```dart
@@ -127,20 +135,24 @@ Future<Album> updateAlbum(String title) async {
     }),
   );
   if (response.statusCode == 200) {
-    // If the server did return a 200 UPDATED response, then parse the JSON.
+    // If the server did return a 200 UPDATED response,
+    // then parse the JSON.
     return Album.fromJson(json.decode(response.body));
   } else {
-    // If the server did not return a 200 UPDATED response, then throw an exception.
+    // If the server did not return a 200 UPDATED response,
+    // then throw an exception.
     throw Exception('Failed to load album');
   }
 }
 ```
 
-Hooray! Now you've got a function that updates the title of an album.
+Hooray!
+Now you've got a function that updates the title of an album.
 
-### 4. Get the data from Internet
+### 4. Get the data from the internet
 
-Get the data from internet before you can update it. Check [Fetch Data][] recipe for a complete example.
+Get the data from internet before you can update it.
+For a complete example, see the [Fetch data][] recipe.
 
 ```dart
 Future<Album> fetchAlbum() async {
@@ -151,20 +163,27 @@ Future<Album> fetchAlbum() async {
     // If the server did return a 200 OK response, then parse the JSON.
     return Album.fromJson(json.decode(response.body));
   } else {
-    // If the server did not return a 200 OK response, then throw an exception.
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
     throw Exception('Failed to load album');
   }
 }
 ```
 
-Ideally you will use this method to set `_futureAlbum` during `initState` to fetch the data from the internet.
+Ideally, you will use this method to set
+`_futureAlbum` during `initState` to fetch
+the data from the internet.
 
-## 5. Get new title as input from user
+## 5. Update the existing title from user input
 
-Create a `TextField` to enter a title and a `RaisedButton` to update data on server.
-Also define a `TextEditingController` to read the user input from a `TextField`
+Create a `TextField` to enter a title and a `RaisedButton`
+to update the data on server.
+Also define a `TextEditingController` to
+read the user input from a `TextField`.
 
-When the `RaisedButton` is pressed, the `_futureAlbum` is set to the value returned by `updateAlbum()` method.
+When the `RaisedButton` is pressed,
+the `_futureAlbum` is set to the value returned by
+`updateAlbum()` method.
 
 <!-- skip -->
 ```dart
@@ -190,11 +209,11 @@ Column(
 )
 ```
 
-On pressing the button **Update Data**, you make the network request,
-which sends the data in the `TextField` to the server with a `POST` request.
-This Future `_futureAlbum` will be used in the next step.
+On pressing the **Update Data** button, a network request
+sends the data in the `TextField` to the server as a `POST` request.
+The `_futureAlbum` variable is used in the next step.
 
-## 5. Display the response on screen.
+## 5. Display the response on screen
 
 To display the data on screen, use the
 [`FutureBuilder`][] widget.
@@ -202,15 +221,18 @@ The `FutureBuilder` widget comes with Flutter and
 makes it easy to work with async data sources.
 You must provide two parameters:
 
-  1. The `Future` you want to work with. In this case, the future returned from
-  the `updateAlbum()` function.
-  2. A `builder` function that tells Flutter what to render, depending on the
-  state of the `Future`: loading, success, or error.
+  1. The `Future` you want to work with. In this case,
+     the future returned from the `updateAlbum()` function.
+  2. A `builder` function that tells Flutter what to render,
+     depending on the state of the `Future`: loading,
+     success, or error.
 
-Note that `snapshot.hasData` only returns `true` when the snapshot contains
-a non-null data value. This is why the `updateAlbum` function should throw an exception
-even in the case of a 404 Not Found server response. If `updateAlbum` returns `null`
-then `CircularProgressIndicator` will be shown indefinitely.
+Note that `snapshot.hasData` only returns `true` when
+the snapshot contains a non-null data value.
+This is why the `updateAlbum` function should throw an exception
+even in the case of a "404 Not Found" server response.
+If `updateAlbum` returns `null` then
+`CircularProgressIndicator` will display indefinitely.
 
 <!-- skip -->
 ```dart
@@ -242,10 +264,12 @@ Future<Album> fetchAlbum() async {
       await http.get('https://jsonplaceholder.typicode.com/albums/1');
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response, then parse the JSON.
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
     return Album.fromJson(json.decode(response.body));
   } else {
-    // If the server did not return a 200 OK response, then throw an exception.
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
     throw Exception('Failed to load album');
   }
 }
@@ -262,10 +286,12 @@ Future<Album> updateAlbum(String title) async {
   );
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response, then parse the JSON.
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
     return Album.fromJson(json.decode(response.body));
   } else {
-    // If the server did not return a 200 OK response, then throw an exception.
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
     throw Exception('Failed to update album.');
   }
 }
@@ -359,19 +385,19 @@ class _MyAppState extends State<MyApp> {
 }
 ```
 
-[Fetch Data]: /docs/cookbook/networking/fetch-data
 [ConnectionState]: {{site.api}}/flutter/widgets/ConnectionState-class.html
 [`didChangeDependencies()`]: {{site.api}}/flutter/widgets/State/didChangeDependencies.html
+[Fetch data]: /docs/cookbook/networking/fetch-data
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [`http`]: {{site.pub-pkg}}/http
-[http.put()]: {{site.pub-api}}/http/latest/http/put.html
-[http package]: {{site.pub}}/packages/http#-installing-tab-
+[`http.put()`]: {{site.pub-api}}/http/latest/http/put.html
+[`http` package]: {{site.pub}}/packages/http#-installing-tab-
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
-[Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [JSON and serialization]: /docs/development/data-and-backend/json
+[Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 
