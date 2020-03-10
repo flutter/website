@@ -161,7 +161,7 @@ following cases:
 * The two lists are identical.
 * There is an insertion or removal of one or more widgets in exactly
   one place in the list.
-* If each list contains a widget with the same key, the two widgets are
+* If each list contains a widget with the same key<sup><a href="#a1">5</a></sup>, the two widgets are
   matched.
 
 The general approach is to match up the beginning and end of both child
@@ -553,7 +553,7 @@ is represented as an immutable object that is configured with
 appropriate settings (color, stroke width, etc) and knows how to paint
 itself. When it is time to draw the intermediate steps during the animation,
 the start and end values are passed to the appropriate `lerp` function
-along with a _t_ value representing the point along the animation,
+along with a _t_<a href="#a2">8</a> value representing the point along the animation,
 where 0.0 represents the `start` and 1.0 represents the `end`,
 and the function returns a third immutable object representing the
 intermediate stage.
