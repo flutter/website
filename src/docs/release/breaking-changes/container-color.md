@@ -89,4 +89,4 @@ Relevant PRs:
 [`BoxDecoration`]: {{site.api}}/flutter/painting/BoxDecoration-class.html
 [Issue 9672]: {{site.github}}/flutter/flutter/issues/9672
 [Issue 28753]: {{site.github}}/flutter/flutter/issues/28753
-[Colored box and container optimization #50979]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
+[Colored box and container optimization #50979]: {{site.github}}/flutter/flutter/pull/50979
