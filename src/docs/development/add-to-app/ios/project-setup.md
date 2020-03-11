@@ -124,16 +124,21 @@ already have a Podfile, follow the
 to add a `Podfile` to your project.
 
 <ol markdown="1">
-<li markdown="1">Add the following lines to your `Podfile`:
+<li markdown="1">
+
+Add the following lines to your `Podfile`:
 
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
 flutter_application_path = '../my_flutter'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 ```
+
 </li>
 
-<li markdown="1">For each [Podfile target][] that needs to
+<li markdown="1">
+
+For each [Podfile target][] that needs to
 embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
 
 <!--code-excerpt "MyApp/Podfile" title-->
@@ -141,10 +146,13 @@ embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
 target 'MyApp' do
   install_all_flutter_pods(flutter_application_path)
 end
-    ```
+```
+
 </li>
 
-<li markdown="1">Run `pod install`.
+<li markdown="1">
+
+Run `pod install`.
 
 {{site.alert.note}}
   When you change the Flutter plugin dependencies in `my_flutter/pubspec.yaml`,
@@ -238,6 +246,7 @@ to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`).
 {% include app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
 
 ### Embed the frameworks
+
 The generated dynamic frameworks must be embedded into your app
 to be loaded at runtime.
 

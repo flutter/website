@@ -253,21 +253,26 @@ the Play Store.
   [About Android App Bundles][bundle2].
 {{site.alert.end}}
 
+{{site.alert.warning}}
+  Recently, the Flutter team has received [several reports][crash-issue]
+  from developers indicating they are experiencing app
+  crashes on certain devices on Android 6.0. If you are targeting
+  Android 6.0, follow the following steps:
+
+  * If you build an App Bundle
+    Edit `android/gradle.properties` and add the flag: `android.bundle.enableUncompressedNativeLibs=false`.
+
+  * If you build an APK
+    Make sure `android/app/src/AndroidManifest.xml` doesn't set `android:extractNativeLibs=false` in the `<application>` tag.
+
+  For more information, see the [public issue][crash-issue].
+{{site.alert.end}}
+
 ### Build an app bundle
 
 This section describes how to build a release app bundle.
 If you completed the signing steps,
 the app bundle will be signed.
-
-{{site.alert.warning}}
-  Recently, the Flutter team has received several reports
-  from developers indicating they are experiencing app
-  crashes on certain devices on Android 6.0 when building
-  an app bundle.
-  While the Android team is working to identify a feasible
-  solution, you might try [splitting the APK as](#what-is-a-fat-apk)
-  a temporary workaround. For more information, see [Issue 36822][].
-{{site.alert.end}}
 
 From the command line:
 
@@ -429,6 +434,7 @@ The resulting app bundle or APK files are located in
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
+[crash-issue]: https://issuetracker.google.com/issues/147096055
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
@@ -441,7 +447,6 @@ The resulting app bundle or APK files are located in
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
-[Issue 36822]: {{site.github}}/flutter/flutter/issues/36822
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element

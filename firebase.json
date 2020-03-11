@@ -178,6 +178,9 @@
       { "source": "/go/desktop-multi-window-support", "destination": "https://docs.google.com/document/d/11_4wntz_9IJTQOo_Qhp7QF4RfpIMTfVygtOTxQ4OGHY/edit?usp=sharing", "type": 301 },
       { "source": "/go/shaders", "destination": "https://docs.google.com/document/d/1z9K5LernwQ0LVAzfbAMW6ITx63QRdRsoax1NLYEfm4Y/edit?usp=sharing", "type": 301 },
       { "source": "/go/material-date-picker-redesign", "destination": "https://docs.google.com/document/d/1AGKjBvO7EL2PuJGcwaa2PoCusjtTAvpYO7i_3A2vVpc/edit?usp=sharing", "type": 301 },
+      { "source": "/go/encoded-image-dimensions", "destination": "https://docs.google.com/document/d/18KL4CILgjwjeb6vXDsIn5U7vHGSonpgR05FqaSsvoVc/edit?usp=sharing", "type": 301 },
+      { "source": "/go/text-selection-menu-modernization", "destination": "https://docs.google.com/document/d/1qSEvbgi3m-OvB_dUKch8LHOk-iyPFeLgCsXbK0bI2DA/edit?usp=sharing", "type": 301 },
+      { "source": "/go/ui-imitation-games", "destination": "https://docs.google.com/document/d/1SbMjMiFhD2OZGTT3TCAOx6yfG-SYQ5F_fn7wwlZMumM/edit?usp=sharing", "type": 301 },
       { "source": "/go/encoded-image-dimensions", "destination": "https://docs.google.com/document/d/18KL4CILgjwjeb6vXDsIn5U7vHGSonpgR05FqaSsvoVc/edit?usp=sharing", "type": 301 }
     ]
   }
