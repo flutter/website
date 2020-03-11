@@ -161,8 +161,8 @@ following cases:
 * The two lists are identical.
 * There is an insertion or removal of one or more widgets in exactly
   one place in the list.
-* If each list contains a widget with the same key<sup><a href="#a1">5</a></sup>, the two widgets are
-  matched.
+* If each list contains a widget with the same
+  key<sup><a href="#a5">5</a></sup>, the two widgets are matched.
 
 The general approach is to match up the beginning and end of both child
 lists by comparing the runtime type and key of each widget,
@@ -323,7 +323,7 @@ For example, a single viewport can have a collapsible header followed
 by a linear list and then a grid. All three slivers will cooperate through
 the sliver layout protocol to produce only those children that are actually
 visible through the viewport, regardless of whether those children belong
-to the header, the list, or the grid.
+to the header, the list, or the grid<sup><a href="#a6">6</a></sup>.
 
 ### Building widgets on demand
 
@@ -522,7 +522,8 @@ that direct interaction with the rendering layer is awkward at best
 and bug-prone at worst.
 
 Flutter's widget layer introduces a composition mechanism using the
-reactive paradigm to manipulate the underlying rendering tree.
+reactive paradigm<sup><a href="#a7">7</a></sup> to manipulate the
+underlying rendering tree.
 This API abstracts out the tree manipulation by combining the tree
 creation and tree mutation steps into a single tree description (build)
 step, where, after each change to the system state, the new configuration
@@ -553,8 +554,9 @@ is represented as an immutable object that is configured with
 appropriate settings (color, stroke width, etc) and knows how to paint
 itself. When it is time to draw the intermediate steps during the animation,
 the start and end values are passed to the appropriate `lerp` function
-along with a _t_<a href="#a2">8</a> value representing the point along the animation,
-where 0.0 represents the `start` and 1.0 represents the `end`,
+along with a _t_ value representing the point along the animation,
+where 0.0 represents the `start` and 1.0 represents the
+`end`<sup><a href="#a8">8</a></sup>,
 and the function returns a third immutable object representing the
 intermediate stage.
 
