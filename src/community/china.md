@@ -8,7 +8,7 @@ toc: true
 
 The Flutter community has made a Simplified Chinese version of the
 Flutter website available at
-[https://flutter-io.cn](https://flutter-io.cn).
+[https://flutter.cn](https://flutter.cn).
 
 If you’d like to install Flutter using an [installation
 bundle](/docs/development/tools/sdk/archive),
