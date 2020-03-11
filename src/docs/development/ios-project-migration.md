@@ -33,7 +33,7 @@ in **Build Phases > Embed Frameworks**.
 ```
 {% include app-figure.md image="development/ios-project-migration/script-phase.png" alt="Update Thin Binary Script Build Phase" %}
 </li>
-<li markdown="1">In the Runner target **Build Settings > Other Linker Arguments** (`OTHER_LDFLAGS`)
+<li markdown="1">In the Runner target **Build Settings > Other Linker Flags** (`OTHER_LDFLAGS`)
 add `$(inherited) -framework Flutter`.
 {% include app-figure.md image="development/ios-project-migration/linker-arguments.png" alt="Update Other Linker Arguments Build Setting" %}
 </li>
