@@ -10,20 +10,20 @@ next:
 ---
 
 Sending data to the internet is necessary for most apps.
-The `http` package has got it covered too.
+The `http` package has got that covered, too.
 
 This recipe uses the following steps:
 
-  1. Add the `http` package.
-  2. Send data to server using the `http` package.
-  3. Convert the response into a custom Dart object.
-  4. Getting `title` from user input
-  5. Display the response on screen.
+  1. Add the `http` package
+  2. Send data to a server using the `http` package
+  3. Convert the response into a custom Dart object
+  4. Get a `title` from user input
+  5. Display the response on screen
 
 ## 1. Add the `http` package
 
 To install the `http` package, add it to the dependencies section
-of the `pubspec.yaml`. You can find the latest version of the
+of the `pubspec.yaml` file. You can find the latest version of the
 [`http` package][] on pub.dev.
 
 ```yaml
@@ -40,9 +40,9 @@ import 'package:http/http.dart' as http;
 
 ## 2. Sending data to server
 
-In this example, let's send an album title to the
+In this example, you'll send an album title to the
 [JSONPlaceholder][] using the
-[`http.post()`][] method to create an Album.
+[`http.post()`][] method to create an `Album`.
 
 <!-- skip -->
 ```dart
@@ -62,23 +62,26 @@ Future<http.Response> createAlbum(String title) {
 The `http.post()` method returns a `Future` that contains a `Response`.
 
 * [`Future`][] is a core Dart class for working with
-  async operations. A Future object represents a potential
+  asynchronous operations. A Future object represents a potential
   value or error that will be available at some time in the future.
 * The `http.Response` class contains the data received from a successful
   http call.
-* The `createAlbum()` method takes an argument `title` which is sent to the server to create an Album.
+* The `createAlbum()` method takes an argument `title`
+  that is sent to the server to create an `Album`.
 
-## 3. Convert the `http.Response` to custom dart object
+## 3. Convert the `http.Response` to a custom Dart object
 
-While it's easy to make a network request, working with a raw
-`Future<http.Response>` isn't very convenient. To make your life easier,
+While it's easy to make a network request,
+working with a raw `Future<http.Response>`
+isn't very convenient.  To make your life easier,
 convert the `http.Response` into a Dart object.
 
 ### Create an Album class
 
-First, create a `Album` class that contains the data from the
-network request. It includes a factory constructor that
-creates a `Album` from JSON.
+First, create an `Album` class that contains
+the data from the network request.
+It includes a factory constructor that
+creates an `Album` from JSON.
 
 Converting JSON by hand is only one option.
 For more information, see the full article on
@@ -101,19 +104,22 @@ class Album {
 }
 ```
 
-### Convert the `http.Response` to a `Album`
+### Convert the `http.Response` to an `Album`
 
-Now, use the following steps to update the `createAlbum()`
+Use the following steps to update the `createAlbum()`
 function to return a `Future<Album>`:
 
-  1. Convert the response body into a JSON `Map` with the `dart:convert`
-     package.
-  2. If the server returns a `CREATED` response with a status code of 201, then convert
-     the JSON `Map` into a `Album` using the `fromJson()` factory method.
-  3. If the server doesn't return a `CREATED` response with a status code of 201,
-     then throw an exception. (Even in the case of a 404 Not Found server response,
-     throw an exception. Do not return `null`. This is important when examining
-     the data in `snapshot` as shown below.)
+  1. Convert the response body into a JSON `Map` with the
+     `dart:convert` package.
+  2. If the server returns a `CREATED` response with a status
+     code of 201, then convert the JSON `Map` into an `Album`
+     using the `fromJson()` factory method.
+  3. If the server doesn't return a `CREATED` response with a
+     status code of 201, then throw an exception.
+     (Even in the case of a "404 Not Found" server response,
+     throw an exception. Do not return `null`.
+     This is important when examining
+     the data in `snapshot`, as shown below.)
 
 <!-- skip -->
 ```dart
@@ -128,23 +134,29 @@ Future<Album> createAlbum(String title) async {
     }),
   );
   if (response.statusCode == 201) {
-    // If the server did return a 201 CREATED response, then parse the JSON.
+    // If the server did return a 201 CREATED response,
+    // then parse the JSON.
     return Album.fromJson(json.decode(response.body));
   } else {
-    // If the server did not return a 201 CREATED response, then throw an exception.
+    // If the server did not return a 201 CREATED response,
+    // then throw an exception.
     throw Exception('Failed to load album');
   }
 }
 ```
 
-Hooray! Now you've got a function that sends the title to a server to create an album.
+Hooray! Now you've got a function that sends the title to a
+server to create an album.
 
-## 4. Let's get the title as input from user
+## 4. Get a title from user input
 
-Let's create a `TextField` to enter a title and a `RaisedButton` to send data to server.
-Also define a `TextEditingController` to read the user input from a `TextField`
+Next, create a `TextField` to enter a title and
+a `RaisedButton` to send data to server.
+Also define a `TextEditingController` to read the
+user input from a `TextField`.
 
-When the `RaisedButton` is pressed, the `_futureAlbum` is set to the value returned by `createAlbum()` method.
+When the `RaisedButton` is pressed, the `_futureAlbum`
+is set to the value returned by `createAlbum()` method.
 
 <!-- skip -->
 ```dart
@@ -170,27 +182,31 @@ Column(
 )
 ```
 
-On pressing the button **Create Data**, we make the network request,
-which sends the data in the `TextField` to the server with a `POST` request.
-This Future `_futureAlbum` will be used in the next step.
+On pressing the **Create Data** button, make the network request,
+which sends the data in the `TextField` to the server
+as a `POST` request.
+The Future, `_futureAlbum`, is used in the next step.
 
-## 5. Display the response on screen.
+## 5. Display the response on screen
 
 To display the data on screen, use the
 [`FutureBuilder`][] widget.
 The `FutureBuilder` widget comes with Flutter and
-makes it easy to work with async data sources.
+makes it easy to work with asynchronous data sources.
 You must provide two parameters:
 
-  1. The `Future` you want to work with. In this case, the future returned from
-  the `createAlbum()` function.
-  2. A `builder` function that tells Flutter what to render, depending on the
-  state of the `Future`: loading, success, or error.
+  1. The `Future` you want to work with. In this case,
+     the future returned from the `createAlbum()` function.
+  2. A `builder` function that tells Flutter what to render,
+     depending on the state of the `Future`: loading,
+     success, or error.
 
-Note that `snapshot.hasData` only returns `true` when the snapshot contains
-a non-null data value. This is why the `createAlbum` function should throw an exception
-even in the case of a 404 Not Found server response. If `createAlbum` returns `null`
-then `CircularProgressIndicator` will be shown indefinitely.
+Note that `snapshot.hasData` only returns `true` when
+the snapshot contains a non-null data value.
+This is why the `createAlbum()` function should throw an exception
+even in the case of a "404 Not Found" server response.
+If `createAlbum()` returns `null`, then
+`CircularProgressIndicator` displays indefinitely.
 
 <!-- skip -->
 ```dart
@@ -315,21 +331,20 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
 ```
 
-[Fetch Data]: /docs/cookbook/networking/fetch-data
 [ConnectionState]: {{site.api}}/flutter/widgets/ConnectionState-class.html
 [`didChangeDependencies()`]: {{site.api}}/flutter/widgets/State/didChangeDependencies.html
+[Fetch Data]: /docs/cookbook/networking/fetch-data
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
-[JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [`http`]: {{site.pub-pkg}}/http
 [`http.post()`]: {{site.pub-api}}/http/latest/http/post.html
 [`http` package]: {{site.pub-pkg}}/http#-installing-tab-
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
+[JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [JSON and serialization]: /docs/development/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

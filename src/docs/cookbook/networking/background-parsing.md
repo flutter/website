@@ -25,10 +25,10 @@ On Android, this means scheduling work on a different thread.
 In Flutter, you can use a separate [Isolate][].
 This recipe uses the following steps:
 
-  1. Add the `http` package.
-  2. Make a network request using the `http` package.
-  3. Convert the response into a list of photos.
-  4. Move this work to a separate isolate.
+  1. Add the `http` package
+  2. Make a network request using the `http` package
+  3. Convert the response into a list of photos
+  4. Move this work to a separate isolate
 
 ## 1. Add the `http` package
 
@@ -43,7 +43,8 @@ dependencies:
 
 ## 2. Make a network request
 
-In this example, fetch a JSON large document that contains a list of
+In this example,
+you'll fetch a JSON large document that contains a list of
 5000 photo objects from the [JSONPlaceholder REST API][],
 using the [`http.get()`][] method.
 
@@ -64,7 +65,7 @@ Future<http.Response> fetchPhotos(http.Client client) async {
 Next, following the guidance from the
 [Fetch data from the internet][] recipe,
 convert the `http.Response` into a list of Dart objects.
-This makes the data easier to work with in the future.
+This makes the data easier to work with.
 
 ### Create a `Photo` class
 
@@ -147,8 +148,8 @@ Isolates communicate by passing messages back and forth. These messages can
 be primitive values, such as `null`, `num`, `bool`, `double`, or `String`, or
 simple objects such as the `List<Photo>` in this example.
 
-You might experience errors if you try to pass more complex objects, such as
-a `Future` or `http.Response` between isolates.
+You might experience errors if you try to pass more complex objects,
+such as a `Future` or `http.Response` between isolates.
 
 ## Complete example
 

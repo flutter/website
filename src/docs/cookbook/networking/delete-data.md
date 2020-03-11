@@ -9,18 +9,20 @@ next:
   path: /docs/cookbook/networking/authenticated-requests
 ---
 
-You'll learn how to delete data on internet using the `http` package.
+In this recipe, you'll learn how to delete data over
+the internet using the `http` package.
 
 This recipe uses the following steps:
 
-  1. Add the `http` package.
-  2. Delete data on the server.
-  3. Update the screen.
+  1. Add the `http` package
+  2. Delete data on the server
+  3. Update the screen
 
 ## 1. Add the `http` package
 
-To install the `http` package, add it to the dependencies section
-of the `pubspec.yaml`. You can find the latest version of the
+To install the `http` package,
+add it to the dependencies section of the `pubspec.yaml` file.
+You can find the latest version of the
 [`http` package][] on pub.dev.
 
 ```yaml
@@ -38,8 +40,10 @@ import 'package:http/http.dart' as http;
 ## 2. Delete data on the server
 
 In this example, you'll delete an album from the
-[JSONPlaceholder][] using the
-`http.delete()` method. Note that you will require the `id` of the album which you want to delete. For this example, you'll use something you already know, say `id = 1`.
+[JSONPlaceholder][] using the `http.delete()` method.
+Note that this requires the `id` of the album that
+you want to delete. For this example,
+use something you already know, for example `id = 1`.
 
 <!-- skip -->
 ```dart
@@ -62,11 +66,17 @@ The `http.delete()` method returns a `Future` that contains a `Response`.
   value or error that will be available at some time in the future.
 * The `http.Response` class contains the data received from a successful
   http call.
-* The `deleteAlbum()` method takes an argument `id` which is needed to identify the data which has to be deleted from the       server.
+* The `deleteAlbum()` method takes an `id` argument that
+  is needed to identify the data to be deleted from the server.
 
 ## 3. Update the screen
 
-In order to check whether the data has been deleted or not, you shall first fetch the data from the [JSONPlaceholder][] using the `http.get()` method and display it in the screen, check [Fetch Data][] for complete example. Then you shall have a button `Delete Data` which when pressed will call the `deleteAlbum()` method.
+In order to check whether the data has been deleted or not,
+first fetch the data from the [JSONPlaceholder][]
+using the `http.get()` method, and display it in the screen.
+(See the [Fetch Data][] recipe for a complete example.)
+You should now have a **Delete Data** button that,
+when pressed, calls the `deleteAlbum()` method.
 
 <!-- skip -->
 ```dart
@@ -85,10 +95,16 @@ Column(
   ],
 );
 ```
-Now, when you click on the ***Delete Data*** button, the `deleteAlbum()` method will be called and the id you are passing will be the id of the data that you retrieved from the internet. This means you are going to delete the same data which you fetched from the internet.
+Now, when you click on the ***Delete Data*** button,
+the `deleteAlbum()` method is called and the id
+you are passing is the id of the data that you retrieved
+from the internet. This means you are going to delete
+the same data that you fetched from the internet.
 
-### Returning a response from the deleteAlbum()
-Once the delete request has been made, you can return a response from the `deleteAlbum()` method to notify our screen that the data has been deleted. 
+### Returning a response from the deleteAlbum() method
+Once the delete request has been made,
+you can return a response from the `deleteAlbum()`
+method to notify our screen that the data has been deleted. 
 
 <!-- skip -->
 ```dart
@@ -101,9 +117,12 @@ Future<Album> deleteAlbum(String id) async {
   );
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response, then parse the JSON.
-    // After deleting,  you get an empty JSON `{}` response
-    // you do not return `null` here, if you did, `snapshot.hasData` would always return false on `FutureBuilder`
+    // If the server did return a 200 OK response,
+    // then parse the JSON. After deleting,
+    // you'll get an empty JSON `{}` response.
+    // Don't return `null` here, otherwise
+    // `snapshot.hasData` would always return false
+    // on `FutureBuilder`.
     return Album.fromJson(json.decode(response.body));
   } else {
     throw Exception('Failed to delete album.');
@@ -111,9 +130,15 @@ Future<Album> deleteAlbum(String id) async {
 }
 ```
 
-Our `FutureBuilder()` will then rebuild when it receives a response. Since our response will not have any data in its body if the request was successful, the `Album.fromJson()` method will create an instance of the Album object with default value(which will be null in our case). This behavior can be altered in any way you wish.
+`FutureBuilder()` now rebuilds when it receives a response.
+Since the response won't have any data in its body
+if the request was successful,
+the `Album.fromJson()` method creates an instance of the
+`Album` object with a default value (`null` in our case).
+This behavior can be altered in any way you wish.
 
-That's all! Now you've got a function that deletes the data from the internet.
+That's all!
+Now you've got a function that deletes the data from the internet.
 
 ## Complete example
 
@@ -146,12 +171,15 @@ Future<Album> deleteAlbum(String id) async {
   );
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response, then parse the JSON.
-    // After deleting,  you get an empty JSON `{}` response
-    // you do not return `null` here, if you did, `snapshot.hasData` would always return false on `FutureBuilder`
+    // If the server did return a 200 OK response,
+    // then parse the JSON. After deleting,
+    // you'll get an empty JSON `{}` response.
+    // Don't return `null`, otherwise `snapshot.hasData`
+    // would always return false on `FutureBuilder`.
     return Album.fromJson(jsonDecode(response.body));
   } else {
-    // If the server did not return a 200 OK response, then throw an exception.
+    // If the server did not return a "200 OK response",
+    // then throw an exception.
     throw Exception('Failed to delete album.');
   }
 }
@@ -207,7 +235,8 @@ class _MyAppState extends State<MyApp> {
           child: FutureBuilder<Album>(
             future: _futureAlbum,
             builder: (context, snapshot) {
-              //  if connection is done, check for response data or error
+              // If the connection is done,
+              // check for response data or an error.
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasData) {
                   return Column(
