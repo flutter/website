@@ -136,7 +136,7 @@ this task.
 FloatingActionButton(
   // When the button is pressed, give focus to the text field using
   // myFocusNode.
-  onPressed: () => FocusScope.of(context).requestFocus(myFocusNode),
+  onPressed: () => myFocusNode.requestFocus(),
 );
 ```
 
@@ -210,7 +210,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
       floatingActionButton: FloatingActionButton(
         // When the button is pressed,
         // give focus to the text field using myFocusNode.
-        onPressed: () => FocusScope.of(context).requestFocus(myFocusNode),
+        onPressed: () => myFocusNode.requestFocus(),
         tooltip: 'Focus Second Text Field',
         child: Icon(Icons.edit),
       ), // This trailing comma makes auto-formatting nicer for build methods.
