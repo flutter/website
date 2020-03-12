@@ -182,7 +182,8 @@
       { "source": "/go/text-selection-menu-modernization", "destination": "https://docs.google.com/document/d/1qSEvbgi3m-OvB_dUKch8LHOk-iyPFeLgCsXbK0bI2DA/edit?usp=sharing", "type": 301 },
       { "source": "/go/ui-imitation-games", "destination": "https://docs.google.com/document/d/1SbMjMiFhD2OZGTT3TCAOx6yfG-SYQ5F_fn7wwlZMumM/edit?usp=sharing", "type": 301 },
       { "source": "/go/encoded-image-dimensions", "destination": "https://docs.google.com/document/d/18KL4CILgjwjeb6vXDsIn5U7vHGSonpgR05FqaSsvoVc/edit?usp=sharing", "type": 301 },
-      { "source": "/go/calculating-flutter-frame-rate", "destination": "https://docs.google.com/document/d/1YGLELXWdC6YIN03QzEzcIRJc56gCnabPBW8BHCAFR58/edit?usp=sharing", "type": 301 }
+      { "source": "/go/calculating-flutter-frame-rate", "destination": "https://docs.google.com/document/d/1YGLELXWdC6YIN03QzEzcIRJc56gCnabPBW8BHCAFR58/edit?usp=sharing", "type": 301 },
+      { "source": "/go/annotator-tree", "destination": "https://docs.google.com/document/d/1YtkdZSx1687Ipbff06qp3XglmJym3Wc9boY4I-bYs4A/edit?usp=sharing", "type": 301 }
     ]
   }
 }
