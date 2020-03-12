@@ -69,7 +69,7 @@ while they now jointly represent
 
 ## Migration guide
 
-Code that are actively using this local position is probably
+Code that is actively using this local position is probably
 directly interacting with layers, since using render objects or
 widgets will already have made this result unreliable. In order to
 preserve the previous behavior, you can reimplement
