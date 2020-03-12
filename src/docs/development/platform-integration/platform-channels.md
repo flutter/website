@@ -481,7 +481,7 @@ as was used on the Flutter client side.
 
   FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
                                           methodChannelWithName:@"samples.flutter.dev/battery"
-                                          binaryMessenger:controller];
+                                          binaryMessenger:controller.binaryMessenger];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
     // Note: this method is invoked on the UI thread.
