@@ -14,12 +14,12 @@ The `http` package has got that covered!
 
 This recipe uses the following steps:
 
-  1. Add the `http` package
-  2. Update data over the internet using the `http` package
-  3. Convert the response into a custom Dart object
-  4. Get the data from the internet
-  5. Update the existing `title` from user input
-  6. Update and display the response on screen
+  1. Add the `http` package.
+  2. Update data over the internet using the `http` package.
+  3. Convert the response into a custom Dart object.
+  4. Get the data from the internet.
+  5. Update the existing `title` from user input.
+  6. Update and display the response on screen.
 
 ## 1. Add the `http` package
 
@@ -43,7 +43,7 @@ import 'package:http/http.dart' as http;
 
 ## 2. Updating data over the internet using the `http` package
 
-In this example, you'll learn how to update an album title to the
+This recipe covers how to update an album title to the
 [JSONPlaceholder][] using the [`http.put()`][] method.
 
 <!-- skip -->
@@ -154,6 +154,7 @@ Now you've got a function that updates the title of an album.
 Get the data from internet before you can update it.
 For a complete example, see the [Fetch data][] recipe.
 
+<!-- skip -->
 ```dart
 Future<Album> fetchAlbum() async {
   final response =

@@ -280,6 +280,7 @@ the widgets are resized according to their
   what fraction of the total remaining space each
   `Flexible` widget receives.
 
+  <!-- skip -->
   ```dart
   remainingSpace * (flex / totalOfAllFlexValues)
   ```
@@ -327,12 +328,14 @@ wrap a widget and force the widget to fill extra space.
 
   For example:
 
+  <!-- skip -->
   ```dart
   Expanded(child: BlueBox(),),
   ```
   **3.** Select the **Format** button to properly format the code,
          and run again.
 {{site.alert.end}}
+
 {% comment %}
   Gist: https://gist.github.com/c4dfa9058f803dea1cff4fca2532977a
 {% endcomment %}
@@ -587,6 +590,7 @@ which are positioned below the contact information.
   </li>
 </ul>
 
+  <!-- skip -->
   ```dart
      Row(
        children: [
@@ -630,8 +634,8 @@ which are positioned below the contact information.
   so the contact information and icons are displayed below the
   name and title:
 
+  <!-- skip -->
   ```dart
-
      ],
     ), // <--- Closing parenthesis for the Row
     SizedBox(),

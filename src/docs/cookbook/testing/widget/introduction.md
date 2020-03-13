@@ -58,6 +58,7 @@ dev_dependencies:
 Next, create a widget for testing. For this recipe,
 create a widget that displays a `title` and `message`.
 
+<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   final String title;

@@ -83,7 +83,8 @@ class _DraggableCardState extends State<DraggableCard> {
 ```
 
 Make the `_DraggableCardState` class extend from
-[SingleTickerProviderStateMixin][].  Then construct an [AnimationController][] in
+[SingleTickerProviderStateMixin][].
+Then construct an [AnimationController][] in
 `initState` and set `vsync` to `this`.
 
 {{site.alert.note}}
@@ -92,6 +93,7 @@ Make the `_DraggableCardState` class extend from
   documentation for [TickerProvider][].
 {{site.alert.end}}
 
+<!-- skip -->
 ```dart
 class _DraggableCardState extends State<DraggableCard>
     with SingleTickerProviderStateMixin {
@@ -118,6 +120,7 @@ class _DraggableCardState extends State<DraggableCard>
 Make the widget move when it's dragged, and add an [Alignment][] field to the
 `_DraggableCardState` class:
 
+<!-- skip -->
 ```dart
 Alignment _dragAlignment = Alignment.center;
 ```
@@ -128,6 +131,7 @@ size of the widget, and divide by 2. (This converts units of "pixels dragged" to
 coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 `_dragAlignment`:
 
+<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -161,6 +165,7 @@ Add an `Animation<Alignment>` field and an `_runAnimation` method. This
 method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center.
 
+<!-- skip -->
 ```dart
   Animation<Alignment> _animation;
 
@@ -179,6 +184,7 @@ dragged to, to the point in the center.
 Next, update `_dragAlignment` when the `AnimationController` produces a
 value:
 
+<!-- skip -->
 ```dart
 @override
 void initState() {
@@ -194,6 +200,7 @@ void initState() {
 
 Next, make the `Align` widget use the `_dragAlignment` field:
 
+<!-- skip -->
 ```dart
 child: Align(
   alignment: _dragAlignment,
@@ -207,6 +214,7 @@ child: Align(
 Finally, update the `GestureDetector` to manage the animation controller:
 
 
+<!-- skip -->
 ```dart
 onPanDown: (details) {
  _controller.stop();

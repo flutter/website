@@ -1,5 +1,6 @@
 ---
 title: Load sequence, performance, and memory
+description: What are thhe steps involved when showing a Flutter UI.
 ---
 
 This page describes the breakdown of the steps involved

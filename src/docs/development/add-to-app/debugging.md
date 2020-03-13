@@ -67,6 +67,7 @@ In order to attach to specific isolates instead, do the following:
 
 1. Name the Flutter root isolate of interest in its Dart source.
 
+    <!-- skip -->
     ```dart
     // main.dart
     import 'dart:ui' as ui;

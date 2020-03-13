@@ -1,5 +1,6 @@
 ---
 title: List of state management approaches
+description: A list of different approaches to managing state.
 prev:
   title: Simple app state management
   path: /docs/development/data-and-backend/state-mgmt/simple

@@ -387,6 +387,7 @@ a different Dart function.
   must be annotated with the following in order to
   not be [tree-shaken][] away when compiling:
 
+  <!-- skip -->
   <!--code-excerpt "main.dart" title-->
   ```dart
   @pragma('vm:entry-point')

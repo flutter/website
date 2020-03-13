@@ -1,5 +1,6 @@
 ---
 title: Differentiate between ephemeral state and app state
+description: How to tell the difference between ephemeral and app state.
 prev:
   title: Start thinking declaratively
   path: /docs/development/data-and-backend/state-mgmt/declarative

@@ -70,6 +70,7 @@ the message.
 Here's an example of providing
 an additional `action` to the `SnackBar` widget:
 
+<!-- skip -->
 ```dart
 final snackBar = SnackBar(
   content: Text('Yay! A SnackBar!'),

@@ -247,6 +247,7 @@ To use this package:
 
 1. Open `lib/main.dart` and replace its full contents with:
 
+    <!-- skip -->
     ```dart
     import 'package:css_colors/css_colors.dart';
     import 'package:flutter/material.dart';
@@ -302,6 +303,7 @@ To use this plugin:
 1. Open `lib/main.dart` and replace its full contents with the
    following:
 
+    <!-- skip -->
     ```dart
     import 'package:flutter/material.dart';
     import 'package:url_launcher/url_launcher.dart';

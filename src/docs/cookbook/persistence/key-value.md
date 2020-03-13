@@ -116,7 +116,7 @@ const MethodChannel('plugins.flutter.io/shared_preferences')
   });
 ```
 
-## Example
+## Complete example
 
 ```dart
 import 'package:flutter/material.dart';
@@ -187,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),

@@ -1,5 +1,6 @@
 ---
 title: Start thinking declaratively
+description: How to think about declarative programming.
 prev:
   title: Intro
   path: /docs/development/data-and-backend/state-mgmt
@@ -8,9 +9,9 @@ next:
   path: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
 ---
 
-If you're coming to Flutter from an imperative framework (such as Android SDK or
-iOS UIKit), you need to start thinking about app development from a new
-perspective.
+If you're coming to Flutter from an imperative framework
+(such as Android SDK or iOS UIKit), you need to start
+thinking about app development from a new perspective.
 
 Many assumptions that you might have don't apply to Flutter. For example, in
 Flutter it's okay to rebuild parts of your UI from scratch instead of modifying
@@ -33,7 +34,7 @@ There is no imperative changing of the UI itself
 and the UI rebuilds from scratch.
 
 Read more about the declarative approach to UI programming
-[in the get started guide].
+[in the get started guide][].
 
 The declarative style of UI programming has many benefits.
 Remarkably, there is only one code path for any state of the UI.

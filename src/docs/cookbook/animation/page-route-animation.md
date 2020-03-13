@@ -43,6 +43,7 @@ To start, use a [`PageRouteBuilder`][] to create a [`Route`][].
 The following example creates two routes: a home route with a "Go!" button, and
 a second route titled "Page 2".
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 
@@ -102,6 +103,7 @@ The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
 Animation<double> into an Animation<Offset> using a Tween:
 
+<!-- skip -->
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -122,6 +124,7 @@ FractionalTranslation widget) whenever the value of the animation changes.
 AnimatedWidget Return a [`SlideTransition`][]
 with the `Animation<Offset>` and the child widget:
 
+<!-- skip -->
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -148,6 +151,7 @@ makes the animation start quickly and end slowly.
 To use a Curve, create a new [`CurveTween`][]
 and pass it a Curve:
 
+<!-- skip -->
 ```dart
 var curve = Curves.ease;
 var curveTween = CurveTween(curve: curve);
@@ -161,6 +165,7 @@ combined the `Tween<Offset>` from step 2.
 To combine the tweens,
 use [`chain()`][]:
 
+<!-- skip -->
 ```dart
 var begin = Offset(0.0, 1.0);
 var end = Offset.zero;
@@ -172,6 +177,7 @@ var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 Then use this tween by passing it to `animation.drive()`. This creates a new
 `Animation<Offset>` that can be given to the `SlideTransition` widget:
 
+<!-- skip -->
 ```dart
 return SlideTransition(
   position: animation.drive(tween),
@@ -192,6 +198,7 @@ values are computed in this order:
 Another way to create an `Animation<Offset>` with an easing curve is to use a
 `CurvedAnimation`:
 
+<!-- skip -->
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);

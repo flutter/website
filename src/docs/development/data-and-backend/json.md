@@ -419,6 +419,7 @@ you might have experienced an`Invalid argument` error.
 
 Consider the following `Address` class:
 
+<!-- skip -->
 ```dart
 import 'package:json_annotation/json_annotation.dart';
 part 'address.g.dart';
@@ -437,6 +438,7 @@ class Address {
 
 The `Address` class is nested inside the `User` class:
 
+<!-- skip -->
 ```dart
 import 'address.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -458,6 +460,7 @@ Running `flutter pub run build_runner build` in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function
 looks something like the following:
 
+<!-- skip -->
 ```dart
 (
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -468,6 +471,7 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
 
 All looks fine now, but if you do a print() on the user object:
 
+<!-- skip -->
 ```dart
 Address address = Address("My st.", "New York");
 User user = User("John", address);

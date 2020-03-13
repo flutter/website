@@ -25,10 +25,10 @@ On Android, this means scheduling work on a different thread.
 In Flutter, you can use a separate [Isolate][].
 This recipe uses the following steps:
 
-  1. Add the `http` package
-  2. Make a network request using the `http` package
-  3. Convert the response into a list of photos
-  4. Move this work to a separate isolate
+  1. Add the `http` package.
+  2. Make a network request using the `http` package.
+  3. Convert the response into a list of photos.
+  4. Move this work to a separate isolate.
 
 ## 1. Add the `http` package
 
@@ -43,9 +43,9 @@ dependencies:
 
 ## 2. Make a network request
 
-In this example,
-you'll fetch a JSON large document that contains a list of
-5000 photo objects from the [JSONPlaceholder REST API][],
+This example covers how to fetch a large JSON document
+that contains a list of 5000 photo objects from the
+[JSONPlaceholder REST API][],
 using the [`http.get()`][] method.
 
 <!-- skip -->
