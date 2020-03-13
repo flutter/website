@@ -14,11 +14,11 @@ The `http` package has got that covered, too.
 
 This recipe uses the following steps:
 
-  1. Add the `http` package
-  2. Send data to a server using the `http` package
-  3. Convert the response into a custom Dart object
-  4. Get a `title` from user input
-  5. Display the response on screen
+  1. Add the `http` package.
+  2. Send data to a server using the `http` package.
+  3. Convert the response into a custom Dart object.
+  4. Get a `title` from user input.
+  5. Display the response on screen.
 
 ## 1. Add the `http` package
 
@@ -40,9 +40,10 @@ import 'package:http/http.dart' as http;
 
 ## 2. Sending data to server
 
-In this example, you'll send an album title to the
+This recipe covers how to create an `Album`
+by sending an album title to the
 [JSONPlaceholder][] using the
-[`http.post()`][] method to create an `Album`.
+[`http.post()`][] method.
 
 <!-- skip -->
 ```dart

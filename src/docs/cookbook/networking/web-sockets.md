@@ -19,10 +19,10 @@ In this example, connect to a
 The server sends back the same message you send to it.
 This recipe uses the following steps:
 
-  1. Connect to a WebSocket server
-  2. Listen for messages from the server
-  3. Send data to the server
-  4. Close the WebSocket connection
+  1. Connect to a WebSocket server.
+  2. Listen for messages from the server.
+  3. Send data to the server.
+  4. Close the WebSocket connection.
 
 ## 1. Connect to a WebSocket server
 

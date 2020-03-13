@@ -1,5 +1,6 @@
 ---
 title: Introduction to widgets
+description: Learn about Flutter's widgets.
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -142,7 +143,7 @@ class MyScaffold extends StatelessWidget {
           MyAppBar(
             title: Text(
               'Example title',
-              style: Theme.of(context).primaryTextTheme.title,
+              style: Theme.of(context).primaryTextTheme.headline6,
             ),
           ),
           Expanded(

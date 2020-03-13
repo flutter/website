@@ -27,6 +27,7 @@ final Brightness _brightness;
 ```
 
 It is now a stored property:
+
 <!-- skip -->
 ```dart
 final Brightness brightness;
@@ -43,6 +44,7 @@ With this change, it is now possible to override
 `CupertinoThemeData.brightness` in a `CupertinoThemeData`
 subclass to change the brightness override. For example:
 
+<!-- skip -->
 ```dart
 class AwaysDarkCupertinoThemeData extends CupertinoThemeData {
   Brightness brightness => Brightness.dark;

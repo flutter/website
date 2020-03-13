@@ -23,6 +23,7 @@ which can trigger an undesired call to `ImageProvider.load`.
 
 The default implementation checks both pending and cached image buckets.
 
+<!-- skip -->
 ```dart
   bool containsKey(Object key) {
     return _pendingImages[key] != null || _cache[key] != null;

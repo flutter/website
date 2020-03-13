@@ -8,7 +8,7 @@ next:
 
 _If you are already familiar with state management in reactive apps,
 you can skip this section, though you might want to review the
-[list of different approaches]._
+[list of different approaches][]._
 
 {% asset development/data-and-backend/state-mgmt/state-management-explainer width="100%" alt="A short animated gif that shows the workings of a simple declarative state management system. This is explained in full in one of the following pages. Here it's just a decoration." %}
 

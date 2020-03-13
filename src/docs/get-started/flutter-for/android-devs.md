@@ -98,6 +98,7 @@ The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
 the `Text` widget you'll find that it subclasses `StatelessWidget`.
 
+<!-- skip -->
 ```dart
 Text(
   'I like Flutter!',
@@ -116,6 +117,7 @@ update it when the user clicks the button.
 
 For example:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 
@@ -179,6 +181,7 @@ with a widget tree.
 
 The following example shows how to display a simple widget with padding:
 
+<!-- skip -->
 ```dart
   @override
   Widget build(BuildContext context) {
@@ -202,14 +205,15 @@ You can view some of the layouts that Flutter has to offer in the
 
 ### How do I add or remove a component from my layout?
 
-In Android, you call `addChild()` or `removeChild()` on a parent to dynamically
-add or remove child views. In Flutter, because widgets are immutable there is
-no direct equivalent to `addChild()`.
-Instead, you can pass a function to the parent that returns a widget, and
-control that child's creation with a boolean flag.
+In Android, you call `addChild()` or `removeChild()`
+on a parent to dynamically add or remove child views.
+In Flutter, because widgets are immutable there is
+no direct equivalent to `addChild()`.  Instead,
+you can pass a function to the parent that returns a widget,
+and control that child's creation with a boolean flag.
 
-For example, here is how you can toggle between two widgets when you click on a
-`FloatingActionButton`:
+For example, here is how you can toggle between two
+widgets when you click on a `FloatingActionButton`:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -447,6 +451,7 @@ For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `RaisedButton` with
 a label, rather than by extending `RaisedButton`:
 
+<!-- skip -->
 ```dart
 class CustomButton extends StatelessWidget {
   final String label;
@@ -462,6 +467,7 @@ class CustomButton extends StatelessWidget {
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
+<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -500,6 +506,7 @@ In Flutter, you have a couple options to navigate between pages:
 
 The following example builds a Map.
 
+<!-- skip -->
 ```dart
 void main() {
  runApp(MaterialApp(
@@ -515,6 +522,7 @@ void main() {
 
 Navigate to a route by `push`ing its name to the `Navigator`.
 
+<!-- skip -->
 ```dart
 Navigator.of(context).pushNamed('/b');
 ```
@@ -617,6 +625,7 @@ public class MainActivity extends FlutterActivity {
 Finally, request the data from the Flutter side
 when the widget is rendered:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -681,6 +690,7 @@ This is done by `await`ing on the `Future` returned by `push()`.
 For example, to start a location route that lets the user select
 their location, you could do the following:
 
+<!-- skip -->
 ```dart
 Map coordinates = await Navigator.of(context).pushNamed('/location');
 ```
@@ -688,6 +698,7 @@ Map coordinates = await Navigator.of(context).pushNamed('/location');
 And then, inside your location route, once the user has selected their location
 you can `pop` the stack with the result:
 
+<!-- skip -->
 ```dart
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 ```
@@ -714,6 +725,7 @@ have used Kotlin's coroutines.
 For example, you can run network code without causing the UI to hang by
 using `async`/`await` and letting Dart do the heavy lifting:
 
+<!-- skip -->
 ```dart
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -821,6 +833,7 @@ you would keep _any_ sort of work out of the main thread in Android.
 For I/O-bound work, declare the function as an `async` function,
 and `await` on long-running tasks inside the function:
 
+<!-- skip -->
 ```dart
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -853,6 +866,7 @@ Isolates are true to their name, and cannot share memory
 The following example shows, in a simple isolate, how to share data back to
 the main thread to update the UI.
 
+<!-- skip -->
 ```dart
 loadData() async {
   ReceivePort receivePort = ReceivePort();
@@ -1042,6 +1056,7 @@ dependencies:
 
 To make a network call, call `await` on the `async` function `http.get()`:
 
+<!-- skip -->
 ```dart
 import 'dart:convert';
 
@@ -1222,12 +1237,14 @@ assets:
 
 You can then access your images using `AssetImage`:
 
+<!-- skip -->
 ```dart
 return AssetImage("images/my_icon.jpeg");
 ```
 
 or directly in an `Image` widget:
 
+<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1241,6 +1258,7 @@ Flutter currently doesn't have a dedicated resources-like system for strings.
 At the moment, the best practice is to hold your copy text in a class as
 static fields and accessing them from there. For example:
 
+<!-- skip -->
 ```dart
 class Strings {
   static String welcomeMessage = "Welcome To Flutter";
@@ -1249,6 +1267,7 @@ class Strings {
 
 Then in your code, you can access your strings as such:
 
+<!-- skip -->
 ```dart
 Text(Strings.welcomeMessage)
 ```
@@ -1333,6 +1352,7 @@ at any rate.
 Here's an example of how to observe the lifecycle status of the
 containing activity:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/widgets.dart';
 
@@ -1392,6 +1412,7 @@ If you notice the two code samples are identical with the exception of the
 exploited to develop rich layouts that can change overtime with the same
 children.
 
+<!-- skip -->
 ```dart
   @override
   Widget build(BuildContext context) {
@@ -1407,6 +1428,7 @@ children.
   }
 ```
 
+<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1448,6 +1470,7 @@ This might seem like overkill coming from Android,
 but in Flutter a ListView widget is
 both a ScrollView and an Android ListView.
 
+<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1562,9 +1585,10 @@ Using the GestureDetector, you can listen to a wide range of Gestures such as:
     screen and was moving at a specific velocity when it stopped
     contacting the screen.
 
-The following example shows a `GestureDetector` that rotates the Flutter logo
-on a double tap:
+The following example shows a `GestureDetector`
+that rotates the Flutter logo on a double tap:
 
+<!-- skip -->
 ```dart
 AnimationController controller;
 CurvedAnimation curve;
@@ -1614,6 +1638,7 @@ Due to Flutter's immutable widget pattern, you pass a list of
 widgets to your ListView, and Flutter takes care of making sure
 that scrolling is fast and smooth.
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 
@@ -1808,8 +1833,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ```
 
 The recommended, efficient, and effective way to build a list uses a
-ListView.Builder. This method is great when you have a dynamic
-List or a List with very large amounts of data. This is essentially
+`ListView.Builder`. This method is great when you have a dynamic
+`List` or a `List` with very large amounts of data. This is essentially
 the equivalent of RecyclerView on Android, which automatically
 recycles list elements for you:
 
@@ -1881,13 +1906,13 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
-Instead of creating a "ListView", create a ListView.builder that
-takes two key parameters: the initial length of the list, and an ItemBuilder
-function.
+Instead of creating a "ListView", create a
+`ListView.builder` that takes two key parameters: the
+initial length of the list, and an `ItemBuilder` function.
 
-The ItemBuilder function is similar to the `getView` function in an Android
-adapter; it takes a position, and returns the row you want rendered at
-that position.
+The `ItemBuilder` function is similar to the `getView`
+function in an Android adapter; it takes a position,
+and returns the row you want rendered at that position.
 
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead `.add`s to it.
@@ -1912,6 +1937,7 @@ fonts:
 
 Then assign the font to your `Text` widget:
 
+<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1962,6 +1988,7 @@ In Flutter, you can easily show a "hint" or a placeholder text for your input by
 adding an InputDecoration object to the decoration constructor parameter for
 the Text Widget.
 
+<!-- skip -->
 ```dart
 body: Center(
   child: TextField(
@@ -2133,6 +2160,7 @@ To customize the colors and styles of any child components, pass a
 `ThemeData` object to the `MaterialApp` widget. For example, in the code below,
 the primary swatch is set to blue and text selection color is red.
 
+<!-- skip -->
 ```dart
 class SampleApp extends StatelessWidget {
   @override
@@ -2162,6 +2190,7 @@ In Flutter, access this functionality using the
 This plugin wraps the functionality of both
 Shared Preferences and NSUserDefaults (the iOS equivalent).
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

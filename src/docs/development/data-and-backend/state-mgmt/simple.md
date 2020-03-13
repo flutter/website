@@ -1,5 +1,6 @@
 ---
 title: Simple app state management
+description: A simple form of state management.
 prev:
   title: Ephemeral versus app state
   path: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
@@ -8,8 +9,8 @@ next:
   path: /docs/development/data-and-backend/state-mgmt/options
 ---
 
-Now that you know about [declarative UI programming]
-and the difference between [ephemeral and app state],
+Now that you know about [declarative UI programming][]
+and the difference between [ephemeral and app state][],
 you are ready to learn about simple app state management.
 
 On this page, we are going to be using the `provider` package.
@@ -103,6 +104,7 @@ construct new widgets in the build methods of their parents,
 if you want to change `contents`, it needs to live in `MyCart`'s
 parent or above.
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (myTapHandler)"?>
 ```dart
 // GOOD
@@ -114,6 +116,7 @@ void myTapHandler(BuildContext context) {
 
 Now `MyCart` has only one code path for building any version of the UI.
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (build)"?>
 ```dart
 // GOOD
@@ -155,6 +158,7 @@ when it is clicked. Dart's functions are first class objects,
 so you can pass them around any way you want. So, inside
 `MyCatalog` you can define the following:
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/passing_callbacks.dart (methods)"?>
 ```dart
 @override
@@ -209,6 +213,7 @@ at all, but it's an easy class to work with.)
 In our shopping app example, we want to manage the state of the cart in a
 `ChangeNotifier`. We create a new class that extends it, like so:
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
 class CartModel extends [!ChangeNotifier!] {
@@ -240,6 +245,7 @@ any higher-level classes in Flutter. It's easily testable (you don't even need
 to use [widget testing] for it). For example,
 here's a simple unit test of `CartModel`:
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
 ```dart
 test('adding item increases total cost', () {
@@ -266,6 +272,7 @@ You don't want to place `ChangeNotifierProvider` higher than necessary
 (because you don't want to pollute the scope). But in our case,
 the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/main.dart (main)" replace="/ChangeNotifierProvider/[!$&!]/g"?>
 ```dart
 void main() {
@@ -285,6 +292,7 @@ of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
 
 If you want to provide more than one class, you can use `MultiProvider`:
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/main.dart (multi-provider-main)" replace="/multiProviderMain/main/g;/MultiProvider/[!$&!]/g"?>
 ```dart
 void main() {
@@ -307,6 +315,7 @@ Now that `CartModel` is provided to widgets in our app through the
 
 This is done through the `Consumer` widget.
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (descendant)" replace="/Consumer/[!$&!]/g"?>
 ```dart
 return [!Consumer!]<CartModel>(
@@ -341,6 +350,7 @@ If you have a large widget subtree under your `Consumer`
 that _doesn't_ change when the model changes, you can construct it
 once and get it through the builder.
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
 ```dart
 return Consumer<CartModel>(
@@ -360,6 +370,7 @@ It is best practice to put your `Consumer` widgets as deep in the tree
 as possible. You don't want to rebuild large portions of the UI
 just because some detail somewhere changed.
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
 // DON'T DO THIS
@@ -378,6 +389,7 @@ return Consumer<CartModel>(
 
 Instead:
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (leafDescendant)"?>
 ```dart
 // DO THIS
@@ -409,6 +421,7 @@ rebuild a widget that doesn't need to be rebuilt.
 For this use case, we can use `Provider.of`,
 with the `listen` parameter set to `false`.
 
+<!-- skip -->
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
 Provider.of<CartModel>(context, [!listen: false!]).removeAll();
@@ -420,10 +433,10 @@ rebuild when `notifyListeners` is called.
 
 ## Putting it all together
 
-You can [check out the example] covered in this article.
+You can [check out the example][] covered in this article.
 If you want something simpler,
 see what the simple Counter app looks like when
-[built with `provider`].
+[built with `provider`][].
 
 When you're ready to play around with `provider` yourself,
 don't forget to add the dependency on it to your `pubspec.yaml` first.

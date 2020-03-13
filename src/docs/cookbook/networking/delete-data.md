@@ -9,14 +9,14 @@ next:
   path: /docs/cookbook/networking/authenticated-requests
 ---
 
-In this recipe, you'll learn how to delete data over
+This recipe covers how to delete data over
 the internet using the `http` package.
 
 This recipe uses the following steps:
 
-  1. Add the `http` package
-  2. Delete data on the server
-  3. Update the screen
+  1. Add the `http` package.
+  2. Delete data on the server.
+  3. Update the screen.
 
 ## 1. Add the `http` package
 
@@ -39,7 +39,7 @@ import 'package:http/http.dart' as http;
 
 ## 2. Delete data on the server
 
-In this example, you'll delete an album from the
+This recipe covers how to delete an album from the
 [JSONPlaceholder][] using the `http.delete()` method.
 Note that this requires the `id` of the album that
 you want to delete. For this example,
@@ -117,11 +117,11 @@ Future<Album> deleteAlbum(String id) async {
   );
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
+    // If the server returned a 200 OK response,
     // then parse the JSON. After deleting,
     // you'll get an empty JSON `{}` response.
-    // Don't return `null` here, otherwise
-    // `snapshot.hasData` would always return false
+    // Don't return `null`, otherwise
+    // `snapshot.hasData` will always return false
     // on `FutureBuilder`.
     return Album.fromJson(json.decode(response.body));
   } else {
@@ -175,7 +175,7 @@ Future<Album> deleteAlbum(String id) async {
     // then parse the JSON. After deleting,
     // you'll get an empty JSON `{}` response.
     // Don't return `null`, otherwise `snapshot.hasData`
-    // would always return false on `FutureBuilder`.
+    // will always return false on `FutureBuilder`.
     return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a "200 OK response",

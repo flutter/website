@@ -1,4 +1,3 @@
-
 ---
 title: AnnotatedRegionLayers return local position relative to clipping region
 description: Provide annotation searches with reliable and meaningful local positions.
@@ -6,7 +5,7 @@ description: Provide annotation searches with reliable and meaningful local posi
 
 ## Summary
 
-The local position returned by `AnnotatedRegionLayers ` in an
+The local position returned by `AnnotatedRegionLayers` in an
 annotation search has been changed to be relative to the clipping
 region instead of the layer. This makes the local position more
 meaningful and reliable, but breaks code that directly performs
@@ -43,6 +42,7 @@ is now the local position it received subtracted by `offset`,
 where `offset` is the location of the clipping area relative
 to the layer.
 
+<!-- skip -->
 ```dart
 class AnnotatedRegionLayer<T> extends ContainerLayer {
   @override

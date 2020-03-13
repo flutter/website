@@ -67,10 +67,12 @@ myButton.setOnClickListener {
 ```
 {% endsamplecode %}
 
-The previous example assumes that your Dart entrypoint is called `main()`, and your
-initial Flutter route is '/'. The Dart entrypoint can't be changed using `Intent`,
-but the initial route can be changed using `Intent`. The following example
-demonstrates how to launch a `FlutterActivity` that initially renders a custom
+The previous example assumes that your Dart entrypoint
+is called `main()`, and your initial Flutter route is '/'.
+The Dart entrypoint can't be changed using `Intent`,
+but the initial route can be changed using `Intent`.
+The following example demonstrates how to launch a
+`FlutterActivity` that initially renders a custom
 route in Flutter.
 
 {% samplecode custom-activity-launch %}

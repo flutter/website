@@ -25,6 +25,7 @@ your `void main()` function.
 For example, to make your application quit immediately any time an
 error is shown in release mode, you could use the following handler:
 
+<!-- skip -->
 ```dart
 import 'dart:io';
 

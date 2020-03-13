@@ -236,6 +236,7 @@ but aren't required.
    This is a smoke test to ensure that the plugin properly registers
    with the new embedder. For example:
 
+    <!-- skip -->
     ```dart
     import 'package:flutter_test/flutter_test.dart';
     import 'package:battery/battery.dart';

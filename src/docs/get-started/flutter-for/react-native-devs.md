@@ -554,6 +554,7 @@ In Flutter, define a class to create a custom widget and then reuse the
 widget. You can also define and call a function that returns a
 reusable widget as shown in the `build` function in the following example.
 
+<!-- skip -->
 ```dart
 // Flutter
 class CustomCard extends StatelessWidget {

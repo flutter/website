@@ -44,7 +44,7 @@ import 'package:http/http.dart' as http;
 
 ## 2. Make a network request
 
-In this example, you'll fetch a sample album from the
+This recipe covers how to fetch a sample album from the
 [JSONPlaceholder][] using the [`http.get()`][] method.
 
 <!-- skip -->
@@ -208,9 +208,9 @@ it's not recommended to put an API call in a `build()` method.
 
 Flutter calls the `build()` method every time it needs
 to change anything in the view,
-and this happens surprisingly often. If you leave the fetch
-call in your `build()` method,
-you'll flood the API with unnecessary calls and slow down your app.
+and this happens surprisingly often.
+Leaving the `fetch` call in your `build()` method
+floods the API with unnecessary calls and slows down your app.
 
 ## Testing
 
