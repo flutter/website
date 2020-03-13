@@ -1,14 +1,16 @@
+
 ---
-title: Annotations return local position relative to object
-description: Provide mouse events with reliable and meaningful local positions.
+title: AnnotatedRegionLayers return local position relative to clipping region
+description: Provide annotation searches with reliable and meaningful local positions.
 ---
 
 ## Summary
 
-The local position returned in an annotation search is now
-relative to the region that contains the annotation object
-instead of the layer. This majorly affects mouse events
-(`onEnter`, `onExit`, and `onHover`).
+The local position returned by `AnnotatedRegionLayers ` in an
+annotation search has been changed to be relative to the clipping
+region instead of the layer. This makes the local position more
+meaningful and reliable, but breaks code that directly performs
+annotation searches and uses the local position.
 
 ## Context
 
@@ -28,21 +30,11 @@ or push a dedicated `TransformLayer` if the matrix is non-trivial.
 The former case keeps the previous coordinate origin
 (for example, the top left corner of the app),
 while the latter case moves the position origin since
-it's on a new layer, and the difference of them might
-just be an unnoticeable scale of 99%.
-
-Moreover, the major (if not only) users of
-`AnnotatedRegionLayer` are render objects and widgets,
-which define regions out of themselves and expect to
-know the location relative to the region.
-How the search is implemented under the hood using
-a layer is unrelated, and should be transparent.
-
-This change was also the first step of a longer plan to
-move the annotations from the layer tree into an
-independent tree ([Issue #49568][]).
-As a result, the annotations no longer have access to
-their position relative to any layers.
+it's on a new layer. The two cases might not produce noticeable
+visual differences, since the extra layer might just be a scale of
+99%, despite that the annotation search returns different results.
+In order to make this local position reliable, we have to choose
+one of the results to stick to.
 
 ## Description of change
 
@@ -77,19 +69,13 @@ while they now jointly represent
 
 ## Migration guide
 
-This change shouldn't affect most people.
-The `MouseRegion` couldn't output a valid `localPosition`
-at the time of the change,
-and the only other use case in the Flutter framework was
-by `SystemUiOverlayStyle`, which didn't
-depend on the local position.
+Code that is actively using this local position is probably
+directly interacting with layers, since using render objects or
+widgets will already have made this result unreliable. In order to
+preserve the previous behavior, you can reimplement
+`AnnotatedRegionLayer` that returns a local position without
+subtracting the offset.
 
-If anyone relied on this property,
-they would have found it to be unreliable,
-in which case this change is a fix.
-In the case that someone actually wants the relative
-location to the layer, a case-by-case analysis is
-needed to figure out a migration plan.
 
 ## Timeline
 
