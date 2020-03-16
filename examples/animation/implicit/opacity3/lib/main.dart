@@ -24,6 +24,7 @@ class _FadeInDemoState extends State<FadeInDemo> {
           ),
           onPressed: () => null),
       AnimatedOpacity(
+        duration: Duration(seconds: 3),
         opacity: opacity,
         child: Column(
           children: <Widget>[
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Future<void> main() async {
+void main() {
   runApp(
     MyApp(),
   );

@@ -16,7 +16,6 @@ void main() {
 
     await tester.pumpWidget(new MyApp());
     expect(find.text('Strawberry Pavlova Recipe'), findsOneWidget);
-    // TODO: test more app features.
 
     expect(
         exceptions, ['A RenderFlex overflowed by 209 pixels on the bottom.']);

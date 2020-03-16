@@ -29,6 +29,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
 
   @override
   initState() {
+    super.initState();
     color = randomColor();
     borderRadius = randomBorderRadius();
     margin = randomMargin();
@@ -84,7 +85,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Future<void> main() async {
+void main() {
   runApp(
     MyApp(),
   );
