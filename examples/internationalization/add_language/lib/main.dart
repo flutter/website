@@ -53,6 +53,9 @@ class BeMaterialLocalizations extends GlobalMaterialLocalizations {
   );
 
   @override
+  String get moreButtonTooltip => r'More';
+
+  @override
   String get aboutListTileTitleRaw => r'About $applicationName';
 
   @override

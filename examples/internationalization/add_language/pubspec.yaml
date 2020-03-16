@@ -6,7 +6,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: 0.15.8
+  intl: any # Take the version from Flutter.
 
 dev_dependencies:
   flutter_test:

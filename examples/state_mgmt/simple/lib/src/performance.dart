@@ -96,7 +96,6 @@ class NonRebuilding_Good extends StatelessWidget {
   }
 
   void _onPressed(BuildContext context) {
-    var item = Item('Dash');
     // #docregion nonRebuilding
     Provider.of<CartModel>(context, listen: false).removeAll();
     // #enddocregion nonRebuilding
