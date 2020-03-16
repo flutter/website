@@ -933,7 +933,7 @@ In Flutter, the layout is primarily defined by widgets
 specifically designed to provide layout,
 combined with control widgets and their style properties.
 
-For example, the [`Column`]] and [`Row`][] widgets
+For example, the [`Column`][] and [`Row`][] widgets
 take an array of children and align them
 vertically and horizontally respectively.
 A [`Container`][] widget takes a combination of
