@@ -147,7 +147,8 @@ FloatingActionButton(
   While the following code runs in DartPad, it fails
   due to [Issue 52221][] when run against the 
   stable (1.12) or beta (1.14) versions of the
-  Flutter SDK. Until this issue has landed,
+  Flutter SDK. Until this issue has landed
+  in the channel you are using,
   you can use the [workaround][] described in the issue.
 {{site.alert.end}}
 
