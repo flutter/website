@@ -25,9 +25,10 @@ you can set the focus to the text field for the search term.
 This allows the user to start typing as soon as the screen
 is visible, without needing to manually tap the text field.
 
-In this recipe, learn how to give the focus to a text field as soon
-as it's visible,
-as well as how to give focus to a text field when a button is tapped.
+In this recipe, learn how to give the focus
+to a text field as soon as it's visible,
+as well as how to give focus to a text field
+when a button is tapped.
 
 ## Focus a text field as soon as it's visible
 
@@ -142,6 +143,15 @@ FloatingActionButton(
 
 ## Interactive example
 
+{{site.alert.note}}
+  While the following code runs in DartPad, it fails
+  due to [Issue 52221][] when run against the 
+  stable (1.12) or beta (1.14) versions of the
+  Flutter SDK. Until this issue has landed
+  in the channel you are using,
+  you can use the [workaround][] described in the issue.
+{{site.alert.end}}
+
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
@@ -225,4 +235,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
 [Forms]: /docs/cookbook#forms
+[Issue 52221]: {{site.github}}/flutter/flutter/issues/52221
 [`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html
+[workaround]: {{site.github}}/flutter/flutter/issues/52221#issuecomment-598244655
