@@ -269,6 +269,7 @@ a `ListTile` widget using `Navigator.push()`.
 Pass the arguments as part of the `RouteSettings`.
 The `DetailScreen` extracts these arguments.
 
+<!! skip -->
 ```dart
 ListView.builder(                                                    
   itemCount: todos.length,                                           
