@@ -144,10 +144,10 @@ FloatingActionButton(
 ## Interactive example
 
 {{site.alert.note}}
-  While the following code runs in DartPad, it fails
-  due to [Issue 52221][] when run against the 
-  stable (1.12) or beta (1.14) versions of the
-  Flutter SDK. Until this issue has landed
+  While the following code runs successfully in DartPad,
+  it fails due to [Issue 52221][] when run against the 
+  stable (1.12) or beta (1.14) versions of the Flutter SDK.
+  Until this [fix has landed][] (hash [flutter/flutter@bf551a3])[]
   in the channel you are using,
   you can use the [workaround][] described in the issue.
 {{site.alert.end}}
@@ -233,8 +233,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
   <img src="/images/cookbook/focus.gif" alt="Text Field Focus Demo" class="site-mobile-screenshot" />
 </noscript>
 
+
+[fix has landed]: {{site.github}}/flutter/flutter/pull/50372
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
 [Forms]: /docs/cookbook#forms
+[flutter/flutter@bf551a3]: {{site.github}}/flutter/flutter/commit/bf551a31fe7ef45c854a219686b6837400bfd94c
 [Issue 52221]: {{site.github}}/flutter/flutter/issues/52221
 [`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html
 [workaround]: {{site.github}}/flutter/flutter/issues/52221#issuecomment-598244655
