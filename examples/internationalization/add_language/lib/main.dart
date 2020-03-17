@@ -52,7 +52,8 @@ class BeMaterialLocalizations extends GlobalMaterialLocalizations {
     twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat,
   );
 
-  @override
+  // TODO(dnfield): uncomment this when we roll Flutter
+  // @override
   String get moreButtonTooltip => r'More';
 
   @override
