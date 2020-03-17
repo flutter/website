@@ -127,10 +127,11 @@ the starting value for `opacity` to zero:
    @override
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
-@@ -22,6 +24,7 @@
+@@ -22,6 +24,8 @@
            ),
            onPressed: () => null),
        AnimatedOpacity(
++        duration: Duration(seconds: 3),
 +        opacity: opacity,
          child: Column(
            children: <Widget>[
@@ -186,10 +187,11 @@ you can start with 2 seconds:
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -24,6 +24,7 @@
+@@ -24,7 +24,7 @@
            ),
            onPressed: () => null),
        AnimatedOpacity(
+-        duration: Duration(seconds: 3),
 +        duration: Duration(seconds: 2),
          opacity: opacity,
          child: Column(
@@ -273,7 +275,7 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 ```diff
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
-@@ -43,7 +43,7 @@
+@@ -44,7 +44,7 @@
              SizedBox(
                width: 128,
                height: 128,
@@ -300,7 +302,7 @@ for the `color`, `borderRadius`, and `margin` state variables:
 ```diff
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
-@@ -34,6 +34,14 @@
+@@ -35,6 +35,14 @@
      margin = randomMargin();
    }
 
@@ -325,7 +327,7 @@ invoke the `change()` method in the `onPressed()` handler:
 ```diff
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
-@@ -65,7 +65,7 @@
+@@ -66,7 +66,7 @@
                  'change',
                  style: TextStyle(color: Colors.white),
                ),
@@ -353,13 +355,13 @@ between the old and new values:
    return Random().nextDouble() * 64;
  }
 @@ -58,6 +60,7 @@
+                   color: color,
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
++                duration: _duration,
                ),
-+              duration: _duration,
              ),
              MaterialButton(
-               color: Theme.of(context).primaryColor,
 ```
 
 ### Shape-shifting (complete)
@@ -392,13 +394,13 @@ and watch how the animation changes when you pass the
 --- container5/lib/main.dart
 +++ container6/lib/main.dart
 @@ -61,6 +61,7 @@
+                   borderRadius: BorderRadius.circular(borderRadius),
                  ),
+                 duration: _duration,
++                curve: Curves.easeInOutBack,
                ),
-               duration: _duration,
-+              curve: Curves.easeInOutBack,
              ),
              MaterialButton(
-               color: Theme.of(context).primaryColor,
 ```
 
 Now that you have passed `easeInOutBack` as the value for `curve` to
