@@ -14,18 +14,20 @@
     and Android SDK Build-Tools, which are required by Flutter
     when developing for Android.
 
-{{site.alert.note}}
-**IMPORTANT** In Android Studio 3.6 or later, you need to manually add the old
-version of the Android SDK Tools for Flutter to work. To do this:
-
- 1. Open the **Android Studio SDK Manager**
- 1. In the Android SDK tab, uncheck **Hide Obsolete Packages**
- 1. Check **Android SDK Tools (Obsolete)**
-
-The dialog below shows the appropriate settings:
-{% asset 'get-started/android/android-sdk-tools.png' %}
-
-This is a known issue that will be addressed in an upcoming version of Flutter.
+{{site.alert.warning}}
+  **IMPORTANT** In Android Studio 3.6 or later, you 
+  need to manually add the old
+  version of the Android SDK Tools for Flutter to work. To do this:
+  
+   1. Open the **Android Studio SDK Manager**
+   1. In the Android SDK tab, uncheck **Hide Obsolete Packages**
+   1. Check **Android SDK Tools (Obsolete)**
+  
+  The dialog below shows the appropriate settings:
+  {% asset 'get-started/android/android-sdk-tools.png' %}
+  
+  This is a [known issue](https://github.com/flutter/flutter/issues/51712) 
+  that will be addressed in an upcoming version of Flutter.
 {{site.alert.end}}
 
 ### Set up your Android device
