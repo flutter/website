@@ -138,7 +138,6 @@ be unique; prefix the channel name with a unique 'domain
 prefix', for example: `samples.flutter.dev/battery`.
 
 <!-- skip -->
-<!--code-excerpt "main.dart" title-->
 ```dart
 import 'dart:async';
 
@@ -162,7 +161,6 @@ Use the returned result to update the user interface state in `_batteryLevel`
 inside `setState`.
 
 <!-- skip -->
-<!--code-excerpt "main.dart" title-->
 ```dart
   // Get battery level.
   String _batteryLevel = 'Unknown battery level.';
@@ -187,7 +185,6 @@ interface that displays the battery state in a string,
 and a button for refreshing the value.
 
 <!-- skip -->
-<!--code-excerpt "main.dart" title-->
 ```dart
   @override
   Widget build(BuildContext context) {

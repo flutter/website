@@ -114,21 +114,21 @@ arguments.
 ```dart
 // A button that navigates to a named route. The named route
 // extracts the arguments by itself.
-RaisedButton(                                                   
-  child: Text("Navigate to screen that extracts arguments"),    
-  onPressed: () {                                               
-    // When the user taps the button, navigate to a named route 
-    // and provide the arguments as an optional parameter.      
-    Navigator.pushNamed(                                        
-      context,                                                  
-      ExtractArgumentsScreen.routeName,                         
-      arguments: ScreenArguments(                               
-        'Extract Arguments Screen',                              
-        'This message is extracted in the build method.',       
-      ),                                                                                                                 
-    );                                                          
-  },                                                            
-),                                                                                                                           
+RaisedButton(
+  child: Text("Navigate to screen that extracts arguments"),
+  onPressed: () {
+    // When the user taps the button, navigate to a named route
+    // and provide the arguments as an optional parameter.
+    Navigator.pushNamed(
+      context,
+      ExtractArgumentsScreen.routeName,
+      arguments: ScreenArguments(
+        'Extract Arguments Screen',
+        'This message is extracted in the build method.',
+      ),
+    );
+  },
+),
 ```
 
 ## Alternatively, extract the arguments using `onGenerateRoute`
@@ -198,6 +198,12 @@ class MyApp extends StatelessWidget {
               },
             );
           }
+          // The code only supports PassArgumentsScreen.routeName right now.
+          // Other values need to be implemented if we add them. The assertion
+          // here will help remind us of that higher up in the call stack, since
+          // this assertion would otherwise fire somewhere in the framework.
+          assert(false, 'Need to implement ${settings.name}');
+          return null;
         },
         title: 'Navigation with Arguments',
         home: HomeScreen(),

@@ -165,11 +165,10 @@ First, you must create a `DynamicLibrary` handle to
 the native code. This step varies between iOS and Android:
 
 ```dart
-import 'dart:ffi';  // For FFI
-import 'dart:io';   // For Platform.isX
+import 'dart:ffi'; // For FFI
+import 'dart:io'; // For Platform.isX
 
-final DynamicLibrary nativeAddLib =
-  Platform.isAndroid
+final DynamicLibrary nativeAddLib = Platform.isAndroid
     ? DynamicLibrary.open("libnative_add.so")
     : DynamicLibrary.process();
 ```

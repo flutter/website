@@ -79,23 +79,52 @@ int _processFile(File file) {
   return count;
 }
 
+const String defaultImports = '''
+// ignore_for_file: unused_import
+
+import 'package:flutter/animation.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/physics.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+''';
+
 void _extractSnippet(
     String filename, int snippet, int startLine, Iterable<String> lines,
     {String includeSource}) {
-  bool hasImport =
-      lines.any((String line) => line.trim().startsWith('import '));
+  if (lines.isEmpty || lines.every((String line) => line.isEmpty)) {
+    throw StateError('Passed empty lines to extractSnippet');
+  }
+
+  final int importCount = lines.where((String line) => line.trim().startsWith('import ')).length;
+  if (importCount == lines.length) {
+    return;
+  }
+
+  bool hasImport = importCount > 0;
+
   String path = p.join(generatedExampleDirPath,
       '${filename.replaceAll('-', '_').replaceAll('.', '_')}_$snippet.dart');
 
-  String source = '// Extracted from $filename, line $startLine.\n';
+  StringBuffer source = StringBuffer('// Extracted from $filename, line $startLine\n');
 
-  if (!hasImport) source += "import 'package:flutter/material.dart';\n\n";
-  if (includeSource != null) source += "$includeSource\n";
+  if (!hasImport) {
+    source.writeln(defaultImports);
+  }
 
-  source += '${lines.join('\n')}\n';
-  source = _removeMarkup(source);
+  if (includeSource != null) {
+    source.writeln('$includeSource');
+  }
 
-  File(path).writeAsStringSync(source);
+  lines.map(_removeMarkup).forEach(source.writeln);
+
+  File(path).writeAsStringSync(source.toString());
   print('  ${lines.length} line snippet ==> $path');
 }
 
