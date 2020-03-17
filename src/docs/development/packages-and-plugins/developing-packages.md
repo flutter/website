@@ -4,10 +4,17 @@ short-title: Developing
 description: How to write packages and plugins for Flutter.
 ---
 
+{{site.note.alert}}
+  If you write plugins for Flutter, you should know that
+  the Android plugin API was recently upgraded to 2.0
+  in order to support more platforms (such as web and
+  macos), and federated plugins.
+{{site.note.end}}
+
 ## Package introduction
 
-Packages enable the creation of modular code that can be shared easily. A
-minimal package consists of:
+Packages enable the creation of modular code that can be
+shared easily. A minimal package consists of:
 
 * A `pubspec.yaml` file: A metadata file that declares the package name,
   version, author, etc.
@@ -17,92 +24,108 @@ minimal package consists of:
 
 {{site.alert.note}}
   For a list of dos and don'ts when writing an effective plugin,
-  see [Writing a good plugin] on Medium.
+  see [Writing a good plugin][] on Medium.
 {{site.alert.end}}
 
 ### Package types {#types}
 
 Packages can contain several kinds of content:
 
-* *Dart packages*: General packages written in Dart,
-  for example the [`path`] package. Some of these might
-  contain Flutter specific functionality and thus have a dependency on the
+*Dart packages*
+: General packages written in Dart,
+  for example the [`path`][] package.
+  Some of these might contain Flutter specific
+  functionality and thus have a dependency on the
   Flutter framework, restricting their use to Flutter only,
-  for example the [`fluro`] package.
+  for example the [`fluro`][] package.
 
-* *Plugin packages*: A specialized Dart package which contains an API written in
-  Dart code combined with a platform-specific implementation for Android (using
-  Java or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
-  the [`battery`] plugin package.
+*Plugin packages*
+: A specialized Dart package that contains an API written in
+  Dart code combined with a platform-specific implementation
+  for Android (using Kotlin or Java), and/or for iOS (using Swift
+  or ObjC). A concrete example is the [`battery`][] plugin package.
 
 ## Developing Dart packages {#dart}
 
 ### Step 1: Create the package
 
-To create a Dart package, use the `--template=package` flag with `flutter create`:
+To create a Dart package, use the `--template=package` flag
+with `flutter create`:
 
 ```terminal
 $ flutter create --template=package hello
 ```
 
-This creates a package project in the `hello/` folder with the following
-specialized content:
+This creates a package project in the `hello/` folder with
+the following specialized content:
 
-* `lib/hello.dart`:
+**`lib/hello.dart`**
 : The Dart code for the package.
-* `test/hello_test.dart`:
-: The [unit tests] for the package.
+
+**`test/hello_test.dart`**
+: The [unit tests][] for the package.
 
 ### Step 2: Implement the package
 
-For pure Dart packages, simply add the functionality inside the main
-`lib/<package name>.dart` file, or in several files in the `lib` directory.
+For pure Dart packages, simply add the functionality
+inside the main `lib/<package name>.dart` file,
+or in several files in the `lib` directory.
 
-To test the package, add [unit tests]
+To test the package, add [unit tests][]
 in a `test` directory.
 
-For additional details on how to organize the package contents, see the
-[Dart library package] documentation.
+For additional details on how to organize the
+package contents, see the [Dart library package][] documentation.
 
 ## Developing plugin packages {#plugin}
 
-*For information about the `flutter.plugin.platforms` key see: [Specifying a plugin's supported platforms](#plugin-platforms).*
+*For information about the `flutter.plugin.platforms` key,
+see [Specifying a plugin's supported platforms][].*
 
-If you want to develop a package that calls into platform-specific APIs, you
-need to develop a plugin package. A plugin package is a specialized version of a
-Dart package, that in addition to the content described above also contains
-platform-specific implementations written for Android (Java or Kotlin code), for
-iOS (Objective-C or Swift code), or for both. The API is connected to the
-platform-specific implementation(s) using [platform channels].
+If you want to develop a package that calls into
+platform-specific APIs, you need to develop a plugin package.
+A plugin package is a specialized version of a
+Dart package that, in addition to the content described above,
+also contains platform-specific implementations written for
+Android (Kotlin or Java code), iOS (Swift or Objective-C),
+web, macos, or any subset thereof.
+The API is connected to the platform-specific
+implementation(s) using [platform channels][].
 
 ### Step 1: Create the package
 
 To create a plugin package, use the `--template=plugin` flag with
 `flutter create`.
 
-Use the `--org` option to specify your organization, using reverse domain name
-notation. This value is used in various package and bundle identifiers in the
-generated Android and iOS code.
+Use the `--org` option to specify your organization,
+using reverse domain name notation. This value is used
+in various package and bundle identifiers in the
+generated plugin code.
 
 ```terminal
 $ flutter create --org com.example --template=plugin hello
 ```
 
-This creates a plugin project in the `hello/` folder with the following
-specialized content:
+This creates a plugin project in the `hello/` folder
+with the following specialized content:
 
-* `lib/hello.dart`:
-   - The Dart API for the plugin.
-* <code>android/src/main/java/com/example/&#8203;hello/HelloPlugin.kt</code>:
-   - The Android platform specific implementation of the plugin API.
-* `ios/Classes/HelloPlugin.m`:
-   - The iOS platform specific implementation of the plugin API.
-* `example/`:
-   - A Flutter app that depends on the plugin, and illustrates how to use it.
+**`lib/hello.dart`**
+: The Dart API for the plugin.
+
+**<code>android/src/main/java/com/example/&#8203;hello/HelloPlugin.kt</code>**
+: The Android platform specific implementation of the plugin API.
+
+**`ios/Classes/HelloPlugin.m`**
+: The iOS platform specific implementation of the plugin API.
+
+**`example/`**
+: A Flutter app that depends on the plugin,
+  and illustrates how to use it.
 
 By default, the plugin project uses Swift for iOS code and
-Kotlin for Android code. If you prefer Objective-C or Java, you can specify the
-iOS language using `-i` and/or the Android language using `-a`. For example:
+Kotlin for Android code. If you prefer Objective-C or Java,
+you can specify the iOS language using `-i` and/or the
+Android language using `-a`. For example:
 
 ```terminal
 $ flutter create --template=plugin -i objc -a java hello
@@ -110,43 +133,44 @@ $ flutter create --template=plugin -i objc -a java hello
 
 ### Step 2: Implement the package {#edit-plugin-package}
 
-As a plugin package contains code for several platforms written in several
-programming languages, some specific steps are needed to ensure a smooth
-experience.
+As a plugin package contains code for several platforms
+written in several programming languages,
+some specific steps are needed to ensure a smooth experience.
 
 #### Step 2a: Define the package API (.dart)
 
-The API of the plugin package is defined in Dart code. Open the main `hello/`
-folder in your favorite [Flutter editor]. Locate the file
-`lib/hello.dart`.
+The API of the plugin package is defined in Dart code.
+Open the main `hello/` folder in your favorite [Flutter editor][].
+Locate the file `lib/hello.dart`.
 
 #### Step 2b: Add Android platform code (.java/.kt)
 
 We recommend you edit the Android code using Android Studio.
 
-Before editing the Android platform code in Android Studio, first
-make sure that the code has been built at least once (in other words,
-run the example app from your IDE/editor,
+Before editing the Android platform code in Android Studio,
+first make sure that the code has been built at least once
+(in other words, run the example app from your IDE/editor,
 or in a terminal execute `cd hello/example; flutter build apk`).
 
 Next,
 
 1. Launch Android Studio
-1. Select 'Import project' in 'Welcome to Android Studio' dialog, or select
-'File > New > Import Project...'' in the menu, and select the
-`hello/example/android/build.gradle` file.
+1. Select 'Import project' in 'Welcome to Android Studio' dialog,
+   or select 'File > New > Import Project...'' in the menu,
+   and select the `hello/example/android/build.gradle` file.
 1. In the 'Gradle Sync' dialog, select 'OK'.
-1. In the 'Android Gradle Plugin Update' dialog, select 'Don't remind me again
-   for this project'.
+1. In the 'Android Gradle Plugin Update' dialog,
+   select 'Don't remind me again for this project'.
 
 The Android platform code of your plugin is located in
-<code>hello/java/com.example.hello/&#8203;HelloPlugin</code>.
+`hello/java/com.example.hello/&#8203;HelloPlugin`.
 
-You can run the example app from Android Studio by pressing the &#9654; button.
+You can run the example app from Android Studio by
+pressing the &#9654; button.
 
 #### Step 2c: Add iOS platform code (.h+.m/.swift)
 
-We recommend you edit the iOS code using Xcode.
+We recommend you edit the iOS code using Xcode. xxx
 
 Before editing the iOS platform code in Xcode, first make sure that
 the code has been built at least once (i.e., run the example app from your IDE/editor,
@@ -390,5 +414,6 @@ at `hello/ios/Classes`.
 [platform channels]: /docs/development/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
+[Specifying a plugin's supported platforms]: #plugin-platforms
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c
 [unit tests]: /docs/testing#unit-tests
