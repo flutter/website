@@ -15,8 +15,7 @@
     when developing for Android.
 
 {{site.alert.warning}}
-  **IMPORTANT** In Android Studio 3.6 or later, you 
-  need to manually add the old
+  In Android Studio 3.6 or later, you need to manually add the old
   version of the Android SDK Tools for Flutter to work. To do this:
   
    1. Open the **Android Studio SDK Manager**
