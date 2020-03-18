@@ -30,8 +30,7 @@ void main(List<String> args) {
 }
 
 int _processFile(File file) {
-  String name = p.basename(file.path);
-  print(name);
+  print(file.path);
 
   // Look for ```dart sections.
   String source = file.readAsStringSync();
@@ -45,7 +44,8 @@ int _processFile(File file) {
   while (index < lines.length) {
     final trimmed = lines[index].trim();
     // Look for ```dart sections.
-    if ((trimmed.startsWith('```dart') || trimmed.startsWith('```run-dartpad')) &&
+    if ((trimmed.startsWith('```dart') ||
+            trimmed.startsWith('```run-dartpad')) &&
         lastComment?.trim() != 'skip') {
       int startIndex = index + 1;
       index++;
@@ -53,7 +53,7 @@ int _processFile(File file) {
         index++;
       }
       final snippet = maxUnindent(lines.sublist(startIndex, index));
-      _extractSnippet(name, ++count, startIndex, snippet,
+      _extractSnippet(file, ++count, startIndex, snippet,
           includeSource: lastComment);
     } else if (lines[index].trim().startsWith('<!--')) {
       // Look for <!-- comment sections.
@@ -95,24 +95,39 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 ''';
 
+String _createDirAndFileName(File sourceFile, int count) {
+  final String filename = p.basename(sourceFile.path);
+  final String dartFileName = p.join(
+    generatedExampleDirPath,
+    sourceFile.parent.path,
+    '${filename.replaceAll('-', '_').replaceAll('.', '_')}_$count.dart',
+  );
+  Directory(p.join(
+    generatedExampleDirPath,
+    sourceFile.parent.path,
+  )).createSync(recursive: true);
+  return dartFileName;
+}
+
 void _extractSnippet(
-    String filename, int snippet, int startLine, Iterable<String> lines,
+    File sourceFile, int snippet, int startLine, Iterable<String> lines,
     {String includeSource}) {
   if (lines.isEmpty || lines.every((String line) => line.isEmpty)) {
     throw StateError('Passed empty lines to extractSnippet');
   }
 
-  final int importCount = lines.where((String line) => line.trim().startsWith('import ')).length;
+  final int importCount =
+      lines.where((String line) => line.trim().startsWith('import ')).length;
   if (importCount == lines.length) {
     return;
   }
 
   bool hasImport = importCount > 0;
 
-  String path = p.join(generatedExampleDirPath,
-      '${filename.replaceAll('-', '_').replaceAll('.', '_')}_$snippet.dart');
+  String path = _createDirAndFileName(sourceFile, snippet);
 
-  StringBuffer source = StringBuffer('// Extracted from $filename, line $startLine\n');
+  StringBuffer source =
+      StringBuffer('// Extracted from ${sourceFile.path}, line $startLine\n');
 
   if (!hasImport) {
     source.writeln(defaultImports);
