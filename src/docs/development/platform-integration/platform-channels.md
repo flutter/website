@@ -4,13 +4,15 @@ short-title: Platform-specific code
 description: Learn how to write custom platform-specific code in your app.
 ---
 
+[PENDING: Is this page up-to-date?]
+
 This guide describes how to write custom platform-specific code. Some
 platform-specific functionality is available through existing packages;
-see [using packages](/docs/development/packages-and-plugins/using-packages).
+see [using packages][].
 
 Flutter uses a flexible system that allows you to call platform-specific APIs
-whether available in Java or Kotlin code on Android,
-or in Objective-C or Swift code on iOS.
+whether available in Kotlin or Java code on Android,
+or in Swift or Objective-C code on iOS.
 
 Flutter's platform-specific API support does not rely on code generation,
 but rather on a flexible message passing style:
@@ -25,13 +27,11 @@ but rather on a flexible message passing style:
 
 {{site.alert.note}}
   This guide addresses using the platform channel mechanism if you need
-  to use the platform's APIs or libraries in Java/Kotlin/Objective-C or Swift.
+  to use the platform's APIs or libraries in Java, Kotlin, Objective-C, or Swift.
   But you can also write platform-specific Dart code in your Flutter app
-  by inspecting the
-  [defaultTargetPlatform]({{site.api}}/flutter/foundation/defaultTargetPlatform.html)
-  property. [Platform adaptations](/docs/resources/platform-adaptations)
-  lists some platform-specific adaptations that Flutter automatically does
-  for you in the framework.
+  by inspecting the [defaultTargetPlatform][] property.
+  [Platform adaptations][] lists some platform-specific adaptations
+  that Flutter automatically does for you in the framework.
 {{site.alert.end}}
 
 ## Architectural overview: platform channels {#architecture}
@@ -47,8 +47,8 @@ to ensure the user interface remains responsive.
 {{site.alert.note}}
   Even though Flutter sends messages to and from Dart asynchronously,
   whenever you invoke a channel method, you must invoke that method on the
-  platform's main thread. See the
-  [section on threading](#channels-and-platform-threading) for more information.
+  platform's main thread. See the [section on threading][]
+  for more information.
 {{site.alert.end}}
 
 On the client side, `MethodChannel` ([API][MethodChannel]) enables sending
@@ -60,23 +60,19 @@ result. These classes allow you to develop a platform plugin with very little
 
 *Note*: If desired, method calls can also be sent in the reverse direction,
 with the platform acting as client to methods implemented in Dart.
-A concrete example of this is the
-[`quick_actions`]({{site.pub}}/packages/quick_actions) plugin.
-
-[MethodChannel]: {{site.api}}/flutter/services/MethodChannel-class.html
-[MethodChannelAndroid]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
-[MethodChanneliOS]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
+A concrete example of this is the [`quick_actions`][] plugin.
 
 ### Platform channel data types support and codecs {#codec}
 
 The standard platform channels use a standard message codec that supports
 efficient binary serialization of simple JSON-like values, such as booleans,
-numbers, Strings, byte buffers, and List and Maps of these (see
-[`StandardMessageCodec`]({{site.api}}/flutter/services/StandardMessageCodec-class.html))
-for details). The serialization and deserialization of these values to and from
+numbers, Strings, byte buffers, and Lists and Maps of these
+(see [`StandardMessageCodec`][]) for details).
+The serialization and deserialization of these values to and from
 messages happens automatically when you send and receive values.
 
-The following table shows how Dart values are received on the platform side and vice versa:
+The following table shows how Dart values are received on the
+platform side and vice versa:
 
 | Dart                       | Java                | Kotlin      | OC                                             | Swift                                   |
 | -------------------------- | ------------------- | ----------- | ---------------------------------------------- | --------------------------------------- |
@@ -109,9 +105,9 @@ packages](/docs/development/packages-and-plugins/developing-packages#plugin)),
 but the platform channel code is still written in the same way.
 
 *Note*: The full, runnable source-code for this example is available in
-[`/examples/platform_channel/`]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel)
-for Android with Java and iOS with Objective-C. For iOS with Swift, see
-[`/examples/platform_channel_swift/`]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift).
+[`/examples/platform_channel/`][] for Android with Java and
+iOS with Objective-C. For iOS with Swift,
+see [`/examples/platform_channel_swift/`][].
 
 ### Step 1: Create a new app project {#example-project}
 
@@ -119,8 +115,9 @@ Start by creating a new app:
 
 * In a terminal run: `flutter create batterylevel`
 
-By default our template supports writing Android code using Kotlin, or iOS code
-using Swift. To use Java or Objective-C, use the `-i` and/or `-a` flags:
+By default our template supports writing Android code using Kotlin,
+or iOS code using Swift. To use Java or Objective-C,
+use the `-i` and/or `-a` flags:
 
 * In a terminal run: `flutter create -i objc -a java batterylevel`
 
@@ -328,6 +325,7 @@ And replace with the following:
             }
           }
 ```
+
 {% sample Kotlin %}
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
@@ -454,9 +452,9 @@ accessible from the **...** button in the toolbar.
 {% sample Objective-C %}
 Start by opening the iOS host portion of the Flutter app in Xcode:
 
-1. Start Xcode
+1. Start Xcode.
 
-1. Select the menu item **File > Open...**
+1. Select the menu item **File > Open...**.
 
 1. Navigate to the directory holding your Flutter app, and select the **ios**
 folder inside it. Click **OK**.
@@ -542,9 +540,9 @@ __weak typeof(self) weakSelf = self;
 {% sample Swift %}
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
-1. Start Xcode
+1. Start Xcode.
 
-1. Select the menu item **File > Open...**
+1. Select the menu item **File > Open...**.
 
 1. Navigate to the directory holding your Flutter app, and select the **ios**
 folder inside it. Click **OK**.
@@ -632,47 +630,37 @@ and the app displays 'battery info unavailable'.
 
 If you expect to use your platform-specific code in multiple Flutter apps,
 it can be useful to separate the code into a platform plugin located
-in a directory outside your main application. See [developing
-packages](/docs/development/packages-and-plugins/developing-packages)
-for details.
+in a directory outside your main application.
+See [developing packages][] for details.
 
 ## Publish platform-specific code as a package {#publish}
 
-To share your platform-specific code with other developers in the Flutter
-ecosystem, see [publishing
-packages](/docs/development/packages-and-plugins/developing-packages#publish).
+To share your platform-specific code with other developers
+in the Flutter ecosystem, see [publishing packages][].
 
 ## Custom channels and codecs
 
 Besides the above mentioned `MethodChannel`, you can also use the more basic
 [`BasicMessageChannel`][BasicMessageChannel], which supports basic,
 asynchronous message passing using a custom message codec.
-You can also use the specialized [`BinaryCodec`][BinaryCodec],
-[`StringCodec`][StringCodec], and [`JSONMessageCodec`][JSONMessageCodec]
+You can also use the specialized [`BinaryCodec`][],
+[`StringCodec`][], and [`JSONMessageCodec`][]
 classes, or create your own codec.
-
-[BasicMessageChannel]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
-[BinaryCodec]: {{site.api}}/flutter/services/BinaryCodec-class.html
-[StringCodec]: {{site.api}}/flutter/services/StringCodec-class.html
-[JSONMessageCodec]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 
 ## Channels and Platform Threading
 
 Invoke all channel methods on the platform's main thread when writing code on
 the platform side. On Android, this thread is sometimes called the "main
-thread", but it is technically defined as [the UI thread]. Annotate methods that
-need to be run on the UI thread with `@UiThread`. On iOS, this thread is
-officially referred to as [the main thread].
-
-[the UI thread]: https://developer.android.com/guide/components/processes-and-threads#Threads
-[the main thread]: https://developer.apple.com/documentation/uikit?language=objc
+thread", but it is technically defined as [the UI thread][].
+Annotate methods that need to be run on the UI thread with `@UiThread`.
+On iOS, this thread is officially referred to as [the main thread][].
 
 ### Jumping to the UI thread in Android
 
 To comply with channels' UI thread requirement, you may need to jump from a
 background thread to Android's UI thread to execute a channel method. In
 Android this is accomplished by `post()`ing a `Runnable` to Android's UI
-thread `Looper`, which will cause the `Runnable` to execute on the main thread
+thread `Looper`, which causes the `Runnable` to execute on the main thread
 at the next opportunity.
 
 In Java:
@@ -698,7 +686,7 @@ Handler(Looper.getMainLooper()).post {
 
 To comply with channel's main thread requirement, you may need to jump from a
 background thread to iOS's main thread to execute a channel method. In iOS this
-is accomplished by executing a [block] on the main [dispatch queue]:
+is accomplished by executing a [block][] on the main [dispatch queue][]:
 
 In Objective-C:
 
@@ -716,6 +704,25 @@ DispatchQueue.main.async {
 }
 ```
 
+[BasicMessageChannel]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
+[`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
-
+[defaultTargetPlatform]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+[developing packages]: /docs/development/packages-and-plugins/developing-packages
 [dispatch queue]: https://developer.apple.com/documentation/dispatch/dispatchqueue
+[`/examples/platform_channel/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
+[`/examples/platform_channel_swift/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift
+[`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
+[MethodChannel]: {{site.api}}/flutter/services/MethodChannel-class.html
+[MethodChannelAndroid]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
+[MethodChanneliOS]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
+[Platform adaptations]: /docs/resources/platform-adaptations
+[publishing packages]: /docs/development/packages-and-plugins/developing-packages#publish
+[`quick_actions`]: {{site.pub}}/packages/quick_actions
+[section on threading]: #channels-and-platform-threading
+[`StandardMessageCodec`]: {{site.api}}/flutter/services/StandardMessageCodec-class.html
+[`StringCodec`]: {{site.api}}/flutter/services/StringCodec-class.html
+[the main thread]: https://developer.apple.com/documentation/uikit?language=objc
+[the UI thread]: https://developer.android.com/guide/components/processes-and-threads#Threads
+[using packages]: /docs/development/packages-and-plugins/using-packages
+

@@ -128,6 +128,26 @@ Among other benefits, this approach allows a
 domain expert to extend an existing plugin to work for
 the platform they know best.
 
+A federated plugin requires the following packages:
+
+**app-facing package**
+: A mandatory package that you include in your Dart code
+  in order to use the plugin. This package specifies the
+  API used by the Flutter app.
+
+**platform package(s)**
+: One or more packages that contain the platform-specific
+  implementation code. The app-facing package calls into
+  these packages&mdash;they aren't included into an app.
+
+**platform interface package**
+: The mandatory package that glues the app-facing packing
+  to the platform package(s). This package declares an
+  interface that any platform package must implement to
+  support the app-facing package. Having a single package
+  that defines this interface ensures that all platform
+  packages implement the same functionality in a uniform way.
+  
 For more information on federated plugins,
 why they are useful, and how they are implemented,
 see the Medium article by Harry Terkelsen,
@@ -138,8 +158,8 @@ see the Medium article by Harry Terkelsen,
 In Flutter 1.10 and later, plugins can specify
 the platforms they support by adding keys to the
 `platforms` map in the `pubspec.yaml` file.
-For example, the following is the
-`flutter:` map for the `hello` plugin that supports
+For example, the following pubspec file shows the
+`flutter:` map for the `hello` plugin, which supports
 only iOS and Android:
 
 ```yaml
@@ -160,10 +180,10 @@ environment:
 ```
 
 When adding plugin implementations for more platforms,
-the platforms map should be updated accordingly. 
-For example, this is map for the `hello` plugin
-when updated to add support for macOS and web:
-
+the `platforms` map should be updated accordingly. 
+For example, here's the map in the pubspec file
+for the `hello` plugin, when updated to add support
+for macOS and web:
 
 ```yaml
 flutter:
@@ -200,7 +220,7 @@ generated plugin code.
 ```terminal
 $ flutter create --org com.example --template=plugin hello
 ```
-
+`
 This creates a plugin project in the `hello/` folder
 with the following specialized content:
 
