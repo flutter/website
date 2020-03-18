@@ -143,7 +143,7 @@ class MyScaffold extends StatelessWidget {
           MyAppBar(
             title: Text(
               'Example title',
-              style: Theme.of(context).primaryTextTheme.headline6,
+              style: Theme.of(context).primaryTextTheme.title,
             ),
           ),
           Expanded(

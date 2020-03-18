@@ -33,24 +33,42 @@ In this example, create an app that shows a header followed by five
 messages. Therefore, create three classes: `ListItem`, `HeadingItem`,
 and `MessageItem`.
 
-<!-- skip -->
 ```dart
-// The base class for the different types of items the list can contain.
-abstract class ListItem {}
+/// The base class for the different types of items the list can contain.
+abstract class ListItem {
+  /// The title line to show in a list item.
+  Widget buildTitle(BuildContext context);
 
-// A ListItem that contains data to display a heading.
+  /// The subtitle line, if any, to show in a list item.
+  Widget buildSubtitle(BuildContext context);
+}
+
+/// A ListItem that contains data to display a heading.
 class HeadingItem implements ListItem {
   final String heading;
 
   HeadingItem(this.heading);
+
+  Widget buildTitle(BuildContext context) {
+    return Text(
+      heading,
+      style: Theme.of(context).textTheme.headline,
+    );
+  }
+
+  Widget buildSubtitle(BuildContext context) => null;
 }
 
-// A ListItem that contains data to display a message.
+/// A ListItem that contains data to display a message.
 class MessageItem implements ListItem {
   final String sender;
   final String body;
 
   MessageItem(this.sender, this.body);
+
+  Widget buildTitle(BuildContext context) => Text(sender);
+
+  Widget buildSubtitle(BuildContext context) => Text(body);
 }
 ```
 
@@ -97,19 +115,10 @@ ListView.builder(
   itemBuilder: (context, index) {
     final item = items[index];
 
-    if (item is HeadingItem) {
-      return ListTile(
-        title: Text(
-          item.heading,
-          style: Theme.of(context).textTheme.headline,
-        ),
-      );
-    } else if (item is MessageItem) {
-      return ListTile(
-        title: Text(item.sender),
-        subtitle: Text(item.body),
-      );
-    }
+    return ListTile(
+      title: item.buildTitle(context),
+      subtitle: item.buildSubtitle(context),
+    );
   },
 );
 ```
@@ -154,19 +163,10 @@ class MyApp extends StatelessWidget {
           itemBuilder: (context, index) {
             final item = items[index];
 
-            if (item is HeadingItem) {
-              return ListTile(
-                title: Text(
-                  item.heading,
-                  style: Theme.of(context).textTheme.headline,
-                ),
-              );
-            } else if (item is MessageItem) {
-              return ListTile(
-                title: Text(item.sender),
-                subtitle: Text(item.body),
-              );
-            }
+            return ListTile(
+              title: item.buildTitle(context),
+              subtitle: item.buildSubtitle(context),
+            );
           },
         ),
       ),
@@ -174,28 +174,47 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// The base class for the different types of items the list can contain.
-abstract class ListItem {}
+/// The base class for the different types of items the list can contain.
+abstract class ListItem {
+  /// The title line to show in a list item.
+  Widget buildTitle(BuildContext context);
 
-// A ListItem that contains data to display a heading.
+  /// The subtitle line, if any, to show in a list item.
+  Widget buildSubtitle(BuildContext context);
+}
+
+/// A ListItem that contains data to display a heading.
 class HeadingItem implements ListItem {
   final String heading;
 
   HeadingItem(this.heading);
+
+  Widget buildTitle(BuildContext context) {
+    return Text(
+      heading,
+      style: Theme.of(context).textTheme.headline,
+    );
+  }
+
+  Widget buildSubtitle(BuildContext context) => null;
 }
 
-// A ListItem that contains data to display a message.
+/// A ListItem that contains data to display a message.
 class MessageItem implements ListItem {
   final String sender;
   final String body;
 
   MessageItem(this.sender, this.body);
+
+  Widget buildTitle(BuildContext context) => Text(sender);
+
+  Widget buildSubtitle(BuildContext context) => Text(body);
 }
 ```
 
 <noscript>
   <img src="/images/cookbook/mixed-list.png" alt="Mixed list demo" class="site-mobile-screenshot" />
 </noscript>
- 
+
 
 [`ListView.builder()`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html

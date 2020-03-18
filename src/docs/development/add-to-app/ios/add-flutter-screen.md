@@ -388,7 +388,6 @@ a different Dart function.
   not be [tree-shaken][] away when compiling:
 
   <!-- skip -->
-  <!--code-excerpt "main.dart" title-->
   ```dart
   @pragma('vm:entry-point')
   void myOtherEntrypoint() { ... };

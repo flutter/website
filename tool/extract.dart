@@ -30,8 +30,7 @@ void main(List<String> args) {
 }
 
 int _processFile(File file) {
-  String name = p.basename(file.path);
-  print(name);
+  print(file.path);
 
   // Look for ```dart sections.
   String source = file.readAsStringSync();
@@ -45,7 +44,8 @@ int _processFile(File file) {
   while (index < lines.length) {
     final trimmed = lines[index].trim();
     // Look for ```dart sections.
-    if ((trimmed.startsWith('```dart') || trimmed.startsWith('```run-dartpad')) &&
+    if ((trimmed.startsWith('```dart') ||
+            trimmed.startsWith('```run-dartpad')) &&
         lastComment?.trim() != 'skip') {
       int startIndex = index + 1;
       index++;
@@ -53,7 +53,7 @@ int _processFile(File file) {
         index++;
       }
       final snippet = maxUnindent(lines.sublist(startIndex, index));
-      _extractSnippet(name, ++count, startIndex, snippet,
+      _extractSnippet(file, ++count, startIndex, snippet,
           includeSource: lastComment);
     } else if (lines[index].trim().startsWith('<!--')) {
       // Look for <!-- comment sections.
@@ -79,23 +79,67 @@ int _processFile(File file) {
   return count;
 }
 
+const String defaultImports = '''
+// ignore_for_file: unused_import
+
+import 'package:flutter/animation.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/physics.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+''';
+
+String _createDirAndFileName(File sourceFile, int count) {
+  final String filename = p.basename(sourceFile.path);
+  final String dartFileName = p.join(
+    generatedExampleDirPath,
+    sourceFile.parent.path,
+    '${filename.replaceAll('-', '_').replaceAll('.', '_')}_$count.dart',
+  );
+  Directory(p.join(
+    generatedExampleDirPath,
+    sourceFile.parent.path,
+  )).createSync(recursive: true);
+  return dartFileName;
+}
+
 void _extractSnippet(
-    String filename, int snippet, int startLine, Iterable<String> lines,
+    File sourceFile, int snippet, int startLine, Iterable<String> lines,
     {String includeSource}) {
-  bool hasImport =
-      lines.any((String line) => line.trim().startsWith('import '));
-  String path = p.join(generatedExampleDirPath,
-      '${filename.replaceAll('-', '_').replaceAll('.', '_')}_$snippet.dart');
+  if (lines.isEmpty || lines.every((String line) => line.isEmpty)) {
+    throw StateError('Passed empty lines to extractSnippet');
+  }
 
-  String source = '// Extracted from $filename, line $startLine.\n';
+  final int importCount =
+      lines.where((String line) => line.trim().startsWith('import ')).length;
+  if (importCount == lines.length) {
+    return;
+  }
 
-  if (!hasImport) source += "import 'package:flutter/material.dart';\n\n";
-  if (includeSource != null) source += "$includeSource\n";
+  bool hasImport = importCount > 0;
 
-  source += '${lines.join('\n')}\n';
-  source = _removeMarkup(source);
+  String path = _createDirAndFileName(sourceFile, snippet);
 
-  File(path).writeAsStringSync(source);
+  StringBuffer source =
+      StringBuffer('// Extracted from ${sourceFile.path}, line $startLine\n');
+
+  if (!hasImport) {
+    source.writeln(defaultImports);
+  }
+
+  if (includeSource != null) {
+    source.writeln('$includeSource');
+  }
+
+  lines.map(_removeMarkup).forEach(source.writeln);
+
+  File(path).writeAsStringSync(source.toString());
   print('  ${lines.length} line snippet ==> $path');
 }
 
