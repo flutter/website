@@ -151,7 +151,11 @@ if [[ -n $CHECK_CODE ]]; then
   # TODO(dnfield): Remove this once CI passes without it. There appears to be
   # a bug currently in the Dart version in flutter:stable that fails to analyze
   # when these are present.
-  rm -rf example.g/.dart_tool
+  (
+    set -x;
+    rm -rf .dart_tool
+    rm -rf example.g/.dart_tool
+  )
   (cd example.g; "$flutter" analyze --no-current-package .)
 
   echo "DARTFMT check of extracted code snippets:"
