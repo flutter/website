@@ -88,19 +88,19 @@ and both of these depend on `url_launcher`,
 but in different versions.
 That causes a potential conflict.
 The best way to avoid this is for package authors to use
-[version ranges][]
-rather than specific versions when specifying dependencies.
+[version ranges][] rather than specific versions when
+specifying dependencies.
 
 ```yaml
 dependencies:
-  url_launcher: ^0.4.2    # Good, any 0.4.x version where x >= 2 works.
-  image_picker: '0.1.1'   # Not so good, only version 0.1.1 works.
+  url_launcher: ^5.4.0    # Good, any 5.4.x version where x >= 0 works.
+  image_picker: '5.4.3'   # Not so good, only version 5.4.3 works.
 ```
 
 If `some_package` declares the dependencies above
 and `another_package` declares a compatible
-`url_launcher` dependency like `'0.4.5'` or
-`^0.4.0`, `pub` resolves the issue automatically.
+`url_launcher` dependency like `'5.4.6'` or
+`^5.5.0`, `pub` resolves the issue automatically.
 Platform-specific dependencies on
 [Gradle modules][] and/or [CocoaPods][]
 are solved in a similar way.
@@ -113,7 +113,7 @@ the conflict can be resolved by adding
 a dependency override declaration to the app's
 `pubspec.yaml` file, forcing the use of a particular version.
 
-For example, to force the use of `url_launcher` version `0.4.3`,
+For example, to force the use of `url_launcher` version `5.4.0`,
 make the following changes to the app's `pubspec.yaml` file:
 
 ```yaml
@@ -121,7 +121,7 @@ dependencies:
   some_package:
   another_package:
 dependency_overrides:
-  url_launcher: '0.4.3'
+  url_launcher: '5.4.0'
 ```
 
 If the conflicting dependency is not itself a package,
@@ -129,13 +129,13 @@ but an Android-specific library like `guava`,
 the dependency override declaration must be added to
 Gradle build logic instead.
 
-To force the use of `guava` version `23.0`, make the following
+To force the use of `guava` version `28.0`, make the following
 changes to the app's `android/build.gradle` file:
 
 ```groovy
 configurations.all {
     resolutionStrategy {
-        force 'com.google.guava:guava:23.0-android'
+        force 'com.google.guava:guava:28.0-android'
     }
 }
 ```
@@ -174,7 +174,7 @@ following formats:
 
   ```yaml
   dependencies:
-    url_launcher: '>=0.1.2 <0.2.0'
+    url_launcher: '>=5.4.0 <6.0.0'
   ```
 
 * Range constraints with [*caret syntax*][]
@@ -182,7 +182,7 @@ following formats:
 
   ```yaml
   dependencies:
-    collection: '^0.1.2'
+    collection: '^5.4.0'
   ```
 
 For additional details,

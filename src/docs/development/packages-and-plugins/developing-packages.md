@@ -42,7 +42,7 @@ shared easily. A minimal package consists of the following:
 
 ### Package types {#types}
 
-Packages can contain several kinds of content:
+Packages can contain more than one kind of content:
 
 **Dart packages**
 : General packages written in Dart,
@@ -257,7 +257,7 @@ with the following specialized content:
 **`lib/hello.dart`**
 : The Dart API for the plugin.
 
-**`android/src/main/java/com/example/&#8203;hello/HelloPlugin.kt`**
+**`android/src/main/java/com/example/hello/HelloPlugin.kt`**
 : The Android platform-specific implementation of the plugin API
   in Kotlin.
 
@@ -299,7 +299,7 @@ first make sure that the code has been built at least once
 (in other words, run the example app from your IDE/editor,
 or in a terminal execute `cd hello/example; flutter build apk`).
 
-The use the following steps:
+Then use the following steps:
 
 1. Launch Android Studio.
 1. Select **Import project** in the
@@ -311,7 +311,7 @@ The use the following steps:
    select **Don't remind me again for this project**.
 
 The Android platform code of your plugin is located in
-`hello/java/com.example.hello/&#8203;HelloPlugin`.
+`hello/java/com.example.hello/HelloPlugin`.
 
 You can run the example app from Android Studio by
 pressing the run (&#9654;) button.
@@ -342,9 +342,14 @@ You can run the example app by pressing the run (&#9654;) button.
 
 PENDING
 
+{% comment %}
+<!-- For now, leave this out and renumber the next step to 2e -->
 #### Step 2e: Add macos platform code
 
-#### Step 2f: Connect the API and the platform code
+PENDING
+{% endcomment %}
+
+#### Step 2e: Connect the API and the platform code
 
 Finally, you need to connect the API written in Dart code with
 the platform-specific implementations.
