@@ -4,11 +4,16 @@ short-title: Platform-specific code
 description: Learn how to write custom platform-specific code in your app.
 ---
 
-[PENDING: Is this page up-to-date?]
-
 This guide describes how to write custom platform-specific code. Some
 platform-specific functionality is available through existing packages;
 see [using packages][].
+
+{{site.alert.note}}
+  The information in this page is valid for most
+  plugins, except for any web plugin implemented
+  as a [federated plugin][], which don't use
+  platform channels.
+{{site.alert.end}}
 
 Flutter uses a flexible system that allows you to call platform-specific APIs
 whether available in Kotlin or Java code on Android,
@@ -51,10 +56,11 @@ to ensure the user interface remains responsive.
   for more information.
 {{site.alert.end}}
 
-On the client side, `MethodChannel` ([API][MethodChannel]) enables sending
-messages that correspond to method calls. On the platform side, `MethodChannel`
-on Android ([API][MethodChannelAndroid]) and `FlutterMethodChannel` on iOS
-([API][MethodChanneliOS]) enable receiving method calls and sending back a
+On the client side, [`MethodChannel`][] enables sending
+messages that correspond to method calls. On the platform side,
+`MethodChannel` on Android ([`MethodChannelAndroid`][]) and
+`FlutterMethodChannel` on iOS ([`MethodChanneliOS`][])
+enable receiving method calls and sending back a
 result. These classes allow you to develop a platform plugin with very little
 'boilerplate' code.
 
@@ -100,9 +106,9 @@ and the iOS `device.batteryLevel` API, via a single platform message,
 
 The example adds the platform-specific code inside the main app itself.
 If you want to reuse the platform-specific code for multiple apps,
-the project creation step is slightly different (see [developing
-packages](/docs/development/packages-and-plugins/developing-packages#plugin)),
-but the platform channel code is still written in the same way.
+the project creation step is slightly different
+(see [developing packages][plugins]), but the platform channel code
+is still written in the same way.
 
 *Note*: The full, runnable source-code for this example is available in
 [`/examples/platform_channel/`][] for Android with Java and
@@ -221,8 +227,9 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
 1. Open the `MainActivity.java` file located in the **java** folder in the
    Project view.
 
-Next, create a `MethodChannel` and set a `MethodCallHandler` inside the
-`configureFlutterEngine()` method. Make sure to use the same channel name as was used on the
+Next, create a `MethodChannel` and set a `MethodCallHandler`
+inside the `configureFlutterEngine()` method.
+Make sure to use the same channel name as was used on the
 Flutter client side.
 
 <!--code-excerpt "MainActivity.java" title-->
@@ -640,12 +647,18 @@ in the Flutter ecosystem, see [publishing packages][].
 
 ## Custom channels and codecs
 
-Besides the above mentioned `MethodChannel`, you can also use the more basic
-[`BasicMessageChannel`][BasicMessageChannel], which supports basic,
+Besides the above mentioned `MethodChannel`,
+you can also use the more basic
+[`BasicMessageChannel`][], which supports basic,
 asynchronous message passing using a custom message codec.
 You can also use the specialized [`BinaryCodec`][],
 [`StringCodec`][], and [`JSONMessageCodec`][]
 classes, or create your own codec.
+
+You might also check out an example of a custom codec
+in the [`cloud_firestore`][] plugin,
+which is able to serialize and deserialize many more
+types than the default types.
 
 ## Channels and Platform Threading
 
@@ -704,18 +717,21 @@ DispatchQueue.main.async {
 }
 ```
 
-[BasicMessageChannel]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
+[`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
+[`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [defaultTargetPlatform]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [developing packages]: /docs/development/packages-and-plugins/developing-packages
+[plugins]: /docs/development/packages-and-plugins/developing-packages#plugin
 [dispatch queue]: https://developer.apple.com/documentation/dispatch/dispatchqueue
 [`/examples/platform_channel/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
 [`/examples/platform_channel_swift/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift
+[federated plugin]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
-[MethodChannel]: {{site.api}}/flutter/services/MethodChannel-class.html
-[MethodChannelAndroid]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
-[MethodChanneliOS]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
+[`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
+[`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
+[`MethodChanneliOS`]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
 [Platform adaptations]: /docs/resources/platform-adaptations
 [publishing packages]: /docs/development/packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions

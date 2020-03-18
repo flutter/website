@@ -350,8 +350,7 @@ in binary form, use the following instructions:
 
 ### Web
 
-PENDING
-
+This feature is not yet supported for web plugins.
 
 [Add C and C++ code to your project]: {{site.android-dev}}/studio/projects/add-native-code
 [Android NDK Native APIs]: {{site.android-dev}}/ndk/guides/stable_apis

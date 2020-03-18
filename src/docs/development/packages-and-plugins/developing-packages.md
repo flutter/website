@@ -83,13 +83,41 @@ $ flutter create --template=package hello
 This creates a package project in the `hello/` folder with
 the following specialized content:
 
-**`lib/hello.dart`**
-: The Dart code for the package.
+**LICENSE**
+: A (mostly) empty license text file.
 
-**`test/hello_test.dart`**
+**test/hello_test.dart**
 : The [unit tests][] for the package.
 
-[PENDING: Is this still true for regular Dart packages?]
+**hello.iml**
+: A configuration file used by the IntelliJ IDEs.
+
+**.gitignore**
+: A hidden file that tells Git which files or
+  folders to ignore in a project.
+
+**.metadata**
+: A hidden file used by IDEs to track the properties
+  of the Flutter project.
+
+**pubspec.yaml**
+: A yaml file containing metadata that specifies
+  the package's dependencies. Used by the pub tool.
+
+**README.md**
+: A starter markdown file that briefly describes
+  the package's purpose.
+
+**lib/hello.dart**
+: A starter app containing Dart code for the package.
+
+**.idea/modules.xml**, **.idea/modules.xml**, **.idea/workspace.xml**
+: A hidden folder containing configuration files
+  for the IntelliJ IDEs.
+
+**CHANGELOG.md**
+: A (mostly) empty markdown file for tracking
+  version changes to the package.
 
 ### Step 2: Implement the package
 
@@ -138,7 +166,9 @@ A federated plugin requires the following packages:
 **platform package(s)**
 : One or more packages that contain the platform-specific
   implementation code. The app-facing package calls into
-  these packages&mdash;they aren't included into an app.
+  these packages&mdash;they aren't included into an app,
+  unless they contain platform-specific functionality
+  accessible to the end user.
 
 **platform interface package**
 : The mandatory package that glues the app-facing packing
@@ -318,7 +348,9 @@ PENDING
 
 Finally, you need to connect the API written in Dart code with
 the platform-specific implementations.
-This is done using a [platform channel][].
+This is done using a [platform channel][],
+or through the interfaces defined in a platform
+interface package.
 
 ### Testing your plugin
 
@@ -546,11 +578,15 @@ at `hello/ios/Classes`.
 
 ### Web
 
-PENDING
+All web dependencies are handled by the `pubspec.yaml`
+file like any other Dart package.
 
+{% comment %}
+<!-- Remove until we have better text. -->
 ### MacOS
 
 PENDING
+{% endcomment %}
 
 
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
