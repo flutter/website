@@ -48,6 +48,7 @@ function check_formatting() {
   elif [[ "${#fmt_result[@]}" == 0 ]]; then
     echo "No formatting errors!"
   else
+    pushd $@
     error "There are formatting errors in the following files:"$'\n'
     for file in "${fmt_result[@]}"; do
       error "===== $file ====="
@@ -62,6 +63,7 @@ function check_formatting() {
       error "===== /end $file ====="$'\n'
       rm "$file.expected"
     done
+    popd
     return 1
   fi
 }
@@ -131,7 +133,7 @@ echo "Using Dart SDK: $dart"
 if [[ -n $PUB_CMD ]]; then
   (
     set -x;
-    rm -Rf example.g
+    rm -rf example.g
     mkdir -pv example.g
     cp example/* example.g/
   )
@@ -149,7 +151,7 @@ if [[ -n $CHECK_CODE ]]; then
   (cd example.g; "$flutter" analyze --no-current-package .)
 
   echo "DARTFMT check of extracted code snippets:"
-  check_formatting example.g/*.dart
+  check_formatting example.g
 
   echo "ANALYZING and testing apps in examples/*"
   for sample in examples/*/*{,/*}; do
