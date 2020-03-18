@@ -536,7 +536,7 @@ PENDING
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
-[federated plugins]: #federated_plugins
+[federated plugins]: #federated-plugins
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: /docs/get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
@@ -550,7 +550,7 @@ PENDING
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
-[Supporting the new Android plugins APIs]: /docs/development/platform-integration/plugin-api-migration
+[Supporting the new Android plugins APIs]: /docs/development/packages-and-plugins/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
 [Testing your plugin]: /docs/development/packages-and-plugins/plugin-api-migration#testing-your-plugin
