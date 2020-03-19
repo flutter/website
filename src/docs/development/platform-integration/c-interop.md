@@ -113,7 +113,7 @@ int32_t native_add(int32_t x, int32_t y) {
 EOF
 ```
 
-On iOS, you need to tell xcode to statically link the file:
+On iOS, you need to tell Xcode to statically link the file:
 
  1. In Xcode, open `Runner.xcworkspace`.
  2. Add the C/C++/Objective-C/Swift
@@ -296,7 +296,7 @@ in binary form, use the following instructions:
 
 **Do not** upload this plugin
 (or any plugin containing binary code)
-to Pub. Instead, this plugin should be downloaded
+to pub.dev. Instead, this plugin should be downloaded
 from a trusted third-party,
 as shown in the CocoaPods example.
 
@@ -349,8 +349,7 @@ in binary form, use the following instructions:
 
 ### Web
 
-Plugins are not yet supported for web apps.
-
+This feature is not yet supported for web plugins.
 
 [Add C and C++ code to your project]: {{site.android-dev}}/studio/projects/add-native-code
 [Android NDK Native APIs]: {{site.android-dev}}/ndk/guides/stable_apis

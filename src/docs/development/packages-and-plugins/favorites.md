@@ -17,7 +17,7 @@ own evaluation of packages and plugins for your project.
 Flutter Favorite packages have passed high quality standards
 using the following metrics:
 
-* [Overall package score]
+* [Overall package score][]
 * **Permissive license**,
   including (but not limited to)
   Apache, Artistic, BSD, CC BY, MIT, MS-PL and W3C
@@ -25,7 +25,7 @@ using the following metrics:
   pub.dev, so you can see exactly what source is in the package
 * Feature **completeness**&mdash;and not marked as incomplete
   (for example, with labels like “beta” or “under construction”)
-* [Verified publisher]
+* [Verified publisher][]
 * General **usability** when it comes to the overview,
   docs, sample/example code, and API quality
 * Good **runtime behavior** in terms of CPU and memory usage
@@ -56,11 +56,11 @@ are as follows:
 If you'd like to nominate a package or plugin as a
 potential future Flutter Favorite, or would like
 to bring any other issues to the attention of the committee,
-send the [committee chair] an email.
+send the [committee chair][] an email.
 
 ## Flutter Favorite usage guidelines
 
-Flutter Favorite packages will be labeled as such on pub.dev
+Flutter Favorite packages are labeled as such on pub.dev
 by the Flutter team.
 If you own a package that has been designated as a Flutter Favorite,
 you must adhere to the following guidelines:
@@ -98,7 +98,7 @@ As the Flutter ecosystem grows,
 we’ll be looking at expanding the set of metrics,
 which might include the following:
 
-* Use of the new [pubspec.yaml format] that clearly
+* Use of the new [pubspec.yaml format][] that clearly
   indicates which platforms are supported.
 * Support for the latest stable version of Flutter.
 * Support for AndroidX.
@@ -109,7 +109,7 @@ which might include the following:
 ## Flutter Favorites
 
 You can see the complete list of
-[Flutter Favorite packages] on pub.dev.
+[Flutter Favorite packages][] on pub.dev.
 
 
 [committee chair]: mailto:csells@google.com
