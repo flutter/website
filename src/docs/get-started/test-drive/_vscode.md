@@ -38,6 +38,12 @@ contains a simple demo app that uses [Material Components][].
  1. Wait for the app to launch &mdash; progress is printed
     in the **Debug Console** view.
 
+{{site.alert.warning}}
+  When launching your app from a Mac, if you see
+  `ERROR: Could not connect to lockdownd, error code -17`,
+  make sure that you have [trusted your computer][].
+{{site.alert.end}}
+
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**
   <i class="material-icons align-bottom">offline_bolt</i>.
@@ -53,5 +59,7 @@ contains a simple demo app that uses [Material Components][].
 [Material Components]: {{site.material}}/guidelines
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 [status bar]: {% asset tools/vs-code/device_status_bar.png @path %}
+
+[trusted your computer]: /docs/get-started/install/macos#trust
 
 </div>

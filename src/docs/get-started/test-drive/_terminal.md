@@ -30,6 +30,11 @@ contains a simple demo app that uses [Material Components][].
     ```terminal
     $ flutter run
     ```
+{{site.alert.warning}}
+  When launching your app from a Mac, if you see
+  `ERROR: Could not connect to lockdownd, error code -17`,
+  make sure that you have [trusted your computer][].
+{{site.alert.end}}
 
 {% capture save_changes -%}
 .
@@ -38,5 +43,7 @@ contains a simple demo app that uses [Material Components][].
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 {% include run-profile.md %}
+
+[trusted your computer]: /docs/get-started/install/macos#trust
 
 </div>
