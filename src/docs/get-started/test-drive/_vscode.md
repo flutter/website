@@ -60,6 +60,7 @@ contains a simple demo app that uses [Material Components][].
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 [status bar]: {% asset tools/vs-code/device_status_bar.png @path %}
 
+</div>
+
 [trusted your computer]: /docs/get-started/install/macos#trust
 
-</div>

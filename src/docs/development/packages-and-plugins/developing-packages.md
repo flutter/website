@@ -80,7 +80,7 @@ with `flutter create`:
 $ flutter create --template=package hello
 ```
 
-This creates a package project in the `hello/`
+This creates a package project in the `hello`
 folder with the following content:
 
 **LICENSE**
@@ -249,8 +249,8 @@ generated plugin code.
 ```terminal
 $ flutter create --org com.example --template=plugin hello
 ```
-`
-This creates a plugin project in the `hello/` folder
+
+This creates a plugin project in the `hello` folder
 with the following specialized content:
 
 **`lib/hello.dart`**
