@@ -11,13 +11,13 @@ see [using packages][].
 {{site.alert.note}}
   The information in this page is valid for most
   plugins, except for any web plugin implemented
-  as a [federated plugin][], which don't use
-  platform channels.
+  as a [federated plugin][]. Federated plugins
+  don't use platform channels.
 {{site.alert.end}}
 
-Flutter uses a flexible system that allows you to call platform-specific APIs
-whether available in Kotlin or Java code on Android,
-or in Swift or Objective-C code on iOS.
+Flutter uses a flexible system that allows you to call
+platform-specific APIs whether available in Kotlin or
+Java code on Android, or in Swift or Objective-C code on iOS.
 
 Flutter's platform-specific API support does not rely on code generation,
 but rather on a flexible message passing style:
@@ -41,7 +41,8 @@ but rather on a flexible message passing style:
 
 ## Architectural overview: platform channels {#architecture}
 
-Messages are passed between the client (UI) and host (platform) using platform
+Messages are passed between the client (UI)
+and host (platform) using platform
 channels as illustrated in this diagram:
 
 ![Platform channels architecture](/images/PlatformChannels.png)
@@ -156,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 Next, invoke a method on the method channel, specifying the concrete method
-to call via the String identifier `getBatteryLevel`.
+to call using the String identifier `getBatteryLevel`.
 The call might fail&mdash;for example if the platform does not support the
 platform API (such as when running in a simulator), so wrap the
 `invokeMethod` call in a try-catch statement.

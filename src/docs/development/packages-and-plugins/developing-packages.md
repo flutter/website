@@ -6,7 +6,7 @@ description: How to write packages and plugins for Flutter.
 
 {{site.note.alert}}
   If you write plugins for Flutter, you should know that
-  the Android plugin API was upgraded to 2.0 in Flutter 1.12
+  the plugin API was upgraded to 2.0 in Flutter 1.12
   to support [federated plugins][] and to make it easier to
   [test your plugin][].
   In Flutter 1.10, Flutter's pubspec format was updated to
@@ -68,20 +68,20 @@ Packages can contain more than one kind of content:
 
 ## Developing Dart packages {#dart}
 
-The following instructions explain how to write a Dart package
-that can be used by multiple platforms.
+The following instructions explain how to write a Flutter
+package.
 
 ### Step 1: Create the package
 
-To create a Dart package, use the `--template=package` flag
+To create a Flutter package, use the `--template=package` flag
 with `flutter create`:
 
 ```terminal
 $ flutter create --template=package hello
 ```
 
-This creates a package project in the `hello/` folder with
-the following specialized content:
+This creates a package project in the `hello/`
+folder with the following content:
 
 **LICENSE**
 : A (mostly) empty license text file.
@@ -146,12 +146,12 @@ implementation(s) using [platform channels][].
 
 ### Federated plugins
 
-What is a _federated plugin_? Federated plugins were
-introduced in Flutter 1.12 as a way of splitting 
-support for different platforms into separate packages.
-So, a federated plugin can use one package for iOS and Android,
-another for web, and another for your car
-(as an example of an embedded internet of things device).
+Federated plugins were introduced in Flutter 1.12
+as a way of splitting support for different platforms
+into separate packages. So, a federated plugin can use
+one package for iOS, another for Android,
+another for web, and yet another for your car
+(as an example of an IoT device).
 Among other benefits, this approach allows a
 domain expert to extend an existing plugin to work for
 the platform they know best.
@@ -159,9 +159,8 @@ the platform they know best.
 A federated plugin requires the following packages:
 
 **app-facing package**
-: A mandatory package that you include in your Dart code
-  in order to use the plugin. This package specifies the
-  API used by the Flutter app.
+: The package that plugin users depend on to use the plugin.
+  This package specifies the API used by the Flutter app.
 
 **platform package(s)**
 : One or more packages that contain the platform-specific
@@ -171,7 +170,7 @@ A federated plugin requires the following packages:
   accessible to the end user.
 
 **platform interface package**
-: The mandatory package that glues the app-facing packing
+: The package that glues the app-facing packing
   to the platform package(s). This package declares an
   interface that any platform package must implement to
   support the app-facing package. Having a single package
@@ -181,11 +180,11 @@ A federated plugin requires the following packages:
 For more information on federated plugins,
 why they are useful, and how they are implemented,
 see the Medium article by Harry Terkelsen,
-[How To Write a Flutter Web Plugin: Part 2][].
+[How To Write a Flutter Web Plugin, Part 2][].
 
 ### Specifying a plugin's supported platforms {#plugin-platforms}
 
-In Flutter 1.10 and later, plugins can specify
+In Flutter 1.12 and later, plugins can specify
 the platforms they support by adding keys to the
 `platforms` map in the `pubspec.yaml` file.
 For example, the following pubspec file shows the
@@ -204,9 +203,9 @@ flutter:
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
-  # Flutter versions prior to 1.10 did not support the
+  # Flutter versions prior to 1.12 did not support the
   # flutter.plugin.platforms map.
-  flutter: ">=1.10.0 <2.0.0"
+  flutter: ">=1.12.0 <2.0.0"
 ```
 
 When adding plugin implementations for more platforms,
@@ -232,9 +231,9 @@ flutter:
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
-  # Flutter versions prior to 1.10 did not support the
+  # Flutter versions prior to 1.12 did not support the
   # flutter.plugin.platforms map.
-  flutter: ">=1.10.0 <2.0.0"
+  flutter: ">=1.12.0 <2.0.0"
 ```
 
 ### Step 1: Create the package
@@ -271,7 +270,7 @@ with the following specialized content:
 
 By default, the plugin project uses Swift for iOS code and
 Kotlin for Android code. If you prefer Objective-C or Java,
-you can specify the iOS language using `-i` and/or the
+you can specify the iOS language using `-i` and the
 Android language using `-a`. For example:
 
 ```terminal
@@ -338,18 +337,7 @@ in the Project Navigator.
 
 You can run the example app by pressing the run (&#9654;) button.
 
-#### Step 2d: Add web platform code
-
-PENDING
-
-{% comment %}
-<!-- For now, leave this out and renumber the next step to 2e -->
-#### Step 2e: Add macos platform code
-
-PENDING
-{% endcomment %}
-
-#### Step 2e: Connect the API and the platform code
+#### Step 2d: Connect the API and the platform code
 
 Finally, you need to connect the API written in Dart code with
 the platform-specific implementations.
