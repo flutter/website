@@ -187,7 +187,8 @@
       { "source": "/go/annotator-tree", "destination": "https://docs.google.com/document/d/1YtkdZSx1687Ipbff06qp3XglmJym3Wc9boY4I-bYs4A/edit?usp=sharing", "type": 301 },
       { "source": "/go/restoring-anonymous-routes", "destination": "https://docs.google.com/document/d/1vnjDruoiDz0eEd4eVzg3IS6W_LRaFxNSlKWtU6iXp2M/edit?usp=sharing", "type": 301 },
       { "source": "/go/router-and-widgetsapp-integration", "destination": "https://docs.google.com/document/d/1QodTFmwVr1yk8dyQvoqkeILxvm92oikB1bVhHTtp6R4/edit?usp=sharing", "type": 301 },
-      { "source": "/go/move-mouse-tracker-to-rendering", "destination": "https://docs.google.com/document/d/1dYNOTZ4kdq6ndNHopjUlrGlGBw3W-3jMbnoNJouIYtE/edit?usp=sharing", "type": 301 }
+      { "source": "/go/move-mouse-tracker-to-rendering", "destination": "https://docs.google.com/document/d/1dYNOTZ4kdq6ndNHopjUlrGlGBw3W-3jMbnoNJouIYtE/edit?usp=sharing", "type": 301 },
+      { "source": "/go/input-field-autofill", "destination": "https://docs.google.com/document/d/1wYLsoc7NiHl2jFueB4Ros09E3nDCotdWVovDCFSMcAk/edit?usp=sharing", "type": 301 }
     ]
   }
 }
