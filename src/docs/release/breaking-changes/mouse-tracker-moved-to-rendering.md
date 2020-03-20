@@ -12,45 +12,34 @@ package instead.
 
 ## Context
 
-Gestures are roughly defined as aggregations of pointer
-events. When a pointer event arrives, multiple gesture
-recognizers, each representing one kind of gesture, join a
-gesture arena and decide one winner through the event
-sequence.
+Prior to this change [`MouseTracker`][] was part of the
+`gestures` package. This brought troubles when we found out
+that code related to [`MouseTracker`][] often wanted to
+import from the `rendering` package.
 
-[`MouseTracker`][] is a (usually) singleton class that
-dispatches pointer events that are specifically for a mouse
-(i.e. enter, exit, and, move) directly to interested
-objects.
-
-This shows that [`MouseTracker`][] is not really part of
-gestures, but is rather a supporting system to dispatch
-these events. [`MouseTracker`][] were not connected with the
-rest of the package either in terms of code. On the other
-hand, its existence in the gestures packages had brought
-many troubles, because code related to [`MouseTracker`][] often
-wants to import from the `rendering` package. This shows
-that `rendering` is where it really belongs.
+Since [`MouseTracker`][] turned out to be more connected to
+`rendering` than `gestures`, we have moved it and its
+related code to `rendering`. 
 
 ## Description of change
 
 The file `mouse_tracking.dart` has been moved from the
-`gestures` package to `rendering`.
-
-All symbols in the said file have be moved without keeping
-backward compatibility. Following is the full list:
-
-  * [`PointerEnterEventListener`][]
-  * [`PointerExitEventListener`][]
-  * [`PointerHoverEventListener`][]
-  * [`MouseTrackerAnnotation`][]
-  * [`MouseDetectorAnnotationFinder`][]
-  * [`MouseTracker`][]
+`gestures` package to `rendering`. All symbols in the said
+file have been moved without keeping backward compatibility.
 
 ## Migration guide
 
-If the affected symbols are reported undefined,
-add the following import:
+If you see error of "Undefined class" or "Undefined name" of
+the following symbols:
+
+  * [`MouseDetectorAnnotationFinder`][]
+  * [`MouseTracker`][]
+  * [`MouseTrackerAnnotation`][]
+  * [`PointerEnterEventListener`][]
+  * [`PointerExitEventListener`][]
+  * [`PointerHoverEventListener`][]
+
+You should add the following import:
 
 ```dart
 import 'package:flutter/rendering.dart';
@@ -58,7 +47,7 @@ import 'package:flutter/rendering.dart';
 
 ## Timeline
 
-Changes since 1.2.22.
+Changed after 1.2.22.
 
 ## References
 
