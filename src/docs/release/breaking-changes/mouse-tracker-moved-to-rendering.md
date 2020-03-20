@@ -58,7 +58,7 @@ import 'package:flutter/rendering.dart';
 
 ## Timeline
 
-Changes since 1.2.22"
+Changes since 1.2.22.
 
 ## References
 
