@@ -85,8 +85,7 @@ Next, you'll verify the most important settings.
 In the **Identity** section:
 
 `Display Name`
-: The name of the app to be displayed on the home screen and
-  elsewhere.
+: Runner
   
 `Bundle Identifier`
 : The App ID you registered on App Store Connect.
@@ -119,6 +118,10 @@ the following:
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
+
+## Updating the app's name
+
+In the main view sidebar, select the `Info.plist` file. Rename the **Bundle name** field.
 
 ## Updating the app's version number
 
