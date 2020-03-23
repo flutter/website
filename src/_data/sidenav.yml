@@ -34,9 +34,9 @@
 - title: Samples & tutorials
   children:
     - title: Flutter Gallery [NEW]
-      permalink: https://flutter.github.io/samples/#/
+      permalink: https://flutter.github.io/gallery/
     - title: Sample apps on GitHub
-      permalink: https://github.com/flutter/samples/blob/master/INDEX.md
+      permalink: https://flutter.github.io/samples/
     - title: Cookbook
       permalink: /docs/cookbook
     - title: Codelabs
