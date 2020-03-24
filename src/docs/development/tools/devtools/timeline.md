@@ -35,7 +35,7 @@ This chart is populated with individual frames as they are rendered
 in your application. Each bar in the chart represents a frame.
 The bars are color-coded to highlight the different portions of
 work that occur when rendering a Flutter frame: work from the UI
-thread and work from the GPU thread.
+thread and work from the raster thread (previously known as GPU thread).
 
 ![Screenshot from a timeline recording]({% asset tools/devtools/timeline_frame_rendering_chart.png @path %}){:width="100%"}
 
@@ -47,21 +47,21 @@ The UI thread executes Dart code in the Dart VM. This includes
 code from your application as well as the Flutter framework.
 When your app creates and displays a scene, the UI thread creates
 a layer tree, a lightweight object containing device-agnostic
-painting commands, and sends the layer tree to the GPU thread
+painting commands, and sends the layer tree to the raster thread
 to be rendered on the device. Do **not** block this thread.
 
-### GPU
+### Raster
 
-The GPU thread executes graphics code from the Flutter Engine.
+The raster thread (previously known as the GPU thread) executes 
+graphics code from the Flutter Engine.
 This thread takes the layer tree and displays it by talking to
 the GPU (graphic processing unit). You cannot directly access
-the GPU thread or its data, but if this thread is slow, it's a
+the raster thread or its data, but if this thread is slow, it's a
 result of something you've done in the Dart code. Skia, the
-graphics library, runs on this thread, which is sometimes called
-the rasterizer thread.
+graphics library, runs on this thread.
 
 Sometimes a scene results in a layer tree that is easy to construct,
-but expensive to render on the GPU thread. In this case, you'll
+but expensive to render on the raster thread. In this case, you'll
 need to figure out what your code is doing that is causing
 rendering code to be slow. Specific kinds of workloads are more
 difficult for the GPU. They might involve unnecessary calls to
@@ -69,7 +69,7 @@ difficult for the GPU. They might involve unnecessary calls to
 and clips or shadows in specific situations.
 
 For more information on profiling, see
-[Identifying problems in the GPU graph][GPU thread].
+[Identifying problems in the GPU graph][GPU graph].
 
 ### Jank
 
@@ -203,5 +203,5 @@ state. To import a timeline snapshot, you can drag and drop the
 snapshot into DevTools from any page. **Note the DevTools only
 supports importing files that were originally exported from DevTools.**
 
-[GPU thread]: /docs/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
+[GPU graph]: /docs/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
