@@ -4,12 +4,12 @@ description: How to measure app size for iOS and Android.
 ---
 
 Many developers are concerned with the size of their
-compiled apps. As the APK, app bundle, or IPA version
+compiled app. As the APK, app bundle, or IPA version
 of a Flutter app is self contained, and holds all the
 code and assets needed to run the app, its size
 can be a concern. The larger an app, the more space
-it requires on a device, and the longer it takes to
-download, and it may break the limit of useful features
+it requires on a device, the longer it takes to download,
+and it may break the limit of useful features
 like Android instant apps.
 
 By default, launching your app with `flutter run`,
@@ -90,9 +90,10 @@ The resulting IPA file for the `example/helloworld` app
 
 A closer result can be obtained by creating a release archive as described in
 the [iOS create build archive instructions][]. If bitcode is enabled on your
-project, you will also have the option to rebuild from bitcode. This option
-should be selected if it is available, to more closely match what the App Store
-will produce for your application. You can also select app thinning for a
+project, you also have the option to rebuild from bitcode. This option
+should be selected if it is available,
+to more closely match what the App Store
+produces for your application. You can also select app thinning for a
 specific phone architecture, which should be very close to the final IPA size
 from the store for that device.
 
@@ -118,6 +119,6 @@ are:
 [FAQ]: /docs/resources/faq
 [How big is the Flutter engine?]: /docs/resources/faq#how-big-is-the-flutter-engine
 [instructions]: /docs/deployment/ios
+[iOS create build archive instructions]: /docs/deployment/ios#create-a-build-archive
 [Test drive]: /docs/get-started/test-drive
 [Write your first Flutter app]: /docs/get-started/codelab
-[iOS create build archive instructions]: /docs/deployment/ios#create-a-build-archive

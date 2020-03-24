@@ -48,7 +48,7 @@ To register a Bundle ID for your app, follow these steps:
 
 ### Create an application record on App Store Connect
 
-Next, you'll register your app on App Store Connect:
+Register your app on App Store Connect:
 
 1. Open [App Store Connect][appstoreconnect_login] in your browser.
 1. On the App Store Connect landing page, click **My Apps**.
@@ -80,7 +80,7 @@ Navigate to your target's settings in Xcode:
    target.
 1. Select the **General** tab.
 
-Next, you'll verify the most important settings.
+Verify the most important settings.
 
 In the **Identity** section:
 
@@ -158,12 +158,12 @@ app's icons:
 
 ## Create a build archive
 
-In this step, you'll create a build archive and upload your
-build to App Store Connect.
+This step covers creating a build archive and uploading
+your build to App Store Connect.
 
 During development, you've been building, debugging, and testing
 with *debug* builds. When you're ready to ship your app to users
-on the App Store or TestFlight, you'll need to prepare a *release* build.
+on the App Store or TestFlight, you need to prepare a *release* build.
 
 On the command line, follow these steps in your application directory:
 
@@ -250,6 +250,7 @@ For more details, see
 
 The [Distribute your app][distributionguide] guide provides a
 detailed overview of the process of releasing an app to the App Store.
+
 
 [appicon]: https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/
 [appreview]: https://developer.apple.com/app-store/review/
