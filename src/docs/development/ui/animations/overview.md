@@ -1,7 +1,7 @@
 ---
 title: Animations overview
 short-title: Overview
-description: An overview of animation concepts
+description: An overview of animation concepts.
 ---
 
 The animation system in Flutter is based on typed

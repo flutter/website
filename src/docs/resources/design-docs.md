@@ -1,5 +1,6 @@
 ---
 title: Flutter Design Documents
+description: Design documents for Flutter.
 js:
   - defer: true
     url: /assets/js/go_link_index.js

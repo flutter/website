@@ -12,8 +12,8 @@ for the number of PRs in each release. Over the past year,
 the number of PRs has been growing in each release
 (except for Flutter 1.9, which was an out-of-band
 release to support Catalina). In the recent
-[Github Octoverse report,](https://octoverse.github.com/)
-Flutter is listed as one of the top 3 active repos on Github!
+[GitHub Octoverse report][],
+Flutter is listed as one of the top 3 active repos on GitHub!
 
 As the holiday season is upon us, we would like to express
 our sincerest appreciation to our amazing developer community
@@ -42,10 +42,10 @@ In general, we want to avoid introducing breaking changes to Flutter,
 our plugins, or our packages. However, sometimes it is inevitable
 when we need to make our APIs more intuitive.
 We have implemented a new process that invites you to submit
-tests to help us detect breaking changes;
-see [this post](https://groups.google.com/g/flutter-announce/c/Z09a317E21o)
-to flutter-announce and our
-[breaking change policy on our wiki](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes).
+tests to help us detect breaking changes.
+For more information, see [this post from Ian Hickson][]
+on [flutter-announce][] and the
+[breaking change policy on the Flutter wiki][].
 
 The following list includes breaking changes in this release.
 Please see the related announcements so that you can move
@@ -2959,3 +2959,8 @@ In addition to the PRs listed below, please also check out the following release
 
  See the [full list](/docs/development/tools/sdk/release-notes/changelogs/changelog-1.12.13) of merged PRs for the 1.12 release.
 
+
+[breaking change policy on the Flutter wiki]: {{site.github}}/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes
+[flutter announce]: https://groups.google.com/g/flutter-announce
+[GitHub Octoverse report]: https://octoverse.github.com/
+[this post from Ian Hickson]: https://groups.google.com/g/flutter-announce/c/Z09a317E21o

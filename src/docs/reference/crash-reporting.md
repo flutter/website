@@ -1,11 +1,12 @@
 ---
 title: Flutter crash reporting
+description: How Google uses crash reporting, what is collected, and how to opt out.
 ---
 
-If you have not opted-out of Flutter's analytics and crash reporting, when a
-`flutter` command crashes it attempts to send a crash report to Google in order
-to help Google contribute improvements to Flutter over time. A crash report
-may contain the following information:
+If you have not opted-out of Flutter's analytics and crash reporting,
+when a `flutter` command crashes it attempts to send a crash report
+to Google in order to help Google contribute improvements to Flutter
+over time. A crash report may contain the following information:
 
 * The name and version of your local operating system.
 * The version of Flutter.
@@ -24,8 +25,8 @@ Google handles all data reported by this tool in accordance with the
 
 ## Disabling analytics reporting
 
-You can opt out of anonymous crash reporting and feature usage statistics from
-Flutter by running the following command:
+You can opt out of anonymous crash reporting and feature
+usage statistics from Flutter by running the following command:
 
 ```terminal
 $ flutter config --no-analytics

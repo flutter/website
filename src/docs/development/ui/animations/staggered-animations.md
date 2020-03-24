@@ -1,5 +1,6 @@
 ---
 title: Staggered Animations
+description: How to write a staggered animation in Flutter.
 short-title: Staggered
 ---
 
