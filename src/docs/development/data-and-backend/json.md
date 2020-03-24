@@ -49,11 +49,12 @@ and it's good for a quick proof of concept.
 
 Manual decoding does not perform well when your project becomes bigger.
 Writing decoding logic by hand can become hard to manage and error-prone.
-If you have a typo when accessing an nonexistent JSON
+If you have a typo when accessing a nonexistent JSON
 field, your code throws an error during runtime.
 
-If you do not have many JSON models in your project and are looking to test a
-concept quickly, manual serialization might be the way you want to start.
+If you do not have many JSON models in your project and are
+looking to test a concept quickly,
+manual serialization might be the way you want to start.
 For an example of manual encoding, see
 [Serializing JSON manually using dart:convert][].
 
@@ -89,10 +90,11 @@ shaking difficult. The tools cannot know what parts are unused at runtime, so
 the redundant code is hard to strip away. App sizes cannot be easily optimized
 when using reflection.
 
-Although you cannot use runtime reflection with Flutter, some libraries give
-you similarly easy-to-use APIs but are based on code generation instead. This
-approach is covered in more detail in the [code generation
-libraries](#code-generation) section.
+Although you cannot use runtime reflection with Flutter,
+some libraries give you similarly easy-to-use APIs but are
+based on code generation instead. This
+approach is covered in more detail in the
+[code generation libraries][] section.
 
 <a name="manual-encoding"></a>
 ## Serializing JSON manually using dart:convert
@@ -523,6 +525,7 @@ For more information, see the following resources:
 
 
 [`built_value`]: {{site.pub}}/packages/built_value
+[code generation libraries]: #code-generation
 [`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
 [Flutter Favorite]: /docs/development/packages-and-plugins/favorites
