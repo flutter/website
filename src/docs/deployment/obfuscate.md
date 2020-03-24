@@ -59,7 +59,7 @@ flutter build apk -h
 ```
 
 If these flags are not listed in the output,
-use `flutter --version` to check your version of Flutter.
+run `flutter --version` to check your version of Flutter.
 
 ## Reading an obfuscated stack trace
 
@@ -67,7 +67,7 @@ To debug a stack trace created by an obfuscated app,
 use the following steps to make it human readable:
 
 1. Find the matching symbols file.
-   For example a crash from an Android arm64
+   For example, a crash from an Android arm64
    device would need `app.android-arm64.symbols`.
 
 1. Provide both the stack trace (stored in a file)
