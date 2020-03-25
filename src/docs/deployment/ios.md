@@ -7,9 +7,6 @@ short-title: iOS
 This guide provides a step-by-step walkthrough of releasing a
 Flutter app to the [App Store][appstore] and [TestFlight][].
 
-For information on obfuscating Dart code,
-see [Obfuscating Dart Code][].
-
 ## Preliminaries
 
 Before beginning the process of releasing your app,
@@ -55,14 +52,14 @@ Register your app on App Store Connect:
 
 1. Open [App Store Connect][appstoreconnect_login] in your browser.
 1. On the App Store Connect landing page, click **My Apps**.
-1. Click **+** in the top-left corner of the My Apps page, then select
-   **New App**.
+1. Click **+** in the top-left corner of the My Apps page,
+   then select **New App**.
 1. Fill in your app details in the form that appears.
    In the Platforms section, ensure that iOS is checked.
    Since Flutter does not currently support tvOS,
    leave that checkbox unchecked. Click **Create**.
-1. Navigate to the application details for your app and select **App
-   Information** from the sidebar.
+1. Navigate to the application details for your app and select
+   **App Information** from the sidebar.
 1. In the General Information section, select the Bundle ID
    you registered in the preceding step.
 
@@ -132,7 +129,8 @@ For a detailed overview of app signing, see
 
 ## Updating the app's name
 
-In the main view sidebar, select the `Info.plist` file. Rename the **Bundle name** field.
+In the main view sidebar, select the `Info.plist` file.
+Rename the **Bundle name** field.
 
 ## Updating the app's version number
 
@@ -173,8 +171,11 @@ This step covers creating a build archive and uploading
 your build to App Store Connect.
 
 During development, you've been building, debugging, and testing
-with *debug* builds. When you're ready to ship your app to users
-on the App Store or TestFlight, you need to prepare a *release* build.
+with _debug_ builds. When you're ready to ship your app to users
+on the App Store or TestFlight, you need to prepare a _release_ build.
+At this point, you might consider [obfuscating your Dart code][]
+to make it more difficult to reverse engineer. Obfuscating
+your code involves adding a couple flags to your build command.
 
 On the command line, follow these steps in your application directory:
 
@@ -283,5 +284,5 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [Issue 41793]: {{site.github}}/flutter/flutter/issues/41793
-[Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
+[obfuscating your Dart code]: /docs/deployment/obfuscate
 [TestFlight]: https://developer.apple.com/testflight/
