@@ -1,5 +1,6 @@
 ---
 title: An introduction to integration testing
+description: Learn about integration testing in Flutter.
 short-title: Introduction
 prev:
   title: Take a picture using the camera

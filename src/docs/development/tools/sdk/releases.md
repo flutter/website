@@ -1,7 +1,7 @@
 ---
 title: Flutter SDK releases
 short-title: Releases
-description: All current Flutter SDK releases, both stable and developer.
+description: All current Flutter SDK releases, both stable and dev.
 toc: false
 ---
 

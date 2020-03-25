@@ -1,5 +1,6 @@
 ---
 title: An introduction to widget testing
+description: Learn more about widget testing in Flutter.
 short-title: Introduction
 prev:
   title: Mock dependencies using Mockito
