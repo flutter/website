@@ -169,8 +169,8 @@ app's icons:
 
 ## Create a build archive
 
-This step covers creating a build archive and uploading your
-build to App Store Connect.
+This step covers creating a build archive and uploading
+your build to App Store Connect.
 
 During development, you've been building, debugging, and testing
 with *debug* builds. When you're ready to ship your app to users
@@ -262,6 +262,7 @@ For more details, see
 
 The [Distribute your app][distributionguide] guide provides a
 detailed overview of the process of releasing an app to the App Store.
+
 
 [appicon]: https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/
 [appreview]: https://developer.apple.com/app-store/review/

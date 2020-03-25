@@ -288,8 +288,10 @@
 
 - title: Deployment
   children:
+    - title: Obfuscating Dart code
+      permalink: /docs/deployment/obfuscate
     - title: Creating flavors for Flutter
-      permalink:  /docs/deployment/flavors
+      permalink: /docs/deployment/flavors
     - title: Build and release an Android app
       permalink: /docs/deployment/android
     - title: Build and release an iOS app
