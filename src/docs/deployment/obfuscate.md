@@ -93,6 +93,7 @@ eventually be an obfuscated binary.
   For example, the following call to `expect()` will not
   work in an obfuscated binary:
 
+<!-- skip -->
 ```dart
 expect(Foo.runtimeType.toString(), equals('Foo'))
 ```
