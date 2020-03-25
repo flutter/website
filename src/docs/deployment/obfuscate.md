@@ -95,7 +95,7 @@ eventually be an obfuscated binary.
 
 <!-- skip -->
 ```dart
-expect(Foo.runtimeType.toString(), equals('Foo'))
+expect(foo.runtimeType.toString(), equals('Foo'))
 ```
 
 
