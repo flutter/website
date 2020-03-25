@@ -77,6 +77,8 @@ This change was introduced in v1.15.4
 
 ## References
 
+{% include master-api.md %}
+
 API documentation:
 * [`Container`][]
 * [`ColoredBox`][]
