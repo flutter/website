@@ -5,8 +5,7 @@ description: Learn how to use the DevTools timeline view.
 
 {{site.alert.note}}
   The timeline view works with mobile apps only.
-  Use Chrome DevTools to [generate timeline
-  events](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference)
+  Use Chrome DevTools to [generate timeline events][]
   for a web app.
 {{site.alert.end}}
 
@@ -27,7 +26,7 @@ It consists of three parts, each increasing in granularity.
 
 The timeline view also supports importing and exporting of
 timeline data files. For more information,
-see the [Import and export](#import-and-export) section.
+see the [Import and export][] section.
 
 ## Frame rendering chart
 
@@ -61,7 +60,7 @@ result of something you've done in the Dart code. Skia, the
 graphics library, runs on this thread.
 
 Sometimes a scene results in a layer tree that is easy to construct,
-but expensive to render on the raster thread. In this case, you'll
+but expensive to render on the raster thread. In this case, you
 need to figure out what your code is doing that is causing
 rendering code to be slow. Specific kinds of workloads are more
 difficult for the GPU. They might involve unnecessary calls to
@@ -203,5 +202,8 @@ state. To import a timeline snapshot, you can drag and drop the
 snapshot into DevTools from any page. **Note the DevTools only
 supports importing files that were originally exported from DevTools.**
 
+
+[generate timeline events]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: /docs/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
+[Import and export]: #import-and-export

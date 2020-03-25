@@ -14,13 +14,13 @@ support the obfuscation process described in
 this page:
 
 **Android**/**iOS**
-: Supported as of Flutter 1.15.18.  To obfuscate
+: Supported as of Flutter 1.16.2.  To obfuscate
   an app built against an earlier version of Flutter,
   use the [obfuscation instructions][] on the Flutter wiki.
 
 **macOS**
 : macOS ([in alpha][] as of Flutter 1.13),
-  supports obfuscation as of Flutter 1.15.18.
+  supports obfuscation as of Flutter 1.16.2.
 
 **Linux**/**Windows**
 : Not yet supported.
@@ -53,6 +53,15 @@ For example:
 flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
 ```
 
+Once you've obfuscated your binary, save
+the symbols file. You need this if you later
+want to de-obfuscate a stack trace.
+
+**Note that the `--split-debug-info` flag can also
+be used by itself. In fact, it can dramatically
+reduce code size. For more information on
+app size, see [Measuring your app's size][].**
+
 For detailed information on these flags, run
 the help command for your specific target, for example:
 
@@ -83,9 +92,26 @@ flutter symbolize -i <stack trace file> -d /out/android/app.android-arm64.symbol
    For more information on the `symbolize` command,
    run `flutter symbolize -h`.
 
+## Caveat
+
+Be aware of the following when coding an app that will
+eventually be an obfuscated binary.
+
+* Code that relies on matching specific class, function,
+  or library names will fail.
+  For example, the following call to `expect()` will not
+  work in an obfuscated binary:
+
+<!-- skip -->
+```dart
+expect(foo.runtimeType.toString(), equals('Foo'))
+```
+
+
+[Build and release a web app]: /docs/deployment/web
 [Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
 [in alpha]: /desktop
+[Measuring your app's size]: /docs/perf/app-size
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
-[Build and release a web app]: /docs/deployment/web
 [obfuscation instructions]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
 [release build]: /docs/testing/build-modes
