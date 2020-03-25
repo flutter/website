@@ -117,7 +117,11 @@ In every stable release, we make an effort to improve the quality of Flutter. In
 
 ## New features
 
-Flutter 1.12 introduces several new features including the [SliverOpacity](https://master-api.flutter.dev/flutter/widgets/SliverOpacity-class.html) widget, the [SliverAnimatedList](https://master-api.flutter.dev/flutter/widgets/SliverAnimatedList-class.html), and the ability to configure a stretch effect for a SliverAppBar.
+Flutter 1.12 introduces several new features including the
+[SliverOpacity]({{site.api}}/flutter/widgets/SliverOpacity-class.html)
+widget, the
+[SliverAnimatedList]({{site.api}}/flutter/widgets/SliverAnimatedList-class.html),
+and the ability to configure a stretch effect for a SliverAppBar.
 
 [37416](https://github.com/flutter/flutter/pull/37416) Add MediaQuery.systemGestureInsets to support Android Q
 
@@ -146,7 +150,15 @@ Flutter 1.12 introduces several new features including the [SliverOpacity](https
 
 ## iOS support
 
-iOS continues to be a big investment area for Flutter. With this release, we’ve made a visual refresh to our Cupertino library to match the iOS 13 look. We now support dark mode in the Cupertino widgets, added two new widgets called [CupertinoContextMenu](https://master-api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html) and [CupertinoSlidingSegmentedControl](https://master-api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html), and made improvements to segmented control widgets, [CupertinoAlertDialog](https://master-api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html), and [CupertinoDatePicker](https://master-api.flutter.dev/flutter/cupertino/CupertinoDatePicker-class.html)
+iOS continues to be a big investment area for Flutter.
+With this release, we’ve made a visual refresh to our
+Cupertino library to match the iOS 13 look. We now support
+dark mode in the Cupertino widgets, added two new widgets called
+[CupertinoContextMenu]({{site.api}}/flutter/cupertino/CupertinoContextMenu-class.html)
+and [CupertinoSlidingSegmentedControl]({{site.api}}/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html),
+and made improvements to segmented control widgets,
+[CupertinoAlertDialog]({{site.api}}/flutter/cupertino/CupertinoAlertDialog-class.html),
+and [CupertinoDatePicker]({{site.api}}/flutter/cupertino/CupertinoDatePicker-class.html)
 
 [36871](https://github.com/flutter/flutter/pull/36871) Audit use of defaultTargetPlatform
 
@@ -1109,7 +1121,10 @@ In Text and Accessibility, we have several enhancements in ButtonBar and AlertDi
 
 ## Animation & Scroll
 
-For animation, we released the [TweenAnimationBuilder](https://master-api.flutter.dev/flutter/widgets/TweenAnimationBuilder-class.html) for building custom implicit animations. For more information, check out this [TweenAnimationBuilder video](https://www.youtube.com/watch?reload=9&v=6KiPEqzJIKQ) on Youtube.  
+For animation, we released the
+[TweenAnimationBuilder]({{site.api}}/flutter/widgets/TweenAnimationBuilder-class.html)
+for building custom implicit animations. For more information,
+check out this [TweenAnimationBuilder video](https://www.youtube.com/watch?reload=9&v=6KiPEqzJIKQ) on Youtube.  
 
 [38317](https://github.com/flutter/flutter/pull/38317) TweenAnimationBuilder for building custom animations without managing an AnimationController
 
