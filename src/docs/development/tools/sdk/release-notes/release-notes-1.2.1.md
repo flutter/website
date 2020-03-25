@@ -7,7 +7,7 @@ description: Release notes for Flutter 1.2.1.
 Our #1 priority since the Flutter v1.0 release has been to
 continue to address high priority issues reported both by
 Flutter developers and the Flutter team itself.
-This includes committing 672 Pull Requests in the Flutter
+This includes committing 672 pull requests in the Flutter
 engine and framework since December (we've been busy!).
 We've called out the new features and breaking changes
 that we think are noteworthy below. The biggest ones came
