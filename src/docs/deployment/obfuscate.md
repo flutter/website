@@ -53,6 +53,15 @@ For example:
 flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
 ```
 
+Once you've obfuscated your binary, save
+the symbols file. You need this if you later
+want to de-obfuscate a stack trace.
+
+**Note that the `--split-debug-info` flag can also
+be used by itself. In fact, it can dramatically
+reduce code size. For more information on
+app size, see [Measuring your app's size][].**
+
 For detailed information on these flags, run
 the help command for your specific target, for example:
 
@@ -102,6 +111,7 @@ expect(foo.runtimeType.toString(), equals('Foo'))
 [Build and release a web app]: /docs/deployment/web
 [Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
 [in alpha]: /desktop
+[Measuring your app's size]: /docs/perf/app-size
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
 [obfuscation instructions]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
 [release build]: /docs/testing/build-modes

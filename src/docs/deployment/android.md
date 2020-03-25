@@ -278,7 +278,8 @@ If you completed the signing steps,
 the app bundle will be signed.
 At this point, you might consider [obfuscating your Dart code][]
 to make it more difficult to reverse engineer. Obfuscating
-your code involves adding a couple flags to your build command.
+your code involves adding a couple flags to your build command,
+and maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
