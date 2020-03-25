@@ -1,6 +1,6 @@
 ---
 title: Mock dependencies using Mockito
-description: Use the mockito package to mimic the behavior of services for testing.
+description: Use the Mockito package to mimic the behavior of services for testing.
 short-title: Mocking
 prev:
   title: An introduction to unit testing
