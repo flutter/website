@@ -8,7 +8,7 @@ hands-on coding experience. Some codelabs
 run in DartPad&mdash;no download required!
 
 
-#### [Write Your First Flutter App, part 1][]
+#### [Write Your First Flutter app, part 1][]
 
 Create a simple mobile app that generates proposed names
 for a startup company. In part one, you'll use a package
@@ -46,9 +46,9 @@ Use DartPad in a browser (no download required!)
 to learn the basics of creating a Flutter layout.
 
 
-#### [Building Beautiful UIs with Flutter][]
+#### [Building beautiful UIs with Flutter][]
 
-A deeper "first dive" than "Write Your First Flutter App."
+A deeper "first dive" than "Write Your First Flutter app."
 In this codelab you'll create a chat app that includes a
 simple animation, and customizes the UI for iOS and Android.
 
@@ -59,13 +59,13 @@ Use DartPad (no downloads required!) to learn how to use
 implicit animations to add motion and create
 visual effects for the widgets in your UI.
 
-#### [Adding Google Maps to a Flutter App][]
+#### [Adding Google Maps to a Flutter app][]
 
 Display a Google map in an app, retrieve data from a
 web service, and display the data as markers on the map.
 
 
-#### [Build a Photo Sharing App with Google Photos and Flutter][]
+#### [Build a photo sharing app with Google Photos and Flutter][]
 
 Build a field trip app that allows you and other
 members of the trip to share photos.
@@ -144,6 +144,6 @@ For Dart-specific codelabs, see the
 [MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
 [provider]: {{site.pub}}/packages/provider
 [The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
-[Write Your First Flutter App, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-[Write Your First Flutter App, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[Write Your First Flutter spp, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[Write Your First Flutter spp, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
 [Write your first Flutter app on the web]: /docs/get-started/codelab-web
