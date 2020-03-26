@@ -615,7 +615,6 @@ in the center pane.
 
 {% indent %}
   ![Screenshot of the DevTools debugger]({% asset get-started/devtools-debugging.png @path %}){:width="100%"}
-  [todo: replace screenshot]
 {% endindent %}
 </li>
 
