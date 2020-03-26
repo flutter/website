@@ -747,6 +747,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 ```
 </li>
 
+<li markdown="1">Use the new AnimatedProgressIndicator.<br>
 Then, replace the `LinearProgressIndicator` in the Form with this new
 `AnimatedProgressIndicator`:
 
