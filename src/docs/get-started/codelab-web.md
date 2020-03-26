@@ -428,6 +428,8 @@ void _updateFormProgress() {
 This method updates `_formProgress` based on the the number of non-empty text
 fields.
 
+</li>
+
 <li markdown="1">Call `_updateFormProgress()` when the form changes<br>
 In the `build()` method of the `_SignUpFormState` class, add a callback
 to the `Form` widget's `onChanged` argument:
