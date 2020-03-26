@@ -1,0 +1,49 @@
+---
+title: Dự án dịch tài liệu Flutter sang tiếng Việt
+layout: landing
+body_class: landing-page community
+show_banner: False
+---
+
+<section class="community__intro row text-center">
+    <div class="col-12">
+        <h1>{{ page.title }}</h1>
+        <p class="community__intro__description">
+            Giới thiệu.
+        </p>
+    </div>
+</section>
+
+{% comment %}
+    Featured services
+{% endcomment -%}
+{% for case in site.data.vn-t9n -%}
+{% if case.featured -%}
+    <section class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    {% if case.logo_src -%}
+                        <div class="landing-page__case-studies__logo">
+                            {% asset '{{ case.logo_src }}' %}
+                        </div>
+                    {% endif -%}
+                    <h3>{{ case.title }}</h3>
+                    <p>{{ case.description }}</p>
+                    {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">{{ case.learn_more_cta }}</a>{% endif %}
+                    {% if case.learn_more_link_1 %}<div><a href="{{ case.learn_more_link_1 }}">{{ case.learn_more_cta_1 }}</a></div><br>{% endif %}
+                    {% if case.learn_more_link_2 %}<div><a href="{{ case.learn_more_link_2 }}">{{ case.learn_more_cta_2 }}</a></div>{% endif %}
+                </div>
+
+                <div class="col-lg-8 pt-6 pt-lg-0 landing-page__card-graphic--fill">
+                    {% if case.screen_class -%}
+                        {% asset '{{ case.screen_src }}' class="{{case.screen_class}}" %}
+                    {% else -%}
+                        {% asset '{{ case.screen_src }}' %}
+                    {% endif -%}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif -%}
+{% endfor -%}

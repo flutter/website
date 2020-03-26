@@ -1,0 +1,34 @@
+- name: Facebook Group
+  featured: true
+  title: Meet others in Facebook group FlutterVN
+  description: >
+    FlutterVN is a Facebook group with more than 5500 members.
+  logo_src: vn-t9n/logo-fb-group.png
+  screen_src: vn-t9n/screen-fb-group.jpg
+  screen_class: border-top border-light p-3 shadow
+  learn_more_cta: Join FlutterVN
+  learn_more_link: https://www.facebook.com/groups/fluttervietnam/
+
+- name: Google Sheet
+  featured: true
+  title: Quản lý dự án với Google Sheet
+  description: >
+    Danh sách thành viên, phân chia công việc
+  logo_src: vn-t9n/logo-gg-sheet.png
+  screen_src: vn-t9n/screen-gg-sheet.png
+  screen_class: border-top border-light p-3 shadow
+  learn_more_cta: Xem mã nguồn
+  learn_more_link: https://github.com/truongsinh/website
+
+- name: Github
+  featured: true
+  title: Toàn bộ mã nguồn và PR trên Github
+  description: >
+    Các PR sau khi được merge sẽ ngay lập tức được build và deploy.
+    Hiện nay repo của dự án đang nằm ở https://github.com/truongsinh/website,
+    nhưng đội đang cố gắng liên lạc để đưa dự án về https://github.com/fluttervn/website
+  logo_src: community/logo-github.png
+  screen_src: community/screen-github.png
+  screen_class: border-top border-light p-3 shadow
+  learn_more_cta: Xem mã nguồn
+  learn_more_link: https://github.com/truongsinh/website
