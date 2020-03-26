@@ -620,7 +620,7 @@ in the center pane.
 
 <li markdown="1">Set a breakpoint.<br>
 In the Dart code,
-scroll down to line 68, where `progress` is updated:
+scroll down to where `progress` is updated:
 
 <!-- skip -->
 ```dart
