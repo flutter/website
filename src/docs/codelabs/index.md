@@ -53,7 +53,7 @@ In this codelab you'll create a chat app that includes a
 simple animation, and customizes the UI for iOS and Android.
 
 
-#### [Implicit Animations][]
+#### [Implicit animations][]
 
 Use DartPad (no downloads required!) to learn how to use
 implicit animations to add motion and create
