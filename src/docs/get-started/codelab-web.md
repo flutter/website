@@ -397,9 +397,9 @@ and update the app’s UI when the form is complete.
 {{site.alert.end}}
 
 <ol markdown="1">
-<li markdown="1">Add an _updateFormProgress method
-In the `_SignUpFormState` class, after the fields are defined add a new
-method called _updateFormProgress():
+<li markdown="1">Add a method to to update `_formProgress`.
+In the `_SignUpFormState` class, add a new method called
+`_updateFormProgress()`:
 
 <!-- skip -->
 ```dart
