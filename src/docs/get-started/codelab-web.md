@@ -356,14 +356,6 @@ You get that behavior for free.
 
 </ol>
 
-### Problems?
-{:.no_toc}
-
-If your app is not running correctly, look for typos.
-If needed, use the code at the following link to get back on track.
-
-* [lib/main.dart](https://gist.github.com/sfshaza2/25ba0bec444b5a4b71edf78d569f124c)
-
 ### Observations
 {:.no_toc}
 
@@ -470,14 +462,6 @@ The **Sign up** button is initially disabled,
 but becomes enabled when all three text fields contain (any) text.
 </li>
 </ol>
-
-### Problems?
-{:.no_toc}
-
-If your app is not running correctly, look for typos.
-If needed, use the code at the following link to get back on track.
-
-* [lib/main.dart](https://gist.github.com/sfshaza2/0ce13ec7bc16e1307cabfe18e4f40cb8)
 
 ### Observations
 {:.no_toc}
