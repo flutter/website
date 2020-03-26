@@ -958,14 +958,6 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 }
 ```
 
-### Problems?
-{:.no_toc}
-
-If your app is not running correctly, look for typos.
-If needed, use the code at the following link to get back on track.
-
-* [lib/main.dart](https://gist.github.com/sfshaza2/9a7e10e9141b775a70a94a14bf2200b4)
-
 ### Observations
 {:.no_toc}
 
