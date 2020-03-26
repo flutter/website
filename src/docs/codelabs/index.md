@@ -8,7 +8,7 @@ hands-on coding experience. Some codelabs
 run in DartPad&mdash;no download required!
 
 
-#### [Write Your First Flutter app, part 1][]
+#### [Write your first Flutter app, part 1][]
 
 Create a simple mobile app that generates proposed names
 for a startup company. In part one, you'll use a package
@@ -48,7 +48,7 @@ to learn the basics of creating a Flutter layout.
 
 #### [Building beautiful UIs with Flutter][]
 
-A deeper "first dive" than "Write Your First Flutter app."
+A deeper "first dive" than "Write your first Flutter app."
 In this codelab you'll create a chat app that includes a
 simple animation, and customizes the UI for iOS and Android.
 
@@ -144,6 +144,6 @@ For Dart-specific codelabs, see the
 [MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
 [provider]: {{site.pub}}/packages/provider
 [The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
-[Write Your First Flutter spp, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-[Write Your First Flutter spp, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[Write Your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[Write Your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
 [Write your first Flutter app on the web]: /docs/get-started/codelab-web
