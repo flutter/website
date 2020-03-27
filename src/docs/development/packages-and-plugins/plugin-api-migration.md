@@ -190,12 +190,12 @@ but aren't required.
     package io.flutter.plugins.firebase.core;
 
     import androidx.test.rule.ActivityTestRule;
-    import dev.flutter.plugins.e2e.FlutterRunner;
+    import dev.flutter.plugins.e2e.FlutterTestRunner;
     import io.flutter.plugins.firebasecoreexample.MainActivity;
     import org.junit.Rule;
     import org.junit.runner.RunWith;
 
-    @RunWith(FlutterRunner.class)
+    @RunWith(FlutterTestRunner.class)
     public class MainActivityTest {
       // Replace `MainActivity` with `io.flutter.embedding.android.FlutterActivity` if you removed `MainActivity`.
       @Rule public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
@@ -207,12 +207,12 @@ but aren't required.
     package io.flutter.plugins.firebase.core;
 
     import androidx.test.rule.ActivityTestRule;
-    import dev.flutter.plugins.e2e.FlutterRunner;
+    import dev.flutter.plugins.e2e.FlutterTestRunner;
     import io.flutter.plugins.firebasecoreexample.EmbeddingV1Activity;
     import org.junit.Rule;
     import org.junit.runner.RunWith;
 
-    @RunWith(FlutterRunner.class)
+    @RunWith(FlutterTestRunner.class)
     public class EmbeddingV1ActivityTest {
       @Rule
       public ActivityTestRule<EmbeddingV1Activity> rule =
@@ -226,7 +226,7 @@ but aren't required.
 
     <!--code-excerpt "pubspec.yaml" title-->
     ```yaml
-    e2e: ^0.2.1
+    e2e: ^0.4.0
     flutter_driver:
       sdk: flutter
     ```
