@@ -5,7 +5,7 @@ description: "Codelabs help you quickly get started programming Flutter."
 
 The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
-run in DartPad&mdash;no download required!
+run in DartPad&mdash;no downloads required!
 
 
 #### [Write your first Flutter app, part 1][]
@@ -36,13 +36,13 @@ containing three text fields. As the user fills out the
 fields, a progress bar animates along the top of the
 sign-in area. This codelab is written specifically for
 the web, but if you have downloaded and configured
-Android and iOS tooling, the completed app just
-works on all of these devices.
+Android and iOS tooling, the completed app
+works on Android and iOS devices, as well.
 
 
 #### [Basic Flutter layout concepts][]
 
-Use DartPad in a browser (no download required!)
+Use DartPad in a browser (no downloads required!)
 to learn the basics of creating a Flutter layout.
 
 
@@ -126,6 +126,12 @@ For Dart-specific codelabs, see the
 
 * [The Complete Flutter Development Bootcamp Using Dart][]
 
+{{site.alert.note}}
+  If you have trouble viewing any of the codelabs
+  on `codelabs.google.developer.com`, try 
+  [this mirror of the Flutter codelabs][].
+{{site.alert.end}}
+
 
 
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
@@ -142,6 +148,7 @@ For Dart-specific codelabs, see the
 [MDC 102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
 [MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
 [MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+[this mirror of the Flutter codelabs]: https://codelabs.flutter-io.cn/
 [provider]: {{site.pub}}/packages/provider
 [The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 [Write Your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
