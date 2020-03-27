@@ -11,20 +11,21 @@
 
 - name: Google Groups
   featured: true
-  title: Meet others using Google Groups
+  title: Google Groups
   description: >
-    Google Groups is a great way to engage with the Flutter community.
+    Google Groups is a great way to stay up to date with Flutter.
   logo_src: community/logo-google.png
   screen_src: community/screen-google.png
   screen_class: border-top border-light p-3 shadow
-  learn_more_cta_1: Ask questions and trouble shoot your builds with the support of the Google community.
-  learn_more_link_1: https://groups.google.com/forum/#!forum/flutter-dev
-  learn_more_cta_2: You can also sign up for Flutter announcements.
-  learn_more_link_2: https://groups.google.com/forum/#!forum/flutter-announce
+  learn_more_cta_1: Subscribe to breaking changes and other announcements.
+  learn_more_link_1: https://groups.google.com/forum/#!forum/flutter-announce
+  learn_more_cta_2: Ask questions and troubleshoot issues with the Google community.
+  learn_more_link_2: https://groups.google.com/forum/#!forum/flutter-dev
+
 
 - name: Stack Overflow
   description: >
-    Ask questions and trouble shoot your app builds through the strong community message boards.
+    Ask questions about specific Flutter coding problems, or find answers to questions that have already been asked.
   logo_src: community/logo-stack-overflow.png
   learn_more_link: https://stackoverflow.com/tags/flutter
 
@@ -36,7 +37,7 @@
 
 - name: Meetup
   description: >
-    Learn from other developers and see what the community is building with Flutter by joining community events around the world
+    Learn from other developers and see what the community is building with Flutter by joining community events around the world.
   logo_src: community/logo-meetup.svg
   learn_more_link: https://www.meetup.com/find/?allMeetups=false&keywords=flutter&radius=Infinity&userFreeform=Santa+Clara%2C+CA&mcId=z95054&mcName=Santa+Clara%2C+CA&sort=recommended&eventFilter=mysugg
 
