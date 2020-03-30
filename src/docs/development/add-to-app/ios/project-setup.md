@@ -224,9 +224,9 @@ some/path/MyApp/
 ```
 
 {{site.alert.warning}}
-  You mustn't mix `.framework` imports from different directories, such as
-  mixing `Profile/Flutter.framework` with `Debug/App.framework`. Doing so will
-  cause runtime crashes.
+  Always use `Flutter.framework` and `App.framework` from the same directory.
+  Mixing `.framework` imports from different directories (such as
+  `Profile/Flutter.framework` with `Debug/App.framework`) causes runtime crashes.
 {{site.alert.end}}
 
 {{site.alert.tip}}
