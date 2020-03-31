@@ -10,7 +10,15 @@ description: How to migrate existing Flutter iOS projects to Xcode 11.4.
 
 To develop Flutter apps for iOS, you need a Mac with Xcode installed.
 Xcode 11.4 changed the way frameworks are linked and embedded, and
-you may [experience issues switching between iOS devices and simulators][].
+you may [see the following errors when switching between iOS devices and simulators:][errors]
+```
+Building for iOS, but the linked and embedded framework 'App.framework' was built for iOS Simulator.
+```
+or
+```
+Building for iOS Simulator, but the linked and embedded framework 'App.framework' was built for iOS.
+```
+
 Flutter v1.15.3 and later will automatically migrate your Xcode project.
 
 If you need to manually upgrade your project, use the following steps:
@@ -39,4 +47,4 @@ add `$(inherited) -framework Flutter`.
 </li>
 </ol>
 
-[experience issues switching between iOS devices and simulators]: https://github.com/flutter/flutter/issues/50568
+[errors]: https://github.com/flutter/flutter/issues/50568
