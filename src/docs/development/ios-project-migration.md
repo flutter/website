@@ -47,4 +47,4 @@ add `$(inherited) -framework Flutter`.
 </li>
 </ol>
 
-[experience issues switching between iOS devices and simulators]: https://github.com/flutter/flutter/issues/50568
+[see the following errors when switching between iOS devices and simulators:]: https://github.com/flutter/flutter/issues/50568
