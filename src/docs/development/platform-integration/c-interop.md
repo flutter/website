@@ -164,6 +164,7 @@ Dart binding code is not important.
 First, you must create a `DynamicLibrary` handle to
 the native code. This step varies between iOS and Android:
 
+<!-- skip -->
 ```dart
 import 'dart:ffi'; // For FFI
 import 'dart:io'; // For Platform.isX
