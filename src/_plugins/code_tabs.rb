@@ -5,21 +5,28 @@
 # Example Android usage:
 #
 #   {% samplecode sample-title %}
-#   {% sample Java %}
-#   <?code-excerpt "MyActivity.java" title?>
-#   ```java
-#   // Java code here
-#   ```
 #   {% sample Kotlin %}
 #   <?code-excerpt "MyActivity.kt" title?>
 #   ```kotlin
 #   // Kotlin code here
+#   ```
+
+#   {% sample Java %}
+#   <?code-excerpt "MyActivity.java" title?>
+#   ```java
+#   // Java code here
 #   ```
 #   {% endsamplecode %}
 #
 # Example iOS usage:
 #
 #   {% samplecode sample-title %}
+#   {% sample Swift %}
+#   <?code-excerpt "MyVC.swift" title?>
+#   ```swift
+#   // Swift code here
+#   ```
+
 #   {% sample Objective-C %}
 #   <?code-excerpt "MyVC.h" title?>
 #   ```objectivec
@@ -29,20 +36,17 @@
 #   ```objectivec
 #   // Implementation file code
 #   ```
-#   {% sample Swift %}
-#   <?code-excerpt "MyVC.swift" title?>
-#   ```swift
-#   // Swift code here
-#   ```
 #   {% endsamplecode %}
 #
-# The "samplecode" tag accepts a single parameter that represents the title of this sample. The
-# title is not displayed on the page, but it is injected into a number of HTML attributes to
-# differentiate itself from other code samples. The "samplecode" tag is a block tag and therefore
+# The "samplecode" tag accepts a single parameter that
+# represents the title of this sample. The title is not
+# displayed on the page, but it is injected into a number of
+# HTML attributes to differentiate itself from other code samples.
+# The "samplecode" tag is a block tag and therefore
 # must be closed with a "endsamplecode" tag.
 #
-# The "sample" tag accepts one parameter: the name of the language as it should appear to
-# the reader.
+# The "sample" tag accepts one parameter: the name of the
+# language as it should appear to the reader.
 #
 # Code samples are placed directly beneath their associated "sample" tag.
 #
@@ -56,34 +60,50 @@
 #
 # Understanding custom tags and this class:
 #
-# There does not seem to be much documentation available for creating custom Liquid tags. The root
-# class "Tag" establishes a number of methods that are called at specific times by the templating
-# engine. The "Block" class subclasses "Tag" and adds some behavior on top of that protocol.
+# There does not seem to be much documentation available
+# for creating custom Liquid tags. The root class "Tag"
+# establishes a number of methods that are called at
+# specific times by the templating engine.
+# The "Block" class subclasses "Tag" and adds some
+# behavior on top of that protocol.
 #
 # The fundamental process is:
-# 1. The templating engine instructs the Block/Tag to "parse()" a given tag with parameters and content
+# 1. The templating engine instructs the Block/Tag to "parse()"
+#    a given tag with parameters and content
 #    - the 1st parameter, tag_name, is the literal name of the tag
-#    - the 2nd parameter, params, is a string that includes all content that appears after the tag name in a tag.
-#      The Liquid template engine does not parse multiple parameters for you. You have to do that, yourself.
-#    - the 3rd parameter, tokens, is an object that understands all types of content that follows this tag, e.g.,
-#      other tags and regular text content. The tokens object is used by the Block class to find and report each
-#      inner tag that it finds, so it should probably not be directly manipulated in this class.
+#    - the 2nd parameter, params, is a string that includes all
+#      content that appears after the tag name in a tag.
+#      The Liquid template engine does not parse multiple parameters
+#      for you. You have to do that, yourself.
+#    - the 3rd parameter, tokens, is an object that understands all
+#      types of content that follows this tag, e.g.,
+#      other tags and regular text content. The token's object
+#      is used by the Block class to find and report each
+#      inner tag that it finds, so it should probably not be
+#      directly manipulated in this class.
 #
 # 2. The Block superclass looks for other tags within itself while parsing
-#    a. If inner tags are found, but not recognized, then the "unknown_tag()" method is invoked.
+#    a. If inner tags are found, but not recognized,
+#       then the "unknown_tag()" method is invoked.
 #    b. This class overrides "unknown_tag()" to find inner "sample" tags.
-#    c. For each "sample" tag, fields are set that will be processed when rendering.
+#    c. For each "sample" tag, fields are set that will be processed
+#       when rendering.
 #
-# 3. The Block/Tag is instructed to "render()". The render step occurs after all parsing is complete. Therefore,
-#    it appears that the standard workflow is to collect all needed information during parsing and then apply it
+# 3. The Block/Tag is instructed to "render()".
+#    The render step occurs after all parsing is complete. Therefore,
+#    it appears that the standard workflow is to collect all
+#    needed information during parsing and then apply it
 #    during rendering.
-#    a. HTML for language tabs are generated for all languages that were found.
-#    b. HTML for each code sample is generated, inserting the literal code that was written beneath the given
+#    a. HTML for language tabs are generated for all languages
+#       that were found.
+#    b. HTML for each code sample is generated, inserting the
+#       literal code that was written beneath the given
 #       "sample" tag.
 #    c. The generated code is returned form the "render()" function.
 #
-# Reading the source code for Tag, Block, and BlockBody will be helpful in understanding this code. In the
-# Liquid project, those classes can be found at:
+# Reading the source code for Tag, Block, and BlockBody will be
+# helpful in understanding this code. In the Liquid project,
+# those classes can be found at:
 #
 # - lib/liquid/tag.rb
 # - lib/liquid/block.rb
@@ -94,10 +114,12 @@ module Jekyll
 
         def initialize(tag_name, params, tokens)
             super
-            # Title that differentiates this code sample from others on the page.
+            # Title that differentiates this code sample
+            # from others on the page.
             @title = params.strip
 
-            # Info needed to render the HTML for the language tabs above the sample.
+            # Info needed to render the HTML for the language
+            # tabs above the sample.
             @tabs = CodeTabsBlock.new(@title)
 
             # Info needed to render each per-language code sample.
@@ -108,13 +130,15 @@ module Jekyll
             @blocks << @tabs
         end
 
-        # Invoked by the superclass throughout the parsing process. The nodelist
-        # represents the mutating data structure that is being filled during parsing.
+        # Invoked by the superclass throughout the parsing process.
+        # The nodelist represents the mutating data structure that
+        # is being filled during parsing.
         #
-        # By default the super class has a single BodyBlock and that BodyBlock's internal
-        # nodelist is used here. We override that behavior, offering our own list, which
-        # allows us to construct a list of various kinds of BodyBlocks, e.g., CodeTabBlock
-        # and CodeBlocks.
+        # By default, the super class has a single BodyBlock
+        # and that BodyBlock's internal nodelist is used here.
+        # We override that behavior, offering our own list, which
+        # allows us to construct a list of various kinds of BodyBlocks,
+        # e.g., CodeTabBlock # and CodeBlocks.
         def nodelist
             @blocks
         end
@@ -149,9 +173,9 @@ module Jekyll
             # Start rendering code blocks with an appropriate div.
             output += "<div class=\"tab-content\">" + "\n"
 
-            # We want to display the first code block when the page loads. To do that
-            # we tell the first code block that it is active, which will generate the
-            # appropriate HTML to display itself.
+            # We want to display the first code block when the page loads.
+            # To do that we tell the first code block that it is active,
+            # which will generate the appropriate HTML to display itself.
             @codeBlocks[0].is_active = true
 
             # Render all language code blocks.
