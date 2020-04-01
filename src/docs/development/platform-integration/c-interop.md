@@ -164,7 +164,6 @@ Dart binding code is not important.
 First, you must create a `DynamicLibrary` handle to
 the native code. This step varies between iOS and Android:
 
-<!-- skip -->
 ```dart
 import 'dart:ffi'; // For FFI
 import 'dart:io'; // For Platform.isX
@@ -381,6 +380,8 @@ To re-enable compression, override the setting in
      <!-- io.flutter.app.FlutterApplication is an android.app.Application that
           calls FlutterMain.startInitialization(this); in its onCreate method.
           In most cases you can leave this as-is, but you if you want to provide
+          additional functionality it is fine to subclass or reimplement
+          FlutterApplication and put your custom class here. -->
 @@ -8,7 +9,9 @@
      <application
          android:name="io.flutter.app.FlutterApplication"
