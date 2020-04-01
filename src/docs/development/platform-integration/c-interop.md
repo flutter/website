@@ -355,9 +355,9 @@ This feature is not yet supported for web plugins.
 
 ### Android APK size (shared object compression)
 
-Android guidelines in general recommend distributing native shared objects uncompressed because that actually saves on device space. Shared objects can be directly loaded from the APK instead of unpacking them on device into a temporary location and then loading. APKs are additionally packed in transit - that is why you should be looking at download size. 
+[Android guidelines][] in general recommend distributing native shared objects uncompressed because that actually saves on device space. Shared objects can be directly loaded from the APK instead of unpacking them on device into a temporary location and then loading. APKs are additionally packed in transit - that is why you should be looking at download size. 
 
-Flutter APKs by default don't follow these guidelines (we are in discussions about that) and compress `libflutter.so` and `libapp.so` - this leads to smaller APK size but larger on device size.
+Flutter APKs by default don't follow these guidelines and compress `libflutter.so` and `libapp.so` - this leads to smaller APK size but larger on device size.
 
 Using `dart:ffi` inverts this default setting, and stops the compression of `libflutter.so`, `libapp.so`, and any user-added shared objects. To re-enable compression change `android/app/src/main/AndroidManifest.xml` in the following way.
 
@@ -391,4 +391,5 @@ Using `dart:ffi` inverts this default setting, and stops the compression of `lib
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 [ffi issue]: {{site.github}}/dart-lang/sdk/issues/34452
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
+[Android guidelines]: https://developer.android.com/topic/performance/reduce-apk-size#extract-false
 
