@@ -12,6 +12,8 @@ repo:
   samples: https://github.com/flutter/samples
 branch: master
 
+show_banner: false
+
 dart:
   api: https://api.dart.dev
   sdk:
