@@ -180,7 +180,7 @@ inside `setState`.
     }
 
     setState(() {
-
+      _batteryLevel = batteryLevel;
     });
   }
 ```
