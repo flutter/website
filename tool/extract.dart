@@ -58,7 +58,14 @@ int _processFile(File file) {
     } else if (lines[index].trim().startsWith('<!--')) {
       // Look for <!-- comment sections.
       int startIndex = index;
-      while (!lines[index].trim().endsWith('-->')) index++;
+      while (!lines[index].trim().endsWith('-->')) {
+        index++;
+        if (index >= lines.length) {
+          throw StateError(
+              'Line ${startIndex + 1} in $file has an unterminated '
+              'comment - failed to find "-->" before EOF.');
+        }
+      }
 
       lastComment = lines.sublist(startIndex, index + 1).join('\n').trim();
       lastComment = lastComment.substring(4);
