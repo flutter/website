@@ -359,7 +359,7 @@ This feature is not yet supported for web plugins.
 
 Flutter APKs by default don't follow these guidelines and compress `libflutter.so` and `libapp.so` - this leads to smaller APK size but larger on device size.
 
-Using `dart:ffi` inverts this default setting, and stops the compression of `libflutter.so`, `libapp.so`, and any user-added shared objects. To re-enable compression change `android/app/src/main/AndroidManifest.xml` in the following way.
+Shared objects from third parties can change this default setting with `android:extractNativeLibs="true"` in their `AndroidManifest.xml` and stop the compression of `libflutter.so`, `libapp.so`, and any user-added shared objects. To re-enable compression, override the setting in `your_app_name/android/app/src/main/AndroidManifest.xml` in the following way.
 
 ```diff
 @@ -1,5 +1,6 @@
