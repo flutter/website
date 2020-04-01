@@ -351,6 +351,47 @@ in binary form, use the following instructions:
 
 This feature is not yet supported for web plugins.
 
+## FAQ
+
+### Android APK size (shared object compression)
+
+[Android guidelines][] in general recommend distributing native shared objects
+uncompressed because that actually saves on device space. Shared objects can be
+directly loaded from the APK instead of unpacking them on device into a
+temporary location and then loading. APKs are additionally packed in transit -
+that is why you should be looking at download size.
+
+Flutter APKs by default don't follow these guidelines and compress
+`libflutter.so` and `libapp.so` - this leads to smaller APK size but larger on
+device size.
+
+Shared objects from third parties can change this default setting with
+`android:extractNativeLibs="true"` in their `AndroidManifest.xml` and stop the
+compression of `libflutter.so`, `libapp.so`, and any user-added shared objects.
+To re-enable compression, override the setting in
+`your_app_name/android/app/src/main/AndroidManifest.xml` in the following way.
+
+```diff
+@@ -1,5 +1,6 @@
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-    package="com.example.your_app_name">
++    xmlns:tools="http://schemas.android.com/tools"
++    package="com.example.your_app_name" >
+     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
+          calls FlutterMain.startInitialization(this); in its onCreate method.
+          In most cases you can leave this as-is, but you if you want to provide
+          additional functionality it is fine to subclass or reimplement
+          FlutterApplication and put your custom class here. -->
+@@ -8,7 +9,9 @@
+     <application
+         android:name="io.flutter.app.FlutterApplication"
+         android:label="your_app_name"
+-        android:icon="@mipmap/ic_launcher">
++        android:icon="@mipmap/ic_launcher"
++        android:extractNativeLibs="true"
++        tools:replace="android:extractNativeLibs">
+```
+
 [Add C and C++ code to your project]: {{site.android-dev}}/studio/projects/add-native-code
 [Android NDK Native APIs]: {{site.android-dev}}/ndk/guides/stable_apis
 [CocoaPods example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
@@ -362,4 +403,5 @@ This feature is not yet supported for web plugins.
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 [ffi issue]: {{site.github}}/dart-lang/sdk/issues/34452
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
+[Android guidelines]: https://developer.android.com/topic/performance/reduce-apk-size#extract-false
 
