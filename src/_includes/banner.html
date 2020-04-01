@@ -1,3 +1,8 @@
-{% comment %}
-To get the banner back, mv oldbanner.html to banner.html
-{% endcomment %}
+{% if page.show_banner -%}
+  <!--{% assign fl_url = '/jobs/infrastructure' -%}-->
+  {% assign fl_url = '/create' -%}
+  <div class="site-banner site-banner--default" role="alert">
+    {% comment %} For headings use <h3> elements. {% endcomment -%}
+    <a href="/clock">See the winners of the Flutter Clock challenge!</a>
+  </div>
+{% endif -%}
