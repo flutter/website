@@ -12,7 +12,7 @@ next:
 
 Unit tests and widget tests are handy for testing individual classes,
 functions, or widgets. However, they generally don't test how
-individual pieces work together as a whole or capture the performance
+individual pieces work together as a whole, or capture the performance
 of an application running on a real device. These tasks are performed
 with *integration tests*.
 
@@ -40,9 +40,10 @@ This recipe uses the following steps:
 
 ### 1. Create an app to test
 
-First, create an app for testing. In this example, test the
-counter app produced by the `flutter create` command. This app allows
-a user to tap on a button to increase a counter.
+First, create an app for testing. In this example,
+test the counter app produced by the `flutter create`
+command. This app allows a user to tap on a button
+to increase a counter.
 
 Furthermore, provide a [`ValueKey`][] to
 the `Text` and `FloatingActionButton` widgets.
@@ -148,7 +149,7 @@ reside in the same directory. By convention, the directory is named
      name that makes sense. For this example, create a file called
     `test_driver/app.dart`.
   2. The second file contains the test suite, which drives the app and
-     verifies it works as expected. The test suite also records
+     verifies that it works as expected. The test suite also records
      performance profiles. The name of the test file must correspond
      to the name of the file that contains the instrumented app,
      with `_test` added at the end. Therefore,
@@ -165,15 +166,15 @@ counter_app/
     app_test.dart
 ```
 
-
 ### 4. Instrument the app
 
 Now, instrument the app. This involves two steps:
 
-  1. Enable the flutter driver extensions
-  2. Run the app
+  1. Enable the flutter driver extensions.
+  2. Run the app.
 
-Add this code inside the `test_driver/app.dart` file.
+Add the following code inside the
+`test_driver/app.dart` file.
 
 <!-- skip -->
 ```dart
@@ -196,11 +197,11 @@ Now that you have an instrumented app, you can write tests for it.
 This involves four steps:
 
   1. Create [`SerializableFinders`][]
-     to locate specific widgets
-  2. Connect to the app before our tests run in the `setUpAll()` function
-  3. Test the important scenarios
+     to locate specific widgets.
+  2. Connect to the app before our tests run in the `setUpAll()` function.
+  3. Test the important scenarios.
   4. Disconnect from the app in the `teardownAll()` function after the tests
-     complete
+     complete.
 
 ```dart
 // Imports the Flutter Driver API.
@@ -247,23 +248,60 @@ void main() {
 
 ### 6. Run the tests
 
-Now that you have an instrumented app and a test suite, run the tests.
-First, be sure to launch an Android Emulator, iOS Simulator,
+Now that you have an instrumented app _and_ a test suite,
+run the tests. The process of running the integration
+tests varies depending on the platform you are testing
+against. You can test against a mobile platform or the web.
+
+#### 6a. Mobile
+
+To test on iOS or Android,
+launch an Android Emulator, iOS Simulator,
 or connect your computer to a real iOS / Android device.
 
 Then, run the following command from the root of the project:
 
-```
+```shell
 flutter drive --target=test_driver/app.dart
 ```
 
-This command:
+This command performs the following:
 
-  1. Builds the `--target` app and installs it on the emulator / device.
-  2. Launches the app.
-  3. Runs the `app_test.dart` test suite located in `test_driver/` folder.
+* Builds the `--target` app and installs
+  it on the emulator / device.
+* Launches the app.
+* Runs the `app_test.dart` test suite located
+  in `test_driver/` folder.
 
+---
 
+#### 6b. Web
+
+To test for web,
+determine which browser you want to test against
+and download the corresponding web driver:
+
+  * Chrome: [Download ChromeDriver][]
+  * Firefox: [Download GeckoDriver][]
+  * Safari: Safari can only be tested on a Mac;
+    the SafariDriver is already installed on Mac machines.
+  * Edge [Download EdgeDriver][]
+
+Launch the WebDriver, for example: 
+
+```shell
+./chromedriver --port=4444
+```
+From the root of the project,
+run the following command:
+
+```shell
+flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
+```
+
+[Download ChromeDriver]: {{site.github}}/mozilla/geckodriver/releases
+[Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+[Download GeckoDriver]: https://github.com/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
 [`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
 [`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html
