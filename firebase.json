@@ -190,7 +190,8 @@
       { "source": "/go/move-mouse-tracker-to-rendering", "destination": "https://docs.google.com/document/d/1dYNOTZ4kdq6ndNHopjUlrGlGBw3W-3jMbnoNJouIYtE/edit?usp=sharing", "type": 301 },
       { "source": "/go/input-field-autofill", "destination": "https://docs.google.com/document/d/1wYLsoc7NiHl2jFueB4Ros09E3nDCotdWVovDCFSMcAk/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-field-characters", "destination": "https://docs.google.com/document/d/1OOFW0PEZf0orBl445YXJ3nfjyKOqZdmeQ6KU3glUh7s/edit?usp=sharing", "type": 301 },
-      { "source": "/go/system-mouse-cursor", "destination": "https://docs.google.com/document/d/1bJLRy6flZ0wDCbpl2QA8SURUWXIvRJKMRRemxlOo1cA/edit?usp=sharing", "type": 301 }
+      { "source": "/go/system-mouse-cursor", "destination": "https://docs.google.com/document/d/1bJLRy6flZ0wDCbpl2QA8SURUWXIvRJKMRRemxlOo1cA/edit?usp=sharing", "type": 301 },
+      { "source": "/go/unobstructed-platform-views", "destination": "https://docs.google.com/document/d/1PCTnBoNYDTQgYOzoZw43Iu5zG5q7j6cliCDT3mhhqZw/edit?usp=sharing", "type": 301 }
     ]
   }
 }
