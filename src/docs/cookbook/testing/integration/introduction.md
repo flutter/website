@@ -166,7 +166,6 @@ counter_app/
     app_test.dart
 ```
 
-
 ### 4. Instrument the app
 
 Now, instrument the app. This involves two steps:
@@ -290,14 +289,14 @@ and download the corresponding web driver:
 
 Launch the WebDriver, for example: 
 
-```terminal
+```shell
 ./chromedriver --port=4444
 ```
 From the root of the project,
 run the following command:
 
-```terminal
-flutter drive --target=test_driver/[test_app_file].dart --browser-name=[browser name] --release
+```shell
+flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
 ```
 
 [Download ChromeDriver]: {{site.github}}/mozilla/geckodriver/releases
