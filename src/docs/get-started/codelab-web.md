@@ -750,6 +750,7 @@ Then, replace the `LinearProgressIndicator` in the Form with this new
 
 This widget uses an `AnimatedBuilder` to animate the progress indicator to the
 latest value. 
+</li>
 
 <li markdown="1">Run the app.<br>
 Type anything into the three fields to verify that the animation works,
