@@ -136,6 +136,7 @@ and the web server when you want to test on other browsers.
 
 <li markdown="1">The starting app is displayed in the following DartPad.
 
+<!-- skip -->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
@@ -758,6 +759,7 @@ and that clicking the **Sign up** button brings up the Welcome screen.
 
 ### Complete Sample
 
+<!-- skip -->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
