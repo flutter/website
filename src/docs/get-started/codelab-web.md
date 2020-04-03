@@ -2,6 +2,9 @@
 title: Write your first Flutter app on the web
 description: How to create a Flutter web app.
 short-title: Write your first web app
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 {{site.alert.tip}}
@@ -13,7 +16,7 @@ short-title: Write your first web app
   the completed app just works on all of these devices!**
 {{site.alert.end}}
 
-{% asset get-started/sign-in alt="The web app that you'll be building" class='site-image-right' %}
+{% asset get-started/sign-up alt="The web app that you'll be building" class='site-image-right' %}
 
 This is a guide to creating your first Flutter **web** app.
 If you are familiar with object-oriented programming,
@@ -26,8 +29,8 @@ mobile, or web programming.
 {:.no_toc}
 
 You’ll implement a simple web app that displays a sign in screen.
-The screen contains three text fields: email address,
-phone number, and web site. As the user fills out the fields,
+The screen contains three text fields:  first name,
+last name, and username. As the user fills out the fields,
 a progress bar animates along the top of the sign in area.
 When all three fields are filled in, the progress bar displays
 in green along the full width of the sign in area,
@@ -54,7 +57,7 @@ The animated GIF shows how the app works at the completion of this lab.
 
   * [Flutter SDK][]
   * [Chrome browser][]
-  * [Text editor or IDE][editor][]
+  * [Text editor or IDE][editor]
 
   For a web-only codelab,
   we recommend either [IntelliJ IDEA or VS Code][editor].
@@ -133,14 +136,96 @@ and the web server when you want to test on other browsers.
 
 <li markdown="1">The starting app is displayed in the following DartPad.
 
-<!-- Starter sign in page app
-     https://gist.github.com/1d3f66b295b4057ce6d97552cfe2698a -->
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+import 'package:flutter/material.dart';
 
-<iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=1d3f66b295b4057ce6d97552cfe2698a"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
-  frameborder="no" height="500" width="100%"
-></iframe>
+void main() => runApp(LoginApp());
+
+class LoginApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      routes: {
+        '/': (context) => LoginScreen(),
+      },
+    );
+  }
+}
+
+class LoginScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      body: Center(
+        child: SizedBox(
+          width: 400,
+          child: Card(
+            child: LoginForm(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class LoginForm extends StatefulWidget {
+  @override
+  _LoginFormState createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  final _firstNameTextController = TextEditingController();
+  final _lastNameTextController = TextEditingController();
+  final _usernameTextController = TextEditingController();
+
+  double _formProgress = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          LinearProgressIndicator(value: _formProgress),
+          Text('Sign Up', style: Theme
+              .of(context)
+              .textTheme
+              .display1),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextFormField(
+              controller: _firstNameTextController,
+              decoration: InputDecoration(hintText: 'First name'),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextFormField(
+              controller: _lastNameTextController,
+              decoration: InputDecoration(hintText: 'Last name'),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextFormField(
+              controller: _usernameTextController,
+              decoration: InputDecoration(hintText: 'Username'),
+            ),
+          ),
+          FlatButton(
+            color: Colors.blue,
+            textColor: Colors.white,
+            onPressed: null,
+            child: Text('Sign up'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+```
 
 {{site.alert.important}}
   This page uses an embedded version of [DartPad][]
@@ -190,19 +275,15 @@ From your IDE, editor, or at the command line,
   Even the app itself is a widget.
   The app’s UI can be described as a widget tree.
 
-## Step 1: Enable the Welcome screen
+## Step 1: Show the Welcome screen
 
-It’s time to play with code! You may have noticed some comments
-in the source code labeled `Step 1`, `Step 2`, and `Step 3`.
-This lab leads you through the necessary changes, step by step. 
-
-The `SignUpForm` class is a stateful widget.
+The `LoginForm` class is a stateful widget.
 This simply means that the widget stores information that can change,
 such as user input, or data from a feed.
 Since widgets themselves are immutable (can’t be modified once created),
 Flutter stores state information in a companion class,
 called the `State` class. In this lab,
-all of your edits will be made to the private `_SignUpFormState` class.
+all of your edits will be made to the private `_LoginFormState` class.
 
 {{site.alert.secondary}}
   <h4 class="no_toc">Fun fact</h4>
@@ -211,18 +292,29 @@ prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
 {{site.alert.end}}
 
-The Welcome screen has already been created for you in the starter app.
-Search in the code for `WelcomeScreen`&mdash;it’s
-at the bottom of the file. For this step,
-you enable the button to display the screen and create a method to display it.
+First, add the following class definition for the `WelcomeScreen` widget:
+
+```dart
+class WelcomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('Welcome!', style: Theme.of(context).textTheme.display3),
+      ),
+    );
+  }
+}
+```
+
+Next, you will enable the button to display the screen and create a method to
+display it.
 
 <ol markdown="1">
 <li markdown="1">Open the `lib/main.dart` file.
 </li>
 
-<li markdown="1">Locate the `_signUpFormState` class.<br>
-Search for `Step 1` in the file.
-You will find it inside the `build()` method for the `_SignUpFormState` class.
+<li markdown="1"> Locate `build()` method for the `_SignUpFormState` class.
 This is the part of the code that builds the SignUp button.
 Notice how the button is defined:
 It’s a `FlatButton` with a blue background,
@@ -250,8 +342,7 @@ add the following function:
 <!-- skip -->
 ```dart
 void _showWelcomeScreen() {
-   Navigator.of(context)
-       .push(MaterialPageRoute(builder: (context) => WelcomeScreen()));
+  Navigator.of(context).pushNamed('/welcome');
 }
 ```
 </li>
@@ -262,15 +353,8 @@ Click it to bring up the welcome screen.
 Note how it animates in from the bottom.
 You get that behavior for free.
 </li>
+
 </ol>
-
-### Problems?
-{:.no_toc}
-
-If your app is not running correctly, look for typos.
-If needed, use the code at the following link to get back on track.
-
-* [lib/main.dart](https://gist.github.com/sfshaza2/25ba0bec444b5a4b71edf78d569f124c)
 
 ### Observations
 {:.no_toc}
@@ -301,40 +385,54 @@ and update the app’s UI when the form is complete.
 
 {{site.alert.note}}
   This example does **not** validate the accuracy of the user input.
-  That is something you can add later, if you like.
+  That is something you can add later using form validation, if you like.
 {{site.alert.end}}
 
 <ol markdown="1">
-<li markdown="1">Add a `_formCompleted` field.<br>
-At the top of the `_SignUpFormState` class, add a boolean
-field that you'll set to true when all three fields contain text.
+<li markdown="1">Add a method to to update `_formProgress`.
+In the `_SignUpFormState` class, add a new method called
+`_updateFormProgress()`:
 
 <!-- skip -->
 ```dart
-class _SignUpFormState extends State<SignUpForm>
-   with SingleTickerProviderStateMixin {
- bool _formCompleted = false;     // NEW
+...
+void _updateFormProgress() {
+  var progress = 0.0;
+  var controllers = [
+    _firstNameTextController,
+    _lastNameTextController,
+    _usernameTextController
+  ];
+
+  for (var controller in controllers) {
+    if (controller.value.text.isNotEmpty) {
+      progress += 1 / controllers.length;
+    }
+  }
+
+  setState(() {
+    _formProgress = progress;
+  });
+}
 ...
 ```
 
-<li markdown="1">Add a call to `setState()`.<br>
-Search for `Step 2` in the code.
-Once again, it’s in the `build()` method of the `_SignUpFormState` class.
-Modify the `_SignUpFormBody` widget, which contains the form’s text fields.
-Add code to tell Flutter to call the `setState()`
-method when all three of the text fields are filled in.
-Replace the `Step 2` comment with the code below marked as NEW:
+This method updates `_formProgress` based on the the number of non-empty text
+fields.
+
+</li>
+
+<li markdown="1">Call `_updateFormProgress()` when the form changes<br>
+In the `build()` method of the `_SignUpFormState` class, add a callback
+to the `Form` widget's `onChanged` argument:
+Add the code below marked as NEW:
 
 <!-- skip -->
 ```dart
 ...
-SignUpFormBody(
-  onProgressChanged: (progress) {
-    setState(() {                          // NEW
-      _formCompleted = progress == 1;      // NEW
-    });                                    // NEW
-  },
-),
+return Form(
+  onChanged: () => _updateFormProgress(), // NEW
+  child: Column(
 ...
 ```
 </li>
@@ -348,16 +446,12 @@ screen only when the form is completely filled in:
 <!-- skip -->
 ```dart
 ...
-       Container(
-         height: 40,
-         width: double.infinity,
-         margin: EdgeInsets.all(12),
-         child: FlatButton(
-           color: Colors.blue,
-           textColor: Colors.white,
-           onPressed: _formCompleted ? _showWelcomeScreen : null,  // UPDATED
-           child: Text('Sign up'),
-         ),
+FlatButton(
+  color: Colors.blue,
+  textColor: Colors.white,
+  onPressed: _formProgress == 1 ? _showWelcomeScreen : null, // UPDATED
+  child: Text('Sign up'),
+),
 ...
 
 ```
@@ -368,14 +462,6 @@ The **Sign up** button is initially disabled,
 but becomes enabled when all three text fields contain (any) text.
 </li>
 </ol>
-
-### Problems?
-{:.no_toc}
-
-If your app is not running correctly, look for typos.
-If needed, use the code at the following link to get back on track.
-
-* [lib/main.dart](https://gist.github.com/sfshaza2/0ce13ec7bc16e1307cabfe18e4f40cb8)
 
 ### Observations
 {:.no_toc}
@@ -392,11 +478,13 @@ If needed, use the code at the following link to get back on track.
   transition—especially for an animation.
   Luckily Flutter *is* fast.
 * The `progress` field is defined as a floating value,
-  and is updated in the `_formProgress` getter method.
-  When all three fields are filled in, `progress` is set to 1.0.
-  When `progress` is set to 1.0, `_formCompleted` is set to true.
-* Notice that the function passed as an argument to `setState()`
-  isn’t  bound to an identifier. This is called an anonymous
+  and is updated in the `_updateFormProgress` method.
+  When all three fields are filled in, `_formProgress` is set to 1.0.
+  When `_formProgress` is set to 1.0, the `onPressed` callback is set to the
+  `_showWelcomeScreen` method. The button is enabled when it's `onPressed`
+  argument is non-null.
+* Notice that the `_updateFormProgress` passes a function to `setState()`.
+  This is called an anonymous
   function and has the following syntax:
   <!-- skip -->
   ```dart
@@ -408,13 +496,13 @@ If needed, use the code at the following link to get back on track.
   welcome screen is:
   <!-- skip -->
   ```dart
-  onPressed: _formCompleted ? _showWelcomeScreen : null
+  onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
   ```
   This is a Dart conditional assignment and has the syntax: 
   `condition ? expression1 : expression2`. 
-  If `_formCompleted` is true, Dart performs the first expression
-  and displays the welcome screen, otherwise,
-  it performs the second expression (null) and does nothing.
+  If the expression `_formProgress == 1` is true, the entire expression results
+  in the value on the left hand side of the `:`, which is the
+  `_showWelcomeScreen` method in this case.
 
 ## Step 2.5: Launch Dart DevTools
 
@@ -511,19 +599,23 @@ in the center pane.
 
 {% indent %}
   ![Screenshot of the DevTools debugger]({% asset get-started/devtools-debugging.png @path %}){:width="100%"}
-  [todo: replace screenshot]
 {% endindent %}
 </li>
 
 <li markdown="1">Set a breakpoint.<br>
 In the Dart code,
-scroll down to line 61, where `_formCompleted` is updated:
+scroll down to where `progress` is updated:
 
 <!-- skip -->
 ```dart
-  _formCompleted = progress == 1;
+    for (var controller in controllers) {
+      if (controller.value.text.isNotEmpty) {
+        progress += 1 / controllers.length;
+      }
+    }
 ```
-Place a breakpoint on this line by clicking to the
+
+Place a breakpoint on the line with the for loop by clicking to the
 left of the line number. The breakpoint now appears
 in the **Breakpoints** section to the left of the window.
 </li>
@@ -533,9 +625,8 @@ In the running app, click one of the text fields to gain focus.
 The app hits the breakpoint and pauses.
 In the DevTools screen, you can see on the left
 the value of `progress`, which is 0. This is to be expected,
-since none of the fields are filled in.
-Click the downward arrow to the left of the `this _SignUpFormState`.
-You can see the value of `_formCompleted` is false, as expected.
+since none of the fields are filled in. Step through the for loop to see
+the program execution.
 </li>
 
 <li markdown="1">Resume the app.<br>
@@ -552,11 +643,11 @@ This gives you a tiny glimpse of what is possible using DevTools,
 but there is lots more! For more information,
 see the [DevTools documentation][].
 
-## Step 3: Add animation for sign in progres
+## Step 3: Add animation for sign in progress
 
-It’s time to add animation! In this final step,
-you’ll create the animation for the top of the sign in area.
-The animation has the following behavior:
+It’s time to add animation! In this final step, you’ll create the animation for
+the LinearProgressIndicator at the top of the sign in area. The animation has
+the following behavior:
 
 * When the app starts,
   a tiny red bar appears across the top of the sign in area.
@@ -572,151 +663,92 @@ The animation has the following behavior:
   Also, the **Sign up** button becomes enabled.
 
 <ol markdown="1">
-<li markdown="1">Add fields to track the animation.<br>
-In the `_SignupFormState` class, search for `Step 3`&mdash;you'll
-find it at the top of the class. Add a field for the `AnimationController`,
-and another for the color animation:
+<li markdown="1">Add an AnimatedProgressIndicator.<br>
+At the bottom of the file, add this widget:
+
+<!--skip-->
+```dart
+class AnimatedProgressIndicator extends StatefulWidget {
+  final double value;
+
+  AnimatedProgressIndicator({
+    @required this.value,
+  });
+
+  @override
+  State<StatefulWidget> createState() {
+    return _AnimatedProgressIndicatorState();
+  }
+}
+
+class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
+    with SingleTickerProviderStateMixin {
+  AnimationController _controller;
+  Animation<Color> _colorAnimation;
+  Animation<double> _curveAnimation;
+
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+        duration: Duration(milliseconds: 1200), vsync: this);
+
+    var colorTween = TweenSequence([
+      TweenSequenceItem(
+        tween: ColorTween(begin: Colors.red, end: Colors.orange),
+        weight: 1,
+      ),
+      TweenSequenceItem(
+        tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
+        weight: 1,
+      ),
+      TweenSequenceItem(
+        tween: ColorTween(begin: Colors.yellow, end: Colors.green),
+        weight: 1,
+      ),
+    ]);
+
+    _colorAnimation = _controller.drive(colorTween);
+    _curveAnimation = _controller.drive(CurveTween(curve: Curves.easeIn));
+  }
+
+  void didUpdateWidget(oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _controller.animateTo(widget.value);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) => LinearProgressIndicator(
+        value: _curveAnimation.value,
+        valueColor: _colorAnimation,
+        backgroundColor: _colorAnimation.value.withOpacity(0.4),
+      ),
+    );
+  }
+}
+```
+</li>
+
+<li markdown="1">Use the new AnimatedProgressIndicator.<br>
+Then, replace the `LinearProgressIndicator` in the Form with this new
+`AnimatedProgressIndicator`:
 
 <!--skip-->
 ```dart
 ...
-class _SignUpFormState extends State<SignUpForm>
-   with SingleTickerProviderStateMixin {
- AnimationController animationController;  // NEW
- Animation<Color> colorAnimation;          // NEW
- bool _formCompleted = false;
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          AnimatedProgressIndicator(value: _formProgress), // NEW
+          Text('Sign Up', style: Theme.of(context).textTheme.display1),
+          Padding(
 ...
 ```
-</li>
 
-<li markdown="1">Initialize the `AnimationController`:
-Define the AnimationController in `initState()`:
-
-<!--skip-->
-```dart
-class _SignUpFormState extends State<SignUpForm>
-   with SingleTickerProviderStateMixin {
- AnimationController animationController;
- Animation<Color> colorAnimation;
- bool _formCompleted = false;
-
- @override
- void initState() {
-   super.initState();
-
-   animationController = AnimationController(                      // NEW
-       vsync: this, duration: const Duration(milliseconds: 1200)); // NEW
-...
-```
-</li>
-
-<li markdown="1">Create a `Tween` sequence.<br>
-Also in `initState()`, define a `Tween` sequence consisting
-of three color tweens, one for each color of the animation
-(red-to-orange, orange-to-yellow, yellow-to-green).
-
-<!--skip-->
-```dart
-...
-   animationController = AnimationController(
-       vsync: this, duration: const Duration(milliseconds: 1200));
-
-   var colorTween = TweenSequence([
-     TweenSequenceItem(
-       tween: ColorTween(begin: Colors.red, end: Colors.orange),
-       weight: 1,
-     ),
-     TweenSequenceItem(
-       tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
-       weight: 1,
-     ),
-     TweenSequenceItem(
-       tween: ColorTween(begin: Colors.yellow, end: Colors.green),
-       weight: 1,
-     ),
-   ]);
-...
-```
-</li>
-
-<li markdown="1">Attach the tween sequence to the `AnimationController`.<br>
-For the final edit in `initState()`,
-define colorAnimation by chaining the `Tween` sequence to
-the animation controller using the `drive()` method.
-
-<!--skip-->
-```dart
-   animationController = AnimationController(
-       vsync: this, duration: const Duration(milliseconds: 1200));
-
-   var colorTween = TweenSequence([
-     TweenSequenceItem(
-       tween: ColorTween(begin: Colors.red, end: Colors.orange),
-       weight: 1,
-     ),
-     TweenSequenceItem(
-       tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
-       weight: 1,
-     ),
-     TweenSequenceItem(
-       tween: ColorTween(begin: Colors.yellow, end: Colors.green),
-       weight: 1,
-     ),
-   ]);
-
-   colorAnimation = animationController.drive(colorTween); // NEW
- }
-```
-</li>
-
-<li markdown="1">Set up the animation trigger.<br>
-In the definition for the body of the form,
-update the `onProgressChanged` property:
-When the value of `progress` changes, trigger the animation:
-
-<!--skip-->
-```dart
-       SignUpFormBody(
-         onProgressChanged: (progress) {
-           if (!animationController.isAnimating) {     // NEW
-             animationController.animateTo(progress);  // NEW
-           }                                           // NEW
-           setState(() {
-             _formCompleted = progress == 1;  // UPDATED
-           });
-         },
-       ),
-...
-```
-</li>
-
-<li markdown="1">Set up an `AnimationBuilder`.<br>
-To display the animation,
-add an `AnimatedBuilder` that creates a
-`LinearProgressIndicator` to the column.
-The `LinearProgressIndicator` is implemented as
-another anonymous function on the `builder` field:
-
-<!--skip-->
-```dart
- @override
- Widget build(BuildContext context) {
-   return Column(
-     mainAxisSize: MainAxisSize.min,
-     children: [
-       AnimatedBuilder(                         // NEW
-         animation: animationController,        // NEW
-         builder: (context, child) {            // NEW
-           return LinearProgressIndicator(      // NEW
-             value: animationController.value,  // NEW
-             valueColor: colorAnimation,        // NEW
-             backgroundColor: colorAnimation.value.withOpacity(0.4),          // NEW
-           );                                   // NEW
-         },
-       ),
-...
-```
-</li>
+This widget uses an `AnimatedBuilder` to animate the progress indicator to the
+latest value. 
 
 <li markdown="1">Run the app.<br>
 Type anything into the three fields to verify that the animation works,
@@ -724,14 +756,191 @@ and that clicking the **Sign up** button brings up the Welcome screen.
 </li>
 </ol>
 
+### Complete Sample
 
-### Problems?
-{:.no_toc}
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+import 'package:flutter/material.dart';
 
-If your app is not running correctly, look for typos.
-If needed, use the code at the following link to get back on track.
+void main() => runApp(SignUpApp());
 
-* [lib/main.dart](https://gist.github.com/sfshaza2/9a7e10e9141b775a70a94a14bf2200b4)
+class SignUpApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      routes: {
+        '/': (context) => SignUpScreen(),
+        '/welcome': (context) => WelcomeScreen(),
+      },
+    );
+  }
+}
+
+class SignUpScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      body: Center(
+        child: SizedBox(
+          width: 400,
+          child: Card(
+            child: SignUpForm(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class WelcomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('Welcome!', style: Theme.of(context).textTheme.display3),
+      ),
+    );
+  }
+}
+
+class SignUpForm extends StatefulWidget {
+  @override
+  _SignUpFormState createState() => _SignUpFormState();
+}
+
+class _SignUpFormState extends State<SignUpForm> {
+  final _firstNameTextController = TextEditingController();
+  final _lastNameTextController = TextEditingController();
+  final _usernameTextController = TextEditingController();
+
+  double _formProgress = 0;
+
+  void _updateFormProgress() {
+    var progress = 0.0;
+    var controllers = [
+      _firstNameTextController,
+      _lastNameTextController,
+      _usernameTextController
+    ];
+
+    for (var controller in controllers) {
+      if (controller.value.text.isNotEmpty) {
+        progress += 1 / controllers.length;
+      }
+    }
+
+    setState(() {
+      _formProgress = progress;
+    });
+  }
+
+  void _showWelcomeScreen() {
+    Navigator.of(context).pushNamed('/welcome');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      onChanged: () => _updateFormProgress(),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          AnimatedProgressIndicator(value: _formProgress),
+          Text('Sign Up', style: Theme.of(context).textTheme.display1),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextFormField(
+              controller: _firstNameTextController,
+              decoration: InputDecoration(hintText: 'First name'),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextFormField(
+              controller: _lastNameTextController,
+              decoration: InputDecoration(hintText: 'Last name'),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextFormField(
+              controller: _usernameTextController,
+              decoration: InputDecoration(hintText: 'Username'),
+            ),
+          ),
+          FlatButton(
+            color: Colors.blue,
+            textColor: Colors.white,
+            onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
+            child: Text('Sign up'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class AnimatedProgressIndicator extends StatefulWidget {
+  final double value;
+
+  AnimatedProgressIndicator({
+    @required this.value,
+  });
+
+  @override
+  State<StatefulWidget> createState() {
+    return _AnimatedProgressIndicatorState();
+  }
+}
+
+class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
+    with SingleTickerProviderStateMixin {
+  AnimationController _controller;
+  Animation<Color> _colorAnimation;
+  Animation<double> _curveAnimation;
+
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+        duration: Duration(milliseconds: 1200), vsync: this);
+
+    var colorTween = TweenSequence([
+      TweenSequenceItem(
+        tween: ColorTween(begin: Colors.red, end: Colors.orange),
+        weight: 1,
+      ),
+      TweenSequenceItem(
+        tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
+        weight: 1,
+      ),
+      TweenSequenceItem(
+        tween: ColorTween(begin: Colors.yellow, end: Colors.green),
+        weight: 1,
+      ),
+    ]);
+
+    _colorAnimation = _controller.drive(colorTween);
+    _curveAnimation = _controller.drive(CurveTween(curve: Curves.easeIn));
+  }
+
+  void didUpdateWidget(oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _controller.animateTo(widget.value);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) => LinearProgressIndicator(
+        value: _curveAnimation.value,
+        valueColor: _colorAnimation,
+        backgroundColor: _colorAnimation.value.withOpacity(0.4),
+      ),
+    );
+  }
+}
+```
 
 ### Observations
 {:.no_toc}
