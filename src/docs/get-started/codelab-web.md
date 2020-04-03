@@ -191,7 +191,7 @@ class _LoginFormState extends State<LoginForm> {
           Text('Sign Up', style: Theme
               .of(context)
               .textTheme
-              .headline4), // display1 has been changed to headline4
+              .headline4), // headline4 changes to display1 in 1.16
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
