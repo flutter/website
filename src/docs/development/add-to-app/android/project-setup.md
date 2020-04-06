@@ -234,7 +234,7 @@ iterate, but your team must install the Flutter SDK to build the host app.
   By default, the host app provides the `:app` Gradle project.
   To change the name of this project, set `flutter.hostAppProjectName` in the
   Flutter module's `gradle.properties` file. Finally, include this project in the
-  host app `settings.gradle` file mentioned below.
+  host app's `settings.gradle` file mentioned below.
 {{site.alert.end}}
 
 Include the Flutter module as a subproject in the host app's `settings.gradle`:
