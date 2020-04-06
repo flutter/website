@@ -230,10 +230,18 @@ This option enables a one-step build for both your Android project and Flutter p
 This option is convenient when you work on both parts simultaneously and rapidly
 iterate, but your team must install the Flutter SDK to build the host app.
 
+{{site.alert.tip}}
+  By default, the host app provides the `:app` Gradle project.
+  To change the name of this project, set `flutter.hostAppProjectName` in the
+  Flutter module's `gradle.properties` file. Finally, include this project in the
+  host app's `settings.gradle` file mentioned below.
+{{site.alert.end}}
+
 Include the Flutter module as a subproject in the host app's `settings.gradle`:
 
 <!--code-excerpt "MyApp/settings.gradle" title-->
 ```groovy
+// Include the host app project.
 include ':app'                                     // assumed existing content
 setBinding(new Binding([gradle: this]))                                 // new
 evaluate(new File(                                                      // new
