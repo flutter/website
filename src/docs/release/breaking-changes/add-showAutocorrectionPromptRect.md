@@ -86,7 +86,7 @@ API documentation:
 * [`TextInputClient`]: https://master-api.flutter.dev/flutter/services/TextInputClient-class.html
 
 Relevant issues:
-* [Issue 12920][{{site.github}}/flutter/flutter/issues/12920]
+* [Issue 12920]: {{site.github}}/flutter/flutter/issues/12920
 
 Relevant PRs:
 * [iOS UITextInput autocorrection prompt]: {{site.github}}/flutter/flutter/pull/54119/
