@@ -31,12 +31,15 @@ specify the directory name with the `/` character at the end:
 ```yaml
 flutter:
   assets:
-    - assets/
+    - directory/
+    - directory/subdirectory/
 ```
 
-Note that only files located directly in the directory are
-included. To add files located in subdirectories,
-create an entry per directory.
+{{site.alert.note}}
+  Only files located directly in the directory are
+  included. To add files located in subdirectories,
+  create an entry per directory.
+{{site.alert.end}}
 
 ### Asset bundling
 
@@ -44,8 +47,8 @@ The `assets` subsection of the `flutter` section specifies files that
 should be included with the app. Each asset is identified by an
 explicit path (relative to the `pubspec.yaml` file) where the asset
 file is located. The order in which the assets are declared does not
-matter. The actual directory used (`assets` in this case) does not
-matter.
+matter. The actual directory name used (`assets` in first example or others `directory`) 
+does not matter.
 
 During a build, Flutter places assets into a special archive called
 the _asset bundle_, which apps can read from at runtime.
