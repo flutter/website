@@ -36,6 +36,7 @@ to your `TextInputClient` subclass.
 
 Code after migration:
 
+<!-- skip -->
 ```dart
 // Assume your `TextInputClient` is a `State` subclass, and it has a variable `_currentPromptRectRange` that controls 
 // the autocorrection highlight.
