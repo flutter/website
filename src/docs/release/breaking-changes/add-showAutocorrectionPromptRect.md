@@ -1,6 +1,6 @@
 ---
 title: New method `showAutocorrectionPromptRect` added to `TextInputClient` 
-description: a new method `void showAutocorrectionPromptRect(int start, int end)` was added to the `TextInputClient` interface
+description: A new method `void showAutocorrectionPromptRect(int start, int end)` was added to the `TextInputClient` interface
 ---
 
 
@@ -36,7 +36,6 @@ to your `TextInputClient` subclass.
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // Assume your `TextInputClient` is a `State` subclass, and it has a variable `_currentPromptRectRange` that controls 
 // the autocorrection highlight.
@@ -54,14 +53,17 @@ class CustomTextInputClient extends State<...> implements TextInputClient {
   void _handleFocusChanged() {
     // When this text input loses focus, the autocorrection highlight needs
     // to be dismissed.
-    if (!_hasFocus)
-      setState(() { _currentPromptRectRange = null; });  
+    if (!_hasFocus) {
+      setState(() { 
+        _currentPromptRectRange = null;
+      });  
+    }
   }
   
   @override
   void showAutocorrectionPromptRect(int start, int end) {
     // Updates the range of the highlight, as iOS requested.
-    // Note this method will not be called when iOS decides to
+    // This method will not be called when iOS decides to
     // dismiss the highlight.
     setState(() {
       _currentPromptRectRange = TextRange(start: start, end: end);
