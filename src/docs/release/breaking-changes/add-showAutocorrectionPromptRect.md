@@ -6,7 +6,7 @@ description: a new method `void showAutocorrectionPromptRect(int start, int end)
 
 ## Summary
 
-A new method `void showAutocorrectionPromptRect(int start, int end)` is added to the `TextInputClient` interface.
+A new method `void showAutocorrectionPromptRect(int start, int end)` was added to the `TextInputClient` interface.
 
 ## Context
 
@@ -15,7 +15,7 @@ the highlight's start and end position.
 
 ## Description of change
 
-A new method `void showAutocorrectionPromptRect(int start, int end)` is added to the `TextInputClient` interface. This method will
+A new method `void showAutocorrectionPromptRect(int start, int end)` was added to the `TextInputClient` interface. This method will
 be called by iOS when it finds a new potential autocorrect candidate in the current user input, or when the range of a previously highlighted candidate changes.
 
 ## Migration guide
