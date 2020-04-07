@@ -5,10 +5,9 @@ description: The services layer now depends on the scheduler layer.
 
 ## Summary
 
-The dependency chain between the services layer and the scheduler layer has been
-reversed: The services layer now depends on the scheduler layer. This change may
-affect you if you have defined your own custom binding based on Flutter's
-`SchedulerBinding` and `ServicesBinding`.
+The services layer now depends on the scheduler layer. Previously, the opposite
+was true. This may affect you if you have defined custom bindings overriding
+Flutter's `SchedulerBinding` or `ServicesBinding`.
 
 ## Context
 
@@ -16,7 +15,6 @@ Prior to this change, the scheduler layer was dependent on the services layer.
 This change reverses the dependency chain and allows the services layer to make
 use of the scheduling primitives in the scheduler layer. For example, services
 in the services layer can now schedule tasks via `SchedulerBinding.scheduleTask`.
-
 
 ## Description of change
 
