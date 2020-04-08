@@ -56,7 +56,7 @@ API documentation:
 
 Relevant PRs:
 * [Reverse dependency between services and scheduler][]
-* [Remove compatibility fallback for lifecycle API][]
+* [Revert bindings dependency workaround][]
 
 {% include master-api.md %}
 
@@ -69,4 +69,4 @@ Master channel link:
 [`ServicesBinding`]: https://master-api.flutter.dev/flutter/scheduler/ServicesBinding-mixin.html
 
 [Reverse dependency between services and scheduler]: {{site.github}}/flutter/flutter/pull/54212
-[Remove compatibility fallback for lifecycle API]: {{site.github}}/flutter/flutter/pull/TODO
+[Revert bindings dependency workaround]: {{site.github}}/flutter/flutter/pull/54286
