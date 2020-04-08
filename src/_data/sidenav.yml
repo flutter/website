@@ -179,7 +179,7 @@
             permalink: /docs/development/add-to-app/ios/project-setup
           - title: Add a single Flutter screen
             permalink: /docs/development/add-to-app/ios/add-flutter-screen
-      - title: Running, debugging & hot reload
+      - title: Debugging & hot reload
         permalink: /docs/development/add-to-app/debugging
       - title: Loading sequence and performance
         permalink: /docs/development/add-to-app/performance
