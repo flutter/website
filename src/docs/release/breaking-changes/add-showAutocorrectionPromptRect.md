@@ -24,6 +24,7 @@ If your application does not implement or subclass `TextInputClient`, no migrati
 If your application does not target iOS, or the class that implemented the `textInputClient` interface does not 
 support autocorrect, you only need to add an empty implementation for the new method:
 
+<!-- skip -->
 ```dart
 class CustomTextInputClient implements TextInputClient {
   void showAutocorrectionPromptRect(int start, int end) {
@@ -75,6 +76,7 @@ class CustomTextInputClient extends State<...> implements TextInputClient {
 
 ## Timeline
 
+This change landed in 
 {% comment %}
 The version # of the SDK where this change was
 introduced.  If there is a deprecation window,
