@@ -257,13 +257,16 @@ the Play Store.
   Recently, the Flutter team has received [several reports][crash-issue]
   from developers indicating they are experiencing app
   crashes on certain devices on Android 6.0. If you are targeting
-  Android 6.0, follow the following steps:
+  Android 6.0, use the following steps:
 
   * If you build an App Bundle
-    Edit `android/gradle.properties` and add the flag: `android.bundle.enableUncompressedNativeLibs=false`.
+    Edit `android/gradle.properties` and add the flag:
+    `android.bundle.enableUncompressedNativeLibs=false`.
 
   * If you build an APK
-    Make sure `android/app/src/AndroidManifest.xml` doesn't set `android:extractNativeLibs=false` in the `<application>` tag.
+    Make sure `android/app/src/AndroidManifest.xml`
+    doesn't set `android:extractNativeLibs=false`
+    in the `<application>` tag.
 
   For more information, see the [public issue][crash-issue].
 {{site.alert.end}}
@@ -273,6 +276,10 @@ the Play Store.
 This section describes how to build a release app bundle.
 If you completed the signing steps,
 the app bundle will be signed.
+At this point, you might consider [obfuscating your Dart code][]
+to make it more difficult to reverse engineer. Obfuscating
+your code involves adding a couple flags to your build command,
+and maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
@@ -317,6 +324,9 @@ APK for each target ABI (Application Binary Interface).
 
 If you completed the signing steps,
 the APK will be signed.
+At this point, you might consider [obfuscating your Dart code][]
+to make it more difficult to reverse engineer. Obfuscating
+your code involves adding a couple flags to your build command.
 
 From the command line:
 
@@ -450,7 +460,7 @@ The resulting app bundle or APK files are located in
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
-[Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
+[obfuscating your Dart code]: /docs/deployment/obfuscate
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [R8]: {{site.android-dev}}/studio/build/shrink-code

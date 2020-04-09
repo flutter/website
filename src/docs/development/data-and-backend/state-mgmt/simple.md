@@ -226,9 +226,17 @@ class CartModel extends [!ChangeNotifier!] {
   /// The current total price of all items (assuming all items cost $42).
   int get totalPrice => _items.length * 42;
 
-  /// Adds [item] to cart. This is the only way to modify the cart from outside.
+  /// Adds [item] to cart. This and [removeAll] are the only ways to modify the
+  /// cart from the outside.
   void add(Item item) {
     _items.add(item);
+    // This call tells the widgets that are listening to this model to rebuild.
+    [!notifyListeners!]();
+  }
+
+  /// Removes all items from the cart.
+  void removeAll() {
+    _items.clear();
     // This call tells the widgets that are listening to this model to rebuild.
     [!notifyListeners!]();
   }
@@ -459,17 +467,6 @@ dev_dependencies:
 
 Now you can `import 'package:provider/provider.dart';`
 and start building.
-
-## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
-
-For illustration, consider the following simple app.
-
-The app has two separate screens: a catalog,
-and a cart (represented by the `MyCatalog`,
-and `MyCart` widgets, respectively). It could be a shopping app,
-but you can imagine the same structure in a simple social networking
-app (replace catalog for "wall" and cart for "favorites").
-
 
 [built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
 [check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper

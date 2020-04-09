@@ -1,5 +1,6 @@
 ---
 title: Tap, drag, and enter text
+description: How to test widgets for user interaction.
 prev:
   title: Find widgets
   path: /docs/cookbook/testing/widget/finders

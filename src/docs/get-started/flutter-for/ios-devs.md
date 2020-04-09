@@ -751,7 +751,10 @@ loadData() async {
   // The 'echo' isolate sends its SendPort as the first message
   SendPort sendPort = await receivePort.first;
 
-  List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
+  List msg = await sendReceive(
+    sendPort,
+    "https://jsonplaceholder.typicode.com/posts",
+  );
 
   setState(() {
     widgets = msg;
@@ -871,7 +874,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
       });
 
   Widget getRow(int i) {
-    return Padding(padding: EdgeInsets.all(10.0), child: Text("Row ${widgets[i]["title"]}"));
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Text("Row ${widgets[i]["title"]}"),
+    );
   }
 
   loadData() async {
@@ -881,7 +887,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
     // The 'echo' isolate sends its SendPort as the first message
     SendPort sendPort = await receivePort.first;
 
-    List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
+    List msg = await sendReceive(
+      sendPort,
+      "https://jsonplaceholder.typicode.com/posts",
+    );
 
     setState(() {
       widgets = msg;
@@ -1037,7 +1046,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
       });
 
   Widget getRow(int i) {
-    return Padding(padding: EdgeInsets.all(10.0), child: Text("Row ${widgets[i]["title"]}"));
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Text("Row ${widgets[i]["title"]}"),
+    );
   }
 
   loadData() async {

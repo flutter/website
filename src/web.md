@@ -1,9 +1,9 @@
 ---
 title: Web support for Flutter
-description: "Announcing the tech preview release of Flutter for web."
+description: "Details of how Flutter supports the creation of web experiences."
 ---
 
-Web support is a code-compatible implementation of Flutter that is
+In addition to mobile apps, Flutter supports the generation of web content 
 rendered using standards-based web technologies: HTML, CSS and JavaScript.
 With web support, you can compile existing Flutter code written in
 Dart into a client experience that can be embedded in the browser and
@@ -11,7 +11,7 @@ deployed to any web server. You can use all the features of Flutter,
 and you don’t need a browser plug-in.
 
 {{site.alert.warning}}
-  **As of 1.12, web support is available on the beta channel.**
+  **While in development, web support is available in the beta channel.**
   If you experience a problem that hasn't yet been reported, please
   [file an issue][] and make sure that "web" appears in the title.
 {{site.alert.end}}
@@ -21,19 +21,20 @@ and you don’t need a browser plug-in.
      width="100%">
 
 Adding web support to Flutter involved implementing Flutter's
-core drawing layer on top of standard browser APIs.
-Using a combination of DOM, Canvas, and CSS,
-web support aims to provide a portable, high-quality,
+core drawing layer on top of standard browser APIs, in addition
+to compiling Dart to JavaScript, instead of the ARM machine code that
+is used for mobile applications. Using a combination of DOM, Canvas, 
+and CSS, Flutter can provide a portable, high-quality,
 and performant user experience across modern browsers.
-We implemented this core drawing layer completely in Dart
+We implemented the core drawing layer completely in Dart
 and used Dart's optimized JavaScript compiler to compile the
 Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-In this early stage of development,
-we envision the web version of Flutter
-being valuable in many scenarios. For example:
+While traditional web approaches remain a great choice, we envision
+the web support available in Flutter being valuable in many scenarios. 
+For example:
 
 **A connected [Progressive Web Application][] built with Flutter**
 : Web support for Flutter enables existing mobile-based applications
@@ -55,6 +56,12 @@ being valuable in many scenarios. For example:
   The support Flutter now offers for a unified environment for
   web and mobile content enables you to deploy content online
   or embedded in an app without rewriting.
+  
+Not every HTML scenario is ideally suited for Flutter at this time. 
+For example, text-rich flow-based content such as blog articles
+benefit from the document-centric model that the web is built around,
+rather than the app-centric services that a UI framework like Flutter
+can deliver.
 
 <a name="web"></a>
 ## Notes on web support
@@ -74,13 +81,13 @@ The following resources can help you get started:
   [Preparing an app for web release][].
 * [File an issue][] on the main Flutter repo.
 * You can chat and ask web-related questions on the
-  **#news** discussion board on the [Discord group][].
+  **#help** channel on [Discord][].
 
 
 
 [Building a web application with Flutter]: /docs/get-started/web
 [Creating responsive apps]: /docs/development/ui/layout/responsive
-[Discord group]: https://discordapp.com/invite/yeZ6s7k
+[Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
 [main Flutter repo]: {{site.github}}/flutter/flutter
 [Preparing an app for web release]: /docs/deployment/web

@@ -1,5 +1,6 @@
 ---
 title: Find widgets
+description: How to use the Finder classes for testing widgets.
 prev:
   title: An introduction to widget testing
   path: /docs/cookbook/testing/widget/introduction

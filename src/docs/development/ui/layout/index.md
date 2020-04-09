@@ -9,7 +9,7 @@ diff2html: true
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 {% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
-{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/examples/flutter_gallery/lib/demo {%- endcapture -%}
+{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/dev/integration_tests/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
@@ -1170,7 +1170,7 @@ The following resources might help when writing layout code.
 [Container]: {{api}}/widgets/Container-class.html
 [Elevation]: {{site.material}}/design/environment/elevation.html
 [Expanded]: {{api}}/widgets/Expanded-class.html
-[Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
+[Flutter Gallery]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
 [GridView]: {{api}}/widgets/GridView-class.html
 [GridTile]: {{api}}/material/GridTile-class.html
 [Icon]: {{api}}/material/Icons-class.html

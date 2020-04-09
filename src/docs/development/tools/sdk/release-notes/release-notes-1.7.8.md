@@ -4,14 +4,23 @@ short-title: 1.7.8 release notes
 description: Release notes for Flutter 1.7.8.
 ---
 
-The 1.7.8 release is a follow-on to the 1.5.4 stable release in May, providing 1289 merged PRs and closing 184 issues. The major themes of this release are:
+The 1.7.8 release is a follow-on to the 1.5.4 stable release in May,
+providing 1289 merged PRs and closing 184 issues.
+The major themes of this release are:
 
 *   Support for 32-bit and 64-bit bundles on Android
-*   Large number of iOS features and fixes, including improved text editing and localization
-*   [AndroidX support](https://github.com/flutter/flutter/pull/31028) for new projects via the --androidx flag of ‘flutter create’
-*   A new widget: the [RangeSlider](https://api.flutter.dev/flutter/material/RangeSlider-class.html)
+*   Large number of iOS features and fixes,
+    including improved text editing and localization
+*   [AndroidX support](https://github.com/flutter/flutter/pull/31028)
+    for new projects via the --androidx flag of ‘flutter create’
+*   A new widget: the
+    [RangeSlider](https://api.flutter.dev/flutter/material/RangeSlider-class.html)
 
-As detailed in our [roadmap](https://github.com/flutter/flutter/wiki/Roadmap), we're also continuing the ongoing work in the Flutter engine and framework to support turning on web and desktop targets; however, this is not yet ready for general usage.
+As detailed in our
+[roadmap](https://github.com/flutter/flutter/wiki/Roadmap),
+we're also continuing the ongoing work in the Flutter engine
+and framework to support turning on web and desktop targets;
+however, this is not yet ready for general usage.
 
 
 ## Support for 32-bit and 64-bit Android Bundles

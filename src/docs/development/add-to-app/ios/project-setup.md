@@ -223,6 +223,12 @@ some/path/MyApp/
         └── example_plugin.framework
 ```
 
+{{site.alert.warning}}
+  Always use `Flutter.framework` and `App.framework` from the same directory.
+  Mixing `.framework` imports from different directories (such as
+  `Profile/Flutter.framework` with `Debug/App.framework`) causes runtime crashes.
+{{site.alert.end}}
+
 {{site.alert.tip}}
   With Xcode 11 installed, you can generate
   [XCFrameworks][] instead of universal frameworks by adding
@@ -233,7 +239,7 @@ Embed and link the generated frameworks into your existing
 application in Xcode.  There are multiple ways to do
 this&mdash;use the method that is best for your project.
 
-### Link on the frameworks
+#### Link on the frameworks
 
 For example, you can drag the frameworks from
 `some/path/MyApp/Flutter/Release/` in Finder
@@ -245,7 +251,7 @@ to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`).
 
 {% include app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
 
-### Embed the frameworks
+#### Embed the frameworks
 
 The generated dynamic frameworks must be embedded into your app
 to be loaded at runtime.

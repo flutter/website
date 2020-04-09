@@ -47,4 +47,11 @@
   cover: practical-flutter.jpg
   link: "https://www.apress.com/us/book/9781484249710"
   desc: "Improve your Mobile Development with Google's latest open source SDK."
+- title: 'Programming Flutter'
+  authors:
+    - Carmine Zaccagnino
+  publisher: Pragmatic Bookshelf
+  cover: programming-flutter.jpg
+  link: "https://pragprog.com/book/czflutr"
+  desc: "Native, Cross-Platform Apps the Easy Way. Doesn't require previous Dart knowledge."
 

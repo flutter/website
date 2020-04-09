@@ -1,5 +1,6 @@
 ---
 title: Linux install
+description: How to install on Linux.
 short-title: Linux
 next:
   title: Set up an editor

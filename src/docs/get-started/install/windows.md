@@ -1,5 +1,6 @@
 ---
 title: Windows install
+description: How to install on Windows.
 short-title: Windows
 next:
   title: Set up an editor

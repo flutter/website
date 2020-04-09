@@ -99,7 +99,18 @@ I've had to comment out these faux links because they cause
 the Travis build to believe they are broken links,
 but please remove the comment lines before you commit!
 
+If you need to link to the docs on the master channel,
+please include the following note and make sure that
+the URL includes the master link (as shown below).
+
+{% include master-api.md %}
+
+Stable channel link:
 [`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
+
+Master channel link:
+[`ClassName`]: https://master-api.flutter.dev/flutter/[link_to_relevant_page].html
+
 [Issue xxxx]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
 [Issue yyyy]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
 [PR title #1]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
