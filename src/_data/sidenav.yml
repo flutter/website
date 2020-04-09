@@ -65,11 +65,6 @@
               permalink: /docs/development/ui/layout/responsive
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
-        - title: Splash screens
-          permalink: /docs/development/ui/splash-screen
-          children:
-            - title: Android Splash Screens
-              permalink: /docs/development/ui/splash-screen/android-splash-screen
         - title: Adding interactivity
           permalink: /docs/development/ui/interactive
         - title: Assets and images
@@ -100,6 +95,8 @@
               permalink: /docs/development/ui/advanced/slivers
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
+            - title: Splash screens
+              permalink: /docs/development/ui/advanced/splash-screen
         - title: Platform-specific theming
         - title: Widget catalog
           permalink: /docs/development/ui/widgets
