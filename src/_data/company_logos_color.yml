@@ -1,0 +1,39 @@
+- name: Google
+  logo_src: showcase/garden-logos-color/google.png
+  alt_text: Google logo
+
+- name: Groupon
+  logo_src: showcase/garden-logos-color/groupon.jpg
+  alt_text: Groupon logo
+
+- name: Alibaba
+  logo_src: showcase/garden-logos-color/alibaba.png
+  alt_text: Alibaba logo
+
+- name: Capital one
+  logo_src: showcase/garden-logos-color/capital-one.png
+  alt_text: Capital one logo
+
+- name: Tencent
+  logo_src: showcase/garden-logos-color/tencent.png
+  alt_text: Tencent logo
+
+- name: Square
+  logo_src: showcase/garden-logos-color/square.png
+  alt_text: Square logo
+
+- name: Ebay
+  logo_src: showcase/garden-logos-color/ebay.png
+  alt_text: Ebay logo
+
+- name: bmw
+  logo_src: showcase/garden-logos-color/bmw.jpg
+  alt_text: BMW logo
+
+- name: Dream 11
+  logo_src: showcase/garden-logos-color/dream11.png
+  alt_text: Dream 11 logo
+
+- name: NuBank
+  logo_src: showcase/garden-logos-color/nubank.png
+  alt_text: NuBank logo

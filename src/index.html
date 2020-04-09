@@ -119,8 +119,6 @@ js:
                 differences such as scrolling, navigation, icons and
                 fonts, and your Flutter code is compiled to native ARM
                 machine code using <a href="https://dart.dev/platforms">Dart's native compilers</a>.
-                Thus Flutter gives you full native performance on both
-                iOS and Android.
                 </p>
             </div>
 
@@ -143,10 +141,9 @@ js:
                 <p>
                     Flutter's <em>hot reload</em> helps you quickly
                     and easily experiment, build UIs, add features, and fix
-                    bugs faster. Experience sub-second reload times,
-                    without losing state, on
-                    emulators, simulators, and hardware for iOS
-                    and Android.
+                    bugs faster. Experience sub-second reload times
+                    without losing state on
+                    emulators, simulators, and hardware.
                 </p>
 
                 <a href="/docs/development/tools/hot-reload">Learn more</a>
@@ -168,7 +165,7 @@ js:
                         <a href="https://reflect.ly" target="blank">Learn more</a>
                         </small>
                     </div>
-                    <video src="/videos/BeautifulUI.mp4" autoplay playsinline muted loop title="Reflectly app demo"></video>
+                    <video src="/videos/Filters.mp4" autoplay playsinline muted loop title="Reflectly app demo"></video>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -242,32 +239,18 @@ js:
     </div>
 </section>
 
-<section class="homepage__use-cases card ">
+<section class="homepagee__use-cases card showcase__logos-garden showcase__section animate step-last">
     <div class="card-body">
+        <h2 class="text-center">Who's using Flutter?</h2>
+        <p class="intro">Join the growing list of organizations building beautiful apps with Flutter.</p>
         <div class="row">
-            <div class="homepage__card-graphic col-lg-7 order-lg-1">
-                <div>
-                    <div class="landing-page__card-graphic__logo-row row align-items-center">
-                        {% asset homepage/logo-alibaba.png alt='Alibaba logo' class="col-4" %}
-                        {% asset homepage/logo-hamilton.png alt='Hamilton logo' class="col-4" %}
-                        {% asset homepage/logo-google.svg alt='Google logo' class="col-4" %}
-                    </div>
-                    <div class="landing-page__card-graphic__logo-row row align-items-center">
-                        {% asset homepage/logo-tencent.png alt='Tencent logo' class="col-4" %}
-                        {% asset homepage/logo-abbey_road_studios.png alt='Abbey Road Studios logo' class="col-4" %}
-                        {% asset homepage/logo-google_ads.png alt='Google AdWords logo' class="col-4" %}
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <h2 class="homepage__headline-after-image">Who's using Flutter?</h2>
-
-                <p>
-                Organizations around the world are building apps with Flutter.
-                </p>
-
-                <a href="/showcase">See what’s being created</a>
-            </div>
+            <ul class="logo-list col-12 col-lg-10 d-flex flex-wrap mb-n8">
+                {% for logo in site.data.company_logos_color %}
+                    <li class="logo-item col-6 col-md-3 mb-8 mb-lg-10">
+                        {% asset '{{ logo.logo_src  }}' class="logo-image" alt="{{ logo.alt_text }}"%}
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </section>
