@@ -100,5 +100,5 @@ API documentation:
 Relevant PRs:
 * [PR 54125][]
 
-[`TestWidgetsFlutterBinding`]: https://api.flutter.dev/flutter/flutter_test/TestWidgetsFlutterBinding-class.html
+[`TestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding-class.html
 [PR 54125]: {{site.github}}/flutter/flutter/pull/54125

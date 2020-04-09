@@ -17,6 +17,7 @@ The following guides (in alphabetical order) are available:
 * [Rebuild optimization for OverlayEntries and Routes][]
 * [Scrollable AlertDialog][]
 * [TestTextInput state reset][]
+* [TestWidgetsFlutterBinding clock][]
 * [TextInputClient currentTextEditingValue][]
 * [The Route and Navigator Refactoring][]
 * [The `forgetChild` method must call super][]
@@ -37,6 +38,7 @@ The following guides (in alphabetical order) are available:
 [Rebuild optimization for OverlayEntries and Routes]: /docs/release/breaking-changes/overlay-entry-rebuilds
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
+[TestWidgetsFlutterBinding.clock]: /docs/release/breaking-changes/test-widgets-flutter-binding-clock
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
 [The `forgetChild` method must call super]: /docs/release/breaking-changes/forgetchild-call-super
 [The Route and Navigator Refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
