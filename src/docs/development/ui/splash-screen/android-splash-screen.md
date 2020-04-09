@@ -1,27 +1,49 @@
 ---
-title: Adding a splash screen and launch screen to an Android app
-short-title: Add a splash screen
-description: Learn how to add a splash screen and launch screen to your Android app.
+title: Adding a splash screen to your mobile app
+short-title: Splash screens
+description: Learn how to add a splash screen to your mobile app.
 ---
 
 {% asset
 development/ui/splash-screen/android-splash-screen/splash-screens_header.png
 class="mw-100" alt="Add Splash Screen Header" %}
 
-The beginning of a Flutter experience requires a brief wait while Dart
-initializes. Additionally, a full Flutter app requires standard Android app
-initialization time. Flutter supports the display of a launch screen
-while your Android app initializes, and also supports the display of a splash
-screen while your Flutter experience initializes. This guide teaches you how to
-use launch screens and splash screens in an Android app with Flutter.
+Splash screens (also known as launch screens) provide a simple initial
+experience while your mobile app loads. They set the stage for your
+application, while allowing time for the app engine to load and your
+app to initialize. This guide teaches you how to use splash screens
+appropriately on iOS and Android. 
+
+# iOS launch screen
+
+All apps submitted to the Apple App Store [must use an Xcode storyboard][] to
+provide the app's launch screen. 
+
+The default Flutter template includes an Xcode storyboard named
+`LaunchScreen.storyboard` that can be customized as you see fit with
+your own assets. By default, the storyboard displays a blank image,
+but you can change this. To do so, open the Flutter app's Xcode project
+by typing `open ios/Runner.xcworkspace` from the root of your app directory.
+Then select `Runner/Assets.xcassets` from the Project Navigator and 
+drop in the desired images to the `LaunchImage` image set. 
+
+Apple provides detailed guidance for launch screens as part of the [Human
+Interface Guidelines][].
+
+# Android launch screen
+
+Flutter supports the display of a launch screen while your Android 
+app initializes, and also supports the display of a splash screen
+while your Flutter experience initializes.
 
 {{site.alert.note}}
-  Strategies are available to minimize wait time related to Flutter
+  For apps that embed one or more Flutter screens within an existing Android
+  experience, strategies are available to minimize wait time related to Flutter
   initialization. Consider [pre-warming a `FlutterEngine`][] and
   reusing a FlutterEngine throughout your app to avoid most wait time.
 {{site.alert.end}}
 
-## Android launch screen
+## Launch screen
 
 Every Android app requires initialization time while the
 operating system sets up the app's process.
@@ -226,4 +248,5 @@ system, and share your creations with the community!
 
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
-
+[must use an Xcode storyboard]: https://developer.apple.com/news/?id=03042020b
+[Human Interface Guidelines]: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/
