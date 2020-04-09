@@ -228,11 +228,13 @@ public class SplashScreenWithTransition implements SplashScreen {
 }
 ```
 
-With custom splash screens, the sky is the limit. In fact, you could create a
-splash screen that shows an animated sky! Have fun with this flexible splash
-system, and share your creations with the community!
+With custom splash screens, the sky is the limit. But use the power you have
+with responsibility: a splash screen that is too complex may frustrate your
+users by adding to your app's load time. UX Collective provides some good
+tips on how to build a [dynamic yet performant splash screen][].
 
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
 [must use an Xcode storyboard]: https://developer.apple.com/news/?id=03042020b
 [Human Interface Guidelines]: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/
+[dynamic yet performant splash screen]: https://uxdesign.cc/building-the-perfect-splash-screen-46e080395f06
