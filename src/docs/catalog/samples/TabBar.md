@@ -23,7 +23,7 @@ Trang [Sample App Catalog](/docs/catalog/samples) liệt kê tất cả
         Ứng dụng này bao gồm các lớp sau: AppBar, DefaultTabController, TabBar, Scaffold, TabBarView.
       </p>
       <p>
-        <a href="/docs/catalog/samples/tabbed-app-bar">Learn more</a>.
+        <a href="/docs/catalog/samples/tabbed-app-bar">Tìm hiểu thêm</a>.
       </p>
     </div>
   </div>
