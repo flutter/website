@@ -5,7 +5,7 @@ description: The `Clock` implementation will now come from package:clock.
 
 ## Summary
 
-The `TestWidgetsFlutterBinding.clock` will now come from `package:clock` and
+The `TestWidgetsFlutterBinding.clock` now comes from `package:clock` and
 not `package:quiver`.
 
 ## Context
@@ -26,6 +26,14 @@ testWidgets('some test', (WidgetTester tester) {
 ```
 
 ## Migration guide
+
+The error you might see after this change will look something like this:
+
+```
+Error: The argument type 'Clock/*1*/' can't be assigned to the parameter type 'Clock/*2*/'.
+ - 'Clock/*1*/' is from 'package:clock/src/clock.dart' ('<pub-cache>/clock/lib/src/clock.dart').
+ - 'Clock/*2*/' is from 'package:quiver/time.dart' ('<pub-cache>/quiver/lib/time.dart').
+```
 
 ### Option #1: Create a packge:quiver Clock from a package:clock Clock
 
