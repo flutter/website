@@ -34,9 +34,9 @@
 - title: Samples & tutorials
   children:
     - title: Flutter Gallery [NEW]
-      permalink: https://flutter.github.io/samples/#/
+      permalink: https://flutter.github.io/gallery/
     - title: Sample apps on GitHub
-      permalink: https://github.com/flutter/samples/blob/master/INDEX.md
+      permalink: https://flutter.github.io/samples/
     - title: Cookbook
       permalink: /docs/cookbook
     - title: Codelabs
@@ -65,11 +65,6 @@
               permalink: /docs/development/ui/layout/responsive
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
-        - title: Splash screens
-          permalink: /docs/development/ui/splash-screen
-          children:
-            - title: Android Splash Screens
-              permalink: /docs/development/ui/splash-screen/android-splash-screen
         - title: Adding interactivity
           permalink: /docs/development/ui/interactive
         - title: Assets and images
@@ -100,6 +95,8 @@
               permalink: /docs/development/ui/advanced/slivers
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
+            - title: Splash screens
+              permalink: /docs/development/ui/advanced/splash-screen
         - title: Platform-specific theming
         - title: Widget catalog
           permalink: /docs/development/ui/widgets
@@ -179,7 +176,7 @@
             permalink: /docs/development/add-to-app/ios/project-setup
           - title: Add a single Flutter screen
             permalink: /docs/development/add-to-app/ios/add-flutter-screen
-      - title: Running, debugging & hot reload
+      - title: Debugging & hot reload
         permalink: /docs/development/add-to-app/debugging
       - title: Loading sequence and performance
         permalink: /docs/development/add-to-app/performance
@@ -288,8 +285,10 @@
 
 - title: Deployment
   children:
+    - title: Obfuscating Dart code
+      permalink: /docs/deployment/obfuscate
     - title: Creating flavors for Flutter
-      permalink:  /docs/deployment/flavors
+      permalink: /docs/deployment/flavors
     - title: Build and release an Android app
       permalink: /docs/deployment/android
     - title: Build and release an iOS app

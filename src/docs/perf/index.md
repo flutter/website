@@ -1,6 +1,6 @@
 ---
 title: Performance
-description: Evaluating the performance of your app from several angles..
+description: Evaluating the performance of your app from several angles.
 ---
 
 There are different ways to evaluate performance.

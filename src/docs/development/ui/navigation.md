@@ -1,6 +1,6 @@
 ---
 title: Navigation and routing
-Description: Articles and cookbook recipes that address screen navigation.
+description: Articles and cookbook recipes that address screen navigation.
 ---
 
 {% comment %}

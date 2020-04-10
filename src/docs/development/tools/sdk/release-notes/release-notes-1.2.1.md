@@ -4,15 +4,27 @@ short-title: 1.2.1 release notes
 description: Release notes for Flutter 1.2.1.
 ---
 
-Our #1 priority since the Flutter v1.0 release has been to continue to address high priority issues reported both by Flutter developers and the Flutter team itself. This includes committing 672 Pull Requests in the Flutter engine and framework since December (we've been busy!). We've called out the new features and breaking changes that we think are noteworthy below. The biggest ones came from our Framework and Tool tags, but we also found and fixed a couple of Severe issues as well.
+Our #1 priority since the Flutter v1.0 release has been to
+continue to address high priority issues reported both by
+Flutter developers and the Flutter team itself.
+This includes committing 672 pull requests in the Flutter
+engine and framework since December (we've been busy!).
+We've called out the new features and breaking changes
+that we think are noteworthy below. The biggest ones came
+from our Framework and Tool tags, but we also found and
+fixed a couple of Severe issues as well.
 
 ## Framework
 
-To more fully round-out Flutter's animation support, this release adds several more of the standard easing functions:
+To more fully round-out Flutter's animation support,
+this release adds several more of the standard easing functions:
 
 [#25788](https://github.com/flutter/flutter/pull/25788) Add Robert Penner's easing functions
 
-To integrate more fully with Android, this release adds support for [Android App Bundles](https://developer.android.com/guide/app-bundle/), a new packaging format that helps in reducing app size and enables new features like dynamic delivery for Android apps:
+To integrate more fully with Android,
+this release adds support for [Android App Bundles][],
+a new packaging format that helps in reducing app size
+and enables new features like dynamic delivery for Android apps:
 
 [#24440](https://github.com/flutter/flutter/pull/24440) Adding support for android app bundle
 
@@ -275,3 +287,5 @@ In addition to Flutter framework changes in the 1.2 release, we've made a number
 ## Full Issue List
 
 You can see [the full list of PRs committed in this release](/docs/development/tools/sdk/release-notes/changelogs/changelog-1.2.1).
+
+[Android App Bundles]: https://developer.android.com/guide/app-bundle/

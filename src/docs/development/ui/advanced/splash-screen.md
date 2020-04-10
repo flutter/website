@@ -1,39 +1,57 @@
 ---
-title: Adding a splash screen and launch screen to an Android app
-short-title: Add a splash screen
-description: Learn how to add a splash screen and launch screen to your Android app.
+title: Adding a splash screen to your mobile app
+short-title: Splash screens
+description: Learn how to add a splash screen to your mobile app.
 ---
 
 {% asset
 development/ui/splash-screen/android-splash-screen/splash-screens_header.png
 class="mw-100" alt="Add Splash Screen Header" %}
 
-The beginning of a Flutter experience requires a brief wait while Dart
-initializes. Additionally, a full Flutter app requires standard Android app
-initialization time. Flutter supports the display of a launch screen
-while your Android app initializes, and also supports the display of a splash
-screen while your Flutter experience initializes. This guide teaches you how to
-use launch screens and splash screens in an Android app with Flutter.
+Splash screens (also known as launch screens) provide a simple initial
+experience while your mobile app loads. They set the stage for your
+application, while allowing time for the app engine to load and your
+app to initialize. This guide teaches you how to use splash screens
+appropriately on iOS and Android.
 
-{{site.alert.note}}
-  Strategies are available to minimize wait time related to Flutter
-  initialization. Consider [pre-warming a `FlutterEngine`][] and
-  reusing a FlutterEngine throughout your app to avoid most wait time.
-{{site.alert.end}}
+## iOS launch screen
+
+All apps submitted to the Apple App Store [must use an Xcode storyboard][] to
+provide the app's launch screen.
+
+The default Flutter template includes an Xcode storyboard named
+`LaunchScreen.storyboard` that can be customized as you see fit with
+your own assets. By default, the storyboard displays a blank image,
+but you can change this. To do so, open the Flutter app's Xcode project
+by typing `open ios/Runner.xcworkspace` from the root of your app directory.
+Then select `Runner/Assets.xcassets` from the Project Navigator and
+drop in the desired images to the `LaunchImage` image set.
+
+Apple provides detailed guidance for launch screens as part of the [Human
+Interface Guidelines][].
 
 ## Android launch screen
 
-Every Android app requires initialization time while the
-operating system sets up the app's process.
-Android provides the concept of a [launch screen][] to
+In Android, there are two separate screens that you can control:
+a _launch screen_ shown while your Android app initializes, and a _splash
+screen_ that displays while the Flutter experience initializes.
+
+{{site.alert.note}}
+  For apps that embed one or more Flutter screens within an existing Android
+  app, consider [pre-warming a `FlutterEngine`][] and reusing the same engine
+  throughout your app to minimize wait time associated with initialization of
+  the Flutter engine.
+{{site.alert.end}}
+
+### Initializing the app
+
+Every Android app requires initialization time while the operating system sets
+up the app's process. Android provides the concept of a [launch screen][] to
 display a `Drawable` while the app is initializing.
 
-Flutter provides support for displaying an Android launch screen before showing
-a `FlutterActivity`. The instructions to display an Android launch screen are discussed in the next sections.
-
-### Define a launch theme
-
-In `styles.xml`, define a theme whose `windowBackground` is set to the
+The default Flutter project template includes a definition of a launch theme
+and a launch background. You can customize this by editing `styles.xml`,
+where you can define a theme whose `windowBackground` is set to the
 `Drawable` that should be displayed as the launch screen.
 
 ```xml
@@ -42,19 +60,12 @@ In `styles.xml`, define a theme whose `windowBackground` is set to the
 </style>
 ```
 
-{{site.alert.note}}
-  The default Flutter project template includes a definition of a launch theme
-  and a launch background.
-{{site.alert.end}}
-
-### Define a normal theme
-
-In `styles.xml`, define a normal theme to be applied to `FlutterActivity` after
-the launch screen is gone. The normal theme background only shows for a very
-brief moment after the splash screen disappears, and during orientation change
-and `Activity` restoration. Therefore, it's recommended that the normal theme
-use a solid background color that looks similar to the primary background color
-of the Flutter UI.
+In addition, `style.xml` defines a _normal theme_ to be applied to
+`FlutterActivity` after the launch screen is gone. The normal theme background
+only shows for a very brief moment after the splash screen disappears, and
+during orientation change and `Activity` restoration. Therefore, it is
+recommended that the normal theme use a solid background color that looks
+similar to the primary background color of the Flutter UI.
 
 ```xml
 <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
@@ -62,7 +73,7 @@ of the Flutter UI.
 </style>
 ```
 
-### Setup FlutterActivity in AndroidManifest.xml
+### Set up the FlutterActivity in AndroidManifest.xml
 
 In `AndroidManifest.xml`, set the `theme` of `FlutterActivity` to the launch
 theme. Then, add a metadata element to the desired `FlutterActivity` to instruct
@@ -88,7 +99,7 @@ Flutter to switch from the launch theme to the normal theme at the appropriate t
 The Android app now displays the desired launch screen while the app
 initializes.
 
-## Flutter splash screen
+### The Flutter splash screen
 
 Each Flutter experience in an app requires a few moments to initialize the Dart
 isolate that runs the code. This means a user momentarily sees a blank screen
@@ -100,8 +111,6 @@ Flutter supports two options for a splash screen. The first option is to
 display a `Drawable` of your choice, which fades out after the initialization
 is complete. The other option is to provide a custom `SplashScreen`, which is
 capable of displaying any Android `View` content that you want.
-
-### Showing a Drawable splash screen
 
 A `Drawable` splash screen can be configured for a `FlutterActivity`,
 `FlutterFragment`, or `FlutterView`.
@@ -144,7 +153,7 @@ public class MyFlutterFragment extends FlutterFragment {
 
 ### Creating a custom SplashScreen
 
-Splash screens are a great branding opportunity. Because of that, many teams 
+Splash screens are a great branding opportunity. Because of that, many apps
 implement unique, highly customized splash experiences. To facilitate this,
 Flutter allows you to display an arbitrary Android `View` as a splash
 screen, and even allows you to control how that `View` transitions to
@@ -153,14 +162,13 @@ Flutter after Flutter renders its first frame.
 #### Implement a custom splash View
 
 First, define the custom `View` that should be displayed as the splash screen.
-
-This `View` could display anything, from a simple solid color to an animation. An example isn't provided because there are too many options.
+This `View` could display anything, from a simple solid color to an animation.
 
 #### Implement the SplashScreen interface
 
 With a custom `View` defined, implement the `SplashScreen` interface.
 
-This guide shows two approaches to a `SplashScreen` implementation. First, the following 
+This guide shows two approaches to a `SplashScreen` implementation. First, the following
 is an example of a `SplashScreen` that has no visual state and no transition
 animation.
 
@@ -220,10 +228,13 @@ public class SplashScreenWithTransition implements SplashScreen {
 }
 ```
 
-With custom splash screens, the sky is the limit. In fact, you could create a
-splash screen that shows an animated sky! Have fun with this flexible splash
-system, and share your creations with the community!
+With custom splash screens, the sky is the limit. But use the power you have
+with responsibility: a splash screen that is too complex may frustrate your
+users by adding to your app's load time. UX Collective provides some good
+tips on how to build a [dynamic yet performant splash screen][].
 
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
-
+[must use an Xcode storyboard]: https://developer.apple.com/news/?id=03042020b
+[Human Interface Guidelines]: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/
+[dynamic yet performant splash screen]: https://uxdesign.cc/building-the-perfect-splash-screen-46e080395f06
