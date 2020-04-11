@@ -237,18 +237,32 @@ js:
     </div>
 </section>
 
-<section class="homepagee__use-cases card showcase__logos-garden showcase__section animate step-last">
+<section class="homepage__use-cases card ">
     <div class="card-body">
-        <h2 class="text-center">Who's using Flutter?</h2>
-        <p class="intro">Join the growing list of organizations building beautiful apps with Flutter.</p>
         <div class="row">
-            <ul class="logo-list col-12 col-lg-10 d-flex flex-wrap mb-n8">
-                {% for logo in site.data.company_logos_color %}
-                    <li class="logo-item col-6 col-md-3 mb-8 mb-lg-10">
-                        {% asset '{{ logo.logo_src  }}' class="logo-image" alt="{{ logo.alt_text }}"%}
-                    </li>
-                {% endfor %}
-            </ul>
+            <div class="homepage__card-graphic col-lg-7 order-lg-1">
+                <div>
+                    <div class="landing-page__card-graphic__logo-row row align-items-center">
+                        {% asset homepage/garden-logos-color/google.png alt='Google logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/ebay.png alt='Ebay logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/bmw.jpg alt='BMW logo' class="col-4" %}
+                    </div>
+                    <div class="landing-page__card-graphic__logo-row row align-items-center">
+                        {% asset homepage/garden-logos-color/square.png alt='Square logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/alibaba.png alt='Alibaba logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/capital-one.png alt='Capital One logo' class="col-4" %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <h2 class="homepage__headline-after-image">Who's using Flutter?</h2>
+
+                <p>
+                Organizations around the world are building apps with Flutter.
+                </p>
+
+                <a href="/showcase">See what’s being created</a>
+            </div>
         </div>
     </div>
 </section>
