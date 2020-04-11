@@ -589,7 +589,7 @@ project's `Runner` folder.
 
 Next, select the **Information Property List** item,
 select **Add Item** from the **Editor** menu,
-then select **eLocalizations** from the pop-up menu.
+then select **Localizations** from the pop-up menu.
 
 Select and expand the newly-created `Localizations` item then,
 for each locale your application supports,
