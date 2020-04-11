@@ -3,11 +3,19 @@ title: Accessibility
 description: Information on Flutter's accessibility support.
 ---
 
-Flutter is committed to supporting developers who want to make
-their apps more accessible: usable by as many people as possible,
-including those with disabilities such as blindness or motor impairment.
+Ensuring apps are accessible to a broad range of users is an essential
+part of building a high-quality app. Applications that are poorly
+designed create barriers to people of all ages. The [UN Convention on
+the Rights of Persons with Disabilities][CRPD] states the moral and legal
+imperative to ensure universal access to information systems; countries
+around the world enforce accessibility as a requirement; and companies
+recognize the business advantages of maximizing access to their services.
 
-Flutter supports three components for accessibility support:
+We strongly encourage you to include an accessibility checklist 
+as a key criteria before shipping your app. Flutter is committed to
+supporting developers in making their apps more accessible, and includes
+first-class framework support for accessibility in addition to that
+provided by the underlying operating system, including:
 
 [**Large fonts**][]
 : Render text widgets with user-specified font sizes
@@ -18,9 +26,10 @@ Flutter supports three components for accessibility support:
 [**Sufficient contrast**][]
 : Render widgets with colors that have sufficient contrast
 
+Details of these features are discussed below.
+
 ## Inspecting accessibility support
 
-Details of these are discussed below.
 In addition to testing for these specific topics,
 we recommend using automated accessibility scanners:
 
@@ -51,8 +60,6 @@ Both Android and iOS contain system settings to configure the desired font
 sizes used by apps. Flutter text widgets respect this OS setting when
 determining font sizes.
 
-### Tips for developers
-
 Font sizes are calculated automatically by Flutter based on the OS setting.
 However, as a developer you should make sure your layout has enough room to
 render all its contents when the font sizes are increased.
@@ -79,8 +86,6 @@ and with the largest font setting selected in iOS accessibility settings.
 Screen readers ([TalkBack][], [VoiceOver][]) enable visually
 impaired users to get spoken feedback about the contents of the screen.
 
-### Tips for developers
-
 Turn on VoiceOver or TalkBack on your device and navigate around your app. If
 you run into any issues, use the [`Semantics` widget][] to customize the
 accessibility experience of your app.
@@ -100,13 +105,47 @@ The [W3C recommends][]:
 * At least 3.0:1 for large text (18 point and above regular or 14 point and
   above bold)
 
-### Tips for developers
+## Building with accessibility in mind
 
-Make sure any images you include have sufficient contrast.
+Ensuring your app can be used by everyone means building accessibility
+into it from the start. For some apps, that's easier said than done.
+In the video below, two of our engineers take a mobile app from a dire
+accessibility state to one that takes advantage of Flutter's built-in
+widgets to offer a dramatically more accessible experience.
 
-When specifying colors on widgets,
-make sure sufficient contrast is used between
-foreground and background color selections.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bWbBgbmAdQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Accessibility release checklist
+
+Here is a non-exhaustive list of things to consider as you prepare your
+app for release.
+
+- **Active interactions**. Ensure that all active interactions do
+something. Any button that can
+be pushed should do something when pushed. For example, if you have a
+no-op callback for an `onPressed` event, change it to show a `SnackBar`
+on the screen explaining which control you just pushed.
+- **Screen reader testing**. The screen reader should be able to
+describe all controls on the page when you tap on them, and the
+descriptions should be intelligible. Test your app with [TalkBack][]
+(Android) and [VoiceOver][] (iOS).
+- **Contrast ratios**. We encourage you to have a contrast ratio of at
+least 4.5:1 between controls or text and the background, with the
+exception of disabled components. Images should also be vetted for
+sufficient contrast. 
+- **Context switching**. Nothing should change the user's context
+automatically while typing in information. Generally, the widgets
+should avoid changing the user's context without some sort of
+confirmation action.
+- **Tappable targets**. All tappable targets should be at least 48x48
+pixels.
+- **Errors**. Important actions should be able to be undone. In fields
+that show errors, suggest a correction if possible.
+- **Color vision deficiency testing**. Controls should be usable and
+legible in colorblind and grayscale modes.
+- **Scale factors**. The UI should remain legible and usable at very
+large scale factors for text size and display scaling.
+
 
 ## More information
 
@@ -117,7 +156,7 @@ see the following articles written by community members:
 * [A deep dive into Flutter's accessibility widgets][]
 * [Semantics in Flutter][]
 
-
+[CRPD]: https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-9-accessibility.html
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 [**Large fonts**]: #large-fonts
