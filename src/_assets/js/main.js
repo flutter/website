@@ -154,7 +154,7 @@ function setupClipboardJS() {
     text: function (trigger) {
       var targetId = trigger.getAttribute('data-clipboard-target');
       var target = document.querySelector(targetId);
-      var terminalRegExp = /^\$\s*/gm;
+      var terminalRegExp = /^(\$\s*)|(C:\\(.*)>\s*)/gm;
       var copy = target.textContent.replace(terminalRegExp, '');
       return copy;
     }
