@@ -299,7 +299,7 @@ run the following command:
 flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
 ```
 
-[Download ChromeDriver]: {{site.github}}/mozilla/geckodriver/releases
+[Download ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: https://github.com/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
