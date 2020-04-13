@@ -297,8 +297,8 @@ Use the `Transform` widget’s `alignment` and `origin` properties to
 specify the transform origin (fulcrum) in relative and absolute terms,
 respectively.
 
-For a simple 2D rotation, the widget is rotated on the Z axis using radians.
-(degrees × π / 180)
+For a simple 2D rotation, in which the widget is rotated on the Z axis, create a new [`Matrix4`][] identity object and use
+its `rotateZ()` method to specify the rotation factor using radians (degrees × π / 180).
 
 <div class="lefthighlight">
 {% prettify css %}
