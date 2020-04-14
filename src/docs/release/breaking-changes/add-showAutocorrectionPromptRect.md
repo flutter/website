@@ -76,12 +76,7 @@ class CustomTextInputClient extends State<...> implements TextInputClient {
 
 ## Timeline
 
-This change landed in 
-{% comment %}
-The version # of the SDK where this change was
-introduced.  If there is a deprecation window,
-the version # to which we guarantee to maintain the old API.
-{% endcomment %}
+This change landed in 1.18.0.
 
 ## References
 
