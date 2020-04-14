@@ -5,19 +5,21 @@ description: The hit testing of RenderEditable requires additional information t
 
 ## Summary
 
-The `RenderEditable` needs to be laid out in order to process hit
-testing; Otherwise, the framework throws an assertion error indicates
-the `RenderEditable` has not been laid out.
-`Failed assertion: line xxxx pos xx: '!debugNeedsLayout': is not true.`
+Instances of `RenderEditable` must be laid out before processing hit
+testing; trying to hit-test a `RenderEditable` object before layout will 
+result in an assertion such as the following:
+
+`Failed assertion: line 123 pos 45: '!debugNeedsLayout': is not true.`
 
 ## Context
 
 To support gesture recognizers in selectable text, the
-`RenderEditable` requires the layout information about the
+`RenderEditable` requires the layout information for its
 text spans to determine which text span receive the
-pointer event. Therefore, we made the layout to be a hard
-requirement for performing the hit testing to the
-`RenderEditable`.
+pointer event. (Before this change, `RenderEditable` objects 
+did not take their text into account when evaluating hit tests.)
+To implement this, layout was made a prerequisite for performing
+hit testing on a `RenderEditable` object.
 
 ## Description of change
 
@@ -81,4 +83,3 @@ Relevant PR:
 [Issue 43494: SelectableText.rich used along with TapGestureRecognizer is not working]: {{site.github}}/flutter/flutter/issues/43494
 [`RenderEditable`]: {{site.api}}/flutter/rendering/RenderEditable-class.html
 [PR 54479: Enable gesture recognizer in selectable rich text]: {{site.github}}/flutter/flutter/pull/54479
-
