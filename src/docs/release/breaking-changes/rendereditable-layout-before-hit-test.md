@@ -21,18 +21,19 @@ did not take their text into account when evaluating hit tests.)
 To implement this, layout was made a prerequisite for performing
 hit testing on a `RenderEditable` object.
 
-## Description of change
-
-The `RenderEditable` needs to be laid out before hit testing.
+In practice, this is rarely an issue. The widget library
+ensures that layout is performed before any hit test on all
+render objects. This problem is only likely to be seen in
+code that directly interacts with render objects, for
+example in tests of custom render objects.
 
 ## Migration guide
 
 If you are seeing `'!debugNeedsLayout': is not true.` assertion error while hit testing the
-`RenderEditable`, make sure to layout the `RenderEditable` before doing so.
+`RenderEditable`, lay out the `RenderEditable` before doing so.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 test('attach and detach correctly handle gesture', () {
   final RenderEditable editable = RenderEditable(
@@ -40,7 +41,7 @@ test('attach and detach correctly handle gesture', () {
   );
   final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () { });
   editable.attach(owner);
-  // This should throw an assertion error because the render editable has not been laid out.
+  // This will throw an assertion error because the RenderEditable has not been laid out.
   editable.handleEvent(const PointerDownEvent(), BoxHitTestEntry(editable, const Offset(10,10)));
   editable.detach();
 });
@@ -48,13 +49,12 @@ test('attach and detach correctly handle gesture', () {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 test('attach and detach correctly handle gesture', () {
   final RenderEditable editable = RenderEditable(
     //...
   );
-  // Layouts the render editable first.
+  // Lay out the RenderEditable first.
   editable.layout(BoxConstraints.loose(const Size(1000.0, 1000.0)));
 
   final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () { });
