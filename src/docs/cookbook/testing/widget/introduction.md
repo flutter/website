@@ -142,8 +142,9 @@ Use one of the following methods to ask Flutter to rebuild the widget.
 [`tester.pump(Duration duration)`][]
 : Schedules a frame and triggers a rebuild of the widget.
   If a `Duration` is specified, it advances the clock by
-  that amount and schedules a frame. It does _not_
-  schedule `N` frames where `N = duration * frame_rate`.
+  that amount and schedules a frame. It does not schedule
+  multiple frames even if the duration is longer than a
+  single frame.
 
 {{site.alert.note}}
   To kick off the animation, you need to call `pump()`
