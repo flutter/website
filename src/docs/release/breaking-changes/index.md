@@ -19,6 +19,7 @@ The following guides (in alphabetical order) are available:
 * [Scrollable AlertDialog][]
 * [TestTextInput state reset][]
 * [TextInputClient currentTextEditingValue][]
+* [The RenderEditable needs to be laid out before hit testing][]
 * [The Route and Navigator Refactoring][]
 * [The `forgetChild` method must call super][]
 * [ThemeData's accent properties][]
@@ -41,5 +42,6 @@ The following guides (in alphabetical order) are available:
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
 [The `forgetChild` method must call super]: /docs/release/breaking-changes/forgetchild-call-super
+[The RenderEditable needs to be laid out before hit testing]: /docs/release/breaking-changes/rendereditable-layout-before-hit-test
 [The Route and Navigator Refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
