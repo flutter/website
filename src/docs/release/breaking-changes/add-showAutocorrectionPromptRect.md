@@ -27,8 +27,7 @@ support autocorrect, you only need to add an empty implementation for the new me
 <!-- skip -->
 ```dart
 class CustomTextInputClient implements TextInputClient {
-  void showAutocorrectionPromptRect(int start, int end) {
-  }
+  void showAutocorrectionPromptRect(int start, int end) {}
 }
 ```
 
@@ -39,8 +38,8 @@ Code after migration:
 
 <!-- skip -->
 ```dart
-// Assume your `TextInputClient` is a `State` subclass, and it has a variable `_currentPromptRectRange` that controls 
-// the autocorrection highlight.
+// Assume your `TextInputClient` is a `State` subclass, and it has a variable 
+// `_currentPromptRectRange` that controls the autocorrection highlight.
 class CustomTextInputClient extends State<...> implements TextInputClient {
   @override
   void updateEditingValue(TextEditingValue value) {
@@ -48,7 +47,7 @@ class CustomTextInputClient extends State<...> implements TextInputClient {
     if (value.text != _value.text) {
       setState(() {
         _currentPromptRectRange = null;
-      });  
+      });
     }
   }
 
@@ -56,12 +55,12 @@ class CustomTextInputClient extends State<...> implements TextInputClient {
     // When this text input loses focus, the autocorrection highlight needs
     // to be dismissed.
     if (!_hasFocus) {
-      setState(() { 
+      setState(() {
         _currentPromptRectRange = null;
-      });  
+      });
     }
   }
-  
+
   @override
   void showAutocorrectionPromptRect(int start, int end) {
     // Updates the range of the highlight, as iOS requested.
