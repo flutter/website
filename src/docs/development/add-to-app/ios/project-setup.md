@@ -89,6 +89,9 @@ There are two ways to embed Flutter in your existing application.
   not yet support output x86 ahead-of-time (AOT) binaries for your Dart code.
   You can run in Debug mode on a simulator or a real device,
   and Release on a real device.
+
+  To run your app on a simulator follow the instructions in the bottom of section
+  [embed the frameworks][].
 {{site.alert.end}}
 
 Using Flutter [increases your app size][].
@@ -349,3 +352,4 @@ You can now [add a Flutter screen][] to your existing application.
 [XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
 [static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
+[embed the frameworks]: /docs/development/add-to-app/ios/project-setup#embed-the-frameworks
