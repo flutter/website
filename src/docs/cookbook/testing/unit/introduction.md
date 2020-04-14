@@ -10,8 +10,9 @@ next:
   path: /docs/cookbook/testing/unit/mocking
 ---
 
-How can you ensure that your app continues to work as you add more features or
-change existing functionality? By writing tests.
+How can you ensure that your app continues to work as you
+add more features or change existing functionality?
+By writing tests.
 
 Unit tests are handy for verifying the behavior of a single function,
 method, or class. The [`test`][] package provides the
@@ -51,8 +52,10 @@ The `counter.dart` file contains a class that you want to test and
 resides in the `lib` folder. The `counter_test.dart` file contains
 the tests themselves and lives inside the `test` folder.
 
-In general, test files should reside inside a `test` folder located at the root
-of your Flutter application or package. Test files should always end with `_test.dart`, this is the convention used by the test runner when searching for tests.
+In general, test files should reside inside a `test` folder
+located at the root of your Flutter application or package.
+Test files should always end with `_test.dart`,
+this is the convention used by the test runner when searching for tests.
 
 When you're finished, the folder structure should look like this:
 
@@ -147,7 +150,8 @@ void main() {
 
 ### 6. Run the tests
 
-Now that you have a `Counter` class with tests in place, you can run the tests.
+Now that you have a `Counter` class with tests in place,
+you can run the tests.
 
 #### Run tests using IntelliJ or VSCode
 
@@ -159,12 +163,14 @@ fastest feedback loop as well as the ability to set breakpoints.
     1. Open the `counter_test.dart` file
     2. Select the `Run` menu
     3. Click the `Run 'tests in counter_test.dart'` option
-    4. *Alternatively, use the appropriate keyboard shortcut for your platform.*
+    4. *Alternatively, use the appropriate keyboard shortcut
+       for your platform.*
   * **VSCode**
     1. Open the `counter_test.dart` file
     2. Select the `Debug` menu
     3. Click the `Start Debugging` option
-    4. *Alternatively, use the appropriate keyboard shortcut for your platform.*
+    4. *Alternatively, use the appropriate keyboard shortcut
+       for your platform.*
 
 #### Run tests in a terminal
 
