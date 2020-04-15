@@ -84,7 +84,7 @@ VS Code is a lightweight editor with Flutter app execution and debug support.
  1. Review the output in the **OUTPUT** pane for any issues.
 
 </div>
-<div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
+<div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">
 
 ## Install Emacs
 
@@ -92,9 +92,9 @@ Emacs is a lightweight editor with support for Flutter and Dart.
 
 * [Emacs][], latest stable version
 
-## Install the LSP dart package
+## Install the lsp-dart package
 
-Check [lsp-dart][] for information on how to install and setup.
+For information on how to install and use the package, see the [lsp-dart documentation][].
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
@@ -112,5 +112,5 @@ Take Flutter for a test drive: create a first project, run it, and experience
 [next step: Test drive]: /docs/get-started/test-drive
 [VS Code]: https://code.visualstudio.com/
 [Emacs]: https://www.gnu.org/software/emacs/download.html
-[lsp-dart]: https://github.com/emacs-lsp/lsp-dart
+[lsp-dart documentation]: https://emacs-lsp.github.io/lsp-dart/
 
