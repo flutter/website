@@ -16,7 +16,7 @@ even better experience. These plugins provide you with code completion, syntax
 highlighting, widget editing assists, run & debug support, and more.
 
 Follow the steps below to add an editor plugin for Android Studio,
-IntelliJ, VS Code or Emacs. If you want to use a different editor,
+IntelliJ, VS Code, or Emacs. If you want to use a different editor,
 that's OK, skip ahead to the [next step: Test drive][].
 
 {% comment %} Nav tabs {% endcomment -%}
