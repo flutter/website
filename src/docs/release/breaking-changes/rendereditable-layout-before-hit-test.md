@@ -48,10 +48,12 @@ void main() {
       startHandleLayerLink: LayerLink(),
       endHandleLayerLink: LayerLink(),
     );
-    final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () { });
+    final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () {});
     editable.attach(owner);
-    // This will throw an assertion error because the RenderEditable has not been laid out.
-    editable.handleEvent(const PointerDownEvent(), BoxHitTestEntry(editable, const Offset(10,10)));
+    // This will throw an assertion error because
+    // the RenderEditable has not been laid out.
+    editable.handleEvent(const PointerDownEvent(),
+        BoxHitTestEntry(editable, const Offset(10,10)));
     editable.detach();
   });
 }
@@ -60,9 +62,9 @@ class FakeEditableTextState extends TextSelectionDelegate {
   @override
   TextEditingValue textEditingValue;
   @override
-  void hideToolbar() { }
+  void hideToolbar() {}
   @override
-  void bringIntoView(TextPosition position) { }
+  void bringIntoView(TextPosition position) {}
 }
 ```
 
@@ -84,21 +86,20 @@ void main() {
     );
     // Lay out the RenderEditable first.
     editable.layout(BoxConstraints.loose(const Size(1000.0, 1000.0)));
-
-    final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () { });
+    final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () {});
     editable.attach(owner);
-    editable.handleEvent(const PointerDownEvent(), BoxHitTestEntry(editable, const Offset(10,10)));
+    editable.handleEvent(const PointerDownEvent(),
+        BoxHitTestEntry(editable, const Offset(10, 10)));
     editable.detach();
   });
 }
-
 class FakeEditableTextState extends TextSelectionDelegate {
   @override
   TextEditingValue textEditingValue;
   @override
-  void hideToolbar() { }
+  void hideToolbar() {}
   @override
-  void bringIntoView(TextPosition position) { }
+  void bringIntoView(TextPosition position) {}
 }
 ```
 
