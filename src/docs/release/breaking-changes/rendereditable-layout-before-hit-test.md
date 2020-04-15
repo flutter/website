@@ -35,33 +35,43 @@ If you are seeing `'!debugNeedsLayout': is not true.` assertion error while hit 
 Code before migration:
 
 ```dart
-test('attach and detach correctly handle gesture', () {
-  final RenderEditable editable = RenderEditable(
-    //...
-  );
-  final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () { });
-  editable.attach(owner);
-  // This will throw an assertion error because the RenderEditable has not been laid out.
-  editable.handleEvent(const PointerDownEvent(), BoxHitTestEntry(editable, const Offset(10,10)));
-  editable.detach();
-});
+import 'package:flutter/rendering.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+void main() {
+  test('attach and detach correctly handle gesture', () {
+    final RenderEditable editable = RenderEditable(
+      //...
+    );
+    final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () { });
+    editable.attach(owner);
+    // This will throw an assertion error because the RenderEditable has not been laid out.
+    editable.handleEvent(const PointerDownEvent(), BoxHitTestEntry(editable, const Offset(10,10)));
+    editable.detach();
+  });
+}
 ```
 
 Code after migration:
 
 ```dart
-test('attach and detach correctly handle gesture', () {
-  final RenderEditable editable = RenderEditable(
-    //...
-  );
-  // Lay out the RenderEditable first.
-  editable.layout(BoxConstraints.loose(const Size(1000.0, 1000.0)));
+import 'package:flutter/rendering.dart';
+import 'package:flutter_test/flutter_test.dart';
 
-  final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () { });
-  editable.attach(owner);
-  editable.handleEvent(const PointerDownEvent(), BoxHitTestEntry(editable, const Offset(10,10)));
-  editable.detach();
-});
+void main() {
+  test('attach and detach correctly handle gesture', () {
+    final RenderEditable editable = RenderEditable(
+      //...
+    );
+    // Lay out the RenderEditable first.
+    editable.layout(BoxConstraints.loose(const Size(1000.0, 1000.0)));
+
+    final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () { });
+    editable.attach(owner);
+    editable.handleEvent(const PointerDownEvent(), BoxHitTestEntry(editable, const Offset(10,10)));
+    editable.detach();
+  });
+}
 ```
 
 ## Timeline
