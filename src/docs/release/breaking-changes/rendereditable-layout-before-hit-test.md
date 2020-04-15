@@ -37,11 +37,16 @@ Code before migration:
 ```dart
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   test('attach and detach correctly handle gesture', () {
     final RenderEditable editable = RenderEditable(
-      //...
+      textDirection: TextDirection.ltr,
+      offset: ViewportOffset.zero(),
+      textSelectionDelegate: FakeEditableTextState(),
+      startHandleLayerLink: LayerLink(),
+      endHandleLayerLink: LayerLink(),
     );
     final PipelineOwner owner = PipelineOwner(onNeedVisualUpdate: () { });
     editable.attach(owner);
@@ -50,6 +55,15 @@ void main() {
     editable.detach();
   });
 }
+
+class FakeEditableTextState extends TextSelectionDelegate {
+  @override
+  TextEditingValue textEditingValue;
+  @override
+  void hideToolbar() { }
+  @override
+  void bringIntoView(TextPosition position) { }
+}
 ```
 
 Code after migration:
@@ -57,11 +71,16 @@ Code after migration:
 ```dart
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   test('attach and detach correctly handle gesture', () {
     final RenderEditable editable = RenderEditable(
-      //...
+      textDirection: TextDirection.ltr,
+      offset: ViewportOffset.zero(),
+      textSelectionDelegate: FakeEditableTextState(),
+      startHandleLayerLink: LayerLink(),
+      endHandleLayerLink: LayerLink(),
     );
     // Lay out the RenderEditable first.
     editable.layout(BoxConstraints.loose(const Size(1000.0, 1000.0)));
@@ -71,6 +90,15 @@ void main() {
     editable.handleEvent(const PointerDownEvent(), BoxHitTestEntry(editable, const Offset(10,10)));
     editable.detach();
   });
+}
+
+class FakeEditableTextState extends TextSelectionDelegate {
+  @override
+  TextEditingValue textEditingValue;
+  @override
+  void hideToolbar() { }
+  @override
+  void bringIntoView(TextPosition position) { }
 }
 ```
 
