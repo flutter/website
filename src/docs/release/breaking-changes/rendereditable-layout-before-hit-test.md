@@ -53,7 +53,7 @@ void main() {
     // This will throw an assertion error because
     // the RenderEditable has not been laid out.
     editable.handleEvent(const PointerDownEvent(),
-        BoxHitTestEntry(editable, const Offset(10,10)));
+        BoxHitTestEntry(editable, const Offset(10, 10)));
     editable.detach();
   });
 }
@@ -93,6 +93,7 @@ void main() {
     editable.detach();
   });
 }
+
 class FakeEditableTextState extends TextSelectionDelegate {
   @override
   TextEditingValue textEditingValue;
