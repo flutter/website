@@ -78,7 +78,7 @@ This command stores the `key.jks` file in your home
 directory. If you want to store it elsewhere, change
 the argument you pass to the `-keystore` parameter.
 **However, keep the `keystore` file private;
-do not check it into public source control!**
+don't check it into public source control!**
 
 {{site.alert.note}}
 * The `keytool` command might not be in your path&mdash;it's
@@ -88,9 +88,10 @@ do not check it into public source control!**
   'Java binary at:'. Then use that fully qualified path
   replacing `java` (at the end) with `keytool`.
   If your path includes space-separated names,
-  such as `Program Files`, use a delimeter appropriate
-  to your platform. For example, use `/"Program Files"/`
-  on Mac/Linux, or `/Program\ Files/` on Windows.
+  such as `Program Files`, use platform-appropriate
+  notation for the names. For example, on Mac/Linux
+  use `/"Program Files"/`, and on Windows use
+  `/Program\ Files/`.
 
 * The `-storetype JKS` tag is only required for Java 9
   or newer. As of the Java 9 release,
@@ -111,7 +112,7 @@ storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
 
 {{site.alert.warning}}
   Keep the `key.properties` file private;
-  do not check it into public source control.
+  don't check it into public source control.
 {{site.alert.end}}
 
 ### Configure signing in gradle
