@@ -29,6 +29,7 @@ abstract class TextInputClient {
 ## Migration guide
 
 If you're not planning to add multifield autofill support to your `TextInputClient` subclass, simply return `null` in the getter:
+<!-- skip -->
 ```dart
 class CustomTextField implements TextInputClient {
   // Not having an AutofillScope does not prevent the input field
