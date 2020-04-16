@@ -41,6 +41,16 @@ and the current state of the app is preserved.
 Your app continues to execute from where it was prior to running
 the hot reload command. The code updates and execution continues.
 
+{{site.alert.secondary}}
+  **Hot reload vs hot restart** In the simplest terms,
+  a hot reload refreshes your running app without losing state.
+  A hot restart resets the app's state to its default values,
+  but is much faster than a cold start.
+
+  Flutter web supports hot restart but not
+  hot reload.
+{{site.alert.end}}
+
 A code change has a visible effect only if the modified Dart code
 is run again after the change. Specifically,
 a hot reload causes all of the existing widgets to rebuild.
@@ -317,7 +327,6 @@ The following libraries are recompiled:
 
 The source code from those libraries is compiled into
 [kernel files][] and sent to the mobile device's Dart VM.
-[PENDING: What about web?]
 
 The Dart VM re-loads all libraries from the new kernel file.
 So far no code is re-executed.
