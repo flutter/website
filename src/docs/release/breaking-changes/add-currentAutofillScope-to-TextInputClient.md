@@ -15,7 +15,6 @@ a Flutter input field that is about to trigger autofill should also provide the 
 input fields logically connected to it. `TextInputClient.currentAutofillScope` defines the group of input fields that are logically
 connected to this `TextInputClient`, and can be autofilled together.
 
-
 ## Description of change
 
 `TextInputClient` now has an additional getter that returns the `AutofillScope` that this client belongs to. This getter will be used by the input client to collect autofill related information from other 
@@ -29,7 +28,7 @@ abstract class TextInputClient {
 
 ## Migration guide
 
-If you're not planning to add multifield autofill support to your `TextInputClient` subclass simply return `null` in the getter:
+If you're not planning to add multifield autofill support to your `TextInputClient` subclass, simply return `null` in the getter:
 ```dart
 class CustomTextField implements TextInputClient {
   // Not having an AutofillScope does not prevent the input field
