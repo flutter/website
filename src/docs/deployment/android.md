@@ -18,7 +18,7 @@ This page covers the following topics:
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
 * [Signing the app](#signing-the-app)
-* [R8](#r8)
+* [Shrinking your code with R8](#shrinking-your-code-with-r8)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
@@ -193,7 +193,7 @@ Release builds of your app will now be signed automatically.
 For more information on signing your app, see
 [Sign your app][] on developer.android.com.
 
-## R8
+## Shrinking your code with R8
 
 [R8][] is the new code shrinker from Google, and it's enabled by default
 when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
