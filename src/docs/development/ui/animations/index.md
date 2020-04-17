@@ -93,9 +93,9 @@ depends on how fast it was tossed and how far it was from the ground.
 Similarly, dropping a ball attached to a spring falls
 (and bounces) differently than dropping a ball attached to a string.
 
-* [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
+* [Flutter Gallery]({{site.github}}/flutter/gallery)<br>
 Under **Material Components**, the
-[Grid]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) example
+[Grid]({{site.github}}/flutter/gallery/blob/master/lib/demos/material/grid_list_demo.dart) example
 demonstrates a fling animation. Select one of the images from
 the grid and zoom in. You can pan the image with flinging or dragging
 gestures.
@@ -137,7 +137,7 @@ How to create two styles of Hero animations:
 * [Flutter Gallery][]<br>
 You can build the Gallery app yourself, or download it from the Play Store.
 The
-[Shrine]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
+[Shrine]({{site.github}}/flutter/gallery/tree/master/lib/studies/shrine)
 demo includes an example of a Hero animation.
 
 * Also see the API documentation for the
@@ -185,6 +185,6 @@ If there is specific animation documentation you'd like to see,
 [file an issue]({{site.github}}/flutter/website/issues).
 
 [AnimationController.animateWith]: {{site.api}}/flutter/animation/AnimationController/animateWith.html
-[Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
+[Flutter Gallery]: {{site.github}}/flutter/gallery
 [Material widgets]: /docs/development/ui/widgets/material
 [SpringSimulation]: {{site.api}}/flutter/physics/SpringSimulation-class.html
