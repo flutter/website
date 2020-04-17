@@ -5,20 +5,25 @@ description: A new getter`TextInputClient.currentAutofillScope` was added to the
 
 ## Summary
 
-A new getter`TextInputClient.currentAutofillScope` was added to the `TextInputClient` interface.
+A new getter`TextInputClient.currentAutofillScope` was added to the
+`TextInputClient` interface.
 
 ## Context
 
-On many platforms, autofill services are capable of autofilling multiple input fields in a single autofill 
-attempt. For example, username fields and password fields can usually be autofilled in one go. For this reason, 
-a Flutter input field that is about to trigger autofill should also provide the platform with information about other autofillable
-input fields logically connected to it. `TextInputClient.currentAutofillScope` defines the group of input fields that are logically
-connected to this `TextInputClient`, and can be autofilled together.
+On many platforms, autofill services are capable of autofilling multiple input
+fields in a single autofill attempt. For example, username fields and password
+fields can usually be autofilled in one go. For this reason, a Flutter input
+field that is about to trigger autofill should also provide the platform with
+information about other autofillable input fields logically connected to it.
+`TextInputClient.currentAutofillScope` defines the group of input fields that are
+logically connected to this `TextInputClient`, and can be autofilled together.
 
 ## Description of change
 
-`TextInputClient` now has an additional getter that returns the `AutofillScope` that this client belongs to. This getter will be used by the input client to collect autofill related information from other 
-autofillable input fields within the same scope.
+`TextInputClient` now has an additional getter that returns the `AutofillScope`
+that this client belongs to. This getter is used by the input client to collect
+autofill related information from other autofillable input fields within the same
+scope.
 
 ```dart
 abstract class TextInputClient {
@@ -28,7 +33,8 @@ abstract class TextInputClient {
 
 ## Migration guide
 
-If you're not planning to add multifield autofill support to your `TextInputClient` subclass, simply return `null` in the getter:
+If you're not planning to add multifield autofill support to your `TextInputClient`
+subclass, simply return `null` in the getter:
 <!-- skip -->
 ```dart
 class CustomTextField implements TextInputClient {
@@ -39,8 +45,9 @@ class CustomTextField implements TextInputClient {
 }
 ```
 
-If multifield autofill support is desirable, a common `AutofillScope` to use is the `AutofillGroup` widget. To get the closest `AutofillGroup`
-widget to the text input, use `AutofillGroup.of(context)`:
+If multifield autofill support is desirable, a common `AutofillScope` to use is
+the `AutofillGroup` widget. To get the closest `AutofillGroup` widget to the text
+input, use `AutofillGroup.of(context)`:
 
 <!-- skip -->
 ```dart
@@ -51,7 +58,8 @@ class CustomTextFieldState extends State<CustomTextField> implements TextInputCl
   AutofillScope get currentAutofillScope => AutofillGroup.of(context);
 }
 ```
-for more information about the `AutofillGroup` widget, please refer to its documentation: [`AutofillGroup`][].
+
+For more information, see [`AutofillGroup`][].
 
 
 ## Timeline
@@ -86,3 +94,4 @@ Stable channel link:
 Master channel link:
 [`AutofillGroup`]: https://master-api.flutter.dev/flutter/widgets/AutofillGroup-class.html
 [`TextInputClient.currentAutofillScope`]: https://https://master-api.flutter.dev/flutter/services/TextInputClient/currentAutofillScope.html
+
