@@ -8,6 +8,8 @@ for migrating code across a breaking change.
 
 The following guides (in alphabetical order) are available:
 
+* [Adding `linux` and `windows` to `TargetPlatform` enum][]
+* [Adding `TextInputClient.currentAutofillScope`][]
 * [Annotations return local position relative to object][]
 * [Container color optimization][]
 * [Generic type of ParentDataWidget changed to ParentData][]
@@ -23,10 +25,10 @@ The following guides (in alphabetical order) are available:
 * [The Route and Navigator Refactoring][]
 * [The `forgetChild` method must call super][]
 * [ThemeData's accent properties][]
-* [Adding `linux` and `windows` to `TargetPlatform` enum][]
 * [MouseTracker moved to rendering][]
 
 [Adding `linux` and `windows` to `TargetPlatform` enum]: /docs/release/breaking-changes/target-platform-linux-windows
+[Adding `TextInputClient.currentAutofillScope`]: /docs/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
 [Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
 [breaking change policy]: /docs/resources/compatibility
 [Container color optimization]: /docs/release/breaking-changes/container-color
