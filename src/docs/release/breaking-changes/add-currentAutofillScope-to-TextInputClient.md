@@ -1,12 +1,18 @@
 ---
-title: Add currentAutofillScope to TextInputClient
-description: A new getter`TextInputClient.currentAutofillScope` was added to the `TextInputClient` interface for autofill support.
+title: New currentAutofillScope property on TextInputClient
+description: A new getter `TextInputClient.currentAutofillScope` was added to the `TextInputClient` interface for autofill support.
 ---
 
 ## Summary
 
-A new getter`TextInputClient.currentAutofillScope` was added to the
-`TextInputClient` interface.
+A new getter `TextInputClient.currentAutofillScope` was added to the
+`TextInputClient` interface, all `TextInputClient` subclasses must 
+provide a concrete implementation of `currentAutofillScope`.
+
+This getter allows the `TextInputClient`
+to trigger an autofill that involves multiple logically connected input
+fields. For example, a "username" field can trigger an autofill that fills
+both itself and the "password" field associated with it. 
 
 ## Context
 
@@ -31,6 +37,10 @@ abstract class TextInputClient {
 }
 ```
 
+If you see the error message "missing concrete implementation of 
+'getter TextInputClient.currentAutofillScope'." while compiling a flutter
+app, follow the migration steps listed below.
+
 ## Migration guide
 
 If you're not planning to add multifield autofill support to your `TextInputClient`
@@ -52,9 +62,6 @@ input, use `AutofillGroup.of(context)`:
 <!-- skip -->
 ```dart
 class CustomTextFieldState extends State<CustomTextField> implements TextInputClient {
-  // Not having an AutofillScope does not prevent the input field
-  // from being autofilled. However, only this input field will
-  // be autofilled when autofill is triggered on it.
   AutofillScope get currentAutofillScope => AutofillGroup.of(context);
 }
 ```
