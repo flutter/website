@@ -249,7 +249,7 @@ and switches between them when their values cross.
 
 The [`AnimationController`][] is a stateful
 `Animation<double>` that uses a `Ticker` to give itself life.
-It can be started and stopped. Each tick, it takes the time
+It can be started and stopped. At each tick, it takes the time
 elapsed since it was started and passes it to a `Simulation` to obtain
 a value. That is then the value it reports. If the `Simulation`
 reports that at that time it has ended, then the controller stops
