@@ -90,8 +90,8 @@ don't check it into public source control!**
   If your path includes space-separated names,
   such as `Program Files`, use platform-appropriate
   notation for the names. For example, on Mac/Linux
-  use `/"Program Files"/`, and on Windows use
-  `/Program\ Files/`.
+  use `Program\ Files`, and on Windows use
+  `"Program Files"`.
 
 * The `-storetype JKS` tag is only required for Java 9
   or newer. As of the Java 9 release,
