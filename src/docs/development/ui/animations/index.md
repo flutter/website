@@ -222,7 +222,8 @@ Learn more about Flutter animations at the following links:
   provided in the Flutter APIs.
 
 * The [animation library][] in the [Flutter API documentation][]<br>
-  The animation API for the Flutter framework.
+  The animation API for the Flutter framework. This link
+  takes you to a technical overview page for the library.
 
 
 [Animate a widget using a physics simulation]: /docs/cookbook/animation/physics-simulation
