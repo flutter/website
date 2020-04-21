@@ -27,13 +27,16 @@ automatically bundled as needed into your outer existing app.
 
 Some plugins require you to make some edits to the Android side of your project.
 
-Taking the [firebase_crashlytics plugin](https://pub.dev/packages/firebase_crashlytics)
-as an example. The plugin's integration instructions requires some manual edits
-to your Android wrapper project's `build.gradle` file.
+For example, the [firebase_crashlytics plugin](https://pub.dev/packages/firebase_crashlytics)'s
+integration instructions require manual edits to your Android wrapper project's
+`build.gradle` file.
 
-In the case of a Flutter module, which only has Dart files, perform those
-Gradle file edits on your outer, existing Android app rather than in your Flutter
-module.
+For full-Flutter apps, these edits are done in your Flutter project's
+`/android/` directory.
+
+In the case of a Flutter module, there are only Dart files in your module
+project. Perform those Android Gradle file edits on your outer, existing Android
+app rather than in your Flutter module.
 
 {{site.alert.note}}
 Astute readers may notice that the Flutter module directory also contain
@@ -123,6 +126,6 @@ dependencies {
 in your existing application will not work since there are major API differences
 between the Crashlytics' Gradle library version v17.0.0-beta03 and v2.9.9.
 
-For Gradle libraries that follow semantic versioning, making sure that your
-existing app and your Flutter module plugin use the same major semantic version
-will help you avoid compile or runtime errors.
+For Gradle libraries that follow semantic versioning, you can generally avoid
+compilation and runtime errors by using the same major semantic version in your
+existing app and Flutter module plugin.
