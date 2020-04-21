@@ -41,7 +41,7 @@ during flight.
 {{site.alert.secondary}}
   **New to Flutter?**
   This page assumes you know how to create a layout
-  using Flutter’s.widgets. For more information, see
+  using Flutter’s widgets. For more information, see
   [Building Layouts in Flutter][].
 {{site.alert.end}}
 
