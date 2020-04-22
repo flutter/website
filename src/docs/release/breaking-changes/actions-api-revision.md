@@ -55,25 +55,25 @@ doc](https://flutter.dev/go/actions-and-shortcuts-design-revision).
 
 Here are the changes made to address the above problems:
 
-1) The `Map<LocalKey, ActionFactory>` that was given to the [`Actions`][] widget is now
-   a `Map<Type, Action<Intent>>` (the type is the type of the Intent to be passed
-   to the Action).
+1) The `Map<LocalKey, ActionFactory>` that was given to the [`Actions`][] widget
+   is now a `Map<Type, Action<Intent>>` (the type is the type of the Intent to
+   be passed to the Action).
 1) The `isEnabled` method was moved from the `Intent` class to the `Action`
    class.
 1) The `FocusNode` argument to `Action.invoke` and `Actions.invoke` methods was removed.
 1) Invoking an action no longer creates a new instance of the `Action`.
 1) The `LocalKey` argument to the `Intent` constructor was removed.
 1) The `LocalKey` argument to `CallbackAction` was removed.
-1) The `Action` class is now a generic (`Action<T extends Intent>`) for better type
-   safety.
+1) The `Action` class is now a generic (`Action<T extends Intent>`) for better
+   type safety.
 1) The `OnInvokeCallback` used by `CallbackAction` no longer takes a `FocusNode`
    argument.
 1) The `ActionDispatcher.invokeAction` signature has changed to not accept an
    optional `FocusNode`, but instead take an optional `BuildContext`.
-1) The `LocalKey` static constants (named key by convention) in `Action` subclasses
-   have been removed.
-1) The `Action.invoke` and `ActionDispatcher.invokeAction` methods now return the
-   result of invoking the action as an `Object`.
+1) The `LocalKey` static constants (named key by convention) in `Action`
+   subclasses have been removed.
+1) The `Action.invoke` and `ActionDispatcher.invokeAction` methods now return
+   the result of invoking the action as an `Object`.
 1) The `Action` class may now be listened to for state changes.
 1) The `ActionFactory` typedef has been removed, as it is no longer used.
 
@@ -84,6 +84,7 @@ outdated use of the Actions API might be the cause of the problem. The specifics
 of the error might differ, and there may be other failures caused by these
 changes.
 
+<!-- skip -->
 ```
 error: MyActionDispatcher.invokeAction' ('bool Function(Action<Intent>, Intent, {FocusNode focusNode})') isn't a valid override of 'ActionDispatcher.invokeAction' ('Object Function(Action<Intent>, Intent, [BuildContext])'). (invalid_override at [main] lib/main.dart:74)
 
@@ -100,17 +101,20 @@ error: The argument type 'Map<LocalKey, dynamic>' can't be assigned to the param
 
 ## Migration Guide
 
-Significant changes will be required to update existing code to the new API.
+Significant changes area required to update existing code to the new API.
 
 ### Actions mapping for pre-defined actions
 
 To update the action maps in the `Actions` widget for predefined actions in
-Flutter, like `ActivateAction` and `SelectAction`, etc., you'll need to:
+Flutter, like `ActivateAction` and `SelectAction`, etc., do this:
 
- - Update the argument type of the actions argument, and
- - Use an instance of a specific Intent class in the Shortcuts mapping, rather than an Intent(TheAction.key) instance.
+ - Update the argument type of the `actions` argument, and
+ - Use an instance of a specific `Intent` class in the `Shortcuts` mapping,
+   rather than an `Intent(TheAction.key)` instance.
 
 Code before migration:
+
+<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   // ...
@@ -132,6 +136,8 @@ class MyWidget extends StatelessWidget {
 ```
 
 Code after migration:
+
+<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   // ...
@@ -153,11 +159,13 @@ class MyWidget extends StatelessWidget {
 ```
 
 ### Custom actions
-To migrate your custom actions, you'll need to eliminate the `LocalKeys` you've
-defined, and replace them with `Intent` subclasses, as well as changing the type
-of the argument to the actions argument of the Actions widget.
+To migrate your custom actions, eliminate the `LocalKeys` you've defined, and
+replace them with `Intent` subclasses, as well as changing the type of the
+argument to the `actions` argument of the `Actions` widget.
 
 Code before migration:
+
+<!-- skip -->
 ```dart
 class MyAction extends Action {
   MyAction() : super(key);
@@ -191,6 +199,8 @@ class MyWidget extends StatelessWidget {
 ```
 
 Code after migration:
+
+<!-- skip -->
 ```dart
 // You may need to create new Intent subclasses if you used a bare LocalKey
 // before.
@@ -226,7 +236,7 @@ class MyWidget extends StatelessWidget {
 
 ### Custom `Actions` and `Intents` With Arguments
 
-To update actions that use intent arguments or hold state, you will need to
+To update actions that use intent arguments or hold state, you need to
 modify the arguments to the invoke method. In the example below, the code keeps
 the value of the argument in the intent as part of the action instance. This is
 because in the old design there is a new instance of the action created each
@@ -239,6 +249,8 @@ for each invocation. This state is returned to the caller of Actions.invoke, or
 `ActionDispatcher.invokeAction`, depending on how the action is invoked.
 
 Code before migration:
+
+<!-- skip -->
 ```dart
 class MyIntent extends Intent {
   const MyIntent({this.argument});
@@ -263,6 +275,8 @@ class MyAction extends Action {
 ```
 
 Code after migration:
+
+<!-- skip -->
 ```dart
 class MyIntent extends Intent {
   const MyIntent({this.argument});

@@ -24,10 +24,10 @@ The following guides (in alphabetical order) are available:
 * [TestTextInput state reset][]
 * [TestWidgetsFlutterBinding clock][]
 * [TextInputClient currentTextEditingValue][]
-* [ThemeData's accent properties][]
 * [The `forgetChild` method must call super][]
 * [The RenderEditable needs to be laid out before hit testing][]
 * [The Route and Navigator Refactoring][]
+* [ThemeData's accent properties][]
 
 [Actions API Revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding `linux` and `windows` to `TargetPlatform` enum]: /docs/release/breaking-changes/target-platform-linux-windows
