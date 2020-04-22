@@ -8,12 +8,14 @@ for migrating code across a breaking change.
 
 The following guides (in alphabetical order) are available:
 
+* [Actions API Revision][]
 * [Adding `linux` and `windows` to `TargetPlatform` enum][]
 * [Adding `TextInputClient.currentAutofillScope`][]
 * [Annotations return local position relative to object][]
 * [Container color optimization][]
 * [Generic type of ParentDataWidget changed to ParentData][]
 * [ImageCache large images][]
+* [MouseTracker moved to rendering][]
 * [MouseTracker no longer attaches annotations][]
 * [Nullable `CupertinoTheme.brightness`][]
 * [Rebuild optimization for OverlayEntries and Routes][]
@@ -22,12 +24,12 @@ The following guides (in alphabetical order) are available:
 * [TestTextInput state reset][]
 * [TestWidgetsFlutterBinding clock][]
 * [TextInputClient currentTextEditingValue][]
+* [The `forgetChild` method must call super][]
 * [The RenderEditable needs to be laid out before hit testing][]
 * [The Route and Navigator Refactoring][]
-* [The `forgetChild` method must call super][]
 * [ThemeData's accent properties][]
-* [MouseTracker moved to rendering][]
 
+[Actions API Revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding `linux` and `windows` to `TargetPlatform` enum]: /docs/release/breaking-changes/target-platform-linux-windows
 [Adding `TextInputClient.currentAutofillScope`]: /docs/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
 [Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
