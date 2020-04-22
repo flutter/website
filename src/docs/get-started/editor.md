@@ -16,7 +16,7 @@ even better experience. These plugins provide you with code completion, syntax
 highlighting, widget editing assists, run & debug support, and more.
 
 Follow the steps below to add an editor plugin for Android Studio,
-IntelliJ, or VS Code. If you want to use a different editor,
+IntelliJ, VS Code, or Emacs. If you want to use a different editor,
 that's OK, skip ahead to the [next step: Test drive][].
 
 {% comment %} Nav tabs {% endcomment -%}
@@ -26,6 +26,9 @@ that's OK, skip ahead to the [next step: Test drive][].
   </li>
   <li class="nav-item">
     <a class="nav-link" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="false">Visual Studio Code</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="emacs-tab" href="#emacs" role="tab" aria-controls="emacs" aria-selected="false">Emacs</a>
   </li>
 </ul>
 
@@ -81,7 +84,19 @@ VS Code is a lightweight editor with Flutter app execution and debug support.
  1. Review the output in the **OUTPUT** pane for any issues.
 
 </div>
+<div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">
 
+## Install Emacs
+
+Emacs is a lightweight editor with support for Flutter and Dart.
+
+* [Emacs][], latest stable version
+
+## Install the lsp-dart package
+
+For information on how to install and use the package, see the [lsp-dart documentation][].
+
+</div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
 ## Next step
@@ -96,4 +111,6 @@ Take Flutter for a test drive: create a first project, run it, and experience
 [IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
 [next step: Test drive]: /docs/get-started/test-drive
 [VS Code]: https://code.visualstudio.com/
+[Emacs]: https://www.gnu.org/software/emacs/download.html
+[lsp-dart documentation]: https://emacs-lsp.github.io/lsp-dart/
 
