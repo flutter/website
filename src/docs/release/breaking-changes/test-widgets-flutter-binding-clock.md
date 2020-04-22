@@ -96,7 +96,7 @@ testWidgets('some test', (WidgetTester tester) {
 
 ## Timeline
 
-This change is not yet landed, see [PR 54125][]
+This change was released in version 1.18.0.
 
 ## References
 
