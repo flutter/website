@@ -71,7 +71,7 @@ For more information, see [`AutofillGroup`][].
 
 ## Timeline
 
-TBA
+The change landed in Flutter v1.18.0.
 
 {% comment %}
 The version # of the SDK where this change was
