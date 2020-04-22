@@ -22,7 +22,7 @@ Here's how you can create such a structure with Flutter:
   1. Create a data source with different types of items.
   2. Convert the data source into a list of widgets.
 
-## 1. Create a data source with different types of item
+## 1. Create a data source with different types of items
 
 ### Types of items
 
@@ -99,11 +99,6 @@ use the [`ListView.builder()`][] constructor.
 In general, provide a builder function that checks for what type
 of item you're dealing with, and returns the appropriate widget
 for that type of item.
-
-This example uses the `is` keyword to check the type of item.
-It's fast, and automatically casts each item to the appropriate type.
-However, there are different ways to approach this problem if
-you prefer another pattern.
 
 <!-- skip -->
 ```dart

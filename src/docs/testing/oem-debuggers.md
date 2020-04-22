@@ -7,13 +7,14 @@ description: How to connect an OEM debugger to your running Flutter app.
 If you are exclusively writing Flutter apps with Dart code and not using
 platform-specific libraries, or otherwise accessing platform-specific
 features, you can debug your code using your IDE's debugger.
-Only the first section of this guide, Debugging Dart code, is relevant for you.
+Only the first section of this guide, Debugging Dart code,
+is relevant for you.
 
 If you're writing a platform-specific plugin or using platform-specific
 libraries written in Swift, ObjectiveC, Java, or Kotlin, you can debug
-that portion of your code using Xcode (for iOS) or Android Gradle (for Android).
-This guide shows you how you can connect _two_ debuggers to your Dart app,
-one for Dart, and one for the OEM code.
+that portion of your code using Xcode (for iOS) or Android Gradle
+(for Android).  This guide shows you how you can connect _two_
+debuggers to your Dart app, one for Dart, and one for the OEM code.
 
 ## Debugging Dart code
 
@@ -42,7 +43,8 @@ plugins installed and configured.
 
   {% asset 'testing/debugging/oem/debug-pane.png' alt='Debug pane' %}{:width="100%"}
 
-  You can configure where the debug pane appears, or even tear it off to its own
+  You can configure where the debug pane appears,
+  or even tear it off to its own
   window using the gear to the right in the Debug pane bar.
   This is true for any inspector in Android Studio.
 
@@ -54,8 +56,8 @@ Not needed for breakpoints to work.
   {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}
 {% endcomment -%}
 
-* In the app, click the **+** button (FloatingActionButton, or FAB, for short)
-  to increment the counter. The app pauses.
+* In the app, click the **+** button (FloatingActionButton,
+  or FAB, for short) to increment the counter. The app pauses.
 
 * The following screenshot shows:
   * Breakpoint in the edit pane.
@@ -136,8 +138,8 @@ Considere moving the info below to a new page.
 
     {% asset 'testing/debugging/oem/presentation-assistant-search-results.png' alt='Find panel' %}
 
-  * After an update, you might enter _Flutter_ or _Dart_ to see if new actions
-    are available.
+  * After an update, you might enter _Flutter_ or _Dart_ to see if
+    new actions are available.
 
   Hide the Presentation Assistant's Find panel by using **Escape**.
 {{site.alert.end}}
@@ -145,9 +147,10 @@ Considere moving the info below to a new page.
 
 ## Debugging with Android Gradle (Android)
 
-In order to debug OEM Android code, you need an app that contains OEM Android code.
-In this section, you'll learn how to connect two debuggers to your app: 1) the
-Dart debugger and, 2) the Android Gradle debugger.
+In order to debug OEM Android code, you need an app that contains
+OEM Android code. In this section, you'll learn how to connect
+two debuggers to your app: 1) the Dart debugger and,
+2) the Android Gradle debugger.
 
 * Create a basic Flutter app.
 
@@ -258,7 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
 * Add the `url_launcher` dependency to the pubspec file,
   and run flutter pub get:
 
-{% prettify yaml %}
+```yaml
 name: flutter_app
 description: A new Flutter application.
 version: 1.0.0+1
@@ -267,13 +270,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  [[highlight]]url_launcher: ^3.0.3[[/highlight]]
+  url_launcher: ^3.0.3
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-{% endprettify %}
+```
 
 * Click the debug icon
   ({% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %})
@@ -306,11 +309,13 @@ dev_dependencies:
 
   {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}{:width="100%"}
 
-*  In the debug pane, you should now see a tab for **Android Debugger**.
+* In the debug pane, you should now see a tab for **Android Debugger**.
 
 * In the project pane, expand
-  <strong><em>app_name</em> > android > app > src > main > java > io.flutter plugins</strong>.
-  Double click **GeneratedProjectRegistrant** to open the Java code in the edit pane.
+  <nobr><strong><em>app_name</em> > android > app > src > main >
+  java > io.flutter plugins</strong></nobr>.
+  Double click **GeneratedProjectRegistrant** to open the
+  Java code in the edit pane.
 
 Both the Dart and OEM debuggers are interacting with the same process.
 User either, or both, to set breakpoints, examine stack, resume execution...
@@ -328,8 +333,8 @@ In other words, debug!
 ## Debugging with Xcode (iOS)
 
 In order to debug OEM iOS code, you need an app that contains OEM iOS code.
-In this section, you'll learn how to connect two debuggers to your app: 1) the
-Dart debugger and, 2) the Xcode debugger.
+In this section, you'll learn how to connect two debuggers to your app:
+1) the Dart debugger and, 2) the Xcode debugger.
 
 [PENDING]
 
@@ -362,12 +367,12 @@ You can find the following debugging resources on
 * [Instruments Help][]
 
 
-[Flutter's modes]: /docs/testing/build-modes
-[developer.android.com]: {{site.android-dev}}
-[Debug your app]: {{site.android-dev}}/studio/debug
 [Android Debug Bridge (adb)]: {{site.android-dev}}/studio/command-line/adb
-[developer.apple.com]: https://developer.apple.com
+[Debug your app]: {{site.android-dev}}/studio/debug
 [Debugging]: https://developer.apple.com/support/debugging/
-[Instruments Help]: https://help.apple.com/instruments/mac/current/
-[Flutter inspector]: /docs/development/tools/devtools/inspector
+[developer.android.com]: {{site.android-dev}}
+[developer.apple.com]: https://developer.apple.com
 [DevTools]: /docs/development/tools/devtools
+[Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter's modes]: /docs/testing/build-modes
+[Instruments Help]: https://help.apple.com/instruments/mac/current/

@@ -103,7 +103,6 @@ Future<void> _reportError(dynamic error, dynamic stackTrace) async {
   if (isInDebugMode) {
     // Print the full stacktrace in debug mode.
     print(stackTrace);
-    return;
   } else {
     // Send the Exception and Stacktrace to Sentry in Production mode.
     _sentry.captureException(

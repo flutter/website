@@ -33,6 +33,7 @@
       { "source": "/docs/development/tools/ide/android-studio", "destination": "/docs/development/tools/android-studio", "type": 301 },
       { "source": "/docs/development/tools/ide/vs-code", "destination": "/docs/development/tools/vs-code", "type": 301 },
       { "source": "/docs/development/tools/sdk", "destination": "/docs/development/tools/sdk/upgrading", "type": 301 },
+      { "source": "/docs/development/ui/splash-screen", "destination": "/docs/development/ui/advanced/splash-screen", "type": 301 },
       { "source": "/docs/development/ui/splash-screen/android-splash-screen", "destination": "/docs/development/ui/advanced/splash-screen", "type": 301 },
       { "source": "/docs/development/ui/widgets/catalog", "destination": "/docs/development/ui/widgets", "type": 301 },
       { "source": "/docs/development/ui/widgets/widgetindex", "destination": "/docs/reference/widgets", "type": 301 },
@@ -196,7 +197,8 @@
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit?usp=sharing", "type": 301 },
       { "source": "/go/test-widgets-flutter-binding-clock", "destination": "https://docs.google.com/document/d/1EkkLbECNBwHgddBQAZqEy7iQLTIxR1rgChKzxcLwhio/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-platform-idling", "destination": "https://docs.google.com/document/d/1RhSluOcHED6wEckY8CGK1mowRcWGAEGWraN6REPaORs/edit?usp=sharing", "type": 301 },
-      { "source": "/go/material-button-system-updates", "destination": "https://docs.google.com/document/d/10Fbn59hiHkppqJ6y_1Rjwl7klN-OvJXQU3SFEqicpME/edit?usp=sharing", "type": 301 }
+      { "source": "/go/material-button-system-updates", "destination": "https://docs.google.com/document/d/10Fbn59hiHkppqJ6y_1Rjwl7klN-OvJXQU3SFEqicpME/edit?usp=sharing", "type": 301 },
+      { "source": "/go/generating-flutter-localizations", "destination": "https://docs.google.com/document/d/18saQREDwBMPA_svFe9IkU22ljNXsLpYxiy__jzPCzEc/edit?usp=sharing", "type": 301 }
     ]
   }
 }

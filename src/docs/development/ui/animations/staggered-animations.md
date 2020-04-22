@@ -1,5 +1,5 @@
 ---
-title: Staggered Animations
+title: Staggered animations
 description: How to write a staggered animation in Flutter.
 short-title: Staggered
 ---
@@ -9,10 +9,10 @@ short-title: Staggered
 
   * A staggered animation consists of sequential or overlapping
     animations.
-  * To create a staggered animation, use multiple Animation objects.
-  * One AnimationController controls all of the Animations.
-  * Each Animation object specifies the animation during an Interval.
-  * For each property being animated, create a Tween.
+  * To create a staggered animation, use multiple `Animation` objects.
+  * One `AnimationController` controls all of the `Animation`s.
+  * Each `Animation` object specifies the animation during an `Interval`.
+  * For each property being animated, create a `Tween`.
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -32,25 +32,29 @@ This guide shows how to build a staggered animation in Flutter.
 {{site.alert.secondary}}
   <h4 class="no_toc">Examples</h4>
 
-  This guide explains the basic_staggered_animation example. You can also
-  refer to a more complex example, staggered_pic_selection.
+  This guide explains the basic_staggered_animation example.
+  You can also refer to a more complex example,
+  staggered_pic_selection.
 
   [basic_staggered_animation][]
-  : Shows a series of sequential and overlapping animations of a single widget.
-    Tapping the screen begins an animation that changes opacity, size,
-    shape, color, and padding.
-
+  : Shows a series of sequential and overlapping animations
+    of a single widget. Tapping the screen begins an animation
+    that changes opacity, size, shape, color, and padding.  
   [staggered_pic_selection][]
-  : Shows deleting an image from a list of images displayed in one of three sizes.
-    This example uses two [animation controllers][]:
-    one for image selection/deselection, and one for image deletion.
-    The selection/deselection animation is staggered. (To see this effect,
+  : Shows deleting an image from a list of images displayed
+    in one of three sizes. This example uses two
+    [animation controllers][]: one for image selection/deselection,
+    and one for image deletion. The selection/deselection
+    animation is staggered. (To see this effect,
     you might need to increase the `timeDilation` value.)
-    Select one of the largest images&mdash;it shrinks as it displays a checkmark
-    inside a blue circle. Next, select one of the smallest images&mdash;the
-    large image expands as the checkmark disappears. Before the large image
-    has finished expanding, the small image shrinks to display its checkmark.
-    This staggered behavior is similar to what you might see in Google Photos.
+    Select one of the largest images&mdash;it shrinks as it
+    displays a checkmark inside a blue circle.
+    Next, select one of the smallest images&mdash;the
+    large image expands as the checkmark disappears.
+    Before the large image has finished expanding,
+    the small image shrinks to display its checkmark.
+    This staggered behavior is similar to what you might
+    see in Google Photos.
 {{site.alert.end}}
 
 The following video demonstrates the animation performed by
@@ -87,37 +91,39 @@ After running forward, the animation runs in reverse.
   <h4 class="no_toc">What's the point?</h4>
 
   * All of the animations are driven by the same
-    [AnimationController][].
+    [`AnimationController`][].
   * Regardless of how long the animation lasts in real time,
     the controller's values must be between 0.0 and 1.0, inclusive.
-  * Each animation has an [Interval][]
+  * Each animation has an [`Interval`][]
     between 0.0 and 1.0, inclusive.
   * For each property that animates in an interval, create a
-    [Tween][].
-    The `Tween` specifies the start and end values for that property.
-  * The `Tween` produces an [Animation][]
+    [`Tween`][]. The `Tween` specifies the start and end
+    values for that property.
+  * The `Tween` produces an [`Animation`][]
     object that is managed by the controller.
 {{site.alert.end}}
 
 {% comment %}
-The app is essentially animating a Container whose decoration and size are
-animated. The Container is within another Container whose padding moves the
-inner container around and an Opacity widget that's used to fade everything
-in and out.
+The app is essentially animating a `Container` whose
+decoration and size are animated. The `Container`
+is within another `Container` whose padding moves the
+inner container around and an `Opacity` widget that's
+used to fade everything in and out.
 {% endcomment %}
 
-The following diagram shows the Intervals used in the
+The following diagram shows the `Interval`s used in the
 [basic_staggered_animation][] example.
 You might notice the following characteristics:
 
 * The opacity changes during the first 10% of the timeline.
-* A tiny gap occurs between the change in opacity, and the change in width.
+* A tiny gap occurs between the change in opacity,
+  and the change in width.
 * Nothing animates during the last 25% of the timeline.
 * Increasing the padding makes the widget appear to rise upward.
-* Increasing the border radius to 0.5, transforms the square with rounded
-  corners into a circle.
-* The padding and border radius changes occur during the same exact interval,
-  but they don't have to.
+* Increasing the border radius to 0.5,
+  transforms the square with rounded corners into a circle.
+* The padding and border radius changes occur during
+  the same exact interval, but they don't have to.
 
 {% asset ui/animations/StaggeredAnimationIntervals.png
     alt="Diagram showing the interval specified for each motion"
@@ -125,20 +131,22 @@ You might notice the following characteristics:
 
 To set up the animation:
 
-* Create an AnimationController that manages all of the Animations.
-* Create a Tween for each property being animated.
-  * The Tween defines a range of values.
-  * The Tween's `animate` method requires the `parent` controller, and
-    produces an Animation for that property.
-* Specify the interval on the Animation's `curve` property.
+* Create an `AnimationController` that manages all of the
+  `Animations`.
+* Create a `Tween` for each property being animated.
+  * The `Tween` defines a range of values.
+  * The `Twee`n's `animate` method requires the
+    `parent` controller, and produces an `Animation`
+    for that property.
+* Specify the interval on the `Animation`'s `curve` property.
 
-When the controlling animation's value changes, the new animation's
-value changes, triggering the UI to update.
+When the controlling animation's value changes,
+the new animation's value changes, triggering the UI to update.
 
 The following code creates a tween for the `width` property.
-It builds a [CurvedAnimation][],
-specifying an eased curve.
-See [Curves][] for other available pre-defined animation curves.
+It builds a [`CurvedAnimation`][],
+specifying an eased curve. See [`Curves`][] for
+other available pre-defined animation curves.
 
 <!-- skip -->
 {% prettify dart %}
@@ -158,8 +166,8 @@ width = Tween<double>(
 
 The `begin` and `end` values don't have to be doubles.
 The following code builds the tween for the `borderRadius` property
-(which controls the roundness of the square's corners), using
-`BorderRadius.circular()`.
+(which controls the roundness of the square's corners),
+using `BorderRadius.circular()`.
 
 {% prettify dart %}
 borderRadius = BorderRadiusTween(
@@ -181,8 +189,8 @@ borderRadius = BorderRadiusTween(
 Like all interactive widgets, the complete animation consists
 of a widget pair: a stateless and a stateful widget.
 
-The stateless widget specifies the Tweens,
-defines the Animation objects, and provides a `build()` function
+The stateless widget specifies the `Tween`s,
+defines the `Animation` objects, and provides a `build()` function
 responsible for building the animating portion of the widget tree.
 
 The stateful widget creates the controller, plays the animation,
@@ -193,10 +201,11 @@ The animation begins when a tap is detected anywhere in the screen.
 
 ### Stateless widget: StaggerAnimation
 
-In the stateless widget, StaggerAnimation, the `build()` function instantiates an
-[AnimatedBuilder][]&mdash;a general purpose widget for building
-animations. The AnimatedBuilder
-builds a widget and configures it using the Tweens' current values.
+In the stateless widget, `StaggerAnimation`,
+the `build()` function instantiates an
+[`AnimatedBuilder`][]&mdash;a general purpose widget for building
+animations. The `AnimatedBuilder`
+builds a widget and configures it using the `Tweens`' current values.
 The example creates a function named `_buildAnimation()` (which performs
 the actual UI updates), and assigns it to its `builder` property.
 AnimatedBuilder listens to notifications from the animation controller,
@@ -275,7 +284,7 @@ resulting in a call to `_buildAnimation()`.
 
 ### Stateful widget: StaggerDemo
 
-The stateful widget, StaggerDemo, creates the AnimationController
+The stateful widget, `StaggerDemo`, creates the `AnimationController`
 (the one who rules them all), specifying a 2000 ms duration. It plays
 the animation, and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected in the screen.
@@ -344,26 +353,6 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
 }
 {% endprettify %}
 
-## Resources
-
-The following resources might help when writing animations:
-
-[Animations landing page][]
-: Lists the available documentation for Flutter animations.
-  If tweens are new to you, check out the
-  [Animations tutorial](/docs/development/ui/animations/tutorial).
-
-[Flutter API documentation][]
-: Reference documentation for all of the Flutter libraries.
-  In particular, see the [animation library][] documentation.
-
-[Flutter Gallery][]
-: Demo app showcasing many Material Components and other Flutter
-  features. The [Shrine demo][] implements a hero animation.
-
-[Material motion spec][]
-: Describes motion for Material apps.
-
 {% comment %}
 Package not yet vetted.
 
@@ -375,24 +364,19 @@ Package not yet vetted.
 {% endcomment %}
 
 
-[Animation]: {{site.api}}/flutter/animation/Animation-class.html
+[`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
-[animation library]: {{site.api}}/flutter/animation/animation-library.html
-[Animations landing page]: /docs/development/ui/animations
-[AnimationController]: {{site.api}}/flutter/animation/AnimationController-class.html
-[AnimatedBuilder]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
+[`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
+[`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
 [Animations in Flutter tutorial]: /docs/development/ui/animations/tutorial
 [basic_staggered_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation
 [Building Layouts in Flutter]: /docs/development/ui/layout
 [staggered_pic_selection]: {{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection
-[CurvedAnimation]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
-[Curves]: {{site.api}}/flutter/animation/Curves-class.html
-[Flutter API documentation]: {{site.api}}
-[Flutter Gallery]: ({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
+[`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
+[`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [flutter_sequence_animation]: {{site.pub}}/packages/flutter_sequence_animation
 [Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart
-[Interval]: {{site.api}}/flutter/animation/Interval-class.html
+[`Interval`]: {{site.api}}/flutter/animation/Interval-class.html
 [Material motion spec]: {{site.material}}/guidelines/motion/
 [pub.dev]: {{site.pub}}/packages
-[Shrine demo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine
-[Tween]: {{site.api}}/flutter/animation/Tween-class.html
+[`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

@@ -241,7 +241,7 @@ Also check out the site-shared
 [GNU diffutils]: https://www.gnu.org/software/diffutils
 [DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
 [Jekyll]: https://jekyllrb.com/
-[nvm]: https://github.com/creationix/nvm#installation
+[nvm]: https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating
 [Repo on Travis]: https://travis-ci.org/flutter/website
 [rvm]: https://rvm.io/rvm/install#installation
 [this repo]: https://github.com/flutter/website
