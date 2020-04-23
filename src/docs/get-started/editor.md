@@ -11,8 +11,9 @@ toc: false
 ---
 
 You can build apps with Flutter using any text editor combined with our
-command-line tools. However, we recommend using one of our editor plugins for an
-even better experience. These plugins provide you with code completion, syntax
+command-line tools. However, we recommend using one of our editor
+plugins for an even better experience.
+These plugins provide you with code completion, syntax
 highlighting, widget editing assists, run & debug support, and more.
 
 Follow the steps below to add an editor plugin for Android Studio,
@@ -52,13 +53,21 @@ Alternatively, you can also use IntelliJ:
 
 To install these:
 
- 1. Start Android Studio.
- 1. Open plugin preferences (**Preferences > Plugins** on macOS,
-    **File > Settings > Plugins** on Windows & Linux).
- 1. Select **Marketplace**,  select the Flutter plugin and click
-    **Install**.
- 1. Click **Yes** when prompted to install the Dart plugin.
- 1. Click **Restart** when prompted.
+  1. Start Android Studio.
+  1. Open plugin preferences (**Configure > Plugins** as of
+     v3.6.3.0 or later).
+  1. Select the Flutter plugin and
+     click **Install**.
+  1. Click **Yes** when prompted to install the Dart plugin.
+  1. Click **Restart** when prompted.
+
+{{site.alert.note}}
+  Prior to v3.6.3.0, access plugin preferences as follows:
+   1. Open plugin preferences (**Preferences > Plugins** on macOS,
+      **File > Settings > Plugins** on Windows & Linux).
+   1. Select **Marketplace**,  select the Flutter plugin and click
+      **Install**.
+{{site.alert.end}}
 
 </div>
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
