@@ -39,11 +39,37 @@ the [Flutter 1.12.13][] release notes.
 
 Docs added and updated since the last announcement include:
 
+* The [animations landing page][] has been re-written.
+  This page now includes the animation decision tree
+  that helps you figure out which animation approach
+  is right for your needs. It also includes information
+  on the new [package for pre-canned Material widget animations][].
+  {% comment %}https://github.com/flutter/website/pull/3975{% endcomment %}
+* Updated plugin docs to cover the updated Android Plugin APIs
+  and also to describe Federated Plugins. Affected pages include:
+  * [Developing packages and plugins][]
+  * [Developing plugin packages][]
+  * [Supporting the new Android plugin APIs][]
+  * [Writing custom platform-specific code][]
+  {% comment %}https://github.com/flutter/website/pull/3816{% endcomment %}
+* Added an [Obfuscating Dart code][] page.
+  (Copied from the wiki and updated as per the latest release.)
+  {% comment %}https://github.com/flutter/website/pull/3846 and
+               https://github.com/flutter/website/pull/3849{% endcomment %}
+
 
 Other newness:
 
 
 Happy Fluttering!
+
+[animations landing page]: /docs/development/ui/animations
+[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
+[Developing plugin packages]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[Obfuscating Dart code]: /docs/deployment/obfuscate
+[package for pre-canned Material widget animations]: {{site.pub}}/packages/animations
+[Supporting the new Android plugin APIs]: /docs/development/packages-and-plugins/plugin-api-migration
+[Writing custom platform-specific code]: /docs/development/platform-integration/platform-channels
 
 
 ## New to Flutter?
