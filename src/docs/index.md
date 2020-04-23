@@ -28,7 +28,7 @@ To stay on top of Flutter announcements,
 including breaking changes, join the
 [flutter-announce][] Google group.
 
-**Apr xx, 2020
+**Apr 29, 2020**
 
 Flutter 1.17 is live!
 
@@ -43,22 +43,23 @@ Docs added and updated since the last announcement include:
   This page now includes the animation decision tree
   that helps you figure out which animation approach
   is right for your needs. It also includes information
-  on the new [package for pre-canned Material widget animations][].
-  {% comment %}https://github.com/flutter/website/pull/3975{% endcomment %}
-* Updated plugin docs to cover the updated Android Plugin APIs
+  on the new [package for pre-canned Material widget animations][]. {% comment %}https://github.com/flutter/website/pull/3975{% endcomment %}
+* Updated the plugin docs to cover the new Android Plugin APIs
   and also to describe Federated Plugins. Affected pages include:
   * [Developing packages and plugins][]
   * [Developing plugin packages][]
   * [Supporting the new Android plugin APIs][]
-  * [Writing custom platform-specific code][]
-  {% comment %}https://github.com/flutter/website/pull/3816{% endcomment %}
+  * [Writing custom platform-specific code][] {% comment %}https://github.com/flutter/website/pull/3816{% endcomment %}
 * Added an [Obfuscating Dart code][] page.
-  (Copied from the wiki and updated as per the latest release.)
-  {% comment %}https://github.com/flutter/website/pull/3846 and
-               https://github.com/flutter/website/pull/3849{% endcomment %}
+  (Moved from the wiki and updated as of the 1.16.2 release.) {% comment %}https://github.com/flutter/website/pull/3846 and https://github.com/flutter/website/pull/3849{% endcomment %}
 
 
 Other newness:
+
+[PENDING]
+
+For information on past releases, see the
+[What's new archive][].
 
 
 Happy Fluttering!

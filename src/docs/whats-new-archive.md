@@ -3,7 +3,7 @@ title: What's new archive
 description: An archive of what's new on the site.
 ---
 
-This archive contains current and previous announcements of
+This archive contains previous announcements of
 what's new on the site.
 
 To stay on top of Flutter announcements, including breaking changes,
@@ -83,7 +83,7 @@ Flutter 1.9 is live!
 
 For more information, see [Flutter news from GDD China:
 uniting Flutter on web and mobile, and introducing Flutter 1.9][]
-and the [1.9.1 release notes].[]
+and the [1.9.1 release notes][].
 
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.
@@ -134,7 +134,7 @@ Other relevant docs:
 
 Happy Fluttering!
 
-[1.9.1 release notes]: {{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1
+[1.9.1 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.9.1
 [building a web application]: /docs/get-started/web
 [`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
@@ -160,7 +160,7 @@ Flutter 1.7 is live!
 
 For more information, see [Announcing Flutter 1.7][]
 on the [Flutter Medium Publication][], and the
-[1.7.8 release notes][] on the [Flutter wiki][].
+[1.7.8 release notes][].
 
 New and updated docs on the site include:
 
@@ -189,7 +189,7 @@ endpoints in a range of values. For information about this
 component and how to customize it, see
 [Material RangeSlider in Flutter].
 
-[1.7.8 release notes]: {{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8
+[1.7.8 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.7.8
 [Animate a page route transition]: /docs/cookbook/animation/page-route-animation
 [Announcing Flutter 1.7]: {{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf
 [Cookbook]: /docs/cookbook
@@ -197,7 +197,6 @@ component and how to customize it, see
 [Debugging apps programmatically]: /docs/testing/code-debugging
 [DevTools]: /docs/development/tools/devtools
 [Flutter Medium Publication]: {{site.flutter-medium}}
-[Flutter wiki]: {{site.github}}//flutter/flutter/wiki
 [Flutter's build modes]: /docs/testing/build-modes
 [Material RangeSlider in Flutter]: {{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d
 [Performance best practices]: /docs/perf/rendering/best-practices
@@ -210,7 +209,7 @@ component and how to customize it, see
 
 [Flutter 1.5][] is live!
 
-For more information on updates, see the [release notes][]
+For more information on updates, see the [1.5.4 release notes][]
 or [download the release][].
 
 We are updating DartPad to work with Flutter. Try our new
@@ -219,13 +218,13 @@ We are updating DartPad to work with Flutter. Try our new
 [Basic Flutter layout codelab]: /docs/codelabs/layout-basics
 [download the release]: /docs/development/tools/sdk/archive
 [Flutter 1.5]: https://developers.googleblog.com/2019/05/Flutter-io19.html
-[release notes]: https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4
+[1.5.4 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
 
 ## **February 26, 2019**
 
 Flutter released [version 1.2][] at Mobile World Congress
-(MWC) in Barcelona. For more information, see the [release notes][]
-or [download the release][].
+(MWC) in Barcelona. For more information, see the
+[1.2.1 release notes][] or [download the release][].
 
 In addition, here are some recent new and updated docs:
 
@@ -260,7 +259,7 @@ If you have questions or comments about any of these docs,
 [file an issue]: {{site.repo.this}}/issues
 [introduction]: /docs/development/data-and-backend/state-mgmt/intro
 [Performance profiling]: /docs/perf/rendering/ui-performance
-[release notes]: https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1
+[1.2.1 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.2.1
 [simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
 [state management advice]: /docs/development/data-and-backend/state-mgmt/intro
 [thinking declaratively]: /docs/development/data-and-backend/state-mgmt/declarative
