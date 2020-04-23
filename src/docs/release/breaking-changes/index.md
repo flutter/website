@@ -22,7 +22,7 @@ The following guides (in alphabetical order) are available:
 * [Reversing the dependency between the scheduler and services layer][]
 * [Scrollable AlertDialog][]
 * [TestTextInput state reset][]
-* [TestWidgetsFlutterBinding clock][]
+* [TestWidgetsFlutterBinding.clock][]
 * [TextInputClient currentTextEditingValue][]
 * [The `forgetChild` method must call super][]
 * [The RenderEditable needs to be laid out before hit testing][]
