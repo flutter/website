@@ -135,7 +135,7 @@ To set up the animation:
   `Animations`.
 * Create a `Tween` for each property being animated.
   * The `Tween` defines a range of values.
-  * The `Twee`n's `animate` method requires the
+  * The `Tween`'s `animate` method requires the
     `parent` controller, and produces an `Animation`
     for that property.
 * Specify the interval on the `Animation`'s `curve` property.
@@ -316,7 +316,7 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
       [[highlight]]await _controller.forward().orCancel;[[/highlight]]
       [[highlight]]await _controller.reverse().orCancel;[[/highlight]]
     } on TickerCanceled {
-      // the animation got canceled, probably because we were disposed
+      // the animation got canceled, probably because it was disposed of
     }
   }
 
