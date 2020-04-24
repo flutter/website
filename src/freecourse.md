@@ -40,6 +40,6 @@ Sign up today, and look forward to:
     <div class="card-body">
         <h2 class="landing-page__cta__headline">Sign up today</h2>
         <p class="landing-page__cta__body">It’s free</p>
-        <a class="landing-page__cta__button btn btn-primary btn-cta" href="https://www.appbrewery.co/p/intro-to-flutter?utm_source=google&utm_medium=website%20banner&utm_campaign=app_brewery">Register</a>
+        <a class="landing-page__cta__button btn btn-primary btn-cta" href="https://www.google.com/url?q=https://www.appbrewery.co/p/intro-to-flutter?utm_source%3Dgoogle%26utm_medium%3Dfreecoursebutton%26utm_campaign%3Dapp_brewery&sa=D&source=hangouts&ust=1587844936675000&usg=AFQjCNHxUa-OrkH1HkbRLZXxeG60opZI_w">Register</a>
     </div>
 </section>
