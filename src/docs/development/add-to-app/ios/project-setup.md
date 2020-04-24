@@ -328,7 +328,7 @@ Host apps using CocoaPods can add Flutter to their Podfile:
 
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
-pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/{build_mode}/Flutter.podspec'
+pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
 
 Embed and link the generated App.framework, FlutterPluginRegistrant.framework,
