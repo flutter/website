@@ -141,6 +141,7 @@ API documentation:
 * [`CupertinoTabBar`][]
 * [`Localizations`][]
 * [`DefaultCupertinoLocalizations`][]
+* [`Semantics`][]
 * [`CupertinoApp`][]
 * [Internationalizing Flutter Apps][]
 
@@ -152,6 +153,7 @@ Relevant PR:
 [`CupertinoTabBar`]: {{site.api}}/flutter/cupertino/CupertinoTabBar-class.html
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [`DefaultCupertinoLocalizations`]: {{site.api}}/flutter/cupertino/DefaultCupertinoLocalizations-class.html
+[`Semantics`]: {{site.api}}/flutter/widgets/Semantics-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [Internationalizing Flutter Apps]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 [PR 55336: Adding tabSemanticsLabel to CupertinoLocalizations]: {{site.github}}/flutter/flutter/pull/55336
