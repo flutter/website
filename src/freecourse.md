@@ -2,14 +2,39 @@
 title: Free Flutter course from the App Brewery
 ---
 
-We’re excited to announce that CodePen,
-the leading social development environment for millions of
-front-end developers and designers, is adding support for Flutter!
-For web developers CodePen has long been a great place for
-sharing design explorations, new techniques, and ideas.
-Now with the introduction of Flutter,
-CodePen enables a new audience to learn,
-share and promote their creativity.
+Sign up for the **Introduction to Flutter Development with
+Dart** course, created by the App Brewery in
+collaboration with the Google Flutter team.
+
+The course contains the first 10 hours of the
+Complete Flutter Development Bootcamp and will teach you
+all the fundamentals of Flutter development to get you started.
+The curriculum, developed over months with the Flutter team,
+teaches you Flutter **from scratch**.
+
+This Flutter development course teaches you how to code
+using **Dart** to build beautiful, fast, native-quality iOS
+and Android apps, even if you have **ZERO** programming experience.
+It takes you **step-by-step** through engaging and fun
+video tutorials and teaches you everything you need to know
+to get started as a Flutter developer.
+
+The course includes **10+** hours of HD video tutorials and
+builds your programming knowledge while making **real world apps**,
+including a quiz, a choose-your-own-adventure game,
+and even a musical instrument!
+
+By the end of this course, you will be programming in **Dart**
+and be ready to start building apps with **Flutter**.
+
+You'll also have a portfolio of over 8 apps that will give
+you a taste of what it's like to work with Flutter and Dart.
+
+Sign up today, and look forward to:
+
+* Over 10 hours of HD 1080p video content.
+* Building over 8 fully-fledged apps.
+* Comprehensive course materials and curriculum.
 
 <section class="landing-page__cta card text-center">
     <div class="card-body">
