@@ -52,6 +52,12 @@ Docs added and updated since the last announcement include:
   * [Writing custom platform-specific code][] {% comment %}https://github.com/flutter/website/pull/3816{% endcomment %}
 * Added an [Obfuscating Dart code][] page.
   (Moved from the wiki and updated as of the 1.16.2 release.) {% comment %}https://github.com/flutter/website/pull/3846 and https://github.com/flutter/website/pull/3849{% endcomment %}
+* A new page on using [Xcode 11.4][] and how to manually update
+  your project. The tooling, which automatically updates your
+  configuration when possible, may direct you to this page
+  if it detects that it's needed.
+* A new page on [Managing plugins and dependencies in add-to-app][add2app]
+  when developing for Android.
 
 
 Other newness:
@@ -64,6 +70,8 @@ For information on past releases, see the
 
 Happy Fluttering!
 
+
+[add2app]: /docs/development/add-to-app/android/plugin-setup
 [animations landing page]: /docs/development/ui/animations
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [Developing plugin packages]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
@@ -71,6 +79,7 @@ Happy Fluttering!
 [package for pre-canned Material widget animations]: {{site.pub}}/packages/animations
 [Supporting the new Android plugin APIs]: /docs/development/packages-and-plugins/plugin-api-migration
 [Writing custom platform-specific code]: /docs/development/platform-integration/platform-channels
+[Xcode 11.4]: /docs/development/ios-project-migration
 
 
 ## New to Flutter?
