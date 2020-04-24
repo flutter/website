@@ -139,13 +139,6 @@ Similarly, dropping a ball attached to a spring falls
   [`AnimationController.animateWith`][] and
   [`SpringSimulation`][].
 
-## Common animation patterns
-
-Most UX or motion designers find that certain
-animation patterns are used repeatedly when designing a UI.
-This section lists some of the commonly
-used animation patterns, and tells you where to learn more.
-
 ## Pre-canned animations
 
 If you are using Material widgets, you might check
@@ -154,6 +147,13 @@ This package contains pre-built animations for
 the following commonly used patterns:
 `Container` transforms, shared axis transitions,
 fade through transitions, and fade transitions.
+
+## Common animation patterns
+
+Most UX or motion designers find that certain
+animation patterns are used repeatedly when designing a UI.
+This section lists some of the commonly
+used animation patterns, and tells you where to learn more.
 
 ### Animated list or grid
 
