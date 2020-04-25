@@ -199,7 +199,8 @@
       { "source": "/go/flutter-platform-idling", "destination": "https://docs.google.com/document/d/1RhSluOcHED6wEckY8CGK1mowRcWGAEGWraN6REPaORs/edit?usp=sharing", "type": 301 },
       { "source": "/go/material-button-system-updates", "destination": "https://docs.google.com/document/d/10Fbn59hiHkppqJ6y_1Rjwl7klN-OvJXQU3SFEqicpME/edit?usp=sharing", "type": 301 },
       { "source": "/go/generating-flutter-localizations", "destination": "https://docs.google.com/document/d/18saQREDwBMPA_svFe9IkU22ljNXsLpYxiy__jzPCzEc/edit?usp=sharing", "type": 301 },
-      { "source": "/go/layout-builder-optimization", "destination": "https://docs.google.com/document/d/1H8Z48vZAemV0Kw0It65JMoGhqVlDLQErkKZN8-r9pdU", "type": 301 }
+      { "source": "/go/layout-builder-optimization", "destination": "https://docs.google.com/document/d/1H8Z48vZAemV0Kw0It65JMoGhqVlDLQErkKZN8-r9pdU", "type": 301 },
+      { "source": "/go/slider-v2", "destination": "https://docs.google.com/document/d/1NCuRe-TUp8u6-Yzx_wrXZcqAwv5NP8hEJwUYSxVECwU/edit?usp=sharing", "type": 301 }
     ]
   }
 }
