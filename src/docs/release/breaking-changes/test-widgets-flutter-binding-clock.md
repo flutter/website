@@ -1,6 +1,6 @@
 ---
-title: `TestWidgetsFlutterBinding.clock` change
-description: The `Clock` implementation will now come from package:clock.
+title: TestWidgetsFlutterBinding.clock change
+description: The Clock implementation now comes from package:clock.
 ---
 
 ## Summary
@@ -61,20 +61,24 @@ testWidgets('some test', (WidgetTester tester) {
 
 ### Option #2: Change the api to accept a package:clock Clock
 
-If you own the api you are calling, you may want to change it to accept a Clock
-from `package:clock`. This is a judgement call based on how many places are
-calling this api with something other than a clock retreived from a
-`TestWidgetsFlutterBinding`.
+If you own the api you are calling,
+you may want to change it to accept a `Clock`
+from `package:clock`.
+This is a judgement call based on how many places are
+calling this api with something other than a clock
+retrieved from a `TestWidgetsFlutterBinding`.
 
-If you go this route your call sites that are passing `tester.binding.clock`
-will not need to be modified, but other call sites will.
+If you go this route your call sites that are passing
+`tester.binding.clock` won't need to be modified,
+but other call sites will.
 
 ### Option #3: Change the api to accept a `DateTime function()`
 
-If all you use the `Clock` for is the `now` function, and you control the api,
-then you can also change it to accept that function directly instead of a
-`Clock`. This makes it easily callable with either type of `Clock`, by passing
-a tearoff of the `now` method from either type of clock:
+If all you use the `Clock` for is the `now` function,
+and you control the api, then you can also change it
+to accept that function directly instead of a `Clock`.
+This makes it easily callable with either type of `Clock`,
+by passing a tearoff of the `now` method from either type of clock:
 
 Calling code before migration:
 
