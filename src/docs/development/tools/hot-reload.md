@@ -3,13 +3,15 @@ title: Hot reload
 description: Speed up development using Flutter's hot reload feature.
 ---
 
-Flutter's hot reload feature helps you quickly and easily experiment,
-build UIs, add features, and fix bugs.
+Flutter's hot reload feature helps you quickly and
+easily experiment, build UIs, add features, and fix bugs.
 Hot reload works by injecting updated source code files into
-the running [Dart Virtual Machine (VM)][].
-After the VM updates classes with the new versions of fields and functions,
+the running [Dart Virtual Machine (VM)][]. After the VM
+updates classes with the new versions of fields and functions,
 the Flutter framework automatically rebuilds the widget tree,
 allowing you to quickly view the effects of your changes.
+
+## How to perform a hot reload
 
 To hot reload a Flutter app:
 
@@ -20,7 +22,7 @@ To hot reload a Flutter app:
  1. Modify one of the Dart files in your project.
     Most types of code changes can be hot reloaded;
     for a list of changes that require a hot restart, see
-    [Limitations](#limitations).
+    [Special cases](#special-cases).
  1. If you're working in an IDE/editor that supports Flutter's IDE tools,
     select **Save All** (`cmd-s`/`ctrl-s`), or click the hot reload
     button on the toolbar.
@@ -42,30 +44,53 @@ Your app continues to execute from where it was prior to running
 the hot reload command. The code updates and execution continues.
 
 {{site.alert.secondary}}
-  **Hot reload vs hot restart** In the simplest terms,
-  a hot reload refreshes your running app without losing state.
-  A hot restart resets the app's state to its default values,
-  but is much faster than a cold start.
+  **What is the difference between hot reload, hot restart,
+  and full restart?**<br>
 
-  Flutter web supports hot restart but not
+  * **Hot reload** loads code changes into the VM and re-builds
+    the widget tree, preserving the app state;
+    it doesn’t rerun `main()` or `initState()`.
+    (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
+  * **Hot restart** loads code changes into the VM,
+    and restarts the Flutter app, losing the app state.
+    (`⇧⌘\` in IntelliJ and Android Studio, `⇧⌘F5` in VSCode)
+  * **Full restart** restarts the iOS, Android, or web app.
+    This takes longer because it also recompiles the
+    Java / Kotlin / ObjC / Swift code. On the web,
+    it also restarts the Dart Development Compiler.
+    There is no specific keyboard shortcut for this;
+    you need to stop and start the run configuration.
+
+  Flutter web currently supports hot restart but not
   hot reload.
 {{site.alert.end}}
+
+![Android Studio UI]({% asset development/tools/android-studio-run-controls.png @path %}){:width="550px"}<br>
+Controls for run, run debug, hot reload, and hot restart in Android Studio
 
 A code change has a visible effect only if the modified Dart code
 is run again after the change. Specifically,
 a hot reload causes all of the existing widgets to rebuild.
 Only code involved in the rebuilding of the widgets is
-automatically re-executed.
+automatically re-executed. The `main()` and `initState()`
+functions, for example, are not run again.
 
-The next sections describe common situations where the
-modified code _won't_ run again after a hot reload. In some cases,
-small changes to the Dart code enable you to continue using hot
-reload for your app.
+## Special cases
 
-## Compilation errors
+The next sections describe specific scenarios that involve
+hot reload. In some cases, small changes to the Dart code
+enable you to continue using hot reload for your app.
+
+### An app is killed
+
+Hot reload can break when the app is killed.
+For example, if the app was in the background for
+too long.
+
+### Compilation errors
 
 When a code change introduces a compilation error,
-hot reload always generates an error message similar to:
+hot reload generates an error message similar to:
 
 ```nocode
 Hot reload was rejected:
@@ -80,7 +105,74 @@ Hot reload was rejected:
 In this situation, simply correct the errors on the
 specified lines of Dart code to keep using hot reload.
 
-## Previous state is combined with new code
+### `CupertinoTabView`'s `builder`
+
+Hot reload won't apply changes made to a `builder`
+of a `CupertinoTabView`. For more information, see
+[Issue 43574][].
+
+### Enumerated types
+
+Hot reload doesn't work when enumerated types are
+changed to regular classes or regular classes are
+changed to enumerated types.
+
+For example:
+
+Before the change:
+<!-- skip -->
+```dart
+enum Color {
+  red,
+  green,
+  blue
+}
+```
+
+After the change:
+<!-- skip -->
+```dart
+class Color {
+  Color(this.i, this.j);
+  final int i;
+  final int j;
+}
+```
+
+### Changing fonts
+
+Hot reload supports changing assets, for the most part.
+However, if you change fonts, you'll need to hot restart.
+
+### Generic types
+
+Hot reload won't work when generic type declarations
+are modified.  For example, the following won't work:
+
+Before the change:
+<!-- skip -->
+```dart
+class A<T> {
+  T i;
+}
+```
+
+After the change:
+<!-- skip -->
+```dart
+class A<T, V> {
+  T i;
+  V v;
+}
+```
+
+### Native code
+
+If you've changed native code (such as Kotlin, Java, Swift,
+or Objective-C), you must perform a full restart (stop and
+restart the app) to see the changes take effect.
+
+### Previous state is combined with new code
 
 Flutter's stateful hot reload preserves the state of your app.
 This approach enables you to view the effect of the most
@@ -97,12 +189,12 @@ The result might be different behavior after hot reload
 versus a hot restart.
 
 {{site.alert.note}}
-  As of SDK 1.17, you can switch a widget from a
-  `StatefulWidget` to a `StatelessWidget` (or the reverse),
-  without requiring a hot restart.
+  As of Flutter 1.17, you can switch a widget
+  from a `StatefulWidget` to a `StatelessWidget`
+  (or the reverse), without requiring a hot restart.
 {{site.alert.end}}
 
-## Recent code change is included but app state is excluded
+### Recent code change is included but app state is excluded
 
 In Dart, [static fields are lazily initialized][const-new].
 This means that the first time you run a Flutter app and a
@@ -193,14 +285,15 @@ get bar => foo;     // ...or provide a getter.
 For more information, read about the [differences
 between the `const` and `final` keywords][const-new] in Dart.
 
-## Recent UI change is excluded
+### Recent UI change is excluded
 
 Even when a hot reload operation appears successful and generates no
 exceptions, some code changes might not be visible in the refreshed UI.
-This behavior is common after changes to the app's `main()` method.
+This behavior is common after changes to the app's `main()` or
+`initState()` methods.
 
 As a general rule, if the modified code is downstream of the root
-widget's build method, then hot reload behaves as expected.
+widget's `build()` method, then hot reload behaves as expected.
 However, if the modified code won't be re-executed as a result
 of rebuilding the widget tree, then you won't
 see its effects after hot reload.
@@ -237,82 +330,10 @@ executes the new version of `main()`,
 and builds a widget tree that displays the text `Hello`.
 
 However, if you hot reload the app after this change,
-`main()` is not re-executed, and the widget tree is
-rebuilt with the unchanged instance of `MyApp` as the root widget.
+`main()` and `initState()` are not re-executed,
+and the widget tree is rebuilt with the unchanged instance
+of `MyApp` as the root widget.
 This results in no visible change after hot reload.
-
-## Limitations
-
-You might also encounter other cases where hot reload is not
-supported. These include the following scenarios:
-
-* Changes on `initState()` are not reflected by hot reload.
-
-* Enumerated types are changed to regular classes
-  or regular classes are changed to enumerated types.
-  For example:
-
-  Before the change:
-  <!-- skip -->
-  ```dart
-  enum Color {
-    red,
-    green,
-    blue
-  }
-  ```
-
-  After the change:
-  <!-- skip -->
-  ```dart
-  class Color {
-    Color(this.i, this.j);
-    final int i;
-    final int j;
-  }
-  ```
-
-* Generic type declarations are modified.
-  For example, hot reload won't work
-  if you change a type declaration as follows:
-
-  Before the change:
-  <!-- skip -->
-  ```dart
-  class A<T> {
-    T i;
-  }
-  ```
-
-  After the change:
-  <!-- skip -->
-  ```dart
-  class A<T, V> {
-    T i;
-    V v;
-  }
-  ```
-
-* Prior to Flutter SDK 1.17, if you modified a
-  class definition from extending `StatelessWidget`
-  to `StatefulWidget` (or the reverse),
-  the state of your app after hot reload was often
-  incompatible with the new changes, and you might
-  have seen an error similar to:
-
-  ```nocode
-  MyWidget is not a subtype of StatelessWidget
-  ```
-
-* Hot reload won't apply changes made to a `builder`
-  of a `CupertinoTabView`. For more information, see
-  [Issue 43574][].
-
-* Hot reload can break when the app is killed.
-  For example, if the app was in the background for
-  too long.
-
-In each of these situations, perform a hot restart instead.
 
 ## How it works
 
@@ -331,8 +352,9 @@ The source code from those libraries is compiled into
 The Dart VM re-loads all libraries from the new kernel file.
 So far no code is re-executed.
 
-The hot reload mechanism then causes the Flutter framework to trigger a
-rebuild/re-layout/repaint of all existing widgets and render objects.
+The hot reload mechanism then causes the Flutter framework
+to trigger a rebuild/re-layout/repaint of all existing
+widgets and render objects.
 
 
 [const-new]: https://news.dartlang.org/2012/06/const-static-final-oh-my.html
