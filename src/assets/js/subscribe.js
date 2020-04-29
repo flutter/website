@@ -1126,5 +1126,67 @@ var subscribePreferencesData = {
     'url': 'https://services.google.com/fb/submissions/flutterpreferences/'
 };
 
+var formEl = document.querySelector('form');
+var firstNameEl = document.querySelector('#first-name');
+var lastNameEl = document.querySelector('#last-name');
+var emailAddressEl = document.querySelector('#email-address')
+var languageEl = document.querySelector('#language');
+var countryEl = document.querySelector('#country');
+var devUpdatesElem = document.querySelector("#sign-up")
+var submitEl = document.querySelector('#submit-btn');
 
-console.log(subscribeData);
+// Set up the country <select> element.
+var countries = subscribeData.fields.Country.choices;
+for (var idx in countries) {
+    var c = countries[idx];
+    countryEl.appendChild(new Option(c[1], c[0]));
+}
+countryEl.value = 'US';
+
+// Set up the language <select> element.
+var languages = subscribeData.fields.LanguagePreference.choices;
+for (var idx in languages) {
+    var l = languages[idx];
+    languageEl.appendChild(new Option(l[1], l[0]));
+}
+
+submitEl.addEventListener("click", function(event) {
+    var request = new XMLHttpRequest();
+    var url = new URL(subscribeData.url);
+    var params = new URLSearchParams();
+
+    if (firstNameEl.value) {
+        params.set("FirstName", firstNameEl.value);
+    }
+
+    if (lastNameEl.value) {
+        params.set("LastName", lastNameEl.value);
+    }
+
+    if (emailAddressEl.value) {
+        params.set("EmailAddress", emailAddressEl.value);
+    }
+
+    if (languageEl.value) {
+        params.set("LanguagePreference", languageEl.value);
+    }
+
+    if (countryEl.value) {
+        params.set("Country", countryEl.value);
+    }
+
+    if (devUpdatesElem.value) {
+        params.set("FlutterDevUpdates", devUpdatesElem.value == "on" ? "true" : "false");
+    }
+
+    url.search = params.toString();
+
+    console.log(url);
+    request.open("POST", url.toString());
+    request.onload = function(e) {
+        var result = request.responseText;
+        console.log('response:');
+        console.log(result);
+    };
+    request.send();
+});

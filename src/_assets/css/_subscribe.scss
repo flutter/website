@@ -1,14 +1,11 @@
-$bg-color: F8F8FA;
+$bg-color: #F8F8FA;
 $form-blue: #E1EAF2;
 $required-red: #FF0000;
 $mobile-size: 640px;
 
 .form-page {
+  padding-top: 48px;
   background-color: $bg-color;
-}
-
-.form-header {
-  margin-top: 48px;
 }
 
 .subscribe-form {
