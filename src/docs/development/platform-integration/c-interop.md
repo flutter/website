@@ -25,17 +25,6 @@ exposes it through a Dart plugin named "native_add".
 {{ site.alert.note }}
   The dart:ffi library is [in beta][ffi issue],
   and breaking API changes might still happen.
-
-  Using the feature requires a Flutter 1.10.x
-  dev channel build. To switch to the dev channel and
-  upload the latest dev version, do the following:
-
-  ```terminal
-  $ flutter channel dev
-  $ flutter upgrade
-  ```
-  For more information on Flutter's channels,
-  see [Upgrading Flutter][].
 {{ site.alert.end }}
 
 ### Dynamic vs static linking
