@@ -3,9 +3,58 @@ title: Subscribe
 layout: base
 show_banner: False
 js:
-  - url: https://www.google.com/js/gweb/analytics/autotrack.js
-  - defer: true
-    url: /assets/js/subscribe.js
+- url: https://www.google.com/js/gweb/analytics/autotrack.js
+- defer: true
+  url: /assets/js/subscribe.js
 ---
 
-<p>test</p>
+<div class="form-page">
+    <section class="form-header row text-center">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="mt-0">Subscribe to developer updates</h2>
+            Stay in the loop on important Flutter updates and announcements.
+        </div>
+    </section>
+
+    <section class="subscribe-form">
+        <form>
+            <div class="horizontal">
+                <div class="group">
+                    <label for="first-name">First name</label>
+                    <input id="first-name" type="text"/>
+                </div>
+                <div class="group">
+                    <label for="last-name">Last name</label>
+                    <input id="last-name" type="text"/>
+                </div>
+            </div>
+
+            <div class="group">
+                <label for="email-address">Your e-mail address <span class="required">*</span></label>
+                <input id="email-address" type="text"/>
+            </div>
+            <div class="horizontal">
+                <div class="group">
+                    <label for="language">Language <span class="required">*</span></label>
+                    <select id="language" required></select>
+                </div>
+                <div class="group">
+                    <label for="country">Country</label>
+                    <select id="country"></select>
+                </div>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="sign-up" name="signup">
+                <label for="sign-up">Sign me up for the latest Flutter developer product news. <span
+                        class="required">*</span></label>
+            </div>
+            <p class="tos">By using this service, you agree to be bound by our <a href="">Google Terms of Service</a>. I
+                acknowledge that the information provided in this form will be subject to <a href="">Google's Privacy
+                    Policy</a></p>
+            <button class="btn btn-primary">Subscribe</button>
+        </form>
+        <div class="flutter-logo">
+            {% asset 'flutter-logomark-320px.png' alt='Flutter logo' width="130" %}
+        </div>
+    </section>
+</div>

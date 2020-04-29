@@ -2,9 +2,8 @@ new gweb.analytics.AutoTrack({
     profile: 'UA-5436354-2'
 });
 
-console.log('subscribe');
-
-var obj = {
+// Formbox data
+var subscribeData = {
     'fields': {
         'Country': {
             'choices': [
@@ -1087,7 +1086,7 @@ var obj = {
     'url': 'https://services.google.com/fb/submissions/fluttersubscribe/'
 };
 
-var obj2 = {
+var subscribePreferencesData = {
     'fields': {
         'EmailAddress': {
             'error_messages': {
@@ -1126,3 +1125,6 @@ var obj2 = {
     'google_analytics_account': 'UA-5436354-2',
     'url': 'https://services.google.com/fb/submissions/flutterpreferences/'
 };
+
+
+console.log(subscribeData);
