@@ -1,5 +1,6 @@
 ---
 title: Work with long lists
+description: Use ListView.builder to implement a long or infinite list.
 prev:
   title: Place a floating app bar above a list
   path: /docs/cookbook/lists/floating-app-bar
@@ -54,7 +55,7 @@ ListView.builder(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

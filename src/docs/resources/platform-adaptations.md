@@ -1,10 +1,8 @@
 ---
 title: Platform specific behaviors and adaptations
+description: Learn more about Flutter's platform adaptiveness.
 ---
 
- {{site.alert.note}}
-  Do you build Flutter apps with platform-specific look & feel for both iOS and Android? We'd like to talk to you! **Participate in our user study and receive a gift code.** More info: <a href="https://forms.gle/i7uWQohBdGh2nanWA" target="_blank">https://forms.gle/i7uWQohBdGh2nanWA</a>
-{{site.alert.end}}
 
 ## Adaptation philosophy
 

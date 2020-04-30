@@ -139,8 +139,9 @@
     life.
   logo_src: showcase/cards/alibaba-logo.png
   video_id: jtYk3gWRSw0
+  learn_more_cta: Learn more
+  learn_more_link: https://www.youtube.com/watch?v=jtYk3gWRSw0
   app_store_link: https://itunes.apple.com/cn/app/%E9%97%B2%E9%B1%BC-%E6%8C%82%E9%97%B2%E9%B1%BC-%E9%97%B2%E7%BD%AE%E8%83%BD%E6%8D%A2%E9%92%B1/id510909506?mt=8
-  play_store_link: https://play.google.com/store/apps/details?id=com.taobao.idlefish&e=-EnableAppDetailsPageRedesign
   video_frame_image: showcase/video-frames/alibaba@.jpg
   quote_testimonial: true
   quote: >
@@ -177,7 +178,7 @@
   logo_src: showcase/cards/dream11-logo.png
   video_id: lCeRZhoqEP8
   learn_more_cta: Learn more
-  learn_more_link: https://www.powerpredictorapp.com/
+  learn_more_link: https://www.dream11.com/download-app
   video_frame_image: showcase/video-frames/dream11@.jpg
   quote_testimonial: true
   quote: >
@@ -257,3 +258,13 @@
   logo_src: showcase/cards/green_tea-logo.png
   logo_has_name: true
   card_image: showcase/cards/green_tea-top@.jpg
+
+- name: Ebay
+  description: >
+    The eBay Motors app is a powerful tool for browsing,
+    buying, and selling vehicles directly from consumers’ phones.
+  logo_src: showcase/cards/ebay-logo.png
+  app_store_link: https://apps.apple.com/us/app/ebay-motors/id1456156090
+  play_store_link: https://play.google.com/store/apps/details?id=com.ebay.motorsapp
+  logo_has_name: true
+  card_image: showcase/cards/ebay-top@.jpg

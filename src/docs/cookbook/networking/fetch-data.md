@@ -1,11 +1,12 @@
 ---
 title: Fetch data from the internet
+description: How to fetch data over the internet using the http package.
 prev:
   title: Send data to a new screen
   path: /docs/cookbook/navigation/passing-data
 next:
-  title: Make authenticated requests
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Send data to the internet
+  path: /docs/cookbook/networking/send-data
 ---
 
 Fetching data from the internet is necessary for most apps.
@@ -24,9 +25,10 @@ This recipe uses the following steps:
 The [`http`][] package provides the
 simplest way to fetch data from the internet.
 
-To install the `http` package, add it to the dependencies section
-of the `pubspec.yaml`. You can find the latest version of the
-[http package][] the pub.dev.
+To install the `http` package, add it to the
+dependencies section of the `pubspec.yaml` file.
+You can find the latest version of the
+[`http` package][] the pub.dev.
 
 ```yaml
 dependencies:
@@ -42,13 +44,13 @@ import 'package:http/http.dart' as http;
 
 ## 2. Make a network request
 
-In this example, fetch a sample post from the
-[JSONPlaceholder][] using the [http.get()][] method.
+This recipe covers how to fetch a sample album from the
+[JSONPlaceholder][] using the [`http.get()`][] method.
 
 <!-- skip -->
 ```dart
-Future<http.Response> fetchPost() {
-  return http.get('https://jsonplaceholder.typicode.com/posts/1');
+Future<http.Response> fetchAlbum() {
+  return http.get('https://jsonplaceholder.typicode.com/albums/1');
 }
 ```
 
@@ -63,14 +65,15 @@ The `http.get()` method returns a `Future` that contains a `Response`.
 ## 3. Convert the response into a custom Dart object
 
 While it's easy to make a network request, working with a raw
-`Future<http.Response>` isn't very convenient. To make your life easier,
+`Future<http.Response>` isn't very convenient.
+To make your life easier,
 convert the `http.Response` into a Dart object.
 
-### Create a `Post` class
+### Create an `Album` class
 
-First, create a `Post` class that contains the data from the
+First, create an `Album` class that contains the data from the
 network request. It includes a factory constructor that
-creates a `Post` from JSON.
+creates an `Album` from JSON.
 
 Converting JSON by hand is only one option.
 For more information, see the full article on
@@ -78,96 +81,113 @@ For more information, see the full article on
 
 <!-- skip -->
 ```dart
-class Post {
+class Album {
   final int userId;
   final int id;
   final String title;
-  final String body;
 
-  Post({this.userId, this.id, this.title, this.body});
+  Album({this.userId, this.id, this.title});
 
-  factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
       userId: json['userId'],
       id: json['id'],
       title: json['title'],
-      body: json['body'],
     );
   }
 }
 ```
 
-### Convert the `http.Response` to a `Post`
+### Convert the `http.Response` to an `Album`
 
-Now, use the following steps to update the `fetchPost()`
-function to return a `Future<Post>`:
+Now, use the following steps to update the `fetchAlbum()`
+function to return a `Future<Album>`:
 
-  1. Convert the response body into a JSON `Map` with the `dart:convert`
-     package.
-  2. If the server returns an "OK" response with a status code of 200, convert
-     the JSON `Map` into a `Post` using the `fromJson()` factory method.
-  3. If the server returns an unexpected response, throw an error.
+  1. Convert the response body into a JSON `Map` with
+     the `dart:convert` package.
+  2. If the server does return an OK response with a status code of
+     200, then convert the JSON `Map` into an `Album`
+     using the `fromJson()` factory method.
+  3. If the server does not return an OK response with a status code of 200,
+     then throw an exception.
+     (Even in the case of a "404 Not Found" server response,
+     throw an exception. Do not return `null`.
+     This is important when examining
+     the data in `snapshot`, as shown below.)
 
 <!-- skip -->
 ```dart
-Future<Post> fetchPost() async {
-  final response =
-      await http.get('https://jsonplaceholder.typicode.com/posts/1');
+Future<Album> fetchAlbum() async {
+  final response = await http.get('https://jsonplaceholder.typicode.com/albums/1');
 
   if (response.statusCode == 200) {
-    // If server returns an OK response, parse the JSON.
-    return Post.fromJson(json.decode(response.body));
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return Album.fromJson(json.decode(response.body));
   } else {
-    // If that response was not OK, throw an error.
-    throw Exception('Failed to load post');
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load album');
   }
 }
 ```
 
-Hooray! Now you've got a function that fetches a post from the
-internet.
+Hooray!
+Now you've got a function that fetches an album from the internet.
 
 ## 4. Fetch the data
 
-Call the fetch method in either the
+Call the `fetch()` method in either the
 [`initState()`][] or [`didChangeDependencies()`][]
 methods.
 
 The `initState()` method is called exactly once and then never again.
 If you want to have the option of reloading the API in response to an
 [`InheritedWidget`][] changing, put the call into the
-`didChangeDependencies()` method. See [`State`][] for more details.  
+`didChangeDependencies()` method.
+See [`State`][] for more details.
+
 <!-- skip -->
 ```dart
 class _MyAppState extends State<MyApp> {
-  Future<Post> post;
+  Future<Album> futureAlbum;
 
   @override
   void initState() {
     super.initState();
-    post = fetchPost();
+    futureAlbum = fetchAlbum();
   }
 ```
 
-This Future will be used in the next step.
+This Future is used in the next step.
 
 ## 5. Display the data
-To to display the data on screen, use the
+
+To display the data on screen, use the
 [`FutureBuilder`][] widget.
 The `FutureBuilder` widget comes with Flutter and
-makes it easy to work with async data sources.
+makes it easy to work with asynchronous data sources.
 
 You must provide two parameters:
 
-  1. The `Future` you want to work with. In this case, the future returned from
-  the `fetchPost()` function.
-  2. A `builder` function that tells Flutter what to render, depending on the
-  state of the `Future`: loading, success, or error.
+  1. The `Future` you want to work with.
+     In this case, the future returned from
+     the `fetchAlbum()` function.
+  2. A `builder` function that tells Flutter
+     what to render, depending on the
+     state of the `Future`: loading, success, or error.
+
+Note that `snapshot.hasData` only returns `true`
+when the snapshot contains a non-null data value.
+This is why the `fetchAlbum` function should throw an exception
+even in the case of a "404 Not Found" server response.
+If `fetchAlbum` returns `null`
+then the spinner displays indefinitely.
 
 <!-- skip -->
 ```dart
-FutureBuilder<Post>(
-  future: post,
+FutureBuilder<Album>(
+  future: futureAlbum,
   builder: (context, snapshot) {
     if (snapshot.hasData) {
       return Text(snapshot.data.title);
@@ -181,15 +201,16 @@ FutureBuilder<Post>(
 );
 ```
 
-## Why is fetchPost() called in initState()?
+## Why is fetchAlbum() called in initState()?
 
-Although it's convenient, it's not recommended to put an API call in a
-`build()` method.
+Although it's convenient,
+it's not recommended to put an API call in a `build()` method.
 
-Flutter calls the `build()` method every time it wants to change anything
-in the view, and this happens surprisingly often. If you leave the fetch
-call in your `build()` method, you'll flood the API with unnecessary calls
-and slow down your app.
+Flutter calls the `build()` method every time it needs
+to change anything in the view,
+and this happens surprisingly often.
+Leaving the `fetch` call in your `build()` method
+floods the API with unnecessary calls and slows down your app.
 
 ## Testing
 
@@ -208,33 +229,33 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-Future<Post> fetchPost() async {
+Future<Album> fetchAlbum() async {
   final response =
-      await http.get('https://jsonplaceholder.typicode.com/posts/1');
+      await http.get('https://jsonplaceholder.typicode.com/albums/1');
 
   if (response.statusCode == 200) {
-    // If the call to the server was successful, parse the JSON.
-    return Post.fromJson(json.decode(response.body));
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return Album.fromJson(json.decode(response.body));
   } else {
-    // If that call was not successful, throw an error.
-    throw Exception('Failed to load post');
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load album');
   }
 }
 
-class Post {
+class Album {
   final int userId;
   final int id;
   final String title;
-  final String body;
 
-  Post({this.userId, this.id, this.title, this.body});
+  Album({this.userId, this.id, this.title});
 
-  factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
       userId: json['userId'],
       id: json['id'],
       title: json['title'],
-      body: json['body'],
     );
   }
 }
@@ -249,12 +270,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-Future<Post> post;
+  Future<Album> futureAlbum;
 
   @override
   void initState() {
     super.initState();
-    post = fetchPost();
+    futureAlbum = fetchAlbum();
   }
 
   @override
@@ -269,8 +290,8 @@ Future<Post> post;
           title: Text('Fetch Data Example'),
         ),
         body: Center(
-          child: FutureBuilder<Post>(
-            future: post,
+          child: FutureBuilder<Album>(
+            future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Text(snapshot.data.title);
@@ -295,8 +316,8 @@ Future<Post> post;
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [`http`]: {{site.pub-pkg}}/http
-[http.get()]: {{site.pub-api}}/http/latest/http/get.html
-[http package]: {{site.pub}}/packages/http#-installing-tab-
+[`http.get()`]: {{site.pub-api}}/http/latest/http/get.html
+[`http` package]: {{site.pub-pkg}}/http#-installing-tab-
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html

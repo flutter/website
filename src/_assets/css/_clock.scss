@@ -10,6 +10,33 @@
   font-family: $site-font-family-alt;
   font-size: 18px;
 
+  &__center-block {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__category-winner {
+    margin-top: 3rem;
+
+    @include media-breakpoint-up(md) {
+      h3 {
+        font-size: 1.9rem;
+      }
+    }
+  }
+
+  &__link-lightblue {
+    color: #60CAF6;
+
+    &:hover {
+      color: #60CAF6;
+    }
+  }
+
   // Background texture shared by all sections
   &__texture {
     height: 100%;
@@ -37,11 +64,16 @@
       margin: 120px 27px 40px 27px;
     }
 
-    .youtube-link, .twitter-link {
+    .youtube-link, .twitter-link, .results-link {
       color: $twitter-color;
+      margin-left: 12px;
 
       i {
         margin-right: 5px;
+      }
+
+      &:first-child {
+        margin-left: 0;
       }
     }
 
@@ -291,34 +323,23 @@
   }
 
   &__wtm-logos {
-
     .logos-heading {
       font-size: 16px;
       margin-bottom: 24px;
     }
 
     .logos-container {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      height: 250px;
-      justify-content: space-around;
+      text-align: center;
     }
 
     .wtm-logo {
       max-height: 35px;
-    }
+      display: block;
+      margin: 45px auto 0;
 
-    @include media-breakpoint-up(sm) {
-
-      .logos-container {
-        flex-direction: row;
-        height: auto;
-        justify-content: space-evenly;
-      }
-
-      .wtm-logo {
-        max-width: 30%;
+      @include media-breakpoint-up(md) {
+        display: inline;
+        margin: 0 30px;
 
         &:first-of-type {
           max-height: 30px;
@@ -329,25 +350,18 @@
         }
       }
     }
+  }
+
+  // Shared styles for the winners sections, higlight reel
+  &__row {
+    padding: 3rem 0;
+  }
+
+  &__reel {
+    padding-top: 3rem;
 
     @include media-breakpoint-up(lg) {
-
-      .logos-heading {
-        font-size: 20px;
-        margin-bottom: 40px;
-      }
-
-      .wtm-logo {
-        max-height: initial;
-
-        &:first-of-type {
-          max-height: 40px;
-        }
-  
-        &:last-of-type {
-          max-height: initial;
-        }
-      }
+      padding-top: 0;
     }
   }
 
@@ -475,6 +489,20 @@
     }
   }
 
+  //clock alert
+  &__closed{
+    padding-bottom: 0;
+    font-size: 1.25rem;
+    &__texture{
+      background-color: $flutter-color-dark-blue;
+      background-image: none;
+    }
+    &__text{
+      font-family: $site-font-family-alt;
+      margin: 1.25rem;
+    }
+  }
+  
   // Styles for section clock__getting (Getting Started)
   &__getting {
     ol {
@@ -743,7 +771,11 @@
   //dropdown button
   .dropdown__button {
     box-shadow: none;
-    outline: none;
+
+    &:focus {
+      outline: 1px dotted #212121;
+      outline: 1px auto -webkit-focus-ring-color;
+    }
   }
 
   .code-font {
@@ -769,5 +801,12 @@
     &#contest {
       top: -40px;
     }
+  }
+
+  &__honorable-mentions {
+    columns: 300px 3;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 }

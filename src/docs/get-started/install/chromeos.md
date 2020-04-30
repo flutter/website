@@ -1,5 +1,6 @@
 ---
 title: Chrome OS install
+description: How to install on Chrome OS.
 short-title: Chrome OS
 next:
   title: Set up an editor
@@ -132,5 +133,5 @@ this functionality work with your Chrome OS
 targeted Flutter app.
 
 
-[how to enable developer mode on your Chromebook]: https://www.androidcentral.com/how-enable-developer-mode-chrome-os
+[how to enable developer mode on your Chromebook]: https://chromium.googlesource.com/chromiumos/docs/+/master/developer_mode.md
 

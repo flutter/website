@@ -1,7 +1,7 @@
 ---
 title: Upgrading Flutter
 short-title: Upgrading
-description: Upgrading Flutter
+description: How to upgrade Flutter.
 ---
 
 No matter which one of the Flutter [release channels][]

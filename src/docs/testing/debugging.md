@@ -99,7 +99,7 @@ of the widget tree, but if you want a greater level of detail,
 or you want a verbose text-based dump of the widget,
 layer, or render trees, see
 [Debug flags: application layers][]
-in the [Debugging Flutter apps programatically][] page.
+in the [Debugging Flutter apps programmatically][] page.
 
 ## Debug mode assertions
 
@@ -121,7 +121,7 @@ When an invariant is violated, it's reported to the
 console, with some context information to help track
 down the source of the problem.
 
-For more information, see [Assert][] in the
+For more information, see [`Assert`][] in the
 [Dart language tour][].
 
 ## Debugging animations
@@ -230,7 +230,7 @@ You might find the following docs useful:
 * [Flutter performance profiling][]
 * [Using an OEM debugger][]
 * [Flutter's modes][]
-* [Debugging Flutter apps programatically][]
+* [Debugging Flutter apps programmatically][]
 * [DevTools][]
 * [Android Studio/IntelliJ][]
 * [VS Code][]
@@ -238,7 +238,7 @@ You might find the following docs useful:
 
 [Flutter enabled IDE/editor]: /docs/get-started/editor
 
-[Debugging Flutter apps programatically]: /docs/testing/code-debugging
+[Debugging Flutter apps programmatically]: /docs/testing/code-debugging
 [perform traces programmatically]: /docs/testing/code-debugging#tracing-dart-code-performance
 [Debug flags: application layers]: /docs/testing/code-debugging#debug-flags-application-layers
 [Debug flags: performance]: /docs/testing/code-debugging#debug-flags-performance
@@ -270,5 +270,5 @@ You might find the following docs useful:
 [profile mode]: /docs/testing/build-modes#profile
 [release mode]: /docs/testing/build-modes#release
 
-[Assert]: {{site.dart-site}}/guides/language/language-tour#assert
+[`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour

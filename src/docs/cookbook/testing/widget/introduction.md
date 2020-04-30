@@ -1,5 +1,6 @@
 ---
 title: An introduction to widget testing
+description: Learn more about widget testing in Flutter.
 short-title: Introduction
 prev:
   title: Mock dependencies using Mockito
@@ -58,6 +59,7 @@ dev_dependencies:
 Next, create a widget for testing. For this recipe,
 create a widget that displays a `title` and `message`.
 
+<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   final String title;
@@ -127,7 +129,7 @@ void main() {
 }
 ```
 
-#### Note
+#### Notes about the pump() methods
 
 After the initial call to `pumpWidget()`, the `WidgetTester` provides
 additional ways to rebuild the same widget. This is useful if you're
@@ -137,13 +139,23 @@ For example, tapping a button calls `setState()`, but Flutter won't
 automatically rebuild your widget in the test environment.
 Use one of the following methods to ask Flutter to rebuild the widget.
 
-[`tester.pump()`][]
-: Triggers a rebuild of the widget after a given duration.
+[`tester.pump(Duration duration)`][]
+: Schedules a frame and triggers a rebuild of the widget.
+  If a `Duration` is specified, it advances the clock by
+  that amount and schedules a frame. It does not schedule
+  multiple frames even if the duration is longer than a
+  single frame.
+
+{{site.alert.note}}
+  To kick off the animation, you need to call `pump()`
+  once (with no duration specified) to start the ticker.
+  Without it, the animation does not start.
+{{site.alert.end}}
 
 [`tester.pumpAndSettle()`][]
-: Repeatedly calls pump with the given duration until
+: Repeatedly calls `pump()` with the given duration until
   there are no longer any frames scheduled.
-  This essentially waits for all animations to complete.
+  This, essentially, waits for all animations to complete.
 
 These methods provide fine-grained control over the build lifecycle,
 which is particularly useful while testing.
@@ -282,7 +294,7 @@ class MyWidget extends StatelessWidget {
 [introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`Matcher`]: {{api}}/package-matcher_matcher/Matcher-class.html
 [`pumpWidget()`]: {{api}}/flutter_test/WidgetTester/pumpWidget.html
-[`tester.pump()`]: {{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html
+[`tester.pump(Duration duration)`]: {{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html
 [`tester.pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
 [`testWidgets()`]: {{api}}/flutter_test/testWidgets.html
 [`WidgetTester`]: {{api}}/flutter_test/WidgetTester-class.html

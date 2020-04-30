@@ -18,7 +18,7 @@ This page covers the following topics:
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
 * [Signing the app](#signing-the-app)
-* [R8](#r8)
+* [Shrinking your code with R8](#shrinking-your-code-with-r8)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
@@ -74,10 +74,11 @@ On Windows, use the following command:
 keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
-{{site.alert.warning}}
-  Keep the `keystore` file private;
-  do not check it into public source control.
-{{site.alert.end}}
+This command stores the `key.jks` file in your home
+directory. If you want to store it elsewhere, change
+the argument you pass to the `-keystore` parameter.
+**However, keep the `keystore` file private;
+don't check it into public source control!**
 
 {{site.alert.note}}
 * The `keytool` command might not be in your path&mdash;it's
@@ -87,8 +88,10 @@ keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg R
   'Java binary at:'. Then use that fully qualified path
   replacing `java` (at the end) with `keytool`.
   If your path includes space-separated names,
-  such as `Program Files`, place quotes around the
-  space-separated names. For example: `/"Program Files"/`
+  such as `Program Files`, use platform-appropriate
+  notation for the names. For example, on Mac/Linux
+  use `Program\ Files`, and on Windows use
+  `"Program Files"`.
 
 * The `-storetype JKS` tag is only required for Java 9
   or newer. As of the Java 9 release,
@@ -109,7 +112,7 @@ storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
 
 {{site.alert.warning}}
   Keep the `key.properties` file private;
-  do not check it into public source control.
+  don't check it into public source control.
 {{site.alert.end}}
 
 ### Configure signing in gradle
@@ -118,10 +121,12 @@ Configure signing for your app by editing the
 `<app dir>/android/app/build.gradle` file.
 
 <ol markdown="1">
-<li markdown="1">Replace the following:
+<li markdown="1"> Add code before `android` block:
 
 ```
    android {
+      ...
+   }
 ```
 
    With the keystore information from your properties file:
@@ -134,10 +139,15 @@ Configure signing for your app by editing the
    }
 
    android {
+         ...
+   }
 ```
+   
+   Load the `key.properties` file into the `keystoreProperties` object.
+
 </li>
 
-<li markdown="1"> Replace the following:
+<li markdown="1"> Add code before `buildTypes` block:
 
 ```
    buildTypes {
@@ -157,7 +167,7 @@ Configure signing for your app by editing the
        release {
            keyAlias keystoreProperties['keyAlias']
            keyPassword keystoreProperties['keyPassword']
-           storeFile file(keystoreProperties['storeFile'])
+           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
            storePassword keystoreProperties['storePassword']
        }
    }
@@ -167,12 +177,23 @@ Configure signing for your app by editing the
        }
    }
 ```
+
+   Configure the `signingConfigs` block in your module's `build.gradle` file.
+
 </li>
 </ol>
 
 Release builds of your app will now be signed automatically.
 
-## R8
+{{site.alert.note}}
+  You may need to run `flutter clean` after changing the gradle file.
+  This prevents cached builds from affecting the signing process.
+{{site.alert.end}}
+
+For more information on signing your app, see
+[Sign your app][] on developer.android.com.
+
+## Shrinking your code with R8
 
 [R8][] is the new code shrinker from Google, and it's enabled by default
 when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
@@ -238,21 +259,33 @@ the Play Store.
   [About Android App Bundles][bundle2].
 {{site.alert.end}}
 
+{{site.alert.warning}}
+  Recently, the Flutter team has received [several reports][crash-issue]
+  from developers indicating they are experiencing app
+  crashes on certain devices on Android 6.0. If you are targeting
+  Android 6.0, use the following steps:
+
+  * If you build an App Bundle
+    Edit `android/gradle.properties` and add the flag:
+    `android.bundle.enableUncompressedNativeLibs=false`.
+
+  * If you build an APK
+    Make sure `android/app/src/AndroidManifest.xml`
+    doesn't set `android:extractNativeLibs=false`
+    in the `<application>` tag.
+
+  For more information, see the [public issue][crash-issue].
+{{site.alert.end}}
+
 ### Build an app bundle
 
 This section describes how to build a release app bundle.
 If you completed the signing steps,
 the app bundle will be signed.
-
-{{site.alert.warning}}
-  Recently, the Flutter team has received several reports
-  from developers indicating they are experiencing app
-  crashes on certain devices on Android 6.0 when building
-  an app bundle.
-  While the Android team is working to identify a feasible
-  solution, you might try [splitting the APK as](#what-is-a-fat-apk)
-  a temporary workaround. For more information, see [Issue 36822][].
-{{site.alert.end}}
+At this point, you might consider [obfuscating your Dart code][]
+to make it more difficult to reverse engineer. Obfuscating
+your code involves adding a couple flags to your build command,
+and maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
@@ -297,6 +330,9 @@ APK for each target ABI (Application Binary Interface).
 
 If you completed the signing steps,
 the APK will be signed.
+At this point, you might consider [obfuscating your Dart code][]
+to make it more difficult to reverse engineer. Obfuscating
+your code involves adding a couple flags to your build command.
 
 From the command line:
 
@@ -305,7 +341,7 @@ From the command line:
 1. Run `flutter build apk --split-per-abi`<br>
    (The `flutter build` command defaults to `--release`.)
 
-This command results in two APK files:
+This command results in three APK files:
 
 * `<app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
 * `<app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
@@ -330,22 +366,6 @@ From the command line:
 
 For detailed instructions on publishing your app to the Google Play Store,
 see the [Google Play launch][play] documentation.
-
-Now that you’ve created your app, attract more users with Google Ads.
-App campaigns use machine learning to drive more installs and
-make the most of your budget.
-
-Get your campaign running in a few steps:
-
-1. Create your ad&mdash;we’ll help create your ad from your app
-   information
-1. Choose your budget&mdash;set your target cost-per-install (tCPI)
-   and daily budget cap
-1. Select your location&mdash;let us know where you’d like your ads to run
-1. Decide what action you want users to take&mdash;choose installs,
-   in-app actions, or target return on ad spend (ROAS)
-
-[Get $75 app advertising credit when you spend $25.][]
 
 ## Updating the app's version number
 
@@ -424,32 +444,33 @@ The resulting app bundle or APK files are located in
 ### Are there any special considerations with add-to-app?
 {% endcomment %}
 
+
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [appid]: {{site.android-dev}}/studio/build/application-id
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
-[x86_64]: {{site.android-dev}}/ndk/guides/abis#86-64
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[crash-issue]: https://issuetracker.google.com/issues/147096055
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
-[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
-[Issue 36822]: {{site.github}}/flutter/flutter/issues/36822
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
-[Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
+[obfuscating your Dart code]: /docs/deployment/obfuscate
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [R8]: {{site.android-dev}}/studio/build/shrink-code
+[Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning
+[x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64

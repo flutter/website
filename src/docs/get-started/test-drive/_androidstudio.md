@@ -29,6 +29,12 @@ contains a simple demo app that uses [Material Components][].
     For details, see [Managing AVDs][].
  1. Click the run icon in the toolbar, or invoke the menu item **Run > Run**.
 
+{{site.alert.warning}}
+  When launching your app from a Mac, if you see
+  `ERROR: Could not connect to lockdownd, error code -17`,
+  make sure that you have [trusted your computer][].
+{{site.alert.end}}
+
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**
   <i class="material-icons align-bottom">offline_bolt</i>.
@@ -44,7 +50,8 @@ contains a simple demo app that uses [Material Components][].
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 {% include run-profile.md ide_profile=ide_profile %}
 
-[Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
-[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
-[Material Components]: {{site.material}}/guidelines
+[trusted your computer]: /docs/get-started/install/macos#trust
 </div>
+
+
+

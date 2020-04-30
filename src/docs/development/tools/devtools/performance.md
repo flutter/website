@@ -5,50 +5,59 @@ description: Learn how to use the DevTools performance view.
 
 {{site.alert.note}}
   The performance view works with mobile apps only.
-  Use Chrome DevTools to [analyze
-  performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
+  Use Chrome DevTools to [analyze performance][]
   of a web app.
 {{site.alert.end}}
 
 ## What is it?
 
-The performance view allows you to record and profile a session from your Dart application.
+The performance view allows you to record and profile a
+session from your Dart application.
 
 {{site.alert.note}}
-  **If you are running a Flutter application, use a profile build to analyze performance.**
-  Cpu profiles are not indicative of release performance unless your Flutter application is
-  run in profile mode.
+  **If you are running a Flutter application,
+  use a profile build to analyze performance.**
+  CPU profiles are not indicative of release performance
+  unless your Flutter application is run in profile mode.
 {{site.alert.end}}
 
 ## CPU Profiler
 
-Start recording a CPU profile by clicking Record. When you are done recording, click Stop. At this
-point, CPU profiling data is pulled from the VM and displayed in the profiler views (Call Tree,
+Start recording a CPU profile by clicking Record.
+When you are done recording, click Stop. At this point,
+CPU profiling data is pulled from the VM and displayed
+in the profiler views (Call Tree,
 Bottom Up, and Flame Chart).
 
 ### Profile granularity
 
-The default rate at which the VM collects CPU samples is 1 sample / 250 μs.
-This is selected by default on the Performance view as "Profile granularity: medium".
-This rate can be modified via the selector at the top of the page. The sampling rates
-for low, medium, and high granularity are 1 / 50 μs, 1 / 250 μs, and 1 / 1000 μs,
-respectively. It is important to know the trade-offs of modifying this setting.
+The default rate at which the VM collects CPU samples
+is 1 sample / 250 μs.  This is selected by default on
+the Performance view as "Profile granularity: medium".
+This rate can be modified via the selector at the top
+of the page. The sampling rates for low, medium,
+and high granularity are 1 / 50 μs, 1 / 250 μs, and 1 / 1000 μs,
+respectively. It is important to know the trade-offs
+of modifying this setting.
 
-A **higher granularity** profile has a higher sampling rate, and therefore yields
-a fine-grained CPU profile with more samples. This may also impact performance of
-your app since the VM is being interrupted more often to collect samples.
-This also causes the VM's CPU sample buffer to overflow more quickly. The VM has
-limited space where it can store CPU sample information. At a higher sampling
-rate, the space fills up and begins to overflow sooner than it would have if a
-lower sampling rate was used. This means that you may not have access to CPU samples
+A **higher granularity** profile has a higher sampling rate,
+and therefore yields a fine-grained CPU profile with more samples.
+This may also impact performance of your app since the VM
+is being interrupted more often to collect samples. This also
+causes the VM's CPU sample buffer to overflow more quickly.
+The VM has limited space where it can store CPU sample information.
+At a higher sampling rate, the space fills up and begins
+to overflow sooner than it would have if a lower sampling
+rate was used. This means that you may not have access to CPU samples
 from the beginning of the recorded profile.
 
-A **lower granularity** profile has a lower sampling rate, and therefore
-yields a coarse-grained CPU profile with fewer samples. However, this impacts your
-app's performance less. The VM's sample buffer also fills more slowly, so you can see
-CPU samples for a longer period of app run time. This means that you have a better
-chance of viewing CPU samples from the beginning of the recorded profile.
-
+A **lower granularity** profile has a lower sampling rate,
+and therefore yields a coarse-grained CPU profile with fewer samples.
+However, this impacts your app's performance less.
+The VM's sample buffer also fills more slowly, so you can see
+CPU samples for a longer period of app run time. This means that
+you have a better chance of viewing CPU samples from the beginning
+of the recorded profile.
 
 ### Flame chart
 
@@ -115,3 +124,5 @@ In this table, a method can be expanded to show its _callers_.
 
 ![Screenshot of a bottom up table]({% asset tools/devtools/cpu_profiler_bottom_up.png @path %}){:width="100%"}
 
+
+[analyze performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/

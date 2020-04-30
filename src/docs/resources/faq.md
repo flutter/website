@@ -428,19 +428,6 @@ See [Hot reload][] for additional details.
 
 You can compile and deploy your Flutter app to iOS and Android.
 
-### How can I find the more users for my app?
-
-App Campaigns connect you with the right user, at the right time.
-* Reach more users by promoting your app across Google Search, Play,
-  YouTube, Gmail, and Google Display Network.
-* Optimize your budget by allocating more budget to the
-  highest-performing ads. Simply set a target cost-per-install
-  (tCPI) and daily budget, and let Google handle the rest.
-* Get set up in 10 minutes with an instant ad preview pulled from
-  your app store listing. Then, customize the text and locations.
-
-[Get $75 app advertising credit when you spend $25.][]
-
 ### What devices and OS versions does Flutter run on?
 
 Mobile operating systems: Android Jelly Bean, v16, 4.1.x or newer,

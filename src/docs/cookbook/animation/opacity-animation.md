@@ -1,5 +1,6 @@
 ---
 title: Fade a widget in and out
+description: How to fade a widget in and out.
 prev:
   title: Animate the properties of a container
   path: /docs/cookbook/animation/animated-container
@@ -145,7 +146,7 @@ AnimatedOpacity(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

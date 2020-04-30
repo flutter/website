@@ -130,16 +130,6 @@ The following plugins have macos desktop support:
 * [connectivity]
 * [path_provider]
 
-[url_launcher] and [shared_preferences] are fully supported as normal plugins.
-To use [connectivity] and [path_provider] you need to declare an
-extra dependency in your pubspec.yaml with a `_macos` suffix
-(you don't need to add any additional imports):
-
-```yaml
-connectivity: ^0.4.6
-connectivity_macos: ^0.0.1
-```
-
 ### Creating plugins
 To create a plugin with desktop support you should use the following resources:
 * [Developing plugin packages]
@@ -184,7 +174,7 @@ GitHub repository.
 [federated plugin spec]: https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit?pli=1#heading=h.pub7jnop54q0
 [file_chooser]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 [flutter build release channel]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
-[Flutter Gallery]: {{site.repo.samples}}/tree/master/gallery/gallery
+[Flutter Gallery]: {{site.repo.samples}}/tree/master/gallery
 [flutter starter app]: /docs/get-started/test-drive
 [flutter wiki]: {{site.repo.flutter}}/wiki/
 [flutter-desktop-embedding]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins#dart

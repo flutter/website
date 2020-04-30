@@ -1,5 +1,6 @@
 ---
 title: Send data to a new screen
+description: How to pass data to a new route.
 prev:
   title: Return data from a screen
   path: /docs/cookbook/navigation/returning-data
@@ -56,9 +57,9 @@ see the [Use lists][] recipe.
 final todos = List<Todo>.generate(
   20,
   (i) => Todo(
-        'Todo $i',
-        'A description of what needs to be done for Todo $i',
-      ),
+    'Todo $i',
+    'A description of what needs to be done for Todo $i',
+  ),
 );
 ```
 
@@ -149,7 +150,7 @@ ListView.builder(
 
 ### Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -167,9 +168,9 @@ void main() {
       todos: List.generate(
         20,
         (i) => Todo(
-              'Todo $i',
-              'A description of what needs to be done for Todo $i',
-            ),
+          'Todo $i',
+          'A description of what needs to be done for Todo $i',
+        ),
       ),
     ),
   ));
@@ -240,6 +241,7 @@ Repeat the first two steps.
 
 Next, create a detail screen that extracts and displays the title and description from the `Todo`. To access the `Todo`, use the `ModalRoute.of()` method. This method returns the current route with the arguments.
 
+<!-- skip -->
 ```dart
 class DetailScreen extends StatelessWidget {
   @override
@@ -262,33 +264,37 @@ class DetailScreen extends StatelessWidget {
 
 ### Navigate and pass the arguments to the detail screen
 
-Finally, navigate to the `DetailScreen` when a user taps a `ListTile` widget using `Navigator.push()`. Pass the arguments as part of the `RouteSettings`. The `DetailScreen` extracts these arguments.
+Finally, navigate to the `DetailScreen` when a user taps
+a `ListTile` widget using `Navigator.push()`.
+Pass the arguments as part of the `RouteSettings`.
+The `DetailScreen` extracts these arguments.
 
+<!-- skip -->
 ```dart
-ListView.builder(                                                    
-  itemCount: todos.length,                                           
-  itemBuilder: (context, index) {                                    
-    return ListTile(                                                 
-      title: Text(todos[index].title),                               
+ListView.builder(
+  itemCount: todos.length,
+  itemBuilder: (context, index) {
+    return ListTile(
+      title: Text(todos[index].title),
       // When a user taps the ListTile, navigate to the DetailScreen.
-      // Notice that you're not only creating a DetailScreen, you're 
-      // also passing the current todo through to it.                
-      onTap: () {                                                    
-        Navigator.push(                                              
-          context,                                                   
-          MaterialPageRoute(                                         
-            builder: (context) => DetailScreen(),                    
-            // Pass the arguments as part of the RouteSettings. The  
-            // DetailScreen reads the arguments from these settings. 
-            settings: RouteSettings(                                 
-              arguments: todos[index],                               
-            ),                                                        
-          ),                                                          
-        );                                                           
-      },                                                             
-    );                                                                
-  },                                                                 
-),                                                                                                                           
+      // Notice that you're not only creating a DetailScreen, you're
+      // also passing the current todo through to it.
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(),
+            // Pass the arguments as part of the RouteSettings. The
+            // DetailScreen reads the arguments from these settings.
+            settings: RouteSettings(
+              arguments: todos[index],
+            ),
+          ),
+        );
+      },
+    );
+  },
+),
 ```
 
 ### Complete example

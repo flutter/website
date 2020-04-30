@@ -1,5 +1,6 @@
 ---
 title: Update the UI based on orientation
+description: Respond to a change in the screen's orientation.
 prev:
   title: Export fonts from a package
   path: /docs/cookbook/design/package-fonts
@@ -78,7 +79,7 @@ OrientationBuilder(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {

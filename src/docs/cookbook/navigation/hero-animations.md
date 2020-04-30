@@ -1,5 +1,6 @@
 ---
 title: Animate a widget across screens
+description: How to animate a widget from one screen to another
 prev:
   title: Report errors to a service
   path: /docs/cookbook/maintenance/error-reporting
@@ -130,7 +131,7 @@ Hero(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(HeroApp());

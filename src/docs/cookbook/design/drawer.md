@@ -1,5 +1,6 @@
 ---
 title: Add a Drawer to a screen
+description: How to implement a Material Drawer.
 prev:
   title: Fade a widget in and out
   path: /docs/cookbook/animation/opacity-animation
@@ -130,7 +131,7 @@ ListTile(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

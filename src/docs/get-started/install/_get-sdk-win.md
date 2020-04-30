@@ -5,20 +5,21 @@
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds, see the [SDK
-    archive](/docs/development/tools/sdk/archive) page.
+    For other release channels, and older builds, see the
+    [SDK archive][] page.
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
     (for example, `C:\src\flutter`;
     do not install Flutter in a directory like
     `C:\Program Files\` that requires elevated privileges).
 
-Steps 1 and 2 can be replaced. If you don't want to install a fixed version of the installation bundle.
-The Flutter SDK is free and open source, so you can get the source code from the [Flutter repo](https://github.com/flutter/flutter) on GitHub,
-and change branches or tags as needed.
+If you don't want to install a fixed version of the installation 
+bundle, you can skip steps 1 and 2. Instead, get the source code 
+from the [Flutter repo](https://github.com/flutter/flutter) on 
+GitHub, and change branches or tags as needed. For example:
 
-```terminal
-$ git clone https://github.com/flutter/flutter.git
+```batchfile
+C:\src>git clone https://github.com/flutter/flutter.git -b stable
 ```
 
 You are now ready to run Flutter commands in the Flutter Console!
@@ -46,7 +47,7 @@ From a console window that has the Flutter directory in the
 path (see above), run the following command to see if there
 are any platform dependencies you need to complete the setup:
 
-```console
+```batchfile
 C:\src\flutter>flutter doctor
 ```
 
@@ -73,4 +74,5 @@ verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 
-[upgrading Flutter]: /docs/development/tools/sdk/upgrading
+[Flutter repo]: {{site.github}}/flutter/flutter
+[SDK archive]: /docs/development/tools/sdk/archive

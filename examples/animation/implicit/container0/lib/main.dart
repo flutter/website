@@ -19,9 +19,9 @@ Color randomColor() {
 }
 
 class AnimatedContainerDemo extends StatelessWidget {
-  Color color = randomColor();
-  double borderRadius = randomBorderRadius();
-  double margin = randomMargin();
+  final Color color = randomColor();
+  final double borderRadius = randomBorderRadius();
+  final double margin = randomMargin();
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Future<void> main() async {
+void main() {
   runApp(
     MyApp(),
   );

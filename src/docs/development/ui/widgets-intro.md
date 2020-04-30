@@ -1,5 +1,6 @@
 ---
 title: Introduction to widgets
+description: Learn about Flutter's widgets.
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -489,9 +490,8 @@ class Product {
 typedef void CartChangedCallback(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
-  ShoppingListItem({Product product, this.inCart, this.onCartChanged})
-      : product = product,
-        super(key: ObjectKey(product));
+  ShoppingListItem({this.product, this.inCart, this.onCartChanged})
+      : super(key: ObjectKey(product));
 
   final Product product;
   final bool inCart;
@@ -652,7 +652,7 @@ If the parent rebuilds and creates a new `ShoppingList`,
 the `_ShoppingListState` rebuilds with the new widget value.
 If you wish to be notified when the `widget` property changes,
 override the [`didUpdateWidget()`][] function, which is passed
-as `oldWidget` to let you compare the old widget with
+an `oldWidget` to let you compare the old widget with
 the current widget.
 
 When handling the `onCartChanged` callback, the `_ShoppingListState`

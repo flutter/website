@@ -49,11 +49,12 @@ and it's good for a quick proof of concept.
 
 Manual decoding does not perform well when your project becomes bigger.
 Writing decoding logic by hand can become hard to manage and error-prone.
-If you have a typo when accessing an nonexistent JSON
+If you have a typo when accessing a nonexistent JSON
 field, your code throws an error during runtime.
 
-If you do not have many JSON models in your project and are looking to test a
-concept quickly, manual serialization might be the way you want to start.
+If you do not have many JSON models in your project and are
+looking to test a concept quickly,
+manual serialization might be the way you want to start.
 For an example of manual encoding, see
 [Serializing JSON manually using dart:convert][].
 
@@ -89,10 +90,11 @@ shaking difficult. The tools cannot know what parts are unused at runtime, so
 the redundant code is hard to strip away. App sizes cannot be easily optimized
 when using reflection.
 
-Although you cannot use runtime reflection with Flutter, some libraries give
-you similarly easy-to-use APIs but are based on code generation instead. This
-approach is covered in more detail in the [code generation
-libraries](#code-generation) section.
+Although you cannot use runtime reflection with Flutter,
+some libraries give you similarly easy-to-use APIs but are
+based on code generation instead. This
+approach is covered in more detail in the
+[code generation libraries][] section.
 
 <a name="manual-encoding"></a>
 ## Serializing JSON manually using dart:convert
@@ -322,6 +324,35 @@ you can use the `@JsonKey` annotation with a name parameter:
 final int registrationDateMillis;
 ```
 
+It's best if both server and client follow the same naming strategy.  
+`@JsonSerializable()` provide `fieldRename` enum to totally converting dart 
+fields into JSON keys.
+
+Modifying `@JsonSerializable(fieldRename: FieldRename.snake)` is equivalent to
+adding `@JsonKey(name: '<snake_case>')` to each field.
+
+Sometimes server data is uncertain, so it is necessary to verify and protect data
+ on client.  
+Other commonly used `@JsonKey` annotations include: 
+
+<!-- skip -->
+```dart
+/// Tell json_serializable to use "defaultValue" if the JSON doesn't
+/// contain this key or if the value is `null`.
+@JsonKey(defaultValue: false)
+final bool isAdult;
+
+/// When `true` tell json_serializable that JSON must contain the key, 
+/// If the key doesn't exist, an exception is thrown.
+@JsonKey(required: true)
+final String id;
+
+/// When `true` tell json_serializable that generated code should 
+/// ignore this field completely. 
+@JsonKey(ignore: true)
+final String verificationCode;
+```
+
 ### Running the code generation utility
 
 When creating `json_serializable` classes the first time,
@@ -390,6 +421,7 @@ you might have experienced an`Invalid argument` error.
 
 Consider the following `Address` class:
 
+<!-- skip -->
 ```dart
 import 'package:json_annotation/json_annotation.dart';
 part 'address.g.dart';
@@ -408,6 +440,7 @@ class Address {
 
 The `Address` class is nested inside the `User` class:
 
+<!-- skip -->
 ```dart
 import 'address.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -429,6 +462,7 @@ Running `flutter pub run build_runner build` in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function
 looks something like the following:
 
+<!-- skip -->
 ```dart
 (
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -439,6 +473,7 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
 
 All looks fine now, but if you do a print() on the user object:
 
+<!-- skip -->
 ```dart
 Address address = Address("My st.", "New York");
 User user = User("John", address);
@@ -490,6 +525,7 @@ For more information, see the following resources:
 
 
 [`built_value`]: {{site.pub}}/packages/built_value
+[code generation libraries]: #code-generation
 [`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
 [Flutter Favorite]: /docs/development/packages-and-plugins/favorites

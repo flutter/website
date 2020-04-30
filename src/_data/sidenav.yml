@@ -33,10 +33,10 @@
 
 - title: Samples & tutorials
   children:
-    - title: Flutter Gallery [NEW]
-      permalink: https://flutter.github.io/samples/#/
+    - title: Flutter Gallery [updated]
+      permalink: https://flutter.github.io/gallery/
     - title: Sample apps on GitHub
-      permalink: https://github.com/flutter/samples/blob/master/INDEX.md
+      permalink: https://flutter.github.io/samples/
     - title: Cookbook
       permalink: /docs/cookbook
     - title: Codelabs
@@ -81,7 +81,7 @@
               permalink: /docs/development/ui/animations/overview
             - title: Tutorial
               permalink: /docs/development/ui/animations/tutorial
-            - title: Implicit Animations
+            - title: Implicit animations
               permalink: /docs/development/ui/animations/implicit-animations
             - title: Hero animations
               permalink: /docs/development/ui/animations/hero-animations
@@ -95,6 +95,8 @@
               permalink: /docs/development/ui/advanced/slivers
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
+            - title: Splash screens
+              permalink: /docs/development/ui/advanced/splash-screen
         - title: Platform-specific theming
         - title: Widget catalog
           permalink: /docs/development/ui/widgets
@@ -114,6 +116,8 @@
               permalink: /docs/development/data-and-backend/state-mgmt/simple
             - title: Options
               permalink: /docs/development/data-and-backend/state-mgmt/options
+        - title: Networking & http
+          permalink: /docs/development/data-and-backend/networking
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
         - title: Back-end services
@@ -165,8 +169,8 @@
             permalink: /docs/development/add-to-app/android/add-flutter-screen
           - title: Add a Flutter Fragment
             permalink: /docs/development/add-to-app/android/add-flutter-fragment
-          - title: Add a Splash Screen
-            permalink: /docs/development/add-to-app/android/add-splash-screen
+          - title: Plugin setup
+            permalink: /docs/development/add-to-app/android/plugin-setup
       - title: Adding to an iOS app
         permalink: /docs/development/add-to-app/ios
         children:
@@ -174,7 +178,7 @@
             permalink: /docs/development/add-to-app/ios/project-setup
           - title: Add a single Flutter screen
             permalink: /docs/development/add-to-app/ios/add-flutter-screen
-      - title: Running, debugging & hot reload
+      - title: Debugging & hot reload
         permalink: /docs/development/add-to-app/debugging
       - title: Loading sequence and performance
         permalink: /docs/development/add-to-app/performance
@@ -232,8 +236,15 @@
           permalink: /docs/development/tools/hot-reload
         - title: Code formatting
           permalink: /docs/development/tools/formatting
-    - title: AndroidX migration
+    - title: Migration notes
       permalink: /docs/development/androidx-migration
+      children:
+        - title: AndroidX migration
+          permalink: /docs/development/androidx-migration
+        - title: Android plugin upgrade
+          permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: Xcode 11.4 support
+          permalink: /docs/development/ios-project-migration
 
 - title: Testing & debugging
   permalink: /docs/testing
@@ -276,8 +287,10 @@
 
 - title: Deployment
   children:
+    - title: Obfuscating Dart code
+      permalink: /docs/deployment/obfuscate
     - title: Creating flavors for Flutter
-      permalink:  /docs/deployment/flavors
+      permalink: /docs/deployment/flavors
     - title: Build and release an Android app
       permalink: /docs/deployment/android
     - title: Build and release an iOS app
@@ -309,6 +322,8 @@
     # - title: Flutter learning resources # TODO
     - title: FAQ
       permalink: /docs/resources/faq
+    - title: Design Documents
+      permalink: /docs/resources/design-docs
 
 - title: Reference
   expanded: true

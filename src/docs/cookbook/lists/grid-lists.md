@@ -1,5 +1,6 @@
 ---
 title: Create a grid list
+description: How to implement a grid list.
 prev:
   title: Create a horizontal list
   path: /docs/cookbook/lists/horizontal-list
@@ -42,7 +43,7 @@ GridView.count(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {

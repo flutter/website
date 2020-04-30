@@ -1,5 +1,6 @@
 ---
 title: Set up an editor
+description: Configuring an IDE for Flutter.
 prev:
   title: Install
   path: /docs/get-started/install
@@ -10,13 +11,14 @@ toc: false
 ---
 
 You can build apps with Flutter using any text editor combined with our
-command-line tools. However, we recommend using one of our editor plugins for an
-even better experience. These plugins provide you with code completion, syntax
+command-line tools. However, we recommend using one of our editor
+plugins for an even better experience.
+These plugins provide you with code completion, syntax
 highlighting, widget editing assists, run & debug support, and more.
 
-Follow the steps below to add an editor plugin for Android Studio, IntelliJ, or
-VS Code. If you want to use a different editor, that's OK, skip ahead to the
-[next step: Test drive](/docs/get-started/test-drive).
+Follow the steps below to add an editor plugin for Android Studio,
+IntelliJ, VS Code, or Emacs. If you want to use a different editor,
+that's OK, skip ahead to the [next step: Test drive][].
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -25,6 +27,9 @@ VS Code. If you want to use a different editor, that's OK, skip ahead to the
   </li>
   <li class="nav-item">
     <a class="nav-link" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="false">Visual Studio Code</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="emacs-tab" href="#emacs" role="tab" aria-controls="emacs" aria-selected="false">Emacs</a>
   </li>
 </ul>
 
@@ -37,33 +42,41 @@ VS Code. If you want to use a different editor, that's OK, skip ahead to the
 
 Android Studio offers a complete, integrated IDE experience for Flutter.
 
-* [Android Studio]({{site.android-dev}}/studio), version 3.0 or later
+* [Android Studio][], version 3.0 or later
 
 Alternatively, you can also use IntelliJ:
 
-* [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/), version 2017.1 or later
-* [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/), version 2017.1 or later
+* [IntelliJ IDEA Community][], version 2017.1 or later
+* [IntelliJ IDEA Ultimate][], version 2017.1 or later
 
 ## Install the Flutter and Dart plugins
 
 To install these:
 
- 1. Start Android Studio.
- 1. Open plugin preferences (**Preferences > Plugins** on macOS,
-    **File > Settings > Plugins** on Windows & Linux).
- 1. Select **Marketplace**,  select the Flutter plugin and click
-    **Install**.
- 1. Click **Yes** when prompted to install the Dart plugin.
- 1. Click **Restart** when prompted.
+  1. Start Android Studio.
+  1. Open plugin preferences (**Configure > Plugins** as of
+     v3.6.3.0 or later).
+  1. Select the Flutter plugin and
+     click **Install**.
+  1. Click **Yes** when prompted to install the Dart plugin.
+  1. Click **Restart** when prompted.
+
+{{site.alert.note}}
+  Prior to v3.6.3.0, access plugin preferences as follows:
+   1. Open plugin preferences (**Preferences > Plugins** on macOS,
+      **File > Settings > Plugins** on Windows & Linux).
+   1. Select **Marketplace**,  select the Flutter plugin and click
+      **Install**.
+{{site.alert.end}}
 
 </div>
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
 ## Install VS Code
 
-VS Code is a light-weight editor with Flutter app execution and debug support.
+VS Code is a lightweight editor with Flutter app execution and debug support.
 
-* [VS Code](https://code.visualstudio.com/), latest stable version
+* [VS Code][], latest stable version
 
 ## Install the Flutter and Dart plugins
 
@@ -80,10 +93,33 @@ VS Code is a light-weight editor with Flutter app execution and debug support.
  1. Review the output in the **OUTPUT** pane for any issues.
 
 </div>
+<div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">
 
+## Install Emacs
+
+Emacs is a lightweight editor with support for Flutter and Dart.
+
+* [Emacs][], latest stable version
+
+## Install the lsp-dart package
+
+For information on how to install and use the package, see the [lsp-dart documentation][].
+
+</div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
 ## Next step
 
 Take Flutter for a test drive: create a first project, run it, and experience
 "hot reload".
+
+
+
+[Android Studio]: {{site.android-dev}}/studio
+[IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
+[IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
+[next step: Test drive]: /docs/get-started/test-drive
+[VS Code]: https://code.visualstudio.com/
+[Emacs]: https://www.gnu.org/software/emacs/download.html
+[lsp-dart documentation]: https://emacs-lsp.github.io/lsp-dart/
+

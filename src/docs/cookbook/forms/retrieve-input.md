@@ -1,5 +1,6 @@
 ---
 title: Retrieve the value of a text field
+description: How to retrieve text from a text field.
 prev:
   title: Handle changes to a text field
   path: /docs/cookbook/forms/text-field-changes
@@ -106,7 +107,7 @@ FloatingActionButton(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

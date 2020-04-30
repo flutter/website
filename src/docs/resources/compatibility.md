@@ -8,9 +8,9 @@ need to keep evolving APIs to fix bugs, improve API ergonomics,
 and provide new features in a coherent manner.
 
 To this end, we have created a test registry where you can provide
-unit tests for your own applications or libraries that we will run
+unit tests for your own applications or libraries that we run
 on every change to help us track changes that would break
-existing applications. Our commitment is that we will not make any
+existing applications. Our commitment is that we won't make any
 changes that break these tests without working with the developers of
 those tests to (a) determine if the change is sufficiently valuable,
 and (b) provide fixes for the code so that the tests continue to pass.
@@ -34,9 +34,9 @@ breaking changes.
 ## Deprecation policy
 
 We will, on occasion, deprecate certain APIs rather than outright
-break them overnight. Deprecations are not considered breaking
-changes, though the eventual removal of the deprecated feature could
-be (if it breaks any of the submitted tests).
+break them overnight. This is independent of our compatibility policy
+which is exclusively based on whether submitted tests fail, as
+described above.
 
 
 ## Dart and other libraries used by Flutter
@@ -54,6 +54,6 @@ migration guide.
 
 
 [documented on the Dart wiki]: {{site.github}}/dart-lang/sdk/blob/master/docs/process/breaking-changes.md
-[flutter/tests repository]: {{site.github}}flutter/tests
+[flutter/tests repository]: {{site.github}}/flutter/tests
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 [guides for migrating code]: /docs/release/breaking-changes

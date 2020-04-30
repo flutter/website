@@ -1,5 +1,6 @@
 ---
 title: Return data from a screen
+description: How to return data from a new screen.
 prev:
   title: Pass arguments to a named route
   path: /docs/cookbook/navigation/navigate-with-arguments
@@ -188,7 +189,7 @@ _navigateAndDisplaySelection(BuildContext context) async {
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {

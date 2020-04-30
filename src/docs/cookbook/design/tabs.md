@@ -1,5 +1,6 @@
 ---
 title: Work with tabs
+description: How to implement tabs in a layout.
 prev:
   title: Use themes to share colors and font styles
   path: /docs/cookbook/design/themes
@@ -11,8 +12,9 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-Working with tabs is a common pattern in apps that follow the Material Design
-guidelines. Flutter includes a convenient way to create tab layouts as part of
+Working with tabs is a common pattern in apps that follow the
+Material Design guidelines.
+Flutter includes a convenient way to create tab layouts as part of
 the [material library][].
 
 {{site.alert.note}}
@@ -99,7 +101,7 @@ TabBarView(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {

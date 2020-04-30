@@ -1,5 +1,6 @@
 ---
 title: Read and write files
+description: How to read from and write to files on disk.
 prev:
   title: Persist data with SQLite
   path: /docs/cookbook/persistence/sqlite
@@ -28,7 +29,7 @@ This example displays a counter. When the counter changes,
 write data on disk so you can read it again when the app loads.
 Where should you store this data?
 
-The [`path_provider`][] plugin
+The [`path_provider`][] package
 provides a platform-agnostic way to access commonly used locations on the
 device's file system. The plugin currently supports access to
 two file system locations:
@@ -37,7 +38,7 @@ two file system locations:
 : A temporary directory (cache) that the system can
   clear at any time. On iOS, this corresponds to the
   [`NSCachesDirectory`][]. On Android, this is the value that
-  [`getCacheDir()`][]) returns.
+  [`getCacheDir()`][] returns.
 
 *Documents directory*
 : A directory for the app to store files that only

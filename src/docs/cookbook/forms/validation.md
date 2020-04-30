@@ -1,5 +1,6 @@
 ---
 title: Build a form with validation
+description: How to build a form that validates input.
 prev:
   title: Work with tabs
   path: /docs/cookbook/design/tabs
@@ -63,7 +64,11 @@ class MyCustomFormState extends State<MyCustomForm> {
     // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: // Build this out in the next steps.
+      child: Column(
+        children: <Widget>[
+              // Add TextFormFields and RaisedButton here.
+        ]
+     )
     );
   }
 }
@@ -150,7 +155,7 @@ rebuilds the form to display any error messages and returns `false`.
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

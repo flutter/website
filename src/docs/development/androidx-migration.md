@@ -4,7 +4,7 @@ description: How to migrate existing Flutter projects to AndroidX.
 ---
 
 {{site.alert.note}}
-  You might be directed to this page if the tool detects that your project
+  You might be directed to this page if Flutter detects that your project
   doesn't use AndroidX.
 {{site.alert.end}}
 
@@ -51,7 +51,7 @@ you can download the latest version from
 Finally, if you migrated a plugin, publish the new AndroidX version to pub and update
 your `CHANGELOG.md` to indicate that this new version is compatible with AndroidX.
 
-### What about if I can't use Android Studio?
+### What if I can't use Android Studio?
 
 You can create a new project using the Flutter tool and then move the Dart code and
 assets to the new project.
@@ -59,12 +59,12 @@ assets to the new project.
 To create a new project run:
 
 ```bash
-flutter create --androidx -t <project-type> <new-project-path>
+flutter create -t <project-type> <new-project-path>
 ```
 
 ### Add to App
 
-If your Flutter project is a module type for adding to an existing Android app, and 
+If your Flutter project is a module type for adding to an existing Android app, and
 contains a `.android` directory, add the following line to `pubspec.yaml`:
 
 ```yaml
@@ -80,18 +80,20 @@ steps in previous section.
 
 ### How do I know if my project is using AndroidX?
 
-* **Apps and Modules**
-  Your project uses AndroidX if the file `android/gradle.properties` or
-  `.android/gradle.properties` contains:
+Starting from Flutter v1.12.13, new projects created with `flutter create -t <project-type>`
+use AndroidX by default.
 
-  ```
-  android.useAndroidX=true
-  android.enableJetifier=true
-  ```
+Projects created prior to this Flutter version must not depend on any
+[old build artifact](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) or
+[old Support Library class](https://developer.android.com/jetpack/androidx/migrate/class-mappings).
 
-* **Plugins**
-  If a file under the android directory references any old support library package
-  or old support support artifacts, then the plugin isn’t using AndroidX.
+In an app or module project, the file `android/gradle.properties` or `.android/gradle.properties`
+must contain:
+
+```
+android.useAndroidX=true
+android.enableJetifier=true
+```
 
 ### What if I don’t migrate my app or module to AndroidX?
 

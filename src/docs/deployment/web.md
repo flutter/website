@@ -10,18 +10,16 @@ you test an app using `flutter run -d chrome`
 This builds a _debug_ version of your app.
 
 This page helps you prepare a _release_ version
-of your app.
+of your app and covers the following topics:
 
-This page covers the following topics:
-
-* [Obfuscation and minification](#obfuscation-and-minification)
+* [Minification](#minification)
 * [Building the app for release](#building-the-app-for-release)
 * [Deploying to the web](#deploying-to-the-web)
 
 
-## Obfuscation and minification
+## Minification
 
-Obfuscation and minification is handled for you when you
+Minification is handled for you when you
 create a release build.
 
 A debug build of a web app is not minified and

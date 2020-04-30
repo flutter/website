@@ -1,5 +1,6 @@
 ---
 title: Linux install
+description: How to install on Linux.
 short-title: Linux
 next:
   title: Set up an editor
@@ -25,6 +26,8 @@ your development environment must meet these minimum requirements:
   - `unzip`
   - `which`
   - `xz-utils`
+  - `zip`
+
 - **Shared libraries**: Flutter `test` command depends on this library
   being available in your environment.
   - `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on

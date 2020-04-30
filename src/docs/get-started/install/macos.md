@@ -1,5 +1,6 @@
 ---
 title: macOS install
+description: How to install on macOS.
 short-title: macOS
 next:
   title: Set up an editor
@@ -24,6 +25,7 @@ your development environment must meet these minimum requirements:
   - `rm`
   - `unzip`
   - `which`
+  - `zip`
 
 {% include_relative _get-sdk.md %}
 

@@ -1,5 +1,6 @@
 ---
 title: Adding assets and images
+description: How to use images (and other assets) in your Flutter app.
 short-title: Assets and images
 ---
 
@@ -30,12 +31,15 @@ specify the directory name with the `/` character at the end:
 ```yaml
 flutter:
   assets:
-    - assets/
+    - directory/
+    - directory/subdirectory/
 ```
 
-Note that only files located directly in the directory are
-included. To add files located in subdirectories,
-create an entry per directory.
+{{site.alert.note}}
+  Only files located directly in the directory are
+  included. To add files located in subdirectories,
+  create an entry per directory.
+{{site.alert.end}}
 
 ### Asset bundling
 
@@ -43,8 +47,8 @@ The `assets` subsection of the `flutter` section specifies files that
 should be included with the app. Each asset is identified by an
 explicit path (relative to the `pubspec.yaml` file) where the asset
 file is located. The order in which the assets are declared does not
-matter. The actual directory used (`assets` in this case) does not
-matter.
+matter. The actual directory name used (`assets` in first example or others `directory`) 
+does not matter.
 
 During a build, Flutter places assets into a special archive called
 the _asset bundle_, which apps can read from at runtime.
@@ -415,9 +419,10 @@ Flutter framework loads. This launch screen persists until
 Flutter renders the first frame of your application.
 
 {{site.alert.note}}
-  This implies that if you don't call [runApp()][] in the
-  `main()` function of your app (or more specifically, if you don't call
-  [`window.render()`][] in response to [`window.onDrawFrame`][]),
+  This implies that if you don't call [`runApp()`][] in the
+  `main()` function of your app (or more specifically,
+  if you don't call [`window.render()`][] in response to
+  [`window.onDrawFrame`][]),
   the launch screen persists forever.
 {{site.alert.end}}
 
@@ -432,7 +437,7 @@ an example of adding an image to the middle of a white splash
 screen in commented code. You can uncomment it or use other
 [drawables][] to achieve the intended effect.
 
-For more details, see [Adding a splash screen and launch screen to an Android app](/docs/development/add-to-app/android/add-splash-screen).
+For more details, see [Adding a splash screen and launch screen to an Android app](/docs/development/ui/advanced/splash-screen).
 
 #### iOS
 
@@ -478,5 +483,6 @@ customization using the Interface Builder in
 [package]: /docs/development/packages-and-plugins/using-packages
 [pathForResource:ofType:]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
 [PluginRegistry.Registrar]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
+[`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [video_player plugin]: {{site.pub}}/packages/video_player
 [ios_platform_images]: {{site.pub}}/packages/ios_platform_images

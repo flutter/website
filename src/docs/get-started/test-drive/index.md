@@ -1,5 +1,6 @@
 ---
 title: Test drive
+description: How to create a templated Flutter app and use hot reload.
 prev:
   title: Set up an editor
   path: /docs/get-started/editor
@@ -38,3 +39,8 @@ Flutter apps.
 ## Next step
 
 You'll next learn some core Flutter concepts by creating a small app.
+
+[Install]: /docs/get-started/install
+[Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
+[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
+[Material Components]: {{site.material}}/guidelines

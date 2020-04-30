@@ -36,7 +36,8 @@ steps to take, and tools that can help.
 ## Diagnosing performance problems
 
 To diagnose an app with performance problems, you'll enable
-the performance overlay to look at the UI and GPU threads.
+the performance overlay to look at the UI and raster threads.
+(The raster thread was previously known as the GPU thread.)
 Before you begin, you want to make sure that you're running in
 [profile mode][], and that you're not using an emulator.
 For best results, you might choose the slowest device that
@@ -134,15 +135,15 @@ The following screenshot shows the performance overlay running
 on the Flutter Gallery example:
 
 ![Screenshot of overlay showing zero jank]({% asset tools/devtools/performance-overlay-green.png @path %})
-<br>Performance overlay showing the GPU thread (top),
+<br>Performance overlay showing the raster thread (top),
 and UI thread (bottom).<br>The vertical green bars
 represent the current frame.
 
 ## Interpreting the graphs
 
-The top graph shows the time spent by the GPU thread,
-the bottom one graph shows the time spent by the
-UI (CPU) thread.
+The top graph (marked "GPU") shows the time spent by 
+the raster thread, the bottom one graph shows the time 
+spent by the UI thread.
 The white lines across the graphs show 16ms increments
 along the vertical axis; if the graph ever goes over one
 of these lines then you are running at less than 60Hz.
@@ -166,7 +167,7 @@ the scene is too complicated to render quickly.
 ![Screenshot of performance overlay showing jank with red bars]({% asset tools/devtools/performance-overlay-jank.png @path %})
 <br>The vertical red bars indicate that the current frame is
 expensive to both render and paint.<br>When both graphs
-display red, start by diagnosing the UI thread (Dart VM).
+display red, start by diagnosing the UI thread.
 
 ## Flutter's threads
 
@@ -190,24 +191,28 @@ on other threads.
     Flutter's framework on your app's behalf.
     When your app creates and displays a scene, the UI thread creates
     a _layer tree_, a lightweight object containing device-agnostic
-    painting commands, and sends the layer tree to the GPU thread to
+    painting commands, and sends the layer tree to the raster thread to
     be rendered on the device. _Don't block this thread!_
     Shown in the bottom row of the performance overlay.
 
-<dt markdown="1">**GPU thread**</dt>
-<dd markdown="1">The GPU thread takes the layer tree and displays
+<dt markdown="1">**Raster thread** (previously known as the GPU thread)</dt>
+<dd markdown="1">The raster thread takes the layer tree and displays
     it by talking to the GPU (graphic processing unit).
-    You cannot directly access the GPU thread or its data but,
+    You cannot directly access the raster thread or its data but,
     if this thread is slow, it's a result of something you've done
-    in the Dart code.  Skia, the graphics library, runs on this thread,
-    which is sometimes called the _rasterizer_ thread.
+    in the Dart code. Skia, the graphics library, runs on this thread.
     Shown in the top row of the performance overlay.
+    This thread was previously known as the "GPU thread" because it
+    rasterizes for the GPU. But it is running on the CPU. We renamed it
+    to "raster thread" because many developers wrongly (but understandably)
+    assumed the thread runs on the GPU unit.
 
-<dt markdown="1">**I/O** thread</dt>
+<dt markdown="1">**I/O thread**</dt>
 <dd markdown="1">Performs expensive tasks (mostly I/O) that would
-    otherwise block either the UI or GPU threads.
+    otherwise block either the UI or raster threads.
     This thread is not shown in the performance overlay.
-
+</dl>
+    
 For links to more information and videos,
 see [The Framework architecture][] on the
 [GitHub wiki][], and the community article,
@@ -268,11 +273,11 @@ can be said here?
 ## Identifying problems in the GPU graph
 
 Sometimes a scene results in a layer tree that is easy to construct,
-but expensive to render on the GPU thread. When this happens,
+but expensive to render on the raster thread. When this happens,
 the UI graph has no red, but the GPU graph shows red.
 In this case, you’ll need to figure out what your code is doing
 that is causing rendering code to be slow. Specific kinds of workloads
-are more difficult for the GPU.  They might involve unnecessary calls
+are more difficult for the GPU. They might involve unnecessary calls
 to [`saveLayer`][], intersecting opacities with multiple objects,
 and clips or shadows in specific situations.
 
