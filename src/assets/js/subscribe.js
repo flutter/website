@@ -1150,43 +1150,54 @@ for (var idx in languages) {
     languageEl.appendChild(new Option(l[1], l[0]));
 }
 
-submitEl.addEventListener("click", function(event) {
-    var request = new XMLHttpRequest();
+submitEl.addEventListener("click", submitForm);
+
+function submitForm() {
     var url = new URL(subscribeData.url);
-    var params = new URLSearchParams();
+    var data = {};
 
     if (firstNameEl.value) {
-        params.set("FirstName", firstNameEl.value);
+        data.FirstName = firstNameEl.value;
     }
 
     if (lastNameEl.value) {
-        params.set("LastName", lastNameEl.value);
+        data.LastName = lastNameEl.value;
     }
 
     if (emailAddressEl.value) {
-        params.set("EmailAddress", emailAddressEl.value);
+        data.EmailAddress = emailAddressEl.value;
     }
 
     if (languageEl.value) {
-        params.set("LanguagePreference", languageEl.value);
+        data.LanguagePreference = languageEl.value;
     }
 
     if (countryEl.value) {
-        params.set("Country", countryEl.value);
+        data.Country = countryEl.value;
     }
 
     if (devUpdatesElem.value) {
-        params.set("FlutterDevUpdates", devUpdatesElem.value == "on" ? "true" : "false");
+        data.FlutterDevUpdates = devUpdatesElem.value == "on" ? "true" : "false";
     }
 
-    url.search = params.toString();
+    jQuery.ajax({
+        url: url,
+        type: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+        },
+        contentType: "application/x-www-form-urlencoded",
+        data: data,
+    })
+        .done(function (data, textStatus, jqXHR) {
+            console.log("HTTP Request Succeeded: " + jqXHR.status);
+            console.log(data);
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            console.log("HTTP Request Failed");
+        })
+        .always(function () {
+        });
+}
 
-    console.log(url);
-    request.open("POST", url.toString());
-    request.onload = function(e) {
-        var result = request.responseText;
-        console.log('response:');
-        console.log(result);
-    };
-    request.send();
-});
+console.log("jQuery = " + jQuery);
