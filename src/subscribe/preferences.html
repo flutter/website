@@ -5,7 +5,7 @@ show_banner: False
 js:
 - url: https://www.google.com/js/gweb/analytics/autotrack.js
 - defer: true
-  url: /assets/js/subscribe.js
+  url: /assets/js/subscribe_prefs.js
 ---
 
 <div class="form-page">
@@ -18,44 +18,18 @@ js:
 
     <section class="subscribe-form">
         <form>
-            <div class="horizontal">
-                <div class="group">
-                    <label for="first-name">First name</label>
-                    <input id="first-name" type="text"/>
-                </div>
-                <div class="group">
-                    <label for="last-name">Last name</label>
-                    <input id="last-name" type="text"/>
-                </div>
-            </div>
-
             <div class="group">
                 <label for="email-address">Your e-mail address <span class="required">*</span></label>
                 <input id="email-address" type="text"/>
-            </div>
-            <div class="horizontal">
-                <div class="group">
-                    <label for="language">Language <span class="required">*</span></label>
-                    <select id="language" required></select>
-                </div>
-                <div class="group">
-                    <label for="country">Country</label>
-                    <select id="country"></select>
-                </div>
             </div>
             <div class="group">
                 <label for="experience-level">Experience Level</label>
                 <select id="experience-level" required></select>
             </div>
-            <div class="checkbox-group">
-                <input type="checkbox" id="sign-up" name="signup">
-                <label for="sign-up">Flutter news & updates. Get the latest Flutter developer product news. <span
-                        class="required">*</span></label>
-            </div>
             <p class="tos">By using this service, you agree to be bound by our <a href="https://policies.google.com/terms">Google Terms of Service</a>. I
                 acknowledge that the information provided in this form will be subject to <a href="https://policies.google.com/privacy">Google's Privacy
                     Policy</a></p>
-            <button id="submit-btn" class="btn btn-primary" type="button">Subscribe</button>
+            <button id="submit-btn" class="btn btn-primary" type="button">Update</button>
             <div id="error-container"></div>
         </form>
         <div class="flutter-logo">

@@ -998,16 +998,16 @@ var subscribeData = {
         'ExperienceLevel': {
             'choices': [
                 [
-                    'beginner',
-                    'beginner'
+                    'Beginner',
+                    'Beginner'
                 ],
                 [
-                    'medium',
-                    'medium'
+                    'Medium',
+                    'Medium'
                 ],
                 [
-                    'advanced',
-                    'advanced'
+                    'Advanced',
+                    'Advanced'
                 ]
             ],
             'error_messages': {
@@ -1086,52 +1086,12 @@ var subscribeData = {
     'url': 'https://services.google.com/fb/submissions/fluttersubscribe/'
 };
 
-var subscribePreferencesData = {
-    'fields': {
-        'EmailAddress': {
-            'error_messages': {
-                'invalid': '',
-                'required': 'Required'
-            },
-            'field_type': 'Email',
-            'label': 'Email Address',
-            'required': true
-        },
-        'ExperienceLevel': {
-            'choices': [
-                [
-                    'Beginner',
-                    'Beginner'
-                ],
-                [
-                    'Medium',
-                    'Medium'
-                ],
-                [
-                    'Advanced',
-                    'Advanced'
-                ]
-            ],
-            'error_messages': {
-                'invalid': 'Enter a valid value.',
-                'invalid_choice': 'Select a valid choice. %(value)s is not one of the available choices.',
-                'required': 'This field is required.'
-            },
-            'field_type': 'Choice',
-            'label': 'Flutter experience level',
-            'required': false
-        }
-    },
-    'google_analytics_account': 'UA-5436354-2',
-    'url': 'https://services.google.com/fb/submissions/flutterpreferences/'
-};
-
-var formEl = document.querySelector('form');
 var firstNameEl = document.querySelector('#first-name');
 var lastNameEl = document.querySelector('#last-name');
 var emailAddressEl = document.querySelector('#email-address')
 var languageEl = document.querySelector('#language');
 var countryEl = document.querySelector('#country');
+var experienceLevelEl = document.querySelector('#experience-level');
 var devUpdatesElem = document.querySelector("#sign-up")
 var submitEl = document.querySelector('#submit-btn');
 
@@ -1148,6 +1108,13 @@ var languages = subscribeData.fields.LanguagePreference.choices;
 for (var idx in languages) {
     var l = languages[idx];
     languageEl.appendChild(new Option(l[1], l[0]));
+}
+
+// Set up the experience level <select> element.
+var exps = subscribeData.fields.ExperienceLevel.choices;
+for (var idx in exps) {
+    var e = exps[idx];
+    experienceLevelEl.appendChild(new Option(e[1], e[0]));
 }
 
 submitEl.addEventListener("click", submitForm);
@@ -1175,6 +1142,10 @@ function submitForm() {
         data.Country = countryEl.value;
     }
 
+    if (experienceLevelEl.value) {
+        data.ExperienceLevel = experienceLevelEl.value;
+    }
+
     if (devUpdatesElem.value) {
         data.FlutterDevUpdates = devUpdatesElem.value == "on" ? "true" : "false";
     }
@@ -1199,6 +1170,8 @@ function sendRequest(data) {
             }
             if (data.result == "invalid" && data.errors) {
                 showErrors(data.errors);
+            } else {
+                location.href = "/subscribe/subscribed.html";
             }
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
@@ -1213,7 +1186,6 @@ function showErrors(errors) {
     container.empty();
 
     for (let formElementName in errors) {
-        console.log(formElementName);
         let errorName = errors[formElementName];
         if (errorName.length > 0 && errorName[0] == "Required") {
             console.log();

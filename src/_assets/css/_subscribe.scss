@@ -3,9 +3,27 @@ $form-blue: #E1EAF2;
 $required-red: #FF0000;
 $mobile-size: 640px;
 
-.form-page {
-  padding-top: 48px;
+.subscribed-page {
   background-color: $bg-color;
+
+  img {
+    margin-bottom: 16px;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 720px;
+    margin: 0 auto 0 auto;
+    padding: 48px 0 48px 0;
+  }
+}
+
+.form-page {
+  background-color: $bg-color;
+  margin: 0;
+  padding: 48px 0 48px 0;
 }
 
 .subscribe-form {
@@ -13,8 +31,8 @@ $mobile-size: 640px;
   display: flex;
   flex-direction: row;
   max-width: 960px;
-  margin: 48px auto 48px auto;
-  padding: 48px;
+  margin: 48px auto 0px auto;
+  padding: 48px 48px 0 48px;
 
   input {
     height: 48px;
