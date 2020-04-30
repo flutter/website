@@ -27,8 +27,7 @@ done
 
 # Use the version of pub from the Flutter repository instead of whatever
 # version is in the PATH.
-#pub="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/pub"
-pub="/usr/local/bin/pub"
+pub="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/pub"
 
 TMP="$rootDir/tmp"
 FRAG="$TMP/_fragments"
