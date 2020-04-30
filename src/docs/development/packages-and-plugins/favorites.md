@@ -12,6 +12,9 @@ This is not a guarantee of quality or suitability to your
 particular situation&mdash;you should always perform your
 own evaluation of packages and plugins for your project.
 
+You can see the complete list of
+[Flutter Favorite packages][] on pub.dev.
+
 ## Metrics
 
 Flutter Favorite packages have passed high quality standards
