@@ -81,7 +81,13 @@ so the animation looks pretty choppy&mdash;you could
 easily mistake the animation for a glitch.
 To describe this problem in animation terms,
 you would say that *the animation alternates
-between only two frames:*<sup><a href="#a1">1</a></sup>
+between only two frames:*
+
+{{site.alert.note}}
+  In this example, you are creating an animation effect
+  that *only looks* like it is running at two frames per second.
+  In reality, Flutter is running this example at ~60 frames per second.
+{{site.alert.end}}
 
 <div class="table-wrapper" markdown="1">
 | frame # | position        | movement direction |
@@ -133,15 +139,14 @@ Try to come up with an answer before diving into the next section.
 * An animation is a sequence of frames that,
   when rapidly displayed over time,
   creates the illusion of motion.
-* In Flutter, an animation is widget property value
-  that changes between frames to create the illusion
-  of motion.
+* In Flutter, an animation changes a widget property value
+  between frames to create the illusion of motion.
   You can create an animation by telling Flutter
   to rapidly rebuild a widget tree while gradually
   changing a widget property on each iteration
   of the widget tree.
 * The first example uses a timer to trigger
-  a change in the top margin of the Bouncing Ball
+  a change in the top margin of the bouncing ball
   once every second.
 {{site.alert.end}}
 
@@ -173,7 +178,7 @@ the ball has five:
 {:.table.table-striped}
 </div>
 
-Notice that, now that you are using more frames,
+Now that you are using more frames,
 in order to keep the ball bouncing at the same rate
 (one bounce per second)
 you  need to increase the frame rate.
@@ -186,15 +191,9 @@ motion of the ball,
 so you only need to count it once
 for the purpose of determining the frame rate.
 
-{{site.alert.secondary}}
-frame rate =  # of frames / second
-
-(In this case, 4 fps)
-{{site.alert.end}}
-
-Now that you have calculated the updated frame rate
+Now that you have increased the frame rate
 for this animation,
-you can also calculate the value that
+you can also calculate the new value that
 the margin should change in each frame.
 As the preceding chart makes clear,
 now that there are 5 frames instead of 2,
@@ -204,19 +203,22 @@ each frame will either increase or decrease
 the ball's top margin value by 25.
 
 {{site.alert.secondary}}
-change in margin value between each frame = total change / # of frames
-
-(In this case, the top margin changes by 100
-over 4 frames, so each frame
-changes the top margin value by 25.)
+Change in margin value between each frame = total change in margin / # of frames
 {{site.alert.end}}
+
+In this case, the top margin changes by 100
+over 4 frames, so each frame
+changes the top margin value by 25.
+(Even though there are 5 total frames,
+in this example you are reusing one frame for both
+the downward and upward motion of the ball, so you
+only need to count 4 frames for the margin change.)
 
 That's it! With the updated frame rate
 and the top margin values needed for each frame,
 you now have enough information
 to update the preceding example
-by doubling both the number of frames
-and the frame rate that the animation uses.
+by doubling the frame rate that the animation uses.
 Before diving into the following example,
 think about how you might refactor the preceding example
 using these updated parameters.
@@ -225,15 +227,18 @@ to try out your solution.
 When you're ready, run the next example to
 view the updated animation:
 
-{{site.alert.secondary}}
-**Quick Review:**
-* Frame rate is measured as the number of frames per second (fps).
-* Flutter uses 60 fps.<sup><a href="#a2">2</a></sup>
-{{site.alert.end}}
-
 ### Example: Bouncing Ball (Starter Code 2)
 
 {% include explicit-animations/bouncing-ball-starter-code-2.md %}
+
+{{site.alert.secondary}}
+**Quick Review:**
+* Frame rate is measured as the number of frames per second (fps).
+* Flutter aims to provide 60 fps performance,
+  or 120 fps performance on devices capable of 120Hz updates.
+  For 60fps, frames need to render approximately every 16ms.
+  See [performance profiling][] page for more information.
+{{site.alert.end}}
 
 ### Interpolation
 Have you ever wondered how computer graphics animators
@@ -263,49 +268,61 @@ the value needed to increment
 the top margin property for each frame.
 Can you think of a way to refactor this example
 so that you only need to provide a starting and ending
-value for top margin, and an interpolation function
-handles providing values for frames between the
-starting and ending ones?
+value for top margin, and leave the rest to an
+interpolation function the generates the values
+for the frames in between?
 
 Here's a few hints:
 * Don't worry about animating the ball
   up and down. Just focus on the first downward motion
   of the ball (from a top margin of 0 to top margin of 100).
-* Remember from the preceding frame rate section that
-  Flutter uses a fixed frame rate (60 fps). You can
-  do the same.
+* Try using 60 fps for the frame rate.
 * For any starting or ending position of the ball,
   you can express the amount to increment top margin
   between each frame as the difference between the margin's
   starting and ending values divided by the total number of frames.
 
+The following example contains one way to implement these updates
+to the bouncing ball example. Run the example to the see the difference
+that these updates make to your animation:
+
 ### Example: Bouncing Ball (Starter Code 3)
 {% include explicit-animations/bouncing-ball-starter-code-3.md %}
 
-At 60 fps, this final version of the bouncing ball animation
-looks smoother than in all prior examples.
+At 60 fps, this updated version of the bouncing ball animation
+looks smoother than in all prior examples!
 
-Notice that this example only creates half of the animation&mdash;the
-ball moves down, but not back up again!
+This example only creates half of the animation&mdash;the
+ball moves down, but not back up again.
 Wouldn't it be nice to have a declarative interface
-for controlling how our animation proceeds across the sequence of frames?
-This way, we could easily represent when to start the animation,
-pause it, play forward, play backward, stop it, or repeat it indefinitely.
+for controlling the direction that the animation proceeds
+across the sequence of frames, and the conditions for starting and stopping it?
+This way, you could easily represent when to start the animation,
+pause it, play forward, play backward, end it, or repeat it indefinitely.
+In the next section, you will learn how Flutter's animation library
+provides an interface for doing all of these things.
+
+{{site.alert.secondary}}
+**Quick review:**
+* Interpolation is the process of computing all animation values
+  between a starting and ending value.
+* Instead of thinking about an animation in terms of hundreds (or thousands)
+  of frames, interpolation allows you to reason about and define an animation
+  in terms of its starting and ending value.
+{{site.alert.end}}
 
 {{site.alert.bonus}}
-In the prior example, the rate of change for the
+1. In the prior example, the rate of change for the
 bouncing ball's top margin value is linear
 (the margin changes by the same amount between each frame).
 How would you change this example to make it possible to interpolate
 values between 0 and 100 at a changing rate?
-{{site.alert.end}}
 
-{{site.alert.bonus}}
-The prior example only animates a single downward motion
+2. The prior example only animates a single downward motion
 of the bouncing ball.
 Can you think of a way to:
-1. Continue the animation so that the ball bounces back up again?
-2. Repeat the animation indefinitely?
+* Continue the animation so that the ball bounces back up again?
+* Repeat the animation indefinitely?
 {{site.alert.end}}
 
 ## AnimationController
@@ -319,24 +336,20 @@ which represents the current value of the animation within
 the range of other frame values.
 `AnimationController` is **playable**&mdash;it provides
 controls for triggering changes to its `value` property
-(between its `lowerBound` and `upperBound`) over time
-(whatever value is passed for the `duration` parameter).
+(between its `lowerBound` and `upperBound`) over
+a specified period of time
+(the `duration` parameter).
 Once triggered, `AnimationController`
-changes its `value`property over time
+changes its `value` property over time
 to the other values in the range
-between`upperBound` and `lowerBound`.
-This change in `value` over time within the range
-of values is what creates the animation effect.
+between `upperBound` and `lowerBound`.
+This change in `value` over time
+is what creates the animation effect.
 `AnimationController` is also highly **configurable**, allowing you
-to define any of the following:
-* The range of values to use for an animation.
-* The amount of time it takes to cycle the `value`
-  property through the range of possible values.
-* Whether `value` should move forward or backward through the range.
-* The conditions for starting, stopping, or repeating the animation.
-* Changes in the rate that `value` switches to other values in the range.
-
-
+to change the following:
+* Whether the animation should progress forward or backward
+  through the range of values once triggered.
+* The amount(s) that an animation's `value` changes between each frame.
 
 The following sections demonstrate how to use `AnimationController`
 by providing step-by-step instructions for
@@ -446,12 +459,12 @@ Remember the following observations whenever performing this step with `Animatio
   but it is most common to use `initState()`.
 * You should dispose of an `AnimationController`
   when it is no longer needed&mdash;this reduces
-  the likelihood of memory leaks:droplet:.
+  the likelihood of memory leaks.
 * Always dispose of `AnimationController`
   within the `dispose()` lifecycle method.
 
 #### 3. Pass AnimationController parameters
-Pass arguments for `vsync`, `duration`, `lowerBound`, and `upperBound` 
+Pass arguments for `vsync`, `duration`, `lowerBound`, and `upperBound`
 to the `AnimationController` constructor:
 
 <?code-excerpt "explicit{3,4}/lib/main.dart"?>
@@ -485,7 +498,7 @@ because [step 1][] adds the `SingleTickerProviderStateMixin`
 with `_BouncingBallDemoState`.
 
 The `duration`, `upperBound`, and `lowerBound` parameters
-define the fundamental character of your animation:
+define the following parts of your animation:
 * **duration**: The `duration` of the animation is 1 second.
 * **upperBound** and **lowerBound**:
 Since the bouncing ball animation moves the ball
@@ -498,7 +511,7 @@ about the UI&mdash;it merely triggers changes to its `value`
 property over a specified `duration`.
 To make your UI respond to the changes
 that `AnimationController` makes to its `value` property,
-you must register a listener with `AnimationController`
+register a listener with `AnimationController`
 that calls `setState()` each time `AnimationController`
 changes its value:
 
@@ -624,7 +637,7 @@ Instantiate AnimationController:
     vsync: this, // Don't worry about vsync for now.
   );
   ```
-Notice that when you instantiate AnimationController,
+When you instantiate AnimationController,
 you define an animation in terms of its starting value (`lowerBound`),
 its ending value (`upperBound`), and the amount of time it takes to change
 from one to the other (`duration`).
@@ -681,23 +694,9 @@ property to a new value.
 ## AnimatedBuilder
 ## AnimatedWidget
 
----
-**Footnotes:**
-
-<sup><a name="a1">1</a></sup>
-  In this example, you are creating an animation effect
-  that *only looks* like it is running at two frames per second.
-  In reality, Flutter is running this example at ~60 frames per second.
-
-<sup><a name="a2">2</a></sup>
-  Flutter aims to provide 60 fps performance,
-  or 120 fps performance on devices capable of 120Hz updates.
-  For 60fps, frames need to render approximately every 16ms.
-  See [performance profiling][] page for more information.
-
 
 [Animation Concepts]: #Animation-Concepts
-[AnimationController]: #AnimationController
+[AnimationController]: #animationcontroller
 [AnimationController Concepts]: #animationcontroller-concepts
 [Create your first explicit animation with AnimationController]: /#create-your-first-explicit-animation-with-animationcontroller
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
@@ -713,18 +712,18 @@ property to a new value.
 
 ---
 TODO:
-1. Intro section: add images to this section
-2. Move conceptual content out of Introduction and into Concepts section
-3. Refactor all DartPad samples to use non-working defaults, & offer solution
-4. Update vanilla bouncing ball final example to use *both* upward and downward motion
-5. Explain why setState listener boilerplate is required
-6. AnimatedWidget and AnimatedBuilder?
-7. "Why TickerProvider?" in animationController concepts section
-7. How to choose between AnimatedBuilder and AnimatedWidget.
-8. Answer question: when to use a Tween,
+* Explain that setState listener boilerplate isn't normal.
+* Add section that uses AnimatedBuilder/AnimatedWidget
+* Refactor all DartPad samples to use non-working defaults, & offer solution
+* Update vanilla bouncing ball final example to use *both* upward and downward motion
+* "Why TickerProvider?" in animationController concepts section
+* How to choose between AnimatedBuilder and AnimatedWidget.
+* Answer question: when to use a Tween,
   if you can just use upper and lower bound args for
   AnimationController?
   - when we need something other than a double?
+* Add margin-bottom to DartPads
+* Add diffs between each solution in the introduction section
 
 
 
