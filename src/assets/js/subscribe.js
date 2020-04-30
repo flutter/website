@@ -1153,7 +1153,6 @@ for (var idx in languages) {
 submitEl.addEventListener("click", submitForm);
 
 function submitForm() {
-    var url = new URL(subscribeData.url);
     var data = {};
 
     if (firstNameEl.value) {
@@ -1180,8 +1179,13 @@ function submitForm() {
         data.FlutterDevUpdates = devUpdatesElem.value == "on" ? "true" : "false";
     }
 
+    sendRequest(data);
+
+}
+
+function sendRequest(data) {
     jQuery.ajax({
-        url: url,
+        url: subscribeData.url,
         type: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
@@ -1190,8 +1194,12 @@ function submitForm() {
         data: data,
     })
         .done(function (data, textStatus, jqXHR) {
-            console.log("HTTP Request Succeeded: " + jqXHR.status);
-            console.log(data);
+            if (jqXHR.status != 200) {
+                throw "Unexpected HTTP status code: " + jqXHR.status;
+            }
+            if (data.result == "invalid" && data.errors) {
+                showErrors(data.errors);
+            }
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             console.log("HTTP Request Failed");
@@ -1200,4 +1208,19 @@ function submitForm() {
         });
 }
 
-console.log("jQuery = " + jQuery);
+function showErrors(errors) {
+    let container = $("#error-container");
+    container.empty();
+
+    for (let formElementName in errors) {
+        console.log(formElementName);
+        let errorName = errors[formElementName];
+        if (errorName.length > 0 && errorName[0] == "Required") {
+            console.log();
+            let messageEl = document.createElement("p");
+            let humanReadableName = subscribeData.fields[formElementName].label;
+            messageEl.textContent = humanReadableName + " is required";
+            container.append(messageEl);
+        }
+    }
+}

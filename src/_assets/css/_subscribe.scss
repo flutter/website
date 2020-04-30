@@ -61,7 +61,7 @@ $mobile-size: 640px;
     font-size: 12px;
   }
 
-  span.required {
+  span.required, #error-container {
     color: $required-red;
   }
 
