@@ -79,6 +79,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Counter(),
     );
@@ -101,9 +102,11 @@ class _CounterState extends State<Counter> {
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return _ResizingBox(
-            FlatButton(onPressed: () {
-              _counter++;
-            }, child: Text('Increment Counter')),
+            FlatButton(
+                onPressed: () {
+                  _counter++;
+                },
+                child: Text('Increment Counter')),
             Text(_counter.toString()),
           );
         },
@@ -122,7 +125,8 @@ class _ResizingBox extends StatefulWidget {
   State<StatefulWidget> createState() => _ResizingBoxState();
 }
 
-class _ResizingBoxState extends State<_ResizingBox> with SingleTickerProviderStateMixin {
+class _ResizingBoxState extends State<_ResizingBox>
+    with SingleTickerProviderStateMixin {
   Animation animation;
 
   @override
@@ -131,8 +135,11 @@ class _ResizingBoxState extends State<_ResizingBox> with SingleTickerProviderSta
     animation = AnimationController(
       vsync: this,
       duration: const Duration(minutes: 1),
-    )..forward()
-      ..addListener(() {setState(() {});});
+    )
+      ..forward()
+      ..addListener(() {
+        setState(() {});
+      });
   }
 
   @override
@@ -170,6 +177,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Counter(),
     );
@@ -192,11 +200,13 @@ class _CounterState extends State<Counter> {
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return _ResizingBox(
-            FlatButton(onPressed: () {
-              setState(() {
-                _counter++;
-              });
-            }, child: Text('Increment Counter')),
+            FlatButton(
+                onPressed: () {
+                  setState(() {
+                    _counter++;
+                  });
+                },
+                child: Text('Increment Counter')),
             Text(_counter.toString()),
           );
         },
@@ -215,7 +225,8 @@ class _ResizingBox extends StatefulWidget {
   State<StatefulWidget> createState() => _ResizingBoxState();
 }
 
-class _ResizingBoxState extends State<_ResizingBox> with SingleTickerProviderStateMixin {
+class _ResizingBoxState extends State<_ResizingBox>
+    with SingleTickerProviderStateMixin {
   Animation animation;
 
   @override
@@ -224,8 +235,11 @@ class _ResizingBoxState extends State<_ResizingBox> with SingleTickerProviderSta
     animation = AnimationController(
       vsync: this,
       duration: const Duration(minutes: 1),
-    )..forward()
-      ..addListener(() {setState(() {});});
+    )
+      ..forward()
+      ..addListener(() {
+        setState(() {});
+      });
   }
 
   @override
