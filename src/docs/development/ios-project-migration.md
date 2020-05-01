@@ -59,4 +59,11 @@ If you need to manually upgrade your project, use the following steps:
 </li>
 </ol>
 
+{{site.alert.tip}}
+  If you are using Flutter plugins, you can now delete the line
+  `install! 'cocoapods', :disable_input_output_paths => true` from `ios/Podfile`
+  to improve compilation time. Flutter projects created after v1.15.4 will not
+  contain this line.
+{{site.alert.end}}
+
 [errors]: https://github.com/flutter/flutter/issues/50568
