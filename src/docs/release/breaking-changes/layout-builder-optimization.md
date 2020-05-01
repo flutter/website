@@ -11,14 +11,14 @@ optimization][1].
 ## Context
 
 [LayoutBuilder][2] and [SliverLayoutBuilder][3] call the [builder][4] function
-more often than necessary to fulfil their primary goal of allowing apps to adapt
+more often than necessary to fulfill their primary goal of allowing apps to adapt
 their widget structure to parent layout constraints. This has led to less
 efficient and jankier applications because widgets are rebuilt unnecessarily.
 
 This transitively affects [OrientationBuilder][5] as well.
 
 In order to improve app performance the [LayoutBuilder optimization][1] was made,
-which results in the `builder` function to be called less often.
+which results in calling the `builder` function less often.
 
 Apps that rely on this function to be called with a certain frequency may break.
 The app may exhibit some combination of the following symptoms:
@@ -30,11 +30,10 @@ The app may exhibit some combination of the following symptoms:
 
 ## Description of change
 
-The pull request introducing the change can be found [here][6]. Prior to the
-optimization the builder function passed to `LayoutBuilder` or
-`SliverLayoutBuilder` would be called when any one of the following happens:
+Prior to the optimization the builder function passed to `LayoutBuilder` or
+`SliverLayoutBuilder` was called when any one of the following happened:
 
-1. `LayoutBuilder` is rebuilt due to widget configuration change (this typically
+1. `LayoutBuilder` is rebuilt due to a widget configuration change (this typically
    happens when the widget that uses `LayoutBuilder` rebuilds due to `setState`,
    `didUpdateWidget` or `didChangeDependencies`).
 1. `LayoutBuilder` is laid out and receives layout constraints from its parent
@@ -61,13 +60,18 @@ call `setState` any time the widget state changes.
 on the value of the `_counter` field. Therefore, whenever the value is updated,
 you should call `setState` to tell the framework to rebuild the widget. However,
 this example may have previously worked even without calling `setState`, if the
-`_ResizingBox` triggers a relayout of `LayoutBuilder` (see the implementation
-of `_ResizingBox` in the [design doc][1]).
+`_ResizingBox` triggers a relayout of `LayoutBuilder`.
 
 Code before migration (note the missing `setState` inside the `onPressed`
 callback):
 
 ```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
 class Counter extends StatefulWidget {
   Counter({Key key}) : super(key: key);
 
@@ -94,11 +98,58 @@ class _CounterState extends State<Counter> {
     ));
   }
 }
+
+class _ResizingBox extends StatefulWidget {
+  _ResizingBox(this.child1, this.child2);
+
+  final Widget child1;
+  final Widget child2;
+
+  @override
+  State<StatefulWidget> createState() => _ResizingBoxState();
+}
+
+class _ResizingBoxState extends State<_ResizingBox> with SingleTickerProviderStateMixin {
+  Animation animation;
+
+  @override
+  void initState() {
+    super.initState();
+    animation = AnimationController(
+      vsync: this,
+      duration: const Duration(minutes: 1),
+    )..forward()
+      ..addListener(() {setState(() {});});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          width: 100 + animation.value * 100,
+          child: widget.child1,
+        ),
+        SizedBox(
+          width: 100 + animation.value * 100,
+          child: widget.child2,
+        ),
+      ],
+    );
+  }
+}
 ```
 
 Code after migration (`setState` added to `onPressed`):
 
 ```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
 class Counter extends StatefulWidget {
   Counter({Key key}) : super(key: key);
 
@@ -127,6 +178,47 @@ class _CounterState extends State<Counter> {
     ));
   }
 }
+
+class _ResizingBox extends StatefulWidget {
+  _ResizingBox(this.child1, this.child2);
+
+  final Widget child1;
+  final Widget child2;
+
+  @override
+  State<StatefulWidget> createState() => _ResizingBoxState();
+}
+
+class _ResizingBoxState extends State<_ResizingBox> with SingleTickerProviderStateMixin {
+  Animation animation;
+
+  @override
+  void initState() {
+    super.initState();
+    animation = AnimationController(
+      vsync: this,
+      duration: const Duration(minutes: 1),
+    )..forward()
+      ..addListener(() {setState(() {});});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          width: 100 + animation.value * 100,
+          child: widget.child1,
+        ),
+        SizedBox(
+          width: 100 + animation.value * 100,
+          child: widget.child2,
+        ),
+      ],
+    );
+  }
+}
 ```
 
 Watch for usages of `Animation` and `LayoutBuilder` in the same widget.
@@ -135,6 +227,7 @@ logic of your builder function depends on the value of the animation, it may
 require a `setState` to update in tandem with the animation. To do that, add an
 [animation listener][7] that calls `setState`, like so:
 
+<!-- skip -->
 ```dart
 Animation animation = … create animation …;
 animation.addListener(() {
@@ -160,11 +253,11 @@ Relevant issues:
 Relevant PRs:
 * [LayoutBuilder: skip calling builder when constraints are the same][6]
 
-[1]: http://flutter.dev/go/layout-builder-optimization
-[2]: https://api.flutter.dev/flutter/widgets/LayoutBuilder-class.html
-[3]: https://api.flutter.dev/flutter/widgets/SliverLayoutBuilder-class.html
-[4]: https://api.flutter.dev/flutter/widgets/LayoutBuilder/builder.html
-[5]: https://api.flutter.dev/flutter/widgets/OrientationBuilder-class.html
-[6]: https://github.com/flutter/flutter/pull/55414
-[7]: https://api.flutter.dev/flutter/animation/Animation/addListener.html
-[8]: https://github.com/flutter/flutter/issues/6469
+[1]: /go/layout-builder-optimization
+[2]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
+[3]: {{site.api}}/flutter/widgets/SliverLayoutBuilder-class.html
+[4]: {{site.api}}/flutter/widgets/LayoutBuilder/builder.html
+[5]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
+[6]: {{site.github}}/flutter/flutter/pull/55414
+[7]: {{site.api}}/flutter/animation/Animation/addListener.html
+[8]: {{site.github}}/flutter/flutter/issues/6469
