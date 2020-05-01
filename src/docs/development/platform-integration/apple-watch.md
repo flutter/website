@@ -10,7 +10,7 @@ it is possible to add a native Apple Watch extension to a Flutter app.
 
 Apple Watch targets require bitcode to be enabled,
 so follow the steps in
-[Creating an iOS Bitcode enabled app][])
+[Creating an iOS Bitcode enabled app](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app)
 to use bitcode in your app.
 
 ## Step 2: Add an Apple Watch target
