@@ -629,6 +629,7 @@ and `upperBound`, and `duration`:
 
 Instantiate AnimationController:
 
+  <!-- skip -->
   ```dart
   controller = AnimationController(
     lowerBound: 0,
@@ -677,6 +678,7 @@ of the editor:
 ##### Access animation values with controller.value
 AnimationController provides a `value` property.
 You can access this property directly&mdash;there is no getter method for `value`:
+  <!-- skip -->
    ```dart
    print(controller.value);
    ```
