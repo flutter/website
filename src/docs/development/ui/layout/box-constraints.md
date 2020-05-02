@@ -108,6 +108,8 @@ In the _cross_ direction, for example, in the width for
 [`Row`][] (horizontal flex), they must never be unbounded,
 otherwise they would not be able to reasonably align their children.
 
+
+[`build`]: {{site.api}}/flutter/widgets/State/build.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
@@ -122,4 +124,3 @@ otherwise they would not be able to reasonably align their children.
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
 
-[`build`]: {{site.api}}/flutter/widgets/State/build.html

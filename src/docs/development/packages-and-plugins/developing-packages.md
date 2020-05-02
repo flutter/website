@@ -142,7 +142,7 @@ also contains platform-specific implementations written for
 Android (Kotlin or Java code), iOS (Swift or Objective-C),
 web (Dart), macos (Dart), or any subset thereof.
 The API is connected to the platform-specific
-implementation(s) using [platform channels][].
+implementation(s) using a [platform channel][].
 
 ### Federated plugins
 
