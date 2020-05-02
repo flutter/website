@@ -24,68 +24,13 @@ description: The landing page for Flutter documentation.
 <a name="latest-release"></a>
 ## What's new on this site
 
-To stay on top of Flutter announcements,
-including breaking changes, join the
-[flutter-announce][] Google group.
-
-**Apr 29, 2020**
-
-Flutter 1.17 is live!
-
-For more information, see [PENDING]
-[Flutter: the first UI platform designed for ambient computing][],
-[Announcing Flutter 1.12: What a year!][] and
-the [Flutter 1.12.13][] release notes.
-
-Docs added and updated since the last announcement include:
-
-* The [animations landing page][] has been re-written.
-  This page now includes the animation decision tree
-  that helps you figure out which animation approach
-  is right for your needs. It also includes information
-  on the new [package for pre-canned Material widget animations][]. {% comment %}https://github.com/flutter/website/pull/3975{% endcomment %}
-* Updated the plugin docs to cover the new Android Plugin APIs
-  and also to describe Federated Plugins. Affected pages include:
-  * [Developing packages and plugins][]
-  * [Developing plugin packages][]
-  * [Supporting the new Android plugin APIs][]
-  * [Writing custom platform-specific code][] {% comment %}https://github.com/flutter/website/pull/3816{% endcomment %}
-* Added an [Obfuscating Dart code][] page.
-  (Moved from the wiki and updated as of the 1.16.2 release.) {% comment %}https://github.com/flutter/website/pull/3846 and https://github.com/flutter/website/pull/3849{% endcomment %}
-* A new page on using [Xcode 11.4][] and how to manually update
-  your project. The tooling, which automatically updates your
-  configuration when possible, may direct you to this page
-  if it detects that it's needed.
-* A new page on [Managing plugins and dependencies in add-to-app][add2app]
-  when developing for Android.
-
-
-Other newness:
-
-[PENDING]
-
-For information on past releases, see the
-[What's new archive][].
-
-
-Happy Fluttering!
-
-
-[add2app]: /docs/development/add-to-app/android/plugin-setup
-[animations landing page]: /docs/development/ui/animations
-[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
-[Developing plugin packages]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
-[Obfuscating Dart code]: /docs/deployment/obfuscate
-[package for pre-canned Material widget animations]: {{site.pub}}/packages/animations
-[Supporting the new Android plugin APIs]: /docs/development/packages-and-plugins/plugin-api-migration
-[Writing custom platform-specific code]: /docs/development/platform-integration/platform-channels
-[Xcode 11.4]: /docs/development/ios-project-migration
-
+To see changes to the site since our last release,
+see the [What's new archive][].
 
 ## New to Flutter?
 
-Once you've gone through [Get Started][],
-including [Write Your First Flutter App,][]
+Once you've gone through [Get started][],
+including [Write your first Flutter app][],
 here are some next steps.
 
 ### Docs
@@ -162,7 +107,7 @@ You might also find these docs useful:
 [Flutter in Focus]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter Youtube channel]: {{site.social.youtube}}
-[Get Started]: /docs/get-started/install
+[Get started]: /docs/get-started/install
 [iOS]: /docs/get-started/flutter-for/ios-devs
 [Navigation and routing]: /docs/development/ui/navigation
 [React Native]: /docs/get-started/flutter-for/react-native-devs
@@ -171,6 +116,6 @@ You might also find these docs useful:
 [videos]: /docs/resources/videos
 [Web]: /docs/get-started/flutter-for/web-devs
 [What's new archive]: /docs/whats-new-archive
-[Write Your First Flutter App,]: /docs/get-started/codelab
+[Write your first Flutter app]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
 

@@ -3,13 +3,97 @@ title: What's new archive
 description: An archive of what's new on the site.
 ---
 
-This archive contains previous announcements of
+This archive contains current and previous announcements of
 what's new on the site.
 
 To stay on top of Flutter announcements, including breaking changes,
 join the [flutter-announce][] Google group.
 
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
+
+
+## **Apr 29, 2020**
+
+Flutter 1.17 is live!
+
+For more information, see [PENDING: blog post] and
+[PENDING: release notes].
+
+Docs added and updated since the last announcement include:
+
+* The [animations landing page][] has been re-written.
+  This page now includes the animation decision tree
+  that helps you figure out which animation approach
+  is right for your needs. It also includes information
+  on the new [package for pre-canned Material widget animations][].
+* The [hot reload][] page has been re-written. We
+  hope you find it to be clearer!
+* The plugin docs are updated to cover the new Android Plugin APIs
+  and also to describe Federated Plugins. Affected pages include:
+  * [Developing packages and plugins][]
+  * [Developing plugin packages][]
+  * [Supporting the new Android plugin APIs][]
+  * [Writing custom platform-specific code][]
+* Added an [Obfuscating Dart code][] page.
+  (Moved from the wiki and updated as of 1.16.2.)
+* Added a page on using [Xcode 11.4][] and how to manually update
+  your project. The tooling, which automatically updates your
+  configuration when possible, may direct you to this page
+  if it detects that it's needed.
+* Added a page on [Managing plugins and dependencies in add-to-app][add2app]
+  when developing for Android.
+
+
+Other newness: [PENDING: Anything else?]
+
+* We've published a number of articles on the [Flutter Medium][]
+  publication since the last stable release:
+  * [Custom implicit animations in Flutter…with TweenAnimationBuilder][]
+  * [Directional animations with build-in explicit animations][]
+  * [When should I use AnimatedBuilder or AnimatedWidget?][]
+  * [Improving Flutter with your opinion - Q4 2019 survey results][]
+  * [How to write a Flutter web plugin, Part 2][]
+  * [It’s Time: The Flutter Clock contest results][]
+  * [How to float an overlay widget over a (possibly transformed) UI widget][]
+  * [How to embed a Flutter application in a website using DartPad][]
+  * [Flutter web: Navigating URLs using named routes][]
+  * [How to choose which Flutter animation widget is right for you?][]
+  * [Announcing a free Flutter introductory course][]
+  * [Announcing CodePen support for Flutter][]
+  * [Animation deep dive][]
+  * [Flutter Spring 2020 update][]
+  * [Introducing Google Fonts for Flutter v 1.0.0!][]
+  * [Flutter web support updates][]
+  * [Modern Flutter plugin development][]
+
+[add2app]: /docs/development/add-to-app/android/plugin-setup
+[Animation deep dive]: https://medium.com/flutter/animation-deep-dive-39d3ffea111f
+[animations landing page]: /docs/development/ui/animations
+[Announcing a free Flutter introductory course]: https://medium.com/flutter/learn-flutter-for-free-c9bc3b898c4d
+[Announcing CodePen support for Flutter]: https://medium.com/flutter/announcing-codepen-support-for-flutter-bb346406fe50
+[Custom implicit animations in Flutter…with TweenAnimationBuilder]: https://medium.com/flutter/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
+[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
+[Developing plugin packages]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[Directional animations with build-in explicit animations]: https://medium.com/flutter/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
+[Flutter Medium]: https://medium.com/flutter
+[Flutter Spring 2020 update]: https://medium.com/flutter/flutter-spring-2020-update-f723d898d7af
+[Flutter web: Navigating URLs using named routes]: https://medium.com/flutter/flutter-web-navigating-urls-using-named-routes-307e1b1e2050
+[Flutter web support updates]: https://medium.com/flutter/flutter-web-support-updates-8b14bfe6a908
+[hot reload]: /docs/development/tools/hot-reload
+[How to choose which Flutter animation widget is right for you?]: https://medium.com/flutter/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
+[How to embed a Flutter application in a website using DartPad]: https://medium.com/flutter/how-to-embed-a-flutter-application-in-a-website-using-dartpad-b8fd0ee8c4b9
+[How to float an overlay widget over a (possibly transformed) UI widget]: https://medium.com/flutter/how-to-float-an-overlay-widget-over-a-possibly-transformed-ui-widget-1d15ca7667b6
+[How to write a Flutter web plugin, Part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[Improving Flutter with your opinion - Q4 2019 survey results]: https://medium.com/flutter/improving-flutter-with-your-opinion-q4-2019-survey-results-ba0e6721bf23
+[Introducing Google Fonts for Flutter v 1.0.0!]: https://medium.com/flutter/introducing-google-fonts-for-flutter-v-1-0-0-c0e993617118
+[It’s Time: The Flutter Clock contest results]: https://medium.com/flutter/its-time-the-flutter-clock-contest-results-dcebe2eb3957
+[Obfuscating Dart code]: /docs/deployment/obfuscate
+[package for pre-canned Material widget animations]: {{site.pub}}/packages/animations
+[Modern Flutter plugin development]: https://medium.com/flutter/modern-flutter-plugin-development-4c3ee015cf5a
+[Supporting the new Android plugin APIs]: /docs/development/packages-and-plugins/plugin-api-migration
+[When should I use AnimatedBuilder or AnimatedWidget?]: https://medium.com/flutter/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
+[Writing custom platform-specific code]: /docs/development/platform-integration/platform-channels
+[Xcode 11.4]: /docs/development/ios-project-migration
 
 ## **Dec 11, 2019, Flutter Interact Edition**
 
