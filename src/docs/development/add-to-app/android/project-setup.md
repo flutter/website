@@ -214,6 +214,13 @@ dependencies {
 }
 ```
 
+{{site.alert.important}}
+If you're located in China, use a mirror site such as
+`https://[a mirror site]/download.flutter.io` rather than the
+`storage.googleapis.com` domain directly. See our
+[Using Flutter in China](/community/china) page for information on mirrors.
+{{site.alert.end}}
+
 {{site.alert.tip}}
 You can also build an AAR for your Flutter module in Android Studio using
 the `Build > Flutter > Build AAR` menu.
