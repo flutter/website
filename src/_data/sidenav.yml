@@ -59,6 +59,8 @@
             - title: Layouts in Flutter
               permalink: /docs/development/ui/layout
               match-page-url-exactly: true
+            - title: Understanding constraints [NEW]
+              permalink: /docs/development/ui/layout/constraints
             - title: Tutorial
               permalink: /docs/development/ui/layout/tutorial
             - title: Creating responsive apps
