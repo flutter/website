@@ -564,6 +564,7 @@ built widgets and applies only the differences to the underlying
 
 Here's an example parent widget that stores mutable state:
 
+<!-- skip -->
 ```dart
 class ShoppingList extends StatefulWidget {
   ShoppingList({Key key, this.products}) : super(key: key);
