@@ -107,7 +107,10 @@ function showErrors(errors) {
         if (errorName.length > 0 && errorName[0] == "Required") {
             console.log();
             let messageEl = document.createElement("p");
-            let humanReadableName = subscribePreferencesData.fields[formElementName].label;
+
+            // Limit the length of the field label name used in the error message
+            let humanReadableName = subscribeData.fields[formElementName].label.substring(0, 23);
+
             messageEl.textContent = humanReadableName + " is required";
             container.append(messageEl);
         }

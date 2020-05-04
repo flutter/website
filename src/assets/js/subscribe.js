@@ -977,7 +977,6 @@ var subscribeData = {
                 ]
             ],
             'error_messages': {
-                'invalid': 'Enter a valid value.',
                 'invalid_choice': 'Select a valid choice. %(value)s is not one of the available choices.',
                 'required': 'This field is required.'
             },
@@ -1011,7 +1010,6 @@ var subscribeData = {
                 ]
             ],
             'error_messages': {
-                'invalid': 'Enter a valid value.',
                 'invalid_choice': 'Select a valid choice. %(value)s is not one of the available choices.',
                 'required': 'This field is required.'
             },
@@ -1021,7 +1019,6 @@ var subscribeData = {
         },
         'FirstName': {
             'error_messages': {
-                'invalid': 'Enter a valid value.',
                 'required': 'This field is required.'
             },
             'field_type': 'Char',
@@ -1035,12 +1032,12 @@ var subscribeData = {
                 'value': 'True'
             },
             'error_messages': {
-                'invalid': 'Enter a valid value.',
-                'required': 'This field is required.'
+                'invalid': '',
+                'required': 'Required'
             },
             'field_type': 'Boolean',
             'label': 'Flutter news & updates. Get the latest Flutter developer product news.',
-            'required': false
+            'required': true
         },
         'LanguagePreference': {
             'choices': [
@@ -1073,7 +1070,6 @@ var subscribeData = {
         },
         'LastName': {
             'error_messages': {
-                'invalid': 'Enter a valid value.',
                 'required': 'This field is required.'
             },
             'field_type': 'Char',
@@ -1147,7 +1143,7 @@ function submitForm() {
     }
 
     if (devUpdatesElem.value) {
-        data.FlutterDevUpdates = devUpdatesElem.value == "on" ? "true" : "false";
+        data.FlutterDevUpdates = devUpdatesElem.checked == true ? "true" : "false";
     }
 
     sendRequest(data);
@@ -1190,7 +1186,10 @@ function showErrors(errors) {
         if (errorName.length > 0 && errorName[0] == "Required") {
             console.log();
             let messageEl = document.createElement("p");
-            let humanReadableName = subscribeData.fields[formElementName].label;
+
+            // Limit the length of the field label name used in the error message
+            let humanReadableName = subscribeData.fields[formElementName].label.substring(0, 23);
+
             messageEl.textContent = humanReadableName + " is required";
             container.append(messageEl);
         }
