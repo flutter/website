@@ -1113,6 +1113,18 @@ for (var idx in exps) {
     experienceLevelEl.appendChild(new Option(e[1], e[0]));
 }
 
+submitEl.disabled = true;
+
+
+// Enable the submit button only when the checkbox is checked.
+devUpdatesElem.addEventListener("change", function() {
+    if (this.checked) {
+        submitEl.disabled = false;
+    } else {
+        submitEl.disabled= true;
+    }
+});
+
 submitEl.addEventListener("click", submitForm);
 
 function submitForm() {
