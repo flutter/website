@@ -1151,6 +1151,13 @@ and trailing icons. `ListTile` is most commonly used in
 
 <hr>
 
+## Constraints
+
+To fully understand Flutter's layout system, you need
+to learn how Flutter positions and sizes
+the components in a layout. For more information,
+see [Understanding constraints][].
+
 ## Videos
 
 The following videos, part of the
@@ -1243,6 +1250,7 @@ The following resources might help when writing layout code.
 [widgets library]: {{api}}/widgets/widgets-library.html
 [Widget catalog]: /docs/development/ui/widgets
 [Debugging layout issues visually]: /docs/development/tools/devtools/inspector#debugging-layout-issues-visually
+[Understanding constraints]: /docs/development/ui/layout/constraints
 [Using the Flutter inspector]: /docs/development/tools/devtools/inspector
 [Widget of the Week series]: https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

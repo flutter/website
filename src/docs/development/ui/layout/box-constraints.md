@@ -9,6 +9,12 @@ short-title: Box constraints
   framework detects a problem involving box constraints.
 {{site.alert.end}}
 
+{{site.alert.note}}
+  If you are confused by how constraints, sizing,
+  and positioning work in Flutter, see
+  [Understanding constraints][].
+{{site.alert.end}}
+
 In Flutter, widgets are rendered by their underlying
 [`RenderBox`][] objects. Render boxes are given
 constraints by their parent, and size themselves within those
@@ -123,4 +129,5 @@ otherwise they would not be able to reasonably align their children.
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
+[Understanding constraints]: /docs/development/ui/layout/constraints
 
