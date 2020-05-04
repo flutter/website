@@ -32,9 +32,9 @@ Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-While traditional web approaches remain a great choice, we envision
-the web support available in Flutter being valuable in many scenarios. 
-For example:
+While traditional web approaches remain a great choice<sup>*</sup>,
+we envision the web support available in Flutter being valuable
+in many scenarios. For example:
 
 **A connected [Progressive Web Application][] built with Flutter**
 : Web support for Flutter enables existing mobile-based applications
@@ -82,6 +82,15 @@ The following resources can help you get started:
 * [File an issue][] on the main Flutter repo.
 * You can chat and ask web-related questions on the
   **#help** channel on [Discord][].
+
+---
+
+<sup>*</sup> We don’t recommend using Flutter to build static
+  content websites with a lot of text and images such as blogs,
+  event pages, and news sites. For these types of sites,
+  it's best to use traditional web approaches,
+  but you _can_ use Flutter to embed interactive experiences
+  into these websites.
 
 
 
