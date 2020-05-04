@@ -39,6 +39,7 @@ $mobile-size: 640px;
   }
 
   form {
+    width: 100%;
     flex: 2;
     > * {
       margin-bottom: 12px;
@@ -69,7 +70,12 @@ $mobile-size: 640px;
     > * {
       display: block;
     }
+
     input {
+      width: 100%;
+    }
+
+    select#country {
       width: 100%;
     }
   }
