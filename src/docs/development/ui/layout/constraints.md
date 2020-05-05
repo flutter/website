@@ -647,12 +647,15 @@ class Example15 extends Example {
       'In this case the Container is 4000 pixels wide, and is too big to fit in the OverflowBox, '
       'but the OverflowBox simply shows as much as it can, with no warnings given.';
 
-  @override
+@override
   Widget build(BuildContext context) {
     return OverflowBox(
-      child: Center(child: Container(color: red, width: 4000, height: 50)),
-    );
-  }
+      minWidth: 0.0,
+      minHeight: 0.0,
+      maxWidth: double.infinity,
+      maxHeight: double.infinity,
+      child: Container(color: red, width: 4000, height: 50),
+    );}
 }
 
 //////////////////////////////////////////////////
