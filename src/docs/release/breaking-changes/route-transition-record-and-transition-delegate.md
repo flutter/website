@@ -18,16 +18,15 @@ decisions.
 ## Context
 
 If the navigator receives a new list of pages, it tries to update its
-current routes stack to match the list. It, however, requires explicit
-decisions on how to transition the route in and off the screen. Developers
-can customize that by providing their own implementations of transition
-delegate. Previously, routes that were not in the new list required decisions
-on how to transition off the screen. However, we later found out this is not
-always true. If a route that was popped but is still waiting for the popping
-animation to finish, this route will sit in the navigator routes stack until
-it is done. If a page update occurs during this time, this route exits but
-doesn't requires a decision on how to transition off the screen. Therefore,
-we added the `isWaitingForExitingDecision` to denote such case.
+current routes stack to match the list. However, it requires explicit
+decisions on how to transition the route on and off the screen. Previously,
+routes that were not in the new list required decisions on how to transition
+off the screen. However, we later found out this is not always true. If a
+route that was popped but is still waiting for the popping animation to finish,
+this route will sit in the navigator routes stack until it is done. If a page
+update occurs during this time, this route exits but doesn't requires a decision
+on how to transition off the screen. Therefore, we added the
+`isWaitingForExitingDecision` to denote such case.
 
 The `isEntering` getter is also renamed to `isWaitingForEnteringDecision` so
 that is is more descriptive and matches the naming scheme.
@@ -132,11 +131,11 @@ Relevant issue:
 * [Issue 45938: Navigator 2.0][]
 
 Relevant PR:
-* [PR 55998: Fixes the navigator pages update crashes when there is still route waiting for popping animation to finish][]
+* [PR 55998][]
 
 
 [Issue 45938: Navigator 2.0]: {{site.github}}/flutter/flutter/issues/45938
 [`Navigator`]: https://master-api.flutter.dev/flutter/widgets/Navigator-class.html
 [`TransitionDelegate`]: https://master-api.flutter.dev/flutter/widgets/TransitionDelegate-class.html
 [`RouteTransitionRecord`]: https://master-api.flutter.dev/flutter/widgets/RouteTransitionRecord-class.html
-[PR 55998: Fixes the navigator pages update crashes when there is still route waiting for popping animation to finish]: {{site.github}}/flutter/flutter/pull/55998
+[PR 55998]: {{site.github}}/flutter/flutter/pull/55998
