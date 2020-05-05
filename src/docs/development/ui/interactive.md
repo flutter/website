@@ -151,9 +151,9 @@ In this example, `createState()` returns an
 instance of `_FavoriteWidgetState`,
 which you'll implement in the next step.
 
+<!-- skip -->
 <?code-excerpt path-base="layout/lakes/interactive"?>
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
-<!-- skip -->
 ```dart
 class FavoriteWidget extends StatefulWidget {
   @override
@@ -178,8 +178,8 @@ red star, indicating that the lake has "favorite" status,
 along with 41 likes. These values are stored in the
 `_isFavorited` and `_favoriteCount` fields:
 
-<?code-excerpt "lib/main.dart (_FavoriteWidgetState fields)" replace="/(bool|int) .*/[!$&!]/g" title?>
 <!-- skip -->
+<?code-excerpt "lib/main.dart (_FavoriteWidgetState fields)" replace="/(bool|int) .*/[!$&!]/g" title?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   [!bool _isFavorited = true;!]
@@ -195,8 +195,8 @@ because it has an `onPressed` property that defines
 the callback function (`_toggleFavorite`) for handling a tap.
 You'll define the callback function next.
 
-<?code-excerpt "lib/main.dart (_FavoriteWidgetState build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g" title?>
 <!-- skip -->
+<?code-excerpt "lib/main.dart (_FavoriteWidgetState build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g" title?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   // ···
@@ -243,8 +243,8 @@ UI between these two states:
 * A `star` icon and the number 41
 * A `star_border` icon and the number 40
 
-<?code-excerpt "lib/main.dart (_toggleFavorite)"?>
 <!-- skip -->
+<?code-excerpt "lib/main.dart (_toggleFavorite)"?>
 ```dart
 void _toggleFavorite() {
   setState(() {
@@ -267,6 +267,7 @@ the app's `build()` method. First, locate the code that
 creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
+<!-- skip -->
 <?code-excerpt path-base=""?>
 <?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
 ```diff
@@ -288,12 +289,9 @@ In the same location, create the stateful widget:
          ],
        ),
      );
-@@ -114,3 +105,5 @@
-           ),
-         ),
-       ],
-+    );
-+  }
+@@ -117,2 +108,2 @@
+     );
+   }
 ```
 
 That's it! When you hot reload the app,
