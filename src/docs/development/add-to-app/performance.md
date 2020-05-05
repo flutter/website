@@ -17,13 +17,15 @@ conceptual loading steps when displaying the Flutter UI.
 
 ### Finding the Flutter resources
 
-Flutter's engine runtime and your application's compiled Dart code are both
-bundled as shared libraries on Android and iOS. The first step of loading
-Flutter is to find those resources in your .apk/.ipa/.app (along with
-other Flutter assets such as images, fonts, and JIT code if applicable).
+Flutter's engine runtime and your application's compiled
+Dart code are both bundled as shared libraries on Android
+and iOS. The first step of loading Flutter is to find those
+resources in your .apk/.ipa/.app (along with other Flutter
+assets such as images, fonts, and JIT code if applicable).
 
-This happens when you construct a FlutterEngine for the first time on both
-**[Android][android-engine]** and **[iOS][ios-engine]** APIs.
+This happens when you construct a `FlutterEngine` for the
+first time on both **[Android][android-engine]**
+and **[iOS][ios-engine]** APIs.
 
 ### Loading the Flutter library
 
@@ -39,11 +41,13 @@ such as by running [`runWithEntrypoint:`][].
 
 ### Starting the Dart VM
 
-The Dart runtime is responsible for managing Dart memory and concurrency for
-your Dart code. In JIT mode, it's additionally responsible for compiling
+The Dart runtime is responsible for managing Dart memory and
+concurrency for your Dart code. In JIT mode,
+it's additionally responsible for compiling
 the Dart source code into machine code during runtime.
 
-A single Dart runtime exists per application session on Android and iOS.
+A single Dart runtime exists per application session on
+Android and iOS.
 
 A one-time Dart VM start is done when constructing the
 [`FlutterEngine`][android-engine] for the first time on
@@ -64,7 +68,7 @@ After the Dart runtime is initialized,
 the Flutter engine's usage of the Dart
 runtime is the next step.
 
-This is done by starting a [Dart `Isolate`] in the Dart runtime.
+This is done by starting a [Dart `Isolate`][] in the Dart runtime.
 The isolate is Dart's container for memory and threads.
 A number of [auxiliary threads][] on the host platform are
 also created at this point to support the isolate, such
@@ -145,7 +149,8 @@ in release-AOT mode, pre-warming the `FlutterEngine` costs:
 A Flutter UI can be attached during the pre-warm.
 The remaining time is joined to the time-to-first-frame latency.
 
-Memory-wise, a cost sample (variable, depending on the use case) could be:
+Memory-wise, a cost sample (variable,
+depending on the use case) could be:
 
 * ~4 MB OS's memory usage for creating pthreads.
 * ~10 MB GPU driver memory.
@@ -164,7 +169,8 @@ a cost sample (variable, depending on the use case) could be:
 
 The `FlutterEngine` should be pre-warmed late enough to delay the
 memory consumption needed but early enough to avoid combining the
-Flutter engine start-up time with the first frame latency of showing Flutter.
+Flutter engine start-up time with the first frame latency of
+showing Flutter.
 
 The exact timing depends on the app's structure and heuristics.
 An example would be to load the Flutter engine in the screen
