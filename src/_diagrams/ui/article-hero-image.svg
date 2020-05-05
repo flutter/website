@@ -9,11 +9,11 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:export-ydpi="96"
    inkscape:export-xdpi="96"
-   inkscape:export-filename="D:\Simon\Desktop\marc_2.png"
-   inkscape:version="1.0rc1 (09960d6f05, 2020-04-09)"
+   inkscape:export-filename="article-hero-image.png"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
    height="1080"
    width="1920"
-   sodipodi:docname="marc_2.svg"
+   sodipodi:docname="article-hero-image.svg"
    id="svg38"
    version="1.1"
    viewBox="0 0 1920 1080">
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -33,15 +33,15 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="svg38"
      inkscape:window-maximized="0"
-     inkscape:window-y="546"
-     inkscape:window-x="3694"
-     inkscape:cy="805.22502"
-     inkscape:cx="977.22976"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:cy="605.22502"
+     inkscape:cx="1069.6026"
      inkscape:zoom="0.59"
      showgrid="false"
      id="namedview40"
-     inkscape:window-height="1305"
-     inkscape:window-width="2380"
+     inkscape:window-height="719"
+     inkscape:window-width="1280"
      inkscape:pageshadow="2"
      inkscape:pageopacity="1"
      guidetolerance="10"
@@ -158,24 +158,24 @@
      inkscape:connector-curvature="0" />
   <text
      id="text887"
-     y="757.539"
-     x="548.43225"
+     y="747.36951"
+     x="636.56787"
      style="font-style:normal;font-weight:normal;font-size:21.1971px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.529929px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"><tspan
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:101.746px;line-height:100%;font-family:Roboto;-inkscape-font-specification:'Roboto Medium';stroke-width:0.529929px"
-       y="757.539"
-       x="548.43225"
+       y="747.36951"
+       x="636.56787"
        id="tspan885"
        sodipodi:role="line">Constraints go down.</tspan><tspan
        id="tspan891"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:101.746px;line-height:100%;font-family:Roboto;-inkscape-font-specification:'Roboto Medium';stroke-width:0.529929px"
-       y="859.28503"
-       x="548.43225"
+       y="849.11548"
+       x="636.56787"
        sodipodi:role="line">Sizes go up.</tspan><tspan
        id="tspan889"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:101.746px;line-height:100%;font-family:Roboto;-inkscape-font-specification:'Roboto Medium';stroke-width:0.529929px"
-       y="961.03101"
-       x="548.43225"
+       y="950.86151"
+       x="636.56787"
        sodipodi:role="line">Parent sets position.</tspan></text>
   <g
      transform="translate(81.497053,-26.366694)"
