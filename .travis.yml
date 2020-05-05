@@ -25,7 +25,8 @@ env:
     - JEKYLL_ENV=production
     - TZ=US/Pacific # normalize build timestamp
   matrix:
-    - TASK="./tool/check-code.sh"
+    # TODO: re-add when #4038 is fixed
+#    - TASK="./tool/check-code.sh"
     - TASK="bundle exec jekyll build"
 
 before_install:
