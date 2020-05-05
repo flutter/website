@@ -246,8 +246,19 @@ using reverse domain name notation. This value is used
 in various package and bundle identifiers in the
 generated plugin code.
 
+Use the `-a` option to specify the language for android or the `-i` option to specify the language for ios. Please choose **one** of the following:
+
 ```terminal
-$ flutter create --org com.example --template=plugin hello
+$ flutter create --org com.example --template=plugin -a kotlin hello
+```
+```terminal
+$ flutter create --org com.example --template=plugin -a java hello
+```
+```terminal
+$ flutter create --org com.example --template=plugin -i objc hello
+```
+```terminal
+$ flutter create --org com.example --template=plugin -i swift hello
 ```
 
 This creates a plugin project in the `hello` folder
@@ -274,7 +285,10 @@ you can specify the iOS language using `-i` and the
 Android language using `-a`. For example:
 
 ```terminal
-$ flutter create --template=plugin -i objc -a java hello
+$ flutter create --template=plugin -i objc hello
+```
+```terminal
+$ flutter create --template=plugin -a java hello
 ```
 
 ### Step 2: Implement the package {#edit-plugin-package}
