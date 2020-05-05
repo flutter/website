@@ -5,13 +5,13 @@ description: Changes to the rule on how transition delegate resolve route transi
 
 ## Summary
 
-Added a new boolean getter `isWaitingForExitingDecision` to the route
+We added a new boolean getter `isWaitingForExitingDecision` to the route
 transition record and renamed the getter `isEntering` to
-`isWaitingForEnteringDecision`. During the resolve method in transition
-delegate, developers need to use the `isWaitingForExitingDecision` to check
-if a exiting route actually needs an explicit decision on how to transition
-off the screen. Otherwise, it throws assertion errors if developers try to
-make decisions for the exiting routes that are not waiting for exiting
+`isWaitingForEnteringDecision`. During the `resolve` method in transition
+delegate, you need to use the `isWaitingForExitingDecision` to check
+if an exiting route actually needs an explicit decision on how to transition
+off the screen. Otherwise, it throws assertion errors if you try to
+make decisions for exiting routes that aren't waiting for exiting
 decisions.
 
 
@@ -21,17 +21,16 @@ If the navigator receives a new list of pages, it tries to update its
 current routes stack to match the list. It, however, requires explicit
 decisions on how to transition the route in and off the screen. Developers
 can customize that by providing their own implementations of transition
-delegate. Previously, we made it so that all the routes that are not in the new
-list must require decisions on how to transition off the screen. However,
-these routes do not always require decisions. If a route that was popped
-in a earlier update but is stilling waiting for the popping animation to
-finish, this route will sit in the navigator routes stack until it is done.
-If a page update occur during this time, this route is exiting but does
-not requires any decision on how to transition off the screen. Therefore,
-we add the `isWaitingForExitingDecision` to denote such case.
+delegate. Previously, routes that were not in the new list required decisions
+on how to transition off the screen. However, we later found out this is not
+always true. If a route that was popped but is still waiting for the popping
+animation to finish, this route will sit in the navigator routes stack until
+it is done. If a page update occurs during this time, this route exits but
+doesn't requires a decision on how to transition off the screen. Therefore,
+we added the `isWaitingForExitingDecision` to denote such case.
 
-We also renamed the exiting getter `isEntering` to `isWaitingForEnteringDecision`
-so that is is more descriptive and matches the naming scheme.
+The `isEntering` getter is also renamed to `isWaitingForEnteringDecision` so
+that is is more descriptive and matches the naming scheme.
 
 ## Migration guide
 
@@ -126,6 +125,8 @@ This change landed in v1.18.0.
 
 API documentation:
 * [`Navigator`][]
+* [`TransitionDelegate`][]
+* [`RouteTransitionRecord`][]
 
 Relevant issue:
 * [Issue 45938: Navigator 2.0][]
@@ -135,5 +136,7 @@ Relevant PR:
 
 
 [Issue 45938: Navigator 2.0]: {{site.github}}/flutter/flutter/issues/45938
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Navigator`]: https://master-api.flutter.dev/flutter/widgets/Navigator-class.html
+[`TransitionDelegate`]: https://master-api.flutter.dev/flutter/widgets/TransitionDelegate-class.html
+[`RouteTransitionRecord`]: https://master-api.flutter.dev/flutter/widgets/RouteTransitionRecord-class.html
 [PR 55998: Fixes the navigator pages update crashes when there is still route waiting for popping animation to finish]: {{site.github}}/flutter/flutter/pull/55998
