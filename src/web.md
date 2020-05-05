@@ -61,7 +61,8 @@ Not every HTML scenario is ideally suited for Flutter at this time.
 For example, text-rich flow-based content such as blog articles
 benefit from the document-centric model that the web is built around,
 rather than the app-centric services that a UI framework like Flutter
-can deliver.
+can deliver. However, you _can_ use Flutter to embed interactive
+experiences into these websites.
 
 <a name="web"></a>
 ## Notes on web support
@@ -84,14 +85,6 @@ The following resources can help you get started:
   **#help** channel on [Discord][].
 
 ---
-
-<sup>*</sup> We don’t recommend using Flutter to build static
-  content websites with a lot of text and images such as blogs,
-  event pages, and news sites. For these types of sites,
-  it's best to use traditional web approaches,
-  but you _can_ use Flutter to embed interactive experiences
-  into these websites.
-
 
 
 [Building a web application with Flutter]: /docs/get-started/web

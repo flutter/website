@@ -9,12 +9,26 @@ As of the 1.12 release, web support for Flutter
 is available on the beta channel.
 **We don't recommend deploying a web app to production.**
 
-### What sort of apps are not ideal for Flutter on the web?
+### What scenarios are ideal for Flutter on the web?
 
-While **we don’t recommend using Flutter to build static content
-websites with a lot of text and images** such as blogs,
-event pages, and news sites, you _can_ use Flutter to
+While traditional web approaches remain a great choice,
+we envision the web support available in Flutter being
+valuable in many scenarios. For example:
+
+* Rich interactive single page applications
+* Connected Progressive Web Applications (PWAs)
+* Embedding dynamic/interactive content in an existing website
+
+Not every HTML scenario is ideally suited for Flutter at
+this time. For example, text-rich flow-based content such
+as blog articles benefit from the document-centric model that
+the web is built around, rather than the app-centric services
+that a UI framework like Flutter can deliver.
+However, you _can_ use Flutter to
 embed interactive experiences into these websites.
+
+For more information on how you can use Flutter on the web,
+see [Web support for Flutter][].
 
 ### How do I migrate a web app built using the flutter_web repo to the flutter repo?
 
@@ -182,4 +196,5 @@ Flutter engineers routinely read and respond on Discord.
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.github}}/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /docs/testing#widget-tests
 [pub.dev]: {{site.pub}}/flutter/packages?platform=web
+[Web support for Flutter]: /web
 [write your own plugins]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
