@@ -85,7 +85,7 @@ in its cross-direction (for example,
 if it's a vertically-scrolling block,
 it tries to be as wide as its parent).
 If you nest a vertically scrolling [`ListView`][]
-inside a horizontally scrolling [`ListView`][],
+inside a horizontally scrolling `ListView`,
 the inner one tries to be as wide as possible,
 which is infinitely wide,
 since the outer one is scrollable in that direction.

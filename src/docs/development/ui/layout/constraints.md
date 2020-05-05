@@ -1774,20 +1774,20 @@ of your IDE.
 Here is an example:
 
 * Find a `Column` in your code and navigate to its
-  source-code. To do this, use `command+B` (macOS)
+  source code. To do this, use `command+B` (macOS)
   or `control+B` (Windows/Linux) in Android Studio or IntelliJ).
   You’ll be taken to the `basic.dart` file.
   Since `Column` extends `Flex`, navigate to the `Flex`
-  source-code (also in `basic.dart`).
+  source code (also in `basic.dart`).
 
-* Now scroll down until you find a method called
+* Scroll down until you find a method called
   `createRenderObject()`. As you can see,
   this method returns a `RenderFlex`.
-  This is the corresponding render-object for the `Column`.
+  This is the render-object for the `Column`.
   Now navigate to the source-code of `RenderFlex`,
   which takes you to the `flex.dart` file.
 
-* Now scroll down until you find a method called
+* Scroll down until you find a method called
   `performLayout()`. This is the method that does
   the layout for the `Column`.
 
