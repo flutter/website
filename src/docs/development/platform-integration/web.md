@@ -5,9 +5,15 @@ description: Some gotchas and differences when writing or running web apps in Fl
 
 ### Is the web version of Flutter ready for production?
 
-As of the 1.12 release, web support for Flutter
-is available on the beta channel.
-**We don't recommend deploying a web app to production.**
+Flutter web support is available on the beta channel.
+As is typical for beta software, we're still making
+changes to improve performance and quality, and you
+may discover rendering bugs compared to the stable
+mobile platforms. While web support is in beta,
+we recommend careful testing on a variety of platforms
+before deploying to production, and that you track and
+apply Flutter updates to your deployed site on a regular
+basis.
 
 ### What scenarios are ideal for Flutter on the web?
 
