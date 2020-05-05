@@ -27,6 +27,7 @@ The following guides (in alphabetical order) are available:
 * [The `forgetChild` method must call super][]
 * [The RenderEditable needs to be laid out before hit testing][]
 * [The Route and Navigator Refactoring][]
+* [The Route Transition Record and Transition Delegate Updates][]
 * [ThemeData's accent properties][]
 
 [Actions API Revision]: /docs/release/breaking-changes/actions-api-revision
@@ -50,4 +51,5 @@ The following guides (in alphabetical order) are available:
 [The `forgetChild` method must call super]: /docs/release/breaking-changes/forgetchild-call-super
 [The RenderEditable needs to be laid out before hit testing]: /docs/release/breaking-changes/rendereditable-layout-before-hit-test
 [The Route and Navigator Refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
+[The Route Transition Record and Transition Delegate Updates]: /docs/release/breaking-changes/route-transition-record-and-transition-delegate
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
