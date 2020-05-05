@@ -12,7 +12,7 @@ join the [flutter-announce][] Google group.
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
 
-## **Apr 29, 2020**
+## **May 6, 2020, Work-From-Home Edition**
 
 Flutter 1.17 is live!
 
@@ -21,6 +21,8 @@ For more information, see [PENDING: blog post] and
 
 Docs added and updated since the last announcement include:
 
+* Added a new page on [Understanding constraints][],
+  contributed by Marcelo Glasberg, a Flutter community member.
 * The [animations landing page][] has been re-written.
   This page now includes the animation decision tree
   that helps you figure out which animation approach
@@ -91,6 +93,7 @@ Other newness: [PENDING: Anything else?]
 [package for pre-canned Material widget animations]: {{site.pub}}/packages/animations
 [Modern Flutter plugin development]: https://medium.com/flutter/modern-flutter-plugin-development-4c3ee015cf5a
 [Supporting the new Android plugin APIs]: /docs/development/packages-and-plugins/plugin-api-migration
+[Understanding constraints]: /docs/development/ui/layout/constraints
 [When should I use AnimatedBuilder or AnimatedWidget?]: https://medium.com/flutter/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [Writing custom platform-specific code]: /docs/development/platform-integration/platform-channels
 [Xcode 11.4]: /docs/development/ios-project-migration
