@@ -25,7 +25,9 @@ Instead, first tell them that Flutter layout is very different
 from HTML layout (which is probably where they’re coming from),
 and then make them memorize the following rule:
 
-**Constraints go down. Sizes go up. Parent sets position.**
+<center><font size="+2">
+<b>Constraints go down. Sizes go up. Parent sets position.</b>
+</font></center>
 
 Flutter layout can’t really be understood without knowing
 this rule, so Flutter developers should learn it early on.
@@ -637,6 +639,10 @@ class Example14 extends Example {
 
 class Example15 extends Example {
   final String code = 'OverflowBox(\n'
+      '   minWidth: 0.0,'
+      '   minHeight: 0.0,'
+      '   maxWidth: double.infinity,'
+      '   maxHeight: double.infinity,'
       '   child: Container(color: red, width: 4000, height: 50));';
   final String explanation =
       'The screen forces the OverflowBox to be exactly the same size as the screen, '
@@ -1349,6 +1355,10 @@ the much dreaded "overflow warning".
 <!-- skip -->
 ```dart
 OverflowBox(
+   minWidth: 0.0,
+   minHeight: 0.0,
+   maxWidth: double.infinity,
+   maxHeight: double.infinity,
    child: Container(color: Colors.red, width: 4000, height: 50),
 );
 ```
