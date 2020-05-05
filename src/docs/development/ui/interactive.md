@@ -153,6 +153,7 @@ which you'll implement in the next step.
 
 <?code-excerpt path-base="layout/lakes/interactive"?>
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
+<!-- skip -->
 ```dart
 class FavoriteWidget extends StatefulWidget {
   @override
@@ -178,6 +179,7 @@ along with 41 likes. These values are stored in the
 `_isFavorited` and `_favoriteCount` fields:
 
 <?code-excerpt "lib/main.dart (_FavoriteWidgetState fields)" replace="/(bool|int) .*/[!$&!]/g" title?>
+<!-- skip -->
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   [!bool _isFavorited = true;!]
@@ -194,6 +196,7 @@ the callback function (`_toggleFavorite`) for handling a tap.
 You'll define the callback function next.
 
 <?code-excerpt "lib/main.dart (_FavoriteWidgetState build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g" title?>
+<!-- skip -->
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   // ···
@@ -241,6 +244,7 @@ UI between these two states:
 * A `star_border` icon and the number 40
 
 <?code-excerpt "lib/main.dart (_toggleFavorite)"?>
+<!-- skip -->
 ```dart
 void _toggleFavorite() {
   setState(() {
@@ -340,26 +344,6 @@ Here are the most common ways to manage state:
 * [The parent manages the widget's state](#parent-managed)
 * [A mix-and-match approach](#mix-and-match)
 
-{% comment %}
-NOTE: Commenting this out for now. The example needs some updates.
-
-First, fix TapboxD, add it back to the repo,
-and then restore this note.
-
-{{site.alert.tip}}
-  You can also manage state by exporting the state to a
-  model class that notifies widgets when state changes
-  have occurred. This approach is particularly useful
-  when you want multiple widgets to listen and respond to the
-  same state information.
-
-  Explaining this approach is beyond the scope of this tutorial,
-  but you can try it out using the TapboxD example on GitHub.
-  The only file you need is [`lib/main.dart`]().
-  [PENDING: Add a link once it's up on the site.]
-{{site.alert.end}}
-{% endcomment %}
-
 How do you decide which approach to use?
 The following principles should help you decide:
 
@@ -411,6 +395,7 @@ The `_TapboxAState` class:
   `setState()` function to update the UI.
 * Implements all interactive behavior for the widget.
 
+<!-- skip -->
 ```dart
 // TapboxA manages its own state.
 
@@ -502,6 +487,7 @@ The TapboxB class:
 * Extends StatelessWidget because all state is handled by its parent.
 * When a tap is detected, it notifies the parent.
 
+<!-- skip -->
 ```dart
 // ParentWidget manages the state for TapboxB.
 
@@ -615,6 +601,7 @@ The `_TapboxCState` object:
 * On a tap event, passes that state change to the parent widget to take
   appropriate action using the [`widget`][] property.
 
+<!-- skip -->
 ```dart
 //---------------------------- ParentWidget ----------------------------
 
