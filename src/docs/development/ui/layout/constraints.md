@@ -9,8 +9,6 @@ js:
 
 {% asset ui/layout/article-hero-image.png class="mw-100" alt="Hero image from the article" %}
 
-By Marcelo Glasberg<a href="#1">*</a>
-
 When someone learning Flutter asks you why some widget
 with `width:100` isn't 100 pixels wide,
 the default answer is to tell them to put that widget
@@ -1799,15 +1797,16 @@ Here is an example:
 
 ---
 
-<a name="1"></a>
-<sup>*</sup> Marcelo originally published this content as 
-  [Flutter: The Advanced Layout Rule Even Beginners Must Know][]
-  on Medium. We loved it and asked that he allow us to publish
-  in on flutter.dev, to which he graciously agreed. Thanks, Marcelo!
-  You can find Marcelo on [GitHub][] and [pub.dev][].
+Article by Marcelo Glasberg
+
+Marcelo originally published this content as 
+[Flutter: The Advanced Layout Rule Even Beginners Must Know][]
+on Medium. We loved it and asked that he allow us to publish
+in on flutter.dev, to which he graciously agreed. Thanks, Marcelo!
+You can find Marcelo on [GitHub][] and [pub.dev][].
   
-  Also, thanks to [Simon Lightfoot][] for the header image at the
-  top of the article!
+Also, thanks to [Simon Lightfoot][] for creating the
+header image at the top of the article.
 
 
 [`Container` documentation]: {{site.api}}/flutter/widgets/Container-class.html
