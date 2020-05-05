@@ -33,7 +33,7 @@ Some plugins require you to make some edits to the
 Android side of your project.
 
 For example, the integration instructions for the
-[firebase_crashlytics][] plugin requires manual
+[firebase_crashlytics][] plugin require manual
 edits to your Android wrapper project's `build.gradle` file.
 
 For full-Flutter apps, these edits are done in your
@@ -122,7 +122,7 @@ by using the newest version of the library.
 
 This is generally ok as long as there are no API
 or implementation breaking changes between the versions.
-For instance, using the new Crashlytics library
+For example, you might use the new Crashlytics library
 in your existing app as follows:
 
 <!--code-excerpt "<existing app>/app/build.gradle" title-->

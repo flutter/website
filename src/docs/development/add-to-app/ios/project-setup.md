@@ -176,7 +176,7 @@ Run `pod install`.
 The `podhelper.rb` script embeds your plugins,
 `Flutter.framework`, and `App.framework` into your project.
 
-Your app's Debug and Release build configurations embeds
+Your app's Debug and Release build configurations embed
 the Debug or Release [build modes of Flutter][], respectively.
 Add a Profile build configuration
 to your app to test in profile mode.

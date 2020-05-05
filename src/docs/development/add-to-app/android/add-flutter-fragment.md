@@ -77,7 +77,7 @@ public class MyActivity extends FragmentActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         // Attempt to find an existing FlutterFragment,
-        // in case this is not thefirst time that onCreate() was run.
+        // in case this is not the first time that onCreate() was run.
         flutterFragment = (FlutterFragment) fragmentManager
             .findFragmentByTag(TAG_FLUTTER_FRAGMENT);
 
@@ -269,7 +269,7 @@ factory method.
 <!--code-excerpt "MyApplication.java" title-->
 ```java
 // Somewhere in your app, before your FlutterFragment is needed,
-// like in theApplication class ...
+// like in the Application class ...
 // Instantiate a FlutterEngine.
 FlutterEngine flutterEngine = new FlutterEngine(context);
 

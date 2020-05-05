@@ -88,7 +88,7 @@ and your app is ready to build.
 {{site.alert.end}}
 
 Your app now includes the Flutter module as a dependency.
-You can jump to the [API usage documentations][]
+You can jump to the [Adding a Flutter screen to an Android app][]
 to follow the next steps.
 
 ## Manual integration
@@ -217,7 +217,7 @@ To depend on the AAR, the host app must be able
 to find these files.
 
 To do that, edit `app/build.gradle` in your host app
-such as it includes the local repository and the dependency:
+so that it includes the local repository and the dependency:
 
 <!--code-excerpt "MyApp/app/build.gradle" title-->
 ```gradle
@@ -260,7 +260,7 @@ dependencies {
 
   Your app now includes the Flutter module as a dependency.
   You can follow the next steps in the
-  [API usage documentation][].
+  [Adding a Flutter screen to an Android app][].
 
 #### Option B - Depend on the module's source code
 
@@ -311,11 +311,11 @@ dependencies {
 ```
 
 Your app now includes the Flutter module as a dependency.
-You can follow the next steps in the [API usage documentation][].
+You can follow the next steps in the [Adding a Flutter screen to an Android app][].
 
 
 [`abiFilters`]: http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.NdkOptions.html
-[API usage documentation]: /docs/development/add-to-app/android/add-flutter-screen
+[Adding a Flutter screen to an Android app]: /docs/development/add-to-app/android/add-flutter-screen
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [local repository]: https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local
 [only supports]: /docs/resources/faq#what-devices-and-os-versions-does-flutter-run-on
