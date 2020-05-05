@@ -8,9 +8,6 @@ js:
 ---
 
 {% asset ui/layout/article-hero-image.png class="mw-100" alt="Hero image from the article" %}
-[PENDING: Marcelo, could you tweak this graphic to replace "go" with
-"flow"? And also perhaps, "Parents set positions"? (This is a more active
-statement.).]
 
 By Marcelo Glasberg<a href="#1">*</a>
 
@@ -30,8 +27,7 @@ Instead, first tell them that Flutter layout is very different
 from HTML layout (which is probably where they’re coming from),
 and then make them memorize the following rule:
 
-**Constraints flow down. Sizes flow up.
-Parents set positions.**
+**Constraints go down. Sizes go up. Parent sets positions.**
 
 Flutter layout can’t really be understood without knowing
 this rule, so Flutter developers should learn it early on.
@@ -59,53 +55,40 @@ as follows:
 
 The negotiation goes something like this:
 
-[PENDING: Planning to indent this, though blockquote isn't working.
-Trying it as a definition list...]
+**Widget**: "Hey parent, what are my constraints?"
 
-**Widget**
-: "Hey parent, what are my constraints?"
-
-**Parent**
-: "You must be from `90` to `300` pixels wide,
+**Parent**: "You must be from `90` to `300` pixels wide,
    and `30` to `85` tall."
 
-**Widget**
-: "Hmmm, since I want to have `5` pixels of padding,
+**Widget**: "Hmmm, since I want to have `5` pixels of padding,
    then my children can have at most `290` pixels of width
    and `75` pixels of height."
 
-**Widget**
-: "Hey first child, You must be from `0` to `290` pixels wide,
-   and `0` to `75` tall."
+**Widget**: "Hey first child, You must be from `0` to `290`
+   pixels wide, and `0` to `75` tall."
 
-**First child**
-: "OK, then I wish to be `290` pixels wide,
+**First child**: "OK, then I wish to be `290` pixels wide,
    and `20` pixels tall."
 
-**Widget**
-: "Hmmm, since I want to put my second child below the
+**Widget**: "Hmmm, since I want to put my second child below the
    first one, this leaves only `55` pixels of height for
    my second child."
 
-**Widget**
-: "Hey second child, You must be from `0` to `290` wide,
+**Widget**: "Hey second child, You must be from `0` to `290` wide,
    and `0` to `55` tall."
 
-**Second child**
-: "OK, I wish to be `140` pixels wide,
+**Second child**: "OK, I wish to be `140` pixels wide,
    and `30` pixels tall."
 
-**Widget**
-: "Very well. My first child has position `x: 5` and `y: 5`,
+**Widget**: "Very well. My first child has position `x: 5` and `y: 5`,
    and my second child has `x: 80` and `y: 25`."
-
-**Widget**
-: "Hey parent, I’ve decided that my size is going to be `300`
+ 
+**Widget**: "Hey parent, I’ve decided that my size is going to be `300`
    pixels wide, and `60` pixels tall."
 
 ## Limitations
 
-As a result of the above described layout rule,
+As a result of the layout rule mentioned above,
 Flutter’s layout engine has a few important limitations:
 
 * A widget can decide its own size only within the
@@ -1825,6 +1808,9 @@ Here is an example:
   on Medium. We loved it and asked that he allow us to publish
   in on flutter.dev, to which he graciously agreed. Thanks, Marcelo!
   You can find Marcelo on [GitHub][] and [pub.dev][].
+  
+  Also, thanks to [Simon Lightfoot][] for the header image at the
+  top of the article!
 
 
 [`Container` documentation]: {{site.api}}/flutter/widgets/Container-class.html
@@ -1832,5 +1818,6 @@ Here is an example:
 [Flutter: The Advanced Layout Rule Even Beginners Must Know]: https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
 [GitHub]: {{site.github}}/marcglasberg
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
+[Simon Lightfoot]: {{site.github}}/slightfoot
 [this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
 
