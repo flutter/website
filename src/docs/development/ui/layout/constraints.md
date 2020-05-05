@@ -27,7 +27,7 @@ Instead, first tell them that Flutter layout is very different
 from HTML layout (which is probably where they’re coming from),
 and then make them memorize the following rule:
 
-**Constraints go down. Sizes go up. Parent sets positions.**
+**Constraints go down. Sizes go up. Parent sets position.**
 
 Flutter layout can’t really be understood without knowing
 this rule, so Flutter developers should learn it early on.
