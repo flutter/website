@@ -109,7 +109,7 @@ function showErrors(errors) {
             let messageEl = document.createElement("p");
 
             // Limit the length of the field label name used in the error message
-            let humanReadableName = subscribeData.fields[formElementName].label.substring(0, 23);
+            let humanReadableName = subscribePreferencesData.fields[formElementName].label.substring(0, 23);
 
             messageEl.textContent = humanReadableName + " is required";
             container.append(messageEl);
