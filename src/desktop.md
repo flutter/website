@@ -177,7 +177,7 @@ such as the following:
 Then you must set up specific _entitlements_ in Xcode.
 The following section tells you how to do this.
 
-### Managing the sandbox
+### Setting up entitlements
 
 Managing sandbox settings is done in the
 `macos/Runner/*.entitlements` files. When editing
@@ -191,8 +191,8 @@ If you are used to managing entitlement files through
 the **Xcode capabilities UI**, be aware that the capabilities
 editor updates only one of the two files or,
 in some cases, it creates a whole new entitlements
-file and switches the project to use it for all configurations;
-either scenario causes issues. We recommend that you
+file and switches the project to use it for all configurations.
+Either scenario causes issues. We recommend that you
 edit the files directly. Unless you have a very specific
 reason, you should always make identical changes to both files.
 
@@ -306,11 +306,11 @@ Flutter Gallery [running web app][], [repo][]
 ## What's next
 
 Stay tuned for updates on desktop support!
-We continue to develop desktop support for macOS,
+We continue to develop support for macOS,
 Windows, and Linux.
 
-* Watch the [Desktop shells][] page on the [Flutter wiki][]
-  for more information and ongoing updates.
+Watch the [Desktop shells][] page on the [Flutter wiki][]
+for more information and ongoing updates.
 
 
 [Android Studio]: {{site.android-dev}}/studio/install
