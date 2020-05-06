@@ -23,6 +23,7 @@ The following guides (in alphabetical order) are available:
 * [Scrollable AlertDialog][]
 * [TestTextInput state reset][]
 * [TestWidgetsFlutterBinding.clock][]
+* [TextField requires MaterialLocalizations][]
 * [TextInputClient currentTextEditingValue][]
 * [The `forgetChild` method must call super][]
 * [The RenderEditable needs to be laid out before hit testing][]
@@ -47,6 +48,7 @@ The following guides (in alphabetical order) are available:
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TestWidgetsFlutterBinding.clock]: /docs/release/breaking-changes/test-widgets-flutter-binding-clock
+[TextField requires MaterialLocalizations]: /docs/release/breaking-changes/text-field-material-localizations
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
 [The `forgetChild` method must call super]: /docs/release/breaking-changes/forgetchild-call-super
 [The RenderEditable needs to be laid out before hit testing]: /docs/release/breaking-changes/rendereditable-layout-before-hit-test
