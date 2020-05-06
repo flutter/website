@@ -221,6 +221,10 @@ application in the App Store.
   but will fail with release builds.
 {{site.alert.end}}
 
+For more information on these topics,
+see [App Sandbox][] and [Entitlements][]
+on the Apple Developer site.
+
 ## Hardened runtime
 
 If you choose to distribute your application outside
@@ -238,8 +242,8 @@ For instance, microphone access would require both
 `com.apple.security.device.audio-input` (for Hardened Runtime)
 and `com.apple.security.device.microphone` (for App Sandbox).
 
-For more information on these topics,
-see [App Sandbox][], [Entitlements][], and [Hardened Runtime][]
+For more information on this topic,
+see [Hardened Runtime][]
 on the Apple Developer site.
 
 ## Plugin support
