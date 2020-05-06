@@ -11,9 +11,9 @@
 //
 // dependencies:
 //   flutter:
-//   sdk: flutter
-//  flutter_localizations:
-//    sdk: flutter
+//     sdk: flutter
+//   flutter_localizations:
+//     sdk: flutter
 
 // If you run this app with the device's locale set to anything but
 // English or Spanish, the app's locale will be English. If you
