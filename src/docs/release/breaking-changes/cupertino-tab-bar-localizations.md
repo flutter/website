@@ -133,7 +133,7 @@ class Foo extends StatelessWidget {
 
 ## Timeline
 
-TBD
+This change was introduced in May 2020, in 1.18.0-9.0.pre.
 
 ## References
 
