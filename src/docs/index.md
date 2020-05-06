@@ -24,80 +24,13 @@ description: The landing page for Flutter documentation.
 <a name="latest-release"></a>
 ## What's new on this site
 
-To stay on top of Flutter announcements,
-including breaking changes, join the
-[flutter-announce][] Google group.
-
-**Dec 11, 2019, Flutter Interact Edition**
-
-Flutter 1.12 is live!
-
-For more information, see
-[Flutter: the first UI platform designed for ambient computing][],
-[Announcing Flutter 1.12: What a year!][] and
-the [Flutter 1.12.13][] release notes.
-
-Docs added and updated since the last announcement include:
-
-* To accompany an updated implementation of add-to-app,
-  we have added documentation on how to
-  [add Flutter to an existing app][] for both iOS and Android.
-* If you own plugin code, we encourage you to update to the
-  new plugin APIs for Android. For more information, see
-  [Migrating your plugin to the new Android APIs][].
-* Web support has moved to the beta channel. For more information,
-  see [Web support for Flutter][] and
-  [Web support for Flutter goes beta][] on the Medium publication.
-  Also, the [building a web app with Flutter][] page is updated.
-* A new [write your first Flutter app on the web][] codelab
-  is added to the [Get started][] docs, and includes
-  instructions on setting breakpoints in DevTools!
-* We've introduced a program for recommending particular Dart and
-  Flutter plugins and packages. Learn more about the
-  [Flutter Favorite program][].
-* A new [implicit animations][] codelab is available
-  featuring DartPad.
-  (To run it, you don't need to download any software!)
-* Alpha support for MacOS (desktop) is now available in
-  release 1.13 on the master and dev channels.
-  For more information, see [Desktop support for Flutter][].
-* The iOS section of the [app size][] page is updated to reflect
-  the inclusion of bitcode.
-* An alpha release of Flutter Layout Explorer, a new feature
-  (and part of the Flutter inspector) that allows you to
-  explore a visual representation of your layout is available.
-  For more information, see the [Flutter Layout Explorer][] docs.
-
-Other newness:
-
-* A brand new version of [Flutter Gallery][]. There's a 
-  link to the runnable sample in the side nav under
-  **Samples & Tutorials**.
-
-Happy Fluttering!
-
-[add Flutter to an existing app]: /docs/development/add-to-app
-[Announcing Flutter 1.12: What a year!]: https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d
-[app size]: /docs/perf/app-size#ios
-[building a web app with Flutter]: /docs/get-started/web
-[Desktop support for Flutter]: /desktop
-[Flutter: the first UI platform designed for ambient computing]: https://developers.googleblog.com/2019/12/flutter-ui-ambient-computing.html?m=1
-[Flutter Favorite program]: /docs/development/packages-and-plugins/favorites
-[Flutter 1.12.13]: /docs/development/tools/sdk/release-notes/release-notes-1.12.13
-[Flutter Gallery]: https://flutter.github.io/samples/#/
-[Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer
-[Flutter Medium publication]: https://medium.com/flutter
-[Migrating your plugin to the new Android APIs]: /docs/development/packages-and-plugins/plugin-api-migration
-[implicit animations]: /docs/codelabs/implicit-animations
-[Web support for Flutter]: /web
-[Web support for Flutter goes beta]: https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0
-[write your first Flutter app on the web]: /docs/get-started/codelab-web
-[Get started]: /docs/get-started/install
+To see changes to the site since our last release,
+see the [What's new archive][].
 
 ## New to Flutter?
 
-Once you've gone through [Get Started][],
-including [Write Your First Flutter App,][]
+Once you've gone through [Get started][],
+including [Write your first Flutter app][],
 here are some next steps.
 
 ### Docs
@@ -180,7 +113,7 @@ You might also find these docs useful:
 [Flutter in Focus]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter Youtube channel]: {{site.social.youtube}}
-[Get Started]: /docs/get-started/install
+[Get started]: /docs/get-started/install
 [iOS]: /docs/get-started/flutter-for/ios-devs
 [Navigation and routing]: /docs/development/ui/navigation
 [React Native]: /docs/get-started/flutter-for/react-native-devs
@@ -190,6 +123,6 @@ You might also find these docs useful:
 [videos]: /docs/resources/videos
 [Web]: /docs/get-started/flutter-for/web-devs
 [What's new archive]: /docs/whats-new-archive
-[Write Your First Flutter App,]: /docs/get-started/codelab
+[Write your first Flutter app]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
 
