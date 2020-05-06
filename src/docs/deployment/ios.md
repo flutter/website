@@ -89,10 +89,10 @@ In the **Identity** section:
 : Runner
 
 {{site.note.alert}}
-  Changing the display name to anything other
-  than `Runner` causes the app not to run with
-  the Flutter tools. For more information,
-  see [Issue 41793][].
+  Flutter versions prior to 1.18.0-10.0.pre
+  do not support changing the display name
+  to anything other than `Runner`. For more
+  information, see [Issue 41793][].
 {{site.note.end}}
   
 `Bundle Identifier`
