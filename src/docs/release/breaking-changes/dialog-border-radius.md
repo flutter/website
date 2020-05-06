@@ -5,7 +5,7 @@ description: The default BorderRadius of Dialog widgets is changing.
 
 ## Summary
 
-Instances of `Dialog`, as well as `SimpleDialog`, `AlertDialog`, and `showTimePicker`, will now have
+Instances of `Dialog`, as well as `SimpleDialog`, `AlertDialog`, and `showTimePicker`, now has
 a default shape of a `RoundedRectangleBorder` with a `BorderRadius` of 4.0 pixels. This matches the
 current specifications of Material Design. Prior to this change, the default behavior for
 `Dialog.shape`'s `BorderRadius` was 2.0 pixels.
@@ -13,8 +13,8 @@ current specifications of Material Design. Prior to this change, the default beh
 ## Context
 
 Use of `Dialog`s and their associated subclasses (`SimpleDialog`, `AlertDialog`, and
-`showTimePicker`), will appear slightly different. Golden file tests will fail if they contain a
-`Dialog` in the new default behavior.
+`showTimePicker`), appears slightly different as the border radius is larger. Golden file tests
+will fail if they contain a Dialog` in the new default behavior.
 
 This change was initially introduced with an opt-in flag
 `useMaterialBorderRadius`, to allow developers time to migrate
