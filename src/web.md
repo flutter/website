@@ -32,9 +32,9 @@ Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-While traditional web approaches remain a great choice<sup>*</sup>,
-we envision the web support available in Flutter being valuable
-in many scenarios. For example:
+While traditional web approaches remain a great choice,
+we envision the web support available in Flutter being
+valuable in many scenarios. For example:
 
 **A connected [Progressive Web Application][] built with Flutter**
 : Web support for Flutter enables existing mobile-based applications
