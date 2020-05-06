@@ -88,12 +88,12 @@ In the **Identity** section:
 `Display Name`
 : Runner
 
-{{site.note.alert}}
+{{site.alert.note}}
   Flutter versions prior to 1.18.0-10.0.pre
   do not support changing the display name
   to anything other than `Runner`. For more
   information, see [Issue 41793][].
-{{site.note.end}}
+{{site.alert.end}}
   
 `Bundle Identifier`
 : The App ID you registered on App Store Connect.
