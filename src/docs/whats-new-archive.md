@@ -16,8 +16,7 @@ join the [flutter-announce][] Google group.
 
 Flutter 1.17 is live!
 
-For more information, see [PENDING: blog post] and
-[PENDING: release notes].
+For more information, see [PENDING: blog post][].
 
 Docs added and updated since the last announcement include:
 
@@ -42,7 +41,8 @@ Docs added and updated since the last announcement include:
   your project. The tooling, which automatically updates your
   configuration when possible, may direct you to this page
   if it detects that it's needed.
-* Added a page on [Managing plugins and dependencies in add-to-app][add2app]
+* Added a page on
+  [Managing plugins and dependencies in add-to-app][add2app]
   when developing for Android.
 
 
