@@ -210,12 +210,13 @@ which you must add if you make any network requests.
   **Important:** The `com.apple.security.network.server`
   entitlement, which allows incoming network connections,
   is enabled by default only for `debug` and `profile`
-  modes (to enable the Dart observatory).
-  If you need to allow incoming network requests in your application,
+  builds to enable communications between Flutter tools
+  and a running app. If you need to allow incoming
+  network requests in your application,
   you must add the `com.apple.security.network.server`
   entitlement to `Runner-Release.entitlements` as well,
-  otherwise your app will work correctly in debug or profile testing,
-  but will fail with release builds.
+  otherwise your app will work correctly for debug or
+  profile testing, but will fail with release builds.
 {{site.alert.end}}
 
 For more information on these topics,
