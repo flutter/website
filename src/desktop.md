@@ -54,7 +54,7 @@ then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
 ```terminal
-$ flutter channel master  # or beta or dev
+$ flutter channel master  # or dev
 $ flutter upgrade
 $ flutter config --enable-macos-desktop
 ```
@@ -197,7 +197,7 @@ edit the files directly. Unless you have a very specific
 reason, you should always make identical changes to both files.
 
 If you keep the App Sandbox enabled (which is required if you
-pan to distribute your app in the App Store), you need to manage
+plan to distribute your app in the App Store), you need to manage
 entitlements for your application when you add certain plugins
 or other native functionality. For instance, using the
 [`file_chooser`][] plugin requires adding either the
