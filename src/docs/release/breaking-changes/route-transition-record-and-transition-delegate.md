@@ -77,6 +77,7 @@ class NoAnimationTransitionDelegate extends TransitionDelegate<void> {
 
 Code after migration:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/widgets.dart';
 

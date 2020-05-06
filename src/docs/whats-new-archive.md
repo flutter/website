@@ -16,7 +16,7 @@ join the [flutter-announce][] Google group.
 
 Flutter 1.17 is live!
 
-For more information, see [PENDING: blog post][].
+For more information, see [Announcing Flutter 1.17][].
 
 Docs added and updated since the last announcement include:
 
@@ -46,7 +46,7 @@ Docs added and updated since the last announcement include:
   when developing for Android.
 
 
-Other newness: [PENDING: Anything else?]
+Other newness:
 
 * We've published a number of articles on the [Flutter Medium][]
   publication since the last stable release:
@@ -73,6 +73,7 @@ Other newness: [PENDING: Anything else?]
 [animations landing page]: /docs/development/ui/animations
 [Announcing a free Flutter introductory course]: https://medium.com/flutter/learn-flutter-for-free-c9bc3b898c4d
 [Announcing CodePen support for Flutter]: https://medium.com/flutter/announcing-codepen-support-for-flutter-bb346406fe50
+[Announcing Flutter 1.17]: {{site.medium}}/flutter/announcing-flutter-1-17-4182d8af7f8e
 [Custom implicit animations in Flutter…with TweenAnimationBuilder]: https://medium.com/flutter/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [Developing plugin packages]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
