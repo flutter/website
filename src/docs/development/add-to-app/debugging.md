@@ -25,11 +25,11 @@ overlays, DevTools, and setting breakpoints in add-to-app scenarios.
 These functionalities are provided by the `flutter attach` mechanism.
 `flutter attach` can be initiated through different pathways,
 such as through the SDK's CLI tools,
-through VSCode or IntelliJ/Android Studio.
+through VS Code or IntelliJ/Android Studio.
 
 {% include app-figure.md image="development/add-to-app/debugging/cli-attach.png" caption="flutter attach via terminal" %}
 
-{% include app-figure.md image="development/add-to-app/debugging/vscode-attach.png" caption="flutter attach via VSCode" %}
+{% include app-figure.md image="development/add-to-app/debugging/vscode-attach.png" caption="flutter attach via VS Code" %}
 
 {% include app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
 
@@ -38,7 +38,7 @@ remains attached until your `FlutterEngine` is disposed. But you can invoke
 `flutter attach` before starting your engine. `flutter attach` waits for
 the next available Dart VM that is hosted by your engine.
 
-In IntelliJ or VSCode, you should select the device on which the Flutter
+In IntelliJ or VS Code, you should select the device on which the Flutter
 module runs so `flutter attach` filters for the right start signals.
 
 ### Debugging specific instances of Flutter

@@ -71,7 +71,6 @@ To add the package, `css_colors`, to an app:
      Hot reload and hot restart only update the Dart code,
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
-     [PENDING: Is this also true for web and macos plugins?]
 
 The [Installing tab][],
 available on any package page on pub.dev,
