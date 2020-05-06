@@ -27,12 +27,12 @@ If your `CupertinoTabBar` is within the scope of a `CupertinoApp`, the
 `DefaultCupertinoLocalizations` will already be instantiated and may suit your needs without having
 to make a change to your existing code.
 
-If your `CupertinoTabBar` is not within a `CupertinoApp`, you may provide the `Localizations` of
+If your `CupertinoTabBar` is not within a `CupertinoApp`, you may provide the localizations of
 your choosing using the `Localizations` widget.
 
 ## Migration guide
 
-If you are seeing `'localizations != null'` assertion error, make sure locale information is being
+If you are seeing a `'localizations != null'` assertion error, make sure locale information is being
 provided to your `CupertinoTabBar`.
 
 Code before migration:
@@ -133,7 +133,7 @@ class Foo extends StatelessWidget {
 
 ## Timeline
 
-TBD
+This change was introduced in May 2020, in 1.18.0-9.0.pre.
 
 ## References
 
@@ -148,7 +148,6 @@ API documentation:
 
 Relevant PR:
 * [PR 55336: Adding tabSemanticsLabel to CupertinoLocalizations][]
-
 
 [`CupertinoTabBar`]: {{site.api}}/flutter/cupertino/CupertinoTabBar-class.html
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
