@@ -29,6 +29,8 @@ Docs added and updated since the last announcement include:
   on the new [package for pre-canned Material widget animations][].
 * The [hot reload][] page has been re-written. We
   hope you find it to be clearer!
+* The [Desktop][] page has been updated and now includes information
+  on setting up entitlements and using the App Sandbox on macOS.
 * The plugin docs are updated to cover the new Android Plugin APIs
   and also to describe Federated Plugins. Affected pages include:
   * [Developing packages and plugins][]
@@ -75,6 +77,7 @@ Other newness:
 [Announcing CodePen support for Flutter]: https://medium.com/flutter/announcing-codepen-support-for-flutter-bb346406fe50
 [Announcing Flutter 1.17]: {{site.medium}}/flutter/announcing-flutter-1-17-4182d8af7f8e
 [Custom implicit animations in Flutter…with TweenAnimationBuilder]: https://medium.com/flutter/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
+[Desktop]: /desktop
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [Developing plugin packages]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
 [Directional animations with build-in explicit animations]: https://medium.com/flutter/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
