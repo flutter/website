@@ -12,7 +12,7 @@ join the [flutter-announce][] Google group.
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
 
-## **May 6, 2020, Work-From-Home Edition**
+## May 6, 2020, Work-From-Home Edition
 
 Flutter 1.17 is live!
 
@@ -99,7 +99,7 @@ Other newness:
 [Writing custom platform-specific code]: /docs/development/platform-integration/platform-channels
 [Xcode 11.4]: /docs/development/ios-project-migration
 
-## **Dec 11, 2019, Flutter Interact Edition**
+## Dec 11, 2019, Flutter Interact Edition
 
 Flutter 1.12 is live!
 
@@ -165,7 +165,7 @@ Happy Fluttering!
 [write your first Flutter app on the web]: /docs/get-started/codelab-web
 [Get started]: /docs/get-started/install
 
-## **Sept 10, 2019**
+## Sept 10, 2019
 
 Flutter 1.9 is live!
 
@@ -242,7 +242,7 @@ Happy Fluttering!
 [using the dart:ffi library]: /docs/development/platform-integration/c-interop
 [web FAQ]: /docs/development/platform-integration/web
 
-## **July 9, 2019**
+## July 9, 2019
 
 Flutter 1.7 is live!
 
@@ -293,7 +293,7 @@ component and how to customize it, see
 [`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html
 [Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
 
-## **May 7, 2019, Google I/O Edition**
+## May 7, 2019, Google I/O Edition
 
 [Flutter 1.5][] is live!
 
@@ -308,7 +308,7 @@ We are updating DartPad to work with Flutter. Try our new
 [Flutter 1.5]: https://developers.googleblog.com/2019/05/Flutter-io19.html
 [1.5.4 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
 
-## **February 26, 2019**
+## February 26, 2019
 
 Flutter released [version 1.2][] at Mobile World Congress
 (MWC) in Barcelona. For more information, see the
@@ -359,7 +359,7 @@ If you have questions or comments about any of these docs,
 
 [version 1.2]: https://developers.googleblog.com/2019/02/launching-flutter-12-at-mobile-world.html
 
-## **November 5, 2018**
+## November 5, 2018
 
 Welcome to the revamped Flutter website!
 

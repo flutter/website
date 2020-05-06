@@ -21,7 +21,7 @@ or
 Building for iOS Simulator, but the linked and embedded framework 'App.framework' was built for iOS.
 ```
 
-Flutter v1.15.3 and later automatically migrate your Xcode project.
+Flutter v1.15.3 and later automatically migrates your Xcode project.
 
 If you need to manually upgrade your project, use the following steps:
 
