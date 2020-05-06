@@ -109,7 +109,7 @@ already running.
 
 Create a new app in your IDE and it automatically
 creates iOS, Android, and web versions of your app.
-(And desktop, too, if you've enabled [desktop support][].)
+(And macOS, too, if you've enabled [desktop support][].)
 From the device pulldown, select **Chrome (web)**
 and run your app to see it launch in Chrome.
 

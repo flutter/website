@@ -4,8 +4,7 @@ description: Announcing the alpha release of Flutter for desktop.
 toc: true
 ---
 
-With desktop support,
-you can compile Flutter source code
+Desktop support allows you to compile Flutter source code
 to a native macOS Desktop app. Flutter's desktop
 support also extends to plugins&mdash;you can
 install existing plugins that support the macOS platform,
@@ -201,7 +200,7 @@ If you keep the App Sandbox enabled (which is required if you
 pan to distribute your app in the App Store), you need to manage
 entitlements for your application when you add certain plugins
 or other native functionality. For instance, using the
-`file_chooser` plugin requires adding either the
+[`file_chooser`][] plugin requires adding either the
 `com.apple.security.files.user-selected.read-only` or
 `com.apple.security.files.user-selected.read-write` entitlement.
 Another common entitlement is `com.apple.security.network.client`,
@@ -252,12 +251,13 @@ follow the steps for plugins in [using packages][].
 Flutter automatically adds the necessary native code
 to your project, as with iOS or Android.
 
-The following plugins support desktop on macOS:
+These are a few of the plugins that support desktop
+on macOS:
 
-* [url_launcher][]
-* [shared_preferences][]
-* [connectivity][]
-* [path_provider][]
+* [`url_launcher`][]
+* [`shared_preferences`][]
+* [`connectivity`][]
+* [`path_provider`][]
 
 ### Creating a plugin
 
@@ -299,9 +299,9 @@ Flutter Gallery [running web app][], [repo][]
 [Photo Search app][]
 : A sample app built as a desktop application that uses
   the following desktop-supported plugins:
-  * file_chooser
-  * menubar
-  * url_launcher
+  * [`file_chooser`][]
+  * [`menubar`][]
+  * [`url_launcher`][]
 
 ## What's next
 
@@ -316,7 +316,7 @@ Windows, and Linux.
 [Android Studio]: {{site.android-dev}}/studio/install
 [App Sandbox]: https://developer.apple.com/documentation/security/app_sandbox
 [CocoaPods]: https://cocoapods.org/
-[connectivity]: {{site.pub}}/packages/connectivity
+[`connectivity`]: {{site.pub}}/packages/connectivity
 [Desktop shells]: {{site.repo.flutter}}/wiki/Desktop-shells
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [Federated Plugin proposal]: /go/federated-plugins
@@ -324,6 +324,7 @@ Windows, and Linux.
 [creating a new Flutter project]: /docs/get-started/test-drive
 [Entitlements]: https://developer.apple.com/documentation/bundleresources/entitlements
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
+[`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 [Flutter SDK]: /docs/get-started/install
 [Flutter wiki]: {{site.repo.flutter}}/wiki/
 [flutter-desktop-embedding]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins#dart
@@ -331,15 +332,16 @@ Windows, and Linux.
 [How to write a Flutter web plugin, part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [install the Flutter and Dart plugins]: /docs/get-started/editor
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
+[`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
-[path_provider]: {{site.pub}}/packages/path_provider
+[`path_provider`]: {{site.pub}}/packages/path_provider
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
 [README]: {{site.github}}/flutter/gallery#flutter-gallery
 [repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [running web app]: https://flutter.github.io/gallery/#/
 [setting up an editor]: /docs/get-started/editor
-[shared_preferences]: {{site.pub}}/packages/shared_preferences
-[url_launcher]: {{site.pub}}/packages/url_launcher
+[`shared_preferences`]: {{site.pub}}/packages/shared_preferences
+[`url_launcher`]: {{site.pub}}/packages/url_launcher
 [using packages]: /docs/development/packages-and-plugins/using-packages
 [Visual Studio Code]: /docs/development/tools/vs-code
 [web support]: /docs/get-started/web
