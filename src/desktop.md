@@ -19,13 +19,13 @@ or you can create your own.
   as explained in the [Desktop shells][] page in the
   [Flutter wiki][].
   If you experience a problem that hasn’t yet been reported,
-  please [file an issue][] and make sure that "desktop"
-  appears in the title.
+  please [file an issue][] and make sure that "desktop:macos",
+  for example, appears in the title.
 {{site.alert.end}}
 
 ## Requirements
 
-To create a Flutter app with desktop support, you need the
+To create a Flutter app with macOS support, you need the
 following software:
 
 * Flutter SDK. See the
@@ -41,15 +41,15 @@ following software:
   within an editor. See [setting up an editor][]
   for more details.
 
-## Create a new project with desktop support
+## Create a new project
 
 You can use the following steps
-to create a new project with desktop support.
+to create a new project with macOS support.
 
 ### Set up
 
 At the command line, perform the following commands to
-make sure that you have the latest desktop support and that
+make sure that you have the latest support for macOS and that
 it's enabled. If you see "flutter: command not found",
 then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
@@ -90,7 +90,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 • No issues found!
 ```
 
-**After enabling desktop support, restart your IDE.**
+**After enabling macOS support, restart your IDE.**
 You should now see **macOS (desktop)** in the device pulldown.
 
 {{site.alert.note}}
@@ -184,36 +184,34 @@ Managing sandbox settings is done in the
 `macos/Runner/*.entitlements` files. When editing
 these files, you shouldn't remove the original
 `Runner-DebugProfile.entitlements` exceptions
-(incoming network connections and JIT),
+(that support incoming network connections and JIT),
 as they are necessary for the `debug` and `profile`
 modes to function correctly.
 
 If you are used to managing entitlement files through
-the Xcode capabilities UI, be aware that the capabilities
+the **Xcode capabilities UI**, be aware that the capabilities
 editor updates only one of the two files or,
 in some cases, it creates a whole new entitlements
 file and switches the project to use it for all configurations;
-either scenario causes issues. The recommended approach is
-to edit the files directly. Unless you have a very specific
+either scenario causes issues. We recommend that you
+edit the files directly. Unless you have a very specific
 reason, you should always make identical changes to both files.
 
-If you keep App Sandbox enabled, you need to manage entitlements
-for your application when you add certain plugins or other native
-functionality. For instance, using the `file_chooser` plugin
-requires adding either the
+If you keep the App Sandbox enabled (which is required if you
+pan to distribute your app in the App Store), you need to manage
+entitlements for your application when you add certain plugins
+or other native functionality. For instance, using the
+`file_chooser` plugin requires adding either the
 `com.apple.security.files.user-selected.read-only` or
 `com.apple.security.files.user-selected.read-write` entitlement.
 Another common entitlement is `com.apple.security.network.client`,
 which you must add if you make any network requests.
 
-Using App Sandbox is required if you plan to distribute your
-application in the App Store.
-
 {{site.alert.secondary}}
   **Important:** The `com.apple.security.network.server`
   entitlement, which allows incoming network connections,
   is enabled by default only for `debug` and `profile`
-  modes (to enable the Dart observatory). [PENDING: Do you still use observatory or do you use Dart DevTools? Do we need to mention observatory here?]
+  modes (to enable the Dart observatory).
   If you need to allow incoming network requests in your application,
   you must add the `com.apple.security.network.server`
   entitlement to `Runner-Release.entitlements` as well,
@@ -243,8 +241,7 @@ For instance, microphone access would require both
 and `com.apple.security.device.microphone` (for App Sandbox).
 
 For more information on this topic,
-see [Hardened Runtime][]
-on the Apple Developer site.
+see [Hardened Runtime][] on the Apple Developer site.
 
 ## Plugin support
 
@@ -314,8 +311,6 @@ Windows, and Linux.
 
 * Watch the [Desktop shells][] page on the [Flutter wiki][]
   for more information and ongoing updates.
-* Learn more about desktop support for plugins at the
-  [flutter-desktop-embedding][] repository on GitHub.
 
 
 [Android Studio]: {{site.android-dev}}/studio/install
