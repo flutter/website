@@ -32,8 +32,8 @@ you need the following software:
 For more information, see the [web FAQ][].
 
 {{site.alert.note}}
-  As of 1.12, Flutter has early support for running web applications,
-  but you need to be running the `beta` channel of Flutter.
+  Flutter has early support for running web applications, but
+  you need to be running the `beta` channel of Flutter at present.
   If you experience a problem that hasn’t yet been reported,
   please [file an issue][] and make sure that "web" appears in the title.
 {{site.alert.end}}
