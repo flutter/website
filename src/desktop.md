@@ -6,14 +6,14 @@ toc: true
 
 With desktop support,
 you can compile Flutter source code
-to a native macOS Desktop app.
-Flutter's desktop support also extends to plugins&mdash;you can
+to a native macOS Desktop app. Flutter's desktop
+support also extends to plugins&mdash;you can
 install existing plugins that support the macOS platform,
 or you can create your own.
 
 {{site.alert.note}}
   **This page covers desktop support for macOS
-  which is available as an alpha release as of Flutter 1.13.**
+  which is available as an alpha release.**
   Window and Linux platforms are still under development.
   You can try Windows and Linux platform support
   as explained in the [Desktop shells][] page in the
@@ -30,6 +30,8 @@ following software:
 
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
+* [Xcode][]
+* [CocoaPods][] if you use plugins
 * Optional: An IDE that supports Flutter.
   You can install [Android Studio][], [IntelliJ IDEA][],
   or [Visual Studio Code][] and
@@ -48,7 +50,7 @@ to create a new project with desktop support.
 
 At the command line, perform the following commands to
 make sure that you have the latest desktop support and that
-it is enabled. If you see "flutter: command not found",
+it's enabled. If you see "flutter: command not found",
 then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
@@ -67,6 +69,25 @@ $ flutter devices
 1 connected device:
 
 macOS      • macOS      • darwin-x64     • Mac OS X 10.15.4 19E266
+```
+
+You might also run `flutter doctor` to see if there are
+any unresolved issues. It should look something like
+the following:
+
+```terminal
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel master, 1.18.0-10.0.pre, on Mac OS X 10.15.4 19E287, locale
+    en-US)
+ 
+[✓] Android toolchain - develop for Android devices (Android SDK version 28.0.3)
+[✓] Xcode - develop for iOS and macOS (Xcode 11.2)
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 3.6)
+[✓] VS Code (version 1.44.2)
+[✓] Connected device (3 available)
+
+• No issues found!
 ```
 
 **After enabling desktop support, restart your IDE.**
@@ -112,10 +133,6 @@ $ cd myapp
 To launch your app from the command line,
 enter the following from the top of the package:
 
-[PENDING: I think it's interesting that both
-`flutter run -d macos` and `flutter run -d macOS`
-works. I prefer `macos` for the sake of ease and consistency.]
-
 ```terminal
 $ flutter run -d macos
 ```
@@ -143,36 +160,98 @@ root project directory:
 $ flutter create .
 ```
 
-## Entitlements
+This adds the necessary files and directories to your
+Flutter project.
 
-To confer specific capabilities or services
-on your macOS app, such as the ability to
-capture movies and images from the built-in
-camera or the ability to access files,
-set up _entitlements_ for your app in Xcode.
-For instructions on how to do this for a
-Flutter app on macOS, see
-[macOS Signing and Security][].
+## Entitlements and the App Sandbox
 
-For more information on entitlements,
-see [Entitlements][] and [App Sandbox][]
+macOS builds are configured by default to be signed,
+and sandboxed with App Sandbox.
+This means that if you want to confer specific
+capabilities or services on your macOS app,
+such as the following:
+
+* Accessing the internet
+* Capturing movies and images from the built-in camera 
+* Accessing files
+
+Then you must set up specific _entitlements_ in Xcode.
+The following section tells you how to do this.
+
+### Managing the sandbox
+
+Managing sandbox settings is done in the
+`macos/Runner/*.entitlements` files. When editing
+these files, you shouldn't remove the original
+`Runner-DebugProfile.entitlements` exceptions
+(incoming network connections and JIT),
+as they are necessary for the `debug` and `profile`
+modes to function correctly.
+
+If you are used to managing entitlement files through
+the Xcode capabilities UI, be aware that the capabilities
+editor updates only one of the two files or,
+in some cases, it creates a whole new entitlements
+file and switches the project to use it for all configurations;
+either scenario causes issues. The recommended approach is
+to edit the files directly. Unless you have a very specific
+reason, you should always make identical changes to both files.
+
+If you keep App Sandbox enabled, you need to manage entitlements
+for your application when you add certain plugins or other native
+functionality. For instance, using the `file_chooser` plugin
+requires adding either the
+`com.apple.security.files.user-selected.read-only` or
+`com.apple.security.files.user-selected.read-write` entitlement.
+Another common entitlement is `com.apple.security.network.client`,
+which you must add if you make any network requests.
+
+Using App Sandbox is required if you plan to distribute your
+application in the App Store.
+
+{{site.alert.secondary}}
+  **Important:** The `com.apple.security.network.server`
+  entitlement, which allows incoming network connections,
+  is enabled by default only for `debug` and `profile`
+  modes (to enable the Dart observatory). [PENDING: Do you still use observatory or do you use Dart DevTools? Do we need to mention observatory here?]
+  If you need to allow incoming network requests in your application,
+  you must add the `com.apple.security.network.server`
+  entitlement to `Runner-Release.entitlements` as well,
+  otherwise your app will work correctly in debug or profile testing,
+  but will fail with release builds.
+{{site.alert.end}}
+
+## Hardened runtime
+
+If you choose to distribute your application outside
+of the App Store, you need to notarize your application
+for compatibility with macOS 10.15+.
+This requires enabling the Hardened Runtime option.
+Once you have enabled it, you need a valid signing
+certificate in order to build.
+
+By default, the entitlements file allows JIT for debug builds but,
+as with App Sandbox, you may need to manage other entitlements.
+If you have both App Sandbox and Hardened Runtime enabled,
+you may need to add multiple entitlements for the same resource.
+For instance, microphone access would require both
+`com.apple.security.device.audio-input` (for Hardened Runtime)
+and `com.apple.security.device.microphone` (for App Sandbox).
+
+For more information on these topics,
+see [App Sandbox][], [Entitlements][], and [Hardened Runtime][]
 on the Apple Developer site.
 
 ## Plugin support
 
-Flutter on the desktop supports both using and creating plugins.
+Flutter on the desktop supports using and creating plugins.
 
 To use a plugin that supports macOS,
 follow the steps for plugins in [using packages][].
 Flutter automatically adds the necessary native code
 to your project, as with iOS or Android.
 
-The following plugins support desktop on macos:
-
-[PENDING: Can we get this search working for desktop soon:
-https://pub.dev/flutter/packages?platform=desktop ? Then
-we don't have to list them here, because it will be a PITA
-to keep the list up to date.]
+The following plugins support desktop on macOS:
 
 * [url_launcher][]
 * [shared_preferences][]
@@ -208,7 +287,7 @@ You can run the following samples as desktop apps,
 as well as download and inspect the source code to
 learn more about Flutter desktop support.
 
-[Flutter Gallery][] (Flutter web app)
+Flutter Gallery [running web app][], [repo][]
 : A samples project hosted on GitHub to help developers
   evaluate and use Flutter. The Gallery consists of a
   collection of Material design widgets, behaviors,
@@ -226,7 +305,7 @@ learn more about Flutter desktop support.
 ## What's next
 
 Stay tuned for updates on desktop support!
-We continue to develop desktop support for Mac,
+We continue to develop desktop support for macOS,
 Windows, and Linux.
 
 * Watch the [Desktop shells][] page on the [Flutter wiki][]
@@ -237,6 +316,7 @@ Windows, and Linux.
 
 [Android Studio]: {{site.android-dev}}/studio/install
 [App Sandbox]: https://developer.apple.com/documentation/security/app_sandbox
+[CocoaPods]: https://cocoapods.org/
 [connectivity]: {{site.pub}}/packages/connectivity
 [Desktop shells]: {{site.repo.flutter}}/wiki/Desktop-shells
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
@@ -245,21 +325,23 @@ Windows, and Linux.
 [creating a new Flutter project]: /docs/get-started/test-drive
 [Entitlements]: https://developer.apple.com/documentation/bundleresources/entitlements
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
-[Flutter Gallery]: https://flutter.github.io/gallery/#/
 [Flutter SDK]: /docs/get-started/install
 [Flutter wiki]: {{site.repo.flutter}}/wiki/
 [flutter-desktop-embedding]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins#dart
+[Hardened Runtime]: https://developer.apple.com/documentation/security/hardened_runtime
 [How to write a Flutter web plugin, part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [install the Flutter and Dart plugins]: /docs/get-started/editor
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
-[macOS Signing and Security]: {{site.github}}/google/flutter-desktop-embedding/blob/master/macOS-Security.md#macos-signing-and-security
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
 [path_provider]: {{site.pub}}/packages/path_provider
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
 [README]: {{site.github}}/flutter/gallery#flutter-gallery
+[repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
+[running web app]: https://flutter.github.io/gallery/#/
 [setting up an editor]: /docs/get-started/editor
 [shared_preferences]: {{site.pub}}/packages/shared_preferences
 [url_launcher]: {{site.pub}}/packages/url_launcher
 [using packages]: /docs/development/packages-and-plugins/using-packages
 [Visual Studio Code]: /docs/development/tools/vs-code
 [web support]: /docs/get-started/web
+[Xcode]: https://developer.apple.com/xcode/
