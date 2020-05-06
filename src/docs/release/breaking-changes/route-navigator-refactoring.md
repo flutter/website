@@ -92,7 +92,7 @@ MaterialApp(
 )
 ```
 
-There are different ways to migrate this app.
+There are different ways to migrate this change.
 One way is to set the initial route name
 to a fixed value and generate a specific route
 (`FakeSplashRoute` in the above example)

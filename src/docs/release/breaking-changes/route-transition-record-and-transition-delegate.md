@@ -1,19 +1,18 @@
 ---
-title: The Route Transition Record and Transition Delegate Updates
+title: Route transition record and transition delegate updates
 description: Changes to the rule on how transition delegate resolve route transition.
 ---
 
 ## Summary
 
 We added a new boolean getter `isWaitingForExitingDecision` to the route
-transition record and renamed the getter `isEntering` to
-`isWaitingForEnteringDecision`. During the `resolve` method in transition
+transition record and renamed the `isEntering` getter to
+`isWaitingForEnteringDecision`. In the `resolve` method in the transition
 delegate, you need to use the `isWaitingForExitingDecision` to check
 if an exiting route actually needs an explicit decision on how to transition
 off the screen. Otherwise, it throws assertion errors if you try to
 make decisions for exiting routes that aren't waiting for exiting
 decisions.
-
 
 ## Context
 
@@ -22,9 +21,10 @@ current routes stack to match the list. However, it requires explicit
 decisions on how to transition the route on and off the screen. Previously,
 routes that were not in the new list required decisions on how to transition
 off the screen. However, we later found out this is not always true. If a
-route that was popped but is still waiting for the popping animation to finish,
-this route will sit in the navigator routes stack until it is done. If a page
-update occurs during this time, this route exits but doesn't requires a decision
+route was popped, but is still waiting for the popping animation to finish,
+this route would sit in the navigator routes stack until the animation
+was done. If a page update occurred during this time,
+this route exits but doesn't requires a decision
 on how to transition off the screen. Therefore, we added the
 `isWaitingForExitingDecision` to denote such case.
 
