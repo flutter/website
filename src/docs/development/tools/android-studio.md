@@ -286,7 +286,7 @@ You can also define custom templates in **Settings > Editor > Live Templates**.
 **Hot reload**
 
 On Linux (keymap _Default for XWin_) and Windows the keyboard shortcuts
-are `Controle`+`Alt`+`;` and `Control`+`Backslash`.
+are `Control`+`Alt`+`;` and `Control`+`Backslash`.
 
 On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are
 `Command`+`Option` and `Command`+`Backslash`.

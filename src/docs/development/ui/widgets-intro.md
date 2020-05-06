@@ -16,7 +16,7 @@ tree to transition from one state to the next.
 
 {{site.alert.note}}
   If you would like to become better acquainted with Flutter by diving
-  into some code, check out the [basic layout codelab][],
+  into some code, check out [basic layout codelab][],
   [building layouts][],
   and [adding interactivity to your Flutter app][].
 {{site.alert.end}}
@@ -347,8 +347,9 @@ Consider this basic example, using the [`RaisedButton`][] mentioned earlier:
 ```dart
 class Counter extends StatefulWidget {
   // This class is the configuration for the state. It holds the
-  // values (in this case nothing) provided by the parent and used by the build
-  // method of the State. Fields in a Widget subclass are always marked "final".
+  // values (in this case nothing) provided by the parent and used
+  // by the build  method of the State. Fields in a Widget
+  // subclass are always marked "final".
 
   @override
   _CounterState createState() => _CounterState();
@@ -397,18 +398,21 @@ the application in its current state. `State` objects, on the other
 hand, are persistent between calls to
 `build()`, allowing them to remember information.
 
-The example above accepts user input and directly uses the result in its
-`build()` method.  In more complex applications, different parts of the widget
-hierarchy might be responsible for different concerns; for example, one
-widget might present a complex user interface with the goal of gathering
-specific information, such as a date or location, while another widget might
+The example above accepts user input and directly uses
+the result in its `build()` method.  In more complex applications,
+different parts of the widget hierarchy might be
+responsible for different concerns; for example, one
+widget might present a complex user interface
+with the goal of gathering specific information,
+such as a date or location, while another widget might
 use that information to change the overall presentation.
 
-In Flutter, change notifications flow "up" the widget hierarchy by way of
-callbacks, while current state flows "down" to the stateless widgets that do
-presentation. The common parent that redirects this flow is the `State`.
-The following slightly more complex example shows how this works in practice:
-
+In Flutter, change notifications flow "up" the widget
+hierarchy by way of callbacks, while current state flows
+"down" to the stateless widgets that do presentation.
+The common parent that redirects this flow is the `State`.
+The following slightly more complex example shows how
+this works in practice:
 
 ```dart
 class CounterDisplay extends StatelessWidget {
@@ -498,8 +502,9 @@ class ShoppingListItem extends StatelessWidget {
   final CartChangedCallback onCartChanged;
 
   Color _getColor(BuildContext context) {
-    // The theme depends on the BuildContext because different parts of the tree
-    // can have different themes.  The BuildContext indicates where the build is
+    // The theme depends on the BuildContext because different parts
+    // of the tree can have different themes.
+    // The BuildContext indicates where the build is
     // taking place and therefore which theme to use.
 
     return inCart ? Colors.black54 : Theme.of(context).primaryColor;
@@ -530,51 +535,45 @@ class ShoppingListItem extends StatelessWidget {
 }
 ```
 
-The `ShoppingListItem` widget follows a common pattern for stateless widgets.
-It stores the values it receives in its constructor in [`final`][]
-member variables, which it then uses during its [`build()`][] function.
+The `ShoppingListItem` widget follows a common pattern
+for stateless widgets.  It stores the values it receives
+in its constructor in [`final`][] member variables,
+which it then uses during its [`build()`][] function.
 For example, the `inCart` boolean toggles between two visual
 appearances: one that uses the primary color from the current
 theme, and another that uses gray.
 
-When the user taps the list item, the widget doesn't modify its `inCart` value
-directly. Instead, the widget calls the `onCartChanged` function it received
-from its parent widget. This pattern lets you store state higher in the widget
+When the user taps the list item, the widget doesn't modify
+its `inCart` value directly. Instead, the widget calls the
+`onCartChanged` function it received from its parent widget.
+This pattern lets you store state higher in the widget
 hierarchy, which causes the state to persist for longer periods of time.
 In the extreme, the state stored on the widget passed to
 [`runApp()`][] persists for the lifetime of the
 application.
 
-When the parent receives the `onCartChanged` callback, the parent updates its
-internal state, which triggers the parent to rebuild and create a new instance
-of `ShoppingListItem` with the new `inCart` value. Although the parent creates a
-new instance of `ShoppingListItem` when it rebuilds, that operation is cheap
+When the parent receives the `onCartChanged` callback,
+the parent updates its internal state, which triggers
+the parent to rebuild and create a new instance
+of `ShoppingListItem` with the new `inCart` value.
+Although the parent creates a new instance of
+`ShoppingListItem` when it rebuilds, that operation is cheap
 because the framework compares the newly built widgets with the previously
 built widgets and applies only the differences to the underlying
 [`RenderObject`][].
 
 Here's an example parent widget that stores mutable state:
 
-<!--
-class Product {
-  const Product({this.name});
-  final String name;
-}
-
-class ShoppingListItem extends StatelessWidget {
-  ShoppingListItem({Product product, bool inCart, Function onCartChanged});
-  @override
-  Widget build(BuildContext context) => null;
-}
--->
+<!-- skip -->
 ```dart
 class ShoppingList extends StatefulWidget {
   ShoppingList({Key key, this.products}) : super(key: key);
 
   final List<Product> products;
 
-  // The framework calls createState the first time a widget appears at a given
-  // location in the tree. If the parent rebuilds and uses the same type of
+  // The framework calls createState the first time a widget
+  // appears at a given location in the tree.
+  // If the parent rebuilds and uses the same type of
   // widget (with the same key), the framework re-uses the State object
   // instead of creating a new State object.
 
@@ -661,12 +660,13 @@ mutates its internal state by either adding or removing a product from
 state, it wraps those calls in a [`setState()`][] call.
 Calling `setState` marks this widget as dirty and schedules it to be rebuilt
 the next time your app needs to update the screen.
-If you forget to call `setState` when modifying the internal state of a widget,
-the framework won't know your widget is dirty and might not call the widget's
-[`build()`][] function, which means the user interface might not
-update to reflect the changed state.
-By managing state in this way, you don't need to write separate code for
-creating and updating child widgets. Instead, you simply implement the `build`
+If you forget to call `setState` when modifying the internal
+state of a widget, the framework won't know your widget is
+dirty and might not call the widget's [`build()`][] function,
+which means the user interface might not update to reflect
+the changed state.  By managing state in this way,
+you don't need to write separate code for creating and
+updating child widgets. Instead, you simply implement the `build`
 function, which handles both situations.
 
 ## Responding to widget lifecycle events
@@ -700,30 +700,35 @@ the same [`key`][] as well as the same `runtimeType`.
 
 Keys are most useful in widgets that build many instances of
 the same type of widget. For example, the `ShoppingList` widget,
-which builds just enough `ShoppingListItem` instances to fill its visible region:
+which builds just enough `ShoppingListItem` instances to
+fill its visible region:
 
- * Without keys, the first entry in the current build would always sync with the
-   first entry in the previous build, even if, semantically, the first entry in
-   the list just scrolled off screen and is no longer visible in the viewport.
+ * Without keys, the first entry in the current build
+   would always sync with the first entry in the previous build,
+   even if, semantically, the first entry in the list just
+   scrolled off screen and is no longer visible in the viewport.
 
- * By assigning each entry in the list a "semantic" key, the infinite list can
-   be more efficient because the framework syncs entries with matching
-   semantic keys and therefore similar (or identical) visual appearances.
-   Moreover, syncing the entries semantically means that state retained in
-   stateful child widgets remains attached to the same semantic entry rather
-   than the entry in the same numerical position in the viewport.
+ * By assigning each entry in the list a "semantic" key,
+   the infinite list can be more efficient because the
+   framework syncs entries with matching semantic keys
+   and therefore similar (or identical) visual appearances.
+   Moreover, syncing the entries semantically means that
+   state retained in stateful child widgets remains attached
+   to the same semantic entry rather than the entry in the
+   same numerical position in the viewport.
 
 For more information, see the [`Key`][] API.
 
-## Global Keys
+## Global keys
 
-Use global keys to uniquely identify child widgets. Global keys must be
-globally unique across the entire widget hierarchy, unlike local keys which need
-only be unique among siblings. Because they are globally unique, a global key
-can be used to retrieve the state associated with a widget.
+Use global keys to uniquely identify child widgets.
+Global keys must be globally unique across the entire
+widget hierarchy, unlike local keys which need
+only be unique among siblings. Because they are
+globally unique, a global key can be used to
+retrieve the state associated with a widget.
 
 For more information, see the [`GlobalKey`][] API.
-
 
 
 [`actions`]: {{api}}/material/AppBar-class.html#actions

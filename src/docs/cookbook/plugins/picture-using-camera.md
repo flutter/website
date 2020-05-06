@@ -48,6 +48,11 @@ dependencies:
 ```
 {{site.alert.tip}}
   - For android, You must have to update `minSdkVersion` to 21 (or higher).
+  - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera.
+    ```
+    <key>NSCameraUsageDescription</key>
+    <string>Explanation on why the camera access is needed.</string>
+    ```
 {{site.alert.end}}
 
 ## 2. Get a list of the available cameras

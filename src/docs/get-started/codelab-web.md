@@ -76,7 +76,7 @@ You'll start with a simple web app that we provide for you.
 <li markdown="1">Enable web development.<br>
 At the command line, perform the following commands to
 make sure that you have the latest web support and that
-it is enabled. You only need to run `flutter config` once
+it's enabled. You only need to run `flutter config` once
 to enable Flutter support for web.
 If you see "flutter: command not found",
 then make sure that you have installed the
