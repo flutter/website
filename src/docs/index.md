@@ -110,6 +110,12 @@ Coming from another platform? Check out:
 : Learn how to create layouts in Flutter,
   where everything is a widget.
 
+[Understanding constraints][]
+: Once you understand that "Constraints
+  flow up. Sizes flow down. Parents set
+  positions", then you are well on your
+  way to understanding Flutter's layout model.
+
 [Adding interactivity to your Flutter app][]
 : Learn how to add a stateful widget to your app.
 
@@ -179,6 +185,7 @@ You might also find these docs useful:
 [Navigation and routing]: /docs/development/ui/navigation
 [React Native]: /docs/get-started/flutter-for/react-native-devs
 [State management]: /docs/development/data-and-backend/state-mgmt/intro
+[Understanding constraints]: /docs/development/ui/layout/constraints
 [Using packages]: /docs/development/packages-and-plugins/using-packages
 [videos]: /docs/resources/videos
 [Web]: /docs/get-started/flutter-for/web-devs
