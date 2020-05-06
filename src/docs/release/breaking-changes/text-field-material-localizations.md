@@ -23,20 +23,21 @@ The specific widget that could not find a MaterialLocalizations ancestor was:
 ## Context
 
 If your `TextField` is within the scope of a `MaterialApp`, the
-`DefaultMaterialLocalizations` will already be instantiated and may suit your needs without having
+`DefaultMaterialLocalizations` is already be instantiated and may suit your needs without having
 to make a change to your existing code.
 
 If your `TextField` is not within a `MaterialApp`, you may provide the localizations of
 your choosing using the `Localizations` widget.
 
-This change will initially be introduced with an opt-in flag
+This change was initially introduced with an opt-in flag
 `TextField.canAssertMaterialLocalizations`, to allow developers time to migrate
 without experiencing broken code. This temporary opt-in flag will be removed in a follow up change.
 
 ## Migration guide
 
 If you are seeing an assertion error, make sure locale information is being
-provided to your `TextField`.
+provided to your `TextField` through ans ancestor `MaterialApp`, which will automatically provide
+`MaterialLocalizations`, or with your own `Localizations` widget.
 
 Code before migration:
 
@@ -100,6 +101,7 @@ class Foo extends StatelessWidget {
 
 Code to validate migration:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 void main() => runApp(Foo());
@@ -119,22 +121,24 @@ TBD - Add the version number that contains this change.
 
 ## References
 
+{% include master-api.md %}
+
 API documentation:
 * [`TextField`][]
 * [`Localizations`][]
 * [`MaterialLocalizations`][]
 * [`DefaultMaterialLocalizations`][]
 * [`MaterialApp`][]
-* [Internationalizing Flutter Apps][]
+* [Internationalizing Flutter apps][]
 
 
 Relevant PR:
 * [PR 56090: Add opt-in for debugCheckHasMaterialLocalizations assertion on TextField][]
 
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`TextField`]: https://master-api.flutter.dev/flutter/material/TextField-class.html
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
 [`DefaultMaterialLocalizations`]: {{site.api}}/flutter/material/DefaultMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[Internationalizing Flutter Apps]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
+[Internationalizing Flutter apps]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 [PR 56090: Add opt-in for debugCheckHasMaterialLocalizations assertion on TextField]: {{site.github}}/flutter/flutter/pull/56090
