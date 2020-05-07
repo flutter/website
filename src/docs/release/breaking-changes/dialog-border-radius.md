@@ -85,6 +85,7 @@ class Foo extends StatelessWidget {
 
 Code to validate migration:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 void main() => runApp(Foo());
@@ -118,6 +119,8 @@ TBD - Add the version number that contains this change.
 
 ## References
 
+{% include master-api.md %}
+
 API documentation:
 * [`Dialog`][]
 * [`SimpleDialog`][]
@@ -129,9 +132,9 @@ API documentation:
 Relevant PR:
 * [PR 56084: Add opt-in fixing Dialog border radius to match Material Spec][]
 
-[`Dialog`]: {{site.api}}/flutter/material/Dialog-class.html
-[`SimpleDialog`]: {{site.api}}/flutter/widgets/SimpleDialog-class.html
-[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
-[`showTimePicker`]: {{site.api}}/flutter/material/showTimePicker.html
-[`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
+[`Dialog`]: https://master-api.flutter.dev/flutter/material/Dialog-class.html
+[`SimpleDialog`]: https://master-api.flutter.dev/flutter/material/SimpleDialog-class.html
+[`AlertDialog`]: https://master-api.flutter.dev/flutter/material/AlertDialog-class.html
+[`showTimePicker`]: https://master-api.flutter.dev/flutter/material/showTimePicker.html
+[`showDatePicker`]: https://master-api.flutter.dev/flutter/material/showDatePicker.html
 [PR 56084: Add opt-in fixing Dialog border radius to match Material Spec]: {{site.github}}/flutter/flutter/pull/56084
