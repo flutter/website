@@ -253,7 +253,7 @@ GestureDetector is listed, and it is listening only to a "tap" gesture
 function).
 
 If you write your own widgets, you can add information by overriding
-[`debugFillProperties()`][widget-fill]. Add [DiagnosticsProperty][[]
+[`debugFillProperties()`][widget-fill]. Add [DiagnosticsProperty][]
 objects to the method's argument, and call the superclass method.
 This function is what the `toString` method uses to fill in the
 widget's description.

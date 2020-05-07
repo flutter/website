@@ -40,6 +40,7 @@ need to rename all the references to `isEntering` to `isWaitingForEnteringDecisi
 
 Code before migration:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/widgets.dart';
 
@@ -77,6 +78,7 @@ class NoAnimationTransitionDelegate extends TransitionDelegate<void> {
 
 Code after migration:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/widgets.dart';
 
