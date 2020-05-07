@@ -47,7 +47,7 @@ import 'package:flutter/rendering.dart';
 
 ## Timeline
 
-Changed after 1.2.22.
+This change landed in 1.17.
 
 ## References
 
@@ -63,7 +63,7 @@ Relevant issues:
 * [Transform mouse events to the local coordinate system][]
 * [Move annotations to a separate tree][]
 
-Relevant PRs:
+Relevant PR:
 * [Move mouse_tracking.dart to rendering][]
 
 [Move annotations to a separate tree]: {{site.github}}/flutter/flutter/issues/49568

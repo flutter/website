@@ -114,14 +114,14 @@ changes from `FrogJar` (a `RenderObjectWidget`) to
 `FrogSize.applyParentData` wants to operate on).
 Additionally, the new `debugTypicalAncestorWidgetClass`
 is implemented for this `ParentDataWidget` subclass.
-It returns the type of a typical ancestor `RenderObjectWidget` for
-this `ParentDataWidget`. Most of the times,
+It returns the type of a typical ancestor `RenderObjectWidget`
+for this `ParentDataWidget`. Most of the time,
 you just want to return the old generic type here
 (`FrogJar` in this example).
 
 ## Timeline
 
-This change was made in January of 2020 after the v1.13.7 release.
+This change landed in 1.17.
 
 ## References
 

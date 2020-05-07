@@ -6,8 +6,8 @@ description: The hit testing of RenderEditable requires additional information t
 ## Summary
 
 Instances of `RenderEditable` must be laid out before processing hit
-testing; trying to hit-test a `RenderEditable` object before layout will 
-result in an assertion such as the following:
+testing. Trying to hit-test a `RenderEditable` object before layout
+results in an assertion such as the following:
 
 `Failed assertion: line 123 pos 45: '!debugNeedsLayout': is not true.`
 
@@ -15,7 +15,7 @@ result in an assertion such as the following:
 
 To support gesture recognizers in selectable text, the
 `RenderEditable` requires the layout information for its
-text spans to determine which text span receive the
+text spans to determine which text span receives the
 pointer event. (Before this change, `RenderEditable` objects 
 did not take their text into account when evaluating hit tests.)
 To implement this, layout was made a prerequisite for performing
@@ -29,8 +29,9 @@ example in tests of custom render objects.
 
 ## Migration guide
 
-If you are seeing `'!debugNeedsLayout': is not true.` assertion error while hit testing the
-`RenderEditable`, lay out the `RenderEditable` before doing so.
+If you see the `'!debugNeedsLayout': is not true`
+assertion error while hit testing the `RenderEditable`,
+lay out the `RenderEditable` before doing so.
 
 Code before migration:
 
@@ -106,7 +107,7 @@ class FakeEditableTextState extends TextSelectionDelegate {
 
 ## Timeline
 
-This change landed in v1.18.0.
+This change landed in v1.18.
 
 ## References
 
@@ -114,7 +115,8 @@ API documentation:
 * [`RenderEditable`][]
 
 Relevant issue:
-* [Issue 43494: SelectableText.rich used along with TapGestureRecognizer is not working][]
+* [Issue 43494: SelectableText.rich used along with
+   TapGestureRecognizer is not working][]
 
 Relevant PR:
 * [PR 54479: Enable gesture recognizer in selectable rich text][]

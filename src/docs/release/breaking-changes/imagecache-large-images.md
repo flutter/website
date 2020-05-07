@@ -24,7 +24,7 @@ the changes made to the `ImageCache` algorithm:
 
 <!-- skip -->
 ```dart
-// Old Logic Pseudocode
+// Old logic pseudocode
 void onLoadImage(Image image) {
   if (image.byteSize > _cache.maxByteSize) {
     _cache.maxByteSize = image.byteSize + 1000;
@@ -39,7 +39,7 @@ void onLoadImage(Image image) {
 
 <!-- skip -->
 ```dart
-// New Logic Pseudocode
+// New logic pseudocode
 void onLoadImage(Image image) {
   if (image.byteSize < _cache.maxByteSize) {
     _cache.add(image);
@@ -71,7 +71,7 @@ This can be remedied by one of the following approaches:
 ## Timeline
 
 The old algorithm is no longer supported.
-This changed was introduced in v1.15.2.
+This changed landed in 1.17.
 
 ## References
 

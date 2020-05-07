@@ -3,12 +3,13 @@ title: Breaking changes
 description: A list of migration guides for breaking changes in Flutter.
 ---
 
-As described in the [breaking change policy][], on occasion we publish guides
+As described in the [breaking change policy][],
+on occasion we publish guides
 for migrating code across a breaking change.
 
 The following guides (in alphabetical order) are available:
 
-* [Actions API Revision][]
+* [Actions API revision][]
 * [Adding `linux` and `windows` to `TargetPlatform` enum][]
 * [Adding `TextInputClient.currentAutofillScope`][]
 * [Annotations return local position relative to object][]
@@ -26,11 +27,11 @@ The following guides (in alphabetical order) are available:
 * [TextInputClient currentTextEditingValue][]
 * [The `forgetChild` method must call super][]
 * [The RenderEditable needs to be laid out before hit testing][]
-* [The Route and Navigator Refactoring][]
-* [The Route Transition Record and Transition Delegate Updates][]
+* [The Route and Navigator refactoring][]
+* [The Route Transition record and Transition delegate updates][]
 * [ThemeData's accent properties][]
 
-[Actions API Revision]: /docs/release/breaking-changes/actions-api-revision
+[Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding `linux` and `windows` to `TargetPlatform` enum]: /docs/release/breaking-changes/target-platform-linux-windows
 [Adding `TextInputClient.currentAutofillScope`]: /docs/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
 [Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
@@ -50,6 +51,6 @@ The following guides (in alphabetical order) are available:
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
 [The `forgetChild` method must call super]: /docs/release/breaking-changes/forgetchild-call-super
 [The RenderEditable needs to be laid out before hit testing]: /docs/release/breaking-changes/rendereditable-layout-before-hit-test
-[The Route and Navigator Refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
-[The Route Transition Record and Transition Delegate Updates]: /docs/release/breaking-changes/route-transition-record-and-transition-delegate
+[The Route and Navigator refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
+[The Route Transition record and Transition delegate updates]: /docs/release/breaking-changes/route-transition-record-and-transition-delegate
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties

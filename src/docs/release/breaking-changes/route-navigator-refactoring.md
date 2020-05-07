@@ -27,10 +27,9 @@ defined, and the user could achieve the same result by calling
 Since the API for `Navigator.canPop()` was better defined,
 we simplified `Navigator.pop()` to not return a boolean value.
  
-On the other hand,
-the navigator requires the ability to manually rearrange
-entries in the overlay to allow the user to change the route
-history in the new API.
+On the other hand, the navigator requires the ability
+to manually rearrange entries in the overlay to allow
+the user to change the route history in the new API.
 We changed it so that the route only creates and destroys
 its overlay entries, while the navigator inserts or
 removes overlay entries from the overlay.
@@ -57,11 +56,10 @@ TextField(
       print(‘Oops! No more routes.’);
   }
 )
-
 ```
 
 You could use `Navigator.canPop()` in combination with
-`Navigator.pop()` to achieve the same result
+`Navigator.pop()` to achieve the same result.
 
 <!-- skip -->
 ```dart
@@ -129,7 +127,7 @@ MaterialApp(
 
 ## Timeline
 
-This change landed in v1.14.7.
+This change landed in v1.17.
 
 ## References
 

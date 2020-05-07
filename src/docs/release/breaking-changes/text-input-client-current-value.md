@@ -76,9 +76,10 @@ abstract class _TemporaryTextEditingClient {
 }
 ```
 
-This allows you to add the new member with an `@override` annotation
-before the change lands in the framework.
-Later, you can remove the temporary interface definition.
+This allows you to add the new member with an
+`@override` annotation before the change lands
+in the framework. Later, you can remove the
+temporary interface definition.
 
 Code before migration:
 
@@ -133,8 +134,7 @@ class _MyCustomTextWidgetState extends State<MyCustomWidget> implements TextEdit
 
 ## Timeline
 
-This change occurred in Dec 2019 and
-landed in 1.15.2.
+This change landed in 1.17.
 
 ## References
 

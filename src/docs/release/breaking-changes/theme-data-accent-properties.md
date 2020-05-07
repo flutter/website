@@ -118,7 +118,7 @@ MaterialApp(
 
 ## Timeline
 
-This change landed in 1.15.2.
+This change landed in 1.17.
 
 ## References
 
