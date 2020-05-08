@@ -222,8 +222,17 @@
     Flutter helped Nubank in its mission to end the complexity of traditional
     banks and put financial control back in the hands of the user.
   logo_src: showcase/cards/nubank-logo.png
+  video_id: vnj2i6RNo3g
   learn_more_cta: Learn more
   learn_more_link: https://medium.com/building-nubank/https-medium-com-freire-why-nubank-chose-flutter-61b80b568772
+  app_store_link: https://apps.apple.com/us/app/nubank/id814456780
+  play_store_link: https://play.google.com/store/apps/details?id=com.nu.production&hl=en_US
+  quote_testimonial: true
+  quote: >
+    Flutter had everything we needed out of the box including great documentation,
+    community support, and tooling.
+  quote_writer: Igor Borges, Software Engineer, Nubank
+  video_frame_image: showcase/video-frames/nubank@.png
   logo_has_name: true
   card_image: showcase/cards/nubank-top@.jpg
 
