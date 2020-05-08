@@ -26,8 +26,8 @@ enum TargetPlatform {
 
 A `switch` statement only needed to handle these cases,
 and desktop applications that wanted to run on Linux or
-Windows usually had a test something like this
-in their `main()` method:
+Windows usually had a test like this in their
+`main()` method:
 
 <!-- skip -->
 ```dart
@@ -149,7 +149,8 @@ for Linux and Windows applications.
 
 ## Timeline
 
-This change landed in 1.17.
+Landed in version: 1.15.4<br>
+In stable release: 1.17
 
 ## References
 

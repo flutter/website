@@ -50,9 +50,12 @@ class FooBinding extends BindingBase with SchedulerBinding, ServicesBinding {
 
 ## Timeline
 
-This change landed in 1.18.
+Landed in version: 1.18.0<br>
+In stable release: not yet
 
 ## References
+
+{% include master-api.md %}
 
 API documentation:
 * [`ServicesBinding`][]
@@ -62,15 +65,9 @@ Relevant PRs:
 * [Reverse dependency between services and scheduler][]
 * [Revert bindings dependency workaround][]
 
-{% include master-api.md %}
-
-Stable channel link:
-[`SchedulerBinding`]: {{site.api}}/flutter/scheduler/SchedulerBinding-mixin.html
-[`ServicesBinding`]: {{site.api}}/flutter/scheduler/ServicesBinding-mixin.html
-
-Master channel link:
-[`SchedulerBinding`]: https://master-api.flutter.dev/flutter/scheduler/SchedulerBinding-mixin.html
-[`ServicesBinding`]: https://master-api.flutter.dev/flutter/scheduler/ServicesBinding-mixin.html
-
 [Reverse dependency between services and scheduler]: {{site.github}}/flutter/flutter/pull/54212
 [Revert bindings dependency workaround]: {{site.github}}/flutter/flutter/pull/54286
+[`SchedulerBinding`]: {{site.api}}/flutter/scheduler/SchedulerBinding-mixin.html
+[`ServicesBinding`]: {{site.api}}/flutter/scheduler/ServicesBinding-mixin.html
+[`SchedulerBinding`]: https://master-api.flutter.dev/flutter/scheduler/SchedulerBinding-mixin.html
+[`ServicesBinding`]: https://master-api.flutter.dev/flutter/scheduler/ServicesBinding-mixin.html

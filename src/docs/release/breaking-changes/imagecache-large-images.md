@@ -5,8 +5,8 @@ description: Stop increasing the ImageCache maxByteSize to accommodate large ima
 
 ## Summary
 
-Stop increasing the `ImageCache maxByteSize` value
-to accommodate large images.
+The `maxByteSize` of the `ImageCache` is no longer
+automatically made larger to accommodate large images.
 
 ## Context
 
@@ -71,7 +71,9 @@ This can be remedied by one of the following approaches:
 ## Timeline
 
 The old algorithm is no longer supported.
-This changed landed in 1.17.
+
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 

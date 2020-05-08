@@ -5,12 +5,12 @@ description: The ParentDataWidget is now bound to the ParentData type.
 
 ## Summary
 
-The generic type of `ParentDataWidget` changed from
+The generic type of `ParentDataWidget` has changed from
 `RenderObjectWidget` to `ParentData`.
 
 ## Context
 
-Prior to this change a `ParentDataWidget` was bound
+Prior to this change, a `ParentDataWidget` was bound
 to a specific `RenderObjectWidget` type as ancestor.
 For example, a `Positioned` widget could only be used
 within a `Stack` widget. With this change,
@@ -121,7 +121,8 @@ you just want to return the old generic type here
 
 ## Timeline
 
-This change landed in 1.17.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 

@@ -127,7 +127,8 @@ MaterialApp(
 
 ## Timeline
 
-This change landed in v1.17.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 
@@ -146,7 +147,7 @@ Relevant issue:
 * [Issue 45938: Navigator 2.0][]
 
 Relevant PR:
-* [PR 44930: Navigator 2.0 - Refactor the imperative api to continue working in the new navigation system][]
+* [PR 44930: Navigator 2.0][] - Refactor the imperative api to continue working in the new navigation system
 
 
 [Issue 45938: Navigator 2.0]: {{site.github}}/flutter/flutter/issues/45938
@@ -154,7 +155,7 @@ Relevant PR:
 [`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.canPop`]: {{site.api}}/flutter/widgets/Navigator/canPop.html
 [Navigator 2.0 and Router]: /go/navigator-with-router
-[PR 44930: Navigator 2.0 - Refactor the imperative api to continue working in the new navigation system]: {{site.github}}/flutter/flutter/pull/44930
+[PR 44930: Navigator 2.0]: {{site.github}}/flutter/flutter/pull/44930
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`Route.install`]: {{site.api}}/flutter/widgets/Route/install.html
 [`RouteSetting.isInitialRoute`]: {{site.api}}/flutter/widgets/RouteSettings/isInitialRoute.html

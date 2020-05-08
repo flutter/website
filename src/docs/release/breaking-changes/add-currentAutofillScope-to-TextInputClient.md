@@ -5,7 +5,7 @@ description: A new getter TextInputClient.currentAutofillScope was added to the 
 
 ## Summary
 
-A new getter `TextInputClient.currentAutofillScope` was added to the
+A new getter, `TextInputClient.currentAutofillScope`, was added to the
 `TextInputClient` interface; all `TextInputClient` subclasses must 
 provide a concrete implementation of `currentAutofillScope`.
 
@@ -80,9 +80,12 @@ For more information, see [`AutofillGroup`][].
 
 ## Timeline
 
-This change landed in 1.18.
+Landed in version: 1.18.0<br>
+In stable release: not yet
 
 ## References
+
+{% include master-api.md %}
 
 API documentation:
 * [`AutofillGroup`][]
@@ -95,13 +98,9 @@ Relevant PRs:
 * [Framework PR that added autofill support][]
 
 
-{% include master-api.md %}
-
-Stable channel link:
 [Framework PR that added autofill support]: {{site.github}}/flutter/flutter/pull/52126
 [Issue 13015: Autofill support]: {{site.github}}/flutter/flutter/issues/13015
 
-Master channel link:
 [`AutofillGroup`]: https://master-api.flutter.dev/flutter/widgets/AutofillGroup-class.html
 [`TextInputClient.currentAutofillScope`]: https://master-api.flutter.dev/flutter/services/TextInputClient/currentAutofillScope.html
 

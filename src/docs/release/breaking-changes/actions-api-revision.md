@@ -313,7 +313,8 @@ class MyAction extends Action<MyIntent> {
 
 ## Timeline
 
-This change landed in 1.18.
+Landed in version: 1.18<br>
+In stable release: not yet
 
 ## References
 

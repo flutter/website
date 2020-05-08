@@ -102,7 +102,8 @@ testWidgets('some test', (WidgetTester tester) {
 
 ## Timeline
 
-This change landed in 1.18.
+Landed in version: 1.18.0<br>
+In stable release: not yet
 
 ## References
 
@@ -112,7 +113,8 @@ API documentation:
 * [`TestWidgetsFlutterBinding`][]
 
 Relevant PRs:
-* [PR 54125][]
+* [PR 54125][]: remove flutter_test quiver dep,
+  use fake_async and clock instead
 
 [`TestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding-class.html
 [PR 54125]: {{site.github}}/flutter/flutter/pull/54125

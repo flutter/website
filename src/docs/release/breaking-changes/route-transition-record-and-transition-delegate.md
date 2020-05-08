@@ -26,7 +26,7 @@ but is still waiting for the popping animation to finish,
 this route would sit in the navigator routes stack until
 the animation was done. If a page update occurred during this time,
 this route exits but doesn't requires a decision
-on how to transition off the screen. Therefore, we added the
+on how to transition off the screen. Therefore, we added
 `isWaitingForExitingDecision` to cover that case.
 
 The `isEntering` getter is also renamed to
@@ -123,7 +123,8 @@ class NoAnimationTransitionDelegate extends TransitionDelegate<void> {
 
 ## Timeline
 
-This change landed in v1.18.
+Landed in version: 1.18.0<br>
+In stable release: not yet
 
 ## References
 

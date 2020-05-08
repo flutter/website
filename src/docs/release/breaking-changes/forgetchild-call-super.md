@@ -1,5 +1,5 @@
 ---
-title: Element subclasses must call super in forgetChild
+title: The forgetChild() method must call super
 description: Any element subclasses that override forgetChild are required to call super.
 ---
 
@@ -69,7 +69,8 @@ class CustomElement extends Element {
 
 ## Timeline
 
-This change landed in 1.17.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 

@@ -13,9 +13,9 @@ but it may uncover missing calls to `setState` in your app.
 Prior to this change, an `OverlayEntry` would rebuild when
 a new opaque entry was added on top of it or removed above it.
 These rebuilds were unnecessary because they were not triggered
-by a change in state of the affected `OverlayEntry`.
-This change optimized how we handle the addition and removal of
-`OverlayEntry`s and removes the unnecessary rebuilds
+by a change in state of the affected `OverlayEntry`. This
+breaking change optimized how we handle the addition and removal of
+`OverlayEntry`s, and removes unnecessary rebuilds
 to improve performance.
 
 Since the `Navigator` internally puts each `Route` into an
@@ -87,7 +87,8 @@ class FooState extends State<Foo> {
 
 ## Timeline
 
-This change landed in 1.17.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 

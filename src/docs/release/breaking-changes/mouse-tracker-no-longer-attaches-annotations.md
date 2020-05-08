@@ -135,7 +135,8 @@ If you somehow need this feature, please submit an issue.
 
 ## Timeline
 
-This change landed in 1.17.
+Landed in version: 1.15.4<br>
+In stable release: 1.17
 
 ## References
 
