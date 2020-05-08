@@ -16,9 +16,9 @@ The {{site.sdk.channel | capitalize }} channel contains the
 most stable Flutter builds. See [Flutter’s channels][] for details.
 
 {{site.alert.note}}
-  As of release 1.17 (stable), we have updated our release process.
-  This includes how we name the releases and their corresponding files.
-  For more information, see the "Updating our release process" section
+  As of release 1.17 (stable), we've updated our release process,
+  including changes to the names of releases and their download files.
+  For details, see the "Updating our release process" section
   in the [Flutter Spring 2020 Update][] blog post.
 {{site.alert.end}}
 
