@@ -1541,7 +1541,7 @@ and you'll see an error in the console.
 Row(
    children:[
       Container(color: Colors.red, child: Text('Hello!')),
-      Container(color: Colors.green, child: Text('Goodbye!)),
+      Container(color: Colors.green, child: Text('Goodbye!')),
    ]
 )
 ```

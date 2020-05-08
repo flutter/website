@@ -68,6 +68,9 @@ Code after migration:
 
 ## Timeline
 
+Landed in version: xxx<br>
+In stable release: not yet
+
 {% comment %}
 The version # of the SDK where this change was
 introduced.  If there is a deprecation window,
@@ -80,6 +83,8 @@ the version # to which we guarantee to maintain the old API.
 I've had to comment out these non-functional links because
 they are messing up our Travis build. Remove the comment
 tags once you fill this in with real links.
+
+{% include master-api.md %}
 
 API documentation:
 * [`ClassName`][]
@@ -102,8 +107,6 @@ but please remove the comment lines before you commit!
 If you need to link to the docs on the master channel,
 please include the following note and make sure that
 the URL includes the master link (as shown below).
-
-{% include master-api.md %}
 
 Stable channel link:
 [`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html

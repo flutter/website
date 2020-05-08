@@ -1,28 +1,34 @@
 ---
-title: New method `showAutocorrectionPromptRect` added to `TextInputClient` 
-description: A new method `void showAutocorrectionPromptRect(int start, int end)` was added to the `TextInputClient` interface
+title: showAutocorrectionPromptRect method added to TextInputClient 
+description: A new method, void showAutocorrectionPromptRect(int start, int end), was added to the TextInputClient interface
 ---
-
 
 ## Summary
 
-A new method `void showAutocorrectionPromptRect(int start, int end)` was added to the `TextInputClient` interface.
+A new method,`void showAutocorrectionPromptRect(int start, int end)`,
+was added to the `TextInputClient` interface.
 
 ## Context
 
-In order to display the iOS autocorrection highlight, the iOS text input plugin needed a way to inform the Flutter framework of 
-the highlight's start and end position.
+In order to display the iOS autocorrection highlight,
+the iOS text input plugin needed a way to inform the
+Flutter framework of the highlight's start and end position.
 
 ## Description of change
 
-A new method `void showAutocorrectionPromptRect(int start, int end)` was added to the `TextInputClient` interface. This method will
-be called by iOS when it finds a new potential autocorrect candidate in the current user input, or when the range of a previously highlighted candidate changes.
+A new method, `void showAutocorrectionPromptRect(int start, int end)`,
+was added to the `TextInputClient` interface. iOS calls this method
+when it finds a new potential autocorrect candidate
+in the current user input, or when the range of a previously
+highlighted candidate changes.
 
 ## Migration guide
 
-If your application does not implement or subclass `TextInputClient`, no migration is needed.
-If your application does not target iOS, or the class that implemented the `textInputClient` interface does not 
-support autocorrect, you only need to add an empty implementation for the new method:
+If your application doesn't implement or subclass `TextInputClient`,
+no migration is needed. If your application doesn't target iOS,
+or the class that implemented the `textInputClient` interface doesn't 
+support autocorrect, you only need to add an empty implementation
+for the new method:
 
 <!-- skip -->
 ```dart
@@ -31,7 +37,9 @@ class CustomTextInputClient implements TextInputClient {
 }
 ```
 
-Otherwise, if your app targets iOS and supports autocorrect on iOS, it is recommended to add a sensible implementation of `void showAutocorrectionPromptRect(int start, int end)` 
+Otherwise, if your app targets iOS and supports autocorrect on iOS,
+we recommend that you add a sensible implementation of
+`void showAutocorrectionPromptRect(int start, int end)` 
 to your `TextInputClient` subclass. 
 
 Code after migration:
@@ -64,7 +72,7 @@ class CustomTextInputClient extends State<...> implements TextInputClient {
   @override
   void showAutocorrectionPromptRect(int start, int end) {
     // Updates the range of the highlight, as iOS requested.
-    // This method will not be called when iOS decides to
+    // This method isn't called when iOS decides to
     // dismiss the highlight.
     setState(() {
       _currentPromptRectRange = TextRange(start: start, end: end);
@@ -75,15 +83,23 @@ class CustomTextInputClient extends State<...> implements TextInputClient {
 
 ## Timeline
 
-This change landed in 1.18.0.
+Landed in version: not yet merged<br>
+In stable release: not yet
 
 ## References
 
+{% include master-api.md %}
+
 API documentation:
-* [`TextInputClient`]: https://master-api.flutter.dev/flutter/services/TextInputClient-class.html
+* [`TextInputClient`][]
 
 Relevant issues:
-* [Issue 12920]: {{site.github}}/flutter/flutter/issues/12920
+* [Issue 12920][]
 
 Relevant PRs:
-* [iOS UITextInput autocorrection prompt]: {{site.github}}/flutter/flutter/pull/54119/
+* [iOS UITextInput autocorrection prompt][]
+
+
+[iOS UITextInput autocorrection prompt]: {{site.github}}/flutter/flutter/pull/54119/
+[Issue 12920]: {{site.github}}/flutter/flutter/issues/12920
+[`TextInputClient`]: https://master-api.flutter.dev/flutter/services/TextInputClient-class.html

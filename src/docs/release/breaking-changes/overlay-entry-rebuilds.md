@@ -10,19 +10,19 @@ but it may uncover missing calls to `setState` in your app.
 
 ## Context
 
-Prior to this change an `OverlayEntry` would rebuild when
+Prior to this change, an `OverlayEntry` would rebuild when
 a new opaque entry was added on top of it or removed above it.
 These rebuilds were unnecessary because they were not triggered
-by a change in state of the affected `OverlayEntry`.
-This change optimized how we handle the addition and removal of
-`OverlayEntry`s and removes the unnecessary rebuilds
+by a change in state of the affected `OverlayEntry`. This
+breaking change optimized how we handle the addition and removal of
+`OverlayEntry`s, and removes unnecessary rebuilds
 to improve performance.
 
 Since the `Navigator` internally puts each `Route` into an
 `OverlayEntry` this change also applies to `Route` transitions:
 If an opaque `Route` is pushed on top or removed from above another
 `Route`, the `Route`s below the opaque `Route`
-no longer rebuild unnecessarily.
+no longer rebuilds unnecessarily.
 
 ## Description of change
 
@@ -40,10 +40,10 @@ The explicit `Stack` widget was removed from the widget hierarchy.
 
 If you're seeing issues after upgrading to a Flutter version
 that included this change, audit your code for missing calls to
-`setState`. In the example below assigning the return value of
+`setState`. In the example below, assigning the return value of
 `Navigator.pushNamed` to `buttonLabel` is
-implicitly modifying the state and it should be wrapped in an explicit
-`setState` call.
+implicitly modifying the state and it should be wrapped in an
+explicit `setState` call.
 
 Code before migration:
 
@@ -87,7 +87,8 @@ class FooState extends State<Foo> {
 
 ## Timeline
 
-This change was made in January of 2020 after the v1.14.3 release.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 
