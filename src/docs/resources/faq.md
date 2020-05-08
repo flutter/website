@@ -439,6 +439,9 @@ migrate to the stable channel.
 * Flutter supports building ahead-of-time (AOT) compiled libraries
   for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
 
+* Apps built for ARMv7 or ARM64 run fine (using ARM emulation)
+  on many x86 Android devices.
+
 * We support developing Flutter apps with Android and iOS devices,
   as well as with Android emulators and the iOS simulator.
 
