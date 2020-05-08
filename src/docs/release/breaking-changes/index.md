@@ -15,6 +15,7 @@ release, and listed in alphabetical order:
 * [Adding 'linux' and 'windows' to TargetPlatform enum][]
 * [Annotations return local position relative to object][]
 * [Container color optimization][]
+* [CupertinoTabBar requires Localizations parent][]
 * [Generic type of ParentDataWidget changed to ParentData][]
 * [ImageCache and ImageProvider changes][]
 * [ImageCache large images][]
@@ -45,6 +46,7 @@ release, and listed in alphabetical order:
 [Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
 [breaking change policy]: /docs/resources/compatibility
 [Container color optimization]: /docs/release/breaking-changes/container-color
+[CupertinoTabBar requires Localizations parent]: /docs/release/breaking-changes/cupertino-tab-bar-localizations
 [Generic type of ParentDataWidget changed to ParentData]: /docs/release/breaking-changes/parent-data-widget-generic-type
 [ImageCache and ImageProvider changes]: /docs/release/breaking-changes/image-cache-and-provider
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images
