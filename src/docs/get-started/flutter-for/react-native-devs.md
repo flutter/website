@@ -267,7 +267,7 @@ class Example {
     const url = 'https://httpbin.org/ip';
     const response = await fetch(url);
     const json = await response.json();
-    const data = await json.origin;
+    const data = json.origin;
     return data;
   }
 }
