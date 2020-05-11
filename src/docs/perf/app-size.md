@@ -101,7 +101,7 @@ Sign and export the IPA. The exported directory will contain
 `App Thinning Size Report.txt` with details about your projected
 application size on different devices and versions of iOS.
 
-The resulting App Size Report for the default demo app
+The App Size Report for the default demo app
 (as of this writing) shows:
 ```
 Variant: Runner-7433FC8E-1DF4-4299-A7E8-E00768671BEB.ipa
