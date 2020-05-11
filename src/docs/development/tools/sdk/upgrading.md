@@ -6,48 +6,18 @@ description: How to upgrade Flutter.
 
 No matter which one of the Flutter [release channels][]
 you follow, you can use the `flutter` command to upgrade your
-Flutter SDK and the packages that your app depends on.
+Flutter SDK or the packages that your app depends on.
 
-## One-time setup
+## Upgrading the Flutter SDK
 
-For the `flutter` command to work correctly,
-your app's `pubspec.yaml` file must require the Flutter SDK.
-For example, the following snippet specifies that the
-`flutter` and `flutter_test` packages require the Flutter SDK:
-
-```yaml
-name: hello_world
-dependencies:
-  flutter:
-    sdk: flutter
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-```
-
-{{site.alert.warning}}
-  Don't use the `pub get` or `pub upgrade` commands to manage
-  dependencies for Flutter apps.
-  Instead, use `flutter pub get` or `flutter pub upgrade`.
-  If you want to use pub manually, you can run it directly by
-  setting the `FLUTTER_ROOT` environment variable.
-{{site.alert.end}}
-
-
-## Upgrading the Flutter SDK and packages
-
-To update both the Flutter SDK and the packages that your app depends on,
-use the `flutter upgrade` command from the root of your app
-(the same directory that contains the `pubspec.yaml` file):
+To update both the Flutter SDK use the `flutter upgrade` command:
 
 ```terminal
 $ flutter upgrade
 ```
 
-This command first gets the most recent version of the Flutter SDK
-that's available on your Flutter channel.
-Then this command updates each package that your app depends on
-to the most recent compatible version.
+This command gets the most recent version of the Flutter SDK
+that's available on your current Flutter channel.
 
 If you want an even more recent version of the Flutter SDK,
 switch to a less stable Flutter channel
@@ -83,19 +53,12 @@ $ flutter upgrade
 {{site.alert.end}}
 
 
-## Upgrading packages only
+## Upgrading packages
 
 If you've modified your `pubspec.yaml` file, or you want to update
 only the packages that your app depends upon
 (instead of both the packages and Flutter itself),
 then use one of the `flutter pub` commands.
-
-To get all the dependencies listed in the `pubspec.yaml` file,
-without unnecessary updates, use the `get` command:
-
-```terminal
-$ flutter pub get
-```
 
 To update to the _latest compatible versions_ of
 all the dependencies listed in the `pubspec.yaml` file,
@@ -105,6 +68,13 @@ use the `upgrade` command:
 $ flutter pub upgrade
 ```
 
+To identify out-of-date package dependencies and get advice
+on how to update them, use the `outdated` command. For details, see
+the Dart [`pub outdated` documentation](https://dart.dev/tools/pub/cmd/pub-outdated).
+
+```terminal
+$ flutter pub outdated
+```
 
 ## Keeping informed
 
@@ -123,10 +93,6 @@ you can use the `flutter version` command:
 ```terminal
 $ flutter version v1.9.1+hotfix.3
 ```
-
-To pin packages to specific versions, specify their versions explicitly in the
-`pubspec.yaml` file. For more details on the format of this file, see the
-[pubspec.yaml] documentation on dart.dev.
 
 
 [Flutter SDK archive]: /docs/development/tools/sdk/archive
