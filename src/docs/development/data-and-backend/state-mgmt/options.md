@@ -95,7 +95,7 @@ many of which have been contributed by the Flutter community:
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
 [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: https://www.youtube.com/watch?v=Wj216eSBBWs
 [Fish-Redux - An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
-[Flutter Architecture Samples]: http://fluttersamples.com/
+[Flutter Architecture Samples]: https://fluttersamples.com/
 [Flutter: Inherited Widget and Scoped Model Explained, part 1]: https://www.youtube.com/watch?v=j-27MZwRbFw
 [Flutter: State Management with Mobx]: https://www.youtube.com/watch?v=p-MUBLOEkCs
 [Flutter Redux package]: {{site.pub-pkg}}/flutter_redux
