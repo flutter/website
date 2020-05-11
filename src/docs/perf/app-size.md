@@ -75,7 +75,7 @@ Built build/app/outputs/apk/release/app-arm64-v8a-release.apk (4.6MB).
 ## iOS
 
 Create an [Xcode App Size Report][]
-by configurting the app version and build
+by configuring the app version and build
 as described in the [iOS create build archive instructions][].
 
 Then:
@@ -101,19 +101,18 @@ Sign and export the IPA. The exported directory contains
 `App Thinning Size Report.txt` with details about your projected
 application size on different devices and versions of iOS.
 
-The App Size Report for the default demo app
-(as of this writing) shows:
+The App Size Report for the default demo app in Flutter 1.17 shows:
 ```
 Variant: Runner-7433FC8E-1DF4-4299-A7E8-E00768671BEB.ipa
 Supported variant descriptors: [device: iPhone12,1, os-version: 13.0] and [device: iPhone11,8, os-version: 13.0]
-App + On Demand Resources size: 5.3 MB compressed, 12.9 MB uncompressed
-App size: 5.3 MB compressed, 12.9 MB uncompressed
+App + On Demand Resources size: 5.4 MB compressed, 13.7 MB uncompressed
+App size: 5.4 MB compressed, 13.7 MB uncompressed
 On Demand Resources size: Zero KB compressed, Zero KB uncompressed
 ```
 
 In this example, the app has an approximate
-download size of 5.3 MB and an approximate
-install size of 12.9 MB on an iPhone12,1 ([Model ID / Hardware
+download size of 5.4 MB and an approximate
+install size of 13.7 MB on an iPhone12,1 ([Model ID / Hardware
 number][] for iPhone 11)
 and iPhone11,8 (iPhone XR) running iOS 13.0.
 
