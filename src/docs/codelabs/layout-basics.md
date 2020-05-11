@@ -711,7 +711,7 @@ here are a few suggestions for resources worth exploring:
   visiting the [Building layouts][] page.
 * Check out the [sample apps][].
 * Visit [Flutter's YouTube channel][],
-  where you can watch a variety videos from
+  where you can watch a variety of videos, from
   videos that focus on individual widgets
   to videos of developers building apps.
 
