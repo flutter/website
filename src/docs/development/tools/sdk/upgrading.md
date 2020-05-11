@@ -94,10 +94,6 @@ you can use the `flutter version` command:
 $ flutter version v1.9.1+hotfix.3
 ```
 
-To pin packages to specific versions, specify their versions explicitly in the
-`pubspec.yaml` file. For more details on the format of this file, see the
-[pubspec.yaml] documentation on dart.dev.
-
 
 [Flutter SDK archive]: /docs/development/tools/sdk/archive
 [release channels]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
