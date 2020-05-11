@@ -97,7 +97,7 @@ Then:
 `Strip Swift symbols`
 : Selected
 
-Sign and export the IPA. The exported directory will contain
+Sign and export the IPA. The exported directory contains
 `App Thinning Size Report.txt` with details about your projected
 application size on different devices and versions of iOS.
 
@@ -111,7 +111,7 @@ App size: 5.3 MB compressed, 12.9 MB uncompressed
 On Demand Resources size: Zero KB compressed, Zero KB uncompressed
 ```
 
-In this example, the app will have an approximate
+In this example, the app has an approximate
 download size of 5.3 MB and an approximate
 install size of 12.9 MB on an iPhone12,1 ([Model ID / Hardware
 number][] for iPhone 11)
