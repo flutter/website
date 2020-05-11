@@ -997,12 +997,12 @@ var subscribeData = {
         'ExperienceLevel': {
             'choices': [
                 [
-                    'Beginner',
-                    'Beginner'
+                    'Novice',
+                    'Novice'
                 ],
                 [
-                    'Medium',
-                    'Medium'
+                    'Intermediate',
+                    'Intermediate'
                 ],
                 [
                     'Advanced',

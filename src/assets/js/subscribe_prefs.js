@@ -16,12 +16,12 @@ var subscribePreferencesData = {
         'ExperienceLevel': {
             'choices': [
                 [
-                    'Beginner',
-                    'Beginner'
+                    'Novice',
+                    'Novice'
                 ],
                 [
-                    'Medium',
-                    'Medium'
+                    'Intermediate',
+                    'Intermediate'
                 ],
                 [
                     'Advanced',
@@ -29,7 +29,6 @@ var subscribePreferencesData = {
                 ]
             ],
             'error_messages': {
-                'invalid': 'Enter a valid value.',
                 'invalid_choice': 'Select a valid choice. %(value)s is not one of the available choices.',
                 'required': 'This field is required.'
             },
