@@ -140,20 +140,20 @@ and the web server when you want to test on other browsers.
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
-void main() => runApp(LoginApp());
+void main() => runApp(SignUpApp());
 
-class LoginApp extends StatelessWidget {
+class SignUpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => LoginScreen(),
+        '/': (context) => SignUpScreen(),
       },
     );
   }
 }
 
-class LoginScreen extends StatelessWidget {
+class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,7 +162,7 @@ class LoginScreen extends StatelessWidget {
         child: SizedBox(
           width: 400,
           child: Card(
-            child: LoginForm(),
+            child: SignUpForm(),
           ),
         ),
       ),
@@ -170,12 +170,12 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class LoginForm extends StatefulWidget {
+class SignUpForm extends StatefulWidget {
   @override
-  _LoginFormState createState() => _LoginFormState();
+  _SignUpFormState createState() => _SignUpFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _SignUpFormState extends State<SignUpForm> {
   final _firstNameTextController = TextEditingController();
   final _lastNameTextController = TextEditingController();
   final _usernameTextController = TextEditingController();
@@ -293,7 +293,7 @@ prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
 {{site.alert.end}}
 
-First, add the following class definition for the `WelcomeScreen` widget:
+First, in your new `lib/main.dart` file, add the following class definition for the `WelcomeScreen` widget after the `SignUpScreen` class:
 
 ```dart
 class WelcomeScreen extends StatelessWidget {
@@ -312,8 +312,6 @@ Next, you will enable the button to display the screen and create a method to
 display it.
 
 <ol markdown="1">
-<li markdown="1">Open the `lib/main.dart` file.
-</li>
 
 <li markdown="1"> Locate `build()` method for the `_SignUpFormState` class.
 This is the part of the code that builds the SignUp button.
@@ -345,6 +343,16 @@ add the following function:
 void _showWelcomeScreen() {
   Navigator.of(context).pushNamed('/welcome');
 }
+```
+</li>
+
+<li markdown="1">Add the `/welcome` route.<br>
+Create the connection to show the new screen. In the `build()` method for `SignUpApp`,
+add the following route below `'/'`:
+
+<!-- skip -->
+```dart
+'/welcome': (context) => WelcomeScreen(),
 ```
 </li>
 
