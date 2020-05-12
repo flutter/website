@@ -30,6 +30,13 @@ To hot reload a Flutter app:
     If you're running the app at the command line using `flutter run`,
     enter `r` in the terminal window.
 
+{{site.alert.note}}
+  Flutter web currently supports hot restart but not
+  hot reload. When launching a web app from the command line,
+  typing `r` performs a hot restart. To perform a hot restart
+  _and_ refresh the browser, use `R`.
+{{site.alert.end}}
+
 After a successful hot reload operation,
 you'll see a message in the console similar to:
 
@@ -60,9 +67,6 @@ the hot reload command. The code updates and execution continues.
     it also restarts the Dart Development Compiler.
     There is no specific keyboard shortcut for this;
     you need to stop and start the run configuration.
-
-  Flutter web currently supports hot restart but not
-  hot reload.
 {{site.alert.end}}
 
 ![Android Studio UI]({% asset development/tools/android-studio-run-controls.png @path %}){:width="550px"}<br>
