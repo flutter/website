@@ -1,7 +1,17 @@
 ---
 title: Free Flutter course from the App Brewery
+description: Link for registering for the free App Brewery course.
 ---
 
+<section class="landing-page__cta card text-center">
+    <div class="card-body">
+        <h2 class="landing-page__cta__headline">Sign up today</h2>
+        <p class="landing-page__cta__body">It’s free</p>
+        <a class="landing-page__cta__button btn btn-primary btn-cta" href="https://www.google.com/url?q=https://www.appbrewery.co/p/intro-to-flutter?utm_source%3Dgoogle%26utm_medium%3Dfreecoursebutton%26utm_campaign%3Dapp_brewery&sa=D&source=hangouts&ust=1587844936675000&usg=AFQjCNHxUa-OrkH1HkbRLZXxeG60opZI_w">Register</a>
+    </div>
+</section>
+
+<br>
 Sign up for the **Introduction to Flutter Development with
 Dart** course, created by the App Brewery in
 collaboration with the Google Flutter team.
@@ -36,10 +46,3 @@ Sign up today, and look forward to:
 * Building over 8 fully-fledged apps.
 * Comprehensive course materials and curriculum.
 
-<section class="landing-page__cta card text-center">
-    <div class="card-body">
-        <h2 class="landing-page__cta__headline">Sign up today</h2>
-        <p class="landing-page__cta__body">It’s free</p>
-        <a class="landing-page__cta__button btn btn-primary btn-cta" href="https://www.google.com/url?q=https://www.appbrewery.co/p/intro-to-flutter?utm_source%3Dgoogle%26utm_medium%3Dfreecoursebutton%26utm_campaign%3Dapp_brewery&sa=D&source=hangouts&ust=1587844936675000&usg=AFQjCNHxUa-OrkH1HkbRLZXxeG60opZI_w">Register</a>
-    </div>
-</section>

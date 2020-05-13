@@ -201,7 +201,10 @@
       { "source": "/go/generating-flutter-localizations", "destination": "https://docs.google.com/document/d/18saQREDwBMPA_svFe9IkU22ljNXsLpYxiy__jzPCzEc/edit?usp=sharing", "type": 301 },
       { "source": "/go/layout-builder-optimization", "destination": "https://docs.google.com/document/d/1H8Z48vZAemV0Kw0It65JMoGhqVlDLQErkKZN8-r9pdU", "type": 301 },
       { "source": "/go/slider-v2", "destination": "https://docs.google.com/document/d/1NCuRe-TUp8u6-Yzx_wrXZcqAwv5NP8hEJwUYSxVECwU/edit?usp=sharing", "type": 301 },
-      { "source": "/go/engine-cpu-profiling", "destination": "https://docs.google.com/document/d/1z_V69XzRct3vR7mBZ9tuuS1pZ_e7FQkuzbVJjXxMeaI/edit?usp=sharing", "type": 301 }
+      { "source": "/go/engine-cpu-profiling", "destination": "https://docs.google.com/document/d/1z_V69XzRct3vR7mBZ9tuuS1pZ_e7FQkuzbVJjXxMeaI/edit?usp=sharing", "type": 301 },
+      { "source": "/go/issue-triage-changes", "destination": "https://docs.google.com/document/d/1l-UjPJ7z0lPsKVAkoEysTseqijTBKHgfGbZ6BMOyTH4", "type": 301 },
+      { "source": "/go/link-widget", "destination": "https://docs.google.com/document/d/1HMadUQ2g7BRoCYmUvUYPAALU520fFv9PoPDkoz0wjAc", "type": 301 },
+      { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit?usp=sharing", "type": 301 }      
     ]
   }
 }

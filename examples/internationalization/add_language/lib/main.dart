@@ -20,9 +20,12 @@ class _BeMaterialLocalizationsDelegate extends LocalizationsDelegate<MaterialLoc
       BeMaterialLocalizations(
         localeName: localeName,
         fullYearFormat: intl.DateFormat('y', localeName),
+        compactDateFormat: intl.DateFormat('yMd', localeName),
+        shortDateFormat: intl.DateFormat('yMMMd', localeName),
         mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
         longDateFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
         yearMonthFormat: intl.DateFormat('MMMM y', localeName),
+        shortMonthDayFormat: intl.DateFormat('MMM d'),
         decimalFormat: intl.NumberFormat('#,##0.###', localeName),
         twoDigitZeroPaddedFormat: intl.NumberFormat('00', localeName),
       ),
@@ -37,23 +40,28 @@ class BeMaterialLocalizations extends GlobalMaterialLocalizations {
   const BeMaterialLocalizations({
     String localeName = 'be',
     @required intl.DateFormat fullYearFormat,
+    @required intl.DateFormat compactDateFormat,
+    @required intl.DateFormat shortDateFormat,
     @required intl.DateFormat mediumDateFormat,
     @required intl.DateFormat longDateFormat,
     @required intl.DateFormat yearMonthFormat,
+    @required intl.DateFormat shortMonthDayFormat,
     @required intl.NumberFormat decimalFormat,
     @required intl.NumberFormat twoDigitZeroPaddedFormat,
   }) : super(
     localeName: localeName,
     fullYearFormat: fullYearFormat,
+    compactDateFormat: compactDateFormat,
+    shortDateFormat: shortDateFormat,
     mediumDateFormat: mediumDateFormat,
     longDateFormat: longDateFormat,
     yearMonthFormat: yearMonthFormat,
+    shortMonthDayFormat: shortMonthDayFormat,
     decimalFormat: decimalFormat,
     twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat,
   );
 
-  // TODO(dnfield): uncomment this when we roll Flutter
-  // @override
+  @override
   String get moreButtonTooltip => r'More';
 
   @override
