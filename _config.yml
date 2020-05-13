@@ -86,7 +86,8 @@ assets:
     - _shared/_assets/css
 
 # kramdown: {show_warnings: true}
-plugins: [jekyll-toc]
+plugins:
+  - jekyll-toc
 source: src
 # `symlinked-sources` can refer to individual files or directories
 # under `src` that are symlinked to somewhere outside `src`, or it can
@@ -101,6 +102,9 @@ toc:
 os-list: [Windows, macOS, Linux]
 
 alert:
+  bonus: >-
+    <aside class="alert alert-info" role="alert" markdown="1">
+    **Bonus questions!**
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
     <i class="fas fa-exclamation-circle"></i> **Important:**
