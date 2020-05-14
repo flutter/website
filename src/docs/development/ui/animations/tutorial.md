@@ -269,7 +269,7 @@ Each section provides a link to the source code for that example.
     `setState()`.
   * Every time the Animation generates a new number, the `addListener()`
     function calls `setState()`.
-  * How to define an `AnimatedController` with the required
+  * How to define an `AnimationController` with the required
     `vsync` parameter.
   * Understanding the "`..`" syntax in "`..addListener`",
     also known as Dart's _cascade notation_.
