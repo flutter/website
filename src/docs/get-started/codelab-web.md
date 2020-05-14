@@ -278,13 +278,13 @@ From your IDE, editor, or at the command line,
 
 ## Step 1: Show the Welcome screen
 
-The `LoginForm` class is a stateful widget.
+The `SignUpForm` class is a stateful widget.
 This simply means that the widget stores information that can change,
 such as user input, or data from a feed.
 Since widgets themselves are immutable (can’t be modified once created),
 Flutter stores state information in a companion class,
 called the `State` class. In this lab,
-all of your edits will be made to the private `_LoginFormState` class.
+all of your edits will be made to the private `_SignUpFormState` class.
 
 {{site.alert.secondary}}
   <h4 class="no_toc">Fun fact</h4>
