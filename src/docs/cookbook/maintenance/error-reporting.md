@@ -125,7 +125,7 @@ that occur within that context by providing an `onError()`
 function.
 
 In this case, run the app in a new `Zone` and capture all errors.
-With Flutter 1.16 or older, you can do that by
+With Flutter older than 1.17, you can do that by
 providing an `onError()` callback.
 
 <!-- skip -->
