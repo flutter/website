@@ -14,11 +14,11 @@ whenever you open a new window. For example:
     You need this in Step 3.
  2. Open (or create) the `rc` file for your shell.
     Typing `echo $SHELL` in your Terminal tells you
-    which shell script you're using.
-    If you are using Bash,
+    which shell you're using.
+    If you're using Bash,
     edit `$HOME/.bash_profile` or `$HOME/.bashrc`.
     If you're using Z shell, edit `$HOME/.zshrc`.
-    If you are using a different shell, the file path
+    If you're using a different shell, the file path
     and filename will be different on your machine.
  3. Add the following line and change
     `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
