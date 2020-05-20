@@ -318,7 +318,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 void main() async {
-  // Avoid errors coused by flutter upgrade. 
+  // Avoid errors caused by flutter upgrade.
   // Importing 'package:flutter/widgets.dart' is required.
   WidgetsFlutterBinding.ensureInitialized();
   final database = openDatabase(
