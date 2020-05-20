@@ -222,6 +222,49 @@ If you use Travis or Cirrus for testing, increase the number of
 available file handlers that they can open by adding the same line to
 flutter/.travis.yml, or flutter/.cirrus.yml, respectively.
 
+### Widgets marked const that should be equal to each other, aren't
+
+In debug mode, you may find that two `const` widgets that should to all
+appearances be equal (because of Dart's constant deduplication) are not.
+
+For example, this code should print 1:
+
+```dart
+print(<Widget>{ // this is the syntax for a Set<Widget> literal
+  const SizedBox(),
+  const SizedBox(),
+}.length);
+```
+
+...because the two constants should be considered equal (and indeed the analyzer will
+complain that "Two elements in a set literal shouldn't be equal"). As expected, in release
+builds, it does print 1. However, in debug builds it will print 2. This is because the
+flutter tool injects the source location of Widget constructors into the code at compile
+time, so the code is effectively:
+
+```dart
+print(<Widget>{
+  const SizedBox(location: Location(file: 'foo.dart', line: 12)),
+  const SizedBox(location: Location(file: 'foo.dart', line: 13)),
+}.length);
+```
+
+...and thus the instances are different. We use this to make the error messages clearer when
+a widget is involved in an exception, by reporting where the relevant widget was created.
+Unfortunately, it has the visible side-effect of making otherwise-identical constants be
+different at compile time.
+
+To disable this behavior, pass `--no-track-widget-creation` to the `flutter run` command.
+With that flag set, the code above prints "1" in debug and release builds, and error messages
+will bemoan that they cannot provide all the information that they would otherwise be able
+to provide if widget creation tracking was enabled.
+
+See also:
+
+ * [WidgetInspectorService.isWidgetCreationTracked](https://api.flutter.dev/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html).
+ * The `_Location` class in [widget_inspector.dart](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart).
+ * The kernel transform that implements this feature: XXX
+
 ## Other resources
 
 You might find the following docs useful:
