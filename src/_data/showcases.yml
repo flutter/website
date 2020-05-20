@@ -277,3 +277,16 @@
   play_store_link: https://play.google.com/store/apps/details?id=com.ebay.motorsapp
   logo_has_name: true
   card_image: showcase/cards/ebay-top@.jpg
+
+- name: MGM Resorts
+  description: >
+    MGM Resorts apps (iOS & Android) are built on Flutter.
+    Recent releases include a contactless digital check in experience as well
+    as an in lobby Room Key printing solution.
+  logo_src: showcase/cards/mgm-logo.svg
+  learn_more_cta: Learn more
+  learn_more_link: https://www2.mgmresorts.com/app
+  app_store_link: https://apps.apple.com/us/app/mgm-resorts-international/id366518979
+  play_store_link: https://play.google.com/store/apps/details?id=com.mgmresorts.mgmresorts&hl=en_US
+  logo_has_name: true
+  card_image: showcase/cards/mgm-top@.png
