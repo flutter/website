@@ -261,9 +261,10 @@ to provide if widget creation tracking was enabled.
 
 See also:
 
- * [WidgetInspectorService.isWidgetCreationTracked](https://api.flutter.dev/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html).
- * The `_Location` class in [widget_inspector.dart](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart).
- * The kernel transform that implements this feature: XXX
+ * Our documentation on [how the Widget Inspector uses widget creation tracking][]
+ * [WidgetInspectorService.isWidgetCreationTracked][].
+ * The `_Location` class in [widget_inspector.dart][].
+ * The [kernel transform that implements this feature][].
 
 ## Other resources
 
@@ -312,6 +313,11 @@ You might find the following docs useful:
 [debug mode]: /docs/testing/build-modes#debug
 [profile mode]: /docs/testing/build-modes#profile
 [release mode]: /docs/testing/build-modes#release
+[how the Widget Inspector uses widget creation tracking]: /docs/development/tools/devtools/inspector#track-widget-creation
 
 [`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
+
+[WidgetInspectorService.isWidgetCreationTracked]: https://api.flutter.dev/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
+[widget_inspector.dart]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
+[kernel transform that implements this feature]: {{site.github}}/flutter/XXX
