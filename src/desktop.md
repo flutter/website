@@ -13,7 +13,7 @@ or you can create your own.
 {{site.alert.note}}
   **This page covers desktop support for macOS
   which is available as an alpha release.**
-  Window and Linux platforms are still under development.
+  Windows and Linux platforms are still under development.
   You can try Windows and Linux platform support
   as explained in the [Desktop shells][] page in the
   [Flutter wiki][].
