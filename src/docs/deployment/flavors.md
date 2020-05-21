@@ -13,7 +13,6 @@ The following packages are listed alphabetically:
 
 * [`flutter_flavor`][]
 * [`flutter_flavorizr`][]
-* [`kotlin_flavor`][]
 
 
 
@@ -21,4 +20,3 @@ The following packages are listed alphabetically:
 
 [`flutter_flavor`]: {{site.pub}}/packages/flutter_flavor
 [`flutter_flavorizr`]: {{site.pub}}/packages/flutter_flavorizr
-[`kotlin_flavor`]: {{site.pub}}/packages/kotlin_flavor
