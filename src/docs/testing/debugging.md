@@ -229,6 +229,7 @@ appearances be equal (because of Dart's constant deduplication) are not.
 
 For example, this code should print 1:
 
+<!--skip-->
 ```dart
 print(<Widget>{ // this is the syntax for a Set<Widget> literal
   const SizedBox(),
@@ -236,12 +237,14 @@ print(<Widget>{ // this is the syntax for a Set<Widget> literal
 }.length);
 ```
 
-...because the two constants should be considered equal (and indeed the analyzer will
-complain that "Two elements in a set literal shouldn't be equal"). As expected, in release
-builds, it does print 1. However, in debug builds it will print 2. This is because the
+It should print 1 (rather than 2) because the two constants are the same and sets
+coallesce duplicate values (and indeed the analyzer complains that
+"Two elements in a set literal shouldn't be equal"). As expected, in release
+builds, it does print 1. However, in debug builds it prints 2. This is because the
 flutter tool injects the source location of Widget constructors into the code at compile
 time, so the code is effectively:
 
+<!--skip-->
 ```dart
 print(<Widget>{
   const SizedBox(location: Location(file: 'foo.dart', line: 12)),
@@ -249,19 +252,20 @@ print(<Widget>{
 }.length);
 ```
 
-...and thus the instances are different. We use this to make the error messages clearer when
+This results in the instances being different, and so they are not deduplicated by the set.
+We use this injected information to make the error messages clearer when
 a widget is involved in an exception, by reporting where the relevant widget was created.
 Unfortunately, it has the visible side-effect of making otherwise-identical constants be
 different at compile time.
 
 To disable this behavior, pass `--no-track-widget-creation` to the `flutter run` command.
 With that flag set, the code above prints "1" in debug and release builds, and error messages
-will bemoan that they cannot provide all the information that they would otherwise be able
-to provide if widget creation tracking was enabled.
+include a message saying that they cannot provide all the information that they would otherwise
+be able to provide if widget creation tracking was enabled.
 
 See also:
 
- * Our documentation on [how the Widget Inspector uses widget creation tracking][]
+ * Our documentation on [how the Widget Inspector uses widget creation tracking][].
  * [WidgetInspectorService.isWidgetCreationTracked][].
  * The `_Location` class in [widget_inspector.dart][].
  * The [kernel transform that implements this feature][].
@@ -318,6 +322,6 @@ You might find the following docs useful:
 [`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
 
-[WidgetInspectorService.isWidgetCreationTracked]: https://api.flutter.dev/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
+[WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
 [widget_inspector.dart]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
 [kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/master/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart
