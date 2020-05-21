@@ -37,7 +37,7 @@
      and change branches or tags as needed. For example:
     
     ```terminal
-    $ git clone https://github.com/flutter/flutter.git -b stable
+    $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
     ```
     
  1. Add the `flutter` tool to your path:
