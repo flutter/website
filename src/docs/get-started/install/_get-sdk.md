@@ -31,10 +31,15 @@
     $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
     ```
     
-     If you don't want to install a fixed version of the installation bundle, 
-     you can skip steps 1 and 2. 
-     Instead, get the source code from the [Flutter repo][] on GitHub,
-     and change branches or tags as needed. For example:
+    If you don't want to install a fixed version of the installation bundle, 
+    you can skip steps 1 and 2. 
+    Instead, get the source code from the [Flutter repo][] on GitHub with the following command:
+    
+    ```terminal
+    $ git clone https://github.com/flutter/flutter.git
+    ```
+    
+    You can also change branches or tags as needed. For example, to get just the stable version:
     
     ```terminal
     $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
