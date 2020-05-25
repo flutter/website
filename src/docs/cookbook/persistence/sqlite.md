@@ -88,6 +88,9 @@ to the database. This involves two steps:
   `sqflite` package, combined with the `path` function from the `path` package.
   2. Open the database with the `openDatabase()` function from `sqflite`.
 
+Note: In order to use the keyword `await`, the code must be placed
+inside an `async` function.
+
 <!-- skip -->
 ```dart
 // Open the database and store the reference.
