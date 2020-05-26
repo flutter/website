@@ -886,7 +886,7 @@ its render box.
       alt="ListView containing movie theaters and restaurants" %}
   {:.text-center}
 
-  Uses `ListView` to display a list of businesses using]
+  Uses `ListView` to display a list of businesses using
   `ListTile`s. A `Divider` separates the theaters from
   the restaurants.
 
