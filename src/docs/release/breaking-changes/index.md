@@ -79,6 +79,18 @@ release, and listed in alphabetical order:
 * [The Route and Navigator refactoring][]
 * [ThemeData's accent properties][]
 
+### Not yet released to stable
+
+* [Actions API revision][]
+* [Adding TextInputClient.currentAutofillScope][]
+* [Reversing the dependency between the scheduler and services layer][]
+* [showAutocorrectionPromptRect method added to TextInputClient][]
+* [The RenderEditable needs to be laid out before hit testing][]
+* [The Route Transition record and Transition delegate updates][]
+* [TestWidgetsFlutterBinding.clock][]
+* [Clip behavior][]
+
+[Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding 'linux' and 'windows' to TargetPlatform enum]: /docs/release/breaking-changes/target-platform-linux-windows
 [Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
 [breaking change policy]: /docs/resources/compatibility
@@ -97,3 +109,4 @@ release, and listed in alphabetical order:
 [The forgetChild() method must call super]: /docs/release/breaking-changes/forgetchild-call-super
 [The Route and Navigator refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
+[Clip behavior]: /docs/release/breaking-changes/clip-behavior
