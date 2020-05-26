@@ -57,7 +57,7 @@ The negotiation goes something like this:
 
 **Widget**: "Hey parent, what are my constraints?"
 
-**Parent**: "You must be from `90` to `300` pixels wide,
+**Parent**: "You must be from `80` to `300` pixels wide,
    and `30` to `85` tall."
 
 **Widget**: "Hmmm, since I want to have `5` pixels of padding,
