@@ -85,7 +85,7 @@ Before reading and writing data to the database, open a connection
 to the database. This involves two steps:
 
   1. Define the path to the database file using `getDatabasesPath()` from the
-  `sqflite` package, combined with the `path` function from the `path` package.
+  `sqflite` package, combined with the `join` function from the `path` package.
   2. Open the database with the `openDatabase()` function from `sqflite`.
 
 Note: In order to use the keyword `await`, the code must be placed
