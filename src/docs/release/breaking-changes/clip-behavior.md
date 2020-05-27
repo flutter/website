@@ -45,9 +45,9 @@ To migrate the code, you have 4 choices:
 3.  Add `clipBehavior: Clip.antiAlias` if you need anti-aliased clipping. This will give you smoother edges at a slightly higher cost. This will be the common case when dealing with circles and arcs.
 4.  Add `clip.antiAliasWithSaveLayer` if you want the exact same behavior as before (May 2018). Be aware that it’s very costly in performance. This will be only rarely needed. One case where you might need this is if you have an image overlaid on a very different background color. In these cases, consider whether you can avoid overlapping multiple colors in one spot (e.g. by having the background color only present where the image is absent).
 
-For Stack widget specifically, if you previously used `overflow: Overflow.visible`, you shall simply remove `overflow: Overflow.visible` as now we default to not clip. If you used `overflow: Overflow.clip` or relied on the default `overflow: Overflow.clip` setup, you can now replace `overflow: Overflow.clip` with `clipBehavior: Clip.hardEdge`.
+For Stack widget specifically, if you previously used `overflow: Overflow.visible`, you shall replace it with `clipBehavior: Clip.none`.
 
-Similar approach applies to `ListWheelViewport`’s `clipToSize`. Remove `clipToSize` and use the corresponding `clipBehavior` to control the clip.
+For `ListWheelViewport` widget, if you previously specified `clipToSize`, replace it with the corresponding `clipBehavior`: `Clip.none` for `clipToSize = false` and `Clip.hardEdge` for `clipToSize = true`.
 
 Code before migration:
 
