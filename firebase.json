@@ -206,7 +206,8 @@
       { "source": "/go/link-widget", "destination": "https://docs.google.com/document/d/1HMadUQ2g7BRoCYmUvUYPAALU520fFv9PoPDkoz0wjAc", "type": 301 },
       { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit?usp=sharing", "type": 301 },
       { "source": "/go/form-field-autovalidation", "destination": "https://docs.google.com/document/d/16HAURcOtYAoHntDOEtdGy9KkKSItulG9Ldyjzdaosqo/edit?usp=sharing", "type": 301 },
-      { "source": "/go/breaking-changes-template", "destination": "https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md", "type": 301 }
+      { "source": "/go/breaking-changes-template", "destination": "https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md", "type": 301 },
+      { "source": "/go/i18n-user-guide", "destination": "https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit?usp=sharing", "type": 301 }
     ]
   }
 }
