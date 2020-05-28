@@ -198,29 +198,23 @@ widget tree are much deeper, and it can be more difficult to
 understand how the runtime widget hierarchy corresponds to
 your application's UI.
 
-When launching an application from an IDE, the source
-instrumentation happens by default. For command line launches,
-you need to opt-in to the source instrumentation. To do this,
-run the app with the `--track-widget-creation` flag:
-
-```
-flutter run --track-widget-creation
-```
-
-If you launch without the flag, you can still use the
-inspector&mdash;you'll see an inline, dismissable reminder
-message about using the source instrumentation flag.
+You can disable this feature by passing `--no-track-widget-creation` to
+the `flutter run` command.
 
 Here are examples of what your widget tree might look like
 with and without track widget creation enabled.
 
-Track widget creation enabled (**recommended**):
+Track widget creation enabled (default):
 
 ![The widget tree with track widget creation enabled]({% asset tools/devtools/track_widget_creation_enabled.png @path %})
 
-Track widget creation disabled (**not** recommended):
+Track widget creation disabled (not recommended):
 
 ![The widget tree with track widget creation disabled]({% asset tools/devtools/track_widget_creation_disabled.png @path %})
+
+This feature prevents otherwise-identical `const` Widgets from
+being considered equal in debug builds. For more details, see
+the discussion on [common problems when debugging][].
 
 ## Other resources
 
@@ -230,6 +224,7 @@ of the Flutter inspector.
 
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[common problems when debugging]: /docs/testing/debugging#common-problems
 [core building block]: /docs/development/ui/widgets-intro
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
 [DartConf 2018 talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
