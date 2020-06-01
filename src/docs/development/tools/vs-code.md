@@ -214,6 +214,10 @@ can assist in correcting it.
 : Changes a child argument to a children argument,
   and wraps the argument value in a list.
 
+**Convert StatelessWidget to StatefulWidget assist**
+: Changes the implementation of a `StatelessWidget` to that of a `StatefulWidget`,
+  by creating the `State` class and moving the code there.
+
 ### Snippets
 
 Snippets can be used to speed up entering typical code structures.
