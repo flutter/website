@@ -286,7 +286,7 @@ FlutterEngineCache
 
 <!--code-excerpt "MyActivity.java" title-->
 ```java
-flutterFragment.withCachedEngine("my_engine_id").build();
+FlutterFragment.withCachedEngine("my_engine_id").build();
 ```
 {% sample Kotlin %}
 <!--code-excerpt "MyApplication.kt" title-->
@@ -309,7 +309,7 @@ FlutterEngineCache
 
 <!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
-flutterFragment.withCachedEngine("my_engine_id").build()
+FlutterFragment.withCachedEngine("my_engine_id").build()
 ```
 {% endsamplecode %}
 
