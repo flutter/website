@@ -61,7 +61,7 @@ Coming from another platform? Check out:
 ### Videos
 
 We also have some helpful videos on our
-[Flutter Youtube channel][]! In particular, check
+[Flutter YouTube channel][]! In particular, check
 out the Flutter in Focus series,
 and learn about other series on our [videos][] page.
 
@@ -112,7 +112,7 @@ You might also find these docs useful:
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 [Flutter in Focus]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[Flutter Youtube channel]: {{site.social.youtube}}
+[Flutter YouTube channel]: {{site.social.youtube}}
 [Get started]: /docs/get-started/install
 [iOS]: /docs/get-started/flutter-for/ios-devs
 [Navigation and routing]: /docs/development/ui/navigation
