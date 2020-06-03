@@ -209,7 +209,8 @@
       { "source": "/go/breaking-changes-template", "destination": "https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md", "type": 301 },
       { "source": "/go/i18n-user-guide", "destination": "https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit", "type": 301 },
       { "source": "/go/reference-plugin", "destination": "https://docs.google.com/document/d/1NJFbRMVxVL9YS_FcWi7W08DsBr_eRAJtQI9FQkk9MXk/edit", "type": 301 },
-      { "source": "/go/error-handling", "destination": "https://docs.google.com/document/d/1HdGLKoVw_KWLrVzDNZ8Lk5nN-biHQzi_CS5mCkpiDwA/edit", "type": 301 }
+      { "source": "/go/error-handling", "destination": "https://docs.google.com/document/d/1HdGLKoVw_KWLrVzDNZ8Lk5nN-biHQzi_CS5mCkpiDwA/edit", "type": 301 },
+      { "source": "/go/ios-pull-to-refresh", "destination": "https://docs.google.com/document/d/1oUgNd3fsJ1QVuEmA6ENBT8vq3o6QKCRUPGCB6q91VgI/edit", "type": 301 }
     ]
   }
 }
