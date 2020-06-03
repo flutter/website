@@ -2,11 +2,11 @@
 title: Performance profiling
 description: How to profile performance for a Flutter app.
 prev:
-  title: An introduction to integration testing
-  path: /docs/cookbook/testing/integration/introduction
-next:
   title: Handle scrolling
   path: /docs/cookbook/testing/integration/scrolling
+next:
+  title: An introduction to unit testing
+  path: /docs/cookbook/testing/unit/introduction
 ---
 
 When it comes to mobile apps, performance is critical to user experience.
