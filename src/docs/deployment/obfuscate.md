@@ -45,8 +45,9 @@ The `--split-debug-info` flag specifies the
 directory where Flutter can output debug files.
 This command generates a symbol map.
 The `apk`, `appbundle`, `ios`, and `ios-framework`
-targets are currently supported. (`macos` is
-supported on the master and dev channels.)
+targets are currently supported. (`macos` and
+`aar` are supported on the master and dev
+channels.)
 For example:
 
 ```terminal
@@ -86,7 +87,7 @@ use the following steps to make it human readable:
    For example:
 
 ```terminal
-flutter symbolize -i <stack trace file> -d /out/android/app.android-arm64.symbols 
+flutter symbolize -i <stack trace file> -d /out/android/app.android-arm64.symbols
 ```
 
    For more information on the `symbolize` command,
