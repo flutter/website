@@ -3,7 +3,7 @@
 {{site.alert.note}}
   Flutter relies on a full installation of Android Studio to supply
   its Android platform dependencies. However, you can write your
-  Flutter apps in a number of editors; a later step will discuss that.
+  Flutter apps in a number of editors; a later step discusses that.
 {{site.alert.end}}
 
 ### Install Android Studio
@@ -17,7 +17,7 @@
 ### Set up your Android device
 
 To prepare to run and test your Flutter app on an Android device,
-you'll need an Android device running Android 4.1 (API level 16) or higher.
+you need an Android device running Android 4.1 (API level 16) or higher.
 
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the

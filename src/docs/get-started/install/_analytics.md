@@ -6,7 +6,7 @@
   Flutter tool analytics are not sent on the very first run. To disable
   reporting, type `flutter config --no-analytics`. To display the current
   setting, type `flutter config`. If you opt out of analytics, an opt-out
-  event will be sent, and then no further information will be sent by the
+  event is sent, and then no further information is sent by the
   Flutter tool.
 
   By downloading the Flutter SDK, you agree to the Google Terms of Service.
