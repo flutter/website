@@ -27,8 +27,7 @@ In Android, a route is equivalent to an Activity.
 In iOS, a route is equivalent to a ViewController.
 In Flutter, a route is just a widget.
 
-Navigate to a new route using the [`Navigator`][].
-This recipe uses the following steps:
+This recipe uses the [`Navigator`][] to navigate to a new route.
 
 The next few sections show how to navigate between two routes,
 using these steps:
