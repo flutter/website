@@ -44,4 +44,6 @@ whenever you open a new window. For example:
     $ which flutter
     ```
 
+{% include dart-tool.md %}
+
 [Get the Flutter SDK]: #get-sdk
