@@ -65,8 +65,6 @@ TBD - Add the version number that contains this change.
 
 ## References
 
-{% include master-api.md %}
-
 API documentation:
 * [`Dialog`][]
 * [`SimpleDialog`][]
@@ -76,11 +74,11 @@ API documentation:
 
 
 Relevant PR:
-* [TBD][]
+* [PR 58829: Matching Material Spec for Dialog shape][]
 
-[`Dialog`]: https://master-api.flutter.dev/flutter/material/Dialog-class.html
-[`SimpleDialog`]: https://master-api.flutter.dev/flutter/material/SimpleDialog-class.html
-[`AlertDialog`]: https://master-api.flutter.dev/flutter/material/AlertDialog-class.html
-[`showTimePicker`]: https://master-api.flutter.dev/flutter/material/showTimePicker.html
-[`showDatePicker`]: https://master-api.flutter.dev/flutter/material/showDatePicker.html
-[TBD]: {{site.github}}/flutter/flutter/pull/56084
+[`Dialog`]: {{site.api}}/flutter/material/Dialog-class.html
+[`SimpleDialog`]: {{site.api}}/flutter/material/SimpleDialog-class.html
+[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
+[`showTimePicker`]: {{site.api}}/flutter/material/showTimePicker.html
+[`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
+[PR 58829: Matching Material Spec for Dialog shape]: {{site.github}}/flutter/flutter/pull/58829
