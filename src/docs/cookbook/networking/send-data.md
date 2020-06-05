@@ -22,7 +22,7 @@ This recipe uses the following steps:
 
 ## 1. Add the `http` package
 
-To install the `http` package, add it to the dependencies section
+To install the [`http`][] package, add it to the dependencies section
 of the `pubspec.yaml` file. You can find the latest version of the
 [`http` package][] on pub.dev.
 

@@ -448,7 +448,7 @@ it must provide about 70 translations ("localizations")
 for words or phrases.
 
 See the following for an example of how to add
-support for the Belarusan language.
+support for the Belarusian language.
 
 A new `GlobalMaterialLocalizations` subclass defines the
 localizations that the Material library depends on.
@@ -457,7 +457,7 @@ as factory for the `GlobalMaterialLocalizations` subclass,
 must also be defined.
 
 Here's the source code for the complete [`add_language`][] example,
-minus the actual Belarusan translations.
+minus the actual Belarusian translations.
 
 The locale-specific `GlobalMaterialLocalizations` subclass
 is called `BeMaterialLocalizations`,
@@ -487,7 +487,7 @@ String get closeButtonLabel => r'CLOSE';
 
 These are the English translations, of course.
 To complete the job you need to change the return
-value of each getter to an appropriate Belarusan string.
+value of each getter to an appropriate Belarusian string.
 
 The getters return "raw" Dart strings that have an r prefix,
 like `r'About $applicationName'`,
@@ -512,7 +512,7 @@ For more information about localization strings, see the
 Once you've implemented your language-specific subclasses of
 `GlobalMaterialLocalizations` and `LocalizationsDelegate`,
 you just need to add the language and a delegate instance to your app.
-Here's some code that sets the app's language to Belarusan and
+Here's some code that sets the app's language to Belarusian and
 adds the `BeMaterialLocalizations` delegate instance to the app's
 `localizationsDelegates` list:
 

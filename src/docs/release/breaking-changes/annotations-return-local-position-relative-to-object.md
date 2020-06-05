@@ -71,15 +71,16 @@ while they now jointly represent
 
 Code that is actively using this local position is probably
 directly interacting with layers, since using render objects or
-widgets will already have made this result unreliable. In order to
+widgets have already made this result unreliable. In order to
 preserve the previous behavior, you can reimplement
-`AnnotatedRegionLayer` that returns a local position without
+`AnnotatedRegionLayer` to return a local position without
 subtracting the offset.
 
 
 ## Timeline
 
-This change was introduced in 1.15.2.
+Landed in version: 1.15.2<br>
+In stable release: 1.17
 
 ## References
 

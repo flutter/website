@@ -6,8 +6,8 @@ prev:
   title: Take a picture using the camera
   path: /docs/cookbook/plugins/picture-using-camera
 next:
-  title: Performance profiling
-  path: /docs/cookbook/testing/integration/profiling
+  title: Handle scrolling
+  path: /docs/cookbook/testing/integration/scrolling
 ---
 
 Unit tests and widget tests are handy for testing individual classes,

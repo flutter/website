@@ -874,7 +874,7 @@ its render box.
 * A specialized [`Column`][] for organizing a list of boxes
 * Can be laid out horizontally or vertically
 * Detects when its content won't fit and provides scrolling
-* Less configurable than `Column`, but easier to use and]
+* Less configurable than `Column`, but easier to use and
   supports scrolling
 
 #### Examples (ListView)
@@ -886,7 +886,7 @@ its render box.
       alt="ListView containing movie theaters and restaurants" %}
   {:.text-center}
 
-  Uses `ListView` to display a list of businesses using]
+  Uses `ListView` to display a list of businesses using
   `ListTile`s. A `Divider` separates the theaters from
   the restaurants.
 

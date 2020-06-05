@@ -29,6 +29,11 @@ you need the following software:
   within an editor. See [setting up an editor][]
   for more details.
 
+[Android Studio]: https://developer.android.com/studio
+[IntelliJ IDEA]: https://www.jetbrains.com/idea/
+[Visual Studio Code]: https://code.visualstudio.com/
+
+
 For more information, see the [web FAQ][].
 
 {{site.alert.note}}
@@ -54,7 +59,9 @@ $ flutter upgrade
 $ flutter config --enable-web
 ```
 
+{% comment %}
 [PENDING: Do we really need the following note?]
+{% endcomment %}
 {{site.alert.note}}
   The `flutter upgrade` command silently fails
   when `origin` points to a personal fork.

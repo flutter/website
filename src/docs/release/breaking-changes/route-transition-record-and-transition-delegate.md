@@ -1,42 +1,45 @@
 ---
-title: The Route Transition Record and Transition Delegate Updates
+title: Route transition record and transition delegate updates
 description: Changes to the rule on how transition delegate resolve route transition.
 ---
 
 ## Summary
 
-We added a new boolean getter `isWaitingForExitingDecision` to the route
-transition record and renamed the getter `isEntering` to
-`isWaitingForEnteringDecision`. During the `resolve` method in transition
-delegate, you need to use the `isWaitingForExitingDecision` to check
-if an exiting route actually needs an explicit decision on how to transition
-off the screen. Otherwise, it throws assertion errors if you try to
-make decisions for exiting routes that aren't waiting for exiting
-decisions.
-
+We added a new boolean getter `isWaitingForExitingDecision`
+to the route transition record and renamed the `isEntering`
+getter to `isWaitingForEnteringDecision`. In the `resolve()`
+method for the transition delegate,
+use the `isWaitingForExitingDecision` to check if an exiting
+route actually needs an explicit decision on how to transition
+off the screen. If you try to make a decision for an existing route
+that _isn't_ waiting for a decision, Flutter throws an assertion error.
 
 ## Context
 
-If the navigator receives a new list of pages, it tries to update its
+When the navigator receives a new list of pages, it tries to update its
 current routes stack to match the list. However, it requires explicit
-decisions on how to transition the route on and off the screen. Previously,
-routes that were not in the new list required decisions on how to transition
-off the screen. However, we later found out this is not always true. If a
-route that was popped but is still waiting for the popping animation to finish,
-this route will sit in the navigator routes stack until it is done. If a page
-update occurs during this time, this route exits but doesn't requires a decision
-on how to transition off the screen. Therefore, we added the
-`isWaitingForExitingDecision` to denote such case.
+decisions on how to transition the route on and off the screen.
+Previously, routes that were not in the new list required decisions
+on how to transition off the screen. However, we later found out
+this is not always true. If a route is popped,
+but is still waiting for the popping animation to finish,
+this route would sit in the navigator routes stack until
+the animation was done. If a page update occurred during this time,
+this route exits but doesn't requires a decision
+on how to transition off the screen. Therefore, we added
+`isWaitingForExitingDecision` to cover that case.
 
-The `isEntering` getter is also renamed to `isWaitingForEnteringDecision` so
-that is is more descriptive and matches the naming scheme.
+The `isEntering` getter is also renamed to
+`isWaitingForEnteringDecision` to be more descriptive,
+and also to make the naming more consistent.
 
 ## Migration guide
 
-If you are implementing your own transition delegate, you need to check the
+If you implement your own transition delegate, you need to check the
 exiting routes using the getter `isWaitingForExitingDecision` before you
-call `markForPop`, `markForComplete`, or `markForRemove` on them. You also
-need to rename all the references to `isEntering` to `isWaitingForEnteringDecision`.
+call `markForPop`, `markForComplete`, or `markForRemove` on them.
+You also need to rename all the references to `isEntering` to
+`isWaitingForEnteringDecision`.
 
 Code before migration:
 
@@ -120,7 +123,8 @@ class NoAnimationTransitionDelegate extends TransitionDelegate<void> {
 
 ## Timeline
 
-This change landed in v1.18.0.
+Landed in version: 1.18.0<br>
+In stable release: not yet
 
 ## References
 
@@ -133,11 +137,12 @@ Relevant issue:
 * [Issue 45938: Navigator 2.0][]
 
 Relevant PR:
-* [PR 55998][]
+* [PR 55998][]: Fixes the navigator pages update crash
+  when there is still a route waiting
 
 
 [Issue 45938: Navigator 2.0]: {{site.github}}/flutter/flutter/issues/45938
 [`Navigator`]: https://master-api.flutter.dev/flutter/widgets/Navigator-class.html
+[PR 55998]: {{site.github}}/flutter/flutter/pull/55998
 [`TransitionDelegate`]: https://master-api.flutter.dev/flutter/widgets/TransitionDelegate-class.html
 [`RouteTransitionRecord`]: https://master-api.flutter.dev/flutter/widgets/RouteTransitionRecord-class.html
-[PR 55998]: {{site.github}}/flutter/flutter/pull/55998
