@@ -215,7 +215,7 @@ as well as many other open source packages, on [pub.dev][].
     Process finished with exit code 0
     ```
 
-    Performing `Packages get` also auto-generates the `pubspec.lock`
+    Performing `Pub get` also auto-generates the `pubspec.lock`
     file with a list of all packages pulled into the project and
     their version numbers.
 
