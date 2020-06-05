@@ -206,7 +206,7 @@ as well as many other open source packages, on [pub.dev][].
     ```
 
  2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
-    click **Packages get**. This pulls the package into
+    click **Pub get**. This pulls the package into
     your project. You should see the following in the console:
 
     ```terminal
