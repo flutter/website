@@ -5,7 +5,7 @@ description: The default BorderRadius of Dialog widgets is changing.
 
 ## Summary
 
-Instances of `Dialog`, as well as `SimpleDialog`, `AlertDialog`, and `showTimePicker`, now has
+Instances of `Dialog`, as well as `SimpleDialog`, `AlertDialog`, and `showTimePicker`, now have
 a default shape of a `RoundedRectangleBorder` with a `BorderRadius` of 4.0 pixels. This matches the
 current specifications of Material Design. Prior to this change, the default behavior for
 `Dialog.shape`'s `BorderRadius` was 2.0 pixels.
@@ -14,47 +14,16 @@ current specifications of Material Design. Prior to this change, the default beh
 
 Use of `Dialog`s and their associated subclasses (`SimpleDialog`, `AlertDialog`, and
 `showTimePicker`), appears slightly different as the border radius is larger. Golden file tests
-will fail if they contain a Dialog` in the new default behavior.
+will fail if they contain a `Dialog` in the new default behavior.
 
-This change was initially introduced with an opt-in flag
-`useMaterialBorderRadius`, to allow developers time to migrate
-without experiencing broken code. This temporary opt-in flag will be removed in a follow up change.
-
-The `showDatePicker` dialog already matches this specification and is unaffected by this change.
+The `showDatePicker` dialog already matched this specification and is unaffected by this change.
 
 ## Migration guide
 
-By applying the opt-in flag, `useMaterialBorder`, you can check the layout of your `Dialog` widgets
-and check against exiting tests to see if they need to be updated.
+If you would prefer to maintain the old shape, you can use the shape property of your
+`Dialog` to specify the original 2.0 pixel radius.
 
-Code before migration:
-
-```dart
-import 'package:flutter/material.dart';
-void main() => runApp(Foo());
-class Foo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(content: Text('Alert!'));
-              },
-            );
-          }
-        ),
-      ),
-    );
-  }
-}
-```
-
-If you would like to maintain the original default behavior, you can pass the prior default shape.
-Code after migrating to keep original default shape:
+Setting the Dialog shape to the original radius:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -83,34 +52,11 @@ class Foo extends StatelessWidget {
 }
 ```
 
-Code to validate migration:
+If you prefer the new behavior and have failing golden file tests, you can update your master
+golden files using this command:
 
-<!-- skip -->
-```dart
-import 'package:flutter/material.dart';
-void main() => runApp(Foo());
-class Foo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  content: Text('Alert!'),
-                  useMaterialBorderRadius: true,
-                );
-              },
-            );
-          }
-        ),
-      ),
-    );
-  }
-}
+```bash
+flutter test --update-goldens
 ```
 
 ## Timeline
@@ -130,11 +76,11 @@ API documentation:
 
 
 Relevant PR:
-* [PR 56084: Add opt-in fixing Dialog border radius to match Material Spec][]
+* [TBD][]
 
 [`Dialog`]: https://master-api.flutter.dev/flutter/material/Dialog-class.html
 [`SimpleDialog`]: https://master-api.flutter.dev/flutter/material/SimpleDialog-class.html
 [`AlertDialog`]: https://master-api.flutter.dev/flutter/material/AlertDialog-class.html
 [`showTimePicker`]: https://master-api.flutter.dev/flutter/material/showTimePicker.html
 [`showDatePicker`]: https://master-api.flutter.dev/flutter/material/showDatePicker.html
-[PR 56084: Add opt-in fixing Dialog border radius to match Material Spec]: {{site.github}}/flutter/flutter/pull/56084
+[TBD]: {{site.github}}/flutter/flutter/pull/56084
