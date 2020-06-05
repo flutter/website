@@ -222,8 +222,17 @@
     Flutter helped Nubank in its mission to end the complexity of traditional
     banks and put financial control back in the hands of the user.
   logo_src: showcase/cards/nubank-logo.png
+  video_id: vnj2i6RNo3g
   learn_more_cta: Learn more
   learn_more_link: https://medium.com/building-nubank/https-medium-com-freire-why-nubank-chose-flutter-61b80b568772
+  app_store_link: https://apps.apple.com/us/app/nubank/id814456780
+  play_store_link: https://play.google.com/store/apps/details?id=com.nu.production&hl=en_US
+  quote_testimonial: true
+  quote: >
+    Flutter had everything we needed out of the box including great documentation,
+    community support, and tooling.
+  quote_writer: Igor Borges, Software Engineer, Nubank
+  video_frame_image: showcase/video-frames/nubank@.png
   logo_has_name: true
   card_image: showcase/cards/nubank-top@.jpg
 
@@ -268,3 +277,16 @@
   play_store_link: https://play.google.com/store/apps/details?id=com.ebay.motorsapp
   logo_has_name: true
   card_image: showcase/cards/ebay-top@.jpg
+
+- name: MGM Resorts
+  description: >
+    MGM Resorts apps (iOS & Android) are built on Flutter.
+    Recent releases include a contactless digital check in experience as well
+    as an in lobby Room Key printing solution.
+  logo_src: showcase/cards/mgm-logo.svg
+  learn_more_cta: Learn more
+  learn_more_link: https://www2.mgmresorts.com/app
+  app_store_link: https://apps.apple.com/us/app/mgm-resorts-international/id366518979
+  play_store_link: https://play.google.com/store/apps/details?id=com.mgmresorts.mgmresorts&hl=en_US
+  logo_has_name: true
+  card_image: showcase/cards/mgm-top@.png

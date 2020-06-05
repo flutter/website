@@ -52,7 +52,8 @@ so define that dependency in the `dependencies` section.
 dependencies:
   http: <newest_version>
 dev_dependencies:
-  test: <newest_version>
+  flutter_test:
+    sdk: flutter
   mockito: <newest_version>
 ```
 
@@ -105,6 +106,10 @@ and return different http responses in each test.
 
 <!-- skip -->
 ```dart
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
+import 'package:http/http.dart' as http;
+
 // Create a MockClient using the Mock class provided by the Mockito package.
 // Create new instances of this class in each test.
 class MockClient extends Mock implements http.Client {}
@@ -129,6 +134,10 @@ Mockito:
 
 <!-- skip -->
 ```dart
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
+import 'package:http/http.dart' as http;
+
 // Create a MockClient using the Mock class provided by the Mockito package.
 // Create new instances of this class in each test.
 class MockClient extends Mock implements http.Client {}
@@ -143,7 +152,7 @@ main() {
       when(client.get('https://jsonplaceholder.typicode.com/posts/1'))
           .thenAnswer((_) async => http.Response('{"title": "Test"}', 200));
 
-      expect(await fetchPost(client), const TypeMatcher<Post>());
+      expect(await fetchPost(client), isA<Post>());
     });
 
     test('throws an exception if the http call completes with an error', () {

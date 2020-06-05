@@ -98,7 +98,7 @@ In the **Identity** section:
 `Bundle Identifier`
 : The App ID you registered on App Store Connect.
 
-In the **Signing** section:
+In the **Signing & Capabilities** section:
 
 `Automatically manage signing`
 : Whether Xcode should automatically manage app signing

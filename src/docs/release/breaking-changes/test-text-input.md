@@ -11,31 +11,33 @@ is now reset between tests.
 
 ## Context
 
-The Flutter test framework uses a class called `TestTextInput` to track and
-manipulate editing state in a widgets test. Individual tests can make calls
-that modify the internal state of this object, sometimes indirectly (such as
+The Flutter test framework uses a class called `TestTextInput`
+to track and manipulate editing state in a widgets test.
+Individual tests can make calls that modify the internal
+state of this object, sometimes indirectly (such as
 by setting their own handlers on `SystemChannels.textInput`).
-Subsequent tests might then check the state of `WidgetTester.testTextInput`
-and get unexpected values.
+Subsequent tests might then check the state of
+`WidgetTester.testTextInput` and get unexpected values.
 
 ## Description of change
 
-The state of the `WidgetTester.testTextInput`
+The state of `WidgetTester.testTextInput`
 is now reset before running a `testWidgets` test.
 
 ## Migration guide
 
-Tests that relied on dirty state from a previously run test must be
-updated. For example, the following test,
-from `packages/flutter/test/material/text_field_test.dart` in the
-`'Controller can update server'` test, previously passed because
-of a combination of dirty state from previous tests and a
-failure to actually set state in cases where it should have been set.
+Tests that relied on dirty state from a previously run
+test must be updated. For example, the following test,
+from `packages/flutter/test/material/text_field_test.dart`
+in the `'Controller can update server'` test,
+previously passed because of a combination of dirty state
+from previous tests and a failure to actually set state
+in cases where it should have been set.
 
 Code before migration:
 
-In a `widgetsTest`, before actually changing text on a text editing widget,
-this call might have succeeded:
+In a `widgetsTest`, before actually changing text on a
+text editing widget, this call might have succeeded:
 
 <!-- skip -->
 ```dart
@@ -54,18 +56,22 @@ following to assert that the state hasn't been modified yet:
 
 ## Timeline
 
-This change occurred in Dec 2019, in v1.13.5.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 
 API documentation:
+
 * [`TestTextInput`][]
 * [`WidgetTester`][]
 
 Relevant issue:
+
 * [Randomize test order to avoid global state][]
 
 Relevant PR:
+
 * [Reset state between tests][]
 
 

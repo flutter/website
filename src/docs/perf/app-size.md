@@ -74,30 +74,47 @@ Built build/app/outputs/apk/release/app-arm64-v8a-release.apk (4.6MB).
 
 ## iOS
 
-To get a rough idea of how large your release IPA is,
-run the following:
-
-```shell
-flutter build ios && tar -zcf build/app.ipa build/ios/iphoneos/Runner.app && ls -lh build/app.ipa
-```
-
-The resulting IPA file for the `example/helloworld` app
-(as of this writing) is 8.3 MB.
-
-```shell
--rw-r--r--  1 userName  primarygroup   8.3M Oct 25 13:47 build/app.ipa
-```
-
-A closer result can be obtained by creating a release archive
+Create an [Xcode App Size Report][]
+by configuring the app version and build
 as described in the [iOS create build archive instructions][].
-If bitcode is enabled on your project,
-you also have the option to rebuild from bitcode.
-This option should be selected if it is available,
-to more closely match what the App Store
-produces for your application.
-You can also select app thinning for a specific
-phone architecture, which should be very close to
-the final IPA size from the store for that device.
+
+Then:
+
+1. Select **Product > Archive** to produce a build archive.
+1. In the sidebar of the Xcode Organizer window, select your iOS app,
+   then select the build archive you just produced.
+1. Click **Distribute App**.
+
+`Method of distribution`
+: Ad Hoc, Development, or Enterprise
+
+`App Thinning`
+: All compatible device variants
+
+`Rebuild from Bitcode`
+: Selected (available if bitcode is enabled on your project)
+
+`Strip Swift symbols`
+: Selected
+
+Sign and export the IPA. The exported directory contains
+`App Thinning Size Report.txt` with details about your projected
+application size on different devices and versions of iOS.
+
+The App Size Report for the default demo app in Flutter 1.17 shows:
+```
+Variant: Runner-7433FC8E-1DF4-4299-A7E8-E00768671BEB.ipa
+Supported variant descriptors: [device: iPhone12,1, os-version: 13.0] and [device: iPhone11,8, os-version: 13.0]
+App + On Demand Resources size: 5.4 MB compressed, 13.7 MB uncompressed
+App size: 5.4 MB compressed, 13.7 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+```
+
+In this example, the app has an approximate
+download size of 5.4 MB and an approximate
+install size of 13.7 MB on an iPhone12,1 ([Model ID / Hardware
+number][] for iPhone 11)
+and iPhone11,8 (iPhone XR) running iOS 13.0.
 
 To measure an iOS app exactly,
 you have to upload a release IPA to Apple’s
@@ -127,7 +144,9 @@ are:
 [FAQ]: /docs/resources/faq
 [How big is the Flutter engine?]: /docs/resources/faq#how-big-is-the-flutter-engine
 [instructions]: /docs/deployment/ios
+[Xcode App Size Report]: https://developer.apple.com/documentation/xcode/reducing_your_app_s_size#3458589
 [iOS create build archive instructions]: /docs/deployment/ios#create-a-build-archive
+[Model ID / Hardware number]: https://en.wikipedia.org/wiki/List_of_iOS_devices#Models
 [Obfuscating Dart code]: /docs/deployment/obfuscate
 [Test drive]: /docs/get-started/test-drive
 [Write your first Flutter app]: /docs/get-started/codelab

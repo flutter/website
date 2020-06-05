@@ -2,11 +2,11 @@
 title: Performance profiling
 description: How to profile performance for a Flutter app.
 prev:
-  title: An introduction to integration testing
-  path: /docs/cookbook/testing/integration/introduction
-next:
   title: Handle scrolling
   path: /docs/cookbook/testing/integration/scrolling
+next:
+  title: An introduction to unit testing
+  path: /docs/cookbook/testing/unit/introduction
 ---
 
 When it comes to mobile apps, performance is critical to user experience.
@@ -106,8 +106,12 @@ After configuring the test to capture a performance `Timeline` and save a
 summary of the results to disk, run the test with the following command:
 
 ```
-flutter drive --target=test_driver/app.dart
+flutter drive --target=test_driver/app.dart --profile
 ```
+
+The `--profile` option means to compile the app for the "profile mode" 
+rather than the "debug mode", so that the benchmark result is closer to 
+what will be experienced by end users. 
 
 ### 5. Review the results
 

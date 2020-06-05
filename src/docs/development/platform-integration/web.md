@@ -178,7 +178,7 @@ See [Preparing a web app for release][].
 
 Not currently.
 
-### How can I compare notes others who are playing with this feature?
+### How can I compare notes with others who are playing with this feature?
 
 Check out the **#web** discussion board on [Discord][].
 Flutter engineers routinely read and respond on Discord.

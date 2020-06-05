@@ -2,11 +2,11 @@
 title: Handle scrolling
 description: How to handle scrolling in an integration test.
 prev:
+  title: An introduction to integration testing
+  path: /docs/cookbook/testing/integration/introduction
+next:
   title: Performance profiling
   path: /docs/cookbook/testing/integration/profiling
-next:
-  title: An introduction to unit testing
-  path: /docs/cookbook/testing/unit/introduction
 ---
 
 Many apps feature lists of content,
