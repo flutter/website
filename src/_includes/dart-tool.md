@@ -1,10 +1,12 @@
 {{site.alert.note}}
-  As of Flutter's 1.19.0 dev release, the `dart` command
-  is now surfaced for you. Downloading the Flutter SDK
+  As of Flutter's 1.19.0 dev release, the Flutter SDK
+  contains the `dart` command alongside the `flutter`
+  command so that you can more easiy run Dart
+  command-line programs. Downloading the Flutter SDK
   also downloads the compatible version of Dart,
-  but if you have downloaded the Dart SDK separately,
-  make sure that the Flutter version of `dart` is listed
-  first in your path, as the two versions may not be compatible.
+  but if you've downloaded the Dart SDK separately,
+  make sure that the Flutter version of `dart` is
+  first in your path, as the two versions might not be compatible.
   The following command (on macOS, linux, and chrome OS),
   tells you whether the `flutter` and `dart` commands
   originate from the same `bin` directory and are therefore
@@ -17,12 +19,14 @@
   /usr/local/bin/dart
   ```
 
-  As shown above, the two commands are not coming from
+  As shown above, the two commands don't come from
   the same `bin` directory. Update your path to use
-  commands from `<path-to-flutter-sdk>/bin` before it
-  uses commands from `/usr/local/bin` (in this case).
+  commands from `<path-to-flutter-sdk>/bin` before 
+  commands from `/usr/local/bin` (in this case).
   After updating your shell for the change to take effect,
-  run the command again, and you should now see:
+  running the `which` or `where` command again
+  should show that the `flutter` and `dart` commands
+  now come from the same directory.
 
   ```sh
   $ which flutter; which dart
@@ -31,8 +35,8 @@
   ```
 
   To learn more about the `dart` command, run `dart -h`
-  from the command line, or see the [dart client][] page
+  from the command line, or see the [`dart` tool][] page
   on dart.dev.
 {{site.alert.end}}
 
-[dart client]: {{site.dart-site}}/tools/dart-vm
+[`dart` tool]: {{site.dart-site}}/tools/dart-vm
