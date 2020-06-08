@@ -155,7 +155,7 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-## 4. Navigate and pass data to the detail screen
+## 5. Navigate and pass data to the detail screen
 
 With a `DetailScreen` in place,
 you're ready to perform the Navigation.
