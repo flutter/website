@@ -39,7 +39,7 @@ class Foo extends StatelessWidget {
           showDialog(
             context: context,
             builder: (BuildContext context) {
-             return AlertDialog(
+              return AlertDialog(
                 content: Text('Alert!'),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(2.0))),
