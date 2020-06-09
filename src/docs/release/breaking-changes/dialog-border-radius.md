@@ -43,11 +43,10 @@ class Foo extends StatelessWidget {
                 content: Text('Alert!'),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(2.0))),
-                );
-              },
-            );
-          }
-        ),
+              );
+            },
+          );
+        }),
       ),
     );
   }
