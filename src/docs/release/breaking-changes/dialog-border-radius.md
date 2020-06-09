@@ -33,14 +33,14 @@ class Foo extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  content: Text('Alert!'),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(2.0))),
+        floatingActionButton: FloatingActionButton(onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+             return AlertDialog(
+                content: Text('Alert!'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(2.0))),
                 );
               },
             );
