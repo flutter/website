@@ -27,7 +27,9 @@ Setting the Dialog shape to the original radius:
 
 ```dart
 import 'package:flutter/material.dart';
+
 void main() => runApp(Foo());
+
 class Foo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
