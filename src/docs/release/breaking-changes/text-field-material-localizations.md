@@ -12,7 +12,7 @@ as the following:
 ```
 No MaterialLocalizations found.
 TextField widgets require MaterialLocalizations to be provided by a Localizations widget ancestor.
-The Material library uses Localizations to generate messages, labels, and abbreviations.
+The material library uses Localizations to generate messages, labels, and abbreviations.
 To introduce a MaterialLocalizations, either use a MaterialApp at the root of your application to
 include them automatically, or add a Localization widget with a MaterialLocalizations delegate.
 The specific widget that could not find a MaterialLocalizations ancestor was:
@@ -38,7 +38,9 @@ Code before migration:
 
 ```dart
 import 'package:flutter/material.dart';
+
 void main() => runApp(Foo());
+
 class Foo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,9 @@ Code after migration (Providing localizations using the `MaterialApp`):
 
 ```dart
 import 'package:flutter/material.dart';
+
 void main() => runApp(Foo());
+
 class Foo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -72,7 +76,9 @@ Code after migration (Providing localizations via the `Localizations` widget):
 
 ```dart
 import 'package:flutter/material.dart';
+
 void main() => runApp(Foo());
+
 class Foo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
