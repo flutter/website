@@ -429,9 +429,9 @@ you’ve created your first animation in Flutter!
     `AnimatedBuilder`, as shown in the
     [Refactoring with AnimatedBuilder][] section.
   * Examples of `AnimatedWidget`s in the Flutter API:
-    `AnimatedBuilder`, `AnimatedModal&shy;Barrier`,
-    `DecoratedBox&shy;Transition`, `FadeTransition`,
-    `Positioned&shy;Transition`, `Relative&shy;Positioned&shy;Transition`,
+    `AnimatedBuilder`, `AnimatedModalBarrier`,
+    `DecoratedBoxTransition`, `FadeTransition`,
+    `PositionedTransition`, `RelativePositionedTransition`,
     `RotationTransition`, `ScaleTransition`,
     `SizeTransition`, `SlideTransition`.
 {{site.alert.end}}
