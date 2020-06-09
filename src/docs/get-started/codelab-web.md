@@ -431,7 +431,7 @@ fields.
 
 </li>
 
-<li markdown="1">Call `_updateFormProgress()` when the form changes<br>
+<li markdown="1">Call `_updateFormProgress` when the form changes<br>
 In the `build()` method of the `_SignUpFormState` class, add a callback
 to the `Form` widget's `onChanged` argument:
 Add the code below marked as NEW:
@@ -440,7 +440,7 @@ Add the code below marked as NEW:
 ```dart
 ...
 return Form(
-  onChanged: () => _updateFormProgress(), // NEW
+  onChanged: _updateFormProgress, // NEW
   child: Column(
 ...
 ```
@@ -852,7 +852,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      onChanged: () => _updateFormProgress(),
+      onChanged: _updateFormProgress,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
