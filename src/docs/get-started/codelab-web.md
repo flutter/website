@@ -440,7 +440,7 @@ Add the code below marked as NEW:
 ```dart
 ...
 return Form(
-  onChanged: () => _updateFormProgress, // NEW
+  onChanged: _updateFormProgress, // NEW
   child: Column(
 ...
 ```
@@ -852,7 +852,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      onChanged: () => _updateFormProgress,
+      onChanged: _updateFormProgress,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
