@@ -204,6 +204,7 @@
       { "source": "/go/engine-cpu-profiling", "destination": "https://docs.google.com/document/d/1z_V69XzRct3vR7mBZ9tuuS1pZ_e7FQkuzbVJjXxMeaI/edit", "type": 301 },
       { "source": "/go/issue-triage-changes", "destination": "https://docs.google.com/document/d/1l-UjPJ7z0lPsKVAkoEysTseqijTBKHgfGbZ6BMOyTH4", "type": 301 },
       { "source": "/go/link-widget", "destination": "https://docs.google.com/document/d/1HMadUQ2g7BRoCYmUvUYPAALU520fFv9PoPDkoz0wjAc", "type": 301 },
+      { "source": "/go/link-widget-2", "destination": "https://docs.google.com/document/d/1-BJ4Rp6-glA9S__o97xDiNdd_lbuj7y6e394VE-5y4U", "type": 301 },
       { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit", "type": 301 },
       { "source": "/go/form-field-autovalidation", "destination": "https://docs.google.com/document/d/16HAURcOtYAoHntDOEtdGy9KkKSItulG9Ldyjzdaosqo/edit", "type": 301 },
       { "source": "/go/breaking-changes-template", "destination": "https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md", "type": 301 },
