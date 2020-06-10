@@ -841,7 +841,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
 ## Next steps
 
-This tutorial gives you a foundation for creating animations ins
+This tutorial gives you a foundation for creating animations in
 Flutter using `Tweens`, but there are many other classes to explore.
 You might investigate the specialized `Tween` classes,
 animations specific to Material Design,
