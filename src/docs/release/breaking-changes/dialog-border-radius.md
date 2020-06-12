@@ -12,9 +12,12 @@ current specifications of Material Design. Prior to this change, the default beh
 
 ## Context
 
-Use of `Dialog`s and their associated subclasses (`SimpleDialog`, `AlertDialog`, and
-`showTimePicker`), appears slightly different as the border radius is larger. Golden file tests
-will fail if they contain a `Dialog` in the new default behavior.
+`Dialog`s and their associated subclasses (`SimpleDialog`, `AlertDialog`, and
+`showTimePicker`), appears slightly different as the border radius is larger. if you
+have master golden file images that have the prior rendering of the `Dialog` with a
+2.0 pixel border radius, your widget tests will fail. These golden file images can
+be updated to reflect the new rendering, or you can update your code to maintain the
+original behavior.
 
 The `showDatePicker` dialog already matched this specification and is unaffected by this change.
 
@@ -62,7 +65,7 @@ flutter test --update-goldens
 
 ## Timeline
 
-TBD - Add the version number that contains this change.
+This change was introduced in June 2020, in 1.20.0-0.0.pre.
 
 ## References
 
