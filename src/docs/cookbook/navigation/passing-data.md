@@ -82,7 +82,7 @@ This generates 20 todos and displays them in a ListView.
 
 ## 3. Create a Todo screen to display the list
 
-For this, we create a `Stateless Widget`. We call it `TodosScreen`.
+For this, we create a `StatelessWidget`. We call it `TodosScreen`.
 Since the contents of this page won't change during runtime,
 we'll have to require the list
 of todos within the scope of this widget.
