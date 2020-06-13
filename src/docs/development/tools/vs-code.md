@@ -232,6 +232,9 @@ The Flutter extension includes the following snippets:
 
 You can also define custom snippets by executing
 **Configure User Snippets** from the [Command Palette][].
+### Converting Stateful Widget to Stateless Widget
+Converting stateless to statefull can be used to spead up entering typical code structure.
+Foe converting to stateless to statefull just click on the bulb icon in vscode and then there you will see an option of converting stateless to statefull or vice versa. 
 
 ### Keyboard shortcuts
 

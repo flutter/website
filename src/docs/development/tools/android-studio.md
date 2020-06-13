@@ -280,7 +280,6 @@ The Flutter plugin includes the following templates:
   `AnimationController`.
 
 You can also define custom templates in **Settings > Editor > Live Templates**.
-
 ### Keyboard shortcuts
 
 **Hot reload**
