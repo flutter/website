@@ -54,7 +54,7 @@ then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
 ```terminal
-$ flutter channel master  # or dev
+$ flutter channel dev
 $ flutter upgrade
 $ flutter config --enable-macos-desktop
 ```
