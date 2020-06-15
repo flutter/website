@@ -245,22 +245,6 @@ To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
 
-You are probably familiar with the Flutter Gallery example app.
-To use the performance overlay with Flutter Gallery,
-use the copy in the [examples][] directory that was installed
-with Flutter, and run the app in profile mode. The program is written
-so that the app menu allows you to dynamically toggle the overlay,
-as well as enable checks for calls to `saveLayer` and the presence of
-cached images.
-
-{{site.alert.note}}
-  You can’t enable the performance overlay in the Flutter
-  Gallery app downloaded from the App Store.
-  That version of the app is compiled to release mode
-  (not profile mode), and doesn’t provide
-  a menu for enabling or disabling the overlay.
-{{site.alert.end}}
-
 ## Identifying problems in the UI graph
 
 If the performance overlay shows red in the UI graph,
