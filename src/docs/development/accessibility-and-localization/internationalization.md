@@ -74,8 +74,8 @@ MaterialApp(
    GlobalCupertinoLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en'), // English
-    const Locale('he'), // Hebrew
+    const Locale('en', ''), // English, no country code
+    const Locale('he', ''), // Hebrew, no country code
     const Locale.fromSubtags(languageCode: 'zh'), // Chinese *See Advanced Locales below*
     // ... other locales the app supports
   ],
@@ -258,9 +258,9 @@ MaterialApp(
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en'), // English
-    const Locale('he'), // Hebrew
-    const Locale('zh'), // Chinese
+    const Locale('en', ''), // English, no country code
+    const Locale('he', ''), // Hebrew, no country code
+    const Locale('zh', ''), // Chinese, no country code
     // ... other locales the app supports
   ],
   // ...
