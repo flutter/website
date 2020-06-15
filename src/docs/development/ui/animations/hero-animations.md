@@ -664,7 +664,7 @@ Key information:
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [hero_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/hero_animation/
 [`Inkwell`]: {{site.api}}/flutter/material/InkWell-class.html
-[Material Design motion spec]: {{site.material}}/guidelines/motion/movement.html
+[Material Design motion spec]: {{site.material}}/design/motion/understanding-motion.html#principles
 [`MaterialRectArcTween`]: {{site.api}}/flutter/material/MaterialRectArcTween-class.html
 [`MaterialRectCenterArcTween`]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
