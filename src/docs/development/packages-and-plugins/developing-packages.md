@@ -5,26 +5,21 @@ description: How to write packages and plugins for Flutter.
 ---
 
 {{site.note.alert}}
-  If you write plugins for Flutter, you should know that
-  the plugin API was upgraded to 2.0 in Flutter 1.12
-  to support [federated plugins][] and to make it easier to
-  [test your plugin][].
-  In Flutter 1.10, Flutter's pubspec format was updated to
-  allow you to specify
-  [which platforms a plugin][supported-platforms] supports,
-  such as web and macos.
+  The plugin API has been updated and now supports [federated plugins][] that
+  enable separation of different platform implementations. You can also now
+  indicate [which platforms a plugin][supported-platforms] supports, for example
+  web and macOS.
 
-  Eventually, the old style of plugin will be deprecated and,
-  in the short term, you will see a warning when the framework
-  detects that you are using an old-style plugin.
-  For information on how to upgrade your plugin, see
-  [Supporting the new Android plugins APIs][].
+  Eventually, the old plugin APIs will be deprecated. In the short term, you
+  will see a warning when the framework detects that you are using an old-style
+  plugin. For information on how to upgrade your plugin, see [Supporting the new
+  Android plugins APIs][].  
 {{site.note.end}}
 
 ## Package introduction
 
-Packages enable the creation of modular code that can be
-shared easily. A minimal package consists of the following:
+Packages enable the creation of modular code that can be shared easily. A
+minimal package consists of the following:
 
 **`pubspec.yaml`**
 : A metadata file that declares the package name,
@@ -56,10 +51,11 @@ Packages can contain more than one kind of content:
 : A specialized Dart package that contains an API written in
   Dart code combined with one or more platform-specific
   implementations.
-  Plugin packages can be written for Android
-  (using Kotlin or Java), iOS (using Swift or Objective-C),
-  web (using Dart), macos (using Dart), or any combination
+
+  Plugin packages can be written for Android (using Kotlin or Java), iOS (using
+  Swift or Objective-C), web, macOS, Windows, or Linux, or any combination
   thereof.
+
   A concrete example is the [`url_launcher`][] plugin package.
   To see how to use the `url_launcher` package, and how it
   was extended to implement support for web,
@@ -134,27 +130,19 @@ see the [Dart library package][] documentation.
 
 ## Developing plugin packages {#plugin}
 
-If you want to develop a package that calls into
-platform-specific APIs, you need to develop a plugin package.
-A plugin package is a specialized version of a
-Dart package that, in addition to the content described above,
-also contains platform-specific implementations written for
-Android (Kotlin or Java code), iOS (Swift or Objective-C),
-web (Dart), macos (Dart), or any subset thereof.
-The API is connected to the platform-specific
-implementation(s) using a [platform channel][].
+If you want to develop a package that calls into platform-specific APIs, you
+need to develop a plugin package.
+
+The API is connected to the platform-specific implementation(s) using a
+[platform channel][].
 
 ### Federated plugins
 
-Federated plugins were introduced in Flutter 1.12
-as a way of splitting support for different platforms
-into separate packages. So, a federated plugin can use
-one package for iOS, another for Android,
-another for web, and yet another for your car
-(as an example of an IoT device).
-Among other benefits, this approach allows a
-domain expert to extend an existing plugin to work for
-the platform they know best.
+Federated plugins are a a way of splitting support for different platforms into
+separate packages. So, a federated plugin can use one package for iOS, another
+for Android, another for web, and yet another for a car (as an example of an IoT
+device). Among other benefits, this approach allows a domain expert to extend an
+existing plugin to work for the platform they know best.
 
 A federated plugin requires the following packages:
 
@@ -177,19 +165,15 @@ A federated plugin requires the following packages:
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
   
-For more information on federated plugins,
-why they are useful, and how they are implemented,
-see the Medium article by Harry Terkelsen,
-[How To Write a Flutter Web Plugin, Part 2][].
+For more information on federated plugins, why they are useful, and how they are
+implemented, see the Medium article by Harry Terkelsen, [How To Write a Flutter
+Web Plugin, Part 2][].
 
 ### Specifying a plugin's supported platforms {#plugin-platforms}
 
-In Flutter 1.12 and later, plugins can specify
-the platforms they support by adding keys to the
-`platforms` map in the `pubspec.yaml` file.
-For example, the following pubspec file shows the
-`flutter:` map for the `hello` plugin, which supports
-only iOS and Android:
+Plugins can specify the platforms they support by adding keys to the `platforms`
+map in the `pubspec.yaml` file. For example, the following pubspec file shows
+the `flutter:` map for the `hello` plugin, which supports only iOS and Android:
 
 ```yaml
 flutter:
@@ -208,11 +192,9 @@ environment:
   flutter: ">=1.12.0 <2.0.0"
 ```
 
-When adding plugin implementations for more platforms,
-the `platforms` map should be updated accordingly. 
-For example, here's the map in the pubspec file
-for the `hello` plugin, when updated to add support
-for macOS and web:
+When adding plugin implementations for more platforms, the `platforms` map
+should be updated accordingly. For example, here's the map in the pubspec file
+for the `hello` plugin, when updated to add support for macOS and web:
 
 ```yaml
 flutter:
@@ -246,7 +228,8 @@ using reverse domain name notation. This value is used
 in various package and bundle identifiers in the
 generated plugin code.
 
-Use the `-a` option to specify the language for android or the `-i` option to specify the language for ios. Please choose **one** of the following:
+Use the `-a` option to specify the language for android or the `-i` option to
+specify the language for ios. Please choose **one** of the following:
 
 ```terminal
 $ flutter create --org com.example --template=plugin -a kotlin hello
@@ -361,10 +344,10 @@ interface package.
 
 ### Testing your plugin
 
-As of Flutter 1.12, it is now easier to write code to
-test your plugin. For more information, see
-[Testing your plugin][], a section in
-[Supporting the new Android plugins APIs][].
+We encourage you test your plugin with automated tests, to ensure that
+functionality does not regress as you make changes to your code. For more
+information, see [Testing your plugin][], a section in [Supporting the new
+Android plugins APIs][].
 
 ## Adding documentation
 
@@ -422,19 +405,16 @@ For tips on how to write API documentation, see
 
 ### Adding licenses to the LICENSE file
 
-Individual licenses inside each LICENSE file should
-be separated by 80 hyphens on their own on a line.
+Individual licenses inside each LICENSE file should be separated by 80 hyphens
+on their own on a line.
 
-If a LICENSE file contains more than one component license,
-then each component license must start with the names of the
-packages to which the component license applies,
-with each package name on its own line, and the
-list of package names separated from the actual
-license text by a blank line.
-(The packages need not match the names of the pub package.
-For example, a package might itself contain code from
-multiple third-party sources, and might need to include
-a license for each one.)
+If a LICENSE file contains more than one component license, then each component
+license must start with the names of the packages to which the component license
+applies, with each package name on its own line, and the list of package names
+separated from the actual license text by a blank line. (The packages need not
+match the names of the pub package. For example, a package might itself contain
+code from multiple third-party sources, and might need to include a license for
+each one.)
 
 The following example shows a well-organized license file:
 
@@ -595,7 +575,6 @@ file like any other Dart package.
 PENDING
 {% endcomment %}
 
-
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
@@ -620,4 +599,3 @@ PENDING
 [unit tests]: /docs/testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c
-
