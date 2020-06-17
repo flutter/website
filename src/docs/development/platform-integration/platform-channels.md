@@ -19,8 +19,10 @@ Flutter uses a flexible system that allows you to call
 platform-specific APIs whether available in Kotlin or
 Java code on Android, or in Swift or Objective-C code on iOS.
 
-Flutter's platform-specific API support does not rely on code generation,
-but rather on a flexible message passing style:
+Flutter's builtin platform-specific API support does not rely on code
+generation, but rather on a flexible message passing style.  Alternatively, the
+package [Pigeon][] can be used for [sending structured typesafe messages][] via
+code generation:
 
 * The Flutter portion of the app sends messages to its *host*,
   the iOS or Android portion of the app, over a platform channel.
@@ -96,7 +98,6 @@ platform side and vice versa:
 | List                       | java.util.ArrayList | List        | NSArray                                        | Array                                   |
 | Map                        | java.util.HashMap   | HashMap     | NSDictionary                                   | Dictionary                              |
 
-<br>
 ## Example: Calling platform-specific iOS and Android code using platform channels {#example}
 
 The following code demonstrates how to call a platform-specific API
@@ -637,6 +638,61 @@ If using the iOS Simulator,
 note that it does not support battery APIs,
 and the app displays 'battery info unavailable'.
 
+## Typesafe platform channels via Pigeon {#pigeon}
+
+The previous example uses `MethodChannel` to communicate between the host and
+client which isn't typesafe.  Calling and receiving messages depends on the host
+and client declaring the same arguments and datatypes in order for messages to
+work.  The [Pigeon][] package can be used as an alternative to `MethodChannel`
+to generate code that sends messages in a structured typesafe manner.
+
+With [Pigeon][] the messaging protocol is defined in a subset of Dart which then
+generates messaging code for Android or iOS.  A more complete example and more
+information can be found on the [Pigeon pub.dev page][];
+
+Using [Pigeon][] eliminates the need to match strings between host and client
+for the names and datatypes of messages.  It supports: nested classes, grouping
+messages into APIs, generation of asynchronous wrapper code and sending messages
+in either direction.  The generated code is readable and guarentees there will
+be no conflicts between multiple clients of different versions.  Supported
+languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
+
+### Pigeon example
+
+**Pigeon file:**
+
+<!-- skip -->
+```dart
+import 'package:pigeon/pigeon.dart';
+
+class SearchRequest {
+  String query;
+}
+
+class SearchReply {
+  String result;
+}
+
+@HostApi()
+abstract class Api {
+  SearchReply search(SearchRequest request);
+}
+```
+
+**Dart usage:**
+
+<!-- skip -->
+```dart
+import 'generated_pigeon.dart'
+
+void onClick() async {
+  SearchRequest request = SearchRequest()..query = 'test';
+  Api api = Api();
+  SearchReply reply = await api.search(request);
+  print('reply: ${reply.result}');
+}
+```
+
 ## Separate platform-specific code from UI code {#separate}
 
 If you expect to use your platform-specific code in multiple Flutter apps,
@@ -746,4 +802,6 @@ DispatchQueue.main.async {
 [the main thread]: https://developer.apple.com/documentation/uikit?language=objc
 [the UI thread]: https://developer.android.com/guide/components/processes-and-threads#Threads
 [using packages]: /docs/development/packages-and-plugins/using-packages
-
+[Pigeon]: https://pub.dev/packages/pigeon
+[Pigeon pub.dev page]: https://pub.dev/packages/pigeon
+[sending structured typesafe messages]: #pigeon
