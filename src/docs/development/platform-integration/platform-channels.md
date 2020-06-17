@@ -650,6 +650,22 @@ With [Pigeon][] the messaging protocol is defined in a subset of Dart which then
 generates messaging code for Android or iOS.  A more complete example and more
 information can be found on the [Pigeon pub.dev page][];
 
+### Pigeon's benefits
+
+* Message names are methods, not strings.
+* Message arguments are typesafe fields in a class.
+* Message arguments can be nested classes.
+* Groups of messages can be packaged as APIs.
+* APIs can send messages to the host platform or the client platform.
+* APIs generate interfaces to be implemented by the receiving platform which
+  enforces type-safety and completeness.
+* Necessary asynchronous wrapper code is generated for synchronous
+  functionality.
+* Error handling is clear and uniform.
+* Generated code is readable.
+* There is no runtime dependency beyond Flutter which means there won't be
+  conflict with other plugins.
+
 ### Pigeon example
 
 **Pigeon file:**
