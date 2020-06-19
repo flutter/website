@@ -25,7 +25,7 @@ If the `TextField` descends from a `MaterialApp`, the
 `DefaultMaterialLocalizations` is already instantiated and will not require any changes to your
 existing code.
 
- If the `TextField` doesn't descent from `MaterialApp`, you can use a `Localizations` widget to
+ If the `TextField` doesn't descend from `MaterialApp`, you can use a `Localizations` widget to
  provide your own localizations.
 
 ## Migration guide
@@ -102,7 +102,7 @@ class Foo extends StatelessWidget {
 
 ## Timeline
 
-TBD - Add the version number that contains this change.
+This change was introduced in June 2020, in 1.20.0-1.0.pre.
 
 ## References
 
