@@ -14,7 +14,7 @@ diff2html: true
 {{site.alert.tip}}
   This codelab walks you through writing your first Flutter
   app on mobile. You might prefer to try
-  [writing your first Flutter app on the web][].
+  [writing your first Flutter app on the web][codelab-web].
   **Note that if you have [enabled web][],
   the completed app just works on all of these devices!**
 {{site.alert.end}}
@@ -105,7 +105,7 @@ development so that you can use DevTools,
 and the web server when you want to test on
 other browsers. For more information,
 see [Building a web application with Flutter][]
-and [Write your first Flutter app on the web][].
+and [Write your first Flutter app on the web][codelab-web].
 
 ## Step 1: Create the starter Flutter app
 
@@ -179,7 +179,7 @@ where the Dart code lives.
       it can take awhile to load.
       Afterward, you can use hot reload for quick updates.
       **Save** also performs a hot reload if the app is running.
-      When running an app directly from the console using'
+      When running an app directly from the console using
       `flutter run`, enter `r` to perform hot reload.
     {{site.alert.end}}
 
@@ -336,39 +336,39 @@ a child inside the existing `MyApp` stateless widget.
 
 <ol markdown="1">
 <li markdown="1"> Create the boilerplate code for a stateful widget.<br>
-    In `lib/main.dart`, position your cursor after all of the code,
-    enter **Return** a couple times to start on a fresh line.
-    In your IDE, start typing `stful`.
-    The editor asks if you want to create a
-    `Stateful` widget. Press **Return** to accept.
-    The boilerplate code for two classes appears,
-    and the cursor is positioned for you to enter the name of
-    your stateless widget.
+  In `lib/main.dart`, position your cursor after all of the code,
+  enter **Return** a couple times to start on a fresh line.
+  In your IDE, start typing `stful`.
+  The editor asks if you want to create a
+  `Stateful` widget. Press **Return** to accept.
+  The boilerplate code for two classes appears,
+  and the cursor is positioned for you to enter the name of
+  your stateless widget.
 </li>
 
 <li markdown="1"> Enter `RandomWords` as the name of your widget.<br>
-    The `RandomWords` widget does little else beside creating its
-    `State` class.<br><br>
-    Once you've entered `RandomWords` as the name of
-    the stateful widget, the IDE automatically updates
-    the accompanying `State` class, naming it `_RandomWordState`.
-    By default, the name of the `State` class is prefixed
-    with an underbar. Prefixing an identifier with an
-    underscore [enforces privacy][] in the Dart language and
-    is a recommended best practice for `State` objects.<br><br>
-    The IDE also automatically updates the state class
-    to extend `State<RandomWords>`, indicating
-    that you're using a generic [`State`][]
-    class specialized for use with `RandomWords`.
-    Most of the app's logic resides here&mdash;it maintains
-    the state for the `RandomWords` widget. This class saves the list
-    of generated word pairs, which grows infinitely
-    as the user scrolls and, in part 2 of this lab,
-    favorites word pairs as the user adds or removes them from
-    the list by toggling the heart icon.<br><br>
-    Both classes now look as follows:
+  The `RandomWords` widget does little else beside creating its
+  `State` class.<br><br>
+  Once you've entered `RandomWords` as the name of
+  the stateful widget, the IDE automatically updates
+  the accompanying `State` class, naming it `_RandomWordState`.
+  By default, the name of the `State` class is prefixed
+  with an underbar. Prefixing an identifier with an
+  underscore [enforces privacy][] in the Dart language and
+  is a recommended best practice for `State` objects.<br><br>
+  The IDE also automatically updates the state class
+  to extend `State<RandomWords>`, indicating
+  that you're using a generic [`State`][]
+  class specialized for use with `RandomWords`.
+  Most of the app's logic resides here&mdash;it maintains
+  the state for the `RandomWords` widget. This class saves the list
+  of generated word pairs, which grows infinitely
+  as the user scrolls and, in part 2 of this lab,
+  favorites word pairs as the user adds or removes them from
+  the list by toggling the heart icon.<br><br>
+  Both classes now look as follows:
 
-   ```dart
+  ```dart
 class RandomWords extends StatefulWidget {
   @override
   _RandomWordsState createState() => _RandomWordsState();
@@ -380,61 +380,59 @@ class _RandomWordsState extends State<RandomWords> {
     return Container();
   }
 }
-   ```
+  ```
 </li>
 
 <li markdown="1"> Update the `build()` method in `_RandomWordsState`:
+  <?code-excerpt "lib/main.dart (_RandomWordsState)" title indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
+  ```dart
+class _RandomWordsState extends State<RandomWords> {
+  [!@override!]
+  [!Widget build(BuildContext context) {!]
+  [!  final wordPair = WordPair.random();!]
+  [!  return Text(wordPair.asPascalCase);!]
+  [!}!]
+}
+  ```
 
-[PENDING: From here on the code is a mess...]
-
-    <?code-excerpt "lib/main.dart (_RandomWordsState)" title indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
-    ```dart
-      class _RandomWordsState extends State<RandomWords> {
-        [!@override!]
-        [!Widget build(BuildContext context) {!]
-        [!  final wordPair = WordPair.random();!]
-        [!  return Text(wordPair.asPascalCase);!]
-        [!}!]
-      }
-    ```
-
-    After adding the state class, the IDE complains that
-    the class is missing a build method. Next, you'll add a basic
-    build method that generates the word pairs by moving the
-    word generation code from `MyApp` to `_RandomWordsState`.
+  After adding the state class, the IDE complains that
+  the class is missing a build method. Next, you'll add a basic
+  build method that generates the word pairs by moving the
+  word generation code from `MyApp` to `_RandomWordsState`.
 </li>
 
 <li markdown="1"> Remove the word generation code from `MyApp`
-    by making the changes shown in the following diff:
+  by making the changes shown in the following diff:
 
-    <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
-    ```diff
-    --- step2_use_package/lib/main.dart
-    +++ step3_stateful_widget/lib/main.dart
-    @@ -10,7 +10,6 @@
-     class MyApp extends StatelessWidget {
-       @override
-       Widget build(BuildContext context) {
-    -    final wordPair = WordPair.random();
-         return MaterialApp(
-           title: 'Welcome to Flutter',
-           home: Scaffold(
-    @@ -18,8 +17,8 @@
-               title: Text('Welcome to Flutter'),
-             ),
-             body: Center(
-    -          child: Text(wordPair.asPascalCase),
-    +          child: RandomWords(),
-             ),
-           ),
-         );
-       }
-    ```
+  <?code-excerpt path-base="codelabs/startup_namer"?>
+  <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
+  ```diff
+--- step2_use_package/lib/main.dart
++++ step3_stateful_widget/lib/main.dart
+@@ -10,7 +10,6 @@
+ class MyApp extends StatelessWidget {
+   @override
+   Widget build(BuildContext context) {
+-    final wordPair = WordPair.random();
+     return MaterialApp(
+       title: 'Welcome to Flutter',
+       home: Scaffold(
+@@ -18,8 +17,8 @@
+           title: Text('Welcome to Flutter'),
+         ),
+         body: Center(
+-          child: Text(wordPair.asPascalCase),
++          child: RandomWords(),
+         ),
+       ),
+     );
+   }
+  ```
 
- 5. Restart the app.
-    The app should behave as before, displaying a word
-    pairing each time you hot reload or save the app.
+<li markdown="1"> Restart the app.
+  The app should behave as before, displaying a word
+  pairing each time you hot reload or save the app.
+</li>
 
 {{site.alert.tip}}
   If you see a warning on a hot reload that you might
@@ -642,7 +640,6 @@ where you add the following functionality:
 * Modify the theme color, making an all-white app.
 
 
-
 [an editor]: /docs/get-started/editor
 [Android]: install/macos#set-up-your-android-device
 [Android emulator]: install/macos#set-up-the-android-emulator
@@ -665,4 +662,4 @@ where you add the following functionality:
 [pub.dev]: {{site.pub}}
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
-[Write your first Flutter app on the web]: /docs/get-started/codelab-web
+[codelab-web]: /docs/get-started/codelab-web
