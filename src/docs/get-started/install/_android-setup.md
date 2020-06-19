@@ -30,7 +30,7 @@ you need an Android device running Android 4.1 (API level 16) or higher.
     Flutter recognizes your connected Android device.  By default,
     Flutter uses the version of the Android SDK where your `adb`
     tool is based. If you want Flutter to use a different installation
-    of the Android SDK, you must set the `ANDROID_HOME` environment
+    of the Android SDK, you must set the `ANDROID_SDK_ROOT` environment
     variable to that installation directory.
 
 ### Set up the Android emulator
