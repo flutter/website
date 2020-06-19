@@ -367,25 +367,20 @@ a child inside the existing `MyApp` stateless widget.
     favorites word pairs as the user adds or removes them from
     the list by toggling the heart icon.<br><br>
     Both classes now look as follows:
-[PENDING: How to remove the ```'s?]
 
-{% comment %}
-Not using code-excerpter here because this code doesn't exist
-in the "step" files. It's an intermediate step.
-{% endcomment %}
-    ```dart
-    class RandomWords extends StatefulWidget {
-      @override
-      _RandomWordsState createState() => _RandomWordsState();
-    }
+   ```dart
+class RandomWords extends StatefulWidget {
+  @override
+  _RandomWordsState createState() => _RandomWordsState();
+}
 
-    class _RandomWordsState extends State<RandomWords> {
-      @override
-      Widget build(BuildContext context) {
-        return Container();
-      }
-    }
-    ```
+class _RandomWordsState extends State<RandomWords> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+   ```
 </li>
 
 <li markdown="1"> Update the `build()` method in `_RandomWordsState`:
