@@ -5,13 +5,13 @@ description: The scope of the modal route has a higher semantics traverse order 
 
 ## Summary
 
-We changed the semantics traverse order of the overlay entries in model routes.
-The accessibility talk back or voice over now focus the scope of a model first
-instead of its modal barrier.
+We changed the semantics traverse order of the overlay entries in modal routes.
+The accessibility talk back or voice over now focus the scope of a modal route
+first instead of its modal barrier.
 
 ## Context
 
-The model route has two overlay entries, the scope and the modal barrier. The
+The modal route has two overlay entries, the scope and the modal barrier. The
 scope is the actual content of the modal route, and the modal barrier is the
 background of the route if its scope does not cover the entire screen. If the
 modal route returns true for barrierDismissible, the modal barrier becomes
@@ -34,124 +34,97 @@ overlay entries.
 Code before migration:
 
 ```dart
+import 'dart:ui';
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  testWidgets('AppBar excludes header semantics correctly', (WidgetTester tester) async {
-    final SemanticsTester semantics = SemanticsTester(tester);
+  testWidgets('example test', (WidgetTester tester) async {
+    final SemanticsHandle handle = tester.binding.pipelineOwner.ensureSemantics();
 
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Center(
-          child: AppBar(
-            leading: const Text('Leading'),
-            title: const ExcludeSemantics(child: Text('Title')),
-            excludeHeaderSemantics: true,
-            actions: const <Widget>[
-              Text('Action 1'),
-            ],
-          ),
-        ),
-      ),
-    );
-    // This will fail because it is missing a node above the scopesRoute.
-    expect(semantics, hasSemantics(
-      TestSemantics.root(
-        children: <TestSemantics>[
-          TestSemantics(
-            children: <TestSemantics>[
-              TestSemantics(
-                flags: <SemanticsFlag>[SemanticsFlag.scopesRoute],
-                children: <TestSemantics>[
-                  TestSemantics(
-                    children: <TestSemantics>[
-                      TestSemantics(
-                        label: 'Leading',
-                        textDirection: TextDirection.ltr,
-                      ),
-                      TestSemantics(
-                        label: 'Action 1',
-                        textDirection: TextDirection.ltr,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
-      ignoreRect: true,
-      ignoreTransform: true,
-      ignoreId: true,
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(MaterialApp(
+      home: Scaffold(
+        body: Text('test')
+      )
     ));
-    semantics.dispose();
+
+    final SemanticsNode root = tester.binding.pipelineOwner.semanticsOwner.rootSemanticsNode;
+
+    final SemanticsNode firstNode = getChild(root);
+    expect(firstNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
+
+    final SemanticsNode secondNode = getChild(firstNode);
+    // This will fail because there is an additional node above the scopesRoute.
+    expect(secondNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
+    expect(secondNode.hasFlag(SemanticsFlag.scopesRoute), true);
+
+    final SemanticsNode thirdNode = getChild(secondNode);
+    expect(thirdNode.rect, Rect.fromLTRB(0.0, 0.0, 56.0, 14.0));
+    expect(thirdNode.label, 'test');
   });
+}
+
+SemanticsNode getChild(SemanticsNode node) {
+  SemanticsNode child;
+  bool visiter(SemanticsNode target) {
+    child = target;
+    return false;
+  }
+  node.visitChildren(visiter);
+  return child;
 }
 ```
 
 Code after migration:
 
 ```dart
+import 'dart:ui';
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  testWidgets('AppBar excludes header semantics correctly', (WidgetTester tester) async {
-    final SemanticsTester semantics = SemanticsTester(tester);
+  testWidgets('example test', (WidgetTester tester) async {
+    final SemanticsHandle handle = tester.binding.pipelineOwner.ensureSemantics();
 
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Center(
-          child: AppBar(
-            leading: const Text('Leading'),
-            title: const ExcludeSemantics(child: Text('Title')),
-            excludeHeaderSemantics: true,
-            actions: const <Widget>[
-              Text('Action 1'),
-            ],
-          ),
-        ),
-      ),
-    );
-    expect(semantics, hasSemantics(
-      TestSemantics.root(
-        children: <TestSemantics>[
-          TestSemantics(
-            children: <TestSemantics>[
-              // Adds an additional node above the scopesRoute.
-              TestSemantics(
-                children: <TestSemantics>[
-                  TestSemantics(
-                    flags: <SemanticsFlag>[SemanticsFlag.scopesRoute],
-                    children: <TestSemantics>[
-                      TestSemantics(
-                        children: <TestSemantics>[
-                          TestSemantics(
-                            label: 'Leading',
-                            textDirection: TextDirection.ltr,
-                          ),
-                          TestSemantics(
-                            label: 'Action 1',
-                            textDirection: TextDirection.ltr,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
-      ignoreRect: true,
-      ignoreTransform: true,
-      ignoreId: true,
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(MaterialApp(
+      home: Scaffold(
+        body: Text('test')
+      )
     ));
-    semantics.dispose();
+
+    final SemanticsNode root = tester.binding.pipelineOwner.semanticsOwner.rootSemanticsNode;
+
+    final SemanticsNode firstNode = getChild(root);
+    expect(firstNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
+
+    // Fixes the test by expecting an additional node above the scope route.
+    final SemanticsNode secondNode = getChild(firstNode);
+    expect(secondNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
+
+    final SemanticsNode thirdNode = getChild(secondNode);
+    expect(thirdNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
+    expect(thirdNode.hasFlag(SemanticsFlag.scopesRoute), true);
+
+    final SemanticsNode forthNode = getChild(thirdNode);
+    expect(forthNode.rect, Rect.fromLTRB(0.0, 0.0, 56.0, 14.0));
+    expect(forthNode.label, 'test');
   });
+}
+
+SemanticsNode getChild(SemanticsNode node) {
+  SemanticsNode child;
+  bool visiter(SemanticsNode target) {
+    child = target;
+    return false;
+  }
+  node.visitChildren(visiter);
+  return child;
 }
 ```
 
