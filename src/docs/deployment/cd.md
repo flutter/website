@@ -155,7 +155,7 @@ secrets in pull requests that you accept and merge.
     * See [fastlane CI documentation][] for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.
-         * For Android, make sure the Android SDK is available and the `ANDROID_HOME`
+         * For Android, make sure the Android SDK is available and the `ANDROID_SDK_ROOT`
            path is set.
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
          * Make sure the Flutter SDK is available and set in `PATH`.
