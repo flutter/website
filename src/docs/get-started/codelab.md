@@ -384,15 +384,15 @@ class _RandomWordsState extends State<RandomWords> {
 </li>
 
 <li markdown="1"> Update the `build()` method in `_RandomWordsState`:
-  <?code-excerpt "lib/main.dart (_RandomWordsState)" title indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
+  <?code-excerpt "lib/main.dart (_RandomWordsState)" title replace="/(\n  )(.*)/$1[!$2!]/g"?>
   ```dart
-class _RandomWordsState extends State<RandomWords> {
-  [!@override!]
-  [!Widget build(BuildContext context) {!]
-  [!  final wordPair = WordPair.random();!]
-  [!  return Text(wordPair.asPascalCase);!]
-  [!}!]
-}
+  class _RandomWordsState extends State<RandomWords> {
+    [!@override!]
+    [!Widget build(BuildContext context) {!]
+    [!  final wordPair = WordPair.random();!]
+    [!  return Text(wordPair.asPascalCase);!]
+    [!}!]
+  }
   ```
 
   After adding the state class, the IDE complains that
@@ -407,26 +407,26 @@ class _RandomWordsState extends State<RandomWords> {
   <?code-excerpt path-base="codelabs/startup_namer"?>
   <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
   ```diff
---- step2_use_package/lib/main.dart
-+++ step3_stateful_widget/lib/main.dart
-@@ -10,7 +10,6 @@
- class MyApp extends StatelessWidget {
-   @override
-   Widget build(BuildContext context) {
--    final wordPair = WordPair.random();
-     return MaterialApp(
-       title: 'Welcome to Flutter',
-       home: Scaffold(
-@@ -18,8 +17,8 @@
-           title: Text('Welcome to Flutter'),
+  --- step2_use_package/lib/main.dart
+  +++ step3_stateful_widget/lib/main.dart
+  @@ -10,7 +10,6 @@
+   class MyApp extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+  -    final wordPair = WordPair.random();
+       return MaterialApp(
+         title: 'Welcome to Flutter',
+         home: Scaffold(
+  @@ -18,8 +17,8 @@
+             title: Text('Welcome to Flutter'),
+           ),
+           body: Center(
+  -          child: Text(wordPair.asPascalCase),
+  +          child: RandomWords(),
+           ),
          ),
-         body: Center(
--          child: Text(wordPair.asPascalCase),
-+          child: RandomWords(),
-         ),
-       ),
-     );
-   }
+       );
+     }
   ```
 
 <li markdown="1"> Restart the app.
@@ -493,10 +493,6 @@ lazily, on demand.
 
     <?code-excerpt "lib/main.dart (_buildSuggestions)" title indent-by="2"?>
     ```dart
-    class _RandomWordsState extends State<RandomWords> {
-      final _suggestions = <WordPair>[];
-      final _biggerFont = TextStyle(fontSize: 18.0);
-
       Widget _buildSuggestions() {
         return ListView.builder(
             padding: EdgeInsets.all(16.0),
