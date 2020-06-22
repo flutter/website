@@ -64,6 +64,7 @@ void main() {
     final SemanticsNode thirdNode = getChild(secondNode);
     expect(thirdNode.rect, Rect.fromLTRB(0.0, 0.0, 56.0, 14.0));
     expect(thirdNode.label, 'test');
+    handle.dispose();
   });
 }
 
@@ -114,6 +115,7 @@ void main() {
     final SemanticsNode forthNode = getChild(thirdNode);
     expect(forthNode.rect, Rect.fromLTRB(0.0, 0.0, 56.0, 14.0));
     expect(forthNode.label, 'test');
+    handle.dispose();
   });
 }
 
