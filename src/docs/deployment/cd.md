@@ -180,6 +180,7 @@ the delivery of your application.
 
 * [Codemagic CI/CD for Flutter][]
 * [Flutter CI/CD with Bitrise][]
+* [Appcircle CI/CD for Flutter][]
 * [GitHub Actions- CI/CD on GitHub][]
   Get an [Example Project][]
 
@@ -188,6 +189,7 @@ the delivery of your application.
 [Cirrus]: https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables
 [Cirrus script]: {{site.github}}/flutter/flutter/blob/master/.cirrus.yml
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
+[Appcircle CI/CD for Flutter]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Example Project]: {{site.github}}/nabilnalakath/flutter-githubaction
 [fastlane]: https://docs.fastlane.tools
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
