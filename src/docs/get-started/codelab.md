@@ -35,8 +35,8 @@ you can complete this tutorial. You don’t need
 previous experience with Dart, mobile, or web programming.
 
 This codelab is part 1 of a two-part codelab.
-You can find [part 2][] on [Google Developers Codelabs][].
-We also maintain a copy of [part 1][] on that site, as well.
+You can find [part 2][] on [Google Developers Codelabs][]
+(as well as a copy of this codelab, [part 1][]).
 
 ## What you'll build in part 1
 {:.no_toc}
@@ -93,7 +93,7 @@ $ flutter config --enable-web
 ```
 
 You need only run the config command once.
-After enabling web support, every Flutter app you
+After you enable web support, every Flutter app you
 create also compiles for the web. In your IDE under
 the **devices** pulldown, or at the command line
 using `flutter devices`, you should now see **Chrome**
@@ -192,7 +192,7 @@ where the Dart code lives.
   Flutter offers a rich set of Material widgets.
 * The `main()` method uses arrow (`=>`) notation.
   Use arrow notation for one-line functions or methods.
-* The app extends `StatelessWidget` which, makes the app itself a
+* The app extends `StatelessWidget`, which makes the app itself a
   widget. In Flutter, almost everything is a widget, including
   alignment, padding, and layout.
 * The `Scaffold` widget, from the Material library,
@@ -436,9 +436,10 @@ class _RandomWordsState extends State<RandomWords> {
 
 {{site.alert.tip}}
   If you see a warning on a hot reload that you might
-  need to restart the app, you should consider restarting
-  the app. It might be a false positive, but restarting ensures
-  that your changes are reflected in the app's UI.
+  need to restart the app, consider restarting it.
+  The warning might be a false positive, but
+  restarting your app ensures that
+  your changes are reflected in the app's UI.
 {{site.alert.end}}
 
 
