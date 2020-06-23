@@ -212,6 +212,8 @@
               permalink: /docs/development/tools/devtools/memory
             - title: Performance view
               permalink: /docs/development/tools/devtools/performance
+            - title: Network view
+              permalink: /docs/development/tools/devtools/network
             - title: Debugger
               permalink: /docs/development/tools/devtools/debugger
             - title: Logging view
