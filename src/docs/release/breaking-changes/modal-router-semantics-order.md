@@ -43,13 +43,13 @@ import 'package:flutter/material.dart';
 void main() {
   testWidgets('example test', (WidgetTester tester) async {
     final SemanticsHandle handle =
-      tester.binding.pipelineOwner.ensureSemantics();
+        tester.binding.pipelineOwner.ensureSemantics();
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(MaterialApp(home: Scaffold(body: Text('test'))));
 
     final SemanticsNode root =
-      tester.binding.pipelineOwner.semanticsOwner.rootSemanticsNode;
+        tester.binding.pipelineOwner.semanticsOwner.rootSemanticsNode;
 
     final SemanticsNode firstNode = getChild(root);
     expect(firstNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
@@ -89,13 +89,13 @@ import 'package:flutter/material.dart';
 void main() {
   testWidgets('example test', (WidgetTester tester) async {
     final SemanticsHandle handle =
-      tester.binding.pipelineOwner.ensureSemantics();
+        tester.binding.pipelineOwner.ensureSemantics();
 
     // Build our app and trigger a frame.
     await tester.pumpWidget(MaterialApp(home: Scaffold(body: Text('test'))));
 
     final SemanticsNode root =
-      tester.binding.pipelineOwner.semanticsOwner.rootSemanticsNode;
+        tester.binding.pipelineOwner.semanticsOwner.rootSemanticsNode;
 
     final SemanticsNode firstNode = getChild(root);
     expect(firstNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
