@@ -25,6 +25,7 @@ release, and listed in alphabetical order:
 * [Rebuild optimization for OverlayEntries and Routes][]
 * [Scrollable AlertDialog][]
 * [TestTextInput state reset][]
+* [TestWidgetsFlutterBinding.clock][]
 * [TextInputClient currentTextEditingValue][]
 * [The forgetChild() method must call super][]
 * [The Route and Navigator refactoring][]
@@ -37,6 +38,7 @@ release, and listed in alphabetical order:
 * [Reversing the dependency between the scheduler and services layer][]
 * [Dialogs' Default BorderRadius][]
 * [showAutocorrectionPromptRect method added to TextInputClient][]
+* [TextField requires MaterialLocalizations][]
 * [The RenderEditable needs to be laid out before hit testing][]
 * [The Route Transition record and Transition delegate updates][]
 * [TestWidgetsFlutterBinding.clock][]
@@ -61,6 +63,7 @@ release, and listed in alphabetical order:
 [showAutocorrectionPromptRect method added to TextInputClient]: /docs/release/breaking-changes/add-showAutocorrectionPromptRect
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TestWidgetsFlutterBinding.clock]: /docs/release/breaking-changes/test-widgets-flutter-binding-clock
+[TextField requires MaterialLocalizations]: /docs/release/breaking-changes/text-field-material-localizations
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
 [The forgetChild() method must call super]: /docs/release/breaking-changes/forgetchild-call-super
 [The RenderEditable needs to be laid out before hit testing]: /docs/release/breaking-changes/rendereditable-layout-before-hit-test
