@@ -54,14 +54,17 @@ void main() {
     final SemanticsNode firstNode = getChild(root);
     expect(firstNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
 
+    // Fixes the test by expecting an additional node above the scope route.
     final SemanticsNode secondNode = getChild(firstNode);
-    // This will fail because there is an additional node above the scopesRoute.
     expect(secondNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
-    expect(secondNode.hasFlag(SemanticsFlag.scopesRoute), true);
 
     final SemanticsNode thirdNode = getChild(secondNode);
-    expect(thirdNode.rect, Rect.fromLTRB(0.0, 0.0, 56.0, 14.0));
-    expect(thirdNode.label, 'test');
+    expect(thirdNode.rect, Rect.fromLTRB(0.0, 0.0, 800.0, 600.0));
+    expect(thirdNode.hasFlag(SemanticsFlag.scopesRoute), true);
+
+    final SemanticsNode forthNode = getChild(thirdNode);
+    expect(forthNode.rect, Rect.fromLTRB(0.0, 0.0, 56.0, 14.0));
+    expect(forthNode.label, 'test');
     handle.dispose();
   });
 }
@@ -72,6 +75,7 @@ SemanticsNode getChild(SemanticsNode node) {
     child = target;
     return false;
   }
+
   node.visitChildren(visiter);
   return child;
 }
@@ -121,6 +125,7 @@ SemanticsNode getChild(SemanticsNode node) {
     child = target;
     return false;
   }
+
   node.visitChildren(visiter);
   return child;
 }
