@@ -4,7 +4,7 @@ description: Learn how to use the Flutter inspector to explore a Flutter app's w
 ---
 
 {{site.alert.note}}
-  The inspector works with Flutter mobile and web applications.
+  The inspector works with all Flutter applications.
 {{site.alert.end}}
 
 ## What is it?
@@ -50,22 +50,14 @@ used as the visual version of the label.
     see [Inspecting a widget](#inspecting-a-widget).
 <dt markdown="1">**Refresh tree** ![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"}</dt>
 <dd>Reload the current widget info.</dd>
-<dt markdown="1">**Performance Overlay** ![Performance overlay icon]({% asset tools/devtools/performance-overlay-icon.png @path %}){:width="20px"}</dt>
-<dd markdown="1">Toggle display of performance graphs for the
-    GPU & CPU threads. For more information on interpreting
-    these graphs, see [the performance overlay][] in
-    [Flutter performance profiling][].
-<dt markdown="1">**iOS** ![Toggle platform icon]({% asset tools/devtools/toggle-platform-icon.png @path %}){:width="20px"}</dt>
-<dd>Toggle rendering and gesture behaviors between Android
-    and iOS.</dd>
+<dt markdown="1">**Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
+<dd>Slow down animations to enable visual inspection.</dd>
 <dt markdown="1">**Debug Paint** ![Debug paint mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"}</dt>
 <dd>Add visual debugging hints to the rendering
     that display borders, padding, alignment, and spacers.</dd>
 <dt markdown="1">**Paint Baselines** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</dt>
 <dd>Cause each RenderBox to paint a line at each
     of its text baselines.</dd>
-<dt markdown="1">**Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
-<dd>Slow down animations to enable visual inspection.</dd>
 <dt markdown="1">**Repaint Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</dt>
 <dd>Shows rotating colors on layers when repainting.</dd>
 <dt markdown="1">**Debug Mode Banner** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</dt>
@@ -91,11 +83,6 @@ and the sizes flow back up. For more information on how this works,
 see [Understanding constraints][].
 
 ## Flutter Layout Explorer
-
-{{site.alert.note}}
-  This feature is only available in the alpha version of 
-  [DevTools written in Flutter][].
-{{site.alert.end}}
 
 The Flutter Layout Explorer helps you to better understand
 Flutter layouts. Currently, the Layout Explorer only supports
