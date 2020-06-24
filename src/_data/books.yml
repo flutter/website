@@ -12,6 +12,13 @@
   cover: beginning-flutter.png
   link: "https://www.wiley.com/en-us/Beginning+Flutter%3A+A+Hands+On+Guide+to+App+Development-p-9781119550822"
   desc: "Build your first app in Flutter–no experience necessary."
+- title: 'Flutter Développez vos applications mobiles multiplateformes avec Dart'
+  authors:
+    - Julien Trillard
+  publisher: Editions ENI
+  cover: flutter-ENI.jpg
+  link: "https://www.editions-eni.fr/livre/flutter-developpez-vos-applications-mobiles-multiplateformes-avec-dart-9782409025273"
+  desc: "Ce livre sur Flutter s'adresse aux développeurs, initiés comme plus aguerris, qui souhaitent disposer des connaissances nécessaires pour créer de A à Z des applications mobiles multiplateformes avec le framework de Google" 
 - title: 'Flutter for Beginners'
   authors:
     - Alessandro Biessek
