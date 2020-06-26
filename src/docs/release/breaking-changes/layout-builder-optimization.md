@@ -277,7 +277,7 @@ animation.addListener(() {
 
 ## Timeline
 
-TBD
+This change was released in Flutter v1.20.0.
 
 ## References
 
