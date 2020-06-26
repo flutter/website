@@ -143,15 +143,6 @@ FloatingActionButton(
 
 ## Interactive example
 
-{{site.alert.note}}
-  While the following code runs successfully in DartPad,
-  it fails due to [Issue 52221][] when run against the 
-  stable (1.12) or beta (1.14) versions of the Flutter SDK.
-  Until this [fix has landed][] (hash [flutter/flutter@bf551a3][])
-  in the channel you are using,
-  you can use the [workaround][] described in the issue.
-{{site.alert.end}}
-
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
