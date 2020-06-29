@@ -91,7 +91,7 @@ enables the following:
   [Running DevTools from VS Code][] in the [DevTools][] docs.
 {{site.alert.end}}
 
-Start debugging by clicking **Debug > Start Debugging**
+Start debugging by clicking **Run > Start Debugging**
 from the main IDE window, or press `F5`.
 
 ### Selecting a target device
@@ -129,7 +129,7 @@ running or debugging.
 
 ### Run app without breakpoints
 
- 1. Click **Debug > Start Without Debugging** in the
+ 1. Click **Run > Start Without Debugging** in the
     main IDE window, or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
     ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:width="490px"}
@@ -137,7 +137,7 @@ running or debugging.
 ### Run app with breakpoints
 
  1. If desired, set breakpoints in your source code.
- 1. Click **Debug > Start Debugging** in the main IDE window,
+ 1. Click **Run > Start Debugging** in the main IDE window,
     or press `F5`.
 
     * The left **Debug Sidebar** shows stack frames and variables.
