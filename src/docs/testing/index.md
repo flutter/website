@@ -91,7 +91,7 @@ For information on running tests on various continuous
 integration services, see the following:
 
 * [Continuous delivery using fastlane with Flutter][]
-* [Test Flutter apps on Appcircle]
+* [Test Flutter apps on Appcircle][]
 * [Test Flutter apps on Travis][]
 * [Test Flutter apps on Cirrus][]
 * [Codemagic CI/CD for Flutter][]
