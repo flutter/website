@@ -1,5 +1,5 @@
 ---
-title: Flutter Documentation
+title: Flutter documentation
 short-title: Docs
 description: The landing page for Flutter documentation.
 ---
