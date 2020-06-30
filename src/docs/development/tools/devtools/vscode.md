@@ -13,7 +13,7 @@ the [Flutter extension][].
 
 Start a debug session for your application by opening the root
 folder of your project (the one containing `pubspec.yaml`)
-in VS Code and clicking **Debug > Start Debugging** (`F5`).
+in VS Code and clicking **Run > Start Debugging** (`F5`).
 
 ## Launch DevTools
 

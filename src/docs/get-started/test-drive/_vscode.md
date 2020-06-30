@@ -34,7 +34,7 @@ contains a simple demo app that uses [Material Components][].
     Select flutter. And choose the debug configuration:
     To create your emulator if it is closed or to run the
     emulator or device that is now connected.
- 1. Invoke **Debug > Start Debugging** or press <kbd>F5</kbd>.
+ 1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
  1. Wait for the app to launch &mdash; progress is printed
     in the **Debug Console** view.
 
