@@ -351,7 +351,7 @@ a child inside the existing `MyApp` stateless widget.
   `State` class.<br><br>
   Once you've entered `RandomWords` as the name of
   the stateful widget, the IDE automatically updates
-  the accompanying `State` class, naming it `_RandomWordState`.
+  the accompanying `State` class, naming it `_RandomWordsState`.
   By default, the name of the `State` class is prefixed
   with an underbar. Prefixing an identifier with an
   underscore [enforces privacy][] in the Dart language and
