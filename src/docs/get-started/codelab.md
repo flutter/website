@@ -343,7 +343,7 @@ a child inside the existing `MyApp` stateless widget.
   `Stateful` widget. Press **Return** to accept.
   The boilerplate code for two classes appears,
   and the cursor is positioned for you to enter the name of
-  your stateless widget.
+  your stateful widget.
 </li>
 
 <li markdown="1"> Enter `RandomWords` as the name of your widget.<br>
