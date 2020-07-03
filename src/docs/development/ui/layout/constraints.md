@@ -1788,7 +1788,7 @@ Here is an example:
 
 * Find a `Column` in your code and navigate to its
   source code. To do this, use `command+B` (macOS)
-  or `control+B` (Windows/Linux) in Android Studio or IntelliJ).
+  or `control+B` (Windows/Linux) in Android Studio or IntelliJ.
   You’ll be taken to the `basic.dart` file.
   Since `Column` extends `Flex`, navigate to the `Flex`
   source code (also in `basic.dart`).
