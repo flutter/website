@@ -244,8 +244,16 @@ public class SplashScreenWithTransition implements SplashScreen {
     }
 }
 ```
+```java
+//MainActivity provideSplashScreen will present the custom splash screen
+  @Override
+  @Nullable
+  public SplashScreen provideSplashScreen() {
+    return new SplashScreenWithTransition();
+  }
+```
 
-With custom splash screens, the sky is the limit.
+With custom splash screens, the sky is the limit. More examples, please refer [Sample code][]
 But use the power you have with responsibility: a
 splash screen that is too complex may frustrate your
 users by adding to your app's load time.
@@ -258,3 +266,4 @@ tips on how to build a [dynamic yet performant splash screen][].
 [pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
 [must use an Xcode storyboard]: https://developer.apple.com/news/?id=03042020b
 [Human Interface Guidelines]: https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/
+[Sample code]:https://github.com/flutter/flutter/tree/master/dev/integration_tests/android_splash_screens
