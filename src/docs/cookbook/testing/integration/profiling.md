@@ -92,12 +92,12 @@ to review the results:
 final summary = new TimelineSummary.summarize(timeline);
 
 // Then, save the summary to disk.
-summary.writeSummaryToFile('scrolling_summary', pretty: true);
+await summary.writeSummaryToFile('scrolling_summary', pretty: true);
 
 // Optionally, write the entire timeline to disk in a json format. This
 // file can be opened in the Chrome browser's tracing tools found by
 // navigating to chrome://tracing.
-summary.writeTimelineToFile('scrolling_timeline', pretty: true);
+await summary.writeTimelineToFile('scrolling_timeline', pretty: true);
 ```
 
 ### 4. Run the test
@@ -193,12 +193,12 @@ void main() {
       final summary = new TimelineSummary.summarize(timeline);
 
       // Then, save the summary to disk.
-      summary.writeSummaryToFile('scrolling_summary', pretty: true);
+      await summary.writeSummaryToFile('scrolling_summary', pretty: true);
 
       // Optionally, write the entire timeline to disk in a json format.
       // This file can be opened in the Chrome browser's tracing tools
       // found by navigating to chrome://tracing.
-      summary.writeTimelineToFile('scrolling_timeline', pretty: true);
+      await summary.writeTimelineToFile('scrolling_timeline', pretty: true);
     });
   });
 }
