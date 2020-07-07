@@ -675,10 +675,10 @@ area. The animation has the following behavior:
 * When the app starts,
   a tiny red bar appears across the top of the sign in area.
 * When one text field contains text,
-  the red bar turns orange and animates one-third
+  the red bar turns orange and animates 0.15
   of the way across the sign in area.
 * When two text fields contain text,
-  the orange bar turns yellow and animates two-thirds
+  the orange bar turns yellow and animates half
   of the way across the sign in area.
 * When all three text fields contain text,
   the orange bar turns green and animates all the
