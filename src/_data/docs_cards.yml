@@ -12,7 +12,7 @@
   url: /docs/cookbook
 - name: Samples
   description: Check out the Flutter examples.
-  url: https://github.com/flutter/samples/blob/master/INDEX.md
+  url: https://flutter.github.io/samples
 - name: Videos
   description: View the many videos on the Flutter YouTube channel.
   url: https://www.youtube.com/flutterdev
