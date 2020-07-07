@@ -121,7 +121,7 @@ current state or events to the console (using `debugPrint`).
 To dump the state of the Widgets library, call [`debugDumpApp()`][].
 You can call this more or less any time that the application is not in
 the middle of running a build phase (in other words, not anywhere inside a
-`build()` method), so long as the application has built at least once
+`build()` method), if the app has built at least once and is in debug mode
 (in other words, any time after calling `runApp()`).
 
 For example, the following application:
