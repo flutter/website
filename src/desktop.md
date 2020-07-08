@@ -5,32 +5,40 @@ toc: true
 ---
 
 Desktop support allows you to compile Flutter source code
-to a native macOS Desktop app. Flutter's desktop
-support also extends to plugins&mdash;you can
-install existing plugins that support the macOS platform,
+to a native macOS or Linux desktop app. Flutter's desktop
+support also extends to plugins&mdash;you can install 
+existing plugins that support the macOS or Linux platforms,
 or you can create your own.
 
-{{site.alert.note}}
-  **This page covers desktop support for macOS
-  which is available as an alpha release.**
-  Windows and Linux platforms are still under development.
-  You can try Windows and Linux platform support
-  as explained in the [Desktop shells][] page in the
-  [Flutter wiki][].
-  If you experience a problem that hasn’t yet been reported,
-  please [file an issue][] and make sure that "desktop:macos",
-  for example, appears in the title.
+{{site.alert.warning}}
+  **Work in progress!**
+  This page covers desktop support for macOS and Linux,
+  which are available as alpha-quality features in the Flutter dev channel.
+  Windows platform support is still under development.
+
+  These platforms still have notable feature gaps,
+  including accessibility support.
+  We strongly recommend that you examine the
+  [Desktop shells][] page in the [Flutter wiki][]
+  to understand known limitations and ongoing work.
 {{site.alert.end}}
+
+{{site.alert.note}}
+  To compile a macOS desktop app, you must build the app on a Mac.
+  To compile a Linux desktop app, you must build the app on Linux.
+  If you experience a problem that hasn’t yet been reported,
+  please file an issue and include
+  "desktop:macos" or "desktop:linux" in the title.
+{{site.alert.end}}
+
 
 ## Requirements
 
-To create a Flutter app with macOS support, you need the
+To create a Flutter app with desktop support, you need the
 following software:
 
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
-* [Xcode][]
-* [CocoaPods][] if you use plugins
 * Optional: An IDE that supports Flutter.
   You can install [Android Studio][], [IntelliJ IDEA][],
   or [Visual Studio Code][] and
@@ -40,15 +48,37 @@ following software:
   within an editor. See [setting up an editor][]
   for more details.
 
+For macOS desktop development,
+you need the following in addition to the Flutter SDK:
+
+* [Xcode][]
+* [CocoaPods][] if you use plugins
+
+For Linux desktop development,
+you need the following in addition to the Flutter SDK:
+
+* [Clang][]
+* [CMake][]
+* [GTK development headers][]
+* [Ninja build][]
+* [pkg-config][]
+
+Linux installation varies by distro, but
+on Ubuntu you might use the following command:
+
+```terminal
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
+```
+
 ## Create a new project
 
 You can use the following steps
-to create a new project with macOS support.
+to create a new project with desktop support.
 
 ### Set up
 
 At the command line, perform the following commands to
-make sure that you have the latest support for macOS and that
+make sure that you have the latest desktop support and that
 it's enabled. If you see "flutter: command not found",
 then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
@@ -56,45 +86,64 @@ then make sure that you have installed the
 ```terminal
 $ flutter channel dev
 $ flutter upgrade
+$ flutter config --enable-<platform>-desktop
+```
+
+Where _<platform>_ is either `macos` or `linux`:
+
+```terminal
 $ flutter config --enable-macos-desktop
+$ flutter config --enable-linux-desktop
 ```
 
 To ensure that desktop _is_ installed,
 list the devices available.
-You should see something like the following:
+You should see something like the following
+(you'll see either macOS _or_ Linux, not both):
 
 ``` terminal
 $ flutter devices
 1 connected device:
 
-macOS      • macOS      • darwin-x64     • Mac OS X 10.15.4 19E266
+macOS desktop • macos • darwin-x64 • Mac OS X 10.15.5 19F101
+Linux desktop • linux • linux-x64 • Linux
 ```
 
 You might also run `flutter doctor` to see if there are
 any unresolved issues. It should look something like
-the following:
+the following on macOS:
 
 ```terminal
-Doctor summary (to see all details, run flutter doctor -v):
 [✓] Flutter (Channel master, 1.18.0-10.0.pre, on Mac OS X 10.15.4 19E287, locale
     en-US)
- 
-[✓] Android toolchain - develop for Android devices (Android SDK version 28.0.3)
 [✓] Xcode - develop for iOS and macOS (Xcode 11.2)
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 3.6)
 [✓] VS Code (version 1.44.2)
 [✓] Connected device (3 available)
-
-• No issues found!
 ```
 
-**After enabling macOS support, restart your IDE.**
-You should now see **macOS (desktop)** in the device pulldown.
+On Linux, you might see something like the following:
+
+```terminal
+$ flutter doctor
+[✓] Flutter (Channel master, 1.20.0-1.0.pre.132, on Linux, locale en_US.UTF-8)
+[✓] Linux toolchain - develop for Linux desktop
+[✓] VS Code (version 1.33.1)
+[✓] Connected device (1 available)
+```
+
+If `flutter doctor` finds problems for a platform you don't
+support, you can ignore those warnings. You don't have
+to install Android Studio and the Android SDK,
+for example, if you're writing a Linux desktop app.
+
+**After enabling desktop support, restart your IDE.**
+You should now see **macOS (desktop)** or 
+**linux (desktop)** in the device pulldown.
 
 {{site.alert.note}}
-  You only need to execute `flutter config --enable-macos-desktop` once. 
-  You can always check the status of your configuration using
+  You only need to execute `flutter config --enable-<platform>-desktop`
+  once.  You can always check the status of your configuration using
   the no-argument `flutter config` command.
 {{site.alert.end}}
 
@@ -114,10 +163,11 @@ desktop, make sure you restart the IDE if it was
 already running.
 
 Create a new app in your IDE and it automatically
-creates iOS, Android, and macOS versions of your app.
+creates iOS, Android, and desktop versions of your app.
 (And web, too, if you've enabled [web support][].)
 From the device pulldown, select **macOS (desktop)**
-and run your app to see it launch on the desktop.
+or **linux (desktop)** and run your app to see it
+launch on the desktop.
 
 #### Command line
 
@@ -130,24 +180,33 @@ $ flutter create myapp
 $ cd myapp
 ```
 To launch your app from the command line,
-enter the following from the top of the package:
+enter one of the following from the top
+of the package:
 
 ```terminal
 $ flutter run -d macos
+$ flutter run -d linux
 ```
 
 {{site.alert.note}}
   If there aren't any other connected devices,
-  the `-d macos` is optional.
+  the `-d <platform>` tag is optional.
 {{site.alert.end}}
 
-### Build
+### Build a release app
 
-To generate a release build run the following command:
+To generate a release build run one of the following commands:
 
 ```terminal
 $ flutter build macos
+$ flutter build linux
 ```
+
+**In general, we don't recommend releasing a desktop app until
+desktop support is stable.**
+However, if you're interested in learning _how_ to publish
+a Linux app to the [Snap Store][], see
+[Build and release a Linux desktop app][].
 
 ## Add desktop support to an existing app
 
@@ -162,7 +221,11 @@ $ flutter create .
 This adds the necessary files and directories to your
 Flutter project.
 
-## Entitlements and the App Sandbox
+## macOS-specific support
+
+The following information applies only to macOS development.
+
+### Entitlements and the App Sandbox
 
 macOS builds are configured by default to be signed,
 and sandboxed with App Sandbox.
@@ -177,17 +240,17 @@ such as the following:
 Then you must set up specific _entitlements_ in Xcode.
 The following section tells you how to do this.
 
-### Setting up entitlements
+#### Setting up entitlements
 
 Managing sandbox settings is done in the
 `macos/Runner/*.entitlements` files. When editing
 these files, you shouldn't remove the original
 `Runner-DebugProfile.entitlements` exceptions
 (that support incoming network connections and JIT),
-as they are necessary for the `debug` and `profile`
+as they're necessary for the `debug` and `profile`
 modes to function correctly.
 
-If you are used to managing entitlement files through
+If you're used to managing entitlement files through
 the **Xcode capabilities UI**, be aware that the capabilities
 editor updates only one of the two files or,
 in some cases, it creates a whole new entitlements
@@ -223,7 +286,7 @@ For more information on these topics,
 see [App Sandbox][] and [Entitlements][]
 on the Apple Developer site.
 
-## Hardened runtime
+### Hardened runtime
 
 If you choose to distribute your application outside
 of the App Store, you need to notarize your application
@@ -247,18 +310,25 @@ see [Hardened Runtime][] on the Apple Developer site.
 
 Flutter on the desktop supports using and creating plugins.
 
-To use a plugin that supports macOS,
+To use a plugin that supports desktop,
 follow the steps for plugins in [using packages][].
 Flutter automatically adds the necessary native code
 to your project, as with iOS or Android.
 
-These are a few of the plugins that support desktop
-on macOS:
+We recommend the following plugins, which have been
+updated to work for macOS and Linux desktop apps:
 
 * [`url_launcher`][]
 * [`shared_preferences`][]
-* [`connectivity`][]
 * [`path_provider`][]
+
+Use the following links to find all packages on pub.dev
+that support desktop apps. These links lists _all_ packages,
+not just plugin packages. (Remember that _plugin packages_,
+or _plugins_, provide an interface to platform-specific services.)
+
+* [macOS packages][]
+* [Linux packages][]
 
 ### Creating a plugin
 
@@ -283,7 +353,13 @@ the following resources:
   recent enhancements to Flutter's plugin support.
 * [Federated Plugin proposal][]
 
-## Samples
+## Samples and codelabs
+
+[Write a Flutter desktop application][]
+: A codelab that walks you through building
+a desktop app (for macOS and Linux) that
+integrates the GitHub GraphQL API with your
+Flutter app.
 
 You can run the following samples as desktop apps,
 as well as download and inspect the source code to
@@ -298,7 +374,8 @@ Flutter Gallery [running web app][], [repo][]
   by following the instructions provided in the [README][].
 
 [Photo Search app][]
-: A sample app built as a desktop application that uses
+: A sample app built as a desktop application
+  (for both macOS and Linux) that uses
   the following desktop-supported plugins:
   * [`file_chooser`][]
   * [`menubar`][]
@@ -316,6 +393,11 @@ for more information and ongoing updates.
 
 [Android Studio]: {{site.android-dev}}/studio/install
 [App Sandbox]: https://developer.apple.com/documentation/security/app_sandbox
+[App Store]: https://developer.apple.com/app-store/submissions/
+[Build and release an iOS app]: /docs/deployment/ios
+[Build and release a Linux desktop app]: /docs/deployment/linux
+[Clang]: https://clang.llvm.org/
+[CMake]: https://cmake.org/
 [CocoaPods]: https://cocoapods.org/
 [`connectivity`]: {{site.pub}}/packages/connectivity
 [Desktop shells]: {{site.repo.flutter}}/wiki/Desktop-shells
@@ -329,17 +411,23 @@ for more information and ongoing updates.
 [Flutter SDK]: /docs/get-started/install
 [Flutter wiki]: {{site.repo.flutter}}/wiki/
 [flutter-desktop-embedding]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins#dart
+[GTK development headers]: https://developer.gnome.org/gtk3/3.2/gtk-getting-started.html
 [Hardened Runtime]: https://developer.apple.com/documentation/security/hardened_runtime
 [How to write a Flutter web plugin, part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [install the Flutter and Dart plugins]: /docs/get-started/editor
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
+[Linux packages]: {{site.pub}}/flutter/packages?platform=linux
+[macOS packages]: {{site.pub}}/flutter/packages?platform=macos
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
+[Ninja build]: https://ninja-build.org/
 [`path_provider`]: {{site.pub}}/packages/path_provider
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
+[pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
 [README]: {{site.github}}/flutter/gallery#flutter-gallery
 [repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [running web app]: https://flutter.github.io/gallery/#/
+[Snap Store]: https://snapcraft.io/store
 [setting up an editor]: /docs/get-started/editor
 [`shared_preferences`]: {{site.pub}}/packages/shared_preferences
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
@@ -347,3 +435,5 @@ for more information and ongoing updates.
 [Visual Studio Code]: /docs/development/tools/vs-code
 [web support]: /docs/get-started/web
 [Xcode]: https://developer.apple.com/xcode/
+[Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html
+
