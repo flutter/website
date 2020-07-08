@@ -146,17 +146,14 @@ grade: stable
 apps:
   super-cool-app:
     command: super_cool_app
-    extensions: [gnome-3-28]
+    extensions: [flutter-master] # Where "master" defines which Flutter channel to use for the build
     plugs:
-    - x11
-    - opengl
     - network
 
 parts:
   super-cool-app:
     source: .
     plugin: flutter
-    flutter-channel: master # Which Flutter channel to use for the build
     flutter-target: lib/main.dart # The main entry-point file of the application
 ```
 
@@ -212,11 +209,7 @@ has a single application&mdash;super_cool_app.
 apps:
   super-cool-app:
     command: super_cool_app
-    extensions: [gnome-3-28]
-    plugs:
-    - x11
-    - opengl
-    - network
+    extensions: [flutter-master]
 ```
 
 **Command**
@@ -228,16 +221,19 @@ apps:
   are reusable components that can expose sets of libraries
   and tools to a snap at build and runtime,
   without the developer needing to have specific knowledge
-  of included frameworks. The `gnome-3-28` extension exposes
+  of included frameworks. The `flutter-master` extension exposes
   the GTK 3 libraries to the Flutter snap. This ensures a
   smaller footprint and better integration with the system.
+
+  The `flutter-master` extension sets your flutter channel
+  to `master`.  If you would like to build your app with the `dev`
+  channel simply use the `flutter-dev` extension.
 
 **Plugs**
 : A list of one or more plugs for system interfaces.
   These are required to provide necessary functionality
   when snaps are strictly confined. This Flutter snap needs
-  access to the OpenGL libraries, the X11 windowing system,
-  and the network.
+  access to the network.
 
 ### Parts
 
@@ -263,7 +259,6 @@ parts:
   super-cool-app:
     source: .
     plugin: flutter
-    flutter-channel: master # Flutter channel to use for the build
     flutter-target: lib/main.dart # The main entry-point file of the application
 ```
 
