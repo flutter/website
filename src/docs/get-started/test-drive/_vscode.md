@@ -28,12 +28,19 @@ contains a simple demo app that uses [Material Components][].
       click **No Devices** and launch a simulator.
     - To setup a real device, follow the device-specific instructions on the
       [Install][] page for your OS.
- 1. Press the **Settings button**&mdash;a cog icon gear
-    on the top right (now marked with a red or orange indicator)
-    next to the DEBUG text box that reads **No Configuration**.
-    Select flutter. And choose the debug configuration:
-    To create your emulator if it is closed or to run the
-    emulator or device that is now connected.
+ 1. Open the **Run** sidebar by invoking **View > Run**.
+ 1. Activate a **Flutter** launch configuration. If needed, add one like:
+
+    ```json
+    {
+      "name": "Flutter",
+      "type": "dart",
+      "request": "launch"
+    }
+    ```
+    
+    For more information on adding a launch configuration, see
+    ["Launch configurations" in the Visual Studio Code User Guide][launch config].
  1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
  1. Wait for the app to launch &mdash; progress is printed
     in the **Debug Console** view.
@@ -58,6 +65,7 @@ contains a simple demo app that uses [Material Components][].
 [Install]: /docs/get-started/install
 [Material Components]: {{site.material}}/guidelines
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
+[launch config]: https://code.visualstudio.com/Docs/editor/debugging#_launch-configurations
 [status bar]: {% asset tools/vs-code/device_status_bar.png @path %}
 [trusted your computer]: /docs/get-started/install/macos#trust
 
