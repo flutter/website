@@ -32,7 +32,7 @@ your development environment must meet these minimum requirements:
 - **Shared libraries**: Flutter `test` command depends on this library
   being available in your environment.
   - `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on
-     Ubuntu/Debian
+     Ubuntu/Debian and `mesa-libGLU` on Fedora.
 
 {% include_relative _get-sdk.md %}
 
