@@ -37,7 +37,7 @@ a breaking change?"
 
 {% comment %}
 A technical description of the actual change,
-with code samples showing how the SDK changed.
+with code samples showing how the API changed.
 {% endcomment %}
 
 ## Migration guide
@@ -80,9 +80,8 @@ the version # to which we guarantee to maintain the old API.
 ## References
 
 {% comment %}
-I've had to comment out these non-functional links because
-they are messing up our Travis build. Remove the comment
-tags once you fill this in with real links.
+These non-functional links are commented out because they are messing up the
+Travis build. Remove the comment tags once you fill this in with real links.
 
 {% include master-api.md %}
 
@@ -100,8 +99,8 @@ Relevant PRs:
 
 {% comment %}
 Add the links to the end of the file in alphabetical order.
-I've had to comment out these faux links because they cause
-the Travis build to believe they are broken links,
+These faux links are commented out because they make
+the Travis build believe they are broken links,
 but please remove the comment lines before you commit!
 
 If you need to link to the docs on the master channel,
