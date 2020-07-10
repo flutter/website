@@ -24,7 +24,7 @@ missing semantics to the Chip widgets in your app.
 
 ## Description of change
 
-The outermost [`Semantics`][] widget which wraps all Chip classes to describe
+The outermost [`Semantics`][] widget that wraps all Chip classes to describe
 their semantic properties has been modified.
 
 For [`ActionChip`][], [`ChoiceChip`][], [`FilterChip`][], and [`InputChip`][]:
@@ -47,10 +47,10 @@ For the non-interactive information [`Chip`][]:
 you worked around the issue of Material Chips missing `button` semantics by
 wrapping the widget given to the `label` field of a `Chip` with a `Semantics`
 widget marked as `button: true`. **In this case, the inner and outer `button`
-semantics will conflict, resulting in the tappable area of the button shrinking
-down to the size of the label after this change is introduced.** This issue can
-be fixed by deleting that `Semantics` widget and replacing it with its child, or
-simply removing the `button: true` property if other semantic properties still
+semantics conflict, resulting in the tappable area of the button shrinking
+down to the size of the label after this change is introduced.** Fix this issue
+either by deleting that `Semantics` widget and replacing it with its child,
+or by removing the `button: true` property if other semantic properties still
 need to be applied to the `label` widget of the Chip.
 
 The following snippets use [`InputChip`][] as an example, but the same process
