@@ -124,7 +124,6 @@
           permalink: /docs/development/data-and-backend/networking
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
-        - title: Back-end services
         - title: Firebase
           permalink: /docs/development/data-and-backend/firebase
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
