@@ -71,7 +71,7 @@ enables the following:
   (**View > Problems** or `Ctrl`+`Shift`+`M`
   (`Cmd`+`Shift`+`M` on macOS))
   Any analysis issues are shown in the Problems pane:<br>
-  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:width="90%"}
+  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:.mw-100.pt-1}
 
 ## Running and debugging
 
@@ -99,9 +99,8 @@ from the main IDE window, or press `F5`.
 When a Flutter project is open in VS Code,
 you should see a set of Flutter specific entries in the status bar,
 including a Flutter SDK version and a
-device name (or the message **No Devices**).
-
-![Flutter device]({% asset tools/vs-code/device_status_bar.png @path %}){:width="450px"}
+device name (or the message **No Devices**):<br>
+![VS Code status bar][]{:.mw-100.pt-1}
 
 {{site.alert.note}}
   * If you do not see a Flutter version number or device info,
@@ -132,7 +131,7 @@ running or debugging.
  1. Click **Run > Start Without Debugging** in the
     main IDE window, or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
-    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:width="490px"}
+    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:.mw-100.pt-1}
 
 ### Run app with breakpoints
 
@@ -291,3 +290,4 @@ When filing new issues, include [flutter doctor][] output.
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
 [Set up an editor]: /docs/get-started/editor?tab=vscode
+[VS Code status bar]: {% asset tools/vs-code/device_status_bar.png @path %}
