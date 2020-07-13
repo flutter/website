@@ -21,7 +21,7 @@ contains a simple demo app that uses [Material Components][].
 ## Run the app
 
  1. Locate the VS Code status bar (the blue bar at the bottom of the
-    window):<br> ![status bar][]{:.mw-100}
+    window):<br> ![status bar][]{:.mw-100.pt-1.pb-2}
  1. Select a device from the **Device Selector** area.
     For details, see [Quickly switching between Flutter devices][].
     - If no device is available and you want to use a device simulator,
@@ -38,7 +38,7 @@ contains a simple demo app that uses [Material Components][].
       "request": "launch"
     }
     ```
-    
+
     For more information on adding a launch configuration, see
     ["Launch configurations" in the Visual Studio Code User Guide][launch config].
  1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
