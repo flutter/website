@@ -38,7 +38,7 @@ contains a simple demo app that uses [Material Components][].
       "request": "launch"
     }
     ```
-    
+
     For more information on adding a launch configuration, see
     ["Launch configurations" in the Visual Studio Code User Guide][launch config].
  1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
@@ -53,10 +53,7 @@ contains a simple demo app that uses [Material Components][].
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**
-  <i class="material-icons align-bottom">offline_bolt</i>.
-  {% comment %} Or, as an alternative:
-    {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}.
-  {% endcomment -%}
+  {% include_relative _hot-reload-icon.md %}.
 {% endcapture %}
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}

@@ -50,12 +50,6 @@ plugins installed and configured.
 
 * Add a breakpoint on the `counter++` line.
 
-{% comment %}
-Not needed for breakpoints to work.
-* Hot reload the app.
-  {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}
-{% endcomment -%}
-
 * In the app, click the **+** button (FloatingActionButton,
   or FAB, for short) to increment the counter. The app pauses.
 
