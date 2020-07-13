@@ -53,10 +53,7 @@ contains a simple demo app that uses [Material Components][].
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**
-  <i class="material-icons align-bottom">offline_bolt</i>.
-  {% comment %} Or, as an alternative:
-    {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}.
-  {% endcomment -%}
+  {% include_relative _hot-reload-icon.md %}.
 {% endcapture %}
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
