@@ -34,7 +34,7 @@ your development environment must meet these minimum requirements:
   - `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on
      Ubuntu/Debian and `mesa-libGLU` on Fedora.
 
-{% include_relative _get-sdk.md %}
+{% include_relative _get-sdk-linux.md %}
 
 {% include_relative _path-linux-chromeos.md %}
 
