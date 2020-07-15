@@ -13,11 +13,11 @@ On Linux, you have two ways you can install Flutter.
 ### Install Flutter using snapd
 
 The easiest way to install Flutter on Linux is by
-using [snapd][]. For more information,
+using snapd. For more information,
 see [Installing snapd][].
 
-Once you have snapd, you can install Flutter
-using the [Snap Store][], or at the command line:
+Once you have snapd, you can [install Flutter
+using the Snap Store][], or at the command line:
 
 ```sh
 $ sudo snap install flutter --classic
@@ -136,7 +136,6 @@ command again to verify that you’ve set everything up correctly.
 [Flutter repo]: {{site.github}}/flutter/flutter
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: /docs/development/tools/sdk/archive
-[Snap Store]: https://snapcraft.io/store
-[snapd]: https://snapcraft.io/flutter
+[install Flutter using the Snap Store]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
