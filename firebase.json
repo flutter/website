@@ -222,7 +222,8 @@
       { "source": "/go/sdk-per-platform-installers", "destination": "https://docs.google.com/document/d/1VooN2bddQ52Z2B4qYi1Lp20PGhyYDr1AKaXwo9e7PCw", "type": 301 },
       { "source": "/go/union-typed-transform-stack-in-hit-test", "destination": "https://docs.google.com/document/d/1EsH7g-oyQIDZpRteg94iKJKgD7kVngZWq9ngDe6ORbM/edit?usp=sharing", "type": 301 },
       { "source": "/go/bottom-navigation-bar-title-deprecation", "destination": "https://docs.google.com/document/d/1L-2nPf5hbLGNoRvOSUmnxgUHahBVzW1ybhTXGY3ObDw/edit?usp=sharing", "type": 301 },
-      { "source": "/go/scalable-flutter-infrastructure", "destination": "https://docs.google.com/document/d/1GppFbc3rk__XiogKEfk_taw-cucqu_VYpsRuJKeTABI", "type": 301 }
+      { "source": "/go/scalable-flutter-infrastructure", "destination": "https://docs.google.com/document/d/1GppFbc3rk__XiogKEfk_taw-cucqu_VYpsRuJKeTABI", "type": 301 },
+      { "source": "/go/fallback-image-decoding", "destination": "https://docs.google.com/document/d/1G-5s6uoP1H_7f_ByLrvCVcoFXYZ80CixkMbbHMsMCag/edit?usp=sharing", "type": 301" }
     ]
   }
 }
