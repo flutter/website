@@ -16,18 +16,35 @@ many of which have been contributed by the Flutter community:
 
 ## General overview
 
-* [This very section], for those of you who arrived
-  directly to this _Options_ page and missed the previous pages
-* [Build reactive mobile apps with Flutter],
-  a video from Google I/O 2018, and an [accompanying article]
+Things to review before selecting an approach. 
+
+* [Introduction to state management], which is the beginning of this very
+  section (for those of you who arrived directly to this _Options_ page 
+  and missed the previous pages)
+* [Pragmatic State Management in Flutter], a video from Google I/O 2019
 * [Flutter Architecture Samples], by Brian Egan
 
+## Provider
+
+A recommended approach.
+
+* [Simple app state management], the previous page in this section
+* [Provider package]
+* [You might not need Redux: The Flutter edition], by Ryan Edge
+* [Making sense of all those Flutter Providers]
+
 ## setState
+
+The low-level approach to use for widget-specific, ephemeral state.
 
 * [Adding interactivity to your Flutter app], a Flutter tutorial
 * [Basic state management in Google Flutter], by Agung Surya
 
 ## InheritedWidget &amp; InheritedModel
+
+The low-level approach used to communicate between ancestors and children
+in the widget tree. This is what `provider` and many other approaches
+use under the hood.
 
 * [InheritedWidget docs]
 * [Managing Flutter Application State With InheritedWidgets],
@@ -36,20 +53,9 @@ many of which have been contributed by the Flutter community:
 * [Using Flutter Inherited Widgets Effectively], by Eric Windmill
 * [Widget - State - Context - InheritedWidget], by Didier Bolelens
 
-## Provider &amp; Scoped Model
-
-* [Provider package]
-* [Scoped Model package]
-* [Simple app state management], the previous page in this section
-* [You might not need Redux: The Flutter edition], by Ryan Edge
-* [Managing state with the scoped model pattern in Dart's Flutter framework],
-  a video by Tensor Programming
-* [Flutter: Inherited Widget and Scoped Model Explained, part 1],
-  a video by MTechViral
-* [Flutter state management&mdash;scoped model]
-* [Making sense of all those Flutter Providers]
-
 ## Redux
+
+A state container approach familiar to many web developers.
 
 * [Animation Management with Redux and Flutter],
   a video from DartConf 2018 [Accompanying article on Medium]
@@ -69,6 +75,8 @@ many of which have been contributed by the Flutter community:
 
 ## BLoC / Rx
 
+A family of stream/observable based patterns. 
+
 * [Architect your Flutter project using BLoC pattern],
   by Sagar Suri
 * [BloC Library], by Felix Angelov
@@ -76,6 +84,8 @@ many of which have been contributed by the Flutter community:
   by Didier Boelens
 
 ## MobX
+
+A popular library based on observables and reactions.
 
 * [MobX.dart, Hassle free state-management for your Dart and Flutter apps]
 * [Getting started with MobX.dart]
@@ -91,30 +101,25 @@ many of which have been contributed by the Flutter community:
 [Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 [Flutter meets Redux: The Redux way of managing Flutter applications state]: https://medium.com/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
 [BloC Library]: https://felangel.github.io/bloc
-[Build reactive mobile apps with Flutter]: https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
 [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: https://www.youtube.com/watch?v=Wj216eSBBWs
 [Fish-Redux - An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
 [Flutter Architecture Samples]: https://fluttersamples.com/
-[Flutter: Inherited Widget and Scoped Model Explained, part 1]: https://www.youtube.com/watch?v=j-27MZwRbFw
 [Flutter: State Management with Mobx]: https://www.youtube.com/watch?v=p-MUBLOEkCs
 [Flutter Redux package]: {{site.pub-pkg}}/flutter_redux
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
-[Flutter state management&mdash;scoped model]: https://www.youtube.com/watch?v=Oql5bU-Uvso
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
 [Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
 [Making sense of all those Flutter Providers]: {{site.medium}}/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd
 [Managing Flutter Application State With InheritedWidgets]: {{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
-[Managing state with the scoped model pattern in Dart's Flutter framework]: https://www.youtube.com/watch?v=-MCeWP3rgI0
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
+[Pragmatic State Management in Flutter]: https://www.youtube.com/watch?v=d_m5csmrf7I
 [Provider package]: {{site.pub-pkg}}/provider
 [Reactive Programming - Streams - BLoC - Practical Use Cases]: https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases
-[Scoped Model package]: {{site.pub-pkg}}/scoped_model
 [Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
-[This very section]: /docs/development/data-and-backend/state-mgmt/intro
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 [You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
