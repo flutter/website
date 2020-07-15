@@ -17,13 +17,13 @@ a time. Previously, there was no assertion to guarantee that.
 ## Description of change
 
 If the code starts throwing assertion error after this change,
-it means the code has already broken even before this change.
+it means the code has already been broken even before this change.
 This change only surfaced the problem.
 
 
 ## Migration guide
 
-An example application that will start to throw exceptions.
+An example application that starts to throw exceptions.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -65,7 +65,7 @@ void main() {
 }
 ```
 
-You can fix this application by introduce your own hero controller scopes.
+You can fix this application by introducing your own hero controller scopes.
 
 ```dart
 import 'package:flutter/material.dart';
