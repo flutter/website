@@ -308,10 +308,6 @@ instead of an engine Flutter.framework.
 The App.framework and plugin frameworks are generated
 as described in Option B.
 
-{{site.alert.important}}
-  The `--cocoapods` flag is available in Flutter v1.13.6.
-{{site.alert.end}}
-
 ```sh
 flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
 ```
