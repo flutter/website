@@ -8,13 +8,34 @@
 
 ## Get the Flutter SDK {#get-sdk}
 
- 1. Download the following installation bundle to get the latest {{site.sdk.channel}} release of the
-    Flutter SDK:
+On Linux, you have two ways you can install Flutter.
+
+### Install Flutter using snapd
+
+The easiest way to install Flutter on Linux is by
+using [snapd][]. For more information,
+see [Installing snapd][].
+
+Once you have snapd, you can install Flutter
+using the [Snap Store][], or at the command line:
+
+```sh
+$ sudo snap install flutter --classic
+```
+
+### Install Flutter manually
+
+If you don't have `snapd`, or can't use it, you can
+install Flutter using the following steps.
+
+ 1. Download the following installation bundle to get the latest
+    {{site.sdk.channel}} release of the Flutter SDK:
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
     see the [SDK archive][] page.
+
  1. Extract the file in the desired location, for example:
 
     {% comment %}
@@ -33,13 +54,15 @@
     
     If you don't want to install a fixed version of the installation bundle, 
     you can skip steps 1 and 2. 
-    Instead, get the source code from the [Flutter repo][] on GitHub with the following command:
+    Instead, get the source code from the [Flutter repo][]
+    on GitHub with the following command:
     
     ```terminal
     $ git clone https://github.com/flutter/flutter.git
     ```
     
-    You can also change branches or tags as needed. For example, to get just the stable version:
+    You can also change branches or tags as needed.
+    For example, to get just the stable version:
     
     ```terminal
     $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
@@ -51,7 +74,8 @@
     $ export PATH="$PATH:`pwd`/flutter/bin"
     ```
 
-    This command sets your `PATH` variable for the _current_ terminal window only.
+    This command sets your `PATH` variable for the
+    _current_ terminal window only.
     To permanently add Flutter to your path, see
     [Update your path][].
 
@@ -110,6 +134,9 @@ command again to verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.github}}/flutter/flutter
+[Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: /docs/development/tools/sdk/archive
+[Snap Store]: https://snapcraft.io/store
+[snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
