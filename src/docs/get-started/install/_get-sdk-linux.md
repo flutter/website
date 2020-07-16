@@ -135,7 +135,7 @@ command again to verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.github}}/flutter/flutter
-[install Flutter using the Snap Store]: https://snapcraft.io/store
+[install Flutter using the Snap Store]: https://snapcraft.io/flutter
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: /docs/development/tools/sdk/archive
 [Update your path]: #update-your-path
