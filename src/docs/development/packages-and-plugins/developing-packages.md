@@ -223,10 +223,9 @@ environment:
 To create a plugin package, use the `--template=plugin`
 flag with `flutter create`.
 
-Starting from flutter 1.20.0:
-Use the `--platforms` option to specify all the platforms that the plugin
-supports. Available platforms are: android, ios, web, linux, macos and windos.
-If no platforms are specified, a plugin project supports no platforms will be created.
+As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separated list to 
+specify the platforms that the plugin supports. Available platforms are: android, ios, web, linux, macos, and windows.
+If no platforms are specified, the resulting project doesn't support any platforms.
 
 Use the `--org` option to specify your organization,
 using reverse domain name notation. This value is used
@@ -347,18 +346,22 @@ This is done using a [platform channel][],
 or through the interfaces defined in a platform
 interface package.
 
-### Add support to new platforms in an existing plugin project
+### Add support for platforms in an existing plugin project
 
-To support new platforms in an existing plugin project, run `flutter create` with
+To add support for specific platforms to an existing plugin project, run `flutter create` with
 the `--template=plugin` flag again in the project directory.
 For example, to add web support in an existing plugin, run:
 
-```
+```terminal
 $ flutter create --template=plugin --platforms=web .
 ```
 
-If successful, the terminal might show a message about updating the `pubspec.yaml`.
-Follow the instruction there to update the current `pubspec.yaml` file.
+If this command displays a message about updating the `pubspec.yaml` file,
+follow the provided instructions.
+
+{{site.alert.important}}
+  The `--platforms ` flag is available in Flutter 1.20.0.
+{{site.alert.end}}
 
 ### Testing your plugin
 
