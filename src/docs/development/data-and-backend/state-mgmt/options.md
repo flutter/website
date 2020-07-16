@@ -18,27 +18,29 @@ many of which have been contributed by the Flutter community:
 
 Things to review before selecting an approach. 
 
-* [Introduction to state management], which is the beginning of this very
-  section (for those of you who arrived directly to this _Options_ page 
+* [Introduction to state management][],
+  which is the beginning of this very section
+  (for those of you who arrived directly to this _Options_ page 
   and missed the previous pages)
-* [Pragmatic State Management in Flutter], a video from Google I/O 2019
-* [Flutter Architecture Samples], by Brian Egan
+* [Pragmatic State Management in Flutter][],
+  a video from Google I/O 2019
+* [Flutter Architecture Samples][], by Brian Egan
 
 ## Provider
 
 A recommended approach.
 
-* [Simple app state management], the previous page in this section
-* [Provider package]
-* [You might not need Redux: The Flutter edition], by Ryan Edge
-* [Making sense of all those Flutter Providers]
+* [Simple app state management][], the previous page in this section
+* [Provider package][]
+* [You might not need Redux: The Flutter edition][], by Ryan Edge
+* [Making sense of all those Flutter Providers][]
 
 ## setState
 
 The low-level approach to use for widget-specific, ephemeral state.
 
-* [Adding interactivity to your Flutter app], a Flutter tutorial
-* [Basic state management in Google Flutter], by Agung Surya
+* [Adding interactivity to your Flutter app][], a Flutter tutorial
+* [Basic state management in Google Flutter][], by Agung Surya
 
 ## InheritedWidget &amp; InheritedModel
 
@@ -46,50 +48,51 @@ The low-level approach used to communicate between ancestors and children
 in the widget tree. This is what `provider` and many other approaches
 use under the hood.
 
-* [InheritedWidget docs]
-* [Managing Flutter Application State With InheritedWidgets],
+* [InheritedWidget docs][]
+* [Managing Flutter Application State With InheritedWidgets][],
   by Hans Muller
-* [Inheriting Widgets], by Mehmet Fidanboylu
-* [Using Flutter Inherited Widgets Effectively], by Eric Windmill
-* [Widget - State - Context - InheritedWidget], by Didier Bolelens
+* [Inheriting Widgets][], by Mehmet Fidanboylu
+* [Using Flutter Inherited Widgets Effectively][], by Eric Windmill
+* [Widget - State - Context - InheritedWidget][], by Didier Bolelens
 
 ## Redux
 
 A state container approach familiar to many web developers.
 
-* [Animation Management with Redux and Flutter],
-  a video from DartConf 2018 [Accompanying article on Medium]
-* [Flutter Redux package]
-* [Introduction to Redux in Flutter], by Xavi Rigau
-* [Flutter + Redux&mdash;How to make a shopping list app],
+* [Animation Management with Redux and Flutter][],
+  a video from DartConf 2018 [Accompanying article on Medium][]
+* [Flutter Redux package][]
+* [Introduction to Redux in Flutter][], by Xavi Rigau
+* [Flutter + Redux&mdash;How to make a shopping list app][],
   by Paulina Szklarska on Hackernoon
-* [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1],
+* [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1][],
   a video by Tensor Programming
-* [Flutter Redux Thunk, an example], by Jack Wong
-* [Building a (large) Flutter app with Redux], by Hillel Coren
-* [Fish-Redux - An assembled flutter application framework based on Redux],
+* [Flutter Redux Thunk, an example][], by Jack Wong
+* [Building a (large) Flutter app with Redux][], by Hillel Coren
+* [Fish-Redux–An assembled flutter application framework based on Redux][],
   by Alibaba
-* [Async Redux - Redux without boilerplate. Allows for both sync and async reducers],
+* [Async Redux–Redux without boilerplate. Allows for both sync and async reducers][],
   by Marcelo Glasberg
-* [Flutter meets Redux: The Redux way of managing Flutter applications state], by Amir Ghezelbash
+* [Flutter meets Redux: The Redux way of managing Flutter applications state][],
+  by Amir Ghezelbash
 
 ## BLoC / Rx
 
 A family of stream/observable based patterns. 
 
-* [Architect your Flutter project using BLoC pattern],
+* [Architect your Flutter project using BLoC pattern][],
   by Sagar Suri
-* [BloC Library], by Felix Angelov
-* [Reactive Programming - Streams - BLoC - Practical Use Cases],
+* [BloC Library][], by Felix Angelov
+* [Reactive Programming - Streams - BLoC - Practical Use Cases][],
   by Didier Boelens
 
 ## MobX
 
 A popular library based on observables and reactions.
 
-* [MobX.dart, Hassle free state-management for your Dart and Flutter apps]
-* [Getting started with MobX.dart]
-* [Flutter: State Management with Mobx], a video by Paul Halliday
+* [MobX.dart, Hassle free state-management for your Dart and Flutter apps][]
+* [Getting started with MobX.dart][]
+* [Flutter: State Management with Mobx][], a video by Paul Halliday
 
 
 [Adding interactivity to your Flutter app]: /docs/development/ui/interactive
@@ -97,13 +100,13 @@ A popular library based on observables and reactions.
 [Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
 [Animation Management with Redux and Flutter]: https://www.youtube.com/watch?v=9ZkLtr0Fbgk
 [Architect your Flutter project using BLoC pattern]: {{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1
-[Async Redux - Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux/
+[Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux/
 [Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 [Flutter meets Redux: The Redux way of managing Flutter applications state]: https://medium.com/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
 [BloC Library]: https://felangel.github.io/bloc
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
 [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: https://www.youtube.com/watch?v=Wj216eSBBWs
-[Fish-Redux - An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
+[Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [Flutter: State Management with Mobx]: https://www.youtube.com/watch?v=p-MUBLOEkCs
 [Flutter Redux package]: {{site.pub-pkg}}/flutter_redux
