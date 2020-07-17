@@ -63,8 +63,15 @@ you need the following in addition to the Flutter SDK:
 * [Ninja build][]
 * [pkg-config][]
 
-Linux installation varies by distro, but
-on Ubuntu you might use the following command:
+The easiest way to install the Flutter SDK along with these dependencies is by using [snapd]. For more information, see [Installing snapd].
+
+Once you have snapd, you can install Flutter using the [Snap Store], or at the command line:
+
+```terminal
+$ sudo snap install flutter --classic
+```
+
+If snapd is unavailable on the Linux distro you're using, you might use the following command:
 
 ```terminal
 $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
@@ -415,6 +422,7 @@ for more information and ongoing updates.
 [Hardened Runtime]: https://developer.apple.com/documentation/security/hardened_runtime
 [How to write a Flutter web plugin, part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [install the Flutter and Dart plugins]: /docs/get-started/editor
+[Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
 [Linux packages]: {{site.pub}}/flutter/packages?platform=linux
 [macOS packages]: {{site.pub}}/flutter/packages?platform=macos
@@ -427,9 +435,10 @@ for more information and ongoing updates.
 [README]: {{site.github}}/flutter/gallery#flutter-gallery
 [repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [running web app]: https://flutter.github.io/gallery/#/
-[Snap Store]: https://snapcraft.io/store
 [setting up an editor]: /docs/get-started/editor
 [`shared_preferences`]: {{site.pub}}/packages/shared_preferences
+[Snap Store]: https://snapcraft.io/store
+[snapd]: https://snapcraft.io/flutter
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [using packages]: /docs/development/packages-and-plugins/using-packages
 [Visual Studio Code]: /docs/development/tools/vs-code
