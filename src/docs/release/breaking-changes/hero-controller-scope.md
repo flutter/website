@@ -5,8 +5,8 @@ description: Added additional assertions to guarantee that one hero controller s
 
 ## Summary
 
-The framework throws assertion error when it detects there are
-multiple navigators register with one hero controller scope.
+The framework throws an assertion error when it detects there are
+multiple navigators registered with one hero controller scope.
 
 ## Context
 
@@ -16,9 +16,11 @@ a time. Previously, there was no assertion to guarantee that.
 
 ## Description of change
 
-If the code starts throwing assertion error after this change,
-it means the code has already been broken even before this change.
-This change only surfaced the problem.
+If the code starts throwing assertion errors after this change,
+it means the code was already broken even before this change.
+Multiple navigators may be registered under the same hero
+controller scope, and they can not trigger hero animations when
+their route changes. This change only surfaced this problem.
 
 
 ## Migration guide
@@ -80,7 +82,7 @@ void main() {
         return Stack(
           children: <Widget>[
             HeroControllerScope(
-              controller: HeroController(createRectTween: materialRectTween),
+              controller: MaterialApp.createMaterialHeroController(),
               child: Navigator(
                 onGenerateRoute: (RouteSettings settings) {
                   return MaterialPageRoute<void>(
@@ -93,7 +95,7 @@ void main() {
               ),
             ),
             HeroControllerScope(
-              controller: HeroController(createRectTween: materialRectTween),
+              controller: MaterialApp.createMaterialHeroController(),
               child: Navigator(
                 onGenerateRoute: (RouteSettings settings) {
                   return MaterialPageRoute<void>(
@@ -110,10 +112,6 @@ void main() {
       }
     )
   );
-}
-
-RectTween materialRectTween(Rect begin, Rect end) {
-  return MaterialRectArcTween(begin: begin, end: end);
 }
 ```
 
