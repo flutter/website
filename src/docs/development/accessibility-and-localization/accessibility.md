@@ -52,7 +52,7 @@ we recommend using automated accessibility scanners:
        Flutter app to inspect their accessibility attributes
     1. In the Accessibility Inspector,
        select **Audit** in the toolbar, and then
-       select **Run Audio** to get a report of potential issues
+       select **Run Audit** to get a report of potential issues
 
 ## Large fonts
 
