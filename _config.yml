@@ -101,8 +101,6 @@ toc:
 
 ## Site-wide shorthands
 
-os-list: [Windows, macOS, Linux]
-
 alert:
   bonus: >-
     <aside class="alert alert-info" role="alert" markdown="1">
