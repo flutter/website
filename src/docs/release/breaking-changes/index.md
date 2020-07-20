@@ -37,6 +37,7 @@ release, and listed in alphabetical order:
 * [Adding TextInputClient.currentAutofillScope][]
 * [Reversing the dependency between the scheduler and services layer][]
 * [Dialogs' Default BorderRadius][]
+* [More Strict Assertions in the Navigator and the Hero Controller Scope][]
 * [Semantics Order of the Overlay Entries in Modal Routes][]
 * [showAutocorrectionPromptRect method added to TextInputClient][]
 * [TextField requires MaterialLocalizations][]
@@ -58,6 +59,7 @@ release, and listed in alphabetical order:
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images
 [MouseTracker moved to rendering]: /docs/release/breaking-changes/mouse-tracker-moved-to-rendering
 [MouseTracker no longer attaches annotations]: /docs/release/breaking-changes/mouse-tracker-no-longer-attaches-annotations
+[More Strict Assertions in the Navigator and the Hero Controller Scope]: /docs/release/breaking-changes/hero-controller-scope
 [Nullable CupertinoTheme.brightness]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
 [Rebuild optimization for OverlayEntries and Routes]: /docs/release/breaking-changes/overlay-entry-rebuilds
 [Reversing the dependency between the scheduler and services layer]: /docs/release/breaking-changes/services-scheduler-dependency-reversed
