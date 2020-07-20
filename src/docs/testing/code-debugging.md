@@ -154,7 +154,7 @@ class AppHome extends StatelessWidget {
 }
 ```
 
-The prevous app outputs something like the following
+The previous app outputs something like the following
 (the precise details vary by the version of the framework,
 the size of the device, and so forth):
 
