@@ -96,7 +96,7 @@ $ flutter upgrade
 $ flutter config --enable-<platform>-desktop
 ```
 
-Where _<platform>_ is either `macos` or `linux`:
+Where _&lt;platform&gt;_ is either `macos` or `linux`:
 
 ```terminal
 $ flutter config --enable-macos-desktop
