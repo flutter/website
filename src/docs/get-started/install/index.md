@@ -14,8 +14,10 @@ Select the operating system on which you are installing Flutter:
   <a class="card" href="/docs/get-started/install/{{os | remove: ' ' | downcase}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
-        <span class="d-block text-nowrap">{{os}}</span>
-        <i class="fab fa-{{os | downcase}}"></i>
+        <span class="d-block h1">
+          <i class="fab fa-{{os | downcase}}"></i>
+        </span>
+        <span class="text-muted text-nowrap">{{os}}</span>
       </header>
     </div>
   </a>
