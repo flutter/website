@@ -223,6 +223,10 @@ environment:
 To create a plugin package, use the `--template=plugin`
 flag with `flutter create`.
 
+As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separated list to 
+specify the platforms that the plugin supports. Available platforms are: `android`, `ios`, `web`, `linux`, `macos`, and `windows`.
+If no platforms are specified, the resulting project doesn't support any platforms.
+
 Use the `--org` option to specify your organization,
 using reverse domain name notation. This value is used
 in various package and bundle identifiers in the
@@ -232,16 +236,16 @@ Use the `-a` option to specify the language for android or the `-i` option to
 specify the language for ios. Please choose **one** of the following:
 
 ```terminal
-$ flutter create --org com.example --template=plugin -a kotlin hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios -a kotlin hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin -a java hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios -a java hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin -i objc hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios -i objc hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin -i swift hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios -i swift hello
 ```
 
 This creates a plugin project in the `hello` folder
@@ -268,10 +272,10 @@ you can specify the iOS language using `-i` and the
 Android language using `-a`. For example:
 
 ```terminal
-$ flutter create --template=plugin -i objc hello
+$ flutter create --template=plugin --platforms=android,ios -i objc hello
 ```
 ```terminal
-$ flutter create --template=plugin -a java hello
+$ flutter create --template=plugin --platforms=android,ios -a java hello
 ```
 
 ### Step 2: Implement the package {#edit-plugin-package}
@@ -341,6 +345,23 @@ the platform-specific implementations.
 This is done using a [platform channel][],
 or through the interfaces defined in a platform
 interface package.
+
+### Add support for platforms in an existing plugin project
+
+To add support for specific platforms to an existing plugin project, run `flutter create` with
+the `--template=plugin` flag again in the project directory.
+For example, to add web support in an existing plugin, run:
+
+```terminal
+$ flutter create --template=plugin --platforms=web .
+```
+
+If this command displays a message about updating the `pubspec.yaml` file,
+follow the provided instructions.
+
+{{site.alert.important}}
+  The `--platforms ` flag is available in Flutter 1.20.0.
+{{site.alert.end}}
 
 ### Testing your plugin
 
