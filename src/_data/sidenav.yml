@@ -331,6 +331,8 @@
       permalink: /docs/resources/faq
     - title: Design Documents
       permalink: /docs/resources/design-docs
+    - title: Creating useful bug reports
+      permalink: /docs/resources/bug-reports
 
 - title: Reference
   expanded: true
