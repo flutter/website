@@ -239,9 +239,9 @@ You can also define custom snippets by executing
 ### Keyboard shortcuts
 
 **Hot reload**
-: During a debug session, clicking the **Restart** button on the
-  **Debug Toolbar**, or pressing `Ctrl`+`Shift`+`F5`
-  (`Cmd`+`Shift`+`F5` on macOS) performs a hot reload.
+: During a debug session, clicking the **Hot Reload** button on the
+  **Debug Toolbar**, or pressing `Ctrl`+`F5`
+  (`Cmd`+`F5` on macOS) performs a hot reload.
 
   Keyboard mappings can be changed by executing the
   **Open Keyboard Shortcuts** command from the [Command Palette][].
@@ -261,7 +261,7 @@ A few types of code changes cannot be hot reloaded though:
 For these changes, fully restart your application without
 having to end your debugging session. To perform a hot restart,
 run the **Flutter: Hot Restart** command from the
-[Command Palette][], or press `Ctrl`+`F5`.
+[Command Palette][], or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
 
 ## Troubleshooting
 
