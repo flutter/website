@@ -238,7 +238,7 @@ You can also define custom snippets by executing
 
 ### Keyboard shortcuts
 
-**Hot Reload**
+**Hot reload**
 : During a debug session, clicking the **Hot Reload** button on the
   **Debug Toolbar**, or pressing `Ctrl`+`F5`
   (`Cmd`+`F5` on macOS) performs a hot reload.
@@ -246,7 +246,7 @@ You can also define custom snippets by executing
   Keyboard mappings can be changed by executing the
   **Open Keyboard Shortcuts** command from the [Command Palette][].
 
-### Hot Reload vs. Hot Restart
+### Hot reload vs. hot restart
 
 Hot reload works by injecting updated source code files into the
 running Dart VM (Virtual Machine). This includes not only
