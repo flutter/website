@@ -225,7 +225,8 @@
       { "source": "/go/scalable-flutter-infrastructure", "destination": "https://docs.google.com/document/d/19GEUwAwJbNI-gO9ziV_oDESB28E_Pqppwx8ku9jdEqY", "type": 301 },
       { "source": "/go/fallback-image-decoding", "destination": "https://docs.google.com/document/d/1G-5s6uoP1H_7f_ByLrvCVcoFXYZ80CixkMbbHMsMCag/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-web-scenelets", "destination": "https://docs.google.com/document/d/1GUAx3aqdtEoaBMTNpsS1-i59QZlwTi6vUCASbaanPCo", "type": 301 },
-      { "source": "/go/text-selection-theme", "destination": "https://docs.google.com/document/d/1sCe7Y_lhREljtn6m0Uu_EycbS82zRvWnNtkfEwFX9W0", "type": 301 }
+      { "source": "/go/text-selection-theme", "destination": "https://docs.google.com/document/d/1sCe7Y_lhREljtn6m0Uu_EycbS82zRvWnNtkfEwFX9W0", "type": 301 },
+      { "source": "/go/scaffold-messenger", "destination": "https://docs.google.com/document/d/1TCH0T-X42z96lAcSkFttHAQMJ0MsvMojDKa6F4IQI3Y/edit?usp=sharing", "type": 301 }
     ]
   }
 }
