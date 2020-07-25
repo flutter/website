@@ -33,8 +33,8 @@
     Mac, Windows, and the web.
   logo_src: showcase/cards/tnyt-logo.png
   logo_has_name: true
-  learn_more_cta: Try it now
-  learn_more_link: https://www.nytimes.com/games/prototype/kenken#/
+  learn_more_cta: Learn More
+  learn_more_link: https://youtu.be/LoLqSbV1ELU?t=3290
   card_image: showcase/cards/tnyt-top@.jpg
 
 - name: Square
