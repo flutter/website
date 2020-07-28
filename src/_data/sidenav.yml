@@ -101,7 +101,6 @@
               permalink: /docs/development/ui/advanced/gestures
             - title: Splash screens
               permalink: /docs/development/ui/advanced/splash-screen
-        - title: Platform-specific theming
         - title: Widget catalog
           permalink: /docs/development/ui/widgets
     - title: Data & backend

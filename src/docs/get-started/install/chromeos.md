@@ -14,7 +14,7 @@ next:
 To install and run Flutter, your development environment
 must meet these minimum requirements:
 
-* **Operating Systems**: Linux (64-bit)
+* **Operating Systems**: Chrome OS (64-bit) with [Linux (Beta)][] turned on
 * **Disk Space**: 600 MB (does not include disk space for IDE/tools).
 * **Tools**: Flutter depends on these command-line
   tools being available in your environment.
@@ -31,47 +31,17 @@ must meet these minimum requirements:
   * `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on
      Ubuntu/Debian
 
-For the best experience right now, you should put your
-Chrome OS Device into developer mode (this is necessary
-to push apps on the Chrome OS Device).  For more information,
-see [how to enable developer mode on your Chromebook][].
-
-{% include_relative _get-sdk.md %}
+{% include_relative _get-sdk-chromeos.md %}
 
 {% include_relative _path-linux-chromeos.md %}
 
-{% include_relative _chromeos-android-sdk-setup.md %}
+{% include_relative _android-setup-chromeos.md %}
 
 ## Next step
 
 Set up your preferred editor.
 
 ## Flutter & Chrome OS tips & tricks
-
-Wondering how to run your app? On Chrome OS,
-you can either connect your phone
-or push directly to the Android container on device.
-To do that you must enable Developer mode on your machine,
-and then connect to the local container with ADB:
-
-```terminal
-$ adb connect 100.115.92.2:5555
-```
-
-Want to build your first app optimized for Chrome OS?
-Clone the flutter-samples repo and build our specific Chrome
-OS Best Practices example:
-
-```terminal
-$ git clone https://github.com/flutter/samples
-$ cd samples/chrome-os-best-practices
-$ flutter run
-```
-
-Wondering how to access your favorite F-Key shortcuts
-on the Chrome OS keyboard?
-
-* Press the search key along with 1 through = to access F1–F12.
 
 For the current versions of Chrome OS, only certain ports from
 Crostini are exposed to the rest of the environments.
@@ -85,8 +55,13 @@ $ cd path/to/your/app
 $ flutter run --observatory-port=8080
 ```
 
-Then, navigate to http://localhost:8000/?port=8080
-in your Chrome browser.
+Then, navigate to http://127.0.0.1:8000/#
+in your Chrome browser and enter the URL to your
+application. The last `flutter run` command you
+just ran should output a URL similar to the format
+of `http://127.0.0.1:8080/auth_code=/`. Use this URL
+and select "Connect" to start the Flutter DevTools
+for your Android app.
 
 #### Flutter Chrome OS lint analysis
 
@@ -133,5 +108,4 @@ this functionality work with your Chrome OS
 targeted Flutter app.
 
 
-[how to enable developer mode on your Chromebook]: https://chromium.googlesource.com/chromiumos/docs/+/master/developer_mode.md
-
+[Linux (Beta)]: https://support.google.com/chromebook/answer/9145439
