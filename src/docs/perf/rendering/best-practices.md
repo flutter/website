@@ -23,7 +23,7 @@ performant on the web:
 
 
 [Flutter Gallery]: https://gallery.flutter.dev/#/
-[web-perf-1]: {{site.medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[web-perf-1]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [web-perf-2]: {{site.medium}}/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [web-perf-3]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
 
