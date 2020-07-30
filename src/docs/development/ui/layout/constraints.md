@@ -1771,7 +1771,7 @@ the tight constraints it got from its parent
 Knowing the general layout rule is necessary, but it’s not enough.
 
 Each widget has a lot of freedom when applying the general rule,
-so there is no way of knowing what might do by just reading
+so there is no way of knowing what it will do by just reading
 the widget’s name.
 
 If you try to guess, you’ll probably guess wrong.
