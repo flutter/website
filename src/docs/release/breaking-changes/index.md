@@ -45,6 +45,7 @@ release, and listed in alphabetical order:
 * [The Route Transition record and Transition delegate updates][]
 * [TestWidgetsFlutterBinding.clock][]
 * [Material Chip button semantics][]
+* [Android v1 embedding app and plugin creation deprecation][]
 
 [Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding 'linux' and 'windows' to TargetPlatform enum]: /docs/release/breaking-changes/target-platform-linux-windows
@@ -52,7 +53,7 @@ release, and listed in alphabetical order:
 [Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
 [breaking change policy]: /docs/resources/compatibility
 [Container color optimization]: /docs/release/breaking-changes/container-color
-[Dialogs' Default BorderRadius]:/docs/release/breaking-changes/dialog-border-radius 
+[Dialogs' Default BorderRadius]:/docs/release/breaking-changes/dialog-border-radius
 [CupertinoTabBar requires Localizations parent]: /docs/release/breaking-changes/cupertino-tab-bar-localizations
 [Generic type of ParentDataWidget changed to ParentData]: /docs/release/breaking-changes/parent-data-widget-generic-type
 [ImageCache and ImageProvider changes]: /docs/release/breaking-changes/image-cache-and-provider
@@ -76,3 +77,4 @@ release, and listed in alphabetical order:
 [The Route Transition record and Transition delegate updates]: /docs/release/breaking-changes/route-transition-record-and-transition-delegate
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
+[Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
