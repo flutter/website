@@ -30,7 +30,7 @@ a breaking change?"
 `BottomNavigationBarItem`s `title` parameter was deprecated in favor of `label`. This change was 
 necessary to improve the user experience of `BottomNavigationBar`s when the text scale factor is 
 increased. Items in a `BottomNavigationBar` now show tooltips on long press. Accomplishing this 
-required a `String` parameter on `BottomNavigationBarItem`s.
+requires a `String` parameter on `BottomNavigationBarItem`s.
 
 
 ## Description of change
