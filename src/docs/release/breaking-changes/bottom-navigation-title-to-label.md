@@ -43,7 +43,7 @@ with code samples showing how the API changed.
 The `BottomNavigationBarItem` class has a `title` parameter, which is a `Widget`. This made it 
 impossible for the `BottomNavigationBar` to show `Tooltip` widgets, a change which was necessary to 
 improve the accessibility experience. Now, instead of taking `BottomNavigationBarItem.title` widget 
-and building it, `BottomNavigationBar` will wrap `BottomNavigationBarItem.label`, wrap it in a 
+and building it, `BottomNavigationBar` will take `BottomNavigationBarItem.label`, wrap it in a 
 `Text` widget, and build that.
 
 ## Migration guide
