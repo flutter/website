@@ -45,6 +45,7 @@ release, and listed in alphabetical order:
 * [The Route Transition record and Transition delegate updates][]
 * [TestWidgetsFlutterBinding.clock][]
 * [Material Chip button semantics][]
+* [Bottom Navigation Item Title][]
 
 [Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding 'linux' and 'windows' to TargetPlatform enum]: /docs/release/breaking-changes/target-platform-linux-windows
@@ -76,3 +77,4 @@ release, and listed in alphabetical order:
 [The Route Transition record and Transition delegate updates]: /docs/release/breaking-changes/route-transition-record-and-transition-delegate
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
+[Bottom Navigation Item Title]: /docs/release/breaking-changes/bottom-navigation-title-to-label.md
