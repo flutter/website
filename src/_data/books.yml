@@ -40,6 +40,13 @@
   cover: flutter-succinctly.png
   link: "https://www.syncfusion.com/ebooks/flutter-succinctly"
   desc: "App UI in Flutter-from Zero to Hero."
+- title: 'Learn Google Flutter Fast'
+  authors:
+    - Mark Clow
+  publisher: Self-published
+  cover: learn-google-flutter-fast.jpg
+  link: "https://www.amazon.com/Learn-Google-Flutter-Fast-Example/dp/1092297375"
+  desc: "Learn Google Flutter by example. Over 65 example mini-apps."
 - title: 'Google Flutter Mobile Development Quick Start Guide'
   authors:
     - Prajyot Mainkar
@@ -48,13 +55,6 @@
   cover: google-flutter-mobile-development-quick-start-guide.jpg
   link: "https://www.amazon.com/Google-Flutter-Mobile-Development-Quick/dp/1789344964"
   desc: "A fast-paced guide to get you started with cross-platform mobile application development with Google Flutter"
-- title: 'Learn Google Flutter Fast'
-  authors:
-    - Mark Clow
-  publisher: Self-published
-  cover: learn-google-flutter-fast.jpg
-  link: "https://www.amazon.com/Learn-Google-Flutter-Fast-Example/dp/1092297375"
-  desc: "Learn Google Flutter by example. Over 65 example mini-apps."
 - title: 'Practical Flutter'
   authors:
     - Frank Zammetti
