@@ -498,7 +498,9 @@ lazily, on demand.
         return ListView.builder(
             padding: EdgeInsets.all(16.0),
             itemBuilder: /*1*/ (context, i) {
-              if (i.isOdd) return Divider(); /*2*/
+              if (i.isOdd) return Divider(
+                thickness: 1,
+              ); /*2*/
 
               final index = i ~/ 2; /*3*/
               if (index >= _suggestions.length) {
