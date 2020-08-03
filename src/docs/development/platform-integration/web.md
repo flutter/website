@@ -61,16 +61,15 @@ You can [file an issue][] on the main Flutter repo.
 Make sure that "web" is included in the title.
 
 ### Which web browser does Flutter support?
-We plan to support modern browsers for both mobile and desktop. 
 Today Flutter web apps can run on the following browsers:
 
-Chrome(mobile & desktop)
+Chrome (mobile & desktop)
 Safari (mobile & desktop)
-Edge(mobile & desktop)
+Edge (mobile & desktop)
 Firefox (desktop)
 
 During development, Chrome is the default browser for running your app. 
-In order to test your web app on other browsers use Web server option to get a URL serving the app.
+In order to test your web app on other browsers use the `Web server` device option to get a URL serving the app.
 Learn more on how to [run your web apps in any supported browser][]
 
 ### How do I refresh the app running in the browser?
