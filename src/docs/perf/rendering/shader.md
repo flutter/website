@@ -6,7 +6,7 @@ description: What is shader jank and how to minimize it.
 
 If the animations on your mobile app appear to be janky,
 but only on the first run, you can _warm up_ the
-shader for the Skia Shader Language (SkSL) for a
+shader captured in the Skia Shader Language (SkSL) for a
 significant improvement.
 
 ![Side-by-side screenshots of janky mobile app next to non-janky app]({% asset perf/render/shader-jank.gif @path %}){:width="100%"}
@@ -36,11 +36,12 @@ See the following screenshot for an example timeline tracing.
 ## What do we mean by "first run"?
 
 On Android, "first run" means that the user might see
-jank the first time opening the app. Subsequent opens
-should be fine.
+jank the first time opening the app after a fresh
+installation. Subsequent runs should be fine.
 
 On iOS, "first run" means that the user might see
-jank the first time the user opens the app from scratch.
+jank when an animation first occurs every time
+the user opens the app from scratch.
 
 ## How to use SkSL warmup
 
@@ -103,9 +104,9 @@ before and after the SkSL warm-up. Even better, you can put
 those tests into a CI (continuous integration) system so the
 SkSLs are generated and tested automatically over the lifetime of an app.
 
-Take [Flutter Gallery][] as an example. The CI system is set up to
-generate SkSLs for every Flutter commit, and verifies the performance,
-in the [`transitions_perf_test.dart`][] test.
+Take the original version of [Flutter Gallery][] as an example.
+The CI system is set up to generate SkSLs for every Flutter commit,
+and verifies the performance, in the [`transitions_perf_test.dart`][] test.
 For more details, see the [`flutter_gallery_sksl_warmup__transition_perf`][]
 and [`flutter_gallery_sksl_warmup_ios32__transition_perf`][] tasks.
 
@@ -137,7 +138,7 @@ and [`flutter_gallery_sksl_warmup_ios32__transition_perf`][] tasks.
    Theoretically, there's no guarantee that the SkSLs from one device
    would help on another device (but they also won't cause any troubles
    if SkSLs aren't compatible across devices).
-   Practically, as shown in the table on this [SkSL-based warmup PR][],
+   Practically, as shown in the table on this [SkSL-based warmup issue][],
    SkSLs work surprisingly well
    even if 1) SkSLs are captured from iOS and then applied to Android devices,
    or 2) SkSLs are captured from emulators and then applied to real mobile
@@ -145,10 +146,11 @@ and [`flutter_gallery_sksl_warmup_ios32__transition_perf`][] tasks.
    we currently don't have enough data to provide a big picture of cross-device
    helpfulness. We'd love you to provide us more data points to see how it
    works in the wild. ([`FrameTiming`][] can be used to compute the worst frame
-   rasterization time in release mode.)
+   rasterization time in release mode; the worst frame rasterization time is
+   a good indicator on how severe the shader compilation jank is.)
 
 [`FrameTiming`]: {{site.api}}/flutter/dart-ui/FrameTiming-class.html
-[SkSL-based warmup PR]: {{site.github}}/flutter/flutter/issues/53607#issuecomment-608587484
+[SkSL-based warmup issue]: {{site.github}}/flutter/flutter/issues/53607#issuecomment-608587484
 
 3. **SkSL warm-up doesn't help newer iPhones using Metal.**<br>
    Flutter recently migrated from OpenGL to Metal for all newer iOS
@@ -164,8 +166,12 @@ and [`flutter_gallery_sksl_warmup_ios32__transition_perf`][] tasks.
 [GitHub issue]: {{site.github}}/flutter/flutter/issues
 [Issue 61045]: {{site.github}}/flutter/flutter/issues/61045
 
-If you have any questions or suggestions on warm-up in general,
+If you have questions on shader warm-up,
 please comment on [Issue 60313][] and [Issue 53607][].
+If you have general warm-up questions, please refer to
+[Issue 32170][].
 
+[Issue 32170]: {{site.github}}/flutter/flutter/issues/32170
 [Issue 53607]: {{site.github}}/flutter/flutter/issues/53607
 [Issue 60313]: {{site.github}}/flutter/flutter/issues/60313
+
