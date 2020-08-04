@@ -89,8 +89,11 @@ many others:
 * [GitHub Pages][]
 * [Google Cloud Hosting][]
 
-In future, we plan to generate PWA configuration files
-to support Progressive Web Apps.
+## PWA Support
+By default Flutter template for web apps now includes support for the core features needed for an installable, offline-capable PWA app.
+Flutter-based PWAs can be installed in the same way as any other web-based PWA; the settings signaling that your Flutter app is a PWA are provided by manifest.json, which is produced by flutter create in the web/ subfolder.
+
+PWA support remains a work in progress, so please give us feedback if you see something that doesn’t look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Firebase Hosting]: https://firebase.google.com/docs/hosting
