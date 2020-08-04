@@ -17,20 +17,30 @@ If an app has janky animations during the first run,
 and later becomes smooth for the same animation,
 then it's very likely due to shader compilation jank.
 
-More technically, a shader is a piece of program that runs on
+More technically, a shader is a piece of code that runs on
 a GPU (graphics processing unit).
-When a shader is first used, it needs to be compiled.
+When a shader is first used, it needs to be compiled on the device.
 The compilation could cost up to a few hundred milliseconds
 whereas a smooth frame needs to be drawn within 16 milliseconds
 for a 60 fps (frame-per-second) display.
 Therefore, a compilation could cause tens of frames to be missed,
 and drop the fps from 60 to 6. This is _compilation jank_.
+After the compilation is complete, the animation should be smooth.
+
 Definitive evidence for the presence of shader compilation jank
 is to see `GrGLProgramBuilder::finalize` in the tracing.
 See the following screenshot for an example timeline tracing.
 
 ![A tracing screenshot verifying jank]({% asset perf/render/tracing.png @path %}){:width="100%"}
 
+## What do we mean by "first run"?
+
+On Android, "first run" means that the user might see
+jank the first time opening the app. Subsequent opens
+should be fine.
+
+On iOS, "first run" means that the user might see
+jank the first time the user opens the app from scratch.
 
 ## How to use SkSL warmup
 
@@ -117,7 +127,7 @@ and [`flutter_gallery_sksl_warmup_ios32__transition_perf`][] tasks.
    shaders based on a lot of parameters at runtime
    (for example, draws, device models, and driver versions).
    Due to all possible combinations of those parameters,
-   the number of possible shaders is unfortunately exponential.
+   the number of possible shaders is exponential.
    In short, Flutter uses programs (app, Flutter, and Skia code)
    to generate some other programs (shaders). The number of possible
    shader programs that Flutter can generate is simply too large.
