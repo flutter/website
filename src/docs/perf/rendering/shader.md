@@ -9,7 +9,7 @@ but only on the first run, you can _warm up_ the
 shader captured in the Skia Shader Language (SkSL) for a
 significant improvement.
 
-![Side-by-side screenshots of janky mobile app next to non-janky app]({% asset perf/render/shader-jank.gif @path %}){:width="100%"}
+![Side-by-side screenshots of janky mobile app next to non-janky app]({% asset perf/render/shader-jank.gif @path %})
 
 ## What is shader compilation jank?
 
@@ -31,7 +31,7 @@ Definitive evidence for the presence of shader compilation jank
 is to see `GrGLProgramBuilder::finalize` in the tracing.
 See the following screenshot for an example timeline tracing.
 
-![A tracing screenshot verifying jank]({% asset perf/render/tracing.png @path %}){:width="100%"}
+![A tracing screenshot verifying jank]({% asset perf/render/tracing.png @path %})
 
 ## What do we mean by "first run"?
 
