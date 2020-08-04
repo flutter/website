@@ -17,11 +17,11 @@ where time might be better spent on code behavior rather than code style.
 
 Install the `Dart` plugin (see [Editor setup](/docs/get-started/editor))
 to get automatic formatting of code in Android Studio and IntelliJ.
-
-To automatically format the code in the current source code window,
-right-click in the code window and select `Reformat Code with dartfmt`.
-You can add a keyboard shortcut to this in Keymap section of IntelliJ
-Preferences.
+To automatically format your code in the current source code window,
+use `Cmd+Alt+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
+Android Studio and IntelliJ also provides a check box named `Format code on save` on
+the Flutter page in Preferences (on Mac) or Settings (on Windows and Linux)
+which will format the current file automatically when you save it.
 
 ## Automatically formatting code in VS Code
 

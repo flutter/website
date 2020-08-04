@@ -101,7 +101,6 @@
               permalink: /docs/development/ui/advanced/gestures
             - title: Splash screens
               permalink: /docs/development/ui/advanced/splash-screen
-        - title: Platform-specific theming
         - title: Widget catalog
           permalink: /docs/development/ui/widgets
     - title: Data & backend
@@ -124,7 +123,6 @@
           permalink: /docs/development/data-and-backend/networking
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
-        - title: Back-end services
         - title: Firebase
           permalink: /docs/development/data-and-backend/firebase
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
@@ -212,6 +210,8 @@
               permalink: /docs/development/tools/devtools/memory
             - title: Performance view
               permalink: /docs/development/tools/devtools/performance
+            - title: Network view
+              permalink: /docs/development/tools/devtools/network
             - title: Debugger
               permalink: /docs/development/tools/devtools/debugger
             - title: Logging view
@@ -299,6 +299,8 @@
       permalink: /docs/deployment/android
     - title: Build and release an iOS app
       permalink: /docs/deployment/ios
+    - title: Build and release a Linux app
+      permalink: /docs/deployment/linux
     - title: Build and release a web app
       permalink: /docs/deployment/web
     - title: Continuous deployment
@@ -328,6 +330,8 @@
       permalink: /docs/resources/faq
     - title: Design Documents
       permalink: /docs/resources/design-docs
+    - title: Creating useful bug reports
+      permalink: /docs/resources/bug-reports
 
 - title: Reference
   expanded: true

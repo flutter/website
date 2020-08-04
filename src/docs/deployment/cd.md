@@ -155,7 +155,7 @@ secrets in pull requests that you accept and merge.
     * See [fastlane CI documentation][] for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.
-         * For Android, make sure the Android SDK is available and the `ANDROID_HOME`
+         * For Android, make sure the Android SDK is available and the `ANDROID_SDK_ROOT`
            path is set.
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
          * Make sure the Flutter SDK is available and set in `PATH`.
@@ -180,6 +180,7 @@ the delivery of your application.
 
 * [Codemagic CI/CD for Flutter][]
 * [Flutter CI/CD with Bitrise][]
+* [Appcircle CI/CD for Flutter][]
 * [GitHub Actions- CI/CD on GitHub][]
   Get an [Example Project][]
 
@@ -188,6 +189,7 @@ the delivery of your application.
 [Cirrus]: https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables
 [Cirrus script]: {{site.github}}/flutter/flutter/blob/master/.cirrus.yml
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
+[Appcircle CI/CD for Flutter]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Example Project]: {{site.github}}/nabilnalakath/flutter-githubaction
 [fastlane]: https://docs.fastlane.tools
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/

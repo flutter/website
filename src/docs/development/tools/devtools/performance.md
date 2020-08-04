@@ -4,7 +4,7 @@ description: Learn how to use the DevTools performance view.
 ---
 
 {{site.alert.note}}
-  The performance view works with mobile apps only.
+  The performance view works with Dart CLI and mobile apps only.
   Use Chrome DevTools to [analyze performance][]
   of a web app.
 {{site.alert.end}}
@@ -12,7 +12,7 @@ description: Learn how to use the DevTools performance view.
 ## What is it?
 
 The performance view allows you to record and profile a
-session from your Dart application.
+session from your Dart or Flutter application.
 
 {{site.alert.note}}
   **If you are running a Flutter application,
@@ -20,6 +20,9 @@ session from your Dart application.
   CPU profiles are not indicative of release performance
   unless your Flutter application is run in profile mode.
 {{site.alert.end}}
+
+<!-- TODO(kenz): this is the same information that is in the Timeline page.
+Consolidate somehow. -->
 
 ## CPU Profiler
 
@@ -112,8 +115,8 @@ In this table, a method can be expanded to show its _callers_.
     (the callers in the CPU profile), this is the self time
     of the callee when being called by the caller.
     In the following example, the self time of the caller
-    `Element.updateSlotForChild.visit()` is equal to the self time of
-    the callee `[Stub] OneArgCheckInLineCache` when being called by
+    `createRenderObject` is equal to the self time of
+    the callee `debugCheckHasDirectionality` when being called by
     the caller.
 
 <dt markdown="1">**Method**</dt>

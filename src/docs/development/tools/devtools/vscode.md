@@ -13,7 +13,7 @@ the [Flutter extension][].
 
 Start a debug session for your application by opening the root
 folder of your project (the one containing `pubspec.yaml`)
-in VS Code and clicking **Debug > Start Debugging** (`F5`).
+in VS Code and clicking **Run > Start Debugging** (`F5`).
 
 ## Launch DevTools
 
@@ -27,15 +27,14 @@ The first time you run this (and subsequently when the DevTools package
 is updated), you are prompted to activate or upgrade DevTools.
 
 ![Screenshot showing Active DevTools command]({% asset tools/vs-code/vscode_install_prompt.png @path %}){:width="100%"}
-<br><center>Clicking the **Activate/Upgrade** button uses
-`pub global activate` to activate the DevTools package for you</center>
 
-Next, DevTools launches in your browser and automatically connects
-to your debug session.
+Clicking the **Open** button uses `pub global activate` to activate
+the DevTools package for you. Next, DevTools launches in your browser and
+automatically connects to your debug session.
 
 ![Screenshot showing DevTools in a browser]({% asset tools/vs-code/vscode_show_in_browser.png @path %}){:width="100%"}
 
-While the DevTools are active, you'll see them in the status bar
+While DevTools is active, you'll see them in the status bar
 of VS Code. If you've closed the browser tab,
 you can click the status bar to re-launch your browser, so long
 as there's still a suitable Dart/Flutter debugging session available.

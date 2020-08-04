@@ -7,8 +7,7 @@ description: A technical overview of Flutter.
 
 Flutter is an app SDK for building high-performance,
 high-fidelity apps for iOS, Android, web
-([beta](https://flutter.dev/web)),
-and desktop ([technical preview](https://flutter.dev/desktop))
+([beta](/web)), and desktop ([technical preview](/desktop))
 from a single codebase.
 
 The goal is to enable developers to deliver high-performance
@@ -18,13 +17,12 @@ icons, and more.
 
 <object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
-This is a demo app from the [Flutter Gallery][],
-a collection of Flutter sample apps you can run after
-installing Flutter and setting up your environment.
+This is a demo app from the Flutter Gallery ([running app][]
+and [repo][]), a collection of Flutter sample apps.
 Shrine has high-quality scrolling images,
 interactive cards, buttons, dropdown lists, and a shopping cart page.
 To look at the single codebase for this and more examples,
-[visit our GitHub repository][].
+[visit our examples GitHub repository][].
 
 No mobile development experience is required to get started.
 Apps are written in [Dart][], which looks familiar if you've used a
@@ -36,19 +34,20 @@ but even non-programmers have made Flutter apps!
 
 What are some advantages of Flutter? It helps you:
 
-*   Be highly productive
-    *   Develop for iOS and Android from a single codebase
-    *   Do more with less code, even on a single OS, with a modern, expressive
-        language and a declarative approach
-    *   Prototype and iterate easily
-        *   Experiment by changing code and reloading as your app runs
-            (with hot reload)
-        *   Fix crashes and continue debugging from where the app left off
-*   Create beautiful, highly-customized user experiences
-    *   Benefit from a rich set of Material Design and Cupertino (iOS-flavor)
-        widgets built using Flutter's own framework
-    *   Realize custom, beautiful, brand-driven designs, without the
-        limitations of OEM widget sets
+* Be highly productive
+  * Develop for iOS and Android from a single codebase
+  * Do more with less code, even on a single OS,
+    with a modern, expressive
+    language and a declarative approach
+  * Prototype and iterate easily
+    * Experiment by changing code and reloading as your app runs
+      (with hot reload)
+    * Fix crashes and continue debugging from where the app left off
+* Create beautiful, highly-customized user experiences
+  * Benefit from a rich set of Material Design and Cupertino (iOS-flavor)
+    widgets built using Flutter's own framework
+  * Realize custom, beautiful, brand-driven designs, without the
+    limitations of OEM widget sets
 
 ## Core principles
 
@@ -67,10 +66,10 @@ Flutter has a consistent, unified object model: the widget.
 
 A widget can define:
 
-*   a structural element (like a button or menu)
-*   a stylistic element (like a font or color scheme)
-*   an aspect of layout (like padding)
-*   and so on...
+* a structural element (like a button or menu)
+* a stylistic element (like a font or color scheme)
+* an aspect of layout (like padding)
+* and so on...
 
 Widgets form a hierarchy based on composition.
 Each widget nests inside, and inherits properties from,
@@ -251,11 +250,10 @@ Flutter's [code of conduct][].
 [`DecoratedBox`]: {{site.api}}/flutter/widgets/DecoratedBox-class.html
 [Discord]: https://discord.gg/N7Yshp4
 [tech preview]: /web
-[examples]: {{site.github}}/flutter/samples/blob/master/INDEX.md
+[examples]: https://flutter.github.io/samples
 [@flutterdev]: https://twitter.com/flutterdev
 [fully concrete widgets]: {{site.api}}/flutter/widgets/RenderObjectWidget-class.html
 [Flutter tutorials]: /docs/reference/tutorials
-[Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [flutter-dev]: {{site.groups}}/d/forum/flutter-dev
 [GitHub]: {{site.github}}/flutter/flutter/issues
@@ -266,6 +264,8 @@ Flutter's [code of conduct][].
 [`LimitedBox`]: {{site.api}}/flutter/widgets/LimitedBox-class.html
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [MyApp template]: {{site.github}}/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl
+[repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
+[running app]: https://gallery.flutter.dev/
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
 [Stack Overflow]: {{site.so}}/tags/flutter
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
@@ -276,4 +276,4 @@ Flutter's [code of conduct][].
 [tour of the widget framework]: /docs/development/ui/widgets-intro
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
 [various]: {{site.api}}/flutter/material/IconButton-class.html
-[visit our GitHub repository]: {{site.github}}/flutter/flutter/tree/master/examples
+[visit our examples GitHub repository]: {{site.github}}/flutter/flutter/tree/master/examples

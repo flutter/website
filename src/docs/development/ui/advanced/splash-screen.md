@@ -147,7 +147,7 @@ reference the same `@drawable/launch_background` in the
 #### In a FlutterFragment
 
 To display a `Drawable` as a Flutter splash screen in a
-`FlutterFragment`, make `FlutterFragment` a subclass and override
+`FlutterFragment`, make a subclass of `FlutterFragment` and override
 `provideSplashScreen()`.
 
 ```java

@@ -325,7 +325,7 @@ final int registrationDateMillis;
 ```
 
 It's best if both server and client follow the same naming strategy.  
-`@JsonSerializable()` provide `fieldRename` enum to totally converting dart 
+`@JsonSerializable()` provides `fieldRename` enum for totally converting dart 
 fields into JSON keys.
 
 Modifying `@JsonSerializable(fieldRename: FieldRename.snake)` is equivalent to

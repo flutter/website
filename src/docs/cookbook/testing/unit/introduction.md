@@ -167,7 +167,7 @@ fastest feedback loop as well as the ability to set breakpoints.
        for your platform.*
   * **VSCode**
     1. Open the `counter_test.dart` file
-    2. Select the `Debug` menu
+    2. Select the `Run` menu
     3. Click the `Start Debugging` option
     4. *Alternatively, use the appropriate keyboard shortcut
        for your platform.*

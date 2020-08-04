@@ -39,7 +39,8 @@ This guide shows how to build a staggered animation in Flutter.
   [basic_staggered_animation][]
   : Shows a series of sequential and overlapping animations
     of a single widget. Tapping the screen begins an animation
-    that changes opacity, size, shape, color, and padding.  
+    that changes opacity, size, shape, color, and padding.
+    
   [staggered_pic_selection][]
   : Shows deleting an image from a list of images displayed
     in one of three sizes. This example uses two
@@ -122,7 +123,7 @@ You might notice the following characteristics:
 * Increasing the padding makes the widget appear to rise upward.
 * Increasing the border radius to 0.5,
   transforms the square with rounded corners into a circle.
-* The padding and border radius changes occur during
+* The padding and height changes occur during
   the same exact interval, but they don't have to.
 
 {% asset ui/animations/StaggeredAnimationIntervals.png

@@ -90,7 +90,7 @@ VS Code is a lightweight editor with Flutter app execution and debug support.
 
  1. Invoke **View > Command Palette...**.
  1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
- 1. Review the output in the **OUTPUT** pane for any issues.
+ 1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
 
 </div>
 <div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">

@@ -5,6 +5,7 @@ description: Release notes for Flutter for prior releases.
 ---
 
 Release notes for the following releases to the stable channel:
+
 * [1.20.0][]
 * [1.17.0][]
 * [1.12.13][]

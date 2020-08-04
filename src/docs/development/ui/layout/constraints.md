@@ -57,7 +57,7 @@ The negotiation goes something like this:
 
 **Widget**: "Hey parent, what are my constraints?"
 
-**Parent**: "You must be from `90` to `300` pixels wide,
+**Parent**: "You must be from `80` to `300` pixels wide,
    and `30` to `85` tall."
 
 **Widget**: "Hmmm, since I want to have `5` pixels of padding,
@@ -260,7 +260,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                               )),
                         ),
                         height: 273,
-                        color: Colors.grey),
+                        color: Colors.grey[50]),
                   ],
                 ),
               ),
@@ -1541,7 +1541,7 @@ and you'll see an error in the console.
 Row(
    children:[
       Container(color: Colors.red, child: Text('Hello!')),
-      Container(color: Colors.green, child: Text('Goodbye!)),
+      Container(color: Colors.green, child: Text('Goodbye!')),
    ]
 )
 ```
@@ -1771,7 +1771,7 @@ the tight constraints it got from its parent
 Knowing the general layout rule is necessary, but it’s not enough.
 
 Each widget has a lot of freedom when applying the general rule,
-so there is no way of knowing what might do by just reading
+so there is no way of knowing what it will do by just reading
 the widget’s name.
 
 If you try to guess, you’ll probably guess wrong.
@@ -1788,7 +1788,7 @@ Here is an example:
 
 * Find a `Column` in your code and navigate to its
   source code. To do this, use `command+B` (macOS)
-  or `control+B` (Windows/Linux) in Android Studio or IntelliJ).
+  or `control+B` (Windows/Linux) in Android Studio or IntelliJ.
   You’ll be taken to the `basic.dart` file.
   Since `Column` extends `Flex`, navigate to the `Flex`
   source code (also in `basic.dart`).
