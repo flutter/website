@@ -247,6 +247,8 @@
           permalink: /docs/development/androidx-migration
         - title: Android plugin upgrade
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: Developing for iOS 14 beta
+          permalink: /docs/development/ios-14
         - title: Xcode 11.4 support
           permalink: /docs/development/ios-project-migration
 
