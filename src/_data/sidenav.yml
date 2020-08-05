@@ -290,6 +290,8 @@
         permalink: /docs/perf/rendering/best-practices
       - title: Performance profiling
         permalink: /docs/perf/rendering/ui-performance
+      - title: Reduce shader compilation jank
+        permalink: /docs/perf/rendering/shader
 
 - title: Deployment
   children:
