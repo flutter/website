@@ -67,7 +67,7 @@ Safari (mobile & desktop)
 Edge (mobile & desktop)
 Firefox (desktop)
 
-During development, Chrome and Edge(only on Windows devices) are supported as the default browsers for debugging your app. 
+During development, Chrome(on macOS,Windows,Linux) and Edge(on Windows) are supported as the default browsers for debugging your app. 
 In order to test your web app on other browsers use the `Web server` device option to get a URL serving the app.
 Learn more on how to [run your web apps in any supported browser][]
 
