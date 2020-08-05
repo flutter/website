@@ -14,28 +14,28 @@ join the [flutter-announce][] Google group.
 
 ## Aug 8, 2020
 
-Flutter 1.20 is live!
+Flutter 1.20 is live! For details, see [Announcing Flutter 1.20][].
 
-For more information, see [Announcing Flutter 1.20][].
+**Docs updated or added to flutter.dev**
 
-Docs updated and added to flutter.dev include:
-
-* [Reducing shader compilation jank on mobile][] (performance)
-* [Developing for iOS 14 beta][]
-* Instructions for [installing Flutter on Linux using snapd][]
-* Updated [Desktop support][] page to reflect that Linux apps
-  are supported as alpha.
+* [Reducing shader compilation jank on mobile][] is added to the
+  performance docs.
+* [Developing for iOS 14 beta][] outlines some issues you might
+  run into if developing for devices running iOS 14 beta.
+* New instructions for [installing Flutter on Linux using snapd.][]
+* Updated the [Desktop support][] page to reflect that Linux
+  desktop apps are supported as alpha (as well as macOS).
 * Several new Flutter books have been published. The [Flutter books][]
-  page has been updated.
+  page is updated.
 
 A deep dive into null safety has been added to dart.dev:
 
 * [Understanding null safety][]
 
-Codelabs
+**Codelabs**
 
-[Flutter Day][] was held on 6/25/2020. As part of the preparations
-for the event, we wrote new codelabs and updated existing codelabs.
+[Flutter Day][] was held on 6/25/2020. In preparation for the event,
+we wrote new codelabs and updated existing codelabs.
 New codelabs include:
 
 * [Adding Admob Ads to a Flutter app][]
@@ -44,13 +44,13 @@ New codelabs include:
 * [Using a plugin with a Flutter web app][]
 * [Write a Flutter desktop application][]
 
-For a complete list of Flutter codelabs, see [Flutter codelabs][].
+For a complete list, see [Flutter codelabs][].
 
-Other newness:
+**Articles**
 
-* new and updated codelabs
-* We've published a number of articles on the [Flutter Medium][]
-  publication since the last stable release:
+We've published the following articles on the [Flutter Medium][]
+publication since the last stable release:
+
   * [Announcing Adobe XD support for Flutter][]
   * [What are the important & difficult tasks for Flutter
      devs? — Q1 2020 survey results][q1-2020][]
@@ -72,6 +72,7 @@ Other newness:
   * [How to debug layout issues with the Flutter Inspector][]
   * [Going deeper with Flutter's web support][]
   * [Flutter Performance Updates in 2019][]
+
 
 [Adding Admob Ads to a Flutter app]: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter/
 [Announcing Adobe XD Support]: {{site.medium}}/flutter/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e
