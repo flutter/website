@@ -18,7 +18,33 @@ Flutter 1.20 is live!
 
 For more information, see [Announcing Flutter 1.20][].
 
-Docs added and updated since the last announcement include:
+Docs updated and added to flutter.dev include:
+
+* [Reducing shader compilation jank on mobile][] (performance)
+* [Developing for iOS 14 beta][]
+* Instructions for [installing Flutter on Linux using snapd][]
+* Updated [Desktop support][] page to reflect that Linux apps
+  are supported as alpha.
+* Several new Flutter books have been published. The [Flutter books][]
+  page has been updated.
+
+A deep dive into null safety has been added to dart.dev:
+
+* [Understanding null safety][]
+
+Codelabs
+
+[Flutter Day][] was held on 6/25/2020. As part of the preparations
+for the event, we wrote new codelabs and updated existing codelabs.
+New codelabs include:
+
+* [Adding Admob Ads to a Flutter app][]
+* [How to write a Flutter plugin][]
+* [Multi-platform Firestore Flutter][]
+* [Using a plugin with a Flutter web app][]
+* [Write a Flutter desktop application][]
+
+For a complete list of Flutter codelabs, see [Flutter codelabs][].
 
 Other newness:
 
@@ -27,9 +53,9 @@ Other newness:
   publication since the last stable release:
   * [Announcing Adobe XD support for Flutter][]
   * [What are the important & difficult tasks for Flutter
-     devs? — Q1 2020 survey results][q1-2020]
+     devs? — Q1 2020 survey results][q1-2020][]
   * [Optimizing performance in Flutter web apps with tree
-     shaking and deferred loading][shaking]
+     shaking and deferred loading][shaking][]
   * [Flutter Package Ecosystem Update][]
   * [Improving perceived performance with image placeholders,
      precaching, and disabled navigation transitions][web-perf]
@@ -47,24 +73,38 @@ Other newness:
   * [Going deeper with Flutter's web support][]
   * [Flutter Performance Updates in 2019][]
 
+[Adding Admob Ads to a Flutter app]: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter/
 [Announcing Adobe XD Support]: {{site.medium}}/flutter/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e
+[Announcing Flutter 1.20]: {{site.medium}}/flutter/announcing-flutter-1-20-2aaf68c89c75
 [Building performant Flutter widgets]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
+[Desktop support]: /desktop
 [dev-tools]: {{site.medium}}/flutter/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
+[Developing for iOS 14 beta]: /docs/development/ios-14
 [Enums with Extensions in Dart]: {{site.medium}}/flutter/enums-with-extensions-dart-460c42ea51f7
 [Flutter and Desktop apps]: {{site.medium}}/flutter/handling-404-page-not-found-error-in-flutter-731f5a9fba29
+[Flutter books]: /docs/resources/books
+[Flutter codelabs]: /docs/codelabs
+[Flutter Day]: https://events.withgoogle.com/flutter-day/
 [Flutter Package Ecosystem Update]: {{site.medium}}/flutter/flutter-package-ecosystem-update-d50645f2d7bc
 [Flutter Performance Updates in 2019]: {{site.medium}}/flutter/going-deeper-with-flutters-web-support-66d7ad95eb5224
 [Going deeper with Flutter's web support]: {{site.medium}}/flutter/going-deeper-with-flutters-web-support-66d7ad95eb52
 [Handling 404: Page not found error in Flutter]: {{site.medium}}/flutter/handling-404-page-not-found-error-in-flutter-731f5a9fba29
+[How to write a Flutter plugin]: https://codelabs.developers.google.com/codelabs/write-flutter-plugin
+[installing Flutter on Linux using snapd]: /docs/get-started/install/linux
 [Managing issues in a large-scale open source project]: {{site.medium}}/flutter/managing-issues-in-a-large-scale-open-source-project-b3be6eecae2b
 [How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[Multi-platform Firestore Flutter]: https://codelabs.developers.google.com/codelabs/friendlyeats-flutter/
 [q1-2020]: {{site.medium}}/flutter/what-are-the-important-difficult-tasks-for-flutter-devs-q1-2020-survey-results-a5ef2305429b
+[Reducing shader compilation jank on mobile]: /docs/perf/rendering/shader
 [shaking]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [Two Months of #FlutterGoodNewsWednesday]: {{site.medium}}/flutter/two-months-of-fluttergoodnewswednesday-a12e60bab782
 [ubuntu]: {{site.medium}}/flutter/announcing-flutter-linux-alpha-with-canonical-19eb824590a9
+[Understanding null safety]: {{site.dart-site}}/null-safety/understanding-null-safety
+[Using a plugin with a Flutter web app]: https://codelabs.developers.google.com/codelabs/web-url-launcher/
 [web-perf]: {{site.medium}}/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [What's new with the Slider widget?]: {{site.medium}}/flutter/whats-new-with-the-slider-widget-ce48a22611a3
-[What we learned from the Flutter Q2 2020 survey]: https://medium.com/flutter/what-we-learned-from-the-flutter-q2-2020-survey-a4f1fc8faac9
+[What we learned from the Flutter Q2 2020 survey]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q2-2020-survey-a4f1fc8faac9
+[Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/
 
 ## May 6, 2020, Work-From-Home Edition
 
