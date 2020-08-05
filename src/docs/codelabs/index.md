@@ -7,7 +7,6 @@ The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
 
-
 ## Good for beginners
 
 If you're new to Flutter, we recommend starting with
@@ -44,7 +43,6 @@ one of these codelabs:
   and customizes the UI for iOS and Android. As part of
   this codelab, learn how to use keyboard shortcuts in
   Android Studio.
-
 
 ## Designing a Flutter UI
 
@@ -89,7 +87,6 @@ like layout and animations:
   by adding a backdrop with a menu that filters
   products by the selected category.
 
-
 ## Using Flutter with...
 
 Learn how to use Flutter with other technologies.
@@ -116,7 +113,6 @@ Learn how to use Flutter with other technologies.
   powered by Flutter and Cloud Firestore.
   The finished app runs on Android, iOS, and web,
   from a single Dart codebase.
-
 
 ## Writing platform-specific code
 

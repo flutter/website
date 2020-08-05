@@ -1,14 +1,22 @@
 {% if page.show_banner -%}
   <!--{% assign fl_url = '/jobs/infrastructure' -%}-->
   {% assign fl_url = '/create' -%}
+  {% comment %} For headings use <h3> elements. {% endcomment -%}
+  {% comment %}
+    Note that tabbed pages will NOT work correctly if no banner is present.
+    https://github.com/flutter/website/issues/3897
+  {% endcomment %}
   <div class="site-banner site-banner--default site-banner-bw" role="alert">
-    {% comment %} For headings use <h3> elements. {% endcomment -%}
+  Release 1.20 is live! For more information, see the
+  <a href="https://medium.com/flutter/announcing-flutter-1-20-2aaf68c89c75">1.20 blog post</a>
+  and <a href="/docs/whats-new-archive/">What's new on the site</a>.
+
+{% comment %}
     Google is committed to advancing racial equity for Black communities.
     <a href="https://google.com/racialequity">See how.</a>
 
-{% comment %}
     Learn Flutter in this <a href="https://www.appbrewery.co/p/intro-to-flutter?utm_source=google&utm_medium=website%20banner&utm_campaign=app_brewery">online class by the App Brewery</a>.
-    If you sign up by July 8, it's free.<br>
+
     Do you design UIs for your Flutter apps?
     We're excited to announce that
     <a href="https://medium.com/flutter/announcing-codepen-support-for-flutter-bb346406fe50?utm_source=google&utm_medium=website%20banner&utm_campaign=codepen">CodePen now supports Flutter</a>.
