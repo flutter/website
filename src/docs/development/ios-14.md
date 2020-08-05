@@ -1,6 +1,6 @@
 ---
 title: Developing for iOS 14 beta
-description: Describes a couple gotchas (and how to work around them)when developing for iOS14 on Flutter 1.20.
+description: Describes a couple gotchas (and how to work around them) when developing for iOS14 on Flutter 1.20.
 ---
 
 The iOS 14 release, the new version of Apple's mobile operating system,
@@ -32,7 +32,7 @@ see [Issue 60634]({{site.github}}/flutter/flutter/issues/60634).
 ## Launching the app from the home screen
 
 When you install a debug version of your app on a physical
-iOS 14 device (using `flutter run`), then disconnect,
+iOS 14 device (using `flutter run` or from Xcode), then disconnect,
 and then try to open the app from the home screen, it crashes.
 
 **Solution**: Use `flutter run --release` (or `--profile`)
@@ -40,6 +40,7 @@ if you want to start your app from the home screen.
 
 Once again, the crash only happens in debug mode,
 and only when opening the app from the home screen on iOS 14.
+This crash _doesn't_ happen when using the iOS simulator.
 
 
 For more information,
