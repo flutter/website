@@ -24,9 +24,10 @@ Flutter 1.20 is live! For details, see [Announcing Flutter 1.20][].
   run into if developing for devices running iOS 14 beta.
 * New instructions for [installing Flutter on Linux using snapd.][]
 * Updated the [Desktop support][] page to reflect that Linux
-  desktop apps are supported as alpha (as well as macOS).
+  desktop apps (as well as macOS) are available as alpha.
 * Several new Flutter books have been published. The [Flutter books][]
   page is updated.
+* The [codelabs landing][] page has been updated.
 
 A deep dive into null safety has been added to dart.dev:
 
@@ -53,9 +54,9 @@ publication since the last stable release:
 
   * [Announcing Adobe XD support for Flutter][]
   * [What are the important & difficult tasks for Flutter
-     devs? — Q1 2020 survey results][q1-2020][]
+     devs? — Q1 2020 survey results][q1-2020]
   * [Optimizing performance in Flutter web apps with tree
-     shaking and deferred loading][shaking][]
+     shaking and deferred loading][shaking]
   * [Flutter Package Ecosystem Update][]
   * [Improving perceived performance with image placeholders,
      precaching, and disabled navigation transitions][web-perf]
@@ -75,9 +76,10 @@ publication since the last stable release:
 
 
 [Adding Admob Ads to a Flutter app]: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter/
-[Announcing Adobe XD Support]: {{site.medium}}/flutter/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e
+[Announcing Adobe XD Support for Flutter]: {{site.medium}}/flutter/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e
 [Announcing Flutter 1.20]: {{site.medium}}/flutter/announcing-flutter-1-20-2aaf68c89c75
 [Building performant Flutter widgets]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
+[codelabs landing]: /docs/codelabs
 [Desktop support]: /desktop
 [dev-tools]: {{site.medium}}/flutter/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
 [Developing for iOS 14 beta]: /docs/development/ios-14
@@ -91,7 +93,7 @@ publication since the last stable release:
 [Going deeper with Flutter's web support]: {{site.medium}}/flutter/going-deeper-with-flutters-web-support-66d7ad95eb52
 [Handling 404: Page not found error in Flutter]: {{site.medium}}/flutter/handling-404-page-not-found-error-in-flutter-731f5a9fba29
 [How to write a Flutter plugin]: https://codelabs.developers.google.com/codelabs/write-flutter-plugin
-[installing Flutter on Linux using snapd]: /docs/get-started/install/linux
+[installing Flutter on Linux using snapd.]: /docs/get-started/install/linux
 [Managing issues in a large-scale open source project]: {{site.medium}}/flutter/managing-issues-in-a-large-scale-open-source-project-b3be6eecae2b
 [How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Multi-platform Firestore Flutter]: https://codelabs.developers.google.com/codelabs/friendlyeats-flutter/
