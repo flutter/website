@@ -166,10 +166,10 @@ and [`flutter_gallery_sksl_warmup_ios32__transition_perf`][] tasks.
 [GitHub issue]: {{site.github}}/flutter/flutter/issues
 [Issue 61045]: {{site.github}}/flutter/flutter/issues/61045
 
-If you have questions on shader warm-up,
+If you have questions on SkSL shader warm-up,
 please comment on [Issue 60313][] and [Issue 53607][].
-If you have general warm-up questions, please refer to
-[Issue 32170][].
+If you have general shader warm-up questions,
+please refer to [Issue 32170][].
 
 [Issue 32170]: {{site.github}}/flutter/flutter/issues/32170
 [Issue 53607]: {{site.github}}/flutter/flutter/issues/53607
