@@ -59,17 +59,20 @@ You can either use the browser's refresh button,
 or you can enter "R" in the console where
 "flutter run -d chrome" is running.
 
-### Which web browser does Flutter support?
-Today Flutter web apps can run on the following browsers:
+### Which web browsers are supported by Flutter?
 
-Chrome (mobile & desktop)
-Safari (mobile & desktop)
-Edge (mobile & desktop)
-Firefox (desktop)
+Flutter web apps can run on the following browsers:
 
-During development, Chrome(on macOS,Windows,Linux) and Edge(on Windows) are supported as the default browsers for debugging your app. 
-In order to test your web app on other browsers use the `Web server` device option to get a URL serving the app.
-Learn more on how to [run your web apps in any supported browser][]
+* Chrome (mobile & desktop)
+* Safari (mobile & desktop)
+* Edge (mobile & desktop)
+* Firefox (desktop)
+
+During development, Chrome (on macOS, Windows, and Linux) and Edge (on Windows)
+are supported as the default browsers for debugging your app. In order to test
+your web app on other browsers use the `Web server` device option to get a URL
+serving the app. Learn more on how to [run your web apps in any supported
+browser][]
 
 ### Can I build, run, and deploy web apps in any of the IDEs?
 
