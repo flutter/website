@@ -36,6 +36,11 @@ embed interactive experiences into these websites.
 For more information on how you can use Flutter on the web,
 see [Web support for Flutter][].
 
+### How do I file an issue about web support?
+
+You can [file an issue][] on the main Flutter repo.
+Make sure that "web" is included in the title.
+
 ### How do I migrate a web app built using the flutter_web repo to the flutter repo?
 
 See [Upgrading from package:flutter_web to the Flutter SDK][].
@@ -48,39 +53,30 @@ See [building a web app with Flutter][].
 
 No, but you can use hot restart.
 
-### Can I use Flutter plugins?
-
-Yes, several plugins have web support. 
-Find an updated list of plugins on [pub.dev][] using the web filter.
-You can also add web support to existing plugins or
-[write your own plugins][] for the web.
-
-### How do I file an issue about web support?
-
-You can [file an issue][] on the main Flutter repo.
-Make sure that "web" is included in the title.
-
-### Which web browser does Flutter support?
-Today Flutter web apps can run on the following browsers:
-
-Chrome (mobile & desktop)
-Safari (mobile & desktop)
-Edge (mobile & desktop)
-Firefox (desktop)
-
-During development, Chrome is the default browser for running your app. 
-In order to test your web app on other browsers use the `Web server` device option to get a URL serving the app.
-Learn more on how to [run your web apps in any supported browser][]
-
 ### How do I refresh the app running in the browser?
 
 You can either use the browser's refresh button,
 or you can enter "R" in the console where
 "flutter run -d chrome" is running.
 
+### Which web browsers are supported by Flutter?
+
+Flutter web apps can run on the following browsers:
+
+* Chrome (mobile & desktop)
+* Safari (mobile & desktop)
+* Edge (mobile & desktop)
+* Firefox (desktop)
+
+During development, Chrome (on macOS, Windows, and Linux) and Edge (on Windows)
+are supported as the default browsers for debugging your app. In order to test
+your web app on other browsers use the `Web server` device option to get a URL
+serving the app. Learn more on how to [run your web apps in any supported
+browser][]
+
 ### Can I build, run, and deploy web apps in any of the IDEs?
 
-You can select **Chrome** as the target device in
+You can select a browser as the target device, such as **Chrome**, in
 Android Studio/IntelliJ and VS Code if you are using the
 latest beta channel of Flutter and have enabled web support.
 To enable support, run the following in the terminal:
@@ -114,6 +110,13 @@ and Dart plugins.
 ### How do I build a responsive app for the web?
 
 See [Creating responsive apps][].
+
+### Can I use Flutter plugins?
+
+Yes, several plugins have web support. 
+Find an updated list of plugins on [pub.dev][] using the web filter.
+You can also add web support to existing plugins or
+[write your own plugins][] for the web.
 
 ### Can I use `dart:io` with a web app?
 
