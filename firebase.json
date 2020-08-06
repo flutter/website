@@ -227,7 +227,8 @@
       { "source": "/go/flutter-web-scenelets", "destination": "https://docs.google.com/document/d/1GUAx3aqdtEoaBMTNpsS1-i59QZlwTi6vUCASbaanPCo", "type": 301 },
       { "source": "/go/text-selection-theme", "destination": "https://docs.google.com/document/d/1sCe7Y_lhREljtn6m0Uu_EycbS82zRvWnNtkfEwFX9W0", "type": 301 },
       { "source": "/go/top-errors-analysis", "destination": "https://docs.google.com/document/d/1ZJ9t_uPeXqZnoDOIVes_Yu2BBxP42l99nSfHQPfswZw/edit?usp=sharing", "type": 301 },
-      { "source": "/go/scaffold-messenger", "destination": "https://docs.google.com/document/d/1TCH0T-X42z96lAcSkFttHAQMJ0MsvMojDKa6F4IQI3Y/edit?usp=sharing", "type": 301 }
+      { "source": "/go/scaffold-messenger", "destination": "https://docs.google.com/document/d/1TCH0T-X42z96lAcSkFttHAQMJ0MsvMojDKa6F4IQI3Y/edit?usp=sharing", "type": 301 },
+      { "source": "/go/autocomplete", "destination": "https://docs.google.com/document/d/1fV4FDNdcza1ITU7hlgweCDUZdWyCqd-rjz_J7K2KkfY/edit?usp=sharing", "type": 301 }
     ]
   }
 }
