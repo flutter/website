@@ -54,7 +54,7 @@ jank in later animations. Use the following instructions to collect
 and package the SkSL shaders:
 
 <ol markdown="1">
-<li markdown="1">Run the app with `--cache-sksl` turned on 
+<li markdown="1">Run the app with `--cache-sksl` turned on
     to capture shaders in SkSL:
 
 ```sh
@@ -83,6 +83,9 @@ iOS:
 ```sh
 flutter build ios --bundle-sksl-path flutter_01.sksl.json
 ```
+
+If it's built for a driver test like `test_driver/app.dart`, make sure to also specify `--target=test_driver/app.dart` (e.g., `flutter build ios --bundle-sksl-path flutter_01.sksl.json --target=test_driver/app.dart`).
+
 </li>
 
 <li markdown="1"> Test the newly built app.
@@ -110,6 +113,7 @@ and verifies the performance, in the [`transitions_perf_test.dart`][] test.
 For more details, see the [`flutter_gallery_sksl_warmup__transition_perf`][]
 and [`flutter_gallery_sksl_warmup_ios32__transition_perf`][] tasks.
 
+The worst frame rasterization time is a nice metric from such integration tests to indicate the severity of shader compilation jank. For instance, the steps above reduce Flutter gallery's shader compilation jank and speeds up its worst frame rasterization time on a Moto G4 from ~90 ms to ~40 ms. On iPhone 4s it's reduced from from ~300 ms to ~80 ms. That leads to the visual difference as illustrated in the beginning of this article.
 
 [Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [`flutter_gallery_sksl_warmup__transition_perf`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
