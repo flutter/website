@@ -12,7 +12,7 @@ join the [flutter-announce][] Google group.
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
 
-## Aug 8, 2020
+## Aug 5, 2020
 
 Flutter 1.20 is live! For details, see [Announcing Flutter 1.20][].
 
