@@ -40,6 +40,9 @@ External dependencies of the unit under test are generally
 Unit tests generally don't read from or write
 to disk, render to screen, or receive user actions from
 outside the process running the test.
+For more information regarding unit tests, 
+you can view the following recipes 
+or run `flutter test --help` in your terminal.
 
 ### Recipes
 
