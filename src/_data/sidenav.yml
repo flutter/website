@@ -247,6 +247,8 @@
           permalink: /docs/development/androidx-migration
         - title: Android plugin upgrade
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: Developing for iOS 14 beta
+          permalink: /docs/development/ios-14
         - title: Xcode 11.4 support
           permalink: /docs/development/ios-project-migration
 
@@ -288,6 +290,8 @@
         permalink: /docs/perf/rendering/best-practices
       - title: Performance profiling
         permalink: /docs/perf/rendering/ui-performance
+      - title: Reduce shader compilation jank
+        permalink: /docs/perf/rendering/shader
 
 - title: Deployment
   children:

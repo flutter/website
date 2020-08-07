@@ -2,6 +2,7 @@
 title: Free Flutter course from the App Brewery
 description: Link for registering for the free App Brewery course.
 ---
+<h1>This course is closed for enrollment.</h1>
 
 <section class="landing-page__cta card text-center">
     <div class="card-body">
