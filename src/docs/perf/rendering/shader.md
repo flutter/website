@@ -153,9 +153,6 @@ The worst frame rasterization time is a nice metric from such integration tests 
    rasterization time in release mode; the worst frame rasterization time is
    a good indicator on how severe the shader compilation jank is.)
 
-[`FrameTiming`]: {{site.api}}/flutter/dart-ui/FrameTiming-class.html
-[SkSL-based warmup issue]: {{site.github}}/flutter/flutter/issues/53607#issuecomment-608587484
-
 3. **SkSL warm-up doesn't help newer iPhones using Metal.**<br>
    Flutter recently migrated from OpenGL to Metal for all newer iOS
    devices. However, Skia currently only implements the SkSL warm-up for
@@ -167,6 +164,9 @@ The worst frame rasterization time is a nice metric from such integration tests 
    shader compilation jank on newer iPhones, please leave feedback on
    [Issue 61045][], and we can help you turn on OpenGL for your app.
 
+
+[`FrameTiming`]: {{site.api}}/flutter/dart-ui/FrameTiming-class.html
+[SkSL-based warmup issue]: {{site.github}}/flutter/flutter/issues/53607#issuecomment-608587484
 [GitHub issue]: {{site.github}}/flutter/flutter/issues
 [Issue 61045]: {{site.github}}/flutter/flutter/issues/61045
 
