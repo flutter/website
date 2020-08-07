@@ -46,6 +46,7 @@ release, and listed in alphabetical order:
 * [TestWidgetsFlutterBinding.clock][]
 * [Material Chip button semantics][]
 * [Android v1 embedding app and plugin creation deprecation][]
+* [Network Policy on iOS and Android][]
 
 [Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding 'linux' and 'windows' to TargetPlatform enum]: /docs/release/breaking-changes/target-platform-linux-windows
@@ -61,6 +62,7 @@ release, and listed in alphabetical order:
 [MouseTracker moved to rendering]: /docs/release/breaking-changes/mouse-tracker-moved-to-rendering
 [MouseTracker no longer attaches annotations]: /docs/release/breaking-changes/mouse-tracker-no-longer-attaches-annotations
 [More Strict Assertions in the Navigator and the Hero Controller Scope]: /docs/release/breaking-changes/hero-controller-scope
+[Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 [Nullable CupertinoTheme.brightness]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
 [Rebuild optimization for OverlayEntries and Routes]: /docs/release/breaking-changes/overlay-entry-rebuilds
 [Reversing the dependency between the scheduler and services layer]: /docs/release/breaking-changes/services-scheduler-dependency-reversed
