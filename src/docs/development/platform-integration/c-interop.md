@@ -381,6 +381,13 @@ To re-enable compression, override the setting in
 +        tools:replace="android:extractNativeLibs">
 ```
 
+### iOS symbols stripped
+
+When creating a release archive (IPA) the symbols are stripped by Xcode.
+
+In Xcode, select Target Runner -> Build Settings -> Strip Style -> change from
+"All Symbols" to "Non-Global Symbols".
+
 [Add C and C++ code to your project]: {{site.android-dev}}/studio/projects/add-native-code
 [Android NDK Native APIs]: {{site.android-dev}}/ndk/guides/stable_apis
 [CocoaPods example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
