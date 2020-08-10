@@ -19,6 +19,12 @@ or perhaps you downloaded a font from [Google Fonts][].
   to almost 1000 open-sourced font families.
 {{site.alert.end}}
 
+{{site.alert.note}}
+  For another method to use a font, 
+  especially if you want to re-use one font over multiple projects, 
+  see https://flutter.dev/docs/cookbook/design/package-fonts.
+{{site.alert.end}}
+
 Flutter works with custom fonts and you can apply a custom
 font across an entire app or to individual widgets.
 This recipe creates an app that uses custom fonts with
