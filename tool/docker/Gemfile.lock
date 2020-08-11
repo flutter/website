@@ -83,6 +83,8 @@ GEM
       listen (~> 3.0)
     kramdown (2.3.0)
       rexml
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     liquid (4.0.3)
     liquid-tag-parser (1.9.0)
       extras (~> 0.3)
@@ -161,6 +163,7 @@ DEPENDENCIES
   jekyll (~> 3)
   jekyll-assets (~> 3)
   jekyll-toc
+  kramdown-parser-gfm
   liquid-tag-parser
   sassc
   sprockets (= 4.0.beta8)
