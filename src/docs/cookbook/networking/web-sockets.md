@@ -201,4 +201,4 @@ class _MyHomePageState extends State<MyHomePage> {
 [`StreamSink`]: {{site.api}}/flutter/dart-async/StreamSink-class.html
 [test server provided by websocket.org]: http://www.websocket.org/echo.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[web_socket_channel]: {{site.pub-pkg}}/web_socket_channel
+[`web_socket_channel`]: {{site.pub-pkg}}/web_socket_channel

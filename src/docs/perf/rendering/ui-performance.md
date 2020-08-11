@@ -33,14 +33,20 @@ steps to take, and tools that can help.
     in the [Debugging][] page.
 {{site.alert.end}}
 
+[Debugging]: /docs/testing/debugging
+[Tracing Dart code]: /docs/testing/debugging#tracing-dart-code
+
 ## Diagnosing performance problems
 
 To diagnose an app with performance problems, you'll enable
-the performance overlay to look at the UI and GPU threads.
+the performance overlay to look at the UI and raster threads.
+(The raster thread was previously known as the GPU thread.)
 Before you begin, you want to make sure that you're running in
 [profile mode][], and that you're not using an emulator.
 For best results, you might choose the slowest device that
 your users might use.
+
+[profile mode]: /docs/testing/build-modes#profile
 
 ### Connect to a physical device
 
@@ -107,6 +113,8 @@ see [Flutter's build modes][].
 You'll begin by opening DevTools and viewing
 the performance overlay, as discussed in the next section.
 
+[Flutter's build modes]: /docs/testing/build-modes
+
 ## Launch DevTools
 
 DevTools provides features like profiling, examining the heap,
@@ -117,6 +125,9 @@ UI performance of your application on a frame-by-frame basis.
 
 Once your app is running in profile mode,
 [launch DevTools][].
+
+[launch DevTools]: /docs/development/tools/devtools
+[Timeline view]: /docs/development/tools/devtools/timeline
 
 ## The performance overlay
 
@@ -134,15 +145,15 @@ The following screenshot shows the performance overlay running
 on the Flutter Gallery example:
 
 ![Screenshot of overlay showing zero jank]({% asset tools/devtools/performance-overlay-green.png @path %})
-<br>Performance overlay showing the GPU thread (top),
+<br>Performance overlay showing the raster thread (top),
 and UI thread (bottom).<br>The vertical green bars
 represent the current frame.
 
 ## Interpreting the graphs
 
-The top graph shows the time spent by the GPU thread,
-the bottom one graph shows the time spent by the
-UI (CPU) thread.
+The top graph (marked "GPU") shows the time spent by 
+the raster thread, the bottom one graph shows the time 
+spent by the UI thread.
 The white lines across the graphs show 16ms increments
 along the vertical axis; if the graph ever goes over one
 of these lines then you are running at less than 60Hz.
@@ -166,7 +177,9 @@ the scene is too complicated to render quickly.
 ![Screenshot of performance overlay showing jank with red bars]({% asset tools/devtools/performance-overlay-jank.png @path %})
 <br>The vertical red bars indicate that the current frame is
 expensive to both render and paint.<br>When both graphs
-display red, start by diagnosing the UI thread (Dart VM).
+display red, start by diagnosing the UI thread.
+
+[debug mode]: /docs/testing/build-modes#debug
 
 ## Flutter's threads
 
@@ -190,28 +203,38 @@ on other threads.
     Flutter's framework on your app's behalf.
     When your app creates and displays a scene, the UI thread creates
     a _layer tree_, a lightweight object containing device-agnostic
-    painting commands, and sends the layer tree to the GPU thread to
+    painting commands, and sends the layer tree to the raster thread to
     be rendered on the device. _Don't block this thread!_
     Shown in the bottom row of the performance overlay.
 
-<dt markdown="1">**GPU thread**</dt>
-<dd markdown="1">The GPU thread takes the layer tree and displays
+<dt markdown="1">**Raster thread** (previously known as the GPU thread)</dt>
+<dd markdown="1">The raster thread takes the layer tree and displays
     it by talking to the GPU (graphic processing unit).
-    You cannot directly access the GPU thread or its data but,
+    You cannot directly access the raster thread or its data but,
     if this thread is slow, it's a result of something you've done
-    in the Dart code.  Skia, the graphics library, runs on this thread,
-    which is sometimes called the _rasterizer_ thread.
+    in the Dart code. Skia, the graphics library, runs on this thread.
     Shown in the top row of the performance overlay.
+    This thread was previously known as the "GPU thread" because it
+    rasterizes for the GPU. But it is running on the CPU. We renamed it
+    to "raster thread" because many developers wrongly (but understandably)
+    assumed the thread runs on the GPU unit.
 
-<dt markdown="1">**I/O** thread</dt>
+<dt markdown="1">**I/O thread**</dt>
 <dd markdown="1">Performs expensive tasks (mostly I/O) that would
-    otherwise block either the UI or GPU threads.
+    otherwise block either the UI or raster threads.
     This thread is not shown in the performance overlay.
-
+</dl>
+    
 For links to more information and videos,
 see [The Framework architecture][] on the
 [GitHub wiki][], and the community article,
 [The Layer Cake][].
+
+[GitHub wiki]: {{site.github}}/flutter/flutter/wiki/
+[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
+[The Framework architecture]: {{site.github}}/flutter/flutter/wiki/The-Framework-architecture
+[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[UIKit]: https://developer.apple.com/documentation/uikit
 
 ### Displaying the performance overlay
 
@@ -229,6 +252,8 @@ from the Flutter inspector, which is available in the
 **Performance Overlay** button to toggle the overlay
 on your running app.
 
+[Inspector view]: /docs/development/tools/devtools/inspector
+
 #### From the command line
 
 Toggle the performance overlay using the **P** key from
@@ -240,21 +265,8 @@ To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
 
-You are probably familiar with the Flutter Gallery example app.
-To use the performance overlay with Flutter Gallery,
-use the copy in the [examples][] directory that was installed
-with Flutter, and run the app in profile mode. The program is written
-so that the app menu allows you to dynamically toggle the overlay,
-as well as enable checks for calls to `saveLayer` and the presence of
-cached images.
-
-{{site.alert.note}}
-  You can’t enable the performance overlay in the Flutter
-  Gallery app downloaded from the App Store.
-  That version of the app is compiled to release mode
-  (not profile mode), and doesn’t provide
-  a menu for enabling or disabling the overlay.
-{{site.alert.end}}
+[Debugging Flutter apps programmatically]: /docs/testing/code-debugging
+[Performance overlay]: /docs/testing/code-debugging#performance-overlay
 
 ## Identifying problems in the UI graph
 
@@ -268,11 +280,11 @@ can be said here?
 ## Identifying problems in the GPU graph
 
 Sometimes a scene results in a layer tree that is easy to construct,
-but expensive to render on the GPU thread. When this happens,
+but expensive to render on the raster thread. When this happens,
 the UI graph has no red, but the GPU graph shows red.
 In this case, you’ll need to figure out what your code is doing
 that is causing rendering code to be slow. Specific kinds of workloads
-are more difficult for the GPU.  They might involve unnecessary calls
+are more difficult for the GPU. They might involve unnecessary calls
 to [`saveLayer`][], intersecting opacities with multiple objects,
 and clips or shadows in specific situations.
 
@@ -288,7 +300,11 @@ Maybe there's an alternative way of drawing the scene that doesn't
 use clipping. For example, overlay opaque corners onto a square
 instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise
-manipulated, a [RepaintBoundary][] might help.
+manipulated, a [`RepaintBoundary`][] might help.
+
+[programmatically]: /docs/testing/code-debugging#debugging-animations
+[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
 #### Checking for offscreen layers
 
@@ -298,7 +314,7 @@ to the scene, but it can slow your app and should be avoided if
 you don’t need it.  Even if you don’t call `saveLayer` explicitly,
 implicit calls might happen on your behalf. You can check whether
 your scene is using `saveLayer` with the
-[PerformanceOverlayLayer.checkerboardOffscreenLayers][] switch.
+[`PerformanceOverlayLayer.checkerboardOffscreenLayers`][] switch.
 
 {% comment %}
 [TODO: Document disabling the graphs and checkerboardRasterCacheImages.
@@ -328,6 +344,8 @@ ask yourself these questions:
 * Can any of these calls be eliminated?
 * Can I apply the same effect to an individual element instead of a group?
 
+[`PerformanceOverlayLayer.checkerboardOffscreenLayers`]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
+
 #### Checking for non-cached images
 
 Caching an image with [RepaintBoundary][] is good, _when it makes sense_.
@@ -346,7 +364,7 @@ construct and take up loads of GPU memory,
 cache images only where absolutely necessary._
 
 You can see which images are being cached by enabling the
-[PerformanceOverlayLayer.checkerboardRasterCacheImages][] switch.
+[`PerformanceOverlayLayer.checkerboardRasterCacheImages`][] switch.
 
 {% comment %}
 [TODO: Document how to do this, either via UI or programmatically.
@@ -365,6 +383,8 @@ you can cache it by placing it into a [RepaintBoundary][]
 widget. Though the engine might still ignore a repaint
 boundary if it thinks the image isn't complex enough.
 
+[`PerformanceOverlayLayer.checkerboardRasterCacheImages`]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html
+
 ### Viewing the widget rebuild profiler
 
 The Flutter framework is designed to make it hard to create
@@ -377,6 +397,8 @@ of bugs.
 You can view the widget rebuilt counts for the current screen and
 frame in the Flutter plugin for Android Studio and IntelliJ.
 For details on how to do this, see [Show performance data][]
+
+[Show performance data]: /docs/development/tools/android-studio#show-performance-data
 
 ## Benchmarking
 
@@ -396,6 +418,9 @@ regression is introduced that adversely affects performance.
 For more information, see [Integration testing][],
 a section in [Testing Flutter apps][].
 
+[Integration testing]: /docs/testing#integration-tests
+[Testing Flutter apps]: /docs/testing
+
 ## Other resources
 
 The following resources provide more information on using
@@ -407,46 +432,13 @@ Flutter's tools and debugging in Flutter:
 * [Why Flutter Uses Dart][], an article on Hackernoon
 * [Why Flutter uses Dart][video], a video on the Flutter channel
 * [DevTools][devtools]: performance tooling for Dart and Flutter apps
-* [Flutter API][] docs, particularly the [PerformanceOverlay][] class,
+* [Flutter API][] docs, particularly the [`PerformanceOverlay`][] class,
   and the [dart:developer][] package
 
-
-[Android Studio/IntelliJ]: /docs/development/tools/android-studio
-[bookshelf-like icon]: /docs/testing/ui-performance/images/performance-overlay-icon.png
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[debug mode]: /docs/testing/build-modes#debug
-[Debugging]: /docs/testing/debugging
-[Debugging Flutter apps programmatically]: /docs/testing/code-debugging
-[launch DevTools]: /docs/development/tools/devtools
 [devtools]: /docs/development/tools/devtools
-[examples]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
 [Flutter API]: {{site.api}}
 [Flutter inspector]: /docs/development/tools/devtools/inspector
-[Flutter inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
-[Flutter's build modes]: /docs/testing/build-modes
-[GitHub wiki]: {{site.github}}/flutter/flutter/wiki/
-[Inspector view]: /docs/development/tools/devtools/inspector
-[Integration testing]: /docs/testing#integration-tests
-[issues or feature requests]: {{site.github}}/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory
-[line-chart icon]: /docs/testing/ui-performance/images/observatory-timeline-icon.png
-[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[Performance overlay]: /docs/testing/code-debugging#performance-overlay
-[PerformanceOverlay]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
-[PerformanceOverlayLayer.checkerboardOffscreenLayers]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
-[PerformanceOverlayLayer.checkerboardRasterCacheImages]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html
-[profile mode]: /docs/testing/build-modes#profile
-[programmatically]: /docs/testing/code-debugging#debugging-animations
-[rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
-[RepaintBoundary]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
-[Show performance data]: /docs/development/tools/android-studio#show-performance-data
-[stopwatch icon]: /docs/testing/ui-performance/images/observatory-icon.png
-[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
-[The Framework architecture]: {{site.github}}/flutter/flutter/wiki/The-Framework-architecture
-[timeDilation]: {{site.api}}/flutter/scheduler/timeDilation.html
-[Tracing Dart code]: /docs/testing/debugging#tracing-dart-code
-[Testing Flutter apps]: /docs/testing
-[Timeline view]: /docs/development/tools/devtools/timeline
-[UIKit]: https://developer.apple.com/documentation/uikit
-[Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
+[`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: https://youtu.be/5F-6n_2XWR8
+[Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

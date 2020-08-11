@@ -4,7 +4,7 @@ description: Learn how to use the DevTools logging view.
 ---
 
 {{site.alert.note}}
-  The logging view works with Flutter mobile and web applications.
+  The logging view works with all Flutter and Dart applications.
 {{site.alert.end}}
 
 ## What is it?

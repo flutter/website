@@ -18,7 +18,7 @@ This page covers the following topics:
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
 * [Signing the app](#signing-the-app)
-* [R8](#r8)
+* [Shrinking your code with R8](#shrinking-your-code-with-r8)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
@@ -71,13 +71,14 @@ keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000
 On Windows, use the following command:
 
 ```terminal
-keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
+keytool -genkey -v -keystore c:\Users\USER_NAME\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
-{{site.alert.warning}}
-  Keep the `keystore` file private;
-  do not check it into public source control.
-{{site.alert.end}}
+This command stores the `key.jks` file in your home
+directory. If you want to store it elsewhere, change
+the argument you pass to the `-keystore` parameter.
+**However, keep the `keystore` file private;
+don't check it into public source control!**
 
 {{site.alert.note}}
 * The `keytool` command might not be in your path&mdash;it's
@@ -87,8 +88,10 @@ keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg R
   'Java binary at:'. Then use that fully qualified path
   replacing `java` (at the end) with `keytool`.
   If your path includes space-separated names,
-  such as `Program Files`, place quotes around the
-  space-separated names. For example: `/"Program Files"/`
+  such as `Program Files`, use platform-appropriate
+  notation for the names. For example, on Mac/Linux
+  use `Program\ Files`, and on Windows use
+  `"Program Files"`.
 
 * The `-storetype JKS` tag is only required for Java 9
   or newer. As of the Java 9 release,
@@ -109,7 +112,7 @@ storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
 
 {{site.alert.warning}}
   Keep the `key.properties` file private;
-  do not check it into public source control.
+  don't check it into public source control.
 {{site.alert.end}}
 
 ### Configure signing in gradle
@@ -184,10 +187,13 @@ Release builds of your app will now be signed automatically.
 
 {{site.alert.note}}
   You may need to run `flutter clean` after changing the gradle file.
-  This will prevent cached builds affecting the signing process.
+  This prevents cached builds from affecting the signing process.
 {{site.alert.end}}
 
-## R8
+For more information on signing your app, see
+[Sign your app][] on developer.android.com.
+
+## Shrinking your code with R8
 
 [R8][] is the new code shrinker from Google, and it's enabled by default
 when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
@@ -257,13 +263,16 @@ the Play Store.
   Recently, the Flutter team has received [several reports][crash-issue]
   from developers indicating they are experiencing app
   crashes on certain devices on Android 6.0. If you are targeting
-  Android 6.0, follow the following steps:
+  Android 6.0, use the following steps:
 
   * If you build an App Bundle
-    Edit `android/gradle.properties` and add the flag: `android.bundle.enableUncompressedNativeLibs=false`.
+    Edit `android/gradle.properties` and add the flag:
+    `android.bundle.enableUncompressedNativeLibs=false`.
 
   * If you build an APK
-    Make sure `android/app/src/AndroidManifest.xml` doesn't set `android:extractNativeLibs=false` in the `<application>` tag.
+    Make sure `android/app/src/AndroidManifest.xml`
+    doesn't set `android:extractNativeLibs=false`
+    in the `<application>` tag.
 
   For more information, see the [public issue][crash-issue].
 {{site.alert.end}}
@@ -273,6 +282,10 @@ the Play Store.
 This section describes how to build a release app bundle.
 If you completed the signing steps,
 the app bundle will be signed.
+At this point, you might consider [obfuscating your Dart code][]
+to make it more difficult to reverse engineer. Obfuscating
+your code involves adding a couple flags to your build command,
+and maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
@@ -317,6 +330,9 @@ APK for each target ABI (Application Binary Interface).
 
 If you completed the signing steps,
 the APK will be signed.
+At this point, you might consider [obfuscating your Dart code][]
+to make it more difficult to reverse engineer. Obfuscating
+your code involves adding a couple flags to your build command.
 
 From the command line:
 
@@ -369,6 +385,13 @@ build by specifying `--build-name` and `--build-number`, respectively.
 In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For more information,
 see [Version your app][] in the Android documentation.
+
+After updating the version number in the pubspec file,
+run `flutter pub get` from the top of the project, or
+use the **Pub get** button in your IDE. This updates
+the `versionName` and `versionCode` in the `local.properties` file,
+which are later updated in the `build.gradle` file when you
+rebuild the Flutter app.
 
 ## Android release FAQ
 
@@ -428,21 +451,20 @@ The resulting app bundle or APK files are located in
 ### Are there any special considerations with add-to-app?
 {% endcomment %}
 
+
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [appid]: {{site.android-dev}}/studio/build/application-id
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
-[crash-issue]: https://issuetracker.google.com/issues/147096055
-[x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[crash-issue]: https://issuetracker.google.com/issues/147096055
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
-[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
@@ -450,10 +472,12 @@ The resulting app bundle or APK files are located in
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
-[Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
+[obfuscating your Dart code]: /docs/deployment/obfuscate
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [R8]: {{site.android-dev}}/studio/build/shrink-code
+[Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning
+[x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64

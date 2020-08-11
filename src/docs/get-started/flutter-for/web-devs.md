@@ -8,6 +8,11 @@ This page is for users who are familiar with the HTML and CSS syntax for
 arranging components of an application's UI. It maps HTML/CSS code snippets to
 their Flutter/Dart code equivalents.
 
+One of the fundamental differences between designing a web
+layout and a Flutter layout, is learning how constraints work,
+and how widgets are sized and positioned. To learn more,
+see [Understanding constraints][].
+
 The examples assume:
 
 * The HTML document starts with `<!DOCTYPE html>`, and the CSS box model
@@ -297,8 +302,8 @@ Use the `Transform` widget’s `alignment` and `origin` properties to
 specify the transform origin (fulcrum) in relative and absolute terms,
 respectively.
 
-For a simple 2D rotation, the widget is rotated on the Z axis using radians.
-(degrees × π / 180)
+For a simple 2D rotation, in which the widget is rotated on the Z axis, create a new [`Matrix4`][] identity object and use
+its `rotateZ()` method to specify the rotation factor using radians (degrees × π / 180).
 
 <div class="lefthighlight">
 {% prettify css %}
@@ -821,7 +826,7 @@ var container = Container( // grey box
 
 ### Making inline formatting changes
 
-A [`Text`][] widget lets you display text with the same
+A [`Text`][] widget lets you display text with some
 formatting characteristics. To display text that uses
 multiple styles (in this example,
 a single word with emphasis), use a [`RichText`][]
@@ -838,7 +843,7 @@ styling.
 {% prettify css %}
 <div class="greybox">
   <div class="redbox">
-    [[highlight]]Lorem <em>ipsum</em> [[/highlight]]
+    [[highlight]]Lorem <em>ipsum</em>[[/highlight]]
   </div>
 </div>
 
@@ -846,7 +851,7 @@ styling.
   background-color: #e0e0e0; /* grey 300 */
   width: 320px;
   height: 240px;
-  [[highlight]]font: 900 24px Roboto; [[/highlight]]
+  [[highlight]]font: 900 24px Roboto;[[/highlight]]
   display: flex;
   align-items: center;
   justify-content: center;
@@ -978,3 +983,5 @@ var container = Container( // grey box
 [`TextSpan`]: {{site.api}}/flutter/painting/TextSpan-class.html
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
+[Understanding constraints]: /docs/development/ui/layout/constraints
+

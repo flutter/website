@@ -4,6 +4,14 @@ set -e -o pipefail
 
 readonly rootDir="$(cd "$(dirname "$0")/.." && pwd)"
 
+readonly diffVersion="$(diff -v 2>&1 | head -n 1 | awk '{print $NF}')"
+
+if [[ ${diffVersion:0:1} != "3" ]]; then
+  echo "Unsupported diff version ${diffVersion}. Please install diffutils version 3.6 or higher."
+  echo "On macOS, you can run 'brew install diffutils'."
+  exit 1
+fi
+
 function usage() {
   echo $1; echo
   echo "Usage: $(basename $0) [--help] [-k|--keep-dart-tool] [--legacy] [path-to-src-file-or-folder]"

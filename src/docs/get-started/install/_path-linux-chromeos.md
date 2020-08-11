@@ -41,6 +41,8 @@ whenever you open a new window. For example:
     $ which flutter
     ```
 
+{% include dart-tool.md %}
+
 ### Update path directly
 
 In some cases, your distribution may not permanently acquire

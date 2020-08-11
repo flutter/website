@@ -1,5 +1,6 @@
 ---
 title: Tutorials
+description: A list of Flutter tutorials.
 ---
 
 The **Flutter tutorials** teach you how to use the Flutter framework to
@@ -12,9 +13,9 @@ Choose from the following:
   basic principles, you'll build the layout for a sample screenshot.
 
 * [Adding interactivity to your Flutter app](/docs/development/ui/interactive)
-: You'll extend the simple layout app created in "Building Layouts in Flutter"
-  to make an icon tappable.  Different ways of managing a widget's
-  state are also discussed.
+: You'll extend the simple layout app created in
+  "Building Layouts in Flutter" to make an icon tappable.
+  Different ways of managing a widget's state are also discussed.
 
 * [Animations in Flutter](/docs/development/ui/animations/tutorial)
 : Explains the fundamental classes in the Flutter animation package

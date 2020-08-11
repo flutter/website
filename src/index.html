@@ -10,8 +10,6 @@ description: >
   is used by developers and organizations around the world,
   and is free and open source.
 js:
-- url: /assets/js/detect_safari.js
-  defer: true
 - url: /assets/js/dartpad_picker_main.dart.js
   defer: true
 
@@ -119,11 +117,21 @@ js:
                 differences such as scrolling, navigation, icons and
                 fonts, and your Flutter code is compiled to native ARM
                 machine code using <a href="https://dart.dev/platforms">Dart's native compilers</a>.
-                Thus Flutter gives you full native performance on both
-                iOS and Android.
                 </p>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<section id="dartpad-landing-page" class="landing-page__cta card text-center">
+    <div class="card-body">
+        <div class="dash-dartpad">
+            <a name="try-dart"></a>
+            <h2>Try Flutter in your browser</h2>
+            <select id="dartpad-select" aria-label="Select a Flutter demo"></select>
+            <div id="dartpad-host"></div>
+            <h3>Want more practice? <a href="/codelabs">Try a codelab</a>.</h3>
         </div>
     </div>
 </section>
@@ -143,10 +151,9 @@ js:
                 <p>
                     Flutter's <em>hot reload</em> helps you quickly
                     and easily experiment, build UIs, add features, and fix
-                    bugs faster. Experience sub-second reload times,
-                    without losing state, on
-                    emulators, simulators, and hardware for iOS
-                    and Android.
+                    bugs faster. Experience sub-second reload times
+                    without losing state on
+                    emulators, simulators, and hardware.
                 </p>
 
                 <a href="/docs/development/tools/hot-reload">Learn more</a>
@@ -168,7 +175,7 @@ js:
                         <a href="https://reflect.ly" target="blank">Learn more</a>
                         </small>
                     </div>
-                    <video src="/videos/BeautifulUI.mp4" autoplay playsinline muted loop title="Reflectly app demo"></video>
+                    <video src="/videos/Filters.mp4" autoplay playsinline muted loop title="Reflectly app demo"></video>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -248,14 +255,14 @@ js:
             <div class="homepage__card-graphic col-lg-7 order-lg-1">
                 <div>
                     <div class="landing-page__card-graphic__logo-row row align-items-center">
-                        {% asset homepage/logo-alibaba.png alt='Alibaba logo' class="col-4" %}
-                        {% asset homepage/logo-hamilton.png alt='Hamilton logo' class="col-4" %}
-                        {% asset homepage/logo-google.svg alt='Google logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/google.png alt='Google logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/ebay.png alt='Ebay logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/bmw.jpg alt='BMW logo' class="col-4" %}
                     </div>
                     <div class="landing-page__card-graphic__logo-row row align-items-center">
-                        {% asset homepage/logo-tencent.png alt='Tencent logo' class="col-4" %}
-                        {% asset homepage/logo-abbey_road_studios.png alt='Abbey Road Studios logo' class="col-4" %}
-                        {% asset homepage/logo-google_ads.png alt='Google AdWords logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/square.png alt='Square logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/alibaba.png alt='Alibaba logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/capital-one.png alt='Capital One logo' class="col-4" %}
                     </div>
                 </div>
             </div>
@@ -274,36 +281,22 @@ js:
 
 <div class="homepage__news card-deck">
     <div class="card">
-        {% asset homepage/news-1.png alt='A news item image' class="card-img-top" %}
+        {% asset homepage/news-1.gif alt='A news item image' class="card-img-top" %}
         <div class="card-body">
             <p class="card-text"><small class="text-muted">News</small></p>
-            <h3>Announcing Flutter 1.12</h3>
-            <a href="https://developers.googleblog.com/2019/12/flutter-ui-ambient-computing.html">Read More</a>
+            <h3>Announcing Flutter 1.17</h3>
+            <a href="https://medium.com/flutter/announcing-flutter-1-17-4182d8af7f8e">Read more</a>
         </div>
     </div>
     <div class="card">
         {% asset homepage/news-2.png alt='A news item image' class="card-img-top" %}
         <div class="card-body">
             <p class="card-text"><small class="text-muted">News</small></p>
-            <h3>Flutter’s iOS Application Bundle</h3>
-            <a href="https://medium.com/flutter/flutters-ios-application-bundle-6f56d4e88cf8">Read More</a>
+            <h3>Flutter web support updates</h3>
+            <a href="https://medium.com/flutter/flutter-web-support-updates-8b14bfe6a908">Read more</a>
         </div>
     </div>
 </div>
-
-
-<!-- Do not show DartPad on Safari -->
-<section id="dartpad-landing-page" class="landing-page__cta card text-center">
-    <div class="card-body">
-        <div class="dash-dartpad">
-            <a name="try-dart"></a>
-            <h2>Try Flutter in your browser</h2>
-            <select id="dartpad-select" aria-label="Select a Flutter demo"></select>
-            <div id="dartpad-host"></div>
-            <h3>Want more practice? <a href="/codelabs">Try a codelab</a>.</h3>
-        </div>
-    </div>
-</section>
 
 <section class="landing-page__cta card text-center">
     <div class="card-body">

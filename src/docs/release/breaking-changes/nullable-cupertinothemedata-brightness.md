@@ -1,5 +1,5 @@
 ---
-title: nullable CupertinoThemeData.brightness
+title: Nullable CupertinoThemeData.brightness
 description: CupertinoThemeData.brightness is now nullable, and it returns the value specified by the user (defaults to null) as is.
 ---
 
@@ -8,12 +8,10 @@ description: CupertinoThemeData.brightness is now nullable, and it returns the v
 
 ## Context
 
-[`CupertinoThemeData.brightness`][]
-is now used to override `MediaQuery.platformBrightness`
-for Cupertino widgets.
-Before this change,
-the [`CupertinoThemeData.brightness`][] getter returned
-`Brightness.light` when it was set to null.
+[`CupertinoThemeData.brightness`][] is now used to
+override `MediaQuery.platformBrightness` for Cupertino widgets.
+Before this change, the [`CupertinoThemeData.brightness`][]
+getter returned `Brightness.light` when it was set to null.
 
 ## Description of change
 
@@ -50,6 +48,7 @@ class AwaysDarkCupertinoThemeData extends CupertinoThemeData {
   Brightness brightness => Brightness.dark;
 }
 ```
+
 When a `CupertinoTheme` uses the above `CupertinoThemeData`,
 dark mode is enabled for all its Cupertino descendants
 that are affected by this `CupertinoTheme`.
@@ -57,7 +56,8 @@ that are affected by this `CupertinoTheme`.
 
 ## Timeline
 
-This change was made in January of 2020 after the v1.13.7 release.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 
@@ -67,14 +67,14 @@ Design doc:
 API documentation:
 * [`CupertinoThemeData.brightness`][]
 
-Relevant issues:
+Relevant issue:
 * [Issue 47255][]
 
-Relevant PRs:
+Relevant PR:
 * [Let material `ThemeData` dictate brightness if `cupertinoOverrideTheme.brightness` is null][]
 
 
-[`CupertinoTheme.brightnessOf`]: https://api.flutter.dev/flutter/cupertino/CupertinoTheme/brightnessOf.html
+[`CupertinoTheme.brightnessOf`]: {{site.api}}/flutter/cupertino/CupertinoTheme/brightnessOf.html
 [`CupertinoThemeData.brightness`]: {{site.api}}/flutter/cupertino/CupertinoThemeData/brightness.html
 [Issue 47255]: {{site.github}}/flutter/flutter/issues/47255
 [Let material `ThemeData` dictate brightness if `cupertinoOverrideTheme.brightness` is null]: {{site.github}}/flutter/flutter/pull/47249

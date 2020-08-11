@@ -267,7 +267,7 @@ class Example {
     const url = 'https://httpbin.org/ip';
     const response = await fetch(url);
     const json = await response.json();
-    const data = await json.origin;
+    const data = json.origin;
     return data;
   }
 }
@@ -749,7 +749,7 @@ dependencies:
 
 <!-- skip -->
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 ```
 
 For more information, see [Using Packages][] and

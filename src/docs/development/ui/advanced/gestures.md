@@ -1,5 +1,6 @@
 ---
 title: Taps, drags, and other gestures
+description: How gestures, such as taps and drags, work in Flutter.
 ---
 
 This document explains how to listen for, and respond to,

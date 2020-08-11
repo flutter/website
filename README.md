@@ -25,6 +25,13 @@ Install the following tools if you don't have them already.
 - **[rvm][]**, the Ruby Version Manager.
 - **[Flutter][Flutter install]**
 - **[Dart SDK][Dart install]**
+- **[GNU diffutils][]** version 3.6 or later.
+  > NOTE: `diff` v3.6+ is required to ensure that in-page code diffs are
+  > consistently refreshed across macOS and Linux. [Issue #3076][] was due to
+  > the default macOS `diff` being at v2.x -- to up upgrade `diffutils` run:<br>
+  > `brew install diffutils`.
+  >
+  > [issue #3076]: https://github.com/flutter/website/issues/3076
 
 > IMPORTANT: Follow the installation instructions for each of the tools
 carefully. In particular, configure your shell/environment so
@@ -86,13 +93,13 @@ if you already have the required packages installed.
       **Note**: Unless you're editing files under `site-shared`, you can safely
       ignore `ERROR: directory is already being watched` messages.
       For details, see [#1363](https://github.com/flutter/website/issues/1363).
-      
+
       **Note**: The first time you run either one of these commands,
       jekyll takes anywhere between 10 - 20 seconds to generate static
       content inside the `_sites` directory. If you try to verify the
       site locally but aren't able to see the content right away,
-      wait 20 seconds before stopping the 
-      server or concluding that something is wrong. 
+      wait 20 seconds before stopping the
+      server or concluding that something is wrong.
  1. Prior to submitting, validate site links:<br>
     `./tool/shared/check-links.sh`
 
@@ -101,14 +108,14 @@ if you already have the required packages installed.
 > To fix Jekyll, stop the `serve.sh` script and remove the generated site files:
 > hand, and then restart the `serve.sh` script:
 
-> `npm run clean` 
+> `npm run clean`
 > OR
 > `rm -Rf ./_site/* ./.jekyll*`
 
-> Next, restart the `serve.sh` script: 
+> Next, restart the `serve.sh` script:
 
 > `npm run start`
-> OR 
+> OR
 > `./tool/serve.sh`
 
 ## Creating and/or editing DartPad example code
@@ -133,7 +140,7 @@ This `iframe` depends on the following GitHub gist url:
 For detailed instructions on how to use this approach to DartPad examples, see the [DartPad embedding guide].
 
 ### DartPad example code in this repo - `src/_packages/dartpad_picker`
-Some DartPad example code remains in `.dart` files in this repo, and must be compiled via `src/_packages/dartpad_picker/compile.sh`. For an example, consult `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`. 
+Some DartPad example code remains in `.dart` files in this repo, and must be compiled via `src/_packages/dartpad_picker/compile.sh`. For an example, consult `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`.
 
 In order to create or change example code using `dartpad_picker`, you must regenerate the JavaScript:
 
@@ -165,13 +172,13 @@ You can deploy your local edits to a personal staging site as follows
     $ npx firebase use my-foo
     Now using alias staging (<your project name>)
     ```
- 
+
  1. Tell Firebase to execute deployment of your project:
- 
+
    ```console
    $ npx firebase deploy
    ```
-   
+
    Your personal version of the Flutter website is now deployed to Firebase.
 
 Alternatively, you can skip the previous steps and just use the deploy script:
@@ -231,9 +238,10 @@ Also check out the site-shared
 [Firebase]: https://firebase.google.com/
 [first-timers SVG]: https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square
 [first-timers]: https://www.firsttimersonly.com/
+[GNU diffutils]: https://www.gnu.org/software/diffutils
 [DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
 [Jekyll]: https://jekyllrb.com/
-[nvm]: https://github.com/creationix/nvm#installation
+[nvm]: https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating
 [Repo on Travis]: https://travis-ci.org/flutter/website
 [rvm]: https://rvm.io/rvm/install#installation
 [this repo]: https://github.com/flutter/website

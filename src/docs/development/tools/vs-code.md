@@ -71,7 +71,7 @@ enables the following:
   (**View > Problems** or `Ctrl`+`Shift`+`M`
   (`Cmd`+`Shift`+`M` on macOS))
   Any analysis issues are shown in the Problems pane:<br>
-  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:width="90%"}
+  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:.mw-100.pt-1}
 
 ## Running and debugging
 
@@ -91,7 +91,7 @@ enables the following:
   [Running DevTools from VS Code][] in the [DevTools][] docs.
 {{site.alert.end}}
 
-Start debugging by clicking **Debug > Start Debugging**
+Start debugging by clicking **Run > Start Debugging**
 from the main IDE window, or press `F5`.
 
 ### Selecting a target device
@@ -99,9 +99,8 @@ from the main IDE window, or press `F5`.
 When a Flutter project is open in VS Code,
 you should see a set of Flutter specific entries in the status bar,
 including a Flutter SDK version and a
-device name (or the message **No Devices**).
-
-![Flutter device]({% asset tools/vs-code/device_status_bar.png @path %}){:width="450px"}
+device name (or the message **No Devices**):<br>
+![VS Code status bar][]{:.mw-100.pt-1}
 
 {{site.alert.note}}
   * If you do not see a Flutter version number or device info,
@@ -129,15 +128,15 @@ running or debugging.
 
 ### Run app without breakpoints
 
- 1. Click **Debug > Start Without Debugging** in the
+ 1. Click **Run > Start Without Debugging** in the
     main IDE window, or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
-    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:width="490px"}
+    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:.mw-100.pt-1}
 
 ### Run app with breakpoints
 
  1. If desired, set breakpoints in your source code.
- 1. Click **Debug > Start Debugging** in the main IDE window,
+ 1. Click **Run > Start Debugging** in the main IDE window,
     or press `F5`.
 
     * The left **Debug Sidebar** shows stack frames and variables.
@@ -214,6 +213,10 @@ can assist in correcting it.
 : Changes a child argument to a children argument,
   and wraps the argument value in a list.
 
+**Convert StatelessWidget to StatefulWidget assist**
+: Changes the implementation of a `StatelessWidget` to that of a `StatefulWidget`,
+  by creating the `State` class and moving the code there.
+
 ### Snippets
 
 Snippets can be used to speed up entering typical code structures.
@@ -236,9 +239,9 @@ You can also define custom snippets by executing
 ### Keyboard shortcuts
 
 **Hot reload**
-: During a debug session, clicking the **Restart** button on the
-  **Debug Toolbar**, or pressing `Ctrl`+`Shift`+`F5`
-  (`Cmd`+`Shift`+`F5` on macOS) performs a hot reload.
+: During a debug session, clicking the **Hot Reload** button on the
+  **Debug Toolbar**, or pressing `Ctrl`+`F5`
+  (`Cmd`+`F5` on macOS) performs a hot reload.
 
   Keyboard mappings can be changed by executing the
   **Open Keyboard Shortcuts** command from the [Command Palette][].
@@ -258,7 +261,7 @@ A few types of code changes cannot be hot reloaded though:
 For these changes, fully restart your application without
 having to end your debugging session. To perform a hot restart,
 run the **Flutter: Hot Restart** command from the
-[Command Palette][], or press `Ctrl`+`F5`.
+[Command Palette][], or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
 
 ## Troubleshooting
 
@@ -287,3 +290,4 @@ When filing new issues, include [flutter doctor][] output.
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
 [Set up an editor]: /docs/get-started/editor?tab=vscode
+[VS Code status bar]: {% asset tools/vs-code/device_status_bar.png @path %}

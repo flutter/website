@@ -8,13 +8,14 @@
 
 ## Get the Flutter SDK {#get-sdk}
 
- 1. Download the following installation bundle to get the latest {{site.sdk.channel}} release of the
-    Flutter SDK:
+ 1. Download the following installation bundle to get the latest
+    {{site.sdk.channel}} release of the Flutter SDK:
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
     see the [SDK archive][] page.
+
  1. Extract the file in the desired location, for example:
 
     {% comment %}
@@ -31,13 +32,20 @@
     $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
     ```
     
-     If you don't want to install a fixed version of the installation bundle, 
-     you can skip steps 1 and 2. 
-     Instead, get the source code from the [Flutter repo][] on GitHub,
-     and change branches or tags as needed. For example:
+    If you don't want to install a fixed version of the installation bundle, 
+    you can skip steps 1 and 2. 
+    Instead, get the source code from the [Flutter repo][]
+    on GitHub with the following command:
     
     ```terminal
-    $ git clone https://github.com/flutter/flutter.git -b stable
+    $ git clone https://github.com/flutter/flutter.git
+    ```
+    
+    You can also change branches or tags as needed.
+    For example, to get just the stable version:
+    
+    ```terminal
+    $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
     ```
     
  1. Add the `flutter` tool to your path:
@@ -46,7 +54,8 @@
     $ export PATH="$PATH:`pwd`/flutter/bin"
     ```
 
-    This command sets your `PATH` variable for the _current_ terminal window only.
+    This command sets your `PATH` variable for the
+    _current_ terminal window only.
     To permanently add Flutter to your path, see
     [Update your path][].
 
@@ -105,6 +114,9 @@ command again to verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.github}}/flutter/flutter
+[Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: /docs/development/tools/sdk/archive
+[Snap Store]: https://snapcraft.io/store
+[snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading

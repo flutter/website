@@ -1,5 +1,6 @@
 ---
 title: Slivers
+description: What are slivers in Flutter and how to use them.
 ---
 
 A sliver is a portion of a scrollable area. You can use slivers to

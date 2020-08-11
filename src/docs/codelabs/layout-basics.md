@@ -313,6 +313,10 @@ wrap a widget and force the widget to fill extra space.
   while keeping its size in relation to its parent widget.
   `Expanded` changes the constraints of a child widget,
   so it fills any empty space.
+
+  To learn more about constraints and how they affect how
+  Flutter determines the size and position of its widgets,
+  see [Understanding constraints][].
 {{site.alert.end}}
 
 #### Example: Filling extra space
@@ -707,7 +711,7 @@ here are a few suggestions for resources worth exploring:
   visiting the [Building layouts][] page.
 * Check out the [sample apps][].
 * Visit [Flutter's YouTube channel][],
-  where you can watch a variety videos from
+  where you can watch a variety of videos, from
   videos that focus on individual widgets
   to videos of developers building apps.
 
@@ -725,4 +729,6 @@ You can download Flutter from the [install][] page.
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html
 [Material Color palette]: {{site.api}}/flutter/material/Colors-class.html
 [Material Icon library]: {{site.api}}/flutter/material/Icons-class.html
-[sample apps]: {{site.github}}/flutter/samples/blob/master/INDEX.md
+[sample apps]: https://flutter.github.io/samples
+[Understanding constraints]: /docs/development/ui/layout/constraints
+

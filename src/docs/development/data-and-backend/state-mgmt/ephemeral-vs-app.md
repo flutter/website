@@ -129,7 +129,7 @@ Source drawing for the png above: : https://docs.google.com/drawings/d/1p5Bvuagi
 When asked about React's setState versus Redux's store, the author of Redux,
 Dan Abramov, replied:
 
-> "The rule of thumb is: [Do whatever is less awkward]."
+> "The rule of thumb is: [Do whatever is less awkward][]."
 
 In summary, there are two conceptual types of state in any Flutter app.
 Ephemeral state can be implemented using `State` and `setState()`,
@@ -137,5 +137,5 @@ and is often local to a single widget. The rest is your app state.
 Both types have their place in any Flutter app, and the split between
 the two depends on your own preference and the complexity of the app.
 
-[`PageView`]: {{site.api}}/flutter/widgets/PageView-class.html
 [Do whatever is less awkward]: {{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978
+[`PageView`]: {{site.api}}/flutter/widgets/PageView-class.html

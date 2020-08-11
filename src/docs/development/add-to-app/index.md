@@ -5,8 +5,9 @@ description: Adding Flutter as a library to an existing Android or iOS app.
 
 ## Add-to-app
 
-It's sometimes not practical to rewrite your entire application in Flutter all
-at once. For those situations, Flutter can be integrated into your existing
+It's sometimes not practical to rewrite your entire application in
+Flutter all at once. For those situations,
+Flutter can be integrated into your existing
 application piecemeal, as a library or module.
 That module can then be imported into your Android or iOS
 (currently supported platforms) app to render a part of your
@@ -22,13 +23,14 @@ It currently has the _**following limitations**_:
 * Running multiple Flutter instances or running in partial screen
   views may have undefined behavior.
 * Using Flutter in background mode is still a WIP.
-* Packing a Flutter library into another sharable library
-  or packing multiple Flutter libraries into an application isn't supported.
-* Plugins used in add-to-app on Android should undergo [flutter.dev/go/android-plugin-migration](https://flutter.dev/go/android-plugin-migration)
-  and use the [FlutterPlugin](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html)-based
-  APIs. Plugins that don't support FlutterPlugin may have unexpected behaviors
-  if they make assumptions that are untenable in add-to-app (such as assuming
-  that a Flutter Activity is always present).
+* Packing multiple Flutter libraries into an
+  application isn't supported.
+* Plugins used in add-to-app on Android should migrate
+  to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
+  Plugins that don't support `FlutterPlugin` may have unexpected
+  behaviors if they make assumptions that are untenable in add-to-app
+  (such as assuming that a Flutter `Activity` is always present).
+* As of v1.17, the Flutter module only supports AndroidX applications on Android.
 
 ## Supported features
 
@@ -36,8 +38,8 @@ It currently has the _**following limitations**_:
 
 {% include app-figure.md image="development/add-to-app/android-overview.gif" alt="Add-to-app steps on Android" %}
 
-* Auto-build and import the Flutter module by adding a Flutter SDK hook to
-  your Gradle script.
+* Auto-build and import the Flutter module by adding a
+  Flutter SDK hook to your Gradle script.
 * Build your Flutter module into a generic
   [Android Archive (AAR)][] for integration into your
   own build system and for better Jetifier interoperability
@@ -74,7 +76,7 @@ It currently has the _**following limitations**_:
   with the platform.
 * Support for Flutter debugging and stateful hot reload by
   using `flutter attach` from IDEs or the command line to
-  connect to an app that contains  Flutter.
+  connect to an app that contains Flutter.
 
 See our [add-to-app GitHub Samples repository][]
 for sample projects in Android and iOS that import
@@ -83,6 +85,7 @@ a Flutter module for UI.
 ## Get started
 
 To get started, see our project integration guide for
+Android and iOS:
 
 <div class="card-deck mb-8">
   <a class="card" href="/docs/development/add-to-app/android/project-setup">
@@ -104,7 +107,7 @@ To get started, see our project integration guide for
 ## API usage
 
 After Flutter is integrated into your project,
-see our API usage guides for
+see our API usage guides at the following links:
 
 <div class="card-deck mb-8">
   <a class="card" href="/docs/development/add-to-app/android/add-flutter-screen">
@@ -126,13 +129,14 @@ see our API usage guides for
 
 [add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
 [Android Archive (AAR)]: https://developer.android.com/studio/projects/android-library
+[Android plugin APIs]: /docs/development/packages-and-plugins/plugin-api-migration
 [Flutter plugins]: {{site.pub}}/flutter
-[Flutter plugins]: {{site.pub}}/pub.dev/flutter
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
 [FlutterFire]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
+[`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [iOS Framework]: https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
 [maintained by the Flutter team]: {{site.github}}/flutter/plugins/tree/master/packages

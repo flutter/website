@@ -85,8 +85,11 @@ Before reading and writing data to the database, open a connection
 to the database. This involves two steps:
 
   1. Define the path to the database file using `getDatabasesPath()` from the
-  `sqflite` package, combined with the `path` function from the `path` package.
+  `sqflite` package, combined with the `join` function from the `path` package.
   2. Open the database with the `openDatabase()` function from `sqflite`.
+
+Note: In order to use the keyword `await`, the code must be placed
+inside an `async` function.
 
 <!-- skip -->
 ```dart
@@ -312,10 +315,15 @@ To run the example:
 ```dart
 import 'dart:async';
 
+import 'package:flutter/widgets.dart';
+
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 void main() async {
+  // Avoid errors caused by flutter upgrade.
+  // Importing 'package:flutter/widgets.dart' is required.
+  WidgetsFlutterBinding.ensureInitialized();
   final database = openDatabase(
     // Set the path to the database. Note: Using the `join` function from the
     // `path` package is best practice to ensure the path is correctly

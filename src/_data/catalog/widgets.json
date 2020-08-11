@@ -30,6 +30,16 @@
     "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-align' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#f50057'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='20' width='80' height='60' fill='#ffffff'/><rect x='15' y='50' width='50' height='30' fill='#4dd0e1'/><line x1='10' y1='65' x2='12' y2='65' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-align)'/><line x1='90' y1='65' x2='68' y2='65' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-align)'/><line x1='40' y1='20' x2='40' y2='47' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-align)'/></svg>"
   },
   {
+    "name": "AnimatedAlign",
+    "description": "Animated version of Align which automatically transitions the child's position over a given duration whenever the given alignment changes.",
+    "categories": [
+        "Animation and Motion"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/widgets/AnimatedAlign-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "AnimatedBuilder",
     "description": "A general-purpose widget for building animations. AnimatedBuilder is useful for more complex widgets that wish to include an animation as part of a larger build function. To use AnimatedBuilder, simply construct the widget and pass it a builder function.",
     "categories": [

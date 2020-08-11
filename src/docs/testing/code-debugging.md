@@ -121,7 +121,7 @@ current state or events to the console (using `debugPrint`).
 To dump the state of the Widgets library, call [`debugDumpApp()`][].
 You can call this more or less any time that the application is not in
 the middle of running a build phase (in other words, not anywhere inside a
-`build()` method), so long as the application has built at least once
+`build()` method), if the app has built at least once and is in debug mode
 (in other words, any time after calling `runApp()`).
 
 For example, the following application:
@@ -154,7 +154,7 @@ class AppHome extends StatelessWidget {
 }
 ```
 
-The prevous app outputs something like the following
+The previous app outputs something like the following
 (the precise details vary by the version of the framework,
 the size of the device, and so forth):
 
@@ -253,7 +253,7 @@ GestureDetector is listed, and it is listening only to a "tap" gesture
 function).
 
 If you write your own widgets, you can add information by overriding
-[`debugFillProperties()`][widget-fill]. Add [DiagnosticsProperty][[]
+[`debugFillProperties()`][widget-fill]. Add [DiagnosticsProperty][]
 objects to the method's argument, and call the superclass method.
 This function is what the `toString` method uses to fill in the
 widget's description.

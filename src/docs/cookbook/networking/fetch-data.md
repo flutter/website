@@ -145,7 +145,7 @@ The `initState()` method is called exactly once and then never again.
 If you want to have the option of reloading the API in response to an
 [`InheritedWidget`][] changing, put the call into the
 `didChangeDependencies()` method.
-See [`State`][] for more details.  
+See [`State`][] for more details.
 
 <!-- skip -->
 ```dart
@@ -270,7 +270,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-Future<Album> futureAlbum;
+  Future<Album> futureAlbum;
 
   @override
   void initState() {

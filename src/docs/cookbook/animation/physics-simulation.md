@@ -210,9 +210,7 @@ child: Align(
 ),
 ```
 
-
 Finally, update the `GestureDetector` to manage the animation controller:
-
 
 <!-- skip -->
 ```dart
@@ -241,6 +239,7 @@ already sets the direction by setting the animation's start and end alignment.)
 
 First, import the `physics` package:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/physics.dart';
 ```
@@ -255,6 +254,7 @@ to coordinate values in this range.
 Finally, `AnimationController` has an `animateWith()` method that can be given a
 [SpringSimulation][]:
 
+<!-- skip -->
 ```dart
 void _runAnimation(Offset pixelsPerSecond, Size size) {
   _animation = _controller.drive(
@@ -284,6 +284,7 @@ void _runAnimation(Offset pixelsPerSecond, Size size) {
 
 Don't forget to call `_runAnimation()`  with the velocity and size:
 
+<!-- skip -->
 ```dart
 onPanEnd: (details) {
   _runAnimation(details.velocity.pixelsPerSecond, size);

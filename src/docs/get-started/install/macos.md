@@ -1,5 +1,6 @@
 ---
 title: macOS install
+description: How to install on macOS.
 short-title: macOS
 next:
   title: Set up an editor

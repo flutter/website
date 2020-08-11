@@ -339,7 +339,10 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
+    controller = AnimationController(
+      duration: const Duration(milliseconds: 2000),
+      vsync: this,
+    );
     curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
@@ -408,12 +411,15 @@ class SignatureState extends State<Signature> {
         setState(() {
           RenderBox referenceBox = context.findRenderObject();
           Offset localPosition =
-          referenceBox.globalToLocal(details.globalPosition);
+              referenceBox.globalToLocal(details.globalPosition);
           _points = List.from(_points)..add(localPosition);
         });
       },
       onPanEnd: (DragEndDetails details) => _points.add(null),
-      child: CustomPaint(painter: SignaturePainter(_points), size: Size.infinite),
+      child: CustomPaint(
+        painter: SignaturePainter(_points),
+        size: Size.infinite,
+      ),
     );
   }
 }
@@ -431,6 +437,7 @@ class SignaturePainter extends CustomPainter {
         canvas.drawLine(points[i], points[i + 1], paint);
     }
   }
+
   bool shouldRepaint(SignaturePainter other) => other.points != points;
 }
 ```
@@ -727,7 +734,7 @@ using `async`/`await` and letting Dart do the heavy lifting:
 
 <!-- skip -->
 ```dart
-loadData() async {
+Future<void> loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
@@ -788,20 +795,22 @@ class _SampleAppPageState extends State<SampleAppPage> {
         title: Text("Sample App"),
       ),
       body: ListView.builder(
-          itemCount: widgets.length,
-          itemBuilder: (BuildContext context, int position) {
-            return getRow(position);
-          }));
+        itemCount: widgets.length,
+        itemBuilder: (BuildContext context, int position) {
+          return getRow(position);
+        },
+      ),
+    );
   }
 
   Widget getRow(int i) {
     return Padding(
       padding: EdgeInsets.all(10.0),
-      child: Text("Row ${widgets[i]["title"]}")
+      child: Text("Row ${widgets[i]["title"]}"),
     );
   }
 
-  loadData() async {
+  Future<void> loadData() async {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
@@ -835,7 +844,7 @@ and `await` on long-running tasks inside the function:
 
 <!-- skip -->
 ```dart
-loadData() async {
+Future<void> loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
@@ -868,14 +877,17 @@ the main thread to update the UI.
 
 <!-- skip -->
 ```dart
-loadData() async {
+Future<void> loadData() async {
   ReceivePort receivePort = ReceivePort();
   await Isolate.spawn(dataLoader, receivePort.sendPort);
 
   // The 'echo' isolate sends its SendPort as the first message.
   SendPort sendPort = await receivePort.first;
 
-  List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
+  List msg = await sendReceive(
+    sendPort,
+    "https://jsonplaceholder.typicode.com/posts",
+  );
 
   setState(() {
     widgets = msg;
@@ -883,7 +895,7 @@ loadData() async {
 }
 
 // The entry point for the isolate.
-static dataLoader(SendPort sendPort) async {
+static Future<void> dataLoader(SendPort sendPort) async {
   // Open the ReceivePort for incoming messages.
   ReceivePort port = ReceivePort();
 
@@ -993,17 +1005,23 @@ class _SampleAppPageState extends State<SampleAppPage> {
       });
 
   Widget getRow(int i) {
-    return Padding(padding: EdgeInsets.all(10.0), child: Text("Row ${widgets[i]["title"]}"));
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Text("Row ${widgets[i]["title"]}"),
+    );
   }
 
-  loadData() async {
+  Future<void> loadData() async {
     ReceivePort receivePort = ReceivePort();
     await Isolate.spawn(dataLoader, receivePort.sendPort);
 
     // The 'echo' isolate sends its SendPort as the first message
     SendPort sendPort = await receivePort.first;
 
-    List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
+    List msg = await sendReceive(
+      sendPort,
+      "https://jsonplaceholder.typicode.com/posts",
+    );
 
     setState(() {
       widgets = msg;
@@ -1011,7 +1029,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   // the entry point for the isolate
-  static dataLoader(SendPort sendPort) async {
+  static Future<void> dataLoader(SendPort sendPort) async {
     // Open the ReceivePort for incoming messages.
     ReceivePort port = ReceivePort();
 
@@ -1063,7 +1081,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 [...]
-  loadData() async {
+  Future<void> loadData() async {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
@@ -1159,10 +1177,13 @@ class _SampleAppPageState extends State<SampleAppPage> {
       });
 
   Widget getRow(int i) {
-    return Padding(padding: EdgeInsets.all(10.0), child: Text("Row ${widgets[i]["title"]}"));
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Text("Row ${widgets[i]["title"]}"),
+    );
   }
 
-  loadData() async {
+  Future<void> loadData() async {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
@@ -1678,10 +1699,13 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 
-  _getListData() {
+  List<Widget> _getListData() {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
-      widgets.add(Padding(padding: EdgeInsets.all(10.0), child: Text("Row $i")));
+      widgets.add(Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Text("Row $i"),
+      ));
     }
     return widgets;
   }
@@ -1733,13 +1757,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 
-  _getListData() {
+  List<Widget> _getListData() {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(GestureDetector(
         child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Text("Row $i")),
+          padding: EdgeInsets.all(10.0),
+          child: Text("Row $i"),
+        ),
         onTap: () {
           print('row tapped');
         },
@@ -1818,8 +1843,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget getRow(int i) {
     return GestureDetector(
       child: Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Text("Row $i")),
+        padding: EdgeInsets.all(10.0),
+        child: Text("Row $i"),
+      ),
       onTap: () {
         setState(() {
           widgets = List.from(widgets);
@@ -1893,8 +1919,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget getRow(int i) {
     return GestureDetector(
       child: Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Text("Row $i")),
+        padding: EdgeInsets.all(10.0),
+        child: Text("Row $i"),
+      ),
       onTap: () {
         setState(() {
           widgets.add(getRow(widgets.length + 1));
@@ -2054,7 +2081,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
               }
             });
           },
-          decoration: InputDecoration(hintText: "This is a hint", errorText: _getErrorText()),
+          decoration: InputDecoration(
+            hintText: "This is a hint",
+            errorText: _getErrorText(),
+          ),
         ),
       ),
     );

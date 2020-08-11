@@ -31,9 +31,9 @@ Visit the [fastlane docs][fastlane] for more info.
     run `fastlane init`.
 1. Edit the `Appfile`s to ensure they have adequate metadata for your app.
     * ![Android](/images/cd/android.png) Check that `package_name` in
-    `[project]/android/Appfile` matches your package name in AndroidManifest.xml.
+    `[project]/android/fastlane/Appfile` matches your package name in AndroidManifest.xml.
     * ![iOS](/images/cd/ios.png) Check that `app_identifier` in
-    `[project]/ios/Appfile` also matches Info.plist's bundle identifier. Fill in
+    `[project]/ios/fastlane/Appfile` also matches Info.plist's bundle identifier. Fill in
     `apple_id`, `itc_team_id`, `team_id` with your respective account info.
 1. Set up your local login credentials for the stores.
     * ![Android](/images/cd/android.png) Follow the [Supply setup steps][]
@@ -155,7 +155,7 @@ secrets in pull requests that you accept and merge.
     * See [fastlane CI documentation][] for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.
-         * For Android, make sure the Android SDK is available and the `ANDROID_HOME`
+         * For Android, make sure the Android SDK is available and the `ANDROID_SDK_ROOT`
            path is set.
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
          * Make sure the Flutter SDK is available and set in `PATH`.
@@ -168,7 +168,7 @@ secrets in pull requests that you accept and merge.
 
 ### Reference
 
-The [Flutter Gallery in the Flutter repo][]
+The [Flutter Gallery Project][]
 uses fastlane for continuous deployment.
 See the source for a working example of fastlane in action.
 Also see the Flutter framework repository's [Cirrus script][].
@@ -180,6 +180,7 @@ the delivery of your application.
 
 * [Codemagic CI/CD for Flutter][]
 * [Flutter CI/CD with Bitrise][]
+* [Appcircle CI/CD for Flutter][]
 * [GitHub Actions- CI/CD on GitHub][]
   Get an [Example Project][]
 
@@ -188,13 +189,14 @@ the delivery of your application.
 [Cirrus]: https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables
 [Cirrus script]: {{site.github}}/flutter/flutter/blob/master/.cirrus.yml
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
+[Appcircle CI/CD for Flutter]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Example Project]: {{site.github}}/nabilnalakath/flutter-githubaction
 [fastlane]: https://docs.fastlane.tools
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
-[Flutter Gallery in the Flutter repo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
+[Flutter Gallery Project]: {{site.github}}/flutter/gallery
 [GitHub Actions- CI/CD on GitHub]: https://github.com/features/actions
 [GitLab Continuous Integration (GitLab CI/CD)]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [Match]: https://docs.fastlane.tools/actions/match/

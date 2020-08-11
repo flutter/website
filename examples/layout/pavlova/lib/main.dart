@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
 
     final subTitle = Text(
       'Pavlova is a meringue-based dessert named after the Russian ballerina '
-          'Anna Pavlova. Pavlova features a crisp crust and soft, light inside, '
-          'topped with fruit and whipped cream.',
+      'Anna Pavlova. Pavlova features a crisp crust and soft, light inside, '
+      'topped with fruit and whipped cream.',
       textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Georgia',

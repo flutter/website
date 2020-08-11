@@ -33,10 +33,12 @@
 
 - title: Samples & tutorials
   children:
-    - title: Flutter Gallery [NEW]
-      permalink: https://flutter.github.io/samples/#/
+    - title: Flutter Gallery [running app]
+      permalink: https://flutter.github.io/gallery/
+    - title: Flutter Gallery [repo]
+      permalink: https://github.com/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
     - title: Sample apps on GitHub
-      permalink: https://github.com/flutter/samples/blob/master/INDEX.md
+      permalink: https://flutter.github.io/samples/
     - title: Cookbook
       permalink: /docs/cookbook
     - title: Codelabs
@@ -63,13 +65,10 @@
               permalink: /docs/development/ui/layout/tutorial
             - title: Creating responsive apps
               permalink: /docs/development/ui/layout/responsive
+            - title: Understanding constraints [NEW]
+              permalink: /docs/development/ui/layout/constraints
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
-        - title: Splash screens
-          permalink: /docs/development/ui/splash-screen
-          children:
-            - title: Android Splash Screens
-              permalink: /docs/development/ui/splash-screen/android-splash-screen
         - title: Adding interactivity
           permalink: /docs/development/ui/interactive
         - title: Assets and images
@@ -100,7 +99,8 @@
               permalink: /docs/development/ui/advanced/slivers
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
-        - title: Platform-specific theming
+            - title: Splash screens
+              permalink: /docs/development/ui/advanced/splash-screen
         - title: Widget catalog
           permalink: /docs/development/ui/widgets
     - title: Data & backend
@@ -123,7 +123,6 @@
           permalink: /docs/development/data-and-backend/networking
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
-        - title: Back-end services
         - title: Firebase
           permalink: /docs/development/data-and-backend/firebase
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
@@ -172,6 +171,8 @@
             permalink: /docs/development/add-to-app/android/add-flutter-screen
           - title: Add a Flutter Fragment
             permalink: /docs/development/add-to-app/android/add-flutter-fragment
+          - title: Plugin setup
+            permalink: /docs/development/add-to-app/android/plugin-setup
       - title: Adding to an iOS app
         permalink: /docs/development/add-to-app/ios
         children:
@@ -179,7 +180,7 @@
             permalink: /docs/development/add-to-app/ios/project-setup
           - title: Add a single Flutter screen
             permalink: /docs/development/add-to-app/ios/add-flutter-screen
-      - title: Running, debugging & hot reload
+      - title: Debugging & hot reload
         permalink: /docs/development/add-to-app/debugging
       - title: Loading sequence and performance
         permalink: /docs/development/add-to-app/performance
@@ -209,6 +210,8 @@
               permalink: /docs/development/tools/devtools/memory
             - title: Performance view
               permalink: /docs/development/tools/devtools/performance
+            - title: Network view
+              permalink: /docs/development/tools/devtools/network
             - title: Debugger
               permalink: /docs/development/tools/devtools/debugger
             - title: Logging view
@@ -244,6 +247,8 @@
           permalink: /docs/development/androidx-migration
         - title: Android plugin upgrade
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: Developing for iOS 14 beta
+          permalink: /docs/development/ios-14
         - title: Xcode 11.4 support
           permalink: /docs/development/ios-project-migration
 
@@ -285,15 +290,21 @@
         permalink: /docs/perf/rendering/best-practices
       - title: Performance profiling
         permalink: /docs/perf/rendering/ui-performance
+      - title: Reduce shader compilation jank
+        permalink: /docs/perf/rendering/shader
 
 - title: Deployment
   children:
+    - title: Obfuscating Dart code
+      permalink: /docs/deployment/obfuscate
     - title: Creating flavors for Flutter
-      permalink:  /docs/deployment/flavors
+      permalink: /docs/deployment/flavors
     - title: Build and release an Android app
       permalink: /docs/deployment/android
     - title: Build and release an iOS app
       permalink: /docs/deployment/ios
+    - title: Build and release a Linux app
+      permalink: /docs/deployment/linux
     - title: Build and release a web app
       permalink: /docs/deployment/web
     - title: Continuous deployment
@@ -323,6 +334,10 @@
       permalink: /docs/resources/faq
     - title: Design Documents
       permalink: /docs/resources/design-docs
+    - title: Creating useful bug reports
+      permalink: /docs/resources/bug-reports
+    - title: Official brand assets
+      permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
 
 - title: Reference
   expanded: true

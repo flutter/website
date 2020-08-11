@@ -22,7 +22,7 @@ Here's how you can create such a structure with Flutter:
   1. Create a data source with different types of items.
   2. Convert the data source into a list of widgets.
 
-## 1. Create a data source with different types of item
+## 1. Create a data source with different types of items
 
 ### Types of items
 
@@ -33,24 +33,42 @@ In this example, create an app that shows a header followed by five
 messages. Therefore, create three classes: `ListItem`, `HeadingItem`,
 and `MessageItem`.
 
-<!-- skip -->
 ```dart
-// The base class for the different types of items the list can contain.
-abstract class ListItem {}
+/// The base class for the different types of items the list can contain.
+abstract class ListItem {
+  /// The title line to show in a list item.
+  Widget buildTitle(BuildContext context);
 
-// A ListItem that contains data to display a heading.
+  /// The subtitle line, if any, to show in a list item.
+  Widget buildSubtitle(BuildContext context);
+}
+
+/// A ListItem that contains data to display a heading.
 class HeadingItem implements ListItem {
   final String heading;
 
   HeadingItem(this.heading);
+
+  Widget buildTitle(BuildContext context) {
+    return Text(
+      heading,
+      style: Theme.of(context).textTheme.headline5,
+    );
+  }
+
+  Widget buildSubtitle(BuildContext context) => null;
 }
 
-// A ListItem that contains data to display a message.
+/// A ListItem that contains data to display a message.
 class MessageItem implements ListItem {
   final String sender;
   final String body;
 
   MessageItem(this.sender, this.body);
+
+  Widget buildTitle(BuildContext context) => Text(sender);
+
+  Widget buildSubtitle(BuildContext context) => Text(body);
 }
 ```
 
@@ -82,11 +100,6 @@ In general, provide a builder function that checks for what type
 of item you're dealing with, and returns the appropriate widget
 for that type of item.
 
-This example uses the `is` keyword to check the type of item.
-It's fast, and automatically casts each item to the appropriate type.
-However, there are different ways to approach this problem if
-you prefer another pattern.
-
 <!-- skip -->
 ```dart
 ListView.builder(
@@ -97,19 +110,10 @@ ListView.builder(
   itemBuilder: (context, index) {
     final item = items[index];
 
-    if (item is HeadingItem) {
-      return ListTile(
-        title: Text(
-          item.heading,
-          style: Theme.of(context).textTheme.headline,
-        ),
-      );
-    } else if (item is MessageItem) {
-      return ListTile(
-        title: Text(item.sender),
-        subtitle: Text(item.body),
-      );
-    }
+    return ListTile(
+      title: item.buildTitle(context),
+      subtitle: item.buildSubtitle(context),
+    );
   },
 );
 ```
@@ -117,7 +121,6 @@ ListView.builder(
 ## Interactive example
 
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -154,19 +157,10 @@ class MyApp extends StatelessWidget {
           itemBuilder: (context, index) {
             final item = items[index];
 
-            if (item is HeadingItem) {
-              return ListTile(
-                title: Text(
-                  item.heading,
-                  style: Theme.of(context).textTheme.headline,
-                ),
-              );
-            } else if (item is MessageItem) {
-              return ListTile(
-                title: Text(item.sender),
-                subtitle: Text(item.body),
-              );
-            }
+            return ListTile(
+              title: item.buildTitle(context),
+              subtitle: item.buildSubtitle(context),
+            );
           },
         ),
       ),
@@ -174,28 +168,47 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// The base class for the different types of items the list can contain.
-abstract class ListItem {}
+/// The base class for the different types of items the list can contain.
+abstract class ListItem {
+  /// The title line to show in a list item.
+  Widget buildTitle(BuildContext context);
 
-// A ListItem that contains data to display a heading.
+  /// The subtitle line, if any, to show in a list item.
+  Widget buildSubtitle(BuildContext context);
+}
+
+/// A ListItem that contains data to display a heading.
 class HeadingItem implements ListItem {
   final String heading;
 
   HeadingItem(this.heading);
+
+  Widget buildTitle(BuildContext context) {
+    return Text(
+      heading,
+      style: Theme.of(context).textTheme.headline5,
+    );
+  }
+
+  Widget buildSubtitle(BuildContext context) => null;
 }
 
-// A ListItem that contains data to display a message.
+/// A ListItem that contains data to display a message.
 class MessageItem implements ListItem {
   final String sender;
   final String body;
 
   MessageItem(this.sender, this.body);
+
+  Widget buildTitle(BuildContext context) => Text(sender);
+
+  Widget buildSubtitle(BuildContext context) => Text(body);
 }
 ```
 
 <noscript>
   <img src="/images/cookbook/mixed-list.png" alt="Mixed list demo" class="site-mobile-screenshot" />
 </noscript>
- 
+
 
 [`ListView.builder()`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
