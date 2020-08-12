@@ -188,6 +188,8 @@ parent and can receive context from the parent. This structure carries all the
 way up to the root widget (the container that hosts the Flutter app, typically
 `MaterialApp` or `CupertinoApp`), as this trivial example shows:
 
+<!-- skip -->
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -375,6 +377,8 @@ As with any other class, you can use a constructor in a widget to initialize its
 data, so a `build()` method can ensure that any child widget is instantiated
 with the data it needs:
 
+<!-- skip -->
+
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -393,6 +397,8 @@ widget tree, as shown in this example:
 
 Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
+
+<!-- skip -->
 
 ```dart
 final studentState = StudentState.of(context);
