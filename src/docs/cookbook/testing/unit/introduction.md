@@ -167,7 +167,7 @@ fastest feedback loop as well as the ability to set breakpoints.
        for your platform.*
   * **VSCode**
     1. Open the `counter_test.dart` file
-    2. Select the `Debug` menu
+    2. Select the `Run` menu
     3. Click the `Start Debugging` option
     4. *Alternatively, use the appropriate keyboard shortcut
        for your platform.*
@@ -181,6 +181,11 @@ command from the root of the project:
 flutter test test/counter_test.dart
 ```
 
+For more options regarding unit tests, you can execute this command:
+
+```
+flutter test --help
+```
 
 [`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [`test`]: {{site.pub-pkg}}/test

@@ -12,10 +12,17 @@
   cover: beginning-flutter.png
   link: "https://www.wiley.com/en-us/Beginning+Flutter%3A+A+Hands+On+Guide+to+App+Development-p-9781119550822"
   desc: "Build your first app in Flutter–no experience necessary."
+- title: 'Flutter Développez vos applications mobiles multiplateformes avec Dart'
+  authors:
+    - Julien Trillard
+  publisher: Editions ENI
+  cover: flutter-ENI.jpg
+  link: "https://www.editions-eni.fr/livre/flutter-developpez-vos-applications-mobiles-multiplateformes-avec-dart-9782409025273"
+  desc: "Ce livre sur Flutter s'adresse aux développeurs, initiés comme plus aguerris, qui souhaitent disposer des connaissances nécessaires pour créer de A à Z des applications mobiles multiplateformes avec le framework de Google" 
 - title: 'Flutter for Beginners'
   authors:
     - Alessandro Biessek
-  publisher: Pakt Publishing
+  publisher: Packt Publishing
   cover: flutter-for-beginners.jpg
   link: "https://www.amazon.com/Flutter-Beginners-introductory-cross-platform-applications/dp/1788996089"
   desc: "A step-by-step guide to learning Flutter and Dart 2 for creating Android and iOS mobile applications."
@@ -40,6 +47,14 @@
   cover: learn-google-flutter-fast.jpg
   link: "https://www.amazon.com/Learn-Google-Flutter-Fast-Example/dp/1092297375"
   desc: "Learn Google Flutter by example. Over 65 example mini-apps."
+- title: 'Google Flutter Mobile Development Quick Start Guide'
+  authors:
+    - Prajyot Mainkar
+    - Salvatore Girodano
+  publisher: Packt Publishing
+  cover: google-flutter-mobile-development-quick-start-guide.jpg
+  link: "https://www.amazon.com/Google-Flutter-Mobile-Development-Quick/dp/1789344964"
+  desc: "A fast-paced guide to get you started with cross-platform mobile application development with Google Flutter"
 - title: 'Practical Flutter'
   authors:
     - Frank Zammetti

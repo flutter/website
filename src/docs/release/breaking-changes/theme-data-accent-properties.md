@@ -35,8 +35,8 @@ property, or with the `FloatingActionButtonTheme`'s `foregroundColor`.
 If neither `foregroundColor` property was specified, the foreground
 color defaulted to the `accentIconTheme`'s color.
 
-This change causes the default to use the color scheme's `onSecondary`
-color instead.
+With this change, the default behavior uses the color scheme's
+`onSecondary` color instead.
 
 ## Description of change
 
@@ -118,7 +118,8 @@ MaterialApp(
 
 ## Timeline
 
-This change landed in 1.15.2.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 

@@ -3,7 +3,7 @@
 {{site.alert.note}}
   Flutter relies on a full installation of Android Studio to supply
   its Android platform dependencies. However, you can write your
-  Flutter apps in a number of editors; a later step will discuss that.
+  Flutter apps in a number of editors; a later step discusses that.
 {{site.alert.end}}
 
 ### Install Android Studio
@@ -14,25 +14,10 @@
     and Android SDK Build-Tools, which are required by Flutter
     when developing for Android.
 
-{{site.alert.warning}}
-  In Android Studio 3.6 or later, you need to manually add the old
-  version of the Android SDK Tools for Flutter to work. To do this:
-  
-   1. Open the **Android Studio SDK Manager**
-   1. In the Android SDK tab, uncheck **Hide Obsolete Packages**
-   1. Check **Android SDK Tools (Obsolete)**
-  
-  The dialog below shows the appropriate settings:
-  {% asset 'get-started/android/android-sdk-tools.png' %}
-  
-  This is a [known issue](https://github.com/flutter/flutter/issues/51712) 
-  that will be addressed in an upcoming version of Flutter.
-{{site.alert.end}}
-
 ### Set up your Android device
 
 To prepare to run and test your Flutter app on an Android device,
-you'll need an Android device running Android 4.1 (API level 16) or higher.
+you need an Android device running Android 4.1 (API level 16) or higher.
 
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the
@@ -45,7 +30,7 @@ you'll need an Android device running Android 4.1 (API level 16) or higher.
     Flutter recognizes your connected Android device.  By default,
     Flutter uses the version of the Android SDK where your `adb`
     tool is based. If you want Flutter to use a different installation
-    of the Android SDK, you must set the `ANDROID_HOME` environment
+    of the Android SDK, you must set the `ANDROID_SDK_ROOT` environment
     variable to that installation directory.
 
 ### Set up the Android emulator

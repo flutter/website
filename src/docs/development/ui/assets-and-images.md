@@ -335,7 +335,7 @@ AssetFileDescriptor fd = assetManager.openFd(key);
 
 ### Loading Flutter assets in iOS
 
-On iOS the assets are available throughh the [`mainBundle`][].
+On iOS the assets are available through the [`mainBundle`][].
 The lookup key used in, for instance [`pathForResource:ofType:`][],
 is obtained from `lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:`
 on [`FlutterPluginRegistrar`][], or `lookupKeyForAsset:` or
@@ -474,7 +474,7 @@ drop in images by opening `Assets.xcassets` or do any
 customization using the Interface Builder in
 `LaunchScreen.storyboard`.
 
-![Adding launch icons in Xcode](/images/assets-and-images/ios-launchscreen-xcode.png)
+![Adding launch icons in Xcode](/images/assets-and-images/ios-launchscreen-xcode.png){:width="100%"}
 
 For more details, see
 [Adding a splash screen to your mobile app][].

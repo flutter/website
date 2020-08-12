@@ -6,8 +6,8 @@ prev:
   title: Take a picture using the camera
   path: /docs/cookbook/plugins/picture-using-camera
 next:
-  title: Performance profiling
-  path: /docs/cookbook/testing/integration/profiling
+  title: Handle scrolling
+  path: /docs/cookbook/testing/integration/scrolling
 ---
 
 Unit tests and widget tests are handy for testing individual classes,
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // identifing the widget from inside the test suite,
               // and reading the text.
               key: Key('counter'),
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),

@@ -2288,7 +2288,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 [Apple's iOS design language]: https://developer.apple.com/design/resources/
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
-[composing]: /docs/resources/technical-overview#everythings-a-widget
+[composing]: /docs/resources/architectural-overview#composition
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 [developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages

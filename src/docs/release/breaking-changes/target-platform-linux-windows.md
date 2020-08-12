@@ -1,13 +1,13 @@
 ---
-title: Adding `linux` and `windows` to `TargetPlatform` enum
-description: Two new values were added to the `TargetPlatform` enum that could require additional cases in switch statements that switch on a `TargetPlatform`.
+title: Adding 'linux' and 'windows' to TargetPlatform enum
+description: Two new values were added to the TargetPlatform enum that could require additional cases in switch statements that switch on a TargetPlatform.
 ---
 
 ## Summary
 
-Two new values were added to the [`TargetPlatform`][] enum that could require
-additional cases in switch statements that switch on a `TargetPlatform` and
-don't include a `default:` case.
+Two new values were added to the [`TargetPlatform`][] enum
+that could require additional cases in switch statements that
+switch on a `TargetPlatform` and don't include a `default:` case.
 
 ## Context
 
@@ -24,9 +24,10 @@ enum TargetPlatform {
 }
 ```
 
-A `switch` statement only needed to handle these cases, and desktop applications
-which wanted to run on Linux or Windows usually had a test something like this
-in their `main()` method:
+A `switch` statement only needed to handle these cases,
+and desktop applications that wanted to run on Linux or
+Windows usually had a test like this in their
+`main()` method:
 
 <!-- skip -->
 ```dart
@@ -60,14 +61,16 @@ enum TargetPlatform {
 }
 ```
 
-And the platform test setting [`debugDefaultTargetPlatformOverride`][] in `main()`
+And the platform test setting
+[`debugDefaultTargetPlatformOverride`][] in `main()`
 is no longer required on Linux and Windows.
 
 This can cause the Dart analyzer to give the
-[`missing_enum_constant_in_switch`][] warning for switch statements that don't
-include a `default` case. Writing a switch without a `default:` case is the
-recommended way to handle enums, since the analyzer can then help you find any
-cases that aren't handled.
+[`missing_enum_constant_in_switch`][] warning for
+switch statements that don't include a `default` case.
+Writing a switch without a `default:` case is the
+recommended way to handle enums, since the analyzer
+can then help you find any cases that aren't handled.
 
 ## Migration guide
 
@@ -136,16 +139,18 @@ void dance(TargetPlatform platform) {
 }
 ```
 
-Having `default:` cases in such switch statements isn't recommended, because
-then the analyzer can't help you find all the cases which need to be handled.
+Having `default:` cases in such switch statements isn't
+recommended, because then the analyzer can't help you find
+all the cases that need to be handled.
 
 Also, any tests like the one referenced above that set the
-`debugDefaultTargetPlatformOverride` are no longer needed for Linux and Windows
-applications.
+`debugDefaultTargetPlatformOverride` are no longer needed
+for Linux and Windows applications.
 
 ## Timeline
 
-This change was made in March 2020, in v1.15.4.
+Landed in version: 1.15.4<br>
+In stable release: 1.17
 
 ## References
 
@@ -155,7 +160,7 @@ API documentation:
 Relevant issues:
 * [Issue #31366][]
 
-Relevant PRs:
+Relevant PR:
 * [Add Windows, and Linux as TargetPlatforms][]
 
 [Add Windows, and Linux as TargetPlatforms]: {{site.github}}/flutter/flutter/pull/51519

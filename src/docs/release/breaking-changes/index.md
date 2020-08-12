@@ -3,51 +3,78 @@ title: Breaking changes
 description: A list of migration guides for breaking changes in Flutter.
 ---
 
-As described in the [breaking change policy][], on occasion we publish guides
+As described in the [breaking change policy][],
+on occasion we publish guides
 for migrating code across a breaking change.
 
-The following guides (in alphabetical order) are available:
+The following guides are available. They sorted by
+release, and listed in alphabetical order:
 
-* [Actions API Revision][]
-* [Adding `linux` and `windows` to `TargetPlatform` enum][]
-* [Adding `TextInputClient.currentAutofillScope`][]
+### Released in Flutter 1.17
+
+* [Adding 'linux' and 'windows' to TargetPlatform enum][]
 * [Annotations return local position relative to object][]
 * [Container color optimization][]
+* [CupertinoTabBar requires Localizations parent][]
 * [Generic type of ParentDataWidget changed to ParentData][]
+* [ImageCache and ImageProvider changes][]
 * [ImageCache large images][]
 * [MouseTracker moved to rendering][]
 * [MouseTracker no longer attaches annotations][]
-* [Nullable `CupertinoTheme.brightness`][]
+* [Nullable CupertinoTheme.brightness][]
 * [Rebuild optimization for OverlayEntries and Routes][]
-* [Reversing the dependency between the scheduler and services layer][]
 * [Scrollable AlertDialog][]
 * [TestTextInput state reset][]
 * [TestWidgetsFlutterBinding.clock][]
 * [TextInputClient currentTextEditingValue][]
-* [The `forgetChild` method must call super][]
-* [The RenderEditable needs to be laid out before hit testing][]
-* [The Route and Navigator Refactoring][]
+* [The forgetChild() method must call super][]
+* [The Route and Navigator refactoring][]
 * [ThemeData's accent properties][]
 
-[Actions API Revision]: /docs/release/breaking-changes/actions-api-revision
-[Adding `linux` and `windows` to `TargetPlatform` enum]: /docs/release/breaking-changes/target-platform-linux-windows
-[Adding `TextInputClient.currentAutofillScope`]: /docs/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
+### Not yet released to stable
+
+* [Actions API revision][]
+* [Adding TextInputClient.currentAutofillScope][]
+* [Reversing the dependency between the scheduler and services layer][]
+* [Dialogs' Default BorderRadius][]
+* [More Strict Assertions in the Navigator and the Hero Controller Scope][]
+* [Semantics Order of the Overlay Entries in Modal Routes][]
+* [showAutocorrectionPromptRect method added to TextInputClient][]
+* [TextField requires MaterialLocalizations][]
+* [The RenderEditable needs to be laid out before hit testing][]
+* [The Route Transition record and Transition delegate updates][]
+* [TestWidgetsFlutterBinding.clock][]
+* [Material Chip button semantics][]
+* [Android v1 embedding app and plugin creation deprecation][]
+
+[Actions API revision]: /docs/release/breaking-changes/actions-api-revision
+[Adding 'linux' and 'windows' to TargetPlatform enum]: /docs/release/breaking-changes/target-platform-linux-windows
+[Adding TextInputClient.currentAutofillScope]: /docs/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
 [Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
 [breaking change policy]: /docs/resources/compatibility
 [Container color optimization]: /docs/release/breaking-changes/container-color
+[Dialogs' Default BorderRadius]:/docs/release/breaking-changes/dialog-border-radius
+[CupertinoTabBar requires Localizations parent]: /docs/release/breaking-changes/cupertino-tab-bar-localizations
 [Generic type of ParentDataWidget changed to ParentData]: /docs/release/breaking-changes/parent-data-widget-generic-type
 [ImageCache and ImageProvider changes]: /docs/release/breaking-changes/image-cache-and-provider
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images
 [MouseTracker moved to rendering]: /docs/release/breaking-changes/mouse-tracker-moved-to-rendering
 [MouseTracker no longer attaches annotations]: /docs/release/breaking-changes/mouse-tracker-no-longer-attaches-annotations
-[Nullable `CupertinoTheme.brightness`]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
+[More Strict Assertions in the Navigator and the Hero Controller Scope]: /docs/release/breaking-changes/hero-controller-scope
+[Nullable CupertinoTheme.brightness]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
 [Rebuild optimization for OverlayEntries and Routes]: /docs/release/breaking-changes/overlay-entry-rebuilds
 [Reversing the dependency between the scheduler and services layer]: /docs/release/breaking-changes/services-scheduler-dependency-reversed
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
+[Semantics Order of the Overlay Entries in Modal Routes]: /docs/release/breaking-changes/modal-router-semantics-order
+[showAutocorrectionPromptRect method added to TextInputClient]: /docs/release/breaking-changes/add-showAutocorrectionPromptRect
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TestWidgetsFlutterBinding.clock]: /docs/release/breaking-changes/test-widgets-flutter-binding-clock
+[TextField requires MaterialLocalizations]: /docs/release/breaking-changes/text-field-material-localizations
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
-[The `forgetChild` method must call super]: /docs/release/breaking-changes/forgetchild-call-super
+[The forgetChild() method must call super]: /docs/release/breaking-changes/forgetchild-call-super
 [The RenderEditable needs to be laid out before hit testing]: /docs/release/breaking-changes/rendereditable-layout-before-hit-test
-[The Route and Navigator Refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
+[The Route and Navigator refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
+[The Route Transition record and Transition delegate updates]: /docs/release/breaking-changes/route-transition-record-and-transition-delegate
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
+[Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
+[Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation

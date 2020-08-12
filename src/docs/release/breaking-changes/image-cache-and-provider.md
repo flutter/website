@@ -1,8 +1,7 @@
 ---
-title: Changes to ImageCache and ImageProvider
+title: ImageCache and ImageProvider changes
 description: ImageCache requires implementers to override containsKey, and ImageProvider has marked resolve as @nonVirtual.
 ---
-
 
 ## Summary
 
@@ -13,7 +12,10 @@ These changes were submitted as a single commit to the framework.
 
 ## Description of change
 
-### ContainsKey change
+The sections below describe the changes to `containsKey`
+and `ImageProvider`.
+
+### containsKey change
 
 Clients of the `ImageCache`, such as a custom `ImageProvider`,
 may want to know if the cache is already tracking an image.
@@ -21,7 +23,8 @@ Adding the `containsKey` method allows callers to discover
 this without calling a method like `putIfAbsent`,
 which can trigger an undesired call to `ImageProvider.load`.
 
-The default implementation checks both pending and cached image buckets.
+The default implementation checks both pending and cached
+image buckets.
 
 <!-- skip -->
 ```dart
@@ -32,12 +35,14 @@ The default implementation checks both pending and cached image buckets.
 
 ### ImageProvider changes
 
-The `ImageProvider.resolve` method does some complicated error handling work
-that should not normally be overriden. It also previously did work to load the
-image into the image cache, by way of `ImageProvider.obtainKey` and
-`ImageProvider.load`. Subclasses had no opportunity to override this behavior
-without overriding `resolve`, and the ability to compose `ImageProvider`s is
-limited if multiple `ImageProvider`s expect to override `resolve`.
+The `ImageProvider.resolve` method does some complicated
+error handling work that should not normally be overriden.
+It also previously did work to load the image into the
+image cache, by way of `ImageProvider.obtainKey` and
+`ImageProvider.load`. Subclasses had no opportunity to
+override this behavior without overriding `resolve`,
+and the ability to compose `ImageProvider`s is limited
+if multiple `ImageProvider`s expect to override `resolve`.
 
 To solve this issue, `resolve` is now marked as non-virtual,
 and two new protected methods have been added: `createStream()`
@@ -82,7 +87,6 @@ class MyImageProvider extends ImageProvider<Object> {
     // interact with ImageCache
     // call obtainKey/load, etc.
   }
-
   ...
 }
 ```
@@ -108,7 +112,6 @@ class MyImageProvider extends ImageProvider<Object> {
     // Interact with the cache, use the key, potentially call `load`,
     // and report any errors back through `handleError`.
   }
-
   ...
 }
 
@@ -116,22 +119,26 @@ class MyImageProvider extends ImageProvider<Object> {
 
 ## Timeline
 
-This change was introduced in v1.14.7.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 
 API documentation:
+
 * [`ImageCache`][]
 * [`ImageProvider`][]
 * [`ScrollAwareImageProvider`][]
 
 Relevant issues:
+
 * [Issue #32143][]
 * [Issue #44510][]
 * [Issue #48305][]
 * [Issue #48775][]
 
 Relevant PRs:
+
 * [Defer image decoding when scrolling fast #49389][]
 
 [Stopped increasing the cache size to accomodate large images]: {{site.github}}/flutter/flutter/pull/47387

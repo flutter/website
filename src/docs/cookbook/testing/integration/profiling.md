@@ -2,11 +2,11 @@
 title: Performance profiling
 description: How to profile performance for a Flutter app.
 prev:
-  title: An introduction to integration testing
-  path: /docs/cookbook/testing/integration/introduction
-next:
   title: Handle scrolling
   path: /docs/cookbook/testing/integration/scrolling
+next:
+  title: An introduction to unit testing
+  path: /docs/cookbook/testing/unit/introduction
 ---
 
 When it comes to mobile apps, performance is critical to user experience.
@@ -92,12 +92,12 @@ to review the results:
 final summary = new TimelineSummary.summarize(timeline);
 
 // Then, save the summary to disk.
-summary.writeSummaryToFile('scrolling_summary', pretty: true);
+await summary.writeSummaryToFile('scrolling_summary', pretty: true);
 
 // Optionally, write the entire timeline to disk in a json format. This
 // file can be opened in the Chrome browser's tracing tools found by
 // navigating to chrome://tracing.
-summary.writeTimelineToFile('scrolling_timeline', pretty: true);
+await summary.writeTimelineToFile('scrolling_timeline', pretty: true);
 ```
 
 ### 4. Run the test
@@ -106,8 +106,12 @@ After configuring the test to capture a performance `Timeline` and save a
 summary of the results to disk, run the test with the following command:
 
 ```
-flutter drive --target=test_driver/app.dart
+flutter drive --target=test_driver/app.dart --profile
 ```
+
+The `--profile` option means to compile the app for the "profile mode" 
+rather than the "debug mode", so that the benchmark result is closer to 
+what will be experienced by end users. 
 
 ### 5. Review the results
 
@@ -115,7 +119,7 @@ After the test completes successfully, the `build` directory at the root of
 the project contains two files:
 
   1. `scrolling_summary.timeline_summary.json` contains the summary. Open
-     Open the file with any text editor to review the information contained
+     the file with any text editor to review the information contained
      within.  With a more advanced setup, you could save a summary every
      time the test runs and create a graph of the results.
   2. `scrolling_timeline.timeline.json` contains the complete timeline data.
@@ -189,12 +193,12 @@ void main() {
       final summary = new TimelineSummary.summarize(timeline);
 
       // Then, save the summary to disk.
-      summary.writeSummaryToFile('scrolling_summary', pretty: true);
+      await summary.writeSummaryToFile('scrolling_summary', pretty: true);
 
       // Optionally, write the entire timeline to disk in a json format.
       // This file can be opened in the Chrome browser's tracing tools
       // found by navigating to chrome://tracing.
-      summary.writeTimelineToFile('scrolling_timeline', pretty: true);
+      await summary.writeTimelineToFile('scrolling_timeline', pretty: true);
     });
   });
 }

@@ -4,7 +4,7 @@ description: How to use DevTools' source-level debugger.
 ---
 
 {{site.alert.note}}
-  The debugger works with Flutter mobile and web applications.
+  The debugger works with all Flutter and Dart applications.
 {{site.alert.end}}
 
 ## Getting started
@@ -12,14 +12,12 @@ description: How to use DevTools' source-level debugger.
 DevTools includes a full source-level debugger, supporting
 breakpoints, stepping, and variable inspection.
 
-When you open the debugger tab, you should see all the libraries
-for your application listed in the bottom left screen
-(under the **Scripts** area), and the source for the main
-entry-point for your app in is loaded in the main app source area.
+When you open the debugger tab, you should see the source for the main
+entry-point for your app loaded in the debugger.
 
-In order to browse around more of your application sources,
-you can scroll through the `Scripts` area and select other
-source files to display.
+In order to browse around more of your application sources, click **Libraries**
+(top right) or us the hot key command `⌘ + P` / `ctrl + P`. This will open the
+libraries window and allow you to search for other source files.
 
 ![Screenshot of the debugger tab]({% asset tools/devtools/debugger_screenshot.png @path %}){:width="100%"}
 
@@ -66,9 +64,8 @@ You can also see the output in the [Logging view][].
 
 ## Breaking on exceptions
 
-To adjust the break-on-exceptions behavior, toggle the
-**Break on unhandled exceptions** and **Break on all exceptions**
-checkboxes in the upper right of the debugger view.
+To adjust the stop-on-exceptions behavior, toggle the
+**Ignore** dropdown at the top of the debugger view.
 
 Breaking on unhandled excepts only pauses execution if the
 breakpoint is considered uncaught by the application code.

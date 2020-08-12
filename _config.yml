@@ -51,6 +51,8 @@ defaults:
     # To hide banners from every page, comment out the `show_banner` setting
     # below. To selectively enable a banner (say, on the homepage) add
     # `show_banner: true` to the page's frontmatter.
+    # DON'T HIDE BANNERS! Hiding banners makes nav-tabs break.
+    # DETAILS: https://github.com/flutter/website/issues/3897
     show_banner: true
     show_footer: true
 - scope:
@@ -86,7 +88,8 @@ assets:
     - _shared/_assets/css
 
 # kramdown: {show_warnings: true}
-plugins: [jekyll-toc]
+plugins:
+  - jekyll-toc
 source: src
 # `symlinked-sources` can refer to individual files or directories
 # under `src` that are symlinked to somewhere outside `src`, or it can
@@ -98,9 +101,10 @@ toc:
 
 ## Site-wide shorthands
 
-os-list: [Windows, macOS, Linux]
-
 alert:
+  bonus: >-
+    <aside class="alert alert-info" role="alert" markdown="1">
+    **Bonus questions!**
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
     <i class="fas fa-exclamation-circle"></i> **Important:**

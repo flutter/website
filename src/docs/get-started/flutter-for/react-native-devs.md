@@ -267,7 +267,7 @@ class Example {
     const url = 'https://httpbin.org/ip';
     const response = await fetch(url);
     const json = await response.json();
-    const data = await json.origin;
+    const data = json.origin;
     return data;
   }
 }
@@ -749,7 +749,7 @@ dependencies:
 
 <!-- skip -->
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 ```
 
 For more information, see [Using Packages][] and
@@ -2514,7 +2514,7 @@ and common widget properties.
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [Flutter packages]: {{site.pub}}/flutter/
-[Flutter Technical Overview]: /docs/resources/technical-overview
+[Flutter Architectural Overview]: /docs/resources/architectural-overview
 [Flutter Basic Widgets]: /docs/development/ui/widgets/basics
 [Flutter Widget Catalog]: /docs/development/ui/widgets
 [Flutter Widget Index]: /docs/reference/widgets

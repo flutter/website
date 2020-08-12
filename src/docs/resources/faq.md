@@ -18,8 +18,8 @@ and is free and open source.
 For users, Flutter makes beautiful app UIs come to life.
 
 For developers, Flutter lowers the bar to entry
-for building mobile apps. It speeds up development of
-mobile apps and reduces the cost and complexity
+for building apps. It speeds up development of
+apps and reduces the cost and complexity
 of app production across platforms.
 
 For designers, Flutter helps deliver the original
@@ -29,20 +29,20 @@ It also acts as a productive prototyping tool.
 ### Who is Flutter for?
 
 Flutter is for _developers_ that want a faster
-way to build beautiful mobile apps, or
+way to build beautiful apps, or
 a way to reach more users with a single investment.
 
-Flutter is also for _engineering managers_ that need to lead
-mobile development teams. Flutter allows eng managers
-to create a single _mobile app dev team_, unifying their
-development investments to ship more features faster,
-ship the same feature set to iOS and Android at the same
+Flutter is also for _engineering managers_ that lead
+development teams. Flutter allows eng managers
+to create a single _mobile, web, and desktop app dev team_,
+unifying their development investments to ship more features faster,
+ship the same feature set to multiple platforms at the same
 time, and lower maintenance costs.
 
-While not the initial target audience,
 Flutter is also for _designers_
 that want their original design visions delivered
-consistently, with high fidelity, to all users on mobile.
+consistently, with high fidelity, to all users.
+In fact, [CodePen][] now supports Flutter.
 
 Fundamentally, Flutter is for users that want beautiful apps,
 with delightful motion and animation, and UIs with character
@@ -54,7 +54,7 @@ Flutter is approachable to programmers familiar with object-oriented
 concepts (classes, methods, variables, etc) and imperative programming
 concepts (loops, conditionals, etc).
 
-No prior mobile experience is required in order to learn and use Flutter.
+No prior experience is required in order to learn and use Flutter.
 
 We have seen people with very little programming experience learn
 and use Flutter for prototyping and app development.
@@ -62,7 +62,9 @@ and use Flutter for prototyping and app development.
 ### What kinds of apps can I build with Flutter?
 
 Flutter is optimized for 2D mobile apps that want to run on
-both Android and iOS.
+both Android and iOS. Flutter is also great for interactive
+apps that you want to run on your web pages or on the desktop.
+(Note that web support is in beta, and desktop support is in alpha.)
 
 Apps that need to deliver brand-first designs are particularly
 well suited for Flutter. However, apps that need to look like
@@ -79,7 +81,7 @@ and the community.
 ### Who uses Flutter?
 
 Developers inside and outside of Google use Flutter to build
-beautiful native apps for iOS and Android.
+beautiful natively-compiled apps for iOS and Android.
 To learn about some of these apps, visit the [showcase][].
 
 ### What makes Flutter unique?
@@ -116,11 +118,13 @@ see [Flutter 1.0: Google's Portable UI Toolkit][].
 * Heavily optimized, mobile-first 2D rendering engine with
   excellent support for text
 * Modern react-style framework
-* Rich set of widgets for Android and iOS
+* Rich set of widgets implementing Material Design and iOS-style.
 * APIs for unit and integration tests
 * Interop and plugin APIs to connect to the system and 3rd-party SDKs
 * Headless test runner for running tests on Windows, Linux, and Mac
-* Command-line tools for creating, building, testing, and compiling your apps
+* [Dart DevTools][] for testing, debugging, and profiling your app
+* Command-line tools for creating, building, testing,
+  and compiling your apps
 
 ### Does Flutter work with any editors or IDEs?
 
@@ -138,7 +142,7 @@ many editors that support [editing Dart][].
 ### Does Flutter come with a framework?
 
 Yes! Flutter ships with a modern framework,
-inspired by React.  Flutter's framework is designed
+inspired by React. Flutter's framework is designed
 to be layered and customizable (and optional).
 Developers can choose to use only parts of the
 framework, or a different framework.
@@ -186,11 +190,11 @@ picture of the main components.
 
 The engine's C and C++ code are compiled with Android's NDK.
 The Dart code (both the SDK's and yours) are ahead-of-time
-(AOT) compiled into a native, ARM and x86 libraries.
+(AOT) compiled into native, ARM, and x86 libraries.
 Those libraries are included in a "runner" Android
 project, and the whole thing is built into an APK.
 When launched, the app loads the Flutter library.
-Any rendering, input or event handling, and so on,
+Any rendering, input, or event handling, and so on,
 is delegated to the compiled Flutter and app code.
 This is similar to the way many game engines work.
 
@@ -228,7 +232,7 @@ If we reused the OEM widgets, the quality and performance
 of Flutter apps would be limited by the quality of those widgets.
 
 In Android, for example, there's a hard-coded set of gestures and fixed
-
+rules for disambiguating them. In Flutter, you can write your
 own gesture recognizer that is a first-class participant in the
 [gesture system][]. Moreover, two widgets authored by different
 people can coordinate to disambiguate gestures.
@@ -245,7 +249,7 @@ separate codebases and feature sets.
 
 By using a single language, a single framework,
 and a single set of libraries for all of your UI
-(regardless if your UI is different for each mobile
+(regardless if your UI is different for each
 platform or largely consistent), we also aim to
 help lower app development and maintenance costs.
 
@@ -297,7 +301,7 @@ performance of production deployments.
 In addition, we have the opportunity to work closely with the Dart
 community, which is actively investing resources in improving Dart
 for use in Flutter. For example, when we adopted Dart, the language
-did not have an ahead-of-time toolchain for producing native binaries,
+didn't have an ahead-of-time toolchain for producing native binaries,
 which is instrumental in achieving predictable, high performance,
 but now the language does because the Dart team built it for Flutter.
 Similarly, the Dart VM has previously been optimized for throughput
@@ -306,14 +310,17 @@ important for Flutter’s workload.
 
 Dart scores highly for us on the following primary criteria:
 
-* _Developer productivity_. One of Flutter's main value propositions is that it
-  saves engineering resources by letting developers create apps for both
-  iOS and Android with the same codebase. Using a highly productive language
+* _Developer productivity_. One of Flutter's main value
+  propositions is that it saves engineering resources by
+  letting developers create apps for both iOS and Android
+  with the same codebase. Using a highly productive language
   accelerates developers further and makes Flutter more attractive.
-  This was very important to both our framework team as well as our developers.
-  The majority of Flutter is built in the same language we give to our users, so
-  we need to stay productive at 100k's lines of code, without sacrificing
-  approachability or readability of the framework and widgets for our developers.
+  This was very important to both our framework team as well
+  as our developers. The majority of Flutter is built in the
+  same language we give to our users, so we need to stay
+  productive at 100k's lines of code, without sacrificing
+  approachability or readability of the framework and widgets
+  for our developers.
 
 * _Object-orientation_. For Flutter, we want a language that's suited to
   Flutter's problem domain: creating visual user experiences. The industry has
@@ -333,12 +340,12 @@ Dart scores highly for us on the following primary criteria:
 * _Fast allocation_. The Flutter framework uses a functional-style
   flow that depends heavily on the underlying memory
   allocator efficiently handling small, short-lived allocations.
-  This style was developed in languages with this property and does
-  not work efficiently in languages that lack this facility.
+  This style was developed in languages with this property and
+  doesn't work efficiently in languages that lack this facility.
 
 ### Can Flutter run any Dart code?
 
-Flutter should be able to run most Dart code that does not import
+Flutter should be able to run most Dart code that doesn't import
 (transitively, or directly) dart:mirrors or dart:html.
 
 ### How big is the Flutter engine?
@@ -371,8 +378,8 @@ binaries within the IPA, making the compression less efficient
 (see the [iOS App Store Specific Considerations][]
 section of Apple’s [QA1795][]).
 
-As of Flutter SDK 1.12, the release engine binary now includes LLVM IR
-(bitcode). Xcode uses this bitcode to produce a final binary for the App Store
+The release engine binary includes LLVM IR (bitcode).
+Xcode uses this bitcode to produce a final binary for the App Store
 containing the latest compiler optimizations and features.
 The profile and debug frameworks contain only a _bitcode marker_,
 and are more representative of the engine's actual binary size.
@@ -381,15 +388,7 @@ framework is stripped out during the final steps of the build.
 These steps happen after archiving your app and shipping it to the store.
 
 Of course, we recommend that you measure your own app.
-To measure an Android app, run `flutter build apk` (using the new
-`--split-per-abi` option in version 1.7.8+hotfix.3 and later)
-and load the APK
-(build/app/outputs/apk/release/app-armeabi-v7a-release.apk
-or build/app/outputs/apk/release/app-arm64-v8a-release.apk)
-into Android Studio
-([Android Studio instructions][]) for a detailed size report.
-To measure an iOS app, upload a release IPA to Apple's App Store Connect
-([iOS instructions][]) and obtain the size report from there.
+To do that, see [Measuring your app's size][].
 
 ## Capabilities
 
@@ -413,69 +412,71 @@ from the home screen after every reload.
 ### How is _hot reload_ different from _hot restart_?
 
 Hot reload works by injecting updated source code files
-into the running Dart VM (Virtual Machine). This includes
-not only adding new classes, but also adding methods and
-fields to existing classes, and changing existing functions.
-A few types of code changes cannot be hot reloaded though:
+into the running Dart VM (Virtual Machine). This doesn't
+only add new classes, but also adds methods and fields
+to existing classes, and changes existing functions.
+Hot restart resets the state to the app's initial state.
 
-* Global variable initializers.
-* Static field initializers.
-* The `main()` method of the app.
-
-See [Hot reload][] for additional details.
+For more information, see [Hot reload][].
 
 ### Where can I deploy my Flutter app?
 
-You can compile and deploy your Flutter app to iOS and Android.
+You can compile and deploy your Flutter app to iOS, Android,
+[web][] (in beta), and [desktop][] (macOS is in alpha,
+Linux and Windows are in development). While some folks
+are already deploying Flutter web apps,
+you might want to wait for web and desktop support to
+migrate to the stable channel.
 
 ### What devices and OS versions does Flutter run on?
 
-Mobile operating systems: Android Jelly Bean, v16, 4.1.x or newer,
-and iOS 8 or newer.
+* Mobile operating systems: Android Jelly Bean, v16,
+  4.1.x or newer, and iOS 8 or newer.
 
-Mobile hardware: iOS devices (iPhone 4S or newer) and ARM Android devices.
+* Mobile hardware: iOS devices (iPhone 4S or newer)
+  and ARM Android devices.
 
-Note Flutter currently does not support building for x86 Android
-([issue #9253][]) directly, however apps built for ARMv7 or
-ARM64 run fine (via ARM emulation) on many x86 Android devices.
+* Flutter supports building ahead-of-time (AOT) compiled libraries
+  for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
 
-We support developing Flutter apps with Android and iOS devices,
-as well as with Android emulators and the iOS simulator.
+* Apps built for ARMv7 or ARM64 run fine (using ARM emulation)
+  on many x86 Android devices.
 
-We test on a variety of low-end to high-end phones
-but we don't yet have an official device compatibility guarantee.
+* We support developing Flutter apps with Android and iOS devices,
+  as well as with Android emulators and the iOS simulator.
 
-We believe Flutter works well on tablets. We do not currently implement
-all of the tablet-specific adaptations recommended by Material Design,
-though we are planning further investment in this area.
+* We test on a variety of low-end to high-end phones and tablets,
+  but we don't yet have an official device compatibility guarantee.
 
 ### Does Flutter run on the web?
 
-Flutter web is currently in [technical preview][].
+Flutter web is currently in [beta][web].
 You can repackage existing Flutter code to
-work on the web preview, but there are some caveats
-while we’re still in preview. Check out the
-[web instructions][] for more details.
+work on the web, but there are some caveats
+while web support is still under development.
+For more details, check out the [web instructions][].
 
 ### Can I use Flutter to build desktop apps?
 
-Yes, but right now it's not very well supported.
-We're working on making this a first class experience.
-The current progress is documented [on the Flutter wiki][].
+Yes, desktop support is in alpha, with macOS being
+the furthest along. We're working on making this a
+first class experience. The current progress is
+documented on the [Desktop][desktop] page.
 
 ### Can I use Flutter inside of my existing native app?
 
-Yes, one fullscreen Flutter instance can be integrated per app on Android and
-iOS.
+Yes, one fullscreen Flutter instance can be integrated per
+app on Android and iOS.
 
-See our integration documentation in the [add-to-app section][] of our website.
+See the integration documentation in the
+[add-to-app][] section of our website.
 
 ### Can I access platform services and APIs like sensors and local storage?
 
 Yes. Flutter gives developers out-of-the-box access to _some_
 platform-specific services and APIs from the operating system.
 However, we want to avoid the "lowest common denominator" problem
-with most cross-platform APIs, so we do not intend to build
+with most cross-platform APIs, so we don't intend to build
 cross-platform APIs for all native services and APIs.
 
 A number of platform services and APIs have
@@ -498,15 +499,15 @@ Rather than having each widget provide a large number of parameters,
 Flutter embraces composition. Widgets are built out of smaller
 widgets that you can reuse and combine in novel ways to make
 custom widgets. For example, rather than subclassing a generic
-button widget, RaisedButton combines a Material widget with a
-GestureDetector widget. The Material widget provides the visual
-design and the GestureDetector widget provides the interaction design.
+button widget, `RaisedButton` combines a Material widget with a
+`GestureDetector` widget. The Material widget provides the visual
+design and the `GestureDetector` widget provides the interaction design.
 
 To create a button with a custom visual design, you can combine
-widgets that implement your visual design with a GestureDetector,
+widgets that implement your visual design with a `GestureDetector`,
 which provides the interaction design. For example,
-CupertinoButton follows this approach and combines a
-GestureDetector with several other widgets that implement its
+`CupertinoButton` follows this approach and combines a
+`GestureDetector` with several other widgets that implement its
 visual design.
 
 Composition gives you maximum control over the visual and
@@ -570,19 +571,18 @@ Learn more about a11y in the
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
-Flutter supports isolates. Isolates are separate heaps in Flutter's VM, and they
-are able to run in parallel (usually implemented as separate threads). Isolates
-communicate by sending and receiving asynchronous messages. Flutter does not
-currently have a shared-memory parallelism solution, although we are evaluating
-solutions for this.
+Flutter supports isolates. Isolates are separate heaps in
+Flutter's VM, and they are able to run in parallel
+(usually implemented as separate threads). Isolates
+communicate by sending and receiving asynchronous messages.
 
 Check out an [example of using isolates with Flutter][].
 
 ### Can I run Dart code in the background of an Flutter app?
 
-Yes, you can run Dart code in a background process on both iOS and Android.
-For more information, see the Medium article
-[Executing Dart in the Background with Flutter Plugins and Geofencing][].
+Yes, you can run Dart code in a background process on both
+iOS and Android  For more information, see the Medium article
+[Executing Dart in the Background with Flutter Plugins and Geofencing][].  
 
 ### Can I use JSON/XML/<wbr>protobuffers, etc. with Flutter?
 
@@ -614,6 +614,8 @@ than a _debug build_.
 Learn more about creating a
 [release build of your Android app][],
 and creating a [release build of your iOS app][].
+Also, check out [Measuring your app's size][].
+
 
 ### Do Flutter apps run on Chromebooks?
 
@@ -623,29 +625,29 @@ Chromebooks][].
 
 ## Framework
 
-### Why is the build() method on State, not StatefulWidget?
+### Why is the build() method on State, rather than StatefulWidget?
 
-Putting a `Widget build(BuildContext context)` method on State
+Putting a `Widget build(BuildContext context)` method on `State`
 rather putting a `Widget build(BuildContext context, State state)`
-method on StatefulWidget gives developers more flexibility when
-subclassing StatefulWidget. You can read a more
+method on `StatefulWidget` gives developers more flexibility when
+subclassing `StatefulWidget`. You can read a more
 [detailed discussion on the API docs for `State.build`][].
 
 ### Where is Flutter's markup language? Why doesn't Flutter have a markup syntax?
 
 Flutter UIs are built with an imperative, object-oriented
 language (Dart, the same language used to build Flutter's
-framework). Flutter does not ship with a declarative markup.
+framework). Flutter doesn't ship with a declarative markup.
 
 We found that UIs dynamically built with code allow for
 more flexibility. For example, we have found it difficult
 for a rigid markup system to express and produce
-customized widgets with bespoke behaviours.
+customized widgets with bespoke behaviors.
 
-We have also found that our "code-first" better allows for features like
-hot reload and dynamic environment adaptations.
+We have also found that our "code-first" better allows
+for features like hot reload and dynamic environment adaptations.
 
-It is possible to create a custom language that is then
+It's possible to create a custom language that is then
 converted to widgets on the fly. Because build methods are "just code",
 they can do anything, including interpreting markup and turning it
 into widgets.
@@ -666,8 +668,9 @@ are enabled. You can run your app without these checks by
 using either the `--profile` or `--release` flag to `flutter run`.
 
 If you are using the Flutter plugin for IntelliJ,
-you can launch the app in profile or release mode using the menu entries
-**Run > Flutter Run in Profile Mode** or **Release Mode**.
+you can launch the app in profile or release mode using the
+menu entries **Run > Flutter Run in Profile Mode** or
+**Release Mode**.
 
 ### What programming paradigm does Flutter's framework use?
 
@@ -834,6 +837,9 @@ If you're interested in contributing code, you can start
 by reading our [Contributing Guide][] and check out our
 list of [easy starter issues][].
 
+Finally, you can connect with helpful Flutter communities.
+For more information, see our [Community][] page.
+
 ### Is Flutter open source?
 
 Yes, Flutter is open source technology.
@@ -901,7 +907,7 @@ _Performance_
   jank-free apps. Which leads to:
 
 _Fidelity_:
-: Everyone deserves precise, beautiful, delightful mobile
+: Everyone deserves precise, beautiful, delightful
   app experiences.
 
 ### Will Apple reject my Flutter app?
@@ -910,7 +916,7 @@ We can't speak for Apple, but Apple's policies have changed over the
 years, and their App Store contains many apps built with technologies
 like Unity and Flutter.
 Apple has even featured Flutter apps such as
-[Hamilton.][Hamilton for iOS]
+[Hamilton][Hamilton for iOS].
 
 Of course, Apple is ultimately in charge of their ecosystem,
 but our goal is to continue doing everything we can to ensure
@@ -919,7 +925,7 @@ that Flutter apps can be deployed to Apple's App Store.
 
 [`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
 [accessibility documentation]: /docs/development/accessibility-and-localization/accessibility
-[add-to-app section]: /docs/development/add-to-app
+[add-to-app]: /docs/development/add-to-app
 [Android]: #run-android
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
@@ -937,6 +943,9 @@ that Flutter apps can be deployed to Apple's App Store.
 [Community]: /community
 [`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
 [Contributing Guide]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
+[CodePen]: https://codepen.io/flutter
+[Dart DevTools]: /docs/development/tools/devtools
+[desktop]: /desktop
 [detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
 [Discord]: https://discord.gg/N7Yshp4
 [`Divider`]: {{site.api}}/flutter/material/Divider-class.html
@@ -984,9 +993,9 @@ that Flutter apps can be deployed to Apple's App Store.
 [`Material`]: {{site.api}}/flutter/material/Material-class.html
 [`MaterialButton`]: {{site.api}}/flutter/material/MaterialButton-class.html
 [MDC-103 Flutter: Material Theming]: {{site.codelabs}}/codelabs/mdc-103-flutter/index.html?index=..%2F..index#0
+[Measuring your app's size]: /docs/perf/app-size
 [minimal Flutter app]: {{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
 [`NotificationListener`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
-[on the Flutter wiki]: {{site.github}}/flutter/flutter/wiki/Desktop-shells
 [only one license]: {{site.github}}/flutter/flutter/blob/master/LICENSE
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [platform and third-party APIs]: /docs/development/platform-integration/platform-channels
@@ -1012,12 +1021,12 @@ that Flutter apps can be deployed to Apple's App Store.
 [Stack Overflow]: {{site.so}}/tags/flutter
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
-[technical preview]: /web
 [test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
 [testing with Flutter]: /docs/testing
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`UserAccountsDrawerHeader`]: {{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html
 [VS Code]: https://code.visualstudio.com/
+[web]: /web
 [web instructions]: /docs/get-started/web
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: /docs/development/ui/widgets

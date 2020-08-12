@@ -47,7 +47,7 @@ following structure:
   assets
     AssetManifest.json
     FontManifest.json
-    LICENSE
+    NOTICES
     fonts
       MaterialIcons-Regular.ttf
       <other font files>
@@ -58,7 +58,7 @@ following structure:
 ```
 
 Launch a web server (for example,
-`python -m SimpleHTTPServer 8000`,
+`python -m http.server 8000`,
 or by using the [dhttpd][] package),
 and open the /build/web directory. Navigate to
 `localhost:8000` in your browser
@@ -89,12 +89,21 @@ many others:
 * [GitHub Pages][]
 * [Google Cloud Hosting][]
 
-In future, we plan to generate PWA configuration files
-to support Progressive Web Apps.
+## PWA Support
+
+As of release 1.20, the Flutter template for web apps includes support
+for the core features needed for an installable, offline-capable PWA app.
+Flutter-based PWAs can be installed in the same way as any other web-based
+PWA; the settings signaling that your Flutter app is a PWA are provided by
+`manifest.json`, which is produced by `flutter create` in the `web` directory.
+
+PWA support remains a work in progress,
+so please [give us feedback][] if you see something that doesn’t look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Firebase Hosting]: https://firebase.google.com/docs/hosting
 [GitHub Pages]: https://pages.github.com/
+[give us feedback]: {{site.github}}/flutter/flutter/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/smb/web-hosting/
 [`iframe`]: https://html.com/tags/iframe/
 

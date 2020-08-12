@@ -124,7 +124,8 @@ This provides a convenient way to capture all errors
 that occur within that context by providing an `onError()`
 function.
 
-In this case, run the app in a new `Zone` and capture all errors by
+In this case, run the app in a new `Zone` and capture all errors.
+With Flutter older than 1.17, you can do that by
 providing an `onError()` callback.
 
 <!-- skip -->
@@ -132,6 +133,19 @@ providing an `onError()` callback.
 runZoned<Future<void>>(() async {
   runApp(CrashyApp());
 }, onError: (error, stackTrace) {
+  // Whenever an error occurs, call the `_reportError` function. This sends
+  // Dart errors to the dev console or Sentry depending on the environment.
+  _reportError(error, stackTrace);
+});
+```
+
+With Flutter 1.17 which includes Dart 2.8, use `runZonedGuarded` instead:
+
+<!-- skip -->
+```dart
+runZonedGuarded<Future<void>>(() async {
+  runApp(CrashyApp());
+}, (Object error, StackTrace stackTrace) {
   // Whenever an error occurs, call the `_reportError` function. This sends
   // Dart errors to the dev console or Sentry depending on the environment.
   _reportError(error, stackTrace);

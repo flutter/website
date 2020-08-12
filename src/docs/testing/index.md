@@ -40,6 +40,9 @@ External dependencies of the unit under test are generally
 Unit tests generally don't read from or write
 to disk, render to screen, or receive user actions from
 outside the process running the test.
+For more information regarding unit tests, 
+you can view the following recipes 
+or run `flutter test --help` in your terminal.
 
 ### Recipes
 
@@ -91,6 +94,7 @@ For information on running tests on various continuous
 integration services, see the following:
 
 * [Continuous delivery using fastlane with Flutter][]
+* [Test Flutter apps on Appcircle][]
 * [Test Flutter apps on Travis][]
 * [Test Flutter apps on Cirrus][]
 * [Codemagic CI/CD for Flutter][]
@@ -102,5 +106,6 @@ integration services, see the following:
 [Continuous delivery using fastlane with Flutter]: /docs/deployment/cd#fastlane
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
 [mocked out]: /cookbook/testing/mocking
+[Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
 [Test Flutter apps on Travis]: {{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c

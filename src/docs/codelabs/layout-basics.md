@@ -711,7 +711,7 @@ here are a few suggestions for resources worth exploring:
   visiting the [Building layouts][] page.
 * Check out the [sample apps][].
 * Visit [Flutter's YouTube channel][],
-  where you can watch a variety videos from
+  where you can watch a variety of videos, from
   videos that focus on individual widgets
   to videos of developers building apps.
 
@@ -729,6 +729,6 @@ You can download Flutter from the [install][] page.
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html
 [Material Color palette]: {{site.api}}/flutter/material/Colors-class.html
 [Material Icon library]: {{site.api}}/flutter/material/Icons-class.html
-[sample apps]: {{site.github}}/flutter/samples/blob/master/INDEX.md
+[sample apps]: https://flutter.github.io/samples
 [Understanding constraints]: /docs/development/ui/layout/constraints
 

@@ -34,7 +34,7 @@ There is no imperative changing of the UI itself
 and the UI rebuilds from scratch.
 
 Read more about the declarative approach to UI programming
-[in the get started guide][].
+in the [get started guide][].
 
 The declarative style of UI programming has many benefits.
 Remarkably, there is only one code path for any state of the UI.
@@ -46,4 +46,4 @@ this style of programming might not seem as intuitive as the
 imperative style. This is why this section is here. Read on.
 
 
-[in the get started guide]: /docs/get-started/flutter-for/declarative
+[get started guide]: /docs/get-started/flutter-for/declarative

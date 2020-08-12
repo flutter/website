@@ -269,7 +269,7 @@ Each section provides a link to the source code for that example.
     `setState()`.
   * Every time the Animation generates a new number, the `addListener()`
     function calls `setState()`.
-  * How to define an `AnimatedController` with the required
+  * How to define an `AnimationController` with the required
     `vsync` parameter.
   * Understanding the "`..`" syntax in "`..addListener`",
     also known as Dart's _cascade notation_.
@@ -429,9 +429,9 @@ you’ve created your first animation in Flutter!
     `AnimatedBuilder`, as shown in the
     [Refactoring with AnimatedBuilder][] section.
   * Examples of `AnimatedWidget`s in the Flutter API:
-    `AnimatedBuilder`, `AnimatedModal&shy;Barrier`,
-    `DecoratedBox&shy;Transition`, `FadeTransition`,
-    `Positioned&shy;Transition`, `Relative&shy;Positioned&shy;Transition`,
+    `AnimatedBuilder`, `AnimatedModalBarrier`,
+    `DecoratedBoxTransition`, `FadeTransition`,
+    `PositionedTransition`, `RelativePositionedTransition`,
     `RotationTransition`, `ScaleTransition`,
     `SizeTransition`, `SlideTransition`.
 {{site.alert.end}}
@@ -841,7 +841,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
 ## Next steps
 
-This tutorial gives you a foundation for creating animations ins
+This tutorial gives you a foundation for creating animations in
 Flutter using `Tweens`, but there are many other classes to explore.
 You might investigate the specialized `Tween` classes,
 animations specific to Material Design,

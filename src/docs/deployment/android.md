@@ -71,7 +71,7 @@ keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000
 On Windows, use the following command:
 
 ```terminal
-keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
+keytool -genkey -v -keystore c:\Users\USER_NAME\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
 This command stores the `key.jks` file in your home
@@ -385,6 +385,13 @@ build by specifying `--build-name` and `--build-number`, respectively.
 In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For more information,
 see [Version your app][] in the Android documentation.
+
+After updating the version number in the pubspec file,
+run `flutter pub get` from the top of the project, or
+use the **Pub get** button in your IDE. This updates
+the `versionName` and `versionCode` in the `local.properties` file,
+which are later updated in the `build.gradle` file when you
+rebuild the Flutter app.
 
 ## Android release FAQ
 

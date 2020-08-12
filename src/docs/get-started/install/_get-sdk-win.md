@@ -22,7 +22,7 @@ GitHub, and change branches or tags as needed. For example:
 C:\src>git clone https://github.com/flutter/flutter.git -b stable
 ```
 
-You are now ready to run Flutter commands in the Flutter Console!
+You are now ready to run Flutter commands in the Flutter Console.
 
 ### Update your path
 
@@ -38,8 +38,10 @@ take these steps to add Flutter to the `PATH` environment variable:
     create a new user variable named `Path` with
     the full path to `flutter\bin` as its value.
 
-Note that you have to close and reopen any existing console windows
+You have to close and reopen any existing console windows
 for these changes to take effect.
+
+{% include dart-tool.md %}
 
 ### Run `flutter doctor`
 

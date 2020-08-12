@@ -80,7 +80,48 @@ ListView.builder(
 So far, so good.
 This generates 20 todos and displays them in a ListView.
 
-## 3. Create a detail screen to display information about a todo
+## 3. Create a Todo screen to display the list
+
+For this, we create a `StatelessWidget`. We call it `TodosScreen`.
+Since the contents of this page won't change during runtime,
+we'll have to require the list
+of todos within the scope of this widget.
+
+We pass in our `ListView.builder` as body of the widget we're returning to `build()`.
+This'll render the list on to the screen for you to get going!
+
+<!-- skip -->
+```dart
+class TodosScreen extends StatelessWidget {
+  final List<Todo> todos;
+
+  //requiring the list of todos
+  TodosScreen({Key key, @required this.todos}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Todos'),
+      ),
+      //passing in the ListView.builder
+      body: ListView.builder(
+        itemCount: todos.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(todos[index].title)
+          );
+        },
+      ),
+    );
+  }
+}
+```
+
+With Flutter's default styling, you're good to go without sweating about 
+things that you'd like to do later on!
+
+## 4. Create a detail screen to display information about a todo
 
 Now, create the second screen. The title of the screen contains the
 title of the todo, and the body of the screen shows the description.
@@ -114,14 +155,14 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-## 4. Navigate and pass data to the detail screen
+## 5. Navigate and pass data to the detail screen
 
 With a `DetailScreen` in place,
 you're ready to perform the Navigation.
 In this example, navigate to the `DetailScreen` when a user
 taps a todo in the list. Pass the todo to the `DetailScreen`.
 
-To capture the user's tap, write an [`onTap()`][]
+To capture the user's tap in the `TodosScreen`, write an [`onTap()`][]
 callback for the `ListTile` widget. Within the `onTap()` callback,
 use the [`Navigator.push()`][] method.
 

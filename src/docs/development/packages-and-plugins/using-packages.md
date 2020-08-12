@@ -201,7 +201,10 @@ run `flutter pub upgrade`
 (**Upgrade dependencies** in IntelliJ or Android Studio)
 to retrieve the highest available version of the package
 that is allowed by the version constraint specified in
-`pubspec.yaml`.
+`pubspec.yaml`. 
+Note that this is a different command from 
+`flutter upgrade` or `flutter update-packages`, 
+which both update Flutter itself.
 
 ### Dependencies on unpublished packages
 
@@ -212,6 +215,7 @@ additional dependency options are available:
 **Path dependency**
 : A Flutter app can depend on a plugin via a file system
   `path:` dependency. The path can be either relative or absolute.
+  Relative paths are evaluated relative to the directory containing `pubspec.yaml`.
   For example, to depend on a plugin `plugin1` located in a directory
   next to the app, use the following syntax:
 

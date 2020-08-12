@@ -16,25 +16,21 @@ contains a simple demo app that uses [Material Components][].
 
 {% include_relative _package-name.md  %}
 
+{% include_relative _restart-vscode.md %}
+
 {% include_relative _main-code-note.md  %}
 
 ## Run the app
 
  1. Locate the VS Code status bar (the blue bar at the bottom of the
-    window):<br> ![status bar][]{:.mw-100}
+    window):<br> ![status bar][]{:.mw-100.pt-1.pb-2}
  1. Select a device from the **Device Selector** area.
     For details, see [Quickly switching between Flutter devices][].
     - If no device is available and you want to use a device simulator,
       click **No Devices** and launch a simulator.
     - To setup a real device, follow the device-specific instructions on the
       [Install][] page for your OS.
- 1. Press the **Settings button**&mdash;a cog icon gear
-    on the top right (now marked with a red or orange indicator)
-    next to the DEBUG text box that reads **No Configuration**.
-    Select flutter. And choose the debug configuration:
-    To create your emulator if it is closed or to run the
-    emulator or device that is now connected.
- 1. Invoke **Debug > Start Debugging** or press <kbd>F5</kbd>.
+ 1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
  1. Wait for the app to launch &mdash; progress is printed
     in the **Debug Console** view.
 
@@ -46,10 +42,7 @@ contains a simple demo app that uses [Material Components][].
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**
-  <i class="material-icons align-bottom">offline_bolt</i>.
-  {% comment %} Or, as an alternative:
-    {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}.
-  {% endcomment -%}
+  {% include_relative _hot-reload-icon.md %}.
 {% endcapture %}
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}

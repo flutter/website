@@ -68,8 +68,8 @@ the hot reload command. The code updates and execution continues.
 ![Android Studio UI]({% asset development/tools/android-studio-run-controls.png @path %}){:width="550px"}<br>
 Controls for run, run debug, hot reload, and hot restart in Android Studio
 
-A code change has a visible effect only if the modified Dart code
-is run again after the change. Specifically,
+A code change has a visible effect only if the modified
+Dart code is run again after the change. Specifically,
 a hot reload causes all of the existing widgets to rebuild.
 Only code involved in the rebuilding of the widgets is
 automatically re-executed. The `main()` and `initState()`
@@ -80,6 +80,8 @@ functions, for example, are not run again.
 The next sections describe specific scenarios that involve
 hot reload. In some cases, small changes to the Dart code
 enable you to continue using hot reload for your app.
+In other cases, a hot restart, or a full restart is
+needed.
 
 ### An app is killed
 
@@ -105,7 +107,7 @@ Hot reload was rejected:
 In this situation, simply correct the errors on the
 specified lines of Dart code to keep using hot reload.
 
-### `CupertinoTabView`'s `builder`
+### CupertinoTabView's builder
 
 Hot reload won't apply changes made to a `builder`
 of a `CupertinoTabView`. For more information, see

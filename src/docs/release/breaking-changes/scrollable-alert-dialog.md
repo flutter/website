@@ -167,7 +167,8 @@ AlertDialog(
 
 ## Timeline
 
-TBD - Add the version number that contains this change.
+Landed in version: 1.16.3<br>
+In stable release: 1.17
 
 ## References
 

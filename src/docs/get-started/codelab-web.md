@@ -76,7 +76,7 @@ You'll start with a simple web app that we provide for you.
 <li markdown="1">Enable web development.<br>
 At the command line, perform the following commands to
 make sure that you have the latest web support and that
-it is enabled. You only need to run `flutter config` once
+it's enabled. You only need to run `flutter config` once
 to enable Flutter support for web.
 If you see "flutter: command not found",
 then make sure that you have installed the
@@ -140,20 +140,20 @@ and the web server when you want to test on other browsers.
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
-void main() => runApp(LoginApp());
+void main() => runApp(SignUpApp());
 
-class LoginApp extends StatelessWidget {
+class SignUpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => LoginScreen(),
+        '/': (context) => SignUpScreen(),
       },
     );
   }
 }
 
-class LoginScreen extends StatelessWidget {
+class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,7 +162,7 @@ class LoginScreen extends StatelessWidget {
         child: SizedBox(
           width: 400,
           child: Card(
-            child: LoginForm(),
+            child: SignUpForm(),
           ),
         ),
       ),
@@ -170,12 +170,12 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class LoginForm extends StatefulWidget {
+class SignUpForm extends StatefulWidget {
   @override
-  _LoginFormState createState() => _LoginFormState();
+  _SignUpFormState createState() => _SignUpFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _SignUpFormState extends State<SignUpForm> {
   final _firstNameTextController = TextEditingController();
   final _lastNameTextController = TextEditingController();
   final _usernameTextController = TextEditingController();
@@ -189,10 +189,10 @@ class _LoginFormState extends State<LoginForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign Up', style: Theme
+          Text('Sign up', style: Theme
               .of(context)
               .textTheme
-              .display1), // display1 changes to headline4 in 1.16
+              .headline4),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
@@ -239,7 +239,7 @@ class _LoginFormState extends State<LoginForm> {
 <li markdown="1">Run the example.<br>
 Click the **Run** button to run the example.
 Note that you can type into the text fields,
-but the Sign up button is disabled.
+but the **Sign up** button is disabled.
 </li>
 
 <li markdown="1">Copy the code.<br>
@@ -278,13 +278,15 @@ From your IDE, editor, or at the command line,
 
 ## Step 1: Show the Welcome screen
 
-The `LoginForm` class is a stateful widget.
-This simply means that the widget stores information that can change,
-such as user input, or data from a feed.
-Since widgets themselves are immutable (can’t be modified once created),
+The `SignUpForm` class is a stateful widget.
+This simply means that the widget stores information
+that can change, such as user input, or data from a feed.
+Since widgets themselves are immutable
+(can’t be modified once created),
 Flutter stores state information in a companion class,
 called the `State` class. In this lab,
-all of your edits will be made to the private `_LoginFormState` class.
+all of your edits will be made to the private
+`_SignUpFormState` class.
 
 {{site.alert.secondary}}
   <h4 class="no_toc">Fun fact</h4>
@@ -293,7 +295,9 @@ prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
 {{site.alert.end}}
 
-First, add the following class definition for the `WelcomeScreen` widget:
+First, in your `lib/main.dart` file,
+add the following class definition for the
+`WelcomeScreen` widget after the `SignUpScreen` class:
 
 ```dart
 class WelcomeScreen extends StatelessWidget {
@@ -301,22 +305,21 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.display3),
+        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
       ),
     );
   }
 }
 ```
 
-Next, you will enable the button to display the screen and create a method to
-display it.
+Next, you will enable the button to display the screen
+and create a method to display it.
 
 <ol markdown="1">
-<li markdown="1">Open the `lib/main.dart` file.
-</li>
 
-<li markdown="1"> Locate `build()` method for the `_SignUpFormState` class.
-This is the part of the code that builds the SignUp button.
+<li markdown="1"> Locate the `build()` method for the
+`_SignUpFormState` class. This is the part of the code
+that builds the SignUp button.
 Notice how the button is defined:
 It’s a `FlatButton` with a blue background,
 white text that says **Sign up** and, when pressed,
@@ -348,6 +351,17 @@ void _showWelcomeScreen() {
 ```
 </li>
 
+<li markdown="1">Add the `/welcome` route.<br>
+Create the connection to show the new screen.
+In the `build()` method for `SignUpApp`,
+add the following route below `'/'`:
+
+<!-- skip -->
+```dart
+'/welcome': (context) => WelcomeScreen(),
+```
+</li>
+
 <li markdown="1">Run the app.<br>
 The **Sign up** button should now be enabled.
 Click it to bring up the welcome screen.
@@ -372,10 +386,13 @@ You get that behavior for free.
   stack switches the display to that new screen.
   This is why the `_showWelcomeScreen` function pushes
   the `WelcomeScreen` onto the Navigator’s stack.
-  The user clicks the button and, voila, the welcome screen appears.
-  Likewise, calling `pop()` on the `Navigator` returns to the previous screen.
-  Because Flutter’s navigation is integrated into the browser’s navigation,
-  this happens implicitly when clicking the browser’s back arrow button.
+  The user clicks the button and, voila,
+  the welcome screen appears. Likewise,
+  calling `pop()` on the `Navigator` returns to the
+  previous screen. Because Flutter’s navigation is
+  integrated into the browser’s navigation,
+  this happens implicitly when clicking the browser's
+  back arrow button.
 
 ## Step 2: Enable sign in progress tracking
 
@@ -390,7 +407,7 @@ and update the app’s UI when the form is complete.
 {{site.alert.end}}
 
 <ol markdown="1">
-<li markdown="1">Add a method to to update `_formProgress`.
+<li markdown="1">Add a method to update `_formProgress`.
 In the `_SignUpFormState` class, add a new method called
 `_updateFormProgress()`:
 
@@ -418,21 +435,22 @@ void _updateFormProgress() {
 ...
 ```
 
-This method updates `_formProgress` based on the the number of non-empty text
-fields.
+This method updates the `_formProgress` field based on the
+the number of non-empty text fields.
 
 </li>
 
-<li markdown="1">Call `_updateFormProgress()` when the form changes<br>
-In the `build()` method of the `_SignUpFormState` class, add a callback
-to the `Form` widget's `onChanged` argument:
+<li markdown="1">Call `_updateFormProgress` when the form
+changes.<br>
+In the `build()` method of the `_SignUpFormState` class,
+add a callback to the `Form` widget's `onChanged` argument.
 Add the code below marked as NEW:
 
 <!-- skip -->
 ```dart
 ...
 return Form(
-  onChanged: () => _updateFormProgress(), // NEW
+  onChanged: _updateFormProgress, // NEW
   child: Column(
 ...
 ```
@@ -460,7 +478,8 @@ FlatButton(
 
 <li markdown="1">Run the app.<br>
 The **Sign up** button is initially disabled,
-but becomes enabled when all three text fields contain (any) text.
+but becomes enabled when all three text fields contain
+(any) text.
 </li>
 </ol>
 
@@ -520,9 +539,9 @@ See the tip at the end of this section for more information.
 <ol markdown="1">
 <li markdown="1">Run the app.<br>
 If your app isn’t currently running, launch it.
-From the command line, use `flutter run -d chrome`,
-or select the **Chrome** device from the pull down
-and launch it from your IDE.
+Select the **Chrome** device from the pull down
+and launch it from your IDE or,
+from the command line, use `flutter run -d chrome`,
 </li>
 
 <li markdown="1">Get the web socket info for DevTools.<br>
@@ -551,7 +570,8 @@ launch the DevTools server as explained in the
 </li>
 
 <li markdown="1">Connect to DevTools.<br>
-When DevTools launches, you should see something like the following:
+When DevTools launches, you should see something
+like the following:
 
 ```terminal
 Serving DevTools at http://127.0.0.1:9100
@@ -626,7 +646,8 @@ In the running app, click one of the text fields to gain focus.
 The app hits the breakpoint and pauses.
 In the DevTools screen, you can see on the left
 the value of `progress`, which is 0. This is to be expected,
-since none of the fields are filled in. Step through the for loop to see
+since none of the fields are filled in.
+Step through the for loop to see
 the program execution.
 </li>
 
@@ -646,17 +667,18 @@ see the [DevTools documentation][].
 
 ## Step 3: Add animation for sign in progress
 
-It’s time to add animation! In this final step, you’ll create the animation for
-the LinearProgressIndicator at the top of the sign in area. The animation has
-the following behavior:
+It’s time to add animation! In this final step,
+you’ll create the animation for the
+`LinearProgressIndicator` at the top of the sign in
+area. The animation has the following behavior:
 
 * When the app starts,
   a tiny red bar appears across the top of the sign in area.
 * When one text field contains text,
-  the red bar turns orange and animates one-third
+  the red bar turns orange and animates 0.15
   of the way across the sign in area.
 * When two text fields contain text,
-  the orange bar turns yellow and animates two-thirds
+  the orange bar turns yellow and animates half
   of the way across the sign in area.
 * When all three text fields contain text,
   the orange bar turns green and animates all the
@@ -664,7 +686,7 @@ the following behavior:
   Also, the **Sign up** button becomes enabled.
 
 <ol markdown="1">
-<li markdown="1">Add an AnimatedProgressIndicator.<br>
+<li markdown="1">Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
 <!--skip-->
@@ -732,9 +754,9 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 ```
 </li>
 
-<li markdown="1">Use the new AnimatedProgressIndicator.<br>
-Then, replace the `LinearProgressIndicator` in the Form with this new
-`AnimatedProgressIndicator`:
+<li markdown="1">Use the new `AnimatedProgressIndicator`.<br>
+Then, replace the `LinearProgressIndicator` in the `Form`
+with this new `AnimatedProgressIndicator`:
 
 <!--skip-->
 ```dart
@@ -743,22 +765,23 @@ Then, replace the `LinearProgressIndicator` in the Form with this new
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress), // NEW
-          Text('Sign Up', style: Theme.of(context).textTheme.display1),
+          Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
 ...
 ```
 
-This widget uses an `AnimatedBuilder` to animate the progress indicator to the
-latest value. 
+This widget uses an `AnimatedBuilder` to animate the
+progress indicator to the latest value. 
 </li>
 
 <li markdown="1">Run the app.<br>
-Type anything into the three fields to verify that the animation works,
-and that clicking the **Sign up** button brings up the Welcome screen.
+Type anything into the three fields to verify that
+the animation works, and that clicking the
+**Sign up** button brings up the **Welcome** screen.
 </li>
 </ol>
 
-### Complete Sample
+### Complete sample
 
 <!-- skip -->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
@@ -800,7 +823,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.display3),
+        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
       ),
     );
   }
@@ -844,12 +867,12 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      onChanged: () => _updateFormProgress(),
+      onChanged: _updateFormProgress,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress),
-          Text('Sign Up', style: Theme.of(context).textTheme.display1),
+          Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(

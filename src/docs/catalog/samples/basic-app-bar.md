@@ -25,7 +25,7 @@ A typical AppBar with a title, actions, and an overflow dropdown menu.
 
 An app that displays one of a half dozen choices with an icon and a title.
 The two most common choices are available as action buttons and the remaining
-choices are included in the overflow dropdow menu.
+choices are included in the overflow dropdown menu.
 
 Try this app out by creating a new project with `flutter create` and
 replacing the contents of `lib/main.dart` with the following code.
@@ -120,7 +120,7 @@ class ChoiceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle textStyle = Theme.of(context).textTheme.display1;
+    final TextStyle textStyle = Theme.of(context).textTheme.headline4;
     return Card(
       color: Colors.white,
       child: Center(

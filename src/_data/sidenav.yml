@@ -101,7 +101,6 @@
               permalink: /docs/development/ui/advanced/gestures
             - title: Splash screens
               permalink: /docs/development/ui/advanced/splash-screen
-        - title: Platform-specific theming
         - title: Widget catalog
           permalink: /docs/development/ui/widgets
     - title: Data & backend
@@ -124,7 +123,6 @@
           permalink: /docs/development/data-and-backend/networking
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
-        - title: Back-end services
         - title: Firebase
           permalink: /docs/development/data-and-backend/firebase
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
@@ -212,6 +210,8 @@
               permalink: /docs/development/tools/devtools/memory
             - title: Performance view
               permalink: /docs/development/tools/devtools/performance
+            - title: Network view
+              permalink: /docs/development/tools/devtools/network
             - title: Debugger
               permalink: /docs/development/tools/devtools/debugger
             - title: Logging view
@@ -247,6 +247,8 @@
           permalink: /docs/development/androidx-migration
         - title: Android plugin upgrade
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: Developing for iOS 14 beta
+          permalink: /docs/development/ios-14
         - title: Xcode 11.4 support
           permalink: /docs/development/ios-project-migration
 
@@ -288,6 +290,8 @@
         permalink: /docs/perf/rendering/best-practices
       - title: Performance profiling
         permalink: /docs/perf/rendering/ui-performance
+      - title: Reduce shader compilation jank
+        permalink: /docs/perf/rendering/shader
 
 - title: Deployment
   children:
@@ -299,6 +303,8 @@
       permalink: /docs/deployment/android
     - title: Build and release an iOS app
       permalink: /docs/deployment/ios
+    - title: Build and release a Linux app
+      permalink: /docs/deployment/linux
     - title: Build and release a web app
       permalink: /docs/deployment/web
     - title: Continuous deployment
@@ -310,14 +316,14 @@
       permalink: /docs/resources/bootstrap-into-dart
     - title: Compatibility policy
       permalink: /docs/resources/compatibility
+    - title: Architectural overview
+      permalink: /docs/resources/architectural-overview
     - title: Inside Flutter
       permalink: /docs/resources/inside-flutter
     - title: Google Fonts package
       permalink: https://pub.dev/packages/google_fonts
     - title: Platform adaptations
       permalink: /docs/resources/platform-adaptations
-    - title: Technical overview
-      permalink: /docs/resources/technical-overview
     - title: Technical videos
       permalink: /docs/resources/videos
     - title: Books
@@ -328,6 +334,10 @@
       permalink: /docs/resources/faq
     - title: Design Documents
       permalink: /docs/resources/design-docs
+    - title: Creating useful bug reports
+      permalink: /docs/resources/bug-reports
+    - title: Official brand assets
+      permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
 
 - title: Reference
   expanded: true

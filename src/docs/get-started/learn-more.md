@@ -45,7 +45,7 @@ Happy Fluttering!
 [Flutter for Android developers]: /docs/get-started/flutter-for/android-devs
 [Flutter for iOS developers]: /docs/get-started/flutter-for/ios-devs
 [Flutter for React Native developers]: /docs/get-started/flutter-for/react-native-devs
-[Flutter samples]: {{site.github}}/flutter/samples/blob/master/INDEX.md
+[Flutter samples]: https://flutter.github.io/samples
 [Flutter for web developers]: /docs/get-started/flutter-for/web-devs
 [Flutter for Xamarin.Forms developers]: /docs/get-started/flutter-for/xamarin-forms-devs
 [From Java to Dart]: {{site.codelabs}}/codelabs/from-java-to-dart
