@@ -20,17 +20,19 @@ JavaScript if targeting the web. The framework is open source, with a permissive
 BSD license, and has a thriving ecosystem of third-party packages that
 supplement the core library functionality.
 
-The overview is divided into six main sections:
+This overview is divided into a number of sections:
 
-1. The _layer model_: The pieces from which Flutter is constructed.
-1. An introduction to _widgets_: The fundamental building blocks of Flutter user
+1. The **layer model**: The pieces from which Flutter is constructed.
+1. **Reactive user interfaces**: An introduction to a core paradigm behind
+   Flutter user interface development.
+1. An introduction to **widgets**: The fundamental building blocks of Flutter user
    interfaces.
-1. The _rendering process_: How Flutter turns UI code into pixels.
-1. An overview of the _platform embedders_: The code that lets mobile and
+1. The **rendering process**: How Flutter turns UI code into pixels.
+1. An overview of the **platform embedders**: The code that lets mobile and
    desktop OSes execute Flutter apps.
-1. _Integrating Flutter with other code_: Information about different techniques
+1. **Integrating Flutter with other code**: Information about different techniques
    available to Flutter apps.
-1. _Support for the web_: Concluding remarks about the characteristics of
+1. **Support for the web**: Concluding remarks about the characteristics of
    Flutter in a browser environment.
 
 ## Architectural layers
