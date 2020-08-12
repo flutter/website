@@ -120,7 +120,7 @@ other targets.
 ## Reactive user interfaces
 
 On the surface, Flutter is [a reactive, pseudo-declarative UI
-framework](docs/resources/faq#what-programming-paradigm-does-flutters-framework-use),
+framework](/docs/resources/faq#what-programming-paradigm-does-flutters-framework-use),
 in which the developer provides a mapping from application state to interface
 state, and the framework takes on the task of updating the interface at runtime
 when the application state changes. This model is inspired by [work that came
