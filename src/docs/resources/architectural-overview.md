@@ -189,7 +189,6 @@ way up to the root widget (the container that hosts the Flutter app, typically
 `MaterialApp` or `CupertinoApp`), as this trivial example shows:
 
 <!-- skip -->
-
 ```dart
 import 'package:flutter/material.dart';
 
@@ -378,7 +377,6 @@ data, so a `build()` method can ensure that any child widget is instantiated
 with the data it needs:
 
 <!-- skip -->
-
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -399,7 +397,6 @@ Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
 
 <!-- skip -->
-
 ```dart
 final studentState = StudentState.of(context);
 ```
@@ -420,7 +417,6 @@ a theme in the tree when it builds, and then deeper in the hierarchy a widget
 can use the `.of()` method to look up the relevant theme data, for example:
 
 <!-- skip -->
-
 ```dart
 Container(
   color: Theme.of(context).secondaryHeaderColor,
@@ -496,7 +492,6 @@ Let’s take a look at some of these phases in greater detail.
 Consider this simple code fragment that demonstrates a simple widget hierarchy:
 
 <!-- skip -->
-
 ```dart
 Container(
   color: Colors.blue,
@@ -520,7 +515,6 @@ for `Container`, you can see that if the color is not null, it inserts a
 `ColoredBox` representing the color:
 
 <!-- skip -->
-
 ```dart
 if (color != null)
   current = ColoredBox(color: color, child: current);
@@ -639,7 +633,6 @@ the child object can examine the passed-down constraints and use those to
 determine how it will use them, for example:
 
 <!-- skip -->
-
 ```dart
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -744,7 +737,6 @@ The following is a simple platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
 
 <!-- skip -->
-
 ```dart
 // Dart side
 const channel = MethodChannel('foo');
@@ -799,7 +791,6 @@ signatures, and instruct the Dart VM to map between them. As a simple example,
 here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
 
 <!-- skip -->
-
 ```dart
 typedef MessageBoxNative = Int32 Function(
     IntPtr hWnd, Pointer<Utf16> lpText, Pointer<Utf16> lpCaption, Int32 uType);
@@ -851,7 +842,6 @@ on a platform test. As an example, from the
 [google_maps_flutter]({{site.pub}}/packages/google_maps_flutter) plugin:
 
 <!-- skip -->
-
 ```dart
 if (defaultTargetPlatform == TargetPlatform.android) {
       return AndroidView(
