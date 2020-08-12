@@ -316,14 +316,14 @@
       permalink: /docs/resources/bootstrap-into-dart
     - title: Compatibility policy
       permalink: /docs/resources/compatibility
+    - title: Architectural overview
+      permalink: /docs/resources/architectural-overview
     - title: Inside Flutter
       permalink: /docs/resources/inside-flutter
     - title: Google Fonts package
       permalink: https://pub.dev/packages/google_fonts
     - title: Platform adaptations
       permalink: /docs/resources/platform-adaptations
-    - title: Technical overview
-      permalink: /docs/resources/technical-overview
     - title: Technical videos
       permalink: /docs/resources/videos
     - title: Books

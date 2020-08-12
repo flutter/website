@@ -2514,7 +2514,7 @@ and common widget properties.
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [Flutter packages]: {{site.pub}}/flutter/
-[Flutter Technical Overview]: /docs/resources/technical-overview
+[Flutter Architectural Overview]: /docs/resources/architectural-overview
 [Flutter Basic Widgets]: /docs/development/ui/widgets/basics
 [Flutter Widget Catalog]: /docs/development/ui/widgets
 [Flutter Widget Index]: /docs/reference/widgets
