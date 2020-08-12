@@ -40,8 +40,23 @@ independent libraries that each depend on the underlying layer. No layer has
 privileged access to the layer below, and every part of the framework level is
 designed to be optional and replaceable.
 
+{% comment %}
+The PNG diagrams in this document were created using draw.io. The draw.io
+metadata is embedded in the PNG file itself, so you can open the PNG directly
+from draw.io to edit the individual components.
+
+The following settings were used:
+
+ - Select all (to avoid exporting the canvas itself)
+ - Export as PNG, zoom 300% (for a reasonable sized output)
+ - Enable _Transparent Background_
+ - Enable _Selection Only_, _Crop_
+ - Enable _Include a copy of my diagram_
+
+{% endcomment %}
+
 ![Architectural
-diagram](/images/arch-overview/archdiagram.svg){:width="100%"}
+diagram](/images/arch-overview/archdiagram.png){:width="100%"}
 
 To the underlying operating system, Flutter applications are packaged in the
 same way as any other native application. A platform-specific embedder provides
@@ -134,7 +149,7 @@ to events. One challenge of this approach is that, as the application grows in
 complexity, the developer needs to be aware of how state changes cascade
 throughout the entire UI. For example, consider the following UI:
 
-![Architectural diagram](/images/arch-overview/color-picker.png){:width="100%"}
+![Color picker dialog](/images/arch-overview/color-picker.png){:width="66%"}
 
 There are many places where the state can be changed: the color box, the hue
 slider, the radio buttons. As the user interacts with the UI, changes must be
@@ -391,7 +406,7 @@ provides an easy way to grab data from a shared ancestor. You can use
 `InheritedWidget` to create a state widget that wraps a common ancestor in the
 widget tree, as shown in this example:
 
-![Inherited widgets](/images/arch-overview/inherited-widget.svg){:width="100%"}
+![Inherited widgets](/images/arch-overview/inherited-widget.png){:width="50%"}
 
 Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
@@ -483,7 +498,7 @@ The overriding principle that Flutter applies to its rendering pipeline is that
 the system, as shown in the following sequencing diagram:
 
 ![Render pipeline sequencing
-diagram](/images/arch-overview/render-pipeline.svg){:width="100%"}
+diagram](/images/arch-overview/render-pipeline.png){:width="100%"}
 
 Let’s take a look at some of these phases in greater detail.
 
@@ -526,7 +541,7 @@ hierarchy may therefore be deeper than what the code represents, as in this
 case<sup><a href="#a2">2</a></sup>:
 
 ![Render pipeline sequencing
-diagram](/images/arch-overview/widgets.svg){:width="100%"}
+diagram](/images/arch-overview/widgets.png){:width="35%"}
 
 This explains why, when you examine the tree through a debug tool such as the
 [Flutter inspector](/docs/development/tools/devtools/inspector), part of the
@@ -543,7 +558,7 @@ hierarchy. There are two basic types of elements:
   phases.
 
 ![Render pipeline sequencing
-diagram](/images/arch-overview/widget-element.svg){:width="100%"}
+diagram](/images/arch-overview/widget-element.png){:width="85%"}
 
 `RenderObjectElement`s are an intermediary between their widget analog and the
 underlying `RenderObject`, which we’ll come to later.
@@ -591,7 +606,7 @@ an image, and
 applies a transformation before painting its child.
 
 ![Differences between the widgets hierarchy and the element and render
-trees](/images/arch-overview/trees.svg){:width="100%"}
+trees](/images/arch-overview/trees.png){:width="100%"}
 
 Most Flutter widgets are rendered by an object that inherits from the
 `RenderBox` subclass, which represents a `RenderObject` of fixed size in a 2D
@@ -606,7 +621,7 @@ respond by **passing up a size** to their parent object within the constraints
 the parent established.
 
 ![Constraints go down, sizes go
-up](/images/arch-overview/constraints-sizes.svg){:width="100%"}
+up](/images/arch-overview/constraints-sizes.png){:width="80%"}
 
 At the end of this single walk through the tree, every object has a defined size
 within its parent’s constraints and is ready to be painted by calling the
@@ -731,7 +746,7 @@ and then deserialized into an equivalent representation in Kotlin (such as
 `HashMap`) or Swift (such as `Dictionary`).
 
 ![How platform channels allow Flutter to communicate with host
-code](/images/arch-overview/platform-channels.svg){:width="100%"}
+code](/images/arch-overview/platform-channels.png){:width="70%"}
 
 The following is a simple platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
@@ -926,7 +941,7 @@ native mobile targets<sup><a href="#a5">5</a></sup>.
 The web version of the architectural layer diagram is as follows:
 
 ![Flutter web
-architecture](/images/arch-overview/web-arch.svg){:width="100%"}
+architecture](/images/arch-overview/web-arch.png){:width="100%"}
 
 Perhaps the most notable difference compared to other platforms on which Flutter
 runs is that there is no need for Flutter to provide a Dart runtime. Instead,
