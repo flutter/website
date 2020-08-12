@@ -23,8 +23,8 @@ supplement the core library functionality.
 This overview is divided into a number of sections:
 
 1. The **layer model**: The pieces from which Flutter is constructed.
-1. **Reactive user interfaces**: An introduction to a core paradigm behind
-   Flutter user interface development.
+1. **Reactive user interfaces**: A core concept for Flutter user interface
+   development.
 1. An introduction to **widgets**: The fundamental building blocks of Flutter user
    interfaces.
 1. The **rendering process**: How Flutter turns UI code into pixels.
