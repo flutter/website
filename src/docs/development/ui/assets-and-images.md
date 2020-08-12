@@ -335,7 +335,7 @@ AssetFileDescriptor fd = assetManager.openFd(key);
 
 ### Loading Flutter assets in iOS
 
-On iOS the assets are available throughh the [`mainBundle`][].
+On iOS the assets are available through the [`mainBundle`][].
 The lookup key used in, for instance [`pathForResource:ofType:`][],
 is obtained from `lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:`
 on [`FlutterPluginRegistrar`][], or `lookupKeyForAsset:` or
