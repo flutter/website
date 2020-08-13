@@ -141,6 +141,8 @@
           permalink: /docs/development/platform-integration/web
         - title: Writing platform-specific code
           permalink: /docs/development/platform-integration/platform-channels
+        - title: Apple Watch support
+          permalink: /docs/development/platform-integration/apple-watch
     - title: Packages & plugins
       permalink: /docs/development/packages-and-plugins
       children:
