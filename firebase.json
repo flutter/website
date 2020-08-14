@@ -97,7 +97,7 @@
       { "source": "/setup", "destination": "/docs/get-started/install", "type": 301 },
       { "source": "/setup-:os*", "destination": "/docs/get-started/install/:os*", "type": 301 },
       { "source": "/support", "destination": "/community", "type": 301 },
-      { "source": "/technical-overview", "destination": "/docs/resources/architectural-overview", "type": 301 },
+      { "source": "/docs/resources/technical-overview", "destination": "/docs/resources/architectural-overview", "type": 301 },
       { "source": "/testing", "destination": "/docs/testing", "type": 301 },
       { "source": "/text-input", "destination": "/docs/cookbook/forms/text-input", "type": 301 },
       { "source": "/tutorials", "destination": "/docs/reference/tutorials", "type": 301 },
