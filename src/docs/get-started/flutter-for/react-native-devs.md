@@ -1084,6 +1084,8 @@ make sure to set `uses-material-design: true` in
 the project's `pubspec.yaml` file.
 This ensures that the `MaterialIcons` font,
 which displays the icons, is included in your app.
+In general, if you intend to use the Material library, 
+you should include this line.
 
 ```yaml
 name: my_awesome_application

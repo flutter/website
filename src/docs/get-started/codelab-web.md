@@ -272,7 +272,7 @@ From your IDE, editor, or at the command line,
   Flutter also offers the Cupertino widget library,
   which implements the current iOS design language.
   Or you can create your own custom widget library.
-* In Flutter, most everything is a [Widget][].
+* In Flutter, almost everything is a [Widget][].
   Even the app itself is a widget.
   The app’s UI can be described as a widget tree.
 
