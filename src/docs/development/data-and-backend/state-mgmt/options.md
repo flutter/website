@@ -96,7 +96,7 @@ A popular library based on observables and reactions.
 
 ## GetX
 
-GetX is an extra-light and powerful solution for Flutter. It combines high performance state management, intelligent dependency injection, and route management in a quick and practical way.
+An extra-light and high performance state management library (with some extras like dependency injection and route management).
 
 * [GetX package][]
 * [Complete GetX State Management][], a video by Tadas Petra
