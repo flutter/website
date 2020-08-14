@@ -96,7 +96,7 @@ A popular library based on observables and reactions.
 
 ## GetX
 
-An extra-light and high performance state management library (with some extras like dependency injection and route management).
+A simplified reactive state management solution.
 
 * [GetX package][]
 * [Complete GetX State Management][], a video by Tadas Petra
