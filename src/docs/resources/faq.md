@@ -172,6 +172,13 @@ integration tests. Learn more about
 We use our own testing capabilities to test our SDK.
 We measure our [test coverage][] on every commit.
 
+### Does Flutter come with debugging tools?
+
+While Flutter doesn't ship with debugging tools, 
+there are many tools available that 
+can help you debug your Flutter application. 
+Learn more about [debugging with Flutter][].
+
 ### Does Flutter come with a dependency injection framework or solution?
 
 Not at this time. Share your ideas at
@@ -945,6 +952,7 @@ that Flutter apps can be deployed to Apple's App Store.
 [Contributing Guide]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [CodePen]: https://codepen.io/flutter
 [Dart DevTools]: /docs/development/tools/devtools
+[debugging with Flutter]: /docs/testing/debugging
 [desktop]: /desktop
 [detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
 [Discord]: https://discord.gg/N7Yshp4
