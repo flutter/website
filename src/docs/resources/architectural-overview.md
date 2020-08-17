@@ -91,7 +91,7 @@ which provides a modern, reactive framework written in the Dart language. It
 includes a rich set of platform, layout, and foundational libraries, composed of
 a series of layers. Working from the bottom to the top, we have:
 
-- Basic [foundational]({{site.api}}/flutter/foundation/foundation-library.html)
+- Basic **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
   classes, and building block services such as
   **[animation]({{site.api}}/flutter/animation/animation-library.html),
   [painting]({{site.api}}/flutter/painting/painting-library.html), and
