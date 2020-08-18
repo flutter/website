@@ -233,6 +233,10 @@ awareness when loading images. (If you work with some of the lower
 level classes, like [`ImageStream`][] or [`ImageCache`][],
 you'll also notice parameters related to scale.)
 
+{{site.alert.note}}
+  [Device pixel ratio][] depends on [MediaQueryData.size][] which requires to have either a [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
+{{site.alert.end}}
+
 ### Asset images in package dependencies {#from-packages}
 
 To load an image from a [package][] dependency,
@@ -508,3 +512,7 @@ For more details, see
 [`video_player` plugin]: {{site.pub}}/packages/video_player
 [`window.onDrawFrame`]: {{site.api}}/flutter/dart-ui/Window/onDrawFrame.html
 [`window.render()`]: {{site.api}}/flutter/dart-ui/Window/render.html
+[MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
+[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
+[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[Device pixel ratio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
