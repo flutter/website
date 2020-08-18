@@ -234,7 +234,7 @@ level classes, like [`ImageStream`][] or [`ImageCache`][],
 you'll also notice parameters related to scale.)
 
 {{site.alert.note}}
-  [device pixel ratio][] depends on [MediaQueryData.size][] which requires to have either [MaterialApp][] or [CupertinoApp][] as ancestor of your [`AssetImage`][]
+  [device pixel ratio][] depends on [MediaQueryData.size][] which requires to have either a [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
 {{site.alert.end}}
 
 ### Asset images in package dependencies {#from-packages}
