@@ -18,6 +18,8 @@ Flutter 1.20 is live! For details, see [Announcing Flutter 1.20][].
 
 **Docs updated or added to flutter.dev**
 
+* [Flutter architectural overview][], a deep dive into Flutter's
+  architecture, was added to the site just a few days after the 1.20 release.
 * [Reducing shader compilation jank on mobile][] is added to the
   performance docs.
 * [Developing for iOS 14 beta][] outlines some issues you might
@@ -84,7 +86,8 @@ publication since the last stable release:
 [dev-tools]: {{site.medium}}/flutter/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
 [Developing for iOS 14 beta]: /docs/development/ios-14
 [Enums with Extensions in Dart]: {{site.medium}}/flutter/enums-with-extensions-dart-460c42ea51f7
-[Flutter and Desktop apps]: {{site.medium}}/flutter/handling-404-page-not-found-error-in-flutter-731f5a9fba29
+[Flutter and Desktop apps]: {{site.medium}}/flutter/flutter-and-desktop-3a0dd0f8353e
+[Flutter architectural overview]: /docs/resources/architectural-overview
 [Flutter books]: /docs/resources/books
 [Flutter codelabs]: /docs/codelabs
 [Flutter Day]: https://events.withgoogle.com/flutter-day/
