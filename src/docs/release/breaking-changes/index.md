@@ -46,6 +46,7 @@ release, and listed in alphabetical order:
 * [TestWidgetsFlutterBinding.clock][]
 * [Material Chip button semantics][]
 * [Android v1 embedding app and plugin creation deprecation][]
+* [The new Form, FormField auto-validation API][]
 
 [Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding 'linux' and 'windows' to TargetPlatform enum]: /docs/release/breaking-changes/target-platform-linux-windows
@@ -78,3 +79,4 @@ release, and listed in alphabetical order:
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
 [Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
+[The new Form, FormField auto-validation API]: /docs/release/breaking-changes/form-field-autovalidation-api
