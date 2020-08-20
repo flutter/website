@@ -1,6 +1,6 @@
 ---
 title: The new Form, FormField auto-validation API
-description: Gives more control in how we want to auto validate a `Form`, `FormField`
+description: Gives more control in how we want to auto validate a Form, FormField
 ---
 
 ## Summary
@@ -69,7 +69,7 @@ class MyWidget extends StatelessWidget {
 
 ## Timeline
 
-Landed in version: 1.19
+Landed in version: 1.19<br>
 In stable release: not yet
 
 ## References
