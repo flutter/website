@@ -30,7 +30,7 @@ videos that you might find useful. Here are a few:
 [codelab]: {{site.codelabs}}/codelabs/flutter-firebase
 [codelab2]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 [FlutterFire]: https://firebase.flutter.dev
-[started]: http://firebase.flutter.dev/docs/flutter/setup
+[started]: https://firebase.flutter.dev/docs/overview
 [video]: https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s
 [video2]: https://www.youtube.com/watch?v=OlcYP6UXlm8
 [video3]: https://www.youtube.com/watch?v=u_Lyx8KJWpg
