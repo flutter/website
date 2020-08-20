@@ -16,6 +16,8 @@ contains a simple demo app that uses [Material Components][].
 
 {% include_relative _package-name.md  %}
 
+{% include_relative _restart-vscode.md %}
+
 {% include_relative _main-code-note.md  %}
 
 ## Run the app

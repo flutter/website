@@ -108,11 +108,6 @@ For information on how to install and use the package, see the [lsp-dart documen
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
-## Next step
-
-Take Flutter for a test drive: create a first project, run it, and experience
-"hot reload".
-
 
 
 [Android Studio]: {{site.android-dev}}/studio

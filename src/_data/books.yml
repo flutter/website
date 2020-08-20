@@ -22,7 +22,7 @@
 - title: 'Flutter for Beginners'
   authors:
     - Alessandro Biessek
-  publisher: Pakt Publishing
+  publisher: Packt Publishing
   cover: flutter-for-beginners.jpg
   link: "https://www.amazon.com/Flutter-Beginners-introductory-cross-platform-applications/dp/1788996089"
   desc: "A step-by-step guide to learning Flutter and Dart 2 for creating Android and iOS mobile applications."
@@ -47,6 +47,14 @@
   cover: learn-google-flutter-fast.jpg
   link: "https://www.amazon.com/Learn-Google-Flutter-Fast-Example/dp/1092297375"
   desc: "Learn Google Flutter by example. Over 65 example mini-apps."
+- title: 'Google Flutter Mobile Development Quick Start Guide'
+  authors:
+    - Prajyot Mainkar
+    - Salvatore Girodano
+  publisher: Packt Publishing
+  cover: google-flutter-mobile-development-quick-start-guide.jpg
+  link: "https://www.amazon.com/Google-Flutter-Mobile-Development-Quick/dp/1789344964"
+  desc: "A fast-paced guide to get you started with cross-platform mobile application development with Google Flutter"
 - title: 'Practical Flutter'
   authors:
     - Frank Zammetti
