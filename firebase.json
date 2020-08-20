@@ -231,7 +231,8 @@
       { "source": "/go/scaffold-messenger", "destination": "https://docs.google.com/document/d/1TCH0T-X42z96lAcSkFttHAQMJ0MsvMojDKa6F4IQI3Y/edit?usp=sharing", "type": 301 },
       { "source": "/go/autocomplete", "destination": "https://docs.google.com/document/d/1fV4FDNdcza1ITU7hlgweCDUZdWyCqd-rjz_J7K2KkfY/edit?usp=sharing", "type": 301 },
       { "source": "/go/double-buffered-window-resize", "destination": "https://docs.google.com/document/d/1allwMZXgX9gGVPguFy3-XydjXEIJgYR1Uhz8Vhm9Rrs/edit?usp=sharing", "type": 301 },
-      { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 }
+      { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 },
+      { "source": "/go/flutter-skia-ios-font-problem", "destination": "https://docs.google.com/document/d/1UkAhEKUEWNUjfKlqoBjJnx8zXrqErIqidPYjd9FBwsg", "type": 301 }
     ]
   }
 }
