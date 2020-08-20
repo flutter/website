@@ -53,6 +53,7 @@ class MyWidget extends StatelessWidget {
 
 Code after migration:
 
+<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   @override
