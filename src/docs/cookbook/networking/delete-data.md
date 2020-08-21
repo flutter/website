@@ -123,7 +123,7 @@ Future<Album> deleteAlbum(String id) async {
     // Don't return `null`, otherwise
     // `snapshot.hasData` will always return false
     // on `FutureBuilder`.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed to delete album.');
   }
@@ -155,7 +155,7 @@ Future<Album> fetchAlbum() async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response, then throw an exception.
     throw Exception('Failed to load album');

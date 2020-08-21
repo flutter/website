@@ -137,7 +137,7 @@ Future<Album> createAlbum(String title) async {
   if (response.statusCode == 201) {
     // If the server did return a 201 CREATED response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 201 CREATED response,
     // then throw an exception.
@@ -246,7 +246,7 @@ Future<Album> createAlbum(String title) async {
   );
 
   if (response.statusCode == 201) {
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed to create album.');
   }
