@@ -16,12 +16,12 @@ Due to the original API not allowing developers to change the auto validation be
     
    1. Validate only when the user interacts with the form field.
 
-We come up with the new `AutovalidateMode` API that gives developers to configure how they want 
-the auto validation API to behave.
+We added a new API that gives developers to configure how they want 
+the auto validation to behave for the Form and FormField widgets.
 
 ## Description of change
 
-Here ate the changes made to address the above problems:
+Here are the changes made to address the above problems:
 
 1. The `autovalidate` parameter has been deprecated.
 2. We added a new parameter called `autovalidateMode` it is an Enum that accepts values from the 
@@ -70,7 +70,7 @@ class MyWidget extends StatelessWidget {
 
 ## Timeline
 
-Landed in version: 1.19<br>
+Landed in version: 1.20<br>
 In stable release: not yet
 
 ## References
