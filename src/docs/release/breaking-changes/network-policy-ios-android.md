@@ -44,7 +44,7 @@ Furthermore:
 
 ## Timeline
 
-This change was introduced in ???.
+This change was introduced in 1.22.
 
 ## References
 
