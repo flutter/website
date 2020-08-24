@@ -44,7 +44,7 @@ Select the correct device using the status bar in VS Code, then run the **Flutte
 
 {% include app-figure.md image="development/add-to-app/debugging/vscode-attach.png" caption="flutter attach via VS Code" %}
 
-Alternatively, create a `.vscode/launch.json` file to enable attaching using the **Run > Start Debugging** command or `F5`:
+Alternatively, create a `.vscode/launch.json` file in your Flutter module project to enable attaching using the **Run > Start Debugging** command or `F5`:
 
 ```js
 {
