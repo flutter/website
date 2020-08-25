@@ -48,7 +48,7 @@ release, and listed in alphabetical order:
 * [Android v1 embedding app and plugin creation deprecation][]
 * [Network Policy on iOS and Android][]
 * [The new Form, FormField auto-validation API][]
-* [SnackBars managed by the ScaffoldMessenger]
+* [SnackBars managed by the ScaffoldMessenger][]
 
 [Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding 'linux' and 'windows' to TargetPlatform enum]: /docs/release/breaking-changes/target-platform-linux-windows

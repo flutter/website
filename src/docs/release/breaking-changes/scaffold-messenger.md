@@ -141,6 +141,7 @@ scaffoldMessengerKey.currentState.removeCurrentSnackBar(mySnackBar);
 final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 MaterialApp(
   scaffoldMessengerKey: rootScaffoldMessengerKey,
+  home: ...
 )
 
 rootScaffoldMessengerKey.currentState.showSnackBar(mySnackBar);
@@ -154,15 +155,12 @@ Landed in version: TBD<br>
 In stable release: not yet
 
 The previous `ScaffoldState` methods (`showSnackBar`, `hideCurrentSnackBar`, and
-`removeCurrentSnackBar`) are deprecated TBD. Calling on these methods will divert the `SnackBar` to
+`removeCurrentSnackBar`) are deprecated. Calling on these methods will divert the `SnackBar` to
 the `ScaffoldMessenger`.
 
 ## References
 
 {% include master-api.md %}
-
-Design doc:
-* [Scrollable `AlertDialog`][]
 
 API documentation:
 * [`Scaffold`][]
