@@ -60,25 +60,18 @@ Coming from another platform? Check out:
 
 ### Videos
 
-We also have some helpful videos on our
-[Flutter YouTube channel][]! In particular, check
-out the Flutter in Focus series,
-and learn about other series on our [videos][] page.
+We also have some helpful videos on our [Flutter YouTube channel][]! In particular, check out the [Flutter in Focus series][], and learn about other series on our [videos][] page.
 
-First up, why use Flutter? What makes it different than other
-app frameworks?
+First up, why use Flutter? What makes it different than other app frameworks?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l-YO9CmaSUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-How is Flutter different for app development?
+
+Flutter in Focus: Learn Flutter features in 10 minutes or less.
 
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
-[Flutter in Focus playlist][]
 
-In Flutter, "everything is a widget"! If you want to better
-understand the two kinds of widgets, Stateless and Stateful,
-see the following videos,
-part of the [Flutter in Focus][] series.
+In Flutter, "everything is a widget"! If you want to better understand
+the two kinds of widgets, Stateless and Stateful, see the following videos,
 
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/wE7khGHVkYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe width="560" height="315" src="https://www.youtube.com/embed/AqCMFXEmf3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -111,7 +104,7 @@ You might also find these docs useful:
 [FAQ]: /docs/resources/faq
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 [Flutter in Focus]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus series]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter YouTube channel]: {{site.social.youtube}}
 [Get started]: /docs/get-started/install
 [iOS]: /docs/get-started/flutter-for/ios-devs
@@ -125,4 +118,3 @@ You might also find these docs useful:
 [What's new archive]: /docs/whats-new-archive
 [Write your first Flutter app]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
-
