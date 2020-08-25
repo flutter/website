@@ -86,6 +86,7 @@
       { "source": "/json", "destination": "/docs/development/data-and-backend/json", "type": 301 },
       { "source": "/layout", "destination": "/docs/development/ui/layout/box-constraints", "type": 301 },
       { "source": "/networking", "destination": "/docs/cookbook/networking/fetch-data", "type": 301 },
+      { "source": "/overview", "destination": "/docs/resources/architectural-overview", "type": 301 },
       { "source": "/platform-channels", "destination": "/docs/development/platform-integration/platform-channels", "type": 301 },
       { "source": "/platform-plugins*", "destination": "/docs/development/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/platform-services", "destination": "/docs/development/platform-integration/platform-channels", "type": 301 },
@@ -96,7 +97,7 @@
       { "source": "/setup", "destination": "/docs/get-started/install", "type": 301 },
       { "source": "/setup-:os*", "destination": "/docs/get-started/install/:os*", "type": 301 },
       { "source": "/support", "destination": "/community", "type": 301 },
-      { "source": "/technical-overview", "destination": "/docs/resources/technical-overview", "type": 301 },
+      { "source": "/docs/resources/technical-overview", "destination": "/docs/resources/architectural-overview", "type": 301 },
       { "source": "/testing", "destination": "/docs/testing", "type": 301 },
       { "source": "/text-input", "destination": "/docs/cookbook/forms/text-input", "type": 301 },
       { "source": "/tutorials", "destination": "/docs/reference/tutorials", "type": 301 },
@@ -228,7 +229,13 @@
       { "source": "/go/text-selection-theme", "destination": "https://docs.google.com/document/d/1sCe7Y_lhREljtn6m0Uu_EycbS82zRvWnNtkfEwFX9W0", "type": 301 },
       { "source": "/go/top-errors-analysis", "destination": "https://docs.google.com/document/d/1ZJ9t_uPeXqZnoDOIVes_Yu2BBxP42l99nSfHQPfswZw/edit?usp=sharing", "type": 301 },
       { "source": "/go/scaffold-messenger", "destination": "https://docs.google.com/document/d/1TCH0T-X42z96lAcSkFttHAQMJ0MsvMojDKa6F4IQI3Y/edit?usp=sharing", "type": 301 },
-      { "source": "/go/autocomplete", "destination": "https://docs.google.com/document/d/1fV4FDNdcza1ITU7hlgweCDUZdWyCqd-rjz_J7K2KkfY/edit?usp=sharing", "type": 301 }
+      { "source": "/go/autocomplete", "destination": "https://docs.google.com/document/d/1fV4FDNdcza1ITU7hlgweCDUZdWyCqd-rjz_J7K2KkfY/edit?usp=sharing", "type": 301 },
+      { "source": "/go/double-buffered-window-resize", "destination": "https://docs.google.com/document/d/1allwMZXgX9gGVPguFy3-XydjXEIJgYR1Uhz8Vhm9Rrs/edit?usp=sharing", "type": 301 },
+      { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 },
+      { "source": "/go/flutter-skia-ios-font-problem", "destination": "https://docs.google.com/document/d/1UkAhEKUEWNUjfKlqoBjJnx8zXrqErIqidPYjd9FBwsg", "type": 301 },
+      { "source": "/go/flutter-nonhost", "destination": "https://docs.google.com/document/d/1rTLxAxsshEir-B2vE6DU_MaqMMusOdCgLGEGpBYG3CM", "type": 301 },
+      { "source": "/go/material-button-migration-guide", "destination": "https://docs.google.com/document/d/1yohSuYrvyya5V1hB6j9pJskavCdVq9sVeTqSoEPsWH0", "type": 301 },
+      { "source": "/go/cupertino-icons-next", "destination": "https://docs.google.com/document/d/1BkCbpwd_TyB0SVW6CbHpX1gMvNa_l0FpGKFpZzJOmYM", "type": 301 }
     ]
   }
 }

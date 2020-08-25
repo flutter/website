@@ -180,7 +180,7 @@ We also recommend the following online class:
 [provider]: {{site.pub}}/packages/provider
 [The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 [this mirror of the Flutter codelabs]: https://codelabs.flutter-io.cn/
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/com/codelabs/web-url-launcher
+[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2

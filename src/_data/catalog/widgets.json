@@ -81,7 +81,6 @@
   },
   {
     "name": "AnimatedListState",
-    "sample": "AnimatedListState",
     "description": "The state for a scrolling container that animates items when they are inserted or removed.",
     "categories": [
       "Animation and Motion"
@@ -162,7 +161,6 @@
   },
   {
     "name": "Appbar",
-    "sample": "AppBar",
     "description": "A Material Design app bar. An app bar consists of a toolbar and potentially other widgets, such as a TabBar and a FlexibleSpaceBar.",
     "categories": [
       "Basics"
@@ -937,7 +935,6 @@
   },
   {
     "name": "IconButton",
-    "sample": "IconButton",
     "description": "An icon button is a picture printed on a Material widget that reacts to touches by filling with color (ink).",
     "categories": [],
     "subcategories": [
@@ -1051,7 +1048,6 @@
   },
   {
     "name": "ListView",
-    "sample": "ListView",
     "description": "A scrollable, linear list of widgets. ListView is the most commonly used scrolling widget. It displays its children one after another in the scroll direction. In the cross axis, the children are required to fill the ListView.",
     "categories": [
       "Scrolling"
@@ -1206,7 +1202,6 @@
   },
   {
     "name": "PopupMenuButton",
-    "sample": "PopupMenuButton",
     "description": "Displays a menu when pressed and calls onSelected when the menu is dismissed because an item was selected.",
     "categories": [],
     "subcategories": [
@@ -1321,7 +1316,6 @@
   },
   {
     "name": "Scaffold",
-    "sample": "Scaffold",
     "description": "Implements the basic Material Design visual layout structure. This class provides APIs for showing drawers, snack bars, and bottom sheets.",
     "categories": [
       "Basics"
@@ -1518,7 +1512,6 @@
   },
   {
     "name": "TabBar",
-    "sample": "TabBar",
     "description": "A Material Design widget that displays a horizontal row of tabs.",
     "categories": [],
     "subcategories": [
@@ -1529,7 +1522,6 @@
   },
   {
     "name": "TabBarView",
-    "sample": "TabBarView",
     "description": "A page view that displays the widget which corresponds to the currently selected tab. Typically used in conjunction with a TabBar.",
     "categories": [],
     "subcategories": [

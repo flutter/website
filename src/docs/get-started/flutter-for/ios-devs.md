@@ -2193,7 +2193,7 @@ plugin documentation.
 [arb]: {{site.github}}/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore
-[composing]: /docs/resources/technical-overview#everythings-a-widget
+[composing]: /docs/resources/architectural-overview#composition
 [Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
@@ -2234,7 +2234,7 @@ plugin documentation.
 [SQFlite]: {{site.pub-pkg}}/sqflite
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
-[widget]: /docs/resources/technical-overview#everythings-a-widget
+[widget]: /docs/resources/architectural-overview#widgets
 [widget catalog]: /docs/development/ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [write your own]: /docs/development/packages-and-plugins/developing-packages

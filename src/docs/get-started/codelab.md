@@ -190,6 +190,11 @@ where the Dart code lives.
   [Material][] is a visual design language
   that is standard on mobile and the web.
   Flutter offers a rich set of Material widgets.
+  It's a good idea to have a `uses-material-design: true` entry
+  in the `flutter` section of your `pubspec.yaml` file. 
+  This will allow you to use more features of Material,
+  such as their set of predefined [Icons][].
+
 * The `main()` method uses arrow (`=>`) notation.
   Use arrow notation for one-line functions or methods.
 * The app extends `StatelessWidget`, which makes the app itself a
@@ -650,6 +655,7 @@ where you add the following functionality:
 [Google Developers Codelabs]: {{site.codelabs}}
 [hot reload]: /docs/get-started/test-drive
 [in the way your IDE describes]: /docs/get-started/test-drive
+[Icons]: https://design.google.com/icons/
 [iOS]: install/macos#deploy-to-ios-devices
 [iOS simulator]: install/macos#set-up-the-ios-simulator
 [Material]: {{site.material}}/guidelines

@@ -203,7 +203,7 @@ to retrieve the highest available version of the package
 that is allowed by the version constraint specified in
 `pubspec.yaml`. 
 Note that this is a different command from 
-`flutter upgrade` or `flutter update-packages', 
+`flutter upgrade` or `flutter update-packages`, 
 which both update Flutter itself.
 
 ### Dependencies on unpublished packages

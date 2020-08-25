@@ -141,6 +141,8 @@
           permalink: /docs/development/platform-integration/web
         - title: Writing platform-specific code
           permalink: /docs/development/platform-integration/platform-channels
+        - title: Apple Watch support
+          permalink: /docs/development/platform-integration/apple-watch
     - title: Packages & plugins
       permalink: /docs/development/packages-and-plugins
       children:
@@ -316,14 +318,14 @@
       permalink: /docs/resources/bootstrap-into-dart
     - title: Compatibility policy
       permalink: /docs/resources/compatibility
+    - title: Architectural overview
+      permalink: /docs/resources/architectural-overview
     - title: Inside Flutter
       permalink: /docs/resources/inside-flutter
     - title: Google Fonts package
       permalink: https://pub.dev/packages/google_fonts
     - title: Platform adaptations
       permalink: /docs/resources/platform-adaptations
-    - title: Technical overview
-      permalink: /docs/resources/technical-overview
     - title: Technical videos
       permalink: /docs/resources/videos
     - title: Books
@@ -336,6 +338,8 @@
       permalink: /docs/resources/design-docs
     - title: Creating useful bug reports
       permalink: /docs/resources/bug-reports
+    - title: Official brand assets
+      permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
 
 - title: Reference
   expanded: true

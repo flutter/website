@@ -172,6 +172,13 @@ integration tests. Learn more about
 We use our own testing capabilities to test our SDK.
 We measure our [test coverage][] on every commit.
 
+### Does Flutter come with debugging tools?
+
+While Flutter doesn't ship with debugging tools, 
+there are many tools available that 
+can help you debug your Flutter application. 
+Learn more about [debugging with Flutter][].
+
 ### Does Flutter come with a dependency injection framework or solution?
 
 Not at this time. Share your ideas at
@@ -582,7 +589,7 @@ Check out an [example of using isolates with Flutter][].
 
 Yes, you can run Dart code in a background process on both
 iOS and Android  For more information, see the Medium article
-[Executing Dart in the Background with Flutter Plugins and Geofencing][].  
+[Executing Dart in the Background with Flutter Plugins and Geofencing][].
 
 ### Can I use JSON/XML/<wbr>protobuffers, etc. with Flutter?
 
@@ -931,7 +938,7 @@ that Flutter apps can be deployed to Apple's App Store.
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
 [Android Studio/IntelliJ]: /docs/development/tools/android-studio
 [`AnimatedDefaultTextStyle`]: {{site.api}}/flutter/widgets/AnimatedDefaultTextStyle-class.html
-[`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
+[`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html
 [apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
 [architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
@@ -945,6 +952,7 @@ that Flutter apps can be deployed to Apple's App Store.
 [Contributing Guide]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [CodePen]: https://codepen.io/flutter
 [Dart DevTools]: /docs/development/tools/devtools
+[debugging with Flutter]: /docs/testing/debugging
 [desktop]: /desktop
 [detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
 [Discord]: https://discord.gg/N7Yshp4

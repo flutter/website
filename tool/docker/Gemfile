@@ -14,3 +14,6 @@ gem 'sassc'
 # Track progress at https://github.com/envygeeks/jekyll-assets/pull/620
 gem 'sprockets', '4.0.beta8'
 gem 'uglifier'
+
+# kramdown 2 removed the GitHub Flavored Markdown parser: https://kramdown.gettalong.org/parser/gfm.html
+gem 'kramdown-parser-gfm'
