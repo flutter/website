@@ -70,4 +70,4 @@ See the [migration guide][].
 ## Timeline
 
 Landed in version: 1.20.0-8.0<br>
-In stable release: 1.20
+In stable release: not yet

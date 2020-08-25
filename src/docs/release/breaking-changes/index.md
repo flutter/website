@@ -12,10 +12,12 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Android v1 embedding app and plugin creation deprecation][]
 * [Material Chip button semantics][]
 * [Network Policy on iOS and Android][]
 * [The new Form, FormField auto-validation API][]
 
+[Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 [The new Form, FormField auto-validation API]: /docs/release/breaking-changes/form-field-autovalidation-api
@@ -24,7 +26,6 @@ release, and listed in alphabetical order:
 
 * [Actions API revision][]
 * [Adding TextInputClient.currentAutofillScope property][]
-* [Android v1 embedding app and plugin creation deprecation][]
 * [Dialogs' Default BorderRadius][]
 * [More Strict Assertions in the Navigator and the Hero Controller Scope][]
 * [The Route Transition record and Transition delegate updates][]
@@ -37,7 +38,6 @@ release, and listed in alphabetical order:
 
 [Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding TextInputClient.currentAutofillScope property]: /docs/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
-[Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
 [Dialogs' Default BorderRadius]:/docs/release/breaking-changes/dialog-border-radius
 [More Strict Assertions in the Navigator and the Hero Controller Scope]: /docs/release/breaking-changes/hero-controller-scope
 [Reversing the dependency between the scheduler and services layer]: /docs/release/breaking-changes/services-scheduler-dependency-reversed
