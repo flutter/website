@@ -48,6 +48,7 @@ release, and listed in alphabetical order:
 * [Android v1 embedding app and plugin creation deprecation][]
 * [Network Policy on iOS and Android][]
 * [The new Form, FormField auto-validation API][]
+* [SnackBars managed by the ScaffoldMessenger]
 
 [Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding 'linux' and 'windows' to TargetPlatform enum]: /docs/release/breaking-changes/target-platform-linux-windows
@@ -70,6 +71,7 @@ release, and listed in alphabetical order:
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
 [Semantics Order of the Overlay Entries in Modal Routes]: /docs/release/breaking-changes/modal-router-semantics-order
 [showAutocorrectionPromptRect method added to TextInputClient]: /docs/release/breaking-changes/add-showAutocorrectionPromptRect
+[SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TestWidgetsFlutterBinding.clock]: /docs/release/breaking-changes/test-widgets-flutter-binding-clock
 [TextField requires MaterialLocalizations]: /docs/release/breaking-changes/text-field-material-localizations
