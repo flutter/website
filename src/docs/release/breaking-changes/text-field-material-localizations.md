@@ -6,7 +6,7 @@ description: TextField now throws an assert error if there is no MaterialLocaliz
 ## Summary
 
 Instances of `TextField` must have a `MaterialLocalizations` present in the widget tree.
-Trying to instantiate  a `TextField` without the proper localizations results in an assertion such
+Trying to instantiate a `TextField` without the proper localizations results in an assertion such
 as the following:
 
 ```
@@ -22,11 +22,12 @@ The specific widget that could not find a MaterialLocalizations ancestor was:
 ## Context
 
 If the `TextField` descends from a `MaterialApp`, the
-`DefaultMaterialLocalizations` is already instantiated and will not require any changes to your
-existing code.
+`DefaultMaterialLocalizations` is already instantiated
+and won't require any changes to your existing code.
 
- If the `TextField` doesn't descend from `MaterialApp`, you can use a `Localizations` widget to
- provide your own localizations.
+If the `TextField` doesn't descend from `MaterialApp`,
+you can use a `Localizations` widget to
+provide your own localizations.
 
 ## Migration guide
 
@@ -102,7 +103,8 @@ class Foo extends StatelessWidget {
 
 ## Timeline
 
-This change was introduced in June 2020, in 1.20.0-1.0.pre.
+Landed in version: 1.20.0-1.0.pre<br>
+In stable release: 1.20
 
 ## References
 
@@ -123,5 +125,5 @@ Relevant PR:
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
 [`DefaultMaterialLocalizations`]: {{site.api}}/flutter/material/DefaultMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[Internationalizing Flutter apps]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
+[Internationalizing Flutter apps]: /docs/development/accessibility-and-localization/internationalization
 [PR 58831: Assert debugCheckHasMaterialLocalizations on TextField]: {{site.github}}/flutter/flutter/pull/58831
