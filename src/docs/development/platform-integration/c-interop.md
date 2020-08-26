@@ -257,6 +257,27 @@ use the following instructions:
 1. Also add it to the **Linked Frameworks & Libraries**
    section of the target in Xcode.
 
+#### Compiled (dynamic) library (macOS)
+
+To create add a closed source library to a [Flutter macOS Desktop][] app,
+use the following instructions.
+
+1. Follow the instructions for Flutter desktop to create a Flutter desktop app.
+1. Open the `yourapp/macos/Runner.xcworkspace` in XCode.
+   1. Drag your precompiled library (`libyourlibrary.dylib`) into `Runner/Frameworks`.
+   1. Click `Runner` and go to the `Build Phases` tab.
+      1. Drag `libyourlibrary.dylib` into the `Copy Bundle Resources` list.
+      1. Under `Bundle Framework`, check `Code Sign on Copy`.
+      1. Under `Link Binary With Libraries`, set status to `Optional`. (We use dynamic linking, no need to statically link.)
+   1. Click `Runner` and go to the `General` tab.
+      1. Drag `libyourlibrary.dylib` into the `Frameworks, Libararies and Embedded Content` list.
+      1. Select `Embed & Sign`.
+1. Edit `lib/main.dart`.
+   1. Use `DynamicLibrary.open('libyourlibrary.dylib')` to dynamically link to the symbols.
+   1. Call your native function somewhere in a widget.
+1. Run `flutter run` and check that your native function gets called.
+1. Run `flutter build macos` to build a selfcontained release version of your app.
+
 #### Open-source third-party library
 
 To create a Flutter plugin that includes both
@@ -335,29 +356,6 @@ in binary form, use the following instructions:
    Flutter package. Instead, it should be
    downloaded from a repository, such as
    JCenter.
-
-### macOS
-
-#### Closed-source library
-
-To create add a closed source library to a [Flutter macOS Desktop][] app,
-use the following instructions.
-
-1. Follow the instructions for Flutter desktop to create a Flutter desktop app.
-1. Open the `yourapp/macos/Runner.xcworkspace` in XCode.
-   1. Drag your precompiled library (`libyourlibrary.dylib`) into `Runner/Frameworks`.
-   1. Click `Runner` and go to the `Build Phases` tab.
-      1. Drag `libyourlibrary.dylib` into the `Copy Bundle Resources` list.
-      1. Under `Bundle Framework`, check `Code Sign on Copy`.
-      1. Under `Link Binary With Libraries`, set status to `Optional`. (We use dynamic linking, no need to statically link.)
-   1. Click `Runner` and go to the `General` tab.
-      1. Drag `libyourlibrary.dylib` into the `Frameworks, Libararies and Embedded Content` list.
-      1. Select `Embed & Sign`.
-1. Edit `lib/main.dart`.
-   1. Use `DynamicLibrary.open('libyourlibrary.dylib')` to dynamically link to the symbols.
-   1. Call your native function somewhere in a widget.
-1. Run `flutter run` and check that your native function gets called.
-1. Run `flutter build macos` to build a selfcontained release version of your app.
 
 
 ### Web
