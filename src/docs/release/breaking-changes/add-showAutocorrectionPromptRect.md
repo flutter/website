@@ -83,12 +83,9 @@ class CustomTextInputClient extends State<...> implements TextInputClient {
 
 ## Timeline
 
-Landed in version: not yet merged<br>
-In stable release: not yet
+In stable release: 1.20
 
 ## References
-
-{% include master-api.md %}
 
 API documentation:
 * [`TextInputClient`][]
@@ -102,4 +99,4 @@ Relevant PRs:
 
 [iOS UITextInput autocorrection prompt]: {{site.github}}/flutter/flutter/pull/54119/
 [Issue 12920]: {{site.github}}/flutter/flutter/issues/12920
-[`TextInputClient`]: https://master-api.flutter.dev/flutter/services/TextInputClient-class.html
+[`TextInputClient`]: {{site.api}}/flutter/services/TextInputClient-class.html
