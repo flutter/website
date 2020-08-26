@@ -5,35 +5,37 @@ description: Gives more control in how we want to auto validate a Form, FormFiel
 
 ## Summary
 
-In the previous auto validation API of Flutter for the `Form` and `FormField` we were not able to control 
-when the auto validation should occur. So the auto validation for these widgets always happened on first
-build when the widget is first visible to the user, and you were not able to control when the auto 
-validation should happen.
+The previous auto validation API for the `Form` and `FormField` widgets
+didn't control when the auto validation should occur.
+So the auto validation for these widgets always happened on first
+build when the widget was first visible to the user,
+and you weren't able to control when the auto validation should happen.
 
 ## Context
 
-Due to the original API not allowing developers to change the auto validation behaviour for things like:
-    
-   1. Validate only when the user interacts with the form field.
-
-We added a new API that gives developers to configure how they want 
-the auto validation to behave for the Form and FormField widgets.
+Due to the original API not allowing developers to change the auto validation
+behaviour for validating only when the user interacts with the form field,
+we added new API that allows developers to configure how they want 
+auto validation to behave for the `Form` and `FormField` widgets.
 
 ## Description of change
 
 Here are the changes made to address the above problems:
 
-1. The `autovalidate` parameter has been deprecated.
-2. We added a new parameter called `autovalidateMode` it is an Enum that accepts values from the 
-`AutovalidateMode` Enum class.
+* The `autovalidate` parameter has been deprecated.
+* A new parameter called `autovalidateMode`,
+  an Enum that accepts values from the `AutovalidateMode` Enum class,
+  is added.
 
 
 ## Migration guide
 
-To migrate to the new auto validation API you need to replace the usage of the deprecated 
-`autovalidate` parameter to the new `autovalidateMode` parameter. If you want to have the same behavour
-as before you can use: `autovalidateMode = AutovalidateMode.always`, this will make your `Form`, `FormField`
-widget to auto validate on first build and every time it changes. 
+To migrate to the new auto validation API you need to replace the
+usage of the deprecated `autovalidate` parameter to the new
+`autovalidateMode` parameter. If you want to have the same behavour
+as before you can use: `autovalidateMode = AutovalidateMode.always`,
+this makes your `Form` and `FormField` widgets auto validate on
+first build and every time it changes. 
 
 Code before migration:
 
@@ -86,5 +88,7 @@ Relevant issues:
 * [Issue 48876](https://github.com/flutter/flutter/issues/48876)
 
 Relevant PRs:
-* [FormField should autovalidate only if its content was changed](https://github.com/flutter/flutter/pull/56365)
-* [FormField should autovalidate only if its content was changed (fixed)](https://github.com/flutter/flutter/pull/59766)
+* [FormField should autovalidate only if its content was
+  changed](https://github.com/flutter/flutter/pull/56365)
+* [FormField should autovalidate only if its content was
+  changed (fixed)](https://github.com/flutter/flutter/pull/59766)

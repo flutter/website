@@ -35,7 +35,7 @@ void main() {
   runApp(
     MaterialApp(
       builder: (BuildContext context, Widget child) {
-        // Builds two parallel navigators. This will throw
+        // Builds two parallel navigators. This throws
         // error because both of navigators are under the same
         // hero controller scope created by MaterialApp.
         return Stack(
@@ -118,6 +118,7 @@ void main() {
 ## Timeline
 
 Landed in version: 1.20.0
+In stable release: 1.20
 
 ## References
 
@@ -135,5 +136,5 @@ Relevant PR:
 [Clean up hero controller scope]: {{site.github}}/flutter/flutter/pull/60655
 [`Navigator`]{{site.api}}/flutter/widgets/Navigator-class.html
 [`HeroController`]{{site.api}}/flutter/widgets/HeroController-class.html
-[`HeroControllerScope`]: https://master-api.flutter.dev/flutter/widgets/HeroControllerScope-class.html
+[`HeroControllerScope`]: {{site.api}}/flutter/widgets/HeroControllerScope-class.html
 [Issue 45938]: {{site.github}}/flutter/flutter/issues/45938
