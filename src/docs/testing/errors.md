@@ -43,6 +43,10 @@ void main() {
 
 // rest of `flutter create` code...
 ```
+{{site.alert.note}} 
+  [kReleaseMode](https://api.flutter.dev/flutter/foundation/kReleaseMode-constant.html) is a 
+  top-level constant to check if the application was compiled in release mode.
+{{site.alert.end}}
 
 This handler can also be used to report errors to a logging service.
 For more details, see our cookbook chapter for 
