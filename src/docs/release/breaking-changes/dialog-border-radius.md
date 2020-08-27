@@ -5,9 +5,10 @@ description: The default BorderRadius of Dialog widgets is changing.
 
 ## Summary
 
-Instances of `Dialog`, as well as `SimpleDialog`, `AlertDialog`, and `showTimePicker`, now have
-a default shape of a `RoundedRectangleBorder` with a `BorderRadius` of 4.0 pixels. This matches the
-current specifications of Material Design. Prior to this change, the default behavior for
+Instances of `Dialog`, as well as `SimpleDialog`, `AlertDialog`, and `showTimePicker`,
+now have a default shape of a `RoundedRectangleBorder` with a `BorderRadius` of 4.0 pixels.
+This matches the current specifications of Material Design.
+Prior to this change, the default behavior for
 `Dialog.shape`'s `BorderRadius` was 2.0 pixels.
 
 ## Context
@@ -65,7 +66,8 @@ flutter test --update-goldens
 
 ## Timeline
 
-This change was introduced in June 2020, in 1.20.0-0.0.pre.
+Landed in version: 1.20.0-0.0.pre<br>
+In stable release: 1.20
 
 ## References
 

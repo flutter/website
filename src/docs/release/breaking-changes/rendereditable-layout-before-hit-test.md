@@ -108,7 +108,7 @@ class FakeEditableTextState extends TextSelectionDelegate {
 ## Timeline
 
 Landed in version: 1.18.0<br>
-In stable release: not yet
+In stable release: 1.20
 
 ## References
 

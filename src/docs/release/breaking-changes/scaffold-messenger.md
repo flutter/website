@@ -141,6 +141,7 @@ scaffoldMessengerKey.currentState.removeCurrentSnackBar(mySnackBar);
 final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 MaterialApp(
   scaffoldMessengerKey: rootScaffoldMessengerKey,
+  home: ...
 )
 
 rootScaffoldMessengerKey.currentState.showSnackBar(mySnackBar);
@@ -156,9 +157,6 @@ In stable release: not yet
 ## References
 
 {% include master-api.md %}
-
-Design doc:
-* [Scrollable `AlertDialog`][]
 
 API documentation:
 * [`Scaffold`][]
