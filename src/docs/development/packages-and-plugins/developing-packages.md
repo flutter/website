@@ -294,17 +294,12 @@ Locate the file `lib/hello.dart`.
 
 We recommend you edit the Android code using Android Studio.
 
-Before editing the Android platform code in Android Studio,
-first make sure that the code has been built at least once
-(in other words, run the example app from your IDE/editor,
-or in a terminal execute `cd hello/example; flutter build apk`).
-
 Then use the following steps:
 
 1. Launch Android Studio.
-1. Select **Import project** in the
-   **Welcome to Android Studio** dialog,
-   or select **File > New > Import Project...** from the menu,
+1. Select **Open an existing Android Studio Project** 
+   in the **Welcome to Android Studio** dialog,
+   or select **File > Open** from the menu,
    and select the `hello/example/android/build.gradle` file.
 1. In the **Gradle Sync** dialog, select **OK**.
 1. In the **Android Gradle Plugin Update** dialog,
