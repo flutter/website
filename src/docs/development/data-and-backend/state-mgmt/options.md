@@ -62,7 +62,7 @@ A state container approach familiar to many web developers.
 * [Animation Management with Redux and Flutter][],
   a video from DartConf 2018 [Accompanying article on Medium][]
 * [Flutter Redux package][]
-* [Redux Saga Middleware Dart and Flutter][]
+* [Redux Saga Middleware Dart and Flutter][], by Bilal Uslu
 * [Introduction to Redux in Flutter][], by Xavi Rigau
 * [Flutter + Redux&mdash;How to make a shopping list app][],
   by Paulina Szklarska on Hackernoon
