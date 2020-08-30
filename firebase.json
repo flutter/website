@@ -235,7 +235,8 @@
       { "source": "/go/flutter-skia-ios-font-problem", "destination": "https://docs.google.com/document/d/1UkAhEKUEWNUjfKlqoBjJnx8zXrqErIqidPYjd9FBwsg", "type": 301 },
       { "source": "/go/flutter-nonhost", "destination": "https://docs.google.com/document/d/1rTLxAxsshEir-B2vE6DU_MaqMMusOdCgLGEGpBYG3CM", "type": 301 },
       { "source": "/go/material-button-migration-guide", "destination": "https://docs.google.com/document/d/1yohSuYrvyya5V1hB6j9pJskavCdVq9sVeTqSoEPsWH0", "type": 301 },
-      { "source": "/go/cupertino-icons-next", "destination": "https://docs.google.com/document/d/1BkCbpwd_TyB0SVW6CbHpX1gMvNa_l0FpGKFpZzJOmYM", "type": 301 }
+      { "source": "/go/cupertino-icons-next", "destination": "https://docs.google.com/document/d/1BkCbpwd_TyB0SVW6CbHpX1gMvNa_l0FpGKFpZzJOmYM", "type": 301 },
+      { "source": "/go/desktop-resize-macos", "destination": "https://docs.google.com/document/d/1slGllp1Jhde7wkF6snqGhdrZwHV1VVmXeIF3f0t24JU/edit?usp=sharing", "type": 301 }
     ]
   }
 }
