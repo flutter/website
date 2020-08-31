@@ -60,9 +60,11 @@ $ flutter config --enable-web
 ```
 
 {{site.alert.warning}}
-By running `flutter channel beta` you will be downloading a less stable 
-version of the Flutter SDK each time you run `flutter upgrade`, and the channel 
-will remain as beta until you change it.
+  Running `flutter channel beta` replaces your current version of Flutter
+  with the beta version and can take time if your connection is slow.
+  After this, running `flutter upgrade` upgrades your install to the latest
+ `beta`.  Returning to the stable channel (or any other) requires calling
+ `flutter channel <channel>` explicitly.
 {{site.alert.end}}
 
 {% comment %}
