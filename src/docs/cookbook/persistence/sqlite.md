@@ -324,7 +324,7 @@ void main() async {
   // Avoid errors caused by flutter upgrade.
   // Importing 'package:flutter/widgets.dart' is required.
   WidgetsFlutterBinding.ensureInitialized();
-  final database = openDatabase(
+  final Future<Database> database = openDatabase(
     // Set the path to the database. Note: Using the `join` function from the
     // `path` package is best practice to ensure the path is correctly
     // constructed for each platform.
