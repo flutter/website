@@ -399,13 +399,13 @@ To use this plugin:
 [FlutterFire]: {{site.github}}/flutter/plugins/blob/master/FlutterFire.md
 [Gradle modules]: https://docs.gradle.org/current/userguide/declaring_dependencies.html
 [`http`]: /docs/cookbook/networking/fetch-data
-[Installing tab]: {{site.pub-pkg}}/css_colors#-installing-tab-
+[Installing tab]: {{site.pub-pkg}}/css_colors/install
 [iOS plugins]: {{site.pub}}/flutter/packages?platform=ios
 [lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
 [Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
 [package versioning guide]: {{site.dart-site}}/tools/pub/versioning
 [pub.dev]: {{site.pub}}
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
-[`url_launcher` versions]: {{site.pub-pkg}}/url_launcher#-versions-tab-
+[`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
 [version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
 [web plugins]: {{site.pub}}/flutter/packages?platform=web
