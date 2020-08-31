@@ -62,6 +62,7 @@ A state container approach familiar to many web developers.
 * [Animation Management with Redux and Flutter][],
   a video from DartConf 2018 [Accompanying article on Medium][]
 * [Flutter Redux package][]
+* [Redux Saga Middleware Dart and Flutter][], by Bilal Uslu
 * [Introduction to Redux in Flutter][], by Xavi Rigau
 * [Flutter + Redux&mdash;How to make a shopping list app][],
   by Paulina Szklarska on Hackernoon
@@ -119,6 +120,7 @@ A simplified reactive state management solution.
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [Flutter: State Management with Mobx]: https://www.youtube.com/watch?v=p-MUBLOEkCs
 [Flutter Redux package]: {{site.pub-pkg}}/flutter_redux
+[Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
