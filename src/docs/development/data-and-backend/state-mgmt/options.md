@@ -120,7 +120,7 @@ A simplified reactive state management solution.
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [Flutter: State Management with Mobx]: https://www.youtube.com/watch?v=p-MUBLOEkCs
 [Flutter Redux package]: {{site.pub-pkg}}/flutter_redux
-[Redux Saga Middleware Dart and Flutter]: https://pub.dev/packages/redux_saga
+[Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
