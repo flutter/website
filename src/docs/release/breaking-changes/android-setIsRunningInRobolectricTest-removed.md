@@ -1,7 +1,6 @@
 ---
 title: FlutterMain.setIsRunningInRobolectricTest on Android removed
-description: The test-only FlutterMain.setIsRunningInRobolectricTest API on
-the Android engine is consolidated into the FlutterInjector.
+description: The test-only FlutterMain.setIsRunningInRobolectricTest API on the Android engine is consolidated into the FlutterInjector.
 ---
 
 ## Summary
@@ -43,7 +42,6 @@ adds a `FlutterInjector` class to assist testing.
 
 Code before migration:
 
-<!-- skip -->
 ```java
 FlutterMain.setIsRunningInRobolectricTest(true);
 ```
