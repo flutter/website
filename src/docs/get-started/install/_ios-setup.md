@@ -134,12 +134,15 @@ to set up physical device deployment in Xcode.
           Then, go to the Settings app on the iOS device,
           select **General > Device Management**
           and trust your Certificate.
+          For first time users, you may need to select
+          **General > Profiles > Device Management** instead.
 
         * If automatic signing fails in Xcode, verify that the project's
           **General > Identity > Bundle Identifier** value is unique.
           ![Check the app's Bundle ID][]{:.mw-100}
 
- 1. Start your app by running `flutter run`.
+ 1. Start your app by running `flutter run`
+    or clicking the Run button in Xcode.
 
 [Check the app's Bundle ID]: /images/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: https://developer.apple.com/support/compare-memberships
