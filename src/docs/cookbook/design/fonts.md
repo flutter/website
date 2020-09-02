@@ -217,6 +217,8 @@ class MyHomePage extends StatelessWidget {
 ```
 
 ![Custom Fonts Demo](/images/cookbook/fonts.png){:.site-mobile-screenshot}
+
+
 [Export fonts from a package]:  /docs/cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
 [`fontStyle`]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
