@@ -439,6 +439,7 @@ Flutter's tools and debugging in Flutter:
 [devtools]: /docs/development/tools/devtools
 [Flutter API]: {{site.api}}
 [Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: https://youtu.be/5F-6n_2XWR8
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
