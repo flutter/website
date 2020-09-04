@@ -276,6 +276,7 @@
   children:
     - title: Overview
       permalink: /docs/perf
+      match-page-url-exactly: true
     - title: App size
       permalink: /docs/perf/app-size
 #    - title: Memory
