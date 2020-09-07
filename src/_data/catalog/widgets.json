@@ -977,6 +977,16 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "InteractiveViewer",
+    "description": "A widget that enables pan and zoom interactions with its child.",
+    "categories": [],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/InteractiveViewer-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "IntrinsicHeight",
     "description": "A widget that sizes its child to the child's intrinsic height.",
     "categories": [],
