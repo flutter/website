@@ -19,8 +19,9 @@ release, and listed in alphabetical order:
 
 [Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
-[Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 [The new Form, FormField auto-validation API]: /docs/release/breaking-changes/form-field-autovalidation-api
+<!-- Re-enable once HTTP ban lands to flutter/flutter -->
+<!-- [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android -->
 
 ### Released in Flutter 1.20
 

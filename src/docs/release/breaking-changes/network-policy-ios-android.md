@@ -1,21 +1,23 @@
 ---
-title: Insecure connections are disabled by default on iOS and Android.
-description: Connecting to a host through insecure socket throws an exception unless the domain is explicitly allowed by policy.
+title: Insecure HTTP connections are disabled by default on iOS and Android.
+description: Accessing a URL with HTTP protocol throws an exception unless the domain is explicitly allowed by policy.
 ---
 
 ## Summary
 
-If your code tries to open an insecure socket to a host on iOS or Android,
-a `SocketException` is now thrown with the following message:
+If your code tries to open an HTTP connection to a host on iOS or Android,
+a `StateException` is now thrown with the following message:
 
 ```
-Insecure socket connections are disallowed by platform: <host>
+Insecure HTTP is not allowed by platform: <host>
 ```
+
+Use HTTPS instead.
 
 ## Context
 
 Starting with Android [API 28][] and [iOS 9][],
-these platforms disable insecure connections by default.
+these platforms disable insecure HTTP connections by default.
 
 With this change Flutter also disables insecure connections on
 mobile platforms. Other platforms (desktop, web, etc) are not affected.
@@ -26,6 +28,10 @@ See migration guide below for details.
 
 [API 28]: https://developer.android.com/training/articles/security-config#CleartextTrafficPermitted
 [iOS 9]: https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity
+
+Much like the platforms, the application can still open insecure socket
+connections. Flutter does not enforce any policy at socket level; you would be
+responsible for securing the connection.
 
 ## Migration guide
 
@@ -64,7 +70,7 @@ Furthermore:
 
 ## Timeline
 
-Landed in version: 1.22<br>
+Landed in version: 1.23<br>
 In stable release: not yet
 
 ## References
