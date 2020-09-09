@@ -105,6 +105,13 @@ The `mainAxisSize` property has two possible values:
 {% endcomment %}
 <iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=928d699ea0869e75d072e6e9c4e63397&amp;theme=dark&amp;split=60&amp;ga_id=axis_size" width="100%" height="400px"></iframe>
 
+{{site.alert.tip}}
+Note how the dark grey section of the Row disappears 
+when you change `MainAxisSize.max` to `MainAxisSize.min`.
+The Row itself is taking up less width of its main axis 
+and is centered because of this.
+{{site.alert.end}}
+
 ### mainAxisAlignment property
 
 When `mainAxisSize` is set to `MainAxisSize.max`,
