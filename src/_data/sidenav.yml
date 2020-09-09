@@ -143,6 +143,8 @@
           permalink: /docs/development/platform-integration/platform-channels
         - title: Apple Watch support
           permalink: /docs/development/platform-integration/apple-watch
+        - title: Adding iOS App Clip support
+          permalink: /docs/development/platform-integration/ios-app-clip
     - title: Packages & plugins
       permalink: /docs/development/packages-and-plugins
       children:
