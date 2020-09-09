@@ -1,30 +1,30 @@
 ---
 title: Adding an iOS App Clip target
-description: How to add an iOS 14 App Clip target to your Flutter project
+description: How to add an iOS 14 App Clip target to your Flutter project.
 ---
 
 {{site.alert.important}}
-This support is offered experimentally, may not be stable, and may change
-in the future.
+  This support is offered experimentally on Flutter version 1.22, may not be
+  stable, and may change in the future.
 {{site.alert.end}}
 
 This guide describes how to manually add another Flutter-rendering iOS App Clip
 target to your existing Flutter project or [add-to-app][] project.
 
-For discussions on a feature request to automatically integrate, see
-[#65451][].
+If you are interested in automatically integrating an App Clip into your iOS
+app, see feature request [#65451][].
 
 {{site.alert.warning}}
-This is an advanced guide and is best intended for audience with a working
-knowledge of iOS development.
+  This is an advanced guide and is best intended for audience with a working
+  knowledge of iOS development.
 {{site.alert.end}}
 
 {{site.alert.warning}}
-CocoaPods version 1.10.0.beta.1 or higher is required to run Flutter apps with
-plugins.
+  CocoaPods version 1.10.0.beta.1 or higher is required to run Flutter apps with
+  plugins.
 {{site.alert.end}}
 
-The result of this guide is also demonstrated in a [sample project][].
+To see a working sample, see the [App Clip sample][] on GitHub.
 
 
 ## Step 1 - Open project
@@ -34,7 +34,7 @@ apps.
 
 ## Step 2 - Add an App Clip target
 
-### 2.1
+**2.1**
 
 Click on your project in the Project Navigator to show the project settings.
 
@@ -43,14 +43,14 @@ Press `+` at the bottom of the target list to add a new target.
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/add-target.png" %}
 
-### 2.2
+**2.2**
 
 Select the `App Clip` type for your new target.
 
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/add-app-clip.png" %}
 
-### 2.3
+**2.3**
 
 Enter your new target detail in the dialog.
 
@@ -61,7 +61,7 @@ Select `UIKit App Delegate` for Life Cycle.
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-details.png" %}
 
-### 2.4
+**2.4**
 
 In the following dialog, activate the new scheme for the new target.
 
@@ -70,15 +70,15 @@ image="development/platform-integration/ios-app-clip/activate-scheme.png" %}
 
 ## Step 3 - Remove unneeded files
 
-### Step 3.1
+**3.1**
 
 In the Project Navigator, in the newly created App Clip group, delete
 everything except `Info.plist` and `<app clip target>.entitlements`.
 
 {{site.alert.tip}}
-For add-to-app users, it's up to the reader to decide how much of this template
-to keep to invoke `FlutterViewController` or `FlutterEngine` APIs from this code
-later.
+  For add-to-app users, it's up to the reader to decide how much of this template
+  to keep to invoke `FlutterViewController` or `FlutterEngine` APIs from this code
+  later.
 {{site.alert.end}}
 
 {% include app-figure.md
@@ -86,12 +86,12 @@ image="development/platform-integration/ios-app-clip/clean-files.png" %}
 
 Move files to trash.
 
-### Step 3.2
+**3.2**
 
-If you don't use the `SceneDelegate.swift`, remove reference to it in the
-`Info.plist`.
+If you don't use the `SceneDelegate.swift` file, remove the reference to it in
+the `Info.plist`.
 
-Open the `Info.plist` file for the in the App Clip group. Delete the entire
+Open the `Info.plist` file in the App Clip group. Delete the entire
 dictionary entry for `Application Scene Manifest`.
 
 {% include app-figure.md
@@ -99,7 +99,10 @@ image="development/platform-integration/ios-app-clip/scene-manifest.png" %}
 
 ## Step 4 - Share build configurations
 
-### 4.1
+This step isn't necessary for add-to-app projects since add-to-app projects
+have their custom build configurations and versions.
+
+**4.1**
 
 Back in the project settings, select the project entry now rather than any
 targets.
@@ -110,21 +113,17 @@ In the `Info` tab, under the `Configurations` expandable group, expand the
 For each, select the same value from the drop-down menu for the App Clip
 target as the entry selected for the normal app target.
 
-This lets your App Clip target have access to Flutter's required build settings.
-
-This step isn't necessary for add-to-app projects.
+This gives your App Clip target access to Flutter's required build settings.
 
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/configuration.png" %}
 
-### 4.2
+**4.2**
 
 In the App Clip group's `Info.plist` file, set:
 
 - `Build version string (short)` to `$(FLUTTER_BUILD_NAME)`
 - `Bundle version` to `$(FLUTTER_BUILD_NUMBER)`
-
-This step isn't necessary for add-to-app projects.
 
 ## Step 5 - Share code and assets
 
@@ -144,17 +143,16 @@ image="development/platform-integration/ios-app-clip/add-target-membership.png"
 
 ### Option 2 - Customize Flutter launch for App Clip
 
-In this case, do not delete everything in [Step 3](#step-3). Use the scaffolding
-and the [iOS add-to-app APIs] to do a custom launch of Flutter, such as to
-show a [custom Flutter route][].
-
+In this case, do not delete everything listed in [Step 3](#step-3). Instead,
+use the scaffolding and the [iOS add-to-app APIs] to perform a custom launch of
+Flutter. For example to show a [custom Flutter route][].
 
 ## Step 6 - Add App Clip associated domains
 
-This is a standard step for App Clip development. See
+This is a standard step for App Clip development. See the
 [official Apple documentation][].
 
-### 6.1
+**6.1**
 
 Open the `<app clip target>.entitlements` file. Add an `Associated Domains`
 Array type. Add a row to the array with `appclips:<your bundle id>`.
@@ -163,9 +161,9 @@ Array type. Add a row to the array with `appclips:<your bundle id>`.
 image="development/platform-integration/ios-app-clip/app-clip-entitlements.png"
 %}
 
-### 6.2
+**6.2**
 
-The same associated domains entitlement need to be added to your main app as
+The same associated domains entitlement needs to be added to your main app as
 well.
 
 Copy the `<app clip target>.entitlements` file from your App Clip group to
@@ -178,7 +176,7 @@ app's entitlement file (leave that entry for the App Clip's entitlement file).
 image="development/platform-integration/ios-app-clip/main-app-entitlements.png"
 %}
 
-### 6.3
+**6.3**
 
 Back in the project settings, select the main app's target, open the
 `Build Settings` tab. Set the `Code Signing Entitlements` setting to the
@@ -192,7 +190,7 @@ image="development/platform-integration/ios-app-clip/main-app-entitlements-setti
 
 These steps are not necessary for add-to-app.
 
-### 7.1
+**7.1**
 
 In your App Clip's target's project settings, open the `Build Settings` tab.
 
@@ -207,7 +205,7 @@ image="development/platform-integration/ios-app-clip/app-clip-framework-search.p
 
 In other words, the same as the main app target's build settings.
 
-### 7.2
+**7.2**
 
 Set the `Objective-C Bridging Header` build setting to
 `Runner/Runner-Bridging-Header.h`
@@ -218,7 +216,7 @@ image="development/platform-integration/ios-app-clip/bridge-header.png"
 
 In other words, the same as the main app target's build settings.
 
-### 7.3
+**7.3**
 
 Now open the `Build Phases` tab. Press the `+` sign and select
 `New Run Script Phase`.
@@ -241,10 +239,10 @@ image="development/platform-integration/ios-app-clip/xcode-backend-build.png"
 
 In other words, the same as the main app target's build phases.
 
-This makes sure your Flutter Dart code is compiled when running the App Clip
+This ensures that your Flutter Dart code is compiled when running the App Clip
 target.
 
-### 7.4
+**7.4**
 
 Press the `+` sign and select `New Run Script Phase` again. Leave it as the last
 phase.
@@ -261,7 +259,7 @@ image="development/platform-integration/ios-app-clip/xcode-backend-embed.png"
 
 In other words, the same as the main app target's build phases.
 
-This makes sure your Flutter app and engine are embedded into the App Clip
+This ensures that your Flutter app and engine are embedded into the App Clip
 bundle.
 
 ## Step 8 - Disable Bitcode
@@ -276,12 +274,11 @@ image="development/platform-integration/ios-app-clip/bitcode.png"
 ## Step 9 - Integrate plugins
 
 {{site.alert.warning}}
-CocoaPods version 1.10.0.beta.1 or higher is required to run Flutter apps with
-plugins.
+  CocoaPods version 1.10.0.beta.1 or higher is required to run Flutter apps with
+  plugins.
 {{site.alert.end}}
 
-
-### 9.1
+**9.1**
 
 Open the `Podfile` for your Flutter project or add-to-app host project.
 
@@ -328,9 +325,9 @@ target '<name of your App Clip target>'
 end
 ```
 
-### 9.2
+**9.2**
 
-From command line, enter your Flutter project directory.
+From the command line, enter your Flutter project directory.
 
 `cd ios`
 
@@ -372,4 +369,4 @@ Such as
 [official Apple documentation]: https://developer.apple.com/documentation/app_clips/creating_an_app_clip_with_xcode#3604097
 [iOS add-to-app APIs]: /docs/development/add-to-app/ios/add-flutter-screen
 [custom Flutter route]: /docs/development/add-to-app/ios/add-flutter-screen#route
-[sample project]: https://github.com/flutter/samples/pull/538
+[App Clip sample]: {{site.github}}/flutter/samples/ios_app_clip
