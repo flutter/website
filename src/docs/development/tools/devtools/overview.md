@@ -25,6 +25,7 @@ Here are some of the things you can do with DevTools:
 * View general log and diagnostics information
   about a running Flutter or Dart
   command-line app.
+* Analyze code and app size.
 
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
