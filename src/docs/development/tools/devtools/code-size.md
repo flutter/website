@@ -90,8 +90,7 @@ in the form of a dominator tree as well as a call graph.
 
 A [dominator tree](https://en.wikipedia.org/wiki/Dominator_(graph_theory)) is a
 tree where each node's children are those nodes it immediately dominates. A node
-`a` is said to "dominate" a node `b` if every entry point to `b` must go through
-`a`.
+`a` is said to "dominate" a node `b` if every path to `b` must go through `a`.
 
 To put it in context of app size analysis, imagine `package:a` imports both
 `package:b` and `package:c`, and both `package:b` and `package:c` import
