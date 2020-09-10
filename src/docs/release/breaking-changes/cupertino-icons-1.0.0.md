@@ -110,7 +110,7 @@ the automatically mapped new icons are suitable for your desired aesthetics.
 
 ## Timeline
 
-Landed in: https://github.com/flutter/flutter/pull/65083<br>
+Landed in: 1.22.0-10.0.pre.65<br>
 In stable release: not yet
 
 ## References
