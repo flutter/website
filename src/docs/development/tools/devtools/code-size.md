@@ -18,8 +18,10 @@ information" file contains data for the total picture of your application size.
 ### Dart size information
 
 The Dart AOT compiler performs tree-shaking on your code when compiling your
-application. This means that the compiler attempts to optimize your app's size
-by removing pieces of code that are unused or unreachable.
+application (profile or release mode only - the AOT compiler is not used for
+debug builds, which are JIT compiled). This means that the compiler attempts to
+optimize your app's size by removing pieces of code that are unused or
+unreachable.
 
 After the compiler optimizes your code as much as it can, the end result can be
 summarized as the collection of packages, libraries, classes, and functions that
