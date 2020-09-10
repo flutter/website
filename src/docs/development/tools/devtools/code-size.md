@@ -6,7 +6,7 @@ description: Learn how to use the DevTools code size tool.
 ## What is it?
 
 The code size tool allows you to analyze the total size of your app, including
-both Native and Dart code, or just the size of the Dart code in your app. You
+both native and Dart code, or just the size of the Dart code in your app. You
 can view a single snapshot of "size information" using the [Analysis tab][], or
 compare two different snapshots of "size information" using the [Diff tab][].
 
@@ -81,9 +81,10 @@ in the form of a dominator tree as well as a call graph.
 
 #### Using the dominator tree
 
-A dominator tree is a tree where each node's children are those nodes it
-immediately dominates. A node `a` is said to "dominate" a node `b` if every
-entry point to `b` must go through `a`.
+A [dominator tree](https://en.wikipedia.org/wiki/Dominator_(graph_theory)) is a
+tree where each node's children are those nodes it immediately dominates. A node
+`a` is said to "dominate" a node `b` if every entry point to `b` must go through
+`a`.
 
 To put it in context of app size analysis, imagine `package:a` imports both
 `package:b` and `package:c`, and both `package:b` and `package:c` import
