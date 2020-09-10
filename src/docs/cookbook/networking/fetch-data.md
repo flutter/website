@@ -117,6 +117,8 @@ function to return a `Future<Album>`:
 
 <!-- skip -->
 ```dart
+import 'dart:convert';
+
 Future<Album> fetchAlbum() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/albums/1');
 
