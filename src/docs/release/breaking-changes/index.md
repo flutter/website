@@ -16,7 +16,9 @@ release, and listed in alphabetical order:
 * [Material Chip button semantics][]
 * [Network Policy on iOS and Android][]
 * [The new Form, FormField auto-validation API][]
+* [Cupertino icons 1.0.0][]
 
+[Cupertino icons 1.0.0]: /docs/release/breaking-changes/cupertino-icons-1.0.0
 [Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
 [The new Form, FormField auto-validation API]: /docs/release/breaking-changes/form-field-autovalidation-api
