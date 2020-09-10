@@ -299,6 +299,15 @@ run the following command:
 flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
 ```
 
+To simulate different screen dimensions, you can use the `--browser-dimension` argument,
+for example:
+
+```shell
+flutter drive --target=test_driver/app.dart --browser-name=chrome --browser-dimension 300,550 --release
+```
+
+Will run the tests in the `chrome` browser in a window with dimensions 300 by 550.
+
 [Download ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: https://github.com/mozilla/geckodriver/releases
