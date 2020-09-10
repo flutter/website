@@ -7,26 +7,27 @@ description: Gradual deprecation of the Android v1 embedding
 
 The `flutter create` templates for apps and plugins no longer create
 Android wrapping based on the v1 Android embedding as part of our gradual
-Android v1 embedding deprecation process described in
-[Upgrading pre 1.12 Android projects][].
+Android v1 embedding deprecation process described in our
+[Android Migration Summary][].
 
 Application projects using the v1 Android embedding are encouraged to migrate
-following the steps described in https://flutter.dev/go/android-project-migration.
+following the steps described in [Upgrading pre 1.12 Android projects][].
 
 Plugins targeting the v1 Android embedding are encouraged to migrate following
-the instructions in [Android Migration Summary][/go/android-plugin-migration].
+the instructions in [Supporting the new Android plugins APIs][].
 
-[Android Migration Summary](/go/android-migration-summary).
-[Upgrading pre 1.12 Android projects](/go/android-migration-summary).
+[Android Migration Summary]: /go/android-migration-summary
+[Upgrading pre 1.12 Android projects]: /go/android-project-migration
+[Supporting the new Android plugins APIs]: /docs/development/packages-and-plugins/plugin-api-migration
 
 ## Context
 
-In Flutter version 1.12, we launched a v2 set of Android APIs based on
-info in the [Opensource Flutter embedding][] page.
-in order to enable the [add-to-app][] workflow on Android.
+In Flutter version 1.12, we launched a v2 set of Android APIs based on the
+[io.flutter.embedding][] package in order to enable the [add-to-app][] workflow
+on Android.
 
 Over time, we gradually deprecated the older v1 Android embeddings based on
-the [original embedding][] page.
+the [io.flutter.app][] package.
 
 As of Q2 2020, only 26% of applications used the v1 embeddings.
 
@@ -35,8 +36,8 @@ the launch of Flutter v1.12, we disabled the creation of new app and plugin
 projects using the v1 embeddings.
 
 [add-to-app]: /docs/development/add-to-app
-[Opensource Flutter embedding]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/
-[original embedding]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/app/.
+[io.flutter.embedding]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/
+[io.flutter.app]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/app/.
 
 ## Description of change
 
