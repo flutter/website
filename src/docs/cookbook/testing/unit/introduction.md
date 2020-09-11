@@ -34,9 +34,8 @@ see the [test package documentation][].
 
 ## 1. Add the test dependency
 
-If you're working on a Dart package that does not depend on Flutter,
-you can import the `test` package. The test package provides the core
-functionality for writing tests in Dart. This is the best approach when
+The `test` package provides the core functionality for 
+writing tests in Dart. This is the best approach when
 writing packages consumed by web, server, and Flutter apps.
 
 ```yaml
