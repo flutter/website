@@ -88,8 +88,9 @@ use the following steps to make it human readable:
    For example:
 
 ```terminal
-flutter symbolize -i <stack trace file> -d /out/android/app.android-arm64.symbols
+flutter symbolize -i <stack trace file> -d <directory>/app.android-arm64.symbols
 ```
+   NOTE that this <directory> is same as the one you used earlier. 
 
    For more information on the `symbolize` command,
    run `flutter symbolize -h`.
