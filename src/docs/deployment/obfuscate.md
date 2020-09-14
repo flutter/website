@@ -51,7 +51,7 @@ channels.)
 For example:
 
 ```terminal
-flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
+flutter build apk --obfuscate --split-debug-info=../<project-name>/<directory>
 ```
 
 Once you've obfuscated your binary, save
