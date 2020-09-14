@@ -4,6 +4,7 @@ description: Link for registering for the free App Brewery course.
 ---
 <h1>This course is closed for enrollment.</h1>
 
+{% comment %}
 <section class="landing-page__cta card text-center">
     <div class="card-body">
         <h2 class="landing-page__cta__headline">Sign up today</h2>
@@ -13,6 +14,7 @@ description: Link for registering for the free App Brewery course.
 </section>
 
 <br>
+<section class="landing-page__cta card text-center">
 Sign up for the **Introduction to Flutter Development with
 Dart** course, created by the App Brewery in
 collaboration with the Google Flutter team.
@@ -46,4 +48,4 @@ Sign up today, and look forward to:
 * Over 10 hours of HD 1080p video content.
 * Building over 8 fully-fledged apps.
 * Comprehensive course materials and curriculum.
-
+{% endcomment %}
