@@ -77,7 +77,7 @@ Then:
 1. Click **Distribute App**.
 1. Select a method of distribution. `Development` is the simplest if you don't
    intend to distribute the application.
-1. In `App Thinning`, select 'all qcompatible device variants'.
+1. In `App Thinning`, select 'all compatible device variants'.
 1. Select `Rebuild from Bitcode` (available if bitcode is enabled on your project).
 1. Select `Strip Swift symbols`.
 
@@ -138,7 +138,7 @@ packages. 2, the tool will display a high level summary of the size breakdown
 in the terminal and leave a `*-code-size-analysis_*.json` file for more detailed
 analysis in DevTools.
 
-In addition to analyzinge a single build, 2 builds can also be diffed by
+In addition to analyzing a single build, 2 builds can also be diffed by
 loading 2 `*-code-size-analysis_*.json` files into DevTools. See
 [DevTools documentation][] for details.
 
@@ -159,10 +159,10 @@ native library is further broken down by package for quick analysis.
 
 ### Deeper analysis in DevTools
 
-The `*-code-size-analysis_*.json` file produced above could be further
-analysised in deeper detail in DevTools where a tree or a treemap view could
-break down the contents of the application into individual file and function
-level.
+The `*-code-size-analysis_*.json` file produced above can be further
+analyzed in deeper detail in DevTools where a tree or a treemap view can
+break down the contents of the application into the individual file level and
+up to function level for the Dart AOT artifact.
 
 This can be done by `flutter pub global run devtools`, selecting
 `Open code size tool` and uploading the JSON file.
