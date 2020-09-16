@@ -50,8 +50,8 @@ flutter build appbundle
 Log into your [Google Play Console][]. Upload your application binary by drag
 dropping the .aab file.
 
-View the application's donwload and install size in the 'Android vitals' ->
-'App size' tab.
+View the application's download and install size in the **Android vitals** ->
+**App size** tab.
 
 {% include app-figure.md image="perf/vital-size.png" alt="App size tab in Google Play Console" %}
 
@@ -66,7 +66,7 @@ contains optimization tips further below.
 
 Create an [Xcode App Size Report][].
 
-First by configuring the app version and build as described in the
+First, by configuring the app version and build as described in the
 [iOS create build archive instructions][].
 
 Then:
@@ -75,11 +75,11 @@ Then:
 1. In the sidebar of the Xcode Organizer window, select your iOS app,
    then select the build archive you just produced.
 1. Click **Distribute App**.
-1. Select a method of distribution. `Development` is the simplest if you don't
+1. Select a method of distribution. **Development** is the simplest if you don't
    intend to distribute the application.
-1. In `App Thinning`, select 'all compatible device variants'.
-1. Select `Rebuild from Bitcode` (available if bitcode is enabled on your project).
-1. Select `Strip Swift symbols`.
+1. In **App Thinning**, select 'all compatible device variants'.
+1. Select **Rebuild from Bitcode** (available if bitcode is enabled on your project).
+1. Select **Strip Swift symbols**.
 
 Sign and export the IPA. The exported directory contains
 `App Thinning Size Report.txt` with details about your projected
@@ -131,15 +131,16 @@ building:
 - `flutter build macos --analyze-size`
 - `flutter build windows --analyze-size`
 
-This build is different from a standard release build in 2 ways.
+This build is different from a standard release build in two ways.
 
-1, the tool will compile Dart in a way that records code size usage of Dart
-packages. 2, the tool will display a high level summary of the size breakdown
-in the terminal and leave a `*-code-size-analysis_*.json` file for more detailed
-analysis in DevTools.
+1. The tool compiles Dart in a way that records code size usage of Dart
+   packages.
+2. The tool displays a high level summary of the size breakdown
+   in the terminal, and leaves a `*-code-size-analysis_*.json` file for more
+   detailed analysis in DevTools.
 
-In addition to analyzing a single build, 2 builds can also be diffed by
-loading 2 `*-code-size-analysis_*.json` files into DevTools. See
+In addition to analyzing a single build, two builds can also be diffed by
+loading two `*-code-size-analysis_*.json` files into DevTools. See
 [DevTools documentation][] for details.
 
 {% include app-figure.md image="perf/size-summary.png" alt="Size summary of an Android application in terminal" %}
@@ -150,7 +151,7 @@ native library is further broken down by package for quick analysis.
 
 {{site.alert.warning}}
   This tool on iOS creates a .app rather than an IPA. It also contains bitcode
-  which will drastically increase the .framework file sizes in the .app.
+  which drastically increases the .framework file sizes in the .app.
 
   Use this tool to evaluate the relative size of the .app's content. To get
   a closer estimate of the download size, reference the
