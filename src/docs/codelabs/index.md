@@ -138,7 +138,7 @@ Learn how to use Flutter with other technologies.
 
 Learn how to test your Flutter application.
 
-* [How to test a Flutter app[]<br>
+* [How to test a Flutter app][]<br>
   Start with a simple app that manages state with the Provider package.
   Unit test the provider package. Write widget tests for two of the
   widgets. Use Flutter Driver to create an integration test.
