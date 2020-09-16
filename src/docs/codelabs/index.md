@@ -44,6 +44,12 @@ one of these codelabs:
   this codelab, learn how to use keyboard shortcuts in
   Android Studio.
 
+[Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
+[codelab on flutter.dev]: /docs/get-started/codelab
+[Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[Write your first Flutter app on the web]: /docs/get-started/codelab-web
+
 ## Designing a Flutter UI
 
 Learn about Material Design and basic Flutter concepts,
@@ -87,6 +93,14 @@ like layout and animations:
   by adding a backdrop with a menu that filters
   products by the selected category.
 
+[Basic Flutter layout concepts]: /docs/codelabs/layout-basics
+[How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[Implicit animations]: /docs/codelabs/implicit-animations
+[MDC 101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
+[MDC 102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
+[MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
+[MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+
 ## Using Flutter with...
 
 Learn how to use Flutter with other technologies.
@@ -113,6 +127,23 @@ Learn how to use Flutter with other technologies.
   powered by Flutter and Cloud Firestore.
   The finished app runs on Android, iOS, and web,
   from a single Dart codebase.
+
+[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
+[Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
+[Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
+[Firebase for Flutter]: {{site.codelabs}}/codelabs/flutter-firebase
+[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
+
+## Testing
+
+Learn how to test your Flutter application.
+
+* [How to test a Flutter app][]<br>
+  Start with a simple app that manages state with the Provider package.
+  Unit test the provider package. Write widget tests for two of the
+  widgets. Use Flutter Driver to create an integration test.
+
+[How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing/#0
 
 ## Writing platform-specific code
 
@@ -143,6 +174,12 @@ like iOS, Android, the web, and the desktop.
   create and use plugins to interact with native APIs and desktop applications,
   and use code generation to build type-safe client libraries for GitHub's APIs.
 
+[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
+[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin/
+[provider]: {{site.pub}}/packages/provider
+[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
+
 ## Other resources
 
 For Dart-specific codelabs, see the
@@ -158,30 +195,7 @@ We also recommend the following online class:
   [this mirror of the Flutter codelabs][].
 {{site.alert.end}}
 
-
-[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
-[Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
-[Basic Flutter layout concepts]: /docs/codelabs/layout-basics
-[Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
-[Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
-[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
-[codelab on flutter.dev]: /docs/get-started/codelab
 [codelabs]: {{site.dart-site}}/codelabs
 [Dart site]: {{site.dart-site}}
-[Firebase for Flutter]: {{site.codelabs}}/codelabs/flutter-firebase
-[How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
-[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin/
-[Implicit animations]: /docs/codelabs/implicit-animations
-[MDC 101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
-[MDC 102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
-[MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
-[MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
-[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
-[provider]: {{site.pub}}/packages/provider
 [The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 [this mirror of the Flutter codelabs]: https://codelabs.flutter-io.cn/
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
-[Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-[Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
-[Write your first Flutter app on the web]: /docs/get-started/codelab-web
