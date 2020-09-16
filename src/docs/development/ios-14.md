@@ -7,9 +7,6 @@ The iOS 14 release, the new version of Apple's mobile operating system,
 is here. This page describes some known issues when developing for
 iOS 14.
 
-But we have some tips to get you up and running&mdash;assuming
-that you don't mind being on the leading edge.
-
 ## Using hot reload
 
 When you run your app for the first time in debug mode,
@@ -44,6 +41,13 @@ test, and deploy to iOS without issue. Upgrading to
 1.20.4 stable allows you to build and deploy to iOS 14,
 but not debug.
 
+## Clipboard notifications
+
+If your iOS 14 app uses text fields, you should build your
+production apps with Flutter 1.20 or the 1.22 beta to
+ensure that clipboard access notifications are not spuriously 
+shown when building text fields.
+ 
 ## Debugging Flutter
 
 Due to added security around local network permissions in
@@ -80,8 +84,8 @@ physical devices when running the [`FlutterEngine`][]
 if the host application is launched from the home screen.
 
 To launch the application in debug mode on a physical
-device again, re-run the app (by using `flutter run`,
-a Flutter-enabled IDE, or Xcode). 
+device again, re-run the app from the host computer
+(by using `flutter run`, a Flutter-enabled IDE, or Xcode). 
 
 You can also build the application or add-to-app module in profile
 or release mode, or on a simulator, which are not affected. 
