@@ -40,7 +40,7 @@ functionalities such as hot-reload and DevTools.
 
 This affects debug and profile builds only and won't
 appear in release builds. The permission can also be allowed
-by enabling `Settings > Privacy > Local Network > Your App`.
+by enabling **Settings > Privacy > Local Network > Your App**.
 
 For add-to-app users, one additional step has been added
 to the [add-to-app project setup guide][],
