@@ -97,6 +97,7 @@ The `testWidgets` function allows you to define a
 widget test and creates a `WidgetTester` to work with.
 
 This test verifies that `MyWidget` displays a given title and message.
+It is titled accordingly, and it will be populated in the next section.
 
 <!-- skip -->
 ```dart
