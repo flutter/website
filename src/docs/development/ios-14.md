@@ -7,24 +7,23 @@ The iOS 14 release, the new version of Apple's mobile operating system,
 is here. This page describes some known issues when developing for
 iOS 14.
 
-## Using hot reload
+## Launching the app from the home screen
 
-When you run your app for the first time in debug mode,
-iOS 14 presents a popup dialog asking you to allow local
-network connections. If you choose **Don't Allow**, hot reload won't
-work, because it prevents the app from talking to
-Observatory.
+When you install a debug version of your app on a physical iOS 14 device
+(by using `flutter run` or launching from Xcode), then disconnect,
+and then try to open the app from the home screen, it crashes.
 
-![Screenshot of "allow network connections" dialog]({% asset development/ios14-network.png @path %})
+**Solution**: Use `flutter run --release` (or `--profile`)
+if you want to start your app from the home screen.
 
-**Solution**: Choose **OK** to allow local network connections.
+Once again, the crash only happens in debug mode,
+and only when opening the app from the home screen on iOS 14.
+This crash _doesn’t_ happen when using the iOS simulator.
 
-Just to be clear: this only happens in debug mode.
-Your users won't see this message in release mode.
-Only the debug version of your app needs to access the local network.
+For more information, see [Issue 62531][].
 
-For more information,
-see [Issue 60634]({{site.github}}/flutter/flutter/issues/60634).
+
+[Issue 62531]: {{site.github}}/flutter/flutter/issues/62531
 
 ## Launching Flutter with Flutter tools
 
