@@ -4,7 +4,7 @@ short-title: Integrate Flutter
 description: Learn how to integrate a Flutter module into your existing iOS project.
 ---
 
-Flutter can be incrementaly added into your existing iOS
+Flutter can be incrementally added into your existing iOS
 application as embedded frameworks.
 
 ## System requirements

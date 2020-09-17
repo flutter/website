@@ -113,7 +113,7 @@ This means you need to add your user name to the LXD
 (lxd) group, so log out of your session and then log back in:
 
 ```terminal
-$ sudo usermod -a -G lxd <your usernamer>
+$ sudo usermod -a -G lxd <your username>
 ```
 
 ## Overview of snapcraft

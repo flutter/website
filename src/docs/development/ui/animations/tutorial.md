@@ -153,7 +153,7 @@ You can see an example of this in [animate1][] on GitHub.
 
 {% comment %}
 The `vsync` object ties the ticking of the animation controller to
-the visiblity of the widget, so that when the animating widget goes
+the visibility of the widget, so that when the animating widget goes
 off-screen, the ticking stops, and when the widget is restored, it
 starts again (without stopping the clock, so it's as if it had
 been ticking the whole time, but without using the CPU.)
