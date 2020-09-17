@@ -69,6 +69,10 @@ like layout and animations:
   implicit animations to add motion and create
   visual effects for the widgets in your UI.
 
+* [Building Beautiful Transitions with Material Motion for Flutter][]<br>
+  Learn how to use the Material [animations][] package to
+  add pre-built transitions to a Material app called Reply.
+
 * [MDC 101 Flutter: Material Components (MDC) Basics][]<br>
   Learn the basics of using Material Components by building
   a simple app with core components.  The four MDC codelabs
@@ -93,7 +97,9 @@ like layout and animations:
   by adding a backdrop with a menu that filters
   products by the selected category.
 
+[animations]: {{site.pub}}/packages/animations
 [Basic Flutter layout concepts]: /docs/codelabs/layout-basics
+[Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: /docs/codelabs/implicit-animations
 [MDC 101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
