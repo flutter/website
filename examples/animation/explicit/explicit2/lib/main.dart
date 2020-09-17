@@ -6,8 +6,8 @@ class BouncingBallDemo extends StatefulWidget {
   _BouncingBallDemoState createState() => _BouncingBallDemoState();
 }
 
-class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
-
+class _BouncingBallDemoState extends State<BouncingBallDemo>
+    with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
   }
@@ -15,7 +15,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 0),
+        margin: EdgeInsets.only(top: 0),
         child: Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
@@ -23,8 +23,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
           ),
           width: 40.0,
           height: 40.0,
-        )
-      );
+        ));
   }
 }
 

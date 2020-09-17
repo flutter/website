@@ -7,7 +7,6 @@ class BouncingBallDemo extends StatefulWidget {
 }
 
 class _BouncingBallDemoState extends State<BouncingBallDemo> {
-
   void initState() {
     super.initState();
   }
@@ -15,7 +14,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 0),
+        margin: EdgeInsets.only(top: 0),
         child: Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
@@ -23,8 +22,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> {
           ),
           width: 40.0,
           height: 40.0,
-        )
-      );
+        ));
   }
 }
 

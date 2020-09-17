@@ -49,7 +49,8 @@ class DemoLocalizations {
   }
 }
 
-class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
+class DemoLocalizationsDelegate
+    extends LocalizationsDelegate<DemoLocalizations> {
   const DemoLocalizationsDelegate();
 
   @override
@@ -84,7 +85,8 @@ class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (BuildContext context) => DemoLocalizations.of(context).title,
+      onGenerateTitle: (BuildContext context) =>
+          DemoLocalizations.of(context).title,
       localizationsDelegates: [
         const DemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,

@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 
-const owl_url = 'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
+const owl_url =
+    'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
 
 class FadeInDemo extends StatefulWidget {
   _FadeInDemoState createState() => _FadeInDemoState();

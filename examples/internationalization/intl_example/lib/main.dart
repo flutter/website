@@ -47,7 +47,8 @@ class DemoLocalizations {
   DemoLocalizations(this.localeName);
 
   static Future<DemoLocalizations> load(Locale locale) {
-    final String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
+    final String name =
+        locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((_) {
@@ -71,14 +72,16 @@ class DemoLocalizations {
   }
 }
 
-class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
+class DemoLocalizationsDelegate
+    extends LocalizationsDelegate<DemoLocalizations> {
   const DemoLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) => ['en', 'es'].contains(locale.languageCode);
 
   @override
-  Future<DemoLocalizations> load(Locale locale) => DemoLocalizations.load(locale);
+  Future<DemoLocalizations> load(Locale locale) =>
+      DemoLocalizations.load(locale);
 
   @override
   bool shouldReload(DemoLocalizationsDelegate old) => false;
@@ -102,7 +105,8 @@ class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (BuildContext context) => DemoLocalizations.of(context).title,
+      onGenerateTitle: (BuildContext context) =>
+          DemoLocalizations.of(context).title,
       localizationsDelegates: [
         const DemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,

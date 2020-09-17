@@ -6,7 +6,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-class _BeMaterialLocalizationsDelegate extends LocalizationsDelegate<MaterialLocalizations> {
+class _BeMaterialLocalizationsDelegate
+    extends LocalizationsDelegate<MaterialLocalizations> {
   const _BeMaterialLocalizationsDelegate();
 
   @override
@@ -49,17 +50,17 @@ class BeMaterialLocalizations extends GlobalMaterialLocalizations {
     @required intl.NumberFormat decimalFormat,
     @required intl.NumberFormat twoDigitZeroPaddedFormat,
   }) : super(
-    localeName: localeName,
-    fullYearFormat: fullYearFormat,
-    compactDateFormat: compactDateFormat,
-    shortDateFormat: shortDateFormat,
-    mediumDateFormat: mediumDateFormat,
-    longDateFormat: longDateFormat,
-    yearMonthFormat: yearMonthFormat,
-    shortMonthDayFormat: shortMonthDayFormat,
-    decimalFormat: decimalFormat,
-    twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat,
-  );
+          localeName: localeName,
+          fullYearFormat: fullYearFormat,
+          compactDateFormat: compactDateFormat,
+          shortDateFormat: shortDateFormat,
+          mediumDateFormat: mediumDateFormat,
+          longDateFormat: longDateFormat,
+          yearMonthFormat: yearMonthFormat,
+          shortMonthDayFormat: shortMonthDayFormat,
+          decimalFormat: decimalFormat,
+          twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat,
+        );
 
   @override
   String get moreButtonTooltip => r'More';
@@ -134,7 +135,8 @@ class BeMaterialLocalizations extends GlobalMaterialLocalizations {
   String get pageRowsInfoTitleRaw => r'$firstRow–$lastRow of $rowCount';
 
   @override
-  String get pageRowsInfoTitleApproximateRaw => r'$firstRow–$lastRow of about $rowCount';
+  String get pageRowsInfoTitleApproximateRaw =>
+      r'$firstRow–$lastRow of about $rowCount';
 
   @override
   String get pasteButtonLabel => r'PASTE';
@@ -164,7 +166,8 @@ class BeMaterialLocalizations extends GlobalMaterialLocalizations {
   String get remainingTextFieldCharacterCountOne => r'1 character remaining';
 
   @override
-  String get remainingTextFieldCharacterCountOther => r'$remainingCount characters remaining';
+  String get remainingTextFieldCharacterCountOther =>
+      r'$remainingCount characters remaining';
 
   @override
   String get remainingTextFieldCharacterCountTwo => null;
@@ -245,12 +248,14 @@ class BeMaterialLocalizations extends GlobalMaterialLocalizations {
   String get viewLicensesButtonLabel => r'VIEW LICENSES';
 
   @override
-  List<String> get narrowWeekdays =>  const <String>['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  List<String> get narrowWeekdays =>
+      const <String>['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
   @override
   int get firstDayOfWeekIndex => 0;
 
-  static const LocalizationsDelegate<MaterialLocalizations> delegate = _BeMaterialLocalizationsDelegate();
+  static const LocalizationsDelegate<MaterialLocalizations> delegate =
+      _BeMaterialLocalizationsDelegate();
 }
 
 class Home extends StatelessWidget {
@@ -266,7 +271,8 @@ class Home extends StatelessWidget {
             // values for tooltips and other strings related to accessibility.
             showDialog(
               context: context,
-              builder: (BuildContext context) => Dialog(child: Center(child: Text('Hello World'))),
+              builder: (BuildContext context) =>
+                  Dialog(child: Center(child: Text('Hello World'))),
             );
           },
           child: const Text('Show Dialog'),
@@ -284,7 +290,7 @@ void main() {
         GlobalMaterialLocalizations.delegate,
         BeMaterialLocalizations.delegate,
       ],
-      supportedLocales: [ const Locale('be', 'BY') ],
+      supportedLocales: [const Locale('be', 'BY')],
       home: Home(),
     ),
   );

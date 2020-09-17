@@ -8,11 +8,13 @@ GitHub github;
 String firebaseAuth;
 PullRequest currentPullRequest;
 
-String firebaseRoot = "https://flutter-web-controller.firebaseio.com/flutter/pulls";
+String firebaseRoot =
+    "https://flutter-web-controller.firebaseio.com/flutter/pulls";
 
 main(List<String> arguments) async {
   Map<String, String> env = Platform.environment;
-  github = createGitHubClient(auth: new Authentication.withToken(env["GITHUB_TOKEN"]));
+  github = createGitHubClient(
+      auth: new Authentication.withToken(env["GITHUB_TOKEN"]));
 
   firebaseAuth = arguments[1];
   String branchName = arguments[0];
@@ -49,7 +51,8 @@ main(List<String> arguments) async {
       }
       if (value["branch"] == null) {
         projectToDeploy = value["name"];
-        await fbClient.patch("${firebaseRoot}/$key.json", {"branch": branchName});
+        await fbClient
+            .patch("${firebaseRoot}/$key.json", {"branch": branchName});
         await postLinkToGithub(projectToDeploy, currentPullRequest);
       }
     });
@@ -64,11 +67,13 @@ Future<bool> isBranchOld(String branchName) async {
 }
 
 Future<List<PullRequest>> getPullRequests() async {
-  Stream<PullRequest> pullRequests = await github.pullRequests.list(new RepositorySlug.full("flutter/website"));
+  Stream<PullRequest> pullRequests = await github.pullRequests
+      .list(new RepositorySlug.full("flutter/website"));
   return await pullRequests.toList();
 }
 
-Future<IssueComment> postLinkToGithub(String projectToDeploy, PullRequest request) async {
+Future<IssueComment> postLinkToGithub(
+    String projectToDeploy, PullRequest request) async {
   if (request == null) {
     return null;
   }
