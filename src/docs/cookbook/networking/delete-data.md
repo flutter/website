@@ -2,11 +2,11 @@
 title: Delete data on the internet
 description: How to use the http package to delete data on the internet.
 prev:
-  title: Update data over the internet
-  path: /docs/cookbook/networking/update-data
+  title: Send data to a new screen
+  path: /docs/cookbook/navigation/passing-data
 next:
-  title: Make authenticated requests
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Fetch data from the internet
+  path: /docs/cookbook/networking/fetch-data
 ---
 
 This recipe covers how to delete data over

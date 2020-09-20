@@ -5,8 +5,8 @@ prev:
   title: Return data from a screen
   path: /docs/cookbook/navigation/returning-data
 next:
-  title: Fetch data from the internet
-  path: /docs/cookbook/networking/fetch-data
+  title: Delete data on the internet
+  path: /docs/cookbook/networking/delete-data
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
