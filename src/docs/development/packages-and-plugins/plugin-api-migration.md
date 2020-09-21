@@ -138,7 +138,7 @@ The following instructions outline the steps for supporting the new API:
     This sets the example app to use the v2 embedding.
 
 1. (Optional) If you created an `EmbeddingV1Activity`
-   in the previoous step, add the `EmbeddingV1Activity` to the
+   in the previous step, add the `EmbeddingV1Activity` to the
    `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` file.
    For example:
 
