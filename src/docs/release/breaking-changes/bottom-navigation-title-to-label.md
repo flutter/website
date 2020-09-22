@@ -70,14 +70,8 @@ BottomNavigationBarItem(
 
 ## Timeline
 
-Landed in version: 
+Landed in version: 1.22.0
 In stable release: not yet
-
-{% comment %}
-The version # of the SDK where this change was
-introduced.  If there is a deprecation window,
-the version # to which we guarantee to maintain the old API.
-{% endcomment %}
 
 ## References
 
