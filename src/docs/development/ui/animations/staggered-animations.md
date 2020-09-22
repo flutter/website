@@ -20,7 +20,7 @@ short-title: Staggered
   If the concept of tweens or tweening is new to you, see the
   [Animations in Flutter tutorial][].
 {{site.alert.end}}
-
+<
 Staggered animations are a straightforward concept: visual changes
 happen as a series of operations, rather than all at once.
 The animation might be purely sequential, with one change occuring after
@@ -240,7 +240,7 @@ resulting in a call to `_buildAnimation()`.
 
     super(key: key);
 
-  [[highlight]]final Animation<double> controller;[[/highlight]]
+  [[highlight]]final AnimationController controller;[[/highlight]]
   [[highlight]]final Animation<double> opacity;[[/highlight]]
   [[highlight]]final Animation<double> width;[[/highlight]]
   [[highlight]]final Animation<double> height;[[/highlight]]
