@@ -5,27 +5,10 @@ description: Deprecated BottomNavigationBarItem’s title (a Widget) in favor of
 
 ## Summary
 
-{% comment %}
-A one-line summary that should give context as to what changed
-so that someone can find it when browsing through an index of
-breaking changes, ideally using keywords from the symptoms you
-would see if you had not yet migrated (i.e. when you get broken).
-{% endcomment %}
-
 `BottomNavigationBarItem.title` gives a deprecation warning, or no longer exists when referenced in 
 code.
 
 ## Context
-
-{% comment %}
-High-level description of what API changed and why.
-Should be clear enough to be understandable to someone
-who has no context about this breaking change,
-such as someone who doesn't know the underlying API.
-This section should also answer the question
-"what is the problem that led to considering making
-a breaking change?"
-{% endcomment %}
 
 `BottomNavigationBarItem`s `title` parameter was deprecated in favor of `label`. This change was 
 necessary to improve the user experience of `BottomNavigationBar`s when the text scale factor is 
@@ -34,11 +17,6 @@ requires a `String` parameter on `BottomNavigationBarItem`s.
 
 
 ## Description of change
-
-{% comment %}
-A technical description of the actual change,
-with code samples showing how the API changed.
-{% endcomment %}
 
 The `BottomNavigationBarItem` class has a `title` parameter, which is a `Widget`. This made it 
 impossible for the `BottomNavigationBar` to show `Tooltip` widgets, a change which was necessary to 
