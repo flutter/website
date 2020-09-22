@@ -179,6 +179,7 @@ class Dog {
 }
 ```
 
+<!-- skip -->
 ```dart
 // Define a function that inserts dogs into the database
 Future<void> insertDog(Dog dog) async {
@@ -197,6 +198,7 @@ Future<void> insertDog(Dog dog) async {
 }
 ```
 
+<!-- skip -->
 ```dart
 // Create a Dog and add it to the dogs table.
 final fido = Dog(
@@ -237,6 +239,7 @@ Future<List<Dog>> dogs() async {
 }
 ```
 
+<!-- skip -->
 ```dart
 // Now, use the method above to retrieve all the dogs.
 print(await dogs()); // Prints a list that include Fido.
@@ -272,6 +275,7 @@ Future<void> updateDog(Dog dog) async {
 }
 ```
 
+<!-- skip -->
 ```dart
 // Update Fido's age.
 await updateDog(Dog(
