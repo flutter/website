@@ -19,10 +19,10 @@ requires a `String` parameter on `BottomNavigationBarItem`s.
 ## Description of change
 
 The `BottomNavigationBarItem` class has a `title` parameter, which is a `Widget`. This made it 
-impossible for the `BottomNavigationBar` to show `Tooltip` widgets, a change which was necessary to 
-improve the accessibility experience. Now, instead of taking `BottomNavigationBarItem.title` widget 
-and building it, `BottomNavigationBar` will take `BottomNavigationBarItem.label`, wrap it in a 
-`Text` widget, and build that.
+impossible for the `BottomNavigationBar` to show `Tooltip` widgets, a change that was necessary to 
+improve the accessibility experience. Now, instead of building the BottomNavigationBarItem.title 
+widget, the BottomNavigationBar wraps the BottomNavigationBarItem.label in a Text widget and builds 
+that.
 
 ## Migration guide
 
