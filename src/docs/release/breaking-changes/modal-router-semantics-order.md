@@ -6,7 +6,7 @@ description: The scope of the modal route has a higher semantics traverse order 
 ## Summary
 
 We changed the semantics traverse order of the overlay entries in modal routes.
-The accessibility talk back or voice over now focus the scope of a modal route
+Accessibility talk back or voice over now focuses the scope of a modal route
 first instead of its modal barrier.
 
 ## Context
@@ -14,7 +14,7 @@ first instead of its modal barrier.
 The modal route has two overlay entries, the scope and the modal barrier. The
 scope is the actual content of the modal route, and the modal barrier is the
 background of the route if its scope does not cover the entire screen. If the
-modal route returns true for barrierDismissible, the modal barrier becomes
+modal route returns true for `barrierDismissible`, the modal barrier becomes
 accessibility focusable because users can tap the modal barrier to pop the
 modal route. This change specifically made the accessibility to focus the scope
 first before the modal barrier.
@@ -134,7 +134,7 @@ SemanticsNode getChild(SemanticsNode node) {
 ## Timeline
 
 Landed in version: 1.19.0
-In stable release: not yet
+In stable release: 1.20
 
 ## References
 

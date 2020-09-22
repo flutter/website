@@ -2461,7 +2461,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [arb]: {{site.github}}/google/i18n/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
-[composing]: /docs/resources/technical-overview#everythings-a-widget
+[composing]: /docs/resources/architectural-overview#composition
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
@@ -2502,7 +2502,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`sqflite`]: {{site.pub}}/packages/sqflite
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
-[widget]: /docs/resources/technical-overview#everythings-a-widget
+[widget]: /docs/resources/architectural-overview#widgets
 [widget catalog]: /docs/development/ui/widgets/layout
 [WidgetsApp]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html

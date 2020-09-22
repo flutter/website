@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               // Provide a Key to this specific Text widget. This allows
-              // identifing the widget from inside the test suite,
+              // identifying the widget from inside the test suite,
               // and reading the text.
               key: Key('counter'),
               style: Theme.of(context).textTheme.headline4,
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Next, use the `flutter_driver` package to write integration tests.
 Add the `flutter_driver` dependency to the `dev_dependencies` section of
-the apps's `pubspec.yaml` file.
+the app's `pubspec.yaml` file.
 
 Also add the `test` dependency in order to use actual test functions and
 assertions.
@@ -298,6 +298,15 @@ run the following command:
 ```shell
 flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
 ```
+
+To simulate different screen dimensions, you can use the `--browser-dimension` argument,
+for example:
+
+```shell
+flutter drive --target=test_driver/app.dart --browser-name=chrome --browser-dimension 300,550 --release
+```
+
+Will run the tests in the `chrome` browser in a window with dimensions 300 by 550.
 
 [Download ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/

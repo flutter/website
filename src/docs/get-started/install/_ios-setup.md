@@ -49,8 +49,13 @@ follow these steps:
     the simulator's **Hardware > Device** menu.
  3. Depending on your development machine's screen size,
     simulated high-screen-density iOS devices
-    might overflow your screen. Set the device scale under the
-    **Window > Scale** menu in the simulator.
+    might overflow your screen. Grab the corner of the 
+    simulator and drag it to change the scale. You can also 
+    use the **Window > Physical Size** or **Window > Pixel Accurate**
+    options if your computer's resolution is high enough.
+    * If you are using a version of XCode older 
+    than 9.1, you should instead set the device scale
+    in the **Window > Scale** menu.
 
 ### Create and run a simple Flutter app
 
@@ -134,12 +139,15 @@ to set up physical device deployment in Xcode.
           Then, go to the Settings app on the iOS device,
           select **General > Device Management**
           and trust your Certificate.
+          For first time users, you may need to select
+          **General > Profiles > Device Management** instead.
 
         * If automatic signing fails in Xcode, verify that the project's
           **General > Identity > Bundle Identifier** value is unique.
           ![Check the app's Bundle ID][]{:.mw-100}
 
- 1. Start your app by running `flutter run`.
+ 1. Start your app by running `flutter run`
+    or clicking the Run button in Xcode.
 
 [Check the app's Bundle ID]: /images/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: https://developer.apple.com/support/compare-memberships

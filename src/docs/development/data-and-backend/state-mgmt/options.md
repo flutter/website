@@ -62,6 +62,7 @@ A state container approach familiar to many web developers.
 * [Animation Management with Redux and Flutter][],
   a video from DartConf 2018 [Accompanying article on Medium][]
 * [Flutter Redux package][]
+* [Redux Saga Middleware Dart and Flutter][], by Bilal Uslu
 * [Introduction to Redux in Flutter][], by Xavi Rigau
 * [Flutter + Redux&mdash;How to make a shopping list app][],
   by Paulina Szklarska on Hackernoon
@@ -94,6 +95,14 @@ A popular library based on observables and reactions.
 * [Getting started with MobX.dart][]
 * [Flutter: State Management with Mobx][], a video by Paul Halliday
 
+## GetX
+
+A simplified reactive state management solution.
+
+* [GetX package][]
+* [Complete GetX State Management][], a video by Tadas Petra
+* [GetX Flutter Firebase Auth Example][], by Jeff McMorris
+
 
 [Adding interactivity to your Flutter app]: /docs/development/ui/interactive
 [accompanying article]: {{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381
@@ -106,13 +115,16 @@ A popular library based on observables and reactions.
 [BloC Library]: https://felangel.github.io/bloc
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
 [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: https://www.youtube.com/watch?v=Wj216eSBBWs
+[Complete GetX State Management]: https://www.youtube.com/watch?v=CNpXbeI_slw
 [Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [Flutter: State Management with Mobx]: https://www.youtube.com/watch?v=p-MUBLOEkCs
 [Flutter Redux package]: {{site.pub-pkg}}/flutter_redux
+[Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
+[GetX Flutter Firebase Auth Example]: {{site.medium}}/@jeffmcmorris/getx-flutter-firebase-auth-example-b383c1dd1de2
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
 [Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
@@ -122,6 +134,7 @@ A popular library based on observables and reactions.
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 [Pragmatic State Management in Flutter]: https://www.youtube.com/watch?v=d_m5csmrf7I
 [Provider package]: {{site.pub-pkg}}/provider
+[GetX package]: {{site.pub-pkg}}/get
 [Reactive Programming - Streams - BLoC - Practical Use Cases]: https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases
 [Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/

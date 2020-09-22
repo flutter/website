@@ -3,7 +3,7 @@ title: Debugging Flutter apps
 description: How to debug your app using the DevTools suite.
 ---
 
-There are a wide variety of tools and features to help debug
+There's a wide variety of tools and features to help debug
 Flutter applications. Here are some of the available tools:
 
 * [DevTools][], a suite of performance and profiling

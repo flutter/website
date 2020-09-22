@@ -16,7 +16,7 @@ Prior to this change, the scheduler layer was dependent
 on the services layer. This change reverses the dependency
 chain and allows the services layer to make use of the
 scheduling primitives in the scheduler layer. For example,
-services in the services layer can now schedule tasks via
+services in the services layer can now schedule tasks by using
 `SchedulerBinding.scheduleTask`.
 
 ## Description of change
@@ -51,11 +51,9 @@ class FooBinding extends BindingBase with SchedulerBinding, ServicesBinding {
 ## Timeline
 
 Landed in version: 1.18.0<br>
-In stable release: not yet
+In stable release: 1.20
 
 ## References
-
-{% include master-api.md %}
 
 API documentation:
 * [`ServicesBinding`][]
@@ -69,5 +67,5 @@ Relevant PRs:
 [Revert bindings dependency workaround]: {{site.github}}/flutter/flutter/pull/54286
 [`SchedulerBinding`]: {{site.api}}/flutter/scheduler/SchedulerBinding-mixin.html
 [`ServicesBinding`]: {{site.api}}/flutter/scheduler/ServicesBinding-mixin.html
-[`SchedulerBinding`]: https://master-api.flutter.dev/flutter/scheduler/SchedulerBinding-mixin.html
-[`ServicesBinding`]: https://master-api.flutter.dev/flutter/scheduler/ServicesBinding-mixin.html
+[`SchedulerBinding`]: {{site.api}}/flutter/scheduler/SchedulerBinding-mixin.html
+[`ServicesBinding`]: {{site.api}}/flutter/scheduler/ServicesBinding-mixin.html

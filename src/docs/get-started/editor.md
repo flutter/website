@@ -63,8 +63,8 @@ To install these:
 
 {{site.alert.note}}
   Prior to v3.6.3.0, access plugin preferences as follows:
-   1. Open plugin preferences (**Preferences > Plugins** on macOS,
-      **File > Settings > Plugins** on Windows & Linux).
+   1. Open plugin preferences (on MacOS go to **Preferences > Plugins**; 
+      on Windows & Linux go to **File > Settings > Plugins**).
    1. Select **Marketplace**,  select the Flutter plugin and click
       **Install**.
 {{site.alert.end}}
@@ -107,11 +107,6 @@ For information on how to install and use the package, see the [lsp-dart documen
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
-
-## Next step
-
-Take Flutter for a test drive: create a first project, run it, and experience
-"hot reload".
 
 
 

@@ -38,9 +38,10 @@ flutter:
 ```
 
 {{site.alert.note}}
-  Only files located directly in the directory are
-  included. To add files located in subdirectories,
-  create an entry per directory.
+  Only files located directly in the directory are included unless
+  there are files with the same name inside a subdirectory 
+  (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create 
+  an entry per directory.
 {{site.alert.end}}
 
 ### Asset bundling
@@ -233,6 +234,10 @@ awareness when loading images. (If you work with some of the lower
 level classes, like [`ImageStream`][] or [`ImageCache`][],
 you'll also notice parameters related to scale.)
 
+{{site.alert.note}}
+  [Device pixel ratio][] depends on [MediaQueryData.size][] which requires to have either a [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
+{{site.alert.end}}
+
 ### Asset images in package dependencies {#from-packages}
 
 To load an image from a [package][] dependency,
@@ -335,7 +340,7 @@ AssetFileDescriptor fd = assetManager.openFd(key);
 
 ### Loading Flutter assets in iOS
 
-On iOS the assets are available throughh the [`mainBundle`][].
+On iOS the assets are available through the [`mainBundle`][].
 The lookup key used in, for instance [`pathForResource:ofType:`][],
 is obtained from `lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:`
 on [`FlutterPluginRegistrar`][], or `lookupKeyForAsset:` or
@@ -508,3 +513,7 @@ For more details, see
 [`video_player` plugin]: {{site.pub}}/packages/video_player
 [`window.onDrawFrame`]: {{site.api}}/flutter/dart-ui/Window/onDrawFrame.html
 [`window.render()`]: {{site.api}}/flutter/dart-ui/Window/render.html
+[MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
+[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
+[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[Device pixel ratio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html

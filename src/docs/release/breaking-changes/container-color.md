@@ -78,8 +78,6 @@ In stable release: 1.17
 
 ## References
 
-{% include master-api.md %}
-
 API documentation:
 * [`Container`][]
 * [`ColoredBox`][]
@@ -92,9 +90,9 @@ Relevant issues:
 Relevant PRs:
 * [Colored box and container optimization #50979][]
 
-[`Container`]: https://master-api.flutter.dev/flutter/widgets/Container-class.html
-[`ColoredBox`]: https://master-api.flutter.dev/flutter/widgets/ColoredBox-class.html
-[`BoxDecoration`]: https://master-api.flutter.dev/flutter/widgets/BoxDecoration-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`ColoredBox`]: {{site.api}}/flutter/widgets/ColoredBox-class.html
+[`BoxDecoration`]: {{site.api}}/flutter/widgets/BoxDecoration-class.html
 [Issue 9672]: {{site.github}}/flutter/flutter/issues/9672
 [Issue 28753]: {{site.github}}/flutter/flutter/issues/28753
 [Colored box and container optimization #50979]: {{site.github}}/flutter/flutter/pull/50979

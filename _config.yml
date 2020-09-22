@@ -41,6 +41,7 @@ android-dev: https://developer.android.com
 codelabs: https://codelabs.developers.google.com
 groups: https://groups.google.com
 firebase: https://firebase.google.com
+flutterfire: https://firebase.flutter.dev
 
 defaults:
 - scope:

@@ -14,7 +14,7 @@ in the design, so we have updated the Actions API to make it easier
 to use and understand.
 
 In the previous Actions API design, actions were mapped from a
-[`LocalKey`][] to an `ActionFactory` that would create a new
+[`LocalKey`][] to an `ActionFactory` that created a new
 `Action` each time the `invoke` method was called.
 In the current API, actions are mapped from the type of the `Intent`
 to an `Action` instance (with a `Map<Type, Action>`),
@@ -55,10 +55,10 @@ they handle, and `LocalKeys` were no longer used for identifying
 which action to run, and the type of the `Intent` is used instead.
 
 The majority of these changes were made in the PRs for
-"[Revise Action API][]" and "[Make Action.enabled be
-isEnabled(Intent intent) instead][]", and are
+[Revise Action API][] and [Make Action.enabled be
+isEnabled(Intent intent) instead][], and are
 described in detail in [the design
-doc](https://flutter.dev/go/actions-and-shortcuts-design-revision).
+doc](/go/actions-and-shortcuts-design-revision).
 
 ## Description of change
 
@@ -314,7 +314,7 @@ class MyAction extends Action<MyIntent> {
 ## Timeline
 
 Landed in version: 1.18<br>
-In stable release: not yet
+In stable release: 1.20
 
 ## References
 
@@ -332,14 +332,12 @@ Relevant PRs:
 * [Revise Action API][]
 * [Make Action.enabled be isEnabled(Intent intent) instead][]
 
-{% include master-api.md %}
-
-[`Action`]: https://master-api.flutter.dev/flutter/widgets/Action-class.html
-[`ActionDispatcher`]: https://master-api.flutter.dev/flutter/widgets/ActionDispatcher-class.html
-[`Actions`]: https://master-api.flutter.dev/flutter/widgets/Actions-class.html
-[`Intent`]: https://master-api.flutter.dev/flutter/widgets/Intent-class.html
+[`Action`]: {{site.api}}/flutter/widgets/Action-class.html
+[`ActionDispatcher`]: {{site.api}}/flutter/widgets/ActionDispatcher-class.html
+[`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
+[`Intent`]: {{site.api}}/flutter/widgets/Intent-class.html
 [Issue 53276]: {{site.github}}/flutter/flutter/issues/53276
-[`LocalKey`]: https://master-api.flutter.dev/flutter/foundation/LocalKey-class.html
+[`LocalKey`]: {{site.api}}/flutter/foundation/LocalKey-class.html
 [Make Action.enabled be isEnabled(Intent intent) instead]: {{site.github}}/flutter/flutter/pull/55230
 [Revise Action API]: {{site.github}}/flutter/flutter/pull/42940
-[`Shortcuts`]: https://master-api.flutter.dev/flutter/widgets/Shortcuts-class.html
+[`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html

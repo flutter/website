@@ -276,6 +276,11 @@ or other native functionality. For instance, using the
 Another common entitlement is `com.apple.security.network.client`,
 which you must add if you make any network requests.
 
+Without the `com.apple.security.network.client` entitlement, for example, network requests will fail with a message such as:
+```
+flutter: SocketException: Connection failed (OS Error: Operation not permitted, errno = 1), address = example.com, port = 443
+```
+
 {{site.alert.secondary}}
   **Important:** The `com.apple.security.network.server`
   entitlement, which allows incoming network connections,

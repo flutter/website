@@ -59,6 +59,14 @@ $ flutter upgrade
 $ flutter config --enable-web
 ```
 
+{{site.alert.warning}}
+  Running `flutter channel beta` replaces your current version of Flutter
+  with the beta version and can take time if your connection is slow.
+  After this, running `flutter upgrade` upgrades your install to the latest
+ `beta`.  Returning to the stable channel (or any other) requires calling
+ `flutter channel <channel>` explicitly.
+{{site.alert.end}}
+
 {% comment %}
 [PENDING: Do we really need the following note?]
 {% endcomment %}

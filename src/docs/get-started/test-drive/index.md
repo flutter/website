@@ -36,9 +36,7 @@ Flutter apps.
   {% include_relative _terminal.md %}
 </div>
 
-## Next step
 
-You'll next learn some core Flutter concepts by creating a small app.
 
 [Install]: /docs/get-started/install
 [Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}

@@ -216,7 +216,7 @@ the major algorithms discussed above.
 * **Child-model agnostic.** Unlike most toolkits, which use child lists,
   Flutter’s render tree does not commit to a specific child model.
   For example, the `RenderBox` class has an abstract `visitChildren()`
-  method rather than a concrete _firstChild_ and _nextSibling_ interface.
+  method rather than a concrete `firstChild` and `nextSibling` interface.
   Many subclasses support only a single child, held directly as a member
   variable, rather than a list of children. For example, `RenderPadding`
   supports only a single child and, as a result, has a simpler layout
@@ -246,11 +246,11 @@ the major algorithms discussed above.
 * **Observable objects.** Flutter uses both the model-observation and
   the reactive paradigms. Obviously, the reactive paradigm is dominant,
   but Flutter uses observable model objects for some leaf data structures.
-  For example, _Animations_ notify an observer list when their value changes.
+  For example, `Animation`s notify an observer list when their value changes.
   Flutter hands off these observable objects from the widget tree to the
   render tree, which observes them directly and invalidates only the
   appropriate stage of the pipeline when they change. For example,
-  a change to an _Animation<Color>_ might trigger only the paint phase
+  a change to an `Animation<Color>` might trigger only the paint phase
   rather than both the build and paint phases.
 
 Taken together and summed over the large trees created by aggressive
@@ -258,8 +258,8 @@ composition, these optimizations have a substantial effect on performance.
 
 ### Separation of the Element and RenderObject trees
 
-The RenderObject and Element (Widget) trees in Flutter are isomorphic
-(strictly speaking, the RenderObject tree is a subset of the Element
+The `RenderObject` and `Element` (Widget) trees in Flutter are isomorphic
+(strictly speaking, the `RenderObject` tree is a subset of the `Element`
 tree). An obvious simplification would be to combine these trees into
 one tree. However, in practice there are a number of benefits to having
 these trees be separate:

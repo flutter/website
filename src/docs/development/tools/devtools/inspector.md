@@ -89,6 +89,17 @@ Flutter layouts. Currently, the Layout Explorer only supports
 exploration of [flex layouts][], but it may be extended to other
 types of layouts in the future.
 
+For an overview of what you can do with this tool, see
+the Flutter Explorer video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Jakrc3Tn_y4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+You might also find the following step-by-step article useful:
+
+* [How to debug layout issues with the Flutter Inspector][debug-article]
+
+[debug-article]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+
 ### Using the Layout Explorer
 
 From the Flutter Inspector, select a flex widget

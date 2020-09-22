@@ -168,10 +168,7 @@ secrets in pull requests that you accept and merge.
 
 ### Reference
 
-The [Flutter Gallery Project][]
-uses fastlane for continuous deployment.
-See the source for a working example of fastlane in action.
-Also see the Flutter framework repository's [Cirrus script][].
+See the Flutter framework repository's [Cirrus script][].
 
 ## Other services
 
