@@ -16,4 +16,4 @@ an article on Medium's [Flutter Publication]({{site.flutter-medium}}), or
 watch the [Slivers episode](https://www.youtube.com/watch?v=Mz3kHQxBjGg) of the
 [Boring Show](https://www.youtube.com/results?search_query=%23BoringShow):
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Mz3kHQxBjGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="inherit" height="315" src="https://www.youtube.com/embed/Mz3kHQxBjGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

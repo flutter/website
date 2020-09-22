@@ -166,11 +166,11 @@ break down the contents of the application into the individual file level and
 up to function level for the Dart AOT artifact.
 
 This can be done by `flutter pub global run devtools`, selecting
-`Open code size tool` and uploading the JSON file.
+`Open app size tool` and uploading the JSON file.
 
 {% include app-figure.md image="perf/devtools-size.png" alt="Example breakdown of app in DevTools" %}
 
-For further information on using the DevTools code size tool, see
+For further information on using the DevTools app size tool, see
 [DevTools documentation][].
 
 ## Reducing app size
@@ -199,4 +199,4 @@ are:
 [Write your first Flutter app]: /docs/get-started/codelab
 [Play Console's instructions]: https://support.google.com/googleplay/android-developer/answer/9302563?hl=en
 [Google Play Console]: https://play.google.com/apps/publish/
-[DevTools documentation]: /docs/development/tools/devtools/code-size
+[DevTools documentation]: /docs/development/tools/devtools/app-size

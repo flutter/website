@@ -5,8 +5,8 @@ prev:
   title: Make authenticated requests
   path: /docs/cookbook/networking/authenticated-requests
 next:
-  title: Work with WebSockets
-  path: /docs/cookbook/networking/web-sockets
+  title: Send data to the internet
+  path: /docs/cookbook/networking/send-data
 ---
 
 By default, Dart apps do all of their work on a single thread.

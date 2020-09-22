@@ -5,8 +5,8 @@ prev:
   title: Send data to the internet
   path: /docs/cookbook/networking/send-data
 next:
-  title: Delete data on the internet
-  path: /docs/cookbook/networking/delete-data
+  title: Work with WebSockets
+  path: /docs/cookbook/networking/web-sockets
 ---
 
 Updating data over the internet is necessary for most apps.

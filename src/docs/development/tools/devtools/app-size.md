@@ -1,11 +1,11 @@
 ---
-title: Using the code size tool
-description: Learn how to use the DevTools code size tool.
+title: Using the app size tool
+description: Learn how to use the DevTools app size tool.
 ---
 
 ## What is it?
 
-The code size tool allows you to analyze the total size of your app. You can
+The app size tool allows you to analyze the total size of your app. You can
 view a single snapshot of "size information" using the [Analysis tab][], or
 compare two different snapshots of "size information" using the [Diff tab][].
 
@@ -26,21 +26,21 @@ unreachable.
 After the compiler optimizes your code as much as it can, the end result can be
 summarized as the collection of packages, libraries, classes, and functions that
 exist in the binary output, along with their size in bytes. This is the Dart
-portion of "size information" we can analyze in the code size tool to further
+portion of "size information" we can analyze in the app size tool to further
 optimize Dart code and track down size issues.
 
 ## How to use it
 
 If DevTools is already connected to a running application, navigate to the
-"Code Size" tab.
+"App Size" tab.
 
-![Screenshot of code size tab]({% asset tools/devtools/code_size_tab.png @path %})
+![Screenshot of app size tab]({% asset tools/devtools/app_size_tab.png @path %})
 
 If DevTools is not connected to a running application, you can
 access the tool from the landing page that appears once you have launched
 DevTools (see [installation instructions][]).
 
-![Screenshot of code size access on landing page]({% asset tools/devtools/code_size_access_landing_page.png @path %})
+![Screenshot of app size access on landing page]({% asset tools/devtools/app_size_access_landing_page.png @path %})
 
 ## Analysis tab
 
@@ -49,14 +49,14 @@ You can view the hierarchical structure of the size data using the treemap and
 table, and you can view code attribution data (i.e. why a piece of code is
 included in your compiled application) using the dominator tree and call graph.
 
-![Screenshot of code size analysis]({% asset tools/devtools/code_size_analysis.png @path %}){:width="100%"}
+![Screenshot of app size analysis]({% asset tools/devtools/app_size_analysis.png @path %}){:width="100%"}
 
 ### Loading a size file
 
-When you open the Analysis tab, you'll see instructions to load a code size
-file. Drag and drop a code size file into the dialog, and click "Analyze Size".
+When you open the Analysis tab, you'll see instructions to load an app size
+file. Drag and drop an app size file into the dialog, and click "Analyze Size".
 
-![Screenshot of code size analysis loading screen]({% asset tools/devtools/code_size_load_analysis.png @path %}){:width="100%"}
+![Screenshot of app size analysis loading screen]({% asset tools/devtools/app_size_load_analysis.png @path %}){:width="100%"}
 
 See [Generating size files][] below for information on generating size files.
 
@@ -178,7 +178,7 @@ versions of the same app, for example, the size file generated before and after
 changes to your code. You can visualize the difference between the two data sets
 using the treemap and table.
 
-![Screenshot of code size diff]({% asset tools/devtools/code_size_diff.png @path %}){:width="100%"}
+![Screenshot of app size diff]({% asset tools/devtools/app_size_diff.png @path %}){:width="100%"}
 
 ### Loading size files
 
@@ -186,7 +186,7 @@ When you open the Diff tab, you'll see instructions to load "old" and "new" size
 files. Again, these files need to be generated from the same application. Drag
 and drop these files into their respective dialogs, and click "Analyze Diff".
 
-![Screenshot of code size diff loading screen]({% asset tools/devtools/code_size_load_diff.png @path %}){:width="100%"}
+![Screenshot of app size diff loading screen]({% asset tools/devtools/app_size_load_diff.png @path %}){:width="100%"}
 
 See [Generating size files][] below for information on generating these files.
 
@@ -199,7 +199,7 @@ For questions about using the treemap, see [Using the treemap][] above.
 
 ## Generating size files
 
-To use the code size tool, you'll need to generate a Flutter size analysis file.
+To use the app size tool, you'll need to generate a Flutter size analysis file.
 This file contains size information for your entire application (native code,
 Dart code, assets, fonts, etc.), and you can generate it using the
 `--analyze-size` flag:
@@ -222,10 +222,11 @@ A summary of your APK analysis can be found at: build/apk-code-size-analysis_01.
 ```
 
 In this example, import the `build/apk-code-size-analysis_01.json` file into the
-code size tool to analyze further.
+app size tool to analyze further. For more information, see [App Size Documentation][].
 
 [Using the treemap]: #using-the-treemap
 [Generating size files]: #generating-size-files
 [Analysis tab]: #analysis-tab
 [Diff tab]: #diff-tab
 [installation instructions]: /docs/development/tools/devtools/overview#install-devtools
+[App Size Documentation]: /docs/perf/app-size#breaking-down-the-size
