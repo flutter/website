@@ -2,11 +2,11 @@
 title: Fetch data from the internet
 description: How to fetch data over the internet using the http package.
 prev:
-  title: Send data to a new screen
-  path: /docs/cookbook/navigation/passing-data
+  title: Delete data on the internet
+  path: /docs/cookbook/networking/delete-data
 next:
-  title: Send data to the internet
-  path: /docs/cookbook/networking/send-data
+  title: Make authenticated requests
+  path: /docs/cookbook/networking/authenticated-requests
 ---
 
 Fetching data from the internet is necessary for most apps.

@@ -2,11 +2,11 @@
 title: Send data to the internet
 description: How to use the http package to send data over the internet.
 prev:
-  title: Fetch data from the internet
-  path: /docs/cookbook/networking/fetch-data
+  title: Parse JSON in the background
+  path: /docs/cookbook/networking/background-parsing
 next:
-  title: Make authenticated requests
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Update data over the internet
+  path: /docs/cookbook/networking/update-data
 ---
 
 Sending data to the internet is necessary for most apps.

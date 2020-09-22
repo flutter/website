@@ -2,8 +2,8 @@
 title: Work with WebSockets
 description: How to connect to a web socket.
 prev:
-  title: Parse JSON in the background
-  path: /docs/cookbook/networking/background-parsing
+  title: Update data over the internet
+  path: /docs/cookbook/networking/update-data
 next:
   title: Persist data with SQLite
   path: /docs/cookbook/persistence/sqlite
