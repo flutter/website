@@ -35,7 +35,7 @@ here are some next steps.
 
 ### Docs
 
-Coming from another platform? Check out flutter for:
+Coming from another platform? Check out Flutter for:
 [Android][], [iOS][], [Web][], [React Native][] and
 [Xamarin.Forms][] developers.
 
