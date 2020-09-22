@@ -281,13 +281,18 @@ In addition to that executable, you need the following:
 * From the same directory:
     * all the `.dll` files
     * the `data` directory
-* The Visual C++ redistributables. You can use any of the methods
-  shown in the example walkthroughs here. If you use the `application-local`
-  option, you need to copy:
+* The Visual C++ redistributables.
+  You can use any of the methods shown in the
+  [deployment example walkthroughs][] on the Microsoft site.
+  If you use the `application-local` option, you need to copy:
     * `msvcp140.dll`
     * `vcruntime140.dll`
     * `vcruntime140_1.dll`
-[TBD: I don't see the "...methods shown in the example walkthroughs here." Can you clarify? Also, do you just zip up all these files?]
+
+Place the DLL files in a directory next to the executable
+and the other DLLs, and bundle them together in a zip file.
+
+[deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples?view=vs-2019
 
 #### macOS
 
