@@ -35,9 +35,9 @@ here are some next steps.
 
 ### Docs
 
-Coming from another platform? Check out:
-[Android][], [iOS][], [Web][], [React Native][],
-[Xamarin.Forms][]
+Coming from another platform? Check out Flutter for:
+[Android][], [iOS][], [Web][], [React Native][] and
+[Xamarin.Forms][] developers.
 
 [Building layouts][]
 : Learn how to create layouts in Flutter,
