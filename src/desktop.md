@@ -91,7 +91,7 @@ The easiest way to install the Flutter SDK along with these
 dependencies is by using [snapd][].
 For more information, see [Installing snapd][].
 
-Once you have snapd, you can install Flutter using the [Snap Store][],
+Once you have `snapd`, you can install Flutter using the [Snap Store][],
 or at the command line:
 
 ```terminal
@@ -296,7 +296,7 @@ and the other DLLs, and bundle them together in a zip file.
 
 #### macOS
 
-The `.app` file is self-contained, and can be distributed as-is.
+The `.app` is self-contained, and can be distributed as-is.
 
 #### Linux
 
