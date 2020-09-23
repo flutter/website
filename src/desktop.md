@@ -22,7 +22,7 @@ or you can create your own.
 {{site.alert.note}}
   To compile a desktop app, you must build the app **on**
   the targeted platform: build a Windows app on Windows,
-  a macOS app on macOS, and so on.
+  a macOS app on macOS, and a Linux app on Linux.
   If you experience a problem that hasn’t yet been reported,
   please file an issue and include
   "desktop:macos/linux/windows"
