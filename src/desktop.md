@@ -145,7 +145,8 @@ $ flutter config --enable-linux-desktop
 To ensure that desktop _is_ installed,
 list the devices available.
 You should see something like the following
-(you'll see either windows, macOS, _or_ Linux):
+(you'll see windows, macOS, or Linux,
+depending on which platforms you've enabled):
 
 ``` terminal
 $ flutter devices
