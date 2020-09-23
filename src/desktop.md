@@ -5,32 +5,31 @@ toc: true
 ---
 
 Desktop support allows you to compile Flutter source code
-to a native macOS or Linux desktop app. Flutter's desktop
+to a native Windows, macOS, or Linux desktop app. Flutter's desktop
 support also extends to plugins&mdash;you can install 
 existing plugins that support the macOS or Linux platforms,
 or you can create your own.
 
 {{site.alert.warning}}
   **Work in progress!**
-  This page covers desktop support for macOS and Linux,
-  which are available as alpha-quality features in the Flutter dev channel.
-  Windows platform support is still under development.
-
-  These platforms still have notable feature gaps,
+  This page covers desktop support,
+  which is available as alpha-quality
+  features in the Flutter dev channel.
+  Support still has notable feature gaps,
   including accessibility support.
-  We strongly recommend that you examine the
-  [Desktop shells][] page in the [Flutter wiki][]
-  to understand known limitations and ongoing work.
 {{site.alert.end}}
 
 {{site.alert.note}}
-  To compile a macOS desktop app, you must build the app on a Mac.
-  To compile a Linux desktop app, you must build the app on Linux.
+  To compile a desktop app, you must build the app **on**
+  the targeted platform: build a Windows app on Windows,
+  a macOS app on macOS, and a Linux app on Linux.
   If you experience a problem that hasn’t yet been reported,
   please file an issue and include
-  "desktop:macos" or "desktop:linux" in the title.
+  "desktop:macos/linux/windows"
+  (whichever platform is appropriate) in the title.
 {{site.alert.end}}
 
+[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
 
 ## Requirements
 
@@ -48,11 +47,36 @@ following software:
   within an editor. See [setting up an editor][]
   for more details.
 
+[Android Studio]: {{site.android-dev}}/studio/install
+[Flutter SDK]: /docs/get-started/install
+[install the Flutter and Dart plugins]: /docs/get-started/editor
+[IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
+[setting up an editor]: /docs/get-started/editor
+[Visual Studio Code]: /docs/development/tools/vs-code
+
+### Additional Windows requirements
+
+For Windows desktop development,
+you need the following in addition to the Flutter SDK:
+
+* [Visual Studio 2019][] (not to be confused with Visual Studio Code)
+  with the "Desktop development with C++" workload installed,
+  including all of its default components
+
+[Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
+
+### Additional macOS requirements
+
 For macOS desktop development,
 you need the following in addition to the Flutter SDK:
 
 * [Xcode][]
 * [CocoaPods][] if you use plugins
+
+[CocoaPods]: https://cocoapods.org/
+[Xcode]: https://developer.apple.com/xcode/
+
+### Additional Linux requirements
 
 For Linux desktop development,
 you need the following in addition to the Flutter SDK:
@@ -64,19 +88,32 @@ you need the following in addition to the Flutter SDK:
 * [pkg-config][]
 * [libblkid][]
 
-The easiest way to install the Flutter SDK along with these dependencies is by using [snapd]. For more information, see [Installing snapd].
+The easiest way to install the Flutter SDK along with these
+dependencies is by using [snapd][].
+For more information, see [Installing snapd][].
 
-Once you have snapd, you can install Flutter using the [Snap Store], or at the command line:
+Once you have `snapd`, you can install Flutter using the [Snap Store][],
+or at the command line:
 
 ```terminal
 $ sudo snap install flutter --classic
 ```
 
-If snapd is unavailable on the Linux distro you're using, you might use the following command:
+If `snapd` is unavailable on the Linux distro you're using,
+you might use the following command:
 
 ```terminal
 $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev
 ```
+
+[Clang]: https://clang.llvm.org/
+[CMake]: https://cmake.org/
+[GTK development headers]: https://developer.gnome.org/gtk3/3.2/gtk-getting-started.html
+[Installing snapd]: https://snapcraft.io/docs/installing-snapd
+[Ninja build]: https://ninja-build.org/
+[pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
+[Snap Store]: https://snapcraft.io/store
+[snapd]: https://snapcraft.io/flutter
 
 ## Create a new project
 
@@ -97,9 +134,10 @@ $ flutter upgrade
 $ flutter config --enable-<platform>-desktop
 ```
 
-Where _&lt;platform&gt;_ is either `macos` or `linux`:
+Where _&lt;platform&gt;_ is `windows`, `macos`, or `linux`:
 
 ```terminal
+$ flutter config --enable-windows-desktop
 $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
@@ -107,19 +145,30 @@ $ flutter config --enable-linux-desktop
 To ensure that desktop _is_ installed,
 list the devices available.
 You should see something like the following
-(you'll see either macOS _or_ Linux, not both):
+(you'll see Windows, macOS, or Linux,
+depending on which platforms you've enabled):
 
 ``` terminal
 $ flutter devices
 1 connected device:
 
-macOS desktop • macos • darwin-x64 • Mac OS X 10.15.5 19F101
-Linux desktop • linux • linux-x64 • Linux
+Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.18362.1082]
+macOS (desktop) • macos • darwin-x64 • Mac OS X 10.15.5 19F101
+Linux (desktop) • linux • linux-x64 • Linux
 ```
 
 You might also run `flutter doctor` to see if there are
 any unresolved issues. It should look something like
-the following on macOS:
+the following on Windows:
+
+```terminal
+[✓] Flutter (Channel master, 1.22.0-10.0.pre.196, on Microsoft Windows [Version 10.0.18362.1082], locale en-US)
+[✓] Visual Studio - develop for Windows (Visual Studio Professional 2019 16.6.2)
+[✓] VS Code (version 1.48.2)
+[✓] Connected device (1 available)
+```
+
+On macOS, you might see something like the following:
 
 ```terminal
 [✓] Flutter (Channel master, 1.18.0-10.0.pre, on Mac OS X 10.15.4 19E287, locale
@@ -146,7 +195,7 @@ to install Android Studio and the Android SDK,
 for example, if you're writing a Linux desktop app.
 
 **After enabling desktop support, restart your IDE.**
-You should now see **macOS (desktop)** or 
+You should now see **windows (desktop)**, **macOS (desktop)**, or 
 **linux (desktop)** in the device pulldown.
 
 {{site.alert.note}}
@@ -164,6 +213,8 @@ Once you've configured your environment for desktop
 support, you can create and run a desktop app either
 in the IDE or from the command line.
 
+[creating a new Flutter project]: /docs/get-started/test-drive
+
 #### IDE
 
 After you've configured your environment to support
@@ -173,9 +224,11 @@ already running.
 Create a new app in your IDE and it automatically
 creates iOS, Android, and desktop versions of your app.
 (And web, too, if you've enabled [web support][].)
-From the device pulldown, select **macOS (desktop)**
-or **linux (desktop)** and run your app to see it
-launch on the desktop.
+From the device pulldown, select **windows (desktop)**,
+**macOS (desktop)**, or **linux (desktop)**
+and run your app to see it launch on the desktop.
+
+[web support]: /docs/get-started/web
 
 #### Command line
 
@@ -188,10 +241,11 @@ $ flutter create myapp
 $ cd myapp
 ```
 To launch your app from the command line,
-enter one of the following from the top
+enter one of the following commands from the top
 of the package:
 
 ```terminal
+$ flutter run -d windows
 $ flutter run -d macos
 $ flutter run -d linux
 ```
@@ -206,15 +260,56 @@ $ flutter run -d linux
 To generate a release build run one of the following commands:
 
 ```terminal
+$ flutter build windows
 $ flutter build macos
 $ flutter build linux
 ```
 
+### Distribution
+
 **In general, we don't recommend releasing a desktop app until
 desktop support is stable.**
-However, if you're interested in learning _how_ to publish
-a Linux app to the [Snap Store][], see
+There are not yet full instructions, or tooling support,
+for making distributable applications. However,
+here is some information about how to use the current
+build output on other machines for testing purposes.
+
+#### Windows
+
+The executable can be found in your project under
+`build\windows\runner\<build mode>\`.
+In addition to that executable, you need the following:
+
+* From the same directory:
+    * all the `.dll` files
+    * the `data` directory
+* The Visual C++ redistributables.
+  You can use any of the methods shown in the
+  [deployment example walkthroughs][] on the Microsoft site.
+  If you use the `application-local` option, you need to copy:
+    * `msvcp140.dll`
+    * `vcruntime140.dll`
+    * `vcruntime140_1.dll`
+
+Place the DLL files in a directory next to the executable
+and the other DLLs, and bundle them together in a zip file.
+
+[deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples?view=vs-2019
+
+#### macOS
+
+The `.app` is self-contained, and can be distributed as-is.
+
+#### Linux
+
+For information on publishing a Linux app to the
+[Snap Store][], see
 [Build and release a Linux desktop app][].
+
+As the tooling solidifies, stay tuned for updates on other ways
+to distribute a Linux desktop app.
+
+[Build and release a Linux desktop app]: /docs/deployment/linux
 
 ## Add desktop support to an existing app
 
@@ -268,7 +363,7 @@ edit the files directly. Unless you have a very specific
 reason, you should always make identical changes to both files.
 
 If you keep the App Sandbox enabled (which is required if you
-plan to distribute your app in the App Store), you need to manage
+plan to distribute your app in the [App Store][]), you need to manage
 entitlements for your application when you add certain plugins
 or other native functionality. For instance, using the
 [`file_chooser`][] plugin requires adding either the
@@ -277,9 +372,13 @@ or other native functionality. For instance, using the
 Another common entitlement is `com.apple.security.network.client`,
 which you must add if you make any network requests.
 
-Without the `com.apple.security.network.client` entitlement, for example, network requests will fail with a message such as:
-```
-flutter: SocketException: Connection failed (OS Error: Operation not permitted, errno = 1), address = example.com, port = 443
+Without the `com.apple.security.network.client` entitlement,
+for example, network requests will fail with a message such as:
+
+```terminal
+flutter: SocketException: Connection failed
+(OS Error: Operation not permitted, errno = 1),
+address = example.com, port = 443
 ```
 
 {{site.alert.secondary}}
@@ -298,6 +397,11 @@ flutter: SocketException: Connection failed (OS Error: Operation not permitted, 
 For more information on these topics,
 see [App Sandbox][] and [Entitlements][]
 on the Apple Developer site.
+
+[App Sandbox]: https://developer.apple.com/documentation/security/app_sandbox
+[App Store]: https://developer.apple.com/app-store/submissions/
+[Entitlements]: https://developer.apple.com/documentation/bundleresources/entitlements
+[`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 
 ### Hardened runtime
 
@@ -319,9 +423,13 @@ and `com.apple.security.device.microphone` (for App Sandbox).
 For more information on this topic,
 see [Hardened Runtime][] on the Apple Developer site.
 
+[Hardened Runtime]: https://developer.apple.com/documentation/security/hardened_runtime
+
 ## Plugin support
 
 Flutter on the desktop supports using and creating plugins.
+
+### Using a plugin
 
 To use a plugin that supports desktop,
 follow the steps for plugins in [using packages][].
@@ -329,7 +437,7 @@ Flutter automatically adds the necessary native code
 to your project, as with iOS or Android.
 
 We recommend the following plugins, which have been
-updated to work for macOS and Linux desktop apps:
+updated to work for desktop apps:
 
 * [`url_launcher`][]
 * [`shared_preferences`][]
@@ -340,23 +448,39 @@ that support desktop apps. These links lists _all_ packages,
 not just plugin packages. (Remember that _plugin packages_,
 or _plugins_, provide an interface to platform-specific services.)
 
+* [Windows packages][]
 * [macOS packages][]
 * [Linux packages][]
 
-### Creating a plugin
+[Linux packages]: {{site.pub}}/flutter/packages?platform=linux
+[macOS packages]: {{site.pub}}/flutter/packages?platform=macos
+[`path_provider`]: {{site.pub}}/packages/path_provider
+[`shared_preferences`]: {{site.pub}}/packages/shared_preferences
+[`url_launcher`]: {{site.pub}}/packages/url_launcher
+[using packages]: /docs/development/packages-and-plugins/using-packages
+[windows packages]: {{site.pub}}/flutter/packages?platform=windows
 
-Federated plugins are a recent addition to
-Flutter's plugin support. They allow you to
-separate functionality for different platforms
-into different packages; so the Android
-implementation can be in one package,
-and the macOS implementation in another.
-Desktop plugins are perfectly suited
-to be implemented as part of a federated
-plugin. For more information, see
-the following resources:
+### Writing a plugin
 
-* [Developing packages and plugins][], including the
+When you start building your own plugins,
+you’ll want to keep federation in mind.
+Federation is the ability to define several different packages,
+each targeted at a different set of platforms,
+brought together into a single plugin for ease of use by developers.
+For example, the Windows implementation of the `url_launcher` is really
+`url_launcher_windows`, but a Flutter developer can simply add the
+`url_launcher` package to their `pubspec.yaml` as a dependency and the
+build process pulls in the correct implementation based on the target platform.
+Federation is handy because different teams with different expertise
+can build plugin implementations for different platforms.
+You can add a new platform implementation to any
+endorsed federated plugin on pub.dev, so long as you coordinate
+this effort with the original plugin author.
+
+For more information, including information about endorsed plugins,
+see the following resources:
+
+* [Developing packages and plugins][], particularly the
   [Federated plugins][] section.
 * [How to write a Flutter web plugin, part 2][],
   covers the structure of federated plugins and
@@ -366,13 +490,18 @@ the following resources:
   recent enhancements to Flutter's plugin support.
 * [Federated Plugin proposal][]
 
+[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
+[Federated Plugin proposal]: /go/federated-plugins
+[Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[How to write a Flutter web plugin, part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
+
 ## Samples and codelabs
 
 [Write a Flutter desktop application][]
 : A codelab that walks you through building
-a desktop app (for macOS and Linux) that
-integrates the GitHub GraphQL API with your
-Flutter app.
+a desktop app that integrates the GitHub
+GraphQL API with your Flutter app.
 
 You can run the following samples as desktop apps,
 as well as download and inspect the source code to
@@ -387,68 +516,15 @@ Flutter Gallery [running web app][], [repo][]
   by following the instructions provided in the [README][].
 
 [Photo Search app][]
-: A sample app built as a desktop application
-  (for both macOS and Linux) that uses
-  the following desktop-supported plugins:
+: A sample app built as a desktop application that
+  uses the following desktop-supported plugins:
   * [`file_chooser`][]
   * [`menubar`][]
   * [`url_launcher`][]
 
-## What's next
-
-Stay tuned for updates on desktop support!
-We continue to develop support for macOS,
-Windows, and Linux.
-
-Watch the [Desktop shells][] page on the [Flutter wiki][]
-for more information and ongoing updates.
-
-
-[Android Studio]: {{site.android-dev}}/studio/install
-[App Sandbox]: https://developer.apple.com/documentation/security/app_sandbox
-[App Store]: https://developer.apple.com/app-store/submissions/
-[Build and release an iOS app]: /docs/deployment/ios
-[Build and release a Linux desktop app]: /docs/deployment/linux
-[Clang]: https://clang.llvm.org/
-[CMake]: https://cmake.org/
-[CocoaPods]: https://cocoapods.org/
-[`connectivity`]: {{site.pub}}/packages/connectivity
-[Desktop shells]: {{site.repo.flutter}}/wiki/Desktop-shells
-[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
-[Federated Plugin proposal]: /go/federated-plugins
-[Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
-[creating a new Flutter project]: /docs/get-started/test-drive
-[Entitlements]: https://developer.apple.com/documentation/bundleresources/entitlements
-[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
-[`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
-[Flutter SDK]: /docs/get-started/install
-[Flutter wiki]: {{site.repo.flutter}}/wiki/
-[flutter-desktop-embedding]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins#dart
-[GTK development headers]: https://developer.gnome.org/gtk3/3.2/gtk-getting-started.html
-[Hardened Runtime]: https://developer.apple.com/documentation/security/hardened_runtime
-[How to write a Flutter web plugin, part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
-[install the Flutter and Dart plugins]: /docs/get-started/editor
-[Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
-[Linux packages]: {{site.pub}}/flutter/packages?platform=linux
-[macOS packages]: {{site.pub}}/flutter/packages?platform=macos
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
-[Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
-[Ninja build]: https://ninja-build.org/
-[`path_provider`]: {{site.pub}}/packages/path_provider
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
-[pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
 [README]: {{site.github}}/flutter/gallery#flutter-gallery
 [repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [running web app]: https://flutter.github.io/gallery/#/
-[setting up an editor]: /docs/get-started/editor
-[`shared_preferences`]: {{site.pub}}/packages/shared_preferences
-[Snap Store]: https://snapcraft.io/store
-[snapd]: https://snapcraft.io/flutter
-[`url_launcher`]: {{site.pub}}/packages/url_launcher
-[using packages]: /docs/development/packages-and-plugins/using-packages
-[Visual Studio Code]: /docs/development/tools/vs-code
-[web support]: /docs/get-started/web
-[Xcode]: https://developer.apple.com/xcode/
 [Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html
-

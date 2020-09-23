@@ -164,10 +164,40 @@ A federated plugin requires the following packages:
   support the app-facing package. Having a single package
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
+
+#### Endorsed federated plugin
+
+Ideally, when adding a platform implementation to
+a federated plugin, you will coordinate with the package
+author to include your implementation.
+In this way, the original author _endorses_ your
+implementation.
+
+For example, say you write a `foobar_windows`
+implementation for the (imaginary) `foobar` plugin. 
+In an endorsed plugin, the original `foobar` author
+adds your Windows implementation as a dependency
+in the pubspec for the app-facing package.
+Then, when a developer includes the `foobar` plugin
+in their Flutter app, the Windows implementation,
+as well as the other endorsed implementations,
+are automatically available to the app.
+
+#### Non-endorsed federated plugin
+
+If you can't, for whatever reason, get your implementation
+added by the original plugin author, then your plugin
+is _not_ endorsed. A developer can still use your
+implementation, but must manually add the plugin
+to the app's pubspec file. So, the developer
+must include both the `foobar` dependency _and_
+the `foobar_windows` dependency in order to achieve
+full functionality.
   
-For more information on federated plugins, why they are useful, and how they are
-implemented, see the Medium article by Harry Terkelsen, [How To Write a Flutter
-Web Plugin, Part 2][].
+For more information on federated plugins,
+why they are useful, and how they are
+implemented, see the Medium article by Harry Terkelsen,
+[How To Write a Flutter Web Plugin, Part 2][].
 
 ### Specifying a plugin's supported platforms {#plugin-platforms}
 
