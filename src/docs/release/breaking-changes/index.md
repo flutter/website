@@ -25,6 +25,7 @@ release, and listed in alphabetical order:
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
 [The new Form, FormField auto-validation API]: /docs/release/breaking-changes/form-field-autovalidation-api
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
+[Bottom Navigation Item Title]: /docs/release/breaking-changes/bottom-navigation-title-to-label
 
 ### Released in Flutter 1.20
 
