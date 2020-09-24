@@ -1,7 +1,7 @@
 ---
 title: Flutter documentation
 short-title: Docs
-description: The landing page for Flutter documentation.
+description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
 ---
 
 {% for card in site.data.docs_cards -%}
