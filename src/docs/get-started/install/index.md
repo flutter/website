@@ -1,6 +1,6 @@
 ---
 title: Install
-description: Install Flutter and get started. Downloads available for windows, macOS, Linux and Chrome OS operating systems.
+description: Install Flutter and get started. Downloads available for Windows, macOS, Linux, and Chrome OS operating systems.
 next:
   title: Set up an editor
   path: /docs/get-started/editor
