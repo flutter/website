@@ -11,7 +11,7 @@ existing plugins that support the macOS or Linux platforms,
 or you can create your own.
 
 {{site.alert.warning}}
-  **Work in progress!**
+  **Alpha!**
   This page covers desktop support,
   which is available as alpha-quality
   features in the Flutter dev channel.
