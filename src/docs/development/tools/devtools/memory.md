@@ -10,21 +10,31 @@ Allocated Dart objects created using a class constructor
 live in a portion of memory called the heap.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## DevTools memory page
+=======
+## DevTools memory page.
+>>>>>>> 8b7a14f7 (Integrated PR suggestions.)
 
 DevTools Memory page lets you peek at how an isolate is using
 memory at a given moment. Using Monitor Allocations and
 Reset options, you can analyze accumulator counts. The accumulators
+<<<<<<< HEAD
 =======
 DevTools Memory pane lets you peek at how an isolate is using
 memory at a given moment. This pane using Monitor Allocations and
 Reset, can display accumulator counts. The accumulators
 >>>>>>> 7d81fd71 (Updated Memory Docs)
+=======
+>>>>>>> 8b7a14f7 (Integrated PR suggestions.)
 can be used to study the rate of memory allocations,
 if you suspect your application is leaking memory or has
 other bugs relating to memory allocation.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8b7a14f7 (Integrated PR suggestions.)
 A Snapshot is a complete view of all objects in the Dart memory heap.
 Each time a snapshot is taken, an analysis is performed over the memory
 data.  The analysis attempts to identify any memory patterns that may
@@ -32,6 +42,7 @@ cause leaks or lead to application crashes. For example, loading large
 assets for thumbnail-sized images in inefficient, memory usage can
 be improved by loading smaller assets or adjusting the cacheWidth/cacheHeight
 to decode an image to a smaller size reducing the memory usage of the
+<<<<<<< HEAD
 ImageCache. The analysis catches issues like this.
 =======
 Snapshot is a complete view of all Dart memory. Additionally, an analysis
@@ -40,6 +51,9 @@ memory patterns that may cause leaks and could eventually crash a Flutter
 application.  For example, loading large images, megabyte size, when a
 thumbnail or something much smaller would have been much more efficient.
 >>>>>>> 7d81fd71 (Updated Memory Docs)
+=======
+ImageCache. The analysis will catch issues like this.
+>>>>>>> 8b7a14f7 (Integrated PR suggestions.)
 
 Memory profiling consists of six parts, each increasing
 in granularity:
@@ -57,8 +71,8 @@ in granularity:
   (instances to be GC'd)
 =======
 * Android specific memory chart (via Android's ADB tool)
-* Event timeline e.g., garbage collection (GC), and a user's memory tooling interactions
-* Monitoring of Dart total instances/bytes size totals and managing accumulators to detect memory leaks
+* Event timeline )e.g., garbage collection (GC) events, user memory tooling interactions)
+* Monitoring of Dart total instances, size and accumulator monitoring to detect memory leaks
 * Analysis of a Snapshot to detect possible Flutter memory problems 
 * Snapshot of all live memory class instances and sentinels (instances
 to be GC'd)
@@ -232,47 +246,46 @@ The top line of the memory profile page has a number of buttons and dropdowns to
 <dd>The memory overview chart is live and displaying the
     current time and the latest memory data received.</dd>
 <dt markdown="1">**Clear**</dt>
-<dd>All collected data plotted in charts and event timeline are deleted and all snapshots, analyses and allocation monitoring is deleted too.</dd>
-<dt markdown="1">**Display dropdown**</dt>
-<dd>All memory data collected (timeseries).
-    The left-most or first time/data (memory information) when the application was launched. The right-most or last time/data is the continual memory information received (live) until the application is stopped.  The timeline is scaled by the selected "Display" dropdown e.g., 
+<dd>Clear all collected data from the memory profiler.</dd>
+<dt markdown="1">**Display**</dt>
+<dd>The duration of the x-axis. For example, if this dropdown is set to "Display 5 minutes", memory data from the last 5 minutes will be displayed.
 <dt markdown="1">- Display 1 Minute</dt>
 <dt markdown="1">- Display 5 Minutes</dt>
 <dt markdown="1">- Display 10 Minutes</dt>
 <dt markdown="1">- Display All Minutes (slider disabled)</</dt>
 </dd>
 <dt markdown="1">**Source**</dt>
-<dd>Source can be either "Live Feed" current connected running Flutter application or offline "Export" file.</dd>
+<dd>Source can be either "Live Feed", which pulls data from the connected Flutter app, or one of the available offline data files, which are created by clicking "Export".</dd>
 <dt markdown="1">**Android Memory**</dt>
 <dd>Displays or hides the Android Memory Chart.</dd>
 <dt markdown="1">**GC**</dt>
-<dd>Initiates a garbage collection - compaction of the heap</dd>
+<dd>Initiates a garbage collection - compaction of the heap.</dd>
 <dt markdown="1">**Export**</dt>
-<dd>Saves collected data for Event Timeline, Memory Overview Chart and Android Overview Chart. Files saved are displayed under the Source drop-down. Selecting a file will load the offline data.</dd>
+<dd>Saves collected data for Event Timeline, Memory Overview Chart and Android Overview Chart. Files saved are displayed under the Source dropdown. Selecting a file will load the offline data.</dd>
 </dl>
 
 ## Memory Actions
 
-Below the memory charts (Event Timeline, Memory Overview and Android Overview charts) are actions to collect information about memory e.g., Snapshots, Table Tree view, Treemap view, Groupings, or Monitor Allocations, Searching and Filtering.
+Below the memory charts (Event Timeline, Memory Overview and Android Overview charts) are actions to collect information about memory usage.
 
 ![Screenshot of a memory actions]({% asset tools/devtools/memory_actions.png @path %}){:width="100%"}
 
 <dl markdown="1">
 <dt markdown="1">**Snapshot**</dt>
-<dd markdown="1">Display a table of all current active
-    memory objects.  Clicking the Snapshot button makes a request to the Dart VM to collect the current state of memory.  A snapshot displays a table of current memory objects. The memory objects can be sorted by class name, size, allocated instances, and so on.(see [Snapshot classes](#snapshot-classes)).
+<dt markdown="1">**Table**</dt>
+<dd markdown="1">If Treemap switch is off the snapshot displays all currently active memory objects in a table.  Clicking the Snapshot button makes a request to the Dart VM to collect the current state of memory.  The memory objects can be sorted by attributes such as class name, size, allocated instances (see [Snapshot classes](#snapshot-classes)).
 <dt markdown="1">**Treemap**</dt>
-<dd markdown="1">Display all collected snapshots, analysis and monitor in a Table Tree view (most-detailed) default (see [Snapshot classes](#snapshot-classes)).  If Treemap is switched on then the last snapshot, high-level data, is disabled as a tree map. (TBD details).</dd>
+<dd markdown="1">If the Treemap switch is on the snapshot displays currently active memory objects, the last snapshot, memory in a high-level view as a tree map. (TBD details).</dd>
 <dt markdown="1">**Group By**</dt>
-<dd markdown="1">Dropdown to select how trees are ordered for display by instance or by class name.</dd>
+<dd markdown="1">Dropdown to select how data is grouped, which can either be by instance or by class name.</dd>
 <dt markdown="1">**Collapse All**</dt>
-<dd markdown="1">Collapse all nodes in the Table Tree view.</dd>
+<dd markdown="1">Collapse all nodes in the table.</dd>
 <dt markdown="1">**Expand All**</dt>
-<dd markdown="1">Expand all nodes in the Table Tree view.</dd>
+<dd markdown="1">Expand all nodes in the table.</dd>
 <dt markdown="1">**Monitor Allocations**</dt>
-<dd markdown="1">User clicked on Monitor Allocations.  To record the number of instances and size of all instances in bytes.  The accumulators (Delta column) can be used to track memory allocated since last reset.</dd>
+<dd markdown="1">Records the number of instances and size of all instances in bytes.  Clicking on "Monitor" button will populate another table with instance allocation data.  For each instance in the allocation table, the "Delta" column reflects the number of memory allocation since the last reset.</dd>
 <dt markdown="1">**Reset Accumulators**</dt>
-<dd>User clicked Reset button.  Zeros the accumulators (Delta column).  When next Monitor Allocations is pressed the count/ of new instances and size of new instnaces since the last reset.</dd>
+<dd>Resets the accumulator counts (Delta columns) for each instance in the allocation table.  The next time the "Monitor" button is pressed, the "Delta" columns displays the populate with the new instances and sizes since the last reset.</dd>
 <dt markdown="1">**Search**</dt>
 <dd>The search field is enabled when a snapshot exists.  The current selected snapshot, or last snapshot, class name will be searched (auto-completed).  Typing, or selecting a name from the dropdown, will navigate to that class name in the snapshot.</dd>
 <dt markdown="1">**Filter**</dt>
@@ -300,6 +313,7 @@ The quantities plotted on the y-axis are (from top to bottom):
 <dd>Time of the collected memory information
     (capacity, used, external, RSS (resident set size),
 <<<<<<< HEAD
+<<<<<<< HEAD
     and GC (garbage collection)).</dd>
 <dt markdown="1">**Hover information of collected data**</dt>
 <dd>The collected memory data at a particular point in time (x-axis).</dd>
@@ -309,6 +323,11 @@ The quantities plotted on the y-axis are (from top to bottom):
 <dd>At a particular time (x-axis) the detailed collected
     memory data.</dd>
 >>>>>>> 7d81fd71 (Updated Memory Docs)
+=======
+    and GC (garbage collection)).</dd>
+<dt markdown="1">**Hover information of collected data**</dt>
+<dd>The collected memory data at a particular point in time (x-axis).</dd>
+>>>>>>> 8b7a14f7 (Integrated PR suggestions.)
 <dt markdown="1">**Capacity**</dt>
 <dd>Current capacity of the heap.</dd>
 <dt markdown="1">**Used**</dt>
@@ -348,8 +367,12 @@ When connected to an Android app, DevTools collects Android's ADB (Android Debug
 =======
 ## Memory Android Chart (ADB)
 
+<<<<<<< HEAD
 DevTools, for an Android app, collects Android's ADB tool parsing the meminfo section of ADB's App Summary section.  This section is the most interesting from a high-level
 >>>>>>> 7d81fd71 (Updated Memory Docs)
+=======
+When connected to an Android app, DevTools collects Android's ADB (Android Debug Bridge) meminfo from an ADB app summary (polled every 500 ms).  This meminfo section is the most interesting at a high-level.  If you were to collect this info from the the ADB tool, this is what it would look like:
+>>>>>>> 8b7a14f7 (Integrated PR suggestions.)
 ```
 > adb shell dumpsys meminfo io.flutter.demo.gallery -d
 
@@ -367,6 +390,7 @@ DevTools, for an Android app, collects Android's ADB tool parsing the meminfo se
                TOTAL:   200369       TOTAL SWAP PSS:    82168
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 This chart is another timeseries graph of the state of Android memory as the application is running.
 The quantities plotted on the y-axis are the above values (Java Heap, Native Heap, Code size, Stack size, Graphics stack, System size and total).
@@ -415,6 +439,10 @@ In other words, it shows the polled state of the memory
 every 500 ms. This helps give a live appearance on the
 state of the memory as the application is running.
 The quantities plotted on the y-axis are (from top to bottom):
+=======
+This chart is another timeseries graph of the state of Android memory as the application is running.
+The quantities plotted on the y-axis are the above values (Java Heap, Native Heap, Code size, Stack size, Graphics stack, System size and total).
+>>>>>>> 8b7a14f7 (Integrated PR suggestions.)
 
 ## Event Timeline
 
@@ -499,7 +527,7 @@ button again resets both accumulators to zero.
 =======
 ![Screenshot of the event timeline legend]({% asset tools/devtools/memory_eventtimeline_legend.png @path %}){:width="100%"}
 
-The above list of glyphs plotted on the Event Timeline corresponds to users actions or a VM has garbaged collected.
+This legend shows the symbol for each DevTools event and its meaning
 
 <dl markdown="1">
 <dt markdown="1">**Snapshot**</dt>
