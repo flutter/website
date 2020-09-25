@@ -90,7 +90,7 @@ you'll need to set up physical device deployment in Xcode
 and an Apple Developer account. If your app is using Flutter plugins,
 you will also need the third-party CocoaPods dependency manager.
 
- 1. You may skip this step if your apps do not depend on
+ 1. You can skip this step if your apps do not depend on
  [Flutter plugins][] with native iOS code.
  [Install and set up CocoaPods][] by running the following commands:
 
@@ -98,8 +98,8 @@ you will also need the third-party CocoaPods dependency manager.
     $ sudo gem install cocoapods
     ```
 {{site.alert.note}}
- The default version of Ruby requires `sudo` to install the CocoaPods gem.
- If you are using a Ruby Version manager, you may need to run without `sudo`.
+  The default version of Ruby requires `sudo` to install the CocoaPods gem.
+  If you are using a Ruby Version manager, you may need to run without `sudo`.
 {{site.alert.end}}
 
  1. Follow the Xcode signing flow to provision your project:
@@ -157,7 +157,7 @@ you will also need the third-party CocoaPods dependency manager.
 [Check the app's Bundle ID]: /images/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: https://developer.apple.com/support/compare-memberships
 [Mac App Store]: https://itunes.apple.com/us/app/xcode/id497799835
-[Flutter plugins]: /docs/development/packages-and-plugins/using-packages
+[Flutter plugins]: /docs/development/packages-and-plugins/developing-packages#types
 [Install and set up CocoaPods]: https://guides.cocoapods.org/using/getting-started.html#installation
 [Trust Mac]: /images/setup/trust-computer.png
 [web download]: https://developer.apple.com/xcode/
