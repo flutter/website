@@ -110,6 +110,7 @@
       { "source": "/using-packages", "destination": "/docs/development/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/web-analogs", "destination": "/docs/get-started/flutter-for/web-devs", "type": 301 },
       { "source": "/webflutter.dev/web", "destination": "/web", "type": 301 },
+      { "source": "/docs/whats-new-archive", "destination": "/docs/whats-new", "type": 301 },
       { "source": "/widgets", "destination": "/docs/development/ui/widgets/catalog", "type": 301 },
       { "source": "/widgets/:rest*", "destination": "/docs/development/ui/widgets/:rest*", "type": 301 },
       { "source": "/widgets-intro", "destination": "/docs/development/ui/widgets-intro", "type": 301 },
