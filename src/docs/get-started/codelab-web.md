@@ -450,7 +450,7 @@ Add the code below marked as NEW:
 ```dart
 ...
 return Form(
-  onChanged: () => _updateFormProgress, // NEW
+  onChanged: _updateFormProgress,  // NEW
   child: Column(
 ...
 ```
