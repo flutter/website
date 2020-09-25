@@ -1,10 +1,10 @@
 ---
-title: What's new archive
-description: An archive of what's new on the site.
+title: What’s new
+description: A list of what’s new on flutter.dev and related sites.
 ---
 
-This archive contains current and previous announcements of
-what's new on the site.
+This page contains current and previous announcements of
+what's new on the Flutter website and blog.
 
 To stay on top of Flutter announcements, including breaking changes,
 join the [flutter-announce][] Google group.

@@ -25,7 +25,7 @@ description: Get started with Flutter. Widgets, examples, updates, and API docs 
 ## What's new on this site
 
 To see changes to the site since our last release,
-see the [What's new archive][].
+see [What's new][].
 
 ## New to Flutter?
 
@@ -115,6 +115,6 @@ You might also find these docs useful:
 [Using packages]: /docs/development/packages-and-plugins/using-packages
 [videos]: /docs/resources/videos
 [Web]: /docs/get-started/flutter-for/web-devs
-[What's new archive]: /docs/whats-new-archive
+[What's new]: /docs/whats-new
 [Write your first Flutter app]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
