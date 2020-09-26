@@ -90,69 +90,83 @@ you'll need to set up physical device deployment in Xcode
 and an Apple Developer account. If your app is using Flutter plugins,
 you will also need the third-party CocoaPods dependency manager.
 
- 1. You can skip this step if your apps do not depend on
- [Flutter plugins][] with native iOS code.
- [Install and set up CocoaPods][] by running the following commands:
+<ol markdown="1">
+<li markdown="1">
 
-    ```terminal
-    $ sudo gem install cocoapods
-    ```
+You can skip this step if your apps do not depend on
+[Flutter plugins][] with native iOS code.
+[Install and set up CocoaPods][] by running the following commands:
+
+```terminal
+$ sudo gem install cocoapods
+```
 {{site.alert.note}}
   The default version of Ruby requires `sudo` to install the CocoaPods gem.
   If you are using a Ruby Version manager, you may need to run without `sudo`.
 {{site.alert.end}}
 
- 1. Follow the Xcode signing flow to provision your project:
+</li>
 
-     {: type="a"}
-     1. Open the default Xcode workspace in your project by
-        running `open ios/Runner.xcworkspace` in a terminal
-        window from your Flutter project directory.
-     1. Select the device you intend to deploy to in the device
-        drop-down menu next to the run button.
-     1. Select the `Runner` project in the left navigation panel.
-     1. In the `Runner` target settings page,
-        make sure your Development Team is selected.
-        The UI varies depending on your version of Xcode.
-        * For Xcode 10, look under **General > Signing > Team**.
-        * For Xcode 11 and newer, look under
-        **Signing & Capabilities > Team**.
+<li markdown="1">
 
-        When you select a team,
-        Xcode creates and downloads a Development Certificate,
-        registers your device with your account,
-        and creates and downloads a provisioning profile (if needed).
+Follow the Xcode signing flow to provision your project:
 
-        * To start your first iOS development project,
-          you might need to sign into
-          Xcode with your Apple ID. ![Xcode account add][]{:.mw-100}
-          Development and testing is supported for any Apple ID.
-          Enrolling in the Apple Developer Program is required to
-          distribute your app to the App Store.
-          For details about membership types,
-          see [Choosing a Membership][].
+   {: type="a"}
+   1. Open the default Xcode workspace in your project by
+      running `open ios/Runner.xcworkspace` in a terminal
+      window from your Flutter project directory.
+   1. Select the device you intend to deploy to in the device
+      drop-down menu next to the run button.
+   1. Select the `Runner` project in the left navigation panel.
+   1. In the `Runner` target settings page,
+      make sure your Development Team is selected.
+      The UI varies depending on your version of Xcode.
+      * For Xcode 10, look under **General > Signing > Team**.
+      * For Xcode 11 and newer, look under
+      **Signing & Capabilities > Team**.
 
-        <a name="trust"></a>
-        * The first time you use an attached physical device for iOS
-          development, you need to trust both your Mac and the
-          Development Certificate on that device.
-          Select `Trust` in the dialog prompt when
-          first connecting the iOS device to your Mac.
+      When you select a team,
+      Xcode creates and downloads a Development Certificate,
+      registers your device with your account,
+      and creates and downloads a provisioning profile (if needed).
 
-          ![Trust Mac][]{:.mw-100}
+      * To start your first iOS development project,
+        you might need to sign into
+        Xcode with your Apple ID. ![Xcode account add][]{:.mw-100}
+        Development and testing is supported for any Apple ID.
+        Enrolling in the Apple Developer Program is required to
+        distribute your app to the App Store.
+        For details about membership types,
+        see [Choosing a Membership][].
 
-          Then, go to the Settings app on the iOS device,
-          select **General > Device Management**
-          and trust your Certificate.
-          For first time users, you may need to select
-          **General > Profiles > Device Management** instead.
+      <a name="trust"></a>
+      * The first time you use an attached physical device for iOS
+        development, you need to trust both your Mac and the
+        Development Certificate on that device.
+        Select `Trust` in the dialog prompt when
+        first connecting the iOS device to your Mac.
 
-        * If automatic signing fails in Xcode, verify that the project's
-          **General > Identity > Bundle Identifier** value is unique.
-          ![Check the app's Bundle ID][]{:.mw-100}
+        ![Trust Mac][]{:.mw-100}
 
- 1. Start your app by running `flutter run`
-    or clicking the Run button in Xcode.
+        Then, go to the Settings app on the iOS device,
+        select **General > Device Management**
+        and trust your Certificate.
+        For first time users, you may need to select
+        **General > Profiles > Device Management** instead.
+
+      * If automatic signing fails in Xcode, verify that the project's
+        **General > Identity > Bundle Identifier** value is unique.
+        ![Check the app's Bundle ID][]{:.mw-100}
+
+</li>
+
+<li markdown="1">
+
+Start your app by running `flutter run`
+or clicking the Run button in Xcode.
+
+</li>
+</ol>
 
 [Check the app's Bundle ID]: /images/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: https://developer.apple.com/support/compare-memberships
