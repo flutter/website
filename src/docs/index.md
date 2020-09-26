@@ -45,7 +45,7 @@ Coming from another platform? Check out Flutter for:
 
 [Understanding constraints][]
 : Once you understand that "Constraints
-  flow up. Sizes flow down. Parents set
+  flow down. Sizes flow up. Parents set
   positions", then you are well on your
   way to understanding Flutter's layout model.
 
