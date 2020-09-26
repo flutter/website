@@ -32,11 +32,11 @@ shown when building text fields.
 ## System font rendering
 
 If your iOS 14 app uses system fonts such as San Francisco (used by default
-by Cupertino widgets), text will not render correctly and will incorrectly
-be shown in a condensed letter spacing due to changes in iOS's font loading
-mechanism. This affects production apps on iOS 14.
+by Cupertino widgets), text will be incorrectly rendered in a condensed letter
+spacing due to changes in iOS's font loading mechanism. This affects debug and
+production apps on iOS 14.
 
-To ensure correct font renderer, you should build your production apps with
+To ensure correct font rendering, you should build your production apps with
 Flutter 1.22 beta.
 
 ## Debugging Flutter
