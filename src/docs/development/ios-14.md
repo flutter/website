@@ -41,8 +41,8 @@ Flutter 1.22 beta.
 
 ## Debugging Flutter
 
-Due to added security around local network permissions in
-iOS 14, a permission dialog box must now be accepted for
+Due to added security around [local network permissions in
+iOS 14][], a permission dialog box must now be accepted for
 each application in order to enable Flutter debugging
 functionalities such as hot-reload and DevTools.
 
@@ -57,7 +57,8 @@ to the [add-to-app project setup guide][],
 to re-enable flutter attach for debug builds on physical
 devices on iOS 14.
 
-[add-to-app project setup guide]: /docs/development/add-to-app/ios/project-setup
+[local network permissions in iOS 14]: https://developer.apple.com/news/?id=0oi77447
+[add-to-app project setup guide]: /docs/development/add-to-app/ios/project-setup#local-network-privacy-permissions
 
 ## Launching debug Flutter without a host computer
 
