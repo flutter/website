@@ -274,9 +274,6 @@ If the performance overlay shows red in the UI graph,
 start by profiling the Dart VM, even if the GPU graph
 also shows red.
 
-PENDING: Other than saying "debug with DevTools", what
-can be said here?
-
 ## Identifying problems in the GPU graph
 
 Sometimes a scene results in a layer tree that is easy to construct,
