@@ -40,7 +40,7 @@ If DevTools is not connected to a running application, you can
 access the tool from the landing page that appears once you have launched
 DevTools (see [installation instructions][]).
 
-![Screenshot of app size access on landing page]({% asset tools/devtools/app_size_access_landing_page.png @path %})
+![Screenshot of app size access on landing page]({% asset tools/devtools/app_size_access_landing_page.png @path %}){:width="100%"}
 
 ## Analysis tab
 
