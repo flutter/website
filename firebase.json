@@ -235,7 +235,8 @@
       { "source": "/go/desktop-resize-macos", "destination": "https://docs.google.com/document/d/1slGllp1Jhde7wkF6snqGhdrZwHV1VVmXeIF3f0t24JU/edit?usp=sharing", "type": 301 },
       { "source": "/go/rfc-ios8-deprecation", "destination": "https://docs.google.com/document/d/1G5L7ux7ofQp3bCSNAt4ovvL5-8PF_rqo2erAVIcHHeg", "type": 301 },
       { "source": "/go/reorderable-list-view-update", "destination": "https://docs.google.com/document/d/1JzNtMQ-jnPnSHEBoi6IO0x2qMMylwhvRslEDcmqiwSs", "type": 301 },
-      { "source": "/go/plugins-team", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfpPqJYuL_RzLaTCjrWYw73Zrrei3YiU8B5eTrDBh4fuGhbXw/viewform?usp=sf_link", "type": 301 }
+      { "source": "/go/plugins-team", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfpPqJYuL_RzLaTCjrWYw73Zrrei3YiU8B5eTrDBh4fuGhbXw/viewform?usp=sf_link", "type": 301 },
+      { "source": "/go/triage-2021-rfp", "destination": "https://docs.google.com/document/d/1aD2jaOs2WaDNWQi_N5N5kYn7MGj-iYxxAkR33cYiSIY", "type": 301 }
     ]
   }
 }
