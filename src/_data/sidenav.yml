@@ -135,16 +135,18 @@
     - title: Platform integration
       permalink: /docs/development/platform-integration
       children:
+        - title: Adding iOS App Clip support
+          permalink: /docs/development/platform-integration/ios-app-clip
+        - title: Apple Watch support
+          permalink: /docs/development/platform-integration/apple-watch
         - title: C and C++ interop
           permalink: /docs/development/platform-integration/c-interop
+        - title: Hosting native Android and iOS views
+          permalink: /docs/development/platform-integration/platform-views
         - title: Web FAQ
           permalink: /docs/development/platform-integration/web
         - title: Writing platform-specific code
           permalink: /docs/development/platform-integration/platform-channels
-        - title: Apple Watch support
-          permalink: /docs/development/platform-integration/apple-watch
-        - title: Adding iOS App Clip support
-          permalink: /docs/development/platform-integration/ios-app-clip
     - title: Packages & plugins
       permalink: /docs/development/packages-and-plugins
       children:
