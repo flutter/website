@@ -230,7 +230,7 @@ matchers for common cases.
 [`findsNWidgets`][]
 : Verifies that a specific number of widgets are found.
 
-[`matchesGoldenFile`[]
+[`matchesGoldenFile`][]
 : Verifies that a widget's rendering matches a particular bitmap image ("golden file" testing).
 
 ### Complete example
