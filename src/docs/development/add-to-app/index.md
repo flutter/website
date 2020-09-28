@@ -27,7 +27,7 @@ It currently has the _**following limitations**_:
   application isn't supported.
 * Plugins used in add-to-app on Android should migrate
   to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
-  Plugins that don't support `FlutterPlugin` may have unexpected
+* Plugins that don't support `FlutterPlugin` may have unexpected
   behaviors if they make assumptions that are untenable in add-to-app
   (such as assuming that a Flutter `Activity` is always present).
 * As of v1.17, the Flutter module only supports AndroidX applications on Android.
