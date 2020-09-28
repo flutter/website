@@ -167,7 +167,8 @@ The same associated domains entitlement needs to be added to your main app as
 well.
 
 Copy the `<app clip target>.entitlements` file from your App Clip group to
-your main app group.
+your main app group and rename it to the same name as your main target
+such as `Runner.entitlements`.
 
 Open the file and delete the `Parent Application Identifiers` entry for the main
 app's entitlement file (leave that entry for the App Clip's entitlement file).
@@ -302,8 +303,10 @@ flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 
 target 'Runner'
 target '<name of your App Clip target>'
-end
 ```
+
+At the top of the file, also uncomment `platform :ios, '9.0'` and set the
+version to the lowest of the 2 target's iOS Deployment Target.
 
 For add-to-app, add to:
 
@@ -344,6 +347,9 @@ target from the scheme drop-down, selecting an iOS 14 device and pressing run.
 image="development/platform-integration/ios-app-clip/run-select.png"
 %}
 
+To test launching an App Clip from the beginning, also consult Apple's doc on
+[Testing Your App Clip's Launch Experience][].
+
 ## Debugging, hot reload
 
 Unfortunately `flutter attach` cannot auto-discover the Flutter session
@@ -370,3 +376,4 @@ Such as
 [iOS add-to-app APIs]: /docs/development/add-to-app/ios/add-flutter-screen
 [custom Flutter route]: /docs/development/add-to-app/ios/add-flutter-screen#route
 [App Clip sample]: {{site.github}}/flutter/samples/ios_app_clip
+[Testing Your App Clip's Launch Experience]: https://developer.apple.com/documentation/app_clips/testing_your_app_clip_s_launch_experience
