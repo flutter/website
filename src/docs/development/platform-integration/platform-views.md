@@ -4,14 +4,14 @@ short-title: Platform-views
 description: Learn how to host native Android and iOS views in your Flutter app with Platform Views.
 ---
 
-As of the Flutter 1.22 release, you can now host
-Android and iOS views from your Flutter mobile app.
+As of the Flutter 1.22 release, support for hosting
+Android and iOS views from a Flutter mobile app
+is now production ready.
 This allows you, for example, to use the native
 Google Maps from the Android and iOS SDKs
 directly inside your Flutter app, by using Platform Views.
 The [`google_maps_flutter`][] and [`webview_flutter`][]
-plugins are both updated (and are in `developer_preview`)
-with the new functionality.
+plugins are updated to 1.0.
 
 [`google_maps_flutter`]: {{site.pub}}/packages/google_maps_flutter
 [`webview_flutter`]: {{site.pub}}/packages/webview_flutter
@@ -19,11 +19,13 @@ with the new functionality.
 This page discusses how to host your own native components
 within a Flutter app.
 
-## Hybrid composition on Android
+## Android
 
-Hybrid composition on Android is enabled by default,
+Flutter supports two modes: Virtual displays and Hybrid composition.
+
+In 1.22, Hybrid composition is enabled by default,
 and only requires API level 19 (instead of API level 20,
-as the previous version required).
+which the previous version required).
 Also, these updates fix all known keyboard,
 and accessibility issues for Android views.
 
@@ -234,6 +236,9 @@ the native view while an animation is taking place in Dart.
 For example, you could use a placeholder such as capturing a
 screenshot of the native view and rendering the placeholder
 while the animation is happening.
+
+Also, if a keyboard is not needed, you might find that virtual
+display mode works better for Android releases earlier than 10.
 
 ## iOS
 
