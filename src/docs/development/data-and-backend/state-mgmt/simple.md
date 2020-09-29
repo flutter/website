@@ -189,6 +189,28 @@ because they are a bit low-level for what we're trying to do.
 Instead, we are going to use a package that works with the low-level
 widgets but is simple to use. It's called `provider`.
 
+Before working with `provider`,
+don't forget to add the dependency on it to your `pubspec.yaml`.
+
+```yaml
+name: my_name
+description: Blah blah blah.
+
+# ...
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  provider: ^3.0.0
+
+dev_dependencies:
+  # ...
+```
+
+Now you can `import 'package:provider/provider.dart';`
+and start building.
+
 With `provider`, you don't need to worry about callbacks or
 `InheritedWidgets`. But you do need to understand 3 concepts:
 
@@ -446,27 +468,10 @@ If you want something simpler,
 see what the simple Counter app looks like when
 [built with `provider`][].
 
-When you're ready to play around with `provider` yourself,
-don't forget to add the dependency on it to your `pubspec.yaml` first.
-
-```yaml
-name: my_name
-description: Blah blah blah.
-
-# ...
-
-dependencies:
-  flutter:
-    sdk: flutter
-
-  provider: ^3.0.0
-
-dev_dependencies:
-  # ...
-```
-
-Now you can `import 'package:provider/provider.dart';`
-and start building.
+By following along with these articles, you've greatly 
+improved your ability to create state-based applications. 
+Try building an application with `provider` yourself to 
+master these skills. 
 
 [built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
 [check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper
