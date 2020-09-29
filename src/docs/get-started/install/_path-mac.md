@@ -41,7 +41,7 @@ whenever you open a new window. For example:
     Verify that the `flutter` command is available by running:
 
     ```terminal
-    $ which flutter
+    $ where flutter
     ```
 
 {% include dart-tool.md %}
