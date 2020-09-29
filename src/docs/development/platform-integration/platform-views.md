@@ -166,7 +166,7 @@ class NativeViewFactory extends PlatformViewFactory {
   @NonNull private final BinaryMessenger messenger;
   @NonNull private final View containerView;
 
-  WebViewFactory(@NonNull BinaryMessenger messenger, @NonNull View containerView) {
+  NativeViewFactory(@NonNull BinaryMessenger messenger, @NonNull View containerView) {
     super(StandardMessageCodec.INSTANCE);
     this.messenger = messenger;
     this.containerView = containerView;
