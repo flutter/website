@@ -39,7 +39,7 @@ is 1 sample / 250 μs.  This is selected by default on
 the Performance view as "Profile granularity: medium".
 This rate can be modified via the selector at the top
 of the page. The sampling rates for low, medium,
-and high granularity are 1 / 50 μs, 1 / 250 μs, and 1 / 1000 μs,
+and high granularity are 1 / 1000 μs, 1 / 250 μs, and 1 / 50 μs,
 respectively. It is important to know the trade-offs
 of modifying this setting.
 
