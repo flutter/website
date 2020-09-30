@@ -4,30 +4,38 @@ short-title: Platform-views
 description: Learn how to host native Android and iOS views in your Flutter app with Platform Views.
 ---
 
-As of the Flutter 1.22 release, support for hosting
-Android and iOS views from a Flutter mobile app
-is now production ready.
+Platform views allow to embed native views in a Flutter app. 
+
+The Flutter engine takes care of coordinating the platform
+and the Flutter compositors, so you can apply transforms,
+clips, and opacity to the native View from Dart.
+
 This allows you, for example, to use the native
 Google Maps from the Android and iOS SDKs
 directly inside your Flutter app, by using Platform Views.
-The [`google_maps_flutter`][] and [`webview_flutter`][]
-plugins are updated to 1.0.
 
-[`google_maps_flutter`]: {{site.pub}}/packages/google_maps_flutter
-[`webview_flutter`]: {{site.pub}}/packages/webview_flutter
-
-This page discusses how to host your own native components
+This page discusses how to host your own native views
 within a Flutter app.
 
 ## Android
 
 Flutter supports two modes: Virtual displays and Hybrid composition.
 
-In 1.22, Hybrid composition is enabled by default,
-and only requires API level 19 (instead of API level 20,
-which the previous version required).
-Also, these updates fix all known keyboard,
-and accessibility issues for Android views.
+Which one to use depends on the use case. Let's take a look:
+
+* Virtual displays renders the native view to a texture,
+  so it's not embeded within the Android view hierachy. Performance 
+  is good although certain platform interactions such as keyboard 
+  handling, and accessibility features might not work.
+
+* Hybrid composition requires Flutter 1.22. This mode appends the 
+  native view to the Android View hirarchy. Thefore, keyboard
+  handling, and accesibility work out of the box. Performance is
+  good in Android 10 or above. Prior to Android 10, this mode
+  reduces the frame throughput (FPS) of the Flutter UI.
+  See [performance][#performance] for more.
+
+To create a platform view, follow these steps:
 
 ### On the Dart side
 
@@ -36,10 +44,13 @@ and add the following build implementation,
 as shown in the following steps.
 
 {{site.alert.warning}}
-  For this to work, your plugin must use Android embedding v2. 
+  For this to work, your plugin or app must use Android embedding v2. 
   If you haven't updated your plugin, see the
   [plugin migration guide][].
 {{site.alert.end}}
+
+
+#### Hybrid Composition
 
 In your Dart file, for example `native_view_example.dart`,
 do the following:
@@ -95,11 +106,48 @@ For more information, see the API docs for:
 * [`AndroidViewService`][]
 * [`PlatformViewsService`][]
 
+#### Virtual Display
+
+In your Dart file, for example `native_view_example.dart`,
+do the following:
+
+1. Add the following imports:
+
+<!-- skip -->
+```dart
+import 'package:flutter/widget.dart';
+```
+
+
+2. Implement a `build()` method:
+
+<!-- skip -->
+```dart
+Widget build(BuildContext context) {
+  // This is used in the platform side to register the view.
+  final String viewType = 'hybrid-view-type';
+  // Pass parameters to the platform side.
+  final Map<String, dynamic> creationParams = <String, dynamic>{};
+
+  return AndroidView(
+    viewType: viewType,
+    layoutDirection: TextDirection.ltr,
+    creationParams: creationParams,
+    creationParamsCodec: const StandardMessageCodec(),
+  );
+}
+```
+
+For more information, see the API docs for:
+
+* [`AndroidView`][]
 
 [plugin migration guide]: https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration
 [`AndroidViewService`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
 [`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
+[`AndroidView`]: {{site.api}}/flutter/widgets/AndroidView-class.html
+
 
 ### On the platform side
 
@@ -212,8 +260,11 @@ For more information, see the API docs for:
 [`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
 [`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
 
-Finally, modify your `build.gradle` file to require
-version 19 (or later) of the Android API.
+Finally, if you are using hybrid composition,
+modify your `build.gradle` file to require Android SDK version 19 (or later).
+
+If you are using Virtual display, modify your `build.gradle` file to require
+ Android SDK version 20 (or later).
 
 ```gradle
 android {
