@@ -58,7 +58,7 @@ submodule-cloning techniques:
 > git pull; git submodule update --init --remote
 > ```
 
-### 3. Run installation scripts
+### 3. Run installations scripts
 
 > NOTE: It is safe to (re-)run all of the commands and scripts given below even
 if you already have the required packages installed.
@@ -79,7 +79,7 @@ if you already have the required packages installed.
 >   this repo, **repeat steps 1 and 2** above.
 > - If you upgrade Dart then rerun all of the steps above.
 
-## Developing
+## Developings
 
  1. Create a branch.
  1. Make your changes.
