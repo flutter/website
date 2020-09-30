@@ -56,7 +56,7 @@ View the application's download and install size in the **Android vitals** ->
 {% include app-figure.md image="perf/vital-size.png" alt="App size tab in Google Play Console" %}
 
 The download size is calculated based on an XXXDHPI (~640dpi) device on an
-arm64-v8a architecture. Your end-users' download sizes may vary depending on
+arm64-v8a architecture. Your end users' download sizes may vary depending on
 their hardware.
 
 The top tab has a toggle for download size and install size. The page also
