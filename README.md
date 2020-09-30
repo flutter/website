@@ -1,4 +1,4 @@
-# [Flutter][]'s website ![Flutter logo][]
+# [Flutter][]'s website <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="android" width="50" height="50"/> 
 
 [![Build Status][]][Repo on Travis]
 
