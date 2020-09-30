@@ -2,7 +2,7 @@
 
 [![Build Status][]][Repo on Travis]
 
-## Issues, bugs, and requests
+## Issues, bugs, and requests       code not working proper pl re cheack
 
 We welcome contributions and feedback on our website!
 Please file a request in our
