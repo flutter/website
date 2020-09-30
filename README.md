@@ -60,7 +60,7 @@ submodule-cloning techniques:
 
 ### 3. Run installation scripts
 
-> NOTE: It is safe to (re-)run all of the commands and scripts given below even
+> NOTE: It is safe to (re-)run all of the commands and scripts are given below even
 if you already have the required packages installed.
 
 **Open a bash terminal/command window** and execute the following commands:
@@ -100,7 +100,7 @@ if you already have the required packages installed.
       site locally but aren't able to see the content right away,
       wait 20 seconds before stopping the
       server or concluding that something is wrong.
- 1. Prior to submitting, validate site links:<br>
+ 1. Before submitting, validate site links:<br>
     `./tool/shared/check-links.sh`
 
 > TIP: Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
