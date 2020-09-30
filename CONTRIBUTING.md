@@ -1,5 +1,5 @@
 
-If you would like to contribute to the Flutter project,
+If you like to contribute to the Flutter project,
 we’re happy to have your help! Anyone can contribute, whether you’re new to
 the project or you’ve been around a long time, and whether you self-identify
 as a developer, an end user, or someone who just can’t stand seeing typos.
