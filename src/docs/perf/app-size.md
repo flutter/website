@@ -116,7 +116,7 @@ of the release build of their application.
 
 {{site.alert.warning}}
   As stated in the [checking total size](#checking-the-total-size) section
-  above, an upload package is not representative of your end-users' download
+  above, an upload package is not representative of your end users' download
   size. Be aware that redundant native library architectures and asset densities
   are seen in the breakdown tool that can be filtered by the Play Store and App Store.
 {{site.alert.end}}
