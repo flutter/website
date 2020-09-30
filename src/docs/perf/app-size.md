@@ -13,7 +13,7 @@ and it may break the limit of useful features like Android instant apps.
 
 By default, launching your app with `flutter run`,
 or by clicking the **Play** button in your IDE
-(as used in a [Test drive][] and
+(as used in [Test drive][] and
 [Write your first Flutter app][]),
 generates a _debug_ build of the Flutter app.
 The app size of a debug build is large due to
