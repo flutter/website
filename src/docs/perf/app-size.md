@@ -4,7 +4,7 @@ description: How to measure app size for iOS and Android.
 ---
 
 Many developers are concerned with the size of their compiled app. As the APK,
-app bundle, or IPA version of a Flutter app is self contained, and holds all the
+app bundle, or IPA version of a Flutter app is self-contained and holds all the
 code and assets needed to run the app, its size can be a concern. The larger an
 app, the more space it requires on a device, the longer it takes to download,
 and it may break the limit of useful features like Android instant apps.
@@ -13,17 +13,17 @@ and it may break the limit of useful features like Android instant apps.
 
 By default, launching your app with `flutter run`,
 or by clicking the **Play** button in your IDE
-(as used in [Test drive][] and
+(as used in a [Test drive][] and
 [Write your first Flutter app][]),
 generates a _debug_ build of the Flutter app.
 The app size of a debug build is large due to
 the debugging overhead that allows for hot reload
-and source level debugging. As such, it is not representative of a production
+and source-level debugging. As such, it is not representative of a production
 app end users download.
 
 ## Checking the total size
 
-A default release build, such as one created by `flutter build apk` or
+A default release builds, such as one created by `flutter build apk` or
 `flutter build ios`, is built to conveniently assemble your upload package
 to the Play Store and App Store. As such, they're also not representative of
 your end-users' download size. The stores generally reprocess and split
@@ -56,7 +56,7 @@ View the application's download and install size in the **Android vitals** ->
 {% include app-figure.md image="perf/vital-size.png" alt="App size tab in Google Play Console" %}
 
 The download size is calculated based on an XXXDHPI (~640dpi) device on an
-arm64-v8a architecture. Your end users' download sizes may vary depending on
+arm64-v8a architecture. Your end-users' download sizes may vary depending on
 their hardware.
 
 The top tab has a toggle for download size and install size. The page also
@@ -110,15 +110,15 @@ section in the Flutter [FAQ][].
 
 ## Breaking down the size
 
-Starting in Flutter version 1.22 and in DevTools starting in version 0.9.1,
+Starting in Flutter version 1.22 and DevTools starting in version 0.9.1,
 a size analysis tool is included to help developers understand the breakdown
 of the release build of their application.
 
 {{site.alert.warning}}
   As stated in the [checking total size](#checking-the-total-size) section
-  above, an upload package is not representative of your end users' download
+  above, an upload package is not representative of your end-users' download
   size. Be aware that redundant native library architectures and asset densities
-  seen in the breakdown tool can be filtered by the Play Store and App Store.
+  are seen in the breakdown tool that can be filtered by the Play Store and App Store.
 {{site.alert.end}}
 
 The size analysis tool is invoked by passing the `--analyze-size` flag when
@@ -146,7 +146,7 @@ loading two `*-code-size-analysis_*.json` files into DevTools. See
 {% include app-figure.md image="perf/size-summary.png" alt="Size summary of an Android application in terminal" %}
 
 Through the summary, you can get a quick idea of the size usage per category
-(such as asset, native code, Flutter libraries etc). The compiled Dart
+(such as asset, native code, Flutter libraries, etc). The compiled Dart
 native library is further broken down by package for quick analysis.
 
 {{site.alert.warning}}
