@@ -23,7 +23,7 @@ app end users download.
 
 ## Checking the total size
 
-A default release builds, such as one created by `flutter build apk` or
+A default release build, such as one created by `flutter build apk` or
 `flutter build ios`, is built to conveniently assemble your upload package
 to the Play Store and App Store. As such, they're also not representative of
 your end-users' download size. The stores generally reprocess and split
