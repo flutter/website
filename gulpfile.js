@@ -1,5 +1,5 @@
 'use strict';
-
+console.log("amazing web");
 const argv = require('yargs').argv;
 const fsExtra = require('fs-extra');
 const fs = fsExtra;
