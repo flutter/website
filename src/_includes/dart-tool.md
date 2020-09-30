@@ -14,7 +14,7 @@
   support a similar `where` command.)
 
   ```terminal
-  $ which flutter dart
+  $ where flutter dart
   /path-to-flutter-sdk/bin/flutter
   /usr/local/bin/dart
   ```
@@ -29,7 +29,7 @@
   now come from the same directory.
 
   ```terminal
-  $ which flutter dart
+  $ where flutter dart
   /path-to-flutter-sdk/bin/flutter
   /path-to-flutter-sdk/bin/dart
   ```
