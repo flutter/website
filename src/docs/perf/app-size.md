@@ -4,7 +4,7 @@ description: How to measure app size for iOS and Android.
 ---
 
 Many developers are concerned with the size of their compiled app. As the APK,
-app bundle, or IPA version of a Flutter app is self contained, and holds all the
+app bundle, or IPA version of a Flutter app is self-contained and holds all the
 code and assets needed to run the app, its size can be a concern. The larger an
 app, the more space it requires on a device, the longer it takes to download,
 and it may break the limit of useful features like Android instant apps.
@@ -18,7 +18,7 @@ or by clicking the **Play** button in your IDE
 generates a _debug_ build of the Flutter app.
 The app size of a debug build is large due to
 the debugging overhead that allows for hot reload
-and source level debugging. As such, it is not representative of a production
+and source-level debugging. As such, it is not representative of a production
 app end users download.
 
 ## Checking the total size
@@ -110,7 +110,7 @@ section in the Flutter [FAQ][].
 
 ## Breaking down the size
 
-Starting in Flutter version 1.22 and in DevTools starting in version 0.9.1,
+Starting in Flutter version 1.22 and DevTools version 0.9.1,
 a size analysis tool is included to help developers understand the breakdown
 of the release build of their application.
 
@@ -146,7 +146,7 @@ loading two `*-code-size-analysis_*.json` files into DevTools. See
 {% include app-figure.md image="perf/size-summary.png" alt="Size summary of an Android application in terminal" %}
 
 Through the summary, you can get a quick idea of the size usage per category
-(such as asset, native code, Flutter libraries etc). The compiled Dart
+(such as asset, native code, Flutter libraries, etc). The compiled Dart
 native library is further broken down by package for quick analysis.
 
 {{site.alert.warning}}
