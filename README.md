@@ -227,7 +227,7 @@ Also check out the site-shared
 
 * [Images](https://github.com/dart-lang/site-shared/wiki/Images)
 * [Mobile friendly pages: tips & tricks](https://github.com/dart-lang/site-shared/wiki/Mobile-friendly-pages:-tips-&-tricks)
-* [Writing for Dart and Flutter websites](https://github.com/dart-lang/site-shared/wiki/Writing-for-Dart-and-Flutter-websites)
+* [Writing about Dart and Flutter websites](https://github.com/dart-lang/site-shared/wiki/Writing-for-Dart-and-Flutter-websites)
 
 [Flutter]: https://flutter.dev
 [Build Status]: https://travis-ci.org/flutter/website.svg?branch=master
