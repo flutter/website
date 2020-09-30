@@ -23,8 +23,8 @@ Install the following tools if you don't have them already.
 - **bash**, the Bourne shell. These instructions assume you're using `bash` -- setup might not work if you use another shell.
 - **[nvm][]**, the Node Version Manager.
 - **[rvm][]**, the Ruby Version Manager.
-- **[Flutter][Flutter install]**
-- **[Dart SDK][Dart install]**
+- **[Flutter][Flutter install]**,Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase.
+- **[Dart SDK][Dart install]**,Dart is a client-optimized programming language for apps on multiple platforms. It is developed by Google and is used to build mobile, desktop, server, and web applications. Dart is an object-oriented, class-based, garbage-collected language with C-style syntax. Dart can compile to either native code or JavaScript.
 - **[GNU diffutils][]** version 3.6 or later.
   > NOTE: `diff` v3.6+ is required to ensure that in-page code diffs are
   > consistently refreshed across macOS and Linux. [Issue #3076][] was due to
