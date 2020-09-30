@@ -110,7 +110,7 @@ section in the Flutter [FAQ][].
 
 ## Breaking down the size
 
-Starting in Flutter version 1.22 and DevTools starting in version 0.9.1,
+Starting in Flutter version 1.22 and DevTools version 0.9.1,
 a size analysis tool is included to help developers understand the breakdown
 of the release build of their application.
 
