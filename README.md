@@ -2,8 +2,8 @@
 
 [![Build Status][]][Repo on Travis]
 
-## Issues, bugs, and requests
-
+## Issues, bugs, and reque
+Hactober
 We welcome contributions and feedback on our website!
 Please file a request in our
 [issue tracker](https://github.com/flutter/website/issues/new)
