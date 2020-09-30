@@ -66,13 +66,13 @@ if you already have the required packages installed.
 **Open a bash terminal/command window** and execute the following commands:
 
 1. <code>cd <i>\<path-to-this-repo></i></code> &nbsp;&nbsp;# change to
-   **root of this repo**
+   **root of this repo**.
 1. `source ./tool/env-set.sh` &nbsp;&nbsp;#
-   initialize environment variables; install/use required Node & Ruby version
+   initialize environment variables; install/use required Node & Ruby version.
 1. `./tool/before-install.sh` &nbsp;&nbsp;#
-   install core set of required tools
+   install core set of required tools.
 1. `./tool/install.sh` &nbsp;&nbsp;#
-   install everything else needed to build this site
+   install everything else needed to build this site.
 
 > IMPORTANT:
 > - Any time you create a **new terminal/command window** to work on
