@@ -9,6 +9,8 @@ Please file a request in our
 [issue tracker](https://github.com/flutter/website/issues/new)
 and we'll take a look.
 
+Flutter is Google's UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. In this codelab, you'll create a simple chat application for Android, iOS, and (optionally) the web.
+
 For simple changes (such as to CSS and text), you probably don't need to
 build this site.  Often you can make changes using the GitHub UI.
 
