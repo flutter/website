@@ -1,4 +1,4 @@
-# [Flutter][]'s website ![Flutter logo][]
+# [Flutter- an Amazing][]'s website ![Flutter logo][]
 
 [![Build Status][]][Repo on Travis]
 
