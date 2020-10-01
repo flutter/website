@@ -237,7 +237,8 @@
       { "source": "/go/reorderable-list-view-update", "destination": "https://docs.google.com/document/d/1JzNtMQ-jnPnSHEBoi6IO0x2qMMylwhvRslEDcmqiwSs", "type": 301 },
       { "source": "/go/plugins-team", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfpPqJYuL_RzLaTCjrWYw73Zrrei3YiU8B5eTrDBh4fuGhbXw/viewform?usp=sf_link", "type": 301 },
       { "source": "/go/triage-2021-rfp", "destination": "https://docs.google.com/document/d/1aD2jaOs2WaDNWQi_N5N5kYn7MGj-iYxxAkR33cYiSIY", "type": 301 },
-      { "source": "/go/text-selection-menu-customization", "destination": "https://docs.google.com/document/d/1hyay1TyUZB7DXzWw45-ruGMZM1yCMWEnC3DzOJYemuc/edit", "type": 301 }
+      { "source": "/go/text-selection-menu-customization", "destination": "https://docs.google.com/document/d/1hyay1TyUZB7DXzWw45-ruGMZM1yCMWEnC3DzOJYemuc/edit", "type": 301 },
+      { "source": "/go/flutter-support-multi-architecture", "destination": "https://docs.google.com/document/d/19tzWySgtgtTA99XQsjx5Pg0SFJeZKXyUlYavR0EXv8c/edit?usp=sharing", "type": 301 }
     ]
   }
 }
