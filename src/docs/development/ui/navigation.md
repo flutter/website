@@ -17,7 +17,7 @@ To learn about Flutter's updated (2.0) navigation and
 routing mechanism, which uses a declarative approach, see
 [Learning Flutter’s new navigation and routing system][].
 
-Note that this is not a breaking change&mdash;you can continue
+Note that this new mechanism isn't a breaking change&mdash;you can continue
 to use the original approach if that serves you well.
 If you want to implement deep linking, or take advantage
 of multiple navigators, check out the 2.0 version.
