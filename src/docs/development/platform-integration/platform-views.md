@@ -24,16 +24,15 @@ Flutter supports two modes: Virtual displays and Hybrid composition.
 Which one to use depends on the use case. Let's take a look:
 
 * Virtual displays renders the `android.view.View` instance to a texture,
-  so it's not embeded within the Android view hierachy. Performance
-  is good although certain platform interactions such as keyboard
-  handling, and accessibility features might not work.
+  so it's not embedded within the Android Activity's view hierachy.
+  Certain platform interactions such as keyboard handling, and accessibility
+  features might not work.
 
 * Hybrid composition requires Flutter 1.22. This mode appends the
-  native `android.view.View` to the view hirarchy. Thefore, keyboard
-  handling, and accesibility work out of the box. Performance is
-  good in Android 10 or above. Prior to Android 10, this mode
-  reduces the frame throughput (FPS) of the Flutter UI.
-  See [performance][#performance] for more.
+  native `android.view.View` to the view hirarchy. Therefore, keyboard
+  handling, and accessibility work out of the box. Prior to Android 10,
+  this mode may significantly reduce the frame throughput (FPS) of the
+  Flutter UI. See [performance][#performance] for more.
 
 To create a platform view on Android, follow these steps:
 
@@ -294,23 +293,6 @@ android {
 }
 ```
 
-### Performance
-
-Hybrid composition on Android works best on Android 10 or above.
-On lower versions of Android, the engine makes a device-host-device
-copy of the Flutter texture. This results in a reduction of frame
-per seconds (FPS) of the Flutter UI.
-
-To mitigate this issue, we recommend that you avoid displaying
-the native view while an animation is taking place in Dart.
-
-For example, you could use a placeholder such as capturing a
-screenshot of the native view and rendering the placeholder
-while the animation is happening.
-
-Also, if a keyboard is not needed, you might find that virtual
-display mode works better for Android releases earlier than 10.
-
 ## iOS
 
 iOS only uses Hybrid composition, which means that the native
@@ -516,3 +498,45 @@ Widget build(BuildContext context) {
 ```
 
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+
+
+### Performance
+
+Platform views in Flutter come with performance tradeoffs.
+
+For example, in a typical Flutter app, the Flutter UI is composed
+on a dedicated raster thread. This allows Flutter apps to be fast,
+as the main platform thread is rarely blocked.
+
+While a platform view is rendered, the Flutter UI is composed from
+the platform thread, which competes with other tasks like
+handling OS or plugin messages, etc.
+
+Prior to Android 10, hybrid composition copies each Flutter frame
+out of the graphic memory into main memory and then copied back to
+a GPU texture. As this copy happens per frame, the performance of
+the entire Flutter UI may be impacted.
+
+On the other hand, Virtual display makes each pixel of the native view
+flow through additional intermediate graphic buffers, which cost graphic
+memory and drawing perfomance.
+
+
+For complex cases, there are some techniques that can be used to mitigate
+these issues.
+
+For example, you could use a placeholder texture while an animation is
+happening in Dart. In other words, if an animation is slow while a
+platform view is rendered, then consider taking a screenshot of the
+native view and rendering it as a texture.
+
+For more information, see:
+
+* [`TextureLayer`][]
+* [`TextureRegistry`][]
+* [`FlutterTextureRegistry`][]
+
+[`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
+[`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html
+[`FlutterTextureRegistry`]: {{site.api}}/objcdoc/Protocols/FlutterTextureRegistry.html
+
