@@ -13,7 +13,7 @@ see the [Navigation recipes][] in the
 [Flutter cookbook][] and the [`Navigator`][] API docs.
 The original navigation model uses an imperative approach.
 
-To learn more about Flutter's updated (2.0) navigation and
+To learn about Flutter's updated (2.0) navigation and
 routing mechanism, which uses a declarative approach, see
 [Learning Flutter’s new navigation and routing system][].
 
