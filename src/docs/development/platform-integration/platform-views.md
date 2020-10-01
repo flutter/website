@@ -502,7 +502,7 @@ Widget build(BuildContext context) {
 
 ### Performance
 
-Platform views in Flutter come with performance tradeoffs.
+Platform views in Flutter come with performance trade-offs.
 
 For example, in a typical Flutter app, the Flutter UI is composed
 on a dedicated raster thread. This allows Flutter apps to be fast,
