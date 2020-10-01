@@ -4,11 +4,9 @@ short-title: Platform-views
 description: Learn how to host native Android and iOS views in your Flutter app with Platform Views.
 ---
 
-Platform views allow to embed native views in a Flutter app.
-
-The Flutter engine takes care of coordinating the platform
-and the Flutter compositors, so you can apply transforms,
-clips, and opacity to the native View from Dart.
+Platform views allow to embed native views in a Flutter app, so
+you can apply transforms, clips, and opacity to the native view
+from Dart.
 
 This allows you, for example, to use the native
 Google Maps from the Android and iOS SDKs
@@ -29,7 +27,7 @@ Which one to use depends on the use case. Let's take a look:
   features might not work.
 
 * Hybrid composition requires Flutter 1.22. This mode appends the
-  native `android.view.View` to the view hirarchy. Therefore, keyboard
+  native `android.view.View` to the view hierarchy. Therefore, keyboard
   handling, and accessibility work out of the box. Prior to Android 10,
   this mode may significantly reduce the frame throughput (FPS) of the
   Flutter UI. See [performance][#performance] for more.
@@ -281,8 +279,8 @@ For more information, see the API docs for:
 [`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
 [`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
 
-Finally, modify your `build.gradle` file to require either
-the minimal Android SDK version:
+Finally, modify your `build.gradle` file to require one of the
+minimal Android SDK versions:
 
 ```gradle
 android {
@@ -298,9 +296,9 @@ android {
 iOS only uses Hybrid composition, which means that the native
 `UIView` is appended to view hierarchy.
 
-In Flutter 1.22, platform views are enabled by default. This means
-that it's no longer required to add the
-`io.flutter.embedded_views_preview` flag to `Info.plist`.
+Prior to Flutter 1.22, platform views were in developers preview.
+In 1.22 or above, it's no longer the case, so there's no need to
+set the `io.flutter.embedded_views_preview` flag in `Info.plist`.
 
 To create a platform view on iOS, follow these steps:
 
@@ -508,18 +506,19 @@ For example, in a typical Flutter app, the Flutter UI is composed
 on a dedicated raster thread. This allows Flutter apps to be fast,
 as the main platform thread is rarely blocked.
 
-While a platform view is rendered, the Flutter UI is composed from
-the platform thread, which competes with other tasks like
-handling OS or plugin messages, etc.
+While a platform view is rendered with Hybrid composition, the Flutter
+UI is composed from the platform thread, which competes with other
+tasks like handling OS or plugin messages, etc.
 
 Prior to Android 10, Hybrid composition copies each Flutter frame
-out of the graphic memory into main memory and then copied back to
-a GPU texture. As this copy happens per frame, the performance of
+out of the graphic memory into main memory, and then copies it back
+to a GPU texture. In Android 10 or above, the graphics memory is
+copied twice. As this copy happens per frame, the performance of
 the entire Flutter UI may be impacted.
 
-On the other hand, Virtual display makes each pixel of the native view
+Virtual display, on the other hand, makes each pixel of the native view
 flow through additional intermediate graphic buffers, which cost graphic
-memory and drawing perfomance.
+memory and drawing performance.
 
 For complex cases, there are some techniques that can be used to mitigate
 these issues.
