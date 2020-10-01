@@ -260,16 +260,14 @@ For more information, see the API docs for:
 [`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
 [`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
 
-Finally, if you are using hybrid composition,
-modify your `build.gradle` file to require Android SDK version 19 (or later).
-
-If you are using Virtual display, modify your `build.gradle` file to require
- Android SDK version 20 (or later).
+Finally, modify your `build.gradle` file to require either 
+the minimal Android SDK version:
 
 ```gradle
 android {
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 19 // if using Hybrid composition.
+        minSdkVersion 20 // if using Virtual display.
     }
 }
 ```
@@ -277,13 +275,13 @@ android {
 ### Performance
 
 Hybrid composition on Android works best on Android 10 or above.
-On lower versions of Android, the Flutter UI can appear slower
-while the native view is rendered on the screen.
-This overhead is due to the synchronization of Flutter frames to the
-Android view system.
+On lower versions of Android, the engine makes a device-host-device
+copy of the Flutter texture. This results in a reduction of frame 
+per seconds (FPS) of the Flutter UI.
 
 To mitigate this issue, we recommend that you avoid displaying
 the native view while an animation is taking place in Dart.
+
 For example, you could use a placeholder such as capturing a
 screenshot of the native view and rendering the placeholder
 while the animation is happening.
