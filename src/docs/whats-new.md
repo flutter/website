@@ -40,7 +40,7 @@ We've added a new codelab since the last stable release:
 
 * [Building Beautiful Transitions with Material Motion for Flutter][]
   Learn how to use the Material [animations][] package to
-  add pre-built transitions to a Material app called Reply.
+  add prebuilt transitions to a Material app called Reply.
 
 For a complete list, see [Flutter codelabs][].
 
