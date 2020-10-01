@@ -1,8 +1,8 @@
-# [Flutter][]'s website ![Flutter logo][]
+# [Flutter][]'s website ![Flutter logo]
 
 [![Build Status][]][Repo on Travis]
 
-## Issues, bugs, and requests
+## Issues, bugs and requests
 
 We welcome contributions and feedback on our website!
 Please file a request in our
@@ -26,20 +26,20 @@ Install the following tools if you don't have them already.
 - **[Flutter][Flutter install]**
 - **[Dart SDK][Dart install]**
 - **[GNU diffutils][]** version 3.6 or later.
-  > NOTE: `diff` v3.6+ is required to ensure that in-page code diffs are
+  > **NOTE:** `diff` v3.6+ is required to ensure that in-page code diffs are
   > consistently refreshed across macOS and Linux. [Issue #3076][] was due to
   > the default macOS `diff` being at v2.x -- to up upgrade `diffutils` run:<br>
   > `brew install diffutils`.
   >
   > [issue #3076]: https://github.com/flutter/website/issues/3076
 
-> IMPORTANT: Follow the installation instructions for each of the tools
+> **IMPORTANT:** Follow the installation instructions for each of the tools
 carefully. In particular, configure your shell/environment so
 that the tools are available in every terminal/command window you create.
 
 ### 2. Clone this repo _and_ its submodules
 
-> NOTE: This repo has git _submodules_, which affects how you clone it.
+> **NOTE:** This repo has git _submodules_, which affects how you clone it.
 
 To **clone [this repo][]**, follow the instructions given in the
 GitHub help on [Cloning a repository][], and _choose one_ of the following
@@ -52,7 +52,7 @@ submodule-cloning techniques:
   this command from the repo root:<br>
   `git submodule update --init --remote`
 
-> NOTE: At any time during development you can use the submodule command to
+> **NOTE:** At any time during development you can use the submodule command to
 > refresh submodules:<br>
 > ```
 > git pull; git submodule update --init --remote
@@ -60,7 +60,7 @@ submodule-cloning techniques:
 
 ### 3. Run installation scripts
 
-> NOTE: It is safe to (re-)run all of the commands and scripts given below even
+> **NOTE:** It is safe to (re-)run all of the commands and scripts given below even
 if you already have the required packages installed.
 
 **Open a bash terminal/command window** and execute the following commands:
@@ -74,7 +74,7 @@ if you already have the required packages installed.
 1. `./tool/install.sh` &nbsp;&nbsp;#
    install everything else needed to build this site
 
-> IMPORTANT:
+> **IMPORTANT:**
 > - Any time you create a **new terminal/command window** to work on
 >   this repo, **repeat steps 1 and 2** above.
 > - If you upgrade Dart then rerun all of the steps above.
@@ -87,7 +87,7 @@ if you already have the required packages installed.
     Run either **one** of these commands:
     - `./tool/serve.sh` (can also run via `npm run start`)
 
-    or
+    **or**
     - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
 
       **Note**: Unless you're editing files under `site-shared`, you can safely
@@ -103,19 +103,19 @@ if you already have the required packages installed.
  1. Prior to submitting, validate site links:<br>
     `./tool/shared/check-links.sh`
 
-> TIP: Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
+> **TIP:** Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
 > happen, for example, when you pull from master and lots of files have moved.)
 > To fix Jekyll, stop the `serve.sh` script and remove the generated site files:
 > hand, and then restart the `serve.sh` script:
 
 > `npm run clean`
-> OR
+> **OR**
 > `rm -Rf ./_site/* ./.jekyll*`
 
 > Next, restart the `serve.sh` script:
 
 > `npm run start`
-> OR
+> **OR**
 > `./tool/serve.sh`
 
 ## Creating and/or editing DartPad example code
@@ -154,8 +154,8 @@ In order to create or change example code using `dartpad_picker`, you must regen
 You can deploy your local edits to a personal staging site as follows
 (steps 1 and 2 need to be done only once):
 
- 1. In the [Firebase Console](https://console.firebase.google.com),
-    create your own Firebase project (e.g. 'mit-flutter-staging')
+ 1. In the [**Firebase Console**](https://console.firebase.google.com),
+    create your own Firebase project **(e.g. 'mit-flutter-staging')**
 
  1. Tell Firebase about that project with the firebase
     [`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
