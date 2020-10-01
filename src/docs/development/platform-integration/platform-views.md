@@ -512,7 +512,7 @@ While a platform view is rendered, the Flutter UI is composed from
 the platform thread, which competes with other tasks like
 handling OS or plugin messages, etc.
 
-Prior to Android 10, hybrid composition copies each Flutter frame
+Prior to Android 10, Hybrid composition copies each Flutter frame
 out of the graphic memory into main memory and then copied back to
 a GPU texture. As this copy happens per frame, the performance of
 the entire Flutter UI may be impacted.
