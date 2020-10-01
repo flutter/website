@@ -120,7 +120,7 @@ if you already have the required packages installed.
 
 ## Creating and/or editing DartPad example code
 
-At the time of writing this (10/22/19) most of the code used to create DartPad examples is hosted on GitHub. However, this repo also contains some `.dart` files responsible for DartPad example code.
+At the time of writing this (10/22/19) most of the code which was used to create DartPad examples is hosted on GitHub. However, this repo also contains some `.dart` files responsible for DartPad example code.
 
 ### DartPad example code in GitHub gists
 A typical DartPad example takes the form of an `iframe`, e.g. within a codelab's markdown file:
