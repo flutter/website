@@ -6,6 +6,10 @@ description: Release notes for Flutter for prior releases.
 
 Release notes for the following releases to the stable channel:
 
+* 1.22.0
+  * [1.22.0 announcement][]
+  * [1.22.0 release notes & change log][] 
+
 * 1.20.0
   * [1.20.0 announcement][]
   * [1.20.0 release notes & change log][]
@@ -16,6 +20,8 @@ Release notes for the following releases to the stable channel:
   * [1.12.13 announcement][]
   * [1.12.13 release notes and change log][]
 
+[1.22.0 announcement]: https://medium.com/flutter/announcing-flutter-1-22-stable-44f146009e5f
+[1.22.0 release notes & change log]: release-notes/release-notes-1.22.0
 [1.20.0 announcement]: https://medium.com/flutter/announcing-flutter-1-20-2aaf68c89c75
 [1.20.0 release notes & change log]: release-notes/release-notes-1.20.0
 [1.17.0 announcement]: https://medium.com/flutter/announcing-flutter-1-17-4182d8af7f8e
