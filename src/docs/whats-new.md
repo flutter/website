@@ -62,7 +62,7 @@ publication since the last stable release:
 [add an iOS App Clip]: /docs/development/platform-integration/ios-app-clip
 [animations]: {{site.pub}}/packages/animations
 [Announcing Flutter 1.22]: {{site.medium}}/flutter/announcing-flutter-1-22-44f146009e5f
-[Announcing Flutter Windows Alpha]: {{site.medium}}/flutter/announcing-flutter-windows-alpha-33982cd0f433```
+[Announcing Flutter Windows Alpha]: {{site.medium}}/flutter/announcing-flutter-windows-alpha-33982cd0f433
 [App Size tool]: /docs/development/tools/devtools/app-size
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [cupertino-icons]: /docs/release/breaking-changes/cupertino-icons-1.0.0
