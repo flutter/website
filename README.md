@@ -37,7 +37,7 @@ Install the following tools if you don't have them already.
 carefully. In particular, configure your shell/environment so
 that the tools are available in every terminal/command window you create.
 
-### 2. Clone this repo _and_ its submodules
+### 2. Clone this repository _and_ its submodules
 
 > NOTE: This repo has git _submodules_, which affects how you clone it.
 
