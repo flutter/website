@@ -215,7 +215,7 @@ As a result, we've moved some of content of this README to the
 directory in the shared repo.
 
 For more information on using/writing for this repo,
-refer to the following docs:
+refer to the following docs:-
 
 * [Infrastructure](https://github.com/dart-lang/site-shared/blob/master/doc/infrastructure.md)
 * [Markdown](https://github.com/dart-lang/site-shared/blob/master/doc/markdown.md)
@@ -223,7 +223,7 @@ refer to the following docs:
 * [Code excerpts](https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md)
 
 Also check out the site-shared
-[wiki](https://github.com/dart-lang/site-shared/wiki):
+[wiki](https://github.com/dart-lang/site-shared/wiki):-
 
 * [Images](https://github.com/dart-lang/site-shared/wiki/Images)
 * [Mobile friendly pages: tips & tricks](https://github.com/dart-lang/site-shared/wiki/Mobile-friendly-pages:-tips-&-tricks)
