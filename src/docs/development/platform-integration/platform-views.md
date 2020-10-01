@@ -229,7 +229,7 @@ class NativeViewFactory extends PlatformViewFactory {
 
 Finally, register the platform view. This can be done in an app or a plugin.
 
-For app registration, modify the main activity:
+For app registration, modify the main activity (e.g. `MainActivity.java`):
 
 ```java
 package dev.flutter.example;
@@ -367,7 +367,7 @@ In your native code, implement the following:
 
 `FLNativeView.h`
 
-```h
+```objc
 #import <Flutter/Flutter.h>
 
 @interface FLNativeViewFactory : NSObject <FlutterPlatformViewFactory>
@@ -387,7 +387,7 @@ In your native code, implement the following:
 
 Implement the factory and the platform view in `FLNativeView.m`
 
-```m
+```objc
 #import "FLNativeView.h"
 
 @implementation FLNativeViewFactory {
@@ -439,7 +439,7 @@ Finally, register the platform view. This can be done in an app or a plugin.
 
 For app registration, modify the App's `AppDelegate.m`:
 
-```m
+```objc
 #import "AppDelegate.h"
 #import "FLNativeView.h"
 #import "GeneratedPluginRegistrant.h"
@@ -465,7 +465,7 @@ For app registration, modify the App's `AppDelegate.m`:
 
 For plugin registration, modify the main plugin file (e.g. `FLPlugin.m`):
 
-```m
+```objc
 #import "FLPlugin.h"
 #import "FLNativeView.h"
 
