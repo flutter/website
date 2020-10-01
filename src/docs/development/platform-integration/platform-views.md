@@ -138,19 +138,10 @@ For more information, see the API docs for:
 
 * [`AndroidView`][]
 
-[plugin migration guide]: https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration
-[`AndroidViewService`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
-[`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
-[`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
-[`AndroidView`]: {{site.api}}/flutter/widgets/AndroidView-class.html
-
-
 ### On the platform side
 
 On the platform side, use the standard
 `io.flutter.plugin.platform` package in either Java or Kotlin:
-
-(TBD: Where is the Kotlin implementation? How is iOS different?)
 
 In your native code, implement the following:
 
@@ -273,11 +264,6 @@ For more information, see the API docs for:
 * [`PlatformViewRegistry`][]
 * [`PlatformViewFactory`][]
 * [`PlatformView`][]
-
-[`FlutterPlugin`][]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
-[`PlatformViewFactory`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
-[`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
-[`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
 
 Finally, modify your `build.gradle` file to require one of the
 minimal Android SDK versions:
@@ -466,11 +452,6 @@ For more information, see the API docs for:
 * [`FlutterPlatformView`][]
 * [`PlatformView`][]
 
-[`FlutterPlatformViewFactory`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformViewFactory.html
-[`FlutterPlatformView`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformView.html
-[`FlutterPlugin`]: {{site.api}}/objcdoc/Protocols/FlutterPlugin.html
-[`UIKitView`]: {{site.api}}/flutter/widgets/UiKitView-class.html
-
 ## Putting it together
 
 When implementing the `build()` method in Dart, you can use [`defaultTargetPlatform`][]
@@ -494,9 +475,6 @@ Widget build(BuildContext context) {
   }
 }
 ```
-
-[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
-
 
 ### Performance
 
@@ -534,7 +512,19 @@ For more information, see:
 * [`TextureRegistry`][]
 * [`FlutterTextureRegistry`][]
 
+[`AndroidView`]: {{site.api}}/flutter/widgets/AndroidView-class.html
+[`AndroidViewService`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
+[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+[`FlutterPlatformView`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformView.html
+[`FlutterPlatformViewFactory`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformViewFactory.html
+[`FlutterPlugin`][]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
+[`FlutterTextureRegistry`]: {{site.api}}/objcdoc/Protocols/FlutterTextureRegistry.html
+[plugin migration guide]: https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration
+[`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
+[`PlatformViewFactory`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
+[`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
+[`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
+[`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
+[`UIKitView`]: {{site.api}}/flutter/widgets/UiKitView-class.html
 [`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
 [`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html
-[`FlutterTextureRegistry`]: {{site.api}}/objcdoc/Protocols/FlutterTextureRegistry.html
-
