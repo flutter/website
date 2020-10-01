@@ -1,8 +1,8 @@
-# [Flutter][]'s website ![Flutter logo][]
+# [Flutter][]'s amazing website ![Flutter logo][]
 
 [![Build Status][]][Repo on Travis]
 
-## Issues, bugs, and requests
+## Issues, bugs, and requests:-
 
 We welcome contributions and feedback on our website!
 Please file a request in our
@@ -14,9 +14,9 @@ build this site.  Often you can make changes using the GitHub UI.
 
 If you want/need to build, read on.
 
-## Before you build this site
+## Before you build this site see the below steps:-
 
-### 1. Get the prerequisites
+### 1. Get the prerequisites:-
 
 Install the following tools if you don't have them already.
 
@@ -37,7 +37,7 @@ Install the following tools if you don't have them already.
 carefully. In particular, configure your shell/environment so
 that the tools are available in every terminal/command window you create.
 
-### 2. Clone this repo _and_ its submodules
+### 2. Clone this repo _and_ its submodules:-
 
 > NOTE: This repo has git _submodules_, which affects how you clone it.
 
@@ -58,28 +58,28 @@ submodule-cloning techniques:
 > git pull; git submodule update --init --remote
 > ```
 
-### 3. Run installation scripts
+### 3. Run installation scripts:-
 
 > NOTE: It is safe to (re-)run all of the commands and scripts given below even
 if you already have the required packages installed.
 
-**Open a bash terminal/command window** and execute the following commands:
+**Open a bash terminal/command window** and execute the following commands:-
 
 1. <code>cd <i>\<path-to-this-repo></i></code> &nbsp;&nbsp;# change to
    **root of this repo**
 1. `source ./tool/env-set.sh` &nbsp;&nbsp;#
-   initialize environment variables; install/use required Node & Ruby version
+   initialize environment variables; install/use required Node & Ruby version.
 1. `./tool/before-install.sh` &nbsp;&nbsp;#
-   install core set of required tools
+   install core set of required tools.
 1. `./tool/install.sh` &nbsp;&nbsp;#
-   install everything else needed to build this site
+   install everything else needed to build this site.
 
 > IMPORTANT:
-> - Any time you create a **new terminal/command window** to work on
+> - Any time you create a **new terminal/command window** to work on.
 >   this repo, **repeat steps 1 and 2** above.
 > - If you upgrade Dart then rerun all of the steps above.
 
-## Developing
+## Developing:-
 
  1. Create a branch.
  1. Make your changes.
@@ -118,11 +118,11 @@ if you already have the required packages installed.
 > OR
 > `./tool/serve.sh`
 
-## Creating and/or editing DartPad example code
+## Creating and/or editing DartPad example code:-
 
 At the time of writing this (10/22/19) most of the code used to create DartPad examples is hosted on GitHub. However, this repo also contains some `.dart` files responsible for DartPad example code.
 
-### DartPad example code in GitHub gists
+### DartPad example code in GitHub gists:-
 A typical DartPad example takes the form of an `iframe`, e.g. within a codelab's markdown file:
 
 ```markdown
@@ -149,7 +149,7 @@ In order to create or change example code using `dartpad_picker`, you must regen
   ./compile.sh
 ```
 
-## Deploy to a staging site
+## Deploy to a staging site:-
 
 You can deploy your local edits to a personal staging site as follows
 (steps 1 and 2 need to be done only once):
@@ -196,7 +196,7 @@ i  starting release process (may take several minutes)...
 ✔  Deploy complete!
 ```
 
-## Deploying to the official site
+## Deploying to the official site:-
 
 Usually, official site deploys are performed by Travis. In the event that you
 need to manually deploy, use the deploy script and the `default` project:
@@ -205,7 +205,7 @@ need to manually deploy, use the deploy script and the `default` project:
 ./tool/shared/deploy.sh --local --robots ok default
 ```
 
-## Writing for flutter.dev
+## Writing for flutter.dev :-
 
 
 The [site-shared](https://github.com/dart-lang/site-shared) repo
