@@ -12,6 +12,73 @@ join the [flutter-announce][] Google group.
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
 
+## Oct 1, 2020
+
+Flutter 1.22 is live! For details, see [Announcing Flutter 1.22][].
+
+
+**Docs updated or added to flutter.dev since the 1.20 release**
+
+* Updated the [Developing for iOS 14][] page with
+  details about targeting iOS 14 with Flutter, including some Add-to-App,
+  deep linking, and notification considerations.
+* Added a page on how to [add an iOS App Clip][], a new iOS 14 feature
+  that supports running lightweight, no-install apps under 10 MB.
+* Added a page that describes how to [migrate your app to use the
+  new icon glyphs available in `CupertinoIcons`][cupertino-icons].
+* Added a page that describes the new [implementation for Platform Views
+  and how to use them to host native Android and iOS views in your
+  Flutter app][platform-views]. This feature has enabled the
+  [google_maps_flutter][] and [webview_flutter][] plugins to be
+  updated to production-ready release 1.0.
+* Added a page that describes how to use the new [App Size tool][]
+  in Dart DevTools.
+
+**Codelabs**
+
+We've added a new codelab since the last stable release:
+
+* [Building Beautiful Transitions with Material Motion for Flutter][]
+  Learn how to use the Material [animations][] package to
+  add prebuilt transitions to a Material app called Reply.
+
+For a complete list, see [Flutter codelabs][].
+
+**Articles**
+
+We've published the following articles on the [Flutter Medium][]
+publication since the last stable release:
+
+* [Learning Flutter's new navigation and routing][]
+* [Integration testing with flutter_driver][]
+* [Announcing Flutter Windows Alpha][]
+* [Handling web gestures in Flutter][]
+* [Supporting iOS 14 and Xcode 12 with Flutter][]
+* [Learn testing with the new Flutter sample][]
+* [Platform channel examples][]
+* [Updates on Flutter and Firebase][]
+
+
+[add an iOS App Clip]: /docs/development/platform-integration/ios-app-clip
+[animations]: {{site.pub}}/packages/animations
+[Announcing Flutter 1.22]: {{site.medium}}/flutter/announcing-flutter-1-22-44f146009e5f
+[Announcing Flutter Windows Alpha]: {{site.medium}}/flutter/announcing-flutter-windows-alpha-33982cd0f433```
+[App Size tool]: /docs/development/tools/devtools/app-size
+[Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
+[cupertino-icons]: /docs/release/breaking-changes/cupertino-icons-1.0.0
+[Developing for iOS 14]: /docs/development/ios-14
+[google_maps_flutter]: {{site.pub}}/packages/google_maps_flutter
+[Handling web gestures in Flutter]: {{site.medium}}/flutter/handling-web-gestures-in-flutter-e16946a04745
+[Integration testing with flutter_driver]: {{site.medium}}/flutter/integration-testing-with-flutter-driver-36f66ede5cf2
+[Learn testing with the new Flutter sample]: {{site.medium}}/flutter/learn-testing-with-the-new-flutter-sample-gsoc20-work-product-e872c7f6492a
+[Learning Flutter's new navigation and routing]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Platform channel examples]: {{site.medium}}/flutter/platform-channel-examples-7edeaeba4a66
+[platform-views]: /docs/development/platform-integration/platform-views
+[Supporting iOS 14 and Xcode 12 with Flutter]: {{site.medium}}/flutter/supporting-ios-14-and-xcode-12-with-flutter-15fe0062e98b
+[Updates on Flutter and Firebase]: {{site.medium}}/flutter/updates-on-flutter-and-firebase-8076f70bc90e
+[webview_flutter]: {{site.pub}}/packages/webview_flutter
+
+
 ## Aug 5, 2020
 
 Flutter 1.20 is live! For details, see [Announcing Flutter 1.20][].
