@@ -3,5 +3,6 @@ NOTE: We love contributions, but we hate spam. If your PR doesn't improve flutte
 Fixes #<issue number>.
 
 Changes proposed in this pull request:
-- 
-- 
+
+*  
+* 
