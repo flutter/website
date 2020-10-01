@@ -211,7 +211,7 @@ need to manually deploy, use the deploy script and the `default` project:
 The [site-shared](https://github.com/dart-lang/site-shared) repo
 contains infrastructure shared by most of our Dart and Flutter websites.
 As a result, we've moved some of content of this README to the
-[docs](https://github.com/dart-lang/site-shared/docs)
+[doc](https://github.com/dart-lang/site-shared/tree/master/doc)
 directory in the shared repo.
 
 For more information on using/writing for this repo,
