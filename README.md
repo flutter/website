@@ -60,7 +60,7 @@ submodule-cloning techniques:
 
 ### 3. Run installation scripts
 
-> NOTE: It is safe to (re-)run all of the commands and scripts given below even
+> NOTE: It is safe to (re-)run all of the commands and scripts are given below even
 if you already have the required packages installed.
 
 **Open a bash terminal/command window** and execute the following commands:
@@ -96,7 +96,7 @@ if you already have the required packages installed.
 
       **Note**: The first time you run either one of these commands,
       jekyll takes anywhere between 10 - 20 seconds to generate static
-      content inside the `_sites` directory. If you try to verify the
+      the content inside the `_sites` directory. If you try to verify the
       site locally but aren't able to see the content right away,
       wait 20 seconds before stopping the
       server or concluding that something is wrong.
@@ -120,7 +120,7 @@ if you already have the required packages installed.
 
 ## Creating and/or editing DartPad example code
 
-At the time of writing this (10/22/19) most of the code used to create DartPad examples is hosted on GitHub. However, this repo also contains some `.dart` files responsible for DartPad example code.
+At the time of writing this (10/22/19) most of the code used to create DartPad examples is hosted on GitHub. However, this repo also contains some `.dart` files responsible for the DartPad example code.
 
 ### DartPad example code in GitHub gists
 A typical DartPad example takes the form of an `iframe`, e.g. within a codelab's markdown file:
@@ -133,7 +133,7 @@ A typical DartPad example takes the form of an `iframe`, e.g. within a codelab's
 ></iframe>
 ```
 
-This `iframe` depends on the following GitHub gist url:
+This `iframe` depends on the following GitHub gist URL:
 
 `https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5`
 
@@ -173,7 +173,7 @@ You can deploy your local edits to a personal staging site as follows
     Now using alias staging (<your project name>)
     ```
 
- 1. Tell Firebase to execute deployment of your project:
+ 1. Tell Firebase to execute the deployment of your project:
 
    ```console
    $ npx firebase deploy
@@ -210,9 +210,9 @@ need to manually deploy, use the deploy script and the `default` project:
 
 The [site-shared](https://github.com/dart-lang/site-shared) repo
 contains infrastructure shared by most of our Dart and Flutter websites.
-As a result, we've moved some of content of this README to the
+As a result, we've moved some of the content of this README to the
 [docs](https://github.com/dart-lang/site-shared/docs)
-directory in the shared repo.
+the directory in the shared repo.
 
 For more information on using/writing for this repo,
 refer to the following docs:
