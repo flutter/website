@@ -13,6 +13,7 @@ For simple changes (such as to CSS and text), you probably don't need to
 build this site.  Often you can make changes using the GitHub UI.
 
 If you want/need to build, read on.
+feel good after coding ........ coading for life
 
 ## Before you build this site
 
