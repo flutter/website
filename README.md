@@ -17,7 +17,8 @@ If you want/need to build, read on.
 ## Before you build this site
 
 ### 1. Get the prerequisites
-
+Flutter 1.12.13 - Latest Version 
+Read out the Flutter 1.12.13 [release notes](https://flutter.dev/docs/development/tools/sdk/release-notes/release-notes-1.12.13)
 Install the following tools if you don't have them already.
 
 - **bash**, the Bourne shell. These instructions assume you're using `bash` -- setup might not work if you use another shell.
