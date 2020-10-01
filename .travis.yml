@@ -28,6 +28,10 @@ env:
     - TASK="./tool/check-code.sh"
     - TASK="bundle exec jekyll build"
 
+matrix: # temporarily allow this task to fail
+  allow_failures:
+    - env: TASK="./tool/check-code.sh"
+
 before_install:
   - source ./tool/env-set.sh
   - ./tool/before-install.sh
