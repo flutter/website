@@ -2,7 +2,7 @@
 
 [![Build Status][]][Repo on Travis]
 
-## Issues, bugs, and requests
+----***----Issues, bugs, and requests-----****-----
 
 We welcome contributions and feedback on our website!
 Please file a request in our
@@ -58,7 +58,7 @@ submodule-cloning techniques:
 > git pull; git submodule update --init --remote
 > ```
 
-### 3. Run installation scripts
+### 3. Run installation scripts ----***-----
 
 > NOTE: It is safe to (re-)run all of the commands and scripts given below even
 if you already have the required packages installed.
@@ -79,7 +79,7 @@ if you already have the required packages installed.
 >   this repo, **repeat steps 1 and 2** above.
 > - If you upgrade Dart then rerun all of the steps above.
 
-## Developing
+## Developing ----***----
 
  1. Create a branch.
  1. Make your changes.
@@ -154,10 +154,10 @@ In order to create or change example code using `dartpad_picker`, you must regen
 You can deploy your local edits to a personal staging site as follows
 (steps 1 and 2 need to be done only once):
 
- 1. In the [Firebase Console](https://console.firebase.google.com),
+    1. In the [Firebase Console](https://console.firebase.google.com),
     create your own Firebase project (e.g. 'mit-flutter-staging')
 
- 1. Tell Firebase about that project with the firebase
+    1. Tell Firebase about that project with the firebase
     [`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
 
       ```console
@@ -168,10 +168,10 @@ You can deploy your local edits to a personal staging site as follows
 
  1. Tell Firebase that you want to deploy to staging:
 
-    ```console
-    $ npx firebase use my-foo
-    Now using alias staging (<your project name>)
-    ```
+         ```console
+         $ npx firebase use my-foo
+         Now using alias staging (<your project name>)
+         ```
 
  1. Tell Firebase to execute deployment of your project:
 
