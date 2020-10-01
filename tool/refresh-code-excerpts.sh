@@ -42,6 +42,9 @@ FRAG="$TMP/_fragments"
 
 if [[ -e "$FRAG" ]]; then echo Deleting old "$FRAG"; rm -Rf "$FRAG"; fi
 
+# ensure package_config.json is generated
+$pub get
+
 if [[ -n "$LEGACY" ]]; then
   npx code-excerpter examples "$FRAG"
 else
