@@ -1,4 +1,4 @@
-# [Flutter][]'s website ![Flutter logo][]
+# Flutters Flying website#
 
 [![Build Status][]][Repo on Travis]
 
