@@ -521,7 +521,6 @@ On the other hand, Virtual display makes each pixel of the native view
 flow through additional intermediate graphic buffers, which cost graphic
 memory and drawing perfomance.
 
-
 For complex cases, there are some techniques that can be used to mitigate
 these issues.
 
