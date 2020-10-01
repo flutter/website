@@ -59,9 +59,15 @@ To create a plugin called "native_add",
 do the following:
 
 ```terminal
-$ flutter create --template=plugin native_add
+$ flutter create --platforms=android,ios --template=plugin native_add
 $ cd native_add
 ```
+
+{{ site.alert.note }}
+  You can exclude platforms from --platforms that you don't want
+  to build to. However, you need to include the platform of 
+  the device you are testing on.
+{{ site.alert.end }}
 
 ## Step 2: Add C/C++ sources
 
