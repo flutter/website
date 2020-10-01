@@ -1,8 +1,8 @@
-# [Flutter][]'s website ![Flutter logo][]
+# [Flutter][]'s Website ![Flutter logo][]
 
 [![Build Status][]][Repo on Travis]
 
-## Issues, bugs, and requests
+# Issues, Bugs, and Requests
 
 We welcome contributions and feedback on our website!
 Please file a request in our
