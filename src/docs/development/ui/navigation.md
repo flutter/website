@@ -7,7 +7,7 @@ description: Articles and cookbook recipes that address screen navigation.
 This is merely a placeholder. It should be a real page.
 {% endcomment %}
 
-To learn more about Flutter's original (1.0)
+To learn about Flutter's original (1.0)
 navigation and routing mechanism,
 see the [Navigation recipes][] in the
 [Flutter cookbook][] and the [`Navigator`][] API docs.
