@@ -4,7 +4,7 @@ short-title: Platform-views
 description: Learn how to host native Android and iOS views in your Flutter app with Platform Views.
 ---
 
-Platform views allow to embed native views in a Flutter app. 
+Platform views allow to embed native views in a Flutter app.
 
 The Flutter engine takes care of coordinating the platform
 and the Flutter compositors, so you can apply transforms,
@@ -23,19 +23,19 @@ Flutter supports two modes: Virtual displays and Hybrid composition.
 
 Which one to use depends on the use case. Let's take a look:
 
-* Virtual displays renders the native view to a texture,
-  so it's not embeded within the Android view hierachy. Performance 
-  is good although certain platform interactions such as keyboard 
+* Virtual displays renders the `android.view.View` instance to a texture,
+  so it's not embeded within the Android view hierachy. Performance
+  is good although certain platform interactions such as keyboard
   handling, and accessibility features might not work.
 
-* Hybrid composition requires Flutter 1.22. This mode appends the 
-  native view to the Android View hirarchy. Thefore, keyboard
+* Hybrid composition requires Flutter 1.22. This mode appends the
+  native `android.view.View` to the view hirarchy. Thefore, keyboard
   handling, and accesibility work out of the box. Performance is
   good in Android 10 or above. Prior to Android 10, this mode
   reduces the frame throughput (FPS) of the Flutter UI.
   See [performance][#performance] for more.
 
-To create a platform view, follow these steps:
+To create a platform view on Android, follow these steps:
 
 ### On the Dart side
 
@@ -44,7 +44,7 @@ and add the following build implementation,
 as shown in the following steps.
 
 {{site.alert.warning}}
-  For this to work, your plugin or app must use Android embedding v2. 
+  For this to work, your plugin or app must use Android embedding v2.
   If you haven't updated your plugin, see the
   [plugin migration guide][].
 {{site.alert.end}}
@@ -71,12 +71,12 @@ import 'package:flutter/services.dart';
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  final String viewType = 'hybrid-view-type';
+  final String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
 
   return PlatformViewLink(
-    viewType: viewType, 
+    viewType: viewType,
     surfaceFactory:
         (BuildContext context, PlatformViewController controller) {
       return AndroidViewSurface(
@@ -118,7 +118,6 @@ do the following:
 import 'package:flutter/widget.dart';
 ```
 
-
 2. Implement a `build()` method:
 
 <!-- skip -->
@@ -156,8 +155,7 @@ On the platform side, use the standard
 
 (TBD: Where is the Kotlin implementation? How is iOS different?)
 
-In your native code, for example `NativeView.java`, implement
-the following:
+In your native code, implement the following:
 
 `NativeView.java`
 
@@ -229,7 +227,9 @@ class NativeViewFactory extends PlatformViewFactory {
 }
 ```
 
-In your main activity file, for example `MainActivity.java`:
+Finally, register the platform view. This can be done in an app or a plugin.
+
+For app registration, modify the main activity:
 
 ```java
 package dev.flutter.example;
@@ -244,23 +244,45 @@ public class MainActivity extends FlutterActivity {
         flutterEngine
             .getPlatformViewsController()
             .getRegistry()
-            .registerViewFactory("hybrid-view-type", new NativeViewFactory());
+            .registerViewFactory("<platform-view-type>", new NativeViewFactory());
     }
+}
+```
+
+For plugin registration, modify the main plugin file (e.g. `PlatformViewPlugin.java`):
+
+```java
+package dev.flutter.plugin.example;
+
+import androidx.annotation.NonNull;
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.plugin.common.BinaryMessenger;
+
+public class PlatformViewPlugin implements FlutterPlugin {
+  @Override
+  public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+    binding
+        .getFlutterEngine()
+        .getPlatformViewsController()
+        .getRegistry()
+        .registerViewFactory("<platform-view-type>", new NativeViewFactory());
+  }
 }
 ```
 
 For more information, see the API docs for:
 
+* [`FlutterPlugin`][]
 * [`PlatformViewRegistry`][]
 * [`PlatformViewFactory`][]
 * [`PlatformView`][]
 
-
+[`FlutterPlugin`][]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`PlatformViewFactory`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
 [`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
 [`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
 
-Finally, modify your `build.gradle` file to require either 
+Finally, modify your `build.gradle` file to require either
 the minimal Android SDK version:
 
 ```gradle
@@ -276,7 +298,7 @@ android {
 
 Hybrid composition on Android works best on Android 10 or above.
 On lower versions of Android, the engine makes a device-host-device
-copy of the Flutter texture. This results in a reduction of frame 
+copy of the Flutter texture. This results in a reduction of frame
 per seconds (FPS) of the Flutter UI.
 
 To mitigate this issue, we recommend that you avoid displaying
@@ -291,12 +313,206 @@ display mode works better for Android releases earlier than 10.
 
 ## iOS
 
-Lazy initialization removes the use of iOS resources before a
-Platform View is rendered. As a result, you are no longer required
-to add the `io.flutter.embedded_views_preview` flag to `Info.plist`.
+iOS only uses Hybrid composition, which means that the native
+`UIView` is appended to view hierarchy.
 
-By default, the `UIKitView` widget appends the native
-`UIView` to the view hierarchy. For more information,
-see the API page for [`UIKitView`][].
+In Flutter 1.22, platform views are enabled by default. This means
+that it's no longer required to add the
+`io.flutter.embedded_views_preview` flag to `Info.plist`.
 
+To create a platform view on iOS, follow these steps:
+
+### On the Dart side
+
+On the Dart side, create a `Widget`
+and add the following build implementation,
+as shown in the following steps.
+
+In your Dart file, for example `native_view_example.dart`,
+do the following:
+
+1. Add the following imports:
+
+<!-- skip -->
+```dart
+import 'package:flutter/widget.dart';
+```
+
+
+2. Implement a `build()` method:
+
+<!-- skip -->
+```dart
+Widget build(BuildContext context) {
+  // This is used in the platform side to register the view.
+  final String viewType = '<platform-view-type>';
+  // Pass parameters to the platform side.
+  final Map<String, dynamic> creationParams = <String, dynamic>{};
+
+  return UiKitView(
+    viewType: viewType,
+    layoutDirection: TextDirection.ltr,
+    creationParams: creationParams,
+    creationParamsCodec: const StandardMessageCodec(),
+  );
+}
+```
+
+For more information, see the API docs for:
+[`UIKitView`][].
+
+### On the platform side
+
+In your native code, implement the following:
+
+`FLNativeView.h`
+
+```h
+#import <Flutter/Flutter.h>
+
+@interface FLNativeViewFactory : NSObject <FlutterPlatformViewFactory>
+- (instancetype)initWithMessenger:(NSObject<FlutterBinaryMessenger>*)messenger;
+@end
+
+@interface FLNativeView : NSObject <FlutterPlatformView>
+
+- (instancetype)initWithFrame:(CGRect)frame
+               viewIdentifier:(int64_t)viewId
+                    arguments:(id _Nullable)args
+              binaryMessenger:(NSObject<FlutterBinaryMessenger>*)messenger;
+
+- (UIView*)view;
+@end
+```
+
+Implement the factory and the platform view in `FLNativeView.m`
+
+```m
+#import "FLNativeView.h"
+
+@implementation FLNativeViewFactory {
+  NSObject<FlutterBinaryMessenger>* _messenger;
+}
+
+- (instancetype)initWithMessenger:(NSObject<FlutterBinaryMessenger>*)messenger {
+  self = [super init];
+  if (self) {
+    _messenger = messenger;
+  }
+  return self;
+}
+
+- (NSObject<FlutterPlatformView>*)createWithFrame:(CGRect)frame
+                                   viewIdentifier:(int64_t)viewId
+                                        arguments:(id _Nullable)args {
+  return [[FLNativeView alloc] initWithFrame:frame
+                              viewIdentifier:viewId
+                                   arguments:args
+                             binaryMessenger:_messenger];
+}
+
+@end
+
+@implementation FLNativeView {
+   UIView *_view;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+               viewIdentifier:(int64_t)viewId
+                    arguments:(id _Nullable)args
+              binaryMessenger:(NSObject<FlutterBinaryMessenger>*)messenger {
+  if (self = [super init]) {
+    _view = [[UIView alloc] init];
+  }
+  return self;
+}
+
+- (UIView*)view {
+  return _view;
+}
+
+@end
+```
+
+Finally, register the platform view. This can be done in an app or a plugin.
+
+
+For app registration, modify the App's `AppDelegate.m`:
+
+```m
+#import "AppDelegate.h"
+#import "FLNativeView.h"
+#import "GeneratedPluginRegistrant.h"
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [GeneratedPluginRegistrant registerWithRegistry:self];
+
+   NSObject<FlutterPluginRegistrar>* registrar =
+      [self registrarForPlugin:@"plugin-name"];
+
+  FLNativeViewFactory* factory =
+      [[FLNativeViewFactory alloc] initWithMessenger:registrar.messenger];
+  [[self registrarForPlugin:@"<plugin-name>"] registerViewFactory:factory
+                                                          withId:@"<platform-view-type>"];
+  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
+@end
+```
+
+For plugin registration, modify the main plugin file (e.g. `FLPlugin.m`):
+
+```m
+#import "FLPlugin.h"
+#import "FLNativeView.h"
+
+@implementation FLPlugin
+
++ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
+  FLNativeViewFactory* factory =
+      [[FLNativeViewFactory alloc] initWithMessenger:registrar.messenger];
+  [registrar registerViewFactory:factory withId:@"<platform-view-type>"];
+}
+
+@end
+```
+
+For more information, see the API docs for:
+
+* [`FlutterPlatformViewFactory`][]
+* [`FlutterPlatformView`][]
+* [`PlatformView`][]
+
+[`FlutterPlatformViewFactory`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformViewFactory.html
+[`FlutterPlatformView`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformView.html
+[`FlutterPlugin`]: {{site.api}}/objcdoc/Protocols/FlutterPlugin.html
 [`UIKitView`]: {{site.api}}/flutter/widgets/UiKitView-class.html
+
+## Putting it together
+
+When implementing the `build()` method in Dart, you can use [`defaultTargetPlatform`][]
+to detect the platform, and decide what widget to use:
+
+<!-- skip -->
+```dart
+Widget build(BuildContext context) {
+  // This is used in the platform side to register the view.
+  final String viewType = '<platform-view-type>';
+  // Pass parameters to the platform side.
+  final Map<String, dynamic> creationParams = <String, dynamic>{};
+
+  switch (defaultTargetPlatform) {
+    case TargetPlatform.android:
+      // return widget on Android.
+    case TargetPlatform.iOS:
+      // return widget on iOS.
+    default:
+      throw UnsupportedError("Unsupported platform view");
+  }
+}
+```
+
+[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
