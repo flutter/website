@@ -31,7 +31,7 @@ Install the following tools if you don't have them already.
   > the default macOS `diff` being at v2.x -- to up upgrade `diffutils` run:<br>
   > `brew install diffutils`.
   >
-  > [issue #3076]: https://github.com/flutter/website/issues/3076
+  > [issue #3076]: [https://github.com/flutter/website/issues/3076]
 
 > IMPORTANT: Follow the installation instructions for each of the tools
 carefully. In particular, configure your shell/environment so
@@ -139,7 +139,7 @@ This `iframe` depends on the following GitHub gist url:
 
 For detailed instructions on how to use this approach to DartPad examples, see the [DartPad embedding guide].
 
-### DartPad example code in this repo - `src/_packages/dartpad_picker`
+### DartPad example code in this repo - [src/_packages/dartpad_picker]
 Some DartPad example code remains in `.dart` files in this repo, and must be compiled via `src/_packages/dartpad_picker/compile.sh`. For an example, consult `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`.
 
 In order to create or change example code using `dartpad_picker`, you must regenerate the JavaScript:
