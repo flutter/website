@@ -1,4 +1,4 @@
-# [Flutter][]'s website ![Flutter logo][]
+# [Flutter][]'s website ![Flutter logo][] -An amazing Project for developing applications for various platforms
 
 [![Build Status][]][Repo on Travis]
 
