@@ -14,6 +14,8 @@ build this site.  Often you can make changes using the GitHub UI.
 
 If you want/need to build, read on.
 
+you can also refer to on the doc provided by google dev team
+
 ## Before you build this site
 
 ### 1. Get the prerequisites
