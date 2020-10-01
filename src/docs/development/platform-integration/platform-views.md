@@ -30,7 +30,7 @@ Which one to use depends on the use case. Let's take a look:
   native `android.view.View` to the view hierarchy. Therefore, keyboard
   handling, and accessibility work out of the box. Prior to Android 10,
   this mode may significantly reduce the frame throughput (FPS) of the
-  Flutter UI. See [performance][#performance] for more.
+  Flutter UI. See [performance][] for more.
 
 To create a platform view on Android, follow these steps:
 
@@ -476,7 +476,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-### Performance
+## Performance
 
 Platform views in Flutter come with performance trade-offs.
 
@@ -517,8 +517,9 @@ For more information, see:
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [`FlutterPlatformView`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformView.html
 [`FlutterPlatformViewFactory`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformViewFactory.html
-[`FlutterPlugin`][]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
+[`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterTextureRegistry`]: {{site.api}}/objcdoc/Protocols/FlutterTextureRegistry.html
+[performance]: #performance
 [plugin migration guide]: https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration
 [`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
 [`PlatformViewFactory`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
