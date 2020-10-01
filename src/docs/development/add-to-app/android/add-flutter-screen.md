@@ -61,7 +61,7 @@ myButton.setOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<!--code-excerpt "f.kt" title-->
+<!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
