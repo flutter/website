@@ -1,4 +1,4 @@
-# [Flutter][]'s website ![Flutter logo][]
+# [Flutter][]'s website ! Welcome to flutter[Flutter logo][]
 
 [![Build Status][]][Repo on Travis]
 
@@ -16,7 +16,7 @@ If you want/need to build, read on.
 
 ## Before you build this site
 
-### 1. Get the prerequisites
+### 1. Get the prerequisites 
 
 Install the following tools if you don't have them already.
 
@@ -58,7 +58,7 @@ submodule-cloning techniques:
 > git pull; git submodule update --init --remote
 > ```
 
-### 3. Run installation scripts
+### 3. Run installation scripts- an initiative process
 
 > NOTE: It is safe to (re-)run all of the commands and scripts given below even
 if you already have the required packages installed.
