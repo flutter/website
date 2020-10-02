@@ -1,6 +1,6 @@
 # [Flutter][]'s website ![Flutter logo][]
 
-[![Build Status][]][Repo on Travis]
+[![Build amazing Status][]][Repo on Travis]
 
 ## Issues, bugs, and requests
 
