@@ -17,7 +17,7 @@ If you want/need to build, read on.
 ## Before you build this site
 
 ### 1. Get the prerequisites
-
+#bugfound
 Install the following tools if you don't have them already.
 
 - **bash**, the Bourne shell. These instructions assume you're using `bash` -- setup might not work if you use another shell.
