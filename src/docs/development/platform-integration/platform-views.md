@@ -435,7 +435,6 @@ On the platform side, you use the either Swift or Objective-C:
 {% samplecode ios-platform-views %}
 {% sample Swift %}
 
-
 Implement the factory and the platform view.
 The `FLNativeViewFactory` creates the platform view, and the platform view
 provides a reference to the `UIView`. For example, `FLNativeView.swift`:
