@@ -291,7 +291,7 @@ Here's a few hints:
   starting and ending values divided by the total number of frames.
 
 The following example contains one way to implement these updates
-to the bouncing ball example. Run the example to the see the difference
+to the bouncing ball example. Run the example to see the difference
 that these updates make to your animation:
 
 ### Example: bouncing ball (starter code 3)
