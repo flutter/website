@@ -4,7 +4,7 @@
 
 ## Issues, bugs, and requests
 
-We welcome contributions and feedback on our website!
+We welcome your contributions and feedback on our website!
 Please file a request in our
 [issue tracker](https://github.com/flutter/website/issues/new)
 and we'll take a look.
