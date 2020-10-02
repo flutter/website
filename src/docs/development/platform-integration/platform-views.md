@@ -245,7 +245,7 @@ class PlatformViewPlugin : FlutterPlugin {
 In your native code, implement the following:
 
 Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
-For example `NativeView.java`:
+For example, `NativeView.java`:
 
 ```java
 package dev.flutter.example;
@@ -281,7 +281,7 @@ class NativeView implements PlatformView {
 ```
 
 Create a factory class that creates an instance of the `NativeView` created earlier,
-for example `NativeViewFactory.java`:
+for example, `NativeViewFactory.java`:
 
 ```java
 package dev.flutter.example;
@@ -396,8 +396,8 @@ On the Dart side, create a `Widget`
 and add the following build implementation,
 as shown in the following steps.
 
-In your Dart file, for example `native_view_example.dart`,
-do the following:
+In your Dart file, for example
+do the following in `native_view_example.dart`:
 
 1. Add the following imports:
 
