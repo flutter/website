@@ -2,7 +2,7 @@
 
 [![Build Status][]][Repo on Travis]
 
-## Issues, bugs, and requests
+## Issues, bugs and requests-
 
 We welcome contributions and feedback on our website!
 Please file a request in our
@@ -11,12 +11,12 @@ and we'll take a look.
 
 For simple changes (such as to CSS and text), you probably don't need to
 build this site.  Often you can make changes using the GitHub UI.
+# Note 
+## If you want/need to build, read on.
 
-If you want/need to build, read on.
+## Before you build this site-
 
-## Before you build this site
-
-### 1. Get the prerequisites
+### 1. Get the prerequisites-
 
 Install the following tools if you don't have them already.
 
