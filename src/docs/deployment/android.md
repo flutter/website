@@ -239,12 +239,18 @@ values in the `defaultConfig` block:
   the `version` property in the pubspec.yaml file. Consult the version
   information guidance in the [versions documentation][versions].
 
-`minSdkVersion` & `targetSdkVersion`
+`minSdkVersion`, `compilesdkVersion`, & `targetSdkVersion`
 : Specify the minimum API level,
-  and the API level on which the app is designed to run.
+  the API level on which the app was compiled,
+  and the maximum API level on which the app is designed to run.
   Consult the API level section in the [versions documentation][versions]
   for details.
-
+`buildToolsVersion`
+: Specify the version of Android SDK Build Tools that your app uses. 
+  Alternatively, you can use the [Android Gradle Plugin] in Android Studio,
+  which will automatically import the minimum required Build Tools for your app
+  without the need for this property.
+  
 ## Building the app for release
 
 You have two possible release formats when publishing to
@@ -451,7 +457,6 @@ The resulting app bundle or APK files are located in
 ### Are there any special considerations with add-to-app?
 {% endcomment %}
 
-
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [appid]: {{site.android-dev}}/studio/build/application-id
@@ -475,6 +480,7 @@ The resulting app bundle or APK files are located in
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [play]: {{site.android-dev}}/distribute/googleplay/start
+[plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
 [R8]: {{site.android-dev}}/studio/build/shrink-code
 [Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
