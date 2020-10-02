@@ -16,7 +16,7 @@ If you want/need to build, read on.
 
 ## Before you build this site
 
-### 1. Get the prerequisites
+### 1. Get the prerequisites.
 
 Install the following tools if you don't have them already.
 
@@ -37,7 +37,7 @@ Install the following tools if you don't have them already.
 carefully. In particular, configure your shell/environment so
 that the tools are available in every terminal/command window you create.
 
-### 2. Clone this repo _and_ its submodules
+### 2. Clone this repo _and_ its submodules.
 
 > NOTE: This repo has git _submodules_, which affects how you clone it.
 
@@ -58,7 +58,7 @@ submodule-cloning techniques:
 > git pull; git submodule update --init --remote
 > ```
 
-### 3. Run installation scripts
+### 3. Run installation scripts.
 
 > NOTE: It is safe to (re-)run all of the commands and scripts given below even
 if you already have the required packages installed.
