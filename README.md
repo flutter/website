@@ -14,7 +14,7 @@ build this site.  Often you can make changes using the GitHub UI.
 
 If you want/need to build, read on.
 
-## Before you build this site
+## Before you build this sites
 
 ### 1. Get the prerequisites
 
