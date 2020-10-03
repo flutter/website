@@ -2536,7 +2536,7 @@ and common widget properties.
 [`LinearProgressIndicator`]: {{site.api}}/flutter/material/LinearProgressIndicator-class.html
 [`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html)
+[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [Material Design]: {{site.material}}/design
 [Material icons]: {{site.api}}/flutter/material/Icons-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
