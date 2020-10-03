@@ -143,9 +143,109 @@ For more information, see the API docs for:
 On the platform side, use the standard
 `io.flutter.plugin.platform` package in either Java or Kotlin:
 
+
+{% samplecode android-platform-views %}
+{% sample Kotlin %}
+
 In your native code, implement the following:
 
-`NativeView.java`
+Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
+For example `NativeView.kt`:
+
+```kotlin
+package dev.flutter.example
+
+import android.content.Context
+import android.graphics.Color
+import android.view.View
+import android.widget.TextView
+import io.flutter.plugin.platform.PlatformView
+
+internal class NativeView(context: Context, id: Int, creationParams: Map<String?, Any?>?) : PlatformView {
+    private val textView: TextView
+
+    override fun getView(): View {
+        return textView
+    }
+
+    override fun dispose() {}
+
+    init {
+        textView = TextView(context)
+        textView.textSize = 72f
+        textView.setBackgroundColor(Color.rgb(255, 255, 255))
+        textView.text = "Rendered on a native Android view (id: $id)"
+    }
+}
+```
+
+Create a factory class that creates an instance of the `NativeView` created earlier,
+for example `NativeViewFactory.kt`:
+
+
+```kotlin
+package dev.flutter.example
+
+import android.content.Context
+import android.view.View
+import io.flutter.plugin.common.BinaryMessenger
+import io.flutter.plugin.common.StandardMessageCodec
+import io.flutter.plugin.platform.PlatformView
+import io.flutter.plugin.platform.PlatformViewFactory
+
+internal class NativeViewFactory(private val messenger: BinaryMessenger, private val containerView: View) : PlatformViewFactory(StandardMessageCodec.INSTANCE) {
+    override fun create(context: Context, id: Int, args: Any?): PlatformView {
+        val creationParams = args as Map<String?, Any?>?
+        return NativeView(context, id, creationParams)
+    }
+}
+```
+
+Finally, register the platform view. This can be done in an app or a plugin.
+
+For app registration, modify the app's main activity (e.g. `MainActivity.kt`):
+
+```kotlin
+package dev.flutter.example
+
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngine
+
+class MainActivity : FlutterActivity() {
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        flutterEngine
+                .platformViewsController
+                .registry
+                .registerViewFactory("<platform-view-type>", NativeViewFactory())
+    }
+}
+```
+
+For plugin registration, modify the plugin's main class (e.g. `PlatformViewPlugin.kt`):
+
+```kotlin
+package dev.flutter.plugin.example
+
+import io.flutter.embedding.engine.plugins.FlutterPlugin
+import io.flutter.embedding.engine.plugins.FlutterPlugin.FlutterPluginBinding
+
+class PlatformViewPlugin : FlutterPlugin {
+    override fun onAttachedToEngine(binding: FlutterPluginBinding) {
+        binding
+                .platformViewRegistry
+                .registerViewFactory("<platform-view-type>", NativeViewFactory())
+    }
+
+    override fun onDetachedFromEngine(binding: FlutterPluginBinding) {}
+}
+```
+
+{% sample Java %}
+
+In your native code, implement the following:
+
+Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
+For example, `NativeView.java`:
 
 ```java
 package dev.flutter.example;
@@ -157,6 +257,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import io.flutter.plugin.platform.PlatformView;
+import java.util.Map;
 
 class NativeView implements PlatformView {
    @NonNull private final TextView textView;
@@ -179,9 +280,8 @@ class NativeView implements PlatformView {
 }
 ```
 
-In your factory class, for example `NativeViewFactory.java`:
-
-`NativeViewFactory.java`
+Create a factory class that creates an instance of the `NativeView` created earlier,
+for example, `NativeViewFactory.java`:
 
 ```java
 package dev.flutter.example;
@@ -217,7 +317,7 @@ class NativeViewFactory extends PlatformViewFactory {
 
 Finally, register the platform view. This can be done in an app or a plugin.
 
-For app registration, modify the main activity (e.g. `MainActivity.java`):
+For app registration, modify the app's main activity (e.g. `MainActivity.java`):
 
 ```java
 package dev.flutter.example;
@@ -237,7 +337,7 @@ public class MainActivity extends FlutterActivity {
 }
 ```
 
-For plugin registration, modify the main plugin file (e.g. `PlatformViewPlugin.java`):
+For plugin registration, modify the plugin's main file (e.g. `PlatformViewPlugin.java`):
 
 ```java
 package dev.flutter.plugin.example;
@@ -250,13 +350,15 @@ public class PlatformViewPlugin implements FlutterPlugin {
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
     binding
-        .getFlutterEngine()
-        .getPlatformViewsController()
-        .getRegistry()
+        .getPlatformViewRegistry()
         .registerViewFactory("<platform-view-type>", new NativeViewFactory());
   }
+
+  @Override
+  public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {}
 }
 ```
+{% endsamplecode %}
 
 For more information, see the API docs for:
 
@@ -294,8 +396,8 @@ On the Dart side, create a `Widget`
 and add the following build implementation,
 as shown in the following steps.
 
-In your Dart file, for example `native_view_example.dart`,
-do the following:
+In your Dart file, for example
+do the following in `native_view_example.dart`:
 
 1. Add the following imports:
 
@@ -303,7 +405,6 @@ do the following:
 ```dart
 import 'package:flutter/widget.dart';
 ```
-
 
 2. Implement a `build()` method:
 
@@ -329,9 +430,104 @@ For more information, see the API docs for:
 
 ### On the platform side
 
-In your native code, implement the following:
+On the platform side, you use the either Swift or Objective-C:
 
-`FLNativeView.h`
+{% samplecode ios-platform-views %}
+{% sample Swift %}
+
+Implement the factory and the platform view.
+The `FLNativeViewFactory` creates the platform view, and the platform view
+provides a reference to the `UIView`. For example, `FLNativeView.swift`:
+
+```swift
+import Flutter
+import UIKit
+
+class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
+    private weak var messenger: FlutterBinaryMessenger
+
+    init(messenger: FlutterBinaryMessenger) {
+        super.init()
+        self.messenger = messenger
+    }
+
+    func create(
+        withFrame frame: CGRect,
+        viewIdentifier viewId: Int64,
+        arguments args: Any?
+    ) -> FlutterPlatformView {
+        return FLNativeView(
+            frame: frame,
+            viewIdentifier: viewId,
+            arguments: args,
+            binaryMessenger: messenger)
+    }
+}
+
+class FLNativeView: NSObject, FlutterPlatformView {
+    private var _view: UIView
+
+    init(
+        frame: CGRect,
+        viewIdentifier viewId: Int64,
+        arguments args: Any?,
+        binaryMessenger messenger: FlutterBinaryMessenger?
+    ) {
+        super.init()
+        _view = UIView()
+    }
+
+    func view() -> UIView {
+        return _view
+    }
+}
+```
+
+Finally, register the platform view. This can be done in an app or a plugin.
+
+For app registration, modify the App's `AppDelegate.swift`:
+
+```swift
+import Flutter
+import UIKit
+
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
+    override func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?
+    ) -> Bool {
+        GeneratedPluginRegistrant.register(withRegistry: self)
+
+        weak var registrar = self.registrar(forPlugin: "plugin-name")
+
+        let factory = FLNativeViewFactory(messenger: registrar?.messenger)
+        self.registrar(forPlugin: "<plugin-name>").register(
+            factory,
+            withId: "<platform-view-type>")
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+}
+```
+
+For plugin registration, modify the plugin's main file (e.g. `FLPlugin.swift`):
+
+```swift
+import Flutter
+import UIKit
+
+class FLPlugin: NSObject, FlutterPlugin {
+    public static func register(with registrar: FlutterPluginRegistrar) {
+        let factory = FLNativeViewFactory(messenger: registrar.messenger)
+        registrar.register(factory, withId: "<platform-view-type>")
+    }
+}
+```
+
+{% sample Objective-C %}
+
+Add the headers for the factory and the platform view.
+For example, `FLNativeView.h`:
 
 ```objc
 #import <Flutter/Flutter.h>
@@ -351,7 +547,9 @@ In your native code, implement the following:
 @end
 ```
 
-Implement the factory and the platform view in `FLNativeView.m`
+Implement the factory and the platform view.
+The `FLNativeViewFactory` creates the platform view, and the platform view
+provides a reference to the `UIView`. For example, `FLNativeView.m`:
 
 ```objc
 #import "FLNativeView.h"
@@ -402,7 +600,6 @@ Implement the factory and the platform view in `FLNativeView.m`
 
 Finally, register the platform view. This can be done in an app or a plugin.
 
-
 For app registration, modify the App's `AppDelegate.m`:
 
 ```objc
@@ -421,6 +618,7 @@ For app registration, modify the App's `AppDelegate.m`:
 
   FLNativeViewFactory* factory =
       [[FLNativeViewFactory alloc] initWithMessenger:registrar.messenger];
+
   [[self registrarForPlugin:@"<plugin-name>"] registerViewFactory:factory
                                                           withId:@"<platform-view-type>"];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
@@ -432,8 +630,12 @@ For app registration, modify the App's `AppDelegate.m`:
 For plugin registration, modify the main plugin file (e.g. `FLPlugin.m`):
 
 ```objc
-#import "FLPlugin.h"
+
+#import <Flutter/Flutter.h>
 #import "FLNativeView.h"
+
+@interface FLPlugin : NSObject<FlutterPlugin>
+@end
 
 @implementation FLPlugin
 
@@ -445,6 +647,8 @@ For plugin registration, modify the main plugin file (e.g. `FLPlugin.m`):
 
 @end
 ```
+
+{% endsamplecode %}
 
 For more information, see the API docs for:
 
