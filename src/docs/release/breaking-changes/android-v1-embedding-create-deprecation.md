@@ -43,7 +43,7 @@ projects using the v1 embeddings.
 
 [add-to-app]: /docs/development/add-to-app
 [`io.flutter.embedding`]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/
-[`io.flutter.app]`: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/app/.
+[`io.flutter.app`]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/app/.
 
 ## Description of change
 
