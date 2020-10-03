@@ -119,7 +119,7 @@ as performed when the activity is being naturally destroyed.
 
 ## Timeline
 
-Landed in version: 1.23.0-7.0.pre
+Landed in version: 1.23.0-7.0.pre<br>
 In stable release: not yet
 
 ## References
