@@ -124,7 +124,7 @@ In stable release: not yet
 
 ## References
 
-Motivating bug: [Issue #66192][]&emdash;Non exclusive
+Motivating bug: [Issue #66192][]—Non exclusive
 UI components attached to the FlutterEngine causes
 event crosstalk
 
