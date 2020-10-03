@@ -12,22 +12,26 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Android v1 embedding app and plugin creation deprecation][]
 * [Android ActivityControlSurface attachToActivity signature change][]
 * [Material Chip button semantics][]
-* [The new Form, FormField auto-validation API][]
-* [Cupertino icons 1.0.0][]
 * [Network Policy on iOS and Android][]
 * [TextSelectionTheme migration][]
 
-[Cupertino icons 1.0.0]: /docs/release/breaking-changes/cupertino-icons-1.0.0
-[Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
-[The new Form, FormField auto-validation API]: /docs/release/breaking-changes/form-field-autovalidation-api
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
-[Bottom Navigation Item Title]: /docs/release/breaking-changes/bottom-navigation-title-to-label
 [TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
+
+### Released in Flutter 1.22
+
+* [Android v1 embedding app and plugin creation deprecation][]
+* [Cupertino icons 1.0.0][]
+* [The new Form, FormField auto-validation API][]
+
+
+[Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
+[Cupertino icons 1.0.0]: /docs/release/breaking-changes/cupertino-icons-1.0.0
+[The new Form, FormField auto-validation API]: /docs/release/breaking-changes/form-field-autovalidation-api
 
 ### Released in Flutter 1.20
 

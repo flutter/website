@@ -5,26 +5,30 @@ description: The default properties for text selection are migrating to TextSele
 
 ## Summary
 
-The `ThemeData` properties that controlled the look of selected text in
-Material widgets have been moved into their own `TextSelectionTheme`. These
-properties include `cursorColor`, `textSelectionColor`, and
-`textSelectionHandleColor`. The defaults for these properties have also
-been changed to match the Material Design specification.
+The `ThemeData` properties that controlled the look of
+selected text in Material widgets have been moved into
+their own `TextSelectionTheme`. These properties include
+`cursorColor`, `textSelectionColor`, and
+`textSelectionHandleColor`. The defaults for these
+properties have also been changed to match the Material
+Design specification.
 
 ## Context
 
-As part of the larger [Material Theme Updates][], we have introduced a new
-[Text Selection Theme][] used to specify the properties of selected text in
-`TextField` and `SelectableText` widgets. These replace several top-level
-properties of `ThemeData` and update their default values to match the Material
-Design specification. This document describes what applications will need to
-do to migrate to this new API.
+As part of the larger [Material Theme Updates][],
+we have introduced a new [Text Selection Theme][]
+used to specify the properties of selected text in
+`TextField` and `SelectableText` widgets.
+These replace several top-level properties of `ThemeData`
+and update their default values to match the Material
+Design specification. This document describes how
+applications can migrate to this new API.
 
 ## Migration guide
 
-If you are currently using the following properties of `ThemeData`, you will
-need to update them to use the new equivalent properties on
-`ThemeData.textSelectionTheme`:
+If you are currently using the following properties of
+`ThemeData`, you need to update them to use the new
+equivalent properties on `ThemeData.textSelectionTheme`:
 
 | Before                               | After                                         |
 |--------------------------------------|-----------------------------------------------|
@@ -33,6 +37,7 @@ need to update them to use the new equivalent properties on
 | `ThemeData.textSelectionHandleColor` | `TextSelectionThemeData.selectionHandleColor` |
 
 <br/>
+
 **Code before migration:**
 
 <!-- skip -->
@@ -59,9 +64,11 @@ ThemeData(
 
 **Default changes**
 
-If you weren't using these properties explicitly, but depended on the previous
-default colors used for text selection you can add a new field to your
-`ThemeData` for your app to return to the old defaults:
+If you weren't using these properties explicitly,
+but depended on the previous default colors used
+for text selection you can add a new field to your
+`ThemeData` for your app to return to the old defaults
+as shown:
 
 <!-- skip -->
 ```dart
@@ -87,8 +94,10 @@ ThemeData(
 )
 ```
 
-If you are fine with the new defaults, but have failing golden file tests, you
-can update your master golden files using this command:
+If you are fine with the new defaults,
+but have failing golden file tests, you
+can update your master golden files using the
+following command:
 
 ```bash
 flutter test --update-goldens
@@ -97,7 +106,7 @@ flutter test --update-goldens
 ## Timeline
 
 Landed in version: 1.23.0-4.0.pre<br>
-In stable release: 1.23
+In stable release: not yet
 
 ## References
 
