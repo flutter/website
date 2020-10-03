@@ -41,16 +41,23 @@ that the tools are available in every terminal/command window you create.
 
 > NOTE: This repo has git _submodules_, which affects how you clone it.
 
-To **clone [this repo][]**, follow the instructions given in the
+To **clone [flutter/website][]** (this repo), follow the instructions given in the
 GitHub help on [Cloning a repository][], and _choose one_ of the following
 submodule-cloning techniques:
 
 - Clone this repo and its submodule _at the same_, use the
   `--recurse-submodules` option:<br>
-  `git clone --recurse-submodules https://github.com/flutter/website.git`
+  
+  ```
+  git clone --recurse-submodules https://github.com/flutter/website.git
+  ```
+
 - If you've already cloned this repo without its submodule, then run
   this command from the repo root:<br>
-  `git submodule update --init --remote`
+
+  ```
+  git submodule update --init --remote
+  ```
 
 > NOTE: At any time during development you can use the submodule command to
 > refresh submodules:<br>
@@ -65,14 +72,27 @@ if you already have the required packages installed.
 
 **Open a bash terminal/command window** and execute the following commands:
 
-1. <code>cd <i>\<path-to-this-repo></i></code> &nbsp;&nbsp;# change to
-   **root of this repo**
-1. `source ./tool/env-set.sh` &nbsp;&nbsp;#
-   initialize environment variables; install/use required Node & Ruby version
-1. `./tool/before-install.sh` &nbsp;&nbsp;#
-   install core set of required tools
-1. `./tool/install.sh` &nbsp;&nbsp;#
-   install everything else needed to build this site
+1. Change to
+   **root of this repo**:
+
+   ```
+   cd <i>\<path-to-this-repo></i></code>
+   ```
+1.  Run the `env-set.sh` script to initialize environment variables, and to install/use required Node & Ruby version:
+
+    ```
+    source ./tool/env-set.sh
+    ```
+1.  Run `before-install.sh` to install the  core set of required tools:
+
+    ```
+    ./tool/before-install.sh
+    ```
+1.  Run `install.sh` to install everything else needed to build this site:
+
+    ```
+    ./tool/install.sh
+    ```
 
 > IMPORTANT:
 > - Any time you create a **new terminal/command window** to work on
