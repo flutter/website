@@ -110,8 +110,8 @@ the automatically mapped new icons are suitable for your desired aesthetics.
 
 ## Timeline
 
-Landed in: 1.22.0-10.0.pre.65<br>
-In stable release: not yet
+Landed in: 1.22.0<br>
+In stable release: yes
 
 ## References
 
