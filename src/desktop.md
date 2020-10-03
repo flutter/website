@@ -100,10 +100,28 @@ $ sudo snap install flutter --classic
 ```
 
 If `snapd` is unavailable on the Linux distro you're using,
-you might use the following command:
+you might use the following command for the distros that use apt (Debian, Ubuntu, Mint):
 
 ```terminal
 $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev
+```
+
+However, for distros like Fedora, which uses dnf package manager, you might use the following command:
+
+```terminal
+$ sudo dnf install clang cmake ninja-build pkg-config gtk3-devel libblkid-devel
+```
+
+For Arch Linux, which uses pacman package manager, the following command should be used:
+
+```terminal
+$ sudo pacman -S clang cmake ninja-build pkg-config gtk3-devel libblkid-devel
+```
+
+For users using YUM package manager, the following command should be used:
+
+```terminal
+$ sudo yum install clang cmake ninja-build pkg-config gtk3-devel libblkid-devel
 ```
 
 [Clang]: https://clang.llvm.org/
