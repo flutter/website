@@ -41,7 +41,7 @@ that the tools are available in every terminal/command window you create.
 
 > NOTE: This repo has git _submodules_, which affects how you clone it.
 
-To **clone [flutter/website][]** (this repo), follow the instructions given in the
+To **clone [flutter/website]()** (this repo), follow the instructions given in the
 GitHub help on [Cloning a repository][], and _choose one_ of the following
 submodule-cloning techniques:
 
