@@ -106,7 +106,7 @@ you might use the following command for the distros that use apt (Debian, Ubuntu
 $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev
 ```
 
-However, for distros like Fedora, which uses dnf package manager, you might use the following command:
+However, for distros like Fedora, which use DNF package manager, you might use the following command:
 
 ```terminal
 $ sudo dnf install clang cmake ninja-build pkg-config gtk3-devel libblkid-devel
