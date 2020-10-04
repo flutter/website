@@ -106,19 +106,19 @@ you might use the following command for the distros that use apt (Debian, Ubuntu
 $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev
 ```
 
-However, for distros like Fedora, which use DNF package manager, you might use the following command:
+However, for distros like Fedora, which use <em>`DNF`</em> package manager, you might use the following command:
 
 ```terminal
 $ sudo dnf install clang cmake ninja-build pkg-config gtk3-devel libblkid-devel
 ```
 
-For Arch Linux, which uses pacman package manager, the following command should be used:
+For Arch Linux, which uses <em>`pacman`</em> package manager, the following command should be used:
 
 ```terminal
 $ sudo pacman -S clang cmake ninja-build pkg-config gtk3-devel libblkid-devel
 ```
 
-For users using YUM package manager, the following command should be used:
+For users using <em>`YUM`</em> package manager, the following command should be used:
 
 ```terminal
 $ sudo yum install clang cmake ninja-build pkg-config gtk3-devel libblkid-devel
