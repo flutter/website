@@ -48,7 +48,7 @@ Future<Album> fetchAlbum() async {
     'https://jsonplaceholder.typicode.com/albums/1',
     headers: {HttpHeaders.authorizationHeader: "Basic your_api_token_here"},
   );
-  final responseJson = json.decode(response.body);
+  final responseJson = jsonDecode(response.body);
 
   return Album.fromJson(responseJson);
 }
