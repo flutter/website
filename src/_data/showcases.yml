@@ -248,6 +248,8 @@
   logo_src: showcase/cards/philips_hue-logo.png
   logo_has_name: true
   learn_more_dropdown: true
+  app_store_link: https://apps.apple.com/us/app/philips-hue/id1055281310
+  play_store_link: https://play.google.com/store/apps/details?id=com.philips.lighting.hue2&hl=en
   learn_more_links:
     - link_item:
       link: https://www2.meethue.com/en-us/entertainment/sync-with-tv#get-the-app
