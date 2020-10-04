@@ -5,8 +5,9 @@ description: Any element subclasses that override forgetChild are required to ca
 
 ## Summary
 
-A recent global key duplication detection refactor now requires
-`Element` subclasses that override the `forgetChild()` to call `super()`.
+A recent global key duplication detection refactor
+now requires `Element` subclasses that override the
+`forgetChild()` to call `super()`.
 
 ## Context
 
