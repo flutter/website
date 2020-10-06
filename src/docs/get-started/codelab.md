@@ -201,7 +201,7 @@ where the Dart code lives.
   widget. In Flutter, almost everything is a widget, including
   alignment, padding, and layout.
 * The `Scaffold` widget, from the Material library,
-  provides a default app bar, title, and a body property that
+  provides a default app bar, and a body property that
   holds the widget tree for the home screen. The widget subtree
   can be quite complex.
 * A widget’s main job is to provide a `build()` method
