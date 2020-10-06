@@ -14,7 +14,7 @@
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
-    see the [SDK archive][] page.
+    see the [SDK releases][] page.
 
  1. Extract the file in the desired location, for example:
 
@@ -115,7 +115,7 @@ command again to verify that you’ve set everything up correctly.
 
 [Flutter repo]: {{site.github}}/flutter/flutter
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[SDK archive]: /docs/development/tools/sdk/archive
+[SDK releases]: /docs/development/tools/sdk/releases
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
