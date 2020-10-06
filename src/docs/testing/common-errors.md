@@ -5,7 +5,7 @@ description: How to recognize and resolve common Flutter Framework errors.
 
 ## Introduction
 
-This page explains several frequently-encountered Flutter Framework errors and gives suggestions on how to resolve them. This is a living document with more errors we’d like to add in future revisions, and we welcome contributions from all Flutter users. Feel free to open an issue or submit a pull request to make this page more useful to you and the Flutter community. 
+This page explains several frequently-encountered Flutter Framework errors and gives suggestions on how to resolve them. This is a living document with more errors to be added in future revisions, and your contributions are welcomed. Feel free to open an issue or submit a pull request to make this page more useful to you and the Flutter community. 
 
 
 ### List of errors
@@ -24,9 +24,7 @@ This page explains several frequently-encountered Flutter Framework errors and g
 
 ### What does the error look like?
 
-RenderFlex overflow is one of the most frequent Flutter Framework errors we’ve seen, and you probably have run into it already. When it happens, you’ll see yellow & black stripes indicating the area of overflow in the app UI in addition to the error message in the debug console: 
-
-<!-- ![alt_text](images/image1.png "image_tooltip") -->
+RenderFlex overflow is one of the most frequently encountered Flutter Framework errors, and you probably have run into it already. When it happens, you’ll see yellow & black stripes indicating the area of overflow in the app UI in addition to the error message in the debug console: 
 
 
 ```
@@ -48,7 +46,7 @@ The specific RenderFlex in question is: RenderFlex#c3a70 relayoutBoundary=up1 OV
 
 ### How might you run into this error?
 
-The error often occurs when a `Column` or `Row` has a child widget that is not constrained in its size. Let’s take a look at a common scenario in the code below:
+The error often occurs when a `Column` or `Row` has a child widget that is not constrained in its size. For example, the code snippet below demonstrates a common scenario:
 
 <!-- skip -->
 ```dart
@@ -77,17 +75,17 @@ Widget build(BuildContext context) {
 ```
 
 
-In the above example, the `Column` will try to be wider than the space the `Row` (its parent) can allocate to it, causing an overflow error.  Why does the `Column` try to do that? To understand this layout behavior, we need to remember how Flutter Framework does layout:
+In the above example, the `Column` tries to be wider than the space the `Row` (its parent) can allocate to it, causing an overflow error.  Why does the `Column` try to do that? To understand this layout behavior, you need to know how Flutter Framework performs layout:
 
 <!-- TODO: Fix the blockquote style -->
->"To perform layout, Flutter walks the render tree in a depth-first traversal and **passes down size constraints** from parent to child… Children respond by **passing up a size** to their parent object within the constraints the parent established."  – [Flutter architectural overview](/docs/resources/architectural-overview#layout-and-rendering)
+>"_To perform layout, Flutter walks the render tree in a depth-first traversal and **passes down size constraints** from parent to child… Children respond by **passing up a size** to their parent object within the constraints the parent established._"  – [Flutter architectural overview](/docs/resources/architectural-overview#layout-and-rendering)
 
 In this case, the `Row` widget doesn’t constrain the size of its children, nor does the `Column` widget. Lacking constraints from its parent widget, the second Text widget tries to be as wide as all the characters it needs to display. The self-determined width of the Text widget then gets adopted by the `Column` which clashes with the maximum amount of horizontal space its parent the `Row` widget can provide.  
 
 
 ### How to fix it?
 
-Well, we need to make sure the `Column` won’t attempt to be wider than it can be. To achieve this, we need to constrain its width. One way to do it is to wrap the `Column` in an `Expanded` widget:
+Well, you need to make sure the `Column` won’t attempt to be wider than it can be. To achieve this, you need to constrain its width. One way to do it is to wrap the `Column` in an `Expanded` widget:
 
 <!-- skip -->
 ```dart
@@ -104,14 +102,14 @@ child: Row(
 ```
 
 
-Another way is to wrap the `Column` in a `Flexible` widget and specify a `flex` factor. In fact, the `Expanded` widget is equivalent to the `Flexible` widget with a `flex` factor of 1.0, as [its source code](https://github.com/flutter/flutter/blob/127e67902e8bbb0dcbfb3351b8fd00f7cbdf0178/packages/flutter/lib/src/widgets/basic.dart#L4677-L4686) shows. To further understand how to use the `Flex` widget in Flutter layouts, please check out [this Widget of the Week video](https://youtu.be/CI7x0mAZiY0) on the Flexible widget.
+Another way is to wrap the `Column` in a `Flexible` widget and specify a `flex` factor. In fact, the `Expanded` widget is equivalent to the `Flexible` widget with a `flex` factor of 1.0, as [its source code]({{site.github}}/flutter/flutter/blob/127e67902e8bbb0dcbfb3351b8fd00f7cbdf0178/packages/flutter/lib/src/widgets/basic.dart#L4677-L4686) shows. To further understand how to use the `Flex` widget in Flutter layouts, please check out [this Widget of the Week video](https://youtu.be/CI7x0mAZiY0) on the Flexible widget.
 
-### Further readings:
+### Further information:
 
-
+The resources linked below provide further information about this error. 
 
 *   [Flexible (Flutter Widget of the Week)](https://youtu.be/CI7x0mAZiY0)
-*   [How to debug layout issues with the Flutter Inspector](https://medium.com/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b)
+*   [How to debug layout issues with the Flutter Inspector]({{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b)
 *   [Understanding constraints](/docs/development/ui/layout/constraints)
 
 
@@ -121,8 +119,6 @@ Another way is to wrap the `Column` in a `Flexible` widget and specify a `flex` 
 ### What does the error look like?
 
 The message shown by the error looks like this: 
-
-<!-- ![alt_text](images/image2.png "image_tooltip") -->
 
 
 ```
@@ -137,15 +133,14 @@ The relevant error-causing widget was
 
 ### How might you run into this error?
 
-While this error is pretty common, it’s often a side effect of a primary error occurring earlier in the rendering pipeline. Usually, the issue is related to violation of box constraints, and it needs to be solved by providing more information to Flutter about how you’d like to constrain the widgets in question. You can learn more about how constraints work in Flutter on [this page](/docs/development/ui/layout/constraints). 
+While this error is pretty common, it’s often a side effect of a primary error occurring earlier in the rendering pipeline. Usually, the issue is related to violation of box constraints, and it needs to be solved by providing more information to Flutter about how you’d like to constrain the widgets in question. You can learn more about how constraints work in Flutter on the page [Understanding constraints][]. 
 
-In this doc, we describe two primary errors that can lead to the ‘RenderBox was not laid out’ error:
+[Understanding constraints]: /docs/development/ui/layout/constraints
 
+The `RenderBox was not laid out` error is often caused by one of two reasons:
 
-
-*   [‘Vertical viewport was given unbounded height’](#vertical-viewport-was-given-unbounded-height)
+* [‘Vertical viewport was given unbounded height’](#vertical-viewport-was-given-unbounded-height)
 * [‘An InputDecorator...cannot have an unbounded width’](#an-inputdecoratorcannot-have-an-unbounded-width)
-
 
 ## ‘Vertical viewport was given unbounded height’
 
@@ -153,9 +148,6 @@ In this doc, we describe two primary errors that can lead to the ‘RenderBox wa
 ### What does the error look like?
 
 The message shown by the error looks like this: 
-
-<!-- ![alt_text](images/image3.png "image_tooltip") -->
-
 
 
 ```
@@ -174,7 +166,7 @@ The relevant error-causing widget was
 
 ### How might you run into this error?
 
-The error is often caused when a `ListView` (or other kinds of scrollable widgets such as `GridView`) is placed inside a `Column`. A `ListView` takes all the vertical space available to it, unless it’s constrained by its parent widget. However, a `Column` doesn’t impose any constraint on it’s children’s height by default. The combination of the two behaviors lead to the failure of determining the size of the `ListView`. 
+The error is often caused when a `ListView` (or other kinds of scrollable widgets such as `GridView`) is placed inside a `Column`. A `ListView` takes all the vertical space available to it, unless it’s constrained by its parent widget. However, a `Column` doesn’t impose any constraint on its children’s height by default. The combination of the two behaviors leads to the failure of determining the size of the `ListView`. 
 
 <!-- skip -->
 ```dart
@@ -205,7 +197,7 @@ Widget build(BuildContext context) {
 
 ### How to fix it?
 
-To fix this error, you need to specify how tall you’d like the `ListView` to be. If you’d like to have the `ListView` be as tall as the remaining space in the `Column`, you can wrap it using an `Expanded` widget (see the example below). Otherwise, you can specify an absolute height using a `SizedBox` widget or a relative height using a `Flexible` widget.
+To fix this error, specify how tall the `ListView` should be. To make it as tall as the remaining space in the `Column`, wrap it using an `Expanded` widget (see the example below). Otherwise, specify an absolute height using a `SizedBox` widget or a relative height using a `Flexible` widget.
 
 <!-- skip -->
 ```dart
@@ -236,11 +228,11 @@ Widget build(BuildContext context) {
 
 
 
-### Further readings:
+### Further information:
 
+The resources linked below provide further information about this error.
 
-
-*   [How to debug layout issues with the Flutter Inspector](https://medium.com/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#1de2)
+*   [How to debug layout issues with the Flutter Inspector]({{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#1de2)
 *   [Understanding constraints](/docs/development/ui/layout/constraints)
 
 
@@ -250,8 +242,6 @@ Widget build(BuildContext context) {
 ### What does the error look like?
 
 The message shown by the error looks like this: 
-
-<!-- ![alt_text](images/image4.png "image_tooltip") -->
 
 ```
 The following assertion was thrown during performLayout():
@@ -263,7 +253,7 @@ This happens when the parent widget does not provide a finite width constraint. 
 
 ### How might you run into the error?
 
-This error would occur, when you put a `TextFormField` or a `TextField` in a `Row` without constraining the width of the `TextField`.
+This error occurs, for example, when a `Row` contains a `TextFormField` or a `TextField` but the latter has no width constraint.
 
 <!-- skip -->
 ```dart
@@ -288,7 +278,7 @@ Widget build(BuildContext context) {
 
 ### How to fix it?
 
-As suggested by the error message, you can fix this error by constrain the `TextField` using an `Expanded` widget (see the example below) or a `SizedBox` widget. 
+As suggested by the error message, fix this error by constraining the text field using either an `Expanded` or `SizedBox` widget. The following example demonstrates using an `Expanded` widget:
 
 <!-- skip -->
 ```dart
@@ -319,9 +309,6 @@ As suggested by the error message, you can fix this error by constrain the `Text
 
 The message shown by the error looks like this: 
 
-<!-- ![alt_text](images/image5.png "image_tooltip") -->
-
-
 
 ```
 The following assertion was thrown while looking for parent data.:
@@ -339,9 +326,9 @@ Usually, this indicates that at least one of the offending ParentDataWidgets lis
 
 ### How might you run into the error?
 
-While Flutter’s widgets are generally flexible in how they get composed together in a UI, a small subset of those widgets expect specific parent widgets. When this expectation can’t be satisfied in your widget tree, you’re likely to see this error. 
+While Flutter’s widgets are generally flexible in how they can be composed together in a UI, a small subset of those widgets expect specific parent widgets. When this expectation can’t be satisfied in your widget tree, you’re likely to see this error. 
 
-Here is an _incomplete_ list of widgets that expect specific parent widgets within the Flutter Framework. Feel free to submit a PR to add more of such widgets. 
+Here is an _incomplete_ list of widgets that expect specific parent widgets within the Flutter Framework. Feel free to submit a PR (using the doc icon in the top right corner of the page) to expand this list.
 
 | Widget                            | Expected parent widget(s) |
 | :-------------------------------- | ------------------------: |
@@ -355,15 +342,13 @@ Here is an _incomplete_ list of widgets that expect specific parent widgets with
 
 ### How to fix it?
 
-The fix should be obvious once you know what parent widget is missing. 
+The fix should be obvious once you know which parent widget is missing. 
 
 
 ## ‘setState called during build’
 
 
 ### What does the error look like?
-
-<!-- ![alt_text](images/image6.png "image_tooltip") -->
 
 ```
 The following assertion was thrown building DialogPage(dirty, dependencies: [_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]], state: _DialogPageState#f121e):
@@ -377,7 +362,7 @@ The widget on which setState() or markNeedsBuild() was called was: Overlay-[Labe
 
 In general, this error occurs when the `setState` method is called within the `build` method. 
 
-A common scenario where this error would occur is when attempting to trigger a dialog from within the `build` method. This scenario is often motivated by the requirement of showing some information to the user immediately upon their entry to a new page.  
+A common scenario where this error occurs is when attempting to trigger a Dialog from within the `build` method. This is often motivated by the need to immediately show information to the user, but setState should never be called from a `build` method.
 
 Below is a snippet that seems to be a common culprit of this error:
 
@@ -405,11 +390,11 @@ Widget build(BuildContext context) {
 ```
 
 
-You can’t see the call to `setState` here, but it’s being used as part of `showDialog`, which is why this error is coming up. The build method is never the right place to call `showDialog`. The `build` method could be called by the framework for every frame, for example, during an animation. 
+You don't see the explicit call to `setState`, but it's called by `showDialog`. The `build` method is not the right place to call `showDialog` because `build` can be called by the framework for every frame, for example, during an animation.
 
 ### How to fix it?
 
-One way to avoid this error is to use the `Navigator` API to trigger the dialog as a route. In the example below, there are two pages. The second page has a dialog to be displayed upon entry. When the user requests the second page from clicking on a button on the first page, the `Navigator` would push two routes in a row – one for the second page and another for the dialog.  
+One way to avoid this error is to use the `Navigator` API to trigger the dialog as a route. In the example below, there are two pages. The second page has a dialog to be displayed upon entry. When the user requests the second page from clicking on a button on the first page, the `Navigator` pushes two routes in a row – one for the second page and another for the dialog.  
 
 <!-- skip -->
 ```dart
@@ -445,7 +430,7 @@ class FirstScreen extends StatelessWidget {
 
 ## References
 
-*   [How to debug layout issues with the Flutter Inspector](https://medium.com/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db)
+*   [How to debug layout issues with the Flutter Inspector]({{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db)
 *   [Understanding constraints](/docs/development/ui/layout/constraints)
 *   [Dealing with box constraints](/docs/development/ui/layout/box-constraints)
 *   [Flutter architectural overview](/docs/resources/architectural-overview#layout-and-rendering)
