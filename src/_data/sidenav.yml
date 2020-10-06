@@ -230,7 +230,7 @@
             - title: Upgrading
               permalink: /docs/development/tools/sdk/upgrading
             - title: Releases
-              permalink: /docs/development/tools/sdk/archive
+              permalink: /docs/development/tools/sdk/releases
             - title: Breaking changes
               permalink: /docs/release/breaking-changes
             - title: Release notes
