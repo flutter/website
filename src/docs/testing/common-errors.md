@@ -34,14 +34,12 @@ The following assertion was thrown during layout:
 A RenderFlex overflowed by 1146 pixels on the right.
 
 The relevant error-causing widget was
-    Row 							lib/errors/renderflex_overflow_column.dart:23
+    Row 	    lib/errors/renderflex_overflow_column.dart:23
 The overflowing RenderFlex has an orientation of Axis.horizontal.
-The edge of the RenderFlex that is overflowing has been marked in the rendering with a yellow and black striped pattern. This is usually caused by the contents being too big for the RenderFlex.
-
-Consider applying a flex factor (e.g. using an Expanded widget) to force the children of the RenderFlex to fit within the available space instead of being sized to their natural size.
-This is considered an error condition because it indicates that there is content that cannot be seen. If the content is legitimately bigger than the available space, consider clipping it with a ClipRect widget before putting it in the flex, or using a scrollable container rather than a Flex, like a ListView.
-
-The specific RenderFlex in question is: RenderFlex#c3a70 relayoutBoundary=up1 OVERFLOWING
+The edge of the RenderFlex that is overflowing has been marked in the rendering 
+with a yellow and black striped pattern. This is usually caused by the contents 
+being too big for the RenderFlex.
+(Additional lines of this message omitted)
 ```
 
 
@@ -126,11 +124,8 @@ The message shown by the error looks like this:
 
 
 ```
-RenderBox was not laid out: RenderViewport#5a477 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
-'package:flutter/src/rendering/box.dart':
-Failed assertion: line 1785 pos 12: 'hasSize'
-The relevant error-causing widget was
-    ListView 					lib/errors/unbounde...
+RenderBox was not laid out: 
+RenderViewport#5a477 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 ```
 
 
@@ -160,12 +155,11 @@ The message shown by the error looks like this:
 The following assertion was thrown during performResize():
 Vertical viewport was given unbounded height.
 
-Viewports expand in the scrolling direction to fill their container. In this case, a vertical viewport was given an unlimited amount of vertical space in which to expand. This situation typically happens when a scrollable widget is nested inside another scrollable widget.
-
-If this widget is always nested in a scrollable widget there is no need to use a viewport because there will always be enough vertical space for the children. In this case, consider using a `Column` instead. Otherwise, consider using the "shrinkWrap" property (or a ShrinkWrappingViewport) to size the height of the viewport to the sum of the heights of its children.
-
-The relevant error-causing widget was
-    ListView 						lib/errors/unbounded...
+Viewports expand in the scrolling direction to fill their container. 
+In this case, a vertical viewport was given an unlimited amount of 
+vertical space in which to expand. This situation typically happens when a 
+scrollable widget is nested inside another scrollable widget.
+(Additional lines of this message omitted)
 ```
 
 
@@ -254,8 +248,13 @@ The message shown by the error looks like this:
 
 ```
 The following assertion was thrown during performLayout():
-An InputDecorator, which is typically created by a TextField, cannot have an unbounded width.
-This happens when the parent widget does not provide a finite width constraint. For example, if the InputDecorator is contained by a `Row`, then its width must be constrained. An `Expanded` widget or a SizedBox can be used to constrain the width of the InputDecorator or the TextField that contains it.
+An InputDecorator, which is typically created by a TextField, cannot have an 
+unbounded width.
+This happens when the parent widget does not provide a finite width constraint. 
+For example, if the InputDecorator is contained by a `Row`, then its width must 
+be constrained. An `Expanded` widget or a SizedBox can be used to constrain the 
+width of the InputDecorator or the TextField that contains it.
+(Additional lines of this message omitted)
 ```
 
 
@@ -321,15 +320,11 @@ The message shown by the error looks like this:
 
 
 ```
-The following assertion was thrown while looking for parent data.:
+The following assertion was thrown while looking for parent data:
 Incorrect use of ParentDataWidget.
-
-The following ParentDataWidgets are providing parent data to the same RenderObject:
-- Expanded(flex: 1) (typically placed directly inside a Flex widget)
-- LayoutId-[<_ScaffoldSlot.body>](id: _ScaffoldSlot.body) (typically placed directly inside a CustomMultiChildLayout widget)
-However, a RenderObject can only receive parent data from at most one ParentDataWidget.
-
-Usually, this indicates that at least one of the offending ParentDataWidgets listed above is not placed directly inside a compatible ancestor widget.
+(Some lines of this message omitted)
+Usually, this indicates that at least one of the offending ParentDataWidgets 
+listed above is not placed directly inside a compatible ancestor widget.
 ```
 
 
@@ -365,11 +360,14 @@ either directly or indirectly.
 When the error occurs, the following message gets displayed in the console:
 
 ```
-The following assertion was thrown building DialogPage(dirty, dependencies: [_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]], state: _DialogPageState#f121e):
+The following assertion was thrown building DialogPage(dirty, dependencies: 
+[_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]], 
+state: _DialogPageState#f121e):
 setState() or markNeedsBuild() called during build.
 
-This Overlay widget cannot be marked as needing to build because the framework is already in the process of building widgets.  A widget can be marked as needing to be built during the build phase only if one of its ancestors is currently building. This exception is allowed because the framework builds parent widgets before children, which means a dirty descendant will always be built. Otherwise, the framework might not visit this widget during this build phase.
-The widget on which setState() or markNeedsBuild() was called was: Overlay-[LabeledGlobalKey<OverlayState>#783d6]
+This Overlay widget cannot be marked as needing to build because the framework 
+is already in the process of building widgets.
+(Additional lines of this message omitted)
 ```
 
 ### How might you run into the error?
