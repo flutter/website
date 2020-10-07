@@ -125,14 +125,8 @@ Usually, the issue is related to violation of box constraints, and it needs to b
 
 The `RenderBox was not laid out` error is often caused by one of two other errors:
 
-- [Introduction](#introduction)
-- [‘A RenderFlex overflowed…’](#a-renderflex-overflowed)
-- [‘RenderBox was not laid out’](#renderbox-was-not-laid-out)
-- [‘Vertical viewport was given unbounded height’](#vertical-viewport-was-given-unbounded-height)
-- [‘An InputDecorator...cannot have an unbounded width’](#an-inputdecoratorcannot-have-an-unbounded-width)
-- [‘Incorrect use of ParentData widget’](#incorrect-use-of-parentdata-widget)
-- [‘setState called during build’](#setstate-called-during-build)
-- [References](#references)
+* ‘Vertical viewport was given unbounded height’
+* ‘An InputDecorator...cannot have an unbounded width’
 
 ## ‘Vertical viewport was given unbounded height’
 
