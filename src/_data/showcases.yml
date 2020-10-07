@@ -82,6 +82,8 @@
     The Google Ads app helps users manage, optimize and track ad campaigns all
     from the convenience of an android device.
   logo_src: showcase/cards/g_ads-logo.png
+  learn_more_cta: Learn more
+  learn_more_link: https://ads.google.com/
   app_store_link: https://itunes.apple.com/us/app/google-ads/id1037457231?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.google.android.apps.adwords
   logo_has_name: false
@@ -104,6 +106,8 @@
   description: >
     Google's Stadia app is built using Flutter for both iOS and Android.
   logo_src: showcase/cards/stadia-logo.png
+  learn_more_cta: Learn more
+  learn_more_link: https://stadia.google.com/
   app_store_link: https://apps.apple.com/us/app/google-stadia/id1471900213
   play_store_link: https://play.google.com/store/apps/details?id=com.google.stadia.android&hl=en_US
   logo_has_name: true
@@ -124,6 +128,7 @@
     innovation.
   logo_src: showcase/cards/abbey_road-logo.png
   video_id: _ACWeGGBP4E
+  learn_more_cta: Learn more
   learn_more_link: https://www.miquido.com/portfolio/topline-abbey-road-studios/
   app_store_link: https://itunes.apple.com/us/app/topline/id1270125833?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.abbeyroadandroid&hl=en_US&e=-EnableAppDetailsPageRedesign
@@ -169,6 +174,8 @@
     other apps used by hundreds of millions of users have been developed with
     Flutter.
   logo_src: showcase/cards/byte_dance-logo.png
+  learn_more_cta: Learn more
+  learn_more_link: https://www.bytedance.com/en/
   app_store_link: https://apps.apple.com/cn/app/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1/id529092160?l=en
   play_store_link: https://play.google.com/store/apps/details?id=com.ss.android.article.news
   logo_has_name: true
@@ -197,6 +204,8 @@
     Groupon uses Flutter to help hundreds of thousands of merchants track campaign performance,
     manage customer satisfaction, and get efficient support.
   logo_src: showcase/cards/groupon-logo.png
+  learn_more_cta: Learn more
+  learn_more_link: https://www.groupon.com/
   app_store_link: https://apps.apple.com/us/app/groupon/id352683833
   play_store_link: https://play.google.com/store/apps/details?id=com.groupon.redemption
   logo_has_name: true
@@ -265,6 +274,10 @@
     interaction with unique blockchain-based features.
   logo_src: showcase/cards/emaar-logo.png
   logo_has_name: true
+  learn_more_cta: Learn more
+  learn_more_link: https://www.emaar.com/
+  app_store_link: https://apps.apple.com/in/app/emaar-one/id1445056033
+  play_store_link:  https://play.google.com/store/apps/details?id=com.emaartechnologies.emaarone&hl=en&gl=US
   card_image: showcase/cards/emaar-top@.jpg
 
 - name: Green Tea
@@ -273,6 +286,7 @@
     provides rich visualizations for tracking sales targets.
   logo_src: showcase/cards/green_tea-logo.png
   logo_has_name: true
+  learn_more_link: https://www.flutterx.com/google-greentea
   card_image: showcase/cards/green_tea-top@.jpg
 
 - name: Ebay

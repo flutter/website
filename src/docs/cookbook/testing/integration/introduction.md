@@ -246,6 +246,24 @@ void main() {
 }
 ```
 
+By default, `flutter_driver` waits until there are no pending frames,
+and tests similar to the example above fail with a timeout if,
+for example, you have a continuous animation running.  In that case, wrap
+the driver actions in `runUnsynchronized` as follows:
+
+<!-- skip -->
+```dart
+test('increments the counter during animation', () async {
+  await driver.runUnsynchronized(() async {
+    // First, tap the button.
+    await driver.tap(buttonFinder);
+
+    // Then, verify the counter text is incremented by 1.
+    expect(await driver.getText(counterTextFinder), "1");
+  });
+});
+```
+
 ### 6. Run the tests
 
 Now that you have an instrumented app _and_ a test suite,

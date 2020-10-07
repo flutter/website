@@ -38,6 +38,13 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
+If you develop for android, add the following permission inside manifest tag in the AndroidManifest.xml file located at android/app/src/main. 
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+
 ## 2. Sending data to server
 
 This recipe covers how to create an `Album`
