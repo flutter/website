@@ -7,24 +7,12 @@ description: How to recognize and resolve common Flutter framework errors.
 
 This page explains several frequently-encountered Flutter framework errors and gives suggestions on how to resolve them. This is a living document with more errors to be added in future revisions, and your contributions are welcomed. Feel free to open an issue or submit a pull request to make this page more useful to you and the Flutter community. 
 
-
-### List of errors
-
-* [A RenderFlex overflowed…](#a-renderflex-overflowed)
-* [RenderBox was not laid out](#renderbox-was-not-laid-out)
-* [Vertical viewport was given unbounded height](#vertical-viewport-was-given-unbounded-height)
-* [Incorrect use of ParentData widget](#incorrect-use-of-parentdata-widget)
-* [‘An InputDecorator...cannot have an unbounded width’](#an-inputdecoratorcannot-have-an-unbounded-width)
-* [setState called during build](#setstate-called-during-build)
-
-
-
 ## ‘A RenderFlex overflowed…’
 
 RenderFlex overflow is one of the most frequently encountered Flutter framework 
 errors, and you probably have run into it already.
 
-### What does the error look like?
+**What does the error look like?**
 
 When it happens, you’ll see yellow & black stripes indicating the area of overflow in the app UI in addition to the error message in the debug console: 
 
@@ -44,7 +32,7 @@ being too big for the RenderFlex.
 
 
 
-### How might you run into this error?
+**How might you run into this error?**
 
 The error often occurs when a `Column` or `Row` has a child widget that is not constrained in its size. For example, the code snippet below demonstrates a common scenario:
 
@@ -83,7 +71,7 @@ In the above example, the `Column` tries to be wider than the space the `Row` (i
 In this case, the `Row` widget doesn’t constrain the size of its children, nor does the `Column` widget. Lacking constraints from its parent widget, the second Text widget tries to be as wide as all the characters it needs to display. The self-determined width of the Text widget then gets adopted by the `Column` which clashes with the maximum amount of horizontal space its parent the `Row` widget can provide.  
 
 
-### How to fix it?
+**How to fix it?**
 
 Well, you need to make sure the `Column` won’t attempt to be wider than it can be. To achieve this, you need to constrain its width. One way to do it is to wrap the `Column` in an `Expanded` widget:
 
@@ -104,7 +92,7 @@ child: Row(
 
 Another way is to wrap the `Column` in a `Flexible` widget and specify a `flex` factor. In fact, the `Expanded` widget is equivalent to the `Flexible` widget with a `flex` factor of 1.0, as [its source code]({{site.github}}/flutter/flutter/blob/127e67902e8bbb0dcbfb3351b8fd00f7cbdf0178/packages/flutter/lib/src/widgets/basic.dart#L4677-L4686) shows. To further understand how to use the `Flex` widget in Flutter layouts, please check out [this Widget of the Week video](https://youtu.be/CI7x0mAZiY0) on the Flexible widget.
 
-### Further information:
+**Further information:**
 
 The resources linked below provide further information about this error. 
 
@@ -118,7 +106,7 @@ The resources linked below provide further information about this error.
 While this error is pretty common, it’s often a side effect of a primary error 
 occurring earlier in the rendering pipeline.
 
-### What does the error look like?
+**What does the error look like?**
 
 The message shown by the error looks like this: 
 
@@ -130,7 +118,7 @@ RenderViewport#5a477 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 
 
 
-### How might you run into this error?
+**How might you run into this error?**
 
 Usually, the issue is related to violation of box constraints, and it needs to be solved by providing more information to Flutter about how you’d like to constrain the widgets in question. You can learn more about how constraints work in Flutter on the page [Understanding constraints][]. 
 
@@ -138,15 +126,21 @@ Usually, the issue is related to violation of box constraints, and it needs to b
 
 The `RenderBox was not laid out` error is often caused by one of two other errors:
 
-* [‘Vertical viewport was given unbounded height’](#vertical-viewport-was-given-unbounded-height)
-* [‘An InputDecorator...cannot have an unbounded width’](#an-inputdecoratorcannot-have-an-unbounded-width)
+- [Introduction](#introduction)
+- [‘A RenderFlex overflowed…’](#a-renderflex-overflowed)
+- [‘RenderBox was not laid out’](#renderbox-was-not-laid-out)
+- [‘Vertical viewport was given unbounded height’](#vertical-viewport-was-given-unbounded-height)
+- [‘An InputDecorator...cannot have an unbounded width’](#an-inputdecoratorcannot-have-an-unbounded-width)
+- [‘Incorrect use of ParentData widget’](#incorrect-use-of-parentdata-widget)
+- [‘setState called during build’](#setstate-called-during-build)
+- [References](#references)
 
 ## ‘Vertical viewport was given unbounded height’
 
 This is another common layout error you could run into 
 while creating a UI in your Flutter app.
 
-### What does the error look like?
+**What does the error look like?**
 
 The message shown by the error looks like this: 
 
@@ -164,7 +158,7 @@ scrollable widget is nested inside another scrollable widget.
 
 
 
-### How might you run into this error?
+**How might you run into this error?**
 
 The error is often caused when a `ListView` (or other kinds of scrollable widgets such as `GridView`) is placed inside a `Column`. A `ListView` takes all the vertical space available to it, unless it’s constrained by its parent widget. However, a `Column` doesn’t impose any constraint on its children’s height by default. The combination of the two behaviors leads to the failure of determining the size of the `ListView`. 
 
@@ -195,7 +189,7 @@ Widget build(BuildContext context) {
 
 
 
-### How to fix it?
+**How to fix it?**
 
 To fix this error, specify how tall the `ListView` should be. To make it as tall as the remaining space in the `Column`, wrap it using an `Expanded` widget (see the example below). Otherwise, specify an absolute height using a `SizedBox` widget or a relative height using a `Flexible` widget.
 
@@ -228,7 +222,7 @@ Widget build(BuildContext context) {
 
 
 
-### Further information:
+**Further information:**
 
 The resources linked below provide further information about this error.
 
@@ -242,7 +236,7 @@ The error message suggests that it's also related to box constraints,
 which are important to understand to avoid many of the most common 
 Flutter framework errors. 
 
-### What does the error look like?
+**What does the error look like?**
 
 The message shown by the error looks like this: 
 
@@ -259,7 +253,7 @@ width of the InputDecorator or the TextField that contains it.
 
 
 
-### How might you run into the error?
+**How might you run into the error?**
 
 This error occurs, for example, when a `Row` contains a `TextFormField` or a `TextField` but the latter has no width constraint.
 
@@ -284,7 +278,7 @@ Widget build(BuildContext context) {
 
 
 
-### How to fix it?
+**How to fix it?**
 
 As suggested by the error message, fix this error by constraining the text field using either an `Expanded` or `SizedBox` widget. The following example demonstrates using an `Expanded` widget:
 
@@ -314,7 +308,7 @@ As suggested by the error message, fix this error by constraining the text field
 
 This error is about missing an expected parent widget.
 
-### What does the error look like?
+**What does the error look like?**
 
 The message shown by the error looks like this: 
 
@@ -329,7 +323,7 @@ listed above is not placed directly inside a compatible ancestor widget.
 
 
 
-### How might you run into the error?
+**How might you run into the error?**
 
 While Flutter’s widgets are generally flexible in how they can be composed together in a UI, a small subset of those widgets expect specific parent widgets. When this expectation can’t be satisfied in your widget tree, you’re likely to see this error. 
 
@@ -345,7 +339,7 @@ Here is an _incomplete_ list of widgets that expect specific parent widgets with
 
 
 
-### How to fix it?
+**How to fix it?**
 
 The fix should be obvious once you know which parent widget is missing. 
 
@@ -355,7 +349,7 @@ The fix should be obvious once you know which parent widget is missing.
 The `build` method in your Flutter code is not a good place to call `setState` 
 either directly or indirectly. 
 
-### What does the error look like?
+**What does the error look like?**
 
 When the error occurs, the following message gets displayed in the console:
 
@@ -370,7 +364,7 @@ is already in the process of building widgets.
 (Additional lines of this message omitted)
 ```
 
-### How might you run into the error?
+**How might you run into the error?**
 
 In general, this error occurs when the `setState` method is called within the `build` method. 
 
@@ -404,7 +398,7 @@ Widget build(BuildContext context) {
 
 You don't see the explicit call to `setState`, but it's called by `showDialog`. The `build` method is not the right place to call `showDialog` because `build` can be called by the framework for every frame, for example, during an animation.
 
-### How to fix it?
+**How to fix it?**
 
 One way to avoid this error is to use the `Navigator` API to trigger the dialog as a route. In the example below, there are two pages. The second page has a dialog to be displayed upon entry. When the user requests the second page from clicking on a button on the first page, the `Navigator` pushes two routes in a row – one for the second page and another for the dialog.  
 
