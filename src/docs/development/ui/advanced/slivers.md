@@ -1,5 +1,5 @@
 ---
-title: Using Slivers to achieve fancy scrolling
+title: Using slivers to achieve fancy scrolling
 description: Where to find information on using slivers to implement fancy scrolling effects, like elastic scrolling, in Flutter.
 ---
 
@@ -47,9 +47,20 @@ in Flutter, see the following resources:
 </dd>
 </dl>
 
+## API docs
+
+Here some links to relevant API docs:
+
+* [`SliverAppBar`][]
+* [`SliverGrid`][]
+* [`SliverList`][]
+
 
 [SliverAppBar]: https://youtu.be/R9C5KMJKluE
+[`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
+[`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
 [SliverList and SliverGrid]: https://youtu.be/ORiTTaVY6mM
+[`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
 [Slivers, DeMystified]: {{site.flutter-medium}}/slivers-demystified-6ff68ab0296f
 [Slivers explained - Making dynamic layouts]: https://www.youtube.com/watch?v=Mz3kHQxBjGg
 [The Boring Show]: https://www.youtube.com/playlist?list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK
