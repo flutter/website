@@ -1,11 +1,11 @@
 ---
 title: Common Flutter errors
-description: How to recognize and resolve common Flutter Framework errors.
+description: How to recognize and resolve common Flutter framework errors.
 ---
 
 ## Introduction
 
-This page explains several frequently-encountered Flutter Framework errors and gives suggestions on how to resolve them. This is a living document with more errors to be added in future revisions, and your contributions are welcomed. Feel free to open an issue or submit a pull request to make this page more useful to you and the Flutter community. 
+This page explains several frequently-encountered Flutter framework errors and gives suggestions on how to resolve them. This is a living document with more errors to be added in future revisions, and your contributions are welcomed. Feel free to open an issue or submit a pull request to make this page more useful to you and the Flutter community. 
 
 
 ### List of errors
@@ -21,7 +21,7 @@ This page explains several frequently-encountered Flutter Framework errors and g
 
 ## ‘A RenderFlex overflowed…’
 
-RenderFlex overflow is one of the most frequently encountered Flutter Framework 
+RenderFlex overflow is one of the most frequently encountered Flutter framework 
 errors, and you probably have run into it already.
 
 ### What does the error look like?
@@ -77,7 +77,7 @@ Widget build(BuildContext context) {
 ```
 
 
-In the above example, the `Column` tries to be wider than the space the `Row` (its parent) can allocate to it, causing an overflow error.  Why does the `Column` try to do that? To understand this layout behavior, you need to know how Flutter Framework performs layout:
+In the above example, the `Column` tries to be wider than the space the `Row` (its parent) can allocate to it, causing an overflow error.  Why does the `Column` try to do that? To understand this layout behavior, you need to know how Flutter framework performs layout:
 
 <!-- TODO: Fix the blockquote style -->
 >"_To perform layout, Flutter walks the render tree in a depth-first traversal and **passes down size constraints** from parent to child… Children respond by **passing up a size** to their parent object within the constraints the parent established._"  – [Flutter architectural overview](/docs/resources/architectural-overview#layout-and-rendering)
@@ -246,7 +246,7 @@ The resources linked below provide further information about this error.
 
 The error message suggests that it's also related to box constraints, 
 which are important to understand to avoid many of the most common 
-Flutter Framework errors. 
+Flutter framework errors. 
 
 ### What does the error look like?
 
@@ -338,7 +338,7 @@ Usually, this indicates that at least one of the offending ParentDataWidgets lis
 
 While Flutter’s widgets are generally flexible in how they can be composed together in a UI, a small subset of those widgets expect specific parent widgets. When this expectation can’t be satisfied in your widget tree, you’re likely to see this error. 
 
-Here is an _incomplete_ list of widgets that expect specific parent widgets within the Flutter Framework. Feel free to submit a PR (using the doc icon in the top right corner of the page) to expand this list.
+Here is an _incomplete_ list of widgets that expect specific parent widgets within the Flutter framework. Feel free to submit a PR (using the doc icon in the top right corner of the page) to expand this list.
 
 | Widget                            | Expected parent widget(s) |
 | :-------------------------------- | ------------------------: |
@@ -361,6 +361,8 @@ The `build` method in your Flutter code is not a good place to call `setState`
 either directly or indirectly. 
 
 ### What does the error look like?
+
+When the error occurs, the following message gets displayed in the console:
 
 ```
 The following assertion was thrown building DialogPage(dirty, dependencies: [_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]], state: _DialogPageState#f121e):
