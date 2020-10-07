@@ -399,11 +399,6 @@ class _RandomWordsState extends State<RandomWords> {
     [!}!]
   }
   ```
-
-  After adding the state class, the IDE complains that
-  the class is missing a build method. Next, you'll add a basic
-  build method that generates the word pairs by moving the
-  word generation code from `MyApp` to `_RandomWordsState`.
 </li>
 
 <li markdown="1"> Remove the word generation code from `MyApp`
