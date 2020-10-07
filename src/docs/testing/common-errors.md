@@ -65,8 +65,7 @@ Widget build(BuildContext context) {
 
 In the above example, the `Column` tries to be wider than the space the `Row` (its parent) can allocate to it, causing an overflow error.  Why does the `Column` try to do that? To understand this layout behavior, you need to know how Flutter framework performs layout:
 
-<!-- TODO: Fix the blockquote style -->
->"_To perform layout, Flutter walks the render tree in a depth-first traversal and **passes down size constraints** from parent to child… Children respond by **passing up a size** to their parent object within the constraints the parent established._"  – [Flutter architectural overview](/docs/resources/architectural-overview#layout-and-rendering)
+"_To perform layout, Flutter walks the render tree in a depth-first traversal and **passes down size constraints** from parent to child… Children respond by **passing up a size** to their parent object within the constraints the parent established._"  – [Flutter architectural overview](/docs/resources/architectural-overview#layout-and-rendering)
 
 In this case, the `Row` widget doesn’t constrain the size of its children, nor does the `Column` widget. Lacking constraints from its parent widget, the second Text widget tries to be as wide as all the characters it needs to display. The self-determined width of the Text widget then gets adopted by the `Column` which clashes with the maximum amount of horizontal space its parent the `Row` widget can provide.  
 
