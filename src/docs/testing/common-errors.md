@@ -21,10 +21,12 @@ This page explains several frequently-encountered Flutter Framework errors and g
 
 ## ‘A RenderFlex overflowed…’
 
+RenderFlex overflow is one of the most frequently encountered Flutter Framework 
+errors, and you probably have run into it already.
 
 ### What does the error look like?
 
-RenderFlex overflow is one of the most frequently encountered Flutter Framework errors, and you probably have run into it already. When it happens, you’ll see yellow & black stripes indicating the area of overflow in the app UI in addition to the error message in the debug console: 
+When it happens, you’ll see yellow & black stripes indicating the area of overflow in the app UI in addition to the error message in the debug console: 
 
 
 ```
@@ -115,6 +117,8 @@ The resources linked below provide further information about this error.
 
 ## ‘RenderBox was not laid out’
 
+While this error is pretty common, it’s often a side effect of a primary error 
+occurring earlier in the rendering pipeline.
 
 ### What does the error look like?
 
@@ -133,17 +137,19 @@ The relevant error-causing widget was
 
 ### How might you run into this error?
 
-While this error is pretty common, it’s often a side effect of a primary error occurring earlier in the rendering pipeline. Usually, the issue is related to violation of box constraints, and it needs to be solved by providing more information to Flutter about how you’d like to constrain the widgets in question. You can learn more about how constraints work in Flutter on the page [Understanding constraints][]. 
+Usually, the issue is related to violation of box constraints, and it needs to be solved by providing more information to Flutter about how you’d like to constrain the widgets in question. You can learn more about how constraints work in Flutter on the page [Understanding constraints][]. 
 
 [Understanding constraints]: /docs/development/ui/layout/constraints
 
-The `RenderBox was not laid out` error is often caused by one of two reasons:
+The `RenderBox was not laid out` error is often caused by one of two other errors:
 
 * [‘Vertical viewport was given unbounded height’](#vertical-viewport-was-given-unbounded-height)
 * [‘An InputDecorator...cannot have an unbounded width’](#an-inputdecoratorcannot-have-an-unbounded-width)
 
 ## ‘Vertical viewport was given unbounded height’
 
+This is another common layout error you could run into 
+while creating a UI in your Flutter app.
 
 ### What does the error look like?
 
@@ -238,6 +244,9 @@ The resources linked below provide further information about this error.
 
 ## ‘An InputDecorator...cannot have an unbounded width’
 
+The error message suggests that it's also related to box constraints, 
+which are important to understand to avoid many of the most common 
+Flutter Framework errors. 
 
 ### What does the error look like?
 
@@ -304,6 +313,7 @@ As suggested by the error message, fix this error by constraining the text field
 
 ## ‘Incorrect use of ParentData widget’
 
+This error is about missing an expected parent widget.
 
 ### What does the error look like?
 
@@ -347,6 +357,8 @@ The fix should be obvious once you know which parent widget is missing.
 
 ## ‘setState called during build’
 
+The `build` method in your Flutter code is not a good place to call `setState` 
+either directly or indirectly. 
 
 ### What does the error look like?
 
@@ -429,6 +441,9 @@ class FirstScreen extends StatelessWidget {
 ```
 
 ## References
+
+To learn more about how to debug errors, especially layout errors in Flutter, 
+check out the following resources: 
 
 *   [How to debug layout issues with the Flutter Inspector]({{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db)
 *   [Understanding constraints](/docs/development/ui/layout/constraints)
