@@ -57,6 +57,7 @@ from the beta channel and enable web support:
 $ flutter channel beta
 $ flutter upgrade
 $ flutter config --enable-web
+$ flutter update-packages
 ```
 
 {{site.alert.warning}}
