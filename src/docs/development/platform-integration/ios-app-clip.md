@@ -213,7 +213,7 @@ image="development/platform-integration/ios-app-clip/app-clip-framework-search.p
 
 **7.2**
 
-For Swift target, Set the `Objective-C Bridging Header` build setting to
+For Swift target, set the `Objective-C Bridging Header` build setting to
 `Runner/Runner-Bridging-Header.h`
 
 In other words, the same as the main app target's build settings.
