@@ -231,16 +231,16 @@ This legend shows the symbol for each DevTools event and its meaning
 ![Auto Snapshot]({% asset tools/devtools/memory_eventtimeline_auto_snapshot.png @path %}){:width="100%"}
 <dd markdown="1">DevTools initiated a snapshot detecting that memory grow by 40% or more from previous size.  This is used to detect memory spikes in your Flutter application (same information collected as in a manual snapshot).</dd>
 <dt markdown="1">**Monitor Allocations**</dt>
-![Auto Snapshot]({% asset tools/devtools/memory_eventtimeline_monitor.png @path %}){:width="100%"}
+![Monitor]({% asset tools/devtools/memory_eventtimeline_monitor.png @path %}){:width="100%"}
 <dd markdown="1">Collects current state of all active classes number of instances and byte size of all instances.  In addtion, the deltas are the change in the accumulators since the last "Reset Accumulators" button pressed.</dd>
 <dt markdown="1">**Reset Accumulators**</dt>
-![Auto Snapshot]({% asset tools/devtools/memory_eventtimeline_reset_monitor.png @path %}){:width="100%"}
+![Reset]({% asset tools/devtools/memory_eventtimeline_reset_monitor.png @path %}){:width="100%"}
 <dd markdown="1">When both the instance and bytes accumulators were reset to zero.</dd>
 <dt markdown="1">**User Initiated GC**</dt>
-![Auto Snapshot]({% asset tools/devtools/memory_eventtimeline_gc.png @path %}){:width="100%"}
+![GC]({% asset tools/devtools/memory_eventtimeline_gc.png @path %}){:width="100%"}
 <dd markdown="1">When user manual request the VM to perform a garbage collection of memory (only a suggestion to the VM).</dd>
 <dt markdown="1">**VM GC**</dt>
-![Auto Snapshot]({% asset tools/devtools/memory_eventtimeline_vmgc.png @path %}){:width="100%"}
+![VM GC]({% asset tools/devtools/memory_eventtimeline_vmgc.png @path %}){:width="100%"}
 <dd markdown="1">GC (garbage collection) has occurred. For more information on how Dart performs garbage collection, see [Don't Fear the Garbage Collector][].</dd>
 </dl>
 
