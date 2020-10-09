@@ -60,7 +60,8 @@ Select `UIKit App Delegate` for Life Cycle.
 
 Select the same language as your original target for Language.
 
-(Note: Don't create a Swift target for an Objective-C's project, and vice versa.)
+(In other words, don't create a Swift App Clip target for an Objective-C
+main target, and vice versa to simplify the setup.)
 
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-details.png" %}
@@ -138,7 +139,7 @@ the App Clip, share the same code and assets.
 
 For each of the following: `Main.storyboard`, `Assets.xcassets`,
 `LaunchScreen.storyboard`, `GeneratedPluginRegistrant.m`, and
-`AppDelegate.swift` (and `Supporting Files/main.m` for Objective-C's target),
+`AppDelegate.swift` (and `Supporting Files/main.m` if using Objective-C),
 select the file, then in the first tab of the inspector,
 also include the App Clip target in the `Target Membership` checkbox group.
 
