@@ -43,7 +43,7 @@ class MyListItem extends StatelessWidget {
     return Row(
       children: [
         Text('Item!'),
-        FlatButton(
+        TextButton(
           onPressed: () => callback(item),
           child: Text("Add"),
         ),

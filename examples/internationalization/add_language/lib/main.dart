@@ -341,7 +341,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             // This would fail if localizations were not provided for the
             // app's locale. Although only a few Material widgets display

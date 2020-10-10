@@ -455,8 +455,8 @@ but you provide a different behavior&mdash;for example,
 custom layout logic.
 
 For example, how do you build a `CustomButton` that takes a label in
-the constructor? Create a CustomButton that composes a `RaisedButton` with
-a label, rather than by extending `RaisedButton`:
+the constructor? Create a CustomButton that composes a `ElevatedButton` with
+a label, rather than by extending `ElevatedButton`:
 
 <!-- skip -->
 ```dart
@@ -467,7 +467,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(onPressed: () {}, child: Text(label));
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -1524,13 +1524,13 @@ the method 'setOnClickListener'.
 In Flutter there are two ways of adding touch listeners:
 
  1. If the Widget supports event detection, pass a function to it and handle it
-    in the function. For example, the RaisedButton has an `onPressed` parameter:
+    in the function. For example, the ElevatedButton has an `onPressed` parameter:
 
     <!-- skip -->
     ```dart
     @override
     Widget build(BuildContext context) {
-      return RaisedButton(
+      return ElevatedButton(
           onPressed: () {
             print("click");
           },
@@ -2230,7 +2230,7 @@ void main() {
     MaterialApp(
       home: Scaffold(
         body: Center(
-          child: RaisedButton(
+          child: ElevatedButton(
             onPressed: _incrementCounter,
             child: Text('Increment Counter'),
           ),

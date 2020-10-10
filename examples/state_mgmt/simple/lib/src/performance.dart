@@ -89,7 +89,7 @@ class MyHomepage extends StatelessWidget {
 class NonRebuilding_Good extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: () => _onPressed(context),
       child: Text("Add"),
     );

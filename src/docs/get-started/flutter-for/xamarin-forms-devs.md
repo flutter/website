@@ -630,8 +630,8 @@ It is somewhat similar to implementing a custom control based off a
 custom logic.
 
 For example, how do you build a `CustomButton` that takes a label in
-the constructor? Create a CustomButton that composes a `RaisedButton`
-with a label, rather than by extending `RaisedButton`:
+the constructor? Create a CustomButton that composes a `ElevatedButton`
+with a label, rather than by extending `ElevatedButton`:
 
 <!-- skip -->
 ```dart
@@ -642,7 +642,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(onPressed: () {}, child: Text(label));
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -1583,14 +1583,14 @@ tied to this event. Alternatively you would use the
 `TapGestureRecognizer`. In Flutter there are two very similar ways:
 
  1. If the widget supports event detection, pass a function to it and
-    handle it in the function. For example, the RaisedButton has an
+    handle it in the function. For example, the ElevatedButton has an
     `onPressed` parameter:
 
     <!-- skip -->
     ```dart
     @override
     Widget build(BuildContext context) {
-      return RaisedButton(
+      return ElevatedButton(
           onPressed: () {
             print("click");
           },
@@ -2509,4 +2509,3 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Write your first Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your first Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
 [write your own]: /docs/development/packages-and-plugins/developing-packages
-

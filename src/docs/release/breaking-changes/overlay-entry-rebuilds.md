@@ -53,7 +53,7 @@ class FooState extends State<Foo> {
   String buttonLabel = 'Click Me';
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () async {
         // Illegal state modification that should be wrapped in setState.
         buttonLabel = await Navigator.pushNamed(context, '/bar');
@@ -72,7 +72,7 @@ class FooState extends State<Foo> {
   String buttonLabel = 'Click Me';
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () async {
         final newLabel = await Navigator.pushNamed(context, '/bar');
         setState(() {

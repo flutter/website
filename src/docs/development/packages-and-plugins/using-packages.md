@@ -201,9 +201,9 @@ run `flutter pub upgrade`
 (**Upgrade dependencies** in IntelliJ or Android Studio)
 to retrieve the highest available version of the package
 that is allowed by the version constraint specified in
-`pubspec.yaml`. 
-Note that this is a different command from 
-`flutter upgrade` or `flutter update-packages`, 
+`pubspec.yaml`.
+Note that this is a different command from
+`flutter upgrade` or `flutter update-packages`,
 which both update Flutter itself.
 
 ### Dependencies on unpublished packages
@@ -367,7 +367,7 @@ To use this plugin:
       Widget build(BuildContext context) {
         return Scaffold(
           body: Center(
-            child: RaisedButton(
+            child: ElevatedButton(
               onPressed: launchURL,
               child: Text('Show Flutter homepage'),
             ),

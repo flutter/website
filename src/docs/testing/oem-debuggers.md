@@ -229,14 +229,14 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: EdgeInsets.all(16.0),
               child: Text(toLaunch),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () => setState(() {
                     _launched = _launchInBrowser(toLaunch);
                   }),
               child: Text('Launch in browser'),
             ),
             Padding(padding: EdgeInsets.all(16.0)),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () => setState(() {
                     _launched = _launchInWebViewOrVC(toLaunch);
                   }),

@@ -142,7 +142,7 @@ class AppHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Center(
-        child: FlatButton(
+        child: TextButton(
           onPressed: () {
             debugDumpApp();
           },
@@ -216,7 +216,7 @@ I/flutter ( 6559):                                           └_InkFeature([Glo
 I/flutter ( 6559):                                            └AnimatedDefaultTextStyle(duration: 200ms; inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 400; baseline: alphabetic; state: _AnimatedDefaultTextStyleState(427742350; ticker inactive))
 I/flutter ( 6559):                                             └DefaultTextStyle(inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 400; baseline: alphabetic)
 I/flutter ( 6559):                                              └Center(alignment: Alignment.center; renderObject: RenderPositionedBox)
-I/flutter ( 6559):                                               └FlatButton()
+I/flutter ( 6559):                                               └TextButton()
 I/flutter ( 6559):                                                └MaterialButton(state: _MaterialButtonState(398724090))
 I/flutter ( 6559):                                                 └ConstrainedBox(BoxConstraints(88.0<=w<=Infinity, h=36.0); renderObject: RenderConstrainedBox relayoutBoundary=up1)
 I/flutter ( 6559):                                                  └AnimatedDefaultTextStyle(duration: 200ms; inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 500; baseline: alphabetic; state: _AnimatedDefaultTextStyleState(315134664; ticker inactive))
@@ -244,7 +244,7 @@ widgets' build functions. For example,
 
 Since the `debugDumpApp()` call is invoked when the button changes
 from being pressed to being released, it coincides with the
-[`FlatButton`][] object calling [`setState()`][]
+[`TextButton`][] object calling [`setState()`][]
 and thus marking itself dirty. That is why, when you look at the dump you
 should see that specific object marked as "dirty". You can also see what
 gesture listeners have been registered; in this case, a single
@@ -508,7 +508,7 @@ I/flutter ( 6559):            ╎                   │ widthFactor: expand
 I/flutter ( 6559):            ╎                   │ heightFactor: expand
 I/flutter ( 6559):            ╎                   │
 I/flutter ( 6559):            ╎                   └─child: RenderConstrainedBox relayoutBoundary=up1
-I/flutter ( 6559):            ╎                     │ creator: ConstrainedBox ← MaterialButton ← FlatButton ← Center ←
+I/flutter ( 6559):            ╎                     │ creator: ConstrainedBox ← MaterialButton ← TextButton ← Center ←
 I/flutter ( 6559):            ╎                     │   DefaultTextStyle ← AnimatedDefaultTextStyle ←
 I/flutter ( 6559):            ╎                     │   _InkFeature-[GlobalKey ink renderer] ←
 I/flutter ( 6559):            ╎                     │   NotificationListener<LayoutChangedNotification> ← DecoratedBox
@@ -522,7 +522,7 @@ I/flutter ( 6559):            ╎                     └─child: RenderSemanti
 I/flutter ( 6559):            ╎                       │ creator: _GestureSemantics ← RawGestureDetector ← GestureDetector
 I/flutter ( 6559):            ╎                       │   ← InkWell ← IconTheme ← DefaultTextStyle ←
 I/flutter ( 6559):            ╎                       │   AnimatedDefaultTextStyle ← ConstrainedBox ← MaterialButton ←
-I/flutter ( 6559):            ╎                       │   FlatButton ← Center ← DefaultTextStyle ← ⋯
+I/flutter ( 6559):            ╎                       │   TextButton ← Center ← DefaultTextStyle ← ⋯
 I/flutter ( 6559):            ╎                       │ parentData: <none>
 I/flutter ( 6559):            ╎                       │ constraints: BoxConstraints(88.0<=w<=411.4, h=36.0)
 I/flutter ( 6559):            ╎                       │ size: Size(98.0, 36.0)
@@ -531,7 +531,7 @@ I/flutter ( 6559):            ╎                       └─child: RenderPoint
 I/flutter ( 6559):            ╎                         │ creator: Listener ← _GestureSemantics ← RawGestureDetector ←
 I/flutter ( 6559):            ╎                         │   GestureDetector ← InkWell ← IconTheme ← DefaultTextStyle ←
 I/flutter ( 6559):            ╎                         │   AnimatedDefaultTextStyle ← ConstrainedBox ← MaterialButton ←
-I/flutter ( 6559):            ╎                         │   FlatButton ← Center ← ⋯
+I/flutter ( 6559):            ╎                         │   TextButton ← Center ← ⋯
 I/flutter ( 6559):            ╎                         │ parentData: <none>
 I/flutter ( 6559):            ╎                         │ constraints: BoxConstraints(88.0<=w<=411.4, h=36.0)
 I/flutter ( 6559):            ╎                         │ size: Size(98.0, 36.0)
@@ -601,9 +601,9 @@ sets its child's constraints to a loose version of this:
 there is room for the padding, and thus the [`RenderConstrainedBox`][]
 has a loose constraint of `BoxConstraints(0.0<=w<=395.4,
 0.0<=h<=667.4)`. This object, which the `creator` field tells us is
-probably part of the [`FlatButton`][]'s definition,
+probably part of the [`TextButton`][]'s definition,
 sets a minimum width of 88 pixels on its contents and a
-specific height of 36.0. (This is the `FlatButton` class implementing
+specific height of 36.0. (This is the `TextButton` class implementing
 the Material Design guidelines regarding button dimensions.)
 
 The inner-most `RenderPositionedBox` loosens the constraints again,
@@ -945,7 +945,7 @@ effect by using a [`GridPaper`][] widget directly.
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`RenderPadding`]: {{site.api}}/flutter/rendering/RenderPadding-class.html
 [`RenderConstrainedBox`]: {{site.api}}/flutter/rendering/RenderConstrainedBox-class.html
-[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [frame callback]: {{site.api}}/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html
 [render-fill]: {{site.api}}/flutter/rendering/Layer/debugFillProperties.html
 [widget-fill]: {{site.api}}/flutter/widgets/Widget/debugFillProperties.html

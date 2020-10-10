@@ -59,7 +59,7 @@ class _Menu extends StatelessWidget {
       appBar: AppBar(title: Text('Simple state management')),
       body: Wrap(
         children: _routes.keys
-            .map((name) => FlatButton(
+            .map((name) => TextButton(
                 onPressed: () => Navigator.pushNamed(context, name),
                 child: Text(name)))
             .toList(growable: false),
