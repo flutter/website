@@ -101,7 +101,7 @@ class _CounterState extends State<Counter> {
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return _ResizingBox(
-            FlatButton(
+            TextButton(
                 onPressed: () {
                   _counter++;
                 },
@@ -198,7 +198,7 @@ class _CounterState extends State<Counter> {
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return _ResizingBox(
-            FlatButton(
+            TextButton(
                 onPressed: () {
                   setState(() {
                     _counter++;

@@ -19,7 +19,7 @@ void main() {
     await _visitPage(tester, '/callbacks');
     await _visitPage(tester, '/perf');
 
-    expect(await find.byType(FlatButton).evaluate().length, 4,
+    expect(await find.byType(TextButton).evaluate().length, 4,
         reason: "Smoke test was expecting a different number of pages to test. "
             "Please make sure you visit all the pages above.");
   });

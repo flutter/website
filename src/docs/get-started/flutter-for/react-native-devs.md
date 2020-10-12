@@ -558,7 +558,7 @@ reusable widget as shown in the `build` function in the following example.
 ```dart
 // Flutter
 class CustomCard extends StatelessWidget {
-  CustomCard({@required this.index, @required 
+  CustomCard({@required this.index, @required
      this.onPress});
 
   final index;
@@ -570,7 +570,7 @@ class CustomCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text('Card $index'),
-          FlatButton(
+          TextButton(
             child: const Text('Press'),
             onPressed: this.onPress,
           ),
@@ -796,7 +796,7 @@ style, touch handling, and accessibility controls.
 
 In Flutter, you can use the core layout widgets in the `Widgets`
 library, such as [`Container`][], [`Column`][],
-[`Row`][], and [`Center`][].  
+[`Row`][], and [`Center`][].
 For more information, see the [Layout Widgets][] catalog.
 
 ### What is the equivalent of `FlatList` or `SectionList`?
@@ -1084,7 +1084,7 @@ make sure to set `uses-material-design: true` in
 the project's `pubspec.yaml` file.
 This ensures that the `MaterialIcons` font,
 which displays the icons, is included in your app.
-In general, if you intend to use the Material library, 
+In general, if you intend to use the Material library,
 you should include this line.
 
 ```yaml
@@ -1319,7 +1319,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             Padding(
               padding: EdgeInsets.only(top: 70.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: toggleBlinkState,
                 child: (toggleState
                   ?( Text('Blink'))
@@ -1480,7 +1480,7 @@ class CustomCard extends StatelessWidget {
     child: Column(
       children: <Widget>[
         Text('Card $index'),
-        FlatButton(
+        TextButton(
           child: const Text('Press'),
           onPressed: this.onPress,
         ),
@@ -1802,7 +1802,7 @@ such as `Drawers`, `AppBars`, and `SnackBars`.
 The `Drawer` widget is a Material Design panel that slides
 in horizontally from the edge of a `Scaffold` to show navigation
 links in an application. You can
-provide a [`RaisedButton`][], a [`Text`][] widget,
+provide a [`ElevatedButton`][], a [`Text`][] widget,
 or a list of items to display as the child to the `Drawer` widget.
 In the following example, the [`ListTile`][]
 widget provides the navigation on tap.
@@ -2059,7 +2059,7 @@ TextField(
     hintText: 'Type something', labelText: 'Text Field '
   ),
 ),
-RaisedButton(
+ElevatedButton(
   child: Text('Submit'),
   onPressed: () {
     showDialog(
@@ -2114,7 +2114,7 @@ Form(
           labelText: 'Email',
         ),
       ),
-      RaisedButton(
+      ElevatedButton(
         onPressed: _submit,
         child: Text('Login'),
       ),
@@ -2410,11 +2410,11 @@ and common widget properties.
 <div class="table-wrapper" markdown="1">
 | React Native Component                                                                    | Flutter Widget                                                                                             | Description                                                                                                                            |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`RaisedButton`][]                           | A basic raised button.                                                                              |
+| [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`ElevatedButton`][]                           | A basic raised button.                                                                              |
 |                                                                                           |  onPressed [required]                                                                                        | The callback when the button is tapped or otherwise activated.                                                          |
 |                                                                                           | Child                                                                              | The button's label.                                                                                                      |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`FlatButton`][]                               | A basic flat button.                                                                                                         |
+| [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`TextButton`][]                               | A basic flat button.                                                                                                         |
 |                                                                                           |  onPressed [required]                                                                                        | The callback when the button is tapped or otherwise activated.                                                            |
 |                                                                                           | Child                                                                              | The button's label.                                                                                                      |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
@@ -2523,7 +2523,7 @@ and common widget properties.
 [Flutter Widget Index]: /docs/reference/widgets
 [`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [functions]: {{site.dart-site}}/guides/language/language-tour#functions
 [`Future`]: {{site.dart-site}}/tutorials/language/futures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
@@ -2552,7 +2552,7 @@ and common widget properties.
 [`PanResponder`]: https://facebook.github.io/react-native/docs/panresponder.html
 [pub.dev]: {{site.pub}}
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
-[`RaisedButton`]: {{site.api}}/flutter/material/RaisedButton-class.html
+[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`RefreshIndicator`]: {{site.api}}/flutter/material/RefreshIndicator-class.html
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
@@ -2587,4 +2587,3 @@ and common widget properties.
 [variables]: {{site.dart-site}}/guides/language/language-tour#variables
 [`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
 [Write Your First Flutter App, Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-

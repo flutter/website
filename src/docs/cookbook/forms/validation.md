@@ -66,7 +66,7 @@ class MyCustomFormState extends State<MyCustomForm> {
       key: _formKey,
       child: Column(
         children: <Widget>[
-              // Add TextFormFields and RaisedButton here.
+              // Add TextFormFields and ElevatedButton here.
         ]
      )
     );
@@ -123,7 +123,7 @@ If it isn't (the text field has no content) display the error message.
 
 <!-- skip -->
 ```dart
-RaisedButton(
+ElevatedButton(
   onPressed: () {
     // Validate returns true if the form is valid, otherwise false.
     if (_formKey.currentState.validate()) {
@@ -213,7 +213,7 @@ class MyCustomFormState extends State<MyCustomForm> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: RaisedButton(
+            child: ElevatedButton(
               onPressed: () {
                 // Validate returns true if the form is valid, or false
                 // otherwise.

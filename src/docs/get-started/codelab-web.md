@@ -214,9 +214,15 @@ class _SignUpFormState extends State<SignUpForm> {
               decoration: InputDecoration(hintText: 'Username'),
             ),
           ),
-          FlatButton(
-            color: Colors.blue,
-            textColor: Colors.white,
+          TextButton(
+            style: ButtonStyle(
+              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              }),
+              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              }),
+            ),
             onPressed: null,
             child: Text('Sign up'),
           ),
@@ -321,14 +327,14 @@ and create a method to display it.
 `_SignUpFormState` class. This is the part of the code
 that builds the SignUp button.
 Notice how the button is defined:
-It’s a `FlatButton` with a blue background,
+It’s a `TextButton` with a blue background,
 white text that says **Sign up** and, when pressed,
 does nothing.
 </li>
 
 <li markdown="1">Update the `onPressed` property.<br>
 Change the `onPressed` property to call the (non-existent)
-method that will display the welcome screen. 
+method that will display the welcome screen.
 
 Change `onPressed: null` to the following:
 
@@ -465,9 +471,15 @@ screen only when the form is completely filled in:
 <!-- skip -->
 ```dart
 ...
-FlatButton(
-  color: Colors.blue,
-  textColor: Colors.white,
+TextButton(
+  style: ButtonStyle(
+    foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled) ? null : Colors.white;
+    }),
+    backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled) ? null : Colors.blue;
+    }),
+  ),
   onPressed: _formProgress == 1 ? _showWelcomeScreen : null, // UPDATED
   child: Text('Sign up'),
 ),
@@ -518,8 +530,8 @@ but becomes enabled when all three text fields contain
   ```dart
   onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
   ```
-  This is a Dart conditional assignment and has the syntax: 
-  `condition ? expression1 : expression2`. 
+  This is a Dart conditional assignment and has the syntax:
+  `condition ? expression1 : expression2`.
   If the expression `_formProgress == 1` is true, the entire expression results
   in the value on the left hand side of the `:`, which is the
   `_showWelcomeScreen` method in this case.
@@ -771,7 +783,7 @@ with this new `AnimatedProgressIndicator`:
 ```
 
 This widget uses an `AnimatedBuilder` to animate the
-progress indicator to the latest value. 
+progress indicator to the latest value.
 </li>
 
 <li markdown="1">Run the app.<br>
@@ -894,9 +906,15 @@ class _SignUpFormState extends State<SignUpForm> {
               decoration: InputDecoration(hintText: 'Username'),
             ),
           ),
-          FlatButton(
-            color: Colors.blue,
-            textColor: Colors.white,
+          TextButton(
+            style: ButtonStyle(
+              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              }),
+              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              }),
+            ),
             onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
             child: Text('Sign up'),
           ),

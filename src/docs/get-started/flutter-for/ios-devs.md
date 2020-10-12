@@ -463,7 +463,7 @@ Flutter, build a custom widget by
 
 For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a
-`RaisedButton` with a label, rather than by extending `RaisedButton`:
+`ElevatedButton` with a label, rather than by extending `ElevatedButton`:
 
 <!-- skip -->
 ```dart
@@ -474,7 +474,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(onPressed: () {}, child: Text(label));
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -1641,13 +1641,13 @@ In Flutter, there are two ways of adding touch listeners:
 
  1. If the widget supports event detection, pass a function to it,
     and handle the event in the function. For example, the
-    `RaisedButton` widget has an `onPressed` parameter:
+    `ElevatedButton` widget has an `onPressed` parameter:
 
     <!-- skip -->
     ```dart
     @override
     Widget build(BuildContext context) {
-      return RaisedButton(
+      return ElevatedButton(
         onPressed: () {
           print("click");
         },
