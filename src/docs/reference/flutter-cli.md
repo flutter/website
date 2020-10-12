@@ -5,8 +5,7 @@ description: "The reference page for using 'flutter' in a terminal window."
 
 The `flutter` command-line tool is how developers (or IDEs on behalf of developers) interact with Flutter.
 
-Here's how you might use the `flutter` tool
-to create, analyze, test, and run an app:
+Here's how you might use the `flutter` tool to create, analyze, test, and run an app:
 
 ```terminal
 $ flutter create my_app
