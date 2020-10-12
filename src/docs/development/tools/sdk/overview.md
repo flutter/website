@@ -28,8 +28,19 @@ Note: For more information about the Dart SDK, see its
 
 ## `flutter` command-line tool
 
-The `flutter` command-line tool is how developers (or IDEs on behalf of developers) interact with Flutter.
+The `flutter` CLI is how developers (or IDEs on behalf of developers) interact with Flutter.
 For more information about `flutter`, see the [`flutter` reference page][].
+
+## `dart` command-line tool
+
+The `dart` CLI tool is available with the Flutter SDK. Previously, you downloaded the Dart SDK
+to get the `dart` CLI.
+
+To use the `dart` CLI included with the Flutter SDK, add the following to your `PATH`:
+
+```terminal
+$PATH:~/flutter/bin/dart
+```
 
 [Dart DevTools]: /docs/development/tools/devtools
 [Dart SDK]: {{site.dart-site}}/tools/sdk
