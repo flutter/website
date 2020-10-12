@@ -227,6 +227,8 @@
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
+            - title: Overview
+              permalink: /docs/development/tools/sdk/overview
             - title: Upgrading
               permalink: /docs/development/tools/sdk/upgrading
             - title: Releases
@@ -355,5 +357,7 @@
       permalink: /docs/reference/widgets
     - title: API reference
       permalink: https://api.flutter.dev
+    - title: flutter CLI reference
+      permalink: /docs/reference/flutter-cli
     - title: Package site
       permalink: https://pub.dev/flutter
