@@ -9,14 +9,14 @@ Here's how you might use the `flutter` tool
 to create, analyze, test, and run an app:
 
 ```terminal
-$ flutter create -t app my_app
+$ flutter create my_app
 $ cd my_app
 $ flutter analyze
 $ flutter test
 $ flutter run bin/my_app.dart
 ```
 
-You can also run [`pub` commands](https://dart.dev/tools/pub/cmd) using the `flutter` tool:
+You can also run [`pub` commands][] using the `flutter` tool:
 
 ```terminal
 $ flutter pub get
@@ -61,6 +61,7 @@ or follow the links in the **More information** column.
 You can also get details on `pub` commands — for example,
 `flutter help pub outdated`.
 
-[`dartanalyzer`]: /tools/dartanalyzer
-[`dartfmt`]: /tools/dartfmt
-[`pub`]: /tools/pub/cmd
+[`dartanalyzer`]: {{site.dart-site}}/tools/dartanalyzer
+[`dartfmt`]: {{site.dart-site}}/tools/dartfmt
+[`pub`]: {{site.dart-site}}/tools/pub/cmd
+[`pub` commands]: {{site.dart-site}}/tools/pub/cmd
