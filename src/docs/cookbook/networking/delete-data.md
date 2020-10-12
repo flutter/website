@@ -2,11 +2,11 @@
 title: Delete data on the internet
 description: How to use the http package to delete data on the internet.
 prev:
-  title: Update data over the internet
-  path: /docs/cookbook/networking/update-data
+  title: Send data to a new screen
+  path: /docs/cookbook/navigation/passing-data
 next:
-  title: Make authenticated requests
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Fetch data from the internet
+  path: /docs/cookbook/networking/fetch-data
 ---
 
 This recipe covers how to delete data over
@@ -123,7 +123,7 @@ Future<Album> deleteAlbum(String id) async {
     // Don't return `null`, otherwise
     // `snapshot.hasData` will always return false
     // on `FutureBuilder`.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed to delete album.');
   }
@@ -155,7 +155,7 @@ Future<Album> fetchAlbum() async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response, then throw an exception.
     throw Exception('Failed to load album');
@@ -278,7 +278,7 @@ class _MyAppState extends State<MyApp> {
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [`http`]: {{site.pub-pkg}}/http
 [`http.delete()`]: {{site.pub-api}}/http/latest/http/delete.html
-[`http` package]: {{site.pub-pkg}}/http#-installing-tab-
+[`http` package]: {{site.pub-pkg}}/http/install
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html

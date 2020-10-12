@@ -2,11 +2,11 @@
 title: Send data to the internet
 description: How to use the http package to send data over the internet.
 prev:
-  title: Fetch data from the internet
-  path: /docs/cookbook/networking/fetch-data
+  title: Parse JSON in the background
+  path: /docs/cookbook/networking/background-parsing
 next:
-  title: Make authenticated requests
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Update data over the internet
+  path: /docs/cookbook/networking/update-data
 ---
 
 Sending data to the internet is necessary for most apps.
@@ -37,6 +37,13 @@ Import the `http` package.
 ```dart
 import 'package:http/http.dart' as http;
 ```
+
+If you develop for android, add the following permission inside manifest tag in the AndroidManifest.xml file located at android/app/src/main. 
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
 
 ## 2. Sending data to server
 
@@ -137,7 +144,7 @@ Future<Album> createAlbum(String title) async {
   if (response.statusCode == 201) {
     // If the server did return a 201 CREATED response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 201 CREATED response,
     // then throw an exception.
@@ -246,7 +253,7 @@ Future<Album> createAlbum(String title) async {
   );
 
   if (response.statusCode == 201) {
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed to create album.');
   }
@@ -341,7 +348,7 @@ class _MyAppState extends State<MyApp> {
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [`http`]: {{site.pub-pkg}}/http
 [`http.post()`]: {{site.pub-api}}/http/latest/http/post.html
-[`http` package]: {{site.pub-pkg}}/http#-installing-tab-
+[`http` package]: {{site.pub-pkg}}/http/install
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html

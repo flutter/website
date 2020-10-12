@@ -5,8 +5,8 @@ prev:
   title: Make authenticated requests
   path: /docs/cookbook/networking/authenticated-requests
 next:
-  title: Work with WebSockets
-  path: /docs/cookbook/networking/web-sockets
+  title: Send data to the internet
+  path: /docs/cookbook/networking/send-data
 ---
 
 By default, Dart apps do all of their work on a single thread.
@@ -106,7 +106,7 @@ Now, use the following instructions to update the
 ```dart
 // A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+  final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
 
   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }

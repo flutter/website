@@ -5,8 +5,8 @@ prev:
   title: Send data to the internet
   path: /docs/cookbook/networking/send-data
 next:
-  title: Delete data on the internet
-  path: /docs/cookbook/networking/delete-data
+  title: Work with WebSockets
+  path: /docs/cookbook/networking/web-sockets
 ---
 
 Updating data over the internet is necessary for most apps.
@@ -137,7 +137,7 @@ Future<Album> updateAlbum(String title) async {
   if (response.statusCode == 200) {
     // If the server did return a 200 UPDATED response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 UPDATED response,
     // then throw an exception.
@@ -162,7 +162,7 @@ Future<Album> fetchAlbum() async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -267,7 +267,7 @@ Future<Album> fetchAlbum() async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -289,7 +289,7 @@ Future<Album> updateAlbum(String title) async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -394,7 +394,7 @@ class _MyAppState extends State<MyApp> {
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [`http`]: {{site.pub-pkg}}/http
 [`http.put()`]: {{site.pub-api}}/http/latest/http/put.html
-[`http` package]: {{site.pub}}/packages/http#-installing-tab-
+[`http` package]: {{site.pub}}/packages/http/install
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html

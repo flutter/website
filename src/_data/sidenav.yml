@@ -135,14 +135,18 @@
     - title: Platform integration
       permalink: /docs/development/platform-integration
       children:
+        - title: Adding iOS App Clip support
+          permalink: /docs/development/platform-integration/ios-app-clip
+        - title: Apple Watch support
+          permalink: /docs/development/platform-integration/apple-watch
         - title: C and C++ interop
           permalink: /docs/development/platform-integration/c-interop
+        - title: Hosting native Android and iOS views
+          permalink: /docs/development/platform-integration/platform-views
         - title: Web FAQ
           permalink: /docs/development/platform-integration/web
         - title: Writing platform-specific code
           permalink: /docs/development/platform-integration/platform-channels
-        - title: Apple Watch support
-          permalink: /docs/development/platform-integration/apple-watch
     - title: Packages & plugins
       permalink: /docs/development/packages-and-plugins
       children:
@@ -218,13 +222,15 @@
               permalink: /docs/development/tools/devtools/debugger
             - title: Logging view
               permalink: /docs/development/tools/devtools/logging
+              title: App size tool
+              permalink: /docs/development/tools/devtools/app-size
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
             - title: Upgrading
               permalink: /docs/development/tools/sdk/upgrading
             - title: Releases
-              permalink: /docs/development/tools/sdk/archive
+              permalink: /docs/development/tools/sdk/releases
             - title: Breaking changes
               permalink: /docs/release/breaking-changes
             - title: Release notes
@@ -249,7 +255,7 @@
           permalink: /docs/development/androidx-migration
         - title: Android plugin upgrade
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
-        - title: Developing for iOS 14 beta
+        - title: Developing for iOS 14
           permalink: /docs/development/ios-14
         - title: Xcode 11.4 support
           permalink: /docs/development/ios-project-migration
@@ -276,6 +282,7 @@
   children:
     - title: Overview
       permalink: /docs/perf
+      match-page-url-exactly: true
     - title: App size
       permalink: /docs/perf/app-size
 #    - title: Memory

@@ -97,6 +97,7 @@ The `testWidgets` function allows you to define a
 widget test and creates a `WidgetTester` to work with.
 
 This test verifies that `MyWidget` displays a given title and message.
+It is titled accordingly, and it will be populated in the next section.
 
 <!-- skip -->
 ```dart
@@ -229,6 +230,9 @@ matchers for common cases.
 [`findsNWidgets`][]
 : Verifies that a specific number of widgets are found.
 
+[`matchesGoldenFile`][]
+: Verifies that a widget's rendering matches a particular bitmap image ("golden file" testing).
+
 ### Complete example
 
 ```dart
@@ -288,6 +292,7 @@ class MyWidget extends StatelessWidget {
 [`findsOneWidget`]: {{api}}/flutter_test/findsOneWidget-constant.html
 [`findsNWidgets`]: {{api}}/flutter_test/findsNWidgets.html
 [`findsWidgets`]: {{api}}/flutter_test/findsWidgets-constant.html
+[`matchesGoldenFile`]: {{api}}/flutter_test/matchesGoldenFile.html
 [`Finder`]: {{api}}/flutter_test/Finder-class.html
 [Finding widgets in a widget test]: /docs/cookbook/testing/widget/finders
 [`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html

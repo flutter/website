@@ -456,7 +456,7 @@ Key information:
 {{site.alert.end}}
 
 Flying a hero from one route to another as it transforms
-from a circular shape to a rectanglar shape is a slick
+from a circular shape to a rectangular shape is a slick
 effect that you can implement using Hero widgets.
 To accomplish this, the code animates the intersection of
 two clip shapes: a circle and a square.

@@ -25,7 +25,6 @@ https://groups.google.com/forum/\#!forum/flutter-dev
 https://groups.google.com/forum/\#!forum/flutter-announce
 https://guides.cocoapods.org/syntax/podspec.html\#dependency
 https://help.apple.com/.*?/\#/dev
-https://pub.dev/packages/.*?\#-.*?-tab-$
 
 # Links that get redirected, and the target page doesn't have the specified anchor:
 https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher\#size

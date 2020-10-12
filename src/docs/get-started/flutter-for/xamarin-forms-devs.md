@@ -766,7 +766,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = json.decode(response.body);
+    widgets = jsonDecode(response.body);
   });
 }
 ```
@@ -842,7 +842,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -874,7 +874,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = json.decode(response.body);
+    widgets = jsonDecode(response.body);
   });
 }
 ```
@@ -928,7 +928,7 @@ static dataLoader(SendPort sendPort) async {
     String dataURL = data;
     http.Response response = await http.get(dataURL);
     // Lots of JSON to parse
-    replyTo.send(json.decode(response.body));
+    replyTo.send(jsonDecode(response.body));
   }
 }
 
@@ -1062,7 +1062,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       String dataURL = data;
       http.Response response = await http.get(dataURL);
       // Lots of JSON to parse
-      replyTo.send(json.decode(response.body));
+      replyTo.send(jsonDecode(response.body));
     }
   }
 
@@ -1102,7 +1102,7 @@ import 'package:http/http.dart' as http;
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -1206,7 +1206,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -2458,7 +2458,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Animations overview]: /docs/development/ui/animations
 [Animations tutorial]: /docs/development/ui/animations/tutorial
 [Apple's iOS design language]: https://developer.apple.com/design/resources/
-[arb]: {{site.github}}/google/i18n/app-resource-bundle
+[arb]: {{site.github}}/google/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /docs/resources/architectural-overview#composition
@@ -2474,7 +2474,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
-[Firebase_Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
+[Firebase_Messaging]: {{site.pub}}/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter cookbook]: /docs/cookbook
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login

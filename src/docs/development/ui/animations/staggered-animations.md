@@ -240,7 +240,7 @@ resulting in a call to `_buildAnimation()`.
 
     super(key: key);
 
-  [[highlight]]final Animation<double> controller;[[/highlight]]
+  [[highlight]]final AnimationController controller;[[/highlight]]
   [[highlight]]final Animation<double> opacity;[[/highlight]]
   [[highlight]]final Animation<double> width;[[/highlight]]
   [[highlight]]final Animation<double> height;[[/highlight]]

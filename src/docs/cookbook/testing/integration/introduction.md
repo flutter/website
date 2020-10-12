@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               // Provide a Key to this specific Text widget. This allows
-              // identifing the widget from inside the test suite,
+              // identifying the widget from inside the test suite,
               // and reading the text.
               key: Key('counter'),
               style: Theme.of(context).textTheme.headline4,
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Next, use the `flutter_driver` package to write integration tests.
 Add the `flutter_driver` dependency to the `dev_dependencies` section of
-the apps's `pubspec.yaml` file.
+the app's `pubspec.yaml` file.
 
 Also add the `test` dependency in order to use actual test functions and
 assertions.
@@ -246,6 +246,24 @@ void main() {
 }
 ```
 
+By default, `flutter_driver` waits until there are no pending frames,
+and tests similar to the example above fail with a timeout if,
+for example, you have a continuous animation running.  In that case, wrap
+the driver actions in `runUnsynchronized` as follows:
+
+<!-- skip -->
+```dart
+test('increments the counter during animation', () async {
+  await driver.runUnsynchronized(() async {
+    // First, tap the button.
+    await driver.tap(buttonFinder);
+
+    // Then, verify the counter text is incremented by 1.
+    expect(await driver.getText(counterTextFinder), "1");
+  });
+});
+```
+
 ### 6. Run the tests
 
 Now that you have an instrumented app _and_ a test suite,
@@ -298,6 +316,15 @@ run the following command:
 ```shell
 flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
 ```
+
+To simulate different screen dimensions, you can use the `--browser-dimension` argument,
+for example:
+
+```shell
+flutter drive --target=test_driver/app.dart --browser-name=chrome --browser-dimension 300,550 --release
+```
+
+Will run the tests in the `chrome` browser in a window with dimensions 300 by 550.
 
 [Download ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/

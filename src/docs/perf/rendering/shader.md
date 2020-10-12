@@ -78,6 +78,10 @@ Android:
 ```sh
 flutter build apk --bundle-sksl-path flutter_01.sksl.json
 ```
+or
+```sh
+flutter build appbundle --bundle-sksl-path flutter_01.sksl.json
+```
 
 iOS:
 ```sh
@@ -117,7 +121,7 @@ The worst frame rasterization time is a nice metric from such integration tests 
 
 [Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [`flutter_gallery_sksl_warmup__transition_perf`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
-[`flutter_gallery_sksl_warmup_ios32__transition_perf`]: {{site.github}}/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup_ios32__transition_perf.dart
+[`flutter_gallery_sksl_warmup_ios32__transition_perf`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup_ios32__transition_perf.dart
 [integration tests]: /docs/cookbook/testing/integration/introduction
 [`transitions_perf_test.dart`]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
 

@@ -12,16 +12,29 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Android v1 embedding app and plugin creation deprecation][]
+* [Android ActivityControlSurface attachToActivity signature change][]
 * [Material Chip button semantics][]
 * [Network Policy on iOS and Android][]
 * [SnackBars managed by the ScaffoldMessenger][]
-* [The new Form, FormField auto-validation API][]
+* [TextSelectionTheme migration][]
+* [Clip behavior][]
 
-[Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
+[Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 [SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
+[TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
+[Clip behavior]: /docs/release/breaking-changes/clip-behavior
+
+### Released in Flutter 1.22
+
+* [Android v1 embedding app and plugin creation deprecation][]
+* [Cupertino icons 1.0.0][]
+* [The new Form, FormField auto-validation API][]
+
+
+[Android v1 embedding app and plugin creation deprecation]: /docs/release/breaking-changes/android-v1-embedding-create-deprecation
+[Cupertino icons 1.0.0]: /docs/release/breaking-changes/cupertino-icons-1.0.0
 [The new Form, FormField auto-validation API]: /docs/release/breaking-changes/form-field-autovalidation-api
 
 ### Released in Flutter 1.20

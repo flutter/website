@@ -1,7 +1,7 @@
 ---
 title: Flutter documentation
 short-title: Docs
-description: The landing page for Flutter documentation.
+description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
 ---
 
 {% for card in site.data.docs_cards -%}
@@ -25,7 +25,7 @@ description: The landing page for Flutter documentation.
 ## What's new on this site
 
 To see changes to the site since our last release,
-see the [What's new archive][].
+see [What's new][].
 
 ## New to Flutter?
 
@@ -35,9 +35,9 @@ here are some next steps.
 
 ### Docs
 
-Coming from another platform? Check out:
-[Android][], [iOS][], [Web][], [React Native][],
-[Xamarin.Forms][]
+Coming from another platform? Check out Flutter for:
+[Android][], [iOS][], [Web][], [React Native][] and
+[Xamarin.Forms][] developers.
 
 [Building layouts][]
 : Learn how to create layouts in Flutter,
@@ -45,7 +45,7 @@ Coming from another platform? Check out:
 
 [Understanding constraints][]
 : Once you understand that "Constraints
-  flow up. Sizes flow down. Parents set
+  flow down. Sizes flow up. Parents set
   positions", then you are well on your
   way to understanding Flutter's layout model.
 
@@ -115,6 +115,6 @@ You might also find these docs useful:
 [Using packages]: /docs/development/packages-and-plugins/using-packages
 [videos]: /docs/resources/videos
 [Web]: /docs/get-started/flutter-for/web-devs
-[What's new archive]: /docs/whats-new-archive
+[What's new]: /docs/whats-new
 [Write your first Flutter app]: /docs/get-started/codelab
 [Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs

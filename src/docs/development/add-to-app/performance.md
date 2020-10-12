@@ -199,7 +199,7 @@ This doesn't affect the Flutter state, which lives in the `FlutterEngine`
 [auxiliary threads]: {{site.github}}/flutter/flutter/wiki/The-Engine-architecture#threading
 [CAEAGLLayer]: https://developer.apple.com/documentation/quartzcore/caeagllayer
 [CAMetalLayer]: https://developer.apple.com/documentation/quartzcore/cametallayer
-[Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.htm
+[Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html
 [Dart SDK]: {{site.dart-site}}/tools/sdk
 [`DartExecutor.executeDartEntrypoint()`]: {{site.api}}/javadoc/io/flutter/embedding/engine/dart/DartExecutor.html#executeDartEntrypoint-io.flutter.embedding.engine.dart.DartExecutor.DartEntrypoint-
 [`FlutterActivity.createDefaultIntent()`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#createDefaultIntent-android.content.Context-

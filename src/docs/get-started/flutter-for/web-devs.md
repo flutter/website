@@ -87,8 +87,11 @@ the top left, by default.
 
 ### Setting background color
 
-In Flutter, you set the background color using a
-[`Container`][]’s `decoration` property.
+In Flutter, you set the background color using the 
+`color` property or the `decoration` property of a [`Container`][]. However, you cannot
+supply both, since it would potentially result in the decoration drawing over
+the background color. The `color` property should be preferred when the background is a simple color.
+For other cases, such as gradients or images, use the `decoration` property.
 
 The CSS examples use the hex color equivalents to the Material color palette.
 
@@ -104,6 +107,20 @@ The CSS examples use the hex color equivalents to the Material color palette.
       height: 240px;
       font: 900 24px Roboto;
     }
+{% endprettify %}
+</div>
+
+<div class="righthighlight">
+{% prettify dart %}
+  var container = Container( // grey box
+    child: Text(
+      "Lorem ipsum",
+      style: bold24Roboto,
+    ),
+    width: 320,
+    height: 240,
+    [[highlight]]color: Colors.grey[300],[[/highlight]]
+  );
 {% endprettify %}
 </div>
 
