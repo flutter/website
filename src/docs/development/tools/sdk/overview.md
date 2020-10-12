@@ -33,10 +33,8 @@ For more information about `flutter`, see the [`flutter` reference page][].
 
 ## `dart` command-line tool
 
-The `dart` CLI tool is available with the Flutter SDK. Previously, you downloaded the Dart SDK
-to get the `dart` CLI.
-
-To use the `dart` CLI included with the Flutter SDK, add the following to your `PATH`:
+The `dart` CLI tool is available with the Flutter SDK. To use the `dart` CLI included with
+the Flutter SDK, add the following to your `PATH`:
 
 ```terminal
 $PATH:~/flutter/bin/dart
