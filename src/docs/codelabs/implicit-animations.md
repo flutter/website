@@ -327,10 +327,10 @@ invoke the `change()` method in the `onPressed()` handler:
 ```diff
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
-@@ -66,7 +66,7 @@
-                 'change',
-                 style: TextStyle(color: Colors.white),
-               ),
+@@ -62,7 +62,7 @@
+             ),
+             ElevatedButton(
+               child: Text('change'),
 -              onPressed: () => null,
 +              onPressed: () => change(),
              ),
@@ -361,7 +361,7 @@ between the old and new values:
 +                duration: _duration,
                ),
              ),
-             TextButton(
+             ElevatedButton(
 ```
 
 ### Shape-shifting (complete)
