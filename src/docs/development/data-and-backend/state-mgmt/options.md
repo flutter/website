@@ -79,10 +79,13 @@ A state container approach familiar to many web developers.
   
 ## Fish-Redux
 
-Fish Redux is an assembled flutter application framework based on Redux state management. It is suitable for building medium and large applications.
+Fish Redux is an assembled flutter application framework based on Redux state management. 
+It is suitable for building medium and large applications.
 
-* [Fish-Redux-Library][], by Alibaba
-* [Flutter-Movie][] - Large and complex example on how to develop using Fish Redux
+* [Fish-Redux-Library][] package, by Alibaba
+* [Fish-Redux-Source][], project code
+* [Flutter-Movie][] - Non-trivial example demonstrating how to use Fish Redux,
+with more than 30 screens, graphql, payment api and media player.
 
 ## BLoC / Rx
 
@@ -110,8 +113,9 @@ A simplified reactive state management solution.
 * [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
 
-[Flutter-Movie]: https://github.com/o1298098/Flutter-Movie
-[Fish-Redux-Library]: https://github.com/alibaba/fish-redux
+[Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
+[Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
+[Fish-Redux-Library]: {{site.pub-pkg}}/fish_redux
 [Adding interactivity to your Flutter app]: /docs/development/ui/interactive
 [accompanying article]: {{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381
 [Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
