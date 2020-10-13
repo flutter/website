@@ -133,7 +133,8 @@ In stable release: not yet
   they are messing up the Travis build.
   Remove the comment tags once you fill this in with
   real links. Only use the "master-api" include if
-  you link to "master-api.flutter.dev".
+  you link to "master-api.flutter.dev"
+  (which hosts the very latest build of the Flutter API docs).
 
 {% include master-api.md %}
 
