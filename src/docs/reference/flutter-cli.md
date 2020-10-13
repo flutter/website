@@ -26,7 +26,7 @@ $ flutter pub upgrade
 To view all commands that `flutter` supports:
 
 ```terminal
-flutter --help --verbose
+$ flutter --help --verbose
 ```
 
 The following table shows which commands you can use with the `flutter` tool:
