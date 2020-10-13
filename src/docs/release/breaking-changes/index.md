@@ -15,12 +15,14 @@ release, and listed in alphabetical order:
 * [Android ActivityControlSurface attachToActivity signature change][]
 * [Material Chip button semantics][]
 * [Network Policy on iOS and Android][]
+* [SnackBars managed by the ScaffoldMessenger][]
 * [TextSelectionTheme migration][]
 * [Clip behavior][]
 
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
+[SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
 [TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
 [Clip behavior]: /docs/release/breaking-changes/clip-behavior
 
