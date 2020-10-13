@@ -8,7 +8,7 @@ description: Brief description similar to the "context" section below. The descr
   * All lines of text should be 80 chars OR LESS.
     (I prefer less.)
   * DON'T SUBMIT a PR weeks and weeks in advance.
-    Doing this causes it to get stanky in the website Q
+    Doing this causes it to get stanky in the website queue
     and usually develops conflicts in the index file.
     Ideally, submit a PR once you have confirmed
     info on the version number where the breaking
