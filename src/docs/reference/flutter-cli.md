@@ -58,7 +58,7 @@ The following table shows which commands you can use with the `flutter` tool:
 | run     | `flutter run <DART_FILE>`         | Runs a Flutter program. | 
 | symbolize | `flutter symbolize --input=<STACK_TRACK_FILE>` | Symbolize a stack trace from the AOT compiled flutter application. |
 | test    | `flutter test [<DIRECTORY|DART_FILE>]` | Runs tests in this package.<br>Use instead of [`pub run test`][`pub`]. |
-| upgrade | `flutter upgrade` | Upgrade your copy of Flutter. | Symbolize a stack trace from an AOT compiled flutter application. |
+| upgrade | `flutter upgrade` | Upgrade your copy of Flutter. |
 | _(none)_| `flutter <DART_FILE>`             | Runs a Flutter program, just like `flutter run`. |
 {:.table .table-striped .nowrap}
 
