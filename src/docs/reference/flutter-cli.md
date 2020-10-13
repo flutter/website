@@ -15,7 +15,7 @@ $ flutter test
 $ flutter run bin/my_app.dart
 ```
 
-You can also run [`pub` commands][] using the `flutter` tool:
+You can also run [`pub`][] commands using the `flutter` tool:
 
 ```terminal
 $ flutter pub get
@@ -63,4 +63,3 @@ You can also get details on `pub` commands — for example,
 [`dartanalyzer`]: {{site.dart-site}}/tools/dartanalyzer
 [`dartfmt`]: {{site.dart-site}}/tools/dartfmt
 [`pub`]: {{site.dart-site}}/tools/pub/cmd
-[`pub` commands]: {{site.dart-site}}/tools/pub/cmd
