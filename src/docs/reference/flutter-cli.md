@@ -23,7 +23,6 @@ $ flutter pub outdated
 $ flutter pub upgrade
 ```
 
-To get usage information for a command, pass in the `--help` flag.
 To view all commands that `flutter` supports:
 
 ```terminal
