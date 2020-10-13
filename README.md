@@ -85,11 +85,10 @@ submodule-cloning techniques:
 
 **Open a bash terminal/command window** and execute the following commands:
 
-1. Change to
-   **root of this repo**:
+1. After you have cloned this repo, change to the _root of this repo_:
 
    ```console
-   $ cd <i>\<path-to-this-repo></i></code>
+   $ cd <PATH_TO_REPO>
    ```
 1.  Run the `env-set.sh` script to initialize environment variables, and to install/use required Node & Ruby version:
 
