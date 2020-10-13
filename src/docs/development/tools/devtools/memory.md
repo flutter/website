@@ -175,7 +175,7 @@ The quantities plotted on the y-axis are (from top to bottom):
   resources. Flutter has an embedder for Android and iOS.
   For more information, see [Dart on the Server][server] or
   [Custom Flutter Engine Embedders][embedder].
-
+</dl>
 To view RSS (resident set size), click the name of the RSS located
 in the legend.
 
@@ -208,6 +208,33 @@ When connected to an Android app, DevTools collects Android's ADB (Android Debug
 
 This chart is another timeseries graph of the state of Android memory as the application is running.
 The quantities plotted on the y-axis are the above values (Java Heap, Native Heap, Code size, Stack size, Graphics stack, System size and total).
+
+Clicking on a timestamp (x-position) will display all data points collected for that time period.
+
+![Screenshot of Android Memory Chart]({% asset tools/devtools/memory_android.png @path %}){:width="100%"}
+
+The legend popup will display the values of all collected Android memory data.
+
+![Screenshot of Android Memory Legend]({% asset tools/devtools/memory_android_legend.png @path %}){:width="100%"}
+
+<dl markdown="1">
+<dt markdown="1">**Time**</dt>
+<dd>The timestamp for the current data values collected - see descriptions below.</dd>
+<dt markdown="1">**Total**</dt>
+<dd>The total memory in use. Total memory is comprised of several different categories, all of which are plotted along the y-axis. These categories are described below.</dd>
+<dt markdown="1">**Other**</dt>
+<dd>Other memory usage corresponds to the ‘Private Other’ field from ADB. This is memory used by the app that the system isn't sure how to categorize. Note: The Other trace is a combination of Other and System (shared and system memory usage) - corresponds to ‘System’ field from ADB.</dd>
+<dt markdown="1">**Code**</dt>
+<dd>Code memory usage corresponds to the ‘Code’ field from ADB. This is memory that your app uses for static code and resources, such as dex byte code, optimized or compiled dex code, .so libraries, and fonts.</dd>
+<dt markdown="1">**Native Heap**</dt>
+<dd>Native Heap usage corresponds to the ‘Native Heap’ field from ADB. This is memory from objects allocated from C or C++ code. Even if you're not using C++ in your app, you might see some native memory used here because the Android framework uses native memory to handle various tasks on your behalf. Some examples of these tasks are handling image assets and other graphics—even though the code you've written is in Java or Kotlin.</dd>
+<dt markdown="1">**Java Heap**</dt>
+<dd>Java Heap usage corresponds to the ‘Java Heap’ field from ADB. This is memory from objects allocated from Java or Kotlin code.</dd>
+<dt markdown="1">**Stack**</dt>
+<dd>Stack usage corresponds to the ‘Stack’ field from ADB. This is memory used by both native and Java stacks in your app. This usually relates to how many threads your app is running.</dd>
+<dt markdown="1">**Graphics**</dt>
+<dd>Graphics usage corresponds to the ‘Graphics’ field from ADB. This is memory used for graphics buffer queues to display pixels on the screen, including GL surfaces, GL textures, etc. Note: This is memory shared with the CPU—not dedicated GPU memory.</dd>
+</dl>
 
 ## Event timeline
 
