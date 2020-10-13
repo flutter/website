@@ -23,7 +23,7 @@ The following is available through the Flutter SDK:
 * `flutter` and `dart` command-line tools for creating, building, testing,
   and compiling your apps
 
-Note: For more information about the Dart SDK, see its
+Note: For more information about the Flutter SDK, see its
 [README file][].
 
 ## `flutter` command-line tool
