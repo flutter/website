@@ -23,33 +23,40 @@ $ flutter pub outdated
 $ flutter pub upgrade
 ```
 
-The following table shows which commands you can use with the `flutter` tool.
+To get usage information for a command, pass in the `--help` flag.
+To view all commands that `flutter` supports:
+
+```terminal
+flutter --help --verbose
+```
+
+The following table shows which commands you can use with the `flutter` tool:
 
 |---------+--------------------------------+-----------------------------------|
 | Command | Example of use                 | More information                  |
 |---------|--------------------------------|-----------------------------------|
-| analyze | `flutter analyze`     | Analyzes the project's Dart source code.<br>Use instead of [`dartanalyzer`][]. |
-| assemble | `flutter assemble` | Assemble and build flutter resources. |
+| analyze | `flutter analyze -d <DEVICE_ID>`     | Analyzes the project's Dart source code.<br>Use instead of [`dartanalyzer`][]. |
+| assemble | `flutter assemble -o <DIRECTORY>` | Assemble and build flutter resources. |
 | attach | `flutter attach -d <DEVICE_ID>` | Attach to a running application. |
 | bash-completion | `flutter bash-completion` | Output command line shell completion setup scripts. |
 | build | `flutter build <DIRECTORY>` | Flutter build commands. |
-| channel | `flutter channel` | List or switch flutter channels. |
-| config | `flutter config` | Configure Flutter settings. |
+| channel | `flutter channel <CHANNEL_NAME>` | List or switch flutter channels. |
+| config | `flutter config --build-dir=<DIRECTORY>` | Configure Flutter settings. To remove a setting, configure it to an empty string. |
 | create  | `flutter create <DIRECTORY>`      | Creates a new project. |
-| devices | `flutter devices` | List all connected devices. |
+| devices | `flutter devices -d <DEVICE_ID>` | List all connected devices. |
 | doctor | `flutter doctor` | Show information about the installed tooling. |
 | downgrade | `flutter downgrade` | Downgrade Flutter to the last active version for the current channel. |
 | drive | `flutter drive` | Runs Flutter Driver tests for the current project. |
 | emulators | `flutter emulators` | List, launch and create emulators. |
-| format | `flutter format` | Format one or more dart files. |
+| format | `flutter format <DART_FILE>` | Format one or more dart files. |
 | gen-l10n | `flutter gen-l10n <DIRECTORY>` | Generate localizations for the Flutter project. |
-| install | `flutter install` | Install a Flutter app on an attached device. |
+| install | `flutter install -d <DEVICE_ID>` | Install a Flutter app on an attached device. |
 | logs | `flutter logs` | Show log output for running Flutter apps. | 
 | format  | `flutter format <DIRECTORY|DART_FILE>` | Formats Flutter source code.<br>Use instead of [`dartfmt`][]. | 
 | precache | `flutter precache <ARGUMENTS>` | Populates the Flutter tool's cache of binary artifacts. |
 | pub     | `flutter pub <PUB_COMMAND>`       | Works with packages.<br>Use instead of [`pub`][]. | 
 | run     | `flutter run <DART_FILE>`         | Runs a Flutter program. | 
-| symbolize | `flutter symbolize` | Symbolize a stack trace from the AOT compiled flutter application. |
+| symbolize | `flutter symbolize --input=<STACK_TRACK_FILE>` | Symbolize a stack trace from the AOT compiled flutter application. |
 | test    | `flutter test [<DIRECTORY|DART_FILE>]` | Runs tests in this package.<br>Use instead of [`pub run test`][`pub`]. |
 | upgrade | `flutter upgrade` | Upgrade your copy of Flutter. | Symbolize a stack trace from an AOT compiled flutter application. |
 | _(none)_| `flutter <DART_FILE>`             | Runs a Flutter program, just like `flutter run`. |
