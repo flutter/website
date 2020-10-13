@@ -74,15 +74,26 @@ Scaffold(
 );
 ```
 
-When presenting a `SnackBar` during a transition, the `SnackBar` will `Hero`, animating smoothly to
-the next page.
+When presenting a `SnackBar` during a transition, the `SnackBar` will complete a `Hero` animation,
+moving smoothly to the next page.
 
-The `ScaffoldMessenger` creates a scope in which all descendant `Scaffold`s will register to receive
+The `ScaffoldMessenger` creates a scope in which all descendant `Scaffold`s register to receive
 `SnackBar`s, which is how they persist across these transitions. When using the root
-`ScaffoldMessenger` provided by the `MaterialApp`, all descendant `Scaffold`s will receive `SnackBar`s,
+`ScaffoldMessenger` provided by the `MaterialApp`, all descendant `Scaffold`s receive `SnackBar`s,
 unless a new `ScaffoldMessenger` scope is created further down the tree. By instantiating your own
 `ScaffoldMessenger`, you can control which `Scaffold`s receive `SnackBar`s, and which do not based
 on the context of your application.
+
+The method `debugCheckHasScaffoldMessenger` is available to assert that a given context has a
+`ScaffoldMessenger` ancestor. Trying to present  a `SnackBar` without a `ScaffoldMessenger` ancestor
+present results in an assertion such as the following:
+
+```
+No ScaffoldMessenger widget found.
+Scaffold widgets require a ScaffoldMessenger widget ancestor.
+Typically, the ScaffoldMessenger widget is introduced by the MaterialApp
+at the top of your application widget tree.
+```
 
 ## Migration guide
 
