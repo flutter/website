@@ -110,7 +110,7 @@ submodule-cloning techniques:
 > IMPORTANT:
 > - Any time you create a **new terminal/command window** to work on
 >   this repo, **repeat steps 1 and 2** above.
-> - If you upgrade Dart, then re-run all of the steps above.
+> - If you upgrade Dart, then rerun all of the steps above.
 
 ## Developing and serving changes
 
@@ -152,6 +152,10 @@ submodule-cloning techniques:
 
 > ```terminal
 > $ npm run clean
+> ```
+> OR
+> ```terminal
+> $ jekyll clean
 > ```
 > OR
 > ```terminal
