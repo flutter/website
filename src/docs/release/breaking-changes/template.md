@@ -53,7 +53,7 @@ description: Brief description similar to the "context" section below. The descr
     on its own (using the analyzer from the latest
     stable release), then preface that code with an
     HTML `<!-- skip -->` tag.
-  * Finally, delete the comment tags and text from the
+  * Finally, delete all these comments from the
     final PR.
 {% endcomment %}
 
