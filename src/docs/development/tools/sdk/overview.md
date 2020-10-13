@@ -34,9 +34,11 @@ For more information about `flutter`, see the [`flutter` reference page][].
 ## `dart` command-line tool
 
 The `dart` CLI tool is available with the Flutter SDK at `flutter/bin/dart`.
+For more information about `dart`, see the [`dart` reference page][].
 
 [Dart DevTools]: /docs/development/tools/devtools
 [Dart SDK]: {{site.dart-site}}/tools/sdk
+[`dart` reference page]: {{site.dart-site}}/tools/dart-tool
 [`flutter` reference page]: /docs/reference/flutter-cli
 [Install]: /docs/get-started/install
 [README file]: {{site.github}}/flutter/flutter/blob/master/README.md
