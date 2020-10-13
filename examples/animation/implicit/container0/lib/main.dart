@@ -40,12 +40,8 @@ class AnimatedContainerDemo extends StatelessWidget {
                 ),
               ),
             ),
-            MaterialButton(
-              color: Theme.of(context).primaryColor,
-              child: Text(
-                'change',
-                style: TextStyle(color: Colors.white),
-              ),
+            ElevatedButton(
+              child: Text('change'),
               onPressed: () => null,
             ),
           ],
