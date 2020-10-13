@@ -41,7 +41,7 @@ description: Brief description similar to the "context" section below. The descr
     but don't use "github.com" or "api.flutter.dev" or
     "pub.dev" in your URLs. Use the {{site.github}},
     {{site.api}}, or {{site.pub}} macros.
-  * AVOID "will", when possible, in other words,
+  * AVOID "will" when possible. In other words,
     stay in the present tense. For example:
     Bad: "When encountering an xxx value,
           the code will throw an exception."
