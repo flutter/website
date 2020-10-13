@@ -82,7 +82,7 @@ The negotiation goes something like this:
 
 **Widget**: "Very well. My first child has position `x: 5` and `y: 5`,
    and my second child has `x: 80` and `y: 25`."
- 
+
 **Widget**: "Hey parent, I’ve decided that my size is going to be `300`
    pixels wide, and `60` pixels tall."
 
@@ -306,9 +306,12 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-        color: isSelected ? Colors.grey : Colors.grey[800],
-        child: Text(exampleNumber.toString(), style: TextStyle(color: Colors.white)),
+    return TextButton(
+        style: TextButton.styleFrom(
+          primary: Colors.white,
+          backgroundColor: isSelected ? Colors.grey : Colors.grey[800],
+        ),
+        child: Text(exampleNumber.toString()),
         onPressed: () {
           Scrollable.ensureVisible(
             context,
@@ -1212,9 +1215,9 @@ in the previous example.
 ```dart
 ConstrainedBox(
    constraints: BoxConstraints(
-      minWidth: 70, 
+      minWidth: 70,
       minHeight: 70,
-      maxWidth: 150, 
+      maxWidth: 150,
       maxHeight: 150,
    ),
    child: Container(color: Colors.red, width: 10, height: 10),
@@ -1240,13 +1243,13 @@ to also assume the size of the screen, thus ignoring its
 Center(
    child: ConstrainedBox(
       constraints: BoxConstraints(
-         minWidth: 70, 
+         minWidth: 70,
          minHeight: 70,
-         maxWidth: 150, 
+         maxWidth: 150,
          maxHeight: 150,
       ),
       child: Container(color: Colors.red, width: 10, height: 10),
-   )    
+   )
 )
 ```
 
@@ -1267,13 +1270,13 @@ so it ends up having 70 (the minimum).
 Center(
   child: ConstrainedBox(
      constraints: BoxConstraints(
-        minWidth: 70, 
+        minWidth: 70,
         minHeight: 70,
-        maxWidth: 150, 
+        maxWidth: 150,
         maxHeight: 150,
         ),
      child: Container(color: Colors.red, width: 1000, height: 1000),
-  )  
+  )
 )
 ```
 
@@ -1294,13 +1297,13 @@ so it ends up having 150 (the maximum).
 Center(
    child: ConstrainedBox(
       constraints: BoxConstraints(
-         minWidth: 70, 
+         minWidth: 70,
          minHeight: 70,
-         maxWidth: 150, 
+         maxWidth: 150,
          maxHeight: 150,
       ),
       child: Container(color: Colors.red, width: 100, height: 100),
-   ) 
+   )
 )
 ```
 
@@ -1384,8 +1387,8 @@ with no warnings given.
 ```dart
 UnconstrainedBox(
    child: Container(
-      color: Colors.red, 
-      width: double.infinity, 
+      color: Colors.red,
+      width: double.infinity,
       height: 100,
    )
 )
@@ -1408,9 +1411,9 @@ the following message: `BoxConstraints forces an infinite width.`
 UnconstrainedBox(
    child: LimitedBox(
       maxWidth: 100,
-      child: Container( 
+      child: Container(
          color: Colors.red,
-         width: double.infinity, 
+         width: double.infinity,
          height: 100,
       )
    )
@@ -1520,7 +1523,7 @@ and breaks the line so that it fits the screen.
 ```dart
 FittedBox(
    child: Container(
-      height: 20.0, 
+      height: 20.0,
       width: double.infinity,
    )
 )
@@ -1812,12 +1815,12 @@ Here is an example:
 
 Article by Marcelo Glasberg
 
-Marcelo originally published this content as 
+Marcelo originally published this content as
 [Flutter: The Advanced Layout Rule Even Beginners Must Know][]
 on Medium. We loved it and asked that he allow us to publish
 in on flutter.dev, to which he graciously agreed. Thanks, Marcelo!
 You can find Marcelo on [GitHub][] and [pub.dev][].
-  
+
 Also, thanks to [Simon Lightfoot][] for creating the
 header image at the top of the article.
 
@@ -1829,4 +1832,3 @@ header image at the top of the article.
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
 [Simon Lightfoot]: {{site.github}}/slightfoot
 [this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
-

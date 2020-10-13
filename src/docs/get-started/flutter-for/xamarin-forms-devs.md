@@ -353,10 +353,12 @@ Widget build(BuildContext context) {
       title: Text("Sample App"),
     ),
     body: Center(
-      child: MaterialButton(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.only(left: 20.0, right: 30.0),
+        ),
         onPressed: () {},
         child: Text('Hello'),
-        padding: EdgeInsets.only(left: 10.0, right: 10.0),
       ),
     ),
   );
