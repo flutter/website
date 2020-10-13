@@ -3,9 +3,11 @@ title: "flutter: The Flutter command-line tool"
 description: "The reference page for using 'flutter' in a terminal window."
 ---
 
-The `flutter` command-line tool is how developers (or IDEs on behalf of developers) interact with Flutter.
+The `flutter` command-line tool is how developers (or IDEs on behalf of
+developers) interact with Flutter.
 
-Here's how you might use the `flutter` tool to create, analyze, test, and run an app:
+Here's how you might use the `flutter` tool to create, analyze, test, and run an
+app:
 
 ```terminal
 $ flutter create my_app
@@ -15,7 +17,7 @@ $ flutter test
 $ flutter run bin/my_app.dart
 ```
 
-You can also run [`pub`][] commands using the `flutter` tool:
+To run [`pub`][] commands using the `flutter` tool:
 
 ```terminal
 $ flutter pub get
@@ -28,6 +30,15 @@ To view all commands that `flutter` supports:
 ```terminal
 $ flutter --help --verbose
 ```
+
+To get the current version of the Flutter SDK, including its framework, engine,
+and tools:
+
+```terminal
+$ flutter --version
+```
+
+## `flutter` commands
 
 The following table shows which commands you can use with the `flutter` tool:
 
