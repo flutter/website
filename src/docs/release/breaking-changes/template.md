@@ -155,9 +155,9 @@ Relevant PRs:
 
 {% comment %}
   Add the links to the end of the file in alphabetical order.
-  These faux links are commented out because they make
-  the Travis build believe they are broken links,
-  but please remove the comment tags before you commit!
+  The following faux links are commented out because they
+  break the Travis build.
+  Please remove the comment tags before you commit!
 
   Obviously, linking to the stable API channel is preferred,
   but if you are showing new API, use the master channel link.
