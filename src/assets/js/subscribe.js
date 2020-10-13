@@ -1159,11 +1159,10 @@ function submitForm() {
     }
 
     if (isDoubleOptIn(countryEl.value)) {
-        console.log("double opt-in");
-        console.log(JSON.stringify(data));
+        data.FlutterDevUpdates = "unconfirmed";
     }
 
-
+    sendRequest(data);
 }
 
 function isDoubleOptIn(countryCode) {
