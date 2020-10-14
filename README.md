@@ -2,6 +2,22 @@
 
 [![Build Status][]][Repo on Travis]
 
+## Table of contents
+
+* [Issues, bugs, and requests](#issues-bugs-and-requests)
+* [Before you build this site](#before-you-build-this-site)
+  - [1. Get the prerequisites](#1-get-the-prerequisites)
+  - [2. Clone this repo _and_ its submodules](#2-clone-this-repo-and-its-submodules)
+  - [3. Run installation scripts](#3-run-installation-scripts)
+* [Developing and serving changes](#developing-and-serving-changes)
+* [Creating and/or editing DartPad example code](#creating-andor-editing-dartpad-example-code)
+  - [DartPad example code in GitHub gists](#dartpad-example-code-in-github-gists)
+  - [DartPad example code in this repo - `src/_packages/dartpad_picker`](#dartpad-example-code-in-this-repo---src_packagesdartpad_picker)
+* [Deploy to a staging site](#deploy-to-a-staging-site)
+  - [Alternate deployment script](#alternate-deployment-script)
+* [Deploying to the official site](#deploying-to-the-official-site)
+* [Writing for flutter.dev](#writing-for-flutterdev)
+
 ## Issues, bugs, and requests
 
 We welcome contributions and feedback on our website!
@@ -22,7 +38,7 @@ Install the following tools, if you don't have them already.
 - **bash**, the Bourne shell. These instructions assume you're using `bash` -- setup might not work if you use another shell.
 - **[nvm][]**, the Node Version Manager.
 
-  > **Note:** To make `nvm` immediately available in your current shell, run `source <PATH_TO_INSTALLATION>`. For example:
+  > NOTE: To make `nvm` immediately available in your current shell, run `source <PATH_TO_INSTALLATION>`. For example:
   > ```console
   > $ source ~/.nvm/nvm.sh
   > ```
@@ -37,7 +53,7 @@ Install the following tools, if you don't have them already.
 - **[Flutter][Flutter install]**
 - **[Dart SDK][Dart install]**
 - **[GNU diffutils][]** version 3.6 or later.
-  > **Note:** `diff` v3.6+ is required to ensure that in-page code diffs are
+  > NOTE: `diff` v3.6+ is required to ensure that in-page code diffs are
   > consistently refreshed across macOS and Linux. [Issue #3076][] was due to
   > the default macOS `diff` being at v2.x. To upgrade `diffutils`, run:<br>
   > ```console
@@ -142,32 +158,34 @@ submodule-cloning techniques:
       > wait 20 seconds before stopping the
       > server or concluding that something is wrong.
  1. Before submitting, validate site links:<br>
-    `./tool/shared/check-links.sh`
+    ```console
+    $ ./tool/shared/check-links.sh
+    ```
 
 > TIP: Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
 > happen, for example, when you pull from master and lots of files have moved.)
 > To fix Jekyll, stop the `serve.sh` script, remove the generated site files:
 > hand, and then restart the `serve.sh` script:
 
-> ```terminal
+> ```console
 > $ npm run clean
 > ```
 > OR
-> ```terminal
+> ```console
 > $ jekyll clean
 > ```
 > OR
-> ```terminal
+> ```console
 > $ rm -Rf ./_site/* ./.jekyll*
 > ```
 
 > Next, restart the `serve.sh` script:
 
-> ```terminal
+> ```console
 > $ npm run start
 > ```
 > OR
-> ```terminal
+> ```console
 > $ ./tool/serve.sh
 > ```
 
