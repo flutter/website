@@ -47,7 +47,7 @@ Install the following tools, if you don't have them already.
 
 > IMPORTANT: Follow the installation instructions for each of the tools
 > carefully. In particular, configure your shell/environment so
-> that the tools are available in every terminal/command window you create.
+> that the tools are available in each and every terminal/command window you create.
 
 ### 2. Clone this repo _and_ its submodules
 
