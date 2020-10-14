@@ -26,13 +26,15 @@ gulp.task('compress-images', () => {
     `!${baseDir}/**/.*/**`,
     `!${baseDir}/**/build/**`,
     `!${baseDir}/**/node_modules/**`,
-  ], { base: baseDir })
+  ], 
+{ base: baseDir })
     .pipe(imagemin([
       // imagemin.gifsicle({interlaced: true}),
       // imagemin.jpegtran({progressive: true}),
       imagemin.optipng({ optimizationLevel: 4 })]))
     .pipe(gulp.dest(baseDir))
-});
+}
+);
 
 // Used to ensure that values/properties that are looked up from external
 // sources are actually defined (when expecting a truthy value).
