@@ -123,7 +123,7 @@ submodule-cloning techniques:
  1. Test your changes by serving the site locally.
     To serve locally, run _either one_ of these commands:
     - ```console
-      $ ./tool/serve.sh # or npm run start)
+      $ ./tool/serve.sh # or npm run start
       ```
 
     OR
@@ -169,7 +169,7 @@ submodule-cloning techniques:
 > OR
 > ```terminal
 > $ ./tool/serve.sh
-> ``
+> ```
 
 ## Creating and/or editing DartPad example code
 
