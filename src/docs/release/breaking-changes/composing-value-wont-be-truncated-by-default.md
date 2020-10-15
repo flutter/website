@@ -11,7 +11,7 @@ A composing `TextEditingValue` won't be truncated in `LengthLimitingTextInputFor
 
 Before [the first PR][Fix TextField crashed with composing and maxLength set], `LengthLimitingTextInputFormatter` will always truncate the editing value, which may leads to engine crashes when the composing range is overflowed sometimes. With this changes, a composing `TextEditingValue` will not be truncated if only `maxLength` set, and still be truncated after the composing ends (See [`maxLength` documentation] for more specific behavior). But it's not optional.
 
-With [the second PR][], this behavior can be enabled/disabled by passing `composingMaxLengthEnforced` to the `LengthLimitingTextInputFormatter`.
+With [the second PR][Add `composingMaxLengthEnforced` to length limiting formatter], this behavior can be enabled/disabled by passing `composingMaxLengthEnforced` to the `LengthLimitingTextInputFormatter`.
 
 ## Description of change
 
@@ -54,7 +54,6 @@ The second change was made in October of 2020 after the v1.23.0-18.0.pre release
 
 API documentation:
 * [`LengthLimitingTextInputFormatter`][]
-* [`maxLength` documentation][]
 
 Relevant PR:
 * [Fix TextField crashed with composing and maxLength set][]
