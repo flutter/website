@@ -3,10 +3,14 @@ title: Flutter 1.22.0 release notes
 short-title: 1.22.0 release notes
 description: Release notes for Flutter 1.22.0.
 ---
+
+This page has release notes for 1.22.0.
+For information about subsequent bug-fix releases, see
+[Hotfixes to the Stable Channel][].
+
+[Hotfixes to the Stable Channel]: https://github.com/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
+
 ## Merged PRs by labels for `flutter/flutter` 
-
-
-
 
 ### framework - 428 pull request(s)
 
