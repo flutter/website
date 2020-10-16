@@ -75,7 +75,7 @@ env:
     - TZ=US/Pacific # normalize build timestamp
 
 before_install:
-  - if [[ ! -z $CHANNEL]]; then ./flutter/bin/flutter channel $CHANNEL; fi
+  - if [[ ! -z $CHANNEL ]]; then ./flutter/bin/flutter channel $CHANNEL; fi
   - source ./tool/env-set.sh
   - ./tool/before-install.sh
 
