@@ -66,8 +66,8 @@ jobs:
         - ALLOW_FAILURE=true
         - CHANNEL=stable
 
-allow_failures:
-  -env: ALLOW_FAILURE=true
+  allow_failures:
+  - env: ALLOW_FAILURE=true
 
 env:
   global:
