@@ -32,33 +32,39 @@ jobs:
 
     - name: "Dev channel: code check"
       env:
-        - TASK="flutter/bin/flutter channel dev && ./tool/check-code.sh"
+        - TASK="./tool/check-code.sh"
         - ALLOW_FAILURE=true
+        - CHANNEL=dev
 
     - name: "Dev channel: jekyll build"
       env:
-        - TASK="flutter/bin/flutter channel dev && bundle exec jekyll build"
+        - TASK="bundle exec jekyll build"
         - ALLOW_FAILURE=true
+        - CHANNEL=dev
 
     - name: "Beta channel: code check"
       env:
-        - TASK="flutter/bin/flutter channel beta && ./tool/check-code.sh"
+        - TASK="./tool/check-code.sh"
         - ALLOW_FAILURE=true
+        - CHANNEL=beta
 
     - name: "Beta channel: jekyll build"
       env:
-        - TASK="flutter/bin/flutter channel beta && bundle exec jekyll build"
+        - TASK="bundle exec jekyll build"
         - ALLOW_FAILURE=true
+        - CHANNEL=beta
 
     - name: "Stable channel: code check"
       env:
-        - TASK="flutter/bin/flutter channel stable && ./tool/check-code.sh"
+        - TASK="./tool/check-code.sh"
         - ALLOW_FAILURE=true
+        - CHANNEL=stable
 
     - name: "Stable channel: jekyll build"
       env:
-        - TASK="flutter/bin/flutter channel stable && bundle exec jekyll build"
+        - TASK="bundle exec jekyll build"
         - ALLOW_FAILURE=true
+        - CHANNEL=stable
 
 allow_failures:
   -env: ALLOW_FAILURE=true
@@ -69,6 +75,7 @@ env:
     - TZ=US/Pacific # normalize build timestamp
 
 before_install:
+  - if [[! -z $CHANNEL]]; then ./flutter/bin/flutter channel $CHANNEL; fi
   - source ./tool/env-set.sh
   - ./tool/before-install.sh
 
