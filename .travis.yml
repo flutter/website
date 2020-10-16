@@ -20,13 +20,21 @@ cache:
   - $HOME/.rvm
   - node_modules
 
+jobs:
+  include:
+    - name: "Submodule Flutter version: code check"
+      env:
+        - TASK="./tool/check-code.sh"
+
+    - name: "Submodule Flutter version: jekyll build"
+      env:
+        - TASK="bundle exec jekyll build"
+
+
 env:
   global:
     - JEKYLL_ENV=production
     - TZ=US/Pacific # normalize build timestamp
-  matrix:
-    - TASK="./tool/check-code.sh"
-    - TASK="bundle exec jekyll build"
 
 before_install:
   - source ./tool/env-set.sh
@@ -34,7 +42,6 @@ before_install:
 
 install:
   - ./tool/install.sh
-  # - ./tool/shared/write-ci-info.sh -v
 
 script: $TASK
 
