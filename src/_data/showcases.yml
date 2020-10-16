@@ -285,6 +285,7 @@
     An internal customer management app used widely by Google sales that
     provides rich visualizations for tracking sales targets.
   logo_src: showcase/cards/green_tea-logo.png
+  learn_more_cta: Learn more
   logo_has_name: true
   learn_more_link: https://www.flutterx.com/google-greentea
   card_image: showcase/cards/green_tea-top@.jpg
