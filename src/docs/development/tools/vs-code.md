@@ -153,12 +153,13 @@ Flutter offers many different build modes to run your app in.
 You can read more about them in [Flutter's build modes][].
 
  1. Open the `launch.json` file in VS Code.
-     * If you do not have a `launch.json` file, go to 
-     the Run view in VS Code and click **create a launch.json file**.
+    
+    If you do not have a `launch.json` file, go to 
+    the **Run** view in VS Code and click **create a launch.json file**.
  1. In the `configurations` section, change the `flutterMode` property to 
  the build mode you want to target. 
      * For example, if you want to run in debug mode, 
-     your `launch.json` may look like this: 
+     your `launch.json` might look like this: 
      ```json
       "configurations": [
        {
@@ -169,7 +170,7 @@ You can read more about them in [Flutter's build modes][].
        }
      ]
      ```
- 1. Run the app through the Run view. 
+ 1. Run the app through the **Run** view. 
 
 
 ## Fast edit and refresh development cycle
