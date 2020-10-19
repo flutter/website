@@ -60,7 +60,6 @@
       { "source": "/debugging", "destination": "/docs/testing/debugging", "type": 301 },
       { "source": "/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/developing-packages", "destination": "/docs/development/packages-and-plugins/developing-packages", "type": 301 },
-      { "source":  "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] },
       { "source": "/faq", "destination": "/docs/resources/faq", "type": 301 },
       { "source": "/fastlane-cd", "destination": "/docs/deployment/cd#fastlane", "type": 301 },
       { "source": "/docs/deployment/fastlane-cd", "destination": "/docs/deployment/cd", "type": 301 },
@@ -240,6 +239,9 @@
       { "source": "/go/triage-2021-rfp", "destination": "https://docs.google.com/document/d/1aD2jaOs2WaDNWQi_N5N5kYn7MGj-iYxxAkR33cYiSIY", "type": 301 },
       { "source": "/go/text-selection-menu-customization", "destination": "https://docs.google.com/document/d/1hyay1TyUZB7DXzWw45-ruGMZM1yCMWEnC3DzOJYemuc/edit", "type": 301 },
       { "source": "/go/flutter-support-multi-architecture", "destination": "https://docs.google.com/document/d/19tzWySgtgtTA99XQsjx5Pg0SFJeZKXyUlYavR0EXv8c/edit?usp=sharing", "type": 301 }
+    ],
+    "headers": [
+      { "source":  "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
     ]
   }
 }
