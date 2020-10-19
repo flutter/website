@@ -273,6 +273,8 @@
       permalink: /docs/testing/oem-debuggers
     - title: Flutter's build modes
       permalink: /docs/testing/build-modes
+    - title: Common Flutter errors
+      permalink: /docs/testing/common-errors
     - title: Handling errors
       permalink: /docs/testing/errors
     - title: Testing
