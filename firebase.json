@@ -241,7 +241,7 @@
       { "source": "/go/flutter-support-multi-architecture", "destination": "https://docs.google.com/document/d/19tzWySgtgtTA99XQsjx5Pg0SFJeZKXyUlYavR0EXv8c/edit?usp=sharing", "type": 301 }
     ],
     "headers": [
-      { "source":  "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
+      { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
     ]
   }
 }
