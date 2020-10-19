@@ -58,6 +58,11 @@ Select `Storyboard` for Interface.
 
 Select `UIKit App Delegate` for Life Cycle.
 
+Select the same language as your original target for Language.
+
+(In other words, don't create a Swift App Clip target for an Objective-C
+main target, and vice versa to simplify the setup.)
+
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-details.png" %}
 
@@ -134,7 +139,8 @@ the App Clip, share the same code and assets.
 
 For each of the following: `Main.storyboard`, `Assets.xcassets`,
 `LaunchScreen.storyboard`, `GeneratedPluginRegistrant.m`, and
-`AppDelegate.swift`, select the file, then in the first tab of the inspector,
+`AppDelegate.swift` (and `Supporting Files/main.m` if using Objective-C),
+select the file, then in the first tab of the inspector,
 also include the App Clip target in the `Target Membership` checkbox group.
 
 {% include app-figure.md
@@ -200,22 +206,22 @@ For setting `Framework Search Paths`, add 2 entries:
 - `$(inherited)`
 - `$(PROJECT_DIR)/Flutter`
 
+In other words, the same as the main app target's build settings.
+
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-framework-search.png"
 %}
 
-In other words, the same as the main app target's build settings.
-
 **7.2**
 
-Set the `Objective-C Bridging Header` build setting to
+For Swift target, set the `Objective-C Bridging Header` build setting to
 `Runner/Runner-Bridging-Header.h`
+
+In other words, the same as the main app target's build settings.
 
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/bridge-header.png"
 %}
-
-In other words, the same as the main app target's build settings.
 
 **7.3**
 
@@ -234,11 +240,11 @@ Expand the new phase and add this line to the script content:
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" build
 ```
 
+In other words, the same as the main app target's build phases.
+
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/xcode-backend-build.png"
 %}
-
-In other words, the same as the main app target's build phases.
 
 This ensures that your Flutter Dart code is compiled when running the App Clip
 target.
@@ -254,11 +260,11 @@ This time, add:
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" embed_and_thin
 ```
 
+In other words, the same as the main app target's build phases.
+
 {% include app-figure.md
 image="development/platform-integration/ios-app-clip/xcode-backend-embed.png"
 %}
-
-In other words, the same as the main app target's build phases.
 
 This ensures that your Flutter app and engine are embedded into the App Clip
 bundle.

@@ -167,7 +167,7 @@ void main() {
 
 Be sure to have a `uses-material-design: true` entry in the `flutter`
 section of your `pubspec.yaml` file. It allows you to use the predefined
-set of [Material icons][]. It's generally a good idea to include this line 
+set of [Material icons][]. It's generally a good idea to include this line
 if you are using the Materials library.
 
 ```yaml
@@ -324,7 +324,7 @@ including taps, drags, and scales.
 
 Many widgets use a [`GestureDetector`][] to provide
 optional callbacks for other widgets. For example, the
-[`IconButton`][], [`RaisedButton`][], and
+[`IconButton`][], [`ElevatedButton`][], and
 [`FloatingActionButton`][] widgets have [`onPressed()`][]
 callbacks that are triggered when the user taps the widget.
 
@@ -343,7 +343,7 @@ to react in more interesting ways to user input&mdash;applications
 typically carry some state. Flutter uses `StatefulWidgets` to capture
 this idea. `StatefulWidgets` are special widgets that know how to generate
 `State` objects, which are then used to hold state.
-Consider this basic example, using the [`RaisedButton`][] mentioned earlier:
+Consider this basic example, using the [`ElevatedButton`][] mentioned earlier:
 
 ```dart
 class Counter extends StatefulWidget {
@@ -381,7 +381,7 @@ class _CounterState extends State<Counter> {
     // instances of widgets.
     return Row(
       children: <Widget>[
-        RaisedButton(
+        ElevatedButton(
           onPressed: _increment,
           child: Text('Increment'),
         ),
@@ -434,7 +434,7 @@ class CounterIncrementor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: onPressed,
       child: Text('Increment'),
     );
@@ -765,10 +765,10 @@ For more information, see the [`GlobalKey`][] API.
 [Material icons]: https://design.google.com/icons/
 [`MaterialApp`]: {{api}}/material/MaterialApp-class.html
 [`Navigator`]: {{api}}/widgets/Navigator-class.html
-[`onPressed()`]: {{api}}/material/RaisedButton-class.html#onPressed
+[`onPressed()`]: {{api}}/material/ElevatedButton-class.html#onPressed
 [`onTap()`]: {{api}}/widgets/GestureDetector-class.html#onTap
 [`Positioned`]: {{api}}/widgets/Positioned-class.html
-[`RaisedButton`]: {{api}}/material/RaisedButton-class.html
+[`ElevatedButton`]: {{api}}/material/ElevatedButton-class.html
 [React]: https://reactjs.org
 [`RenderObject`]: {{api}}/rendering/RenderObject-class.html
 [`Row`]: {{api}}/widgets/Row-class.html

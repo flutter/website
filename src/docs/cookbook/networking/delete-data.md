@@ -54,7 +54,7 @@ Future<Response> deleteAlbum(String id) async {
       'Content-Type': 'application/json; charset=UTF-8',
     },
   );
-  
+
   return response;
 }
 ```
@@ -84,7 +84,7 @@ Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget>[
     Text('${snapshot.data?.title ?? 'Deleted'}'),
-    RaisedButton(
+    ElevatedButton(
       child: Text('Delete Data'),
       onPressed: () {
        setState(() {
@@ -104,7 +104,7 @@ the same data that you fetched from the internet.
 ### Returning a response from the deleteAlbum() method
 Once the delete request has been made,
 you can return a response from the `deleteAlbum()`
-method to notify our screen that the data has been deleted. 
+method to notify our screen that the data has been deleted.
 
 <!-- skip -->
 ```dart
@@ -123,7 +123,7 @@ Future<Album> deleteAlbum(String id) async {
     // Don't return `null`, otherwise
     // `snapshot.hasData` will always return false
     // on `FutureBuilder`.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed to delete album.');
   }
@@ -155,7 +155,7 @@ Future<Album> fetchAlbum() async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response, then throw an exception.
     throw Exception('Failed to load album');
@@ -243,7 +243,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text('${snapshot.data?.title ?? 'Deleted'}'),
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text('Delete Data'),
                         onPressed: () {
                           setState(() {
@@ -285,4 +285,3 @@ class _MyAppState extends State<MyApp> {
 [Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [JSON and serialization]: /docs/development/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
-

@@ -53,11 +53,11 @@ class Foo extends StatelessWidget {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.add_circled),
-            title: Text('Tab 1'),
+            label: 'Tab 1',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.add_circled_solid),
-            title: Text('Tab 2'),
+            label: 'Tab 2',
           ),
         ],
         currentIndex: 1,
@@ -82,11 +82,11 @@ class Foo extends StatelessWidget {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.add_circled),
-            title: Text('Tab 1'),
+            label: 'Tab 1',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.add_circled_solid),
-            title: Text('Tab 2'),
+            label: 'Tab 2',
           ),
         ],
         currentIndex: 1,
@@ -118,11 +118,11 @@ class Foo extends StatelessWidget {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.add_circled),
-              title: Text('Tab 1'),
+              label: 'Tab 1',
             ),
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.add_circled_solid),
-              title: Text('Tab 2'),
+              label: 'Tab 2',
             ),
           ],
           currentIndex: 1,

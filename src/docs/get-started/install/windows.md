@@ -14,7 +14,7 @@ next:
 To install and run Flutter,
 your development environment must meet these minimum requirements:
 
-- **Operating Systems**: Windows 7 SP1 or later (64-bit)
+- **Operating Systems**: Windows 7 SP1 or later (64-bit), x86-64 based
 - **Disk Space**: 1.32 GB (does not include disk space for IDE/tools).
 - **Tools**: Flutter depends on these tools being available in your environment.
   - [Windows PowerShell 5.0][] or newer (this is pre-installed with Windows 10)

@@ -145,6 +145,33 @@ running or debugging.
       To customize, click the cog at the top of the
       **Debug Sidebar** to create a `launch.json` file.
       You can then modify the values.
+      
+      
+### Run app in debug, profile, or release mode
+
+Flutter offers many different build modes to run your app in. 
+You can read more about them in [Flutter's build modes][].
+
+ 1. Open the `launch.json` file in VS Code.
+    
+    If you do not have a `launch.json` file, go to 
+    the **Run** view in VS Code and click **create a launch.json file**.
+ 1. In the `configurations` section, change the `flutterMode` property to 
+ the build mode you want to target. 
+     * For example, if you want to run in debug mode, 
+     your `launch.json` might look like this: 
+     ```json
+      "configurations": [
+       {
+         "name": "Flutter",
+         "request": "launch",
+         "type": "dart",
+         "flutterMode": "debug"
+       }
+     ]
+     ```
+ 1. Run the app through the **Run** view. 
+
 
 ## Fast edit and refresh development cycle
 
@@ -286,6 +313,7 @@ When filing new issues, include [flutter doctor][] output.
 [DevTools]: /docs/development/tools/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter's build modes]: /docs/testing/build-modes
 [let us know]: {{site.github}}/flutter/website/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode

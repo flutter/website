@@ -86,15 +86,8 @@ Verify the most important settings.
 In the **Identity** section:
 
 `Display Name`
-: Runner
+: The display name of your app.
 
-{{site.alert.note}}
-  Flutter versions prior to 1.18.0-10.0.pre
-  do not support changing the display name
-  to anything other than `Runner`. For more
-  information, see [Issue 41793][].
-{{site.alert.end}}
-  
 `Bundle Identifier`
 : The App ID you registered on App Store Connect.
 
@@ -126,11 +119,6 @@ the following:
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
-
-## Updating the app's name
-
-In the main view sidebar, select the `Info.plist` file.
-Rename the **Bundle name** field.
 
 ## Updating the app's version number
 
@@ -283,6 +271,5 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[Issue 41793]: {{site.github}}/flutter/flutter/issues/41793
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [TestFlight]: https://developer.apple.com/testflight/

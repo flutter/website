@@ -1117,11 +1117,11 @@ submitEl.disabled = true;
 
 
 // Enable the submit button only when the checkbox is checked.
-devUpdatesElem.addEventListener("change", function() {
+devUpdatesElem.addEventListener("change", function () {
     if (this.checked) {
         submitEl.disabled = false;
     } else {
-        submitEl.disabled= true;
+        submitEl.disabled = true;
     }
 });
 
@@ -1158,8 +1158,16 @@ function submitForm() {
         data.FlutterDevUpdates = devUpdatesElem.checked == true ? "true" : "false";
     }
 
-    sendRequest(data);
+    if (isDoubleOptIn(countryEl.value)) {
+        data.FlutterDevUpdates = "unconfirmed";
+    }
 
+    sendRequest(data);
+}
+
+function isDoubleOptIn(countryCode) {
+    let countries = ["AT", "DE", "GR", "LU", "NO"];
+    return countries.includes(countryCode);
 }
 
 function sendRequest(data) {

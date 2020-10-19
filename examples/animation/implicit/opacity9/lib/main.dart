@@ -11,7 +11,7 @@ class FadeInDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
       Image.network(owl_url),
-      MaterialButton(
+      TextButton(
           child: Text(
             'Show Details',
             style: TextStyle(color: Colors.blueAccent),

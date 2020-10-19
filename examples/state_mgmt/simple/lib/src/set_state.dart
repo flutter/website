@@ -32,8 +32,8 @@ class _MyHomepageState extends State<MyHomepage> {
       },
       // #enddocregion Ephemeral
       items: [
-        BottomNavigationBarItem(title: Text('abc'), icon: Icon(Icons.title)),
-        BottomNavigationBarItem(title: Text('def'), icon: Icon(Icons.map)),
+        BottomNavigationBarItem(label: 'abc', icon: Icon(Icons.title)),
+        BottomNavigationBarItem(label: 'def', icon: Icon(Icons.map)),
       ],
       // #docregion Ephemeral
     );

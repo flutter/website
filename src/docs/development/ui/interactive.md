@@ -741,11 +741,11 @@ the prefabricated widgets. Here's a partial list:
 
 * [`Checkbox`][]
 * [`DropdownButton`][]
-* [`FlatButton`][]
+* [`TextButton`][]
 * [`FloatingActionButton`][]
 * [`IconButton`][]
 * [`Radio`][]
-* [`RaisedButton`][]
+* [`ElevatedButton`][]
 * [`Slider`][]
 * [`Switch`][]
 * [`TextField`][]
@@ -781,7 +781,7 @@ Flutter Gallery [running app][], [repo][]
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
 [Debugging Flutter apps]: /docs/testing/debugging
 [`DropdownButton`]: {{site.api}}/flutter/material/DropdownButton-class.html
-[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: /docs/cookbook
@@ -812,7 +812,7 @@ Flutter Gallery [running app][], [repo][]
 [`meta.dart`]: {{site.pub}}/packages/meta
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
-[`RaisedButton`]: {{site.api}}/flutter/material/RaisedButton-class.html
+[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
 [running app]: https://flutter.github.io/gallery/#/
 [set up]: /docs/get-started/install
@@ -825,4 +825,3 @@ Flutter Gallery [running app][], [repo][]
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`widget`]: {{site.api}}/flutter/widgets/State/widget.html
-

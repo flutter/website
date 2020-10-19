@@ -346,6 +346,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    super.initState();
     controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
     curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
@@ -403,11 +404,42 @@ To learn how to implement a signature painter in Flutter, see Collin's answer on
 
 <!-- skip -->
 ```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: DemoApp()));
+
+class DemoApp extends StatelessWidget {
+  Widget build(BuildContext context) => Scaffold(body: Signature());
+}
+
+class Signature extends StatefulWidget {
+  SignatureState createState() => SignatureState();
+}
+
+class SignatureState extends State<Signature> {
+  List<Offset> _points = <Offset>[];
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onPanUpdate: (DragUpdateDetails details) {
+        setState(() {
+          RenderBox referenceBox = context.findRenderObject();
+          Offset localPosition =
+              referenceBox.globalToLocal(details.globalPosition);
+          _points = List.from(_points)..add(localPosition);
+        });
+      },
+      onPanEnd: (DragEndDetails details) => _points.add(null),
+      child: CustomPaint(
+        painter: SignaturePainter(_points),
+        size: Size.infinite,
+      ),
+    );
+  }
+}
+
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
-
   final List<Offset> points;
-
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
       ..color = Colors.black
@@ -420,30 +452,6 @@ class SignaturePainter extends CustomPainter {
   }
 
   bool shouldRepaint(SignaturePainter other) => other.points != points;
-}
-
-class Signature extends StatefulWidget {
-  SignatureState createState() => SignatureState();
-}
-
-class SignatureState extends State<Signature> {
-
-  List<Offset> _points = <Offset>[];
-
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onPanUpdate: (DragUpdateDetails details) {
-        setState(() {
-          RenderBox referenceBox = context.findRenderObject();
-          Offset localPosition =
-          referenceBox.globalToLocal(details.globalPosition);
-          _points = List.from(_points)..add(localPosition);
-        });
-      },
-      onPanEnd: (DragEndDetails details) => _points.add(null),
-      child: CustomPaint(painter: SignaturePainter(_points), size: Size.infinite),
-    );
-  }
 }
 ```
 
@@ -463,7 +471,7 @@ Flutter, build a custom widget by
 
 For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a
-`RaisedButton` with a label, rather than by extending `RaisedButton`:
+`ElevatedButton` with a label, rather than by extending `ElevatedButton`:
 
 <!-- skip -->
 ```dart
@@ -474,7 +482,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(onPressed: () {}, child: Text(label));
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -609,7 +617,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = json.decode(response.body);
+    widgets = jsonDecode(response.body);
   });
 }
 ```
@@ -659,7 +667,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   void initState() {
     super.initState();
-
     loadData();
   }
 
@@ -687,7 +694,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -717,7 +724,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = json.decode(response.body);
+    widgets = jsonDecode(response.body);
   });
 }
 ```
@@ -776,7 +783,7 @@ static dataLoader(SendPort sendPort) async {
     String dataURL = data;
     http.Response response = await http.get(dataURL);
     // Lots of JSON to parse
-    replyTo.send(json.decode(response.body));
+    replyTo.send(jsonDecode(response.body));
   }
 }
 
@@ -912,7 +919,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       String dataURL = data;
       http.Response response = await http.get(dataURL);
       // Lots of JSON to parse
-      replyTo.send(json.decode(response.body));
+      replyTo.send(jsonDecode(response.body));
     }
   }
 
@@ -953,7 +960,7 @@ import 'package:http/http.dart' as http;
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -1056,7 +1063,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = json.decode(response.body);
+      widgets = jsonDecode(response.body);
     });
   }
 }
@@ -1477,7 +1484,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Widget> widgets = [];
 
   @override
   void initState() {
@@ -1506,7 +1513,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       onTap: () {
         setState(() {
           widgets = List.from(widgets);
-          widgets.add(getRow(widgets.length + 1));
+          widgets.add(getRow(widgets.length));
           print('row $i');
         });
       },
@@ -1550,7 +1557,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Widget> widgets = [];
 
   @override
   void initState() {
@@ -1583,7 +1590,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       ),
       onTap: () {
         setState(() {
-          widgets.add(getRow(widgets.length + 1));
+          widgets.add(getRow(widgets.length));
           print('row $i');
         });
       },
@@ -1641,13 +1648,13 @@ In Flutter, there are two ways of adding touch listeners:
 
  1. If the widget supports event detection, pass a function to it,
     and handle the event in the function. For example, the
-    `RaisedButton` widget has an `onPressed` parameter:
+    `ElevatedButton` widget has an `onPressed` parameter:
 
     <!-- skip -->
     ```dart
     @override
     Widget build(BuildContext context) {
-      return RaisedButton(
+      return ElevatedButton(
         onPressed: () {
           print("click");
         },
@@ -1756,6 +1763,7 @@ CurvedAnimation curve;
 
 @override
 void initState() {
+  super.initState();
   controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
   curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 }
