@@ -61,16 +61,16 @@ and package the SkSL shaders:
 flutter run --profile --cache-sksl
 ```
 
-If the same app has been previously run without `--cache-sksl`, then
+If the same app has been previously run without `--cache-sksl`, then the
 `--purge-persistent-cache` flag may be needed:
 
 ```sh
 flutter run --profile --cache-sksl --purge-persistent-cache
 ```
 
-Such flag removes older non-SkSL shader caches which could interfere with SkSL
-shader capturing. It will also purge the SkSL shaders so one should only use it
-in the first `--cache-sksl` run.
+This flag removes older non-SkSL shader caches that could interfere with SkSL
+shader capturing. It also purges the SkSL shaders so use it *only* on the first
+`--cache-sksl` run.
 </li>
 
 <li markdown="1"> Play with the app to trigger as many animations
