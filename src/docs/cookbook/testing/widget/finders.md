@@ -18,7 +18,7 @@ provided by the [`flutter_test`][] package.
 
 During a `flutter run` session on a widget test, you can also
 interactively tap parts of the screen for the Flutter tool to
-print the suggested [`Finder`]
+print the suggested [`Finder`].
 
 This recipe looks at the [`find`][] constant provided by
 the `flutter_test` package, and demonstrates how
