@@ -97,7 +97,7 @@ class MyCatalogItem extends StatelessWidget {
     return Row(
       children: [
         Text(item.name),
-        FlatButton(
+        TextButton(
           onPressed: () => myTapHandler(context),
           child: Text("Add ${item.name}"),
         ),

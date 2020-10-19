@@ -13,7 +13,7 @@ class _FadeInDemoState extends State<FadeInDemo> {
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
       Image.network(owl_url),
-      MaterialButton(
+      TextButton(
           child: Text(
             'Show details',
             style: TextStyle(color: Colors.blueAccent),

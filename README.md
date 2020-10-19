@@ -2,6 +2,22 @@
 
 [![Build Status][]][Repo on Travis]
 
+## Table of contents
+
+* [Issues, bugs, and requests](#issues-bugs-and-requests)
+* [Before you build this site](#before-you-build-this-site)
+  - [1. Get the prerequisites](#1-get-the-prerequisites)
+  - [2. Clone this repo _and_ its submodules](#2-clone-this-repo-and-its-submodules)
+  - [3. Run installation scripts](#3-run-installation-scripts)
+* [Developing and serving changes](#developing-and-serving-changes)
+* [Creating and/or editing DartPad example code](#creating-andor-editing-dartpad-example-code)
+  - [DartPad example code in GitHub gists](#dartpad-example-code-in-github-gists)
+  - [DartPad example code in this repo - `src/_packages/dartpad_picker`](#dartpad-example-code-in-this-repo---src_packagesdartpad_picker)
+* [Deploy to a staging site](#deploy-to-a-staging-site)
+  - [Alternate deployment script](#alternate-deployment-script)
+* [Deploying to the official site](#deploying-to-the-official-site)
+* [Writing for flutter.dev](#writing-for-flutterdev)
+
 ## Issues, bugs, and requests
 
 We welcome contributions and feedback on our website!
@@ -9,121 +25,178 @@ Please file a request in our
 [issue tracker](https://github.com/flutter/website/issues/new)
 and we'll take a look.
 
-For simple changes (such as to CSS and text), you probably don't need to
-build this site.  Often you can make changes using the GitHub UI.
-
-If you want/need to build, read on.
+> NOTE: For simple changes (such as to CSS and text), you probably don't need to
+> build this site. Often, you can make changes using the GitHub UI.
+> If you want/need to build, read on.
 
 ## Before you build this site
 
 ### 1. Get the prerequisites
 
-Install the following tools if you don't have them already.
+Install the following tools, if you don't have them already.
 
 - **bash**, the Bourne shell. These instructions assume you're using `bash` -- setup might not work if you use another shell.
 - **[nvm][]**, the Node Version Manager.
+
+  > NOTE: To make `nvm` immediately available in your current shell, run `source <PATH_TO_INSTALLATION>`. For example:
+  > ```console
+  > $ source ~/.nvm/nvm.sh
+  > ```
+
 - **[rvm][]**, the Ruby Version Manager.
+
+  > NOTE: To make `rvm` immediately available in your current shell, run `source <PATH_TO_INSTALLATION>`. For example:
+  > ```console
+  > $ source ~/.rvm/bin/rvm
+  > ```
+
 - **[Flutter][Flutter install]**
 - **[Dart SDK][Dart install]**
 - **[GNU diffutils][]** version 3.6 or later.
   > NOTE: `diff` v3.6+ is required to ensure that in-page code diffs are
   > consistently refreshed across macOS and Linux. [Issue #3076][] was due to
-  > the default macOS `diff` being at v2.x -- to up upgrade `diffutils` run:<br>
-  > `brew install diffutils`.
-  >
+  > the default macOS `diff` being at v2.x. To upgrade `diffutils`, run:<br>
+  > ```console
+  > $ brew install diffutils
+  > ```
   > [issue #3076]: https://github.com/flutter/website/issues/3076
 
 > IMPORTANT: Follow the installation instructions for each of the tools
-carefully. In particular, configure your shell/environment so
-that the tools are available in every terminal/command window you create.
+> carefully. In particular, configure your shell/environment so
+> that the tools are available in every terminal/command window you create.
 
 ### 2. Clone this repo _and_ its submodules
 
 > NOTE: This repo has git _submodules_, which affects how you clone it.
 
-To **clone [this repo][]**, follow the instructions given in the
-GitHub help on [Cloning a repository][], and _choose one_ of the following
+To **clone [flutter/website]()** (this repo), follow the instructions given in the
+GitHub help on [Cloning a repository][], then _choose one_ of the following
 submodule-cloning techniques:
 
 - Clone this repo and its submodule _at the same_, use the
   `--recurse-submodules` option:<br>
-  `git clone --recurse-submodules https://github.com/flutter/website.git`
+  
+  ```console
+  $ git clone --recurse-submodules https://github.com/flutter/website.git
+  ```
+
+  OR
 - If you've already cloned this repo without its submodule, then run
   this command from the repo root:<br>
-  `git submodule update --init --remote`
 
-> NOTE: At any time during development you can use the submodule command to
+  ```console
+  $ git submodule update --init --remote
+  ```
+
+> NOTE: At any time during development you can use the `git submodule` command to
 > refresh submodules:<br>
-> ```
-> git pull; git submodule update --init --remote
+> ```console
+> $ git pull; git submodule update --init --remote
 > ```
 
 ### 3. Run installation scripts
 
 > NOTE: It is safe to (re-)run all of the commands and scripts given below even
-if you already have the required packages installed.
+> if you already have the required packages installed.
 
 **Open a bash terminal/command window** and execute the following commands:
 
-1. <code>cd <i>\<path-to-this-repo></i></code> &nbsp;&nbsp;# change to
-   **root of this repo**
-1. `source ./tool/env-set.sh` &nbsp;&nbsp;#
-   initialize environment variables; install/use required Node & Ruby version
-1. `./tool/before-install.sh` &nbsp;&nbsp;#
-   install core set of required tools
-1. `./tool/install.sh` &nbsp;&nbsp;#
-   install everything else needed to build this site
+1. After you have cloned this repo, change to the _root of this repo_:
+
+   ```console
+   $ cd <PATH_TO_REPO>
+   ```
+1.  Run the `env-set.sh` script to initialize environment variables, and to install/use required Node & Ruby version:
+
+    ```console
+    $ source ./tool/env-set.sh
+    ```
+1.  Run `before-install.sh` to install the  core set of required tools:
+
+    ```console
+    $ ./tool/before-install.sh
+    ```
+1.  Run `install.sh` to install everything else needed to build this site:
+
+    ```console
+    $ ./tool/install.sh
+    ```
 
 > IMPORTANT:
 > - Any time you create a **new terminal/command window** to work on
 >   this repo, **repeat steps 1 and 2** above.
-> - If you upgrade Dart then rerun all of the steps above.
+> - If you upgrade Dart, then rerun all of the steps above.
 
-## Developing
+## Developing and serving changes
 
- 1. Create a branch.
- 1. Make your changes.
+ 1. After you clone this repo, create a branch. For example:
+ 
+    ```console
+    $ git checkout -b <BRANCH_NAME>
+    ```
+ 
+ 1. Make your changes, then commit them to the branch.
  1. Test your changes by serving the site locally.
-    Run either **one** of these commands:
-    - `./tool/serve.sh` (can also run via `npm run start`)
+    To serve locally, run _either one_ of these commands:
+    - ```console
+      $ ./tool/serve.sh # or npm run start
+      ```
 
-    or
-    - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
+    OR
+    - ```console
+      $ bundle exec jekyll serve --incremental --watch --livereload --port 4002
+      ```
 
-      **Note**: Unless you're editing files under `site-shared`, you can safely
-      ignore `ERROR: directory is already being watched` messages.
-      For details, see [#1363](https://github.com/flutter/website/issues/1363).
+      > NOTE: Unless you're editing files under `site-shared`, you can safely
+      > ignore `ERROR: directory is already being watched` messages.
+      > For details, see [#1363](https://github.com/flutter/website/issues/1363).
 
-      **Note**: The first time you run either one of these commands,
-      jekyll takes anywhere between 10 - 20 seconds to generate static
-      content inside the `_sites` directory. If you try to verify the
-      site locally but aren't able to see the content right away,
-      wait 20 seconds before stopping the
-      server or concluding that something is wrong.
- 1. Prior to submitting, validate site links:<br>
-    `./tool/shared/check-links.sh`
+      > NOTE: The first time you run either one of these commands,
+      > Jekyll takes anywhere between 10-20 seconds to generate static
+      > content inside the `_sites` directory. If you try to verify the
+      > site locally, but aren't able to see the content right away,
+      > wait 20 seconds before stopping the
+      > server or concluding that something is wrong.
+ 1. Before submitting, validate site links:<br>
+    ```console
+    $ ./tool/shared/check-links.sh
+    ```
 
 > TIP: Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
 > happen, for example, when you pull from master and lots of files have moved.)
-> To fix Jekyll, stop the `serve.sh` script and remove the generated site files:
+> To fix Jekyll, stop the `serve.sh` script, remove the generated site files:
 > hand, and then restart the `serve.sh` script:
 
-> `npm run clean`
+> ```console
+> $ npm run clean
+> ```
 > OR
-> `rm -Rf ./_site/* ./.jekyll*`
+> ```console
+> $ jekyll clean
+> ```
+> OR
+> ```console
+> $ rm -Rf ./_site/* ./.jekyll*
+> ```
 
 > Next, restart the `serve.sh` script:
 
-> `npm run start`
+> ```console
+> $ npm run start
+> ```
 > OR
-> `./tool/serve.sh`
+> ```console
+> $ ./tool/serve.sh
+> ```
 
 ## Creating and/or editing DartPad example code
 
-At the time of writing this (10/22/19) most of the code used to create DartPad examples is hosted on GitHub. However, this repo also contains some `.dart` files responsible for DartPad example code.
+Most of the code used to create DartPad examples is hosted on GitHub. However, this repo also contains
+some `.dart` files responsible for DartPad example code.
 
 ### DartPad example code in GitHub gists
-A typical DartPad example takes the form of an `iframe`, e.g. within a codelab's markdown file:
+
+A typical DartPad example takes the form of an `iframe`, for example, within a codelab's markdown file:
 
 ```markdown
 <iframe
@@ -135,30 +208,44 @@ A typical DartPad example takes the form of an `iframe`, e.g. within a codelab's
 
 This `iframe` depends on the following GitHub gist url:
 
-`https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5`
+```none
+https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5
+```
 
 For detailed instructions on how to use this approach to DartPad examples, see the [DartPad embedding guide].
 
 ### DartPad example code in this repo - `src/_packages/dartpad_picker`
+
 Some DartPad example code remains in `.dart` files in this repo, and must be compiled via `src/_packages/dartpad_picker/compile.sh`. For an example, consult `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`.
 
 In order to create or change example code using `dartpad_picker`, you must regenerate the JavaScript:
 
 ```sh
-  cd src/_packages/dartpad_picker
-  ./compile.sh
+  $ cd src/_packages/dartpad_picker
+  $ ./compile.sh
 ```
 
 ## Deploy to a staging site
 
-You can deploy your local edits to a personal staging site as follows
-(steps 1 and 2 need to be done only once):
+You can deploy your local edits to a personal staging site as follows.
+
+ 1. Serve your changes locally, as previously instructed.
+    Keep the `serve.sh` script running in its own `bash` shell.
 
  1. In the [Firebase Console](https://console.firebase.google.com),
-    create your own Firebase project (e.g. 'mit-flutter-staging')
+    create your own Firebase project (e.g. `my-foo`). You only need
+    to do this step once.
 
- 1. Tell Firebase about that project with the firebase
-    [`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
+ 1. In a separate `bash` shell, change to the repo directory and
+    initialize Firebase:
+ 
+    ```console
+    $ npx firebase init
+    ```
+
+ 1. Tell Firebase about your project with the
+    [`firebase use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html)
+    You only need to do this step once:
 
       ```console
       $ npx firebase use --add
@@ -170,7 +257,7 @@ You can deploy your local edits to a personal staging site as follows
 
     ```console
     $ npx firebase use my-foo
-    Now using alias staging (<your project name>)
+    Now using alias staging (my-foo)
     ```
 
  1. Tell Firebase to execute deployment of your project:
@@ -180,6 +267,9 @@ You can deploy your local edits to a personal staging site as follows
    ```
 
    Your personal version of the Flutter website is now deployed to Firebase.
+   Copy the serving URL from the command output.
+
+### Alternate deployment script
 
 Alternatively, you can skip the previous steps and just use the deploy script:
 
@@ -202,19 +292,18 @@ Usually, official site deploys are performed by Travis. In the event that you
 need to manually deploy, use the deploy script and the `default` project:
 
 ```
-./tool/shared/deploy.sh --local --robots ok default
+$ ./tool/shared/deploy.sh --local --robots ok default
 ```
 
 ## Writing for flutter.dev
 
-
 The [site-shared](https://github.com/dart-lang/site-shared) repo
 contains infrastructure shared by most of our Dart and Flutter websites.
-As a result, we've moved some of content of this README to the
-[docs](https://github.com/dart-lang/site-shared/docs)
-directory in the shared repo.
+Some of this README is in the
+[doc](https://github.com/dart-lang/site-shared/tree/master/doc)
+directory in the site-shared repo.
 
-For more information on using/writing for this repo,
+For more information on using and writing for this repo,
 refer to the following docs:
 
 * [Infrastructure](https://github.com/dart-lang/site-shared/blob/master/doc/infrastructure.md)

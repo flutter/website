@@ -5,8 +5,8 @@ description: Deprecated BottomNavigationBarItem’s title (a Widget) in favor of
 
 ## Summary
 
-`BottomNavigationBarItem.title` gives a deprecation warning, or no longer exists when referenced in 
-code.
+`BottomNavigationBarItem.title` gives a deprecation warning,
+or no longer exists when referenced in code.
 
 ## Context
 

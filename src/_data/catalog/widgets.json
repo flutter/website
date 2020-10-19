@@ -536,6 +536,16 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-sliding-segmented-control.png'>"
   },
   {
+    "name": "CupertinoSliverNavigationBar",
+    "description": "An iOS-styled navigation bar with iOS-11-style large titles using slivers.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-sliver-navigation-bar.png'>"
+  },
+  {
     "name": "CupertinoSwitch",
     "description": "An iOS-style switch. Used to toggle the on/off state of a single setting.",
     "categories": [

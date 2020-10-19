@@ -64,12 +64,8 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
                 curve: Curves.easeInOutBack,
               ),
             ),
-            MaterialButton(
-              color: Theme.of(context).primaryColor,
-              child: Text(
-                'change',
-                style: TextStyle(color: Colors.white),
-              ),
+            ElevatedButton(
+              child: Text('change'),
               onPressed: () => change(),
             ),
           ],

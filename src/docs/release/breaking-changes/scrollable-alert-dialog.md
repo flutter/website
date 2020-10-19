@@ -145,8 +145,8 @@ AlertDialog(
     child: Text('Scrollable content', textScaleFactor: 5),
   ),
   actions: <Widget>[
-    FlatButton(child: Text('Button 1'), onPressed: () {}),
-    FlatButton(child: Text('Button 2'), onPressed: () {}),
+    TextButton(child: Text('Button 1'), onPressed: () {}),
+    TextButton(child: Text('Button 2'), onPressed: () {}),
   ],
 )
 ```
@@ -159,8 +159,8 @@ AlertDialog(
   title: Text('Very, very large title', textScaleFactor: 5),
   content: Text('Very, very large content', textScaleFactor: 5),
   actions: <Widget>[
-    FlatButton(child: Text('Button 1'), onPressed: () {}),
-    FlatButton(child: Text('Button 2'), onPressed: () {}),
+    TextButton(child: Text('Button 1'), onPressed: () {}),
+    TextButton(child: Text('Button 2'), onPressed: () {}),
   ],
 )
 ```

@@ -142,7 +142,7 @@ the starting value for `opacity` to zero:
 
 Configure the animation to trigger when the user clicks the **Show details**
 button. To do this, change `opacity` state using the `onPressed()` handler for
-`MaterialButton`. To make the `FadeInDemo` widget become fully visible when
+`TextlButton`. To make the `FadeInDemo` widget become fully visible when
 the user clicks the **Show details** button, use the `onPressed()` handler
 to set `opacity` to 1:
 
@@ -153,7 +153,7 @@ to set `opacity` to 1:
 @@ -18,11 +18,14 @@
      return Column(children: <Widget>[
        Image.network(owl_url),
-       MaterialButton(
+       TextButton(
 -          child: Text(
 -            'Show Details',
 -            style: TextStyle(color: Colors.blueAccent),
@@ -327,10 +327,10 @@ invoke the `change()` method in the `onPressed()` handler:
 ```diff
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
-@@ -66,7 +66,7 @@
-                 'change',
-                 style: TextStyle(color: Colors.white),
-               ),
+@@ -62,7 +62,7 @@
+             ),
+             ElevatedButton(
+               child: Text('change'),
 -              onPressed: () => null,
 +              onPressed: () => change(),
              ),
@@ -361,7 +361,7 @@ between the old and new values:
 +                duration: _duration,
                ),
              ),
-             MaterialButton(
+             ElevatedButton(
 ```
 
 ### Shape-shifting (complete)
@@ -400,7 +400,7 @@ and watch how the animation changes when you pass the
 +                curve: Curves.easeInOutBack,
                ),
              ),
-             MaterialButton(
+             ElevatedButton(
 ```
 
 Now that you have passed `easeInOutBack` as the value for `curve` to

@@ -38,6 +38,13 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
+If you develop for android, add the following permission inside manifest tag in the AndroidManifest.xml file located at android/app/src/main.
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+
 ## 2. Sending data to server
 
 This recipe covers how to create an `Album`
@@ -137,7 +144,7 @@ Future<Album> createAlbum(String title) async {
   if (response.statusCode == 201) {
     // If the server did return a 201 CREATED response,
     // then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 201 CREATED response,
     // then throw an exception.
@@ -152,11 +159,11 @@ server to create an album.
 ## 4. Get a title from user input
 
 Next, create a `TextField` to enter a title and
-a `RaisedButton` to send data to server.
+a `ElevatedButton` to send data to server.
 Also define a `TextEditingController` to read the
 user input from a `TextField`.
 
-When the `RaisedButton` is pressed, the `_futureAlbum`
+When the `ElevatedButton` is pressed, the `_futureAlbum`
 is set to the value returned by `createAlbum()` method.
 
 <!-- skip -->
@@ -171,7 +178,7 @@ Column(
         decoration: InputDecoration(hintText: 'Enter Title'),
       ),
     ),
-    RaisedButton(
+    ElevatedButton(
       child: Text('Create Data'),
       onPressed: () {
         setState(() {
@@ -246,7 +253,7 @@ Future<Album> createAlbum(String title) async {
   );
 
   if (response.statusCode == 201) {
-    return Album.fromJson(json.decode(response.body));
+    return Album.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed to create album.');
   }
@@ -305,7 +312,7 @@ class _MyAppState extends State<MyApp> {
                       controller: _controller,
                       decoration: InputDecoration(hintText: 'Enter Title'),
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       child: Text('Create Data'),
                       onPressed: () {
                         setState(() {
@@ -349,4 +356,3 @@ class _MyAppState extends State<MyApp> {
 [Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
 [JSON and serialization]: /docs/development/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
-

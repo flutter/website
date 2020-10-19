@@ -49,7 +49,7 @@ $ flutter upgrade
 
 {{site.alert.note}}
   If you need a specific version of the Flutter SDK,
-  you can download it from the [Flutter SDK archive][].
+  you can download it from the [Flutter SDK releases][].
 {{site.alert.end}}
 
 
@@ -95,7 +95,7 @@ $ flutter version v1.9.1+hotfix.3
 ```
 
 
-[Flutter SDK archive]: /docs/development/tools/sdk/archive
+[Flutter SDK releases]: /docs/development/tools/sdk/releases
 [release channels]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [flutter-dev]: {{site.groups}}/forum/#!forum/flutter-dev

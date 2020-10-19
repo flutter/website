@@ -11,7 +11,7 @@ Flutter website available at
 [https://flutter.cn](https://flutter.cn).
 
 If you’d like to install Flutter using an [installation
-bundle](/docs/development/tools/sdk/archive),
+bundle](/docs/development/tools/sdk/releases),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
 

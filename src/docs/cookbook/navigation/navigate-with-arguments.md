@@ -114,7 +114,7 @@ arguments.
 ```dart
 // A button that navigates to a named route. The named route
 // extracts the arguments by itself.
-RaisedButton(
+ElevatedButton(
   child: Text("Navigate to screen that extracts arguments"),
   onPressed: () {
     // When the user taps the button, navigate to a named route
@@ -227,7 +227,7 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             // A button that navigates to a named route that. The named route
             // extracts the arguments by itself.
-            RaisedButton(
+            ElevatedButton(
               child: Text("Navigate to screen that extracts arguments"),
               onPressed: () {
                 // When the user taps the button, navigate to a named route
@@ -245,7 +245,7 @@ class HomeScreen extends StatelessWidget {
             // A button that navigates to a named route. For this route, extract
             // the arguments in the onGenerateRoute function and pass them
             // to the screen.
-            RaisedButton(
+            ElevatedButton(
               child: Text("Navigate to a named that accepts arguments"),
               onPressed: () {
                 // When the user taps the button, navigate to a named route

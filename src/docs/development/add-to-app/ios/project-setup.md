@@ -397,7 +397,7 @@ This will resolve to the path **Info-Debug.plist** in **Debug** and
 {% include app-figure.md image="development/add-to-app/ios/project-setup/plist-build-setting.png" alt="Resolved INFOPLIST_FILE build setting" %}
 
 Alternatively, you can explicitly set the **Debug** path to **Info-Debug.plist**
-and the **Release** path to **Info-Debug.plist**.
+and the **Release** path to **Info-Release.plist**.
 
 </li>
 

@@ -63,12 +63,8 @@ class _CounterState extends State<Counter> {
             Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(child: Text('$val'))),
-            MaterialButton(
-              color: Theme.of(context).primaryColor,
-              child: Text(
-                'Add',
-                style: TextStyle(color: Colors.white),
-              ),
+            ElevatedButton(
+              child: Text('Add'),
               onPressed: () => change(),
             ),
           ],
