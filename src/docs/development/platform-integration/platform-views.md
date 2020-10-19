@@ -26,7 +26,7 @@ Which one to use depends on the use case. Let's take a look:
   Certain platform interactions such as keyboard handling, and accessibility
   features might not work.
 
-* Hybrid composition requires Flutter 1.22. This mode appends the
+* Hybrid composition requires Flutter 1.22 ([version 1.22.2](https://github.com/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel#1222--october-16-2020) is recommended). This mode appends the
   native `android.view.View` to the view hierarchy. Therefore, keyboard
   handling, and accessibility work out of the box. Prior to Android 10,
   this mode may significantly reduce the frame throughput (FPS) of the
