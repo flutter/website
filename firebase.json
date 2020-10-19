@@ -60,6 +60,7 @@
       { "source": "/debugging", "destination": "/docs/testing/debugging", "type": 301 },
       { "source": "/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/developing-packages", "destination": "/docs/development/packages-and-plugins/developing-packages", "type": 301 },
+      { "source":  "f/*.json", "headers": [{"key": "Access-Control-Allow-Origin","value": "*"}]},
       { "source": "/faq", "destination": "/docs/resources/faq", "type": 301 },
       { "source": "/fastlane-cd", "destination": "/docs/deployment/cd#fastlane", "type": 301 },
       { "source": "/docs/deployment/fastlane-cd", "destination": "/docs/deployment/cd", "type": 301 },
