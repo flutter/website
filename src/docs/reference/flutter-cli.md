@@ -14,7 +14,7 @@ $ flutter create my_app
 $ cd my_app
 $ flutter analyze
 $ flutter test
-$ flutter run bin/my_app.dart
+$ flutter run lib/main.dart
 ```
 
 To run [`pub`][] commands using the `flutter` tool:
