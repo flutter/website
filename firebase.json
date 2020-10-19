@@ -241,6 +241,9 @@
       { "source": "/go/flutter-support-multi-architecture", "destination": "https://docs.google.com/document/d/19tzWySgtgtTA99XQsjx5Pg0SFJeZKXyUlYavR0EXv8c/edit?usp=sharing", "type": 301 },
       { "source": "/go/ondirtycallbacks", "destination": "https://docs.google.com/document/d/1Vk_QWC92fFGxx2oIrIjkCL0ZZFHxmrprlLedyQsnkus/edit?usp=sharing", "type": 301 },
       { "source": "/go/subpixel-antialiasing", "destination": "https://docs.google.com/document/d/1yEycgo5ivZ_lu2MAnMBLreZvROFdamy9-9q-QvMvL9U/edit?usp=sharing", "type": 301 }
+    ],
+    "headers": [
+      { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
     ]
   }
 }
