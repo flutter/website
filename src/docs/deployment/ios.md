@@ -106,7 +106,7 @@ In the **Signing & Capabilities** section:
 
 In the **Deployment Info** section:
 
-`Deployment Target:`
+`Deployment Target`
 : The minimum iOS version that your app supports.
   Flutter supports iOS 8.0 and later. If your app includes
   Objective-C or Swift code that makes use of APIs that
@@ -119,6 +119,11 @@ the following:
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
+
+## Updating the app's deployment version
+If you changed `Deployment Target` in your Xcode project,
+open `ios/Flutter/AppframeworkInfo.plist` in your Flutter app
+and update the `MinimumOSVersion` value to match.
 
 ## Updating the app's version number
 
