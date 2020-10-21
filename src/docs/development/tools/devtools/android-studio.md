@@ -28,7 +28,7 @@ you can start DevTools using one of the following:
 * Select the **Open DevTools** action from the **More Actions**
   menu in the Flutter Inspector view.
 
-![screenshot of Open DevTools button]({% asset tools/devtools/android_studio_open_devtools.png @path %})
+![screenshot of Open DevTools button]({% asset tools/devtools/android_studio_open_devtools.png @path %}){:width="100%"}
 
 ## Launch DevTools from an action
 

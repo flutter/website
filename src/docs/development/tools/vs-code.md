@@ -249,7 +249,7 @@ can assist in correcting it.
 Snippets can be used to speed up entering typical code structures.
 They are invoked by typing their prefix,
 and then selecting from the code completion window:
-![Snippets]({% asset tools/vs-code/snippets.png @path %}){:width="700px"}
+![Snippets]({% asset tools/vs-code/snippets.png @path %}){:width="100%"}
 
 The Flutter extension includes the following snippets:
 
