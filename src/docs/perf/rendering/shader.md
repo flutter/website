@@ -31,7 +31,7 @@ Definitive evidence for the presence of shader compilation jank
 is to see `GrGLProgramBuilder::finalize` in the tracing.
 See the following screenshot for an example timeline tracing.
 
-![A tracing screenshot verifying jank]({% asset perf/render/tracing.png @path %})
+![A tracing screenshot verifying jank]({% asset perf/render/tracing.png @path %}){:width="100%"}
 
 ## What do we mean by "first run"?
 

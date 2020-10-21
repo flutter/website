@@ -49,7 +49,7 @@ Follow these steps only if your issue is related to the
   If attached to the issue, the output from this command
   might aid in diagnosing the problem.
 * Attach the results of the command to the GitHub issue.
-![flutter verbose](/images/verbose_flag.png)
+![flutter verbose](/images/verbose_flag.png){:width="100%"}
 
 ## Provide the most recent logs
 
@@ -61,7 +61,7 @@ Follow these steps only if your issue is related to the
 * If you are getting exceptions thrown by the framework,
   include all the output between and including the dashed
   lines of the first such exception.
-![flutter logs](/images/logs.png)
+![flutter logs](/images/logs.png){:width="100%"}
 
 ## Provide the crash report
 
@@ -71,7 +71,7 @@ Follow these steps only if your issue is related to the
   a crash report is generated in `~/Library/Logs/CrashReporter/MobileDevice`.
 * Find the report corresponding to the crash (usually the latest)
   and attach it to the GitHub issue.
-![crash report](/images/crash_reports.png)
+![crash report](/images/crash_reports.png){:width="100%"}
 
 
 [Flutter issue]: {{site.github}}/flutter/flutter/issues/new/choose
