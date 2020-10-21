@@ -126,13 +126,13 @@ Take the original version of [Flutter Gallery][] as an example.
 The CI system is set up to generate SkSLs for every Flutter commit,
 and verifies the performance, in the [`transitions_perf_test.dart`][] test.
 For more details, see the [`flutter_gallery_sksl_warmup__transition_perf`][]
-and [`flutter_gallery_sksl_warmup_ios32__transition_perf`][] tasks.
+and [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`][] tasks.
 
 The worst frame rasterization time is a nice metric from such integration tests to indicate the severity of shader compilation jank. For instance, the steps above reduce Flutter gallery's shader compilation jank and speeds up its worst frame rasterization time on a Moto G4 from ~90 ms to ~40 ms. On iPhone 4s it's reduced from from ~300 ms to ~80 ms. That leads to the visual difference as illustrated in the beginning of this article.
 
 [Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [`flutter_gallery_sksl_warmup__transition_perf`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
-[`flutter_gallery_sksl_warmup_ios32__transition_perf`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup_ios32__transition_perf.dart
+[`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
 [integration tests]: /docs/cookbook/testing/integration/introduction
 [`transitions_perf_test.dart`]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
 
