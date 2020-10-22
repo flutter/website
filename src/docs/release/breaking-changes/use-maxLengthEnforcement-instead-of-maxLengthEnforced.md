@@ -1,6 +1,6 @@
 ---
 title: Use maxLengthEnforcement instead of maxLengthEnforced
-description: Introduing the MaxLengthEnforcement enum.
+description: Introducing the MaxLengthEnforcement enum.
 ---
 
 ## Summary
@@ -8,7 +8,7 @@ description: Introduing the MaxLengthEnforcement enum.
 _If you don't use the `maxLength` or `maxLengthEnforced` properties in a
 `TextField`, `TextFormField`, or `CupertinoTextField`,
 or you don't care about the truncation behavior of an
-eidtable text field, you can stop reading._
+editable text field, you can stop reading._
 
 To control the behavior of `maxLength`
 in the `LengthLimitingTextInputFormatter`,
@@ -17,11 +17,10 @@ use `maxLengthEnforcement` instead of `maxLengthEnforced`, which is deprecated.
 ## Context
 
 Before [PR 63754][]: Fix TextField crashed with composing and maxLength set,
-the `LengthLimitingTextInputFormatter` always truncated the editing value,
-which resulted in engine crashes when the composing range sometimes overflowed.
-With this change, an editable `TextEditingValue` is not truncatedif only
-`maxLength` is set, but _is_ truncated after editing is complete.
-(For more specific behavior, see the [`maxLength` documentation][].)
+the `LengthLimitingTextInputFormatter` always truncated the value in the text
+field, which resulted in engine crashes when the composing range sometimes
+overflowed. With this change, an editable `TextEditingValue` is not truncated
+if only `maxLength` is set, but _is_ truncated after editing is complete.
 
 With [PR 68086][]: Introduce `MaxLengthEnforcement`,
 the truncation behavior is now controlled by passing
@@ -29,17 +28,18 @@ the truncation behavior is now controlled by passing
 which is then exposed to the `TextField`, `TextFormField`,
 and `CupertinoTextField` widgets.
 The `maxLengthEnforced` property is now deprecated.
-(For more information, see the docs for[`MaxLengthEnforcement`] .)
+(For more information, see the docs for [`maxLength`][] and
+[`MaxLengthEnforcement`][].)
 
-The default max length truncation behavior is truncate all the time,
-which is `MaxLengthEnforcement.enforced`.
+The default max length truncation behavior, `MaxLengthEnforcement.enforced`,
+always truncates.
 
 ## Description of change
 
 * Added a `MaxLengthLimitingEnforcement` enum, which controls all max length
   limiting behavior.
 * The `maxLengthEnforced` property in editable text field classes is deprecated.
-* A named optional parameter, `maxLenghLimitingEnforcement` is added to
+* A named optional parameter, `maxLengthLimitingEnforcement` is added to
   the `TextField`, `TextFormField`, `CupertinoTextField`,
   and `LengthLimitingTextInputFormatter` classes, which defaults to
   `MaxLengthLimitingEnforcement.enforced`.
@@ -47,11 +47,11 @@ which is `MaxLengthEnforcement.enforced`.
 ## Migration guide
 
 The following tips describe how to emit a warning, but not truncate,
-on entering text, and how to truncating as text is entered.
+on entering text, and how to truncate as text is entered.
 
 ### Not enforces limitation
 
-To print a max length warning in `TextField`, but _not_ truncate the limit
+To print a max length warning in `TextField`, but _not_ truncate when the limit
 is exceed, use `MaxLengthEnforcement.none` instead of
 `maxLengthEnforced: false`.
 
@@ -75,7 +75,7 @@ TextField(
 )
 ```
 
-For `CupertinoTextField`, simply do not set the `maxLength` value.
+For `CupertinoTextField`, just don't set the `maxLength` value.
 
 Code before migration:
 
@@ -98,10 +98,10 @@ CupertinoTextField(
 
 ### Unenforce composing
 
-If you want to exempt inputting value when it's still editing (composing),
-you should use `MaxLengthEnforcement.allowComposingTextToFinish` from now.
-This behavior allows some CJK characters temporary ignore the limitation
-until it finishes entering.
+To avoid truncating text while the user is editing, specify
+`MaxLengthEnforcement.allowComposingTextToFinish`. This behavior allows some
+Chinese, Japanese, and Korean (CJK) characters to temporarily ignore the limit
+until editing is complete.
 
 Code for the implementation:
 
@@ -109,7 +109,7 @@ Code for the implementation:
 ```dart
 TextField(
   maxLength: 6,
-  maxLengthEnforcement: MaxLengthEnforcement.allowComposingTextToFinish, // <-- Temporary lift the limit
+  maxLengthEnforcement: MaxLengthEnforcement.allowComposingTextToFinish, // <-- Temporarily lift the limit
 )
 ```
 
@@ -123,6 +123,7 @@ In stable release: not yet
 API documentation:
 * [`MaxLengthEnforcement`][]
 * [`LengthLimitingTextInputFormatter`][]
+* [`maxLength`][]
 
 Relevant PR:
 * [PR 63754][]: Fix TextField crashed with composing and maxLength set
@@ -136,4 +137,4 @@ Relevant PR:
 
 [`LengthLimitingTextInputFormatter`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
 
-[`maxLength` documentation]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
+[`maxLength`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
