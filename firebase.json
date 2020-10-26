@@ -244,7 +244,7 @@
       { "source": "/go/ondirtycallbacks", "destination": "https://docs.google.com/document/d/1Vk_QWC92fFGxx2oIrIjkCL0ZZFHxmrprlLedyQsnkus/edit?usp=sharing", "type": 301 },
       { "source": "/go/subpixel-antialiasing", "destination": "https://docs.google.com/document/d/1yEycgo5ivZ_lu2MAnMBLreZvROFdamy9-9q-QvMvL9U/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-selection-programatically", "destination": "https://docs.google.com/document/d/1NK4GJ0Wk5eJ3IUw_9oAtz1oYgZ-Sn-kAKHxTvsgr75o/edit?usp=sharing", "type": 301 },
-      { "source": "/go/eliminating-nullok-paramters", "destination": "https://docs.google.com/document/d/1LKBL0S1uyhACDiUXILhLKFZH8Cpl_w3mXjHgaE8_--U/edit?usp=sharing", "type": 301 }
+      { "source": "/go/eliminating-nullok-parameters", "destination": "https://docs.google.com/document/d/1LKBL0S1uyhACDiUXILhLKFZH8Cpl_w3mXjHgaE8_--U/edit?usp=sharing", "type": 301 }
     ],
     "headers": [
       { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
