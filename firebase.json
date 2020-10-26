@@ -12,6 +12,7 @@
       { "source": "/privacy", "destination": "https://www.google.com/intl/en/policies/privacy", "type": 301 },
       { "source": "/research-signup", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform?usp=sf_link", "type": 301 },
       { "source": "/research-optout", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeG2Nhj0YQkr3m75P74Zb9G-v7zgNhAE9arCyig-a5B1A8uDw/viewform?usp=sf_link", "type": 301 },
+      { "source": "/null-safety", "destination": "/docs/null-safety", "type": 301 },
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/docs/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/docs/catalog/samples/*", "destination": "https://flutter.github.io/samples/#", "type": 301 },
