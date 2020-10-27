@@ -119,7 +119,7 @@ Below the memory charts (Event Timeline, Memory Overview and Android Overview ch
 <dl markdown="1">
 <dt markdown="1">**Snapshot**</dt>
 <dt markdown="1">**Table**</dt>
-<dd markdown="1">If Treemap switch is off the snapshot displays all currently active memory objects in a table.  Clicking the Snapshot button makes a request to the Dart VM to collect the current state of memory.  The memory objects can be sorted by attributes such as class name, size, allocated instances (see [Snapshot classes](#snapshot-classes)).
+<dd markdown="1">If Treemap switch is off the snapshot displays all currently active memory objects in a table.  Clicking the Snapshot button makes a request to the Dart VM to collect the current state of memory.  The memory objects can be sorted by attributes such as class name, size, allocated instances (see [Snapshot classes](#snapshot-classes)).</dd>
 <dt markdown="1">**Treemap**</dt>
 <dd markdown="1">If the Treemap switch is on the snapshot displays currently active memory objects, the last snapshot, memory in a high-level view as a tree map. (TBD details).</dd>
 <dt markdown="1">**Group By**</dt>
@@ -211,11 +211,11 @@ The quantities plotted on the y-axis are the above values (Java Heap, Native Hea
 
 Clicking on a timestamp (x-position) will display all data points collected for that time period.
 
-![Screenshot of Android Memory Chart]({% asset tools/devtools/memory_android.png @path %}){:width="100%"}
+![Screenshot of Android Memory Chart]({% asset tools/devtools/memory_android.png @path %})
 
 The legend popup will display the values of all collected Android memory data.
 
-![Screenshot of Android Memory Legend]({% asset tools/devtools/memory_android_legend.png @path %}){:width="100%"}
+![Screenshot of Android Memory Legend]({% asset tools/devtools/memory_android_legend.png @path %})
 
 <dl markdown="1">
 <dt markdown="1">**Time**</dt>
@@ -246,38 +246,38 @@ markers in the Event timeline displays the time when the event occurred.
 This helps identify when a memory leak might have occurred in the
 timeline (x-axis).
 
-![Screenshot of the event timeline legend]({% asset tools/devtools/memory_eventtimeline_legend.png @path %}){:width="100%"}
+![Screenshot of the event timeline legend]({% asset tools/devtools/memory_eventtimeline_legend.png @path %})
 
 This legend shows the symbol for each DevTools event and its meaning
 
 <dl markdown="1">
 <dt markdown="1">**Snapshot**</dt>
-![User Snapshot]({% asset tools/devtools/memory_eventtimeline_snapshot.png @path %}){:width="100%"}
+![User Snapshot]({% asset tools/devtools/memory_eventtimeline_snapshot.png @path %}){:width="20px"}
 <dd markdown="1">User initiated snapshot - all memory information collected and an analysis performed.</dd>
 <dt markdown="1">**Auto-Snapshot**</dt>
-![Auto Snapshot]({% asset tools/devtools/memory_eventtimeline_auto_snapshot.png @path %}){:width="100%"}
+![Auto Snapshot]({% asset tools/devtools/memory_eventtimeline_auto_snapshot.png @path %}){:width="20px"}
 <dd markdown="1">DevTools initiated a snapshot detecting that memory grow by 40% or more from previous size.  This is used to detect memory spikes in your Flutter application (same information collected as in a manual snapshot).</dd>
 <dt markdown="1">**Monitor Allocations**</dt>
-![Monitor]({% asset tools/devtools/memory_eventtimeline_monitor.png @path %}){:width="100%"}
+![Monitor]({% asset tools/devtools/memory_eventtimeline_monitor.png @path %}){:width="20px"}
 <dd markdown="1">Collects current state of all active classes number of instances and byte size of all instances.  In addtion, the deltas are the change in the accumulators since the last "Reset Accumulators" button pressed.</dd>
 <dt markdown="1">**Reset Accumulators**</dt>
-![Reset]({% asset tools/devtools/memory_eventtimeline_reset_monitor.png @path %}){:width="100%"}
+![Reset]({% asset tools/devtools/memory_eventtimeline_reset_monitor.png @path %}){:width="20px"}
 <dd markdown="1">When both the instance and bytes accumulators were reset to zero.</dd>
 <dt markdown="1">**User Initiated GC**</dt>
-![GC]({% asset tools/devtools/memory_eventtimeline_gc.png @path %}){:width="100%"}
+![GC]({% asset tools/devtools/memory_eventtimeline_gc.png @path %}){:width="20px"}
 <dd markdown="1">When user manual request the VM to perform a garbage collection of memory (only a suggestion to the VM).</dd>
 <dt markdown="1">**VM GC**</dt>
-![VM GC]({% asset tools/devtools/memory_eventtimeline_vmgc.png @path %}){:width="100%"}
+![VM GC]({% asset tools/devtools/memory_eventtimeline_vmgc.png @path %}){:width="20px"}
 <dd markdown="1">GC (garbage collection) has occurred. For more information on how Dart performs garbage collection, see [Don't Fear the Garbage Collector][].</dd>
 </dl>
 
 ## Managing the objects and statistics in the heap (Monitor Allocations)
 
-![The Monitor Allocations button]({% asset tools/devtools/memory_monitor_allocations.png @path %}){:width="100%"}
+![The Monitor Allocations button]({% asset tools/devtools/memory_monitor_allocations.png @path %}){:width="20px"}
 
 Clicking the Monitor Allocations button will monitor the total number of instances and total number of bytes allocated for a class.  In addition, two accumulators are maintained for instances and bytes allocated these accumulators can be reset, to zero, by user action (pressing the Reset Accumulators button).  The mechanism is useful to find memory leaks.
 
-![Reset Accumulators button]({% asset tools/devtools/memory_reset.png @path %}){:width="100%"}
+![Reset Accumulators button]({% asset tools/devtools/memory_reset.png @path %}){:width="20px"}
 
 When the **Reset Accumulators** button is pressed, the accumulators for all classes resets to zero. When reset is occurs a "monitor reset" event to the Event Timeline.  Clicking the **Reset Accumulators** button again resets both accumulators to zero.
 
@@ -295,7 +295,7 @@ When the **Reset Accumulators** button is pressed, the accumulators for all clas
 
 ## Snapshots
 
-![The Snapshot button]({% asset tools/devtools/memory_snapshot.png @path %}){:width="100%"}
+![The Snapshot button]({% asset tools/devtools/memory_snapshot.png @path %})
 
 Clicking the **Snapshot** button shows the current state of the heap with regard to all active classes and their instances. 
 
