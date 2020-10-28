@@ -124,9 +124,10 @@ Learn how to use Flutter with other technologies.
   and a rewarded ad to an app called Awesome Drawing Quiz,
   a game that lets players guess the name of the drawing.
 
-* [Firebase for Flutter][]<br>
-  Connect a Flutter app to a Firebase database,
-  and use a transaction to update shared information.
+* [Get to know Firebase for Flutter][]<br>
+  Build an event RSVP and guestbook chat app on both Android
+  and iOS using Flutter, authenticating users with Firebase
+  Authentication and sync data using Cloud Firestore.
 
 * [Multi-platform Firestore Flutter][]<br>
   Build a multi-platform restaurant recommendation app
@@ -137,7 +138,7 @@ Learn how to use Flutter with other technologies.
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
-[Firebase for Flutter]: {{site.codelabs}}/codelabs/flutter-firebase
+[Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 
 ## Testing
