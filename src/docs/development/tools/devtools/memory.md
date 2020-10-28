@@ -94,12 +94,11 @@ The top of the memory page has several buttons and dropdowns that control how me
 <dt markdown="1">**Clear**</dt>
 <dd>Clear all collected data from the memory profiler.</dd>
 <dt markdown="1">**Display**</dt>
-<dd>The duration of the x-axis. For example, if this dropdown is set to "Display 5 minutes", memory data from the last 5 minutes will be displayed.
+<dd>The duration of the x-axis. For example, if this dropdown is set to "Display 5 minutes", memory data from the last 5 minutes will be displayed.</dd>
 <dt markdown="1">- Display 1 Minute</dt>
 <dt markdown="1">- Display 5 Minutes</dt>
 <dt markdown="1">- Display 10 Minutes</dt>
-<dt markdown="1">- Display All Minutes (slider disabled)</</dt>
-</dd>
+<dt markdown="1">- Display All Minutes (slider disabled)</dt>
 <dt markdown="1">**Source**</dt>
 <dd>Source can be either "Live Feed", which pulls data from the connected Flutter app, or one of the available offline data files, which are created by clicking "Export".</dd>
 <dt markdown="1">**Android Memory**</dt>
@@ -174,7 +173,7 @@ The quantities plotted on the y-axis are (from top to bottom):
   a finalizer, allowing Dart code to communicate with these native
   resources. Flutter has an embedder for Android and iOS.
   For more information, see [Dart on the Server][server] or
-  [Custom Flutter Engine Embedders][embedder].
+  [Custom Flutter Engine Embedders][embedder].</dd>
 </dl>
 To view RSS (resident set size), click the name of the RSS located
 in the legend.
@@ -376,7 +375,7 @@ understand how your application uses memory.
     which you can think of processes without the overhead.
     Each isolate has its own memory and code that can't be
     affected by any other isolate. For more information,
-    see [The Event Loop and Dart][event-loop].
+    see [The Event Loop and Dart][event-loop].</dd>
 <dt markdown="1">**Memory leak**</dt>
 <dd>A memory leak occurs when an object is live
     (meaning that another object points to it), but it is not being
@@ -388,6 +387,7 @@ understand how your application uses memory.
 <dt markdown="1">**Virtual machine (VM)**</dt>
 <dd>The Dart virtual machine is a piece of
     software that directly executes Dart code.</dd>
+</dl>
 
 [server]: https://dart-lang.github.io/server/server.html
 [embedder]: {{site.github}}/flutter/flutter/wiki/Custom-Flutter-Engine-Embedders
