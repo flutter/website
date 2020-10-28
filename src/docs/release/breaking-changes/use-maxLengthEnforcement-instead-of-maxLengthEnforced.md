@@ -46,12 +46,53 @@ always truncates.
 
 ## Migration guide
 
-The following tips describe how to emit a warning, but not truncate,
-on entering text, and how to truncate as text is entered.
+The following tips describe how to produce common behaviors. Notice that
+the enforcement API is exposed to `TextField`, `TextFormField`,
+`CupertinoTextField` and `LengthLimitingTextInputFormatter`.
 
-### Not enforces limitation
+### To enforce the limit all the time
 
-To print a max length warning in `TextField`, but _not_ truncate when the limit
+To enforce the limit in the most common way, which always truncate the value
+when it reaches the limit, use `MaxLengthEnforcement.enforced` or pass only
+`maxLength` to editable text fields.
+
+Code before migration:
+
+<!-- skip -->
+```dart
+TextField(maxLength: 6)
+```
+
+or 
+
+<!-- skip -->
+```dart
+TextField(
+  maxLength: 6,
+  maxLengthEnforced: true,
+)
+```
+
+Code after migration:
+
+<!-- skip -->
+```dart
+TextField(maxLength: 6)
+```
+
+or 
+
+<!-- skip -->
+```dart
+TextField(
+  maxLength: 6,
+  maxLengthEnforcement: MaxLengthEnforcement.enforced,
+)
+```
+
+### To not enforce the limitation
+
+To show a max length error in `TextField`, but _not_ truncate when the limit
 is exceed, use `MaxLengthEnforcement.none` instead of
 `maxLengthEnforced: false`.
 
@@ -75,7 +116,8 @@ TextField(
 )
 ```
 
-For `CupertinoTextField`, just don't set the `maxLength` value.
+For `CupertinoTextField`, which isn't able to show an error message,
+just don't set the `maxLength` value.
 
 Code before migration:
 
@@ -96,10 +138,10 @@ CupertinoTextField(
 )
 ```
 
-### Unenforce composing
+### To enforce the limit, but not for composing text
 
 To avoid truncating text while the user is editing, specify
-`MaxLengthEnforcement.allowComposingTextToFinish`. This behavior allows some
+`MaxLengthEnforcement.truncateAfterCompositionEnds`. This behavior allows some
 Chinese, Japanese, and Korean (CJK) characters to temporarily ignore the limit
 until editing is complete.
 
@@ -109,7 +151,7 @@ Code for the implementation:
 ```dart
 TextField(
   maxLength: 6,
-  maxLengthEnforcement: MaxLengthEnforcement.allowComposingTextToFinish, // <-- Temporarily lift the limit
+  maxLengthEnforcement: MaxLengthEnforcement.truncateAfterCompositionEnds, // <-- Temporarily lift the limit
 )
 ```
 
