@@ -195,7 +195,7 @@ Not currently.
 
 ### How can I compare notes with others who are playing with this feature?
 
-Check out the **#web** discussion board on [Discord][].
+Check out the **#hackers-web-🌍** discussion board on [Discord][].
 Flutter engineers routinely read and respond on Discord.
 
 
