@@ -157,10 +157,13 @@ TextField(
 
 ## Timeline
 
-Landed in version:  v.23.0-18.0.pre
+Landed in version:  v1.23.0-18.0.pre
 In stable release: not yet
 
 ## References
+
+Design doc:
+* [`MaxLengthEnforcement` design doc][]
 
 API documentation:
 * [`MaxLengthEnforcement`][]
@@ -174,6 +177,8 @@ Relevant PR:
 [PR 63754]: {{site.github.com}}//flutter/flutter/pull/63754
 
 [PR 68086]: {{site.github}}/flutter/flutter/pull/68086
+
+[`MaxLengthEnforcement` design doc]: /go/max-length-enforcement
 
 [`MaxLengthEnforcement`]: {{site.api}}/flutter/services/MaxLengthEnforcement-class.html
 
