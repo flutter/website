@@ -20,9 +20,7 @@ and choose an issue. You can only be assigned one Adopt A Widget issue at a
 time, so pick your favorite!
 2. Leave a comment on the issue, asking to be assigned. The first person to
 respond will be assigned. For example:
-
 <img src="/adoptawidget/images/image2.png" alt="Ask to be assigned" width="100%" />
-
 3. Once you are assigned, set up your environment, make the change, and submit
 the pull request. If you're not sure how to do this, see the
 [Quickstart](#quickstart) below.
