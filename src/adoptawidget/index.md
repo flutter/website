@@ -273,7 +273,7 @@ closes #1234
 {{site.alert.note}}
   If you are a first-time contributor to this repo, you will be asked to sign
   Google's [Contributor License
-  Agreement](https://cla.developers.google.com/about/google-corporate).
+  Agreement](https://cla.developers.google.com/about/google-corporate). 
 {{site.alert.end}}
 
 ## More resources
