@@ -56,7 +56,7 @@ First, create a `SnackBar`, then display it using the `Scaffold`.
 final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
 // Find the Scaffold in the widget tree and use it to show a SnackBar.
-Scaffold.of(context).showSnackBar(snackBar);
+ScaffoldMessenger.of(context).showSnackBar(snackBar);
 ```
 
 ## 3. Provide an optional action
@@ -129,7 +129,7 @@ class SnackBarPage extends StatelessWidget {
 
           // Find the Scaffold in the widget tree and use
           // it to show a SnackBar.
-          Scaffold.of(context).showSnackBar(snackBar);
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
         child: Text('Show SnackBar'),
       ),
