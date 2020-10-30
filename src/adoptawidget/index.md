@@ -8,7 +8,7 @@ show_banner: False
 
 Flutter is an open source project hosted [on
 GitHub](https://github.com/flutter/flutter), and making the documentation better
-helps everyone! So for the month of November, we’re extending a special
+helps everyone! So, for the month of November, we’re extending a special
 invitation to contribute to the Flutter project by choosing a Widget and
 improving its API documentation.
 
@@ -44,11 +44,11 @@ pull request for someone else's issue.
 
 **Respond within three days after being assigned**
 
-If we don't hear back from you, we might need to assign someone else.
+If we don't hear back from you, we might need to assign it to someone else.
 
 **One issue at a time**
 
-If you're already working on an issue, wait until it's closed before asking for
+If you're already working on an issue, wait until it's closed before requesting
 another.
 
 **Don't create "Adopt A Widget" issues**
@@ -174,7 +174,11 @@ explain:
 *   The behavior of the widget in certain situations
 *   Other important information about the widget
 
-See the [Documentation section](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc) of the Flutter Style Guide and [Effective Dart: Documentation](https://dart.dev/guides/language/effective-dart/documentation) for details on how to write great documentation.
+See the [Documentation
+section](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc)
+of the Flutter Style Guide and [Effective Dart:
+Documentation](https://dart.dev/guides/language/effective-dart/documentation)
+for details on how to write great documentation.
 
 ## Quickstart {#quickstart}
 
@@ -182,12 +186,19 @@ See the [Documentation section](https://github.com/flutter/flutter/wiki/Style-gu
 
 To get started, fork the SDK and use Git to fetch a local copy:
 
-1. Install dependencies listed in [Setting up the Framework development environment](https://github.com/flutter/flutter/wiki/Setting-up-the-Framework-development-environment)
-2. Fork the flutter repo [https://github.com/flutter/flutter](https://github.com/flutter/flutter). For more information, see [GitHub's official instructions](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).
-3. Clone your fork: `git clone https://github.com/&lt;your_name_here>/flutter.git`
+1. Install dependencies listed in
+   [Setting up the Framework development environment](https://github.com/flutter/flutter/wiki/Setting-up-the-Framework-development-environment)
+2. Fork the flutter repo
+[https://github.com/flutter/flutter](https://github.com/flutter/flutter). For
+more information, see [GitHub's official
+instructions](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).
+3. Clone your fork: `git clone
+https://github.com/&lt;your_name_here>/flutter.git`
 4. Change directory: `cd flutter`
-5. Add an upstream remote: `git remote add upstream git@github.com:flutter/flutter.git`
-6. Run `flutter update-packages` to fetch all the Dart packages Flutter uses.
+5. Add an upstream remote: `git remote add upstream
+git@github.com:flutter/flutter.git`
+6. Run `flutter update-packages` to fetch all the Dart packages that Flutter
+uses.
 
 
 ### Open the code in your IDE {#open-the-code-in-your-ide}
@@ -203,7 +214,7 @@ Open the file listed in the issue and update the documentation comment. See
 
 ### Analyzing and Generating API Docs
 
-Running this command from the root directory will analyze and generate the
+Running this command from the root directory analyzes and generates the
 documentation. This command can take up to 20 minutes to complete, so double
 check your changes first. If you want, you can also [analyze
 snippets](https://github.com/flutter/flutter/tree/master/dev/snippets#running-sample-analysis-locally)
