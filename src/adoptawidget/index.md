@@ -226,10 +226,12 @@ directly.
 
 To view the generated docs, open `dev/docs/doc/api/index.html`.
 
-**Note:** Flutter API docs cannot be generated on Windows. If you are using
-Windows, you may need to download the Linux version of the SDK and use the
-[Windows Subsystem for
-Linux](https://docs.microsoft.com/en-us/windows/wsl/about).
+{{site.alert.note}}
+  Flutter API docs cannot be generated on Windows. If you are using
+  Windows, you may need to download the Linux version of the SDK and use the
+  [Windows Subsystem for
+  Linux](https://docs.microsoft.com/en-us/windows/wsl/about).
+{{site.alert.end}}
 
 For more information, see the [Dartdoc Generation
 README](https://github.com/flutter/flutter/tree/master/dev/snippets).
@@ -268,8 +270,11 @@ closes #1234
 
 ```
 
-**Note:** If you are a first-time contributor to this repo, you will be asked to
-sign Google's [Contributor License Agreement](https://cla.developers.google.com/about/google-corporate).
+{{site.alert.note}}
+  If you are a first-time contributor to this repo, you will be asked to sign
+  Google's [Contributor License
+  Agreement](https://cla.developers.google.com/about/google-corporate).
+{{site.alert.end}}
 
 ## More resources
 
