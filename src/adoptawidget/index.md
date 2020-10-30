@@ -32,7 +32,7 @@ doc has details on contributing to Flutter.
 ## Discord {#discord}
 
 Join the [#AdoptAWidget channel on the Flutter Discord
-server](https://discord.com/channels/608014603317936148/608014603317936150) to
+server](https://discord.com/channels/608014603317936148/771798504355528704) to
 ask questions and get help.
 
 ## Guidelines
