@@ -25,7 +25,9 @@ respond will be assigned. For example:
 the pull request. If you're not sure how to do this, see the
 [Quickstart](#quickstart) below.
 
-The [CONTRIBUTING](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md) doc has details on contributing to Flutter.
+The
+[CONTRIBUTING](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
+doc has details on contributing to Flutter.
 
 ## Discord {#discord}
 
@@ -225,9 +227,9 @@ directly.
 To view the generated docs, open `dev/docs/doc/api/index.html`.
 
 **Note:** Flutter API docs cannot be generated on Windows. If you are using
-*Windows, you may need to download the Linux version of the SDK and use the
-*[Windows Subsystem for
-*Linux](https://docs.microsoft.com/en-us/windows/wsl/about).
+Windows, you may need to download the Linux version of the SDK and use the
+[Windows Subsystem for
+Linux](https://docs.microsoft.com/en-us/windows/wsl/about).
 
 For more information, see the [Dartdoc Generation
 README](https://github.com/flutter/flutter/tree/master/dev/snippets).
