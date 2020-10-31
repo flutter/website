@@ -653,7 +653,7 @@ information can be found on the [Pigeon pub.dev page][];
 Using [Pigeon][] eliminates the need to match strings between host and client
 for the names and datatypes of messages.  It supports: nested classes, grouping
 messages into APIs, generation of asynchronous wrapper code and sending messages
-in either direction.  The generated code is readable and guarentees there will
+in either direction.  The generated code is readable and guarantees there will
 be no conflicts between multiple clients of different versions.  Supported
 languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
 

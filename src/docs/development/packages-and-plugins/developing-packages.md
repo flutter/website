@@ -138,7 +138,7 @@ The API is connected to the platform-specific implementation(s) using a
 
 ### Federated plugins
 
-Federated plugins are a a way of splitting support for different platforms into
+Federated plugins are a way of splitting support for different platforms into
 separate packages. So, a federated plugin can use one package for iOS, another
 for Android, another for web, and yet another for a car (as an example of an IoT
 device). Among other benefits, this approach allows a domain expert to extend an

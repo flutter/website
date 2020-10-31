@@ -74,7 +74,7 @@ Click the **Run** button to run the example:
   This section contains a list of steps you can use to add an
   implicit animation to the
   [fade-in starter code]. After the steps, you can also run the
-  [fade-in complete] code with the the changes already made.
+  [fade-in complete] code with the changes already made.
   The steps outline how to use the `AnimatedOpacity`
   widget to add the following animation feature:
 

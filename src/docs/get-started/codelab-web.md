@@ -442,7 +442,7 @@ void _updateFormProgress() {
 ```
 
 This method updates the `_formProgress` field based on the
-the number of non-empty text fields.
+number of non-empty text fields.
 
 </li>
 

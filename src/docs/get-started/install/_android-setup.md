@@ -52,7 +52,7 @@ follow these steps:
  1. Choose a device definition and select **Next**.
  1. Select one or more system images for the Android versions you want
     to emulate, and select **Next**.
-    An _x86_ or _x86\_64_ image is recommended.
+    A _x86_ or _x86\_64_ image is recommended.
  1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable
     [hardware
     acceleration]({{site.android-dev}}/studio/run/emulator-acceleration).

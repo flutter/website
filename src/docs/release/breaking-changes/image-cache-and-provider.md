@@ -36,7 +36,7 @@ image buckets.
 ### ImageProvider changes
 
 The `ImageProvider.resolve` method does some complicated
-error handling work that should not normally be overriden.
+error handling work that should not normally be overridden.
 It also previously did work to load the image into the
 image cache, by way of `ImageProvider.obtainKey` and
 `ImageProvider.load`. Subclasses had no opportunity to

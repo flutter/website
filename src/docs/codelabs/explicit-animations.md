@@ -638,7 +638,7 @@ registering listeners, and play or sequence controls:
   the current value of the animation&mdash;just
   use the `value` property.
 * To "play" an animation,
-  you can use one one of several methods that
+  you can use one of several methods that
   initiate the sequence of changes to `value`.
   For example, to "play" an animation
   from its starting value to its ending value,
@@ -710,7 +710,7 @@ of the editor:
 
 
   `AnimationController`
-  abstracts away the the work of interpolation,
+  abstracts away the work of interpolation,
   allowing you to reason about and create an animation
   in terms of its duration, and the starting and ending
   values of the property that you are animating:
