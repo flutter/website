@@ -113,14 +113,14 @@ directory](https://github.com/flutter/flutter/tree/master/dev/snippets/config/te
 
 ```dart
 /// {@tool sample --template=stateless_widget_scaffold_center}
-/// 
+///
 /// This is a comment explaining the snippet below:
 ///
 /// ```dart
 ///  Widget build(BuildContext context) {
 ///    return MyWidget(
 ///      color: Colors.green,
-///    ); 
+///    );
 ///  }
 /// ```
 /// {@end-tool}
@@ -135,14 +135,14 @@ directory](https://github.com/flutter/flutter/tree/master/dev/snippets/config/te
 
 ```dart
 /// {@tool dartpad --template=stateless_widget_material}
-/// 
+///
 /// This is a comment explaining the snippet below:
 ///
 /// ```dart
 ///  Widget build(BuildContext context) {
 ///    return MyWidget(
 ///      color: Colors.green,
-///    ); 
+///    );
 ///  }
 /// ```
 /// {@end-tool}
@@ -273,7 +273,7 @@ closes #1234
 {{site.alert.note}}
   If you are a first-time contributor to this repo, you will be asked to sign
   Google's [Contributor License
-  Agreement](https://cla.developers.google.com/about/google-corporate). 
+  Agreement](https://cla.developers.google.com/about/google-corporate).
 {{site.alert.end}}
 
 ## More resources
