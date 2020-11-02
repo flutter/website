@@ -104,9 +104,9 @@ In the **Signing & Capabilities** section:
   account. If required, select **Add Account...**,
   then update this setting.
 
-In the **Deployment Info** section:
+In the **Build Settings** section:
 
-`Deployment Target`
+`iOS Deployment Target`
 : The minimum iOS version that your app supports.
   Flutter supports iOS 8.0 and later. If your app includes
   Objective-C or Swift code that makes use of APIs that
