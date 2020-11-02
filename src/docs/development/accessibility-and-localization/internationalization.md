@@ -39,7 +39,9 @@ can also be internationalized using the same classes and logic.
   * [Internationalization based on the `intl` package][]
 {{site.alert.end}}
 
-## Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
+## Introduction to Localizations in Flutter
+
+### Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
 
 By default, Flutter only provides US English localizations.
 To add support for other languages,
@@ -102,7 +104,7 @@ depend on, and how internationalized Flutter apps are typically
 structured, can be found below.
 
 <a name="advanced-locale"></a>
-## Advanced locale definition
+### Advanced locale definition
 
 Some languages with multiple variants require more than just a
 language code to properly differentiate.
@@ -147,7 +149,7 @@ other languages like French (fr_FR, fr_CA)
 should also be fully differentiated for more nuanced localization.
 
 <a name="tracking-locale"></a>
-## Tracking the locale: The Locale class and the Localizations widget
+### Tracking the locale: The Locale class and the Localizations widget
 
 The [`Locale`][] class identifies the user's language.
 Mobile devices support setting the locale for all applications,
@@ -171,7 +173,7 @@ Locale myLocale = Localizations.localeOf(context);
 ```
 
 <a name="loading-and-retrieving"></a>
-## Loading and retrieving localized values
+### Loading and retrieving localized values
 
 The `Localizations` widget is used to load and lookup objects that
 contain collections of localized values. Apps refer to these objects
@@ -228,7 +230,7 @@ tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 ```
 
 <a name="using-bundles">
-## Using the bundled Localizations&shy;Delegates
+### Using the bundled Localizations&shy;Delegates
 
 To keep things as small and uncomplicated as possible,
 the flutter package includes implementations of the
@@ -275,8 +277,38 @@ that produces an instance of `GlobalMaterialLocalizations`.
 As of February 2020, the global localization classes support
 [77 languages][].
 
+<a name="ios-specifics"></a>
+### Localizing for iOS: Updating the iOS app bundle
+
+iOS applications define key application metadata,
+including supported locales, in an `Info.plist` file
+that is built into the application bundle.
+To configure the locales supported by your app,
+you'll need to edit this file.
+
+First, open your project's `ios/Runner.xcworkspace` Xcode
+workspace file then, in the **Project Navigator**,
+open the `Info.plist` file under the `Runner`
+project's `Runner` folder.
+
+Next, select the **Information Property List** item,
+select **Add Item** from the **Editor** menu,
+then select **Localizations** from the pop-up menu.
+
+Select and expand the newly-created `Localizations` item then,
+for each locale your application supports,
+add a new item and select the locale you wish to add
+from the pop-up menu in the **Value** field.
+This list should be consistent with the languages listed
+in the [supportedLocales][] parameter.
+
+Once all supported locales have been added, save the file.
+
+<a name="improved-customization">
+## Advanced Topics for Improved Customization
+
 <a name="defining-class"></a>
-## Defining a class for the app's localized resources
+### Defining a class for the app's localized resources
 
 Putting all of this together for an internationalized app usually
 starts with the class that encapsulates the app's localized values.
@@ -335,7 +367,7 @@ that analyzes the source code for classes that contain
 `DemoLocalizations` class.
 
 <a name="specifying-supportedlocales"></a>
-## Specifying the app's supported&shy;Locales parameter
+### Specifying the app's supported&shy;Locales parameter
 
 Although Flutter's flutter_localizations library includes support
 for 77 languages, only English language translations are available
@@ -376,71 +408,8 @@ class DemoApp extends StatelessWidget {
 }
 ```
 
-<a name="alternative-class"></a>
-## An alternative class for the app's localized resources
-
-The previous DemoApp example was defined in terms of the Dart `intl`
-package. Developers can choose their own approach for managing
-localized values for the sake of simplicity or perhaps to integrate
-with a different i18n framework.
-
-Complete source code for the [`minimal`][] app.
-
-In this version of DemoApp the class that contains the app's
-localizations, DemoLocalizations, includes all of its translations
-directly in per language Maps.
-
-
-<!-- skip -->
-```dart
-class DemoLocalizations {
-  DemoLocalizations(this.locale);
-
-  final Locale locale;
-
-  static DemoLocalizations of(BuildContext context) {
-    return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
-  }
-
-  static Map<String, Map<String, String>> _localizedValues = {
-    'en': {
-      'title': 'Hello World',
-    },
-    'es': {
-      'title': 'Hola Mundo',
-    },
-  };
-
-  String get title {
-    return _localizedValues[locale.languageCode]['title'];
-  }
-}
-```
-
-In the minimal app the `DemoLocalizationsDelegate` is slightly
-different. Its `load` method returns a [`SynchronousFuture`][]
-because no asynchronous loading needs to take place.
-
-<!-- skip -->
-```dart
-class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
-  const DemoLocalizationsDelegate();
-
-  @override
-  bool isSupported(Locale locale) => ['en', 'es'].contains(locale.languageCode);
-
-  @override
-  Future<DemoLocalizations> load(Locale locale) {
-    return SynchronousFuture<DemoLocalizations>(DemoLocalizations(locale));
-  }
-
-  @override
-  bool shouldReload(DemoLocalizationsDelegate old) => false;
-}
-```
-
 <a name="adding-language"></a>
-## Adding support for a new language
+### Adding support for a new language
 
 An app that needs to support a language that's not included in
 [`GlobalMaterialLocalizations`][] has to do some extra work:
@@ -531,8 +500,74 @@ MaterialApp(
 )
 ```
 
+<a name="alternative-internationalization-workflows">
+## Alternative Internationalization Workflows
+
+<a name="alternative-class"></a>
+### An alternative class for the app's localized resources
+
+The previous DemoApp example was defined in terms of the Dart `intl`
+package. Developers can choose their own approach for managing
+localized values for the sake of simplicity or perhaps to integrate
+with a different i18n framework.
+
+Complete source code for the [`minimal`][] app.
+
+In this version of DemoApp the class that contains the app's
+localizations, DemoLocalizations, includes all of its translations
+directly in per language Maps.
+
+
+<!-- skip -->
+```dart
+class DemoLocalizations {
+  DemoLocalizations(this.locale);
+
+  final Locale locale;
+
+  static DemoLocalizations of(BuildContext context) {
+    return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
+  }
+
+  static Map<String, Map<String, String>> _localizedValues = {
+    'en': {
+      'title': 'Hello World',
+    },
+    'es': {
+      'title': 'Hola Mundo',
+    },
+  };
+
+  String get title {
+    return _localizedValues[locale.languageCode]['title'];
+  }
+}
+```
+
+In the minimal app the `DemoLocalizationsDelegate` is slightly
+different. Its `load` method returns a [`SynchronousFuture`][]
+because no asynchronous loading needs to take place.
+
+<!-- skip -->
+```dart
+class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
+  const DemoLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) => ['en', 'es'].contains(locale.languageCode);
+
+  @override
+  Future<DemoLocalizations> load(Locale locale) {
+    return SynchronousFuture<DemoLocalizations>(DemoLocalizations(locale));
+  }
+
+  @override
+  bool shouldReload(DemoLocalizationsDelegate old) => false;
+}
+```
+
 <a name="dart-tools"></a>
-## Appendix: Using the Dart intl tools
+### Using the Dart intl tools
 
 Before building an API using the Dart [`intl`][] package
 you'll want to review the `intl` package's documentation.
@@ -568,9 +603,10 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
         --output-dir=lib/l10n --no-use-deferred-loading \
         lib/main.dart lib/l10n/intl_*.arb
     ```
-    
+
     ***Windows does not support file name wildcarding.***
     Instead, list the .arb files that were generated by the `intl_translation:extract_to_arb` command.
+
     ```terminal
     $ flutter pub run intl_translation:generate_from_arb \
         --output-dir=lib/l10n --no-use-deferred-loading \
@@ -581,34 +617,6 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     The `DemoLocalizations` class uses the generated `initializeMessages()`
     function (defined in `intl_messages_all.dart`)
     to load the localized messages and `Intl.message()` to look them up.
-
-<a name="ios-specifics"></a>
-## Appendix: Updating the iOS app bundle
-
-iOS applications define key application metadata,
-including supported locales, in an `Info.plist` file
-that is built into the application bundle.
-To configure the locales supported by your app,
-you'll need to edit this file.
-
-First, open your project's `ios/Runner.xcworkspace` Xcode
-workspace file then, in the **Project Navigator**,
-open the `Info.plist` file under the `Runner`
-project's `Runner` folder.
-
-Next, select the **Information Property List** item,
-select **Add Item** from the **Editor** menu,
-then select **Localizations** from the pop-up menu.
-
-Select and expand the newly-created `Localizations` item then,
-for each locale your application supports,
-add a new item and select the locale you wish to add
-from the pop-up menu in the **Value** field.
-This list should be consistent with the languages listed
-in the [supportedLocales][] parameter.
-
-Once all supported locales have been added, save the file.
-
 
 [77 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`add_language`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart
