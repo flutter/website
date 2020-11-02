@@ -169,21 +169,23 @@ The worst frame rasterization time is a nice metric from such integration tests 
    a good indicator on how severe the shader compilation jank is.)
 
 3. **SkSL warm-up doesn't help newer iPhones using Metal.**<br>
-   Flutter recently migrated from OpenGL to Metal for all newer iOS
-   devices. However, Skia currently only implements the SkSL warm-up for
-   OpenGL. So the SkSL warm-up would only speed up older iOS devices
-   by default. If you find shader compilation jank to be an issue
-   for your app on newer iPhones, please let us know by filing a
-   [GitHub issue][]. In the longer term, we have a plan to use test-based
-   shader warm-up to mitigate this. If there's an urgent need for fixing
-   shader compilation jank on newer iPhones, please leave feedback on
-   [Issue 61045][], and we can help you turn on OpenGL for your app.
+   Flutter recently migrated from OpenGL to Metal for all newer iOS devices.
+   (Please reference [Metal on iOS FAQ][] on which iOS devices are considered
+   new enough to use Metal.) However, Skia currently only implemented the SkSL
+   warm-up for OpenGL. So the SkSL warm-up would only speed up older iOS devices
+   by default. If you find shader compilation jank to be an issue for your app
+   on newer iPhones, please let us know by filing a [GitHub issue][]. In the
+   longer term, we have a plan to use test-based shader warm-up to mitigate
+   this. If there's an urgent need for fixing shader compilation jank on newer
+   iPhones, please leave feedback on [Issue 61045][], and we can help you turn
+   on OpenGL for your app.
 
 
 [`FrameTiming`]: {{site.api}}/flutter/dart-ui/FrameTiming-class.html
 [SkSL-based warmup issue]: {{site.github}}/flutter/flutter/issues/53607#issuecomment-608587484
 [GitHub issue]: {{site.github}}/flutter/flutter/issues
 [Issue 61045]: {{site.github}}/flutter/flutter/issues/61045
+[Metal on iOS FAQ]: {{site.github}}/flutter/flutter/wiki/Metal-on-iOS-FAQ
 
 If you have questions on SkSL shader warm-up,
 please comment on [Issue 60313][] and [Issue 53607][].
