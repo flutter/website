@@ -182,7 +182,7 @@ In Xcode, configure the app version and build:
 
 1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
 1. Select **Product > Scheme > Runner**.
-1. Select **Product > Destination > Generic iOS Device**.
+1. Select **Product > Destination > Any iOS Device**.
 1. Select **Runner** in the Xcode project navigator, then select the
    **Runner** target in the settings view sidebar.
 1. In the Identity section, update the **Version** to the user-facing
