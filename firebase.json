@@ -250,7 +250,8 @@
       { "source": "/go/migrating-to-vertical-alignment", "destination": "https://docs.google.com/document/d/1vi6d6On6EXN82Q8KmXSLbWNnsnm9YjWtTWhSyjPF59Q/edit?usp=sharing", "type": 301 },
       { "source": "/go/dirty-region-management", "destination": "https://docs.google.com/document/d/19WDvGJql1bmnECTdEzJFeH9Ixw4AP2R7JlgujBSbDbk/edit?usp=sharing", "type": 301 },
       { "source": "/go/delegate-route-transitions", "destination": "https://docs.google.com/document/d/10C5VbqhU7FkkDSVlcVZmrl8UyL7nw4CeL4QdPKMjsEk/edit?usp=sharing", "type": 301 },
-      { "source": "/go/default-scroll-action", "destination": "https://docs.google.com/document/d/1SJvom6k4YW4EtFIY4VpAhAOH-jWhRkHVfpVsOBB56KM/edit?usp=sharing", "type": 301 }
+      { "source": "/go/default-scroll-action", "destination": "https://docs.google.com/document/d/1SJvom6k4YW4EtFIY4VpAhAOH-jWhRkHVfpVsOBB56KM/edit?usp=sharing", "type": 301 },
+      { "source": "/go/deprecation-lifetime", "destination": "https://docs.google.com/document/d/1Gc3ecrMghzc7WU4pgzKB8uBaTPpRdWfozn0otBbxR7s/edit?usp=sharing", "type": 301 }
     ],
     "headers": [
       { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
