@@ -31,7 +31,7 @@ Definitive evidence for the presence of shader compilation jank
 is to see `GrGLProgramBuilder::finalize` in the tracing.
 See the following screenshot for an example timeline tracing.
 
-![A tracing screenshot verifying jank]({% asset perf/render/tracing.png @path %})
+![A tracing screenshot verifying jank]({% asset perf/render/tracing.png @path %}){:width="100%"}
 
 ## What do we mean by "first run"?
 
@@ -60,6 +60,17 @@ and package the SkSL shaders:
 ```sh
 flutter run --profile --cache-sksl
 ```
+
+If the same app has been previously run without `--cache-sksl`, then the
+`--purge-persistent-cache` flag may be needed:
+
+```sh
+flutter run --profile --cache-sksl --purge-persistent-cache
+```
+
+This flag removes older non-SkSL shader caches that could interfere with SkSL
+shader capturing. It also purges the SkSL shaders so use it *only* on the first
+`--cache-sksl` run.
 </li>
 
 <li markdown="1"> Play with the app to trigger as many animations
@@ -115,13 +126,13 @@ Take the original version of [Flutter Gallery][] as an example.
 The CI system is set up to generate SkSLs for every Flutter commit,
 and verifies the performance, in the [`transitions_perf_test.dart`][] test.
 For more details, see the [`flutter_gallery_sksl_warmup__transition_perf`][]
-and [`flutter_gallery_sksl_warmup_ios32__transition_perf`][] tasks.
+and [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`][] tasks.
 
 The worst frame rasterization time is a nice metric from such integration tests to indicate the severity of shader compilation jank. For instance, the steps above reduce Flutter gallery's shader compilation jank and speeds up its worst frame rasterization time on a Moto G4 from ~90 ms to ~40 ms. On iPhone 4s it's reduced from from ~300 ms to ~80 ms. That leads to the visual difference as illustrated in the beginning of this article.
 
 [Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
 [`flutter_gallery_sksl_warmup__transition_perf`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
-[`flutter_gallery_sksl_warmup_ios32__transition_perf`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup_ios32__transition_perf.dart
+[`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
 [integration tests]: /docs/cookbook/testing/integration/introduction
 [`transitions_perf_test.dart`]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
 
@@ -158,21 +169,23 @@ The worst frame rasterization time is a nice metric from such integration tests 
    a good indicator on how severe the shader compilation jank is.)
 
 3. **SkSL warm-up doesn't help newer iPhones using Metal.**<br>
-   Flutter recently migrated from OpenGL to Metal for all newer iOS
-   devices. However, Skia currently only implements the SkSL warm-up for
-   OpenGL. So the SkSL warm-up would only speed up older iOS devices
-   by default. If you find shader compilation jank to be an issue
-   for your app on newer iPhones, please let us know by filing a
-   [GitHub issue][]. In the longer term, we have a plan to use test-based
-   shader warm-up to mitigate this. If there's an urgent need for fixing
-   shader compilation jank on newer iPhones, please leave feedback on
-   [Issue 61045][], and we can help you turn on OpenGL for your app.
+   Flutter recently migrated from OpenGL to Metal for all newer iOS devices.
+   (Please reference [Metal on iOS FAQ][] on which iOS devices are considered
+   new enough to use Metal.) However, Skia currently only implemented the SkSL
+   warm-up for OpenGL. So the SkSL warm-up would only speed up older iOS devices
+   by default. If you find shader compilation jank to be an issue for your app
+   on newer iPhones, please let us know by filing a [GitHub issue][]. In the
+   longer term, we have a plan to use test-based shader warm-up to mitigate
+   this. If there's an urgent need for fixing shader compilation jank on newer
+   iPhones, please leave feedback on [Issue 61045][], and we can help you turn
+   on OpenGL for your app.
 
 
 [`FrameTiming`]: {{site.api}}/flutter/dart-ui/FrameTiming-class.html
 [SkSL-based warmup issue]: {{site.github}}/flutter/flutter/issues/53607#issuecomment-608587484
 [GitHub issue]: {{site.github}}/flutter/flutter/issues
 [Issue 61045]: {{site.github}}/flutter/flutter/issues/61045
+[Metal on iOS FAQ]: {{site.github}}/flutter/flutter/wiki/Metal-on-iOS-FAQ
 
 If you have questions on SkSL shader warm-up,
 please comment on [Issue 60313][] and [Issue 53607][].

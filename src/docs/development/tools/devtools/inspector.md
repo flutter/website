@@ -204,11 +204,11 @@ with and without track widget creation enabled.
 
 Track widget creation enabled (default):
 
-![The widget tree with track widget creation enabled]({% asset tools/devtools/track_widget_creation_enabled.png @path %})
+![The widget tree with track widget creation enabled]({% asset tools/devtools/track_widget_creation_enabled.png @path %}){:width="100%"}
 
 Track widget creation disabled (not recommended):
 
-![The widget tree with track widget creation disabled]({% asset tools/devtools/track_widget_creation_disabled.png @path %})
+![The widget tree with track widget creation disabled]({% asset tools/devtools/track_widget_creation_disabled.png @path %}){:width="100%"}
 
 This feature prevents otherwise-identical `const` Widgets from
 being considered equal in debug builds. For more details, see

@@ -506,6 +506,16 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-scrollbar.png'>"
   },
   {
+    "name": "CupertinoSearchTextField",
+    "description": "An iOS-style search field.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSearchTextField-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-search-field.png'>"
+  },
+  {
     "name": "CupertinoSegmentedControl",
     "description": "An iOS-style segmented control. Used to select mutually exclusive options in a horizontal list.",
     "categories": [
@@ -534,6 +544,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-sliding-segmented-control.png'>"
+  },
+  {
+    "name": "CupertinoSliverNavigationBar",
+    "description": "An iOS-styled navigation bar with iOS-11-style large titles using slivers.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-sliver-navigation-bar.png'>"
   },
   {
     "name": "CupertinoSwitch",

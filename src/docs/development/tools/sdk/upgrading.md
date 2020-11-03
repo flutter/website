@@ -10,7 +10,7 @@ Flutter SDK or the packages that your app depends on.
 
 ## Upgrading the Flutter SDK
 
-To update both the Flutter SDK use the `flutter upgrade` command:
+To update the Flutter SDK use the `flutter upgrade` command:
 
 ```terminal
 $ flutter upgrade

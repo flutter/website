@@ -12,6 +12,8 @@
       { "source": "/privacy", "destination": "https://www.google.com/intl/en/policies/privacy", "type": 301 },
       { "source": "/research-signup", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform?usp=sf_link", "type": 301 },
       { "source": "/research-optout", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeG2Nhj0YQkr3m75P74Zb9G-v7zgNhAE9arCyig-a5B1A8uDw/viewform?usp=sf_link", "type": 301 },
+      { "source": "/null-safety", "destination": "/docs/null-safety", "type": 301 },
+      { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/docs/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/docs/catalog/samples/*", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/docs/cookbook/networking", "destination": "/docs/cookbook#networking", "type": 301 },
@@ -94,6 +96,7 @@
       { "source": "/setup-:os*", "destination": "/docs/get-started/install/:os*", "type": 301 },
       { "source": "/support", "destination": "/community", "type": 301 },
       { "source": "/docs/resources/technical-overview", "destination": "/docs/resources/architectural-overview", "type": 301 },
+      { "source": "/technical-overview", "destination": "/docs/resources/architectural-overview", "type": 301 },
       { "source": "/testing", "destination": "/docs/testing", "type": 301 },
       { "source": "/text-input", "destination": "/docs/cookbook/forms/text-input", "type": 301 },
       { "source": "/tutorials", "destination": "/docs/reference/tutorials", "type": 301 },
@@ -240,7 +243,17 @@
       { "source": "/go/text-selection-menu-customization", "destination": "https://docs.google.com/document/d/1hyay1TyUZB7DXzWw45-ruGMZM1yCMWEnC3DzOJYemuc/edit", "type": 301 },
       { "source": "/go/flutter-support-multi-architecture", "destination": "https://docs.google.com/document/d/19tzWySgtgtTA99XQsjx5Pg0SFJeZKXyUlYavR0EXv8c/edit?usp=sharing", "type": 301 },
       { "source": "/go/ondirtycallbacks", "destination": "https://docs.google.com/document/d/1Vk_QWC92fFGxx2oIrIjkCL0ZZFHxmrprlLedyQsnkus/edit?usp=sharing", "type": 301 },
+      { "source": "/go/subpixel-antialiasing", "destination": "https://docs.google.com/document/d/1yEycgo5ivZ_lu2MAnMBLreZvROFdamy9-9q-QvMvL9U/edit?usp=sharing", "type": 301 },
+      { "source": "/go/text-selection-programatically", "destination": "https://docs.google.com/document/d/1NK4GJ0Wk5eJ3IUw_9oAtz1oYgZ-Sn-kAKHxTvsgr75o/edit?usp=sharing", "type": 301 },
+      { "source": "/go/eliminating-nullok-parameters", "destination": "https://docs.google.com/document/d/1LKBL0S1uyhACDiUXILhLKFZH8Cpl_w3mXjHgaE8_--U/edit?usp=sharing", "type": 301 },
+      { "source": "/go/outline-input-border-padding-fix", "destination": "https://docs.google.com/document/d/1QBM5oM9qPWVeFSPSqpXOFbdXV9dH9A9ABKsNMs1J2XU/edit?usp=sharing", "type": 301 },
+      { "source": "/go/migrating-to-vertical-alignment", "destination": "https://docs.google.com/document/d/1vi6d6On6EXN82Q8KmXSLbWNnsnm9YjWtTWhSyjPF59Q/edit?usp=sharing", "type": 301 },
+      { "source": "/go/dirty-region-management", "destination": "https://docs.google.com/document/d/19WDvGJql1bmnECTdEzJFeH9Ixw4AP2R7JlgujBSbDbk/edit?usp=sharing", "type": 301 },
+      { "source": "/go/delegate-route-transitions", "destination": "https://docs.google.com/document/d/10C5VbqhU7FkkDSVlcVZmrl8UyL7nw4CeL4QdPKMjsEk/edit?usp=sharing", "type": 301 },
       { "source": "/go/max-length-enforcement", "destination": "https://docs.google.com/document/d/1S900lQaTPOsePnIeE7o3-Ia8f39VZaSv0JnjNyBfCvU", "type": 301 }
+    ],
+    "headers": [
+      { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
     ]
   }
 }
