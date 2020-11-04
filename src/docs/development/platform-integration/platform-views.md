@@ -445,12 +445,12 @@ import UIKit
 
 class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
     private var messenger: FlutterBinaryMessenger
-    
+
     init(messenger: FlutterBinaryMessenger) {
         self.messenger = messenger
         super.init()
     }
-    
+
     func create(
         withFrame frame: CGRect,
         viewIdentifier viewId: Int64,
@@ -466,7 +466,7 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
 
 class FLNativeView: NSObject, FlutterPlatformView {
     private var _view: UIView
-    
+
     init(
         frame: CGRect,
         viewIdentifier viewId: Int64,
@@ -476,18 +476,18 @@ class FLNativeView: NSObject, FlutterPlatformView {
         _view = UIView()
         super.init()
     }
-    
+
     func view() -> UIView {
         // This function returns a UIView and you can add native iOS UI here.
         _view.backgroundColor = UIColor.blue
-        
+
         let nativeLabel = UILabel()
         nativeLabel.text = "Native text from iOS"
         nativeLabel.textColor = UIColor.white
         nativeLabel.textAlignment = .center
         nativeLabel.frame = _view.frame
         _view.addSubview(nativeLabel)
-        
+
         return _view
     }
 }
