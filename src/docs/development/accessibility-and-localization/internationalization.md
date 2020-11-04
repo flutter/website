@@ -13,17 +13,18 @@ description: How to internationalize your Flutter app.
 {{site.alert.end}}
 
 If your app might be deployed to users who speak another language then
-you'll need to "internationalize" it. That means you'll need to write
-the app in a way that makes it possible to "localize" values like text
-and layouts for each language or "locale" that the app
+you'll need to internationalize it. That means you'll need to write
+the app in a way that makes it possible to localize values like text
+and layouts for each language or locale that the app
 supports. Flutter provides widgets and classes that help with
 internationalization and the Flutter libraries themselves are
 internationalized.
 
-The tutorial that follows is largely written in terms of the Flutter
-`MaterialApp` class, since most applications are written that way.
-Applications written in terms of the lower level `WidgetsApp` class
-can also be internationalized using the same classes and logic.
+This page covers concepts and workflows necessary to localize a
+Flutter application in terms of the `MaterialApp` class, as most apps
+are written that way. However, applications written in terms of the
+lower level `WidgetsApp` class can also be internationalized using
+the same classes and logic.
 
 {{site.alert.secondary}}
   <h4 class="no_toc">Sample internationalized apps</h4>
@@ -42,9 +43,8 @@ can also be internationalized using the same classes and logic.
 ## Introduction to localizations in Flutter
 
 This section introduces the basic concepts and ideas needed to localize
-a Flutter application. This will cover internationalizing the Flutter app,
-internationalizing the Cupertino and Material libraries' widgets, and how
-to perform any additional setup that a target platform might require.
+a Flutter application. This will cover internationalizing the Flutter app
+and how to perform any additional setup that a target platform might require.
 
 ### Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
 
@@ -52,7 +52,7 @@ By default, Flutter only provides US English localizations.
 To add support for other languages,
 an application must specify additional `MaterialApp` properties,
 and include a separate package called
-`flutter_localizations`.  As of February 2020,
+`flutter_localizations`.  As of November 2020,
 this package supports 77 languages.
 
 To use flutter_localizations,
@@ -107,6 +107,39 @@ library.
 More information about these app properties, the types they
 depend on, and how internationalized Flutter apps are typically
 structured, can be found below.
+
+<a name="ios-specifics"></a>
+### Localizing for iOS: Updating the iOS app bundle
+
+iOS applications define key application metadata,
+including supported locales, in an `Info.plist` file
+that is built into the application bundle.
+To configure the locales supported by your app,
+you'll need to edit this file.
+
+First, open your project's `ios/Runner.xcworkspace` Xcode
+workspace file then, in the **Project Navigator**,
+open the `Info.plist` file under the `Runner`
+project's `Runner` folder.
+
+Next, select the **Information Property List** item,
+select **Add Item** from the **Editor** menu,
+then select **Localizations** from the pop-up menu.
+
+Select and expand the newly-created `Localizations` item then,
+for each locale your application supports,
+add a new item and select the locale you wish to add
+from the pop-up menu in the **Value** field.
+This list should be consistent with the languages listed
+in the [supportedLocales][] parameter.
+
+Once all supported locales have been added, save the file.
+
+<a name="advanced-customization">
+## Advanced topics for further customization
+
+This section will cover additional ways to customize a
+localized Flutter application.
 
 <a name="advanced-locale"></a>
 ### Advanced locale definition
@@ -177,6 +210,49 @@ You can always lookup an app's current locale with
 Locale myLocale = Localizations.localeOf(context);
 ```
 
+<a name="specifying-supportedlocales"></a>
+### Specifying the app's supported&shy;Locales parameter
+
+Although Flutter's flutter_localizations library includes support
+for 77 languages, only English language translations are available
+by default. It's up to the developer to decide exactly which languages
+to support.
+
+The `MaterialApp` [`supportedLocales`][]
+parameter limits locale changes. When the user changes the locale
+setting on their device, the app's `Localizations` widget only
+follows suit if the new locale is a member of the this list.
+If an exact match for the device locale isn't found,
+then the first supported locale with a matching [`languageCode`][]
+is used. If that fails, then the first element of the
+`supportedLocales` list is used.
+
+An app that wants to use a different "locale resolution"
+method can provide a [`localeResolutionCallback`][].
+For example, to have your app unconditionally accept
+whatever locale the user selects:
+
+<!-- skip -->
+```dart
+class DemoApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+       localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
+         return locale;
+       }
+       // ...
+    );
+  }
+}
+```
+
+## How internationalization in Flutter works
+
+This section covers the technical details of how localizations work
+in Flutter. If you're planning on supporting your own set of localized
+messages, the following content would be helpful.
+
 <a name="loading-and-retrieving"></a>
 ### Loading and retrieving localized values
 
@@ -234,91 +310,10 @@ static MaterialLocalizations of(BuildContext context) {
 tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 ```
 
-<a name="using-bundles">
-### Using the bundled Localizations&shy;Delegates
-
-To keep things as small and uncomplicated as possible,
-the flutter package includes implementations of the
-`MaterialLocalizations` and `WidgetsLocalizations`
-interfaces that only provide US English values.
-These implementation classes are called `DefaultMaterialLocalizations`
-and `DefaultWidgetsLocalizations`, respectively.
-They're included automatically unless a different delegate
-of the same base type is specified with the app's
-`localizationsDelegates` parameter.
-
-The `flutter_localizations` package includes multi-language
-implementations of the localizations interfaces called
-[`GlobalMaterialLocalizations`][material-global] and
-[`GlobalWidgetsLocalizations`][widgets-global].
-International apps must specify localization delegates for
-these classes as described in [Setting up an internationalized app][].
-
-<!-- skip -->
-```dart
-import 'package:flutter_localizations/flutter_localizations.dart';
-
-MaterialApp(
- localizationsDelegates: [
-   // ... app-specific localization delegate[s] here
-   GlobalMaterialLocalizations.delegate,
-   GlobalWidgetsLocalizations.delegate,
- ],
- supportedLocales: [
-    const Locale('en', ''), // English, no country code
-    const Locale('he', ''), // Hebrew, no country code
-    const Locale('zh', ''), // Chinese, no country code
-    // ... other locales the app supports
-  ],
-  // ...
-)
-```
-
-The global localization delegates construct locale-specific instances
-of the corresponding classes. For example,
-`GlobalMaterialLocalizations.delegate` is a `LocalizationsDelegate`
-that produces an instance of `GlobalMaterialLocalizations`.
-
-As of February 2020, the global localization classes support
-[77 languages][].
-
-<a name="ios-specifics"></a>
-### Localizing for iOS: Updating the iOS app bundle
-
-iOS applications define key application metadata,
-including supported locales, in an `Info.plist` file
-that is built into the application bundle.
-To configure the locales supported by your app,
-you'll need to edit this file.
-
-First, open your project's `ios/Runner.xcworkspace` Xcode
-workspace file then, in the **Project Navigator**,
-open the `Info.plist` file under the `Runner`
-project's `Runner` folder.
-
-Next, select the **Information Property List** item,
-select **Add Item** from the **Editor** menu,
-then select **Localizations** from the pop-up menu.
-
-Select and expand the newly-created `Localizations` item then,
-for each locale your application supports,
-add a new item and select the locale you wish to add
-from the pop-up menu in the **Value** field.
-This list should be consistent with the languages listed
-in the [supportedLocales][] parameter.
-
-Once all supported locales have been added, save the file.
-
-<a name="improved-customization">
-## Advanced topics for improved customization
-
-This section will cover additional ways to further customize a
-localized Flutter application.
-
 <a name="defining-class"></a>
 ### Defining a class for the app's localized resources
 
-Putting all of this together for an internationalized app usually
+Putting together an internationalized Flutter app usually
 starts with the class that encapsulates the app's localized values.
 The example that follows is typical of such classes.
 
@@ -373,48 +368,6 @@ The message catalog is produced by an [`intl` tool][]
 that analyzes the source code for classes that contain
 `Intl.message()` calls.  In this case that would just be the
 `DemoLocalizations` class.
-
-<a name="specifying-supportedlocales"></a>
-### Specifying the app's supported&shy;Locales parameter
-
-Although Flutter's flutter_localizations library includes support
-for 77 languages, only English language translations are available
-by default. It's up to the developer to decide exactly which languages
-to support, since it wouldn't make sense for the toolkit
-libraries to support a different set of locales than the app does.
-
-The `MaterialApp` [`supportedLocales`][]
-parameter limits locale changes. When the user changes the locale
-setting on their device, the app's `Localizations` widget only
-follows suit if the new locale is a member of the this list.
-If an exact match for the device locale isn't found,
-then the first supported locale with a matching [`languageCode`][]
-is used. If that fails, then the first element of the
-`supportedLocales` list is used.
-
-In terms of the previous DemoApp example, the app only accepts the
-US English or French Canadian locales, and it substitutes US
-English (the first locale in the list) for anything else.
-
-An app that wants to use a different "locale resolution"
-method can provide a [`localeResolutionCallback`][].
-For example, to have your app unconditionally accept
-whatever locale the user selects:
-
-<!-- skip -->
-```dart
-class DemoApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-       localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
-         return locale;
-       }
-       // ...
-    );
-  }
-}
-```
 
 <a name="adding-language"></a>
 ### Adding support for a new language
@@ -661,4 +614,3 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [widgets-local]: {{site.api}}/flutter/widgets/Localizations-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-
