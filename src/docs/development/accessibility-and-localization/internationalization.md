@@ -42,9 +42,9 @@ the same classes and logic.
 
 ## Introduction to localizations in Flutter
 
-This section introduces the basic concepts and ideas needed to localize
-a Flutter application. This will cover internationalizing the Flutter app
-and how to perform any additional setup that a target platform might require.
+This section introduces is a tutorial on how to internationalize
+a Flutter application, along with any additional setup that a
+target platform might require.
 
 ### Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
 
@@ -107,6 +107,8 @@ library.
 More information about these app properties, the types they
 depend on, and how internationalized Flutter apps are typically
 structured, can be found below.
+
+### TBD: Section on adding your own localized messages?
 
 <a name="ios-specifics"></a>
 ### Localizing for iOS: Updating the iOS app bundle
