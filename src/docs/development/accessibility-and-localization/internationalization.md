@@ -39,7 +39,12 @@ can also be internationalized using the same classes and logic.
   * [Internationalization based on the `intl` package][]
 {{site.alert.end}}
 
-## Introduction to Localizations in Flutter
+## Introduction to localizations in Flutter
+
+This section introduces the basic concepts and ideas needed to localize
+a Flutter application. This will cover internationalizing the Flutter app,
+internationalizing the Cupertino and Material libraries' widgets, and how
+to perform any additional setup that a target platform might require.
 
 ### Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
 
@@ -305,7 +310,10 @@ in the [supportedLocales][] parameter.
 Once all supported locales have been added, save the file.
 
 <a name="improved-customization">
-## Advanced Topics for Improved Customization
+## Advanced topics for improved customization
+
+This section will cover additional ways to further customize a
+localized Flutter application.
 
 <a name="defining-class"></a>
 ### Defining a class for the app's localized resources
@@ -501,7 +509,10 @@ MaterialApp(
 ```
 
 <a name="alternative-internationalization-workflows">
-## Alternative Internationalization Workflows
+## Alternative internationalization workflows
+
+This section describes different approaches to internationalize
+your Flutter application.
 
 <a name="alternative-class"></a>
 ### An alternative class for the app's localized resources
