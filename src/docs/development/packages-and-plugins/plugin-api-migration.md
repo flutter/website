@@ -25,7 +25,7 @@ Flutter isn't attached to any activities.
 
 In other words, plugins using the old API may produce undefined
 behaviors when embedding Flutter into an Android app.
-Most of the [Flutter plugins][https://pub.dev/packages] provided by the flutter.dev
+Most of the [Flutter plugins][] provided by the flutter.dev
 team have been migrated already. (Learn how to become a
 [verified publisher][] on pub.dev!) For an example of
 a plugin that uses the new APIs, see the
@@ -369,7 +369,7 @@ a non-UI configuration.
 [`ActivityAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
 [Basic plugin]: #basic-plugin
 [battery package]: {{site.github}}/flutter/plugins/tree/master/packages/battery
-[Flutter plugins]: {{site.pub}}/flutter.dev/packages
+[Flutter plugins]: {{site.pub}}/flutter/packages
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`PluginRegistry.Registrar.activity()`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--
