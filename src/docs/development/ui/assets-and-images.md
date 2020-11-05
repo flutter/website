@@ -39,8 +39,8 @@ flutter:
 
 {{site.alert.note}}
   Only files located directly in the directory are included unless
-  there are files with the same name inside a subdirectory 
-  (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create 
+  there are files with the same name inside a subdirectory
+  (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create
   an entry per directory.
 {{site.alert.end}}
 
@@ -385,6 +385,230 @@ want to use in Flutter. To accomplish
 that, use the [`ios_platform_images`][] plugin
 available on pub.dev.
 
+## Loading images in Flutter from device storage
+
+Flutter can display images from storage path with [`Image.file()`][]. Plugins [`path_provider`][] and [`ext_storage`][] can be used to access image files from device storage.
+
+To display an image file, you can do the following
+
+```dart
+Image.file(imagePath)
+```
+
+Accessing image files from storage can be done by using either `path_provider` or `ext_storage`. The plugin `path_provider` only allows access to the app's internal directory. On the other hand, `ext_storage` can access the device's storage. Note that there are storage access limitation depending on the platform. More details are discussed in the plugins' documentation.
+
+For example, your app can load images from the device's default Downloads folder using `ext_storage`. Ask for storage permission first using [`permission_handler`][] plugin.
+
+```dart
+// Check for storage permission
+Future listenForPermissionStatus() async {
+  final status = await Permission.storage.request().isGranted;
+  setState(() {
+    // Update storage permission status
+    _permissionStatus = status;
+  });
+}
+```
+
+Get Downloads storage path using `ext_storage` once storage permission is granted.
+
+```dart
+Future<String> getPath() {
+  return ExtStorage.getExternalStoragePublicDirectory(
+      ExtStorage.DIRECTORY_DOWNLOADS);
+}
+```
+
+Fetch images in the directory, and store the paths in a List.
+
+```dart
+List<dynamic> listImagePath = List<dynamic>();
+fetchFiles(Directory dir) async {
+  List<dynamic> listImage = List<dynamic>();
+  dir.list().forEach((element) {
+    RegExp regExp = RegExp("\.(gif|jpe?g|tiff?|png|webp|bmp)", caseSensitive: false);
+    // Add path in List if it's an image file
+    if (regExp.hasMatch('$element')) {
+      listImage.add(element);
+    }
+    setState(() {
+      listImagePath = listImage;
+    });
+  });
+}
+```
+
+In this sample, a GridView was used to display the images.
+
+```dart
+GridView.count(
+  primary: false,
+  padding: const EdgeInsets.all(20),
+  crossAxisSpacing: 10,
+  mainAxisSpacing: 10,
+  crossAxisCount: 3,
+  children: getListImg(listImagePath)
+```
+
+`List<Widget>` used for the GridView.
+
+```dart
+getListImg(List<dynamic> listImagePath) {
+  final listImages = List<Widget>();
+  for (var imagePath in listImagePath) {
+    listImages.add(
+      Container(
+        padding: const EdgeInsets.all(8),
+        child: Image.file(imagePath, fit: BoxFit.cover),
+      ),
+    );
+  }
+  return listImages;
+}
+```
+
+### Complete Sample
+
+```dart
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:ext_storage/ext_storage.dart';
+import 'package:permission_handler/permission_handler.dart';
+
+void main() {
+  runApp(ImageGridApp());
+}
+
+class ImageGridApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: ImageGridPage(),
+    );
+  }
+}
+
+class ImageGridPage extends StatefulWidget {
+  @override
+  ImageGridPageState createState() => ImageGridPageState();
+}
+
+class ImageGridPageState extends State<ImageGridPage> {
+  Future futureGetPath;
+  List<dynamic> listImagePath = List<dynamic>();
+  var permissionStatus;
+  var dir;
+
+  @override
+  void initState() {
+    super.initState();
+    listenForPermissionStatus().then((value) {
+      getPath().then((snapshot) {
+        debugPrint("Snapshot: $snapshot");
+        dir = Directory(snapshot);
+        if (permissionStatus != null && permissionStatus) fetchFiles(dir);
+      }).catchError((onError) => debugPrint("Snapshot error: $onError"));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Image Grid"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: FutureBuilder(
+              future: getPath(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.hasData) {
+                  dir = Directory(snapshot.data);
+                  debugPrint('permission status: $permissionStatus');
+                  return Text(snapshot.data);
+                } else {
+                  return Text("Loading");
+                }
+              },
+            ),
+          ),
+          Expanded(
+            flex: 19,
+            child: GridView.count(
+              primary: false,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 3,
+              children: getListImg(listImagePath),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  // Check for storage permission
+  Future listenForPermissionStatus() async {
+    debugPrint('Ask permission');
+    final status = await Permission.storage.request().isGranted;
+    setState(() {
+      permissionStatus = status;
+    });
+  }
+
+  // Get device Downloads storage path for example
+  // https://pub.dev/documentation/ext_storage/latest/
+  Future<String> getPath() async {
+    return ExtStorage.getExternalStoragePublicDirectory(
+        ExtStorage.DIRECTORY_DOWNLOADS);
+  }
+
+  // Fetch images from directory and add in the List
+  fetchFiles(Directory dir) async {
+    List<dynamic> listImage = List<dynamic>();
+    dir.list().forEach((element) {
+      RegExp regExp =
+          RegExp("\.(gif|jpe?g|tiff?|png|webp|bmp)", caseSensitive: false);
+      // Only add in List if path is an image
+      if (regExp.hasMatch('$element')) {
+        debugPrint('$element');
+        listImage.add(element);
+      }
+      setState(() {
+        listImagePath = listImage;
+      });
+    });
+  }
+
+  // List<Widget> of Images for the GridView
+  getListImg(List<dynamic> listImagePath) {
+    final listImages = List<Widget>();
+    for (var imagePath in listImagePath) {
+      listImages.add(
+        Container(
+          padding: const EdgeInsets.all(8),
+          child: Image.file(imagePath, fit: BoxFit.cover),
+        ),
+      );
+    }
+    return listImages;
+  }
+}
+```
+
+{{site.alert.note}}
+  If you're trying to create a gallery picker, there's an existing [`image_picker` plugin][] that you can use.
+{{site.alert.end}}
+
 ## Platform assets
 
 There are other occasions to work with assets in the
@@ -496,16 +720,21 @@ For more details, see
 [`AssetManager`]: {{site.android-dev}}/reference/android/content/res/AssetManager
 [device pixel ratio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
 [drawables]: {{site.android-dev}}/guide/topics/resources/drawable-resource
+[`ext_storage`]: {{site.pub}}/packages/ext_storage
 [`FlutterPluginRegistrar`]: {{site.api}}/objcdoc/Protocols/FlutterPluginRegistrar.html
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [Human Interface Guidelines]: https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon
+[`Image.file()`]: {{site.api}}/flutter/widgets/Image/Image.file.html
+[`image_picker` plugin]: {{site.pub}}/packages/image_picker
 [`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
 [`mainBundle`]: https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle
 [`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String
 [package]: /docs/development/packages-and-plugins/using-packages
+[`path_provider`]: {{site.pub}}/packages/path_provider
 [`pathForResource:ofType:`]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
+[`permission_handler`]: {{site.pub}}/packages/permission_handler
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`pubspec.yaml`]: {{site.dart-site}}/tools/pub/pubspec
 [`rootBundle`]: {{site.api}}/flutter/services/rootBundle.html
