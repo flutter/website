@@ -513,8 +513,9 @@ but becomes enabled when all three text fields contain
   and is updated in the `_updateFormProgress` method.
   When all three fields are filled in, `_formProgress` is set to 1.0.
   When `_formProgress` is set to 1.0, the `onPressed` callback is set to the
-  `_showWelcomeScreen` method. The button is enabled when it's `onPressed`
-  argument is non-null.
+  `_showWelcomeScreen` method. Now that its `onPressed` argument is non-null, the button is enabled.
+  Like most Material Design buttons in Flutter,
+  [TextButton][]s are disabled by default if their `onPressed` and `onLongPress` callbacks are null.
 * Notice that the `_updateFormProgress` passes a function to `setState()`.
   This is called an anonymous
   function and has the following syntax:
@@ -1034,6 +1035,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Implicit animations]: /docs/codelabs/implicit-animations
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
 [Material Design]: https://material.io/design/introduction/#
+[TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: /docs/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/master/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
