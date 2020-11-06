@@ -39,8 +39,8 @@ flutter:
 
 {{site.alert.note}}
   Only files located directly in the directory are included unless
-  there are files with the same name inside a subdirectory 
-  (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create 
+  there are files with the same name inside a subdirectory
+  (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create
   an entry per directory.
 {{site.alert.end}}
 
@@ -392,7 +392,15 @@ Flutter can display images from storage path with [`Image.file()`][]. Plugins [`
 To display an image file, you can do the following
 
 ```dart
-Image.file(imagePath)
+/// {@tool snippet}
+///
+/// This snippet shows how Image.file can be called
+///
+/// ```dart
+/// Image.file(imagePath)
+/// ```
+///
+/// {@end-tool}
 ```
 
 Accessing image files from storage can be done by using either `path_provider` or `ext_storage`. The plugin `path_provider` only allows access to the app's internal directory. On the other hand, `ext_storage` can access the device's storage. Note that there are storage access limitation depending on the platform. More details are discussed in the plugins' documentation.
@@ -400,209 +408,227 @@ Accessing image files from storage can be done by using either `path_provider` o
 For example, your app can load images from the device's default Downloads folder using `ext_storage`. Ask for storage permission first using [`permission_handler`][] plugin.
 
 ```dart
-// Check for storage permission
-Future listenForPermissionStatus() async {
-  final status = await Permission.storage.request().isGranted;
-  setState(() {
-    // Update storage permission status
-    _permissionStatus = status;
-  });
-}
+/// {@tool snippet}
+///
+/// This function helps check storage permission using `permission_handler`.
+///
+/// ```dart
+/// // Check for storage permission
+/// Future listenForPermissionStatus() async {
+///  final status = await Permission.storage.request().isGranted;
+///  setState(() {
+///    // Update storage permission status
+///    _permissionStatus = status;
+///  });
+/// }
+/// ```
+/// {@end-tool}
 ```
 
-Get Downloads storage path using `ext_storage` once storage permission is granted.
+Get 'Downloads' storage path using `ext_storage` once storage permission is granted.
 
 ```dart
-Future<String> getPath() {
-  return ExtStorage.getExternalStoragePublicDirectory(
-      ExtStorage.DIRECTORY_DOWNLOADS);
-}
+/// {@tool snippet}
+///
+/// This snippet demonstrates how device 'Downloads' path can be fetched using `ext_storage`. Be aware of the limitations on the platform that you're targeting.
+///
+/// ```dart
+/// Future<String> getPath() {
+///  return ExtStorage.getExternalStoragePublicDirectory(
+///      ExtStorage.DIRECTORY_DOWNLOADS);
+/// }
+///```
+/// {@end-tool}
 ```
 
 Fetch images in the directory, and store the paths in a List.
 
 ```dart
-List<dynamic> listImagePath = List<dynamic>();
-fetchFiles(Directory dir) async {
-  List<dynamic> listImage = List<dynamic>();
-  dir.list().forEach((element) {
-    RegExp regExp = RegExp("\.(gif|jpe?g|tiff?|png|webp|bmp)", caseSensitive: false);
-    // Add path in List if it's an image file
-    if (regExp.hasMatch('$element')) {
-      listImage.add(element);
-    }
-    setState(() {
-      listImagePath = listImage;
-    });
-  });
-}
+/// {@tool snippet}
+///
+/// This snippet demonstrates fetching of files from Directory, adding only images in the List
+///
+/// ```dart
+/// List<dynamic> listImagePath = List<dynamic>();
+/// fetchFiles(Directory dir) async {
+///  List<dynamic> listImage = List<dynamic>();
+///  dir.list().forEach((element) {
+///    RegExp regExp = RegExp("\.(gif|jpe?g|tiff?|png|webp|bmp)", caseSensitive: false);
+///    // Add path in List if it's an image file
+///    if (regExp.hasMatch('$element')) {
+///      listImage.add(element);
+///    }
+///    setState(() {
+///      listImagePath = listImage;
+///    });
+///  });
+/// }
+/// ```
+/// {@end-tool}
 ```
 
 In this sample, a GridView was used to display the images.
 
-```dart
-GridView.count(
-  primary: false,
-  padding: const EdgeInsets.all(20),
-  crossAxisSpacing: 10,
-  mainAxisSpacing: 10,
-  crossAxisCount: 3,
-  children: getListImg(listImagePath)
+``` dart
+/// {@tool snippet}
+///
+/// Demo on how List of Image widgets can be set in a GridView
+///
+/// ```dart
+/// GridView.count(
+///   primary: false,
+///   padding: const EdgeInsets.all(20),
+///   crossAxisSpacing: 10,
+///   mainAxisSpacing: 10,
+///   crossAxisCount: 3,
+///   children: getListImg(listImagePath)
+/// ```
+///
+/// {@end-tool}
 ```
 
 `List<Widget>` used for the GridView.
 
 ```dart
-getListImg(List<dynamic> listImagePath) {
-  final listImages = List<Widget>();
-  for (var imagePath in listImagePath) {
-    listImages.add(
-      Container(
-        padding: const EdgeInsets.all(8),
-        child: Image.file(imagePath, fit: BoxFit.cover),
-      ),
-    );
-  }
-  return listImages;
-}
+///
+/// {@tool snippet}
+///
+/// Snippet demonstrates how Image widgets can be added in a List
+///
+/// ```dart
+/// getListImg(List<dynamic> listImagePath) {
+///   final listImages = List<Widget>();
+///   for (var imagePath in listImagePath) {
+///     listImages.add(
+///       Container(
+///         padding: const EdgeInsets.all(8),
+///         child: Image.file(imagePath, fit: BoxFit.cover),
+///       ),
+///     );
+///  }
+///   return listImages;
+/// }
+/// ```
+///
+/// {@end-tool}
 ```
 
 ### Complete Sample
 
 ```dart
-import 'dart:io';
-
-import 'package:flutter/material.dart';
-import 'package:ext_storage/ext_storage.dart';
-import 'package:permission_handler/permission_handler.dart';
-
-void main() {
-  runApp(ImageGridApp());
-}
-
-class ImageGridApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: ImageGridPage(),
-    );
-  }
-}
-
-class ImageGridPage extends StatefulWidget {
-  @override
-  ImageGridPageState createState() => ImageGridPageState();
-}
-
-class ImageGridPageState extends State<ImageGridPage> {
-  Future futureGetPath;
-  List<dynamic> listImagePath = List<dynamic>();
-  var permissionStatus;
-  var dir;
-
-  @override
-  void initState() {
-    super.initState();
-    listenForPermissionStatus().then((value) {
-      getPath().then((snapshot) {
-        debugPrint("Snapshot: $snapshot");
-        dir = Directory(snapshot);
-        if (permissionStatus != null && permissionStatus) fetchFiles(dir);
-      }).catchError((onError) => debugPrint("Snapshot error: $onError"));
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Image Grid"),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: FutureBuilder(
-              future: getPath(),
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                if (snapshot.hasData) {
-                  dir = Directory(snapshot.data);
-                  debugPrint('permission status: $permissionStatus');
-                  return Text(snapshot.data);
-                } else {
-                  return Text("Loading");
-                }
-              },
-            ),
-          ),
-          Expanded(
-            flex: 19,
-            child: GridView.count(
-              primary: false,
-              padding: const EdgeInsets.all(20),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              crossAxisCount: 3,
-              children: getListImg(listImagePath),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  // Check for storage permission
-  Future listenForPermissionStatus() async {
-    debugPrint('Ask permission');
-    final status = await Permission.storage.request().isGranted;
-    setState(() {
-      permissionStatus = status;
-    });
-  }
-
-  // Get device Downloads storage path for example
-  // https://pub.dev/documentation/ext_storage/latest/
-  Future<String> getPath() async {
-    return ExtStorage.getExternalStoragePublicDirectory(
-        ExtStorage.DIRECTORY_DOWNLOADS);
-  }
-
-  // Fetch images from directory and add in the List
-  fetchFiles(Directory dir) async {
-    List<dynamic> listImage = List<dynamic>();
-    dir.list().forEach((element) {
-      RegExp regExp =
-          RegExp("\.(gif|jpe?g|tiff?|png|webp|bmp)", caseSensitive: false);
-      // Only add in List if path is an image
-      if (regExp.hasMatch('$element')) {
-        debugPrint('$element');
-        listImage.add(element);
-      }
-      setState(() {
-        listImagePath = listImage;
-      });
-    });
-  }
-
-  // List<Widget> of Images for the GridView
-  getListImg(List<dynamic> listImagePath) {
-    final listImages = List<Widget>();
-    for (var imagePath in listImagePath) {
-      listImages.add(
-        Container(
-          padding: const EdgeInsets.all(8),
-          child: Image.file(imagePath, fit: BoxFit.cover),
-        ),
-      );
-    }
-    return listImages;
-  }
-}
+///
+/// {@tool sample --stateful_widget_material}
+///
+/// Complete code that demonstrates displaying of Images from file
+///
+/// ```dart
+///   Future futureGetPath;
+///   List<dynamic> listImagePath = List<dynamic>();
+///   var permissionStatus;
+///   var dir;
+///
+///   @override
+///   void initState() {
+///     super.initState();
+///     // Check for permission status on app start
+///     listenForPermissionStatus().then((value) {
+///       getPath().then((snapshot) {
+///         debugPrint("Snapshot: $snapshot");
+///         dir = Directory(snapshot);
+///         if (permissionStatus != null && permissionStatus) fetchFiles(dir);
+///       }).catchError((onError) => debugPrint("Snapshot error: $onError"));
+///     });
+///   }
+///
+///   @override
+///   Widget build(BuildContext context) {
+///     return Scaffold(
+///       appBar: AppBar(
+///         title: Text("Image Grid"),
+///       ),
+///       body: Column(
+///         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+///         children: <Widget>[
+///           Expanded(
+///             flex: 1,
+///             child: FutureBuilder(
+///               future: getPath(),
+///               builder: (BuildContext context, AsyncSnapshot snapshot) {
+///                 if (snapshot.hasData) {
+///                   dir = Directory(snapshot.data);
+///                   debugPrint('permission status: $permissionStatus');
+///                   return Text(snapshot.data);
+///                 } else {
+///                   return Text("Loading");
+///                 }
+///               },
+///             ),
+///           ),
+///           Expanded(
+///             flex: 19,
+///             child: GridView.count(
+///               primary: false,
+///               padding: const EdgeInsets.all(20),
+///               crossAxisSpacing: 10,
+///               mainAxisSpacing: 10,
+///               crossAxisCount: 3,
+///               children: getListImg(listImagePath),
+///             ),
+///           )
+///         ],
+///       ),
+///     );
+///   }
+///
+///   // Check for storage permission
+///   Future listenForPermissionStatus() async {
+///     debugPrint('Ask permission');
+///     final status = await Permission.storage.request().isGranted;
+///     setState(() {
+///       permissionStatus = status;
+///     });
+///   }
+///
+///   // Get device Downloads storage path for example
+///   // https://pub.dev/documentation/ext_storage/latest/
+///   Future<String> getPath() async {
+///     return ExtStorage.getExternalStoragePublicDirectory(
+///         ExtStorage.DIRECTORY_DOWNLOADS);
+///   }
+///
+///   // Fetch images from directory and add in the List
+///   fetchFiles(Directory dir) async {
+///     List<dynamic> listImage = List<dynamic>();
+///     dir.list().forEach((element) {
+///       RegExp regExp =
+///           RegExp("\.(gif|jpe?g|tiff?|png|webp|bmp)", caseSensitive: false);
+///       // Only add in List if path is an image
+///       if (regExp.hasMatch('$element')) {
+///         debugPrint('$element');
+///         listImage.add(element);
+///       }
+///       setState(() {
+///         listImagePath = listImage;
+///       });
+///     });
+///   }
+///
+///   // List<Widget> of Images for the GridView
+///   getListImg(List<dynamic> listImagePath) {
+///     final listImages = List<Widget>();
+///     for (var imagePath in listImagePath) {
+///       listImages.add(
+///         Container(
+///           padding: const EdgeInsets.all(8),
+///           child: Image.file(imagePath, fit: BoxFit.cover),
+///         ),
+///       );
+///     }
+///     return listImages;
+///   }
+/// ```
+///
+/// {@end-tool}
 ```
 
 {{site.alert.note}}
