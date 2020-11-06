@@ -2543,7 +2543,7 @@ and common widget properties.
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
 [`ModalRoute`]: {{site.api}}/flutter/widgets/ModalRoute-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[`Navigator.of()`]: ({{site.api}}/flutter/widgets/Navigator/of.html
+[`Navigator.of()`]: {{site.api}}/flutter/widgets/Navigator/of.html
 [`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.push`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`onSaved`]: {{site.api}}/flutter/widgets/FormField/onSaved.html
