@@ -39,8 +39,8 @@ flutter:
 
 {{site.alert.note}}
   Only files located directly in the directory are included unless
-  there are files with the same name inside a subdirectory
-  (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create
+  there are files with the same name inside a subdirectory 
+  (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create 
   an entry per directory.
 {{site.alert.end}}
 
