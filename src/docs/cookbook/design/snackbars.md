@@ -49,13 +49,13 @@ Scaffold(
 ## 2. Display a `SnackBar`
 
 With the `Scaffold` in place, display a `SnackBar`.
-First, create a `SnackBar`, then display it using the `Scaffold`.
+First, create a `SnackBar`, then display it using the `ScaffoldMessenger`.
 
 <!-- skip -->
 ```dart
 final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
-// Find the Scaffold in the widget tree and use it to show a SnackBar.
+// Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
 ScaffoldMessenger.of(context).showSnackBar(snackBar);
 ```
 
