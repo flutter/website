@@ -137,7 +137,7 @@ The worst frame rasterization time is a nice metric from such integration tests 
 [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
 [integration tests]: /docs/cookbook/testing/integration/introduction
 [`transitions_perf_test.dart`]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
-[limitations and considerations]: docs/perf/rendering/shader#limitations-and-considerations
+[limitations and considerations]: /docs/perf/rendering/shader#limitations-and-considerations
 
 ## Limitations and considerations
 
