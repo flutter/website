@@ -79,7 +79,9 @@ shader capturing. It also purges the SkSL shaders so use it *only* on the first
 
 <li markdown="1"> Press `M` at the command line of `flutter run` to
     write the captured SkSL shaders into a file named something like
-   `flutter_01.sksl.json`.
+   `flutter_01.sksl.json`. (For best results, capture SkSL shaders on actual
+   Android and iOS devices separately. For iOS, please also read the
+   [limitations and considerations][] section below on Metal versus OpenGL.)
 </li>
 
 <li markdown="1"> Build the app with SkSL warm-up using the following,
@@ -135,6 +137,7 @@ The worst frame rasterization time is a nice metric from such integration tests 
 [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
 [integration tests]: /docs/cookbook/testing/integration/introduction
 [`transitions_perf_test.dart`]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
+[limitations and considerations]: /docs/perf/rendering/shader#limitations-and-considerations
 
 ## Limitations and considerations
 
