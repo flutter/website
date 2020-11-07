@@ -81,7 +81,7 @@ For iOS, you can follow [these instructions](https://flutter.dev/docs/developmen
 
 We **do not** recommend you do this for your release builds.
 
-## Addition Information
+## Additional Information
 
 * Build time configuration is the only way to change
   network policy. It cannot be modified at runtime.
