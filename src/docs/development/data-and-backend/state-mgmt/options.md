@@ -102,9 +102,9 @@ A family of stream/observable based patterns.
 
 A service locator based state management approach that doesn't need a `BuildContext`.
 
-* [get_it package][], The service locator. It can also be used together with BloCs.
-* [get_it_mixin package][], Mixin that completes `get_it` to a full state management solution.
-* [get_it_hooks package][], Same as the mixin in case you already use `flutter_hooks`.
+* [GetIt package][], The service locator. It can also be used together with BloCs.
+* [GetIt Mixin package][], Mixin that completes `GetIt` to a full state management solution.
+* [GetIt Hooks package][], Same as the mixin in case you already use `flutter_hooks`.
 
 ## MobX
 
@@ -116,10 +116,10 @@ A popular library based on observables and reactions.
 
 ## Flutter Commands
 
-Reactive state management that uses the Command Pattern and is based on `ValueNotifiers`. Best in combination with [get_it](#getit), but can be used with `provider` or other locators too.
+Reactive state management that uses the Command Pattern and is based on `ValueNotifiers`. Best in combination with [GeIt](#getit), but can be used with `Provider` or other locators too.
 
-* [flutter_command package][] 
-* [rx_command package][], `Stream` based implementation.
+* [Flutter Command package][] 
+* [RxCommand package][], `Stream` based implementation.
 
 ## GetX
 
