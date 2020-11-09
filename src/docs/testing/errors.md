@@ -16,7 +16,8 @@ objects mentioned in the message.
 
 When an error occurs during the build phase, the [`ErrorWidget.builder`][]
 callback is invoked to build the widget that is used instead of the
-one that failed. By default, in debug mode this shows an error message
+one that failed.
+By default, in debug mode this shows an error message
 in red, and in release mode this shows a gray background.
 
 You can override each of these, typically by setting them to values in
@@ -52,6 +53,25 @@ This handler can also be used to report errors to a logging service.
 For more details, see our cookbook chapter for 
 [reporting errors to a service][].
 
+To customize error widget at root, set [`MaterialApp.builder`]:
+
+<!-- skip -->
+```dart
+class MyApp extends StatelessWidget {
+...
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      ...
+      builder: (BuildContext context, Widget widget) {
+        ErrorWidget.builder = (FlutterErrorDetails errorDetails) =>
+            Scaffold(body: Center(child: Text('...')));
+        return widget;
+      },
+    );
+  }
+}
+```
 
 [`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
 [`FlutterError.dumpErrorToConsole`]: {{site.api}}/flutter/foundation/FlutterError/dumpErrorToConsole.html
