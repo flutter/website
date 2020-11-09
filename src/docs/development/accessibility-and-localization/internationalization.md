@@ -1,55 +1,47 @@
 ---
-title: Internationalizing Flutter apps
+title: 플러터 앱 국제화
 short-title: i18n
-description: How to internationalize your Flutter app.
+description: 플러터 앱을 국제화 하는 방법
 ---
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">다음을 배우게 됩니다.</h4>
 
-  * How to track the device's locale (the user's preferred language).
-  * How to manage locale-specific app values.
-  * How to define the locales an app supports.
+  * 장치의 Locale(사용자가 선호하는 언어) 추적하기.
+  * Locale에 따라 달라지는 값을 관리하는 방법.
+  * 앱에서 지원하는 Locale을 정의하는 방법.
 {{site.alert.end}}
 
-If your app might be deployed to users who speak another language then
-you'll need to "internationalize" it. That means you'll need to write
-the app in a way that makes it possible to "localize" values like text
-and layouts for each language or "locale" that the app
-supports. Flutter provides widgets and classes that help with
-internationalization and the Flutter libraries themselves are
-internationalized.
+다른 언어를 사용하는 사용자에게 앱을 배포할 수 있는 경우 앱을 국제화해야 합니다.
+즉 앱이 지원하는 "지역(Locale)"이나 언어 별로 텍스트, 레이아웃 같은 값들이 
+"현지화(Localize)" 될 수 있는 방법으로 앱을 개발해야 합니다. 플러터는 국제화를
+지원하는 클래스나 위젯들을 제공하고 있으며 플러터 라이브러리들은 자체적으로 국제화되어 있습니다.
 
-The tutorial that follows is largely written in terms of the Flutter
-`MaterialApp` class, since most applications are written that way.
-Applications written in terms of the lower level `WidgetsApp` class
-can also be internationalized using the same classes and logic.
+아래 튜토리얼들은 대부분의 플러터 앱에서 사용되는 `MaterialApp` 클래스로 작성되어 있습니다.
+더 하위 레벨인 `WidgetsApp` 클래스로 작성된 앱에서도 동일한 클래스와 로직을 사용하여
+국제화를 적용할 수 있습니다.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">Sample internationalized apps</h4>
+  <h4 class="no_toc">국제화 앱 예제</h4>
 
-  If you'd like to start out by reading the code for an internationalized
-  Flutter app, here are two small examples. The first one is intended to
-  be as simple as possible, and the second one uses the APIs and tools
-  provided by the [`intl`][] package.
-  If Dart's intl package is new to you,
-  see [Using the Dart intl tools][].
+  국제화된 플러터앱 코드를 먼저 살펴보고 싶으신 분들을 위해 2가지 예제를 제공합니다.
+  첫번째는 가능한한 단순하게 구현된 예제이며, 두번째는 [`intl`][] 패키지에 의해 제공되는
+  API와 도구를 사용한 예제입니다.
+  다트 Intl 패키지를 처음 사용하시는 분들은 [Using the Dart intl tools][]를 확인해주세요.
 
   * [Minimal internationalization][]
   * [Internationalization based on the `intl` package][]
 {{site.alert.end}}
 
-## Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
+## 국제화된 앱 설정: flutter<wbr>_localizations 패키지 {#setting-up}
 
-By default, Flutter only provides US English localizations.
-To add support for other languages,
-an application must specify additional `MaterialApp` properties,
-and include a separate package called
-`flutter_localizations`.  As of February 2020,
-this package supports 77 languages.
+기본적으로 플러터는 US English 지역화만 제공합니다.
+다른 언어에 대한 지원을 추가하려면, `flutter_localizations` 패키지를 추가하고
+`MaterialApp`에 관련 속성들을 정의해야합니다. 2020년 2월 기준으로 이 패키지는
+77개 언어를 지원하고 있습니다.
 
-To use flutter_localizations,
-add the package as a dependency to your `pubspec.yaml` file:
+flutter_localizations를 사용하려면 `pubspec.yaml`을 열고
+아래와 같이 패키지를 추가해주세요:
 
 ```yaml
 dependencies:
@@ -59,8 +51,9 @@ dependencies:
     sdk: flutter
 ```
 
-Next, import the flutter_localizations library and specify
-`localizationsDelegates` and `supportedLocales` for `MaterialApp`:
+다음으로 flutter_localizations에 대한 import 구문을 추가하고
+`MaterialApp`의 `localizationsDelegates`와 `supportedLocales` 속성을
+정의해야합니다:
 
 <!-- skip -->
 ```dart
@@ -68,102 +61,91 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 MaterialApp(
  localizationsDelegates: [
-   // ... app-specific localization delegate[s] here
+   // ... 앱 별 Localization Delegate를 여기에 정의
    GlobalMaterialLocalizations.delegate,
    GlobalWidgetsLocalizations.delegate,
    GlobalCupertinoLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en', ''), // English, no country code
-    const Locale('he', ''), // Hebrew, no country code
-    const Locale.fromSubtags(languageCode: 'zh'), // Chinese *See Advanced Locales below*
-    // ... other locales the app supports
+    const Locale('en', ''), // 영어, no country code
+    const Locale('he', ''), // 히브리어, no country code
+    const Locale.fromSubtags(languageCode: 'zh'), // 중국어 *상세한 Locale 설정은 아래 참고*
+    // ... 앱이 지원하는 Locale 정보
   ],
   // ...
 )
 ```
 
-Apps based on `WidgetsApp` are similar except that the
-`GlobalMaterialLocalizations.delegate` isn't needed.
+`WidgetsApp`를 기반으로 작성된 앱의 경우 대부분 동일하게 설정하면 되지만
+`GlobalMaterialLocalizations.delegate`는 필요하지 않습니다.
 
-The full `Locale.fromSubtags` constructor is preferred
-as it supports scriptCode, though the `Locale` default
-constructor is still fully valid.
+`Locale` 기본 생성자도 충분하지만, scriptCode에 대한 지원이 필요하다면
+`Locale.fromSubtags` 생성자를 사용할 수 있습니다.
 
-The elements of the `localizationsDelegates` list are factories that produce
-collections of localized values. `GlobalMaterialLocalizations.delegate`
-provides localized strings and other values for the Material Components
-library. `GlobalWidgetsLocalizations.delegate` defines the default
-text direction, either left-to-right or right-to-left, for the widgets
-library.
+`localizationsDelegates` 리스트의 인자들은 팩토리 클래스이며,
+지역화된 값들을 포함하고 있는 컬렉션을 생성하는 역할을 합니다.
+`GlobalMaterialLocalizations.delegate`는 Material Components 라이브러리를 위한
+지역화된 문자열을 제공합니다. `GlobalWidgetsLocalizations.delegate`는 위젯 라이브러리가
+텍스트를 나열하는 방향(왼쪽에서 오른쪽 또는 오른쪽에서 왼쪽으로 텍스트를 나열하는 설정)에 대한 기본 값을 정의하고 있습니다. 
 
-More information about these app properties, the types they
-depend on, and how internationalized Flutter apps are typically
-structured, can be found below.
+이러한 설정에 대한 자세한 정보나 관련된 Type 정보, 그리고 국제회된
+플러터 앱이 일반적으로 어떻게 구성되는지에 대한 정보는 아래에서 살펴볼 수 있습니다.
 
 <a name="advanced-locale"></a>
-## Advanced locale definition
+## Locale 정의에 대한 상세정보
 
-Some languages with multiple variants require more than just a
-language code to properly differentiate.
+여러 변형이 존재하는 일부 언어에 대해서는 언어 코드 외에 더 많은 정보를 제공해야
+적절하게 지역화될 수 있습니다.
 
-For example, fully differentiating all variants of
-Chinese requires specifying the language code, script code,
-and country code. This is due to the existence
-of simplified and traditional script, as well as regional
-differences in the way characters are written within the same script type.
+예를들어, 중국어의 다양한 변형을 모두 지원하기 위해서는 언어코드(languageCode), 문자코드(scriptCode),
+국가코드(countryCode)를 모두 정의해야 합니다. 왜냐하면 문자유형의 차이(간자체, 번자체)도 존재하며
+동일한 문자유형 일지라도 지역에 따라 문자가 쓰이는 방법이 다르기 때문입니다.
 
-In order to fully express every variant of Chinese for the
-country codes `CN`, `TW`, and `HK`, the list of supported
-locales should include:
+국가코드 `CN`, `TW`, `HK`에 대한 모든 중국어 변형을 표현하기 위해서는
+다음 Locale에 대한 지원을 모두 포함해야합니다.
 
 <!-- skip -->
 ```dart
-// Full Chinese support for CN, TW, and HK
+// CN, TW, HK에 대한 모든 중국어 지원
 supportedLocales: [
-  const Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
+  const Locale.fromSubtags(languageCode: 'zh'), // 일반적인 중국어 'zh'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // 일반적인 중국어 간자체 'zh_Hans'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // 일반적인 중국어 번자체 'zh_Hant'
   const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'), // 'zh_Hans_CN'
   const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
   const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
 ],
 ```
 
-This explicit full definition ensures that your app can
-distinguish between and provide the fully nuanced localized
-content to all combinations of these country codes.
-If a user's preferred locale is not specified,
-then the closest match is used instead,
-which will likely contain differences to what the user expects.
-Flutter only resolves to locales defined in `supportedLocales`.
-Flutter provides scriptCode-differentiated
-localized content for commonly used languages.
-See [`Localizations`][] for information on how the supported
-locales and the preferred locales are resolved.
+이러한 완전하면서 구체적인 정의는 여러 분의 앱이 
+제공된 국가코드의 모든 조합을 구별할 수 있게 해주며
+섬세하면서도 완전히 현지화된 컨텐트를 제공할 수 있게 해줍니다.
+만약 사용자가 선호하는 Locale이 정의되지 않으면 가장 가까운 Locale 값이 대신 사용되지만,
+이러한 동작은 사용자가 기대하는 것과 다를 수 있습니다.
+플러터는 `supportedLocales`에 정의되어 있는 값만 사용할 것입니다.
+플러터는 공통적으로 사용되는 언어(languageCode)에 대해서 문자코드(scriptCode) 별로 
+차별화된 지역화 컨텐트를 제공합니다. 앱에서 지원되는 Locale과 사용자가 선호하는 Locale이
+어떻게 처리되는지 자세한 정보를 원하시면 [`Localizations`][]를 확인해보세요.
 
-Although Chinese is a primary example,
-other languages like French (fr_FR, fr_CA)
-should also be fully differentiated for more nuanced localization.
+중국어에 대한 예제를 주로 다루었지만, 프랑스어(fr_FR, fr_CA)와 같은 다른 언어들도
+섬세한 지역화를 위해 완전히 세분화된 정보를 제공해야합니다.
 
 <a name="tracking-locale"></a>
-## Tracking the locale: The Locale class and the Localizations widget
+## Locale 추적: Locale 클래스 및 Localizations 위젯
 
-The [`Locale`][] class identifies the user's language.
-Mobile devices support setting the locale for all applications,
-usually using a system settings menu.
-Internationalized apps respond by displaying values that are
-locale-specific. For example, if the user switches the device's locale
-from English to French, then a `Text` widget that originally
-displayed "Hello World" would be rebuilt with "Bonjour le monde".
+[`Locale`][] 클래스는 사용자의 언어를 식별하는데 사용됩니다.
+모바일 장치는 일반적으로 시스템 설정 메뉴를 통해 모든 어플리케이션에 대한
+Locale 설정을 지원합니다. 국제화가 진행된 앱이라면 Locale 별로 정의된 값들을 출력할 것입니다.
+예를들어 사용자가 장치의 Locale을 영어에서 프랑스어로 전환하면 "Hello World"를 표시하던
+`Text` 위젯은 "Bonjour le monde"를 출력하도록 다시 빌드됩니다.
 
-The [`Localizations`][widgets-global] widget defines the locale
-for its child and the localized resources that the child depends on.
-The [`WidgetsApp`][] widget creates a `Localizations` widget
-and rebuilds it if the system's locale changes.
+[`Localizations`][widgets-global] 위젯은 자식 위젯을 위한 Locale과
+자식이 의존하는 지역화된 리소스를 정의합니다.
+[`WidgetsApp`][] 위젯은 `Localizations` 위젯을 생성하고 
+시스템의 Locale이 변경되면 이를 재구축합니다.
 
-You can always lookup an app's current locale with
-`Localizations.localeOf()`:
+`Localizations.localeOf()`를 사용하여 언제든지 앱의
+현재 Locale을 조회할 수 있습니다:
 
 <!-- skip -->
 ```dart
@@ -171,49 +153,41 @@ Locale myLocale = Localizations.localeOf(context);
 ```
 
 <a name="loading-and-retrieving"></a>
-## Loading and retrieving localized values
+## 지역화된 값 로드 및 검색
 
-The `Localizations` widget is used to load and lookup objects that
-contain collections of localized values. Apps refer to these objects
-with [`Localizations.of(context,type)`][].
-If the device's locale changes,
-the `Localizations` widget automatically loads values for
-the new locale and then rebuilds widgets that used it.
-This happens because `Localizations` works like an
-[`InheritedWidget`][].
-When a build function refers to an inherited widget,
-an implicit dependency on the inherited widget is created.
-When an inherited widget changes
-(when the `Localizations` widget's locale changes),
-its dependent contexts are rebuilt.
+`Localizations` 위젯은 지역화된 값 컬렉션을 포함하는 객체를 로드하고 검색하는데 사용됩니다. 
+앱에서는 [`Localizations.of(context,type)`][]을 사용하여 로드된
+객체를 참조하게 됩니다.
+만약 장치의 Locale이 변경되면 `Localizations` 위젯은 새 Locale에
+해당하는 값을 자동으로 로드하고 이 값을 사용하는 위젯들을 재구성합니다.
+이러한 동작은 `Localizations` 위젯이 [`InheritedWidget`][] 처럼 작동 하기 때문에 발생합니다.
+build 함수에서 Inherited 위젯을 참조하면 해당 Inherited 위젯에 대한
+암시적인 의존성이 생성됩니다. Inherited 위젯이 변경되면(`Localizations` 위젯의
+Locale이 변경될 때) 이 의존성 컨텍스트도 재구성됩니다.
 
-Localized values are loaded by the `Localizations` widget's
-list of [`LocalizationsDelegate`][]s.
-Each delegate must define an asynchronous [`load()`][]
-method that produces an object that encapsulates a
-collection of localized values.
-Typically these objects define one method per localized value.
+지역화된 값들은 `Localizations` 위젯의 [`LocalizationsDelegate`][] 리스트에 의해 로드됩니다.
+리스트에 포함된 각 Delegate는 비동기 [`load()`][]메서드를 정의하고 있습니다.
+이 메서드는 지역화된 값 컬렉션을 캡슐화하는 객체를 생성하여 리턴합니다. 일반적으로 이러한 객체들은 
+지역화된 값 마다 하나의 메서드를 정의하고 있습니다.
 
-In a large app, different modules or packages might be bundled with
-their own localizations. That's why the `Localizations` widget
-manages a table of objects, one per `LocalizationsDelegate`.
-To retrieve the object produced by one of the `LocalizationsDelegate`'s
-`load` methods, you specify a `BuildContext` and the object's type.
+대형 앱에서는 다양한 모듈과 패키지들이 자신만의 Localizations과 함께 포함되어 있습니다.
+이것이 바로 `Localizations` 위젯이 `LocalizationsDelegate` 당 하나씩 
+객체 테이블을 관리하는 이유입니다.
+`LocalizationsDelegate`의 `load` 메서드 중 하나가 생성한 특정 객체를 검색하려면
+`BuildContext`와 객체 유형을 지정하면 됩니다.
 
-For example,
-the localized strings for the Material Components widgets
-are defined by the [`MaterialLocalizations`][] class.
-Instances of this class are created by a `LocalizationDelegate`
-provided by the [`MaterialApp`][] class.
-They can be retrieved with `Localizations.of()`:
+예를들어, Material Components 위젯의 지역화된 문자열들은 
+ [`MaterialLocalizations`][] 클래스에 정의되어 있습니다.
+이 클래스의 인스턴스는 [`MaterialApp`][]에서 제공하는 `LocalizationDelegate`에 의해
+생성되며, `Localizations.of()`을 사용하여 검색 할 수 있습니다.
 
 <!-- skip -->
 ```dart
 Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 ```
 
-This particular `Localizations.of()` expression is used frequently,
-so the `MaterialLocalizations` class provides a convenient shorthand:
+이러한 특정 `Localizations.of()` 표현식은 자주 사용되므로
+`MaterialLocalizations` 클래스는 편리한 단축표현식을 제공합니다.
 
 <!-- skip -->
 ```dart
@@ -221,31 +195,29 @@ static MaterialLocalizations of(BuildContext context) {
   return Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 }
 
-/// References to the localized values defined by MaterialLocalizations
-/// are typically written like this:
+/// MaterialLocalizations에 정의된 지역화된 값에 대한 참조는
+/// 일반적으로 다음과 같이 작성됩니다.:
 
 tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 ```
 
 <a name="using-bundles">
-## Using the bundled Localizations&shy;Delegates
+## 번들된 Localizations&shy;Delegates 사용하기
 
-To keep things as small and uncomplicated as possible,
-the flutter package includes implementations of the
-`MaterialLocalizations` and `WidgetsLocalizations`
-interfaces that only provide US English values.
-These implementation classes are called `DefaultMaterialLocalizations`
-and `DefaultWidgetsLocalizations`, respectively.
-They're included automatically unless a different delegate
-of the same base type is specified with the app's
-`localizationsDelegates` parameter.
+가능한 작고 단순하게 유지하기 위해, 플러터 패키지에는 
+US English에 대한 값을 제공하는
+`MaterialLocalizations`와 `WidgetsLocalizations` 인터페이스에 대한
+구현이 포함되고 있습니다.
+이러한 구현 클래스들은 각각 `DefaultMaterialLocalizations`와
+`DefaultWidgetsLocalizations`로 불립니다.
+동일한 기본 유형의 다른 구현 Delegate가 `localizationsDelegates`에
+지정되지 않는한 자동으로 포함됩니다.
 
-The `flutter_localizations` package includes multi-language
-implementations of the localizations interfaces called
-[`GlobalMaterialLocalizations`][material-global] and
-[`GlobalWidgetsLocalizations`][widgets-global].
-International apps must specify localization delegates for
-these classes as described in [Setting up an internationalized app][].
+`flutter_localizations` 패키지에는 Localizations 인터페이스의 다국어 
+구현이 포함되어 있습니다. 이는 [`GlobalMaterialLocalizations`][material-global]와
+[`GlobalWidgetsLocalizations`][widgets-global]로 불립니다.
+국제화된 앱은 [Setting up an internationalized app][]의 설명대로
+이러한 클래스들에 대한 Localization Delegates를 반드시 지정해야합니다.
 
 <!-- skip -->
 ```dart
@@ -253,30 +225,28 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 MaterialApp(
  localizationsDelegates: [
-   // ... app-specific localization delegate[s] here
+   // ... 앱 별 Localization Delegate를 여기에 정의
    GlobalMaterialLocalizations.delegate,
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en', ''), // English, no country code
-    const Locale('he', ''), // Hebrew, no country code
-    const Locale('zh', ''), // Chinese, no country code
-    // ... other locales the app supports
+    const Locale('en', ''), // 영어, no country code
+    const Locale('he', ''), // 히브리어, no country code
+    const Locale('zh', ''), // 중국어, no country code
+    // ... 앱이 지원하는 Locale 정보
   ],
   // ...
 )
 ```
 
-The global localization delegates construct locale-specific instances
-of the corresponding classes. For example,
-`GlobalMaterialLocalizations.delegate` is a `LocalizationsDelegate`
-that produces an instance of `GlobalMaterialLocalizations`.
+전역 Localization Delegates는 해당하는 클래스의 인스턴스를 Locale 별로 생성합니다.
+예를들어, `GlobalMaterialLocalizations.delegate`는 
+`GlobalMaterialLocalizations` 인스턴스를 생성하는 `LocalizationsDelegate`입니다.
 
-As of February 2020, the global localization classes support
-[77 languages][].
+2020년 2월까지 전역 Localization 클래스는 [77개 언어][77 languages]를 지원합니다.
 
 <a name="defining-class"></a>
-## Defining a class for the app's localized resources
+## 앱의 지역화된 리소스에 대한 클래스 정의
 
 Putting all of this together for an internationalized app usually
 starts with the class that encapsulates the app's localized values.
