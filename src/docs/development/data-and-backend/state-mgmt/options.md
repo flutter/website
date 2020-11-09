@@ -102,9 +102,9 @@ A family of stream/observable based patterns.
 
 A service locator based state management approach that doesn't need a `BuildContext`.
 
-* [GetIt package][], The service locator. It can also be used together with BloCs.
-* [GetIt Mixin package][], Mixin that completes `GetIt` to a full state management solution.
-* [GetIt Hooks package][], Same as the mixin in case you already use `flutter_hooks`.
+* [GetIt package][], the service locator. It can also be used together with BloCs.
+* [GetIt Mixin package][], a mixin that completes `GetIt` to a full state management solution.
+* [GetIt Hooks package][], same as the mixin in case you already use `flutter_hooks`.
 
 ## MobX
 
