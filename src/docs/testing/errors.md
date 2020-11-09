@@ -16,8 +16,7 @@ objects mentioned in the message.
 
 When an error occurs during the build phase, the [`ErrorWidget.builder`][]
 callback is invoked to build the widget that is used instead of the
-one that failed.
-By default, in debug mode this shows an error message
+one that failed. By default, in debug mode this shows an error message
 in red, and in release mode this shows a gray background.
 
 You can override each of these, typically by setting them to values in
