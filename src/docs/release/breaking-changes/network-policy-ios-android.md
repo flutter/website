@@ -60,14 +60,37 @@ your manifest would contain the following:
 </application>
 ```
 
-Furthermore:
+### Allowing cleartext connection for debug builds
+
+If you would like to allow HTTP connections for Android debug
+builds, you can add the following snippet to your $project_path\android\app\src\debug\AndroidManifest.xml:
+
+```
+<application android:usesCleartextTraffic="true"/>
+```
+
+For iOS, you can follow [these instructions](/docs/development/add-to-app/ios/project-setup#local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
+
+We **do not** recommend you do this for your release builds.
+
+## Additional Information
 
 * Build time configuration is the only way to change
   network policy. It cannot be modified at runtime.
 * Localhost connections are always allowed.
 * You can allow insecure connections only to domains.
   Specific IP addresses are not accepted as input.
-  This is in line with what platforms support.
+  This is in line with what platforms support. If you would
+  like to allow IP addresses, the only option is to allow
+  cleartext connections in your app.
 
 
 [network security config]: https://developer.android.com/training/articles/security-config#CleartextTrafficPermitted
