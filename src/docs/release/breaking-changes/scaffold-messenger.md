@@ -99,7 +99,7 @@ at the top of your application widget tree.
 The `ScaffoldMessenger` will also assert if attempting to show `SnackBar`s to nested `Scaffold`s. If
 a nested set of `Scaffold`s were to share the same `ScaffoldMessenger`, then duplicate `SnackBar`s
 could appear in your UI. In order to control the scope of `SnackBar`s and which `Scaffold`s receive
-them, place a `ScaffoldMessenger` in between. When tryin to present a `SnackBar` in this situation,
+them, place a `ScaffoldMessenger` in between. When trying to present a `SnackBar` in this situation,
 the follow assertion error will be thrown:
 
 ```
