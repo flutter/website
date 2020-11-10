@@ -52,7 +52,8 @@ This handler can also be used to report errors to a logging service.
 For more details, see our cookbook chapter for 
 [reporting errors to a service][].
 
-To customize error widget at root, set [`MaterialApp.builder`]:
+To customize error widget at root, set [`MaterialApp.builder`]. If some
+node in widget tree will fail to build, the builder will be used to create replacement:
 
 <!-- skip -->
 ```dart
@@ -63,8 +64,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       ...
       builder: (BuildContext context, Widget widget) {
-        ErrorWidget.builder = (FlutterErrorDetails errorDetails) =>
-            Scaffold(body: Center(child: Text('...')));
+        Widget error = Text('...rendering error...');
+        if (widget is Scaffold || widget is Navigator)
+          error = Scaffold(body: Center(child: error));
+        ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
         return widget;
       },
     );
