@@ -20,7 +20,8 @@ errors if `showSnackBar` would be called in the course of executing an asynchron
 The `ScaffoldMessenger` now handles `SnackBar`s in order to persist across routes and always be
 displayed on the current `Scaffold`. By default, a root `ScaffoldMessenger` is included in the
 `MaterialApp`, but you can create your own controlled scope for the `ScaffoldMessenger` to further
-control _which_ `Scaffold`s receive your `SnackBar`s. 
+control _which_ `Scaffold`s receive your `SnackBar`s. The scope is particularly important when
+working with nested `Scaffolds`s, discussed further below.
 
 
 ## Description of change
@@ -95,6 +96,22 @@ Typically, the ScaffoldMessenger widget is introduced by the MaterialApp
 at the top of your application widget tree.
 ```
 
+The `ScaffoldMessenger` will also assert if attempting to show `SnackBar`s to nested `Scaffold`s. If
+a nested set of `Scaffold`s were to share the same `ScaffoldMessenger`, then duplicate `SnackBar`s
+could appear in your UI. In order to control the scope of `SnackBar`s and which `Scaffold`s receive
+them, place a `ScaffoldMessenger` in between. When tryin to present a `SnackBar` in this situation,
+the follow assertion error will be thrown:
+
+```
+Nested Scaffolds have registered with the ScaffoldMessenger.
+If nested Scaffolds were to share the same ScaffoldMessenger, then
+all would receive a SnackBar at the same time, resulting in multiple
+SnackBars in your UI.
+This is typically resolved by putting a ScaffoldMessenger in
+between the levels of nested Scaffolds. Doing so will set a separate
+SnackBar scope for these Scaffolds.'
+```
+
 ## Migration guide
 
 Code before migration:
@@ -103,8 +120,8 @@ Code before migration:
 ```dart
 // The ScaffoldState of the current context was used for managing SnackBars.
 Scaffold.of(context).showSnackBar(mySnackBar);
-Scaffold.of(context).hideCurrentSnackBar(mySnackBar);
-Scaffold.of(context).removeCurrentSnackBar(mySnackBar);
+Scaffold.of(context).hideCurrentSnackBar();
+Scaffold.of(context).removeCurrentSnackBar();
 
 // If a Scaffold.key is specified, the ScaffoldState can be directly
 // accessed without first obtaining it from a BuildContext via
@@ -117,9 +134,8 @@ Scaffold(
 );
 
 scaffoldKey.currentState.showSnackBar(mySnackBar);
-scaffoldKey.currentState.hideCurrentSnackBar(mySnackBar);
-scaffoldKey.currentState.removeCurrentSnackBar(mySnackBar);
-
+scaffoldKey.currentState.hideCurrentSnackBar();
+scaffoldKey.currentState.removeCurrentSnackBar();
 ```
 
 Code after migration:
@@ -128,8 +144,8 @@ Code after migration:
 ```dart
 // The ScaffoldMessengerState of the current context is used for managing SnackBars.
 ScaffoldMessenger.of(context).showSnackBar(mySnackBar);
-ScaffoldMessenger.of(context).hideCurrentSnackBar(mySnackBar);
-ScaffoldMessenger.of(context).removeCurrentSnackBar(mySnackBar);
+ScaffoldMessenger.of(context).hideCurrentSnackBar();
+ScaffoldMessenger.of(context).removeCurrentSnackBar();
 
 // If a ScaffoldMessenger.key is specified, the ScaffoldMessengerState can be directly
 // accessed without first obtaining it from a BuildContext via
@@ -142,8 +158,8 @@ ScaffoldMessenger(
 )
 
 scaffoldMessengerKey.currentState.showSnackBar(mySnackBar);
-scaffoldMessengerKey.currentState.hideCurrentSnackBar(mySnackBar);
-scaffoldMessengerKey.currentState.removeCurrentSnackBar(mySnackBar);
+scaffoldMessengerKey.currentState.hideCurrentSnackBar();
+scaffoldMessengerKey.currentState.removeCurrentSnackBar();
 
 // The root ScaffoldMessenger can also be accessed by providing a key to 
 // MaterialApp.scaffoldMessengerKey. This way, the ScaffoldMessengerState can be directly accessed
@@ -156,8 +172,8 @@ MaterialApp(
 )
 
 rootScaffoldMessengerKey.currentState.showSnackBar(mySnackBar);
-rootScaffoldMessengerKey.currentState.hideCurrentSnackBar(mySnackBar);
-rootScaffoldMessengerKey.currentState.removeCurrentSnackBar(mySnackBar);
+rootScaffoldMessengerKey.currentState.hideCurrentSnackBar();
+rootScaffoldMessengerKey.currentState.removeCurrentSnackBar();
 ```
 
 ## Timeline
