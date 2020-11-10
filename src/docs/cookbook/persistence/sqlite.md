@@ -476,9 +476,9 @@ class Dog {
 ```
 
 
-[`delete()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html'
-[`insert()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html
+[`delete()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/delete.html
+[`insert()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/insert.html
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [SQLite Tutorial]: http://www.sqlitetutorial.net/
 [official SQLite Datatypes documentation]: https://www.sqlite.org/datatype3.html
-[`update()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html
+[`update()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/update.html
