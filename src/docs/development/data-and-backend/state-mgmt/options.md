@@ -98,6 +98,14 @@ A family of stream/observable based patterns.
 * [Reactive Programming - Streams - BLoC - Practical Use Cases][],
   by Didier Boelens
 
+## GetIt
+
+A service locator based state management approach that doesn't need a `BuildContext`.
+
+* [GetIt package][], the service locator. It can also be used together with BloCs.
+* [GetIt Mixin package][], a mixin that completes `GetIt` to a full state management solution.
+* [GetIt Hooks package][], same as the mixin in case you already use `flutter_hooks`.
+
 ## MobX
 
 A popular library based on observables and reactions.
@@ -105,6 +113,13 @@ A popular library based on observables and reactions.
 * [MobX.dart, Hassle free state-management for your Dart and Flutter apps][]
 * [Getting started with MobX.dart][]
 * [Flutter: State Management with Mobx][], a video by Paul Halliday
+
+## Flutter Commands
+
+Reactive state management that uses the Command Pattern and is based on `ValueNotifiers`. Best in combination with [GeIt](#getit), but can be used with `Provider` or other locators too.
+
+* [Flutter Command package][] 
+* [RxCommand package][], `Stream` based implementation.
 
 ## GetX
 
@@ -154,3 +169,8 @@ A simplified reactive state management solution.
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 [You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
 [Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
+[get_it package]: https://pub.dev/packages/get_it
+[get_it_mixin package]: https://pub.dev/packages/get_it_mixin
+[get_it_hooks package]: https://pub.dev/packages/get_it_hooks
+[flutter_command package]: https://pub.dev/packages/flutter_command
+[rx_command package]:https://pub.dev/packages/rx_command
