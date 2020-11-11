@@ -13,16 +13,19 @@ invitation to contribute to the Flutter project by choosing a Widget and
 improving its API documentation.
 
 {{site.alert.note}}
-  All of the
-  [issues](https://github.com/flutter/flutter/issues?q=is%3Aissue+label%3A%22adopt+a+widget%22)
-  have been assigned. Thanks for participating!
+Thanks to your eager participation, all of the
+[issues](https://github.com/flutter/flutter/issues?q=is%3Aissue+label%3A%22adopt+a+widget%22)
+have been assigned, though we are still reviewing PRs. We may do something
+similar in the future, so stay tuned!
 {{site.alert.end}}
 
 ## Contributions
 
 (Updated 10/11/2020)
 
+- [Chinmay-KB](https://github.com/Chinmay-KB) contributed to the [WillPopScope docs](https://master-api.flutter.dev/flutter/widgets/WillPopScope-class.html) ([pull request](https://github.com/flutter/flutter/pull/69563))
 - [chihempat](https://github.com/chihempat) contributed to the [SliverWithKeepAliveWidget docs](https://master-api.flutter.dev/flutter/widgets/SliverWithKeepAliveWidget-class.html) ([pull request](https://github.com/flutter/flutter/pull/69557))
+- [obitodarky](https://github.com/obitodarky) contributed to the [Stepper docs](https://master-api.flutter.dev/flutter/material/Stepper-class.html) ([pull request](https://github.com/flutter/flutter/pull/70092))
 - [Sameerkash](https://github.com/Sameerkash) found an issue with the [StatusTransitionWidget docs](https://api.flutter.dev/flutter/widgets/StatusTransitionWidget-class.html) ([issue](https://github.com/flutter/flutter/issues/69558))
 - [tadaspetra](https://github.com/tadaspetra) contributed to the [MaterialBanner docs](https://master-api.flutter.dev/flutter/material/MaterialBanner-class.html) ([pull request](https://github.com/flutter/flutter/pull/69530))
 - [singhsuryanshu](https://github.com/singhsuryanshu) contributed to the [FittedBox docs](https://master-api.flutter.dev/flutter/widgets/FittedBox-class.html) ([pull request](https://github.com/flutter/flutter/pull/69503))
