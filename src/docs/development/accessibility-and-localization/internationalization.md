@@ -62,8 +62,8 @@ add the package as a dependency to your `pubspec.yaml` file:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
+  flutter_localizations: # Add this line
+    sdk: flutter # Add this line
 ```
 
 Next, import the flutter_localizations library and specify
@@ -72,6 +72,8 @@ Next, import the flutter_localizations library and specify
 <!-- skip -->
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
+
+// ...
 
 MaterialApp(
  localizationsDelegates: [
@@ -89,6 +91,14 @@ MaterialApp(
   // ...
 )
 ```
+
+After introducing the `flutter_localizations` package
+and adding the code above, the Material and Cupertino
+packages should now be correctly localized. You can
+test this by running the Flutter app in one of the 77
+supported locales and see widgets adapted to the
+localized messages, along with correct left-to-right
+and right-to-left layout.
 
 Apps based on `WidgetsApp` are similar except that the
 `GlobalMaterialLocalizations.delegate` isn't needed.
@@ -108,7 +118,99 @@ More information about these app properties, the types they
 depend on, and how internationalized Flutter apps are typically
 structured, can be found below.
 
-### TBD: Section on adding your own localized messages?
+<a name="adding-localized-messages"></a>
+### Adding your own localized messages
+
+Once `flutter_localizations` has been introduced, a few extra
+steps can be taken to add your own localized messages to the
+Flutter applications. We will need to make two new changes
+to the `pubspec.yaml` file. First, the `intl` package needs to
+be added. Second, the generate flag needs to be turned on for
+the project:
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0-nullsafety.2 # Add this line
+
+# The rest of the pubspec file...
+
+# The following section is specific to Flutter.
+flutter:
+  generate: true # Add this line
+```
+
+Once that is complete, add a new yaml file to the root directory
+of the Flutter project called `l10n.yaml`. This file will determine
+the configuration of your localization generation. Define it as such:
+
+```yaml
+arb-dir: lib/l10n
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
+```
+
+The options above basically mean that the input files for
+the localizations tool will be defined at `${FLUTTER_PROJECT}/lib/l10n`,
+the `app_en.arb` file will be the template file that the tool will use,
+and `app_localizations.dart` will the name of the output base localizations
+file.
+
+Next, we will need to define `app_en.arb` in `${FLUTTER_PROJECT}/lib/l10n`,
+which will contain the template locale's messages. We will use English as
+the template for this example. The locale is inferred by the tool from the
+filename.
+
+```json
+{
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  }
+}
+```
+
+Then, let's define an `app_es.arb` in the same directory to contain
+Spanish translations for the message defined above:
+
+```json
+{
+  "helloWorld": "Hola Mundo!"
+}
+```
+
+At this point, try running your Flutter application. If done correctly,
+you should see some generated filed in
+`${FLUTTER_PROJECT}/flutter_gen/gen_l10n`. At this point, you should be
+able to use the generated localizations code in your Flutter application.
+
+You can test this out in application itself as follows:
+<!-- skip -->
+```dart
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Add this line
+
+// ...
+
+// Use AppLocalizations anywhere in your app. Here, the translated message
+// is used in a Text widget.
+Widget build(BuildContext context) {
+  // ...
+  return Text(AppLocalizations.of(context).helloWorld);
+}
+```
+
+This should generate a Text widget that displays "Hello World!" if the target
+device's locale is set to English, and "Hola Mundo!" if the target device's
+locale is set to Spanish. In the arb files, the key of each entry will be used
+as the getter's/method's name, while the value of that entry contains the
+localized message.
+
+For more information about the tool, such as dealing with DateTime, handling
+plurals, see flutter.dev/go/i18n-user-guide for a deeper dive.
 
 <a name="ios-specifics"></a>
 ### Localizing for iOS: Updating the iOS app bundle
