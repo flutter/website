@@ -12,6 +12,32 @@ helps everyone! So, for the month of November, we’re extending a special
 invitation to contribute to the Flutter project by choosing a Widget and
 improving its API documentation.
 
+{{site.alert.note}}
+Thanks to your eager participation, all of the
+[issues](https://github.com/flutter/flutter/issues?q=is%3Aissue+label%3A%22adopt+a+widget%22)
+have been assigned, though we are still reviewing PRs. We may do something
+similar in the future, so stay tuned!
+{{site.alert.end}}
+
+## Contributions
+
+(Updated 10/11/2020)
+
+- [Chinmay-KB](https://github.com/Chinmay-KB) contributed to the [WillPopScope docs](https://master-api.flutter.dev/flutter/widgets/WillPopScope-class.html) ([pull request](https://github.com/flutter/flutter/pull/69563))
+- [chihempat](https://github.com/chihempat) contributed to the [SliverWithKeepAliveWidget docs](https://master-api.flutter.dev/flutter/widgets/SliverWithKeepAliveWidget-class.html) ([pull request](https://github.com/flutter/flutter/pull/69557))
+- [obitodarky](https://github.com/obitodarky) contributed to the [Stepper docs](https://master-api.flutter.dev/flutter/material/Stepper-class.html) ([pull request](https://github.com/flutter/flutter/pull/70092))
+- [Sameerkash](https://github.com/Sameerkash) found an issue with the [StatusTransitionWidget docs](https://api.flutter.dev/flutter/widgets/StatusTransitionWidget-class.html) ([issue](https://github.com/flutter/flutter/issues/69558))
+- [tadaspetra](https://github.com/tadaspetra) contributed to the [MaterialBanner docs](https://master-api.flutter.dev/flutter/material/MaterialBanner-class.html) ([pull request](https://github.com/flutter/flutter/pull/69530))
+- [singhsuryanshu](https://github.com/singhsuryanshu) contributed to the [FittedBox docs](https://master-api.flutter.dev/flutter/widgets/FittedBox-class.html) ([pull request](https://github.com/flutter/flutter/pull/69503))
+- [parzuko](https://github.com/parzuko) contributed to the [Draggable docs](https://master-api.flutter.dev/flutter/widgets/Draggable-class.html) ([pull request](https://github.com/flutter/flutter/pull/69527))
+- [arps18](https://github.com/arps18) contributed to the [Shortcuts docs](https://master-api.flutter.dev/flutter/widgets/Shortcuts-class.html) ([pull request](https://github.com/flutter/flutter/pull/69568))
+- [Amitpatil215](https://github.com/Amitpatil215) contributed to the [AspectRatio docs](https://master-api.flutter.dev/flutter/widgets/AspectRatio-class.html) ([pull request](https://github.com/flutter/flutter/pull/69509))
+- [CaptainIRS](https://github.com/CaptainIRS) contributed to the [AbsorbPointer docs](https://master-api.flutter.dev/flutter/widgets/AbsorbPointer-class.html) ([pull request](https://github.com/flutter/flutter/pull/69521))
+- [abd99](https://github.com/abd99) contributed to the [Dismissible docs](https://master-api.flutter.dev/flutter/widgets/Dismissible-class.html) ([pull request](https://github.com/flutter/flutter/pull/69535))
+- [redsolver](https://github.com/redsolver) contributed to the [Table docs](https://master-api.flutter.dev/flutter/widgets/Table-class.html) ([pull request](https://github.com/flutter/flutter/pull/69588))
+- [tsvillain](https://github.com/tsvillain) contributed to the [Tooltip](https://master-api.flutter.dev/flutter/material/Tooltip-class.html) ([pull request](https://github.com/flutter/flutter/pull/69518))
+- [Thesmader](https://github.com/Thesmader) contributed to the [SnackBar](https://master-api.flutter.dev/flutter/material/SnackBar-class.html) ([pull request](https://github.com/flutter/flutter/pull/69555))
+
 ## How to contribute {#how-to-contribute}
 
 1. Go to [this list of
