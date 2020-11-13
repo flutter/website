@@ -52,6 +52,28 @@ This handler can also be used to report errors to a logging service.
 For more details, see our cookbook chapter for 
 [reporting errors to a service][].
 
+To customize error widget at root, set [`MaterialApp.builder`]. If some
+node in widget tree will fail to build, the builder will be used to replace the failed widget:
+
+<!-- skip -->
+```dart
+class MyApp extends StatelessWidget {
+...
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      ...
+      builder: (BuildContext context, Widget widget) {
+        Widget error = Text('...rendering error...');
+        if (widget is Scaffold || widget is Navigator)
+          error = Scaffold(body: Center(child: error));
+        ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
+        return widget;
+      },
+    );
+  }
+}
+```
 
 [`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
 [`FlutterError.dumpErrorToConsole`]: {{site.api}}/flutter/foundation/FlutterError/dumpErrorToConsole.html
