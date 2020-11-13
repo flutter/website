@@ -53,7 +53,7 @@ For more details, see our cookbook chapter for
 [reporting errors to a service][].
 
 To customize error widget at root, set [`MaterialApp.builder`]. If some
-node in widget tree will fail to build, the builder will be used to create replacement:
+node in widget tree will fail to build, the builder will be used to replace the failed widget:
 
 <!-- skip -->
 ```dart
