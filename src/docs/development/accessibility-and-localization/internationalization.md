@@ -129,60 +129,60 @@ following instructions to add localized text to your application.
 
 1. Add the `intl` package to the `pubspec.yaml` file:
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  flutter_localizations:
-    sdk: flutter
-  intl: ^0.17.0-nullsafety.2 # Add this line
-```
+   ```yaml
+   dependencies:
+     flutter:
+       sdk: flutter
+     flutter_localizations:
+       sdk: flutter
+     intl: ^0.17.0-nullsafety.2 # Add this line
+   ```
 
 2. Also, in the `pubspec.yaml` file, enable the `generate`
 flag. This is added to the section of the file that is
 specific to Flutter that usually comes later in the pubspec
 file.
 
-```yaml
-# The following section is specific to Flutter.
-flutter:
-  generate: true # Add this line
-```
+   ```yaml
+   # The following section is specific to Flutter.
+   flutter:
+     generate: true # Add this line
+   ```
 
 3. Add a new yaml file to the root directory of the Flutter
 project called `l10n.yaml` with the following content:
 
-```yaml
-arb-dir: lib/l10n
-template-arb-file: app_en.arb
-output-localization-file: app_localizations.dart
-```
+   ```yaml
+   arb-dir: lib/l10n
+   template-arb-file: app_en.arb
+   output-localization-file: app_localizations.dart
+   ```
 
-This file configures the localization tool; in this example,
-the input files are located in `${FLUTTER_PROJECT}/lib/l10n`,
-the `app_en.arb` file provides the template, and the generated
-localizations are placed in the `app_localizations.dart` file.
+   This file configures the localization tool; in this example,
+   the input files are located in `${FLUTTER_PROJECT}/lib/l10n`,
+   the `app_en.arb` file provides the template, and the generated
+   localizations are placed in the `app_localizations.dart` file.
 
 4. In `${FLUTTER_PROJECT}/lib/l10n`,
 add the `app_en.arb` template file. For example:
 
-```json
-{
-  "helloWorld": "Hello World!",
-  "@helloWorld": {
-    "description": "The conventional newborn programmer greeting"
-  }
-}
-```
+   ```json
+   {
+     "helloWorld": "Hello World!",
+     "@helloWorld": {
+       "description": "The conventional newborn programmer greeting"
+     }
+   }
+   ```
 
 5. Next, add an `app_es.arb` file in the same directory for
 Spanish translation of the same message:
 
-```json
-{
-  "helloWorld": "Hola Mundo!"
-}
-```
+   ```json
+   {
+     "helloWorld": "Hola Mundo!"
+   }
+   ```
 
 6. To test the localization tool, run your application.
 You should see generated files in
@@ -190,26 +190,26 @@ You should see generated files in
 
 7. Test the generated localizations in your app as follows:
 
-<!-- skip -->
-```dart
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Add this line
+   <!-- skip -->
+   ```dart
+   import 'package:flutter_localizations/flutter_localizations.dart';
+   import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Add this line
 
-// ...
+   // ...
 
-// Use AppLocalizations anywhere in your app. Here, the translated message
-// is used in a Text widget.
-Widget build(BuildContext context) {
-  // ...
-  return Text(AppLocalizations.of(context).helloWorld);
-}
-```
+   // Use AppLocalizations anywhere in your app. Here, the translated message
+   // is used in a Text widget.
+   Widget build(BuildContext context) {
+     // ...
+     return Text(AppLocalizations.of(context).helloWorld);
+   }
+   ```
 
-This code generates a Text widget that displays "Hello World!"
-if the target device's locale is set to English, and "Hola Mundo!"
-if the target device's locale is set to Spanish. In the arb files,
-the key of each entry is used as the method name of the getter,
-while the value of that entry contains the localized message.
+   This code generates a Text widget that displays "Hello World!"
+   if the target device's locale is set to English, and "Hola Mundo!"
+   if the target device's locale is set to Spanish. In the arb files,
+   the key of each entry is used as the method name of the getter,
+   while the value of that entry contains the localized message.
 
 To see a sample Flutter app using this tool, please see
 [`gen_l10n_example`][].
