@@ -211,6 +211,9 @@ if the target device's locale is set to Spanish. In the arb files,
 the key of each entry is used as the method name of the getter,
 while the value of that entry contains the localized message.
 
+To see a sample Flutter app using this tool, please see
+[`gen_l10n_example`][].
+
 For more information about the localization tool,
 such as dealing with DateTime and handling plurals,
 see the [Internationalization User's Guide][].
@@ -695,6 +698,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [An alternative class for the app's localized resources]: #alternative-class
 [an example]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [`intl_example`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example
+[`gen_l10n_example`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/gen_l10n_example
 [flutter_localizations README]: {{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
