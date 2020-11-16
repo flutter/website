@@ -16,7 +16,7 @@ or perhaps you downloaded a font from [Google Fonts][].
 
 {{site.alert.note}}
   Check out the [google_fonts][] package for direct access
-  to almost 1000 open-sourced font families.
+  to over 1,000 open-sourced font families.
 {{site.alert.end}}
 
 {{site.alert.note}}
