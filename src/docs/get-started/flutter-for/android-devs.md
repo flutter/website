@@ -586,23 +586,21 @@ package com.example.shared;
 import android.content.Intent;
 import android.os.Bundle;
 
-import java.nio.ByteBuffer;
+import androidx.annotation.NonNull;
 
-import io.flutter.app.FlutterActivity;
-import io.flutter.plugin.common.ActivityLifecycleListener;
-import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
+import io.flutter.embedding.android.FlutterActivity;
+import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
 public class MainActivity extends FlutterActivity {
 
   private String sharedText;
+  private static final String CHANNEL = "app.channel.shared.data";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    GeneratedPluginRegistrant.registerWith(this);
     Intent intent = getIntent();
     String action = intent.getAction();
     String type = intent.getType();
@@ -612,17 +610,21 @@ public class MainActivity extends FlutterActivity {
         handleSendText(intent); // Handle text being sent
       }
     }
+  }
 
-    new MethodChannel(getFlutterView(), "app.channel.shared.data").setMethodCallHandler(
-      new MethodCallHandler() {
-        @Override
-        public void onMethodCall(MethodCall call, MethodChannel.Result result) {
-          if (call.method.contentEquals("getSharedText")) {
-            result.success(sharedText);
-            sharedText = null;
-          }
-        }
-      });
+  @Override
+  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+      GeneratedPluginRegistrant.registerWith(flutterEngine);
+
+      new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
+              .setMethodCallHandler(
+                      (call, result) -> {
+                          if (call.method.contentEquals("getSharedText")) {
+                              result.success(sharedText);
+                              sharedText = null;
+                          }
+                      }
+              );
   }
 
   void handleSendText(Intent intent) {
