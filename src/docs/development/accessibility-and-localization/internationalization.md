@@ -135,7 +135,7 @@ following instructions to add localized text to your application.
        sdk: flutter
      flutter_localizations:
        sdk: flutter
-     intl: ^0.17.0-nullsafety.2 # Add this line
+     intl: ^0.16.1 # Add this line
    ```
 
 2. Also, in the `pubspec.yaml` file, enable the `generate`
