@@ -27,9 +27,9 @@ Therefore, a compilation could cause tens of frames to be missed,
 and drop the fps from 60 to 6. This is _compilation jank_.
 After the compilation is complete, the animation should be smooth.
 
-Definitive evidence for the presence of shader compilation jank
-is to see `GrGLProgramBuilder::finalize` in the tracing.
-See the following screenshot for an example timeline tracing.
+Definitive evidence for the presence of shader compilation jank is to see
+`GrGLProgramBuilder::finalize` in the tracing with `--trace-skia` enabled. See
+the following screenshot for an example timeline tracing.
 
 ![A tracing screenshot verifying jank]({% asset perf/render/tracing.png @path %}){:width="100%"}
 
