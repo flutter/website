@@ -204,3 +204,10 @@ dd {
 .table-wrapper {
   overflow-x: auto;
 }
+
+.searchbar {
+  > * {
+    max-width: 640px;
+    width:100%
+  }
+}

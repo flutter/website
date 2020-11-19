@@ -104,9 +104,9 @@ In the **Signing & Capabilities** section:
   account. If required, select **Add Account...**,
   then update this setting.
 
-In the **Deployment Info** section:
+In the **Build Settings** section:
 
-`Deployment Target`
+`iOS Deployment Target`
 : The minimum iOS version that your app supports.
   Flutter supports iOS 8.0 and later. If your app includes
   Objective-C or Swift code that makes use of APIs that
@@ -182,7 +182,7 @@ In Xcode, configure the app version and build:
 
 1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
 1. Select **Product > Scheme > Runner**.
-1. Select **Product > Destination > Generic iOS Device**.
+1. Select **Product > Destination > Any iOS Device**.
 1. Select **Runner** in the Xcode project navigator, then select the
    **Runner** target in the settings view sidebar.
 1. In the Identity section, update the **Version** to the user-facing

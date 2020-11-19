@@ -98,6 +98,14 @@ A family of stream/observable based patterns.
 * [Reactive Programming - Streams - BLoC - Practical Use Cases][],
   by Didier Boelens
 
+## GetIt
+
+A service locator based state management approach that doesn't need a `BuildContext`.
+
+* [GetIt package][], the service locator. It can also be used together with BloCs.
+* [GetIt Mixin package][], a mixin that completes `GetIt` to a full state management solution.
+* [GetIt Hooks package][], same as the mixin in case you already use `flutter_hooks`.
+
 ## MobX
 
 A popular library based on observables and reactions.
@@ -106,13 +114,13 @@ A popular library based on observables and reactions.
 * [Getting started with MobX.dart][]
 * [Flutter: State Management with Mobx][], a video by Paul Halliday
 
-## GetX
+## Flutter Commands
 
-A simplified reactive state management solution.
+Reactive state management that uses the Command Pattern and is based on `ValueNotifiers`. Best in combination with [GetIt](#getit), but can be used with `Provider` or other locators too.
 
-* [GetX package][]
-* [Complete GetX State Management][], a video by Tadas Petra
-* [GetX Flutter Firebase Auth Example][], by Jeff McMorris
+* [Flutter Command package][] 
+* [RxCommand package][], `Stream` based implementation.
+
 
 [Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
 [Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
@@ -128,7 +136,6 @@ A simplified reactive state management solution.
 [BloC Library]: https://felangel.github.io/bloc
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
 [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: https://www.youtube.com/watch?v=Wj216eSBBWs
-[Complete GetX State Management]: https://www.youtube.com/watch?v=CNpXbeI_slw
 [Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [Flutter: State Management with Mobx]: https://www.youtube.com/watch?v=p-MUBLOEkCs
@@ -137,7 +144,6 @@ A simplified reactive state management solution.
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
-[GetX Flutter Firebase Auth Example]: {{site.medium}}/@jeffmcmorris/getx-flutter-firebase-auth-example-b383c1dd1de2
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
 [Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
@@ -147,10 +153,14 @@ A simplified reactive state management solution.
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 [Pragmatic State Management in Flutter]: https://www.youtube.com/watch?v=d_m5csmrf7I
 [Provider package]: {{site.pub-pkg}}/provider
-[GetX package]: {{site.pub-pkg}}/get
 [Reactive Programming - Streams - BLoC - Practical Use Cases]: https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases
 [Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 [You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
 [Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
+[GetIt package]: https://pub.dev/packages/get_it
+[GetIt Hooks package]: https://pub.dev/packages/get_it_hooks
+[GetIt Mixin package]: https://pub.dev/packages/get_it_mixin
+[Flutter Command package]: https://pub.dev/packages/flutter_command
+[RxCommand package]: https://pub.dev/packages/rx_command

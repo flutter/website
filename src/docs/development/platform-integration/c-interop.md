@@ -269,7 +269,7 @@ To create add a closed source library to a [Flutter macOS Desktop][] app,
 use the following instructions.
 
 1. Follow the instructions for Flutter desktop to create a Flutter desktop app.
-1. Open the `yourapp/macos/Runner.xcworkspace` in XCode.
+1. Open the `yourapp/macos/Runner.xcworkspace` in Xcode.
    1. Drag your precompiled library (`libyourlibrary.dylib`) into `Runner/Frameworks`.
    1. Click `Runner` and go to the `Build Phases` tab.
       1. Drag `libyourlibrary.dylib` into the `Copy Bundle Resources` list.

@@ -169,7 +169,7 @@ Run `pod install`.
   in your Flutter module directory to refresh the list
   of plugins read by the `podhelper.rb` script.
   Then, run `pod install` again from
-  your application at`some/path/MyApp`.
+  your application at `some/path/MyApp`.
 {{site.alert.end}}
 
 </li>
@@ -210,40 +210,34 @@ The following example assumes that you want to generate the
 frameworks to `some/path/MyApp/Flutter/`.
 
 ```sh
-flutter build ios-framework --output=some/path/MyApp/Flutter/
+flutter build ios-framework --xcframework --no-universal --output=some/path/MyApp/Flutter/
 ```
 
 ```text
 some/path/MyApp/
 └── Flutter/
     ├── Debug/
-    │   ├── Flutter.framework
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework (only if you have plugins with iOS platform code)
-    │   └── example_plugin.framework (each plugin is a separate framework)
+    │   ├── Flutter.xcframework
+    │   ├── App.xcframework
+    │   ├── FlutterPluginRegistrant.xcframework (only if you have plugins with iOS platform code)
+    │   └── example_plugin.xcframework (each plugin is a separate framework)
     ├── Profile/
-    │   ├── Flutter.framework
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework
+    │   ├── Flutter.xcframework
+    │   ├── App.xcframework
+    │   ├── FlutterPluginRegistrant.xcframework
+    │   └── example_plugin.xcframework
     └── Release/
-        ├── Flutter.framework
-        ├── App.framework
-        ├── FlutterPluginRegistrant.framework
-        └── example_plugin.framework
+        ├── Flutter.xcframework
+        ├── App.xcframework
+        ├── FlutterPluginRegistrant.xcframework
+        └── example_plugin.xcframework
 ```
 
 {{site.alert.warning}}
-  Always use `Flutter.framework` and `App.framework`
-  from the same directory. Mixing `.framework` imports
-  from different directories (such as `Profile/Flutter.framework`
-  with `Debug/App.framework`) causes runtime crashes.
-{{site.alert.end}}
-
-{{site.alert.tip}}
-  With Xcode 11 installed, you can generate
-  [XCFrameworks][] instead of universal frameworks by adding
-  the flags `--xcframework --no-universal`.
+  Always use `Flutter.xcframework` and `App.xcframework`
+  from the same directory. Mixing `.xcframework` imports
+  from different directories (such as `Profile/Flutter.xcframework`
+  with `Debug/App.xcframework`) causes runtime crashes.
 {{site.alert.end}}
 
 Embed and link the generated frameworks into your existing
@@ -291,8 +285,8 @@ You should now be able to build the project in Xcode using `⌘B`.
   To embed the Debug version of the Flutter frameworks in your
   Debug build configuration and the Release version in your
   Release configuration, in your `MyApp.xcodeproj/project.pbxproj`,
-  try replacing `path = Flutter/Release/example.framework;`
-  with `path = "Flutter/$(CONFIGURATION)/example.framework";`
+  try replacing `path = Flutter/Release/example.xcframework;`
+  with `path = "Flutter/$(CONFIGURATION)/example.xcframework";`
   for all added frameworks. (Note the added `"`.)
 
   You must also add `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`
@@ -302,16 +296,16 @@ You should now be able to build the project in Xcode using `⌘B`.
 
 ### Option C - Embed application and plugin frameworks in Xcode and Flutter framework with CocoaPods
 
-Alternatively, instead of distributing the large Flutter.framework
+Alternatively, instead of distributing the large Flutter.xcframework
 to other developers, machines, or continuous integration systems,
 you can instead generate Flutter as CocoaPods podspec by adding
 the flag `--cocoapods`. This produces a `Flutter.podspec`
-instead of an engine Flutter.framework.
-The App.framework and plugin frameworks are generated
+instead of an engine Flutter.xcframework.
+The App.xcframework and plugin frameworks are generated
 as described in Option B.
 
 ```sh
-flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
+flutter build ios-framework --cocoapods --xcframework --no-universal --output=some/path/MyApp/Flutter/
 ```
 
 ```text
@@ -319,19 +313,19 @@ some/path/MyApp/
 └── Flutter/
     ├── Debug/
     │   ├── Flutter.podspec
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
+    │   ├── App.xcframework
+    │   ├── FlutterPluginRegistrant.xcframework
+    │   └── example_plugin.xcframework (each plugin with iOS platform code is a separate framework)
     ├── Profile/
     │   ├── Flutter.podspec
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework
+    │   ├── App.xcframework
+    │   ├── FlutterPluginRegistrant.xcframework
+    │   └── example_plugin.xcframework
     └── Release/
         ├── Flutter.podspec
-        ├── App.framework
-        ├── FlutterPluginRegistrant.framework
-        └── example_plugin.framework
+        ├── App.xcframework
+        ├── FlutterPluginRegistrant.xcframework
+        └── example_plugin.xcframework
 ```
 
 Host apps using CocoaPods can add Flutter to their Podfile:
@@ -341,8 +335,8 @@ Host apps using CocoaPods can add Flutter to their Podfile:
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
 
-Embed and link the generated App.framework,
-FlutterPluginRegistrant.framework,
+Embed and link the generated App.xcframework,
+FlutterPluginRegistrant.xcframework,
 and any plugin frameworks into your existing application
 as described in Option B.
 
