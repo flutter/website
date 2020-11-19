@@ -16,11 +16,11 @@ read these pages:
 * [Understanding null safety][]:
   A deep dive into null safety, written by Dart engineer Bob Nystrom.
 
-When you're ready to start migrating to null safety,
+When you're ready to start migrating your packages to null safety,
 check out these pages:
 
 * [Migrating to null safety][]:
-  Instructions for converting your code to null safety.
+  Instructions for converting your packages to null safety.
 * [Unsound null safety][]:
   Conceptual and practical information about mixed-mode programs,
   in which only some libraries are null safe.
