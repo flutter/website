@@ -53,7 +53,7 @@ To add support for other languages,
 an application must specify additional `MaterialApp` (or `CupertinoApp`)
 properties, and include a separate package called
 `flutter_localizations`. As of November 2020,
-this package supports 77 languages.
+this package supports 78 languages.
 
 To use flutter_localizations,
 add the package as a dependency to your `pubspec.yaml` file:
@@ -95,7 +95,7 @@ MaterialApp(
 After introducing the `flutter_localizations` package
 and adding the code above, the Material and Cupertino
 packages should now be correctly localized in
-one of the 77 supported locales. Widgets should be
+one of the 78 supported locales. Widgets should be
 adapted to the localized messages, along with
 correct left-to-right and right-to-left layout.
 Try switching the target platform's locale to
@@ -323,7 +323,7 @@ Locale myLocale = Localizations.localeOf(context);
 <a name="specifying-supportedlocales"></a>
 ### Specifying the app's supported&shy;Locales parameter
 
-Although the `flutter_localizations` library currently supports 77
+Although the `flutter_localizations` library currently supports 78
 languages and language variants, only English language translations
 are available by default. It's up to the developer to decide exactly
 which languages to support.
@@ -693,7 +693,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     function (defined in `intl_messages_all.dart`)
     to load the localized messages and `Intl.message()` to look them up.
 
-[77 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
+[78 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`add_language`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart
 [An alternative class for the app's localized resources]: #alternative-class
 [an example]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
