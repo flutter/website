@@ -3,12 +3,12 @@ title: Null safety in Flutter
 description: Find out how to use non-nullable types in your Flutter code.
 ---
 
-You can now experiment with non-nullable types in your Flutter code!
-For details, see the wiki page
-[Experimenting with null safety in Flutter][wiki].
+Null safety is available in the Flutter beta channel,
+starting with build `1.24.0-10.2.pre`.
+You can now [migrate your Flutter packages to use non-nullable types][migration guide]!
 
-[wiki]: https://github.com/flutter/flutter/wiki/Experimenting-with-null-safety-in-Flutter
+For information about null safety in Dart,
+see [Sound null safety][].
 
-For information about the feature, see the [Dart null safety documentation][].
-
-[Dart null safety documentation]: {{site.dart-site}}/null-safety
+[migration guide]: {{site.dart-site}}/null-safety/migration-guide
+[Sound null safety]: {{site.dart-site}}/null-safety
