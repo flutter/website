@@ -24,11 +24,11 @@ check out these pages:
 * [Unsound null safety][]:
   Conceptual and practical information about mixed-mode programs,
   in which only some libraries are null safe.
-* [Null safety FAQ][]:
+* [FAQ][]:
   Questions that have come up during migration to null safety.
 
 [Migrating to null safety]: {{site.dart-site}}/null-safety/migration-guide
+[FAQ]: {{site.dart-site}}/null-safety/faq
 [Sound null safety]: {{site.dart-site}}/null-safety
-[Unsound null safety]: {{site.dart-site}}/unsound-null-safety
 [Understanding null safety]: {{site.dart-site}}/null-safety/understanding-null-safety
-[Null safety FAQ]: {{site.dart-site}}/null-safety/faq
+[Unsound null safety]: {{site.dart-site}}/null-safety/unsound-null-safety
