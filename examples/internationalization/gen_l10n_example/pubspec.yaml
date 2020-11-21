@@ -1,0 +1,17 @@
+name: gen_l10n_example
+description: Example of an internationalized Flutter app that uses `flutter gen-l10n`
+
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Internationalization support.
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.16.1 # Add this line
+
+flutter:
+  generate: true # Add this line
+  uses-material-design: true
