@@ -119,5 +119,5 @@ Master channel link:
 [`RenderWrap`]: https://master-api.flutter.dev/flutter/rendering/RenderWrap-class.html
 [`RenderParagraph`]: https://master-api.flutter.dev/flutter/rendering/RenderParagraph-class.html
 
-[Issue 48679]: {{site.github}}flutter/flutter/issues/48679]
+[Issue 48679]: {{site.github}}/flutter/flutter/issues/48679]
 [Fixes Intrinsics for RenderParagraph and RenderWrap]: {{site.github}}/flutter/flutter/pull/70656
