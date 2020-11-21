@@ -103,9 +103,9 @@ them, place a `ScaffoldMessenger` in between. When trying to present a `SnackBar
 the follow assertion error will be thrown:
 
 ```
-The `ScaffoldManager` throws an assertion error when attempting to show a `SnackBar` to nested
+The `ScaffoldMessenger` throws an assertion error when attempting to show a `SnackBar` to nested
 `Scaffold`s, which would display duplicate `SnackBar`s if allowed.
-To fix this, insert  a`SnackBar` between each nested `Scaffold` to set a separate scope for each.
+To fix this, insert  a`ScaffoldMessenger` between each nested `Scaffold` to set a separate scope for each.
 ```
 
 ## Migration guide
