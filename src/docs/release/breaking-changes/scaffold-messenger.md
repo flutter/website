@@ -103,13 +103,9 @@ them, place a `ScaffoldMessenger` in between. When trying to present a `SnackBar
 the follow assertion error will be thrown:
 
 ```
-Nested Scaffolds have registered with the ScaffoldMessenger.
-If nested Scaffolds were to share the same ScaffoldMessenger, then
-all would receive a SnackBar at the same time, resulting in multiple
-SnackBars in your UI.
-This is typically resolved by putting a ScaffoldMessenger in
-between the levels of nested Scaffolds. Doing so will set a separate
-SnackBar scope for these Scaffolds.'
+The `ScaffoldManager` throws an assertion error when attempting to show a `SnackBar` to nested
+`Scaffold`s, which would display duplicate `SnackBar`s if allowed.
+To fix this, insert  a`SnackBar` between each nested `Scaffold` to set a separate scope for each.
 ```
 
 ## Migration guide
@@ -199,10 +195,10 @@ Relevant PRs:
 * [ScaffoldMessenger][]
 * [ScaffoldMessenger Migration][]
 
-[`Scaffold`]: https://master-api.flutter.dev/flutter/scaffold-class.html
-[`ScaffoldMessenger`]: https://master-api.flutter.dev/flutter/scaffoldmessenger-class.html
-[`SnackBar`]: https://master-api.flutter.dev/flutter/snackbar-class.html
-[`MaterialApp`]: https://master-api.flutter.dev/flutter/materialapp-class.html
+[`Scaffold`]: https://master-api.flutter.dev/flutter/material/scaffold-class.html
+[`ScaffoldMessenger`]: https://master-api.flutter.dev/flutter/material/scaffoldmessenger-class.html
+[`SnackBar`]: https://master-api.flutter.dev/flutter/material/snackbar-class.html
+[`MaterialApp`]: https://master-api.flutter.dev/flutter/material/materialapp-class.html
 [Issue #57218]: {{site.github}}/flutter/flutter/issues/57218
 [Issue #62921]: {{site.github}}/flutter/flutter/issues/62921
 [ScaffoldMessenger]: {{site.github}}/flutter/flutter/pull/64101
