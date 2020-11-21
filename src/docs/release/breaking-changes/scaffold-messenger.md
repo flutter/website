@@ -21,7 +21,7 @@ The `ScaffoldMessenger` now handles `SnackBar`s in order to persist across route
 displayed on the current `Scaffold`. By default, a root `ScaffoldMessenger` is included in the
 `MaterialApp`, but you can create your own controlled scope for the `ScaffoldMessenger` to further
 control _which_ `Scaffold`s receive your `SnackBar`s. The scope is particularly important when
-working with nested `Scaffolds`s, discussed further below.
+working with nested `Scaffold`s, discussed further below.
 
 
 ## Description of change
