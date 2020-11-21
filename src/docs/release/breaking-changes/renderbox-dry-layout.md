@@ -70,6 +70,22 @@ to the `size` setter, it needs to return the computed size. If `computeDryLayout
 needs to know the size of its children, it must obtain that size by calling
 `getDryLayout` on the child instead of calling `layout`.
 
+If for some reason it is impossible to calculate the dry layout, `computeDryLayout`
+must call `debugCannotComputeDryLayout` from within an assert and return a dummy
+size of `const Size(0, 0)`. Calculating a dry layout is, for example, impossible
+if the size of a `RenderBox` depends on the baseline metrics of its children.
+
+<!-- skip -->
+```dart
+ @override
+  Size computeDryLayout(BoxConstraints constraints) {
+    assert(debugCannotComputeDryLayout(
+      reason: 'Layout requires baseline metrics, which are only available after a full layout.'
+    ));
+    return const Size(0, 0);
+  }
+```
+
 ## Timeline
 
 Landed in version: xxx<br>
