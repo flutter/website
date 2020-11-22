@@ -484,7 +484,7 @@ Java-based Android or Objective-C-based iOS system libraries to display UI. All
 this adds overhead that can be significant, particularly where there is a lot of
 interaction between the UI and the app logic.
 
-By contrast, Flutter minimizes those abstractions, bypassing the system UI
+By contrast, Flutter minimizes those abstractions, by passing the system UI
 widget libraries in favor of its own widget set. The Dart code that paints
 Flutter’s visuals is compiled into native code, which uses Skia for rendering.
 Flutter also embeds its own copy of Skia as part of the engine, allowing the
