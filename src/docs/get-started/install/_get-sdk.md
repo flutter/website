@@ -85,24 +85,27 @@ command again to verify that you’ve set everything up correctly.
 
 _This is only suggested for advanced use cases._
 
-You can also use git directly instead of downloading the prepared tarball. For example,
+You can also use git directly instead of downloading the prepared archive. For example,
 to download the stable branch:
     
 ```terminal
 $ git clone https://github.com/flutter/flutter.git -b stable
 ```
 
-If you do this, you may also wish to pre-download development binaries that are included
-in the tarball (for example, you may wish to do this when setting up hermetic build environments,
-or if you only have intermittent network availability):
+[Update your path][], and run `flutter doctor`. That will let you know if there are
+other dependencies you need to install to use Flutter (e.g. the Android SDK).
+
+If you did not use the archive, Flutter will download necessary development binaries as they
+are needed (if you used the archive, they are included in the download). You may wish to
+pre-download these development binaries (for example, you may wish to do this when setting
+up hermetic build environments, or if you only have intermittent network availability). To
+do so, run the following command:
 
 ```terminal
 $ flutter precache
 ```
 
 For additional download options, see `flutter help precache`.
-
-The tarball includes the results of doing these steps, so it is generally the simpler option.
 
 
 {% include_relative _analytics.md %}
