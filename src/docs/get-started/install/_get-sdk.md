@@ -81,7 +81,7 @@ process.
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you’ve set everything up correctly.
 
-### Downloading straight from GitHub instead of using a tarball
+### Downloading straight from GitHub instead of using an archive
 
 _This is only suggested for advanced use cases._
 
