@@ -32,22 +32,6 @@
     $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
     ```
     
-    If you don't want to install a fixed version of the installation bundle, 
-    you can skip steps 1 and 2. 
-    Instead, get the source code from the [Flutter repo][]
-    on GitHub with the following command:
-    
-    ```terminal
-    $ git clone https://github.com/flutter/flutter.git
-    ```
-    
-    You can also change branches or tags as needed.
-    For example, to get just the stable version:
-    
-    ```terminal
-    $ git clone https://github.com/flutter/flutter.git -b stable --depth 1
-    ```
-    
  1. Add the `flutter` tool to your path:
 
     ```terminal
@@ -58,21 +42,7 @@
     _current_ terminal window only.
     To permanently add Flutter to your path, see
     [Update your path][].
-
- 1. Optionally, pre-download development binaries:
-
-    The `flutter` tool downloads platform-specific development binaries as
-    needed. For scenarios where pre-downloading these artifacts is preferable
-    (for example, in hermetic build environments,
-    or with intermittent network availability), iOS
-    and Android binaries can be downloaded ahead of time by running:
-
-    ```terminal
-    $ flutter precache
-    ```
-
-    For additional download options, see `flutter help precache`.
-
+    
 You are now ready to run Flutter commands!
 
 {{site.alert.note}}
@@ -110,6 +80,33 @@ process.
 
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you’ve set everything up correctly.
+
+### Downloading straight from GitHub instead of using an archive
+
+_This is only suggested for advanced use cases._
+
+You can also use git directly instead of downloading the prepared archive. For example,
+to download the stable branch:
+    
+```terminal
+$ git clone https://github.com/flutter/flutter.git -b stable
+```
+
+[Update your path][], and run `flutter doctor`. That will let you know if there are
+other dependencies you need to install to use Flutter (e.g. the Android SDK).
+
+If you did not use the archive, Flutter will download necessary development binaries as they
+are needed (if you used the archive, they are included in the download). You may wish to
+pre-download these development binaries (for example, you may wish to do this when setting
+up hermetic build environments, or if you only have intermittent network availability). To
+do so, run the following command:
+
+```terminal
+$ flutter precache
+```
+
+For additional download options, see `flutter help precache`.
+
 
 {% include_relative _analytics.md %}
 
