@@ -4,15 +4,12 @@ description: How to add an iOS 14 App Clip target to your Flutter project.
 ---
 
 {{site.alert.important}}
-  This support is offered experimentally on Flutter version 1.22, may not be
-  stable, and may change in the future.
+  This experimental preview currently exceeds the 10MB uncompressed IPA payload
+  size limit and cannot be used in production ([#71098][]).
 {{site.alert.end}}
 
 This guide describes how to manually add another Flutter-rendering iOS App Clip
 target to your existing Flutter project or [add-to-app][] project.
-
-If you are interested in automatically integrating an App Clip into your iOS
-app, see feature request [#65451][].
 
 {{site.alert.warning}}
   This is an advanced guide and is best intended for audience with a working
@@ -378,6 +375,7 @@ Such as
 
 [add-to-app]: /docs/development/add-to-app
 [#65451]: {{site.github}}/flutter/flutter/issues/65451
+[#71098]: {{site.github}}/flutter/flutter/issues/71098
 [official Apple documentation]: https://developer.apple.com/documentation/app_clips/creating_an_app_clip_with_xcode#3604097
 [iOS add-to-app APIs]: /docs/development/add-to-app/ios/add-flutter-screen
 [custom Flutter route]: /docs/development/add-to-app/ios/add-flutter-screen#route
