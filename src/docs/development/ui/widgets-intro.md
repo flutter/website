@@ -163,7 +163,6 @@ void main() {
   runApp(MaterialApp(
     title: 'My app', // used by the OS task switcher
     home: SafeArea( // needed for proper padding
-      top: true, // automatically pad the top of the app
       child: MyScaffold(),
     ),
   ));
