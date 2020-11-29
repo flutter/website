@@ -162,7 +162,7 @@ class MyScaffold extends StatelessWidget {
 void main() {
   runApp(MaterialApp(
     title: 'My app', // used by the OS task switcher
-    home: SafeArea( // needed for proper padding
+    home: SafeArea(
       child: MyScaffold(),
     ),
   ));
