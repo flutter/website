@@ -46,7 +46,7 @@ the app delegate.
 {% sample Objective-C %}
 **In `AppDelegate.h`:**
 
-<!--code-excerpt "AppDelegate.h" title-->
+<?code-excerpt "AppDelegate.h" title?>
 ```objectivec
 @import UIKit;
 @import Flutter;
@@ -58,7 +58,7 @@ the app delegate.
 
 **In `AppDelegate.m`:**
 
-<!--code-excerpt "AppDelegate.m" title-->
+<?code-excerpt "AppDelegate.m" title?>
 ```objectivec
 // Used to connect plugins (only if you have plugins with iOS platform code).
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
@@ -82,7 +82,7 @@ the app delegate.
 {% sample Swift %}
 **In `AppDelegate.swift`:**
 
-<!--code-excerpt "AppDelegate.swift" title-->
+<?code-excerpt "AppDelegate.swift" title?>
 ```swift
 import UIKit
 import Flutter
@@ -113,7 +113,7 @@ created in the `AppDelegate`.
 
 {% samplecode vc %}
 {% sample Objective-C %}
-<!--code-excerpt "ViewController.m" title-->
+<?code-excerpt "ViewController.m" title?>
 ```objectivec
 @import Flutter;
 #import "AppDelegate.h"
@@ -144,7 +144,7 @@ created in the `AppDelegate`.
 @end
 ```
 {% sample Swift %}
-<!--code-excerpt "ViewController.swift" title-->
+<?code-excerpt "ViewController.swift" title?>
 ```swift
 import UIKit
 import Flutter
@@ -201,7 +201,7 @@ To let the `FlutterViewController` present without an existing
 
 {% samplecode no-engine-vc %}
 {% sample Objective-C %}
-<!--code-excerpt "ViewController.m" title-->
+<?code-excerpt "ViewController.m" title?>
 ```objectivec
 // Existing code omitted.
 - (void)showFlutter {
@@ -212,7 +212,7 @@ To let the `FlutterViewController` present without an existing
 @end
 ```
 {% sample Swift %}
-<!--code-excerpt "ViewController.swift" title-->
+<?code-excerpt "ViewController.swift" title?>
 ```swift
 // Existing code omitted.
 func showFlutter() {
@@ -245,7 +245,7 @@ Otherwise, plugins that depend on these events may have undefined behavior.
 
 For instance:
 
-<!--code-excerpt "AppDelegate.h" title-->
+<?code-excerpt "AppDelegate.h" title?>
 ```objectivec
 @import Flutter;
 @import UIKit;
@@ -260,7 +260,7 @@ For instance:
 The implementation should delegate mostly to a
 `FlutterPluginAppLifeCycleDelegate`:
 
-<!--code-excerpt "AppDelegate.m" title-->
+<?code-excerpt "AppDelegate.m" title?>
 ```objectivec
 @interface AppDelegate ()
 @property (nonatomic, strong) FlutterPluginAppLifeCycleDelegate* lifeCycleDelegate;
@@ -408,12 +408,12 @@ in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 
 {% samplecode entrypoint-library %}
 {% sample Objective-C %}
-<!--code-excerpt "Objective-C" title-->
+<?code-excerpt "Objective-C" title?>
 ```objectivec
 [flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
 {% sample Swift %}
-<!--code-excerpt "Swift" title-->
+<?code-excerpt "Swift" title?>
 ```swift
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
 ```
@@ -428,7 +428,7 @@ FlutterViewController.
 
 {% samplecode initial-route %}
 {% sample Objective-C %}
-<!--code-excerpt "Creating engine" title-->
+<?code-excerpt "Creating engine" title?>
 ```objectivec
 FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
 // FlutterDefaultDartEntrypoint is the same as nil, which will run main().
@@ -436,7 +436,7 @@ FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
                     initialRoute:@"/onboarding"];
 ```
 {% sample Swift %}
-<!--code-excerpt "Creating engine" title-->
+<?code-excerpt "Creating engine" title?>
 ```swift
 let flutterEngine = FlutterEngine()
 // FlutterDefaultDartEntrypoint is the same as nil, which will run main().
@@ -453,7 +453,7 @@ a FlutterEngine:
 
 {% samplecode initial-route %}
 {% sample Objective-C %}
-<!--code-excerpt "Creating view controller" title-->
+<?code-excerpt "Creating view controller" title?>
 ```objectivec
 FlutterViewController* flutterViewController =
       [[FlutterViewController alloc] initWithProject:nil
@@ -462,7 +462,7 @@ FlutterViewController* flutterViewController =
                                               bundle:nil];
 ```
 {% sample Swift %}
-<!--code-excerpt "Creating view controller" title-->
+<?code-excerpt "Creating view controller" title?>
 ```swift
 let flutterViewController = FlutterViewController(
       project: nil, initialRoute: "/onboarding", nibName: nil, bundle: nil)

@@ -52,7 +52,7 @@ attach an instance of `FlutterFragment` in `onCreate()` within the
 
 {% samplecode add-fragment %}
 {% sample Java %}
-<!--code-excerpt "MyActivity.java" title-->
+<?code-excerpt "MyActivity.java" title?>
 ```java
 public class MyActivity extends FragmentActivity {
     // Define a tag String to represent the FlutterFragment within this
@@ -98,7 +98,7 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 class MyActivity : FragmentActivity() {
   companion object {
@@ -156,7 +156,7 @@ These calls are shown in the following example:
 
 {% samplecode forward-activity-calls %}
 {% sample Java %}
-<!--code-excerpt "MyActivity.java" title-->
+<?code-excerpt "MyActivity.java" title?>
 ```java
 public class MyActivity extends FragmentActivity {
     @Override
@@ -201,7 +201,7 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 class MyActivity : FragmentActivity() {
   override fun onPostResume() {
@@ -266,7 +266,7 @@ factory method.
 
 {% samplecode use-prewarmed-engine %}
 {% sample Java %}
-<!--code-excerpt "MyApplication.java" title-->
+<?code-excerpt "MyApplication.java" title?>
 ```java
 // Somewhere in your app, before your FlutterFragment is needed,
 // like in the Application class ...
@@ -284,12 +284,12 @@ FlutterEngineCache
   .put("my_engine_id", flutterEngine);
 ```
 
-<!--code-excerpt "MyActivity.java" title-->
+<?code-excerpt "MyActivity.java" title?>
 ```java
 FlutterFragment.withCachedEngine("my_engine_id").build();
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyApplication.kt" title-->
+<?code-excerpt "MyApplication.kt" title?>
 ```kotlin
 // Somewhere in your app, before your FlutterFragment is needed,
 // like in the Application class ...
@@ -307,7 +307,7 @@ FlutterEngineCache
   .put("my_engine_id", flutterEngine)
 ```
 
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 FlutterFragment.withCachedEngine("my_engine_id").build()
 ```
@@ -349,7 +349,7 @@ allows you to specify a desired initial route, as shown:
 
 {% samplecode launch-with-initial-route %}
 {% sample Java %}
-<!--code-excerpt "MyActivity.java" title-->
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // With a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -357,7 +357,7 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -386,14 +386,14 @@ To specify an entrypoint, build `FlutterFragment`, as shown:
 
 {% samplecode launch-with-custom-entrypoint %}
 {% sample Java %}
-<!--code-excerpt "MyActivity.java" title-->
+<?code-excerpt "MyActivity.java" title?>
 ```java
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
     .build();
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 val flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
@@ -433,7 +433,7 @@ Select a `TextureView` by building a `FlutterFragment` with a
 
 {% samplecode launch-with-rendermode %}
 {% sample Java %}
-<!--code-excerpt "MyActivity.java" title-->
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // With a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -446,7 +446,7 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -497,7 +497,7 @@ build it with the following configuration:
 
 {% samplecode launch-with-transparency %}
 {% sample Java %}
-<!--code-excerpt "MyActivity.java" title-->
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -510,7 +510,7 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -559,7 +559,7 @@ use the `shouldAttachEngineToActivity()` method in
 
 {% samplecode attach-to-activity %}
 {% sample Java %}
-<!--code-excerpt "MyActivity.java" title-->
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -572,7 +572,7 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyActivity.kt" title-->
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()

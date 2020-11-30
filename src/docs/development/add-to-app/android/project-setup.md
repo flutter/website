@@ -22,7 +22,7 @@ IDE with the [Flutter plugin][] or manually.
   Doing this avoids a missing `libflutter.so` runtime crash,
   for example:
 
-<!--code-excerpt "MyApp/app/build.gradle" title-->
+<?code-excerpt "MyApp/app/build.gradle" title?>
 ```gradle
 android {
   //...
@@ -146,7 +146,7 @@ app declares the following source compatibility within your
 app's `build.gradle` file, under the `android { }`
 block, such as:
 
-<!--code-excerpt "MyApp/app/build.gradle" title-->
+<?code-excerpt "MyApp/app/build.gradle" title?>
 ```gradle
 android {
   //...
@@ -223,7 +223,7 @@ to find these files.
 To do that, edit `app/build.gradle` in your host app
 so that it includes the local repository and the dependency:
 
-<!--code-excerpt "MyApp/app/build.gradle" title-->
+<?code-excerpt "MyApp/app/build.gradle" title?>
 ```gradle
 android {
   // ...
@@ -285,7 +285,7 @@ Flutter SDK to build the host app.
 Include the Flutter module as a subproject in the host app's
 `settings.gradle`:
 
-<!--code-excerpt "MyApp/settings.gradle" title-->
+<?code-excerpt "MyApp/settings.gradle" title?>
 ```groovy
 // Include the host app project.
 include ':app'                                    // assumed existing content
@@ -307,7 +307,7 @@ your `settings.gradle`.
 Introduce an `implementation` dependency on the Flutter
 module from your app:
 
-<!--code-excerpt "MyApp/app/build.gradle" title-->
+<?code-excerpt "MyApp/app/build.gradle" title?>
 ```groovy
 dependencies {
   implementation project(':flutter')
