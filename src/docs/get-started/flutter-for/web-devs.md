@@ -50,6 +50,8 @@ Font style, size, and other text attributes that CSS
 handles with the font and color properties are individual
 properties of a [`TextStyle`][] child of a [`Text`][] widget.
 
+For text-align property in CSS that is used for aligning text, there is a textAlign property of a [`Text`][] widget.
+
 In both HTML and Flutter, child elements or widgets are anchored at
 the top left, by default.
 
@@ -64,6 +66,7 @@ the top left, by default.
       width: 320px;
       height: 240px;
       [[highlight]]font: 900 24px Georgia;[[/highlight]]
+      [[highlight]]text-align: center;[[/highlight]]
     }
 {% endprettify %}
 </div>
@@ -72,6 +75,7 @@ the top left, by default.
   var container = Container( // grey box
     child: Text(
       "Lorem ipsum",
+      [[highlight]]textAlign: TextAlign.center,[[/highlight]]
       style: [[highlight]]TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w900,
