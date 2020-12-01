@@ -70,7 +70,7 @@ The following instructions outline the steps for supporting the new API:
    You may have to make a public constructor for your plugin class
    if one didn't exist already. For example:
 
-   <?code-excerpt "MainActivity.java" title?>
+   <!--code-excerpt "MainActivity.java" title-->
    ```java
     package io.flutter.plugins.firebasecoreexample;
 
@@ -89,7 +89,7 @@ The following instructions outline the steps for supporting the new API:
    to use `io.flutter.embedding.android.FlutterActivity`.
    For example:
 
-    <?code-excerpt "AndroidManifest.xml" title?>
+    <!--code-excerpt "AndroidManifest.xml" title-->
     ```xml
      <activity android:name="io.flutter.embedding.android.FlutterActivity"
             android:theme="@style/LaunchTheme"
@@ -114,7 +114,7 @@ The following instructions outline the steps for supporting the new API:
    register all the plugins instead of using
    `GeneratedPluginRegistrant`.  For example:
 
-    <?code-excerpt "EmbeddingV1Activity.java" title?>
+    <!--code-excerpt "EmbeddingV1Activity.java" title-->
     ```java
     package io.flutter.plugins.batteryexample;
 
@@ -142,7 +142,7 @@ The following instructions outline the steps for supporting the new API:
    `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` file.
    For example:
 
-    <?code-excerpt "AndroidManifest.xml" title?>
+    <!--code-excerpt "AndroidManifest.xml" title-->
     ```xml
     <activity
         android:name=".EmbeddingV1Activity"
@@ -161,7 +161,7 @@ but aren't required.
 1. Update `<plugin_name>/example/android/app/build.gradle`
    to replace references to `android.support.test` with `androidx.test`:
 
-    <?code-excerpt "build.gradle" title?>
+    <!--code-excerpt "build.gradle" title-->
     ```groovy
     defaultConfig {
       ...
@@ -170,7 +170,7 @@ but aren't required.
     }
     ```
 
-    <?code-excerpt "build.gradle" title?>
+    <!--code-excerpt "build.gradle" title-->
     ```groovy
     dependencies {
     ...
@@ -185,7 +185,7 @@ but aren't required.
    in `<plugin_name>/example/android/app/src/androidTest/java/<plugin_path>/`.
    You will need to create these directories. For example:
 
-    <?code-excerpt "MainActivityTest.java" title?>
+    <!--code-excerpt "MainActivityTest.java" title-->
     ```java
     package io.flutter.plugins.firebase.core;
 
@@ -202,7 +202,7 @@ but aren't required.
     }
     ```
 
-    <?code-excerpt "EmbeddingV1ActivityTest.java" title?>
+    <!--code-excerpt "EmbeddingV1ActivityTest.java" title-->
     ```java
     package io.flutter.plugins.firebase.core;
 
@@ -224,7 +224,7 @@ but aren't required.
    `<plugin_name>/pubspec.yaml` and
    `<plugin_name>/example/pubspec.yaml`.
 
-    <?code-excerpt "pubspec.yaml" title?>
+    <!--code-excerpt "pubspec.yaml" title-->
     ```yaml
     e2e: ^0.2.1
     flutter_driver:
@@ -237,7 +237,7 @@ but aren't required.
    which is the minimum version for which we can guarantee support.
    For example:
 
-    <?code-excerpt "pubspec.yaml" title?>
+    <!--code-excerpt "pubspec.yaml" title-->
     ```yaml
     environment:
       sdk: ">=2.0.0-dev.28.0 <3.0.0"

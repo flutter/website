@@ -233,7 +233,7 @@ Inside the `configureFlutterEngine()` method, create a `MethodChannel` and call
 `setMethodCallHandler()`. Make sure to use the same channel name as
 was used on the Flutter client side.
 
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
@@ -260,7 +260,7 @@ would write in a native Android app.
 
 First, add the needed imports at the top of the file:
 
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 import android.content.Context
 import android.content.ContextWrapper
@@ -274,7 +274,7 @@ import android.os.Build.VERSION_CODES
 Next, add the following method in the `MainActivity` class,
 below the `configureFlutterEngine()` method:
 
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
   private fun getBatteryLevel(): Int {
     val batteryLevel: Int
@@ -300,7 +300,7 @@ If an unknown method is called, report that instead.
 
 Remove the following code:
 
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
@@ -311,7 +311,7 @@ Remove the following code:
 
 And replace with the following:
 
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       // Note: this method is invoked on the main thread.
@@ -349,7 +349,7 @@ inside the `configureFlutterEngine()` method.
 Make sure to use the same channel name as was used on the
 Flutter client side.
 
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity;
@@ -379,7 +379,7 @@ would write in a native Android app.
 
 First, add the needed imports at the top of the file:
 
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
 import android.content.ContextWrapper;
 import android.content.Intent;
@@ -393,7 +393,7 @@ import android.os.Bundle;
 Then add the following as a new method in the activity class,
 below the `configureFlutterEngine()` method:
 
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
   private int getBatteryLevel() {
     int batteryLevel = -1;
@@ -421,7 +421,7 @@ If an unknown method is called, report that instead.
 
 Remove the following code:
 
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
             // Note: this method is invoked on the main thread.
@@ -431,7 +431,7 @@ Remove the following code:
 
 And replace with the following:
 
-<?code-excerpt "MainActivity.java" title?>
+<!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
             // Note: this method is invoked on the main thread.
@@ -478,7 +478,7 @@ Override the `application:didFinishLaunchingWithOptions:` function and create
 a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery`:
 
-<?code-excerpt "AppDelegate.swift" title?>
+<!--code-excerpt "AppDelegate.swift" title-->
 ```swift
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -507,7 +507,7 @@ would write in a native iOS app.
 
 Add the following as a new method at the bottom of `AppDelegate.swift`:
 
-<?code-excerpt "AppDelegate.swift" title?>
+<!--code-excerpt "AppDelegate.swift" title-->
 ```swift
 private func receiveBatteryLevel(result: FlutterResult) {
   let device = UIDevice.current
@@ -529,7 +529,7 @@ The implementation of this platform method calls
 the iOS code written in the previous step. If an unknown method
 is called, report that instead.
 
-<?code-excerpt "AppDelegate.swift" title?>
+<!--code-excerpt "AppDelegate.swift" title-->
 ```swift
 batteryChannel.setMethodCallHandler({
   [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
@@ -562,7 +562,7 @@ didFinishLaunchingWithOptions:` method.
 Make sure to use the same channel name
 as was used on the Flutter client side.
 
-<?code-excerpt "AppDelegate.m" title?>
+<!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
@@ -591,7 +591,7 @@ would write in a native iOS app.
 
 Add the following method in the `AppDelegate` class, just before `@end`:
 
-<?code-excerpt "AppDelegate.m" title?>
+<!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
 - (int)getBatteryLevel {
   UIDevice* device = UIDevice.currentDevice;
@@ -611,7 +611,7 @@ this platform method calls the iOS code written in the previous step,
 and returns a response for both the success and error cases using
 the `result` argument. If an unknown method is called, report that instead.
 
-<?code-excerpt "AppDelegate.m" title?>
+<!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
 __weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
