@@ -74,21 +74,20 @@ To install these:
 
 ## Install VS Code
 
-VS Code is a lightweight editor with Flutter app execution and debug support.
+VS Code is a lightweight editor with Flutter app execution and debugs support.
 
 * [VS Code][], latest stable version
 
 ## Install the Flutter and Dart plugins
 
  1. Start VS Code.
- 1. Invoke **View > Command Palette...**.
+ 1. Invoke **View > Command Palette...**
  1. Type "install", and select **Extensions: Install Extensions**.
- 1. Type "flutter" in the extensions search field, select **Flutter** in the list,
-    and click **Install**. This also installs the required Dart plugin.
+ 1. Type "flutter" in the extensions search field, select **Flutter** in the list and click **Install**. This also installs the required Dart plugin.
 
 ## Validate your setup with the Flutter Doctor
 
- 1. Invoke **View > Command Palette...**.
+ 1. Invoke **View > Command Palette...**
  1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
  1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
 
@@ -99,7 +98,7 @@ VS Code is a lightweight editor with Flutter app execution and debug support.
 
 Emacs is a lightweight editor with support for Flutter and Dart.
 
-* [Emacs][], latest stable version
+* [Emacs][], the latest stable version
 
 ## Install the lsp-dart package
 
