@@ -22,9 +22,9 @@ platforms.
 
 For designers, Flutter provides a canvas for high-end user experiences. Fast
 Company described Flutter as [one of the top design ideas of the decade][] for
-its ability to turn concepts to be turned into production code without the
-compromises imposed by typical frameworks. It also acts as a productive
-prototyping tool, with support for [CodePen][] to share your ideas with others.
+its ability to turn concepts into production code without the compromises
+imposed by typical frameworks. It also acts as a productive prototyping tool,
+with [CodePen][] support for sharing your ideas with others.
 
 For engineering managers and businesses, Flutter allows the unification of app
 developers into a single _mobile, web, and desktop app team_, building branded
@@ -42,8 +42,8 @@ Flutter for prototyping and app development.
 
 ### What kinds of apps can I build with Flutter?
 
-Flutter is designed to support for 2D mobile apps that run on both Android and
-iOS. Flutter is also great for interactive apps that you want to run on your web
+Flutter is designed to support 2D mobile apps that run on both Android and iOS.
+Flutter is also great for interactive apps that you want to run on your web
 pages or on the desktop. (Note that web support is in beta, and desktop support
 is in alpha.)
 
@@ -51,9 +51,9 @@ Apps that need to deliver highly branded designs are particularly well suited
 for Flutter. However, you can also create pixel-perfect experiences that match
 the Android and iOS design languages with Flutter.
 
-Flutter's [package ecosystem][] supports a wide variety of hardware (e.g.
-camera, GPS, network, storage) and services (e.g. payments, cloud storage,
-authentication, and ads).
+Flutter's [package ecosystem][] supports a wide variety of hardware (such as
+camera, GPS, network, and storage) and services (such as payments, cloud
+storage, authentication, and ads).
 
 ### Who makes Flutter?
 
@@ -114,7 +114,7 @@ of the many editors that support [editing Dart][].
 
 ### Does Flutter come with a framework?
 
-Yes! Flutter ships with a modern reactive framework. Flutter's framework is
+Yes! Flutter ships with a modern react-style framework. Flutter's framework is
 designed to be layered and customizable (and optional). Developers can choose to
 use only parts of the framework, or even replace upper layers of the framework
 entirely.
@@ -151,7 +151,7 @@ Learn more about [debugging with Flutter][].
 
 We don't ship with an opinionated solution, but there are a variety of packages
 that offer dependency injection and service location, such as [injectable][],
-[get_it][] and [kiwi][].
+[get_it][], and [kiwi][].
 
 ## Technology
 
@@ -159,8 +159,8 @@ that offer dependency injection and service location, such as [injectable][],
 
 Flutter is built with C, C++, Dart, and Skia (a 2D rendering engine). See this
 [diagram][] for a better picture of the main components. For a more detailed
-discussion, you can read the [architectural overview][] for a description of the
-layered architecture of Flutter.
+description of the layered architecture of Flutter, read the [architectural
+overview].
 
 ### How does Flutter run my code on Android? {#run-android}
 
@@ -243,7 +243,7 @@ to expose the new mobile OS capability.
 
 ### What operating systems can I use to build a Flutter app?
 
-Flutter supports development using Linux, macOS, ChromeOS and Windows.
+Flutter supports development using Linux, macOS, ChromeOS, and Windows.
 
 ### What language is Flutter written in?
 
@@ -412,7 +412,7 @@ instructions][].
 
 ### Can I use Flutter to build desktop apps?
 
-Yes, desktop support is in preview for Windows, macOS and Linux. The current
+Yes, desktop support is in preview for Windows, macOS, and Linux. The current
 progress is documented on the [Desktop][desktop] page.
 
 ### Can I use Flutter inside of my existing native app?
@@ -832,9 +832,9 @@ There's an API to find the list of licenses you need to show:
 
 ### Who works on Flutter?
 
-Flutter is an open source project. Currently, the bulk of the development is
-done by engineers at Google. If you're excited about Flutter, we encourage you
-to join the community and contribute to Flutter!
+We all do! Flutter is an open source project. Currently, the bulk of the
+development is done by engineers at Google. If you're excited about Flutter, we
+encourage you to join the community and [contribute to Flutter][]!
 
 ### What are Flutter's guiding principles?
 
@@ -899,6 +899,7 @@ follow Apple's [guidelines][] for App Store submission.
 [`color`]: {{site.api}}/flutter/widgets/Icon/color.html
 [Community]: /community
 [`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
+[contribute to Flutter]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [Contributing Guide]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [CodePen]: https://codepen.io/flutter
 [Dart]: {{site.dart-site}}/
