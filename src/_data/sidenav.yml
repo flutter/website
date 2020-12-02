@@ -139,7 +139,7 @@
           permalink: /docs/development/platform-integration/ios-app-clip
         - title: Apple Watch support
           permalink: /docs/development/platform-integration/apple-watch
-        - title: C and C++ interop
+        - title: C interop
           permalink: /docs/development/platform-integration/c-interop
         - title: Hosting native Android and iOS views
           permalink: /docs/development/platform-integration/platform-views
