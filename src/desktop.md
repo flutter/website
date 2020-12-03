@@ -312,9 +312,9 @@ to distribute a Linux desktop app.
 
 [Build and release a Linux desktop app]: /docs/deployment/linux
 
-## Add desktop support to an existing app
+## Add desktop support to an existing Flutter app
 
-To add desktop support to an existing project,
+To add desktop support to an existing Flutter project,
 run the following command in a terminal from the
 root project directory:
 
@@ -322,8 +322,8 @@ root project directory:
 $ flutter create .
 ```
 
-This adds the necessary files and directories to your
-Flutter project.
+This adds the necessary desktop files and directories to your
+existing Flutter project.
 
 ## macOS-specific support
 
