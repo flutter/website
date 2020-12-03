@@ -66,7 +66,7 @@ If the subclass does not override `performResize` the implementation of
 `computeDryLayout` has to be extracted from the `performLayout` method.
 Basically, `computeDryLayout` needs to do all the work `performLayout` is doing
 to figure out the size of the `RenderBox`. However, instead of assigning it
-to the `size` setter, it needs to return the computed size. If `computeDryLayout`
+to the `size` setter, it returns the computed size. If `computeDryLayout`
 needs to know the size of its children, it must obtain that size by calling
 `getDryLayout` on the child instead of calling `layout`.
 
