@@ -13,9 +13,8 @@ override `performResize`.
 
 ## Context
 
-To correctly calculate the intrinsic sizes of a `RenderParagraph` with `WidgetSpan`
-children and a `RenderWrap` the new method `computeDryLayout` was added to the
-`RenderBox` protocol. The method receives a set of `BoxConstraints` and is
+A new method, `computeDryLayout`, was added to the `RenderBox` protocol to correctly
+calculate the intrinsic sizes of a `RenderParagraph` with `WidgetSpan` children and a `RenderWrap`. The method receives a set of `BoxConstraints` and is
 expected to calculate the resulting size of the `RenderBox` without changing
 any internal state. It's essentially a dry run of `performLayout` that only
 calculates the resulting size and doesn't place the children. The
