@@ -8,7 +8,7 @@ description: The method "computeDryLayout" was added to the RenderBox protocol t
 A new method named `computeDryLayout` was added to the `RenderBox` protocol.
 Subclasses of `RenderBox` are expected to implement it to correctly report
 their desired size given a set of `BoxConstraints` during intrinsics
-calculations. Subclasses, that implement `computeDryLayout` no longer need to
+calculations. Subclasses that implement `computeDryLayout` no longer need to
 override `performResize`.
 
 ## Context
