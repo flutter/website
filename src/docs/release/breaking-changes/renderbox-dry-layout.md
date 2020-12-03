@@ -24,7 +24,7 @@ calculates the resulting size and doesn't place the children. The
 ## Description of change
 
 Subclasses of `RenderBox` need to override the new `computeDryLayout` method
-if they are used as a descendant of a RenderObject that may query the intrinsic
+if they are used as a descendant of a `RenderObject` that may query the intrinsic
 size of its children. Examples of widgets that due this are `IntrinsicHeight`
 and `IntrinsicWidth`.
 
