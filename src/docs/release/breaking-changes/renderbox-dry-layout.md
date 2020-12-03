@@ -76,7 +76,7 @@ if the size of a `RenderBox` depends on the baseline metrics of its children.
 
 <!-- skip -->
 ```dart
- @override
+  @override
   Size computeDryLayout(BoxConstraints constraints) {
     assert(debugCannotComputeDryLayout(
       reason: 'Layout requires baseline metrics, which are only available after a full layout.'
