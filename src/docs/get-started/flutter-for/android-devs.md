@@ -380,7 +380,7 @@ and the [Animations overview][].
 
 ### How do I use a Canvas to draw/paint?
 
-In Android, you would use the `Canvas` and `Drawable`s to draw images and shapes
+In Android, you would use the `Canvas` and `Drawable` to draw images and shapes
 to the screen. Flutter has a similar `Canvas` API as well, since it is based
 on the same low-level rendering engine, Skia. As a result, painting to a
 canvas in Flutter is a very familiar task for Android developers.
