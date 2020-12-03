@@ -23,6 +23,7 @@ your development environment must meet these minimum requirements:
   - `git` 2.x
   - `mkdir`
   - `rm`
+  - `sysctl`
   - `unzip`
   - `which`
 
