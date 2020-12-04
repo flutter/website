@@ -66,7 +66,7 @@ Flutter web apps can run on the following browsers:
 * Chrome (mobile & desktop)
 * Safari (mobile & desktop)
 * Edge (mobile & desktop)
-* Firefox (desktop)
+* Firefox (mobile & desktop)
 
 During development, Chrome (on macOS, Windows, and Linux) and Edge (on Windows)
 are supported as the default browsers for debugging your app. In order to test
