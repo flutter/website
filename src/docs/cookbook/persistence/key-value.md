@@ -45,8 +45,8 @@ To persist data, use the setter methods provided by the
 `SharedPreferences` class. Setter methods are available for
 various primitive types, such as `setInt`, `setBool`, and `setString`.
 
-Setter methods do two things: First, synchronously update the
-key-value pair in-memory. Then, persist the data to disk.
+Setter methods update the key-value pair in-memory and persist the
+data to disk.
 
 <!-- skip -->
 ```dart
@@ -54,7 +54,7 @@ key-value pair in-memory. Then, persist the data to disk.
 final prefs = await SharedPreferences.getInstance();
 
 // set value
-prefs.setInt('counter', counter);
+await prefs.setInt('counter', counter);
 ```
 
 ## 3. Read data
@@ -79,7 +79,7 @@ To delete data, use the `remove()` method.
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
-prefs.remove('counter');
+await prefs.remove('counter');
 ```
 
 ## Supported types
@@ -166,9 +166,10 @@ class _MyHomePageState extends State<MyHomePage> {
   //Incrementing counter after click
   _incrementCounter() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    final int newValue = (prefs.getInt('counter') ?? 0) + 1;
+    await prefs.setInt('counter', newValue);
     setState(() {
-      _counter = (prefs.getInt('counter') ?? 0) + 1;
-      prefs.setInt('counter', _counter);
+      _counter = newValue;
     });
   }
 
