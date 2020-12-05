@@ -549,7 +549,8 @@
     "name": "CupertinoSliverNavigationBar",
     "description": "An iOS-styled navigation bar with iOS-11-style large titles using slivers.",
     "categories": [
-      "Cupertino (iOS-style widgets)"
+      "Cupertino (iOS-style widgets)",
+      "Sliver widgets"
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html",
@@ -639,7 +640,8 @@
     "name": "CustomScrollView",
     "description": "A ScrollView that creates custom scroll effects using slivers.",
     "categories": [
-      "Scrolling"
+      "Scrolling",
+      "Sliver widgets"
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/CustomScrollView-class.html",
@@ -1483,7 +1485,8 @@
     "description": "A material design app bar that integrates with a CustomScrollView.",
     "categories": [],
     "subcategories": [
-      "App structure and navigation"
+      "App structure and navigation",
+      "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/material/SliverAppBar-class.html",
     "image": "<img alt='' src='/images/widget-catalog/material-app-bar.png'>"
