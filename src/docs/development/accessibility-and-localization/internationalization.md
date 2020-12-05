@@ -78,6 +78,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 MaterialApp(
  localizationsDelegates: [
    // ... app-specific localization delegate[s] here
+   AppLocalizations.delegate,
    GlobalMaterialLocalizations.delegate,
    GlobalWidgetsLocalizations.delegate,
    GlobalCupertinoLocalizations.delegate,
