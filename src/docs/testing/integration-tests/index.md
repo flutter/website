@@ -1,5 +1,5 @@
 ---
-title: Integration Testing
+title: Integration testing
 description: Learn how to write integration tests
 ---
 
@@ -7,31 +7,39 @@ This page describes how to use the [integration_test][] package to run
 integration tests. Tests written using this package have the following
 properties:
  
-- Compatibility with the `flutter drive` command, for running tests on a
+* Compatibility with the `flutter drive` command, for running tests on a
 physical device or emulator.
-- The ability to be run on [Firebase Test Lab], enabling automated testing on a
+* The ability to be run on [Firebase Test Lab][], enabling automated testing on a
 variety of devices.
-- Compatibility with [flutter_test] APIs, enabling tests to be written in a
+* Compatibility with [flutter_test][] APIs, enabling tests to be written in a
 similar style as [widget tests][]
 
 ## Overview
 
-If you're developing a Flutter app, you are probably writing the code on a
-desktop computer, called the **host** machine, and running the app on a mobile
-device or browser, called the **target**.
-
 There are three types of tests that Flutter supports. A **unit** test verifies
 the behavior of a method or class. A **widget test** verifies the behavior of
 Flutter widgets without running the app itself. An **integration test** runs the
-full app on the target device and reports the results back to the host machine.
+full app.
+
+During development, you are probably writing the code on a
+desktop computer, called the **host** machine, and running the app on a mobile
+device, browser, or desktop application, called the **target** device. (If you
+are using a web browser or desktop application, the host machine is also the
+target device.)
 
 The flutter_driver package runs integration tests written in Dart on a target
 device and reports the results to the host.
 
 The [integration_test][] package lets you run tests directly on the target
 device. This allows you to run integration tests on multiple Android or iOS
-devices using Firebase TestLab. These tests can also be run using
-flutter_driver.
+devices using Firebase Test Lab. 
+
+These tests can also be run using `flutter_driver`. This allows you to run
+integration tests on a target device or emulator and view the results on your
+host machine. Previously, `flutter_driver` APIs needed to be used to perform
+actions a user would, like tapping on a button. But with `integration_test`, any
+action supported by the `flutter_test` package can be performed, in the same way
+a [widget test][] would.
 
 ## Project Setup
 
@@ -130,7 +138,7 @@ flutter drive \
   -d web-server
 ```
 
-## Testing on Firebase TestLab 
+## Testing on Firebase Test Lab 
 
 
 ### Android Setup
@@ -139,9 +147,9 @@ Follow the instructions in the [Android Device Testing][] section of the README.
 ### iOS Setup
 Follow the instructions in the [iOS Device Testing][] section of the README.
 
-### TestLab Project Setup
+### Test Lab Project Setup
 
-Go to the [Firebase Console], and create a new project if you don't have one
+Go to the [Firebase Console][], and create a new project if you don't have one
 already. Then navigate to Quality > Test Lab:
 
 {% asset integration-test/test-lab-1.png class="mw-100" alt="Firebase Test Lab Console" %}
@@ -168,10 +176,12 @@ other tests:
 
 {% asset integration-test/test-lab-2.png class="mw-100" alt="Firebase Test Lab upload" %}
 
-Click "Run a test", select "Instrumentation Test" and drag these two files:
+Click **Run a test**, select the **Instrumentation** test type and drag these
+two files:
+ sdfasdf asdf 
  
- - `<flutter_project_directory>/build/app/outputs/apk/debug/<file>.apk`
- - `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
+ * `<flutter_project_directory>/build/app/outputs/apk/debug/<file>.apk`
+ * `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
 
 {% asset integration-test/test-lab-3.png class="mw-100" alt="Firebase Test Lab upload two APKs" %}
 
@@ -181,7 +191,7 @@ If a failure occurs, you can view the output by selecting the red icon:
 
 ### Uploading an Android APK from the command line
 
-See the [Firebase Test Lab section of the README] for instructions on uploading
+See the [Firebase Test Lab section of the README][] for instructions on uploading
 the APKs from the command line.
 
 ## Migrating from flutter_driver
@@ -190,7 +200,7 @@ To migrate from flutter_driver, follow these steps:
  
 1. Remove any calls to `enableFlutterDriverExtension()` in your
   application. 
-2. Migrate any test_driver scripts to use package:integration_test and
+2. Migrate any `test_driver` scripts to use `package:integration_test` and
   WidgetTester instead of package:flutter_driver.
 
 Before:
@@ -210,21 +220,20 @@ void main() {
     });
 
     tearDownAll(() async {
-      if (driver != null)
-        driver.close();
+      if (driver != null) driver.close();
     });
 
     test('tap on the floating action button; verify counter', () async {
-      // Finds the floating action button (fab) to tap on
+      // Finds the floating action button to tap on.
       SerializableFinder fab = find.byTooltip('Increment');
 
-      // Wait for the floating action button to appear
+      // Wait for the floating action button to appear.
       await driver.waitFor(fab);
 
-      // Tap on the fab
+      // Emulate a tap on the floating action button.
       await driver.tap(fab);
 
-      // Wait for text to change to the desired value
+      // Wait for text to change to the desired value.
       await driver.waitFor(find.text('1'));
     });
   });
@@ -252,10 +261,10 @@ void main() {
       app.main();
       await tester.pumpAndSettle();
 
-      // Finds the floating action button (fab) to tap on
+      // Finds the floating action button to tap on.
       final Finder fab = find.byTooltip('Increment');
 
-      // Tap on the fab
+      // Emulate a tap on the floating action button.
       await tester.tap(fab);
 
       await tester.pumpAndSettle();
@@ -266,7 +275,7 @@ void main() {
 }
 ```
 
-Instead of calling `driver.wait*` API, use `WidgetTester.pumpAndSettle()` and or
+Instead of calling `driver.wait*` API, use `WidgetTester.pumpAndSettle()` or
 equivalent methods.
 
 [integration_test]: https://pub.dev/packages/integration_test

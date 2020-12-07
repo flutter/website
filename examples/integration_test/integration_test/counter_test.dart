@@ -15,10 +15,10 @@ void main() {
       app.main();
       await tester.pumpAndSettle();
 
-      // Finds the floating action button (fab) to tap on
+      // Finds the floating action button to tap on.
       final Finder fab = find.byTooltip('Increment');
 
-      // Tap on the fab
+      // Emulate a tap on the floating action button.
       await tester.tap(fab);
 
       await tester.pumpAndSettle();

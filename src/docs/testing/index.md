@@ -84,8 +84,8 @@ such as iOS Simulator or Android Emulator.
 The app under test is typically isolated
 from the test driver code to avoid skewing the results.
 
-See the [integration_test package instructions][] to learn how to write
-integration tests.
+For more information on how to write integration tests, see the [integration
+testing page][].
 
 ### Recipes
 
@@ -118,4 +118,4 @@ integration services, see the following:
 [Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
 [Test Flutter apps on Travis]: {{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c
-[integration_test package instructions]: /docs/testing/integration-tests
+[integration testing page]: /docs/testing/integration-tests

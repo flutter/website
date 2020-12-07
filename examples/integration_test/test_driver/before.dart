@@ -11,21 +11,20 @@ void main() {
     });
 
     tearDownAll(() async {
-      if (driver != null)
-        driver.close();
+      if (driver != null) driver.close();
     });
 
     test('tap on the floating action button; verify counter', () async {
-      // Finds the floating action button (fab) to tap on
+      // Finds the floating action button to tap on.
       SerializableFinder fab = find.byTooltip('Increment');
 
-      // Wait for the floating action button to appear
+      // Wait for the floating action button to appear.
       await driver.waitFor(fab);
 
-      // Tap on the fab
+      // Emulate a tap on the floating action button.
       await driver.tap(fab);
 
-      // Wait for text to change to the desired value
+      // Wait for text to change to the desired value.
       await driver.waitFor(find.text('1'));
     });
   });

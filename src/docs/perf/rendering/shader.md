@@ -125,9 +125,9 @@ those tests into a CI (continuous integration) system so the
 SkSLs are generated and tested automatically over the lifetime of an app.
 
 {{site.alert.note}}
-The integration_test package is now the recommended way to write integration
-tests. See the [Integration Testing](/docs/testing/integration-tests/) page for
-details.
+  The integration_test package is now the recommended way to write integration
+  tests. See the [Integration Testing](/docs/testing/integration-tests/) page
+  for details.
 {{site.alert.end}}
 
 Take the original version of [Flutter Gallery][] as an example.
