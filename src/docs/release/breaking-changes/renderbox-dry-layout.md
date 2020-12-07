@@ -13,13 +13,14 @@ override `performResize`.
 
 ## Context
 
-A new method, `computeDryLayout`, was added to the `RenderBox` protocol to correctly
-calculate the intrinsic sizes of a `RenderParagraph` with `WidgetSpan` children and a `RenderWrap`. The method receives a set of `BoxConstraints` and is
-expected to calculate the resulting size of the `RenderBox` without changing
+A new method, `computeDryLayout`, was added to the `RenderBox` protocol to
+correctly calculate the intrinsic sizes of a `RenderParagraph` with `WidgetSpan`
+children and a `RenderWrap`. The method receives a set of `BoxConstraints` and
+is expected to calculate the resulting size of the `RenderBox` without changing
 any internal state. It's essentially a dry run of `performLayout` that only
 calculates the resulting size and doesn't place the children. The
 `computeDryLayout` method is part of the intrinsics protocol (see also
-`RenderBox.computeMinIntrinsicWidth` and friends).
+[`RenderBox.computeMinIntrinsicWidth`][] and friends).
 
 ## Description of change
 
@@ -111,6 +112,7 @@ Relevant PRs:
 
 Master channel link:
 [`RenderBox`]: https://master-api.flutter.dev/flutter/rendering/RenderBox-class.html
+[`RenderBox.computeMinIntrinsicWidth`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
 [`computeMinInstrinsicWidth`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
 [`computeDryLayout`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeDryLayout.html
 [`getDryLayout`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/getDryLayout.html
