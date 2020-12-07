@@ -195,6 +195,7 @@ To migrate from flutter_driver, follow these steps:
 
 Before:
 
+<?code-excerpt "integration_test/test_driver/before.dart"?>
 ```dart
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
@@ -232,12 +233,13 @@ void main() {
 
 After:
 
+<?code-excerpt "integration_test/integration_test/counter_test.dart"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
 // The application under test.
-import 'package:driver_migrate/main.dart' as app;
+import 'package:integration_test_example/main.dart' as app;
 
 void main() {
   group('end-to-end test', () {
