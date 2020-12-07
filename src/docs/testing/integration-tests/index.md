@@ -193,12 +193,6 @@ To migrate from flutter_driver, follow these steps:
 2. Migrate any test_driver scripts to use package:integration_test and
   WidgetTester instead of package:flutter_driver.
 
-The first step is fairly easy. In the default `flutter create
---with-flutter-driver` sample, simply remove the
-`enableFlutterDriverExtension()` line from the `main` method of `main.dart`.
-
-For the second step, the sample test can be migrated as follows.
-
 Before:
 
 ```dart
