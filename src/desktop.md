@@ -87,6 +87,7 @@ you need the following in addition to the Flutter SDK:
 * [Ninja build][]
 * [pkg-config][]
 * libblkid
+* liblzma
 
 The easiest way to install the Flutter SDK along with these
 dependencies is by using [snapd][].
@@ -103,7 +104,7 @@ If `snapd` is unavailable on the Linux distro you're using,
 you might use the following command:
 
 ```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev liblzma-dev
 ```
 
 [Clang]: https://clang.llvm.org/
@@ -311,9 +312,9 @@ to distribute a Linux desktop app.
 
 [Build and release a Linux desktop app]: /docs/deployment/linux
 
-## Add desktop support to an existing app
+## Add desktop support to an existing Flutter app
 
-To add desktop support to an existing project,
+To add desktop support to an existing Flutter project,
 run the following command in a terminal from the
 root project directory:
 
@@ -321,8 +322,8 @@ root project directory:
 $ flutter create .
 ```
 
-This adds the necessary files and directories to your
-Flutter project.
+This adds the necessary desktop files and directories to your
+existing Flutter project.
 
 ## macOS-specific support
 

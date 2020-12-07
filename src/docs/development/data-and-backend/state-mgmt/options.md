@@ -121,6 +121,14 @@ Reactive state management that uses the Command Pattern and is based on `ValueNo
 * [Flutter Command package][] 
 * [RxCommand package][], `Stream` based implementation.
 
+## Binder
+
+A state management package that uses `InheritedWidget` at its core. Inspired in part by recoil. This package promotes the separation of concerns.
+
+* [Binder package][] 
+* [Binder examples][]
+* [Binder snippets][], vscode snippets to be even more productive with Binder
+
 ## GetX
 
 A simplified reactive state management solution.
@@ -128,6 +136,7 @@ A simplified reactive state management solution.
 * [GetX package][]
 * [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
+
 
 [Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
 [Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
@@ -174,3 +183,6 @@ A simplified reactive state management solution.
 [GetIt Mixin package]: https://pub.dev/packages/get_it_mixin
 [Flutter Command package]: https://pub.dev/packages/flutter_command
 [RxCommand package]: https://pub.dev/packages/rx_command
+[Binder package]: https://pub.dev/packages/binder
+[Binder examples]: https://github.com/letsar/binder/tree/main/examples
+[Binder snippets]: https://marketplace.visualstudio.com/items?itemName=romain-rastel.flutter-binder-snippets

@@ -444,11 +444,11 @@ import Flutter
 import UIKit
 
 class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
-    private weak var messenger: FlutterBinaryMessenger
+    private var messenger: FlutterBinaryMessenger
 
     init(messenger: FlutterBinaryMessenger) {
-        super.init()
         self.messenger = messenger
+        super.init()
     }
 
     func create(
@@ -473,12 +473,24 @@ class FLNativeView: NSObject, FlutterPlatformView {
         arguments args: Any?,
         binaryMessenger messenger: FlutterBinaryMessenger?
     ) {
-        super.init()
         _view = UIView()
+        super.init()
+        // iOS views can be created here
+        createNativeView(view: _view)
     }
 
     func view() -> UIView {
         return _view
+    }
+
+    func createNativeView(view _view: UIView){
+        _view.backgroundColor = UIColor.blue
+        let nativeLabel = UILabel()
+        nativeLabel.text = "Native text from iOS"
+        nativeLabel.textColor = UIColor.white
+        nativeLabel.textAlignment = .center
+        nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
+        _view.addSubview(nativeLabel)
     }
 }
 ```
@@ -497,12 +509,12 @@ import UIKit
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?
     ) -> Bool {
-        GeneratedPluginRegistrant.register(withRegistry: self)
+        GeneratedPluginRegistrant.register(with: self)
 
         weak var registrar = self.registrar(forPlugin: "plugin-name")
 
-        let factory = FLNativeViewFactory(messenger: registrar?.messenger)
-        self.registrar(forPlugin: "<plugin-name>").register(
+        let factory = FLNativeViewFactory(messenger: registrar!.messenger())
+        self.registrar(forPlugin: "<plugin-name>")!.register(
             factory,
             withId: "<platform-view-type>")
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)

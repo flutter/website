@@ -17,9 +17,11 @@ release, and listed in alphabetical order:
 * [Network Policy on iOS and Android][]
 * [SnackBars managed by the ScaffoldMessenger][]
 * [TextSelectionTheme migration][]
+* [Android FlutterMain.setIsRunningInRobolectricTest testing API removed][]
 * [Clip behavior][]
 
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
+[Android FlutterMain.setIsRunningInRobolectricTest testing API removed]: /docs/release/breaking-changes/android-setIsRunningInRobolectricTest-removed
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 [SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger

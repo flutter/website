@@ -50,6 +50,8 @@ which means the text "Hello, world" ends up centered on screen.
 The text direction needs to be specified in this instance;
 when the `MaterialApp` widget is used,
 this is taken care of for you, as demonstrated later.
+A `SafeArea` widget is also used to properly pad the text
+so it appears below the display on the top of the screen.
 
 When writing an app, you'll commonly author new widgets that
 are subclasses of either [`StatelessWidget`][] or [`StatefulWidget`][],
@@ -160,7 +162,9 @@ class MyScaffold extends StatelessWidget {
 void main() {
   runApp(MaterialApp(
     title: 'My app', // used by the OS task switcher
-    home: MyScaffold(),
+    home: SafeArea(
+      child: MyScaffold(),
+    ),
   ));
 }
 ```

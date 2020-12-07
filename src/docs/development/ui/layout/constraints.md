@@ -105,6 +105,11 @@ Flutter’s layout engine has a few important limitations:
   precisely define the size and position of any widget
   without taking into consideration the tree as a whole.
 
+* If a child wants a different size from its parent and 
+  the parent doesn't have enough information to align it,
+  then the child's size might be ignored.
+  **Be specific when defining alignment.**
+  
 ## Examples
 
 For an interactive experience, use the following DartPad.

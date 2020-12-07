@@ -238,7 +238,7 @@ print(<Widget>{ // this is the syntax for a Set<Widget> literal
 ```
 
 It should print 1 (rather than 2) because the two constants are the same and sets
-coallesce duplicate values (and indeed the analyzer complains that
+coalesce duplicate values (and indeed the analyzer complains that
 "Two elements in a set literal shouldn't be equal"). As expected, in release
 builds, it does print 1. However, in debug builds it prints 2. This is because the
 flutter tool injects the source location of Widget constructors into the code at compile
