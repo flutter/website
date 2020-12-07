@@ -38,8 +38,8 @@ These tests can also be run using `flutter_driver`. This allows you to run
 integration tests on a target device or emulator and view the results on your
 host machine. Previously, `flutter_driver` APIs needed to be used to perform
 actions a user would, like tapping on a button. But with `integration_test`, any
-action supported by the `flutter_test` package can be performed, in the same way
-a [widget test][] would.
+action supported by the `flutter_test` package can be used. This makes writing
+integration tests more like writing [widget tests][].
 
 ## Project Setup
 
