@@ -16,30 +16,36 @@ similar style as [widget tests][]
 
 ## Overview
 
+**Unit tests, widget tests, and integration tests**
+
 There are three types of tests that Flutter supports. A **unit** test verifies
 the behavior of a method or class. A **widget test** verifies the behavior of
-Flutter widgets without running the app itself. An **integration test** runs the
-full app.
+Flutter widgets without running the app itself. An **integration test** (also
+called end-to-end testing or GUI testing) runs the full app.
 
-During development, you are probably writing the code on a
-desktop computer, called the **host** machine, and running the app on a mobile
-device, browser, or desktop application, called the **target** device. (If you
-are using a web browser or desktop application, the host machine is also the
-target device.)
 
-The flutter_driver package runs integration tests written in Dart on a target
-device and reports the results to the host.
+**Hosts and targets*
 
-The [integration_test][] package lets you run tests directly on the target
-device. This allows you to run integration tests on multiple Android or iOS
-devices using Firebase Test Lab. 
+During development, you are probably writing the code on a desktop computer,
+called the **host** machine, and running the app on a mobile device, browser, or
+desktop application, called the **target** device. (If you are using a web
+browser or desktop application, the host machine is also the target device.)
 
-These tests can also be run using `flutter_driver`. This allows you to run
-integration tests on a target device or emulator and view the results on your
-host machine. Previously, `flutter_driver` APIs needed to be used to perform
-actions a user would, like tapping on a button. But with `integration_test`, any
-action supported by the `flutter_test` package can be used. This makes writing
-integration tests more like writing [widget tests][].
+**flutter_driver** 
+The `flutter_driver` package runs integration tests written in Dart on a target
+device and reports the results to the host. Tests written with `flutter_driver`
+run from the host and drive the app running on a real or virtual device. The
+`flutter drive` command is used to run tests written with this package.
+
+**integration_test**
+
+Tests written with the [integration_test][] package can:
+ 
+1. Run directly on the target device, allowing you to test on multiple Android
+or iOS devices using Firebase Test Lab.
+2. Run using `flutter_driver`. 
+3. Use `flutter_test` APIs, making integration tests more like writing [widget
+tests][].
 
 ## Project Setup
 
