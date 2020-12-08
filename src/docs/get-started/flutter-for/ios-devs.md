@@ -2207,7 +2207,7 @@ plugin documentation.
 [developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
 [DevTools]: /docs/development/tools/devtools
-[existing plugin]: ({{site.pub}}/flutter
+[existing plugin]: {{site.pub}}/flutter
 [`firebase_admob`]: {{site.pub-pkg}}/firebase_admob
 [`firebase_analytics`]: {{site.pub-pkg}}/firebase_analytics
 [`firebase_auth`]: {{site.pub-pkg}}/firebase_auth

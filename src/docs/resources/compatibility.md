@@ -38,6 +38,13 @@ break them overnight. This is independent of our compatibility policy
 which is exclusively based on whether submitted tests fail, as
 described above.
 
+Deprecated APIs are removed after a migration grace period. This grace
+period is one calendar year after being released on the stable channel,
+or after 4 stable releases, whichever is longer.
+
+When a deprecation does reach end of life, we follow the same procedures
+listed above for making breaking changes in removing the deprecated API.
+
 
 ## Dart and other libraries used by Flutter
 

@@ -1,10 +1,3 @@
-- title: 'Flutter Complete Reference'
-  authors:
-    - Alberto Miola
-  publisher: KDP Amazon
-  cover: flutter-complete-reference.png
-  link: "https://www.amazon.com/dp/B08KHKK8TR"
-  desc: "Create beautiful, fast and native apps for any device. You'll learn about the Dart programming language (version 2.10, with null safety support) and the Flutter framework (version 1.20).While reading the chapters, you'll find a lot of good practices, tips and performance advices to build high quality products."
 - title: 'Beginning App Development with Flutter'
   authors:
     - Rap Payne
@@ -19,6 +12,13 @@
   cover: beginning-flutter.png
   link: "https://www.wiley.com/en-us/Beginning+Flutter%3A+A+Hands+On+Guide+to+App+Development-p-9781119550822"
   desc: "Build your first app in Flutter–no experience necessary."
+- title: 'Flutter Complete Reference'
+  authors:
+    - Alberto Miola
+  publisher: KDP Amazon
+  cover: flutter-complete-reference.png
+  link: "https://www.amazon.com/dp/B08KHKK8TR"
+  desc: "Create beautiful, fast and native apps for any device. You'll learn about the Dart programming language (version 2.10, with null safety support) and the Flutter framework (version 1.20).While reading the chapters, you'll find a lot of good practices, tips and performance advices to build high quality products."  
 - title: 'Flutter Développez vos applications mobiles multiplateformes avec Dart'
   authors:
     - Julien Trillard

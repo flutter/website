@@ -1,5 +1,7 @@
 language: dart
 dart: stable
+os: linux
+dist: xenial
 
 # Flutter depends on /usr/lib/x86_64-linux-gnu/libstdc++.so.6 version GLIBCXX_3.4.18
 # https://github.com/flutter/flutter/issues/6207
@@ -20,21 +22,66 @@ cache:
   - $HOME/.rvm
   - node_modules
 
+jobs:
+  include:
+    - name: "Submodule commit: code check"
+      env:
+        - TASK="./tool/check-code.sh"
+
+    - name: "Submodule commit: jekyll build"
+      env:
+        - TASK="bundle exec jekyll build"
+
+    - name: "Dev channel: code check"
+      env:
+        - TASK="./tool/check-code.sh"
+        - CHANNEL=dev
+
+    - name: "Dev channel: jekyll build"
+      env:
+        - TASK="bundle exec jekyll build"
+        - CHANNEL=dev
+
+    - name: "Beta channel: code check"
+      env:
+        - TASK="./tool/check-code.sh"
+        - CHANNEL=beta
+
+    - name: "Beta channel: jekyll build"
+      env:
+        - TASK="bundle exec jekyll build"
+        - CHANNEL=beta
+
+    - name: "Stable channel: code check"
+      env:
+        - TASK="./tool/check-code.sh"
+        - CHANNEL=stable
+
+    - name: "Stable channel: jekyll build"
+      env:
+        - TASK="bundle exec jekyll build"
+        - CHANNEL=stable
+
+  allow_failures:
+    - name: "Submodule commit: code check"
+    - name: "Submodule commit: jekyll build"
+    - name: "Dev channel: code check"
+    - name: "Dev channel: jekyll build"
+    - name: "Beta channel: code check"
+    - name: "Beta channel: jekyll build"
+
 env:
   global:
     - JEKYLL_ENV=production
     - TZ=US/Pacific # normalize build timestamp
-  matrix:
-    - TASK="./tool/check-code.sh"
-    - TASK="bundle exec jekyll build"
 
 before_install:
   - source ./tool/env-set.sh
   - ./tool/before-install.sh
+  - if [[ ! -z $CHANNEL ]]; then ./flutter/bin/flutter channel $CHANNEL; fi
 
 install:
   - ./tool/install.sh
-  # - ./tool/shared/write-ci-info.sh -v
 
 script: $TASK
 

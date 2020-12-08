@@ -506,16 +506,6 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-scrollbar.png'>"
   },
   {
-    "name": "CupertinoSearchTextField",
-    "description": "An iOS-style search field.",
-    "categories": [
-      "Cupertino (iOS-style widgets)"
-    ],
-    "subcategories": [],
-    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSearchTextField-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-search-field.png'>"
-  },
-  {
     "name": "CupertinoSegmentedControl",
     "description": "An iOS-style segmented control. Used to select mutually exclusive options in a horizontal list.",
     "categories": [
