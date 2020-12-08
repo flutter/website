@@ -138,6 +138,8 @@ flutter drive \
   -d web-server
 ```
 
+To learn more, see the [Running Flutter Driver tests with Web][] wiki page.
+
 ## Testing on Firebase Test Lab 
 
 
@@ -288,3 +290,4 @@ equivalent methods.
 [iOS Device Testing]: https://pub.dev/packages/integration_test#android-device-testing
 [Firebase Console]: http://console.firebase.google.com/
 [Firebase Test Lab section of the README]: https://pub.dev/packages/integration_test#firebase-test-lab
+[Running Flutter Driver tests with Web]: https://github.com/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web
