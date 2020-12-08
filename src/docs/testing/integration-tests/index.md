@@ -71,8 +71,8 @@ void main() {
 ```
 
 {{site.alert.note}}
-Note: You should only use `testWidgets` to declare your tests, or errors will
-not be reported correctly.
+  Note: You should only use `testWidgets` to declare your tests, or errors won't
+  be reported correctly.
 {{site.alert.end}}
 
 
@@ -180,7 +180,6 @@ other tests:
 
 Click **Run a test**, select the **Instrumentation** test type and drag these
 two files:
- sdfasdf asdf 
  
  * `<flutter_project_directory>/build/app/outputs/apk/debug/<file>.apk`
  * `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
@@ -205,7 +204,7 @@ To migrate from flutter_driver, follow these steps:
 2. Migrate any `test_driver` scripts to use `package:integration_test` and
   WidgetTester instead of package:flutter_driver.
 
-Before:
+Code before migration:
 
 <?code-excerpt "integration_test/test_driver/before.dart"?>
 ```dart
@@ -242,7 +241,7 @@ void main() {
 }
 ```
 
-After:
+Code after migration:
 
 <?code-excerpt "integration_test/integration_test/counter_test.dart"?>
 ```dart
