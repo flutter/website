@@ -10,6 +10,13 @@ next:
   path: /docs/cookbook/testing/integration/scrolling
 ---
 
+{{site.alert.note}}
+  The integration_test package is now the recommended way to write integration
+  tests. See the [Integration testing](/docs/testing/integration-tests/) page
+  for details.
+{{site.alert.end}}
+
+
 Unit tests and widget tests are handy for testing individual classes,
 functions, or widgets. However, they generally don't test how
 individual pieces work together as a whole, or capture the performance

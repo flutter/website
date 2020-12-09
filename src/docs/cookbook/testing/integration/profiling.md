@@ -9,6 +9,12 @@ next:
   path: /docs/cookbook/testing/unit/introduction
 ---
 
+{{site.alert.note}}
+  The integration_test package is now the recommended way to write integration
+  tests. See the [Integration testing](/docs/testing/integration-tests/) page
+  for details.
+{{site.alert.end}}
+
 When it comes to mobile apps, performance is critical to user experience.
 Users expect apps to have smooth scrolling and meaningful animations free of
 stuttering or skipped frames, known as "jank." How to ensure that your app
