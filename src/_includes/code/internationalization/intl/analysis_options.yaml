@@ -1,7 +1,0 @@
-include: package:flutter/analysis_options_user.yaml
-
-# TODO: Remove these excludes when https://github.com/flutter/flutter/issues/12726 is fixed.
-analyzer:
-  errors:
-    unused_element: ignore
-    non_constant_identifier_names: ignore

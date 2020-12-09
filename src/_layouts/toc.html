@@ -1,0 +1,32 @@
+---
+layout: default
+toc: false
+---
+
+{% assign url = page.url | regex_replace: '/index$|/index.html$|/$' -%}
+{% assign path_parts = url | split: '/' -%}
+{% assign topics = site.data.sidenav -%}
+
+{% comment %}
+  - path_parts[0] == '' because page.url always starts with '/'
+  - (path_parts | size) > 2 since we don't use this layout at
+    the top level, nor at the second level (under our current IA)
+{% endcomment -%}
+
+{% for path_part in path_parts -%}
+  {% if forloop.first == true -%}
+    {% assign path = '' -%}
+  {% else -%}
+    {% assign path = path | append: '/' | append: path_part -%}
+  {% endif -%}
+  {% if forloop.index0 > 1 -%}
+    {% assign topics = topics | where: "permalink", path -%}
+    {% assign topics = topics[0].children -%}
+  {% endif -%}
+{% endfor -%}
+
+{% assign entries = topics -%}
+{% capture md %}{% include mini-toc.md %}{% endcapture %}
+{{ md | markdownify }}
+
+{{content}}

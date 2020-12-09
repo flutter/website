@@ -1,4 +1,7 @@
-$tab-accent-color: $brand-color;
+// TODO(chalin): Temporary: adapted styles originally copied from old assets
+// folder. These might be replaced by use of BS tabs (at least to some extent).
+
+$tab-accent-color: $primary;
 
 // General tabs. These are intended for instructions that vary according to user
 // selection, e.g. around editor choice in getting started.
@@ -11,7 +14,7 @@ ul.tabs__top-bar {
 
 ul.tabs__top-bar li {
   background: none;
-  color: $grey-color;
+  color: gray("500");
   display: inline-block;
   padding: 5px 12px;
   cursor: pointer;
@@ -19,7 +22,7 @@ ul.tabs__top-bar li {
 
 ul.tabs__top-bar li.current{
   background: $tab-accent-color;
-  color: $background-color;
+  color: $site-color-white;
 }
 
 .tabs__content{

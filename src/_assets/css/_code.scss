@@ -1,0 +1,82 @@
+@mixin pre-defaults {
+  background-color: $site-color-codeblock-bg;
+  padding: bs-spacer(3) bs-spacer(4);
+}
+
+@import '_code_shared';
+
+code {
+  color: #008f83;
+}
+
+pre {
+  @include pre-defaults;
+}
+
+// Give code blocks the same margin-bottom as regular paragraphs.
+div.highlighter-rouge {
+  margin-bottom: bs-spacer(4);
+}
+
+pre > span.strike { text-decoration: line-through; }
+
+.numbered-code-notes {
+  list-style-type: none;
+  padding-left: 0;
+  display: table;
+  li {
+    counter-increment: code-note-counter;
+    display: table-row;
+    padding-left: 8px;
+    &:before {
+      font-family: $font-family-monospace;
+      content: '/*' counter(code-note-counter) '*/' ;
+      display: table-cell;
+      text-align: right;
+      color: $teal;
+      padding-right: $font-size-base / 2;
+      // background-color: lightyellow;
+    }
+  }
+}
+
+@mixin code-excerpt-border($side: '') {
+  border#{$side}: $border-width solid $border-color;
+}
+
+.code-excerpt {
+  &__code {
+    @include code-excerpt-border;
+    margin-bottom: bs-spacer(4);
+    position: relative;
+
+    pre {
+      background-color: $gray-100;
+      margin-bottom: 0;
+    }
+  }
+
+  &__copy-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: lighten($site-color-body, 20%); // Offers better contrast on dark bg
+    margin-top: bs-spacer(2);
+    outline: none !important;
+    position: absolute;
+    right: 0;
+  }
+
+  &__header {
+    background-color: $gray-200;
+    @include code-excerpt-border('-top');
+    @include code-excerpt-border('-left');
+    @include code-excerpt-border('-right');
+    font-size: $site-spacer * .875;
+    font-weight: $font-weight-bold;
+    padding-top: bs-spacer(3);
+    padding-left: bs-spacer(4);
+    padding-right: bs-spacer(2);
+    padding-bottom: 0.67rem;
+  }
+}

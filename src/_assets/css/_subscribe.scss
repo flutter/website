@@ -1,0 +1,107 @@
+$bg-color: #F8F8FA;
+$form-blue: #E1EAF2;
+$required-red: #FF0000;
+$mobile-size: 640px;
+
+.subscribed-page {
+  background-color: $bg-color;
+
+  img {
+    margin-bottom: 16px;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 720px;
+    margin: 0 auto 0 auto;
+    padding: 48px 0 48px 0;
+  }
+}
+
+.form-page {
+  background-color: $bg-color;
+  margin: 0;
+  padding: 48px 0 48px 0;
+}
+
+.subscribe-form {
+  background-color: $form-blue;
+  display: flex;
+  flex-direction: row;
+  max-width: 960px;
+  margin: 48px auto 0px auto;
+  padding: 48px 48px 0 48px;
+
+  input {
+    height: 48px;
+  }
+
+  form {
+    width: 100%;
+    flex: 2;
+    > * {
+      margin-bottom: 12px;
+    }
+  }
+
+  .flutter-logo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @media screen and (max-width: $mobile-size) {
+      display: none;
+    }
+  }
+
+  .horizontal {
+    display: flex;
+    flex-direction: row;
+    .group:first-child {
+      margin-right: 12px;
+    }
+  }
+
+  .group {
+    flex: 1;
+
+    > * {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    select#country {
+      width: 100%;
+    }
+  }
+
+  .tos {
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  span.required, #error-container {
+    color: $required-red;
+  }
+
+  .checkbox-group {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > label {
+      margin-left: 12px;
+      margin-bottom: 0px;
+    }
+  }
+
+  button {
+    width: 192px;
+  }
+}

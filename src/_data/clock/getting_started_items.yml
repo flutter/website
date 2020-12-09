@@ -1,0 +1,72 @@
+- title: >
+    Download the <a href="https://github.com/flutter/flutter_clock" target="_blank" rel="noopener noreferrer">Flutter Clock GitHub repo</a> using
+    <span class="code-font">git clone<span>.
+
+- title: >
+    Choose a sample clock and enter that folder using: <span class="code-font">
+    cd &#60;path-to-repo&#62;/flutter_clock/&#60;name&#62;_clock</span>
+  subItems:
+  - text: >
+     Sample clock 1: <a href="https://github.com/flutter/flutter_clock/tree/master/analog_clock" target="_blank" rel="noopener noreferrer">
+      Basic analog clock</a>.
+  - text: >
+      Sample clock 2: <a href="https://github.com/flutter/flutter_clock/tree/master/digital_clock" target="_blank"  rel="noopener noreferrer">
+      Basic digital clock</a>.
+
+- title: >
+    Run the clock app in your IDE, or by using <span class="code-font">flutter run</span> at the command line.
+
+- title: >
+    Build your clock inside a folder called <span class="code-font">&#60;name&#62;_clock</span>.
+  noListItemStyle: true
+  subItems:
+  - text: >
+      You can build upon the existing code (<span class="code-font">analog_clock</span> or <span class="code-font">
+      digital_clock</span>), or you can start from scratch (<span class="code-font">flutter create &#60;name&#62;_clock</span>).
+      If you are new to Flutter, check out the <a href="https://flutter.dev/docs/get-started/codelab" target="_blank" rel="noopener noreferrer">
+      Write your first Flutter app</a> codelab.
+
+- title: >
+    Prepare your clock for submission:
+  subItems:
+    - text: >
+        <a href="https://flutter.dev/docs/development/tools/formatting" target="_blank" rel="noopener noreferrer">Format the Dart code.</a>
+    - text: >
+        Verify that your clock builds and runs on
+        <a href="https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable" target="_blank" rel="noopener noreferrer">
+        the latest Flutter stable channel</a>.
+    - text: >
+        In your <span class="code-font">&#60;name&#62;_clock</span> directory, reduce the clock’s size:
+      subItems:
+          - text: >
+              Delete the <span class="code-font">&#60;name&#62;_clock/ios</span>,
+              <span class="code-font">&#60;name&#62;_clock/android</span>, and
+              <span class="code-font">&#60;name&#62;_clock/web</span> (if present) folders.
+          - text: >
+              Run <span class="code-font">flutter clean</span>.
+    - text: >
+        In your <span class="code-font">&#60;path-to-repo&#62;/flutter_clock</span> folder, zip these two folders:
+      subItems:
+          - text: >
+              <span class="code-font">flutter_clock_helper</span> (unedited)
+          - text: >
+              <span class="code-font">&#60;name&#62;_clock</span> (your clock)
+
+- title: >
+    Verify that your <span class="code-font">&#60;project&#62;.zip</span> file works, using the following steps:
+  noListItemStyle: true
+  subItems:
+    - text: >
+        <span class="code-font">flutter channel stable</span>
+    - text: >
+        <span class="code-font">flutter upgrade</span>
+    - text: >
+        <span class="code-font">unzip &#60;project&#62;.zip</span>
+    - text: >
+        <span class="code-font">cd &#60;name&#62;_clock</span>
+    - text: >
+        <span class="code-font">flutter create .</span>
+    - text: >
+        <span class="code-font">flutter run</span> (on Android or iOS in landscape)
+- title: >
+        Submit your clock.

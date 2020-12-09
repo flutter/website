@@ -1,0 +1,212 @@
+/**
+ * Site header and navbar
+ */
+.site-header {
+  $color: #424242;
+
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  min-height: 56px;
+  background-color: white;
+  color: $color;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+
+  .navbar {
+    padding-left: 24px;
+    padding-right: 24px;
+
+    .site-nav-horizontal {
+      @include media-breakpoint-down(sm) { display: none; }
+    }
+
+    .site-nav-vertical {
+      @include media-breakpoint-up(pa) { display: none; }
+    }
+
+    .dropdown-item {
+      // Match 2018 site
+      color: $color;
+      font-size: $body-font-size;
+      font-weight: $font-weight-light;
+    }
+    .dropdown-menu {
+      // Match 2018 site
+      border-color: $grey-color-light;
+    }
+    .dropdown-toggle {
+      // Match 2018 site menu icon
+      cursor: pointer;
+      &:after {
+        // Reset bootstrap settings
+        border: none;
+        height: auto;
+        width: auto;
+        // Set our own icon
+        @include md-icon-content('more_vert');
+        font-size: $h4-font-size;
+      }
+    }
+
+    // Searchbox
+
+    .dropdown-menu .form-group {
+      margin-bottom: 0;
+    }
+
+    #cse-search-box {
+      display: inline;
+
+      input {
+        font-size: $body-font-size;
+        font-weight: $font-weight-light;
+        color: $color;
+        // Match 2018 site searchbox
+        height: 28px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: inherit;
+        input { width: auto; }
+      }
+
+      // Just before the down(sm) break point, the nav gets too large
+      // so make the searchbox a litte narrower.
+      @include media-query($on-palm + 58px) { input { width: 100px; } }
+    }
+
+    .nav-item {
+      color: #424242;
+      line-height: $base-line-height;
+
+      // Gaps between nav items, but not on the first one
+      &:not(:first-child) {
+          margin-left: 20px;
+      }
+    }
+  }
+
+  .site-title {
+    font-size: 26px;
+    vertical-align: middle;
+    line-height: 56px;
+
+    &, &:visited {
+      color: #424242;
+    }
+  }
+
+  .project-status {
+    vertical-align: -webkit-baseline-middle;
+  }
+
+}
+
+.homepage .navbar {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 0;
+
+    @include media-query($content-width + 50px) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.contents {
+    padding: 56px 24px 24px 24px;
+}
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+    padding-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
+    background: #0091ea;
+    color: white;
+
+    a {
+        color: white;
+    }
+
+    &__link-list {
+        font-size: 14px;
+        font-weight: 300;
+    }
+}
+
+.logo {
+  float: left;
+  position: relative;
+  margin-right: 20px;
+
+  @include media-query($on-palm) {
+      top: -15px;
+
+      svg {
+          width: 100px;
+          height: 64px;
+      }
+  }
+}
+
+
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 24px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h3 {
+        font-size: 18px;
+
+        @include media-query($on-laptop) {
+            font-size: 16px;
+        }
+    }
+
+    h4 {
+        font-size: 14px;
+
+        @include media-query($on-laptop) {
+            font-size: 12px;
+        }
+    }
+
+    a {
+        hyphens: auto;
+    }
+}
+
+/* Make fragment identifier links visible below the header. */
+:target:before {
+    content: "";
+    display: block;
+    height: 112px;
+}

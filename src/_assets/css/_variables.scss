@@ -1,0 +1,46 @@
+// Colors
+$flutter-color-teal: #60caf6;
+$flutter-color-blue-500: #1389FD;
+$flutter-color-dark-blue: #075b9a;
+$flutter-color-fuchsia: #FF2B5B;
+$flutter-color-light-blue: #E7F8FF;
+$flutter-dark-blue-texture: #232C33;
+$site-color-black: #000;
+$site-color-white: #FFF;
+$site-color-codeblock-bg: #F8F9FA;
+$site-color-light-grey: #D8D8D8;
+$site-color-nav-links: #6E7274;
+$site-color-body: #4A4A4A;
+$site-color-body-light: rgba(74/255, 74/255, 74/255, .8);
+$site-color-footer: #303c42;
+$site-color-primary: $flutter-color-blue-500;
+$twitter-color: #60CAF6;
+
+// Fonts
+$site-font-family-base: 'Roboto', sans-serif;
+$site-font-family-alt: 'Google Sans', 'Roboto', sans-serif;
+$site-font-family-icon: 'Material Icons';
+$site-font-family-monospace: 'Roboto Mono', monospace;
+$site-font-family-courier: 'Courier', monospace;
+$site-font-icon: 24px/1 $site-font-family-icon;
+
+// Layout
+$site-header-height: 66px;
+$site-footer-md-default-height: 140px;
+$site-content-top-padding: 40px;
+$site-content-max-width: 960px;
+$site-sidebar-side-padding: 16px;
+$site-nav-mobile-side-padding: 20px;
+$site-snackbar-padding: 20px;
+
+// Layer stack
+$site-z-header: 100;
+$site-z-footer: 99;
+$site-z-snackbar: 150;
+$hero-layer-1-z: 40;
+$hero-layer-2-z: 41;
+$hero-layer-3-z: 42;
+$hero-layer-4-z: 43;
+$hero-layer-5-z: 44;
+$hero-phone-z: 50;
+$hero-text-z: 60;

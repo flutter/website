@@ -3,7 +3,7 @@
     "name": "Basics",
     "description": "Widgets you absolutely need to know before building your first Flutter app.",
     "priority": "high",
-    "id":"basics"
+    "id": "basics"
   },
   {
     "name": "Material Components",
@@ -25,16 +25,15 @@
         "name": "Information displays"
       },
       {
-        "name": "Layout",
-        "description": "See also Flutter's <a href=\"/widgets/catalog/layout/\">general layout widgets</a> (such as row, column, and more)."
+        "name": "Layout"
       }
     ],
-    "id":"material"
+    "id": "material"
   },
   {
     "name": "Cupertino (iOS-style widgets)",
     "description": "Beautiful and high-fidelity widgets for current iOS design language.",
-    "id":"cupertino"
+    "id": "cupertino"
   },
   {
     "name": "Layout",
@@ -46,33 +45,30 @@
       },
       {
         "name": "Multi-child layout widgets",
-        "description":"These widgets take multiple children and arrange them in different ways."
-      },
-      {
-        "name": "Layout helpers"
+        "description": "These widgets take multiple children and arrange them in different ways."
       }
     ],
-    "id":"layout"
+    "id": "layout"
   },
   {
     "name": "Text",
     "description": "Display and style text.",
-    "id":"text"
+    "id": "text"
   },
   {
     "name": "Assets, Images, and Icons",
     "description": "Manage assets, display images, and show icons.",
-    "id":"assets"
+    "id": "assets"
   },
   {
     "name": "Input",
     "description": "Take user input in addition to input widgets in Material Components and Cupertino.",
-    "id":"input"
+    "id": "input"
   },
   {
     "name": "Animation and Motion",
-    "description": "Bring animations to your app. Check out <a href=\"/animations/\">Animations</a> in Flutter for an overview.",
-    "id":"animation"
+    "description": "Bring animations to your app.",
+    "id": "animation"
   },
   {
     "name": "Interaction Models",
@@ -85,31 +81,31 @@
         "name": "Routing"
       }
     ],
-    "id":"interaction"
+    "id": "interaction"
   },
   {
     "name": "Styling",
     "description": "Manage the theme of your app, makes your app responsive to screen sizes, or add padding.",
-    "id":"styling"
+    "id": "styling"
   },
   {
     "name": "Painting and effects",
     "description": "These widgets apply visual effects to the children without changing their layout, size, or position.",
-    "id":"painting"
+    "id": "painting"
   },
   {
     "name": "Async",
     "description": "Async patterns to your Flutter application.",
-    "id":"async"
+    "id": "async"
   },
   {
     "name": "Scrolling",
     "description": "Scroll multiple widgets as children of the parent.",
-    "id":"scrolling"
+    "id": "scrolling"
   },
   {
     "name": "Accessibility",
-    "description": "Make your app accessible. (This is a work-in-progress.)",
-    "id":"accessibility"
-  },
+    "description": "Make your app accessible.",
+    "id": "accessibility"
+  }
 ]

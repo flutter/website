@@ -1,19 +1,29 @@
 #!/bin/bash
+#
+# FIXME(chalin): this script really needs to be split into multiple scripts.
 
 # Fast fail the script on failures.
 set -e
 
+cd `dirname $0`/..
+ROOT=$(pwd)
+
 BUILD=1
+CHECK_CODE=1
 CHECK_LINKS=1
 PUB_CMD="get"
+TEST=1
 
 while [[ "$1" == -* ]]; do
   case "$1" in
+    --filter)   shift; FILTER="$1"; shift;;
     --no-build) BUILD=; shift;;
+    --no-check-code)  CHECK_CODE=; shift;;
     --no-check-links) CHECK_LINKS=; shift;;
     --no-get)   PUB_CMD=""; shift;;
+    --no-test)  TEST=; shift;;
     --up*)      PUB_CMD="upgrade"; shift;;
-    -h|--help)  echo "Usage: $(basename $0) [-h|--help] [--no-get|--upgrade] [--no-[build|check-links]]";
+    -h|--help)  echo "Usage: $(basename $0) [-h|--help] [--no-get|--upgrade] [--no-[build|check-links|test]] [--filter=project-glob-pattern]";
                 exit 0;;
     *)          echo "ERROR: Unrecognized option: $1. Use --help for details."; exit 1;;
   esac
@@ -38,6 +48,7 @@ function check_formatting() {
   elif [[ "${#fmt_result[@]}" == 0 ]]; then
     echo "No formatting errors!"
   else
+    pushd $@
     error "There are formatting errors in the following files:"$'\n'
     for file in "${fmt_result[@]}"; do
       error "===== $file ====="
@@ -52,6 +63,7 @@ function check_formatting() {
       error "===== /end $file ====="$'\n'
       rm "$file.expected"
     done
+    popd
     return 1
   fi
 }
@@ -63,7 +75,7 @@ function deploy() {
   local project="$2"
   while [[ "$remaining_tries" > 0 ]]; do
     # FIREBASE_TOKEN is set in the .cirrus.yml file.
-    firebase deploy --token "$FIREBASE_TOKEN" --non-interactive --project "$project" && break
+    npx firebase deploy --token "$FIREBASE_TOKEN" --non-interactive --project "$project" && break
     remaining_tries=$(($remaining_tries - 1))
     error "Error: Unable to deploy project $project to Firebase. Retrying in five seconds... ($remaining_tries tries left)"
     sleep 5
@@ -119,28 +131,75 @@ echo "Using Dart SDK: $dart"
 "$dart" --version
 
 if [[ -n $PUB_CMD ]]; then
-  "$flutter" packages $PUB_CMD
-
-  # Analyze the stand-alone sample code files
-  for sample in src/_includes/code/*/*; do
-    if [[ -d "${sample}" ]]; then
-      echo "Run flutter packages $PUB_CMD on ${sample}"
-      "$flutter" packages $PUB_CMD ${sample}
-    fi
-  done
+  (
+    set -x;
+    rm -rf example.g
+    mkdir -pv example.g
+    cp example/* example.g/
+  )
+  (
+    cd example.g;
+    "$flutter" packages $PUB_CMD
+  )
 fi
 
-echo "ANALYZING _includes/code/*:"
-"$flutter" analyze --no-current-package src/_includes/code/
+if [[ -n $CHECK_CODE ]]; then
+  echo "EXTRACTING code snippets from the markdown:"
+  "$dart" tool/extract.dart
 
-echo "EXTRACTING code snippets from the markdown:"
-"$dart" --preview-dart-2 tool/extract.dart
+  echo "ANALYZING extracted code snippets:"
+  # TODO(dnfield): Remove this once CI passes without it. There appears to be
+  # a bug currently in the Dart version in flutter:stable that fails to analyze
+  # when these are present.
+  (
+    set -x;
+    rm -rf .dart_tool
+    rm -rf example.g/.dart_tool
+  )
+  (cd example.g; "$flutter" analyze --no-current-package .)
 
-echo "ANALYZING extracted code snippets:"
-"$flutter" analyze --no-current-package example.g/
+  echo "DARTFMT check of extracted code snippets:"
+  check_formatting example.g
 
-echo "DARTFMT check of extracted code snippets:"
-check_formatting example.g/*.dart
+  echo "ANALYZING and testing apps in examples/*"
+  for sample in examples/*/*{,/*}; do
+    if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
+      if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
+        echo "Example: $sample - skipped because of filter"
+        continue;
+      else
+        echo "Example: $sample"
+      fi
+      if [[ -n $TEST && -d "$sample/test" ]]; then
+        # Only hydrate the sample if we're going to test it.
+        (
+          set -x;
+          cd $ROOT;
+          "$flutter" create --no-overwrite $sample
+        )
+      fi
+      (
+        set -x;
+        cd "$sample"
+        "$flutter" packages $PUB_CMD;
+        "$flutter" analyze .;
+      )
+      if [[ -n $TEST && -d "$sample/test" ]]; then
+        (
+          cd "$sample";
+          set -x;
+          "$flutter" test
+        )
+      elif [[ -n $TEST ]]; then
+        echo "Sample has no tests."
+      fi
+      echo
+    fi
+  done
+
+else
+  echo "SKIPPING: code checks"
+fi
 
 if [[ -n $BUILD ]]; then
   echo "BUILDING site:"
@@ -160,7 +219,7 @@ fi
 # Deploy on all non-PR master branch builds.
 if [[ -z "$CIRRUS_PR" && "$CIRRUS_BRANCH" == "master" ]]; then
   echo "Deploying website to Firebase:"
-  deploy 5 sweltering-fire-2088
+  deploy 5 flutter-dev-230821
   echo "SUCCESS: Website deployed"
 fi
 

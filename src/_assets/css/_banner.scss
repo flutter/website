@@ -1,0 +1,48 @@
+.site-banner {
+  background-color: $flutter-color-dark-blue;
+  color: $site-color-white;
+  font-family: $site-font-family-alt;
+  font-size: $font-size-lg;
+  padding: bs-spacer(5);
+  position: relative;
+  text-align: center;
+
+  p {
+    margin-bottom: bs-spacer(3);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $flutter-color-teal;
+
+    &:hover {
+      color: $flutter-color-teal;
+    }
+  }
+
+  // customizations per banner
+
+  &.site-banner--default {
+    &:before,
+    &:after {
+      background-image: url('/images/flutter-chevron-bg.svg');
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      content: '';
+      height: 100%;
+      left: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &:before {
+      transform: scaleX(-1);
+    }
+  }
+}

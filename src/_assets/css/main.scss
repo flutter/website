@@ -1,103 +1,38 @@
-// Variables
-$base-font-family: Roboto, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+// variables
+@import '_variables';
 
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #0091ea;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-$primary-color:    #01579b;
-$nav-text-color:   white;
-
-// Copied from site-www _colors.scss
-$grey-500: #9E9E9E;
-$grey-900: #212121;
-$light-green-600: #7CB342;
-$light-green-A700: #64DD17;
-
-// Width of the content area
-$content-width:    980px;
-
-$on-palm:          710px;
-$on-laptop:        980px;
-
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-@import '_bootstrap_config';
-@import 'bootstrap-sprockets'; // TODO: remove for BS 4
+// configs
+@import '_bootstrap_config_shared';
 @import 'bootstrap';
-
-// Lavish-bootstrap didn't have container-fluid, so undo BS3's added padding
-.container-fluid {
-  padding: 0;
-}
-
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-@import
-        "base",
-        "fix_custom_search_results",
-        "layout",
-        "header",
-        "customstyles",
-        "sidebar",
-        "tutorial",
-        "prism",
-        "prism_overrides",
-        "code_pre",
-        "catalog",
-        "homepage",
-        "responsive_embeds",
-        "tabs",
-        "archive",
-        "showcase"
-;
+// components
+@import '_base';
+@import '_header_shared';
+@import '_banner';
+@import '_next-prev-nav';
+@import '_sidebar_shared';
+@import '_toc_shared';
+@import '_content';
+@import '_footer';
+@import '_bootstrap_adjust';
+@import '_material_colors';
+@import '_tabs';
+@import '_code';
+@import '_snackbar';
+@import '_animations';
+@import '_d2h.scss';
 
-aside > :not(pre) > code[class*="language-"], aside > pre[class*="language-"] {
-    background: inherit;
-}
+// page types
+@import '_landing-page';
+@import '_homepage';
+@import '_showcase';
+@import '_clock';
+@import '_subscribe';
+@import '_community';
+@import '_create';
+@import '_books';
+@import '_404';
 
-@media print {
-    /* Don't display header, footer, sidenav when printing */
-    #side-nav-container, .site-header, .site-footer, .contribute {
-        display:none;
-    }
-
-    /* Use the whole page */
-    .main-contents, .container-fluid {
-        width: auto;
-        margin: 0;
-        padding: 1em;
-    }
-
-    /* Because we have some long code samples, allow page breaks within them */
-    pre {
-      page-break-inside: auto;
-    }
-
-    /* Remove link path */
-    a:after {
-        content: none !important;
-    }
-}
+@import '_site_overrides';

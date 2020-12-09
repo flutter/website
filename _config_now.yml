@@ -1,4 +1,6 @@
 # Fixed time stamp (useful when comparing generated site versions)
+# Use with with serve script: ./tool/serve.sh --pin-now
+
 now: 2018-07-01 12:34:56
 
 assets:

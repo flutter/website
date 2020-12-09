@@ -1,0 +1,42 @@
+{% comment %}
+  Include parameters:
+
+  - class: CSS classes to add to toc element.
+  - header: header text, default 'Contents'
+  - kind: should be one of 'inline' or 'side'; if present it is
+    suffixed to the toc id, e.g. id="site-toc--side"
+
+  If you don't want the back-to-top button style `site-toc__back-to-top` as `display: none`.
+{% endcomment -%}
+
+{% if include.kind -%}
+  {% assign id-suffix = include.kind | prepend: '--' -%}
+{% endif -%}
+
+{% assign toc = content | toc_only -%}
+{% if include.extendToc -%}
+  {% assign toc = toc | replace: '<ul>', '<ul class="nav">' %}
+  {% assign toc = toc | replace: '<ul class="section-nav">', '<ul class="section-nav nav">' %}
+  {% assign toc = toc | replace: 'class="toc-entry', 'class="toc-entry nav-item' %}
+  {% assign toc = toc | replace: '<a href="#', '<a class="nav-link" href="#' %}
+{% endif -%}
+
+{% comment %}
+  A TOC without <li> elements is empty. Only generate a TOC <div> for non-empty TOCs.
+{% endcomment -%}
+
+{% if toc contains "<li" -%}
+<div
+  id="site-toc{{id-suffix}}"
+  class="site-toc site-toc--{{include.kind}} {{include.class}}"
+  {% if include.kind == 'side' %}data-fixed-column{% endif %}
+>
+  <header class="site-toc__title">
+    {{include.header | default: 'Contents'}}
+    {% unless include.kind == 'inline' -%}
+      <button type="button" class="btn site-toc--button__page-top" aria-label="Page top"></button>
+    {% endunless -%}
+  </header>
+  {{ toc }}
+</div>
+{% endif -%}

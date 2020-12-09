@@ -1,0 +1,11 @@
+[submodule "site-shared"]
+	path = site-shared
+	url = https://github.com/dart-lang/site-shared.git
+  branch = master
+[submodule "flutter"]
+	path = flutter
+	url = https://github.com/flutter/flutter
+	branch = stable
+[submodule "examples/codelabs"]
+	path = examples/codelabs
+	url = https://github.com/flutter/codelabs

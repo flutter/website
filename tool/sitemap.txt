@@ -1,11 +1,11 @@
 http://localhost:3474/
-http://localhost:3474/technical-overview/
+http://localhost:3474/architectural-overview/
 http://localhost:3474/tos
 http://localhost:3474/tos/
-http://localhost:3474/technical-overview
+http://localhost:3474/architectural-overview
 http://localhost:3474/faq/
 http://localhost:3474/formatting/
-http://localhost:3474/technical-overview/
+http://localhost:3474/architectural-overview/
 http://localhost:3474/upgrading/
 http://localhost:3474/ios-release/
 http://localhost:3474/android-release/

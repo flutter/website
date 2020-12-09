@@ -1,0 +1,57 @@
+//== General
+
+$enable-shadows: true;
+
+//== Card
+
+$card-border-width: 0;
+// $card-border-color: rgba(0,0,0,0);
+
+//== Headings
+
+// The following are needed only because _bootstrap_config_shared is not
+// imported in the right order:
+// https://github.com/dart-lang/site-www/issues/2007
+$headings-font-family: $site-font-family-gsans;
+$headings-font-weight: 400;
+
+// Move to _bootstrap_config_shared once #2007 is fixed:
+$headings-color: $site-color-body;
+
+//== Code
+
+$code-color:   #444; // Match Lavish settings
+$code-bg:   #f0f0f0; // Match Lavish settings
+$pre-color: #77777a; // Match Lavish settings
+
+//== Grid https://getbootstrap.com/docs/4.0/layout/grid/#grid-tiers
+//
+// Media of at least the minimum breakpoint width.
+//   @include media-breakpoint-up(bp) { ... }
+//
+// Media of at most the maximum breakpoint width.
+//   @include media-breakpoint-down(bp) { ... }
+
+// Use old flutter/website palm and laptop breakpoints for md and lg.
+//
+// Why the + 0.02px? Bootstrap uses fractional widths with max-width media
+// queires. The 2018Q1 site design breaks on exact widths (e.g., $on-palm).
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  pa: $on-palm + 0.02px,
+  md: 768px,
+  la: $on-laptop + 0.02px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  pa: $on-palm - 40px,
+  md: 720px,
+  lg: 960px,
+  la: $on-laptop, // Note: exceptionally la max-width == la breakpoint
+  xl: 1140px
+);

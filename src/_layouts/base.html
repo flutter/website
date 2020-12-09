@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html -%}
+
+  <body {%- if page.body_class %} class="{{ page.body_class }}" {%- endif %}>
+    {% include body.html -%}
+
+    <div id="overlay-under-drawer">
+      {%- comment %} For the drawer on narrow screens {% endcomment -%}
+    </div>
+
+    {% include header.html -%}
+
+    {% include banner.html -%}
+
+    {{ content }}
+
+    {% if page.show_footer -%}
+      {%- include footer.html %}
+    {% endif %}
+    <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=at3ul57xpub2vk3oxt2ytw365i"></script>
+  </body>
+</html>

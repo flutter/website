@@ -1,303 +1,336 @@
-# [Flutter][]'s website
+# [Flutter][]'s website ![Flutter logo][]
 
-The website for [Flutter][].
+[![Build Status][]][Repo on Travis]
 
-[![Build Status](https://api.cirrus-ci.com/github/flutter/website.svg?branch=master)](https://cirrus-ci.com/github/flutter/website/master)
+## Table of contents
+
+* [Issues, bugs, and requests](#issues-bugs-and-requests)
+* [Before you build this site](#before-you-build-this-site)
+  - [1. Get the prerequisites](#1-get-the-prerequisites)
+  - [2. Clone this repo _and_ its submodules](#2-clone-this-repo-and-its-submodules)
+  - [3. Run installation scripts](#3-run-installation-scripts)
+* [Developing and serving changes](#developing-and-serving-changes)
+* [Creating and/or editing DartPad example code](#creating-andor-editing-dartpad-example-code)
+  - [DartPad example code in GitHub gists](#dartpad-example-code-in-github-gists)
+  - [DartPad example code in this repo - `src/_packages/dartpad_picker`](#dartpad-example-code-in-this-repo---src_packagesdartpad_picker)
+* [Deploy to a staging site](#deploy-to-a-staging-site)
+  - [Alternate deployment script](#alternate-deployment-script)
+* [Deploying to the official site](#deploying-to-the-official-site)
+* [Writing for flutter.dev](#writing-for-flutterdev)
 
 ## Issues, bugs, and requests
 
 We welcome contributions and feedback on our website!
 Please file a request in our
-[issue tracker](https://github.com/flutter/flutter/issues/new)
+[issue tracker](https://github.com/flutter/website/issues/new)
 and we'll take a look.
 
-## Developing
+> NOTE: For simple changes (such as to CSS and text), you probably don't need to
+> build this site. Often, you can make changes using the GitHub UI.
+> If you want/need to build, read on.
 
-Install Jekyll and related tools by following the
-[instructions](https://help.github.com/articles/using-jekyll-with-pages/)
-provided by GitHub.
+## Before you build this site
 
-A tldr version follows:
+### 1. Get the prerequisites
 
- 1. Ensure you have [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
-    installed; you need version 2.4.3 or later:<br>
-    `ruby --version`
+Install the following tools, if you don't have them already.
 
- 1. Ensure you have [Bundler](http://bundler.io/) installed; if not install with:<br>
-    `gem install bundler`
+- **bash**, the Bourne shell. These instructions assume you're using `bash` -- setup might not work if you use another shell.
+- **[nvm][]**, the Node Version Manager.
 
- 1. Install Ruby gems:<br> `bundle install`
-    * On macOS, if you encounter errors while building native Ruby extensions, see [Installing Nokogiri](http://www.nokogiri.org/tutorials/installing_nokogiri.html#mac_os_x) for troubleshooting tips.
+  > NOTE: To make `nvm` immediately available in your current shell, run `source <PATH_TO_INSTALLATION>`. For example:
+  > ```console
+  > $ source ~/.nvm/nvm.sh
+  > ```
 
- 1. Install tool for serving locally (one-time setup):<br>
-    `npm install -g superstatic`
+- **[rvm][]**, the Ruby Version Manager.
 
- 1. (Optional) If you plan to deploy to a firebase project, install this package (one-time setup):<br>
-    `npm install -g firebase-tools`
+  > NOTE: To make `rvm` immediately available in your current shell, run `source <PATH_TO_INSTALLATION>`. For example:
+  > ```console
+  > $ source ~/.rvm/bin/rvm
+  > ```
 
- 1. Create a branch.
+- **[Flutter][Flutter install]**
+- **[Dart SDK][Dart install]**
+- **[GNU diffutils][]** version 3.6 or later.
+  > NOTE: `diff` v3.6+ is required to ensure that in-page code diffs are
+  > consistently refreshed across macOS and Linux. [Issue #3076][] was due to
+  > the default macOS `diff` being at v2.x. To upgrade `diffutils`, run:<br>
+  > ```console
+  > $ brew install diffutils
+  > ```
+  > [issue #3076]: https://github.com/flutter/website/issues/3076
 
- 1. Make your changes.
+> IMPORTANT: Follow the installation instructions for each of the tools
+> carefully. In particular, configure your shell/environment so
+> that the tools are available in every terminal/command window you create.
 
- 1. Test your changes by serving the site locally. Run either one of these commands:
+### 2. Clone this repo _and_ its submodules
 
-    - `tool/serve.sh`
-    - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
+> NOTE: This repo has git _submodules_, which affects how you clone it.
 
- 1. Prior to submitting, run link validation:<br>
-    `rake checklinks`
+To **clone [flutter/website]()** (this repo), follow the instructions given in the
+GitHub help on [Cloning a repository][], then _choose one_ of the following
+submodule-cloning techniques:
+
+- Clone this repo and its submodule _at the same_, use the
+  `--recurse-submodules` option:<br>
+  
+  ```console
+  $ git clone --recurse-submodules https://github.com/flutter/website.git
+  ```
+
+  OR
+- If you've already cloned this repo without its submodule, then run
+  this command from the repo root:<br>
+
+  ```console
+  $ git submodule update --init --remote
+  ```
+
+> NOTE: At any time during development you can use the `git submodule` command to
+> refresh submodules:<br>
+> ```console
+> $ git pull; git submodule update --init --remote
+> ```
+
+### 3. Run installation scripts
+
+> NOTE: It is safe to (re-)run all of the commands and scripts given below even
+> if you already have the required packages installed.
+
+**Open a bash terminal/command window** and execute the following commands:
+
+1. After you have cloned this repo, change to the _root of this repo_:
+
+   ```console
+   $ cd <PATH_TO_REPO>
+   ```
+1.  Run the `env-set.sh` script to initialize environment variables, and to install/use required Node & Ruby version:
+
+    ```console
+    $ source ./tool/env-set.sh
+    ```
+1.  Run `before-install.sh` to install the  core set of required tools:
+
+    ```console
+    $ ./tool/before-install.sh
+    ```
+1.  Run `install.sh` to install everything else needed to build this site:
+
+    ```console
+    $ ./tool/install.sh
+    ```
+
+> IMPORTANT:
+> - Any time you create a **new terminal/command window** to work on
+>   this repo, **repeat steps 1 and 2** above.
+> - If you upgrade Dart, then rerun all of the steps above.
+
+## Developing and serving changes
+
+ 1. After you clone this repo, create a branch. For example:
+ 
+    ```console
+    $ git checkout -b <BRANCH_NAME>
+    ```
+ 
+ 1. Make your changes, then commit them to the branch.
+ 1. Test your changes by serving the site locally.
+    To serve locally, run _either one_ of these commands:
+    - ```console
+      $ ./tool/serve.sh # or npm run start
+      ```
+
+    OR
+    - ```console
+      $ bundle exec jekyll serve --incremental --watch --livereload --port 4002
+      ```
+
+      > NOTE: Unless you're editing files under `site-shared`, you can safely
+      > ignore `ERROR: directory is already being watched` messages.
+      > For details, see [#1363](https://github.com/flutter/website/issues/1363).
+
+      > NOTE: The first time you run either one of these commands,
+      > Jekyll takes anywhere between 10-20 seconds to generate static
+      > content inside the `_sites` directory. If you try to verify the
+      > site locally, but aren't able to see the content right away,
+      > wait 20 seconds before stopping the
+      > server or concluding that something is wrong.
+ 1. Before submitting, validate site links:<br>
+    ```console
+    $ ./tool/shared/check-links.sh
+    ```
+
+> TIP: Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
+> happen, for example, when you pull from master and lots of files have moved.)
+> To fix Jekyll, stop the `serve.sh` script, remove the generated site files:
+> hand, and then restart the `serve.sh` script:
+
+> ```console
+> $ npm run clean
+> ```
+> OR
+> ```console
+> $ jekyll clean
+> ```
+> OR
+> ```console
+> $ rm -Rf ./_site/* ./.jekyll*
+> ```
+
+> Next, restart the `serve.sh` script:
+
+> ```console
+> $ npm run start
+> ```
+> OR
+> ```console
+> $ ./tool/serve.sh
+> ```
+
+## Creating and/or editing DartPad example code
+
+Most of the code used to create DartPad examples is hosted on GitHub. However, this repo also contains
+some `.dart` files responsible for DartPad example code.
+
+### DartPad example code in GitHub gists
+
+A typical DartPad example takes the form of an `iframe`, for example, within a codelab's markdown file:
+
+```markdown
+<iframe
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=d7b09149ffee2f0535bb0c04d96987f5"
+  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
+  frameborder="no" height="500" width="100%"
+></iframe>
+```
+
+This `iframe` depends on the following GitHub gist url:
+
+```none
+https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5
+```
+
+For detailed instructions on how to use this approach to DartPad examples, see the [DartPad embedding guide].
+
+### DartPad example code in this repo - `src/_packages/dartpad_picker`
+
+Some DartPad example code remains in `.dart` files in this repo, and must be compiled via `src/_packages/dartpad_picker/compile.sh`. For an example, consult `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`.
+
+In order to create or change example code using `dartpad_picker`, you must regenerate the JavaScript:
+
+```sh
+  $ cd src/_packages/dartpad_picker
+  $ ./compile.sh
+```
 
 ## Deploy to a staging site
 
-For edits made directly in the GitHub web UI, the changes will be deployed to a
-staging site (such as `https://flutter-io-deploy-three.firebaseapp.com/inspector`)
-by the Travis job.
+You can deploy your local edits to a personal staging site as follows.
 
-For edits you make locally (using the 'developing' steps above), you can deploy them
-to a personal staging site as follows (steps 1 and 2 need to be done only once):
+ 1. Serve your changes locally, as previously instructed.
+    Keep the `serve.sh` script running in its own `bash` shell.
 
-1. In the [Firebase Console](https://console.firebase.google.com),
-create your own Firebase project (e.g. 'mit-flutter-staging')
+ 1. In the [Firebase Console](https://console.firebase.google.com),
+    create your own Firebase project (e.g. `my-foo`). You only need
+    to do this step once.
 
-1. Tell Firebase about that project with the firebase
-[`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
-	```
-	$ firebase use --add
-	? Which project do you want to add? <select the project you created>
-	? What alias do you want to use for this project? (e.g. staging) staging
-	```
+ 1. In a separate `bash` shell, change to the repo directory and
+    initialize Firebase:
+ 
+    ```console
+    $ npx firebase init
+    ```
 
-1. Tell Firebase that you want to deploy to staging:
-	```
-	$ firebase use staging
-	Now using alias staging (<your project name>)
-	```
+ 1. Tell Firebase about your project with the
+    [`firebase use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html)
+    You only need to do this step once:
 
-1. Tell Firebase to deploy:
-	```
-	$ firebase use staging
-	Now using alias staging (<your project name>)
-	$ firebase deploy
+      ```console
+      $ npx firebase use --add
+      ? Which project do you want to add? <select the project you created>
+      ? What alias do you want to use for this project? (e.g. staging) my-foo
+      ```
 
-	=== Deploying to '<your project name>'...
+ 1. Tell Firebase that you want to deploy to staging:
 
-	i  deploying hosting
-	i  hosting: preparing _site directory for upload...
-	✔  hosting: 213 files uploaded successfully
-	i  starting release process (may take several minutes)...
+    ```console
+    $ npx firebase use my-foo
+    Now using alias staging (my-foo)
+    ```
 
-	✔  Deploy complete!
-	```
+ 1. Tell Firebase to execute deployment of your project:
 
-## Writing for flutter.io
+   ```console
+   $ npx firebase deploy
+   ```
 
-(Eventually, this section should be expanded to its own page.)
+   Your personal version of the Flutter website is now deployed to Firebase.
+   Copy the serving URL from the command output.
 
-### Adding next/previous page links
+### Alternate deployment script
 
-If you have a document that spans multiple pages, you can add next and previous
-page links to make navigating these pages easier. It involves adding some information
-to the front matter of each page, and including some HTML.
+Alternatively, you can skip the previous steps and just use the deploy script:
 
-```
----
-layout: tutorial
-title: "Constraints"
+```console
+$ ./tool/shared/deploy.sh --local my-foo
 
-permalink: /tutorials/layout/constraints.html
-prev-page: /tutorials/layout/properties.html
-prev-page-title: "Container Properties"
-next-page: /tutorials/layout/create.html
-next-page-title: "Create a Layout"
----
+=== Deploying to '<your project name>'...
 
-{% include prev-next-nav.html %}
+i  deploying hosting
+i  hosting: preparing _site directory for upload...
+✔  hosting: 213 files uploaded successfully
+i  starting release process (may take several minutes)...
 
-{:toc}
-
-<!-- PAGE CONTENT -->
-
-{% include prev-next-nav.html %}
+✔  Deploy complete!
 ```
 
-Omit the "prev-page" info for the first page, and the "next-page" info for the
-last page.
+## Deploying to the official site
 
-## Syntax highlighting
+Usually, official site deploys are performed by Travis. In the event that you
+need to manually deploy, use the deploy script and the `default` project:
 
-The flutter.io website uses [prism.js](http://prismjs.com/) for syntax
-highlighting. This section covers how to use syntax highlighting, and
-how to update our syntax highlighter for new languages.
-
-### Supported languages
-
-This website can syntax highlight the following languages:
-
-* shell
-* dart
-* html
-* css
-* javascript
-* java
-* objectivec
-* swift
-
-### Using syntax highlighting
-
-The easiest way to syntax highlight a block of code is to wrap
-it with triple backticks followed by the language.
-
-Here's an example:
-
-	```dart
-	class ExampleWidget extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return new Container();
-      }
-    }
-	```
-
-See the list of supported languages above for what to use
-following the first triple backticks.
-
-### Adding more languages for syntax highlighting
-
-The flutter.io website uses a custom build of prism, which
-includes only the languages the website requires. To improve
-load times and user experience, we do not support every
-language that prism supports.
-
-To add a new language for syntax highlighting, you will need
-to generate a new copy of the `prism.js` file.
-
-Follow these steps to generate a new copy of `prism.js`:
-
-* Open `js/prism.js`
-* Copy the URL in the comment of the first line of the file
-* Paste it into a browser window/tab
-* Add the new language that you wish to syntax highlight
-* DO NOT change the other plugins, languages, or settings
-* Download the generated JavaScript, and use it to replace `js/prism.js`
-* Download the generated CSS, and use it to replace `_sass/_prism.scss`
-
-## Advanced stylization of code blocks
-
-Do you want to highlight (make the background yellow)
-code inside a code block? Do you want to strike-through
-code inside a code block? We got that!
-
-For syntax highlighting, plus yellow highlighting
-and strike-through formatting, use the `prettify` tag
-with additional custom inline markup.
-
-If you want to highlight a specific bit of code, use the
-`[[highlight]]highlight this text[[/highlight]]` syntax
-with the `prettify` tag.
-
-For example:
-
-    {% prettify dart %}
-    void main() {
-      print([[highlight]]'Hello World'[[/highlight]]);
-    }
-    {% endprettify %}
-
-If you want to strike-through a specific bit of code, use the
-`[[strike]]highlight this text[[/strike]]` syntax
-with the `prettify` tag.
-
-For example:
-
-    {% prettify dart %}
-    void main() {
-      print([[strike]]'Hello World'[[/strike]]);
-    }
-    {% endprettify %}
-
-The `prettify` plugin will also unindent your code.
-
-If you want to see how this functionality was added to this site, refer to
-[this commit](https://github.com/flutter/website/commit/ea15f52fe47d3a7b6313ac58d07c66f3b29fe74d).
-
-## Including a region of a file
-
-You can include a specific range of lines from a file:
-
-```ruby
-{% include includelines filename=PATH start=INT count=INT %}
+```
+$ ./tool/shared/deploy.sh --local --robots ok default
 ```
 
-`PATH` must be inside of `_include`. If you are including source code,
-place that code into `_include/code` to follow our convention.
+## Writing for flutter.dev
 
-## Code snippet validation
+The [site-shared](https://github.com/dart-lang/site-shared) repo
+contains infrastructure shared by most of our Dart and Flutter websites.
+Some of this README is in the
+[doc](https://github.com/dart-lang/site-shared/tree/master/doc)
+directory in the site-shared repo.
 
-The code snippets in the markdown documentation are validated as part of the
-build process. Anything within a '\`\`\`dart' code fence will be extracted into
-its own file and checked for analysis issues. Some ways to tweak that:
+For more information on using and writing for this repo,
+refer to the following docs:
 
-- If a code snippet should not be analyzed, immediately proceed it with
-  a `<!-- skip -->` comment
-- To include code to be analyzed, but not displayed, add that in a comment
-  immediately proceeding the snippet (e.g., `<!-- someCodeHere(); -->`)
-- A snippet without any import statements will have an import
-  (`'package:flutter/material.dart'`)
-  automatically added to it
-- We ignore special formatting tags like `[[highlight]]`.
+* [Infrastructure](https://github.com/dart-lang/site-shared/blob/master/doc/infrastructure.md)
+* [Markdown](https://github.com/dart-lang/site-shared/blob/master/doc/markdown.md)
+* [Examples](https://github.com/dart-lang/site-shared/blob/master/doc/examples.md)
+* [Code excerpts](https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md)
 
-[Flutter]: https://flutter.io
+Also check out the site-shared
+[wiki](https://github.com/dart-lang/site-shared/wiki):
 
-## Updating the Sample Catalog
+* [Images](https://github.com/dart-lang/site-shared/wiki/Images)
+* [Mobile friendly pages: tips & tricks](https://github.com/dart-lang/site-shared/wiki/Mobile-friendly-pages:-tips-&-tricks)
+* [Writing for Dart and Flutter websites](https://github.com/dart-lang/site-shared/wiki/Writing-for-Dart-and-Flutter-websites)
 
-The sample catalog's markdown files are generated by running [sample_page.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/bin/sample_page.dart) from the Flutter github repo. Starting from the root of the Flutter repo:
-```
-cd examples/catalog
-dart bin/sample_page.dart '<commit hashcode here>'
-cp examples/catalog/.generated/*.md <your website repo>/catalog/samples
-```
-
-The generated markdown files will contain cloud storage links for sample app screenshots. Screenshots for each sample app are automatically generated for each Flutter repo commit. Choose a recent commit hashcode and confirm that the screenshots look OK.
-
-If new sample apps have been added, update `_data/catalog/widget.json`. The entry for each widget class that's featured in a sample app should contain `"sample"` line like:
-```
-"sample": "ListView_index",
-```
-
-The `sample_page.dart` app will print a list of all of the `"sample"` properties that should appear in the `widget.json` file.
-
-## Preventing broken links
-
-Some form of broken links prevention is done automatically by `rake checklinks`
-on every commit (through `tool/travis.sh`). But this won't see any Firebase
-redirects (`rake checklinks` doesn't run the Firebase server) and it won't
-check incoming links.
-
-Before we can move the more complete
-[automated `linkcheck` solution](https://github.com/dart-lang/site-webdev/blob/master/scripts/check-links-using-fb.sh)
-from dartlang.org, we recommend manually running the following.
-
-* First time setup:
-
-  ```
-  pub global activate linkcheck
-  npm install -g superstatic
-  ```
-
-* Start the localhost Firebase server:
-
-  ```
-  superstatic --port 4002
-  ```
-
-* Run the link checker:
-
-  ```
-  linkcheck :4002
-  ```
-
-  Even better, to check that old URLs are correctly redirected:
-
-  ```
-  linkcheck :4002 --input-file tool/sitemap.txt
-  ```
+[Flutter]: https://flutter.dev
+[Build Status]: https://travis-ci.org/flutter/website.svg?branch=master
+[Cloning a repository]: https://help.github.com/articles/cloning-a-repository
+[Dart install]: https://dart.dev/get-dart
+[Flutter install]: https://flutter.dev/docs/get-started/install
+[Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1
+[Firebase]: https://firebase.google.com/
+[first-timers SVG]: https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square
+[first-timers]: https://www.firsttimersonly.com/
+[GNU diffutils]: https://www.gnu.org/software/diffutils
+[DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
+[Jekyll]: https://jekyllrb.com/
+[nvm]: https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating
+[Repo on Travis]: https://travis-ci.org/flutter/website
+[rvm]: https://rvm.io/rvm/install#installation
+[this repo]: https://github.com/flutter/website

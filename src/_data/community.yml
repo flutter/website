@@ -1,0 +1,90 @@
+- name: Github
+  featured: true
+  title: Tell us what you want to see
+  description: >
+    An easy way to send feedback is to “thumbs up” issues important to you on GitHub
+  logo_src: community/logo-github.png
+  screen_src: community/screen-github.png
+  screen_class: border-top border-light p-3 shadow
+  learn_more_cta: See the issue tracker
+  learn_more_link: https://github.com/flutter/flutter/issues
+
+- name: Google Groups
+  featured: true
+  title: Google Groups
+  description: >
+    Google Groups is a great way to stay up to date with Flutter.
+  logo_src: community/logo-google.png
+  screen_src: community/screen-google.png
+  screen_class: border-top border-light p-3 shadow
+  learn_more_cta_1: Subscribe to breaking changes and other announcements.
+  learn_more_link_1: https://groups.google.com/forum/#!forum/flutter-announce
+  learn_more_cta_2: Ask questions and troubleshoot issues with the Google community.
+  learn_more_link_2: https://groups.google.com/forum/#!forum/flutter-dev
+
+
+- name: Stack Overflow
+  description: >
+    Ask questions about specific Flutter coding problems, or find answers to questions that have already been asked.
+  logo_src: community/logo-stack-overflow.png
+  learn_more_link: https://stackoverflow.com/tags/flutter
+
+- name: Gitter
+  description: >
+    Join the conversation and stay connected with developers around the globe building with Flutter.
+  logo_src: community/logo-gitter.svg
+  learn_more_link: https://gitter.im/flutter/flutter
+
+- name: Meetup
+  description: >
+    Learn from other developers and see what the community is building with Flutter by joining community events around the world.
+  logo_src: community/logo-meetup.svg
+  learn_more_link: https://www.meetup.com/find/?allMeetups=false&keywords=flutter&radius=Infinity&userFreeform=Santa+Clara%2C+CA&mcId=z95054&mcName=Santa+Clara%2C+CA&sort=recommended&eventFilter=mysugg
+
+- name: "@FlutterDev"
+  description: >
+    Follow the Flutter team in real-time with information on new features, upcoming events, and more.
+  logo_src: community/logo-twitter.png
+  learn_more_link: https://twitter.com/flutterdev
+
+- name: Medium
+  description: >
+    Get the latest news and insights from a diverse group of users building with Flutter.
+  logo_src: community/logo-medium.png
+  learn_more_link: https://medium.com/flutter-io
+
+- name: Flutter Community Slack
+  description: >
+    Connect and work through problems with a group of knowledgeable Flutter people.
+  logo_src: community/logo-slack.png
+  learn_more_link: https://fluttercommunity.dev/joinslack
+
+- name: Flutter YouTube
+  description: >
+    Watch these videos to learn from Google and developers as you build with Flutter.
+  logo_src: community/logo-youtube.png
+  learn_more_link: https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
+
+- name: r/FlutterDev
+  description: >
+    Join the large community on Reddit with discussions around every aspect of Flutter.
+  logo_src: community/logo-reddit.png
+  learn_more_link: https://www.reddit.com/r/FlutterDev/
+
+- name: Discord
+  description: >
+    Talk to other Flutter developers about everything Flutter-related, and share useful resources.
+  logo_src: community/logo-discord.png
+  learn_more_link: https://discord.gg/N7Yshp4
+
+- name: UX Research
+  description: >
+    Sign up to participate in the UX research plan and have a front row seat into the progression of Flutter.
+  logo_src: community/logo-google-forms.png
+  learn_more_link: https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform
+
+- name: Hashnode
+  description: >
+    Read and write Flutter-related posts, participate in Flutter discussions or ask questions about working with Flutter.
+  logo_src: community/logo-hashnode.png
+  learn_more_link: https://hashnode.com/n/flutter

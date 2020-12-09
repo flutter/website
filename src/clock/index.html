@@ -1,0 +1,241 @@
+---
+title: Flutter Clock
+layout: landing
+show_banner: False
+body_class: clock
+image: /images/flutter-clock-social.png
+---
+{% assign url_links = "&url=https://flutter.dev/clock" %}
+{% assign hashtags = "hashtags=FlutterClock" %}
+{% assign twitter_url = "https://twitter.com/intent/tweet?" | append: hashtags | append: url_links  %}
+{% assign window_options = "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600" %}
+
+<section class="clock__hero clock__closed">
+    <div class="clock__texture clock__hero__texture clock__closed__texture"></div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+            <p class="clock__closed__text">
+                Looking for inspiration?
+                <a href="https://youtu.be/PaPUkxYHDUw" class="clock__link-lightblue" target="_blank">
+                    See examples of what developers built with Flutter!
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+<section class="clock__hero">
+    <div class="clock__texture clock__hero__texture"></div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+            <h1 class="heading">Flutter Clock Challenge</h1>
+            <p>
+                <a
+                    class="twitter-link"
+                    href="#"
+                    title="Share to Twitter"
+                    onclick="javascript:window.open(encodeURI('{{ twitter_url }}'), '', '{{ window_options }}');">
+                    <i class="fab fa-twitter"></i> Share #FlutterClock with friends
+                </a>
+            </p>
+            <p>
+                <a class="youtube-link" href="#" data-video="rxs69_szCkE" data-toggle="modal" data-target="#videoModal">
+                    <i class="fas fa-play-circle"></i> Watch video
+                </a>
+                <a class="results-link" href="https://medium.com/p/dcebe2eb3957" target="_blank">
+                    <i class="fas fa-trophy"></i> Results
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="clock__wtm row">
+    <div class="clock__texture clock__wtm__texture"></div>
+    <div class="clock__wtm_container justify-content-center col-12 row no-gutters">
+        <div class="col-lg-6 p-md-5">
+            {% asset clock/Lenovo-WTM.png alt='Lenovo Clock' class="card-img-top" %}
+        </div>
+        <div class="col-lg-6 p-md-5 clock__wtm-copy">
+            <h2 class="subheading">
+                Create a beautiful clock face UI
+            </h2>
+            <p class="paragraph">
+                Build a beautiful clock face UI with Flutter for the Lenovo Smart Clock for a chance to win an iMac Pro,
+                Lenovo Smart Display, or Lenovo Smart Clock.
+            </p>
+            <p class="paragraph-conditions">
+                Submissions period has ended on January 20, 2020. Please scroll down to see the results.
+            </p>
+        </div>
+        <section class="col-12 col-lg-10 no-gutters clock__row clock__reel text-center">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="mt-0">Flutter Clock Highlight Reel</h2>
+                <div class="create__video">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/PaPUkxYHDUw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        <div class="clock__wtm-logos col-12 col-lg-10 justify-content-center">
+            <p class="text-center logos-heading">
+                Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo.
+            </p>
+            <div class="logos-container">
+                {% asset clock/Flutter-logo.svg alt='Flutter Logo' class='wtm-logo' %}
+                {% asset clock/G-Assistant-logo.svg alt='Google Assistant Logo' class='wtm-logo' %}
+                {% asset clock/Lenovo-logo.svg alt='Lenovo Logo' class='wtm-logo' %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="clock__row row clock__winners-article text-center">
+    <div class="col-md-8 offset-md-2">
+        <h2 class="mt-0">All Winners</h2>
+        Check out <a href="https://medium.com/p/dcebe2eb3957">this article</a> to read more about this year's results.
+    </div>
+</section>
+
+<hr>
+
+<section class="clock__row row">
+    <div class="col-md-8 offset-md-2 align-self-center">
+        <div class="text-center">
+            <h2 class="mt-0">Grand Prize Winner</h2>
+            <div class="text-center">
+                <h3><a href="https://github.com/miickel/flutter_particle_clock" target="_blank">Particle Clock</a> by Mickel Andersson</h3>
+            </div>
+        </div>
+        <div class="clock__center-block text-center">{% asset clock/particle.gif -%}</div>
+    </div>
+</section>
+
+<hr>
+
+<section class="create__row row text-center">
+    <div class="col-md-8 offset-md-2">
+        <h2 class="mt-0">Category Winners</h2>
+    </div>
+    <div class="col-md-5 align-top">
+        <div class="clock__category-winner">
+            <div class="text-center">
+                <h3> Visual Beauty</h3>
+                <h4>
+                    <a href="https://github.com/OldMetalmind/cloom_clock" target="_blank">Cloom Clock</a>
+                    by Filipe Barroso and Francisco Frutuoso
+                </h4>
+            </div>
+        </div>
+        <div class="clock__center-block">{% asset clock/cloom.gif -%}</div>
+    </div>
+    <div class="col-md-5 offset-md-2 align-top">
+        <div class="clock__category-winner">
+            <div class="text-center">
+                <h3> Code Quality</h3>
+                <h4>
+                    <a href="https://github.com/creativecreatorormaybenot/clock" target="_blank">Creative Creator Or Maybe Not Clock</a>
+                    by Hubert Henkemeier
+                </h4>
+            </div>
+        </div>
+        <div class="clock__center-block">{% asset clock/code_qlty.gif -%}</div>
+    </div>
+    <div class="col-md-5 align-top">
+        <div class="create__description">
+            <div class="clock__category-winner">
+                <div class="text-center">
+                    <h3>Overall Execution</h3>
+                    <h4>
+                        <a href="https://github.com/brestnichki/humanbeans-clock" target="_blank">Humanbeans Clock</a>
+                        by Boris Brestnichki
+                    </h4>
+                </div>
+            </div>
+            <div class="clock__center-block">{% asset clock/humanbeans.gif -%}</div>
+        </div>
+    </div>
+    <div class="col-md-5 offset-md-2 align-top">
+        <div class="clock__category-winner">
+            <div class="text-center">
+                <h3>Novelty</h3>
+                <h4><a href="https://github.com/vmorilla/sunset_reflections_clock" target="_blank">Sunset Reflections Clock</a> by Victor Morilla</h4>
+            </div>
+        </div>
+        <div class="clock__center-block">{% asset clock/sunset_reflections.gif -%}</div>
+    </div>
+</section>
+
+<hr>
+
+<section class="clock__row row">
+    <div class="col-md-10 offset-md-1 align-self-center">
+        <div class="text-center mb-10">
+            <h2 class="mb-0 mt-0">Honorable Mentions</h2>
+            <small class="mini">(In alphabetical order)</small>
+        </div>
+        <ul class="clock__honorable-mentions">
+            {% for mention in site.data.clock.honorable_mentions %}
+            <li><a href="{{mention.clock_link}}">{{mention.clock_name}}</a> by {{mention.participant}}</li>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="clock__wtm">
+    <div class="clock__wtm-entries col-md-10 offset-md-1 no-gutters">
+            <h3 class="heading">Entries were judged by a panel of Google experts against the following criteria:</h3>
+            <div class="clock__wtm-entries_container">
+                {% for entry in site.data.clock.entries %}
+                    <div class="card">
+                        <div class="card-body entries__card-body">
+                            <p class="paragraph">{{entry.title}}</p>
+                            {% asset {{entry.logo}} class="fas" %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+</section>
+
+<section class="clock__faqs no-gutters">
+    <div class="clock__texture clock__faqs__texture"></div>
+    <div class="clock__faqs_container row justify-content-center">
+        <div class="col-lg-10">
+            <h2 class="subheading">FAQ</h2>
+            {% for faq in site.data.clock.faqs %}
+                <div id="accordion{{forloop.index}}">
+                    <div class="faqs_card">
+                        <div class="faqs_card-header" id="faq-heading{{forloop.index}}">
+                            <button class="faqs_button dropdown__button btn btn-link" data-toggle="collapse" data-target="#faq-collapse{{forloop.index}}" aria-expanded="false" aria-controls="faq-collapse{{forloop.index}}">
+                                {{ faq.title }}
+                                <i class="fas fa-chevron-down fa-xs"></i>
+                            </button>
+                        </div>
+                        <div id="faq-collapse{{forloop.index}}" class="collapse" aria-labelledby="faq-heading{{forloop.index}}" data-parent="#accordion{{forloop.index}}">
+                            <div class="card-body faq__card-body">
+                                {{ faq.content }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" data-video-modal id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="embedded-video-wrapper">
+                    <iframe id="video-player-iframe" class="embedded-video-wrapper__frame" width="auto" height="auto"
+                            src="https://www.youtube.com/embed/jtYk3gWRSw0?cc_lang_pref=en&cc_load_policy=1&enablejsapi=1"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

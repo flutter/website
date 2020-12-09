@@ -1,0 +1,99 @@
+- clock_name: 'Agent Clock'
+  clock_link: 'https://github.com/kruegerrobotics/flutter_agent_clock'
+  participant: 'Thomas Krueger'
+
+- clock_name: 'Animal Clock'
+  clock_link: 'https://github.com/seiwonlee/aninmal_clock'
+  participant: 'Sei Lee'
+
+- clock_name: 'Ants Clock'
+  clock_link: 'https://github.com/StuartApp/Flutter-clock-challenge'
+  participant: 'Pau Picas Sans'
+
+- clock_name: 'BarBar Clock'
+  clock_link: 'https://github.com/aednlaxer/flutter-clock-challenge-barbar'
+  participant: 'Aleksandr Troshkov'
+
+- clock_name: 'Boating Clock'
+  clock_link: 'https://github.com/SpiciedCrab/Boating'
+  participant: 'Yi He'
+
+- clock_name: 'Circle Clock'
+  clock_link: 'https://github.com/NotThatBowser/flutter_clock'
+  participant: 'Max Bowser'
+
+- clock_name: 'DJ Clock'
+  clock_link: 'https://github.com/EriaWist/flutter_clock.git'
+  participant: 'Bao Hui Huang'
+
+- clock_name: 'Dots Clock'
+  clock_link: 'https://github.com/kainsteffen/dots-clock'
+  participant: 'Tran Duy Khanh Steffen'
+
+- clock_name: 'Flutter Clock'
+  clock_link: 'https://github.com/meszarosdezso/flutter_clock.git'
+  participant: 'Dezso Meszaros'
+
+- clock_name: 'Flutter Clock'
+  clock_link: 'https://github.com/orestesgaolin/flutter_clock'
+  participant: 'Dominik Roszkowski'
+
+- clock_name: 'Flutter Clock'
+  clock_link: 'https://github.com/HelgeWieding/helg9000'
+  participant: 'Helge Wieding'
+
+- clock_name: 'Flutter Clock'
+  clock_link: 'https://github.com/mono0926/flutter_clock'
+  participant: 'Masayuki Ono'
+
+- clock_name: 'Flutter Clock'
+  clock_link: 'https://github.com/sla-000/flutter_clock'
+  participant: 'Vyacheslav Ryabinin'
+
+- clock_name: 'Freehand Clock'
+  clock_link: 'https://github.com/thayesx/freehand_clock'
+  participant: 'Tyler Hayes'
+
+- clock_name: 'Generative Clock'
+  clock_link: 'https://github.com/Fabian-Stein/flutterClock'
+  participant: 'Fabian Stein'
+
+- clock_name: 'Infinity Clock'
+  clock_link: 'https://github.com/AkashDivya/infinity_flutter_clock'
+  participant: 'Akash Divya'
+
+- clock_name: 'Iso Clock'
+  clock_link: 'https://github.com/cookmscott/FlutterClockChallenge'
+  participant: 'Scott Cook'
+
+- clock_name: 'Lofi Clock'
+  clock_link: 'https://github.com/nosliwmichael/flutter_clock'
+  participant: 'Michael Wilson'
+
+- clock_name: 'Matches Clock'
+  clock_link: 'https://github.com/MikolajLen/matches_clock'
+  participant: 'Mikołaj Lenart'
+
+- clock_name: 'Paper Clock'
+  clock_link: 'https://github.com/ryanjacktaylor/paper_clock'
+  participant: 'Ryan Taylor'
+
+- clock_name: 'Scenery Clock'
+  clock_link: 'https://github.com/Dwite/Scenery-FlutterClock'
+  participant: 'Valerii Kuznietsov'
+
+- clock_name: 'Snake Clock'
+  clock_link: 'https://github.com/GilDev/SnakeClock'
+  participant: 'Gilles Devillers'
+
+- clock_name: 'Star Clock'
+  clock_link: 'https://github.com/CiriousJoker/star_clock'
+  participant: 'Philipp Bauer'
+
+- clock_name: 'Steampunk Clock'
+  clock_link: 'https://github.com/tsinis/flutter_clock'
+  participant: 'Roman Cinis'
+
+- clock_name: 'Tetris Time Clock'
+  clock_link: 'https://github.com/msoftware/flutter_clock'
+  participant: 'Michael Jentsch'

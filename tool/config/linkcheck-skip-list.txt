@@ -1,0 +1,38 @@
+# Enter regexp pattern, one per line.
+
+# -----------------------------------------------------------------------------
+# Sites that don't allow robots. Linkcheck won't bother those sites, but if we
+# don't skip them, linkcheck prints every link that didn't check. This list is
+# sometimes too long for Travis, so it is simpler just to skip all site links.
+
+https://github.com
+
+# -----------------------------------------------------------------------------
+# Valid external links that result in connection failures too often:
+
+https://dart-pub.mirrors.sjtug.sjtu.edu.cn
+https://hk.saowen.com/a/fbb6e484de022173fe85248875286060ce40d069c97420bc0be49d838e19e372
+https://itunes.apple.com/cn/app/id895682747
+https://now.qq.com
+https://codelabs.developers.google.com/codelabs/google-photos-sharing
+
+# -----------------------------------------------------------------------------
+# Links with "anchors" that aren't really anchors
+# (and so linkcheck reports the anchors as missing)
+
+https://codelabs.developers.google.com/codelabs/flutter/\#6
+https://groups.google.com/forum/\#!forum/flutter-dev
+https://groups.google.com/forum/\#!forum/flutter-announce
+https://guides.cocoapods.org/syntax/podspec.html\#dependency
+https://help.apple.com/.*?/\#/dev
+
+# Links that get redirected, and the target page doesn't have the specified anchor:
+https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher\#size
+https://material.io/guidelines/motion/transforming-material.html\#transforming-material-radial-transformation
+
+# -----------------------------------------------------------------------------
+# Temporary skip rules below this point
+
+# FIXME(Temporary): linkcheck seems to be intermittently failing when accessing main.css
+# https://github.com/dart-lang/site-www/issues/1107
+/assets/main(-[0-9a-f]+)?.css

@@ -1,0 +1,60 @@
+//
+// Subnav styles (from site-www)
+//
+
+.site-nextprev-nav, // Nav with both links
+.site-nextprev-nav__single // Nav with single link
+{
+  clear: both;
+
+  ul {
+    $spacer-base: bs-spacer(3);
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      margin-bottom: $spacer-base;
+      white-space: nowrap;
+
+      a {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      &.prev:before {
+        color: $primary;
+        content: "\2329"; // &lang;
+        padding-right: $spacer-base / 2;
+      }
+
+      &.next {
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      &.next:after {
+        color: $primary;
+        content: "\232A"; // &rang;
+        padding-left: $spacer-base / 2;
+      }
+    }
+  }
+}
+
+.site-nextprev-nav > ul > li {
+  width: 49%;
+
+  &.prev { float: left; }
+}
+
+.site-nextprev-nav__single > ul > li {
+  &.prev { width: 100%; }
+
+  &.next {
+    float: right;
+    width: 100%;
+  }
+}

@@ -1,61 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% include head.html %}
+---
+layout: base
+---
 
-  <body class="{% if page.url == '/' %}homepage{% endif %}">
-    {% include body.html %}
+{% assign sidebar-col = 'col-12 col-md-3 col-xl-2' -%}
+{% if page.toc -%}
+  {% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-8 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
+  {% comment %}Side toc is col-xl-2{% endcomment -%}
+{% else -%}
+  {% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-10 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
+{% endif -%}
 
-    <div id="overlay-under-drawer"><!-- for the drawer on narrow screens --></div>
-
-    {% include header.html %}
-
-    <!-- Page Content -->
-    <div class="container-fluid contents">
-      <!-- Content Row -->
-      <div class="row">
-
-        <!-- Sidebar Column -->
-        <div id="side-nav-container" class="col-sm-3">
-          {% include sidebar.html %}
-        </div>
-
-        {% if page.url == '/' %}
-        {% comment %} Homepage {% endcomment %}
-
-        <!-- Homepage Content Column -->
-        <div class="col-sm-12 main-contents">
-          <div class="main-contents-body">
-            {{content}}
-          </div>
-        </div>
-
-        {% else %}
-        {% comment %} Regular page, not homepage {% endcomment %}
-
-        <!-- Content Column -->
-        <div class="col-sm-9 main-contents">
-          <div class="main-contents-body">
-            {{content}}
-          </div>
-        </div>
-
+<div class="container-fluid position-relative">
+  <div class="row flex-xl-nowrap">
+    <div class="fixed-col site-sidebar site-sidebar--fixed {{sidebar-col}} d-none d-md-block" data-fixed-column>
+      {% include shared/sidenav-level-1.html nav=site.data.sidenav %}
+    </div>
+    {% if page.toc and layout.toc != false -%}
+      {% include toc.html kind="side" class="fixed-col col-xl-2 order-3" extendToc=true -%}
+    {% endif -%}
+    <main class="site-content {{main-col}}" role="main">
+      <div class="container">
+        {% if page.deprecated %}
+          {% include snackbar.html class="snackbar--dismissible" label="This page is deprecated and its content may be out of date." action="Dismiss" %}
         {% endif %}
-
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
-
-    {% include footer.html %}
-
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="{{ "/js/sidebar_toggle.js" }}"></script>
-    <script src="{{ "/js/customscripts.js" }}"></script>
-    <script src="{{ "/js/prism.js" }}"></script>
-    <script src="{{ "/js/tabs.js" }}"></script>
-    <script src="{{ "/js/archive.js" }}"></script>
-    
-    <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=at3ul57xpub2vk3oxt2ytw365i"></script>
-  </body>
-</html>
+        {% include next-prev-nav.html %}
+        <header class="site-content__title">
+          {% include shared/page-github-links.html %}
+          <h1>{{ page.title }}</h1>
+          {% if page.show_breadcrumbs -%}
+            {% include shared/breadcrumbs.html %}
+          {% endif -%}
+        </header>
+        {% if page.toc and layout.toc != false -%}
+          {% include toc.html kind="inline" -%}
+        {% endif -%}
+        {{ content | inject_anchors }}
+        {% include next-prev-nav.html %}
+      </div>
+    </main>
+  </div>
+</div>

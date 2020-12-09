@@ -1,0 +1,89 @@
+// Header clearance of top nav
+@mixin _header-clearance {
+  $clearance: 100px;
+
+  margin-top: -$clearance;
+  padding-top: $clearance;
+}
+
+@mixin header-clearance {
+  @include _header-clearance;
+
+  content: "";
+  display: block;
+}
+
+.site-content {
+  padding-bottom: $site-content-top-padding;
+  padding-top: $site-content-top-padding;
+
+  .container {
+    max-width: $site-content-max-width;
+  }
+
+  @include media-breakpoint-up(md) {
+    border-left: 1px solid $site-color-light-grey;
+    min-height: calc(100vh - #{$site-header-height} - #{$site-footer-md-default-height});
+  }
+
+  &__title {
+    margin-bottom: bs-spacer(12);
+
+    @at-root {
+      #page-github-links {
+        @include float-right;
+        .btn { padding: 0 ($btn-padding-x / 2); }
+      }
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    // Invisible pre-element to avoid modifying styles on headings.
+    &[id]:not(.no_toc)::before { @include header-clearance; }
+
+    // This case is for jekyll-toc entries that use the computed header id, rather than
+    // the Kramdown id override specified using the {#foo} markdown-extension syntax.
+    > a[id]::before { @include header-clearance; }
+
+    //
+    // Jekyll-toc heading anchor links (adapted from site-www)
+    //
+
+    $icon-size: 1.25rem;
+    $anchor-padding: 0.25rem;
+
+    > a.anchor {
+      float: left;
+      margin-left: -($icon-size + $anchor-padding);
+      padding-right: $anchor-padding;
+      // box-sizing: border-box;
+      // max-width: $icon-size;
+      // overflow: hidden;
+
+      // Until we change change the class names used by jekyll-toc, we'll
+      // fall back to using @extend over font-awesome classes.
+      > .octicon { @extend .fas; }
+      > .octicon-link {
+        @extend .fa-link;
+        color: $site-color-body;
+        font-size: 1rem;
+        opacity: 0;
+        vertical-align: middle;
+        // display: block;
+        // height: $icon-size;
+        // width: $icon-size;
+      }
+    }
+
+    &:hover > .anchor > .octicon-link { opacity: 1 }
+  }
+
+  // Embedded DartPad
+  iframe {
+    border: 1px solid #ccc;
+  }
+}

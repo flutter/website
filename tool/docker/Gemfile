@@ -1,17 +1,19 @@
 source 'https://rubygems.org'
-
-# New infrastructure gems
-gem 'autoprefixer-rails'
-gem 'bootstrap-sass' # Bootstrap v3; use 'bootstrap' package for v4
+gem 'bootstrap'
 gem 'font-awesome-sass'
-gem 'jekyll'
-gem 'jekyll-assets', group: :jekyll_plugins
+# Jekyll-assets isn't yet compatible with Jekyll 4. Pin jekyll version.
+# https://github.com/envygeeks/jekyll-assets/issues/613
+gem 'jekyll', '~> 3'
+gem 'jekyll-assets', '~> 3', group: :jekyll_plugins
+gem 'jekyll-toc'
 gem 'liquid-tag-parser'
-gem 'sass'
-gem 'sprockets', '~> 4.0.beta' , { require: false }
+gem 'sassc'
+# Sprockets > 4.0.beta8 breaks jekyll-assets
+# https://github.com/envygeeks/jekyll-assets/issues/589
+# So pin the version until the issue is fixed.
+# Track progress at https://github.com/envygeeks/jekyll-assets/pull/620
+gem 'sprockets', '4.0.beta8'
 gem 'uglifier'
 
-# Remaining old infrastructure gems
-gem 'html-proofer' # TODO: drop
-gem 'rake' # TODO: drop (this seems to be needed only for support of html-proofer)
-gem 'jekyll-redirect-from' # TODO: drop; replace with tri-site solution.
+# kramdown 2 removed the GitHub Flavored Markdown parser: https://kramdown.gettalong.org/parser/gfm.html
+gem 'kramdown-parser-gfm'

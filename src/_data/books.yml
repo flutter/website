@@ -1,0 +1,78 @@
+- title: 'Beginning App Development with Flutter'
+  authors:
+    - Rap Payne
+  publisher: Apress Publishing
+  cover: beginning-app-development-with-flutter.jpg
+  link: "https://www.amazon.com/Beginning-App-Development-Flutter-Cross-Platform/dp/1484251806"
+  desc: "Easy to understand starter book. Currently the best-selling and highest rated Flutter book on Amazon."
+- title: 'Beginning Flutter: A Hands On Guide to App Development'
+  authors:
+    - Marco L. Napoli
+  publisher: Wiley Publishing
+  cover: beginning-flutter.png
+  link: "https://www.wiley.com/en-us/Beginning+Flutter%3A+A+Hands+On+Guide+to+App+Development-p-9781119550822"
+  desc: "Build your first app in Flutter–no experience necessary."
+- title: 'Flutter Complete Reference'
+  authors:
+    - Alberto Miola
+  publisher: KDP Amazon
+  cover: flutter-complete-reference.png
+  link: "https://www.amazon.com/dp/B08KHKK8TR"
+  desc: "Create beautiful, fast and native apps for any device. You'll learn about the Dart programming language (version 2.10, with null safety support) and the Flutter framework (version 1.20).While reading the chapters, you'll find a lot of good practices, tips and performance advices to build high quality products."  
+- title: 'Flutter Développez vos applications mobiles multiplateformes avec Dart'
+  authors:
+    - Julien Trillard
+  publisher: Editions ENI
+  cover: flutter-ENI.jpg
+  link: "https://www.editions-eni.fr/livre/flutter-developpez-vos-applications-mobiles-multiplateformes-avec-dart-9782409025273"
+  desc: "Ce livre sur Flutter s'adresse aux développeurs, initiés comme plus aguerris, qui souhaitent disposer des connaissances nécessaires pour créer de A à Z des applications mobiles multiplateformes avec le framework de Google" 
+- title: 'Flutter for Beginners'
+  authors:
+    - Alessandro Biessek
+  publisher: Packt Publishing
+  cover: flutter-for-beginners.jpg
+  link: "https://www.amazon.com/Flutter-Beginners-introductory-cross-platform-applications/dp/1788996089"
+  desc: "A step-by-step guide to learning Flutter and Dart 2 for creating Android and iOS mobile applications."
+- title: 'Flutter in Action'
+  authors:
+    - Eric Windmill
+  publisher: Manning Publishing
+  cover: flutter-in-action.jpg
+  link: "https://www.amazon.com/Flutter-Action-Eric-Windmill/dp/1617296147"
+  desc: "Flutter in Action teaches you to build professional-quality mobile applications using the Flutter SDK and the Dart programming language."
+- title: 'Flutter Succinctly'
+  authors:
+    - Ed Freitas
+  publisher: Syncfusion
+  cover: flutter-succinctly.png
+  link: "https://www.syncfusion.com/ebooks/flutter-succinctly"
+  desc: "App UI in Flutter-from Zero to Hero."
+- title: 'Learn Google Flutter Fast'
+  authors:
+    - Mark Clow
+  publisher: Self-published
+  cover: learn-google-flutter-fast.jpg
+  link: "https://www.amazon.com/Learn-Google-Flutter-Fast-Example/dp/1092297375"
+  desc: "Learn Google Flutter by example. Over 65 example mini-apps."
+- title: 'Google Flutter Mobile Development Quick Start Guide'
+  authors:
+    - Prajyot Mainkar
+    - Salvatore Girodano
+  publisher: Packt Publishing
+  cover: google-flutter-mobile-development-quick-start-guide.jpg
+  link: "https://www.amazon.com/Google-Flutter-Mobile-Development-Quick/dp/1789344964"
+  desc: "A fast-paced guide to get you started with cross-platform mobile application development with Google Flutter"
+- title: 'Practical Flutter'
+  authors:
+    - Frank Zammetti
+  publisher: Apress
+  cover: practical-flutter.jpg
+  link: "https://www.apress.com/us/book/9781484249710"
+  desc: "Improve your Mobile Development with Google's latest open source SDK."
+- title: 'Programming Flutter'
+  authors:
+    - Carmine Zaccagnino
+  publisher: Pragmatic Bookshelf
+  cover: programming-flutter.jpg
+  link: "https://pragprog.com/book/czflutr"
+  desc: "Native, Cross-Platform Apps the Easy Way. Doesn't require previous Dart knowledge."

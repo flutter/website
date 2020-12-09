@@ -1,0 +1,20 @@
+.book-img-with-details {
+  margin-bottom: 1.5rem;
+  img {
+    @include media-breakpoint-down(sm) { max-width: 200px; }
+    width: 100%;
+  }
+  .details {
+    .title {
+      @include media-breakpoint-up(sm) { margin-top: 0; }
+      margin-bottom: 0;
+    }
+    .authors {
+      color: $site-color-body; // TODO: drop once heading class styles (like .h4) are fixed.
+    }
+  }
+}
+
+.help-instruction {
+  z-index: 1;
+}

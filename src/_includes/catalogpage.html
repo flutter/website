@@ -1,67 +1,70 @@
 <div class="catalog">
     {% for section in site.data.catalog.index %}
-    {% if section.name contains include.category %}
-    <div class="category-description"><p>{{section.description}}</p></div>
-    {% endif %}
+        {% if section.name contains include.category %}
+            <div class="category-description"><p>{{section.description}}</p></div>
+        {% endif %}
     {% endfor %}
 
     <ul>
         {% for category in site.data.catalog.index %}
-        {% if category.name == include.category %}
-        {% for sub in category.subcategories %}
-        <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
-        {% endfor %}
-        {% endif %}
+            {% if category.name == include.category %}
+                {% for sub in category.subcategories %}
+                    <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
+                {% endfor %}
+            {% endif %}
         {% endfor %}
     </ul>
 
-    <p>See more widgets in the <a href="/widgets">Flutter widget catalog</a>.</p>
+    <p>See more widgets in the <a href="/docs/development/ui/widgets/catalog">widget catalog</a>.</p>
 
-    <ul class="cards">
+    <div class="card-deck card-deck--responsive">
         {% for comp in site.data.catalog.widgets %}
-        {% if comp.categories contains include.category %}
-        <li class="cards__item">
-            <div class="catalog-entry">
-                <div class="catalog-image-holder">{{comp.image}}</div>
-                <h3>{{comp.name}}</h3>
-                <p class="scrollable-description"> {{comp.description}} </p>
-                <p>
-                    <a href="{{comp.link}}">Documentation</a>
-                    {% if comp.sample %}, <a href="/catalog/samples/{{comp.sample}}/">Samples</a>{% endif %}
-                </p>
-                <div class="clear"></div>
-            </div>
-        </li>
-        {% endif %}
+            {% if comp.categories contains include.category %}
+                <div class="card">
+                    <a href="{{comp.link}}">
+                        <div class="card-image-holder">
+                            {{comp.image}}
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
+                        <p class="card-text">{{comp.description}}</p>
+                    </div>
+                    <div class="card-footer card-footer--transparent">
+                        <a href="{{comp.link}}">Documentation</a>
+                    </div>
+                </div>
+            {% endif %}
         {% endfor %}
-    </ul>
-
+    </div>
 
     {% for category in site.data.catalog.index %}
-    {% if category.name == include.category %}
-    {% for sub in category.subcategories %}
-    <h1 id="{{sub.name}}">{{sub.name}}</h1>
-    <ul class="cards">
-        {% for comp in site.data.catalog.widgets %}
-        {% if comp.subcategories contains sub.name %}
-        <li class="cards__item">
-            <div class="catalog-entry" >
-                <div class="catalog-image-holder">{{comp.image}}</div>
-                <h3>{{comp.name}}</h3>
-                <p class="scrollable-description"> {{comp.description}} </p>
-                <p>
-                    <a href="{{comp.link}}">Documentation</a>
-                    {% if comp.sample %}, <a href="/catalog/samples/{{comp.sample}}/">Samples</a>{% endif %}
-                </p>
-                <div class="clear"></div>
-            </div>
-        </li>
+        {% if category.name == include.category %}
+            {% for sub in category.subcategories %}
+                <h2 id="{{sub.name}}">{{sub.name}}</h2>
+                <div class="card-deck card-deck--responsive">
+                    {% for comp in site.data.catalog.widgets %}
+                        {% if comp.subcategories contains sub.name %}
+                            <div class="card">
+                                <a href="{{comp.link}}">
+                                    <div class="card-image-holder">
+                                        {{comp.image}}
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
+                                    <p class="card-text">{{comp.description}}</p>
+                                </div>
+                                <div class="card-footer card-footer--transparent">
+                                    <a href="{{comp.link}}">Documentation</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
         {% endif %}
-        {% endfor %}
-    </ul>
-    {% endfor %}
-    {% endif %}
     {% endfor %}
 
-    <p>See more widgets in the <a href="/widgets">Flutter widget catalog</a>.</p>
+    <p>See more widgets in the <a href="/docs/development/ui/widgets/catalog">widget catalog</a>.</p>
 </div>

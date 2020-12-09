@@ -1,0 +1,123 @@
+.create {
+  h4 {
+    margin-bottom: bs-spacer(8);
+  }
+
+  &__row {
+    padding: bs-spacer(12) 0;
+  }
+
+  &__cta {
+    $flutter-cta-color: #13B9FD;
+    $flutter-cta-color-hover: lighten($flutter-cta-color, 10%);
+
+    background-color: $flutter-cta-color;
+    border-color: $flutter-cta-color;
+    padding: bs-spacer(3) bs-spacer(10);
+
+    &:hover {
+      background-color: $flutter-cta-color-hover;
+      border-color: $flutter-cta-color-hover;
+    }
+  }
+
+  &__deadline {
+    color: $flutter-color-fuchsia;
+  }
+
+  &__criteria {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include media-breakpoint-up(sm) {
+      columns: 2;
+    }
+
+    &__icon {
+      display: block;
+      margin-bottom: bs-spacer(2);
+    }
+
+    li {
+      font-size: 1.25rem;
+      margin-bottom: bs-spacer(8);
+      @include media-breakpoint-up(xl) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__center-block {
+    text-align:center;
+    margin-bottom: bs-spacer(6);
+  }
+
+  &__video {
+    margin-top: bs-spacer(6);
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+  }
+
+  &__video iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }
+
+  &__category-winner {
+    margin-top: bs-spacer(12);
+  }
+
+  &__grandprize {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include media-breakpoint-up(sm) {
+      columns: 4;
+    }
+
+    &__icon {
+      display: block;
+      margin-bottom: bs-spacer(2);
+    }
+
+    li {
+      font-size: 1.25rem;
+      margin-bottom: bs-spacer(8);
+      @include media-breakpoint-up(xl) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__text-columns {
+    @include media-breakpoint-up(sm) {
+      columns: 2;
+    }
+  }
+
+  &__prizes {
+    &__image {
+      align-items: flex-end;
+      display: flex;
+      height: 226px;
+      margin-bottom: bs-spacer(4);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      margin-bottom: bs-spacer(1);
+      margin-top: bs-spacer(4);
+    }
+  }
+}

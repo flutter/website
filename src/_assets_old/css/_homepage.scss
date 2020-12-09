@@ -1,0 +1,322 @@
+.get-started-button {
+    text-decoration: none;
+    background-color: #0091EA;
+    color: #fff;
+    padding: 16px;
+    // Fix slight vertical misalignment in WebKit-based browsers.
+    padding-top: 17px;
+    border-radius: 4px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: 16px;
+
+    font-size: 16px;
+    font-weight: 300;
+
+    // #9a9a9b == rgb(154, 154, 155)
+    box-shadow: 0 2px 2px rgba(154, 154, 155, 0.75);;
+}
+
+.get-started-button:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.homepage__tagline {
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 300;
+    width: 65%;
+
+    @include media-query(770px) {
+        font-size: 18px;
+        width: 100%;
+    }
+}
+
+.homepage__title {
+    margin-bottom: 40px;
+    width: 60%;
+}
+
+.homepage .main-contents-body {
+    position: relative;
+}
+
+img.homepage__illustration--image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    z-index: 10;
+
+    @include media-query(570px) {
+        top: 30px;
+    }
+
+    @include media-query(480px) {
+        top: 75px;
+        width: 150px;
+    }
+}
+
+$homepage-illustration-text-break-size: 720px;
+
+// The selector contains to divs to increase specificity.
+.homepage div div .homepage__illustration--text {
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+
+    @include media-query($homepage-illustration-text-break-size) {
+        font-size: 16px;
+    }
+
+    a, a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+.homepage__button_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+
+    .alert {
+        margin-top: 0;
+        padding: 0;
+        background-color: transparent;
+        color: #424242;
+    }
+
+    > * {
+        margin-bottom: 16px;
+    }
+}
+
+.homepage__features {
+    h3 {
+        margin-bottom: 24px;
+
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    h4 {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    ul {
+        margin: 0 0 24px 8px;
+        list-style: none;
+
+        li {
+            margin-bottom: 8px;
+
+            font-size: 16px;
+            font-weight: 300;
+        }
+    }
+}
+
+.homepage {
+    background-color: #e4e8ea;
+    background-image: url("/images/homepage/blue-triangle.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    @include media-query(1500px) {
+        background-position: -50px -50px;
+    }
+
+    @include media-query(1300px) {
+        background-position: -100px -100px;
+    }
+
+    @include media-query(1050px) {
+        background-position: -150px -150px;
+    }
+
+    @include media-query(850px) {
+        background-position: -180px -180px;
+    }
+
+    @include media-query($homepage-illustration-text-break-size) {
+        background-position: -200px -200px;
+    }
+
+    @include media-query(620px) {
+        background-position: -230px -230px;
+    }
+
+    #side-nav-container {
+        display: none;
+    }
+
+    #side-nav-container.active {
+        display: block;
+    }
+
+    .main-contents {
+        // No need for margin, we don't show sidebar on homepage.
+        margin-left: auto;
+        width: auto;
+        float: none; // Match Lavish settings
+
+        @include media-query($on-palm) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .contents {
+        pre[class*="language-"] {
+            margin-bottom: 36px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1 {
+            color: #0091ea;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            font-size: 36px;
+            font-weight: 300;
+
+            @include media-query($on-palm) {
+                &.homepage__title {
+                    padding-top: 14px;
+                    font-size: 28px;
+                }
+            }
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        h1, h2, p {
+            margin-bottom: 36px;
+        }
+
+        .screenshot-list {
+            display: flex;
+            flex-direction: row;
+            overflow-x: scroll;
+            margin-bottom: 36px;
+        }
+
+        img.screenshot {
+            width: 270px;
+            height: 100%;
+            margin-bottom: 16px;
+            margin-right: 16px;
+        }
+
+        section {
+            margin-bottom: 65px;
+            padding: 48px;
+
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @include media-query($on-palm) {
+            section {
+                padding: 24px;
+            }
+        }
+
+        section.card {
+            width: 100%;
+            border-radius: 4px;
+            // #d3d1d1 == rgb(211, 209, 209)
+            box-shadow: 0 2px 8px rgba(211, 209, 209, 0.75);
+            border: none;
+        }
+
+        .feature-lists {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 36px;
+        }
+
+        .hot-reload-gif-container {
+            text-align: center;
+        }
+
+        .key-points {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            p {
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 300;
+                color: #111111;
+            }
+        }
+
+        .homepage__key_points {
+            margin-top: 40px;
+        }
+
+        .homepage__key_point_title {
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 8px;
+            color: #111111;
+        }
+
+        .homepage__key_point {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
+            margin-right: 16px;
+        }
+
+        .homepage__try_flutter {
+            .homepage__try_today {
+                font-size: 36px;
+                font-weight: 300;
+                color: #111111;
+                margin-bottom: 24px;
+            }
+
+            .homepage__button_row {
+                margin-bottom: 0;
+            }
+        }
+
+        @include media-query($on-palm) {
+            .key-points {
+                display: block;
+
+                p {
+                    margin-bottom: 16px;
+                }
+            }
+
+            .homepage__key_point_title {
+                margin-top: 24px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+
+$device-color: #333;
+
+.showcase-grid__item {
+  margin-top: 3em;
+
+  h2, p {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+.showcase-grid__screenshot {
+  border: 12px solid $device-color;
+  background: $device-color;
+  border-radius: 16px;
+  margin-bottom: 1em;
+}
+
+.showcase-grid__screenshot--top, .showcase-grid__screenshot--bottom {
+  height: 2em;
+}

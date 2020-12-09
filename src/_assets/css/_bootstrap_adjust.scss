@@ -1,0 +1,95 @@
+.alert {
+  > p:last-child { margin-bottom: 0; }
+  > ul:last-child { margin-bottom: 0; }
+}
+
+a.card {
+  color: inherit;
+
+  .card-title { color: $site-color-primary; }
+
+  &:hover {
+    $border-height: 0.25rem;
+
+    border-bottom: $border-height solid $site-color-primary;
+    text-decoration: none;
+
+    .card-body {
+      padding-bottom: $card-spacer-x - $border-height;
+    }
+  }
+}
+
+.card-title {
+  font-family: $site-font-family-alt;
+  font-size: $font-size-lg;
+  margin-bottom: bs-spacer(2);
+}
+
+.breadcrumb {
+  align-items: center;
+
+  @at-root {
+    .breadcrumb-item {
+      align-items: center;
+      display: flex;
+
+      + .breadcrumb-item {
+        // padding-left: 0; // Fix BS 4.1 padding issue: push left padding into ::before for balance
+        &::before { font: $site-font-icon; }
+      }
+
+      &.active a {
+        color: $breadcrumb-active-color;
+        cursor: default;
+        &:hover { text-decoration: none; }
+      }
+    }
+  }
+}
+
+.btn {
+  font-family: $site-font-family-alt;
+  font-weight: 500;
+  padding: bs-spacer(2);
+  white-space: normal;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  text-decoration: none;
+}
+
+.nav-tabs {
+  font-family: $site-font-family-alt;
+}
+
+.nav-tabs .nav-item:not(:last-child) {
+  margin-right: bs-spacer(8);
+}
+
+.nav-tabs .nav-item a {
+  color: $site-color-nav-links;
+  padding: bs-spacer(4) 0;
+}
+
+.nav-tabs .nav-link,
+.nav-tabs .nav-link:hover {
+  border: none;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+  border-color: $site-color-primary;
+}
+
+@mixin reset-carousel-animation {
+  .carousel-item-next,
+  .carousel-item-prev {
+    display: none;
+  }
+  .carousel-item-left,
+  .carousel-item-right {
+    transform: none;
+  }
+}

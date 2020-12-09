@@ -1,0 +1,188 @@
+- title: What is Flutter Clock?
+  content: >
+    Flutter Clock is a skills-based contest offered by Google, including participation by the Flutter, Google
+    Assistant, and Lenovo teams. Flutter Clock challenges you to use Flutter to build a beautiful and innovative clock
+    face application.
+
+- title: What is the judging criteria?
+  content: >
+    Each entry will be rated against the following rubric: Visual beauty, Novelty of idea, Code quality, and Overall
+    execution (including accessibility).
+
+- title: Who are the judges?
+  content: >
+    Entries will be judged by employees of Google and/or individuals from the Flutter open source community that are
+    experienced developers and designers.
+
+- title: What are the deadlines for the contest?
+  content: >
+    You need to have your clock submitted via the Google form by January 20th, 11:59pm PST (GMT - 8), and published
+    publicly on Github by February 5th, 11:59pm PST (GMT - 8).
+
+- title: I submitted my clock. Can I make changes to it?
+  content: >
+    Yes, as long as your changes occur before January 20th, 11:59pm PST (GMT - 8).
+
+- title: When will the winners be selected?
+  content: >
+    Winners will be selected around February 10th and announced around February 25th.
+
+- title: What are the prizes?
+  content: >
+    <span>1 Grand prize winner receives:</span>
+    <p>A loaded Apple iMac Pro valued at ~$10,000 USD (detailed specifications may vary based on availability and
+    applicable law in the potential winner’s country of residence).</p>
+    <span>4 Winners each receive:</span>
+    <p>A Lenovo 10" Smart Display with the Google Assistant valued at ~$249.00 USD (based on availability and applicable
+    law in the potential winner’s country of residence).</p>
+    <span>Up to 25 Winners each receive:</span>
+    <p>A Lenovo Smart Clock with the Google Assistant valued at ~$79.00 USD (based on availability and applicable law
+    in the potential winner’s country of residence).</p>
+    <p>In addition, all participants who submit complete and valid entries will receive a digital certificate of
+    completion when their code repository is made public by February 5th, 2020. Also, some submissions may be integrated
+    into the Lenovo Smart Clock's lineup of clock faces, or may be used as inspiration for future clock faces.</p>
+
+- title: What do I submit?
+  content: >
+    See the submission instructions in the ‘Getting Started’ section, and the
+    <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+    Official Rules</a> for more details.
+
+- title: Can I submit more than one entry?
+  content: >
+    We limit entries to one per participant. We encourage you to submit your best entry! In the event of multiple
+    submissions from a single participant, we'll only judge the most recent.
+
+- title: I've already built a clock face; can I submit that for the challenge?
+  content: >
+    Unfortunately, no. Only new clock faces built after November 18th, 2019 can be submitted for consideration.
+
+- title: Can I make fresh updates to an existing clock face built in the past, and submit that?
+  content: >
+    No, you must submit a new clock face started for this contest to qualify.
+
+- title: Does the clock have to show the time?
+  content: >
+    The viewer should be able to tell the time. Whether that be with digits, clock hands, a sundial shadow, or colors
+    flashing in Morse code, there should be some way for a user to reliably determine the time. (It’s OK if telling the
+    time requires some thinking.)
+- title: Do I need to add any extra functionality like alarms or stopwatches?
+  content: >
+    No, this will not be considered by the judges when determining winners.
+- title: Does the clock have to use data retrieved from ClockModel?
+  content: >
+    No. We provide the ClockModel mockable API for system-level information on the Lenovo Smart Clock. This API is
+    available to you in your clock face, but using it is not required.
+
+- title: Must my clock have both a dark and light mode? Should I animate the transition between dark and light mode?
+  content: >
+    No, to both questions. The Lenovo Smart Clock has a feature that animates a clock between dark and light mode based
+    on the room's brightness. You can use it to determine a dark and light theme, but it's not required. You can also
+    animate between themes using, for example, an AnimatedBuilder or ValueListenableBuilder, but it's also not required.
+
+- title: Does the clock have to show other information, such as weather and date?
+  content: >
+    No. We provide the ClockModel, a mockable API including weather information on the Lenovo Smart Clock. You don't
+    have to display or use any of this information.
+
+- title: How do I change the clock settings (e.g. weather, location, 24 hr time format)?
+  content: >
+    Tap the sample clock face to show/hide the settings cog in the top right corner, and then tap on the settings cog.
+
+- title: What language(s) should the clock use?
+  content: >
+    Any. If you have words in your clock, consider
+    <a href="https://flutter.dev/docs/development/accessibility-and-localization/internationalization" target="_blank" rel="noopener noreferrer"> internationalizing
+    them<a/>. Note that written parts of your submission must be in English to be eligible for judging, and your submission must, at a minimum,  support English language
+    evaluation. However, we will not judge your clock face for language inclusion. Please ensure that your clock face’s
+    text does not include profanity in any language, and is built and submitted in accordance with the
+    <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+    Official Rules</a>.
+
+- title: What accessibility requirements should I add?
+  content: >
+    Google values accessibility, and it will be a consideration in your submission as part of the “overall execution”
+    criteria. Check the <a href="https://flutter.dev/docs/development/accessibility-and-localization/accessibility" target="_blank" rel="noopener noreferrer">
+    Flutter accessibility</a> page for details.
+
+- title: >
+    Will the judgement of my clock have the same UX considerations as for the Lenovo Smart Clock? For example: Should I
+    consider how the clock looks in a bedroom setting, or in a dimly lit room? Must I consider use cases such as the
+    user waking up in the middle of the night, or viewing the clock from across the room?
+  content: >
+    No. See the judging criteria in the
+    <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+    Official Rules</a> for more details.
+
+- title: What tips do you have to check the performance of my clock?
+  content: >
+    Take a look at <a href="https://flutter.dev/docs/perf/rendering/ui-performance" target="_blank" rel="noopener noreferrer">Flutter performance profiling</a>,
+    and enable the <a href="https://flutter.dev/docs/perf/rendering/ui-performance#the-performance-overlay" target="_blank" rel="noopener noreferrer">performance
+    overlay<a/> feature in the
+    <a href="https://flutter.dev/docs/development/tools/devtools/inspector#debugging-layout-issues-visually" target="_blank" rel="noopener noreferrer">Flutter
+    Inspector</a> to see whether frames are being drawn redundantly.
+
+- title: Is there an age limit to participate?
+  content: >
+    You must not be a minor (per your country of residence) to be eligible for the contest.
+
+- title: Can I use Flare animations?
+  content: >
+    Yes, you can use <a href="https://rive.app/" target="_blank" rel="noopener noreferrer">Flare</a> animations in your submission.
+
+- title: >
+    Can I store data in a separate file? For example, can I store a list of ways to say 'Good Morning' in a JSON file?
+  content: >
+    Yes. Make sure to include such files as assets in your submission.
+
+- title: Do contest submissions have to be formatted by the Dart formatter?
+  content: >
+    Yes. This ensures more consistent and readable code.
+    <a href="https://flutter.dev/docs/development/tools/formatting" target="_blank" rel="noopener noreferrer">You can do this from your IDE or at the command
+    line</a>.
+
+- title: Speaking of code formatting, what are some good coding practices for Flutter?
+  content: >
+    Check out <a href="https://dart.dev/guides/language/effective-dart" target="_blank" rel="noopener noreferrer">Effective Dart</a>.
+    (Note that the Flutter codebase has its own formatting guidelines and doesn't adhere to Effective Dart.)
+
+- title: Can a team of people submit a single clock?
+  content: >
+    A team of people can work on a single clock, but the person submitting the clock through our form should be
+    authorized to submit the clock (including all code and assets) on behalf of every person in the entire team, and
+    each winning clock is only eligible for 1 prize.
+
+- title: Do assets (art, fonts) also have to be created by participants?
+  content: >
+    All assets must comply with our
+    <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+    Official Rules</a> for submissions, and participants must either create or have permission to use (e.g. via a license) and
+    submit all parts of their submission.
+
+- title: Do you retain copyright ownership if you submit app to Flutter clock challenge?
+  content: >
+    By submitting, you are agreeing to release the app under an open source license, and are giving Google a license to
+    the app. Please see the <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit" target="_blank" rel="noopener noreferrer">
+    Official Rules</a> for more details.
+
+- title: My clock looks or behaves differently on web! What do I do?
+  content: >
+    We will not be judging your clock on web. Web is currently in technical preview and is missing some features, but is
+    a great way to share your app with others.
+
+- title: If I have more questions, where should I go?
+  content: >
+    Take a look through our
+    <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+    Official Rules</a> and, if you still have questions, please
+    <a href="http://github.com/flutter/flutter_clock/issues" target="_blank">file a Flutter Clock GitHub issue</a>.
+
+- title: How can I share my clock face online?
+  content: >
+    We’re glad you asked! Flutter’s web support is in technical preview and you can use to share your clock face online.
+    Once you <a href="https://flutter.dev/docs/get-started/web" target="_blank" rel="noopener noreferrer">enable web support</a>, test your app by selecting
+    Chrome as the target device in your IDE, or at the command line with <em>flutter run -d chrome</em>. Build a web
+    version of your app for deployment using <em>flutter build web</em>. Then, you can host it using
+    <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>, <a href="https://medium.com/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469" target="_blank" rel="noopener noreferrer">Firebase</a>,
+    or any other web hosting solution. If you share a link to your app on social media, be sure to include the
+    #FlutterClock hashtag!

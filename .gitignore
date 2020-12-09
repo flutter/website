@@ -8,13 +8,18 @@ node_modules
 
 # Dart and Flutter
 .flutter-plugins
+.flutter-plugins-dependencies
 .packages
-.pub/
+.dart_tool
 pubspec.lock
-packages
-example.g/
+example.g
+tmp/
 
-src/_includes/code/**/android/
-src/_includes/code/**/ios/
+# We haven't had any issues due to npm (sub-)package version discrepancies,
+# so we'll ignore the npm lock file for now.
+package-lock.json
 
 .idea/
+.vscode/
+.firebase/
+firebase-debug.log

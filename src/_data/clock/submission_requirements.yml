@@ -1,0 +1,43 @@
+- title: >
+    Design and data notes:
+  subItems:
+    - text: >
+       The <span class="code-font">ClockModel</span> API with mock data is provided to you. Using this API is optional,
+        but it provides system information such as the brightness mode, weather, and time format.
+    - text: >
+        The clock design should use landscape mode, with a 5:3 aspect ratio.
+    - text: >
+        You may use <a href="https://material.io/resources/icons" target="_blank" rel="noopener noreferrer">Material Design icons</a>.
+    - text: >
+        Your Submission’s code must be licensed under an appropriate open source license (for code, BSD aka University
+        of California license, MIT license or Apache 2.0 license are recommended; for assets, CC BY 4.0 license or
+        Apache 2.0 license are recommended; for fonts, OFL license is recommended).
+    - text: >
+        Your clock should not:
+      subItems:
+        - text: >
+            Have user interaction (such as tapping, gestures, dragging, mouse, keyboard, and so on).
+        - text: >
+            Play audio, including an alarm.
+        - text: >
+            Make network requests.
+        - text: >
+            Collect data in violation of applicable laws (including privacy laws).
+        - text: >
+            Contain copyrighted or trademarked content.
+- title: >
+    Submissions:
+  subItems:
+    - text: >
+        Submit your final clock by January 20th, 11:59pm PST (GMT-8).
+    - text: >
+        Your clock must be made public on <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        before February 5th, 2020, but can be private during the contest period. Your Submission’s code must be licensed
+        under an appropriate open source license (for code, BSD aka University of California license, MIT license or
+        Apache 2.0 license are recommended; for assets, CC BY 4.0 license or Apache 2.0 license are recommended;
+        for fonts, OFL license is recommended).
+    - text: >
+        Specify on the submission form which platform (Android or iOS) you would like the judges to use when evaluating
+        your submission. Judges will not be testing on web.
+    - text: >
+        Please also submit a video (of less than 30 seconds) of your clock and a screenshot via the form.

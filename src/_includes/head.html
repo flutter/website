@@ -5,6 +5,10 @@
   <title>{{page.title}} {% if page.homepage != true %} - {{ site.title }} {% endif %}</title>
   <link rel="shortcut icon" href="/images/favicon.png">
 
+  <!-- Google Optimize -->
+  <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MPZP6R8"></script>
+  <!-- End Google Optimize -->
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,28 +17,35 @@
   })(window,document,'script','dataLayer','GTM-ND4LWWZ');</script>
   <!-- End Google Tag Manager -->
 
-  {% assign page_url = page.url | replace:'index.html','' | prepend: site.url -%}
+  {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
   {% assign desc = page.description | default: page.content | strip_html | replace:'"','' | strip_newlines | truncatewords: 50 | split: '{%' | first %}
   <meta name="description" content="{{desc}}">
   <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@flutterio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@flutterdev">
 
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:url" content="{{ page_url }}">
+  <meta property="og:url" content="{{ page_url | absolute_url }}">
   <meta property="og:description" content="{{desc}}">
   {% assign og_image_path = page.image | default: layout.image | default: '/images/flutter-logo-sharing.png' %}
   <meta property="og:image" content="{{og_image_path | absolute_url}}">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro%7CRoboto:500,400italic,300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500|Roboto+Mono:400,700|Material+Icons" rel="stylesheet">
   {% asset main.css %}
   {% for css in page.css -%}
     {% asset '{{css}}' %}
   {% endfor %}
+  {% comment %}
+    TODO: use a local copy of clipboard.js rather than CDN
+  {% endcomment -%}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
   {% asset main.js %}
-  <link rel="canonical" href="{{ page_url }}">
+  {% for js in page.js -%}
+    <script {% if js.defer %}defer{% endif %} src="{{js.url | default: js}}"></script>
+  {% endfor -%}
+
+  {% include head-diff2html.html -%}
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -47,4 +58,5 @@
   </script>
 
   <meta name="google-site-verification" content="HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4" />
+  <meta name="google-site-verification" content="Zom-prnFykfYycmI_nzRWYx5r6Z9OwR-yEsgElRz_Ug" />
 </head>

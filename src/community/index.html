@@ -1,0 +1,126 @@
+---
+title: Community
+layout: landing
+body_class: landing-page community
+---
+
+<section class="community__intro row text-center">
+    <div class="col-12">
+        <h1>Welcome to the Flutter community</h1>
+        <p class="community__intro__description">
+            We're open source and would love to hear from you!
+            Below you'll find ways to get involved in the Flutter
+            community as well as links to
+            resources that can help answer your questions.
+            If you're in China, read
+            <a href="/community/china">Using Flutter in China</a>.
+        </p>
+    </div>
+</section>
+
+{% comment %}
+    Featured services
+{% endcomment -%}
+{% for case in site.data.community -%}
+{% if case.featured -%}
+    <section class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    {% if case.logo_src -%}
+                        <div class="landing-page__case-studies__logo">
+                            {% asset '{{ case.logo_src }}' %}
+                        </div>
+                    {% endif -%}
+                    <h3>{{ case.title }}</h3>
+                    <p>{{ case.description }}</p>
+                    {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">{{ case.learn_more_cta }}</a>{% endif %}
+                    {% if case.learn_more_link_1 %}<div><a href="{{ case.learn_more_link_1 }}">{{ case.learn_more_cta_1 }}</a></div><br>{% endif %}
+                    {% if case.learn_more_link_2 %}<div><a href="{{ case.learn_more_link_2 }}">{{ case.learn_more_cta_2 }}</a></div>{% endif %}
+                </div>
+
+                <div class="col-lg-8 pt-6 pt-lg-0 landing-page__card-graphic--fill">
+                    {% if case.screen_class -%}
+                        {% asset '{{ case.screen_src }}' class="{{case.screen_class}}" %}
+                    {% else -%}
+                        {% asset '{{ case.screen_src }}' %}
+                    {% endif -%}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif -%}
+{% endfor -%}
+
+{% comment %}
+    All other services
+{% endcomment -%}
+
+<section class="landing-page__case-studies card text-center">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Join the conversation</h2>
+                <p>
+                    Get answers to your questions and stay up to date
+                    with everything new and exciting happening in the
+                    Flutter community by checking out the links below.
+                </p>
+            </div>
+        </div>
+
+        {% for case in site.data.community -%}
+            {% if case.featured -%}
+                {% continue -%}
+            {% endif -%}
+            {% assign learnMoreCta = case.learn_more_cta | default: 'Learn more' -%}
+
+            {% capture loopCount %}{% increment communityCounter %}{% endcapture -%}
+            {% capture modulo3 %}{{ loopCount | modulo:3 }}{% endcapture -%}
+            {% if modulo3 == '0' -%}
+                <div class="text-left card-deck flex-column flex-lg-row">
+            {% endif -%}
+                    <div class="card card--case-study">
+                        <div class="card-header">
+                            {% if case.logo_src -%}
+                                {% asset '{{ case.logo_src }}' class='landing-page__case-studies__logo' -%}
+                            {% endif -%}
+                        </div>
+                        <div class="card-body">
+                            <h3>{{ case.name }}</h3>
+                            <p>{{ case.description }}</p>
+                        </div>
+                        <div class="card-footer card-footer--transparent card-footer--links">
+                            {% if case.learn_more_link[0] -%}
+                                <span class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="dropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ learnMoreCta }}
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
+                                        {% for learnMoreCase in case.learn_more_link -%}
+                                            <a class="dropdown-item" href="{{learnMoreCase.url}}" target="_blank" rel="noopener">{{learnMoreCase.name}}</a>
+                                        {% endfor -%}
+                                    </div>
+                                </span>
+                            {% elsif case.learn_more_link -%}
+                                <a href="{{ case.learn_more_link }}">{{ learnMoreCta }}</a>
+                            {% endif -%}
+                            {% if case.play_store_link or case.app_store_link -%}
+                                <span class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="dropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Download
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
+                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank" rel="noopener">Android</a>{% endif -%}
+                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank" rel="noopener">iOS</a>{% endif -%}
+                                    </div>
+                                </span>
+                            {% endif -%}
+                        </div>
+                    </div>
+            {% if modulo3 == '2' or forloop.last -%}
+                </div>
+            {% endif -%}
+        {% endfor -%}
+    </div>
+</section>

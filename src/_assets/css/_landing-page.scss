@@ -1,0 +1,169 @@
+.landing-page {
+  background-color: $site-color-codeblock-bg;
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    @include media-breakpoint-up(lg) {
+      font-size: 2.25rem;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 2.75rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    @include media-breakpoint-up(lg) {
+      font-size: 1.75rem;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .card {
+    margin-bottom: bs-spacer(8);
+
+    .card-body {
+      padding: 40px 20px;
+      @include media-breakpoint-up(md) {
+        padding: 40px;
+      }
+      @include media-breakpoint-up(lg) {
+        padding: 60px;
+      }
+      @include media-breakpoint-up(xl) {
+        padding: 80px;
+      }
+    }
+  }
+
+  .card.card--case-study {
+    margin-bottom: bs-spacer(6);
+    padding: bs-spacer(8) bs-spacer(6);
+
+    .card-header {
+      align-items: center;
+      border: none;
+      background-color: transparent;
+      display: flex;
+      margin-bottom: bs-spacer(8);
+      min-height: 46px;
+      padding: 0;
+    }
+
+    .card-body {
+      margin-bottom: bs-spacer(4);
+      padding: 0;
+    }
+
+    .card-footer {
+      padding: 0;
+    }
+  }
+
+  &__card-graphic {
+    margin-bottom: bs-spacer(5);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+
+    &--fill {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      img,
+      video {
+        max-width: 100%;
+        pointer-events: none;
+      }
+    }
+
+    &__logo-row {
+      &:not(:last-child) {
+        margin-bottom: bs-spacer(2);
+      }
+    }
+  }
+
+  &__hero {
+    background-color: $site-color-black;
+    left: 50%;
+    margin-bottom: 40px;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 80px;
+    }
+
+    .card {
+      .card-body {
+        padding: bs-spacer(6);
+      }
+
+      .card-category {
+        color: $site-color-primary;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        margin-bottom: bs-spacer(4);
+      }
+
+      .btn.btn-link {
+        padding: 0;
+      }
+    }
+  }
+
+  &__case-studies {
+    &__logo {
+      max-width: 50%;
+      max-height: 40px;
+      height: auto;
+
+      img {
+        max-height: 40px;
+      }
+    }
+
+    .card-deck {
+      margin-top: bs-spacer(12);
+
+      .col-lg-4 {
+        padding-left: bs-spacer(3);
+        padding-right: bs-spacer(3);
+      }
+    }
+  }
+
+  &__cta {
+    &__headline {
+      margin-bottom: bs-spacer(2);
+      @include media-breakpoint-up(md) {
+        margin-bottom: bs-spacer(4);
+      }
+    }
+
+    &__body {
+      font-size: 1.25rem;
+      @include media-breakpoint-up(md) {
+        font-size: 1.35rem;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__button {
+      margin-top: bs-spacer(4);
+      @include media-breakpoint-up(md) {
+        margin-top: bs-spacer(8);
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<div class="snackbar {{ include.class }}">
+  <div class="snackbar__container">
+    <div class="snackbar__label">
+      {{ include.label }}
+    </div>
+    {% if include.action -%}
+    <button class="snackbar__action btn btn-link">{{ include.action }}</button>
+    {% endif -%}
+  </div>
+</div>

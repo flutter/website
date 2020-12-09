@@ -1,0 +1,315 @@
+---
+title: Flutter - Beautiful native apps in record time
+layout: landing
+body_class: landing-page homepage
+homepage: true
+description: Flutter SDK is Google's UI toolkit for crafting beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
+js:
+- url: /assets/js/dartpad_picker_main.dart.js
+  defer: true
+
+---
+
+<section class="homepage__hero text-center carousel slide" data-ride="carousel" data-interval=6500 data-pause="false" aria-hidden="true">
+    <div class="carousel-inner">
+        <div class="carousel-item active homepage__hero__slide homepage__hero__slide--beautiful">
+            {% asset homepage/carousel/slide_1-bg.jpg class='homepage__hero__image homepage__hero__image--layer-1' %}
+            {% asset homepage/carousel/slide_1-layer_1.png class='homepage__hero__image homepage__hero__image--layer-2' %}
+            {% asset homepage/carousel/slide_1-layer_2.png class='homepage__hero__image homepage__hero__image--layer-3' %}
+            <h1 class="homepage__hero__text">Design <span class="color-white">beautiful</span> apps</h1>
+            {% asset homepage/carousel/phone_bezel.png class='homepage__hero__phone-bezel' %}
+        </div>
+        <div class="carousel-item homepage__hero__slide homepage__hero__slide--productive">
+            {% asset homepage/carousel/slide_2-bg.jpg class='homepage__hero__image homepage__hero__image--layer-1' %}
+            {% asset homepage/carousel/slide_2-layer_2.png class='homepage__hero__image homepage__hero__image--layer-2' %}
+            {% asset homepage/carousel/slide_2-layer_1.png class='homepage__hero__image homepage__hero__image--layer-3' %}
+            <h1 class="homepage__hero__text"><span class="color-white">Productively</span> build apps</h1>
+            {% asset homepage/carousel/phone_bezel.png class='homepage__hero__phone-bezel' %}
+        </div>
+        <div class="carousel-item homepage__hero__slide homepage__hero__slide--faster">
+            {% asset homepage/carousel/slide_3-bg.jpg class='homepage__hero__image homepage__hero__image--layer-1' %}
+            {% asset homepage/carousel/slide_3-layer_2.png class='homepage__hero__image homepage__hero__image--layer-2' %}
+            {% asset homepage/carousel/slide_3-layer_1.png class='homepage__hero__image homepage__hero__image--layer-3' %}
+            <h1 class="homepage__hero__text">Create <span class="color-white">faster</span> apps</h1>
+            {% asset homepage/carousel/phone_bezel.png class='homepage__hero__phone-bezel' %}
+        </div>
+        <div class="carousel-item homepage__hero__slide homepage__hero__slide--publish">
+            {% asset homepage/carousel/slide_4-bg.jpg class='homepage__hero__image homepage__hero__image--layer-1' %}
+            {% asset homepage/carousel/slide_4-layer_2.png class='homepage__hero__image homepage__hero__image--layer-2' %}
+            {% asset homepage/carousel/slide_4-layer_1.png class='homepage__hero__image homepage__hero__image--layer-3' %}
+            <h1 class="homepage__hero__text">Target <span class="color-white">mobile, web, & desktop</span> apps</h1>
+            {% asset homepage/carousel/phone_bezel.png class='homepage__hero__phone-bezel' %}
+        </div>
+    </div>
+</section>
+
+<section class="homepage__intro card text-center">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12 col-lg-8 offset-lg-2">
+                <span class="homepage__intro__partner">Made by {% asset homepage/logo-google.svg alt='Google logo' %}</span>
+                <p class="homepage__intro__statement text-center">
+                    Flutter is Google’s UI toolkit for building
+                    beautiful, natively compiled applications for
+                    <a href="/docs">mobile</a>, <a href="/web">web</a>,
+                    and <a href="/desktop">desktop</a> from a single codebase.
+                </p>
+
+                <div class="homepage__intro__buttons">
+                    <a class="btn btn-primary btn-cta" href="/docs/get-started/install">Get started</a>
+                    <button class="btn btn-link btn-icon" type="button" data-toggle="modal" data-target="#videoModal" data-video="5VbAwhBBHsg"><i class="material-icons" aria-hidden="true">play_circle_filled</i> Watch video</button>
+                </div>
+
+                <p>
+                    Coming from another platform? Docs:
+                    <a href="/docs/get-started/flutter-for/ios-devs">iOS</a>,
+                    <a href="/docs/get-started/flutter-for/android-devs">Android</a>,
+                    <a href="/docs/get-started/flutter-for/web-devs">Web</a>,
+                    <a href="/docs/get-started/flutter-for/react-native-devs">React Native</a>,
+                    <a href="/docs/get-started/flutter-for/xamarin-forms-devs">Xamarin</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="homepage__key-points card">
+    <div class="card-body">
+        <div class="row text-center">
+
+            <div class="homepage__key-point col-lg-4">
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-development.svg %}</div>
+
+                <h3>Fast Development</h3>
+
+                <p>
+                Paint your app to life in milliseconds with Stateful
+                Hot Reload. Use a rich set of fully-customizable
+                widgets to build native interfaces in minutes.
+                </p>
+            </div>
+
+            <div class="homepage__key-point col-lg-4">
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-ui.svg %}</div>
+
+                <h3>Expressive and Flexible UI</h3>
+
+                <p>
+                Quickly ship features with a focus on native end-user
+                experiences. Layered architecture allows for full
+                customization, which results in incredibly fast
+                rendering and expressive and flexible designs.
+                </p>
+            </div>
+
+            <div class="homepage__key-point col-lg-4">
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-performance.svg %}</div>
+
+                <h3>Native Performance</h3>
+
+                <p>
+                Flutter’s widgets incorporate all critical platform
+                differences such as scrolling, navigation, icons and
+                fonts, and your Flutter code is compiled to native ARM
+                machine code using <a href="https://dart.dev/platforms">Dart's native compilers</a>.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="dartpad-landing-page" class="landing-page__cta card text-center">
+    <div class="card-body">
+        <div class="dash-dartpad">
+            <a name="try-dart"></a>
+            <h2>Try Flutter in your browser</h2>
+            <select id="dartpad-select" aria-label="Select a Flutter demo"></select>
+            <div id="dartpad-host"></div>
+            <h3>Want more practice? <a href="/codelabs">Try a codelab</a>.</h3>
+        </div>
+    </div>
+</section>
+
+<section class="homepage__hot-reload card">
+    <div class="card-body">
+        <div class="row">
+            <div class="landing-page__card-graphic--fill col-lg-8">
+                <video src="/videos/FastDev.mp4" autoplay playsinline muted loop title="Hot reload demo"></video>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-development.svg %}</div>
+
+                <h2>Fast development</h2>
+
+                <p>
+                    Flutter's <em>hot reload</em> helps you quickly
+                    and easily experiment, build UIs, add features, and fix
+                    bugs faster. Experience sub-second reload times
+                    without losing state on
+                    emulators, simulators, and hardware.
+                </p>
+
+                <a href="/docs/development/tools/hot-reload">Learn more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="homepage__beautiful-uis card ">
+    <div class="card-body">
+        <div class="row">
+            <div class="landing-page__card-graphic--fill col-lg-8 order-lg-1">
+                <div>
+                    <div class="homepage__beautiful-uis__app-info">
+                        <h5>Reflectly</h5>
+                        <p>An award winning mindfulness app built with Flutter.</p>
+                        <small>
+                        Download: <a href="https://itunes.apple.com/us/app/reflectly-mindfulness-journal/id1241229134" target="_blank" rel="noopener">iOS</a>, <a href="https://play.google.com/store/apps/details?id=com.reflectlyApp&e=-EnableAppDetailsPageRedesign" target="_blank" rel="noopener">Android</a><br>
+                        <a href="https://reflect.ly" target="blank">Learn more</a>
+                        </small>
+                    </div>
+                    <video src="/videos/Filters.mp4" autoplay playsinline muted loop title="Reflectly app demo"></video>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-ui.svg %}</div>
+
+                <h2>Expressive, beautiful UIs</h2>
+
+                <p>
+                Delight your users with Flutter's built-in
+                beautiful Material Design and
+                Cupertino (iOS-flavor) widgets, rich motion APIs,
+                smooth natural scrolling, and platform awareness.
+                </p>
+
+                <a href="/docs/development/ui/widgets/catalog">Browse the widget catalog</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="homepage__native-performance card ">
+    <div class="card-body">
+        <div class="row">
+            <div class="landing-page__card-graphic--fill col-lg-8">
+                <video src="/videos/NativePerformance.mp4" autoplay playsinline muted loop title="Demo showcasing animations and transition performance"></video>
+            </div>
+            <div class="col-lg-4">
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-performance.svg %}</div>
+
+                <h2>Native Performance</h2>
+
+                <p>
+                Flutter’s widgets incorporate all critical platform
+                differences such as scrolling, navigation, icons
+                and fonts to provide full native
+                performance on both iOS and Android.
+                </p>
+                <p>
+                    <a href="/showcase">Examples of apps built with Flutter</a>
+                </p>
+                <p class="small mb-0">
+                    <small>Demo design inspired by
+                        <a href="https://dribbble.com/aureliensalomon">Aurélien Salomon</a>'s
+                        <a href="https://dribbble.com/shots/2940231-Google-Newsstand-Navigation-Pattern">Google Newsstand Navigation Pattern</a>
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="homepage__learn card ">
+    <div class="card-body">
+        <div class="row">
+            <div class="homepage__card-graphic col-lg-8 order-lg-1">
+                <div class="embedded-video-wrapper">
+                    <iframe class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/W1pNjxmNHNQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <h2 class="homepage__headline-after-image">Learn from developers</h2>
+
+                <p>
+                Watch these videos to learn from Google and developers
+                as you build with Flutter.
+                </p>
+
+                <a href="{{site.social.youtube}}">Visit our YouTube playlist</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="homepage__use-cases card ">
+    <div class="card-body">
+        <div class="row">
+            <div class="homepage__card-graphic col-lg-7 order-lg-1">
+                <div>
+                    <div class="landing-page__card-graphic__logo-row row align-items-center">
+                        {% asset homepage/garden-logos-color/google.png alt='Google logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/ebay.png alt='Ebay logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/bmw.jpg alt='BMW logo' class="col-4" %}
+                    </div>
+                    <div class="landing-page__card-graphic__logo-row row align-items-center">
+                        {% asset homepage/garden-logos-color/square.png alt='Square logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/alibaba.png alt='Alibaba logo' class="col-4" %}
+                        {% asset homepage/garden-logos-color/capital-one.png alt='Capital One logo' class="col-4" %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <h2 class="homepage__headline-after-image">Who's using Flutter?</h2>
+
+                <p>
+                Organizations around the world are building apps with Flutter.
+                </p>
+
+                <a href="/showcase">See what’s being created</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="homepage__news card-deck">
+    <div class="card">
+        {% asset homepage/news-1.png alt='A news item image' class="card-img-top" %}
+        <div class="card-body">
+            <p class="card-text"><small class="text-muted">News</small></p>
+            <h3>Announcing Flutter 1.22</h3>
+            <a href="https://medium.com/flutter/announcing-flutter-1-22-44f146009e5f">Read more</a>
+        </div>
+    </div>
+    <div class="card">
+        {% asset homepage/news-2.png alt='A news item image' class="card-img-top" %}
+        <div class="card-body">
+            <p class="card-text"><small class="text-muted">News</small></p>
+            <h3>Announcing Flutter Windows Alpha</h3>
+            <a href="https://medium.com/flutter/announcing-flutter-windows-alpha-33982cd0f433">Read more</a>
+        </div>
+    </div>
+</div>
+
+<section class="landing-page__cta card text-center">
+    <div class="card-body">
+        <h2 class="landing-page__cta__headline">Install Flutter today.</h2>
+        <p class="landing-page__cta__body">It’s free and open source.</p>
+        <a class="landing-page__cta__button btn btn-primary btn-cta" href="/docs/get-started/install">Get started</a>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" data-video-modal id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="embedded-video-wrapper">
+            <iframe id="video-player-iframe" class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/fq4N0hgOWzU?cc_lang_pref=en&cc_load_policy=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
