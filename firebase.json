@@ -253,7 +253,7 @@
       { "source": "/go/default-scroll-action", "destination": "https://docs.google.com/document/d/1SJvom6k4YW4EtFIY4VpAhAOH-jWhRkHVfpVsOBB56KM/edit?usp=sharing", "type": 301 },
       { "source": "/go/deprecation-lifetime", "destination": "https://docs.google.com/document/d/1Gc3ecrMghzc7WU4pgzKB8uBaTPpRdWfozn0otBbxR7s/edit?usp=sharing", "type": 301 },
       { "source": "/go/developing-plugins", "destination": "/docs/development/packages-and-plugins/developing-packages#plugin", "type": 301 },
-      { "source": "/go/plugin-platforms", "destination": "docs/development/packages-and-plugins/developing-packages#plugin-platforms", "type": 301 },
+      { "source": "/go/plugin-platforms", "destination": "/docs/development/packages-and-plugins/developing-packages#plugin-platforms", "type": 301 },
       { "source": "/go/deprecation-lifetime", "destination": "https://docs.google.com/document/d/1Gc3ecrMghzc7WU4pgzKB8uBaTPpRdWfozn0otBbxR7s/edit?usp=sharing", "type": 301 },
       { "source": "/go/multiple-engines", "destination": "https://docs.google.com/document/d/1NwiZPWHd1te46eP2GWwIezDV9CdMQkODAMuF5kWdtLw", "type": 301 },
       { "source": "/go/web-renderer-options", "destination": "https://docs.google.com/document/d/1aY0iU16wf_sdT7nwfpjgT-IatHNfF3slTiYHKmxcIog", "type": 301 },
