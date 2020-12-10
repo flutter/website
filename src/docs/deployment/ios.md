@@ -193,16 +193,53 @@ In Xcode, configure the app version and build:
 
 Finally, create a build archive and upload it to App Store Connect:
 
-1. Select **Product > Archive** to produce a build archive.
-1. In the sidebar of the Xcode Organizer window, select your iOS app,
-   then select the build archive you just produced.
-1. Click the **Validate App** button. If any issues are reported,
-   address them and produce another build. You can reuse the same
-   build ID until you upload an archive.
-1. After the archive has been successfully validated, click
-   **Distribute App**. You can follow the status of your build in the
-   Activities tab of your app's details page on
-   [App Store Connect][appstoreconnect_login].
+<ol markdown="1">
+<li markdown="1">
+
+Select **Product > Archive** to produce a build archive.
+
+{{site.alert.note}}
+  On Flutter version 1.24.0-6.0 and later you can create an
+  archive by instead running `flutter build ipa`.
+  Then open `build/ios/archive/MyApp.xcarchive` in Xcode to
+  validate and distribute your app.
+  See `flutter build ipa -h` for available flags.
+{{site.alert.end}}
+
+</li>
+<li markdown="1">
+
+In the sidebar of the Xcode Organizer window, select your iOS app,
+then select the build archive you just produced.
+
+</li>
+<li markdown="1">
+
+Click the **Validate App** button. If any issues are reported,
+address them and produce another build. You can reuse the same
+build ID until you upload an archive.
+
+</li>
+<li markdown="1">
+
+After the archive has been successfully validated, click
+**Distribute App**. You can follow the status of your build in the
+Activities tab of your app's details page on
+[App Store Connect][appstoreconnect_login].
+
+{{site.alert.note}}
+  When you export your app at the end of **Distribute App**,
+  Xcode will create a directory containing
+  an IPA of your app and an `ExportOptions.plist` file.
+  On Flutter version 1.24.0-6.0 and later you can
+  create new IPAs with the same options without launching
+  Xcode by running
+  `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
+  See `xcodebuild -h` for details about the keys in this property list.
+{{site.alert.end}}
+
+</li>
+</ol>
 
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers
