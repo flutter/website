@@ -23,8 +23,7 @@ the behavior of a method or class. A **widget test** verifies the behavior of
 Flutter widgets without running the app itself. An **integration test** (also
 called end-to-end testing or GUI testing) runs the full app.
 
-
-**Hosts and targets*
+**Hosts and targets**
 
 During development, you are probably writing the code on a desktop computer,
 called the **host** machine, and running the app on a mobile device, browser, or
@@ -32,6 +31,7 @@ desktop application, called the **target** device. (If you are using a web
 browser or desktop application, the host machine is also the target device.)
 
 **flutter_driver** 
+
 The `flutter_driver` package runs integration tests written in Dart on a target
 device and reports the results to the host. Tests written with `flutter_driver`
 run from the host and drive the app running on a real or virtual device. The
