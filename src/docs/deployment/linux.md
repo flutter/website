@@ -243,7 +243,6 @@ apps:
   access to the network.
 
 **DBus interface**
-
 : The dbus interface provides a way for snaps to 
   communicate over DBus. The snap providing the DBus 
   service declares a slot with the well-known DBus name 
@@ -266,6 +265,7 @@ apps:
   traditional permissions checks. Other (consuming) 
   snaps may only communicate with the providing 
   snap by connecting the snaps’ interface.
+  
 ```
 dbus-super-cool-app: # adjust accordingly to your app name
   interface: dbus
@@ -302,18 +302,23 @@ parts:
 
 
 ## Desktop file and icon
-: Desktop entry files are used to add an application 
-  to the desktop menu. These files specify the name and 
-  icon of your application, the categories it belongs to,
-  related search keywords and more. These files have the 
-  extension .desktop and follow the XDG Desktop Entry 
-  Specification version 1.1.
-  
-## Flutter super-cool-app.desktop example
 
-: Place the .desktop file in your Flutter
-  project under `<project root>/snap/gui/super-cool-app.desktop`.
-  **Notice**: name for icon and .desktop file must be the same as you name your app in yaml file
+
+Desktop entry files are used to add an application 
+to the desktop menu. These files specify the name and 
+icon of your application, the categories it belongs to,
+related search keywords and more. These files have the 
+extension .desktop and follow the XDG Desktop Entry 
+Specification version 1.1.
+  
+### Flutter super-cool-app.desktop example
+
+Place the .desktop file in your Flutter project 
+under `<project root>/snap/gui/super-cool-app.desktop`.
+
+**Notice**: icon and .desktop file name must be the 
+same as your app name in yaml file!
+
 For example:
 
 ```desktop
@@ -326,8 +331,9 @@ For example:
   Type=Application
   Categories=Education; #adjust accordingly your snap category
 ```
-: Place your icon with .png extension in your Flutter 
-  project under `<project root>/snap/gui/super-cool-app.png`.
+
+Place your icon with .png extension in your Flutter 
+project under `<project root>/snap/gui/super-cool-app.png`.
 
 
 ## Build the snap
