@@ -1494,6 +1494,46 @@
     "image": "<img alt='' src='/images/widget-catalog/material-app-bar.png'>"
   },
   {
+    "name": "SliverFixedExtentList",
+    "description": "",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverFixedExtentList-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverGrid",
+    "description": "",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverGrid-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverList",
+    "description": "",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverList-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverPadding",
+    "description": "",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverPadding-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "SnackBar",
     "description": "A lightweight message with an optional action which briefly displays at the bottom of the screen.",
     "categories": [],
