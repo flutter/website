@@ -280,6 +280,9 @@
     - title: Testing
       permalink: /docs/testing
       match-page-url-exactly: true
+    - title: Integration testinng
+      permalink: /docs/testing/integration-tests
+      match-page-url-exactly: true
 
 - title: Performance & optimization
   permalink: /docs/perf

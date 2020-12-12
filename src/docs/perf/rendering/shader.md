@@ -124,6 +124,12 @@ before and after the SkSL warm-up. Even better, you can put
 those tests into a CI (continuous integration) system so the
 SkSLs are generated and tested automatically over the lifetime of an app.
 
+{{site.alert.note}}
+  The integration_test package is now the recommended way to write integration
+  tests. See the [Integration testing](/docs/testing/integration-tests/) page
+  for details.
+{{site.alert.end}}
+
 Take the original version of [Flutter Gallery][] as an example.
 The CI system is set up to generate SkSLs for every Flutter commit,
 and verifies the performance, in the [`transitions_perf_test.dart`][] test.
