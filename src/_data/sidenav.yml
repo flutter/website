@@ -280,7 +280,7 @@
     - title: Testing
       permalink: /docs/testing
       match-page-url-exactly: true
-    - title: Integration testinng
+    - title: Integration testing
       permalink: /docs/testing/integration-tests
       match-page-url-exactly: true
 
