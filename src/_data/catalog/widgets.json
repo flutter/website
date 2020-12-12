@@ -549,10 +549,11 @@
     "name": "CupertinoSliverNavigationBar",
     "description": "An iOS-styled navigation bar with iOS-11-style large titles using slivers.",
     "categories": [
-      "Cupertino (iOS-style widgets)",
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [
       "Sliver widgets"
     ],
-    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-sliver-navigation-bar.png'>"
   },
@@ -640,10 +641,11 @@
     "name": "CustomScrollView",
     "description": "A ScrollView that creates custom scroll effects using slivers.",
     "categories": [
-      "Scrolling",
+      "Scrolling"
+    ],
+    "subcategories": [
       "Sliver widgets"
     ],
-    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/CustomScrollView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
