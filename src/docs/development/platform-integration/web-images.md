@@ -1,5 +1,5 @@
 ---
-title: Displaying images on the web.
+title: Displaying images on the web
 short-title: Web Images
 description: Learn how to load and display images on the web.
 ---
@@ -11,6 +11,9 @@ platforms. This page explains these limitations and offers ways to work around
 them.
 
 # Background
+
+This section summarizes the technologies available across Flutter and the web,
+on which the solutions below are based on.
 
 ## Images in Flutter
 
@@ -103,7 +106,7 @@ several ways to do this, discussed below.
 
 ### Host your images in a CORS-enabled CDN.
 
-Typically content delivery networks (CDN) can be configured to customize what
+Typically, content delivery networks (CDN) can be configured to customize what
 domains are allowed to access your content. For example, Firebase site hosting
 allows [specifying a custom][16] `Access-Control-Allow-Origin` header in the
 `firebase.json` file.
