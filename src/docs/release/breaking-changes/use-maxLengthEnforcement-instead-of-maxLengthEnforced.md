@@ -12,22 +12,26 @@ editable text field, you can stop reading._
 
 To control the behavior of `maxLength`
 in the `LengthLimitingTextInputFormatter`,
-use `maxLengthEnforcement` instead of `maxLengthEnforced`, which is deprecated.
+use `maxLengthEnforcement` instead of `maxLengthEnforced`, which was deprecated.
 
 ## Context
 
-Before [PR 63754][]: Fix TextField crashed with composing and maxLength set,
-the `LengthLimitingTextInputFormatter` always truncated the value in the text
-field, which resulted in engine crashes when the composing range sometimes
-overflowed. With this change, an editable `TextEditingValue` is not truncated
-if only `maxLength` is set, but _is_ truncated after editing is complete.
+`maxLengthEnforced` used to decide whether text fields should truncate
+the inputting value when it reached the max length limit. Additionally,
+`TextField` and `TextFormField` will display a warning message in the
+characters counter.
 
-With [PR 68086][]: Introduce `MaxLengthEnforcement`,
-the truncation behavior is now controlled by passing
-`maxLengthEnforcement` to the `LengthLimitingTextInputFormatter`,
-which is then exposed to the `TextField`, `TextFormField`,
-and `CupertinoTextField` widgets.
-The `maxLengthEnforced` property is now deprecated.
+Althought `maxLengthEnforced` allow users to control the behavior of the
+truncation, so does `LengthLimitingTextInputFormatter`, they didn't handle the
+truncate behavior for CJK (Chinese, Japanese, and Korean) characters properly,
+while these characters require the user to type a sequence of Latin characters
+to enter one such character, which will cause the composing CJK characters
+failed to produce the proposing character.
+
+In order to solve the breaking behavior about CJK's truncation, a new tri-state
+enum `MaxLengthEnforcement` has introduced, which describes supported strategies for handling active composing region when applying a `LengthLimitingTextInutFormatter`. This enum has been added to text fields to
+replace the `maxLengthEnforced` parameter. With the new enum parameter, developers can choose different strategies based on the type of the content the text field expects.
+
 (For more information, see the docs for [`maxLength`][] and
 [`MaxLengthEnforcement`][].)
 
@@ -36,14 +40,18 @@ that you're using or running on.
 
 ## Description of change
 
-* Added a `MaxLengthEnforcement` enum, which controls all max length
-  limiting behavior.
+* Added a `MaxLengthEnforcement` enum as a replacement for the now-deprecated
+  boolean `maxLengthEnforced` parameter on `TextField`, `TextFormField`,
+  and `CupertinoTextField`.
 * The `maxLengthEnforced` property in editable text field classes is deprecated.
 * A named optional parameter, `maxLengthEnforcement` is added to
   the `TextField`, `TextFormField`, `CupertinoTextField`,
   and `LengthLimitingTextInputFormatter` classes.
-* The default behavior for different platforms is updated, including Android,
-  iOS, Web, Windows, MacOS, Linux, and Fuchsia.
+* The default value of the maxLengthEnforced property is inferred based on the
+  target platform, to improve the input experience:
+  * Android, Windows: defaults to `MaxLengthEnforcement.enforced`.
+  * iOS, Web, MacOS, Linux, Fuchsia: defaults to
+    `MaxLengthEnforcement.truncateAfterCompositionEnds`.
 
 ## Migration guide
 
@@ -51,6 +59,10 @@ The following tips describe how to produce common behaviors, and which behavior
 is using on different platforms by default. Notice that the enforcement API is
 exposed to `TextField`, `TextFormField`, `CupertinoTextField` and
 `LengthLimitingTextInputFormatter`.
+
+_Use the default behavior for the current platform is recommended, since it
+won't break someone that is not surposed to input like the behavior that
+developers has defined._
 
 ### Platforms behavior
 
@@ -179,14 +191,14 @@ Relevant PR:
 * [PR 63754][]: Fix TextField crashed with composing and maxLength set
 * [PR 68086][]: Introduce `MaxLengthEnforcement`
 
-[PR 63754]: {{site.github.com}}//flutter/flutter/pull/63754
+[PR 63754]: {{site.github}}//flutter/flutter/pull/63754
 
 [PR 68086]: {{site.github}}/flutter/flutter/pull/68086
 
 [`MaxLengthEnforcement` design doc]: /go/max-length-enforcement
 
-[`MaxLengthEnforcement`]: {{site.api}}/flutter/services/MaxLengthEnforcement-class.html
+[`MaxLengthEnforcement`]: {{site.master-api}}/flutter/services/MaxLengthEnforcement-class.html
 
-[`LengthLimitingTextInputFormatter`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
+[`LengthLimitingTextInputFormatter`]: {{site.master-api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
 
-[`maxLength`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
+[`maxLength`]: {{site.master-api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
