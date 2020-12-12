@@ -1494,6 +1494,26 @@
     "image": "<img alt='' src='/images/widget-catalog/material-app-bar.png'>"
   },
   {
+    "name": "SliverChildBuilderDelegate",
+    "description": "A delegate that supplies children for slivers using a builder callback.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverChildBuilderDelegate-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverChildListDelegate",
+    "description": "A delegate that supplies children for slivers using an explicit list.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverChildListDelegate-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "SliverFixedExtentList",
     "description": "A sliver that places multiple box children with the same main axis extent in a linear array.",
     "categories": [],
@@ -1531,6 +1551,26 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SliverPadding-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverPersistentHeader",
+    "description": "A sliver whose size varies when the sliver is scrolled to the edge of the viewport opposite the sliver's GrowthDirection.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverPersistentHeader-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverToBoxAdapter",
+    "description": "A sliver that contains a single box widget.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverToBoxAdapter-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
