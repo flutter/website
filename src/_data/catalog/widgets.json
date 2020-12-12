@@ -1495,7 +1495,7 @@
   },
   {
     "name": "SliverFixedExtentList",
-    "description": "",
+    "description": "A sliver that places multiple box children with the same main axis extent in a linear array.",
     "categories": [],
     "subcategories": [
       "Sliver widgets"
@@ -1505,7 +1505,7 @@
   },
   {
     "name": "SliverGrid",
-    "description": "",
+    "description": "A sliver that places multiple box children in a two dimensional arrangement.",
     "categories": [],
     "subcategories": [
       "Sliver widgets"
@@ -1515,7 +1515,7 @@
   },
   {
     "name": "SliverList",
-    "description": "",
+    "description": "A sliver that places multiple box children in a linear array along the main axis.",
     "categories": [],
     "subcategories": [
       "Sliver widgets"
@@ -1525,7 +1525,7 @@
   },
   {
     "name": "SliverPadding",
-    "description": "",
+    "description": "A sliver that applies padding on each side of another sliver.",
     "categories": [],
     "subcategories": [
       "Sliver widgets"
