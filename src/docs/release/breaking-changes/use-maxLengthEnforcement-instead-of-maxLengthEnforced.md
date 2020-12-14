@@ -17,20 +17,24 @@ use `maxLengthEnforcement` instead of `maxLengthEnforced`, which was deprecated.
 ## Context
 
 `maxLengthEnforced` used to decide whether text fields should truncate
-the inputting value when it reached the max length limit. Additionally,
+the inputting value when it reached the `maxLength` limit. Additionally,
 `TextField` and `TextFormField` will display a warning message in the
 characters counter.
 
-Althought `maxLengthEnforced` allow users to control the behavior of the
-truncation, so does `LengthLimitingTextInputFormatter`, they didn't handle the
-truncate behavior for CJK (Chinese, Japanese, and Korean) characters properly,
-while these characters require the user to type a sequence of Latin characters
-to enter one such character, which will cause the composing CJK characters
-failed to produce the proposing character.
+Although `maxLengthEnforced` allow users to control the behavior of the
+truncation, so does the `LengthLimitingTextInputFormatter`, they didn't handle
+the truncate behavior for CJK (Chinese, Japanese, and Korean) characters
+properly, while these characters require the user to type a sequence of Latin
+characters to enter one such character, which will cause composing CJK
+characters failed to produce proposing characters.
 
 In order to solve the breaking behavior about CJK's truncation, a new tri-state
-enum `MaxLengthEnforcement` has introduced, which describes supported strategies for handling active composing region when applying a `LengthLimitingTextInutFormatter`. This enum has been added to text fields to
-replace the `maxLengthEnforced` parameter. With the new enum parameter, developers can choose different strategies based on the type of the content the text field expects.
+enum `MaxLengthEnforcement` has introduced, which describes supported strategies
+for handling active composing region when applying a
+`LengthLimitingTextInutFormatter`. This enum has been added to text fields to
+replace the `maxLengthEnforced` parameter. With the new enum parameter,
+developers can choose different strategies based on the type of the content
+the text field expects.
 
 (For more information, see the docs for [`maxLength`][] and
 [`MaxLengthEnforcement`][].)
