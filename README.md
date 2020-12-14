@@ -50,8 +50,8 @@ Install the following tools, if you don't have them already.
   > $ source ~/.rvm/bin/rvm
   > ```
 
-- **[Flutter][Flutter install]**
-- **[Dart SDK][Dart install]**
+- **[Flutter][Flutter install]** (You get Dart when you get Flutter. Confirm with
+  `which flutter` and `which dart`.)
 - **[GNU diffutils][]** version 3.6 or later.
   > NOTE: `diff` v3.6+ is required to ensure that in-page code diffs are
   > consistently refreshed across macOS and Linux. [Issue #3076][] was due to
@@ -125,7 +125,6 @@ submodule-cloning techniques:
 > IMPORTANT:
 > - Any time you create a **new terminal/command window** to work on
 >   this repo, **repeat steps 1 and 2** above.
-> - If you upgrade Dart, then rerun all of the steps above.
 
 ## Developing and serving changes
 
@@ -321,7 +320,6 @@ Also check out the site-shared
 [Flutter]: https://flutter.dev
 [Build Status]: https://travis-ci.org/flutter/website.svg?branch=master
 [Cloning a repository]: https://help.github.com/articles/cloning-a-repository
-[Dart install]: https://dart.dev/get-dart
 [Flutter install]: https://flutter.dev/docs/get-started/install
 [Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1
 [Firebase]: https://firebase.google.com/
