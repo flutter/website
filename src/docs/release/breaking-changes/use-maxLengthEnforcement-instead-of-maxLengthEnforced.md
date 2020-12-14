@@ -21,10 +21,10 @@ the inputting value when it reached the `maxLength` limit. Additionally,
 `TextField` and `TextFormField` will display a warning message in the
 characters counter.
 
-Although `maxLengthEnforced` allow users to control the behavior of the
+Although `maxLengthEnforced` allows users to control the behavior of the
 truncation, so does the `LengthLimitingTextInputFormatter`, they didn't handle
 the truncate behavior for CJK (Chinese, Japanese, and Korean) characters
-properly, while these characters require the user to type a sequence of Latin
+properly, while these characters require users to type a sequence of Latin
 characters to enter one such character, which will cause composing CJK
 characters failed to produce proposing characters.
 
