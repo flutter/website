@@ -541,7 +541,9 @@
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-sliver-navigation-bar.png'>"
   },
@@ -631,7 +633,9 @@
     "categories": [
       "Scrolling"
     ],
-    "subcategories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
     "link": "https://api.flutter.dev/flutter/widgets/CustomScrollView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1473,10 +1477,91 @@
     "description": "A material design app bar that integrates with a CustomScrollView.",
     "categories": [],
     "subcategories": [
-      "App structure and navigation"
+      "App structure and navigation",
+      "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/material/SliverAppBar-class.html",
     "image": "<img alt='' src='/images/widget-catalog/material-app-bar.png'>"
+  },
+  {
+    "name": "SliverChildBuilderDelegate",
+    "description": "A delegate that supplies children for slivers using a builder callback.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverChildBuilderDelegate-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverChildListDelegate",
+    "description": "A delegate that supplies children for slivers using an explicit list.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverChildListDelegate-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverFixedExtentList",
+    "description": "A sliver that places multiple box children with the same main axis extent in a linear array.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverFixedExtentList-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverGrid",
+    "description": "A sliver that places multiple box children in a two dimensional arrangement.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverGrid-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverList",
+    "description": "A sliver that places multiple box children in a linear array along the main axis.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverList-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverPadding",
+    "description": "A sliver that applies padding on each side of another sliver.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverPadding-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverPersistentHeader",
+    "description": "A sliver whose size varies when the sliver is scrolled to the edge of the viewport opposite the sliver's GrowthDirection.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverPersistentHeader-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverToBoxAdapter",
+    "description": "A sliver that contains a single box widget.",
+    "categories": [],
+    "subcategories": [
+      "Sliver widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/SliverToBoxAdapter-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SnackBar",
