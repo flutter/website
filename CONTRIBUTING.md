@@ -23,7 +23,7 @@ We are also happy to accept your PRs to the
 even if it's just to fix a typo.
 
 For ways to get involved in the Flutter community or to learn about us,
-visit the [Flutter community](/community) page.
+visit the [Flutter community](https://flutter.dev/community) page.
 
 # Ways to contribute
 
