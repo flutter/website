@@ -11,6 +11,7 @@ choose the best one for your needs. The two renderers are:
 **HTML**
   : Uses a combination of HTML elements, CSS, Canvas elements, and SVG
   elements. This renderer has a smaller download size, 200KB for a simple app.
+
 **CanvasKit**
   : Uses Skia compiled to WebAssembly and rendered to WebGL. This
   renderer is fully consistent with Flutter mobile and desktop, has faster
