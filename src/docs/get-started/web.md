@@ -170,6 +170,10 @@ This populates a `build/web` directory
 with built files, including an `assets` directory,
 which need to be served together.
 
+You can also include `--web-renderer html`  or `--web-renderer canvaskit` to
+select between the HTML or CanvasKit renderers, respsectively. For more
+information, see [Web renderers][].
+
 For more information, see
 [Build and release a web app][].
 
@@ -195,3 +199,4 @@ $ flutter create .
 [web FAQ]: /docs/development/platform-integration/web
 [Chrome]: https://www.google.com/chrome/
 [Flutter SDK]: https://flutter.dev/docs/get-started/install
+[Web renderers]: /docs/development/tools/web-renderers

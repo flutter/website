@@ -98,4 +98,4 @@ The following resources can help you get started:
 [Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
 [web FAQ]: /docs/development/platform-integration/web
 [web samples for Flutter]: https://flutter.github.io/samples/
-[Web renderers]: /docs/deployment/web-renderers
+[Web renderers]: /docs/development/tools/web-renderers
