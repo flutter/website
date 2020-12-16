@@ -250,6 +250,8 @@
           permalink: /docs/development/tools/hot-reload
         - title: Code formatting
           permalink: /docs/development/tools/formatting
+        - title: Web renderers
+          permalink: /docs/development/tools/web-renderers
     - title: Migration notes
       permalink: /docs/development/androidx-migration
       children:
