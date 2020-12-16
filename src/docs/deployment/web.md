@@ -12,10 +12,31 @@ This builds a _debug_ version of your app.
 This page helps you prepare a _release_ version
 of your app and covers the following topics:
 
+* [Handling images on the web](#handling-images-on-the-web)
+* [Choosing a web renderer](#choosing-a-web-renderer)
 * [Minification](#minification)
 * [Building the app for release](#building-the-app-for-release)
 * [Deploying to the web](#deploying-to-the-web)
 
+
+## Handling images on the web
+
+The web supports the standard `Image` widget to display images.
+However, because web browsers are built to run untrusted code safely,
+there are certain limitations in what you can do with images compared
+to mobile and desktop platforms.
+
+For more information, see [Displaying images on the web][].
+
+## Choosing a web renderer
+
+By default, the `flutter build` and `flutter run` commands
+use the `auto` choice for the web renderer. This means that
+your app runs with the HTML renderer on mobile browsers and
+CanvasKit on desktop browsers. This is our recommended combination
+to optimize for the characteristics of each platform.
+
+For more information, see [Web renderers][].
 
 ## Minification
 
@@ -103,6 +124,7 @@ PWA support remains a work in progress,
 so please [give us feedback][] if you see something that doesn’t look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
+[Displaying images on the web]: /docs/development/platform-integration/web-images
 [Firebase Hosting]: https://firebase.google.com/docs/hosting
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.github}}/flutter/flutter/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
