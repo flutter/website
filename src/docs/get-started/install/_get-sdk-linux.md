@@ -24,6 +24,14 @@ or at the command line:
 $ sudo snap install flutter --classic
 ```
 
+{{site.alert.note}}
+  Once the snap is installed, you can use the following command to display your Flutter SDK path:
+
+  ```sh
+  $ flutter sdk-path
+  ```
+{{site.alert.end}}
+
 ### Install Flutter manually
 
 If you don't have `snapd`, or can't use it, you can
