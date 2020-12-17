@@ -16,8 +16,8 @@ use `maxLengthEnforcement` instead of `maxLengthEnforced`, which was deprecated.
 
 ## Context
 
-`maxLengthEnforced` used to decide whether text fields should truncate
-the inputting value when it reached the `maxLength` limit. Additionally,
+The `maxLengthEnforced` parameter was used to decide whether text fields should
+truncate the input value when it reaches the `maxLength` limit. Additionally,
 `TextField` and `TextFormField` will display a warning message in the
 characters counter.
 
@@ -25,11 +25,13 @@ Although `maxLengthEnforced` allows users to control the behavior of the
 truncation, so does the `LengthLimitingTextInputFormatter`, they didn't handle
 the truncate behavior for CJK (Chinese, Japanese, and Korean) characters
 properly, while these characters require users to type a sequence of Latin
-characters to enter one such character, which will cause composing CJK
-characters failed to produce proposing characters.
+characters to enter one such character, which may lead to an unpleasant input
+experience. When the user hits the `maxLength` limit when composing their next
+character, and thus unable to complete the input normally. The text composition
+usually displays with an underline decoration, or with a colored background.
 
-In order to solve the breaking behavior about CJK's truncation, a new tri-state
-enum `MaxLengthEnforcement` has introduced, which describes supported strategies
+To improve the input experience in these scenarios, a new tri-state enum
+`MaxLengthEnforcement` was introduced, which describes supported strategies
 for handling active composing region when applying a
 `LengthLimitingTextInutFormatter`. This enum has been added to text fields to
 replace the `maxLengthEnforced` parameter. With the new enum parameter,
@@ -39,18 +41,14 @@ the text field expects.
 (For more information, see the docs for [`maxLength`][] and
 [`MaxLengthEnforcement`][].)
 
-The default max length truncation behavior is based on the `TargetPlatform`
-that you're using or running on.
+The default value of the `maxLengthEnforcement` parameter is inferred from the
+`TargetPlatform` of the application, to confirm to the platform's conventions.
 
 ## Description of change
 
 * Added a `MaxLengthEnforcement` enum as a replacement for the now-deprecated
   boolean `maxLengthEnforced` parameter on `TextField`, `TextFormField`,
-  and `CupertinoTextField`.
-* The `maxLengthEnforced` property in editable text field classes is deprecated.
-* A named optional parameter, `maxLengthEnforcement` is added to
-  the `TextField`, `TextFormField`, `CupertinoTextField`,
-  and `LengthLimitingTextInputFormatter` classes.
+  `CupertinoTextField`, and `LengthLimitingTextInputFormatter` classes.
 * The default value of the maxLengthEnforced property is inferred based on the
   target platform, to improve the input experience:
   * Android, Windows: defaults to `MaxLengthEnforcement.enforced`.
@@ -59,16 +57,11 @@ that you're using or running on.
 
 ## Migration guide
 
-The following tips describe how to produce common behaviors, and which behavior
-is using on different platforms by default. Notice that the enforcement API is
-exposed to `TextField`, `TextFormField`, `CupertinoTextField` and
-`LengthLimitingTextInputFormatter`.
-
 _Use the default behavior for the current platform is recommended, since it
 won't break someone that is not surposed to input like the behavior that
 developers has defined._
 
-### Platforms behavior
+### Default values of `maxLengthEnforcement`
 
 * Android, Windows: `MaxLengthEnforcement.enforced`. The native behavior of
   these platforms is enforced. The composing will be handled by the IME while
@@ -114,7 +107,7 @@ TextField(
 ### To not enforce the limitation
 
 To show a max length error in `TextField`, but _not_ truncate when the limit
-is exceed, use `MaxLengthEnforcement.none` instead of
+is exceeded, use `MaxLengthEnforcement.none` instead of
 `maxLengthEnforced: false`.
 
 Code before migration:
@@ -161,10 +154,10 @@ CupertinoTextField(
 
 ### To enforce the limit, but not for composing text
 
-To avoid truncating text while the user is editing, specify
-`MaxLengthEnforcement.truncateAfterCompositionEnds`. This behavior allows some
-Chinese, Japanese, and Korean (CJK) characters to temporarily ignore the limit
-until editing is complete.
+To avoid truncating text while the user is inputting text via composition,
+specify `MaxLengthEnforcement.truncateAfterCompositionEnds`. This behavior
+allows some Chinese, Japanese, and Korean (CJK) characters to temporarily
+ignore the limit until editing is complete.
 
 Code for the implementation:
 
