@@ -139,7 +139,7 @@ In a separate process, run `flutter_drive`:
 
 ```
 flutter drive \
-  --driver=test_driver/integration_test_driver_driver.dart \
+  --driver=test_driver/integration_test_driver.dart \
   --target=integration_test/counter_test.dart \
   -d web-server
 ```
