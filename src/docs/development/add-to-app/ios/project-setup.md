@@ -15,6 +15,9 @@ Your development environment must meet the
 [macOS system requirements for Flutter][]
 with [Xcode installed][].
 Flutter supports iOS 8.0 and later.
+Additionally, you will need [CocoaPods][]
+version 1.10 or later.
+
 
 ## Create a Flutter module
 
@@ -65,7 +68,7 @@ The `.ios/` hidden subfolder contains an Xcode workspace where
 you can run a standalone version of your module.
 It is a wrapper project to bootstrap your Flutter code,
 and contains helper scripts to facilitate building frameworks or
-embedding the module into your existing application with [CocoaPods][].
+embedding the module into your existing application with CocoaPods.
 
 {{site.alert.note}}
   Add custom iOS code to your own existing application's
