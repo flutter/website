@@ -25,10 +25,11 @@ Although `maxLengthEnforced` allows users to control the behavior of the
 truncation, so does the `LengthLimitingTextInputFormatter`, they didn't handle
 the truncate behavior for CJK (Chinese, Japanese, and Korean) characters
 properly, while these characters require users to type a sequence of Latin
-characters to enter one such character, which may lead to an unpleasant input
-experience. When the user hits the `maxLength` limit when composing their next
-character, and thus unable to complete the input normally. The text composition
-usually displays with an underline decoration, or with a colored background.
+characters to enter one such character on a phonetic keyboard, which may lead
+to an unpleasant input experience. When the user hits the `maxLength` limit
+when composing their next character, and thus unable to complete the input
+normally. The text composition usually displays with an underline decoration,
+or with a colored background.
 
 To improve the input experience in these scenarios, a new tri-state enum
 `MaxLengthEnforcement` was introduced, which describes supported strategies
@@ -74,8 +75,14 @@ developers has defined._
 
 ### To enforce the limit all the time
 
-To enforce the limit that always truncate the value when it reaches the limit,
-use `MaxLengthEnforcement.enforced` in editable text fields.
+To enforce the limit that always truncate the value when it reaches the limit
+(e.g. entering verfication code), use `MaxLengthEnforcement.enforced` in
+editable text fields.
+
+_Be aware that in common cases, enforced truncate might make users failed to
+enter proposal CJK characters within `maxLength` limit on a phonetic keyboard,
+especially on platforms that the behavior defaults to
+`MaxLengthEnforcement.truncateAfterCompositionEnds`._
 
 Code before migration:
 
@@ -158,6 +165,9 @@ To avoid truncating text while the user is inputting text via composition,
 specify `MaxLengthEnforcement.truncateAfterCompositionEnds`. This behavior
 allows some Chinese, Japanese, and Korean (CJK) characters to temporarily
 ignore the limit until editing is complete.
+
+_Gboard on Android produces the composing text when the user is entering Latin
+character/words by default._
 
 Code for the implementation:
 
