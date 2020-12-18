@@ -13,7 +13,7 @@ description: How to internationalize your Flutter app.
 {{site.alert.end}}
 
 If your app might be deployed to users who speak another language then
-you'll need to internationalize it. That means you'll need to write
+you'll need to internationalize it. That means you need to write
 the app in a way that makes it possible to localize values like text
 and layouts for each language or locale that the app
 supports. Flutter provides widgets and classes that help with
@@ -21,9 +21,9 @@ internationalization and the Flutter libraries themselves are
 internationalized.
 
 This page covers concepts and workflows necessary to localize a
-Flutter application in terms of the `MaterialApp`/`CupertinoApp`
-class, as most apps are written that way. However, applications
-written in terms of the lower level `WidgetsApp` class can also
+Flutter application using the `MaterialApp` and `CupertinoApp`
+classes, as most apps are written that way. However, applications
+written using the lower level `WidgetsApp` class can also
 be internationalized using the same classes and logic.
 
 {{site.alert.secondary}}
@@ -46,12 +46,12 @@ This section provides a tutorial on how to internationalize
 a Flutter application, along with any additional setup that a
 target platform might require.
 
-### Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
+### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {#setting-up}
 
 By default, Flutter only provides US English localizations.
 To add support for other languages,
 an application must specify additional `MaterialApp` (or `CupertinoApp`)
-properties, and include a separate package called
+properties, and include a package called
 `flutter_localizations`. As of November 2020,
 this package supports 78 languages.
 
@@ -63,7 +63,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_localizations: # Add this line
-    sdk: flutter # Add this line
+    sdk: flutter         # Add this line
 ```
 
 Next, import the flutter_localizations library and specify
@@ -94,7 +94,7 @@ MaterialApp(
 ```
 
 After introducing the `flutter_localizations` package
-and adding the code above, the Material and Cupertino
+and adding the code above, the `Material` and `Cupertino`
 packages should now be correctly localized in
 one of the 78 supported locales. Widgets should be
 adapted to the localized messages, along with
@@ -108,8 +108,10 @@ Apps based on `WidgetsApp` are similar except that the
 `GlobalMaterialLocalizations.delegate` isn't needed.
 
 The full `Locale.fromSubtags` constructor is preferred
-as it supports scriptCode, though the `Locale` default
+as it supports [`scriptCode`][], though the `Locale` default
 constructor is still fully valid.
+
+[`scriptCode`]: {{site.api}}/flutter/package-intl_locale/Locale/scriptCode.html
 
 The elements of the `localizationsDelegates` list are factories that produce
 collections of localized values. `GlobalMaterialLocalizations.delegate`
@@ -136,18 +138,18 @@ following instructions to add localized text to your application.
        sdk: flutter
      flutter_localizations:
        sdk: flutter
-     intl: ^0.16.1 # Add this line
+     intl: ^0.16.1    # Add this line
    ```
 
 2. Also, in the `pubspec.yaml` file, enable the `generate`
-flag. This is added to the section of the file that is
-specific to Flutter that usually comes later in the pubspec
+flag. This is added to the section of the pubspec that is
+specific to Flutter, and usually comes later in the pubspec
 file.
 
    ```yaml
    # The following section is specific to Flutter.
    flutter:
-     generate: true # Add this line
+     generate: true    # Add this line
    ```
 
 3. Add a new yaml file to the root directory of the Flutter
@@ -165,7 +167,7 @@ project called `l10n.yaml` with the following content:
    localizations are placed in the `app_localizations.dart` file.
 
 4. In `${FLUTTER_PROJECT}/lib/l10n`,
-add the `app_en.arb` template file. For example:
+   add the `app_en.arb` template file. For example:
 
    ```json
    {
@@ -177,7 +179,7 @@ add the `app_en.arb` template file. For example:
    ```
 
 5. Next, add an `app_es.arb` file in the same directory for
-Spanish translation of the same message:
+   Spanish translation of the same message:
 
    ```json
    {
@@ -186,8 +188,8 @@ Spanish translation of the same message:
    ```
 
 6. To test the localization tool, run your application.
-You should see generated files in
-`${FLUTTER_PROJECT}/flutter_gen/gen_l10n`.
+   You should see generated files in
+   `${FLUTTER_PROJECT}/flutter_gen/gen_l10n`.
 
 7. Test the generated localizations in your app as follows:
 
@@ -198,8 +200,8 @@ You should see generated files in
 
    // ...
 
-   // Use AppLocalizations anywhere in your app. Here, the translated message
-   // is used in a Text widget.
+   // Use AppLocalizations anywhere in your app.
+   // Here, the translated message is used in a Text widget.
    Widget build(BuildContext context) {
      // ...
      return Text(AppLocalizations.of(context).helloWorld);
@@ -208,7 +210,7 @@ You should see generated files in
 
    This code generates a Text widget that displays "Hello World!"
    if the target device's locale is set to English, and "Hola Mundo!"
-   if the target device's locale is set to Spanish. In the arb files,
+   if the target device's locale is set to Spanish. In the `arb` files,
    the key of each entry is used as the method name of the getter,
    while the value of that entry contains the localized message.
 
@@ -231,18 +233,18 @@ use the following instructions:
 1. Open your project's `ios/Runner.xcworkspace` Xcode file.
 
 2. In the **Project Navigator**, open the `Info.plist` file
-under the `Runner` project's `Runner` folder.
+   under the `Runner` project's `Runner` folder.
 
-3. Select the **Information Property List** item,
-then select **Add Item** from the **Editor** menu,
-and then select **Localizations** from the pop-up menu.
+3. Select the **Information Property List** item.
+   Then select **Add Item** from the **Editor** menu,
+   and select **Localizations** from the pop-up menu.
 
 4. Select and expand the newly-created `Localizations` item.
-For each locale your application supports,
-add a new item and select the locale you wish to add
-from the pop-up menu in the **Value** field.
-This list should be consistent with the languages listed
-in the [supportedLocales][] parameter.
+   For each locale your application supports,
+   add a new item and select the locale you wish to add
+   from the pop-up menu in the **Value** field.
+   This list should be consistent with the languages listed
+   in the [supportedLocales][] parameter.
 
 5. Once all supported locales have been added, save the file.
 
@@ -286,7 +288,7 @@ distinguish between and provide the fully nuanced localized
 content to all combinations of these country codes.
 If a user's preferred locale is not specified,
 then the closest match is used instead,
-which will likely contain differences to what the user expects.
+which likely contains differences to what the user expects.
 Flutter only resolves to locales defined in `supportedLocales`.
 Flutter provides scriptCode-differentiated
 localized content for commonly used languages.
@@ -294,7 +296,7 @@ See [`Localizations`][] for information on how the supported
 locales and the preferred locales are resolved.
 
 Although Chinese is a primary example,
-other languages like French (fr_FR, fr_CA)
+other languages like French (`fr_FR`, `fr_CA`)
 should also be fully differentiated for more nuanced localization.
 
 <a name="tracking-locale"></a>
@@ -681,7 +683,8 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     ```
 
     ***Windows does not support file name wildcarding.***
-    Instead, list the .arb files that were generated by the `intl_translation:extract_to_arb` command.
+    Instead, list the .arb files that were generated by the
+    `intl_translation:extract_to_arb` command.
 
     ```terminal
     $ flutter pub run intl_translation:generate_from_arb \

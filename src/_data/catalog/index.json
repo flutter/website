@@ -46,6 +46,10 @@
       {
         "name": "Multi-child layout widgets",
         "description": "These widgets take multiple children and arrange them in different ways."
+      }, 
+      {
+        "name": "Sliver widgets", 
+        "description": "These widgets take a portion of a CustomScrollView and apply a layout to that portion."
       }
     ],
     "id": "layout"
