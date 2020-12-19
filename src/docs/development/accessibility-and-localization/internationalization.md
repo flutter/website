@@ -189,7 +189,7 @@ project called `l10n.yaml` with the following content:
 
 6. To test the localization tool, run your application.
    You should see generated files in
-   `${FLUTTER_PROJECT}/flutter_gen/gen_l10n`.
+   `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
 
 7. Test the generated localizations in your app as follows:
 
