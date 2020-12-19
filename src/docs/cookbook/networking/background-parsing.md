@@ -123,7 +123,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 If you run the `fetchPhotos()` function on a slower device,
 you might notice the app freezes for a brief moment as it parses and
-converts the JSON. This is jank, and you want to be rid of it.
+converts the JSON. This is jank, and you want to get rid of it.
 
 You can remove the jank by moving the parsing and conversion
 to a background isolate using the [`compute()`][]
