@@ -49,11 +49,14 @@ Other ways you can contribute:
 * [Sign up to Future UX Studies on Flutter](https://flutter.dev/research-signup)
 * [Join the subreddit to keep up with the latest in the Flutter
    community][reddit]
+* [Join the Discord to connect with other developers
+   and discuss Flutter][discord]
 
 Happy Fluttering!
 
 [issues]: https://github.com/flutter/flutter/issues
 [PRs]: https://github.com/flutter/flutter/pulls
+[discord]: https://discord.gg/rflutterdev
 [doc-issues]: https://github.com/flutter/website/issues
 [doc-PRs]: https://github.com/flutter/website/pulls
 [so]: https://stackoverflow.com/tags/flutter
