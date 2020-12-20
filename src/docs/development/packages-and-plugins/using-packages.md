@@ -3,6 +3,22 @@ title: Using packages
 description: How to use packages in your Flutter app.
 ---
 
+**Plugin**
+A plugin is ready to use software component that can be added to existing 
+software for more features. It is about making native functionality 
+available to Flutter.
+
+**Package**
+A package is about integrating Flutter with an existing native application.
+
+**Difference** between packages and plugins:
+
+1. Packages are usually new components or code written purely in Dart
+whereas plugins work to allow more functionality on the device side 
+using native code. 
+2. Plugins are downloaded and integrated into the existing software without
+the need to compile/build. 
+
 Flutter supports using shared packages contributed by other developers
 to the Flutter and Dart ecosystems. This allows quickly building
 an app without having to develop everything from scratch.
