@@ -766,6 +766,10 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   }
 }
 ```
+
+The [didUpdateWidget][] function is called to 
+update our `AnimatedProgressIndicatorState` whenver
+our `AnimatedProgressIndicator` changes.
 </li>
 
 <li markdown="1">Use the new `AnimatedProgressIndicator`.<br>
@@ -1029,6 +1033,7 @@ Dart DevTools, or Flutter animations, see the following:
 [DevTools documentation]: /docs/development/tools/devtools
 [DevTools installed]: /docs/development/tools/devtools/overview#how-do-i-install-devtools
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
+[didUpdateWidget][]: https://api.flutter.dev/flutter/widgets/State/didUpdateWidget.html
 [editor]: /docs/get-started/editor
 [Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
 [Flutter cookbook]: /docs/cookbook
