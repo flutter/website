@@ -1304,7 +1304,7 @@ The observable lifecycle events are:
   The iOS platform has no equivalent event.
 
 For more details on the meaning of these states, see
-[`AppLifecycleStatus` documentation][].
+[`AppLifecycleState` documentation][].
 
 ## Layouts
 
@@ -1599,7 +1599,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
-Instead of creating a "ListView", create a `ListView.builder` that
+Instead of creating a `ListView`, create a `ListView.builder` that
 takes two key parameters: the initial length of the list,
 and an `ItemBuilder` function.
 
