@@ -768,7 +768,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 ```
 
 The [didUpdateWidget][] function is called to 
-update our `AnimatedProgressIndicatorState` whenver
+update our `AnimatedProgressIndicatorState` whenever
 our `AnimatedProgressIndicator` changes.
 </li>
 
