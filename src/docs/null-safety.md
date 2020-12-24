@@ -5,7 +5,35 @@ description: Find out how to use non-nullable types in your Flutter code.
 
 Null safety is available in the Flutter beta channel,
 starting with build `1.24.0-10.2.pre`.
-You can now migrate your Flutter packages to use non-nullable types!
+You can now migrate your Flutter packages to use non-nullable types like this:
+
+<?code-excerpt "../null_safety_examples/basics/lib/main.dart (MyApp)"?>
+```dart
+class MyApp extends StatelessWidget {
+  final int anInt = 3; // Cannot be null.
+  final int? aNullableInt = null; // Can be null.
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Nullable Fields Demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Nullable Fields Demo'),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              Text('anInt is $anInt.'),
+              Text('aNullableInt is $aNullableInt.'),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
 
 To learn about null safety,
 read these pages:

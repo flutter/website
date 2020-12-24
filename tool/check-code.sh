@@ -6,16 +6,16 @@ readonly rootDir="$(cd "$(dirname "$0")/.." && pwd)"
 
 [[ -z "$DART_SITE_ENV_DEFS" ]] && . ./tool/env-set.sh
 
-if [[ $1 == --clean ]]; then
-  shift;
-  (set -x; git clean -xdf ./example)
-fi
-
-if [[ $1 == --help || $1 == -h ]]; then
-  echo "Usage: $0 [--clean] [--no-test] [--filter=example-path-pattern]"
-  echo "  --filter pattern   Will skip example apps whose name does not match pattern."
-  exit 0
-fi
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --null-safety)  NULL_SAFETY=1; shift;;
+    --clean)        (set -x; git clean -xdf ./example); shift;;
+    -h|--help)      echo "Usage: $0 [--clean] [--no-test] [--filter=example-path-pattern] [--null-safety]"
+                    echo "  --filter pattern   Will skip example apps whose name does not match pattern."
+                    exit 0;;
+    *)              echo "ERROR: Unrecognized option: $1. Use --help for details."; exit 1;;
+  esac
+done
 
 errorMessage="
 Error: some code excerpts need to be refreshed. You'll need to
@@ -33,5 +33,9 @@ travis_fold start refresh_code_excerpts
 travis_fold end refresh_code_excerpts
 
 travis_fold start check_code
-  ./tool/build_check_deploy.sh --no-build --no-check-links $*
+  if [[ -n $NULL_SAFETY ]]; then
+    ./tool/build_check_deploy.sh --no-build --no-check-links --null-safety $*
+  else
+    ./tool/build_check_deploy.sh --no-build --no-check-links $*
+  fi
 travis_fold end check_code
