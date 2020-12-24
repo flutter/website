@@ -292,7 +292,7 @@ equivalent methods.
 [Firebase Test Lab]: https://firebase.google.com/docs/test-lab
 [Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Android Device Testing]: https://pub.dev/packages/integration_test#android-device-testing
-[iOS Device Testing]: https://pub.dev/packages/integration_test#android-device-testing
+[iOS Device Testing]: https://pub.dev/packages/integration_test#ios-device-testing
 [Firebase Console]: http://console.firebase.google.com/
 [Firebase Test Lab section of the README]: https://pub.dev/packages/integration_test#firebase-test-lab
 [Running Flutter Driver tests with Web]: https://github.com/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web
