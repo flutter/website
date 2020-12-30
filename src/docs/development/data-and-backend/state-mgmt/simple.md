@@ -202,7 +202,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  provider: ^3.0.0
+  provider: ^4.0.0
 
 dev_dependencies:
   # ...
