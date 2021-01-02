@@ -293,6 +293,7 @@
     The eBay Motors app is a powerful tool for browsing,
     buying, and selling vehicles directly from consumers’ phones.
   logo_src: showcase/cards/ebay-logo.png
+  learn_more_cta: Learn more
   learn_more_link: https://pages.ebay.com/motors/motorsapp
   app_store_link: https://apps.apple.com/us/app/ebay-motors/id1456156090
   play_store_link: https://play.google.com/store/apps/details?id=com.ebay.motorsapp
