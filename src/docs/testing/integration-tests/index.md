@@ -83,7 +83,7 @@ void main() {
 
 
 To run tests with `flutter drive`, create a new directory containing a new file,
-`test_driver/integration_test_driver.dart`:
+`test_driver/integration_test.dart`:
 
 ```dart
 import 'package:integration_test/integration_test_driver.dart';
