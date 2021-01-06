@@ -141,7 +141,7 @@ A simplified reactive state management solution.
 
 An approach similar to Provider that is compile-safe and testable. It doesn't have a dependency on the Flutter SDK.
 
-* [Riverpod][]homepage
+* [Riverpod][] homepage
 * [Getting started with Riverpod][]
 
 [Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
