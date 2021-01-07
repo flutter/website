@@ -294,6 +294,10 @@ class _NnMaterialLocalizationsDelegate
   bool shouldReload(_NnMaterialLocalizationsDelegate old) => false;
 }
 
+/// A custom set of localizations for the 'nn' locale. In this example, only
+/// the value for openAppDrawerTooltip was modified to use a custom message as
+/// an example. Everything else uses the American English (en_US) messages
+/// and formatting.
 class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   const NnMaterialLocalizations({
     String localeName = 'nn',
