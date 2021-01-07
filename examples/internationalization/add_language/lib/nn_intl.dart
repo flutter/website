@@ -7,6 +7,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+/// A custom set of date patterns for the `nn` locale.
+///
+/// These are not accurate and are just a clone of the date patterns for the
+/// `no` locale to demonstrate how one would write and use custom date patterns.
 const nnLocaleDatePatterns = {
   'd': 'd.',
   'E': 'ccc',
@@ -54,6 +58,10 @@ const nnLocaleDatePatterns = {
   'ZZZZ': 'ZZZZ',
 };
 
+/// A custom set of date symbols for the `nn` locale.
+///
+/// These are not accurate and are just a clone of the date symbols for the
+/// `no` locale to demonstrate how one would write and use custom date symbols.
 const nnDateSymbols = {
   'NAME': 'nn',
   'ERAS': <dynamic>[
