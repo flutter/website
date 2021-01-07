@@ -193,7 +193,7 @@ The worst frame rasterization time is a nice metric from such integration tests 
    One idea that people sometimes suggest is to create a single large shader that
    implements all of Skia's features, and use that shader while the more optimized
    bespoke shaders are being compiled.<p>
-   This is similar to [a solution used by the Dolphin Emulator].<p>
+   This is similar to [a solution used by the Dolphin Emulator][].<p>
    In practice we believe implementing this for Flutter (or more specifically for
    Skia) would be impractical. Such a shader would be fantastically large, essentially
    reimplementing all of Skia on the GPU. This would itself take a long time to compile,
@@ -222,4 +222,3 @@ please refer to [Issue 32170][].
 [Issue 32170]: {{site.github}}/flutter/flutter/issues/32170
 [Issue 53607]: {{site.github}}/flutter/flutter/issues/53607
 [Issue 60313]: {{site.github}}/flutter/flutter/issues/60313
-
