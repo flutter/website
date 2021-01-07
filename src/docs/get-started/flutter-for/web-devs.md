@@ -581,7 +581,7 @@ The following examples show how to make and customize shapes.
 To round the corners of a rectangular shape,
 use the `borderRadius` property of a [`BoxDecoration`][] object.
 Create a new [`BorderRadius`][]
-object that specifies the radii for rounding each corner.
+object that specifies the radius for rounding each corner.
 
 <div class="lefthighlight">
 {% prettify css %}

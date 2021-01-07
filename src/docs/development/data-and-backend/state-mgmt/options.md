@@ -137,7 +137,15 @@ A simplified reactive state management solution.
 * [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
 
+## Riverpod
 
+An approach similar to Provider that is compile-safe and testable. It doesn't have a dependency on the Flutter SDK.
+
+* [Riverpod][] homepage
+* [Getting started with Riverpod][]
+
+[Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
+[Riverpod]: https://riverpod.dev/
 [Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
 [Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
 [Fish-Redux-Library]: {{site.pub-pkg}}/fish_redux

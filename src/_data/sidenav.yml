@@ -354,6 +354,8 @@
       permalink: /docs/resources/design-docs
     - title: Creating useful bug reports
       permalink: /docs/resources/bug-reports
+    - title: Contributing to Flutter
+      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
     - title: Official brand assets
       permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
 

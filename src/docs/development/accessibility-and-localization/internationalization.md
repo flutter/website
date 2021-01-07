@@ -212,6 +212,18 @@ project called `l10n.yaml` with the following content:
    );
    // ...
 
+   // In your Material/Widget/CupertinoApp:
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
+       localizationsDelegates: AppLocalizations.localizationsDelegates, // Add this line
+       supportedLocales: AppLocalizations.supportedLocales, // Add this line
+       home: // ...
+     );
+   }
+
+   // ...
+
    // Use AppLocalizations anywhere in your app.
    // Here, the translated message is used in a Text widget.
    Widget build(BuildContext context) {
@@ -228,6 +240,21 @@ project called `l10n.yaml` with the following content:
 
 To see a sample Flutter app using this tool, please see
 [`gen_l10n_example`][].
+
+To localize your device app description, you can pass in the localized
+string into [MaterialApp.onGenerateTitle][]:
+
+  <!-- skip -->
+  ```dart
+  // In your Material/Widget/CupertinoApp:
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      onGenerateTitle: (BuildContext context) => AppLocalizations.of(context).appTitle,
+      // ...
+    );
+  }
+  ```
 
 For more information about the localization tool,
 such as dealing with DateTime and handling plurals,
@@ -732,6 +759,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [`LocalizationsDelegate`]: {{site.api}}/flutter/widgets/LocalizationsDelegate-class.html
 [material-global]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
 [`minimal`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Minimal internationalization]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal

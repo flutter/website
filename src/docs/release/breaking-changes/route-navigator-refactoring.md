@@ -76,7 +76,7 @@ TextField(
 ```
 
 
-Case2: An app generates routes based on `isInitialRoute`.
+Case 2: An app generates routes based on `isInitialRoute`.
 
 <!-- skip -->
 ```dart
