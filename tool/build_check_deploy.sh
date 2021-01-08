@@ -16,16 +16,17 @@ TEST=1
 
 while [[ "$1" == -* ]]; do
   case "$1" in
-    --filter)   shift; FILTER="$1"; shift;;
-    --no-build) BUILD=; shift;;
+    --filter)         shift; FILTER="$1"; shift;;
+    --null-safety)    NULL_SAFETY=1; shift;;
+    --no-build)       BUILD=; shift;;
     --no-check-code)  CHECK_CODE=; shift;;
     --no-check-links) CHECK_LINKS=; shift;;
-    --no-get)   PUB_CMD=""; shift;;
-    --no-test)  TEST=; shift;;
-    --up*)      PUB_CMD="upgrade"; shift;;
-    -h|--help)  echo "Usage: $(basename $0) [-h|--help] [--no-get|--upgrade] [--no-[build|check-links|test]] [--filter=project-glob-pattern]";
-                exit 0;;
-    *)          echo "ERROR: Unrecognized option: $1. Use --help for details."; exit 1;;
+    --no-get)         PUB_CMD=""; shift;;
+    --no-test)        TEST=; shift;;
+    --up*)            PUB_CMD="upgrade"; shift;;
+    -h|--help)        echo "Usage: $(basename $0) [-h|--help] [--no-get|--upgrade] [--no-[build|check-links|test]] [--filter=project-glob-pattern] [--null-safety]";
+                      exit 0;;
+    *)                echo "ERROR: Unrecognized option: $1. Use --help for details."; exit 1;;
   esac
 done
 
@@ -144,25 +145,31 @@ if [[ -n $PUB_CMD ]]; then
 fi
 
 if [[ -n $CHECK_CODE ]]; then
-  echo "EXTRACTING code snippets from the markdown:"
-  "$dart" tool/extract.dart
+  if [[ -z $NULL_SAFETY ]]; then # These snippets will never be migrated.
+    echo "EXTRACTING code snippets from the markdown:"
+    "$dart" tool/extract.dart
 
-  echo "ANALYZING extracted code snippets:"
-  # TODO(dnfield): Remove this once CI passes without it. There appears to be
-  # a bug currently in the Dart version in flutter:stable that fails to analyze
-  # when these are present.
-  (
-    set -x;
-    rm -rf .dart_tool
-    rm -rf example.g/.dart_tool
-  )
-  (cd example.g; "$flutter" analyze --no-current-package .)
+    echo "ANALYZING extracted code snippets:"
+    # TODO(dnfield): Remove this once CI passes without it. There appears to be
+    # a bug currently in the Dart version in flutter:stable that fails to analyze
+    # when these are present.
+    (
+      set -x;
+      rm -rf .dart_tool
+      rm -rf example.g/.dart_tool
+    )
+    (cd example.g; "$flutter" analyze --no-current-package .)
 
-  echo "DARTFMT check of extracted code snippets:"
-  check_formatting example.g
+    echo "DARTFMT check of extracted code snippets:"
+    check_formatting example.g
+  fi
 
-  echo "ANALYZING and testing apps in examples/*"
-  for sample in examples/*/*{,/*}; do
+  case "$NULL_SAFETY" in
+    1) EXAMPLE_ROOT="null_safety_examples" ;;
+    *) EXAMPLE_ROOT="examples" ;;
+  esac
+  echo "ANALYZING and testing apps in $EXAMPLE_ROOT/*"
+  for sample in $EXAMPLE_ROOT/*/*{,/*}; do
     if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
       if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
         echo "Example: $sample - skipped because of filter"
@@ -176,6 +183,7 @@ if [[ -n $CHECK_CODE ]]; then
           set -x;
           cd $ROOT;
           "$flutter" create --no-overwrite $sample
+          rm -rf $sample/integration_test # Remove unneeded integration test stubs.
         )
       fi
       (

@@ -37,6 +37,11 @@ jobs:
         - TASK="./tool/check-code.sh"
         - CHANNEL=dev
 
+    - name: "Dev channel: null safety code check"
+      env:
+        - TASK="./tool/check-code.sh --null-safety"
+        - CHANNEL=dev
+
     - name: "Dev channel: jekyll build"
       env:
         - TASK="bundle exec jekyll build"
@@ -45,6 +50,11 @@ jobs:
     - name: "Beta channel: code check"
       env:
         - TASK="./tool/check-code.sh"
+        - CHANNEL=beta
+
+    - name: "Beta channel: null safety code check"
+      env:
+        - TASK="./tool/check-code.sh --null-safety"
         - CHANNEL=beta
 
     - name: "Beta channel: jekyll build"
