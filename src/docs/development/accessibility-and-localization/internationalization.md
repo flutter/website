@@ -81,7 +81,7 @@ MaterialApp(
  localizationsDelegates: [
    // ... app-specific localization delegate[s] here
    // TODO: uncomment the line below after codegen
-   //AppLocalizations.delegate,
+   // AppLocalizations.delegate,
    GlobalMaterialLocalizations.delegate,
    GlobalWidgetsLocalizations.delegate,
    GlobalCupertinoLocalizations.delegate,
