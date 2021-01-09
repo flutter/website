@@ -193,8 +193,9 @@ project called `l10n.yaml` with the following content:
 6. Now, run your app so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
 
-7. Remove the comment for the import statement on `app_locations.dart` and `AppLocations.delegate` in
-   your call to the constructor for Material App. Test the generated localizations in your app as follows:
+7. Remove the comment for the import statement on `app_localizations.dart` 
+   and `AppLocations.delegate` in your call to the constructor for 
+   `MaterialApp`. Test the generated localizations in your app as follows:
 
    <!-- skip -->
    ```dart
