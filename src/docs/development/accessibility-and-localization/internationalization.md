@@ -199,7 +199,7 @@ project called `l10n.yaml` with the following content:
    <!-- skip -->
    ```dart
    import 'package:flutter_localizations/flutter_localizations.dart';
-   import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // remove the comment for this line
+   // import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // remove the comment for this line
 
    // ...
    
