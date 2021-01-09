@@ -66,7 +66,7 @@ dependencies:
     sdk: flutter         # Add this line
 ```
 
-Next, run `pub get packages` and import the flutter_localizations library and specify
+Next, run `pub get packages`, then import the `flutter_localizations` library and specify
 `localizationsDelegates` and `supportedLocales` for `MaterialApp`:
 
 <!-- skip -->
