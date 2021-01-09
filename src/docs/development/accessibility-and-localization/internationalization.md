@@ -206,7 +206,7 @@ project called `l10n.yaml` with the following content:
    MaterialApp(
      localizationsDelegates: [
        // ... app-specific localization delegate[s] here
-       //AppLocalizations.delegate, // remove the comment for this line
+       // AppLocalizations.delegate, // remove the comment for this line
        GlobalMaterialLocalizations.delegate,
        // ...
    );
