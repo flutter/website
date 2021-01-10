@@ -21,6 +21,6 @@ session from your Dart or Flutter application.
   unless your Flutter application is run in profile mode.
 {{site.alert.end}}
 
-{% include _profiler.md %}
+{% include_relative _profiler.md %}
 
 [analyze performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/
