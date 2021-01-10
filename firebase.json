@@ -33,6 +33,7 @@
       { "source": "/docs/development/add-to-app/android/add-splash-screen", "destination": "/docs/development/ui/advanced/splash-screen", "type": 301 },
       { "source": "/docs/development/tools/devtools/codeSize", "destination": "/docs/development/tools/devtools/app-size", "type": 301 },
       { "source": "/docs/development/tools/devtools/code-size", "destination": "/docs/development/tools/devtools/app-size", "type": 301 },
+      { "source": "/docs/development/tools/devtools/timeline", "destination": "/docs/development/tools/devtools/performance", "type": 301 },
       { "source": "/docs/development/tools/ide", "destination": "/docs/development/tools/android-studio", "type": 301 },
       { "source": "/docs/development/tools/ide/android-studio", "destination": "/docs/development/tools/android-studio", "type": 301 },
       { "source": "/docs/development/tools/ide/vs-code", "destination": "/docs/development/tools/vs-code", "type": 301 },

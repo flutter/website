@@ -210,12 +210,12 @@
               permalink: /docs/development/tools/devtools/cli
             - title: Flutter inspector
               permalink: /docs/development/tools/devtools/inspector
-            - title: Timeline view
-              permalink: /docs/development/tools/devtools/timeline
-            - title: Memory view
-              permalink: /docs/development/tools/devtools/memory
             - title: Performance view
               permalink: /docs/development/tools/devtools/performance
+            - title: CPU Profiler view
+              permalink: /docs/development/tools/devtools/cpu-profiler
+            - title: Memory view
+              permalink: /docs/development/tools/devtools/memory
             - title: Network view
               permalink: /docs/development/tools/devtools/network
             - title: Debugger
