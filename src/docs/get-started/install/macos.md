@@ -16,15 +16,15 @@ your development environment must meet these minimum requirements:
 
 - **Operating Systems**: macOS (64-bit)
 - **Disk Space**: 2.8 GB (does not include disk space for IDE/tools).
-- **Tools**: Flutter depends on these command-line tools being available
-  in your environment.
-  - `bash`
-  - `curl`
-  - `git` 2.x
-  - `mkdir`
-  - `rm`
-  - `unzip`
-  - `which`
+- **Tools**: Flutter uses `git` for installation and upgrade. We recommend
+  installing [Xcode][], which includes `git`, but you can also 
+  [install `git` separately][]. 
+
+{{site.alert.important}}
+  If you're installing on a Mac with the latest [Apple M1 processor][],
+  you may find [these supplementary notes][] useful reading as we complete support
+  for the new Apple Silicon architecture.
+{{site.alert.end}}
 
 {% include_relative _get-sdk.md %}
 
@@ -46,3 +46,8 @@ to be able to build and run your first Flutter app.
 ## Next step
 
 Set up your preferred editor.
+
+[Apple M1 processor]: https://www.apple.com/mac/m1
+[these supplementary notes]: https://github.com/flutter/flutter/wiki/Developing-with-Flutter-on-Apple-Silicon
+[Xcode]: https://developer.apple.com/xcode/
+[install `git` separately]: https://git-scm.com/download/mac

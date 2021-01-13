@@ -6,11 +6,9 @@ environment:
 dev_dependencies:
   build_runner: ^1.1.2
   code_excerpt_updater:
-    git: https://github.com/chalin/code_excerpt_updater.git
-    # path: ../code_excerpt_updater
+    git: https://github.com/RedBrogdon/code_excerpt_updater.git
   code_excerpter:
-    git: https://github.com/chalin/code_excerpter.git
-    # path: ../code_excerpter
+    git: https://github.com/RedBrogdon/code_excerpter.git
   linkcheck: ^2.0.6
   yaml: ^2.1.15
   path: ^1.6.2

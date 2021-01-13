@@ -413,6 +413,22 @@ for local network permission. The permission can also be allowed by enabling
 </li>
 </ol>
 
+## Apple Silicon (`arm64` Macs)
+
+Flutter does not yet support `arm64` iOS simulators. To run your host app on an Apple Silicon
+Mac, exclude `arm64` from the simulator architectures.
+
+In your host app target, find the **Excluded Architectures** (`EXCLUDED_ARCHS`) build setting.
+Click the right arrow disclosure indicator icon to expand the available build configurations.
+Hover over **Debug** and click the plus icon. Change **Any SDK** to **Any iOS Simulator SDK**.
+Add `arm64` to the build settings value.
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/excluded-archs.png" alt="Set conditional EXCLUDED_ARCHS build setting" %}
+
+When done correctly, Xcode will add `"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;` to your **project.pbxproj** file.
+
+Repeat for any iOS unit test targets.
+
 ## Development
 
 You can now [add a Flutter screen][] to your existing application.
