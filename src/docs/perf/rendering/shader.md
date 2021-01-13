@@ -147,7 +147,7 @@ The worst frame rasterization time is a nice metric from such integration tests 
 
 ## Limitations and considerations
 
-1. **Why not just compile or warm up _all_ possible shaders?**<p>
+1. **Why not just compile or warm up _all_ possible shaders?**<br><br>
    If there are only a limited number of possible shaders,
    then Flutter could do a warm-up and compile all of them
    before-hand to avoid such jank.
@@ -162,7 +162,7 @@ The worst frame rasterization time is a nice metric from such integration tests 
    shader programs that Flutter can generate is simply too large.
 
 2. **Can SkSLs captured from one device help shader compilation jank
-   on another device?**<p>
+   on another device?**<br><br>
    Theoretically, there's no guarantee that the SkSLs from one device
    would help on another device (but they also won't cause any troubles
    if SkSLs aren't compatible across devices).
@@ -177,7 +177,7 @@ The worst frame rasterization time is a nice metric from such integration tests 
    rasterization time in release mode; the worst frame rasterization time is
    a good indicator on how severe the shader compilation jank is.)
 
-3. **SkSL warm-up doesn't help newer iPhones using Metal.**<p>
+3. **SkSL warm-up doesn't help newer iPhones using Metal.**<br><br>
    Flutter recently migrated from OpenGL to Metal for all newer iOS devices.
    (Please reference [Metal on iOS FAQ][] on which iOS devices are considered
    new enough to use Metal.) However, Skia currently only implemented the SkSL
@@ -189,18 +189,18 @@ The worst frame rasterization time is a nice metric from such integration tests 
    iPhones, please leave feedback on [Issue 61045][], and we can help you turn
    on OpenGL for your app.
    
-4. **Why can't you create a single "ubershader" and just compile that once?**<p>
+4. **Why can't you create a single "ubershader" and just compile that once?**<br><br>
    One idea that people sometimes suggest is to create a single large shader that
    implements all of Skia's features, and use that shader while the more optimized
-   bespoke shaders are being compiled.<p>
-   This is similar to [a solution used by the Dolphin Emulator][].<p>
+   bespoke shaders are being compiled.<br><br>
+   This is similar to [a solution used by the Dolphin Emulator][].<br><br>
    In practice we believe implementing this for Flutter (or more specifically for
    Skia) would be impractical. Such a shader would be fantastically large, essentially
    reimplementing all of Skia on the GPU. This would itself take a long time to compile,
    thus introducing more jank; it would not necessarily be fast enough to avoid jank 
    even when compiled; and it would likely introduce fidelity issues (e.g. flickering)
    since there would likely be differences in precise rendering between the optimized
-   shaders and the "ubershader".<p>
+   shaders and the "ubershader".<br><br>
    That said, Flutter and Skia are open source and we are eager to see proofs-of-concept
    along these lines if this is something that interests you. To get started, please
    see our [contribution guidelines].
