@@ -135,6 +135,8 @@
     - title: Platform integration
       permalink: /docs/development/platform-integration
       children:
+        - title: Supported platforms
+          permalink: /docs/development/tools/sdk/release-notes/supported-platforms
         - title: Adding iOS App Clip support
           permalink: /docs/development/platform-integration/ios-app-clip
         - title: Apple Watch support
