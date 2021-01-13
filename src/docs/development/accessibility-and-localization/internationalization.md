@@ -581,6 +581,7 @@ The date patterns and symbols of the locale will also need to
 be specified. In the source code, the date patterns and symbols
 are defined like this:
 
+<!-- skip -->
 ```dart
 const nnLocaleDatePatterns = {
   'd': 'd.',
@@ -604,6 +605,7 @@ not share the same flexibility for number formatting, the formatting
 for an existing locale will have to be used as a substitute in
 `_NnMaterialLocalizationsDelegate`:
 
+<!-- skip -->
 ```dart
 class _NnMaterialLocalizationsDelegate extends LocalizationsDelegate<MaterialLocalizations> {
   // ...
