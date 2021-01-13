@@ -266,7 +266,8 @@
       { "source": "/go/text-editing-actions", "destination": "https://docs.google.com/document/d/1QaVIr1bbOWJGNyyNsB75sXgTDRMuxP268sLGTBNDut0/edit?usp=sharing", "type": 301 },
       { "source": "/go/rfc-android-j-deprecation", "destination": "https://docs.google.com/document/d/1IjlypDrIIGgF2N76P6z8QL2rT5Uuh_rBvqOgDUyhCx8/edit#heading=h.pub7jnop54q0", "type": 301 },
       { "source": "/go/buildtextspan-buildcontext", "destination": "https://docs.google.com/document/d/1nr-g45gXcWTYoW9UmChZV7Ije3lKP4pEvDQCdz6NFdI/edit?usp=sharing", "type": 301 },
-      { "source": "/go/deprecations-removed-after-1-22", "destination": "https://docs.google.com/spreadsheets/d/1kZOej-h4AiRW2Td3NUnVMSb8PYLB63mpj-oFYqb_4tc/edit?usp=sharing", "type": 301 }
+      { "source": "/go/deprecations-removed-after-1-22", "destination": "https://docs.google.com/spreadsheets/d/1kZOej-h4AiRW2Td3NUnVMSb8PYLB63mpj-oFYqb_4tc/edit?usp=sharing", "type": 301 },
+      { "source": "/go/max-length-enforcement", "destination": "https://docs.google.com/document/d/1S900lQaTPOsePnIeE7o3-Ia8f39VZaSv0JnjNyBfCvU", "type": 301 }
     ],
     "headers": [
       { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }

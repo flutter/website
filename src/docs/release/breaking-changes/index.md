@@ -20,6 +20,7 @@ release, and listed in alphabetical order:
 * [Android FlutterMain.setIsRunningInRobolectricTest testing API removed][]
 * [Clip behavior][]
 * [Dry layout support for RenderBox][]
+* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
 [Android FlutterMain.setIsRunningInRobolectricTest testing API removed]: /docs/release/breaking-changes/android-setIsRunningInRobolectricTest-removed
@@ -29,6 +30,7 @@ release, and listed in alphabetical order:
 [TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
 [Clip behavior]: /docs/release/breaking-changes/clip-behavior
 [Dry layout support for RenderBox]: /docs/release/breaking-changes/renderbox-dry-layout
+[Use maxLengthEnforcement instead of maxLengthEnforced]: /docs/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
 
 ### Released in Flutter 1.22
 
