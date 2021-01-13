@@ -193,7 +193,7 @@ TextField(
 
 ## Timeline
 
-Landed in version: v1.25.0-5.0.pre
+Landed in version: v1.26.0-1.0.pre
 In stable release: not yet
 
 ## References
@@ -206,13 +206,13 @@ API documentation:
 * [`LengthLimitingTextInputFormatter`][]
 * [`maxLength`][]
 
+Relevant issues:
+* [Issue 63753][]
+* [Issue 67898][]
+
 Relevant PR:
 * [PR 63754][]: Fix TextField crashed with composing and maxLength set
 * [PR 68086][]: Introduce `MaxLengthEnforcement`
-
-[PR 63754]: {{site.github}}//flutter/flutter/pull/63754
-
-[PR 68086]: {{site.github}}/flutter/flutter/pull/68086
 
 [`MaxLengthEnforcement` design doc]: /go/max-length-enforcement
 
@@ -221,3 +221,11 @@ Relevant PR:
 [`LengthLimitingTextInputFormatter`]: {{site.master-api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
 
 [`maxLength`]: {{site.master-api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
+
+[Issue 63753]: {{site.github}}/flutter/flutter/issues/63753
+
+[Issue 67898]: {{site.github}}/flutter/flutter/issues/67898
+
+[PR 63754]: {{site.github}}//flutter/flutter/pull/63754
+
+[PR 68086]: {{site.github}}/flutter/flutter/pull/68086
