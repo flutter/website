@@ -401,7 +401,9 @@ on the edge.
   as well as with Android emulators and the iOS simulator.
 
 * We test on a variety of low-end to high-end phones and tablets,
-  but we don't yet have an official device compatibility guarantee.
+  For a detailed list of platform supports by version and
+  an explanation of our support policy, see 
+  [supported platforms].
 
 ### Does Flutter run on the web?
 
@@ -997,3 +999,4 @@ follow Apple's [guidelines][] for App Store submission.
 [web instructions]: /docs/get-started/web
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: /docs/development/ui/widgets
+[supported platfomrs]: /docs/development/tools/sdk/release-notes/supported-platforms].
