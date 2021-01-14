@@ -23,6 +23,7 @@ but that the development team does not directly test or support.
 
 |Platform|Version              |
 |-------|----------------------|
+|Android|Android SDK 30        |
 |Android|Android SDK 29        |
 |Android|Android SDK 28        |
 |Android|Android SDK 27        |
@@ -30,6 +31,7 @@ but that the development team does not directly test or support.
 |Android|Android SDK 25        |
 |Android|Android SDK 24        |
 |Android|Android SDK 23        |
+|Android|Android SDK 22        |
 |Android|Android SDK 21        |
 |Android|Android SDK 19        |
 |iOS    | 14 (all)             |
@@ -45,12 +47,14 @@ but that the development team does not directly test or support.
 |macOS  | El Capitan & greater |
 |Linux  | Debian 10            |
 
+Note that Android SDK 20 is covered by testing Android SDK 19, 
+as the differences between the two platform versions are
+minimal.
 
 ### Best effort platforms tested by the community
 
 |Platform|Version       |
 |-------|---------------|
-|Android|Android SDK 30 |
 |Android|Android SDK 22 |
 |Android|Android SDK 20 |
 |Android|Android SDK 18 |

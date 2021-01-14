@@ -400,10 +400,9 @@ on the edge.
 * We support developing Flutter apps with Android and iOS devices,
   as well as with Android emulators and the iOS simulator.
 
-* We test on a variety of low-end to high-end phones and tablets,
-  For a detailed list of platform supports by version and
-  an explanation of our support policy, see 
-  [supported platforms].
+* We test on a variety of low-end to high-end phones and tablets.
+  For a detailed list of the platforms on which we test, see 
+  our list of [supported platforms][].
 
 ### Does Flutter run on the web?
 
@@ -999,4 +998,4 @@ follow Apple's [guidelines][] for App Store submission.
 [web instructions]: /docs/get-started/web
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: /docs/development/ui/widgets
-[supported platfomrs]: /docs/development/tools/sdk/release-notes/supported-platforms].
+[supported platforms]: /docs/development/tools/sdk/release-notes/supported-platforms
