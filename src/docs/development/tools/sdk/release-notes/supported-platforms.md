@@ -50,6 +50,7 @@ but that the development team does not directly test or support.
 Note that Android SDK 20 is covered by testing Android SDK 19, 
 as the differences between the two platform versions are
 minimal.
+
 ### Best effort platforms tested by the community
 
 |Platform|Version       |
