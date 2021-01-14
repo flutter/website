@@ -402,7 +402,7 @@ on the edge.
 
 * We test on a variety of low-end to high-end phones and tablets.
   For a detailed list of the platforms on which we test, see 
-  our list of [supported platforms].
+  our list of [supported platforms][].
 
 ### Does Flutter run on the web?
 

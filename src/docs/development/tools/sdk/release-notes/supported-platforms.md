@@ -23,7 +23,7 @@ but that the development team does not directly test or support.
 
 |Platform|Version              |
 |-------|----------------------|
-|Android|Windows SDK 30        |
+|Android|Android SDK 30        | today
 |Android|Android SDK 29        |
 |Android|Android SDK 28        |
 |Android|Android SDK 27        |
@@ -52,7 +52,6 @@ but that the development team does not directly test or support.
 
 |Platform|Version       |
 |-------|---------------|
-|Android|Android SDK 30 |
 |Android|Android SDK 22 |
 |Android|Android SDK 20 |
 |Android|Android SDK 18 |
