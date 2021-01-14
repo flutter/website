@@ -998,4 +998,4 @@ follow Apple's [guidelines][] for App Store submission.
 [web instructions]: /docs/get-started/web
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: /docs/development/ui/widgets
-[supported platforms]: /docs/development/tools/sdk/release-notes/supported-platforms
+[supported platfomrs]: /docs/development/tools/sdk/release-notes/supported-platforms].
