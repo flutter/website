@@ -59,7 +59,7 @@ This recipe covers how to fetch a sample album from the
 <!-- skip -->
 ```dart
 Future<http.Response> fetchAlbum() {
-  return http.get('https://jsonplaceholder.typicode.com/albums/1');
+  return http.get(Uri.https('jsonplaceholder.typicode.com','albums/1'));
 }
 ```
 
