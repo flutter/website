@@ -280,7 +280,7 @@ as well as many other open source packages, on [pub.dev][].
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -16,7 +18,7 @@
+             appBar: AppBar(
                title: Text('Welcome to Flutter'),
              ),
              body: Center(
@@ -417,7 +417,7 @@ class _RandomWordsState extends State<RandomWords> {
        return MaterialApp(
          title: 'Welcome to Flutter',
          home: Scaffold(
-  @@ -18,8 +17,8 @@
+           appBar: AppBar(
              title: Text('Welcome to Flutter'),
            ),
            body: Center(
