@@ -71,6 +71,12 @@ class MyTextEditingController {
 }
 ```
 
+Example error message before migration:
+
+```
+'MyTextEditingController.buildTextSpan' ('TextSpan Function({TextStyle? style, required bool withComposing})') isn't a valid override of 'TextEditingController.buildTextSpan' ('TextSpan Function({required BuildContext context, TextStyle? style, required bool withComposing})').
+```
+
 Code after migration:
 
 <!-- skip -->
@@ -93,6 +99,13 @@ Code before migration:
 ```dart
 TextEditingController controller = /* ... */;
 TextSpan span = controller.buildTextSpan(withComposing: false);
+```
+
+Error message before migration:
+
+```
+The named parameter 'context' is required, but there's no corresponding argument.
+Try adding the required argument.
 ```
 
 Code after migration:
