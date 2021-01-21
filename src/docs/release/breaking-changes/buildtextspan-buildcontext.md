@@ -35,7 +35,7 @@ class HighlightTextEditingController extends TextEditingController {
 
   @override
   TextSpan buildTextSpan({TextStyle? style, required bool withComposing}) {
-    return super.buildTextSpan(style: TextStyle(color: highlightColor), withComposing: withComposing, context: context);
+    return super.buildTextSpan(style: TextStyle(color: highlightColor), withComposing: withComposing);
   }
 ```
 
@@ -46,9 +46,9 @@ With the `BuildContext` parameter available, the `HighlightTextEditingController
 ```dart
 class HighlightTextEditingController extends TextEditingController {
   @override
-  TextSpan buildTextSpan({TextStyle? style, required bool withComposing, required BuildContext context}) {
+  TextSpan buildTextSpan({required BuildContext context, TextStyle? style, required bool withComposing}) {
     final Color color = Theme.of(context).accentColor;
-    return super.buildTextSpan(style: TextStyle(color: color), withComposing: withComposing, context: context);
+    return super.buildTextSpan(context: context, style: TextStyle(color: color), withComposing: withComposing);
   }
 }
 ```
@@ -83,7 +83,7 @@ Code after migration:
 ```dart
 class MyTextEditingController {
   @override
-  TextSpan buildTextSpan({TextStyle? style, required bool withComposing, required BuildContext context}) {
+  TextSpan buildTextSpan({required BuildContext context, TextStyle? style, required bool withComposing}) {
     /* ... */
   }
 }
@@ -114,7 +114,7 @@ Code after migration:
 ```dart
 BuildContext context = /* ... */;
 TextEditingController controller = /* ... */;
-TextSpan span = controller.buildTextSpan(withComposing: false, context: context);
+TextSpan span = controller.buildTextSpan(context: context, withComposing: false);
 ```
 
 ## Timeline
