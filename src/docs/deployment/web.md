@@ -57,7 +57,7 @@ has been performed.
 Build the app for deployment using the
 `flutter build web` command.
 You can also choose which renderer to use
-by using the `--web-renderer` option (See[Web renderers][]).
+by using the `--web-renderer` option (See [Web renderers][]).
 This generates the app, including the assets,
 and places the files into the `/build/web`
 directory of the project.
