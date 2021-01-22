@@ -243,7 +243,7 @@ To see a sample Flutter app using this tool, please see
 [`gen_l10n_example`][].
 
 To localize your device app description, you can pass in the localized
-string into [MaterialApp.onGenerateTitle][]:
+string into [`MaterialApp.onGenerateTitle`][]:
 
   <!-- skip -->
   ```dart
