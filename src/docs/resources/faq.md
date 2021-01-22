@@ -158,7 +158,7 @@ that offer dependency injection and service location, such as [injectable][],
 ### What technology is Flutter built with?
 
 Flutter is built with C, C++, Dart, and Skia (a 2D rendering engine). See this
-[diagram][] for a better picture of the main components. For a more detailed
+[architecture diagram][] for a better picture of the main components. For a more detailed
 description of the layered architecture of Flutter, read the [architectural
 overview].
 
