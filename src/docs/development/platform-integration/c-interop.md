@@ -22,6 +22,12 @@ In this walkthrough, you'll create a C function
 that implements 32-bit addition and then
 exposes it through a Dart plugin named "native_add".
 
+{{ site.alert.version-note }}
+  As of Dart 2.12 beta, FFi has been marked as 1.0,
+  and will be fully stable once a 2.12 stable SDK is
+  released.
+{{ site.alert.end }}
+
 ### Dynamic vs static linking
 
 A native library can be linked into an app either
