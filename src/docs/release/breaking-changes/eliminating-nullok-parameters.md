@@ -80,6 +80,7 @@ value:
 1. [`Shortcuts.maybeOf`]
 1. [`Actions.maybeHandler`]
 1. [`Actions.maybeFind`]
+1. [`Actions.maybeInvoke`]
 1. [`AnimatedList.maybeOf`]
 1. [`SliverAnimatedList.maybeOf`]
 1. [`CupertinoDynamicColor.maybeResolve`]
@@ -122,7 +123,10 @@ MediaQueryData data = MediaQuery.of(context); // No ! or ? operator here now.
 ```
 
 The `unnecessary_non_null_assertion` analysis option can be quite helpful in
-finding the places where the `!` operator should be removed.
+finding the places where the `!` operator should be removed, and the
+`unnecessary_nullable_for_final_variable_declarations` analysis option can be
+helpful in finding unnecessary question mark operators on `final` and `const`
+variables.
 
 ## Timeline
 
@@ -146,6 +150,7 @@ API documentation:
  * [`Shortcuts.of`]
  * [`Actions.handler`]
  * [`Actions.find`]
+ * [`Actions.invoke`]
  * [`AnimatedList.of`]
  * [`SliverAnimatedList.of`]
  * [`CupertinoDynamicColor.resolve`]
@@ -156,6 +161,29 @@ API documentation:
  * [`NoDefaultCupertinoThemeData.resolveFrom`]
  * [`CupertinoTextThemeData.resolveFrom`]
  * [`MaterialBasedCupertinoThemeData.resolveFrom`]
+ * [`MediaQuery.maybeOf`]
+ * [`Navigator.maybeOf`]
+ * [`ScaffoldMessenger.maybeOf`]
+ * [`Scaffold.maybeOf`]
+ * [`Router.maybeOf`]
+ * [`Localizations.maybeLocaleOf`]
+ * [`FocusTraversalOrder.maybeOf`]
+ * [`FocusTraversalGroup.maybeOf`]
+ * [`Focus.maybeOf`]
+ * [`Shortcuts.maybeOf`]
+ * [`Actions.maybeHandler`]
+ * [`Actions.maybeFind`]
+ * [`Actions.maybeInvoke`]
+ * [`AnimatedList.maybeOf`]
+ * [`SliverAnimatedList.maybeOf`]
+ * [`CupertinoDynamicColor.maybeResolve`]
+ * [`CupertinoDynamicColor.maybeResolveFrom`]
+ * [`CupertinoUserInterfaceLevel.maybeOf`]
+ * [`CupertinoTheme.maybeBrightnessOf`]
+ * [`CupertinoThemeData.maybeResolveFrom`]
+ * [`NoDefaultCupertinoThemeData.maybeResolveFrom`]
+ * [`CupertinoTextThemeData.maybeResolveFrom`]
+ * [`MaterialBasedCupertinoThemeData.maybeResolveFrom`]
 
 Relevant issues:
 * [Issue 68637][Issue 68637]
@@ -170,29 +198,32 @@ Relevant PRs:
 * [Remove `nullOk` parameter from `Router.of`]
 * [Remove `nullOk` from `Scaffold.of` and `ScaffoldMessenger.of`]
 * [Remove `nullOk` parameter from Cupertino color resolution APIs]
+* [Remove vestigial `nullOk` parameter from `Localizations.localeOf`]
+* [Remove `nullOk` from `Actions.invoke`, add `Actions.maybeInvoke`]
 
 [`MediaQuery.of`]: {{site.api}}/flutter/widgets/MediaQuery/of.html
 [`Navigator.of`]: {{site.api}}/flutter/widgets/Navigator/of.html
-[`ScaffoldMessenger.of`]: https://master-api.flutter.dev/flutter/material/ScaffoldMessenger/of.html
-[`Scaffold.of`]: https://master-api.flutter.dev/flutter/material/Scaffold/of.html
-[`Router.of`]: https://master-api.flutter.dev/flutter/widgets/Router/of.html
-[`Localizations.localeOf`]: https://master-api.flutter.dev/flutter/widgets/Localizations/localeOf.html
-[`FocusTraversalOrder.of`]: https://master-api.flutter.dev/flutter/widgets/FocusTraversalOrder/of.html
-[`FocusTraversalGroup.of`]: https://master-api.flutter.dev/flutter/widgets/FocusTraversalGroup/of.html
-[`Focus.of`]: https://master-api.flutter.dev/flutter/widgets/Focus/of.html
-[`Shortcuts.of`]: https://master-api.flutter.dev/flutter/widgets/Shortcuts/of.html
-[`Actions.handler`]: https://master-api.flutter.dev/flutter/widgets/Actions/handler.html
-[`Actions.find`]: https://master-api.flutter.dev/flutter/widgets/Actions/find.html
-[`AnimatedList.of`]: https://master-api.flutter.dev/flutter/widgets/AnimatedList/of.html
-[`SliverAnimatedList.of`]: https://master-api.flutter.dev/flutter/widgets/SliverAnimatedList/of.html
-[`CupertinoDynamicColor.resolve`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoDynamicColor/resolve.html
-[`CupertinoDynamicColor.resolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoDynamicColor/resolveFrom.html
-[`CupertinoUserInterfaceLevel.of`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoUserInterfaceLevel/of.html
-[`CupertinoTheme.brightnessOf`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoTheme/brightnessOf.html
-[`CupertinoThemeData.resolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoThemeData/resolveFrom.html
-[`NoDefaultCupertinoThemeData.resolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/NoDefaultCupertinoThemeData/resolveFrom.html
-[`CupertinoTextThemeData.resolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoTextThemeData/resolveFrom.html
-[`MaterialBasedCupertinoThemeData.resolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/MaterialBasedCupertinoThemeData/resolveFrom.html
+[`ScaffoldMessenger.of`]: {{site.api}}/flutter/material/ScaffoldMessenger/of.html
+[`Scaffold.of`]: {{site.api}}/flutter/material/Scaffold/of.html
+[`Router.of`]: {{site.api}}/flutter/widgets/Router/of.html
+[`Localizations.localeOf`]: {{site.api}}/flutter/widgets/Localizations/localeOf.html
+[`FocusTraversalOrder.of`]: {{site.api}}/flutter/widgets/FocusTraversalOrder/of.html
+[`FocusTraversalGroup.of`]: {{site.api}}/flutter/widgets/FocusTraversalGroup/of.html
+[`Focus.of`]: {{site.api}}/flutter/widgets/Focus/of.html
+[`Shortcuts.of`]: {{site.api}}/flutter/widgets/Shortcuts/of.html
+[`Actions.handler`]: {{site.api}}/flutter/widgets/Actions/handler.html
+[`Actions.find`]: {{site.api}}/flutter/widgets/Actions/find.html
+[`Actions.invoke`]: {{site.api}}/flutter/widgets/Actions/invoke.html
+[`AnimatedList.of`]: {{site.api}}/flutter/widgets/AnimatedList/of.html
+[`SliverAnimatedList.of`]: {{site.api}}/flutter/widgets/SliverAnimatedList/of.html
+[`CupertinoDynamicColor.resolve`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/resolve.html
+[`CupertinoDynamicColor.resolveFrom`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/resolveFrom.html
+[`CupertinoUserInterfaceLevel.of`]: {{site.api}}/flutter/cupertino/CupertinoUserInterfaceLevel/of.html
+[`CupertinoTheme.brightnessOf`]: {{site.api}}/flutter/cupertino/CupertinoTheme/brightnessOf.html
+[`CupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/CupertinoThemeData/resolveFrom.html
+[`NoDefaultCupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/NoDefaultCupertinoThemeData/resolveFrom.html
+[`CupertinoTextThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/CupertinoTextThemeData/resolveFrom.html
+[`MaterialBasedCupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/MaterialBasedCupertinoThemeData/resolveFrom.html
 [`MediaQuery.maybeOf`]: {{site.api}}/flutter/widgets/MediaQuery/maybeOf.html
 [`Navigator.maybeOf`]: {{site.api}}/flutter/widgets/Navigator/maybeOf.html
 [`ScaffoldMessenger.maybeOf`]: https://master-api.flutter.dev/flutter/material/ScaffoldMessenger/maybeOf.html
@@ -205,6 +236,7 @@ Relevant PRs:
 [`Shortcuts.maybeOf`]: https://master-api.flutter.dev/flutter/widgets/Shortcuts/maybeOf.html
 [`Actions.maybeHandler`]: https://master-api.flutter.dev/flutter/widgets/Actions/maybeHandler.html
 [`Actions.maybeFind`]: https://master-api.flutter.dev/flutter/widgets/Actions/maybeFind.html
+[`Actions.maybeInvoke`]: https://master-api.flutter.dev/flutter/widgets/Actions/maybeInvoke.html
 [`AnimatedList.maybeOf`]: https://master-api.flutter.dev/flutter/widgets/AnimatedList/maybeOf.html
 [`SliverAnimatedList.maybeOf`]: https://master-api.flutter.dev/flutter/widgets/SliverAnimatedList/maybeOf.html
 [`CupertinoDynamicColor.maybeResolve`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoDynamicColor/maybeResolve.html
@@ -226,4 +258,6 @@ Relevant PRs:
 [Remove `nullOk` parameter from `Router.of`]: {{site.github}}/flutter/flutter/pull/68910
 [Remove `nullOk` from `Scaffold.of` and `ScaffoldMessenger.of`]: {{site.github}}/flutter/flutter/pull/68908
 [Remove `nullOk` parameter from Cupertino color resolution APIs]: {{site.github}}/flutter/flutter/pull/68905
+[Remove vestigial `nullOk` parameter from `Localizations.localeOf`]: {{site.github}}/flutter/flutter/pull/74657
+[Remove `nullOk` from `Actions.invoke`, add `Actions.maybeInvoke`]: {{site.github}}/flutter/flutter/pull/74680
 
