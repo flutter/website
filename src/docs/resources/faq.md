@@ -385,11 +385,9 @@ on the edge.
 
 ### What devices and OS versions does Flutter run on?
 
-* Mobile operating systems: Android Jelly Bean, v16,
-  4.1.x or newer, and iOS 8 or newer.
-
-* Mobile hardware: iOS devices (iPhone 4S or newer)
-  and ARM Android devices.
+* We support and test running Flutter on a variety of low-end to high-end platforms.
+  For a detailed list of the platforms on which we test, see 
+  our list of [supported platforms][].
 
 * Flutter supports building ahead-of-time (AOT) compiled libraries
   for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
@@ -397,12 +395,9 @@ on the edge.
 * Apps built for ARMv7 or ARM64 run fine (using ARM emulation)
   on many x86 Android devices.
 
-* We support developing Flutter apps with Android and iOS devices,
-  as well as with Android emulators and the iOS simulator.
-
-* We test on a variety of low-end to high-end phones and tablets.
-  For a detailed list of the platforms on which we test, see 
-  our list of [supported platforms][].
+* We support developing Flutter apps on a range of platforms.
+  See the system requirements listed under each
+  [development operating system][install].
 
 ### Does Flutter run on the web?
 
@@ -940,6 +935,7 @@ follow Apple's [guidelines][] for App Store submission.
 [iOS]: #run-ios
 [iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
 [iOS instructions]: /docs/deployment/ios
+[install]: /docs/get-started/install
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [internationalization tutorial]: /docs/development/accessibility-and-localization/internationalization
 [is easy]: /docs/development/packages-and-plugins/using-packages
