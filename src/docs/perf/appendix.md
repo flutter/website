@@ -3,7 +3,7 @@ title: Some more thoughts on performance
 description: What is performance, and why is performance importnat.
 ---
 
-# What is performance?
+## What is performance?
 
 Performance is a set of quantifiable properties of a performer.
 
@@ -62,7 +62,7 @@ usually blamed on a single framework commit version. There could also be Flutter
 engine performance issues or Skia performance issues that can be further
 pin-pointed down to a single engine or Skia commit.
 
-# Why is performance important?
+## Why is performance important?
 
 Answering this question is not only crucial for validating the work in
 performance, but also for guiding the performance work to be more useful. An
@@ -80,7 +80,7 @@ Note they don't mean that non-performance or non-measurable issues or
 descriptions are not important. They're to high-light the scenarios where
 performance can be more useful.
 
-## 1. Performance report is easy to consume
+### 1. Performance report is easy to consume
 
 Performance metrics are numbers. Reading a number is much easier than reading a
 passage. For example, it probably takes an engineer 1 second to consume the
@@ -96,7 +96,7 @@ On the other hand, having N number of 500-word texts almost guarantees an N-time
 cost to consume those texts. It would be a daunting task to analyze thousands of
 historical descriptions, each of which has 500 words.
 
-## 2. Performance has little ambiguity
+### 2. Performance has little ambiguity
 
 Another advantage of having performance as a set of numbers is its unambiguity.
 When we measure an animation to have a performance of 20ms per frame, or 50fps,
@@ -116,7 +116,7 @@ take multiple measurements to estimate the distribution of a random variable.
 One could take the average of many measurements to cancel the noise by [the law
 of large numbers][1].
 
-## 3. Performance is comparable and convertible
+### 3. Performance is comparable and convertible
 
 Performance numbers have not only unambiguous meanings, but also unambiguous
 comparisons. For example, there’s no doubt that 5 is greater than 4. On the
@@ -135,7 +135,7 @@ using a single measurement without any added noise or ambiguity. The converted
 quantity can then be used for further comparisons and consumption. Such
 conversions are almost impossible if we’re dealing with natural languages.
 
-## 4. Performance is more fair
+### 4. Performance is more fair
 
 If issues rely on verbose words to be discovered, then an unfair advantages are
 given to people who are (1) more verbose, or more willing to chat or write; (2)
@@ -146,7 +146,7 @@ By having the same metrics to detect problems no matter how far or how silent
 the users are, we’re given a more fair treatment to all issues. That in turn
 allows us to focus on the right issues that have wider impacts.
 
-## How to make performance useful
+### How to make performance useful
 
 Now let's summarize the 3 points above from a slightly different perspctive:
 1. Make performance metrics easy to consume. Do not overwhelm the readers with a

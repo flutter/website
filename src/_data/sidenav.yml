@@ -312,6 +312,12 @@
         permalink: /docs/perf/rendering/ui-performance
       - title: Reduce shader compilation jank
         permalink: /docs/perf/rendering/shader
+    - title: Performance metrics
+      permalink: /docs/perf/metrics
+    - title: Frequently Asked Questions
+      permalink: /docs/perf/faq
+    - title: Appendix
+      permalink: /docs/perf/appendix
 
 - title: Deployment
   children:
