@@ -27,7 +27,7 @@
         - title: Introduction to declarative UI
           permalink: /docs/get-started/flutter-for/declarative
     - title: "Dart language overview"
-      permalink: https://www.dart.dev/guides/language
+      permalink: https://dart.dev/overview
     - title: "Building a web app"
       permalink: /docs/get-started/web
 
