@@ -18,11 +18,11 @@ performance issues to solve. Hence we'll leave them to
 [appendix](/docs/perf/appendix).
 
 To improve the performance, we first need metrics: some measurable numbers to
-verify the problems and improvements. In [metrics](docs/perf/metrics) page,
+verify the problems and improvements. In [metrics](/docs/perf/metrics) page,
 we'll show what metrics are currently used, and what tools and APIs are
 available to get them.
 
-We then collect a list of [Frequently Asked Questions](docs/perf/faq), so you
+We then collect a list of [Frequently Asked Questions](/docs/perf/faq), so you
 can find if the questions or problems have been encountered before, and what
 existing solutions there are. (Alternatively, you may check the Flutter Github
 issue database with the [performance][performance] label.)
