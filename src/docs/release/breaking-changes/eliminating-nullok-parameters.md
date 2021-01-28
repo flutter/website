@@ -12,7 +12,7 @@ alternate APIs with nullable return values.
 ## Context
 
 Flutter has a common pattern of allowing lookup of some types of widgets
-(`InheritedWidget`s) using static member functions that are typically called
+([`InheritedWidget`]s) using static member functions that are typically called
 `of`, and take a `BuildContext`.
 
 Before non-nullability was the default, it was useful to have a toggle on these
@@ -21,12 +21,13 @@ the widget tree and returning null if it was not found. It was useful, and
 wasn't confusing, since every variable was nullable.
 
 When non-nullability was made the default, it was then desirable to have the
-most commonly used APIs return a non-nullable value, since saying
+most commonly used APIs return a non-nullable value. This is because saying
 `MediaQuery.of(context, nullOk: false)` and then still requiring an `!` operator
-or `?` and a fallback value after that call felt awkward, since the `nullOk`
-parameter was a cheap form of providing a null safety toggle, which in the face
-of true language support for non-nullability, was then supplying redundant, and
-perhaps contradictory signals to the developer.
+or `?` and a fallback value after that call felt awkward.
+
+The `nullOk` parameter was a cheap form of providing a null safety toggle, which
+in the face of true language support for non-nullability, was then supplying
+redundant, and perhaps contradictory signals to the developer.
 
 To solve this, the `of` accessors (and some related accessors that also used
 `nullOk`) were split into two calls: one that returned a non-nullable value and
@@ -34,8 +35,9 @@ threw an exception when the sought-after widget was not present, and one that
 returned a nullable value that didn't throw an exception, and returned null if
 the widget was not present.
 
-The design doc for this change is here:
-https://flutter.dev/go/eliminating-nullok-parameters
+The design document for this change is here:
+[https://flutter.dev/go/eliminating-nullok-parameters](
+https://flutter.dev/go/eliminating-nullok-parameters)
 
 ## Description of change
 
@@ -247,6 +249,7 @@ Relevant PRs:
 [`NoDefaultCupertinoThemeData.maybeResolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/NoDefaultCupertinoThemeData/maybeResolveFrom.html
 [`CupertinoTextThemeData.maybeResolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoTextThemeData/maybeResolveFrom.html
 [`MaterialBasedCupertinoThemeData.maybeResolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/MaterialBasedCupertinoThemeData/maybeResolveFrom.html
+[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Issue 68637]: {{site.github}}/flutter/flutter/issues/68637
 [Remove `nullOk` in `MediaQuery.of`]: {{site.github}}/flutter/flutter/pull/68736
 [Remove `nullOk` in `Navigator.of`]: {{site.github}}/flutter/flutter/pull/70726
