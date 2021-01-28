@@ -659,7 +659,7 @@ the widgets are resized according to their
          and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -731,7 +731,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance);
+  final controller = LiveWidgetController(WidgetsBinding.instance!);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -774,7 +774,7 @@ Future<void> main() async {
 
   final flexibleWidget = row.children[2] as Flexible;
   
-  if (flexibleWidget.child == null || flexibleWidget.child is! BlueBox) {
+  if (flexibleWidget.child is! BlueBox) {
     _result(false, ['The Flexible classes should have BlueBox widgets as their children.']);
     return;
   }
