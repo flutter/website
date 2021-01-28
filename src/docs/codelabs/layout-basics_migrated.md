@@ -52,7 +52,7 @@ and `Column` lays out its widgets vertically.
   **2.** In the code, change the `Row` to a `Column`, and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -118,7 +118,7 @@ Future<void> main() async {
   
   runApp(MyApp());
 
-  final controller = LiveWidgetController(WidgetsBinding.instance);
+  final controller = LiveWidgetController(WidgetsBinding.instance!);
 
   final columns = controller.widgetList(find.byType(Column));
 
