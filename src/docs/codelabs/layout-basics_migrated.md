@@ -191,10 +191,102 @@ The `mainAxisSize` property has two possible values:
   **2.** Change `MainAxisSize.max` to `MainAxisSize.min`,
          and run again.
 {{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/928d699ea0869e75d072e6e9c4e63397
-{% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=928d699ea0869e75d072e6e9c4e63397&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+{$ begin main.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        BlueBox(),
+        BlueBox(),
+        BlueBox(),
+      ],
+    );
+  }
+}
+
+class BlueBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        border: Border.all(),
+      ),
+    );
+  }
+}
+{$ end main.dart $}
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Container(
+        color: Color(0xffeeeeee),
+        child: Center(
+          child: Container(
+            child: MyWidget(),
+            color: Color(0xffcccccc),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  final completer = Completer<void>();
+
+  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized()
+      .addPostFrameCallback((timestamp) async {
+    completer.complete();
+  });
+
+  await completer.future;
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  final rows = controller.widgetList(find.byType(Row));
+
+  if (rows.length == 0) {
+    _result(false, ['Couldn\'t find Row!']);
+    return;
+  }
+
+  if (rows.length > 1) {
+    _result(false, ['Found ${rows.length} Rows, rather than just one.']);
+    return;
+  }
+
+  final row = rows.first as Row;
+
+  if (row.mainAxisSize != MainAxisSize.min) {
+    _result(false, ['Row lays out the BlueBox widgets with extra space. Change MainAxisSize.max to MainAxisSize.min']);
+    return;
+  }
+
+  if (row.children.length != 3 || row.children.any((w) => w is! BlueBox)) {
+    _result(false, ['There should only be three children, all BlueBox widgets.']);
+    return;
+  }
+
+  _result(true, ['Row lays out the BlueBox widgets without extra space, and the BlueBox widgets are positioned at the middle of Row\'s main axis.']);
+}
+{$ end test.dart $}
+```
 
 ### mainAxisAlignment property
 
