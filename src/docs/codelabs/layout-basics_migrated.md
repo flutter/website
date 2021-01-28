@@ -1955,10 +1955,140 @@ which are positioned below the contact information.
   set `mainAxisSize` to `MainAxisSize.min`
   and `crossAxisAlignment` to `CrossAxisAlignment.start`.
 {{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/c46f9a9f6c99c2c00497df5dbc0b4593
-{% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=c46f9a9f6c99c2c00497df5dbc0b4593&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+{$ begin main.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Begin implementing the Column here.
+  }
+}
+{$ end main.dart $}
+{$ begin solution.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('Flutter McFlutter', style: Theme.of(context).textTheme.headline),
+        Text('Experienced Developer'),
+      ],
+    );
+  }
+}
+{$ end solution.dart $}
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xffeeeeee),
+        textTheme: TextTheme(
+          body1: TextStyle(
+            fontSize: 16,
+          ),
+        ),
+      ),
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xffffffff),
+                border: Border.all(),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 10,
+                    color: Color(0x80000000),
+                  ),
+                ],
+              ),
+              padding: const EdgeInsets.all(8.0),
+              child: MyWidget(),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  final completer = Completer<void>();
+  
+  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized()
+      .addPostFrameCallback((timestamp) async {
+    completer.complete();
+  });
+  
+  await completer.future;
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  // Check MyWidget starts with one Column
+
+  final myWidgetElement = controller.element(find.byType(MyWidget));
+
+  final myWidgetChildElements = <Element>[];
+  myWidgetElement.visitChildElements((e) => myWidgetChildElements.add(e));
+
+  if (myWidgetChildElements.length != 1 ||
+      myWidgetChildElements[0].widget is! Column) {
+    _result(false, ['The root widget in MyWidget\'s build method should be a Column.']);
+    return;
+  }
+
+  // Check Column has correct properties
+
+  final innerColumnElement = myWidgetChildElements[0];
+  final innerColumnWidget = innerColumnElement.widget as Column;
+
+  if (innerColumnWidget.crossAxisAlignment != CrossAxisAlignment.start) {
+    _result(false, ['The Column that contains the name and title should use CrossAxisAlignment.start as its CrossAxisAlignment value.']);
+    return;
+  }
+
+  if (innerColumnWidget.mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The Column that contains the name and title should use MainAxisSize.min as its MainAxisSize value.']);
+    return;
+  }
+
+  // Check inner Column has two Text children
+
+  if (innerColumnWidget.children.any((w) => w is! Text)) {
+    _result(false, ['The Column that contains the name and title should have two children, both Text widgets.']);
+    return;
+  }
+
+  // Check first Text has headline style
+
+  final nameText = innerColumnWidget.children[0] as Text;
+
+  if (nameText?.style?.fontSize != 24) {
+    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    return;
+  }
+
+  _result(true);
+}
+{$ end test.dart $}
+```
 
 #### Exercise: Wrap the Column in a Row
 {:.no_toc}
@@ -1995,11 +2125,200 @@ which are positioned below the contact information.
       ],
      );
   ```
-{{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/ecf35ee39daf06266363be8fe5aa1d6f
-{% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=ecf35ee39daf06266363be8fe5aa1d6f&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+{$ begin main.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Flutter McFlutter',
+          style: Theme.of(context).textTheme.headline,
+        ),
+        Text(
+          'Experienced App Developer',
+        ),
+      ],
+    );
+  }
+}
+{$ end main.dart $}
+{$ begin solution.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(Icons.account_circle, size: 50)),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Flutter McFlutter',
+                style: Theme.of(context).textTheme.headline),
+            Text('Experienced App Developer'),
+          ],
+        ),
+      ],
+    );
+  }
+}
+{$ end solution.dart $}
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xffeeeeee),
+        textTheme: TextTheme(
+          body1: TextStyle(
+            fontSize: 16,
+          ),
+        ),
+      ),
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xffffffff),
+                border: Border.all(),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 10,
+                    color: Color(0x80000000),
+                  ),
+                ],
+              ),
+              padding: const EdgeInsets.all(8.0),
+              child: MyWidget(),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  final completer = Completer<void>();
+  
+  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized()
+      .addPostFrameCallback((timestamp) async {
+    completer.complete();
+  });
+  
+  await completer.future;
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  // Check MyWidget starts with one Column
+
+  final myWidgetElement = controller.element(find.byType(MyWidget));
+
+  final myWidgetChildElements = <Element>[];
+  myWidgetElement.visitChildElements((e) => myWidgetChildElements.add(e));
+
+  if (myWidgetChildElements.length != 1 ||
+      myWidgetChildElements[0].widget is! Row) {
+    _result(false, ['The root widget in MyWidget\'s build method should be a Column.']);
+    return;
+  }
+
+  // Check first Row has two children: Padding and Column
+
+  final firstRowElement = myWidgetChildElements[0];
+
+  final firstRowChildElements = <Element>[];
+  firstRowElement.visitChildElements((e) => firstRowChildElements.add(e));
+
+  if (firstRowChildElements.length != 2 ||
+      firstRowChildElements[0].widget is! Padding ||
+      firstRowChildElements[1].widget is! Column) {
+    _result(false, ['The first Row should have two children: first a Padding, and then a Column.']);
+    return;
+  }
+
+  // Check Padding has correct padding
+
+  final paddingElement = firstRowChildElements[0];
+
+  if ((paddingElement.widget as Padding).padding != const EdgeInsets.all(8)) {
+    _result(false, ['The Padding widget in the first Row should have a padding of 8.']);
+    return;
+  }
+
+  // Check Padding has an Icon as its child
+
+  final paddingChildren = <Element>[];
+  paddingElement.visitChildElements((e) => paddingChildren.add(e));
+
+  if (paddingChildren.length != 1 || paddingChildren[0].widget is! Icon) {
+    _result(false, ['The Padding widget in the first Row should have an Icon as its child.']);
+    return;
+  }
+
+  // Check icon has a size of 50
+
+  if ((paddingChildren[0].widget as Icon).size != 50) {
+    _result(false, ['The Icon in the top-left corner should have a size of 50.']);
+    return;
+  }
+
+  // Check inner Column has correct properties
+
+  final innerColumnElement = firstRowChildElements[1];
+  final innerColumnWidget = innerColumnElement.widget as Column;
+
+  if (innerColumnWidget.crossAxisAlignment != CrossAxisAlignment.start) {
+    _result(false, ['The Column for the name and title should use CrossAxisAlignment.start as its crosAxisAlignment.']);
+    return;
+  }
+
+  if (innerColumnWidget.mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The Column for the name and title should use MainAxisSize.min as its mainAxisSize.']);
+    return;
+  }
+
+  // Check inner Column has two Text children
+
+  if (innerColumnWidget.children.any((w) => w is! Text)) {
+    _result(false, ['The Column for the name and title should have two children, both Text widgets.']);
+    return;
+  }
+
+  // Check first Text has headline style
+
+  final nameText = innerColumnWidget.children[0] as Text;
+
+  if (nameText?.style?.fontSize != 24) {
+    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    return;
+  }
+
+  _result(true);
+}
+{$ end test.dart $}
+```
 
 ### Part 2
 {:.no_toc}
@@ -2041,10 +2360,270 @@ which are positioned below the contact information.
   ```
 
 {{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/9863fbf7fe192e95b93cfdfb517ac6f5
-{% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=9863fbf7fe192e95b93cfdfb517ac6f5&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+{$ begin main.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(Icons.account_circle, size: 50)),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Flutter McFlutter',
+                style: Theme.of(context).textTheme.headline),
+            Text('Experienced App Developer'),
+          ],
+        ),
+      ],
+    );
+  }
+}
+{$ end main.dart $}
+{$ begin solution.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.account_circle, size: 50),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Flutter McFlutter',
+                  style: Theme.of(context).textTheme.headline,
+                ),
+                Text(
+                  'Experienced App Developer',
+                )
+              ],
+            ),
+          ],
+        ),
+        SizedBox(height: 8),
+        Row(),
+        SizedBox(height: 16),
+        Row(),
+      ],
+    );
+  }
+}
+{$ end solution.dart $}
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xffeeeeee),
+        textTheme: TextTheme(
+          body1: TextStyle(
+            fontSize: 16,
+          ),
+        ),
+      ),
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xffffffff),
+                border: Border.all(),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 10,
+                    color: Color(0x80000000),
+                  ),
+                ],
+              ),
+              padding: const EdgeInsets.all(8.0),
+              child: MyWidget(),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  final completer = Completer<void>();
+  
+  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized()
+      .addPostFrameCallback((timestamp) async {
+    completer.complete();
+  });
+  
+  await completer.future;
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  // Check MyWidget starts with one Column
+
+  final myWidgetElement = controller.element(find.byType(MyWidget));
+
+  final myWidgetChildElements = <Element>[];
+  myWidgetElement.visitChildElements((e) => myWidgetChildElements.add(e));
+
+  if (myWidgetChildElements.length != 1 ||
+      myWidgetChildElements[0].widget is! Column) {
+    _result(false, ['The root widget in MyWidget\'s build method should be a Column.']);
+    return;
+  }
+
+  // Check outermost Column has 5 correct children.
+
+  final outerColumnElement = myWidgetChildElements[0];
+  final outerColumnChildWidgets =
+      (outerColumnElement.widget as Column).children;
+  final outerColumnChildElements = <Element>[];
+  outerColumnElement.visitChildElements((e) => outerColumnChildElements.add(e));
+
+  if (outerColumnChildWidgets.length != 5 ||
+      outerColumnChildWidgets[0] is! Row ||
+      outerColumnChildWidgets[1] is! SizedBox ||
+      outerColumnChildWidgets[2] is! Row ||
+      outerColumnChildWidgets[3] is! SizedBox ||
+      outerColumnChildWidgets[4] is! Row) {
+    _result(false, ['The children of the outermost Column should be [Row, SizedBox, Row, SizedBox, Row] in that order.']);
+    return;
+  }
+
+  // Check outermost Column's properties
+
+  if ((outerColumnElement.widget as Column).mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The outermost Column should use MainAxisSize.min for its mainAxisSize.']);
+    return;
+  }
+
+  if ((outerColumnElement.widget as Column).crossAxisAlignment !=
+      CrossAxisAlignment.stretch) {
+    _result(false, ['The outermost Column should use CrossAxisAlignment.stretch for its crossAxisAlignment.']);
+    return;
+  }
+
+  // Check first Row has two children: Padding and Column
+
+  final firstRowElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[0]);
+
+  final firstRowChildElements = <Element>[];
+  firstRowElement.visitChildElements((e) => firstRowChildElements.add(e));
+
+  if (firstRowChildElements.length != 2 ||
+      firstRowChildElements[0].widget is! Padding ||
+      firstRowChildElements[1].widget is! Column) {
+    _result(false, ['The first Row should have two children: first a Padding, and then a Column.']);
+    return;
+  }
+
+  // Check Padding has correct padding
+
+  final paddingElement = firstRowChildElements[0];
+
+  if ((paddingElement.widget as Padding).padding != const EdgeInsets.all(8)) {
+    _result(false, ['The Padding widget in the first Row should have a padding of 8.']);
+    return;
+  }
+
+  // Check Padding has an Icon as its child
+
+  final paddingChildren = <Element>[];
+  paddingElement.visitChildElements((e) => paddingChildren.add(e));
+
+  if (paddingChildren.length != 1 || paddingChildren[0].widget is! Icon) {
+    _result(false, ['The Padding widget in the first Row should have an Icon as its child.']);
+    return;
+  }
+
+  // Check icon has a size of 50
+
+  if ((paddingChildren[0].widget as Icon).size != 50) {
+    _result(false, ['The Icon in the top-left corner should have a size of 50.']);
+    return;
+  }
+
+  // Check inner Column has correct properties
+
+  final innerColumnElement = firstRowChildElements[1];
+  final innerColumnWidget = innerColumnElement.widget as Column;
+
+  if (innerColumnWidget.crossAxisAlignment != CrossAxisAlignment.start) {
+    _result(false, ['The Column for the name and title should use CrossAxisAlignment.start as its crosAxisAlignment.']);
+    return;
+  }
+
+  if (innerColumnWidget.mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The Column for the name and title should use MainAxisSize.min as its mainAxisSize.']);
+    return;
+  }
+
+  // Check inner Column has two Text children
+
+  if (innerColumnWidget.children.any((w) => w is! Text)) {
+    _result(false, ['The Column for the name and title should have two children, both Text widgets.']);
+    return;
+  }
+
+  // Check first Text has headline style
+
+  final nameText = innerColumnWidget.children[0] as Text;
+
+  if (nameText?.style?.fontSize != 24) {
+    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    return;
+  }
+
+  // Check first SizedBox has correct properties
+
+  final firstSizedBoxElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[1]);
+
+  if ((firstSizedBoxElement.widget as SizedBox).height != 8) {
+    _result(false, ['The SizedBox before the first empty Row should have a height of 8.']);
+    return;
+  }
+
+  // Check second SizedBox has correct properties
+
+  final secondSizedBoxElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[3]);
+
+  if ((secondSizedBoxElement.widget as SizedBox).height != 16) {
+    _result(false, ['The SizedBox between the first and second empty Rows should have a height of 16.']);
+    return;
+  }
+
+  _result(true);
+}
+{$ end test.dart $}
+```
 
 #### Exercise: Enter contact information
 {:.no_toc}
@@ -2064,10 +2643,312 @@ which are positioned below the contact information.
   set the `mainAxisAlignment` property to
   `MainAxisAlignment.spaceBetween`.
 {{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/73baebd1bc2e5414921b63d9b0823db0
-{% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=73baebd1bc2e5414921b63d9b0823db0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+{$ begin main.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(Icons.account_circle, size: 50)),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Flutter McFlutter',
+                    style: Theme.of(context).textTheme.headline),
+                Text('Experienced App Developer'),
+              ],
+            ),
+          ],
+        ),
+        SizedBox(height: 8),
+        Row(children: [],),
+        SizedBox(height: 16),
+        Row(children: [],),
+      ],
+    );
+  }
+}
+{$ end main.dart $}
+{$ begin solution.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.account_circle, size: 50),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Flutter McFlutter',
+                  style: Theme.of(context).textTheme.headline,
+                ),
+                Text(
+                  'Experienced App Developer',
+                )
+              ],
+            ),
+          ],
+        ),
+        SizedBox(height: 8),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              '123 Main Street',
+            ),
+            Text(
+              '(415) 555-0198',
+            ),
+          ],
+        ),
+        SizedBox(height: 16),
+        Row(),
+      ],
+    );
+  }
+}
+{$ end solution.dart $}
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xffeeeeee),
+        textTheme: TextTheme(
+          body1: TextStyle(
+            fontSize: 16,
+          ),
+        ),
+      ),
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xffffffff),
+                border: Border.all(),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 10,
+                    color: Color(0x80000000),
+                  ),
+                ],
+              ),
+              padding: const EdgeInsets.all(8.0),
+              child: MyWidget(),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  final completer = Completer<void>();
+  
+  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized()
+      .addPostFrameCallback((timestamp) async {
+    completer.complete();
+  });
+  
+  await completer.future;
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  // Check MyWidget starts with one Column
+
+  final myWidgetElement = controller.element(find.byType(MyWidget));
+
+  final myWidgetChildElements = <Element>[];
+  myWidgetElement.visitChildElements((e) => myWidgetChildElements.add(e));
+
+  if (myWidgetChildElements.length != 1 ||
+      myWidgetChildElements[0].widget is! Column) {
+    _result(false, ['The root widget in MyWidget\'s build method should be a Column.']);
+    return;
+  }
+
+  // Check outermost Column has 5 correct children.
+
+  final outerColumnElement = myWidgetChildElements[0];
+  final outerColumnChildWidgets =
+      (outerColumnElement.widget as Column).children;
+  final outerColumnChildElements = <Element>[];
+  outerColumnElement.visitChildElements((e) => outerColumnChildElements.add(e));
+
+  if (outerColumnChildWidgets.length != 5 ||
+      outerColumnChildWidgets[0] is! Row ||
+      outerColumnChildWidgets[1] is! SizedBox ||
+      outerColumnChildWidgets[2] is! Row ||
+      outerColumnChildWidgets[3] is! SizedBox ||
+      outerColumnChildWidgets[4] is! Row) {
+    _result(false, ['The children of the outermost Column should be [Row, SizedBox, Row, SizedBox, Row] in that order.']);
+    return;
+  }
+
+  // Check outermost Column's properties
+
+  if ((outerColumnElement.widget as Column).mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The outermost Column should use MainAxisSize.min for its mainAxisSize.']);
+    return;
+  }
+
+  if ((outerColumnElement.widget as Column).crossAxisAlignment !=
+      CrossAxisAlignment.stretch) {
+    _result(false, ['The outermost Column should use CrossAxisAlignment.stretch for its crossAxisAlignment.']);
+    return;
+  }
+
+  // Check first Row has two children: Padding and Column
+
+  final firstRowElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[0]);
+
+  final firstRowChildElements = <Element>[];
+  firstRowElement.visitChildElements((e) => firstRowChildElements.add(e));
+
+  if (firstRowChildElements.length != 2 ||
+      firstRowChildElements[0].widget is! Padding ||
+      firstRowChildElements[1].widget is! Column) {
+    _result(false, ['The first Row should have two children: first a Padding, and then a Column.']);
+    return;
+  }
+
+  // Check Padding has correct padding
+
+  final paddingElement = firstRowChildElements[0];
+
+  if ((paddingElement.widget as Padding).padding != const EdgeInsets.all(8)) {
+    _result(false, ['The Padding widget in the first Row should have a padding of 8.']);
+    return;
+  }
+
+  // Check Padding has an Icon as its child
+
+  final paddingChildren = <Element>[];
+  paddingElement.visitChildElements((e) => paddingChildren.add(e));
+
+  if (paddingChildren.length != 1 || paddingChildren[0].widget is! Icon) {
+    _result(false, ['The Padding widget in the first Row should have an Icon as its child.']);
+    return;
+  }
+
+  // Check icon has a size of 50
+
+  if ((paddingChildren[0].widget as Icon).size != 50) {
+    _result(false, ['The Icon in the top-left corner should have a size of 50.']);
+    return;
+  }
+
+  // Check inner Column has correct properties
+
+  final innerColumnElement = firstRowChildElements[1];
+  final innerColumnWidget = innerColumnElement.widget as Column;
+
+  if (innerColumnWidget.crossAxisAlignment != CrossAxisAlignment.start) {
+    _result(false, ['The Column for the name and title should use CrossAxisAlignment.start as its crosAxisAlignment.']);
+    return;
+  }
+
+  if (innerColumnWidget.mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The Column for the name and title should use MainAxisSize.min as its mainAxisSize.']);
+    return;
+  }
+
+  // Check inner Column has two Text children
+
+  if (innerColumnWidget.children.any((w) => w is! Text)) {
+    _result(false, ['The Column for the name and title should have two children, both Text widgets.']);
+    return;
+  }
+
+  // Check first Text has headline style
+
+  final nameText = innerColumnWidget.children[0] as Text;
+
+  if (nameText?.style?.fontSize != 24) {
+    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    return;
+  }
+
+  // Check first SizedBox has correct properties
+
+  final firstSizedBoxElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[1]);
+
+  if ((firstSizedBoxElement.widget as SizedBox).height != 8) {
+    _result(false, ['The SizedBox before the first empty Row widget should have a height of 8.']);
+    return;
+  }
+
+  // Check second Row has two Text children
+
+  final secondRowElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[2]);
+
+  final secondRowChildElements = <Element>[];
+  secondRowElement.visitChildElements((e) => secondRowChildElements.add(e));
+
+  if (secondRowChildElements.length != 2 ||
+      secondRowChildElements.any((e) => e.widget is! Text)) {
+    _result(false, ['The first empty Row widget should have two children, both Text widgets.']);
+    return;
+  }
+
+  // Check second Row has correct properties
+
+  if ((secondRowElement.widget as Row).mainAxisAlignment !=
+      MainAxisAlignment.spaceBetween) {
+    _result(false, ['The first empty Row widget should use MainAxisAlignment.spaceBetween as its MainAxisAlignment value.']);
+    return;
+  }
+
+  // Check second SizedBox has correct properties
+
+  final secondSizedBoxElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[3]);
+
+  if ((secondSizedBoxElement.widget as SizedBox).height != 16) {
+    _result(false, ['The SizedBox between the first and second empty Row widgets should have a height of 16.']);
+    return;
+  }
+
+  _result(true);
+}
+{$ end test.dart $}
+```
 
 ### Part 3
 {:.no_toc}
@@ -2085,10 +2966,348 @@ which are positioned below the contact information.
   set the `mainAxisAlignment` property to
   `MainAxisAlignment.spaceAround`.
 {{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/a24370419412b11e261fea95e8a18774
-{% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=a24370419412b11e261fea95e8a18774&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+{$ begin main.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(Icons.account_circle, size: 50)),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Flutter McFlutter',
+                    style: Theme.of(context).textTheme.headline),
+                Text('Experienced App Developer'),
+              ],
+            ),
+          ],
+        ),
+        SizedBox(height: 8),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('123 Main Street'),
+            Text('415-555-0198'),
+          ],
+        ),
+        SizedBox(height: 16),
+        Row(children: [],),
+      ],
+    );
+  }
+}
+{$ end main.dart $}
+{$ begin solution.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.account_circle, size: 50),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Flutter McFlutter',
+                  style: Theme.of(context).textTheme.headline,
+                ),
+                Text(
+                  'Experienced App Developer',
+                )
+              ],
+            ),
+          ],
+        ),
+        SizedBox(height: 8),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              '123 Main Street',
+            ),
+            Text(
+              '(415) 555-0198',
+            ),
+          ],
+        ),
+        SizedBox(height: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Icon(Icons.accessibility),
+            Icon(Icons.timer),
+            Icon(Icons.phone_android),
+            Icon(Icons.phone_iphone),
+          ],
+        ),
+      ],
+    );
+  }
+}
+{$ end solution.dart $}
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xffeeeeee),
+        textTheme: TextTheme(
+          body1: TextStyle(
+            fontSize: 16,
+          ),
+        ),
+      ),
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xffffffff),
+                border: Border.all(),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 10,
+                    color: Color(0x80000000),
+                  ),
+                ],
+              ),
+              padding: const EdgeInsets.all(8.0),
+              child: MyWidget(),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  final completer = Completer<void>();
+  
+  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized()
+      .addPostFrameCallback((timestamp) async {
+    completer.complete();
+  });
+  
+  await completer.future;
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  // Check MyWidget starts with one Column
+
+  final myWidgetElement = controller.element(find.byType(MyWidget));
+
+  final myWidgetChildElements = <Element>[];
+  myWidgetElement.visitChildElements((e) => myWidgetChildElements.add(e));
+
+  if (myWidgetChildElements.length != 1 ||
+      myWidgetChildElements[0].widget is! Column) {
+    _result(false, ['The root widget in MyWidget\'s build method should be a Column.']);
+    return;
+  }
+
+  // Check outermost Column has 5 correct children.
+
+  final outerColumnElement = myWidgetChildElements[0];
+  final outerColumnChildWidgets =
+      (outerColumnElement.widget as Column).children;
+  final outerColumnChildElements = <Element>[];
+  outerColumnElement.visitChildElements((e) => outerColumnChildElements.add(e));
+
+  if (outerColumnChildWidgets.length != 5 ||
+      outerColumnChildWidgets[0] is! Row ||
+      outerColumnChildWidgets[1] is! SizedBox ||
+      outerColumnChildWidgets[2] is! Row ||
+      outerColumnChildWidgets[3] is! SizedBox ||
+      outerColumnChildWidgets[4] is! Row) {
+    _result(false, ['The children of the outermost Column should be [Row, SizedBox, Row, SizedBox, Row] in that order.']);
+    return;
+  }
+
+  // Check outermost Column's properties
+
+  if ((outerColumnElement.widget as Column).mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The outermost Column should use MainAxisSize.min for its mainAxisSize.']);
+    return;
+  }
+
+  if ((outerColumnElement.widget as Column).crossAxisAlignment !=
+      CrossAxisAlignment.stretch) {
+    _result(false, ['The outermost Column should use CrossAxisAlignment.stretch for its crossAxisAlignment.']);
+    return;
+  }
+
+  // Check first Row has two children: Padding and Column
+
+  final firstRowElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[0]);
+
+  final firstRowChildElements = <Element>[];
+  firstRowElement.visitChildElements((e) => firstRowChildElements.add(e));
+
+  if (firstRowChildElements.length != 2 ||
+      firstRowChildElements[0].widget is! Padding ||
+      firstRowChildElements[1].widget is! Column) {
+    _result(false, ['The first Row should have two children: first a Padding, and then a Column.']);
+    return;
+  }
+
+  // Check Padding has correct padding
+
+  final paddingElement = firstRowChildElements[0];
+
+  if ((paddingElement.widget as Padding).padding != const EdgeInsets.all(8)) {
+    _result(false, ['The Padding widget in the first Row should have a padding of 8.']);
+    return;
+  }
+
+  // Check Padding has an Icon as its child
+
+  final paddingChildren = <Element>[];
+  paddingElement.visitChildElements((e) => paddingChildren.add(e));
+
+  if (paddingChildren.length != 1 || paddingChildren[0].widget is! Icon) {
+    _result(false, ['The Padding widget in the first Row should have an Icon as its child.']);
+    return;
+  }
+
+  // Check icon has a size of 50
+
+  if ((paddingChildren[0].widget as Icon).size != 50) {
+    _result(false, ['The Icon in the top-left corner should have a size of 50.']);
+    return;
+  }
+
+  // Check inner Column has correct properties
+
+  final innerColumnElement = firstRowChildElements[1];
+  final innerColumnWidget = innerColumnElement.widget as Column;
+
+  if (innerColumnWidget.crossAxisAlignment != CrossAxisAlignment.start) {
+    _result(false, ['The Column for the name and title should use CrossAxisAlignment.start as its crosAxisAlignment.']);
+    return;
+  }
+
+  // Check inner Column has two Text children
+
+  if (innerColumnWidget.children.any((w) => w is! Text)) {
+    _result(false, ['The Column for the name and title should have two children, both Text widgets.']);
+    return;
+  }
+
+  if (innerColumnWidget.mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The Column for the name and title should use MainAxisSize.min as its mainAxisSize.']);
+    return;
+  }
+
+  // Check first Text has headline style
+
+  final nameText = innerColumnWidget.children[0] as Text;
+
+  if (nameText?.style?.fontSize != 24) {
+    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    return;
+  }
+
+  // Check first SizedBox has correct properties
+
+  final firstSizedBoxElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[1]);
+
+  if ((firstSizedBoxElement.widget as SizedBox).height != 8) {
+    _result(false, ['The SizedBox before the first empty Row widget should have a height of 8.']);
+    return;
+  }
+
+  // Check second Row has two Text children
+
+  final secondRowElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[2]);
+
+  final secondRowChildElements = <Element>[];
+  secondRowElement.visitChildElements((e) => secondRowChildElements.add(e));
+
+  if (secondRowChildElements.length != 2 ||
+      secondRowChildElements.any((e) => e.widget is! Text)) {
+    _result(false, ['The first Row widget should have two children, both Text widgets.']);
+    return;
+  }
+
+  // Check second Row has correct properties
+
+  if ((secondRowElement.widget as Row).mainAxisAlignment !=
+      MainAxisAlignment.spaceBetween) {
+    _result(false, ['The first Row widget should use MainAxisAlignment.spaceBetween as its mainAxisAlignment.']);
+    return;
+  }
+
+  // Check second SizedBox has correct properties
+
+  final secondSizedBoxElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[3]);
+
+  if ((secondSizedBoxElement.widget as SizedBox).height != 16) {
+    _result(false, ['The SizedBox between the first and second Row widgets should have a height of 16.']);
+    return;
+  }
+
+  // Check second empty Row has four Icon children
+
+  final thirdRowElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[4]);
+
+  final thirdRowChildElements = <Element>[];
+  thirdRowElement.visitChildElements((e) => thirdRowChildElements.add(e));
+
+  if (thirdRowChildElements.length != 4 ||
+      thirdRowChildElements.any((e) => e.widget is! Icon)) {
+    _result(false, ['The second empty Row widget should have four children, all Icon widgets.']);
+    return;
+  }
+
+  // Check second empty Row has correct properties
+
+  if ((thirdRowElement.widget as Row).mainAxisAlignment !=
+      MainAxisAlignment.spaceAround) {
+    _result(false, ['The second empty Row widget should use MainAxisAlignment.spaceAround as its MainAxisAligment value.']);
+    return;
+  }
+
+  _result(true);
+}
+{$ end test.dart $}
+```
 
 ## What's next?
 
