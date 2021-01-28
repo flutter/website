@@ -978,10 +978,111 @@ wrap a widget and force the widget to fill extra space.
   **3.** Select the **Format** button to properly format the code,
          and run again.
 {{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/c4dfa9058f803dea1cff4fca2532977a
-{% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=c4dfa9058f803dea1cff4fca2532977a&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+{$ begin main.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        BlueBox(),
+        BlueBox(),
+        BlueBox(),
+      ],
+    );
+  }
+}
+
+class BlueBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        border: Border.all(),
+      ),
+    );
+  }
+}
+{$ end main.dart $}
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Container(
+        color: Color(0xffeeeeee),
+        child: Center(
+          child: Container(
+            child: MyWidget(),
+            color: Color(0xffcccccc),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  final completer = Completer<void>();
+  
+  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized()
+      .addPostFrameCallback((timestamp) async {
+    completer.complete();
+  });
+  
+  await completer.future;
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  final rows = controller.widgetList(find.byType(Row));
+
+  if (rows.length == 0) {
+    _result(false, ['Couldn\'t find a Row!']);
+    return;
+  }
+
+  if (rows.length > 1) {
+    _result(false, ['Found ${rows.length} Rows, rather than just one.']);
+    return;
+  }
+
+  final row = rows.first as Row;
+  
+  if (row.children.length != 3) {
+    _result(false, ['The Row should have three children, all BlueBox widgets.']);
+    return;
+  }
+
+   if (row.children[0] is! BlueBox) {
+    _result(false, ['The Row\'s first child should be a BlueBox widget.']);
+    return;
+  }
+
+  if (row.children[1] is! Expanded) {
+    _result(false, ['Notice how Row contains extra space on its main axis. Wrap the second BlueBox widget in an Expanded widget.']);
+    return;
+  }
+
+  if (row.children[2] is! BlueBox) {
+    _result(false, ['The Row\'s third child should be a Flexible widget.']);
+    return;
+  }
+  
+  _result(true, ['Expanded forces second BlueBox widget to fill the extra space.']);
+}
+{$ end test.dart $}
+```
 
 ## SizedBox widget
 
