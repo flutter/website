@@ -2361,7 +2361,7 @@ Future<void> main() async {
 
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2380,7 +2380,7 @@ class MyWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Flutter McFlutter',
-                style: Theme.of(context).textTheme.headline),
+                style: Theme.of(context).textTheme.headline5),
             Text('Experienced App Developer'),
           ],
         ),
@@ -2413,7 +2413,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.headline5,
                 ),
                 Text(
                   'Experienced App Developer',
@@ -2440,7 +2440,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xffeeeeee),
         textTheme: TextTheme(
-          body1: TextStyle(
+          bodyText2: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2482,7 +2482,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance);
+  final controller = LiveWidgetController(WidgetsBinding.instance!);
 
   // Check MyWidget starts with one Column
 
@@ -2595,7 +2595,7 @@ Future<void> main() async {
 
   final nameText = innerColumnWidget.children[0] as Text;
 
-  if (nameText?.style?.fontSize != 24) {
+  if (nameText.style?.fontSize != 24) {
     _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
     return;
   }
