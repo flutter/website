@@ -490,9 +490,6 @@ The `crossAxisAlignment` property has five possible values:
   **2.** Change `CrossAxisAlignment.center` to
          `CrossAxisAlignment.start`, and run again.
 {{site.alert.end}}
-{% comment %}
-  Gist: 
-{% endcomment %}
 
 ```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
