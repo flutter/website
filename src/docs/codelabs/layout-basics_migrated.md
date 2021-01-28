@@ -2,6 +2,9 @@
 title: "Basic Flutter layout concepts"
 description: "A codelab that teaches basic Flutter layout concepts through DartPad examples and exercises."
 toc: true
+js:
+- defer: true
+  url: https://dartpad.dev/inject_embed.dart.js
 ---
 Welcome to the Flutter layout codelab,
 where you learn how to build a Flutter UI without
@@ -48,10 +51,98 @@ and `Column` lays out its widgets vertically.
 
   **2.** In the code, change the `Row` to a `Column`, and run again.
 {{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/009a77697460e7ec6a3c142f0dfb1b5e
-{% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=009a77697460e7ec6a3c142f0dfb1b5e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+{$ begin main.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        BlueBox(),
+        BlueBox(),
+        BlueBox(),
+      ],
+    );
+  }
+}
+
+class BlueBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        border: Border.all(),
+      ),
+    );
+  }
+}
+{$ end main.dart $}
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Container(
+        color: Color(0xffeeeeee),
+        child: Center(
+          child: Container(
+            child: MyWidget(),
+            color: Color(0xffcccccc),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  final completer = Completer<void>();
+  
+  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized()
+      .addPostFrameCallback((timestamp) async {
+    completer.complete();
+  });
+  
+  await completer.future;
+  
+  runApp(MyApp());
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  final columns = controller.widgetList(find.byType(Column));
+
+  if (columns.length == 0) {
+    _result(false, ['The Row contains three BlueBox widgets and lays them out horizontally.']);
+    return;
+  }
+
+  if (columns.length > 1) {
+    _result(false, ['Found ${columns.length} Rows, rather than just one.']);
+    return;
+  }
+
+  final column = columns.first as Column;
+
+  if (column.children.length != 3 || column.children.any((w) => w is! BlueBox)) {
+    _result(false, ['Row/Column should contain three children, all BlueBox widgets.']);
+    return;
+  }
+
+  _result(true, ['The Column contains three BlueBox widgets and lays them out vertically.']);
+}
+{$ end test.dart $}
+```
 
 ## Axis size and alignment
 
