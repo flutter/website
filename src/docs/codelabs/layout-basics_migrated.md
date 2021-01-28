@@ -1174,7 +1174,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance);
+  final controller = LiveWidgetController(WidgetsBinding.instance!);
 
   final rows = controller.widgetList(find.byType(Row));
 
