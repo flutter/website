@@ -183,10 +183,10 @@ Relevant PRs:
 * [ScaffoldMessenger][]
 * [ScaffoldMessenger Migration][]
 
-[`Scaffold`]: https://master-api.flutter.dev/flutter/scaffold-class.html
-[`ScaffoldMessenger`]: https://master-api.flutter.dev/flutter/scaffoldmessenger-class.html
-[`SnackBar`]: https://master-api.flutter.dev/flutter/snackbar-class.html
-[`MaterialApp`]: https://master-api.flutter.dev/flutter/materialapp-class.html
+[`Scaffold`]: https://master-api.flutter.dev/flutter/material/Scaffold-class.html
+[`ScaffoldMessenger`]: https://master-api.flutter.dev/flutter/material/ScaffoldMessenger-class.html
+[`SnackBar`]: https://master-api.flutter.dev/flutter/material/SnackBar-class.html
+[`MaterialApp`]: https://master-api.flutter.dev/flutter/material/MaterialApp-class.html
 [Issue #57218]: {{site.github}}/flutter/flutter/issues/57218
 [Issue #62921]: {{site.github}}/flutter/flutter/issues/62921
 [ScaffoldMessenger]: {{site.github}}/flutter/flutter/pull/64101
