@@ -7,7 +7,7 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
-The following guides are available. They sorted by
+The following guides are available. They are sorted by
 release, and listed in alphabetical order:
 
 ### Not yet released to stable
