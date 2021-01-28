@@ -56,6 +56,7 @@ return a non-nullable value:
 1. [`Shortcuts.of`]
 1. [`Actions.handler`]
 1. [`Actions.find`]
+1. [`Actions.invoke`]
 1. [`AnimatedList.of`]
 1. [`SliverAnimatedList.of`]
 1. [`CupertinoDynamicColor.resolve`]
@@ -80,19 +81,13 @@ value:
 1. [`FocusTraversalGroup.maybeOf`]
 1. [`Focus.maybeOf`]
 1. [`Shortcuts.maybeOf`]
-1. [`Actions.maybeHandler`]
 1. [`Actions.maybeFind`]
 1. [`Actions.maybeInvoke`]
 1. [`AnimatedList.maybeOf`]
 1. [`SliverAnimatedList.maybeOf`]
 1. [`CupertinoDynamicColor.maybeResolve`]
-1. [`CupertinoDynamicColor.maybeResolveFrom`]
 1. [`CupertinoUserInterfaceLevel.maybeOf`]
 1. [`CupertinoTheme.maybeBrightnessOf`]
-1. [`CupertinoThemeData.maybeResolveFrom`]
-1. [`NoDefaultCupertinoThemeData.maybeResolveFrom`]
-1. [`CupertinoTextThemeData.maybeResolveFrom`]
-1. [`MaterialBasedCupertinoThemeData.maybeResolveFrom`]
 
 ## Migration guide
 
@@ -173,19 +168,13 @@ API documentation:
  * [`FocusTraversalGroup.maybeOf`]
  * [`Focus.maybeOf`]
  * [`Shortcuts.maybeOf`]
- * [`Actions.maybeHandler`]
  * [`Actions.maybeFind`]
  * [`Actions.maybeInvoke`]
  * [`AnimatedList.maybeOf`]
  * [`SliverAnimatedList.maybeOf`]
  * [`CupertinoDynamicColor.maybeResolve`]
- * [`CupertinoDynamicColor.maybeResolveFrom`]
  * [`CupertinoUserInterfaceLevel.maybeOf`]
  * [`CupertinoTheme.maybeBrightnessOf`]
- * [`CupertinoThemeData.maybeResolveFrom`]
- * [`NoDefaultCupertinoThemeData.maybeResolveFrom`]
- * [`CupertinoTextThemeData.maybeResolveFrom`]
- * [`MaterialBasedCupertinoThemeData.maybeResolveFrom`]
 
 Relevant issues:
 * [Issue 68637][Issue 68637]
@@ -236,19 +225,13 @@ Relevant PRs:
 [`FocusTraversalGroup.maybeOf`]: https://master-api.flutter.dev/flutter/widgets/FocusTraversalGroup/maybeOf.html
 [`Focus.maybeOf`]: https://master-api.flutter.dev/flutter/widgets/Focus/maybeOf.html
 [`Shortcuts.maybeOf`]: https://master-api.flutter.dev/flutter/widgets/Shortcuts/maybeOf.html
-[`Actions.maybeHandler`]: https://master-api.flutter.dev/flutter/widgets/Actions/maybeHandler.html
 [`Actions.maybeFind`]: https://master-api.flutter.dev/flutter/widgets/Actions/maybeFind.html
 [`Actions.maybeInvoke`]: https://master-api.flutter.dev/flutter/widgets/Actions/maybeInvoke.html
 [`AnimatedList.maybeOf`]: https://master-api.flutter.dev/flutter/widgets/AnimatedList/maybeOf.html
 [`SliverAnimatedList.maybeOf`]: https://master-api.flutter.dev/flutter/widgets/SliverAnimatedList/maybeOf.html
 [`CupertinoDynamicColor.maybeResolve`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoDynamicColor/maybeResolve.html
-[`CupertinoDynamicColor.maybeResolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoDynamicColor/maybeResolveFrom.html
 [`CupertinoUserInterfaceLevel.maybeOf`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoUserInterfaceLevel/maybeOf.html
 [`CupertinoTheme.maybeBrightnessOf`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoTheme/maybeBrightnessOf.html
-[`CupertinoThemeData.maybeResolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoThemeData/maybeResolveFrom.html
-[`NoDefaultCupertinoThemeData.maybeResolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/NoDefaultCupertinoThemeData/maybeResolveFrom.html
-[`CupertinoTextThemeData.maybeResolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoTextThemeData/maybeResolveFrom.html
-[`MaterialBasedCupertinoThemeData.maybeResolveFrom`]: https://master-api.flutter.dev/flutter/cupertino/MaterialBasedCupertinoThemeData/maybeResolveFrom.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Issue 68637]: {{site.github}}/flutter/flutter/issues/68637
 [Remove `nullOk` in `MediaQuery.of`]: {{site.github}}/flutter/flutter/pull/68736
