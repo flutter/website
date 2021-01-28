@@ -333,7 +333,7 @@ can position their children in that extra space.
          `MainAxisAlignment.end`, and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -397,7 +397,7 @@ Future<void> main() async {
   });
 
   await completer.future;
-  final controller = LiveWidgetController(WidgetsBinding.instance);
+  final controller = LiveWidgetController(WidgetsBinding.instance!);
 
   final rows = controller.widgetList(find.byType(Row));
 
