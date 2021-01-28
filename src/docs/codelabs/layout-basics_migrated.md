@@ -1691,10 +1691,104 @@ Flutter is preloaded with icon packages for
   **3.** Give the `Icon` a color of `Colors.amber` from the
          [Material Color palette][], and run again.
 {{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/54fa77a90f160c74382f1517d6167fda
-{% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=54fa77a90f160c74382f1517d6167fda&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+{$ begin main.dart $}
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      textBaseline: TextBaseline.alphabetic,
+      children: [
+        Icon(
+          Icons.widgets,
+          size: 50,
+          color: Colors.blue,
+        ),
+        Icon(
+          Icons.widgets,
+          size: 50,
+          color: Colors.red,
+        ),
+      ],
+    );
+  }
+}
+{$ end main.dart $}
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Container(
+        color: Color(0xffeeeeee),
+        child: Center(
+          child: Container(
+            child: MyWidget(),
+            color: Color(0xffcccccc),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  final completer = Completer<void>();
+  
+  runApp(MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized()
+      .addPostFrameCallback((timestamp) async {
+    completer.complete();
+  });
+  
+  await completer.future;
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  final rows = controller.widgetList(find.byType(Row));
+
+  if (rows.length == 0) {
+    _result(false, ['Couldn\'t find a Row!']);
+    return;
+  }
+
+  if (rows.length > 1) {
+    _result(false, ['Found ${rows.length} Rows, rather than just one.']);
+    return;
+  }
+
+  final row = rows.first as Row;
+
+  if (row.mainAxisSize != MainAxisSize.max) {
+    _result(false, ['It\'s best to leave the mainAxisSize set to MainAxisSize.max, so there\'s space for the alignments to       take effect.']);
+    return;
+  }
+  
+    if (row.children.length != 3 || row.children.any((w) => w is! Icon)) {
+    _result(false, ['Row should have three children, all Icon widgets.']);
+    return;
+  }
+
+    final icon = row.children[2] as Icon;
+  
+  if (icon.color != Colors.amber) {
+    _result(false, ['Add a third Icon. Give the Icon a size of 50 and a color of Colors.amber.']);
+    return;
+  }
+  
+  _result(true, ['The code displays three Icons in blue, red, and amber.']);
+  
+}
+{$ end test.dart $}
+```
 
 ## Image widget
 
