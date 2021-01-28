@@ -1944,7 +1944,7 @@ which are positioned below the contact information.
 <ul markdown="1">
   <li markdown="1">
   The first `Text` widget has the name `Flutter McFlutter` and
-  the `style` property set to `Theme.of(context).textTheme.headline`.
+  the `style` property set to `Theme.of(context).textTheme.headline5`.
   </li>
   <li markdown="1">
   The second `Text` widget contains the title `Experienced Developer`.
@@ -1956,7 +1956,7 @@ which are positioned below the contact information.
   and `crossAxisAlignment` to `CrossAxisAlignment.start`.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-false
+```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1965,7 +1965,7 @@ import 'package:flutter_test/flutter_test.dart';
 class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Begin implementing the Column here.
+    TODO('Begin implementing the Column here.');
   }
 }
 {$ end main.dart $}
@@ -1981,7 +1981,7 @@ class MyWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Flutter McFlutter', style: Theme.of(context).textTheme.headline),
+        Text('Flutter McFlutter', style: Theme.of(context).textTheme.headline5),
         Text('Experienced Developer'),
       ],
     );
@@ -1997,7 +1997,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xffeeeeee),
         textTheme: TextTheme(
-          body1: TextStyle(
+          bodyText2: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2039,7 +2039,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance);
+  final controller = LiveWidgetController(WidgetsBinding.instance!);
 
   // Check MyWidget starts with one Column
 
@@ -2080,8 +2080,8 @@ Future<void> main() async {
 
   final nameText = innerColumnWidget.children[0] as Text;
 
-  if (nameText?.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+  if (nameText.style?.fontSize != 24) {
+    _result(false, ['The Text widget for the name should use the "headline5" textStyle.']);
     return;
   }
 
