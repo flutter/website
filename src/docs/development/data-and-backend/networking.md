@@ -5,7 +5,7 @@ description: Internet network calls in Flutter.
 
 ## Cross-platform http networking
 
-The [`http`][] package provides the simplest way to issue http requests. This
+The [`http`](https://github.com/dart-lang/http) package provides the simplest way to issue http requests. This
 package is supported on Android, iOS, and the web.
 
 ## Platform notes
