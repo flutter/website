@@ -52,7 +52,7 @@ and `Column` lays out its widgets vertically.
   **2.** In the code, change the `Row` to a `Column`, and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -192,7 +192,7 @@ The `mainAxisSize` property has two possible values:
          and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -333,7 +333,7 @@ can position their children in that extra space.
          `MainAxisAlignment.end`, and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -491,7 +491,7 @@ The `crossAxisAlignment` property has five possible values:
          `CrossAxisAlignment.start`, and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -659,7 +659,7 @@ the widgets are resized according to their
          and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -815,7 +815,7 @@ Future<void> main() async {
   remains the same size.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -979,7 +979,7 @@ wrap a widget and force the widget to fill extra space.
          and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1106,7 +1106,7 @@ create empty space.
          inside the `SizedBox` widget, and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1249,7 +1249,7 @@ Future<void> main() async {
          and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1416,7 +1416,7 @@ can create space between widgets.
          between the second and third `BlueBox` widgets.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1554,7 +1554,7 @@ for different fonts, sizes, and colors.
          `CrossAxisAlignment.baseline`, and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1692,7 +1692,7 @@ Flutter is preloaded with icon packages for
          [Material Color palette][], and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1818,7 +1818,7 @@ the following example uses an image from the network.
          and run again.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -1956,7 +1956,7 @@ which are positioned below the contact information.
   and `crossAxisAlignment` to `CrossAxisAlignment.start`.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2126,7 +2126,7 @@ Future<void> main() async {
      );
   ```
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2361,7 +2361,7 @@ Future<void> main() async {
 
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2644,7 +2644,7 @@ Future<void> main() async {
   `MainAxisAlignment.spaceBetween`.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -2967,7 +2967,7 @@ Future<void> main() async {
   `MainAxisAlignment.spaceAround`.
 {{site.alert.end}}
 
-```run-dartpad:theme-dark:mode-flutter:run-true:width-100%:height-400px:split-60:null_safety-true
+```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
