@@ -1947,7 +1947,7 @@ which are positioned below the contact information.
   the `style` property set to `Theme.of(context).textTheme.headline5`.
   </li>
   <li markdown="1">
-  The second `Text` widget contains the title `Experienced Developer`.
+  The second `Text` widget contains the title `Experienced App Developer`.
   </li>
 </ul>
 
@@ -1981,8 +1981,11 @@ class MyWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Flutter McFlutter', style: Theme.of(context).textTheme.headline5),
-        Text('Experienced Developer'),
+        Text(
+          'Flutter McFlutter', 
+          style: Theme.of(context).textTheme.headline5,
+        ),
+        Text('Experienced App Developer'),
       ],
     );
   }
@@ -2143,9 +2146,7 @@ class MyWidget extends StatelessWidget {
           'Flutter McFlutter',
           style: Theme.of(context).textTheme.headline5,
         ),
-        Text(
-          'Experienced App Developer',
-        ),
+        Text('Experienced App Developer'),
       ],
     );
   }
@@ -2162,14 +2163,17 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.account_circle, size: 50)),
+          padding: const EdgeInsets.all(8.0),
+          child: Icon(Icons.account_circle, size: 50),
+        ),
         Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Flutter McFlutter',
-                style: Theme.of(context).textTheme.headline5),
+            Text(
+              'Flutter McFlutter',
+              style: Theme.of(context).textTheme.headline5,
+            ),
             Text('Experienced App Developer'),
           ],
         ),
@@ -2373,14 +2377,17 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.account_circle, size: 50)),
+          padding: const EdgeInsets.all(8.0),
+          child: Icon(Icons.account_circle, size: 50),
+        ),
         Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Flutter McFlutter',
-                style: Theme.of(context).textTheme.headline5),
+            Text(
+              'Flutter McFlutter',
+              style: Theme.of(context).textTheme.headline5,
+            ),
             Text('Experienced App Developer'),
           ],
         ),
@@ -2415,9 +2422,7 @@ class MyWidget extends StatelessWidget {
                   'Flutter McFlutter',
                   style: Theme.of(context).textTheme.headline5,
                 ),
-                Text(
-                  'Experienced App Developer',
-                )
+                Text('Experienced App Developer'),
               ],
             ),
           ],
@@ -2660,23 +2665,30 @@ class MyWidget extends StatelessWidget {
         Row(
           children: [
             Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.account_circle, size: 50)),
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.account_circle, size: 50),
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Flutter McFlutter',
-                    style: Theme.of(context).textTheme.headline5),
+                Text(
+                  'Flutter McFlutter',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
                 Text('Experienced App Developer'),
               ],
             ),
           ],
         ),
         SizedBox(height: 8),
-        Row(children: [],),
+        Row(
+          children: [],
+        ),
         SizedBox(height: 16),
-        Row(children: [],),
+        Row(
+          children: [],
+        ),
       ],
     );
   }
@@ -2708,9 +2720,7 @@ class MyWidget extends StatelessWidget {
                   'Flutter McFlutter',
                   style: Theme.of(context).textTheme.headline5,
                 ),
-                Text(
-                  'Experienced App Developer',
-                )
+                Text('Experienced App Developer'),
               ],
             ),
           ],
@@ -2728,7 +2738,9 @@ class MyWidget extends StatelessWidget {
           ],
         ),
         SizedBox(height: 16),
-        Row(),
+        Row(
+          children: [],
+        ),
       ],
     );
   }
@@ -2983,14 +2995,17 @@ class MyWidget extends StatelessWidget {
         Row(
           children: [
             Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.account_circle, size: 50)),
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.account_circle, size: 50),
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Flutter McFlutter',
-                    style: Theme.of(context).textTheme.headline5),
+                Text(
+                  'Flutter McFlutter',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
                 Text('Experienced App Developer'),
               ],
             ),
@@ -3005,7 +3020,9 @@ class MyWidget extends StatelessWidget {
           ],
         ),
         SizedBox(height: 16),
-        Row(children: [],),
+        Row(
+          children: [],
+        ),
       ],
     );
   }
@@ -3037,9 +3054,7 @@ class MyWidget extends StatelessWidget {
                   'Flutter McFlutter',
                   style: Theme.of(context).textTheme.headline5,
                 ),
-                Text(
-                  'Experienced App Developer',
-                )
+                Text('Experienced App Developer'),
               ],
             ),
           ],
