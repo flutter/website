@@ -268,7 +268,8 @@
       { "source": "/go/buildtextspan-buildcontext", "destination": "https://docs.google.com/document/d/1nr-g45gXcWTYoW9UmChZV7Ije3lKP4pEvDQCdz6NFdI/edit?usp=sharing", "type": 301 },
       { "source": "/go/deprecations-removed-after-1-22", "destination": "https://docs.google.com/spreadsheets/d/1kZOej-h4AiRW2Td3NUnVMSb8PYLB63mpj-oFYqb_4tc/edit?usp=sharing", "type": 301 },
       { "source": "/go/max-length-enforcement", "destination": "https://docs.google.com/document/d/1S900lQaTPOsePnIeE7o3-Ia8f39VZaSv0JnjNyBfCvU", "type": 301 },
-      { "source": "/go/medium-sized-code-samples", "destination": "https://docs.google.com/document/d/1-jjYru2ljRSRSY4hn4qwLj9oQj8UiqrDOgY10-FE2tY/edit?usp=sharing", "type": 301 }
+      { "source": "/go/medium-sized-code-samples", "destination": "https://docs.google.com/document/d/1-jjYru2ljRSRSY4hn4qwLj9oQj8UiqrDOgY10-FE2tY/edit?usp=sharing", "type": 301 },
+      { "source": "/go/api-for-transform-performance", "destination": "https://docs.google.com/document/d/1Fxdlf7JsA-yAwc_RNuboMG-vhIhchRBZGvDSwg5qR0A/edit?usp=sharing", "type": 301 }
     ],
     "headers": [
       { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
