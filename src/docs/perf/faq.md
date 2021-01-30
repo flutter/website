@@ -1,15 +1,15 @@
 ---
-title: Frequently Asked Questions
-description: Frequently asked questions about Flutter performance.
+title: Frequently asked questions
+description: Frequently asked questions about Flutter performance
 ---
 
-- What performance dashboards have metrics that are related with Flutter?
+- Which performance dashboards have metrics that are related to Flutter?
   - https://flutter-dashboard.appspot.com/
   - https://flutter-flutter-perf.skia.org/t/?subset=regressions
   - https://flutter-engine-perf.skia.org/t/?subset=regressions
   - https://flutter-dashboard.appspot.com/benchmarks.html (to be retired)
 
-- How to add a benchmark to Flutter?
+- How do I add a benchmark to Flutter?
   - https://github.com/flutter/flutter/wiki/How-to-write-a-render-speed-test-for-Flutter
   - https://github.com/flutter/flutter/wiki/How-to-write-a-memory-test-for-Flutter
 
@@ -24,50 +24,52 @@ description: Frequently asked questions about Flutter performance.
   - https://ui.perfetto.dev/
   - https://www.speedscope.app/
 
-- My Flutter app looks janky or stutters, how to fix it?
+- My Flutter app looks janky or stutters. How do I fix it?
   - https://flutter.dev/docs/perf/rendering
 
-- What are some performance-costly operations that I need to be careful about?
+- What are some costly performance operations that I need to be careful with?
   - `Opacity`, `Clip.antiAliasWithSaveLayer`, or anything that triggers
     saveLayer
   - `ImageFilter`
   - https://flutter.dev/docs/perf/rendering/best-practices
 
-- How do I tell which Widgets in my Flutter app are rebuilt in each frame?
+- How do I tell which widgets in my Flutter app are rebuilt in each frame?
   - Make `debugProfileBuildsEnabled` true in [widgets/debug.dart][debug.dart].
-  - Or hack the `performRebuild` function in
+  - Change the `performRebuild` function in
     [widgets/framework.dart][framework.dart] to ignore
     `debugProfileBuildsEnabled` and always call
     `Timeline.startSync(...)/finish`.
-  - If you use IntelliJ, a GUI view of this data is available. Check "show
-    widget rebuild information" and you will see which widgets rebuilt visually
-    in your IDE.
+  - If you use IntelliJ, a GUI view of this data is available. Select 
+    **show widget rebuild information**, and you will see which widgets 
+    rebuild visually in your IDE.
 
-- How do I query the target FPS (of the display)?
+- How do I query the target frames per second (of the display)?
   - https://github.com/flutter/flutter/wiki/Engine-specific-Service-Protocol-extensions#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
 
-- How to solve my app’s janky animations caused by an expensive Dart async
-  function call that’s blocking the UI thread?
+- How to solve my app’s poor animations caused by an expensive Dart async
+  function call that is blocking the UI thread?
   - Spawn another isoalte using
     https://api.flutter.dev/flutter/foundation/compute.html
 
-- How to measure my Flutter app’s package size that a user has to download?
+- How do I determine my Flutter app’s package size that will be downloaded by a 
+  user?
   - https://flutter.dev/docs/perf/app-size
 
-- How to see the breakdown of Flutter engine size?
-  - Go to
+- How do I see the breakdown of the Flutter engine size?
+  - Visit 
     https://storage.googleapis.com/flutter_infra/flutter/c3976b3c7183f479717bffed3f640fb92afbd3dc/android-arm-release/sizes/index.html,
-    replace the git hash in the URL with any recent commit hash from
+    and replace the git hash in the URL with a recent commit hash from
     https://github.com/flutter/engine/commits.
 
-- How can I take a screenshot of a running app and export it as an skp file?
+- How can I take a screenshot of an app that is running and export it as a SKP 
+  file?
   - Run `flutter screenshot --type=skia --observotry-uri=...`
-  - Some known issues of SKP screenshot:
-    - Doesn’t record images in real devices [#21237](https://github.com/flutter/flutter/issues/21237)
-  - To analyze and visualize the skp file, visit https://debugger.skia.org/.
+  - Known issue of a SKP screenshot:
+    - Doesn’t record images in real devices [#21237](https://github.com/flutter/flutter/issues/21237).
+  - To analyze and visualize the SKP file, visit https://debugger.skia.org/.
 
 - How do I retrieve the shader persistent cache from a device?
-  - On Android, you can do the following
+  - On Android, you can do the following:
     ```
     adb shell
     run-as <com.your_app_package_name>
@@ -75,7 +77,7 @@ description: Frequently asked questions about Flutter performance.
     adb pull <some_public_folder/your_folder>
     ```
 
-- How to trace in Fuchsia?
+- How do I perform a trace in Fuchsia?
   - https://fuchsia.dev/fuchsia-src/development/tracing/usage-guide
 
 [tracing]:

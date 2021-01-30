@@ -1,46 +1,48 @@
 ---
 title: Performance metrics
-description: What metrics Flutter has, and what tools/APIs to get them.
+description: Flutter metrics, and which tools and APIs are used to 
+get them
 ---
 
-- Start-up time to first frame
+- Startup time to the first frame
   - Check the time when
-    [WidgetsBinding.instance.firstFrameRasterized][firstFrameRasterized] becomes
-    true.
+    [WidgetsBinding.instance.firstFrameRasterized][firstFrameRasterized] 
+	is true.
   - See
     https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3DtimeToFirstFrameRasterizedMicros.
 
 - Frame buildDuration, rasterDuration, and totalSpan
   - See `FrameTiming` in
-    https://api.flutter.dev/flutter/dart-ui/FrameTiming-class.html
+    https://api.flutter.dev/flutter/dart-ui/FrameTiming-class.html.
 
-- Stats of frame buildDuration (`*_frame_build_time_millis`)
-  - We recommend monitoring 4 stats: average, 90th percentile, 99th
+- Statistics of frame buildDuration (`*_frame_build_time_millis`)
+  - We recommend monitoring four stats: average, 90th percentile, 99th
     percentile, and worst frame build time.
-  - See, e.g., those [metrics][transition_build] for
+  - See, for example, [metrics][transition_build] for the 
     `flutter_gallery__transition_perf` test.
 
-- Stats of frame rasterDuration (`*_frame_build_time_millis`)
-  - We recommend monitoring 4 stats: average, 90th percentile, 99th
+- Statistics of frame rasterDuration (`*_frame_build_time_millis`)
+  - We recommend monitoring four stats: average, 90th percentile, 99th
     percentile, and worst frame build time.
-  - See, e.g., those [metrics][transition_raster] for
+  - See, for example, [metrics][transition_raster] for the 
     `flutter_gallery__transition_perf` test.
 
-- CPU/GPU usage (a good approximate for the energy use)
-  - They're currently only available through trace events. See
+- CPU/GPU usage (a good approximation for energy use)
+  - The usage is currently only available through trace events. See
     [profiling_summarizer.dart][profiling_summarizer].
-  - See those [metrics][cpu_gpu] for the `simple_animation_perf_ios` test.
+  - See [metrics][cpu_gpu] for the `simple_animation_perf_ios` test.
 
 - release_size_bytes to approximately measure the size of a Flutter app
   - See [basic_material_app_android][], [basic_material_app_ios][],
     [hello_world_android][], [hello_world_ios][], [flutter_gallery_android][],
     [flutter_gallery_ios][] tests.
-  - Their [metrics][size_perf] in the dashboard.
-  - For how to measure the size more accurately, please reference
+  - See [metrics][size_perf] in the dashboard.
+  - For how to measure the size more accurately, see 
     https://flutter.dev/docs/perf/app-size.
 
-For a complete list of performance metrics Flutter measured per commit, go to
-the following sites, click "Query", and filter "test" and "sub_result" fields.
+For a complete list of performance metrics Flutter measured per commit, visit 
+the following sites, click **Query**, and filter the **test** and 
+**sub_result** fields:
   - https://flutter-flutter-perf.skia.org/e/
   - https://flutter-engine-perf.skia.org/e/
 
