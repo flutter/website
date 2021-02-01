@@ -35,12 +35,12 @@ description: Frequently asked questions about Flutter performance
 
 - How do I tell which widgets in my Flutter app are rebuilt in each frame?
   - Make `debugProfileBuildsEnabled` true in [widgets/debug.dart][debug.dart].
-  - Change the `performRebuild` function in
+  - Alternatively, change the `performRebuild` function in
     [widgets/framework.dart][framework.dart] to ignore
     `debugProfileBuildsEnabled` and always call
     `Timeline.startSync(...)/finish`.
-  - If you use IntelliJ, a GUI view of this data is available. Select 
-    **show widget rebuild information**, and you will see which widgets 
+  - If you use IntelliJ, a GUI view of this data is available. Select
+    **show widget rebuild information**, and you will see which widgets
     rebuild visually in your IDE.
 
 - How do I query the target frames per second (of the display)?
@@ -51,17 +51,17 @@ description: Frequently asked questions about Flutter performance
   - Spawn another isoalte using
     https://api.flutter.dev/flutter/foundation/compute.html
 
-- How do I determine my Flutter app’s package size that will be downloaded by a 
+- How do I determine my Flutter app’s package size that will be downloaded by a
   user?
   - https://flutter.dev/docs/perf/app-size
 
 - How do I see the breakdown of the Flutter engine size?
-  - Visit 
+  - Visit
     https://storage.googleapis.com/flutter_infra/flutter/c3976b3c7183f479717bffed3f640fb92afbd3dc/android-arm-release/sizes/index.html,
     and replace the git hash in the URL with a recent commit hash from
     https://github.com/flutter/engine/commits.
 
-- How can I take a screenshot of an app that is running and export it as a SKP 
+- How can I take a screenshot of an app that is running and export it as a SKP
   file?
   - Run `flutter screenshot --type=skia --observotry-uri=...`
   - Known issue of a SKP screenshot:
