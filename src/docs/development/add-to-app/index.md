@@ -22,7 +22,6 @@ It currently has the _**following limitations**_:
 
 * Running multiple Flutter instances or running in partial screen
   views may have undefined behavior.
-* Using Flutter in background mode is still a WIP.
 * Packing multiple Flutter libraries into an
   application isn't supported.
 * Plugins used in add-to-app on Android should migrate
