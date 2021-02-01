@@ -110,8 +110,6 @@ Relevant issues:
 Relevant PRs:
 * [Fixes Intrinsics for RenderParagraph and RenderWrap][]
 
-<!-- Master channel link: -->
-
 [`RenderBox`]: https://master-api.flutter.dev/flutter/rendering/RenderBox-class.html
 [`RenderBox.computeMinIntrinsicWidth`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
 [`computeMinInstrinsicWidth`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
