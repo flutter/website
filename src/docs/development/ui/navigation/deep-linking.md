@@ -97,7 +97,7 @@ behavior by adding `FlutterDeepLinkingEnabled` to `Info.plist` or
 The behavior varies slightly based on the platform and whether or not the app is
 launched and running.
 
-| Platform / Scenario      | Using Navigator                                                     | Using Navigator 2.0                                                                                                                                                                                        |
+| Platform / Scenario      | Using Navigator                                                     | Using Router                                                                                                                                                                                        |
 |--------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | iOS (not launched)       | App gets initialRoute ("/") and a short time after gets a pushRoute | App gets initialRoute ("/") and a short time after uses the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Page. |
 | Android - (not launched) | App gets initialRoute containing the full route ("http:/deeplink/") | App gets initialRoute ("/deeplink") and passes it to the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Pages.   |
