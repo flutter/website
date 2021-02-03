@@ -4,8 +4,8 @@ description: Navigate to routes when the app receives a new URL
 ---
 
 {{site.alert.note}}
-This feature is only available on the dev or master channel. See [Switching
-Flutter channels][switching-channels] for more information.
+  This feature is only available on the dev or master channel. See [Switching
+  Flutter channels][switching-channels] for more information.
 {{site.alert.end}}
 
 Flutter supports deep linking on iOS and Android in the dev channel. Any link
