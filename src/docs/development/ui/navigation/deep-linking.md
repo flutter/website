@@ -3,11 +3,11 @@ title: Deep linking
 description: Navigate to routes when the app receives a new URL
 ---
 
-Flutter now supports deep linking on iOS and Android. Any link matching the
-configured scheme will be handled by the Navigator. By following these steps,
-your app will be able to launch and display routes via named routes (either with
-the [`routes`][routes] parameter or [`onGenerateRoute`][onGenerateRoute]), or by
-using the [Router][Router] widget.
+Flutter supports deep linking on iOS and Android in the dev channel. Any link
+matching the configured scheme will be handled by the Navigator. By following
+these steps, your app will be able to launch and display routes via named routes
+(either with the [`routes`][routes] parameter or
+[`onGenerateRoute`][onGenerateRoute]), or by using the [Router][Router] widget.
 
 If you're running the app in a web browser,  there's no additional setup
 required. Route paths are handled in the same way as an iOS or Android deep
