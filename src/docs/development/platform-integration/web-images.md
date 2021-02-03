@@ -149,7 +149,7 @@ the HTML renderer instead of CanvasKit.
 [5]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
 [6]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 [7]: {{site.api}}/flutter/dart-ui/Image/toByteData.html
-[8]: {{site/api}}/flutter/rendering/OffsetLayer/toImage.html
+[8]: {{site.api}}/flutter/rendering/OffsetLayer/toImage.html
 [9]: {{site.api}}/flutter/dart-ui/Codec/getNextFrame.html
 [10]: {{site.api}}/flutter/dart-ui/Scene/toImage.html
 [11]: {{site.api}}/flutter/dart-ui/Image-class.html
