@@ -78,6 +78,7 @@
           children:
             - title: Navigation in Flutter
               permalink: /docs/development/ui/navigation
+              match-page-url-exactly: true
             - title: Deep linking
               permalink: /docs/development/ui/navigation/deep-linking
         - title: Animations
