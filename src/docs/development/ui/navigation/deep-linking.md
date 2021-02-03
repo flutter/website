@@ -52,7 +52,6 @@ adb shell am start -a android.intent.action.VIEW \
     -d "http://flutterbooksample.com/book/1"
 ```
 
-
 See the [Verify Android App Links][verify-android-links] documentation for more
 details.
 
@@ -84,7 +83,7 @@ help avoid conflicts.
 A full restart is required to apply these changes.
 
 ## Test on iOS simulator
-The `xcrun` command can be used to test on the iOS Simulator:
+Use the `xcrun` command to test on the iOS Simulator:
 
 ```
 xcrun simctl openurl booted customscheme://flutterbooksample.com/book/1 
