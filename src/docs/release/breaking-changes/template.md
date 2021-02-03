@@ -107,10 +107,10 @@ If you need to link to the docs on the master channel,
 please include the following note and make sure that
 the URL includes the master link (as shown below).
 
-Stable channel link:
+<!-- Stable channel link: -->
 [`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
 
-Master channel link:
+<!-- Master channel link: -->
 [`ClassName`]: https://master-api.flutter.dev/flutter/[link_to_relevant_page].html
 
 [Issue xxxx]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
