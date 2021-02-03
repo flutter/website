@@ -14,6 +14,12 @@ following these steps, your can launch and display routes via named routes
 (either with the [`routes`][routes] parameter or
 [`onGenerateRoute`][onGenerateRoute]), or by using the [Router][] widget.
 
+{{site.alert.secondary}}
+  [Navigator 2.0][] is now called [Router][], which allows you to declaratively
+  set the routes are currently shown based on your app state. This API is
+  opt-in.
+{{site.alert.end}}
+
 If you're running the app in a web browser,  there's no additional setup
 required. Route paths are handled in the same way as an iOS or Android deep
 link. Web apps currently read the path from the url fragment by default
@@ -119,6 +125,7 @@ current set of pages when a new deep link is opened while the app is running.
 [routes]: https://api.flutter.dev/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: https://api.flutter.dev/flutter/material/MaterialApp/onGenerateRoute.html
 [Router]: https://api.flutter.dev/flutter/widgets/Router-class.html
+[Navigator 2.0]: https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [intent filter]: https://developer.android.com/guide/components/intents-filters
 [plugin-linking]: https://medium.com/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 [verify-android-links]: https://developer.android.com/training/app-links/verify-site-associations
