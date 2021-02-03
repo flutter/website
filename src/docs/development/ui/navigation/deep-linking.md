@@ -7,7 +7,7 @@ Flutter supports deep linking on iOS and Android in the dev channel. Any link
 matching the configured scheme will be handled by the Navigator. By following
 these steps, your can launch and display routes via named routes (either with
 the [`routes`][routes] parameter or [`onGenerateRoute`][onGenerateRoute]), or by
-using the [Router][Router] widget.
+using the [Router][] widget.
 
 If you're running the app in a web browser,  there's no additional setup
 required. Route paths are handled in the same way as an iOS or Android deep
@@ -19,7 +19,7 @@ sample][router-example].
 
 ## Enable deep linking on Android
 
-Add a metadata tag and [intent filter][intents-filters] to `AndroidManifest.xml`
+Add a metadata tag and [intent filter][] to `AndroidManifest.xml`
 inside the `<activity> `tag with the `".MainActivity"` name:
 
 ```
@@ -110,7 +110,7 @@ current set of pages when a new deep link is opened while the app is running.
 [routes]: https://api.flutter.dev/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: https://api.flutter.dev/flutter/material/MaterialApp/onGenerateRoute.html
 [Router]: https://api.flutter.dev/flutter/widgets/Router-class.html
-[intents-filters]: https://developer.android.com/guide/components/intents-filters
+[intent filter]: https://developer.android.com/guide/components/intents-filters
 [plugin-linking]: https://medium.com/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 [verify-android-links]: https://developer.android.com/training/app-links/verify-site-associations
 [router-example]: https://github.com/flutter/samples/blob/master/navigation_and_routing/lib/nav_2/router.dart
