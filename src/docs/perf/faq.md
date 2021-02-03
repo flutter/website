@@ -48,7 +48,7 @@ description: Frequently asked questions about Flutter performance
 
 - How to solve my app’s poor animations caused by an expensive Dart async
   function call that is blocking the UI thread?
-  - Spawn another isoalte using
+  - Spawn another isolate using
     https://api.flutter.dev/flutter/foundation/compute.html
 
 - How do I determine my Flutter app’s package size that will be downloaded by a

@@ -88,7 +88,7 @@ word or phrase could be interpreted differently by different people. You might
 interpret an OK frame rate to be 60 fps, while someone else might interpret it
 to be 30 fps.
 
-Numbers could still be noisy. For example, the measured time per frame might
+Numbers can still be noisy. For example, the measured time per frame might
 be a true computation time of this frame, plus a random amount of time (noise)
 that CPU/GPU spends on some unrelated work. Hence, the metric will fluctuate.
 Nevertheless, there’s no ambiguity of what the number means. And, there are
@@ -103,7 +103,7 @@ Performance numbers not only have unambiguous meanings, but they also have
 unambiguous comparisons. For example, there’s no doubt that 5 is greater than 4.
 On the other hand, it might be subjective to figure out whether excellent is
 better or worse than superb. Similarly, could you figure out whether epic is
-better than legendary? Actually, the phrase _strongly_ _exceeds_ _expectations_
+better than legendary? Actually, the phrase _strongly exceeds expectations_
 could be better than _superb_ in someone’s interpretation. It only becomes
 unambiguous and comparable after a definition that maps strongly exceeds
 expectations to 4 and superb to 5.
@@ -126,15 +126,15 @@ cost for chatting or face-to-face meetings.
 
 By having the same metrics to detect problems no matter how far away or how
 silent the users are, we can treat all issues fairly. That, in turn,
-allows us to focus on the right issues that have greater effects.
+allows us to focus on the right issues that have greater impact.
 
 ### How to make performance useful
 
-The following is a summary the 4 points that were discussed, from a slightly
-different perspctive:
+The following summarizes the 4 points discussed here, from a slightly different
+perspective:
 1. Make performance metrics easy to consume. Do not overwhelm the readers with a
    lot of numbers (or words). If there are many numbers, then try to summarize
-   them into a smaller set of numbers (for exmaple, summarize many numbers into
+   them into a smaller set of numbers (for example, summarize many numbers into
    a single average number). Only notify readers when the numbers change
    significantly (for example, automatic alerts on spikes or regressions).
 
