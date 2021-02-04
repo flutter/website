@@ -9,10 +9,10 @@ description: Navigate to routes when the app receives a new URL
 {{site.alert.end}}
 
 Flutter supports deep linking on iOS, Android, and web browsers in the dev
-channel. Opening a URL displays that screen in your app. With the
-following steps, you can launch and display routes by using named routes
-(either with the [`routes`][routes] parameter or
-[`onGenerateRoute`][onGenerateRoute]), or by using the [`Router`][Router] widget.
+channel. Opening a URL displays that screen in your app. With the following
+steps, you can launch and display routes by using named routes (either with the
+[`routes`][routes] parameter or [`onGenerateRoute`][onGenerateRoute]), or by
+using the [`Router`][Router] widget.
 
 {{site.alert.secondary}}
   **Version note:** [Navigator 2.0][] is now called [`Router`][Router], which
