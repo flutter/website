@@ -49,8 +49,7 @@ A full restart is required to apply these changes.
 
 ## Test on Android emulator
 To test with an Android emulator, give the `adb` command an intent where the
-host name matches the name defined in `AndroidManifest.xml`. The host name
-should match the name defined in `AndroidManifest.xml`:
+host name matches the name defined in `AndroidManifest.xml`:
 
 ```
 adb shell am start -a android.intent.action.VIEW \
