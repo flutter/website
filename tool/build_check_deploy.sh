@@ -174,9 +174,13 @@ if [[ -n $CHECK_CODE ]]; then
       if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
         echo "Example: $sample - skipped because of filter"
         continue;
+      elif [[ "$(cd $sample ; git rev-parse --show-superproject-working-tree)" ]]; then
+        echo "Example: $sample - skipped because it's in a sumbodule."
+        continue;
       else
         echo "Example: $sample"
       fi
+
       if [[ -n $TEST && -d "$sample/test" ]]; then
         # Only hydrate the sample if we're going to test it.
         (
