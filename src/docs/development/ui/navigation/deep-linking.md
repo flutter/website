@@ -8,24 +8,24 @@ description: Navigate to routes when the app receives a new URL
   channels, see [Switching Flutter channels][switching-channels].
 {{site.alert.end}}
 
-Flutter supports deep linking on iOS, Android and web browsers in the dev
-channel. Users opening a URL will display a specific screen in your app. By
-following these steps, your can launch and display routes via named routes
+Flutter supports deep linking on iOS, Android, and web browsers in the dev
+channel. Opening a URL displays that screen in your app. With the
+following steps, you can launch and display routes by using named routes
 (either with the [`routes`][routes] parameter or
-[`onGenerateRoute`][onGenerateRoute]), or by using the [Router][] widget.
+[`onGenerateRoute`][onGenerateRoute]), or by using the [`Router`][Router] widget.
 
 {{site.alert.secondary}}
-  [Navigator 2.0][] is now called [Router][], which allows you to declaratively
-  set the routes are currently shown based on your app state. This API is
-  opt-in.
+  **Version note:** [Navigator 2.0][] is now called [`Router`][Router], which allows
+  you to declaratively set the displayed routes based on the app's current state.
+  This API is opt-in.
 {{site.alert.end}}
 
-If you're running the app in a web browser,  there's no additional setup
+If you're running the app in a web browser, there's no additional setup
 required. Route paths are handled in the same way as an iOS or Android deep
-link. Web apps currently read the path from the url fragment by default
-(`/#/path/to/app/screen`)
+link. By default, web apps read the deep link path from the url fragment
+using the pattern: `/#/path/to/app/screen`.
 
-To follow along, create a new Flutter project with [the Router widget
+To follow along, create a new Flutter project with [the `Router` widget
 sample][router-sample] in flutter/samples.
 
 ## Enable deep linking on Android
@@ -58,8 +58,8 @@ adb shell am start -a android.intent.action.VIEW \
     -d "http://flutterbooksample.com/book/1"
 ```
 
-See the [Verify Android App Links][verify-android-links] documentation for more
-details.
+For more details, see the [Verify Android App Links][verify-android-links]
+documentation in the Android docs.
 
 ## Enable deep linking on iOS
 Add two new keys to `Info.plist` in the ios/Runner directory:
@@ -84,7 +84,6 @@ Add two new keys to `Info.plist` in the ios/Runner directory:
 
 The `CFBundleURLName` is a unique URL used to distinguish your app from others
 that use the same scheme. The scheme (`customscheme://`)  can also be unique to
-help avoid conflicts.
 
 A full restart is required to apply these changes.
 
@@ -118,7 +117,7 @@ launched and running.
 {:.table.table-striped}
 </div>
 
-After upgrading to the Router widget, your app has the ability to replace the
+After upgrading to the [`Router`][Router] widget, your app has the ability to replace the
 current set of pages when a new deep link is opened while the app is running.
 
 [switching-channels]: /docs/development/tools/sdk/upgrading#switching-flutter-channels
