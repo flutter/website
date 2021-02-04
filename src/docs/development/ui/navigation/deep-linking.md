@@ -15,9 +15,9 @@ following steps, you can launch and display routes by using named routes
 [`onGenerateRoute`][onGenerateRoute]), or by using the [`Router`][Router] widget.
 
 {{site.alert.secondary}}
-  **Version note:** [Navigator 2.0][] is now called [`Router`][Router], which allows
-  you to declaratively set the displayed routes based on the app's current state.
-  This API is opt-in.
+  **Version note:** [Navigator 2.0][] is now called [`Router`][Router], which
+  allows you to declaratively set the displayed routes based on the app's
+  current state. This API is opt-in.
 {{site.alert.end}}
 
 If you're running the app in a web browser, there's no additional setup
