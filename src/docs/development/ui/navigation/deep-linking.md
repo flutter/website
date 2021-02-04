@@ -82,7 +82,7 @@ Add two new keys to `Info.plist` in the ios/Runner directory:
 ```
 
 The `CFBundleURLName` is a unique URL used to distinguish your app from others
-that use the same scheme. The scheme (`customscheme://`)  can also be unique to
+that use the same scheme. The scheme (`customscheme://`)  can also be unique.
 
 A full restart is required to apply these changes.
 
