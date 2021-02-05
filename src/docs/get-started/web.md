@@ -153,6 +153,12 @@ $ flutter run -d chrome
 The `flutter run` command launches the application using the
 [development compiler] in a Chrome browser.
 
+{{site.alert.warning}}
+  **Hot reload not supported on web**
+  Currently, Flutter web supports **hot restart**,
+  but not **hot reload**.
+{{site.alert.end}}
+
 ### Build
 
 Run the following command to generate a release build:
