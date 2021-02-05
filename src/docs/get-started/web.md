@@ -154,9 +154,9 @@ The `flutter run` command launches the application using the
 [development compiler] in a Chrome browser.
 
 {{site.alert.warning}}
-  **Hot reload not still supported**
-  At the current beta state, Flutter web only support **hot restart**,
-  no support for **hot reload** is available yet.
+  **Hot reload not supported on web**
+  Currently, Flutter web supports **hot restart**,
+  but not **hot reload**.
 {{site.alert.end}}
 
 ### Build
