@@ -56,7 +56,7 @@ by sending an album title to the
 ```dart
 Future<http.Response> createAlbum(String title) {
   return http.post(
-    Uri.https('jsonplaceholder.typicode.com','albums'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -133,7 +133,7 @@ function to return a `Future<Album>`:
 ```dart
 Future<Album> createAlbum(String title) async {
   final response = await http.post(
-    Uri.https('jsonplaceholder.typicode.com','albums'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -243,7 +243,7 @@ import 'package:http/http.dart' as http;
 
 Future<Album> createAlbum(String title) async {
   final response = await http.post(
-    Uri.https('jsonplaceholder.typicode.com','albums'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },

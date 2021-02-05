@@ -809,6 +809,7 @@ Future<void> main() async {
   what fraction of the total remaining space each
   `Flexible` widget receives.
 
+  <!-- skip -->
   ```dart
   remainingSpace * (flex / totalOfAllFlexValues)
   ```
@@ -978,6 +979,7 @@ wrap a widget and force the widget to fill extra space.
 
   For example:
 
+  <!-- skip -->
   ```dart
   Expanded(child: BlueBox(),),
   ```
@@ -2131,6 +2133,7 @@ Future<void> main() async {
   </li>
 </ul>
 
+  <!-- skip -->
   ```dart
      Row(
        children: [
@@ -2365,6 +2368,7 @@ Future<void> main() async {
   so the contact information and icons are displayed below the
   name and title:
 
+  <!-- skip -->
   ```dart
 
      ],
