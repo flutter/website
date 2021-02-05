@@ -339,8 +339,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             // Ensure that the camera is initialized.
             await _initializeControllerFuture;
 
-            // Attempt to take a picture and saved in an image object of 
-            // type XFile.
+            // Attempt to take a picture and get the file `image` 
+            // where it was saved.
             final image = await _controller.takePicture();
 
             // If the picture was taken, display it on a new screen.
