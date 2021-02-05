@@ -1826,9 +1826,9 @@ the following example uses an image from the network.
 
   **2.** Change the short URL to the actual URL:
 
-  `https://github.com/flutter/website/blob/master/examples/layout/sizing/images/pic3.jpg?raw=true`
+  `https://raw.githubusercontent.com/flutter/website/master/examples/layout/sizing/images/pic1.jpg`
 
-  **3.** Then change `pic3.jpg` to `pic1.jpg` or `pic2.jpg`,
+  **3.** Then change `pic1.jpg` to `pic2.jpg` or `pic3.jpg`,
          and run again.
 {{site.alert.end}}
 
@@ -1845,7 +1845,9 @@ class MyWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.network('https://urlzs.com/RsqCz'),
+        Image.network('https://raw.githubusercontent.com/'
+            'flutter/website/master/examples'
+            '/layout/sizing/images/pic1.jpg'),
       ],
     );
   }
