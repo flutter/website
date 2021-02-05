@@ -103,9 +103,7 @@ you can begin listening for changes to the text field.
 
 <!-- skip -->
 ```dart
-TextField(
-  controller: myController,
-);
+TextField(controller: myController);
 ```
 
 ### Create a function to print the latest value
@@ -208,9 +206,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 print("First text field: $text");
               },
             ),
-            TextField(
-              controller: myController,
-            ),
+            TextField(controller: myController),
           ],
         ),
       ),
