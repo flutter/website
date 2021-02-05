@@ -272,7 +272,8 @@
       { "source": "/go/api-for-transform-performance", "destination": "https://docs.google.com/document/d/1Fxdlf7JsA-yAwc_RNuboMG-vhIhchRBZGvDSwg5qR0A/edit?usp=sharing", "type": 301 }
     ],
     "headers": [
-      { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
+      { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] },
+      { "source": "/docs/cookbook/img-files/**", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
     ]
   }
 }
