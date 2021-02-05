@@ -17,6 +17,7 @@ you might want to put some finishing touches on your app.
 This page covers the following topics:
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
+* [Enabling Material Components](#material-components)
 * [Signing the app](#signing-the-app)
 * [Shrinking your code with R8](#shrinking-your-code-with-r8)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
@@ -51,6 +52,33 @@ Alternatively, you can do it manually using the following steps:
 
 1. To verify that the icon has been replaced,
    run your app and inspect the app icon in the Launcher.
+
+## Enabling Material Components
+
+If your app uses [Platform Views][], you may want to enable
+Material Components by following the steps described in the
+[Getting Started guide for Android][].
+
+For example:
+
+1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle`:
+
+```groovy
+dependencies {
+    // ...
+    implementation 'com.google.android.material:material:<version>'
+    // ...
+}
+```
+
+To find out the latest version, visit [Google Maven][].
+
+2. Set the theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
+
+```diff
+-<style name="LaunchTheme" parent="Theme.AppCompat">
++<style name="LaunchTheme" parent="Theme.MaterialComponents.NoActionBar">
+```
 
 ## Signing the app
 
@@ -470,7 +498,9 @@ The resulting app bundle or APK files are located in
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
+[Getting Started guide for Android]: {{site.material}}/develop/android/docs/getting-started
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
+[Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
@@ -479,6 +509,7 @@ The resulting app bundle or APK files are located in
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+[Platform Views]: /docs/development/platform-integration/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
 [R8]: {{site.android-dev}}/studio/build/shrink-code
