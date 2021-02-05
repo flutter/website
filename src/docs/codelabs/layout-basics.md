@@ -493,21 +493,21 @@ the following example uses an image from the network.
   The `Image.network` method takes a string
   parameter that contains an image's URL.
 
-  In this example, `Image.network` contains a short URL.
+  In this example, `Image.network` contains a non-working URL.
 
   **1.** Click the **Run** button.
 
-  **2.** Change the short URL to the actual URL:
+  **2.** Change the non-working URL to the actual URL:
 
-  `https://github.com/flutter/website/blob/master/examples/layout/sizing/images/pic3.jpg?raw=true`
+  `https://raw.githubusercontent.com/flutter/website/master/examples/layout/sizing/images/pic1.jpg`
 
-  **3.** Then change `pic3.jpg` to `pic1.jpg` or `pic2.jpg`,
+  **3.** Then change `pic1.jpg` to `pic2.jpg` or `pic3.jpg`,
          and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/b42464ac4e9bff23ab567721581183aa
+  Gist: https://gist.github.com/ee5d93b2c9bb05776f66dbc74dcd0ae9
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b42464ac4e9bff23ab567721581183aa&amp;theme=dark&amp;split=60&amp;ga_id=display_image" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=ee5d93b2c9bb05776f66dbc74dcd0ae9&amp;theme=dark&amp;split=60&amp;ga_id=display_image" width="100%" height="400px"></iframe>
 
 ## Putting it all together
 
