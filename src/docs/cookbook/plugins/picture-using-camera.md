@@ -350,7 +350,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                 builder: (context) => DisplayPictureScreen(
                   // Pass the automatically generated path to
                   // the DisplayPictureScreen widget.
-                  imagePath: path,
+                  imagePath: image?.path,
                 ),
               ),
             );
