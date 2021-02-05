@@ -493,11 +493,11 @@ the following example uses an image from the network.
   The `Image.network` method takes a string
   parameter that contains an image's URL.
 
-  In this example, `Image.network` contains a short URL.
+  In this example, `Image.network` contains a non-working URL.
 
   **1.** Click the **Run** button.
 
-  **2.** Change the short URL to the actual URL:
+  **2.** Change the non-working URL to the actual URL:
 
   `https://raw.githubusercontent.com/flutter/website/master/examples/layout/sizing/images/pic1.jpg`
 
