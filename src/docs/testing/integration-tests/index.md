@@ -259,10 +259,8 @@ import 'package:integration_test_example/main.dart' as app;
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-  group('end-to-end test', () {
-    setUpAll(() async {
-    });
 
+  group('end-to-end test', () {
     testWidgets('tap on the floating action button; verify counter',
         (WidgetTester tester) async {
       app.main();
