@@ -33,6 +33,7 @@
       { "source": "/docs/development/add-to-app/android/add-splash-screen", "destination": "/docs/development/ui/advanced/splash-screen", "type": 301 },
       { "source": "/docs/development/tools/devtools/codeSize", "destination": "/docs/development/tools/devtools/app-size", "type": 301 },
       { "source": "/docs/development/tools/devtools/code-size", "destination": "/docs/development/tools/devtools/app-size", "type": 301 },
+      { "source": "/docs/development/tools/devtools/timeline", "destination": "/docs/development/tools/devtools/performance", "type": 301 },
       { "source": "/docs/development/tools/ide", "destination": "/docs/development/tools/android-studio", "type": 301 },
       { "source": "/docs/development/tools/ide/android-studio", "destination": "/docs/development/tools/android-studio", "type": 301 },
       { "source": "/docs/development/tools/ide/vs-code", "destination": "/docs/development/tools/vs-code", "type": 301 },
@@ -262,10 +263,17 @@
       { "source": "/go/tool-integration-test-support", "destination": "https://docs.google.com/document/d/1jMMZpRAiQC2XTUFnzFsBrWwMsf7KyMuCScYgrJQJOV0/edit?resourcekey=0-ne9HbH1hXCHcIglomNfwtw", "type": 301 },
       { "source": "/go/docs-nnbd-migration-guide", "destination": "https://docs.google.com/document/d/1U8blxmkArsd09C-IGe3cQbJ5SvDLhwn0rWWsY2SthZ4/edit?usp=sharing&resourcekey=0-0CviWT1D47VGxK-Li4_NIw", "type": 301 },
       { "source": "/go/flutter-for-embedded-linux", "destination": "https://docs.google.com/document/d/1n4NXCk0QlGz16gUCtywR79H0Z1fzPqB2iNL8oxuexuk/edit?usp=sharing", "type": 301 },
-      { "source": "/go/text-editing-actions", "destination": "https://docs.google.com/document/d/1QaVIr1bbOWJGNyyNsB75sXgTDRMuxP268sLGTBNDut0/edit?usp=sharing", "type": 301 }
+      { "source": "/go/text-editing-actions", "destination": "https://docs.google.com/document/d/1QaVIr1bbOWJGNyyNsB75sXgTDRMuxP268sLGTBNDut0/edit?usp=sharing", "type": 301 },
+      { "source": "/go/rfc-android-j-deprecation", "destination": "https://docs.google.com/document/d/1IjlypDrIIGgF2N76P6z8QL2rT5Uuh_rBvqOgDUyhCx8/edit#heading=h.pub7jnop54q0", "type": 301 },
+      { "source": "/go/buildtextspan-buildcontext", "destination": "https://docs.google.com/document/d/1nr-g45gXcWTYoW9UmChZV7Ije3lKP4pEvDQCdz6NFdI/edit?usp=sharing", "type": 301 },
+      { "source": "/go/deprecations-removed-after-1-22", "destination": "https://docs.google.com/spreadsheets/d/1kZOej-h4AiRW2Td3NUnVMSb8PYLB63mpj-oFYqb_4tc/edit?usp=sharing", "type": 301 },
+      { "source": "/go/max-length-enforcement", "destination": "https://docs.google.com/document/d/1S900lQaTPOsePnIeE7o3-Ia8f39VZaSv0JnjNyBfCvU", "type": 301 },
+      { "source": "/go/medium-sized-code-samples", "destination": "https://docs.google.com/document/d/1-jjYru2ljRSRSY4hn4qwLj9oQj8UiqrDOgY10-FE2tY/edit?usp=sharing", "type": 301 },
+      { "source": "/go/api-for-transform-performance", "destination": "https://docs.google.com/document/d/1Fxdlf7JsA-yAwc_RNuboMG-vhIhchRBZGvDSwg5qR0A/edit?usp=sharing", "type": 301 }
     ],
     "headers": [
-      { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
+      { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] },
+      { "source": "/docs/cookbook/img-files/**", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
     ]
   }
 }

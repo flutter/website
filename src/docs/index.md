@@ -92,6 +92,7 @@ You might also find these docs useful:
 * [State management][]
 * [Animations][]
 
+The documentation on this site reflects the latest stable release of Flutter.
 
 [A tour of the Flutter widget framework]: /docs/development/ui/widgets-intro
 [Adding assets and images]: /docs/development/ui/assets-and-images
