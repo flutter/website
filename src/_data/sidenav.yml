@@ -75,6 +75,12 @@
           permalink: /docs/development/ui/assets-and-images
         - title: Navigation & routing
           permalink: /docs/development/ui/navigation
+          children:
+            - title: Navigation in Flutter
+              permalink: /docs/development/ui/navigation
+              match-page-url-exactly: true
+            - title: Deep linking
+              permalink: /docs/development/ui/navigation/deep-linking
         - title: Animations
           permalink: /docs/development/ui/animations
           children:
