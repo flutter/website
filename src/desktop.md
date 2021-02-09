@@ -287,7 +287,7 @@ the components.
 [MSIX][] is Microsoft's Windows app package format that provides a modern 
 packaging experience to all Windows apps. This format can either be used 
 to ship applications to Microsoft's Windows Apps store, or distribute 
-applications installers directly.
+application installers directly.
 
 The easiest way to create an MSIX distribution for a Flutter project is to use
 the [`msix` pub package][msix package]. For an example of using the `msix` package
