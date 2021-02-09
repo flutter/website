@@ -112,10 +112,8 @@ see the [Crashy][] example app.
 
 [Crashy]: {{site.github}}/flutter/crashy
 [Create an account with Sentry]: https://sentry.io/signup/
-[`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/
-[`sentry`]: {{site.pub-pkg}}/sentry
-[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
+[`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
 [pub.dev]: {{site.pub-pkg}}/documentation/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
 [Sentry's documentation]: https://docs.sentry.io/platforms/flutter/
