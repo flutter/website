@@ -279,8 +279,8 @@ build output on other machines for testing purposes.
 #### Windows
 
 For building Windows executables, you can either use tooling to construct an
-MSIX installer or you can build your own installer that collects together 
-the components.
+MSIX installer, or you can build your own installer that collects 
+the components together.
 
 ##### MSIX Packaging
 
