@@ -7,7 +7,7 @@ toc: true
 Desktop support allows you to compile Flutter source code
 to a native Windows, macOS, or Linux desktop app. Flutter's desktop
 support also extends to plugins&mdash;you can install 
-existing plugins that support the Windows, macOS or Linux platforms,
+existing plugins that support the Windows, macOS, or Linux platforms,
 or you can create your own.
 
 {{site.alert.warning}}
