@@ -279,7 +279,7 @@ build output on other machines for testing purposes.
 #### Windows
 
 For building Windows executables, you can either use tooling to construct an
-MSIX installer, or you can build your own installer that collects 
+MSIX installer, or you can build your own zip file that collects
 the components together.
 
 ##### MSIX Packaging
@@ -297,7 +297,7 @@ from a Flutter desktop app, see the [Desktop Photo Search sample][].
 [msix package]: {{site.pub}}/packages/msix
 [Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
 
-##### Building your own installer for Windows
+##### Building your own zip file for Windows
 
 The executable can be found in your project under
 `build\windows\runner\<build mode>\`.
