@@ -30,11 +30,11 @@ It currently has the _**following limitations**_:
 * As of v1.17, the Flutter module only supports AndroidX applications on Android.
 
 As of Flutter v1.26, add-to-app experimentally supports adding multiple
-instances of Flutter engines, screens or views into your app. This could
+instances of Flutter engines, screens, or views into your app. This can
 help integration scenarios such as a hybrid navigation stack with mixed
 native and Flutter screens, or a page with multiple partial-screen Flutter
-views. Having multiple Flutter instances can let each instance maintain
-an independent application and UI state from each other while using minimal
+views. Having multiple Flutter instances allows each instance to maintain
+independent application and UI state while using minimal
 memory resources. See more in the [multiple Flutters][] page.
 
 ## Supported features

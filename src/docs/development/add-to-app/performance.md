@@ -194,7 +194,7 @@ When the Flutter UI component is released, the UI-related memory is freed.
 This doesn't affect the Flutter state, which lives in the `FlutterEngine`
 (unless the `FlutterEngine` is also released).
 
-For performance details on creating more than 1 `FlutterEngine`, see
+For performance details on creating more than one `FlutterEngine`, see
 [multiple Flutters][].
 
 [android-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html

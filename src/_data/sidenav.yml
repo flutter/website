@@ -200,7 +200,7 @@
         permalink: /docs/development/add-to-app/debugging
       - title: Loading sequence and performance
         permalink: /docs/development/add-to-app/performance
-      - title: Multiple Flutters
+      - title: Multiple Flutter instances
         permalink: /docs/development/add-to-app/multiple-flutters
     - title: Tools & techniques
       permalink: /docs/development/tools

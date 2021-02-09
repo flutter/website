@@ -6,9 +6,11 @@ description: How to integrate multiple instances of Flutter engine, screens or v
 
 ## Experimental
 
-Adding multiple instances of Flutter is now supported started from Flutter
-version 1.26. Use at your own risk since stability or performance issues or
-API changes are still possible.
+{{site.alert.note}}
+  Support for adding multiple instances of Flutter became available
+  as of Flutter 1.26. Use at your own risk since stability or
+  performance issues, and API changes are still possible.
+{{site.alert.end}}
 
 The current memory footprint for each additional Flutter instance beyond the
 first instance is ~180kB on Android and iOS.
@@ -21,10 +23,10 @@ our roadmap on communication or other multiple-Flutters issues, see [flutter/flu
 ## Scenarios
 
 Before Flutter 1.26, multiple instances of `FlutterEngine` and its associated
-UI could be launched. But each instance also came with a significant latency
-and memory fixed cost.
+UI could be launched, but each instance came with significant latency
+and fixed memory cost.
 
-Using multiple Flutter instances could be useful in the following scenarios:
+Multiple Flutter instances can be useful in the following scenarios:
 
 - An application where the integrated Flutter screen is not a leaf node of
   the navigation graph. And the navigation stack could be a hybrid mixture of
@@ -32,15 +34,17 @@ Using multiple Flutter instances could be useful in the following scenarios:
 - A screen where multiple partial screen Flutter views could be integrated
   and visible at once.
 
-However, the advantage of using multiple Flutter instances is that each Flutter
-instance can be independent from each other and hold its own internal navigation
-stack, UI and application states. This simplifies the overall application code's
-responsibility in state keeping and improves modularity. More details on the
+The advantage of using multiple Flutter instances is that each
+instance is independent and maintains its own internal navigation
+stack, UI, and application states. This simplifies the overall application code's
+responsibility for state keeping and improves modularity. More details on the
 scenarios motivating the usage of multiple Flutters can be found at
-[flutter.dev/go/multiple-flutters](https://flutter.dev/go/multiple-flutters).
+[flutter.dev/go/multiple-flutters][].
+
+[flutter.dev/go/multiple-flutters]: /go/multiple-flutters
 
 The 1.26 Flutter release drastically reduces the memory footprint of additional
-Flutter engines from **~19MB** on Android and **~13MB** on iOS to **~180kB** on Android and
+Flutter engines from **~19MB** on Android and **~13MB** on iOS, to **~180kB** on Android and
 iOS. This ~99% fixed cost reduction allows the multiple Flutters pattern to be
 used more liberally in your add-to-app integration.
 
@@ -58,33 +62,38 @@ advantage of sharing many of the common, reusable resources among themselves
 such as the GPU context, font metrics data etc, leading to a faster initial
 rendering latency and lower memory footprint.
 
-- The `FlutterEngine`s spawned from the `FlutterEngineGroup` can be used to
-connect to UI classes like the [FlutterActivity](https://api.flutter.dev/javadoc/io/flutter/embedding/android/FlutterActivity.html)
-or [FlutterViewController](https://api.flutter.dev/objcdoc/Classes/FlutterViewController.html)
-etc in the same way as normally constructed cached `FlutterEngine`s.
+*`FlutterEngine`s spawned from `FlutterEngineGroup` can be used to
+   connect to UI classes like [`FlutterActivity`][] or [`FlutterViewController`][]
+   in the same way as normally constructed cached `FlutterEngine`s.
 
-- The first `FlutterEngine` spawned from the `FlutterEngineGroup` doesn't need
-to continue surviving in order for subsequent `FlutterEngine`s to keep sharing
-resources as long as there's at least 1 last living `FlutterEngine` at all
-times.
+[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
+[`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 
-- Creating the very first `FlutterEngine` from a `FlutterEngineGroup` will have
-the same [performance characteristics](performance.md) as constructing a
-`FlutterEngine` from its constructors today.
+* The first `FlutterEngine` spawned from the `FlutterEngineGroup` doesn't need
+  to continue surviving in order for subsequent `FlutterEngine`s to share
+  resources as long as there's at least 1 living `FlutterEngine` at all
+  times.
 
-- When all `FlutterEngine`s from a `FlutterEngineGroup` have been destroyed,
-the next `FlutterEngine` created will again have the same performance
+* Creating the very first `FlutterEngine` from a `FlutterEngineGroup` has
+  the same [performance characteristics][] as constructing a
+  `FlutterEngine` using the constructors did previously.
+  
+[performance characteristics]: /docs/development/add-to-app/performance
+
+* When all `FlutterEngine`s from a `FlutterEngineGroup` are destroyed,
+the next `FlutterEngine` created has the same performance
 characteristics as the very first engine.
 
-- The `FlutterEngineGroup` itself doesn't need to live beyond all of the spawned
-engines. Destroying the `FlutterEngineGroup` will not affect existing spawned
-`FlutterEngine`s but will remove the ability to spawn additional
-`FlutterEngine`s sharing resource with the existing ones.
+* The `FlutterEngineGroup` itself doesn't need to live beyond all of the spawned
+engines. Destroying the `FlutterEngineGroup` doesn't affect existing spawned
+`FlutterEngine`s but does remove the ability to spawn additional
+`FlutterEngine`s that share resources with existing spawned engines.
 
 ## Samples
 
-A sample demonstrating the usage of the new `FlutterEngineGroup` exist at
-https://github.com/flutter/samples/tree/master/add_to_app/multiple_flutters for
-Android and iOS.
+You can find a sample demonstrating how to use `FlutterEngineGroup`
+on both Android and iOS on[GitHub][]. 
+
+[GitHub]: {{site.github}}/flutter/samples/tree/master/add_to_app/multiple_flutters
 
 {% include app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}
