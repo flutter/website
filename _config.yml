@@ -115,6 +115,9 @@ alert:
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
     <i class="fas fa-info-circle"></i> **Note:**
+  version-note: >-
+    <aside class="alert alert-info" role="alert" markdown="1">
+    <i class="fas fa-code-branch"></i> **Version note:**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-

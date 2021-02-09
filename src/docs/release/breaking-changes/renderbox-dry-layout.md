@@ -88,7 +88,7 @@ if the size of a `RenderBox` depends on the baseline metrics of its children.
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 1.25.0-4.0.pre<br>
 In stable release: not yet
 
 ## References
@@ -110,7 +110,6 @@ Relevant issues:
 Relevant PRs:
 * [Fixes Intrinsics for RenderParagraph and RenderWrap][]
 
-Master channel link:
 [`RenderBox`]: https://master-api.flutter.dev/flutter/rendering/RenderBox-class.html
 [`RenderBox.computeMinIntrinsicWidth`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
 [`computeMinInstrinsicWidth`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
@@ -120,5 +119,5 @@ Master channel link:
 [`RenderWrap`]: https://master-api.flutter.dev/flutter/rendering/RenderWrap-class.html
 [`RenderParagraph`]: https://master-api.flutter.dev/flutter/rendering/RenderParagraph-class.html
 
-[Issue 48679]: {{site.github}}/flutter/flutter/issues/48679]
+[Issue 48679]: {{site.github}}/flutter/flutter/issues/48679
 [Fixes Intrinsics for RenderParagraph and RenderWrap]: {{site.github}}/flutter/flutter/pull/70656

@@ -137,7 +137,15 @@ A simplified reactive state management solution.
 * [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
 
+## Riverpod
 
+An approach similar to Provider that is compile-safe and testable. It doesn't have a dependency on the Flutter SDK.
+
+* [Riverpod][] homepage
+* [Getting started with Riverpod][]
+
+[Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
+[Riverpod]: https://riverpod.dev/
 [Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
 [Fish-Redux-Source]: {{site.github}}/alibaba/fish-redux
 [Fish-Redux-Library]: {{site.pub-pkg}}/fish_redux
@@ -146,7 +154,7 @@ A simplified reactive state management solution.
 [Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
 [Animation Management with Redux and Flutter]: https://www.youtube.com/watch?v=9ZkLtr0Fbgk
 [Architect your Flutter project using BLoC pattern]: {{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1
-[Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux/
+[Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux
 [Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 [Flutter meets Redux: The Redux way of managing Flutter applications state]: https://medium.com/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
 [BloC Library]: https://felangel.github.io/bloc

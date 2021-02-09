@@ -83,7 +83,7 @@ void main() {
 
 
 To run tests with `flutter drive`, create a new directory containing a new file,
-`test_driver/integration_test_driver.dart`:
+`test_driver/integration_test.dart`:
 
 ```dart
 import 'package:integration_test/integration_test_driver.dart';
@@ -139,7 +139,7 @@ In a separate process, run `flutter_drive`:
 
 ```
 flutter drive \
-  --driver=test_driver/integration_test_driver.dart \
+  --driver=test_driver/integration_test.dart \
   --target=integration_test/counter_test.dart \
   -d web-server
 ```
@@ -258,11 +258,9 @@ import 'package:integration_test/integration_test.dart';
 import 'package:integration_test_example/main.dart' as app;
 
 void main() {
-  group('end-to-end test', () {
-    setUpAll(() async {
-      IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-    });
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
+  group('end-to-end test', () {
     testWidgets('tap on the floating action button; verify counter',
         (WidgetTester tester) async {
       app.main();
@@ -292,7 +290,7 @@ equivalent methods.
 [Firebase Test Lab]: https://firebase.google.com/docs/test-lab
 [Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Android Device Testing]: https://pub.dev/packages/integration_test#android-device-testing
-[iOS Device Testing]: https://pub.dev/packages/integration_test#android-device-testing
+[iOS Device Testing]: https://pub.dev/packages/integration_test#ios-device-testing
 [Firebase Console]: http://console.firebase.google.com/
 [Firebase Test Lab section of the README]: https://pub.dev/packages/integration_test#firebase-test-lab
 [Running Flutter Driver tests with Web]: https://github.com/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web

@@ -41,7 +41,7 @@ flutter run -d chrome --web-renderer html
 flutter build web --web-renderer canvaskit
 ```
 
-This flag is ignored when used with a non-browser (mobile or desktop) device
+This flag is ignored when a non-browser (mobile or desktop) device
 target is selected.
 
 ## Choosing which option to use

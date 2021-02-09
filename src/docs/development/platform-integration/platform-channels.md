@@ -67,9 +67,11 @@ enable receiving method calls and sending back a
 result. These classes allow you to develop a platform plugin
 with very little 'boilerplate' code.
 
-*Note*: If desired, method calls can also be sent in the reverse direction,
-with the platform acting as client to methods implemented in Dart.
-A concrete example of this is the [`quick_actions`][] plugin.
+{{site.alert.note}}
+  If desired, method calls can also be sent in the reverse direction,
+  with the platform acting as client to methods implemented in Dart.
+  A concrete example of this is the [`quick_actions`][] plugin.
+{{site.alert.end}}
 
 ### Platform channel data types support and codecs {#codec}
 

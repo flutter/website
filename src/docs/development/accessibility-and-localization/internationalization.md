@@ -66,19 +66,22 @@ dependencies:
     sdk: flutter         # Add this line
 ```
 
-Next, import the flutter_localizations library and specify
+Next, run `pub get packages`, then import the `flutter_localizations` library and specify
 `localizationsDelegates` and `supportedLocales` for `MaterialApp`:
 
 <!-- skip -->
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
+// TODO: uncomment the line below after codegen
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // ...
 
 MaterialApp(
  localizationsDelegates: [
    // ... app-specific localization delegate[s] here
-   AppLocalizations.delegate,
+   // TODO: uncomment the line below after codegen
+   // AppLocalizations.delegate,
    GlobalMaterialLocalizations.delegate,
    GlobalWidgetsLocalizations.delegate,
    GlobalCupertinoLocalizations.delegate,
@@ -187,16 +190,38 @@ project called `l10n.yaml` with the following content:
    }
    ```
 
-6. To test the localization tool, run your application.
-   You should see generated files in
+6. Now, run your app so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
 
-7. Test the generated localizations in your app as follows:
+7. Remove the comment for the import statement on `app_localizations.dart` 
+   and `AppLocations.delegate` in your call to the constructor for 
+   `MaterialApp`. Test the generated localizations in your app as follows:
 
    <!-- skip -->
    ```dart
    import 'package:flutter_localizations/flutter_localizations.dart';
-   import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Add this line
+   // import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // remove the comment for this line
+
+   // ...
+   
+   MaterialApp(
+     localizationsDelegates: [
+       // ... app-specific localization delegate[s] here
+       // AppLocalizations.delegate, // remove the comment for this line
+       GlobalMaterialLocalizations.delegate,
+       // ...
+   );
+   // ...
+
+   // In your Material/Widget/CupertinoApp:
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
+       localizationsDelegates: AppLocalizations.localizationsDelegates, // Add this line
+       supportedLocales: AppLocalizations.supportedLocales, // Add this line
+       home: // ...
+     );
+   }
 
    // ...
 
@@ -216,6 +241,21 @@ project called `l10n.yaml` with the following content:
 
 To see a sample Flutter app using this tool, please see
 [`gen_l10n_example`][].
+
+To localize your device app description, you can pass in the localized
+string into [`MaterialApp.onGenerateTitle`][]:
+
+  <!-- skip -->
+  ```dart
+  // In your Material/Widget/CupertinoApp:
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      onGenerateTitle: (BuildContext context) => AppLocalizations.of(context).appTitle,
+      // ...
+    );
+  }
+  ```
 
 For more information about the localization tool,
 such as dealing with DateTime and handling plurals,
@@ -489,10 +529,11 @@ that analyzes the source code for classes that contain
 An app that needs to support a language that's not included in
 [`GlobalMaterialLocalizations`][] has to do some extra work:
 it must provide about 70 translations ("localizations")
-for words or phrases.
+for words or phrases and the date patterns and symbols for the
+locale.
 
 See the following for an example of how to add
-support for the Belarusian language.
+support for the Norwegian Nynorsk language.
 
 A new `GlobalMaterialLocalizations` subclass defines the
 localizations that the Material library depends on.
@@ -501,19 +542,19 @@ as factory for the `GlobalMaterialLocalizations` subclass,
 must also be defined.
 
 Here's the source code for the complete [`add_language`][] example,
-minus the actual Belarusian translations.
+minus the actual Nynorsk translations.
 
 The locale-specific `GlobalMaterialLocalizations` subclass
-is called `BeMaterialLocalizations`,
+is called `NnMaterialLocalizations`,
 and the `LocalizationsDelegate` subclass is
-`_BeMaterialLocalizationsDelegate`.
-The value of `BeMaterialLocalizations.delegate`
+`_NnMaterialLocalizationsDelegate`.
+The value of `NnMaterialLocalizations.delegate`
 is an instance of the delegate, and is all
 that's needed by an app that uses these localizations.
 
 The delegate class includes basic date and number format
 localizations. All of the other localizations are defined by `String`
-valued property getters in `BeMaterialLocalizations`, like this:
+valued property getters in `NnMaterialLocalizations`, like this:
 
 <!-- skip -->
 ```dart
@@ -531,7 +572,7 @@ String get closeButtonLabel => r'CLOSE';
 
 These are the English translations, of course.
 To complete the job you need to change the return
-value of each getter to an appropriate Belarusian string.
+value of each getter to an appropriate Nynorsk string.
 
 The getters return "raw" Dart strings that have an r prefix,
 like `r'About $applicationName'`,
@@ -550,14 +591,66 @@ String aboutListTileTitle(String applicationName) {
 }
 ```
 
+The date patterns and symbols of the locale will also need to
+be specified. In the source code, the date patterns and symbols
+are defined like this:
+
+<!-- skip -->
+```dart
+const nnLocaleDatePatterns = {
+  'd': 'd.',
+  'E': 'ccc',
+  //...
+}
+
+const nnDateSymbols = {
+  'NAME': 'nn',
+  'ERAS': <dynamic>[
+    'f.Kr.',
+    'e.Kr.',
+  ],
+  // ...
+}
+```
+
+These will need to be modified for the locale to use the correct
+date formatting. Unfortunately, since the `intl` library does
+not share the same flexibility for number formatting, the formatting
+for an existing locale will have to be used as a substitute in
+`_NnMaterialLocalizationsDelegate`:
+
+<!-- skip -->
+```dart
+class _NnMaterialLocalizationsDelegate extends LocalizationsDelegate<MaterialLocalizations> {
+  // ...
+  @override
+  Future<MaterialLocalizations> load(Locale locale) async {
+    return SynchronousFuture<MaterialLocalizations>(
+      NnMaterialLocalizations(
+        localeName: localeName,
+        // The `intl` library's NumberFormat class is generated from CLDR data
+        // (see https://github.com/dart-lang/intl/blob/master/lib/number_symbols_data.dart).
+        // Unfortunately, there is no way to use a locale that isn't defined in
+        // this map and the only way to work around this is to use a listed
+        // locale's NumberFormat symbols. So, here we use the number formats
+        // for 'en_US' instead.
+        decimalFormat: intl.NumberFormat('#,##0.###', 'en_US'),
+        twoDigitZeroPaddedFormat: intl.NumberFormat('00', 'en_US'),
+        //...
+      ),
+    );
+  }
+}
+```
+
 For more information about localization strings, see the
 [flutter_localizations README][].
 
 Once you've implemented your language-specific subclasses of
 `GlobalMaterialLocalizations` and `LocalizationsDelegate`,
 you just need to add the language and a delegate instance to your app.
-Here's some code that sets the app's language to Belarusian and
-adds the `BeMaterialLocalizations` delegate instance to the app's
+Here's some code that sets the app's language to Nynorsk and
+adds the `NnMaterialLocalizations` delegate instance to the app's
 `localizationsDelegates` list:
 
 <!-- skip -->
@@ -566,10 +659,10 @@ MaterialApp(
   localizationsDelegates: [
     GlobalWidgetsLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
-    BeMaterialLocalizations.delegate,
+    NnMaterialLocalizations.delegate,
   ],
   supportedLocales: [
-    const Locale('be', 'BY')
+    const Locale('nn')
   ],
   home: ...
 )
@@ -720,6 +813,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [`LocalizationsDelegate`]: {{site.api}}/flutter/widgets/LocalizationsDelegate-class.html
 [material-global]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
 [`minimal`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Minimal internationalization]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal

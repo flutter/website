@@ -73,7 +73,7 @@ the children should occupy.
 
 ## Lay out a widget
 
-How do you layout a single widget in Flutter? This section
+How do you lay out a single widget in Flutter? This section
 shows you how to create and display a simple widget.
 It also shows the entire code for a simple Hello World app.
 

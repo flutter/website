@@ -1,0 +1,17 @@
+name: null_safety_basics
+description: Some code to demonstrate null safety.
+version: 1.0.0
+
+environment:
+  sdk: '>=2.12.0-0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

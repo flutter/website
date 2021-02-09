@@ -5,7 +5,7 @@
 {% include_relative _web-app.md  %}
 
   1. Invoke **View > Command Palette**.
-  1. Type "flutter", and select the **Flutter: New Project**.
+  1. Type "flutter", and select the **Flutter: New Application Project**.
   1. Enter a project name, such as `myapp`, and press **Enter**.
   1. Create or select the parent directory for the new project folder.
   1. Wait for project creation to complete and the `main.dart`
@@ -28,6 +28,16 @@ contains a simple demo app that uses [Material Components][].
     For details, see [Quickly switching between Flutter devices][].
     - If no device is available and you want to use a device simulator,
       click **No Devices** and launch a simulator.
+      
+      {{site.alert.warning}}
+      You may not see **Start iOS Simulator** option when you click **No Devices** in VS Code. If you are on Mac then you may have to run following command in          terminal to launch a simulator.
+      ```
+      open -a simulator
+      ```
+      
+      In Android it is not possible to launch iOS simulator.
+      {{site.alert.end}}
+
     - To setup a real device, follow the device-specific instructions on the
       [Install][] page for your OS.
  1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
