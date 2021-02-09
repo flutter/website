@@ -294,8 +294,8 @@ the [`msix` pub package][msix package]. For an example of using the `msix` packa
 from a Flutter desktop app, see the [Desktop Photo Search sample][].
 
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
-[msix package]: https://pub.dev/packages/msix
-[Desktop Photo Search sample]:https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search
+[msix package]: {{site.pub}}/packages/msix
+[Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
 
 ##### Building your own installer for Windows
 
