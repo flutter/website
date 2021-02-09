@@ -117,5 +117,5 @@ see the [Crashy][] example app.
 [Sentry]: https://sentry.io/welcome/
 [`sentry`]: {{site.pub-pkg}}/sentry
 [`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
-[pub.dev]: https://pub.dev/documentation/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
+[pub.dev]: {{site.pub-pkg}}/documentation/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
 [Sentry's documentation]: https://docs.sentry.io/platforms/flutter/
