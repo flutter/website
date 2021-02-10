@@ -56,7 +56,7 @@ description: Frequently asked questions about Flutter performance
 
 * How do I see the breakdown of the Flutter engine size?
   * Visit the
-    [Binary size dashboard](https://storage.googleapis.com/flutter_infra/flutter/c3976b3c7183f479717bffed3f640fb92afbd3dc/android-arm-release/sizes/index.html),
+    [binary size dashboard](https://storage.googleapis.com/flutter_infra/flutter/c3976b3c7183f479717bffed3f640fb92afbd3dc/android-arm-release/sizes/index.html),
     and replace the git hash in the URL with a recent commit hash from
     [GitHub commits]({{site.github}}/flutter/engine/commits).
 
