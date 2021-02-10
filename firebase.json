@@ -58,7 +58,6 @@
       { "source": "/codelabs", "destination": "/docs/codelabs", "type": 301 },
       { "source": "/cookbook", "destination": "/docs/cookbook", "type": 301 },
       { "source": "/cookbook/:rest*", "destination": "/docs/cookbook/:rest*", "type": 301 },
-      { "source": "/jobs", "destination": "/jobs/infrastructure", "type": 301 },
       { "source": "/custom-fonts", "destination": "/docs/cookbook/design/fonts", "type": 301 },
       { "source": "/debugging", "destination": "/docs/testing/debugging", "type": 301 },
       { "source": "/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
