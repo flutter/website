@@ -32,9 +32,9 @@ In this recipe, learn how to report errors to the
 the following steps:
 
   1. Get a DSN from Sentry.
-  2. Import the Sentry Flutter package.
-  3. Initialize the SDK
-  4. Capture errors programatically.
+  2. Import the Flutter Sentry package
+  3. Initialize the Sentry SDK
+  4. Capture errors programmatically
 
 ## 1. Get a DSN from Sentry
 
@@ -46,7 +46,7 @@ To get a DSN, use the following steps:
   1. [Create an account with Sentry][].
   2. Log in to the account.
   3. Create a new Flutter project.
-  4. Copy the code snippet which includes the DSN.
+  4. Copy the code snippet that includes the DSN.
 
 ## 2. Import the Sentry package
 
@@ -59,9 +59,9 @@ dependencies:
   sentry_flutter: <latest_version>
 ```
 
-## 3. Initialize the SDK
+## 3. Initialize the Sentry SDK
 
-Initialize the SDK to capture different unhandled errors automatically.
+Initialize the SDK to capture different unhandled errors automatically:
 
 <!-- skip -->
 ```dart
@@ -76,7 +76,7 @@ Future<void> main() async {
 }
 ```
 
-Alternatively you can pass the DSN to Flutter via Dart define:
+Alternatively, you can pass the DSN to Flutter using the `dart-define` tag:
 
 <!-- skip -->
 ```sh
@@ -86,23 +86,24 @@ Alternatively you can pass the DSN to Flutter via Dart define:
 ### What does that give me?
 
 This is all you need for Sentry to capture unhandled errors in Dart and native layers.  
-Including Swift, Objective-C, C, C++ on iOS. And on Android: Java, Kotlin, C and C++.
+This includes Swift, Objective-C, C, and C++ on iOS, and Java, Kotlin, C, and C++ on Android.
 
 ## 4. Capture errors programatically
 
-Besides the automatic error reporting that Sentry happens by initializing the SDK, you can use the API to 
-report errors to Sentry.
+Besides the automatic error reporting that Sentry generates by
+importing and initializing the SDK,
+you can use the API to report errors to Sentry:
 
 <!-- skip -->
 ```dart
 await Sentry.captureException(exception, stackTrace: stackTrace);
 ```
 
-The complete API is available on [pub.dev][]
+The complete API is available on [pub.dev][].
 
 ## Learn more
 
-Extensive documentation about the SDK can be found on [Sentry's documentation].
+Extensive documentation about using the Sentry SDK can be found on [Sentry's site][].
 
 ## Complete example
 
@@ -116,4 +117,4 @@ see the [Crashy][] example app.
 [Sentry]: https://sentry.io/welcome/
 [`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
 [pub.dev]: {{site.pub-pkg}}/documentation/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
-[Sentry's documentation]: https://docs.sentry.io/platforms/flutter/
+[Sentry's site]: https://docs.sentry.io/platforms/flutter/
