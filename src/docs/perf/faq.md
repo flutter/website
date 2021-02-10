@@ -20,7 +20,6 @@ description: Frequently asked questions about Flutter performance
   * [Chrome tracing (enter `about:tracing` in your Chrome URL field)][tracing]
   * [Android systrace (`adb systrace`)][systrace]
   * [Fuchsia `fx traceutil`][traceutil]
-  * [Dart observatory](https://dart-lang.github.io/observatory/)
   * https://ui.perfetto.dev/
   * https://www.speedscope.app/
 
