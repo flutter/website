@@ -23,7 +23,7 @@ short-title: Staggered
 
 Staggered animations are a straightforward concept: visual changes
 happen as a series of operations, rather than all at once.
-The animation might be purely sequential, with one change occuring after
+The animation might be purely sequential, with one change occurring after
 the next, or it might partially or completely overlap. It might also
 have gaps, where no changes occur.
 

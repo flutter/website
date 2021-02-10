@@ -8,7 +8,7 @@ description: How to migrate existing Flutter projects to AndroidX.
   doesn't use AndroidX.
 {{site.alert.end}}
 
-[AndroidX](https://developer.android.com/jetpack/androidx) is a major improvement
+[AndroidX]({{site.android-dev}}/jetpack/androidx) is a major improvement
 to the original Android Support Library.
 
 It provides the `androidx.*` package libraries, unbundled from the platform API.
@@ -20,8 +20,8 @@ than the Android platform.
 ### How do I migrate my existing app, plugin or host-editable module project to AndroidX?
 
 _You will need Android Studio 3.2 or higher. If you don’t have it installed,
-you can download the latest version from
-[developer.android.com/studio](https://developer.android.com/studio)_.
+you can download the latest version from the
+[Android Studio]({{site.android-dev}}/studio) site_.
 
 1. Open Android Studio.
 2. Select **Open an existing Android Studio Project**.
@@ -84,8 +84,8 @@ Starting from Flutter v1.12.13, new projects created with `flutter create -t <pr
 use AndroidX by default.
 
 Projects created prior to this Flutter version must not depend on any
-[old build artifact](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) or
-[old Support Library class](https://developer.android.com/jetpack/androidx/migrate/class-mappings).
+[old build artifact]({{site.android-dev}}/jetpack/androidx/migrate/artifact-mappings) or
+[old Support Library class]({{site.android-dev}}/jetpack/androidx/migrate/class-mappings).
 
 In an app or module project, the file `android/gradle.properties` or `.android/gradle.properties`
 must contain:
@@ -110,5 +110,5 @@ haven’t been migrated to AndroidX yet.
 
 ### I'm having issues migrating to AndroidX
 
-[Open an issue on GitHub](https://github.com/flutter/flutter/issues/new/choose)
+[Open an issue on GitHub]({{site.github}}/flutter/flutter/issues/new/choose)
 and add `[androidx-migration]` to the title of the issue.
