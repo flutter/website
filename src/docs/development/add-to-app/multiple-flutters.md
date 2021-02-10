@@ -19,6 +19,12 @@ As of the 1.26 release, communication between Flutter instances is handled using
 [platform channels][] (or [Pigeon][]) through the host platform. To see
 our roadmap on communication, or other multiple-Flutters issues, see [Issue 72009][].
 
+{{site.alert.warning}}
+  In 1.26, the use of [platform views][] is not supported in conjunction with
+  multiple Flutters. When a second Flutter instance is created, platform views
+  will be globally disabled.
+{{site.alert.end}}
+
 ## Scenarios
 
 Before Flutter 1.26, multiple instances of `FlutterEngine` and its associated
@@ -96,5 +102,6 @@ on both Android and iOS on[GitHub][].
 [Issue 72009]: {{site.github}}/flutter/flutter/issues/72009
 [Pigeon]: {{site.pub}}/packages/pigeon
 [platform channels]: /docs/development/platform-integration/platform-channels
+[platform views]: /docs/development/platform-integration/platform-views
 [Android API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/engine/FlutterEngineGroup.java
 [iOS API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/darwin/ios/framework/Headers/FlutterEngineGroup.h
