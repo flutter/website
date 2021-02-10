@@ -17,7 +17,7 @@ and you don’t need a browser plug-in.
 {{site.alert.end}}
 
 {{site.alert.warning}}
-  **Hot reload not still supported**
+  **Hot reload not supported**
   As of beta, only **hot restart** is supported on the web
   **hot reload** is not supported.
 {{site.alert.end}}
