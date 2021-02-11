@@ -216,10 +216,10 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.white;
               }),
-              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.blue;
               }),
             ),
@@ -473,10 +473,10 @@ screen only when the form is completely filled in:
 ...
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+    foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
       return states.contains(MaterialState.disabled) ? null : Colors.white;
     }),
-    backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+    backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
       return states.contains(MaterialState.disabled) ? null : Colors.blue;
     }),
   ),
@@ -914,10 +914,10 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.white;
               }),
-              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.blue;
               }),
             ),
