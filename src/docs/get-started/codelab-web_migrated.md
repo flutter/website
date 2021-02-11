@@ -706,6 +706,10 @@ area. The animation has the following behavior:
 <li markdown="1">Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
+{%- comment %}
+TODO Replace _Tween by ColorTween when LinearProgressIndicator supports Animation<Color?>.
+{% endcomment -%}
+
 <!--skip-->
 ```dart
 class AnimatedProgressIndicator extends StatefulWidget {
@@ -734,15 +738,15 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 
     var colorTween = TweenSequence([
       TweenSequenceItem(
-        tween: ColorTween(begin: Colors.red, end: Colors.orange),
+        tween: _Tween(begin: Colors.red, end: Colors.orange),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
+        tween: _Tween(begin: Colors.orange, end: Colors.yellow),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: ColorTween(begin: Colors.yellow, end: Colors.green),
+        tween: _Tween(begin: Colors.yellow, end: Colors.green),
         weight: 1,
       ),
     ]);
@@ -768,6 +772,13 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       ),
     );
   }
+}
+
+class _Tween extends Tween<Color> {
+  _Tween({ required Color begin, required Color end }) : super(begin: begin, end: end);
+
+  @override
+  Color lerp(double t) => Color.lerp(begin, end, t) ?? Colors.transparent;
 }
 ```
 
@@ -960,15 +971,15 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 
     var colorTween = TweenSequence([
       TweenSequenceItem(
-        tween: ColorTween(begin: Colors.red, end: Colors.orange),
+        tween: _Tween(begin: Colors.red, end: Colors.orange),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
+        tween: _Tween(begin: Colors.orange, end: Colors.yellow),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: ColorTween(begin: Colors.yellow, end: Colors.green),
+        tween: _Tween(begin: Colors.yellow, end: Colors.green),
         weight: 1,
       ),
     ]);
@@ -993,6 +1004,13 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       ),
     );
   }
+}
+
+class _Tween extends Tween<Color> {
+  _Tween({ required Color begin, required Color end }) : super(begin: begin, end: end);
+
+  @override
+  Color lerp(double t) => Color.lerp(begin, end, t) ?? Colors.transparent;
 }
 ```
 
