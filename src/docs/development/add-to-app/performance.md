@@ -134,7 +134,7 @@ The most relevant choice for add-to-app scenarios is for you
 to decide when to pre-load a `FlutterEngine`
 (that is, to load the Flutter library, start the Dart VM,
 and run entrypoint in an isolate), and what the memory and latency
-cost is of that pre-warm. You also need to know how the pre-warm 
+cost is of that pre-warm. You also need to know how the pre-warm
 affects the memory and latency cost of rendering a first Flutter
 frame when the UI component is subsequently attached
 to that `FlutterEngine`.
@@ -195,6 +195,8 @@ When the Flutter UI component is released, the UI-related memory is freed.
 This doesn't affect the Flutter state, which lives in the `FlutterEngine`
 (unless the `FlutterEngine` is also released).
 
+For performance details on creating more than one `FlutterEngine`, see
+[multiple Flutters][].
 
 [android-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [auxiliary threads]: {{site.github}}/flutter/flutter/wiki/The-Engine-architecture#threading
