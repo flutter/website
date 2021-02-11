@@ -32,11 +32,9 @@ In this recipe, learn how to report errors to the
 the following steps:
 
   1. Get a DSN from Sentry.
-  2. Import the Sentry package.
-  3. Create a `SentryClient`.
-  4. Create a function to report errors.
-  5. Catch and report Dart errors.
-  6. Catch and report Flutter errors.
+  2. Import the Flutter Sentry package
+  3. Initialize the Sentry SDK
+  4. Capture errors programmatically
 
 ## 1. Get a DSN from Sentry
 
@@ -47,138 +45,65 @@ To get a DSN, use the following steps:
 
   1. [Create an account with Sentry][].
   2. Log in to the account.
-  3. Create a new app.
-  4. Copy the DSN.
+  3. Create a new Flutter project.
+  4. Copy the code snippet that includes the DSN.
 
 ## 2. Import the Sentry package
 
-Import the [`sentry`][] package into the app.
+Import the [`sentry_flutter`][] package into the app.
 The sentry package makes it easier to send
 error reports to the Sentry error tracking service.
 
 ```yaml
 dependencies:
-  sentry: <latest_version>
+  sentry_flutter: <latest_version>
 ```
 
-## 3. Create a `SentryClient`
+## 3. Initialize the Sentry SDK
 
-Create a `SentryClient`. Use the `SentryClient` to send
-error reports to the sentry service.
+Initialize the SDK to capture different unhandled errors automatically:
 
 <!-- skip -->
 ```dart
-final SentryClient _sentry = SentryClient(dsn: "App DSN goes Here");
-```
+import 'package:flutter/widgets.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
-## 4. Create a function to report errors
-
-With Sentry set up, you can begin to report errors. Since you don't want to
-report errors to Sentry during development, first create a function that
-lets you know whether you're in debug or production mode.
-
-<!-- skip -->
-```dart
-bool get isInDebugMode {
-  // Assume you're in production mode.
-  bool inDebugMode = false;
-
-  // Assert expressions are only evaluated during development. They are ignored
-  // in production. Therefore, this code only sets `inDebugMode` to true
-  // in a development environment.
-  assert(inDebugMode = true);
-
-  return inDebugMode;
+Future<void> main() async {
+  await SentryFlutter.init(
+    (options) => options.dsn = 'https://example@sentry.io/example',
+    appRunner: () => runApp(MyApp()),
+  );
 }
 ```
 
-Next, use this function in combination with the `SentryClient` to report
-errors when the app is in production mode.
+Alternatively, you can pass the DSN to Flutter using the `dart-define` tag:
+
+<!-- skip -->
+```sh
+--dart-define SENTRY_DSN=https://example@sentry.io/example
+```
+
+### What does that give me?
+
+This is all you need for Sentry to capture unhandled errors in Dart and native layers.  
+This includes Swift, Objective-C, C, and C++ on iOS, and Java, Kotlin, C, and C++ on Android.
+
+## 4. Capture errors programatically
+
+Besides the automatic error reporting that Sentry generates by
+importing and initializing the SDK,
+you can use the API to report errors to Sentry:
 
 <!-- skip -->
 ```dart
-Future<void> _reportError(dynamic error, dynamic stackTrace) async {
-  // Print the exception to the console.
-  print('Caught error: $error');
-  if (isInDebugMode) {
-    // Print the full stacktrace in debug mode.
-    print(stackTrace);
-  } else {
-    // Send the Exception and Stacktrace to Sentry in Production mode.
-    _sentry.captureException(
-      exception: error,
-      stackTrace: stackTrace,
-    );
-  }
-}
+await Sentry.captureException(exception, stackTrace: stackTrace);
 ```
 
-## 5. Catch and report Dart errors
+The complete API is available on [pub.dev][].
 
-Now that you have a function to report errors depending on the environment,
-you need a way to capture Dart errors.
+## Learn more
 
-For this task, run your app inside a custom [`Zone`][].
-Zones establish an execution context for the code.
-This provides a convenient way to capture all errors
-that occur within that context by providing an `onError()`
-function.
-
-In this case, run the app in a new `Zone` and capture all errors.
-With Flutter older than 1.17, you can do that by
-providing an `onError()` callback.
-
-<!-- skip -->
-```dart
-runZoned<Future<void>>(() async {
-  runApp(CrashyApp());
-}, onError: (error, stackTrace) {
-  // Whenever an error occurs, call the `_reportError` function. This sends
-  // Dart errors to the dev console or Sentry depending on the environment.
-  _reportError(error, stackTrace);
-});
-```
-
-With Flutter 1.17 which includes Dart 2.8, use `runZonedGuarded` instead:
-
-<!-- skip -->
-```dart
-runZonedGuarded<Future<void>>(() async {
-  runApp(CrashyApp());
-}, (Object error, StackTrace stackTrace) {
-  // Whenever an error occurs, call the `_reportError` function. This sends
-  // Dart errors to the dev console or Sentry depending on the environment.
-  _reportError(error, stackTrace);
-});
-```
-
-## 6. Catch and report Flutter errors
-
-In addition to Dart errors, Flutter can throw errors such as
-platform exceptions that occur when calling native code. Be sure to
-capture and report these types of errors as well.
-
-To capture Flutter errors,
-override the [`FlutterError.onError`][] property.
-If you're in debug mode, use a convenience function
-from Flutter to properly format the error.
-If you're in production mode, send the error to the
-`onError` callback defined in the previous step.
-
-<!-- skip -->
-```dart
-// This captures errors reported by the Flutter framework.
-FlutterError.onError = (FlutterErrorDetails details) {
-  if (isInDebugMode) {
-    // In development mode, simply print to console.
-    FlutterError.dumpErrorToConsole(details);
-  } else {
-    // In production mode, report to the application zone to report to
-    // Sentry.
-    Zone.current.handleUncaughtError(details.exception, details.stack);
-  }
-};
-```
+Extensive documentation about using the Sentry SDK can be found on [Sentry's site][].
 
 ## Complete example
 
@@ -188,8 +113,8 @@ see the [Crashy][] example app.
 
 [Crashy]: {{site.github}}/flutter/crashy
 [Create an account with Sentry]: https://sentry.io/signup/
-[`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/
-[`sentry`]: {{site.pub-pkg}}/sentry
-[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
+[`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
+[pub.dev]: {{site.pub-pkg}}/documentation/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
+[Sentry's site]: https://docs.sentry.io/platforms/flutter/
