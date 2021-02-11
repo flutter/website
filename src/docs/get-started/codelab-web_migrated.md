@@ -137,7 +137,7 @@ and the web server when you want to test on other browsers.
 <li markdown="1">The starting app is displayed in the following DartPad.
 
 <!-- skip -->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(SignUpApp());
@@ -802,7 +802,7 @@ the animation works, and that clicking the
 ### Complete sample
 
 <!-- skip -->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(SignUpApp());
