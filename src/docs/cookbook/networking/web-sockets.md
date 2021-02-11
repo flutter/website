@@ -123,7 +123,7 @@ class MyApp extends StatelessWidget {
       title: title,
       home: MyHomePage(
         title: title,
-        channel: IOWebSocketChannel.connect('ws://echo.websocket.org'),
+        channel: IOWebSocketChannel.connect('wss://echo.websocket.org'),
       ),
     );
   }
