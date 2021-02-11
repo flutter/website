@@ -72,7 +72,7 @@ The reverse [detachFromFlutterEngine]({{site.api}}/javadoc/io/flutter/embedding/
 class must also be called to not leak resources when the FlutterView or Activity
 is no longer visible.
 
-In addition, see the remaining implementation in the [FlutterViewEngine]({{site.api}}/flutter/samples/blob/master/add_to_app/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
+In addition, see the remaining implementation in the [FlutterViewEngine]({{site.github}}/flutter/samples/blob/master/add_to_app/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
 demo class or in the [FlutterActivityAndFragmentDelegate](https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/android/FlutterActivityAndFragmentDelegate.java)
 to ensure a correct functioning of other features such as clipboards, system
 UI overlay, plugins etc.

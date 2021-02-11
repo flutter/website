@@ -804,6 +804,6 @@ DispatchQueue.main.async {
 [the main thread]: {{site.apple-dev}}/documentation/uikit?language=objc
 [the UI thread]: {{site.android-dev}}/guide/components/processes-and-threads#Threads
 [using packages]: /docs/development/packages-and-plugins/using-packages
-[Pigeon]: {{site.pub}}/packages/pigeon
-[Pigeon pub.dev page]: {{site.pub}}/packages/pigeon
+[Pigeon]: {{site.pub-pkg}}/pigeon
+[Pigeon pub.dev page]: {{site.pub-pkg}}/pigeon
 [sending structured typesafe messages]: #pigeon

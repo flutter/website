@@ -516,7 +516,7 @@ see the following resources:
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [Federated Plugin proposal]: /go/federated-plugins
 [Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
-[How to write a Flutter web plugin, part 2]: {{site.medium}}/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[How to write a Flutter web plugin, part 2]: {{site.medium-flutter}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
 
 ## Samples and codelabs

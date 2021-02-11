@@ -37,7 +37,7 @@ description: Flutter metrics, and which tools and APIs are used to get them
     and [flutter_gallery_ios][] tests.
   * See [metrics][size_perf] in the dashboard.
   * For info on how to measure the size more accurately,
-    see the page on [app-size](/docs/perf/app-size).
+    see the [app size](/docs/perf/app-size) page.
 
 For a complete list of performance metrics Flutter measures per commit, visit 
 the following sites, click **Query**, and filter the **test** and 
