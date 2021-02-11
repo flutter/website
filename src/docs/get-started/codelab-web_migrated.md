@@ -349,10 +349,14 @@ Fix the error reported by the analyzer that `_showWelcomeScreen`
 is not defined. Directly above the `build()` method,
 add the following function:
 
+{%- comment %}
+TODO Remove `!` when no longer necessary
+{% endcomment -%}
+
 <!-- skip -->
 ```dart
 void _showWelcomeScreen() {
-  Navigator.of(context).pushNamed('/welcome');
+  Navigator.of(context)!.pushNamed('/welcome');
 }
 ```
 </li>
@@ -879,7 +883,7 @@ class _SignUpFormState extends State<SignUpForm> {
   }
 
   void _showWelcomeScreen() {
-    Navigator.of(context).pushNamed('/welcome');
+    Navigator.of(context)!.pushNamed('/welcome');
   }
 
   @override
