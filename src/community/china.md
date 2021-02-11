@@ -4,7 +4,7 @@ description: Where to find a version of the Flutter site that is localized to Si
 toc: true
 ---
 
-{% assign path = 'flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip' -%}
+{% assign path = 'flutter_infra_release/releases/stable/windows/flutter_windows_v1.0.0-stable.zip' -%}
 
 The Flutter community has made a Simplified Chinese version of the
 Flutter website available at

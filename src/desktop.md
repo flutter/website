@@ -7,7 +7,7 @@ toc: true
 Desktop support allows you to compile Flutter source code
 to a native Windows, macOS, or Linux desktop app. Flutter's desktop
 support also extends to plugins&mdash;you can install 
-existing plugins that support the macOS or Linux platforms,
+existing plugins that support the Windows, macOS, or Linux platforms,
 or you can create your own.
 
 {{site.alert.warning}}
@@ -154,8 +154,8 @@ $ flutter devices
 1 connected device:
 
 Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.18362.1082]
-macOS (desktop) • macos • darwin-x64 • Mac OS X 10.15.5 19F101
-Linux (desktop) • linux • linux-x64 • Linux
+macOS (desktop)   • macos   • darwin-x64  • macOS 11.2 20D64 darwin-x64
+Linux (desktop)   • linux   • linux-x64   • Linux
 ```
 
 You might also run `flutter doctor` to see if there are
@@ -172,11 +172,12 @@ the following on Windows:
 On macOS, you might see something like the following:
 
 ```terminal
-[✓] Flutter (Channel master, 1.18.0-10.0.pre, on Mac OS X 10.15.4 19E287, locale
-    en-US)
-[✓] Xcode - develop for iOS and macOS (Xcode 11.2)
+[✓] Flutter (Channel dev, 1.26.0-17.2.pre, on macOS 11.2 20D64 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
+[✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
-[✓] VS Code (version 1.44.2)
+[✓] Android Studio (version 4.0)
+[✓] VS Code (version 1.53.0)
 [✓] Connected device (3 available)
 ```
 
@@ -191,7 +192,7 @@ $ flutter doctor
 ```
 
 If `flutter doctor` finds problems for a platform you don't
-support, you can ignore those warnings. You don't have
+want to develop for, you can ignore those warnings. You don't have
 to install Android Studio and the Android SDK,
 for example, if you're writing a Linux desktop app.
 
@@ -276,6 +277,27 @@ here is some information about how to use the current
 build output on other machines for testing purposes.
 
 #### Windows
+
+For building Windows executables, you can either use tooling to construct an
+MSIX installer, or you can build your own zip file that collects
+the components together.
+
+##### MSIX Packaging
+
+[MSIX][] is Microsoft's Windows app package format that provides a modern 
+packaging experience to all Windows apps. This format can either be used 
+to ship applications to Microsoft's Windows Apps store, or distribute 
+application installers directly.
+
+The easiest way to create an MSIX distribution for a Flutter project is to use
+the [`msix` pub package][msix package]. For an example of using the `msix` package
+from a Flutter desktop app, see the [Desktop Photo Search sample][].
+
+[MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
+[msix package]: {{site.pub}}/packages/msix
+[Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
+
+##### Building your own zip file for Windows
 
 The executable can be found in your project under
 `build\windows\runner\<build mode>\`.

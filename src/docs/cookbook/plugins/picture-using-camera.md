@@ -245,8 +245,6 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart' show join;
-import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
   // Ensure that plugin services are initialized so that `availableCameras()`
@@ -339,23 +337,19 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             // Ensure that the camera is initialized.
             await _initializeControllerFuture;
 
-            // Construct the path where the image should be saved using the
-            // pattern package.
-            final path = join(
-              // Store the picture in the temp directory.
-              // Find the temp directory using the `path_provider` plugin.
-              (await getTemporaryDirectory()).path,
-              '${DateTime.now()}.png',
-            );
-
-            // Attempt to take a picture and log where it's been saved.
-            await _controller.takePicture(path);
+            // Attempt to take a picture and get the file `image`
+            // where it was saved.
+            final image = await _controller.takePicture();
 
             // If the picture was taken, display it on a new screen.
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => DisplayPictureScreen(imagePath: path),
+                builder: (context) => DisplayPictureScreen(
+                  // Pass the automatically generated path to
+                  // the DisplayPictureScreen widget.
+                  imagePath: image?.path,
+                ),
               ),
             );
           } catch (e) {
