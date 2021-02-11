@@ -727,9 +727,9 @@ class AnimatedProgressIndicator extends StatefulWidget {
 
 class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<Color> _colorAnimation;
-  Animation<double> _curveAnimation;
+  late AnimationController _controller;
+  late Animation<Color> _colorAnimation;
+  late Animation<double> _curveAnimation;
 
   void initState() {
     super.initState();
@@ -960,9 +960,9 @@ class AnimatedProgressIndicator extends StatefulWidget {
 
 class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<Color> _colorAnimation;
-  Animation<double> _curveAnimation;
+  late AnimationController _controller;
+  late Animation<Color> _colorAnimation;
+  late Animation<double> _curveAnimation;
 
   void initState() {
     super.initState();
