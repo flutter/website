@@ -465,6 +465,7 @@ updated to work for desktop apps:
 * [`url_launcher`][]
 * [`shared_preferences`][]
 * [`path_provider`][]
+* [`file_selector`][]
 
 Use the following links to find all packages on pub.dev
 that support desktop apps. These links lists _all_ packages,
@@ -477,6 +478,7 @@ or _plugins_, provide an interface to platform-specific services.)
 
 [Linux packages]: {{site.pub}}/flutter/packages?platform=linux
 [macOS packages]: {{site.pub}}/flutter/packages?platform=macos
+[`file_selector`]: {{site.pub}}/packages/file_selector
 [`path_provider`]: {{site.pub}}/packages/path_provider
 [`shared_preferences`]: {{site.pub}}/packages/shared_preferences
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
