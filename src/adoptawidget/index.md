@@ -21,7 +21,7 @@ similar in the future, so stay tuned!
 
 ## Contributions
 
-(Updated 12/02/2021)
+(Updated Feb 12, 2021)
 
 - [Chinmay-KB](https://github.com/Chinmay-KB) contributed to the [WillPopScope docs](https://master-api.flutter.dev/flutter/widgets/WillPopScope-class.html) ([pull request](https://github.com/flutter/flutter/pull/69563))
 - [chihempat](https://github.com/chihempat) contributed to the [SliverWithKeepAliveWidget docs](https://master-api.flutter.dev/flutter/widgets/SliverWithKeepAliveWidget-class.html) ([pull request](https://github.com/flutter/flutter/pull/69557))
