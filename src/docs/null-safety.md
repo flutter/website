@@ -61,7 +61,7 @@ check out these pages:
 
 Not all parts of the Flutter SDK support null safety yet,
 as some parts still need additional work to
-[migrate to null safety](https://dart.dev/null-safety/migration-guide).
+[migrate to null safety]({{site.dart-site}}/null-safety/migration-guide).
 
 We're currently aware of the following issues:
 
