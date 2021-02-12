@@ -72,6 +72,9 @@ We're currently aware of the following issues:
   * Integration testing with
     [`flutter_driver`](/docs/cookbook/testing/integration/introduction)
     currently does not support null safety.
+    
+  * Depending on `flutter_driver` will limit your ability to pick up some
+    already migrated dependencies such as `args`, `archive`, and `crypto`.
 
 [Migrating to null safety]: {{site.dart-site}}/null-safety/migration-guide
 [FAQ]: {{site.dart-site}}/null-safety/faq
