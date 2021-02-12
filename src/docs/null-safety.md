@@ -67,7 +67,7 @@ We're currently aware of the following issues:
 
   * Migration of the pub.dev packages owned by the Flutter team
     is in progress. See pub.dev for
-    [the current list](https://pub.dev/packages?q=publisher%3Aflutter.dev&null-safe=1).
+    [the current list]({{site.pub}}/packages?q=publisher%3Aflutter.dev&null-safe=1).
 
   * Integration testing with
     [`flutter_driver`](/docs/cookbook/testing/integration/introduction)
