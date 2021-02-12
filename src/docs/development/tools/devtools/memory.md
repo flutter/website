@@ -187,7 +187,7 @@ For more information, see [Dart VM internals][vm].
 
 ## Memory android chart (ADB)
 
-When connected to an Android app, DevTools collects Android's ADB (Android Debug Bridge) meminfo from an ADB app summary (polled every 500 ms).  This meminfo section is the most interesting at a high-level.  If you were to collect this info from the the ADB tool, this is what it would look like:
+When connected to an Android app, DevTools collects Android's ADB (Android Debug Bridge) meminfo from an ADB app summary (polled every 500 ms).  This meminfo section is the most interesting at a high-level.  If you were to collect this info from the ADB tool, this is what it would look like:
 ```
 > adb shell dumpsys meminfo io.flutter.demo.gallery -d
 
@@ -397,4 +397,4 @@ understand how your application uses memory.
 [release mode]: /docs/testing/build-modes#release
 [debug mode]: /docs/testing/build-modes#debug
 [Don't Fear the Garbage Collector]: {{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
-[case_study]: https://github.com/flutter/devtools/tree/master/case_study/memory_leaks/images_1
+[case_study]: {{site.github}}/flutter/devtools/tree/master/case_study/memory_leaks/images_1

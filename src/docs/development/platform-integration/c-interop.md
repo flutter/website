@@ -427,6 +427,6 @@ When creating a release archive (IPA) the symbols are stripped by Xcode.
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 [ffi issue]: {{site.github}}/dart-lang/sdk/issues/34452
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
-[Flutter macOS Desktop]: https://flutter.dev/desktop
-[Android guidelines]: https://developer.android.com/topic/performance/reduce-apk-size#extract-false
+[Flutter macOS Desktop]: /desktop
+[Android guidelines]: {{site.android-dev}}/topic/performance/reduce-apk-size#extract-false
 

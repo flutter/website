@@ -376,8 +376,8 @@ Such as
 [add-to-app]: /docs/development/add-to-app
 [#65451]: {{site.github}}/flutter/flutter/issues/65451
 [#71098]: {{site.github}}/flutter/flutter/issues/71098
-[official Apple documentation]: https://developer.apple.com/documentation/app_clips/creating_an_app_clip_with_xcode#3604097
+[official Apple documentation]: {{site.apple-dev}}/documentation/app_clips/creating_an_app_clip_with_xcode#3604097
 [iOS add-to-app APIs]: /docs/development/add-to-app/ios/add-flutter-screen
 [custom Flutter route]: /docs/development/add-to-app/ios/add-flutter-screen#route
 [App Clip sample]: {{site.github}}/flutter/samples/tree/master/ios_app_clip
-[Testing Your App Clip's Launch Experience]: https://developer.apple.com/documentation/app_clips/testing_your_app_clip_s_launch_experience
+[Testing Your App Clip's Launch Experience]: {{site.apple-dev}}/documentation/app_clips/testing_your_app_clip_s_launch_experience

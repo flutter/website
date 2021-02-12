@@ -4,9 +4,10 @@ description: What are the steps involved when showing a Flutter UI.
 ---
 
 This page describes the breakdown of the steps involved
-to show a Flutter UI. Knowing this, you can make better, informed decisions
-about when to pre-warm the Flutter engine, which operations are possible
-at which stage, and the latency and memory costs of those operations.
+to show a Flutter UI. Knowing this, you can make better,
+more informed decisions about when to pre-warm the Flutter engine,
+which operations are possible at which stage,
+and the latency and memory costs of those operations.
 
 ## Loading Flutter
 
@@ -21,7 +22,7 @@ Flutter's engine runtime and your application's compiled
 Dart code are both bundled as shared libraries on Android
 and iOS. The first step of loading Flutter is to find those
 resources in your .apk/.ipa/.app (along with other Flutter
-assets such as images, fonts, and JIT code if applicable).
+assets such as images, fonts, and JIT code, if applicable).
 
 This happens when you construct a `FlutterEngine` for the
 first time on both **[Android][android-engine]**
@@ -199,8 +200,8 @@ For performance details on creating more than one `FlutterEngine`, see
 
 [android-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [auxiliary threads]: {{site.github}}/flutter/flutter/wiki/The-Engine-architecture#threading
-[CAEAGLLayer]: https://developer.apple.com/documentation/quartzcore/caeagllayer
-[CAMetalLayer]: https://developer.apple.com/documentation/quartzcore/cametallayer
+[CAEAGLLayer]: {{site.apple-dev}}/documentation/quartzcore/caeagllayer
+[CAMetalLayer]: {{site.apple-dev}}/documentation/quartzcore/cametallayer
 [Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html
 [Dart SDK]: {{site.dart-site}}/tools/sdk
 [`DartExecutor.executeDartEntrypoint()`]: {{site.api}}/javadoc/io/flutter/embedding/engine/dart/DartExecutor.html#executeDartEntrypoint-io.flutter.embedding.engine.dart.DartExecutor.DartEntrypoint-
@@ -209,12 +210,11 @@ For performance details on creating more than one `FlutterEngine`, see
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [`FlutterViewController initWithProject: nibName: bundle:`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithProject:nibName:bundle:
 [`initWithEngine: nibName: bundle:`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithEngine:nibName:bundle:
-[`Intent`]: https://developer.android.com/reference/android/content/Intent.html
+[`Intent`]: {{site.android-dev}}/reference/android/content/Intent.html
 [ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
 [`Layer`]: {{site.api}}/flutter/rendering/Layer-class.html
 [`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [`runWithEntrypoint:`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:
 [snapshot]: {{site.github}}/dart-lang/sdk/wiki/Snapshots
-[`startActivity()`]: https://developer.android.com/reference/android/content/Context.html#startActivity(android.content.Intent
-[`Surface`]: https://developer.android.com/reference/android/view/Surface
-[multiple Flutters]: /docs/development/add-to-app/multiple-flutters
+[`startActivity()`]: {{site.android-dev}}/reference/android/content/Context.html#startActivity(android.content.Intent
+[`Surface`]: {{site.android-dev}}/reference/android/view/Surface

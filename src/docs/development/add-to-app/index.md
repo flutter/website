@@ -133,7 +133,7 @@ see our API usage guides at the following links:
 
 
 [add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
-[Android Archive (AAR)]: https://developer.android.com/studio/projects/android-library
+[Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
 [Android plugin APIs]: /docs/development/packages-and-plugins/plugin-api-migration
 [Flutter plugins]: {{site.pub}}/flutter
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
@@ -143,7 +143,7 @@ see our API usage guides at the following links:
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
-[iOS Framework]: https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
+[iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
 [maintained by the Flutter team]: {{site.github}}/flutter/plugins/tree/master/packages
 [migrated to the V2 plugins APIs]: /docs/development/packages-and-plugins/plugin-api-migration
 [multiple Flutters]: /docs/development/add-to-app/multiple-flutters

@@ -74,7 +74,7 @@ you need the following in addition to the Flutter SDK:
 * [CocoaPods][] if you use plugins
 
 [CocoaPods]: https://cocoapods.org/
-[Xcode]: https://developer.apple.com/xcode/
+[Xcode]: {{site.apple-dev}}/xcode/
 
 ### Additional Linux requirements
 
@@ -421,9 +421,9 @@ For more information on these topics,
 see [App Sandbox][] and [Entitlements][]
 on the Apple Developer site.
 
-[App Sandbox]: https://developer.apple.com/documentation/security/app_sandbox
-[App Store]: https://developer.apple.com/app-store/submissions/
-[Entitlements]: https://developer.apple.com/documentation/bundleresources/entitlements
+[App Sandbox]: {{site.apple-dev}}/documentation/security/app_sandbox
+[App Store]: {{site.apple-dev}}/app-store/submissions/
+[Entitlements]: {{site.apple-dev}}/documentation/bundleresources/entitlements
 [`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 
 ### Hardened runtime
@@ -516,7 +516,7 @@ see the following resources:
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [Federated Plugin proposal]: /go/federated-plugins
 [Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
-[How to write a Flutter web plugin, part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
 
 ## Samples and codelabs

@@ -5,12 +5,13 @@ description: AlertDialog should scroll automatically when it overflows.
 
 ## Summary
 
-{{{site.alert.note}}
+{{site.alert.note}}
   `AlertDialog.scrollable` is no longer deprecated because there is
   no backwards-compatible way to make `AlertDialog` scrollable by default.
   Instead, the parameter will remain and you can set `scrollable`
   to true if you want a scrollable `AlertDialog`.
 {{site.alert.end}}
+
 An `AlertDialog` now scrolls automatically when it overflows.
 
 ## Context
