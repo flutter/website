@@ -323,7 +323,7 @@ and the other DLLs, and bundle them together in a zip file.
 
 The `.app` is self-contained, and can be distributed as-is. However, you should 
 read through the [macOS-specific support](#macos-specific-support) section below
-to understand about how Entitlements, the App Sandbox, and the Hardened Runtime
+to understand about how entitlements, the App Sandbox, and the Hardened Runtime
 impact your distributable application.
 
 #### Linux
