@@ -7,6 +7,30 @@ Flutter supports using shared packages contributed by other developers
 to the Flutter and Dart ecosystems. This allows quickly building
 an app without having to develop everything from scratch.
 
+{{site.alert.secondary}}
+  **What is the difference between a Flutter package
+  and a plugin?** Actually, a plugin is a _type_ of
+  package&mdash;the full designation is "plugin package",
+  which is generally shortened to "plugin".
+
+  **Packages**
+  : A package contains shared and reusable code and includes a list of
+    dependencies (specified in the `pubspec.yml` file), and (optionally)
+    Dart libraries, apps, resources, tests, images, and examples.
+    The [pub][] site lists many packages developed by Google engineers
+    and other generous members of the Flutter and Dart community
+    that you can use in your app.
+
+  **Plugins**
+  : A plugin package is a special kind of package that makes
+    platform functionality available to the app.
+    Plugin packages can be written for Android (using Kotlin or Java),
+    iOS (using Swift or Objective-C), web, macOS, Windows, or Linux,
+    or any combination thereof.
+    An example of a plugin might provide the Flutter app
+    with the ability to access a device's camera.
+{{site.alert.end}}
+
 Existing packages enable many use cases for example,
 making network requests ([`http`][]),
 custom navigation/route handling ([`fluro`][]),
@@ -27,21 +51,21 @@ existing published packages.
 
 ### Searching for packages
 
-Packages are published to [pub.dev][].
+Packages are published to the [pub][] site.
 
-The [Flutter landing page][] on pub.dev displays
+The [Flutter landing page][] on [pub][] displays
 top packages that are compatible with Flutter
 (those that declare dependencies generally compatible with Flutter),
 and supports searching among all published packages.
 
-The [Flutter Favorites][] page on pub.dev lists
+The [Flutter Favorites][] page on [pub][] lists
 the plugins and packages that have been identified as
 packages you should first consider using when writing
 your app. For more information on what it means to
 be a Flutter Favorite, see the
 [Flutter Favorites program][].
 
-You can also browse the packages on pub.dev by filtering
+You can also browse the packages on the pub site by filtering
 on [Android plugins][], [iOS plugins][], [web plugins][],
 or any combination thereof.
 
@@ -73,7 +97,7 @@ To add the package, `css_colors`, to an app:
      errors like `MissingPluginException` when using the package.
 
 The [Installing tab][],
-available on any package page on pub.dev,
+available on any package page on pub,
 is a handy reference for these steps.
 
 For a complete example,
@@ -208,7 +232,7 @@ which both update Flutter itself.
 
 ### Dependencies on unpublished packages
 
-Packages can be used even when not published on pub.dev.
+Packages can be used even when not published on the pub site.
 For private plugins, or for packages not ready for publishing,
 additional dependency options are available:
 
@@ -238,7 +262,7 @@ additional dependency options are available:
   ```
 
 **Git dependency on a package in a folder**
-: The pub tool assumes the package is located in
+: The `pub` tool assumes the package is located in
   the root of the Git repository. If that is not
   the case, specify the location with the `path` argument.
   For example:
@@ -279,7 +303,8 @@ To use this package:
      css_colors: ^1.0.0
    ```
 
-1. Run `flutter pub get` in the terminal, or click **Packages get** in
+1. Run `flutter pub get` in the terminal,
+   or click **Packages get** in
    IntelliJ or Android Studio.
 
 1. Open `lib/main.dart` and replace its full contents with:
@@ -404,7 +429,7 @@ To use this plugin:
 [lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
 [Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
 [package versioning guide]: {{site.dart-site}}/tools/pub/versioning
-[pub.dev]: {{site.pub}}
+[pub]: {{site.pub}}
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
 [version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
