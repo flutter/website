@@ -21,7 +21,7 @@ similar in the future, so stay tuned!
 
 ## Contributions
 
-(Updated 10/11/2020)
+(Updated Feb 12, 2021)
 
 - [Chinmay-KB](https://github.com/Chinmay-KB) contributed to the [WillPopScope docs](https://master-api.flutter.dev/flutter/widgets/WillPopScope-class.html) ([pull request](https://github.com/flutter/flutter/pull/69563))
 - [chihempat](https://github.com/chihempat) contributed to the [SliverWithKeepAliveWidget docs](https://master-api.flutter.dev/flutter/widgets/SliverWithKeepAliveWidget-class.html) ([pull request](https://github.com/flutter/flutter/pull/69557))
@@ -37,6 +37,7 @@ similar in the future, so stay tuned!
 - [redsolver](https://github.com/redsolver) contributed to the [Table docs](https://master-api.flutter.dev/flutter/widgets/Table-class.html) ([pull request](https://github.com/flutter/flutter/pull/69588))
 - [tsvillain](https://github.com/tsvillain) contributed to the [Tooltip](https://master-api.flutter.dev/flutter/material/Tooltip-class.html) ([pull request](https://github.com/flutter/flutter/pull/69518))
 - [Thesmader](https://github.com/Thesmader) contributed to the [SnackBar](https://master-api.flutter.dev/flutter/material/SnackBar-class.html) ([pull request](https://github.com/flutter/flutter/pull/69555))
+- [Abhishek Ghaskata]({{site.github}}/Abhishek01039) contributed to the [Hero]({{site.master-api}}/flutter/widgets/Hero-class.html) ([pull request]({{site.github}}/flutter/flutter/pull/74415))
 
 ## How to contribute {#how-to-contribute}
 
