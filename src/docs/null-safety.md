@@ -35,6 +35,8 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+## Resources
+
 To learn about null safety,
 read these pages:
 
@@ -54,6 +56,22 @@ check out these pages:
   in which only some libraries are null safe.
 * [FAQ][]:
   Questions that have come up during migration to null safety.
+  
+## Known issues
+
+Not all parts of the Flutter SDK support null safety yet,
+as some parts still need additional work to
+[migrate to null safety](https://dart.dev/null-safety/migration-guide).
+
+We're currently aware of the following issues:
+
+  * Migration of the pub.dev packages owned by the Flutter team
+    is in progress. See pub.dev for
+    [the current list](https://pub.dev/packages?q=publisher%3Aflutter.dev&null-safe=1).
+
+  * Integration testing with
+    [`flutter_driver`](https://flutter.dev/docs/cookbook/testing/integration/introduction)
+    currently does not support null safety.
 
 [Migrating to null safety]: {{site.dart-site}}/null-safety/migration-guide
 [FAQ]: {{site.dart-site}}/null-safety/faq
