@@ -70,7 +70,7 @@ We're currently aware of the following issues:
     [the current list](https://pub.dev/packages?q=publisher%3Aflutter.dev&null-safe=1).
 
   * Integration testing with
-    [`flutter_driver`](https://flutter.dev/docs/cookbook/testing/integration/introduction)
+    [`flutter_driver`](/docs/cookbook/testing/integration/introduction)
     currently does not support null safety.
 
 [Migrating to null safety]: {{site.dart-site}}/null-safety/migration-guide
