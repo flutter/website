@@ -1747,7 +1747,7 @@ In a Xamarin.Forms `ListView`,
 you create a `ViewCell` and possibly a `DataTemplateSelector`
 and pass it into the `ListView`, which renders each row with
 what your `DataTemplateSelector` or `ViewCell` returns.
-However, you often have have to make sure you turn on Cell Recycling
+However, you often have to make sure you turn on Cell Recycling
 otherwise you will run into memory issues and slow scrolling speeds.
 
 Due to Flutter's immutable widget pattern, you pass a list of
@@ -2415,7 +2415,7 @@ class SampleApp extends StatelessWidget {
 
 ### How do I access shared preferences or UserDefaults?
 
-Xamarin.Forms developers will likely be familar with the
+Xamarin.Forms developers will likely be familiar with the
 `Xam.Plugins.Settings` plugin.
 
 In Flutter, access equivalent functionality using the
@@ -2460,7 +2460,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Animation & Motion widgets]: /docs/development/ui/widgets/animation
 [Animations overview]: /docs/development/ui/animations
 [Animations tutorial]: /docs/development/ui/animations/tutorial
-[Apple's iOS design language]: https://developer.apple.com/design/resources/
+[Apple's iOS design language]: {{site.apple-dev}}/design/resources/
 [arb]: {{site.github}}/google/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore

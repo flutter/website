@@ -253,7 +253,7 @@ are correct, especially the following:
 
 ## Reviewing the build configuration
 
-Review the default [Gradle build file][gradlebuild] file,
+Review the default [Gradle build file][gradlebuild],
 `build.gradle`, located in `<app dir>/android/app` and
 verify the values are correct, especially the following
 values in the `defaultConfig` block:
