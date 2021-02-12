@@ -1,6 +1,6 @@
 ---
 title: Create an expandable FAB
-description: How to implement a FAB that expands when tapped.
+description: How to implement a FAB that expands to multiple buttons when tapped.
 prev:
   title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input
@@ -12,14 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-{% comment %}
-prev:
-  title: Work with cached images
-  path: /docs/cookbook/images/cached-images
-next:
-  title: Create a horizontal list
-  path: /docs/cookbook/lists/horizontal-list
-{% endcomment %}
+{% include null-safe-recipe.md %}
 
 A Floating Action Button (FAB) is a round button that
 floats near the bottom right of a content area.
@@ -31,17 +24,7 @@ in the following figure. When pressed, this expandable FAB spawns
 multiple, other action buttons. Each button corresponds to one of
 those critical actions.
 
-![pic of a collapsed FAB]({% asset cookbook/effects/expandable-fab_closed.png @path %}){:width="50%"}
-
-![pic of an expanded FAB]({% asset cookbook/effects/expandable-fab_open.png @path %}){:width="50%"}
-
-{% comment %}
-Just putting this here temporarily for reference...
-![Screenshot of a memory anatomy page]({% asset tools/devtools/memory_chart_anatomy.png @path %}){:width="100%"}
-(/images/cookbook/expandable-fab_closed.png){:.site-mobile-screenshot}
-(/images/cookbook/expandable-fab_open.png){:.site-mobile-screenshot}
-{% endcomment %}
-
+![pic of a collapsed FAB]({% asset cookbook/effects/expandable-fab_closed.png @path %}){:width="40%"}   ![pic of an expanded FAB]({% asset cookbook/effects/expandable-fab_open.png @path %}){:width="40%"}
 
 ## Create an ExpandableFab widget
 
@@ -408,7 +391,7 @@ class _ExpandableFabState extends State<ExpandableFab> with SingleTickerProvider
 
 Congratulations! You now have an expandable FAB.
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
