@@ -47,7 +47,6 @@ similar in the future, so stay tuned!
 - [Muskan Jain](https://github.com/Muskan4010) contributed to the [ColorFiltered docs](https://master-api.flutter.dev/flutter/widgets/ColorFiltered-class.html) ([pull request](https://github.com/flutter/flutter/pull/71093))
 - [Sergio Eric](https://github.com/SergioEric) contributed to the [PreferredSizeWidget docs](https://master-api.flutter.dev/flutter/widgets/PreferredSizeWidget-class.html) ([pull request](https://github.com/flutter/flutter/pull/69539))
 
-
 ## How to contribute {#how-to-contribute}
 
 1. Go to [this list of
