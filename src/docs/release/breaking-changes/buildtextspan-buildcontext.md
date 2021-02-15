@@ -27,6 +27,7 @@ Consider the example where we have a `HighlightTextEditingController` that wants
 
 Before this change the controller implementation would look like this:
 
+<!-- skip -->
 ```dart
 class HighlightTextEditingController extends TextEditingController {
   HighlightTextEditingController(this.highlightColor);
@@ -43,6 +44,7 @@ And users of the controller would need to pass the color when creating the contr
 
 With the `BuildContext` parameter available, the `HighlightTextEditingController` can directly access `Theme.accentColor` using `Theme.of(BuildContext)`:
 
+<!-- skip -->
 ```dart
 class HighlightTextEditingController extends TextEditingController {
   @override
