@@ -184,11 +184,14 @@ On macOS, you might see something like the following:
 On Linux, you might see something like the following:
 
 ```terminal
-$ flutter doctor
-[✓] Flutter (Channel master, 1.20.0-1.0.pre.132, on Linux, locale en_US.UTF-8)
+$ flutter doctor 
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✓] Chrome - develop for the web
 [✓] Linux toolchain - develop for Linux desktop
-[✓] VS Code (version 1.33.1)
-[✓] Connected device (1 available)
+[✓] Android Studio
+[✓] Connected device (2 available)
 ```
 
 If `flutter doctor` finds problems for a platform you don't
