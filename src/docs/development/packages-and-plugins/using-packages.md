@@ -25,7 +25,7 @@ an app without having to develop everything from scratch.
   : A plugin package is a special kind of package that makes
     platform functionality available to the app.
     Plugin packages can be written for Android (using Kotlin or Java),
-    iOS (using Swift or Objective-C), web, macOS, Windows, or Linux,
+    iOS (using Swift or Objective-C), web, macOS, Windows, Linux,
     or any combination thereof.
     An example of a plugin might provide the Flutter app
     with the ability to access a device's camera.
