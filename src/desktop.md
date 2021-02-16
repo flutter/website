@@ -344,11 +344,13 @@ run the following command in a terminal from the
 root project directory:
 
 ```terminal
-$ flutter create .
+$ flutter create --platforms=windows,macos,linux .
 ```
 
 This adds the necessary desktop files and directories to your
-existing Flutter project.
+existing Flutter project. To add only specific desktop platforms,
+change the `platforms` list to include only the platform(s) you
+want to add.
 
 ## macOS-specific support
 
