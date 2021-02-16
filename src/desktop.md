@@ -183,7 +183,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 [✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 3.6)
+[✓] Android Studio (version 4.1)
 [✓] VS Code (version 1.53.2)
 [✓] Connected device (3 available)
 ```
