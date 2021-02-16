@@ -180,7 +180,7 @@ On macOS, you might see something like the following:
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
 [✓] Flutter (Channel dev, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0-rc4)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
 [✓] Android Studio (version 3.6)
