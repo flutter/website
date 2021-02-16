@@ -19,7 +19,7 @@ an app without having to develop everything from scratch.
     a package can contain dependencies
     (listed in the pubspec), Dart libraries, apps,
     resources, tests, images, and examples.
-    The [pub.dev][] site lists many packages—developed by Google engineers
+    The [pub][] site lists many packages—developed by Google engineers
     and generous members of the Flutter and Dart community—
     that you can use in your app.
 
