@@ -8,7 +8,7 @@ to the Flutter and Dart ecosystems. This allows quickly building
 an app without having to develop everything from scratch.
 
 {{site.alert.secondary}}
-  **What is the difference between a Flutter package
+  **What is the difference between a package
   and a plugin?** Actually, a plugin is a _type_ of
   package&mdash;the full designation is _plugin package_,
   which is generally shortened to _plugin_.
