@@ -36,6 +36,7 @@ the expanded position, what the maximum distance of each action button is,
 and a list of children. You’ll use the list later to provide
 the other action buttons.
 
+<!--skip-->
 ```dart
 @immutable
 class ExpandableFab extends StatefulWidget {
@@ -71,6 +72,7 @@ these two buttons scale and fade between one another.
 
 Implement the expand and collapse cross-fade between the two different FABs.
 
+<!--skip-->
 ```dart
 class _ExpandableFabState extends State<ExpandableFab> {
   bool _open = false;
@@ -178,6 +180,7 @@ accent color, and the icon color is the theme’s accent icon theme color.
 Define a new stateless widget called `ActionButton` to display
 these round buttons.
 
+<!--skip-->
 ```dart
 @immutable
 class ActionButton extends StatelessWidget {
@@ -213,6 +216,7 @@ class ActionButton extends StatelessWidget {
 Pass a few instances of this new `ActionButton` widget into your
 `ExpandableFab`.
 
+<!--skip-->
 ```dart
 floatingActionButton: ExpandableFab(
  distance: 112.0,
@@ -245,6 +249,7 @@ those (x,y) positions over time.
 Introduce an `AnimationController` and an `Animation` to
 control the rate at which the various `ActionButton`s expand and collapse.
 
+<!--skip-->
 ```dart
 class _ExpandableFabState extends State<ExpandableFab> with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
@@ -289,6 +294,7 @@ class _ExpandableFabState extends State<ExpandableFab> with SingleTickerProvider
 Next, introduce a new stateless widget called `_ExpandingActionButton`,
 and configure this widget to animate and position an individual `ActionButton`. The `ActionButton` is provided as a generic `Widget` called `child`.
 
+<!--skip-->
 ```dart
 @immutable
 class _ExpandingActionButton extends StatelessWidget {
@@ -350,6 +356,7 @@ orchestrates the appearance and disappearance of each
 Finally, use the new `_ExpandingActionButton` widget
 within the `ExpandableFab` to complete the exercise.
 
+<!--skip-->
 ```dart
 class _ExpandableFabState extends State<ExpandableFab> with SingleTickerProviderStateMixin {
 
@@ -391,6 +398,7 @@ class _ExpandableFabState extends State<ExpandableFab> with SingleTickerProvider
 
 Congratulations! You now have an expandable FAB.
 
+<!--skip-->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'dart:math' as math;
 
