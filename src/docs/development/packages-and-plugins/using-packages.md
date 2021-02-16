@@ -27,7 +27,7 @@ an app without having to develop everything from scratch.
     Plugin packages can be written for Android (using Kotlin or Java),
     iOS (using Swift or Objective-C), web, macOS, Windows, Linux,
     or any combination thereof.
-    An example of a plugin might provide the Flutter app
+    For example, a plugin might provide Flutter apps
     with the ability to access a device's camera.
 {{site.alert.end}}
 
