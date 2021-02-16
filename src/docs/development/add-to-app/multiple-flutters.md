@@ -55,11 +55,11 @@ used more liberally in your add-to-app integration.
 
 The primary API for adding multiple Flutter instances on both Android and iOS
 is based on a new `FlutterEngineGroup` class ([Android API][], [iOS API][])
-to construct `FlutterEngines`, rather than the `FlutterEngine`
+to construct `FlutterEngine`s, rather than the `FlutterEngine`
 constructors used previously.
 
 Whereas the `FlutterEngine` API was direct and easier to consume, the
-`FlutterEngines` spawned from the same `FlutterEngineGroup` have the performance
+`FlutterEngine` spawned from the same `FlutterEngineGroup` have the performance
 advantage of sharing many of the common, reusable resources such as the GPU
 context, font metrics, and isolate group snapshot, leading to a faster initial
 rendering latency and lower memory footprint.
@@ -89,7 +89,7 @@ engines. Destroying the `FlutterEngineGroup` doesn't affect existing spawned
 ## Samples
 
 You can find a sample demonstrating how to use `FlutterEngineGroup`
-on both Android and iOS on[GitHub][].
+on both Android and iOS on [GitHub][].
 
 
 {% include app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}
