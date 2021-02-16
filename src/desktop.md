@@ -163,32 +163,42 @@ any unresolved issues. It should look something like
 the following on Windows:
 
 ```terminal
-[✓] Flutter (Channel master, 1.22.0-10.0.pre.196, on Microsoft Windows [Version 10.0.18362.1082], locale en-US)
-[✓] Visual Studio - develop for Windows (Visual Studio Professional 2019 16.6.2)
-[✓] VS Code (version 1.48.2)
-[✓] Connected device (1 available)
+PS > flutter doctor                                                                     
+Doctor summary (to see all details, run flutter doctor -v):                                           
+[√] Flutter (Channel dev, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
+[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)                      
+[√] Chrome - develop for the web                                                                      
+[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.7.7)                         
+[√] Android Studio (version 4.1.0)                                                                    
+[√] VS Code (version 1.51.1)                                                                          
+[√] Connected device (3 available)                                                                    
 ```
 
 On macOS, you might see something like the following:
 
 ```terminal
-[✓] Flutter (Channel dev, 1.26.0-17.2.pre, on macOS 11.2 20D64 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
+$ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 4.0)
-[✓] VS Code (version 1.53.0)
+[✓] Android Studio (version 4.1)
+[✓] VS Code (version 1.53.2)
 [✓] Connected device (3 available)
 ```
 
 On Linux, you might see something like the following:
 
 ```terminal
-$ flutter doctor
-[✓] Flutter (Channel master, 1.20.0-1.0.pre.132, on Linux, locale en_US.UTF-8)
+$ flutter doctor 
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✓] Chrome - develop for the web
 [✓] Linux toolchain - develop for Linux desktop
-[✓] VS Code (version 1.33.1)
-[✓] Connected device (1 available)
+[✓] Android Studio
+[✓] Connected device (2 available)
 ```
 
 If `flutter doctor` finds problems for a platform you don't
