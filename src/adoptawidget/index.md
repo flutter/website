@@ -21,23 +21,31 @@ similar in the future, so stay tuned!
 
 ## Contributions
 
-(Updated Feb 12, 2021)
+(Updated Feb 14, 2021)
 
 - [Chinmay-KB](https://github.com/Chinmay-KB) contributed to the [WillPopScope docs](https://master-api.flutter.dev/flutter/widgets/WillPopScope-class.html) ([pull request](https://github.com/flutter/flutter/pull/69563))
 - [chihempat](https://github.com/chihempat) contributed to the [SliverWithKeepAliveWidget docs](https://master-api.flutter.dev/flutter/widgets/SliverWithKeepAliveWidget-class.html) ([pull request](https://github.com/flutter/flutter/pull/69557))
 - [obitodarky](https://github.com/obitodarky) contributed to the [Stepper docs](https://master-api.flutter.dev/flutter/material/Stepper-class.html) ([pull request](https://github.com/flutter/flutter/pull/70092))
 - [Sameerkash](https://github.com/Sameerkash) found an issue with the [StatusTransitionWidget docs](https://api.flutter.dev/flutter/widgets/StatusTransitionWidget-class.html) ([issue](https://github.com/flutter/flutter/issues/69558))
 - [tadaspetra](https://github.com/tadaspetra) contributed to the [MaterialBanner docs](https://master-api.flutter.dev/flutter/material/MaterialBanner-class.html) ([pull request](https://github.com/flutter/flutter/pull/69530))
+- [IsmailAbdirahman](https://github.com/IsmailAbdirahman) contributed to the [NotificationListener docs](https://master-api.flutter.dev/flutter/widgets/NotificationListener-class.html) ([pull request](https://github.com/flutter/flutter/pull/69524))
+- [Aneesh Rao](https://github.com/sidrao2006) contributed to the [CircularProgressIndicator docs](https://master-api.flutter.dev/flutter/material/CircularProgressIndicator-class.html) ([pull request](https://github.com/flutter/flutter/pull/69498))
+- [Abhishek Ghaskata](https://github.com/Abhishek01039) contributed to the [Hero docs](https://master-api.flutter.dev/flutter/widgets/Hero-class.html) ([pull request](https://github.com/flutter/flutter/pull/74415))
 - [singhsuryanshu](https://github.com/singhsuryanshu) contributed to the [FittedBox docs](https://master-api.flutter.dev/flutter/widgets/FittedBox-class.html) ([pull request](https://github.com/flutter/flutter/pull/69503))
 - [parzuko](https://github.com/parzuko) contributed to the [Draggable docs](https://master-api.flutter.dev/flutter/widgets/Draggable-class.html) ([pull request](https://github.com/flutter/flutter/pull/69527))
+- [Oscar Robles](https://github.com/oroblesr) contributed to the [ActionListener docs](https://master-api.flutter.dev/flutter/widgets/ActionListener-class.html) ([pull request](https://github.com/flutter/flutter/pull/69717))
 - [arps18](https://github.com/arps18) contributed to the [Shortcuts docs](https://master-api.flutter.dev/flutter/widgets/Shortcuts-class.html) ([pull request](https://github.com/flutter/flutter/pull/69568))
+- [Sanjoli Goyal](https://github.com/sanjoli63) contributed to the [ReorderableListView docs](https://master-api.flutter.dev/flutter/material/ReorderableListView-class.html) ([pull request](https://github.com/flutter/flutter/pull/69650))
 - [Amitpatil215](https://github.com/Amitpatil215) contributed to the [AspectRatio docs](https://master-api.flutter.dev/flutter/widgets/AspectRatio-class.html) ([pull request](https://github.com/flutter/flutter/pull/69509))
 - [CaptainIRS](https://github.com/CaptainIRS) contributed to the [AbsorbPointer docs](https://master-api.flutter.dev/flutter/widgets/AbsorbPointer-class.html) ([pull request](https://github.com/flutter/flutter/pull/69521))
+- [Yazeed AlKhalaf](https://github.com/YazeedAlKhalaf) contributed to the [IgnorePointer docs](https://master-api.flutter.dev/flutter/widgets/IgnorePointer-class.html) ([pull request](https://github.com/flutter/flutter/pull/70185))
 - [abd99](https://github.com/abd99) contributed to the [Dismissible docs](https://master-api.flutter.dev/flutter/widgets/Dismissible-class.html) ([pull request](https://github.com/flutter/flutter/pull/69535))
+- [Mitesh Singh](https://github.com/singhmitesh) contributed to the [PageView docs](https://master-api.flutter.dev/flutter/widgets/PageView-class.html) ([pull request](https://github.com/flutter/flutter/pull/71174))
 - [redsolver](https://github.com/redsolver) contributed to the [Table docs](https://master-api.flutter.dev/flutter/widgets/Table-class.html) ([pull request](https://github.com/flutter/flutter/pull/69588))
-- [tsvillain](https://github.com/tsvillain) contributed to the [Tooltip](https://master-api.flutter.dev/flutter/material/Tooltip-class.html) ([pull request](https://github.com/flutter/flutter/pull/69518))
-- [Thesmader](https://github.com/Thesmader) contributed to the [SnackBar](https://master-api.flutter.dev/flutter/material/SnackBar-class.html) ([pull request](https://github.com/flutter/flutter/pull/69555))
-- [Abhishek Ghaskata]({{site.github}}/Abhishek01039) contributed to the [Hero]({{site.master-api}}/flutter/widgets/Hero-class.html) ([pull request]({{site.github}}/flutter/flutter/pull/74415))
+- [tsvillain](https://github.com/tsvillain) contributed to the [Tooltip docs](https://master-api.flutter.dev/flutter/material/Tooltip-class.html) ([pull request](https://github.com/flutter/flutter/pull/69518))
+- [Thesmader](https://github.com/Thesmader) contributed to the [SnackBar docs](https://master-api.flutter.dev/flutter/material/SnackBar-class.html) ([pull request](https://github.com/flutter/flutter/pull/69555))
+- [Muskan Jain](https://github.com/Muskan4010) contributed to the [ColorFiltered docs](https://master-api.flutter.dev/flutter/widgets/ColorFiltered-class.html) ([pull request](https://github.com/flutter/flutter/pull/71093))
+- [Sergio Eric](https://github.com/SergioEric) contributed to the [PreferredSizeWidget docs](https://master-api.flutter.dev/flutter/widgets/PreferredSizeWidget-class.html) ([pull request](https://github.com/flutter/flutter/pull/69539))
 
 ## How to contribute {#how-to-contribute}
 
