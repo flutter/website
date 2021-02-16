@@ -10,8 +10,8 @@ an app without having to develop everything from scratch.
 {{site.alert.secondary}}
   **What is the difference between a Flutter package
   and a plugin?** Actually, a plugin is a _type_ of
-  package&mdash;the full designation is "plugin package",
-  which is generally shortened to "plugin".
+  package&mdash;the full designation is _plugin package_,
+  which is generally shortened to _plugin_.
 
   **Packages**
   : A package contains shared and reusable code and includes a list of
