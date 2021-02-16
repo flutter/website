@@ -14,9 +14,11 @@ an app without having to develop everything from scratch.
   which is generally shortened to _plugin_.
 
   **Packages**
-  : A package contains shared and reusable code and includes a list of
-    dependencies (specified in the `pubspec.yml` file), and (optionally)
-    Dart libraries, apps, resources, tests, images, and examples.
+    : At a minimum, a Dart package is a directory
+    containing a pubspec file. Additionally,
+    a package can contain dependencies
+    (listed in the pubspec), Dart libraries, apps,
+    resources, tests, images, and examples.
     The [pub.dev][] site lists many packages—developed by Google engineers
     and generous members of the Flutter and Dart community—
     that you can use in your app.
