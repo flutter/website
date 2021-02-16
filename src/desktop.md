@@ -163,32 +163,42 @@ any unresolved issues. It should look something like
 the following on Windows:
 
 ```terminal
-[✓] Flutter (Channel master, 1.22.0-10.0.pre.196, on Microsoft Windows [Version 10.0.18362.1082], locale en-US)
-[✓] Visual Studio - develop for Windows (Visual Studio Professional 2019 16.6.2)
-[✓] VS Code (version 1.48.2)
-[✓] Connected device (1 available)
+PS > flutter doctor                                                                     
+Doctor summary (to see all details, run flutter doctor -v):                                           
+[√] Flutter (Channel dev, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
+[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)                      
+[√] Chrome - develop for the web                                                                      
+[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.7.7)                         
+[√] Android Studio (version 4.1.0)                                                                    
+[√] VS Code (version 1.51.1)                                                                          
+[√] Connected device (3 available)                                                                    
 ```
 
 On macOS, you might see something like the following:
 
 ```terminal
-[✓] Flutter (Channel dev, 1.26.0-17.2.pre, on macOS 11.2 20D64 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
+$ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 4.0)
-[✓] VS Code (version 1.53.0)
+[✓] Android Studio (version 4.1)
+[✓] VS Code (version 1.53.2)
 [✓] Connected device (3 available)
 ```
 
 On Linux, you might see something like the following:
 
 ```terminal
-$ flutter doctor
-[✓] Flutter (Channel master, 1.20.0-1.0.pre.132, on Linux, locale en_US.UTF-8)
+$ flutter doctor 
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✓] Chrome - develop for the web
 [✓] Linux toolchain - develop for Linux desktop
-[✓] VS Code (version 1.33.1)
-[✓] Connected device (1 available)
+[✓] Android Studio
+[✓] Connected device (2 available)
 ```
 
 If `flutter doctor` finds problems for a platform you don't
@@ -321,10 +331,29 @@ and the other DLLs, and bundle them together in a zip file.
 
 #### macOS
 
-The `.app` is self-contained, and can be distributed as-is. However, you should 
+To distribute your macOS application, you can either [distribute your app via the macOS App Store][], 
+or alternatively you can distribute the `.app` itself, for example on your own website.  
+However, as of macOS 14.5 you need to notarize your macOS application before distributing 
+it outside of the macOS App Store. 
+
+The first step in both of the above processes involves working with your app inside of Xcode.
+To be able to compile your app from inside of Xcode you first need to build the app for release
+using the `flutter build` command, then open the Flutter macOS Runner application.
+
+```bash
+$ flutter build macos
+$ open macos/Runner.xcworkspace
+```
+
+Once inside of Xcode, follow either Apple's [documentation on notarizing macOS Applications][],
+or [on distributing an application via the App Store][]. You should also
 read through the [macOS-specific support](#macos-specific-support) section below
-to understand about how Entitlements, the App Sandbox, and the Hardened Runtime
+to understand how entitlements, the App Sandbox, and the Hardened Runtime
 impact your distributable application.
+
+[distribute your app via the macOS App Store]: https://developer.apple.com/macos/submit/
+[documentation on notarizing macOS Applications]: https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution
+[on distributing an application via the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 
 #### Linux
 
@@ -344,11 +373,13 @@ run the following command in a terminal from the
 root project directory:
 
 ```terminal
-$ flutter create .
+$ flutter create --platforms=windows,macos,linux .
 ```
 
 This adds the necessary desktop files and directories to your
-existing Flutter project.
+existing Flutter project. To add only specific desktop platforms,
+change the `platforms` list to include only the platform(s) you
+want to add.
 
 ## macOS-specific support
 
