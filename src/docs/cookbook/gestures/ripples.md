@@ -2,8 +2,8 @@
 title: Add Material touch ripples
 description: How to implement ripple animations.
 prev:
-  title: Focus and text fields
-  path: /docs/cookbook/forms/focus
+  title: Create an expandable FAB 
+  path: /docs/cookbook/effects/expandable-fab
 next:
   title: Handle taps
   path: /docs/cookbook/gestures/handling-taps
@@ -11,6 +11,12 @@ js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
 ---
+
+{% comment %}
+prev:
+  title: Focus and text fields
+  path: /docs/cookbook/forms/focus
+{% endcomment %}
 
 Widgets that follow the Material Design guidelines display
 a ripple animation when tapped.
