@@ -331,10 +331,29 @@ and the other DLLs, and bundle them together in a zip file.
 
 #### macOS
 
-The `.app` is self-contained, and can be distributed as-is. However, you should 
+To distribute your macOS application, you can either [distribute your app via the macOS App Store][], 
+or alternatively you can distribute the `.app` itself, for example on your own website.  
+However, as of macOS 14.5 you need to notarize your macOS application before distributing 
+it outside of the macOS App Store. 
+
+The first step in both of the above processes involves working with your app inside of Xcode.
+To be able to compile your app from inside of Xcode you first need to build the app for release
+using the `flutter build` command, then open the Flutter macOS Runner application.
+
+```bash
+$ flutter build macos
+$ open macos/Runner.xcworkspace
+```
+
+Once inside of Xcode, follow either Apple's [documentation on notarizing macOS Applications][],
+or [on distributing an application via the App Store][]. You should also
 read through the [macOS-specific support](#macos-specific-support) section below
-to understand about how entitlements, the App Sandbox, and the Hardened Runtime
+to understand how entitlements, the App Sandbox, and the Hardened Runtime
 impact your distributable application.
+
+[distribute your app via the macOS App Store]: https://developer.apple.com/macos/submit/
+[documentation on notarizing macOS Applications]: https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution
+[on distributing an application via the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 
 #### Linux
 
