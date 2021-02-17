@@ -101,7 +101,7 @@ jobs:
           cd flutter
           git remote set-branches origin ${{ matrix.sdk }}
           git fetch --depth 1 origin ${{ matrix.sdk }}
-          git checkout ${{ matrix.sdk }}
+          git checkout ${{ matrix.sdk }} --
       - name: Setup flutter
         run: flutter/bin/flutter doctor
       - run: tool/shared/write-ci-info.sh -v
