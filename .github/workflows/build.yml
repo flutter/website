@@ -27,7 +27,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sdk: [submodule-commit, dev, beta, stable]
         include:
             # pinned flutter submodule commit
           - name: "Submodule commit: code check"
@@ -127,7 +126,6 @@ jobs:
         with:
           node-version: 12
       - uses: ruby/setup-ruby@v1
-        if: contains(matrix.task, 'build.sh')
         with:
           bundler-cache: true
           ruby-version: 2.6.5
