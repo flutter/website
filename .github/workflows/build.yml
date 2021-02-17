@@ -84,7 +84,7 @@ jobs:
         with:
           node-version: 12
       - uses: ruby/setup-ruby@v1
-        if: contains(matrix.task, 'build.sh')
+        if: contains(matrix.task, 'build')
         with:
           bundler-cache: true
           ruby-version: 2.6.5
