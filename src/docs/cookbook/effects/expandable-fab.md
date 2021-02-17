@@ -427,7 +427,7 @@ class ExampleExpandableFab extends StatelessWidget {
           content: Text(_actionTitles[index]),
           actions: [
             TextButton(
-              onPressed: () => Navigator.of(context)!.pop(),
+              onPressed: () => Navigator.of(context).pop(),
               child: const Text('CLOSE'),
             ),
           ],
