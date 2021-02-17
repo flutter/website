@@ -12,6 +12,8 @@ on:
 env:
   _OS_NAME: linux
   DART_SITE_ENV_DEFS: 1
+  FLUTTER_ROOT: flutter
+  FLUTTER_BIN: flutter/bin
   JEKYLL_ENV: production
   PUB_ENVIRONMENT: bot.github
   SITE_LOCALHOST_PORT: 5000
