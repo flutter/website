@@ -22,7 +22,7 @@ Error: some code excerpts need to be refreshed. You'll need to
 rerun '$rootDir/tool/refresh-code-excerpts.sh' locally, and re-commit.
 "
 
-travis_fold start refresh_code_excerpts
+echo "::group::refresh_code_excerpts"
   (
     set -x;
     $rootDir/tool/refresh-code-excerpts.sh --keep-dart-tool
@@ -30,12 +30,12 @@ travis_fold start refresh_code_excerpts
     printf "$errorMessage" && git diff &&
     exit 1
   )
-travis_fold end refresh_code_excerpts
+echo "::endgroup::"
 
-travis_fold start check_code
+echo "::group::check_code"
   if [[ -n $NULL_SAFETY ]]; then
     ./tool/build_check_deploy.sh --no-build --no-check-links --null-safety $*
   else
     ./tool/build_check_deploy.sh --no-build --no-check-links $*
   fi
-travis_fold end check_code
+echo "::endgroup::"
