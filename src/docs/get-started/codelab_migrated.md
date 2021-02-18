@@ -109,7 +109,7 @@ and [Write your first Flutter app on the web][codelab-web].
 
 ## Step 1: Create the starter Flutter app
 
-<?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
+<?code-excerpt path-base="codelabs/startup_namer_null_safety/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app][].
