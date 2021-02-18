@@ -154,16 +154,3 @@ jobs:
       - run: tool/shared/deploy.sh --robots ok default
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-
-
-# TODO: is this still a thing?
-#addons:
-#  apt:
-#    sources:
-#      - ubuntu-toolchain-r-test # if we don't specify this, the libstdc++6 we get is the wrong version
-#    packages:
-#      - lib32stdc++6
-#      - libstdc++6
-
-
-
