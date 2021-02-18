@@ -59,8 +59,7 @@ consists of a [Material App] home screen containing:
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla AnimatedOpacity https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5 -->
-{% include implicit-animations/fade-in-starter-code.md %}
+{% include implicit-animations/fade-in-starter-code_migrated.md %}
 
 {{site.alert.important}}
   This page uses an embedded version of [DartPad] to display
