@@ -59,7 +59,7 @@ consists of a [Material App] home screen containing:
 
 Click the **Run** button to run the example:
 
-{% include implicit-animations/fade-in-starter-code_migrated.md %}
+{% include implicit-animations_migrated/fade-in-starter-code.md %}
 
 {{site.alert.important}}
   This page uses an embedded version of [DartPad] to display
@@ -202,7 +202,7 @@ you can start with 2 seconds:
 Here's the example with the completed changes you've made&mdash;run this
 example and click the **Show details** button to trigger the animation.
 
-{% include implicit-animations/fade-in-complete_migrated.md %}
+{% include implicit-animations_migrated/fade-in-complete.md %}
 
 ### Putting it all together
 
@@ -241,7 +241,7 @@ different types (`double` and `Color`).
 
 Click the **Run** button to run the example:
 
-{% include implicit-animations/shape-shifting-starter-code_migrated.md %}
+{% include implicit-animations_migrated/shape-shifting-starter-code.md %}
 
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
@@ -368,7 +368,7 @@ and click the **Change** button to trigger the animation. Notice that each time
 you click the **Change** button, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.
 
-{% include implicit-animations/shape-shifting-complete_migrated.md %}
+{% include implicit-animations_migrated/shape-shifting-complete.md %}
 
 ### Using animation curves
 
