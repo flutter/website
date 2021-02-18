@@ -241,8 +241,7 @@ different types (`double` and `Color`).
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla Animated Container: https://gist.github.com/8501583cb789504d75317a5ba1ca6930 -->
-{% include implicit-animations/shape-shifting-starter-code.md %}
+{% include implicit-animations/shape-shifting-starter-code_migrated.md %}
 
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
@@ -369,8 +368,7 @@ and click the **Change** button to trigger the animation. Notice that each time
 you click the **Change** button, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.
 
-<!-- Animated Container: https://gist.github.com/ddfbc68ec9dc28a48703d29248f5366f -->
-{% include implicit-animations/shape-shifting-complete.md %}
+{% include implicit-animations/shape-shifting-complete_migrated.md %}
 
 ### Using animation curves
 
