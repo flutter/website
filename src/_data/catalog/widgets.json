@@ -740,6 +740,18 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "DraggableScrollableSheet",
+    "description": "A container for a Scrollable that responds to drag gestures by resizing the scrollable until a limit is reached, and then scrolling.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/DraggableScrollableSheet-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "Drawer",
     "description": "A Material Design panel that slides in horizontally from the edge of a Scaffold to show navigation links in an application.",
     "categories": [],

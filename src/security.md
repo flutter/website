@@ -20,7 +20,7 @@ For more information about how Google handles security issues, see
 * **Keep current with the latest Flutter SDK releases.**
   We regularly update Flutter, and these updates may fix security
   defects discovered in previous versions. Check the Flutter
-  [change log](https://github.com/flutter/flutter/wiki/Changelog)
+  [change log]({{site.github}}/flutter/flutter/wiki/Changelog)
   for security-related updates.
 
 * **Keep your application’s dependencies up to date.**

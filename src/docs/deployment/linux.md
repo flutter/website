@@ -143,13 +143,20 @@ confinement: strict
 base: core18
 grade: stable
 
+slots:
+  dbus-super-cool-app: # adjust accordingly to your app name
+    interface: dbus
+    bus: session
+    name: org.bar.super_cool_app # adjust accordingly to your app name and
+    
 apps:
   super-cool-app:
     command: super_cool_app
     extensions: [flutter-master] # Where "master" defines which Flutter channel to use for the build
     plugs:
     - network
-
+    slots:
+      - dbus-super-cool-app
 parts:
   super-cool-app:
     source: .
@@ -235,6 +242,37 @@ apps:
   when snaps are strictly confined. This Flutter snap needs
   access to the network.
 
+**DBus interface**
+: The dbus interface provides a way for snaps to 
+  communicate over DBus. The snap providing the DBus 
+  service declares a slot with the well-known DBus name 
+  and which bus it uses. Snaps wanting to communicate 
+  with the providing snap’s service declare a plug for 
+  the providing snap. Note that a snap declaration is 
+  needed for your snap to be delivered via the snap store 
+  and claim this well-known DBus name (simply upload the 
+  snap to the store and request a manual review and 
+  a reviewer will take a look).
+
+  When a providing snap is installed, snapd will 
+  generate security policy that will allow it to 
+  listen on the well-known DBus name on the specified 
+  bus. If the system bus is specified, snapd will also 
+  generate DBus bus policy that allows ‘root’ to own 
+  the name and any user to communicate with the 
+  service. Non-snap processes are allowed to 
+  communicate with the providing snap following 
+  traditional permissions checks. Other (consuming) 
+  snaps may only communicate with the providing 
+  snap by connecting the snaps’ interface.
+  
+```
+dbus-super-cool-app: # adjust accordingly to your app name
+  interface: dbus
+  bus: session
+  name: dev.site.super_cool_app 
+```
+
 ### Parts
 
 This section defines the sources required to
@@ -261,6 +299,42 @@ parts:
     plugin: flutter
     flutter-target: lib/main.dart # The main entry-point file of the application
 ```
+
+
+## Desktop file and icon
+
+
+Desktop entry files are used to add an application 
+to the desktop menu. These files specify the name and 
+icon of your application, the categories it belongs to,
+related search keywords and more. These files have the 
+extension .desktop and follow the XDG Desktop Entry 
+Specification version 1.1.
+  
+### Flutter super-cool-app.desktop example
+
+Place the .desktop file in your Flutter project 
+under `<project root>/snap/gui/super-cool-app.desktop`.
+
+**Notice**: icon and .desktop file name must be the 
+same as your app name in yaml file!
+
+For example:
+
+```desktop
+  [Desktop Entry]
+  Name=Super Cool App
+  Comment=Super Cool App that does everything
+  Exec=super-cool-app 
+  Icon=${SNAP}/meta/gui/super-cool-app.png # replace name to your app name
+  Terminal=false
+  Type=Application
+  Categories=Education; #adjust accordingly your snap category
+```
+
+Place your icon with .png extension in your Flutter 
+project under `<project root>/snap/gui/super-cool-app.png`.
+
 
 ## Build the snap
 
@@ -299,7 +373,7 @@ The process consists of the following:
    to learn about selecting a Snap Store channel,
    push the snap to the store:
    ```terminal
-   $ snapcraft push --release=<channel> <file>.snap
+   $ snapcraft upload --release=<channel> <file>.snap
    ```
 
 ### Snap Store channels
@@ -307,7 +381,7 @@ The process consists of the following:
 The Snap Store uses channels to differentiate among
 different versions of snaps.
 
-The `snapcraft push` command uploads the snap file to
+The `snapcraft upload` command uploads the snap file to
 the store. However, before you run this command,
 you need to learn about the different release channels.
 Each channel consists of three components:
@@ -352,6 +426,7 @@ You can learn more from the following links on the
 [Environment variables]: https://snapcraft.io/docs/environment-variables
 [Flutter wiki]: {{site.repo.flutter}}/wiki/
 [Interface management]: https://snapcraft.io/docs/interface-management
+[DBus interface](https://snapcraft.io/docs/dbus-interface)
 [Introduction to snapcraft]: https://snapcraft.io/blog/introduction-to-snapcraft
 [LXD container manager]: https://linuxcontainers.org/lxd/downloads/
 [Multipass virtualization manager]: https://multipass.run/

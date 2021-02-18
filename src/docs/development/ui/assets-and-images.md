@@ -499,13 +499,13 @@ For more details, see
 [`FlutterPluginRegistrar`]: {{site.api}}/objcdoc/Protocols/FlutterPluginRegistrar.html
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
-[Human Interface Guidelines]: https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon
+[Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/graphics/app-icon
 [`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
-[`mainBundle`]: https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle
+[`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
 [`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String
 [package]: /docs/development/packages-and-plugins/using-packages
-[`pathForResource:ofType:`]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
+[`pathForResource:ofType:`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410989-pathforresource
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`pubspec.yaml`]: {{site.dart-site}}/tools/pub/pubspec
 [`rootBundle`]: {{site.api}}/flutter/services/rootBundle.html

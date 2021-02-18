@@ -467,7 +467,7 @@ renders its UI to a `TextureView`.
 
 By default, `FlutterFragment` renders with an opaque background,
 using a `SurfaceView`. (See "Control `FlutterFragment`'s render
-mode.") That background is black for any pixels that aren'ts
+mode.") That background is black for any pixels that aren't
  painted by Flutter. Rendering with an opaque background is
 the preferred rendering mode for performance reasons.
 Flutter rendering with transparency on Android negatively

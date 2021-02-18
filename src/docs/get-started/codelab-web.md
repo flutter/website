@@ -442,7 +442,7 @@ void _updateFormProgress() {
 ```
 
 This method updates the `_formProgress` field based on the
-the number of non-empty text fields.
+number of non-empty text fields.
 
 </li>
 
@@ -1040,7 +1040,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Flutter SDK]: /docs/get-started/install
 [Implicit animations]: /docs/codelabs/implicit-animations
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
-[Material Design]: https://material.io/design/introduction/#
+[Material Design]: {{site.material}}/design/introduction/#
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: /docs/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/master/web

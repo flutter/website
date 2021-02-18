@@ -57,7 +57,7 @@ to the [add-to-app project setup guide][],
 to re-enable flutter attach for debug builds on physical
 devices on iOS 14.
 
-[local network permissions in iOS 14]: https://developer.apple.com/news/?id=0oi77447
+[local network permissions in iOS 14]: {{site.apple-dev}}/news/?id=0oi77447
 [add-to-app project setup guide]: /docs/development/add-to-app/ios/project-setup#local-network-privacy-permissions
 
 ## Launching debug Flutter without a host computer

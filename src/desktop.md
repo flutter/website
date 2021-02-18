@@ -7,7 +7,7 @@ toc: true
 Desktop support allows you to compile Flutter source code
 to a native Windows, macOS, or Linux desktop app. Flutter's desktop
 support also extends to plugins&mdash;you can install 
-existing plugins that support the macOS or Linux platforms,
+existing plugins that support the Windows, macOS, or Linux platforms,
 or you can create your own.
 
 {{site.alert.warning}}
@@ -74,7 +74,7 @@ you need the following in addition to the Flutter SDK:
 * [CocoaPods][] if you use plugins
 
 [CocoaPods]: https://cocoapods.org/
-[Xcode]: https://developer.apple.com/xcode/
+[Xcode]: {{site.apple-dev}}/xcode/
 
 ### Additional Linux requirements
 
@@ -154,8 +154,8 @@ $ flutter devices
 1 connected device:
 
 Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.18362.1082]
-macOS (desktop) • macos • darwin-x64 • Mac OS X 10.15.5 19F101
-Linux (desktop) • linux • linux-x64 • Linux
+macOS (desktop)   • macos   • darwin-x64  • macOS 11.2 20D64 darwin-x64
+Linux (desktop)   • linux   • linux-x64   • Linux
 ```
 
 You might also run `flutter doctor` to see if there are
@@ -163,35 +163,46 @@ any unresolved issues. It should look something like
 the following on Windows:
 
 ```terminal
-[✓] Flutter (Channel master, 1.22.0-10.0.pre.196, on Microsoft Windows [Version 10.0.18362.1082], locale en-US)
-[✓] Visual Studio - develop for Windows (Visual Studio Professional 2019 16.6.2)
-[✓] VS Code (version 1.48.2)
-[✓] Connected device (1 available)
+PS > flutter doctor                                                                     
+Doctor summary (to see all details, run flutter doctor -v):                                           
+[√] Flutter (Channel dev, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
+[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)                      
+[√] Chrome - develop for the web                                                                      
+[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.7.7)                         
+[√] Android Studio (version 4.1.0)                                                                    
+[√] VS Code (version 1.51.1)                                                                          
+[√] Connected device (3 available)                                                                    
 ```
 
 On macOS, you might see something like the following:
 
 ```terminal
-[✓] Flutter (Channel master, 1.18.0-10.0.pre, on Mac OS X 10.15.4 19E287, locale
-    en-US)
-[✓] Xcode - develop for iOS and macOS (Xcode 11.2)
+$ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
-[✓] VS Code (version 1.44.2)
+[✓] Android Studio (version 4.1)
+[✓] VS Code (version 1.53.2)
 [✓] Connected device (3 available)
 ```
 
 On Linux, you might see something like the following:
 
 ```terminal
-$ flutter doctor
-[✓] Flutter (Channel master, 1.20.0-1.0.pre.132, on Linux, locale en_US.UTF-8)
+$ flutter doctor 
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✓] Chrome - develop for the web
 [✓] Linux toolchain - develop for Linux desktop
-[✓] VS Code (version 1.33.1)
-[✓] Connected device (1 available)
+[✓] Android Studio
+[✓] Connected device (2 available)
 ```
 
 If `flutter doctor` finds problems for a platform you don't
-support, you can ignore those warnings. You don't have
+want to develop for, you can ignore those warnings. You don't have
 to install Android Studio and the Android SDK,
 for example, if you're writing a Linux desktop app.
 
@@ -277,6 +288,27 @@ build output on other machines for testing purposes.
 
 #### Windows
 
+For building Windows executables, you can either use tooling to construct an
+MSIX installer, or you can build your own zip file that collects
+the components together.
+
+##### MSIX Packaging
+
+[MSIX][] is Microsoft's Windows app package format that provides a modern 
+packaging experience to all Windows apps. This format can either be used 
+to ship applications to Microsoft's Windows Apps store, or distribute 
+application installers directly.
+
+The easiest way to create an MSIX distribution for a Flutter project is to use
+the [`msix` pub package][msix package]. For an example of using the `msix` package
+from a Flutter desktop app, see the [Desktop Photo Search sample][].
+
+[MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
+[msix package]: {{site.pub}}/packages/msix
+[Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
+
+##### Building your own zip file for Windows
+
 The executable can be found in your project under
 `build\windows\runner\<build mode>\`.
 In addition to that executable, you need the following:
@@ -299,7 +331,29 @@ and the other DLLs, and bundle them together in a zip file.
 
 #### macOS
 
-The `.app` is self-contained, and can be distributed as-is.
+To distribute your macOS application, you can either [distribute your app via the macOS App Store][], 
+or alternatively you can distribute the `.app` itself, for example on your own website.  
+However, as of macOS 14.5 you need to notarize your macOS application before distributing 
+it outside of the macOS App Store. 
+
+The first step in both of the above processes involves working with your app inside of Xcode.
+To be able to compile your app from inside of Xcode you first need to build the app for release
+using the `flutter build` command, then open the Flutter macOS Runner application.
+
+```bash
+$ flutter build macos
+$ open macos/Runner.xcworkspace
+```
+
+Once inside of Xcode, follow either Apple's [documentation on notarizing macOS Applications][],
+or [on distributing an application via the App Store][]. You should also
+read through the [macOS-specific support](#macos-specific-support) section below
+to understand how entitlements, the App Sandbox, and the Hardened Runtime
+impact your distributable application.
+
+[distribute your app via the macOS App Store]: https://developer.apple.com/macos/submit/
+[documentation on notarizing macOS Applications]: https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution
+[on distributing an application via the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 
 #### Linux
 
@@ -319,11 +373,13 @@ run the following command in a terminal from the
 root project directory:
 
 ```terminal
-$ flutter create .
+$ flutter create --platforms=windows,macos,linux .
 ```
 
 This adds the necessary desktop files and directories to your
-existing Flutter project.
+existing Flutter project. To add only specific desktop platforms,
+change the `platforms` list to include only the platform(s) you
+want to add.
 
 ## macOS-specific support
 
@@ -399,9 +455,9 @@ For more information on these topics,
 see [App Sandbox][] and [Entitlements][]
 on the Apple Developer site.
 
-[App Sandbox]: https://developer.apple.com/documentation/security/app_sandbox
-[App Store]: https://developer.apple.com/app-store/submissions/
-[Entitlements]: https://developer.apple.com/documentation/bundleresources/entitlements
+[App Sandbox]: {{site.apple-dev}}/documentation/security/app_sandbox
+[App Store]: {{site.apple-dev}}/app-store/submissions/
+[Entitlements]: {{site.apple-dev}}/documentation/bundleresources/entitlements
 [`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 
 ### Hardened runtime
@@ -494,7 +550,7 @@ see the following resources:
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [Federated Plugin proposal]: /go/federated-plugins
 [Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
-[How to write a Flutter web plugin, part 2]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
 
 ## Samples and codelabs

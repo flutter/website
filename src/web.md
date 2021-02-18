@@ -15,10 +15,11 @@ and you don’t need a browser plug-in.
   If you experience a problem that hasn't yet been reported, please
   [file an issue][] and make sure that "web" appears in the title.
 {{site.alert.end}}
+
 {{site.alert.warning}}
-  **Hot reload not still supported**
-  At the current beta state, Flutter web only support **hot restart**,
-  no support for **hot reload** is available yet.
+  **Hot reload not supported**
+  As of beta, only **hot restart** is supported on the web;
+  **hot reload** is not supported.
 {{site.alert.end}}
 
 <img src="/images/Dart-framework-v-browser-framework.png"

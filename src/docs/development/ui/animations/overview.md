@@ -142,11 +142,12 @@ Each tick, the `Ticker` provides the callback with the
 duration since the first tick after it was started. 
 
 Because tickers always give their elapsed time relative to the first
-tick after they were started, tickers are all synchronised. If you
+tick after they were started; tickers are all synchronised. If you
 start three tickers at different times between two ticks, they will all
 nonetheless be synchronised with the same starting time, and will
-subsequently tick in lockstep. Like people at a bus-stop, all the tickers 
-will wait for a regularly occuring event (the tick) to begin moving (counting time).
+subsequently tick in lockstep. Like people at a bus-stop,
+all the tickers wait for a regularly occurring event
+(the tick) to begin moving (counting time).
 
 ### Simulations
 
