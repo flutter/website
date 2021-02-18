@@ -223,7 +223,6 @@ on other threads.
 <dd markdown="1">Performs expensive tasks (mostly I/O) that would
     otherwise block either the UI or raster threads.
     This thread is not shown in the performance overlay.
-</dl>
     
 For links to more information and videos,
 see [The Framework architecture][] on the
