@@ -4,6 +4,12 @@ description: How to implement a draggable UI element.
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
+prev:
+  title: Create an expandable FAB
+  path: /docs/cookbook/effects/expandable-fab
+next:
+  title: Build a form with validation 
+  path:  /docs/cookbook/effects/forms/validation
 ---
 
 {% include null-safe-recipe.md %}
@@ -11,26 +17,23 @@ js:
 Drag and drop is a common mobile app interaction.
 As the user long presses (sometimes called _touch & hold_)
 on a widget, another widget appears beneath the 
-user’s finger, and the user drags the widget to a final location.
+user’s finger, and the user drags the widget to a
+final location and releases it.
 In this recipe, you'll build a drag-and-drop interaction 
 where the user long presses on a choice of food,
 and then drags that food to the picture of the customer who 
-will pay for it.
+is paying for it.
 
-![Drag-and-drop Example 1](/images/cookbook/drag-and-drop_1.png){:.site-mobile-screenshot}
+![Drag-and-drop Example 1]({% asset cookbook/effects/drag-and-drop_1.png @path %}){:width="40%"} ![Drag-and-drop Example 2]({% asset cookbook/effects/drag-and-drop_2.png @path %}){:width="40%"} ![Drag-and-drop Example 3]({% asset cookbook/effects/drag-and-drop_3.png @path %}){:width="40%"}
 
-![Drag-and-drop Example 2](/images/cookbook/drag-and-drop_2.png){:.site-mobile-screenshot}
-
-![Drag-and-drop Example 3](/images/cookbook/drag-and-drop_3.png){:.site-mobile-screenshot}
-
-The recipe begins with the list of menu items and
-the row of customers already built.
+This recipe begins with a prebuilt list of menu items and
+a row of customers.
 The first step is to recognize a long press
 and display a draggable photo of a menu item.
 
 ## Press and drag
 
-Flutter provides a widget called `LongPressDraggable`
+Flutter provides a widget called [`LongPressDraggable`][]
 that provides the exact behavior that you need to begin
 a drag-and-drop interaction. A `LongPressDraggable`
 widget recognizes when a long press occurs and then 
@@ -39,7 +42,8 @@ As the user drags, the widget follows the user’s finger.
 `LongPressDraggable` gives you full control over the 
 widget that the user drags.
 
-Each menu list item is displayed with a `MenuListItem` widget.
+Each menu list item is displayed with a custom
+`MenuListItem` widget.
 
 <!--skip-->
 ```dart
@@ -75,7 +79,8 @@ This `DraggingListItem` displays a photo of the
 selected food item, centered beneath 
 the user’s finger.
 
-The `dragAnchor` property is set to `DragAnchor.pointer`.
+The `dragAnchor` property is set to
+[`DragAnchor.pointer`][].
 This property value instructs `LongPressDraggable`
 to base the `DraggableListItem`’s position on the 
 user’s finger. As the user moves a finger,
@@ -91,7 +96,7 @@ food menu item that the user pressed on.
 The `data` associated with a `LongPressDraggable`
 is sent to a special widget called `DropTarget`,
 where the user releases the drag gesture.
-You’ll implement the drop behavior, next.
+You’ll implement the drop behavior next.
 
 ## Drop the draggable
 
@@ -666,3 +671,6 @@ class Customer {
   }
 }
 ```
+
+[`DragAnchor.pointer`]: {{site.api}}/flutter/widgets/DragAnchor-class.html 
+[`LongPressDraggable`]: {{site.api}}/flutter/widgets/LongPressDraggable-class.html

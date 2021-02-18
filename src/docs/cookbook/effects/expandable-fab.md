@@ -2,11 +2,11 @@
 title: Create an expandable FAB
 description: How to implement a FAB that expands to multiple buttons when tapped.
 prev:
-  title: Retrieve the value of a text field
-  path: /docs/cookbook/forms/retrieve-input
+  title: Work with tabs
+  path:  /docs/cookbook/design/tabs
 next:
-  title: Add Material touch ripples
-  path: /docs/cookbook/gestures/ripples
+  title: Drag a UI element
+  path:  /docs/cookbook/effects/drag-a-widget
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
