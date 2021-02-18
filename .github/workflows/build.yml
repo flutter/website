@@ -102,6 +102,7 @@ jobs:
           git remote set-branches origin ${{ matrix.sdk }}
           git fetch --depth 1 origin ${{ matrix.sdk }}
           git checkout ${{ matrix.sdk }} --
+          git pull
       - name: Setup flutter
         run: flutter/bin/flutter doctor
       - run: tool/shared/write-ci-info.sh -v
@@ -142,13 +143,15 @@ jobs:
       - name: Select flutter
         run: |
           cd flutter
-          git checkout stable
+          git remote set-branches origin stable
+          git fetch --depth 1 origin stable
+          git checkout stable --
           git pull
       - name: Setup flutter
         run: flutter/bin/flutter doctor
-      - run: ./tool/shared/write-ci-info.sh -v
+      - run: tool/shared/write-ci-info.sh -v
       - run: bundle exec jekyll build
-      - run: ./tool/shared/deploy.sh --robots ok default
+      - run: tool/shared/deploy.sh --robots ok default
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
