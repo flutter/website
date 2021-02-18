@@ -121,7 +121,7 @@ TextSpan span = controller.buildTextSpan(context: context, withComposing: false)
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 1.26.0<br>
 In stable release: not yet
 
 {% comment %}
