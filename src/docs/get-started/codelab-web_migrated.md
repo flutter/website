@@ -349,14 +349,10 @@ Fix the error reported by the analyzer that `_showWelcomeScreen`
 is not defined. Directly above the `build()` method,
 add the following function:
 
-{%- comment %}
-TODO Remove `!` when no longer necessary
-{% endcomment -%}
-
 <!-- skip -->
 ```dart
 void _showWelcomeScreen() {
-  Navigator.of(context)!.pushNamed('/welcome');
+  Navigator.of(context).pushNamed('/welcome');
 }
 ```
 </li>
@@ -426,13 +422,13 @@ In the `_SignUpFormState` class, add a new method called
 ...
 void _updateFormProgress() {
   var progress = 0.0;
-  var controllers = [
+  final controllers = [
     _firstNameTextController,
     _lastNameTextController,
     _usernameTextController
   ];
 
-  for (var controller in controllers) {
+  for (final controller in controllers) {
     if (controller.value.text.isNotEmpty) {
       progress += 1 / controllers.length;
     }
@@ -646,7 +642,7 @@ scroll down to where `progress` is updated:
 
 <!-- skip -->
 ```dart
-    for (var controller in controllers) {
+    for (final controller in controllers) {
       if (controller.value.text.isNotEmpty) {
         progress += 1 / controllers.length;
       }
@@ -706,10 +702,6 @@ area. The animation has the following behavior:
 <li markdown="1">Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
-{%- comment %}
-TODO Replace _Tween by ColorTween when LinearProgressIndicator supports Animation<Color?>.
-{% endcomment -%}
-
 <!--skip-->
 ```dart
 class AnimatedProgressIndicator extends StatefulWidget {
@@ -728,7 +720,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
 class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<Color> _colorAnimation;
+  late Animation<Color?> _colorAnimation;
   late Animation<double> _curveAnimation;
 
   void initState() {
@@ -736,17 +728,17 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     _controller = AnimationController(
         duration: Duration(milliseconds: 1200), vsync: this);
 
-    var colorTween = TweenSequence([
+    final colorTween = TweenSequence([
       TweenSequenceItem(
-        tween: _Tween(begin: Colors.red, end: Colors.orange),
+        tween: ColorTween(begin: Colors.red, end: Colors.orange),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: _Tween(begin: Colors.orange, end: Colors.yellow),
+        tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: _Tween(begin: Colors.yellow, end: Colors.green),
+        tween: ColorTween(begin: Colors.yellow, end: Colors.green),
         weight: 1,
       ),
     ]);
@@ -768,17 +760,10 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       builder: (context, child) => LinearProgressIndicator(
         value: _curveAnimation.value,
         valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value.withOpacity(0.4),
+        backgroundColor: _colorAnimation.value?.withOpacity(0.4),
       ),
     );
   }
-}
-
-class _Tween extends Tween<Color> {
-  _Tween({ required Color begin, required Color end }) : super(begin: begin, end: end);
-
-  @override
-  Color lerp(double t) => Color.lerp(begin, end, t) ?? Colors.transparent;
 }
 ```
 
@@ -876,13 +861,13 @@ class _SignUpFormState extends State<SignUpForm> {
 
   void _updateFormProgress() {
     var progress = 0.0;
-    var controllers = [
+    final controllers = [
       _firstNameTextController,
       _lastNameTextController,
       _usernameTextController
     ];
 
-    for (var controller in controllers) {
+    for (final controller in controllers) {
       if (controller.value.text.isNotEmpty) {
         progress += 1 / controllers.length;
       }
@@ -894,7 +879,7 @@ class _SignUpFormState extends State<SignUpForm> {
   }
 
   void _showWelcomeScreen() {
-    Navigator.of(context)!.pushNamed('/welcome');
+    Navigator.of(context).pushNamed('/welcome');
   }
 
   @override
@@ -961,7 +946,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
 class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<Color> _colorAnimation;
+  late Animation<Color?> _colorAnimation;
   late Animation<double> _curveAnimation;
 
   void initState() {
@@ -969,17 +954,17 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     _controller = AnimationController(
         duration: Duration(milliseconds: 1200), vsync: this);
 
-    var colorTween = TweenSequence([
+    final colorTween = TweenSequence([
       TweenSequenceItem(
-        tween: _Tween(begin: Colors.red, end: Colors.orange),
+        tween: ColorTween(begin: Colors.red, end: Colors.orange),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: _Tween(begin: Colors.orange, end: Colors.yellow),
+        tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: _Tween(begin: Colors.yellow, end: Colors.green),
+        tween: ColorTween(begin: Colors.yellow, end: Colors.green),
         weight: 1,
       ),
     ]);
@@ -1000,17 +985,10 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       builder: (context, child) => LinearProgressIndicator(
         value: _curveAnimation.value,
         valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value.withOpacity(0.4),
+        backgroundColor: _colorAnimation.value?.withOpacity(0.4),
       ),
     );
   }
-}
-
-class _Tween extends Tween<Color> {
-  _Tween({ required Color begin, required Color end }) : super(begin: begin, end: end);
-
-  @override
-  Color lerp(double t) => Color.lerp(begin, end, t) ?? Colors.transparent;
 }
 ```
 
