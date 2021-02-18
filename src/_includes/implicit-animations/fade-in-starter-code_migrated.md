@@ -14,11 +14,12 @@ class _FadeInDemoState extends State<FadeInDemo> {
     return Column(children: <Widget>[
       Image.network(owl_url),
       TextButton(
-          child: Text(
-            'Show details',
-            style: TextStyle(color: Colors.blueAccent),
-          ),
-          onPressed: () => null),
+        child: Text(
+          'Show details',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
+        onPressed: () => null,
+      ),
       Container(
         child: Column(
           children: <Widget>[
