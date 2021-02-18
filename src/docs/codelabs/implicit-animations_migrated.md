@@ -10,7 +10,7 @@ js:
     url: /assets/codelabs/js/animations_examples.js
 ---
 
-<?code-excerpt path-base="animation/implicit"?>
+<?code-excerpt path-base="animation/implicit_migrated"?>
 
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
@@ -202,8 +202,7 @@ you can start with 2 seconds:
 Here's the example with the completed changes you've made&mdash;run this
 example and click the **Show details** button to trigger the animation.
 
-<!-- AnimatedOpacity https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
-{% include implicit-animations/fade-in-complete.md %}
+{% include implicit-animations/fade-in-complete_migrated.md %}
 
 ### Putting it all together
 
