@@ -38,6 +38,11 @@ a breaking change?"
 {% comment %}
 A technical description of the actual change,
 with code samples showing how the API changed.
+
+Include examples of the error messages that are produced
+in code that has not been migrated. This will help search
+engine find the migration guide when people search for those
+error messages.
 {% endcomment %}
 
 ## Migration guide
