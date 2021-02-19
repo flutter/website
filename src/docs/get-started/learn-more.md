@@ -11,13 +11,13 @@ Learn more about the Flutter framework from the following pages:
 ## Flutter basics
 
 * [Introduction to widgets][]
-* [Building layouts][] tutorial
-* [Add interactivity][] tutorial
+* [Building layouts tutorial][]
+* [Add interactivity tutorial][]
 
 ## Apply your existing knowledge
 
 * [Flutter for Android developers][]
-* [From Java to Dart][] codelab
+* [From Java to Dart codelab][]
 * [Flutter for iOS developers][]
 * [Flutter for React Native developers][]
 * [Flutter for web developers][]
