@@ -1,5 +1,5 @@
 ---
-title: Build and release a Linux app
+title: Build and release a Linux app to the Snap Store
 description: How to prepare for and release a Linux app to the Snap store.
 short-title: Linux
 ---
@@ -13,6 +13,8 @@ Flutter builds a _debug_ version of your app.
 When you're ready to prepare a _release_ version of your app,
 for example to [publish to the Snap Store][snap],
 this page can help.
+
+[snap]: https://snapcraft.io/store
 
 {{site.alert.warning}}
   **Work in progress!**
