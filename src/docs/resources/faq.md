@@ -180,7 +180,7 @@ performance is not characteristic of the finished release app.
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
-The engine's C and C++ code are compiled with LLVM. The Dart code (both the
+The engine's C and C++ codes are compiled with LLVM. The Dart code (both the
 SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM library.
 That library is included in a "runner" iOS project, and the whole thing is built
 into an `.ipa`. When launched, the app loads the Flutter library. Any rendering,
