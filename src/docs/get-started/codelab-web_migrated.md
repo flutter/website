@@ -138,6 +138,7 @@ and the web server when you want to test on other browsers.
 
 <!-- skip -->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+{$ begin main.dart $}
 import 'package:flutter/material.dart';
 
 void main() => runApp(SignUpApp());
@@ -231,7 +232,11 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 }
-
+{$ end main.dart $}
+{$ begin test.dart $}
+// Avoid warning on "double _formProgress = 0;"
+// ignore_for_file: prefer_final_fields
+{$ end test.dart $}
 ```
 
 {{site.alert.important}}
