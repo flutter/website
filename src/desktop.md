@@ -357,14 +357,36 @@ impact your distributable application.
 
 #### Linux
 
+The executable can be found in your project under `build/linux/<build mode>/bundle/`. Alongside your 
+executable binary in the `bundle` directory there are two directories, `lib` which contains required `.so`
+library files, and the `data` directory that contains data assets that your application relies on.
+
+In addition to these files, your application also relies on various operating system libraries that your
+application has been compiled against. You can see the full list by running `ldd` against your application.
+For example, assuming you have a Flutter desktop application called `linux_desktop_test` you could inspect 
+the system libraries it depends upon as follows:
+
+```
+$ flutter build linux --release
+$ ldd build/linux/release/bundle/linux_desktop_test
+```
+
+To wrap up this application for distribution you need to include everything in the `bundle` directory,
+and make sure the Linux system you are installing it upon has all of the system libraries required. This may 
+be as simple as:
+
+```
+$ sudo apt-get install libgtk-3-0 libblkid1 liblzma5
+```
+
 For information on publishing a Linux app to the
 [Snap Store][], see
-[Build and release a Linux desktop app][].
+[Build and release a Linux app to the Snap Store][].
 
 As the tooling solidifies, stay tuned for updates on other ways
 to distribute a Linux desktop app.
 
-[Build and release a Linux desktop app]: /docs/deployment/linux
+[Build and release a Linux app to the Snap Store]: /docs/deployment/linux
 
 ## Add desktop support to an existing Flutter app
 
