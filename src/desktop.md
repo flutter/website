@@ -358,8 +358,9 @@ impact your distributable application.
 #### Linux
 
 The executable can be found in your project under `build/linux/<build mode>/bundle/`. Alongside your 
-executable binary in the `bundle` directory there are two directories, `lib` which contains required `.so`
-library files, and the `data` directory that contains data assets that your application relies on.
+executable binary in the `bundle` directory there are two directories:
+ - `lib` which contains required `.so` library files, and 
+ - `data` which contains the data assets that your application relies on.
 
 In addition to these files, your application also relies on various operating system libraries that your
 application has been compiled against. You can see the full list by running `ldd` against your application.
