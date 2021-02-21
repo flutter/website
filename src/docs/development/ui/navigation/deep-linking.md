@@ -127,4 +127,4 @@ current set of pages when a new deep link is opened while the app is running.
 [intent filter]: https://developer.android.com/guide/components/intents-filters
 [plugin-linking]: https://medium.com/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 [verify-android-links]: https://developer.android.com/training/app-links/verify-site-associations
-[router-sample]: https://github.com/flutter/samples/blob/master/navigation_and_routing/lib/nav_2/router.dart
+[router-sample]: https://github.com/flutter/samples/blob/master/navigation_and_routing/lib/router/router.dart
