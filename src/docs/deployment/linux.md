@@ -14,8 +14,6 @@ When you're ready to prepare a _release_ version of your app,
 for example to [publish to the Snap Store][snap],
 this page can help.
 
-[snap]: https://snapcraft.io/store
-
 {{site.alert.warning}}
   **Work in progress!**
   This page covers desktop support for Linux,
@@ -245,7 +243,7 @@ apps:
   access to the network.
 
 **DBus interface**
-: The dbus interface provides a way for snaps to 
+: The [DBus interface][] provides a way for snaps to 
   communicate over DBus. The snap providing the DBus 
   service declares a slot with the well-known DBus name 
   and which bus it uses. Snaps wanting to communicate 
@@ -428,7 +426,7 @@ You can learn more from the following links on the
 [Environment variables]: https://snapcraft.io/docs/environment-variables
 [Flutter wiki]: {{site.repo.flutter}}/wiki/
 [Interface management]: https://snapcraft.io/docs/interface-management
-[DBus interface](https://snapcraft.io/docs/dbus-interface)
+[DBus interface]: https://snapcraft.io/docs/dbus-interface
 [Introduction to snapcraft]: https://snapcraft.io/blog/introduction-to-snapcraft
 [LXD container manager]: https://linuxcontainers.org/lxd/downloads/
 [Multipass virtualization manager]: https://multipass.run/
