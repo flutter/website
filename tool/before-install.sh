@@ -4,7 +4,7 @@ source tool/shared/before-install.sh
 
 # Site-specific settings below this point.
 
-travis_fold start before_install.flutter
+echo "::group::before_install.flutter"
 echo "Refreshing Flutter repo and running doctor:"
 (
   set -x;
@@ -13,4 +13,4 @@ echo "Refreshing Flutter repo and running doctor:"
   git pull;
   bin/flutter doctor;
 )
-travis_fold end before_install.flutter
+echo "::endgroup::"

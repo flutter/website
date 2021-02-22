@@ -1,6 +1,6 @@
 # [Flutter][]'s website ![Flutter logo][]
 
-[![Build Status][]][Repo on Travis]
+[![Build Status][]][Repo on GitHub Actions]
 
 ## Table of contents
 
@@ -75,7 +75,7 @@ submodule-cloning techniques:
 
 - Clone this repo and its submodule _at the same_, use the
   `--recurse-submodules` option:<br>
-  
+
   ```console
   $ git clone --recurse-submodules https://github.com/flutter/website.git
   ```
@@ -129,11 +129,11 @@ submodule-cloning techniques:
 ## Developing and serving changes
 
  1. After you clone this repo, create a branch. For example:
- 
+
     ```console
     $ git checkout -b <BRANCH_NAME>
     ```
- 
+
  1. Make your changes, then commit them to the branch.
  1. Test your changes by serving the site locally.
     To serve locally, run _either one_ of these commands:
@@ -237,7 +237,7 @@ You can deploy your local edits to a personal staging site as follows.
 
  1. In a separate `bash` shell, change to the repo directory and
     initialize Firebase:
- 
+
     ```console
     $ npx firebase init
     ```
@@ -318,7 +318,7 @@ Also check out the site-shared
 * [Writing for Dart and Flutter websites](https://github.com/dart-lang/site-shared/wiki/Writing-for-Dart-and-Flutter-websites)
 
 [Flutter]: https://flutter.dev
-[Build Status]: https://travis-ci.org/flutter/website.svg?branch=master
+[Build Status]: https://github.com/flutter/website/workflows/build/badge.svg
 [Cloning a repository]: https://help.github.com/articles/cloning-a-repository
 [Flutter install]: https://flutter.dev/docs/get-started/install
 [Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1
@@ -329,6 +329,6 @@ Also check out the site-shared
 [DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
 [Jekyll]: https://jekyllrb.com/
 [nvm]: https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating
-[Repo on Travis]: https://travis-ci.org/flutter/website
+[Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amaster
 [rvm]: https://rvm.io/rvm/install#installation
 [this repo]: https://github.com/flutter/website
