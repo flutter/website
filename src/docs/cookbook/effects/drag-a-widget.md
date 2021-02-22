@@ -1,30 +1,34 @@
 ---
 title: Drag a UI element
 description: How to implement a draggable UI element.
-js:
-  - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
 prev:
   title: Create an expandable FAB
   path: /docs/cookbook/effects/expandable-fab
 next:
   title: Build a form with validation 
-  path:  /docs/cookbook/effects/forms/validation
+  path:  /docs/cookbook/forms/validation
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 {% include null-safe-recipe.md %}
 
 Drag and drop is a common mobile app interaction.
 As the user long presses (sometimes called _touch & hold_)
-on a widget, another widget appears beneath the 
+on a widget, another widget appears beneath the
 user’s finger, and the user drags the widget to a
 final location and releases it.
-In this recipe, you'll build a drag-and-drop interaction 
+In this recipe, you'll build a drag-and-drop interaction
 where the user long presses on a choice of food,
-and then drags that food to the picture of the customer who 
+and then drags that food to the picture of the customer who
 is paying for it.
 
-![Drag-and-drop Example 1]({% asset cookbook/effects/drag-and-drop_1.png @path %}){:width="40%"} ![Drag-and-drop Example 2]({% asset cookbook/effects/drag-and-drop_2.png @path %}){:width="40%"} ![Drag-and-drop Example 3]({% asset cookbook/effects/drag-and-drop_3.png @path %}){:width="40%"}
+{% comment %}
+![Drag-and-drop initial position]({% asset cookbook/effects/drag-drop-initial.jpg @path %}){:width="40%"}
+{% endcomment %}
+
+![Drag-and-drop dragging]({% asset cookbook/effects/drag-drop-dragging.jpg @path %}){:width="40%"} ![Drag-and-drop placed]({% asset cookbook/effects/drag-drop-placed.jpg @path %}){:width="40%"}
 
 This recipe begins with a prebuilt list of menu items and
 a row of customers.
@@ -94,7 +98,7 @@ which holds information about the
 food menu item that the user pressed on.
 
 The `data` associated with a `LongPressDraggable`
-is sent to a special widget called `DropTarget`,
+is sent to a special widget called `DragTarget`,
 where the user releases the drag gesture.
 You’ll implement the drop behavior next.
 
@@ -102,8 +106,8 @@ You’ll implement the drop behavior next.
 
 The user can drop a `LongPressDraggable` wherever they choose,
 but dropping the draggable has no effect unless it’s dropped
-on top of a `DropTarget`. When the user drops a draggable on
-top of a `DropTarget` widget, the `DropTarget` widget 
+on top of a `DragTarget`. When the user drops a draggable on
+top of a `DragTarget` widget, the `DragTarget` widget 
 can either accept or reject the data from the draggable.
 
 In this recipe, the user should drop a menu item on a
@@ -118,7 +122,7 @@ Customer(
 )
 ```
 
-Wrap the `Customer` widget with a `DropTarget` widget.
+Wrap the `Customer` widget with a `DragTarget` widget.
 
 <!--skip-->
 ```dart
@@ -136,33 +140,33 @@ DragTarget<Item>(
 )
 ```
 
-The `DropTarget` displays your existing widget and
+The `DragTarget` displays your existing widget and
 also coordinates with `LongPressDraggable` to recognize
-when the user drags a draggable on top of the `DropTarget`.
-The `DropTarget` also recognizes when the user drops
-a draggable on top of the `DropTarget` widget.
+when the user drags a draggable on top of the `DragTarget`.
+The `DragTarget` also recognizes when the user drops
+a draggable on top of the `DragTarget` widget.
 
-When the user drags a draggable on the `DropTarget` widget,
+When the user drags a draggable on the `DragTarget` widget,
 `candidateItems` contains the data items that the user is dragging.
 This draggable allows you to change what your widget looks
 like when the user is dragging over it. In this case,
 the `Customer` widget turns red whenever any items are dragged above the 
-`DropTarget` widget. The red visual appearance is configured with the 
+`DragTarget` widget. The red visual appearance is configured with the 
 `highlighted` property within the `CustomerCart` widget.
 
-When the user drops a draggable on the `DropTarget` widget,
+When the user drops a draggable on the `DragTarget` widget,
 the `onAccept` callback is invoked. This is when you get
 to decide whether or not to accept the data that was dropped.
 In this case, the item is always accepted and processed. 
 You might choose to inspect the incoming item to make a
 different decision. 
 
-Notice that the type of item dropped on`DropTarget`
+Notice that the type of item dropped on`DragTarget`
 must match the type of the item dragged from `LongPressDraggable`.
 If the types are not compatible, then 
 the `onAccept` method isn’t invoked.
 
-With a `DropTarget` widget configured to accept your
+With a `DragTarget` widget configured to accept your
 desired data, you can now transmit data from one part
 of your UI to another by dragging and dropping.
 
@@ -223,7 +227,7 @@ price total and item count.
 Congratulations! You have a drag-and-drop interaction
 that adds food items to a customer’s shopping cart.
 
-## Interactive Example
+## Interactive example
 
 <!--skip-->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
@@ -447,14 +451,17 @@ class CustomerCart extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
-                width: 46,
-                height: 46,
-                child: Image(
-                  image: customer.imageProvider,
-                  fit: BoxFit.cover,
+              ClipOval(
+                child: SizedBox(
+                  width: 46,
+                  height: 46,
+                  child: Image(
+                    image: customer.imageProvider,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
+
               const SizedBox(height: 8.0),
               Text(
                 customer.name,

@@ -2,8 +2,8 @@
 title: Create an expandable FAB
 description: How to implement a FAB that expands to multiple buttons when tapped.
 prev:
-  title: Work with tabs
-  path:  /docs/cookbook/design/tabs
+  title: Create a download button
+  path:  /docs/cookbook/effects/download-button
 next:
   title: Drag a UI element
   path:  /docs/cookbook/effects/drag-a-widget
