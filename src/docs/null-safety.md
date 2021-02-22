@@ -59,6 +59,8 @@ check out these pages:
   
 ## Known issues
 
+_This section applies to the current beta branch release, v1.26._
+
 Not all parts of the Flutter SDK support null safety yet,
 as some parts still need additional work to
 [migrate to null safety]({{site.dart-site}}/null-safety/migration-guide).
@@ -68,13 +70,27 @@ We're currently aware of the following issues:
   * Migration of the pub.dev packages owned by the Flutter team
     is in progress. See pub.dev for
     [the current list]({{site.pub}}/packages?q=publisher%3Aflutter.dev&null-safe=1).
+    We expect the majority of packages to be migrated in the coming weeks; the only
+    exceptions we expect are the legacy `integration_tests` package, which is
+    deprecated in favor of the version in the Flutter SDK itself (though see below),
+    and some of the packages in <https://github.com/flutter/packages/tree/master/packages>
+    which may take longer to be migrated.
 
   * Integration testing with
-    [`flutter_driver`](/docs/cookbook/testing/integration/introduction)
-    currently does not support null safety.
+    [`flutter_driver`](/docs/cookbook/testing/integration/introduction) and 
+    the version of `integration_test` in the Flutter SDK.
     
-  * Depending on `flutter_driver` will limit your ability to pick up some
-    already migrated dependencies such as `args`, `archive`, and `crypto`.
+      * Currently, these methods do not support null safety on the host
+        side of the test. You can drive a null-safe application, but the test
+        itself will not use null-safe Dart.
+      * Depending on these packages (`flutter_driver` and `integration_test`)
+        will limit your ability to pick up some already migrated dependencies
+        such as `args`, `archive`, and `crypto`, since these packages themselves
+        depend on the non-migrated versions.
+        
+    We expect to have this resolved in the first half of 2021.
+
+If you are interested in seeing the latest updates before they reach the beta and stable branches, and are willing to live on the bleeding edge, consider using dev builds (`flutter channel dev`).
 
 [Migrating to null safety]: {{site.dart-site}}/null-safety/migration-guide
 [FAQ]: {{site.dart-site}}/null-safety/faq
