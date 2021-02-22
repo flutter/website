@@ -16,7 +16,7 @@ A [design document][] and [article][] are available for more context on Flutter'
 
 [Deprecation Policy]: {{site.github}}/flutter/flutter/wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-1-22
-[design document]: /go/flutter-deprecation-lifetime
+[design document]: /go/deprecation-lifetime
 [article]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 
 ## Changes
