@@ -22,6 +22,7 @@ release, and listed in alphabetical order:
 * [Clip behavior][]
 * [Dry layout support for RenderBox][]
 * [Use maxLengthEnforcement instead of maxLengthEnforced][]
+* [Deprecated API removed after v1.22][]
 
 [Eliminating `nullOk` Parameters]: /docs/release/breaking-changes/eliminating-nullok-parameters
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
@@ -33,6 +34,7 @@ release, and listed in alphabetical order:
 [Clip behavior]: /docs/release/breaking-changes/clip-behavior
 [Dry layout support for RenderBox]: /docs/release/breaking-changes/renderbox-dry-layout
 [Use maxLengthEnforcement instead of maxLengthEnforced]: /docs/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
+[Deprecated API removed after v1.22]: /docs/release/breaking-changes/1-22-deprecations
 
 ### Released in Flutter 1.22
 
