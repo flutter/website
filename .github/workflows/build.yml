@@ -1,0 +1,156 @@
+name: build
+
+on:
+  # Run on PRs and pushes to the default branch.
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: "0 0 * * 0"
+
+env:
+  _OS_NAME: linux
+  DART_SITE_ENV_DEFS: 1
+  FLUTTER_ROOT: flutter
+  FLUTTER_BIN: flutter/bin
+  JEKYLL_ENV: production
+  PUB_ENVIRONMENT: bot.github
+  SITE_LOCALHOST_PORT: 5000
+  SITE_JEKYLL_DEST: _site
+  SITE_JEKYLL_SRC: src
+  TMP: ${{ github.workspace }}/tmp
+  TZ: US/Pacific # normalize build timestamp
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+            # pinned flutter submodule commit
+          - name: "Submodule commit: code check"
+            sdk: submodule-commit
+            task: tool/check-code.sh
+            experimental: true
+          - name: "Submodule commit: jekyll build"
+            sdk: submodule-commit
+            task: bundle exec jekyll build
+            experimental: true
+            # dev
+          - name: "Dev channel: code check"
+            sdk: dev
+            task: tool/check-code.sh
+            experimental: true
+          - name: "Dev channel: null safety code check"
+            sdk: dev
+            task: tool/check-code.sh --null-safety
+            experimental: false
+          - name: "Dev commit: jekyll build"
+            sdk: dev
+            task: bundle exec jekyll build
+            experimental: true
+            # beta
+          - name: "Beta channel: code check"
+            sdk: beta
+            task: tool/check-code.sh
+            experimental: true
+          - name: "Beta channel: null safety code check"
+            sdk: beta
+            task: tool/check-code.sh --null-safety
+            experimental: false
+          - name: "Beta commit: jekyll build"
+            sdk: beta
+            task: bundle exec jekyll build
+            experimental: true
+            # stable
+          - name: "Stable channel: code check"
+            sdk: stable
+            task: tool/check-code.sh
+            experimental: false
+          - name: "Stable channel: jekyll build"
+            sdk: stable
+            task: bundle exec jekyll build
+            experimental: false
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - run: mkdir -p $TMP
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - uses: ruby/setup-ruby@v1
+        if: contains(matrix.task, 'build')
+        with:
+          bundler-cache: true
+          ruby-version: 2.6.5
+      - uses: dart-lang/setup-dart@v0.3
+        with:
+          sdk: stable
+      - name: Install node dependencies
+        run: npm install
+      - name: Install dart dependencies
+        run: dart pub get
+      - name: Select flutter
+        if: matrix.sdk != 'submodule-commit'
+        run: |
+          cd flutter
+          git remote set-branches origin ${{ matrix.sdk }}
+          git fetch --depth 1 origin ${{ matrix.sdk }}
+          git checkout ${{ matrix.sdk }} --
+          git pull
+      - name: Setup flutter
+        run: flutter/bin/flutter doctor
+      - run: tool/shared/write-ci-info.sh -v
+        if: contains(matrix.task, 'build')
+      - name: ${{ matrix.name }}
+        run: ${{ matrix.task }}
+        continue-on-error: ${{ matrix.experimental }}
+      - name: Check links
+        if: contains(matrix.task, 'build')
+        run: tool/shared/check-links.sh
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push'
+      && github.ref == 'refs/heads/master'
+      && github.repository == 'flutter/website'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - run: mkdir -p $TMP
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: 2.6.5
+      - uses: dart-lang/setup-dart@v0.3
+        with:
+          sdk: stable
+      - name: Install node dependencies
+        run: npm install
+      - name: Install dart dependencies
+        run: dart pub get
+      - name: Select flutter
+        run: |
+          cd flutter
+          git remote set-branches origin stable
+          git fetch --depth 1 origin stable
+          git checkout stable --
+          git pull
+      - name: Setup flutter
+        run: flutter/bin/flutter doctor
+      - run: tool/shared/write-ci-info.sh -v
+      - run: bundle exec jekyll build
+      - run: tool/shared/deploy.sh --robots ok default
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
