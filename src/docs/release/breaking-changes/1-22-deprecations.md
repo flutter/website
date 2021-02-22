@@ -7,17 +7,17 @@ description: After reaching end of life, the following deprecated APIs were remo
 
 In accordance with Flutter's [Deprecation Policy][], deprecated APIs that reached end of life after the
 1.22 stable release have been removed. This is the first time deprecated APIs have been removed from
-Flutter, and some of these deprecations pre-date our migration guide policy.
+Flutter, and some of these deprecations predate our migration guide policy.
 
 All affected APIs have been compiled into this primary source to aid in migration. A
-[quick reference sheet] is available as well.
+[quick reference sheet][] is available as well.
 
-A [design document] and [article] are available for more context on Flutter's deprecation policy.
+A [design document][] and [article][] are available for more context on Flutter's deprecation policy.
 
 [Deprecation Policy]: {{site.github}}/flutter/flutter/wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-1-22
 [design document]: /go/flutter-deprecation-lifetime
-[article]: https://medium.com/flutter/deprecation-lifetime-in-flutter-e4d76ee738ad
+[article]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 
 ## Changes
 
