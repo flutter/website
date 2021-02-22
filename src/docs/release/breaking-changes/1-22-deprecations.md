@@ -21,6 +21,8 @@ A [design document][] and [article][] are available for more context on Flutter'
 
 ## Changes
 
+This section lists the deprecations, listed by the affected class.
+
 ### `CupertinoDialog`
 
 Supported by fix tool: IDE fix only.
@@ -28,9 +30,9 @@ Supported by fix tool: IDE fix only.
 `CupertinoDialog` was deprecated in v0.2.3.
 `CupertinoAlertDialog` or `CupertinoPopupSurface` should be used instead.
 
-#### Migration guide
+**Migration guide**
 
-**CupertinoAlertDialog**
+*CupertinoAlertDialog*
 
 Code before migration:
 <!-- skip -->
@@ -44,7 +46,7 @@ Code after migration:
 CupertinoAlertDialog(content: myWidget);
 ```
 
-**CupertinoPopupSurface**
+*CupertinoPopupSurface*
 
 Code before migration:
 <!-- skip -->
@@ -58,7 +60,7 @@ Code after migration:
 CupertinoPopupSurface(child: myWidget);
 ```
 
-#### References
+**References**
 
 API documentation:
 * [`CupertinoAlertDialog`][]
@@ -79,7 +81,7 @@ Relevant PRs:
 
 ---
 
-### Cupertino Navigation Bars' `actionsForegroundColor`
+### Cupertino navigation bars' `actionsForegroundColor`
 
 Supported by fix tool: No
 
@@ -88,7 +90,7 @@ were deprecated in v1.1.2.
 Setting `primaryColor` in your `CupertinoTheme` propagates this instead. To access the
 `primaryColor`, call `CupertinoTheme.of(context).primaryColor`.
 
-#### Migration Guide
+**Migration guide**
 
 Code before migration:
 <!-- skip -->
@@ -115,7 +117,7 @@ CupertinoTheme(
 CupertinoTheme.of(context).primaryColor;
 ```
 
-#### References
+**References**
 
 API documentation:
 * [`CupertinoNavigationBar`][]
@@ -148,7 +150,7 @@ Supported by fix tool: Yes
 This field member was made ineffective at the time of deprecation. There is no replacement for this
 parameter, references should be removed.
 
-#### Migration Guide
+**Migration guide**
 
 Code before migration:
 <!-- skip -->
@@ -164,7 +166,7 @@ const CupertinoTextThemeData themeData = CupertinoTextThemeData();
 themeData.copyWith();
 ```
 
-#### References
+**References**
 
 API documentation:
 * [`CupertinoTextThemeData`][]
@@ -183,7 +185,7 @@ Relevant PRs:
 
 ---
 
-### Pointer Events Constructed `fromHoverEvent`
+### Pointer events constructed `fromHoverEvent`
 
 Supported by fix tool: Yes
  
@@ -191,7 +193,7 @@ The `fromHoverEvent` constructors for `PointerEnterEvent` and `PointerExitEvent`
 in v1.4.3.
 The `fromMouseEvent` constructor should be used instead.
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration:
 <!-- skip -->
@@ -207,7 +209,7 @@ final PointerEnterEvent enterEvent = PointerEnterEvent.fromMouseEvent(PointerHov
 final PointerExitEvent exitEvent = PointerExitEvent.fromMouseEvent(PointerHoverEvent());
 ```
  
-#### References
+**References**
  
 API documentation:
 * [`PointerEnterEvent`][]
@@ -235,7 +237,7 @@ Supported by fix tool: Yes
 The `child` parameter of `showDialog` was deprecated in in v0.2.3.
 The `builder` parameter should be used instead.
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration:
 <!-- skip -->
@@ -249,7 +251,7 @@ Code after migration:
 showDialog(builder: (context) => myWidget);
 ```
  
-#### References
+**References**
  
 API documentation:
 * [`showDialog`][]
@@ -275,7 +277,7 @@ Supported by fix tool: Yes
 The `resizeToAvoidBottomPadding` parameter of `Scaffold` was deprecated in in v1.1.9.
 The `resizeToAvoidBottomInset` parameter should be used instead.
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration:
 <!-- skip -->
@@ -289,7 +291,7 @@ Code after migration:
 Scaffold(resizeToAvoidBottomInset: true);
 ```
  
-#### References
+**References**
  
 API documentation:
 * [`Scaffold`][]
@@ -328,7 +330,7 @@ Button-specific theming is also available with the `TextButtonTheme`, `ElevatedB
 `OutlinedButtonTheme` classes, each corresponding with the appropriate button class, `TextButton`,
 `ElevatedButton` and `OutlinedButton`.
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration:
 <!-- skip -->
@@ -362,7 +364,7 @@ ButtonBarTheme(
 );
 ```
  
-#### References
+**References**
  
 API documentation:
 * [`ButtonTheme`][]
@@ -408,7 +410,7 @@ Supported by fix tool: No
 The following methods were deprecated in the `InlineSpan`, `TextSpan` and `PlaceholderSpan` in order
 to enable embedding widgets inline into paragraphs, like images. 
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration | Code after migration
 -- | --
@@ -420,7 +422,7 @@ Code before migration | Code after migration
 `PlaceholderSpan.visitTextSpan` | `PlaceHolderSpan.visitChildren`
 `TextSpan.visitTextSpan` |  `TextSpan.visitChildren`
  
-#### References
+**References**
  
 API documentation:
 * [`InlineSpan`][]
@@ -461,7 +463,7 @@ splash screens from being taken down too early, resulting in a black screen. Thi
 `WidgetsFlutterBinding.ensureInitialized` was called. Instead, replace calls to this method with
 `RenderView.prepareInitialFrame`, followed by `RenderView.owner.requestVisualUpdate`.
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration:
 <!-- skip -->
@@ -476,7 +478,7 @@ prepareInitialFrame();
 owner.requestVisualUpdate();
 ```
  
-#### References
+**References**
  
 API documentation:
 * [`RenderView`][]
@@ -502,12 +504,12 @@ Relevant PRs:
 Supported by fix tool: No
 
 The `Layer.findAll` method was deprecated with the introduction of `Layer.findAnnotations` in order
-to unify the implementations of `find` and `findAll`. To migrate affected code, call on
+to unify the implementations of `find` and `findAll`. To migrate affected code, call
 `findAllAnnotations` instead. This method returns an `AnnotationResult`, containing the former
 return value of `findAll` in `AnnotationResult.annotations`.
 
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration:
 <!-- skip -->
@@ -521,7 +523,7 @@ Code after migration:
 findAllAnnotations(offset).annotations;
 ```
  
-#### References
+**References**
  
 API documentation:
 * [`Layer`][]
@@ -561,7 +563,7 @@ by creating a `ServicesBinding` subclass for testing. Doing so allows you to tra
 pending platform messages for synchronization purposes.
 
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration: | Code after migration:
 -- | --
@@ -572,7 +574,7 @@ Code before migration: | Code after migration:
 `BinaryMessages.setMessageHandler` | `ServicesBinding.instance.defaultBinaryMessenger.setMessageHandler`
 `BinaryMessages.setMockMessageHandler` | `ServicesBinding.instance.defaultBinaryMessenger.setMockMessageHandler`
  
-#### References
+**References**
  
 API documentation:
 * [`ServicesBinding`][]
@@ -602,13 +604,13 @@ Supported by fix tool: Yes
 Several methods in `BuildContext` were using `Type` to search for ancestors. Most of those methods
 implied a cast at call site because their return type was a parent type. Moreover the type provided
 was not checked at analysis time even if the type is actually constrained. Making these methods
-generics improves type safety and need less code.
+generics improves type safety and requires less code.
 
 These method changes affect the `BuildContext`, `Element`, and `StatefulElement` classes. The
 `TypeMatcher` class was also removed.
 
  
-#### Migration Guide
+**Migration guide**
 
 Code before migration:
 <!-- skip -->
@@ -623,6 +625,7 @@ ComplexLayoutState state = context.ancestorStateOfType<ComplexLayoutState>();
 ```
 
 `BuildContext`
+
 Code before migration: | Code after migration:
 --  | --
 `inheritFromElement` | `dependOnInheritedElement`
@@ -634,6 +637,7 @@ Code before migration: | Code after migration:
 `ancestorRenderObjectOfType` | `findAncestorRenderObjectOfType`
 
 `Element`
+
 Code before migration: | Code after migration:
 --  | --
 `inheritFromElement` | `dependOnInheritedElement`
@@ -645,11 +649,12 @@ Code before migration: | Code after migration:
 `ancestorRenderObjectOfType` | `findAncestorRenderObjectOfType`
 
 `StatefulElement`
+
 Code before migration: | Code after migration:
 --  | --
 `inheritFromElement` | `dependOnInheritedElement`
  
-#### References
+**References**
  
 API documentation:
 * [`Type`][]
@@ -687,7 +692,7 @@ widgets that need to obtain initialization information asynchronously and while 
 that information no frame should render as that would take down the splash screen pre-maturely.
 The `deferFirstFrame` and `allowFirstFrame` methods should be used respectively instead.
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration:
 <!-- skip -->
@@ -705,7 +710,7 @@ binding.deferFirstFrame();
 binding.allowFirstFrame();
 ```
  
-#### References
+**References**
  
 API documentation:
 * [`WidgetsBinding`][]
@@ -734,7 +739,7 @@ methods from the `flutter_driver` packages were deprecated and removed in order 
 composable `waitForCondition` API that can be used to compose conditions that the client would like
 to wait for.
  
-#### Migration Guide
+**Migration guide**
  
 Code before migration: | Code after migration:
 -- | --
@@ -742,7 +747,7 @@ Code before migration: | Code after migration:
 `WaitUntilNoPendingFrame` | `WaitForCondition(NoPendingFrame())`
 `WaitUntilFirstFrameRasterized` | `WaitForCondition(FirstFrameRasterized))`
  
-#### References
+**References**
  
 API documentation:
 * [`WaitForCondition`][]
@@ -761,7 +766,6 @@ Relevant PRs:
 [#73754]: {{site.github}}/flutter/flutter/pull/73754
 
 ---
-
 
 ## Timeline
 
