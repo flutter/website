@@ -32,9 +32,7 @@ tab on the DevTools toolbar.
   You can still access the Flutter inspector directly from
   Android Studio/IntelliJ, but you might prefer the
   more spacious view when running it from DevTools
-  in a browser. Also note that the UI for the inspector
-  varies slightly between these environments. This page
-  describes the UI for the DevTools version of the inspector.
+  in a browser.
 {{site.alert.end}}
 
 ### Debugging layout issues visually
@@ -60,9 +58,8 @@ used as the visual version of the label.
     of its text baselines.</dd>
 <dt markdown="1">**Repaint Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</dt>
 <dd>Shows rotating colors on layers when repainting.</dd>
-<dt markdown="1">**Debug Mode Banner** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</dt>
-<dd>Toggles display of the debug banner even when
-    running a debug build.</dd>
+<dt markdown="1">**Invert Oversized Images** ![Invert oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"}</dt>
+<dd>Inverts oversized images in your running application.</dd>
 
 ## Inspecting a widget
 
@@ -85,9 +82,7 @@ see [Understanding constraints][].
 ## Flutter Layout Explorer
 
 The Flutter Layout Explorer helps you to better understand
-Flutter layouts. Currently, the Layout Explorer only supports
-exploration of [flex layouts][], but it may be extended to other
-types of layouts in the future.
+Flutter layouts.
 
 For an overview of what you can do with this tool, see
 the Flutter Explorer video:
@@ -102,20 +97,21 @@ You might also find the following step-by-step article useful:
 
 ### Using the Layout Explorer
 
-From the Flutter Inspector, select a flex widget
-(for example, [`Row`][], [`Column`][], [`Flex`][])
-or a direct child of a flex widget.
-In Flutter 1.12.16 or later,
-you'll see the **Layout Explorer** tab next to **Details Tree**.
-Select this tab to display the Layout Explorer feature.
+From the Flutter Inspector, select a widget. The Layout Explorer
+supports both [flex layouts][] and fixed size layouts, and has
+specific tooling for both kinds.
 
-![The Layout Explorer tab]({% asset tools/devtools/layout_explorer_tab.png @path %})
+#### Flex layouts
+When you select a flex widget (for example, [`Row`][], [`Column`][], [`Flex`][])
+or a direct child of a flex widget, the flex layout tool will
+appear in the Layout Explorer.
 
 The Layout Explorer visualizes how [`Flex`][] widgets and their
 children are laid out. The explorer identifies the main axis
 and cross axis, as well as the current alignment for each
 (for example, start, end, and spaceBetween).
-It also shows details like flex factor and layout constraints.
+It also shows details like flex factor, flex fit, and layout
+constraints.
 
 Additionally, the explorer shows layout constraint violations
 and render overflow errors. Violated layout constraints
@@ -133,7 +129,7 @@ click on the **Select Widget Mode** button in the inspector.
 
 ![The Select Widget Mode button in the inspector]({% asset tools/devtools/select_widget_mode_devtools_alpha.png @path %})
 
-For some properties, like flex factor and alignment,
+For some properties, like flex factor, flex fit, and alignment,
 you can modify the value via dropdown lists in the explorer.
 When modifying a widget property, you see the new value reflected
 not only in the Layout Explorer, but also on the
@@ -142,7 +138,7 @@ on property changes so that the effect of the change is clear.
 Widget property changes made from the layout explorer don't
 modify your source code and are reverted on hot reload.
 
-### Interactive Properties
+##### Interactive Properties
 
 Layout Explorer supports modifying [`mainAxisAlignment`][],
 [`crossAxisAlignment`][], and [`FlexParentData.flex`][].
@@ -150,7 +146,7 @@ In the future, we may add support for additional properties
 such as [`mainAxisSize`][], [`textDirection`][], and
 [`FlexParentData.fit`][].
 
-#### mainAxisAlignment
+###### mainAxisAlignment
 
 ![The Layout Explorer changing main axis alignment]({% asset tools/devtools/layout_explorer_main_axis_alignment.gif @path %}){:width="100%"}
 
@@ -164,7 +160,7 @@ Supported values:
 * `MainAxisAlignment.spaceEvenly`
 
 
-#### crossAxisAlignment
+###### crossAxisAlignment
 
 ![The Layout Explorer changing cross axis alignment]({% asset tools/devtools/layout_explorer_cross_axis_alignment.gif @path %}){:width="100%"}
 
@@ -176,13 +172,42 @@ Supported values:
 * `CrossAxisAlignment.stretch`
 
 
-#### FlexParentData.flex
+###### FlexParentData.flex
 
 ![The Layout Explorer changing flex factor]({% asset tools/devtools/layout_explorer_flex.gif @path %}){:width="100%"}
 
 Layout Explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
 factor of a flex widget’s child can be any int.
+
+###### Flexible.fit
+
+![The Layout Explorer changing fit]({% asset tools/devtools/layout_explorer_fit.gif @path %}){:width="100%"}
+
+Layout Explorer supports the two different types of
+[`FlexFit`][]: `loose` and `tight`.
+
+#### Fixed size layouts
+When you select a fixed size widget that is not a child
+of a flex widget, fixed size layout information will appear
+in the Layout Explorer. You can see size, constraint, and padding
+information for both the selected widget and its nearest upstream
+RenderObject.
+
+![The Layout Explorer fixed size tool]({% asset tools/devtools/layout_explorer_fixed_layout.png @path %})
+
+## Details Tree
+
+Select the **Details Tree** tab to display the details tree for the
+selected widget.
+
+![The Details Tree tab]({% asset tools/devtools/details_tree_tab.png @path %})
+
+From the details tree, you can gather useful information about a
+widget's properties, render object, and children.
+
+![The Details Tree view]({% asset tools/devtools/details_tree.png @path %})
+
 
 ## Track widget creation
 
@@ -231,6 +256,7 @@ of the Flutter inspector.
 [DevTools written in Flutter]: /docs/development/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter
 [`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
 [flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html
+[`FlexFit`]: {{site.api}}/flutter/widgets/FlexFit-class.html
 [`FlexParentData.fit`]: {{site.api}}/flutter/rendering/FlexParentData/fit.html
 [`FlexParentData.flex`]: {{site.api}}/flutter/rendering/FlexParentData/flex.html
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
