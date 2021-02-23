@@ -192,8 +192,8 @@ using the `CameraController` when a user taps on the button.
 
 Taking a picture requires 2 steps:
 
-  1. Ensure the camera is initialized.
-  2. Use the controller to take a picture and it returns a Future<Xfile>.
+  1. Ensure that the camera is initialized.
+  2. Use the controller to take a picture and ensure that it returns a `Future<Xfile>`.
 
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.
