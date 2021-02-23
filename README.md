@@ -287,8 +287,10 @@ i  starting release process (may take several minutes)...
 
 ## Deploying to the official site
 
-Usually, official site deploys are performed by Travis. In the event that you
-need to manually deploy, use the deploy script and the `default` project:
+As of Feb 23, 2021, official site deploys are
+performed by GitHubActions (GHA).
+In the event that you need to manually deploy,
+use the deploy script and the `default` project:
 
 ```
 $ ./tool/shared/deploy.sh --local --robots ok default
