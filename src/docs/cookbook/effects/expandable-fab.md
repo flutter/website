@@ -2,8 +2,8 @@
 title: Create an expandable FAB
 description: How to implement a FAB that expands to multiple buttons when tapped.
 prev:
-  title: Create a download button
-  path:  /docs/cookbook/effects/download-button
+  title: Create a typing indicator
+  path:  /docs/cookbook/effects/typing-indicator
 next:
   title: Drag a UI element
   path:  /docs/cookbook/effects/drag-a-widget
@@ -394,9 +394,23 @@ class _ExpandableFabState extends State<ExpandableFab> with SingleTickerProvider
 }
 ```
 
+Congratulations! You now have an expandable FAB.
+
 ## Interactive example
 
-Congratulations! You now have an expandable FAB.
+Run the app:
+
+* Click the FAB button in the lower-right corner,
+  represented with an Edit icon.
+  It fans out to 3 buttons and is itself replaced by
+  a close button, represented by an **X**.
+* Click the close button to see the expanded
+  buttons fly back to the original button and
+  the **X** is replaced by the Edit icon.
+* Expand the Edit button again, and click on any
+  of the 3 satellite buttons to see a dialog
+  representing that button's action.
+
 
 <!--skip-->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true

@@ -5,8 +5,8 @@ prev:
   title: Use themes to share colors and font styles
   path: /docs/cookbook/design/themes
 next:
-  title: Create an expandable FAB
-  path: /docs/cookbook/effects/expandable-fab
+  title: Create a download button
+  path: /docs/cookbook/effects/download-button
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

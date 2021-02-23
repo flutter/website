@@ -5,8 +5,8 @@ prev:
   title: Work with tabs
   path: /docs/cookbook/design/tabs
 next:
-  title: Create an expandable FAB
-  path:  /docs/cookbook/effects/expandable-fab
+  title: Create a typing indicator
+  path:  /docs/cookbook/effects/typing-indicator
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -25,9 +25,6 @@ you'll build a download button that transitions through
 multiple visual states, based on the status of an app download.
 
 ![Not Dowloaded]({% asset cookbook/effects/download-button_not-downloaded @path %}) ![Downloading]({% asset cookbook/effects/download-button_downloading.png @path %}) ![Dowloaded]({% asset cookbook/effects/download-button_downloaded.png @path %})
-These three images show: 1) the download button,
-2) the in-progress download, 3) open the
-downloaded asset.
 
 ## Define a new stateful widget
 
@@ -437,6 +434,17 @@ Now, the user can tap to start a download, tap to cancel an
 in-progress download, and tap to open a completed download.
 
 ## Interactive example
+
+Run the app:
+
+* Click the **GET** button to kick off a
+  simulated download.
+* The button changes to a progress indicator
+  to simulate an in-process download.
+* When the simulated download is complete, the
+  button transitions to **OPEN**, to indicate
+  that the app is ready for the user
+  to open the downloaded asset.
 
 <!--skip-->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
