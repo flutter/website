@@ -59,7 +59,7 @@ following software:
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
-* [Visual Studio 2019][] (not to be confused with Visual Studio Code)
+* [Visual Studio 2019][] (not to be confused with Visual Studio _Code_)
   with the "Desktop development with C++" workload installed,
   including all of its default components
 
