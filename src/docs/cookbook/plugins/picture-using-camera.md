@@ -179,15 +179,21 @@ FutureBuilder<void>(
 ## 5. Take a picture with the `CameraController`
 
 You can use the `CameraController` to take pictures using the
-[`takePicture()`][] method. In this example,
-create a `FloatingActionButton` that takes a picture
+[`takePicture()`][] method, which returns an [`Xfile`][],
+a cross-platform, simplified `File` abstraction.
+On both Android and IOS, the new image is stored in their
+respective cache directories,
+and the `path` to that location is returned in the `Xfile`.
+
+[`Xfile`]:  {{site.pub}}/documentation/camera/latest/camera/XFile-class.html
+
+In this example, create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 
-Saving a picture requires 3 steps:
+Taking a picture requires 2 steps:
 
-  1. Ensure the camera is initialized
-  2. Construct a path that defines where the picture should be saved
-  3. Use the controller to take a picture and save the result to the path
+  1. Ensure that the camera is initialized.
+  2. Use the controller to take a picture and ensure that it returns a `Future<Xfile>`.
 
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.
@@ -204,17 +210,9 @@ FloatingActionButton(
       // Ensure that the camera is initialized.
       await _initializeControllerFuture;
 
-      // Construct the path where the image should be saved using the path
-      // package.
-      final path = join(
-        // Store the picture in the temp directory.
-        // Find the temp directory using the `path_provider` plugin.
-        (await getTemporaryDirectory()).path,
-        '${DateTime.now()}.png',
-      );
-
-      // Attempt to take a picture and log where it's been saved.
-      await _controller.takePicture(path);
+      // Attempt to take a picture and then get the location
+      // where the image file is saved.
+      final image = await _controller.takePicture();
     } catch (e) {
       // If an error occurs, log the error to the console.
       print(e);
