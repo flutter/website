@@ -179,7 +179,13 @@ FutureBuilder<void>(
 ## 5. Take a picture with the `CameraController`
 
 You can use the `CameraController` to take pictures using the
-[`takePicture()`][] method. The [`takePicture()`][] method returns a [`Xfile`](https://pub.dev/documentation/camera/latest/camera/XFile-class.html) which is a cross-platform simplified File abstraction. In android and IOS implementation the image taken is stored in their respective cache directories. The path of the Xfile returned points to the image stored in the cache directory of the device.
+[`takePicture()`][] method, which returns an [`Xfile`][],
+a cross-platform, simplified `File` abstraction.
+On both Android and IOS, the new image is stored in their
+respective cache directories,
+and the `path` to that location is returned in the `Xfile`.
+
+[`Xfile`]:  {{site.pub}}/documentation/camera/latest/camera/XFile-class.html
 
 In this example, create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
