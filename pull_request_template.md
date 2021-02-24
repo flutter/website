@@ -1,8 +1,6 @@
-NOTE: We love contributions, but we hate spam. If your PR doesn't improve flutter.dev, we'll close it and label it as `invalid`.
+NOTE: We are freezing the website repo (as of Feb 24th 9am PT), while we work on some planned upgrades. Please hold off on submitting any PRs until the website work is complete.
 
-Fixes #<issue number>.
+You can still file issues.
 
-Changes proposed in this pull request:
+Thankyou!
 
-*  
-* 
