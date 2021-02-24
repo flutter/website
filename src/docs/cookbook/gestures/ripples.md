@@ -2,8 +2,8 @@
 title: Add Material touch ripples
 description: How to implement ripple animations.
 prev:
-  title: Create an expandable FAB 
-  path: /docs/cookbook/effects/expandable-fab
+  title: Retrieve the value of a text field
+  path: /docs/cookbook/forms/retrieve-input
 next:
   title: Handle taps
   path: /docs/cookbook/gestures/handling-taps
