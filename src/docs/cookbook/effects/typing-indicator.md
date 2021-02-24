@@ -20,7 +20,9 @@ prevent rapid and conflicting responses between you
 and the other person. In this recipe, you build a
 speech bubble typing indicator that animates in and out of view.
 
-![Indicator Example 1]({% asset cookbook/effects/typing-indicator_1.png @path %}) ![Indicator Example 2]({% asset cookbook/effects/typing-indicator_2.png @path %}) ![Indicator Example 3]({% asset cookbook/effects/typing-indicator_3.png @path %}) ![Indicator Example 4]({% asset cookbook/effects/typing-indicator_4.png @path %}) ![Indicator Example 5]({% asset cookbook/effects/typing-indicator_5.png @path %})
+The following GIF shows the app's behavior:
+
+![The typing indicator is turned on and off]({% asset cookbook/effects/TypingIndicator.gif @path %})
 
 ## Define the typing indicator widget
 
@@ -457,7 +459,7 @@ Run the app:
 
 * Click the round on/off switch at the bottom
   of the screen to turn the typing indicator bubble
-  on an off.
+  on and off.
 
 <!--skip-->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true

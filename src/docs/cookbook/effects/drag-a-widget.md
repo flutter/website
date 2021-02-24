@@ -24,11 +24,9 @@ where the user long presses on a choice of food,
 and then drags that food to the picture of the customer who
 is paying for it.
 
-{% comment %}
-![Drag-and-drop initial position]({% asset cookbook/effects/drag-drop-initial.jpg @path %}){:width="40%"}
-{% endcomment %}
+The following GIF shows the app's behavior:
 
-![Drag-and-drop dragging]({% asset cookbook/effects/drag-drop-dragging.jpg @path %}){:width="40%"} ![Drag-and-drop placed]({% asset cookbook/effects/drag-drop-placed.jpg @path %}){:width="40%"}
+![Ordering the food by dragging it to the person]({% asset cookbook/effects/DragAUIElement.gif @path %})
 
 This recipe begins with a prebuilt list of menu items and
 a row of customers.
@@ -229,27 +227,18 @@ that adds food items to a customer’s shopping cart.
 
 ## Interactive example
 
-NOTE TO REVIEWERS:
-I have been testing this DP on my Macbook Pro, and it's
-acting pretty weirdly. If I hold the control key down
-before clicking on the food item, it creates the draggable
-image, but then brings up the Mac control-click menu.
-Then, if I take the menu away and release the control
-key, the image is still there for me to drag.
-Note that I haven't tried it on a phone. But the
-following instructions may not be correct.
-
 Run the app:
 
 * Scroll through the food items.
-* Select one with your finger or mouse.
-* While pressing on the selection,
-  press the control key&mdash;an image
-  appears representing the selected food.
+* Press and hold on one with your
+  finger or click and hold with the
+  mouse.
+* While holding, the food item's image
+  will appear above the list.
 * Drag the image and drop it on one of the
   people at the bottom of the screen.
   The text under the image updates to
-  reflect that charge for that person.
+  reflect the charge for that person.
   You can continue to add food items
   and watch the charges accumulate.
 

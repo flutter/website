@@ -24,7 +24,9 @@ in the following figure. When pressed, this expandable FAB spawns
 multiple, other action buttons. Each button corresponds to one of
 those critical actions.
 
-![pic of a collapsed FAB]({% asset cookbook/effects/expandable-fab_closed.png @path %}){:width="40%"}   ![pic of an expanded FAB]({% asset cookbook/effects/expandable-fab_open.png @path %}){:width="40%"}
+The following GIF shows the app's behavior:
+
+![Expanding and collapsing the FAB]({% asset cookbook/effects/ExpandingFAB.gif @path %})
 
 ## Create an ExpandableFab widget
 
@@ -400,14 +402,14 @@ Congratulations! You now have an expandable FAB.
 
 Run the app:
 
-* Click the FAB button in the lower-right corner,
+* Click the FAB in the lower-right corner,
   represented with an Edit icon.
   It fans out to 3 buttons and is itself replaced by
   a close button, represented by an **X**.
 * Click the close button to see the expanded
-  buttons fly back to the original button and
+  buttons fly back to the original FAB and
   the **X** is replaced by the Edit icon.
-* Expand the Edit button again, and click on any
+* Expand the FAB again, and click on any
   of the 3 satellite buttons to see a dialog
   representing that button's action.
 

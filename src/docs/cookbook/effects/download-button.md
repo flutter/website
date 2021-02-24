@@ -24,7 +24,9 @@ to provide this feedback. In this recipe,
 you'll build a download button that transitions through
 multiple visual states, based on the status of an app download.
 
-![Not Dowloaded]({% asset cookbook/effects/download-button_not-downloaded @path %}) ![Downloading]({% asset cookbook/effects/download-button_downloading.png @path %}) ![Dowloaded]({% asset cookbook/effects/download-button_downloaded.png @path %})
+The following GIF shows the app's behavior:
+
+![The download button cycles through its stages]({% asset cookbook/effects/DownloadButton.gif @path %})
 
 ## Define a new stateful widget
 
@@ -440,7 +442,7 @@ Run the app:
 * Click the **GET** button to kick off a
   simulated download.
 * The button changes to a progress indicator
-  to simulate an in-process download.
+  to simulate an in-progress download.
 * When the simulated download is complete, the
   button transitions to **OPEN**, to indicate
   that the app is ready for the user
