@@ -184,17 +184,17 @@ difference as illustrated in the beginning of this article.
    rasterization time in release mode; the worst frame rasterization time is
    a good indicator on how severe the shader compilation jank is.)
 
-3. **SkSL warm-up doesn't help newer iPhones using Metal.**<br><br>
-   Flutter recently migrated from OpenGL to Metal for all newer iOS devices.
-   (Please reference [Metal on iOS FAQ][] on which iOS devices are considered
-   new enough to use Metal.) However, Skia currently only implemented the SkSL
-   warm-up for OpenGL. So the SkSL warm-up would only speed up older iOS devices
-   by default. If you find shader compilation jank to be an issue for your app
-   on newer iPhones, please let us know by filing a [GitHub issue][]. In the
-   longer term, we have a plan to use test-based shader warm-up to mitigate
-   this. If there's an urgent need for fixing shader compilation jank on newer
-   iPhones, please leave feedback on [Issue 61045][], and we can help you turn
-   on OpenGL for your app.
+3. **SkSL warm-up doesn't help on iOS.**<br><br>
+   Flutter uses Metal on most iOS devices. (Please reference [Metal on iOS FAQ][]
+   for a list of which iOS devices use Metal.) Unfortunately, shader warm-up
+   as currently available has proved insufficient to reduce shader compilation
+   jank. This is because shaders go through two compilation steps: SkSL (Skia
+   Shader Language) to MSL (Metal Shader Language), which is done by Skia, and
+   then MSL to final compiled shader, which is done by the GPU driver, which
+   is out of Flutter's control, and which is significantly more expensive than
+   the analogous steps on other platforms.<br><br>
+   We are acutely aware of this limitation and are actively working on a number
+   of different possible solutions. See the [first launch jank][] project on GitHub.
    
 4. **Why can't you create a single "ubershader" and just compile that once?**<br><br>
    One idea that people sometimes suggest is to create a single large shader that
@@ -229,3 +229,4 @@ please refer to [Issue 32170][].
 [Issue 32170]: {{site.github}}/flutter/flutter/issues/32170
 [Issue 53607]: {{site.github}}/flutter/flutter/issues/53607
 [Issue 60313]: {{site.github}}/flutter/flutter/issues/60313
+[first launch jank]: {{site.github}}/flutter/flutter/projects/188
