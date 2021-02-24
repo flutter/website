@@ -53,6 +53,15 @@ awesome_app/
     RobotoMono-Bold.ttf
 ```
 
+### Supported font formats
+
+Flutter supports the following font formats:
+
+* `.tff`
+* `.otf`
+
+Flutter does not support `.woff` and `.woff2` fonts for all platforms.
+
 ## 2. Declare the font in the pubspec
 
 Once you've identified a font, tell Flutter where to find it.
