@@ -6,9 +6,10 @@ description: Brief description similar to the "context" section below. The descr
 {% comment %}
   PLEASE READ THESE GENERAL INSTRUCTIONS:
   * All lines of text should be 80 chars OR LESS.
-    (I prefer less.)
+    The writers strongly prefer semantic line breaks:
+    https://github.com/dart-lang/site-shared/blob/master/doc/writing-for-dart-and-flutter-websites.md#semantic-line-breaks
   * DON'T SUBMIT a PR weeks and weeks in advance.
-    Doing this causes it to get stanky in the website Q
+    Doing this causes it to get stanky in the website
     and usually develops conflicts in the index file.
     Ideally, submit a PR once you have confirmed
     info on the version number where the breaking
@@ -41,7 +42,7 @@ description: Brief description similar to the "context" section below. The descr
     but don't use "github.com" or "api.flutter.dev" or
     "pub.dev" in your URLs. Use the {{site.github}},
     {{site.api}}, or {{site.pub}} macros.
-  * AVOID "will", when possible, in other words,
+  * AVOID "will" when possible, in other words,
     stay in the present tense. For example:
     Bad: "When encountering an xxx value,
           the code will throw an exception."
