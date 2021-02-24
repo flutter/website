@@ -3,24 +3,17 @@ title: Web renderers
 description: How to choose a web renderer for running and building a web app.
 ---
 
-{{site.alert.warning}}
-  **While in development, web support is available in the beta channel.**
-  If you experience a problem that hasn't yet been reported, please
-  [file an issue][] and make sure that "web" appears in the title.
-{{site.alert.end}}
-
 When running and building apps for the web, you can choose between two different
 renderers. This page describes both renderers and how to choose the best one for
 your needs. The two renderers are:
 
-**HTML**
+**HTML renderer**
   : Uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
   This renderer has a smaller download size.
 
-**CanvasKit**
-  : Uses Skia compiled to WebAssembly and rendered using WebGL. This renderer is
-  fully consistent with Flutter mobile and desktop, has faster performance, and
-  is less likely to have differences across browsers, but adds about 2MB in
+**CanvasKit renderer**
+  : This renderer is fully consistent with Flutter mobile and desktop, has
+  faster performance with higher widget density, but adds about 2MB in 
   download size.
 
 ## Command line options

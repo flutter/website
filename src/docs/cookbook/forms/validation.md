@@ -130,7 +130,7 @@ ElevatedButton(
       // If the form is valid, display a snackbar. In the real world,
       // you'd often call a server or save the information in a database.
 
-      Scaffold
+      ScaffoldMessenger
           .of(context)
           .showSnackBar(SnackBar(content: Text('Processing Data')));
     }
@@ -219,7 +219,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 // otherwise.
                 if (_formKey.currentState.validate()) {
                   // If the form is valid, display a Snackbar.
-                  Scaffold.of(context)
+                  ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text('Processing Data')));
                 }
               },

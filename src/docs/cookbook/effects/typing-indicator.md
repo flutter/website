@@ -2,8 +2,8 @@
 title: Create a typing indicator
 description: How to implement a typing indicator.
 prev:
-  title: Create a download button
-  path:  /docs/cookbook/effects/download-button
+  title: Create a staggered menu animation
+  path:  /docs/cookbook/effects/staggered-menu-animation
 next:
   title: Create an expandable FAB
   path:  /docs/cookbook/effects/expandable-fab
@@ -20,9 +20,9 @@ prevent rapid and conflicting responses between you
 and the other person. In this recipe, you build a
 speech bubble typing indicator that animates in and out of view.
 
-The following GIF shows the app's behavior:
+The following animation shows the app's behavior:
 
-![The typing indicator is turned on and off]({% asset cookbook/effects/TypingIndicator.gif @path %})
+![The typing indicator is turned on and off]({% asset cookbook/effects/TypingIndicator.gif @path %}){:.site-mobile-screenshot}
 
 ## Define the typing indicator widget
 

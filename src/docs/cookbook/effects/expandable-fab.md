@@ -5,8 +5,8 @@ prev:
   title: Create a typing indicator
   path:  /docs/cookbook/effects/typing-indicator
 next:
-  title: Drag a UI element
-  path:  /docs/cookbook/effects/drag-a-widget
+  title: Create gradient chat bubbles
+  path:  /docs/cookbook/effects/gradient-bubbles
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -24,9 +24,9 @@ in the following figure. When pressed, this expandable FAB spawns
 multiple, other action buttons. Each button corresponds to one of
 those critical actions.
 
-The following GIF shows the app's behavior:
+The following animation shows the app's behavior:
 
-![Expanding and collapsing the FAB]({% asset cookbook/effects/ExpandingFAB.gif @path %})
+![Expanding and collapsing the FAB]({% asset cookbook/effects/ExpandingFAB.gif @path %}){:.site-mobile-screenshot}
 
 ## Create an ExpandableFab widget
 

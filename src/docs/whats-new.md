@@ -12,6 +12,107 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
+## March 3, 2021
+
+**Docs updated or added since the 1.22 release**
+
+* A new [Who is Dash?][] page!
+* Information about monetizing your apps has been
+  collected in the new [Flutter Ads][] landing page.
+* Added a new page explaining the [Flutter Fix][]
+  feature and how to use it.
+* New and updated web pages, including:
+  * [Web support for Flutter][]
+  * [Configuring the URL strategy on the web][]
+  * [Web FAQ][] 
+* The [Desktop support for Flutter][] page is updated,
+  as well as other pages on the site that discuss
+  desktop support.
+* The [DevTools][] docs have been updated. The
+  most significant updates are to the following page:
+  * [Flutter inspector][]
+* Added a page on how to [implement deep linking][]
+  for mobile and web.
+* Updated the [Creating responsive and adaptive apps][]
+  page.
+* Many pages (including all codelabs on flutter.dev)
+  and examples are updated to be null safe.
+* Added two new add to app pages:
+  * [Using multiple Flutter instances][]
+  * [Adding a Flutter view to an Android app][]
+* Added a page on how to [write integration tests using
+  the integration_test package][].
+* Significant updates to the [internationalization][] page.
+* New and updated [performance][] pages, including:
+  * [Performance metrics][]
+  * [Performance faq][]
+  * [More thoughts about performance][]
+
+**Codelabs**
+
+Many of our codelabs have been updated to null safety.
+We've also added a new codelab since the last stable release:
+
+* [Adding AdMob banner and native inline ads to a Flutter app][]
+
+For a complete list, see [Flutter codelabs][].
+
+**Articles**
+
+We've published the following articles on the [Flutter Medium][]
+publication since the last stable release:
+
+* [Flutter performance updates in the first half of 2020][perf-H1-2020]
+* [Are you happy with Flutter? — Q4 2020 user survey results][Q4]
+* [Join us for #30DaysOfFlutter][]
+* [Providing operating system compatibility on a large scale][comp]
+* [Updates on Flutter Testing][]
+* [Announcing Dart null safety beta][]
+* [Deprecation Lifetime in Flutter][]
+* [New ad formats for Flutter][]
+* [Accessible expression with Material Icons and Flutter][]
+* [Dart sound null safety: technical preview 2][]
+* [Flutter on the web, slivers, and platform-specific issues: user survey results from Q3 2020][Q3]
+* [Testable Flutter and Cloud Firestore][]
+* [Performance testing on the web][]
+
+
+[Accessible expression with Material Icons and Flutter]: {{site.flutter-medium}}/accessible-expression-with-material-icons-and-flutter-e3f3f622200b
+[Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
+[Adding a Flutter view to an Android app]: /docs/development/add-to-app/android/add-flutter-view
+[Announcing Dart null safety beta]: {{site.flutter-medium}}/announcing-dart-null-safety-beta-4491da22077a
+[comp]: {{site.flutter-medium}}/providing-operating-system-compatibility-on-a-large-scale-374cc2fb0dad
+[Configuring the URL strategy on the web]: /docs/development/ui/navigation/url-strategies
+[Creating responsive and adaptive apps]: /docs/development/ui/layout/adaptive-responsive
+[Dart sound null safety: technical preview 2]: {{site.flutter-medium}}/null-safety-flutter-tech-preview-cb5c98aba187
+[Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
+[Desktop support for Flutter]: /desktop
+[Devtools]: /docs/development/tools/devtools/overview
+[Flutter 2 release notes]: /docs/development/tools/sdk/release-notes/release-notes-2.0.0
+[Flutter Fix]: /docs/development/tools/flutter-fix
+[Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter Ads]: /ads
+[implement deep linking]: /docs/development/ui/navigation/deep-linking
+[internationalization]: /docs/development/accessibility-and-localization/internationalization
+[Join us for #30DaysOfFlutter]: {{site.flutter-medium}}/join-us-for-30daysofflutter-9993e3ec847b
+[More thoughts about performance]: /docs/perf/appendix
+[New ad formats for Flutter]: {{site.flutter-medium}}/new-ads-beta-inline-banner-and-native-support-for-the-flutter-mobile-ads-plugin-e48a7e9a0e64
+[perf-H1-2020]: {{site.flutter-medium}}/flutter-performance-updates-in-the-first-half-of-2020-5c597168b6bb
+[performance]: /docs/perf
+[Performance faq]: /docs/perf/faq
+[Performance metrics]: /docs/perf/metrics
+[Performance testing on the web]: {{site.flutter-medium}}/performance-testing-on-the-web-25323252de69
+[Q3]: {{site.flutter-medium}}/flutter-on-the-web-slivers-and-platform-specific-issues-user-survey-results-from-q3-2020-f8034236b2a8
+[Q4]: {{site.flutter-medium}}/are-you-happy-with-flutter-q4-2020-user-survey-results-41cdd90aaa48
+[Testable Flutter and Cloud Firestore]: {{site.flutter-medium}}/flutter/testable-flutter-and-cloud-firestore-1cf2fbbce97b
+[Updates on Flutter Testing]: {{site.flutter-medium}}/updates-on-flutter-testing-f54aa9f74c7e
+[Using multiple Flutter instances]: /docs/development/add-to-app/multiple-flutters
+[Web FAQ]: /docs/development/platform-integration/web
+[Web support for Flutter]: /web
+[Who is Dash?]: /dash
+[write integration tests using the integration_test package]: /docs/testing/integration-tests
+
+---
 
 ## Oct 1, 2020
 

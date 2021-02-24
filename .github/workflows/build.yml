@@ -90,19 +90,28 @@ jobs:
           ruby-version: 2.6.5
       - uses: dart-lang/setup-dart@v0.3
         with:
-          sdk: stable
+          sdk: 2.10.5
       - name: Install node dependencies
         run: npm install
       - name: Install dart dependencies
         run: dart pub get
       - name: Select flutter
-        if: matrix.sdk != 'submodule-commit'
+        if: matrix.sdk != 'submodule-commit' && matrix.sdk != 'stable'
         run: |
           cd flutter
           git remote set-branches origin ${{ matrix.sdk }}
           git fetch --depth 1 origin ${{ matrix.sdk }}
           git checkout ${{ matrix.sdk }} --
           git pull
+      - name: Select flutter 1.22.6
+        if: matrix.sdk == 'stable'
+        run: |
+          cd flutter
+          git fetch --depth 1 origin 1.22.6:1.22.6
+          git checkout 1.22.6 --
+          git remote set-branches origin stable
+          git fetch --depth 1 origin stable
+          git branch --set-upstream-to origin/stable
       - name: Setup flutter
         run: flutter/bin/flutter doctor
       - run: tool/shared/write-ci-info.sh -v
@@ -135,18 +144,20 @@ jobs:
           ruby-version: 2.6.5
       - uses: dart-lang/setup-dart@v0.3
         with:
-          sdk: stable
+          sdk: 2.10.5
       - name: Install node dependencies
         run: npm install
       - name: Install dart dependencies
         run: dart pub get
-      - name: Select flutter
+      - name: Select flutter 1.22.6
         run: |
           cd flutter
+          git fetch --depth 1 origin 1.22.6:1.22.6
+          git checkout 1.22.6 --
           git remote set-branches origin stable
           git fetch --depth 1 origin stable
-          git checkout stable --
-          git pull
+          git branch --set-upstream-to origin/stable
+
       - name: Setup flutter
         run: flutter/bin/flutter doctor
       - run: tool/shared/write-ci-info.sh -v
