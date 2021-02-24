@@ -47,6 +47,12 @@ add code to launch `FlutterActivity` from whatever point
 in your app that you'd like. The following example shows
 `FlutterActivity` being launched from an `OnClickListener`.
 
+{{site.alert.note}}
+  Make sure to use the following import:
+  
+  <!--skip-->
+  ```dart
+  import io.flutter.embedding.android.FlutterActivity;
 {% samplecode default-activity-launch %}
 {% sample Java %}
 <!--code-excerpt "ExistingActivity.java" title-->
