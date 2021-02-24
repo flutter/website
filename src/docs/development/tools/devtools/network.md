@@ -29,12 +29,12 @@ of response and request headers and bodies.
 You can use the search and filter controls to find a specific request or filter
 requests out of the request table.
 
-![Screenshot of the network screen]({% asset tools/devtools/network-search-and-filter.png @path %}){:width="100%"}
+![Screenshot of the network screen]({% asset tools/devtools/network-search-and-filter.png @path %})
 
 To apply a filter, press the filter button (right of the search bar). You will
 see a filter dialog pop up:
 
-![Screenshot of the network screen]({% asset tools/devtools/network-filter-dialog.png @path %}){:width="100%"}
+![Screenshot of the network screen]({% asset tools/devtools/network-filter-dialog.png @path %})
 
 The filter query syntax is described in the dialog. You can filter network
 requests by the following keys:
