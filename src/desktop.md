@@ -587,13 +587,18 @@ You can run the following samples as desktop apps,
 as well as download and inspect the source code to
 learn more about Flutter desktop support.
 
-Flutter Gallery [running web app][], [repo][]
+Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
 : A samples project hosted on GitHub to help developers
   evaluate and use Flutter. The Gallery consists of a
   collection of Material design widgets, behaviors,
   and vignettes implemented with Flutter.
   You can clone the project and run Gallery as a desktop app
   by following the instructions provided in the [README][].
+  
+Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-repo]
+: A Google contacts manager that integrates with GitHub and Twitter. 
+  It syncs with your Google account, imports your contacts,
+  and allows you to manage them.
 
 [Photo Search app][]
 : A sample app built as a desktop application that
@@ -605,6 +610,8 @@ Flutter Gallery [running web app][], [repo][]
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
 [README]: {{site.github}}/flutter/gallery#flutter-gallery
-[repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
+[flutter-gallery-repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
+[gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
+[gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
 [running web app]: https://flutter.github.io/gallery/#/
 [Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html
