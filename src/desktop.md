@@ -595,11 +595,10 @@ Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
   You can clone the project and run Gallery as a desktop app
   by following the instructions provided in the [README][].
   
-Flokk [annonucement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-repo]
-: A fresh and modern Google Contacts manager that integrates with GitHub and Twitter
-  by our friends at [gskinner][]. It syncs with your Google account, imports all your 
-  Contacts and allows you to manage them. Additionally, you can link Twitter and 
-  Github accounts for each contact, and see all of their social activities at a glance.
+Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-repo]
+: A Google contacts manager that integrates with GitHub and Twitter. 
+  It syncs with your Google account, imports your contacts,
+  and allows you to manage them.
 
 [Photo Search app][]
 : A sample app built as a desktop application that
