@@ -320,6 +320,7 @@ To restore the default appearance for buttons in part of an
 application you can wrap a widget subtree with TextButtonTheme,
 ElevatedButtonTheme, or OutlinedButtonTheme. For example:
 
+<!-- skip -->
 ```dart
 TextButtonTheme(
   data: TextButtonThemeData(style: flatButtonStyle),
@@ -333,6 +334,7 @@ The following sections cover use of the following FlatButton,
 RaisedButton, and OutlineButton color parameters:
 
 
+<!-- skip -->
 ```dart
 textColor
 disabledTextColor
