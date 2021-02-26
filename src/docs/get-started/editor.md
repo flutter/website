@@ -51,7 +51,7 @@ Alternatively, you can also use IntelliJ:
 
 ## Install the Flutter and Dart plugins
 
-To install these:
+### Mac
 
   1. Start Android Studio.
   1. Open plugin preferences (**Configure > Plugins** as of
@@ -61,13 +61,11 @@ To install these:
   1. Click **Yes** when prompted to install the Dart plugin.
   1. Click **Restart** when prompted.
 
-{{site.alert.note}}
-  Prior to v3.6.3.0, access plugin preferences as follows:
-   1. Open plugin preferences (on MacOS go to **Preferences > Plugins**; 
-      on Windows & Linux go to **File > Settings > Plugins**).
+### Linux or Windows
+
+   1. Open plugin preferences (**File > Settings > Plugins**).
    1. Select **Marketplace**,  select the Flutter plugin and click
       **Install**.
-{{site.alert.end}}
 
 </div>
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
