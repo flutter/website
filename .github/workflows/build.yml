@@ -143,8 +143,6 @@ jobs:
       - name: Select flutter
         run: |
           cd flutter
-          git fetch --depth 1 origin 1.22.6:1.22.6
-          git checkout 1.22.6 --
           git remote set-branches origin stable
           git fetch --depth 1 origin stable
           git branch --set-upstream-to origin/stable
