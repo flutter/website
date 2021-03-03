@@ -103,15 +103,6 @@ jobs:
           git fetch --depth 1 origin ${{ matrix.sdk }}
           git checkout ${{ matrix.sdk }} --
           git pull
-      - name: Select flutter 1.22.6
-        if: matrix.sdk == 'stable'
-        run: |
-          cd flutter
-          git fetch --depth 1 origin 1.22.6:1.22.6
-          git checkout 1.22.6 --
-          git remote set-branches origin stable
-          git fetch --depth 1 origin stable
-          git branch --set-upstream-to origin/stable
       - name: Setup flutter
         run: flutter/bin/flutter doctor
       - run: tool/shared/write-ci-info.sh -v
