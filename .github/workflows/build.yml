@@ -145,8 +145,8 @@ jobs:
           cd flutter
           git remote set-branches origin stable
           git fetch --depth 1 origin stable
-          git branch --set-upstream-to origin/stable
-
+          git checkout stable --
+          git pull
       - name: Setup flutter
         run: flutter/bin/flutter doctor
       - run: tool/shared/write-ci-info.sh -v
