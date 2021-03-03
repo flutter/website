@@ -96,7 +96,7 @@ jobs:
       - name: Install dart dependencies
         run: dart pub get
       - name: Select flutter
-        if: matrix.sdk != 'submodule-commit' && matrix.sdk != 'stable'
+        if: matrix.sdk != 'submodule-commit'
         run: |
           cd flutter
           git remote set-branches origin ${{ matrix.sdk }}
