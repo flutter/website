@@ -140,7 +140,7 @@ jobs:
         run: npm install
       - name: Install dart dependencies
         run: dart pub get
-      - name: Select flutter 1.22.6
+      - name: Select flutter
         run: |
           cd flutter
           git fetch --depth 1 origin 1.22.6:1.22.6
