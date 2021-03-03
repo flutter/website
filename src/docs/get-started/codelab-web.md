@@ -83,9 +83,8 @@ then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
 ```terminal
-$ flutter channel beta
+$ flutter channel stable
 $ flutter upgrade
-$ flutter config --enable-web
 ```
 
 If you have problems enabling web development,
@@ -99,12 +98,15 @@ You should see something like the following:
 ```terminal
 $ flutter doctor
 
-[✓] Flutter: is fully installed. (Channel dev, v1.9.5, on Mac OS X 10.14.6 18G87, locale en-US)
-[✗] Android toolchain - develop for Android devices: is not installed.
-[✗] Xcode - develop for iOS and macOS: is not installed.
-[✓] Chrome - develop for the web: is fully installed.
-[!] Android Studio: is not available. (not installed)
-[✓] Connected device: is fully installed. (1 available)
+[✓] Flutter: is fully installed. (Channel stable, 1.27.0, on macOS 11.2.1 20D74 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✓] Xcode - develop for iOS and macOS
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 4.1)
+[✓] IntelliJ IDEA Ultimate Edition (version 2020.3.2)
+[✓] Connected device (3 available)
+
+• No issues found!
 ```
 
 It's okay if the Android toolchain, Android Studio,
@@ -121,17 +123,12 @@ You should see something like the following:
 
 ``` terminal
 $ flutter devices
-2 connected devices:
+1 connected device:
 
-Chrome     • chrome     • web-javascript • Google Chrome 78.0.3904.108
-Web Server • web-server • web-javascript • Flutter Tools
+Chrome (web) • chrome • web-javascript • Google Chrome 88.0.4324.150
 ```
 
 The **Chrome** device automatically starts Chrome.
-The **Web Server** starts a server that hosts the app
-so that you can load it from any browser.
-Use the Chrome device during development so that you can use DevTools,
-and the web server when you want to test on other browsers.
 </li>
 
 <li markdown="1">The starting app is displayed in the following DartPad.

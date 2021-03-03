@@ -3,11 +3,6 @@ title: Deep linking
 description: Navigate to routes when the app receives a new URL
 ---
 
-{{site.alert.note}}
-  This feature is only available on the dev or master channel. To learn how to
-  switch channels, see [Switching Flutter channels][switching-channels].
-{{site.alert.end}}
-
 Flutter supports deep linking on iOS, Android, and web browsers in the dev
 channel. Opening a URL displays that screen in your app. With the following
 steps, you can launch and display routes by using named routes (either with the
@@ -22,8 +17,9 @@ using the [`Router`][Router] widget.
 
 If you're running the app in a web browser, there's no additional setup
 required. Route paths are handled in the same way as an iOS or Android deep
-link. By default, web apps read the deep link path from the url fragment
-using the pattern: `/#/path/to/app/screen`.
+link. By default, web apps read the deep link path from the url fragment using
+the pattern: `/#/path/to/app/screen`, but this can be changed by [configuring
+the URL strategy] for your app.
 
 To follow along, create a new Flutter project with [the `Router` widget
 sample][router-sample] in flutter/samples.
@@ -128,3 +124,4 @@ current set of pages when a new deep link is opened while the app is running.
 [plugin-linking]: https://medium.com/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 [verify-android-links]: https://developer.android.com/training/app-links/verify-site-associations
 [router-sample]: https://github.com/flutter/samples/blob/master/navigation_and_routing/lib/router/router.dart
+[configuring the URL strategy]: /docs/development/ui/navigation/url-strategies

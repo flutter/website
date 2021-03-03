@@ -196,21 +196,19 @@ Finally, create a build archive and upload it to App Store Connect:
 <ol markdown="1">
 <li markdown="1">
 
-Select **Product > Archive** to produce a build archive.
+Run `flutter build ipa` to produce a build archive.
 
 {{site.alert.note}}
-  On Flutter version 1.24.0-6.0 and later you can create an
-  archive by instead running `flutter build ipa`.
-  Then open `build/ios/archive/MyApp.xcarchive` in Xcode to
-  validate and distribute your app.
-  See `flutter build ipa -h` for available flags.
+  On versions of Flutter where `flutter build ipa`
+  is unavailable, open Xcode and select **Product > Archive**.
+  In the sidebar of the Xcode Organizer window, select your iOS app,
+  then select the build archive you just produced.
 {{site.alert.end}}
 
 </li>
 <li markdown="1">
 
-In the sidebar of the Xcode Organizer window, select your iOS app,
-then select the build archive you just produced.
+Open `build/ios/archive/MyApp.xcarchive` in Xcode.
 
 </li>
 <li markdown="1">
@@ -231,8 +229,7 @@ Activities tab of your app's details page on
   When you export your app at the end of **Distribute App**,
   Xcode will create a directory containing
   an IPA of your app and an `ExportOptions.plist` file.
-  On Flutter version 1.24.0-6.0 and later you can
-  create new IPAs with the same options without launching
+  You can create new IPAs with the same options without launching
   Xcode by running
   `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
   See `xcodebuild -h` for details about the keys in this property list.

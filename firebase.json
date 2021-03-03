@@ -48,6 +48,9 @@
 
       { "source": "/accessibility", "destination": "/docs/development/accessibility-and-localization/accessibility", "type": 301 },
       { "source": "/adaptations", "destination": "/docs/resources/platform-adaptations", "type": 301 },
+      { "source": "/adaptive*", "destination": "/docs/development/ui/layout/adaptive-responsive", "type": 301 },
+      { "source": "/responsive*", "destination": "/docs/development/ui/layout/adaptive-responsive", "type": 301 },
+      { "source": "/docs/development/ui/layout/responsive", "destination": "/docs/development/ui/layout/adaptive-responsive", "type": 301 },
       { "source": "/android-release", "destination": "/docs/deployment/android", "type": 301 },
       { "source": "/animations", "destination": "/docs/development/ui/animations", "type": 301 },
       { "source": "/animations/:rest*", "destination": "/docs/development/ui/animations/:rest*", "type": 301 },

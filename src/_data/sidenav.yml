@@ -63,8 +63,8 @@
               match-page-url-exactly: true
             - title: Tutorial
               permalink: /docs/development/ui/layout/tutorial
-            - title: Creating responsive apps
-              permalink: /docs/development/ui/layout/responsive
+            - title: Creating adaptive and responsive apps
+              permalink: /docs/development/ui/layout/adaptive-responsive
             - title: Understanding constraints [NEW]
               permalink: /docs/development/ui/layout/constraints
             - title: Box constraints
@@ -81,6 +81,8 @@
               match-page-url-exactly: true
             - title: Deep linking
               permalink: /docs/development/ui/navigation/deep-linking
+            - title: URL strategies
+              permalink: /docs/development/ui/navigation/url-strategies
         - title: Animations
           permalink: /docs/development/ui/animations
           children:
@@ -202,7 +204,7 @@
         permalink: /docs/development/add-to-app/performance
       - title: Multiple Flutter instances
         permalink: /docs/development/add-to-app/multiple-flutters
-    - title: Tools & techniques
+    - title: Tools & features
       permalink: /docs/development/tools
       children:
         - title: Android Studio & IntelliJ
@@ -260,6 +262,8 @@
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1.md
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
+        - title: Flutter Fix
+          permalink: /docs/development/tools/flutter-fix
         - title: Code formatting
           permalink: /docs/development/tools/formatting
         - title: Web renderers
@@ -380,6 +384,8 @@
 - title: Reference
   expanded: true
   children:
+    - title: Who is Dash?
+      permalink: /dash
     - title: Widget index
       permalink: /docs/reference/widgets
     - title: API reference
