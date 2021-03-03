@@ -298,8 +298,6 @@ When your shapes are loading, they now display
 the shimmer gradient that is 
 returned from the `shaderCallback`.
 
-![Many Shimmers](/images/cookbook/many-shimmers.png){:.site-mobile-screenshot}
-
 This is a big step in the right direction,
 but there’s a problem with this gradient display.
 Each `CircleListItem` widget and each `CardListItem` widget 
