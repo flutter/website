@@ -51,7 +51,11 @@ Alternatively, you can also use IntelliJ:
 
 ## Install the Flutter and Dart plugins
 
+The installation instructions vary by platform.
+
 ### Mac
+
+Use the following instructions for macos:
 
   1. Start Android Studio.
   1. Open plugin preferences (**Configure > Plugins** as of
@@ -115,4 +119,3 @@ For information on how to install and use the package, see the [lsp-dart documen
 [VS Code]: https://code.visualstudio.com/
 [Emacs]: https://www.gnu.org/software/emacs/download.html
 [lsp-dart documentation]: https://emacs-lsp.github.io/lsp-dart/
-
