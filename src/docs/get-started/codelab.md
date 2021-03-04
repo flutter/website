@@ -15,8 +15,6 @@ diff2html: true
   This codelab walks you through writing your first Flutter
   app on mobile. You might prefer to try
   [writing your first Flutter app on the web][codelab-web].
-  **Note that if you have [enabled web][],
-  the completed app just works on all of these devices!**
 {{site.alert.end}}
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
@@ -81,31 +79,6 @@ The animated GIF shows how the app works at the completion of part 1.
   * The [Android emulator][] (requires setup in Android Studio)
   * A browser (Chrome is required for debugging)
 {{site.alert.end}}
-
-If you want to compile your app to run on the web,
-you must enable this feature (which is currently in beta).
-To enable web support, use the following instructions:
-
-```terminal
-$ flutter channel beta
-$ flutter upgrade
-$ flutter config --enable-web
-```
-
-You need only run the config command once.
-After you enable web support, every Flutter app you
-create also compiles for the web. In your IDE under
-the **devices** pulldown, or at the command line
-using `flutter devices`, you should now see **Chrome**
-and **Web server** listed. The **Chrome** device
-automatically starts Chrome. The **Web server**
-starts a server that hosts the app so that you can
-load it from any browser. Use the Chrome device during
-development so that you can use DevTools,
-and the web server when you want to test on
-other browsers. For more information,
-see [Building a web application with Flutter][]
-and [Write your first Flutter app on the web][codelab-web].
 
 ## Step 1: Create the starter Flutter app
 

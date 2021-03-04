@@ -57,7 +57,7 @@ awesome_app/
 
 Flutter supports the following font formats:
 
-* `.tff`
+* `.ttf`
 * `.otf`
 
 Flutter does not support `.woff` and `.woff2` fonts for all platforms.

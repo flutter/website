@@ -10,7 +10,7 @@ dependencies:
   # Internationalization support.
   flutter_localizations:
     sdk: flutter
-  intl: ^0.16.1 # Add this line
+  intl: any # Add this line
 
 flutter:
   generate: true # Add this line

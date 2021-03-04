@@ -36,13 +36,6 @@ you need the following software:
 
 For more information, see the [web FAQ][].
 
-{{site.alert.note}}
-  Flutter has early support for running web applications, but
-  you need to be running the `beta` channel of Flutter at present.
-  If you experience a problem that hasn’t yet been reported,
-  please [file an issue][] and make sure that "web" appears in the title.
-{{site.alert.end}}
-
 ## Create a new project with web support
 
 You can use the following steps
@@ -50,77 +43,41 @@ to create a new project with web support.
 
 ### Set up
 
-Run the following commands to use the latest version of the Flutter SDK
-from the beta channel and enable web support:
+Run the following commands to use the latest version of the Flutter SDK:
 
 ```terminal
-$ flutter channel beta
+$ flutter channel stable
 $ flutter upgrade
-$ flutter config --enable-web
 ```
 
 {{site.alert.warning}}
-  Running `flutter channel beta` replaces your current version of Flutter
-  with the beta version and can take time if your connection is slow.
+  Running `flutter channel stable` replaces your current version of Flutter
+  with the stable version and can take time if your connection is slow.
   After this, running `flutter upgrade` upgrades your install to the latest
- `beta`.  Returning to the stable channel (or any other) requires calling
+ `stable`.  Returning to another channel (beta, dev, or master) requires calling
  `flutter channel <channel>` explicitly.
 {{site.alert.end}}
 
-{% comment %}
-[PENDING: Do we really need the following note?]
-{% endcomment %}
-{{site.alert.note}}
-  The `flutter upgrade` command silently fails
-  when `origin` points to a personal fork.
-  To validate that `origin` points to `{{site.repo.flutter}}.git`,
-  run the following commands in the root directory
-  of your local copy of the `{{site.repo.flutter}}` repository:
-
-  ```terminal
-  $ cd <inside local copy of the flutter/flutter repo>
-  $ git remote get-url origin
-  https://github.com/flutter/flutter.git
-  ```
-{{site.alert.end}}
-
-Once web is enabled,
+If Chrome is installed,
 the `flutter devices` command outputs a `Chrome` device
 that opens the Chrome browser with your app running,
 and a `Web Server` that provides the URL serving the app.
 
 ```terminal
 $ flutter devices
-2 connected device:
+1 connected device:
 
-Web Server • web-server • web-javascript • Flutter Tools
-Chrome     • chrome     • web-javascript • Google Chrome 81.0.4044.129
+Chrome (web) • chrome • web-javascript • Google Chrome 88.0.4324.150
 ```
 
-**After enabling web support, restart your IDE.**
-You should now see **Chrome (web)** and
-**Web Server (web)** in the device pulldown.
-
-{{site.alert.note}}
-  You only need to execute `flutter config --enable-web` once.
-  You can always check the status of your configuration using
-  the no-argument `flutter config` command.
-{{site.alert.end}}
+In your IDE, you should see **Chrome (web)** in the device pulldown.
 
 ### Create and run
 
 Creating a new project with web support is no different
 than [creating a new Flutter project][] for other platforms.
 
-Once you've configured your environment for web
-support, you can create and run a web app either
-in the IDE or from the command line.
-
 #### IDE
-
-After you've configured your environment to support
-the web, make sure you restart the IDE if it was
-already running.
 
 Create a new app in your IDE and it automatically
 creates iOS, Android, and web versions of your app.
@@ -154,9 +111,9 @@ The `flutter run` command launches the application using the
 [development compiler] in a Chrome browser.
 
 {{site.alert.warning}}
-  **Hot reload not supported on web**
-  Currently, Flutter web supports **hot restart**,
-  but not **hot reload**.
+  **Hot reload is not supported in a web browser**
+  Currently, Flutter supports **hot restart**,
+  but not **hot reload** in a web browser.
 {{site.alert.end}}
 
 ### Build
@@ -185,14 +142,14 @@ For more information, see
 
 ## Add web support to an existing app
 
-To add web support to an existing project,
-run the following command in a
-terminal from the root project directory:
+To add web support to an existing project
+created using a previous version of Flutter,
+run the following command
+from your project's directory:
 
 ```terminal
 $ flutter create .
 ```
-
 
 [Build and release a web app]: /docs/deployment/web
 [creating a new Flutter project]: /docs/get-started/test-drive

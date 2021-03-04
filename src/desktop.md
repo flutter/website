@@ -11,10 +11,10 @@ existing plugins that support the Windows, macOS, or Linux platforms,
 or you can create your own.
 
 {{site.alert.warning}}
-  **Alpha!**
+  **Beta!**
   This page covers desktop support,
-  which is available as alpha-quality
-  features in the Flutter dev channel.
+  which is available as beta-quality
+  features in the Flutter beta channel.
   Support still has notable feature gaps,
   including accessibility support.
 {{site.alert.end}}
@@ -28,6 +28,16 @@ or you can create your own.
   "desktop:macos/linux/windows"
   (whichever platform is appropriate) in the title.
 {{site.alert.end}}
+
+## Beta Snapshot in Stable channel
+
+To make it easier to try out Desktop support for Flutter, we are
+shipping a snapshot of Flutter beta channel’s Desktop support in
+Flutter 2 stable. This means that you can easily try it out without
+needing to switch to the Flutter beta channel. However, the snapshot
+included in the stable channel will not be updated with the latest
+Flutter support for Desktop until the next Flutter stable release.
+
 
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
 
@@ -130,8 +140,6 @@ then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
 ```terminal
-$ flutter channel dev
-$ flutter upgrade
 $ flutter config --enable-<platform>-desktop
 ```
 
@@ -143,7 +151,7 @@ $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
 
-To ensure that desktop _is_ installed,
+To ensure that desktop _is_ enabled,
 list the devices available.
 You should see something like the following
 (you'll see Windows, macOS, or Linux,
@@ -165,7 +173,7 @@ the following on Windows:
 ```terminal
 PS > flutter doctor                                                                     
 Doctor summary (to see all details, run flutter doctor -v):                                           
-[√] Flutter (Channel dev, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
+[√] Flutter (Channel beta, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
 [√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)                      
 [√] Chrome - develop for the web                                                                      
 [√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.7.7)                         
@@ -179,7 +187,7 @@ On macOS, you might see something like the following:
 ```terminal
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
+[✓] Flutter (Channel beta, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
 [✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
@@ -193,7 +201,7 @@ On Linux, you might see something like the following:
 ```terminal
 $ flutter doctor 
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel dev, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
+[✓] Flutter (Channel beta, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
 [✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Chrome - develop for the web
 [✓] Linux toolchain - develop for Linux desktop
@@ -318,7 +326,8 @@ In addition to that executable, you need the following:
     * the `data` directory
 * The Visual C++ redistributables.
   You can use any of the methods shown in the
-  [deployment example walkthroughs][] on the Microsoft site.
+  [deployment example walkthroughs][] on the Microsoft site
+  to ensure that end users have the C++ redistributables.
   If you use the `application-local` option, you need to copy:
     * `msvcp140.dll`
     * `vcruntime140.dll`

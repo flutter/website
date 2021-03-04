@@ -241,7 +241,7 @@ but aren't required.
     ```yaml
     environment:
       sdk: ">=2.0.0-dev.28.0 <3.0.0"
-      flutter: ">=1.12.13+hotfix.6 <2.0.0"
+      flutter: ">=1.12.13+hotfix.6"
     ```
 
 1. Create a simple test in `<plugin_name>/test/<plugin_name>_e2e.dart`.

@@ -4,6 +4,26 @@ short-title: Supported platforms
 description: The platforms that Flutter supports by platform version.
 ---
 
+## Supported platforms
+As of Flutter 2, we support the following platforms:
+
+|Platform|Version                       |Channels |
+|--------|------------------------------|--------|
+|Android | API 16 & above               | All    |
+|iOS     | iOS 8 & above                | All    |
+|Linux   | Debian 10 & above            | All    |
+|macOS   | El Capitan & above           | All    |
+|Web     | Chrome 84  & above           | All    |
+|Web     | Firefox 72.0 & above         | All    |
+|Web     | Safari on El Capitan & above | All    |
+|Web     | Edge 1.2.0 & above           | All    |
+|Windows |Windows 7 & above             | All    |
+
+
+Note that while macOS, Linux, are in the stable channel to enable you to
+easily see your application running on the desktop,  
+as of Flutter 2.0 they are considered beta quality. 
+
 ## How we define a supported platform
 
 As of Flutter 1.20, we define three tiers of support for the 
