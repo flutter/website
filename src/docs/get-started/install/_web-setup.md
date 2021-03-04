@@ -1,7 +1,9 @@
 ## Web setup
 
-Flutter has support for building web applications using the
-`stable` channel. To add support for web development, follow
-[these instructions][] when you've completed the setup above.
+Flutter has support for building web applications in the
+`stable` channel. Any app created in Flutter 2 automatically
+builds for the web. To add web support to an existing app, follow
+the instructions on [Building a web application with Flutter][] 
+when you've completed the setup above.
 
-[these instructions]: https://flutter.dev/docs/get-started/web
+[Building a web app for Flutter]: /docs/get-started/web
