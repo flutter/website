@@ -49,6 +49,11 @@ rather than the app-centric services that a UI framework like Flutter
 can deliver. However, you _can_ use Flutter to embed interactive
 experiences into these websites.
 
+For a glimpse into how to migrate your mobile app to web, see
+the following video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HAstl_NkXl0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <a name="web"></a>
 ## Resources
 
