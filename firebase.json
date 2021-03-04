@@ -93,6 +93,7 @@
       { "source": "/platform-services", "destination": "/docs/development/platform-integration/platform-channels", "type": 301 },
       { "source": "/routing-and-navigation", "destination": "/docs/development/ui/navigation", "type": 301 },
       { "source": "/reading-writing-files", "destination": "/docs/cookbook/persistence/reading-writing-files", "type": 301 },
+      { "source": "/report-jank ", "destination": "https://github.com/flutter/flutter/issues/74833", "type": 301 },
       { "source": "/sdk-archive", "destination": "/docs/development/tools/sdk/releases", "type": 301 },
       { "source": "/docs/development/tools/sdk/archive", "destination": "/docs/development/tools/sdk/releases", "type": 301 },
       { "source": "/setup", "destination": "/docs/get-started/install", "type": 301 },

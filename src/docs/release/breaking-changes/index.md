@@ -51,6 +51,7 @@ release, and listed in alphabetical order:
 
 * [Actions API revision][]
 * [Adding TextInputClient.currentAutofillScope property][]
+* [New Buttons and Button Themes][]
 * [Dialogs' Default BorderRadius][]
 * [More Strict Assertions in the Navigator and the Hero Controller Scope][]
 * [The Route Transition record and Transition delegate updates][]
@@ -63,6 +64,7 @@ release, and listed in alphabetical order:
 
 [Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding TextInputClient.currentAutofillScope property]: /docs/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
+[New Buttons and Button Themes]: /docs/release/breaking-changes/buttons
 [Dialogs' Default BorderRadius]:/docs/release/breaking-changes/dialog-border-radius
 [More Strict Assertions in the Navigator and the Hero Controller Scope]: /docs/release/breaking-changes/hero-controller-scope
 [Reversing the dependency between the scheduler and services layer]: /docs/release/breaking-changes/services-scheduler-dependency-reversed

@@ -28,13 +28,13 @@ contains a simple demo app that uses [Material Components][].
     For details, see [Quickly switching between Flutter devices][].
     - If no device is available and you want to use a device simulator,
       click **No Devices** and launch a simulator.
-      
+
       {{site.alert.warning}}
       You may not see **Start iOS Simulator** option when you click **No Devices** in VS Code. If you are on Mac then you may have to run following command in          terminal to launch a simulator.
       ```
       open -a simulator
       ```
-      
+
       In Android it is not possible to launch iOS simulator.
       {{site.alert.end}}
 
@@ -43,12 +43,6 @@ contains a simple demo app that uses [Material Components][].
  1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
  1. Wait for the app to launch &mdash; progress is printed
     in the **Debug Console** view.
-
-{{site.alert.warning}}
-  When launching your app from a Mac, if you see
-  `ERROR: Could not connect to lockdownd, error code -17`,
-  make sure that you have [trusted your computer][].
-{{site.alert.end}}
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**
