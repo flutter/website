@@ -1,0 +1,24 @@
+name: state_mgmt
+description: Sample state management code.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+
+  provider: ^4.3.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  test: ^1.5.1
+
+flutter:
+  uses-material-design: true
