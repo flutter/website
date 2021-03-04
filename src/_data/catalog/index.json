@@ -7,7 +7,7 @@
   },
   {
     "name": "Material Components",
-    "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://material.io/guidelines/material-design/introduction.html\">Material Design guidelines</a>.",
+    "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://material.io/design/guidelines-overview\">Material Design guidelines</a>.",
     "subcategories": [
       {
         "name": "App structure and navigation"
