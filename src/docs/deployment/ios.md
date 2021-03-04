@@ -170,19 +170,9 @@ At this point, you might consider [obfuscating your Dart code][]
 to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
-On the command line, follow these steps in your application directory:
-
-1. Run `flutter build ios` to create a release build
-   (`flutter build` defaults to `--release`).
-1. To ensure that Xcode refreshes the release mode configuration,
-   close and re-open your Xcode workspace.
-   For Xcode 8.3 and later, this step is not required.
-
 In Xcode, configure the app version and build:
 
 1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
-1. Select **Product > Scheme > Runner**.
-1. Select **Product > Destination > Any iOS Device**.
 1. Select **Runner** in the Xcode project navigator, then select the
    **Runner** target in the settings view sidebar.
 1. In the Identity section, update the **Version** to the user-facing
