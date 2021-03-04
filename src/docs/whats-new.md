@@ -14,6 +14,12 @@ join the [flutter-announce][] Google group.
 
 ## March 3, 2021
 
+Flutter 2 is live!!!  For more information, see
+[Announcing Flutter 2][], [What's new in Flutter 2][],
+[Flutter web support hits the stable milestone][],
+[Announcing Dart 2.12][],
+and the [Flutter 2 release notes][].
+
 **Docs updated or added since the 1.22 release**
 
 * A new [Who is Dash?][] page!
@@ -81,6 +87,8 @@ publication since the last stable release:
 [Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding a Flutter view to an Android app]: /docs/development/add-to-app/android/add-flutter-view
 [Announcing Dart null safety beta]: {{site.flutter-medium}}/announcing-dart-null-safety-beta-4491da22077a
+[Announcing Dart 2.12]: {{site.medium}}/dartlang/announcing-dart-2-12-499a6e689c87
+[Announcing Flutter 2]: https://developers.googleblog.com/2021/03/announcing-flutter-2.html
 [comp]: {{site.flutter-medium}}/providing-operating-system-compatibility-on-a-large-scale-374cc2fb0dad
 [Configuring the URL strategy on the web]: /docs/development/ui/navigation/url-strategies
 [Creating responsive and adaptive apps]: /docs/development/ui/layout/adaptive-responsive
@@ -88,10 +96,11 @@ publication since the last stable release:
 [Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [Desktop support for Flutter]: /desktop
 [Devtools]: /docs/development/tools/devtools/overview
+[Flutter Ads]: /ads
 [Flutter 2 release notes]: /docs/development/tools/sdk/release-notes/release-notes-2.0.0
 [Flutter Fix]: /docs/development/tools/flutter-fix
 [Flutter inspector]: /docs/development/tools/devtools/inspector
-[Flutter Ads]: /ads
+[Flutter web support hits the stable milestone]: {{site.flutter-medium}}/flutter-web-support-hits-the-stable-milestone-d6b84e83b425
 [implement deep linking]: /docs/development/ui/navigation/deep-linking
 [internationalization]: /docs/development/accessibility-and-localization/internationalization
 [Join us for #30DaysOfFlutter]: {{site.flutter-medium}}/join-us-for-30daysofflutter-9993e3ec847b
@@ -109,6 +118,7 @@ publication since the last stable release:
 [Using multiple Flutter instances]: /docs/development/add-to-app/multiple-flutters
 [Web FAQ]: /docs/development/platform-integration/web
 [Web support for Flutter]: /web
+[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
 [Who is Dash?]: /dash
 [write integration tests using the integration_test package]: /docs/testing/integration-tests
 

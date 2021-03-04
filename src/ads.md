@@ -15,14 +15,11 @@ interstitial, rewarded video, and native ads.
 
 ![Pic showing different types of ads]({% asset ads/GoogleMobileAdTypes.png @path %}){:width="100%"}
 
-{% comment %}
-NOTE: Add back when video is published.
 The following video tutorial,
 [Monetizing apps with Flutter][],
 shows how to get started with Ads:
 
-FIX: Once Zoey and Andrew's video is released, embed it here.
-{% endcomment %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m0d_pbgeeG8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The following resources can help you get started:
 
