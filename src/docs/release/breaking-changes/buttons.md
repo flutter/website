@@ -16,11 +16,11 @@ replaced by `TextButton`, `ElevatedButton`, and `OutlinedButton`
 respectively. Each new button class has its own theme:
 `TextButtonTheme`, `ElevatedButtonTheme`, and
 `OutlinedButtonTheme`. The original `ButtonTheme` class is no longer
-used.  The appearance of buttons is specified by a `ButtonStyle`
+used. The appearance of buttons is specified by a `ButtonStyle`
 object, instead of a large set of widget parameters and
 properties. This is roughly comparable to the way that the appearance
 of text is defined with a `TextStyle` object. The new button themes
-are also configured with a `ButtonStyle` object. A ButtonStyle is
+are also configured with a `ButtonStyle` object. A `ButtonStyle` is
 itself just a collection of visual properties. Many of these
 properties are defined with `MaterialStateProperty`, which means that
 their value can depend on the button's state.
@@ -35,11 +35,15 @@ labyrinthe that evolving the existing classes in-place would entail,
 the new names sync Flutter back up with the Material Design spec,
 which uses the new names for the button components.
 
+<div class="table-wrapper" markdown="1">
+
 | Old Widget   | Old Theme     | New Widget      | New Theme |
 | -------------|---------------|-----------------|----------|
-| FlatButton   | ButtonTheme   | TextButton      | TextButtonTheme |
-| RaisedButton | ButtonTheme   | ElevatedButton  | ElevatedButtonTheme |
-| OutlineButton| ButtonTheme   | OutlinedButton  | OutlinedButtonTheme |
+| `FlatButton`   | `ButtonTheme`   | `TextButton`      | `TextButtonTheme`     |
+| `RaisedButton` | `ButtonTheme`   | `ElevatedButton`  | `ElevatedButtonTheme` |
+| `OutlineButton`| `ButtonTheme`   | `OutlinedButton`  | `OutlinedButtonTheme` |
+{:.table .table-striped .nowrap}
+</div>
 
 The new themes follow the "normalized" pattern that Flutter adopted
 for new Material widgets about a year ago. Theme properties and widget
@@ -52,7 +56,7 @@ textTheme.
 
 Visually, the new buttons look a little different, because they match
 the current Material Design spec and because their colors are
-configured in terms of the overall Theme’s ColorScheme. There are
+configured in terms of the overall Theme's ColorScheme. There are
 other small differences in padding, rounded corner radii, and the
 hover/focus/pressed feedback.
 
@@ -67,17 +71,17 @@ introductory material that follows.
 
 Except for simple use cases, the APIs of the new button classes are
 not compatible with the old classes. The visual attributes of the new
-buttons and themes are configured with a single ButtonStyle object,
-similar to how a TextField or a Text widget can be configured with a
-TextStyle object. Most of the ButtonStyle properties are defined with
-MaterialStateProperty, so that a single property can represent
-different values depending on the button’s pressed/focused/hovered/etc
+buttons and themes are configured with a single `ButtonStyle` object,
+similar to how a `TextField` or a `Text` widget can be configured with a
+`TextStyle` object. Most of the `ButtonStyle` properties are defined with
+`MaterialStateProperty`, so that a single property can represent
+different values depending on the button's pressed/focused/hovered/etc
 state.
 
-A button’s ButtonStyle doesn’t define the button’s visual properties,
+A button's `ButtonStyle` doesn't define the button's visual properties,
 it defines overrides of the buttons default visual properties,
 where the default properties are computed by the button widget
-itself. For example, to override a TextButton’s default foreground
+itself. For example, to override a `TextButton`'s default foreground
 (text/icon) color for all states, one could write:
 
 <!-- skip -->
@@ -91,10 +95,10 @@ TextButton(
 )
 ```
 
-This kind of override is common; however, in many cases what’s also
+This kind of override is common; however, in many cases what's also
 needed are overrides for the overlay colors that the text button uses
 to indicate its hovered/focus/pressed state.  This can be done by
-adding the overlayColor property to the ButtonStyle.
+adding the `overlayColor` property to the `ButtonStyle`.
 
 <!-- skip -->
 ```dart
@@ -117,10 +121,10 @@ TextButton(
 )
 ```
 
-A color MaterialStateProperty only needs to return a value for the
+A color `MaterialStateProperty` only needs to return a value for the
 colors whose default should be overridden. If it returns null, the
-widget’s default will be used instead. For example, to just override
-the text button’s focus overlay color:
+widget's default will be used instead. For example, to just override
+the text button's focus overlay color:
 
 <!-- skip -->
 ```dart
@@ -142,12 +146,12 @@ TextButton(
 ### The `styleFrom()` ButtonStyle utility methods
 
 The Material Design spec defines buttons' foreground and overlay colors in
-terms of the color scheme’s primary color. The primary color is
-rendered at different opacities, depending on the button’s state. To
+terms of the color scheme's primary color. The primary color is
+rendered at different opacities, depending on the button's state. To
 simplify creating a button style that includes all of the properties
 that depend on color scheme colors, each button class includes a
-static styleFrom() method which constructs a ButtonStyle from a simple
-set of values, including the ColorScheme colors it depends on.
+static styleFrom() method which constructs a `ButtonStyle` from a simple
+set of values, including the `ColorScheme` colors it depends on.
 
 This example creates a button that overrides its foreground color, as
 well as its overlay color, using the specified primary color and the
@@ -164,8 +168,8 @@ TextButton(
 )
 ```
 
-The TextButton documentation indicates that the foreground color when
-the button is disabled is based on the color scheme’s onSurface
+The `TextButton` documentation indicates that the foreground color when
+the button is disabled is based on the color scheme's `onSurface`
 color. To override that as well, using styleFrom():
 
 <!-- skip -->
@@ -180,10 +184,10 @@ TextButton(
 )
 ```
 
-Using the styleFrom() method is the preferred way to create a
-ButtonStyle if you’re trying to create a Material Design
-variation. The most flexible approach is defining a ButtonStyle
-directly, with MaterialStateProperty values for the states whose
+Using the `styleFrom()` method is the preferred way to create a
+`ButtonStyle` if you're trying to create a Material Design
+variation. The most flexible approach is defining a `ButtonStyle`
+directly, with `MaterialStateProperty` values for the states whose
 appearance you want to override.
 
 
@@ -194,9 +198,9 @@ based on the overall theme's `colorScheme` and `textTheme` as well as
 button's current state. In a few cases they also consider if the
 overall theme's color scheme is light or dark.  Each button has a
 protected method that computes its default style as needed. Although
-apps will not call this method directly, its API doc explains what all
+apps won't call this method directly, its API doc explains what all
 of the defaults are.  When a button or button theme specifies
-`ButtonStyle` only the button style's non-null properties override the
+`ButtonStyle`, only the button style's non-null properties override the
 computed defaults. The button's `style` parameter overrides non-null
 properties specified by the corresponding button theme. For example if
 `foregroundColor` property of a `TextButton`'s style is non-null, it
@@ -204,7 +208,7 @@ overrides the same property for the `TextButonTheme`'s style.
 
 As explained earlier, each button class includes a static method
 called `styleFrom` which constructs a ButtonStyle from a simple set of
-values, including the ColorScheme colors it depends on. In many common
+values, including the `ColorScheme` colors it depends on. In many common
 cases, using `styleFrom` to create a one-off `ButtonStyle` that
 overrides the defaults, is simplest. This is particularly true when
 the custom style's objective is to override one of the color scheme
@@ -217,16 +221,19 @@ like pressed, hovered, disabled, and focused.
 
 ## Migration guide
 
+Use the following information to migrate your buttons to the 
+new API.
+
 ### Restoring the original button visuals
 
-In many cases it’s possible to just switch from the old button class
-to the new one.  That’s assuming that the small changes in size/shape
-and the likely bigger change in colors, aren’t a concern.
+In many cases it's possible to just switch from the old button class
+to the new one.  That's assuming that the small changes in size/shape
+and the likely bigger change in colors, aren't a concern.
 
-To preserve the original buttons’ appearance in these cases, one can
+To preserve the original buttons' appearance in these cases, one can
 define button styles that match the original as closely as you
-like. For example, the following style will make a TextButton look
-like a default FlatButton:
+like. For example, the following style make a `TextButton` look
+like a default `FlatButton`:
 
 <!-- skip -->
 ```dart
@@ -246,7 +253,7 @@ TextButton(
 )
 ```
 
-Similarly, to make an ElevatedButton look like a default RaisedButton:
+Similarly, to make an `ElevatedButton` look like a default `RaisedButton`:
 
 <!-- skip -->
 ```dart
@@ -266,10 +273,10 @@ ElevatedButton(
 )
 ```
 
-The OutlineButton style for OutlinedButton is a little more
-complicated because the outline’s color changes to the primary color
-when the button is pressed. The outline’s appearance is defined by a
-BorderSide and we’ll use a MaterialStateProperty to define the pressed
+The `OutlineButton` style for `OutlinedButton` is a little more
+complicated because the outline's color changes to the primary color
+when the button is pressed. The outline's appearance is defined by a
+`BorderSide` and you'll use a `MaterialStateProperty` to define the pressed
 outline color:
 
 <!-- skip -->
@@ -302,8 +309,8 @@ OutlinedButton(
 ```
 
 To restore the default appearance for buttons throughout an
-application, one can configure the new button themes in the
-application’s theme:
+application, you can configure the new button themes in the
+application's theme:
 
 <!-- skip -->
 ```dart
@@ -317,8 +324,8 @@ MaterialApp(
 ```
 
 To restore the default appearance for buttons in part of an
-application you can wrap a widget subtree with TextButtonTheme,
-ElevatedButtonTheme, or OutlinedButtonTheme. For example:
+application you can wrap a widget subtree with `TextButtonTheme`,
+`ElevatedButtonTheme`, or `OutlinedButtonTheme`. For example:
 
 <!-- skip -->
 ```dart
@@ -330,8 +337,8 @@ TextButtonTheme(
 
 ### Migrating buttons with custom colors
 
-The following sections cover use of the following FlatButton,
-RaisedButton, and OutlineButton color parameters:
+The following sections cover use of the following `FlatButton`,
+`RaisedButton`, and `OutlineButton` color parameters:
 
 
 <!-- skip -->
@@ -347,13 +354,13 @@ splashColor
 ```
 
 The new button classes do not support a separate highlight color
-because it’s no longer part of the Material Design.
+because it's no longer part of the Material Design.
 
 #### Migrating buttons with custom foreground and background colors
 
 Two common customizations for the original button classes are a custom
-foreground color for FlatButton, or custom foreground and background
-colors for RaisedButton.  Producing the same result with the new
+foreground color for `FlatButton`, or custom foreground and background
+colors for `RaisedButton`.  Producing the same result with the new
 button classes is simple:
 
 <!-- skip -->
@@ -373,12 +380,12 @@ TextButton(
 )
 ```
 
-In this case the TextButton’s foreground (text/icon) color as well as
+In this case the `TextButton`'s foreground (text/icon) color as well as
 its hovered/focused/pressed overlay colors will be based on
-Colors.red. By default, the TextButton’s background fill color is
+`Colors.red`. By default, the `TextButton`'s background fill color is
 transparent.
 
-Migrating a RaisedButton with custom foreground and background colors:
+Migrating a `RaisedButton` with custom foreground and background colors:
 
 <!-- skip -->
 ```dart
@@ -389,8 +396,8 @@ RaisedButton(
   child: Text('RaisedButton with custom foreground/background'),
 )
 
-ElevatedButton(
-  style: ElevatedButton.styleFrom(
+	ElevatedButton(
+	  style: ElevatedButton.styleFrom(
     primary: Colors.red, // background
     onPrimary: Colors.white, // foreground
   ),
@@ -399,19 +406,19 @@ ElevatedButton(
 )
 ```
 
-In this case the button’s use of the color scheme’s primary color is
-reversed relative to the TextButton: primary is button’s background
-fill color and onPrimary is the foreground (text/icon) color.
+In this case the button's use of the color scheme's primary color is
+reversed relative to the `TextButton`: primary is button's background
+fill color and `onPrimary` is the foreground (text/icon) color.
 
 #### Migrating buttons with custom overlay colors
 
-Overriding a button’s default focused, hovered, highlighted, or splash
-colors is less common. The FlatButton, RaisedButton, and OutlineButton
+Overriding a button's default focused, hovered, highlighted, or splash
+colors is less common. The `FlatButton`, `RaisedButton`, and `OutlineButton`
 classes have individual parameters for these state-dependent
-colors. The new TextButton, ElevatedButton, and OutlinedButton classes
+colors. The new `TextButton`, `ElevatedButton`, and `OutlinedButton` classes
 use a single `MaterialStateProperty<Color>` parameter instead. The new
 buttons allow one to specify state-dependent values for all of the
-colors, the original buttons only supported specifying what’s now
+colors, the original buttons only supported specifying what's now
 called the “overlayColor”.
 
 <!-- skip -->
@@ -444,25 +451,25 @@ TextButton(
 
 The new version is more flexible although less compact. In the
 original version, the the precedence of the different states is
-implicit (and undocumented) and fixed, in the new version, it’s
+implicit (and undocumented) and fixed, in the new version, it's
 explicit.  For an app that specified these colors frequently, the
-easiest migration path would be to define one or more ButtonStyles
+easiest migration path would be to define one or more `ButtonStyles`
 that match the example above - and just use the style parameter - or
 to define a stateless wrapper widget that encapsulated the three color
 parameters.
 
 #### Migrating buttons with custom disabled colors
 
-This is a relatively rare customization.  The FlatButton,
-RaisedButton, and OutlineButton classes have disabledTextColor and
-disabledColor parameters that define the background and foreground
-colors when the button’s onPressed callback is null.
+This is a relatively rare customization.  The `FlatButton`,
+`RaisedButton`, and `OutlineButton` classes have `disabledTextColor` and
+`disabledColor` parameters that define the background and foreground
+colors when the button's `onPressed` callback is null.
 
-By default, all of the buttons use the color scheme’s onSurface color,
+By default, all of the buttons use the color scheme's `onSurface` color,
 with opacity 0.38 for the disabled foreground color. Only
-ElevatedButton has a non-transparent background color and its default
-value is the onSurface color with opacity 0.12. So in many cases one
-can just use the styleFrom method to override the disabled colors:
+`ElevatedButton` has a non-transparent background color and its default
+value is the `onSurface` color with opacity 0.12. So in many cases one
+can just use the `styleFrom` method to override the disabled colors:
 
 <!-- skip -->
 ```dart
@@ -481,8 +488,8 @@ ElevatedButton(
 ```
 
 For complete control over the disabled colors, one must define the
-ElevatedButton’s style explicitly, in terms of
-MaterialStateProperties:
+`ElevatedButton`'s style explicitly, in terms of
+`MaterialStateProperties`:
 
 <!-- skip -->
 ```dart
@@ -514,18 +521,18 @@ ElevatedButton(
 ```
 
 As with the previous case, there are obvious ways to make the new
-version more compact, in an app where this migration comes up often.
+version more compact in an app where this migration comes up often.
 
 
 #### Migrating buttons with custom elevations
 
 This is also a relatively rare customization. Typically, only
-ElevatedButtons (née RaisedButtons) include elevation changes. For
-elevations that are proportional to a baseline elevation (per the
-Material Design specification), one can override all of them quite
-simply.
+`ElevatedButton`s (originally called `RaisedButtons`)
+include elevation changes. For elevations that are proportional
+to a baseline elevation (per the Material Design specification),
+one can override all of them quite simply.
 
-By default a disabled button’s elevation is 0, and the remaining
+By default a disabled button's elevation is 0, and the remaining
 states are defined relative to a baseline of 2:
 
 <!-- skip -->
@@ -535,7 +542,7 @@ hovered or focused: baseline + 2
 pressed: baseline + 6
 ```
 
-So to migrate a RaisedButton for which all elevations have been
+So to migrate a `RaisedButton` for which all elevations have been
 defined:
 
 <!-- skip -->
@@ -584,13 +591,13 @@ ElevatedButton(
 
 #### Migrating buttons with custom shapes and borders
 
-The original FlatButton, RaisedButton, and OutlineButton classes all
-provide a shape parameter which defines both the button’s shape and
+The original `FlatButton`, `RaisedButton`, and `OutlineButton` classes all
+provide a shape parameter which defines both the button's shape and
 the appearance of its outline. The corresponding new classes and their
-themes support specifying the button’s shape and its border
+themes support specifying the button's shape and its border
 separately, with `OutlinedBorder shape` and `BorderSide side` parameters.
 
-In this example the original OutlineButton version specifies the same
+In this example the original `OutlineButton` version specifies the same
 color for border in its highlighted (pressed) state as for other
 states.
 
@@ -620,11 +627,11 @@ OutlinedButton(
 )
 ```
 
-Most of the new OutlinedButton widget’s style parameters, including
-its shape and border, can be specified with MaterialStateProperty
+Most of the new `OutlinedButton` widget's style parameters, including
+its shape and border, can be specified with `MaterialStateProperty`
 values, which is to say that they can have different values depending
-on the button’s state. To specify a different border color when the
-button is pressed:
+on the button's state. To specify a different border color when the
+button is pressed, do the following:
 
 <!-- skip -->
 ```dart
@@ -659,18 +666,16 @@ OutlinedButton(
 ## Timeline
 
 Landed in version: 1.20.0-0.0.pre<br>
-In stable release: 1.20
+In stable release: 2.0
 
 ## References
-
-{% include master-api.md %}
 
 API documentation:
 * [`ButtonStyle`][]
 * [`ButtonStyleButton`][]
 * [`ElevatedButton`][]
-* [`ElevatedButtonButtonTheme`][]
-* [`ElevatedButtonButtonThemeData`][]
+* [`ElevatedButtonTheme`][]
+* [`ElevatedButtonThemeData`][]
 * [`OutlinedButton`][]
 * [`OutlinedButtonTheme`][]
 * [`OutlinedButtonThemeData`][]
