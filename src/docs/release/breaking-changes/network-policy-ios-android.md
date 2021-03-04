@@ -99,7 +99,7 @@ We **do not** recommend you do this for your release builds.
 ## Timeline
 
 Landed in version: 1.23<br>
-In stable release: not yet
+In stable release: 2.0.0
 
 ## References
 
