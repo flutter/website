@@ -162,8 +162,8 @@ rootScaffoldMessengerKey.currentState.removeCurrentSnackBar(mySnackBar);
 
 ## Timeline
 
-Landed in version: 1.23.0-13.0.pre
-In stable release: not yet
+Landed in version: 1.23.0-13.0.pre<br>
+In stable release: 2.0.0
 
 ## References
 
