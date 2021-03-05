@@ -32,7 +32,7 @@ class DemoLocalizations {
   final Locale locale;
 
   static DemoLocalizations of(BuildContext context) {
-    return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
+    return Localizations.of<DemoLocalizations>(context, DemoLocalizations)!;
   }
 
   static Map<String, Map<String, String>> _localizedValues = {
@@ -45,7 +45,7 @@ class DemoLocalizations {
   };
 
   String get title {
-    return _localizedValues[locale.languageCode]['title'];
+    return _localizedValues[locale.languageCode]!['title']!;
   }
 }
 
