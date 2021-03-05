@@ -10,7 +10,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl:
-#  intl_translation:
 
 dev_dependencies:
   flutter_test:
