@@ -98,7 +98,7 @@ Below are some simple widgets that combine these and other widgets:
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  MyAppBar({this.title});
+  MyAppBar({required this.title});
 
   // Fields in a Widget subclass are always marked "final".
 
