@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // according to the system locale of the target platform.
         // Switching between English and Spanish locales should
         // cause this text to update.
-        title: Text(AppLocalizations.of(context).helloWorld),
+        title: Text(AppLocalizations.of(context)!.helloWorld),
       ),
     );
   }
