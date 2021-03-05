@@ -309,15 +309,15 @@ class _NnMaterialLocalizationsDelegate
 class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   const NnMaterialLocalizations({
     String localeName = 'nn',
-    @required intl.DateFormat fullYearFormat,
-    @required intl.DateFormat compactDateFormat,
-    @required intl.DateFormat shortDateFormat,
-    @required intl.DateFormat mediumDateFormat,
-    @required intl.DateFormat longDateFormat,
-    @required intl.DateFormat yearMonthFormat,
-    @required intl.DateFormat shortMonthDayFormat,
-    @required intl.NumberFormat decimalFormat,
-    @required intl.NumberFormat twoDigitZeroPaddedFormat,
+    required intl.DateFormat fullYearFormat,
+    required intl.DateFormat compactDateFormat,
+    required intl.DateFormat shortDateFormat,
+    required intl.DateFormat mediumDateFormat,
+    required intl.DateFormat longDateFormat,
+    required intl.DateFormat yearMonthFormat,
+    required intl.DateFormat shortMonthDayFormat,
+    required intl.NumberFormat decimalFormat,
+    required intl.NumberFormat twoDigitZeroPaddedFormat,
   }) : super(
           localeName: localeName,
           fullYearFormat: fullYearFormat,
@@ -427,10 +427,10 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   String get refreshIndicatorSemanticLabel => r'Refresh';
 
   @override
-  String get remainingTextFieldCharacterCountFew => null;
+  String? get remainingTextFieldCharacterCountFew => null;
 
   @override
-  String get remainingTextFieldCharacterCountMany => null;
+  String? get remainingTextFieldCharacterCountMany => null;
 
   @override
   String get remainingTextFieldCharacterCountOne => r'1 character remaining';
@@ -440,7 +440,7 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
       r'$remainingCount characters remaining';
 
   @override
-  String get remainingTextFieldCharacterCountTwo => null;
+  String? get remainingTextFieldCharacterCountTwo => null;
 
   @override
   String get remainingTextFieldCharacterCountZero => r'No characters remaining';
@@ -476,10 +476,10 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   String get selectAllButtonLabel => r'SELECT ALL';
 
   @override
-  String get selectedRowCountTitleFew => null;
+  String? get selectedRowCountTitleFew => null;
 
   @override
-  String get selectedRowCountTitleMany => null;
+  String? get selectedRowCountTitleMany => null;
 
   @override
   String get selectedRowCountTitleOne => r'1 item selected';
@@ -488,7 +488,7 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   String get selectedRowCountTitleOther => r'$selectedRowCount items selected';
 
   @override
-  String get selectedRowCountTitleTwo => null;
+  String? get selectedRowCountTitleTwo => null;
 
   @override
   String get selectedRowCountTitleZero => r'No items selected';
