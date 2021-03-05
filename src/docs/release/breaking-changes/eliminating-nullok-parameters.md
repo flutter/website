@@ -128,7 +128,7 @@ variables.
 ## Timeline
 
 Landed in version: 1.24.0<br>
-In stable release: not yet
+In stable release: 2.0.0
 
 ## References
 
