@@ -342,7 +342,7 @@ and the other DLLs, and bundle them together in a zip file.
 
 To distribute your macOS application, you can either [distribute your app via the macOS App Store][], 
 or alternatively you can distribute the `.app` itself, for example on your own website.  
-However, as of macOS 14.5 you need to notarize your macOS application before distributing 
+However, as of macOS 10.14.5 you need to notarize your macOS application before distributing 
 it outside of the macOS App Store. 
 
 The first step in both of the above processes involves working with your app inside of Xcode.
