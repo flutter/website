@@ -3,10 +3,10 @@ title: Flutter UX Researcher
 ---
 
 Flutter strives for delightful developer experience. In the "UX Researcher"
-role, you'll help the Flutter team understands user needs, identify frictions,
+role, you'll help the Flutter team understand user needs, identify frictions,
 and support the iterative development of tools, APIs, and documentation with UX
-data and processes. This is a short-term, contract-based position with a focus
-on Flutter and Dart DevTools.
+insights and processes. This is a short-term, contract-based position with a focus
+on [DevTools](https://flutter.dev/docs/development/tools/devtools/overview).
 
 ## About the job
 
