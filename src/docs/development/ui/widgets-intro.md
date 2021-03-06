@@ -263,7 +263,7 @@ class TutorialHome extends StatelessWidget {
 
 Now that the code has switched from `MyAppBar` and `MyScaffold` to the
 [`AppBar`][] and [`Scaffold`][] widgets, and from `material.dart`,
-the app is starting to look at bit more Material.
+the app is starting to look a bit more Material.
 For example, the app bar has a shadow and the title text inherits the
 correct styling automatically. A floating action button is also added.
 
