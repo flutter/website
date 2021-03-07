@@ -129,7 +129,7 @@ function to return a `Future<Album>`:
 import 'dart:convert';
 
 Future<Album> fetchAlbum() async {
-  final response = await http.get('https://jsonplaceholder.typicode.com/albums/1');
+  final response = await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
