@@ -54,7 +54,7 @@ In stable release: not yet
 ## References
 
 API documentation:
-* [`BottomNavigationBarItem`][]
+* [`BottomNavigationBarItem`][{{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html]
 
 Relevant PR:
 * [Clean up hero controller scope][]
@@ -65,9 +65,9 @@ Breaking change proposal:
 [Update BottomNavigationBar to show tooltips on long press.]: {{site.github}}/flutter/flutter/pull/59127
 
 Stable channel link:
-[`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
+[`BottomNavigationBarItem`][{{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html]
 
 Master channel link:
-[`BottomNavigationBarItem`]: https://master-api.flutter.dev/flutter/widgets/BottomNavigationBarItem-class.html
+[`BottomNavigationBarItem`][https://master-api.flutter.dev/flutter/widgets/BottomNavigationBarItem-class.html]
 
 [Breaking Change: Bottom Navigation Item Title]: https://flutter.dev/go/bottom-navigation-bar-title-deprecation
