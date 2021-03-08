@@ -90,7 +90,7 @@ jobs:
           ruby-version: 2.6.5
       - uses: dart-lang/setup-dart@v0.3
         with:
-          sdk: 2.10.5
+          sdk: stable
       - name: Install node dependencies
         run: npm install
       - name: Install dart dependencies
@@ -115,25 +115,6 @@ jobs:
           git checkout ${{ matrix.sdk }} --
           # Pull the tags for the commit.
           git pull
-      - name: Select flutter 1.22.6
-        # To checkout a pinned version, we need to checkout a specific tag.
-        # This is similar to the regular branch checkout, but creates a local
-        # branch for the release. The flutter tool also needs the correct
-        # upstream to understand which channel this is from.
-        # TODO: remove this when the stable Flutter SDK is no longer pinned.
-        if: matrix.sdk == 'stable'
-        run: |
-          cd flutter
-          # Fetch the tag of the pinned stable version into a local branch.
-          git fetch --depth 1 origin 1.22.6:1.22.6
-          # Checkout the branch.
-          git checkout 1.22.6 --
-          # Use the stable channel branch in `remote.origin.fetch`.
-          git remote set-branches origin stable
-          # Fetch stable
-          git fetch --depth 1 origin stable
-          # Ensure that the 1.22.6 has stable as the upstream.
-          git branch --set-upstream-to origin/stable
       - name: Setup flutter
         run: flutter/bin/flutter doctor
       - run: tool/shared/write-ci-info.sh -v
@@ -166,21 +147,18 @@ jobs:
           ruby-version: 2.6.5
       - uses: dart-lang/setup-dart@v0.3
         with:
-          sdk: 2.10.5
+          sdk: stable
       - name: Install node dependencies
         run: npm install
       - name: Install dart dependencies
         run: dart pub get
-      - name: Select flutter 1.22.6
-        # TODO: Replace this with a regular stable checkout when no 
-        # longer pinned. See test job for documentation.
+      - name: Select flutter
         run: |
           cd flutter
-          git fetch --depth 1 origin 1.22.6:1.22.6
-          git checkout 1.22.6 --
           git remote set-branches origin stable
           git fetch --depth 1 origin stable
-          git branch --set-upstream-to origin/stable
+          git checkout stable --
+          git pull
       - name: Setup flutter
         run: flutter/bin/flutter doctor
       - run: tool/shared/write-ci-info.sh -v
