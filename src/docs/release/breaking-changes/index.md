@@ -10,7 +10,7 @@ for migrating code across a breaking change.
 The following guides are available. They are sorted by
 release, and listed in alphabetical order:
 
-### Not yet released to stable
+### Released in Flutter 2.0.0
 
 * [Eliminating `nullOk` Parameters][]
 * [Android ActivityControlSurface attachToActivity signature change][]
