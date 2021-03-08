@@ -41,7 +41,7 @@ dependencies:
   http: <latest_version>
 ```
 
-## 2z Make a network request
+## 2. Make a network request
 
 This example covers how to fetch a large JSON document
 that contains a list of 5000 photo objects from the
