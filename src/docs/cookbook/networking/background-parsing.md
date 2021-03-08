@@ -41,7 +41,7 @@ dependencies:
   http: <latest_version>
 ```
 
-## 2. Make a network request
+## 2z Make a network request
 
 This example covers how to fetch a large JSON document
 that contains a list of 5000 photo objects from the
@@ -51,7 +51,7 @@ using the [`http.get()`][] method.
 <!-- skip -->
 ```dart
 Future<http.Response> fetchPhotos(http.Client client) async {
-  return client.get('https://jsonplaceholder.typicode.com/photos');
+  return client.get(URI.parse('https://jsonplaceholder.typicode.com/photos'));
 }
 ```
 
