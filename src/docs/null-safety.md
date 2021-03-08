@@ -3,9 +3,8 @@ title: Null safety in Flutter
 description: Find out how to use non-nullable types in your Flutter code.
 ---
 
-Null safety is available in the Flutter beta channel,
-starting with build `1.24.0-10.2.pre`.
-You can now migrate your Flutter packages to use non-nullable types like this:
+Flutter 2 supports null safety.
+You can migrate your Flutter packages to use non-nullable types like this:
 
 <?code-excerpt "../null_safety_examples/basics/lib/main.dart (MyApp)"?>
 ```dart
@@ -58,8 +57,6 @@ check out these pages:
   Questions that have come up during migration to null safety.
   
 ## Known issues
-
-_This section applies to the current beta branch release, v1.26._
 
 Not all parts of the Flutter SDK support null safety yet,
 as some parts still need additional work to
