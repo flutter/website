@@ -25,6 +25,12 @@ our roadmap on communication, or other multiple-Flutters issues, see [Issue 7200
   will be globally disabled.
 {{site.alert.end}}
 
+{{site.alert.warning}}
+  In 2.0.0, the memory usage is only fully optimized in AOT mode (in profile
+  and release builds). Some memory redundancy will still be present in JIT mode
+  (in debug builds) and will be addressed in a future release.
+{{site.alert.end}}
+
 ## Scenarios
 
 Before Flutter 2.0.0, multiple instances of `FlutterEngine` and its associated
