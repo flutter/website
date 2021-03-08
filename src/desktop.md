@@ -311,9 +311,12 @@ The easiest way to create an MSIX distribution for a Flutter project is to use
 the [`msix` pub package][msix package]. For an example of using the `msix` package
 from a Flutter desktop app, see the [Desktop Photo Search sample][].
 
+Instructions on [how to generate a .pfx certificate for MSIX distribution].
+
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
 [msix package]: {{site.pub}}/packages/msix
 [Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
+[how to generate a .pfx certificate for MSIX distribution]: https://sahajrana.medium.com/how-to-generate-a-pfx-certificate-for-flutter-windows-msix-lib-a860cdcebb8
 
 ##### Building your own zip file for Windows
 
