@@ -242,8 +242,7 @@ desktop, make sure you restart the IDE if it was
 already running.
 
 Create a new app in your IDE and it automatically
-creates iOS, Android, and desktop versions of your app.
-(And web, too, if you've enabled [web support][].)
+creates iOS, Android, web and desktop versions of your app.
 From the device pulldown, select **windows (desktop)**,
 **macOS (desktop)**, or **linux (desktop)**
 and run your app to see it launch on the desktop.
@@ -253,7 +252,7 @@ and run your app to see it launch on the desktop.
 #### Command line
 
 To create a new app that includes desktop support
-(in addition to mobile support), run the following commands,
+(in addition to mobile and web support), run the following commands,
 substituting `myapp` with the name of your project:
 
 ```terminal
