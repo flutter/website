@@ -48,10 +48,10 @@ that contains a list of 5000 photo objects from the
 [JSONPlaceholder REST API][],
 using the [`http.get()`][] method.
 
-<!-- skip -->
+<!--skip-->
 ```dart
 Future<http.Response> fetchPhotos(http.Client client) async {
-  return client.get(URI.parse('https://jsonplaceholder.typicode.com/photos'));
+  return client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 }
 ```
 
@@ -73,7 +73,7 @@ First, create a `Photo` class that contains data about a photo.
 Include a `fromJson()` factory method to make it easy to create a
 `Photo` starting with a JSON object.
 
-<!-- skip -->
+<!--skip-->
 ```dart
 class Photo {
   final int id;
@@ -102,7 +102,7 @@ Now, use the following instructions to update the
      body into a `List<Photo>`.
   2. Use the `parsePhotos()` function in the `fetchPhotos()` function.
 
-<!-- skip -->
+<!--skip-->
 ```dart
 // A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
@@ -113,7 +113,7 @@ List<Photo> parsePhotos(String responseBody) {
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
-      await client.get(URI.parse('https://jsonplaceholder.typicode.com/photos'));
+      await client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   return parsePhotos(response.body);
 }
@@ -131,11 +131,11 @@ function provided by Flutter. The `compute()` function runs expensive
 functions in a background isolate and returns the result. In this case,
 run the `parsePhotos()` function in the background.
 
-<!-- skip -->
+<!--skip-->
 ```dart
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
-      await client.get(URI.parse('https://jsonplaceholder.typicode.com/photos'));
+      await client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
@@ -163,7 +163,7 @@ import 'package:http/http.dart' as http;
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
-      await client.get(URI.parse('https://jsonplaceholder.typicode.com/photos'));
+      await client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
