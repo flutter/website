@@ -14,7 +14,7 @@ on [DevTools](https://flutter.dev/docs/development/tools/devtools/overview).
 - Contract length: 6 months with possibility to extend
 
 ## Responsibilities
-
+You would have the following responsibilities:
 - Conduct usability tests of developer tools and technical documentation
 - Interview Flutter app developers to understand their pain points and practices
 - Conduct surveys of moderate complexity and run simple statistical analysis
