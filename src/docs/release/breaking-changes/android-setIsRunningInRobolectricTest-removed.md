@@ -55,7 +55,7 @@ and `FlutterJNI` to allow for additional mocking and testing.
 
 [commit]: {{site.github}}/flutter/engine/commit/15f5696c4139a21e1fc54014ce17d01f6ad1737c#diff-f928557f2d60773a8435366400fa42ed
 [engine commit]: {{site.github}}/flutter/engine/commit/15f5696c4139a21e1fc54014ce17d01f6ad1737c#diff-599e1d64442183ead768757cca6805c3L154
-[PR 20473]: {{site.github}}/flutter/engine/pull/20473 further refactors FlutterLoader and FlutterJNI
+[PR 20473]: {{site.github}}/flutter/engine/pull/20473
 to allow for additional mocking/testing.
 
 ## Migration guide
@@ -80,4 +80,3 @@ FlutterInjector.setInstance(
 
 Landed in version: 1.22.0-2.0.pre.133<br>
 In stable release: 2.0.0
-
