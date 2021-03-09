@@ -40,7 +40,7 @@ You would have the following qualifications:
 
 ## Preferred qualifications
 
-Having any of these qualifications is a plus, but not required to be considered
+Having any of these qualifications is a plus, but not required, to be considered
 for this position.
 
 - Research experience in developer tools, APIs, or technical documentation
