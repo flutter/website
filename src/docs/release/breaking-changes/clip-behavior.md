@@ -75,7 +75,7 @@ You have 4 choices for migrating your code:
    overall performance.
 2. Add `clipBehavior: Clip.hardEdge` if you need clipping,
    and clipping without anti-alias is good enough for your
-   (and your clients’) eyes. This is be the common case
+   (and your clients’) eyes. This is the common case
    when you clip rectangles or shapes with very small curved areas
    (such as the corners of rounded rectangles).
 3. Add `clipBehavior: Clip.antiAlias` if you need
