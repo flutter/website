@@ -129,7 +129,7 @@ Widget myInputChip = InputChip(
 ## Timeline
 
 Landed in version: 1.23.0-7.0.pre<br>
-In stable release: not yet
+In stable release: 2.0.0
 
 ## References
 

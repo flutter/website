@@ -7,7 +7,7 @@ description: The method "computeDryLayout" was added to the RenderBox protocol t
 
 A new method named `computeDryLayout` was added to the `RenderBox` protocol.
 Subclasses of `RenderBox` are expected to implement it to correctly report
-their desired size given a set of `BoxConstraints` during intrinsics
+their desired size given a set of `BoxConstraints` during intrinsic
 calculations. Subclasses that implement `computeDryLayout` no longer need to
 override `performResize`.
 
@@ -26,10 +26,10 @@ calculates the resulting size and doesn't place the children. The
 
 Subclasses of `RenderBox` need to override the new `computeDryLayout` method
 if they are used as a descendant of a `RenderObject` that may query the intrinsic
-size of its children. Examples of widgets that due this are `IntrinsicHeight`
+size of its children. Examples of widgets that do this are `IntrinsicHeight`
 and `IntrinsicWidth`.
 
-The default implementation of `RenderBox.performResize` will also use the size
+The default implementation of `RenderBox.performResize` also uses the size
 computed by `computeDryLayout` to perform the resize. Overriding `performResize`
 is therefore no longer necessary.
 
@@ -62,7 +62,7 @@ Code after migration:
   }
 ```
 
-If the subclass does not override `performResize` the implementation of
+If the subclass doesn't override `performResize`, the implementation of
 `computeDryLayout` has to be extracted from the `performLayout` method.
 Basically, `computeDryLayout` needs to do all the work `performLayout` is doing
 to figure out the size of the `RenderBox`. However, instead of assigning it
@@ -89,13 +89,12 @@ if the size of a `RenderBox` depends on the baseline metrics of its children.
 ## Timeline
 
 Landed in version: 1.25.0-4.0.pre<br>
-In stable release: not yet
+In stable release: 2.0.0
 
 ## References
 
-{% include master-api.md %}
-
 API documentation:
+
 * [`RenderBox`][]
 * [`computeMinInstrinsicWidth`][]
 * [`computeDryLayout`][]
@@ -110,14 +109,14 @@ Relevant issues:
 Relevant PRs:
 * [Fixes Intrinsics for RenderParagraph and RenderWrap][]
 
-[`RenderBox`]: https://master-api.flutter.dev/flutter/rendering/RenderBox-class.html
-[`RenderBox.computeMinIntrinsicWidth`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
-[`computeMinInstrinsicWidth`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
-[`computeDryLayout`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/computeDryLayout.html
-[`getDryLayout`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/getDryLayout.html
-[`performResize`]: https://master-api.flutter.dev/flutter/rendering/RenderBox/performResize.html
-[`RenderWrap`]: https://master-api.flutter.dev/flutter/rendering/RenderWrap-class.html
-[`RenderParagraph`]: https://master-api.flutter.dev/flutter/rendering/RenderParagraph-class.html
+[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
+[`RenderBox.computeMinIntrinsicWidth`]: {{site.api}}/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
+[`computeMinInstrinsicWidth`]: {{site.api}}/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
+[`computeDryLayout`]: {{site.api}}/flutter/rendering/RenderBox/computeDryLayout.html
+[`getDryLayout`]: {{site.api}}/flutter/rendering/RenderBox/getDryLayout.html
+[`performResize`]: {{site.api}}/flutter/rendering/RenderBox/performResize.html
+[`RenderWrap`]: {{site.api}}/flutter/rendering/RenderWrap-class.html
+[`RenderParagraph`]: {{site.api}}/flutter/rendering/RenderParagraph-class.html
 
 [Issue 48679]: {{site.github}}/flutter/flutter/issues/48679
 [Fixes Intrinsics for RenderParagraph and RenderWrap]: {{site.github}}/flutter/flutter/pull/70656
