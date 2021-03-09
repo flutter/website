@@ -242,7 +242,7 @@ desktop, make sure you restart the IDE if it was
 already running.
 
 Create a new app in your IDE and it automatically
-creates iOS, Android, web and desktop versions of your app.
+creates iOS, Android, web, and desktop versions of your app.
 From the device pulldown, select **windows (desktop)**,
 **macOS (desktop)**, or **linux (desktop)**
 and run your app to see it launch on the desktop.
