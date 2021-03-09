@@ -22,6 +22,9 @@ on [DevTools](https://flutter.dev/docs/development/tools/devtools/overview).
 - Present research findings and facilitate stakeholder discussions
 
 ## Minimum qualifications
+
+You would have the following qualifications:
+
 - Bachelor’s degree in Human-Computer Interaction, Computer Science, Psychology,
   Cognitive Science, or a related field
 - 2 years of hands-on UX research experience
