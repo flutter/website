@@ -5,11 +5,13 @@ description: attachToActivity activity parameter changed to ExclusiveAppComponen
 
 ## Summary
 
-*If you use standard Android embedding Java classes like
-[`FlutterActivity`][], [`FlutterFragment`][],
-and don't manually embed a [`FlutterView`][]
-inside your own custom Activity (this should be uncommon),
-you can stop reading.*
+{{site.alert.note}}
+  If you use standard Android embedding Java classes like
+  [`FlutterActivity`][] or [`FlutterFragment`][],
+  and don't manually embed a [`FlutterView`][]
+  inside your own custom `Activity` (this should be uncommon),
+  you can stop reading.
+{{site.alert.end}}
 
 A new [`ActivityControlSurface`][] method:
 
@@ -26,7 +28,7 @@ void attachToActivity(@NonNull Activity activity, @NonNull Lifecycle lifecycle);
 ```
 
 The existing deprecated method with the `Activity`
-parameter will be removed after 2021-03-01.
+parameter was removed in Flutter 2.
 
 ## Context
 
@@ -35,15 +37,15 @@ lifecycle events Flutter plugins expect using the
 [`ActivityAware`][] interface, the [`FlutterEngine`][]
 exposed a [`getActivityControlSurface()`][] API.
 
-This let custom Activities signal to the engine
+This allows custom Activities to signal to the engine
 (with which it has a `(0|1):1` relationship) that
 it was being attached or detached from the engine.
 
 {{site.alert.note}}
   This lifecycle signaling is done automatically when you
   use the engine's bundled [`FlutterActivity`][]
-  or [`FlutterFragment`][] (which should be the most
-  common case).
+  or [`FlutterFragment`][], which should be the most
+  common case.
 {{site.alert.end}}
 
 However, the previous API had the flaw that it didn't
@@ -120,7 +122,7 @@ as performed when the activity is being naturally destroyed.
 ## Timeline
 
 Landed in version: 1.23.0-7.0.pre<br>
-In stable release: not yet
+In stable release: 2.0.0
 
 ## References
 

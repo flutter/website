@@ -1,5 +1,5 @@
 ---
-title: Insecure HTTP connections are disabled by default on iOS and Android.
+title: Insecure HTTP connections are disabled by default on iOS and Android
 description: Accessing a URL with HTTP protocol throws an exception unless the domain is explicitly allowed by policy.
 ---
 

@@ -195,7 +195,7 @@ For this reason, freeform fields should rarely use the `enforced` value and shou
 ## Timeline
 
 Landed in version: v1.26.0-1.0.pre
-In stable release: not yet
+In stable release: 2.0.0
 
 ## References
 
@@ -217,11 +217,11 @@ Relevant PR:
 
 [`MaxLengthEnforcement` design doc]: /go/max-length-enforcement
 
-[`MaxLengthEnforcement`]: {{site.master-api}}/flutter/services/MaxLengthEnforcement-class.html
+[`MaxLengthEnforcement`]: {{site.api}}/flutter/services/MaxLengthEnforcement-class.html
 
-[`LengthLimitingTextInputFormatter`]: {{site.master-api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
+[`LengthLimitingTextInputFormatter`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
 
-[`maxLength`]: {{site.master-api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
+[`maxLength`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
 
 [Issue 63753]: {{site.github}}/flutter/flutter/issues/63753
 

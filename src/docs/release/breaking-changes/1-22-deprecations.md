@@ -5,14 +5,20 @@ description: After reaching end of life, the following deprecated APIs were remo
 
 ## Summary
 
-In accordance with Flutter's [Deprecation Policy][], deprecated APIs that reached end of life after the
-1.22 stable release have been removed. This is the first time deprecated APIs have been removed from
-Flutter, and some of these deprecations predate our migration guide policy.
+In accordance with Flutter's [Deprecation Policy][],
+deprecated APIs that reached end of life after the
+1.22 stable release have been removed.
+This is the first time deprecated APIs
+have been removed from Flutter,
+and some of these deprecations predate our
+migration guide policy.
 
-All affected APIs have been compiled into this primary source to aid in migration. A
+All affected APIs have been compiled into this
+primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
-A [design document][] and [article][] are available for more context on Flutter's deprecation policy.
+A [design document][] and [article][] are available
+for more context on Flutter's deprecation policy.
 
 [Deprecation Policy]: {{site.github}}/flutter/flutter/wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-1-22
@@ -28,7 +34,7 @@ This section lists the deprecations, listed by the affected class.
 Supported by fix tool: IDE fix only.
 
 `CupertinoDialog` was deprecated in v0.2.3.
-`CupertinoAlertDialog` or `CupertinoPopupSurface` should be used instead.
+Use `CupertinoAlertDialog` or `CupertinoPopupSurface` instead.
 
 **Migration guide**
 
@@ -85,10 +91,12 @@ Relevant PRs:
 
 Supported by fix tool: No
 
-`CupertinoNavigationBar.actionsForegroundColor` and `CupertinoSliverNavigationBar.actionsForegroundColor`
+`CupertinoNavigationBar.actionsForegroundColor`
+and `CupertinoSliverNavigationBar.actionsForegroundColor`
 were deprecated in v1.1.2.
-Setting `primaryColor` in your `CupertinoTheme` propagates this instead. To access the
-`primaryColor`, call `CupertinoTheme.of(context).primaryColor`.
+Setting `primaryColor` in your `CupertinoTheme` propagates this instead.
+To access the `primaryColor`,
+call `CupertinoTheme.of(context).primaryColor`.
 
 **Migration guide**
 
@@ -147,7 +155,8 @@ Relevant PRs:
 Supported by fix tool: Yes
 
 `CupertinoTextThemeData.brightness` was deprecated in v1.10.14.
-This field member was made ineffective at the time of deprecation. There is no replacement for this
+This field member was made ineffective at the time of deprecation.
+There is no replacement for this
 parameter, references should be removed.
 
 **Migration guide**
@@ -189,8 +198,8 @@ Relevant PRs:
 
 Supported by fix tool: Yes
  
-The `fromHoverEvent` constructors for `PointerEnterEvent` and `PointerExitEvent` were deprecated
-in v1.4.3.
+The `fromHoverEvent` constructors for `PointerEnterEvent`
+and `PointerExitEvent` were deprecated in v1.4.3.
 The `fromMouseEvent` constructor should be used instead.
  
 **Migration guide**
@@ -216,7 +225,8 @@ API documentation:
 * [`PointerExitEvent`][]
  
 Relevant issues:
-* [PointerEnterEvent and PointerExitEvent can only be created from hover events][]
+* [PointerEnterEvent and PointerExitEvent can only
+  be created from hover events][]
  
 Relevant PRs:
 * Deprecated in [#28602][]
@@ -323,12 +333,14 @@ Relevant PRs:
 Supported by fix tool: No
  
 The `bar` constructor of `ButtonTheme` was deprecated in in v1.9.1.
-`ButtonBarTheme` can be used instead for `ButtonBar`s, or use another constructor of `ButtonTheme`
+`ButtonBarTheme` can be used instead for `ButtonBar`s,
+or use another constructor of `ButtonTheme`
 if the use is not specific to `ButtonBar`.
 
-Button-specific theming is also available with the `TextButtonTheme`, `ElevatedButtonTheme`, and
-`OutlinedButtonTheme` classes, each corresponding with the appropriate button class, `TextButton`,
-`ElevatedButton` and `OutlinedButton`.
+Button-specific theming is also available with the `TextButtonTheme`,
+`ElevatedButtonTheme`, and `OutlinedButtonTheme` classes,
+each corresponding with the appropriate button class,
+`TextButton`, `ElevatedButton` and `OutlinedButton`.
  
 **Migration guide**
  

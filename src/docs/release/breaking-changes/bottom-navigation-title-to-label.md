@@ -49,7 +49,7 @@ BottomNavigationBarItem(
 ## Timeline
 
 Landed in version: 1.22.0
-In stable release: not yet
+In stable release: 2.0.0
 
 ## References
 
@@ -68,6 +68,6 @@ Stable channel link:
 [`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
 
 Master channel link:
-[`BottomNavigationBarItem`]: https://master-api.flutter.dev/flutter/widgets/BottomNavigationBarItem-class.html
+[`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
 
 [Breaking Change: Bottom Navigation Item Title]: https://flutter.dev/go/bottom-navigation-bar-title-deprecation
