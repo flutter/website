@@ -321,7 +321,7 @@ To publish on the Windows Store or Direct download with the help of MSIX Install
 you need to give your app a digital signature in the form of a .pfx certificate.
 Use the following instructions to generate a self-signed .pfx certificate.
 
-* You would need to download [OpenSSL][] to generate your certificates.
+1. If you haven't already, download the [OpenSSL][] toolkit to generate your certificates.
 1. Go to where you installed OpenSSL, for example:
    `C:\Program Files\OpenSSL-Win64\bin`.
 1. Set an environment variable so that you can access `OpenSSL` from anywhere:<br>
