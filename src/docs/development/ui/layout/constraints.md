@@ -459,7 +459,7 @@ class Example7 extends Example {
       'The Center tells the red Container that it can be any size it wants, but not bigger than the screen.'
       'Since the red Container has no size but has a child, it decides it wants to be the same size as its child.'
       '\n\n'
-      'The red Container tells its child that if can be any size it wants, but not bigger than the screen.'
+      'The red Container tells its child that it can be any size it wants, but not bigger than the screen.'
       '\n\n'
       'The child is a green Container that wants to be 30x30.'
       '\n\n'
