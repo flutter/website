@@ -328,21 +328,16 @@ Use the following instructions to generate a self-signed .pfx certificate.
    `make "C:\Program Files\OpenSSL-Win64\bin"`
 1.  Generate a private key as follows:<br>
       ```
-      openssl genrsa -out mykeyname.key 2048
-      ```
-    * Generate a CSR file with the help of the private key.
-      ```
-      openssl req -new -key mykeyname.key -out mycsrname.csr
-      ```
-    * Generate a CRT file with the help of the private key & CSR file.
-      ```
-      openssl x509 -in mycsrname.csr -out mycrtname.crt -req -signkey mykeyname.key -days 10000
-      ```
-    * Generate .pfx file with the help of the private key & CRT file.
-      ```
-      openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt
-      ```
-There you have your .pfx certificate to use with MSIX Installer.
+      `openssl genrsa -out mykeyname.key 2048`
+    4. Generate a certificate signing request (CSR) file using the private key:<br>
+      `openssl req -new -key mykeyname.key -out mycsrname.csr`
+    5. Generate the signed certificate (CRT) file using the private key
+        and CSR file:<br>
+      `openssl x509 -in mycsrname.csr -out mycrtname.crt -req -signkey mykeyname.key -days 10000`
+    6. Generate the `.pfx` file using the private key and CRT file:<br>
+      `openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt`
+
+You now have a `.pfx` certificate to use with the MSIX installer.
       
 [OpenSSL]: https://slproweb.com/products/Win32OpenSSL.html
 
