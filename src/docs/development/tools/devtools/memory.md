@@ -25,7 +25,7 @@ cause leaks or lead to application crashes. For example, loading large
 assets for thumbnail-sized images in inefficient, memory usage can
 be improved by loading smaller assets or adjusting the cacheWidth/cacheHeight
 to decode an image to a smaller size reducing the memory usage of the
-ImageCache. The analysis will catch issues like this.
+ImageCache. The analysis catches issues like this.
 
 Memory profiling consists of six parts, each increasing
 in granularity:
@@ -94,7 +94,9 @@ The top of the memory page has several buttons and dropdowns that control how me
 <dt markdown="1">**Clear**</dt>
 <dd>Clear all collected data from the memory profiler.</dd>
 <dt markdown="1">**Display**</dt>
-<dd>The duration of the x-axis. For example, if this dropdown is set to "Display 5 minutes", memory data from the last 5 minutes will be displayed.</dd>
+<dd>The duration of the x-axis. For example, if this dropdown
+    is set to "Display 5 minutes", memory data from the last
+    5 minutes is displayed.</dd>
 <dt markdown="1">- Display 1 Minute</dt>
 <dt markdown="1">- Display 5 Minutes</dt>
 <dt markdown="1">- Display 10 Minutes</dt>
@@ -106,7 +108,7 @@ The top of the memory page has several buttons and dropdowns that control how me
 <dt markdown="1">**GC**</dt>
 <dd>Initiates a garbage collection - compaction of the heap.</dd>
 <dt markdown="1">**Export**</dt>
-<dd>Saves collected data for Event Timeline, Memory Overview Chart and Android Overview Chart. Files saved are displayed under the Source dropdown. Selecting a file will load the offline data.</dd>
+<dd>Saves collected data for Event Timeline, Memory Overview Chart and Android Overview Chart. Files saved are displayed under the Source dropdown. Selecting a file loads the offline data.</dd>
 </dl>
 
 ## Memory actions
@@ -118,23 +120,56 @@ Below the memory charts (Event Timeline, Memory Overview and Android Overview ch
 <dl markdown="1">
 <dt markdown="1">**Snapshot**</dt>
 <dt markdown="1">**Table**</dt>
-<dd markdown="1">If Treemap switch is off the snapshot displays all currently active memory objects in a table.  Clicking the Snapshot button makes a request to the Dart VM to collect the current state of memory.  The memory objects can be sorted by attributes such as class name, size, allocated instances (see [Snapshot classes](#snapshot-classes)).</dd>
+<dd markdown="1">If the Treemap switch is off,
+    the snapshot displays all currently active memory
+    objects in a table.  Clicking the **Snapshot** button
+    makes a request to the Dart VM to collect the current
+    state of memory. The memory objects can be sorted
+    by attributes such as class name, size,
+    allocated instances (see
+    [Snapshot classes](#snapshot-classes)).
+</dd>
 <dt markdown="1">**Treemap**</dt>
-<dd markdown="1">If the Treemap switch is on the snapshot displays currently active memory objects, the last snapshot, memory in a high-level view as a tree map. (TBD details).</dd>
+<dd markdown="1">If the Treemap switch is enabled on
+    the snapshot displays currently active memory objects,
+    the last snapshot, memory in a high-level view as a tree map.
+    (TBD details).
+</dd>
 <dt markdown="1">**Group By**</dt>
-<dd markdown="1">Dropdown to select how data is grouped, which can either be by instance or by class name.</dd>
+<dd markdown="1">Dropdown to select how data is grouped,
+    which can either be by instance or by class name.
+</dd>
 <dt markdown="1">**Collapse All**</dt>
-<dd markdown="1">Collapse all nodes in the table.</dd>
+<dd markdown="1">Collapse all nodes in the table.
+</dd>
 <dt markdown="1">**Expand All**</dt>
-<dd markdown="1">Expand all nodes in the table.</dd>
+<dd markdown="1">Expand all nodes in the table.
+</dd>
 <dt markdown="1">**Monitor Allocations**</dt>
-<dd markdown="1">Records the number of instances and size of all instances in bytes. Upon clicking on the "Monitor" entry in the table, another table will populate with instance allocation data. For each instance in the allocation table, The "Delta" column reflects the number of memory allocations since the last reset.</dd>
+<dd markdown="1">Records the number of instances and the size
+    of all instances in bytes. Upon clicking on the
+    **Monitor** entry in the table, another table
+    populates with instance allocation data.
+    For each instance in the allocation table,
+    the **Delta** column reflects the number of
+    memory allocations since the last reset.
+</dd>
 <dt markdown="1">**Reset Accumulators**</dt>
-<dd>Resets the accumulator counts (Delta columns) for each instance in the allocation table.  The next time the "Monitor" button is pressed, the "Delta" columns displays the populate with the new instances and sizes since the last reset.</dd>
+<dd markdown="1">Resets the accumulator counts
+    (**Delta** columns) for each instance in the allocation table.
+    The next time the **Monitor** button is pressed,
+    the **Delta** columns displays the populate with
+    the new instances and sizes since the last reset.
+</dd>
 <dt markdown="1">**Search**</dt>
-<dd>The search field is enabled when a snapshot exists.  The current selected snapshot, or last snapshot, class name will be searched (auto-completed).  Typing, or selecting a name from the dropdown, will navigate to that class name in the snapshot.</dd>
+<dd>The search field is enabled when a snapshot exists.
+    The current selected snapshot, or last snapshot,
+    class name is searched (auto-completed).
+    Typing, or selecting a name from the dropdown,
+    navigates to that class name in the snapshot.</dd>
 <dt markdown="1">**Filter**</dt>
-<dd>Display a dialog box of libraries and class names to display (checked on).</dd>
+<dd>Display a dialog box of libraries and class names to display (checked on).
+</dd>
 </dl>
 
 ## Memory overview chart
@@ -164,17 +199,20 @@ The quantities plotted on the y-axis are (from top to bottom):
 <dt markdown="1">**Used**</dt>
 <dd>Objects (Dart objects) in the heap.</dd>
 <dt markdown="1">**External**</dt>
-<dd markdown="1">Memory that is not in the Dart heap but is still part
-  of the total memory footprint. Objects in external memory would be
-  native objects (for example, from a memory read from a file,
+<dd markdown="1">Memory that is not in the Dart heap but
+  is still part of the total memory footprint.
+  Objects in external memory would be native objects
+  (for example, from a memory read from a file,
   or a decoded image). The native objects are exposed to the Dart
   VM from the native OS (such as Android, Linux, Windows, iOS)
   using a Dart embedder. The embedder creates a Dart wrapper with
-  a finalizer, allowing Dart code to communicate with these native
-  resources. Flutter has an embedder for Android and iOS.
+  a finalizer, allowing the Dart code to communicate with these
+  native resources. Flutter has an embedder for Android and iOS.
   For more information, see [Dart on the Server][server] or
-  [Custom Flutter Engine Embedders][embedder].</dd>
+  [Custom Flutter Engine Embedders][embedder].
+</dd>
 </dl>
+
 To view RSS (resident set size), click the name of the RSS located
 in the legend.
 
@@ -208,11 +246,13 @@ When connected to an Android app, DevTools collects Android's ADB (Android Debug
 This chart is another timeseries graph of the state of Android memory as the application is running.
 The quantities plotted on the y-axis are the above values (Java Heap, Native Heap, Code size, Stack size, Graphics stack, System size and total).
 
-Clicking on a timestamp (x-position) will display all data points collected for that time period.
+Clicking on a timestamp (x-position) displays all data points
+collected for that time period.
 
 ![Screenshot of Android Memory Chart]({% asset tools/devtools/memory_android.png @path %})
 
-The legend popup will display the values of all collected Android memory data.
+The legend popup displays the values of all collected
+Android memory data.
 
 ![Screenshot of Android Memory Legend]({% asset tools/devtools/memory_android_legend.png @path %})
 
@@ -239,7 +279,8 @@ The legend popup will display the values of all collected Android memory data.
 
 ![Screenshot of DevTools events]({% asset tools/devtools/memory_eventtimeline.png @path %}){:width="100%"}
 
-This chart displays DevTools events (such as manual GC, VM GC, Snapshot, Monitor Allocations and Reset Accumulators button
+This chart displays DevTools events (such as manual GC, VM GC,
+Snapshot, Monitor Allocations and Reset Accumulators button
 clicks) in relation to the memory chart timeline. Hovering over the
 markers in the Event timeline displays the time when the event occurred.
 This helps identify when a memory leak might have occurred in the
@@ -252,37 +293,67 @@ This legend shows the symbol for each DevTools event and its meaning
 <dl markdown="1">
 <dt markdown="1">**Snapshot**</dt>
 ![User Snapshot]({% asset tools/devtools/memory_eventtimeline_snapshot.png @path %}){:width="20px"}
-<dd markdown="1">User initiated snapshot - all memory information collected and an analysis performed.</dd>
+<dd markdown="1">User initiated snapshot&mdash;all
+    memory information collected and an analysis performed.
+</dd>
 <dt markdown="1">**Auto-Snapshot**</dt>
 ![Auto Snapshot]({% asset tools/devtools/memory_eventtimeline_auto_snapshot.png @path %}){:width="20px"}
-<dd markdown="1">DevTools initiated a snapshot detecting that memory grow by 40% or more from previous size.  This is used to detect memory spikes in your Flutter application (same information collected as in a manual snapshot).</dd>
+<dd markdown="1">DevTools initiated a snapshot detecting
+    that memory grow by 40% or more from previous size.
+    This is used to detect memory spikes in your
+    Flutter application (same information collected as in a
+    manual snapshot).
+</dd>
 <dt markdown="1">**Monitor Allocations**</dt>
 ![Monitor]({% asset tools/devtools/memory_eventtimeline_monitor.png @path %}){:width="20px"}
-<dd markdown="1">Collects current state of all active classes number of instances and byte size of all instances.  In addtion, the deltas are the change in the accumulators since the last "Reset Accumulators" button pressed.</dd>
+<dd markdown="1">Collects current state of all active
+    classes number of instances and byte size of all instances.
+    In addtion, the deltas are the change in the accumulators
+    since the last "Reset Accumulators" button pressed.
+</dd>
 <dt markdown="1">**Reset Accumulators**</dt>
 ![Reset]({% asset tools/devtools/memory_eventtimeline_reset_monitor.png @path %}){:width="20px"}
-<dd markdown="1">When both the instance and bytes accumulators were reset to zero.</dd>
+<dd markdown="1">When both the instance and bytes accumulators
+    were reset to zero.
+</dd>
 <dt markdown="1">**User Initiated GC**</dt>
 ![GC]({% asset tools/devtools/memory_eventtimeline_gc.png @path %}){:width="20px"}
-<dd markdown="1">When user manual request the VM to perform a garbage collection of memory (only a suggestion to the VM).</dd>
+<dd markdown="1">When the user manual requests the VM to
+    perform a garbage collection of memory (only a
+    suggestion to the VM).
+</dd>
 <dt markdown="1">**VM GC**</dt>
 ![VM GC]({% asset tools/devtools/memory_eventtimeline_vmgc.png @path %}){:width="20px"}
-<dd markdown="1">GC (garbage collection) has occurred. For more information on how Dart performs garbage collection, see [Don't Fear the Garbage Collector][].</dd>
+<dd markdown="1">GC (garbage collection) has occurred.
+    For more information on how Dart performs
+    garbage collection,
+    see [Don't Fear the Garbage Collector][].
+</dd>
 </dl>
 
 ## Managing the objects and statistics in the heap (Monitor Allocations)
 
 ![The Monitor Allocations button]({% asset tools/devtools/memory_monitor_allocations.png @path %}){:width="20px"}
 
-Clicking the Monitor Allocations button will monitor the total number of instances and total number of bytes allocated for a class.  In addition, two accumulators are maintained for instances and bytes allocated these accumulators can be reset, to zero, by user action (pressing the Reset Accumulators button).  The mechanism is useful to find memory leaks.
+Clicking the **Monitor Allocations** button monitors the total
+number of instances and total number of bytes allocated for a class.
+In addition, two accumulators are maintained for instances
+and bytes allocated these accumulators can be reset,
+to zero, by user action (pressing the Reset Accumulators button).
+The mechanism is useful to find memory leaks.
 
 ![Reset Accumulators button]({% asset tools/devtools/memory_reset.png @path %}){:width="20px"}
 
-When the **Reset Accumulators** button is pressed, the accumulators for all classes resets to zero. When reset is occurs a "monitor reset" event to the Event Timeline.  Clicking the **Reset Accumulators** button again resets both accumulators to zero.
+When the **Reset Accumulators** button is pressed,
+the accumulators for all classes reset to zero.
+When a reset occurs, a "monitor reset" event is sent to
+the **Event Timeline**. Clicking the **Reset Accumulators**
+button again resets both accumulators to zero.
 
 <dl markdown="1">
 <dt markdown="1">**Classes**</dt>
-<dd markdown="1">Active classes in the heap.</dd>
+<dd markdown="1">Active classes in the heap.
+</dd>
 <dt markdown="1">**Instances column is total active objects for all classes in the heap**</dt>
 <dd>Total classes allocated in the heap and total objects (instances) in the heap.</dd>
 <dt markdown="1">**Delta column the accumulator count of all instances since last "Reset Accumulators" was pressed.**</dt>
@@ -304,28 +375,39 @@ This pane shows classes allocated in the heap, all instances for a class, and th
 
 In addition, a snapshot can automatically occur when DevTools notices a spike in memory used (growth of > 40%).
 
-Every snapshot, manual or automatic, will generate an analysis of the snapshot e.g., groups image problems that might have occurred. In the future, other common Flutter coding issues e.g., Fonts, Files, JSON, etc. that could cause memory problems will be flagged.
+Every snapshot, manual or automatic, generates
+an analysis of the snapshot; for example, a group image
+problems might have occurred. In the future,
+other common Flutter coding issues, such as Fonts, Files, JSON,
+that could cause memory problems will be flagged.
 
 Snapshots have major tree nodes:
 <dl markdown="1">
 <dt markdown="1">External</dt>
-<dd>Memory that is not in the Dart heap but is still part
-  of the total memory footprint. Objects in external memory would be
-  native objects (for example, from a memory read from a file,
+<dd markdown="1">Memory that is not in the Dart heap but is
+  still part of the total memory footprint.
+  Objects in external memory would be native objects
+  (for example, in memory read from a file,
   or a decoded image). The native objects are exposed to the Dart
   VM from the native OS (such as Android, Linux, Windows, iOS)
   using a Dart embedder. The embedder creates a Dart wrapper with
   a finalizer, allowing Dart code to communicate with these native
   resources. Flutter has an embedder for Android and iOS.
   For more information, see [Dart on the Server][server] or
-  [Custom Flutter Engine Embedders][embedder].</dd>
+  [Custom Flutter Engine Embedders][embedder].
+</dd>
 <dt markdown="1">Filtered</dt>
 <dd>Filter are the packages being filtered.</dd>
 <dt markdown="1">Packages</dt>
 <dd>User packages used by the application and Src - the empty Dart package.</dd>
 </dl>
 
-Under each of the above nodes are class nodes, an aggregate of the objects allocated to this class. Clicking a class name displays a list of class instances. and under each class are all the instances of a class. Clicking on an instance will inspect the contents of that instances (fields and values).
+Under each of the above nodes are class nodes,
+an aggregate of the objects allocated to this class.
+Clicking a class name displays a list of class instances;
+under each class all the instances of a class are listed.
+Clicking on an instance inspects the contents of that
+instance (fields and values).
 
 ## Inspecting a class instance in a snapshot
 
@@ -346,11 +428,17 @@ The Analysis pulls all Image related classes and instances from a snapshot and o
 In the above Analysis the raw images are located in the Externals portion of memory _Int32List (or _Int64List for newer phones) organizes the instances sizes into buckets.  Eleven images are 10K-50K, one image is 10M-50M, seven images are 1M-10M and four images are greater than 50M.  For a grand total of over 500M of this app constitute images rendered as small images on a phone.
 
 ## Memory problem case study
-<dd markdown="1">Memory leak study using large network images was added with step-by-step instructions on using DevTools’ Memory profiler, detecting the memory problem and fixing the problem, see [case study][case_study].</dd>
+
+<dd markdown="1">A memory leak study using large network
+    images was added with step-by-step instructions on
+    using DevTools' Memory profiler,
+    detecting the memory problem, and fixing the problem.
+    For more information, see the [case study][case_study].
+</dd>
 
 ## Glossary of VM terms
 
-Here are some computer science concepts that will help you better
+Here are some computer science concepts that help you better
 understand how your application uses memory.
 
 <dl markdown="1">
@@ -371,11 +459,13 @@ understand how your application uses memory.
     object, it is considered to be dead. When an object is pointed
     to by another object, it is live.</dd>
 <dt markdown="1">**Isolates**</dt>
-<dd markdown="1">Dart supports concurrent execution by way of isolates,
-    which you can think of processes without the overhead.
-    Each isolate has its own memory and code that can't be
-    affected by any other isolate. For more information,
-    see [The Event Loop and Dart][event-loop].</dd>
+<dd markdown="1">Dart supports concurrent execution by
+    way of isolates, which you can think of processes
+    without the overhead. Each isolate has its own memory
+    and code that can't be affected by any other isolate.
+    For more information,
+    see [The Event Loop and Dart][event-loop].
+</dd>
 <dt markdown="1">**Memory leak**</dt>
 <dd>A memory leak occurs when an object is live
     (meaning that another object points to it), but it is not being
@@ -385,8 +475,9 @@ understand how your application uses memory.
     Memory leaks put unnecessary pressure on the VM and can be
     difficult to debug.</dd>
 <dt markdown="1">**Virtual machine (VM)**</dt>
-<dd>The Dart virtual machine is a piece of
-    software that directly executes Dart code.</dd>
+<dd markdown="1">The Dart virtual machine is a piece of
+    software that directly executes Dart code.
+</dd>
 </dl>
 
 [server]: https://dart-lang.github.io/server/server.html

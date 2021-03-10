@@ -3,33 +3,38 @@ title: Flutter for Xamarin.Forms developers
 description: Learn how to apply Xamarin.Forms developer knowledge when building Flutter apps.
 ---
 
-This document is meant for Xamarin.Forms developers looking to apply their
-existing knowledge to build mobile apps with Flutter. If you understand
-the fundamentals of the Xamarin.Forms framework, then you can use this
+This document is meant for Xamarin.Forms developers looking
+to apply their existing knowledge to build mobile apps with
+Flutter. If you understand the fundamentals of the
+Xamarin.Forms framework, then you can use this
 document as a jump start to Flutter development.
 
-Your Android and iOS knowledge and skill set are valuable when building with
-Flutter, because Flutter relies on the native operating system configurations,
-similar to how you would configure your native Xamarin.Forms projects.
-The Flutter Frameworks is also similar to how you create a single UI,
+Your Android and iOS knowledge and skill set are valuable
+when building with Flutter, because Flutter relies on
+the native operating system configurations,
+similar to how you would configure your native
+Xamarin.Forms projects. The Flutter Frameworks
+is also similar to how you create a single UI,
 that is used on multiple platforms.
 
-This document can be used as a cookbook by jumping around and finding questions
+This document can be used as a cookbook by
+jumping around and finding questions
 that are most relevant to your needs.
 
 ## Project setup
 
 ### How does the app start?
 
-For each platform in Xamarin.Forms, you call the `LoadApplication` method,
+For each platform in Xamarin.Forms,
+you call the `LoadApplication` method,
 which creates a new application and starts your app.
 
 ```csharp
 LoadApplication(App());
 ```
 
-In Flutter, the default main entry point is `main` where you load your
-Flutter app.
+In Flutter, the default main entry point is
+`main` where you load your Flutter app.
 
 <!-- skip -->
 ```dart
@@ -38,8 +43,8 @@ void main() {
 }
 ```
 
-In Xamarin.Forms, you assign a `Page` to the `MainPage` property in the
-`Application` class.
+In Xamarin.Forms, you assign a `Page` to the
+`MainPage` property in the `Application` class.
 
 ```csharp
 public class App: Application
@@ -79,18 +84,23 @@ class MyApp extends StatelessWidget {
 Xamarin.Forms has many different types of pages;
 `ContentPage` is the most common.  In Flutter,
 you specify an application widget that holds your root page.
-You can use a [MaterialApp][] widget,
+You can use a [`MaterialApp`][] widget,
 which supports [Material Design][], or you can use a
-[CupertinoApp][] widget, which supports an iOS-style app,
-or you can use the lower level [WidgetsApp][],
+[`CupertinoApp`][] widget, which supports an iOS-style app,
+or you can use the lower level [`WidgetsApp`][],
 which you can customize in any way you want.
 
-The following code defines the home page, a stateful widget. In Flutter,
-all widgets are immutable, but two types of widgets are supported:
-stateful and stateless. Examples of a stateless widget are titles,
-icons, or images.
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 
-The following example uses MaterialApp,
+The following code defines the home page, a stateful widget.
+In Flutter, all widgets are immutable,
+but two types of widgets are supported:
+stateful and stateless. Examples of a stateless widget
+are titles, icons, or images.
+
+The following example uses `MaterialApp`,
 which holds its root page in the `home` property.
 
 <!-- skip -->
@@ -1356,14 +1366,17 @@ MaterialApp(
 )
 ```
 
-The delegates contain the actual localized values, while the `supportedLocales`
-defines which locales the app supports. The above example uses a `MaterialApp`,
+The delegates contain the actual localized values,
+while the `supportedLocales` defines which locales
+the app supports. The above example uses a `MaterialApp`,
 so it has both a `GlobalWidgetsLocalizations` for the base
-widgets localized values, and a `MaterialWidgetsLocalizations` for the Material
-widgets localizations. If you use `WidgetsApp` for your app, you don't
+widgets localized values, and a `MaterialWidgetsLocalizations`
+for the Material widgets localizations.
+If you use `WidgetsApp` for your app, you don't
 need the latter. Note that these two delegates contain "default"
-values, but you'll need to provide one or more delegates for your own app's
-localizable copy, if you want those to be localized too.
+values, but you'll need to provide one or more delegates
+for your own app's localizable copy,
+if you want those to be localized too.
 
 When initialized, the `WidgetsApp` (or `MaterialApp`)
 creates a [`Localizations`][] widget for you,
@@ -2380,9 +2393,10 @@ In Flutter you declare themes in the top level widget.
 
 To take full advantage of Material Components in your app,
 you can declare a top level widget `MaterialApp` as the entry
-point to your application. MaterialApp is a convenience widget
+point to your application. `MaterialApp` is a convenience widget
 that wraps a number of widgets that are commonly required for
-applications implementing Material Design. It builds upon a WidgetsApp by
+applications implementing Material Design.
+It builds upon a `WidgetsApp` by
 adding Material-specific functionality.
 
 You can also use a `WidgetsApp` as your app widget,
@@ -2466,7 +2480,6 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /docs/resources/architectural-overview#composition
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
-[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
 [developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [DevTools]: /docs/development/tools/devtools/overview
@@ -2493,7 +2506,6 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Material Components]: /docs/development/ui/widgets/material
 [Material Design]: {{site.material}}/design
 [Material Design guidelines]: {{site.material}}/design
-[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [platform channels]: /docs/development/platform-integration/platform-channels
@@ -2507,7 +2519,6 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [widget]: /docs/resources/architectural-overview#widgets
 [widget catalog]: /docs/development/ui/widgets/layout
-[WidgetsApp]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [Write your first Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your first Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
