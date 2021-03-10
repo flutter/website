@@ -8,10 +8,12 @@ description: Learn how to add a splash screen to your mobile app.
 development/ui/splash-screen/android-splash-screen/splash-screens_header.png
 class="mw-100" alt="Add Splash Screen Header" %}
 
-Splash screens (also known as launch screens) provide a simple initial
-experience while your mobile app loads. They set the stage for your
-application, while allowing time for the app engine to load and your
-app to initialize. This guide teaches you how to use splash screens
+Splash screens (also known as launch screens)
+provide a simple initial experience while your
+mobile app loads. They set the stage for your
+application, while allowing time for the app
+engine to load and your app to initialize.
+This guide teaches you how to use splash screens
 appropriately on iOS and Android.
 
 ## iOS launch screen
@@ -20,12 +22,17 @@ All apps submitted to the Apple App Store
 [must use an Xcode storyboard][] to
 provide the app's launch screen.
 
-The default Flutter template includes an Xcode storyboard named
-`LaunchScreen.storyboard` that can be customized as you see fit with
-your own assets. By default, the storyboard displays a blank image,
-but you can change this. To do so, open the Flutter app's Xcode project
-by typing `open ios/Runner.xcworkspace` from the root of your app directory.
-Then select `Runner/Assets.xcassets` from the Project Navigator and
+The default Flutter template includes an Xcode
+storyboard named `LaunchScreen.storyboard`
+that can be customized as you see fit with
+your own assets. By default,
+the storyboard displays a blank image,
+but you can change this. To do so,
+open the Flutter app's Xcode project
+by typing `open ios/Runner.xcworkspace`
+from the root of your app directory.
+Then select `Runner/Assets.xcassets`
+from the Project Navigator and
 drop in the desired images to the `LaunchImage` image set.
 
 Apple provides detailed guidance for launch screens as
@@ -70,7 +77,7 @@ to be applied to `FlutterActivity` after the launch
 screen is gone. The normal theme background only shows
 for a very brief moment after the splash screen disappears,
 and during orientation change and `Activity` restoration.
-Therefore, it is recommended that the normal theme use a
+Therefore, it's recommended that the normal theme use a
 solid background color that looks similar to the primary
 background color of the Flutter UI.
 
@@ -112,7 +119,7 @@ while the app initializes.
 
 Each Flutter experience in an app requires a few moments
 to initialize the Dart isolate that runs the code.
-This means a user momentarily sees a blank screen
+This means that a user momentarily sees a blank screen
 until Flutter renders its first frame. Flutter supports
 an improved user experience by displaying an Android
 `View` as a splash screen while Flutter initializes.
@@ -147,8 +154,8 @@ reference the same `@drawable/launch_background` in the
 #### In a FlutterFragment
 
 To display a `Drawable` as a Flutter splash screen in a
-`FlutterFragment`, make a subclass of `FlutterFragment` and override
-`provideSplashScreen()`.
+`FlutterFragment`, make a subclass of `FlutterFragment`
+and override `provideSplashScreen()`.
 
 ```java
 public class MyFlutterFragment extends FlutterFragment {
@@ -169,8 +176,9 @@ public class MyFlutterFragment extends FlutterFragment {
 Splash screens are a great branding opportunity.
 Because of that, many apps implement unique,
 highly customized splash experiences. To facilitate this,
-Flutter allows you to display an arbitrary Android `View` as a splash
-screen, and even allows you to control how that `View` transitions to
+Flutter allows you to display an arbitrary Android `View`
+as a splash screen, and even allows you to control how
+that `View` transitions to
 Flutter after Flutter renders its first frame.
 
 #### Implement a custom splash View
@@ -181,7 +189,8 @@ from a simple solid color to an animation.
 
 #### Implement the SplashScreen interface
 
-With a custom `View` defined, implement the `SplashScreen` interface.
+With a custom `View` defined, implement the `SplashScreen`
+interface.
 
 This guide shows two approaches to a `SplashScreen`
 implementation. First, the following is an example of a
@@ -259,12 +268,12 @@ return new SplashScreenWithTransition();
 }
 
 ```
-More examples, please refer [Sample code][]
+
 With custom splash screens, the sky is the limit.
 But use the power you have with responsibility: a
 splash screen that is too complex may frustrate your
 users by adding to your app's load time.
-UX Collective provides some good
+The UX Collective provides some good
 tips on how to build a [dynamic yet performant splash screen][].
 
 
