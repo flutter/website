@@ -311,12 +311,41 @@ The easiest way to create an MSIX distribution for a Flutter project is to use
 the [`msix` pub package][msix package]. For an example of using the `msix` package
 from a Flutter desktop app, see the [Desktop Photo Search sample][].
 
-Instructions on [how to generate a .pfx certificate for MSIX distribution][].
-
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
 [msix package]: {{site.pub}}/packages/msix
 [Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
-[how to generate a .pfx certificate for MSIX distribution]: https://sahajrana.medium.com/how-to-generate-a-pfx-certificate-for-flutter-windows-msix-lib-a860cdcebb8
+
+###### Create a .pfx certificate.
+
+To publish on the Windows Store or Direct download with the help of MSIX Installer, you need to give your app a digital signature in form of a .pfx certificate. Use the following instructions to generate a self-signed .pfx certificate.
+
+* You would need to download [OpenSSL][] to generate your certificates.
+* Go to where you installed the OpenSSL. It can be:
+    * C:\Program Files\OpenSSL-Win64\bin
+* Run cmd from this folder, that it looks like this in cmd.
+    * C:\Program Files\OpenSSL-Win64\bin>
+      or
+    * make “C:\Program Files\OpenSSL-Win64\bin” a environment path variable to access “OpenSSL” anywhere.
+* Now, use the following command:
+    * Generate a private key.
+      ```
+      openssl genrsa -out mykeyname.key 2048
+      ```
+    * Generate a CSR file with the help of the private key.
+      ```
+      openssl req -new -key mykeyname.key -out mycsrname.csr
+      ```
+    * Generate a CRT file with the help of the private key & CSR file.
+      ```
+      openssl x509 -in mycsrname.csr -out mycrtname.crt -req -signkey mykeyname.key -days 10000
+      ```
+    * Generate .pfx file with the help of the private key & CRT file.
+      ```
+      openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt
+      ```
+There you have your .pfx certificate to use with MSIX Installer.
+      
+[OpenSSL]: https://slproweb.com/products/Win32OpenSSL.html
 
 ##### Building your own zip file for Windows
 
