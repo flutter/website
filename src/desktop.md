@@ -322,14 +322,11 @@ you need to give your app a digital signature in the form of a .pfx certificate.
 Use the following instructions to generate a self-signed .pfx certificate.
 
 * You would need to download [OpenSSL][] to generate your certificates.
-* Go to where you installed the OpenSSL. It can be:
-    * C:\Program Files\OpenSSL-Win64\bin
-* Run cmd from this folder, that it looks like this in cmd.
-    * C:\Program Files\OpenSSL-Win64\bin>
-      or
-    * make “C:\Program Files\OpenSSL-Win64\bin” a environment path variable to access “OpenSSL” anywhere.
-* Now, use the following command:
-    * Generate a private key.
+1. Go to where you installed OpenSSL, for example:
+   `C:\Program Files\OpenSSL-Win64\bin`.
+1. Set an environment variable so that you can access `OpenSSL` from anywhere:<br>
+   `make "C:\Program Files\OpenSSL-Win64\bin"`
+1.  Generate a private key as follows:<br>
       ```
       openssl genrsa -out mykeyname.key 2048
       ```
