@@ -193,7 +193,7 @@ class FibonacciNumbers {
     if (!cache.containsKey(i)) {
       cache[i] = get(i - 1) + get(i - 2);
     }
-    return cache[i];
+    return cache[i]!;
   }
 }
 
@@ -213,7 +213,7 @@ class FibonacciListView extends StatelessWidget {
               content: Text('${numbers.get(i)} is '
                   '#$i in the Fibonacci sequence!'),
             );
-            Scaffold.of(context).showSnackBar(snack);
+            ScaffoldMessenger.of(context).showSnackBar(snack);
           },
         );
       },
