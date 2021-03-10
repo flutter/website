@@ -1,6 +1,6 @@
 ---
-title: Eliminating `nullOk` Parameters
-description: To eliminate `nullOk` parameters to help with API sanity in the face of null safety.
+title: Eliminating nullOk Parameters
+description: To eliminate nullOk parameters to help with API sanity in the face of null safety.
 ---
 
 ## Summary
@@ -45,50 +45,50 @@ The design document for this change is [Eliminating nullOk parameters][].
 The actual change modified these APIs to not have a `nullOk` parameter, and to
 return a non-nullable value:
 
-1. [`MediaQuery.of`][]
-1. [`Navigator.of`][]
-1. [`ScaffoldMessenger.of`][]
-1. [`Scaffold.of`][]
-1. [`Router.of`][]
-1. [`Localizations.localeOf`][]
-1. [`FocusTraversalOrder.of`][]
-1. [`FocusTraversalGroup.of`][]
-1. [`Focus.of`][]
-1. [`Shortcuts.of`][]
-1. [`Actions.handler`][]
-1. [`Actions.find`][]
-1. [`Actions.invoke`][]
-1. [`AnimatedList.of`][]
-1. [`SliverAnimatedList.of`][]
-1. [`CupertinoDynamicColor.resolve`][]
-1. [`CupertinoDynamicColor.resolveFrom`][]
-1. [`CupertinoUserInterfaceLevel.of`][]
-1. [`CupertinoTheme.brightnessOf`][]
-1. [`CupertinoThemeData.resolveFrom`][]
-1. [`NoDefaultCupertinoThemeData.resolveFrom`][]
-1. [`CupertinoTextThemeData.resolveFrom`][]
-1. [`MaterialBasedCupertinoThemeData.resolveFrom`][]
+* [`MediaQuery.of`][]
+* [`Navigator.of`][]
+* [`ScaffoldMessenger.of`][]
+* [`Scaffold.of`][]
+* [`Router.of`][]
+* [`Localizations.localeOf`][]
+* [`FocusTraversalOrder.of`][]
+* [`FocusTraversalGroup.of`][]
+* [`Focus.of`][]
+* [`Shortcuts.of`][]
+* [`Actions.handler`][]
+* [`Actions.find`][]
+* [`Actions.invoke`][]
+* [`AnimatedList.of`][]
+* [`SliverAnimatedList.of`][]
+* [`CupertinoDynamicColor.resolve`][]
+* [`CupertinoDynamicColor.resolveFrom`][]
+* [`CupertinoUserInterfaceLevel.of`][]
+* [`CupertinoTheme.brightnessOf`][]
+* [`CupertinoThemeData.resolveFrom`][]
+* [`NoDefaultCupertinoThemeData.resolveFrom`][]
+* [`CupertinoTextThemeData.resolveFrom`][]
+* [`MaterialBasedCupertinoThemeData.resolveFrom`][]
 
 And introduced these new APIs alongside those, to return a nullable
 value:
 
-1. [`MediaQuery.maybeOf`][]
-1. [`Navigator.maybeOf`][]
-1. [`ScaffoldMessenger.maybeOf`][]
-1. [`Scaffold.maybeOf`][]
-1. [`Router.maybeOf`][]
-1. [`Localizations.maybeLocaleOf`][]
-1. [`FocusTraversalOrder.maybeOf`][]
-1. [`FocusTraversalGroup.maybeOf`][]
-1. [`Focus.maybeOf`][]
-1. [`Shortcuts.maybeOf`][]
-1. [`Actions.maybeFind`][]
-1. [`Actions.maybeInvoke`][]
-1. [`AnimatedList.maybeOf`][]
-1. [`SliverAnimatedList.maybeOf`][]
-1. [`CupertinoDynamicColor.maybeResolve`][]
-1. [`CupertinoUserInterfaceLevel.maybeOf`][]
-1. [`CupertinoTheme.maybeBrightnessOf`][]
+* [`MediaQuery.maybeOf`][]
+* [`Navigator.maybeOf`][]
+* [`ScaffoldMessenger.maybeOf`][]
+* [`Scaffold.maybeOf`][]
+* [`Router.maybeOf`][]
+* [`Localizations.maybeLocaleOf`][]
+* [`FocusTraversalOrder.maybeOf`][]
+* [`FocusTraversalGroup.maybeOf`][]
+* [`Focus.maybeOf`][]
+* [`Shortcuts.maybeOf`][]
+* [`Actions.maybeFind`][]
+* [`Actions.maybeInvoke`][]
+* [`AnimatedList.maybeOf`][]
+* [`SliverAnimatedList.maybeOf`][]
+* [`CupertinoDynamicColor.maybeResolve`][]
+* [`CupertinoUserInterfaceLevel.maybeOf`][]
+* [`CupertinoTheme.maybeBrightnessOf`][]
 
 ## Migration guide
 

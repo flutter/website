@@ -22,7 +22,7 @@ release, and listed in alphabetical order:
 * [Clip behavior][]
 * [Deprecated API removed after v1.22][]
 * [Dry layout support for RenderBox][]
-* [Eliminating `nullOk` Parameters][]
+* [Eliminating nullOk Parameters][]
 * [Material Chip button semantics][]
 * [Network Policy on iOS and Android][]
 * [SnackBars managed by the ScaffoldMessenger][]
@@ -35,7 +35,7 @@ release, and listed in alphabetical order:
 [Clip behavior]: /docs/release/breaking-changes/clip-behavior
 [Deprecated API removed after v1.22]: /docs/release/breaking-changes/1-22-deprecations
 [Dry layout support for RenderBox]: /docs/release/breaking-changes/renderbox-dry-layout
-[Eliminating `nullOk` Parameters]: /docs/release/breaking-changes/eliminating-nullok-parameters
+[Eliminating nullOk Parameters]: /docs/release/breaking-changes/eliminating-nullok-parameters
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 [SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
