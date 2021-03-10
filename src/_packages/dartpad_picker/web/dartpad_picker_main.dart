@@ -41,12 +41,7 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  double val;
-
-  void initState() {
-    super.initState();
-    val = 0;
-  }
+  double val = 0;
 
   void change() {
     setState(() {
@@ -115,8 +110,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp>
     with SingleTickerProviderStateMixin {
-  AnimationController controller;
-  Animation<double> animation;
+  late AnimationController controller;
+  late Animation<double> animation;
 
   @override
   void initState() {
