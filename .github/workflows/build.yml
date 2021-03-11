@@ -60,7 +60,7 @@ jobs:
           - name: "Beta channel: null safety code check"
             sdk: beta
             task: tool/check-code.sh --null-safety
-            experimental: false
+            experimental: true
           - name: "Beta commit: jekyll build"
             sdk: beta
             task: bundle exec jekyll build
