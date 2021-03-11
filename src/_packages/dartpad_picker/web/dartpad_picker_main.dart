@@ -41,12 +41,7 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  double val;
-
-  void initState() {
-    super.initState();
-    val = 0;
-  }
+  double val = 0;
 
   void change() {
     setState(() {
@@ -115,8 +110,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp>
     with SingleTickerProviderStateMixin {
-  AnimationController controller;
-  Animation<double> animation;
+  late AnimationController controller;
+  late Animation<double> animation;
 
   @override
   void initState() {
@@ -198,7 +193,7 @@ class FibonacciNumbers {
     if (!cache.containsKey(i)) {
       cache[i] = get(i - 1) + get(i - 2);
     }
-    return cache[i];
+    return cache[i]!;
   }
 }
 
@@ -218,7 +213,7 @@ class FibonacciListView extends StatelessWidget {
               content: Text('${numbers.get(i)} is '
                   '#$i in the Fibonacci sequence!'),
             );
-            Scaffold.of(context).showSnackBar(snack);
+            ScaffoldMessenger.of(context).showSnackBar(snack);
           },
         );
       },

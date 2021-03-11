@@ -67,6 +67,6 @@ class DartPadPicker {
   }
 
   String iFrameSrc({String theme, String mode}) {
-    return '${dartPadUrl}embed-$mode.html?theme=$theme';
+    return '${dartPadUrl}embed-$mode.html?theme=$theme&null_safety=true';
   }
 }
