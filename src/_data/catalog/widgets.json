@@ -1678,6 +1678,26 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "TabController",
+    "description": "Coordinates tab selection between a TabBar and a TabBarView.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/TabController-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
+  },
+  {
+    "name": "TabPageSelector",
+    "description": "Displays a row of small circular indicators, one per tab. The selected tab's indicator is highlighted. Often used in conjunction with a TabBarView.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/TabPageSelector-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
+  },
+  {
     "name": "Text",
     "description": "A run of text with a single style.",
     "categories": [
