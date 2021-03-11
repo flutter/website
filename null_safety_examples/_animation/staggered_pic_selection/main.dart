@@ -53,7 +53,7 @@ final List<List<PhotoFrame>> photoBlockFrames = [
 ];
 
 class PhotoCheck extends StatelessWidget {
-  const PhotoCheck({ Key key }) : super(key: key);
+  const PhotoCheck({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,16 +73,16 @@ class PhotoCheck extends StatelessWidget {
 
 class PhotoItem extends StatefulWidget {
   PhotoItem({
-    Key key,
-    this.photo,
+    Key? key,
+    required this.photo,
     this.color,
     this.onTap,
-    this.selected,
+    required this.selected,
   }) : super(key: key);
 
   final Photo photo;
-  final Color color;
-  final VoidCallback onTap;
+  final Color? color;
+  final VoidCallback? onTap;
   final bool selected;
 
   @override
@@ -91,19 +91,19 @@ class PhotoItem extends StatefulWidget {
 
 class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
 
-  AnimationController _selectController;
-  Animation<double> _stackScaleAnimation;
-  Animation<RelativeRect> _imagePositionAnimation;
-  Animation<double> _checkScaleAnimation;
-  Animation<double> _checkSelectedOpacityAnimation;
+  late AnimationController _selectController;
+  late Animation<double> _stackScaleAnimation;
+  late Animation<RelativeRect> _imagePositionAnimation;
+  late Animation<double> _checkScaleAnimation;
+  late Animation<double> _checkSelectedOpacityAnimation;
 
-  AnimationController _replaceController;
-  Animation<Offset> _replaceNewPhotoAnimation;
-  Animation<Offset> _replaceOldPhotoAnimation;
-  Animation<double> _removeCheckAnimation;
+  late AnimationController _replaceController;
+  late Animation<Offset> _replaceNewPhotoAnimation;
+  late Animation<Offset> _replaceOldPhotoAnimation;
+  late Animation<double> _removeCheckAnimation;
 
-  Photo _oldPhoto;
-  Photo _newPhoto; // non-null during a remove animation
+  late Photo _oldPhoto;
+  Photo? _newPhoto; // non-null during a remove animation
 
   @override
   void initState() {
@@ -259,7 +259,7 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
             child: SlideTransition(
               position: _replaceNewPhotoAnimation,
               child: _newPhoto == null ? null : Image.asset(
-                _newPhoto.asset,
+                _newPhoto!.asset,
                 fit: BoxFit.cover,
               ),
             ),
@@ -278,7 +278,7 @@ class ImagesDemo extends StatefulWidget {
 class _ImagesDemoState extends State<ImagesDemo> with SingleTickerProviderStateMixin {
   static const double _photoBlockHeight = 576.0;
 
-  int _selectedPhotoIndex;
+  int? _selectedPhotoIndex;
 
   void _selectPhoto(int photoIndex) {
     setState(() {
@@ -290,7 +290,7 @@ class _ImagesDemoState extends State<ImagesDemo> with SingleTickerProviderStateM
     if (_selectedPhotoIndex == null)
       return;
     setState(() {
-      allPhotos.removeAt(_selectedPhotoIndex);
+      allPhotos.removeAt(_selectedPhotoIndex!);
       _selectedPhotoIndex = null;
     });
   }
@@ -299,7 +299,7 @@ class _ImagesDemoState extends State<ImagesDemo> with SingleTickerProviderStateM
     final List<Widget> rows = [];
 
     int startPhotoIndex = blockIndex * blockFrameCount;
-    final Color photoColor = Colors.grey[500];
+    final Color photoColor = Colors.grey[500]!;
     for (int rowIndex = 0; rowIndex < photoBlockFrames.length; rowIndex += 1) {
       final List<Widget> rowChildren = [];
       final int rowLength = photoBlockFrames[rowIndex].length;
