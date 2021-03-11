@@ -115,7 +115,7 @@ If `snapd` is unavailable on the Linux distro you're using,
 you might use the following command:
 
 ```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev liblzma-dev liblzma-dev libgcrypt20-dev
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev libblkid-dev liblzma-dev libgcrypt20-dev
 ```
 
 [Clang]: https://clang.llvm.org/
