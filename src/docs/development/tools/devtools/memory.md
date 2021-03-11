@@ -378,7 +378,7 @@ In addition, a snapshot can automatically occur when DevTools notices a spike in
 Every snapshot, manual or automatic, generates
 an analysis of the snapshot; for example, a group image
 problems might have occurred. In the future,
-other common Flutter coding issues, such as Fonts, Files, JSON,
+other common Flutter coding issues—such as with fonts, files, or JSON—
 that could cause memory problems will be flagged.
 
 Snapshots have major tree nodes:
