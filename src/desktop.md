@@ -317,8 +317,11 @@ from a Flutter desktop app, see the [Desktop Photo Search sample][].
 
 ###### Create a .pfx certificate.
 
-To publish on the Windows Store or Direct download with the help of MSIX Installer,
+For private deployment and testing with the help of MSIX Installer,
 you need to give your app a digital signature in the form of a .pfx certificate.
+
+For public deployment(Windows Store), .pfx certificate is not required.
+
 Use the following instructions to generate a self-signed .pfx certificate.
 
 1. If you haven't already, download the [OpenSSL][] toolkit to generate your certificates.
@@ -337,7 +340,8 @@ Use the following instructions to generate a self-signed .pfx certificate.
     6. Generate the `.pfx` file using the private key and CRT file:<br>
       `openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt`
 
-You now have a `.pfx` certificate to use with the MSIX installer.
+Install the `.pfx` certificate first on the local machine in `Certificate store` as 
+`Trusted Root Certification Authorities` before installing the app.
       
 [OpenSSL]: https://slproweb.com/products/Win32OpenSSL.html
 
