@@ -47,7 +47,7 @@ jobs:
           - name: "Dev channel: null safety code check"
             sdk: dev
             task: tool/check-code.sh --null-safety
-            experimental: false
+            experimental: true
           - name: "Dev commit: jekyll build"
             sdk: dev
             task: bundle exec jekyll build
