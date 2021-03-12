@@ -242,16 +242,6 @@
     "image": "<img alt='' src='/images/widget-catalog/material-bottom-sheets.png'>"
   },
   {
-    "name": "ButtonBar",
-    "description": "A horizontal arrangement of buttons.",
-    "categories": [],
-    "subcategories": [
-      "Buttons"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/ButtonBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-button-bar.png'>"
-  },
-  {
     "name": "Card",
     "description": "A Material Design card. A card has slightly rounded corners and a shadow.",
     "categories": [],
