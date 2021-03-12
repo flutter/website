@@ -57,7 +57,7 @@ void configureApp() {
 }
 ```
 
-4. Use a conditional import to import `configure_web.dart` when the `html` package
+4. Open `lib/main.dart` and use a conditional import to import `configure_web.dart` when the `html` package
   is available, and `configure_nonweb.dart` when it isn't:
 
 <!--skip-->

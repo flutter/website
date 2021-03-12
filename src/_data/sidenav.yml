@@ -102,7 +102,6 @@
         - title: Advanced UI
           permalink: /docs/development/ui/advanced
           children:
-            - title: Focus handling system # Where did this go?
             - title: Slivers
               permalink: /docs/development/ui/advanced/slivers
             - title: Gestures
@@ -328,7 +327,7 @@
         permalink: /docs/perf/rendering/shader
     - title: Performance metrics
       permalink: /docs/perf/metrics
-    - title: Frequently Asked Questions
+    - title: Performance FAQ
       permalink: /docs/perf/faq
     - title: Appendix
       permalink: /docs/perf/appendix
