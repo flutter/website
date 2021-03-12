@@ -1,5 +1,5 @@
 ---
-title: Frequently asked questions
+title: Performance FAQ
 description: Frequently asked questions about Flutter performance
 ---
 
