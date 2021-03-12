@@ -11,9 +11,10 @@ class MyFragment extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          body: Center(
-        child: Text('I am a Flutter-Rendered Fragment!!!'),
-      )),
+        body: Center(
+          child: Text('I am a Flutter-Rendered Fragment!!!'),
+        ),
+      ),
     );
   }
 }
