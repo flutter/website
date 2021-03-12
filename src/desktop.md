@@ -315,12 +315,18 @@ from a Flutter desktop app, see the [Desktop Photo Search sample][].
 [msix package]: {{site.pub}}/packages/msix
 [Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
 
-###### Create a .pfx certificate.
+###### Create a self-signed .pfx certificate for local testing.
 
 For private deployment and testing with the help of MSIX Installer,
 you need to give your app a digital signature in the form of a .pfx certificate.
 
-For public deployment(Windows Store), .pfx certificate is not required.
+For deployment through the Windows Store, generating a .pfx certificate is not required. 
+The Windows Store handles creation and management of certificates for applications 
+distributed through the Windows Store.
+
+For distributing an application not through the Windows Store, but self hosted on a 
+website, can be done. But it requires a certificate signed by a Certificate Authority
+known by Windows.
 
 Use the following instructions to generate a self-signed .pfx certificate.
 
@@ -328,7 +334,7 @@ Use the following instructions to generate a self-signed .pfx certificate.
 1. Go to where you installed OpenSSL, for example:
    `C:\Program Files\OpenSSL-Win64\bin`.
 1. Set an environment variable so that you can access `OpenSSL` from anywhere:<br>
-   `make "C:\Program Files\OpenSSL-Win64\bin"`
+   `"C:\Program Files\OpenSSL-Win64\bin"`
 1.  Generate a private key as follows:<br>
       ```
       `openssl genrsa -out mykeyname.key 2048`
