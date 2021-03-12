@@ -327,7 +327,7 @@
         permalink: /docs/perf/rendering/shader
     - title: Performance metrics
       permalink: /docs/perf/metrics
-    - title: Frequently Asked Questions
+    - title: Performance FAQ
       permalink: /docs/perf/faq
     - title: Appendix
       permalink: /docs/perf/appendix
