@@ -505,6 +505,7 @@ Relevant PRs:
  
 [`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
 [`TextSpan`]: {{site.api}}/flutter/widgets/WidgetsFlutterBinding-class.html
+[`WidgetsFlutterBinding`]: {{site.api}}/flutter/widgets/WidgetsFlutterBinding-class.html
 [WidgetsFlutterBinding.ensureInitialized() takes down splash screen too early]: {{site.github}}/flutter/flutter/issues/39494
 [#39535]: {{site.github}}/flutter/flutter/pull/39535
 [#73748]: {{site.github}}/flutter/flutter/pull/73748

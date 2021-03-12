@@ -17,7 +17,8 @@ description: Frequently asked questions about Flutter performance
   * [Dart DevTools](/docs/development/tools/devtools)
   * [Apple instruments](https://en.wikipedia.org/wiki/Instruments_(software))
   * [Linux perf](https://en.wikipedia.org/wiki/Perf_(Linux))
-  * [Chrome tracing (enter `about:tracing` in your Chrome URL field)][tracing]
+  * [Chrome tracing (enter `about:tracing` in your
+    Chrome URL field)][tracing]
   * [Android systrace (`adb systrace`)][systrace]
   * [Fuchsia `fx traceutil`][traceutil]
   * https://ui.perfetto.dev/
@@ -81,8 +82,7 @@ description: Frequently asked questions about Flutter performance
   * See
     [Fuchsia tracing guidelines][traceutil]
 
-[tracing]:
-https://www.chromium.org/developers/how-tos/trace-event-profiling-tool
+[tracing]: https://www.chromium.org/developers/how-tos/trace-event-profiling-tool
 
 [systrace]: https://developer.android.com/studio/profile/systrace
 

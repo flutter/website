@@ -3,9 +3,10 @@ title: Flutter for iOS developers
 description: Learn how to apply iOS developer knowledge when building Flutter apps.
 ---
 
-This document is for iOS developers looking to apply their existing iOS
-knowledge to build mobile apps with Flutter. If you understand the
-fundamentals of the iOS framework then you can use this document as a
+This document is for iOS developers looking to apply
+their existing iOS knowledge to build mobile apps with Flutter.
+If you understand the fundamentals of the iOS framework
+then you can use this document as a
 way to get started learning Flutter development.
 
 {{site.alert.note}}
@@ -2197,7 +2198,7 @@ plugin documentation.
 [Animations overview]: /docs/development/ui/animations
 [Animations tutorial]: /docs/development/ui/animations/tutorial
 [Apple's iOS design language]: https://developer.apple.com/design/resources
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 [arb]: {{site.github}}/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore
