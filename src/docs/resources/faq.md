@@ -501,7 +501,8 @@ For more details, check out the [web instructions][].
 
 ### Can I use Flutter to build desktop apps?
 
-Yes, desktop support is in beta for Windows, macOS, and Linux.
+Yes, desktop support is in beta for Windows, macOS, and Linux,
+but a snapshot of the beta is available on the stable channel.)
 The current progress is documented on the [Desktop][desktop] page.
 
 ### Can I use Flutter inside of my existing native app?
