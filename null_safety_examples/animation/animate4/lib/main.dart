@@ -15,7 +15,7 @@ class LogoWidget extends StatelessWidget {
 
 // #docregion GrowTransition
 class GrowTransition extends StatelessWidget {
-  GrowTransition({this.child, this.animation});
+  GrowTransition({required this.child, required this.animation});
 
   final Widget child;
   final Animation<double> animation;
@@ -39,8 +39,8 @@ class LogoApp extends StatefulWidget {
 
 // #docregion print-state
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController controller;
+  late Animation<double> animation;
+  late AnimationController controller;
 
   @override
   void initState() {
