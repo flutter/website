@@ -393,22 +393,23 @@ transitively import `dart:mirrors` or `dart:html`.
 
 ### How big is the Flutter engine?
 
-In July 2019, we measured the download size of a
+In March 2021, we measured the download size of a
 [minimal Flutter app][] (no Material Components,
 just a single `Center` widget, built with `flutter build
 apk --split-per-abi`), bundled and compressed as a release APK,
-to be approximately 4.3 MB for ARM, and 4.6 MB for ARM 64.
+to be approximately 4.3 MB for ARM32, and 4.8 MB for ARM64.
 
-In ARM, the core engine is approximately 3.2 MB
+On ARM32, the core engine is approximately 3.4 MB
 (compressed), the framework + app code is approximately
-920.6 KB (compressed), the LICENSE file is 54.3 KB
-(compressed), necessary Java code (classes.dex)
-is 113.6 KB (compressed).
+765 KB (compressed), the LICENSE file is 58 KB
+(compressed), and necessary Java code (`classes.dex`)
+is 120 KB (compressed).
 
-In ARM64, the core engine is approximately 3.5 MB (compressed),
-the framework + app code is approximately 872 KB (compressed),
-the LICENSE file is 54.3 KB (compressed),
-necessary Java code (classes.dex) is 113.6 KB (compressed).
+In ARM64, the core engine is approximately 4.0 MB 
+(compressed), the framework + app code is approximately
+659 KB (compressed), the LICENSE file is 58 KB
+(compressed), and necessary Java code (`classes.dex`)
+is 120 KB (compressed).
 
 These numbers were measured using [apkanalyzer][],
 which is also [built into Android Studio][].
