@@ -10,19 +10,22 @@ or no longer exists when referenced in code.
 
 ## Context
 
-`BottomNavigationBarItem`s `title` parameter was deprecated in favor of `label`. This change was 
-necessary to improve the user experience of `BottomNavigationBar`s when the text scale factor is 
-increased. Items in a `BottomNavigationBar` now show tooltips on long press. Accomplishing this 
+`BottomNavigationBarItem`s `title` parameter was deprecated
+in favor of `label`. This change was necessary to improve
+the user experience of `BottomNavigationBar`s when the text
+scale factor is increased. Items in a `BottomNavigationBar`
+now show tooltips on long press. Accomplishing this 
 requires a `String` parameter on `BottomNavigationBarItem`s.
 
 
 ## Description of change
 
-The `BottomNavigationBarItem` class has a `title` parameter, which is a `Widget`. This made it 
-impossible for the `BottomNavigationBar` to show `Tooltip` widgets, a change that was necessary to 
-improve the accessibility experience. Now, instead of building the BottomNavigationBarItem.title 
-widget, the BottomNavigationBar wraps the BottomNavigationBarItem.label in a Text widget and builds 
-that.
+The `BottomNavigationBarItem` class has a `title` parameter,
+which is a `Widget`. This made it impossible for the
+`BottomNavigationBar` to show `Tooltip` widgets,
+a change that was necessary to improve the accessibility experience. Now, instead of building the BottomNavigationBarItem.title 
+widget, the BottomNavigationBar wraps the
+`BottomNavigationBarItem.label` in a Text widget and builds that.
 
 ## Migration guide
 
@@ -56,18 +59,16 @@ In stable release: 2.0.0
 API documentation:
 * [`BottomNavigationBarItem`][]
 
-Relevant PR:
-* [Clean up hero controller scope][]
+Relevant PRs:
+* [PR 60655][]: Clean up hero controller scope
+* [PR 59127][]: Update BottomNavigationBar to show tooltips
+  on long press][].
 
 Breaking change proposal:
 * [Breaking Change: Bottom Navigation Item Title][]
 
-[Update BottomNavigationBar to show tooltips on long press.]: {{site.github}}/flutter/flutter/pull/59127
 
-Stable channel link:
 [`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
-
-Master channel link:
-[`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
-
-[Breaking Change: Bottom Navigation Item Title]: https://flutter.dev/go/bottom-navigation-bar-title-deprecation
+[Breaking Change: Bottom Navigation Item Title]: /go/bottom-navigation-bar-title-deprecation
+[PR 59127]: {{site.github}}/flutter/flutter/pull/59127
+[PR 60655]: {{site.github}}/flutter/flutter/pull/60655

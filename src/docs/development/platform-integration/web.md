@@ -8,8 +8,8 @@ description: Some gotchas and differences when writing or running web apps in Fl
 Flutter's web support is now available on the stable channel,
 offering an app-centric framework that
 builds on the power of the modern web platform.
-Find out more details about [Flutter's production quality 
-support for the web][].
+Find out more details about
+[Flutter's production quality support for the web][].
 
 ### What scenarios are ideal for Flutter on the web?
 Not every web page makes sense in Flutter, but we think Flutter is particularly
@@ -149,6 +149,7 @@ Flutter engineers routinely read and respond on Discord.
 [Discord]: https://discord.gg/N7Yshp4
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: /docs/development/tools/devtools/overview
+[Flutter's production quality support for the web]: /web
 [Generating event timeline]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
