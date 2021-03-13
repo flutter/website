@@ -194,7 +194,7 @@ For this reason, freeform fields should rarely use the `enforced` value and shou
 
 ## Timeline
 
-Landed in version: v1.26.0-1.0.pre
+Landed in version: v1.26.0-1.0.pre<br>
 In stable release: 2.0.0
 
 ## References
