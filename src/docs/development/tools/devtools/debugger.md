@@ -7,6 +7,10 @@ description: How to use DevTools' source-level debugger.
   The debugger works with all Flutter and Dart applications.
 {{site.alert.end}}
 
+{{site.alert.note}}
+  DevTools hides the Debugger tab if the app was launched from VS Code because VS Code has a built-in debugger.
+{{site.alert.end}}
+
 ## Getting started
 
 DevTools includes a full source-level debugger, supporting
