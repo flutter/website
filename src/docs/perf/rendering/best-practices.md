@@ -8,10 +8,8 @@ description: How to ensure that your Flutter app is performant.
 
 Generally, Flutter applications are performant by default,
 so you only need to avoid common pitfalls to get excellent
-performance instead of needing to micro-optimize with
-complicated profiling tools.  These best recommendations
-will help you write the most performant
-Flutter app possible.
+performance. These best recommendations will help you
+write the most performant Flutter app possible.
 
 If you are writing web apps in Flutter, you might be interested
 in a series of articles, written by the Flutter Material team,
@@ -73,14 +71,16 @@ Also see:
 
 ### Apply effects only when needed
 
-Use effects carefully, as they can be expensive. Some of them invoke
-`saveLayer()` behind the scenes, which can be an expensive operation.
+Use effects carefully, as they can be expensive.
+Some of them invoke `saveLayer()` behind the scenes,
+which can be an expensive operation.
 
 {{site.alert.secondary}}
   <h4>Why is savelayer expensive?</h4><a name="why-is-savelayer-expensive"></a>
-  Calling `saveLayer()` allocates an offscreen buffer. Drawing content
-  into the offscreen buffer might trigger render target switches that
-  are particularly slow in older GPUs.
+  Calling `saveLayer()` allocates an offscreen buffer.
+  Drawing content into the offscreen buffer might trigger
+  render target switches that are particularly slow in
+  older GPUs.
 {{site.alert.end}}
 
 Some general rules when applying specific effects:
@@ -97,7 +97,8 @@ Some general rules when applying specific effects:
   By default, clipping is disabled (`Clip.none`),
   so you must explicitly enable it when needed.
 
-Other widgets that might trigger `saveLayer()` and are potentially costly:
+Other widgets that might trigger `saveLayer()`
+and are potentially costly:
 
 * [`ShaderMask`][]
 * [`ColorFilter`][]
@@ -126,8 +127,10 @@ Ways to avoid calls to `saveLayer()`:
 
 ### Render grids and lists lazily
 
-Use the lazy methods, with callbacks, when building large grids or lists.
-That way only the visible portion of the screen is built at startup time.
+Use the lazy methods, with callbacks,
+when building large grids or lists.
+That way only the visible portion of the
+screen is built at startup time.
 
 Also see:
 
@@ -143,26 +146,32 @@ Also see:
 
 ###  Build and display frames in 16ms
 
-Since there are two separate threads for building and rendering, you
-have 16ms for building, and 16ms for rendering on a 60Hz display.
-If latency is a concern, build and display a frame in 16ms _or less_.
+Since there are two separate threads for building
+and rendering, you have 16ms for building,
+and 16ms for rendering on a 60Hz display.
+If latency is a concern,
+build and display a frame in 16ms _or less_.
 Note that means built in 8ms or less,
-and rendered in 8ms or less, for a total of 16ms or less.
-If missing frames (jankyness) is a concern, then 16ms for each of
+and rendered in 8ms or less,
+for a total of 16ms or less.
+If missing frames (jankyness) is a concern,
+then 16ms for each of
 the build and render stages is OK.
 
-If your frames are rendering in well under 16ms total in
-[profile mode][],
+If your frames are rendering in well under
+16ms total in [profile mode][],
 you likely don’t have to worry about performance even if some
-performance pitfalls apply, but you should still aim to build and
+performance pitfalls apply,
+but you should still aim to build and
 render a frame as fast as possible. Why?
 
 * Lowering the frame render time below 16ms might not make a visual
   difference, but it **improves battery life** and thermal issues.
 * It might run fine on your device, but consider performance for the
   lowest device you are targeting.
-* When 120fps devices become widely available, you’ll want to render frames
-  in under 8ms (total) in order to provide the smoothest experience.
+* When 120fps devices become widely available,
+  you’ll want to render frames in under 8ms (total)
+  in order to provide the smoothest experience.
 
 If you are wondering why 60fps leads to a smooth visual experience,
 see the video [Why 60fps?][]
@@ -172,32 +181,41 @@ see the video [Why 60fps?][]
 
 ## Pitfalls
 
-If you need to tune your app’s performance, or perhaps the UI isn't as
-smooth as you expect, the Flutter plugin for your IDE can help.
-In the Flutter Performance window, enable the **Show widget rebuild
-information** check box. This feature helps you detect when
-frames are being rendered and displayed in more than 16ms.
-Where possible, the plugin provides a link to a relevant tip.
+If you need to tune your app’s performance,
+or perhaps the UI isn't as smooth as you expect,
+the Flutter plugin for your IDE can help.
+In the Flutter Performance window,
+enable the **Show widget rebuild information** check box.
+This feature helps you detect when frames are
+being rendered and displayed in more than 16ms.
+Where possible,
+the plugin provides a link to a relevant tip.
 
-The following behaviors might negatively impact your app's performance.
+The following behaviors might negatively impact
+your app's performance.
 
-* Avoid using the `Opacity` widget, and particularly avoid it in an animation.
+* Avoid using the `Opacity` widget,
+  and particularly avoid it in an animation.
   Use `AnimatedOpacity` or `FadeInImage` instead.
-  For more information,
-  see [Performance considerations for opacity animation][].
+  For more information, see
+  [Performance considerations for opacity animation][].
 
-* When using an AnimatedBuilder, avoid putting a subtree in the builder
-  function that builds widgets that don’t depend on the animation.
-  This subtree is rebuilt for every tick of the animation.
-  Instead, build that part of the subtree once and pass it as a child to
+* When using an AnimatedBuilder,
+  avoid putting a subtree in the builder
+  function that builds widgets that don’t
+  depend on the animation. This subtree is
+  rebuilt for every tick of the animation.
+  Instead, build that part of the subtree
+  once and pass it as a child to
   the AnimatedBuilder. For more information,
   see [Performance optimizations][].
 
-* Avoid clipping in an animation. If possible, pre-clip the image before
-  animating it.
+* Avoid clipping in an animation.
+  If possible, pre-clip the image before animating it.
 
-* Avoid using constructors with a concrete List of children (such as
-  `Column()` or `ListView()`) if most of the children are not visible
+* Avoid using constructors with a concrete `List`
+  of children (such as `Column()` or `ListView()`)
+  if most of the children are not visible
   on screen to avoid the build cost.
 
 ## Resources
@@ -205,7 +223,8 @@ The following behaviors might negatively impact your app's performance.
 For more performance info, see the following resources:
 
 * [Performance optimizations][] in the AnimatedBuilder API page
-* [Performance considerations for opacity animation][] in the Opacity API page
+* [Performance considerations for opacity animation][]
+  in the Opacity API page
 * [Child elements' lifecycle][] and how to load them efficiently,
   in the ListView API page
 * [Performance considerations][] of a `StatefulWidget`
