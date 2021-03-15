@@ -277,7 +277,8 @@
       { "source": "/go/exposing-scroll-behaviors", "destination": "https://docs.google.com/document/d/1W5PSIO1cVj7v6_xayydyFN3abWFOJTmFHKGBA9VKbbg/edit?usp=sharing&resourcekey=0-AHb9dJP8Knv3GWwZLnzZWQ", "type": 301 },
       { "source": "/go/deprecation-statustransitionwidget", "destination": "https://docs.google.com/document/d/1NdxSKSEKa-E9YDUAyONQVad1bAZdc8bqT4zGVjSBQPo/edit?usp=sharing&resourcekey=0-CkJogS7MIhfZeabrIAUPhQ", "type": 301 },
       { "source": "/go/flutter-lints", "destination": "https://docs.google.com/document/d/1b0X0HOzvFY3WxI363U8BXx6Am13qFm96KlbS72mmFAk/edit", "type": 301 },
-      { "source": "/go/cascading-menus", "destination": "https://docs.google.com/document/d/17XOSGzLzqbpNcCUwakM_WQ2ZOMcUOXcPC__7nPORwms/edit?usp=sharing&resourcekey=0-hg74S2vAAqwJFN984ZXQHg", "type": 301 }
+      { "source": "/go/cascading-menus", "destination": "https://docs.google.com/document/d/17XOSGzLzqbpNcCUwakM_WQ2ZOMcUOXcPC__7nPORwms/edit?usp=sharing&resourcekey=0-hg74S2vAAqwJFN984ZXQHg", "type": 301 },
+      { "source": "/go/tabs-and-text-fields", "destination": "https://docs.google.com/document/d/1aHucsI0NWGWu2Dm_XFsBLxiTgJRM8h2XBB7PVAnVxlU/edit?usp=sharing&resourcekey=0-zLbXFlP_A2e_Yoi43vdiiw", "type": 301 }
     ],
     "headers": [
       { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] },
