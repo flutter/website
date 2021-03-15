@@ -315,6 +315,42 @@ from a Flutter desktop app, see the [Desktop Photo Search sample][].
 [msix package]: {{site.pub}}/packages/msix
 [Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
 
+###### Create a self-signed .pfx certificate for local testing.
+
+For private deployment and testing with the help of MSIX Installer,
+you need to give your app a digital signature in the form of a .pfx certificate.
+
+For deployment through the Windows Store, generating a .pfx certificate is not required. 
+The Windows Store handles creation and management of certificates for applications 
+distributed through the Windows Store.
+
+For distributing an application not through the Windows Store, but self hosted on a 
+website, can be done. But it requires a certificate signed by a Certificate Authority
+known by Windows.
+
+Use the following instructions to generate a self-signed .pfx certificate.
+
+1. If you haven't already, download the [OpenSSL][] toolkit to generate your certificates.
+1. Go to where you installed OpenSSL, for example:
+   `C:\Program Files\OpenSSL-Win64\bin`.
+1. Set an environment variable so that you can access `OpenSSL` from anywhere:<br>
+   `"C:\Program Files\OpenSSL-Win64\bin"`
+1.  Generate a private key as follows:<br>
+      ```
+      `openssl genrsa -out mykeyname.key 2048`
+    4. Generate a certificate signing request (CSR) file using the private key:<br>
+      `openssl req -new -key mykeyname.key -out mycsrname.csr`
+    5. Generate the signed certificate (CRT) file using the private key
+        and CSR file:<br>
+      `openssl x509 -in mycsrname.csr -out mycrtname.crt -req -signkey mykeyname.key -days 10000`
+    6. Generate the `.pfx` file using the private key and CRT file:<br>
+      `openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt`
+
+Install the `.pfx` certificate first on the local machine in `Certificate store` as 
+`Trusted Root Certification Authorities` before installing the app.
+      
+[OpenSSL]: https://slproweb.com/products/Win32OpenSSL.html
+
 ##### Building your own zip file for Windows
 
 The executable can be found in your project under
