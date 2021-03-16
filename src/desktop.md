@@ -368,9 +368,29 @@ In addition to that executable, you need the following:
     * `msvcp140.dll`
     * `vcruntime140.dll`
     * `vcruntime140_1.dll`
+  
+  These 3 files can be found in C:\Windows\System32 if installed on your PC.
+  Place the DLL files in the directory next to the executable
+  and the other DLLs, and bundle them together in a zip file.
+  The resulting structure will look something a little like this:
+  
+  ```
+  Release
+  │   flutter_windows.dll
+  │   msvcp140.dll
+  │   myapp.exe
+  │   vcruntime140.dll
+  │   vcruntime140_1.dll
+  │
+  └───data
+  │   │   app.so
+  │   │   icudtl.dat
 
-Place the DLL files in a directory next to the executable
-and the other DLLs, and bundle them together in a zip file.
+  ...
+  ```
+
+At this point if desired it would be relatively simple to
+add this folder to a Windows installer such as Inno Setup, WiX, etc.
 
 [deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples?view=vs-2019
 
