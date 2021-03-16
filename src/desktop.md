@@ -5,46 +5,58 @@ toc: true
 ---
 
 Desktop support allows you to compile Flutter source code
-to a native Windows, macOS, or Linux desktop app. Flutter's desktop
-support also extends to plugins&mdash;you can install 
-existing plugins that support the Windows, macOS, or Linux platforms,
-or you can create your own.
+to a native Windows, macOS, or Linux desktop app.
+Flutter's desktop support also extends to plugins&mdash;you
+can install existing plugins that support the Windows,
+macOS, or Linux platforms, or you can create your own.
 
 {{site.alert.warning}}
   **Beta!**
   This page covers desktop support,
-  which is available as beta-quality
-  features in the Flutter beta channel.
-  Support still has notable feature gaps,
+  which is available as a beta release.
+  Beta support still has notable feature gaps,
   including accessibility support.
+  You can try a beta snapshot of desktop support
+  on the stable channel, or you can keep up
+  with the latest changes to desktop on the
+  beta channel.
+  For more information, see the **Desktop**
+  section in [What's new in Flutter 2][],
+  a free article on Medium.
 {{site.alert.end}}
 
+[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
+
+
 {{site.alert.note}}
-  To compile a desktop app, you must build the app **on**
-  the targeted platform: build a Windows app on Windows,
-  a macOS app on macOS, and a Linux app on Linux.
+  To compile a desktop application, you must build it **on**
+  the targeted platform: build a Windows application on Windows,
+  a macOS application on macOS, and a Linux application on Linux.
   If you experience a problem that hasn’t yet been reported,
-  please file an issue and include
+  please [file an issue][] and include
   "desktop:macos/linux/windows"
   (whichever platform is appropriate) in the title.
 {{site.alert.end}}
 
-## Beta Snapshot in Stable channel
+## Beta Snapshot in stable channel
 
-To make it easier to try out Desktop support for Flutter, we are
-shipping a snapshot of Flutter beta channel’s Desktop support in
-Flutter 2 stable. This means that you can easily try it out without
-needing to switch to the Flutter beta channel. However, the snapshot
-included in the stable channel will not be updated with the latest
-Flutter support for Desktop until the next Flutter stable release.
+To make it easier to try out desktop support for
+Flutter, we are shipping a snapshot of Flutter's
+desktop beta on the stable channel.
+This means that you can easily try desktop support
+without needing to switch to the Flutter beta channel.
+However, the snapshot included in the stable channel
+won't be updated until the next Flutter stable release.
+If you want the latest version of desktop support,
+you must switch to the Flutter beta channel.
 
 
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
 
 ## Requirements
 
-To create a Flutter app with desktop support, you need the
-following software:
+To create a Flutter application with desktop support,
+you need the following software:
 
 * Flutter SDK. See the
   [Flutter SDK][] installation instructions.
@@ -69,8 +81,9 @@ following software:
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
-* [Visual Studio 2019][] (not to be confused with Visual Studio _Code_)
-  with the "Desktop development with C++" workload installed,
+* [Visual Studio 2019][] (not to be confused with
+  Visual Studio _Code_) with the
+  "Desktop development with C++" workload installed,
   including all of its default components
 
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
@@ -104,8 +117,8 @@ The easiest way to install the Flutter SDK along with these
 dependencies is by using [snapd][].
 For more information, see [Installing snapd][].
 
-Once you have `snapd`, you can install Flutter using the [Snap Store][],
-or at the command line:
+Once you have `snapd`, you can install Flutter
+using the [Snap Store][], or at the command line:
 
 ```terminal
 $ sudo snap install flutter --classic
@@ -210,17 +223,19 @@ Doctor summary (to see all details, run flutter doctor -v):
 [✓] Connected device (2 available)
 ```
 
-If `flutter doctor` finds problems for a platform you don't
-want to develop for, you can ignore those warnings. You don't have
-to install Android Studio and the Android SDK,
+If `flutter doctor` finds problems for a platform that
+you don't want to develop for, you can ignore those warnings.
+You don't have to install Android Studio and the Android SDK,
 for example, if you're writing a Linux desktop app.
 
 **After enabling desktop support, restart your IDE.**
-You should now see **windows (desktop)**, **macOS (desktop)**, or 
-**linux (desktop)** in the device pulldown.
+You should now see **windows (desktop)**,
+**macOS (desktop)**, or **linux (desktop)**
+in the device pulldown.
 
 {{site.alert.note}}
-  You only need to execute `flutter config --enable-<platform>-desktop`
+  You only need to execute
+  `flutter config --enable-<platform>-desktop`
   once.  You can always check the status of your configuration using
   the no-argument `flutter config` command.
 {{site.alert.end}}
@@ -231,28 +246,28 @@ Creating a new project with desktop support is no different
 than [creating a new Flutter project][] for other platforms.
 
 Once you've configured your environment for desktop
-support, you can create and run a desktop app either
-in the IDE or from the command line.
+support, you can create and run a desktop application
+either in the IDE or from the command line.
 
 [creating a new Flutter project]: /docs/get-started/test-drive
 
-#### IDE
+#### Using an IDE
 
 After you've configured your environment to support
 desktop, make sure you restart the IDE if it was
 already running.
 
-Create a new app in your IDE and it automatically
+Create a new application in your IDE and it automatically
 creates iOS, Android, web, and desktop versions of your app.
 From the device pulldown, select **windows (desktop)**,
 **macOS (desktop)**, or **linux (desktop)**
-and run your app to see it launch on the desktop.
+and run your application to see it launch on the desktop.
 
 [web support]: /docs/get-started/web
 
-#### Command line
+#### From the command line
 
-To create a new app that includes desktop support
+To create a new application that includes desktop support
 (in addition to mobile and web support), run the following commands,
 substituting `myapp` with the name of your project:
 
@@ -260,7 +275,7 @@ substituting `myapp` with the name of your project:
 $ flutter create myapp
 $ cd myapp
 ```
-To launch your app from the command line,
+To launch your application from the command line,
 enter one of the following commands from the top
 of the package:
 
@@ -275,9 +290,10 @@ $ flutter run -d linux
   the `-d <platform>` tag is optional.
 {{site.alert.end}}
 
-### Build a release app
+## Build a release app
 
-To generate a release build run one of the following commands:
+To generate a release build,
+run one of the following commands:
 
 ```terminal
 $ flutter build windows
@@ -285,76 +301,101 @@ $ flutter build macos
 $ flutter build linux
 ```
 
-### Distribution
+## Distribution
 
-**In general, we don't recommend releasing a desktop app until
-desktop support is stable.**
-There are not yet full instructions, or tooling support,
-for making distributable applications. However,
-here is some information about how to use the current
-build output on other machines for testing purposes.
+**We don't recommend releasing a desktop
+application until desktop support is stable,**
+however, here is some information that you
+might still find useful.
 
-#### Windows
+### Windows
 
-For building Windows executables, you can either use tooling to construct an
-MSIX installer, or you can build your own zip file that collects
-the components together.
+There are various approaches you can use for
+distributing your Windows application.
+Here are some options:
 
-##### MSIX Packaging
+* Use tooling to construct an MSIX installer
+  (described in the next section)
+  for your application and distribute it through
+  the Microsoft Windows App Store.
+  You don't need to manually create a signing
+  certificate for this option as it is
+  handled for you.
+* Construct an MSIX installer and distribute
+  it through your own website. For this
+  option, you need to to give your application a
+  digital signature in the form of a
+  `.pfx` certificate.
+* Collect all of the necessary pieces
+  and build your own zip file.
 
-[MSIX][] is Microsoft's Windows app package format that provides a modern 
-packaging experience to all Windows apps. This format can either be used 
-to ship applications to Microsoft's Windows Apps store, or distribute 
-application installers directly.
+#### MSIX packaging
 
-The easiest way to create an MSIX distribution for a Flutter project is to use
-the [`msix` pub package][msix package]. For an example of using the `msix` package
-from a Flutter desktop app, see the [Desktop Photo Search sample][].
+[MSIX][], Microsoft Windows' application package format,
+provides a modern packaging experience to all Windows apps.
+This format can either be used to ship applications
+to Microsoft Windows' Apps store, or you can
+distribute application installers directly.
+
+The easiest way to create an MSIX distribution
+for a Flutter project is to use the
+[`msix` pub package][msix package].
+For an example of using the `msix` package
+from a Flutter desktop app,
+see the [Desktop Photo Search][] sample.
 
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
 [msix package]: {{site.pub}}/packages/msix
-[Desktop Photo Search sample]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
+[Desktop Photo Search]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
 
-###### Create a self-signed .pfx certificate for local testing.
+##### Create a self-signed .pfx certificate for local testing
 
-For private deployment and testing with the help of MSIX Installer,
-you need to give your app a digital signature in the form of a .pfx certificate.
+For private deployment and testing with the help
+of the MSIX installer, you need to give your application a
+digital signature in the form of a `.pfx` certificate.
 
-For deployment through the Windows Store, generating a .pfx certificate is not required. 
-The Windows Store handles creation and management of certificates for applications 
-distributed through the Windows Store.
+For deployment through the Windows Store,
+generating a `.pfx` certificate is not required. 
+The Windows Store handles creation and management
+of certificates for applications 
+distributed through its store.
 
-For distributing an application not through the Windows Store, but self hosted on a 
-website, can be done. But it requires a certificate signed by a Certificate Authority
-known by Windows.
+Distributing your application by self hosting it on a
+website requires a certificate signed by a
+Certificate Authority known to Windows.
 
-Use the following instructions to generate a self-signed .pfx certificate.
+Use the following instructions to generate a
+self-signed `.pfx` certificate.
 
-1. If you haven't already, download the [OpenSSL][] toolkit to generate your certificates.
-1. Go to where you installed OpenSSL, for example:
+1. If you haven't already, download the [OpenSSL][]
+   toolkit to generate your certificates.
+1. Go to where you installed OpenSSL, for example,
    `C:\Program Files\OpenSSL-Win64\bin`.
-1. Set an environment variable so that you can access `OpenSSL` from anywhere:<br>
+1. Set an environment variable so that you can access
+   `OpenSSL` from anywhere:<br>
    `"C:\Program Files\OpenSSL-Win64\bin"`
-1.  Generate a private key as follows:<br>
-      ```
-      `openssl genrsa -out mykeyname.key 2048`
-    4. Generate a certificate signing request (CSR) file using the private key:<br>
-      `openssl req -new -key mykeyname.key -out mycsrname.csr`
-    5. Generate the signed certificate (CRT) file using the private key
-        and CSR file:<br>
-      `openssl x509 -in mycsrname.csr -out mycrtname.crt -req -signkey mykeyname.key -days 10000`
-    6. Generate the `.pfx` file using the private key and CRT file:<br>
-      `openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt`
-
-Install the `.pfx` certificate first on the local machine in `Certificate store` as 
-`Trusted Root Certification Authorities` before installing the app.
+1. Generate a private key as follows:<br>
+   `openssl genrsa -out mykeyname.key 2048`
+1. Generate a certificate signing request (CSR)
+   file using the private key:<br>
+   `openssl req -new -key mykeyname.key -out mycsrname.csr`
+1. Generate the signed certificate (CRT) file using
+   the private key and CSR file:<br>
+   `openssl x509 -in mycsrname.csr -out mycrtname.crt -req -signkey mykeyname.key -days 10000`
+1. Generate the `.pfx` file using the private key and
+   CRT file:<br>
+   `openssl pkcs12 -export -out CERTIFICATE.pfx -inkey mykeyname.key -in mycrtname.crt`
+1. Install the `.pfx` certificate first on the local machine
+   in `Certificate store` as
+   `Trusted Root Certification Authorities`
+   before installing the app.
       
 [OpenSSL]: https://slproweb.com/products/Win32OpenSSL.html
 
-##### Building your own zip file for Windows
+#### Building your own zip file for Windows
 
-The executable can be found in your project under
-`build\windows\runner\<build mode>\`.
+The Flutter executable, `.exe`, can be found in your
+project under `build\windows\runner\<build mode>\`.
 In addition to that executable, you need the following:
 
 * From the same directory:
@@ -394,42 +435,59 @@ add this folder to a Windows installer such as Inno Setup, WiX, etc.
 
 [deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples?view=vs-2019
 
-#### macOS
+### macOS
 
-To distribute your macOS application, you can either [distribute your app via the macOS App Store][], 
-or alternatively you can distribute the `.app` itself, for example on your own website.  
-However, as of macOS 10.14.5 you need to notarize your macOS application before distributing 
+To distribute your macOS application, you can either
+[distribute it through the macOS App Store][], 
+or you can distribute the `.app` itself,
+perhaps from your own website.
+As of macOS 10.14.5, you need to notarize
+your macOS application before distributing 
 it outside of the macOS App Store. 
 
-The first step in both of the above processes involves working with your app inside of Xcode.
-To be able to compile your app from inside of Xcode you first need to build the app for release
-using the `flutter build` command, then open the Flutter macOS Runner application.
+The first step in both of the above processes
+involves working with your application inside of Xcode.
+To be able to compile your application from inside of
+Xcode you first need to build the application for release
+using the `flutter build` command, then open the
+Flutter macOS Runner application.
 
 ```bash
 $ flutter build macos
 $ open macos/Runner.xcworkspace
 ```
 
-Once inside of Xcode, follow either Apple's [documentation on notarizing macOS Applications][],
-or [on distributing an application via the App Store][]. You should also
-read through the [macOS-specific support](#macos-specific-support) section below
-to understand how entitlements, the App Sandbox, and the Hardened Runtime
+Once inside of Xcode, follow either Apple's
+[documentation on notarizing macOS Applications][],
+or [on distributing an application through the App Store][].
+You should also read through the
+[macOS-specific support](#macos-specific-support)
+section below to understand how entitlements,
+the App Sandbox, and the Hardened Runtime
 impact your distributable application.
 
-[distribute your app via the macOS App Store]: https://developer.apple.com/macos/submit/
+[distribute it through the macOS App Store]: https://developer.apple.com/macos/submit/
 [documentation on notarizing macOS Applications]: https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution
-[on distributing an application via the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
+[on distributing an application through the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 
-#### Linux
+### Linux
 
-The executable can be found in your project under `build/linux/<build mode>/bundle/`. Alongside your 
-executable binary in the `bundle` directory there are two directories:
+The executable binary can be found in your project under
+`build/linux/<build mode>/bundle/`. Alongside your 
+executable binary in the `bundle` directory there are
+two directories:
+
  * `lib` contains the required `.so` library files
- * `data` contains the application's data assets, such as fonts or images
+ * `data` contains the application's data assets,
+    such as fonts or images
 
-In addition to these files, your application also relies on various operating system libraries that your
-application has been compiled against. You can see the full list by running `ldd` against your application.
-For example, assuming you have a Flutter desktop application called `linux_desktop_test` you could inspect 
+In addition to these files, your application also
+relies on various operating system libraries that
+it's been compiled against.
+You can see the full list by running `ldd`
+against your application. For example,
+assuming you have a Flutter desktop application
+called `linux_desktop_test` you could inspect 
 the system libraries it depends upon as follows:
 
 ```
@@ -437,22 +495,24 @@ $ flutter build linux --release
 $ ldd build/linux/release/bundle/linux_desktop_test
 ```
 
-To wrap up this application for distribution you need to include everything in the `bundle` directory,
-and make sure the Linux system you are installing it upon has all of the system libraries required. This may 
-be as simple as:
+To wrap up this application for distribution
+you need to include everything in the `bundle` directory,
+and make sure the Linux system you are installing
+it upon has all of the system libraries required.
+This may be as simple as:
 
 ```
 $ sudo apt-get install libgtk-3-0 libblkid1 liblzma5
 ```
 
-For information on publishing a Linux app to the
-[Snap Store][], see
-[Build and release a Linux app to the Snap Store][].
+For information on publishing a Linux application
+to the [Snap Store][], see
+[Build and release a Linux application to the Snap Store][].
 
-As the tooling solidifies, stay tuned for updates on other ways
-to distribute a Linux desktop app.
+As the tooling solidifies, stay tuned for updates
+on other ways to distribute a Linux desktop app.
 
-[Build and release a Linux app to the Snap Store]: /docs/deployment/linux
+[Build and release a Linux application to the Snap Store]: /docs/deployment/linux
 
 ## Add desktop support to an existing Flutter app
 
@@ -464,14 +524,16 @@ root project directory:
 $ flutter create --platforms=windows,macos,linux .
 ```
 
-This adds the necessary desktop files and directories to your
-existing Flutter project. To add only specific desktop platforms,
-change the `platforms` list to include only the platform(s) you
-want to add.
+This adds the necessary desktop files and directories
+to your existing Flutter project.
+To add only specific desktop platforms,
+change the `platforms` list to include only
+the platform(s) you want to add.
 
 ## macOS-specific support
 
-The following information applies only to macOS development.
+The following information applies only to
+macOS development.
 
 ### Entitlements and the App Sandbox
 
@@ -508,13 +570,15 @@ edit the files directly. Unless you have a very specific
 reason, you should always make identical changes to both files.
 
 If you keep the App Sandbox enabled (which is required if you
-plan to distribute your app in the [App Store][]), you need to manage
-entitlements for your application when you add certain plugins
-or other native functionality. For instance, using the
-[`file_chooser`][] plugin requires adding either the
+plan to distribute your application in the [App Store][]),
+you need to manage entitlements for your application
+when you add certain plugins or other native functionality.
+For instance, using the [`file_chooser`][] plugin
+requires adding either the
 `com.apple.security.files.user-selected.read-only` or
 `com.apple.security.files.user-selected.read-write` entitlement.
-Another common entitlement is `com.apple.security.network.client`,
+Another common entitlement is
+`com.apple.security.network.client`,
 which you must add if you make any network requests.
 
 Without the `com.apple.security.network.client` entitlement,
@@ -535,7 +599,7 @@ address = example.com, port = 443
   network requests in your application,
   you must add the `com.apple.security.network.server`
   entitlement to `Runner-Release.entitlements` as well,
-  otherwise your app will work correctly for debug or
+  otherwise your application will work correctly for debug or
   profile testing, but will fail with release builds.
 {{site.alert.end}}
 
@@ -548,7 +612,7 @@ on the Apple Developer site.
 [Entitlements]: {{site.apple-dev}}/documentation/bundleresources/entitlements
 [`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 
-### Hardened runtime
+### Hardened Runtime
 
 If you choose to distribute your application outside
 of the App Store, you need to notarize your application
@@ -557,10 +621,12 @@ This requires enabling the Hardened Runtime option.
 Once you have enabled it, you need a valid signing
 certificate in order to build.
 
-By default, the entitlements file allows JIT for debug builds but,
-as with App Sandbox, you may need to manage other entitlements.
-If you have both App Sandbox and Hardened Runtime enabled,
-you may need to add multiple entitlements for the same resource.
+By default, the entitlements file allows JIT for
+debug builds but, as with App Sandbox, you may
+need to manage other entitlements.
+If you have both App Sandbox and Hardened
+Runtime enabled, you may need to add multiple
+entitlements for the same resource.
 For instance, microphone access would require both
 `com.apple.security.device.audio-input` (for Hardened Runtime)
 and `com.apple.security.device.microphone` (for App Sandbox).
@@ -581,8 +647,8 @@ follow the steps for plugins in [using packages][].
 Flutter automatically adds the necessary native code
 to your project, as with iOS or Android.
 
-We recommend the following plugins, which have been
-updated to work for desktop apps:
+We recommend the following plugins,
+which have been updated to work for desktop apps:
 
 * [`url_launcher`][]
 * [`shared_preferences`][]
@@ -590,8 +656,9 @@ updated to work for desktop apps:
 
 Use the following links to find all packages on pub.dev
 that support desktop apps. These links lists _all_ packages,
-not just plugin packages. (Remember that _plugin packages_,
-or _plugins_, provide an interface to platform-specific services.)
+not just plugin packages.
+(Remember that _plugin packages_, or _plugins_,
+provide an interface to platform-specific services.)
 
 * [Windows packages][]
 * [macOS packages][]
@@ -609,21 +676,26 @@ or _plugins_, provide an interface to platform-specific services.)
 
 When you start building your own plugins,
 you’ll want to keep federation in mind.
-Federation is the ability to define several different packages,
-each targeted at a different set of platforms,
-brought together into a single plugin for ease of use by developers.
-For example, the Windows implementation of the `url_launcher` is really
-`url_launcher_windows`, but a Flutter developer can simply add the
-`url_launcher` package to their `pubspec.yaml` as a dependency and the
-build process pulls in the correct implementation based on the target platform.
-Federation is handy because different teams with different expertise
-can build plugin implementations for different platforms.
+Federation is the ability to define several
+different packages, each targeted at a
+different set of platforms, brought together
+into a single plugin for ease of use by developers.
+For example, the Windows implementation of the
+`url_launcher` is really `url_launcher_windows`,
+but a Flutter developer can simply add the
+`url_launcher` package to their `pubspec.yaml`
+as a dependency and the build process pulls in
+the correct implementation based on the target platform.
+Federation is handy because different teams with
+different expertise can build plugin implementations
+for different platforms.
 You can add a new platform implementation to any
-endorsed federated plugin on pub.dev, so long as you coordinate
-this effort with the original plugin author.
+endorsed federated plugin on pub.dev,
+so long as you coordinate this effort with the
+original plugin author.
 
-For more information, including information about endorsed plugins,
-see the following resources:
+For more information, including information
+about endorsed plugins, see the following resources:
 
 * [Developing packages and plugins][], particularly the
   [Federated plugins][] section.
@@ -645,7 +717,7 @@ see the following resources:
 
 [Write a Flutter desktop application][]
 : A codelab that walks you through building
-a desktop app that integrates the GitHub
+a desktop application that integrates the GitHub
 GraphQL API with your Flutter app.
 
 You can run the following samples as desktop apps,
@@ -666,7 +738,7 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
   and allows you to manage them.
 
 [Photo Search app][]
-: A sample app built as a desktop application that
+: A sample application built as a desktop application that
   uses the following desktop-supported plugins:
   * [`file_chooser`][]
   * [`menubar`][]
