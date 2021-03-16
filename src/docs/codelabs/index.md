@@ -124,6 +124,11 @@ Learn how to use Flutter with other technologies.
   and a rewarded ad to an app called Awesome Drawing Quiz,
   a game that lets players guess the name of the drawing.
 
+* [Adding AdMob banner and native inline ads to a Flutter app][]<br>
+  Learn how to implement inline banner and native ads
+  to a travel booking app that lists possible
+  flight destinations.
+
 * [Get to know Firebase for Flutter][]<br>
   Build an event RSVP and guestbook chat app on both Android
   and iOS using Flutter, authenticating users with Firebase
@@ -136,6 +141,7 @@ Learn how to use Flutter with other technologies.
   from a single Dart codebase.
 
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
+[Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
 [Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
