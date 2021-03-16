@@ -235,7 +235,7 @@
               permalink: /docs/development/tools/devtools/debugger
             - title: Logging view
               permalink: /docs/development/tools/devtools/logging
-              title: App size tool
+            - title: App size tool
               permalink: /docs/development/tools/devtools/app-size
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
