@@ -13,7 +13,7 @@ As part of a refactoring of the low-level plugin communications architecture, we
 
 One difference between the `ChannelBuffers` API and the previous API is that the new API is more consistent in its approach to asynchrony. As a side-effect, the APIs around message passing are now entirely asynchronous.
 
-This posed a problem for the implementation of the legacy testing APIs which, for historical reasons, were previously in the `flutter` package. Since they relied on the underlying logic being partly synchronous, they require refactoring. To avoid adding even more test logic into the `flutter` package, a decision was made to move this logic to the `flutter_test` package.
+This posed a problem for the implementation of the legacy testing APIs which, for historical reasons, were previously in the `flutter` package. Since they relied on the underlying logic being partly synchronous, they required refactoring. To avoid adding even more test logic into the `flutter` package, a decision was made to move this logic to the `flutter_test` package.
 
 ## Description of change
 
