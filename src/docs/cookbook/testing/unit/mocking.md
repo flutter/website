@@ -189,7 +189,7 @@ void main() {
 }
 ```
 
-### 5. Run the tests
+## 5. Run the tests
 
 Now that you have a `fetchAlbum()` function with tests in place,
 run the tests.
@@ -201,7 +201,7 @@ $ flutter test test/fetch_album_test.dart
 You can also run tests inside your favorite editor by following the
 instructions in the [Introduction to unit testing][] recipe.
 
-### Complete example
+## Complete example
 
 ##### lib/main.dart
 
@@ -333,7 +333,7 @@ void main() {
 }
 ```
 
-### Summary
+## Summary
 
 In this example, you've learned how to use Mockito to test functions or classes
 that depend on web services or databases. This is only a short introduction to
