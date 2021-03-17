@@ -205,6 +205,7 @@ instructions in the [Introduction to unit testing][] recipe.
 
 ##### lib/main.dart
 
+<!-- skip -->
 ```dart
 import 'dart:async';
 import 'dart:convert';
@@ -295,6 +296,7 @@ class _MyAppState extends State<MyApp> {
 
 ##### test/fetch_album_test.dart
 
+<!-- skip -->
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
