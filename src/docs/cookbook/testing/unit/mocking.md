@@ -10,6 +10,8 @@ next:
   path: /docs/cookbook/testing/widget/introduction
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/testing/unit/mocking"?>
+
 Sometimes, unit tests might depend on classes that fetch data from live
 web services or databases. This is inconvenient for a few reasons:
 
@@ -78,10 +80,11 @@ To test this function, make two changes:
 
 The function should now look like this:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
 Future<Album> fetchAlbum(http.Client client) async {
-  final response = await client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+  final response =
+      await client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -116,21 +119,20 @@ and return different http responses in each test.
 The generated mocks will be located in `fetch_album_test.mocks.dart`.
 Import this file to use them.
 
-<!-- skip -->
+<?code-excerpt "test/fetch_album_test.dart (mockClient)"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import '../lib/main.dart';
 import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
 @GenerateMocks([http.Client])
-main() {
-  // Tests go here
-}
+void main() {
 ```
 
 Next, generate the mocks running the following command:
@@ -152,15 +154,18 @@ for the success test, and an error response for the unsuccessful test.
 Test these conditions using the `when()` function provided by
 Mockito:
 
-<!-- skip -->
+<?code-excerpt "test/fetch_album_test.dart"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import '../lib/main.dart';
 import 'fetch_album_test.mocks.dart';
 
+// Generate a MockClient using the Mockito package.
+// Create new instances of this class in each test.
 @GenerateMocks([http.Client])
 void main() {
   group('fetchAlbum', () {
@@ -205,7 +210,7 @@ instructions in the [Introduction to unit testing][] recipe.
 
 ##### lib/main.dart
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:convert';
@@ -214,8 +219,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum(http.Client client) async {
-  final response = 
-    await client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+  final response =
+      await client.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -247,7 +252,7 @@ class Album {
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -296,15 +301,18 @@ class _MyAppState extends State<MyApp> {
 
 ##### test/fetch_album_test.dart
 
-<!-- skip -->
+<?code-excerpt "test/fetch_album_test.dart"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import '../lib/main.dart';
 import 'fetch_album_test.mocks.dart';
 
+// Generate a MockClient using the Mockito package.
+// Create new instances of this class in each test.
 @GenerateMocks([http.Client])
 void main() {
   group('fetchAlbum', () {
