@@ -17,7 +17,7 @@ you might want to put some finishing touches on your app.
 This page covers the following topics:
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
-* [Enabling Material Components](#material-components)
+* [Enabling Material Components](#enabling-material-components)
 * [Signing the app](#signing-the-app)
 * [Shrinking your code with R8](#shrinking-your-code-with-r8)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)

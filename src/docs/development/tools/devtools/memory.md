@@ -32,11 +32,14 @@ in granularity:
 
 * Memory overview chart
 * Android-only memory chart (via Android's ADB tool)
-* Event timeline )e.g., garbage collection (GC) events, user memory tooling interactions)
-* Monitoring of Dart total instances, size and accumulator monitoring to detect memory leaks
-* Analysis of a Snapshot to detect possible memory problems or Flutter gotchas
-* Snapshots of all live memory class instances and sentinels (instances
-to be GC'd)
+* Event timeline (for example, garbage collection (GC)
+  events, user memory tooling interactions)
+* Monitoring of Dart total instances,
+  size and accumulator monitoring to detect memory leaks
+* Analysis of a Snapshot to detect possible memory problems
+  or Flutter gotchas
+* Snapshots of all live memory class instances and sentinels
+  (instances to be GC'd)
 
 {{site.alert.note}}
   **Use [profile mode][] when running your app to analyze performance.**
@@ -122,12 +125,12 @@ Below the memory charts (Event Timeline, Memory Overview and Android Overview ch
 <dt markdown="1">**Table**</dt>
 <dd markdown="1">If the Treemap switch is off,
     the snapshot displays all currently active memory
-    objects in a table.  Clicking the **Snapshot** button
+    objects in a table. Clicking the **Snapshot** button
     makes a request to the Dart VM to collect the current
     state of memory. The memory objects can be sorted
     by attributes such as class name, size,
     allocated instances (see
-    [Snapshot classes](#snapshot-classes)).
+    [Snapshot classes](#snapshots)).
 </dd>
 <dt markdown="1">**Treemap**</dt>
 <dd markdown="1">If the Treemap switch is enabled on

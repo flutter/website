@@ -116,13 +116,14 @@ each entry in the fonts section should have a
 and a `fonts` key with a list specifying the
 asset and other descriptors for the font.
 
-For details about using fonts from a package dependency
-or using one of the over 1000 open-sourced Google fonts,
-see the [Use a custom font][] recipe in the
+For examples of using fonts
+see the [Use a custom font][] and
+[Export fonts from a package][] recipes in the
 [Flutter cookbook][].
 
+[Export fonts from a package]: /docs/cookbook/design/package-fonts
 [Flutter cookbook]: /docs/cookbook
-[Use a custom font]: /docs/cookbook/design/fonts#from-packages
+[Use a custom font]: /docs/cookbook/design/fonts
 
 ## More information
 
