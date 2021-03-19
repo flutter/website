@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/forms/validation"?>
+
 Apps often require users to enter information into a text field.
 For example, you might require users to log in with an email address
 and password combination.
@@ -39,8 +41,10 @@ When creating the form, provide a [`GlobalKey`][].
 This uniquely identifies the `Form`,
 and allows validation of the form in a later step.
 
-<!-- skip -->
+<?code-excerpt "validation1/lib/main.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
@@ -66,9 +70,9 @@ class MyCustomFormState extends State<MyCustomForm> {
       key: _formKey,
       child: Column(
         children: <Widget>[
-              // Add TextFormFields and ElevatedButton here.
-        ]
-     )
+          // Add TextFormFields and ElevatedButton here.
+        ],
+      ),
     );
   }
 }
@@ -99,17 +103,17 @@ For this example, create a `validator` that ensures the
 `TextFormField` isn't empty. If it is empty,
 return a friendly error message.
 
-<!-- skip -->
+<?code-excerpt "validation2/lib/main.dart (TextFormField)"?>
 ```dart
 TextFormField(
   // The validator receives the text that the user has entered.
   validator: (value) {
-    if (value.isEmpty) {
+    if (value == null || value.isEmpty) {
       return 'Please enter some text';
     }
     return null;
   },
-);
+),
 ```
 
 ## 3. Create a button to validate and submit the form
@@ -121,22 +125,20 @@ When the user attempts to submit the form, check if the form is valid.
 If it is, display a success message.
 If it isn't (the text field has no content) display the error message.
 
-<!-- skip -->
+<?code-excerpt "validation2/lib/main.dart (ElevatedButton)" replace="/^child\: //g"?>
 ```dart
 ElevatedButton(
   onPressed: () {
-    // Validate returns true if the form is valid, otherwise false.
-    if (_formKey.currentState.validate()) {
+    // Validate returns true if the form is valid, or false otherwise.
+    if (_formKey.currentState!.validate()) {
       // If the form is valid, display a snackbar. In the real world,
       // you'd often call a server or save the information in a database.
-
-      ScaffoldMessenger
-          .of(context)
+      ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Processing Data')));
     }
   },
   child: Text('Submit'),
-);
+),
 ```
 
 ### How does this work?
@@ -155,7 +157,8 @@ rebuilds the form to display any error messages and returns `false`.
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "validation2/lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -204,8 +207,9 @@ class MyCustomFormState extends State<MyCustomForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
+            // The validator receives the text that the user has entered.
             validator: (value) {
-              if (value.isEmpty) {
+              if (value == null || value.isEmpty) {
                 return 'Please enter some text';
               }
               return null;
@@ -215,10 +219,10 @@ class MyCustomFormState extends State<MyCustomForm> {
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
               onPressed: () {
-                // Validate returns true if the form is valid, or false
-                // otherwise.
-                if (_formKey.currentState.validate()) {
-                  // If the form is valid, display a Snackbar.
+                // Validate returns true if the form is valid, or false otherwise.
+                if (_formKey.currentState!.validate()) {
+                  // If the form is valid, display a snackbar. In the real world,
+                  // you'd often call a server or save the information in a database.
                   ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text('Processing Data')));
                 }
