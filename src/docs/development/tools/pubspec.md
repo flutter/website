@@ -3,13 +3,25 @@ title: "Flutter and the pubspec file"
 description: "Describes the Flutter-only fields in the pubspec file."
 ---
 
+{{site.alert.note}}
+  This page is primarily aimed at folks who write
+  Flutter apps. If you write packages or plugins, 
+  (perhaps you want to create a federated plugin),
+  you should check out the
+  [Developing packages and plugins][] page.
+{{site.alert.end}}
+
 Every Flutter project includes a `pubspec.yaml` file,
 often referred to as _the pubspec_.
 A basic pubspec is generated when you create
 a new Flutter project. It's located at the top
 of the project tree and contains metadata about
 the project that the Dart and Flutter tooling
-needs to know.
+needs to know. The pubspec is written in
+[YAML][], which is human readable, but be aware
+that _white space (tabs v spaces) matters_.
+
+[YAML]: https://yaml.org/spec/spec.html
 
 The pubspec file specifies dependencies
 that the project requires, such as particular packages
@@ -135,11 +147,6 @@ and pubspec files, see the following:
 * [Package dependencies][] on dart.dev
 * [Using packages][]
 * [What not to commit][] on dart.dev
-
-For information on federated plugins, see:
-
-* [Federated plugins][], a section in the
-  [Developing packages and plugins][] page
 
 [Creating packages]: {{site.dart-site}}/guides/libraries/create-library-packages
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
