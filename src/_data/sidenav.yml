@@ -259,6 +259,8 @@
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4.md
                 - title: 1.2.1
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1.md
+        - title: Flutter and the pubspec file
+          permalink: /docs/development/tools/pubspec
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
         - title: Flutter Fix
