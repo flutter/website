@@ -41,7 +41,7 @@ When creating the form, provide a [`GlobalKey`][].
 This uniquely identifies the `Form`,
 and allows validation of the form in a later step.
 
-<?code-excerpt "validation1/lib/main.dart"?>
+<?code-excerpt "lib/form.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -103,7 +103,7 @@ For this example, create a `validator` that ensures the
 `TextFormField` isn't empty. If it is empty,
 return a friendly error message.
 
-<?code-excerpt "validation2/lib/main.dart (TextFormField)"?>
+<?code-excerpt "lib/main.dart (TextFormField)"?>
 ```dart
 TextFormField(
   // The validator receives the text that the user has entered.
@@ -125,7 +125,7 @@ When the user attempts to submit the form, check if the form is valid.
 If it is, display a success message.
 If it isn't (the text field has no content) display the error message.
 
-<?code-excerpt "validation2/lib/main.dart (ElevatedButton)" replace="/^child\: //g"?>
+<?code-excerpt "lib/main.dart (ElevatedButton)" replace="/^child\: //g"?>
 ```dart
 ElevatedButton(
   onPressed: () {
@@ -157,7 +157,7 @@ rebuilds the form to display any error messages and returns `false`.
 
 ## Interactive example
 
-<?code-excerpt "validation2/lib/main.dart"?>
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,5 @@
-name: mocking
-description: Use the Mockito package to mimic the behavior of services for testing.
+name: form
+description: Use Form widget to perform form validation.
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
