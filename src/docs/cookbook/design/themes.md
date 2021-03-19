@@ -13,6 +13,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/design/themes"?>
+
 To share colors and font styles throughout an app, use themes.
 You can either define app-wide themes, or use `Theme` widgets
 that define the colors and font styles for a particular part
@@ -31,10 +33,10 @@ To share a Theme across an entire app, provide a
 
 If no `theme` is provided, Flutter creates a default theme for you.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
 ```dart
 MaterialApp(
-  title: title,
+  title: appName,
   theme: ThemeData(
     // Define the default brightness and colors.
     brightness: Brightness.dark,
@@ -51,7 +53,10 @@ MaterialApp(
       headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
       bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
     ),
-  )
+  ),
+  home: MyHomePage(
+    title: appName,
+  ),
 );
 ```
 
@@ -71,7 +76,7 @@ or extending the parent theme.
 If you don't want to inherit any application colors or font styles,
 create a `ThemeData()` instance and pass that to the `Theme` widget.
 
-<!-- skip -->
+<?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
 Theme(
   // Create a unique theme with "ThemeData"
@@ -90,7 +95,7 @@ Theme(
 Rather than overriding everything, it often makes sense to extend the parent
 theme. You can handle this by using the [`copyWith()`][] method.
 
-<!-- skip -->
+<?code-excerpt "lib/theme.dart (ThemeCopyWith)"?>
 ```dart
 Theme(
   // Find and extend the parent theme using "copyWith". See the next
@@ -116,7 +121,7 @@ If not, the app's theme is returned.
 In fact, the `FloatingActionButton` uses this technique to find the
 `accentColor`.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
 ```dart
 Container(
   color: Theme.of(context).accentColor,
@@ -124,12 +129,13 @@ Container(
     'Text with a background color',
     style: Theme.of(context).textTheme.headline6,
   ),
-);
+),
 ```
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -171,7 +177,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key key, @required this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -191,7 +197,7 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: Theme(
         data: Theme.of(context).copyWith(
           colorScheme:
-              Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
+          Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
         ),
         child: FloatingActionButton(
           onPressed: null,
