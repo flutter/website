@@ -87,9 +87,11 @@ flutter:
 The `family` determines the name of the font, which you use in the
 [`fontFamily`][] property of a [`TextStyle`][] object.
 
-The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
+The `asset` is a path to the font file,
+relative to the `pubspec.yaml` file.
 These files contain the outlines for the glyphs in the font.
-When building the app, these files are included in the app's asset bundle.
+When building the app,
+these files are included in the app's asset bundle.
 
 A single font can reference many different files with different
 outline weights and styles:
@@ -110,8 +112,9 @@ outline weights and styles:
 You have two options for how to apply fonts to text: as the default font
 or only within specific widgets.
 
-To use a font as the default, set the `fontFamily` property as part of
-the app's `theme`. The value provided to `fontFamily` must match the `family`
+To use a font as the default, set the `fontFamily` property
+as part of the app's `theme`. The value provided to
+`fontFamily` must match the `family`
 name declared in the `pubspec.yaml`.
 
 <!-- skip -->
@@ -149,8 +152,9 @@ Text(
 
 If a [`TextStyle`][] object specifies a weight
 or style for which there is no exact font file,
-the engine uses one of the more generic files for the font and attempts to
-extrapolate outlines for the requested weight and style.
+the engine uses one of the more generic files
+for the font and attempts to extrapolate outlines
+for the requested weight and style.
 
 ## Complete example
 

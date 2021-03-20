@@ -115,7 +115,7 @@ dependencies:
 
 All your `CupertinoIcons` should automatically
 update to the new aesthetic (except for the
-[unchanged icons](#unchained-icons) listed above).
+[unchanged icons](#unchanged-icons) listed above).
 
 At this point, you can also explore [`CupertinoIcons`][]
 or the [Cupertino Icons 1.0.0 gallery][]
