@@ -104,7 +104,7 @@ return a friendly error message.
 TextFormField(
   // The validator receives the text that the user has entered.
   validator: (value) {
-    if (value.isEmpty) {
+    if (value!.isEmpty) {
       return 'Please enter some text';
     }
     return null;
@@ -126,7 +126,7 @@ If it isn't (the text field has no content) display the error message.
 ElevatedButton(
   onPressed: () {
     // Validate returns true if the form is valid, otherwise false.
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       // If the form is valid, display a snackbar. In the real world,
       // you'd often call a server or save the information in a database.
 
@@ -205,7 +205,7 @@ class MyCustomFormState extends State<MyCustomForm> {
         children: <Widget>[
           TextFormField(
             validator: (value) {
-              if (value.isEmpty) {
+              if (value!.isEmpty) {
                 return 'Please enter some text';
               }
               return null;
@@ -217,7 +217,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               onPressed: () {
                 // Validate returns true if the form is valid, or false
                 // otherwise.
-                if (_formKey.currentState.validate()) {
+                if (_formKey.currentState!.validate()) {
                   // If the form is valid, display a Snackbar.
                   ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text('Processing Data')));
