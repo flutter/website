@@ -1,25 +1,30 @@
 import 'package:flutter/material.dart';
+// #docregion LocalizationDelegatesImport
 import 'package:flutter_localizations/flutter_localizations.dart';
+// #enddocregion LocalizationDelegatesImport
+// #docregion AppLocalizationsImport
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-void main() {
-  runApp(MyApp());
-}
+// #enddocregion AppLocalizationsImport
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+// #docregion LocalizationDelegates
+// #docregion AppLocalizations
     return MaterialApp(
       title: 'Localizations Sample App',
       localizationsDelegates: [
-        AppLocalizations.delegate,
+        AppLocalizations.delegate, // Add this line
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
+// #enddocregion AppLocalizations
       supportedLocales: [
-        const Locale('en', ''),
-        const Locale('es', ''),
+        const Locale('en', ''), // English, no country code
+        const Locale('es', ''), // Spanish, no country code
       ],
+// #enddocregion LocalizationDelegates
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -27,6 +32,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -36,6 +42,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+// #docregion Example
     return Scaffold(
       appBar: AppBar(
         // The [AppBar] title text should update its message
@@ -45,5 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(AppLocalizations.of(context)!.helloWorld),
       ),
     );
+// #enddocregion Example
   }
+}
+
+void main() {
+  runApp(MyApp());
 }

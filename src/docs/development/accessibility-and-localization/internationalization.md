@@ -4,6 +4,8 @@ short-title: i18n
 description: How to internationalize your Flutter app.
 ---
 
+<?code-excerpt path-base="../null_safety_examples/internationalization"?>
+
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
 
@@ -58,6 +60,7 @@ this package supports 78 languages.
 To use flutter_localizations,
 add the package as a dependency to your `pubspec.yaml` file:
 
+<?code-excerpt "gen_l10n_example/pubspec.yaml (FlutterLocalizations)"?>
 ```yaml
 dependencies:
   flutter:
@@ -69,31 +72,25 @@ dependencies:
 Next, run `pub get packages`, then import the `flutter_localizations` library and specify
 `localizationsDelegates` and `supportedLocales` for `MaterialApp`:
 
-<!-- skip -->
+<?code-excerpt "gen_l10n_example/lib/main.dart (LocalizationDelegatesImport)"?>
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
-// TODO: uncomment the line below after codegen
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+```
 
-// ...
+<?code-excerpt "gen_l10n_example/lib/main.dart (LocalizationDelegates)" replace="/App.*//g"?>
+```dart
+return Material
+  title: 'Localizations Sample
+  localizationsDelegates: [
 
-MaterialApp(
- localizationsDelegates: [
-   // ... app-specific localization delegate[s] here
-   // TODO: uncomment the line below after codegen
-   // AppLocalizations.delegate,
-   GlobalMaterialLocalizations.delegate,
-   GlobalWidgetsLocalizations.delegate,
-   GlobalCupertinoLocalizations.delegate,
- ],
- supportedLocales: [
-    const Locale('en', ''), // English, no country code
-    const Locale('ar', ''), // Arabic, no country code
-    const Locale.fromSubtags(languageCode: 'zh'), // Chinese *See Advanced Locales below*
-    // ... other locales the app supports
+    GlobalMaterialLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
   ],
-  // ...
-)
+  supportedLocales: [
+    const Locale('en', ''), // English, no country code
+    const Locale('es', ''), // Spanish, no country code
+  ],
 ```
 
 After introducing the `flutter_localizations` package
@@ -102,6 +99,11 @@ packages should now be correctly localized in
 one of the 78 supported locales. Widgets should be
 adapted to the localized messages, along with
 correct left-to-right and right-to-left layout.
+
+{% comment %}
+  The original code examples do not include arabic.
+{% endcomment %}
+
 Try switching the target platform's locale to
 Arabic (`ar`) and notice that the messages should
 be localized and widgets are laid out with
@@ -135,13 +137,14 @@ following instructions to add localized text to your application.
 
 1. Add the `intl` package to the `pubspec.yaml` file:
 
+   <?code-excerpt "gen_l10n_example/pubspec.yaml (Intl)" replace="/(?<!0) # Add this line//g" ?>
    ```yaml
    dependencies:
      flutter:
        sdk: flutter
      flutter_localizations:
        sdk: flutter
-     intl: ^0.16.1    # Add this line
+     intl: ^0.17.0 # Add this line
    ```
 
 2. Also, in the `pubspec.yaml` file, enable the `generate`
@@ -149,15 +152,17 @@ flag. This is added to the section of the pubspec that is
 specific to Flutter, and usually comes later in the pubspec
 file.
 
+   <?code-excerpt "gen_l10n_example/pubspec.yaml (Generate)"?>
    ```yaml
    # The following section is specific to Flutter.
    flutter:
-     generate: true    # Add this line
+     generate: true # Add this line
    ```
 
 3. Add a new yaml file to the root directory of the Flutter
 project called `l10n.yaml` with the following content:
 
+   <?code-excerpt "gen_l10n_example/l10n.yaml"?>
    ```yaml
    arb-dir: lib/l10n
    template-arb-file: app_en.arb
@@ -172,31 +177,77 @@ project called `l10n.yaml` with the following content:
 4. In `${FLUTTER_PROJECT}/lib/l10n`,
    add the `app_en.arb` template file. For example:
 
+   <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb"?>
    ```json
    {
-     "helloWorld": "Hello World!",
-     "@helloWorld": {
-       "description": "The conventional newborn programmer greeting"
-     }
+       "helloWorld": "Hello World!",
+       "@helloWorld": {
+         "description": "The conventional newborn programmer greeting"
+       }
    }
    ```
 
 5. Next, add an `app_es.arb` file in the same directory for
    Spanish translation of the same message:
 
+   <?code-excerpt "gen_l10n_example/lib/l10n/app_es.arb"?>
    ```json
    {
-     "helloWorld": "Hola Mundo!"
+       "helloWorld": "Hola Mundo!"
    }
    ```
 
 6. Now, run your app so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
 
-7. Remove the comment for the import statement on `app_localizations.dart` 
-   and `AppLocations.delegate` in your call to the constructor for 
-   `MaterialApp`. Test the generated localizations in your app as follows:
+7. Add the import statement on `app_localizations.dart` and `AppLocations.delegate` 
+   in your call to the constructor for `MaterialApp`.
 
+   <?code-excerpt "gen_l10n_example/lib/main.dart (AppLocalizationsImport)"?>
+   ```dart
+   import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+   ```
+
+   <?code-excerpt "gen_l10n_example/lib/main.dart (AppLocalizations)"?>
+   ```dart
+   return MaterialApp(
+     title: 'Localizations Sample App',
+     localizationsDelegates: [
+       AppLocalizations.delegate, // Add this line
+       GlobalMaterialLocalizations.delegate,
+       GlobalWidgetsLocalizations.delegate,
+       GlobalCupertinoLocalizations.delegate,
+     ],
+   ```
+
+   Test the generated localizations in your app as follows:
+
+   <!-- skip -->
+   ```dart
+   // In your Material/Widget/CupertinoApp:
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
+       localizationsDelegates: AppLocalizations.localizationsDelegates, // Add this line
+       supportedLocales: AppLocalizations.supportedLocales, // Add this line
+       home: // ...
+     );
+   }
+   ```
+
+   <?code-excerpt "gen_l10n_example/lib/main.dart (Example)"?>
+   ```dart
+   return Scaffold(
+     appBar: AppBar(
+       // The [AppBar] title text should update its message
+       // according to the system locale of the target platform.
+       // Switching between English and Spanish locales should
+       // cause this text to update.
+       title: Text(AppLocalizations.of(context)!.helloWorld),
+     ),
+   );
+   ```
+   
    <!-- skip -->
    ```dart
    import 'package:flutter_localizations/flutter_localizations.dart';
