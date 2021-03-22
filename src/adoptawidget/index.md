@@ -228,7 +228,7 @@ To get started, fork the SDK and use Git to fetch a local copy:
 more information, see [GitHub's official
 instructions](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).
 3. Clone your fork: `git clone
-https://github.com/&lt;your_name_here>/flutter.git`
+https://github.com/<your_name_here>/flutter.git`
 4. Change directory: `cd flutter`
 5. Add an upstream remote: `git remote add upstream
 git@github.com:flutter/flutter.git`
