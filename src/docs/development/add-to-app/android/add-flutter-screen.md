@@ -48,11 +48,14 @@ in your app that you'd like. The following example shows
 `FlutterActivity` being launched from an `OnClickListener`.
 
 {{site.alert.note}}
-  Make sure to use the following import:
-  
-  <!--skip-->
-  ```dart
+Make sure to use the following import:
+
+<!--skip-->
+```dart
   import io.flutter.embedding.android.FlutterActivity;
+```
+{{site.alert.end}}
+
 {% samplecode default-activity-launch %}
 {% sample Java %}
 <!--code-excerpt "ExistingActivity.java" title-->
@@ -354,6 +357,7 @@ startActivity(
     .build(context)
 );
 ```
+
 {% sample Kotlin %}
 <!--code-excerpt "ExistingActivity.kt" title-->
 ```kotlin
