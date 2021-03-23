@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// ignore_for_file: unused_local_variable
 
 void examples(BuildContext context) {
 // #docregion MaterialAppExample
