@@ -37,7 +37,7 @@
   C:\dev\src\dart-sdk\bin\dart.exe
   ```
 
-  However, if you are using PowerShell, in it `where` is
+  However, if you are using `PowerShell`, in it `where` is
   an alias of `Where-Object` command and to use `where`
   in the same way as in `cmd` you need
   to add an `.exe` an the end of it
