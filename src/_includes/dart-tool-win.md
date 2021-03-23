@@ -38,7 +38,7 @@
   ```
 
   However, if you are using `PowerShell`, in it `where` is
-  an alias of `Where-Object` command and to use `where`
+  an alias of `Where-Object` command, and to use `where`
   in the same way as in `cmd` you need
   to add an `.exe` an the end of it
 
