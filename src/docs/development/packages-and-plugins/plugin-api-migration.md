@@ -49,7 +49,7 @@ The following instructions outline the steps for supporting the new API:
    The easiest thing to do (if possible) is move the logic from
    `registerWith()` into a private method that both
    `registerWith()` and `onAttachedToEngine()` can call.
-   Either `registerWith()` or `onAttachToEngine()` will be called,
+   Either `registerWith()` or `onAttachedToEngine()` will be called,
    not both.
    <br><br>
    In addition, you should document all non-overridden public members
