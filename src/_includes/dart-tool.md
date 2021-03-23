@@ -7,11 +7,9 @@
   but if you've downloaded the Dart SDK separately,
   make sure that the Flutter version of `dart` is
   first in your path, as the two versions might not be compatible.
-  The following command (on macOS, linux, and chrome OS),
-  tells you whether the `flutter` and `dart` commands
-  originate from the same `bin` directory and are therefore
-  compatible. (Some versions of Windows
-  support a similar `where` command.)
+  The following command tells you whether the `flutter` and `dart`
+  commands originate from the same `bin` directory and are
+  therefore compatible.
 
   ```terminal
   $ which flutter dart
@@ -24,7 +22,7 @@
   commands from `/path-to-flutter-sdk/bin` before
   commands from `/usr/local/bin` (in this case).
   After updating your shell for the change to take effect,
-  running the `which` or `where` command again
+  running the `which` command again
   should show that the `flutter` and `dart` commands
   now come from the same directory.
 

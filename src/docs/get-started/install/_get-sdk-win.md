@@ -44,7 +44,7 @@ take these steps to add Flutter to the `PATH` environment variable:
 You have to close and reopen any existing console windows
 for these changes to take effect.
 
-{% include dart-tool.md %}
+{% include dart-tool-windows.md %}
 
 ### Run `flutter doctor`
 
