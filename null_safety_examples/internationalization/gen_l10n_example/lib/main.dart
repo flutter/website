@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 // #docregion LocalizationDelegatesImport
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 // #enddocregion LocalizationDelegatesImport
 // #docregion AppLocalizationsImport
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -33,7 +35,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -42,7 +43,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-// #docregion Example
     return Scaffold(
       appBar: AppBar(
         // The [AppBar] title text should update its message
@@ -52,7 +52,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(AppLocalizations.of(context)!.helloWorld),
       ),
     );
-// #enddocregion Example
   }
 }
 
