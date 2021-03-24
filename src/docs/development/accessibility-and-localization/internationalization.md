@@ -100,14 +100,9 @@ one of the 78 supported locales. Widgets should be
 adapted to the localized messages, along with
 correct left-to-right and right-to-left layout.
 
-{% comment %}
-  The original code examples do not include arabic.
-{% endcomment %}
-
 Try switching the target platform's locale to
-Arabic (`ar`) and notice that the messages should
-be localized and widgets are laid out with
-right-to-left layout in mind.
+Spanish (`es`) and notice that the messages should
+be localized.
 
 Apps based on `WidgetsApp` are similar except that the
 `GlobalMaterialLocalizations.delegate` isn't needed.
