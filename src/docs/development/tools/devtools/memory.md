@@ -19,16 +19,17 @@ Memory profiling consists of six parts, each increasing in granularity:
 
 * Memory overview chart
 * Android-only memory chart (via Android's ADB tool)
-* Event timeline )e.g., garbage collection (GC)
+* Event timeline e.g., garbage collection (GC)
   events, user memory tooling interactions)
-* Monitoring of Allocations total instances,
+* Monitor of Allocations&mdash;total instances,
   size and accumulator monitoring to detect memory leaks
-* Tracking exactly where in your code a class constructor
-  is called (memory allocated)
+* Track when memory for a particular class is contructed
+  (new instance)&mdash;stack trace of your code
 * Analysis of a Snapshot to detect possible memory problems
   or Flutter gotchas
-* Snapshots of all live memory class instances and sentinels
-  (instances to be GC'd)
+* Snapshot of all live memory class instances and sentinels
+  (instances to be GC'd) and ability to inspect the values
+  of the objects
 
 At the top-level, when the memory tab is selected memory statistics from
 the VM are collected. These statistics are displayed in the two overview
@@ -36,20 +37,20 @@ charts (Dart memory and Android-only) the collection of general memory
 usage e.g., total heap used, external heap, maximum heap capacity,
 Resident Set Size (RSS). As you interact with your application various
 events are detected e.g., memory GC (garabage collection),Flutter events,
-user fired events (using the dart:developer package) are collected in the
-same timeline as the memory statistics. All of this collected statistics
-and events are displayed in charts (see Anatomoy of Memory).
+user fired events (using the ```dart:developer``` package) are collected
+in the same timeline as the memory statistics. All of this collected
+statistics and events are displayed in charts (see Anatomoy of Memory).
 
 The next level of understanding memory involes you directly interacting
 with DevTools and your application to isolate a short period of time that
 you are interested in knowing how many objects were allocated, how many
 bytes were allocated, or tracking all the places in your code where a
-particular class is allocated. This information is available using the
-"Monitor Allocations" part of DevTools.
+particular class is allocated. This information is available under the
+"Allocations" tab of Memory profiler.
 
-Using Monitor Allocations and the Resetting of accumulators, helps to analyze
+Monitoring allocations and resetting of accumulators, helps to analyze
 the accumulator counts (number of objects or bytes allocated) in a short
-timeframe between a reset and monitor collect events. The accumulators
+timeframe between a reset and monitor Track events. The accumulators
 can be used to understand the rate of memory allocations. If you suspect
 your application is leaking memory or has other bugs relating to memory
 allocation. Additionally, the ability to track a few specific classes, too
@@ -224,13 +225,13 @@ memory usage while using the application DevTools is connected to there are two 
 
 ![Two Tabs Memory Actions]({% asset tools/devtools/memory_two_tabs.png @path %}){:width="100%"}
 
-### Analysis Tab
+### Analysis tab
 
 The Analysis tab collects memory snapshots both user initiated and
 auto-collected by DevTools, when DevTools detects memory spikes.
 Each snapshot is analyzed and an analysis is created too.
 
-### Analysis Actions
+### Analysis actions
 
 The actions available for Analysis are:
 
@@ -256,7 +257,7 @@ The actions available for Analysis are:
 <dd markdown="1">Expand all nodes in the tree table.</dd>
 </dl>
 
-### Analysis and Snapshots View
+### Analysis and Snapshots view
 
 All Analyses and Snapshots are displayed in a Table Tree View:
 
@@ -276,8 +277,7 @@ of the table tree.
 
 For more information see [Snapshots](#snapshots).
 
-
-### Allocation Tab
+### Allocation tab
 
 The Allocation tab allows monitoring the instances of all classes, reporting
 the number of objects allocated and number of bytes consumed by all objects.
@@ -292,7 +292,7 @@ of a class. The tracking captures a stack trace when the constructor was
 called. The overhead to track these allocations are expensive (slow) therefore
 tracking should be used sparingly.
 
-### Allocation Actions
+### Allocation actions
 
 ![Screenshot of a memory actions]({% asset tools/devtools/memory_allocations_actions.png @path %}){:width="100%"}
 
@@ -322,12 +322,12 @@ tracking should be used sparingly.
 </dd>
 </dl>
 
-### Allocation View
+### Allocation view
 
 Allocations are displayed in a table view of each class available to
 the connected application:
 
-![Two Tabs Memory Actions]({% asset tools/devtools/memory_alloations_overview.png @path %}){:width="100%"}
+![Two Tabs Memory Actions]({% asset tools/devtools/memory_allocations_overview.png @path %}){:width="100%"}
 
 Each row displays the class name the number of instances and bytes
 allocated with deltas (accumulators since last reset).
@@ -364,7 +364,6 @@ allocated with deltas (accumulators since last reset).
 </dl>
 
 For more information see [Allocation Tracking](#allocation-tracking).
-
 
 ## Memory overview chart
 
@@ -410,7 +409,7 @@ in the legend.
 
 For more information, see [Dart VM internals][vm].
 
-### Hover Card
+### Hover card
 Clicking in a chart will display a vertical yellow line where the click
 occurred on the X-Axis (Timestamp), a hover card will be displayed with
 the information collected:
@@ -456,7 +455,6 @@ will displayed between the "Dart / Flutter Memory" and the "Flutter and
 User Events" e.g.,
 
 ![Hovercard of Android chart is visible]({% asset tools/devtools/memory_android_hovercard.png @path %}){:width="100%"}
-
 
 ## Memory android chart (ADB)
 
@@ -597,7 +595,7 @@ This legend shows the symbol for each DevTools event and its meaning
 </dd>
 </dl>
 
-## Adding Custom Events to the Memory Profile Timeline
+## Adding custom events to the memory profile timeline
 
 Sometimes it may be difficult to correlate the actions in your Flutter
 application code and the collected memory statistics/events charted in
@@ -606,7 +604,12 @@ your own events can be injected into the Memory Profile timeline to
 help to understand how your application's memory usage is performing
 within the Dart/Flutter framework (heap).
 
-Posting your own custom event(s) are done using the dart:developer package postEvent method. Add the following import to your code:
+Posting your own custom event(s) are done using the dart:developer package
+postEvent method. In particular, the event name must be prefixed with
+**DevTools.Event_** then your event name would be appended e.g.,
+**DevTools.Event_**_MyEventName_
+
+To use add the following import to your code:
 
 ```
 import 'dart:developer' as developer;
@@ -775,7 +778,7 @@ organizes the instances sizes into buckets.  Eleven images are
 images are greater than 50M.  For a grand total of over 500M of
 this app constitute images rendered as small images on a phone.
 
-## Allocation Tracking
+## Allocation tracking
 
 In addition to tracking the number of objects and bytes consumed
 for all instances of a class, a stack trace can be recorded when a
@@ -793,6 +796,97 @@ particular instance will display the lsat 4 method calls on the stack.
 Clicking the "More..." entry will display the entire stack trace.
 
 ![Stack Trace Tracking]({% asset tools/devtools/memory_tracking.png @path %}){:width="100%"}
+
+## Filtering, Searching and Auto-Complete
+
+Both the Analysis and Allocations tabs support searching and filtering
+Begin typing in the name of the class you'd like to find
+e.g., **Ob**_ectWithUniqueId_ will return a list that matches the characters
+typed so far. The first item in the list is highlighted.
+
+Pressing a keystroke when auto-complete is visible:
+
+<dl markdown="1">
+<dt markdown="1">**ENTER**</dt>
+<dd markdown="1">Selects the highlighted line (GlobalObjectKey) and
+                 navigates to the row with that class name in
+                 the active tree table (Snapshot) or table (Allocations).
+</dd>
+<dt markdown="1">**UP/DOWN arrows**</dt>
+<dd markdown="1">Rotates through the list of possible matches highlighting
+                 the next item in the list.
+</dd>
+<dt markdown="1">**ESCAPE**</dt>
+<dd markdown="1">Clears and cancels all searching.
+</dd>
+</dl>
+
+![Searching]({% asset tools/devtools/memory_search_1.png @path %}){:width="100%"}
+
+Typing more characters would narrow down the possible class names e.g., typing
+**Obje** displays:
+
+![Narrower Search]({% asset tools/devtools/memory_search_2.png @path %}){:width="100%"}
+
+Finally, typing **ObjectW** displays the exact match:
+
+![Narrowed Search]({% asset tools/devtools/memory_search_3.png @path %}){:width="100%"}
+
+### Filtering
+
+Filtering is used to move libraries and classes from the main list (tables)
+to a Filter group to help reduce the number of classes visible that are
+less important while profiling memory.
+
+![Filtering]({% asset tools/devtools/memory_filtering.png @path %}){:width="100%"}
+
+<dl markdown="1">
+<dt markdown="1">**Hide Private Classes**</dt>
+<dd markdown="1">Class names prefix with an underscore.</dd>
+<dt markdown="1">**Hide Classes with No Instances**</dt>
+<dd markdown="1">Classes never constructed are filtered.</dd>
+<dt markdown="1">**Hide Libraries with No Instances**</dt>
+<dd markdown="1">All classes in a library never constructed
+                 the library is filtered.</dd>
+<dt markdown="1">**Hide Libraries or Packages**</dt>
+<dd markdown="1">List of all libraries used in your application
+                 are displayed. By default the libraries enabled
+                 above are filtered out (dart:*, package:flutter*,
+                 etc.). The libraries automatically filtered can
+                 be enabled if you are interested in Dart core
+                 libraries and classes or the Flutter framework.
+</dd>
+</dl>
+
+
+### Setting
+
+The Memory profiler has a specific settings dialog:
+
+![Settings]({% asset tools/devtools/memory_settings.png @path %}){:width="100%"}
+
+<dl markdown="1">
+<dt markdown="1">**Collect Android Memory Statistics using ADB**</dt>
+<dd markdown="1">By default if DevTools is connected to your
+                 application via an Android device/emulator
+                 then Android memory statistics are not collected.
+                 Collecting with ADB can be expensive and may hide
+                 performance issues in your app.
+</dd>
+<dt markdown="1">**Display Data in Units (B, K, MB, GB)**</dt>
+<dd markdown="1">By default data displayed in the hover card
+                 are scaled using units instead of raw values.
+                 Turning off this will display the raw numbers
+                 e.g., 125M would display as 125,235,712
+</dd>
+<dt markdown="1">**Enable advanced memory settings**</dt>
+<dd markdown="1">If enabled, the GC button is displayed to
+                 ask the VM to garbage collect memory (manually).
+                 This manual GC is only a request to the VM. The
+                 VM may decide to do no compaction, some compaction
+                 or complete compaction of the heap.
+</dd>
+</dl>
 
 
 ## Memory problem case study
