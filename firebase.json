@@ -283,7 +283,8 @@
       { "source": "/widgets-intro", "destination": "/docs/development/ui/widgets-intro", "type": 301 },
       { "source": "/widgets/:rest*", "destination": "/docs/development/ui/widgets/:rest*", "type": 301 },
       { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 },
-      { "source": "/go/custom-tabs-support", "destination": "https://docs.google.com/document/d/1GvsmPQz6aKixNUphL10XmSOL7M6nOH7W1jYwNp0LwnA/edit?usp=sharing&resourcekey=0-cSYzz7z_mKzxX3ndesmy7A", "type": 301 },
+      { "source": "/towards-improved-performance-tooling", "destination": "https://docs.google.com/document/d/1wSDNcG0ww2V6JX1EE8avilCwnOiRVy83zSCWt916O0o", "type": 301 },
+      { "source": "/go/custom-tabs-support", "destination": "https://docs.google.com/document/d/1GvsmPQz6aKixNUphL10XmSOL7M6nOH7W1jYwNp0LwnA", "type": 301 }
     ],
     "headers": [
       { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] },
