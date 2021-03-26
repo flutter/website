@@ -52,7 +52,7 @@ so define that dependency in the `dependencies` section.
 
 `mockito: 5.0.0` supports Dart's null safety thanks to code generation.
 To run the required code generation, add the `build_runner` dependency
-in the `dev_deperencies` section.
+in the `dev_dependencies` section.
 
 ```yaml
 dependencies:
