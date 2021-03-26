@@ -38,9 +38,7 @@
   ```
 
   However, if you are using `PowerShell`, in it `where` is
-  an alias of `Where-Object` command, and to use `where`
-  in the same way as in `cmd` you need
-  to add an `.exe` an the end of it
+  an alias of `Where-Object` command, so you need to use `where.exe` instead.
 
   ```terminal
   PS C:\> where.exe flutter dart
