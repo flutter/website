@@ -119,13 +119,6 @@ However, if you have multiple devices/simulators connected, click
 at the top of the screen. Select the device you want to use for
 running or debugging.
 
-{{site.alert.note}}
-  If you want to try running your app on the web,
-  but the **Chrome (web)** target doesn't appear in the
-  list of targets, make sure you've enabled web, as
-  described in [Building a web application][].
-{{site.alert.end}}
-
 ### Run app without breakpoints
 
  1. Click **Run > Start Without Debugging** in the
@@ -308,7 +301,6 @@ Prior to filing new issues:
 
 When filing new issues, include [flutter doctor][] output.
 
-[Building a web application]: /docs/get-started/web
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [DevTools]: /docs/development/tools/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
