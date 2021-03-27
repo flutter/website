@@ -27,6 +27,13 @@ This page covers the following topics:
 * [Updating the app's version number](#updating-the-apps-version-number)
 * [Android release FAQ](#android-release-faq)
 
+{{site.alert.note}}
+   Throughout this page, `<your app dir>` refers to 
+   the directory that your application is in. While following
+   these instructions, substitute `<your app dir>` with 
+   your app's directory.
+{{site.alert.end}}
+
 ## Adding a launcher icon
 
 When a new Flutter app is created, it has a default launcher icon.
@@ -38,7 +45,7 @@ Alternatively, you can do it manually using the following steps:
 1. Review the [Material Design product
    icons][launchericons] guidelines for icon design.
 
-1. In the `<app dir>/android/app/src/main/res/` directory,
+1. In the `<your app dir>/android/app/src/main/res/` directory,
    place your icon files in folders named using
    [configuration qualifiers][].
    The default `mipmap-` folders demonstrate the correct
@@ -128,7 +135,7 @@ don't check it into public source control!**
 
 ### Reference the keystore from the app
 
-Create a file named `<app dir>/android/key.properties`
+Create a file named `<your app dir>/android/key.properties`
 that contains a reference to your keystore:
 
 ```
@@ -146,7 +153,7 @@ storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
 ### Configure signing in gradle
 
 Configure signing for your app by editing the
-`<app dir>/android/app/build.gradle` file.
+`<your app dir>/android/app/build.gradle` file.
 
 <ol markdown="1">
 <li markdown="1"> Add code before `android` block:
@@ -236,7 +243,7 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
 Review the default [App Manifest][manifest] file,
 `AndroidManifest.xml`,
-located in `<app dir>/android/app/src/main` and verify that the values
+located in `<your app dir>/android/app/src/main` and verify that the values
 are correct, especially the following:
 
 `application`
@@ -254,7 +261,7 @@ are correct, especially the following:
 ## Reviewing the build configuration
 
 Review the default [Gradle build file][gradlebuild],
-`build.gradle`, located in `<app dir>/android/app` and
+`build.gradle`, located in `<your app dir>/android/app` and
 verify the values are correct, especially the following
 values in the `defaultConfig` block:
 
@@ -323,13 +330,12 @@ and maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
-1. Enter `cd <app dir>`<br>
-   (Replace `<app dir>` with your application's directory.)
+1. Enter `cd <your app dir>`<br>
 1. Run `flutter build appbundle`<br>
    (Running `flutter build` defaults to a release build.)
 
 The release bundle for your app is created at
-`<app dir>/build/app/outputs/bundle/release/app.aab`.
+`<your app dir>/build/app/outputs/bundle/release/app.aab`.
 
 By default, the app bundle contains your Dart code and the Flutter
 runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
@@ -370,16 +376,15 @@ your code involves adding a couple flags to your build command.
 
 From the command line:
 
-1. Enter `cd <app dir>`<br>
-   (Replace `<app dir>` with your application's directory.)
+1. Enter `cd <your app dir>`<br>
 1. Run `flutter build apk --split-per-abi`<br>
    (The `flutter build` command defaults to `--release`.)
 
 This command results in three APK files:
 
-* `<app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
-* `<app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
-* `<app dir>/build/app/outputs/apk/release/app-x86_64-release.apk`
+* `<your app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
+* `<your app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
+* `<your app dir>/build/app/outputs/apk/release/app-x86_64-release.apk`
 
 Removing the `--split-per-abi` flag results in a fat APK that contains
 your code compiled for _all_ the target ABIs. Such APKs are larger in
@@ -393,7 +398,7 @@ Follow these steps to install the APK on a connected Android device.
 From the command line:
 
 1. Connect your Android device to your computer with a USB cable.
-1. Enter `cd <app dir>` where `<app dir>` is your application directory.
+1. Enter `cd <your app dir>`.
 1. Run `flutter install`.
 
 ## Publishing to the Google Play Store
