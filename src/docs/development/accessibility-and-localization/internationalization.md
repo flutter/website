@@ -136,6 +136,9 @@ following instructions to add localized text to your application.
 
 1. Add the `intl` package to the `pubspec.yaml` file:
 
+{% comment %}
+RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: flutter"
+{% endcomment %}
    <?code-excerpt "gen_l10n_example/pubspec.yaml (Intl)" replace="/(?<!0) # Add this line//g" ?>
    ```yaml
    dependencies:
@@ -599,16 +602,24 @@ The date patterns and symbols of the locale will also need to
 be specified. In the source code, the date patterns and symbols
 are defined like this:
 
-<?code-excerpt "add_language/lib/nn_intl.dart (Date)"?>
+{% comment %}
+RegEx adds last two lines with commented out code and closing bracket.
+{% endcomment %}
+<?code-excerpt "add_language/lib/nn_intl.dart (Date)" replace="/  'LLL': 'LLL',/  'LLL': 'LLL',\n  \/\/ ...\n}/g"?>
 ```dart
 const nnLocaleDatePatterns = {
   'd': 'd.',
   'E': 'ccc',
   'EEEE': 'cccc',
   'LLL': 'LLL',
+  // ...
+}
 ```
 
-<?code-excerpt "add_language/lib/nn_intl.dart (Date2)"?>
+{% comment %}
+RegEx adds last two lines with commented out code and closing bracket.
+{% endcomment %}
+<?code-excerpt "add_language/lib/nn_intl.dart (Date2)" replace="/  ],/  ],\n  \/\/ ...\n}/g"?>
 ```dart
 const nnDateSymbols = {
   'NAME': 'nn',
@@ -616,6 +627,8 @@ const nnDateSymbols = {
     'f.Kr.',
     'e.Kr.',
   ],
+  // ...
+}
 ```
 
 These will need to be modified for the locale to use the correct
