@@ -77,12 +77,11 @@ Next, run `pub get packages`, then import the `flutter_localizations` library an
 import 'package:flutter_localizations/flutter_localizations.dart';
 ```
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (LocalizationDelegates)" replace="/App.*//g"?>
+<?code-excerpt "gen_l10n_example/lib/main.dart (MaterialApp)" remove="AppLocalizations.delegate"?>
 ```dart
-return Material
-  title: 'Localizations Sample
+return MaterialApp(
+  title: 'Localizations Sample App',
   localizationsDelegates: [
-
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -91,6 +90,11 @@ return Material
     const Locale('en', ''), // English, no country code
     const Locale('es', ''), // Spanish, no country code
   ],
+  theme: ThemeData(
+    primarySwatch: Colors.blue,
+  ),
+  home: MyHomePage(),
+);
 ```
 
 After introducing the `flutter_localizations` package
@@ -203,7 +207,7 @@ project called `l10n.yaml` with the following content:
    import 'package:flutter_gen/gen_l10n/app_localizations.dart';
    ```
 
-   <?code-excerpt "gen_l10n_example/lib/main.dart (AppLocalizations)"?>
+   <?code-excerpt "gen_l10n_example/lib/main.dart (MaterialApp)"?>
    ```dart
    return MaterialApp(
      title: 'Localizations Sample App',
@@ -213,6 +217,15 @@ project called `l10n.yaml` with the following content:
        GlobalWidgetsLocalizations.delegate,
        GlobalCupertinoLocalizations.delegate,
      ],
+     supportedLocales: [
+       const Locale('en', ''), // English, no country code
+       const Locale('es', ''), // Spanish, no country code
+     ],
+     theme: ThemeData(
+       primarySwatch: Colors.blue,
+     ),
+     home: MyHomePage(),
+   );
    ```
    
 8. Use AppLocalizations anywhere in your app.

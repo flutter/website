@@ -11,8 +11,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-// #docregion LocalizationDelegates
-// #docregion AppLocalizations
+// #docregion MaterialApp
     return MaterialApp(
       title: 'Localizations Sample App',
       localizationsDelegates: [
@@ -21,17 +20,16 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-// #enddocregion AppLocalizations
       supportedLocales: [
         const Locale('en', ''), // English, no country code
         const Locale('es', ''), // Spanish, no country code
       ],
-// #enddocregion LocalizationDelegates
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
     );
+// #enddocregion MaterialApp
   }
 }
 
