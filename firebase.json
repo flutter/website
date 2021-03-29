@@ -108,6 +108,7 @@
       { "source": "/go/cupertino-context-menu-action", "destination": "https://docs.google.com/document/d/1lCuPyAbIzAr0c2KIEZhREC_EnkTKBxNiqP6lGLT-KpU/edit", "type": 301 },
       { "source": "/go/cupertino-increase-contrast", "destination": "https://docs.google.com/document/d/1kePVlqWvJu5Ph0RL6wgg67F3SATmsJ8QY5N0S1MvaGg/edit#", "type": 301 },
       { "source": "/go/cupertino-switch-onoff-labels", "destination": "https://docs.google.com/document/d/1DD5gx8x0ej5AJzGxzpr4hpgpqsvcDu-ozKliGnhHm7c/edit#", "type": 301 },
+      { "source": "/go/custom-tabs-support", "destination": "https://docs.google.com/document/d/1GvsmPQz6aKixNUphL10XmSOL7M6nOH7W1jYwNp0LwnA", "type": 301 },
       { "source": "/go/dart-flutterbuffers", "destination": "https://docs.google.com/document/d/1rqKq6DwqaeBfTLTixxurrdT9HwZ02DyRjFigO9SiB1Q/edit#", "type": 301 },
       { "source": "/go/dartle", "destination": "https://docs.google.com/document/d/1Ei0ZIqdqNjxTHoGB3Ay6SWQg3DMSsKKWl70XoBUCFTA", "type": 301 },
       { "source": "/go/default-scroll-action", "destination": "https://docs.google.com/document/d/1SJvom6k4YW4EtFIY4VpAhAOH-jWhRkHVfpVsOBB56KM/edit?usp=sharing", "type": 301 },
@@ -224,6 +225,7 @@
       { "source": "/go/text-selection-theme", "destination": "https://docs.google.com/document/d/1sCe7Y_lhREljtn6m0Uu_EycbS82zRvWnNtkfEwFX9W0", "type": 301 },
       { "source": "/go/tool-integration-test-support", "destination": "https://docs.google.com/document/d/1jMMZpRAiQC2XTUFnzFsBrWwMsf7KyMuCScYgrJQJOV0/edit?resourcekey=0-ne9HbH1hXCHcIglomNfwtw", "type": 301 },
       { "source": "/go/top-errors-analysis", "destination": "https://docs.google.com/document/d/1ZJ9t_uPeXqZnoDOIVes_Yu2BBxP42l99nSfHQPfswZw/edit?usp=sharing", "type": 301 },
+      { "source": "/go/towards-improved-performance-tooling", "destination": "https://docs.google.com/document/d/1wSDNcG0ww2V6JX1EE8avilCwnOiRVy83zSCWt916O0o", "type": 301 },
       { "source": "/go/triage-2021-rfp", "destination": "https://docs.google.com/document/d/1aD2jaOs2WaDNWQi_N5N5kYn7MGj-iYxxAkR33cYiSIY", "type": 301 },
       { "source": "/go/ui-imitation-games", "destination": "https://docs.google.com/document/d/1SbMjMiFhD2OZGTT3TCAOx6yfG-SYQ5F_fn7wwlZMumM/edit", "type": 301 },
       { "source": "/go/union-typed-transform-stack-in-hit-test", "destination": "https://docs.google.com/document/d/1EsH7g-oyQIDZpRteg94iKJKgD7kVngZWq9ngDe6ORbM/edit?usp=sharing", "type": 301 },
@@ -282,8 +284,7 @@
       { "source": "/widgets", "destination": "/docs/development/ui/widgets/catalog", "type": 301 },
       { "source": "/widgets-intro", "destination": "/docs/development/ui/widgets-intro", "type": 301 },
       { "source": "/widgets/:rest*", "destination": "/docs/development/ui/widgets/:rest*", "type": 301 },
-      { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 },
-      { "source": "/towards-improved-performance-tooling", "destination": "https://docs.google.com/document/d/1wSDNcG0ww2V6JX1EE8avilCwnOiRVy83zSCWt916O0o", "type": 301 }
+      { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 }
     ],
     "headers": [
       { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] },
