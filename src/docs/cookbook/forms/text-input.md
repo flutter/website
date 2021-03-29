@@ -33,7 +33,7 @@ set the `decoration` to null.
 ```dart
 TextField(
   decoration: InputDecoration(
-    border: InputBorder.none,
+    border: OutlineInputBorder(),
     hintText: 'Enter a search term'
   ),
 );
@@ -54,6 +54,7 @@ such as validation and integration with other
 ```dart
 TextFormField(
   decoration: InputDecoration(
+    border: UnderlineInputBorder(),
     labelText: 'Enter your username'
   ),
 );
@@ -61,7 +62,6 @@ TextFormField(
 
 ## Interactive example
 
-<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
@@ -96,15 +96,22 @@ class MyCustomFormState extends State<MyCustomForm> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        TextField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            hintText: 'Enter a search term',
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter a search term',
+            ),
           ),
         ),
-        TextFormField(
-          decoration: InputDecoration(
-            labelText: 'Enter your username',
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextFormField(
+            decoration: InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter your username',
+            ),
           ),
         ),
       ],
