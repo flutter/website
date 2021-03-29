@@ -10,7 +10,7 @@ description: Brief description similar to the "context" section below. The descr
     https://github.com/dart-lang/site-shared/blob/master/doc/writing-for-dart-and-flutter-websites.md#semantic-line-breaks
   * DON'T SUBMIT a PR weeks and weeks in advance.
     Doing this causes it to get stanky in the website
-    and usually develops conflicts in the index file.
+    repo and usually develops conflicts in the index file.
     Ideally, submit a PR once you have confirmed
     info on the version number where the breaking
     change landed.
