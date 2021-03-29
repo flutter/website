@@ -711,6 +711,8 @@ MaterialApp(
     const Locale('en', 'US'),
     const Locale('nn'),
   ],
+  home: Home(),
+),
 ```
 
 <a name="alternative-internationalization-workflows">

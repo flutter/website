@@ -16,9 +16,9 @@ void main() {
         const Locale('en', 'US'),
         const Locale('nn'),
       ],
-      // #enddocregion MaterialApp
       home: Home(),
     ),
+    // #enddocregion MaterialApp
   );
 }
 
