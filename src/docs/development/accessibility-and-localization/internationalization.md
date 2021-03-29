@@ -637,14 +637,27 @@ not share the same flexibility for number formatting, the formatting
 for an existing locale will have to be used as a substitute in
 `_NnMaterialLocalizationsDelegate`:
 
-<?code-excerpt "add_language/lib/nn_intl.dart (Delegate)" replace="/@(.|\n)*';\n\n//g;/    final (.|\n)*\);\n\n//g"?>
+<?code-excerpt "add_language/lib/nn_intl.dart (Delegate)"?>
 ```dart
 class _NnMaterialLocalizationsDelegate
     extends LocalizationsDelegate<MaterialLocalizations> {
   const _NnMaterialLocalizationsDelegate();
 
-    @override
+  @override
+  bool isSupported(Locale locale) => locale.languageCode == 'nn';
+
+  @override
   Future<MaterialLocalizations> load(Locale locale) async {
+    final String localeName = intl.Intl.canonicalizedLocale(locale.toString());
+
+    // The locale (in this case `nn`) needs to be initialized into the custom
+    // date symbols and patterns setup that Flutter uses.
+    date_symbol_data_custom.initializeDateFormattingCustom(
+      locale: localeName,
+      patterns: nnLocaleDatePatterns,
+      symbols: intl.DateSymbols.deserializeFromMap(nnDateSymbols),
+    );
+
     return SynchronousFuture<MaterialLocalizations>(
       NnMaterialLocalizations(
         localeName: localeName,
@@ -656,6 +669,24 @@ class _NnMaterialLocalizationsDelegate
         // for 'en_US' instead.
         decimalFormat: intl.NumberFormat('#,##0.###', 'en_US'),
         twoDigitZeroPaddedFormat: intl.NumberFormat('00', 'en_US'),
+        // DateFormat here will use the symbols and patterns provided in the
+        // `date_symbol_data_custom.initializeDateFormattingCustom` call above.
+        // However, an alternative is to simply use a supported locale's
+        // DateFormat symbols, similar to NumberFormat above.
+        fullYearFormat: intl.DateFormat('y', localeName),
+        compactDateFormat: intl.DateFormat('yMd', localeName),
+        shortDateFormat: intl.DateFormat('yMMMd', localeName),
+        mediumDateFormat: intl.DateFormat('EEE, MMM d', localeName),
+        longDateFormat: intl.DateFormat('EEEE, MMMM d, y', localeName),
+        yearMonthFormat: intl.DateFormat('MMMM y', localeName),
+        shortMonthDayFormat: intl.DateFormat('MMM d'),
+      ),
+    );
+  }
+
+  @override
+  bool shouldReload(_NnMaterialLocalizationsDelegate old) => false;
+}
 ```
 
 For more information about localization strings, see the

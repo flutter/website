@@ -288,7 +288,6 @@ class _NnMaterialLocalizationsDelegate
         // for 'en_US' instead.
         decimalFormat: intl.NumberFormat('#,##0.###', 'en_US'),
         twoDigitZeroPaddedFormat: intl.NumberFormat('00', 'en_US'),
-// #enddocregion Delegate
         // DateFormat here will use the symbols and patterns provided in the
         // `date_symbol_data_custom.initializeDateFormattingCustom` call above.
         // However, an alternative is to simply use a supported locale's
@@ -307,6 +306,7 @@ class _NnMaterialLocalizationsDelegate
   @override
   bool shouldReload(_NnMaterialLocalizationsDelegate old) => false;
 }
+// #enddocregion Delegate
 
 /// A custom set of localizations for the 'nn' locale. In this example, only
 /// the value for openAppDrawerTooltip was modified to use a custom message as
