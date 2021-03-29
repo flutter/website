@@ -4,7 +4,7 @@
 
 {% include_relative _web-app.md  %}
 
- 1. Open the IDE and select **Start a new Flutter project**.
+ 1. Open the IDE and select **Create New Flutter Project**.
  1. Select **Flutter Application** as the project type. Then click **Next**.
  1. Verify the Flutter SDK path specifies the SDK’s location
     (select **Install SDK...** if the text field is blank).
