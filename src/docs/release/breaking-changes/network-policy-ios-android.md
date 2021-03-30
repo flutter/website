@@ -107,7 +107,7 @@ We **do not** recommend you do this for your release builds.
 
 Landed in version: 1.23<br>
 In stable release: 2.0.0<br>
-Reverted in version: 2.2.0?
+Reverted in version: 2.2.0 (proposed)
 
 ## References
 

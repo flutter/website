@@ -12,7 +12,17 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+TBD
 
+### Reverted changes
+
+The following breaking changes have been reverted.
+
+<b>[Network Policy on iOS and Android][]</b><br>
+:  Introduced in version: 2.0.0<br>
+   Reverted in version:   2.2.0 (proposed)
+
+[Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 
 ### Released in Flutter 2
 
@@ -24,7 +34,6 @@ release, and listed in alphabetical order:
 * [Dry layout support for RenderBox][]
 * [Eliminating nullOk Parameters][]
 * [Material Chip button semantics][]
-* [Network Policy on iOS and Android][]
 * [SnackBars managed by the ScaffoldMessenger][]
 * [TextSelectionTheme migration][]
 * [Use maxLengthEnforcement instead of maxLengthEnforced][]
@@ -37,7 +46,6 @@ release, and listed in alphabetical order:
 [Dry layout support for RenderBox]: /docs/release/breaking-changes/renderbox-dry-layout
 [Eliminating nullOk Parameters]: /docs/release/breaking-changes/eliminating-nullok-parameters
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
-[Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 [SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
 [TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
 [Use maxLengthEnforcement instead of maxLengthEnforced]: /docs/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
