@@ -1,7 +1,12 @@
 ---
 title: Introduction to widgets
 description: Learn about Flutter's widgets.
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
+
+<?code-excerpt path-base="../null_safety_examples/ui/widgets_intro/"?>
 
 {% assign api = site.api | append: '/flutter' -%}
 
@@ -26,7 +31,8 @@ tree to transition from one state to the next.
 The minimal Flutter app simply calls the [`runApp()`][]
 function with a widget:
 
-```dart
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-310px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() {
@@ -94,11 +100,12 @@ of which the following are commonly used:
 
 Below are some simple widgets that combine these and other widgets:
 
-```dart
+<?code-excerpt "lib/main_myappbar.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  MyAppBar({this.title});
+  MyAppBar({required this.title});
 
   // Fields in a Widget subclass are always marked "final".
 
@@ -119,7 +126,8 @@ class MyAppBar extends StatelessWidget {
             tooltip: 'Navigation menu',
             onPressed: null, // null disables the button
           ),
-          // Expanded expands its child to fill the available space.
+          // Expanded expands its child
+          // to fill the available space.
           Expanded(
             child: title,
           ),
@@ -137,7 +145,8 @@ class MyAppBar extends StatelessWidget {
 class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Material is a conceptual piece of paper on which the UI appears.
+    // Material is a conceptual piece
+    // of paper on which the UI appears.
     return Material(
       // Column is a vertical, linear layout.
       child: Column(
@@ -145,7 +154,9 @@ class MyScaffold extends StatelessWidget {
           MyAppBar(
             title: Text(
               'Example title',
-              style: Theme.of(context).primaryTextTheme.headline6,
+              style: Theme.of(context) //
+                  .primaryTextTheme
+                  .headline6,
             ),
           ),
           Expanded(
@@ -217,7 +228,8 @@ also known as "routes". The `Navigator` lets you transition smoothly
 between screens of your application. Using the [`MaterialApp`][]
 widget is entirely optional but a good practice.
 
-```dart
+<?code-excerpt "lib/main_tutorial.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() {
@@ -230,7 +242,8 @@ void main() {
 class TutorialHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Scaffold is a layout for the major Material Components.
+    // Scaffold is a layout for
+    // the major Material Components.
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -293,7 +306,10 @@ Most applications include some form of user interaction with the system.
 The first step in building an interactive application is to detect
 input gestures. See how that works by creating a simple button:
 
-```dart
+<?code-excerpt "lib/main_mybutton.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+import 'package:flutter/material.dart';
+
 class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -302,7 +318,7 @@ class MyButton extends StatelessWidget {
         print('MyButton was tapped!');
       },
       child: Container(
-        height: 36.0,
+        height: 50.0,
         padding: const EdgeInsets.all(8.0),
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: BoxDecoration(
@@ -315,6 +331,18 @@ class MyButton extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: MyButton(),
+        ),
+      ),
+    ),
+  );
 }
 ```
 
@@ -349,12 +377,16 @@ this idea. `StatefulWidgets` are special widgets that know how to generate
 `State` objects, which are then used to hold state.
 Consider this basic example, using the [`ElevatedButton`][] mentioned earlier:
 
-```dart
+<?code-excerpt "lib/main_counter.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+import 'package:flutter/material.dart';
+
 class Counter extends StatefulWidget {
-  // This class is the configuration for the state. It holds the
-  // values (in this case nothing) provided by the parent and used
-  // by the build  method of the State. Fields in a Widget
-  // subclass are always marked "final".
+  // This class is the configuration for the state.
+  // It holds the values (in this case nothing) provided
+  // by the parent and used by the build  method of the
+  // State. Fields in a Widget subclass are always marked
+  // "final".
 
   @override
   _CounterState createState() => _CounterState();
@@ -365,12 +397,13 @@ class _CounterState extends State<Counter> {
 
   void _increment() {
     setState(() {
-      // This call to setState tells the Flutter framework that
-      // something has changed in this State, which causes it to rerun
-      // the build method below so that the display can reflect the
-      // updated values. If you change _counter without calling
-      // setState(), then the build method won't be called again,
-      // and so nothing would appear to happen.
+      // This call to setState tells the Flutter framework
+      // that something has changed in this State, which
+      // causes it to rerun the build method below so that
+      // the display can reflect the updated values. If you
+      // change _counter without calling setState(), then
+      // the build method won't be called again, and so
+      // nothing would appear to happen.
       _counter++;
     });
   }
@@ -379,20 +412,34 @@ class _CounterState extends State<Counter> {
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called,
     // for instance, as done by the _increment method above.
-    // The Flutter framework has been optimized to make rerunning
-    // build methods fast, so that you can just rebuild anything that
-    // needs updating rather than having to individually change
-    // instances of widgets.
+    // The Flutter framework has been optimized to make
+    // rerunning build methods fast, so that you can just
+    // rebuild anything that needs updating rather than
+    // having to individually changes instances of widgets.
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         ElevatedButton(
           onPressed: _increment,
           child: Text('Increment'),
         ),
+        SizedBox(width: 16),
         Text('Count: $_counter'),
       ],
     );
   }
+}
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Counter(),
+        ),
+      ),
+    ),
+  );
 }
 ```
 
@@ -419,9 +466,12 @@ The common parent that redirects this flow is the `State`.
 The following slightly more complex example shows how
 this works in practice:
 
-```dart
+<?code-excerpt "lib/main_counterdisplay.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+import 'package:flutter/material.dart';
+
 class CounterDisplay extends StatelessWidget {
-  CounterDisplay({this.count});
+  CounterDisplay({required this.count});
 
   final int count;
 
@@ -432,7 +482,7 @@ class CounterDisplay extends StatelessWidget {
 }
 
 class CounterIncrementor extends StatelessWidget {
-  CounterIncrementor({this.onPressed});
+  CounterIncrementor({required this.onPressed});
 
   final VoidCallback onPressed;
 
@@ -461,11 +511,27 @@ class _CounterState extends State<Counter> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: <Widget>[
-      CounterIncrementor(onPressed: _increment),
-      CounterDisplay(count: _counter),
-    ]);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        CounterIncrementor(onPressed: _increment),
+        SizedBox(width: 16),
+        CounterDisplay(count: _counter),
+      ],
+    );
   }
+}
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Counter(),
+        ),
+      ),
+    ),
+  );
 }
 ```
 
@@ -490,7 +556,7 @@ products offered for sale, and maintains a shopping cart for
 intended purchases. Start by defining the presentation class,
 `ShoppingListItem`:
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 class Product {
   const Product({this.name});
   final String name;
@@ -569,8 +635,7 @@ built widgets and applies only the differences to the underlying
 
 Here's an example parent widget that stores mutable state:
 
-<!-- skip -->
-```dart
+```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 class ShoppingList extends StatefulWidget {
   ShoppingList({Key key, this.products}) : super(key: key);
 
