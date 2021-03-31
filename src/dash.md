@@ -16,12 +16,15 @@ Dash is the mascot for the Dart language and the Flutter framework.
 
 ![A sample of Dashatars]({% asset dash/Dashatars.png @path %}){:width="100%"}<br>
 
+![GIF of Dash fainting created for Flutter Engage]({% asset dash/dash-fainting.gif @path %})
+
 [Dashatar]: https://dashatar-dev.web.app/#/
 
 ## How did it all start?
 
-As soon as Shams Zakhour started working as a Dart writer at Google
-in December 2013, she started advocating for a Dart mascot.
+As soon as Shams Zakhour started working as a
+Dart writer at Google in December 2013,
+she started advocating for a Dart mascot.
 After documenting Java for 14 years, she
 had observed how beloved the Java mascot,
 [Duke][], had become,
