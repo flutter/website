@@ -556,32 +556,40 @@ products offered for sale, and maintains a shopping cart for
 intended purchases. Start by defining the presentation class,
 `ShoppingListItem`:
 
+<?code-excerpt "lib/main_shoppingitem.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+import 'package:flutter/material.dart';
+
 class Product {
-  const Product({this.name});
+  const Product({required this.name});
   final String name;
 }
 
 typedef void CartChangedCallback(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
-  ShoppingListItem({this.product, this.inCart, this.onCartChanged})
-      : super(key: ObjectKey(product));
+  ShoppingListItem({
+    required this.product,
+    required this.inCart,
+    required this.onCartChanged,
+  }) : super(key: ObjectKey(product));
 
   final Product product;
   final bool inCart;
   final CartChangedCallback onCartChanged;
 
   Color _getColor(BuildContext context) {
-    // The theme depends on the BuildContext because different parts
-    // of the tree can have different themes.
+    // The theme depends on the BuildContext because different
+    // parts of the tree can have different themes.
     // The BuildContext indicates where the build is
     // taking place and therefore which theme to use.
 
-    return inCart ? Colors.black54 : Theme.of(context).primaryColor;
+    return inCart //
+        ? Colors.black54
+        : Theme.of(context).primaryColor;
   }
 
-  TextStyle _getTextStyle(BuildContext context) {
+  TextStyle? _getTextStyle(BuildContext context) {
     if (!inCart) return null;
 
     return TextStyle(
@@ -603,6 +611,22 @@ class ShoppingListItem extends StatelessWidget {
       title: Text(product.name, style: _getTextStyle(context)),
     );
   }
+}
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: ShoppingListItem(
+            product: Product(name: 'Chips'),
+            inCart: true,
+            onCartChanged: (product, inCart) {},
+          ),
+        ),
+      ),
+    ),
+  );
 }
 ```
 
@@ -635,17 +659,73 @@ built widgets and applies only the differences to the underlying
 
 Here's an example parent widget that stores mutable state:
 
+<?code-excerpt "lib/main_shoppinglist.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-false:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+import 'package:flutter/material.dart';
+
+class Product {
+  const Product({required this.name});
+  final String name;
+}
+
+typedef void CartChangedCallback(Product product, bool inCart);
+
+class ShoppingListItem extends StatelessWidget {
+  ShoppingListItem({
+    required this.product,
+    required this.inCart,
+    required this.onCartChanged,
+  }) : super(key: ObjectKey(product));
+
+  final Product product;
+  final bool inCart;
+  final CartChangedCallback onCartChanged;
+
+  Color _getColor(BuildContext context) {
+    // The theme depends on the BuildContext because different
+    // parts of the tree can have different themes.
+    // The BuildContext indicates where the build is
+    // taking place and therefore which theme to use.
+
+    return inCart //
+        ? Colors.black54
+        : Theme.of(context).primaryColor;
+  }
+
+  TextStyle? _getTextStyle(BuildContext context) {
+    if (!inCart) return null;
+
+    return TextStyle(
+      color: Colors.black54,
+      decoration: TextDecoration.lineThrough,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: () {
+        onCartChanged(product, inCart);
+      },
+      leading: CircleAvatar(
+        backgroundColor: _getColor(context),
+        child: Text(product.name[0]),
+      ),
+      title: Text(product.name, style: _getTextStyle(context)),
+    );
+  }
+}
+
 class ShoppingList extends StatefulWidget {
-  ShoppingList({Key key, this.products}) : super(key: key);
+  ShoppingList({Key? key, required this.products}) : super(key: key);
 
   final List<Product> products;
 
-  // The framework calls createState the first time a widget
-  // appears at a given location in the tree.
+  // The framework calls createState the first time
+  // a widget appears at a given location in the tree.
   // If the parent rebuilds and uses the same type of
-  // widget (with the same key), the framework re-uses the State object
-  // instead of creating a new State object.
+  // widget (with the same key), the framework re-uses
+  // the State object instead of creating a new State object.
 
   @override
   _ShoppingListState createState() => _ShoppingListState();
@@ -656,8 +736,9 @@ class _ShoppingListState extends State<ShoppingList> {
 
   void _handleCartChanged(Product product, bool inCart) {
     setState(() {
-      // When a user changes what's in the cart, you need to change
-      // _shoppingCart inside a setState call to trigger a rebuild.
+      // When a user changes what's in the cart, you need
+      // to change _shoppingCart inside a setState call to
+      // trigger a rebuild.
       // The framework then calls build, below,
       // which updates the visual appearance of the app.
 
