@@ -12,7 +12,6 @@ Firebase supports Flutter. For more information, see:
 
 * The [FlutterFire][] site
 * [Getting started with Firebase and Flutter][started]
-* [Firebase for Flutter codelab][codelab]
 * [Multi Platform Firebase Flutter][codelab2]
 * [Use Firebase to host your Flutter app on the web][article]
 
@@ -27,7 +26,6 @@ videos that you might find useful. Here are a few:
 
 [article]: {{site.medium}}/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
-[codelab]: {{site.codelabs}}/codelabs/flutter-firebase
 [codelab2]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 [FlutterFire]: https://firebase.flutter.dev
 [started]: https://firebase.flutter.dev/docs/overview
