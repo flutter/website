@@ -37,6 +37,17 @@ flutter build web --web-renderer canvaskit
 This flag is ignored when a non-browser (mobile or desktop) device
 target is selected.
 
+## Runtime configuration
+
+Web renderer can be selected at runtime before the app is loaded:
+
+* Build the app with the `auto` (default) option.
+* Set `window.flutterWebRenderer` to `"canvaskit"` or `"html"` before the app
+  is loaded (e.g. before `main.dart.js` script).
+
+Web renderer in Flutter is initialized at engine startup and can not be changed
+at runtime after that.
+
 ## Choosing which option to use
 
 Choose the `auto` option (default) if you are optimizing for download size on
