@@ -20,7 +20,7 @@
   C:\path-to-flutter-sdk\bin\dart.bat
   ```
 
-  As shown above, the command `dart` from the Flutter SDK doesn't come fisrt.
+  As shown above, the command `dart` from the Flutter SDK doesn't come first.
   Update your path to use commands from `C:\path-to-flutter-sdk\bin\` before
   commands from `C:\path-to-dart-sdk\bin\` (in this case).
   After restarting your shell for the change to take effect,
