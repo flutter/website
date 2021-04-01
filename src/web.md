@@ -52,7 +52,7 @@ experiences into these websites.
 For a glimpse into how to migrate your mobile app to web, see
 the following video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HAstl_NkXl0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/HAstl_NkXl0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <a name="web"></a>
 ## Resources

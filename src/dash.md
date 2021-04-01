@@ -87,7 +87,7 @@ manufacturers who returned the prototypes some weeks later.
 ![The first Dash prototypes]({% asset dash/dash-prototypes.jpg @path %}){:width="35%"} ![The first Dash prototypes]({% asset dash/dash-prototypes2.jpg @path %}){:width="35%"}<br>
 
 Introducing Dash at the January 2018 Dart Conference:
-<iframe width="541" height="350" src="https://www.youtube.com/embed/R5vIUjRZaZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="541" height="350" src="{{site.youtube-site}}/embed/R5vIUjRZaZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 While the manufacturing process was proceeding,
 Shams chose a name for the plushy: Dash,
@@ -134,15 +134,15 @@ Dash 2.0 and 2.1
   Mega-Dash made her
   first appearance at the [Flutter Interact][] event
   in Brooklyn, New York, on December 11, 2019.<br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
 ![Nilay and the Dash puppet]({% asset dash/NilayDashPuppet.png @path %}){:width="50%"}<br>
   A number of our YouTube videos feature the Dash puppet,
   voiced by Emily Fortuna, one of our early (and much loved)
   Flutter Developer Advocates.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% comment %}
 I haven't been able to figure out how to play the mp4 file...
 * Here is a sound recording of Dash's chirp, by Kathy Walrath,
@@ -156,5 +156,5 @@ I haven't been able to figure out how to play the mp4 file...
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/
 
 {% comment %}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sPW7nDBqt8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/sPW7nDBqt8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% endcomment %}

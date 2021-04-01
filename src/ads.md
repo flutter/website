@@ -19,7 +19,7 @@ The following video tutorial,
 [Monetizing apps with Flutter][],
 shows how to get started with Ads:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/m0d_pbgeeG8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/m0d_pbgeeG8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 
 The following resources can help you get started:
 
@@ -41,5 +41,5 @@ The following resources can help you get started:
 [Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [detailed implementation guide]: https://developers.google.com/admob/flutter
 [file an issue]: {{site.github}}/googleads/googleads-mobile-flutter/issues
-[Monetizing apps with Flutter]: https://www.youtube.com/watch?v=m0d_pbgeeG8&feature=youtu.be
+[Monetizing apps with Flutter]: {{site.youtube-site}}/watch?v=m0d_pbgeeG8&feature=youtu.be
 [plugin]: {{site.pub-pkg}}/google_mobile_ads
