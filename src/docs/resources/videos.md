@@ -46,9 +46,8 @@ Watch recordings of the sessions offered by the Flutter community:
 
 ### Decoding Flutter
 
-Also known as "What the Flutter?" This series
-focuses on tips, tricks, best practices, and
-general advice on getting the most out of Flutter.
+This series focuses on tips, tricks, best practices,
+and general advice on getting the most out of Flutter.
 In the comments section for this series,
 you can submit suggestions future episodes.
 
@@ -92,8 +91,9 @@ each of these videos highlights a Flutter package.
 
 ### The Boring Flutter show
 
-This series features Flutter programmers live coding in real time.
-Coding mistakes, solutions, and snazzy intro music included.
+This series features Flutter programmers coding,
+unscripted and in real time. Mistakes, solutions
+(some of them correct), and snazzy intro music included.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Introducing the Boring Flutter show<br>
