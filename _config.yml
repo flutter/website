@@ -43,6 +43,7 @@ codelabs: https://codelabs.developers.google.com
 groups: https://groups.google.com
 firebase: https://firebase.google.com
 flutterfire: https://firebase.flutter.dev
+youtube-site: https://youtube.com
 
 defaults:
 - scope:
