@@ -38,7 +38,22 @@ previous behavior of `enterText`, since usually the selection
 should not be invalid. **Consider changing the expected values of 
 your tests to adopt the `enterText` change.**
 
-If your tests have to relay on setting the selection to invalid,
+Common test failures this change may introduce includes:
+- Golden test failures: 
+
+  The caret appears at the end of the text, as opposed to before
+  the text prior to the change.
+  
+- Different `TextEditingValue.selection` after calling `enterText`:
+
+  The text field's `TextEditingValue` now has a collapsed 
+  selection with a non-negative offset, as opposed to 
+  `TextSelection.collapsed(offset: -1)` prior to the change.
+  You may see `expect(controller.value.selection.baseOffset, -1);`
+  failing after `enterText` calls.
+
+
+If your tests have to rely on setting the selection to invalid,
 the previous behavior can be achieved using`updateEditingValue`:  
 
 ### `TestTextInput.enterText`
