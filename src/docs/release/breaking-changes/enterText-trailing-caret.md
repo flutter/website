@@ -96,7 +96,7 @@ await tester.idle();
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 2.1.0-13.0.pre<br>
 In stable release: not yet
 
 ## References
