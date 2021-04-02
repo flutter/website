@@ -49,7 +49,8 @@ Common test failures this change may introduce includes:
   The text field's `TextEditingValue` now has a collapsed 
   selection with a non-negative offset, as opposed to 
   `TextSelection.collapsed(offset: -1)` prior to the change.
-  You may see `expect(controller.value.selection.baseOffset, -1);`
+  For instance, you may see 
+  `expect(controller.value.selection.baseOffset, -1);`
   failing after `enterText` calls.
 
 
