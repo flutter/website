@@ -11,7 +11,7 @@ caret to the end of the input text.
 ## Context
 
 The caret indicates the insertion point within the current text in an 
-active input field. Typically when a new character is entered, the 
+active input field. Typically, when a new character is entered, the 
 caret stays immediately after it. In Flutter the caret position is 
 represented by a collapsed selection. When the selection is invalid, 
 usually the user won't be able to modify or add text until they 
@@ -124,4 +124,3 @@ Relevant PRs:
 
 [Issue 79494]: {{site.github}}/flutter/flutter/issues/79494
 [enterText to move the caret to the end]: {{site.github}}/flutter/flutter/pull/79506
-
