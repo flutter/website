@@ -44,11 +44,11 @@ The `title` of the screen and a `message`.
 
 To pass both pieces of data, create a class that stores this information.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ScreenArguments)"?>
 ```dart
 // You can pass any object to the arguments parameter.
-// In this example, create a class that contains a customizable
-// title and message.
+// In this example, create a class that contains both
+// a customizable title and message.
 class ScreenArguments {
   final String title;
   final String message;
@@ -65,17 +65,19 @@ To access the `ScreenArguments`,
 use the [`ModalRoute.of()`][] method.
 This method returns the current route with the arguments.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ExtractArgumentsScreen)"?>
 ```dart
-// A widget that extracts the necessary arguments from the ModalRoute.
+// A Widget that extracts the necessary arguments from
+// the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
   static const routeName = '/extractArguments';
 
   @override
   Widget build(BuildContext context) {
-    // Extract the arguments from the current ModalRoute settings and cast
-    // them as ScreenArguments.
-    final ScreenArguments args = ModalRoute.of(context).settings.arguments;
+    // Extract the arguments from the current ModalRoute
+    // settings and cast them as ScreenArguments.
+    final ScreenArguments args =
+        ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
       appBar: AppBar(
@@ -94,13 +96,16 @@ class ExtractArgumentsScreen extends StatelessWidget {
 Next, add an entry to the `routes` provided to the `MaterialApp` widget. The
 `routes` define which widget should be created based on the name of the route.
 
-<!-- skip -->
+{% comment %}
+RegEx removes the return statement and adds the closing parenthesis at the end
+{% endcomment %}
+<?code-excerpt "lib/main.dart (Routes)" replace="/return //g;/$/\n)/g"?>
 ```dart
 MaterialApp(
   routes: {
     ExtractArgumentsScreen.routeName: (context) => ExtractArgumentsScreen(),
   },
-);
+)
 ```
 
 
@@ -112,15 +117,18 @@ Provide the arguments to the route via the `arguments` property. The
 `ExtractArgumentsScreen` extracts the `title` and `message` from these
 arguments.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (PushNamed)"?>
 ```dart
-// A button that navigates to a named route. The named route
-// extracts the arguments by itself.
+// A button that navigates to a named route.
+// The named route extracts the arguments
+// by itself.
 ElevatedButton(
   child: Text("Navigate to screen that extracts arguments"),
   onPressed: () {
-    // When the user taps the button, navigate to a named route
-    // and provide the arguments as an optional parameter.
+    // When the user taps the button,
+    // navigate to a named route and
+    // provide the arguments as an optional
+    // parameter.
     Navigator.pushNamed(
       context,
       ExtractArgumentsScreen.routeName,
@@ -142,20 +150,26 @@ function and pass them to a widget.
 The `onGenerateRoute()` function creates the correct route based on the given
 `RouteSettings`.
 
-<!-- skip -->
+{% comment %}
+RegEx removes the return statement, removed "routes" property and adds the closing parenthesis at the end
+{% endcomment %}
+<?code-excerpt "lib/main.dart (OnGenerateRoute)" replace="/^return //g;/  routes:((.)*\n){3}//g;/$/\n)/g"?>
 ```dart
 MaterialApp(
-  // Provide a function to handle named routes. Use this function to
-  // identify the named route being pushed, and create the correct
-  // screen.
+  // Provide a function to handle named routes.
+  // Use this function to identify the named
+  // route being pushed, and create the correct
+  // Screen.
   onGenerateRoute: (settings) {
     // If you push the PassArguments route
     if (settings.name == PassArgumentsScreen.routeName) {
-      // Cast the arguments to the correct type: ScreenArguments.
-      final ScreenArguments args = settings.arguments;
+      // Cast the arguments to the correct
+      // type: ScreenArguments.
+      final ScreenArguments args = settings.arguments as ScreenArguments;
 
-      // Then, extract the required data from the arguments and
-      // pass the data to the correct screen.
+      // Then, extract the required data from
+      // the arguments and pass the data to the
+      // correct screen.
       return MaterialPageRoute(
         builder: (context) {
           return PassArgumentsScreen(
@@ -165,8 +179,17 @@ MaterialApp(
         },
       );
     }
+    // The code only supports
+    // PassArgumentsScreen.routeName right now.
+    // Other values need to be implemented if we
+    // add them. The assertion here will help remind
+    // us of that higher up in the call stack, since
+    // this assertion would otherwise fire somewhere
+    // in the framework.
+    assert(false, 'Need to implement ${settings.name}');
+    return null;
   },
-);
+)
 ```
 
 ## Interactive example
@@ -181,45 +204,45 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        // Provide a function to handle named routes.
-        // Use this function to identify the named
-        // route being pushed, and create the correct
-        // Screen.
-        onGenerateRoute: (settings) {
-          // If you push the PassArguments route
-          if (settings.name == PassArgumentsScreen.routeName) {
-            // Cast the arguments to the correct
-            // type: ScreenArguments.
-            final ScreenArguments args = settings.arguments as ScreenArguments;
+      routes: {
+        ExtractArgumentsScreen.routeName: (context) => ExtractArgumentsScreen(),
+      },
+      // Provide a function to handle named routes.
+      // Use this function to identify the named
+      // route being pushed, and create the correct
+      // Screen.
+      onGenerateRoute: (settings) {
+        // If you push the PassArguments route
+        if (settings.name == PassArgumentsScreen.routeName) {
+          // Cast the arguments to the correct
+          // type: ScreenArguments.
+          final ScreenArguments args = settings.arguments as ScreenArguments;
 
-            // Then, extract the required data from
-            // the arguments and pass the data to the
-            // correct screen.
-            return MaterialPageRoute(
-              builder: (context) {
-                return PassArgumentsScreen(
-                  title: args.title,
-                  message: args.message,
-                );
-              },
-            );
-          }
-          // The code only supports
-          // PassArgumentsScreen.routeName right now.
-          // Other values need to be implemented if we
-          // add them. The assertion here will help remind
-          // us of that higher up in the call stack, since
-          // this assertion would otherwise fire somewhere
-          // in the framework.
-          assert(false, 'Need to implement ${settings.name}');
-          return null;
-        },
-        title: 'Navigation with Arguments',
-        home: HomeScreen(),
-        routes: {
-          ExtractArgumentsScreen.routeName: (context) =>
-              ExtractArgumentsScreen(),
-        });
+          // Then, extract the required data from
+          // the arguments and pass the data to the
+          // correct screen.
+          return MaterialPageRoute(
+            builder: (context) {
+              return PassArgumentsScreen(
+                title: args.title,
+                message: args.message,
+              );
+            },
+          );
+        }
+        // The code only supports
+        // PassArgumentsScreen.routeName right now.
+        // Other values need to be implemented if we
+        // add them. The assertion here will help remind
+        // us of that higher up in the call stack, since
+        // this assertion would otherwise fire somewhere
+        // in the framework.
+        assert(false, 'Need to implement ${settings.name}');
+        return null;
+      },
+      title: 'Navigation with Arguments',
+      home: HomeScreen(),
+    );
   }
 }
 
