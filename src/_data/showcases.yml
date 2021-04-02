@@ -74,15 +74,17 @@
 
 # --- not featured ---
 
-- name: The New York Times
+- name: Ebay
   description: >
-    Flutter helps bring the popular Ken Ken puzzle to life on Android, iOS,
-    Mac, Windows, and the web.
-  logo_src: showcase/cards/tnyt-logo.png
+    The eBay Motors app is a powerful tool for browsing,
+    buying, and selling vehicles directly from consumers’ phones.
+  logo_src: showcase/cards/ebay-logo.png
+  learn_more_cta: Learn more
+  learn_more_link: https://pages.ebay.com/motors/motorsapp
+  app_store_link: https://apps.apple.com/us/app/ebay-motors/id1456156090
+  play_store_link: https://play.google.com/store/apps/details?id=com.ebay.motorsapp
   logo_has_name: true
-  learn_more_cta: Learn More
-  learn_more_link: https://youtu.be/LoLqSbV1ELU?t=3290
-  card_image: showcase/cards/tnyt-top@.jpg
+  card_image: showcase/cards/ebay-top@.jpg
 
 - name: Reflectly
   description: >
@@ -297,18 +299,6 @@
   learn_more_link: https://www.flutterx.com/google-greentea
   card_image: showcase/cards/green_tea-top@.jpg
 
-- name: Ebay
-  description: >
-    The eBay Motors app is a powerful tool for browsing,
-    buying, and selling vehicles directly from consumers’ phones.
-  logo_src: showcase/cards/ebay-logo.png
-  learn_more_cta: Learn more
-  learn_more_link: https://pages.ebay.com/motors/motorsapp
-  app_store_link: https://apps.apple.com/us/app/ebay-motors/id1456156090
-  play_store_link: https://play.google.com/store/apps/details?id=com.ebay.motorsapp
-  logo_has_name: true
-  card_image: showcase/cards/ebay-top@.jpg
-
 - name: MGM Resorts
   description: >
     MGM Resorts apps (iOS & Android) are built on Flutter.
@@ -321,3 +311,13 @@
   play_store_link: https://play.google.com/store/apps/details?id=com.mgmresorts.mgmresorts&hl=en_US
   logo_has_name: true
   card_image: showcase/cards/mgm-top@.png
+
+- name: The New York Times
+  description: >
+    Flutter helps bring the popular Ken Ken puzzle to life on Android, iOS,
+    Mac, Windows, and the web.
+  logo_src: showcase/cards/tnyt-logo.png
+  logo_has_name: true
+  learn_more_cta: Learn More
+  learn_more_link: https://youtu.be/LoLqSbV1ELU?t=3290
+  card_image: showcase/cards/tnyt-top@.jpg
