@@ -58,8 +58,8 @@ To override the web renderer at runtime:
   <script src="main.dart.js" type="application/javascript"></script>
 ```
 
-Web renderer in Flutter is initialized at engine startup and can not be changed
-at runtime after that.
+The web renderer can't be changed after the Flutter engine startup process
+begins in `main.dart.js`.
 
 ## Choosing which option to use
 
