@@ -2,8 +2,6 @@
 
 ## Create the app {#create-app}
 
-{% include_relative _web-app.md  %}
-
   1. Invoke **View > Command Palette**.
   1. Type "flutter", and select the **Flutter: New Application Project**.
   1. Enter a project name, such as `myapp`, and press **Enter**.
