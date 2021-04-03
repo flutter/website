@@ -21,43 +21,48 @@ body_class: showcase
                     {% capture image_src_600 %}{% asset '{{ case.card_image | replace: "@", "-600" }}' @path %}{% endcapture %}
                     {% assign image_src_full_size = image_src_600 %}
 
+                    {% unless case.no_1200_image %}
                     {% if forloop.index0 < 2 %}
-                        {% capture image_src_1200 %}{% asset '{{ case.card_image | replace: "@", "-1200" }}' @path %}{% endcapture %}
-                        {% assign image_src_full_size = image_src_1200 %}
+                      {% capture image_src_1200 %}{% asset '{{ case.card_image | replace: "@", "-1200" }}' @path %}{% endcapture %}
+                      {% assign image_src_full_size = image_src_1200 %}
                     {% endif %}
+                    {% endunless %}
 
                     <img class="card-img-top" src="{{ image_src_full_size }}" aria-hidden="true"
                          srcset="
                             {{ image_src_400 }} 400w,
                             {{ image_src_600}} 600w
+                            {% unless case.no_1200_image %}
                             {% if forloop.index0 < 2 %}
                               , {{ image_src_1200 }} 1200w
-                            {% endif %}">
+                            {% endif %}{% endunless %}">
                     <div class="card-body">
-                        <div class="card-title">
-                            {% if case.logo_src %}
-                                {% asset '{{ case.logo_src }}' class='logo' alt="{{ case.name }}" %}
-                                {% unless case.logo_has_name %} <span class="name" aria-hidden="true">{{ case.name }}</span>{% endunless -%}
-                            {% endif %}
-                        </div>
-                        <p class="card-text">{{ case.description | truncate: 160 }}</p>
+                      <div class="card-title">
+                        {% if case.logo_src %}
+                          {% asset '{{ case.logo_src }}' class='logo' alt="{{ case.name }}" %}
+                          {% unless case.logo_has_name %} <span class="name" aria-hidden="true">{{ case.name }}</span>{% endunless -%}
+                        {% endif %}
+                      </div>
+                      <p class="card-text">{{ case.description | truncate: 160 }}</p>
                     </div>
                     {% if case.play_store_link or case.app_store_link or case.learn_more_link or case.card_video %}
-                        <div class="card-footer card-footer--transparent card-footer--links">
-                            {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}" class="link" target="_blank" rel="noopener">{{ case.learn_more_cta }}<i class="fas fa-external-link-alt"></i></a>{% endif %}
-                            {% if case.card_video %}<a href="#" class="video-link" data-video="{{ case.card_video }}" data-toggle="modal" data-target="#videoModal"><i class="fas fa-play-circle"></i>&nbsp;Watch video</a>{% endif %}
-                            {% if case.play_store_link or case.app_store_link %}
-                                <span class="dropdown">
-                                    <a href="#" class="dropdown-toggle" id="featuredShowcasesDropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Download
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="featuredShowcasesDropdownMenuButton{{ forloop.index }}">
-                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank" rel="noopener">Android</a>{% endif %}
-                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank" rel="noopener">iOS</a>{% endif %}
-                                    </div>
-                                </span>
-                            {% endif %}
-                        </div>
+                      <div class="card-footer card-footer--transparent card-footer--links">
+                        {% if case.learn_more_link %}
+                          <a href="{{ case.learn_more_link }}" class="link" target="_blank" rel="noopener">{{ case.learn_more_cta }}<i class="fas fa-external-link-alt"></i></a>
+                        {% elsif case.card_video %}
+                          <a href="#" class="video-link" data-video="{{ case.card_video }}" data-toggle="modal" data-target="#videoModal"><i class="fas fa-play-circle"></i>&nbsp;Watch video</a>
+                        {% elsif case.play_store_link or case.app_store_link %}
+                          <span class="dropdown">
+                            <a href="#" class="dropdown-toggle" id="featuredShowcasesDropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Download
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="featuredShowcasesDropdownMenuButton{{ forloop.index }}">
+                              {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank" rel="noopener">Android</a>{% endif %}
+                              {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank" rel="noopener">iOS</a>{% endif %}
+                            </div>
+                          </span>
+                        {% endif %}
+                      </div>
                     {% endif %}
                 </div>
             </div>
