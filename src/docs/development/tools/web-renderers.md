@@ -41,9 +41,22 @@ target is selected.
 
 To override the web renderer at runtime:
 
-* Build the app with the `auto` (default) option.
-* Set `window.flutterWebRenderer` to `"canvaskit"` or `"html"` before the app
-  is loaded (e.g. before `main.dart.js` script).
+* Build the app with the `auto` option.
+* Insert a `<script>` tag  in `web/index.html` file before the `main.dart.js`
+  script.
+* Set `window.flutterWebRenderer` to `"canvaskit"` or `"html"`:
+
+```html
+  <script type="text/javascript">
+    let useHtml = // ...
+    if(useHtml) {
+      window.flutterWebRenderer = "html";
+    } else {
+      window.flutterWebRenderer = "canvaskit";
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+```
 
 Web renderer in Flutter is initialized at engine startup and can not be changed
 at runtime after that.
