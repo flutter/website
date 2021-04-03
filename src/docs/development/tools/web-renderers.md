@@ -39,7 +39,7 @@ target is selected.
 
 ## Runtime configuration
 
-Web renderer can be selected at runtime before the app is loaded:
+To override the web renderer at runtime:
 
 * Build the app with the `auto` (default) option.
 * Set `window.flutterWebRenderer` to `"canvaskit"` or `"html"` before the app
