@@ -39,7 +39,7 @@ using the following metrics:
 The Flutter Ecosystem Committee (FEC) is comprised of Flutter
 team members and Flutter community members spread
 across its ecosystem. 
-One of the their jobs is to decide when a package
+One of their jobs is to decide when a package
 has met the quality bar to become a Flutter Favorite.
 
 The current committee members
