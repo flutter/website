@@ -92,6 +92,9 @@ The `initialRoute` property defines which route the app should start with.
 The `routes` property defines the available named routes and the widgets
 to build when navigating to those routes.
 
+{% comment %}
+RegEx removes the trailing comma
+{% endcomment %}
 <?code-excerpt "lib/main.dart (MaterialApp)" replace="/,$//g"?>
 ```dart
 MaterialApp(
@@ -122,6 +125,9 @@ This tells Flutter to build the widget defined in the
 In the `build()` method of the `FirstScreen` widget, update the `onPressed()`
 callback:
 
+{% comment %}
+RegEx removes the trailing comma
+{% endcomment %}
 <?code-excerpt "lib/main.dart (PushNamed)" replace="/,$//g"?>
 ```dart
 // Within the `FirstScreen` widget
@@ -136,6 +142,9 @@ onPressed: () {
 To navigate back to the first screen, use the
 [`Navigator.pop()`][] function.
 
+{% comment %}
+RegEx removes the trailing comma
+{% endcomment %}
 <?code-excerpt "lib/main.dart (Pop)" replace="/,$//g"?>
 ```dart
 // Within the SecondScreen widget
