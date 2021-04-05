@@ -49,7 +49,7 @@ use something you already know, for example `id = 1`.
 ```dart
 Future<Response> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
-    'https://jsonplaceholder.typicode.com/albums/$id',
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -110,7 +110,7 @@ method to notify our screen that the data has been deleted.
 ```dart
 Future<Album> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
-    'https://jsonplaceholder.typicode.com/albums/$id',
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -164,7 +164,7 @@ Future<Album> fetchAlbum() async {
 
 Future<Album> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
-    'https://jsonplaceholder.typicode.com/albums/$id',
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
