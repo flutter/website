@@ -6,9 +6,9 @@ description: Learn how to use the DevTools memory view.
 ## What is it?
 
 Allocated Dart objects created using a class constructor (for
-example, by using `new MyClass()` or `MyClass()`) live in a partion
-of memory called the heap that is managed by the Dart VM (virtual
-machine). 
+example, by using `new MyClass()` or `MyClass()`) live in a
+portion of memory called the heap. The memory in the heap is
+managed by the Dart VM (virtual machine).
 
 ## DevTools memory page
 
@@ -149,19 +149,18 @@ This legend shows the symbol for each DevTools event and its meaning
 <dt markdown="1">**User and Flutter Event**</dt>
 <dd>Displayed as a triangle in the event pane.  The dark magenta
     triangle "Multiple Flutter or User Events"
-    
-    ![Aggregate Events]({% asset tools/devtools/memory_multi_events.png @path %}){:width="100%"}
-
-    identifies more than one event was received at this timestamp.
+</dd>
+![Aggregate Events]({% asset tools/devtools/memory_multi_events.png @path %}){:width="100%"}
+<dd>identifies more than one event was received at this timestamp.
     The lighter magenta triangle "One Flutter or User Event" 
-
+</dd>
     ![Single Events]({% asset tools/devtools/memory_one_event.png @path %}){:width="100%"}
-
-    indicates only one event was received at this timestamp. To
+<dd>indicates only one event was received at this timestamp. To
     view the events clicking on the triangle will display a hover
     card and expanding the events at the bottom of the hovercard
     will display all events for that timestamp.
 </dd>
+</dl>
 
 Displayed below the events pane is the [memory chart](#memory-overview-chart)
 and the [Android memory chart](#android-chart). The android-memory chart is
