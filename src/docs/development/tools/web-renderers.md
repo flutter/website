@@ -37,6 +37,30 @@ flutter build web --web-renderer canvaskit
 This flag is ignored when a non-browser (mobile or desktop) device
 target is selected.
 
+## Runtime configuration
+
+To override the web renderer at runtime:
+
+* Build the app with the `auto` option.
+* Insert a `<script>` tag  in `web/index.html` file before the `main.dart.js`
+  script.
+* Set `window.flutterWebRenderer` to `"canvaskit"` or `"html"`:
+
+```html
+  <script type="text/javascript">
+    let useHtml = // ...
+    if(useHtml) {
+      window.flutterWebRenderer = "html";
+    } else {
+      window.flutterWebRenderer = "canvaskit";
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+```
+
+The web renderer can't be changed after the Flutter engine startup process
+begins in `main.dart.js`.
+
 ## Choosing which option to use
 
 Choose the `auto` option (default) if you are optimizing for download size on
