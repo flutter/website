@@ -12,8 +12,6 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-{% include null-safe-recipe.md %}
-
 Modern chat apps display indicators when other users
 are actively typing responses. These indicators help
 prevent rapid and conflicting responses between you

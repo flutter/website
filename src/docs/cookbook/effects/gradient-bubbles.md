@@ -12,8 +12,6 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-{% include null-safe-recipe.md %}
-
 Traditional chat apps display messages in chat bubbles
 with solid color backgrounds. Modern chat apps display
 chat bubbles with gradients that are based 
