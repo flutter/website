@@ -12,8 +12,6 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-{% include null-safe-recipe.md %}
-
 A Floating Action Button (FAB) is a round button that
 floats near the bottom right of a content area.
 This button represents the primary action for the

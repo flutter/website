@@ -12,8 +12,6 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-{% include null-safe-recipe.md %}
-
 Loading times are unavoidable in application development.
 From a user experience (UX) perspective,
 the most important thing is to show your users 

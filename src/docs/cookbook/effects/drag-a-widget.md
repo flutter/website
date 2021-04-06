@@ -12,8 +12,6 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-{% include null-safe-recipe.md %}
-
 Drag and drop is a common mobile app interaction.
 As the user long presses (sometimes called _touch & hold_)
 on a widget, another widget appears beneath the

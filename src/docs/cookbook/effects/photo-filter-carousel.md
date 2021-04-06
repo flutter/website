@@ -12,8 +12,6 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-{% include null-safe-recipe.md %}
-
 Everybody knows that a photo looks better with a filter.
 In this recipe, you build a scrollable,
 filter selection carousel.

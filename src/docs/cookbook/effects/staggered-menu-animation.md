@@ -12,8 +12,6 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-{% include null-safe-recipe.md %}
-
 A single app screen might contain multiple animations.
 Playing all of the animations at the same time can be
 overwhelming. Playing the animations one after the other
