@@ -2491,7 +2491,7 @@ and common widget properties.
 [`Axis`]: {{site.api}}/flutter/painting/Axis-class.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[color palette]: {{site.material}}/guidelines/style/color.html
+[color palette]: {{site.material}}/design/color
 [colors]: {{site.api}}/flutter/material/Colors-class.html
 [`Colors`]: {{site.api}}/flutter/material/Colors-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
