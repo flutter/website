@@ -10,7 +10,7 @@ js:
     url: /assets/codelabs/js/animations_examples.js
 ---
 
-<?code-excerpt path-base="animation/implicit"?>
+<?code-excerpt path-base="../null_safety_examples/animation/implicit"?>
 
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
@@ -59,7 +59,6 @@ consists of a [Material App] home screen containing:
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla AnimatedOpacity https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5 -->
 {% include implicit-animations/fade-in-starter-code.md %}
 
 {{site.alert.important}}
@@ -74,7 +73,7 @@ Click the **Run** button to run the example:
   This section contains a list of steps you can use to add an
   implicit animation to the
   [fade-in starter code]. After the steps, you can also run the
-  [fade-in complete] code with the changes already made.
+  [fade-in complete] code with the the changes already made.
   The steps outline how to use the `AnimatedOpacity`
   widget to add the following animation feature:
 
@@ -203,7 +202,6 @@ you can start with 2 seconds:
 Here's the example with the completed changes you've made&mdash;run this
 example and click the **Show details** button to trigger the animation.
 
-<!-- AnimatedOpacity https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
 {% include implicit-animations/fade-in-complete.md %}
 
 ### Putting it all together
@@ -243,7 +241,6 @@ different types (`double` and `Color`).
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla Animated Container: https://gist.github.com/8501583cb789504d75317a5ba1ca6930 -->
 {% include implicit-animations/shape-shifting-starter-code.md %}
 
 
@@ -371,7 +368,6 @@ and click the **Change** button to trigger the animation. Notice that each time
 you click the **Change** button, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.
 
-<!-- Animated Container: https://gist.github.com/ddfbc68ec9dc28a48703d29248f5366f -->
 {% include implicit-animations/shape-shifting-complete.md %}
 
 ### Using animation curves

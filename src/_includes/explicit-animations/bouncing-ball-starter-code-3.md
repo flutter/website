@@ -1,55 +1,58 @@
-```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px
+```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
 
 class BouncingBallDemo extends StatefulWidget {
+  @override
   _BouncingBallDemoState createState() => _BouncingBallDemoState();
 }
 
 class _BouncingBallDemoState extends State<BouncingBallDemo> {
-  double marginTop;
-  double start;
-  double end;
-  double increment;
+  late double marginTop;
+  late double start;
+  late double end;
+  late double increment;
 
   void bounce(Timer t) async {
-    if (marginTop < end ) {
+    if (marginTop < end) {
       setState(() {
         marginTop += increment;
       });
     } else {
-        t.cancel();
+      t.cancel();
     }
   }
 
   void interpolate(double start, double end) {
-      setState((){
-        increment = (end - start) / 60;
-      });
+    setState(() {
+      increment = (end - start) / 60;
+    });
   }
 
+  @override
   void initState() {
     super.initState();
     marginTop = 0;
     start = 0;
     end = 100;
     interpolate(start, end);
-    new Timer.periodic(const Duration(milliseconds: 16), bounce);
+    Timer.periodic(const Duration(milliseconds: 16), bounce);
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top:marginTop),
-        child: Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.green,
+      margin: EdgeInsets.only(top: marginTop),
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.green,
+        ),
+        width: 40.0,
+        height: 40.0,
       ),
-      width: 40.0,
-      height: 40.0,
-    ));
+    );
   }
 }
 

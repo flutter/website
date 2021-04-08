@@ -10,7 +10,7 @@ js:
     url: /assets/codelabs/js/animations_examples.js
 ---
 
-<?code-excerpt path-base="animation/explicit"?>
+<?code-excerpt path-base="../null_safety_examples/animation/explicit"?>
 
 Welcome to the explicit animations codelab,
 where you learn how to create animations
@@ -412,13 +412,13 @@ that you are animating:
 ```diff
 --- explicit1/lib/main.dart
 +++ explicit2/lib/main.dart
-@@ -6,7 +6,7 @@
+@@ -7,7 +7,7 @@
    _BouncingBallDemoState createState() => _BouncingBallDemoState();
  }
 
 -class _BouncingBallDemoState extends State<BouncingBallDemo> {
 +class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
-
+   @override
    void initState() {
      super.initState();
 ```
@@ -449,23 +449,25 @@ and call the `AnimationController.dispose()` within the
 ```diff
 --- explicit2/lib/main.dart
 +++ explicit3/lib/main.dart
-@@ -7,9 +7,12 @@
+@@ -8,9 +8,12 @@
  }
 
  class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
-+  AnimationController controller;
-
++  late AnimationController controller;
++
+   @override
    void initState() {
      super.initState();
 +    controller = AnimationController();
-+
    }
 
    @override
-@@ -26,6 +29,10 @@
-         )
-       );
+@@ -27,6 +30,12 @@
+       ),
+     );
    }
++
++  @override
 +  void dispose() {
 +    controller.dispose();
 +    super.dispose();
@@ -499,8 +501,8 @@ and `upperBound` to the `AnimationController` constructor:
 ```diff
 --- explicit3/lib/main.dart
 +++ explicit4/lib/main.dart
-@@ -11,7 +11,12 @@
-
+@@ -13,7 +13,12 @@
+   @override
    void initState() {
      super.initState();
 -    controller = AnimationController();
@@ -510,8 +512,9 @@ and `upperBound` to the `AnimationController` constructor:
 +      lowerBound: 0,
 +      upperBound: 100,
 +    );
-
    }
+
+   @override
 ```
 The `vsync` parameter makes use of the
 `SingleTickerProviderStateMixin` you added in [step 1][]:
@@ -549,14 +552,14 @@ changes its value:
 ```diff
 --- explicit4/lib/main.dart
 +++ explicit5/lib/main.dart
-@@ -18,12 +18,16 @@
+@@ -19,12 +19,16 @@
+       lowerBound: 0,
        upperBound: 100,
      );
-
-+    controller.addListener(() {
-+      setState((){});
-+    });
 +
++    controller.addListener(() {
++      setState(() {});
++    });
    }
 
    @override
@@ -564,9 +567,9 @@ changes its value:
      return Container(
 -      margin: EdgeInsets.only(top: 0),
 +      margin: EdgeInsets.only(top: controller.value),
-         child: Container(
-           decoration: BoxDecoration(
-             shape: BoxShape.circle,
+       child: Container(
+         decoration: BoxDecoration(
+           shape: BoxShape.circle,
 ```
 
 `AnimationController` provides an `addListener()` method
@@ -588,10 +591,11 @@ it repeats indefinitely, call `AnimationController.repeat()`:
 ```diff
 --- explicit5/lib/main.dart
 +++ explicit6/lib/main.dart
-@@ -22,6 +22,7 @@
-       setState((){});
+@@ -23,6 +23,8 @@
+     controller.addListener(() {
+       setState(() {});
      });
-
++
 +    controller.repeat(reverse: true);
    }
 

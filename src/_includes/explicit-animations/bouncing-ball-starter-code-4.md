@@ -1,15 +1,18 @@
-```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px
+```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
 
 class BouncingBallDemo extends StatefulWidget {
+  @override
   _BouncingBallDemoState createState() => _BouncingBallDemoState();
 }
 
-class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
-  AnimationController controller;
+class _BouncingBallDemoState extends State<BouncingBallDemo>
+    with TickerProviderStateMixin {
+  late AnimationController controller;
 
+  @override
   void initState() {
     super.initState();
     controller = AnimationController(
@@ -20,7 +23,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProvider
     );
 
     controller.addListener(() {
-      setState((){});
+      setState(() {});
     });
 
     controller.repeat(reverse: true);
@@ -30,15 +33,15 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProvider
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: controller.value),
-        child: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.green,
-          ),
-          width: 40.0,
-          height: 40.0,
-        )
-      );
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.green,
+        ),
+        width: 40.0,
+        height: 40.0,
+      ),
+    );
   }
 }
 

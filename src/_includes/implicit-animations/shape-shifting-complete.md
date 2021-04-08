@@ -1,4 +1,4 @@
-```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px:ga_id-shape_shifting_complete
+```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px:ga_id-shape_shifting_complete:null_safety-true
 {$ begin main.dart $}
 import 'dart:math';
 
@@ -23,9 +23,9 @@ class AnimatedContainerDemo extends StatefulWidget {
 }
 
 class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
-  Color color;
-  double borderRadius;
-  double margin;
+  late Color color;
+  late double borderRadius;
+  late double margin;
 
   @override
   void initState() {

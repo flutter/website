@@ -1,4 +1,4 @@
-```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px:ga_id-fade_in_starter_code
+```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-532px:ga_id-fade_in_starter_code:null_safety-true
 {$ begin main.dart $}
 import 'package:flutter/material.dart';
 
@@ -14,11 +14,12 @@ class _FadeInDemoState extends State<FadeInDemo> {
     return Column(children: <Widget>[
       Image.network(owl_url),
       TextButton(
-          child: Text(
-            'Show details',
-            style: TextStyle(color: Colors.blueAccent),
-          ),
-          onPressed: () => null),
+        child: Text(
+          'Show details',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
+        onPressed: () => null,
+      ),
       Container(
         child: Column(
           children: <Widget>[
