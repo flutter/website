@@ -1234,7 +1234,7 @@ The following resources might help when writing layout code.
 [`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment-class.html
 [Material card]: {{site.material}}/design/components/cards.html
 [Material Design]: {{site.material}}/design
-[Material Design palette]: {{site.material}}/guidelines/style/color.html
+[Material Design palette]: {{site.material}}/design/color
 [Material library]: {{api}}/material/material-library.html
 [pubspec file]: {{null_safety_examples}}/layout/pavlova/pubspec.yaml
 [`pubspec.yaml` file]: {{null_safety_examples}}/layout/row_column/pubspec.yaml
