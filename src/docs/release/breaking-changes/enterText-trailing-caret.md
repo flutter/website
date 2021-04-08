@@ -1,12 +1,12 @@
 ---
 title: Change the enterText method to move the caret to the end of the input text
-description: `WidgetTester.enterText` and `TestTextInput.enterText` now move the caret to the end of the input text.
+description: WidgetTester.enterText and TestTextInput.enterText now move the caret to the end of the input text.
 ---
 
 ## Summary
 
-`WidgetTester.enterText` and `TestTextInput.enterText` now move the
-caret to the end of the input text.
+The `WidgetTester.enterText` and `TestTextInput.enterText` methods
+now move the caret to the end of the input text.
 
 ## Context
 
