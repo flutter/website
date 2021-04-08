@@ -155,7 +155,7 @@ Before the change:
 <!-- skip -->
 ```dart
 class A<T> {
-  T i;
+  T? i;
 }
 ```
 
@@ -163,8 +163,8 @@ After the change:
 <!-- skip -->
 ```dart
 class A<T, V> {
-  T i;
-  V v;
+  T? i;
+  V? v;
 }
 ```
 
@@ -281,7 +281,7 @@ For example, either of the following solutions work:
 <!-- skip -->
 ```dart
 const bar = foo;    // Convert foo to a const...
-get bar => foo;     // ...or provide a getter.
+int get bar => foo;     // ...or provide a getter.
 ```
 
 For more information, read about the [differences
