@@ -43,16 +43,10 @@ then do the following:
  1. [Create a basic "Hello World" Flutter app][hello-world].
  2. Change the app bar title and the app title as follows:
 
-    <?code-excerpt "{codelabs/startup_namer/step1_base,../null_safety_examples/layout/base}/lib/main.dart"?>
+    <?code-excerpt "../null_safety_examples/layout/base/lib/{main_starter,main}.dart"?>
     ```diff
-    --- codelabs/startup_namer/step1_base/lib/main.dart
+    --- ../null_safety_examples/layout/base/lib/main_starter.dart
     +++ ../null_safety_examples/layout/base/lib/main.dart
-    @@ -1,4 +1,4 @@
-    -// Copyright 2018 The Flutter team. All rights reserved.
-    +// Copyright 2021 The Flutter team. All rights reserved.
-     // Use of this source code is governed by a BSD-style license that can be
-     // found in the LICENSE file.
-
     @@ -10,10 +10,10 @@
        @override
        Widget build(BuildContext context) {
