@@ -5,7 +5,7 @@ short-title: Adding interactivity
 diff2html: true
 ---
 
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
@@ -152,7 +152,7 @@ instance of `_FavoriteWidgetState`,
 which you'll implement in the next step.
 
 <!-- skip -->
-<?code-excerpt path-base="layout/lakes/interactive"?>
+<?code-excerpt path-base="../null_safety_examples/layout/lakes/interactive"?>
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
 ```dart
 class FavoriteWidget extends StatefulWidget {
@@ -270,7 +270,7 @@ creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
 <!-- skip -->
-<?code-excerpt path-base=""?>
+<?code-excerpt path-base="../null_safety_examples/"?>
 <?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
 ```diff
 --- layout/lakes/step6/lib/main.dart
