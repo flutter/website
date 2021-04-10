@@ -1,6 +1,6 @@
 ---
 title: Change RenderEditable to stop painting the caret when its selection is invalid
-description: `RenderEditable` no longer paints the caret when its `selection` is `(-1, -1)`.
+description: RenderEditable no longer paints the caret when its selection is (-1, -1).
 ---
 
 ## Summary
