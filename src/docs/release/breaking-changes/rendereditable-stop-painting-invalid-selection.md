@@ -1,0 +1,98 @@
+---
+title: Change RenderEditable to stop painting the caret when its selection is invalid
+description: `RenderEditable` no longer paints the caret when its `selection` is `(-1, -1)`.
+---
+
+## Summary
+
+when a text field's selection is `TextSelection.collapsed(offset: -1)`,
+`RenderEditable` no longer paints the caret , nor will its `onCaretChanged` 
+callback be called.
+
+## Context
+
+The caret indicates the insertion point within the current text in an 
+active input field. Typically, when a new character is entered, the 
+caret stays immediately after it. In Flutter the caret position is 
+represented by a collapsed selection. When the selection is invalid, 
+usually the user won't be able to modify or add text until they 
+change the selection to a valid value.
+
+Previously, `RenderEditable` (which is used to paint all types of 
+text fields in Flutter) paints the caret at the start of the the 
+document when the selection is invalid (range `(-1, -1)`), as if 
+the selection was set to `(0, 0)`. This is misleading as the user 
+would expect new input to be inserted at the start of the document, 
+which may not be the case for some input methods. The wrong position 
+of the caret is also reported by the `RenderEditable.onCaretChanged` 
+callback.
+
+## Description of change
+
+When `RenderEditable.selection` is set to `TextSelection.collapsed(offset: -1)`, 
+`RenderEditable.paint` no longer paints the caret, and the 
+`RenderEditable.onCaretChanged` callback is no longer called on this occasion.
+
+## Migration guide
+
+Common failures this change may introduce are:
+- Golden test failures: 
+
+  1. The caret is not shown when a text field's selection is invalid.
+  2. The scroll offsest of a scrollable container is different .
+  
+If you wish to place the caret at the start of a text field, set its
+`TextEditingController`'s `selection` to `(0, 0)` instead of `(-1, -1)`:
+
+Code before migration:
+
+<!-- skip -->
+```dart
+textEditingController.value = TextEditingValue(
+  text: <your text>,
+  selection: TextSelection.collapsed(offset: -1),
+);
+```
+
+Code after migration:
+
+<!-- skip -->
+```dart
+textEditingController.value = TextEditingValue(
+  text: <your text>,
+  selection: TextSelection.collapsed(offset: 0),
+);
+```
+
+## Timeline
+
+Landed in version: TBA<br>
+In stable release: not yet
+
+## References
+
+{% include master-api.md %}
+
+API documentation:
+
+* [`RenderEditable`][]
+* [`RenderEditable.selection`][]
+* [`RenderEditable.onCaretChanged`][]
+
+Relevant issues:
+
+* [Issue 79495]
+
+Relevant PRs:
+
+* [[RenderEditable] Dont paint caret when selection is invalid]
+
+
+<!-- Master channel link: -->
+
+[`RenderEditable`]: https://master-api.flutter.dev/flutter/rendering/RenderEditable-class.html
+[`RenderEditable.selection`]: https://master-api.flutter.dev/flutter/rendering/RenderEditable/selection.html
+[`RenderEditable.onCaretChanged`]: https://master-api.flutter.dev/flutter/rendering/RenderEditable/onCaretChanged.html
+
+[Issue 79495]: {{site.github}}/flutter/flutter/issues/79495
+[[RenderEditable] Dont paint caret when selection is invalid]: {{site.github}}/flutter/flutter/pull/79607
