@@ -35,11 +35,12 @@ When `RenderEditable.selection` is set to `TextSelection.collapsed(offset: -1)`,
 
 ## Migration guide
 
-Common failures this change may introduce are:
-- Golden test failures: 
-
-  1. The caret is not shown when a text field's selection is invalid.
-  2. The scroll offsest of a scrollable container is different .
+Common failures this change may introduce are golden test failures where:
+  - The caret is not shown when a text field's selection is invalid.
+  - The scroll offsest of a scrollable container is different (because text  
+    fields currently rely on coordinates reported by the 
+    `RenderEditable.onCaretChanged` callback to keep themselves on screen  
+    as the user types).
   
 If you wish to place the caret at the start of a text field, set its
 `TextEditingController`'s `selection` to `(0, 0)` instead of `(-1, -1)`:
