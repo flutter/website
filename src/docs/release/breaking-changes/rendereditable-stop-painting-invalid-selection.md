@@ -1,27 +1,28 @@
 ---
 title: Change RenderEditable to stop painting the caret when its selection is invalid
-description: RenderEditable no longer paints the caret when its selection is (-1, -1).
+description: RenderEditable no longer paints the caret when its selection is invalid.
 ---
 
 ## Summary
 
-When a text field's selection is `TextSelection.collapsed(offset: -1)`,
-`RenderEditable` no longer paints the caret, nor will its `onCaretChanged` 
-callback be called.
+When a text field's selection is `TextSelection.collapsed(offset: -1)`, or 
+a different range that contains negative positions, `RenderEditable` no 
+longer paints the caret, nor will its `onCaretChanged` callback be called.
 
 ## Context
 
 The caret indicates the insertion point within the current text in an 
 active input field. Typically, when a new character is entered, the 
 caret stays immediately after it. In Flutter the caret position is 
-represented by a collapsed selection. When the selection is invalid, 
-usually the user won't be able to modify or add text until they 
-change the selection to a valid value.
+represented by a collapsed selection. An invalid selection is a selection
+that contains negative text positions, such as `(-1, -1)`. When the 
+selection is invalid, usually the user won't be able to modify or add text 
+until they change the selection to a valid value.
 
 The `RenderEditable` class is used to paint all types of text fields
 in Flutter today. Previously, `RenderEditable` paints the caret at 
-the start of the the document when the selection is invalid (range `(-1, -1)`),
-as if the selection was set to `(0, 0)`. This can be misleading as the 
+the start of the the document when the selection is invalid, as if the 
+selection was set to `(0, 0)`. This can be misleading as the 
 user would expect new input to be inserted at the start of the document, 
 which may not be the case for some input methods. The incorrect coordinates 
 of the caret are also reported by the `RenderEditable.onCaretChanged` 
@@ -40,7 +41,7 @@ Common failures this change may introduce are golden test failures where:
   - The scroll offsest of a scrollable container is different (because text fields currently rely on coordinates reported by the`RenderEditable.onCaretChanged` callback to keep themselves on screen as the user types).
   
 If you wish to place the caret at the start of a text field, set its
-`TextEditingController`'s `selection` to `(0, 0)` instead of `(-1, -1)`:
+`TextEditingController`'s `selection` to `(0, 0)`:
 
 Code before migration:
 
