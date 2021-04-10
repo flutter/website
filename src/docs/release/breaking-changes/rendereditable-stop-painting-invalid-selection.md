@@ -23,8 +23,8 @@ in Flutter today. Previously, `RenderEditable` paints the caret at
 the start of the the document when the selection is invalid (range `(-1, -1)`),
 as if the selection was set to `(0, 0)`. This can be misleading as the 
 user would expect new input to be inserted at the start of the document, 
-which may not be the case for some input methods. The wrong coordinates 
-of the caret is also reported by the `RenderEditable.onCaretChanged` 
+which may not be the case for some input methods. The incorrect coordinates 
+of the caret are also reported by the `RenderEditable.onCaretChanged` 
 callback.
 
 ## Description of change
@@ -37,10 +37,7 @@ When `RenderEditable.selection` is set to `TextSelection.collapsed(offset: -1)`,
 
 Common failures this change may introduce are golden test failures where:
   - The caret is not shown when a text field's selection is invalid.
-  - The scroll offsest of a scrollable container is different (because text  
-    fields currently rely on coordinates reported by the 
-    `RenderEditable.onCaretChanged` callback to keep themselves on screen  
-    as the user types).
+  - The scroll offsest of a scrollable container is different (because text fields currently rely on coordinates reported by the`RenderEditable.onCaretChanged` callback to keep themselves on screen as the user types).
   
 If you wish to place the caret at the start of a text field, set its
 `TextEditingController`'s `selection` to `(0, 0)` instead of `(-1, -1)`:
