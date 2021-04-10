@@ -85,7 +85,7 @@ Relevant issues:
 
 Relevant PRs:
 
-* [[RenderEditable] Dont paint caret when selection is invalid]
+* [Dont paint caret when selection is invalid]
 
 
 <!-- Master channel link: -->
@@ -95,4 +95,4 @@ Relevant PRs:
 [`RenderEditable.onCaretChanged`]: https://master-api.flutter.dev/flutter/rendering/RenderEditable/onCaretChanged.html
 
 [Issue 79495]: {{site.github}}/flutter/flutter/issues/79495
-[[RenderEditable] Dont paint caret when selection is invalid]: {{site.github}}/flutter/flutter/pull/79607
+[Dont paint caret when selection is invalid]: {{site.github}}/flutter/flutter/pull/79607
