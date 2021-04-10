@@ -5,8 +5,8 @@ description: `RenderEditable` no longer paints the caret when its `selection` is
 
 ## Summary
 
-when a text field's selection is `TextSelection.collapsed(offset: -1)`,
-`RenderEditable` no longer paints the caret , nor will its `onCaretChanged` 
+When a text field's selection is `TextSelection.collapsed(offset: -1)`,
+`RenderEditable` no longer paints the caret, nor will its `onCaretChanged` 
 callback be called.
 
 ## Context
@@ -18,12 +18,12 @@ represented by a collapsed selection. When the selection is invalid,
 usually the user won't be able to modify or add text until they 
 change the selection to a valid value.
 
-Previously, `RenderEditable` (which is used to paint all types of 
-text fields in Flutter) paints the caret at the start of the the 
-document when the selection is invalid (range `(-1, -1)`), as if 
-the selection was set to `(0, 0)`. This is misleading as the user 
-would expect new input to be inserted at the start of the document, 
-which may not be the case for some input methods. The wrong position 
+The `RenderEditable` class is used to paint all types of text fields
+in Flutter today. Previously, `RenderEditable` paints the caret at 
+the start of the the document when the selection is invalid (range `(-1, -1)`),
+as if the selection was set to `(0, 0)`. This can be misleading as the 
+user would expect new input to be inserted at the start of the document, 
+which may not be the case for some input methods. The wrong coordinates 
 of the caret is also reported by the `RenderEditable.onCaretChanged` 
 callback.
 
