@@ -83,11 +83,11 @@ The animated GIF shows how the app works at the completion of part 1.
 {{site.alert.end}}
 
 If you want to compile your app to run on the web,
-you must enable this feature (which is currently in beta).
+you must enable this feature.
 To enable web support, use the following instructions:
 
 ```terminal
-$ flutter channel beta
+$ flutter channel stable
 $ flutter upgrade
 $ flutter config --enable-web
 ```
