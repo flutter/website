@@ -16,7 +16,7 @@ point or the root node of a tree of resources that addresses any questions
 that you have about performance.
 
 The answers to the first two questions are mostly philosophical, and not as 
-helpful to many developers who visit this page with speicifc
+helpful to many developers who visit this page with specific
 performance issues that need to be solved. Therefore, the answers to those 
 questions are in the [appendix](/docs/perf/appendix).
 
