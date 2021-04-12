@@ -16,8 +16,10 @@ active input field. Typically, when a new character is entered, the
 caret stays immediately after it. In Flutter the caret position is 
 represented by a collapsed selection. An invalid selection is a selection
 that contains negative text positions, such as `(-1, -1)`. When the 
-selection is invalid, usually the user won't be able to modify or add text 
-until they change the selection to a valid value.
+selection is invalid (which, for example, can happen when you omit the 
+`selection` argument when creating a `TextEditingValue`), usually the 
+user won't be able to modify or add text until they change the selection 
+to a valid value.
 
 The `RenderEditable` class is used to paint all types of text fields
 in Flutter today. Previously, `RenderEditable` paints the caret at 
