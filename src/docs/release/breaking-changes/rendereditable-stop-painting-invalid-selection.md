@@ -22,8 +22,7 @@ user won't be able to modify or add text until they change the selection
 to a valid value via touch events or mouse interactions.
 
 The `RenderEditable` class is used to paint all types of text fields
-in Flutter today. Previously, `RenderEditable` paints the caret at 
-Previously, `RenderEditable` painted the caret at
+in Flutter. Previously, `RenderEditable` painted the caret at
 the start of the the document when the selection was invalid, as if the 
 selection was set to `(0, 0)`. This could be misleading, as the 
 user would likely expect new input to be inserted at the start of the document, 
@@ -35,7 +34,7 @@ callback.
 
 When `RenderEditable.selection` is set to `TextSelection.collapsed(offset: -1)`, 
 `RenderEditable.paint` doesn't the caret, and the 
-`RenderEditable.onCaretChanged` callback isn't no called.
+`RenderEditable.onCaretChanged` callback isn't called.
 
 ## Migration guide
 
