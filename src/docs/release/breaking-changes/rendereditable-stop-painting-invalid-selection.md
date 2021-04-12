@@ -19,7 +19,7 @@ that contains negative text positions, such as `(-1, -1)`. When the
 selection is invalid (which, for example, can happen when you omit the 
 `selection` argument when creating a `TextEditingValue`), usually the 
 user won't be able to modify or add text until they change the selection 
-to a valid value.
+to a valid value via touch events or mouse interactions.
 
 The `RenderEditable` class is used to paint all types of text fields
 in Flutter today. Previously, `RenderEditable` paints the caret at 
