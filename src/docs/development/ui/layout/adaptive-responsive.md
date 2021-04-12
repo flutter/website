@@ -159,4 +159,4 @@ in the following resources:
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
 [Platform-specific behaviors and adaptations]: /docs/resources/platform-adaptations
-[repo]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
+[repo]: {{site.github}}/flutter/gallery
