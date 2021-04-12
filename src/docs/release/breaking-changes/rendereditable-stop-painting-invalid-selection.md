@@ -23,9 +23,10 @@ to a valid value via touch events or mouse interactions.
 
 The `RenderEditable` class is used to paint all types of text fields
 in Flutter today. Previously, `RenderEditable` paints the caret at 
-the start of the the document when the selection is invalid, as if the 
-selection was set to `(0, 0)`. This can be misleading as the 
-user would expect new input to be inserted at the start of the document, 
+Previously, `RenderEditable` painted the caret at
+the start of the the document when the selection was invalid, as if the 
+selection was set to `(0, 0)`. This could be misleading, as the 
+user would likely expect new input to be inserted at the start of the document, 
 which may not be the case for some input methods. The incorrect coordinates 
 of the caret are also reported by the `RenderEditable.onCaretChanged` 
 callback.
@@ -91,7 +92,7 @@ Relevant issues:
 
 Relevant PRs:
 
-* [Dont paint caret when selection is invalid]
+* [Dont paint caret when selection is invalid][]
 
 
 <!-- Master channel link: -->
