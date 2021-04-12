@@ -1,5 +1,5 @@
-name: json
-description: Sample json code.
+name: widgets_intro
+description: Sample state management code.
 
 version: 1.0.0+1
 
@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  cupertino_icons: ^1.0.2
 
 flutter:
   uses-material-design: true
