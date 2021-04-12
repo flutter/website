@@ -126,14 +126,14 @@ and address commonly-requested user features.
 
 Flutter includes:
 
-* Heavily optimized, mobile-first 2D rendering engine
+* Heavily optimized, the mobile-first 2D rendering engine
   with excellent support for text
 * Modern react-style framework
 * Rich set of widgets implementing Material Design and iOS-style
 * APIs for unit and integration tests
 * Interop and plugin APIs to connect to the system and 3rd-party SDKs
 * Headless test runner for running tests on Windows, Linux, and Mac
-* [Dart DevTools][] for testing, debugging, and profiling your app
+* [Dart DevTools][] for testing, debugging and profiling your app
 * Command-line tools for creating, building, testing, and
   compiling your apps
 
@@ -155,7 +155,7 @@ Yes! Flutter ships with a modern react-style framework.
 Flutter's framework is designed to be layered and
 customizable (and optional). Developers can choose to
 use only parts of the framework, or even replace
-upper layers of the framework entirely.
+the upper layers of the framework entirely.
 
 ### Does Flutter come with widgets?
 
@@ -164,7 +164,7 @@ Yes! Flutter ships with a set of
 (iOS-style) widgets][widgets], layouts, and themes.
 Of course, these widgets are only a starting point.
 Flutter is designed to make it easy to create your own
-widgets, or customize the existing widgets.
+widgets or customize the existing widgets.
 
 ### Does Flutter support Material Design?
 
@@ -206,11 +206,11 @@ of Flutter, read the [architectural overview].
 
 ### How does Flutter run my code on Android? {#run-android}
 
-The engine's C and C++ code are compiled with Android's NDK.
+The engine's C and C++ codes are compiled with Android's NDK.
 The Dart code (both the SDK's and yours)
 are ahead-of-time (AOT) compiled into native, ARM, and x86
 libraries. Those libraries are included in a "runner"
-Android project, and the whole thing is built into an APK.
+Android project, and the whole thing is built into an `.apk`.
 When launched, the app loads the Flutter library.
 Any rendering, input, or event handling, and so on,
 is delegated to the compiled Flutter and app code.
@@ -226,7 +226,7 @@ the finished release app.
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
-The engine's C and C++ code is compiled with LLVM.
+The engine's C and C++ codes are compiled with LLVM.
 The Dart code (both the SDK's and yours)
 are ahead-of-time (AOT) compiled into a native, ARM library.
 That library is included in a "runner" iOS project,
@@ -259,7 +259,7 @@ by the flexibility and quality of those widgets.
 In Android, for example, there's a hard-coded set
 of gestures and fixed rules for disambiguating them.
 In Flutter, you can write your own gesture recognizer
-that is a first class participant in the [gesture system][].
+that is a first-class participant in the [gesture system][].
 Moreover, two widgets authored by different people can
 coordinate to disambiguate gestures.
 
@@ -267,7 +267,7 @@ Modern app design trends point towards designers and
 users wanting more motion-rich UIs and brand-first designs.
 In order to achieve that level of customized, beautiful design,
 Flutter is architectured to drive pixels instead
-of the built-in  widgets.
+of the built-in widgets.
 
 By using the same renderer, framework, and set of widgets,
 it's easier to publish for multiple platforms from the same
@@ -288,7 +288,7 @@ of lower-level framework features, new composable widgets, or new
 widget implementations.
 
 Flutter's layered architecture is designed to support numerous
-widget libraries, and we encourage and support the community in
+widget libraries and we encourage and support the community in
 building and maintaining widget libraries.
 
 ### What happens when my mobile OS updates and introduces new platform capabilities?
@@ -317,14 +317,14 @@ languages and runtimes, and ultimately
 adopted Dart for the framework and widgets.
 Flutter used four primary dimensions for evaluation,
 and considered the needs of framework authors,
-developers, and end users. We found many languages
+developers, and end-users. We found many languages
 met some requirements, but Dart scored highly on
 all of our evaluation dimensions and met all our
 requirements and criteria.
 
 Dart runtimes and compilers support the combination of
 two critical features for Flutter: a JIT-based fast
-development cycle that allows for shape changing and
+development cycle that allows for shape-changing and
 stateful hot reloads in a language with types,
 plus an Ahead-of-Time compiler that emits efficient
 ARM code for fast startup and predictable performance of
@@ -528,7 +528,7 @@ asynchronous message passing system to create your
 own integrations with [platform and third-party APIs][].
 Developers can expose as much or as little of the
 platform APIs as they need, and build layers of
-abstractions that are a best fit for their project.
+abstractions that are the best fit for their project.
 
 ### Can I extend and customize the bundled widgets?
 
@@ -554,10 +554,10 @@ visual design.
 Composition gives you maximum control over the visual and
 interaction design of your widgets while also allowing a
 large amount of code reuse. In the framework, we've decomposed
-complex widgets to pieces that separately implement
+complex widgets into pieces that separately implement
 the visual, interaction, and motion design. You can remix
 these widgets however you like to make your own custom
-widgets that have full range of expression.
+widgets that have the full range of expression.
 
 ### Why would I want to share layout code across iOS and Android?
 
@@ -589,11 +589,11 @@ across mobile platforms.
 Yes, Flutter supports calling into the platform,
 including integrating with Java or Kotlin code on Android,
 and ObjectiveC or Swift code on iOS.
-This is enabled via a flexible message passing style
+This is enabled via a flexible message-passing style
 where a Flutter app might send and receive messages
 to the mobile platform using a [`BasicMessageChannel`][].
 
-Learn more about accessing platform and third-party services
+Learn more about accessing the platform and third-party services
 in Flutter with [platform channels][].
 
 Here is an [example project][] that shows how to use a
@@ -635,7 +635,7 @@ communicate by sending and receiving asynchronous messages.
 
 Check out an [example of using isolates with Flutter][].
 
-### Can I run Dart code in the background of an Flutter app?
+### Can I run Dart code in the background of a Flutter app?
 
 Yes, you can run Dart code in a background process on both
 iOS and Android  For more information, see the free Medium article
@@ -659,7 +659,7 @@ but right now we're focused on 2D.
 ### Why is my APK or IPA so big?
 
 Usually, assets including images, sound files, fonts, etc,
-are the bulk of an APK or IPA.  Various tools in the
+are the bulk of an APK or IPA. Various tools in the
 Android and iOS ecosystems can help you understand
 what's inside of your APK or IPA.
 
@@ -693,7 +693,7 @@ subclassing `StatefulWidget`. You can read a more
 
 Flutter UIs are built with an imperative, object-oriented
 language (Dart, the same language used to build Flutter's
-framework). Flutter doesn't ship with a declarative markup.
+framework). Flutter doesn't ship with declarative markup.
 
 We found that UIs dynamically built with code allow for
 more flexibility. For example, we have found it difficult
@@ -866,7 +866,7 @@ In no particular order:
   geometry (for example, for cartesian boxes, a size,
   specifically a width and a height) that fulfills those constraints.
   By using this technique, Flutter can usually
-  lay out an entire scene with a single pass.
+  layout an entire scene with a single pass.
 
 ## Project
 
@@ -949,7 +949,7 @@ We believe the following:
   high-fidelity experiences, due to automatic behavior (scrolling,
   layout) and legacy support.
 * Today, it's too costly to build the same app multiple times: it
-  requires different teams, different code bases,
+  requires different teams, different codebases,
   different workflows, different tools, etc.
 * Developers want an easier, better way to use a single codebase to
   build mobile apps for multiple target platforms,
