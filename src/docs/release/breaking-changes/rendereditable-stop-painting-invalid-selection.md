@@ -86,7 +86,8 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 79495]
+* [Issue 79495][]: RenderEditable should not show the caret when the selection
+  is invalid (i.e. (-1, -1))
 
 Relevant PRs:
 
