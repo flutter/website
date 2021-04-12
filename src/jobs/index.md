@@ -7,5 +7,3 @@ We currently have the following job openings on the Flutter team:
 
 * [Flutter Ecosystems & Plugins Engineer](/jobs/ecosystem)
 * [Flutter Engine Engineer](/jobs/engine)
-* [Flutter UX Researcher](/jobs/uxr)
-
