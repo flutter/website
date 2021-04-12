@@ -7,7 +7,7 @@ description: RenderEditable no longer paints the caret when its selection is inv
 
 When a text field's selection is `TextSelection.collapsed(offset: -1)`, or 
 a different range that contains negative positions, `RenderEditable` no 
-longer paints the caret, nor will its `onCaretChanged` callback be called.
+longer paints the caret or calls`onCaretChanged`.
 
 ## Context
 
