@@ -13,7 +13,7 @@ longer paints the caret or calls`onCaretChanged`.
 
 The caret indicates the insertion point within the current text in an 
 active input field. Typically, when a new character is entered, the 
-caret stays immediately after it. In Flutter the caret position is 
+caret stays immediately after it. In Flutter, the caret position is 
 represented by a collapsed selection. An invalid selection is a selection
 that contains negative text positions, such as `(-1, -1)`. When the 
 selection is invalid (which, for example, can happen when you omit the 
