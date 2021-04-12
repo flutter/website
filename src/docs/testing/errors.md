@@ -5,9 +5,11 @@ description: How to control error messages and logging of errors
 
 The Flutter framework catches errors that occur during callbacks
 triggered by the framework itself, including errors encountered
-during the build, layout, and paint phases.
+during the build, layout, and paint phases. Errors that don't occur
+within Flutter's callbacks can't be caught by the framework,
+but you can handle them by setting up a [`Zone`][].
 
-All of these errors are routed to the
+All errors caught by Flutter are routed to the
 [`FlutterError.onError`][] handler. By default,
 this calls [`FlutterError.dumpErrorToConsole`][],
 which, as you might guess, dumps the error to the device logs.
@@ -22,6 +24,10 @@ invoked to build the widget that is used
 instead of the one that failed. By default,
 in debug mode this shows an error message in red,
 and in release mode this shows a gray background.
+
+When errors occur without a Flutter callback on the call stack,
+they are handled by the `Zone` where they occur. By default,
+a `Zone` only prints errors and does nothing else.
 
 You can customize these behaviors,
 typically by setting them to values in
@@ -84,9 +90,47 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+## Set up error handling for a Zone
+
+Consider an `onPressed` callback that invokes an asynchronous function,
+such as `MethodChannel.invokeMethod` (or pretty much any plugin).
+For example:
+<!-- skip -->
+```dart
+OutlinedButton(
+  child: Text('Click me!'),
+  onPressed: () async {
+    final channel = const MethodChannel('crashy-custom-channel');
+    await channel.invokeMethod('blah');
+  },
+),
+```
+If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onError`.
+Instead, it's forwarded to the `Zone` where `runApp` was run.
+
+To catch such an error, use [`runZonedGuarded`][].
+<!-- skip -->
+```dart
+import 'dart:async';
+
+void main() {
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    runApp(MyApp()));
+  }, (Object error, StackTrace stack) {
+    myBackend.sendError(error, stack);
+  });
+}
+```
+Note that `WidgetsFlutterBinding.ensureInitialized()` is
+called within `runZonedGuarded`; error handling wouldn't work if
+the function were called from the outside.
+
 [`ErrorWidget.builder`]: {{site.api}}/flutter/widgets/ErrorWidget/builder.html
 [`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
 [`FlutterError.dumpErrorToConsole`]: {{site.api}}/flutter/foundation/FlutterError/dumpErrorToConsole.html
 [`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
 [`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
 [reporting errors to a service]: /docs/cookbook/maintenance/error-reporting
+[`runZonedGuarded`]: {{site.api}}/flutter/dart-async/runZonedGuarded.html
+[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
