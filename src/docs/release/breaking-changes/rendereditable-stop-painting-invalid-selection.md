@@ -33,8 +33,8 @@ callback.
 ## Description of change
 
 When `RenderEditable.selection` is set to `TextSelection.collapsed(offset: -1)`, 
-`RenderEditable.paint` no longer paints the caret, and the 
-`RenderEditable.onCaretChanged` callback is no longer called on this occasion.
+`RenderEditable.paint` doesn't the caret, and the 
+`RenderEditable.onCaretChanged` callback isn't no called.
 
 ## Migration guide
 
