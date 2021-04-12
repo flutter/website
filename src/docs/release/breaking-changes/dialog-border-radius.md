@@ -57,8 +57,8 @@ class Foo extends StatelessWidget {
 }
 ```
 
-If you prefer the new behavior and have failing golden file tests, you can update your master
-golden files using this command:
+If you prefer the new behavior and have failing golden file tests,
+you can update your master golden files using this command:
 
 ```bash
 flutter test --update-goldens

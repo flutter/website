@@ -6,9 +6,9 @@ diff2html: true
 ---
 
 {% assign api = '{{site.api}}/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
 
-<?code-excerpt path-base="animation"?>
+<?code-excerpt path-base="../null_safety_examples/animation"?>
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
@@ -236,7 +236,7 @@ The following example shows a controller, a curve, and a `Tween`:
 ```dart
 AnimationController controller = AnimationController(
     duration: const Duration(milliseconds: 500), vsync: this);
-final Animation curve =
+final Animation<double> curve =
     CurvedAnimation(parent: controller, curve: Curves.easeOut);
 Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
 ```
@@ -333,8 +333,8 @@ The changes from the non-animated example are highlighted:
 
 -class _LogoAppState extends State<LogoApp> {
 +class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-+  Animation<double> animation;
-+  AnimationController controller;
++  late Animation<double> animation;
++  late AnimationController controller;
 +
 +  @override
 +  void initState() {
@@ -441,11 +441,11 @@ the core widget code from the animation code.
 `AnimatedWidget` doesn't need to maintain a `State`
 object to hold the animation. Add the following `AnimatedLogo` class:
 
-<?code-excerpt path-base="animation/animate2"?>
+<?code-excerpt path-base="../null_safety_examples/animation/animate2"?>
 <?code-excerpt "lib/main.dart (AnimatedLogo)" title?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
-  AnimatedLogo({Key key, Animation<double> animation})
+  AnimatedLogo({Key? key, required Animation<double> animation})
       : super(key: key, listenable: animation);
 
   Widget build(BuildContext context) {
@@ -461,7 +461,7 @@ class AnimatedLogo extends AnimatedWidget {
   }
 }
 ```
-<?code-excerpt path-base="animation"?>
+<?code-excerpt path-base="../null_safety_examples/animation"?>
 
 `AnimatedLogo` uses the current value of the `animation`
 when drawing itself.
@@ -475,7 +475,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 +++ animate2/lib/main.dart
 @@ -10,2 +27,2 @@
  class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-   Animation<double> animation;
+   late Animation<double> animation;
 @@ -13,32 +30,18 @@
 
    @override
@@ -538,8 +538,8 @@ The highlighted line shows the change:
 <?code-excerpt "animate3/lib/main.dart (print state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\.\..*/[!$&!]/g; /\n  }/$&\n  \/\/ .../g"?>
 ```dart
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController controller;
+  late Animation<double> animation;
+  late AnimationController controller;
 
   @override
   void initState() {
@@ -666,7 +666,7 @@ in the render tree.
 <?code-excerpt "animate4/lib/main.dart (GrowTransition)"?>
 ```dart
 class GrowTransition extends StatelessWidget {
-  GrowTransition({this.child, this.animation});
+  GrowTransition({required this.child, required this.animation});
 
   final Widget child;
   final Animation<double> animation;
@@ -699,8 +699,8 @@ in the bullet points above.
 +++ animate4/lib/main.dart
 @@ -27,22 +36,25 @@
  class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-   Animation<double> animation;
-   AnimationController controller;
+   late Animation<double> animation;
+   late AnimationController controller;
 
    @override
    void initState() {
@@ -783,7 +783,7 @@ class AnimatedLogo extends AnimatedWidget {
   [!static final _opacityTween = Tween<double>(begin: 0.1, end: 1);!]
   [!static final _sizeTween = Tween<double>(begin: 0, end: 300);!]
 
-  AnimatedLogo({Key key, Animation<double> animation})
+  AnimatedLogo({Key? key, required Animation<double> animation})
       : super(key: key, listenable: animation);
 
   Widget build(BuildContext context) {
@@ -807,8 +807,8 @@ class LogoApp extends StatefulWidget {
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController controller;
+  late Animation<double> animation;
+  late AnimationController controller;
 
   @override
   void initState() {

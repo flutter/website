@@ -1,0 +1,20 @@
+name: radial_hero_animation_animate_rectclip
+description: Shows how to apply a radial transformation to the Hero as it animates to the new route.
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/beachball-alpha.png
+    - images/binoculars-alpha.png
+    - images/chair-alpha.png

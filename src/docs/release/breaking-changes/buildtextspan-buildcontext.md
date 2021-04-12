@@ -7,23 +7,37 @@ description: A BuildContext parameter is added to TextEditingController.buildTex
 
 A `BuildContext` parameter was added to `TextEditingController.buildTextSpan`.
 
-Classes that extend or implement `TextEditingController` and override `buildTextSpan` need to add the `BuildContext` parameter to the signature to make it a valid override.
+Classes that extend or implement `TextEditingController`
+and override `buildTextSpan` need to add the `BuildContext`
+parameter to the signature to make it a valid override.
 
-Callers of `TextEditingController.buildTextSpan` need to pass a `BuildContext` to the call.
+Callers of `TextEditingController.buildTextSpan`
+need to pass a `BuildContext` to the call.
 
 ## Context
 
-`TextEditingController.buildTextSpan` is called by `EditableText` on its controller to create the `TextSpan` that it renders.
-`buildTextSpan` can be overridden in custom classes that extend `TextEditingController`.
-This lets classes extending `TextEditingController` override `buildTextSpan` to change the style of parts of the text, for example, for rich text editing.
+`TextEditingController.buildTextSpan` is called by `EditableText`
+on its controller to create the `TextSpan` that it renders.
+`buildTextSpan` can be overridden in custom classes that extend
+`TextEditingController`. This allows classes extending
+`TextEditingController` override `buildTextSpan` to change
+the style of parts of the text, for example, for rich text editing.
 
-Any state that is required by `buildTextSpan` (other than the `TextStyle` and `withComposing` arguments) needed to be passed into the class that extends `TextEditingController`.
+Any state that is required by `buildTextSpan`
+(other than the `TextStyle` and `withComposing` arguments)
+needed to be passed into the class that extends
+`TextEditingController`.
 
 ## Description of change
 
-With the `BuildContext` available, users can access `InheritedWidgets` inside `buildTextSpan` to retrieve state required to style the text, or otherwise manipulate the created `TextSpan`.
+With the `BuildContext` available, users can access
+`InheritedWidgets` inside `buildTextSpan`
+to retrieve state required to style the text,
+or otherwise manipulate the created `TextSpan`.
 
-Consider the example where we have a `HighlightTextEditingController` that wants to highlight text by setting its color to `Theme.accentColor`.
+Consider the example where we have a
+`HighlightTextEditingController` that wants to
+highlight text by setting its color to `Theme.accentColor`.
 
 Before this change the controller implementation would look like this:
 
@@ -40,9 +54,12 @@ class HighlightTextEditingController extends TextEditingController {
   }
 ```
 
-And users of the controller would need to pass the color when creating the controller.
+And users of the controller would need to pass the color
+when creating the controller.
 
-With the `BuildContext` parameter available, the `HighlightTextEditingController` can directly access `Theme.accentColor` using `Theme.of(BuildContext)`:
+With the `BuildContext` parameter available,
+the `HighlightTextEditingController` can directly access
+`Theme.accentColor` using `Theme.of(BuildContext)`:
 
 <!-- skip -->
 ```dart
@@ -59,7 +76,8 @@ class HighlightTextEditingController extends TextEditingController {
 
 ### Overriding `TextEditingController.buildTextSpan`
 
-Add a `required BuildContext context` parameter to the signature of the `buildTextSpan` override.
+Add a `required BuildContext context` parameter to the
+signature of the `buildTextSpan` override.
 
 Code before migration:
 
@@ -93,7 +111,8 @@ class MyTextEditingController {
 
 ### Calling `TextEditingController.buildTextSpan`
 
-Pass a named parameter 'context' of type `BuildContext` to the call.
+Pass a named parameter 'context' of type
+`BuildContext` to the call.
 
 Code before migration:
 
@@ -122,13 +141,7 @@ TextSpan span = controller.buildTextSpan(context: context, withComposing: false)
 ## Timeline
 
 Landed in version: 1.26.0<br>
-In stable release: not yet
-
-{% comment %}
-The version # of the SDK where this change was
-introduced.  If there is a deprecation window,
-the version # to which we guarantee to maintain the old API.
-{% endcomment %}
+In stable release: 2.0.0
 
 ## References
 

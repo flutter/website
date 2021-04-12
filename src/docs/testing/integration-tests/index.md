@@ -53,7 +53,8 @@ Add `integration_test`, `flutter_test`, and optionally `flutter_driver` to your
 pubspec.yaml file:
 
 ```yaml
-integration_test: ^1.0.0
+integration_test:
+  sdk: flutter
 flutter_test:
   sdk: flutter
 flutter_driver:

@@ -7,8 +7,8 @@ diff2html: true
 
 {% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
+{% capture null_safety_examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
+{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/null_safety_examples' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/dev/integration_tests/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
@@ -221,8 +221,8 @@ color to white and the text to dark grey to mimic a Material app.
   That's it! When you run the app, you should see _Hello World_.
 
   App source code:
-  - [Material app]({{examples}}/layout/base)
-  - [Non-Material app]({{examples}}/layout/non_material)
+  - [Material app]({{null_safety_examples}}/layout/base)
+  - [Non-Material app]({{null_safety_examples}}/layout/non_material)
 </div>
 <div class="col-md-6">
   {% include app-figure.md img-class="site-mobile-screenshot border w-75"
@@ -339,7 +339,7 @@ space evenly between, before, and after each image.
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/row-spaceevenly-visual.png class="mw-100" alt="Row with 3 evenly spaced images" %}
 
-  **App source:** [row_column]({{examples}}/layout/row_column)
+  **App source:** [row_column]({{null_safety_examples}}/layout/row_column)
 </div>
 </div>
 
@@ -363,7 +363,7 @@ space evenly between, above, and below each image.
   );
   {% endprettify %}
 
-  **App source:** [row_column]({{examples}}/layout/row_column)
+  **App source:** [row_column]({{null_safety_examples}}/layout/row_column)
 </div>
 <div class="col-lg-4 text-center">
   {% asset ui/layout/column-visual.png class="mb-4" height="250px"
@@ -409,7 +409,7 @@ wrap each image with an `Expanded` widget.
   {% asset ui/layout/row-expanded-2-visual.png class="mw-100"
       alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space" %}
 
-  **App source:** [sizing]({{examples}}/layout/sizing)
+  **App source:** [sizing]({{null_safety_examples}}/layout/sizing)
 </div>
 </div>
 
@@ -444,11 +444,11 @@ the flex factor of the middle image to 2:
   {% asset ui/layout/row-expanded-visual.png class="mw-100"
       alt="Row of 3 images with the middle image twice as wide as the others" %}
 
-  **App source:** [sizing]({{examples}}/layout/sizing)
+  **App source:** [sizing]({{null_safety_examples}}/layout/sizing)
 </div>
 </div>
 
-[sizing]: {{examples}}/layout/sizing
+[sizing]: {{null_safety_examples}}/layout/sizing
 
 ### Packing widgets
 
@@ -477,7 +477,7 @@ uses this property to pack the star icons together.
   {% asset ui/layout/packed.png class="border mw-100"
       alt="Row of 5 stars, packed together in the middle of the row" %}
 
-  **App source:** [pavlova]({{examples}}/layout/pavlova)
+  **App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 </div>
 </div>
 
@@ -661,7 +661,7 @@ body: Center(
   using **Window > Scale**.
 {{site.alert.end}}
 
-**App source:** [pavlova]({{examples}}/layout/pavlova)
+**App source:** [pavlova]({{null_safety_examples}}/layout/pavlova)
 
 [Pavlova image]: https://pixabay.com/en/photos/pavlova
 [Pixabay]: https://pixabay.com/en/photos/pavlova
@@ -781,7 +781,7 @@ Widget _buildImageRow(int imageIndex) => Row(
 You can find more `Container` examples in the [tutorial][]
 and the Flutter Gallery ([running app][], [repo][]).
 
-**App source:** [container]({{examples}}/layout/container)
+**App source:** [container]({{null_safety_examples}}/layout/container)
 
 <hr>
 
@@ -827,7 +827,7 @@ it automatically scrolls.
   Uses `GridView.extent` to create a grid with tiles a maximum
   150 pixels wide.
 
-  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/gridview-count-flutter-gallery.png class="mw-100"
@@ -890,7 +890,7 @@ its render box.
   `ListTile`s. A `Divider` separates the theaters from
   the restaurants.
 
-  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{null_safety_examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/listview-flutter-gallery.png class="border mw-100"
@@ -971,7 +971,7 @@ or partially overlap the base widget.
   The `Stack` offsets the text using the `alignment` property and
   `Alignment`s.
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-5" markdown="1">
   {% asset ui/layout/stack-flutter-gallery.png class="mw-100" alt="An image with a grey gradient across the top" %}
@@ -1057,7 +1057,7 @@ Specifying an unsupported value disables the drop shadow entirely.
   it with a `SizedBox`. A `Divider` separates the first
   and second `ListTiles`.
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/card-flutter-gallery.png class="mw-100"
@@ -1136,7 +1136,7 @@ and trailing icons. `ListTile` is most commonly used in
 
   A `Card` containing 3 `ListTiles`.
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{null_safety_examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/listtile-flutter-gallery.png class="border mw-100" height="200px"
@@ -1234,10 +1234,10 @@ The following resources might help when writing layout code.
 [`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment-class.html
 [Material card]: {{site.material}}/design/components/cards.html
 [Material Design]: {{site.material}}/design
-[Material Design palette]: {{site.material}}/guidelines/style/color.html
+[Material Design palette]: {{site.material}}/design/color
 [Material library]: {{api}}/material/material-library.html
-[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
-[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
+[pubspec file]: {{null_safety_examples}}/layout/pavlova/pubspec.yaml
+[`pubspec.yaml` file]: {{null_safety_examples}}/layout/row_column/pubspec.yaml
 [repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
 [`Row`]: {{api}}/widgets/Row-class.html
 [running app]: https://flutter.github.io/gallery/#/

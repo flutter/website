@@ -5,8 +5,10 @@ description: In order to provide locale appropriate semantics, the CupertinoTabB
 
 ## Summary
 
-Instances of `CupertinoTabBar` must have a `Localizations`parent in order to provide a localized
-`Semantics` hint. Trying to instantiate  a `CupertinoTabBar` without localizations 
+Instances of `CupertinoTabBar` must have a
+`Localizations`parent in order to provide a localized
+`Semantics` hint. Trying to instantiate  a
+`CupertinoTabBar` without localizations 
 results in an assertion such as the following:
        
 ```
@@ -19,22 +21,28 @@ Failed assertion: line 213 pos 7: 'localizations != null'
 
 ## Context
 
-To support localized semantics information, the `CupertinoTabBar` requires localizations.
+To support localized semantics information,
+the `CupertinoTabBar` requires localizations.
 
-Before this change, the `Semantics` hint provided to the `CupertinoTabBar` was a hard-coded String,
-'tab, $index of $total'. The content of the semantics hint was also updated from this original
+Before this change, the `Semantics` hint provided
+to the `CupertinoTabBar` was a hard-coded String,
+'tab, $index of $total'. The content of the semantics
+hint was also updated from this original
 String to 'Tab $index of $total' in English.
 
-If your `CupertinoTabBar` is within the scope of a `CupertinoApp`, the
-`DefaultCupertinoLocalizations` is already instantiated and may suit your
+If your `CupertinoTabBar` is within the scope
+of a `CupertinoApp`, the `DefaultCupertinoLocalizations`
+is already instantiated and may suit your
 needs without having to make a change to your existing code.
 
-If your `CupertinoTabBar` is not within a `CupertinoApp`, you may provide the localizations of
+If your `CupertinoTabBar` is not within a `CupertinoApp`,
+you may provide the localizations of
 your choosing using the `Localizations` widget.
 
 ## Migration guide
 
-If you are seeing a `'localizations != null'` assertion error, make sure locale information is being
+If you are seeing a `'localizations != null'` assertion error,
+make sure locale information is being
 provided to your `CupertinoTabBar`.
 
 Code before migration:
@@ -96,7 +104,8 @@ class Foo extends StatelessWidget {
 }
 ```
 
-Code after migration (Providing localizations via the `Localizations` widget):
+Code after migration (Providing localizations by using
+the `Localizations` widget):
 
 ```dart
 import 'package:flutter/cupertino.dart';

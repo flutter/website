@@ -3,16 +3,14 @@ title: Create a download button
 description: How to implement a download button.
 prev:
   title: Work with tabs
-  path: /docs/cookbook/design/tabs
+  path:  /docs/cookbook/design/tabs
 next:
-  title: Create a typing indicator
-  path:  /docs/cookbook/effects/typing-indicator
+  title: Create a nested navigation flow
+  path:  /docs/cookbook/effects/nested-nav
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
 ---
-
-{% include null-safe-recipe.md %}
 
 Apps are filled with buttons that execute long-running behaviors.
 For example, a button might trigger a download,
@@ -24,9 +22,9 @@ to provide this feedback. In this recipe,
 you'll build a download button that transitions through
 multiple visual states, based on the status of an app download.
 
-The following GIF shows the app's behavior:
+The following animation shows the app's behavior:
 
-![The download button cycles through its stages]({% asset cookbook/effects/DownloadButton.gif @path %})
+![The download button cycles through its stages]({% asset cookbook/effects/DownloadButton.gif @path %}){:.site-mobile-screenshot}
 
 ## Define a new stateful widget
 
@@ -346,7 +344,7 @@ class _DownloadButtonState extends State<DownloadButton> {
    return AspectRatio(
      aspectRatio: 1.0,
      child: TweenAnimationBuilder<double>(
-       tween: Tween(begin: 0.0, end: widget.downloadProgress),
+       tween: Tween(begin: 0.0, end: widget.progress),
        duration: const Duration(milliseconds: 200),
        builder: (BuildContext context, double progress, Widget? child) {
          return CircularProgressIndicator(

@@ -1,16 +1,18 @@
-```run-dartpad:theme-light:mode-flutter:split-100:width-100%:height-500px
+```run-dartpad:theme-light:mode-flutter:split-100:width-100%:height-500px:null_safety-true
 {$ begin main.dart $}
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 
 class AnimationControllerDemo extends StatefulWidget {
+  @override
   _AnimationControllerDemo createState() => _AnimationControllerDemo();
 }
 
 class _AnimationControllerDemo extends State<AnimationControllerDemo> with SingleTickerProviderStateMixin {
-  AnimationController controller;
+  late AnimationController controller;
 
+  @override
   void initState() {
     super.initState();
     controller = AnimationController(

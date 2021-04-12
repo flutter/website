@@ -3,5 +3,6 @@ pubspec.lock
 
 */**/android
 */**/ios
+*/**/web
 */**/.gitignore
 */**/.metadata

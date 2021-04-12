@@ -3,6 +3,8 @@ title: Improving rendering performance
 description: How to measure and evaluate your app's rendering performance.
 ---
 
+{% include performance.md %}
+
 Rendering animations in your app is one of the most cited
 topics of interest when it comes to measuring performance.
 Thanks in part to Flutter's Skia engine and its ability

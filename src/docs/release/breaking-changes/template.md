@@ -10,7 +10,7 @@ description: Brief description similar to the "context" section below. The descr
     https://github.com/dart-lang/site-shared/blob/master/doc/writing-for-dart-and-flutter-websites.md#semantic-line-breaks
   * DON'T SUBMIT a PR weeks and weeks in advance.
     Doing this causes it to get stanky in the website
-    and usually develops conflicts in the index file.
+    repo and usually develops conflicts in the index file.
     Ideally, submit a PR once you have confirmed
     info on the version number where the breaking
     change landed.
@@ -35,7 +35,7 @@ description: Brief description similar to the "context" section below. The descr
     back to figure out how to migrate their code.
   * Use sentence case for headings and titles.
     (`## Migration guide`, NOT `Migration Guide`)
-  * DON'T use the abbreviation `i.e.`
+  * DON'T use the abbreviation `i.e.` or `e.g.`.
     Use "for example" or "such as", and similar.
   * For links, use the macros where possible.
     See the examples at the end of this template,
@@ -127,10 +127,18 @@ Code after migration:
   introduced.  If there is a deprecation window,
   the version # to which we guarantee to maintain
   the old API. Use the following template:
+
+  If a breaking change has been reverted in a
+  subsequent release, move that item to the
+  "Reverted" section of the index.md file.
+  Also add the "Reverted in version" line,
+  shown as optional below. Otherwise, delete
+  that line.
 {% endcomment %}
 
 Landed in version: xxx<br>
 In stable release: not yet
+Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 ## References
 

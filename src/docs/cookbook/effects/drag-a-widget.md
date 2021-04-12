@@ -2,8 +2,8 @@
 title: Drag a UI element
 description: How to implement a draggable UI element.
 prev:
-  title: Create an expandable FAB
-  path: /docs/cookbook/effects/expandable-fab
+  title: Create gradient chat bubbles
+  path:  /docs/cookbook/effects/gradient-bubbles
 next:
   title: Build a form with validation 
   path:  /docs/cookbook/forms/validation
@@ -11,8 +11,6 @@ js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
 ---
-
-{% include null-safe-recipe.md %}
 
 Drag and drop is a common mobile app interaction.
 As the user long presses (sometimes called _touch & hold_)
@@ -24,9 +22,9 @@ where the user long presses on a choice of food,
 and then drags that food to the picture of the customer who
 is paying for it.
 
-The following GIF shows the app's behavior:
+The following animation shows the app's behavior:
 
-![Ordering the food by dragging it to the person]({% asset cookbook/effects/DragAUIElement.gif @path %})
+![Ordering the food by dragging it to the person]({% asset cookbook/effects/DragAUIElement.gif @path %}){:.site-mobile-screenshot}
 
 This recipe begins with a prebuilt list of menu items and
 a row of customers.

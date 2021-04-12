@@ -11,7 +11,7 @@ description: Flutter metrics, and which tools and APIs are used to get them
     [perf dashboard](https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3DtimeToFirstFrameRasterizedMicros).
 
 * Frame buildDuration, rasterDuration, and totalSpan
-  * See [`FrameTiming`]({{site.api}}/flutter/dart-ui/FrameTiming-class.html.)
+  * See [`FrameTiming`]({{site.api}}/flutter/dart-ui/FrameTiming-class.html)
     in the API docs.
 
 * Statistics of frame `buildDuration` (`*_frame_build_time_millis`)

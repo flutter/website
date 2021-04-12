@@ -4,6 +4,8 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
 
+{% include performance.md %}
+
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
 
@@ -345,13 +347,16 @@ ask yourself these questions:
 
 #### Checking for non-cached images
 
-Caching an image with [RepaintBoundary][] is good, _when it makes sense_.
+Caching an image with [`RepaintBoundary`][] is good,
+_when it makes sense_.
 
-One of the most expensive operations, from a resource perspective,
-is rendering a texture using an image file. First, the compressed image
+One of the most expensive operations,
+from a resource perspective,
+is rendering a texture using an image file.
+First, the compressed image
 is fetched from persistent storage.
-The image is decompressed into host memory (GPU memory), and transferred
-to device memory (RAM).
+The image is decompressed into host memory (GPU memory),
+and transferred to device memory (RAM).
 
 In other words, image I/O can be expensive.
 The cache provides snapshots of complex hierarchies so
@@ -376,7 +381,7 @@ which would indicate that the cached image is being re-cached.
 
 In most cases, you want to see checkerboards on static images,
 but not on non-static images.  If a static image isn't cached,
-you can cache it by placing it into a [RepaintBoundary][]
+you can cache it by placing it into a [`RepaintBoundary`][]
 widget. Though the engine might still ignore a repaint
 boundary if it thinks the image isn't complex enough.
 

@@ -43,7 +43,7 @@ starter app template:
 
  1. Open the Command Palette
     (`Ctrl`+`Shift`+`P` (`Cmd`+`Shift`+`P` on macOS)).
- 1. Select the **Flutter: New Project** command and press `Enter`.
+ 1. Select the **Flutter: New Application Project** command and press `Enter`.
  1. Enter your desired **Project name**.
  1. Select a **Project location**.
 
@@ -118,13 +118,6 @@ However, if you have multiple devices/simulators connected, click
 **device** in the status bar to see a pick-list
 at the top of the screen. Select the device you want to use for
 running or debugging.
-
-{{site.alert.note}}
-  If you want to try running your app on the web,
-  but the **Chrome (web)** target doesn't appear in the
-  list of targets, make sure you've enabled web, as
-  described in [Building a web application][].
-{{site.alert.end}}
 
 ### Run app without breakpoints
 
@@ -308,7 +301,6 @@ Prior to filing new issues:
 
 When filing new issues, include [flutter doctor][] output.
 
-[Building a web application]: /docs/get-started/web
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [DevTools]: /docs/development/tools/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics

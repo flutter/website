@@ -192,6 +192,16 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "Autocomplete",
+    "description": "A widget for helping the user make a selection by entering some text and choosing from among a list of options.",
+    "categories": [
+      "Input"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/material/Autocomplete-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "BackdropFilter",
     "description": "A widget that applies a filter to the existing painted content and then paints a child. This effect is relatively expensive, especially if the filter is non-local, such as a blur.",
     "categories": [
@@ -230,16 +240,6 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/BottomSheet-class.html",
     "image": "<img alt='' src='/images/widget-catalog/material-bottom-sheets.png'>"
-  },
-  {
-    "name": "ButtonBar",
-    "description": "A horizontal arrangement of buttons.",
-    "categories": [],
-    "subcategories": [
-      "Buttons"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/ButtonBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-button-bar.png'>"
   },
   {
     "name": "Card",
@@ -504,6 +504,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoScrollbar-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-scrollbar.png'>"
+  },
+  {
+    "name": "CupertinoSearchTextField",
+    "description": "An iOS-style search field.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSearchTextField-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-search-field.png'>"
   },
   {
     "name": "CupertinoSegmentedControl",
@@ -772,6 +782,18 @@
     "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VakJ6a0F2MFJaaDQ/components_menus.png'>"
   },
   {
+    "name": "ElevatedButton",
+    "description": "A Material Design elevated button. A filled button whose material elevates when pressed.",
+    "categories": [
+      "Basics"
+    ],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/ElevatedButton-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/material-elevated-button.png'>"
+  },
+  {
     "name": "ExcludeSemantics",
     "description": "A widget that drops all the semantics of its descendants. This can be used to hide subwidgets that would otherwise be reported but that would only be confusing. For example, the Material Components Chip widget hides the avatar since it is redundant with the chip label.",
     "categories": [
@@ -820,16 +842,6 @@
     ],
     "link": "https://api.flutter.dev/flutter/widgets/FittedBox-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
-  },
-  {
-    "name": "FlatButton",
-    "description": "A flat button is a section printed on a Material Components widget that reacts to touches by filling with color.",
-    "categories": [],
-    "subcategories": [
-      "Buttons"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/FlatButton-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VNDg3V3ZjU2hsNGc/components_buttons_usage3.png'>"
   },
   {
     "name": "FloatingActionButton",
@@ -1185,14 +1197,14 @@
     "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='10' width='60' height='60' fill='#3b75ad'/><rect x='20' y='30' width='70' height='50' fill='#ffffff' opacity='0.8'/></svg>"
   },
   {
-    "name": "OutlineButton",
-    "description": "A medium-emphasis button for secondary actions that are important but are not the primary action in an app.",
+    "name": "OutlinedButton",
+    "description": "A Material Design outlined button, essentially a TextButton with an outlined border.",
     "categories": [],
     "subcategories": [
       "Buttons"
     ],
-    "link": "https://api.flutter.dev/flutter/material/OutlineButton-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-outline-button.png'>"
+    "link": "https://api.flutter.dev/flutter/material/OutlinedButton-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/material-outlined-button.png'>"
   },
   {
     "name": "OverflowBox",
@@ -1267,18 +1279,6 @@
     "image": "<img alt='' src='/images/widget-catalog/material-radio.png'>"
   },
   {
-    "name": "RaisedButton",
-    "description": "A Material Design raised button. A raised button consists of a rectangular piece of material that hovers over the interface.",
-    "categories": [
-      "Basics"
-    ],
-    "subcategories": [
-      "Buttons"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/RaisedButton-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-raised-button.png'>"
-  },
-  {
     "name": "RawImage",
     "description": "A widget that displays a dart:ui.Image directly.",
     "categories": [
@@ -1307,6 +1307,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/RefreshIndicator-class.html",
     "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VS2kzSmZwNnNKQVk/patterns-swipe-to-refresh.png'>"
+  },
+  {
+    "name": "ReorderableListView",
+    "description": "A list whose items the user can interactively reorder by dragging.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/material/ReorderableListView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "RichText",
@@ -1658,6 +1668,26 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "TabController",
+    "description": "Coordinates tab selection between a TabBar and a TabBarView.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/TabController-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
+  },
+  {
+    "name": "TabPageSelector",
+    "description": "Displays a row of small circular indicators, one per tab. The selected tab's indicator is highlighted. Often used in conjunction with a TabBarView.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/TabPageSelector-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
+  },
+  {
     "name": "Text",
     "description": "A run of text with a single style.",
     "categories": [
@@ -1667,6 +1697,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/Text-class.html",
     "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='30' width='60' height='40' fill='#ffffff'/><text x='50' y='60' text-anchor='middle' font-family='Roboto' font-size='25' fill='#3b75ad'>Abc</text></svg>"
+  },
+  {
+    "name": "TextButton",
+    "description": "A Material Design text button. A simple flat button without a border outline.",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/TextButton-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VNDg3V3ZjU2hsNGc/components_buttons_usage3.png'>"
   },
   {
     "name": "TextField",

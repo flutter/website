@@ -1,6 +1,9 @@
 name: intl_example
 description: Example of a Flutter app using the intl library services.
 
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
 dependencies:
   flutter:
     sdk: flutter

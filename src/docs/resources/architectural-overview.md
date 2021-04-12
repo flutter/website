@@ -142,7 +142,7 @@ in which the developer provides a mapping from application state to interface
 state, and the framework takes on the task of updating the interface at runtime
 when the application state changes. This model is inspired by [work that came
 from Facebook for their own React
-framework](https://www.youtube.com/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo),
+framework]({{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo),
 which includes a rethinking of many traditional design principles.
 
 In most traditional UI frameworks, the user interface's initial state is
@@ -681,7 +681,7 @@ GPU to render it.
 Further details of the composition and rasterization stages of the pipeline are
 beyond the scope of this high-level article, but more information can be found
 [in this talk on the Flutter rendering
-pipeline](https://www.youtube.com/watch?v=UUfXWzp0-DU).
+pipeline]({{site.youtube-site}}/watch?v=UUfXWzp0-DU).
 
 ## Platform embedding
 

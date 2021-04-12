@@ -49,7 +49,7 @@ The following instructions outline the steps for supporting the new API:
    The easiest thing to do (if possible) is move the logic from
    `registerWith()` into a private method that both
    `registerWith()` and `onAttachedToEngine()` can call.
-   Either `registerWith()` or `onAttachToEngine()` will be called,
+   Either `registerWith()` or `onAttachedToEngine()` will be called,
    not both.
    <br><br>
    In addition, you should document all non-overridden public members
@@ -241,7 +241,7 @@ but aren't required.
     ```yaml
     environment:
       sdk: ">=2.0.0-dev.28.0 <3.0.0"
-      flutter: ">=1.12.13+hotfix.6 <2.0.0"
+      flutter: ">=1.12.13+hotfix.6"
     ```
 
 1. Create a simple test in `<plugin_name>/test/<plugin_name>_e2e.dart`.

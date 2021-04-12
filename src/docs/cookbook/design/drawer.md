@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/design/drawer"?>
+
 In apps that use Material Design,
 there are two primary options for navigation: tabs and drawers.
 When there is insufficient space to support tabs,
@@ -36,7 +38,7 @@ components, such as Drawers, AppBars, and SnackBars.
 
 In this example, create a `Scaffold` with a `drawer`:
 
-<!-- skip -->
+<?code-excerpt "lib/drawer.dart (DrawerStart)" replace="/null, //g"?>
 ```dart
 Scaffold(
   drawer: // Add a Drawer here in the next step.
@@ -50,12 +52,12 @@ but it's often best to use the `Drawer` widget from the
 [material library][],
 which adheres to the Material Design spec.
 
-<!-- skip -->
+<?code-excerpt "lib/drawer.dart (DrawerEmpty)" replace="/null, //g"?>
 ```dart
 Scaffold(
   drawer: Drawer(
     child: // Populate the Drawer in the next step.
-  )
+  ),
 );
 ```
 
@@ -73,7 +75,7 @@ and two [`ListTile`][] widgets.
 For more information on working with Lists,
 see the [list recipes][].
 
-<!-- skip -->
+<?code-excerpt "lib/drawer.dart (DrawerListView)"?>
 ```dart
 Drawer(
   // Add a ListView to the drawer. This ensures the user can scroll
@@ -116,14 +118,14 @@ You can do this by using the [`Navigator`][].
 When a user opens the drawer, Flutter adds the drawer to the navigation
 stack. Therefore, to close the drawer, call `Navigator.pop(context)`.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (CloseDrawer)"?>
 ```dart
 ListTile(
   title: Text('Item 1'),
   onTap: () {
-    // Update the state of the app.
+    // Update the state of the app
     // ...
-    // Then close the drawer.
+    // Then close the drawer
     Navigator.pop(context);
   },
 ),
@@ -131,7 +133,8 @@ ListTile(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -151,7 +154,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

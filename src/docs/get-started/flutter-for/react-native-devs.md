@@ -2441,7 +2441,7 @@ and common widget properties.
 |                                                                                           | strokeWidth                                                                                                | The width of the line used to draw the circle.                                                                                         |
 |                                                                                           | backgroundColor                                                                                            | The progress indicator's background color. The current theme's `ThemeData.backgroundColor` by default.                                   |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-|  [`ActivityIndicator`](https://facebook.github.io/react-native/docs/activityindicator.html) | [`LinearProgressIndicator`][]     | A widget that shows progress along a circle.                                                                                           |
+|  [`ActivityIndicator`](https://facebook.github.io/react-native/docs/activityindicator.html) | [`LinearProgressIndicator`][]     | A widget that shows progress along a line.                                                                                           |
 |                                                                                           | value                                                                                                      | The value of this progress indicator.                                                                                                   |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
 | [`RefreshControl`](https://facebook.github.io/react-native/docs/refreshcontrol.html)        | [`RefreshIndicator`][]                   | A widget that supports the Material "swipe to refresh" idiom.                                                                          |
@@ -2491,7 +2491,7 @@ and common widget properties.
 [`Axis`]: {{site.api}}/flutter/painting/Axis-class.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[color palette]: {{site.material}}/guidelines/style/color.html
+[color palette]: {{site.material}}/design/color
 [colors]: {{site.api}}/flutter/material/Colors-class.html
 [`Colors`]: {{site.api}}/flutter/material/Colors-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html

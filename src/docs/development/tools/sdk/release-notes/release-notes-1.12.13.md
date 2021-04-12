@@ -2976,6 +2976,6 @@ In addition to the PRs listed below, please also check out the following release
 
 
 [breaking change policy on the Flutter wiki]: {{site.github}}/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes
-[flutter announce]: https://groups.google.com/g/flutter-announce
+[flutter-announce]: https://groups.google.com/g/flutter-announce
 [GitHub Octoverse report]: https://octoverse.github.com/
 [this post from Ian Hickson]: https://groups.google.com/g/flutter-announce/c/Z09a317E21o

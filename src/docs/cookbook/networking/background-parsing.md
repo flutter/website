@@ -51,7 +51,7 @@ using the [`http.get()`][] method.
 <!-- skip -->
 ```dart
 Future<http.Response> fetchPhotos(http.Client client) async {
-  return client.get('https://jsonplaceholder.typicode.com/photos');
+  return client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 }
 ```
 
@@ -112,8 +112,8 @@ List<Photo> parsePhotos(String responseBody) {
 }
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response =
-      await client.get('https://jsonplaceholder.typicode.com/photos');
+  final response = await client
+      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   return parsePhotos(response.body);
 }
@@ -134,8 +134,8 @@ run the `parsePhotos()` function in the background.
 <!-- skip -->
 ```dart
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response =
-      await client.get('https://jsonplaceholder.typicode.com/photos');
+  final response = await client
+      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
@@ -162,8 +162,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response =
-      await client.get('https://jsonplaceholder.typicode.com/photos');
+  final response = await client
+      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);

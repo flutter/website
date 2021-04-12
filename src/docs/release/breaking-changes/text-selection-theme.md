@@ -106,7 +106,7 @@ flutter test --update-goldens
 ## Timeline
 
 Landed in version: 1.23.0-4.0.pre<br>
-In stable release: not yet
+In stable release: 2.0.0
 
 ## References
 
@@ -120,5 +120,5 @@ Relevant PRs:
 [Material Theme Updates]: /go/material-theme-system-updates
 [PR 62014: TextSelectionTheme support]: {{site.github}}/flutter/flutter/pull/62014
 [Text Selection Theme]: /go/text-selection-theme
-[`TextSelectionThemeData`]: https://master-api.flutter.dev/flutter/material/TextSelectionThemeData-class.html
+[`TextSelectionThemeData`]: {{site.api}}/flutter/material/TextSelectionThemeData-class.html
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html

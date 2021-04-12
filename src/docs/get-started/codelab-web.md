@@ -137,7 +137,8 @@ and the web server when you want to test on other browsers.
 <li markdown="1">The starting app is displayed in the following DartPad.
 
 <!-- skip -->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+{$ begin main.dart $}
 import 'package:flutter/material.dart';
 
 void main() => runApp(SignUpApp());
@@ -216,10 +217,10 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.white;
               }),
-              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.blue;
               }),
             ),
@@ -231,7 +232,11 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 }
-
+{$ end main.dart $}
+{$ begin test.dart $}
+// Avoid warning on "double _formProgress = 0;"
+// ignore_for_file: prefer_final_fields
+{$ end test.dart $}
 ```
 
 {{site.alert.important}}
@@ -422,13 +427,13 @@ In the `_SignUpFormState` class, add a new method called
 ...
 void _updateFormProgress() {
   var progress = 0.0;
-  var controllers = [
+  final controllers = [
     _firstNameTextController,
     _lastNameTextController,
     _usernameTextController
   ];
 
-  for (var controller in controllers) {
+  for (final controller in controllers) {
     if (controller.value.text.isNotEmpty) {
       progress += 1 / controllers.length;
     }
@@ -442,7 +447,7 @@ void _updateFormProgress() {
 ```
 
 This method updates the `_formProgress` field based on the
-number of non-empty text fields.
+the number of non-empty text fields.
 
 </li>
 
@@ -473,10 +478,10 @@ screen only when the form is completely filled in:
 ...
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+    foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
       return states.contains(MaterialState.disabled) ? null : Colors.white;
     }),
-    backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+    backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
       return states.contains(MaterialState.disabled) ? null : Colors.blue;
     }),
   ),
@@ -642,7 +647,7 @@ scroll down to where `progress` is updated:
 
 <!-- skip -->
 ```dart
-    for (var controller in controllers) {
+    for (final controller in controllers) {
       if (controller.value.text.isNotEmpty) {
         progress += 1 / controllers.length;
       }
@@ -719,16 +724,16 @@ class AnimatedProgressIndicator extends StatefulWidget {
 
 class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<Color> _colorAnimation;
-  Animation<double> _curveAnimation;
+  late AnimationController _controller;
+  late Animation<Color?> _colorAnimation;
+  late Animation<double> _curveAnimation;
 
   void initState() {
     super.initState();
     _controller = AnimationController(
         duration: Duration(milliseconds: 1200), vsync: this);
 
-    var colorTween = TweenSequence([
+    final colorTween = TweenSequence([
       TweenSequenceItem(
         tween: ColorTween(begin: Colors.red, end: Colors.orange),
         weight: 1,
@@ -760,7 +765,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       builder: (context, child) => LinearProgressIndicator(
         value: _curveAnimation.value,
         valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value.withOpacity(0.4),
+        backgroundColor: _colorAnimation.value?.withOpacity(0.4),
       ),
     );
   }
@@ -802,7 +807,7 @@ the animation works, and that clicking the
 ### Complete sample
 
 <!-- skip -->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(SignUpApp());
@@ -861,13 +866,13 @@ class _SignUpFormState extends State<SignUpForm> {
 
   void _updateFormProgress() {
     var progress = 0.0;
-    var controllers = [
+    final controllers = [
       _firstNameTextController,
       _lastNameTextController,
       _usernameTextController
     ];
 
-    for (var controller in controllers) {
+    for (final controller in controllers) {
       if (controller.value.text.isNotEmpty) {
         progress += 1 / controllers.length;
       }
@@ -914,10 +919,10 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.white;
               }),
-              backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
                 return states.contains(MaterialState.disabled) ? null : Colors.blue;
               }),
             ),
@@ -934,7 +939,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
   AnimatedProgressIndicator({
-    @required this.value,
+    required this.value,
   });
 
   @override
@@ -945,16 +950,16 @@ class AnimatedProgressIndicator extends StatefulWidget {
 
 class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<Color> _colorAnimation;
-  Animation<double> _curveAnimation;
+  late AnimationController _controller;
+  late Animation<Color?> _colorAnimation;
+  late Animation<double> _curveAnimation;
 
   void initState() {
     super.initState();
     _controller = AnimationController(
         duration: Duration(milliseconds: 1200), vsync: this);
 
-    var colorTween = TweenSequence([
+    final colorTween = TweenSequence([
       TweenSequenceItem(
         tween: ColorTween(begin: Colors.red, end: Colors.orange),
         weight: 1,
@@ -985,7 +990,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       builder: (context, child) => LinearProgressIndicator(
         value: _curveAnimation.value,
         valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value.withOpacity(0.4),
+        backgroundColor: _colorAnimation.value?.withOpacity(0.4),
       ),
     );
   }
@@ -1040,7 +1045,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Flutter SDK]: /docs/get-started/install
 [Implicit animations]: /docs/codelabs/implicit-animations
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
-[Material Design]: {{site.material}}/design/introduction/#
+[Material Design]: https://material.io/design/introduction/#
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: /docs/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/master/web

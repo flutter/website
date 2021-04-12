@@ -129,7 +129,7 @@ Widget myInputChip = InputChip(
 ## Timeline
 
 Landed in version: 1.23.0-7.0.pre<br>
-In stable release: not yet
+In stable release: 2.0.0
 
 ## References
 
@@ -170,7 +170,7 @@ Relevant PRs:
 [`SemanticsProperties.button`]: {{site.api}}/flutter/semantics/SemanticsProperties/button.html
 [`SemanticsProperties.enabled`]: {{site.api}}/flutter/semantics/SemanticsProperties/enabled.html
 
-[Issue 58101]: {{site.github}}/flutter/flutter/issues/58010
+[Issue 58010]: {{site.github}}/flutter/flutter/issues/58010
 
 [PR 60141]: {{site.github}}/flutter/flutter/pull/60141
 [PR 60645]: {{site.github}}/flutter/flutter/pull/60645

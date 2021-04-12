@@ -36,7 +36,7 @@
     - title: Flutter Gallery [running app]
       permalink: https://flutter.github.io/gallery/
     - title: Flutter Gallery [repo]
-      permalink: https://github.com/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
+      permalink: https://github.com/flutter/gallery
     - title: Sample apps on GitHub
       permalink: https://flutter.github.io/samples/
     - title: Cookbook
@@ -63,8 +63,8 @@
               match-page-url-exactly: true
             - title: Tutorial
               permalink: /docs/development/ui/layout/tutorial
-            - title: Creating responsive apps
-              permalink: /docs/development/ui/layout/responsive
+            - title: Creating adaptive and responsive apps
+              permalink: /docs/development/ui/layout/adaptive-responsive
             - title: Understanding constraints [NEW]
               permalink: /docs/development/ui/layout/constraints
             - title: Box constraints
@@ -81,6 +81,8 @@
               match-page-url-exactly: true
             - title: Deep linking
               permalink: /docs/development/ui/navigation/deep-linking
+            - title: URL strategies
+              permalink: /docs/development/ui/navigation/url-strategies
         - title: Animations
           permalink: /docs/development/ui/animations
           children:
@@ -100,7 +102,6 @@
         - title: Advanced UI
           permalink: /docs/development/ui/advanced
           children:
-            - title: Focus handling system # Where did this go?
             - title: Slivers
               permalink: /docs/development/ui/advanced/slivers
             - title: Gestures
@@ -202,7 +203,7 @@
         permalink: /docs/development/add-to-app/performance
       - title: Multiple Flutter instances
         permalink: /docs/development/add-to-app/multiple-flutters
-    - title: Tools & techniques
+    - title: Tools & features
       permalink: /docs/development/tools
       children:
         - title: Android Studio & IntelliJ
@@ -234,7 +235,7 @@
               permalink: /docs/development/tools/devtools/debugger
             - title: Logging view
               permalink: /docs/development/tools/devtools/logging
-              title: App size tool
+            - title: App size tool
               permalink: /docs/development/tools/devtools/app-size
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
@@ -258,8 +259,12 @@
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4.md
                 - title: 1.2.1
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1.md
+        - title: Flutter and the pubspec file
+          permalink: /docs/development/tools/pubspec
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
+        - title: Flutter Fix
+          permalink: /docs/development/tools/flutter-fix
         - title: Code formatting
           permalink: /docs/development/tools/formatting
         - title: Web renderers
@@ -324,7 +329,7 @@
         permalink: /docs/perf/rendering/shader
     - title: Performance metrics
       permalink: /docs/perf/metrics
-    - title: Frequently Asked Questions
+    - title: Performance FAQ
       permalink: /docs/perf/faq
     - title: Appendix
       permalink: /docs/perf/appendix
@@ -360,7 +365,7 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Platform adaptations
       permalink: /docs/resources/platform-adaptations
-    - title: Technical videos
+    - title: Videos and online courses
       permalink: /docs/resources/videos
     - title: Books
       permalink: /docs/resources/books
@@ -380,6 +385,8 @@
 - title: Reference
   expanded: true
   children:
+    - title: Who is Dash?
+      permalink: /dash
     - title: Widget index
       permalink: /docs/reference/widgets
     - title: API reference

@@ -23,3 +23,10 @@ package-lock.json
 .vscode/
 .firebase/
 firebase-debug.log
+
+# Until future update
+Dockerfile
+docker-compose.yml
+Makefile
+.env.*
+_config_local.yml

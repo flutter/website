@@ -12,29 +12,43 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Eliminating `nullOk` Parameters][]
+TBD
+
+### Reverted changes
+
+The following breaking changes have been reverted.
+
+<b>[Network Policy on iOS and Android][]</b><br>
+:  Introduced in version: 2.0.0<br>
+   Reverted in version:   2.2.0 (proposed)
+
+[Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
+
+### Released in Flutter 2
+
+* [Added BuildContext parameter to TextEditingController.buildTextSpan][]
 * [Android ActivityControlSurface attachToActivity signature change][]
-* [Material Chip button semantics][]
-* [Network Policy on iOS and Android][]
-* [SnackBars managed by the ScaffoldMessenger][]
-* [TextSelectionTheme migration][]
 * [Android FlutterMain.setIsRunningInRobolectricTest testing API removed][]
 * [Clip behavior][]
-* [Dry layout support for RenderBox][]
-* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 * [Deprecated API removed after v1.22][]
+* [Dry layout support for RenderBox][]
+* [Eliminating nullOk Parameters][]
+* [Material Chip button semantics][]
+* [SnackBars managed by the ScaffoldMessenger][]
+* [TextSelectionTheme migration][]
+* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 
-[Eliminating `nullOk` Parameters]: /docs/release/breaking-changes/eliminating-nullok-parameters
+[Added BuildContext parameter to TextEditingController.buildTextSpan]: /docs/release/breaking-changes/buildtextspan-buildcontext
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
 [Android FlutterMain.setIsRunningInRobolectricTest testing API removed]: /docs/release/breaking-changes/android-setIsRunningInRobolectricTest-removed
+[Clip behavior]: /docs/release/breaking-changes/clip-behavior
+[Deprecated API removed after v1.22]: /docs/release/breaking-changes/1-22-deprecations
+[Dry layout support for RenderBox]: /docs/release/breaking-changes/renderbox-dry-layout
+[Eliminating nullOk Parameters]: /docs/release/breaking-changes/eliminating-nullok-parameters
 [Material Chip button semantics]: /docs/release/breaking-changes/material-chip-button-semantics
-[Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 [SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
 [TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
-[Clip behavior]: /docs/release/breaking-changes/clip-behavior
-[Dry layout support for RenderBox]: /docs/release/breaking-changes/renderbox-dry-layout
 [Use maxLengthEnforcement instead of maxLengthEnforced]: /docs/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
-[Deprecated API removed after v1.22]: /docs/release/breaking-changes/1-22-deprecations
 
 ### Released in Flutter 1.22
 
@@ -51,6 +65,7 @@ release, and listed in alphabetical order:
 
 * [Actions API revision][]
 * [Adding TextInputClient.currentAutofillScope property][]
+* [New Buttons and Button Themes][]
 * [Dialogs' Default BorderRadius][]
 * [More Strict Assertions in the Navigator and the Hero Controller Scope][]
 * [The Route Transition record and Transition delegate updates][]
@@ -63,6 +78,7 @@ release, and listed in alphabetical order:
 
 [Actions API revision]: /docs/release/breaking-changes/actions-api-revision
 [Adding TextInputClient.currentAutofillScope property]: /docs/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
+[New Buttons and Button Themes]: /docs/release/breaking-changes/buttons
 [Dialogs' Default BorderRadius]:/docs/release/breaking-changes/dialog-border-radius
 [More Strict Assertions in the Navigator and the Hero Controller Scope]: /docs/release/breaking-changes/hero-controller-scope
 [Reversing the dependency between the scheduler and services layer]: /docs/release/breaking-changes/services-scheduler-dependency-reversed

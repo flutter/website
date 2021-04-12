@@ -130,13 +130,6 @@ Flutter-specific buttons on the right-hand side of the toolbar.
     When you connect devices, or start simulators,
     additional entries appear.
 
-{{site.alert.note}}
-  If you want to try running your app on the web,
-  but the **Chrome (web)** target doesn't appear in the
-  list of targets, make sure you've enabled web, as
-  described in [Building a web application][].
-{{site.alert.end}}
-
 ### Run app without breakpoints
 
  1. Click the **Play icon** in the toolbar, or invoke **Run > Run**.
@@ -399,7 +392,6 @@ Prior to filing new issues:
 
 When filing new issues, include the output of [`flutter doctor`][].
 
-[Building a web application]: /docs/get-started/web
 [DevTools]: /docs/development/tools/devtools
 [GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
 [JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved

@@ -33,7 +33,7 @@ set the `decoration` to null.
 ```dart
 TextField(
   decoration: InputDecoration(
-    border: InputBorder.none,
+    border: OutlineInputBorder(),
     hintText: 'Enter a search term'
   ),
 );
@@ -54,9 +54,70 @@ such as validation and integration with other
 ```dart
 TextFormField(
   decoration: InputDecoration(
+    border: UnderlineInputBorder(),
     labelText: 'Enter your username'
   ),
 );
+```
+
+## Interactive example
+
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final appTitle = 'Form Styling Demo';
+    return MaterialApp(
+      title: appTitle,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(appTitle),
+        ),
+        body: MyCustomForm(),
+      ),
+    );
+  }
+}
+
+class MyCustomForm extends StatefulWidget {
+  @override
+  MyCustomFormState createState() {
+    return MyCustomFormState();
+  }
+}
+
+class MyCustomFormState extends State<MyCustomForm> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter a search term',
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextFormField(
+            decoration: InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter your username',
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
 ```
 
 For more information on input validation, see the

@@ -2,9 +2,7 @@
 
 ## Create the app {#create-app}
 
-{% include_relative _web-app.md  %}
-
- 1. Open the IDE and select **Start a new Flutter project**.
+ 1. Open the IDE and select **Create New Flutter Project**.
  1. Select **Flutter Application** as the project type. Then click **Next**.
  1. Verify the Flutter SDK path specifies the SDK’s location
     (select **Install SDK...** if the text field is blank).
@@ -28,12 +26,6 @@ contains a simple demo app that uses [Material Components][].
     select **Tools> Android > AVD Manager** and create one there.
     For details, see [Managing AVDs][].
  1. Click the run icon in the toolbar, or invoke the menu item **Run > Run**.
-
-{{site.alert.warning}}
-  When launching your app from a Mac, if you see
-  `ERROR: Could not connect to lockdownd, error code -17`,
-  make sure that you have [trusted your computer][].
-{{site.alert.end}}
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**

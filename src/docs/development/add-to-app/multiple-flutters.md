@@ -8,26 +8,32 @@ description: How to integrate multiple instances of Flutter engine, screens or v
 
 {{site.alert.note}}
   Support for adding multiple instances of Flutter became available
-  as of Flutter 1.26. Use at your own risk since stability or
+  as of Flutter 2.0.0. Use at your own risk since stability or
   performance issues, and API changes are still possible.
 {{site.alert.end}}
 
 The current memory footprint for each additional Flutter instance beyond the
 first instance is ~180kB on Android and iOS.
 
-As of the 1.26 release, communication between Flutter instances is handled using
+As of the 2.0.0 release, communication between Flutter instances is handled using
 [platform channels][] (or [Pigeon][]) through the host platform. To see
 our roadmap on communication, or other multiple-Flutters issues, see [Issue 72009][].
 
 {{site.alert.warning}}
-  In 1.26, the use of [platform views][] is not supported in conjunction with
+  In 2.0.0, the use of [platform views][] is not supported in conjunction with
   multiple Flutters. When a second Flutter instance is created, platform views
   will be globally disabled.
 {{site.alert.end}}
 
+{{site.alert.warning}}
+  In 2.0.0, the memory usage is only fully optimized in AOT mode (in profile
+  and release builds). Some memory redundancy will still be present in JIT mode
+  (in debug builds) and will be addressed in a future release.
+{{site.alert.end}}
+
 ## Scenarios
 
-Before Flutter 1.26, multiple instances of `FlutterEngine` and its associated
+Before Flutter 2.0.0, multiple instances of `FlutterEngine` and its associated
 UI could be launched, but each instance came with significant latency
 and fixed memory cost.
 
@@ -46,7 +52,7 @@ responsibility for state keeping and improves modularity. More details on the
 scenarios motivating the usage of multiple Flutters can be found at
 [flutter.dev/go/multiple-flutters][].
 
-The 1.26 Flutter release drastically reduces the memory footprint of additional
+The 2.0.0 Flutter release drastically reduces the memory footprint of additional
 Flutter engines from **~19MB** on Android and **~13MB** on iOS, to **~180kB** on Android and
 iOS. This ~99% fixed cost reduction allows the multiple Flutters pattern to be
 used more liberally in your add-to-app integration.

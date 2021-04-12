@@ -47,7 +47,7 @@ jobs:
           - name: "Dev channel: null safety code check"
             sdk: dev
             task: tool/check-code.sh --null-safety
-            experimental: false
+            experimental: true
           - name: "Dev commit: jekyll build"
             sdk: dev
             task: bundle exec jekyll build
@@ -60,7 +60,7 @@ jobs:
           - name: "Beta channel: null safety code check"
             sdk: beta
             task: tool/check-code.sh --null-safety
-            experimental: false
+            experimental: true
           - name: "Beta commit: jekyll build"
             sdk: beta
             task: bundle exec jekyll build
@@ -96,12 +96,24 @@ jobs:
       - name: Install dart dependencies
         run: dart pub get
       - name: Select flutter
-        if: matrix.sdk != 'submodule-commit'
+        # We use different Flutter SDKs on different tasks. The `flutter`
+        # submodule has a pinned commit that will be checkout out.
+        # The checkout is a shallow, single-branch (depth=1) checkout so
+        # to get to other versions of flutter without doing a full checkout
+        # we need to tell git about the remote branch, fetch it, and then
+        # check it out. To know its version, the flutter tool relies on the
+        # tags. Those need to be pulled separately with a shallow fetch to
+        # avoid fetching all of them.
+        if: matrix.sdk != 'submodule-commit' && matrix.sdk != 'stable'
         run: |
           cd flutter
+          # Use the desired channel branch in `remote.origin.fetch`.
           git remote set-branches origin ${{ matrix.sdk }}
+          # Fetch the latest commit on the channel branch.
           git fetch --depth 1 origin ${{ matrix.sdk }}
+          # Checkout the channel branch.
           git checkout ${{ matrix.sdk }} --
+          # Pull the tags for the commit.
           git pull
       - name: Setup flutter
         run: flutter/bin/flutter doctor

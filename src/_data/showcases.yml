@@ -4,10 +4,34 @@
     With listings updated in real time, Realtor.com’s award-winning app helps
     users find the home of their dreams.
   logo_src: showcase/cards/realtor-logo.png
+  learn_more_cta: Learn more
+  learn_more_link: https://www.realtor.com/
   app_store_link: https://apps.apple.com/us/app/realtor-com-real-estate-search/id336698281
   play_store_link: https://play.google.com/store/apps/details?id=com.move.realtor
   logo_has_name: true
   card_image: showcase/cards/realtor-top@.jpg
+
+- name: Nubank
+  featured: true
+  description: >
+    Flutter helped Nubank in its mission to end the complexity of traditional
+    banks and put financial control back in the hands of the user.
+  logo_src: showcase/cards/nubank-logo.png
+  video_id: vnj2i6RNo3g
+  learn_more_cta: Learn more
+  learn_more_link: https://medium.com/building-nubank/https-medium-com-freire-why-nubank-chose-flutter-61b80b568772
+  app_store_link: https://apps.apple.com/us/app/nubank/id814456780
+  play_store_link: https://play.google.com/store/apps/details?id=com.nu.production&hl=en_US
+  quote_testimonial: true
+  quote: >
+    Flutter had everything we needed out of the box including great documentation,
+    community support, and tooling.
+  quote_writer: Igor Borges, Software Engineer, Nubank
+  video_frame_image: showcase/video-frames/nubank@.png
+  logo_has_name: true
+  card_image: showcase/cards/nubank-top@.jpg
+  # temp, add a "showcase/cards/nubank-top-1200.jpg"
+  no_1200_image: true
 
 - name: Tencent
   featured: true
@@ -26,16 +50,15 @@
   card_image: showcase/cards/tencent-top@.jpg
   card_video: DVGIBU109nI
 
-- name: The New York Times
+- name: Google Assistant
   featured: true
   description: >
-    Flutter helps bring the popular Ken Ken puzzle to life on Android, iOS,
-    Mac, Windows, and the web.
-  logo_src: showcase/cards/tnyt-logo.png
-  logo_has_name: true
-  learn_more_cta: Learn More
-  learn_more_link: https://youtu.be/LoLqSbV1ELU?t=3290
-  card_image: showcase/cards/tnyt-top@.jpg
+    Flutter helps power an ever-growing number of Google Assistant apps.
+  logo_src: showcase/cards/g_assistant-logo.png
+  logo_has_name: false
+  learn_more_cta: Learn more
+  learn_more_link: https://developers.googleblog.com/2019/05/Flutter-io19.html
+  card_image: showcase/cards/g_assistant-top@.png
 
 - name: Square
   featured: true
@@ -48,15 +71,20 @@
   learn_more_link: https://squareup.com/us/en/flutter
   card_image: showcase/cards/square-top@.jpg
 
-- name: Google Assistant
-  featured: true
+
+# --- not featured ---
+
+- name: Ebay
   description: >
-    Flutter helps power an ever-growing number of Google Assistant apps.
-  logo_src: showcase/cards/g_assistant-logo.png
-  logo_has_name: false
+    The eBay Motors app is a powerful tool for browsing,
+    buying, and selling vehicles directly from consumers’ phones.
+  logo_src: showcase/cards/ebay-logo.png
   learn_more_cta: Learn more
-  learn_more_link: https://developers.googleblog.com/2019/05/Flutter-io19.html
-  card_image: showcase/cards/g_assistant-top@.png
+  learn_more_link: https://pages.ebay.com/motors/motorsapp
+  app_store_link: https://apps.apple.com/us/app/ebay-motors/id1456156090
+  play_store_link: https://play.google.com/store/apps/details?id=com.ebay.motorsapp
+  logo_has_name: true
+  card_image: showcase/cards/ebay-top@.jpg
 
 - name: Reflectly
   description: >
@@ -231,25 +259,6 @@
   logo_has_name: false
   card_image: showcase/cards/hamilton-top@.jpg
 
-- name: Nubank
-  description: >
-    Flutter helped Nubank in its mission to end the complexity of traditional
-    banks and put financial control back in the hands of the user.
-  logo_src: showcase/cards/nubank-logo.png
-  video_id: vnj2i6RNo3g
-  learn_more_cta: Learn more
-  learn_more_link: https://medium.com/building-nubank/https-medium-com-freire-why-nubank-chose-flutter-61b80b568772
-  app_store_link: https://apps.apple.com/us/app/nubank/id814456780
-  play_store_link: https://play.google.com/store/apps/details?id=com.nu.production&hl=en_US
-  quote_testimonial: true
-  quote: >
-    Flutter had everything we needed out of the box including great documentation,
-    community support, and tooling.
-  quote_writer: Igor Borges, Software Engineer, Nubank
-  video_frame_image: showcase/video-frames/nubank@.png
-  logo_has_name: true
-  card_image: showcase/cards/nubank-top@.jpg
-
 - name: Philips Hue
   description: >
     Flutter brought intuitive controls to Philips Hue apps, allowing users to set the mood and sync their smart lights
@@ -290,18 +299,6 @@
   learn_more_link: https://www.flutterx.com/google-greentea
   card_image: showcase/cards/green_tea-top@.jpg
 
-- name: Ebay
-  description: >
-    The eBay Motors app is a powerful tool for browsing,
-    buying, and selling vehicles directly from consumers’ phones.
-  logo_src: showcase/cards/ebay-logo.png
-  learn_more_cta: Learn more
-  learn_more_link: https://pages.ebay.com/motors/motorsapp
-  app_store_link: https://apps.apple.com/us/app/ebay-motors/id1456156090
-  play_store_link: https://play.google.com/store/apps/details?id=com.ebay.motorsapp
-  logo_has_name: true
-  card_image: showcase/cards/ebay-top@.jpg
-
 - name: MGM Resorts
   description: >
     MGM Resorts apps (iOS & Android) are built on Flutter.
@@ -314,3 +311,13 @@
   play_store_link: https://play.google.com/store/apps/details?id=com.mgmresorts.mgmresorts&hl=en_US
   logo_has_name: true
   card_image: showcase/cards/mgm-top@.png
+
+- name: The New York Times
+  description: >
+    Flutter helps bring the popular Ken Ken puzzle to life on Android, iOS,
+    Mac, Windows, and the web.
+  logo_src: showcase/cards/tnyt-logo.png
+  logo_has_name: true
+  learn_more_cta: Learn More
+  learn_more_link: https://youtu.be/LoLqSbV1ELU?t=3290
+  card_image: showcase/cards/tnyt-top@.jpg

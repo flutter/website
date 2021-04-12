@@ -7,6 +7,10 @@ description: How to use DevTools' source-level debugger.
   The debugger works with all Flutter and Dart applications.
 {{site.alert.end}}
 
+{{site.alert.note}}
+  DevTools hides the Debugger tab if the app was launched from VS Code because VS Code has a built-in debugger.
+{{site.alert.end}}
+
 ## Getting started
 
 DevTools includes a full source-level debugger, supporting
@@ -16,7 +20,7 @@ When you open the debugger tab, you should see the source for the main
 entry-point for your app loaded in the debugger.
 
 In order to browse around more of your application sources, click **Libraries**
-(top right) or us the hot key command `⌘ + P` / `ctrl + P`. This will open the
+(top right) or use the hot key command `⌘ + P` / `ctrl + P`. This will open the
 libraries window and allow you to search for other source files.
 
 ![Screenshot of the debugger tab]({% asset tools/devtools/debugger_screenshot.png @path %}){:width="100%"}

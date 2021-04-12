@@ -119,11 +119,8 @@ Follow the Xcode signing flow to provision your project:
       drop-down menu next to the run button.
    1. Select the `Runner` project in the left navigation panel.
    1. In the `Runner` target settings page,
-      make sure your Development Team is selected.
-      The UI varies depending on your version of Xcode.
-      * For Xcode 10, look under **General > Signing > Team**.
-      * For Xcode 11 and newer, look under
-      **Signing & Capabilities > Team**.
+      make sure your Development Team is selected
+      under **Signing & Capabilities > Team**.
 
       When you select a team,
       Xcode creates and downloads a Development Certificate,

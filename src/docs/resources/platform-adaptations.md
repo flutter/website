@@ -1,5 +1,5 @@
 ---
-title: Platform specific behaviors and adaptations
+title: Platform-specific behaviors and adaptations
 description: Learn more about Flutter's platform adaptiveness.
 ---
 

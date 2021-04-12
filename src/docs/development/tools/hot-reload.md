@@ -65,7 +65,7 @@ the hot reload command. The code updates and execution continues.
   hot reload.
 {{site.alert.end}}
 
-![Android Studio UI]({% asset development/tools/android-studio-run-controls.png @path %}){:width="550px"}<br>
+![Android Studio UI]({% asset development/tools/android-studio-run-controls.png @path %}){:width="100%"}<br>
 Controls for run, run debug, hot reload, and hot restart in Android Studio
 
 A code change has a visible effect only if the modified
@@ -155,7 +155,7 @@ Before the change:
 <!-- skip -->
 ```dart
 class A<T> {
-  T i;
+  T? i;
 }
 ```
 
@@ -163,8 +163,8 @@ After the change:
 <!-- skip -->
 ```dart
 class A<T, V> {
-  T i;
-  V v;
+  T? i;
+  V? v;
 }
 ```
 
@@ -281,7 +281,7 @@ For example, either of the following solutions work:
 <!-- skip -->
 ```dart
 const bar = foo;    // Convert foo to a const...
-get bar => foo;     // ...or provide a getter.
+int get bar => foo;     // ...or provide a getter.
 ```
 
 For more information, read about the [differences

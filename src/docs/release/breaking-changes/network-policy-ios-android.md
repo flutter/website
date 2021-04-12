@@ -1,5 +1,5 @@
 ---
-title: Insecure HTTP connections are disabled by default on iOS and Android.
+title: Insecure HTTP connections are disabled by default on iOS and Android
 description: Accessing a URL with HTTP protocol throws an exception unless the domain is explicitly allowed by policy.
 ---
 
@@ -14,6 +14,13 @@ Insecure HTTP is not allowed by platform: <host>
 ```
 
 Use HTTPS instead.
+
+{{site.alert.important}}
+  This change over-restricted HTTP access on local networks beyond the
+  restrictions imposed by mobile platforms ([flutter/flutter#72723](https://github.com/flutter/flutter/issues/72723)).
+
+  This change has since been reverted.
+{{site.alert.end}}
 
 ## Context
 
@@ -99,7 +106,8 @@ We **do not** recommend you do this for your release builds.
 ## Timeline
 
 Landed in version: 1.23<br>
-In stable release: not yet
+In stable release: 2.0.0<br>
+Reverted in version: 2.2.0 (proposed)
 
 ## References
 
