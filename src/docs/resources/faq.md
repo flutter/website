@@ -126,14 +126,14 @@ and address commonly-requested user features.
 
 Flutter includes:
 
-* Heavily optimized, the mobile-first 2D rendering engine
+* Heavily optimized, mobile-first 2D rendering engine
   with excellent support for text
 * Modern react-style framework
 * Rich set of widgets implementing Material Design and iOS-style
 * APIs for unit and integration tests
 * Interop and plugin APIs to connect to the system and 3rd-party SDKs
 * Headless test runner for running tests on Windows, Linux, and Mac
-* [Dart DevTools][] for testing, debugging and profiling your app
+* [Dart DevTools][] for testing, debugging, and profiling your app
 * Command-line tools for creating, building, testing, and
   compiling your apps
 
@@ -155,7 +155,7 @@ Yes! Flutter ships with a modern react-style framework.
 Flutter's framework is designed to be layered and
 customizable (and optional). Developers can choose to
 use only parts of the framework, or even replace
-the upper layers of the framework entirely.
+upper layers of the framework entirely.
 
 ### Does Flutter come with widgets?
 
@@ -206,7 +206,7 @@ of Flutter, read the [architectural overview].
 
 ### How does Flutter run my code on Android? {#run-android}
 
-The engine's C and C++ codes are compiled with Android's NDK.
+The engine's C and C++ code are compiled with Android's NDK.
 The Dart code (both the SDK's and yours)
 are ahead-of-time (AOT) compiled into native, ARM, and x86
 libraries. Those libraries are included in a "runner"
@@ -226,7 +226,7 @@ the finished release app.
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
-The engine's C and C++ codes are compiled with LLVM.
+The engine's C and C++ code are compiled with LLVM.
 The Dart code (both the SDK's and yours)
 are ahead-of-time (AOT) compiled into a native, ARM library.
 That library is included in a "runner" iOS project,
@@ -317,7 +317,7 @@ languages and runtimes, and ultimately
 adopted Dart for the framework and widgets.
 Flutter used four primary dimensions for evaluation,
 and considered the needs of framework authors,
-developers, and end-users. We found many languages
+developers, and end users. We found many languages
 met some requirements, but Dart scored highly on
 all of our evaluation dimensions and met all our
 requirements and criteria.
@@ -866,7 +866,7 @@ In no particular order:
   geometry (for example, for cartesian boxes, a size,
   specifically a width and a height) that fulfills those constraints.
   By using this technique, Flutter can usually
-  layout an entire scene with a single pass.
+  lay out an entire scene with a single pass.
 
 ## Project
 
