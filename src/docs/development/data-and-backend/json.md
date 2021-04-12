@@ -3,6 +3,8 @@ title: JSON and serialization
 description: How to use JSON with Flutter.
 ---
 
+<?code-excerpt path-base="../null_safety_examples/development/data-and-backend/json/"?>
+
 It is hard to think of a mobile app that doesn't need to communicate with a
 web server or easily store structured data at some point. When making
 network-connected apps, the chances are that it needs to consume some good old
@@ -105,6 +107,7 @@ decoder.
 
 The following sample JSON implements a simple user model.
 
+<?code-excerpt "lib/manual/main.dart (JSON)" skip="1" take="4"?>
 ```json
 {
   "name": "John Smith",
@@ -121,7 +124,7 @@ By looking at the [`dart:convert`][] documentation,
 you'll see that you can decode the JSON by calling the
 `jsonDecode()` function, with the JSON string as the method argument.
 
-<!-- skip -->
+<?code-excerpt "lib/manual/main.dart (manual)"?>
 ```dart
 Map<String, dynamic> user = jsonDecode(jsonString);
 
@@ -155,7 +158,7 @@ the app won't compile, instead of crashing at runtime.
 
 **user.dart**
 
-<!-- skip -->
+<?code-excerpt "lib/manual/user.dart"?>
 ```dart
 class User {
   final String name;
@@ -167,20 +170,19 @@ class User {
       : name = json['name'],
         email = json['email'];
 
-  Map<String, dynamic> toJson() =>
-    {
-      'name': name,
-      'email': email,
-    };
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'email': email,
+      };
 }
 ```
 
 The responsibility of the decoding logic is now moved inside the model
 itself. With this new approach, you can decode a user easily.
 
-<!-- skip -->
+<?code-excerpt "lib/manual/main.dart (fromJson)"?>
 ```dart
-Map userMap = jsonDecode(jsonString);
+Map<String, dynamic> userMap = jsonDecode(jsonString);
 var user = User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
@@ -191,7 +193,7 @@ To encode a user, pass the `User` object to the `jsonEncode()` function.
 You don't need to call the `toJson()` method, since `jsonEncode()`
 already does it for you.
 
-<!-- skip -->
+<?code-excerpt "lib/manual/main.dart (jsonEncode)" skip="1"?>
 ```dart
 String json = jsonEncode(user);
 ```
@@ -278,18 +280,18 @@ from the previous samples.
 
 **user.dart**
 
-{% prettify dart %}
+<?code-excerpt "lib/serializable/user.dart"?>
+```dart
 import 'package:json_annotation/json_annotation.dart';
 
 /// This allows the `User` class to access private members in
 /// the generated file. The value for this is *.g.dart, where
 /// the star denotes the source file name.
-part '[[highlight]]user[[/highlight]].g.dart';
+part 'user.g.dart';
 
 /// An annotation for the code generator to know that this class needs the
 /// JSON serialization logic to be generated.
-[[highlight]]@JsonSerializable()[[/highlight]]
-
+@JsonSerializable()
 class User {
   User(this.name, this.email);
 
@@ -299,14 +301,14 @@ class User {
   /// A necessary factory constructor for creating a new User instance
   /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
   /// The constructor is named after the source class, in this case, User.
-  factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   /// `toJson` is the convention for a class to declare support for serialization
   /// to JSON. The implementation simply calls the private, generated
   /// helper method `_$UserToJson`.
-  Map<String, dynamic> toJson() => _$[[highlight]]User[[/highlight]]ToJson(this);
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 }
-{% endprettify %}
+```
 
 With this setup, the source code generator generates code for encoding
 and decoding the `name` and `email` fields from JSON.
@@ -391,14 +393,14 @@ It is safe to start the watcher once and leave it running in the background.
 To decode a JSON string the `json_serializable` way,
 you do not have actually to make any changes to our previous code.
 
-<!-- skip -->
+<?code-excerpt "lib/serializable/main.dart (fromJson)"?>
 ```dart
-Map userMap = jsonDecode(jsonString);
+Map<String, dynamic> userMap = jsonDecode(jsonString);
 var user = User.fromJson(userMap);
 ```
 The same goes for encoding. The calling API is the same as before.
 
-<!-- skip -->
+<?code-excerpt "lib/serializable/main.dart (jsonEncode)" skip="1"?>
 ```dart
 String json = jsonEncode(user);
 ```
@@ -421,7 +423,7 @@ you might have experienced an`Invalid argument` error.
 
 Consider the following `Address` class:
 
-<!-- skip -->
+<?code-excerpt "lib/nested/address.dart"?>
 ```dart
 import 'package:json_annotation/json_annotation.dart';
 part 'address.g.dart';
@@ -433,25 +435,28 @@ class Address {
 
   Address(this.street, this.city);
 
-  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
+  factory Address.fromJson(Map<String, dynamic> json) =>
+      _$AddressFromJson(json);
   Map<String, dynamic> toJson() => _$AddressToJson(this);
 }
 ```
 
 The `Address` class is nested inside the `User` class:
 
-<!-- skip -->
+<?code-excerpt "lib/nested/user.dart" replace="/explicitToJson: true//g"?>
 ```dart
-import 'address.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'address.dart';
+
 part 'user.g.dart';
 
 @JsonSerializable()
 class User {
-  String firstName;
-  Address address;
+  User(this.name, this.address);
 
-  User(this.firstName, this.address);
+  String name;
+  Address address;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
@@ -464,16 +469,15 @@ looks something like the following:
 
 <!-- skip -->
 ```dart
-(
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
-  'firstName': instance.firstName,
+  'name': instance.name,
   'address': instance.address,
 };
 ```
 
 All looks fine now, but if you do a print() on the user object:
 
-<!-- skip -->
+<?code-excerpt "lib/nested/main.dart (print)"?>
 ```dart
 Address address = Address("My st.", "New York");
 User user = User("John", address);
@@ -495,17 +499,20 @@ When what you probably want is output like the following:
 To make this work, pass `explicitToJson: true` in the `@JsonSerializable()`
 annotation over the class declaration. The `User` class now looks as follows:
 
+<?code-excerpt "lib/nested/user.dart"?>
 ``` dart
-import 'address.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'address.dart';
+
 part 'user.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class User {
-  String firstName;
-  Address address;
+  User(this.name, this.address);
 
-  User(this.firstName, this.address);
+  String name;
+  Address address;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
