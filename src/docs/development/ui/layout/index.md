@@ -11,6 +11,8 @@ diff2html: true
 {% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/null_safety_examples' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/dev/integration_tests/flutter_gallery/lib/demo {%- endcapture -%}
 
+<?code-excerpt path-base="../null_safety_examples/"?>
+
 <style>dl, dd { margin-bottom: 0; }</style>
 
 {{site.alert.secondary}}
@@ -121,7 +123,7 @@ Icon(
 
 ### 3. Add the visible widget to the layout widget
 
-<?code-excerpt path-base="layout/base"?>
+<?code-excerpt path-base="../null_safety_examples/layout/base"?>
 
 All layout widgets have either of the following:
 
@@ -153,7 +155,7 @@ and has API for adding drawers, snack bars, and bottom sheets.
 Then you can add the `Center` widget directly to the `body`
 property for the home page.
 
-<?code-excerpt path-base="layout/base"?>
+<?code-excerpt path-base="../null_safety_examples/layout/base"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
@@ -188,7 +190,7 @@ class MyApp extends StatelessWidget {
 For a non-Material app, you can add the `Center` widget to the app's
 `build()` method:
 
-<?code-excerpt path-base="layout/non_material"?>
+<?code-excerpt path-base="../null_safety_examples/layout/non_material"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
@@ -234,7 +236,7 @@ color to white and the text to dark grey to mimic a Material app.
 
 ## Lay out multiple widgets vertically and horizontally
 
-<?code-excerpt path-base=""?>
+<?code-excerpt path-base="../null_safety_examples/"?>
 
 One of the most common layout patterns is to arrange
 widgets vertically or horizontally. You can use a
