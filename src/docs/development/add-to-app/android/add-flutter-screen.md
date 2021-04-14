@@ -149,6 +149,8 @@ The following example arbitrarily pre-warms a
 <!--code-excerpt "MyApplication.java" title-->
 ```java
 public class MyApplication extends Application {
+  public FlutterEngine flutterEngine;
+  
   @Override
   public void onCreate() {
     super.onCreate();
