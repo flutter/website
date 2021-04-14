@@ -33,10 +33,16 @@ You can customize these behaviors,
 typically by setting them to values in
 your `void main()` function.
 
-## Quit application on encountering an error
+Below each error type handling is explained. At the bottom
+there's a code snippet which handles all types of errors. Even
+though you can just copy-paste the snippet, we recommend you
+to first get acquainted with each of the error types.
+
+## Errors caught by Flutter
 
 For example, to make your application quit immediately any time an
-error occurs in release mode, you could use the following handler:
+error is caught by Flutter in release mode, you could use the
+following handler:
 
 <!-- skip -->
 ```dart
@@ -65,7 +71,7 @@ This handler can also be used to report errors to a logging service.
 For more details, see our cookbook chapter for 
 [reporting errors to a service][].
 
-## Define a custom error widget
+## Define a custom error widget for build phase errors
 
 To define a customized error widget that displays whenever
 the builder fails to build a widget, use [`MaterialApp.builder`][].
@@ -90,11 +96,12 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-## Set up error handling for a Zone
+## Errors not caught by Flutter
 
 Consider an `onPressed` callback that invokes an asynchronous function,
 such as `MethodChannel.invokeMethod` (or pretty much any plugin).
 For example:
+
 <!-- skip -->
 ```dart
 OutlinedButton(
@@ -105,26 +112,88 @@ OutlinedButton(
   },
 ),
 ```
+
 If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onError`.
 Instead, it's forwarded to the `Zone` where `runApp` was run.
 
 To catch such an error, use [`runZonedGuarded`][].
+
 <!-- skip -->
 ```dart
 import 'dart:async';
 
 void main() {
-  runZonedGuarded(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    runApp(MyApp()));
+  runZonedGuarded(() {
+    runApp(MyApp());
   }, (Object error, StackTrace stack) {
     myBackend.sendError(error, stack);
   });
 }
 ```
-Note that `WidgetsFlutterBinding.ensureInitialized()` is
-called within `runZonedGuarded`; error handling wouldn't work if
-the function were called from the outside.
+
+Note that if in your app you call `WidgetsFlutterBinding.ensureInitialized()`
+manually to perform some initialization before calling `runApp` (e.g.
+`Firebase.initializeApp()`), you **must** call
+`WidgetsFlutterBinding.ensureInitialized()` inside `runZonedGuarded`:
+
+<!-- skip -->
+```dart
+runZonedGuarded(() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
+```
+
+{{site.alert.note}}
+    Error handling wouldn't work if `WidgetsFlutterBinding.ensureInitialized()`
+    was called from the outside.
+{{site.alert.end}}
+
+## Handling all types of errors
+
+Say you want to exit application on any exception and to display
+a custom error widget whenever a widget building fails - you can base
+your errors handling on next code snippet:
+
+<!-- skip -->
+```dart
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await myErrorsHandler.initialize();
+    FlutterError.onError = (FlutterErrorDetails details) {
+      FlutterError.dumpErrorToConsole(details);
+      myErrorsHandler.onError(details);
+      exit(1);
+    };
+    runApp(MyApp());
+  }, (Object error, StackTrace stack) {
+    myErrorsHandler.onError(error, stack);
+    exit(1);
+  });
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      builder: (BuildContext context, Widget widget) {
+        Widget error = Text('...rendering error...');
+        if (widget is Scaffold || widget is Navigator)
+          error = Scaffold(body: Center(child: error));
+        ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
+        return widget;
+      },
+    );
+  }
+}
+```
 
 [`ErrorWidget.builder`]: {{site.api}}/flutter/widgets/ErrorWidget/builder.html
 [`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
