@@ -1208,7 +1208,7 @@ are placed in an assets folder for Flutter.
 Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
 `2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
 are logical pixels, which are basically the same as device-independent pixels.
-The so-called [devicePixelRatio][]
+The so-called [`devicePixelRatio`][]
 expresses the ratio of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
@@ -2292,7 +2292,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 [developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
-[devicePixelRatio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
+[`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [DevTools]: /docs/development/tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login

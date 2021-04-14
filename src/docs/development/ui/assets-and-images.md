@@ -494,7 +494,8 @@ For more details, see
 [`ImageStream`]: {{site.api}}/flutter/painting/ImageStream-class.html
 [Android Developer Guide]: {{site.android-dev}}/training/multiscreen/screendensities
 [`AssetManager`]: {{site.android-dev}}/reference/android/content/res/AssetManager
-[device pixel ratio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
+[device pixel ratio]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
+[Device pixel ratio]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [drawables]: {{site.android-dev}}/guide/topics/resources/drawable-resource
 [`FlutterPluginRegistrar`]: {{site.api}}/objcdoc/Protocols/FlutterPluginRegistrar.html
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
@@ -516,4 +517,3 @@ For more details, see
 [MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[Device pixel ratio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
