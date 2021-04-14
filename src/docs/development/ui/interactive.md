@@ -813,8 +813,8 @@ Flutter Gallery [running app][], [repo][]
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
-[running app]: https://flutter.github.io/gallery/#/
+[repo]: {{site.github}}/flutter/gallery
+[running app]: https://gallery.flutter.dev
 [set up]: /docs/get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
