@@ -280,7 +280,7 @@ Repeat the first two steps.
 
 ### Create a detail screen to extract the arguments
 
-Next, create a detail screen that extracts and displays the title and description from the `Todo`. To access the `Todo`, use the `ModalRoute.of()` method. This method returns the current route with the arguments.
+Next, create a detail screen that extracts and displays the title and description from the `Todo`. To access the `Todo`, use the [`ModalRoute.of()`][] method. This method returns the current route with the arguments.
 
 <!-- skip -->
 ```dart
@@ -307,7 +307,7 @@ class DetailScreen extends StatelessWidget {
 
 Finally, navigate to the `DetailScreen` when a user taps
 a `ListTile` widget using `Navigator.push()`.
-Pass the arguments as part of the `RouteSettings`.
+Pass the arguments as part of the [`RouteSettings`][].
 The `DetailScreen` extracts these arguments.
 
 <!-- skip -->
@@ -429,6 +429,8 @@ class DetailScreen extends StatelessWidget {
 </noscript>
 
 
+[`ModalRoute.of()`]: {{site.api}}/flutter/widgets/ModalRoute/of.html
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`onTap()`]: {{site.api}}/flutter/material/ListTile/onTap.html
+[`RouteSettings`]: {{site.api}}/flutter/widgets/RouteSettings-class.html
 [Use lists]: /docs/cookbook/lists/basic-list
