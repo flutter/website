@@ -9,6 +9,8 @@ next:
   path: /docs/development/data-and-backend/state-mgmt/options
 ---
 
+<?code-excerpt path-base="../null_safety_examples/state_mgmt/simple/"?>
+
 Now that you know about [declarative UI programming][]
 and the difference between [ephemeral and app state][],
 you are ready to learn about simple app state management.
@@ -105,7 +107,7 @@ if you want to change `contents`, it needs to live in `MyCart`'s
 parent or above.
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (myTapHandler)"?>
+<?code-excerpt "lib/src/provider.dart (myTapHandler)"?>
 ```dart
 // GOOD
 void myTapHandler(BuildContext context) {
@@ -117,7 +119,7 @@ void myTapHandler(BuildContext context) {
 Now `MyCart` has only one code path for building any version of the UI.
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (build)"?>
+<?code-excerpt "lib/src/provider.dart (build)"?>
 ```dart
 // GOOD
 Widget build(BuildContext context) {
@@ -159,7 +161,7 @@ so you can pass them around any way you want. So, inside
 `MyCatalog` you can define the following:
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/src/passing_callbacks.dart (methods)"?>
+<?code-excerpt "lib/src/passing_callbacks.dart (methods)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -236,7 +238,7 @@ In our shopping app example, we want to manage the state of the cart in a
 `ChangeNotifier`. We create a new class that extends it, like so:
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
+<?code-excerpt "lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
 class CartModel extends [!ChangeNotifier!] {
   /// Internal, private state of the cart.
@@ -276,7 +278,7 @@ to use [widget testing][] for it). For example,
 here's a simple unit test of `CartModel`:
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
+<?code-excerpt "test/model_test.dart (test)"?>
 ```dart
 test('adding item increases total cost', () {
   final cart = CartModel();
@@ -303,7 +305,7 @@ You don't want to place `ChangeNotifierProvider` higher than necessary
 the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/main.dart (main)" replace="/ChangeNotifierProvider/[!$&!]/g"?>
+<?code-excerpt "lib/main.dart (main)" replace="/ChangeNotifierProvider/[!$&!]/g"?>
 ```dart
 void main() {
   runApp(
@@ -323,7 +325,7 @@ of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
 If you want to provide more than one class, you can use `MultiProvider`:
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/main.dart (multi-provider-main)" replace="/multiProviderMain/main/g;/MultiProvider/[!$&!]/g"?>
+<?code-excerpt "lib/main.dart (multi-provider-main)" replace="/multiProviderMain/main/g;/MultiProvider/[!$&!]/g"?>
 ```dart
 void main() {
   runApp(
@@ -346,7 +348,7 @@ Now that `CartModel` is provided to widgets in our app through the
 This is done through the `Consumer` widget.
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/src/provider.dart (descendant)" replace="/Consumer/[!$&!]/g"?>
+<?code-excerpt "lib/src/provider.dart (descendant)" replace="/Consumer/[!$&!]/g"?>
 ```dart
 return [!Consumer!]<CartModel>(
   builder: (context, cart, child) {
@@ -381,13 +383,13 @@ that _doesn't_ change when the model changes, you can construct it
 once and get it through the builder.
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
+<?code-excerpt "lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
 ```dart
 return Consumer<CartModel>(
   builder: (context, cart, [!child!]) => Stack(
         children: [
           // Use SomeExpensiveWidget here, without rebuilding every time.
-          [!child!],
+          if ([!child!] != null) [!child!],
           Text("Total price: ${cart.totalPrice}"),
         ],
       ),
@@ -401,7 +403,7 @@ as possible. You don't want to rebuild large portions of the UI
 just because some detail somewhere changed.
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
+<?code-excerpt "lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
 // DON'T DO THIS
 return Consumer<CartModel>(
@@ -420,7 +422,7 @@ return Consumer<CartModel>(
 Instead:
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (leafDescendant)"?>
+<?code-excerpt "lib/src/performance.dart (leafDescendant)"?>
 ```dart
 // DO THIS
 return HumongousWidget(
@@ -452,7 +454,7 @@ For this use case, we can use `Provider.of`,
 with the `listen` parameter set to `false`.
 
 <!-- skip -->
-<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
+<?code-excerpt "lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
 Provider.of<CartModel>(context, [!listen: false!]).removeAll();
 ```
