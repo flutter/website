@@ -112,6 +112,7 @@
       { "source": "/go/custom-tabs-support", "destination": "https://docs.google.com/document/d/1GvsmPQz6aKixNUphL10XmSOL7M6nOH7W1jYwNp0LwnA", "type": 301 },
       { "source": "/go/dart-flutterbuffers", "destination": "https://docs.google.com/document/d/1rqKq6DwqaeBfTLTixxurrdT9HwZ02DyRjFigO9SiB1Q/edit#", "type": 301 },
       { "source": "/go/dartle", "destination": "https://docs.google.com/document/d/1Ei0ZIqdqNjxTHoGB3Ay6SWQg3DMSsKKWl70XoBUCFTA", "type": 301 },
+      { "source": "/go/data-sync", "destination": "https://docs.google.com/document/d/1yH96-p-SkMmt6hL5xHHDtMvCKRz2XGrMuw9ZY_nE954", "type": 301 },
       { "source": "/go/default-scroll-action", "destination": "https://docs.google.com/document/d/1SJvom6k4YW4EtFIY4VpAhAOH-jWhRkHVfpVsOBB56KM/edit?usp=sharing", "type": 301 },
       { "source": "/go/deferred-image-decoding", "destination": "https://docs.google.com/document/d/1f-NCEF0lrHGd3DsieS1tZ_NWbYTjA4GTqESMbGFsU2U/edit?ts=5e17a77d&pli=1#", "type": 301 },
       { "source": "/go/delegate-route-transitions", "destination": "https://docs.google.com/document/d/10C5VbqhU7FkkDSVlcVZmrl8UyL7nw4CeL4QdPKMjsEk/edit?usp=sharing", "type": 301 },
@@ -242,7 +243,6 @@
       { "source": "/go/widget-tree-image-cache", "destination": "https://docs.google.com/document/d/1deEtxZk1VYRmzvkL4gTb3sEnjBrHejQkWObQ4yrP5jE/edit?pli=1#", "type": 301 },
       { "source": "/go/widgetspan-in-selectabletext", "destination": "https://docs.google.com/document/d/1nrVRytWVF-1hr8LvUKyENE5s074UInni9ZiColtIIxI", "type": 301 },
       { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 },
-      { "source": "/go/data-sync", "destination": "https://docs.google.com/document/d/1yH96-p-SkMmt6hL5xHHDtMvCKRz2XGrMuw9ZY_nE954", "type": 301 },
 
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },
