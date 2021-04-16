@@ -91,11 +91,11 @@ For more information, see the full article on
 <!-- skip -->
 ```dart
 class Album {
-  final int userId;
-  final int id;
-  final String title;
+  final int? userId;
+  final int? id;
+  final String? title;
 
-  Album({@required this.userId, @required this.id, @required this.title});
+  Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -161,7 +161,7 @@ See [`State`][] for more details.
 <!-- skip -->
 ```dart
 class _MyAppState extends State<MyApp> {
-  late Future<Album> futureAlbum;
+  late Future<Album>? futureAlbum;
 
   @override
   void initState() {
@@ -205,7 +205,7 @@ FutureBuilder<Album>(
   future: futureAlbum,
   builder: (context, snapshot) {
     if (snapshot.hasData) {
-      return Text(snapshot.data!.title);
+      return Text(snapshot.data!.title!);
     } else if (snapshot.hasError) {
       return Text("${snapshot.error}");
     }
@@ -261,11 +261,11 @@ Future<Album> fetchAlbum() async {
 }
 
 class Album {
-  final int userId;
-  final int id;
-  final String title;
+  final int? userId;
+  final int? id;
+  final String? title;
 
-  Album({@required this.userId, @required this.id, @required this.title});
+  Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -279,14 +279,14 @@ class Album {
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  late Future<Album> futureAlbum;
+  Future<Album>? futureAlbum;
 
   @override
   void initState() {
@@ -310,7 +310,7 @@ class _MyAppState extends State<MyApp> {
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return Text(snapshot.data!.title);
+                return Text(snapshot.data!.title!);
               } else if (snapshot.hasError) {
                 return Text("${snapshot.error}");
               }
