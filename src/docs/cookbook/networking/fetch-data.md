@@ -286,7 +286,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Future<Album>? futureAlbum;
+  late Future<Album>? futureAlbum;
 
   @override
   void initState() {
