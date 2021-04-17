@@ -47,7 +47,7 @@ use something you already know, for example `id = 1`.
 
 <!-- skip -->
 ```dart
-Future<Response> deleteAlbum(String id) async {
+Future<http.Response> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
     headers: <String, String>{
