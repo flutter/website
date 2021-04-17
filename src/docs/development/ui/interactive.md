@@ -524,7 +524,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  TapboxB({Key key, this.active: false, @required this.onChanged})
+  TapboxB({Key key, this.active: false, required this.onChanged})
       : super(key: key);
 
   final bool active;
@@ -554,18 +554,6 @@ class TapboxB extends StatelessWidget {
   }
 }
 ```
-
-{{site.alert.tip}}
-  When creating API, consider using the `@required` annotation for any
-  parameters that your code relies on. To use `@required`, import the
-  [`foundation` library][] (which re-exports Dart's
-  [`meta.dart`][] library):
-
-  <!-- skip -->
-  ```dart
-  import 'package:flutter/foundation.dart';
-  ```
-{{site.alert.end}}
 
 <hr>
 
