@@ -71,7 +71,7 @@ textEditingController.value = TextEditingValue(
 
 ## Timeline
 
-Landed in version: TBA<br>
+Landed in version: 2.2.0-11.0.pre<br>
 In stable release: not yet
 
 ## References
