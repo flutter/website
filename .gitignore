@@ -27,6 +27,7 @@ firebase-debug.log
 # Until future update
 Dockerfile
 docker-compose.yml
+.dockerignore
 Makefile
 .env.*
 _config_local.yml
