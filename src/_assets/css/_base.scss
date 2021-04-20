@@ -48,10 +48,6 @@ body {
   overflow-x: hidden;
 }
 
-// Fix additional overflow issues with homepage display animations 
-// any any other pages that use a similar structure. This is in 
-// addition to the overflow-x that is already on body, which strangely 
-// does not solve this issue.
 .container main {
   overflow-x: hidden;
 }
