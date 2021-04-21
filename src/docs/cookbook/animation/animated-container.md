@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/animation/animated_container/"?>
+
 The [`Container`][] class provides a convenient way
 to create a widget with specific properties:
 width, height, background color, padding, borders, and more.
@@ -47,7 +49,7 @@ radius. You can also define the default value of each property.
 These properties belong to a custom `State` class so they
 can be updated when the user taps a button.
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
 ```dart
 class AnimatedContainerApp extends StatefulWidget {
   @override
@@ -75,7 +77,7 @@ Next, build the `AnimatedContainer` using the properties defined in the
 previous step. Furthermore, provide a `duration` that defines how long
 the animation should run.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (AnimatedContainer)" replace="/^child: //g;/,$//g"?>
 ```dart
 AnimatedContainer(
   // Use the properties stored in the State class.
@@ -89,7 +91,7 @@ AnimatedContainer(
   duration: Duration(seconds: 1),
   // Provide an optional curve to make the animation feel smoother.
   curve: Curves.fastOutSlowIn,
-);
+)
 ```
 
 ## 3. Start the animation by rebuilding with new properties
@@ -107,7 +109,7 @@ A real app typically transitions between fixed values (for example,
 from a grey to a green background). For this app,
 generate new values each time the user taps the button.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
 ```dart
 FloatingActionButton(
   child: Icon(Icons.play_arrow),
@@ -135,12 +137,13 @@ FloatingActionButton(
           BorderRadius.circular(random.nextInt(100).toDouble());
     });
   },
-);
+)
 ```
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'dart:math';
 
 import 'package:flutter/material.dart';
