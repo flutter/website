@@ -25,7 +25,7 @@ Widgets are the basic building blocks of a Flutter UI.
 As you progress through this codelab,
 you'll learn that almost everything in Flutter is a widget.
 A widget is an immutable object that describes a specific part of a UI.
-You'll also learn that Flutter widgets are composable, meaning,
+You'll also learn that Flutter widgets are composable, meaning
 that you can combine existing widgets to make more sophisticated widgets.
 At the end of this codelab,
 you'll get to apply what you've learned
