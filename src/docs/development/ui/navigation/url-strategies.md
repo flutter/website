@@ -33,50 +33,56 @@ The following instructions show how to use a conditional
 import to call this function on the web,
 but not on other platforms.
 
-1. Include the `flutter_web_plugins` package and call the
+<ol markdown="1">
+<li markdown="1">Include the `flutter_web_plugins` package and call the
    [`setUrlStrategy`][] function before your app runs:
 
-```yaml
-dependencies:
-  flutter_web_plugins:
-    sdk: flutter
-```
+  ```yaml
+  dependencies:
+    flutter_web_plugins:
+      sdk: flutter
+  ```
+</li>
 
-2. Create a `lib/configure_nonweb.dart` file with the
+<li markdown="1">Create a `lib/configure_nonweb.dart` file with the
    following code:
 
-```dart
-void configureApp() {
-  // No-op.
-}
-```
+  ```dart
+  void configureApp() {
+    // No-op.
+  }
+  ```
+</li>
 
-3. Create a `lib/configure_web.dart` file with the
+<li markdown="1">Create a `lib/configure_web.dart` file with the
    following code:
 
-<!--skip-->
-```dart
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+  <!--skip-->
+  ```dart
+  import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
-void configureApp() {
-  setUrlStrategy(PathUrlStrategy());
-}
-```
+  void configureApp() {
+    setUrlStrategy(PathUrlStrategy());
+  }
+  ```
+</li>
 
-4. Open `lib/main.dart` and conditionally import
+<li markdown="1">Open `lib/main.dart` and conditionally import
    `configure_web.dart` when the `html` package
    is available, or `configure_nonweb.dart` when it isn't:
 
-<!--skip-->
-```dart
-import 'package:flutter/material.dart';
-import 'configure_nonweb.dart' if (dart.library.html) 'configure_web.dart';
+  <!--skip-->
+  ```dart
+  import 'package:flutter/material.dart';
+  import 'configure_nonweb.dart' if (dart.library.html) 'configure_web.dart';
 
-void main() {
-  configureApp();
+  void main() {
+    configureApp();
   runApp(MyApp());
-}
-```
+  }
+  ```
+</li>
+</ol>
 
 ## Hosting a Flutter app at a non-root location
 
