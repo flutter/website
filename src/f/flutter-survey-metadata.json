@@ -4,9 +4,9 @@
     "title should not exceed 45 characters.",
     "startDate and endDate should follow ISO 8601 standard with a timezone offset."
   ],
-  "uniqueId": "2021Q1",
-  "title": "Help improve Flutter! Take our Q1 survey.",
-  "url": "https://google.qualtrics.com/jfe/form/SV_eKYon5R5FfrS38G",
-  "startDate": "2021-03-05T09:00:00-08:00",
-  "endDate": "2021-03-12T09:00:00-08:00"
+  "uniqueId": "2021Q2",
+  "title": "Help improve Flutter! Take our Q2 survey.",
+  "url": "https://google.qualtrics.com/jfe/form/SV_79wilToHUqr8T66",
+  "startDate": "2021-05-10T09:00:00-08:00",
+  "endDate": "2021-05-17T09:00:00-08:00"
 }
