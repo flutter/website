@@ -146,6 +146,7 @@
       { "source": "/go/flutter-migrate", "destination": "https://docs.google.com/document/d/1fPnpUI6gXE9PkNWuFoAW20m_sQ87ZSC1rrn_D7fxBvs", "type": 301 },
       { "source": "/go/flutter-nonhost", "destination": "https://docs.google.com/document/d/1rTLxAxsshEir-B2vE6DU_MaqMMusOdCgLGEGpBYG3CM", "type": 301 },
       { "source": "/go/flutter-platform-idling", "destination": "https://docs.google.com/document/d/1RhSluOcHED6wEckY8CGK1mowRcWGAEGWraN6REPaORs/edit", "type": 301 },
+      { "source": "/go/flutter-plugin-languages", "destination": "https://docs.google.com/document/d/1Ok_mUPgmw8_l-ynLueEKtXm2Fs48lEVB0JqZd7M7uyA/edit", "type": 301 },
       { "source": "/go/flutter-skia-ios-font-problem", "destination": "https://docs.google.com/document/d/1UkAhEKUEWNUjfKlqoBjJnx8zXrqErIqidPYjd9FBwsg", "type": 301 },
       { "source": "/go/flutter-support-multi-architecture", "destination": "https://docs.google.com/document/d/19tzWySgtgtTA99XQsjx5Pg0SFJeZKXyUlYavR0EXv8c/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-web-scenelets", "destination": "https://docs.google.com/document/d/1GUAx3aqdtEoaBMTNpsS1-i59QZlwTi6vUCASbaanPCo", "type": 301 },
