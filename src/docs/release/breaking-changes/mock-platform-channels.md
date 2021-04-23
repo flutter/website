@@ -83,7 +83,7 @@ Tests that do not use the default test widgets binding (`AutomatedTestWidgetsFlu
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 2.2.0-11.0.pre.265<br>
 In stable release: not yet
 
 ## References
