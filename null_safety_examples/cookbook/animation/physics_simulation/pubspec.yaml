@@ -1,0 +1,12 @@
+name: physics_simulation
+description: Sample code for cookbook.
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
