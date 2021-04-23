@@ -188,4 +188,4 @@ flutter test --help
 
 [`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [`test`]: {{site.pub-pkg}}/test
-[test package documentation]: {{site.github}}/dart-lang/test/blob/master/README.md
+[test package documentation]: {{site.pub}}/packages/test

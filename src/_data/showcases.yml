@@ -1,15 +1,15 @@
-- name: Realtor.com
+- name: BMW
   featured: true
   description: >
-    With listings updated in real time, Realtor.com’s award-winning app helps
-    users find the home of their dreams.
-  logo_src: showcase/cards/realtor-logo.png
+    Flutter enabled BMW to build the My BMW app for iOS and Android from a 
+    single codebase. The app is fully developed in-house by BMW using Flutter.
+  logo_src: showcase/cards/bmw-logo.png
   learn_more_cta: Learn more
-  learn_more_link: https://www.realtor.com/
-  app_store_link: https://apps.apple.com/us/app/realtor-com-real-estate-search/id336698281
-  play_store_link: https://play.google.com/store/apps/details?id=com.move.realtor
+  learn_more_link: https://www.press.bmwgroup.com/global/article/detail/T0328610EN/the-my-bmw-app-new-features-and-tech-insights-for-march-2021
+  app_store_link: https://apps.apple.com/gb/app/my-bmw/id1519034860
+  play_store_link: https://play.google.com/store/apps/details?id=de.bmw.connected.mobile20.row
   logo_has_name: true
-  card_image: showcase/cards/realtor-top@.jpg
+  card_image: showcase/cards/bmw-top@.jpg
 
 - name: Nubank
   featured: true
@@ -30,7 +30,7 @@
   video_frame_image: showcase/video-frames/nubank@.png
   logo_has_name: true
   card_image: showcase/cards/nubank-top@.jpg
-  # temp, add a "showcase/cards/nubank-top-1200.jpg"
+  # TODO need a "showcase/cards/nubank-top-1200.jpg", then remove this flag
   no_1200_image: true
 
 - name: Tencent
