@@ -5,7 +5,7 @@ description: ScrollBehaviors will now automatically build Scrollbars on Desktop 
 
 ## Summary
 
-`ScrollBehavior`s will now automatically apply `Scrollbar`s to
+`ScrollBehavior`s now automatically apply `Scrollbar`s to
 scrolling widgets on desktop platforms - Mac, Windows and Linux.
 
 ## Context
@@ -14,7 +14,7 @@ Prior to this change, `Scrollbar`s were applied to scrolling widgets
 manually by the developer across all platforms. This did not match
 developer expectations when executing Flutter applications on desktop platforms.
 
-Now, the inherited `ScrollBehavior` will apply a `Scrollbar` automatically
+Now, the inherited `ScrollBehavior` apply a `Scrollbar` automatically
 to most scrolling widgets. This is similar to how `GlowingOverscrollIndicator`
 is created by `ScrollBehavior`. The few widgets that are exempt from this
 behavior are listed below.
@@ -52,8 +52,8 @@ Scrollbar(
 );
 ```
 
-The `ScrollBehavior` will now apply the `Scrollbar` automatically
-when executing on desktop, and will handle providing the `ScrollController`
+The `ScrollBehavior` now applies the `Scrollbar` automatically
+when executing on desktop, and handles providing the `ScrollController`
 to the `Scrollbar` for you.
 
 <!-- skip -->
@@ -97,7 +97,7 @@ to modify the default behavior.
       `ScrollConfiguration` above the widget in question with your
       custom `ScrollBehavior`
       
-Your scrollable widgets will then inherit this and reflect this behavior instead.
+Your scrollable widgets then inherit this and reflect this behavior instead.
 
 - Instead of creating your own `ScrollBehavior`, another option for changing
 the default behavior is to copy the existing `ScrollBehavior`, and toggle the
