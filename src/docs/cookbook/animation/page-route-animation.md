@@ -9,6 +9,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/animation/page_route_animation/"?>
+
 A design language, such as Material, defines standard behaviors when
 transitioning between routes (or screens). Sometimes, though, a custom
 transition between screens can make an app more unique. To help,
@@ -43,14 +45,16 @@ To start, use a [`PageRouteBuilder`][] to create a [`Route`][].
 The following example creates two routes: a home route with a "Go!" button, and
 a second route titled "Page 2".
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Starter)"?>
 ```dart
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(MaterialApp(
-    home: Page1(),
-  ));
+  runApp(
+    MaterialApp(
+      home: Page1(),
+    ),
+  );
 }
 
 class Page1 extends StatelessWidget {
@@ -103,7 +107,7 @@ The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
 Animation<double> into an Animation<Offset> using a Tween:
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Step1)"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -124,7 +128,7 @@ FractionalTranslation widget) whenever the value of the animation changes.
 AnimatedWidget Return a [`SlideTransition`][]
 with the `Animation<Offset>` and the child widget:
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Step2)"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -151,7 +155,7 @@ makes the animation start quickly and end slowly.
 To use a Curve, create a new [`CurveTween`][]
 and pass it a Curve:
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Step3)"?>
 ```dart
 var curve = Curves.ease;
 var curveTween = CurveTween(curve: curve);
@@ -165,7 +169,7 @@ combined the `Tween<Offset>` from step 2.
 To combine the tweens,
 use [`chain()`][]:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Tween)"?>
 ```dart
 var begin = Offset(0.0, 1.0);
 var end = Offset.zero;
@@ -177,7 +181,7 @@ var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 Then use this tween by passing it to `animation.drive()`. This creates a new
 `Animation<Offset>` that can be given to the `SlideTransition` widget:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (SlideTransition)"?>
 ```dart
 return SlideTransition(
   position: animation.drive(tween),
@@ -198,7 +202,7 @@ values are computed in this order:
 Another way to create an `Animation<Offset>` with an easing curve is to use a
 `CurvedAnimation`:
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Step4)" replace="/,$//g"?>
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -207,26 +211,29 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
   var tween = Tween(begin: begin, end: end);
   var curvedAnimation = CurvedAnimation(
-   parent: animation,
-   curve: curve,
+    parent: animation,
+    curve: curve,
   );
 
   return SlideTransition(
-   position: tween.animate(curvedAnimation),
-   child: child,
+    position: tween.animate(curvedAnimation),
+    child: child,
   );
 }
 ```
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(MaterialApp(
-    home: Page1(),
-  ));
+  runApp(
+    MaterialApp(
+      home: Page1(),
+    ),
+  );
 }
 
 class Page1 extends StatelessWidget {
