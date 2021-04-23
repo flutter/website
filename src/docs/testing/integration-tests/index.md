@@ -3,7 +3,7 @@ title: Integration testing
 description: Learn how to write integration tests
 ---
 
-This page describes how to use the [integration_test][] package to run
+This page describes how to use the `integration_test` package to run
 integration tests. Tests written using this package have the following
 properties:
  
@@ -39,7 +39,7 @@ run from the host and drive the app running on a real or virtual device. The
 
 **integration_test**
 
-Tests written with the [integration_test][] package can:
+Tests written with the `integration_test` package can:
  
 1. Run directly on the target device, allowing you to test on multiple Android
 or iOS devices using Firebase Test Lab.
