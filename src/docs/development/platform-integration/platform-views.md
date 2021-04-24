@@ -100,7 +100,7 @@ Widget build(BuildContext context) {
 For more information, see the API docs for:
 
 * [`PlatformViewLink`][]
-* [`AndroidViewService`][]
+* [`AndroidViewSurface`][]
 * [`PlatformViewsService`][]
 
 #### Virtual Display
