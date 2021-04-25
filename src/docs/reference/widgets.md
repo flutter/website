@@ -30,9 +30,6 @@ our [videos](/docs/resources/videos) page.
             <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
             <p class="card-text">{{comp.description}}</p>
         </div>
-        <div class="card-footer card-footer--transparent">
-            <a href="{{comp.link}}">Documentation</a>
-        </div>
     </div>
 {% endfor %}
 </div>
