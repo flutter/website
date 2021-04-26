@@ -55,7 +55,7 @@ View the application's download and install size in the **Android vitals** ->
 
 {% include app-figure.md image="perf/vital-size.png" alt="App size tab in Google Play Console" %}
 
-The download size is calculated based on an XXXDHPI (~640dpi) device on an
+The download size is calculated based on an XXXHDPI (~640dpi) device on an
 arm64-v8a architecture. Your end users' download sizes may vary depending on
 their hardware.
 
@@ -181,8 +181,7 @@ This tag can dramatically reduce code size.
 For an example of using this tag, see
 [Obfuscating Dart code][].
 
-Some of the other things you can do to make your app smaller
-are:
+Some other things you can do to make your app smaller are:
 
 * Remove unused resources
 * Minimize resource imported from libraries
