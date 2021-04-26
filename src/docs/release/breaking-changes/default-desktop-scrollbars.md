@@ -86,7 +86,7 @@ on desktop platforms.
 If you are seeing this in your application, there are several ways to
 control and configure this feature.
 
-- Remove manually applied `Scrollbar`s in your application when running on desktop.
+- Remove the manually applied `Scrollbar`s in your application when running on desktop.
 
 - Extend `ScrollBehavior`, `MaterialScrollBehavior`, or `CupertinoScrollBehavior`
 to modify the default behavior.
