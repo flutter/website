@@ -14,7 +14,7 @@ Prior to this change, `Scrollbar`s were applied to scrolling widgets
 manually by the developer across all platforms. This did not match
 developer expectations when executing Flutter applications on desktop platforms.
 
-Now, the inherited `ScrollBehavior` apply a `Scrollbar` automatically
+Now, the inherited `ScrollBehavior` applies a `Scrollbar` automatically
 to most scrolling widgets. This is similar to how `GlowingOverscrollIndicator`
 is created by `ScrollBehavior`. The few widgets that are exempt from this
 behavior are listed below.
