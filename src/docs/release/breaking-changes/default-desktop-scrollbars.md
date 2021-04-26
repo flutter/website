@@ -97,7 +97,7 @@ to modify the default behavior.
       `ScrollConfiguration` above the widget in question with your
       custom `ScrollBehavior`
       
-Your scrollable widgets then inherit this and reflect this behavior instead.
+Your scrollable widgets then inherits this and reflects this behavior.
 
 - Instead of creating your own `ScrollBehavior`, another option for changing
 the default behavior is to copy the existing `ScrollBehavior`, and toggle the
