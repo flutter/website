@@ -92,7 +92,7 @@ control and configure this feature.
 to modify the default behavior.
   
     - With your own `ScrollBehavior`, you can apply it app-wide by setting
-      `MaterialApp.scrollBehavior`, or `CupertinoApp.scrollBehavior`.
+      `MaterialApp.scrollBehavior` or `CupertinoApp.scrollBehavior`.
     - Or, if you wish to only apply it to specific widgets, add a
       `ScrollConfiguration` above the widget in question with your
       custom `ScrollBehavior`
