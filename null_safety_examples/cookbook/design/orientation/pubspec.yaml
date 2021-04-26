@@ -1,5 +1,5 @@
-name: drawer
-description: Sample code for drawer cookbook recipe.
+name: orientation
+description: Sample code for orientation cookbook recipe.
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
