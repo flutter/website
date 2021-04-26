@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/animation/opacity_animation/"?>
+
 UI developers often need to show and hide elements on screen.
 However, quickly popping elements on and off the screen can
 feel jarring to end users. Instead,
@@ -59,14 +61,17 @@ To construct a `StatefulWidget`, create two classes: A
 Pro tip: The Flutter plugins for Android Studio and VSCode include
 the `stful` snippet to quickly generate this code.
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
 ```dart
 // The StatefulWidget's job is to take data and create a State class.
 // In this case, the widget takes a title, and creates a _MyHomePageState.
 class MyHomePage extends StatefulWidget {
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -101,7 +106,7 @@ This tells Flutter to rebuild the widget.
 For more information on working with user input,
 see the [Gestures][] section of the cookbook.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
 ```dart
 FloatingActionButton(
   onPressed: () {
@@ -113,7 +118,7 @@ FloatingActionButton(
   },
   tooltip: 'Toggle Opacity',
   child: Icon(Icons.flip),
-);
+)
 ```
 
 ## 4. Fade the box in and out
@@ -128,7 +133,7 @@ The `AnimatedOpacity` widget requires three arguments:
   * `duration`: How long the animation should take to complete.
   * `child`: The widget to animate. In this case, the green box.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (AnimatedOpacity)" replace="/^child: //g;/,$//g"?>
 ```dart
 AnimatedOpacity(
   // If the widget is visible, animate to 0.0 (invisible).
@@ -141,12 +146,13 @@ AnimatedOpacity(
     height: 200.0,
     color: Colors.green,
   ),
-);
+)
 ```
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -167,7 +173,10 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -209,7 +218,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         tooltip: 'Toggle Opacity',
         child: Icon(Icons.flip),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
