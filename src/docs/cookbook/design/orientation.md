@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/design/orientation"?>
+
 In some situations,
 you want to update the display of an app when the user
 rotates the screen from portrait mode to landscape mode. For example,
@@ -79,7 +81,8 @@ OrientationBuilder(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() {
@@ -103,7 +106,7 @@ class MyApp extends StatelessWidget {
 class OrientationList extends StatelessWidget {
   final String title;
 
-  OrientationList({Key key, this.title}) : super(key: key);
+  OrientationList({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
