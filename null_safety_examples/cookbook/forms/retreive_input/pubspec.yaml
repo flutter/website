@@ -1,0 +1,12 @@
+name: retreive_input
+description: Sample code for retreive_input cookbook recipe.
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
