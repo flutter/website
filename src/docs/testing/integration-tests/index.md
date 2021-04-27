@@ -323,7 +323,7 @@ equivalent methods.
 [Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Firebase Console]: http://console.firebase.google.com/
 [Firebase Test Lab]: https://firebase.google.com/docs/test-lab
-[Firebase Test Lab section of the README]: {{site.pub-pkg}}/integration_test#firebase-test-lab
+[Firebase Test Lab section of the README]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#firebase-test-lab
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [`integration_test`]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#integration_test
 [integration_test usage]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#usage
