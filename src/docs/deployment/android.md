@@ -28,9 +28,9 @@ This page covers the following topics:
 * [Android release FAQ](#android-release-faq)
 
 {{site.alert.note}}
-   Throughout this page, `<your app dir>` refers to 
+   Throughout this page, `[project]` refers to 
    the directory that your application is in. While following
-   these instructions, substitute `<your app dir>` with 
+   these instructions, substitute `[project]` with 
    your app's directory.
 {{site.alert.end}}
 
@@ -45,7 +45,7 @@ Alternatively, you can do it manually using the following steps:
 1. Review the [Material Design product
    icons][launchericons] guidelines for icon design.
 
-1. In the `<your app dir>/android/app/src/main/res/` directory,
+1. In the `[project]/android/app/src/main/res/` directory,
    place your icon files in folders named using
    [configuration qualifiers][].
    The default `mipmap-` folders demonstrate the correct
@@ -92,57 +92,66 @@ To find out the latest version, visit [Google Maven][].
 To publish on the Play Store, you need to give your app a digital
 signature. Use the following instructions to sign your app.
 
-### Create a keystore
+On Android, there are two signing keys: deployment and upload. The end-users 
+download the .apk signed with the 'deployment key'. An 'upload key' is used to 
+authenticate the .aab / .apk uploaded by developers onto the Play Store and is 
+re-signed with the deployment key once in the Play Store.
+* It's highly recommended to use the automatic cloud managed signing for
+  the deployment key. For more information, see the [official Play Store documentation][].
+
+### Create an upload keystore
 
 If you have an existing keystore, skip to the next step.
-If not, create one by running the following at the command line:
+If not, create one by either:
+* Following the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk) 
+* Running the following at the command line:
 
-On Mac/Linux, use the following command:
+    On Mac/Linux, use the following command:
 
-```terminal
-keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
-```
+    ```terminal
+    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    ```
 
-On Windows, use the following command:
+    On Windows, use the following command:
 
-```terminal
-keytool -genkey -v -keystore c:\Users\USER_NAME\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
-```
+    ```terminal
+    keytool -genkey -v -keystore c:\Users\USER_NAME\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    ```
 
-This command stores the `key.jks` file in your home
-directory. If you want to store it elsewhere, change
-the argument you pass to the `-keystore` parameter.
-**However, keep the `keystore` file private;
-don't check it into public source control!**
-
-{{site.alert.note}}
-* The `keytool` command might not be in your path&mdash;it's
-  part of Java, which is installed as part of
-  Android Studio.  For the concrete path,
-  run `flutter doctor -v` and locate the path printed after
-  'Java binary at:'. Then use that fully qualified path
-  replacing `java` (at the end) with `keytool`.
-  If your path includes space-separated names,
-  such as `Program Files`, use platform-appropriate
-  notation for the names. For example, on Mac/Linux
-  use `Program\ Files`, and on Windows use
-  `"Program Files"`.
-
-* The `-storetype JKS` tag is only required for Java 9
-  or newer. As of the Java 9 release,
-  the keystore type defaults to PKS12.
-{{site.alert.end}}
+    This command stores the `upload-keystore.jks` file in your home
+    directory. If you want to store it elsewhere, change
+    the argument you pass to the `-keystore` parameter.
+    **However, keep the `keystore` file private;
+    don't check it into public source control!**
+    
+    {{site.alert.note}}
+    * The `keytool` command might not be in your path&mdash;it's
+      part of Java, which is installed as part of
+      Android Studio.  For the concrete path,
+      run `flutter doctor -v` and locate the path printed after
+      'Java binary at:'. Then use that fully qualified path
+      replacing `java` (at the end) with `keytool`.
+      If your path includes space-separated names,
+      such as `Program Files`, use platform-appropriate
+      notation for the names. For example, on Mac/Linux
+      use `Program\ Files`, and on Windows use
+      `"Program Files"`.
+    
+    * The `-storetype JKS` tag is only required for Java 9
+      or newer. As of the Java 9 release,
+      the keystore type defaults to PKS12.
+    {{site.alert.end}}
 
 ### Reference the keystore from the app
 
-Create a file named `<your app dir>/android/key.properties`
+Create a file named `[project]/android/key.properties`
 that contains a reference to your keystore:
 
 ```
 storePassword=<password from previous step>
 keyPassword=<password from previous step>
-keyAlias=key
-storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
+keyAlias=upload
+storeFile=<location of the key store file, such as /Users/<user name>/upload-keystore.jks>
 ```
 
 {{site.alert.warning}}
@@ -152,19 +161,11 @@ storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
 
 ### Configure signing in gradle
 
-Configure signing for your app by editing the
-`<your app dir>/android/app/build.gradle` file.
+Configure gradle to use your upload key when building your app in release mode 
+by editing the `[project]/android/app/build.gradle` file.
 
 <ol markdown="1">
-<li markdown="1"> Add code before `android` block:
-
-```
-   android {
-      ...
-   }
-```
-
-   With the keystore information from your properties file:
+<li markdown="1"> Add the keystore information from your properties file before the `android` block:
 
 ```
    def keystoreProperties = new Properties()
@@ -182,7 +183,7 @@ Configure signing for your app by editing the
 
 </li>
 
-<li markdown="1"> Add code before `buildTypes` block:
+<li markdown="1"> Replace the `buildTypes` block:
 
 ```
    buildTypes {
@@ -213,8 +214,6 @@ Configure signing for your app by editing the
    }
 ```
 
-   Configure the `signingConfigs` block in your module's `build.gradle` file.
-
 </li>
 </ol>
 
@@ -243,7 +242,7 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
 Review the default [App Manifest][manifest] file,
 `AndroidManifest.xml`,
-located in `<your app dir>/android/app/src/main` and verify that the values
+located in `[project]/android/app/src/main` and verify that the values
 are correct, especially the following:
 
 `application`
@@ -261,7 +260,7 @@ are correct, especially the following:
 ## Reviewing the build configuration
 
 Review the default [Gradle build file][gradlebuild],
-`build.gradle`, located in `<your app dir>/android/app` and
+`build.gradle`, located in `[project]/android/app` and
 verify the values are correct, especially the following
 values in the `defaultConfig` block:
 
@@ -282,7 +281,7 @@ values in the `defaultConfig` block:
   for details.
 `buildToolsVersion`
 : Specify the version of Android SDK Build Tools that your app uses. 
-  Alternatively, you can use the [Android Gradle Plugin] in Android Studio,
+  Alternatively, you can use the Android Gradle Plugin in Android Studio,
   which will automatically import the minimum required Build Tools for your app
   without the need for this property.
   
@@ -330,12 +329,12 @@ and maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
-1. Enter `cd <your app dir>`<br>
+1. Enter `cd [project]`<br>
 1. Run `flutter build appbundle`<br>
    (Running `flutter build` defaults to a release build.)
 
 The release bundle for your app is created at
-`<your app dir>/build/app/outputs/bundle/release/app.aab`.
+`[project]/build/app/outputs/bundle/release/app.aab`.
 
 By default, the app bundle contains your Dart code and the Flutter
 runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
@@ -376,15 +375,15 @@ your code involves adding a couple flags to your build command.
 
 From the command line:
 
-1. Enter `cd <your app dir>`<br>
+1. Enter `cd [project]`<br>
 1. Run `flutter build apk --split-per-abi`<br>
    (The `flutter build` command defaults to `--release`.)
 
 This command results in three APK files:
 
-* `<your app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
-* `<your app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
-* `<your app dir>/build/app/outputs/apk/release/app-x86_64-release.apk`
+* `[project]/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
+* `[project]/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
+* `[project]/build/app/outputs/apk/release/app-x86_64-release.apk`
 
 Removing the `--split-per-abi` flag results in a fat APK that contains
 your code compiled for _all_ the target ABIs. Such APKs are larger in
@@ -398,7 +397,7 @@ Follow these steps to install the APK on a connected Android device.
 From the command line:
 
 1. Connect your Android device to your computer with a USB cable.
-1. Enter `cd <your app dir>`.
+1. Enter `cd [project]`.
 1. Run `flutter install`.
 
 ## Publishing to the Google Play Store
@@ -513,6 +512,7 @@ The resulting app bundle or APK files are located in
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [obfuscating your Dart code]: /docs/deployment/obfuscate
+[official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [Platform Views]: /docs/development/platform-integration/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start

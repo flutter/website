@@ -7,11 +7,33 @@ Follow continuous delivery best practices with Flutter to make sure your
 application is delivered to your beta testers and validated on a frequent basis
 without resorting to manual workflows.
 
+
+## CI/CD Options
+
+There are a number of continuous integration (CI) and continuous delivery (CD)
+options available to help automate the delivery of your application.
+
+### All-in-one type of options, Flutter functionality built in XXX
+* [Codemagic][]
+* [Bitrise][]
+* [Appcircle][]
+
+### General CI options XXX
+* [Cirrus][]
+    * Example: Flutter framework repository's [Cirrus script][].
+* [GitHub Actions][]
+    * Example: Flutter Gallery's [Github Actions workflows][]
+    * Example: [Github Action in Flutter Project][]
+* [Travis][]
+* [GitLab][]
+
+This guide shows how to set up fastlane and then integrate it with 
+your existing testing and continuous integration (CI) workflows ("General CI options" above XXX).
+
 ## fastlane
 
-This guide shows how to integrate [fastlane][], an
-open-source tool suite, with your existing testing and continuous integration
-(CI) workflows (for example, Travis or Cirrus).
+[fastlane][] is an open-source tool suite to automate releases and deployments 
+for your app.
 
 ### Local setup
 
@@ -45,20 +67,7 @@ Visit the [fastlane docs][fastlane] for more info.
     environment variable with your iTunes Connect password. Otherwise, you'll be
     prompted when uploading to iTunes/TestFlight.
 1. Set up code signing.
-    * ![Android](/images/cd/android.png) On Android, there are two
-      signing keys: deployment and upload. The end-users download the .apk signed
-      with the 'deployment key'. An 'upload key' is used to authenticate the .aab / .apk
-      uploaded by developers onto the Play Store and is re-signed with the
-      deployment key once in the Play Store.
-        * It's highly recommended to use the automatic cloud managed signing for
-          the deployment key. For more information,
-          see the [official Play Store documentation][].
-        * Follow the [key generation
-          steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
-          to create your upload key.
-        * Configure gradle to use your upload key when building your app in
-          release mode by editing `android.buildTypes.release` in
-          `[project]/android/app/build.gradle`.
+    * ![Android](/images/cd/android.png) Follow the [Android app signing steps][].
     * ![iOS](/images/cd/ios.png) On iOS, create and sign using a
       distribution certificate instead of a development certificate when you're
       ready to test and deploy using TestFlight or App Store.
@@ -104,8 +113,8 @@ The main thing to consider is that since cloud instances are ephemeral and
 untrusted, you won't be leaving your credentials like your Play Store service
 account JSON or your iTunes distribution certificate on the server.
 
-Continuous Integration (CI) systems, such as [Cirrus][]
-generally support encrypted environment variables to store private data.
+Continuous Integration (CI) systems generally support encrypted environment 
+variables to store private data.
 
 **Take precaution not to re-echo those variable values back onto the console in
 your test scripts**. Those variables are also not available in pull requests
@@ -116,14 +125,19 @@ secrets in pull requests that you accept and merge.
 1. Make login credentials ephemeral.
     * ![Android](/images/cd/android.png) On Android:
         * Remove the `json_key_file` field from `Appfile` and store the string
-          content of the JSON in your CI system's encrypted variable. Use the
-          `json_key_data` argument in `upload_to_play_store` to read the
-          environment variable directly in your `Fastfile`.
+          content of the JSON in your CI system's encrypted variable. 
+          Read the environment variable directly in your `Fastfile`.
+          ```
+          upload_to_play_store(
+            ...
+            json_key_data: ENV['<variable name>']
+          )
+          ```
         * Serialize your upload key (for example, using base64) and save it as
           an encrypted environment variable. You can deserialize it on your CI
           system during the install phase with
           ```bash
-          echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > /home/cirrus/[directory # and filename specified in your gradle].keystore
+          echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > [path to your upload keystore]
           ```
     * ![iOS](/images/cd/ios.png) On iOS:
         * Move the local environment variable `FASTLANE_PASSWORD` to use
@@ -149,16 +163,16 @@ secrets in pull requests that you accept and merge.
 
 3. Create the CI test script such as `.travis.yml` or `.cirrus.yml` in your
    repository root.
-    * Shard your script to run on both Linux and macOS platforms.
-    * Remember to specify a dependency on Xcode for macOS (for example
-      `osx_image: xcode9.2`).
     * See [fastlane CI documentation][] for CI specific setup.
-    * During the setup phase, depending on the platform, make sure that:
-         * Bundler is available using `gem install bundler`.
-         * For Android, make sure the Android SDK is available and the `ANDROID_SDK_ROOT`
-           path is set.
+    * Shard your script to run on both Linux and macOS platforms.
+    * During the setup phase of the CI task:
+         * Ensure Bundler is available using `gem install bundler`.
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
          * Make sure the Flutter SDK is available and set in `PATH`.
+         * For Android, ensure the Android SDK is available and the `ANDROID_SDK_ROOT`
+           path is set.
+         * For iOS, you may have to specify a dependency on Xcode (for example
+           `osx_image: xcode9.2`).
     * In the script phase of the CI task:
          * Run `flutter build appbundle` or
            `flutter build ios --release --no-codesign`,
@@ -166,36 +180,24 @@ secrets in pull requests that you accept and merge.
          * `cd android` or `cd ios`
          * `bundle exec fastlane [name of the lane]`
 
-### Reference
 
-See the Flutter framework repository's [Cirrus script][].
-
-## Other services
-
-The following are some other options available to help automate
-the delivery of your application.
-
-* [Codemagic CI/CD for Flutter][]
-* [Flutter CI/CD with Bitrise][]
-* [Appcircle CI/CD for Flutter][]
-* [GitHub Actions- CI/CD on GitHub][]
-  Get an [Example Project][]
-
-
+[Android app signing steps]: https://flutter.dev/docs/deployment/android#signing-the-app
+[Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Apple Developer Account console]: https://developer.apple.com/account/ios/certificate/
-[Cirrus]: https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables
+[Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
+[CI Options and Examples]: #reference-and-examples
+[Cirrus]: https://cirrus-ci.org
 [Cirrus script]: {{site.github}}/flutter/flutter/blob/master/.cirrus.yml
-[Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
-[Appcircle CI/CD for Flutter]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
-[Example Project]: {{site.github}}/nabilnalakath/flutter-githubaction
+[Codemagic]: https://blog.codemagic.io/getting-started-with-codemagic/
 [fastlane]: https://docs.fastlane.tools
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
 [Flutter Gallery Project]: {{site.github}}/flutter/gallery
-[GitHub Actions- CI/CD on GitHub]: https://github.com/features/actions
-[GitLab Continuous Integration (GitLab CI/CD)]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
+[Github Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
+[GitHub Actions]: https://github.com/features/actions
+[Github Actions workflows]: {{site.github}}/flutter/gallery/tree/master/.github/workflows
+[GitLab]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [Match]: https://docs.fastlane.tools/actions/match/
-[official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [Supply setup steps]: https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply
+[Travis]: https://travis-ci.org/
