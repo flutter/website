@@ -326,7 +326,7 @@ equivalent methods.
 [Firebase Test Lab section of the README]: {{site.pub-pkg}}/integration_test#firebase-test-lab
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [`integration_test`]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#integration_test
-[integration_test usage]: {{site.pub-pkg}}/integration_test#usage
+[integration_test usage]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#usage
 [iOS Device Testing]: {{site.pub-pkg}}/integration_test#ios-device-testing
 [Running Flutter driver tests with web]: {{site.github}}/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web
 [widget tests]: /docs/testing#widget-tests
