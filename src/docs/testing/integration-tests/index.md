@@ -284,14 +284,14 @@ void main() {
 Instead of calling `driver.wait*` API, use `WidgetTester.pumpAndSettle()` or
 equivalent methods.
 
-[integration_test]: https://pub.dev/packages/integration_test
-[integration_test usage]: https://pub.dev/packages/integration_test#usage
+[integration_test]: https://github.com/flutter/flutter/tree/master/packages/integration_test
+[integration_test usage]: https://github.com/flutter/flutter/tree/master/packages/integration_test#usage
 [flutter_test]: https://api.flutter.dev/flutter/flutter_test/flutter_test-library.html
 [widget tests]: /docs/testing#widget-tests
 [Firebase Test Lab]: https://firebase.google.com/docs/test-lab
 [Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads
-[Android Device Testing]: https://pub.dev/packages/integration_test#android-device-testing
-[iOS Device Testing]: https://pub.dev/packages/integration_test#ios-device-testing
+[Android Device Testing]: https://github.com/flutter/flutter/tree/master/packages/integration_test#android-device-testing
+[iOS Device Testing]: https://github.com/flutter/flutter/tree/master/packages/integration_test#ios-device-testing
 [Firebase Console]: http://console.firebase.google.com/
-[Firebase Test Lab section of the README]: https://pub.dev/packages/integration_test#firebase-test-lab
+[Firebase Test Lab section of the README]: https://github.com/flutter/flutter/tree/master/packages/integration_test#firebase-test-lab
 [Running Flutter Driver tests with Web]: https://github.com/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web
