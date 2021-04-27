@@ -202,7 +202,7 @@ project called `l10n.yaml` with the following content:
 6. Now, run your app so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
 
-7. Add the import statement on `app_localizations.dart` and `AppLocations.delegate` 
+7. Add the import statement on `app_localizations.dart` and `AppLocalizations.delegate` 
    in your call to the constructor for `MaterialApp`.
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (AppLocalizationsImport)"?>
