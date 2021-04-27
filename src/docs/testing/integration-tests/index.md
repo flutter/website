@@ -73,10 +73,10 @@ and optionally `flutter_driver` to your pubspec.yaml file:
 dev_dependencies:
   integraton_test:
     sdk: flutter
-flutter_test:
-  sdk: flutter
-flutter_driver:
-  sdk: flutter
+  flutter_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
 ```
 
 In your project, create a new directory
