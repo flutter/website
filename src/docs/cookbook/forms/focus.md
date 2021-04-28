@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/forms/focus/"?>
+
 When a text field is selected and accepting input,
 it is said to have "focus."
 Generally, users shift focus to a text field by tapping,
@@ -70,7 +72,7 @@ using a `State` object. Use the following instructions to create
 a `FocusNode` instance inside the `initState()` method of a
 `State` class, and clean it up in the `dispose()` method:
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
 ```dart
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
@@ -83,7 +85,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Define the focus node. To manage the lifecycle, create the FocusNode in
   // the initState method, and clean it up in the dispose method.
-  FocusNode myFocusNode;
+  late FocusNode myFocusNode;
 
   @override
   void initState() {
@@ -143,7 +145,8 @@ FloatingActionButton(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -169,7 +172,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Define the focus node. To manage the lifecycle, create the FocusNode in
   // the initState method, and clean it up in the dispose method.
-  FocusNode myFocusNode;
+  late FocusNode myFocusNode;
 
   @override
   void initState() {
