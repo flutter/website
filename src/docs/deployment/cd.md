@@ -13,7 +13,7 @@ without resorting to manual workflows.
 There are a number of continuous integration (CI) and continuous delivery (CD)
 options available to help automate the delivery of your application.
 
-### All-in-one type of options, Flutter functionality built in XXX
+### All-in-one options with built-in Flutter functionality
 * [Codemagic][]
 * [Bitrise][]
 * [Appcircle][]
