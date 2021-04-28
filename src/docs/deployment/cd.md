@@ -164,7 +164,7 @@ secrets in pull requests that you accept and merge.
    repository root.
     * See [fastlane CI documentation][] for CI specific setup.
     * Shard your script to run on both Linux and macOS platforms.
-    * During the setup phase of the CI task:
+    * During the setup phase of the CI task, do the following:
          * Ensure Bundler is available using `gem install bundler`.
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
          * Make sure the Flutter SDK is available and set in `PATH`.
