@@ -20,7 +20,6 @@ options available to help automate the delivery of your application.
 
 ### General CI options XXX
 * [Cirrus][]
-    * Example: Flutter framework repository's [Cirrus script][].
 * [GitHub Actions][]
     * Example: Flutter Gallery's [Github Actions workflows][]
     * Example: [Github Action in Flutter Project][]
