@@ -18,16 +18,20 @@ options available to help automate the delivery of your application.
 * [Bitrise][]
 * [Appcircle][]
 
-### General CI options XXX
-* [Cirrus][]
+### Integrating fastlane with existing workflows
+
+You can use fastlane with the following tooling:
+
 * [GitHub Actions][]
     * Example: Flutter Gallery's [Github Actions workflows][]
     * Example: [Github Action in Flutter Project][]
+* [Cirrus][]
 * [Travis][]
 * [GitLab][]
 
 This guide shows how to set up fastlane and then integrate it with 
-your existing testing and continuous integration (CI) workflows ("General CI options" above XXX).
+your existing testing and continuous integration (CI) workflows. 
+For more information, see "Integrating fastlane with existing workflow".
 
 ## fastlane
 
