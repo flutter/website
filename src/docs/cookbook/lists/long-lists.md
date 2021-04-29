@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/lists/long_lists/"?>
+
 The standard [`ListView`][] constructor works well
 for small lists. To work with lists that contain
 a large number of items, it's best to use the
@@ -41,7 +43,7 @@ To display the list of strings, render each String as a widget
 using `ListView.builder()`.
 In this example, display each String on its own line.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ListView)" replace="/^body: //g;/,$//g"?>
 ```dart
 ListView.builder(
   itemCount: items.length,
@@ -50,12 +52,13 @@ ListView.builder(
       title: Text('${items[index]}'),
     );
   },
-);
+)
 ```
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +71,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final List<String> items;
 
-  MyApp({Key key, @required this.items}) : super(key: key);
+  MyApp({Key? key, required this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
