@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/lists/floating_app_bar/"?>
+
 To make it easier for users to view a list of items,
 you might want to hide the app bar as the user scrolls down the list.
 This is especially true if your app displays a "tall"
@@ -86,14 +88,16 @@ To create this effect:
   3. Add a `flexibleSpace` widget that fills the available
      `expandedHeight`.
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (SliverAppBar)" replace="/^body: //g;/,$//g"?>
 ```dart
 CustomScrollView(
   slivers: <Widget>[
+    // Add the app bar to the CustomScrollView.
     SliverAppBar(
-      title: Text('Floating app bar'),
-      // Allows the user to reveal the app bar if they begin scrolling back
-      // up the list of items.
+      // Provide a standard title.
+      title: Text(title),
+      // Allows the user to reveal the app bar if they begin scrolling
+      // back up the list of items.
       floating: true,
       // Display a placeholder widget to visualize the shrinking size.
       flexibleSpace: Placeholder(),
@@ -101,7 +105,7 @@ CustomScrollView(
       expandedHeight: 200,
     ),
   ],
-);
+)
 ```
 
 {{site.alert.tip}}
@@ -128,9 +132,9 @@ For example, the [`SliverChildBuilderDelegate`][]
 allows you to create a list of items that are built lazily as you scroll,
 just like the `ListView.builder` widget.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (SliverList)" replace="/,$//g"?>
 ```dart
-// Create a SliverList.
+// Next, create a SliverList
 SliverList(
   // Use a delegate to build items as they're scrolled on screen.
   delegate: SliverChildBuilderDelegate(
@@ -145,14 +149,15 @@ SliverList(
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
