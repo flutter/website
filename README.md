@@ -26,8 +26,17 @@ Please file a request in our
 [issue tracker](https://github.com/flutter/website/issues/new)
 and we'll take a look.
 
-> NOTE: For simple changes (such as to CSS and text), you probably don't need to
-> build this site. Often, you can make changes using the GitHub UI.
+If you have an issue with the API docs on
+[api.flutter.dev](https://api.flutter.dev),
+please file those issues on the
+[flutter/flutter](https://github.com/flutter/flutter/issues)
+repo, not on this (flutter/website) repo.
+The API docs are embedded in Flutter's source code,
+so the engineering team handles those.
+
+> NOTE: For simple changes (such as to CSS and text),
+> you probably don't need to build this site.
+> Often, you can make changes using the GitHub UI.
 > If you want/need to build, read on.
 
 ## Before you submit a PR
@@ -36,13 +45,6 @@ We love it when the community gets involved in improving
 our docs! But here are a few notes to keep in mind before
 you submit a PR:
 
-* If you have an issue with the API docs on
-  [api.flutter.dev](https://api.flutter.dev),
-  please file those issues on the
-  [flutter/flutter](https://github.com/flutter/flutter/issues)
-  repo, not on this (flutter/website) repo.
-  The API docs are embedded in Flutter's source code,
-  so the engineering team handles those.
 * When triaging issues, we sometimes label an issue with
   the tag, "PRs welcome". But we welcome PRs on other
   issues as well&mdash;it doesn't have to be tagged with
