@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/passing_data"?>
+
 Often, you not only want to navigate to a new screen,
 but also pass data to the screen as well.
 For example, you might want to pass information about
@@ -33,7 +35,7 @@ This recipe uses the following steps:
 First, you need a simple way to represent todos. For this example,
 create a class that contains two pieces of data: the title and description.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Todo)"?>
 ```dart
 class Todo {
   final String title;
@@ -52,9 +54,9 @@ see the [Use lists][] recipe.
 
 ### Generate the list of todos
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Generate)" replace="/^todos:/final todos =/g;/,$/;/g"?>
 ```dart
-final todos = List<Todo>.generate(
+final todos = List.generate(
   20,
   (i) => Todo(
     'Todo $i',
@@ -90,13 +92,13 @@ of todos within the scope of this widget.
 We pass in our `ListView.builder` as body of the widget we're returning to `build()`.
 This'll render the list on to the screen for you to get going!
 
-<!-- skip -->
+<?code-excerpt "lib/main_todoscreen.dart (TodosScreen)"?>
 ```dart
 class TodosScreen extends StatelessWidget {
   final List<Todo> todos;
 
   //requiring the list of todos
-  TodosScreen({Key key, @required this.todos}) : super(key: key);
+  TodosScreen({Key? key, required this.todos}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +111,7 @@ class TodosScreen extends StatelessWidget {
         itemCount: todos.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(todos[index].title)
+            title: Text(todos[index].title),
           );
         },
       ),
@@ -130,14 +132,14 @@ Since the detail screen is a normal `StatelessWidget`,
 require the user to enter a `Todo` in the UI.
 Then, build the UI using the given todo.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (detail)"?>
 ```dart
 class DetailScreen extends StatelessWidget {
   // Declare a field that holds the Todo.
   final Todo todo;
 
   // In the constructor, require a Todo.
-  DetailScreen({Key key, @required this.todo}) : super(key: key);
+  DetailScreen({Key? key, required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -166,16 +168,16 @@ To capture the user's tap in the `TodosScreen`, write an [`onTap()`][]
 callback for the `ListTile` widget. Within the `onTap()` callback,
 use the [`Navigator.push()`][] method.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (builder)"?>
 ```dart
-ListView.builder(
+body: ListView.builder(
   itemCount: todos.length,
   itemBuilder: (context, index) {
     return ListTile(
       title: Text(todos[index].title),
       // When a user taps the ListTile, navigate to the DetailScreen.
       // Notice that you're not only creating a DetailScreen, you're
-      // also passing the current todo to it.
+      // also passing the current todo through to it.
       onTap: () {
         Navigator.push(
           context,
@@ -186,11 +188,12 @@ ListView.builder(
       },
     );
   },
-);
+),
 ```
 
 ### Interactive example
 
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -220,7 +223,7 @@ void main() {
 class TodosScreen extends StatelessWidget {
   final List<Todo> todos;
 
-  TodosScreen({Key key, @required this.todos}) : super(key: key);
+  TodosScreen({Key? key, required this.todos}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -256,7 +259,7 @@ class DetailScreen extends StatelessWidget {
   final Todo todo;
 
   // In the constructor, require a Todo.
-  DetailScreen({Key key, @required this.todo}) : super(key: key);
+  DetailScreen({Key? key, required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
