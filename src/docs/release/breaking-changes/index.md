@@ -12,7 +12,9 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-TBD
+* [Default Scrollbars on Desktop][]
+
+[Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
 
 ### Reverted changes
 

@@ -260,8 +260,7 @@ itself.
 The animation controller can be given a lower and upper bound to
 animate between, and a duration.
 
-In the simple case (using `forward()`, `reverse()`, `play()`, or
-`resume()`), the animation controller simply does a linear
+In the simple case (using `forward()` or `reverse()`), the animation controller simply does a linear
 interpolation from the lower bound to the upper bound (or vice versa,
 for the reverse direction) over the given duration.
 

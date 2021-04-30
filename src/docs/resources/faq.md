@@ -210,7 +210,7 @@ The engine's C and C++ code are compiled with Android's NDK.
 The Dart code (both the SDK's and yours)
 are ahead-of-time (AOT) compiled into native, ARM, and x86
 libraries. Those libraries are included in a "runner"
-Android project, and the whole thing is built into an APK.
+Android project, and the whole thing is built into an `.apk`.
 When launched, the app loads the Flutter library.
 Any rendering, input, or event handling, and so on,
 is delegated to the compiled Flutter and app code.
@@ -226,7 +226,7 @@ the finished release app.
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
-The engine's C and C++ code is compiled with LLVM.
+The engine's C and C++ code are compiled with LLVM.
 The Dart code (both the SDK's and yours)
 are ahead-of-time (AOT) compiled into a native, ARM library.
 That library is included in a "runner" iOS project,
@@ -267,7 +267,7 @@ Modern app design trends point towards designers and
 users wanting more motion-rich UIs and brand-first designs.
 In order to achieve that level of customized, beautiful design,
 Flutter is architectured to drive pixels instead
-of the built-in  widgets.
+of the built-in widgets.
 
 By using the same renderer, framework, and set of widgets,
 it's easier to publish for multiple platforms from the same
@@ -659,7 +659,7 @@ but right now we're focused on 2D.
 ### Why is my APK or IPA so big?
 
 Usually, assets including images, sound files, fonts, etc,
-are the bulk of an APK or IPA.  Various tools in the
+are the bulk of an APK or IPA. Various tools in the
 Android and iOS ecosystems can help you understand
 what's inside of your APK or IPA.
 

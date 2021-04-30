@@ -12,76 +12,76 @@ body_class: showcase
 </section>
 
 <section class="showcase__featured-company-cases showcase__section">
-    <div class="row mb-n8">
-        {% for case in site.data.showcases %}
-        {% if case.featured %}
-            <div class="col-12{% if forloop.index0 < 2 %} col-lg-6{% else %} col-lg-4{% endif %} px-4 mb-8 mb-md-10">
-                <div class="card animate{% if forloop.index0 < 2 %} step-{{forloop.index | plus: 2}}{% else %} step-last{% endif %}">
-                    {% capture image_src_400 %}{% asset '{{ case.card_image | replace: "@", "-400" }}' @path %}{% endcapture %}
-                    {% capture image_src_600 %}{% asset '{{ case.card_image | replace: "@", "-600" }}' @path %}{% endcapture %}
-                    {% assign image_src_full_size = image_src_600 %}
+  <div class="row mb-n8">
+    {% for case in site.data.showcases %}
+    {% if case.featured %}
+      <div class="col-12{% if forloop.index0 < 2 %} col-lg-6{% else %} col-lg-4{% endif %} px-4 mb-8 mb-md-10">
+        <div class="card animate{% if forloop.index0 < 2 %} step-{{forloop.index | plus: 2}}{% else %} step-last{% endif %}">
+          {% capture image_src_400 %}{% asset '{{ case.card_image | replace: "@", "-400" }}' @path %}{% endcapture %}
+          {% capture image_src_600 %}{% asset '{{ case.card_image | replace: "@", "-600" }}' @path %}{% endcapture %}
+          {% assign image_src_full_size = image_src_600 %}
 
-                    {% unless case.no_1200_image %}
-                    {% if forloop.index0 < 2 %}
-                      {% capture image_src_1200 %}{% asset '{{ case.card_image | replace: "@", "-1200" }}' @path %}{% endcapture %}
-                      {% assign image_src_full_size = image_src_1200 %}
-                    {% endif %}
-                    {% endunless %}
+          {% unless case.no_1200_image %}
+          {% if forloop.index0 < 2 %}
+            {% capture image_src_1200 %}{% asset '{{ case.card_image | replace: "@", "-1200" }}' @path %}{% endcapture %}
+            {% assign image_src_full_size = image_src_1200 %}
+          {% endif %}
+          {% endunless %}
 
-                    <img class="card-img-top" src="{{ image_src_full_size }}" aria-hidden="true"
-                         srcset="
-                            {{ image_src_400 }} 400w,
-                            {{ image_src_600}} 600w
-                            {% unless case.no_1200_image %}
-                            {% if forloop.index0 < 2 %}
-                              , {{ image_src_1200 }} 1200w
-                            {% endif %}{% endunless %}">
-                    <div class="card-body">
-                      <div class="card-title">
-                        {% if case.logo_src %}
-                          {% asset '{{ case.logo_src }}' class='logo' alt="{{ case.name }}" %}
-                          {% unless case.logo_has_name %} <span class="name" aria-hidden="true">{{ case.name }}</span>{% endunless -%}
-                        {% endif %}
-                      </div>
-                      <p class="card-text">{{ case.description | truncate: 160 }}</p>
-                    </div>
-                    {% if case.play_store_link or case.app_store_link or case.learn_more_link or case.card_video %}
-                      <div class="card-footer card-footer--transparent card-footer--links">
-                        {% if case.learn_more_link %}
-                          <a href="{{ case.learn_more_link }}" class="link" target="_blank" rel="noopener">{{ case.learn_more_cta }}<i class="fas fa-external-link-alt"></i></a>
-                        {% elsif case.card_video %}
-                          <a href="#" class="video-link" data-video="{{ case.card_video }}" data-toggle="modal" data-target="#videoModal"><i class="fas fa-play-circle"></i>&nbsp;Watch video</a>
-                        {% elsif case.play_store_link or case.app_store_link %}
-                          <span class="dropdown">
-                            <a href="#" class="dropdown-toggle" id="featuredShowcasesDropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Download
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="featuredShowcasesDropdownMenuButton{{ forloop.index }}">
-                              {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank" rel="noopener">Android</a>{% endif %}
-                              {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank" rel="noopener">iOS</a>{% endif %}
-                            </div>
-                          </span>
-                        {% endif %}
-                      </div>
-                    {% endif %}
-                </div>
+          <img class="card-img-top" src="{{ image_src_full_size }}" aria-hidden="true"
+               srcset="
+                {{ image_src_400 }} 400w,
+                {{ image_src_600}} 600w
+                {% unless case.no_1200_image %}
+                {% if forloop.index0 < 2 %}
+                  , {{ image_src_1200 }} 1200w
+                {% endif %}{% endunless %}">
+          <div class="card-body">
+            <div class="card-title">
+              {% if case.logo_src %}
+                {% asset '{{ case.logo_src }}' class='logo' alt="{{ case.name }}" %}
+                {% unless case.logo_has_name %} <span class="name" aria-hidden="true">{{ case.name }}</span>{% endunless -%}
+              {% endif %}
             </div>
-        {% endif %}
-        {% endfor %}
-    </div>
+            <p class="card-text">{{ case.description | truncate: 160 }}</p>
+          </div>
+          {% if case.play_store_link or case.app_store_link or case.learn_more_link or case.card_video %}
+            <div class="card-footer card-footer--transparent card-footer--links">
+              {% if case.learn_more_link %}
+                <a href="{{ case.learn_more_link }}" class="link" target="_blank" rel="noopener">{{ case.learn_more_cta }}<i class="fas fa-external-link-alt"></i></a>
+              {% elsif case.card_video %}
+                <a href="#" class="video-link" data-video="{{ case.card_video }}" data-toggle="modal" data-target="#videoModal"><i class="fas fa-play-circle"></i>&nbsp;Watch video</a>
+              {% elsif case.play_store_link or case.app_store_link %}
+                <span class="dropdown">
+                  <a href="#" class="dropdown-toggle" id="featuredShowcasesDropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Download
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="featuredShowcasesDropdownMenuButton{{ forloop.index }}">
+                    {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank" rel="noopener">Android</a>{% endif %}
+                    {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank" rel="noopener">iOS</a>{% endif %}
+                  </div>
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% endfor %}
+  </div>
 </section>
 
 <section class="showcase__logos-garden showcase__section animate step-last">
-    <p class="intro">Join the growing list of organizations working with Flutter.</p>
-    <div class="row">
-        <ul class="logo-list col-12 col-lg-10 d-flex flex-wrap mb-n8">
-            {% for logo in site.data.company_logos %}
-                <li class="logo-item col-6 col-md-3 mb-8 mb-lg-10">
-                    {% asset '{{ logo.logo_src  }}' class="logo-image" alt="{{ logo.alt_text }}"%}
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+  <p class="intro">Join the growing list of organizations working with Flutter.</p>
+  <div class="row">
+    <ul class="logo-list col-12 col-lg-10 d-flex flex-wrap mb-n8">
+      {% for logo in site.data.company_logos %}
+        <li class="logo-item col-6 col-md-3 mb-8 mb-lg-10">
+          {% asset '{{ logo.logo_src  }}' class="logo-image" alt="{{ logo.alt_text }}"%}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
 <section class="showcase__carousel showcase__section animate step-last">
@@ -102,7 +102,13 @@ body_class: showcase
                     {% capture image_src_1200 %}{% asset '{{ case.video_frame_image | replace: "@", "-1200" }}' @path %}{% endcapture %}
                     <img class="card-img-top" src="{{ image_src_1200 }}" alt=""
                          srcset="{{ image_src_400 }} 400w, {{ image_src_800 }} 800w, {{ image_src_1200 }} 1200w">
-                    <button class="image-button btn btn-primary" data-video="{{ case.video_id }}" data-toggle="modal" data-target="#videoModal"><i class="material-icons" aria-hidden="true">play_circle_filled</i>&nbsp;Watch the video</button>
+                    <button 
+                      class="image-button btn btn-primary" 
+                      data-video="{{ case.video_id }}" 
+                      data-toggle="modal" 
+                      data-target="#videoModal">
+                      <i class="material-icons" aria-hidden="true">play_circle_filled</i>&nbsp;Watch the video
+                    </button>
                   </div>
                   <blockquote class="quote">
                     <p class="copy">{{ case.quote }}</p>

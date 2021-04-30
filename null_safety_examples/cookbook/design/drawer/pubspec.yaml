@@ -1,5 +1,5 @@
-name: themes
-description: Sample code for themes cookbook recipe.
+name: drawer
+description: Sample code for drawer cookbook recipe.
 
 environment:
   sdk: '>=2.12.0 <3.0.0'

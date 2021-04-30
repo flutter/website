@@ -477,7 +477,7 @@ RaisedButton(
   disabledColor: Colors.red.withOpacity(0.12),
   disabledTextColor: Colors.red.withOpacity(0.38),
   onPressed: null,
-  child: Text(‘RaisedButton with custom disabled colors'),
+  child: Text('RaisedButton with custom disabled colors'),
 ),
 
 ElevatedButton(

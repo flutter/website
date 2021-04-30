@@ -3,66 +3,84 @@ title: Integration testing
 description: Learn how to write integration tests
 ---
 
-This page describes how to use the [integration_test][] package to run
+This page describes how to use the `integration_test` package to run
 integration tests. Tests written using this package have the following
 properties:
  
-* Compatibility with the `flutter drive` command, for running tests on a
-physical device or emulator.
-* The ability to be run on [Firebase Test Lab][], enabling automated testing on a
-variety of devices.
-* Compatibility with [flutter_test][] APIs, enabling tests to be written in a
-similar style as [widget tests][]
+* Compatibility with the `flutter drive` command,
+  for running tests on a physical device or emulator.
+* The ability to be run on [Firebase Test Lab][],
+  enabling automated testing on a variety of devices.
+* Compatibility with [flutter_test][] APIs,
+  enabling tests to be written in a similar style as [widget tests][]
+
+{{site.alert.note}}
+  As of Flutter 2, the `integration_test` package
+  was moved into the Flutter SDK. Going forward,
+  use the [`integration_test`][] package docs,
+  rather than the docs on pub.dev. **Also,
+  make sure that you update your app's pubspec file
+  to include this package as one of your
+  `dev_dependencies`.** For an example,
+  see the [Project setup](#project-setup) section below.
+{{site.alert.end}}
 
 ## Overview
 
 **Unit tests, widget tests, and integration tests**
 
-There are three types of tests that Flutter supports. A **unit** test verifies
-the behavior of a method or class. A **widget test** verifies the behavior of
-Flutter widgets without running the app itself. An **integration test** (also
+There are three types of tests that Flutter supports.
+A **unit** test verifies the behavior of a method or class.
+A **widget test** verifies the behavior of Flutter widgets
+without running the app itself. An **integration test** (also
 called end-to-end testing or GUI testing) runs the full app.
 
 **Hosts and targets**
 
-During development, you are probably writing the code on a desktop computer,
-called the **host** machine, and running the app on a mobile device, browser, or
-desktop application, called the **target** device. (If you are using a web
-browser or desktop application, the host machine is also the target device.)
+During development, you are probably writing the code
+on a desktop computer, called the **host** machine,
+and running the app on a mobile device, browser,
+or desktop application, called the **target** device.
+(If you are using a web
+browser or desktop application,
+the host machine is also the target device.)
 
 **flutter_driver** 
 
-The `flutter_driver` package runs integration tests written in Dart on a target
-device and reports the results to the host. Tests written with `flutter_driver`
-run from the host and drive the app running on a real or virtual device. The
-`flutter drive` command is used to run tests written with this package.
+The `flutter_driver` package runs integration tests
+written in Dart on a target device and reports the
+results to the host. Tests written with `flutter_driver`
+run from the host and drive the app running on a real
+or virtual device. The `flutter drive` command is used
+to run tests written with this package.
 
 **integration_test**
 
-Tests written with the [integration_test][] package can:
+Tests written with the `integration_test` package can:
  
-1. Run directly on the target device, allowing you to test on multiple Android
-or iOS devices using Firebase Test Lab.
+1. Run directly on the target device, allowing you to test on
+   multiple Android or iOS devices using Firebase Test Lab.
 2. Run using `flutter_driver`. 
-3. Use `flutter_test` APIs, making integration tests more like writing [widget
-tests][].
+3. Use `flutter_test` APIs, making integration tests more
+   like writing [widget tests][].
 
-## Project Setup
+## Project setup
 
-Add `integration_test`, `flutter_test`, and optionally `flutter_driver` to your
-pubspec.yaml file:
+Add `integration_test`, `flutter_test`,
+and optionally `flutter_driver` to your pubspec.yaml file:
 
 ```yaml
-integration_test:
-  sdk: flutter
-flutter_test:
-  sdk: flutter
-flutter_driver:
-  sdk: flutter
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
 ```
 
-Create a new directory `integration_test/` with a new file,
-`<name>_test.dart`:
+In your project, create a new directory
+`integration_test/` with a new file, `<name>_test.dart`:
 
 ```dart
 import 'package:flutter_test/flutter_test.dart';
@@ -78,12 +96,14 @@ void main() {
 ```
 
 {{site.alert.note}}
-  Note: You should only use `testWidgets` to declare your tests, or errors won't
+  Note: You should only use `testWidgets`
+  to declare your tests, or errors won't
   be reported correctly.
 {{site.alert.end}}
 
 
-To run tests with `flutter drive`, create a new directory containing a new file,
+To run tests with `flutter drive`,
+create a new directory containing a new file,
 `test_driver/integration_test.dart`:
 
 ```dart
@@ -92,9 +112,9 @@ import 'package:integration_test/integration_test_driver.dart';
 Future<void> main() => integrationDriver();
 ```
 
-### Directory Structure
+### Directory structure
 
-```
+```yaml
 lib/
   ...
 integration_test/
@@ -110,11 +130,12 @@ See also:
 
  * [integration_test usage][]
 
-## Running Using Flutter Driver
+## Running using Flutter driver
 
-These tests can be launched with the `flutter drive` command, where
-`<DEVICE_ID>`: is the optional device ID or pattern displayed in the output of the
-`flutter devices` command:
+These tests can be launched with the
+`flutter drive` command, where `<DEVICE_ID>`:
+is the optional device ID or pattern displayed
+in the output of the `flutter devices` command:
 
 ```bash
 flutter drive \
@@ -123,13 +144,14 @@ flutter drive \
   -d <DEVICE_ID>
 ```
 
-This runs the tests in `foo_test.dart` via the adapter in
+This runs the tests in `foo_test.dart` using the adapter in
 `test_driver/integration_test.dart`.
 
 
 ### Running in a browser 
 
-First, [Download and install ChromeDriver][] and run it on port 4444:
+First, [Download and install ChromeDriver][]
+and run it on port 4444:
 
 
 ```
@@ -145,21 +167,27 @@ flutter drive \
   -d web-server
 ```
 
-To learn more, see the [Running Flutter Driver tests with Web][] wiki page.
+To learn more, see the
+[Running Flutter driver tests with web][] wiki page.
 
 ## Testing on Firebase Test Lab 
 
+You can use the Firebase Test Lab with both Android
+and iOS targets.
 
-### Android Setup
-Follow the instructions in the [Android Device Testing][] section of the README.
+### Android setup
+Follow the instructions in the [Android Device Testing][]
+section of the README.
 
-### iOS Setup
-Follow the instructions in the [iOS Device Testing][] section of the README.
+### iOS setup
+Follow the instructions in the [iOS Device Testing][]
+section of the README.
 
-### Test Lab Project Setup
+### Test Lab project setup
 
-Go to the [Firebase Console][], and create a new project if you don't have one
-already. Then navigate to Quality > Test Lab:
+Go to the [Firebase Console][],
+and create a new project if you don't have one
+already. Then navigate to **Quality > Test Lab**:
 
 {% asset integration-test/test-lab-1.png class="mw-100" alt="Firebase Test Lab Console" %}
 
@@ -176,40 +204,46 @@ flutter build apk
 popd
 ```
 
-Where `<name>_test.dart` is the file created in the Project Setup section.
+Where `<name>_test.dart` is the file created in the
+**Project Setup** section.
 
 Drag the "debug" APK from
-`<flutter_project_directory>/build/app/outputs/apk/debug` into the "Android Robo
-Test" target on the web page. This will start a Robo test and allow you to run
+`<flutter_project_directory>/build/app/outputs/apk/debug`
+into the **Android Robo Test** target on the web page.
+This starts a Robo test and allows you to run
 other tests:
 
 {% asset integration-test/test-lab-2.png class="mw-100" alt="Firebase Test Lab upload" %}
 
-Click **Run a test**, select the **Instrumentation** test type and drag these
-two files:
+Click **Run a test**,
+select the **Instrumentation** test type and drag
+the following two files:
  
  * `<flutter_project_directory>/build/app/outputs/apk/debug/<file>.apk`
  * `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
 
 {% asset integration-test/test-lab-3.png class="mw-100" alt="Firebase Test Lab upload two APKs" %}
 
-If a failure occurs, you can view the output by selecting the red icon:
+If a failure occurs,
+you can view the output by selecting the red icon:
 
 {% asset integration-test/test-lab-4.png class="mw-100" alt="Firebase Test Lab test results" %}
 
 ### Uploading an Android APK from the command line
 
-See the [Firebase Test Lab section of the README][] for instructions on uploading
-the APKs from the command line.
+See the [Firebase Test Lab section of the README][]
+for instructions on uploading the APKs from the command line.
 
 ## Migrating from flutter_driver
 
-To migrate from flutter_driver, follow these steps:
+To migrate from flutter_driver,
+use the following steps:
  
-1. Remove any calls to `enableFlutterDriverExtension()` in your
-  application. 
-2. Migrate any `test_driver` scripts to use `package:integration_test` and
-  WidgetTester instead of package:flutter_driver.
+1. Remove any calls to `enableFlutterDriverExtension()`
+   in your application. 
+2. Migrate any `test_driver` scripts to use
+   `package:integration_test` and `WidgetTester`
+   instead of package:flutter_driver.
 
 Code before migration:
 
@@ -281,17 +315,18 @@ void main() {
 }
 ```
 
-Instead of calling `driver.wait*` API, use `WidgetTester.pumpAndSettle()` or
+Instead of calling `driver.wait*` API,
+use `WidgetTester.pumpAndSettle()` or
 equivalent methods.
 
-[integration_test]: https://pub.dev/packages/integration_test
-[integration_test usage]: https://pub.dev/packages/integration_test#usage
-[flutter_test]: https://api.flutter.dev/flutter/flutter_test/flutter_test-library.html
-[widget tests]: /docs/testing#widget-tests
-[Firebase Test Lab]: https://firebase.google.com/docs/test-lab
+[Android Device Testing]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#android-device-testing
 [Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads
-[Android Device Testing]: https://pub.dev/packages/integration_test#android-device-testing
-[iOS Device Testing]: https://pub.dev/packages/integration_test#ios-device-testing
 [Firebase Console]: http://console.firebase.google.com/
-[Firebase Test Lab section of the README]: https://pub.dev/packages/integration_test#firebase-test-lab
-[Running Flutter Driver tests with Web]: https://github.com/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web
+[Firebase Test Lab]: https://firebase.google.com/docs/test-lab
+[Firebase Test Lab section of the README]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#firebase-test-lab
+[flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
+[`integration_test`]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#integration_test
+[integration_test usage]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#usage
+[iOS Device Testing]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#ios-device-testing
+[Running Flutter driver tests with web]: {{site.github}}/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web
+[widget tests]: /docs/testing#widget-tests

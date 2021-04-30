@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/design/snackbars/"?>
+
 It can be useful to briefly inform your users when certain actions
 take place. For example, when a user swipes away a message in a list,
 you might want to inform them that the message has been deleted.
@@ -92,7 +94,8 @@ final snackBar = SnackBar(
   see the [Gestures][] section of the cookbook.
 {{site.alert.end}}
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() => runApp(SnackBarDemo());

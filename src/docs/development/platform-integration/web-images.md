@@ -151,7 +151,7 @@ Examples:
 * Using [CloudFlare Workers][18].
 * Using [Firebase Functions][19].
 
-### Use <img> in a platform view.
+### Use `<img>` in a platform view.
 
 Flutter supports embedding HTML inside the app using
 [`HtmlElementView`][17].  Use it to create an `<img>`

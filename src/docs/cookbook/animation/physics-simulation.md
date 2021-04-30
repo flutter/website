@@ -1,6 +1,7 @@
 ---
 title: Animate a widget using a physics simulation
 description: How to implement a physics animation.
+diff2html: true
 prev:
   title: Animate a page route transition
   path: /docs/cookbook/animation/page-route-animation
@@ -11,6 +12,8 @@ js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
 ---
+
+<?code-excerpt path-base="../null_safety_examples/cookbook/animation/physics_simulation/"?>
 
 Physics simulations can make app interactions feel realistic and interactive.
 For example, you might want to animate a widget to act as if it were attached to
@@ -31,6 +34,7 @@ This recipe uses these steps:
 
 Start with a stateful widget called `DraggableCard`:
 
+<?code-excerpt "lib/starter.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -54,13 +58,14 @@ class PhysicsCardDragDemo extends StatelessWidget {
 
 class DraggableCard extends StatefulWidget {
   final Widget child;
-  DraggableCard({this.child});
+  DraggableCard({required this.child});
 
   @override
   _DraggableCardState createState() => _DraggableCardState();
 }
 
 class _DraggableCardState extends State<DraggableCard> {
+
   @override
   void initState() {
     super.initState();
@@ -93,26 +98,32 @@ Then construct an [AnimationController][] in
   documentation for [TickerProvider][].
 {{site.alert.end}}
 
-<!-- skip -->
-```dart
-class _DraggableCardState extends State<DraggableCard>
-    with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+<?code-excerpt "lib/{starter,step1}.dart"?>
+```diff
+--- lib/starter.dart
++++ lib/step1.dart
+@@ -26,15 +26,21 @@
+   _DraggableCardState createState() => _DraggableCardState();
+ }
 
-  @override
-  void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
-    super.initState();
-  }
+-class _DraggableCardState extends State<DraggableCard> {
++class _DraggableCardState extends State<DraggableCard>
++    with SingleTickerProviderStateMixin {
++  late AnimationController _controller;
 
+   @override
+   void initState() {
+     super.initState();
++    _controller =
++        AnimationController(vsync: this, duration: Duration(seconds: 1));
+   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-  //...
++
+   @override
+   void dispose() {
++    _controller.dispose();
+     super.dispose();
+   }
 ```
 
 ## Step 2: Move the widget using gestures
@@ -120,9 +131,15 @@ class _DraggableCardState extends State<DraggableCard>
 Make the widget move when it's dragged, and add an [Alignment][] field to the
 `_DraggableCardState` class:
 
-<!-- skip -->
-```dart
-Alignment _dragAlignment = Alignment.center;
+<?code-excerpt "lib/{step1,step2}.dart (alignment)"?>
+```diff
+--- lib/step1.dart (alignment)
++++ lib/step2.dart (alignment)
+@@ -1,3 +1,4 @@
+ class _DraggableCardState extends State<DraggableCard>
+     with SingleTickerProviderStateMixin {
+   late AnimationController _controller;
++  Alignment _dragAlignment = Alignment.center;
 ```
 
 Add a [GestureDetector][] that handles the `onPanDown`, `onPanUpdate`, and
@@ -131,30 +148,36 @@ size of the widget, and divide by 2. (This converts units of "pixels dragged" to
 coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 `_dragAlignment`:
 
-<!-- skip -->
-```dart
-@override
-Widget build(BuildContext context) {
-  var size = MediaQuery.of(context).size;
-  return GestureDetector(
-    onPanDown: (details) {},
-    onPanUpdate: (details) {
-      setState(() {
-        _dragAlignment += Alignment(
-          details.delta.dx / (size.width / 2),
-          details.delta.dy / (size.height / 2),
-        );
-      });
-    },
-    onPanEnd: (details) {},
-    child: Align(
-      alignment: _dragAlignment,
-      child: Card(
-        child: widget.child,
-      ),
-    ),
-  );
-}
+<?code-excerpt "lib/{step1,step2}.dart (build)"?>
+```diff
+--- lib/step1.dart (build)
++++ lib/step2.dart (build)
+@@ -1,8 +1,22 @@
+ @override
+ Widget build(BuildContext context) {
+-  return Align(
+-    child: Card(
+-      child: widget.child,
++  var size = MediaQuery.of(context).size;
++  return GestureDetector(
++    onPanDown: (details) {},
++    onPanUpdate: (details) {
++      setState(() {
++        _dragAlignment += Alignment(
++          details.delta.dx / (size.width / 2),
++          details.delta.dy / (size.height / 2),
++        );
++      });
++    },
++    onPanEnd: (details) {},
++    child: Align(
++      alignment: _dragAlignment,
++      child: Card(
++        child: widget.child,
++      ),
+     ),
+   );
+ }
 ```
 
 ## Step 3: Animate the widget
@@ -165,42 +188,54 @@ Add an `Animation<Alignment>` field and an `_runAnimation` method. This
 method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center.
 
-<!-- skip -->
-```dart
-  Animation<Alignment> _animation;
+<?code-excerpt "lib/{step2,step3}.dart (animation)"?>
+```diff
+--- lib/step2.dart (animation)
++++ lib/step3.dart (animation)
+@@ -1,4 +1,5 @@
+ class _DraggableCardState extends State<DraggableCard>
+     with SingleTickerProviderStateMixin {
+   late AnimationController _controller;
++  late Animation<Alignment> _animation;
+   Alignment _dragAlignment = Alignment.center;
+```
 
-  void _runAnimation() {
-    _animation = _controller.drive(
-      AlignmentTween(
-        begin: _dragAlignment,
-        end: Alignment.center,
-      ),
-    );
-   _controller.reset();
-   _controller.forward();
-  }
+<?code-excerpt "lib/step3.dart (runAnimation)"?>
+```dart
+void _runAnimation() {
+  _animation = _controller.drive(
+    AlignmentTween(
+      begin: _dragAlignment,
+      end: Alignment.center,
+    ),
+  );
+  _controller.reset();
+  _controller.forward();
+}
 ```
 
 Next, update `_dragAlignment` when the `AnimationController` produces a
 value:
 
-<!-- skip -->
-```dart
-@override
-void initState() {
-  super.initState();
-  _controller = AnimationController(vsync: this, duration: Duration(seconds: 1));
-  _controller.addListener(() {
-    setState(() {
-      _dragAlignment = _animation.value;
-    });
-  });
-}
+<?code-excerpt "lib/{step2,step3}.dart (initState)"?>
+```diff
+--- lib/step2.dart (initState)
++++ lib/step3.dart (initState)
+@@ -3,4 +3,9 @@
+   super.initState();
+   _controller =
+       AnimationController(vsync: this, duration: Duration(seconds: 1));
++  _controller.addListener(() {
++    setState(() {
++      _dragAlignment = _animation.value;
++    });
++  });
+ }
 ```
 
 Next, make the `Align` widget use the `_dragAlignment` field:
 
-<!-- skip -->
+<?code-excerpt "lib/step3.dart (align)"?>
 ```dart
 child: Align(
   alignment: _dragAlignment,
@@ -212,22 +247,30 @@ child: Align(
 
 Finally, update the `GestureDetector` to manage the animation controller:
 
-<!-- skip -->
-```dart
-onPanDown: (details) {
- _controller.stop();
-},
-onPanUpdate: (details) {
- setState(() {
-   _dragAlignment += Alignment(
-     details.delta.dx / (size.width / 2),
-     details.delta.dy / (size.height / 2),
-   );
- });
-},
-onPanEnd: (details) {
- _runAnimation();
-},
+<?code-excerpt "lib/{step2,step3}.dart (gesture)"?>
+```diff
+--- lib/step2.dart (gesture)
++++ lib/step3.dart (gesture)
+@@ -1,5 +1,7 @@
+ return GestureDetector(
+-  onPanDown: (details) {},
++  onPanDown: (details) {
++    _controller.stop();
++  },
+   onPanUpdate: (details) {
+     setState(() {
+       _dragAlignment += Alignment(
+@@ -8,7 +10,9 @@
+       );
+     });
+   },
+-  onPanEnd: (details) {},
++  onPanEnd: (details) {
++    _runAnimation();
++  },
+   child: Align(
+     alignment: _dragAlignment,
+     child: Card(
 ```
 
 ## Step 4: Calculate the velocity to simulate a springing motion
@@ -239,7 +282,7 @@ already sets the direction by setting the animation's start and end alignment.)
 
 First, import the `physics` package:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (import)"?>
 ```dart
 import 'package:flutter/physics.dart';
 ```
@@ -254,8 +297,9 @@ to coordinate values in this range.
 Finally, `AnimationController` has an `animateWith()` method that can be given a
 [SpringSimulation][]:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (runAnimation)"?>
 ```dart
+/// Calculates and runs a [SpringSimulation].
 void _runAnimation(Offset pixelsPerSecond, Size size) {
   _animation = _controller.drive(
     AlignmentTween(
@@ -284,7 +328,7 @@ void _runAnimation(Offset pixelsPerSecond, Size size) {
 
 Don't forget to call `_runAnimation()`  with the velocity and size:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (onPanEnd)"?>
 ```dart
 onPanEnd: (details) {
   _runAnimation(details.velocity.pixelsPerSecond, size);
@@ -298,7 +342,8 @@ onPanEnd: (details) {
 
 ## Interactive Example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
@@ -324,7 +369,7 @@ class PhysicsCardDragDemo extends StatelessWidget {
 /// released.
 class DraggableCard extends StatefulWidget {
   final Widget child;
-  DraggableCard({this.child});
+  DraggableCard({required this.child});
 
   @override
   _DraggableCardState createState() => _DraggableCardState();
@@ -332,7 +377,7 @@ class DraggableCard extends StatefulWidget {
 
 class _DraggableCardState extends State<DraggableCard>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   /// The alignment of the card as it is dragged or being animated.
   ///
@@ -341,7 +386,7 @@ class _DraggableCardState extends State<DraggableCard>
   /// this value is set to the value of the [_animation].
   Alignment _dragAlignment = Alignment.center;
 
-  Animation<Alignment> _animation;
+  late Animation<Alignment> _animation;
 
   /// Calculates and runs a [SpringSimulation].
   void _runAnimation(Offset pixelsPerSecond, Size size) {
