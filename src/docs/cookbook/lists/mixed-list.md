@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/lists/mixed_list/"?>
+
 You might need to create lists that display different types of content.
 For example, you might be working on a list that shows a heading
 followed by a few items related to the heading, followed by another heading,
@@ -33,6 +35,7 @@ In this example, create an app that shows a header followed by five
 messages. Therefore, create three classes: `ListItem`, `HeadingItem`,
 and `MessageItem`.
 
+<?code-excerpt "lib/main.dart (ListItem)"?>
 ```dart
 /// The base class for the different types of items the list can contain.
 abstract class ListItem {
@@ -81,10 +84,10 @@ For this example, generate a list of items to work with. The list
 contains a header followed by five messages. Each message has one
 of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Items)" replace="/^items:/final items =/g;/,$/;/g"?>
 ```dart
 final items = List<ListItem>.generate(
-  1200,
+  1000,
   (i) => i % 6 == 0
       ? HeadingItem("Heading $i")
       : MessageItem("Sender $i", "Message body $i"),
@@ -100,7 +103,7 @@ In general, provide a builder function that checks for what type
 of item you're dealing with, and returns the appropriate widget
 for that type of item.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (builder)" replace="/^body: //g;/,$//g"?>
 ```dart
 ListView.builder(
   // Let the ListView know how many items it needs to build.
@@ -115,29 +118,32 @@ ListView.builder(
       subtitle: item.buildSubtitle(context),
     );
   },
-);
+)
 ```
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp(
-    items: List<ListItem>.generate(
-      1000,
-      (i) => i % 6 == 0
-          ? HeadingItem("Heading $i")
-          : MessageItem("Sender $i", "Message body $i"),
+  runApp(
+    MyApp(
+      items: List<ListItem>.generate(
+        1000,
+        (i) => i % 6 == 0
+            ? HeadingItem("Heading $i")
+            : MessageItem("Sender $i", "Message body $i"),
+      ),
     ),
-  ));
+  );
 }
 
 class MyApp extends StatelessWidget {
   final List<ListItem> items;
 
-  MyApp({Key key, @required this.items}) : super(key: key);
+  MyApp({Key? key, required this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
