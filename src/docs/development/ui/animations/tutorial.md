@@ -24,12 +24,12 @@ and methods in the animation library, it walks you through 5
 animation examples. The examples build on each other,
 introducing you to different aspects of the animation library.
 
-The Flutter SDK also provides implicit transition animations,
+The Flutter SDK also provides built-in explicit animations,
 such as [`FadeTransition`][], [`SizeTransition`][],
 and [`SlideTransition`][]. These simple animations are
 triggered by setting a beginning and ending point.
 They are simpler to implement
-than explicit animations, which are described here.
+than custom explicit animations, which are described here.
 
 <a name="concepts"></a>
 ## Essential animation concepts and classes

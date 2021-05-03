@@ -71,7 +71,7 @@ and optionally `flutter_driver` to your pubspec.yaml file:
 
 ```yaml
 dev_dependencies:
-  integraton_test:
+  integration_test:
     sdk: flutter
   flutter_test:
     sdk: flutter

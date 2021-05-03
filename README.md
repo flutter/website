@@ -5,6 +5,7 @@
 ## Table of contents
 
 * [Issues, bugs, and requests](#issues-bugs-and-requests)
+* [Before you submit a PR](#before-you-submit-a-pr)
 * [Before you build this site](#before-you-build-this-site)
   - [1. Get the prerequisites](#1-get-the-prerequisites)
   - [2. Clone this repo _and_ its submodules](#2-clone-this-repo-and-its-submodules)
@@ -25,9 +26,43 @@ Please file a request in our
 [issue tracker](https://github.com/flutter/website/issues/new)
 and we'll take a look.
 
-> NOTE: For simple changes (such as to CSS and text), you probably don't need to
-> build this site. Often, you can make changes using the GitHub UI.
+If you have an issue with the API docs on
+[api.flutter.dev](https://api.flutter.dev),
+please file those issues on the
+[flutter/flutter](https://github.com/flutter/flutter/issues)
+repo, not on this (flutter/website) repo.
+The API docs are embedded in Flutter's source code,
+so the engineering team handles those.
+
+> NOTE: For simple changes (such as to CSS and text),
+> you probably don't need to build this site.
+> Often, you can make changes using the GitHub UI.
 > If you want/need to build, read on.
+
+## Before you submit a PR
+
+We love it when the community gets involved in improving
+our docs! But here are a few notes to keep in mind before
+you submit a PR:
+
+* When triaging issues, we sometimes label an issue with
+  the tag, "PRs welcome". But we welcome PRs on other
+  issues as well&mdash;it doesn't have to be tagged with
+  that label.
+* Please realize that we follow (or try to follow)
+  the [Google Developer Documentation Style
+  Guidelines](https://developers.google.com/style).
+  So please don't run our docs through Grammarly (or similar)
+  and submit those changes as a PR. This guide is a reference
+  doc and not meant to be read like a novel, but check out the
+  [highlights](https://developers.google.com/style/highlights)
+  page or use the search bar to find your subject of interest.
+  Also, the [wordlist](https://developers.google.com/style/word-list)
+  is very useful. (For example, don't use "i.e." or "e.g.",
+  and avoid writing in first person.)
+
+We truly thank you for your willingness and helpfulness
+in keeping the website docs up to date!!
 
 ## Before you build this site
 
