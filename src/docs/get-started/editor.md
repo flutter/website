@@ -58,7 +58,7 @@ The installation instructions vary by platform.
 Use the following instructions for macos:
 
   1. Start Android Studio.
-  1. Open plugin preferences (**Configure > Plugins** as of
+  1. Open plugin preferences (**Preferences > Plugins** as of
      v3.6.3.0 or later).
   1. Select the Flutter plugin and
      click **Install**.
