@@ -1,157 +1,193 @@
 ---
-title: ThemeData's accent properties
-description: Remove FloatingActionButton's undocumented use of the ThemeData accentTextTheme property, and its unnecessary use of accentIconTheme.
+title: ThemeData's accent properties have been deprecated
+description: The ThemeData accentColor, accentColorBrightness, accentIconTheme, and accentTextTheme properties have been deprecated.
 ---
 
 ## Summary
 
-Removed Flutter's `FloatingActionButton` (FAB) dependency on
-`ThemeData` accent properties.
+The ThemeData [accentColor][], [accentColorBrightness][], [accentIconTheme][] and
+[accentTextTheme][] properties have been deprecated.
+
+The [Material Design spec][] no longer specifies or uses an "accent"
+color for the Material components. The default values for component
+colors are derived from the overall theme's [color scheme][]. The
+`ColorScheme`'s [secondary color][] is now typically used instead of
+`accentColor` and the [onSecondary color][] is used when a contrasting
+color is needed.
 
 ## Context
 
 This was a small part of the [Material Theme System Updates][] project.
 
-Previously, the `ThemeData accentIconTheme` property was only
-used by [`FloatingActionButton`][] to determine the default
-color of the text or icons that appeared within the button.
+As of Flutter 1.17, the ThemeData accent properties - accentColor,
+accentColorBrightness, accentIconTheme, and accentTextTheme - were no
+longer used by the Material library. They had been replaced by
+dependencies on the theme's [`colorScheme`][] and [`textTheme`][] properties as
+part of the long-term goal of making the default configurations of the
+material components depend almost exclusively on these two
+properties.
 
-`FloatingActionButton` also used the
-`ThemeData accentTextTheme` property,
-however this dependency was undocumented and unnecessary.
-
-Both of these dependencies were confusing.
-For example if one configured the `Theme`'s `accentIconTheme`
-to change the appearance of all floating action buttons,
-it was difficult to know what other components would be affected,
-or might be affected in the future.
-
-The [Material Design spec][] no longer includes an "accent" color.
-The `ColorScheme`'s [secondary color][] is now used instead.
-
-Previously, applications could configure the color of text and icons
-within `FloatingActionButtons` with the widget's `foregroundColor`
-property, or with the `FloatingActionButtonTheme`'s `foregroundColor`.
-If neither `foregroundColor` property was specified, the foreground
-color defaulted to the `accentIconTheme`'s color.
-
-With this change, the default behavior uses the color scheme's
-`onSecondary` color instead.
+The motivation for these changes is to make the theme system easier to
+understand and use. The default colors for all components are to be
+defined by the components themselves and based on the color
+scheme. The defaults for specific component types can be overridden
+with component-specific themes like [`FloatingActionButtonTheme`][] or
+[`CheckBoxTheme`][]. Previously, properties like accentColor were used by a
+handful of component types and only in some situations, which made it
+difficult to understand the implications of overriding them.
 
 ## Description of change
 
-Previously, the `accentIconTheme` provided a default for the
-`FloatingActionButton`'s `foregroundColor` property:
-
-<!-- skip -->
-```dart
-    final Color foregroundColor = this.foregroundColor
-      ?? floatingActionButtonTheme.foregroundColor
-      ?? theme.accentIconTheme.color // To be removed.
-      ?? theme.colorScheme.onSecondary;
-```
-
-Apps that configure their theme's `accentIconTheme`
-to effectively configure the `foregroundColor` of all
-floating action buttons, can get the same effect by
-configuring the `foregroundColor` of their theme's
-`floatingActionButtonTheme`.
-
-The `FloatingActionButton`'s `foregroundColor` is now used
-to configure the `textStyle` of the `RawMaterialButton`
-created by `FloatingActionButton`. Previously,
-this text style was based on the button style of
-`ThemeData.accentTextTheme`:
-
-<!-- skip -->
-```dart
-// theme.accentTextTheme becomes theme.textTheme
-final TextStyle textStyle = theme.accentTextTheme.button.copyWith(
-  color: foregroundColor,
-  letterSpacing: 1.2,
-);
-
-```
-
-Except in a case where an app has explicitly configured the
-`accentTextTheme` to take advantage of this undocumented dependency,
-this use of `accentTextTheme` is unnecessary.
-This change replaces this use of `accentTextTheme` with `textTheme`.
+The ThemeData accentColor, accentColorBrightness, accentIconTheme and
+accentTextTheme properties have been deprecated because the Material
+library no longer uses them.
 
 ## Migration guide
 
-This change occurred in two steps:
 
-1. If the foreground of a `FloatingActionButton` is set
-   to a non-default color, a warning is now printed.
-2. The `accentIconTheme` dependency was removed.
-   If you haven't already done so, migrate your apps
-   per the pattern below.
+### Application theme
 
-To configure the `FloatingActionButton`'s `foregroundColor`
-for all FABs, you can configure the theme's
-`floatingActionButtonTheme` instead of its `accentIconTheme`.
+[`ThemeData`][] values no long need to specify accentColor,
+accentColorBrightness, accentIconTheme, or accentTextTheme.
+
+To configure the appearance of the material components in about the
+same way as before, specify the color scheme's secondary color
+instead of accentColor.
 
 Code before migration:
 
 <!-- skip -->
 ```dart
 MaterialApp(
-  theme: ThemeData(
-    accentIconTheme: IconThemeData(color: Colors.red),
-  ),
-)
+  theme: ThemeData(accentColor: myColor),
+  // ...
+);
 ```
 
 Code after migration:
 
 <!-- skip -->
 ```dart
+final ThemeData theme = ThemeData();
 MaterialApp(
-  theme: ThemeData(
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
-      foregroundColor: Colors.red,
-    ),
+  theme: theme.copyWith(
+    colorScheme: theme.colorScheme.copyWith(secondaryColor: myColor),
   ),
+  //...
 )
 ```
 
+### `accentColor`
+
+The closest backwards compatible [`ColorScheme`][] color is
+[`ColorScheme.secondary`][]. To hew most closely to the latest Material
+Design guidelines one can substitute ColorScheme.primary instead.
+If a contrasting color is needed then use [`ColorScheme.onSecondary`][].
+
+Custom components that used to look up the theme's accentColor, can look up
+the `ColorScheme.secondary` instead.
+
+Code before migration:
+
+<!-- skip -->
+```dart
+Color myColor = Theme.of(context).accentColor;
+```
+
+Code after migration:
+
+<!-- skip -->
+```dart
+Color myColor = Theme.of(context).colorScheme.secondary;
+```
+
+### `accentColorBrightness`
+
+The static ThemeData.estimateBrightnessForColor() method can be used
+to compute the brightness of any color.
+
+
+### `accentTextTheme`
+
+This was white [`TextStyle`]s for dark themes, black
+TextStyles for light themes. In most cases textTheme can be used
+instead. A common idiom was to refer to one TextStyle from
+accentTextTheme, since the text style's color was guaranteed to contrast
+well with the accent color (now `ColorScheme.secondaryColor`).  To get
+the same result now, specify the text style's color as
+`ColorScheme.onSecondary`:
+
+Code before migration:
+
+<!-- skip -->
+```dart
+TextStyle style = Theme.of(context).accentTextTheme.headline1;
+```
+
+Code after migration:
+
+<!-- skip -->
+```dart
+final ThemeData theme = Theme.of(context);
+TextStyle style = theme.textTheme.headline1.copyWith(
+  color: theme.colorScheme.onSecondary,
+)
+```
+
+### `accentIconTheme`
+
+This property had only been used to configure the color of icons
+within a [`FloatingActionButton`][]. It's now possible to configure the icon
+color directly or with the [`FloatingActionButtonTheme`][]. See
+[FloatingActionButton and ThemeData's accent properties][].
+
 ## Timeline
 
-Landed in version: 1.16.3<br>
-In stable release: 1.17
+Landed in version: 2.3.0-0.1.pre<br>
+In stable release: not yet
 
 ## References
 
-Design doc:
-
-* [Remove FAB Accent Theme Dependency][]
-
 API documentation:
-
+* [`ColorScheme`][]
 * [`FloatingActionButton`][]
+* [`FloatingActionButtonTheme`][]
+* [`TextStyle`][]
+* [`TextTheme`][]
+* [`Theme`][]
 * [`ThemeData`][]
-* [`FloatingActionButtonThemeData`][]
+
+Relevant issues:
+* [Issue #56918][]
 
 Relevant PRs:
-
-* [Step 1 of 2][] Warn about Flutter's
-  FloatingActionButton dependency on ThemeData accent properties
-* [Step 2 of 2][] Remove Flutter's FloatingActionButton dependency
-  on ThemeData accent properties
+* [PR #81336][]
 
 Other:
-
 * [Material Theme System Updates][]
 
 
-[`accentIconTheme`]: {{site.api}}/flutter/material/ThemeData/accentIconTheme.html
-[`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton/foregroundColor.html
+[accentColor]: {{site.api}}/flutter/material/ThemeData/accentColor.html
+[accentColorBrightness]: {{site.api}}/flutter/material/ThemeData/accentColorBrightness.html
+[accentIconTheme]: {{site.api}}/flutter/material/ThemeData/accentIconTheme.html
+[accentTextTheme]: {{site.api}}/flutter/material/ThemeData/accentTextTheme.html
+[`CheckboxTheme`]: {{site.api}}/flutter/material/CheckboxTheme-class.html
+[color scheme]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
+[`colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
+[`colorScheme.onSecondary`]: {{site.api}}/flutter/material/ColorScheme/onSecondary.html
+[`colorScheme.secondary`]: {{site.api}}/flutter/material/ColorScheme/secondary.html
+[`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
+[Issue #56918]: {{site.github}}/flutter/flutter/issues/56918
+[`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
+[`FloatingActionButtonTheme`]: {{site.api}}/flutter/material/FloatingActionButtonTheme-class.html
 [`FloatingActionButtonThemeData`]: {{site.api}}/flutter/material/FloatingActionButtonThemeData-class.html
 [Material Design spec]: {{site.material}}/design/color
 [Material Theme System Updates]: /go/material-theme-system-updates
-[Remove FAB Accent Theme Dependency]: /go/remove-fab-accent-theme-dependency
-[secondary color]: {{site.material}}/design/color/the-color-system.html#color-theme-creation
-[Step 1 of 2]: {{site.github}}/flutter/flutter/pull/48435
-[Step 2 of 2]: {{site.github}}/flutter/flutter/pull/46923
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData/floatingActionButtonTheme.html
+[secondary color]: {{site.api}}/flutter/material/ColorScheme/secondary.html
+[onSecondary color]: {{site.api}}/flutter/material/ColorScheme/onSecondary.html
+[PR #81336]: {{site.github}}/flutter/flutter/pull/81336
+[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
+[`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
+[`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
+[`Theme`]: {{site.api}}/flutter/material/Theme-class.html
+[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
