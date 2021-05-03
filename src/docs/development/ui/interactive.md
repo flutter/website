@@ -151,7 +151,6 @@ In this example, `createState()` returns an
 instance of `_FavoriteWidgetState`,
 which you'll implement in the next step.
 
-<!-- skip -->
 <?code-excerpt path-base="../null_safety_examples/layout/lakes/interactive"?>
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
 ```dart
@@ -178,7 +177,6 @@ red star, indicating that the lake has "favorite" status,
 along with 41 likes. These values are stored in the
 `_isFavorited` and `_favoriteCount` fields:
 
-<!-- skip -->
 <?code-excerpt "lib/main.dart (_FavoriteWidgetState fields)" replace="/(bool|int) .*/[!$&!]/g" title?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
@@ -195,7 +193,6 @@ because it has an `onPressed` property that defines
 the callback function (`_toggleFavorite`) for handling a tap.
 You'll define the callback function next.
 
-<!-- skip -->
 <?code-excerpt "lib/main.dart (_FavoriteWidgetState build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g" title?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
@@ -245,7 +242,6 @@ UI between these two states:
 * A `star` icon and the number 41
 * A `star_border` icon and the number 40
 
-<!-- skip -->
 <?code-excerpt "lib/main.dart (_toggleFavorite)"?>
 ```dart
 void _toggleFavorite() {
@@ -269,7 +265,6 @@ the app's `build()` method. First, locate the code that
 creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
-<!-- skip -->
 <?code-excerpt path-base="../null_safety_examples/"?>
 <?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
 ```diff
@@ -398,14 +393,18 @@ The `_TapboxAState` class:
   `setState()` function to update the UI.
 * Implements all interactive behavior for the widget.
 
-<!-- skip -->
+<?code-excerpt path-base="../null_safety_examples/development/ui/interactive/"?>
+
+<?code-excerpt "lib/self_managed.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 // TapboxA manages its own state.
 
 //------------------------- TapboxA ----------------------------------
 
 class TapboxA extends StatefulWidget {
-  TapboxA({Key key}) : super(key: key);
+  TapboxA({Key? key}) : super(key: key);
 
   @override
   _TapboxAState createState() => _TapboxAState();
@@ -490,11 +489,14 @@ The TapboxB class:
 * Extends StatelessWidget because all state is handled by its parent.
 * When a tap is detected, it notifies the parent.
 
-<!-- skip -->
+<?code-excerpt "lib/parent_managed.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 // ParentWidget manages the state for TapboxB.
 
 //------------------------ ParentWidget --------------------------------
+
 
 class ParentWidget extends StatefulWidget {
   @override
@@ -524,7 +526,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  TapboxB({Key key, this.active: false, required this.onChanged})
+  TapboxB({Key? key, this.active: false, required this.onChanged})
       : super(key: key);
 
   final bool active;
@@ -592,8 +594,10 @@ The `_TapboxCState` object:
 * On a tap event, passes that state change to the parent widget to take
   appropriate action using the [`widget`][] property.
 
-<!-- skip -->
+<?code-excerpt "lib/mixed.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 //---------------------------- ParentWidget ----------------------------
 
 class ParentWidget extends StatefulWidget {
@@ -624,8 +628,11 @@ class _ParentWidgetState extends State<ParentWidget> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  TapboxC({Key key, this.active: false, @required this.onChanged})
-      : super(key: key);
+  TapboxC({
+    Key? key,
+    this.active: false,
+    required this.onChanged,
+  }) : super(key: key);
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -674,11 +681,10 @@ class _TapboxCState extends State<TapboxC> {
         width: 200.0,
         height: 200.0,
         decoration: BoxDecoration(
-          color:
-              widget.active ? Colors.lightGreen[700] : Colors.grey[600],
+          color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _highlight
               ? Border.all(
-                  color: Colors.teal[700],
+                  color: Colors.teal[700]!,
                   width: 10.0,
                 )
               : null,
