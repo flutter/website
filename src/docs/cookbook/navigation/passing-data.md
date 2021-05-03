@@ -285,7 +285,7 @@ Repeat the first two steps.
 
 Next, create a detail screen that extracts and displays the title and description from the `Todo`. To access the `Todo`, use the [`ModalRoute.of()`][] method. This method returns the current route with the arguments.
 
-<!-- skip -->
+<?code-excerpt "lib/main_routesettings.dart (DetailScreen)"?>
 ```dart
 class DetailScreen extends StatelessWidget {
   @override
@@ -313,7 +313,7 @@ a `ListTile` widget using `Navigator.push()`.
 Pass the arguments as part of the [`RouteSettings`][].
 The `DetailScreen` extracts these arguments.
 
-<!-- skip -->
+<?code-excerpt "lib/main_routesettings.dart (builder)" replace="/^body: //g;/,$//g"?>
 ```dart
 ListView.builder(
   itemCount: todos.length,
@@ -338,11 +338,12 @@ ListView.builder(
       },
     );
   },
-),
+)
 ```
 
 ### Complete example
 
+<?code-excerpt "lib/main_routesettings.dart"?>
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -355,24 +356,26 @@ class Todo {
 }
 
 void main() {
-  runApp(MaterialApp(
-    title: 'Passing Data',
-    home: TodosScreen(
-      todos: List.generate(
-        20,
-        (i) => Todo(
-          'Todo $i',
-          'A description of what needs to be done for Todo $i',
+  runApp(
+    MaterialApp(
+      title: 'Passing Data',
+      home: TodosScreen(
+        todos: List.generate(
+          20,
+          (i) => Todo(
+            'Todo $i',
+            'A description of what needs to be done for Todo $i',
+          ),
         ),
       ),
     ),
-  ));
+  );
 }
 
 class TodosScreen extends StatelessWidget {
   final List<Todo> todos;
 
-  TodosScreen({Key key, @required this.todos}) : super(key: key);
+  TodosScreen({Key? key, required this.todos}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
