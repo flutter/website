@@ -4,13 +4,13 @@ environment:
   sdk: '>=2.0.0 <3.0.0'
 
 dev_dependencies:
-  build_runner: ^1.1.2
+  build_runner: ^2.0.2
   code_excerpt_updater:
     path: site-shared/packages/code_excerpt_updater
   code_excerpter:
     path: site-shared/packages/code_excerpter
   linkcheck: ^2.0.6
-  yaml: ^2.1.15
+  yaml: ^3.1.0
   path: ^1.6.2
-  github: ^4.1.0
-  firebase: ^5.0.3
+  github: ^8.1.0
+  firebase: ^9.0.1
