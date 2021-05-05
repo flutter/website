@@ -3,6 +3,8 @@ title: Google APIs
 description: How to use Google APIs with Flutter.
 ---
 
+<?code-excerpt path-base="../examples/googleapis/"?>
+
 The [Google APIs package](https://pub.dev/packages/googleapis) exposes dozens of
 Google services that you can use from Dart projects.
 
@@ -57,6 +59,7 @@ to simply read (but not write) an end-users YouTube data, use the
 [`youtubeReadonlyScope`](https://pub.dev/documentation/googleapis/latest/youtube.v3/YouTubeApi/youtubeReadonlyScope-constant.html)
 when authenticating the user.
 
+<?code-excerpt "lib/main.dart" skip="13" take="2"?>
 ```dart
 /// Provides the `YouTubeApi` class.
 import 'package:googleapis/youtube/v3.dart';
@@ -68,6 +71,7 @@ Use the [google_sign_in](https://pub.dev/packages/google_sign_in) package to
 authenticate users with Google in your application. Note that you will have to
 configure signin for each platform you want to support.
 
+<?code-excerpt "lib/main.dart" skip="10" take="2"?>
 ```dart
 /// Provides the `GoogleSignIn` class
 import 'package:google_sign_in/google_sign_in.dart';
@@ -77,6 +81,7 @@ When you instantiate the
 [`GoogleSignIn`](https://pub.dev/documentation/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html)
 class, you provide the desired scopes as discussed in the previous section.
 
+<?code-excerpt "lib/main.dart" skip="35" take="3"?>
 ```dart
 final _googleSignIn = GoogleSignIn(
   scopes: <String>[YouTubeApi.youtubeReadonlyScope],
@@ -98,6 +103,7 @@ package provides an
 `GoogleSignIn`:
 [`authenticatedClient`](https://pub.dev/documentation/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html).
 
+<?code-excerpt "lib/main.dart" skip="7" take="1"?>
 ```dart
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 ```
@@ -106,6 +112,7 @@ You can listen to
 [`onCurrentUserChanged`](https://pub.dev/documentation/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html).
 When event value is not `null`, you can create an authenticated client.
 
+<?code-excerpt "lib/main.dart" skip="124" take="1"?>
 ```dart
 var httpClient = (await _googleSignIn.authenticatedClient())!;
 ```
@@ -118,6 +125,7 @@ instance includes the nessesary credentials when invoking Google API classes.
 
 Use it to create the desired API type and call methods, for instance:
 
+<?code-excerpt "lib/main.dart" skip="125" take="6"?>
 ```dart
 var youTubeApi = YouTubeApi(httpClient);
 
