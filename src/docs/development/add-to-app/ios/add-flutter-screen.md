@@ -451,7 +451,7 @@ to `"/onboarding"` instead of `"/"`.
 Alternatively, to construct a FlutterViewController directly without pre-warming
 a FlutterEngine:
 
-{% samplecode initial-route %}
+{% samplecode initial-route-without-pre-warming %}
 {% sample Objective-C %}
 <!--code-excerpt "Creating view controller" title-->
 ```objectivec
