@@ -133,6 +133,9 @@ import 'fetch_album_test.mocks.dart';
 // Create new instances of this class in each test.
 @GenerateMocks([http.Client])
 void main() {
+  // Create mock object.
+  var client = MockClient();
+}
 ```
 
 Next, generate the mocks running the following command:
