@@ -69,7 +69,7 @@ import 'package:googleapis/youtube/v3.dart';
 ## 2. Authenticate the user with the required scopes.
 
 Use the [google_sign_in](https://pub.dev/packages/google_sign_in) package to
-authenticate users with Google in your application. Note that you will have to
+authenticate users with their Google identity. You will have to
 configure signin for each platform you want to support.
 
 <?code-excerpt "lib/main.dart" skip="10" take="2"?>
