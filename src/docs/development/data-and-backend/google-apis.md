@@ -12,10 +12,10 @@ This page describes how to use APIs that interact with end-user data by using
 Gooogle authentication.
 
 Examples of user-data APIs include
-[Calendar](<span class="x x-first x-last">{{site.pub-api}}</span>/googleapis/latest/calendar.v3/calendar.v3-library.html),
-[Gmail](<span class="x x-first x-last">{{site.pub-api}}</span>/googleapis/latest/gmail.v1/gmail.v1-library.html),
+[Calendar]({{site.pub-api}}/googleapis/latest/calendar.v3/calendar.v3-library.html),
+[Gmail]({{site.pub-api}}/googleapis/latest/gmail.v1/gmail.v1-library.html),
 and
-[YouTube](<span class="x x-first x-last">{{site.pub-api}}</span>/googleapis/latest/youtube.v3/youtube.v3-library.html).
+[YouTube]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html).
 
 {{site.alert.info}} 
   Note: The only APIs you should use directly from your Flutter
@@ -44,20 +44,20 @@ To use Google APIs, follow these steps.
 
 The documentation for [package:googleapis] lists each API as a separate Dart
 library – in a `name.version` format. Let's look at
-[`youtube.v3`](https://pub.dev/documentation/googleapis/latest/youtube.v3/youtube.v3-library.html)
+[`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html)
 as an example.
 
 Each library may provide many types, but there is one _root_ class that ends in
 `Api`. For YouTube, it's
-[`YouTubeApi`](https://pub.dev/documentation/googleapis/latest/youtube.v3/YouTubeApi-class.html).
+[`YouTubeApi`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html).
 
 Not only is the `Api` class the one you need to instantiate – see step 3 – but
 it also exposes the scopes that represent the permissions needed to use the API.
 Look under the
-[Constants section](https://pub.dev/documentation/googleapis/latest/youtube.v3/YouTubeApi-class.html#constants)
+[Constants section]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html#constants)
 of the `YouTubeApi` class and you'll see the available scopes. To request access
 to simply read (but not write) an end-users YouTube data, use the
-[`youtubeReadonlyScope`](https://pub.dev/documentation/googleapis/latest/youtube.v3/YouTubeApi/youtubeReadonlyScope-constant.html)
+[`youtubeReadonlyScope`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi/youtubeReadonlyScope-constant.html)
 when authenticating the user.
 
 <?code-excerpt "lib/main.dart" skip="13" take="2"?>
@@ -79,7 +79,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 ```
 
 When you instantiate the
-[`GoogleSignIn`](https://pub.dev/documentation/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html)
+[`GoogleSignIn`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html)
 class, you provide the desired scopes as discussed in the previous section.
 
 <?code-excerpt "lib/main.dart" skip="35" take="3"?>
@@ -102,7 +102,7 @@ The
 package provides an
 [extension method](https://dart.dev/guides/language/extension-methods) on
 `GoogleSignIn`:
-[`authenticatedClient`](https://pub.dev/documentation/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html).
+[`authenticatedClient`]({{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html).
 
 <?code-excerpt "lib/main.dart" skip="7" take="1"?>
 ```dart
@@ -110,7 +110,7 @@ import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sig
 ```
 
 You can listen to
-[`onCurrentUserChanged`](https://pub.dev/documentation/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html).
+[`onCurrentUserChanged`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html).
 When event value is not `null`, you can create an authenticated client.
 
 <?code-excerpt "lib/main.dart" skip="124" take="1"?>
@@ -119,7 +119,7 @@ var httpClient = (await _googleSignIn.authenticatedClient())!;
 ```
 
 This
-[`Client`](https://pub.dev/documentation/http/latest/http/Client-class.html)
+[`Client`]({{site.pub-api}}/http/latest/http/Client-class.html)
 instance includes the nessesary credentials when invoking Google API classes.
 
 ## 4. Create and use the desired API class
