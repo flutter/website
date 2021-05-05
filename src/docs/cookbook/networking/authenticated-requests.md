@@ -26,6 +26,7 @@ class from the `dart:io` library.
 ```dart
 final response = await http.get(
   Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  // Send authorization headers to the backend.
   headers: {
     HttpHeaders.authorizationHeader: "Basic your_api_token_here",
   },
@@ -48,6 +49,7 @@ import 'package:http/http.dart' as http;
 Future<Album> fetchAlbum() async {
   final response = await http.get(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+    // Send authorization headers to the backend.
     headers: {
       HttpHeaders.authorizationHeader: "Basic your_api_token_here",
     },
