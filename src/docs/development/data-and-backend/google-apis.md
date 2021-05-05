@@ -95,7 +95,7 @@ user to authenticate.
 
 Once authenticated, you must obtain an authenticated HTTP client.
 
-## 3. Obtain an authenticated HTTP client.
+## 3. Obtain an authenticated HTTP client
 
 The
 [extension_google_sign_in_as_googleapis_auth](https://pub.dev/packages/extension_google_sign_in_as_googleapis_auth)
