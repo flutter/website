@@ -124,7 +124,7 @@ instance includes the nessesary credentials when invoking Google API classes.
 
 ## 4. Create and use the desired API class
 
-Use it to create the desired API type and call methods, for instance:
+Use the API to create the desired API type and call methods, for instance:
 
 <?code-excerpt "lib/main.dart" skip="125" take="6"?>
 ```dart
