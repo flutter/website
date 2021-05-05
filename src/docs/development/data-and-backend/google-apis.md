@@ -5,16 +5,15 @@ description: How to use Google APIs with Flutter.
 
 <?code-excerpt path-base="../examples/googleapis/"?>
 
-The [Google APIs package]({{site.pub-pkg}}/googleapis) exposes dozens of
-Google services that you can use from Dart projects.
+The [Google APIs package]({{site.pub-pkg}}/googleapis) exposes dozens of Google
+services that you can use from Dart projects.
 
 This page describes how to use APIs that interact with end-user data by using
 Gooogle authentication.
 
 Examples of user-data APIs include
 [Calendar]({{site.pub-api}}/googleapis/latest/calendar.v3/calendar.v3-library.html),
-[Gmail]({{site.pub-api}}/googleapis/latest/gmail.v1/gmail.v1-library.html),
-and
+[Gmail]({{site.pub-api}}/googleapis/latest/gmail.v1/gmail.v1-library.html), and
 [YouTube]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html).
 
 {{site.alert.info}} 
@@ -69,8 +68,8 @@ import 'package:googleapis/youtube/v3.dart';
 ## 2. Authenticate the user with the required scopes
 
 Use the [google_sign_in]({{site.pub-pkg}}/google_sign_in) package to
-authenticate users with their Google identity. You will have to
-configure signin for each platform you want to support.
+authenticate users with their Google identity. You will have to configure signin
+for each platform you want to support.
 
 <?code-excerpt "lib/main.dart" skip="10" take="2"?>
 ```dart
@@ -90,8 +89,8 @@ final _googleSignIn = GoogleSignIn(
 ```
 
 Follow the instructions provided by
-[package:google_sign_in]({{site.pub-pkg}}/google_sign_in) to allow a
-user to authenticate.
+[package:google_sign_in]({{site.pub-pkg}}/google_sign_in) to allow a user to
+authenticate.
 
 Once authenticated, you must obtain an authenticated HTTP client.
 
@@ -118,9 +117,8 @@ When event value is not `null`, you can create an authenticated client.
 var httpClient = (await _googleSignIn.authenticatedClient())!;
 ```
 
-This
-[`Client`]({{site.pub-api}}/http/latest/http/Client-class.html)
-instance includes the nessesary credentials when invoking Google API classes.
+This [`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) instance
+includes the nessesary credentials when invoking Google API classes.
 
 ## 4. Create and use the desired API class
 
