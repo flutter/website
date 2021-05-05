@@ -12,10 +12,10 @@ This page describes how to use APIs that interact with end-user data by using
 Gooogle authentication.
 
 Examples of user-data APIs include
-[Calendar](https://pub.dev/documentation/googleapis/latest/calendar.v3/calendar.v3-library.html),
-[Gmail](https://pub.dev/documentation/googleapis/latest/gmail.v1/gmail.v1-library.html),
+[Calendar](<span class="x x-first x-last">{{site.pub-api}}</span>/googleapis/latest/calendar.v3/calendar.v3-library.html),
+[Gmail](<span class="x x-first x-last">{{site.pub-api}}</span>/googleapis/latest/gmail.v1/gmail.v1-library.html),
 and
-[YouTube](https://pub.dev/documentation/googleapis/latest/youtube.v3/youtube.v3-library.html).
+[YouTube](<span class="x x-first x-last">{{site.pub-api}}</span>/googleapis/latest/youtube.v3/youtube.v3-library.html).
 
 {{site.alert.info}} Note: The only APIs you should use directy from your Flutter
 project are those that access user data via Google authentication.
