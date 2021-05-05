@@ -66,7 +66,7 @@ when authenticating the user.
 import 'package:googleapis/youtube/v3.dart';
 ```
 
-## 2. Authenticate the user with the required scopes.
+## 2. Authenticate the user with the required scopes
 
 Use the [google_sign_in]({{site.pub-pkg}}/google_sign_in) package to
 authenticate users with their Google identity. You will have to
