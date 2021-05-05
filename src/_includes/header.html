@@ -14,7 +14,6 @@
       <div class="site-header__sheet-bg" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></div>
       <div class="site-header__sheet">
         <ul class="navbar-nav">
-
           <li class="nav-item">
             <a class="nav-link
                 {%- if page_url_path == '/docs' or page_url_path contains '/docs/' %} active {%- endif -%}" href="/docs">Docs</a>
@@ -31,10 +30,6 @@
             <a class="nav-link
                 {%- if page_url_path == '/community' %} active {%- endif -%}" href="/community">Community</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://events.flutter.dev">Flutter Engage</a>
-          </li>
-          
         </ul>
         <form action="/search/" class="site-header__search form-inline">
           <input class="site-header__searchfield form-control" type="search" name="q" id="q" autocomplete="off" placeholder="Search" aria-label="Search">
