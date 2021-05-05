@@ -5,7 +5,7 @@ description: How to use Google APIs with Flutter.
 
 <?code-excerpt path-base="../examples/googleapis/"?>
 
-The [Google APIs package](https://pub.dev/packages/googleapis) exposes dozens of
+The [Google APIs package]({{site.pub-pkg}}/googleapis) exposes dozens of
 Google services that you can use from Dart projects.
 
 This page describes how to use APIs that interact with end-user data by using
@@ -90,7 +90,7 @@ final _googleSignIn = GoogleSignIn(
 ```
 
 Follow the instructions provided by
-[package:google_sign_in](https://pub.dev/packages/google_sign_in) to allow a
+[package:google_sign_in]({{site.pub-pkg}}/google_sign_in) to allow a
 user to authenticate.
 
 Once authenticated, you must obtain an authenticated HTTP client.
@@ -98,9 +98,9 @@ Once authenticated, you must obtain an authenticated HTTP client.
 ## 3. Obtain an authenticated HTTP client
 
 The
-[extension_google_sign_in_as_googleapis_auth](https://pub.dev/packages/extension_google_sign_in_as_googleapis_auth)
+[extension_google_sign_in_as_googleapis_auth]({{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth)
 package provides an
-[extension method](https://dart.dev/guides/language/extension-methods) on
+[extension method]({{site.dart-site}}/guides/language/extension-methods) on
 `GoogleSignIn`:
 [`authenticatedClient`]({{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html).
 
