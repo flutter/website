@@ -17,14 +17,15 @@ Examples of user-data APIs include
 and
 [YouTube](<span class="x x-first x-last">{{site.pub-api}}</span>/googleapis/latest/youtube.v3/youtube.v3-library.html).
 
-{{site.alert.info}} Note: The only APIs you should use directy from your Flutter
-project are those that access user data via Google authentication.
+{{site.alert.info}} 
+  Note: The only APIs you should use directly from your Flutter
+  project are those that access user data via Google authentication.
 
-APIs that require
-[service accounts](https://cloud.google.com/iam/docs/service-accounts) **_should
-not_** be used directly from a Flutter application. Doing so requires shipping
-service credentials as part of your application, which is not secure. To use
-these APIs, we recommend creating a intermediate service.
+  APIs that require
+  [service accounts](https://cloud.google.com/iam/docs/service-accounts) **should
+  not** be used directly from a Flutter application. Doing so requires shipping
+  service credentials as part of your application, which is not secure. To use
+  these APIs, we recommend creating an intermediate service.
 
 <!-- TODO(kevmoo): Add link to public user guide when available. -->
 
