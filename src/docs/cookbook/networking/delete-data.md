@@ -9,6 +9,8 @@ next:
   path: /docs/cookbook/networking/fetch-data
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/networking/delete_data/"?>
+
 This recipe covers how to delete data over
 the internet using the `http` package.
 
@@ -45,7 +47,7 @@ Note that this requires the `id` of the album that
 you want to delete. For this example,
 use something you already know, for example `id = 1`.
 
-<!-- skip -->
+<?code-excerpt "lib/main_step1.dart (deleteAlbum)"?>
 ```dart
 Future<Response> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
@@ -78,7 +80,7 @@ using the `http.get()` method, and display it in the screen.
 You should now have a **Delete Data** button that,
 when pressed, calls the `deleteAlbum()` method.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Column)"?>
 ```dart
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -106,7 +108,7 @@ Once the delete request has been made,
 you can return a response from the `deleteAlbum()`
 method to notify our screen that the data has been deleted.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (deleteAlbum)"?>
 ```dart
 Future<Album> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
@@ -142,6 +144,7 @@ Now you've got a function that deletes the data from the internet.
 
 ## Complete example
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:convert';

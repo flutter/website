@@ -18,6 +18,7 @@ Future<Album> fetchAlbum() async {
   }
 }
 
+// #docregion deleteAlbum
 Future<Album> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
@@ -39,12 +40,13 @@ Future<Album> deleteAlbum(String id) async {
     throw Exception('Failed to delete album.');
   }
 }
+// #enddocregion deleteAlbum
 
 class Album {
-  final int id;
-  final String title;
+  final int? id;
+  final String? title;
 
-  Album({required this.id, required this.title});
+  Album({this.id, this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -95,6 +97,7 @@ class _MyAppState extends State<MyApp> {
               // check for response data or an error.
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasData) {
+                  // #docregion Column
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -104,12 +107,13 @@ class _MyAppState extends State<MyApp> {
                         onPressed: () {
                           setState(() {
                             _futureAlbum =
-                                deleteAlbum(snapshot.data.id.toString());
+                                deleteAlbum(snapshot.data!.id.toString());
                           });
                         },
                       ),
                     ],
                   );
+                  // #enddocregion Column
                 } else if (snapshot.hasError) {
                   return Text("${snapshot.error}");
                 }
