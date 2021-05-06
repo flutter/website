@@ -17,6 +17,8 @@
 
 [What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
 
+### Additional Linux requirements
+
 For Linux desktop development,
 you need the following in addition to the Flutter SDK:
 
@@ -38,6 +40,14 @@ $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [Ninja build]: https://ninja-build.org/
 [pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
+
+### Enable desktop support
+
+At the command line, perform the following command to enable desktop support
+
+```terminal
+$ flutter config --enable-linux-desktop
+```
 
 For more information, see [Desktop support for Flutter][]
 
