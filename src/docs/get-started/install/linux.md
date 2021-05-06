@@ -38,6 +38,8 @@ your development environment must meet these minimum requirements:
 
 {% include_relative _path-linux-chromeos.md %}
 
+{% include_relative _linux-desktop-setup.md %}
+
 {% include_relative _android-setup.md %}
 
 {% include_relative _web-setup.md %}
