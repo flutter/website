@@ -6,24 +6,24 @@ description: Migrate to package:flutter_lints to get the latest set of recommend
 ## Summary
 
 The [`package:flutter_lints`][] defines the latest set of recommended lints that
-encourage good coding practises for Flutter apps, packages, and plugins. Projects
+encourage good coding practices for Flutter apps, packages, and plugins. Projects
 created with `flutter create` after Flutter version 2.xx are already enabled to
 use the latest set of recommended lints. Projects created prior to that version
 can upgrade to it with the instructions in this guide.
 
 ## Context
 
-Prior to the introduction of `package:flutter_lints` the Flutter framework
+Prior to the introduction of `package:flutter_lints`, the Flutter framework
 shipped with a set of lints defined in [`analysis_options_user.yaml`][] that was
 used by the [dart analyzer][] to identify code issues if a Flutter project
 didn't define a custom `analysis_options.yaml` file. Since `analysis_options_user.yaml`
 was tied to a particular framework version, it was difficult to evolve without
-breaking existing apps, packages, and plugins. As a result of that the lints
+breaking existing apps, packages, and plugins. As a result of that, the lints
 defined in `analysis_options_user.yaml` are heavily outdated. To fix this,
 `package:flutter_lints` was created. The package versions the lint set to enable
 evolving it without breaking existing projects. Since the package builds on
 Dart's [`package:lints`][] it also aligns the lints recommended for Flutter
-projects with the rest of the dart universe.
+projects with the rest of the Dart universe.
 
 ## Migration guide
 
