@@ -49,7 +49,7 @@ use something you already know, for example `id = 1`.
 
 <?code-excerpt "lib/main_step1.dart (deleteAlbum)"?>
 ```dart
-Future<Response> deleteAlbum(String id) async {
+Future<http.Response> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
     headers: <String, String>{
@@ -80,7 +80,7 @@ using the `http.get()` method, and display it in the screen.
 You should now have a **Delete Data** button that,
 when pressed, calls the `deleteAlbum()` method.
 
-<?code-excerpt "lib/main.dart (Column)"?>
+<?code-excerpt "lib/main.dart (Column)" replace="/return //g"?>
 ```dart
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -89,9 +89,10 @@ Column(
     ElevatedButton(
       child: Text('Delete Data'),
       onPressed: () {
-       setState(() {
-        _futureAlbum = deleteAlbum(snapshot.data.id.toString());
-      });
+        setState(() {
+          _futureAlbum =
+              deleteAlbum(snapshot.data!.id.toString());
+        });
       },
     ),
   ],
@@ -119,14 +120,15 @@ Future<Album> deleteAlbum(String id) async {
   );
 
   if (response.statusCode == 200) {
-    // If the server returned a 200 OK response,
+    // If the server did return a 200 OK response,
     // then parse the JSON. After deleting,
     // you'll get an empty JSON `{}` response.
-    // Don't return `null`, otherwise
-    // `snapshot.hasData` will always return false
-    // on `FutureBuilder`.
+    // Don't return `null`, otherwise `snapshot.hasData`
+    // will always return false on `FutureBuilder`.
     return Album.fromJson(jsonDecode(response.body));
   } else {
+    // If the server did not return a "200 OK response",
+    // then throw an exception.
     throw Exception('Failed to delete album.');
   }
 }
@@ -189,8 +191,8 @@ Future<Album> deleteAlbum(String id) async {
 }
 
 class Album {
-  final int id;
-  final String title;
+  final int? id;
+  final String? title;
 
   Album({this.id, this.title});
 
@@ -207,7 +209,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() {
@@ -216,7 +218,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Future<Album> _futureAlbum;
+  late Future<Album> _futureAlbum;
 
   @override
   void initState() {
@@ -252,7 +254,7 @@ class _MyAppState extends State<MyApp> {
                         onPressed: () {
                           setState(() {
                             _futureAlbum =
-                                deleteAlbum(snapshot.data.id.toString());
+                                deleteAlbum(snapshot.data!.id.toString());
                           });
                         },
                       ),
