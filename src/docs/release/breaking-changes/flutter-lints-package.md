@@ -19,11 +19,11 @@ used by the [dart analyzer][] to identify code issues if a Flutter project
 didn't define a custom `analysis_options.yaml` file. Since `analysis_options_user.yaml`
 was tied to a particular framework version, it was difficult to evolve without
 breaking existing apps, packages, and plugins. As a result of that the lints
-defined in `analysis_options_user.yaml` are heavily outdated. To make it easier
-to evolve the set of recommended lints, `package:flutter_lints` was created. The
-package versions the lint set to enable evolving it without breaking existing
-projects. Since the package builds on Dart's [`package:lints`][] it also aligns
-the lints recommended for Flutter projects with the rest of the dart universe.
+defined in `analysis_options_user.yaml` are heavily outdated. To fix this,
+`package:flutter_lints` was created. The package versions the lint set to enable
+evolving it without breaking existing projects. Since the package builds on
+Dart's [`package:lints`][] it also aligns the lints recommended for Flutter
+projects with the rest of the dart universe.
 
 ## Migration guide
 
