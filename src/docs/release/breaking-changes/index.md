@@ -13,9 +13,11 @@ release, and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Default Scrollbars on Desktop][]
+* [Introducing package:flutter_lints][]
 * [ThemeData's accent properties have been deprecated][]
 
 [Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
+[Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
 
 ### Reverted changes
