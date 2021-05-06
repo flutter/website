@@ -156,6 +156,7 @@
       { "source": "/go/generating-flutter-localizations", "destination": "https://docs.google.com/document/d/18saQREDwBMPA_svFe9IkU22ljNXsLpYxiy__jzPCzEc/edit", "type": 301 },
       { "source": "/go/globalkey-duplication-refactoring", "destination": "https://docs.google.com/document/d/15U1XDLrP-SXfgeu5DBBsA7MQuFpDUW005Y2ObwmYWIc/", "type": 301 },
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
+      { "source": "/go/google-apis", "destination": "/docs/development/data-and-backend/google-apis", "type": 301 },
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit", "type": 301 },
       { "source": "/go/hot-ui-early-prototype-demos", "destination": "https://docs.google.com/document/d/1ZaHqKnON8-WEhke3Y6FpHeuB5BNlxDQj1cCYB1SoI_g", "type": 301 },
       { "source": "/go/i18n-user-guide", "destination": "https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit", "type": 301 },
