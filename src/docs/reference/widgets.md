@@ -28,7 +28,7 @@ our [videos](/docs/resources/videos) page.
         </a>
         <div class="card-body">
             <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
-            <p class="card-text">{{comp.description}}</p>
+            <p class="card-text">{{comp.description | truncatewords: 25}}</p>
         </div>
     </div>
 {% endfor %}
