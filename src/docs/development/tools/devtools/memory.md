@@ -127,7 +127,7 @@ This legend shows the symbol for each DevTools event and its meaning
 ![Monitor]({% asset tools/devtools/memory_eventtimeline_monitor.png @path %}){:width="17px"}
 <dd markdown="1">Collects current state of all active classes
                  number of instances and byte size of all instances.
-                 In addtion, the deltas are the change in the
+                 In addition, the deltas are the change in the
                  accumulators since the last "Reset" button pressed.
 </dd>
 <dt markdown="1">**Reset**</dt>
