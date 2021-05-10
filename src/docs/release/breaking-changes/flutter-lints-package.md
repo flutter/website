@@ -23,7 +23,7 @@ defined in `analysis_options_user.yaml` are heavily outdated. To fix this,
 `package:flutter_lints` was created. The package versions the lint set to enable
 evolving it without breaking existing projects. Since the package builds on
 Dart's [`package:lints`][] it also aligns the lints recommended for Flutter
-projects with the rest of the Dart universe.
+projects with the rest of the Dart ecosystem.
 
 ## Migration guide
 
@@ -40,10 +40,10 @@ Create an `analysis_options.yaml` file in the root directory of your project
 include: package:flutter_lints/flutter.yaml
 ```
 
-The newly activated lint set may identify some previously undiscovered issues in
-your code. To find them, run `flutter analyze` in the root directory of your
-project and fix all reported issues. You may be able to fix some of the reported
-issues automatically by running `dart fix --apply` in the root directory of your
+The newly activated lint set may identify some new issues in your code. To find
+them, open your project in an [IDE with Dart support][] or run `flutter analyze`
+on the command line. You may be able to fix some of the reported issues
+automatically by running `dart fix --apply` in the root directory of your
 project.
 
 ### Existing custom analyzer_options.yaml file
@@ -53,7 +53,7 @@ add `include: package:flutter_lints/flutter.yaml` to it at the top to activate
 the lints from `package:flutter_lints`. If your `analysis_options.yaml` already
 contains an `include:` directive you have to decide whether you want to keep
 those lints or whether you want to replace it with the lints from
-`package:flutter_lints` because the dart analyzer only supports one `include:`
+`package:flutter_lints` because the Dart analyzer only supports one `include:`
 directive per `analysis_options.yaml` file.
 
 ## Customizing the lints
@@ -119,10 +119,11 @@ Relevant PRs:
 
 [Add flutter_lints package]: {{site.github}}/flutter/packages/pull/343
 [`analysis_options_user.yaml`]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/analysis_options_user.yaml
-[Customizing static analysis]: https://dart.dev/guides/language/analysis-options
-[dart analyzer]: https://dart.dev/guides/language/analysis-options
+[Customizing static analysis]: {{site.dart-site}}/guides/language/analysis-options
+[dart analyzer]: {{site.dart-site}}/guides/language/analysis-options
+[IDE with Dart support]: {{site.dart-site}}/tools#ides-and-editors
 [Integrate package:flutter_lints into template]: {{site.github}}/flutter/flutter/pull/81417
 [Issue 78432 - Update lint set for Flutter applications]: {{site.github}}/flutter/flutter/issues/78432
-[`package:flutter_lints`]: https://pub.dev/packages/flutter_lints
-[`package:lints`]: https://pub.dev/packages/lints
-[Package dependencies]: https://dart.dev/tools/pub/dependencies
+[`package:flutter_lints`]: {{site.pub}}/packages/flutter_lints
+[`package:lints`]: {{site.pub}}/packages/lints
+[Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
