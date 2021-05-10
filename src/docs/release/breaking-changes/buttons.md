@@ -221,7 +221,7 @@ like pressed, hovered, disabled, and focused.
 
 ## Migration guide
 
-Use the following information to migrate your buttons to the 
+Use the following information to migrate your buttons to the
 new API.
 
 ### Restoring the original button visuals
@@ -396,8 +396,8 @@ RaisedButton(
   child: Text('RaisedButton with custom foreground/background'),
 )
 
-	ElevatedButton(
-	  style: ElevatedButton.styleFrom(
+ElevatedButton(
+  style: ElevatedButton.styleFrom(
     primary: Colors.red, // background
     onPrimary: Colors.white, // foreground
   ),
