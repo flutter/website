@@ -97,7 +97,11 @@ class Album {
   final int id;
   final String title;
 
-  Album({@required this.userId, @required this.id, @required this.title});
+  Album({
+    required this.userId,
+    required this.id,
+    required this.title,
+  });
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -128,10 +132,9 @@ function to return a `Future<Album>`:
 
 <?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
-import 'dart:convert';
-
 Future<Album> fetchAlbum() async {
-  final response = await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+  final response =
+      await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -201,7 +204,7 @@ which can be used to display an error message.
 
 Otherwise, the spinner will be displayed.
 
-<?code-excerpt "lib/main.dart (FutureBuilder)"?>
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/^child: //g;/,$//g"?>
 ```dart
 FutureBuilder<Album>(
   future: futureAlbum,
@@ -215,7 +218,7 @@ FutureBuilder<Album>(
     // By default, show a loading spinner.
     return CircularProgressIndicator();
   },
-);
+)
 ```
 
 ## Why is fetchAlbum() called in initState()?
@@ -267,7 +270,11 @@ class Album {
   final int id;
   final String title;
 
-  Album({@required this.userId, @required this.id, @required this.title});
+  Album({
+    required this.userId,
+    required this.id,
+    required this.title,
+  });
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
