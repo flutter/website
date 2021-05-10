@@ -12,6 +12,16 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
+## May 18, 2021
+
+Flutter 2.2 is live! For details, see
+[Announcing Flutter 2.2][].
+
+
+[Announcing Flutter 2.2]: xxx
+
+---
+
 ## March 3, 2021
 
 Flutter 2 is live!!!  For more information, see
