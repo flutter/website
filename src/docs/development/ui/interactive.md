@@ -286,12 +286,6 @@ In the same location, create the stateful widget:
          ],
        ),
      );
-@@ -114,3 +105,5 @@
-           ),
-         ),
-       ],
-+    );
-+  }
 ```
 
 That's it! When you hot reload the app,
