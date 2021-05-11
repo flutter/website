@@ -24,7 +24,7 @@ Future<Album> fetchAlbum() async {
 
 // #docregion updateAlbum
 Future<Album> updateAlbum(String title) async {
-  final http.Response response = await http.put(
+  final response = await http.put(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
@@ -113,17 +113,17 @@ class _MyAppState extends State<MyApp> {
                         decoration: InputDecoration(hintText: 'Enter Title'),
                       ),
                       ElevatedButton(
-                        child: Text('Update Data'),
                         onPressed: () {
                           setState(() {
                             _futureAlbum = updateAlbum(_controller.text);
                           });
                         },
+                        child: Text('Update Data'),
                       ),
                     ],
                   );
                 } else if (snapshot.hasError) {
-                  return Text("${snapshot.error}");
+                  return Text('${snapshot.error}');
                 }
               }
 

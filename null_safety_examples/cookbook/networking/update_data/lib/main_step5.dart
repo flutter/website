@@ -21,7 +21,7 @@ Future<Album> fetchAlbum() async {
 }
 
 Future<Album> updateAlbum(String title) async {
-  final http.Response response = await http.put(
+  final response = await http.put(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
@@ -106,7 +106,7 @@ class _MyAppState extends State<MyApp> {
         if (snapshot.hasData) {
           return Text(snapshot.data!.title);
         } else if (snapshot.hasError) {
-          return Text("${snapshot.error}");
+          return Text('${snapshot.error}');
         }
 
         return CircularProgressIndicator();
@@ -128,12 +128,12 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         ElevatedButton(
-          child: Text('Update Data'),
           onPressed: () {
             setState(() {
               _futureAlbum = updateAlbum(_controller.text);
             });
           },
+          child: Text('Update Data'),
         ),
       ],
     );
