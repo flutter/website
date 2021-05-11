@@ -35,7 +35,7 @@ class SelectionButton extends StatelessWidget {
   // #docregion navigateAndDisplay
   // A method that launches the SelectionScreen and awaits the result from
   // Navigator.pop.
-  _navigateAndDisplaySelection(BuildContext context) async {
+  void _navigateAndDisplaySelection(BuildContext context) async {
     // Navigator.push returns a Future that completes after calling
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
@@ -47,7 +47,7 @@ class SelectionButton extends StatelessWidget {
     // and show the new result.
     ScaffoldMessenger.of(context)
       ..removeCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text("$result")));
+      ..showSnackBar(SnackBar(content: Text('$result')));
   }
   // #enddocregion navigateAndDisplay
 }

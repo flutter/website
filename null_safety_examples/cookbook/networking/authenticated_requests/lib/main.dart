@@ -10,7 +10,7 @@ Future<Album> fetchAlbum() async {
     Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
     // Send authorization headers to the backend.
     headers: {
-      HttpHeaders.authorizationHeader: "Basic your_api_token_here",
+      HttpHeaders.authorizationHeader: 'Basic your_api_token_here',
     },
   );
   // #enddocregion get

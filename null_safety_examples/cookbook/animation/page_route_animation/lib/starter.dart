@@ -2,7 +2,7 @@
 // #docregion Starter
 import 'package:flutter/material.dart';
 
-main() {
+void main() {
   runApp(
     MaterialApp(
       home: Page1(),
@@ -16,10 +16,10 @@ class Page1 extends StatelessWidget {
       appBar: AppBar(),
       body: Center(
         child: ElevatedButton(
-          child: Text('Go!'),
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
+          child: Text('Go!'),
         ),
       ),
     );
