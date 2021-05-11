@@ -9,6 +9,8 @@ next:
   path: /docs/cookbook/networking/web-sockets
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/networking/update_data/"?>
+
 Updating data over the internet is necessary for most apps.
 The `http` package has got that covered!
 
@@ -46,7 +48,7 @@ import 'package:http/http.dart' as http;
 This recipe covers how to update an album title to the
 [JSONPlaceholder][] using the [`http.put()`][] method.
 
-<!-- skip -->
+<?code-excerpt "lib/main_step2.dart (updateAlbum)"?>
 ```dart
 Future<http.Response> updateAlbum(String title) {
   return http.put(
@@ -88,13 +90,13 @@ Converting JSON by hand is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Album)"?>
 ```dart
 class Album {
   final int id;
   final String title;
 
-  Album({this.id, this.title});
+  Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -122,11 +124,11 @@ function to return a `Future<Album>`:
      This is important when examining
      the data in `snapshot`, as shown below.)
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (updateAlbum)"?>
 ```dart
 Future<Album> updateAlbum(String title) async {
-  final http.Response response = await http.put(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums'),
+  final response = await http.put(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -134,14 +136,15 @@ Future<Album> updateAlbum(String title) async {
       'title': title,
     }),
   );
+
   if (response.statusCode == 200) {
-    // If the server did return a 200 UPDATED response,
+    // If the server did return a 200 OK response,
     // then parse the JSON.
     return Album.fromJson(jsonDecode(response.body));
   } else {
-    // If the server did not return a 200 UPDATED response,
+    // If the server did not return a 200 OK response,
     // then throw an exception.
-    throw Exception('Failed to load album');
+    throw Exception('Failed to update album.');
   }
 }
 ```
@@ -154,7 +157,7 @@ Now you've got a function that updates the title of an album.
 Get the data from internet before you can update it.
 For a complete example, see the [Fetch data][] recipe.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
 Future<Album> fetchAlbum() async {
   final response = await http.get(
@@ -162,7 +165,8 @@ Future<Album> fetchAlbum() async {
   );
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response, then parse the JSON.
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
     return Album.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,
@@ -187,7 +191,7 @@ When the `ElevatedButton` is pressed,
 the `_futureAlbum` is set to the value returned by
 `updateAlbum()` method.
 
-<!-- skip -->
+<?code-excerpt "lib/main_step5.dart (Column)"?>
 ```dart
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -200,15 +204,15 @@ Column(
       ),
     ),
     ElevatedButton(
-      child: Text('Update Data'),
       onPressed: () {
         setState(() {
           _futureAlbum = updateAlbum(_controller.text);
         });
       },
+      child: Text('Update Data'),
     ),
   ],
-)
+);
 ```
 
 On pressing the **Update Data** button, a network request
@@ -236,24 +240,25 @@ even in the case of a "404 Not Found" server response.
 If `updateAlbum` returns `null` then
 `CircularProgressIndicator` will display indefinitely.
 
-<!-- skip -->
+<?code-excerpt "lib/main_step5.dart (FutureBuilder)"?>
 ```dart
 FutureBuilder<Album>(
   future: _futureAlbum,
   builder: (context, snapshot) {
     if (snapshot.hasData) {
-      return Text(snapshot.data.title);
+      return Text(snapshot.data!.title);
     } else if (snapshot.hasError) {
-      return Text("${snapshot.error}");
+      return Text('${snapshot.error}');
     }
 
     return CircularProgressIndicator();
   },
-)
+);
 ```
 
 ## Complete example
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:convert';
@@ -278,7 +283,7 @@ Future<Album> fetchAlbum() async {
 }
 
 Future<Album> updateAlbum(String title) async {
-  final http.Response response = await http.put(
+  final response = await http.put(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
@@ -303,7 +308,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({this.id, this.title});
+  Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -318,7 +323,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() {
@@ -328,7 +333,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final TextEditingController _controller = TextEditingController();
-  Future<Album> _futureAlbum;
+  late Future<Album> _futureAlbum;
 
   @override
   void initState() {
@@ -358,23 +363,23 @@ class _MyAppState extends State<MyApp> {
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(snapshot.data.title),
+                      Text(snapshot.data!.title),
                       TextField(
                         controller: _controller,
                         decoration: InputDecoration(hintText: 'Enter Title'),
                       ),
                       ElevatedButton(
-                        child: Text('Update Data'),
                         onPressed: () {
                           setState(() {
                             _futureAlbum = updateAlbum(_controller.text);
                           });
                         },
+                        child: Text('Update Data'),
                       ),
                     ],
                   );
                 } else if (snapshot.hasError) {
-                  return Text("${snapshot.error}");
+                  return Text('${snapshot.error}');
                 }
               }
 
