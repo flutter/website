@@ -5,8 +5,8 @@ description: "Details of how Flutter supports the creation of embedded experienc
 
 If you would like to embed Flutter engine into a car,
 a refrigerator, a thermostat... you CAN! 
-However, this feature uses low-level API and
-is _not_ for beginners. 
+However, this feature, while stable,
+uses low-level API and is _not_ for beginners. 
 In addition to the following resources, you
 might consider joining Discord, where Flutter
 developers (including Google engineers) discuss
