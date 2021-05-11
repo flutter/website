@@ -13,9 +13,11 @@ release, and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Default Scrollbars on Desktop][]
+* [Default drag scrolling devices][]
 * [ThemeData's accent properties have been deprecated][]
 
 [Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
+[Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
 
 ### Reverted changes
