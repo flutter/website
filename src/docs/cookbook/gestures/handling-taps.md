@@ -31,7 +31,7 @@ a snackbar when tapped with the following steps:
 GestureDetector(
   // When the child is tapped, show a snackbar.
   onTap: () {
-    final snackBar = SnackBar(content: Text("Tap"));
+    final snackBar = SnackBar(content: Text('Tap'));
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   },
@@ -99,7 +99,7 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
       // When the child is tapped, show a snackbar.
       onTap: () {
-        final snackBar = SnackBar(content: Text("Tap"));
+        final snackBar = SnackBar(content: Text('Tap'));
 
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       },

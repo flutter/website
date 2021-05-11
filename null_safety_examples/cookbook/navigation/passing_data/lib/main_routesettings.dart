@@ -70,7 +70,7 @@ class TodosScreen extends StatelessWidget {
 class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Todo todo = ModalRoute.of(context).settings.arguments;
+    final todo = ModalRoute.of(context)!.settings.arguments as Todo;
 
     // Use the Todo to create the UI.
     return Scaffold(

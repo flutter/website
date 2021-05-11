@@ -86,10 +86,10 @@ Drawer(
     padding: EdgeInsets.zero,
     children: <Widget>[
       DrawerHeader(
-        child: Text('Drawer Header'),
         decoration: BoxDecoration(
           color: Colors.blue,
         ),
+        child: Text('Drawer Header'),
       ),
       ListTile(
         title: Text('Item 1'),
@@ -170,10 +170,10 @@ class MyHomePage extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Drawer Header'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
+              child: Text('Drawer Header'),
             ),
             ListTile(
               title: Text('Item 1'),

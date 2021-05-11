@@ -43,7 +43,6 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
         ),
         // #docregion FAB
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.play_arrow),
           // When the user taps the button
           onPressed: () {
             // Use setState to rebuild the widget with new values.
@@ -68,6 +67,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
                   BorderRadius.circular(random.nextInt(100).toDouble());
             });
           },
+          child: Icon(Icons.play_arrow),
         ),
         // #enddocregion FAB
       ),

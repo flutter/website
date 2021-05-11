@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-main() {
+void main() {
   runApp(MaterialApp(home: PhysicsCardDragDemo()));
 }
 
