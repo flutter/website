@@ -9,6 +9,8 @@ next:
   path: /docs/cookbook/networking/update-data
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/networking/send_data/"?>
+
 Sending data to the internet is necessary for most apps.
 The `http` package has got that covered, too.
 
@@ -95,13 +97,13 @@ Converting JSON by hand is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Album)"?>
 ```dart
 class Album {
   final int id;
   final String title;
 
-  Album({this.id, this.title});
+  Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -129,7 +131,7 @@ function to return a `Future<Album>`:
      This is important when examining
      the data in `snapshot`, as shown below.)
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (createAlbum)"?>
 ```dart
 Future<Album> createAlbum(String title) async {
   final response = await http.post(
@@ -141,6 +143,7 @@ Future<Album> createAlbum(String title) async {
       'title': title,
     }),
   );
+
   if (response.statusCode == 201) {
     // If the server did return a 201 CREATED response,
     // then parse the JSON.
@@ -148,7 +151,7 @@ Future<Album> createAlbum(String title) async {
   } else {
     // If the server did not return a 201 CREATED response,
     // then throw an exception.
-    throw Exception('Failed to load album');
+    throw Exception('Failed to create album.');
   }
 }
 ```
@@ -166,25 +169,22 @@ user input from a `TextField`.
 When the `ElevatedButton` is pressed, the `_futureAlbum`
 is set to the value returned by `createAlbum()` method.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Column)" replace="/^return //g;/;$//g"?>
 ```dart
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget>[
-    Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TextField(
-        controller: _controller,
-        decoration: InputDecoration(hintText: 'Enter Title'),
-      ),
+    TextField(
+      controller: _controller,
+      decoration: InputDecoration(hintText: 'Enter Title'),
     ),
     ElevatedButton(
-      child: Text('Create Data'),
       onPressed: () {
         setState(() {
           _futureAlbum = createAlbum(_controller.text);
         });
       },
+      child: Text('Create Data'),
     ),
   ],
 )
@@ -216,15 +216,15 @@ even in the case of a "404 Not Found" server response.
 If `createAlbum()` returns `null`, then
 `CircularProgressIndicator` displays indefinitely.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/^return //g;/;$//g"?>
 ```dart
 FutureBuilder<Album>(
   future: _futureAlbum,
   builder: (context, snapshot) {
     if (snapshot.hasData) {
-      return Text(snapshot.data.title);
+      return Text(snapshot.data!.title);
     } else if (snapshot.hasError) {
-      return Text("${snapshot.error}");
+      return Text('${snapshot.error}');
     }
 
     return CircularProgressIndicator();
@@ -234,6 +234,7 @@ FutureBuilder<Album>(
 
 ## Complete example
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:convert';
@@ -253,8 +254,12 @@ Future<Album> createAlbum(String title) async {
   );
 
   if (response.statusCode == 201) {
+    // If the server did return a 201 CREATED response,
+    // then parse the JSON.
     return Album.fromJson(jsonDecode(response.body));
   } else {
+    // If the server did not return a 201 CREATED response,
+    // then throw an exception.
     throw Exception('Failed to create album.');
   }
 }
@@ -263,7 +268,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({this.id, this.title});
+  Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -278,7 +283,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() {
@@ -288,7 +293,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final TextEditingController _controller = TextEditingController();
-  Future<Album> _futureAlbum;
+  Future<Album>? _futureAlbum;
 
   @override
   Widget build(BuildContext context) {
@@ -304,38 +309,44 @@ class _MyAppState extends State<MyApp> {
         body: Container(
           alignment: Alignment.center,
           padding: const EdgeInsets.all(8.0),
-          child: (_futureAlbum == null)
-              ? Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    TextField(
-                      controller: _controller,
-                      decoration: InputDecoration(hintText: 'Enter Title'),
-                    ),
-                    ElevatedButton(
-                      child: Text('Create Data'),
-                      onPressed: () {
-                        setState(() {
-                          _futureAlbum = createAlbum(_controller.text);
-                        });
-                      },
-                    ),
-                  ],
-                )
-              : FutureBuilder<Album>(
-                  future: _futureAlbum,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      return Text(snapshot.data.title);
-                    } else if (snapshot.hasError) {
-                      return Text("${snapshot.error}");
-                    }
-
-                    return CircularProgressIndicator();
-                  },
-                ),
+          child: (_futureAlbum == null) ? buildColumn() : buildFutureBuilder(),
         ),
       ),
+    );
+  }
+
+  Column buildColumn() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        TextField(
+          controller: _controller,
+          decoration: InputDecoration(hintText: 'Enter Title'),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              _futureAlbum = createAlbum(_controller.text);
+            });
+          },
+          child: Text('Create Data'),
+        ),
+      ],
+    );
+  }
+
+  FutureBuilder<Album> buildFutureBuilder() {
+    return FutureBuilder<Album>(
+      future: _futureAlbum,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Text(snapshot.data!.title);
+        } else if (snapshot.hasError) {
+          return Text('${snapshot.error}');
+        }
+
+        return CircularProgressIndicator();
+      },
     );
   }
 }
