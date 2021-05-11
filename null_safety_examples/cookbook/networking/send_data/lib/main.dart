@@ -91,12 +91,12 @@ class _MyAppState extends State<MyApp> {
           decoration: InputDecoration(hintText: 'Enter Title'),
         ),
         ElevatedButton(
-          child: Text('Create Data'),
           onPressed: () {
             setState(() {
               _futureAlbum = createAlbum(_controller.text);
             });
           },
+          child: Text('Create Data'),
         ),
       ],
     );
@@ -111,7 +111,7 @@ class _MyAppState extends State<MyApp> {
         if (snapshot.hasData) {
           return Text(snapshot.data!.title);
         } else if (snapshot.hasError) {
-          return Text("${snapshot.error}");
+          return Text('${snapshot.error}');
         }
 
         return CircularProgressIndicator();
