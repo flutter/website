@@ -9,6 +9,8 @@ next:
   path: /docs/cookbook/networking/authenticated-requests
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/networking/fetch_data/"?>
+
 Fetching data from the internet is necessary for most apps.
 Luckily, Dart and Flutter provide tools, such as the
 `http` package, for this type of work.
@@ -56,7 +58,7 @@ add the Internet permission.
 This recipe covers how to fetch a sample album from the
 [JSONPlaceholder][] using the [`http.get()`][] method.
 
-<!-- skip -->
+<?code-excerpt "lib/main_step1.dart (fetchAlbum)"?>
 ```dart
 Future<http.Response> fetchAlbum() {
   return http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
@@ -88,14 +90,18 @@ Converting JSON by hand is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Album)"?>
 ```dart
 class Album {
   final int userId;
   final int id;
   final String title;
 
-  Album({required this.userId, required this.id, required this.title});
+  Album({
+    required this.userId,
+    required this.id,
+    required this.title,
+  });
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -124,12 +130,11 @@ function to return a `Future<Album>`:
      This is important when examining
      the data in `snapshot`, as shown below.)
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
-import 'dart:convert';
-
 Future<Album> fetchAlbum() async {
-  final response = await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+  final response =
+      await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -158,7 +163,7 @@ If you want to have the option of reloading the API in response to an
 `didChangeDependencies()` method.
 See [`State`][] for more details.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (State)"?>
 ```dart
 class _MyAppState extends State<MyApp> {
   late Future<Album> futureAlbum;
@@ -199,7 +204,7 @@ which can be used to display an error message.
 
 Otherwise, the spinner will be displayed.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/^child: //g;/,$//g"?>
 ```dart
 FutureBuilder<Album>(
   future: futureAlbum,
@@ -213,7 +218,7 @@ FutureBuilder<Album>(
     // By default, show a loading spinner.
     return CircularProgressIndicator();
   },
-);
+)
 ```
 
 ## Why is fetchAlbum() called in initState()?
@@ -237,7 +242,7 @@ see the following recipes:
 
 ## Complete example
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:convert';
@@ -265,7 +270,11 @@ class Album {
   final int id;
   final String title;
 
-  Album({required this.userId, required this.id, required this.title});
+  Album({
+    required this.userId,
+    required this.id,
+    required this.title,
+  });
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -279,7 +288,7 @@ class Album {
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  MyApp({Key key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
