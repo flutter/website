@@ -6,7 +6,7 @@ description: ScrollBehaviors will now configure what PointerDeviceKinds can drag
 ## Summary
 
 `ScrollBehavior`s now allow or disallow drag scrolling from specified
-`PointerDeviceKind`s. `ScrollBehavior.dragDevices` by default
+`PointerDeviceKind`s. `ScrollBehavior.dragDevices`, by default,
 allows scrolling widgets to be dragged by all `PointerDeviceKind`s
 except for `PointerDeviceKind.mouse`.
 
