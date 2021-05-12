@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp> {
               if (snapshot.hasData) {
                 return Text(snapshot.data!.title);
               } else if (snapshot.hasError) {
-                return Text("${snapshot.error}");
+                return Text('${snapshot.error}');
               }
 
               // By default, show a loading spinner.
