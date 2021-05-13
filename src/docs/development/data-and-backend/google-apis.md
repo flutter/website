@@ -35,14 +35,16 @@ Examples of user-data APIs include
 To use Google APIs, follow these steps.
 
 1. Pick the desired API
+1. Enable the API
 1. Authenticate user with the required scopes
 1. Obtain an authenticated HTTP client
 1. Create and use the desired API class
 
 ## 1. Pick the desired API
 
-The documentation for [package:googleapis] lists each API as a separate Dart
-library – in a `name.version` format. Let's look at
+The documentation for [package:googleapis](https://pub.dev/packages/googleapis)
+lists each API as a separate Dart library – in a `name.version` format. Let's
+look at
 [`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html)
 as an example.
 
@@ -65,7 +67,19 @@ when authenticating the user.
 import 'package:googleapis/youtube/v3.dart';
 ```
 
-## 2. Authenticate the user with the required scopes
+## 2. Enable the API
+
+To use Google APIs you must have a Google account and a Google project. You also
+need to enable your desired API.
+
+In this example, you'd enable
+[YouTube Data API v3](https://console.cloud.google.com/apis/api/youtube.googleapis.com).
+
+Follow the
+[getting started instructions](https://cloud.google.com/apis/docs/getting-started)
+to learn more.
+
+## 3. Authenticate the user with the required scopes
 
 Use the [google_sign_in]({{site.pub-pkg}}/google_sign_in) package to
 authenticate users with their Google identity. You will have to configure signin
@@ -94,7 +108,7 @@ authenticate.
 
 Once authenticated, you must obtain an authenticated HTTP client.
 
-## 3. Obtain an authenticated HTTP client
+## 4. Obtain an authenticated HTTP client
 
 The
 [extension_google_sign_in_as_googleapis_auth]({{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth)
@@ -120,11 +134,12 @@ var httpClient = (await _googleSignIn.authenticatedClient())!;
 This [`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) instance
 includes the nessesary credentials when invoking Google API classes.
 
-## 4. Create and use the desired API class
+## 5. Create and use the desired API class
 
 Use the API to create the desired API type and call methods, for instance:
 
 <?code-excerpt "lib/main.dart" skip="125" take="6"?>
+
 ```dart
 var youTubeApi = YouTubeApi(httpClient);
 
