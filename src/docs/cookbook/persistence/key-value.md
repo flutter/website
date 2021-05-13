@@ -142,7 +142,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -159,16 +159,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Loading counter value on start
-  _loadCounter() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+  void _loadCounter() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0);
     });
   }
 
   //Incrementing counter after click
-  _incrementCounter() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+  void _incrementCounter() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0) + 1;
       prefs.setInt('counter', _counter);
