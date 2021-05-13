@@ -42,9 +42,8 @@ To use Google APIs, follow these steps.
 
 ## 1. Pick the desired API
 
-The documentation for [package:googleapis](https://pub.dev/packages/googleapis)
-lists each API as a separate Dart library – in a `name.version` format. Let's
-look at
+The documentation for [package:googleapis]({{site.pub-api}}/googleapis) lists
+each API as a separate Dart library – in a `name.version` format. Let's look at
 [`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html)
 as an example.
 
@@ -147,3 +146,9 @@ var favorites = await youTubeApi.playlistItems.list(
   playlistId: 'LL', // Liked List
 );
 ```
+
+## More information
+
+- The
+  [`extension_google_sign_in_as_googleapis_auth` example](https://pub.dev/packages/extension_google_sign_in_as_googleapis_auth/example)
+  is a working implementation of the concepts described on this page.
