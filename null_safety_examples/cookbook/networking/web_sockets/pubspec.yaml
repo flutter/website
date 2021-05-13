@@ -1,0 +1,16 @@
+name: web_sockets
+description: Web Sockets
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  web_socket_channel: ^2.1.0
+
+dev_dependencies:
+  pedantic: ^1.11.0
+
+flutter:
+  uses-material-design: true

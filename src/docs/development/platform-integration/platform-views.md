@@ -26,28 +26,31 @@ Which one to use depends on the use case. Let's take a look:
   Certain platform interactions such as keyboard handling, and accessibility
   features might not work.
 
-* Hybrid composition requires Flutter 1.22 ([version 1.22.2]({{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel#1222--october-16-2020) is recommended). This mode appends the
-  native `android.view.View` to the view hierarchy. Therefore, keyboard
-  handling, and accessibility work out of the box. Prior to Android 10,
-  this mode may significantly reduce the frame throughput (FPS) of the
-  Flutter UI. See [performance][] for more.
+* Hybrid composition requires Flutter 1.22
+  ([version 1.22.2][] is recommended).
+  This mode appends the native `android.view.View`
+  to the view hierarchy. Therefore, keyboard
+  handling, and accessibility work out of the box.
+  Prior to Android 10, this mode might significantly
+  reduce the frame throughput (FPS) of the
+  Flutter UI. See [performance][] for more info.
 
 To create a platform view on Android, follow these steps:
 
 ### On the Dart side
 
 On the Dart side, create a `Widget`
-and add the following build implementation,
-as shown in the following steps.
+and add the following build implementation:
 
 {{site.alert.warning}}
-  For this to work, your plugin or app must use Android embedding v2.
+  For this to work, your plugin or app must use
+  Android embedding v2.
   If you haven't updated your plugin, see the
   [plugin migration guide][].
 {{site.alert.end}}
 
 
-#### Hybrid Composition
+#### Hybrid composition
 
 In your Dart file, for example `native_view_example.dart`,
 do the following:
@@ -100,7 +103,7 @@ Widget build(BuildContext context) {
 For more information, see the API docs for:
 
 * [`PlatformViewLink`][]
-* [`AndroidViewService`][]
+* [`AndroidViewSurface`][]
 * [`PlatformViewsService`][]
 
 #### Virtual Display
@@ -149,7 +152,8 @@ On the platform side, use the standard
 
 In your native code, implement the following:
 
-Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
+Extend `io.flutter.plugin.platform.PlatformView`
+to provide a reference to the `android.view.View`,
 For example `NativeView.kt`:
 
 ```kotlin
@@ -179,7 +183,8 @@ internal class NativeView(context: Context, id: Int, creationParams: Map<String?
 }
 ```
 
-Create a factory class that creates an instance of the `NativeView` created earlier,
+Create a factory class that creates an instance of the
+`NativeView` created earlier,
 for example `NativeViewFactory.kt`:
 
 
@@ -200,9 +205,11 @@ class NativeViewFactory : PlatformViewFactory(StandardMessageCodec.INSTANCE) {
 }
 ```
 
-Finally, register the platform view. This can be done in an app or a plugin.
+Finally, register the platform view.
+This can be done in an app or a plugin.
 
-For app registration, modify the app's main activity (e.g. `MainActivity.kt`):
+For app registration, modify the app's main activity
+(for example, `MainActivity.kt`):
 
 ```kotlin
 package dev.flutter.example
@@ -220,7 +227,8 @@ class MainActivity : FlutterActivity() {
 }
 ```
 
-For plugin registration, modify the plugin's main class (e.g. `PlatformViewPlugin.kt`):
+For plugin registration, modify the plugin's main class
+(for example, `PlatformViewPlugin.kt`):
 
 ```kotlin
 package dev.flutter.plugin.example
@@ -243,7 +251,8 @@ class PlatformViewPlugin : FlutterPlugin {
 
 In your native code, implement the following:
 
-Extend `io.flutter.plugin.platform.PlatformView` to provide a reference to the `android.view.View`,
+Extend `io.flutter.plugin.platform.PlatformView`
+to provide a reference to the `android.view.View`,
 For example, `NativeView.java`:
 
 ```java
@@ -279,7 +288,8 @@ class NativeView implements PlatformView {
 }
 ```
 
-Create a factory class that creates an instance of the `NativeView` created earlier,
+Create a factory class that creates an instance of the
+`NativeView` created earlier,
 for example, `NativeViewFactory.java`:
 
 ```java
@@ -314,9 +324,11 @@ class NativeViewFactory extends PlatformViewFactory {
 }
 ```
 
-Finally, register the platform view. This can be done in an app or a plugin.
+Finally, register the platform view.
+This can be done in an app or a plugin.
 
-For app registration, modify the app's main activity (e.g. `MainActivity.java`):
+For app registration, modify the app's main activity
+(for example, `MainActivity.java`):
 
 ```java
 package dev.flutter.example;
@@ -336,7 +348,8 @@ public class MainActivity extends FlutterActivity {
 }
 ```
 
-For plugin registration, modify the plugin's main file (e.g. `PlatformViewPlugin.java`):
+For plugin registration, modify the plugin's main file
+(for example, `PlatformViewPlugin.java`):
 
 ```java
 package dev.flutter.plugin.example;
@@ -380,11 +393,12 @@ android {
 
 ## iOS
 
-iOS only uses Hybrid composition, which means that the native
+iOS only uses Hybrid composition,
+which means that the native
 `UIView` is appended to view hierarchy.
 
 Prior to Flutter 1.22, platform views were in developers preview.
-In 1.22 or above, it's no longer the case, so there's no need to
+In 1.22 or above, this is no longer the case, so there's no need to
 set the `io.flutter.embedded_views_preview` flag in `Info.plist`.
 
 To create a platform view on iOS, follow these steps:
@@ -494,9 +508,11 @@ class FLNativeView: NSObject, FlutterPlatformView {
 }
 ```
 
-Finally, register the platform view. This can be done in an app or a plugin.
+Finally, register the platform view.
+This can be done in an app or a plugin.
 
-For app registration, modify the App's `AppDelegate.swift`:
+For app registration,
+modify the App's `AppDelegate.swift`:
 
 ```swift
 import Flutter
@@ -521,7 +537,9 @@ import UIKit
 }
 ```
 
-For plugin registration, modify the plugin's main file (e.g. `FLPlugin.swift`):
+For plugin registration,
+modify the plugin's main file
+(for example, `FLPlugin.swift`):
 
 ```swift
 import Flutter
@@ -559,8 +577,9 @@ For example, `FLNativeView.h`:
 ```
 
 Implement the factory and the platform view.
-The `FLNativeViewFactory` creates the platform view, and the platform view
-provides a reference to the `UIView`. For example, `FLNativeView.m`:
+The `FLNativeViewFactory` creates the platform view,
+and the platform view provides a reference to the
+`UIView`. For example, `FLNativeView.m`:
 
 ```objc
 #import "FLNativeView.h"
@@ -609,7 +628,8 @@ provides a reference to the `UIView`. For example, `FLNativeView.m`:
 @end
 ```
 
-Finally, register the platform view. This can be done in an app or a plugin.
+Finally, register the platform view.
+This can be done in an app or a plugin.
 
 For app registration, modify the App's `AppDelegate.m`:
 
@@ -638,10 +658,10 @@ For app registration, modify the App's `AppDelegate.m`:
 @end
 ```
 
-For plugin registration, modify the main plugin file (e.g. `FLPlugin.m`):
+For plugin registration,
+modify the main plugin file (for example, `FLPlugin.m`):
 
 ```objc
-
 #import <Flutter/Flutter.h>
 #import "FLNativeView.h"
 
@@ -669,7 +689,8 @@ For more information, see the API docs for:
 
 ## Putting it together
 
-When implementing the `build()` method in Dart, you can use [`defaultTargetPlatform`][]
+When implementing the `build()` method in Dart,
+you can use [`defaultTargetPlatform`][]
 to detect the platform, and decide what widget to use:
 
 <!-- skip -->
@@ -701,7 +722,7 @@ as the main platform thread is rarely blocked.
 
 While a platform view is rendered with Hybrid composition, the Flutter
 UI is composed from the platform thread, which competes with other
-tasks like handling OS or plugin messages, etc.
+tasks like handling OS or plugin messages.
 
 Prior to Android 10, Hybrid composition copies each Flutter frame
 out of the graphic memory into main memory, and then copies it back
@@ -728,7 +749,7 @@ For more information, see:
 * [`FlutterTextureRegistry`][]
 
 [`AndroidView`]: {{site.api}}/flutter/widgets/AndroidView-class.html
-[`AndroidViewService`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
+[`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [`FlutterPlatformView`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformView.html
 [`FlutterPlatformViewFactory`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformViewFactory.html
@@ -744,3 +765,4 @@ For more information, see:
 [`UIKitView`]: {{site.api}}/flutter/widgets/UiKitView-class.html
 [`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
 [`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html
+[version 1.22.2]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel#1222--october-16-2020
