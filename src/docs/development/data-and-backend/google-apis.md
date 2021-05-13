@@ -139,7 +139,6 @@ includes the nessesary credentials when invoking Google API classes.
 Use the API to create the desired API type and call methods, for instance:
 
 <?code-excerpt "lib/main.dart" skip="125" take="6"?>
-
 ```dart
 var youTubeApi = YouTubeApi(httpClient);
 
