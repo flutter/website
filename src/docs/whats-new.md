@@ -12,13 +12,22 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
-## May 18, 2021
+## May 18, 2021  ??? 19th?
 
 Flutter 2.2 is live! For details, see
 [Announcing Flutter 2.2][].
 
+We have continued migrating code used on the website
+to null safety, but that work is not yet completed.
+
+**Docs updated or added since the 2.0 release**
+
+* A new page describing how to use [Google APIs][]
+  packages with Flutter.
+* A new page 
 
 [Announcing Flutter 2.2]: xxx
+[Google APIs]: /docs/development/data-and-backend/google-apis
 
 ---
 
