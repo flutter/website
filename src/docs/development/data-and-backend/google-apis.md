@@ -74,9 +74,8 @@ need to enable your desired API.
 In this example, you'd enable
 [YouTube Data API v3](https://console.cloud.google.com/apis/api/youtube.googleapis.com).
 
-Follow the
-[getting started instructions](https://cloud.google.com/apis/docs/getting-started)
-to learn more.
+For details, see the
+[getting started instructions](https://cloud.google.com/apis/docs/getting-started).
 
 ## 3. Authenticate the user with the required scopes
 
