@@ -22,18 +22,21 @@ to null safety, but that work is not yet completed.
 
 **Docs updated or added since the 2.0 release**
 
+* A new page on how to [creating adaptive apps][].
 * A new page describing how to use [Google APIs][]
   with Flutter.
 * A new landing page for [Embedded Support for Flutter][].
 
 - A new deferred component loading page
 - Updated memory page
+- building platform adaptive apps with Flutter (gskinner)
 - migration guides (drag gestures and package:flutter_lints, depending)
 
 **Codelabs**
 
 New codelabs since the last stable release:
 
+* [Adding in-app purchases to your Flutter app][]
 * [Get to know Firebase for Flutter][]
 
 **Articles**
@@ -41,9 +44,11 @@ New codelabs since the last stable release:
 We've published the following articles on the [Flutter Medium][]
 publication since the last stable release:
 
-* [Flutter performance updates in the first half of 2020][perf-H1-2020]
+* xxx
 
+[Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: https://medium.com/flutter/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
+[creating adaptive apps]: xxx
 [Embedded Support for Flutter]: /embedded
 [Get to know Firebase for Flutter]: https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0
 [Google APIs]: /docs/development/data-and-backend/google-apis
