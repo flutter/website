@@ -221,7 +221,7 @@ like pressed, hovered, disabled, and focused.
 
 ## Migration guide
 
-Use the following information to migrate your buttons to the 
+Use the following information to migrate your buttons to the
 new API.
 
 ### Restoring the original button visuals
@@ -232,7 +232,7 @@ and the likely bigger change in colors, aren't a concern.
 
 To preserve the original buttons' appearance in these cases, one can
 define button styles that match the original as closely as you
-like. For example, the following style make a `TextButton` look
+like. For example, the following style makes a `TextButton` look
 like a default `FlatButton`:
 
 <!-- skip -->
@@ -396,8 +396,8 @@ RaisedButton(
   child: Text('RaisedButton with custom foreground/background'),
 )
 
-	ElevatedButton(
-	  style: ElevatedButton.styleFrom(
+ElevatedButton(
+  style: ElevatedButton.styleFrom(
     primary: Colors.red, // background
     onPrimary: Colors.white, // foreground
   ),

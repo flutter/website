@@ -167,17 +167,17 @@ class MainScreen extends StatelessWidget {
         title: Text('Main Screen'),
       ),
       body: GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return DetailScreen();
+          }));
+        },
         child: Hero(
           tag: 'imageHero',
           child: Image.network(
             'https://picsum.photos/250?image=9',
           ),
         ),
-        onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return DetailScreen();
-          }));
-        },
       ),
     );
   }
@@ -188,6 +188,9 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
         child: Center(
           child: Hero(
             tag: 'imageHero',
@@ -196,9 +199,6 @@ class DetailScreen extends StatelessWidget {
             ),
           ),
         ),
-        onTap: () {
-          Navigator.pop(context);
-        },
       ),
     );
   }

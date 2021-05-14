@@ -7,8 +7,8 @@ void main() {
       items: List<ListItem>.generate(
         1000,
         (i) => i % 6 == 0
-            ? HeadingItem("Heading $i")
-            : MessageItem("Sender $i", "Message body $i"),
+            ? HeadingItem('Heading $i')
+            : MessageItem('Sender $i', 'Message body $i'),
       ),
       // #enddocregion Items
     ),
@@ -67,6 +67,7 @@ class HeadingItem implements ListItem {
 
   HeadingItem(this.heading);
 
+  @override
   Widget buildTitle(BuildContext context) {
     return Text(
       heading,
@@ -74,7 +75,8 @@ class HeadingItem implements ListItem {
     );
   }
 
-  Widget buildSubtitle(BuildContext context) => null;
+  @override
+  Widget buildSubtitle(BuildContext context) => SizedBox();
 }
 
 /// A ListItem that contains data to display a message.
@@ -84,8 +86,10 @@ class MessageItem implements ListItem {
 
   MessageItem(this.sender, this.body);
 
+  @override
   Widget buildTitle(BuildContext context) => Text(sender);
 
+  @override
   Widget buildSubtitle(BuildContext context) => Text(body);
 }
 // #enddocregion ListItem

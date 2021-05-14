@@ -46,8 +46,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
   // #enddocregion dispose
 
   // #docregion printLatestValue
-  _printLatestValue() {
-    print("Second text field: ${myController.text}");
+  void _printLatestValue() {
+    print('Second text field: ${myController.text}');
   }
   // #enddocregion printLatestValue
 
@@ -64,7 +64,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             // #docregion TextField1
             TextField(
               onChanged: (text) {
-                print("First text field: $text");
+                print('First text field: $text');
               },
             ),
             // #enddocregion TextField1

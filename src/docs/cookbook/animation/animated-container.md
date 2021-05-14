@@ -59,10 +59,10 @@ class AnimatedContainerApp extends StatefulWidget {
 class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
   // Define the various properties with default values. Update these properties
   // when the user taps a FloatingActionButton.
-  double _width = 50;
-  double _height = 50;
-  Color _color = Colors.green;
-  BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
+  final double _width = 50;
+  final double _height = 50;
+  final Color _color = Colors.green;
+  final BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +112,6 @@ generate new values each time the user taps the button.
 <?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
 ```dart
 FloatingActionButton(
-  child: Icon(Icons.play_arrow),
   // When the user taps the button
   onPressed: () {
     // Use setState to rebuild the widget with new values.
@@ -137,6 +136,7 @@ FloatingActionButton(
           BorderRadius.circular(random.nextInt(100).toDouble());
     });
   },
+  child: Icon(Icons.play_arrow),
 )
 ```
 
@@ -186,7 +186,6 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.play_arrow),
           // When the user taps the button
           onPressed: () {
             // Use setState to rebuild the widget with new values.
@@ -211,6 +210,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
                   BorderRadius.circular(random.nextInt(100).toDouble());
             });
           },
+          child: Icon(Icons.play_arrow),
         ),
       ),
     );

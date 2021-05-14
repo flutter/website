@@ -20,6 +20,11 @@ class MainScreen extends StatelessWidget {
         title: Text('Main Screen'),
       ),
       body: GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return DetailScreen();
+          }));
+        },
         // #docregion Hero1
         child: Hero(
           tag: 'imageHero',
@@ -28,11 +33,6 @@ class MainScreen extends StatelessWidget {
           ),
         ),
         // #enddocregion Hero1
-        onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return DetailScreen();
-          }));
-        },
       ),
     );
   }
@@ -43,6 +43,9 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
         child: Center(
           // #docregion Hero2
           child: Hero(
@@ -53,9 +56,6 @@ class DetailScreen extends StatelessWidget {
           ),
           // #enddocregion Hero2
         ),
-        onTap: () {
-          Navigator.pop(context);
-        },
       ),
     );
   }

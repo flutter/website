@@ -1,0 +1,16 @@
+name: send_data
+description: Send data
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.3 
+
+dev_dependencies:
+  pedantic: ^1.11.0
+
+flutter:
+  uses-material-design: true
