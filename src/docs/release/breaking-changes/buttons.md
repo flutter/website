@@ -232,7 +232,7 @@ and the likely bigger change in colors, aren't a concern.
 
 To preserve the original buttons' appearance in these cases, one can
 define button styles that match the original as closely as you
-like. For example, the following style make a `TextButton` look
+like. For example, the following style makes a `TextButton` look
 like a default `FlatButton`:
 
 <!-- skip -->

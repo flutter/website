@@ -58,6 +58,7 @@ void main() {
 }
 
 class Page1 extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
@@ -83,6 +84,7 @@ Route _createRoute() {
 }
 
 class Page2 extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
