@@ -94,7 +94,7 @@
       { "source": "/go/asset-lookup-in-plugin-binding", "destination": "https://docs.google.com/document/d/1iwGFWipC0v0FKvAgbjGl0kaV9IGox1YiD8jUP8Vvkjc/edit", "type": 301 },
       { "source": "/go/autocomplete", "destination": "https://docs.google.com/document/d/1fV4FDNdcza1ITU7hlgweCDUZdWyCqd-rjz_J7K2KkfY/edit?usp=sharing", "type": 301 },
       { "source": "/go/automatic-android-plugin-registration", "destination": "https://docs.google.com/document/d/1xNkBmcdVL1yEXqtZ65KzTwfr5UXDD05VVKYXIXGX7p8/edit", "type": 301 },
-      { "source": "/go/a11y-text-attributes", "destination": "https://docs.google.com/document/d/1vhbwxFOTRTUvW2C_onFffEH5Fn2pAfMQDyv-gekias0", "type": 301 },
+      { "source": "/go/a11y-text-attributes", "destination": "https://docs.google.com/document/d/1vhbwxFOTRTUvW2C_onFffEH5Fn2pAfMQDyv-gekias0/edit?usp=sharing&resourcekey=0-ChQvjIoWYO7jXcaCXMj5Qw", "type": 301 },
       { "source": "/go/base-annotations-local-position-on-region", "destination": "https://docs.google.com/document/d/1r7FQTOw2vZJZ5c0VoNqi9CWmZY3MvUfz0spdf0-nK6k/edit", "type": 301 },
       { "source": "/go/bottom-navigation-bar-title-deprecation", "destination": "https://docs.google.com/document/d/1L-2nPf5hbLGNoRvOSUmnxgUHahBVzW1ybhTXGY3ObDw/edit?usp=sharing", "type": 301 },
       { "source": "/go/breaking-changes-template", "destination": "https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md", "type": 301 },
