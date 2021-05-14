@@ -126,7 +126,7 @@ so you interact with the test environment's file system.
 To mock the method call, provide a `setupAll()` function in the test file.
 This function runs before the tests are executed.
 
-<?code-excerpt "test/main_test.dart (setUpAll)"?>
+<?code-excerpt "test/widget_test.dart (setUpAll)"?>
 ```dart
 setUpAll(() async {
   // Create a temporary directory.
