@@ -149,5 +149,5 @@ var favorites = await youTubeApi.playlistItems.list(
 ## More information
 
 - The
-  [`extension_google_sign_in_as_googleapis_auth` example](https://pub.dev/packages/extension_google_sign_in_as_googleapis_auth/example)
+  [`extension_google_sign_in_as_googleapis_auth` example]({{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth/example)
   is a working implementation of the concepts described on this page.
