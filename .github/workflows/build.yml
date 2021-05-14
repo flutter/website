@@ -70,6 +70,10 @@ jobs:
             sdk: stable
             task: tool/check-code.sh
             experimental: false
+          - name: "Stable channel: null safety code check"
+            sdk: stable
+            task: tool/check-code.sh --null-safety
+            experimental: false
           - name: "Stable channel: jekyll build"
             sdk: stable
             task: bundle exec jekyll build
