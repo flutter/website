@@ -76,7 +76,7 @@ enum DownloadStatus {
 class DownloadButton extends StatefulWidget {
  const DownloadButton({
    Key? key,
-   required this.status,
+   @required this.status,
    this.transitionDuration = const Duration(milliseconds: 500),
  }) : super(key: key);
 
