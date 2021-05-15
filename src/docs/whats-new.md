@@ -17,17 +17,18 @@ join the [flutter-announce][] Google group.
 Flutter 2.2 is live! For details, see
 [Announcing Flutter 2.2][].
 
-We have continued migrating code used on the website
-to null safety, but that work is not yet completed.
+We continue migrating code on the website to use
+null safety, but that work is not yet completed.
 
 **Docs updated or added since the 2.0 release**
 
-* A new page on how to [creating adaptive apps][].
+* A new page on how to [create adaptive apps][].
 * A new page describing how to use [Google APIs][]
   with Flutter.
 * A new landing page for [Embedded Support for Flutter][].
+* A new page on setting up and using [Deferred components][]
+  on Android.
 
-- A new deferred component loading page
 - Updated memory page
 - building platform adaptive apps with Flutter (gskinner)
 - migration guides (drag gestures and package:flutter_lints, depending)
@@ -49,6 +50,7 @@ publication since the last stable release:
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: https://medium.com/flutter/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
 [creating adaptive apps]: xxx
+[Deferred components]: /docs/perf/deferred-components
 [Embedded Support for Flutter]: /embedded
 [Get to know Firebase for Flutter]: https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0
 [Google APIs]: /docs/development/data-and-backend/google-apis
