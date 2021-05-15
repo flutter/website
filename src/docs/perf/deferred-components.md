@@ -39,6 +39,10 @@ is compiled to [release or profile mode][].
 In debug mode, all deferred components are present
 at launch and load immediately.
 
+For a deeper dive into the technical details of
+how this feature works, see [Deferred Components][]
+on the [Flutter wiki][].
+
 ## How to set your project up for deferred components
 
 The following instructions explain how to set up your
@@ -82,56 +86,71 @@ dependencies {
 `io.flutter.app.FlutterPlayStoreSplitApplication` handles
 both of these tasks for you. If you use
 `FlutterPlayStoreSplitApplication`,
-you can skip to step 1.3. If your Android application
+you can skip to step 1.3.
+
+If your Android application
 is large or complex, you might want to separately support
-`SplitCompat` and provide the `DynamicFeatureManager` manually.
+`SplitCompat` and provide the
+`PlayStoreDynamicFeatureManager` manually.
 
 To support `SplitCompat`, there are three methods
 (as detailed in the [Android docs][]), any of which are valid:
 
-* Make your application class extend SplitCompatApplication:
-  <!-- skip -->
-  ```dart
-  public class MyApplication extends SplitCompatApplication {
-      ...
-  }
-  ```
+<ul markdown="1">
+<li markdown="1">Make your application class extend
+    `SplitCompatApplication`:
+<!-- skip -->
+```dart
+public class MyApplication extends SplitCompatApplication {
+    ...
+}
+```
+</li>
 
-* Call `SplitCompat.install(this);` in `attachBaseContext`:
-  <!-- skip -->
-  ```dart
-  @Override
-  protected void attachBaseContext(Context base) {
-      super.attachBaseContext(base);
-      // Emulates installation of future on demand modules using SplitCompat.
-      SplitCompat.install(this);
-  }
-      ```
-* Declare `SplitCompatApplication` as the application
-  subclass and add the flutter compatibility code from
+<li markdown="1">Call `SplitCompat.install(this);`
+    in the `attachBaseContext()` method:
+
+<!-- skip -->
+```dart
+@Override
+protected void attachBaseContext(Context base) {
+    super.attachBaseContext(base);
+    // Emulates installation of future on demand modules using SplitCompat.
+    SplitCompat.install(this);
+}
+```
+</li>
+
+<li markdown="1">Declare `SplitCompatApplication` as the application
+    subclass and add the Flutter compatibility code from
   `FlutterApplication` to your application class:
-  ```js
-  <application
-      ...
-      android:name="com.google.android.play.core.splitcompat.SplitCompatApplication">
-  </application>
-  ```
-  The embedder relies on an injected
-  `DeferredComponentManager` instance to handle
-  install requests for deferred components.
-  Provide a `PlayStoreDeferredComponentManager` into
-  the Flutter embedder by adding the following code
-  to your app initialization:
-  <!-- skip -->
-  ```dart
-  import io.flutter.embedding.engine.dynamicfeatures.PlayStoreDeferredComponentManager;
-  import io.flutter.FlutterInjector;
-  ... 
-  PlayStoreDeferredComponentManager deferredComponentManager = new
-      PlayStoreDeferredComponentManager(this, null);
-  FlutterInjector.setInstance(new FlutterInjector.Builder()
-      .setDeferredComponentManager(deferredComponentManager).build());
-  ```
+
+```js
+<application
+    ...
+    android:name="com.google.android.play.core.splitcompat.SplitCompatApplication">
+</application>
+```
+</li>
+</ul>
+
+The embedder relies on an injected
+`DeferredComponentManager` instance to handle
+install requests for deferred components.
+Provide a `PlayStoreDeferredComponentManager` into
+the Flutter embedder by adding the following code
+to your app initialization:
+
+<!-- skip -->
+```dart
+import io.flutter.embedding.engine.dynamicfeatures.PlayStoreDeferredComponentManager;
+import io.flutter.FlutterInjector;
+... 
+layStoreDeferredComponentManager deferredComponentManager = new
+  PlayStoreDeferredComponentManager(this, null);
+FlutterInjector.setInstance(new FlutterInjector.Builder()
+    .setDeferredComponentManager(deferredComponentManager).build());
+```
 
 </li>
     
@@ -164,7 +183,7 @@ to be feature complete yet. The example in the
 rest of this page adds a new simple deferred widget
 as a placeholder. You can also convert existing code
 to be deferred by modifying the imports and
-guarding usages of deferred code behind [`loadLibrary()`][]
+guarding usages of deferred code behind `loadLibrary()`
 `Futures`.
 
 <ol markdown="1">
@@ -203,10 +222,10 @@ class DeferredBox extends StatelessWidget {
     with the `deferred` keyword in your app and
     call `loadLibrary()` (see [lazily loading a library][]).
     The following example uses `FutureBuilder`
-    to wait for the `loadLibrary` `future` (created in
+    to wait for the `loadLibrary` `Future` (created in
     `initState`) to complete and display a
     `CircularProgressIndicator` as a placeholder.
-    When the `future` completes, it returns the `DeferredBox` widget.
+    When the `Future` completes, it returns the `DeferredBox` widget.
     `SomeWidget` can then be used in the app as normal and
     won't ever attempt to access the Dart lib until
     it has successfully loaded.
@@ -582,11 +601,12 @@ on release [PENDING: and profile?] builds using
 [3.1]: #step-3.1
 [Android docs]: {{site.android-dev}}/guide/playcore/feature-delivery#declare_splitcompatapplication_in_the_manifest
 [`bundletool`]: {{site.android-dev}}/studio/command-line/bundletool
+[Deferred Components]: {{site.github}}/flutter/flutter/wiki/Deferred-Components
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
 [Flutter Gallery’s lib/deferred_widget.dart]: {{site.github}}/flutter/gallery/blob/master/lib/deferred_widget.dart
+[Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library
-[`loadLibrary()`]: {{site.dart-api}}/dart-mirrors/LibraryDependencyMirror/loadLibrary.html
 [release or profile mode]: /docs/testing/build-modes
 [step 3.3]: #step-3.3
