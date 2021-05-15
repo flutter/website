@@ -172,7 +172,8 @@ guarding usages of deferred code behind [`loadLibrary()`][]
     For example, create a new `DeferredBox` widget that
     can be downloaded at runtime.
     This widget can be of any complexity but,
-    for now, create a simple box as a stand-in.
+    for the purposes of this guide,
+    create a simple box as a stand-in.
     To create a simple blue box widget,
     create `box.dart` with the following contents:
 
@@ -212,7 +213,7 @@ class DeferredBox extends StatelessWidget {
 
 <!-- skip -->
 ```dart
-import 'box.Dart' deferred as box;
+import 'box.dart' deferred as box;
 
 // ...
 
@@ -275,16 +276,18 @@ properly set up to build deferred components apps.
 By default, the build fails if the validator detects
 any issues and guides you through suggested changes to fix them.
 
-You might opt out of building deferred components
-with the `--no-deferred-components` flag.
-This flag causes all assets defined under
-deferred components to be treated as if they were
-defined under the assets section of `pubspec.yaml`.
-All Dart code is compiled into a single shared library
-and `loadLibrary()` calls complete in the next event
-loop boundary (as soon as possible while being asynchronous).
-This flag is also equivalent to omitting the `deferred-components:`
-entry in `pubspec.yaml`.
+{{site.alert.note}}
+  You can opt out of building deferred components
+  with the `--no-deferred-components` flag.
+  This flag causes all assets defined under
+  deferred components to be treated as if they were
+  defined under the assets section of `pubspec.yaml`.
+  All Dart code is compiled into a single shared library
+  and `loadLibrary()` calls complete in the next event
+  loop boundary (as soon as possible while being asynchronous).
+  This flag is also equivalent to omitting the `deferred-components:`
+  entry in `pubspec.yaml`.
+{{site.alert.end}}
 
 <ol markdown="1">
 <li markdown="1"><a name="step-3.1"></a>The
@@ -577,15 +580,13 @@ on release [PENDING: and profile?] builds using
 
 
 [3.1]: #step-3.1
-[Android app bundles]: {{site.android-dev}}/guide/app-bundle
 [Android docs]: {{site.android-dev}}/guide/playcore/feature-delivery#declare_splitcompatapplication_in_the_manifest
 [`bundletool`]: {{site.android-dev}}/studio/command-line/bundletool
-[`deferred as`]: {{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
 [Flutter Gallery’s lib/deferred_widget.dart]: {{site.github}}/flutter/gallery/blob/master/lib/deferred_widget.dart
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library
-[`loadLibrary()`]: {{site.dart-api}}/stable/dart-mirrors/LibraryDependencyMirror/loadLibrary.html
+[`loadLibrary()`]: {{site.dart-api}}/dart-mirrors/LibraryDependencyMirror/loadLibrary.html
 [release or profile mode]: /docs/testing/build-modes
 [step 3.3]: #step-3.3
