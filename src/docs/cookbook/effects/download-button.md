@@ -144,7 +144,7 @@ class _DownloadButtonState extends State<DownloadButton> {
  }
 
  Widget _buildButtonShape({
-   required Widget child,
+   @required Widget child,
  }) {
    return AnimatedContainer(
      duration: widget.transitionDuration,
@@ -379,9 +379,9 @@ tap event to the corresponding callback property.
 class DownloadButton extends StatefulWidget {
  const DownloadButton({
    Key? key,
-   required this.onDownload,
-   required this.onCancel,
-   required this.onOpen,
+   @required this.onDownload,
+   @required this.onCancel,
+   @required this.onOpen,
  }) : super(key: key);
 
  final VoidCallback onDownload;
@@ -594,7 +594,7 @@ class SimulatedDownloadController extends DownloadController
   SimulatedDownloadController({
     DownloadStatus downloadStatus = DownloadStatus.notDownloaded,
     double progress = 0.0,
-    required VoidCallback onOpenDownload,
+    @required VoidCallback onOpenDownload,
   })   : _downloadStatus = downloadStatus,
         _progress = progress,
         _onOpenDownload = onOpenDownload;
@@ -686,11 +686,11 @@ class SimulatedDownloadController extends DownloadController
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
     Key? key,
-    required this.status,
+    @required this.status,
     this.downloadProgress = 0.0,
-    required this.onDownload,
-    required this.onCancel,
-    required this.onOpen,
+    @required this.onDownload,
+    @required this.onCancel,
+    @required this.onOpen,
     this.transitionDuration = const Duration(milliseconds: 500),
   }) : super(key: key);
 
@@ -740,7 +740,7 @@ class DownloadButton extends StatelessWidget {
   }
 
   Widget _buildButtonShape({
-    required Widget child,
+    @required Widget child,
   }) {
     return AnimatedContainer(
       duration: transitionDuration,
