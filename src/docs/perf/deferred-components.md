@@ -176,6 +176,7 @@ guarding usages of deferred code behind [`loadLibrary()`][]
     To create a simple blue box widget,
     create `box.dart` with the following contents:
 
+<!-- skip -->
 ```dart
 // box.dart
 
@@ -209,6 +210,7 @@ class DeferredBox extends StatelessWidget {
     won't ever attempt to access the Dart lib until
     it has successfully loaded.
 
+<!-- skip -->
 ```dart
 import 'box.Dart' deferred as box;
 
