@@ -7,10 +7,10 @@ If you would like to embed Flutter engine into a car,
 a refrigerator, a thermostat... you CAN! For example,
 you might embed Flutter in the following situations:
 
-* Use Flutter on an "embedded device",
+* Using Flutter on an "embedded device",
   typically a low-powered hardware device
   such as a smart-display, a thermostat, or similar.
-* Embed Flutter into a new operating system or
+* Embedding Flutter into a new operating system or
   environment, for example a new mobile platform
   or a new operating system.
 
@@ -29,8 +29,8 @@ resources.
 * The [Flutter architectural overview][] on flutter.dev.
 * A small, self contained [Flutter Embedder Engine GLFW example][]
   in the Flutter engine GitHub repo.
-* [Issue 31043: Questions for porting flutter engine to a new os][]
-  might also be helpful.
+* [Issue 31043][]: _Questions for porting flutter engine to
+  a new os_ might also be helpful.
 
 
 [community]: /community
@@ -38,7 +38,7 @@ resources.
 [Custom Flutter Engine Embedders]: {{site.github}}/flutter/flutter/wiki/Custom-Flutter-Engine-Embedders
 [Flutter architectural overview]: /docs/resources/architectural-overview
 [Flutter engine `engine.h` file]: {{site.github}}/flutter/engine/blob/master/shell/platform/embedder/embedder.h
-[Flutter Embedder Engine GLFW example][]: {{site.github}}/flutter/engine/tree/master/examples/glfw#flutter-embedder-engine-glfw-example
-[Issue 31043: Questions for porting flutter engine to a new os] {{site.github}}/flutter/flutter/issues/31043
+[Flutter Embedder Engine GLFW example]: {{site.github}}/flutter/engine/tree/master/examples/glfw#flutter-embedder-engine-glfw-example
+[Issue 31043]: {{site.github}}/flutter/flutter/issues/31043
 
 
