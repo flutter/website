@@ -80,11 +80,8 @@ Include a `fromJson()` factory method to make it easy to create a
 ```dart
 @immutable
 class Photo {
-  final int albumId;
-  final int id;
-  final String title;
-  final String url;
-  final String thumbnailUrl;
+  final int albumId, id;
+  final String title, url, thumbnailUrl;
 
   const Photo({
     required this.albumId,
@@ -192,11 +189,8 @@ List<Photo> parsePhotos(String responseBody) {
 
 @immutable
 class Photo {
-  final int albumId;
-  final int id;
-  final String title;
-  final String url;
-  final String thumbnailUrl;
+  final int albumId, id;
+  final String title, url, thumbnailUrl;
 
   const Photo({
     required this.albumId,
@@ -221,11 +215,11 @@ void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+  static const appTitle = 'Isolate Demo';
+
 
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'Isolate Demo';
-
     return MaterialApp(
       title: appTitle,
       home: MyHomePage(title: appTitle),
