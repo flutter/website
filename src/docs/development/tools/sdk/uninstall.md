@@ -75,7 +75,7 @@ echo %PUB_CACHE%.
 
 - In the search bar, type ‘env’ and select **Edit Environment Variables**.
 
-- Select the Path variable, and remove the path containing `flutter/bin`.
+- Select the `PATH` variable, and remove the path containing `flutter/bin`.
 
 **You’ve successfully removed Flutter and Dart from your machine**.
 
