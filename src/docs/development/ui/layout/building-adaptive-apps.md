@@ -146,7 +146,7 @@ are set to 0.0, but you can set the densities to any negative
 or positive value that you want. By switching between different
 densities, you can easily adjust your UI:
 
-![Adaptive scaffold]({% asset development/ui/layout/adaptive_scaffold.gif @path %})
+![Adaptive scaffold]({% asset development/ui/layout/adaptive_scaffold.gif @path %}){:width="100%"}
 
 To set a custom visual density, inject the density into
 your `MaterialApp` theme:
@@ -519,7 +519,7 @@ while the app is running to preview various screen sizes.
 This, combined with hot reload, can greatly accelerate the
 development of a responsive UI.
 
-![Adaptive scaffold 2]({% asset development/ui/layout/adaptive_scaffold2.gif @path %})
+![Adaptive scaffold 2]({% asset development/ui/layout/adaptive_scaffold2.gif @path %}){:width="100%"}
 
 ### Solve touch first
 
