@@ -1,21 +1,15 @@
 ## Windows setup
 
 {{site.alert.warning}}
-  **Beta (Win32) and Dev (UWP)!**
-  This area covers Windows desktop support,
-  which is available in beta release (Win32)
-  and dev release (UWP).
-
-  The Win32 variant still has notable feature gaps,
-  including accessibility support, while the 
-  UWP variant is still in very active development.
-  
-  You can try a beta snapshot of Win32 desktop support
+  **Beta!**
+  This area covers desktop support,
+  which is available as a beta release.
+  Beta support still has notable feature gaps,
+  including accessibility support.
+  You can try a beta snapshot of desktop support
   on the stable channel, or you can keep up
   with the latest changes to desktop on the
-  `beta` channel. For Windows UWP you need 
-  to be on the `dev` channel.
-  
+  beta channel.
   For more information, see the **Desktop**
   section in [What's new in Flutter 2][],
   a free article on Medium.
@@ -28,28 +22,18 @@
 For Windows desktop development, you need the following in addition to the Flutter SDK:
 
 * [Visual Studio 2019][] (not to be confused with
-  Visual Studio _Code_). For Win32 you need the
+  Visual Studio _Code_) with the
   "Desktop development with C++" workload installed,
-  including all of its default components. For UWP
-  you need the "Universal Windows Platform development"
-  workload installed, with the optional UWP C++ tools.
+  including all of its default components
+
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
 
 ### Enable desktop support
 
-At the command line, perform the following command to enable Win32 desktop support
+At the command line, perform the following command to enable desktop support
 
 ```terminal
 $ flutter config --enable-windows-desktop
-```
-
-For Windows UWP desktop support perform the following commands to switch to 
-the `dev` channel, upgrade Flutter, and enable UWP.
-
-```terminal
-$ flutter channel dev
-$ flutter upgrade
-$ flutter config --enable-windows-uwp-desktop
 ```
 
 For more information, see [Desktop support for Flutter][]
