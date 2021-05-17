@@ -6,5 +6,7 @@ pubspec.lock
 */**/web
 */**/linux
 */**/macos
+*/**/windows
+*/**/winuwp
 */**/.gitignore
 */**/.metadata
