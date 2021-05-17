@@ -349,7 +349,6 @@ To workaround this issue, you can use the
 <!--skip-->
 ```dart
 bool get isMobileDevice => (UniversalPlatform.isIOS || UniversalPlatform.isAndroid);
-
 ```
 
 This device check is now safe to run on any platform,
@@ -358,7 +357,7 @@ and repetitiveness. For example, consider the following code
 for a view that you want to show on any of the desktop
 platforms and the web:
 
-<!--skip->>
+<!--skip-->
 ```dart
 return (UniversalPlatform.isWindows || UniversalPlatform.isLinux || UniversalPlatform.isMacOS || kIsWeb)? DesktopView() : MobileView();
 ```
