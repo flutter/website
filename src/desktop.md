@@ -201,7 +201,7 @@ any unresolved issues. It should look something like
 the following on Windows:
 
 ```terminal
-PS > flutter doctor                                                                     
+PS C:\> flutter doctor                                                                     
 Doctor summary (to see all details, run flutter doctor -v):
 [√] Flutter (Channel stable, 2.0.6, on Microsoft Windows [Version 10.0.19042.804], locale en-AU)
 [√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
@@ -300,7 +300,7 @@ enter one of the following commands from the top
 of the package:
 
 ```terminal
-$ flutter run -d windows
+PS C:\> flutter run -d windows
 $ flutter run -d macos
 $ flutter run -d linux
 ```
@@ -317,18 +317,41 @@ give you a command that you need to run from a PowerShell
 with Administrator privileges. 
 
 ```terminal
+PS C:\desktop_test> flutter run -d winuwp
+Launching lib\main.dart on Windows (UWP) in debug mode...
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification [C:\src\flutter-projects\desktop_test\build\winuwp\runner_uwp\app.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3327,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it. [C:\src\flutter-projects\desktop_test\build\winuwp\runner_uwp\app.vcxproj]
+Building Windows UWP application...                                     
+Enable Flutter debugging from localhost.
+
+Windows UWP apps run in a sandboxed environment. To enable Flutter debugging
+and hot reload, you will need to enable inbound connections to the app from the
+Flutter tool running on your machine. To do so:
+  1. Launch PowerShell as an Administrator
+  2. Enter the following command:
+     checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
+
+Press "Y" once this is complete, or "N" to abort.: 
 ```
 
-Run this command as shown. You can then leave this process
-running for the length of your development session, restarting
-your UWP app as required. 
+Run this `checknetisolation` command as shown in a PowerShell 
+as Administrator. You can then leave this process running for 
+the length of your development session, restarting your UWP app 
+as required. 
+
+```terminal
+PS C:\> checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
+
+Network Isolation Debug Session started.
+Reproduce your scenario, then press Ctrl-C when done.
+```
 
 Once you have this process running, you can deploy to 
 Windows UWP from within your IDE as normal, or run from 
 the command line as follows:
 
 ```terminal
-$ flutter run -d winuwp
+PS C:\desktop_test> flutter run -d winuwp
 ```
 
 {{site.alert.note}}
@@ -342,7 +365,7 @@ To generate a release build,
 run one of the following commands:
 
 ```terminal
-$ flutter build windows
+PS C:\> flutter build windows
 $ flutter build macos
 $ flutter build linux
 ```
