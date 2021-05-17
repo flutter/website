@@ -7,7 +7,11 @@ toc: false
 
 Before uninstalling Flutter, you have a few things to consider:
 
-- Do you want to uninstall only Flutter, or also Dart? Dart is contained within the Flutter SDK, so it might be easiest to uninstall Flutter and then do a fresh Dart install.
+- Do you want to uninstall only Flutter, or also Dart? Dart is contained within the Flutter SDK,
+  so if it's your only Dart install, it's easiest to uninstall Flutter (which uninstalls
+  the included Dart), and then do a fresh [Dart install][].
+  
+  [Dart install]: {{site.dart-site}}/get-dart
 - Do you also want to uninstall Android Studio? Xcode? CocoaPods? If so, refer to the docs for those tools.
 
 {% comment %} Nav tabs {% endcomment -%}
