@@ -9,6 +9,8 @@ next:
   path: /docs/cookbook/persistence/reading-writing-files
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/persistence/sqlite/"?>
+
 If you are writing an app that needs to persist and query large amounts of data on
 the local device, consider using a database instead of a local file or
 key-value store. In general, databases provide faster inserts, updates,
@@ -68,7 +70,7 @@ define the data that needs to be stored. For this example, define a Dog class
 that contains three pieces of data:
 A unique `id`, the `name`, and the `age` of each dog.
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart"?>
 ```dart
 class Dog {
   final int id;
@@ -94,7 +96,7 @@ to the database. This involves two steps:
   table functions inside `void main() async {}`. 
 {{site.alert.end}}
 
-<!-- skip -->
+<?code-excerpt "lib/step3.dart (openDatabase)"?>
 ```dart
 // Avoid errors caused by flutter upgrade.
 // Importing 'package:flutter/widgets.dart' is required.
@@ -126,7 +128,7 @@ Therefore, these are represented as three columns in the `dogs` table.
 For more information about the available Datatypes that can be stored in a
 SQLite database, see the [official SQLite Datatypes documentation][].
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (openDatabase)"?>
 ```dart
 final Future<Database> database = openDatabase(
   // Set the path to the database. Note: Using the `join` function from the
@@ -157,7 +159,7 @@ First, insert a `Dog` into the `dogs` table. This involves two steps:
 2. Use the [`insert()`][] method to store the
    `Map` in the `dogs` table.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Dog)"?>
 ```dart
 // Update the Dog class to include a `toMap` method.
 class Dog {
@@ -179,7 +181,7 @@ class Dog {
 }
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (insertDog)"?>
 ```dart
 // Define a function that inserts dogs into the database
 Future<void> insertDog(Dog dog) async {
@@ -198,7 +200,7 @@ Future<void> insertDog(Dog dog) async {
 }
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (fido)"?>
 ```dart
 // Create a Dog and add it to the dogs table.
 final fido = Dog(
@@ -218,7 +220,7 @@ for a specific dog or a list of all dogs. This involves two steps:
   1. Run a `query` against the `dogs` table. This returns a `List<Map>`.
   2. Convert the `List<Map>` into a `List<Dog>`.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (dogs)"?>
 ```dart
 // A method that retrieves all the dogs from the dogs table.
 Future<List<Dog>> dogs() async {
@@ -239,7 +241,7 @@ Future<List<Dog>> dogs() async {
 }
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (print)"?>
 ```dart
 // Now, use the method above to retrieve all the dogs.
 print(await dogs()); // Prints a list that include Fido.
@@ -257,7 +259,7 @@ This involves two steps:
   1. Convert the Dog into a Map.
   2. Use a `where` clause to ensure you update the correct Dog.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (update)"?>
 ```dart
 Future<void> updateDog(Dog dog) async {
   // Get a reference to the database.
@@ -275,7 +277,7 @@ Future<void> updateDog(Dog dog) async {
 }
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (update2)"?>
 ```dart
 // Update Fido's age.
 await updateDog(Dog(
@@ -306,7 +308,7 @@ In this section, create a function that takes an id and deletes the dog with
 a matching id from the database. To make this work, you must provide a `where`
 clause to limit the records being deleted.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (deleteDog)"?>
 ```dart
 Future<void> deleteDog(int id) async {
   // Get a reference to the database.
@@ -332,6 +334,7 @@ To run the example:
   3. Paste the following code into a new file called `lib/db_test.dart`.
   4. Run the code with `flutter run lib/db_test.dart`.
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 
