@@ -14,7 +14,7 @@
   on the stable channel, or you can keep up
   with the latest changes to desktop on the
   `beta` channel. For Windows UWP you need 
-  to be on either `dev` channel.
+  to be on the `dev` channel.
   
   For more information, see the **Desktop**
   section in [What's new in Flutter 2][],
@@ -30,10 +30,9 @@ For Windows desktop development, you need the following in addition to the Flutt
 * [Visual Studio 2019][] (not to be confused with
   Visual Studio _Code_). For Win32 you need the
   "Desktop development with C++" workload installed,
-  including all of its default components. 
-  For UWP you need the "Universal Windows Platform development"
-  workload installed, with the optional UWP C++ tools also installed.
-
+  including all of its default components. For UWP
+  you need the "Universal Windows Platform development"
+  workload installed, with the optional UWP C++ tools.
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
 
 ### Enable desktop support
