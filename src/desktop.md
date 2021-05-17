@@ -202,14 +202,16 @@ the following on Windows:
 
 ```terminal
 PS > flutter doctor                                                                     
-Doctor summary (to see all details, run flutter doctor -v):                                           
-[√] Flutter (Channel beta, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
-[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)                      
-[√] Chrome - develop for the web                                                                      
-[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.7.7)                         
-[√] Android Studio (version 4.1.0)                                                                    
-[√] VS Code (version 1.51.1)                                                                          
-[√] Connected device (3 available)                                                                    
+Doctor summary (to see all details, run flutter doctor -v):
+[√] Flutter (Channel stable, 2.0.6, on Microsoft Windows [Version 10.0.19042.804], locale en-AU)
+[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[√] Chrome - develop for the web
+[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.9.5)
+[√] Android Studio (version 4.1.0)   
+[√] VS Code (version 1.56.2)
+[√] Connected device (3 available)
+
+! No issues found!                                                           
 ```
 
 On macOS, you might see something like the following:
