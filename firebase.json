@@ -213,6 +213,7 @@
       { "source": "/go/scrollable-alert-dialog", "destination": "https://docs.google.com/document/d/1qtVfjoKXE8BtkNbraKk9IzfRcks5btkKcyE4iGVwkbg/edit", "type": 301 },
       { "source": "/go/sdk-per-platform-installers", "destination": "https://docs.google.com/document/d/1VooN2bddQ52Z2B4qYi1Lp20PGhyYDr1AKaXwo9e7PCw", "type": 301 },
       { "source": "/go/shaders", "destination": "https://docs.google.com/document/d/1z9K5LernwQ0LVAzfbAMW6ITx63QRdRsoax1NLYEfm4Y/edit", "type": 301 },
+      { "source": "/go/sharding-mac-ios-builders", "destination": "https://docs.google.com/document/d/1zLafqoFhKRMChUDGnnhzabnmhE2Vl1AWsrJzF8OWAGk/edit?usp=sharing", "type": 301 },
       { "source": "/go/simple-flutter-tool-memory-benchmarks", "destination": "https://docs.google.com/document/d/1vlARGxdABMeZoj4HF0p075-81q7G9gv_GnDYgoF7e3I", "type": 301 },
       { "source": "/go/slider-v2", "destination": "https://docs.google.com/document/d/1NCuRe-TUp8u6-Yzx_wrXZcqAwv5NP8hEJwUYSxVECwU/edit", "type": 301 },
       { "source": "/go/sliver-flex-and-friends", "destination": "https://docs.google.com/document/d/1W4_5oD5z7JHhUjuQYwS_NJRAv27Ih7IazcMm739O5JU/edit", "type": 301 },
