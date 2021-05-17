@@ -322,7 +322,7 @@ any issues and guides you through suggested changes to fix them.
     `gen_snapshot` instructed to produce split AOT shared libraries
     as separate `.so` files. On the first run, the validator will
     likely fail as it detects issues; the tool makes
-    recommendations for how set up the project and fix these issues.
+    recommendations for how to set up the project and fix these issues.
 
 The validator is split into two sections: prebuild
 and post-gen_snapshot validation. This is because any
