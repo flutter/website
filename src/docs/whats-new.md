@@ -22,15 +22,15 @@ null safety, but that work is not yet completed.
 
 **Docs updated or added since the 2.0 release**
 
-* A new page on how to [create adaptive apps][].
+* A new page on how to [Build adaptive apps][].
 * A new page describing how to use [Google APIs][]
   with Flutter.
 * A new landing page for [Embedded Support for Flutter][].
 * A new page on setting up and using [Deferred components][]
   on Android.
+* Significant updates to the DevTools [Memory view page][].
 
-- Updated memory page
-- building platform adaptive apps with Flutter (gskinner)
+
 - migration guides (drag gestures and package:flutter_lints, depending)
 
 **Codelabs**
@@ -40,20 +40,41 @@ New codelabs since the last stable release:
 * [Adding in-app purchases to your Flutter app][]
 * [Get to know Firebase for Flutter][]
 
+**Workshops**
+
+For Google I/O 2021, we have added a new learning tool:
+Workshops! These workshops, built on top of DartPad,
+are instructor led. The instructor-led videos are available
+on the Flutter YouTube channel.
+
+* [Inherited widgets video][], [Inherited widgets DartPad][]
+* [Null safety workshop video][], [Null safety workshop DartPad][]
+* [Slivers workshop video][], [Slivers workshop DartPad][]
+
 **Articles**
 
 We've published the following articles on the [Flutter Medium][]
 publication since the last stable release:
 
-* xxx
+* [How It's Made: I/O Photo Booth][]
+* [Which factors affected users’ decisions to adopt Flutter? — Q1 2021 user survey results][Q1 2021 survey]
 
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
-[Announcing Flutter 2.2]: https://medium.com/flutter/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
-[creating adaptive apps]: xxx
+[Announcing Flutter 2.2]: {{site.medium}}/flutter/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
+[Build adaptive apps]: /docs/development/ui/layout/build-adaptive-apps
 [Deferred components]: /docs/perf/deferred-components
 [Embedded Support for Flutter]: /embedded
 [Get to know Firebase for Flutter]: https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0
 [Google APIs]: /docs/development/data-and-backend/google-apis
+[How It's Made: I/O Photo Booth]: {{site.medium}}/flutter/how-its-made-i-o-photo-booth-3b8355d35883
+[Inherited widgets video]: https://www.youtube.com/watch?v=W4p6B45SJuo
+[Inherited widgets DartPad]: /go/inheritedwidget-workshop
+[Memory view page]: /docs/development/tools/devtools/memory
+[Null safety workshop video]: https://www.youtube.com/watch?v=Nsp4sFbouN4
+[Null safety workshop DartPad]: /go/null-safety-workshop
+[Slivers workshop DartPad]: /go/sliver-workshop
+[Slivers workshop video]: https://www.youtube.com/watch?v=YY-_yrZdjGc
+[Q1 2021 survey]: {{site.medium}}/flutter/which-factors-affected-users-decisions-to-adopt-flutter-q1-2021-user-survey-results-563e61fc68c9
 
 ---
 
