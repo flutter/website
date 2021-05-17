@@ -14,8 +14,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   final uri = Uri.parse('https://jsonplaceholder.typicode.com/photos');
   final response = await client.get(uri);
 
-  // Use the compute function to run parsePhotos in a separate isolate.
-  return compute(parsePhotos, response.body);
+  return parsePhotos(response.body);
 }
 // #enddocregion parsePhotos
 
