@@ -5,31 +5,26 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-// #docregion fetchPhotos
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+  final uri = Uri.parse('https://jsonplaceholder.typicode.com/photos');
+  final response = await client.get(uri);
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
 }
-// #enddocregion fetchPhotos
 
 // A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
-
-  return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
+  final parsed = jsonDecode(responseBody) as List;
+  return [for (final json in parsed) Photo.fromJson(json)];
 }
 
+@immutable
 class Photo {
-  final int albumId;
-  final int id;
-  final String title;
-  final String url;
-  final String thumbnailUrl;
+  final int albumId, id;
+  final String title, url, thumbnailUrl;
 
-  Photo({
+  const Photo({
     required this.albumId,
     required this.id,
     required this.title,
@@ -37,7 +32,7 @@ class Photo {
     required this.thumbnailUrl,
   });
 
-  factory Photo.fromJson(Map<String, dynamic> json) {
+  factory Photo.fromJson(Map<String, Object?> json) {
     return Photo(
       albumId: json['albumId'] as int,
       id: json['id'] as int,
@@ -48,16 +43,17 @@ class Photo {
   }
 }
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  static const _appTitle = 'Isolate Demo';
+
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'Isolate Demo';
-
-    return MaterialApp(
-      title: appTitle,
-      home: MyHomePage(title: appTitle),
+    return const MaterialApp(
+      title: _appTitle,
+      home: MyHomePage(title: _appTitle),
     );
   }
 }
@@ -65,7 +61,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,11 +72,13 @@ class MyHomePage extends StatelessWidget {
       body: FutureBuilder<List<Photo>>(
         future: fetchPhotos(http.Client()),
         builder: (context, snapshot) {
-          if (snapshot.hasError) print(snapshot.error);
-
+          if (snapshot.hasError) {
+            print(snapshot.error);
+            return const Center(child: Icon(Icons.error));
+          }
           return snapshot.hasData
               ? PhotosList(photos: snapshot.data!)
-              : Center(child: CircularProgressIndicator());
+              : const Center(child: CircularProgressIndicator());
         },
       ),
     );
@@ -90,12 +88,12 @@ class MyHomePage extends StatelessWidget {
 class PhotosList extends StatelessWidget {
   final List<Photo> photos;
 
-  PhotosList({Key? key, required this.photos}) : super(key: key);
+  const PhotosList({Key? key, required this.photos}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
       ),
       itemCount: photos.length,
