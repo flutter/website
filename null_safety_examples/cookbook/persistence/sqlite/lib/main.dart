@@ -18,6 +18,7 @@ void main() async {
     join(await getDatabasesPath(), 'doggie_database.db'),
     // When the database is first created, create a table to store dogs.
     onCreate: (db, version) {
+      // Run the CREATE TABLE statement on the database.
       return db.execute(
         'CREATE TABLE dogs(id INTEGER PRIMARY KEY, name TEXT, age INTEGER)',
       );
@@ -29,6 +30,7 @@ void main() async {
   // #enddocregion openDatabase
 
   // #docregion insertDog
+  // Define a function that inserts dogs into the database
   Future<void> insertDog(Dog dog) async {
     // Get a reference to the database.
     final db = await database;
@@ -45,6 +47,7 @@ void main() async {
   // #enddocregion insertDog
 
   // #docregion dogs
+  // A method that retrieves all the dogs from the dogs table.
   Future<List<Dog>> dogs() async {
     // Get a reference to the database.
     final db = await database;
@@ -97,13 +100,13 @@ void main() async {
   // #enddocregion deleteDog
 
   // #docregion fido
+  // Create a Dog and add it to the dogs table
   var fido = Dog(
     id: 0,
     name: 'Fido',
     age: 35,
   );
 
-  // Insert a dog into the database.
   await insertDog(fido);
   // #enddocregion fido
 
@@ -144,6 +147,8 @@ class Dog {
     required this.age,
   });
 
+  // Convert a Dog into a Map. The keys must correspond to the names of the
+  // columns in the database.
   Map<String, dynamic> toMap() {
     return {
       'id': id,
