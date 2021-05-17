@@ -46,7 +46,11 @@ To uninstall Flutter and all of its contents,
 
 ### Removing .pub_cache
 
-Package dependencies are stored in a global cache so that pub does not have to re-download the same versions of the package for different packages.
+Package dependencies are stored in a [global cache directory][].
+This directory can be large. To see exactly how large, in Windows Explorer,
+select the file, and select **Properties** from the XXX menu.
+
+[global cache directory]: {{site.dart-site}}/tools/pub/cmd/pub-cache
 
 To remove .pub_cache
 
