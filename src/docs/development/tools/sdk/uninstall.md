@@ -57,7 +57,9 @@ To remove the cache directory, do the following:
 - Navigate to `%LOCALAPPDATA%\Pub\Cache` and delete the folder.
 
 {{site.alert.note}}
-If the .pub_cache location was changed using the PUB_CACHE environment variable, navigate to that location and then right click and delete the folder.
+  If the .pub_cache location was changed using the `PUB_CACHE`
+  environment variable, navigate to that location and then right click
+  and delete the folder.
 {{site.alert.end}}
 
 - If you’re unaware of the location and want to get the path,
