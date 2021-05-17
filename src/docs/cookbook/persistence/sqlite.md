@@ -384,10 +384,9 @@ void main() async {
     // Get a reference to the database.
     final db = await database;
 
-    // Insert the Dog into the correct table. You might also specify the
-    // `conflictAlgorithm` to use in case the same dog is inserted twice.
-    //
-    // In this case, replace any previous data.
+    // Insert the Dog into the correct table. Also specify the
+    // `conflictAlgorithm`. In this case, if the same dog is inserted
+    // multiple times, it replaces the previous data.
     await db.insert(
       'dogs',
       dog.toMap(),
