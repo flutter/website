@@ -35,11 +35,13 @@ To uninstall Flutter and all of its contents,
 - Right click on the SDK folder and click delete.
 
 {{site.alert.note}}
-If you experience any errors at this stage, such as,
-“Unable to complete action as the folder is in use”,
-Open the task manager by pressing CTRL + ALT + DEL keys together.
-Search for the running dart.exe, select and click the end process to quit the Dart VM.
-Repeat the above steps to remove the Flutter SDK.
+  If you experience any errors at this stage, such as,
+  “Unable to complete action as the folder is in use”,
+  do the following:
+  * Open the task manager by pressing CTRL + ALT + DEL keys together.
+  * Search for the running `dart.exe` process,
+   select and click **end process** to quit the Dart VM.
+  * Repeat the above steps to remove the Flutter SDK.
 {{site.alert.end}}
 
 ### Removing .pub_cache
