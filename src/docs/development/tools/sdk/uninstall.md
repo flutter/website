@@ -154,7 +154,4 @@ On Mac,
 ### We'll miss you
 
 We’re sad to see you go, and we hope to see you back soon!
-
-Please help us understand your decision by filling out this feedback form.
-
 </div>
