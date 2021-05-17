@@ -82,9 +82,6 @@ echo %PUB_CACHE%.
 ### We'll miss you
 
 We’re sad to see you go, and we hope to see you back soon!
-
-Please help us understand your decision by filling out this feedback form.
-
 </div>
 <div class="tab-pane active" id="maclinux" role="tabpanel" aria-labelledby="maclinux" markdown="1">
 
