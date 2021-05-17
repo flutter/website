@@ -52,7 +52,7 @@ select the file, and select **Properties** from the XXX menu.
 
 [global cache directory]: {{site.dart-site}}/tools/pub/cmd/pub-cache
 
-To remove .pub_cache
+To remove the cache directory, do the following:
 
 - Navigate to `%LOCALAPPDATA%\Pub\Cache` and delete the folder.
 
