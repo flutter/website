@@ -305,9 +305,35 @@ $ flutter run -d macos
 $ flutter run -d linux
 ```
 
+The situation for running Flutter with Windows UWP is a little
+more complicated. Firstly, as mentioned above you need to be
+on the `dev` channel. Secondly, you need to run an override for
+the UWP sandbox to enable the injection of Dart code into the
+running UWP process to enable debugging and Hot Reload.
+
+The suggested approach during development is to first run
+`flutter run -d winuwp` from the command line, which will
+give you a command that you need to run from a PowerShell
+with Administrator privileges. 
+
+```terminal
+```
+
+Run this command as shown. You can then leave this process
+running for the length of your development session, restarting
+your UWP app as required. 
+
+Once you have this process running, you can deploy to 
+Windows UWP from within your IDE as normal, or run from 
+the command line as follows:
+
+```terminal
+$ flutter run -d winuwp
+```
+
 {{site.alert.note}}
-  If there aren't any other connected devices,
-  the `-d <platform>` tag is optional.
+  If you do not supply the `-d` flag, `flutter run` will list 
+  the available targets to choose from.
 {{site.alert.end}}
 
 ## Build a release app
