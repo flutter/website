@@ -15,10 +15,10 @@ macOS, or Linux platforms, or you can create your own.
   This page covers desktop support,
   which is available as a beta release for 
   Windows (Win32), macOS and Linux. The Windows UWP
-  support is available as a dev release. Beta 
+  support is available as a alpha release. Beta 
   support still has notable feature gaps,
   including accessibility support. Meanwhile, the 
-  Windows UWP dev release is still in 
+  Windows UWP alpha release is still in 
   very active development. You can try a beta 
   snapshot of desktop support on the `stable` 
   channel, or you can keep up with the latest 

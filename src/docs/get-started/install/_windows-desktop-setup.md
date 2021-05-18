@@ -4,7 +4,7 @@
   **Beta (Win32) and Dev (UWP)!**
   This area covers Windows desktop support,
   which is available in beta release (Win32)
-  and dev release (UWP).
+  and alpha release (UWP).
 
   The Win32 variant still has notable feature gaps,
   including accessibility support, while the 
