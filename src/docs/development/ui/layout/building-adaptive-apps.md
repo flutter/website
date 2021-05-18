@@ -697,8 +697,8 @@ class CreateNewItemIntent extends Intent {
 Widget build(BuildContext context) {
  return Shortcuts(
    // Bind intents to key combinations
-   shortcuts: <LogicalKeySet, Intent>{
-     LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyN): CreateNewItemIntent(),
+    shortcuts: <ShortcutActivator, Intent>{
+      SingleActivator(LogicalKeyboardKey.keyN, control: true): CreateNewItemIntent(),
    },
    child: Actions(
      // Bind intents to an actual method in your code
@@ -813,7 +813,7 @@ rollover and hover effects:
 return MouseRegion(
  onEnter: (_) => setState(() => _isMouseOver = true),
  onExit: (_) => setState(() => _isMouseOver = false),
- onHover: (e) => print((e as PointerHoverEvent).localPosition);
+ onHover: (PointerHoverEvent e) => print(e.localPosition),
  child: ... 
 ```
 
