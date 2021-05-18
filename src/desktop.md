@@ -302,11 +302,46 @@ $ flutter run -d macos
 $ flutter run -d linux
 ```
 
-The situation for running Flutter with Windows UWP is a little
-more complicated. Firstly, as mentioned above you need to be
-on the `dev` channel. Secondly, you need to run an override for
-the UWP sandbox to enable the injection of Dart code into the
-running UWP process to enable debugging and Hot Reload.
+{{site.alert.note}}
+  If you do not supply the `-d` flag, `flutter run` will list
+  the available targets to choose from.
+{{site.alert.end}}
+
+## Windows UWP
+
+{{site.alert.warning}}
+  **Alpha!**
+  Flutter Windows UWP desktop support is an alpha release, 
+  available on the `dev` channel. 
+{{site.alert.end}}
+
+To get started with Windows UWP you need to be using Windows 10. 
+You need to install Visual Studio (not Visual Studio _Code_) with the 
+"Universal Windows Platform development" workload and the optional 
+Windows UWP C++ tools. 
+
+To configure Flutter for Windows UWP development, 
+perform the following commands to switch to
+the `dev` channel, upgrade Flutter, and enable 
+Windows UWP desktop support.
+
+```terminal
+PS C:\> flutter channel dev
+PS C:\> flutter upgrade
+PS C:\> flutter config --enable-windows-uwp-desktop
+```
+
+To create a new application, run the following commands:
+
+```terminal
+PS C:\> flutter create myapp
+PS C:\> cd myapp
+```
+
+Running Flutter with Windows UWP is complicated due to UWP's 
+sandboxed runtime. You need to run an override for the sandbox 
+to enable the injection of Dart code into the running UWP 
+process to enable debugging and Hot Reload.
 
 The suggested approach during development is to first run
 `flutter run -d winuwp` from the command line, which will
@@ -314,10 +349,10 @@ give you a command that you need to run from a PowerShell
 with Administrator privileges.
 
 ```terminal
-PS C:\desktop_test> flutter run -d winuwp
+PS C:\myapp> flutter run -d winuwp
 Launching lib\main.dart on Windows (UWP) in debug mode...
-LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification [C:\src\flutter-projects\desktop_test\build\winuwp\runner_uwp\app.vcxproj]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3327,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it. [C:\src\flutter-projects\desktop_test\build\winuwp\runner_uwp\app.vcxproj]
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification [C:\src\flutter-projects\myapp\build\winuwp\runner_uwp\app.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3327,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it. [C:\src\flutter-projects\myapp\build\winuwp\runner_uwp\app.vcxproj]
 Building Windows UWP application...
 Enable Flutter debugging from localhost.
 
@@ -348,13 +383,8 @@ Windows UWP from within your IDE as normal, or run from
 the command line as follows:
 
 ```terminal
-PS C:\desktop_test> flutter run -d winuwp
+PS C:\myapp> flutter run -d winuwp
 ```
-
-{{site.alert.note}}
-  If you do not supply the `-d` flag, `flutter run` will list
-  the available targets to choose from.
-{{site.alert.end}}
 
 ## Build a release app
 
