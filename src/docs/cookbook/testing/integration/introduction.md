@@ -210,6 +210,7 @@ This involves four steps:
   4. Disconnect from the app in the `teardownAll()` function after the tests
      complete.
 
+<!-- skip -->
 ```dart
 // Imports the Flutter Driver API.
 import 'package:flutter_driver/flutter_driver.dart';
