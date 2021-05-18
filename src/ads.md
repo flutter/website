@@ -11,7 +11,8 @@ Flutter ads support is available through the
 which works with both AdMob and AdManager.
 This plugin supports a variety of ad formats,
 including banner (inline and overlay),
-interstitial, rewarded video, and native ads.
+interstitial, rewarded video, native ads,
+and adaptive banner.
 
 ![Pic showing different types of ads]({% asset ads/GoogleMobileAdTypes.png @path %}){:width="100%"}
 
