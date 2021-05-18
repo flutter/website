@@ -13,16 +13,16 @@ macOS, or Linux platforms, or you can create your own.
 {{site.alert.warning}}
   **Beta!**
   This page covers desktop support,
-  which is available as a beta release for 
+  which is available as a beta release for
   Windows (Win32), macOS and Linux. The Windows UWP
-  support is available as a alpha release. Beta 
+  support is available as a alpha release. Beta
   support still has notable feature gaps,
-  including accessibility support. Meanwhile, the 
-  Windows UWP alpha release is still in 
-  very active development. You can try a beta 
-  snapshot of desktop support on the `stable` 
-  channel, or you can keep up with the latest 
-  changes to desktop on the `beta` channel. For 
+  including accessibility support. Meanwhile, the
+  Windows UWP alpha release is still in
+  very active development. You can try a beta
+  snapshot of desktop support on the `stable`
+  channel, or you can keep up with the latest
+  changes to desktop on the `beta` channel. For
   Windows UWP you need to be on the `dev` channel.
 
   For more information, see the **Desktop**
@@ -169,7 +169,7 @@ $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
 
-For Windows UWP desktop support perform the following commands to switch to 
+For Windows UWP desktop support perform the following commands to switch to
 the `dev` channel, upgrade Flutter, and enable UWP.
 
 ```terminal
@@ -198,17 +198,17 @@ any unresolved issues. It should look something like
 the following on Windows:
 
 ```terminal
-PS C:\> flutter doctor                                                                     
+PS C:\> flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
 [√] Flutter (Channel stable, 2.0.6, on Microsoft Windows [Version 10.0.19042.804], locale en-AU)
 [√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [√] Chrome - develop for the web
 [√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.9.5)
-[√] Android Studio (version 4.1.0)   
+[√] Android Studio (version 4.1.0)
 [√] VS Code (version 1.56.2)
 [√] Connected device (3 available)
 
-! No issues found!                                                           
+! No issues found!
 ```
 
 On macOS, you might see something like the following:
@@ -311,14 +311,14 @@ running UWP process to enable debugging and Hot Reload.
 The suggested approach during development is to first run
 `flutter run -d winuwp` from the command line, which will
 give you a command that you need to run from a PowerShell
-with Administrator privileges. 
+with Administrator privileges.
 
 ```terminal
 PS C:\desktop_test> flutter run -d winuwp
 Launching lib\main.dart on Windows (UWP) in debug mode...
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification [C:\src\flutter-projects\desktop_test\build\winuwp\runner_uwp\app.vcxproj]
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3327,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it. [C:\src\flutter-projects\desktop_test\build\winuwp\runner_uwp\app.vcxproj]
-Building Windows UWP application...                                     
+Building Windows UWP application...
 Enable Flutter debugging from localhost.
 
 Windows UWP apps run in a sandboxed environment. To enable Flutter debugging
@@ -328,13 +328,13 @@ Flutter tool running on your machine. To do so:
   2. Enter the following command:
      checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
 
-Press "Y" once this is complete, or "N" to abort.: 
+Press "Y" once this is complete, or "N" to abort.:
 ```
 
-Run this `checknetisolation` command as shown in a PowerShell 
-as Administrator. You can then leave this process running for 
-the length of your development session, restarting your UWP app 
-as required. 
+Run this `checknetisolation` command as shown in a PowerShell
+as Administrator. You can then leave this process running for
+the length of your development session, restarting your UWP app
+as required.
 
 ```terminal
 PS C:\> checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
@@ -343,8 +343,8 @@ Network Isolation Debug Session started.
 Reproduce your scenario, then press Ctrl-C when done.
 ```
 
-Once you have this process running, you can deploy to 
-Windows UWP from within your IDE as normal, or run from 
+Once you have this process running, you can deploy to
+Windows UWP from within your IDE as normal, or run from
 the command line as follows:
 
 ```terminal
@@ -352,7 +352,7 @@ PS C:\desktop_test> flutter run -d winuwp
 ```
 
 {{site.alert.note}}
-  If you do not supply the `-d` flag, `flutter run` will list 
+  If you do not supply the `-d` flag, `flutter run` will list
   the available targets to choose from.
 {{site.alert.end}}
 

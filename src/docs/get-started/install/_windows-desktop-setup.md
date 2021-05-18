@@ -7,15 +7,15 @@
   and alpha release (UWP).
 
   The Win32 variant still has notable feature gaps,
-  including accessibility support, while the 
+  including accessibility support, while the
   UWP variant is still in very active development.
-  
+
   You can try a beta snapshot of Win32 desktop support
   on the stable channel, or you can keep up
   with the latest changes to desktop on the
-  `beta` channel. For Windows UWP you need 
+  `beta` channel. For Windows UWP you need
   to be on the `dev` channel.
-  
+
   For more information, see the **Desktop**
   section in [What's new in Flutter 2][],
   a free article on Medium.
@@ -43,7 +43,7 @@ At the command line, perform the following command to enable Win32 desktop suppo
 $ flutter config --enable-windows-desktop
 ```
 
-For Windows UWP desktop support perform the following commands to switch to 
+For Windows UWP desktop support perform the following commands to switch to
 the `dev` channel, upgrade Flutter, and enable UWP.
 
 ```terminal
