@@ -251,6 +251,7 @@
       { "source": "/go/null-safety-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/null_safety_workshop", "type": 301 },
       { "source": "/go/sliver-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/getting_started_with_slivers", "type": 301 },
       { "source": "/go/inheritedwidget-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/inherited_widget", "type": 301 },
+      { "source": "/go/federated-platforms", "destination": "https://docs.google.com/document/d/1z_4Z5JMTbk5c4FpayVAb-PTz2wLP-aSCirbieavT3Ws/edit?usp=sharing", "type": 301 },
 
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },
