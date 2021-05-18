@@ -28,6 +28,8 @@ The following breaking changes have been reverted.
 
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
 
+### Released in Flutter 2.2
+
 ### Released in Flutter 2
 
 * [Added BuildContext parameter to TextEditingController.buildTextSpan][]

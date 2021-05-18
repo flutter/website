@@ -15,7 +15,8 @@ join the [flutter-announce][] Google group.
 ## May 18, 2021, Google I/O Edition
 
 Flutter 2.2 is live! For details, see
-[Announcing Flutter 2.2][].
+[Announcing Flutter 2.2][] and
+[What's New in Flutter 2.2][].
 
 We continue migrating code on the website to use
 null safety, but that work is not yet completed.
@@ -75,6 +76,8 @@ publication since the last stable release:
 [Slivers workshop DartPad]: /go/sliver-workshop
 [Slivers workshop video]: https://www.youtube.com/watch?v=YY-_yrZdjGc
 [Q1 2021 survey]: {{site.medium}}/flutter/which-factors-affected-users-decisions-to-adopt-flutter-q1-2021-user-survey-results-563e61fc68c9
+[What's New in Flutter 2.2]: xxx
+
 
 ---
 

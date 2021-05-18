@@ -129,6 +129,11 @@ Learn how to use Flutter with other technologies.
   to a travel booking app that lists possible
   flight destinations.
 
+* [Adding in-app purchases to your Flutter app][]<br>
+  Extend a simple gaming app that uses the Dash mascot as
+  currency to offer three types of in-app purchases:
+  consumable, non-consumable, and subscription.
+
 * [Get to know Firebase for Flutter][]<br>
   Build an event RSVP and guestbook chat app on both Android
   and iOS using Flutter, authenticating users with Firebase
@@ -143,6 +148,7 @@ Learn how to use Flutter with other technologies.
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
 [Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
+[Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
 [Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
