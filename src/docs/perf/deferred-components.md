@@ -366,6 +366,7 @@ The validator also checks for the following in the
   <string name="boxComponentName">boxComponent</string>
 </resources>
 ```
+</li>
 
 <li markdown="1">**`<projectDir>/android/<componentName>`**<br>
     An Android dynamic feature module for
