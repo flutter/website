@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:web_socket_channel/io.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
   // #docregion connect
-  final _channel = IOWebSocketChannel.connect('wss://echo.websocket.org');
+  final _channel = WebSocketChannel.connect('wss://echo.websocket.org');
   // #enddocregion connect
 
   @override
