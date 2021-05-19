@@ -65,7 +65,9 @@
               permalink: /docs/development/ui/layout/tutorial
             - title: Creating adaptive and responsive apps
               permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: Understanding constraints [NEW]
+            - title: Building adaptive apps [NEW]
+              permalink: /docs/development/ui/layout/building-adaptive-apps
+            - title: Understanding constraints
               permalink: /docs/development/ui/layout/constraints
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
