@@ -200,6 +200,7 @@
       { "source": "/go/plugins-team", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfpPqJYuL_RzLaTCjrWYw73Zrrei3YiU8B5eTrDBh4fuGhbXw/viewform?usp=sf_link", "type": 301 },
       { "source": "/go/rasterizer-pipeline-improvements", "destination": "https://docs.google.com/document/d/1Hg5Wfx8JTgYmLboxFRr5DDd9EfdrdEuMbNGGMvDjd6E/edit?usp=sharing", "type": 301 },
       { "source": "/go/reference-plugin", "destination": "https://docs.google.com/document/d/1NJFbRMVxVL9YS_FcWi7W08DsBr_eRAJtQI9FQkk9MXk/edit", "type": 301 },
+      { "source": "/go/registered-actions", "destination": "https://docs.google.com/document/d/1RrAWQ-rq-XcrjJx4Jegn8NdJKNHfLem6MkAJrI8Q_1w/edit?usp=sharing", "type": 301 },
       { "source": "/go/remove-fab-accent-theme-dependency", "destination": "https://docs.google.com/document/d/1kmXWerkykXXjMfibsc9O105NocBGH3dGW8UL2VH5Q48/edit", "type": 301 },
       { "source": "/go/remove-include-flutter-groovy", "destination": "https://docs.google.com/document/d/1OulURfRSWgJnnFA_cSup4ev7wrJwnZ7Siao_FGbLN9I", "type": 301 },
       { "source": "/go/reorderable-list-view-update", "destination": "https://docs.google.com/document/d/1JzNtMQ-jnPnSHEBoi6IO0x2qMMylwhvRslEDcmqiwSs", "type": 301 },
