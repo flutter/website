@@ -115,10 +115,6 @@ Learn how to use Flutter with other technologies.
   Display a Google map in an app, retrieve data from a
   web service, and display the data as markers on the map.
 
-* [Build a photo sharing app with Google Photos and Flutter][]<br>
-  Build a field trip app that allows you and other
-  members of the trip to share photos.
-
 * [Adding AdMob Ads to a Flutter app][]<br>
   Learn how to add an AdMob banner, an interstitial ad,
   and a rewarded ad to an app called Awesome Drawing Quiz,
@@ -134,12 +130,22 @@ Learn how to use Flutter with other technologies.
   currency to offer three types of in-app purchases:
   consumable, non-consumable, and subscription.
 
-* [Get to know Firebase for Flutter][]<br>
+* [Build a photo sharing app with Google Photos and Flutter][]<br>
+  Build a field trip app that allows you and other
+  members of the trip to share photos.
+
+* [Build voice bots for mobile with Dialogflow and Flutter][] [NEW]<br>
+  Learn how to build a mobile FAQ bot that can answer most
+  common questions about the tool Dialogflow. End users
+  can interact with the text interface or stream a voice
+  interaction via the built-in microphone of a mobile device.
+
+* [Get to know Firebase for Flutter][] [NEW]<br>
   Build an event RSVP and guestbook chat app on both Android
   and iOS using Flutter, authenticating users with Firebase
   Authentication and sync data using Cloud Firestore.
 
-* [Multi-platform Firestore Flutter][]<br>
+* [Multi-platform Firestore Flutter][] [NEW]<br>
   Build a multi-platform restaurant recommendation app
   powered by Flutter and Cloud Firestore.
   The finished app runs on Android, iOS, and web,
@@ -150,6 +156,7 @@ Learn how to use Flutter with other technologies.
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
+[Build voice bots for mobile with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
 [Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 

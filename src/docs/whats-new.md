@@ -23,34 +23,55 @@ null safety, but that work is not yet completed.
 
 **Docs updated or added since the 2.0 release**
 
-* A new page on how to [Build adaptive apps][].
+* A new page on [Building adaptive apps][].
 * A new page describing how to use [Google APIs][]
   with Flutter.
 * A new landing page for [Embedded Support for Flutter][].
 * A new page on setting up and using [Deferred components][]
   on Android.
 * Significant updates to the DevTools [Memory view page][].
+* The [desktop][] page is updated to reflect the progress
+  on desktop support, particularly the new support for
+  Windows UWP.
 
 
+{% comment %}
 - migration guides (drag gestures and package:flutter_lints, depending)
+{% endcomment %}
 
 **Codelabs**
 
 New codelabs since the last stable release:
 
 * [Adding in-app purchases to your Flutter app][]
+* [Build Voice Bots for Android with Dialogflow Essentials & Flutter][]
 * [Get to know Firebase for Flutter][]
 
 **Workshops**
 
-For Google I/O 2021, we have added a new learning tool:
-Workshops! These workshops, built on top of DartPad,
-are instructor led. The instructor-led videos are available
-on the Flutter YouTube channel.
+For Google I/O 2021, we have added a new
+Flutter/Dart learning tool that
+is based on DartPad: Workshops!
+These workshops are designed to be instructor led.
+The instructor-led videos are available on the
+Flutter and Firebase YouTube channels:
 
-* [Inherited widgets video][], [Inherited widgets DartPad][]
-* [Null safety workshop video][], [Null safety workshop DartPad][]
-* [Slivers workshop video][], [Slivers workshop DartPad][]
+* [Building your first Flutter app][]
+* [Firebase for Flutter][]
+* [Flutter and Dialogflow voice bots][]
+* [Inherited widgets][]
+* [Null safety][]
+* [Slivers][]
+
+To see the list of workshops available at I/O,
+see the [Google 2021 I/O workshops][] page.
+
+You can author your own DartPad workshops!
+If you are interested, check out the following resources:
+
+* [DartPad Workshop Authoring Guide][]
+* [DartPad Sharing Guide (using a Gist file)][]
+* [Embedding DartPad in your web page][]
 
 **Articles**
 
@@ -62,21 +83,28 @@ publication since the last stable release:
 
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: {{site.medium}}/flutter/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
-[Build adaptive apps]: /docs/development/ui/layout/build-adaptive-apps
+[Building adaptive apps]: /docs/development/ui/layout/building-adaptive-apps
+[Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
+[Building your first Flutter app]: https://www.youtube.com/watch?v=Z6KZ3cTGBWw
+[DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
+[DartPad Workshop Authoring Guide]: {{site.github}}/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
 [Deferred components]: /docs/perf/deferred-components
+[desktop]: /desktop
 [Embedded Support for Flutter]: /embedded
+[Embedding DartPad in your web page]: {{site.github}}/dart-lang/dart-pad/wiki/Embedding-Guide
+[Firebase for Flutter]: https://www.youtube.com/watch?v=4wunbF29Kkg
+[Flutter and Dialogflow voice bots]: https://www.youtube.com/watch?v=O7JfSF3CJ84
 [Get to know Firebase for Flutter]: https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0
 [Google APIs]: /docs/development/data-and-backend/google-apis
+[Google I/O workshops page]: https://events.google.com/io/program/content?4=topic_flutter&5=type_workshop&lng=en
 [How It's Made: I/O Photo Booth]: {{site.medium}}/flutter/how-its-made-i-o-photo-booth-3b8355d35883
-[Inherited widgets video]: https://www.youtube.com/watch?v=W4p6B45SJuo
+[Inherited widgets]: https://youtu.be/LFcGPS6cGrY
 [Inherited widgets DartPad]: /go/inheritedwidget-workshop
 [Memory view page]: /docs/development/tools/devtools/memory
-[Null safety workshop video]: https://www.youtube.com/watch?v=Nsp4sFbouN4
-[Null safety workshop DartPad]: /go/null-safety-workshop
-[Slivers workshop DartPad]: /go/sliver-workshop
-[Slivers workshop video]: https://www.youtube.com/watch?v=YY-_yrZdjGc
+[Null safety]: https://youtu.be/HdKwuHQvArY
+[Slivers]: https://www.youtube.com/watch?v=YY-_yrZdjGc
 [Q1 2021 survey]: {{site.medium}}/flutter/which-factors-affected-users-decisions-to-adopt-flutter-q1-2021-user-survey-results-563e61fc68c9
-[What's New in Flutter 2.2]: xxx
+[What's New in Flutter 2.2]: https://medium.com/flutter/whats-new-in-flutter-2-2-fd00c65e2039
 
 
 ---
