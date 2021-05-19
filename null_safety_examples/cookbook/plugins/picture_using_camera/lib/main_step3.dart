@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +41,6 @@ class TakePictureScreen extends StatefulWidget {
 
 class TakePictureScreenState extends State<TakePictureScreen> {
   late CameraController _controller;
-  late Future<void> _initializeControllerFuture;
 
   @override
   void initState() {
@@ -57,7 +55,6 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     );
 
     // Next, initialize the controller. This returns a Future.
-    _initializeControllerFuture = _controller.initialize();
   }
 
   @override

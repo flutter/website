@@ -71,7 +71,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Take a picture')),
+      appBar: AppBar(title: const Text('Take a picture')),
       // #docregion FutureBuilder
       // You must wait until the controller is initialized before displaying the
       // camera preview. Use a FutureBuilder to display a loading spinner until the
@@ -84,7 +84,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             return CameraPreview(_controller);
           } else {
             // Otherwise, display a loading indicator.
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),
@@ -117,7 +117,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             print(e);
           }
         },
-        child: Icon(Icons.camera_alt),
+        child: const Icon(Icons.camera_alt),
       ),
     );
   }
@@ -132,7 +132,7 @@ class DisplayPictureScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Display the Picture')),
+      appBar: AppBar(title: const Text('Display the Picture')),
       // The image is stored as a file on the device. Use the `Image.file`
       // constructor with the given path to display the image.
       body: Image.file(File(imagePath)),
