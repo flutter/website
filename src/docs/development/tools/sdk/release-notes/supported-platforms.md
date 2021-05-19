@@ -5,24 +5,24 @@ description: The platforms that Flutter supports by platform version.
 ---
 
 ## Supported platforms
-As of Flutter 2, we support the following platforms:
+As of Flutter 2.2, we support the following platforms:
 
 |Platform|Version                       |Channels |
-|--------|------------------------------|--------|
-|Android | API 16 & above               | All    |
-|iOS     | iOS 8 & above                | All    |
-|Linux   | Debian 10 & above            | All    |
-|macOS   | El Capitan & above           | All    |
-|Web     | Chrome 84  & above           | All    |
-|Web     | Firefox 72.0 & above         | All    |
-|Web     | Safari on El Capitan & above | All    |
-|Web     | Edge 1.2.0 & above           | All    |
-|Windows |Windows 7 & above             | All    |
+|--------|------------------------------|---------|
+|Android | API 19 & above               | All     |
+|iOS     | iOS 9 & above                | All     |
+|Linux   | Debian 10 & above            | All     |
+|macOS   | El Capitan & above           | All     |
+|Web     | Chrome 84  & above           | All     |
+|Web     | Firefox 72.0 & above         | All     |
+|Web     | Safari on El Capitan & above | All     |
+|Web     | Edge 1.2.0 & above           | All     |
+|Windows | Windows 7 & above            | All     |
 
 
 Note that while macOS, Linux, are in the stable channel to enable you to
-easily see your application running on the desktop,  
-as of Flutter 2.0 they are considered beta quality. 
+easily see your application running on the desktop, as of Flutter 2.0 
+they are considered beta quality. 
 
 ## How we define a supported platform
 
@@ -74,27 +74,23 @@ minimal.
 ### Best effort platforms tested by the community
 
 |Platform|Version       |
-|-------|---------------|
-|Android|Android SDK 22 |
-|Android|Android SDK 20 |
-|Android|Android SDK 18 |
-|Android|Android SDK 17 |
-|Android|Android SDK 16 |
-|iOS    |iOS 13.1       |
-|iOS    |iOS 12.1-12.3  |
-|iOS    |iOS 10 (all)   |
-|iOS    |iOS 9.0        |
-|iOS    |iOS 8 (all)    |
-|Windows|Windows 8      |
-|Windows|Windows 7      |
-|Linux  | Debian & below |
+|--------|---------------|
+|Android |Android SDK 22 |
+|Android |Android SDK 20 |
+|iOS     |iOS 13.1       |
+|iOS     |iOS 12.1-12.3  |
+|iOS     |iOS 10 (all)   |
+|iOS     |iOS 9.0        |
+|Windows |Windows 8      |
+|Windows |Windows 7      |
+|Linux   |Debian & below |
 
 ### Unsupported platforms
 
-|Platform|Version              |
-|--------|---------------------|
-|Android|Android SDK 15 & below|
-|iOS    |iOS 7 & below         |
-|Windows|Windows Vista & below |
-|Windows|Any 32-bit platform   |   
-|macOS  | Yosemite & below     |
+|Platform|Version               |
+|--------|----------------------|
+|Android |Android SDK 18 & below|
+|iOS     |iOS 8 & below         |
+|Windows |Windows Vista & below |
+|Windows |Any 32-bit platform   |   
+|macOS   | Yosemite & below     |
