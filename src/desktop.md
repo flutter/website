@@ -13,13 +13,18 @@ macOS, or Linux platforms, or you can create your own.
 {{site.alert.warning}}
   **Beta!**
   This page covers desktop support,
-  which is available as a beta release.
-  Beta support still has notable feature gaps,
-  including accessibility support.
-  You can try a beta snapshot of desktop support
-  on the stable channel, or you can keep up
-  with the latest changes to desktop on the
-  beta channel.
+  which is available as a beta release for
+  Windows (Win32), macOS and Linux. The Windows UWP
+  support is available as a alpha release. Beta
+  support still has notable feature gaps,
+  including accessibility support. Meanwhile, the
+  Windows UWP alpha release is still in
+  very active development. You can try a beta
+  snapshot of desktop support on the `stable`
+  channel, or you can keep up with the latest
+  changes to desktop on the `beta` channel. For
+  Windows UWP you need to be on the `dev` channel.
+
   For more information, see the **Desktop**
   section in [What's new in Flutter 2][],
   a free article on Medium.
@@ -34,7 +39,7 @@ macOS, or Linux platforms, or you can create your own.
   a macOS application on macOS, and a Linux application on Linux.
   If you experience a problem that hasn’t yet been reported,
   please [file an issue][] and include
-  "desktop:macos/linux/windows"
+  "desktop:windows (win32)/windows (uwp)/macos/linux"
   (whichever platform is appropriate) in the title.
 {{site.alert.end}}
 
@@ -82,9 +87,11 @@ For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
 * [Visual Studio 2019][] (not to be confused with
-  Visual Studio _Code_) with the
+  Visual Studio _Code_). For Win32 you need the
   "Desktop development with C++" workload installed,
-  including all of its default components
+  including all of its default components. For UWP
+  you need the "Universal Windows Platform development"
+  workload installed, with the optional UWP C++ tools.
 
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
 
@@ -162,11 +169,20 @@ $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
 
+For Windows UWP desktop support perform the following commands to switch to
+the `dev` channel, upgrade Flutter, and enable UWP.
+
+```terminal
+$ flutter channel dev
+$ flutter upgrade
+$ flutter config --enable-windows-uwp-desktop
+```
+
 To ensure that desktop _is_ enabled,
 list the devices available.
 You should see something like the following
 (you'll see Windows, macOS, or Linux,
-depending on which platforms you've enabled):
+depending on which platform you are running on):
 
 ``` terminal
 $ flutter devices
@@ -182,15 +198,17 @@ any unresolved issues. It should look something like
 the following on Windows:
 
 ```terminal
-PS > flutter doctor                                                                     
-Doctor summary (to see all details, run flutter doctor -v):                                           
-[√] Flutter (Channel beta, 1.27.0-1.0.pre, on Microsoft Windows [Version 10.0.19042.782], locale en-AU)
-[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)                      
-[√] Chrome - develop for the web                                                                      
-[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.7.7)                         
-[√] Android Studio (version 4.1.0)                                                                    
-[√] VS Code (version 1.51.1)                                                                          
-[√] Connected device (3 available)                                                                    
+PS C:\> flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[√] Flutter (Channel stable, 2.0.6, on Microsoft Windows [Version 10.0.19042.804], locale en-AU)
+[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[√] Chrome - develop for the web
+[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.9.5)
+[√] Android Studio (version 4.1.0)
+[√] VS Code (version 1.56.2)
+[√] Connected device (3 available)
+
+! No issues found!
 ```
 
 On macOS, you might see something like the following:
@@ -198,13 +216,15 @@ On macOS, you might see something like the following:
 ```terminal
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel beta, 1.27.0-1.0.pre, on macOS 11.2.1 20D74 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+[✓] Flutter (Channel stable, 2.0.6, on macOS 11.3.1 20E241 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
 [✓] Xcode - develop for iOS and macOS
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 4.1)
-[✓] VS Code (version 1.53.2)
+[✓] Android Studio (version 4.0)
+[✓] VS Code (version 1.56.2)
 [✓] Connected device (3 available)
+
+• No issues found!
 ```
 
 On Linux, you might see something like the following:
@@ -277,15 +297,94 @@ enter one of the following commands from the top
 of the package:
 
 ```terminal
-$ flutter run -d windows
+PS C:\> flutter run -d windows
 $ flutter run -d macos
 $ flutter run -d linux
 ```
 
 {{site.alert.note}}
-  If there aren't any other connected devices,
-  the `-d <platform>` tag is optional.
+  If you do not supply the `-d` flag, `flutter run` will list
+  the available targets to choose from.
 {{site.alert.end}}
+
+## Windows UWP
+
+{{site.alert.warning}}
+  **Alpha!**
+  Flutter Windows UWP desktop support is an alpha release, 
+  available on the `dev` channel. 
+{{site.alert.end}}
+
+To get started with Windows UWP you need to be using Windows 10. 
+You need to install Visual Studio (not Visual Studio _Code_) with the 
+"Universal Windows Platform development" workload and the optional 
+Windows UWP C++ tools. 
+
+To configure Flutter for Windows UWP development, 
+perform the following commands to switch to
+the `dev` channel, upgrade Flutter, and enable 
+Windows UWP desktop support.
+
+```terminal
+PS C:\> flutter channel dev
+PS C:\> flutter upgrade
+PS C:\> flutter config --enable-windows-uwp-desktop
+```
+
+To create a new application, run the following commands:
+
+```terminal
+PS C:\> flutter create myapp
+PS C:\> cd myapp
+```
+
+Running Flutter with Windows UWP is complicated due to UWP's 
+sandboxed runtime. You need to run an override for the sandbox 
+to enable the injection of Dart code into the running UWP 
+process to enable debugging and Hot Reload.
+
+The suggested approach during development is to first run
+`flutter run -d winuwp` from the command line, which will
+give you a command that you need to run from a PowerShell
+with Administrator privileges.
+
+```terminal
+PS C:\myapp> flutter run -d winuwp
+Launching lib\main.dart on Windows (UWP) in debug mode...
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification [C:\src\flutter-projects\myapp\build\winuwp\runner_uwp\app.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3327,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it. [C:\src\flutter-projects\myapp\build\winuwp\runner_uwp\app.vcxproj]
+Building Windows UWP application...
+Enable Flutter debugging from localhost.
+
+Windows UWP apps run in a sandboxed environment. To enable Flutter debugging
+and hot reload, you will need to enable inbound connections to the app from the
+Flutter tool running on your machine. To do so:
+  1. Launch PowerShell as an Administrator
+  2. Enter the following command:
+     checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
+
+Press "Y" once this is complete, or "N" to abort.:
+```
+
+Run this `checknetisolation` command as shown in a PowerShell
+as Administrator. You can then leave this process running for
+the length of your development session, restarting your UWP app
+as required.
+
+```terminal
+PS C:\> checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
+
+Network Isolation Debug Session started.
+Reproduce your scenario, then press Ctrl-C when done.
+```
+
+Once you have this process running, you can deploy to
+Windows UWP from within your IDE as normal, or run from
+the command line as follows:
+
+```terminal
+PS C:\myapp> flutter run -d winuwp
+```
 
 ## Build a release app
 
@@ -293,7 +392,7 @@ To generate a release build,
 run one of the following commands:
 
 ```terminal
-$ flutter build windows
+PS C:\> flutter build windows
 $ flutter build macos
 $ flutter build linux
 ```
