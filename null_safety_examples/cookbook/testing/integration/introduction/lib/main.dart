@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Counter App',
       home: MyHomePage(title: 'Counter App Home Page'),
     );
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -40,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Text(
@@ -48,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // Provide a Key to this specific Text widget. This allows
               // identifying the widget from inside the test suite,
               // and reading the text.
-              key: Key('counter'),
+              key: const Key('counter'),
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
@@ -57,10 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         // Provide a Key to this button. This allows finding this
         // specific button inside the test suite, and tapping it.
-        key: Key('increment'),
+        key: const Key('increment'),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
