@@ -33,6 +33,7 @@ For Windows desktop development, you need the following in addition to the Flutt
   including all of its default components. For UWP
   you need the "Universal Windows Platform development"
   workload installed, with the optional UWP C++ tools.
+
 [Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
 
 ### Enable desktop support
