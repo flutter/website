@@ -148,7 +148,7 @@ to your app initialization:
 import io.flutter.embedding.engine.dynamicfeatures.PlayStoreDeferredComponentManager;
 import io.flutter.FlutterInjector;
 ... 
-layStoreDeferredComponentManager deferredComponentManager = new
+PlayStoreDeferredComponentManager deferredComponentManager = new
   PlayStoreDeferredComponentManager(this, null);
 FlutterInjector.setInstance(new FlutterInjector.Builder()
     .setDeferredComponentManager(deferredComponentManager).build());
