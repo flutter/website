@@ -1008,7 +1008,7 @@ apps built with Flutter should follow Apple's
 [`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
 [contribute to Flutter]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [Contributing Guide]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
-[CodePen]: https://codepen.io/flutter
+[CodePen]: https://codepen.io/topic/flutter
 [Dart]: {{site.dart-site}}/
 [Dart DevTools]: /docs/development/tools/devtools
 [Debugging with Flutter]: /docs/testing/debugging
