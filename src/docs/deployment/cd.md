@@ -117,7 +117,8 @@ untrusted, you won't be leaving your credentials like your Play Store service
 account JSON or your iTunes distribution certificate on the server.
 
 Continuous Integration (CI) systems generally support encrypted environment 
-variables to store private data.
+variables to store private data. You can pass these environment variables 
+using `--dart-define MY_VAR=MY_VALUE` while building the app.
 
 **Take precaution not to re-echo those variable values back onto the console in
 your test scripts**. Those variables are also not available in pull requests
