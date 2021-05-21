@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 // #docregion fetchAlbum
 Future<Album> fetchAlbum() async {
   final response =
-      await http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
+      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
