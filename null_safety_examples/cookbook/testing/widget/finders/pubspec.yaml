@@ -1,0 +1,17 @@
+name: finders
+description: A new Flutter project.
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^1.0.2
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
