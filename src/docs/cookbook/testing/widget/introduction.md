@@ -10,6 +10,8 @@ next:
   path: /docs/cookbook/testing/widget/finders
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/testing/widget/introduction/"?>
+
 {% assign api = site.api | append: '/flutter' -%}
 
 In the [introduction to unit testing][] recipe,
@@ -59,17 +61,17 @@ dev_dependencies:
 Next, create a widget for testing. For this recipe,
 create a widget that displays a `title` and `message`.
 
-<!-- skip -->
+<?code-excerpt "test/main_test.dart (widget)"?>
 ```dart
 class MyWidget extends StatelessWidget {
+  const MyWidget({
+    Key? key,
+    required this.title,
+    required this.message,
+  }) : super(key: key);
+
   final String title;
   final String message;
-
-  const MyWidget({
-    Key key,
-    @required this.title,
-    @required this.message,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +101,7 @@ widget test and creates a `WidgetTester` to work with.
 This test verifies that `MyWidget` displays a given title and message.
 It is titled accordingly, and it will be populated in the next section.
 
-<!-- skip -->
+<?code-excerpt "test/main_step3_test.dart (main)"?>
 ```dart
 void main() {
   // Define a test. The TestWidgets function also provides a WidgetTester
@@ -120,12 +122,12 @@ The `pumpWidget` method builds and renders the provided widget.
 Create a `MyWidget` instance that displays "T" as the title
 and "M" as the message.
 
-<!-- skip -->
+<?code-excerpt "test/main_step4_test.dart (main)"?>
 ```dart
 void main() {
   testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
     // Create the widget by telling the tester to build it.
-    await tester.pumpWidget(MyWidget(title: 'T', message: 'M'));
+    await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
   });
 }
 ```
@@ -176,11 +178,11 @@ Since you know you're looking for `Text` widgets, use the
 For more information about `Finder` classes, see the
 [Finding widgets in a widget test][] recipe.
 
-<!-- skip -->
+<?code-excerpt "test/main_step5_test.dart (main)"?>
 ```dart
 void main() {
   testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
-    await tester.pumpWidget(MyWidget(title: 'T', message: 'M'));
+    await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
 
     // Create the Finders.
     final titleFinder = find.text('T');
@@ -200,11 +202,11 @@ value meets expectations.
 Ensure that the widgets appear on screen exactly one time.
 For this purpose, use the [`findsOneWidget`][] `Matcher`.
 
-<!-- skip -->
+<?code-excerpt "test/main_step6_test.dart (main)"?>
 ```dart
 void main() {
   testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
-    await tester.pumpWidget(MyWidget(title: 'T', message: 'M'));
+    await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
     final titleFinder = find.text('T');
     final messageFinder = find.text('M');
 
@@ -235,6 +237,7 @@ matchers for common cases.
 
 ### Complete example
 
+<?code-excerpt "test/main_test.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -245,7 +248,7 @@ void main() {
   // with widgets in the test environment.
   testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
     // Create the widget by telling the tester to build it.
-    await tester.pumpWidget(MyWidget(title: 'T', message: 'M'));
+    await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
 
     // Create the Finders.
     final titleFinder = find.text('T');
@@ -259,14 +262,14 @@ void main() {
 }
 
 class MyWidget extends StatelessWidget {
+  const MyWidget({
+    Key? key,
+    required this.title,
+    required this.message,
+  }) : super(key: key);
+
   final String title;
   final String message;
-
-  const MyWidget({
-    Key key,
-    @required this.title,
-    @required this.message,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
