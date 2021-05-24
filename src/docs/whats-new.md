@@ -12,7 +12,104 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
-## March 3, 2021
+## May 18, 2021, Google I/O Edition
+
+Flutter 2.2 is live! For details, see
+[Announcing Flutter 2.2][] and
+[What's New in Flutter 2.2][].
+
+We continue migrating code on the website to use
+null safety, but that work is not yet completed.
+
+**Docs updated or added since the 2.0 release**
+
+* A new page on [Building adaptive apps][].
+* A new page describing how to use [Google APIs][]
+  with Flutter.
+* A new landing page for [Embedded Support for Flutter][].
+* A new page on setting up and using [Deferred components][]
+  on Android.
+* Significant updates to the DevTools [Memory view page][].
+* The [desktop][] page is updated to reflect the progress
+  on desktop support, particularly the new support for
+  Windows UWP.
+
+
+{% comment %}
+- migration guides (drag gestures and package:flutter_lints, depending)
+{% endcomment %}
+
+**Codelabs**
+
+New codelabs since the last stable release:
+
+* [Adding in-app purchases to your Flutter app][]
+* [Build Voice Bots for Android with Dialogflow Essentials & Flutter][]
+* [Get to know Firebase for Flutter][]
+
+**Workshops**
+
+For Google I/O 2021, we have added a new
+Flutter/Dart learning tool that
+is based on DartPad: Workshops!
+These workshops are designed to be instructor led.
+The instructor-led videos are available on the
+Flutter and Firebase YouTube channels:
+
+* [Building your first Flutter app][]
+* [Firebase for Flutter][]
+* [Flutter and Dialogflow voice bots][]
+* [Inherited widgets][]
+* [Null safety][]
+* [Slivers][]
+
+To see the list of workshops available at I/O,
+see the [Google 2021 I/O workshops][] page.
+
+You can author your own DartPad workshops!
+If you are interested, check out the following resources:
+
+* [DartPad Workshop Authoring Guide][]
+* [DartPad Sharing Guide (using a Gist file)][]
+* [Embedding DartPad in your web page][]
+
+**Articles**
+
+We've published the following articles on the [Flutter Medium][]
+publication since the last stable release:
+
+* [How It's Made: I/O Photo Booth][]
+* [Which factors affected users’ decisions to adopt Flutter? — Q1 2021 user survey results][Q1 2021 survey]
+
+[Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
+[Announcing Flutter 2.2]: {{site.medium}}/flutter/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
+[Building adaptive apps]: /docs/development/ui/layout/building-adaptive-apps
+[Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
+[Building your first Flutter app]: https://www.youtube.com/watch?v=Z6KZ3cTGBWw
+[DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
+[DartPad Workshop Authoring Guide]: {{site.github}}/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
+[Deferred components]: /docs/perf/deferred-components
+[desktop]: /desktop
+[Embedded Support for Flutter]: /embedded
+[Embedding DartPad in your web page]: {{site.github}}/dart-lang/dart-pad/wiki/Embedding-Guide
+[Firebase for Flutter]: https://www.youtube.com/watch?v=4wunbF29Kkg
+[Flutter and Dialogflow voice bots]: https://www.youtube.com/watch?v=O7JfSF3CJ84
+[Get to know Firebase for Flutter]: https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0
+[Google APIs]: /docs/development/data-and-backend/google-apis
+[Google I/O workshops page]: https://events.google.com/io/program/content?4=topic_flutter&5=type_workshop&lng=en
+[How It's Made: I/O Photo Booth]: {{site.medium}}/flutter/how-its-made-i-o-photo-booth-3b8355d35883
+[Inherited widgets]: https://youtu.be/LFcGPS6cGrY
+[Inherited widgets DartPad]: /go/inheritedwidget-workshop
+[Memory view page]: /docs/development/tools/devtools/memory
+[Null safety]: https://youtu.be/HdKwuHQvArY
+[Slivers]: https://www.youtube.com/watch?v=YY-_yrZdjGc
+[Q1 2021 survey]: {{site.medium}}/flutter/which-factors-affected-users-decisions-to-adopt-flutter-q1-2021-user-survey-results-563e61fc68c9
+[What's New in Flutter 2.2]: https://medium.com/flutter/whats-new-in-flutter-2-2-fd00c65e2039
+
+
+---
+
+## March 3, 2021, Flutter Engage Edition
 
 Flutter 2 is live!!!  For more information, see
 [Announcing Flutter 2][], [What's new in Flutter 2][],
