@@ -9,6 +9,8 @@ next:
   path: /docs/cookbook/persistence/key-value
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/persistence/reading_writing_files/"?>
+
 In some cases, you need to read and write files to disk.
 For example, you may need to persist data across app launches,
 or download data from the internet and save it for later offline use.
@@ -50,7 +52,7 @@ two file system locations:
 This example stores information in the documents directory.
 You can find the path to the documents directory as follows:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (localPath)"?>
 ```dart
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
@@ -65,7 +67,7 @@ Once you know where to store the file, create a reference to the
 file's full location. You can use the [`File`][]
 class from the [`dart:io`][] library to achieve this.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (localFile)"?>
 ```dart
 Future<File> get _localFile async {
   final path = await _localPath;
@@ -81,12 +83,12 @@ First, write some data to the file.
 The counter is an integer, but is written to the
 file as a string using the `'$counter'` syntax.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (writeCounter)"?>
 ```dart
 Future<File> writeCounter(int counter) async {
   final file = await _localFile;
 
-  // Write the file.
+  // Write the file
   return file.writeAsString('$counter');
 }
 ```
@@ -96,18 +98,18 @@ Future<File> writeCounter(int counter) async {
 Now that you have some data on disk, you can read it.
 Once again, use the `File` class.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (readCounter)"?>
 ```dart
 Future<int> readCounter() async {
   try {
     final file = await _localFile;
 
-    // Read the file.
-    String contents = await file.readAsString();
+    // Read the file
+    final contents = await file.readAsString();
 
     return int.parse(contents);
   } catch (e) {
-    // If encountering an error, return 0.
+    // If encountering an error, return 0
     return 0;
   }
 }
@@ -124,7 +126,7 @@ so you interact with the test environment's file system.
 To mock the method call, provide a `setupAll()` function in the test file.
 This function runs before the tests are executed.
 
-<!-- skip -->
+<?code-excerpt "test/widget_test.dart (setUpAll)"?>
 ```dart
 setUpAll(() async {
   // Create a temporary directory.
@@ -145,6 +147,7 @@ setUpAll(() async {
 
 ## Complete example
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:io';
@@ -179,7 +182,7 @@ class CounterStorage {
       final file = await _localFile;
 
       // Read the file
-      String contents = await file.readAsString();
+      final contents = await file.readAsString();
 
       return int.parse(contents);
     } catch (e) {
@@ -199,14 +202,14 @@ class CounterStorage {
 class FlutterDemo extends StatefulWidget {
   final CounterStorage storage;
 
-  FlutterDemo({Key key, @required this.storage}) : super(key: key);
+  FlutterDemo({Key? key, required this.storage}) : super(key: key);
 
   @override
   _FlutterDemoState createState() => _FlutterDemoState();
 }
 
 class _FlutterDemoState extends State<FlutterDemo> {
-  int _counter;
+  int _counter = 0;
 
   @override
   void initState() {

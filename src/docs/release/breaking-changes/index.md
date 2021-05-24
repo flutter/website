@@ -14,10 +14,14 @@ release, and listed in alphabetical order:
 
 * [Default Scrollbars on Desktop][]
 * [Default drag scrolling devices][]
+* [Introducing package:flutter_lints][]
 * [ThemeData's accent properties have been deprecated][]
+* [GestureRecognizer Cleanup][]
 
 [Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
 [Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
+[GestureRecognizer Cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
+[Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
 
 ### Reverted changes
@@ -29,6 +33,8 @@ The following breaking changes have been reverted.
    Reverted in version:   2.2.0 (proposed)
 
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
+
+### Released in Flutter 2.2
 
 ### Released in Flutter 2
 

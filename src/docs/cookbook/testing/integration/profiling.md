@@ -160,22 +160,21 @@ the project contains two files:
 
 ### Complete example
 
+<!-- skip -->
 ```dart
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('Scrollable App', () {
-    FlutterDriver driver;
+    later FlutterDriver driver;
 
     setUpAll(() async {
       driver = await FlutterDriver.connect();
     });
 
     tearDownAll(() async {
-      if (driver != null) {
-        driver.close();
-      }
+      driver.close();
     });
 
     test('verifies the list contains a specific item', () async {

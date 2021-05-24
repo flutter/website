@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 // #enddocregion import
 
-main() {
+void main() {
   runApp(MaterialApp(home: PhysicsCardDragDemo()));
 }
 

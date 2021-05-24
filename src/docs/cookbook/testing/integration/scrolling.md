@@ -156,6 +156,7 @@ The following code shows how to use the `scrollUntilVisible()` method
 to look through the list for a particular item. This code lives in a
 file called `test_driver/app_test.dart`.
 
+<!-- skip -->
 ```dart
 // Imports the Flutter Driver API.
 import 'package:flutter_driver/flutter_driver.dart';

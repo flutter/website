@@ -5,12 +5,12 @@ the repo root (`$PROJECT` represents the app project path, such as
 `examples/layout/lakes/step6`):
 
 1. `flutter create --no-overwrite $PROJECT`
-1. `cd $PROJECT`
-1. `flutter analyze`
-1. `flutter test`
-1. `flutter run`
+2. `cd $PROJECT`
+3. `flutter analyze`
+4. `flutter test`
+5. `flutter run`
 
 To learn more about setting up Flutter and running apps, see
-[flutter.io/get-started][].
+[flutter.dev/get-started][].
 
-[flutter.io/get-started]: https://flutter.io/docs/get-started
+[flutter.dev/get-started]: https://flutter.dev/docs/get-started

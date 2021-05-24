@@ -9,6 +9,8 @@ next:
   path: /docs/cookbook/testing/integration/introduction
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/plugins/picture_using_camera/"?>
+
 Many apps require working with the device's cameras to
 take photos and videos.  Flutter provides the [`camera`][] plugin
 for this purpose. The `camera` plugin provides tools to get a list of the
@@ -59,7 +61,7 @@ dependencies:
 
 Next, get a list of available cameras using the `camera` plugin.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (init)"?>
 ```dart
 // Ensure that plugin services are initialized so that `availableCameras()`
 // can be called before `runApp()`
@@ -87,15 +89,15 @@ and display a preview of the camera's feed.
   4. Create and initialize the controller in the `initState()` method.
   5. Dispose of the controller in the `dispose()` method.
 
-<!-- skip -->
+<?code-excerpt "lib/main_step3.dart (controller)"?>
 ```dart
-// A screen that takes in a list of cameras and the Directory to store images.
+// A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
   final CameraDescription camera;
 
   const TakePictureScreen({
-    Key key,
-    @required this.camera,
+    Key? key,
+    required this.camera,
   }) : super(key: key);
 
   @override
@@ -103,15 +105,12 @@ class TakePictureScreen extends StatefulWidget {
 }
 
 class TakePictureScreenState extends State<TakePictureScreen> {
-  // Add two variables to the state class to store the CameraController and
-  // the Future.
-  CameraController _controller;
-  Future<void> _initializeControllerFuture;
+  late CameraController _controller;
 
   @override
   void initState() {
     super.initState();
-    // To display the current output from the camera,
+    // To display the current output from the Camera,
     // create a CameraController.
     _controller = CameraController(
       // Get a specific camera from the list of available cameras.
@@ -121,7 +120,6 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     );
 
     // Next, initialize the controller. This returns a Future.
-    _initializeControllerFuture = _controller.initialize();
   }
 
   @override
@@ -134,6 +132,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     // Fill this out in the next steps.
+    return Container();
   }
 }
 ```
@@ -157,7 +156,7 @@ display a preview of the camera's feed.
 
 Use a [`FutureBuilder`][] for exactly this purpose.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/,$//g"?>
 ```dart
 // You must wait until the controller is initialized before displaying the
 // camera preview. Use a FutureBuilder to display a loading spinner until the
@@ -170,7 +169,7 @@ FutureBuilder<void>(
       return CameraPreview(_controller);
     } else {
       // Otherwise, display a loading indicator.
-      return Center(child: CircularProgressIndicator());
+      return const Center(child: CircularProgressIndicator());
     }
   },
 )
@@ -198,10 +197,9 @@ Taking a picture requires 2 steps:
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.
 
-<!-- skip -->
+<?code-excerpt "lib/main_step5.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
 ```dart
 FloatingActionButton(
-  child: Icon(Icons.camera_alt),
   // Provide an onPressed callback.
   onPressed: () async {
     // Take the Picture in a try / catch block. If anything goes wrong,
@@ -218,6 +216,7 @@ FloatingActionButton(
       print(e);
     }
   },
+  child: const Icon(Icons.camera_alt),
 )
 ```
 ## 6. Display the picture with an `Image` widget
@@ -237,6 +236,7 @@ Image.file(File('path/to/my/picture.png'))
 
 ## Complete example
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'dart:async';
 import 'dart:io';
@@ -271,8 +271,8 @@ class TakePictureScreen extends StatefulWidget {
   final CameraDescription camera;
 
   const TakePictureScreen({
-    Key key,
-    @required this.camera,
+    Key? key,
+    required this.camera,
   }) : super(key: key);
 
   @override
@@ -280,8 +280,8 @@ class TakePictureScreen extends StatefulWidget {
 }
 
 class TakePictureScreenState extends State<TakePictureScreen> {
-  CameraController _controller;
-  Future<void> _initializeControllerFuture;
+  late CameraController _controller;
+  late Future<void> _initializeControllerFuture;
 
   @override
   void initState() {
@@ -309,10 +309,10 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Take a picture')),
-      // Wait until the controller is initialized before displaying the
-      // camera preview. Use a FutureBuilder to display a loading spinner
-      // until the controller has finished initializing.
+      appBar: AppBar(title: const Text('Take a picture')),
+      // You must wait until the controller is initialized before displaying the
+      // camera preview. Use a FutureBuilder to display a loading spinner until the
+      // controller has finished initializing.
       body: FutureBuilder<void>(
         future: _initializeControllerFuture,
         builder: (context, snapshot) {
@@ -321,12 +321,11 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             return CameraPreview(_controller);
           } else {
             // Otherwise, display a loading indicator.
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.camera_alt),
         // Provide an onPressed callback.
         onPressed: () async {
           // Take the Picture in a try / catch block. If anything goes wrong,
@@ -340,13 +339,12 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             final image = await _controller.takePicture();
 
             // If the picture was taken, display it on a new screen.
-            Navigator.push(
-              context,
+            await Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => DisplayPictureScreen(
                   // Pass the automatically generated path to
                   // the DisplayPictureScreen widget.
-                  imagePath: image?.path,
+                  imagePath: image.path,
                 ),
               ),
             );
@@ -355,6 +353,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             print(e);
           }
         },
+        child: const Icon(Icons.camera_alt),
       ),
     );
   }
@@ -364,12 +363,12 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
 
-  const DisplayPictureScreen({Key key, this.imagePath}) : super(key: key);
+  const DisplayPictureScreen({Key? key, required this.imagePath}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Display the Picture')),
+      appBar: AppBar(title: const Text('Display the Picture')),
       // The image is stored as a file on the device. Use the `Image.file`
       // constructor with the given path to display the image.
       body: Image.file(File(imagePath)),

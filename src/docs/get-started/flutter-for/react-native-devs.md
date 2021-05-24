@@ -2002,7 +2002,7 @@ GET, POST, PUT, and DELETE.
 <!-- skip -->
 ```dart
 // Flutter
-final url = Uri.https('httpbin.org', 'ip');
+final url = Uri.parse('https://httpbin.org/ip');
 final httpClient = HttpClient();
 _getIPAddress() async {
   var request = await httpClient.getUrl(url);

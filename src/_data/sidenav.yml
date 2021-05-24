@@ -65,7 +65,9 @@
               permalink: /docs/development/ui/layout/tutorial
             - title: Creating adaptive and responsive apps
               permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: Understanding constraints [NEW]
+            - title: Building adaptive apps [NEW]
+              permalink: /docs/development/ui/layout/building-adaptive-apps
+            - title: Understanding constraints
               permalink: /docs/development/ui/layout/constraints
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
@@ -329,6 +331,8 @@
         permalink: /docs/perf/rendering/ui-performance
       - title: Reduce shader compilation jank
         permalink: /docs/perf/rendering/shader
+    - title: Deferred components
+      permalink: /docs/perf/deferred-components
     - title: Performance metrics
       permalink: /docs/perf/metrics
     - title: Performance FAQ

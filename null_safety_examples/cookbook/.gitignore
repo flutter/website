@@ -5,5 +5,8 @@ pubspec.lock
 */**/ios
 */**/web
 */**/linux
+*/**/macos
+*/**/windows
+*/**/winuwp
 */**/.gitignore
 */**/.metadata
