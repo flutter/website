@@ -201,7 +201,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  provider: ^4.3.3
+  provider: ^5.0.0
 
 dev_dependencies:
   # ...
