@@ -54,7 +54,7 @@ using the [`http.get()`][] method.
 ```dart
 Future<http.Response> fetchPhotos(http.Client client) async {
   final uri = Uri.parse('https://jsonplaceholder.typicode.com/photos');
-  final response = await client.get(uri);
+  return await client.get(uri);
 }
 ```
 
@@ -125,7 +125,6 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   final uri = Uri.parse('https://jsonplaceholder.typicode.com/photos');
   final response = await client.get(uri);
 
-  // Use the compute function to run parsePhotos in a separate isolate.
   return parsePhotos(response.body);
 }
 ```
@@ -215,14 +214,13 @@ void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  static const appTitle = 'Isolate Demo';
-
+  static const _appTitle = 'Isolate Demo';
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: appTitle,
-      home: MyHomePage(title: appTitle),
+      title: _appTitle,
+      home: MyHomePage(title: _appTitle),
     );
   }
 }
