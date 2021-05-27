@@ -46,6 +46,8 @@ delivery from a local machine.
 
 1. Install fastlane `gem install fastlane` or `brew install fastlane`.
 Visit the [fastlane docs][fastlane] for more info.
+1. Create an environment variable named `FLUTTER_ROOT`,
+and set it to the root directory of your Flutter SDK.
 1. Create your Flutter project, and when ready, make sure that your project builds via
     * ![Android](/images/cd/android.png) `flutter build appbundle`; and
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
