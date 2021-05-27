@@ -3374,4 +3374,4 @@ You can download Flutter from the [install][] page.
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html
 [Material Color palette]: {{site.api}}/flutter/material/Colors-class.html
 [Material Icon library]: {{site.api}}/flutter/material/Icons-class.html
-[sample apps]: {{site.github}}/flutter/samples/blob/master/INDEX.md
+[sample apps]: {{site.github}}/flutter/samples
