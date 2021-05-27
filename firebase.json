@@ -255,6 +255,8 @@
       { "source": "/go/inheritedwidget-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/inherited_widget", "type": 301 },
       { "source": "/go/federated-platforms", "destination": "https://docs.google.com/document/d/1z_4Z5JMTbk5c4FpayVAb-PTz2wLP-aSCirbieavT3Ws/edit?usp=sharing", "type": 301 },
       { "source": "/go/lints-migration", "destination": "/docs/release/breaking-changes/flutter-lints-package", "type": 301 },
+      { "source": "/go/picture-lifecycle", "destination": "https://docs.google.com/document/d/1aTBj38k6NSVsYRwySEBItlqxdQbjzurjmHsXAr3yGiI/edit?usp=sharing&resourcekey=0-TbKDu4BVInqphkzAlasBnw", "type": 301 },
+      { "source": "/go/image-decoding-registry", "destination": "https://docs.google.com/document/d/167qWrlaSAmJm5muqQ-iiJKZy6Q7ZlugIeXmraXava5Y/edit?resourcekey=0-mVrr_zBiSI2Qmd6vqae7Bw", "type": 301 },
       
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },

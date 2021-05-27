@@ -9,6 +9,8 @@ next:
   path: /docs/cookbook/testing/widget/tap-drag
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/testing/widget/finders/"?>
+
 {% assign api = site.api | append: '/flutter' -%}
 
 To locate widgets in a test environment, use the `Finder`
@@ -42,11 +44,11 @@ In testing, you often need to find widgets that contain specific text.
 This is exactly what the `find.text()` method is for. It creates a
 `Finder` that searches for widgets that display a specific `String` of text.
 
-<!-- skip -->
+<?code-excerpt "test/tests.dart (test1)"?>
 ```dart
 testWidgets('finds a Text widget', (WidgetTester tester) async {
-  // Build an app with a Text widget that displays the letter 'H'.
-  await tester.pumpWidget(MaterialApp(
+  // Build an App with a Text widget that displays the letter 'H'.
+  await tester.pumpWidget(const MaterialApp(
     home: Scaffold(
       body: Text('H'),
     ),
@@ -68,11 +70,11 @@ In this case, provide a `Key` to each widget in the list. This allows
 an app to uniquely identify a specific widget, making it easier to find
 the widget in the test environment.
 
-<!-- skip -->
+<?code-excerpt "test/tests.dart (test2)"?>
 ```dart
 testWidgets('finds a widget using a Key', (WidgetTester tester) async {
   // Define the test key.
-  final testKey = Key('K');
+  const testKey = Key('K');
 
   // Build a MaterialApp with the testKey.
   await tester.pumpWidget(MaterialApp(key: testKey, home: Container()));
@@ -88,10 +90,10 @@ Finally, you might be interested in locating a specific instance of a widget.
 For example, this can be useful when creating widgets that take a `child`
 property and you want to ensure you're rendering the `child` widget.
 
-<!-- skip -->
+<?code-excerpt "test/tests.dart (test3)"?>
 ```dart
 testWidgets('finds a specific instance', (WidgetTester tester) async {
-  final childWidget = Padding(padding: EdgeInsets.zero);
+  const childWidget = Padding(padding: EdgeInsets.zero);
 
   // Provide the childWidget to the Container.
   await tester.pumpWidget(Container(child: childWidget));
@@ -114,6 +116,7 @@ to review all available methods.
 
 ### Complete example
 
+<?code-excerpt "test/tests.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -121,7 +124,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('finds a Text widget', (WidgetTester tester) async {
     // Build an App with a Text widget that displays the letter 'H'.
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
         body: Text('H'),
       ),
@@ -133,7 +136,7 @@ void main() {
 
   testWidgets('finds a widget using a Key', (WidgetTester tester) async {
     // Define the test key.
-    final testKey = Key('K');
+    const testKey = Key('K');
 
     // Build a MaterialApp with the testKey.
     await tester.pumpWidget(MaterialApp(key: testKey, home: Container()));
@@ -143,7 +146,7 @@ void main() {
   });
 
   testWidgets('finds a specific instance', (WidgetTester tester) async {
-    final childWidget = Padding(padding: EdgeInsets.zero);
+    const childWidget = Padding(padding: EdgeInsets.zero);
 
     // Provide the childWidget to the Container.
     await tester.pumpWidget(Container(child: childWidget));

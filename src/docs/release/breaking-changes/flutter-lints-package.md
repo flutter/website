@@ -122,7 +122,7 @@ Relevant PRs:
 [Customizing static analysis]: {{site.dart-site}}/guides/language/analysis-options
 [dart analyzer]: {{site.dart-site}}/guides/language/analysis-options
 [IDE with Dart support]: {{site.dart-site}}/tools#ides-and-editors
-[Integrate package:flutter_lints into template]: {{site.github}}/flutter/flutter/pull/81417
+[Integrate package:flutter_lints into templates]: {{site.github}}/flutter/flutter/pull/81417
 [Issue 78432 - Update lint set for Flutter applications]: {{site.github}}/flutter/flutter/issues/78432
 [`package:flutter_lints`]: {{site.pub}}/packages/flutter_lints
 [`package:lints`]: {{site.pub}}/packages/lints
