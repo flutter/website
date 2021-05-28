@@ -1,116 +1,80 @@
 ---
-title: Replace with title of breaking change
-description: Brief description similar to the "context" section below. The description shouldn't have any linebreaks - let it go long and wrap. Text below should break at 80 chars or less.
+title: Replace AnimationSheetBuilder.display with collate
+description: AnimationSheetBuilder.display and sheetSize are deprecated in favor of collate.
 ---
-
-{% comment %}
-  PLEASE READ THESE GENERAL INSTRUCTIONS:
-  * All lines of text should be 80 chars OR LESS.
-    The writers strongly prefer semantic line breaks:
-    https://github.com/dart-lang/site-shared/blob/master/doc/writing-for-dart-and-flutter-websites.md#semantic-line-breaks
-  * DON'T SUBMIT a PR weeks and weeks in advance.
-    Doing this causes it to get stanky in the website
-    repo and usually develops conflicts in the index file.
-    Ideally, submit a PR once you have confirmed
-    info on the version number where the breaking
-    change landed.
-  * One of the most important things to fill out 
-    in this template is the *Timeline* section.
-    I won't approve/merge the PR until the "landed in"
-    release info is provided. For example:
-    `Landed in version: 1.21.0-5.0.pre<br>`.
-    Do NOT list the PR in this section. Also, don't
-    fill in the "stable" release info unless it's
-    already in a published stable release.
-    After a stable release, I go through and confirm
-    that updates have made it to stable and I then
-    update the breaking change and the index file.
-  * The text in this page should be backwards looking,
-    so write about previous behavior in past tense,
-    not future tense. People are reading this months
-    from now when the change is likely in the stable
-    release, not today. Don't say "in a month" or
-    talk about your plan to do something next week.
-    Assume you've done it, and that they're looking
-    back to figure out how to migrate their code.
-  * Use sentence case for headings and titles.
-    (`## Migration guide`, NOT `Migration Guide`)
-  * DON'T use the abbreviation `i.e.` or `e.g.`.
-    Use "for example" or "such as", and similar.
-  * For links, use the macros where possible.
-    See the examples at the end of this template,
-    but don't use "github.com" or "api.flutter.dev" or
-    "pub.dev" in your URLs. Use the {{site.github}},
-    {{site.api}}, or {{site.pub}} macros.
-  * AVOID "will" when possible, in other words,
-    stay in the present tense. For example:
-    Bad: "When encountering an xxx value,
-          the code will throw an exception."
-    Good: "When encountering an xxx value,
-           the code throws an exception."
-    Good use of "will": "In release 2.0, the xxx API
-          will be deprecated."
-  * If your included Dart code won't pass analysis
-    on its own (using the analyzer from the latest
-    stable release), then preface that code with an
-    HTML `<!-- skip -->` tag.
-  * Finally, delete the comment tags and text from the
-    final PR.
-{% endcomment %}
 
 ## Summary
 
-{% comment %}
-  A brief (one- to three-line) summary that gives
-  context as to what changed so that someone can
-  find it when browsing through an index of
-  breaking changes, ideally using keywords from
-  the symptoms you would see if you had not yet
-  migrated (for example, the text from probable
-  error messages).
-{% endcomment %}
+AnimationSheetBuilder.display and sheetSize are
+deprecated, and should be replaced by
+AnimationSheetBuilder.collate.
 
 ## Context
 
-{% comment %}
-  High-level description of what API changed and why.
-  Should be clear enough to be understandable to someone
-  who has no context about this breaking change,
-  such as someone who doesn't know the underlying API.
-  This section should also answer the question
-  "what is the problem that led to considering making
-  a breaking change?"
-{% endcomment %}
+[`AnimationSheetBuilder`][] is a testing utility
+class that records frames of an animating widget,
+and later composes the frames into a single
+animation sheet for [golden testing][]. The composing
+step used to use `display` to list the images into a
+table-like widget, `sheetSize` to adjust the testing
+surface, and then capture the table widget for
+comparison. A new way, `collate`, has been found to
+directly put the frames together into an image for
+comparison, while requiring less boilerplate and
+outputs a smaller image without information loss.
+
+The reason why `collate` outputs a smaller image,
+is because the old way captures on a testing surface
+with pixel ratio 3.0, which means it uses a 3x3 pixel
+block of the exactly same color to represent 1 actual
+pixel, making the image 9 times as large as necessary
+(before PNG compression).
 
 ## Description of change
 
-{% comment %}
-A technical description of the actual change,
-with code samples showing how the API changed.
+The following changes have been made to the
+[`AnimationSheetBuilder`][] class:
 
-Include examples of the error messages that are produced
-in code that has not been migrated. This helps the search
-engine find the migration guide when people search for those
-error messages.
-{% endcomment %}
+* 'display' is deprecated and shouldn't be used.
+* 'sheetSize' is deprecated and shouldn't be used.
 
 ## Migration guide
 
-{% comment %}
-  A description of how to make the change.
-  If a migration tool is available,
-  discuss it here. Even if there is a tool,
-  a description of how to make the change manually
-  must be provided. This section needs before and
-  after code examples that are relevant to the
-  developer.
-{% endcomment %}
+To migrate to the new API, change the process of setting
+surface size and displaying the widget into a call
+to [`AnimationSheetBuilder.collate`][].
 
-Code before migration:
+This requires deriving the `cellsPerRow` argument
+for `collate`, which is the number of frames per
+row in the output image. It can be manually counted,
+or calculated as follows:
 
+* Find the width of frame, specified when constructing
+`AnimationSheetBuilder`. For example, in the following
+snippet it's 80:
 <!-- skip -->
 ```dart
-  testWidgets('Indeterminate CircularProgressIndicator uses expected animation', (WidgetTester tester) async {
+final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(frameSize: const Size(80, 30));
+```
+* Find the width of surface size, specified during
+`sheetSize`, which defaults to 800. For example, in the
+following snippet it's 600:
+<!-- skip -->
+```dart
+tester.binding.setSurfaceSize(animationSheet.sheetSize(600));
+```
+* The frames per row should be the result of the two
+numbers divided, rounded down. For example, 
+600 / 80 = 7 (rounded down), therefore
+<!-- skip -->
+```dart
+animationSheet.collate(7)
+```
+
+Code before migration:
+<!-- skip -->
+```dart
+  testWidgets('Indeterminate CircularProgressIndicator', (WidgetTester tester) async {
     final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(frameSize: const Size(40, 40));
 
     await tester.pumpFrames(animationSheet.record(
@@ -122,6 +86,8 @@ Code before migration:
         ),
       ),
     ), const Duration(seconds: 2));
+
+    // The code starting here needs migration.
 
     tester.binding.setSurfaceSize(animationSheet.sheetSize());
 
@@ -135,36 +101,11 @@ Code before migration:
   }, skip: isBrowser); // https://github.com/flutter/flutter/issues/42767
 ```
 
-Code after migration:
+Code after migration (`cellsPerRow` is 20, derived from 800 / 40):
 
 <!-- skip -->
 ```dart
-  testWidgets('Indeterminate CircularProgressIndicator uses expected animation', (WidgetTester tester) async {
-    final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(frameSize: const Size(40, 40));
-
-    await tester.pumpFrames(animationSheet.record(
-      const Directionality(
-        textDirection: TextDirection.ltr,
-        child: Padding(
-          padding: EdgeInsets.all(4),
-          child: CircularProgressIndicator(),
-        ),
-      ),
-    ), const Duration(seconds: 2));
-
-    final ui.Image image = await animationSheet.collate(20);
-    await tester.binding.setSurfaceSize(animationSheet.sheetSize());
-    await tester.pumpWidget(RawImage(image: image, filterQuality: FilterQuality.none));
-    await expectLater(
-      find.byType(RawImage),
-      matchesGoldenFile('material.circular_progress_indicator.indeterminate.png'),
-    );
-  }, skip: isBrowser); // https://github.com/flutter/flutter/issues/42767
-```
-
-
-```dart
-  testWidgets('Indeterminate CircularProgressIndicator uses expected animation', (WidgetTester tester) async {
+  testWidgets('Indeterminate CircularProgressIndicator', (WidgetTester tester) async {
     final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(frameSize: const Size(40, 40));
 
     await tester.pumpFrames(animationSheet.record(
@@ -178,84 +119,39 @@ Code after migration:
     ), const Duration(seconds: 2));
 
     await expectLater(
-      animationSheet.collate(15),
+      animationSheet.collate(20),
       matchesGoldenFile('material.circular_progress_indicator.indeterminate.png'),
     );
   }, skip: isBrowser); // https://github.com/flutter/flutter/issues/42767
 ```
+
+It's normal that related golden test reference images
+are invalidated, which should all be updated. The new
+images should be identical to the old ones except
+1/3 in scale.
 
 ## Timeline
 
-{% comment %}
-  The version # of the SDK where this change was
-  introduced.  If there is a deprecation window,
-  the version # to which we guarantee to maintain
-  the old API. Use the following template:
-
-  If a breaking change has been reverted in a
-  subsequent release, move that item to the
-  "Reverted" section of the index.md file.
-  Also add the "Reverted in version" line,
-  shown as optional below. Otherwise, delete
-  that line.
-{% endcomment %}
-
-Landed in version: xxx<br>
+Landed in version: v2.3.0-13.0.pre<br>
 In stable release: not yet
-Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 ## References
-
-{% comment %}
-  These links are commented out because they
-  cause the GitHubActions (GHA) linkcheck to fail.
-  Remove the comment tags once you fill this in with
-  real links. Only use the "master-api" include if
-  you link to "master-api.flutter.dev".
 
 {% include master-api.md %}
 
 API documentation:
 
-* [`ClassName`][]
-
-Relevant issues:
-
-* [Issue xxxx][]
-* [Issue yyyy][]
+* [`AnimationSheetBuilder`][]
+* [`AnimationSheetBuilder.collate`][]
 
 Relevant PRs:
 
-* [PR title #1][]
-* [PR title #2][]
-{% endcomment %}
-
-{% comment %}
-  Add the links to the end of the file in alphabetical order.
-  The following links are commented out because they make
-  the GitHubActions (GHA) link checker believe they are broken links,
-  but please remove the comment tags before you commit!
-
-  If you are sharing new API that hasn't landed in
-  the stable channel yet, use the master channel link.
-  To link to docs on the master channel,
-  include the following note and make sure that
-  the URL includes the master link (as shown below).
-
-  Here's an example of defining a stable (site.api) link
-  and a master channel (master-api) link.
- 
-
-<!-- Stable channel link: -->
-[`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
+* [Test WidgetTester handling test pointers][]
 
 <!-- Master channel link: -->
 {% include master-api.md %}
 
-[`ClassName`]: https://master-api.flutter.dev/flutter/[link_to_relevant_page].html
-
-[Issue xxxx]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
-[Issue yyyy]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
-[PR title #1]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
-[PR title #2]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
-{% endcomment %}
+[`AnimationSheetBuilder`]: https://master-api.flutter.dev/flutter/flutter_test/AnimationSheetBuilder-class.html
+[`AnimationSheetBuilder.collate`]: https://master-api.flutter.dev/flutter/flutter_test/AnimationSheetBuilder/collate.html
+[golden testing]: {{site.github}}/flutter/flutter/wiki/Writing-a-golden-file-test-for-package%3Aflutter
+[Test WidgetTester handling test pointers]: {{site.github}}/flutter/flutter/pull/83337
