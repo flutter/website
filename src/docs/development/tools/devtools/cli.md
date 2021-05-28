@@ -5,10 +5,10 @@ Description: Learn how to install and use DevTools from the command line.
 
 ## Install DevTools
 
-If you have `pub` on your path, you can run:
+If you have `dart` on your path, you can run:
 
 ```
-pub global activate devtools
+dart pub global activate devtools
 ```
 
 If you have `flutter` on your path, you can run:
@@ -26,7 +26,7 @@ application itself. To do that, run one of the following
 two commands:
 
 ```
-pub global run devtools   # If you have `pub` on your path.
+dart pub global run devtools   # If you have `dart` on your path.
 ```
 
 OR
