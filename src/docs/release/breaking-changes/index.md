@@ -16,6 +16,7 @@ release, and listed in alphabetical order:
 * [Introducing package:flutter_lints][]
 * [ThemeData's accent properties have been deprecated][]
 * [GestureRecognizer Cleanup][]
+* [Replace AnimationSheetBuilder.display with collate][]
 
 [Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
 [GestureRecognizer Cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
@@ -131,6 +132,7 @@ The following breaking changes have been reverted.
 [MouseTracker no longer attaches annotations]: /docs/release/breaking-changes/mouse-tracker-no-longer-attaches-annotations
 [Nullable CupertinoTheme.brightness]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
 [Rebuild optimization for OverlayEntries and Routes]: /docs/release/breaking-changes/overlay-entry-rebuilds
+[Replace AnimationSheetBuilder.display with collate]: /docs/release/breaking-changes/animation-sheet-builder-display
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
