@@ -14,14 +14,16 @@ AnimationSheetBuilder.collate.
 [`AnimationSheetBuilder`][] is a testing utility
 class that records frames of an animating widget,
 and later composes the frames into a single
-animation sheet for [golden testing][]. The composing
-step used to use `display` to list the images into a
-table-like widget, `sheetSize` to adjust the testing
-surface, and then capture the table widget for
-comparison. A new way, `collate`, has been found to
-directly put the frames together into an image for
-comparison, while requiring less boilerplate and
-outputs a smaller image without information loss.
+animation sheet for [golden testing][]. The old way
+of composing involves `display` to list the images
+into a table-like widget, adjusting the testing
+surface with `sheetSize`, and capturing the table
+widget for comparison. A new way, `collate`, has
+been added that directly put the frames together
+into an image for comparison, which requires a less
+boilerplate and outputs a smaller image without
+compromise in quality. APIs for the old way are thus
+deprecated.
 
 The reason why `collate` outputs a smaller image,
 is because the old way captures on a testing surface
@@ -41,11 +43,13 @@ The following changes have been made to the
 ## Migration guide
 
 To migrate to the new API, change the process of setting
-surface size and displaying the widget into a call
-to [`AnimationSheetBuilder.collate`][].
+surface size and displaying the widget into
+[`AnimationSheetBuilder.collate`][].
 
-This requires deriving the `cellsPerRow` argument
-for `collate`, which is the number of frames per
+### Derive cells per row
+
+The `collate` requires an explicit `cellsPerRow`
+argument, which is the number of frames per
 row in the output image. It can be manually counted,
 or calculated as follows:
 
@@ -70,6 +74,8 @@ numbers divided, rounded down. For example,
 ```dart
 animationSheet.collate(7)
 ```
+
+### Migrate code
 
 Code before migration:
 <!-- skip -->
