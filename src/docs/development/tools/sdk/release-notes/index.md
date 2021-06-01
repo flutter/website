@@ -6,10 +6,9 @@ description: Release notes for Flutter for prior releases.
 
 This page links to announcements and release notes for
 releases to the stable channel.
-For information about bug-fix releases see
-[Hotfixes to the Stable Channel][].
 
-[Hotfixes to the Stable Channel]: https://github.com/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
+{{site.alert.note}} For information about bug-fix releases see
+[Hotfixes to the Stable Channel][]. {{site.alert.end}}
 
 * 2.2.0
   * [2.2.0 announcement][]
@@ -46,3 +45,5 @@ For information about bug-fix releases see
 [1.7.8]: release-notes/release-notes-1.7.8
 [1.5.4]: release-notes/release-notes-1.5.4
 [1.2.1]: release-notes/release-notes-1.2.1
+
+[Hotfixes to the Stable Channel]: https://github.com/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
