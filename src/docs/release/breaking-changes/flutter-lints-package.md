@@ -46,7 +46,7 @@ on the command line. You may be able to fix some of the reported issues
 automatically by running `dart fix --apply` in the root directory of your
 project.
 
-### Existing custom analyzer_options.yaml file
+### Existing custom analysis_options.yaml file
 
 If your project already has a custom `analysis_options.yaml` file at its root,
 add `include: package:flutter_lints/flutter.yaml` to it at the top to activate
