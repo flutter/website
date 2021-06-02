@@ -48,4 +48,4 @@ releases to the stable channel.
 [1.5.4]: release-notes/release-notes-1.5.4
 [1.2.1]: release-notes/release-notes-1.2.1
 
-[Hotfixes to the Stable Channel]: https://github.com/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
+[Hotfixes to the Stable Channel]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
