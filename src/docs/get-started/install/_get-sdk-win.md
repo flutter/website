@@ -9,7 +9,7 @@
     [SDK releases][] page.
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
-    (for example, `C:\Users\Documents`).
+    (for example, `C:\Users\<your-user-name>\Documents`).
     
 {{site.alert.warning}}
   Do not install Flutter in a directory like 
