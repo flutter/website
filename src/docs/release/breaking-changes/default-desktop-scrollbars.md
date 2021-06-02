@@ -252,7 +252,7 @@ ScrollConfiguration(
 ## Timeline
 
 Landed in version: 2.2.0-10.0.pre<br>
-In stable release: TBD
+In stable release: 2.2.0
 
 ## References
 
