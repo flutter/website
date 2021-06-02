@@ -5,7 +5,7 @@ description: The setMockMessageHandler method related APIs have moved from packa
 
 ## Summary
 
-The following methods have been replaced by APIs in the `flutter_test` package: `BinaryMessenger.checkMessageHandler`, `BinaryMessenger.setMockMessageHandler`, `BinaryMessenger.checkMockMessageHandler`, `BasicMessageChannel.setMockMessageHandler`, `MethodChannel.checkMethodCallHandler`, `MethodChannel.setMockMethodCallHandler`, and `MethodChannel.checkMockMethodCallHandler`.
+The following methods have been replaced by APIs in the `flutter_test` package: `BinaryMessenger.checkMessageHandler`, `BinaryMessenger.setMockMessageHandler`, `BinaryMessenger.checkMockMessageHandler`, `BasicMessageChannel.setMockMessageHandler`, `MethodChannel.checkMethodCallHandler`, `MethodChannel.setMockMethodCallHandler`, and `MethodChannel.checkMockMethodCallHandler`. The `onPlatformMessage` callback is no longer used by the Flutter framework.
 
 ## Context
 
@@ -40,6 +40,8 @@ Code that needs migrating may see errors such as the following:
 
 [error] The method 'setMockMessageHandler' isn't defined for the type 'BasicMessageChannel' (test/material/feedback_test.dart:37:36)
 ```
+
+In addition, the `onPlatformMessage` callback, which previously was hooked by the framework to receive messages from plugins, is no longer used (and will be removed in due course). As a result, calling this callback to inject messages into the framework no longer has an effect.
 
 ## Migration guide
 
@@ -77,13 +79,17 @@ tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(myMethodChannel, 
 tester.binding.defaultBinaryMessenger.checkMockMessageHandler(myMethodChannel, ...);
 ```
 
+Tests that use `package:test` and `test()` can be changed to use `package:flutter_test` and `testWidgets()` to get access to a `WidgetTester`.
+
 Code that does not have access to a `WidgetTester` can refer to `TestDefaultBinaryMessengerBinding.instance!.defaultBinaryMessenger` instead of `tester.binding.defaultBinaryMessenger`.
 
 Tests that do not use the default test widgets binding (`AutomatedTestWidgetsFlutterBinding`, which is initialized by `testWidgets`) can mix the `TestDefaultBinaryMessengerBinding` mixin into their binding to get the same results.
 
+Tests that manipulate `onPlatformMessage` will no longer function as designed. To send mock messages to the framework, consider using `ChannelBuffers.push`. There is no mechanism to intercept messages from the plugins and forward them to the framework in the new API. If your use case requires such a mechanism, please file a bug.
+
 ## Timeline
 
-Landed in version: 2.2.0-11.0.pre.265<br>
+Landed in version: 2.3.0-17.0.pre.1<br>
 In stable release: not yet
 
 ## References
