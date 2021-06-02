@@ -181,7 +181,7 @@ difference as illustrated in the beginning of this article.
    devices. As the Flutter team has only a limited number of devices in the lab,
    we currently don't have enough data to provide a big picture of cross-device
    effectiveness. We'd love you to provide us more data points to see how it
-   works in the wild---[`FrameTiming`][] can be used to compute the worst frame
+   works in the wild&mdash;[`FrameTiming`][] can be used to compute the worst frame
    rasterization time in release mode; the worst frame rasterization time is
    a good indicator on how severe the shader compilation jank is.
    
