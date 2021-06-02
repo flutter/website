@@ -153,7 +153,7 @@ difference as illustrated in the beginning of this article.
 [`transitions_perf_test.dart`]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
 [limitations and considerations]: /docs/perf/rendering/shader#limitations-and-considerations
 
-## Frequently Asked Questions
+## Frequently asked questions
 
 1. **Why not just compile or warm up _all_ possible shaders?**<br><br>
    If there were only a limited number of possible shaders,
