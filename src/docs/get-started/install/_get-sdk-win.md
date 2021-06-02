@@ -9,7 +9,7 @@
     [SDK releases][] page.
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
-    (for example, `C:\src\flutter`).
+    (for example, `C:\Users\Documents`).
     
 {{site.alert.warning}}
   Do not install Flutter in a directory like 
@@ -18,7 +18,7 @@
 
 If you don't want to install a fixed version of the installation 
 bundle, you can skip steps 1 and 2. Instead, get the source code 
-from the [Flutter repo](https://github.com/flutter/flutter) on 
+from the [Flutter repo][] on 
 GitHub, and change branches or tags as needed. For example:
 
 ```batchfile
@@ -26,6 +26,8 @@ C:\src>git clone https://github.com/flutter/flutter.git -b stable
 ```
 
 You are now ready to run Flutter commands in the Flutter Console.
+
+[Flutter repo]: {{site.github}}/flutter/flutter
 
 ### Update your path
 
