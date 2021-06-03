@@ -12,10 +12,12 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Default drag scrolling devices][]
 * [Introducing package:flutter_lints][]
 * [ThemeData's accent properties have been deprecated][]
 * [GestureRecognizer Cleanup][]
 
+[Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
 [GestureRecognizer Cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
 [Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
