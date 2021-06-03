@@ -203,9 +203,10 @@ difference as illustrated in the beginning of this article.
 
 4. **This process would be easier if the `flutter` tool could do X!**<br><br>
    There are a number of possible ways that the tooling around shader warm-up
-   could be improved. Please let us know what is important to you by giving
-   a thumbs-up to your feature request on GitHub, or by filing a new one if
-   one doesn't already exist.
+   could be improved. Some are already listed as ideas under our [Early-onset jank][]
+   project on GitHub. Please let us know what is important to you by giving
+   a thumbs-up to your feature request, or by filing a new one if one doesn't
+   already exist.
 
 ## Future work
 
@@ -228,6 +229,7 @@ Engine. Stay tuned for more progress!
 [a solution used by the Dolphin Emulator]: https://dolphin-emu.org/blog/2017/07/30/ubershaders/
 [contribution guidelines]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
 [continuing to investigate]: {{site.github}}/flutter/flutter/projects/188
+[Early-onset jank]: {{site.github}}/flutter/flutter/projects/188
 [reduce the number of shaders]: https://bugs.chromium.org/p/skia/issues/detail?id=11844
 [small set of statically defined shaders]: {{site.github}}/flutter/flutter/issues/77412
 
