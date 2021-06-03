@@ -184,8 +184,8 @@ VerticalDragGestureRecognizer(
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: TBD
+Landed in version: 2.3.0-12.0.pre<br>
+In stable release: not yet
 
 ## References
 
