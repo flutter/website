@@ -49,6 +49,7 @@ The following breaking changes have been reverted.
 * [SnackBars managed by the ScaffoldMessenger][]
 * [TextSelectionTheme migration][]
 * [Use maxLengthEnforcement instead of maxLengthEnforced][]
+* [Transition of platform channel test interfaces to flutter_test package][]
 
 [Added BuildContext parameter to TextEditingController.buildTextSpan]: /docs/release/breaking-changes/buildtextspan-buildcontext
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
@@ -61,6 +62,7 @@ The following breaking changes have been reverted.
 [SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
 [TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
 [Use maxLengthEnforcement instead of maxLengthEnforced]: /docs/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
+[Transition of platform channel test interfaces to flutter_test package]: /docs/release/breaking-changes/mock-platform-channels
 
 ### Released in Flutter 1.22
 
