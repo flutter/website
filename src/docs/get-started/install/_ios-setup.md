@@ -32,7 +32,7 @@ supported, and is likely not to work.
 With Xcode, you’ll be able to run Flutter apps on
 an iOS device or on the simulator.
 
-### Set up the iOS simulator
+### Set up the iOS simulator:
 
 To prepare to run and test your Flutter app on the iOS simulator,
 follow these steps:
