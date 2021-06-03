@@ -81,9 +81,8 @@ shader capturing. It also purges the SkSL shaders so use it *only* on the first
 
 <li markdown="1"> Press `M` at the command line of `flutter run` to
     write the captured SkSL shaders into a file named something like
-   `flutter_01.sksl.json`. (For best results, capture SkSL shaders on actual
-   Android and iOS devices separately. For iOS, please also read the
-   [limitations and considerations][] section below on Metal versus OpenGL.)
+   `flutter_01.sksl.json`. For best results, capture SkSL shaders on actual
+   Android and iOS devices separately.
 </li>
 
 <li markdown="1"> Build the app with SkSL warm-up using the following,
@@ -154,21 +153,21 @@ difference as illustrated in the beginning of this article.
 [`transitions_perf_test.dart`]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
 [limitations and considerations]: /docs/perf/rendering/shader#limitations-and-considerations
 
-## Limitations and considerations
+## Frequently asked questions
 
 1. **Why not just compile or warm up _all_ possible shaders?**<br><br>
-   If there are only a limited number of possible shaders,
-   then Flutter could do a warm-up and compile all of them
-   before-hand to avoid such jank.
+   If there were only a limited number of possible shaders,
+   then Flutter could compile all of them when an application is built.
    However, for the best overall performance,
-   the Skia GPU backend used by Flutter can dynamically generate
-   shaders based on a lot of parameters at runtime
-   (for example, draws, device models, and driver versions).
+   the Skia GPU backend used by Flutter dynamically generates
+   shaders based on many parameters at runtime
+   (for example draws, device models, and driver versions).
    Due to all possible combinations of those parameters,
-   the number of possible shaders is exponential.
+   the number of possible shaders multiplies quickly.
    In short, Flutter uses programs (app, Flutter, and Skia code)
    to generate some other programs (shaders). The number of possible
-   shader programs that Flutter can generate is simply too large.
+   shader programs that Flutter can generate is too large to
+   precompute and bundle with an application.
 
 2. **Can SkSLs captured from one device help shader compilation jank
    on another device?**<br><br>
@@ -181,24 +180,12 @@ difference as illustrated in the beginning of this article.
    or 2) SkSLs are captured from emulators and then applied to real mobile
    devices. As the Flutter team has only a limited number of devices in the lab,
    we currently don't have enough data to provide a big picture of cross-device
-   helpfulness. We'd love you to provide us more data points to see how it
-   works in the wild. ([`FrameTiming`][] can be used to compute the worst frame
+   effectiveness. We'd love you to provide us more data points to see how it
+   works in the wild&mdash;[`FrameTiming`][] can be used to compute the worst frame
    rasterization time in release mode; the worst frame rasterization time is
-   a good indicator on how severe the shader compilation jank is.)
-
-3. **SkSL warm-up doesn't help newer iPhones using Metal.**<br><br>
-   Flutter recently migrated from OpenGL to Metal for all newer iOS devices.
-   (Please reference [Metal on iOS FAQ][] on which iOS devices are considered
-   new enough to use Metal.) However, Skia currently only implemented the SkSL
-   warm-up for OpenGL. So the SkSL warm-up would only speed up older iOS devices
-   by default. If you find shader compilation jank to be an issue for your app
-   on newer iPhones, please let us know by filing a [GitHub issue][]. In the
-   longer term, we have a plan to use test-based shader warm-up to mitigate
-   this. If there's an urgent need for fixing shader compilation jank on newer
-   iPhones, please leave feedback on [Issue 61045][], and we can help you turn
-   on OpenGL for your app.
+   a good indicator on how severe the shader compilation jank is.
    
-4. **Why can't you create a single "ubershader" and just compile that once?**<br><br>
+3. **Why can't you create a single "ubershader" and just compile that once?**<br><br>
    One idea that people sometimes suggest is to create a single large shader that
    implements all of Skia's features, and use that shader while the more optimized
    bespoke shaders are being compiled.<br><br>
@@ -214,14 +201,37 @@ difference as illustrated in the beginning of this article.
    along these lines if this is something that interests you. To get started, please
    see our [contribution guidelines].
 
+4. **This process would be easier if the `flutter` tool could do X!**<br><br>
+   There are a number of possible ways that the tooling around shader warm-up
+   could be improved. Some are already listed as ideas under our [Early-onset jank][]
+   project on GitHub. Please let us know what is important to you by giving
+   a thumbs-up to your feature request, or by filing a new one if one doesn't
+   already exist.
+
+## Future work
+
+On both Android and iOS, shader warm-up has a few drawbacks:
+1. The size of the deployed app is larger because it contains the bundled shaders.
+2. App startup latency is longer because the bundled shaders need to be precompiled.
+3. Most importantly, we are not happy with the developer experience of shader
+warm-up. In particular we view the process of performing training runs, and reasoning
+about the trade-offs imposed by (1) and (2) to be too onerous.
+
+Therefore, we are [continuing to investigate][] approaches to shader compilation jank, and
+jank more generally, that do not rely on shader warm-up. In particular, we are both
+working with Skia to [reduce the number of shaders][] it generates in response to
+Flutter’s requests, as well as investigating how much of Flutter could be implemented
+with a [small set of statically defined shaders][] that we could bundle with the Flutter
+Engine. Stay tuned for more progress!
 
 [`FrameTiming`]: {{site.api}}/flutter/dart-ui/FrameTiming-class.html
 [SkSL-based warmup issue]: {{site.github}}/flutter/flutter/issues/53607#issuecomment-608587484
-[GitHub issue]: {{site.github}}/flutter/flutter/issues
-[Issue 61045]: {{site.github}}/flutter/flutter/issues/61045
-[Metal on iOS FAQ]: {{site.github}}/flutter/flutter/wiki/Metal-on-iOS-FAQ
 [a solution used by the Dolphin Emulator]: https://dolphin-emu.org/blog/2017/07/30/ubershaders/
 [contribution guidelines]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
+[continuing to investigate]: {{site.github}}/flutter/flutter/projects/188
+[Early-onset jank]: {{site.github}}/flutter/flutter/projects/188
+[reduce the number of shaders]: https://bugs.chromium.org/p/skia/issues/detail?id=11844
+[small set of statically defined shaders]: {{site.github}}/flutter/flutter/issues/77412
 
 If you have questions on SkSL shader warm-up,
 please comment on [Issue 60313][] and [Issue 53607][].
