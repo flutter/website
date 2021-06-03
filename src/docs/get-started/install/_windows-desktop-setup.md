@@ -17,15 +17,16 @@
   to be on the `dev` channel.
 
   For more information, see the **Desktop**
-  section in [What's new in Flutter 2][],
+  section in [What's new in Flutter 2.2][],
   a free article on Medium.
 {{site.alert.end}}
 
-[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
+[What's new in Flutter 2.2]: {{site.flutter-medium}}/whats-new-in-flutter-2-2-fd00c65e2039
 
 ### Additional Windows requirements
 
-For Windows desktop development, you need the following in addition to the Flutter SDK:
+For Windows desktop development,
+you need the following in addition to the Flutter SDK:
 
 * [Visual Studio 2019][] (not to be confused with
   Visual Studio _Code_). For Win32 you need the
@@ -38,7 +39,8 @@ For Windows desktop development, you need the following in addition to the Flutt
 
 ### Enable desktop support
 
-At the command line, perform the following command to enable Win32 desktop support
+At the command line,
+perform the following command to enable Win32 desktop support:
 
 ```terminal
 $ flutter config --enable-windows-desktop
@@ -55,4 +57,4 @@ $ flutter config --enable-windows-uwp-desktop
 
 For more information, see [Desktop support for Flutter][]
 
-[Desktop support for Flutter]: https://flutter.dev/desktop
+[Desktop support for Flutter]: /desktop

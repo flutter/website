@@ -7,6 +7,12 @@ The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
 
+Flutter workshops are similar to the codelabs,
+but are instructor led and use DartPad. The
+workshop links take you to the relevant YouTube
+video and tells you where to find the associated
+DartPad link.
+
 ## Good for beginners
 
 If you're new to Flutter, we recommend starting with
@@ -59,6 +65,11 @@ like layout and animations:
   Use DartPad in a browser (no downloads required!)
   to learn the basics of creating a Flutter layout.
 
+* [Building scrolling experiences in Flutter][] (workshop) [NEW]<br>
+  Start with an app that performs simple, straightforward scrolling
+  and enhance it to create fancy and custom scrolling effects,
+  using slivers.
+
 * [How to debug layout issues with the Flutter Inspector][]<br>
   Not an official codelab, but step-by-step instructions on
   how to debug common layout problems using the Flutter 
@@ -100,6 +111,7 @@ like layout and animations:
 [animations]: {{site.pub}}/packages/animations
 [Basic Flutter layout concepts]: /docs/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
+[Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: /docs/codelabs/implicit-animations
 [MDC 101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter

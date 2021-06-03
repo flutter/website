@@ -46,7 +46,7 @@ on the command line. You may be able to fix some of the reported issues
 automatically by running `dart fix --apply` in the root directory of your
 project.
 
-### Existing custom analyzer_options.yaml file
+### Existing custom analysis_options.yaml file
 
 If your project already has a custom `analysis_options.yaml` file at its root,
 add `include: package:flutter_lints/flutter.yaml` to it at the top to activate
@@ -122,7 +122,7 @@ Relevant PRs:
 [Customizing static analysis]: {{site.dart-site}}/guides/language/analysis-options
 [dart analyzer]: {{site.dart-site}}/guides/language/analysis-options
 [IDE with Dart support]: {{site.dart-site}}/tools#ides-and-editors
-[Integrate package:flutter_lints into template]: {{site.github}}/flutter/flutter/pull/81417
+[Integrate package:flutter_lints into templates]: {{site.github}}/flutter/flutter/pull/81417
 [Issue 78432 - Update lint set for Flutter applications]: {{site.github}}/flutter/flutter/issues/78432
 [`package:flutter_lints`]: {{site.pub}}/packages/flutter_lints
 [`package:lints`]: {{site.pub}}/packages/lints

@@ -9,7 +9,7 @@ The [Google APIs package]({{site.pub-pkg}}/googleapis) exposes dozens of Google
 services that you can use from Dart projects.
 
 This page describes how to use APIs that interact with end-user data by using
-Gooogle authentication.
+Google authentication.
 
 Examples of user-data APIs include
 [Calendar]({{site.pub-api}}/googleapis/latest/calendar.v3/calendar.v3-library.html),

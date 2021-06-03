@@ -103,7 +103,7 @@ Color myColor = Theme.of(context).colorScheme.secondary;
 
 ### `accentColorBrightness`
 
-The static ThemeData.estimateBrightnessForColor() method can be used
+The static [`ThemeData.estimateBrightnessForColor()`][] method can be used
 to compute the brightness of any color.
 
 
@@ -178,6 +178,7 @@ Other:
 [`colorScheme.secondary`]: {{site.api}}/flutter/material/ColorScheme/secondary.html
 [`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
 [Issue #56918]: {{site.github}}/flutter/flutter/issues/56918
+[FloatingActionButton and ThemeData's accent properties]: /docs/release/breaking-changes/fab-theme-data-accent-properties
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [`FloatingActionButtonTheme`]: {{site.api}}/flutter/material/FloatingActionButtonTheme-class.html
 [`FloatingActionButtonThemeData`]: {{site.api}}/flutter/material/FloatingActionButtonThemeData-class.html
@@ -191,3 +192,4 @@ Other:
 [`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
 [`Theme`]: {{site.api}}/flutter/material/Theme-class.html
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`ThemeData.estimateBrightnessForColor()`]: {{site.api}}/flutter/material/ThemeData/estimateBrightnessForColor.html

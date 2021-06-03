@@ -762,7 +762,7 @@ void _handleKey(event){
      bool isShiftDown = isKeyDown({
         LogicalKeyboardKey.shiftLeft, 
         LogicalKeyboardKey.shiftRight,
-     |);
+     });
      if(isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN){
         _createNewItem();
       }
