@@ -201,8 +201,8 @@ Learn how to use Flutter with other technologies.
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
-[dialogflow-ws]: {{site-youtube-site}}/watch?v=O7JfSF3CJ84
-[firebase-ws]: https://www.youtube.com/watch?v=4wunbF29Kkg
+[dialogflow-ws]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
+[firebase-ws]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
 [Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 
