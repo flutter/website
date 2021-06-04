@@ -2,7 +2,13 @@
 title: Free Flutter course from the App Brewery
 description: Link for registering for the free App Brewery course.
 ---
+
 <h1>This course is closed for enrollment.</h1>
+
+However, for $10 you can purchase a more in-depth version
+of this course, [The Complete Flutter Bootcamp with Dart][].
+
+[The Complete Flutter Bootcamp with Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 
 {% comment %}
 <section class="landing-page__cta card text-center">
