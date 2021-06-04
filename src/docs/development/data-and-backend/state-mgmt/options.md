@@ -48,6 +48,13 @@ The low-level approach used to communicate between ancestors and children
 in the widget tree. This is what `provider` and many other approaches
 use under the hood.
 
+The following instructor-led video workshop covers how to
+use `InheritedWidget`:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LFcGPS6cGrY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Other useful docs include:
+
 * [InheritedWidget docs][]
 * [Managing Flutter Application State With InheritedWidgets][],
   by Hans Muller

@@ -13,11 +13,14 @@ diff2html: true
 
 {{site.alert.tip}}
   This codelab walks you through writing your first Flutter
-  app on mobile. You might prefer to try
+  app. You might prefer to try
   [writing your first Flutter app on the web][codelab-web].
-  **Note that if you have [enabled web][],
-  the completed app just works on all of these devices!**
 {{site.alert.end}}
+
+If you prefer an instructor-led version of this codelab,
+check out the following workshop:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z6KZ3cTGBWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
 

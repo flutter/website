@@ -1,6 +1,6 @@
 ---
-title: Codelabs
-description: "Codelabs help you quickly get started programming Flutter."
+title: Codelabs & workshops
+description: "Codelabs and workshops help you quickly get started programming Flutter."
 ---
 
 The Flutter codelabs provide a guided,
@@ -8,15 +8,20 @@ hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
 
 Flutter workshops are similar to the codelabs,
-but are instructor led and use DartPad. The
-workshop links take you to the relevant YouTube
-video and tells you where to find the associated
+but are instructor led and always use DartPad. The
+provided workshop link takes you to the relevant YouTube
+video, which tells you where to find the associated
 DartPad link.
 
 ## Good for beginners
 
 If you're new to Flutter, we recommend starting with
 one of these codelabs:
+
+* [Building your first Flutter app][] (workshop) **NEW!**<br>
+  An instructor-led version of our very popular
+  "Write your first Flutter app, part 1" codelab
+  (listed below).
 
 * [Write your first Flutter app, part 1][]<br>
   Create a simple mobile app that generates proposed names
@@ -51,10 +56,33 @@ one of these codelabs:
   Android Studio.
 
 [Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
+[Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
 [codelab on flutter.dev]: /docs/get-started/codelab
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
 [Write your first Flutter app on the web]: /docs/get-started/codelab-web
+
+## Next steps
+
+* [Building scrolling experiences in Flutter][] (workshop) **NEW!**<br>
+  Start with an app that performs simple, straightforward scrolling
+  and enhance it to create fancy and custom scrolling effects
+  by using slivers.
+
+* [Dart null safety in Action][] (workshop) **NEW!**<br>
+  An instructor-led workshop based on the [Null safety codelab][]
+  on the dart.dev site.
+
+* [How to manage application states using inherited widgets][inherited-widget-ws] (workshop) **NEW!**<br>
+  Learn how to manage the state of your app's data by
+  using the `InheritedWidget` class, one of the
+  [low-level state management][] classes provided
+  by Flutter.
+
+[Dart null safety in Action]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
+[inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
+[low-level state management]: /docs/development/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
+[Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
 
 ## Designing a Flutter UI
 
@@ -64,11 +92,6 @@ like layout and animations:
 * [Basic Flutter layout concepts][]<br>
   Use DartPad in a browser (no downloads required!)
   to learn the basics of creating a Flutter layout.
-
-* [Building scrolling experiences in Flutter][] (workshop) [NEW]<br>
-  Start with an app that performs simple, straightforward scrolling
-  and enhance it to create fancy and custom scrolling effects,
-  using slivers.
 
 * [How to debug layout issues with the Flutter Inspector][]<br>
   Not an official codelab, but step-by-step instructions on
@@ -146,18 +169,27 @@ Learn how to use Flutter with other technologies.
   Build a field trip app that allows you and other
   members of the trip to share photos.
 
-* [Build voice bots for mobile with Dialogflow and Flutter][] [NEW]<br>
+* [Build voice bots for mobile with Dialogflow and Flutter][dialogflow-ws] (workshop) **NEW!**<br>
+  An instructor-led version of the Dialogflow
+  and Flutter codelab (listed below).
+
+* [Build voice bots for mobile with Dialogflow and Flutter][]<br>
   Learn how to build a mobile FAQ bot that can answer most
   common questions about the tool Dialogflow. End users
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
 
-* [Get to know Firebase for Flutter][] [NEW]<br>
+* [Get to know Firebase for Flutter][firebase-ws] (workshop) **NEW!**<br>
+  An instructor-led version of our popular
+  "Get to know Firebase for Flutter" codelab
+  (listed below).
+
+* [Get to know Firebase for Flutter][]<br>
   Build an event RSVP and guestbook chat app on both Android
   and iOS using Flutter, authenticating users with Firebase
   Authentication and sync data using Cloud Firestore.
 
-* [Multi-platform Firestore Flutter][] [NEW]<br>
+* [Multi-platform Firestore Flutter][]<br>
   Build a multi-platform restaurant recommendation app
   powered by Flutter and Cloud Firestore.
   The finished app runs on Android, iOS, and web,
@@ -169,6 +201,8 @@ Learn how to use Flutter with other technologies.
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
+[dialogflow-ws]: {{site-youtube-site}}/watch?v=O7JfSF3CJ84
+[firebase-ws]: https://www.youtube.com/watch?v=4wunbF29Kkg
 [Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 
