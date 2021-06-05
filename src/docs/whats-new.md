@@ -51,7 +51,7 @@ New codelabs since the last stable release:
 
 For Google I/O 2021, we have added a new
 Flutter/Dart learning tool that
-is based on DartPad: Workshops!
+is based on DartPad: **Workshops!**
 These workshops are designed to be instructor led.
 The instructor-led videos are available on the
 Flutter and Firebase YouTube channels:
@@ -63,8 +63,8 @@ Flutter and Firebase YouTube channels:
 * [Null safety][]
 * [Slivers][]
 
-To see the list of workshops available at I/O,
-see the [Google 2021 I/O workshops][] page.
+To see the event list of "all things Flutter" at I/O,
+see the [Google 2021 I/O Flutter][] page.
 
 You can author your own DartPad workshops!
 If you are interested, check out the following resources:
@@ -72,6 +72,8 @@ If you are interested, check out the following resources:
 * [DartPad Workshop Authoring Guide][]
 * [DartPad Sharing Guide (using a Gist file)][]
 * [Embedding DartPad in your web page][]
+
+[Google 2021 I/O Flutter]: https://events.google.com/io/program/content?4=topic_flutter
 
 **Articles**
 
