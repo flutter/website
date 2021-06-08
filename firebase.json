@@ -207,6 +207,7 @@
       { "source": "/go/reorderable-list-view-update", "destination": "https://docs.google.com/document/d/1JzNtMQ-jnPnSHEBoi6IO0x2qMMylwhvRslEDcmqiwSs", "type": 301 },
       { "source": "/go/respecting-tabcontroller-animateto-duration", "destination": "https://docs.google.com/document/d/1wzSzUYstDM-Kg5kwskyXcEUX7QTb-lBOso7Z5ebrCTk/edit", "type": 301 },
       { "source": "/go/restoring-anonymous-routes", "destination": "https://docs.google.com/document/d/1vnjDruoiDz0eEd4eVzg3IS6W_LRaFxNSlKWtU6iXp2M/edit", "type": 301 },
+      { "source": "/go/retiring-tests", "destination": "https://docs.google.com/document/d/152EdrEwRb-dwXqdjMPJ3IDhtKiu6ycF6awV2AqkSCqo/edit", "type": 301 },
       { "source": "/go/rfc-android-j-deprecation", "destination": "https://docs.google.com/document/d/1IjlypDrIIGgF2N76P6z8QL2rT5Uuh_rBvqOgDUyhCx8/edit#heading=h.pub7jnop54q0", "type": 301 },
       { "source": "/go/rfc-ios8-deprecation", "destination": "https://docs.google.com/document/d/1G5L7ux7ofQp3bCSNAt4ovvL5-8PF_rqo2erAVIcHHeg", "type": 301 },
       { "source": "/go/router-and-widgetsapp-integration", "destination": "https://docs.google.com/document/d/1QodTFmwVr1yk8dyQvoqkeILxvm92oikB1bVhHTtp6R4/edit", "type": 301 },
