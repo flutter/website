@@ -94,7 +94,7 @@ onGenerateRoute: (settings) {
      routePrefixDeviceSetup.length,
    );
    page = SetupFlow(
-     initialSetupRoute: subRoute,
+     setupPageRoute: subRoute,
    );
  } else {
    throw Exception('Unknown route: ${settings.name}');
