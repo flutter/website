@@ -71,7 +71,7 @@ Code after migration:
 final ThemeData theme = ThemeData();
 MaterialApp(
   theme: theme.copyWith(
-    colorScheme: theme.colorScheme.copyWith(secondaryColor: myColor),
+    colorScheme: theme.colorScheme.copyWith(secondary: myColor),
   ),
   //...
 )
