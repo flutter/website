@@ -12,4 +12,3 @@ dependencies:
   google_sign_in: ^5.0.2
   googleapis: ^2.0.0
   http: ^0.13.0
-
