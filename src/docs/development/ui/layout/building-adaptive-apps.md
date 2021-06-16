@@ -332,91 +332,18 @@ you can use the [`Platform`][] API along with the `kIsWeb` value:
 
 <!--skip-->
 ```dart
-bool get isMobileDevice => (Platform.isIOS || Platform.isAndroid);
-bool get isMobileDeviceOrWeb => isMobileDevice  || kIsWeb;
+bool get isMobileDevice => !kIsWeb && (Platform.isIOS || Platform.isAndroid);
+bool get isDesktopDevice =>
+    !kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux);
+bool get isMobileDeviceOrWeb => kIsWeb || isMobileDevice;
+bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
 ```
 
-One issue with this check is that the `Platform` API
-can’t be accessed from web builds without throwing an exception.
-This is because the API imports the `dart.io` package,
-which isn’t fully supported on the web target.
-To workaround this issue, you can use the
-[`UniversalPlatform`][] package: 
-
-[`UniversalPlatform`]: {{site.pub}}/packages/universal_platform
-
-<!--skip-->
-```dart
-bool get isMobileDevice => (UniversalPlatform.isIOS || UniversalPlatform.isAndroid);
-```
-
-This device check is now safe to run on any platform,
-but it suffers from another issue, which is its verbosity
-and repetitiveness. For example, consider the following code
-for a view that you want to show on any of the desktop
-platforms and the web:
-
-<!--skip-->
-```dart
-return (UniversalPlatform.isWindows || UniversalPlatform.isLinux || UniversalPlatform.isMacOS || kIsWeb)? DesktopView() : MobileView();
-```
-
-The code is easier to read and less prone to typos if you
-write it like this: 
-
-<!--skip-->
-```dart
-return DeviceType.isDesktopOrWeb? DesktopView() : MobileView();
-```
-
-As such, you may want to create a small utility class
-of shortcut methods: 
-
-<!--skip-->
-```dart
-class DeviceType {
- // Syntax sugar, proxy the UniversalPlatform methods so our views can reference a single API 
- static bool isIOS = UniversalPlatform.isIOS;
- static bool isAndroid = UniversalPlatform.isAndroid;
- static bool isMacOS = UniversalPlatform.isMacOS;
- static bool isLinux = UniversalPlatform.isLinux;
- static bool isWindows = UniversalPlatform.isWindows;
-
- // Higher level device class abstractions (more syntax sugar for the views)
- static bool isWeb = UniversalPlatform.isWeb;
- static bool get isDesktop => isWindows || isMacOS || isLinux;
- static bool get isMobile => isAndroid || isIOS;
- static bool get isDesktopOrWeb => isDesktop || isWeb;
- static bool get isMobileOrWeb => isMobile || isWeb;
-}
-```
-
-While this is really just syntactic sugar,
-the helper methods can help keep your UI code clean and readable.
-
-You can now write the preceding example similar to this:
-
-<!--skip-->
-```dart
-class TitleBar extends StatelessWidget {
- @override
- Widget build(BuildContext context) {
-   Row(
-   // Our button should be right-aligned on macOS to avoid the native buttons
-   textDirection: DeviceType.isMacOS ? TextDirection.rtl : TextDirection.ltr,
-   children: [
-     IconButton( ... ),
-     Spacer(),
-   ],
-  ),
- }
-}
-```
-
-This view now aligns its controls on the right hand side
-on macOS, while leaving them on the left side for all other platforms.
-With this small amount of logic,
-you have a single universal widget that is easy to test and maintain.
+The `Platform` API can’t be accessed from web builds without 
+throwing an exception, because the `dart.io` package is not
+supported on the web target. As a result, this code checks 
+for web first, and becuase of short-circuiting, Dart will 
+never call `Platform` on web targets.
 
 ### Single source of truth for styling
 
