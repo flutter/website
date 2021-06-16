@@ -854,7 +854,7 @@ and [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
 that let you embed this kind of content on each platform. Platform views can be
 integrated with other Flutter content<sup><a href="#a4">4</a></sup>. Each of
 these widgets acts as an intermediary to the underlying operating system. For
-example, on Android,`AndroidView` serves three primary functions:
+example, on Android, `AndroidView` serves three primary functions:
 
 - Making a copy of the graphics texture rendered by the native view and
   presenting it to Flutter for composition as part of a Flutter-rendered surface
