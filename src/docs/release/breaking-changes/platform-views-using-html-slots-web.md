@@ -1,41 +1,53 @@
 ---
 title: Using HTML slots to render platform views in the web
-description: iframes in Flutter web used to reload, because of the way some DOM operations were made. A change in the way Flutter web apps render Platform Views makes them much more stable (preventing iframe reloads, and other problems with video tags or forms potentially losing their state).
+description: iframes in Flutter web used to reload, because of the way some DOM operations were made. A change in the way Flutter web apps render platform views makes them stable (preventing iframe reloads, and other problems with video tags or forms potentially losing their state).
 ---
 
 ## Summary
 
-Flutter now renders Platform Views using [slot elements][] inside of a single,
-app-wide [Shadow Root][]. Slot elements can be added/removed/moved around the
-Shadow DOM without affecting the underlying slotted content (which is rendered
-in a constant location)
+Flutter now renders all web platform views in a consistent location of the DOM,
+as direct children of `flt-glass-pane` (regardless of the rendering backend:
+`html` or `canvaskit`). Platform views are then _"slotted"_ into the correct
+position of the App's DOM with standard HTML features.
+
+Up until this change, Flutter web would change the styling of the rendered
+contents of a platform views to position/size it to the available space. **This
+is no longer the case.** Users can now decide how they want to utilize the space
+allocated to their platform view by the framework.
 
 ## Context
 
-The Flutter framework frequently tweaks its Render Tree to optimize the paint
-operations that are ultimately made per frame. In the web, these Render Tree
+The Flutter framework frequently tweaks its render tree to optimize the paint
+operations that are ultimately made per frame. In the web, these render tree
 changes often result in DOM operations.
 
-Flutter web used to render its Platform Views (`HtmlElementView` widgets)
+Flutter web used to render its platform views ([`HtmlElementView` widgets][])
 directly into its corresponding position of the DOM.
 
 Using certain DOM elements as the "target" of some DOM operations causes those
-elements to lose their internal state. In practice this means that `iframe` tags
-are going to reload, `video` players might restart, or a form being edited might
-lose the edits made to it.
+elements to lose their internal state. In practice, this means that `iframe`
+tags are going to reload, `video` players might restart, or an editable form
+might lose its edits.
+
+Flutter now renders platform views using [slot elements][] inside of a single,
+app-wide [shadow root][]. Slot elements can be added/removed/moved around the
+Shadow DOM without affecting the underlying slotted content (which is rendered
+in a constant location)
 
 This change was made to:
 
-* make Platform Views behave in a stable way in Flutter web.
-* unify the way Platform Views were rendered in the web for both rendering
-backends (`html` and `canvaskit`).
+* Stabilize the behavior of platform views in Flutter web.
+* Unify how platform views are rendered in the web for both rendering
+   backends (`html` and `canvaskit`).
+* Provide a predictable location in the DOM that allows developers to reliably
+   use CSS to style their platform views, and to use other standard DOM API,
+   such as `querySelector`, and `getElementById`.
 
 ## Description of change
 
-A Flutter web app is now rendered inside a common Shadow Root in which slot
-elements are used to represent platform views. The actual content of each
-platform view is rendered *outside* of the Shadow Root, as a child of the Shadow
-Root host.
+A Flutter web app is now rendered inside a common [shadow root][] in which
+[slot elements][] represent platform views. The actual content of
+each platform view is rendered as a **sibling of said shadow root**.
 
 ### Before
 
@@ -79,10 +91,11 @@ Root host.
 ...
 ```
 
-Now, when the framework needs to move DOM nodes around, it'll operate over
-`flt-platform-view-slot`s, which only contain the `slot` tag that "projects" the
-content defined in the `flt-platform-view` tags outside of the Shadow Root
-(which never move), thus preventing the reloads.
+After this change, when the framework needs to move DOM nodes around, it
+operates over `flt-platform-view-slot`s, which only contain a `slot` element.
+The slot _projects_ the contents defined in `flt-platform-view` elements outside
+the shadow root. `flt-platform-view` elements are never the target of DOM
+operations from the framework, thus preventing the reload issues.
 
 From an app's perspective, this change is transparent. **However**, this is
 considered a _breaking change_ because some tests make assumptions
@@ -189,11 +202,12 @@ Relevant PRs:
 * [flutter/plugins#3964][pull-3964]: Tweaks to `plugins` code.
 * [flutter/packages#364][pull-364]: Tweaks to `packages` code.
 
+[`HtmlElementView` widgets]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
 [design doc]: https://flutter.dev/go/web-slot-content
 [issue-80524]: {{site.github}}/flutter/flutter/issues/80524
 [pull-25747]: {{site.github}}/flutter/engine/pull/25747
 [pull-364]: {{site.github}}/flutter/packages/pull/364
 [pull-3964]: {{site.github}}/flutter/plugins/pull/3964
 [pull-82926]: {{site.github}}/flutter/flutter/pull/82926
-[Shadow Root]: https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot
+[shadow root]: https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot
 [slot elements]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot
