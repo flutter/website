@@ -84,18 +84,21 @@ Now, when the framework needs to move DOM nodes around, it'll operate over
 content defined in the `flt-platform-view` tags outside of the Shadow Root
 (which never move), thus preventing the reloads.
 
-From an app's perspective, this change is transparent, **however** this was
-deemed a _breaking change_ because tests that make assumptions about the DOM of
-a Flutter web app can break.
+From an app's perspective, this change is transparent. **However**, this is
+considered a _breaking change_ because some tests make assumptions
+about how the DOM of a Flutter web app might break.
 
 ## Migration guide
 
 ### Code
 
-The content returned by the users' Platform View Factory used to be resized and
-positioned by the framework, but not anymore. Ensure that your returned
-`html.Element` takes the whole space allocated for it by the framework, by
-setting its `style.width` and `style.height` properties to `'100%'`:
+Previously, the content returned by [`PlatformViewFactory`][] was resized and
+positioned by the framework. Instead, Flutter now sizes and positions
+`<flt-platform-view>`, which is the parent of the content.
+To ensure the `html.Element` that you return takes the whole space
+allocated to it, set its `style.width` and `style.height` properties to `'100%'`:
+
+[`PlatformViewFactory`]: {{site.api}}/javadoc/index.html?io/flutter/plugin/platform/PlatformView.html
 
 <!-- skip -->
 ```dart
@@ -109,7 +112,7 @@ ui.platformViewRegistry.registerViewFactory(viewType, (int viewId) {
 });
 ```
 
-Otherwise the engine will print a warning message to the console similar to:
+Otherwise, the engine prints a warning message to the console similar to:
 
 <!-- skip -->
 ```bash
@@ -127,9 +130,9 @@ Set `style.width` to any appropriate value to stop this message.
 
 ### Tests
 
-Unfortunately, there are no selectors that let one _pierce_ through the Shadow
+By design, there are no selectors that let one _pierce_ through the shadow
 DOM boundary to locate elements underneath it, so code that once peeked inside
-of the `flt-glass-pane`, needs to be made Shadow DOM aware. Using the html
+of the `flt-glass-pane` needs to be made shadow DOM aware. Using the html
 markup from above:
 
 <!-- skip -->
@@ -171,7 +174,7 @@ In stable release: not yet
 
 ## References
 
-Design Doc:
+Design doc:
 
 * [Using slot to embed web Platform Views][design doc]
 
