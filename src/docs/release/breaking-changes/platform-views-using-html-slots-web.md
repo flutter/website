@@ -99,33 +99,13 @@ operations from the framework, thus preventing the reload issues.
 
 From an app's perspective, this change is transparent. **However**, this is
 considered a _breaking change_ because some tests make assumptions
-about how the DOM of a Flutter web app might break.
+about the internal DOM of a Flutter web app, and break.
 
 ## Migration guide
 
 ### Code
 
-Previously, the content returned by [`PlatformViewFactory`][] was resized and
-positioned by the framework. Instead, Flutter now sizes and positions
-`<flt-platform-view>`, which is the parent of the content.
-To ensure the `html.Element` that you return takes the whole space
-allocated to it, set its `style.width` and `style.height` properties to `'100%'`:
-
-[`PlatformViewFactory`]: {{site.api}}/javadoc/index.html?io/flutter/plugin/platform/PlatformView.html
-
-<!-- skip -->
-```dart
-ui.platformViewRegistry.registerViewFactory(viewType, (int viewId) {
-  final html.Element htmlElement = html.DivElement()
-    // ..other props
-    ..style.width = '100%'
-    ..style.height = '100%';
-  // ...
-  return htmlElement;
-});
-```
-
-Otherwise, the engine prints a warning message to the console similar to:
+The engine may print a warning message to the console similar to:
 
 <!-- skip -->
 ```bash
@@ -141,44 +121,47 @@ Width of Platform View type: [$viewType] may not be set. Defaulting to `width: 1
 Set `style.width` to any appropriate value to stop this message.
 ```
 
+Previously, the content returned by [`PlatformViewFactory` functions][] was
+resized and positioned by the framework. Instead, Flutter now sizes and
+positions `<flt-platform-view-slot>`, which is the parent of the slot where the
+content is projected.
+
+To stop the warning above, platform views need to set the `style.width` and
+`style.height` of their root element to any appropriate (non-null) value.
+
+For example, to make the root `html.Element` fill all the available space
+allocated by the framework, set its `style.width` and `style.height` properties
+to `'100%'`:
+
+<!-- skip -->
+```dart
+ui.platformViewRegistry.registerViewFactory(viewType, (int viewId) {
+  final html.Element htmlElement = html.DivElement()
+    // ..other props
+    ..style.width = '100%'
+    ..style.height = '100%';
+  // ...
+  return htmlElement;
+});
+```
+
+If other techniques are used to layout the platform view (like `inset: 0`) a
+value of `auto` for `width` and `height` is enough to stop the warning.
+
+Read more about [`CSS width`][] and [`CSS height`][].
+
 ### Tests
 
-By design, there are no selectors that let one _pierce_ through the shadow
-DOM boundary to locate elements underneath it, so code that once peeked inside
-of the `flt-glass-pane` needs to be made shadow DOM aware. Using the html
-markup from above:
+After this change, user's test code does **not** need to deeply inspect the
+contents of the shadow root of the App. All of the platform view contents will
+be placed as direct children of `flt-glass-pane`, wrapped in a
+`flt-platform-view` element.
 
-<!-- skip -->
-```dart
-// Find #some-element inside the app:
-final element = document.querySelector('#some-element');
-```
+Avoid looking inside the `flt-glass-pane` shadow root, it is considered a
+**"private implementation detail"**, and its markup can change at any time,
+without notice.
 
-Code after migration:
-
-<!-- skip -->
-```dart
-final shadowRoot = document.querySelector('flt-glass-pane')?.shadowRoot!;
-final element = shadowRoot.querySelector('#some-element');
-```
-
-It's probably a good practice to not assume `document` is always going to be the
-root element of searches, so a helper like this might be convenient:
-
-<!-- skip -->
-```dart
-/// Locate elements in the correct root of the application, whether it is
-/// `document` or the new `shadowRoot` of `flt-class-pane`.
-List<Node> findElements(String selector) {
-  final ShadowRoot? shadowRoot = document.querySelector('flt-glass-pane')?.shadowRoot;
-  return (shadowRoot != null) ?
-    shadowRoot.querySelectorAll(selector):
-    document.querySelectorAll(selector);
-}
-```
-
-(See Relevant PRs below for multiple examples of the "migrations" described
-above).
+(See Relevant PRs below for examples of the "migrations" described above).
 
 ## Timeline
 
@@ -187,7 +170,7 @@ In stable release: not yet
 
 ## References
 
-Design doc:
+Design document:
 
 * [Using slot to embed web Platform Views][design doc]
 
@@ -202,7 +185,10 @@ Relevant PRs:
 * [flutter/plugins#3964][pull-3964]: Tweaks to `plugins` code.
 * [flutter/packages#364][pull-364]: Tweaks to `packages` code.
 
+[`CSS height`]: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+[`CSS width`]: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 [`HtmlElementView` widgets]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
+[`PlatformViewFactory` functions]: {{site.github}}/flutter/engine/blob/58459a5e342f84c755919f2ad5029b22bcddd548/lib/web_ui/lib/src/engine/platform_views/content_manager.dart#L15-L18
 [design doc]: https://flutter.dev/go/web-slot-content
 [issue-80524]: {{site.github}}/flutter/flutter/issues/80524
 [pull-25747]: {{site.github}}/flutter/engine/pull/25747
