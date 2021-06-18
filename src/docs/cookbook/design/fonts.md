@@ -100,12 +100,26 @@ outline weights and styles:
     the file as an integer multiple of 100, between 100 and 900.
     These values correspond to the [`FontWeight`][]
     and can be used in the [`fontWeight`][] property of a
-    [`TextStyle`][] object.
+    [`TextStyle`][] object. For example, if you want to use
+    the `RobotoMono-Bold` font defined above, you would set `fontWeight`
+    to `FontWeight.w700` in your `TextStyle`.
+    
+    Note that defining the `weight` property does not
+    override the actual weight of the font. You would not be able to
+    access `RobotoMono-Bold` with `FontWeight.w100`, even if its `weight`
+    was set to 100.
 
   * The `style` property specifies whether the outlines in the file are
     `italic` or `normal`. These values correspond to the
     [`FontStyle`][] and can be used in the [`fontStyle`][] property of a
-    [`TextStyle`][] object.
+    [`TextStyle`][] object. For example, if you want to use
+    the `Raleway-Italic` font defined above, you would set `fontStyle`
+    to `FontStyle.italic` in your `TextStyle`.
+    
+    Note that defining the `style` property does not
+    override the actual style of the font; You would not be able to
+    access `Raleway-Italic` with `FontStyle.normal`, even if its `style`
+    was set to normal.
 
 ## 3. Set a font as the default
 

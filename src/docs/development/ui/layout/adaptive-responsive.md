@@ -123,8 +123,11 @@ including contributions from the Flutter community:
 
 ## Creating an adaptive Flutter app
 
-To learn more about creating an adaptive app,
-check out the following episodes of The Boring Show:
+Learn more about creating an adaptive Flutter app with
+[Building adaptive apps][], written by the gskinner team.
+
+You might also check out the following episodes
+of The Boring Show:
 
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/n6Awpg1MO6M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Adaptive layouts][]
@@ -154,6 +157,8 @@ in the following resources:
 
 [Adaptive layouts]: https://www.youtube.com/watch?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: https://www.youtube.com/watch?v=eikOZzfc0l4&t=11s
+[Building adapative apps]: /docs/development/ui/layout/building-adaptive-apps
+
 [Designing truly adaptive user interfaces]: https://aloisdeniel.com/#/posts/adaptative-ui
 [Flutter gallery app]: https://gallery.flutter.dev/#/
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio

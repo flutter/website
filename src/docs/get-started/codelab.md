@@ -13,11 +13,14 @@ diff2html: true
 
 {{site.alert.tip}}
   This codelab walks you through writing your first Flutter
-  app on mobile. You might prefer to try
+  app. You might prefer to try
   [writing your first Flutter app on the web][codelab-web].
-  **Note that if you have [enabled web][],
-  the completed app just works on all of these devices!**
 {{site.alert.end}}
+
+If you prefer an instructor-led version of this codelab,
+check out the following workshop:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z6KZ3cTGBWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
 
@@ -134,9 +137,9 @@ where the Dart code lives.
           title: 'Welcome to Flutter',
           home: Scaffold(
             appBar: AppBar(
-              title: Text('Welcome to Flutter'),
+              title: const Text('Welcome to Flutter'),
             ),
-            body: Center(
+            body: const Center(
               child: Text('Hello World'),
             ),
           ),
@@ -261,7 +264,7 @@ as well as many other open source packages, on [pub.dev][].
     ```diff
     --- step1_base/lib/main.dart
     +++ step2_use_package/lib/main.dart
-    @@ -9,6 +10,7 @@
+    @@ -9,14 +10,15 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -269,11 +272,12 @@ as well as many other open source packages, on [pub.dev][].
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -16,7 +18,7 @@
-               title: Text('Welcome to Flutter'),
+             appBar: AppBar(
+               title: const Text('Welcome to Flutter'),
              ),
-             body: Center(
+    -        body: const Center(
     -          child: Text('Hello World'),
+    +        body: Center(
     +          child: Text(wordPair.asPascalCase),
              ),
            ),
@@ -407,7 +411,7 @@ class _RandomWordsState extends State<RandomWords> {
          title: 'Welcome to Flutter',
          home: Scaffold(
   @@ -18,8 +17,8 @@
-             title: Text('Welcome to Flutter'),
+             title: const Text('Welcome to Flutter'),
            ),
            body: Center(
   -          child: Text(wordPair.asPascalCase),
@@ -460,7 +464,7 @@ lazily, on demand.
     ```dart
       class _RandomWordsState extends State<RandomWords> {
         [!final _suggestions = <WordPair>[];!]
-        [!final _biggerFont = TextStyle(fontSize: 18.0);!]
+        [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
         // ···
       }
     ```
@@ -485,9 +489,9 @@ lazily, on demand.
     ```dart
       Widget _buildSuggestions() {
         return ListView.builder(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             itemBuilder: /*1*/ (context, i) {
-              if (i.isOdd) return Divider(); /*2*/
+              if (i.isOdd) return const Divider(); /*2*/
 
               final index = i ~/ 2; /*3*/
               if (index >= _suggestions.length) {
@@ -542,7 +546,7 @@ lazily, on demand.
       Widget build(BuildContext context) {
         [!return Scaffold(!]
         [!  appBar: AppBar(!]
-        [!    title: Text('Startup Name Generator'),!]
+        [!    title: const Text('Startup Name Generator'),!]
         [!  ),!]
         [!  body: _buildSuggestions(),!]
         [!);!]
@@ -565,7 +569,7 @@ lazily, on demand.
     -      title: 'Welcome to Flutter',
     -      home: Scaffold(
     -        appBar: AppBar(
-    -          title: Text('Welcome to Flutter'),
+    -          title: const Text('Welcome to Flutter'),
     -        ),
     -        body: Center(
     -          child: RandomWords(),

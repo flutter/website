@@ -48,6 +48,13 @@ The low-level approach used to communicate between ancestors and children
 in the widget tree. This is what `provider` and many other approaches
 use under the hood.
 
+The following instructor-led video workshop covers how to
+use `InheritedWidget`:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LFcGPS6cGrY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Other useful docs include:
+
 * [InheritedWidget docs][]
 * [Managing Flutter Application State With InheritedWidgets][],
   by Hans Muller
@@ -105,6 +112,7 @@ A service locator based state management approach that doesn't need a `BuildCont
 * [GetIt package][], the service locator. It can also be used together with BloCs.
 * [GetIt Mixin package][], a mixin that completes `GetIt` to a full state management solution.
 * [GetIt Hooks package][], same as the mixin in case you already use `flutter_hooks`.
+* [Flutter state management for minimalists][], by Suragch
 
 ## MobX
 
@@ -189,6 +197,7 @@ An approach similar to Provider that is compile-safe and testable. It doesn't ha
 [GetIt package]: https://pub.dev/packages/get_it
 [GetIt Hooks package]: https://pub.dev/packages/get_it_hooks
 [GetIt Mixin package]: https://pub.dev/packages/get_it_mixin
+[Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
 [Flutter Command package]: https://pub.dev/packages/flutter_command
 [RxCommand package]: https://pub.dev/packages/rx_command
 [Binder package]: https://pub.dev/packages/binder

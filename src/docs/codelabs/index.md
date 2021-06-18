@@ -1,16 +1,27 @@
 ---
-title: Codelabs
-description: "Codelabs help you quickly get started programming Flutter."
+title: Codelabs & workshops
+description: "Codelabs and workshops help you quickly get started programming Flutter."
 ---
 
 The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
 
+Flutter workshops are similar to the codelabs,
+but are instructor led and always use DartPad. The
+provided workshop link takes you to the relevant YouTube
+video, which tells you where to find the associated
+DartPad link.
+
 ## Good for beginners
 
 If you're new to Flutter, we recommend starting with
 one of these codelabs:
+
+* [Building your first Flutter app][] (workshop) **NEW!**<br>
+  An instructor-led version of our very popular
+  "Write your first Flutter app, part 1" codelab
+  (listed below).
 
 * [Write your first Flutter app, part 1][]<br>
   Create a simple mobile app that generates proposed names
@@ -45,10 +56,33 @@ one of these codelabs:
   Android Studio.
 
 [Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
+[Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
 [codelab on flutter.dev]: /docs/get-started/codelab
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
 [Write your first Flutter app on the web]: /docs/get-started/codelab-web
+
+## Next steps
+
+* [Building scrolling experiences in Flutter][] (workshop) **NEW!**<br>
+  Start with an app that performs simple, straightforward scrolling
+  and enhance it to create fancy and custom scrolling effects
+  by using slivers.
+
+* [Dart null safety in Action][] (workshop) **NEW!**<br>
+  An instructor-led workshop based on the [Null safety codelab][]
+  on the dart.dev site.
+
+* [How to manage application states using inherited widgets][inherited-widget-ws] (workshop) **NEW!**<br>
+  Learn how to manage the state of your app's data by
+  using the `InheritedWidget` class, one of the
+  [low-level state management][] classes provided
+  by Flutter.
+
+[Dart null safety in Action]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
+[inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
+[low-level state management]: /docs/development/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
+[Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
 
 ## Designing a Flutter UI
 
@@ -100,6 +134,7 @@ like layout and animations:
 [animations]: {{site.pub}}/packages/animations
 [Basic Flutter layout concepts]: /docs/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
+[Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: /docs/codelabs/implicit-animations
 [MDC 101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
@@ -115,10 +150,6 @@ Learn how to use Flutter with other technologies.
   Display a Google map in an app, retrieve data from a
   web service, and display the data as markers on the map.
 
-* [Build a photo sharing app with Google Photos and Flutter][]<br>
-  Build a field trip app that allows you and other
-  members of the trip to share photos.
-
 * [Adding AdMob Ads to a Flutter app][]<br>
   Learn how to add an AdMob banner, an interstitial ad,
   and a rewarded ad to an app called Awesome Drawing Quiz,
@@ -128,6 +159,30 @@ Learn how to use Flutter with other technologies.
   Learn how to implement inline banner and native ads
   to a travel booking app that lists possible
   flight destinations.
+
+* [Adding in-app purchases to your Flutter app][]<br>
+  Extend a simple gaming app that uses the Dash mascot as
+  currency to offer three types of in-app purchases:
+  consumable, non-consumable, and subscription.
+
+* [Build a photo sharing app with Google Photos and Flutter][]<br>
+  Build a field trip app that allows you and other
+  members of the trip to share photos.
+
+* [Build voice bots for mobile with Dialogflow and Flutter][dialogflow-ws] (workshop) **NEW!**<br>
+  An instructor-led version of the Dialogflow
+  and Flutter codelab (listed below).
+
+* [Build voice bots for mobile with Dialogflow and Flutter][]<br>
+  Learn how to build a mobile FAQ bot that can answer most
+  common questions about the tool Dialogflow. End users
+  can interact with the text interface or stream a voice
+  interaction via the built-in microphone of a mobile device.
+
+* [Get to know Firebase for Flutter][firebase-ws] (workshop) **NEW!**<br>
+  An instructor-led version of our popular
+  "Get to know Firebase for Flutter" codelab
+  (listed below).
 
 * [Get to know Firebase for Flutter][]<br>
   Build an event RSVP and guestbook chat app on both Android
@@ -143,7 +198,11 @@ Learn how to use Flutter with other technologies.
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
 [Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
+[Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
+[Build voice bots for mobile with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
+[dialogflow-ws]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
+[firebase-ws]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
 [Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 

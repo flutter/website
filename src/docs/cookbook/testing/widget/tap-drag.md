@@ -6,6 +6,8 @@ prev:
   path: /docs/cookbook/testing/widget/finders
 ---
 
+<?code-excerpt path-base="../null_safety_examples/cookbook/testing/widget/tap_drag/"?>
+
 {% assign api = site.api | append: '/flutter' -%}
 
 Many widgets not only display information, but also respond
@@ -54,8 +56,11 @@ see the relevant recipes:
 * [Create a basic list][]
 * [Implement swipe to dismiss][]
 
+<?code-excerpt "test/main_test.dart (TodoList)"?>
 ```dart
 class TodoList extends StatefulWidget {
+  const TodoList({Key? key}) : super(key: key);
+
   @override
   _TodoListState createState() => _TodoListState();
 }
@@ -71,7 +76,7 @@ class _TodoListState extends State<TodoList> {
       title: _appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(_appTitle),
+          title: const Text(_appTitle),
         ),
         body: Column(
           children: [
@@ -102,7 +107,7 @@ class _TodoListState extends State<TodoList> {
               controller.clear();
             });
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
       ),
     );
@@ -125,7 +130,7 @@ Accomplish this task by:
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Build the widget
-  await tester.pumpWidget(TodoList());
+  await tester.pumpWidget(const TodoList());
 
   // Enter 'hi' into the TextField.
   await tester.enterText(find.byType(TextField), 'hi');
@@ -187,7 +192,7 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Enter text and add the item...
 
   // Swipe the item to dismiss it.
-  await tester.drag(find.byType(Dismissible), Offset(500.0, 0.0));
+  await tester.drag(find.byType(Dismissible), const Offset(500.0, 0.0));
 
   // Build the widget until the dismiss animation ends.
   await tester.pumpAndSettle();
@@ -199,6 +204,7 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
 
 ### Complete example
 
+<?code-excerpt "test/main_test.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -206,7 +212,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('Add and remove a todo', (WidgetTester tester) async {
     // Build the widget.
-    await tester.pumpWidget(TodoList());
+    await tester.pumpWidget(const TodoList());
 
     // Enter 'hi' into the TextField.
     await tester.enterText(find.byType(TextField), 'hi');
@@ -221,7 +227,7 @@ void main() {
     expect(find.text('hi'), findsOneWidget);
 
     // Swipe the item to dismiss it.
-    await tester.drag(find.byType(Dismissible), Offset(500.0, 0.0));
+    await tester.drag(find.byType(Dismissible), const Offset(500.0, 0.0));
 
     // Build the widget until the dismiss animation ends.
     await tester.pumpAndSettle();
@@ -232,6 +238,8 @@ void main() {
 }
 
 class TodoList extends StatefulWidget {
+  const TodoList({Key? key}) : super(key: key);
+
   @override
   _TodoListState createState() => _TodoListState();
 }
@@ -247,7 +255,7 @@ class _TodoListState extends State<TodoList> {
       title: _appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(_appTitle),
+          title: const Text(_appTitle),
         ),
         body: Column(
           children: [
@@ -278,7 +286,7 @@ class _TodoListState extends State<TodoList> {
               controller.clear();
             });
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
       ),
     );

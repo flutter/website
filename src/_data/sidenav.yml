@@ -41,7 +41,7 @@
       permalink: https://flutter.github.io/samples/
     - title: Cookbook
       permalink: /docs/cookbook
-    - title: Codelabs
+    - title: Codelabs & workshops
       permalink: /docs/codelabs
     - title: Tutorials
       permalink: /docs/reference/tutorials
@@ -65,7 +65,9 @@
               permalink: /docs/development/ui/layout/tutorial
             - title: Creating adaptive and responsive apps
               permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: Understanding constraints [NEW]
+            - title: Building adaptive apps [NEW]
+              permalink: /docs/development/ui/layout/building-adaptive-apps
+            - title: Understanding constraints
               permalink: /docs/development/ui/layout/constraints
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
@@ -329,6 +331,8 @@
         permalink: /docs/perf/rendering/ui-performance
       - title: Reduce shader compilation jank
         permalink: /docs/perf/rendering/shader
+    - title: Deferred components
+      permalink: /docs/perf/deferred-components
     - title: Performance metrics
       permalink: /docs/perf/metrics
     - title: Performance FAQ
@@ -346,6 +350,8 @@
       permalink: /docs/deployment/android
     - title: Build and release an iOS app
       permalink: /docs/deployment/ios
+    - title: Build and release a macOS app
+      permalink: /docs/deployment/macos
     - title: Build and release a Linux app
       permalink: /docs/deployment/linux
     - title: Build and release a web app

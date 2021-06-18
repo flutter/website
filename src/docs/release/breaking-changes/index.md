@@ -12,10 +12,15 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Default Scrollbars on Desktop][]
+* [Default drag scrolling devices][]
+* [Introducing package:flutter_lints][]
 * [ThemeData's accent properties have been deprecated][]
+* [GestureRecognizer Cleanup][]
+* [Replace AnimationSheetBuilder.display with collate][]
 
-[Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
+[Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
+[GestureRecognizer Cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
+[Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
 
 ### Reverted changes
@@ -27,6 +32,12 @@ The following breaking changes have been reverted.
    Reverted in version:   2.2.0 (proposed)
 
 [Network Policy on iOS and Android]: /docs/release/breaking-changes/network-policy-ios-android
+
+### Released in Flutter 2.2
+
+* [Default Scrollbars on Desktop][]
+
+[Default Scrollbars on Desktop]: /docs/release/breaking-changes/default-desktop-scrollbars
 
 ### Released in Flutter 2
 
@@ -41,6 +52,7 @@ The following breaking changes have been reverted.
 * [SnackBars managed by the ScaffoldMessenger][]
 * [TextSelectionTheme migration][]
 * [Use maxLengthEnforcement instead of maxLengthEnforced][]
+* [Transition of platform channel test interfaces to flutter_test package][]
 
 [Added BuildContext parameter to TextEditingController.buildTextSpan]: /docs/release/breaking-changes/buildtextspan-buildcontext
 [Android ActivityControlSurface attachToActivity signature change]: /docs/release/breaking-changes/android-activity-control-surface-attach
@@ -53,6 +65,7 @@ The following breaking changes have been reverted.
 [SnackBars managed by the ScaffoldMessenger]:  /docs/release/breaking-changes/scaffold-messenger
 [TextSelectionTheme migration]: /docs/release/breaking-changes/text-selection-theme
 [Use maxLengthEnforcement instead of maxLengthEnforced]: /docs/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
+[Transition of platform channel test interfaces to flutter_test package]: /docs/release/breaking-changes/mock-platform-channels
 
 ### Released in Flutter 1.22
 
@@ -125,6 +138,7 @@ The following breaking changes have been reverted.
 [MouseTracker no longer attaches annotations]: /docs/release/breaking-changes/mouse-tracker-no-longer-attaches-annotations
 [Nullable CupertinoTheme.brightness]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
 [Rebuild optimization for OverlayEntries and Routes]: /docs/release/breaking-changes/overlay-entry-rebuilds
+[Replace AnimationSheetBuilder.display with collate]: /docs/release/breaking-changes/animation-sheet-builder-display
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value

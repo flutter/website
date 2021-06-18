@@ -1,4 +1,4 @@
-//= require vendor/jquery-3.3.1
+//= require vendor/jquery-3.6.0
 //= require popper
 //= require bootstrap
 //= require archive.js

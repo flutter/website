@@ -388,7 +388,13 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   String get expandedIconTapHint => r'Collapse';
 
   @override
+  String get firstPageTooltip => r'First page';
+
+  @override
   String get hideAccountsLabel => r'Hide accounts';
+
+  @override
+  String get lastPageTooltip => r'Last page';
 
   @override
   String get licensesPageTitle => r'Licenses';
