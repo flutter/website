@@ -118,7 +118,7 @@ specifying dependencies.
 
 ```yaml
 dependencies:
-  url_launcher: ^5.4.0    # Good, any 5.4.x version where x >= 0 works.
+  url_launcher: ^5.4.0    # Good, any version >= 5.4.0 but < 6.0.0
   image_picker: '5.4.3'   # Not so good, only version 5.4.3 works.
 ```
 
