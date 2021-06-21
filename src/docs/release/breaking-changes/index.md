@@ -17,11 +17,13 @@ release, and listed in alphabetical order:
 * [ThemeData's accent properties have been deprecated][]
 * [GestureRecognizer Cleanup][]
 * [Replace AnimationSheetBuilder.display with collate][]
+* [Using HTML slots to render platform views in the web][]
 
 [Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
 [GestureRecognizer Cleanup]: /docs/release/breaking-changes/gesture-recognizer-add-allowed-pointer
 [Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
+[Using HTML slots to render platform views in the web]: /docs/release/breaking-changes/platform-views-using-html-slots-web
 
 ### Reverted changes
 
