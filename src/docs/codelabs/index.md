@@ -79,7 +79,7 @@ one of these codelabs:
   [low-level state management][] classes provided
   by Flutter.
 
-[Dart null safety in Action]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
+[Dart null safety in Action]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
 [inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
 [low-level state management]: /docs/development/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
 [Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
