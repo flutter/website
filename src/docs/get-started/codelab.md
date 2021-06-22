@@ -248,8 +248,8 @@ as well as many other open source packages, on [pub.dev][].
     <?code-excerpt path-base="codelabs/startup_namer_null_safety/step2_use_package"?>
     <?code-excerpt "lib/main.dart" title retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
     ```dart
-      import 'package:flutter/material.dart';
       [!import 'package:english_words/english_words.dart';!]
+      import 'package:flutter/material.dart';
     ```
 
     As you type, Android Studio gives you suggestions for libraries to import.
