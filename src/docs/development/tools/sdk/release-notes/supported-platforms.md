@@ -77,6 +77,10 @@ minimal.
 |--------|---------------|
 |Android |Android SDK 22 |
 |Android |Android SDK 20 |
+|Android |Android SDK 19 |
+|Android |Android SDK 18 |
+|Android |Android SDK 17 |
+|Android |Android SDK 16 |
 |iOS     |iOS 13.1       |
 |iOS     |iOS 12.1-12.3  |
 |iOS     |iOS 10 (all)   |
@@ -89,7 +93,7 @@ minimal.
 
 |Platform|Version               |
 |--------|----------------------|
-|Android |Android SDK 18 & below|
+|Android |Android SDK 15 & below|
 |iOS     |iOS 8 & below         |
 |Windows |Windows Vista & below |
 |Windows |Any 32-bit platform   |   
