@@ -263,7 +263,7 @@ from a vertical to a horizontal layout when the user isn’t on a handset:
 
 <!--skip-->
 ```dart
-bool useVerticalLayout = MediaQuery.of(context).size.width < 600;
+bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
   children: [...],
   direction: isHandset ?
