@@ -27,7 +27,7 @@ updates are available.
 
 To install updates manually:
 
- 1. Click the Extensions button in the Side Bar.
+ 1. Click the **Extensions** button in the Side Bar.
  1. If the Flutter extension is shown with an available update,
     click the update button and then the reload button.
  1. Restart VS Code.
@@ -119,6 +119,15 @@ However, if you have multiple devices/simulators connected, click
 at the top of the screen. Select the device you want to use for
 running or debugging.
 
+{{site.alert.secondary}}
+  **Are you developing for macOS or iOS remotely using
+  Visual Studio Code Remote?** If so, you might need to manually
+  unlock the keychain. For more information, see this
+  [question on StackExchange][].
+
+[question on StackExchange]: https://superuser.com/questions/270095/when-i-ssh-into-os-x-i-dont-have-my-keychain-when-i-use-terminal-i-do/363840#363840
+{{site.alert.end}}
+
 ### Run app without breakpoints
 
  1. Click **Run > Start Without Debugging** in the
@@ -174,6 +183,8 @@ _Stateful Hot Reload_ feature. See
 [Using hot reload](hot-reload) for details.
 
 ## Advanced debugging
+
+You might find the following advanced debugging tips useful:
 
 ### Debugging visual layout issues
 
@@ -234,8 +245,9 @@ can assist in correcting it.
   and wraps the argument value in a list.
 
 **Convert StatelessWidget to StatefulWidget assist**
-: Changes the implementation of a `StatelessWidget` to that of a `StatefulWidget`,
-  by creating the `State` class and moving the code there.
+: Changes the implementation of a `StatelessWidget` to that of
+  a `StatefulWidget`, by creating the `State` class and moving
+  the code there.
 
 ### Snippets
 
@@ -280,8 +292,8 @@ A few types of code changes cannot be hot reloaded though:
 
 For these changes, fully restart your application without
 having to end your debugging session. To perform a hot restart,
-run the **Flutter: Hot Restart** command from the
-[Command Palette][], or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
+run the **Flutter: Hot Restart** command from the [Command Palette][],
+or press `Ctrl`+`Shift`+`F5`(`Cmd`+`Shift`+`F5` on macOS).
 
 ## Troubleshooting
 
