@@ -809,12 +809,19 @@ about endorsed plugins, see the following resources:
 [How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
 
-## Samples and codelabs
+## Codelabs and further documentation
 
-[Write a Flutter desktop application][]
+[Codelab: Write a Flutter desktop application][]
 : A codelab that walks you through building
 a desktop application that integrates the GitHub
 GraphQL API with your Flutter app.
+
+[Documentation: Creating responsive and adaptive apps]
+: Learn how to create layouts that are _responsive_ and _adaptive_
+so that they can span the needs of multiple platforms,
+such as both mobile and desktop screens.
+
+## Samples
 
 You can run the following samples as desktop apps,
 as well as download and inspect the source code to
