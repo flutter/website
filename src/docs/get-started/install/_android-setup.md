@@ -82,7 +82,7 @@ you have installed the tools listed above.
  1. Open an elevated console window and run the following command to begin
     signing licenses.
     ```terminal
-    $ flutter config --enable-windows-desktop
+    $ flutter doctor --android-licenses
     ```
  1. Review the terms of each license carefully before agreeing to them.
  1. Once you are done agreeing with licenses, run `flutter doctor` again
