@@ -227,6 +227,7 @@
       { "source": "/go/tabs-and-text-fields", "destination": "https://docs.google.com/document/d/1aHucsI0NWGWu2Dm_XFsBLxiTgJRM8h2XBB7PVAnVxlU/edit?usp=sharing&resourcekey=0-zLbXFlP_A2e_Yoi43vdiiw", "type": 301 },
       { "source": "/go/template", "destination": "https://docs.google.com/document/d/1SFRO8U2toOlAaZ38dsuEU7Wm5fn41wvBCWKiwADqfmw/edit", "type": 301 },
       { "source": "/go/test-widgets-flutter-binding-clock", "destination": "https://docs.google.com/document/d/1EkkLbECNBwHgddBQAZqEy7iQLTIxR1rgChKzxcLwhio/edit", "type": 301 },
+      { "source": "/go/testing-code-samples", "destination": "https://docs.google.com/document/d/11JXF-9d0u1jGJ9-gdpMGAZr5YudAiyHhXI_pT2vTpnw/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-editing-actions", "destination": "https://docs.google.com/document/d/1QaVIr1bbOWJGNyyNsB75sXgTDRMuxP268sLGTBNDut0/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-field-characters", "destination": "https://docs.google.com/document/d/1OOFW0PEZf0orBl445YXJ3nfjyKOqZdmeQ6KU3glUh7s/edit", "type": 301 },
       { "source": "/go/text-selection-menu-appearance", "destination": "https://docs.google.com/document/d/1Or32nViSjym0Sk29HccxEzcEITj2oWdielOaeR5cmiY/edit", "type": 301 },
