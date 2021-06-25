@@ -9,6 +9,13 @@ $ flutter create myapp
 $ cd myapp
 ```
 
+It is also possible to pass more arguments to `flutter create`, such as the project name (*pubspec.yml*), the oraganization or the programming language used for the native platform:
+
+```terminal
+$ flutter create --project-name myapp --org dev.flutter --android-language java --ios-language objc myapp
+$ cd myapp
+```
+
 The command creates a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].
 
