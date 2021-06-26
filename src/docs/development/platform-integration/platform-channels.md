@@ -78,7 +78,7 @@ with very little 'boilerplate' code.
 The standard platform channels use a standard message codec that supports
 efficient binary serialization of simple JSON-like values, such as booleans,
 numbers, Strings, byte buffers, and Lists and Maps of these
-(see [`StandardMessageCodec`][]) for details).
+(see [`StandardMessageCodec`][] for details).
 The serialization and deserialization of these values to and from
 messages happens automatically when you send and receive values.
 

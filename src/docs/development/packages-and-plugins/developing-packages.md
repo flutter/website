@@ -107,7 +107,7 @@ folder with the following content:
 **lib/hello.dart**
 : A starter app containing Dart code for the package.
 
-**.idea/modules.xml**, **.idea/modules.xml**, **.idea/workspace.xml**
+**.idea/modules.xml**, **.idea/workspace.xml**
 : A hidden folder containing configuration files
   for the IntelliJ IDEs.
 
