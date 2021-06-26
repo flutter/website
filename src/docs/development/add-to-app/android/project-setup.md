@@ -298,7 +298,7 @@ evaluate(new File(                                                     // new
 
 Assuming `my_flutter` is a sibling to `MyApp`.
 
-The binding and script evaluation allows the Flutter]
+The binding and script evaluation allows the Flutter
 module to `include` itself (as `:flutter`) and any
 Flutter plugins used by the module (as `:package_info`,
 `:video_player`, etc) in the evaluation context of

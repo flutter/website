@@ -103,7 +103,7 @@ soon as the app is launched.
 
 In an add-to-app scenario,
 this happens when you attach a `FlutterEngine`
-to a UI component such as by calling [`startActivity()`][])
+to a UI component such as by calling [`startActivity()`][]
 with an [`Intent`][] built using [`FlutterActivity.withCachedEngine()`][]
 on **Android**. Or, by presenting a [`FlutterViewController`][]
 initialized by using [`initWithEngine: nibName: bundle:`][]

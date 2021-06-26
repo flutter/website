@@ -376,7 +376,7 @@ val flutterFragment = FlutterFragment.withNewEngine()
 ## Run Flutter from a specified entrypoint
 
 Similar to varying initial routes, different
-`FlutterFragments` may want to execute different
+`FlutterFragment`s may want to execute different
 Dart entrypoints. In a typical Flutter app, there is only one
 Dart entrypoint: `main()`, but you can define other entrypoints.
 

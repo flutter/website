@@ -21,7 +21,7 @@ Flutter provides `FlutterActivity` to display a Flutter
 experience within an Android app. Like any other `Activity`,
 `FlutterActivity` must be registered in your
 `AndroidManifest.xml`. Add the following XML to your
-`AndroidManifestxml` file under your `application` tag:
+`AndroidManifest.xml` file under your `application` tag:
 
 ```xml
 <activity
