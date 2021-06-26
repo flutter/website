@@ -50,9 +50,8 @@ in your app that you'd like. The following example shows
 {{site.alert.note}}
 Make sure to use the following import:
 
-<!--skip-->
-```dart
-  import io.flutter.embedding.android.FlutterActivity;
+```java
+import io.flutter.embedding.android.FlutterActivity;
 ```
 {{site.alert.end}}
 
