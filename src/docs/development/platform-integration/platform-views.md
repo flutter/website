@@ -55,7 +55,8 @@ and add the following build implementation:
 In your Dart file, for example `native_view_example.dart`,
 do the following:
 
-1. Add the following imports:
+<ol markdown="1">
+<li markdown="1">Add the following imports:
 
 <!-- skip -->
 ```dart
@@ -64,8 +65,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 ```
+</li>
 
-2. Implement a `build()` method:
+<li markdown="1">Implement a `build()` method:
 
 <!-- skip -->
 ```dart
@@ -99,6 +101,8 @@ Widget build(BuildContext context) {
   );
 }
 ```
+</li>
+</ol>
 
 For more information, see the API docs for:
 
@@ -111,14 +115,16 @@ For more information, see the API docs for:
 In your Dart file, for example `native_view_example.dart`,
 do the following:
 
-1. Add the following imports:
+<ol markdown="1">
+<li markdown="1">Add the following imports:
 
 <!-- skip -->
 ```dart
 import 'package:flutter/widget.dart';
 ```
+</li>
 
-2. Implement a `build()` method:
+<li markdown="1">Implement a `build()` method:
 
 <!-- skip -->
 ```dart
@@ -136,6 +142,8 @@ Widget build(BuildContext context) {
   );
 }
 ```
+</li>
+</ol>
 
 For more information, see the API docs for:
 
@@ -412,14 +420,16 @@ as shown in the following steps.
 In your Dart file, for example
 do the following in `native_view_example.dart`:
 
-1. Add the following imports:
+<ol markdown="1">
+<li markdown="1">Add the following imports:
 
 <!-- skip -->
 ```dart
 import 'package:flutter/widget.dart';
 ```
+</li>
 
-2. Implement a `build()` method:
+<li markdown="1">Implement a `build()` method:
 
 <!-- skip -->
 ```dart
@@ -437,6 +447,8 @@ Widget build(BuildContext context) {
   );
 }
 ```
+</li>
+</ol>
 
 For more information, see the API docs for:
 [`UIKitView`][].
