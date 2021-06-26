@@ -13,17 +13,13 @@ Android app.  In Android, a [`Fragment`][] represents a modular
 piece of a larger UI. A `Fragment` might be used to present
 a sliding drawer, tabbed content, a page in a `ViewPager`,
 or it might simply represent a normal screen in a
-single-`Activity` app. Flutter provides a `FlutterFragment`
+single-`Activity` app. Flutter provides a [`FlutterFragment`][]
 so that developers can present a Flutter experience any place
 that they can use a regular `Fragment`.
-
-[`Fragment`]: https://developer.android.com/guide/components/fragments
 
 If an `Activity` is equally applicable for your application needs,
 consider [using a `FlutterActivity`][] instead of a
 `FlutterFragment`, which is quicker and easier to use.
-
-[using a `FlutterActivity`]: /docs/development/add-to-app/android/add-flutter-screen
 
 `FlutterFragment` allows developers to control the following
 details of the Flutter experience within the `Fragment`:
@@ -32,7 +28,7 @@ details of the Flutter experience within the `Fragment`:
  * Dart entrypoint to execute
  * Opaque vs translucent background
  * Whether `FlutterFragment` should control its surrounding `Activity`
- * Whether a new `FlutterEngine` or a cached `FlutterEngine` should be used
+ * Whether a new [`FlutterEngine`][] or a cached `FlutterEngine` should be used
 
 `FlutterFragment` also comes with a number of calls that
 must be forwarded from its surrounding `Activity`.
@@ -313,7 +309,7 @@ FlutterFragment.withCachedEngine("my_engine_id").build()
 ```
 {% endsamplecode %}
 
-`FlutterFragment` internally knows about `FlutterEngineCache`
+`FlutterFragment` internally knows about [`FlutterEngineCache`][]
 and retrieves the pre-warmed `FlutterEngine` based on the ID
 given to `withCachedEngine()`.
 
@@ -334,8 +330,6 @@ this brief waiting period, Flutter supports the
 display of a splash screen until Flutter renders
 its first frame. For instructions about how to show a splash screen,
 see the [splash screen guide][].
-
-[splash screen guide]: /docs/development/ui/advanced/splash-screen
 
 ## Run Flutter with a specified initial route
 
@@ -597,3 +591,10 @@ surrounding `Activity`.
   Ensure that none of your plugins require an `Activity`
   before you disable access.
 {{site.alert.end}}
+
+[`Fragment`]: https://developer.android.com/guide/components/fragments
+[`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
+[using a `FlutterActivity`]: /docs/development/add-to-app/android/add-flutter-screen
+[`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
+[`FlutterEngineCache`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
+[splash screen guide]: /docs/development/ui/advanced/splash-screen

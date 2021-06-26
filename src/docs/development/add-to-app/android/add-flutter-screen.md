@@ -17,8 +17,8 @@ class="mw-100" alt="Add Flutter Screen Header" %}
 
 ### Step 1: Add FlutterActivity to AndroidManifest.xml
 
-Flutter provides `FlutterActivity` to display a Flutter
-experience within an Android app. Like any other `Activity`,
+Flutter provides [`FlutterActivity`][] to display a Flutter
+experience within an Android app. Like any other [`Activity`][],
 `FlutterActivity` must be registered in your
 `AndroidManifest.xml`. Add the following XML to your
 `AndroidManifest.xml` file under your `application` tag:
@@ -121,7 +121,7 @@ Replace `"/my_route"` with your desired initial route.
 
 The use of the `withNewEngine()` factory method
 configures a `FlutterActivity` that internally create
-its own `FlutterEngine` instance. This comes with a
+its own [`FlutterEngine`][] instance. This comes with a
 non-trivial initialization time. The alternative approach
 is to instruct `FlutterActivity` to use a pre-warmed,
 cached `FlutterEngine`, which minimizes Flutter's
@@ -194,9 +194,9 @@ class MyApplication : Application() {
 ```
 {% endsamplecode %}
 
-The ID passed to the `FlutterEngineCache` can be whatever you want.
+The ID passed to the [`FlutterEngineCache`][] can be whatever you want.
 Make sure that you pass the same ID to any `FlutterActivity`
-or `FlutterFragment` that should use the cached `FlutterEngine`.
+or [`FlutterFragment`][] that should use the cached `FlutterEngine`.
 Using `FlutterActivity` with a cached `FlutterEngine`
 is discussed next.
 
@@ -388,3 +388,9 @@ You now have a `FlutterActivity` with a transparent background.
   solid background color, then it still appears as
   though your `FlutterActivity` has an opaque background.
 {{site.alert.end}}
+
+[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
+[`Activity`]: https://developer.android.com/reference/android/app/Activity
+[`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
+[`FlutterEngineCache`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
+[`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
