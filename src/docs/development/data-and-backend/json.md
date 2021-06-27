@@ -419,7 +419,7 @@ appropriately.
 You might have code that has nested classes within a class.
 If that is the case, and you have tried to pass the class in JSON format
 as an argument to a service (such as Firebase, for example),
-you might have experienced an`Invalid argument` error.
+you might have experienced an `Invalid argument` error.
 
 Consider the following `Address` class:
 
