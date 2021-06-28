@@ -1,9 +1,9 @@
 ---
-title: Flutter team job openings
-description: Open job listings for the Flutter team.
+title: Flutter and Dart team job openings
+description: Open job listings for the Flutter and Dart teams.
 ---
 
-We currently have the following job openings on the Flutter team:
+We currently have the following job openings on the Flutter and Dart teams:
 
 * [iOS Engineer](/jobs/ios)
 * [Engine Web Engineer](/jobs/engine_web)
