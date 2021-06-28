@@ -183,7 +183,7 @@ by editing the `[project]/android/app/build.gradle` file.
 
 </li>
 
-<li markdown="1"> Replace the `buildTypes` block:
+<li markdown="1"> Find the `buildTypes` block:
 
 ```
    buildTypes {
@@ -196,7 +196,7 @@ by editing the `[project]/android/app/build.gradle` file.
    }
 ```
 
-   With the signing configuration info:
+   And replace it with the following signing configuration info:
 
 ```
    signingConfigs {
