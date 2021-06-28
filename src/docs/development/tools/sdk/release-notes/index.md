@@ -1,6 +1,6 @@
 ---
 title: Flutter release notes
-short-title: release notes
+short-title: Release notes
 description: Release notes for Flutter for prior releases.
 ---
 
@@ -14,13 +14,13 @@ releases to the stable channel.
 
 * 2.2.0
   * [2.2.0 announcement][]
-  * [2.2.0 release notes & change log][] 
+  * [2.2.0 release notes & change log][]
 * 2.0.0
   * [2.0.0 announcement][]
-  * [2.0.0 release notes & change log][] 
+  * [2.0.0 release notes & change log][]
 * 1.22.0
   * [1.22.0 announcement][]
-  * [1.22.0 release notes & change log][] 
+  * [1.22.0 release notes & change log][]
 * 1.20.0
   * [1.20.0 announcement][]
   * [1.20.0 release notes & change log][]
@@ -30,6 +30,8 @@ releases to the stable channel.
 * 1.12.13
   * [1.12.13 announcement][]
   * [1.12.13 release notes and change log][]
+* Earlier
+  * [Archived release notes][]
 
 [2.2.0 announcement]: https://medium.com/flutter/whats-new-in-flutter-2-2-fd00c65e2039
 [2.2.0 release notes & change log]: release-notes/release-notes-2.2.0
@@ -43,9 +45,5 @@ releases to the stable channel.
 [1.17.0 release notes and change log]: release-notes/release-notes-1.17.0
 [1.12.13 announcement]: https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d
 [1.12.13 release notes and change log]: release-notes/release-notes-1.12.13
-[1.9.1]: release-notes/release-notes-1.9.1
-[1.7.8]: release-notes/release-notes-1.7.8
-[1.5.4]: release-notes/release-notes-1.5.4
-[1.2.1]: release-notes/release-notes-1.2.1
-
+[Archived release notes]: release-notes/release-notes-archive
 [Hotfixes to the Stable Channel]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
