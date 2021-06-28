@@ -5,7 +5,7 @@ description: Archived Changelog wiki page, containing release information betwee
 ---
 
 _This page is a dump of the old Changelog page from the Flutter wiki up until
-[Flutter release notes](release-notes) were published in flutter.dev._
+[Flutter release notes](./) were published in flutter.dev._
 
 ## Changes through and including 1.0.0
 
