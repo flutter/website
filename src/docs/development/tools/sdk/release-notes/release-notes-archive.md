@@ -19,8 +19,8 @@ changes up through and including 1.0.0.
 
 * [Flutter Changelog 0.0.21 through 1.0.0][0.0.21]
 
-[0.0.21]: release-notes/release-notes-0.0.21-1.0.0
-[1.9.1]: release-notes/release-notes-1.9.1
-[1.7.8]: release-notes/release-notes-1.7.8
-[1.5.4]: release-notes/release-notes-1.5.4
-[1.2.1]: release-notes/release-notes-1.2.1
+[0.0.21]: ./release-notes-0.0.21-1.0.0
+[1.9.1]: ./release-notes-1.9.1
+[1.7.8]: ./release-notes-1.7.8
+[1.5.4]: ./release-notes-1.5.4
+[1.2.1]: ./release-notes-1.2.1

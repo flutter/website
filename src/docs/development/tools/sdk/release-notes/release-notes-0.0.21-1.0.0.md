@@ -158,6 +158,7 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
 
 * [#17094](https://github.com/flutter/flutter/pull/17094) introduced the ability to do golden image testing in widget tests.  Within a widget test, you can now use the following matcher to ensure that your widget's rasterized image matches a golden file (e.g. `foo.png`):
 
+<!-- skip -->
   ```dart
   await expectLater(find.byType(MyWidget), matchesGoldenFile('foo.png'));
   ```
@@ -182,6 +183,7 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
 
 * [flutter/engine#5060](https://github.com/flutter/engine/pull/5060) introduced the ability to encode a `dart:ui Image` into a PNG via `Image.toByteData()`.  Callers wishing to get encoded bytes may pass the `format` argument, like so:
 
+<!-- skip -->
   ```dart
   image.toByteData(format: ui.ImageByteFormat.png);
   ```
@@ -247,6 +249,7 @@ To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang
 
   The TextFormField initialValue parameter no longer unconditionally initializes the text property of its TextEditingController. If you create a TextFormField and provide a controller, the initialValue must be null, which is now the default. If you're providing a controller you can specify it's initial text value with the TextEditingController text property.
 
+<!-- skip -->
   > #### Before
   >     new TextFormField(
   >       initialValue: 'Hello World',
@@ -267,6 +270,7 @@ To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang
 
 * [#15303](https://github.com/flutter/flutter/pull/15303) updated the `showDialog` function to take a builder and deprecated the `widget` parameter.
 
+<!-- skip -->
   > #### Before
   >     showDialog(context: context, child: new Text('hello'))
   >
@@ -275,6 +279,7 @@ To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang
 
 * [#15265](https://github.com/flutter/flutter/pull/15265) updated `ThemeData` to use the primary color of a `MaterialColor` instead of unconditionally using the 500 shade for light themes.  The color values remain unchanged.
 
+<!-- skip -->
   > #### Before
   >     expect(widget.color, Colors.blue.shade500) // primary color
   >
@@ -289,6 +294,7 @@ To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang
 
 * [flutter/engine#4742](https://github.com/flutter/engine/pull/4742) updated assets to be read directly out of the APK on Android. As a result, leading slashes are no longer supported in image asset paths:
 
+<!-- skip -->
   > #### Before
   >     new Image.asset('/foo/bar.png')
   >
