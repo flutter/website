@@ -894,8 +894,8 @@ const locations = [
     imageUrl: '$urlPrefix/01-mount-rushmore.jpg',
   ),
   Location(
-    name: 'Singapore',
-    place: 'China',
+    name: 'Gardens By The Bay',
+    place: 'Singapore',
     imageUrl: '$urlPrefix/02-singapore.jpg',
   ),
   Location(
