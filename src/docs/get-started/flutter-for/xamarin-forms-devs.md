@@ -47,19 +47,19 @@ In Xamarin.Forms, you assign a `Page` to the
 `MainPage` property in the `Application` class.
 
 ```csharp
-public class App: Application
+public class App : Application
 {
     public App()
     {
-      MainPage = ContentPage()
-                 {
-                   Label()
-                   {
-                     Text="Hello World",
-                     HorizontalOptions = LayoutOptions.Center,
-                     VerticalOptions = LayoutOptions.Center
-                   }
-                 };
+        MainPage = new ContentPage
+        {
+            Content = new Label
+            {
+                Text = "Hello World",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            }
+        };
     }
 }
 ```
