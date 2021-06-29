@@ -37,7 +37,7 @@ to the current platform.
 ### Navigation transitions
 
 On **Android**, the default [`Navigator.push()`][] transition
-is modeled after [`startActivity()`][]),
+is modeled after [`startActivity()`][],
 which generally has one bottom-up animation variant.
 
 On **iOS**:
