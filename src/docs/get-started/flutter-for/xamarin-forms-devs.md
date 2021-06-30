@@ -210,7 +210,7 @@ but there are many benefits to this approach.
   For a comparison, see [Introduction to declarative UI][].
 {{site.alert.end}}
 
-`ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you
+`ContentPage`, `TabbedPage`, `FlyoutPage` are all types of pages you
 might in a Xamarin.Forms application. These pages would then hold
 `Element`s to display the various controls. In Xamarin.Forms an `Entry`
 or `Button` are examples of an `Element`.
