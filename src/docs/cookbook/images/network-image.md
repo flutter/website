@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/images/fading-in-images
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 Displaying images is fundamental for most mobile apps.

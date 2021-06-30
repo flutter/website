@@ -3,7 +3,7 @@ title: Introduction to widgets
 description: Learn about Flutter's widgets.
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="../null_safety_examples/ui/widgets_intro/"?>

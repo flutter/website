@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/navigation/named-routes
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 Most apps contain several screens for displaying different types of

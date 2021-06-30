@@ -9,7 +9,7 @@ next:
   path:  /docs/cookbook/effects/drag-a-widget
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 Traditional chat apps display messages in chat bubbles

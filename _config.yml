@@ -32,7 +32,7 @@ pub-api: https://pub.dev/documentation
 pub-pkg: https://pub.dev/packages
 flutter-medium: https://medium.com/flutter
 medium: https://medium.com
-dartpad: https://dartpad.dev
+dartpad: https://lint-test-dot-dart-pad.appspot.com
 material: https://material.io
 so: https://stackoverflow.com
 github: https://github.com
@@ -132,10 +132,10 @@ alert:
 
 custom:
   dartpad:
-    embed-dart-prefix: https://dartpad.dev/embed-dart.html
-    embed-flutter-prefix: https://dartpad.dev/embed-flutter.html
-    embed-html-prefix: https://dartpad.dev/embed-html.html
-    embed-inline-prefix: https://dartpad.dev/embed-inline.html
+    embed-dart-prefix: https://lint-test-dot-dart-pad.appspot.com/embed-dart.html
+    embed-flutter-prefix: https://lint-test-dot-dart-pad.appspot.com/embed-flutter.html
+    embed-html-prefix: https://lint-test-dot-dart-pad.appspot.com/embed-html.html
+    embed-inline-prefix: https://lint-test-dot-dart-pad.appspot.com/embed-inline.html
 
   # callout_danger: '<div class="bs-callout bs-callout-danger">'
   # callout_default: '<div class="bs-callout bs-callout-default">'

@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/lists/mixed-list
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 In some cases, you might want to display your items as a grid rather than

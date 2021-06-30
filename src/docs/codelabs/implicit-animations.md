@@ -5,7 +5,7 @@ toc: true
 diff2html: true
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
   - defer: true
     url: /assets/codelabs/js/animations_examples.js
 ---
@@ -62,10 +62,10 @@ Click the **Run** button to run the example:
 {% include implicit-animations/fade-in-starter-code.md %}
 
 {{site.alert.important}}
-  This page uses an embedded version of [DartPad] to display
+  This page uses an embedded version of [DartPad][] to display
   examples and exercises.
   If you see empty boxes instead of DartPads, go to the
-  [DartPad troubleshooting page].
+  [DartPad troubleshooting page][].
 {{site.alert.end}}
 
 ### Animate opacity with AnimatedOpacity widget

@@ -4,7 +4,7 @@ description: How to create a Flutter web app.
 short-title: Write your first web app
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 {{site.alert.tip}}

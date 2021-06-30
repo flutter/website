@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/design/drawer
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="../null_safety_examples/cookbook/animation/opacity_animation/"?>

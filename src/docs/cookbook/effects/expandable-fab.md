@@ -9,7 +9,7 @@ next:
   path:  /docs/cookbook/effects/gradient-bubbles
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 A Floating Action Button (FAB) is a round button that

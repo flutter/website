@@ -4,7 +4,7 @@ description: Flutter's model for widget constraints, sizing, positioning, and ho
 toc: false
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="../null_safety_examples/layout/constraints/"?>
@@ -1917,7 +1917,6 @@ header image at the top of the article.
 
 
 [`Container` documentation]: {{site.api}}/flutter/widgets/Container-class.html
-[DartPad instance]: https://dartpad.dev/60174a95879612e500203084a0588f94
 [Flutter: The Advanced Layout Rule Even Beginners Must Know]: https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
 [GitHub]: {{site.github}}/marcglasberg
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages

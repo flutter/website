@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/lists/horizontal-list
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 Displaying lists of data is a fundamental pattern for mobile apps.

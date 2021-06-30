@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/lists/grid-lists
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 You might want to create a list that scrolls

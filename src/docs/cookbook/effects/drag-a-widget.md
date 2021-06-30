@@ -9,7 +9,7 @@ next:
   path:  /docs/cookbook/forms/validation
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://lint-test-dot-dart-pad.appspot.com/inject_embed.dart.js
 ---
 
 Drag and drop is a common mobile app interaction.
