@@ -30,7 +30,7 @@ you call the `LoadApplication` method,
 which creates a new application and starts your app.
 
 ```csharp
-LoadApplication(App());
+LoadApplication(new App());
 ```
 
 In Flutter, the default main entry point is
