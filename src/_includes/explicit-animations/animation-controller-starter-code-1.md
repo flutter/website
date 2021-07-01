@@ -17,7 +17,7 @@ class _AnimationControllerDemo extends State<AnimationControllerDemo> with Singl
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       lowerBound: 0,
       upperBound: 100,
     );
