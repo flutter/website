@@ -195,7 +195,7 @@ project called `l10n.yaml` with the following content:
    <?code-excerpt "gen_l10n_example/lib/l10n/app_es.arb"?>
    ```json
    {
-       "helloWorld": "Hola Mundo!"
+       "helloWorld": "¡Hola Mundo!"
    }
    ```
 
