@@ -1640,8 +1640,9 @@ tied to this event. Alternatively you would use the
 ### How do I handle other gestures on widgets?
 
 In Xamarin.Forms you would add a `GestureRecognizer` to the
-`VisualElement`. You would normally be limited to `TapGestureRecognizer`,
-`PinchGestureRecognizer` and `PanGestureRecognizer`,
+`View`. You would normally be limited to `TapGestureRecognizer`,
+`PinchGestureRecognizer`, `PanGestureRecognizer`, `SwipeGestureRecognizer`,
+`DragGestureRecognizer` and `DropGestureRecognizer`
 unless you built your own.
 
 In Flutter, using the GestureDetector, you can listen to a wide
