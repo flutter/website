@@ -1,9 +1,0 @@
-.DS_Store
-pubspec.lock
-
-*/**/android
-*/**/ios
-*/**/web
-*/**/linux
-*/**/.gitignore
-*/**/.metadata
