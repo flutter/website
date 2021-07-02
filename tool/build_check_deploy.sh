@@ -166,7 +166,7 @@ if [[ -n $CHECK_CODE ]]; then
     echo "DARTFMT check of extracted code snippets:"
     check_formatting example.g
   else
-    EXAMPLE_ROOT="examples" ;;
+    EXAMPLE_ROOT="examples"
     echo "ANALYZING and testing apps in $EXAMPLE_ROOT/*"
     for sample in $EXAMPLE_ROOT/*/*{,/*}; do
       if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
