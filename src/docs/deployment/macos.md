@@ -150,10 +150,10 @@ app's icons:
 1. Verify the icon has been replaced by running your app using
    `flutter run -d macos`.
 
-## Create a build archive
+## Create a build archive with Xcode
 
 This step covers creating a build archive and uploading
-your build to App Store Connect.
+your build to App Store Connect using Xcode.
 
 During development, you've been building, debugging, and testing
 with _debug_ builds. When you're ready to ship your app to users
@@ -206,6 +206,166 @@ on TestFlight, or go ahead and release your app to the App Store.
 For more details, see
 [Upload an app to App Store Connect][distributionguide_upload].
 
+## Create a build archive with Codemagic CLI tools
+
+This step covers creating a build archive and uploading
+your build to App Store Connect using Flutter build commands 
+and [Codemagic CLI Tools][codemagic_cli_tools] in a terminal.
+
+<ol markdown="1">
+<li markdown="1">
+
+Install the Codemagic CLI tools:
+```bash
+pip3 install codemagic-cli-tools
+```
+
+</li>
+<li markdown="1">
+
+Create a private key used to create a macOS Apple Distribution Certificate:
+```bash
+ssh-keygen -t rsa -b 2048 -m PEM -f ~/Downloads/cert_key -q -N ""
+```
+
+</li>
+<li markdown="1">
+
+In order to make subsequent commands more concise, set the following environment variables for App Store Connect issuer id, key id, API key, and the private key created in the last step:
+```bash
+export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
+export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/app/store/connect/api/key/AuthKey_XXXYYYZZZ.p8`
+export CERTIFICATE_PRIVATE_KEY=`cat /path/to/certificate/private/key/cert_key`
+```
+
+</li>
+<li markdown="1">
+
+Fetch the code signing files from App Store Connect:
+```bash
+app-store-connect fetch-signing-files com.craastad.myMacosApp \
+    --platform MAC_OS \
+    --type MAC_APP_STORE \
+    --create
+```
+
+</li>
+<li markdown="1">
+
+Create a macOS Mac Installer Distribution certificate in App Store Connect for the locally generated private key. This will fail with a 409 error if you already have a Mac Installer Distribution certificate for the private key.  
+```bash
+app-store-connect create-certificate \
+    --type MAC_INSTALLER_DISTRIBUTION \
+    --save
+```
+
+</li>
+<li markdown="1">
+
+Fetch the macOS installer certificate:
+```bash
+app-store-connect list-certificates \
+    --type MAC_INSTALLER_DISTRIBUTION \
+    --save
+```
+
+</li>
+<li markdown="1">
+
+Set up keychain to be used for code signing:
+```bash
+keychain initialize
+```
+
+</li>
+<li markdown="1">
+
+Now add the fetched certificates to your keychain:
+```bash
+keychain add-certificates
+```
+
+</li>
+<li markdown="1">
+
+Update the Xcode project settings to use fetched code signing profiles: 
+```bash
+xcode-project use-profiles
+```
+
+</li>
+
+<li markdown="1">
+
+Install Flutter dependencies:
+```bash
+flutter packages pub get
+```
+
+</li>
+<li markdown="1">
+
+Install pod dependencies:
+```bash
+find . -name "Podfile" -execdir pod install \;
+```
+
+</li>
+<li markdown="1">
+
+Enable the Flutter macOS option:
+```bash
+flutter config --enable-macos-desktop
+```
+
+</li>
+<li markdown="1">
+
+Build the Flutter macOS project:
+```bash
+flutter build macos --release --build-name=1.0.41 --build-number=41
+```
+
+</li>
+<li markdown="1">
+
+Package the app:
+```bash
+APP_NAME=$(find $(pwd) -name "*macos*.app")
+PACKAGE_NAME=$(basename "$APP_NAME" .app).pkg
+xcrun productbuild --component "$APP_NAME" /Applications/ unsigned.pkg
+
+INSTALLER_CERT_NAME=$(keychain list-certificates \
+          | jq '.[]
+            | select(.common_name
+            | contains("Mac Developer Installer"))
+            | .common_name' \
+          | xargs)
+xcrun productsign --sign "$INSTALLER_CERT_NAME" unsigned.pkg "$PACKAGE_NAME"
+rm -f unsigned.pkg 
+```
+
+</li>
+<li markdown="1">
+
+Publish the packaged app to App Store Connect:
+```bash
+app-store-connect publish \
+    --path my_macos_app.pkg
+```
+
+</li>
+<li markdown="1">
+
+Finally, restore your login keychain as the default to avoid authentication issues with apps on your machine:
+```bash
+keychain use-login
+```
+
+</li>
+</ol>
+
 ## Distribute to registered devices
 
 [TestFlight][] is not available for distributing macOS apps
@@ -248,6 +408,7 @@ detailed overview of the process of releasing an app to the App Store.
 [appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
 [appstoreconnect_login]: https://appstoreconnect.apple.com/
+[codemagic_cli_tools]: https://github.com/codemagic-ci-cd/cli-tools
 [codesigning_guide]: https://developer.apple.com/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 [devportal_appids]: https://developer.apple.com/account/ios/identifier/bundle
