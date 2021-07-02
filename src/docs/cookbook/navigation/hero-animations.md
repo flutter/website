@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/hero_animations"?>
+<?code-excerpt path-base="cookbook/navigation/hero_animations"?>
 
 It's often helpful to guide users through an app as they navigate from screen
 to screen. A common technique to lead users through an app is to animate a

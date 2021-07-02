@@ -6,7 +6,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/ui/widgets_intro/"?>
+<?code-excerpt path-base="ui/widgets_intro/"?>
 
 {% assign api = site.api | append: '/flutter' -%}
 

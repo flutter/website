@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/networking/send-data
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/networking/background_parsing/"?>
+<?code-excerpt path-base="cookbook/networking/background_parsing/"?>
 
 By default, Dart apps do all of their work on a single thread.
 In many cases, this model simplifies coding and is fast enough

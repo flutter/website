@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/forms/validation"?>
+<?code-excerpt path-base="cookbook/forms/validation"?>
 
 Apps often require users to enter information into a text field.
 For example, you might require users to log in with an email address

@@ -9,7 +9,7 @@ next:
   path: /docs/development/data-and-backend/state-mgmt/options
 ---
 
-<?code-excerpt path-base="../null_safety_examples/state_mgmt/simple/"?>
+<?code-excerpt path-base="state_mgmt/simple/"?>
 
 Now that you know about [declarative UI programming][]
 and the difference between [ephemeral and app state][],

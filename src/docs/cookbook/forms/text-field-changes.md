@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/forms/text_field_changes/"?>
+<?code-excerpt path-base="cookbook/forms/text_field_changes/"?>
 
 In some cases, it's useful to run a callback function every time the text
 in a text field changes. For example, you might want to build a search

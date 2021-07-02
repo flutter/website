@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/testing/widget/tap-drag
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/testing/widget/finders/"?>
+<?code-excerpt path-base="cookbook/testing/widget/finders/"?>
 
 {% assign api = site.api | append: '/flutter' -%}
 

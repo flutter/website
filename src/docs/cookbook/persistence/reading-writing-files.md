@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/persistence/key-value
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/persistence/reading_writing_files/"?>
+<?code-excerpt path-base="cookbook/persistence/reading_writing_files/"?>
 
 In some cases, you need to read and write files to disk.
 For example, you may need to persist data across app launches,

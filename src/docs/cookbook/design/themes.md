@@ -13,7 +13,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/design/themes"?>
+<?code-excerpt path-base="cookbook/design/themes"?>
 
 To share colors and font styles throughout an app, use themes.
 You can either define app-wide themes, or use `Theme` widgets

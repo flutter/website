@@ -151,7 +151,7 @@ In this example, `createState()` returns an
 instance of `_FavoriteWidgetState`,
 which you'll implement in the next step.
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/interactive"?>
+<?code-excerpt path-base="layout/lakes/interactive"?>
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
 ```dart
 class FavoriteWidget extends StatefulWidget {
@@ -265,7 +265,7 @@ the app's `build()` method. First, locate the code that
 creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
-<?code-excerpt path-base="../null_safety_examples/"?>
+<?code-excerpt path-base=""?>
 <?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
 ```diff
 --- layout/lakes/step6/lib/main.dart
@@ -393,7 +393,7 @@ The `_TapboxAState` class:
   `setState()` function to update the UI.
 * Implements all interactive behavior for the widget.
 
-<?code-excerpt path-base="../null_safety_examples/development/ui/interactive/"?>
+<?code-excerpt path-base="development/ui/interactive/"?>
 
 <?code-excerpt "lib/self_managed.dart"?>
 ```dart

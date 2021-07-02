@@ -4,7 +4,7 @@ short-title: i18n
 description: How to internationalize your Flutter app.
 ---
 
-<?code-excerpt path-base="../null_safety_examples/internationalization"?>
+<?code-excerpt path-base="internationalization"?>
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>

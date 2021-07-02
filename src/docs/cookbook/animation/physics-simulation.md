@@ -13,7 +13,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/animation/physics_simulation/"?>
+<?code-excerpt path-base="cookbook/animation/physics_simulation/"?>
 
 Physics simulations can make app interactions feel realistic and interactive.
 For example, you might want to animate a widget to act as if it were attached to

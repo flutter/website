@@ -247,7 +247,7 @@ use the following steps:
 
 Code before migration:
 
-<?code-excerpt "../null_safety_examples/integration_test/test_driver/before.dart"?>
+<?code-excerpt "integration_test/test_driver/before.dart"?>
 ```dart
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
@@ -284,7 +284,7 @@ void main() {
 
 Code after migration:
 
-<?code-excerpt "../null_safety_examples/integration_test/integration_test/counter_test.dart"?>
+<?code-excerpt "integration_test/integration_test/counter_test.dart"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';

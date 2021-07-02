@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/networking/background-parsing
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/networking/authenticated_requests/"?>
+<?code-excerpt path-base="cookbook/networking/authenticated_requests/"?>
 
 To fetch data from most web services, you need to provide
 authorization. There are many ways to do this,

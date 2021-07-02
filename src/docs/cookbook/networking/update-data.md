@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/networking/web-sockets
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/networking/update_data/"?>
+<?code-excerpt path-base="cookbook/networking/update_data/"?>
 
 Updating data over the internet is necessary for most apps.
 The `http` package has got that covered!

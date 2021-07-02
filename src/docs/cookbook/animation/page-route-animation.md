@@ -9,7 +9,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/animation/page_route_animation/"?>
+<?code-excerpt path-base="cookbook/animation/page_route_animation/"?>
 
 A design language, such as Material, defines standard behaviors when
 transitioning between routes (or screens). Sometimes, though, a custom
