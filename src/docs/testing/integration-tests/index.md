@@ -247,14 +247,14 @@ use the following steps:
 
 Code before migration:
 
-<?code-excerpt "integration_test/test_driver/before.dart"?>
+<?code-excerpt "../null_safety_examples/integration_test/test_driver/before.dart"?>
 ```dart
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('end-to-end test', () {
-    FlutterDriver driver;
+    late FlutterDriver driver;
 
     setUpAll(() async {
       // Connect to a running Flutter application instance.
@@ -262,7 +262,7 @@ void main() {
     });
 
     tearDownAll(() async {
-      if (driver != null) driver.close();
+      driver.close();
     });
 
     test('tap on the floating action button; verify counter', () async {
@@ -284,7 +284,7 @@ void main() {
 
 Code after migration:
 
-<?code-excerpt "integration_test/integration_test/counter_test.dart"?>
+<?code-excerpt "../null_safety_examples/integration_test/integration_test/counter_test.dart"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
