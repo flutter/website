@@ -43,10 +43,10 @@ then do the following:
  1. [Create a basic "Hello World" Flutter app][hello-world].
  2. Change the app bar title and the app title as follows:
 
-    <?code-excerpt "../null_safety_examples/layout/base/lib/{main_starter,main}.dart"?>
+    <?code-excerpt "layout/base/lib/{main_starter,main}.dart"?>
     ```diff
-    --- ../null_safety_examples/layout/base/lib/main_starter.dart
-    +++ ../null_safety_examples/layout/base/lib/main.dart
+    --- layout/base/lib/main_starter.dart
+    +++ layout/base/lib/main.dart
     @@ -10,10 +10,10 @@
        @override
        Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ place some of the implementation in variables and functions.
 
 ## Step 2: Implement the title row
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/step2"?>
+<?code-excerpt path-base="layout/lakes/step2"?>
 
 First, you'll build the left column in the title section.
 Add the following code at the top of the `build()`
@@ -159,7 +159,7 @@ Widget titleSection = Container(
     a `Container` and padded along each edge by 32 pixels.
     Add the title section to the app body like this:
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes"?>
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "{../base,step2}/lib/main.dart" from="return MaterialApp"?>
 ```diff
 --- ../base/lib/main.dart
@@ -193,7 +193,7 @@ Widget titleSection = Container(
 
 ## Step 3: Implement the button row
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/step3"?>
+<?code-excerpt path-base="layout/lakes/step3"?>
 
 The button section contains 3 columns that use the same
 layout&mdash;an icon over a row of text.
@@ -266,7 +266,7 @@ Widget buttonSection = Container(
 
 Add the button section to the body:
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes"?>
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "{step2,step3}/lib/main.dart" from="return MaterialApp" to="}"?>
 ```diff
 --- step2/lib/main.dart
@@ -289,7 +289,7 @@ Add the button section to the body:
 
 ## Step 4: Implement the text section
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes/step4"?>
+<?code-excerpt path-base="layout/lakes/step4"?>
 
 Define the text section as a variable. Put the text
 in a `Container` and add padding along each edge.
@@ -317,7 +317,7 @@ wrapping at a word boundary.
 
 Add the text section to the body:
 
-<?code-excerpt path-base="../null_safety_examples/layout/lakes"?>
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "{step3,step4}/lib/main.dart" from="return MaterialApp"?>
 ```diff
 --- step3/lib/main.dart

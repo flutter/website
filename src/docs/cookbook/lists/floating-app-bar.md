@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/lists/floating_app_bar/"?>
+<?code-excerpt path-base="cookbook/lists/floating_app_bar/"?>
 
 To make it easier for users to view a list of items,
 you might want to hide the app bar as the user scrolls down the list.

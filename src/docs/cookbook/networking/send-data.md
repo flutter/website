@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/networking/update-data
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/networking/send_data/"?>
+<?code-excerpt path-base="cookbook/networking/send_data/"?>
 
 Sending data to the internet is necessary for most apps.
 The `http` package has got that covered, too.

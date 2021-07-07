@@ -3,12 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class BouncingBallDemo extends StatefulWidget {
+  @override
   _BouncingBallDemoState createState() => _BouncingBallDemoState();
 }
 
 class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
-  AnimationController controller;
+  late AnimationController controller;
 
+  @override
   void initState() {
     super.initState();
     controller = AnimationController(
@@ -19,7 +21,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
     );
 
     controller.addListener(() {
-      setState((){});
+      setState(() {});
     });
 
     controller.repeat(reverse: true);
@@ -29,16 +31,18 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: controller.value),
-        child: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.green,
-          ),
-          width: 40.0,
-          height: 40.0,
-        )
-      );
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.green,
+        ),
+        width: 40.0,
+        height: 40.0,
+      ),
+    );
   }
+
+  @override
   void dispose() {
     controller.dispose();
     super.dispose();

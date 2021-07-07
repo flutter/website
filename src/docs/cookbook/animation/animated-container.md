@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/animation/animated_container/"?>
+<?code-excerpt path-base="cookbook/animation/animated_container/"?>
 
 The [`Container`][] class provides a convenient way
 to create a widget with specific properties:

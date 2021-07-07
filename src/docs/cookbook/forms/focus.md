@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/forms/focus/"?>
+<?code-excerpt path-base="cookbook/forms/focus/"?>
 
 When a text field is selected and accepting input,
 it is said to have "focus."

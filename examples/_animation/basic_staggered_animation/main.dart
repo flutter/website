@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class StaggerAnimation extends StatelessWidget {
-  StaggerAnimation({ Key key, this.controller }) :
+  StaggerAnimation({ Key? key, required this.controller }) :
 
     // Each animation defined here transforms its value during the subset
     // of the controller's duration defined by the animation's interval.
@@ -101,12 +101,12 @@ class StaggerAnimation extends StatelessWidget {
   final Animation<double> height;
   final Animation<EdgeInsets> padding;
   final Animation<BorderRadius> borderRadius;
-  final Animation<Color> color;
+  final Animation<Color?> color;
 
   // This function is called each time the controller "ticks" a new frame.
   // When it runs, all of the animation's values will have been
   // updated to reflect the controller's current value.
-  Widget _buildAnimation(BuildContext context, Widget child) {
+  Widget _buildAnimation(BuildContext context, Widget? child) {
     return Container(
       padding: padding.value,
       alignment: Alignment.bottomCenter,
@@ -118,7 +118,7 @@ class StaggerAnimation extends StatelessWidget {
           decoration: BoxDecoration(
             color: color.value,
             border: Border.all(
-              color: Colors.indigo[300],
+              color: Colors.indigo[300]!,
               width: 3.0,
             ),
             borderRadius: borderRadius.value,
@@ -143,7 +143,7 @@ class StaggerDemo extends StatefulWidget {
 }
 
 class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

@@ -52,10 +52,6 @@ if [[ ! -e "$FRAG/examples" ]]; then
   usage "ERROR: examples fragments folder was not generated: '$FRAG/examples'"
 fi
 
-if [[ ! -e "$FRAG/null_safety_examples" ]]; then
-  usage "ERROR: null_safety_examples fragments folder was not generated: '$FRAG/null_safety_examples'"
-fi
-
 SRC="$1"
 : ${SRC:="$rootDir/src"}
 [[ -e $SRC ]] || usage "ERROR: source file/folder does not exist: '$SRC'"
@@ -75,7 +71,7 @@ ARGS+='/\x20*\/\/\s+ignore:[^\n]+//g;' # Remove analyzer ignore-issue marker
 
 echo "Source:     $SRC"
 # During the migration, all excerpt paths start here, meaning null safe excerpt
-# paths begin `../null_safety_examples/whatever`. After migration, this will not
+# paths begin `whatever`. After migration, this will not
 # be necessary.
 echo "Fragments:  $FRAG/examples"
 echo "Other args: $ARGS"

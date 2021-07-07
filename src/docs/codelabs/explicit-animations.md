@@ -10,7 +10,7 @@ js:
     url: /assets/codelabs/js/animations_examples.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/animation/explicit"?>
+<?code-excerpt path-base="animation/explicit"?>
 
 Welcome to the explicit animations codelab,
 where you learn how to create animations

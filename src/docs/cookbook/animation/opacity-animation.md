@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/animation/opacity_animation/"?>
+<?code-excerpt path-base="cookbook/animation/opacity_animation/"?>
 
 UI developers often need to show and hide elements on screen.
 However, quickly popping elements on and off the screen can

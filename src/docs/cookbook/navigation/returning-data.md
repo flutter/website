@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/navigation/returning_data/"?>
+<?code-excerpt path-base="cookbook/navigation/returning_data/"?>
 
 In some cases, you might want to return data from a new screen.
 For example, say you push a new screen that presents two options to a user.

@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/networking/fetch-data
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/networking/delete_data/"?>
+<?code-excerpt path-base="cookbook/networking/delete_data/"?>
 
 This recipe covers how to delete data over
 the internet using the `http` package.

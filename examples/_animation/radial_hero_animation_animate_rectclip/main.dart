@@ -17,11 +17,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class Photo extends StatelessWidget {
-  Photo({ Key key, this.photo, this.color, this.onTap }) : super(key: key);
+  Photo({ Key? key, required this.photo, this.onTap }) : super(key: key);
 
   final String photo;
-  final Color color;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   Widget build(BuildContext context) {
     return Material(
@@ -44,9 +43,9 @@ class Photo extends StatelessWidget {
 
 class RadialExpansion extends StatelessWidget {
   RadialExpansion({
-    Key key,
-    this.minRadius,
-    this.maxRadius,
+    Key? key,
+    required this.minRadius,
+    required this.maxRadius,
     this.child,
   }) : clipTween = Tween<double>(
          begin: 2.0 * minRadius,
@@ -57,7 +56,7 @@ class RadialExpansion extends StatelessWidget {
   final double minRadius;
   final double maxRadius;
   final Tween<double> clipTween;
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +85,7 @@ class RadialExpansionDemo extends StatelessWidget {
   static const double kMaxRadius = 128.0;
   static const opacityCurve = const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
 
-  static RectTween _createRectTween(Rect begin, Rect end) {
+  static RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
 
@@ -148,7 +147,7 @@ class RadialExpansionDemo extends StatelessWidget {
                   pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
                     return AnimatedBuilder(
                       animation: animation,
-                      builder: (BuildContext context, Widget child) {
+                      builder: (BuildContext context, Widget? child) {
                         return Opacity(
                           opacity: opacityCurve.transform(animation.value),
                           child: _buildPage(context, imageName, description),

@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/networking/authenticated-requests
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/networking/fetch_data/"?>
+<?code-excerpt path-base="cookbook/networking/fetch_data/"?>
 
 Fetching data from the internet is necessary for most apps.
 Luckily, Dart and Flutter provide tools, such as the
