@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/lists/mixed_list/"?>
+<?code-excerpt path-base="cookbook/lists/mixed_list/"?>
 
 You might need to create lists that display different types of content.
 For example, you might be working on a list that shows a heading

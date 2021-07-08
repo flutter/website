@@ -8,7 +8,7 @@ diff2html: true
 {% assign api = '{{site.api}}/flutter' -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
 
-<?code-excerpt path-base="../null_safety_examples/animation"?>
+<?code-excerpt path-base="animation"?>
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
@@ -441,7 +441,7 @@ the core widget code from the animation code.
 `AnimatedWidget` doesn't need to maintain a `State`
 object to hold the animation. Add the following `AnimatedLogo` class:
 
-<?code-excerpt path-base="../null_safety_examples/animation/animate2"?>
+<?code-excerpt path-base="animation/animate2"?>
 <?code-excerpt "lib/main.dart (AnimatedLogo)" title?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
@@ -461,7 +461,7 @@ class AnimatedLogo extends AnimatedWidget {
   }
 }
 ```
-<?code-excerpt path-base="../null_safety_examples/animation"?>
+<?code-excerpt path-base="animation"?>
 
 `AnimatedLogo` uses the current value of the `animation`
 when drawing itself.

@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/lists/long_lists/"?>
+<?code-excerpt path-base="cookbook/lists/long_lists/"?>
 
 The standard [`ListView`][] constructor works well
 for small lists. To work with lists that contain

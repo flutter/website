@@ -3,7 +3,6 @@ targets:
     sources:
       include:
         - examples/**
-        - null_safety_examples/**
         # Some default includes that aren't really used here but will prevent
         # false-negative warnings:
         - $package$

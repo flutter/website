@@ -10,7 +10,7 @@ js:
     url: /assets/codelabs/js/animations_examples.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/animation/implicit"?>
+<?code-excerpt path-base="animation/implicit"?>
 
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.

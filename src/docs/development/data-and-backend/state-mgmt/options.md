@@ -182,7 +182,7 @@ An approach similar to Provider that is compile-safe and testable. It doesn't ha
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
 [Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
 [Introduction to state management]: /docs/development/data-and-backend/state-mgmt/intro
-[Making sense of all those Flutter Providers]: {{site.medium}}/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd
+[Making sense of all those Flutter Providers]: {{site.medium}}/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd?sk=7859a73fac0ca414a0e911b0322e8589
 [Managing Flutter Application State With InheritedWidgets]: {{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 [Pragmatic State Management in Flutter]: https://www.youtube.com/watch?v=d_m5csmrf7I

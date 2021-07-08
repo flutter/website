@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/testing/integration/introduction
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/plugins/picture_using_camera/"?>
+<?code-excerpt path-base="cookbook/plugins/picture_using_camera/"?>
 
 Many apps require working with the device's cameras to
 take photos and videos.  Flutter provides the [`camera`][] plugin

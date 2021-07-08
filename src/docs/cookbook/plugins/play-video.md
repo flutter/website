@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/plugins/picture-using-camera
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/plugins/play_video/"?>
+<?code-excerpt path-base="cookbook/plugins/play_video/"?>
 
 Playing videos is a common task in app development,
 and Flutter apps are no exception. To play videos,
@@ -120,7 +120,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   void initState() {
-    // Create an store the VideoPlayerController. The VideoPlayerController
+    // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
     _controller = VideoPlayerController.network(

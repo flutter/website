@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/design/snackbars/"?>
+<?code-excerpt path-base="cookbook/design/snackbars/"?>
 
 It can be useful to briefly inform your users when certain actions
 take place. For example, when a user swipes away a message in a list,

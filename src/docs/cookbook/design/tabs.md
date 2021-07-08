@@ -12,7 +12,7 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/design/tabs/"?>
+<?code-excerpt path-base="cookbook/design/tabs/"?>
 
 Working with tabs is a common pattern in apps that follow the
 Material Design guidelines.

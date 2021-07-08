@@ -10,7 +10,7 @@ next:
   path: /docs/cookbook/testing/integration/scrolling
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/testing/integration/introduction/"?>
+<?code-excerpt path-base="cookbook/testing/integration/introduction/"?>
 
 {{site.alert.note}}
   The integration_test package is now the recommended way to write integration

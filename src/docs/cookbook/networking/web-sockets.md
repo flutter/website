@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/persistence/sqlite
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/networking/web_sockets/"?>
+<?code-excerpt path-base="cookbook/networking/web_sockets/"?>
 
 In addition to normal HTTP requests,
 you can connect to servers using `WebSockets`.

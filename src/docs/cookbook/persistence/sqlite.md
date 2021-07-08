@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/persistence/reading-writing-files
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/persistence/sqlite/"?>
+<?code-excerpt path-base="cookbook/persistence/sqlite/"?>
 
 If you are writing an app that needs to persist and query large amounts of data on
 the local device, consider using a database instead of a local file or

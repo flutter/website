@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:state_mgmt/src/provider.dart';
 
 class AnotherMonstrousWidget extends SomeExpensiveWidget {
-  AnotherMonstrousWidget({Widget child}) : super(child: child);
+  AnotherMonstrousWidget({Widget? child}) : super(child: child);
 }
 
 class ChildUsingDescendant extends StatelessWidget {
@@ -14,7 +14,7 @@ class ChildUsingDescendant extends StatelessWidget {
       builder: (context, cart, child) => Stack(
             children: [
               // Use SomeExpensiveWidget here, without rebuilding every time.
-              child,
+              if (child != null) child,
               Text("Total price: ${cart.totalPrice}"),
             ],
           ),
@@ -66,7 +66,7 @@ class DescendantNotInLeafNode_Bad extends StatelessWidget {
 }
 
 class HumongousWidget extends SomeExpensiveWidget {
-  HumongousWidget({Widget child}) : super(child: child);
+  HumongousWidget({Widget? child}) : super(child: child);
 }
 
 class MyHomepage extends StatelessWidget {
@@ -103,7 +103,7 @@ class NonRebuilding_Good extends StatelessWidget {
 }
 
 class SomeExpensiveWidget extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
 
   SomeExpensiveWidget({this.child});
 

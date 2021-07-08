@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">AddFlutterToAndroid</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="action_launch_flutter_activity"> Launch Flutter Activity</string>
-</resources>

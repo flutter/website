@@ -9,7 +9,7 @@ next:
   path: /docs/cookbook/plugins/play-video
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/persistence/key_value/"?>
+<?code-excerpt path-base="cookbook/persistence/key_value/"?>
 
 If you have a relatively small collection of key-values
 to save, you can use the [`shared_preferences`][] plugin.

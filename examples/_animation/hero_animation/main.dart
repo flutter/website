@@ -12,10 +12,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class PhotoHero extends StatelessWidget {
-  const PhotoHero({ Key key, this.photo, this.onTap, this.width }) : super(key: key);
+  const PhotoHero({
+    Key? key,
+    required this.photo,
+    this.onTap,
+    required this.width,
+  }) : super(key: key);
 
   final String photo;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final double width;
 
   Widget build(BuildContext context) {

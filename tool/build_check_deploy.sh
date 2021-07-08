@@ -165,57 +165,53 @@ if [[ -n $CHECK_CODE ]]; then
 
     echo "DARTFMT check of extracted code snippets:"
     check_formatting example.g
+  else
+    EXAMPLE_ROOT="examples"
+    echo "ANALYZING and testing apps in $EXAMPLE_ROOT/*"
+    for sample in $EXAMPLE_ROOT/*/*{,/*}; do
+      if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
+        if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
+          echo "Example: $sample - skipped because of filter"
+          continue;
+        elif [[ "$(cd $sample ; git rev-parse --show-superproject-working-tree)" ]]; then
+          echo "Example: $sample - skipped because it's in a sumbodule."
+          continue;
+        elif [[ $sample =~ "intl_example" ]]; then
+          # TODO(filiph): Fix the example and remove this special case
+          echo "Example: $sample - skipped because it fails now"
+          continue;
+        else
+          echo "Example: $sample"
+        fi
+
+        if [[ -n $TEST && -d "$sample/test" ]]; then
+          # Only hydrate the sample if we're going to test it.
+          (
+            set -x;
+            cd $ROOT;
+            "$flutter" create --no-overwrite $sample
+            rm -rf $sample/integration_test # Remove unneeded integration test stubs.
+          )
+        fi
+        (
+          set -x;
+          cd "$sample"
+          "$flutter" packages $PUB_CMD;
+          "$flutter" analyze .;
+        )
+        if [[ -n $TEST && -d "$sample/test" ]]; then
+          (
+            cd "$sample";
+            set -x;
+            "$flutter" test
+          )
+        elif [[ -n $TEST ]]; then
+          echo "Sample has no tests."
+        fi
+        echo
+      fi
+    done
   fi
-
-  case "$NULL_SAFETY" in
-    1) EXAMPLE_ROOT="null_safety_examples" ;;
-    *) EXAMPLE_ROOT="examples" ;;
-  esac
-  echo "ANALYZING and testing apps in $EXAMPLE_ROOT/*"
-  for sample in $EXAMPLE_ROOT/*/*{,/*}; do
-    if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
-      if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
-        echo "Example: $sample - skipped because of filter"
-        continue;
-      elif [[ "$(cd $sample ; git rev-parse --show-superproject-working-tree)" ]]; then
-        echo "Example: $sample - skipped because it's in a sumbodule."
-        continue;
-      elif [[ $sample =~ "intl_example" ]]; then
-        # TODO(filiph): Fix the example and remove this special case
-        echo "Example: $sample - skipped because it fails now"
-        continue;
-      else
-        echo "Example: $sample"
-      fi
-
-      if [[ -n $TEST && -d "$sample/test" ]]; then
-        # Only hydrate the sample if we're going to test it.
-        (
-          set -x;
-          cd $ROOT;
-          "$flutter" create --no-overwrite $sample
-          rm -rf $sample/integration_test # Remove unneeded integration test stubs.
-        )
-      fi
-      (
-        set -x;
-        cd "$sample"
-        "$flutter" packages $PUB_CMD;
-        "$flutter" analyze .;
-      )
-      if [[ -n $TEST && -d "$sample/test" ]]; then
-        (
-          cd "$sample";
-          set -x;
-          "$flutter" test
-        )
-      elif [[ -n $TEST ]]; then
-        echo "Sample has no tests."
-      fi
-      echo
-    fi
-  done
-
 else
   echo "SKIPPING: code checks"
 fi

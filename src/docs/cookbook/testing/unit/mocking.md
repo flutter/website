@@ -10,7 +10,7 @@ next:
   path: /docs/cookbook/testing/widget/introduction
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/testing/unit/mocking"?>
+<?code-excerpt path-base="cookbook/testing/unit/mocking"?>
 
 Sometimes, unit tests might depend on classes that fetch data from live
 web services or databases. This is inconvenient for a few reasons:
