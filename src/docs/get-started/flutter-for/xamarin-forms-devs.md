@@ -30,7 +30,7 @@ you call the `LoadApplication` method,
 which creates a new application and starts your app.
 
 ```csharp
-LoadApplication(App());
+LoadApplication(new App());
 ```
 
 In Flutter, the default main entry point is
@@ -47,19 +47,19 @@ In Xamarin.Forms, you assign a `Page` to the
 `MainPage` property in the `Application` class.
 
 ```csharp
-public class App: Application
+public class App : Application
 {
     public App()
     {
-      MainPage = ContentPage()
-                 {
-                   Label()
-                   {
-                     Text="Hello World",
-                     HorizontalOptions = LayoutOptions.Center,
-                     VerticalOptions = LayoutOptions.Center
-                   }
-                 };
+        MainPage = new ContentPage
+        {
+            Content = new Label
+            {
+                Text = "Hello World",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            }
+        };
     }
 }
 ```
@@ -210,7 +210,7 @@ but there are many benefits to this approach.
   For a comparison, see [Introduction to declarative UI][].
 {{site.alert.end}}
 
-`ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you
+`ContentPage`, `TabbedPage`, `FlyoutPage` are all types of pages you
 might in a Xamarin.Forms application. These pages would then hold
 `Element`s to display the various controls. In Xamarin.Forms an `Entry`
 or `Button` are examples of an `Element`.
@@ -1640,8 +1640,9 @@ tied to this event. Alternatively you would use the
 ### How do I handle other gestures on widgets?
 
 In Xamarin.Forms you would add a `GestureRecognizer` to the
-`VisualElement`. You would normally be limited to `TapGestureRecognizer`,
-`PinchGestureRecognizer` and `PanGestureRecognizer`,
+`View`. You would normally be limited to `TapGestureRecognizer`,
+`PinchGestureRecognizer`, `PanGestureRecognizer`, `SwipeGestureRecognizer`,
+`DragGestureRecognizer` and `DropGestureRecognizer`
 unless you built your own.
 
 In Flutter, using the GestureDetector, you can listen to a wide
