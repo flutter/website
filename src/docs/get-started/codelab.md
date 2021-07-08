@@ -643,7 +643,7 @@ where you add the following functionality:
 [Google Developers Codelabs]: {{site.codelabs}}
 [hot reload]: /docs/get-started/test-drive
 [in the way your IDE describes]: /docs/get-started/test-drive
-[Icons]: https://design.google.com/icons/
+[Icons]: https://fonts.google.com/icons
 [iOS]: install/macos#deploy-to-ios-devices
 [iOS simulator]: install/macos#set-up-the-ios-simulator
 [Material]: {{site.material}}/guidelines
