@@ -247,6 +247,7 @@
       { "source": "/go/unobstructed-platform-views", "destination": "https://docs.google.com/document/d/1PCTnBoNYDTQgYOzoZw43Iu5zG5q7j6cliCDT3mhhqZw/edit", "type": 301 },
       { "source": "/go/update-scrollbars", "destination": "https://docs.google.com/document/d/1mRlc-sRyadE6301aZsD1LJkPG2B9K97Bg_GDHvFhMQI/edit?usp=sharing&resourcekey=0-v4Gk8H280RaPo5qClmDqpA", "type": 301 },
       { "source": "/go/update-text-theme-api", "destination": "https://docs.google.com/document/d/1B1s4mm6OYM7mKQ3vZfSTI2HR_KljB78gN6oBHg_zYUs/edit", "type": 301 },
+      { "source": "/go/vector-graphics", "destination": "https://docs.google.com/document/d/1YWffrlc6ZqRwfIiR1qwp1AOkS9JyA_lEURI8p5PsZlg/edit", "type": 301 },
       { "source": "/go/web-plugins-layout", "destination": "https://docs.google.com/document/d/1PeS-QSAFydHXhjZrqkub-GRPMs83roh8VwhbUScWuGQ", "type": 301 },
       { "source": "/go/web-renderer-options", "destination": "https://docs.google.com/document/d/1aY0iU16wf_sdT7nwfpjgT-IatHNfF3slTiYHKmxcIog", "type": 301 },
       { "source": "/go/web-slot-content", "destination": "https://docs.google.com/document/d/1U6aCSuzQsFpOP8_OseL-fwl2-MC2bxJAsgt2R_-sC30", "type": 301 },

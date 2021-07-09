@@ -189,8 +189,8 @@ submodule-cloning techniques:
       > Jekyll takes anywhere between 10-20 seconds to generate static
       > content inside the `_sites` directory. If you try to verify the
       > site locally, but aren't able to see the content right away,
-      > wait 20 seconds before stopping the
-      > server or concluding that something is wrong.
+      > wait 20 seconds before stopping the server or concluding that
+      > something is wrong.
  1. Before submitting, validate site links:<br>
     ```console
     $ ./tool/shared/check-links.sh
