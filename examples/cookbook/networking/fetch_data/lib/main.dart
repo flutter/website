@@ -61,8 +61,8 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     futureAlbum = fetchAlbum();
   }
-// #enddocregion State
 
+  // #enddocregion State
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -94,4 +94,6 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+  // #docregion State
 }
+// #enddocregion State
