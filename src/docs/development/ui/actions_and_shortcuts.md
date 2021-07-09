@@ -31,11 +31,10 @@ undo/redo architectures (for example) or other logic.
 
 ![Using Shortcuts Diagram][]
 
-[`Shortcuts`][] are
-key bindings that activate by pressing a key or combination of keys. The key
-combinations reside in a table with their bound intent. When the `Shortcuts`
-widget invokes them, it sends their matching intent to the actions subsystem for
-fulfillment.
+[`Shortcuts`][] are key bindings that activate by pressing a key or combination
+of keys. The key combinations reside in a table with their bound intent. When
+the `Shortcuts` widget invokes them, it sends their matching intent to the
+actions subsystem for fulfillment.
 
 To illustrate the concepts in shortcuts and actions, this article creates a
 simple app that allows a user to select and copy text in a text field using both
@@ -70,20 +69,22 @@ to all  invocations of an `Action`: that kind of state should be passed to the
 constructor of the `Action` itself, to keep the `Intent` from needing to know
 too much.
 
-### Why not use closures?
+### Why not use callbacks?
 
-You also might wonder: why not just use a closure instead of an `Action` object?
-The main reason is that it's useful for actions to decide whether they are
-enabled by implementing `isEnabled`.
+You also might wonder: why not just use a callback instead of an `Action`
+object? The main reason is that it's useful for actions to decide whether they
+are enabled by implementing `isEnabled`. Also, it is often helpful if the key
+bindings, and the implementation of those bindings, are in different places.
 
-If indeed all that is needed is a closure, without all of the complexity (or
-flexibility) of actions and shortcuts, you can already use a `Focus` widget for
-this. Here's an example of a widget that takes a map of activators and executes
-closures for them:
+If indeed all that is needed is a callback, without all the complexity (or
+flexibility) of `Actions` and `Shortcuts`, you can already use a `Focus` widget
+for this. For example, here's the implementation of Flutter's simple
+[`CallbackShortcuts`][] widget (available on the dev branch) that takes a map of
+activators and executes callbacks for them:
 
 ```dart
-class SimpleShortcuts extends StatelessWidget {
-  const SimpleShortcuts({
+class CallbackShortcuts extends StatelessWidget {
+  const CallbackShortcuts({
     Key? key,
     required this.bindings,
     required this.child,
@@ -588,9 +589,10 @@ void main() => runApp(const MyApp());
 ```
 
 
-[`Intent`]: {{site.api}}/flutter/widgets/Intent-class.html
 [`Action`]: {{site.api}}/flutter/widgets/Action-class.html
 [`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
 [`CallbackAction`]: {{site.api}}/flutter/widgets/CallbackAction-class.html
+[`CallbackShortcuts`]: http://master-api.flutter.dev/flutter/widgets/CallbackShortcuts-class.html
+[`Intent`]: {{site.api}}/flutter/widgets/Intent-class.html
 [`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
 [Using Shortcuts Diagram]: /images/using_shortcuts.png
