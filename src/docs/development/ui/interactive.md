@@ -5,7 +5,7 @@ short-title: Adding interactivity
 diff2html: true
 ---
 
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>

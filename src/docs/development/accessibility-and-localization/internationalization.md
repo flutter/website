@@ -840,15 +840,15 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     to load the localized messages and `Intl.message()` to look them up.
 
 [78 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
-[`add_language`]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/add_language/lib/main.dart
+[`add_language`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart
 [An alternative class for the app's localized resources]: #alternative-class
-[an example]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/minimal
-[`intl_example`]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/intl_example
-[`gen_l10n_example`]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/gen_l10n_example
+[an example]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
+[`intl_example`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example
+[`gen_l10n_example`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/gen_l10n_example
 [flutter_localizations README]: {{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Internationalization based on the `intl` package]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/intl_example
+[Internationalization based on the `intl` package]: {{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example
 [Internationalization User's Guide]: /go/i18n-user-guide
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl` tool]: #dart-tools
@@ -864,8 +864,8 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
-[`minimal`]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/minimal
-[Minimal internationalization]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/minimal
+[`minimal`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
+[Minimal internationalization]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Setting up an internationalized app]: #setting-up
 [`SynchronousFuture`]: {{site.api}}/flutter/foundation/SynchronousFuture-class.html
 [`supportedLocales`]: {{site.api}}/flutter/material/MaterialApp/supportedLocales.html

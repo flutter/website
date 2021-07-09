@@ -6,9 +6,9 @@ diff2html: true
 ---
 
 {% assign api = '{{site.api}}/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/null_safety_examples {%- endcapture -%}
-{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/null_safety_examples' -%}
-{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/null_safety_examples/flutter_gallery/lib/demo {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
+{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/examples/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
