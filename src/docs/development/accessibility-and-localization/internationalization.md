@@ -865,7 +865,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
 [`minimal`]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/minimal
-[Minimal internationalization]: {{site.github}}/flutter/website/tree/master/null_safety_examples/internationalization/minimal
+[Minimal internationalization]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Setting up an internationalized app]: #setting-up
 [`SynchronousFuture`]: {{site.api}}/flutter/foundation/SynchronousFuture-class.html
 [`supportedLocales`]: {{site.api}}/flutter/material/MaterialApp/supportedLocales.html
