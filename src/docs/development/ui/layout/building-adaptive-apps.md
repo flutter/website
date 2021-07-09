@@ -17,7 +17,7 @@ multiplatform, but are fully platform adaptive.
 There are many considerations for developing platform-adaptive
 apps, but they fall into three major categories:
 
-* [Layout](#layout)
+* [Layout](#building-adaptive-layouts)
 * [Input](#input)
 * [Idioms and norms](#idioms-and-norms)
 
