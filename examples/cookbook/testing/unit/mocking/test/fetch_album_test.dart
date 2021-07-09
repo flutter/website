@@ -1,17 +1,19 @@
-// #docregion mockClient
 import 'package:flutter_test/flutter_test.dart';
+// #docregion mockClient
 import 'package:http/http.dart' as http;
-import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
+// #enddocregion mockClient
 import 'package:mockito/mockito.dart';
+import 'package:mocking/main.dart';
 
 import 'fetch_album_test.mocks.dart';
+// #docregion mockClient
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
 @GenerateMocks([http.Client])
 void main() {
-// #enddocregion mockClient
+  // #enddocregion mockClient
   group('fetchAlbum', () {
     test('returns an Album if the http call completes successfully', () async {
       final client = MockClient();
@@ -35,4 +37,6 @@ void main() {
       expect(fetchAlbum(client), throwsException);
     });
   });
+  // #docregion mockClient
 }
+// #enddocregion mockClient
