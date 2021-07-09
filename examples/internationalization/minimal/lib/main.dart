@@ -45,6 +45,8 @@ class DemoLocalizations {
     },
   };
 
+  static List<String> languages ()=> _localizedValues.keys.toList();
+  
   String get title {
     return _localizedValues[locale.languageCode]!['title']!;
   }
@@ -56,7 +58,7 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
   const DemoLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => ['en', 'es'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => DemoLocalizations.languages().contains(locale.languageCode);
 
   @override
   Future<DemoLocalizations> load(Locale locale) {
