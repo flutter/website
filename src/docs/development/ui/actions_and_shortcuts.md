@@ -23,19 +23,15 @@ about the actions they invoke.
 That's where Flutter's shortcuts and actions system comes in. It allows
 developers to define actions that fulfill intents bound to them. In this
 context, an intent is a generic action that the user wishes to perform, and an
-[`Intent`](https://api.flutter.dev/flutter/widgets/Intent-class.html) class
-instance is used to represent these user intents in Flutter.  An
-[`Intent`](https://api.flutter.dev/flutter/widgets/Intent-class.html) can be
-general purpose, fulfilled by different actions in different contexts. An
-[`Action`](https://api.flutter.dev/flutter/widgets/Action-class.html) can be a
-simple callback (as in the case of
-the[`CallbackAction`](https://api.flutter.dev/flutter/widgets/CallbackAction-class.html))
-or something more complex that integrates with entire undo/redo architectures
-(for example) or other logic.
+[`Intent`][] class instance represents these user intents in Flutter. An
+`Intent` can be general purpose, fulfilled by different actions in different
+contexts. An [`Action`][] can be a simple callback (as in the case of
+the[`CallbackAction`][]) or something more complex that integrates with entire
+undo/redo architectures (for example) or other logic.
 
-![Using Shortcuts Diagram](/images/using_shortcuts.png)
+![Using Shortcuts Diagram][]
 
-[`Shortcuts`](https://api.flutter.dev/flutter/widgets/Shortcuts-class.html) are
+[`Shortcuts`][] are
 key bindings that activate by pressing a key or combination of keys. The key
 combinations reside in a table with their bound intent. When the `Shortcuts`
 widget invokes them, it sends their matching intent to the actions subsystem for
@@ -56,7 +52,7 @@ operation in an app, and have it adapt automatically to whichever action
 fulfills that intended operation for the focused context.
 
 For instance, Flutter has an `ActivateIntent` widget that maps each type of
-control to its corresponding version of an `ActivateAction (and` that executes
+control to its corresponding version of an `ActivateAction` (and that executes
 the code that activates the control). This code often needs fairly private
 access to do its work. If the extra layer of indirection that `Intent`s provide
 didn't exist, it would be necessary to elevate the definition of the actions to
@@ -129,7 +125,7 @@ represent the user's intent when that key combination is pressed. To convert
 that intended purpose for the key combination into a concrete action, the
 `Actions` widget used to map the `Intent` to an `Action`. For instance, you can
 define a `SelectAllIntent`, and bind it to your own `SelectAllAction` or to your
-`CanvasSelectAllAction`, and from that one key binding, the system will  invoke
+`CanvasSelectAllAction`, and from that one key binding, the system invokes
 either one, depending on which part of your application has focus. Let's see how
 the key binding part works:
 
@@ -166,19 +162,16 @@ set defines a set of one or more keys, and the intent indicates the intended
 purpose of the keypress. The `Shortcuts` widget looks up keypresses in the map,
 to find an `Intent` instance, which it gives to the action's `invoke()` method.
 
-<table>
-<td>
-<b>Note:</b> <code>ShortcutActivator</code> is a newer replacement (as of
-version 2.3.0) for <code>LogicalKeySet</code>. It allows for more flexible and
-correct activation of shortcuts. <code>LogicalKeySet</code> is a
-<code>ShortcutActivator</code>, of course, but now there is also
-<code>SingleActivator</code>, which takes a single key and the optional
-modifiers to be pressed before the key, and <code>CharacterActivator</code>,
-which will activate a shortcut based on the character produced by a key sequence
-instead of the logical keys themselves. <code>ShortcutActivator</code> is also
-meant to be subclassed to allow for custom ways of activating shortcuts from key
-events.</td>
-</table>
+{{site.alert.note}}
+`ShortcutActivator` is a newer replacement (as of Flutter 2.3.0) for
+`LogicalKeySet`. It allows for more flexible and correct activation of
+shortcuts. `LogicalKeySet` is a `ShortcutActivator`, of course, but now there is
+also `SingleActivator`, which takes a single key and the optional modifiers to
+be pressed before the key, and `CharacterActivator`, which activates a shortcut
+based on the character produced by a key sequence, instead of the logical keys
+themselves. `ShortcutActivator` is also meant to be subclassed to allow for
+custom ways of activating shortcuts from key events.
+{{site.alert.end}}
 
 ### The ShortcutManager
 
@@ -239,9 +232,8 @@ Or, if it's too much of a bother to create a new class, use a `CallbackAction`:
 CallbackAction(onInvoke: (Intent intent) => model.selectAll());
 ```
 
-Once you have an action, you add it to your application using the
-[`Actions`](https://api.flutter.dev/flutter/widgets/Actions-class.html) widget,
-which takes a map of `Intent` types to `Action`s:
+Once you have an action, you add it to your application using the [`Actions`][]
+widget, which takes a map of `Intent` types to `Action`s:
 
 ```dart
 @override
@@ -330,8 +322,8 @@ if the example passes the `context` given to the `build` function, the framework
 starts looking _above_ the current widget.  Using a `Builder` allows the
 framework to find the actions defined in the same `build` function.
 
-It is possible to invoke an action without needing a `BuildContext`, but since
-the `Actions` widget requires a context to find an enabled action to invoke, you
+You can invoke an action without needing a `BuildContext`, but since the
+`Actions` widget requires a context to find an enabled action to invoke, you
 need to provide one, either by creating your own `Action` instance, or by
 finding one in an appropriate context with `Actions.find`.
 
@@ -409,10 +401,11 @@ The combination of `Actions` and `Shortcuts` is powerful: you can define generic
 intents that map to specific actions at the widget level. Here's a simple app
 that illustrates the concepts described above. The app creates a text field that
 also has "select all" and "copy to clipboard" buttons next to it. The buttons
-invoke actions to accomplish their work. All of the invoked actions and
+invoke actions to accomplish their work. All the invoked actions and
 shortcuts are logged.
 
-```dart
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -593,3 +586,11 @@ class MyApp extends StatelessWidget {
 
 void main() => runApp(const MyApp());
 ```
+
+
+[`Intent`]: {{site.api}}/flutter/widgets/Intent-class.html
+[`Action`]: {{site.api}}/flutter/widgets/Action-class.html
+[`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
+[`CallbackAction`]: {{site.api}}/flutter/widgets/CallbackAction-class.html
+[`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
+[Using Shortcuts Diagram]: /images/using_shortcuts.png
