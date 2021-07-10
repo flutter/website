@@ -223,65 +223,93 @@ pip3 install codemagic-cli-tools
 </li>
 <li markdown="1">
 
-Create a private key used to create a macOS Apple Distribution Certificate:
-```bash
-ssh-keygen -t rsa -b 2048 -m PEM -f ~/Downloads/cert_key -q -N ""
-```
-
-</li>
-<li markdown="1">
-
-In order to make subsequent commands more concise, set the following environment variables for App Store Connect issuer id, key id, API key, and the private key created in the last step:
+You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key] with App Manager access to automate operations with App Store Connect. To make subsequent commands more concise, set the following environment variables from the new key: issuer id, key id, and API key file. 
 ```bash
 export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
 export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
-export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/app/store/connect/api/key/AuthKey_XXXYYYZZZ.p8`
-export CERTIFICATE_PRIVATE_KEY=`cat /path/to/certificate/private/key/cert_key`
+export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
 ```
 
 </li>
 <li markdown="1">
 
-Fetch the code signing files from App Store Connect:
+You'll need to export or create a Mac App Distribution and a Mac Installer Distribution certificate to perform code signing and package a build archive.
+
+If you have existing [certificates][devportal_certificates], you can export the private keys by executing the following command for each certificate:
+
+```bash
+openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
+```
+
+Or you can create a new private key by executing
+
+```bash
+ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
+```
+
+and later have CLI tools automatically create a new Mac App Distribution and Mac Installer Distribution certificate. You can use the same private key for each new certificate.
+
+</li>
+<li markdown="1">
+
+Fetch the code signing files from App Store Connect
+
 ```bash
 app-store-connect fetch-signing-files com.craastad.myMacosApp \
     --platform MAC_OS \
     --type MAC_APP_STORE \
+    --certificate-key=@file:/path/to/cert_key \
     --create
 ```
 
+Where `cert_key` is either your exported Mac App Distribution certificate private key or a new private key which will automatically generate a new certificate. 
+
 </li>
 <li markdown="1">
 
-Create a macOS Mac Installer Distribution certificate in App Store Connect for the locally generated private key. This will fail with a 409 error if you already have a Mac Installer Distribution certificate for the private key.  
+If you do not have a Mac Installer Distribution certificate, you can create a new certificate by executing  
+
 ```bash
 app-store-connect create-certificate \
     --type MAC_INSTALLER_DISTRIBUTION \
+    --certificate-key=@file:/path/to/cert_key \
     --save
 ```
+
+with `cert_key` of the private key you created earlier.
 
 </li>
 <li markdown="1">
 
-Fetch the macOS installer certificate:
+Fetch the Mac Installer Distribution certificates:
+
 ```bash
 app-store-connect list-certificates \
     --type MAC_INSTALLER_DISTRIBUTION \
+    --certificate-key=@file:/path/to/cert_key \
     --save
 ```
 
 </li>
 <li markdown="1">
 
-Set up keychain to be used for code signing:
+Set up a new temporary keychain to be used for code signing:
+
 ```bash
 keychain initialize
+```
+
+NB: after running this command you should run this command restore your login keychain as the default to avoid authentication issues with apps on your machine:
+
+```bash
+keychain use-login
 ```
 
 </li>
 <li markdown="1">
 
 Now add the fetched certificates to your keychain:
+
 ```bash
 keychain add-certificates
 ```
@@ -290,6 +318,7 @@ keychain add-certificates
 <li markdown="1">
 
 Update the Xcode project settings to use fetched code signing profiles: 
+
 ```bash
 xcode-project use-profiles
 ```
@@ -299,6 +328,7 @@ xcode-project use-profiles
 <li markdown="1">
 
 Install Flutter dependencies:
+
 ```bash
 flutter packages pub get
 ```
@@ -306,7 +336,8 @@ flutter packages pub get
 </li>
 <li markdown="1">
 
-Install pod dependencies:
+Install CocoaPods dependencies:
+
 ```bash
 find . -name "Podfile" -execdir pod install \;
 ```
@@ -324,13 +355,14 @@ flutter config --enable-macos-desktop
 
 Build the Flutter macOS project:
 ```bash
-flutter build macos --release --build-name=1.0.41 --build-number=41
+flutter build macos --release
 ```
 
 </li>
 <li markdown="1">
 
 Package the app:
+
 ```bash
 APP_NAME=$(find $(pwd) -name "*macos*.app")
 PACKAGE_NAME=$(basename "$APP_NAME" .app).pkg
@@ -350,6 +382,7 @@ rm -f unsigned.pkg
 <li markdown="1">
 
 Publish the packaged app to App Store Connect:
+
 ```bash
 app-store-connect publish \
     --path my_macos_app.pkg
@@ -358,7 +391,7 @@ app-store-connect publish \
 </li>
 <li markdown="1">
 
-Finally, restore your login keychain as the default to avoid authentication issues with apps on your machine:
+Don't forget to restore your login keychain as the default to avoid authentication issues with apps on your machine:
 ```bash
 keychain use-login
 ```
@@ -405,6 +438,7 @@ detailed overview of the process of releasing an app to the App Store.
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: https://developer.apple.com/app-store/submissions/
 [appstoreconnect]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_api_key]: https://appstoreconnect.apple.com/access/api
 [appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
 [appstoreconnect_login]: https://appstoreconnect.apple.com/
@@ -412,6 +446,7 @@ detailed overview of the process of releasing an app to the App Store.
 [codesigning_guide]: https://developer.apple.com/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 [devportal_appids]: https://developer.apple.com/account/ios/identifier/bundle
+[devportal_certificates]: https://developer.apple.com/account/resources/certificates
 [devprogram]: https://developer.apple.com/programs/
 [devprogram_membership]: https://developer.apple.com/support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
