@@ -225,7 +225,7 @@ as well as many other open source packages, on [pub.dev][].
      dependencies:
        flutter:
          sdk: flutter
-       cupertino_icons: ^1.0.2
+       cupertino_icons: ^1.0.3
     +  english_words: ^4.0.0
     ```
 
