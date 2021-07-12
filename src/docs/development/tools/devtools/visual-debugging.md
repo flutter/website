@@ -4,9 +4,9 @@ description: A guide to Flutter's visual debugging functionality.
 ---
 
 The Flutter Inspector provides several options for visually debugging your app.
-These are the options available from the inspector within the DevTools.
+These are the options available from the inspector within Flutter DevTools.
 
-## Slow Animations
+## Slow animations
 
 When enabled, this option runs animations 5 times slower for easier visual
 inspection.
@@ -21,20 +21,22 @@ import 'package:flutter/scheduler.dart'
 timeDilation = 5.0;
 ```
  
-This will slow the animations by 5x.
+This slows the animations by 5x.
 
 ### See also
 
-* [Flutter documentation: timeDilation property](https://api.flutter.dev/flutter/scheduler/timeDilation.html) 
+The following links provide more info.
 
-### Example
+* [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html) 
+
+The following screen recordings show before and after slowing an animation.
 
 ![Screen recording showing normal animation speed]({% asset tools/devtools/debug-toggle-slow-animations-disabled.gif @path %})
 ![Screen recording showing slowed animation speed]({% asset tools/devtools/debug-toggle-slow-animations-enabled.gif @path %})
 
-## Show Guidelines
+## Show layout guidelines
 
-This option draws guidelines on your app which show render boxes, alignments,
+This feature draws guidelines over your app that displays render boxes, alignments,
 paddings, scroll views, clippings and spacers.
 
 This tool can be used for better understanding your layout, for instance
@@ -46,7 +48,7 @@ You can also enable this in code:
 debugPaintSizeEnabled = true;
 ```
 
-### Render Boxes
+### Render boxes
 
 Widgets that draw to the screen create a [render box][]; they’re the 
 building blocks of Flutter layouts. They’re shown with a bright blue border:
@@ -58,13 +60,13 @@ building blocks of Flutter layouts. They’re shown with a bright blue border:
 
 Alignments are shown with yellow arrows. These arrows show the vertical
 and horizontal offsets of a widget relative to its parent.
-For example this button’s icon is shown as being centered by the four arrows:
+For example, this button’s icon is shown as being centered by the four arrows:
 
 ![Screenshot of alignment guidelines]({% asset tools/devtools/debug-toggle-guidelines-alignment.png @path %})
 
-### Paddings
+### Padding
 
-Paddings are shown with a semi-transparent blue background:
+Padding is shown with a semi-transparent blue background:
 
 ![Screenshot of padding guidelines]({% asset tools/devtools/debug-toggle-guidelines-padding.png @path %})
 
@@ -76,60 +78,60 @@ Widgets with scrolling contents such as list views are shown with green arrows:
 
 ### Clipping
 
-Clippings, such as when using the [ClipRect widget][], are shown
+Clipping, for example when using the [ClipRect widget][], are shown
 with a dashed pink line with a scissors icon:
 
-[ClipRect widget]: https://api.flutter.dev/flutter/widgets/ClipRect-class.html
+[ClipRect widget]: {{site.api}}/flutter/widgets/ClipRect-class.html
 
 ![Screenshot of clip guidelines]({% asset tools/devtools/debug-toggle-guidelines-clip.png @path %})
 
 ### Spacers
 
 Spacer widgets are shown with a grey background,
-such as this SizedBox without a child:
+such as this `SizedBox` without a child:
 
 ![Screenshot of spacer guidelines]({% asset tools/devtools/debug-toggle-guidelines-spacer.png @path %})
 
-## Show Baselines
+## Show baselines
 
 This option makes all baselines visible.
-Baselines are horizontal lines that are used to position text.
+Baselines are horizontal lines used to position text.
 
 This can be useful for checking whether text is precisely aligned vertically.
-For example, here the text baselines are slightly misaligned:
+For example, the text baselines in the following screenshot are slightly misaligned:
 
 ![Screenshot with show baselines enabled]({% asset tools/devtools/debug-toggle-guidelines-baseline.png @path %})
 
 The [Baseline][] widget can be used to adjust baselines.
 
-[Baseline]: https://api.flutter.dev/flutter/widgets/Baseline-class.html
+[Baseline]: {{site.api}}/flutter/widgets/Baseline-class.html
 
-A line will be drawn on any [render box][] which has a baseline set.
-Alphabetic baselines are shown as green and ideographic as yellow.
+A line is drawn on any [render box][] that has a baseline set;
+alphabetic baselines are shown as green and ideographic as yellow.
 
 You can also enable this in code:
 
 ```dart
 debugPaintBaselinesEnabled = true;
 ```
-## Highlight Repaints
+## Highlight repaints
 
 This option draws a border around all [render boxes][]
-which changes color every time that box repaints.
+that changes color every time that box repaints.
 
-[render boxes]: https://api.flutter.dev/flutter/rendering/RenderBox-class.html
+[render boxes]: {{site.api}}/flutter/rendering/RenderBox-class.html
 
 This rotating rainbow of colors is useful for finding parts of your app
 that are repainting too often and potentially harming performance.
 
 For example, one small animation could be causing an entire page
 to repaint on every frame.
-Wrapping the animation in a [RepaintBoundary widget][] would limit
+Wrapping the animation in a [RepaintBoundary widget][] limits
 the repainting to just the animation.
 
-[RepaintBoundary widget]: https://api.flutter.dev/flutter/widgets/RepaintBoundary-class.html
+[RepaintBoundary widget]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 
-Here the progress indicator causing its container to repaint:
+Here the progress indicator causes its container to repaint:
 
 ```dart
 Scaffold(
@@ -166,25 +168,26 @@ You can also enable this option in code:
 debugRepaintRainbowEnabled = true;
 ```
 
-## Highlight Oversized Images
+## Highlight oversized images
 
 This option highlights images that are too large by both inverting their colors
 and flipping them vertically:
 
 ![A highlighted oversized image]({% asset tools/devtools/debug-toggle-guidelines-oversized.png @path %})
 
-These are images that are unnecessarily using more memory than required.
-For example, if a large 5MB image is being displayed at 100 width and height. 
+The highlighted images use more memory than is required;
+for example, a large 5MB image displayed at 100 by 100 pixels.
 
 Such images can cause poor performance, especially on lower-end devices
-and when you have many images, such as in a list view.
+and when you have many images, as in a list view,
+this performance hit can add up.
 Information about each image is printed in the debug console:
 
 ```console
 dash.png has a display size of 213×392 but a decode size of 2130×392, which uses an additional 2542KB.
 ```
 
-Images that are deemed too large if they use at least 128KB more than required.
+Images are deemed too large if they use at least 128KB more than required.
 
 ### Fixing images
 
@@ -202,10 +205,10 @@ Image.asset(
 )
 ```
 
-These make the engine decode this image at the specified size,
-and help reduce memory usage (decoding and storage will still be more expensive
+This makes the engine decode this image at the specified size,
+and reduces memory usage (decoding and storage is still more expensive
 than if the image asset itself was shrunk).
-The image will be rendered to the constraints of the layout or width and height
+The image is rendered to the constraints of the layout or width and height
 regardless of these parameters. 
 
 This property can also be set in code:
@@ -214,8 +217,10 @@ This property can also be set in code:
 debugInvertOversizedImage = true;
 ```
 
-### Learn more:
+### More information
 
-- [Flutter documentation: debugInvertOversizedImages](https://api.flutter.dev/flutter/painting/debugInvertOversizedImages.html)
+You can learn more at the following links:
 
-[render box]: https://api.flutter.dev/flutter/rendering/RenderBox-class.html
+- [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+
+[render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
