@@ -290,7 +290,7 @@ class MyWidget extends StatelessWidget {
 
 
 [`find()`]: {{api}}/flutter_test/find-constant.html
-[`find.text()`]: {{api}}/flutter_test/CommonFinders-class.html
+[`find.text()`]: {{api}}/flutter_test/CommonFinders/text.html
 [`findsNothing`]: {{api}}/flutter_test/findsNothing-constant.html
 [`findsOneWidget`]: {{api}}/flutter_test/findsOneWidget-constant.html
 [`findsNWidgets`]: {{api}}/flutter_test/findsNWidgets.html
