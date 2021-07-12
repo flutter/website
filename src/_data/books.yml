@@ -33,13 +33,6 @@
   cover: flutter-for-beginners.jpg
   link: "https://www.amazon.com/Flutter-Beginners-introductory-cross-platform-applications/dp/1788996089"
   desc: "A step-by-step guide to learning Flutter and Dart 2 for creating Android and iOS mobile applications."
-- title: 'Flutter Libraries we love'
-  authors: 
-    - Codemagic
-  publisher: Codemagic
-  cover: flutter_libraries_we_love.png
-  link: "https://codemagic.io/flutter-libraries-ebook/"
-  desc: "\"Flutter libraries we love\" focuses on 11 different categories of Flutter libraries. Each category lists available libraries as well as a highlighted library that is covered in more detail – including pros and cons, developer's perspective, and real-life code examples. The code snippets of all 11 highlighted libraries support Flutter 2 with sound null safety."
 - title: 'Flutter in Action'
   authors:
     - Eric Windmill
@@ -47,6 +40,13 @@
   cover: flutter-in-action.jpg
   link: "https://www.amazon.com/Flutter-Action-Eric-Windmill/dp/1617296147"
   desc: "Flutter in Action teaches you to build professional-quality mobile applications using the Flutter SDK and the Dart programming language."
+- title: 'Flutter Libraries we love'
+  authors: 
+    - Codemagic
+  publisher: Codemagic
+  cover: flutter_libraries_we_love.png
+  link: "https://codemagic.io/flutter-libraries-ebook/"
+  desc: "\"Flutter libraries we love\" focuses on 11 different categories of Flutter libraries. Each category lists available libraries as well as a highlighted library that is covered in more detail – including pros and cons, developer's perspective, and real-life code examples. The code snippets of all 11 highlighted libraries support Flutter 2 with sound null safety."
 - title: 'Flutter Succinctly'
   authors:
     - Ed Freitas
