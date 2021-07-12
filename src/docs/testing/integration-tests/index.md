@@ -236,7 +236,7 @@ for instructions on uploading the APKs from the command line.
 
 ### Uploading XCode tests
 
-See the [Firebase TestLab iOS instructions]
+See the [Firebase TestLab iOS instructions][]
 for details on how to upload the .zip file
 to the Firebase TestLab section of the Firebase Console.
 
