@@ -81,14 +81,14 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 ```dart
 return MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: [
+  localizationsDelegates: const [
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
   ],
-  supportedLocales: [
-    const Locale('en', ''), // English, no country code
-    const Locale('es', ''), // Spanish, no country code
+  supportedLocales: const [
+    Locale('en', ''), // English, no country code
+    Locale('es', ''), // Spanish, no country code
   ],
   theme: ThemeData(
     primarySwatch: Colors.blue,
@@ -214,15 +214,15 @@ project called `l10n.yaml` with the following content:
    ```dart
    return MaterialApp(
      title: 'Localizations Sample App',
-     localizationsDelegates: [
+     localizationsDelegates: const [
        AppLocalizations.delegate, // Add this line
        GlobalMaterialLocalizations.delegate,
        GlobalWidgetsLocalizations.delegate,
        GlobalCupertinoLocalizations.delegate,
      ],
-     supportedLocales: [
-       const Locale('en', ''), // English, no country code
-       const Locale('es', ''), // Spanish, no country code
+     supportedLocales: const [
+       Locale('en', ''), // English, no country code
+       Locale('es', ''), // Spanish, no country code
      ],
      theme: ThemeData(
        primarySwatch: Colors.blue,
@@ -324,13 +324,13 @@ locales should include:
 
 <?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
 ```dart
-supportedLocales: [
-  const Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'), // 'zh_Hans_CN'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
-  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
+supportedLocales: const [
+  Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'), // 'zh_Hans_CN'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
+  Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
 ],
 ```
 
@@ -702,14 +702,14 @@ adds the `NnMaterialLocalizations` delegate instance to the app's
 <?code-excerpt "add_language/lib/main.dart (MaterialApp)"?>
 ```dart
 MaterialApp(
-  localizationsDelegates: [
+  localizationsDelegates: const [
     GlobalWidgetsLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
     NnMaterialLocalizations.delegate, // Add the newly created delegate
   ],
-  supportedLocales: [
-    const Locale('en', 'US'),
-    const Locale('nn'),
+  supportedLocales: const [
+    Locale('en', 'US'),
+    Locale('nn'),
   ],
   home: Home(),
 ),
