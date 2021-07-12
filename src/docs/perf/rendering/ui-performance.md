@@ -198,7 +198,7 @@ on other threads.
     For more information, see the [UIKit][] documentation for iOS,
     or the [MainThread][] documentation for Android.
     This thread is not shown in the performance overlay.
-
+</dd>
 <dt markdown="1">**UI thread**</dt>
 <dd markdown="1">The UI thread executes Dart code in the Dart VM.
     This thread includes code that you wrote, and code executed by
@@ -208,7 +208,7 @@ on other threads.
     painting commands, and sends the layer tree to the raster thread to
     be rendered on the device. _Don't block this thread!_
     Shown in the bottom row of the performance overlay.
-
+</dd>
 <dt markdown="1">**Raster thread** (previously known as the GPU thread)</dt>
 <dd markdown="1">The raster thread takes the layer tree and displays
     it by talking to the GPU (graphic processing unit).
@@ -220,11 +220,12 @@ on other threads.
     rasterizes for the GPU. But it is running on the CPU. We renamed it
     to "raster thread" because many developers wrongly (but understandably)
     assumed the thread runs on the GPU unit.
-
+</dd>
 <dt markdown="1">**I/O thread**</dt>
 <dd markdown="1">Performs expensive tasks (mostly I/O) that would
     otherwise block either the UI or raster threads.
     This thread is not shown in the performance overlay.
+</dd>
 </dl>
     
 For links to more information and videos,

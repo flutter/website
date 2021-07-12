@@ -81,10 +81,11 @@ about evaluating and debugging Flutter's performance.
 
 * How to solve my app’s poor animations caused by an expensive
   Dart async function call that is blocking the UI thread?
-  * Spawn another isolate using the
-    [`compute` property][]
+  * Spawn another isolate using the [`compute()`][] method,
+    as demonstrated in [Parse JSON in the background][] cookbook.
 
-[`compute` property]: {{site.api}}/flutter/foundation/compute.html
+[`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
+[Parse JSON in the background]: /docs/cookbook/networking/background-parsing
 
 * How do I determine my Flutter app’s package size that a
   user will download?
@@ -122,4 +123,3 @@ about evaluating and debugging Flutter's performance.
 
 * How do I perform a trace in Fuchsia?
   * See [Fuchsia tracing guidelines][traceutil]
-
