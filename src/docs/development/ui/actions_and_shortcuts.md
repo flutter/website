@@ -164,14 +164,14 @@ purpose of the keypress. The `Shortcuts` widget looks up keypresses in the map,
 to find an `Intent` instance, which it gives to the action's `invoke()` method.
 
 {{site.alert.note}}
-`ShortcutActivator` is a newer replacement (as of Flutter 2.3.0) for
-`LogicalKeySet`. It allows for more flexible and correct activation of
-shortcuts. `LogicalKeySet` is a `ShortcutActivator`, of course, but now there is
-also `SingleActivator`, which takes a single key and the optional modifiers to
-be pressed before the key, and `CharacterActivator`, which activates a shortcut
-based on the character produced by a key sequence, instead of the logical keys
-themselves. `ShortcutActivator` is also meant to be subclassed to allow for
-custom ways of activating shortcuts from key events.
+  `ShortcutActivator` is a replacement (as of Flutter 2.3.0) for
+  `LogicalKeySet`. It allows for more flexible and correct activation of
+  shortcuts. `LogicalKeySet` is a `ShortcutActivator`, of course, but there is
+  also `SingleActivator`, which takes a single key and the optional modifiers to
+  be pressed before the key, and `CharacterActivator`, which activates a shortcut
+  based on the character produced by a key sequence, instead of the logical keys
+  themselves. `ShortcutActivator` is also meant to be subclassed to allow for
+  custom ways of activating shortcuts from key events.
 {{site.alert.end}}
 
 ### The ShortcutManager
