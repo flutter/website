@@ -227,7 +227,7 @@ Learn more about Flutter animations at the following links:
 
 
 [Animate a widget using a physics simulation]: /docs/cookbook/animation/physics-simulation
-[`AnimatedList` example]: /docs/catalog/samples/animated-list
+[`AnimatedList` example]: https://flutter.github.io/samples/animations.html
 [Animation and motion widgets]: /docs/development/ui/widgets/animation
 [Animation basics with implicit animations]: https://www.youtube.com/watch?v=IVTjpW3W33s&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=1
 [Animation deep dive]: https://www.youtube.com/watch?v=PbcILiN8rbo&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=5
@@ -261,7 +261,7 @@ Learn more about Flutter animations at the following links:
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
-[Sample app catalog]: /docs/catalog/samples
+[Sample app catalog]: https://flutter.github.io/samples
 [Shrine]: {{site.github}}/flutter/gallery/tree/master/lib/studies/shrine
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: /docs/development/ui/animations/staggered-animations
