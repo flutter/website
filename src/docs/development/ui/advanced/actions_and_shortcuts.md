@@ -405,7 +405,7 @@ also has "select all" and "copy to clipboard" buttons next to it. The buttons
 invoke actions to accomplish their work. All the invoked actions and
 shortcuts are logged.
 
-<?code-excerpt "lib/main.dart"?>
+<?code-excerpt "lib/copyable_text.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
