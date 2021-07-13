@@ -51,7 +51,7 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
         _downloadLikedList();
       }
     });
-    //_googleSignIn.signInSilently();
+    _googleSignIn.signInSilently();
   }
 
   @override
@@ -62,9 +62,11 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
         body: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 520),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: _widgets(),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: _widgets(),
+              ),
             ),
           ),
         ),
@@ -94,45 +96,50 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
             child: const Text('Sign out'),
           ),
           if (_favoriteVideos != null)
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: _favoriteVideos!.length,
-              itemBuilder: (ctx, index) {
-                final fav = _favoriteVideos![index];
-                final thumbnailUrl = fav.thumbnails!.default_!.url!;
-                return ListTile(
-                  minVerticalPadding: 20,
-                  leading: Image.network(
-                    thumbnailUrl,
-                    fit: BoxFit.contain,
-                    errorBuilder: (context, error, stackTrace) {
-                      Timer.run(
-                        () => _snackbarError(
-                          LineSplitter.split(error.toString()).first,
-                        ),
-                      );
-                      return Icon(Icons.error, color: Colors.red);
-                    },
-                  ),
-                  title: Text(fav.title ?? '<unknown>'),
-                );
-              },
-            ),
+            for (final fav in _favoriteVideos!)
+              ListTile(
+                minVerticalPadding: 20,
+                leading: Image.network(
+                  fav.thumbnails!.default_!.url!,
+                  fit: BoxFit.contain,
+                  errorBuilder: (context, error, stackTrace) {
+                    Timer.run(
+                      () => _snackbarError(
+                        LineSplitter.split(error.toString()).first,
+                      ),
+                    );
+                    return Icon(Icons.error, color: Colors.red);
+                  },
+                ),
+                title: Text(fav.title ?? '<unknown>'),
+              ),
         ],
       ];
 
   Future<void> _downloadLikedList() async {
-    var httpClient = (await _googleSignIn.authenticatedClient())!;
-    var youTubeApi = YouTubeApi(httpClient);
+    final httpClient = (await _googleSignIn.authenticatedClient())!;
+    final youTubeApi = YouTubeApi(httpClient);
+    final resource = youTubeApi.playlistItems;
+    String? pageToken;
+    _favoriteVideos = [];
 
-    var favorites = await youTubeApi.playlistItems.list(
-      ['snippet'],
-      playlistId: 'LL', // Liked List
-    );
-
-    setState(() {
-      _favoriteVideos = favorites.items!.map((e) => e.snippet!).toList();
-    });
+    do {
+      var favorites = await resource.list(
+        ['snippet'],
+        playlistId: 'LL', // Liked List
+        pageToken: pageToken,
+      );
+      setState(() {
+        _favoriteVideos!.addAll(favorites.items!
+            .map((e) => e.snippet!)
+            .where(
+                (e) => e.thumbnails != null && e.thumbnails!.default_ != null)
+            .toList());
+      });
+      pageToken = favorites.nextPageToken;
+      // Sleep 250ms between page requests
+      await Future.delayed(const Duration(milliseconds: 250), () => null);
+    } while (pageToken != null);
   }
 
   Future<void> _onSignIn() async {
