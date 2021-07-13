@@ -62,7 +62,7 @@ or need otherwise. This allows your code to separate the two concerns to be more
 independent.
 
 Intents configure an action so that the same action can serve multiple uses. An
-example of this is the `DirectionalFocusIntent`, which takes a direction to move
+example of this is `DirectionalFocusIntent`, which takes a direction to move
 the focus in, allowing the `DirectionalFocusAction` to know which direction to
 move the focus. Just be careful: don't pass state in the `Intent` that applies
 to all  invocations of an `Action`: that kind of state should be passed to the
