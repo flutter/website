@@ -109,14 +109,14 @@ class Demo extends StatelessWidget {
     return MaterialApp(
       onGenerateTitle: (BuildContext context) => DemoLocalizations.of(context).title,
 // #enddocregion MaterialAppTitleExample
-      localizationsDelegates: [
-        const DemoLocalizationsDelegate(),
+      localizationsDelegates: const [
+        DemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      supportedLocales: [
-        const Locale('en', ''),
-        const Locale('es', ''),
+      supportedLocales: const [
+        Locale('en', ''),
+        Locale('es', ''),
       ],
       // Watch out: MaterialApp creates a Localizations widget
       // with the specified delegates. DemoLocalizations.of()

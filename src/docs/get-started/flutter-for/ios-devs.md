@@ -1197,14 +1197,14 @@ specify the `localizationsDelegates` and
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 MaterialApp(
- localizationsDelegates: [
+ localizationsDelegates: const [
    // Add app-specific localization delegate[s] here
    GlobalMaterialLocalizations.delegate,
    GlobalWidgetsLocalizations.delegate,
  ],
- supportedLocales: [
-    const Locale('en', 'US'), // English
-    const Locale('he', 'IL'), // Hebrew
+ supportedLocales: const [
+    Locale('en', 'US'), // English
+    Locale('he', 'IL'), // Hebrew
     // ... other locales the app supports
   ],
   // ...

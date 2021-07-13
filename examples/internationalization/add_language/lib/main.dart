@@ -7,14 +7,14 @@ void main() {
   runApp(
     // #docregion MaterialApp
     MaterialApp(
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalWidgetsLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         NnMaterialLocalizations.delegate, // Add the newly created delegate
       ],
-      supportedLocales: [
-        const Locale('en', 'US'),
-        const Locale('nn'),
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('nn'),
       ],
       home: Home(),
     ),
