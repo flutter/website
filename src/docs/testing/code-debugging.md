@@ -809,7 +809,7 @@ or by importing the module and setting the value in your
 <dd markdown="1">PENDING
 <dt markdown="1">[`debugRepaintRainbowEnabled`][]</dt>
 <dd markdown="1">You can enable this flag in the Flutter
-    inspector by selecting the **Repaint Rainbow** button.
+    inspector by selecting the **Highlight Repaints** button.
     If any static widgets are rotating through the colors of the rainbow
     (for example, a static header), those areas are candidates for adding
     repaint boundaries.
