@@ -5,9 +5,11 @@ description: Extra, extra! Here's a collection of books about Flutter.
 
 Here's a collection of books about Flutter, in alphabetical order.
 If you find another one that we should add,
-[let us know][]{:.help-instruction}.
+[file an issue][] and (optionally)
+submit a PR ([sample][]) to add it yourself.
 
-[let us know]: {{site.github}}/flutter/website/issues
+[file an issue]: {{site.github}}/flutter/website/issues/new
+[sample]: {{site.github}}/flutter/website/pull/6019
 
 {% for book in site.data.books %}
 <div class="book-img-with-details row">
