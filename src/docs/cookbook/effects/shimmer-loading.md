@@ -196,13 +196,6 @@ the child already painted something. For example,
 you’ll apply a shader to only the black shapes that you 
 configured earlier.
 
-{{site.alert.note}}
-  At this time, this recipe doesn’t work on the web because
-  Flutter doesn’t yet support the [`ShaderMask`][] widget.
-  You can track the progress of `ShaderMask` for 
-  the web in [issue 44152][].
-{{site.alert.end}}
-
 Define a chrome-colored, linear gradient that gets applied to the 
 shimmer shapes.
 
