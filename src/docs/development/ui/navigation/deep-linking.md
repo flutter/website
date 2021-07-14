@@ -20,7 +20,7 @@ link. By default, web apps read the deep link path from the url fragment using
 the pattern: `/#/path/to/app/screen`, but this can be changed by [configuring
 the URL strategy] for your app.
 
-To follow along, check out the [Navigation and Routing][router-sample] in
+To follow along, clone the [Navigation and Routing][router-sample] in
 flutter/samples.
 
 ## Enable deep linking on Android
