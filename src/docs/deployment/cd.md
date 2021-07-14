@@ -28,6 +28,8 @@ You can use fastlane with the following tooling:
 * [Cirrus][]
 * [Travis][]
 * [GitLab][]
+* [CircleCI][]
+    *　[Building and deploying Flutter apps with Fastlane][]
 
 This guide shows how to set up fastlane and then integrate it with 
 your existing testing and continuous integration (CI) workflows. 
@@ -204,6 +206,8 @@ secrets in pull requests that you accept and merge.
 [GitHub Actions]: https://github.com/features/actions
 [Github Actions workflows]: {{site.github}}/flutter/gallery/tree/master/.github/workflows
 [GitLab]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
+[CircleCI]: https://circleci.com
+[Building and deploying Flutter apps with Fastlane]: https://circleci.com/blog/deploy-flutter-android
 [Match]: https://docs.fastlane.tools/actions/match/
 [Supply setup steps]: https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply
 [Travis]: https://travis-ci.org/
