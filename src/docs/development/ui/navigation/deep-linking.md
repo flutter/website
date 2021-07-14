@@ -20,8 +20,8 @@ link. By default, web apps read the deep link path from the url fragment using
 the pattern: `/#/path/to/app/screen`, but this can be changed by [configuring
 the URL strategy] for your app.
 
-To follow along, create a new Flutter project with [the `Router` widget
-sample][router-sample] in flutter/samples.
+To follow along, clone the [Navigation and Routing][router-sample] in
+flutter/samples.
 
 ## Enable deep linking on Android
 
@@ -122,5 +122,5 @@ current set of pages when a new deep link is opened while the app is running.
 [intent filter]: https://developer.android.com/guide/components/intents-filters
 [plugin-linking]: https://medium.com/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 [verify-android-links]: https://developer.android.com/training/app-links/verify-site-associations
-[router-sample]: https://github.com/flutter/samples/blob/master/navigation_and_routing/lib/router/router.dart
+[router-sample]: https://github.com/flutter/samples/tree/master/navigation_and_routing
 [configuring the URL strategy]: /docs/development/ui/navigation/url-strategies
