@@ -147,12 +147,12 @@ void main() {
 }
 ```
 
-### 6. Run the tests
+## 6. Run the tests
 
 Now that you have a `Counter` class with tests in place,
 you can run the tests.
 
-#### Run tests using IntelliJ or VSCode
+### Run tests using IntelliJ or VSCode
 
 The Flutter plugins for IntelliJ and VSCode support running tests.
 This is often the best option while writing tests because it provides the
@@ -171,7 +171,7 @@ fastest feedback loop as well as the ability to set breakpoints.
     4. *Alternatively, use the appropriate keyboard shortcut
        for your platform.*
 
-#### Run tests in a terminal
+### Run tests in a terminal
 
 You can also use a terminal to run the tests by executing the following
 command from the root of the project:
