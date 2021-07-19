@@ -370,6 +370,9 @@ leaving only the image. Add the image file to the example:
     as shown above.
   * The pubspec file is also sensitive to white
     space, so use proper indentation.
+  * You might need to restart the running program
+    (in simulation or on connected device) for the
+    changes in the file to take effect.
 {{site.alert.end}}
 
 Now you can reference the image from your code:
