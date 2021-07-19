@@ -3,6 +3,8 @@ title: Visual debugging
 description: A guide to Flutter's visual debugging functionality.
 ---
 
+<?code-excerpt path-base="../null_safety_examples/visual_debugging/"?>
+
 The Flutter Inspector provides several options for visually debugging your app.
 These are the options available from the inspector within Flutter DevTools.
 
@@ -15,10 +17,13 @@ doesn’t look quite right.
 
 This can also be set in code:
 
+<?code-excerpt "lib/slow_animations.dart"?>
 ```dart
-import 'package:flutter/scheduler.dart' 
+import 'package:flutter/scheduler.dart';
 
-timeDilation = 5.0;
+void setSlowAnimations() {
+  timeDilation = 5.0;
+}
 ```
  
 This slows the animations by 5x.
@@ -44,8 +49,13 @@ by finding unwanted padding or understanding widget alignment.
 
 You can also enable this in code:
 
+<?code-excerpt "lib/layout_guidelines.dart"?>
 ```dart
-debugPaintSizeEnabled = true;
+import 'package:flutter/rendering.dart';
+
+void showLayoutGuidelines() {
+  debugPaintSizeEnabled = true;
+}
 ```
 
 ### Render boxes
@@ -54,7 +64,6 @@ Widgets that draw to the screen create a [render box][], the
 building blocks of Flutter layouts. They’re shown with a bright blue border:
 
 ![Screenshot of render box guidelines]({% asset tools/devtools/debug-toggle-guideline-render-box.png @path %})
-
 
 ### Alignments
 
@@ -111,8 +120,13 @@ alphabetic baselines are shown as green and ideographic as yellow.
 
 You can also enable this in code:
 
+<?code-excerpt "lib/show_baselines.dart"?>
 ```dart
-debugPaintBaselinesEnabled = true;
+import 'package:flutter/rendering.dart';
+
+void showBaselines() {
+  debugPaintBaselinesEnabled = true;
+}
 ```
 ## Highlight repaints
 
@@ -133,11 +147,19 @@ the repainting to just the animation.
 
 Here the progress indicator causes its container to repaint:
 
+<?code-excerpt "lib/highlight_repaints.dart (EverythingRepaints)"?>
 ```dart
-Scaffold(
-  appBar: AppBar(title: Text('Repaint Example')),
-  body: Center(child: CircularProgressIndicator()),
-);
+class EverythingRepaintsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Repaint Example')),
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+}
 ```
 
 ![Screen recording of a whole screen repainting]({% asset tools/devtools/debug-toggle-guidelines-repaint-1.gif @path %})
@@ -145,15 +167,21 @@ Scaffold(
 Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
 
+<?code-excerpt "lib/highlight_repaints.dart (AreaRepaints)"?>
 ```dart
-Scaffold(
-  appBar: AppBar(title: Text('Repaint Example')),
-  body: Center(
-    child: RepaintBoundary(
-      child: CircularProgressIndicator(),
-    ),
-  ),
-);
+class AreaRepaintsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Repaint Example')),
+      body: Center(
+        child: RepaintBoundary(
+          child: CircularProgressIndicator(),
+        ),
+      ),
+    );
+  }
+}
 ```
 
 ![Screen recording of a just a progress indicator repainting]({% asset tools/devtools/debug-toggle-guidelines-repaint-2.gif @path %})
@@ -164,8 +192,13 @@ which uses additional memory.
 
 You can also enable this option in code:
 
+<?code-excerpt "lib/highlight_repaints.dart (Toggle)"?>
 ```dart
-debugRepaintRainbowEnabled = true;
+import 'package:flutter/rendering.dart';
+
+void highlightRepaints() {
+  debugRepaintRainbowEnabled = true;
+}
 ```
 
 ## Highlight oversized images
@@ -197,12 +230,18 @@ the image asset file so it’s smaller.
 If this isn’t possible, you can use the `cacheHeight` and `cacheWidth`
 parameters on the `Image` constructor:
 
+<?code-excerpt "lib/oversized_images.dart (ResizedImage)"?>
 ```dart
-Image.asset(
-  'dash.png',
-  cacheHeight: 213, 
-  cacheWidth: 392
-)
+class ResizedImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      'dash.png',
+      cacheHeight: 213,
+      cacheWidth: 392,
+    );
+  }
+}
 ```
 
 This makes the engine decode this image at the specified size,
@@ -213,8 +252,13 @@ regardless of these parameters.
 
 This property can also be set in code:
 
+<?code-excerpt "lib/oversized_images.dart (Toggle)"?>
 ```dart
-debugInvertOversizedImage = true;
+import 'package:flutter/painting.dart';
+
+void showOversizedImages() {
+  debugInvertOversizedImages = true;
+}
 ```
 
 ### More information
