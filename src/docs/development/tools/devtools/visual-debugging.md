@@ -36,11 +36,11 @@ The following screen recordings show before and after slowing an animation.
 
 ## Show layout guidelines
 
-This feature draws guidelines over your app that displays render boxes, alignments,
+This feature draws guidelines over your app that display render boxes, alignments,
 paddings, scroll views, clippings and spacers.
 
-This tool can be used for better understanding your layout, for instance
-finding unwanted paddings or understanding how widgets are being aligned.
+This tool can be used for better understanding your layout. For instance,
+by finding unwanted padding or understanding widget alignment.
 
 You can also enable this in code:
 
@@ -50,7 +50,7 @@ debugPaintSizeEnabled = true;
 
 ### Render boxes
 
-Widgets that draw to the screen create a [render box][]; they’re the 
+Widgets that draw to the screen create a [render box][], the 
 building blocks of Flutter layouts. They’re shown with a bright blue border:
 
 ![Screenshot of render box guidelines]({% asset tools/devtools/debug-toggle-guideline-render-box.png @path %})
@@ -72,7 +72,7 @@ Padding is shown with a semi-transparent blue background:
 
 ### Scroll views
 
-Widgets with scrolling contents such as list views are shown with green arrows:
+Widgets with scrolling contents (such as list views) are shown with green arrows:
 
 ![Screenshot of scroll view guidelines]({% asset tools/devtools/debug-toggle-guidelines-scroll.png @path %})
 
@@ -219,7 +219,7 @@ debugInvertOversizedImage = true;
 
 ### More information
 
-You can learn more at the following links:
+You can learn more at the following link:
 
 - [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
 
