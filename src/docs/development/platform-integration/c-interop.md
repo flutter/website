@@ -273,11 +273,13 @@ use the following instructions.
    1. Drag your precompiled library (`libyourlibrary.dylib`) into `Runner/Frameworks`.
    1. Click `Runner` and go to the `Build Phases` tab.
       1. Drag `libyourlibrary.dylib` into the `Copy Bundle Resources` list.
-      1. Under `Bundle Framework`, check `Code Sign on Copy`.
+      1. Under `Embed Libraries`, check `Code Sign on Copy`.
       1. Under `Link Binary With Libraries`, set status to `Optional`. (We use dynamic linking, no need to statically link.)
    1. Click `Runner` and go to the `General` tab.
       1. Drag `libyourlibrary.dylib` into the `Frameworks, Libararies and Embedded Content` list.
       1. Select `Embed & Sign`.
+   1. Click `Runner` and go to the `Build Settings` tab.
+      1. In the `Search Paths` section configure the `Library Search Paths` to include the path where `libyourlibrary.dylib` is located.
 1. Edit `lib/main.dart`.
    1. Use `DynamicLibrary.open('libyourlibrary.dylib')` to dynamically link to the symbols.
    1. Call your native function somewhere in a widget.
