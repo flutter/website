@@ -212,6 +212,7 @@
       { "source": "/go/rfc-android-j-deprecation", "destination": "https://docs.google.com/document/d/1N06Pm1x19AIWorENk6OdmY5T8kMzPJUOZs8aL9VccG4/edit", "type": 301 },
       { "source": "/go/rfc-ios8-deprecation", "destination": "https://docs.google.com/document/d/1HtzJLUBnvi-VjcG3XEjwVHQGWeOzlrA77ozp9TvCWVE/edit", "type": 301 },
       { "source": "/go/router-and-widgetsapp-integration", "destination": "https://docs.google.com/document/d/1QodTFmwVr1yk8dyQvoqkeILxvm92oikB1bVhHTtp6R4/edit", "type": 301 },
+      { "source": "/go/profile & release mode for custom-devices", "destination": "https://docs.google.com/document/d/1jcMyJvsWLizYOIJAdyosLSW-Io0-E_MGsU_uL_Q4Wt8/edit", "type": 301 },
       { "source": "/go/scaffold-messenger", "destination": "https://docs.google.com/document/d/1TCH0T-X42z96lAcSkFttHAQMJ0MsvMojDKa6F4IQI3Y/edit?usp=sharing", "type": 301 },
       { "source": "/go/scalable-flutter-infrastructure", "destination": "https://docs.google.com/document/d/19GEUwAwJbNI-gO9ziV_oDESB28E_Pqppwx8ku9jdEqY", "type": 301 },
       { "source": "/go/scrollable-alert-dialog", "destination": "https://docs.google.com/document/d/1qtVfjoKXE8BtkNbraKk9IzfRcks5btkKcyE4iGVwkbg/edit", "type": 301 },
