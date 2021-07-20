@@ -81,7 +81,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 ```dart
 return const MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: const [
+  localizationsDelegates: [
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -211,7 +211,7 @@ project called `l10n.yaml` with the following content:
    ```dart
    return const MaterialApp(
      title: 'Localizations Sample App',
-     localizationsDelegates: const [
+     localizationsDelegates: [
        AppLocalizations.delegate, // Add this line
        GlobalMaterialLocalizations.delegate,
        GlobalWidgetsLocalizations.delegate,
