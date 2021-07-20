@@ -53,6 +53,14 @@ we recommend using automated accessibility scanners:
     1. In the Accessibility Inspector,
        select **Audit** in the toolbar, and then
        select **Run Audit** to get a report of potential issues
+ 
+  * For web:
+    1. Turn on Screen Reader for your OS
+    2. Navigate to the Enable accessibility toggle using the Screen Reader to build the semantics tree. 
+    You can skip this step if you programmatically auto-enable accessibility for your app using this API: `RendererBinding.instance.setSemanticsEnabled(true)`
+
+    To see this in action, check out this [video demo][] by Victor Tsaran, who leads the Accessibility program for Material Design, using VoiceOver with Flutter Gallery App.
+
 
 ## Large fonts
 
@@ -83,11 +91,20 @@ and with the largest font setting selected in iOS accessibility settings.
 
 ## Screen readers
 
-Screen readers ([TalkBack][], [VoiceOver][]) enable visually
-impaired users to get spoken feedback about the contents of the screen.
+For mobile, screen readers ([TalkBack][], [VoiceOver][]) enable visually
+impaired users to get spoken feedback about the contents of the screen. Turn on VoiceOver or TalkBack on your mobile device and navigate around your app. 
 
-Turn on VoiceOver or TalkBack on your device and navigate around your app. If
-you run into any issues, use the [`Semantics` widget][] to customize the
+For web, the following screen readers are currently supported:
+
+Mobile Browsers:
+* iOS - VoiceOver
+* Android - TalkBack
+
+Desktop Browsers:
+* MacOS - VoiceOver
+* Windows - JAWs
+
+If you run into any issues, use the [`Semantics` widget][] to customize the
 accessibility experience of your app.
 
 ## Sufficient contrast
@@ -114,6 +131,16 @@ accessibility state to one that takes advantage of Flutter's built-in
 widgets to offer a dramatically more accessible experience.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bWbBgbmAdQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Testing accessibility on web:
+
+You can debug accessibility by visualizing the semantic nodes created for your web app using the following command line flag in profile and relese modes:
+
+`$ flutter run -d chrome --profile \
+ --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=true`
+ 
+With the flag activated, youll be able to see your semantic nodes on top of the widgets and verify if the semantic elements are placed where they should be. If youfind examples like that please [file a bug report][]. 
+
 
 ## Accessibility release checklist
 
@@ -167,3 +194,5 @@ see the following articles written by community members:
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
+[video demo]: https://youtu.be/A6Sx0lBP8PI
+[file a bug report]: https://goo.gle/flutter_web_issue
