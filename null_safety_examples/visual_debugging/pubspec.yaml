@@ -1,5 +1,7 @@
 name: visual_debugging_example
 publish_to: none
+description: Examples of visual debugging
+version: 1.0.0
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

@@ -19,4 +19,4 @@ class ResizedImage extends StatelessWidget {
     );
   }
 }
-// #docregion ResizedImage
+// #enddocregion ResizedImage
