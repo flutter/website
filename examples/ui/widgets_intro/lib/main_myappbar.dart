@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  MyAppBar({required this.title});
+  const MyAppBar({required this.title, Key? key}) : super(key: key);
 
   // Fields in a Widget subclass are always marked "final".
 
@@ -16,8 +16,8 @@ class MyAppBar extends StatelessWidget {
       // Row is a horizontal, linear layout.
       child: Row(
         // <Widget> is the type of items in the list.
-        children: <Widget>[
-          IconButton(
+        children: [
+          const IconButton(
             icon: Icon(Icons.menu),
             tooltip: 'Navigation menu',
             onPressed: null, // null disables the button
@@ -27,7 +27,7 @@ class MyAppBar extends StatelessWidget {
           Expanded(
             child: title,
           ),
-          IconButton(
+          const IconButton(
             icon: Icon(Icons.search),
             tooltip: 'Search',
             onPressed: null,
@@ -39,6 +39,8 @@ class MyAppBar extends StatelessWidget {
 }
 
 class MyScaffold extends StatelessWidget {
+  const MyScaffold({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // Material is a conceptual piece
@@ -46,7 +48,7 @@ class MyScaffold extends StatelessWidget {
     return Material(
       // Column is a vertical, linear layout.
       child: Column(
-        children: <Widget>[
+        children: [
           MyAppBar(
             title: Text(
               'Example title',
@@ -55,7 +57,7 @@ class MyScaffold extends StatelessWidget {
                   .headline6,
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Center(
               child: Text('Hello, world!'),
             ),
@@ -67,10 +69,12 @@ class MyScaffold extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
-    title: 'My app', // used by the OS task switcher
-    home: SafeArea(
-      child: MyScaffold(),
+  runApp(
+    const MaterialApp(
+      title: 'My app', // used by the OS task switcher
+      home: SafeArea(
+        child: MyScaffold(),
+      ),
     ),
-  ));
+  );
 }

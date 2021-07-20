@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 class Product {
   const Product({required this.name});
+
   final String name;
 }
 
-typedef void CartChangedCallback(Product product, bool inCart);
+typedef CartChangedCallback = Function(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({
@@ -32,7 +33,7 @@ class ShoppingListItem extends StatelessWidget {
   TextStyle? _getTextStyle(BuildContext context) {
     if (!inCart) return null;
 
-    return TextStyle(
+    return const TextStyle(
       color: Colors.black54,
       decoration: TextDecoration.lineThrough,
     );
@@ -48,13 +49,16 @@ class ShoppingListItem extends StatelessWidget {
         backgroundColor: _getColor(context),
         child: Text(product.name[0]),
       ),
-      title: Text(product.name, style: _getTextStyle(context)),
+      title: Text(
+        product.name,
+        style: _getTextStyle(context),
+      ),
     );
   }
 }
 
 class ShoppingList extends StatefulWidget {
-  ShoppingList({Key? key, required this.products}) : super(key: key);
+  const ShoppingList({required this.products, Key? key}) : super(key: key);
 
   final List<Product> products;
 
@@ -69,7 +73,7 @@ class ShoppingList extends StatefulWidget {
 }
 
 class _ShoppingListState extends State<ShoppingList> {
-  Set<Product> _shoppingCart = Set<Product>();
+  final _shoppingCart = <Product>{};
 
   void _handleCartChanged(Product product, bool inCart) {
     setState(() {
@@ -79,10 +83,11 @@ class _ShoppingListState extends State<ShoppingList> {
       // The framework then calls build, below,
       // which updates the visual appearance of the app.
 
-      if (!inCart)
+      if (!inCart) {
         _shoppingCart.add(product);
-      else
+      } else {
         _shoppingCart.remove(product);
+      }
     });
   }
 
@@ -90,10 +95,10 @@ class _ShoppingListState extends State<ShoppingList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shopping List'),
+        title: const Text('Shopping List'),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         children: widget.products.map((Product product) {
           return ShoppingListItem(
             product: product,
@@ -107,10 +112,10 @@ class _ShoppingListState extends State<ShoppingList> {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     title: 'Shopping App',
     home: ShoppingList(
-      products: <Product>[
+      products: [
         Product(name: 'Eggs'),
         Product(name: 'Flour'),
         Product(name: 'Chocolate chips'),
