@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 // #docregion MaterialApp
     return const MaterialApp(
       title: 'Localizations Sample App',
-      localizationsDelegates: const [
+      localizationsDelegates: [
         AppLocalizations.delegate, // Add this line
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
