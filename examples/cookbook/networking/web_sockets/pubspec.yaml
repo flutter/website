@@ -10,7 +10,7 @@ dependencies:
   web_socket_channel: ^2.1.0
 
 dev_dependencies:
-  pedantic: ^1.11.0
+  flutter_lints: ^1.0.3
 
 flutter:
   uses-material-design: true

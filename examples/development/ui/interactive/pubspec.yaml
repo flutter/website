@@ -8,5 +8,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+dev_dependencies:
+  flutter_lints: ^1.0.3
+
 flutter:
   uses-material-design: true

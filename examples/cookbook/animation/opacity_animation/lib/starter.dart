@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class MyHomePage extends StatefulWidget {
   final String title;
 
-  MyHomePage({
+  const MyHomePage({
     Key? key,
     required this.title,
   }) : super(key: key);

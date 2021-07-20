@@ -6,37 +6,39 @@ class Todo {
   final String title;
   final String description;
 
-  Todo(this.title, this.description);
+  const Todo(this.title, this.description);
 }
 // #enddocregion Todo
 
 void main() {
-  runApp(MaterialApp(
-    title: 'Passing Data',
-    home: TodosScreen(
-      // #docregion Generate
-      todos: List.generate(
-        20,
-        (i) => Todo(
-          'Todo $i',
-          'A description of what needs to be done for Todo $i',
+  runApp(
+    MaterialApp(
+      title: 'Passing Data',
+      home: TodosScreen(
+        // #docregion Generate
+        todos: List.generate(
+          20,
+          (i) => Todo(
+            'Todo $i',
+            'A description of what needs to be done for Todo $i',
+          ),
         ),
+        // #enddocregion Generate
       ),
-      // #enddocregion Generate
     ),
-  ));
+  );
 }
 
 class TodosScreen extends StatelessWidget {
-  final List<Todo> todos;
+  const TodosScreen({Key? key, required this.todos}) : super(key: key);
 
-  TodosScreen({Key? key, required this.todos}) : super(key: key);
+  final List<Todo> todos;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Todos'),
+        title: const Text('Todos'),
       ),
       // #docregion builder
       body: ListView.builder(
@@ -65,11 +67,11 @@ class TodosScreen extends StatelessWidget {
 
 // #docregion detail
 class DetailScreen extends StatelessWidget {
+  // In the constructor, require a Todo.
+  const DetailScreen({Key? key, required this.todo}) : super(key: key);
+
   // Declare a field that holds the Todo.
   final Todo todo;
-
-  // In the constructor, require a Todo.
-  DetailScreen({Key? key, required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +81,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Text(todo.description),
       ),
     );

@@ -357,7 +357,7 @@ leaving only the image. Add the image file to the example:
   ```diff
   --- step4/pubspec.yaml
   +++ step5/pubspec.yaml
-  @@ -17,3 +17,5 @@
+  @@ -18,3 +18,5 @@
 
    flutter:
      uses-material-design: true

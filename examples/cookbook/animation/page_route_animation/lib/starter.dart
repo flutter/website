@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Page1(),
     ),
   );
 }
 
 class Page1 extends StatelessWidget {
+  const Page1({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class Page1 extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
-          child: Text('Go!'),
+          child: const Text('Go!'),
         ),
       ),
     );
@@ -29,7 +31,7 @@ class Page1 extends StatelessWidget {
 
 Route _createRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => Page2(),
+    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       return child;
     },
@@ -37,11 +39,13 @@ Route _createRoute() {
 }
 
 class Page2 extends StatelessWidget {
+  const Page2({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: const Center(
         child: Text('Page 2'),
       ),
     );
@@ -49,56 +53,56 @@ class Page2 extends StatelessWidget {
 }
 // #enddocregion Starter
 
-Route Step1() {
+Route step1() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => Page2(),
-    // #docregion Step1
+    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
+    // #docregion step1
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      var begin = Offset(0.0, 1.0);
-      var end = Offset.zero;
-      var tween = Tween(begin: begin, end: end);
-      var offsetAnimation = animation.drive(tween);
+      const begin = Offset(0.0, 1.0);
+      const end = Offset.zero;
+      final tween = Tween(begin: begin, end: end);
+      final offsetAnimation = animation.drive(tween);
       return child;
     },
-    // #enddocregion Step1
+    // #enddocregion step1
   );
 }
 
-Route Step2() {
+Route step2() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => Page2(),
-    // #docregion Step2
+    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
+    // #docregion step2
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      var begin = Offset(0.0, 1.0);
-      var end = Offset.zero;
-      var tween = Tween(begin: begin, end: end);
-      var offsetAnimation = animation.drive(tween);
+      const begin = Offset(0.0, 1.0);
+      const end = Offset.zero;
+      final tween = Tween(begin: begin, end: end);
+      final offsetAnimation = animation.drive(tween);
 
       return SlideTransition(
         position: offsetAnimation,
         child: child,
       );
     },
-    // #enddocregion Step2
+    // #enddocregion step2
   );
 }
 
-// #docregion Step3
+// #docregion step3
 var curve = Curves.ease;
 var curveTween = CurveTween(curve: curve);
-// #enddocregion Step3
+// #enddocregion step3
 
 Route step4() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => Page2(),
-    // #docregion Step4
+    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
+    // #docregion step4
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      var begin = Offset(0.0, 1.0);
-      var end = Offset.zero;
-      var curve = Curves.ease;
+      const begin = Offset(0.0, 1.0);
+      const end = Offset.zero;
+      final curve = Curves.ease;
 
-      var tween = Tween(begin: begin, end: end);
-      var curvedAnimation = CurvedAnimation(
+      final tween = Tween(begin: begin, end: end);
+      final curvedAnimation = CurvedAnimation(
         parent: animation,
         curve: curve,
       );
@@ -108,6 +112,6 @@ Route step4() {
         child: child,
       );
     },
-    // #enddocregion Step4
+    // #enddocregion step4
   );
 }

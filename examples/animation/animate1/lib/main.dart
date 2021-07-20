@@ -1,9 +1,12 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(LogoApp());
+void main() => runApp(const LogoApp());
 
 class LogoApp extends StatefulWidget {
+  const LogoApp({Key? key}) : super(key: key);
+
+  @override
   _LogoAppState createState() => _LogoAppState();
 }
 
@@ -33,10 +36,10 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10),
+        margin: const EdgeInsets.symmetric(vertical: 10),
         height: animation.value,
         width: animation.value,
-        child: FlutterLogo(),
+        child: const FlutterLogo(),
       ),
     );
   }

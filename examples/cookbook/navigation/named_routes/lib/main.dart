@@ -10,9 +10,9 @@ void main() {
       initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => FirstScreen(),
+        '/': (context) => const FirstScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => SecondScreen(),
+        '/second': (context) => const SecondScreen(),
       },
     ),
     // #enddocregion MaterialApp
@@ -20,11 +20,13 @@ void main() {
 }
 
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: const Text('First Screen'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -35,7 +37,7 @@ class FirstScreen extends StatelessWidget {
             Navigator.pushNamed(context, '/second');
           },
           // #enddocregion PushNamed
-          child: Text('Launch screen'),
+          child: const Text('Launch screen'),
         ),
       ),
     );
@@ -43,23 +45,25 @@ class FirstScreen extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
+  const SecondScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen'),
+        title: const Text('Second Screen'),
       ),
       body: Center(
         child: ElevatedButton(
           // #docregion Pop
-          // Within the SecondScreen widget  
+          // Within the SecondScreen widget
           onPressed: () {
             // Navigate back to the first screen by popping the current route
             // off the stack.
             Navigator.pop(context);
           },
           // #enddocregion Pop
-          child: Text('Go back!'),
+          child: const Text('Go back!'),
         ),
       ),
     );

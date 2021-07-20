@@ -28,7 +28,7 @@ class Photo {
   final String url;
   final String thumbnailUrl;
 
-  Photo({
+  const Photo({
     required this.albumId,
     required this.id,
     required this.title,

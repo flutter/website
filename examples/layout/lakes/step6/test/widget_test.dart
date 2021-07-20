@@ -5,7 +5,7 @@ import 'package:layout/main.dart';
 
 void main() {
   testWidgets('Example app smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(new MyApp());
+    await tester.pumpWidget(const MyApp());
     expect(find.text('Oeschinen Lake Campground'), findsOneWidget);
     expect(find.text('ROUTE'), findsOneWidget);
     // FIXME: the following fails

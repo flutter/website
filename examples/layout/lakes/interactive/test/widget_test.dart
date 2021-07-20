@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:interactive/main.dart';
 
 void main() {
-  testWidgets('Example app smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(new MyApp());
+  testWidgets('Example app smoke test', (tester) async {
+    await tester.pumpWidget(const MyApp());
     expect(find.text('Oeschinen Lake Campground'), findsOneWidget);
     expect(find.text('ROUTE'), findsOneWidget);
 

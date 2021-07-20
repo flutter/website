@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  final appTitle = 'Drawer Demo';
+  const MyApp({Key? key}) : super(key: key);
+
+  static const appTitle = 'Drawer Demo';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: appTitle,
       home: MyHomePage(title: appTitle),
     );
@@ -15,15 +17,17 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final String title;
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: Center(child: Text('My Page!')),
+      body: const Center(
+        child: Text('My Page!'),
+      ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
@@ -31,8 +35,8 @@ class MyHomePage extends StatelessWidget {
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
+          children: [
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
@@ -40,7 +44,7 @@ class MyHomePage extends StatelessWidget {
             ),
             // #docregion CloseDrawer
             ListTile(
-              title: Text('Item 1'),
+              title: const Text('Item 1'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -50,7 +54,7 @@ class MyHomePage extends StatelessWidget {
             ),
             // #enddocregion CloseDrawer
             ListTile(
-              title: Text('Item 2'),
+              title: const Text('Item 2'),
               onTap: () {
                 // Update the state of the app
                 // ...

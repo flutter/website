@@ -6,10 +6,12 @@
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 // #docregion MyApp
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   final int anInt = 3; // Cannot be null.
   final int? aNullableInt = null; // Can be null.
 
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Nullable Fields Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Nullable Fields Demo'),
+          title: const Text('Nullable Fields Demo'),
         ),
         body: Center(
           child: Column(
