@@ -143,6 +143,7 @@
       { "source": "/go/federated-plugins", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit", "type": 301 },
       { "source": "/go/floating-snackbar-offset", "destination": "https://docs.google.com/document/d/1elP-y83PtvfAZHNcpHCtnOFhZO9VnnlobwfQ33QO4hg/edit", "type": 301 },
       { "source": "/go/flutter-for-embedded-linux", "destination": "https://docs.google.com/document/d/1n4NXCk0QlGz16gUCtywR79H0Z1fzPqB2iNL8oxuexuk/edit?usp=sharing", "type": 301 },
+      { "source": "/go/flutter-engine-clocks", "destination": "https://docs.google.com/document/d/1Sx8QA1qXgJGw5r4ESviDnU2LSShNHiq_LjbRWPgSvXQ/edit?usp=sharing&resourcekey=0-BoBvLxgqf_nc_rwLc0zmTw", "type": 301 },
       { "source": "/go/flutter-iap-migrate-pblv2", "destination": "https://docs.google.com/document/d/1XM16UsLE_aPWoZnheE9waO06mhxLkkWjpPf9jtI1AdY/edit", "type": 301 },
       { "source": "/go/flutter-lints", "destination": "https://docs.google.com/document/d/1b0X0HOzvFY3WxI363U8BXx6Am13qFm96KlbS72mmFAk/edit", "type": 301 },
       { "source": "/go/flutter-migrate", "destination": "https://docs.google.com/document/d/1fPnpUI6gXE9PkNWuFoAW20m_sQ87ZSC1rrn_D7fxBvs", "type": 301 },
