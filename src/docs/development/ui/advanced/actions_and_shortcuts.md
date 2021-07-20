@@ -82,6 +82,7 @@ for this. For example, here's the implementation of Flutter's simple
 [`CallbackShortcuts`][] widget (available on the dev branch) that takes a map of
 activators and executes callbacks for them:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (CallbackShortcuts)"?>
 ```dart
 class CallbackShortcuts extends StatelessWidget {
   const CallbackShortcuts({
@@ -130,13 +131,14 @@ define a `SelectAllIntent`, and bind it to your own `SelectAllAction` or to your
 either one, depending on which part of your application has focus. Let's see how
 the key binding part works:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (ShortcutsExample)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
   return Shortcuts(
     shortcuts: <LogicalKeySet, Intent>{
-      LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA): 
-        SelectAllIntent(),
+      LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA):
+      SelectAllIntent(),
     },
     child: Actions(
       dispatcher: LoggingActionDispatcher(),
@@ -144,13 +146,14 @@ Widget build(BuildContext context) {
         SelectAllIntent: SelectAllAction(),
       },
       child: Builder(
-        builder: (BuildContext context) => TextButton(
-          child: const Text('SELECT ALL'),
-          onPressed: Actions.handler<SelectAllIntent>(
-            context,
-            SelectAllIntent(),
-          ),
-        ),
+        builder: (BuildContext context) =>
+            TextButton(
+              child: const Text('SELECT ALL'),
+              onPressed: Actions.handler<SelectAllIntent>(
+                context,
+                SelectAllIntent(),
+              ),
+            ),
       ),
     ),
   );
@@ -188,6 +191,7 @@ its functionality.
 For example, if you wanted to log each key that a `Shortcuts` widget handled,
 you could make a `LoggingShortcutManager`:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (LoggingShortcutManager)"?>
 ```dart
 class LoggingShortcutManager extends ShortcutManager {
   @override
@@ -217,6 +221,7 @@ Actions, in their simplest form, are just subclasses of `Action<Intent>` with an
 `invoke()` method. Here's a simple action that simply invokes a function on the
 provided model:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (SelectAllAction)"?>
 ```dart
 class SelectAllAction extends Action<SelectAllIntent> {
   SelectAllAction(this.model);
@@ -229,6 +234,7 @@ class SelectAllAction extends Action<SelectAllIntent> {
 
 Or, if it's too much of a bother to create a new class, use a `CallbackAction`:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (CallbackAction)"?>
 ```dart
 CallbackAction(onInvoke: (Intent intent) => model.selectAll());
 ```
@@ -236,6 +242,7 @@ CallbackAction(onInvoke: (Intent intent) => model.selectAll());
 Once you have an action, you add it to your application using the [`Actions`][]
 widget, which takes a map of `Intent` types to `Action`s:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (SelectAllExample)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -263,6 +270,7 @@ action. It's possible to invoke actions that are not bound to keys.
 
 For instance, to find an action associated with an intent, you can use:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (MaybeFindExample)"?>
 ```dart
 Action<SelectAllIntent>? selectAll = Actions.maybeFind<SelectAllIntent>(context);
 ```
@@ -275,12 +283,14 @@ type.
 
 To invoke the action (if it exists), call:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (InvokeActionExample)"?>
 ```dart
 Object? result = selectAll?.invoke(SelectAllIntent());
 ```
 
 Combine that into one call with the following:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (MaybeInvokeExample)"?>
 ```dart
 Object? result = Actions.maybeInvoke<SelectAllIntent>(context, SelectAllIntent());
 ```
@@ -291,6 +301,7 @@ handler closure if the intent has a mapping to an enabled action, and returns
 null if it doesn't, so that the button is disabled if there is no matching
 enabled action in the context:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (HandlerExample)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -353,14 +364,15 @@ it creates a default `ActionDispatcher` that simply invokes the action.
 If you want a log of all the actions invoked, however, you can create your own
 `LoggingActionDispatcher` to do the job:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (LoggingActionDispatcher)"?>
 ```dart
 class LoggingActionDispatcher extends ActionDispatcher {
   @override
   Object? invokeAction(
-    covariant Action<Intent> action,
-    covariant Intent intent, [
-    BuildContext? context,
-  ]) {
+      covariant Action<Intent> action,
+      covariant Intent intent, [
+        BuildContext? context,
+      ]) {
     print('Action invoked: $action($intent) from $context');
     super.invokeAction(action, intent, context);
   }
@@ -369,6 +381,7 @@ class LoggingActionDispatcher extends ActionDispatcher {
 
 Then you pass that to your top-level `Actions` widget:
 
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (LoggingActionDispatcherExample)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -392,7 +405,7 @@ Widget build(BuildContext context) {
 
 This logs every action as it executes, like so:
 
-```dart
+```
 flutter: Action invoked: SelectAllAction#906fc(SelectAllIntent#a98e3) from Builder(dependencies: _[ActionsMarker])
 ```
 
@@ -405,7 +418,7 @@ also has "select all" and "copy to clipboard" buttons next to it. The buttons
 invoke actions to accomplish their work. All the invoked actions and
 shortcuts are logged.
 
-<?code-excerpt "lib/copyable_text.dart"?>
+<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/copyable_text.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
