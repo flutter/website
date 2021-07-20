@@ -176,7 +176,7 @@ Column(
   children: <Widget>[
     TextField(
       controller: _controller,
-      decoration: InputDecoration(hintText: 'Enter Title'),
+      decoration: const InputDecoration(hintText: 'Enter Title'),
     ),
     ElevatedButton(
       onPressed: () {
@@ -184,7 +184,7 @@ Column(
           _futureAlbum = createAlbum(_controller.text);
         });
       },
-      child: Text('Create Data'),
+      child: const Text('Create Data'),
     ),
   ],
 )
@@ -227,7 +227,7 @@ FutureBuilder<Album>(
       return Text('${snapshot.error}');
     }
 
-    return CircularProgressIndicator();
+    return const CircularProgressIndicator();
   },
 )
 ```
@@ -279,11 +279,11 @@ class Album {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() {
@@ -304,7 +304,7 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Create Data Example'),
+          title: const Text('Create Data Example'),
         ),
         body: Container(
           alignment: Alignment.center,
@@ -321,7 +321,7 @@ class _MyAppState extends State<MyApp> {
       children: <Widget>[
         TextField(
           controller: _controller,
-          decoration: InputDecoration(hintText: 'Enter Title'),
+          decoration: const InputDecoration(hintText: 'Enter Title'),
         ),
         ElevatedButton(
           onPressed: () {
@@ -329,7 +329,7 @@ class _MyAppState extends State<MyApp> {
               _futureAlbum = createAlbum(_controller.text);
             });
           },
-          child: Text('Create Data'),
+          child: const Text('Create Data'),
         ),
       ],
     );
@@ -345,7 +345,7 @@ class _MyAppState extends State<MyApp> {
           return Text('${snapshot.error}');
         }
 
-        return CircularProgressIndicator();
+        return const CircularProgressIndicator();
       },
     );
   }

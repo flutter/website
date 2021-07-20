@@ -305,7 +305,7 @@ void main() {
   runApp(
     [!ChangeNotifierProvider!](
       create: (context) => CartModel(),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -327,7 +327,7 @@ void main() {
         ChangeNotifierProvider(create: (context) => CartModel()),
         Provider(create: (context) => SomeOtherClass()),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -378,14 +378,14 @@ once and get it through the builder.
 ```dart
 return Consumer<CartModel>(
   builder: (context, cart, [!child!]) => Stack(
-        children: [
-          // Use SomeExpensiveWidget here, without rebuilding every time.
-          if ([!child!] != null) [!child!],
-          Text("Total price: ${cart.totalPrice}"),
-        ],
-      ),
+    children: [
+      // Use SomeExpensiveWidget here, without rebuilding every time.
+      if ([!child!] != null) [!child!],
+      Text("Total price: ${cart.totalPrice}"),
+    ],
+  ),
   // Build the expensive widget here.
-  [!child!]: SomeExpensiveWidget(),
+  [!child!]: const SomeExpensiveWidget(),
 );
 ```
 

@@ -68,7 +68,7 @@ the `stful` snippet to quickly generate this code.
 class MyHomePage extends StatefulWidget {
   final String title;
 
-  MyHomePage({
+  const MyHomePage({
     Key? key,
     required this.title,
   }) : super(key: key);
@@ -117,7 +117,7 @@ FloatingActionButton(
     });
   },
   tooltip: 'Toggle Opacity',
-  child: Icon(Icons.flip),
+  child: const Icon(Icons.flip),
 )
 ```
 
@@ -139,7 +139,7 @@ AnimatedOpacity(
   // If the widget is visible, animate to 0.0 (invisible).
   // If the widget is hidden, animate to 1.0 (fully visible).
   opacity: _visible ? 1.0 : 0.0,
-  duration: Duration(milliseconds: 500),
+  duration: const Duration(milliseconds: 500),
   // The green box must be a child of the AnimatedOpacity widget.
   child: Container(
     width: 200.0,
@@ -155,13 +155,15 @@ AnimatedOpacity(
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'Opacity Demo';
-    return MaterialApp(
+    const appTitle = 'Opacity Demo';
+    return const MaterialApp(
       title: appTitle,
       home: MyHomePage(title: appTitle),
     );
@@ -171,12 +173,12 @@ class MyApp extends StatelessWidget {
 // The StatefulWidget's job is to take data and create a State class.
 // In this case, the widget takes a title, and creates a _MyHomePageState.
 class MyHomePage extends StatefulWidget {
-  final String title;
-
-  MyHomePage({
+  const MyHomePage({
     Key? key,
     required this.title,
   }) : super(key: key);
+
+  final String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -199,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // If the widget is visible, animate to 0.0 (invisible).
           // If the widget is hidden, animate to 1.0 (fully visible).
           opacity: _visible ? 1.0 : 0.0,
-          duration: Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.
           child: Container(
             width: 200.0,
@@ -217,7 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
           });
         },
         tooltip: 'Toggle Opacity',
-        child: Icon(Icons.flip),
+        child: const Icon(Icons.flip),
       ),
     );
   }

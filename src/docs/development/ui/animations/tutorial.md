@@ -287,9 +287,12 @@ Consider the following app that draws the Flutter logo without animation:
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(LogoApp());
+void main() => runApp(const LogoApp());
 
 class LogoApp extends StatefulWidget {
+  const LogoApp({Key? key}) : super(key: key);
+
+  @override
   _LogoAppState createState() => _LogoAppState();
 }
 
@@ -298,10 +301,10 @@ class _LogoAppState extends State<LogoApp> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10),
+        margin: const EdgeInsets.symmetric(vertical: 10),
         height: 300,
         width: 300,
-        child: FlutterLogo(),
+        child: const FlutterLogo(),
       ),
     );
   }
@@ -326,8 +329,8 @@ The changes from the non-animated example are highlighted:
 +import 'package:flutter/animation.dart';
  import 'package:flutter/material.dart';
 
- void main() => runApp(LogoApp());
-@@ -6,16 +7,39 @@
+ void main() => runApp(const LogoApp());
+@@ -9,16 +10,39 @@
    _LogoAppState createState() => _LogoAppState();
  }
 
@@ -354,12 +357,12 @@ The changes from the non-animated example are highlighted:
    Widget build(BuildContext context) {
      return Center(
        child: Container(
-         margin: EdgeInsets.symmetric(vertical: 10),
+         margin: const EdgeInsets.symmetric(vertical: 10),
 -        height: 300,
 -        width: 300,
 +        height: animation.value,
 +        width: animation.value,
-         child: FlutterLogo(),
+         child: const FlutterLogo(),
        ),
      );
    }
@@ -445,17 +448,18 @@ object to hold the animation. Add the following `AnimatedLogo` class:
 <?code-excerpt "lib/main.dart (AnimatedLogo)" title?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
-  AnimatedLogo({Key? key, required Animation<double> animation})
+  const AnimatedLogo({Key? key, required Animation<double> animation})
       : super(key: key, listenable: animation);
 
+  @override
   Widget build(BuildContext context) {
     final animation = listenable as Animation<double>;
     return Center(
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10),
+        margin: const EdgeInsets.symmetric(vertical: 10),
         height: animation.value,
         width: animation.value,
-        child: FlutterLogo(),
+        child: const FlutterLogo(),
       ),
     );
   }
@@ -473,10 +477,37 @@ and it passes the `Animation` object to `AnimatedLogo`:
 ```diff
 --- animate1/lib/main.dart
 +++ animate2/lib/main.dart
-@@ -10,2 +27,2 @@
- class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-   late Animation<double> animation;
-@@ -13,32 +30,18 @@
+@@ -1,11 +1,29 @@
+ import 'package:flutter/animation.dart';
+ import 'package:flutter/material.dart';
+
+ void main() => runApp(const LogoApp());
+
++class AnimatedLogo extends AnimatedWidget {
++  const AnimatedLogo({Key? key, required Animation<double> animation})
++      : super(key: key, listenable: animation);
++
++  @override
++  Widget build(BuildContext context) {
++    final animation = listenable as Animation<double>;
++    return Center(
++      child: Container(
++        margin: const EdgeInsets.symmetric(vertical: 10),
++        height: animation.value,
++        width: animation.value,
++        child: const FlutterLogo(),
++      ),
++    );
++  }
++}
++
+ class LogoApp extends StatefulWidget {
+   const LogoApp({Key? key}) : super(key: key);
+
+   @override
+   _LogoAppState createState() => _LogoAppState();
+ }
+@@ -16,32 +34,18 @@
 
    @override
    void initState() {
@@ -497,10 +528,10 @@ and it passes the `Animation` object to `AnimatedLogo`:
 -  Widget build(BuildContext context) {
 -    return Center(
 -      child: Container(
--        margin: EdgeInsets.symmetric(vertical: 10),
+-        margin: const EdgeInsets.symmetric(vertical: 10),
 -        height: animation.value,
 -        width: animation.value,
--        child: FlutterLogo(),
+-        child: const FlutterLogo(),
 -      ),
 -    );
 -  }
@@ -568,7 +599,7 @@ at the beginning or the end. This creates a "breathing" effect:
 ```diff
 --- animate2/lib/main.dart
 +++ animate3/lib/main.dart
-@@ -32,7 +32,15 @@
+@@ -36,7 +36,15 @@
    void initState() {
      super.initState();
      controller =
@@ -636,11 +667,16 @@ the logo is straightforward:
 <?code-excerpt "animate4/lib/main.dart (LogoWidget)"?>
 ```dart
 class LogoWidget extends StatelessWidget {
+  const LogoWidget({Key? key}) : super(key: key);
+
   // Leave out the height and width so it fills the animating parent
-  Widget build(BuildContext context) => Container(
-        margin: EdgeInsets.symmetric(vertical: 10),
-        child: FlutterLogo(),
-      );
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: const FlutterLogo(),
+    );
+  }
 }
 ```
 
@@ -666,21 +702,28 @@ in the render tree.
 <?code-excerpt "animate4/lib/main.dart (GrowTransition)"?>
 ```dart
 class GrowTransition extends StatelessWidget {
-  GrowTransition({required this.child, required this.animation});
+  const GrowTransition({required this.child, required this.animation, Key? key})
+      : super(key: key);
 
   final Widget child;
   final Animation<double> animation;
 
-  Widget build(BuildContext context) => Center(
-        child: AnimatedBuilder(
-            animation: animation,
-            builder: (context, child) => Container(
-                  height: animation.value,
-                  width: animation.value,
-                  child: child,
-                ),
-            child: child),
-      );
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: AnimatedBuilder(
+        animation: animation,
+        builder: (context, child) {
+          return SizedBox(
+            height: animation.value,
+            width: animation.value,
+            child: child,
+          );
+        },
+        child: child,
+      ),
+    );
+  }
 }
 ```
 
@@ -697,11 +740,65 @@ in the bullet points above.
 ```diff
 --- animate2/lib/main.dart
 +++ animate4/lib/main.dart
-@@ -27,22 +36,25 @@
- class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-   late Animation<double> animation;
-   late AnimationController controller;
+@@ -1,28 +1,48 @@
+ import 'package:flutter/animation.dart';
+ import 'package:flutter/material.dart';
 
+ void main() => runApp(const LogoApp());
+
+-class AnimatedLogo extends AnimatedWidget {
+-  const AnimatedLogo({Key? key, required Animation<double> animation})
+-      : super(key: key, listenable: animation);
++class LogoWidget extends StatelessWidget {
++  const LogoWidget({Key? key}) : super(key: key);
++
++  // Leave out the height and width so it fills the animating parent
++  @override
++  Widget build(BuildContext context) {
++    return Container(
++      margin: const EdgeInsets.symmetric(vertical: 10),
++      child: const FlutterLogo(),
++    );
++  }
++}
++
++class GrowTransition extends StatelessWidget {
++  const GrowTransition({required this.child, required this.animation, Key? key})
++      : super(key: key);
++
++  final Widget child;
++  final Animation<double> animation;
+
+   @override
+   Widget build(BuildContext context) {
+-    final animation = listenable as Animation<double>;
+     return Center(
+-      child: Container(
+-        margin: const EdgeInsets.symmetric(vertical: 10),
+-        height: animation.value,
+-        width: animation.value,
+-        child: const FlutterLogo(),
++      child: AnimatedBuilder(
++        animation: animation,
++        builder: (context, child) {
++          return SizedBox(
++            height: animation.value,
++            width: animation.value,
++            child: child,
++          );
++        },
++        child: child,
+       ),
+     );
+   }
+ }
+
+ class LogoApp extends StatefulWidget {
+   const LogoApp({Key? key}) : super(key: key);
+
+   @override
+   _LogoAppState createState() => _LogoAppState();
+@@ -35,18 +55,23 @@
    @override
    void initState() {
      super.initState();
@@ -713,10 +810,12 @@ in the bullet points above.
 
    @override
 -  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
-+  Widget build(BuildContext context) => GrowTransition(
-+        child: LogoWidget(),
-+        animation: animation,
-+      );
++  Widget build(BuildContext context) {
++    return GrowTransition(
++      child: const LogoWidget(),
++      animation: animation,
++    );
++  }
 
    @override
    void dispose() {
@@ -779,23 +878,24 @@ The following code shows the changes with highlights:
 <?code-excerpt "animate5/lib/main.dart (diff)" replace="/(static final|child: Opacity|opacity:|_sizeTween\.|CurvedAnimation).*/[!$&!]/g"?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
+  const AnimatedLogo({Key? key, required Animation<double> animation})
+      : super(key: key, listenable: animation);
+
   // Make the Tweens static because they don't change.
   [!static final _opacityTween = Tween<double>(begin: 0.1, end: 1);!]
   [!static final _sizeTween = Tween<double>(begin: 0, end: 300);!]
 
-  AnimatedLogo({Key? key, required Animation<double> animation})
-      : super(key: key, listenable: animation);
-
+  @override
   Widget build(BuildContext context) {
     final animation = listenable as Animation<double>;
     return Center(
       [!child: Opacity(!]
         [!opacity: _opacityTween.evaluate(animation),!]
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
+          margin: const EdgeInsets.symmetric(vertical: 10),
           height: [!_sizeTween.evaluate(animation),!]
           width: [!_sizeTween.evaluate(animation),!]
-          child: FlutterLogo(),
+          child: const FlutterLogo(),
         ),
       ),
     );
@@ -803,6 +903,9 @@ class AnimatedLogo extends AnimatedWidget {
 }
 
 class LogoApp extends StatefulWidget {
+  const LogoApp({Key? key}) : super(key: key);
+
+  @override
   _LogoAppState createState() => _LogoAppState();
 }
 

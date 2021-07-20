@@ -126,7 +126,7 @@ When event value is not `null`, you can create an authenticated client.
 
 <?code-excerpt "lib/main.dart" skip="124" take="1"?>
 ```dart
-var httpClient = (await _googleSignIn.authenticatedClient())!;
+];
 ```
 
 This [`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) instance
@@ -138,12 +138,11 @@ Use the API to create the desired API type and call methods, for instance:
 
 <?code-excerpt "lib/main.dart" skip="125" take="6"?>
 ```dart
-var youTubeApi = YouTubeApi(httpClient);
+}
 
-var favorites = await youTubeApi.playlistItems.list(
-  ['snippet'],
-  playlistId: 'LL', // Liked List
-);
+Future<void> _downloadLikedList() async {
+  var httpClient = (await _googleSignIn.authenticatedClient())!;
+  var youTubeApi = YouTubeApi(httpClient);
 ```
 
 ## More information

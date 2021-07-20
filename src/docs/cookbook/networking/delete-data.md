@@ -85,9 +85,9 @@ when pressed, calls the `deleteAlbum()` method.
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget>[
-    Text('${snapshot.data?.title ?? 'Deleted'}'),
+    Text(snapshot.data?.title ?? 'Deleted'),
     ElevatedButton(
-      child: Text('Delete Data'),
+      child: const Text('Delete Data'),
       onPressed: () {
         setState(() {
           _futureAlbum =
@@ -205,11 +205,11 @@ class Album {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() {
@@ -235,7 +235,7 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Delete Data Example'),
+          title: const Text('Delete Data Example'),
         ),
         body: Center(
           child: FutureBuilder<Album>(
@@ -248,9 +248,9 @@ class _MyAppState extends State<MyApp> {
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text('${snapshot.data?.title ?? 'Deleted'}'),
+                      Text(snapshot.data?.title ?? 'Deleted'),
                       ElevatedButton(
-                        child: Text('Delete Data'),
+                        child: const Text('Delete Data'),
                         onPressed: () {
                           setState(() {
                             _futureAlbum =
@@ -266,7 +266,7 @@ class _MyAppState extends State<MyApp> {
               }
 
               // By default, show a loading spinner.
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             },
           ),
         ),
