@@ -85,7 +85,7 @@ messages happens automatically when you send and receive values.
 The following table shows how Dart values are received on the
 platform side and vice versa:
 
-| Dart                       | Java                | Kotlin      | Obj-C                                             | Swift                                   |
+| Dart                       | Java                | Kotlin      | Obj-C                                          | Swift                                   |
 | -------------------------- | ------------------- | ----------- | ---------------------------------------------- | --------------------------------------- |
 | null                       | null                | null        | nil (NSNull when nested)                       | nil                                     |
 | bool                       | java.lang.Boolean   | Boolean     | NSNumber numberWithBool:                       | NSNumber(value: Bool)                   |
@@ -96,6 +96,7 @@ platform side and vice versa:
 | Uint8List                  | byte[]              | ByteArray   | FlutterStandardTypedData typedDataWithBytes:   | FlutterStandardTypedData(bytes: Data)   |
 | Int32List                  | int[]               | IntArray    | FlutterStandardTypedData typedDataWithInt32:   | FlutterStandardTypedData(int32: Data)   |
 | Int64List                  | long[]              | LongArray   | FlutterStandardTypedData typedDataWithInt64:   | FlutterStandardTypedData(int64: Data)   |
+| Float32List                | float[]             | FloatArray  | FlutterStandardTypedData typedDataWithFloat32: | FlutterStandardTypedData(float32: Data) |
 | Float64List                | double[]            | DoubleArray | FlutterStandardTypedData typedDataWithFloat64: | FlutterStandardTypedData(float64: Data) |
 | List                       | java.util.ArrayList | List        | NSArray                                        | Array                                   |
 | Map                        | java.util.HashMap   | HashMap     | NSDictionary                                   | Dictionary                              |
