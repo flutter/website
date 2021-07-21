@@ -266,6 +266,7 @@
       { "source": "/go/image-decoding-registry", "destination": "https://docs.google.com/document/d/167qWrlaSAmJm5muqQ-iiJKZy6Q7ZlugIeXmraXava5Y/edit?resourcekey=0-mVrr_zBiSI2Qmd6vqae7Bw", "type": 301 },
       { "source": "/go/flutter-engine-extensions", "destination": "https://docs.google.com/document/d/1xG7jR4FserdW7TdwnklF3_lXUGmt4myPQjDGF3LFtCQ/edit?resourcekey=0-Iug4D2mWuyQI6suvC_2itw#", "type": 301 },
       { "source": "/go/plugin-support-for-custom-embeddings", "destination": "https://docs.google.com/document/d/1AJTHdC20JhD3viR4JWTghagIztqL5jg_R9NFQmnwAMw/edit?usp=sharing&resourcekey=0-qAECjzHKB5tM47azrVnH1w", "type": 301 },
+      { "source": "/go/text-editing-model", "destination": "https://docs.google.com/document/d/1lkpg4dfVZif9NJ_dDQ01QkwQC3OqzhUFahhjgv_rcbM/edit#", "type": 301 },
       
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },
