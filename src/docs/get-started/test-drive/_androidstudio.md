@@ -23,7 +23,7 @@ contains a simple demo app that uses [Material Components][].
     ![Main IntelliJ toolbar][]{:.mw-100}
  1. In the **target selector**, select an Android device for running the app.
     If none are listed as available,
-    select **Tools> Android > AVD Manager** and create one there.
+    select **Tools > AVD Manager** and create one there.
     For details, see [Managing AVDs][].
  1. Click the run icon in the toolbar, or invoke the menu item **Run > Run**.
 
