@@ -416,16 +416,6 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-date-picker.png'>"
   },
   {
-    "name": "CupertinoDialog",
-    "description": "An iOS-style dialog.",
-    "categories": [
-      "Cupertino (iOS-style widgets)"
-    ],
-    "subcategories": [],
-    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoDialog-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-dialog.png'>"
-  },
-  {
     "name": "CupertinoDialogAction",
     "description": "A button typically used in a CupertinoAlertDialog.",
     "categories": [
