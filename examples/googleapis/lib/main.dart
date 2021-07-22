@@ -5,14 +5,21 @@
 import 'dart:async';
 import 'dart:convert';
 
+// #docregion authImport
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
+// #enddocregion authImport
+
 import 'package:flutter/material.dart';
 
+// #docregion googleImport
 /// Provides the `GoogleSignIn` class
 import 'package:google_sign_in/google_sign_in.dart';
+// #enddocregion googleImport
 
+// #docregion youtubeImport
 /// Provides the `YouTubeApi` class.
 import 'package:googleapis/youtube/v3.dart';
+// #enddocregion youtubeImport
 
 const _title = 'My YouTube Favorites';
 
@@ -33,9 +40,11 @@ class _LikedVideosWidget extends StatefulWidget {
 }
 
 class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
+  // #docregion init
   final _googleSignIn = GoogleSignIn(
     scopes: <String>[YouTubeApi.youtubeReadonlyScope],
   );
+  // #enddocregion init
 
   GoogleSignInAccount? _currentUser;
   List<PlaylistItemSnippet>? _favoriteVideos;
@@ -126,13 +135,18 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   }
 
   Future<void> _downloadLikedList() async {
+    // #docregion signinCall
     var httpClient = (await _googleSignIn.authenticatedClient())!;
+    // #enddocregion signinCall
+
+    // #docregion playlist
     var youTubeApi = YouTubeApi(httpClient);
 
     var favorites = await youTubeApi.playlistItems.list(
       ['snippet'],
       playlistId: 'LL', // Liked List
     );
+    // #enddocregion playlist
 
     setState(() {
       _favoriteVideos = favorites.items!.map((e) => e.snippet!).toList();

@@ -85,16 +85,15 @@ class RadialExpansion extends StatelessWidget {
 class RadialExpansionDemo extends StatelessWidget {
   const RadialExpansionDemo({Key? key}) : super(key: key);
 
-  static double kMinRadius = 32.0;
-  static double kMaxRadius = 128.0;
-  static Interval opacityCurve =
-      const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
+  static const double kMinRadius = 32.0;
+  static const double kMaxRadius = 128.0;
+  static const opacityCurve = Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
 
-  static RectTween _createRectTween(Rect? begin, Rect? end) {
+  RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
 
-  static Widget _buildPage(
+  Widget _buildPage(
       BuildContext context, String imageName, String description) {
     return Container(
       color: Theme.of(context).canvasColor,
