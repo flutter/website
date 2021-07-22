@@ -14,7 +14,7 @@ For examples, see the iOS directories in the [add_to_app code samples][].
 Your development environment must meet the
 [macOS system requirements for Flutter][]
 with [Xcode installed][].
-Flutter supports iOS 8.0 and later.
+Flutter supports iOS 9.0 and later.
 Additionally, you will need [CocoaPods][]
 version 1.10 or later.
 
