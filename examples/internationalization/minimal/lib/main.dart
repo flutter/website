@@ -36,7 +36,7 @@ class DemoLocalizations {
     return Localizations.of<DemoLocalizations>(context, DemoLocalizations)!;
   }
 
-  static Map<String, Map<String, String>> _localizedValues = {
+  static const _localizedValues = <String, Map<String, String>>{
     'en': {
       'title': 'Hello World',
     },
@@ -52,7 +52,8 @@ class DemoLocalizations {
 // #enddocregion Demo
 
 // #docregion Delegate
-class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations> {
+class DemoLocalizationsDelegate
+    extends LocalizationsDelegate<DemoLocalizations> {
   const DemoLocalizationsDelegate();
 
   @override
@@ -71,6 +72,8 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
 // #enddocregion Delegate
 
 class DemoApp extends StatelessWidget {
+  const DemoApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,10 +88,13 @@ class DemoApp extends StatelessWidget {
 }
 
 class Demo extends StatelessWidget {
+  const Demo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (BuildContext context) => DemoLocalizations.of(context).title,
+      onGenerateTitle: (BuildContext context) =>
+          DemoLocalizations.of(context).title,
       localizationsDelegates: const [
         DemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
@@ -102,11 +108,11 @@ class Demo extends StatelessWidget {
       // with the specified delegates. DemoLocalizations.of()
       // will only find the app's Localizations widget if its
       // context is a child of the app.
-      home: DemoApp(),
+      home: const DemoApp(),
     );
   }
 }
 
 void main() {
-  runApp(Demo());
+  runApp(const Demo());
 }

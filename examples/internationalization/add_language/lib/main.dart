@@ -6,13 +6,13 @@ import 'nn_intl.dart';
 void main() {
   runApp(
     // #docregion MaterialApp
-    MaterialApp(
-      localizationsDelegates: const [
+    const MaterialApp(
+      localizationsDelegates: [
         GlobalWidgetsLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         NnMaterialLocalizations.delegate, // Add the newly created delegate
       ],
-      supportedLocales: const [
+      supportedLocales: [
         Locale('en', 'US'),
         Locale('nn'),
       ],
@@ -23,6 +23,8 @@ void main() {
 }
 
 class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Localizations.override(
@@ -43,9 +45,8 @@ class Home extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(50.0),
             child: Text(
-              'Long press hamburger icon in the app bar (aka the drawer menu)'
-              'to see a localized tooltip for the `nn` locale. '
-            ),
+                'Long press hamburger icon in the app bar (aka the drawer menu)'
+                'to see a localized tooltip for the `nn` locale. '),
           ),
         ),
       ),

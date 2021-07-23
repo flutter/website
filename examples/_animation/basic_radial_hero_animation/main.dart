@@ -11,12 +11,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class Photo extends StatelessWidget {
-  Photo({ Key? key, required this.photo, this.color, this.onTap }) : super(key: key);
+  const Photo({Key? key, required this.photo, this.color, this.onTap})
+      : super(key: key);
 
   final String photo;
   final Color? color;
   final VoidCallback? onTap;
 
+  @override
   Widget build(BuildContext context) {
     return Material(
       // Slightly opaque color appears where the image has transparency.
@@ -25,8 +27,8 @@ class Photo extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Image.asset(
-              photo,
-              fit: BoxFit.contain,
+          photo,
+          fit: BoxFit.contain,
         ),
       ),
     );
@@ -34,15 +36,15 @@ class Photo extends StatelessWidget {
 }
 
 class RadialExpansion extends StatelessWidget {
-  RadialExpansion({
+  const RadialExpansion({
     Key? key,
     required this.maxRadius,
     this.child,
-  }) : clipRectExtent = 2.0 * (maxRadius / math.sqrt2),
-       super(key: key);
+  })  : clipRectExtent = 2.0 * (maxRadius / math.sqrt2),
+        super(key: key);
 
   final double maxRadius;
-  final clipRectExtent;
+  final double clipRectExtent;
   final Widget? child;
 
   @override
@@ -65,15 +67,19 @@ class RadialExpansion extends StatelessWidget {
 }
 
 class RadialExpansionDemo extends StatelessWidget {
-  static const double kMinRadius = 32.0;
-  static const double kMaxRadius = 128.0;
-  static const opacityCurve = const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
+  const RadialExpansionDemo({Key? key}) : super(key: key);
+
+  static double kMinRadius = 32.0;
+  static double kMaxRadius = 128.0;
+  static Interval opacityCurve =
+      const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
 
   static RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
 
-  static Widget _buildPage(BuildContext context, String imageName, String description) {
+  static Widget _buildPage(
+      BuildContext context, String imageName, String description) {
     return Container(
       color: Theme.of(context).canvasColor,
       alignment: FractionalOffset.center,
@@ -97,8 +103,9 @@ class RadialExpansionDemo extends StatelessWidget {
     );
   }
 
-  Widget _buildHero(BuildContext context, String imageName, String description) {
-    return Container(
+  Widget _buildHero(
+      BuildContext context, String imageName, String description) {
+    return SizedBox(
       width: kMinRadius * 2.0,
       height: kMinRadius * 2.0,
       child: Hero(
@@ -111,7 +118,9 @@ class RadialExpansionDemo extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 PageRouteBuilder<void>(
-                  pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
+                  pageBuilder: (BuildContext context,
+                      Animation<double> animation,
+                      Animation<double> secondaryAnimation) {
                     return AnimatedBuilder(
                       animation: animation,
                       builder: (BuildContext context, Widget? child) {
@@ -119,7 +128,7 @@ class RadialExpansionDemo extends StatelessWidget {
                           opacity: opacityCurve.transform(animation.value),
                           child: _buildPage(context, imageName, description),
                         );
-                      }
+                      },
                     );
                   },
                 ),
@@ -156,5 +165,9 @@ class RadialExpansionDemo extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(home: RadialExpansionDemo()));
+  runApp(
+    const MaterialApp(
+      home: RadialExpansionDemo(),
+    ),
+  );
 }

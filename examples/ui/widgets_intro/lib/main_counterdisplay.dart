@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CounterDisplay extends StatelessWidget {
-  CounterDisplay({required this.count});
+  const CounterDisplay({required this.count, Key? key}) : super(key: key);
 
   final int count;
 
@@ -12,7 +12,8 @@ class CounterDisplay extends StatelessWidget {
 }
 
 class CounterIncrementor extends StatelessWidget {
-  CounterIncrementor({required this.onPressed});
+  const CounterIncrementor({required this.onPressed, Key? key})
+      : super(key: key);
 
   final VoidCallback onPressed;
 
@@ -20,12 +21,14 @@ class CounterIncrementor extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: Text('Increment'),
+      child: const Text('Increment'),
     );
   }
 }
 
 class Counter extends StatefulWidget {
+  const Counter({Key? key}) : super(key: key);
+
   @override
   _CounterState createState() => _CounterState();
 }
@@ -45,7 +48,7 @@ class _CounterState extends State<Counter> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         CounterIncrementor(onPressed: _increment),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
         CounterDisplay(count: _counter),
       ],
     );
@@ -54,7 +57,7 @@ class _CounterState extends State<Counter> {
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(
         body: Center(
           child: Counter(),

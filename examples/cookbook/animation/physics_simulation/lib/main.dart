@@ -4,15 +4,17 @@ import 'package:flutter/physics.dart';
 // #enddocregion import
 
 void main() {
-  runApp(MaterialApp(home: PhysicsCardDragDemo()));
+  runApp(const MaterialApp(home: PhysicsCardDragDemo()));
 }
 
 class PhysicsCardDragDemo extends StatelessWidget {
+  const PhysicsCardDragDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: DraggableCard(
+      body: const DraggableCard(
         child: FlutterLogo(
           size: 128,
         ),
@@ -24,8 +26,9 @@ class PhysicsCardDragDemo extends StatelessWidget {
 /// A draggable card that moves back to [Alignment.center] when it's
 /// released.
 class DraggableCard extends StatefulWidget {
+  const DraggableCard({required this.child, Key? key}) : super(key: key);
+
   final Widget child;
-  DraggableCard({required this.child});
 
   @override
   _DraggableCardState createState() => _DraggableCardState();

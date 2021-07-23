@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Text Field Focus',
       home: MyCustomForm(),
     );
@@ -14,6 +16,8 @@ class MyApp extends StatelessWidget {
 
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
+  const MyCustomForm({Key? key}) : super(key: key);
+
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
 }
@@ -44,14 +48,14 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Text Field Focus'),
+        title: const Text('Text Field Focus'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             // The first text field is focused on as soon as the app starts.
-            TextField(
+            const TextField(
               autofocus: true,
             ),
             // The second text field is focused on when a user taps the
@@ -67,7 +71,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
         // give focus to the text field using myFocusNode.
         onPressed: () => myFocusNode.requestFocus(),
         tooltip: 'Focus Second Text Field',
-        child: Icon(Icons.edit),
+        child: const Icon(Icons.edit),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

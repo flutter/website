@@ -3,29 +3,36 @@ import 'package:provider/provider.dart';
 import 'package:state_mgmt/src/provider.dart';
 
 class AnotherMonstrousWidget extends SomeExpensiveWidget {
-  AnotherMonstrousWidget({Widget? child}) : super(child: child);
+  const AnotherMonstrousWidget({
+    Widget? child,
+    Key? key,
+  }) : super(child: child, key: key);
 }
 
 class ChildUsingDescendant extends StatelessWidget {
+  const ChildUsingDescendant({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // #docregion child
     return Consumer<CartModel>(
       builder: (context, cart, child) => Stack(
-            children: [
-              // Use SomeExpensiveWidget here, without rebuilding every time.
-              if (child != null) child,
-              Text("Total price: ${cart.totalPrice}"),
-            ],
-          ),
+        children: [
+          // Use SomeExpensiveWidget here, without rebuilding every time.
+          if (child != null) child,
+          Text("Total price: ${cart.totalPrice}"),
+        ],
+      ),
       // Build the expensive widget here.
-      child: SomeExpensiveWidget(),
+      child: const SomeExpensiveWidget(),
     );
     // #enddocregion child
   }
 }
 
 class DescendantInLeafNode_Good extends StatelessWidget {
+  const DescendantInLeafNode_Good({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // #docregion leafDescendant
@@ -46,6 +53,8 @@ class DescendantInLeafNode_Good extends StatelessWidget {
 }
 
 class DescendantNotInLeafNode_Bad extends StatelessWidget {
+  const DescendantNotInLeafNode_Bad({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // #docregion nonLeafDescendant
@@ -66,16 +75,21 @@ class DescendantNotInLeafNode_Bad extends StatelessWidget {
 }
 
 class HumongousWidget extends SomeExpensiveWidget {
-  HumongousWidget({Widget? child}) : super(child: child);
+  const HumongousWidget({
+    Widget? child,
+    Key? key,
+  }) : super(child: child, key: key);
 }
 
 class MyHomepage extends StatelessWidget {
+  const MyHomepage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
-        children: [
+        children: const [
           ChildUsingDescendant(),
           DescendantNotInLeafNode_Bad(),
           DescendantInLeafNode_Good(),
@@ -87,11 +101,13 @@ class MyHomepage extends StatelessWidget {
 }
 
 class NonRebuilding_Good extends StatelessWidget {
+  const NonRebuilding_Good({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () => _onPressed(context),
-      child: Text("Add"),
+      child: const Text("Add"),
     );
   }
 
@@ -103,9 +119,9 @@ class NonRebuilding_Good extends StatelessWidget {
 }
 
 class SomeExpensiveWidget extends StatelessWidget {
-  final Widget? child;
+  const SomeExpensiveWidget({this.child, Key? key}) : super(key: key);
 
-  SomeExpensiveWidget({this.child});
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {

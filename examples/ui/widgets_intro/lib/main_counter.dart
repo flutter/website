@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
-  // This class is the configuration for the state. 
-  // It holds the values (in this case nothing) provided 
+  // This class is the configuration for the state.
+  // It holds the values (in this case nothing) provided
   // by the parent and used by the build  method of the
   // State. Fields in a Widget subclass are always marked
   // "final".
+
+  const Counter({Key? key}) : super(key: key);
 
   @override
   _CounterState createState() => _CounterState();
@@ -40,9 +42,9 @@ class _CounterState extends State<Counter> {
       children: <Widget>[
         ElevatedButton(
           onPressed: _increment,
-          child: Text('Increment'),
+          child: const Text('Increment'),
         ),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
         Text('Count: $_counter'),
       ],
     );
@@ -51,7 +53,7 @@ class _CounterState extends State<Counter> {
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(
         body: Center(
           child: Counter(),

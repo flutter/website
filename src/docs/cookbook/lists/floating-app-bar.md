@@ -91,9 +91,9 @@ To create this effect:
 <?code-excerpt "lib/step2.dart (SliverAppBar)" replace="/^body: //g;/,$//g"?>
 ```dart
 CustomScrollView(
-  slivers: <Widget>[
+  slivers: [
     // Add the app bar to the CustomScrollView.
-    SliverAppBar(
+    const SliverAppBar(
       // Provide a standard title.
       title: Text(title),
       // Allows the user to reveal the app bar if they begin scrolling
@@ -154,14 +154,14 @@ SliverList(
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final title = 'Floating App Bar';
+    const title = 'Floating App Bar';
 
     return MaterialApp(
       title: title,
@@ -169,9 +169,9 @@ class MyApp extends StatelessWidget {
         // No appbar provided to the Scaffold, only a body with a
         // CustomScrollView.
         body: CustomScrollView(
-          slivers: <Widget>[
+          slivers: [
             // Add the app bar to the CustomScrollView.
-            SliverAppBar(
+            const SliverAppBar(
               // Provide a standard title.
               title: Text(title),
               // Allows the user to reveal the app bar if they begin scrolling

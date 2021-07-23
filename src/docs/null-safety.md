@@ -9,6 +9,8 @@ You can migrate your Flutter packages to use non-nullable types like this:
 <?code-excerpt "basics/lib/main.dart (MyApp)"?>
 ```dart
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   final int anInt = 3; // Cannot be null.
   final int? aNullableInt = null; // Can be null.
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Nullable Fields Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Nullable Fields Demo'),
+          title: const Text('Nullable Fields Demo'),
         ),
         body: Center(
           child: Column(

@@ -5,7 +5,7 @@ import 'package:layout/main.dart';
 
 void main() {
   testWidgets('Codelab smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(new MyApp());
+    await tester.pumpWidget(const MyApp());
     expect(find.text('Hello World'), findsOneWidget);
   });
 }

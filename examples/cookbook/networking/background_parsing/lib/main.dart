@@ -29,7 +29,7 @@ class Photo {
   final String url;
   final String thumbnailUrl;
 
-  Photo({
+  const Photo({
     required this.albumId,
     required this.id,
     required this.title,
@@ -48,14 +48,16 @@ class Photo {
   }
 }
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'Isolate Demo';
+    const appTitle = 'Isolate Demo';
 
-    return MaterialApp(
+    return const MaterialApp(
       title: appTitle,
       home: MyHomePage(title: appTitle),
     );
@@ -63,9 +65,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final String title;
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -76,11 +78,17 @@ class MyHomePage extends StatelessWidget {
       body: FutureBuilder<List<Photo>>(
         future: fetchPhotos(http.Client()),
         builder: (context, snapshot) {
-          if (snapshot.hasError) print(snapshot.error);
-
-          return snapshot.hasData
-              ? PhotosList(photos: snapshot.data!)
-              : Center(child: CircularProgressIndicator());
+          if (snapshot.hasError) {
+            return const Center(
+              child: Text('An error has occurred!'),
+            );
+          } else if (snapshot.hasData) {
+            return PhotosList(photos: snapshot.data!);
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
         },
       ),
     );
@@ -88,14 +96,14 @@ class MyHomePage extends StatelessWidget {
 }
 
 class PhotosList extends StatelessWidget {
-  final List<Photo> photos;
+  const PhotosList({Key? key, required this.photos}) : super(key: key);
 
-  PhotosList({Key? key, required this.photos}) : super(key: key);
+  final List<Photo> photos;
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
       ),
       itemCount: photos.length,

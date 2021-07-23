@@ -155,6 +155,8 @@ which you'll implement in the next step.
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
 ```dart
 class FavoriteWidget extends StatefulWidget {
+  const FavoriteWidget({Key? key}) : super(key: key);
+
   @override
   _FavoriteWidgetState createState() => _FavoriteWidgetState();
 }
@@ -182,6 +184,7 @@ along with 41 likes. These values are stored in the
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   [!bool _isFavorited = true;!]
   [!int _favoriteCount = 41;!]
+
   // ···
 }
 ```
@@ -203,18 +206,20 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          padding: EdgeInsets.all(0),
+          padding: const EdgeInsets.all(0),
           child: IconButton(
-            padding: EdgeInsets.all(0),
+            padding: const EdgeInsets.all(0),
             alignment: Alignment.centerRight,
-            [!icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),!]
+            [!icon: (_isFavorited!]
+                ? const Icon(Icons.star)
+                : const Icon(Icons.star_border)),
             color: Colors.red[500],
             [!onPressed: _toggleFavorite,!]
           ),
         ),
         SizedBox(
           width: 18,
-          child: Container(
+          child: SizedBox(
             [!child: Text('$_favoriteCount'),!]
           ),
         ),
@@ -272,26 +277,7 @@ In the same location, create the stateful widget:
 +++ layout/lakes/interactive/lib/main.dart
 @@ -10,2 +5,2 @@
  class MyApp extends StatelessWidget {
-   @override
-@@ -38,11 +33,7 @@
-               ],
-             ),
-           ),
--          Icon(
--            Icons.star,
--            color: Colors.red[500],
--          ),
--          Text('41'),
-+          FavoriteWidget(),
-         ],
-       ),
-     );
-@@ -114,3 +105,5 @@
-           ),
-         ),
-       ],
-+    );
-+  }
+   const MyApp({Key? key}) : super(key: key);
 ```
 
 That's it! When you hot reload the app,
@@ -404,7 +390,7 @@ import 'package:flutter/material.dart';
 //------------------------- TapboxA ----------------------------------
 
 class TapboxA extends StatefulWidget {
-  TapboxA({Key? key}) : super(key: key);
+  const TapboxA({Key? key}) : super(key: key);
 
   @override
   _TapboxAState createState() => _TapboxAState();
@@ -419,6 +405,7 @@ class _TapboxAState extends State<TapboxA> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _handleTap,
@@ -426,7 +413,7 @@ class _TapboxAState extends State<TapboxA> {
         child: Center(
           child: Text(
             _active ? 'Active' : 'Inactive',
-            style: TextStyle(fontSize: 32.0, color: Colors.white),
+            style: const TextStyle(fontSize: 32.0, color: Colors.white),
           ),
         ),
         width: 200.0,
@@ -442,15 +429,17 @@ class _TapboxAState extends State<TapboxA> {
 //------------------------- MyApp ----------------------------------
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter Demo'),
+          title: const Text('Flutter Demo'),
         ),
-        body: Center(
+        body: const Center(
           child: TapboxA(),
         ),
       ),
@@ -497,8 +486,9 @@ import 'package:flutter/material.dart';
 
 //------------------------ ParentWidget --------------------------------
 
-
 class ParentWidget extends StatefulWidget {
+  const ParentWidget({Key? key}) : super(key: key);
+
   @override
   _ParentWidgetState createState() => _ParentWidgetState();
 }
@@ -514,7 +504,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       child: TapboxB(
         active: _active,
         onChanged: _handleTapboxChanged,
@@ -526,8 +516,11 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  TapboxB({Key? key, this.active: false, required this.onChanged})
-      : super(key: key);
+  const TapboxB({
+    Key? key,
+    this.active = false,
+    required this.onChanged,
+  }) : super(key: key);
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -536,6 +529,7 @@ class TapboxB extends StatelessWidget {
     onChanged(!active);
   }
 
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _handleTap,
@@ -543,7 +537,7 @@ class TapboxB extends StatelessWidget {
         child: Center(
           child: Text(
             active ? 'Active' : 'Inactive',
-            style: TextStyle(fontSize: 32.0, color: Colors.white),
+            style: const TextStyle(fontSize: 32.0, color: Colors.white),
           ),
         ),
         width: 200.0,
@@ -601,6 +595,8 @@ import 'package:flutter/material.dart';
 //---------------------------- ParentWidget ----------------------------
 
 class ParentWidget extends StatefulWidget {
+  const ParentWidget({Key? key}) : super(key: key);
+
   @override
   _ParentWidgetState createState() => _ParentWidgetState();
 }
@@ -616,7 +612,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       child: TapboxC(
         active: _active,
         onChanged: _handleTapboxChanged,
@@ -628,15 +624,16 @@ class _ParentWidgetState extends State<ParentWidget> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  TapboxC({
+  const TapboxC({
     Key? key,
-    this.active: false,
+    this.active = false,
     required this.onChanged,
   }) : super(key: key);
 
   final bool active;
   final ValueChanged<bool> onChanged;
 
+  @override
   _TapboxCState createState() => _TapboxCState();
 }
 
@@ -665,6 +662,7 @@ class _TapboxCState extends State<TapboxC> {
     widget.onChanged(!widget.active);
   }
 
+  @override
   Widget build(BuildContext context) {
     // This example adds a green border on tap down.
     // On tap up, the square changes to the opposite state.
@@ -676,7 +674,7 @@ class _TapboxCState extends State<TapboxC> {
       child: Container(
         child: Center(
           child: Text(widget.active ? 'Active' : 'Inactive',
-              style: TextStyle(fontSize: 32.0, color: Colors.white)),
+              style: const TextStyle(fontSize: 32.0, color: Colors.white)),
         ),
         width: 200.0,
         height: 200.0,

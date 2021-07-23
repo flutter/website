@@ -52,6 +52,8 @@ can be updated when the user taps a button.
 <?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
 ```dart
 class AnimatedContainerApp extends StatefulWidget {
+  const AnimatedContainerApp({Key? key}) : super(key: key);
+
   @override
   _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
 }
@@ -88,7 +90,7 @@ AnimatedContainer(
     borderRadius: _borderRadius,
   ),
   // Define how long the animation should take.
-  duration: Duration(seconds: 1),
+  duration: const Duration(seconds: 1),
   // Provide an optional curve to make the animation feel smoother.
   curve: Curves.fastOutSlowIn,
 )
@@ -136,7 +138,7 @@ FloatingActionButton(
           BorderRadius.circular(random.nextInt(100).toDouble());
     });
   },
-  child: Icon(Icons.play_arrow),
+  child: const Icon(Icons.play_arrow),
 )
 ```
 
@@ -148,9 +150,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(AnimatedContainerApp());
+void main() => runApp(const AnimatedContainerApp());
 
 class AnimatedContainerApp extends StatefulWidget {
+  const AnimatedContainerApp({Key? key}) : super(key: key);
+
   @override
   _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
 }
@@ -168,7 +172,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('AnimatedContainer Demo'),
+          title: const Text('AnimatedContainer Demo'),
         ),
         body: Center(
           child: AnimatedContainer(
@@ -180,7 +184,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
               borderRadius: _borderRadius,
             ),
             // Define how long the animation should take.
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             // Provide an optional curve to make the animation feel smoother.
             curve: Curves.fastOutSlowIn,
           ),
@@ -210,7 +214,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
                   BorderRadius.circular(random.nextInt(100).toDouble());
             });
           },
-          child: Icon(Icons.play_arrow),
+          child: const Icon(Icons.play_arrow),
         ),
       ),
     );

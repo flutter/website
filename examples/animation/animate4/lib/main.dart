@@ -1,39 +1,54 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(LogoApp());
+void main() => runApp(const LogoApp());
 
 // #docregion LogoWidget
 class LogoWidget extends StatelessWidget {
+  const LogoWidget({Key? key}) : super(key: key);
+
   // Leave out the height and width so it fills the animating parent
-  Widget build(BuildContext context) => Container(
-        margin: EdgeInsets.symmetric(vertical: 10),
-        child: FlutterLogo(),
-      );
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: const FlutterLogo(),
+    );
+  }
 }
 // #enddocregion LogoWidget
 
 // #docregion GrowTransition
 class GrowTransition extends StatelessWidget {
-  GrowTransition({required this.child, required this.animation});
+  const GrowTransition({required this.child, required this.animation, Key? key})
+      : super(key: key);
 
   final Widget child;
   final Animation<double> animation;
 
-  Widget build(BuildContext context) => Center(
-        child: AnimatedBuilder(
-            animation: animation,
-            builder: (context, child) => Container(
-                  height: animation.value,
-                  width: animation.value,
-                  child: child,
-                ),
-            child: child),
-      );
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: AnimatedBuilder(
+        animation: animation,
+        builder: (context, child) {
+          return SizedBox(
+            height: animation.value,
+            width: animation.value,
+            child: child,
+          );
+        },
+        child: child,
+      ),
+    );
+  }
 }
 // #enddocregion GrowTransition
 
 class LogoApp extends StatefulWidget {
+  const LogoApp({Key? key}) : super(key: key);
+
+  @override
   _LogoAppState createState() => _LogoAppState();
 }
 
@@ -53,10 +68,12 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   // #enddocregion print-state
 
   @override
-  Widget build(BuildContext context) => GrowTransition(
-        child: LogoWidget(),
-        animation: animation,
-      );
+  Widget build(BuildContext context) {
+    return GrowTransition(
+      child: const LogoWidget(),
+      animation: animation,
+    );
+  }
 
   @override
   void dispose() {

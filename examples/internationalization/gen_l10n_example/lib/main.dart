@@ -9,24 +9,23 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 // #enddocregion AppLocalizationsImport
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
 // #docregion MaterialApp
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Localizations Sample App',
-      localizationsDelegates: const [
+      localizationsDelegates: [
         AppLocalizations.delegate, // Add this line
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
+      supportedLocales: [
         Locale('en', ''), // English, no country code
         Locale('es', ''), // Spanish, no country code
       ],
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: MyHomePage(),
     );
 // #enddocregion MaterialApp
@@ -34,6 +33,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -54,5 +55,5 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }

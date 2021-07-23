@@ -7,6 +7,9 @@
 import 'package:flutter/material.dart';
 
 class BasicHeroAnimation extends StatelessWidget {
+  const BasicHeroAnimation({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -56,5 +59,9 @@ class BasicHeroAnimation extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(home: BasicHeroAnimation()));
+  runApp(
+    const MaterialApp(
+      home: BasicHeroAnimation(),
+    ),
+  );
 }
