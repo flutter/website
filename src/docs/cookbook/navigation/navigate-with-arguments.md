@@ -155,10 +155,9 @@ The `onGenerateRoute()` function creates the correct route based on the given
 {% comment %}
 RegEx removes the return statement, removed "routes" property and adds the closing parenthesis at the end
 {% endcomment %}
-<?code-excerpt "lib/main.dart (OnGenerateRoute)" replace="/^return //g;/  routes:((.)*\n){3}//g;/$/\n)/g"?>
+<?code-excerpt "lib/main.dart (OnGenerateRoute)" replace="/^return //g;/  routes:((.)*\n){4}//g;/$/\n)/g"?>
 ```dart
 MaterialApp(
-  },
   // Provide a function to handle named routes.
   // Use this function to identify the named
   // route being pushed, and create the correct
