@@ -143,7 +143,7 @@ Widget build(BuildContext context) {
     child: Actions(
       dispatcher: LoggingActionDispatcher(),
       actions: <Type, Action<Intent>>{
-        SelectAllIntent: SelectAllAction(),
+        SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
         builder: (BuildContext context) =>
@@ -285,7 +285,10 @@ To invoke the action (if it exists), call:
 
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (InvokeActionExample)"?>
 ```dart
-Object? result = selectAll?.invoke(SelectAllIntent());
+Object? result;
+if (selectAll != null) {
+  result = Actions.of(context).invokeAction(selectAll, SelectAllIntent());
+}
 ```
 
 Combine that into one call with the following:
@@ -307,7 +310,7 @@ enabled action in the context:
 Widget build(BuildContext context) {
   return Actions(
     actions: <Type, Action<Intent>>{
-      SelectAllIntent: SelectAllAction(),
+      SelectAllIntent: SelectAllAction(model),
     },
     child: Builder(
       builder: (BuildContext context) => TextButton(
@@ -388,7 +391,7 @@ Widget build(BuildContext context) {
   return Actions(
     dispatcher: LoggingActionDispatcher(),
     actions: <Type, Action<Intent>>{
-      SelectAllIntent: SelectAllAction(),
+      SelectAllIntent: SelectAllAction(model),
     },
     child: Builder(
       builder: (BuildContext context) => TextButton(
