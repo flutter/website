@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter/foundation.dart';
 
 // #docregion CallbackShortcuts
 class CallbackShortcuts extends StatelessWidget {
@@ -43,7 +46,7 @@ Widget build(BuildContext context) {
     child: Actions(
       dispatcher: LoggingActionDispatcher(),
       actions: <Type, Action<Intent>>{
-        SelectAllIntent: SelectAllAction(),
+        SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
         builder: (BuildContext context) =>
@@ -73,6 +76,18 @@ class LoggingShortcutManager extends ShortcutManager {
   }
 }
 // #enddocregion LoggingShortcutManager
+
+class SelectAllIntent extends Intent {
+  const SelectAllIntent({this.controller});
+
+ final TextEditingController? controller;
+}
+
+class Model {
+  void selectAll() {}
+}
+
+Model model = Model();
 
 // #docregion SelectAllAction
 class SelectAllAction extends Action<SelectAllIntent> {
@@ -107,27 +122,39 @@ class SelectAllExample extends StatelessWidget {
   }
 // #enddocregion SelectAllExample
 }
+
+late BuildContext context;
+
 void findAndInvokeExample() {
 // #docregion MaybeFindExample
   Action<SelectAllIntent>? selectAll = Actions.maybeFind<SelectAllIntent>(context);
 // #enddocregion MaybeFindExample
 // #docregion InvokeActionExample
-  Object? result = selectAll?.invoke(SelectAllIntent());
+  Object? result;
+  if (selectAll != null) {
+    result = Actions.of(context).invokeAction(selectAll, SelectAllIntent());
+  }
 // #enddocregion InvokeActionExample
+  print('$result');
 }
 void maybeInvokeExample() {
 // #docregion MaybeInvokeExample
   Object? result = Actions.maybeInvoke<SelectAllIntent>(context, SelectAllIntent());
 // #enddocregion MaybeInvokeExample
+  print('$result');
 }
 
 class HandlerExample extends StatelessWidget {
+  HandlerExample(this.controller);
+
+  final TextEditingController controller;
+
 // #docregion HandlerExample
   @override
   Widget build(BuildContext context) {
     return Actions(
       actions: <Type, Action<Intent>>{
-        SelectAllIntent: SelectAllAction(),
+        SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
         builder: (BuildContext context) => TextButton(
@@ -164,7 +191,7 @@ class LoggingActionDispatcherExample extends StatelessWidget {
     return Actions(
       dispatcher: LoggingActionDispatcher(),
       actions: <Type, Action<Intent>>{
-        SelectAllIntent: SelectAllAction(),
+        SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
         builder: (BuildContext context) => TextButton(
