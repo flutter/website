@@ -85,7 +85,6 @@ activators and executes callbacks for them:
 <!-- This should be skipped for analysis because it includes ShortcutActivator, which isn't
      available on stable. Once it is available on stable, the skip can be removed. --> 
 <!--skip-->
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (CallbackShortcuts)"?>
 ```dart
 class CallbackShortcuts extends StatelessWidget {
   const CallbackShortcuts({
