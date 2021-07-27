@@ -213,7 +213,7 @@ The following example assumes that you want to generate the
 frameworks to `some/path/MyApp/Flutter/`.
 
 ```sh
-flutter build ios-framework --xcframework --no-universal --output=some/path/MyApp/Flutter/
+flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
 ```text
@@ -308,7 +308,7 @@ The App.xcframework and plugin frameworks are generated
 as described in Option B.
 
 ```sh
-flutter build ios-framework --cocoapods --xcframework --no-universal --output=some/path/MyApp/Flutter/
+flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
 ```
 
 ```text
