@@ -5,7 +5,7 @@ description: Open job listings for the Flutter and Dart teams.
 
 We currently have the following job openings on the Flutter and Dart teams:
 
-* [Framework Engineer](/jobsframework)
+* [Framework Engineer](/jobs/framework)
 * [iOS Engineer](/jobs/ios)
 * [Engine Web Engineer](/jobs/engine_web)
 * [Senior Technical Program Manager](/jobs/tpm)
