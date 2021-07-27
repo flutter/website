@@ -46,6 +46,8 @@ class Item {
 }
 
 class MyCartTotalWidget extends StatelessWidget {
+  const MyCartTotalWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // #docregion descendant
@@ -59,6 +61,8 @@ class MyCartTotalWidget extends StatelessWidget {
 }
 
 class MyCartUsingWidget extends StatelessWidget {
+  const MyCartUsingWidget({Key? key}) : super(key: key);
+
   @override
   // #docregion build
   // GOOD
@@ -75,6 +79,8 @@ class MyCartUsingWidget extends StatelessWidget {
 }
 
 class MyCatalog extends StatelessWidget {
+  const MyCatalog({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -88,9 +94,9 @@ class MyCatalog extends StatelessWidget {
 }
 
 class MyCatalogItem extends StatelessWidget {
-  final Item item;
+  const MyCatalogItem(this.item, {Key? key}) : super(key: key);
 
-  MyCatalogItem(this.item);
+  final Item item;
 
   @override
   Widget build(BuildContext context) {
@@ -115,12 +121,14 @@ class MyCatalogItem extends StatelessWidget {
 }
 
 class MyHomepage extends StatelessWidget {
+  const MyHomepage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
-        children: [
+        children: const [
           MyCatalog(),
           MyCartUsingWidget(),
           MyCartTotalWidget(),

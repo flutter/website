@@ -5,7 +5,7 @@ class Todo {
   final String title;
   final String description;
 
-  Todo(this.title, this.description);
+  const Todo(this.title, this.description);
 }
 
 void main() {
@@ -26,15 +26,15 @@ void main() {
 }
 
 class TodosScreen extends StatelessWidget {
-  final List<Todo> todos;
+  const TodosScreen({Key? key, required this.todos}) : super(key: key);
 
-  TodosScreen({Key? key, required this.todos}) : super(key: key);
+  final List<Todo> todos;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Todos'),
+        title: const Text('Todos'),
       ),
       // #docregion builder
       body: ListView.builder(
@@ -49,7 +49,7 @@ class TodosScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(),
+                  builder: (context) => const DetailScreen(),
                   // Pass the arguments as part of the RouteSettings. The
                   // DetailScreen reads the arguments from these settings.
                   settings: RouteSettings(
@@ -68,6 +68,8 @@ class TodosScreen extends StatelessWidget {
 
 // #docregion DetailScreen
 class DetailScreen extends StatelessWidget {
+  const DetailScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final todo = ModalRoute.of(context)!.settings.arguments as Todo;
@@ -78,7 +80,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Text(todo.description),
       ),
     );

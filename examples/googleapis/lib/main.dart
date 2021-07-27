@@ -5,14 +5,21 @@
 import 'dart:async';
 import 'dart:convert';
 
+// #docregion authImport
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
+// #enddocregion authImport
+
 import 'package:flutter/material.dart';
 
+// #docregion googleImport
 /// Provides the `GoogleSignIn` class
 import 'package:google_sign_in/google_sign_in.dart';
+// #enddocregion googleImport
 
+// #docregion youtubeImport
 /// Provides the `YouTubeApi` class.
 import 'package:googleapis/youtube/v3.dart';
+// #enddocregion youtubeImport
 
 const _title = 'My YouTube Favorites';
 
@@ -33,9 +40,11 @@ class _LikedVideosWidget extends StatefulWidget {
 }
 
 class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
+  // #docregion init
   final _googleSignIn = GoogleSignIn(
     scopes: <String>[YouTubeApi.youtubeReadonlyScope],
   );
+  // #enddocregion init
 
   GoogleSignInAccount? _currentUser;
   List<PlaylistItemSnippet>? _favoriteVideos;
@@ -55,80 +64,89 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: const Text(_title),
-        ),
-        body: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 520),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: _widgets(),
-            ),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(_title),
+      ),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 520),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: _widgets(),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  List<Widget> _widgets() => <Widget>[
-        if (_currentUser == null) ...[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: const Text('You are not currently signed in.'),
+  List<Widget> _widgets() {
+    return [
+      if (_currentUser == null) ...[
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text('You are not currently signed in.'),
+        ),
+        ElevatedButton(
+          onPressed: _onSignIn,
+          child: const Text('Sign in'),
+        ),
+      ],
+      if (_currentUser != null) ...[
+        ListTile(
+          leading: GoogleUserCircleAvatar(
+            identity: _currentUser!,
           ),
-          ElevatedButton(
-            onPressed: _onSignIn,
-            child: const Text('Sign in'),
+          title: Text(_currentUser!.displayName ?? ''),
+          subtitle: Text(_currentUser!.email),
+        ),
+        ElevatedButton(
+          onPressed: _onSignOut,
+          child: const Text('Sign out'),
+        ),
+        if (_favoriteVideos != null)
+          ListView.builder(
+            shrinkWrap: true,
+            itemCount: _favoriteVideos!.length,
+            itemBuilder: (ctx, index) {
+              final fav = _favoriteVideos![index];
+              final thumbnailUrl = fav.thumbnails!.default_!.url!;
+              return ListTile(
+                minVerticalPadding: 20,
+                leading: Image.network(
+                  thumbnailUrl,
+                  fit: BoxFit.contain,
+                  errorBuilder: (context, error, stackTrace) {
+                    Timer.run(
+                      () => _snackbarError(
+                        LineSplitter.split(error.toString()).first,
+                      ),
+                    );
+                    return const Icon(Icons.error, color: Colors.red);
+                  },
+                ),
+                title: Text(fav.title ?? '<unknown>'),
+              );
+            },
           ),
-        ],
-        if (_currentUser != null) ...[
-          ListTile(
-            leading: GoogleUserCircleAvatar(
-              identity: _currentUser!,
-            ),
-            title: Text(_currentUser!.displayName ?? ''),
-            subtitle: Text(_currentUser!.email),
-          ),
-          ElevatedButton(
-            onPressed: _onSignOut,
-            child: const Text('Sign out'),
-          ),
-          if (_favoriteVideos != null)
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: _favoriteVideos!.length,
-              itemBuilder: (ctx, index) {
-                final fav = _favoriteVideos![index];
-                final thumbnailUrl = fav.thumbnails!.default_!.url!;
-                return ListTile(
-                  minVerticalPadding: 20,
-                  leading: Image.network(
-                    thumbnailUrl,
-                    fit: BoxFit.contain,
-                    errorBuilder: (context, error, stackTrace) {
-                      Timer.run(
-                        () => _snackbarError(
-                          LineSplitter.split(error.toString()).first,
-                        ),
-                      );
-                      return Icon(Icons.error, color: Colors.red);
-                    },
-                  ),
-                  title: Text(fav.title ?? '<unknown>'),
-                );
-              },
-            ),
-        ],
-      ];
+      ],
+    ];
+  }
 
   Future<void> _downloadLikedList() async {
+    // #docregion signinCall
     var httpClient = (await _googleSignIn.authenticatedClient())!;
+    // #enddocregion signinCall
+
+    // #docregion playlist
     var youTubeApi = YouTubeApi(httpClient);
 
     var favorites = await youTubeApi.playlistItems.list(
       ['snippet'],
       playlistId: 'LL', // Liked List
     );
+    // #enddocregion playlist
 
     setState(() {
       _favoriteVideos = favorites.items!.map((e) => e.snippet!).toList();
@@ -159,7 +177,6 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
       }
     }
 
-    print(message);
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(message),
     ));

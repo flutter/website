@@ -60,7 +60,7 @@ to simply read (but not write) an end-users YouTube data, use the
 [`youtubeReadonlyScope`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi/youtubeReadonlyScope-constant.html)
 when authenticating the user.
 
-<?code-excerpt "lib/main.dart" skip="13" take="2"?>
+<?code-excerpt "lib/main.dart (youtubeImport)"?>
 ```dart
 /// Provides the `YouTubeApi` class.
 import 'package:googleapis/youtube/v3.dart';
@@ -83,7 +83,7 @@ Use the [google_sign_in]({{site.pub-pkg}}/google_sign_in) package to
 authenticate users with their Google identity. You will have to configure signin
 for each platform you want to support.
 
-<?code-excerpt "lib/main.dart" skip="10" take="2"?>
+<?code-excerpt "lib/main.dart (googleImport)"?>
 ```dart
 /// Provides the `GoogleSignIn` class
 import 'package:google_sign_in/google_sign_in.dart';
@@ -93,7 +93,7 @@ When you instantiate the
 [`GoogleSignIn`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn-class.html)
 class, you provide the desired scopes as discussed in the previous section.
 
-<?code-excerpt "lib/main.dart" skip="35" take="3"?>
+<?code-excerpt "lib/main.dart (init)"?>
 ```dart
 final _googleSignIn = GoogleSignIn(
   scopes: <String>[YouTubeApi.youtubeReadonlyScope],
@@ -115,7 +115,7 @@ package provides an
 `GoogleSignIn`:
 [`authenticatedClient`]({{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html).
 
-<?code-excerpt "lib/main.dart" skip="7" take="1"?>
+<?code-excerpt "lib/main.dart (authImport)"?>
 ```dart
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 ```
@@ -124,7 +124,7 @@ You can listen to
 [`onCurrentUserChanged`]({{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html).
 When event value is not `null`, you can create an authenticated client.
 
-<?code-excerpt "lib/main.dart" skip="124" take="1"?>
+<?code-excerpt "lib/main.dart (signinCall)"?>
 ```dart
 var httpClient = (await _googleSignIn.authenticatedClient())!;
 ```
@@ -136,7 +136,7 @@ includes the nessesary credentials when invoking Google API classes.
 
 Use the API to create the desired API type and call methods, for instance:
 
-<?code-excerpt "lib/main.dart" skip="125" take="6"?>
+<?code-excerpt "lib/main.dart (playlist)"?>
 ```dart
 var youTubeApi = YouTubeApi(httpClient);
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       title: 'Returning Data',
       home: HomeScreen(),
     ),
@@ -12,14 +12,18 @@ void main() {
 
 // #docregion HomeScreen
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Returning Data Demo'),
+        title: const Text('Returning Data Demo'),
       ),
       // Create the SelectionButton widget in the next step.
-      body: Center(child: SelectionButton()),
+      body: const Center(
+        child: SelectionButton(),
+      ),
     );
   }
 }
@@ -27,13 +31,15 @@ class HomeScreen extends StatelessWidget {
 
 // #docregion SelectionButton
 class SelectionButton extends StatelessWidget {
+  const SelectionButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
-      child: Text('Pick an option, any option!'),
+      child: const Text('Pick an option, any option!'),
     );
   }
 
@@ -43,7 +49,7 @@ class SelectionButton extends StatelessWidget {
     final result = await Navigator.push(
       context,
       // Create the SelectionScreen in the next step.
-      MaterialPageRoute(builder: (context) => SelectionScreen()),
+      MaterialPageRoute(builder: (context) => const SelectionScreen()),
     );
   }
 }
@@ -51,16 +57,18 @@ class SelectionButton extends StatelessWidget {
 
 // #docregion SelectionScreen
 class SelectionScreen extends StatelessWidget {
+  const SelectionScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pick an option'),
+        title: const Text('Pick an option'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               // #docregion Yep
@@ -68,7 +76,7 @@ class SelectionScreen extends StatelessWidget {
                 onPressed: () {
                   // Pop here with "Yep"...
                 },
-                child: Text('Yep!'),
+                child: const Text('Yep!'),
               ),
               // #enddocregion Yep
             ),
@@ -79,7 +87,7 @@ class SelectionScreen extends StatelessWidget {
                 onPressed: () {
                   // Pop here with "Nope"...
                 },
-                child: Text('Nope.'),
+                child: const Text('Nope.'),
               ),
               // #enddocregion Nope
             )

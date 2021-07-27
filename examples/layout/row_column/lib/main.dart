@@ -3,17 +3,19 @@ import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
   debugPaintSizeEnabled = true; // Remove to suppress visual layout
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter layout demo'),
+          title: const Text('Flutter layout demo'),
         ),
         // Change to buildColumn() for the other column example
         body: Center(child: buildRow()),

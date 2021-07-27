@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   testWidgets('Codelab smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(new LogoApp());
+    await tester.pumpWidget(const LogoApp());
     expect(find.byType(FlutterLogo), findsOneWidget);
   });
 }

@@ -3,17 +3,19 @@ import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
   debugPaintSizeEnabled = false; // Set to true for visual layout
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter layout demo'),
+          title: const Text('Flutter layout demo'),
         ),
         body: Center(child: _buildImageColumn()),
       ),
@@ -21,17 +23,19 @@ class MyApp extends StatelessWidget {
   }
 
   // #docregion column
-  Widget _buildImageColumn() => Container(
-        decoration: BoxDecoration(
-          color: Colors.black26,
-        ),
-        child: Column(
-          children: [
-            _buildImageRow(1),
-            _buildImageRow(3),
-          ],
-        ),
-      );
+  Widget _buildImageColumn() {
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.black26,
+      ),
+      child: Column(
+        children: [
+          _buildImageRow(1),
+          _buildImageRow(3),
+        ],
+      ),
+    );
+  }
   // #enddocregion column
 
   // #docregion row
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(width: 10, color: Colors.black38),
-            borderRadius: const BorderRadius.all(const Radius.circular(8)),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
           ),
           margin: const EdgeInsets.all(4),
           child: Image.asset('images/pic$imageIndex.jpg'),

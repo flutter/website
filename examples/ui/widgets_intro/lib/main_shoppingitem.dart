@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 class Product {
   const Product({required this.name});
+
   final String name;
 }
 
-typedef void CartChangedCallback(Product product, bool inCart);
+typedef CartChangedCallback = Function(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({
@@ -32,7 +33,7 @@ class ShoppingListItem extends StatelessWidget {
   TextStyle? _getTextStyle(BuildContext context) {
     if (!inCart) return null;
 
-    return TextStyle(
+    return const TextStyle(
       color: Colors.black54,
       decoration: TextDecoration.lineThrough,
     );
@@ -59,7 +60,7 @@ void main() {
       home: Scaffold(
         body: Center(
           child: ShoppingListItem(
-            product: Product(name: 'Chips'),
+            product: const Product(name: 'Chips'),
             inCart: true,
             onCartChanged: (product, inCart) {},
           ),

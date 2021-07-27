@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void examples(BuildContext context) {
 // #docregion MaterialAppExample
-  MaterialApp(
+  const MaterialApp(
     title: 'Localizations Sample App',
     localizationsDelegates: AppLocalizations.localizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
@@ -30,15 +30,28 @@ void examples(BuildContext context) {
   Locale myLocale = Localizations.localeOf(context);
 // #enddocregion MyLocale
 
-  MaterialApp(
+  const MaterialApp(
 // #docregion SupportedLocales
-    supportedLocales: const [
+    supportedLocales: [
       Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
-      Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
-      Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
-      Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: 'CN'), // 'zh_Hans_CN'
-      Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'), // 'zh_Hant_TW'
-      Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'HK'), // 'zh_Hant_HK'
+      Locale.fromSubtags(
+          languageCode: 'zh',
+          scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
+      Locale.fromSubtags(
+          languageCode: 'zh',
+          scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
+      Locale.fromSubtags(
+          languageCode: 'zh',
+          scriptCode: 'Hans',
+          countryCode: 'CN'), // 'zh_Hans_CN'
+      Locale.fromSubtags(
+          languageCode: 'zh',
+          scriptCode: 'Hant',
+          countryCode: 'TW'), // 'zh_Hant_TW'
+      Locale.fromSubtags(
+          languageCode: 'zh',
+          scriptCode: 'Hant',
+          countryCode: 'HK'), // 'zh_Hant_HK'
     ],
 // #enddocregion SupportedLocales
   );

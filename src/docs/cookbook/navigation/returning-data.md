@@ -36,14 +36,18 @@ it launches the selection screen.
 <?code-excerpt "lib/main_step2.dart (HomeScreen)"?>
 ```dart
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Returning Data Demo'),
+        title: const Text('Returning Data Demo'),
       ),
       // Create the SelectionButton widget in the next step.
-      body: Center(child: SelectionButton()),
+      body: const Center(
+        child: SelectionButton(),
+      ),
     );
   }
 }
@@ -59,13 +63,15 @@ Now, create the SelectionButton, which does the following:
 <?code-excerpt "lib/main_step2.dart (SelectionButton)"?>
 ```dart
 class SelectionButton extends StatelessWidget {
+  const SelectionButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
-      child: Text('Pick an option, any option!'),
+      child: const Text('Pick an option, any option!'),
     );
   }
 
@@ -75,7 +81,7 @@ class SelectionButton extends StatelessWidget {
     final result = await Navigator.push(
       context,
       // Create the SelectionScreen in the next step.
-      MaterialPageRoute(builder: (context) => SelectionScreen()),
+      MaterialPageRoute(builder: (context) => const SelectionScreen()),
     );
   }
 }
@@ -94,23 +100,25 @@ The next step adds code to return data.
 <?code-excerpt "lib/main_step2.dart (SelectionScreen)"?>
 ```dart
 class SelectionScreen extends StatelessWidget {
+  const SelectionScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pick an option'),
+        title: const Text('Pick an option'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
                   // Pop here with "Yep"...
                 },
-                child: Text('Yep!'),
+                child: const Text('Yep!'),
               ),
             ),
             Padding(
@@ -119,7 +127,7 @@ class SelectionScreen extends StatelessWidget {
                 onPressed: () {
                   // Pop here with "Nope"...
                 },
-                child: Text('Nope.'),
+                child: const Text('Nope.'),
               ),
             )
           ],
@@ -147,7 +155,7 @@ ElevatedButton(
     // Close the screen and return "Yep!" as the result.
     Navigator.pop(context, 'Yep!');
   },
-  child: Text('Yep!'),
+  child: const Text('Yep!'),
 )
 ```
 
@@ -160,7 +168,7 @@ ElevatedButton(
     // Close the screen and return "Nope." as the result.
     Navigator.pop(context, 'Nope.');
   },
-  child: Text('Nope.'),
+  child: const Text('Nope.'),
 )
 ```
 
@@ -181,7 +189,7 @@ void _navigateAndDisplaySelection(BuildContext context) async {
   // Navigator.pop on the Selection Screen.
   final result = await Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => SelectionScreen()),
+    MaterialPageRoute(builder: (context) => const SelectionScreen()),
   );
 
   // After the Selection Screen returns a result, hide any previous snackbars
@@ -200,7 +208,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       title: 'Returning Data',
       home: HomeScreen(),
     ),
@@ -208,25 +216,31 @@ void main() {
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Returning Data Demo'),
+        title: const Text('Returning Data Demo'),
       ),
-      body: Center(child: SelectionButton()),
+      body: const Center(
+        child: SelectionButton(),
+      ),
     );
   }
 }
 
 class SelectionButton extends StatelessWidget {
+  const SelectionButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
-      child: Text('Pick an option, any option!'),
+      child: const Text('Pick an option, any option!'),
     );
   }
 
@@ -237,7 +251,7 @@ class SelectionButton extends StatelessWidget {
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => SelectionScreen()),
+      MaterialPageRoute(builder: (context) => const SelectionScreen()),
     );
 
     // After the Selection Screen returns a result, hide any previous snackbars
@@ -249,11 +263,13 @@ class SelectionButton extends StatelessWidget {
 }
 
 class SelectionScreen extends StatelessWidget {
+  const SelectionScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pick an option'),
+        title: const Text('Pick an option'),
       ),
       body: Center(
         child: Column(
@@ -266,7 +282,7 @@ class SelectionScreen extends StatelessWidget {
                   // Close the screen and return "Yep!" as the result.
                   Navigator.pop(context, 'Yep!');
                 },
-                child: Text('Yep!'),
+                child: const Text('Yep!'),
               ),
             ),
             Padding(
@@ -276,7 +292,7 @@ class SelectionScreen extends StatelessWidget {
                   // Close the screen and return "Nope." as the result.
                   Navigator.pop(context, 'Nope.');
                 },
-                child: Text('Nope.'),
+                child: const Text('Nope.'),
               ),
             )
           ],

@@ -10,17 +10,17 @@ void main() {
   runApp(
     ChangeNotifierProvider(
       create: (context) => CartModel(),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
 // #enddocregion main
 
 Map<String, WidgetBuilder> _routes = {
-  '/setstate': (context) => set_state.HelperScaffoldWrapper(),
-  '/provider': (context) => MyHomepage(),
-  '/callbacks': (context) => callbacks.MyHomepage(),
-  '/perf': (context) => performance.MyHomepage(),
+  '/setstate': (context) => const set_state.HelperScaffoldWrapper(),
+  '/provider': (context) => const MyHomepage(),
+  '/callbacks': (context) => const callbacks.MyHomepage(),
+  '/perf': (context) => const performance.MyHomepage(),
 };
 
 // #docregion multi-provider-main
@@ -31,19 +31,21 @@ void multiProviderMain() {
         ChangeNotifierProvider(create: (context) => CartModel()),
         Provider(create: (context) => SomeOtherClass()),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
 // #enddocregion multi-provider-main
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter State Management Code Excerpts',
       routes: _routes,
-      home: Material(
+      home: const Material(
         child: _Menu(),
       ),
     );
@@ -53,16 +55,22 @@ class MyApp extends StatelessWidget {
 class SomeOtherClass {}
 
 class _Menu extends StatelessWidget {
+  const _Menu({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Simple state management')),
+      appBar: AppBar(
+        title: const Text('Simple state management'),
+      ),
       body: Wrap(
-        children: _routes.keys
-            .map((name) => TextButton(
-                onPressed: () => Navigator.pushNamed(context, name),
-                child: Text(name)))
-            .toList(growable: false),
+        children: [
+          for (final name in _routes.keys)
+            TextButton(
+              onPressed: () => Navigator.pushNamed(context, name),
+              child: Text(name),
+            )
+        ],
       ),
     );
   }

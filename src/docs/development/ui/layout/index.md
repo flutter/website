@@ -136,7 +136,7 @@ Add the `Text` widget to the `Center` widget:
 
 <?code-excerpt "lib/main.dart (centered-text)" replace="/body: //g"?>
 ```dart
-Center(
+const Center(
   child: Text('Hello World'),
 ),
 ```
@@ -159,15 +159,17 @@ property for the home page.
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter layout demo'),
+          title: const Text('Flutter layout demo'),
         ),
-        body: Center(
+        body: const Center(
           child: Text('Hello World'),
         ),
       ),
@@ -194,11 +196,13 @@ For a non-Material app, you can add the `Center` widget to the app's
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Colors.white),
-      child: Center(
+      decoration: const BoxDecoration(color: Colors.white),
+      child: const Center(
         child: Text(
           'Hello World',
           textDirection: TextDirection.ltr,
@@ -469,8 +473,8 @@ uses this property to pack the star icons together.
       Icon(Icons.star, color: Colors.green[500]),
       Icon(Icons.star, color: Colors.green[500]),
       Icon(Icons.star, color: Colors.green[500]),
-      Icon(Icons.star, color: Colors.black),
-      Icon(Icons.star, color: Colors.black),
+      const Icon(Icons.star, color: Colors.black),
+      const Icon(Icons.star, color: Colors.black),
     ],
   )
   {% endprettify %}
@@ -514,18 +518,18 @@ var stars = Row(
     Icon(Icons.star, color: Colors.green[500]),
     Icon(Icons.star, color: Colors.green[500]),
     Icon(Icons.star, color: Colors.green[500]),
-    Icon(Icons.star, color: Colors.black),
-    Icon(Icons.star, color: Colors.black),
+    const Icon(Icons.star, color: Colors.black),
+    const Icon(Icons.star, color: Colors.black),
   ],
 );
 
 final [!ratings!] = Container(
-  padding: EdgeInsets.all(20),
+  padding: const EdgeInsets.all(20),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
       stars,
-      Text(
+      const Text(
         '170 Reviews',
         style: TextStyle(
           color: Colors.black,
@@ -557,7 +561,7 @@ The `iconList` variable defines the icons row:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (iconList)" replace="/iconList/[!$&!]/g"?>
 ```dart
-final descTextStyle = TextStyle(
+const descTextStyle = TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.w800,
   fontFamily: 'Roboto',
@@ -571,29 +575,29 @@ final descTextStyle = TextStyle(
 final [!iconList!] = DefaultTextStyle.merge(
   style: descTextStyle,
   child: Container(
-    padding: EdgeInsets.all(20),
+    padding: const EdgeInsets.all(20),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Column(
           children: [
             Icon(Icons.kitchen, color: Colors.green[500]),
-            Text('PREP:'),
-            Text('25 min'),
+            const Text('PREP:'),
+            const Text('25 min'),
           ],
         ),
         Column(
           children: [
             Icon(Icons.timer, color: Colors.green[500]),
-            Text('COOK:'),
-            Text('1 hr'),
+            const Text('COOK:'),
+            const Text('1 hr'),
           ],
         ),
         Column(
           children: [
             Icon(Icons.restaurant, color: Colors.green[500]),
-            Text('FEEDS:'),
-            Text('4-6'),
+            const Text('FEEDS:'),
+            const Text('4-6'),
           ],
         ),
       ],
@@ -608,7 +612,7 @@ as well as the title and text that describes the Pavlova:
 <?code-excerpt "layout/pavlova/lib/main.dart (leftColumn)" replace="/leftColumn/[!$&!]/g"?>
 ```dart
 final [!leftColumn!] = Container(
-  padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+  padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
   child: Column(
     children: [
       titleText,
@@ -634,13 +638,13 @@ For more information, see [Adding assets and images][].
 ```dart
 body: Center(
   child: Container(
-    margin: EdgeInsets.fromLTRB(0, 40, 0, 30),
+    margin: const EdgeInsets.fromLTRB(0, 40, 0, 30),
     height: 600,
     child: Card(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             width: 440,
             child: leftColumn,
           ),
@@ -737,17 +741,19 @@ of the column to a lighter grey.
 <div class="col-lg-7">
   <?code-excerpt "layout/container/lib/main.dart (column)" replace="/\bContainer/[!$&!]/g;"?>
   {% prettify dart context="html" %}
-  Widget _buildImageColumn() => [!Container!](
-        decoration: BoxDecoration(
-          color: Colors.black26,
-        ),
-        child: Column(
-          children: [
-            _buildImageRow(1),
-            _buildImageRow(3),
-          ],
-        ),
-      );
+  Widget _buildImageColumn() {
+    return [!Container!](
+      decoration: const BoxDecoration(
+        color: Colors.black26,
+      ),
+      child: Column(
+        children: [
+          _buildImageRow(1),
+          _buildImageRow(3),
+        ],
+      ),
+    );
+  }
   {% endprettify %}
 </div>
 <div class="col-lg-5 text-center">
@@ -765,7 +771,7 @@ Widget _buildDecoratedImage(int imageIndex) => Expanded(
       child: [!Container!](
         decoration: BoxDecoration(
           border: Border.all(width: 10, color: Colors.black38),
-          borderRadius: const BorderRadius.all(const Radius.circular(8)),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
         ),
         margin: const EdgeInsets.all(4),
         child: Image.asset('images/pic$imageIndex.jpg'),
@@ -910,36 +916,40 @@ its render box.
 
 <?code-excerpt "layout/grid_and_list/lib/main.dart (list)" replace="/\ListView/[!$&!]/g;"?>
 ```dart
-Widget _buildList() => [!ListView!](
-      children: [
-        _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
-        _tile('The Castro Theater', '429 Castro St', Icons.theaters),
-        _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
-        _tile('Roxie Theater', '3117 16th St', Icons.theaters),
-        _tile('United Artists Stonestown Twin', '501 Buckingham Way',
-            Icons.theaters),
-        _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
-        Divider(),
-        _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
-        _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
-        _tile(
-            'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
-        _tile('La Ciccia', '291 30th St', Icons.restaurant),
-      ],
-    );
+Widget _buildList() {
+  return [!ListView!](
+    children: [
+      _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
+      _tile('The Castro Theater', '429 Castro St', Icons.theaters),
+      _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
+      _tile('Roxie Theater', '3117 16th St', Icons.theaters),
+      _tile('United Artists Stonestown Twin', '501 Buckingham Way',
+          Icons.theaters),
+      _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
+      const Divider(),
+      _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
+      _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
+      _tile(
+          'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
+      _tile('La Ciccia', '291 30th St', Icons.restaurant),
+    ],
+  );
+}
 
-ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
-      title: Text(title,
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 20,
-          )),
-      subtitle: Text(subtitle),
-      leading: Icon(
-        icon,
-        color: Colors.blue[500],
-      ),
-    );
+ListTile _tile(String title, String subtitle, IconData icon) {
+  return ListTile(
+    title: Text(title,
+        style: const TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 20,
+        )),
+    subtitle: Text(subtitle),
+    leading: Icon(
+      icon,
+      color: Colors.blue[500],
+    ),
+  );
+}
 ```
 
 <hr>
@@ -989,18 +999,19 @@ or partially overlap the base widget.
 
 <?code-excerpt "layout/card_and_stack/lib/main.dart (Stack)" replace="/\bStack/[!$&!]/g;"?>
 ```dart
-Widget _buildStack() => [!Stack!](
+Widget _buildStack() {
+  return [!Stack!](
     alignment: const Alignment(0.6, 0.6),
     children: [
-      CircleAvatar(
+      const CircleAvatar(
         backgroundImage: AssetImage('images/pic.jpg'),
         radius: 100,
       ),
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.black45,
         ),
-        child: Text(
+        child: const Text(
           'Mia B',
           style: TextStyle(
             fontSize: 20,
@@ -1011,6 +1022,7 @@ Widget _buildStack() => [!Stack!](
       ),
     ],
   );
+}
 ```
 
 <hr>
@@ -1075,31 +1087,36 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 <?code-excerpt "layout/card_and_stack/lib/main.dart (Card)" replace="/\bCard/[!$&!]/g;"?>
 ```dart
-Widget _buildCard() => SizedBox(
+Widget _buildCard() {
+  return SizedBox(
     height: 210,
     child: [!Card!](
       child: Column(
         children: [
           ListTile(
-            title: Text('1625 Main Street',
-                style: TextStyle(fontWeight: FontWeight.w500)),
-            subtitle: Text('My City, CA 99984'),
+            title: const Text(
+              '1625 Main Street',
+              style: TextStyle(fontWeight: FontWeight.w500),
+            ),
+            subtitle: const Text('My City, CA 99984'),
             leading: Icon(
               Icons.restaurant_menu,
               color: Colors.blue[500],
             ),
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            title: Text('(408) 555-1212',
-                style: TextStyle(fontWeight: FontWeight.w500)),
+            title: const Text(
+              '(408) 555-1212',
+              style: TextStyle(fontWeight: FontWeight.w500),
+            ),
             leading: Icon(
               Icons.contact_phone,
               color: Colors.blue[500],
             ),
           ),
           ListTile(
-            title: Text('costa@example.com'),
+            title: const Text('costa@example.com'),
             leading: Icon(
               Icons.contact_mail,
               color: Colors.blue[500],
@@ -1109,6 +1126,7 @@ Widget _buildCard() => SizedBox(
       ),
     ),
   );
+}
 ```
 <hr>
 

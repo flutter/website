@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(HeroApp());
+void main() => runApp(const HeroApp());
 
 class HeroApp extends StatelessWidget {
+  const HeroApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Transition Demo',
       home: MainScreen(),
     );
@@ -13,16 +15,18 @@ class HeroApp extends StatelessWidget {
 }
 
 class MainScreen extends StatelessWidget {
+  const MainScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Main Screen'),
+        title: const Text('Main Screen'),
       ),
       body: GestureDetector(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return DetailScreen();
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const DetailScreen();
           }));
         },
         // #docregion Hero1
@@ -39,6 +43,8 @@ class MainScreen extends StatelessWidget {
 }
 
 class DetailScreen extends StatelessWidget {
+  const DetailScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

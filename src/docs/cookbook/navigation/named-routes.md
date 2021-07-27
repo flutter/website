@@ -44,18 +44,20 @@ button that navigates back to the first.
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: const Text('First Screen'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             // Navigate to the second screen when tapped.
           },
-          child: Text('Launch screen'),
+          child: const Text('Launch screen'),
         ),
       ),
     );
@@ -63,18 +65,20 @@ class FirstScreen extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
+  const SecondScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen'),
+        title: const Text('Second Screen'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             // Navigate back to first screen when tapped.
           },
-          child: Text('Go back!'),
+          child: const Text('Go back!'),
         ),
       ),
     );
@@ -104,9 +108,9 @@ MaterialApp(
   initialRoute: '/',
   routes: {
     // When navigating to the "/" route, build the FirstScreen widget.
-    '/': (context) => FirstScreen(),
+    '/': (context) => const FirstScreen(),
     // When navigating to the "/second" route, build the SecondScreen widget.
-    '/second': (context) => SecondScreen(),
+    '/second': (context) => const SecondScreen(),
   },
 )
 ```
@@ -170,20 +174,22 @@ void main() {
       initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => FirstScreen(),
+        '/': (context) => const FirstScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => SecondScreen(),
+        '/second': (context) => const SecondScreen(),
       },
     ),
   );
 }
 
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: const Text('First Screen'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -192,7 +198,7 @@ class FirstScreen extends StatelessWidget {
             // Navigate to the second screen using a named route.
             Navigator.pushNamed(context, '/second');
           },
-          child: Text('Launch screen'),
+          child: const Text('Launch screen'),
         ),
       ),
     );
@@ -200,11 +206,13 @@ class FirstScreen extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
+  const SecondScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen'),
+        title: const Text('Second Screen'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -214,7 +222,7 @@ class SecondScreen extends StatelessWidget {
             // off the stack.
             Navigator.pop(context);
           },
-          child: Text('Go back!'),
+          child: const Text('Go back!'),
         ),
       ),
     );

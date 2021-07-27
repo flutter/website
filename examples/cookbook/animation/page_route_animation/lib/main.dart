@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Page1(),
     ),
   );
 }
 
 class Page1 extends StatelessWidget {
+  const Page1({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class Page1 extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
-          child: Text('Go!'),
+          child: const Text('Go!'),
         ),
       ),
     );
@@ -27,13 +29,13 @@ class Page1 extends StatelessWidget {
 
 Route _createRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => Page2(),
+    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     // #docregion transitionsBuilder
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       // #docregion Tween
-      var begin = Offset(0.0, 1.0);
-      var end = Offset.zero;
-      var curve = Curves.ease;
+      const begin = Offset(0.0, 1.0);
+      const end = Offset.zero;
+      const curve = Curves.ease;
 
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
       // #enddocregion Tween
@@ -50,11 +52,13 @@ Route _createRoute() {
 }
 
 class Page2 extends StatelessWidget {
+  const Page2({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: const Center(
         child: Text('Page 2'),
       ),
     );

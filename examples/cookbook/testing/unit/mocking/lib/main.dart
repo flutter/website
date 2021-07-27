@@ -6,8 +6,8 @@ import 'package:http/http.dart' as http;
 
 // #docregion fetchAlbum
 Future<Album> fetchAlbum(http.Client client) async {
-  final response =
-      await client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await client
+      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -26,7 +26,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({required this.userId, required this.id, required this.title});
+  const Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -37,10 +37,10 @@ class Album {
   }
 }
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Fetch Data Example'),
+          title: const Text('Fetch Data Example'),
         ),
         body: Center(
           child: FutureBuilder<Album>(
@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> {
               }
 
               // By default, show a loading spinner.
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             },
           ),
         ),

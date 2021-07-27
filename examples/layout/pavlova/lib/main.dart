@@ -3,10 +3,12 @@ import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
   debugPaintSizeEnabled = false; // Set to true for visual layout
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
   }
 
   Widget buildHomePage(String title) {
-    final titleText = Container(
+    const titleText = Padding(
       padding: EdgeInsets.all(20),
       child: Text(
         'Strawberry Pavlova',
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    final subTitle = Text(
+    const subTitle = Text(
       'Pavlova is a meringue-based dessert named after the Russian ballerina '
       'Anna Pavlova. Pavlova features a crisp crust and soft, light inside, '
       'topped with fruit and whipped cream.',
@@ -46,19 +48,19 @@ class MyApp extends StatelessWidget {
         Icon(Icons.star, color: Colors.green[500]),
         Icon(Icons.star, color: Colors.green[500]),
         Icon(Icons.star, color: Colors.green[500]),
-        Icon(Icons.star, color: Colors.black),
-        Icon(Icons.star, color: Colors.black),
+        const Icon(Icons.star, color: Colors.black),
+        const Icon(Icons.star, color: Colors.black),
       ],
     );
     // #enddocregion stars
 
     final ratings = Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           stars,
-          Text(
+          const Text(
             '170 Reviews',
             style: TextStyle(
               color: Colors.black,
@@ -74,7 +76,7 @@ class MyApp extends StatelessWidget {
     // #enddocregion ratings
 
     // #docregion iconList
-    final descTextStyle = TextStyle(
+    const descTextStyle = TextStyle(
       color: Colors.black,
       fontWeight: FontWeight.w800,
       fontFamily: 'Roboto',
@@ -88,29 +90,29 @@ class MyApp extends StatelessWidget {
     final iconList = DefaultTextStyle.merge(
       style: descTextStyle,
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
               children: [
                 Icon(Icons.kitchen, color: Colors.green[500]),
-                Text('PREP:'),
-                Text('25 min'),
+                const Text('PREP:'),
+                const Text('25 min'),
               ],
             ),
             Column(
               children: [
                 Icon(Icons.timer, color: Colors.green[500]),
-                Text('COOK:'),
-                Text('1 hr'),
+                const Text('COOK:'),
+                const Text('1 hr'),
               ],
             ),
             Column(
               children: [
                 Icon(Icons.restaurant, color: Colors.green[500]),
-                Text('FEEDS:'),
-                Text('4-6'),
+                const Text('FEEDS:'),
+                const Text('4-6'),
               ],
             ),
           ],
@@ -121,7 +123,7 @@ class MyApp extends StatelessWidget {
 
     // #docregion leftColumn
     final leftColumn = Container(
-      padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+      padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
       child: Column(
         children: [
           titleText,
@@ -145,13 +147,13 @@ class MyApp extends StatelessWidget {
       // #docregion body
       body: Center(
         child: Container(
-          margin: EdgeInsets.fromLTRB(0, 40, 0, 30),
+          margin: const EdgeInsets.fromLTRB(0, 40, 0, 30),
           height: 600,
           child: Card(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
+                SizedBox(
                   width: 440,
                   child: leftColumn,
                 ),

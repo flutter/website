@@ -61,7 +61,7 @@ class HeadingItem implements ListItem {
   }
 
   @override
-  Widget buildSubtitle(BuildContext context) => SizedBox();
+  Widget buildSubtitle(BuildContext context) => const SizedBox.shrink();
 }
 
 /// A ListItem that contains data to display a message.
@@ -147,17 +147,17 @@ void main() {
 class MyApp extends StatelessWidget {
   final List<ListItem> items;
 
-  MyApp({Key? key, required this.items}) : super(key: key);
+  const MyApp({Key? key, required this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final title = 'Mixed List';
+    const title = 'Mixed List';
 
     return MaterialApp(
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: ListView.builder(
           // Let the ListView know how many items it needs to build.
@@ -202,7 +202,7 @@ class HeadingItem implements ListItem {
   }
 
   @override
-  Widget buildSubtitle(BuildContext context) => SizedBox();
+  Widget buildSubtitle(BuildContext context) => const SizedBox.shrink();
 }
 
 /// A ListItem that contains data to display a message.

@@ -9,7 +9,7 @@ void theme(BuildContext context) {
     ),
     child: FloatingActionButton(
       onPressed: () {},
-      child: Icon(Icons.add),
+      child: const Icon(Icons.add),
     ),
   );
   // #enddocregion Theme
@@ -19,7 +19,7 @@ void theme(BuildContext context) {
     // Find and extend the parent theme using "copyWith". See the next
     // section for more info on `Theme.of`.
     data: Theme.of(context).copyWith(accentColor: Colors.yellow),
-    child: FloatingActionButton(
+    child: const FloatingActionButton(
       onPressed: null,
       child: Icon(Icons.add),
     ),

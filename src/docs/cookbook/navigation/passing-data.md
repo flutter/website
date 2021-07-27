@@ -41,7 +41,7 @@ class Todo {
   final String title;
   final String description;
 
-  Todo(this.title, this.description);
+  const Todo(this.title, this.description);
 }
 ```
 
@@ -95,16 +95,16 @@ This'll render the list on to the screen for you to get going!
 <?code-excerpt "lib/main_todoscreen.dart (TodosScreen)"?>
 ```dart
 class TodosScreen extends StatelessWidget {
-  final List<Todo> todos;
+  // Requiring the list of todos.
+  const TodosScreen({Key? key, required this.todos}) : super(key: key);
 
-  //requiring the list of todos
-  TodosScreen({Key? key, required this.todos}) : super(key: key);
+  final List<Todo> todos;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Todos'),
+        title: const Text('Todos'),
       ),
       //passing in the ListView.builder
       body: ListView.builder(
@@ -135,11 +135,11 @@ Then, build the UI using the given todo.
 <?code-excerpt "lib/main.dart (detail)"?>
 ```dart
 class DetailScreen extends StatelessWidget {
+  // In the constructor, require a Todo.
+  const DetailScreen({Key? key, required this.todo}) : super(key: key);
+
   // Declare a field that holds the Todo.
   final Todo todo;
-
-  // In the constructor, require a Todo.
-  DetailScreen({Key? key, required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +149,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Text(todo.description),
       ),
     );
@@ -202,34 +202,36 @@ class Todo {
   final String title;
   final String description;
 
-  Todo(this.title, this.description);
+  const Todo(this.title, this.description);
 }
 
 void main() {
-  runApp(MaterialApp(
-    title: 'Passing Data',
-    home: TodosScreen(
-      todos: List.generate(
-        20,
-        (i) => Todo(
-          'Todo $i',
-          'A description of what needs to be done for Todo $i',
+  runApp(
+    MaterialApp(
+      title: 'Passing Data',
+      home: TodosScreen(
+        todos: List.generate(
+          20,
+          (i) => Todo(
+            'Todo $i',
+            'A description of what needs to be done for Todo $i',
+          ),
         ),
       ),
     ),
-  ));
+  );
 }
 
 class TodosScreen extends StatelessWidget {
-  final List<Todo> todos;
+  const TodosScreen({Key? key, required this.todos}) : super(key: key);
 
-  TodosScreen({Key? key, required this.todos}) : super(key: key);
+  final List<Todo> todos;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Todos'),
+        title: const Text('Todos'),
       ),
       body: ListView.builder(
         itemCount: todos.length,
@@ -255,11 +257,11 @@ class TodosScreen extends StatelessWidget {
 }
 
 class DetailScreen extends StatelessWidget {
+  // In the constructor, require a Todo.
+  const DetailScreen({Key? key, required this.todo}) : super(key: key);
+
   // Declare a field that holds the Todo.
   final Todo todo;
-
-  // In the constructor, require a Todo.
-  DetailScreen({Key? key, required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -269,7 +271,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Text(todo.description),
       ),
     );
@@ -288,6 +290,8 @@ Next, create a detail screen that extracts and displays the title and descriptio
 <?code-excerpt "lib/main_routesettings.dart (DetailScreen)"?>
 ```dart
 class DetailScreen extends StatelessWidget {
+  const DetailScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final todo = ModalRoute.of(context)!.settings.arguments as Todo;
@@ -298,7 +302,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Text(todo.description),
       ),
     );
@@ -327,7 +331,7 @@ ListView.builder(
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailScreen(),
+            builder: (context) => const DetailScreen(),
             // Pass the arguments as part of the RouteSettings. The
             // DetailScreen reads the arguments from these settings.
             settings: RouteSettings(
@@ -352,7 +356,7 @@ class Todo {
   final String title;
   final String description;
 
-  Todo(this.title, this.description);
+  const Todo(this.title, this.description);
 }
 
 void main() {
@@ -373,15 +377,15 @@ void main() {
 }
 
 class TodosScreen extends StatelessWidget {
-  final List<Todo> todos;
+  const TodosScreen({Key? key, required this.todos}) : super(key: key);
 
-  TodosScreen({Key? key, required this.todos}) : super(key: key);
+  final List<Todo> todos;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Todos'),
+        title: const Text('Todos'),
       ),
       body: ListView.builder(
         itemCount: todos.length,
@@ -395,7 +399,7 @@ class TodosScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(),
+                  builder: (context) => const DetailScreen(),
                   // Pass the arguments as part of the RouteSettings. The
                   // DetailScreen reads the arguments from these settings.
                   settings: RouteSettings(
@@ -412,6 +416,8 @@ class TodosScreen extends StatelessWidget {
 }
 
 class DetailScreen extends StatelessWidget {
+  const DetailScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final todo = ModalRoute.of(context)!.settings.arguments as Todo;
@@ -422,7 +428,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Text(todo.description),
       ),
     );

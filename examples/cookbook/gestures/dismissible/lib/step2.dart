@@ -2,13 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 // MyApp is a StatefulWidget. This allows updating the state of the
 // widget when an item is removed.
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   MyAppState createState() {
@@ -21,7 +21,7 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final title = 'Dismissing Items';
+    const title = 'Dismissing Items';
 
     return MaterialApp(
       title: title,
@@ -30,7 +30,7 @@ class MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: ListView.builder(
           itemCount: items.length,
@@ -53,7 +53,9 @@ class MyAppState extends State<MyApp> {
                 ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text('$item dismissed')));
               },
-              child: ListTile(title: Text('$item')),
+              child: ListTile(
+                title: Text(item),
+              ),
             );
           },
           // #enddocregion Dismissible

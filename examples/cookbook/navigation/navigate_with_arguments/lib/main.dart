@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // #docregion Routes
     // #docregion OnGenerateRoute
     return MaterialApp(
       routes: {
-        ExtractArgumentsScreen.routeName: (context) => ExtractArgumentsScreen(),
+        ExtractArgumentsScreen.routeName: (context) =>
+            const ExtractArgumentsScreen(),
       },
       // #enddocregion Routes
       // Provide a function to handle named routes.
@@ -47,22 +50,24 @@ class MyApp extends StatelessWidget {
       },
       // #enddocregion OnGenerateRoute
       title: 'Navigation with Arguments',
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: const Text('Home Screen'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             // #docregion PushNamed
             // A button that navigates to a named route.
             // The named route extracts the arguments
@@ -82,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('Navigate to screen that extracts arguments'),
+              child: const Text('Navigate to screen that extracts arguments'),
             ),
             // #enddocregion PushNamed
             // A button that navigates to a named route.
@@ -99,11 +104,12 @@ class HomeScreen extends StatelessWidget {
                   PassArgumentsScreen.routeName,
                   arguments: ScreenArguments(
                     'Accept Arguments Screen',
-                    'This message is extracted in the onGenerateRoute function.',
+                    'This message is extracted in the onGenerateRoute '
+                        'function.',
                   ),
                 );
               },
-              child: Text('Navigate to a named that accepts arguments'),
+              child: const Text('Navigate to a named that accepts arguments'),
             ),
           ],
         ),
@@ -116,6 +122,8 @@ class HomeScreen extends StatelessWidget {
 // A Widget that extracts the necessary arguments from
 // the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
+  const ExtractArgumentsScreen({Key? key}) : super(key: key);
+
   static const routeName = '/extractArguments';
 
   @override

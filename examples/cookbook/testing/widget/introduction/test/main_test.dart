@@ -47,4 +47,3 @@ class MyWidget extends StatelessWidget {
   }
 }
 // #enddocregion widget
-

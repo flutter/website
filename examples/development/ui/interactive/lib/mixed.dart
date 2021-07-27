@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 //---------------------------- ParentWidget ----------------------------
 
 class ParentWidget extends StatefulWidget {
+  const ParentWidget({Key? key}) : super(key: key);
+
   @override
   _ParentWidgetState createState() => _ParentWidgetState();
 }
@@ -18,7 +20,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       child: TapboxC(
         active: _active,
         onChanged: _handleTapboxChanged,
@@ -30,15 +32,16 @@ class _ParentWidgetState extends State<ParentWidget> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  TapboxC({
+  const TapboxC({
     Key? key,
-    this.active: false,
+    this.active = false,
     required this.onChanged,
   }) : super(key: key);
 
   final bool active;
   final ValueChanged<bool> onChanged;
 
+  @override
   _TapboxCState createState() => _TapboxCState();
 }
 
@@ -67,6 +70,7 @@ class _TapboxCState extends State<TapboxC> {
     widget.onChanged(!widget.active);
   }
 
+  @override
   Widget build(BuildContext context) {
     // This example adds a green border on tap down.
     // On tap up, the square changes to the opposite state.
@@ -78,7 +82,7 @@ class _TapboxCState extends State<TapboxC> {
       child: Container(
         child: Center(
           child: Text(widget.active ? 'Active' : 'Inactive',
-              style: TextStyle(fontSize: 32.0, color: Colors.white)),
+              style: const TextStyle(fontSize: 32.0, color: Colors.white)),
         ),
         width: 200.0,
         height: 200.0,

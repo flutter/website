@@ -3,12 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-void main() => runApp(VideoPlayerApp());
+void main() => runApp(const VideoPlayerApp());
 
 class VideoPlayerApp extends StatelessWidget {
+  const VideoPlayerApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Video Player Demo',
       home: VideoPlayerScreen(),
     );
@@ -16,7 +18,7 @@ class VideoPlayerApp extends StatelessWidget {
 }
 
 class VideoPlayerScreen extends StatefulWidget {
-  VideoPlayerScreen({Key? key}) : super(key: key);
+  const VideoPlayerScreen({Key? key}) : super(key: key);
 
   @override
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
@@ -56,7 +58,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Butterfly Video'),
+        title: const Text('Butterfly Video'),
       ),
       // #docregion FutureBuilder
       // Use a FutureBuilder to display a loading spinner while waiting for the
@@ -75,7 +77,9 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           } else {
             // If the VideoPlayerController is still initializing, show a
             // loading spinner.
-            return Center(child: CircularProgressIndicator());
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
           }
         },
       ),

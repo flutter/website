@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(LogoApp());
+void main() => runApp(const LogoApp());
 
 class LogoApp extends StatefulWidget {
+  const LogoApp({Key? key}) : super(key: key);
+
+  @override
   _LogoAppState createState() => _LogoAppState();
 }
 
@@ -11,10 +14,10 @@ class _LogoAppState extends State<LogoApp> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10),
+        margin: const EdgeInsets.symmetric(vertical: 10),
         height: 300,
         width: 300,
-        child: FlutterLogo(),
+        child: const FlutterLogo(),
       ),
     );
   }

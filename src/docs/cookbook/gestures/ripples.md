@@ -37,11 +37,11 @@ Create a ripple effect using the following steps:
 InkWell(
   // When the user taps the button, show a snackbar.
   onTap: () {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       content: Text('Tap'),
     ));
   },
-  child: Container(
+  child: const Padding(
     padding: EdgeInsets.all(12.0),
     child: Text('Flat Button'),
   ),
@@ -54,14 +54,16 @@ InkWell(
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final title = 'InkWell Demo';
+    const title = 'InkWell Demo';
 
-    return MaterialApp(
+    return const MaterialApp(
       title: title,
       home: MyHomePage(title: title),
     );
@@ -71,7 +73,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,23 +81,27 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Center(child: MyButton()),
+      body: const Center(
+        child: MyButton(),
+      ),
     );
   }
 }
 
 class MyButton extends StatelessWidget {
+  const MyButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // The InkWell wraps the custom flat button widget.
     return InkWell(
       // When the user taps the button, show a snackbar.
       onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text('Tap'),
         ));
       },
-      child: Container(
+      child: const Padding(
         padding: EdgeInsets.all(12.0),
         child: Text('Flat Button'),
       ),
