@@ -195,8 +195,8 @@ you could make a `LoggingShortcutManager`:
 ```dart
 class LoggingShortcutManager extends ShortcutManager {
   @override
-  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
-    final KeyEventResult result = super.handleKeypress(context, event);
+  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event, {LogicalKeySet? keysPressed}) {
+    final KeyEventResult result = super.handleKeypress(context, event, keysPressed: keysPressed);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');
     }
