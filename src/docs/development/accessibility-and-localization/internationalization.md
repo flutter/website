@@ -1,6 +1,6 @@
 ---
 title: Internationalizing Flutter apps
-short-title: i18n
+short-title: Internationalizing
 description: How to internationalize your Flutter app.
 ---
 
