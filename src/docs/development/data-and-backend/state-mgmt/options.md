@@ -153,7 +153,8 @@ An approach similar to Provider that is compile-safe and testable. It doesn't ha
 * [Getting started with Riverpod][]
 
 ## states_rebuilder
-is a Flutter state management combined with a dependency injection solution and an integrated router to get the best state management experience and speed up your development.
+An approach that combines state management with a dependency injection solution
+and an integrated router. For more information, see the following info:
 * [States Rebuilder][] project code
 * [States Rebuilder Documentation][]
 
