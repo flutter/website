@@ -152,6 +152,14 @@ An approach similar to Provider that is compile-safe and testable. It doesn't ha
 * [Riverpod][] homepage
 * [Getting started with Riverpod][]
 
+## states_rebuilder
+An approach that combines state management with a dependency injection solution
+and an integrated router. For more information, see the following info:
+* [States Rebuilder][] project code
+* [States Rebuilder Documentation][]
+
+[States Rebuilder]: {{site.github}}/GIfatahTH/states_rebuilder
+[States Rebuilder Documentation]: {{site.github}}/GIfatahTH/states_rebuilder/wiki
 [Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
 [Riverpod]: https://riverpod.dev/
 [Flutter-Movie]: {{site.github}}/o1298098/Flutter-Movie
