@@ -212,7 +212,7 @@ For more details, see
 This step covers creating a build archive and uploading
 your build to App Store Connect using Flutter build commands 
 and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
-in the Flutter project directory
+in the Flutter project directory.
 
 <ol markdown="1">
 <li markdown="1">
