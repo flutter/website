@@ -311,15 +311,14 @@ Set up a new temporary keychain to be used for code signing:
 keychain initialize
 ```
 
-{{site.alert.warning}}
-**Restore Login Keychain!**
-After running `keychain intialize` you **must** run
+{{site.alert.secondary}}
+  **Restore Login Keychain!**
+  After running `keychain initialize` you **must** run the following:<br>
 
-```bash
-keychain use-login
-```
+  `keychain use-login`
 
-in order set your login keychain as the default to avoid potential authentication issues with apps on your machine.
+  This sets your login keychain as the default to avoid potential
+  authentication issues with apps on your machine.
 {{site.alert.end}}
 
 </li>
