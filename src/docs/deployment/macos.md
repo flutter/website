@@ -409,7 +409,8 @@ app-store-connect publish \
 </li>
 <li markdown="1">
 
-As mentioned earlier, don't forget to set your login keychain as the default to avoid authentication issues
+As mentioned earlier, don't forget to set your login keychain
+as the default to avoid authentication issues
 with apps on your machine:
 ```bash
 keychain use-login
