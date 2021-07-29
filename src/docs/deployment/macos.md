@@ -273,7 +273,7 @@ app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
 ```
 
 Where `cert_key` is either your exported Mac App Distribution certificate private key
-or a new private key which will automatically generate a new certificate. 
+or a new private key which automatically generates a new certificate. 
 
 </li>
 <li markdown="1">
