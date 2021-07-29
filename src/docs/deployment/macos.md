@@ -262,7 +262,7 @@ each new certificate.
 </li>
 <li markdown="1">
 
-Fetch the code signing files from App Store Connect
+Fetch the code signing files from App Store Connect:
 
 ```bash
 app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
