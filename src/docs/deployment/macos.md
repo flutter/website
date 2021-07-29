@@ -249,7 +249,7 @@ private keys by executing the following command for each certificate:
 openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
 ```
 
-Or you can create a new private key by executing
+Or you can create a new private key by executing the following command:
 
 ```bash
 ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
