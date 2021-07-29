@@ -288,7 +288,7 @@ app-store-connect create-certificate \
     --save
 ```
 
-with `cert_key` of the private key you created earlier.
+Use `cert_key` of the private key you created earlier.
 
 </li>
 <li markdown="1">
