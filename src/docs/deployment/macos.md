@@ -278,7 +278,8 @@ or a new private key which will automatically generate a new certificate.
 </li>
 <li markdown="1">
 
-If you do not have a Mac Installer Distribution certificate, you can create a new certificate by executing  
+If you do not have a Mac Installer Distribution certificate,
+you can create a new certificate by executing the following:
 
 ```bash
 app-store-connect create-certificate \
