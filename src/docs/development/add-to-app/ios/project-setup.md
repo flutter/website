@@ -338,8 +338,9 @@ Host apps using CocoaPods can add Flutter to their Podfile:
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
 {{site.alert.note}}
-  You need to hard code `[build mode]` value.
-  For example, you can use `Debug` if you need to use `flutter attach` and `Release` when you're ready to ship.
+  You must hard code  the `[build mode]` value.
+  For example, use `Debug` if you need to use
+  `flutter attach` and `Release` when you're ready to ship.
 {{site.alert.end}}
 
 Embed and link the generated App.xcframework,
