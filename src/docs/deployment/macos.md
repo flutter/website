@@ -255,7 +255,7 @@ Or you can create a new private key by executing the following command:
 ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
 ```
 
-and later have CLI tools automatically create a new Mac App Distribution and
+Later, you can have CLI tools automatically create a new Mac App Distribution and
 Mac Installer Distribution certificate. You can use the same private key for
 each new certificate.
 
