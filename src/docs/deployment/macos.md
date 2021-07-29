@@ -239,7 +239,7 @@ export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
 </li>
 <li markdown="1">
 
-You'll need to export or create a Mac App Distribution and a Mac Installer
+You need to export or create a Mac App Distribution and a Mac Installer
 Distribution certificate to perform code signing and package a build archive.
 
 If you have existing [certificates][devportal_certificates], you can export the
