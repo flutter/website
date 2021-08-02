@@ -23,16 +23,10 @@ jobs:
           token: ${{ github.token }}
           # Comment to post when closing an Issue for lack of response. Set to `false` to disable
           closeComment: >
-            Without additional information, we are unfortunately not sure how to
-            resolve this issue. We are therefore reluctantly going to close this
-            bug for now.
-
-            If you find this problem please file a new issue with the same description,
-            what happens, logs and the output of 'flutter doctor -v'. All system setups
-            can be slightly different so it's always better to open new issues and reference
-            the related ones.
-
-            Thanks for your contribution.
+            Without additional information we're not able to resolve this issue,
+            so it will be closed at this time. You're still free to add more info
+            and respond to any questions above, though. We'll reopen the case
+            if you do. Thanks for your contribution!
           # Number of days of inactivity before an issue is closed for lack of response.
           daysUntilClose: 21
           # Label requiring a response.
