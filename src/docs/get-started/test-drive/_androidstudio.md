@@ -43,4 +43,3 @@ contains a simple demo app that uses [Material Components][].
 </div>
 
 
-
