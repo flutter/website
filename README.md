@@ -26,6 +26,13 @@ Please file a request in our
 [issue tracker](https://github.com/flutter/website/issues/new)
 and we'll take a look.
 
+If you have an issue with the Codelabs on
+[codelabs.developers.google.com](https://codelabs.developers.google.com),
+you've come to the right place to submit an issue.
+However, if you would like to fix an issue with a codelab,
+you must submit your PR on the
+[flutter/codelabs](https://github.com/flutter/codelabs) repo.
+
 If you have an issue with the API docs on
 [api.flutter.dev](https://api.flutter.dev),
 please file those issues on the
