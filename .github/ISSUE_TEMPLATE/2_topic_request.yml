@@ -1,0 +1,18 @@
+name: Topic request
+description: What information should be on flutter.dev but isn't covered well (or at all)?
+labels: [new page/topic request]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What information is missing?
+      placeholder: A clear and concise description of what you expected to find on flutter.dev, but didn't.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: How would you like us to fix this problem?
+      placeholder: Let us know where you'd expect to see this missing information.
+    validations:
+      required: false

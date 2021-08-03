@@ -1,0 +1,26 @@
+name: Site infrastructure issue
+description: |
+    Report a problem with the build, repo, or something else that's a problem for people who work on flutter.dev
+labels: [infrastructure]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Describe the problem
+      placeholder: A clear and concise description of the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Expected fix
+      placeholder: A clear and concise description of how you think we should fix the problem.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional context
+      placeholder: Helpful examples, screenshots, or descriptions go here.
+    validations:
+      required: false
