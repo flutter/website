@@ -1,0 +1,25 @@
+name: Site appearance or accessibility issue
+description: How can we improve the CSS or page design of flutter.dev?
+labels: [design]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Describe the problem
+      placeholder: A clear and concise description of the issue, preferably with a screenshot.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Expected fix
+      placeholder: A clear and concise description of how you think we should fix the problem.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional context
+      placeholder: Helpful examples, screenshots, or descriptions go here. If you're interested in helping us fix the issue, let us know!
+    validations:
+      required: false

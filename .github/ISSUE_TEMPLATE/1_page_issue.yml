@@ -1,0 +1,42 @@
+name: Page issue
+description: Help improve a flutter.dev page
+body:
+  - type: markdown
+    attributes:
+      value: |
+          _Found a typo? You can fix it yourself by going to the page source and clicking the pencil icon. Or finish creating this issue._
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      placeholder: "Example: https://flutter.dev/docs"
+    validations:
+      required: true
+  - type: input
+    id: page-source
+    attributes:
+      label: Page source
+      placeholder: (Provided automatically by the in-page bug link)
+    validations:
+      required: false
+  - type: textarea
+    id: problem
+    attributes:
+      label: Describe the problem
+      placeholder: A clear and concise description of what's wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Expected fix
+      placeholder: A clear and concise description of how you think we should fix the problem.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional context
+      placeholder: Anything else we should know about the problem?
+    validations:
+      required: false
