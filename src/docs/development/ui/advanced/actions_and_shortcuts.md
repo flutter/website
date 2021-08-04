@@ -1,10 +1,9 @@
 ---
-title: Using Shortcuts and Actions
+title: Using Actions and Shortcuts
 description: How to use Actions and Shortcuts in your Flutter app.
-short-title: Shortcuts and Actions
 ---
 
-## Using Shortcuts and Actions
+## Using Actions and Shortcuts
 
 This page describes how to bind physical keyboard events to actions in the user
 interface. For instance, to define keyboard shortcuts in your application, this
@@ -20,7 +19,7 @@ and the code for the action itself might need to be in different places.
 Shortcuts (key bindings) might need definition at a level that knows nothing
 about the actions they invoke.
 
-That's where Flutter's shortcuts and actions system comes in. It allows
+That's where Flutter's actions and shortcuts system comes in. It allows
 developers to define actions that fulfill intents bound to them. In this
 context, an intent is a generic action that the user wishes to perform, and an
 [`Intent`][] class instance represents these user intents in Flutter. An
@@ -36,7 +35,7 @@ of keys. The key combinations reside in a table with their bound intent. When
 the `Shortcuts` widget invokes them, it sends their matching intent to the
 actions subsystem for fulfillment.
 
-To illustrate the concepts in shortcuts and actions, this article creates a
+To illustrate the concepts in actions and shortcuts, this article creates a
 simple app that allows a user to select and copy text in a text field using both
 buttons and shortcuts.
 
@@ -82,8 +81,9 @@ for this. For example, here's the implementation of Flutter's simple
 [`CallbackShortcuts`][] widget (available on the dev branch) that takes a map of
 activators and executes callbacks for them:
 
-<!-- This should be skipped for analysis because it includes ShortcutActivator, which isn't
-     available on stable. Once it is available on stable, the skip can be removed. --> 
+<!-- This should be skipped for analysis because it includes
+     ShortcutActivator, which isn't available on stable.
+     Once it is available on stable, the skip can be removed. --> 
 <!--skip-->
 ```dart
 class CallbackShortcuts extends StatelessWidget {
@@ -581,7 +581,7 @@ class SelectAllAction extends Action<SelectAllIntent> {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String title = 'Shortcuts and Actions Demo';
+  static const String title = 'Actions and Shortcuts Demo';
 
   @override
   Widget build(BuildContext context) {
