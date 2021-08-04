@@ -92,7 +92,7 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 2.6.5
-      - uses: dart-lang/setup-dart@v0.3
+      - uses: dart-lang/setup-dart@b77f714ba35594641a83a71d243c7de39d820474
         with:
           sdk: stable
       - name: Install node dependencies
