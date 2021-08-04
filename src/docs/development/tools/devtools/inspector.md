@@ -3,7 +3,7 @@ title: Using the Flutter inspector
 description: Learn how to use the Flutter inspector to explore a Flutter app's widget tree.
 ---
 
-<?code-excerpt path-base="../null_safety_examples/visual_debugging/"?>
+<?code-excerpt path-base="../examples/visual_debugging/"?>
 
 {{site.alert.note}}
   The inspector works with all Flutter applications.
