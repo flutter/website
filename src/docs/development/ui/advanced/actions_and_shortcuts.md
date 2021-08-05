@@ -581,7 +581,7 @@ class SelectAllAction extends Action<SelectAllIntent> {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String title = 'Actions and Shortcuts Demo';
+  static const String title = 'Shortcuts and Actions Demo';
 
   @override
   Widget build(BuildContext context) {
