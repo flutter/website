@@ -311,8 +311,8 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
   void showExample(int exampleNumber, String code, String explanation) {
     setState(() {
       count = exampleNumber;
-      code = code;
-      explanation = explanation;
+      this.code = code;
+      this.explanation = explanation;
     });
   }
 }
