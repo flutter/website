@@ -115,7 +115,58 @@ to the normal theme at the appropriate time.
 The Android app now displays the desired launch screen
 while the app initializes.
 
+### Android S
+
+See [Android Splash Screens][] first on how to configure your splash screen on
+Android S.
+
+Make sure neither `io.flutter.embedding.android.SplashScreenDrawable` is set in
+your manifest, nor is `provideSplashScreen` implemented. Doing so will cause
+the Android splash screen to fade smoothly into the Flutter when the app is
+launched.
+
+Some apps may want to continue showing the last frame of the Android splash
+screen in Flutter, to preserve the illusion of a single frame to users while
+additional loading continues in Dart. To achieve this, the following Android
+APIs may be helpful:
+
+```java
+import android.os.Build;
+import android.window.SplashScreenView;
+import androidx.core.view.WindowCompat;
+
+public class MyFlutterActivity extends FlutterActivity {
+    @Override
+    protected void onCreate(Bundle savedInstance) {
+        // ...
+
+        // Aligns the Flutter view vertically with the window.
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            // Disable the Android splash screen fade out animation to avoid
+            // a flicker before the similar frame is drawn in Flutter.
+            getSplashScreen()
+                .setOnExitAnimationListener(
+                    (SplashScreenView splashScreenView) -> {
+                        splashScreenView.remove();
+                    });
+        }
+    }
+}
+```
+
+Then, you can reimplement the first frame in Flutter that shows elements of your
+Android splash screen in the same positions on screen.
+
 ### The Flutter splash screen
+
+{{site.alert.note}}
+  Since Flutter 2.5, providing a custom splash screen in this section is no
+  longer required. The Flutter Android embedding automatically keeps what is
+  defined in the launch theme (such as `android:windowBackground`) on screen,
+  until Flutter is ready with a smooth transition.
+{{site.alert.end}}
 
 Each Flutter experience in an app requires a few moments
 to initialize the Dart isolate that runs the code.
@@ -171,7 +222,7 @@ public class MyFlutterFragment extends FlutterFragment {
 }
 ```
 
-### Creating a custom SplashScreen
+#### Creating a custom SplashScreen
 
 Splash screens are a great branding opportunity.
 Because of that, many apps implement unique,
@@ -181,13 +232,13 @@ as a splash screen, and even allows you to control how
 that `View` transitions to
 Flutter after Flutter renders its first frame.
 
-#### Implement a custom splash View
+##### Implement a custom splash View
 
 First, define the custom `View` that should be displayed
 as the splash screen. This `View` could display anything,
 from a simple solid color to an animation.
 
-#### Implement the SplashScreen interface
+##### Implement the SplashScreen interface
 
 With a custom `View` defined, implement the `SplashScreen`
 interface.
@@ -277,6 +328,7 @@ The UX Collective provides some good
 tips on how to build a [dynamic yet performant splash screen][].
 
 
+[Android Splash Screens]: https://developer.android.com/about/versions/12/features/splash-screen
 [dynamic yet performant splash screen]: https://uxdesign.cc/building-the-perfect-splash-screen-46e080395f06
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
