@@ -161,7 +161,7 @@ app's icons:
 1. Verify the icon has been replaced by running your app using
    `flutter run`.
 
-## Create a build archive
+## Create a build archive with Xcode
 
 This step covers creating a build archive and uploading
 your build to App Store Connect.
@@ -239,6 +239,170 @@ on TestFlight, or go ahead and release your app to the App Store.
 For more details, see
 [Upload an app to App Store Connect][distributionguide_upload].
 
+## Create a build archive with Codemagic CLI tools
+
+This step covers creating a build archive and uploading
+your build to App Store Connect using Flutter build commands
+and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
+in the Flutter project directory. This allows you to create a build archive
+with full control of distribution certificates in a temporary keychain 
+isolated from your login keychain.
+
+<ol markdown="1">
+<li markdown="1">
+
+Install the Codemagic CLI tools:
+```bash
+pip3 install codemagic-cli-tools
+```
+
+</li>
+<li markdown="1">
+
+You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key]
+with App Manager access to automate operations with App Store Connect. To make
+subsequent commands more concise, set the following environment variables from
+the new key: issuer id, key id, and API key file.
+
+```bash
+export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
+export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
+```
+
+</li>
+<li markdown="1">
+
+You need to export or create an iOS Distribution certificate to code sign and package a build archive.
+
+If you have existing [certificates][devportal_certificates], you can export the
+private keys by executing the following command for each certificate:
+
+```bash
+openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
+```
+
+Or you can create a new private key by executing the following command:
+
+```bash
+ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
+```
+
+Later, you can have CLI tools automatically create a new iOS Distribution from the private key.
+
+</li>
+<li markdown="1">
+
+Set up a new temporary keychain to be used for code signing:
+
+```bash
+keychain initialize
+```
+
+{{site.alert.secondary}}
+**Restore Login Keychain!**
+After running `keychain initialize` you **must** run the following:<br>
+
+`keychain use-login`
+
+This sets your login keychain as the default to avoid potential
+authentication issues with apps on your machine.
+{{site.alert.end}}
+
+</li>
+<li markdown="1">
+
+Fetch the code signing files from App Store Connect:
+
+```bash
+app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
+    --platform IOS_APP_STORE \
+    --certificate-key=@file:/path/to/cert_key \
+    --create
+```
+
+Where `cert_key` is either your exported iOS Distribution certificate private key
+or a new private key which automatically generates a new certificate. The certificate
+will be created from the private key if it doesn't exist in App Store Connect.
+
+</li>
+<li markdown="1">
+
+Now add the fetched certificates to your keychain:
+
+```bash
+keychain add-certificates
+```
+
+</li>
+<li markdown="1">
+
+Update the Xcode project settings to use fetched code signing profiles:
+
+```bash
+xcode-project use-profiles
+```
+
+</li>
+<li markdown="1">
+
+Install Flutter dependencies:
+
+```bash
+flutter packages pub get
+```
+
+</li>
+<li markdown="1">
+
+Install CocoaPods dependencies:
+
+```bash
+find . -name "Podfile" -execdir pod install \;
+```
+
+</li>
+<li markdown="1">
+
+Build the Flutter the iOS project:
+
+```bash
+flutter build ipa --release \
+    --export-options-plist=/Users/USERNAME/export_options.plist
+```
+
+Note that `export_options.plist` is the output of the `xcode-project use-profiles` command.
+
+</li>
+<li markdown="1">
+
+Publish the app to App Store Connect:
+
+```bash
+APP_FILE=$(find $(pwd) -name "*.ipa")
+app-store-connect publish \
+    --path "$APP_FILE"
+```
+
+</li>
+<li markdown="1">
+
+As mentioned earlier, don't forget to set your login keychain
+as the default to avoid authentication issues
+with apps on your machine:
+
+```bash
+keychain use-login
+```
+
+</li>
+</ol>
+
+You should receive an email within 30 minutes notifying you that
+your build has been validated and is available to release to testers
+on TestFlight. At this point you can choose whether to release
+on TestFlight, or go ahead and release your app to the App Store.
+
 ## Release your app on TestFlight
 
 [TestFlight][] allows developers to push their apps
@@ -290,12 +454,15 @@ detailed overview of the process of releasing an app to the App Store.
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: https://developer.apple.com/app-store/submissions/
 [appstoreconnect]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_api_key]: https://appstoreconnect.apple.com/access/api
 [appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
 [appstoreconnect_login]: https://appstoreconnect.apple.com/
+[codemagic_cli_tools]: https://github.com/codemagic-ci-cd/cli-tools
 [codesigning_guide]: https://developer.apple.com/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 [devportal_appids]: https://developer.apple.com/account/ios/identifier/bundle
+[devportal_certificates]: https://developer.apple.com/account/resources/certificates
 [devprogram]: https://developer.apple.com/programs/
 [devprogram_membership]: https://developer.apple.com/support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
