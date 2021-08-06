@@ -191,7 +191,7 @@ Some other things you can do to make your app smaller are:
 [How big is the Flutter engine?]: /docs/resources/faq#how-big-is-the-flutter-engine
 [instructions]: /docs/deployment/ios
 [Xcode App Size Report]: https://developer.apple.com/documentation/xcode/reducing_your_app_s_size#3458589
-[iOS create build archive instructions]: /docs/deployment/ios#create-a-build-archive
+[iOS create build archive instructions]: /docs/deployment/ios#create-a-build-archive-with-xcode
 [Model ID / Hardware number]: https://en.wikipedia.org/wiki/List_of_iOS_devices#Models
 [Obfuscating Dart code]: /docs/deployment/obfuscate
 [Test drive]: /docs/get-started/test-drive
