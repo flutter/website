@@ -234,13 +234,13 @@ you can view the output by selecting the red icon:
 See the [Firebase Test Lab section of the README][]
 for instructions on uploading the APKs from the command line.
 
-### Uploading XCode tests
+### Uploading Xcode tests
 
 See the [Firebase TestLab iOS instructions][]
 for details on how to upload the .zip file
 to the Firebase TestLab section of the Firebase Console.
 
-### Uploading XCode tests from the command line
+### Uploading Xcode tests from the command line
 See the [iOS Device Testing][] section in the README
 for instructions on how to upload the .zip file
 from the command line.
