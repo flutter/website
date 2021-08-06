@@ -63,9 +63,9 @@
               match-page-url-exactly: true
             - title: Tutorial
               permalink: /docs/development/ui/layout/tutorial
-            - title: Creating adaptive and responsive apps
+            - title: Creating adaptive & responsive apps
               permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: Building adaptive apps [NEW]
+            - title: Building adaptive apps
               permalink: /docs/development/ui/layout/building-adaptive-apps
             - title: Understanding constraints
               permalink: /docs/development/ui/layout/constraints
@@ -73,7 +73,7 @@
               permalink: /docs/development/ui/layout/box-constraints
         - title: Adding interactivity
           permalink: /docs/development/ui/interactive
-        - title: Assets and images
+        - title: Assets & images
           permalink: /docs/development/ui/assets-and-images
         - title: Navigation & routing
           permalink: /docs/development/ui/navigation
@@ -110,6 +110,8 @@
               permalink: /docs/development/ui/advanced/gestures
             - title: Splash screens
               permalink: /docs/development/ui/advanced/splash-screen
+            - title: Using Actions & Shortcuts
+              permalink: /docs/development/ui/advanced/actions_and_shortcuts
         - title: Widget catalog
           permalink: /docs/development/ui/widgets
     - title: Data & backend
@@ -130,7 +132,7 @@
               permalink: /docs/development/data-and-backend/state-mgmt/options
         - title: Networking & http
           permalink: /docs/development/data-and-backend/networking
-        - title: JSON and serialization
+        - title: JSON & serialization
           permalink: /docs/development/data-and-backend/json
         - title: Firebase
           permalink: /docs/development/data-and-backend/firebase
@@ -154,7 +156,7 @@
           permalink: /docs/development/platform-integration/apple-watch
         - title: C interop
           permalink: /docs/development/platform-integration/c-interop
-        - title: Hosting native Android and iOS views
+        - title: Hosting native Android & iOS views
           permalink: /docs/development/platform-integration/platform-views
         - title: Web FAQ
           permalink: /docs/development/platform-integration/web
@@ -203,7 +205,7 @@
             permalink: /docs/development/add-to-app/ios/add-flutter-screen
       - title: Debugging & hot reload
         permalink: /docs/development/add-to-app/debugging
-      - title: Loading sequence and performance
+      - title: Loading sequence & performance
         permalink: /docs/development/add-to-app/performance
       - title: Multiple Flutter instances
         permalink: /docs/development/add-to-app/multiple-flutters
@@ -263,7 +265,7 @@
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4.md
                 - title: 1.2.1
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1.md
-        - title: Flutter and the pubspec file
+        - title: Flutter & the pubspec file
           permalink: /docs/development/tools/pubspec
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
@@ -346,15 +348,15 @@
       permalink: /docs/deployment/obfuscate
     - title: Creating flavors for Flutter
       permalink: /docs/deployment/flavors
-    - title: Build and release an Android app
+    - title: Build & release an Android app
       permalink: /docs/deployment/android
-    - title: Build and release an iOS app
+    - title: Build & release an iOS app
       permalink: /docs/deployment/ios
-    - title: Build and release a macOS app
+    - title: Build & release a macOS app
       permalink: /docs/deployment/macos
-    - title: Build and release a Linux app
+    - title: Build & release a Linux app
       permalink: /docs/deployment/linux
-    - title: Build and release a web app
+    - title: Build & release a web app
       permalink: /docs/deployment/web
     - title: Continuous deployment
       permalink: /docs/deployment/cd
@@ -373,7 +375,7 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Platform adaptations
       permalink: /docs/resources/platform-adaptations
-    - title: Videos and online courses
+    - title: Videos & online courses
       permalink: /docs/resources/videos
     - title: Books
       permalink: /docs/resources/books

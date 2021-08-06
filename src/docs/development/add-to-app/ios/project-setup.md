@@ -213,7 +213,7 @@ The following example assumes that you want to generate the
 frameworks to `some/path/MyApp/Flutter/`.
 
 ```sh
-flutter build ios-framework --xcframework --no-universal --output=some/path/MyApp/Flutter/
+flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
 ```text
@@ -308,7 +308,7 @@ The App.xcframework and plugin frameworks are generated
 as described in Option B.
 
 ```sh
-flutter build ios-framework --cocoapods --xcframework --no-universal --output=some/path/MyApp/Flutter/
+flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
 ```
 
 ```text
@@ -337,6 +337,11 @@ Host apps using CocoaPods can add Flutter to their Podfile:
 ```ruby
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
+{{site.alert.note}}
+  You must hard code the `[build mode]` value.
+  For example, use `Debug` if you need to use
+  `flutter attach` and `Release` when you're ready to ship.
+{{site.alert.end}}
 
 Embed and link the generated App.xcframework,
 FlutterPluginRegistrant.xcframework,
