@@ -107,25 +107,25 @@ like layout and animations:
   Learn how to use the Material [animations][] package to
   add pre-built transitions to a Material app called Reply.
 
-* [MDC 101 Flutter: Material Components (MDC) Basics][]<br>
+* [MDC-101 Flutter: Material Components (MDC) Basics][]<br>
   Learn the basics of using Material Components by building
   a simple app with core components.  The four MDC codelabs
   guide you through building an e-commerce app called Shrine.
   You'll start by building a login page using several of MDC
   Flutter's components.
 
-* [MDC 102 Flutter: Material Structure and Layout][]<br>
+* [MDC-102 Flutter: Material Structure and Layout][]<br>
   Learn how to use Material for structure and layout in Flutter.
   Continue building the e-commerce app, introduced in MDC-101,
   by adding navigation, structure, and data.
 
-* [MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type][]<br>
+* [MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type][]<br>
   Discover how Material Components for Flutter make it
   easy to differentiate your product, and express your
   brand through design. Continue building your e-commerce
   app by adding a home screen that displays products.
 
-* [MDC 104 Flutter: Material Advanced Components][]<br>
+* [MDC-104 Flutter: Material Advanced Components][]<br>
   Improve your design and learn to use our advanced
   component backdrop menu. Finish your e-commerce app
   by adding a backdrop with a menu that filters
@@ -137,10 +137,10 @@ like layout and animations:
 [Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: /docs/codelabs/implicit-animations
-[MDC 101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
-[MDC 102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
-[MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
-[MDC 104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+[MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
+[MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
+[MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
+[MDC-104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
 
 ## Using Flutter with...
 
@@ -155,7 +155,7 @@ Learn how to use Flutter with other technologies.
   and a rewarded ad to an app called Awesome Drawing Quiz,
   a game that lets players guess the name of the drawing.
 
-* [Adding AdMob banner and native inline ads to a Flutter app][]<br>
+* [Adding an AdMob banner and native inline ads to a Flutter app][]<br>
   Learn how to implement inline banner and native ads
   to a travel booking app that lists possible
   flight destinations.
@@ -165,15 +165,15 @@ Learn how to use Flutter with other technologies.
   currency to offer three types of in-app purchases:
   consumable, non-consumable, and subscription.
 
-* [Build a photo sharing app with Google Photos and Flutter][]<br>
+* [Build a Photo Sharing app with Google Photos and Flutter][]<br>
   Build a field trip app that allows you and other
   members of the trip to share photos.
 
-* [Build voice bots for mobile with Dialogflow and Flutter][dialogflow-ws] (workshop) **NEW!**<br>
+* [Build voice bots for mobile with Dialogflow and Flutter][] (workshop) **NEW!**<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
 
-* [Build voice bots for mobile with Dialogflow and Flutter][]<br>
+* [Build voice bots for Android with Dialogflow and Flutter][]<br>
   Learn how to build a mobile FAQ bot that can answer most
   common questions about the tool Dialogflow. End users
   can interact with the text interface or stream a voice
@@ -196,12 +196,12 @@ Learn how to use Flutter with other technologies.
   from a single Dart codebase.
 
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
-[Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
+[Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
-[Build a photo sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
-[Build voice bots for mobile with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
-[dialogflow-ws]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
+[Build a Photo Sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
+[Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
+[Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
 [firebase-ws]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
 [Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
