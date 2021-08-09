@@ -275,19 +275,9 @@ In the same location, create the stateful widget:
 ```diff
 --- layout/lakes/step6/lib/main.dart
 +++ layout/lakes/interactive/lib/main.dart
-@@ -41,11 +41,7 @@
-             ),
-           ),
-           /*3*/
--          Icon(
--            Icons.star,
--            color: Colors.red[500],
--          ),
--          const Text('41'),
-+          const FavoriteWidget(),
-         ],
-       ),
-     );
+@@ -10,2 +5,2 @@
+ class MyApp extends StatelessWidget {
+   const MyApp({Key? key}) : super(key: key);
 ```
 
 That's it! When you hot reload the app,
