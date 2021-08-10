@@ -202,6 +202,7 @@
       { "source": "/go/plugins-list-migration", "destination": "https://docs.google.com/document/d/1itYyHax0bzL3-hRtQd1zRPqJfOrLYih1fW0nPDJDytc/edit", "type": 301 },
       { "source": "/go/plugins-team", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfpPqJYuL_RzLaTCjrWYw73Zrrei3YiU8B5eTrDBh4fuGhbXw/viewform?usp=sf_link", "type": 301 },
       { "source": "/go/profile-and-release-mode-for-custom-devices", "destination": "https://docs.google.com/document/d/1jcMyJvsWLizYOIJAdyosLSW-Io0-E_MGsU_uL_Q4Wt8/edit?usp=sharing", "type": 301 },
+      { "source": "/go/programmatic-sheet", "destination": "https://docs.google.com/document/d/15A3q1QrcvEU82uG4heTCKV230depmaJZTIP5rEz7V8g/edit?usp=sharing&resourcekey=0-q-TH-9-LVmygnp6Ku4xKIg", "type": 301 },
       { "source": "/go/rasterizer-pipeline-improvements", "destination": "https://docs.google.com/document/d/1Hg5Wfx8JTgYmLboxFRr5DDd9EfdrdEuMbNGGMvDjd6E/edit?usp=sharing", "type": 301 },
       { "source": "/go/reduce-ci-tests", "destination": "https://docs.google.com/document/d/1-HRz-dXoIKjEgbCs9CF2-TO_3wSFK-V4ispXg-IoarY/edit?usp=sharing", "type": 301 },
       { "source": "/go/reference-plugin", "destination": "https://docs.google.com/document/d/1NJFbRMVxVL9YS_FcWi7W08DsBr_eRAJtQI9FQkk9MXk/edit", "type": 301 },
