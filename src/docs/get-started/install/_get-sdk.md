@@ -90,8 +90,8 @@ you can install Flutter using the following command:
 $ brew install --cask flutter
 ```
 
-Then, run `flutter doctor`. That will let you know if there are
-other dependencies you need to install to use Flutter (e.g. the Android SDK).
+Then, run `flutter doctor`. That lets you know if there are
+other dependencies you need to install to use Flutter, such as the Android SDK.
 
 ### Downloading straight from GitHub instead of using an archive
 
