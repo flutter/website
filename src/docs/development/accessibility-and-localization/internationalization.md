@@ -192,7 +192,7 @@ project called `l10n.yaml` with the following content:
    <?code-excerpt "gen_l10n_example/lib/l10n/app_es.arb"?>
    ```json
    {
-       "helloWorld": "Hola Mundo!"
+       "helloWorld": "¡Hola Mundo!"
    }
    ```
 
@@ -246,7 +246,7 @@ project called `l10n.yaml` with the following content:
    ```
 
    This code generates a Text widget that displays "Hello World!"
-   if the target device's locale is set to English, and "Hola Mundo!"
+   if the target device's locale is set to English, and "¡Hola Mundo!"
    if the target device's locale is set to Spanish. In the `arb` files,
    the key of each entry is used as the method name of the getter,
    while the value of that entry contains the localized message.
