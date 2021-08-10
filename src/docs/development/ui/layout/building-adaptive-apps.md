@@ -66,7 +66,7 @@ Some of Flutter's most useful layout widgets include:
   to position a single child. The delegate can determine
   the layout constraints and positioning for the child.
 
-* [`Expanded`] and [`Flexible`][]&mdash;Allows a child of a
+* [`Expanded`][] and [`Flexible`][]&mdash;Allows a child of a
   `Row` or `Column` to shrink or grow to fill any available space.
 
 * [`FractionallySizedBox`][]&mdash;Sizes its child to a fraction
@@ -137,7 +137,7 @@ which necessitate differently sized hit areas.
 Flutter's `VisualDensity` class makes it easy to adjust the
 density of your views across the entire application,
 for example, by making a button larger
-(and thereore easier to tap) on a touch device.
+(and therefore easier to tap) on a touch device.
 
 When you change the `VisualDensity` for your `MaterialApp`,
 `MaterialComponents` that support it animate their densities
@@ -322,7 +322,7 @@ There are times when you want to make layout decisions
 based on the actual platform you’re running on,
 regardless of size. For example, when building a
 custom title bar, you might need to check the operating
-system type and tweak the layout of your title bar so
+system type and tweak the layout of your title bar, so
 it doesn’t get covered by the native window buttons. 
 
 To determine which combination of platforms you’re on,
@@ -342,7 +342,7 @@ bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
 The `Platform` API can’t be accessed from web builds without 
 throwing an exception, because the `dart.io` package is not
 supported on the web target. As a result, this code checks 
-for web first, and becuase of short-circuiting, Dart will 
+for web first, and because of short-circuiting, Dart will 
 never call `Platform` on web targets.
 
 ### Single source of truth for styling
@@ -463,7 +463,7 @@ verify that everything feels right.
 
 After you have the touch interface polished, you can tweak
 the visual density for mouse users, and then layer on all
-of the additional inputs. Approach these other inputs as
+the additional inputs. Approach these other inputs as
 accelerator—alternatives that make a task faster.
 The important thing to consider is what a user expects
 when using a particular input device,
@@ -584,7 +584,7 @@ a custom policy.
 ### Keyboard accelerators
 
 In addition to tab traversal, desktop and web users are accustomed
-to having various keyboard shortcuts bound to actions.
+to having various keyboard shortcuts bound to specific actions.
 Whether it’s the `Delete` key for quick deletions or
 `Control+N` for a new document, be sure to consider the different
 accelerators your users expect. The keyboard is a powerful
@@ -601,13 +601,13 @@ already has a focus node, you can wrap it in a
 <!--skip-->
 ```dart
 return Focus(
- onKey: (FocusNode node, RawKeyEvent event) {
-   if (event is RawKeyDownEvent) {
-     print(event.logicalKey);
-   }
-   return KeyEventResult.ignored;
- },
- child: const TextField(),
+  onKey: (FocusNode node, RawKeyEvent event) {
+    if (event is RawKeyDownEvent) {
+      print(event.logicalKey);
+    }
+    return KeyEventResult.ignored;
+  },
+  child: const TextField(),
 );
 ```
 
@@ -618,28 +618,28 @@ large section of the tree, you can use the [`Shortcuts`][] widget:
 ```dart
 // Define a class for each type of shortcut action you want
 class CreateNewItemIntent extends Intent {
- const CreateNewItemIntent();
+  const CreateNewItemIntent();
 }
 
 Widget build(BuildContext context) {
- return Shortcuts(
-   // Bind intents to key combinations
+  return Shortcuts(
+    // Bind intents to key combinations
     shortcuts: <ShortcutActivator, Intent>{
       SingleActivator(LogicalKeyboardKey.keyN, control: true): CreateNewItemIntent(),
-   },
-   child: Actions(
-     // Bind intents to an actual method in your code
-     actions: <Type, Action<Intent>>{
-       CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
-           onInvoke: (CreateNewItemIntent intent) => _createNewItem()),
-     },
-     // Your sub-tree must be wrapped in a focusNode, so it can take focus. 
-     child: Focus(
-       autofocus: true,
-       child:  ...,
-     ),
-   ),
- );
+    },
+    child: Actions(
+      // Bind intents to an actual method in your code
+      actions: <Type, Action<Intent>>{
+        CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
+            onInvoke: (CreateNewItemIntent intent) => _createNewItem()),
+      },
+      // Your sub-tree must be wrapped in a focusNode, so it can take focus. 
+      child: Focus(
+        autofocus: true,
+        child:  ...,
+      ),
+    ),
+  );
 }
 ```
 
@@ -675,7 +675,7 @@ of the provided keys are being held down:
 <!--skip-->
 ```dart
 static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
- return keys.intersection(RawKeyboard.instance.keysPressed).isNotEmpty;
+  return keys.intersection(RawKeyboard.instance.keysPressed).isNotEmpty;
 }
 ```
 
@@ -685,14 +685,14 @@ you can fire an action when `Shift+N` is pressed:
 <!--skip-->
 ```dart
 void _handleKey(event){
-  if(event is RawKeyDownEvent){
-     bool isShiftDown = isKeyDown({
-        LogicalKeyboardKey.shiftLeft, 
-        LogicalKeyboardKey.shiftRight,
-     });
-     if(isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN){
-        _createNewItem();
-      }
+  if (event is RawKeyDownEvent) {
+    bool isShiftDown = isKeyDown({
+      LogicalKeyboardKey.shiftLeft, 
+      LogicalKeyboardKey.shiftRight,
+    });
+    if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
+      _createNewItem();
+    }
   }
 }
 ```
@@ -727,8 +727,8 @@ use [`MouseRegion`][]:
 <!--skip-->
 ```dart
 return MouseRegion(
- cursor: SystemMouseCursors.grab,
- child: MyDraggableWidget(),
+  cursor: SystemMouseCursors.grab,
+  child: MyDraggableWidget(),
 )
 ```
 
@@ -738,10 +738,11 @@ rollover and hover effects:
 <!--skip-->
 ```dart
 return MouseRegion(
- onEnter: (_) => setState(() => _isMouseOver = true),
- onExit: (_) => setState(() => _isMouseOver = false),
- onHover: (PointerHoverEvent e) => print(e.localPosition),
- child: ... 
+  onEnter: (_) => setState(() => _isMouseOver = true),
+  onExit: (_) => setState(() => _isMouseOver = false),
+  onHover: (PointerHoverEvent e) => print(e.localPosition),
+  child: ...,
+);
 ```
 
 
@@ -925,8 +926,8 @@ To support rich text, then use `TextSpan`:
 <!--skip-->
 ```dart
 return SelectableText.rich(TextSpan(children: [
- TextSpan(text: 'Hello'),
- TextSpan(text: 'Bold', style: TextStyle(fontWeight: FontWeight.bold)),
+  TextSpan(text: 'Hello'),
+  TextSpan(text: 'Bold', style: TextStyle(fontWeight: FontWeight.bold)),
 ]));
 ```
 
@@ -979,15 +980,15 @@ and positioned:
   themselves when the cursor leaves.
   Instead, panels are typically dismissed by clicking
   outside the panel or by pressing a **Close** or **Submit** button.
- 
+
 To show basic tooltips in Flutter,
 use the built-in [`Tooltip`][] widget:
 
 <!--skip-->
 ```dart
 return const Tooltip(
-    message: 'I am a Tooltip',
-    child: Text('Hover over the text to show a tooltip.'),
+  message: 'I am a Tooltip',
+  child: Text('Hover over the text to show a tooltip.'),
 );
 ```
 
@@ -1037,16 +1038,16 @@ This can be easily handled in Flutter using the
 ```dart
 TextDirection btnDirection = DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
 return Row(
- children: [
-   Spacer(),
-   Row(
-     textDirection: btnDirection,
-     children: [
-       DialogButton(label: 'Cancel', onPressed: () => Navigator.pop(context, false)),
-       DialogButton(label: 'Ok', onPressed: () => Navigator.pop(context, true)),
-     ],
-   ),
- ],
+  children: [
+    Spacer(),
+    Row(
+      textDirection: btnDirection,
+      children: [
+        DialogButton(label: 'Cancel', onPressed: () => Navigator.pop(context, false)),
+        DialogButton(label: 'Ok', onPressed: () => Navigator.pop(context, true)),
+      ],
+    ),
+  ],
 );
 ```
 
@@ -1095,9 +1096,9 @@ Finder or Windows Explorer, you’ll see that they work
 this way: you just select an item and start dragging.
 
 In Flutter, you can implement drag and drop in many
-different ways. Discussing specific implementations
-is outside the scope of this article, but some of
-the high level options are: 
+ways. Discussing specific implementations is outside
+the scope of this article, but some high level options
+are: 
 
 * Use the [`Draggable`][] and [`DragTarget`][] APIs
   directly for a custom look and feel.
@@ -1105,12 +1106,12 @@ the high level options are:
 * Hook into `onPan` gesture events,
   and move an object yourself within a parent `Stack`.
 
-* Use one of the [premade list packages][] on pub.dev.  
+* Use one of the [pre-made list packages][] on pub.dev.  
 
 
 [`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
 [`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html
-[premade list packages]: {{site.pub}}/packages?q=reorderable+list
+[pre-made list packages]: {{site.pub}}/packages?q=reorderable+list
 
 ### Educate yourself on basic usability principles
 
