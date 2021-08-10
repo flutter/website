@@ -81,6 +81,18 @@ process.
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you’ve set everything up correctly.
 
+### Downloading and installing with Homebrew
+
+If you have Homebrew installed on your machine,
+you can install Flutter using the following command:
+
+```terminal
+$ brew install --cask flutter
+```
+
+Then, run `flutter doctor`. That lets you know if there are
+other dependencies you need to install to use Flutter, such as the Android SDK.
+
 ### Downloading straight from GitHub instead of using an archive
 
 _This is only suggested for advanced use cases._
@@ -106,7 +118,6 @@ $ flutter precache
 ```
 
 For additional download options, see `flutter help precache`.
-
 
 {% include_relative _analytics.md %}
 
