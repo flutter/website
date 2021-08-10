@@ -83,7 +83,8 @@ command again to verify that you’ve set everything up correctly.
 
 ### Downloading and installing with Homebrew
 
-If you have Homebrew installed on your machine, you can install Flutter using:
+If you have Homebrew installed on your machine,
+you can install Flutter using the following command:
 
 ```terminal
 $ brew install --cask flutter
