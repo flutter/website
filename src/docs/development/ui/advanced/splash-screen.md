@@ -188,7 +188,7 @@ class MainActivity : FlutterActivity() {
 Then, you can reimplement the first frame in Flutter that shows elements of your
 Android splash screen in the same positions on screen.
 
-[Android Splash Screens]: https://developer.android.com/about/versions/12/features/splash-screen
+[Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: /docs/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
 [must use an Xcode storyboard]: https://developer.apple.com/news/?id=03042020b
