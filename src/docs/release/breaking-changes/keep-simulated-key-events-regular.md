@@ -1,6 +1,6 @@
 ---
-title: Replace with title of breaking change
-description: Brief description similar to the "context" section below. The description shouldn't have any linebreaks - let it go long and wrap. Text below should break at 80 chars or less.
+title: Keep simulated key events regular
+description: Simulated events must conform to required rules in unit tests.
 ---
 
 {% comment %}
@@ -60,39 +60,60 @@ description: Brief description similar to the "context" section below. The descr
 
 ## Summary
 
-{% comment %}
-  A brief (one- to three-line) summary that gives
-  context as to what changed so that someone can
-  find it when browsing through an index of
-  breaking changes, ideally using keywords from
-  the symptoms you would see if you had not yet
-  migrated (for example, the text from probable
-  error messages).
-{% endcomment %}
+In unit tests, simulated events are required to follow
+Flutter's event model documented in `HardwareKeyboard`.
 
 ## Context
 
-{% comment %}
-  High-level description of what API changed and why.
-  Should be clear enough to be understandable to someone
-  who has no context about this breaking change,
-  such as someone who doesn't know the underlying API.
-  This section should also answer the question
-  "what is the problem that led to considering making
-  a breaking change?"
-{% endcomment %}
+While Flutter used to be much more tolerant to
+the structure of simulated key events,
+now that Flutter adopts a "regular key event model,"
+the keyboard system requires that the sequence of
+incoming key events, simulated or real,
+must conform to a set of rules.
+Otherwise, it throws assertion errors.
+
+This new model assures consistency between
+key events and keyboard states,
+simplifying applications' handling logic,
+and allows the state of "keyboard modes" to be
+toggled without extra information.
 
 ## Description of change
 
-{% comment %}
-A technical description of the actual change,
-with code samples showing how the API changed.
+Key events now have three types:
+- Key down events, simulated with `simulateKeyDownEvent`;
+- Key up events, simulated with `simulateKeyUpEvent`;
+- Key repeat events, simulated with `simulateKeyRepeatEvent`
+(new!)
 
-Include examples of the error messages that are produced
-in code that has not been migrated. This helps the search
-engine find the migration guide when people search for those
-error messages.
-{% endcomment %}
+The "regular event model," simply put, requires that
+the events for the same key must take place in
+the order of one "key down," optional "key repeats,"
+and one "key up." 
+
+A more formal definition is as follows:
+- The stream of events must consist of
+"key event sequences,"
+which can interleave with each other.
+- A key event sequence consists of
+key events of the same physical key and
+the same logical key.
+- A key event sequence consists of 
+one key down event,
+zero or more key repeat events,
+and one key up event in order.
+
+Flutter will throw the assertion errors on malformed events, such as:
+```
+A KeyDownEvent is dispatched, but the state shows that the physical key is already pressed.
+
+A KeyUpEvent is dispatched, but the state shows that the physical key is not pressed.
+
+A KeyDownEvent is dispatched, but the state shows that the physical key is pressed on a different logical key.
+
+If this occurs in real application, please report this bug to Flutter. If this occurs in unit tests, please ensure that simulated events follow Flutter's event model as documented in `HardwareKeyboard`.
+```
 
 ## Migration guide
 
