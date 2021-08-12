@@ -82,9 +82,9 @@ tracked without extra information.
 ## Description of change
 
 Key events now have three types:
-- Key down events, simulated with `simulateKeyDownEvent`;
-- Key up events, simulated with `simulateKeyUpEvent`;
-- Key repeat events, simulated with `simulateKeyRepeatEvent`
+- Key down events, simulated with [`simulateKeyDownEvent`];
+- Key up events, simulated with [`simulateKeyUpEvent`];
+- Key repeat events, simulated with [`simulateKeyRepeatEvent`]
 (new!)
 
 The "regular event model," simply put, requires that
@@ -119,7 +119,7 @@ If this occurs in real application, please report this bug to Flutter. If this o
 
 If the error message indicates that
 the physical key is already pressed,
-then insert a `simulateKeyUpEvent`
+then insert a [`simulateKeyUpEvent`]
 for the same key at a proper place
 before that line.
 
@@ -163,7 +163,7 @@ await simulateKeyUpEvent(LogicalKeyboardKey.keyA);
 
 Similarly, if the error message indicates that
 the physical key is not pressed,
-then insert a `simulateKeyDownEvent`
+then insert a [`simulateKeyDownEvent`]
 for the same key at a proper place
 before that line.
 
@@ -222,55 +222,20 @@ In stable release: 2.5.0
 
 ## References
 
-{% comment %}
-  These links are commented out because they
-  cause the GitHubActions (GHA) linkcheck to fail.
-  Remove the comment tags once you fill this in with
-  real links. Only use the "master-api" include if
-  you link to "master-api.flutter.dev".
-
-{% include master-api.md %}
-
 API documentation:
-
-* [`ClassName`][]
-
-Relevant issues:
-
-* [Issue xxxx][]
-* [Issue yyyy][]
+* [`simulateKeyDownEvent`][]
+* [`simulateKeyUpEvent`][]
+* [`simulateKeyRepeatEvent`][]
+* [`KeyEvent`][]
+* [`RawKeyEvent`][]
 
 Relevant PRs:
+* [PR 87174][]: Reland: Keyboard events
 
-* [PR title #1][]
-* [PR title #2][]
-{% endcomment %}
+[`simulateKeyDownEvent`]: {{site.api}}/flutter/flutter_test/simulateKeyDownEvent.html
+[`simulateKeyUpEvent`]: {{site.api}}/flutter/flutter_test/simulateKeyUpEvent.html
+[`simulateKeyRepeatEvent`]: https://master-api.flutter.dev/flutter/flutter_test/simulateKeyRepeatEvent.html
+[`KeyEvent`]: https://master-api.flutter.dev/flutter/services/KeyEvent-class.html
+[`RawKeyEvent`]: {{site.api}}/flutter/services/RawKeyEvent-class.html
+[PR 87174]: {{site.github}}/flutter/flutter/pull/87174
 
-{% comment %}
-  Add the links to the end of the file in alphabetical order.
-  The following links are commented out because they make
-  the GitHubActions (GHA) link checker believe they are broken links,
-  but please remove the comment tags before you commit!
-
-  If you are sharing new API that hasn't landed in
-  the stable channel yet, use the master channel link.
-  To link to docs on the master channel,
-  include the following note and make sure that
-  the URL includes the master link (as shown below).
-
-  Here's an example of defining a stable (site.api) link
-  and a master channel (master-api) link.
-
-<!-- Stable channel link: -->
-[`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
-
-<!-- Master channel link: -->
-{% include master-api.md %}
-
-[`ClassName`]: https://master-api.flutter.dev/flutter/[link_to_relevant_page].html
-
-[Issue xxxx]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
-[Issue yyyy]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
-[PR title #1]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
-[PR title #2]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
-{% endcomment %}
