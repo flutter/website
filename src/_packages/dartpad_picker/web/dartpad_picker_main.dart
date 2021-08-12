@@ -37,6 +37,7 @@ var counter = r'''
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
+  @override
   _CounterState createState() => _CounterState();
 }
 
@@ -45,10 +46,11 @@ class _CounterState extends State<Counter> {
 
   void change() {
     setState(() {
-      val ++;
+      val += 1;
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
@@ -59,8 +61,8 @@ class _CounterState extends State<Counter> {
                 padding: const EdgeInsets.all(8.0),
                 child: Center(child: Text('$val'))),
             ElevatedButton(
-              child: Text('Add'),
-              onPressed: change,
+              child: const Text('Add'),
+              onPressed: () => change(),
             ),
           ],
         ),
@@ -75,9 +77,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Center(
-        child: Container(
-          child: Counter(),
-        ),
+        child: Counter(),
       ),
     );
   }
@@ -118,7 +118,7 @@ class _MyAppState extends State<MyApp>
     super.initState();
 
     controller = AnimationController(
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       vsync: this,
     );
 
@@ -145,7 +145,7 @@ class _MyAppState extends State<MyApp>
       child: RotationTransition(
         turns: animation,
         child: Stack(
-          children: [
+          children: const [
             Positioned.fill(
               child: FlutterLogo(),
             ),
@@ -178,7 +178,7 @@ void main() async {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Fibonacci List'),
+          title: const Text('Fibonacci List'),
         ),
         body: FibonacciListView(numbers),
       ),
@@ -200,7 +200,7 @@ class FibonacciNumbers {
 class FibonacciListView extends StatelessWidget {
   final FibonacciNumbers numbers;
 
-  FibonacciListView(this.numbers);
+  const FibonacciListView(this.numbers);
 
   @override
   Widget build(BuildContext context) {
