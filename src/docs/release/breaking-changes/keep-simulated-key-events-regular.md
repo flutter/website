@@ -77,7 +77,7 @@ This new model assures consistency between
 key events and keyboard states,
 simplifying applications' handling logic,
 and allows the state of "keyboard modes" to be
-toggled without extra information.
+tracked without extra information.
 
 ## Description of change
 
@@ -94,15 +94,15 @@ and one "key up."
 
 A more formal definition is as follows:
 - The stream of events must consist of
-"key event sequences,"
-which can interleave with each other.
+  "key event sequences,"
+  which can interleave with each other.
 - A key event sequence consists of
-key events of the same physical key and
-the same logical key.
+  key events of the same physical key and
+  the same logical key.
 - A key event sequence consists of 
-one key down event,
-zero or more key repeat events,
-and one key up event in order.
+  one key down event,
+  zero or more key repeat events,
+  and one key up event in order.
 
 Flutter will throw the assertion errors on malformed events, such as:
 ```
@@ -117,49 +117,108 @@ If this occurs in real application, please report this bug to Flutter. If this o
 
 ## Migration guide
 
-{% comment %}
-  A description of how to make the change.
-  If a migration tool is available,
-  discuss it here. Even if there is a tool,
-  a description of how to make the change manually
-  must be provided. This section needs before and
-  after code examples that are relevant to the
-  developer.
-{% endcomment %}
+If the error message indicates that
+the physical key is already pressed,
+then insert a `simulateKeyUpEvent`
+for the same key at a proper place
+before that line.
+
+This can most commonly occur when simulating
+the key down event of the same key multiple times
+in the same test case.
 
 Code before migration:
 
 <!-- skip -->
 ```dart
-// Example of code before the change.
+// Check if KeyA triggers widget 1.
+await tester.pumpWidget(widget1());
+await simulateKeyDownEvent(LogicalKeyboardKey.keyA);
+expect(widget1Triggered, true);
+
+// Check if KeyA triggers widget 2.
+await tester.pumpWidget(widget2());
+await simulateKeyDownEvent(LogicalKeyboardKey.keyA);
+expect(widget2Triggered, true);
 ```
 
 Code after migration:
 
 <!-- skip -->
 ```dart
-// Example of code after the change.
+// Check if KeyA triggers widget 1.
+await tester.pumpWidget(widget1());
+await simulateKeyDownEvent(LogicalKeyboardKey.keyA);
+expect(widget1Triggered, true);
+// Add a required key up event.
+await simulateKeyUpEvent(LogicalKeyboardKey.keyA);
+
+// Check if KeyA triggers widget 2.
+await tester.pumpWidget(widget2());
+await simulateKeyDownEvent(LogicalKeyboardKey.keyA);
+expect(widget2Triggered, true);
+// Add an optional key up event (good to have).
+await simulateKeyUpEvent(LogicalKeyboardKey.keyA); 
 ```
+
+Similarly, if the error message indicates that
+the physical key is not pressed,
+then insert a `simulateKeyDownEvent`
+for the same key at a proper place
+before that line.
+
+One of the possible cases
+is to have simulated a key up event
+at the beginning of the test,
+without pressing the key first.
+
+Code before migration:
+
+<!-- skip -->
+```dart
+// Check if KeyA up triggers widget 3.
+await tester.pumpWidget(widget3());
+await simulateKeyUpEvent(LogicalKeyboardKey.keyA);
+expect(widget3Triggered, true);
+```
+
+Code after migration:
+
+<!-- skip -->
+```dart
+// Check if KeyA triggers widget 1.
+await tester.pumpWidget(widget3());
+// Add a required key down event.
+await simulateKeyDownEvent(LogicalKeyboardKey.keyA);
+await simulateKeyUpEvent(LogicalKeyboardKey.keyA);
+expect(widget3Triggered, true);
+```
+
+If the error message indicates that
+the physical key is pressed on
+a different logical key,
+then check the key down, repeat and up simulation
+for this physical key and
+make sure they produce the same logical key.
+
+One of the possible cases
+is that the application relies on the behavior
+that the logical key for the same key
+changes during the press.
+This behavior will be changed soon
+so that all key repeat and up events
+will have the same logical key as 
+the key down event.
+How migration should be done depends on
+the specific demand,
+and please file an issue
+if you have trouble migrating.
+
 
 ## Timeline
 
-{% comment %}
-  The version # of the SDK where this change was
-  introduced.  If there is a deprecation window,
-  the version # to which we guarantee to maintain
-  the old API. Use the following template:
-
-  If a breaking change has been reverted in a
-  subsequent release, move that item to the
-  "Reverted" section of the index.md file.
-  Also add the "Reverted in version" line,
-  shown as optional below. Otherwise, delete
-  that line.
-{% endcomment %}
-
-Landed in version: xxx<br>
-In stable release: not yet
-Reverted in version: xxx  (OPTIONAL, delete if not used)
+Landed in version: 2.5.0-5.0.pre<br>
+In stable release: 2.5.0
 
 ## References
 
