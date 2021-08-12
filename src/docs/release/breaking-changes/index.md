@@ -19,6 +19,7 @@ release, and listed in alphabetical order:
 * [GestureRecognizer Cleanup][]
 * [Replace AnimationSheetBuilder.display with collate][]
 * [Using HTML slots to render platform views in the web][]
+* [Keep simulated key events regular][]
 
 [Default drag scrolling devices]: /docs/release/breaking-changes/default-scroll-behavior-drag
 [Deprecated API removed after v2.2]: /docs/release/breaking-changes/2-2-deprecations
@@ -26,6 +27,7 @@ release, and listed in alphabetical order:
 [Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
 [Using HTML slots to render platform views in the web]: /docs/release/breaking-changes/platform-views-using-html-slots-web
+[Keep simulated key events regular]: /docs/release/breaking-changes/keep-simulated-key-events-regular
 
 ### Reverted changes
 
