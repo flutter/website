@@ -46,7 +46,7 @@ class _CounterState extends State<Counter> {
 
   void change() {
     setState(() {
-      val += 1;
+      val++;
     });
   }
 
@@ -62,7 +62,7 @@ class _CounterState extends State<Counter> {
                 child: Center(child: Text('$val'))),
             ElevatedButton(
               child: const Text('Add'),
-              onPressed: () => change(),
+              onPressed: change,
             ),
           ],
         ),
