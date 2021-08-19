@@ -1,28 +1,28 @@
-# Site settings
 title: Flutter
-# description: TBC
-email: flutter-dev@googlegroups.com
 url: https://flutter.dev
-port: 4002
+email: flutter-dev@googlegroups.com
+
+google_analytics_id: UA-67589403-1
+google_site_verification: HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4
+google_tag_manager_id: GTM-ND4LWWZ
+default_share_image: /assets/images/flutter-logo-sharing.png
+  
 github_username: flutter
+branch: master
 repo:
   organization: https://github.com/flutter
   this: https://github.com/flutter/website
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
-branch: master
-
 dart:
   api: https://api.dart.dev
   sdk:
     channel: stable
-sdk: # Flutter SDK
+sdk:
   channel: stable # When changing this value also update it in src/_assets/js/archive.js
-
 social:
   twitter: https://twitter.com/flutterdev
   youtube: https://www.youtube.com/flutterdev
-
 dart-site: https://dart.dev
 news: https://news.dartlang.org
 api: https://api.flutter.dev
@@ -45,64 +45,69 @@ firebase: https://firebase.google.com
 flutterfire: https://firebase.flutter.dev
 youtube-site: https://youtube.com
 
-defaults:
-- scope:
-    path: ''
-  values:
-    layout: default
-    show-nav-get-started-button: true
-    # To hide banners from every page, comment out the `show_banner` setting
-    # below. To selectively enable a banner (say, on the homepage) add
-    # `show_banner: true` to the page's frontmatter.
-    # DON'T HIDE BANNERS! Hiding banners makes nav-tabs break.
-    # DETAILS: https://github.com/flutter/website/issues/3897
-    show_banner: true
-    show_footer: true
-- scope:
-    path: 'docs'
-  values:
-    toc: true
-- scope:
-    path: 'docs/cookbook'
-  values:
-    show_breadcrumbs: true
-- scope:
-    path: 'docs/development'
-  values:
-    show_breadcrumbs: true
-- scope:
-    path: 'docs/development/ui/widgets'
-  values:
-    toc: false
-- scope:
-    path: 'docs/get-started'
-  values:
-    show_breadcrumbs: true
-- scope:
-    path: 'docs/get-started/flutter-for'
-  values:
-    show_breadcrumbs: false
 
-# Build settings
+########### Jekyll ###########
 
-assets:
-  sources:
-    - _shared/_assets
-    - _shared/_assets/css
+source: src
+permalink: pretty
+exclude: []
+sass:
+  sass_dir: _sass
+  cache: false
+  style: compressed
+  load_paths:
+    - ../node_modules
 
-# kramdown: {show_warnings: true}
 plugins:
   - jekyll-toc
-source: src
-# `symlinked-sources` can refer to individual files or directories
-# under `src` that are symlinked to somewhere outside `src`, or it can
-# refer to the root folder of the symlinked content (like `site-shared/src`):
-symlinked-sources: [site-shared/src]
 toc:
   min_level: 2
   max_level: 4
 
-## Site-wide shorthands
+defaults:
+  - scope:
+      path: assets/images
+    values:
+      image: true
+  - scope:
+      path: assets/js
+    values:
+      js: true
+  - scope:
+      path: ''
+    values:
+      layout: default
+      show-nav-get-started-button: true
+      show_banner: true
+      show_footer: true
+  - scope:
+      path: 'docs'
+    values:
+      toc: true
+  - scope:
+      path: 'docs/cookbook'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'docs/development'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'docs/development/ui/widgets'
+    values:
+      toc: false
+  - scope:
+      path: 'docs/get-started'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'docs/get-started/flutter-for'
+    values:
+      show_breadcrumbs: false
+
+
+########### Alerts ###########
+# TODO these are bootstrap related, will not be supported
 
 alert:
   bonus: >-
@@ -130,19 +135,12 @@ alert:
     <i class="fas fa-exclamation-triangle"></i> **Warning:**
   end: </aside>
 
+
+########### Custom ###########
+
 custom:
   dartpad:
     embed-dart-prefix: https://dartpad.dev/embed-dart.html
     embed-flutter-prefix: https://dartpad.dev/embed-flutter.html
     embed-html-prefix: https://dartpad.dev/embed-html.html
     embed-inline-prefix: https://dartpad.dev/embed-inline.html
-
-  # callout_danger: '<div class="bs-callout bs-callout-danger">'
-  # callout_default: '<div class="bs-callout bs-callout-default">'
-  # callout_primary: '<div class="bs-callout bs-callout-primary">'
-  # callout_success: '<div class="bs-callout bs-callout-success">'
-  # callout_info: '<div class="bs-callout bs-callout-info">'
-  # callout_warning: '<div class="bs-callout bs-callout-warning">'
-
-  # hr_faded: '<hr class="faded"/>'
-  # hr_shaded: '<hr class="shaded"/>'
