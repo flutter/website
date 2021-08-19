@@ -29,7 +29,7 @@ RUN bundle install
 # Install Node deps
 ENV NODE_ENV=development
 COPY package.json .
-RUN npm install -g npm firebase-tools
+RUN npm install -g npm firebase-tools superstatic
 RUN npm install
 
 COPY ./ ./

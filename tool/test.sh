@@ -8,12 +8,6 @@ TARGET=stable  # default to stable
 BUILD=1        # always test build
 
 
-if [[ -n "$DISABLE_TESTS" ]]; then
-  echo "=> Tests disabled by DISABLE_TESTS=$DISABLE_TESTS"
-  exit 0;
-fi
-
-
 while [[ "$1" == -* ]]; do
   case "$1" in
     --target)       shift; TARGET=$1; shift;;
@@ -37,11 +31,15 @@ while [[ "$1" == -* ]]; do
 done
 
 
+if [[ -n "$DISABLE_TESTS" ]]; then
+  echo "=> Tests disabled by DISABLE_TESTS=$DISABLE_TESTS"
+  exit 0;
+fi
+
 if [[ -z "$TARGET" ]]; then
   echo "=> A flutter branch target is required!"
   exit 0
 fi
-
 
 # We use different Flutter SDKs on different tasks. The flutter
 # submodule has a pinned commit that will be checkout out. The checkout 

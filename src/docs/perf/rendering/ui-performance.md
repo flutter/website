@@ -129,7 +129,7 @@ Once your app is running in profile mode,
 [launch DevTools][].
 
 [launch DevTools]: /docs/development/tools/devtools
-[Timeline view]: /docs/development/tools/devtools/timeline
+[Timeline view]: /docs/development/tools/devtools/performance
 
 ## The performance overlay
 

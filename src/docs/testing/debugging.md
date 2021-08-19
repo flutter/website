@@ -310,7 +310,7 @@ You might find the following docs useful:
 [Flutter inspector]: /docs/development/tools/devtools/inspector
 [DevTools debugger]: /docs/development/tools/devtools/debugger
 [logging view]: /docs/development/tools/devtools/logging
-[Timeline view]: /docs/development/tools/devtools/timeline
+[Timeline view]: /docs/development/tools/devtools/performance
 [The performance overlay]: /docs/perf/rendering/ui-performance#the-performance-overlay
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
 [overlay]: /docs/testing/code-debugging#performance-overlay

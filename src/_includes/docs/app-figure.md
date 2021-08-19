@@ -14,12 +14,12 @@ NOTE(rearch) We second that, never a good idea.
 {% if include.platform -%}
   {% assign alt = alt | append: ' on ' | append: include.platform -%}
   {% assign platform_in_lowercase = include.platform | downcase -%}
-  {% assign path = path | append: platform_in_lowercase -%}
+  {% assign path = path | append: platform_in_lowercase | append: '/'  -%}
 {% endif -%}
 
 <figure class="site-figure {{include.class}}">
   <div class="site-figure-container">
-    <img src='/assets/images/docs/{{path}}/{{include.image}}' 
+    <img src='/assets/images/docs/{{path}}{{include.image}}' 
          class='{{include.img-class}}' 
          alt='{{alt}}'>
     {% if caption -%}

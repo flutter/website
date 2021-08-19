@@ -617,7 +617,7 @@ Happy Fluttering!
 [building a web application]: /docs/get-started/web
 [`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
-[creating responsive apps]: /docs/development/ui/layout/responsive
+[creating responsive apps]: /docs/development/ui/layout/adaptive-responsive
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Flutter for web]: /web
 [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
@@ -743,7 +743,7 @@ If you have questions or comments about any of these docs,
 [state management advice]: /docs/development/data-and-backend/state-mgmt/intro
 [thinking declaratively]: /docs/development/data-and-backend/state-mgmt/declarative
 [this site]: /docs/development/tools/devtools
-[timeline view]: /docs/development/tools/devtools/timeline
+[timeline view]: /docs/development/tools/devtools/performance
 [VS Code]: /docs/development/tools/vs-code
 [widget inspector]: /docs/development/tools/devtools/inspector
 

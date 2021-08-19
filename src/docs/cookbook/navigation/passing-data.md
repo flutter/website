@@ -437,7 +437,7 @@ class DetailScreen extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/passing-data.gif" alt="Passing Data Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/passing-data.gif" alt="Passing Data Demo" class="site-mobile-screenshot" />
 </noscript>
 
 
