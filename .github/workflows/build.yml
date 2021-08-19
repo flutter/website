@@ -26,18 +26,22 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "test dev channel"
+          - name: "Dev channel"
             channel: dev
-          - name: "test beta channel"
+            experimental: true
+          - name: "Beta channel"
             channel: beta
-          - name: "test stable channel"
+            experimental: true
+          - name: "Stable channel"
             channel: stable
+            experimental: false
     steps:
       - uses: actions/checkout@v2
       - name: Test
         run: make test
         env:
           TEST_TARGET_CHANNEL: ${{ matrix.channel }}
+        continue-on-error: ${{ matrix.experimental }}
 
   deploy:
     needs: test
