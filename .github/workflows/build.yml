@@ -1,134 +1,43 @@
 name: build
 
 on:
-  # Run on PRs and pushes to the default branch.
   push:
-    branches: [ master ]
+    branches:
+      - master
+      # Staging (REMOVE)
+      - main
+      - rearch
+      - rearch-integration
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
   schedule:
     - cron: "0 0 * * 0"
 
 env:
-  _OS_NAME: linux
-  DART_SITE_ENV_DEFS: 1
-  FLUTTER_ROOT: flutter
-  FLUTTER_BIN: flutter/bin
-  JEKYLL_ENV: production
-  PUB_ENVIRONMENT: bot.github
-  SITE_LOCALHOST_PORT: 5000
-  SITE_JEKYLL_DEST: _site
-  SITE_JEKYLL_SRC: src
-  TMP: ${{ github.workspace }}/tmp
-  TZ: US/Pacific # normalize build timestamp
-
+  NODE_ENV: production
+  NODE_VERSION: 15
 
 jobs:
+
   test:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         include:
-            # pinned flutter submodule commit
-          - name: "Submodule commit: code check"
-            sdk: submodule-commit
-            task: tool/check-code.sh
-            experimental: true
-          - name: "Submodule commit: jekyll build"
-            sdk: submodule-commit
-            task: bundle exec jekyll build
-            experimental: true
-            # dev
-          - name: "Dev channel: code check"
-            sdk: dev
-            task: tool/check-code.sh
-            experimental: true
-          - name: "Dev channel: null safety code check"
-            sdk: dev
-            task: tool/check-code.sh --null-safety
-            experimental: true
-          - name: "Dev commit: jekyll build"
-            sdk: dev
-            task: bundle exec jekyll build
-            experimental: true
-            # beta
-          - name: "Beta channel: code check"
-            sdk: beta
-            task: tool/check-code.sh
-            experimental: true
-          - name: "Beta channel: null safety code check"
-            sdk: beta
-            task: tool/check-code.sh --null-safety
-            experimental: true
-          - name: "Beta commit: jekyll build"
-            sdk: beta
-            task: bundle exec jekyll build
-            experimental: true
-            # stable
-          - name: "Stable channel: code check"
-            sdk: stable
-            task: tool/check-code.sh
-            experimental: false
-          - name: "Stable channel: null safety code check"
-            sdk: stable
-            task: tool/check-code.sh --null-safety
-            experimental: false
-          - name: "Stable channel: jekyll build"
-            sdk: stable
-            task: bundle exec jekyll build
-            experimental: false
-
+          - name: "test dev channel"
+            channel: dev
+          - name: "test beta channel"
+            channel: beta
+          - name: "test stable channel"
+            channel: stable
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: "recursive"
-      - run: mkdir -p $TMP
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14
-      - uses: ruby/setup-ruby@v1
-        if: contains(matrix.task, 'build')
-        with:
-          bundler-cache: true
-          ruby-version: 2.6.5
-      - uses: dart-lang/setup-dart@b77f714ba35594641a83a71d243c7de39d820474
-        with:
-          sdk: stable
-      - name: Install node dependencies
-        run: npm install
-      - name: Install dart dependencies
-        run: dart pub get
-      - name: Select flutter
-        # We use different Flutter SDKs on different tasks. The `flutter`
-        # submodule has a pinned commit that will be checkout out.
-        # The checkout is a shallow, single-branch (depth=1) checkout so
-        # to get to other versions of flutter without doing a full checkout
-        # we need to tell git about the remote branch, fetch it, and then
-        # check it out. To know its version, the flutter tool relies on the
-        # tags. Those need to be pulled separately with a shallow fetch to
-        # avoid fetching all of them.
-        if: matrix.sdk != 'submodule-commit' && matrix.sdk != 'stable'
-        run: |
-          cd flutter
-          # Use the desired channel branch in `remote.origin.fetch`.
-          git remote set-branches origin ${{ matrix.sdk }}
-          # Fetch the latest commit on the channel branch.
-          git fetch --depth 1 origin ${{ matrix.sdk }}
-          # Checkout the channel branch.
-          git checkout ${{ matrix.sdk }} --
-          # Pull the tags for the commit.
-          git pull
-      - name: Setup flutter
-        run: flutter/bin/flutter doctor
-      - run: tool/shared/write-ci-info.sh -v
-        if: contains(matrix.task, 'build')
-      - name: ${{ matrix.name }}
-        run: ${{ matrix.task }}
-        continue-on-error: ${{ matrix.experimental }}
-      - name: Check links
-        if: contains(matrix.task, 'build')
-        run: tool/shared/check-links.sh
+      - name: Test
+        run: make test
+        env:
+          TEST_TARGET_CHANNEL: ${{ matrix.channel }}
 
   deploy:
     needs: test
@@ -141,32 +50,47 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: "recursive"
-      - run: mkdir -p $TMP
-      - uses: actions/setup-node@v2
+      - name: Install Node
+        uses: actions/setup-node@v2
         with:
-          node-version: 14
-      - uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-          ruby-version: 2.6.5
-      - uses: dart-lang/setup-dart@b77f714ba35594641a83a71d243c7de39d820474
-        with:
-          sdk: stable
-      - name: Install node dependencies
-        run: npm install
-      - name: Install dart dependencies
-        run: dart pub get
-      - name: Select flutter
-        run: |
-          cd flutter
-          git remote set-branches origin stable
-          git fetch --depth 1 origin stable
-          git checkout stable --
-          git pull
-      - name: Setup flutter
-        run: flutter/bin/flutter doctor
-      - run: tool/shared/write-ci-info.sh -v
-      - run: bundle exec jekyll build
-      - run: tool/shared/deploy.sh --robots ok default
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install firebase tools
+        run: npm install -g firebase-tools
+      - name: Build
+        run: make build
+        env:
+          DISABLE_TESTS: 1
+      - name: Deploy
+        run: make deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_ALIAS: default
+
+  stage:
+    needs: test
+    runs-on: ubuntu-latest
+    if: |
+      github.ref == 'refs/heads/main' ||
+      github.ref == 'refs/heads/rearch' ||
+      github.ref == 'refs/heads/rearch-integration'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - name: Install Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install firebase tools
+        run: npm install -g firebase-tools
+      - name: Build
+        run: make build
+        env:
+          DISABLE_TESTS: 1
+      - name: Deploy
+        run: make deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_ALIAS: vgv
+
+          

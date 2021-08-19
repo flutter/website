@@ -1,20 +1,5 @@
 
 // -- Bootstrap v5.x --
-// NOTE attempting to import only what we need and shave off as much 
-// weight as we can to reduce the build time during development. If 
-// these are commented out, then this attemp failed.
-// @import '../../node_modules/bootstrap-scss/vendor/rfs';
-// @import '../../node_modules/bootstrap-scss/functions';
-// @import '../../node_modules/bootstrap-scss/variables';
-// @import '../../node_modules/bootstrap-scss/mixins/border-radius';
-// @import '../../node_modules/bootstrap-scss/mixins/breakpoints';
-// @import '../../node_modules/bootstrap-scss/mixins/gradients';
-// @import '../../node_modules/bootstrap-scss/mixins/transition';
-// @import '../../node_modules/bootstrap-scss/mixins/hover';
-// @import '../../node_modules/bootstrap-scss/nav';
-// @import '../../node_modules/bootstrap-scss/navbar';
-
-// NOTE comment out selective imports above, import all of it.
 // WARNING: The `float-right` mixin has been deprecated as of v4.3.0. It will be removed entirely in v5.
 //   on line 8:5 of node_modules/bootstrap-scss/mixins/_deprecate.scss, in mixin `deprecate`
 //   from line 9:12 of node_modules/bootstrap-scss/mixins/_float.scss, in mixin `float-right`
