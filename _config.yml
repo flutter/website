@@ -19,7 +19,11 @@ branch: rearch-integration
 github_username: flutter
 repo:
   organization: https://github.com/flutter
-  this: https://github.com/flutter/website
+
+  # TODO change back with master
+  # this: https://github.com/flutter/website
+  this: https://github.com/flutter/flutter-website-rearch
+
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
 dart:
