@@ -67,7 +67,7 @@ BUILD_COMMIT := $(shell git rev-parse --short HEAD)
 BUILD_TAG = fltbuild
 BUILD_NAME = tmpbuild
 
-test-build:
+test:
 	docker build --rm --target test \
 		--build-arg TEST_TARGET_CHANNEL=${TEST_TARGET_CHANNEL} \
 		--build-arg RUBY_VERSION=${RUBY_VERSION} \
