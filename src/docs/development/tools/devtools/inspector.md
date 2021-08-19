@@ -22,7 +22,7 @@ trees, and can be used for the following:
 * understanding existing layouts
 * diagnosing layout issues
 
-![Screenshot of the Flutter inspector window]({% asset tools/devtools/inspector_screenshot.png @path %}){:width="100%"}
+![Screenshot of the Flutter inspector window](/assets/images/docs/tools/devtools/inspector_screenshot.png){:width="100%"}
 
 ## Get started
 
@@ -44,23 +44,23 @@ inspector's toolbar. When space is limited, the icon is
 used as the visual version of the label.
 
 <dl markdown="1">
-<dt markdown="1">![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"} **Select widget mode**</dt>
+<dt markdown="1">![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **Select widget mode**</dt>
 <dd markdown="1">Enable this button in order to select
     a widget on the device to inspect it. For more information,
     see [Inspecting a widget](#inspecting-a-widget).
-<dt markdown="1">![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"} **Refresh tree**</dt>
+<dt markdown="1">![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**</dt>
 <dd>Reload the current widget info.</dd>
-<dt markdown="1">![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"} **[Slow animations][]**</dt>
+<dt markdown="1">![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[Slow animations][]**</dt>
 <dd>Run animations 5 times slower to help fine-tune them.</dd>
-<dt markdown="1">![Show guidelines mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"} **[Show guidelines][]**</dt>
+<dt markdown="1">![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[Show guidelines][]**</dt>
 <dd>Overlay guidelines to assist with fixing layout issues.</dd>
-<dt markdown="1">![Show baselines icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"} **[Show baselines][]**</dt>
+<dt markdown="1">![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[Show baselines][]**</dt>
 <dd>Show baselines, which are used for aligning text.
     Can be useful for checking if text is aligned.</dd>
-<dt markdown="1">![Highlight repaints icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"} **[Highlight repaints][]**</dt>
+<dt markdown="1">![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[Highlight repaints][]**</dt>
 <dd>Show borders that change color when elements repaint.
     Useful for finding unnecessary repaints.</dd>
-<dt markdown="1">![Highlight oversized images icon]({% asset tools/devtools/invert_oversized_images_icon.png @path %}){:width="20px"} **[Highlight oversized images][]**</dt>
+<dt markdown="1">![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[Highlight oversized images][]**</dt>
 <dd>Highlights images that are using too much memory
     by inverting colors and flipping them.</dd>
 
@@ -130,14 +130,14 @@ standard  "yellow-tape" pattern, as you might see on a running
 device. These visualizations aim to improve understanding of
 why overflow errors occur as well as how to fix them.
 
-![The Layout Explorer showing errors and device inspector]({% asset tools/devtools/layout_explorer_errors_and_device.gif @path %}){:width="100%"}
+![The Layout Explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
 
 Clicking a widget in the layout explorer mirrors
 the selection on the on-device inspector. **Select Widget Mode**
 needs to be enabled for this. To enable it,
 click on the **Select Widget Mode** button in the inspector.
 
-![The Select Widget Mode button in the inspector]({% asset tools/devtools/select_widget_mode_devtools_alpha.png @path %})
+![The Select Widget Mode button in the inspector](/assets/images/docs/tools/devtools/select_widget_mode_devtools_alpha.png)
 
 For some properties, like flex factor, flex fit, and alignment,
 you can modify the value via dropdown lists in the explorer.
@@ -158,7 +158,7 @@ such as [`mainAxisSize`][], [`textDirection`][], and
 
 ###### mainAxisAlignment
 
-![The Layout Explorer changing main axis alignment]({% asset tools/devtools/layout_explorer_main_axis_alignment.gif @path %}){:width="100%"}
+![The Layout Explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
@@ -172,7 +172,7 @@ Supported values:
 
 ###### crossAxisAlignment
 
-![The Layout Explorer changing cross axis alignment]({% asset tools/devtools/layout_explorer_cross_axis_alignment.gif @path %}){:width="100%"}
+![The Layout Explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
@@ -184,7 +184,7 @@ Supported values:
 
 ###### FlexParentData.flex
 
-![The Layout Explorer changing flex factor]({% asset tools/devtools/layout_explorer_flex.gif @path %}){:width="100%"}
+![The Layout Explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
 
 Layout Explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
@@ -192,7 +192,7 @@ factor of a flex widget’s child can be any int.
 
 ###### Flexible.fit
 
-![The Layout Explorer changing fit]({% asset tools/devtools/layout_explorer_fit.gif @path %}){:width="100%"}
+![The Layout Explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
 
 Layout Explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
@@ -204,7 +204,7 @@ in the Layout Explorer. You can see size, constraint, and padding
 information for both the selected widget and its nearest upstream
 RenderObject.
 
-![The Layout Explorer fixed size tool]({% asset tools/devtools/layout_explorer_fixed_layout.png @path %})
+![The Layout Explorer fixed size tool](/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png)
 
 ## Visual debugging
 
@@ -239,8 +239,8 @@ The following links provide more info.
 
 The following screen recordings show before and after slowing an animation.
 
-![Screen recording showing normal animation speed]({% asset tools/devtools/debug-toggle-slow-animations-disabled.gif @path %})
-![Screen recording showing slowed animation speed]({% asset tools/devtools/debug-toggle-slow-animations-enabled.gif @path %})
+![Screen recording showing normal animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-disabled.gif)
+![Screen recording showing slowed animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-enabled.gif)
 
 ### Show guidelines
 
@@ -266,7 +266,7 @@ void showLayoutGuidelines() {
 Widgets that draw to the screen create a [render box][], the 
 building blocks of Flutter layouts. They’re shown with a bright blue border:
 
-![Screenshot of render box guidelines]({% asset tools/devtools/debug-toggle-guideline-render-box.png @path %})
+![Screenshot of render box guidelines](/assets/images/docs/tools/devtools/debug-toggle-guideline-render-box.png)
 
 #### Alignments
 
@@ -274,19 +274,19 @@ Alignments are shown with yellow arrows. These arrows show the vertical
 and horizontal offsets of a widget relative to its parent.
 For example, this button’s icon is shown as being centered by the four arrows:
 
-![Screenshot of alignment guidelines]({% asset tools/devtools/debug-toggle-guidelines-alignment.png @path %})
+![Screenshot of alignment guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-alignment.png)
 
 #### Padding
 
 Padding is shown with a semi-transparent blue background:
 
-![Screenshot of padding guidelines]({% asset tools/devtools/debug-toggle-guidelines-padding.png @path %})
+![Screenshot of padding guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-padding.png)
 
 #### Scroll views
 
 Widgets with scrolling contents (such as list views) are shown with green arrows:
 
-![Screenshot of scroll view guidelines]({% asset tools/devtools/debug-toggle-guidelines-scroll.png @path %})
+![Screenshot of scroll view guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-scroll.png)
 
 #### Clipping
 
@@ -295,14 +295,14 @@ with a dashed pink line with a scissors icon:
 
 [ClipRect widget]: {{site.api}}/flutter/widgets/ClipRect-class.html
 
-![Screenshot of clip guidelines]({% asset tools/devtools/debug-toggle-guidelines-clip.png @path %})
+![Screenshot of clip guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-clip.png)
 
 #### Spacers
 
 Spacer widgets are shown with a grey background,
 such as this `SizedBox` without a child:
 
-![Screenshot of spacer guidelines]({% asset tools/devtools/debug-toggle-guidelines-spacer.png @path %})
+![Screenshot of spacer guidelines](/assets/images/docs/tools/devtools/debug-toggle-guidelines-spacer.png)
 
 ### Show baselines
 
@@ -312,7 +312,7 @@ Baselines are horizontal lines used to position text.
 This can be useful for checking whether text is precisely aligned vertically.
 For example, the text baselines in the following screenshot are slightly misaligned:
 
-![Screenshot with show baselines enabled]({% asset tools/devtools/debug-toggle-guidelines-baseline.png @path %})
+![Screenshot with show baselines enabled](/assets/images/docs/tools/devtools/debug-toggle-guidelines-baseline.png)
 
 The [Baseline][] widget can be used to adjust baselines.
 
@@ -365,7 +365,7 @@ class EverythingRepaintsPage extends StatelessWidget {
 }
 ```
 
-![Screen recording of a whole screen repainting]({% asset tools/devtools/debug-toggle-guidelines-repaint-1.gif @path %})
+![Screen recording of a whole screen repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-1.gif)
 
 Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
@@ -387,7 +387,7 @@ class AreaRepaintsPage extends StatelessWidget {
 }
 ```
 
-![Screen recording of a just a progress indicator repainting]({% asset tools/devtools/debug-toggle-guidelines-repaint-2.gif @path %})
+![Screen recording of a just a progress indicator repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-2.gif)
 
 `RepaintBoundary` widgets have tradeoffs. They can help with performance,
 but they also have an overhead of creating a new canvas,
@@ -409,7 +409,7 @@ void highlightRepaints() {
 This option highlights images that are too large by both inverting their colors
 and flipping them vertically:
 
-![A highlighted oversized image]({% asset tools/devtools/debug-toggle-guidelines-oversized.png @path %})
+![A highlighted oversized image](/assets/images/docs/tools/devtools/debug-toggle-guidelines-oversized.png)
 
 The highlighted images use more memory than is required;
 for example, a large 5MB image displayed at 100 by 100 pixels.
@@ -478,12 +478,12 @@ You can learn more at the following link:
 Select the **Details Tree** tab to display the details tree for the
 selected widget.
 
-![The Details Tree tab]({% asset tools/devtools/details_tree_tab.png @path %})
+![The Details Tree tab](/assets/images/docs/tools/devtools/details_tree_tab.png)
 
 From the details tree, you can gather useful information about a
 widget's properties, render object, and children.
 
-![The Details Tree view]({% asset tools/devtools/details_tree.png @path %})
+![The Details Tree view](/assets/images/docs/tools/devtools/details_tree.png)
 
 
 ## Track widget creation
@@ -506,11 +506,11 @@ with and without track widget creation enabled.
 
 Track widget creation enabled (default):
 
-![The widget tree with track widget creation enabled]({% asset tools/devtools/track_widget_creation_enabled.png @path %}){:width="100%"}
+![The widget tree with track widget creation enabled](/assets/images/docs/tools/devtools/track_widget_creation_enabled.png){:width="100%"}
 
 Track widget creation disabled (not recommended):
 
-![The widget tree with track widget creation disabled]({% asset tools/devtools/track_widget_creation_disabled.png @path %}){:width="100%"}
+![The widget tree with track widget creation disabled](/assets/images/docs/tools/devtools/track_widget_creation_disabled.png){:width="100%"}
 
 This feature prevents otherwise-identical `const` Widgets from
 being considered equal in debug builds. For more details, see

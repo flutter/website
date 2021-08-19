@@ -3,7 +3,7 @@
 # BSD-style license that can be found in the LICENSE file.
 
 require 'liquid/tag/parser' # https://github.com/envygeeks/liquid-tag-parser
-require_relative '../_shared/_plugins/prettify_core'
+require_relative 'prettify_core'
 
 module Jekyll
 

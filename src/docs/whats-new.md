@@ -80,8 +80,8 @@ If you are interested, check out the following resources:
 We've published the following articles on the [Flutter Medium][]
 publication since the last stable release:
 
-* [How It's Made: I/O Photo Booth][]
-* [Which factors affected users’ decisions to adopt Flutter? — Q1 2021 user survey results][Q1 2021 survey]
+* [How It's Made: I/O Photo Booth][]
+* [Which factors affected users’ decisions to adopt Flutter? - Q1 2021 user survey results][Q1 2021 survey]
 
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: {{site.medium}}/flutter/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
@@ -99,7 +99,7 @@ publication since the last stable release:
 [Get to know Firebase for Flutter]: https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0
 [Google APIs]: /docs/development/data-and-backend/google-apis
 [Google I/O workshops page]: https://events.google.com/io/program/content?4=topic_flutter&5=type_workshop&lng=en
-[How It's Made: I/O Photo Booth]: {{site.medium}}/flutter/how-its-made-i-o-photo-booth-3b8355d35883
+[How It's Made: I/O Photo Booth]: {{site.medium}}/flutter/how-its-made-i-o-photo-booth-3b8355d35883
 [Inherited widgets]: https://youtu.be/LFcGPS6cGrY
 [Inherited widgets DartPad]: /go/inheritedwidget-workshop
 [Memory view page]: /docs/development/tools/devtools/memory
@@ -168,7 +168,7 @@ We've published the following articles on the [Flutter Medium][]
 publication since the last stable release:
 
 * [Flutter performance updates in the first half of 2020][perf-H1-2020]
-* [Are you happy with Flutter? — Q4 2020 user survey results][Q4]
+* [Are you happy with Flutter? - Q4 2020 user survey results][Q4]
 * [Join us for #30DaysOfFlutter][]
 * [Providing operating system compatibility on a large scale][comp]
 * [Updates on Flutter Testing][]

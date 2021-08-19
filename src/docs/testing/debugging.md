@@ -50,7 +50,7 @@ the main output that appears on your profile are the
 debug asserts verifying the framework's various invariants
 (see [Debug mode assertions](#debug-mode-assertions)).
 
-![GIF showing DevTools features]({% asset tools/devtools/inspector.gif @path %}){:width="100%"}
+![GIF showing DevTools features](/assets/images/docs/tools/devtools/inspector.gif){:width="100%"}
 
 For more information, see the
 [DevTools][] documentation.

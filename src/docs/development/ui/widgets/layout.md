@@ -2,4 +2,4 @@
 title: Layout widgets
 short-title: Layout
 ---
-{% include catalogpage.html category="Layout" %}
+{% include docs/catalogpage.html category="Layout" %}

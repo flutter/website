@@ -1,0 +1,32 @@
+
+// -- Bootstrap v5.x --
+// NOTE attempting to import only what we need and shave off as much 
+// weight as we can to reduce the build time during development. If 
+// these are commented out, then this attemp failed.
+// @import '../../node_modules/bootstrap-scss/vendor/rfs';
+// @import '../../node_modules/bootstrap-scss/functions';
+// @import '../../node_modules/bootstrap-scss/variables';
+// @import '../../node_modules/bootstrap-scss/mixins/border-radius';
+// @import '../../node_modules/bootstrap-scss/mixins/breakpoints';
+// @import '../../node_modules/bootstrap-scss/mixins/gradients';
+// @import '../../node_modules/bootstrap-scss/mixins/transition';
+// @import '../../node_modules/bootstrap-scss/mixins/hover';
+// @import '../../node_modules/bootstrap-scss/nav';
+// @import '../../node_modules/bootstrap-scss/navbar';
+
+// NOTE comment out selective imports above, import all of it.
+// WARNING: The `float-right` mixin has been deprecated as of v4.3.0. It will be removed entirely in v5.
+//   on line 8:5 of node_modules/bootstrap-scss/mixins/_deprecate.scss, in mixin `deprecate`
+//   from line 9:12 of node_modules/bootstrap-scss/mixins/_float.scss, in mixin `float-right`
+//   from line 54:14 of src/_sass/shared/_toc_shared.scss
+//   from line 23:9 of src/_sass/main.scss
+//   from line 1:9 of main.scss
+@import '../../node_modules/bootstrap-scss/bootstrap';
+
+// NOTE Suppress any warning messages
+$enable-deprecation-messages: false;
+
+// -- FontAwesome v4.x --
+// NOTE this is only being inlined and built every time for 
+// usage of one thing - @extend .fa-link in _content.scss ... 
+@import '../../node_modules/font-awesome/scss/font-awesome';

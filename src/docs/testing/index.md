@@ -51,7 +51,7 @@ or run `flutter test --help` in your terminal.
 
 ### Recipes
 
-{% include testing_toc.md type='unit' %}
+{% include docs/testing-toc.md type='unit' %}
 
 ## Widget tests
 
@@ -69,7 +69,7 @@ an implementation much simpler than a full-blown UI system.
 
 ### Recipes
 
-{% include testing_toc.md type='widget' %}
+{% include docs/testing-toc.md type='widget' %}
 
 ## Integration tests
 
@@ -89,7 +89,7 @@ testing page][].
 
 ### Recipes
 
-{% include testing_toc.md type='integration' %}
+{% include docs/testing-toc.md type='integration' %}
 
 ## Continuous integration services
 

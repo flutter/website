@@ -85,7 +85,7 @@ The Flutter plugin performs code analysis that enables the following:
 * Viewing all current source code problems
   (**View > Tool Windows > Dart Analysis**).
   Any analysis issues are shown in the Dart Analysis pane:<br>
-  ![Dart Analysis pane]({% asset tools/android-studio/dart-analysis.png @path %}){:width="90%"}
+  ![Dart Analysis pane](/assets/images/docs/tools/android-studio/dart-analysis.png){:width="90%"}
 
 ## Running and debugging
 
@@ -110,7 +110,7 @@ The Flutter plugin performs code analysis that enables the following:
 
 Running and debugging are controlled from the main toolbar:
 
-![Main IntelliJ toolbar]({% asset tools/android-studio/main-toolbar.png @path %}){:width="90%"}
+![Main IntelliJ toolbar](/assets/images/docs/tools/android-studio/main-toolbar.png){:width="90%"}
 
 ### Selecting a target
 
@@ -163,7 +163,7 @@ information, start the app in **Debug** mode, and then open
 the Performance tool window using
 **View > Tool Windows > Flutter Performance**.
 
-![Flutter performance window]({% asset tools/android-studio/widget-rebuild-info.png @path %}){:width="90%"}
+![Flutter performance window](/assets/images/docs/tools/android-studio/widget-rebuild-info.png){:width="90%"}
 
 To see the stats about which widgets are being rebuilt, and how often,
 click **Show widget rebuild information** in the **Performance** pane.
@@ -235,7 +235,7 @@ The assist can be invoked by clicking the lightbulb, or by using the
 keyboard shortcut (`Alt`+`Enter` on Linux and Windows,
 `Option`+`Return` on macOS), as illustrated here:
 
-![IntelliJ editing assists]({% asset tools/android-studio/assists.gif @path %}){:width="100%"}
+![IntelliJ editing assists](/assets/images/docs/tools/android-studio/assists.gif){:width="100%"}
 
 Quick Fixes are similar, only they are shown with a piece of code has an error
 and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -261,7 +261,7 @@ Live templates can be used to speed up entering typical code structures.
 They are invoked by typing their prefix, and then selecting it in the code
 completion window:
 
-![IntelliJ live templates]({% asset tools/android-studio/templates.gif @path %}){:width="100%"}
+![IntelliJ live templates](/assets/images/docs/tools/android-studio/templates.gif){:width="100%"}
 
 The Flutter plugin includes the following templates:
 
@@ -288,7 +288,7 @@ Keyboard mappings can be changed in the IDE Preferences/Settings: Select
 *Keymap*, then enter _flutter_ into the search box in the upper right corner.
 Right click the binding you want to change and _Add Keyboard Shortcut_.
 
-![IntelliJ settings keymap]({% asset tools/android-studio/keymap-settings-flutter-plugin.png @path %}){:width="100%"}
+![IntelliJ settings keymap](/assets/images/docs/tools/android-studio/keymap-settings-flutter-plugin.png){:width="100%"}
 
 ### Hot reload vs. hot restart
 

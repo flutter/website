@@ -16,7 +16,7 @@ js:
   the completed app just works on all of these devices!**
 {{site.alert.end}}
 
-{% asset get-started/sign-up alt="The web app that you'll be building" class='site-image-right' %}
+<img src="/assets/images/docs/get-started/sign-up" alt="The web app that you'll be building" class='site-image-right'>
 
 This is a guide to creating your first Flutter **web** app.
 If you are familiar with object-oriented programming,
@@ -598,7 +598,7 @@ Go to this URL in a Chrome browser. You should see the DevTools
 launch screen. It should look like the following:
 
 {% indent %}
-  ![Screenshot of the DevTools launch screen]({% asset get-started/devtools-launch-screen.png @path %}){:width="100%"}
+  ![Screenshot of the DevTools launch screen](/assets/images/docs/get-started/devtools-launch-screen.png){:width="100%"}
 {% endindent %}
 </li>
 
@@ -609,7 +609,7 @@ and click Connect. You should now see Dart DevTools
 running successfully in your Chrome browser:
 
 {% indent %}
-  ![Screenshot of DevTools running screen]({% asset get-started/devtools-running.png @path %}){:width="100%"}
+  ![Screenshot of DevTools running screen](/assets/images/docs/get-started/devtools-running.png){:width="100%"}
 {% endindent %}
 
 Congratulations, you are now running Dart DevTools!
@@ -623,7 +623,7 @@ Congratulations, you are now running Dart DevTools!
   **Flutter Inspector** -> **More Actions** -> **Open DevTools**:
 
   {% indent %}
-  ![Screenshot of Flutter inspector with DevTools menu]({% asset get-started/intellij-devtools.png @path %}){:width="100%"}
+  ![Screenshot of Flutter inspector with DevTools menu](/assets/images/docs/get-started/intellij-devtools.png){:width="100%"}
   {% endindent %}
 {{site.alert.end}}
 
@@ -637,7 +637,7 @@ Select `signin/main.dart` to display your Dart code
 in the center pane.
 
 {% indent %}
-  ![Screenshot of the DevTools debugger]({% asset get-started/devtools-debugging.png @path %}){:width="100%"}
+  ![Screenshot of the DevTools debugger](/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
 {% endindent %}
 </li>
 
