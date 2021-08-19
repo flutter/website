@@ -16,7 +16,7 @@ js:
   the completed app just works on all of these devices!**
 {{site.alert.end}}
 
-<img src="/assets/images/docs/get-started/sign-up" alt="The web app that you'll be building" class='site-image-right'>
+<img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building" class='site-image-right'>
 
 This is a guide to creating your first Flutter **web** app.
 If you are familiar with object-oriented programming,

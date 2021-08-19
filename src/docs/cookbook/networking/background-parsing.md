@@ -283,7 +283,7 @@ class PhotosList extends StatelessWidget {
 }
 ```
 
-![Isolate demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}
+![Isolate demo](/assets/images/docs/cookbook/isolate.gif){:.site-mobile-screenshot}
 
 [`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
 [Fetch data from the internet]: /docs/cookbook/networking/fetch-data

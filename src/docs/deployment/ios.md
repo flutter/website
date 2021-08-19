@@ -118,7 +118,7 @@ In the **Build Settings** section:
 The **General** tab of your project settings should resemble
 the following:
 
-![Xcode Project Settings](/images/releaseguide/xcode_settings.png){:width="100%"}
+![Xcode Project Settings](/assets/images/docs/releaseguide/xcode_settings.png){:width="100%"}
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].

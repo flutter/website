@@ -398,7 +398,7 @@ Updating a Flutter application's launch icon works
 the same way as updating launch icons in native
 Android or iOS applications.
 
-![Launch icon](/images/assets-and-images/icon.png)
+![Launch icon](/assets/images/docs/assets-and-images/icon.png)
 
 #### Android
 
@@ -409,7 +409,7 @@ images named `ic_launcher.png`. Replace them with your
 desired assets respecting the recommended icon size per
 screen density as indicated by the [Android Developer Guide][].
 
-![Android icon location](/images/assets-and-images/android-icon-path.png)
+![Android icon location](/assets/images/docs/assets-and-images/android-icon-path.png)
 
 {{site.alert.note}}
   If you rename the `.png` files, you must also update the
@@ -427,12 +427,12 @@ sized images as indicated by their filename as dictated by the
 Apple [Human Interface Guidelines][].
 Keep the original file names.
 
-![iOS icon location](/images/assets-and-images/ios-icon-path.png)
+![iOS icon location](/assets/images/docs/assets-and-images/ios-icon-path.png)
 
 ### Updating the launch screen
 
 <p align="center">
-  <img src="/images/assets-and-images/launch-screen.png" alt="Launch screen" />
+  <img src="/assets/images/docs/assets-and-images/launch-screen.png" alt="Launch screen" />
 </p>
 
 Flutter also uses native platform mechanisms to draw
@@ -479,7 +479,7 @@ drop in images by opening `Assets.xcassets` or do any
 customization using the Interface Builder in
 `LaunchScreen.storyboard`.
 
-![Adding launch icons in Xcode](/images/assets-and-images/ios-launchscreen-xcode.png){:width="100%"}
+![Adding launch icons in Xcode](/assets/images/docs/assets-and-images/ios-launchscreen-xcode.png){:width="100%"}
 
 For more details, see
 [Adding a splash screen to your mobile app][].

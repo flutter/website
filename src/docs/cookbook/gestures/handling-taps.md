@@ -124,7 +124,7 @@ class MyButton extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/handling-taps.gif" alt="Handle taps demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/handling-taps.gif" alt="Handle taps demo" class="site-mobile-screenshot" />
 </noscript>
 
 

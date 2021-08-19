@@ -200,7 +200,7 @@ or might partially or completely overlap.
 
 {% comment %}
   Save so I can remember how to add it back later.
-  <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
+  <img src="/assets/images/docs/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
 {% endcomment -%}
 
 ## Other resources
@@ -236,7 +236,7 @@ Learn more about Flutter animations at the following links:
 [Animation samples]: {{site.github}}/flutter/samples/tree/master/animations#animation-samples
 [Animation videos]: https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw/search?query=animation
 [Animations in Flutter done right]: https://www.youtube.com/watch?v=wnARLByOtKA&t=3s
-[Animations: overview]: /docs/development/ui/animations/overview.html
+[Animations: overview]: /docs/development/ui/animations/overview
 [animations package]: {{site.pub}}/packages/animations
 [Animations tutorial]: /docs/development/ui/animations/tutorial
 [`AnimationController.animateWith`]: {{site.api}}/flutter/animation/AnimationController/animateWith.html

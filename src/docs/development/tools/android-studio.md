@@ -403,4 +403,4 @@ When filing new issues, include the output of [`flutter doctor`][].
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
 [let us know]: {{site.github}}/flutter/website/issues/new
 [Running DevTools from Android Studio]: /docs/development/tools/devtools/android-studio
-[Timeline view]: /docs/development/tools/devtools/timeline
+[Timeline view]: /docs/development/tools/devtools/performance

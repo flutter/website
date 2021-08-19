@@ -84,7 +84,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/basic-list.png" alt="Basic List Demo" class="site-mobile-screenshot" /> 
+  <img src="/assets/images/docs/cookbook/basic-list.png" alt="Basic List Demo" class="site-mobile-screenshot" /> 
 </noscript>
 
 
