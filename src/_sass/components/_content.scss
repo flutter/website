@@ -49,10 +49,6 @@
     // the Kramdown id override specified using the {#foo} markdown-extension syntax.
     > a[id]::before { @include header-clearance; }
 
-    //
-    // Jekyll-toc heading anchor links (adapted from site-www)
-    //
-
     $icon-size: 1.25rem;
     $anchor-padding: 0.25rem;
 
@@ -60,22 +56,18 @@
       float: left;
       margin-left: -($icon-size + $anchor-padding);
       padding-right: $anchor-padding;
-      // box-sizing: border-box;
-      // max-width: $icon-size;
-      // overflow: hidden;
 
-      // Until we change change the class names used by jekyll-toc, we'll
-      // fall back to using @extend over font-awesome classes.
-      // > .octicon { @extend .fas; }
+      // SEE src/_sass/_vendor.scss for additional notes
+      // TODO jekyll-toc does not provide a way to override the anchor 
+      // class name, so we must extend it using font-awesome sass:
       > .octicon-link {
-        @extend .fa-link;
         color: $site-color-body;
         font-size: 1rem;
         opacity: 0;
         vertical-align: middle;
-        // display: block;
-        // height: $icon-size;
-        // width: $icon-size;
+        height: $icon-size;
+        width: $icon-size;
+        @extend .fa, .fa-paragraph;
       }
     }
 
