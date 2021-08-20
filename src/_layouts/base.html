@@ -94,9 +94,16 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
       crossorigin="anonymous">
     </script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-    <script src="{{ '/assets/js/bundle.js' | append: cache_bust }}"></script>
+    
+    <script src="{{ '/assets/js/vendor/code-prettify/prettify.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/vendor/code-prettify/lang-css.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/vendor/code-prettify/lang-dart.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/vendor/code-prettify/lang-yaml.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
     
     {% for script in page.js %}
       <script src="{{ script.url | default: js }}" {% if script.defer %}defer{% endif %}></script>

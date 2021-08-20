@@ -3,3 +3,12 @@
 .site-toc--button__page-top { display: none; }
 
 .highlight .gp { user-select: none; }
+
+
+// NOTE external link icons in toc were tiny - 
+// correct sizing and spacing
+.site-sidebar .nav-item .nav-link i {
+    color: rgba(0, 0, 0, 0.6);
+    margin-left: 7px;
+    font-size: 10px;
+}
