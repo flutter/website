@@ -5,7 +5,6 @@ includes:
   - vendor/code-prettify/lang-css.js
   - vendor/code-prettify/lang-dart.js
   - vendor/code-prettify/lang-yaml.js
-  - archive.js
   - tabs.js
   - main.js
 ---
