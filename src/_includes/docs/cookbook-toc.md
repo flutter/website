@@ -10,7 +10,7 @@
   {% assign dir_name = dir.name | capitalize %}
   <h2>{{ dir_name }}</h2>
 
-  {% assign items = dir.items | where_exp: "item", "item.url != dir_name" | sort: "title" %}
+  {% assign items = dir.items | where_exp: "item", "item.title != dir_name" | sort: "title" %}
   {% for item in items %}
   - [{{ item.title }}]({{ item.url }})
   {% endfor %}

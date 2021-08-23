@@ -144,7 +144,7 @@ class _MyAppState extends State<MyApp>
       },
       child: RotationTransition(
         turns: animation,
-        child: const Stack(
+        child: Stack(
           children: const [
             Positioned.fill(
               child: FlutterLogo(),
