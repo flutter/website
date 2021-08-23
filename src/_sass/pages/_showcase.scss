@@ -78,6 +78,21 @@
     }
   }
 
+  .card {
+    .dropdown-toggle::after {
+      vertical-align: 0.15em;
+    }
+
+    .card-footer.card-footer--links {
+      a i .svg-inline--fa {
+        width: 0.7em;
+        vertical-align: -0.21em;
+        margin-left: 0.4rem;
+      }
+      
+    }
+  }
+
   // Page specific overrides
   .fa-external-link-alt:before {
     font-size: 16px;

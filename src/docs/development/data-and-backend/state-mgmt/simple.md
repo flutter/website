@@ -26,7 +26,8 @@ That said, if you have a strong background in
 state management from other reactive frameworks,
 you can find packages and tutorials listed on the [options page][].
 
-## Our example <img src='/assets/images/docs/development/data-and-backend/state-mgmt/model-shopper-screencast' alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right'>
+## Our example 
+<img src='/assets/images/docs/development/data-and-backend/state-mgmt/model-shopper-screencast.gif' alt='An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation.' class='site-image-right'>
 
 For illustration, consider the following simple app.
 
