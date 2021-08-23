@@ -2,4 +2,4 @@
 
 Instead of creating a PR, please file an issue (https://github.com/flutter/website/issues/new/choose) about the needed change.
 
-We expect to start accepting PRs again August 23.
+We expect to start accepting PRs again the week of August 23.
