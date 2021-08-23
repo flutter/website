@@ -168,7 +168,7 @@ where the Dart code lives.
 
     {{site.alert.tip}}
       The first time you run on a physical device,
-      it can take awhile to load.
+      it can take a while to load.
       Afterward, you can use hot reload for quick updates.
       **Save** also performs a hot reload if the app is running.
       When running an app directly from the console using
