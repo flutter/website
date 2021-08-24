@@ -3,10 +3,10 @@ name: build
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
   schedule:
     - cron: "0 0 * * 0"
 
@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'push'
-      && github.ref == 'refs/heads/master'
+      && github.ref == 'refs/heads/main'
       && github.repository == 'flutter/website'
     steps:
       - uses: actions/checkout@v2
