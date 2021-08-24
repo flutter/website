@@ -100,7 +100,7 @@ build:
 
 deploy:
 ifndef FIREBASE_TOKEN
-	firebase deploy -m ${BUILD_COMMIT} --only hosting --debug --json
+	firebase deploy -m ${BUILD_COMMIT} --only hosting
 else
 	firebase use ${FIREBASE_ALIAS}
 	firebase deploy -m ${BUILD_COMMIT} \
