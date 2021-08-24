@@ -159,22 +159,9 @@ You can deploy your local edits to a personal staging site as follows.
     $ npx firebase use my-foo
     Now using alias staging (my-foo)
     ```
-
-1. Create a local `.env` file in the root of the project. This file can have 4 env vars. An example might look like:
-   ```bash
-   DISABLE_TESTS=1
-   FLUTTER_BRANCH=stable
-   FIREBASE_ALIAS=<your-project-alias>
-   FIREBASE_TOKEN=1//abc23458...
-   ```
-   > **NOTE** - Using a `FIREBASE_TOKEN` is optional and not required. The above setup described in steps 1-3 is recommended. If you have generated a token via `firebase login:ci` and it is set in your `.env` file, it will be used for deployment. Otherwise, the command will use the manual setup described above. 
-
-   We do recommend you set `DISABLE_TESTS` to `1` as testing locally can be lengthly. Tests will be run by the Github action after submitting your PR.
-
-
 1. Build the site via Docker with:
    ```bash
-   $ make build
+   $ DISABLE_TESTS=1 make build
    ```
    You will see the `_site` directory has been refreshed locally. 
 
