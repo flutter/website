@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - master
-      # Staging (REMOVE)
-      - main
-      - rearch
-      - rearch-integration
   pull_request:
     branches:
       - master
@@ -69,32 +65,3 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_ALIAS: default
-
-  stage:
-    needs: test
-    runs-on: ubuntu-latest
-    if: |
-      github.ref == 'refs/heads/main' ||
-      github.ref == 'refs/heads/rearch' ||
-      github.ref == 'refs/heads/rearch-integration'
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: "recursive"
-      - name: Install Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-      - name: Install firebase tools
-        run: npm install -g firebase-tools
-      - name: Build
-        run: make build
-        env:
-          DISABLE_TESTS: 1
-      - name: Deploy
-        run: make deploy
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          FIREBASE_ALIAS: vgv
-
-          
