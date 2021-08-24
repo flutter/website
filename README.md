@@ -55,33 +55,33 @@ To **clone [flutter/website]()** (this repo), follow the instructions given in t
 - If you are outside of the Flutter organization, we recommend you create a fork of the repo under your own account, and then submit a PR from that fork. 
 
 - Clone the repo and its submodule at the same using the `--recurse-submodules` option:
-  ```console
+  ```bash
   $ git clone --recurse-submodules https://github.com/flutter/website.git
   ```
 
   OR
   
 - If you've already cloned the repo without its submodule, then run this command from the repo root:<br>
-  ```console
+  ```bash
   $ git submodule update --init --recursive
   ```
 
 > **NOTE** - At any time during development you can use the `git submodule` command to refresh submodules:
-> ```console
+> ```bash
 > $ git pull; git submodule update --init --recursive
 > ```
 
 ## Set up your local environment and serve changes
 1. After cloning the repo and its submodules, first create a branch for your changes:
-   ```console
+   ```bash
    $ checkout -b <BRANCH_NAME>
    ```
 1. Then run the initial setup command:
-   ```console
+   ```bash
    $ make setup
    ```
 1. You can know run the site via `docker-compose` by running the convenience command:
-   ```console
+   ```bash
    $ make up
    ```
    The site will initially be generated and then the development server will be running in the docker container. You will see the generated `_site` directory locally. Navigate to `http://localhost:4002` in your browser to connect the livereload feature and view the site.
@@ -91,18 +91,18 @@ To **clone [flutter/website]()** (this repo), follow the instructions given in t
    > **NOTE** - Unless you're editing files under `site-shared`, you can safely ignore `ERROR: directory is already being watched` messages. For details, see [#1363](https://github.com/flutter/website/issues/1363).
 
 1. Make your changes. You can develop locally and changes will be reflected in the container via the shared volume. You may also choose develop with `vim` or an editor of your choice directly in the container by running:
-   ```console
+   ```bash
    $ docker-compose exec site bash
    ```
 1. View your changes in the browser.
 1. Commit your changes to the branch and submit your PR.
 
 > **TIP** - Sometimes Jekyll gets confused and seems to be out-of-sync. This might happen, for example, when you pull from master and lots of files have moved. The Jekyll `--incremental` serve option can also sometimes produce this. To fix this run:
-> ```console
-> make down && make clean && make up
+> ```bash
+> $ make down && make clean && make up
 > ```
 > In some rare cases you may want to force all running containers down with:
-> ```
+> ```bash
 > $ docker rm -f $(docker ps -aq)
 > ````
 
@@ -114,9 +114,9 @@ Most of the code used to create DartPad examples is hosted on GitHub. However, t
 ### DartPad example code in GitHub gists
 A typical DartPad example takes the form of an `iframe`, for example, within a codelab's markdown file:
 
-```markdown
+```html
 <iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=d7b09149ffee2f0535bb0c04d96987f5" 
+  src="{{ site.custom.dartpad.embed-flutter-prefix }}?id=d7b09149ffee2f0535bb0c04d96987f5" 
   style="border:1px solid lightgrey;margin-top:10px;margin-bottom:25px"
   frameborder="no" height="500" width="100%">
 </iframe>
@@ -133,7 +133,7 @@ Some DartPad example code remains in this repo:
 - `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`
 
 This code must be manually compiled, which will also regenerate the associated Javascript file in `src/assets/js`:
-```console
+```bash
 $ cd `src/_packages/dartpad_picker
 $ ./compile.sh
 ```
@@ -145,23 +145,23 @@ You can deploy your local edits to a personal staging site as follows.
 1. If you do not already have a Firebase project, navigate to the [Firebase Console](https://console.firebase.google.com) and create your own Firebase project (e.g. `my-foo`). You only need to do this step once.
 
 1. In a separate `bash` shell, change to the repo directory and initialize Firebase:
-    ```console
+    ```bash
     $ npx firebase init
     ```
 1. Tell Firebase about your project with the [`firebase use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html). You only need to do this step once:
-    ```console
+    ```bash
     $ npx firebase use --add
     ? Which project do you want to add? <select the project you created>
     ? What alias do you want to use for this project? (e.g. staging) my-foo
     ```
 1. Tell Firebase that you want to deploy to your staging:
-    ```console
+    ```bash
     $ npx firebase use my-foo
     Now using alias staging (my-foo)
     ```
 
 1. Create a local `.env` file in the root of the project. This file can have 4 env vars. An example might look like:
-   ```
+   ```bash
    DISABLE_TESTS=1
    FLUTTER_BRANCH=stable
    FIREBASE_ALIAS=<your-project-alias>
@@ -173,13 +173,13 @@ You can deploy your local edits to a personal staging site as follows.
 
 
 1. Build the site via Docker with:
-   ```console
+   ```bash
    $ make build
    ```
    You will see the `_site` directory has been refreshed locally. 
 
 1. Finally, run the deploy command:
-   ```console
+   ```bash
    $ make deploy
    ```
 
