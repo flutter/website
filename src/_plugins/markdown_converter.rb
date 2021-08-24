@@ -1,4 +1,4 @@
-require_relative '../_shared/_plugins/markdown_with_code_excerpts'
+require_relative 'markdown_with_code_excerpts'
 require_relative 'code_excerpt_framer'
 
 module Jekyll

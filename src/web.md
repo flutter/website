@@ -10,7 +10,7 @@ and the browser from the same codebase. You can compile existing Flutter code
 written in Dart into a web experience because it is exactly the same Flutter
 framework and **web** is just another device target for your app.
 
-<img src="/images/arch-overview/web-arch.png"
+<img src="/assets/images/docs/arch-overview/web-arch.png"
      alt="Flutter architecture for web"
      width="100%">
 
@@ -81,7 +81,7 @@ The following resources can help you get started:
 
 
 [Building a web application with Flutter]: /docs/get-started/web
-[Creating responsive apps]: /docs/development/ui/layout/responsive
+[Creating responsive apps]: /docs/development/ui/layout/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
 [Flutter Gallery]: https://gallery.flutter.dev/
@@ -89,5 +89,5 @@ The following resources can help you get started:
 [Preparing an app for web release]: /docs/deployment/web
 [Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
 [web FAQ]: /docs/development/platform-integration/web
-[web samples for Flutter]: https://flutter.github.io/samples/#?platform=web
+[web samples for Flutter]: https://flutter.github.io/samples/
 [Web renderers]: /docs/development/tools/web-renderers

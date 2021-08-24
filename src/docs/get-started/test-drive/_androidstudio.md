@@ -37,7 +37,7 @@ contains a simple demo app that uses [Material Components][].
 {% endcapture %}
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
-{% include run-profile.md ide_profile=ide_profile %}
+{% include docs/run-profile.md ide_profile=ide_profile %}
 
 [trusted your computer]: /docs/get-started/install/macos#trust
 </div>

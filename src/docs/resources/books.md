@@ -23,7 +23,7 @@ submit a PR ([sample][]) to add it yourself.
 {% for book in site.data.books %}
 <div class="book-img-with-details row">
 <a href="{{book.link}}" title="{{book.title}}" class="col-sm-3 no-automatic-external">
-  <img src="{% asset 'cover/{{book.cover}}' @path %}" alt="{{book.title}}"/>
+  <img src="/assets/images/docs/cover/{{book.cover}}" alt="{{book.title}}">
 </a>
 <div class="details col-sm-9" markdown="1">
 ### [{{book.title}}]({{book.link}})

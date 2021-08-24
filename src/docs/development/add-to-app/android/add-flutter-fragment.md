@@ -4,9 +4,8 @@ short-title: Add a Flutter Fragment
 description: Learn how to add a Flutter Fragment to your existing Android app.
 ---
 
-{% asset
-development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_header.png
-class="mw-100" alt="Add Flutter Fragment Header" %}
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_header.png'
+class="mw-100" alt="Add Flutter Fragment Header">
 
 This guide describes how to add a Flutter `Fragment` to an existing
 Android app.  In Android, a [`Fragment`][] represents a modular
@@ -525,9 +524,8 @@ In these apps, it would be reasonable for a `Fragment` to
 control system chrome like Android's status bar,
 navigation bar, and orientation.
 
-{% asset
- development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_fullscreen.png
- class="mw-100" alt="Fullscreen Flutter" %}
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_fullscreen.png'
+ class="mw-100" alt="Fullscreen Flutter">
 
 In other apps, `Fragment`s are used to represent only
 a portion of a UI. A `FlutterFragment` might be used to
@@ -537,9 +535,8 @@ inappropriate for the `FlutterFragment` to affect
 Android's system chrome because there are other UI
 pieces within the same `Window`.
 
-{% asset
- development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_partial-ui.png
- class="mw-100" alt="Flutter as Partial UI" %}
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_partial-ui.png'
+ class="mw-100" alt="Flutter as Partial UI">
 
 `FlutterFragment` comes with a concept that helps
 differentiate between the case when a `FlutterFragment`

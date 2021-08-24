@@ -25,7 +25,7 @@ stateless widgets.
 The [building layouts tutorial][] showed you how to create
 the layout for the following screenshot.
 
-{% include app-figure.md img-class="site-mobile-screenshot border"
+{% include docs/app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes.jpg" caption="The layout tutorial app" %}
 
 When the app first launches, the star is solid red,
@@ -37,8 +37,7 @@ replacing the solid star with an outline and
 decreasing the count. Tapping again favorites the lake,
 drawing a solid star and increasing the count.
 
-{% asset ui/favorited-not-favorited.png class="mw-100"
-    alt="The custom widget you'll create" width="200px" %}
+<img src='/assets/images/docs/ui/favorited-not-favorited.png' class="mw-100" alt="The custom widget you'll create" width="200px">
 {:.text-center}
 
 To accomplish this, you'll create a single custom widget
@@ -351,8 +350,8 @@ color: green for active or grey for inactive.
 
 <div class="row mb-4">
   <div class="col-12 text-center">
-    {% asset ui/tapbox-active-state.png class="border mt-1 mb-1 mw-100" width="150px" alt="Active state" %}
-    {% asset ui/tapbox-inactive-state.png class="border mt-1 mb-1 mw-100" width="150px" alt="Inactive state" %}
+    <img src='/assets/images/docs/ui/tapbox-active-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Active state">
+    <img src='/assets/images/docs/ui/tapbox-inactive-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Inactive state">
   </div>
 </div>
 

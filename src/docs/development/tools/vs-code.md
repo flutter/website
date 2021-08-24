@@ -71,7 +71,7 @@ enables the following:
   (**View > Problems** or `Ctrl`+`Shift`+`M`
   (`Cmd`+`Shift`+`M` on macOS))
   Any analysis issues are shown in the Problems pane:<br>
-  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:.mw-100.pt-1}
+  ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
 
 ## Running and debugging
 
@@ -133,7 +133,7 @@ running or debugging.
  1. Click **Run > Start Without Debugging** in the
     main IDE window, or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
-    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:.mw-100.pt-1}
+    ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
 ### Run app with breakpoints
 
@@ -195,13 +195,13 @@ When space is limited, the icon is used as the visual
 version of the label.
 
 <dl markdown="1">
-<dt markdown="1"> **Toggle Baseline Painting** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</dt>
+<dt markdown="1"> **Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}</dt>
 <dd>Causes each RenderBox to paint a line at each of its baselines.</dd>
-<dt markdown="1"> **Toggle Repaint Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</dt>
+<dt markdown="1"> **Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}</dt>
 <dd>Shows rotating colors on layers when repainting.</dd>
-<dt markdown="1">**Toggle Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
+<dt markdown="1">**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}</dt>
 <dd>Slows down animations to enable visual inspection.</dd>
-<dt markdown="1">**Toggle Debug Mode Banner** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</dt>
+<dt markdown="1">**Toggle Debug Mode Banner** ![Debug mode banner icon](/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}</dt>
 <dd>Hides the debug mode banner even when running a debug build.</dd>
 </dl>
 
@@ -225,7 +225,7 @@ Flutter widget identifier, as indicated by the yellow lightbulb icon.
 The assist can be invoked by clicking the lightbulb, or by using the
 keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as illustrated here:
 
-![Code assists]({% asset tools/vs-code/assists.png @path %}){:width="467px"}
+![Code assists](/assets/images/docs/tools/vs-code/assists.png){:width="467px"}
 
 Quick fixes are similar,
 only they are shown with a piece of code has an error and they
@@ -254,7 +254,7 @@ can assist in correcting it.
 Snippets can be used to speed up entering typical code structures.
 They are invoked by typing their prefix,
 and then selecting from the code completion window:
-![Snippets]({% asset tools/vs-code/snippets.png @path %}){:width="100%"}
+![Snippets](/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}
 
 The Flutter extension includes the following snippets:
 
@@ -322,4 +322,4 @@ When filing new issues, include [flutter doctor][] output.
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
 [Set up an editor]: /docs/get-started/editor?tab=vscode
-[VS Code status bar]: {% asset tools/vs-code/device_status_bar.png @path %}
+[VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png

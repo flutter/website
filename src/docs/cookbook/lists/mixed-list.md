@@ -221,7 +221,7 @@ class MessageItem implements ListItem {
 ```
 
 <noscript>
-  <img src="/images/cookbook/mixed-list.png" alt="Mixed list demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/mixed-list.png" alt="Mixed list demo" class="site-mobile-screenshot" />
 </noscript>
 
 

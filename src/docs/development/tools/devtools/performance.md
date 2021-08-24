@@ -35,13 +35,13 @@ highlight the different portions of work that occur when rendering a Flutter
 frame: work from the UI thread and work from the raster thread (previously known
 as the GPU thread).
 
-![Screenshot from a performance snapshot]({% asset tools/devtools/performance-flutter-frames-chart.png @path %}){:width="100%"}
+![Screenshot from a performance snapshot](/assets/images/docs/tools/devtools/performance-flutter-frames-chart.png){:width="100%"}
 
 Selecting a bar from this chart centers the flame chart below on the timeline
 events corresponding to the selected Flutter frame. The events are highlighted
 with blue brackets.
 
-![Screenshot from a timeline recording]({% asset tools/devtools/performance-timeline-events-chart-selected-frame.png @path %}){:width="100%"}
+![Screenshot from a timeline recording](/assets/images/docs/tools/devtools/performance-timeline-events-chart-selected-frame.png){:width="100%"}
 
 ### UI
 
@@ -96,7 +96,7 @@ dart:developer
 and [TimelineTask](https://api.flutter.dev/flutter/dart-developer/TimelineTask-class.html)
 APIs.
 
-![Screenshot of timeline events for a frame]({% asset tools/devtools/performance-timeline-events-chart.png @path %}){:width="100%"}
+![Screenshot of timeline events for a frame](/assets/images/docs/tools/devtools/performance-timeline-events-chart.png){:width="100%"}
 
 The flame chart supports zooming and panning:
 * To zoom, scroll up and down with the mouse wheel / trackpad

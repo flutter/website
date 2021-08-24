@@ -126,9 +126,9 @@ You might notice the following characteristics:
 * The padding and height changes occur during
   the same exact interval, but they don't have to.
 
-{% asset ui/animations/StaggeredAnimationIntervals.png
+<img src='/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png'
     alt="Diagram showing the interval specified for each motion"
-    class="mw-100" %}
+    class="mw-100">
 
 To set up the animation:
 

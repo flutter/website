@@ -28,7 +28,7 @@ Clicking the light bulb displays the suggested fix
 that updates that code to the new API.
 Clicking the suggested fix performs the update.
 
-![Screenshot showing suggested change in IntelliJ]({% asset development/tools/flutter-fix-suggestion-intellij.png @path %})<br>
+![Screenshot showing suggested change in IntelliJ](/assets/images/docs/development/tools/flutter-fix-suggestion-intellij.png)<br>
 A sample quick-fix in IntelliJ
 
 ### VS Code
@@ -51,7 +51,7 @@ You can do any of the following:
   This shows a list of all actions, including
   refactors.
 
-![Screenshot showing suggested change in VS Code]({% asset development/tools/flutter-fix-suggestion-vscode.png @path %})<br>
+![Screenshot showing suggested change in VS Code](/assets/images/docs/development/tools/flutter-fix-suggestion-vscode.png)<br>
 A sample code action in VS Code
 
 ## Applying project-wide fixes

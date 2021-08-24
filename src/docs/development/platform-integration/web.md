@@ -144,7 +144,7 @@ Flutter engineers routinely read and respond on Discord.
 [Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
 [building a web app with Flutter]: /docs/get-started/web
 [Chrome DevTools]: https://developers.google.com/web/tools/chrome-devtools
-[Creating responsive apps]: /docs/development/ui/layout/responsive
+[Creating responsive apps]: /docs/development/ui/layout/adaptive-responsive
 [Debugging]: /docs/development/tools/devtools/debugger
 [Discord]: https://discord.gg/N7Yshp4
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version

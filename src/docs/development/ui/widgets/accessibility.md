@@ -2,4 +2,4 @@
 title: Accessibility widgets
 short-title: Accessibility
 ---
-{% include catalogpage.html category="Accessibility" %}
+{% include docs/catalogpage.html category="Accessibility" %}

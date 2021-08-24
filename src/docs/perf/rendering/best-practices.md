@@ -4,7 +4,7 @@ short-title: Best practices
 description: How to ensure that your Flutter app is performant.
 ---
 
-{% include performance.md %}
+{% include docs/performance.md %}
 
 Generally, Flutter applications are performant by default,
 so you only need to avoid common pitfalls to get excellent

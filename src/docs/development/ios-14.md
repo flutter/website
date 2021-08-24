@@ -46,7 +46,7 @@ iOS 14][], a permission dialog box must now be accepted for
 each application in order to enable Flutter debugging
 functionalities such as hot-reload and DevTools.
 
-![Screenshot of "allow network connections" dialog]({% asset development/device-connect.png @path %})
+![Screenshot of "allow network connections" dialog](/assets/images/docs/development/device-connect.png)
 
 This affects debug and profile builds only and won't
 appear in release builds. The permission can also be allowed

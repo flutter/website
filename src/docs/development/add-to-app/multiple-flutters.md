@@ -98,7 +98,7 @@ You can find a sample demonstrating how to use `FlutterEngineGroup`
 on both Android and iOS on [GitHub][].
 
 
-{% include app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}
+{% include docs/app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}
 
 [GitHub]: {{site.github}}/flutter/samples/tree/master/add_to_app/multiple_flutters
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html

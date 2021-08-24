@@ -143,7 +143,7 @@ In stable release: not yet
 
 ## References
 
-{% include master-api.md %}
+{% include docs/master-api.md %}
 
 API documentation:
 
@@ -155,7 +155,7 @@ Relevant PRs:
 * [Test WidgetTester handling test pointers][]
 
 <!-- Master channel link: -->
-{% include master-api.md %}
+{% include docs/master-api.md %}
 
 [`AnimationSheetBuilder`]: https://master-api.flutter.dev/flutter/flutter_test/AnimationSheetBuilder-class.html
 [`AnimationSheetBuilder.collate`]: https://master-api.flutter.dev/flutter/flutter_test/AnimationSheetBuilder/collate.html

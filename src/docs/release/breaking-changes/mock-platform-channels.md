@@ -94,7 +94,7 @@ In stable release: not yet
 
 ## References
 
-{% include master-api.md %}
+{% include docs/master-api.md %}
 
 API documentation:
 * [`TestDefaultBinaryMessenger`][]

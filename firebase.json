@@ -3,8 +3,7 @@
     "public": "_site",
     "cleanUrls": true,
     "trailingSlash": false,
-    "rules": "firebase_config/firebase_rules.json",
-    "ignore": [ "assets/.sprockets-manifest-*.json" ],
+    "ignore": [],
     "redirects": [
       { "source": "/accessibility", "destination": "/docs/development/accessibility-and-localization/accessibility", "type": 301 },
       { "source": "/adaptations", "destination": "/docs/resources/platform-adaptations", "type": 301 },
@@ -273,7 +272,7 @@
 
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },
-      { "source": "/images/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/tools/android-studio/hot-reload.gif", "type": 301 },
+      { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/tools/android-studio/hot-reload.gif", "type": 301 },
       { "source": "/inspector", "destination": "/docs/development/tools/devtools/inspector", "type": 301 },
       { "source": "/intellij-ide", "destination": "/docs/development/tools/android-studio", "type": 301 },
       { "source": "/intellij-setup", "destination": "/docs/get-started/editor", "type": 301 },
@@ -319,8 +318,24 @@
       { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 }
     ],
     "headers": [
-      { "source": "/f/*.json", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] },
-      { "source": "/docs/cookbook/img-files/**", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}] }
+      { 
+        "source": "/f/*.json", 
+        "headers": [
+          {"key": "Access-Control-Allow-Origin", "value": "*"}] 
+        },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
+          { "key": "Cache-Control", "value": "max-age=3600" },
+          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      }, 
+      {
+        "source": "404.html",
+        "headers": [
+          { "key": "Cache-Control", "value": "max-age=300" }
+        ]
+      }
     ]
   }
 }

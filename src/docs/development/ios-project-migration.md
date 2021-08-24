@@ -32,7 +32,7 @@ If you need to manually upgrade your project, use the following steps:
 <li markdown="1">In the **Navigator** pane, locate the
     **Flutter** group and remove `App.framework`
     and `Flutter.framework`.
-{% include app-figure.md image="development/ios-project-migration/navigator.png" alt="Remove Frameworks in Xcode Navigator" %}
+{% include docs/app-figure.md image="development/ios-project-migration/navigator.png" alt="Remove Frameworks in Xcode Navigator" %}
 </li>
 
 <li markdown="1">In the Runner target build settings
@@ -40,7 +40,7 @@ If you need to manually upgrade your project, use the following steps:
     confirm `App.framework` and `Flutter.framework`
     are no longer present. Also confirm
     in **Build Phases > Embed Frameworks**.
-{% include app-figure.md image="development/ios-project-migration/framework-build-phase.png" alt="Confirm Frameworks Removed from Build Phases" %}
+{% include docs/app-figure.md image="development/ios-project-migration/framework-build-phase.png" alt="Confirm Frameworks Removed from Build Phases" %}
 </li>
 
 <li markdown="1">Change the Runner target build settings
@@ -49,13 +49,13 @@ If you need to manually upgrade your project, use the following steps:
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" embed
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" thin
 ```
-{% include app-figure.md image="development/ios-project-migration/script-phase.png" alt="Update Thin Binary Script Build Phase" %}
+{% include docs/app-figure.md image="development/ios-project-migration/script-phase.png" alt="Update Thin Binary Script Build Phase" %}
 </li>
 
 <li markdown="1">In the Runner target **Build Settings >
     Other Linker Flags** (`OTHER_LDFLAGS`)
     add `$(inherited) -framework Flutter`.
-{% include app-figure.md image="development/ios-project-migration/linker-arguments.png" alt="Update Other Linker Arguments Build Setting" %}
+{% include docs/app-figure.md image="development/ios-project-migration/linker-arguments.png" alt="Update Other Linker Arguments Build Setting" %}
 </li>
 </ol>
 
