@@ -1,17 +1,3 @@
-
-// NOTE Legacy Jekyll-assets compilation, including Ruby packages
-//= require vendor/jquery-3.3.1
-//= require popper
-//= require bootstrap
-//= require archive.js
-//= require tabs.js
-//= require vendor/code-prettify/prettify
-//= require vendor/code-prettify/lang-css
-//= require vendor/code-prettify/lang-dart
-//= require vendor/code-prettify/lang-yaml
-
-// TODO(chalin): find a way to selectively generate (as individual files) and then include archive.js and/or tabs.js
-
 $(function () {
   adjustToc();
   initFixedColumns();
