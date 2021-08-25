@@ -37,21 +37,23 @@ COPY ./ ./
 # So that we have the most up to date submodules
 RUN git submodule update --init --recursive
 
-ARG FLUTTER_BRANCH=stable
+ARG FLUTTER_BRANCH
 ENV FLUTTER_BRANCH=$FLUTTER_BRANCH
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/app/flutter/bin:$PATH"
 
-# TODO hold off on this for a second in dev, we have an external
-# command that can be used to switch this - stick with default
-# Just in case we're switching branches via .env local target
-# RUN cd flutter && \
-#       git fetch && \
-#       git remote set-branches origin $FLUTTER_BRANCH && \
-#       git fetch --depth 1 origin $FLUTTER_BRANCH && \
-#       git checkout $FLUTTER_BRANCH -- && \
-#       git pull
+# Used if wanting to build the container with a different branch
+# e.g. `make FLUTTER_BRANCH=dev build`
+# This is not to be confused with the $TEST_TARGET_CHANNEL
+RUN if [[ -z $FLUTTER_BRANCH && "$FLUTTER_BRANCH" != "stable" ]]; then \
+      cd flutter; \
+      git fetch; \
+      git remote set-branches origin $FLUTTER_BRANCH; \
+      git fetch --depth 1 origin $FLUTTER_BRANCH; \
+      git checkout $FLUTTER_BRANCH --; \
+      git pull; \
+    fi
 
 # Set up Flutter
 RUN flutter doctor --suppress-analytics --quiet
@@ -97,15 +99,17 @@ RUN bundle exec jekyll build --config _config.yml
 FROM builder AS deploy
 
 ARG FIREBASE_TOKEN
-ENV FIREBASE_TOKEN=${FIREBASE_TOKEN}
+ENV FIREBASE_TOKEN=$FIREBASE_TOKEN
 ARG FIREBASE_ALIAS=default
 ENV FIREBASE_ALIAS=${FIREBASE_ALIAS:-default}
+ARG COMMIT=$(git rev-parse --short HEAD)
+ENV COMMIT=$COMMIT
 
 RUN firebase use $FIREBASE_ALIAS
-RUN firebase deploy -m ${COMMIT} \
+RUN firebase deploy -m $COMMIT \
       --only hosting \
       --non-interactive \
-      --token ${FIREBASE_TOKEN} \
-      --project ${FIREBASE_ALIAS} \
+      --token $FIREBASE_TOKEN \
+      --project $FIREBASE_ALIAS \
       --debug \
 	--json

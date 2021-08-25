@@ -8,7 +8,22 @@
 // NOTE external link icons in toc were tiny - 
 // correct sizing and spacing
 .site-sidebar .nav-item .nav-link i {
-    color: rgba(0, 0, 0, 0.6);
-    margin-left: 7px;
-    font-size: 10px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: 7px;
+  font-size: 10px;
+}
+
+// TODO this should be added to shared/toc
+.site-toc--inline {
+  > ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    
+    ul {
+      list-style: none;
+      margin-left: 2rem;
+      padding-left: 0;
+    }
+  }
 }
