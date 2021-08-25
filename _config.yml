@@ -1,8 +1,6 @@
 title: Flutter
 
-# TODO change back with master
-# url: https://flutter.dev
-url: https://dash-site-dev.web.app
+url: https://flutter.dev
 
 email: flutter-dev@googlegroups.com
 
@@ -12,17 +10,13 @@ google_tag_manager_id: GTM-ND4LWWZ
 default_share_image: /assets/images/flutter-logo-sharing.png
   
 
-# TODO change back with master
-# branch: master
-branch: rearch-integration
+branch: main
 
 github_username: flutter
 repo:
   organization: https://github.com/flutter
 
-  # TODO change back with master
-  # this: https://github.com/flutter/website
-  this: https://github.com/flutter/flutter-website-rearch
+  this: https://github.com/flutter/website
 
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
