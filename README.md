@@ -3,6 +3,25 @@
 
 [![Build Status][]][Repo on GitHub Actions]
 
+NOTE: We have made significant changes to the flutter/website
+repo to make it easier to use and maintain,
+and the instructions in this file are changing.
+If you have already cloned it, please clone it again.
+The most significant differences include:
+* The website now uses a Docker container, so
+  you need to install Docker, if you haven't already.
+  This means that much of the tooling previously
+  required (like nvm) is no longer required.
+* The default branch is renamed to `main`
+  (it was previously `master`).
+* Files (and most specifically image files)
+  have been moved.
+
+Stay tuned for another significant update to
+the website repo later this year.
+
+Thanks, as always, for your continued support!
+
 ## Table of contents
 * [Issues, bugs, and requests](#issues-bugs-and-requests)
 * [Before you submit a PR](#before-you-submit-a-pr)
