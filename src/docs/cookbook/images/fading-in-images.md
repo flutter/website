@@ -40,23 +40,25 @@ import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final title = 'Fade in images';
+    const title = 'Fade in images';
 
     return MaterialApp(
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: Stack(
           children: <Widget>[
-            Center(child: CircularProgressIndicator()),
+            const Center(child: CircularProgressIndicator()),
             Center(
               child: FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
@@ -102,19 +104,21 @@ FadeInImage.assetNetwork(
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final title = 'Fade in images';
+    const title = 'Fade in images';
 
     return MaterialApp(
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: Center(
           child: FadeInImage.assetNetwork(
