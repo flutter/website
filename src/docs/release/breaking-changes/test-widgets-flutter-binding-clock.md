@@ -37,7 +37,7 @@ Error: The argument type 'Clock/*1*/' can't be assigned to the parameter type 'C
  - 'Clock/*2*/' is from 'package:quiver/time.dart' ('<pub-cache>/quiver/lib/time.dart').
 ```
 
-### Option #1: Create a packge:quiver Clock from a package:clock Clock
+### Option #1: Create a package:quiver Clock from a package:clock Clock
 
 The easiest migration is to create a `package:quiver` clock from the
 `package:clock` clock, which can be done by passing the `.now` function
