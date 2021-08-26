@@ -112,7 +112,7 @@ Once you have a fork (or you're a Flutter org member), _choose one_ of the follo
    > **Note:** Unless you're editing files under `site-shared`, you can safely ignore `ERROR: directory is already being watched` messages. For details, see [#1363](https://github.com/flutter/website/issues/1363).
 
 1. Make your changes. The files are updated, and your browser view should update to reflect the changes. You can either edit files locally or use an editor like `vim` directly in a shell in the container. To start a container shell, run `docker-compose exec site bash`.
-   ```
+
    > **Tip:** If you aren't seeing the changes you expect, restart the server and rebuild the site from scratch:
    > ```bash
    > $ make down && make clean && make up
