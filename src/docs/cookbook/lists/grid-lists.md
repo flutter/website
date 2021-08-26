@@ -53,13 +53,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final title = 'Grid List';
+    const title = 'Grid List';
 
     return MaterialApp(
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: GridView.count(
           // Create a grid with 2 columns. If you change the scrollDirection to
