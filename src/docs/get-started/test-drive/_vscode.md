@@ -48,12 +48,12 @@ contains a simple demo app that uses [Material Components][].
 {% endcapture %}
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
-{% include run-profile.md %}
+{% include docs/run-profile.md %}
 
 [Install]: /docs/get-started/install
 [Material Components]: {{site.material}}/guidelines
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
-[status bar]: {% asset tools/vs-code/device_status_bar.png @path %}
+[status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png
 [trusted your computer]: /docs/get-started/install/macos#trust
 
 </div>

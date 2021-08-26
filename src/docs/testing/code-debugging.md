@@ -962,7 +962,7 @@ effect by using a [`GridPaper`][] widget directly.
 [Logging view]: /docs/development/tools/devtools/logging
 [Flutter enabled IDE/editor]: /docs/get-started/editor
 [`log()`]: {{site.api}}/flutter/dart-developer/log.html
-[Timeline view]: /docs/development/tools/devtools/timeline
+[Timeline view]: /docs/development/tools/devtools/performance
 [Debugger]: /docs/development/tools/devtools/debugger
 [Inspector view]: /docs/development/tools/devtools/inspector
 [The performance overlay]: /docs/perf/rendering/ui-performance#the-performance-overlay

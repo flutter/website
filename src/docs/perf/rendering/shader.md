@@ -4,14 +4,14 @@ short-title: Shader jank
 description: What is shader jank and how to minimize it.
 ---
 
-{% include performance.md %}
+{% include docs/performance.md %}
 
 If the animations on your mobile app appear to be janky,
 but only on the first run, you can _warm up_ the
 shader captured in the Skia Shader Language (SkSL) for a
 significant improvement.
 
-![Side-by-side screenshots of janky mobile app next to non-janky app]({% asset perf/render/shader-jank.gif @path %})
+![Side-by-side screenshots of janky mobile app next to non-janky app](/assets/images/docs/perf/render/shader-jank.gif)
 
 ## What is shader compilation jank?
 
@@ -33,7 +33,7 @@ Definitive evidence for the presence of shader compilation jank is to see
 `GrGLProgramBuilder::finalize` in the tracing with `--trace-skia` enabled. See
 the following screenshot for an example timeline tracing.
 
-![A tracing screenshot verifying jank]({% asset perf/render/tracing.png @path %}){:width="100%"}
+![A tracing screenshot verifying jank](/assets/images/docs/perf/render/tracing.png){:width="100%"}
 
 ## What do we mean by "first run"?
 

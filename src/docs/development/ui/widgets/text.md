@@ -2,4 +2,4 @@
 title: Text widgets
 short-title: Text
 ---
-{% include catalogpage.html category="Text" %}
+{% include docs/catalogpage.html category="Text" %}

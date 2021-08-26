@@ -24,7 +24,7 @@ check out the following workshop:
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
 
-{% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
+<img src="/assets/images/docs/get-started/startup-namer-part-1.gif" alt="The app that you'll be building" class='site-image-right'>
 
 {%- comment %}
   Code highlights in this page are green, to match diff additions.
@@ -163,7 +163,7 @@ where the Dart code lives.
     depending on your device.
 
     {% indent %}
-      {% include android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
+      {% include docs/android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
     {% endindent %}
 
     {{site.alert.tip}}
@@ -300,7 +300,7 @@ as well as many other open source packages, on [pub.dev][].
     or when toggling the Platform in Flutter Inspector.
 
     {% indent %}
-      {% include android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
+      {% include docs/android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
 
 ### Problems?
@@ -585,7 +585,7 @@ lazily, on demand.
     you scroll.
 
     {% indent %}
-      {% include android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
+      {% include docs/android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
     {% endindent %}
 
 ### Problems?
@@ -598,12 +598,12 @@ If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
-{% include run-profile.md %}
+{% include docs/run-profile.md %}
 
 ## Next steps
 {:.no_toc}
 
-{% include app-figure.md class="site-image-right" img-class="border"
+{% include docs/app-figure.md class="site-image-right" img-class="border"
     image="get-started/startup-namer.gif" caption="The app from part 2" %}
 
 Congratulations!

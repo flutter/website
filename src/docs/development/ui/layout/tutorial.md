@@ -23,7 +23,7 @@ diff2html: true
 This is a guide to building layouts in Flutter.
 You'll build the layout for the following app:
 
-{% include app-figure.md img-class="site-mobile-screenshot border"
+{% include docs/app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes.jpg" caption="The finished app" %}
 
 This guide then takes a step back to explain Flutter's
@@ -75,7 +75,7 @@ The first step is to break the layout down to its basic elements:
 First, identify the larger elements. In this example,
 four elements are arranged into a column: an image, two rows, and a block of text.  
 
-{% include app-figure.md img-class="site-mobile-screenshot border"
+{% include docs/app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes-column-elts.png" caption="Column elements (circled in red)" %}
 
 Next, diagram each row. The first row, called the Title
@@ -84,12 +84,12 @@ and a number. Its first child, the column, contains 2 lines of text.
 That first column takes a lot of space, so it must be wrapped in an
 Expanded widget.
 
-{% include app-figure.md image="ui/layout/title-section-parts.png" alt="Title section" %}
+{% include docs/app-figure.md image="ui/layout/title-section-parts.png" alt="Title section" %}
 
 The second row, called the Button section, also has
 3 children: each child is a column that contains an icon and text.
 
-{% include app-figure.md image="ui/layout/button-section-diagram.png" alt="Button section" %}
+{% include docs/app-figure.md image="ui/layout/button-section-diagram.png" alt="Button section" %}
 
 Once the layout has been diagrammed, it's easiest to
 take a bottom-up approach to implementing it.

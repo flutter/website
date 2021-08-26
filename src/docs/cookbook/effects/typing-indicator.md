@@ -20,7 +20,7 @@ speech bubble typing indicator that animates in and out of view.
 
 The following animation shows the app's behavior:
 
-![The typing indicator is turned on and off]({% asset cookbook/effects/TypingIndicator.gif @path %}){:.site-mobile-screenshot}
+![The typing indicator is turned on and off](/assets/images/docs/cookbook/effects/TypingIndicator.gif){:.site-mobile-screenshot}
 
 ## Define the typing indicator widget
 

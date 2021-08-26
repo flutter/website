@@ -8,7 +8,7 @@ description: How to use the DevTools with Flutter.
 DevTools is a suite of performance and debugging tools
 for Dart and Flutter.
 
-![Dart DevTools Screens]({% asset tools/devtools/dart-devtools.gif @path %}){:width="100%"}
+![Dart DevTools Screens](/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
 
 ## What can I do with DevTools?
 

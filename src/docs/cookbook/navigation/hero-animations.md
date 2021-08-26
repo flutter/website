@@ -216,7 +216,7 @@ class DetailScreen extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/hero.gif" alt="Hero demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/hero.gif" alt="Hero demo" class="site-mobile-screenshot" />
 </noscript>
 
 

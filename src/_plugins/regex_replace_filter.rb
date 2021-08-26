@@ -1,1 +1,1 @@
-../_shared/_plugins/regex_replace_filter.rb
+../../site-shared/src/_plugins/regex_replace_filter.rb

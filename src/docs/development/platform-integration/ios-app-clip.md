@@ -40,14 +40,14 @@ the project settings.
 
 Press `+` at the bottom of the target list to add a new target.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/add-target.png" %}
 
 **2.2**
 
 Select the `App Clip` type for your new target.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/add-app-clip.png" %}
 
 **2.3**
@@ -63,14 +63,14 @@ Select the same language as your original target for Language.
 (In other words, don't create a Swift App Clip target for
 an Objective-C main target, and vice versa to simplify the setup.)
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-details.png" %}
 
 **2.4**
 
 In the following dialog, activate the new scheme for the new target.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/activate-scheme.png" %}
 
 <a name="step-3"></a>
@@ -89,7 +89,7 @@ delete everything except `Info.plist` and
   from this code later.
 {{site.alert.end}}
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/clean-files.png" %}
 
 Move files to trash.
@@ -102,7 +102,7 @@ remove the reference to it in the `Info.plist`.
 Open the `Info.plist` file in the App Clip group.
 Delete the entire dictionary entry for `Application Scene Manifest`.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/scene-manifest.png" %}
 
 ## Step 4 - Share build configurations
@@ -127,7 +127,7 @@ normal app target.
 This gives your App Clip target access to Flutter's
 required build settings.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/configuration.png" %}
 
 **4.2**
@@ -152,7 +152,7 @@ select the file, then in the first tab of the inspector,
 also include the App Clip target in the `Target Membership`
 checkbox group.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/add-target-membership.png"
 %}
 
@@ -174,7 +174,7 @@ Open the `<app clip target>.entitlements` file.
 Add an `Associated Domains` Array type.
 Add a row to the array with `appclips:<your bundle id>`.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-entitlements.png"
 %}
 
@@ -192,7 +192,7 @@ Open the file and delete the `Parent Application Identifiers`
 entry for the main app's entitlement file
 (leave that entry for the App Clip's entitlement file).
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/main-app-entitlements.png"
 %}
 
@@ -202,7 +202,7 @@ Back in the project settings, select the main app's target, open the
 `Build Settings` tab. Set the `Code Signing Entitlements` setting to the
 relative path of the second entitlements file created for the main app.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/main-app-entitlements-setting.png"
 %}
 
@@ -222,7 +222,7 @@ For setting `Framework Search Paths`, add 2 entries:
 
 In other words, the same as the main app target's build settings.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/app-clip-framework-search.png"
 %}
 
@@ -233,7 +233,7 @@ build setting to `Runner/Runner-Bridging-Header.h`
 
 In other words, the same as the main app target's build settings.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/bridge-header.png"
 %}
 
@@ -242,7 +242,7 @@ image="development/platform-integration/ios-app-clip/bridge-header.png"
 Now open the `Build Phases` tab. Press the `+` sign and select
 `New Run Script Phase`.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/new-build-phase.png"
 %}
 
@@ -256,7 +256,7 @@ Expand the new phase and add this line to the script content:
 
 In other words, the same as the main app target's build phases.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/xcode-backend-build.png"
 %}
 
@@ -276,7 +276,7 @@ This time, add:
 
 In other words, the same as the main app target's build phases.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/xcode-backend-embed.png"
 %}
 
@@ -288,7 +288,7 @@ into the App Clip bundle.
 In the App Clip target's `Build Settings` tab,
 set the `Enable Bitcode` setting to No.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/bitcode.png"
 %}
 
@@ -364,7 +364,7 @@ You can now run your App Clip target from Xcode by
 selecting your App Clip target from the scheme drop-down,
 selecting an iOS 14 device and pressing run.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/run-select.png"
 %}
 
@@ -381,7 +381,7 @@ In order to debug your App Clip and use functionalities
 like hot reload, you must look for the Observatory URI
 from the console output in Xcode after running.
 
-{% include app-figure.md
+{% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/observatory-uri.png"
 %}
 

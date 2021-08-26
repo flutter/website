@@ -3,7 +3,7 @@ title: Flutter Favorite program
 description: Guidelines for identifying a plugin or package as a Flutter Favorite.
 ---
 
-![The Flutter Favorite program logo]({% asset development/packages-and-plugins/FlutterFavoriteLogo.png @path %}){:width="20%"}
+![The Flutter Favorite program logo](/assets/images/docs/development/packages-and-plugins/FlutterFavoriteLogo.png){:width="20%"}
 
 The aim of the **Flutter Favorite** program is to identify
 packages and plugins that you should first consider when

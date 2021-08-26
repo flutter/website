@@ -3,7 +3,7 @@ title: Flutter Clock
 layout: landing
 show_banner: False
 body_class: clock
-image: /images/flutter-clock-social.png
+image: /assets/images/docs/flutter-clock-social.png
 ---
 {% assign url_links = "&url=https://flutter.dev/clock" %}
 {% assign hashtags = "hashtags=FlutterClock" %}
@@ -53,7 +53,7 @@ image: /images/flutter-clock-social.png
     <div class="clock__texture clock__wtm__texture"></div>
     <div class="clock__wtm_container justify-content-center col-12 row no-gutters">
         <div class="col-lg-6 p-md-5">
-            {% asset clock/Lenovo-WTM.png alt='Lenovo Clock' class="card-img-top" %}
+            <img src='/assets/images/clock/Lenovo-WTM.png' alt='Lenovo Clock' class="card-img-top">
         </div>
         <div class="col-lg-6 p-md-5 clock__wtm-copy">
             <h2 class="subheading">
@@ -80,9 +80,9 @@ image: /images/flutter-clock-social.png
                 Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo.
             </p>
             <div class="logos-container">
-                {% asset clock/Flutter-logo.svg alt='Flutter Logo' class='wtm-logo' %}
-                {% asset clock/G-Assistant-logo.svg alt='Google Assistant Logo' class='wtm-logo' %}
-                {% asset clock/Lenovo-logo.svg alt='Lenovo Logo' class='wtm-logo' %}
+                <img src='/assets/images/shared/brand/flutter/logo+text/horizontal/default.svg' alt='Flutter Logo' class='wtm-logo'>
+                <img src='/assets/images/clock/G-Assistant-logo.svg' alt='Google Assistant Logo' class='wtm-logo'>
+                <img src='/assets/images/clock/Lenovo-logo.svg' alt='Lenovo Logo' class='wtm-logo'>
             </div>
         </div>
     </div>
@@ -107,7 +107,7 @@ image: /images/flutter-clock-social.png
                 <h3><a href="https://github.com/miickel/flutter_particle_clock" target="_blank">Particle Clock</a> by Mickel Andersson</h3>
             </div>
         </div>
-        <div class="clock__center-block text-center">{% asset clock/particle.gif -%}</div>
+        <div class="clock__center-block text-center"><img src='/assets/images/clock/particle.gif'></div>
     </div>
 </section>
 
@@ -127,7 +127,7 @@ image: /images/flutter-clock-social.png
                 </h4>
             </div>
         </div>
-        <div class="clock__center-block">{% asset clock/cloom.gif -%}</div>
+        <div class="clock__center-block"><img src='/assets/images/clock/cloom.gif'></div>
     </div>
     <div class="col-md-5 offset-md-2 align-top">
         <div class="clock__category-winner">
@@ -139,7 +139,7 @@ image: /images/flutter-clock-social.png
                 </h4>
             </div>
         </div>
-        <div class="clock__center-block">{% asset clock/code_qlty.gif -%}</div>
+        <div class="clock__center-block"><img src='/assets/images/clock/code_qlty.gif'></div>
     </div>
     <div class="col-md-5 align-top">
         <div class="create__description">
@@ -152,7 +152,7 @@ image: /images/flutter-clock-social.png
                     </h4>
                 </div>
             </div>
-            <div class="clock__center-block">{% asset clock/humanbeans.gif -%}</div>
+            <div class="clock__center-block"><img src='/assets/images/clock/humanbeans.gif'></div>
         </div>
     </div>
     <div class="col-md-5 offset-md-2 align-top">
@@ -162,7 +162,7 @@ image: /images/flutter-clock-social.png
                 <h4><a href="https://github.com/vmorilla/sunset_reflections_clock" target="_blank">Sunset Reflections Clock</a> by Victor Morilla</h4>
             </div>
         </div>
-        <div class="clock__center-block">{% asset clock/sunset_reflections.gif -%}</div>
+        <div class="clock__center-block"><img src='/assets/images/clock/sunset_reflections.gif'></div>
     </div>
 </section>
 
@@ -192,7 +192,7 @@ image: /images/flutter-clock-social.png
                     <div class="card">
                         <div class="card-body entries__card-body">
                             <p class="paragraph">{{entry.title}}</p>
-                            {% asset {{entry.logo}} class="fas" %}
+                            <img src='/assets/images/{{entry.logo}}' class="fas">
                         </div>
                     </div>
                 {% endfor %}

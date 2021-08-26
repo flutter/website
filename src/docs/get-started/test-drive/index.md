@@ -39,6 +39,6 @@ Flutter apps.
 
 
 [Install]: /docs/get-started/install
-[Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
+[Main IntelliJ toolbar]: /assets/images/docs/tools/android-studio/main-toolbar.png
 [Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
 [Material Components]: {{site.material}}/guidelines

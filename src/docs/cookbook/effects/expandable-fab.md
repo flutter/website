@@ -24,7 +24,7 @@ those critical actions.
 
 The following animation shows the app's behavior:
 
-![Expanding and collapsing the FAB]({% asset cookbook/effects/ExpandingFAB.gif @path %}){:.site-mobile-screenshot}
+![Expanding and collapsing the FAB](/assets/images/docs/cookbook/effects/ExpandingFAB.gif){:.site-mobile-screenshot}
 
 ## Create an ExpandableFab widget
 

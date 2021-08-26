@@ -74,7 +74,7 @@ Chrome browser window and navigating to `http://localhost:9100`.
 
 Once DevTools opens, you should see a connect dialog:
 
-![Screenshot of a logging view]({% asset tools/devtools/connect_dialog.png @path %}){:width="100%"}
+![Screenshot of a logging view](/assets/images/docs/tools/devtools/connect_dialog.png){:width="100%"}
 
 Paste the URL you got from running your app (in this example,
 `http://127.0.0.1:50976/Swm0bjIe0ks=/`) into the connect dialog

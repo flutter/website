@@ -8,4 +8,4 @@ title: Integration
   for details.
 {{site.alert.end}}
 
-{% include cookbook_group_index.md %}
+{% include docs/cookbook-group-index.md %}

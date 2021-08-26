@@ -680,6 +680,12 @@ We have seen Flutter apps run on some Chromebooks.
 We are tracking [issues related to running Flutter on
 Chromebooks][].
 
+### Is Flutter ABI compatible?
+
+Flutter and Dart do not offer application binary interface (ABI)
+compatibility. Offering ABI compatability is not a current
+goal for Flutter or Dart.
+
 ## Framework
 
 ### Why is the build() method on State, rather than StatefulWidget?

@@ -61,12 +61,12 @@ Android Studio in your existing Android project,
 you can either create a new Flutter module to integrate,
 or select an existing Flutter module that was created previously.
 
-{% include app-figure.md image="development/add-to-app/android/project-setup/ide-new-module.png" %}
+{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-new-module.png" %}
 
 If you create a new module, you can use a wizard to
 select the module name, location, and so on.
 
-{% include app-figure.md image="development/add-to-app/android/project-setup/ide-wizard.png" %}
+{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-wizard.png" %}
 
 The Android Studio plugin automatically configures your
 Android project to add your Flutter module as a dependency,
@@ -189,7 +189,7 @@ $ flutter build aar
 
 Then, follow the on-screen instructions to integrate.
 
-{% include app-figure.md image="development/add-to-app/android/project-setup/build-aar-instructions.png" %}
+{% include docs/app-figure.md image="development/add-to-app/android/project-setup/build-aar-instructions.png" %}
 
 More specifically, this command creates
 (by default all debug/profile/release modes)
@@ -259,7 +259,7 @@ dependencies {
   You can also build an AAR for your Flutter module in Android Studio using
   the `Build > Flutter > Build AAR` menu.
 
-{% include app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
+{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
 {{site.alert.end}}
 
   Your app now includes the Flutter module as a dependency.

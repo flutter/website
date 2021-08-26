@@ -4,7 +4,7 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
 
-{% include performance.md %}
+{% include docs/performance.md %}
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
@@ -129,7 +129,7 @@ Once your app is running in profile mode,
 [launch DevTools][].
 
 [launch DevTools]: /docs/development/tools/devtools
-[Timeline view]: /docs/development/tools/devtools/timeline
+[Timeline view]: /docs/development/tools/devtools/performance
 
 ## The performance overlay
 
@@ -146,7 +146,7 @@ and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running
 on the Flutter Gallery example:
 
-![Screenshot of overlay showing zero jank]({% asset tools/devtools/performance-overlay-green.png @path %})
+![Screenshot of overlay showing zero jank](/assets/images/docs/tools/devtools/performance-overlay-green.png)
 <br>Performance overlay showing the raster thread (top),
 and UI thread (bottom).<br>The vertical green bars
 represent the current frame.
@@ -176,7 +176,7 @@ If a red bar appears in the UI graph, the Dart code is too
 expensive. If a red vertical bar appears in the GPU graph,
 the scene is too complicated to render quickly.
 
-![Screenshot of performance overlay showing jank with red bars]({% asset tools/devtools/performance-overlay-jank.png @path %})
+![Screenshot of performance overlay showing jank with red bars](/assets/images/docs/tools/devtools/performance-overlay-jank.png)
 <br>The vertical red bars indicate that the current frame is
 expensive to both render and paint.<br>When both graphs
 display red, start by diagnosing the UI thread.

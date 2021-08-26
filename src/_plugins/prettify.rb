@@ -1,1 +1,1 @@
-../_shared/_plugins/prettify.rb
+../../site-shared/src/_plugins/prettify.rb

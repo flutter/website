@@ -36,14 +36,14 @@ you can download the latest version from the
   <img
       width="500"
       style="border-radius: 12px;"
-      src="/images/androidx/migrate_prompt.png"
+      src="/assets/images/docs/androidx/migrate_prompt.png"
       class="figure-img img-fluid"
       alt="Select backup project as zip file" />
 7. The refactoring preview shows the list of changes. Finally, click **Do Refactor**:
   <img
       width="600"
       style="border-radius: 12px;"
-      src="/images/androidx/do_androidx_refactor.png"
+      src="/assets/images/docs/androidx/do_androidx_refactor.png"
       class="figure-img img-fluid"
       alt="An animation of the bottom-up page transition on Android" />
 8. That is it! You successfully migrated your project to AndroidX.

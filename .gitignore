@@ -1,33 +1,23 @@
-.DS_Store
 _site
 .*-cache
 .*-metadata
+.DS_Store
+.env
+.firebase/
+.idea/
+.vscode/
+*.log
+*.swp
 build
-.*swp
+Gemfile.lock
 node_modules
+package-lock.json
 
-# Dart and Flutter
+# Dart and Flutter, build related
+.dart_tool
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
-.dart_tool
-pubspec.lock
 example.g
+pubspec.lock
 tmp/
-
-# We haven't had any issues due to npm (sub-)package version discrepancies,
-# so we'll ignore the npm lock file for now.
-package-lock.json
-
-.idea/
-.vscode/
-.firebase/
-firebase-debug.log
-
-# Until future update
-Dockerfile
-docker-compose.yml
-.dockerignore
-Makefile
-.env.*
-_config_local.yml

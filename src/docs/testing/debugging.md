@@ -50,7 +50,7 @@ the main output that appears on your profile are the
 debug asserts verifying the framework's various invariants
 (see [Debug mode assertions](#debug-mode-assertions)).
 
-![GIF showing DevTools features]({% asset tools/devtools/inspector.gif @path %}){:width="100%"}
+![GIF showing DevTools features](/assets/images/docs/tools/devtools/inspector.gif){:width="100%"}
 
 For more information, see the
 [DevTools][] documentation.
@@ -310,7 +310,7 @@ You might find the following docs useful:
 [Flutter inspector]: /docs/development/tools/devtools/inspector
 [DevTools debugger]: /docs/development/tools/devtools/debugger
 [logging view]: /docs/development/tools/devtools/logging
-[Timeline view]: /docs/development/tools/devtools/timeline
+[Timeline view]: /docs/development/tools/devtools/performance
 [The performance overlay]: /docs/perf/rendering/ui-performance#the-performance-overlay
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
 [overlay]: /docs/testing/code-debugging#performance-overlay

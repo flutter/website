@@ -56,7 +56,7 @@ On **iOS**:
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the bottom-up page transition on Android" />
+        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the bottom-up page transition on Android" />
         <figcaption class="figure-caption">
           Android page transition
         </figcaption>
@@ -64,7 +64,7 @@ On **iOS**:
     </div>
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios.gif" class="figure-img img-fluid" alt="An animation of the end-start style push page transition on iOS" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios.gif" class="figure-img img-fluid" alt="An animation of the end-start style push page transition on iOS" />
         <figcaption class="figure-caption">
           iOS push transition
         </figcaption>
@@ -72,7 +72,7 @@ On **iOS**:
     </div>
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios-modal.gif" class="figure-img img-fluid" alt="An animation of the bottom-up style present page transition on iOS" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios-modal.gif" class="figure-img img-fluid" alt="An animation of the bottom-up style present page transition on iOS" />
         <figcaption class="figure-caption">
           iOS present transition
         </figcaption>
@@ -103,7 +103,7 @@ subcomponent on the next or previous page's
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android pre-Android P" />
+        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android pre-Android P" />
         <figcaption class="figure-caption">
           Android Pre-P
         </figcaption>
@@ -111,7 +111,7 @@ subcomponent on the next or previous page's
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android-p.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android on Android P" />
+        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android-p.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android on Android P" />
         <figcaption class="figure-caption">
           Android Post-P
         </figcaption>
@@ -119,7 +119,7 @@ subcomponent on the next or previous page's
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios-nav-bar.gif" class="figure-img img-fluid" alt="An animation of the nav bar transitions during a page transition on iOS" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios-nav-bar.gif" class="figure-img img-fluid" alt="An animation of the nav bar transitions during a page transition on iOS" />
         <figcaption class="figure-caption">
           iOS Nav Bar
         </figcaption>
@@ -141,7 +141,7 @@ an edge swipe gesture can be used to pop the top route.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 12px;" src="../../images/platform-adaptations/navigation-android-back.gif" class="figure-img img-fluid" alt="A page transition triggered by the Android back button" />
+        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android-back.gif" class="figure-img img-fluid" alt="A page transition triggered by the Android back button" />
         <figcaption class="figure-caption">
           Android back button
         </figcaption>
@@ -149,7 +149,7 @@ an edge swipe gesture can be used to pop the top route.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/navigation-ios-back.gif" class="figure-img img-fluid" alt="A page transition triggered by an iOS back swipe gesture" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/navigation-ios-back.gif" class="figure-img img-fluid" alt="A page transition triggered by an iOS back swipe gesture" />
         <figcaption class="figure-caption">
           iOS back swipe gesture
         </figcaption>
@@ -177,7 +177,7 @@ less abruptly and is more slippery at slow speeds.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/scroll-soft.gif" class="figure-img img-fluid rounded" alt="A soft fling where the iOS scrollable slid longer at lower speed than Android" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-soft.gif" class="figure-img img-fluid rounded" alt="A soft fling where the iOS scrollable slid longer at lower speed than Android" />
         <figcaption class="figure-caption">
           Soft fling comparison
         </figcaption>
@@ -185,7 +185,7 @@ less abruptly and is more slippery at slow speeds.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/scroll-medium.gif" class="figure-img img-fluid rounded" alt="A medium force fling where the Android scrollable reached speed faster and stopped more abruptly after reaching a longer distance" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-medium.gif" class="figure-img img-fluid rounded" alt="A medium force fling where the Android scrollable reached speed faster and stopped more abruptly after reaching a longer distance" />
         <figcaption class="figure-caption">
           Medium fling comparison
         </figcaption>
@@ -193,7 +193,7 @@ less abruptly and is more slippery at slow speeds.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/scroll-strong.gif" class="figure-img img-fluid rounded" alt="A strong fling where the Android scrollable reach speed faster and reached significantly more distance" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-strong.gif" class="figure-img img-fluid rounded" alt="A strong fling where the Android scrollable reach speed faster and reached significantly more distance" />
         <figcaption class="figure-caption">
           Strong fling comparison
         </figcaption>
@@ -216,7 +216,7 @@ On **iOS**, scrolling past the edge of a scrollable
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/scroll-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" />
         <figcaption class="figure-caption">
           Dynamic overscroll comparison
         </figcaption>
@@ -224,7 +224,7 @@ On **iOS**, scrolling past the edge of a scrollable
     </div>
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/scroll-static-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-static-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" />
         <figcaption class="figure-caption">
           Static overscroll comparison
         </figcaption>
@@ -244,7 +244,7 @@ There is no equivalent behavior on *Android*.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/scroll-momentum-ios.gif" class="figure-img img-fluid rounded" alt="Repeated scroll flings building momentum on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/scroll-momentum-ios.gif" class="figure-img img-fluid rounded" alt="Repeated scroll flings building momentum on iOS" />
         <figcaption class="figure-caption">
           iOS scroll momentum
         </figcaption>
@@ -264,7 +264,7 @@ There is no equivalent behavior on **Android**.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img style="border-radius: 22px;" src="../../images/platform-adaptations/scroll-tap-to-top-ios.gif" class="figure-img img-fluid" alt="Tapping the status bar scrolls the primary scrollable back to the top" />
+        <img style="border-radius: 22px;" src="/assets/images/docs/platform-adaptations/scroll-tap-to-top-ios.gif" class="figure-img img-fluid" alt="Tapping the status bar scrolls the primary scrollable back to the top" />
         <figcaption class="figure-caption">
           iOS status bar tap to top
         </figcaption>
@@ -294,7 +294,7 @@ default Cupertino theme is used.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/typography-android.png" class="figure-img img-fluid rounded" alt="Roboto font on Android" />
+        <img src="/assets/images/docs/platform-adaptations/typography-android.png" class="figure-img img-fluid rounded" alt="Roboto font on Android" />
         <figcaption class="figure-caption">
           Roboto on Android
         </figcaption>
@@ -302,7 +302,7 @@ default Cupertino theme is used.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/typography-ios.png" class="figure-img img-fluid rounded" alt="San Francisco font on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/typography-ios.png" class="figure-img img-fluid rounded" alt="San Francisco font on iOS" />
         <figcaption class="figure-caption">
           San Francisco on iOS
         </figcaption>
@@ -325,7 +325,7 @@ has a stem/shaft on Android.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/iconography-android.png" class="figure-img img-fluid rounded" alt="Android appropriate icons" />
+        <img src="/assets/images/docs/platform-adaptations/iconography-android.png" class="figure-img img-fluid rounded" alt="Android appropriate icons" />
         <figcaption class="figure-caption">
           Icons on Android
         </figcaption>
@@ -333,7 +333,7 @@ has a stem/shaft on Android.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/iconography-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate icons" />
+        <img src="/assets/images/docs/platform-adaptations/iconography-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate icons" />
         <figcaption class="figure-caption">
           Icons on iOS
         </figcaption>
@@ -375,7 +375,7 @@ This works on both Material and Cupertino text fields.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-keyboard-move-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via the space key on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-keyboard-move-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via the space key on Android" />
         <figcaption class="figure-caption">
           Android space key cursor move
         </figcaption>
@@ -383,7 +383,7 @@ This works on both Material and Cupertino text fields.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-keyboard-move-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via 3D Touch drag on the keyboard on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-keyboard-move-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via 3D Touch drag on the keyboard on iOS" />
         <figcaption class="figure-caption">
           iOS 3D Touch drag cursor move
         </figcaption>
@@ -406,7 +406,7 @@ selection is made in a text field.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-toolbar-android.png" class="figure-img img-fluid rounded" alt="Android appropriate text toolbar" />
+        <img src="/assets/images/docs/platform-adaptations/text-toolbar-android.png" class="figure-img img-fluid rounded" alt="Android appropriate text toolbar" />
         <figcaption class="figure-caption">
           Android text selection toolbar
         </figcaption>
@@ -414,7 +414,7 @@ selection is made in a text field.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-toolbar-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate text toolbar" />
+        <img src="/assets/images/docs/platform-adaptations/text-toolbar-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate text toolbar" />
         <figcaption class="figure-caption">
           iOS text selection toolbar
         </figcaption>
@@ -442,7 +442,7 @@ Collapsed text selections don't have draggable handles on iOS.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-single-tap-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the tapped position on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-single-tap-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the tapped position on Android" />
         <figcaption class="figure-caption">
           Android tap
         </figcaption>
@@ -450,7 +450,7 @@ Collapsed text selections don't have draggable handles on iOS.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-single-tap-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the nearest edge of the tapped word on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-single-tap-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor to the nearest edge of the tapped word on iOS" />
         <figcaption class="figure-caption">
           iOS tap
         </figcaption>
@@ -473,7 +473,7 @@ long press. The selection toolbar is shown upon release.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-long-press-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via long press on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-long-press-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via long press on Android" />
         <figcaption class="figure-caption">
           Android long press
         </figcaption>
@@ -481,7 +481,7 @@ long press. The selection toolbar is shown upon release.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-long-press-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a position via long press on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-long-press-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a position via long press on iOS" />
         <figcaption class="figure-caption">
           iOS long press
         </figcaption>
@@ -502,7 +502,7 @@ dragging while holding the long press moves the cursor.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-long-press-drag-android.gif" class="figure-img img-fluid rounded" alt="Expanding word selection via long press drag on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-long-press-drag-android.gif" class="figure-img img-fluid rounded" alt="Expanding word selection via long press drag on Android" />
         <figcaption class="figure-caption">
           Android long press drag
         </figcaption>
@@ -510,7 +510,7 @@ dragging while holding the long press moves the cursor.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-long-press-drag-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via long press drag on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-long-press-drag-ios.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via long press drag on iOS" />
         <figcaption class="figure-caption">
           iOS long press drag
         </figcaption>
@@ -529,7 +529,7 @@ double tap and shows the selection toolbar.
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        <img src="../../images/platform-adaptations/text-double-tap-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on Android" />
+        <img src="/assets/images/docs/platform-adaptations/text-double-tap-android.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on Android" />
         <figcaption class="figure-caption">
           Android double tap
         </figcaption>
@@ -537,7 +537,7 @@ double tap and shows the selection toolbar.
     </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img src="../../images/platform-adaptations/text-double-tap-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on iOS" />
+        <img src="/assets/images/docs/platform-adaptations/text-double-tap-ios.gif" class="figure-img img-fluid rounded" alt="Selecting a word via double tap on iOS" />
         <figcaption class="figure-caption">
           iOS double tap
         </figcaption>

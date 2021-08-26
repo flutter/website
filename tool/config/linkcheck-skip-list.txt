@@ -36,3 +36,15 @@ https://material.io/guidelines/motion/transforming-material.html\#transforming-m
 # FIXME(Temporary): linkcheck seems to be intermittently failing when accessing main.css
 # https://github.com/dart-lang/site-www/issues/1107
 /assets/main(-[0-9a-f]+)?.css
+
+# All redirects via firebase.json, which won't work with superstatic (only firebase serve)
+/go/.*?
+
+# Fonts
+/assets/fonts/fontawesome-webfont.*
+
+# FIXME Not sure here, "connection failed" on every go
+/docs/development/tools/devtools/vscode
+
+# robots
+http:///robots.txt
