@@ -47,6 +47,8 @@ First, set up the visual structure:
 
 ```dart
 class FirstRoute extends StatelessWidget {
+  const FirstRoute({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +68,8 @@ class FirstRoute extends StatelessWidget {
 }
 
 class SecondRoute extends StatelessWidget {
+  const SecondRoute({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,26 +136,28 @@ onPressed: () {
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     title: 'Navigation Basics',
     home: FirstRoute(),
   ));
 }
 
 class FirstRoute extends StatelessWidget {
+  const FirstRoute({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Route'),
+        title: const Text('First Route'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Open route'),
+          child: const Text('Open route'),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SecondRoute()),
+              MaterialPageRoute(builder: (context) => const SecondRoute()),
             );
           },
         ),
@@ -161,18 +167,20 @@ class FirstRoute extends StatelessWidget {
 }
 
 class SecondRoute extends StatelessWidget {
+  const SecondRoute({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Route"),
+        title: const Text("Second Route"),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Go back!'),
+          child: const Text('Go back!'),
         ),
       ),
     );
