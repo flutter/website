@@ -103,7 +103,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/horizontal-list.gif" alt="Horizontal List Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/horizontal-list.gif" alt="Horizontal List Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

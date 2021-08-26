@@ -100,7 +100,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

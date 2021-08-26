@@ -36,7 +36,7 @@ generally preferable when developing software.
 
 The following animation shows the app's behavior:
 
-![Gif showing the nested "setup" flow]({% asset cookbook/effects/NestedNavigator.gif @path %}){:.site-mobile-screenshot}
+![Gif showing the nested "setup" flow](/assets/images/docs/cookbook/effects/NestedNavigator.gif){:.site-mobile-screenshot}
 
 In this recipe, you implement a four-page IoT setup
 flow that maintains its own navigation nested beneath

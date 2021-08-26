@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/network-image.png" alt="Network image demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/network-image.png" alt="Network image demo" class="site-mobile-screenshot" />
 </noscript>
 
 

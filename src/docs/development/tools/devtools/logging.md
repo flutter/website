@@ -22,7 +22,7 @@ By default, the logging view shows:
 * `stdout` and `stderr` from applications
 * Custom logging events from applications
 
-![Screenshot of a logging view]({% asset tools/devtools/logging_log_entries.png @path %}){:width="100%"}
+![Screenshot of a logging view](/assets/images/docs/tools/devtools/logging_log_entries.png){:width="100%"}
 
 ## Logging from your application
 

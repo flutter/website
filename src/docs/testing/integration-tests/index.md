@@ -189,7 +189,7 @@ Go to the [Firebase Console][],
 and create a new project if you don't have one
 already. Then navigate to **Quality > Test Lab**:
 
-{% asset integration-test/test-lab-1.png class="mw-100" alt="Firebase Test Lab Console" %}
+<img src='/assets/images/docs/integration-test/test-lab-1.png' class="mw-100" alt="Firebase Test Lab Console">
 
 ### Uploading an Android APK
 
@@ -213,7 +213,7 @@ into the **Android Robo Test** target on the web page.
 This starts a Robo test and allows you to run
 other tests:
 
-{% asset integration-test/test-lab-2.png class="mw-100" alt="Firebase Test Lab upload" %}
+<img src='/assets/images/docs/integration-test/test-lab-2.png' class="mw-100" alt="Firebase Test Lab upload">
 
 Click **Run a test**,
 select the **Instrumentation** test type and drag
@@ -222,12 +222,12 @@ the following two files:
  * `<flutter_project_directory>/build/app/outputs/apk/debug/<file>.apk`
  * `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
 
-{% asset integration-test/test-lab-3.png class="mw-100" alt="Firebase Test Lab upload two APKs" %}
+<img src='/assets/images/docs/integration-test/test-lab-3.png' class="mw-100" alt="Firebase Test Lab upload two APKs">
 
 If a failure occurs,
 you can view the output by selecting the red icon:
 
-{% asset integration-test/test-lab-4.png class="mw-100" alt="Firebase Test Lab test results" %}
+<img src='/assets/images/docs/integration-test/test-lab-4.png' class="mw-100" alt="Firebase Test Lab test results">
 
 ### Uploading an Android APK from the command line
 

@@ -3,24 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "description": "flutter.dev",
-  "scripts": {
-    "start": "./tool/serve.sh",
-    "clean": "rm -Rf ./_site/* ./.jekyll*"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/flutter/website.git"
   },
-  "devDependencies": {
-    "canonical-path": "^1.0.0",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap-scss": "^4.6.0",
     "diff2html-cli": "^2.7.0",
-    "firebase-tools": "^9.12.1",
-    "fs-extra": "^7.0.1",
-    "gulp": "^4.0.0",
-    "gulp-cli": "^2.0.1",
-    "gulp-imagemin": "^5.0.3",
-    "superstatic": "^7.1.0",
-    "yamljs": "^0.3.0",
-    "yargs": "^12.0.5"
-  }
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {}
 }

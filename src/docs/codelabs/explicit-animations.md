@@ -7,7 +7,7 @@ js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
   - defer: true
-    url: /assets/codelabs/js/animations_examples.js
+    url: /assets/js/codelabs/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/explicit"?>
@@ -74,7 +74,7 @@ Can you spot the lines of code that create the effect?
 
 ### Example: bouncing ball (starter code 1)
 
-{% include explicit-animations/bouncing-ball-starter-code-1.md %}
+{% include docs/explicit-animations/bouncing-ball-starter-code-1.md %}
 
 The preceding example uses the container's `margin` property
 to alternate the position of the ball on the screen,
@@ -235,7 +235,7 @@ view the updated animation:
 
 ### Example: bouncing ball (starter code 2)
 
-{% include explicit-animations/bouncing-ball-starter-code-2.md %}
+{% include docs/explicit-animations/bouncing-ball-starter-code-2.md %}
 
 {{site.alert.secondary}}
   **Quick Review:**
@@ -296,7 +296,7 @@ that these updates make to your animation:
 
 ### Example: bouncing ball (starter code 3)
 
-{% include explicit-animations/bouncing-ball-starter-code-3.md %}
+{% include docs/explicit-animations/bouncing-ball-starter-code-3.md %}
 
 At 60 fps, this updated version of the bouncing ball animation
 looks smoother than in all prior examples!
@@ -615,7 +615,7 @@ when this view is
 
 Run the following example to see this explicit animation in action!
 
-{% include explicit-animations/bouncing-ball-starter-code-4.md %}
+{% include docs/explicit-animations/bouncing-ball-starter-code-4.md %}
 
 ### AnimationController concepts
 
@@ -710,7 +710,7 @@ Click **Run**, then check the values that are
 being printed by clicking the **Console** area at the bottom
 of the editor:
 
-{% include explicit-animations/animation-controller-starter-code-1.md %}
+{% include docs/explicit-animations/animation-controller-starter-code-1.md %}
 
 
   `AnimationController`

@@ -1,0 +1,32 @@
+
+// -- Bootstrap v5.x --
+// WARNING: The `float-right` mixin has been deprecated as of v4.3.0. 
+// It will be removed entirely in v5.
+//   on line 8:5 of node_modules/bootstrap-scss/mixins/_deprecate.scss, in mixin `deprecate`
+//   from line 9:12 of node_modules/bootstrap-scss/mixins/_float.scss, in mixin `float-right`
+//   from line 54:14 of src/_sass/shared/_toc_shared.scss
+//   from line 23:9 of src/_sass/main.scss
+//   from line 1:9 of main.scss
+@import '../../node_modules/bootstrap-scss/bootstrap';
+
+// NOTE Suppress any warning messages - we know we're behind the times
+$enable-deprecation-messages: false;
+
+// -- FontAwesome v4.x --
+// NOTE(rearch) this is only being included for use of `.fa-link`
+// in the jekyll-toc plugin for heading anchor tags, and the macos link
+// SEE src/_sass/components/_content.scss
+// NOTE In order to support this, FA fonts have been copied 
+// from node_modules/font-awesome/fonts -> src/assets/fonts
+// --> https://fontawesome.com/v4.7/get-started
+// TODO when not needed, those fonts should be removed as well as 
+// as this import and the package.json lib.
+@import '../../node_modules/font-awesome/scss/font-awesome';
+
+
+// TODO attempted to use FA v5 to get the correct fa-link, but did not work
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims';
+
+// $fa-font-path: "../assets/fonts";
+

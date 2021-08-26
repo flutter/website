@@ -2,4 +2,4 @@
 title: Async widgets
 short-title: Async
 ---
-{% include catalogpage.html category="Async" %}
+{% include docs/catalogpage.html category="Async" %}

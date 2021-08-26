@@ -1,0 +1,9 @@
+.dockerignore
+.gitignore
+AUTHORS
+CONTRIBUTING.md
+docker-compose.yml
+Gemfile.lock
+LICENSE
+node_modules/
+README.md

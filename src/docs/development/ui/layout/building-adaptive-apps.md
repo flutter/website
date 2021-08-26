@@ -146,7 +146,7 @@ are set to 0.0, but you can set the densities to any negative
 or positive value that you want. By switching between different
 densities, you can easily adjust your UI:
 
-![Adaptive scaffold]({% asset development/ui/layout/adaptive_scaffold.gif @path %}){:width="100%"}
+![Adaptive scaffold](/assets/images/docs/development/ui/layout/adaptive_scaffold.gif){:width="100%"}
 
 To set a custom visual density, inject the density into
 your `MaterialApp` theme:
@@ -446,7 +446,7 @@ while the app is running to preview various screen sizes.
 This, combined with hot reload, can greatly accelerate the
 development of a responsive UI.
 
-![Adaptive scaffold 2]({% asset development/ui/layout/adaptive_scaffold2.gif @path %}){:width="100%"}
+![Adaptive scaffold 2](/assets/images/docs/development/ui/layout/adaptive_scaffold2.gif){:width="100%"}
 
 ### Solve touch first
 
@@ -940,7 +940,7 @@ the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI. 
  
-![Samples of title bars]({% asset development/ui/layout/titlebar.png @path %})
+![Samples of title bars](/assets/images/docs/development/ui/layout/titlebar.png)
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
@@ -1051,9 +1051,9 @@ return Row(
 );
 ```
 
-![Sample of embedded image]({% asset development/ui/layout/embed_image1.png @path %})
+![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image1.png)
 
-![Sample of embedded image]({% asset development/ui/layout/embed_image2.png @path %})
+![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image2.png)
 
 #### Menu bar
 

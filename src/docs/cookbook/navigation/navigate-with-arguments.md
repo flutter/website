@@ -381,7 +381,7 @@ class ScreenArguments {
 ```
 
 <noscript>
-  <img src="/images/cookbook/navigate-with-arguments.gif" alt="Demonstrates navigating to different routes with arguments" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/navigate-with-arguments.gif" alt="Demonstrates navigating to different routes with arguments" class="site-mobile-screenshot" />
 </noscript>
 
 

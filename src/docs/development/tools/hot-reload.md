@@ -65,7 +65,7 @@ the hot reload command. The code updates and execution continues.
   hot reload.
 {{site.alert.end}}
 
-![Android Studio UI]({% asset development/tools/android-studio-run-controls.png @path %}){:width="100%"}<br>
+![Android Studio UI](/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
 Controls for run, run debug, hot reload, and hot restart in Android Studio
 
 A code change has a visible effect only if the modified

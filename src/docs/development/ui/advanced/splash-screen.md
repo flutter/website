@@ -4,9 +4,8 @@ short-title: Splash screens
 description: Learn how to add a splash screen to your mobile app.
 ---
 
-{% asset
-development/ui/splash-screen/android-splash-screen/splash-screens_header.png
-class="mw-100" alt="Add Splash Screen Header" %}
+<img src='/assets/images/docs/development/ui/splash-screen/android-splash-screen/splash-screens_header.png'
+class="mw-100" alt="Add Splash Screen Header">
 
 Splash screens (also known as launch screens)
 provide a simple initial experience while your
