@@ -740,7 +740,7 @@ with a different i18n framework.
 
 Complete source code for the [`minimal`][] app.
 
-In the below exampole, the DemoLocalizations class 
+In the below example, the `DemoLocalizations` class 
 includes all of its translations directly in per language Maps.
 
 
