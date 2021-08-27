@@ -3,7 +3,13 @@
     "public": "_site",
     "cleanUrls": true,
     "trailingSlash": false,
-    "ignore": [],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "tool",
+      "src",
+      "**/node_modules/**"
+    ],
     "redirects": [
       { "source": "/accessibility", "destination": "/docs/development/accessibility-and-localization/accessibility", "type": 301 },
       { "source": "/adaptations", "destination": "/docs/resources/platform-adaptations", "type": 301 },
@@ -321,19 +327,14 @@
       { 
         "source": "/f/*.json", 
         "headers": [
-          {"key": "Access-Control-Allow-Origin", "value": "*"}] 
-        },
+          {"key": "Access-Control-Allow-Origin", "value": "*"}
+        ] 
+      },
       {
         "source": "**/*.@(jpg|jpeg|gif|png)",
         "headers": [
           { "key": "Cache-Control", "value": "max-age=3600" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }
-        ]
-      }, 
-      {
-        "source": "404.html",
-        "headers": [
-          { "key": "Cache-Control", "value": "max-age=300" }
         ]
       }
     ]
