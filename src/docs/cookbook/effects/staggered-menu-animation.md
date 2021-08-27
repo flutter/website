@@ -374,8 +374,7 @@ pops into place.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
+  runApp(const MaterialApp(
       home: const ExampleStaggeredAnimations(),
       debugShowCheckedModeBanner: false,
     ),

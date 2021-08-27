@@ -32,7 +32,7 @@ set the `decoration` to null.
 <!-- skip -->
 ```dart
 TextField(
-  decoration: InputDecoration(
+  decoration: const InputDecoration(
     border: OutlineInputBorder(),
     hintText: 'Enter a search term'
   ),
@@ -53,7 +53,7 @@ such as validation and integration with other
 <!-- skip -->
 ```dart
 TextFormField(
-  decoration: InputDecoration(
+  decoration: const InputDecoration(
     border: UnderlineInputBorder(),
     labelText: 'Enter your username'
   ),
@@ -65,38 +65,35 @@ TextFormField(
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'Form Styling Demo';
+    const appTitle = 'Form Styling Demo';
     return MaterialApp(
       title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(appTitle),
+          title: const Text(appTitle),
         ),
-        body: MyCustomForm(),
+        body: const MyCustomForm(),
       ),
     );
   }
 }
 
-class MyCustomForm extends StatefulWidget {
-  @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
-  }
-}
+class MyCustomForm extends StatelessWidget {
+  const MyCustomForm({ Key? key }) : super(key: key);
 
-class MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextField(
             decoration: InputDecoration(
@@ -106,9 +103,9 @@ class MyCustomFormState extends State<MyCustomForm> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your username',
             ),

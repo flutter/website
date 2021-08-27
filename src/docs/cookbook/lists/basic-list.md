@@ -26,7 +26,7 @@ widget is a way to give items a visual structure.
 <!-- skip -->
 ```dart
 ListView(
-  children: <Widget>[
+  children: const <Widget>[
     ListTile(
       leading: Icon(Icons.map),
       title: Text('Map'),
@@ -48,21 +48,23 @@ ListView(
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final title = 'Basic List';
+    const title = 'Basic List';
 
     return MaterialApp(
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: ListView(
-          children: <Widget>[
+          children: const <Widget>[
             ListTile(
               leading: Icon(Icons.map),
               title: Text('Map'),

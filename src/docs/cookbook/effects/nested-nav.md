@@ -413,19 +413,19 @@ void main() {
     MaterialApp(
       theme: ThemeData(
         brightness: Brightness.dark,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.blue,
         ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Colors.blue,
         ),
       ),
       onGenerateRoute: (settings) {
         late Widget page;
         if (settings.name == routeHome) {
-          page = HomeScreen();
+          page = const HomeScreen();
         } else if (settings.name == routeSettings) {
-          page = SettingsScreen();
+          page = const SettingsScreen();
         } else if (settings.name!.startsWith(routePrefixDeviceSetup)) {
           final subRoute =
               settings.name!.substring(routePrefixDeviceSetup.length);
@@ -498,21 +498,21 @@ class SetupFlowState extends State<SetupFlow> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: Text('Are you sure?'),
-                content: Text(
+                title: const Text('Are you sure?'),
+                content: const Text(
                     'If you exit device setup, your progress will be lost.'),
                 actions: [
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).pop(true);
                     },
-                    child: Text('Leave'),
+                    child: const Text('Leave'),
                   ),
                   TextButton(
                     onPressed: () {
                       Navigator.of(context).pop(false);
                     },
-                    child: Text('Stay'),
+                    child: const Text('Stay'),
                   ),
                 ],
               );
@@ -578,9 +578,9 @@ class SetupFlowState extends State<SetupFlow> {
     return AppBar(
       leading: IconButton(
         onPressed: _onExitPressed,
-        icon: Icon(Icons.chevron_left),
+        icon: const Icon(Icons.chevron_left),
       ),
-      title: Text('Bulb Setup'),
+      title: const Text('Bulb Setup'),
     );
   }
 }
@@ -606,7 +606,7 @@ class SelectDevicePage extends StatelessWidget {
                 'Select a nearby device:',
                 style: Theme.of(context).textTheme.headline6,
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               SizedBox(
                 width: double.infinity,
                 height: 54,
@@ -619,7 +619,7 @@ class SelectDevicePage extends StatelessWidget {
                   onPressed: () {
                     onDeviceSelected('22n483nk5834');
                   },
-                  child: Text(
+                  child: const Text(
                     'Bulb 22n483nk5834',
                     style: TextStyle(
                       fontSize: 24,
@@ -673,8 +673,8 @@ class _WaitingPageState extends State<WaitingPage> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CircularProgressIndicator(),
-              SizedBox(height: 32),
+              const CircularProgressIndicator(),
+              const SizedBox(height: 32),
               Text(widget.message),
             ],
           ),
@@ -704,11 +704,11 @@ class FinishedPage extends StatelessWidget {
               Container(
                 width: 250,
                 height: 250,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xFF222222),
+                  color: Color(0xFF222222),
                 ),
-                child: Center(
+                child: const Center(
                   child: Icon(
                     Icons.lightbulb,
                     size: 175,
@@ -716,8 +716,8 @@ class FinishedPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 32),
-              Text(
+              const SizedBox(height: 32),
+              const Text(
                 'Bulb added!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -725,7 +725,7 @@ class FinishedPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               ElevatedButton(
                 style: ButtonStyle(
                   padding: MaterialStateProperty.resolveWith((states) {
@@ -736,11 +736,11 @@ class FinishedPage extends StatelessWidget {
                     return const Color(0xFF222222);
                   }),
                   shape: MaterialStateProperty.resolveWith((states) {
-                    return StadiumBorder();
+                    return const StadiumBorder();
                   }),
                 ),
                 onPressed: onFinishPressed,
-                child: Text(
+                child: const Text(
                   'Finish',
                   style: TextStyle(
                     fontSize: 24,
@@ -774,9 +774,9 @@ class HomeScreen extends StatelessWidget {
               Container(
                 width: 250,
                 height: 250,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xFF222222),
+                  color: Color(0xFF222222),
                 ),
                 child: Center(
                   child: Icon(
@@ -786,8 +786,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 32),
-              Text(
+              const SizedBox(height: 32),
+              const Text(
                 'Add your first bulb',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -803,17 +803,17 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).pushNamed(routeDeviceSetupStart);
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
 
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return AppBar(
-      title: Text('Welcome'),
+      title: const Text('Welcome'),
       actions: [
         IconButton(
-          icon: Icon(Icons.settings),
+          icon: const Icon(Icons.settings),
           onPressed: () {
             Navigator.pushNamed(context, routeSettings);
           },
@@ -853,7 +853,7 @@ class SettingsScreen extends StatelessWidget {
 
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
-      title: Text('Settings'),
+      title: const Text('Settings'),
     );
   }
 }
