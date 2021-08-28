@@ -11,4 +11,4 @@ We currently have the following job openings on the Flutter and Dart teams:
 * [Senior Technical Program Manager](/jobs/tpm)
 * [Developer Relations Engineer](/jobs/dre)
 * [Dart Native Runtime Engineer](/jobs/native_runtime)
-* [Flutter Engineering Productivity](/jobs/infrastructure.html)
+* [Flutter Engineering Productivity](/jobs/infrastructure)
