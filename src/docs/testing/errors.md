@@ -11,12 +11,18 @@ but you can handle them by setting up a [`Zone`][].
 
 All errors caught by Flutter are routed to the
 [`FlutterError.onError`][] handler. By default,
-this calls [`FlutterError.dumpErrorToConsole`][],
-which, as you might guess, dumps the error to the device logs.
-When running from an IDE, the inspector overrides this so
-that errors can also be routed to the IDE's console,
-allowing you to inspect the
+this calls [`FlutterError.presentError`][],
+which, dumps the error to the device logs.
+When running from an IDE, the inspector overrides this
+behavior so that errors can also be routed to the IDE's
+console, allowing you to inspect the
 objects mentioned in the message.
+
+{{site.alert.note}}
+  Consider calling [`FlutterError.presentError`][]
+  from your custom error handler in order to see
+  the logs in the console as well.
+{{site.alert.end}}
 
 When an error occurs during the build phase,
 the [`ErrorWidget.builder`][] callback is
@@ -53,7 +59,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
-    FlutterError.dumpErrorToConsole(details);
+    FlutterError.presentError(details);
     if (kReleaseMode)
       exit(1);
   };
@@ -168,7 +174,7 @@ void main() {
     WidgetsFlutterBinding.ensureInitialized();
     await myErrorsHandler.initialize();
     FlutterError.onError = (FlutterErrorDetails details) {
-      FlutterError.dumpErrorToConsole(details);
+      FlutterError.presentError(details);
       myErrorsHandler.onError(details);
       exit(1);
     };
@@ -197,7 +203,7 @@ class MyApp extends StatelessWidget {
 
 [`ErrorWidget.builder`]: {{site.api}}/flutter/widgets/ErrorWidget/builder.html
 [`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
-[`FlutterError.dumpErrorToConsole`]: {{site.api}}/flutter/foundation/FlutterError/dumpErrorToConsole.html
+[`FlutterError.presentError`]: {{site.api}}/flutter/foundation/FlutterError/presentError.html
 [`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
 [`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
 [reporting errors to a service]: /docs/cookbook/maintenance/error-reporting
