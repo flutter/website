@@ -82,7 +82,7 @@ Widget build(BuildContext context) {
     surfaceFactory:
         (BuildContext context, PlatformViewController controller) {
       return AndroidViewSurface(
-        controller: controller,
+        controller: controller as AndroidViewController,
         gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
         hitTestBehavior: PlatformViewHitTestBehavior.opaque,
       );
