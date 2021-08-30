@@ -12,6 +12,15 @@
   cover: beginning-flutter.png
   link: "https://www.wiley.com/en-us/Beginning+Flutter%3A+A+Hands+On+Guide+to+App+Development-p-9781119550822"
   desc: "Build your first app in Flutter - no experience necessary."
+- title: 'Flutter Apprentice'
+  authors:
+    - Kevin David Moore
+    - Michael Katz
+    - Vincent Ngo
+  publisher: Razeware LLC
+  cover: flutter-apprentice.png
+  link: "https://www.raywenderlich.com/books/flutter-apprentice/v1.0.ea2"
+  desc: "Build for both iOS and Android With Flutter! With Flutter and Flutter Apprentice, you can achieve the dream of building fast applications, faster."
 - title: 'Flutter Complete Reference'
   authors:
     - Alberto Miola
