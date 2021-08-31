@@ -105,7 +105,13 @@ The complete API is available on [pub.dev][].
 
 Extensive documentation about using the Sentry SDK can be found on [Sentry's site][].
 
+## Complete example
 
+To view a working example,
+see the [Sentry flutter example][] app.
+
+
+[Sentry flutter example]: https://github.com/getsentry/sentry-dart/tree/main/flutter/example
 [Create an account with Sentry]: https://sentry.io/signup/
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/
