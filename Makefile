@@ -185,7 +185,7 @@ STAGE_NAME ?= stage
 # Usage: `make stage STAGE_NAME=foo`
 stage:
 	make build
-	npx firebase hosting:channel:deploy ${STAGE_NAME}
+	firebase hosting:channel:deploy ${STAGE_NAME}
 
 
 
