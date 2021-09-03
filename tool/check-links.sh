@@ -40,15 +40,19 @@ if [ ! -e "$SERVE_TARGET" ]; then
 fi
 
 
+# NOTE as noted in the Dockerfile, an enhancement here might be to 
+# have an actual robots.txt.production template for better clarity, 
+# and replacing the dev/staging robots.txt at test/build time. 
 function unleash_robots() {
-  # All robots are welcome!
-  echo $'\n=> Create production version of robots.txt...'
-  echo $'User-agent: * \nAllow: /' > src/robots.txt
+  echo "=> Create production version of robots.txt..."
+  echo -e "User-agent: *\nAllow: /" > src/robots.txt
 }
 
 function cage_robots() {
-  echo $'User-agent: linkcheck \nDisallow:' > src/robots.txt
-  echo $'User-agent: * \nDisallow: /' > src/robots.txt
+  # NOTE legacy method, but having both of these might be 
+  # redundant as the second * disallows all robots.
+  echo -e "User-agent: linkcheck \nDisallow:" > src/robots.txt
+  echo -e "\nUser-agent: *\nDisallow: /" >> src/robots.txt
 }
 
 function cleanup() {

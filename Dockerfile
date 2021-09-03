@@ -92,6 +92,13 @@ RUN cd flutter && \
       git pull
 
 RUN flutter doctor
+
+# NOTE this is a bit sneaky and we could be more clear about it 
+# by having an actual production template for robots.txt rather 
+# than changing the contents of the file at build/test time. 
+# This is similarly seen in tool/check-links.sh
+RUN echo "User-agent: *" > src/robots.txt && echo "Allow: /" >> src/robots.txt
+
 RUN bundle exec jekyll build --config _config.yml
 
 
