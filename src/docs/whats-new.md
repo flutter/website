@@ -12,6 +12,25 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
+## September 8, 2021
+
+Flutter 2.5 is live! For details, see
+[Announcing Flutter 2.5][].
+
+We've made significant changes to flutter/website
+repo to make it easier to use and maintain.
+If you contribute to this repo, see the [README][] file
+for more information.
+
+**Docs updated or added since the 2.2 release**
+
+* A new page on [Using Actions and Shortcuts][].
+
+
+[README]: {{site.github}}/flutter/website/#flutter-website
+[Using Actions and Shortcuts]: /docs/development/ui/advanced/actions_and_shortcuts
+
+
 ## May 18, 2021, Google I/O Edition
 
 Flutter 2.2 is live! For details, see
