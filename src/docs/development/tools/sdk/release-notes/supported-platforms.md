@@ -10,7 +10,7 @@ As of Flutter 2.2, we support the following platforms:
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
 |Android | API 19 & above               | All     |
-|iOS     | iOS 9 & above                | All     |
+|iOS     | iOS 8 & above                | All     |
 |Linux   | Debian 10 & above            | All     |
 |macOS   | El Capitan & above           | All     |
 |Web     | Chrome 84  & above           | All     |
@@ -85,16 +85,19 @@ minimal.
 |iOS     |iOS 12.1-12.3  |
 |iOS     |iOS 10 (all)   |
 |iOS     |iOS 9.0        |
+|iOS     |iOS 8.0        |
 |Windows |Windows 8      |
 |Windows |Windows 7      |
 |Linux   |Debian & below |
+
+We are considering dropping iOS8 support. See [go/rfc-ios8-deprecation](https://flutter.dev/go/rfc-ios8-deprecation) for details.
 
 ### Unsupported platforms
 
 |Platform|Version               |
 |--------|----------------------|
 |Android |Android SDK 15 & below|
-|iOS     |iOS 8 & below         |
+|iOS     |iOS 7 & below         |
 |Windows |Windows Vista & below |
 |Windows |Any 32-bit platform   |   
 |macOS   | Yosemite & below     |
