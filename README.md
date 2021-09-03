@@ -1,4 +1,4 @@
-![Flutter logo][]
+[![Flutter logo]](https://flutter.dev)
 # [Flutter][] website 
 
 [![Build Status][]][Repo on GitHub Actions]
