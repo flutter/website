@@ -14,7 +14,8 @@
 }
 
 // TODO this should be added to shared/toc
-.site-toc--inline {
+.site-toc--inline,
+.site-toc--side {
   > ul {
     margin-left: 0;
     padding-left: 0;
@@ -22,8 +23,9 @@
     
     ul {
       list-style: none;
-      margin-left: 2rem;
+      margin-left: 15px;
       padding-left: 0;
+      padding-top: 8px;
     }
   }
 }
