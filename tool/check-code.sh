@@ -42,7 +42,6 @@ echo "=> Using Flutter version:"
 flutter --version
 
 
-
 if [[ $REFRESH ]]; then
   echo "=> Refreshing code excerpts..."
   (
