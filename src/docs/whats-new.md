@@ -26,10 +26,40 @@ for more information.
 
 * A new page on [Using Actions and Shortcuts][].
 
+**Codelabs**
 
+New codelabs since the last stable release:
+
+* ?
+
+**Articles**
+
+We've published the following articles on the [Flutter Medium][]
+publication since the last stable release:
+
+
+* [Raster thread performance optimization tips][]
+* [Writing a good code sample][]
+* [GSoC'21: Creating a desktop sample for Flutter][]
+* [Flutter Hot Reload][]
+* [What can we do to better improve Flutter?][]
+* [Adding Flutter to  your existing iOS and Android codebases][]
+* [Google I/O Spotlight: Flutter in action at ByteDance][] 
+* [Improving Platform Channel Performance in Flutter][]
+
+
+[Adding Flutter to  your existing iOS and Android codebases]: {{site.medium}}/flutter/adding-flutter-to-your-existing-ios-and-android-codebases-3e2c5a4797c1
+[Flutter Hot Reload]: {{site.medium}}/flutter/flutter-hot-reload-f3c5994e2cee
+[Google I/O Spotlight: Flutter in action at ByteDance]: {{site.medium}}/flutter/google-i-o-spotlight-flutter-in-action-at-bytedance-c22f4b6dc9ef
+[GSoC'21: Creating a desktop sample for Flutter]: {{site.medium}}/flutter/gsoc-21-creating-a-desktop-sample-for-flutter-7d77e74812d6
+[Improving Platform Channel Performance in Flutter]: {{site.medium}}/flutter/improving-platform-channel-performance-in-flutter-e5b4e5df04af
+[Raster thread performance optimization tips]: {{site.medium}}/flutter/raster-thread-performance-optimization-tips-e949b9dbcf06
 [README]: {{site.github}}/flutter/website/#flutter-website
 [Using Actions and Shortcuts]: /docs/development/ui/advanced/actions_and_shortcuts
+[What can we do to better improve Flutter?]: {{site.medium}}/flutter/what-can-we-do-better-to-improve-flutter-q2-2021-user-survey-results-1037fb8f057b
+[Writing a good code sample]: {{site.medium}}/flutter/writing-a-good-code-sample-323358edd9f3
 
+---
 
 ## May 18, 2021, Google I/O Edition
 
@@ -52,7 +82,6 @@ null safety, but that work is not yet completed.
 * The [desktop][] page is updated to reflect the progress
   on desktop support, particularly the new support for
   Windows UWP.
-
 
 {% comment %}
 - migration guides (drag gestures and package:flutter_lints, depending)
