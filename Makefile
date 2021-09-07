@@ -87,13 +87,16 @@ switch-channel:
 test-channel:
 	docker-compose exec site tool/test.sh --target ${CHANNEL} --check-links --null-safety
 
+# Refresh code excerpts inside the running dev container
+refresh-code-excerpts:
+	docker-compose exec site tool/refresh-code-excerpts.sh --keep-dart-tool
+
 # Check code inside the running dev container, refreshing 
 # snippets and running old and null-safety examples
 # NOTE this will mirror test artifacts to local
 # Usage: `make check-code`
 check-code:
-	docker-compose exec site tool/check-code.sh --refresh
-	docker-compose exec site tool/check-code.sh --null-safety
+	docker-compose exec site tool/check-code.sh --refresh --null-safety
 
 # Check links inside the running dev container
 # NOTE this will mirror test artifacts to local

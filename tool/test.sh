@@ -83,16 +83,11 @@ if [[ "$TARGET" =~ ^($DEV|$BETA|$STABLE)$ ]]; then
     switch_flutter_channel $TARGET
   fi
 
-  echo $'\n---------------------------------------------------'
-  echo "=> Checking older examples for branch: \"$TARGET\"";
-  echo $'---------------------------------------------------\n'
-  # tool/check-code.sh --refresh
-
   if [[ $NULL_SAFETY ]]; then
     echo $'\n---------------------------------------------------'
     echo "=> Checking null-safety examples for branch: \"$TARGET\"";
     echo $'---------------------------------------------------\n'
-    tool/check-code.sh --null-safety
+    tool/check-code.sh --refresh --null-safety
   fi
 
   if [[ $BUILD ]]; then
