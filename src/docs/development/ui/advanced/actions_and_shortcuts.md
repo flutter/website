@@ -3,8 +3,6 @@ title: Using Actions and Shortcuts
 description: How to use Actions and Shortcuts in your Flutter app.
 ---
 
-## Using Actions and Shortcuts
-
 This page describes how to bind physical keyboard events to actions in the user
 interface. For instance, to define keyboard shortcuts in your application, this
 page is for you.
@@ -28,7 +26,7 @@ contexts. An [`Action`][] can be a simple callback (as in the case of
 the[`CallbackAction`][]) or something more complex that integrates with entire
 undo/redo architectures (for example) or other logic.
 
-![Using Shortcuts Diagram][]
+![Using Shortcuts Diagram][]{:width="100%"}
 
 [`Shortcuts`][] are key bindings that activate by pressing a key or combination
 of keys. The key combinations reside in a table with their bound intent. When

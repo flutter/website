@@ -144,7 +144,7 @@ color directly or with the [`FloatingActionButtonTheme`][]. See
 ## Timeline
 
 Landed in version: 2.3.0-0.1.pre<br>
-In stable release: not yet
+In stable release: 2.5
 
 ## References
 

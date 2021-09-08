@@ -37,7 +37,8 @@
 ## Issues, bugs, and requests
 
 We welcome contributions and feedback on our website. 
-Please file a request in our [issue tracker](https://github.com/flutter/website/issues/new/choose) 
+Please file a request in our
+[issue tracker](https://github.com/flutter/website/issues/new/choose) 
 or create a [pull request](https://github.com/flutter/website/pulls). 
 For simple changes (such as tweaking some text), 
 it's easiest to make changes using the GitHub UI.
@@ -65,7 +66,8 @@ But here are a few notes to keep in mind before you submit a PR:
 - We follow the [Google Developer Documentation Style Guidelines][] —
   for example, don't use "i.e." or "e.g.", 
   and avoid writing in first person. 
-  You can start with the [style guide highlights](https://developers.google.com/style/highlights) 
+  You can start with the
+  [style guide highlights](https://developers.google.com/style/highlights) 
   or the [word list](https://developers.google.com/style/word-list), 
   or use the search bar that's at the top of every style guide page. 
 
@@ -95,7 +97,6 @@ Install the following tools, if you don't have them already:
   For full setup details, 
   read the [Firebase CLI documentation](https://firebase.google.com/docs/cli).
 
-
 ### 2. Clone this repo _and_ its submodules
 
 > **Note:** This repo has git _submodules_, 
@@ -109,7 +110,8 @@ and then submit a PR from that fork.
 Once you have a fork (or you're a Flutter org member), 
 _choose one_ of the following submodule-cloning techniques:
 
-- Clone the repo and its submodule at the same using the `--recurse-submodules` option:
+- Clone the repo and its submodule at the same
+  using the `--recurse-submodules` option:
   ```bash
   $ git clone --recurse-submodules https://github.com/<username-or-flutter>/website.git
   ```
@@ -165,7 +167,8 @@ _choose one_ of the following submodule-cloning techniques:
    directly in a shell in the container. 
    To start a container shell, run `docker-compose exec site bash`.
 
-   > **Tip:** If you aren't seeing the changes you expect, restart the server and rebuild the site from scratch:
+   > **Tip:** If you aren't seeing the changes you expect,
+   > restart the server and rebuild the site from scratch:
    > ```bash
    > $ make down && make clean && make up
    > ```
@@ -231,9 +234,10 @@ You can deploy your local edits to a personal staging site as follows.
 
 1. If you don't already have a Firebase project, 
    navigate to the [Firebase Console](https://console.firebase.google.com) 
-   and create your own Firebase project (e.g. `my-foo`).
+   and create your own Firebase project (for example, `my-foo`).
 
-1. In a separate `bash` shell, change to the repo directory and initialize Firebase:
+1. In a separate `bash` shell, change to the repo directory
+   and initialize Firebase:
     ```bash
     $ npx firebase init
     ```
