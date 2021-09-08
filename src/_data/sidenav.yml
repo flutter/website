@@ -65,7 +65,7 @@
               permalink: /docs/development/ui/layout/tutorial
             - title: Creating adaptive and responsive apps
               permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: Understanding constraints [NEW]
+            - title: Understanding constraints
               permalink: /docs/development/ui/layout/constraints
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
@@ -102,10 +102,12 @@
         - title: Advanced UI
           permalink: /docs/development/ui/advanced
           children:
-            - title: Slivers
+            - title: Actions & shortcuts
               permalink: /docs/development/ui/advanced/slivers
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
+            - title: Slivers
+              permalink: /docs/development/ui/advanced/slivers
             - title: Splash screens
               permalink: /docs/development/ui/advanced/splash-screen
         - title: Widget catalog

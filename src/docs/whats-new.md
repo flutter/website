@@ -12,10 +12,10 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 
-## September 8, 2021
+## September 8, 2021: 2.5 release
 
 Flutter 2.5 is live! For details, see
-[Announcing Flutter 2.5][].
+[What's new in Flutter 2.5][].
 
 We've made significant changes to flutter/website
 repo to make it easier to use and maintain.
@@ -26,17 +26,10 @@ for more information.
 
 * A new page on [Using Actions and Shortcuts][].
 
-**Codelabs**
-
-New codelabs since the last stable release:
-
-* ?
-
 **Articles**
 
 We've published the following articles on the [Flutter Medium][]
 publication since the last stable release:
-
 
 * [Raster thread performance optimization tips][]
 * [Writing a good code sample][]
@@ -49,6 +42,7 @@ publication since the last stable release:
 
 
 [Adding Flutter to  your existing iOS and Android codebases]: {{site.medium}}/flutter/adding-flutter-to-your-existing-ios-and-android-codebases-3e2c5a4797c1
+[What's new in Flutter 2.5]: {{site.medium}}/flutter/whats-new-in-flutter-2-5-6f080c3f3dc
 [Flutter Hot Reload]: {{site.medium}}/flutter/flutter-hot-reload-f3c5994e2cee
 [Google I/O Spotlight: Flutter in action at ByteDance]: {{site.medium}}/flutter/google-i-o-spotlight-flutter-in-action-at-bytedance-c22f4b6dc9ef
 [GSoC'21: Creating a desktop sample for Flutter]: {{site.medium}}/flutter/gsoc-21-creating-a-desktop-sample-for-flutter-7d77e74812d6
@@ -61,7 +55,7 @@ publication since the last stable release:
 
 ---
 
-## May 18, 2021, Google I/O Edition
+## May 18, 2021, Google I/O Edition: 2.2 release
 
 Flutter 2.2 is live! For details, see
 [Announcing Flutter 2.2][] and
@@ -154,12 +148,12 @@ publication since the last stable release:
 [Null safety]: https://youtu.be/HdKwuHQvArY
 [Slivers]: https://www.youtube.com/watch?v=YY-_yrZdjGc
 [Q1 2021 survey]: {{site.medium}}/flutter/which-factors-affected-users-decisions-to-adopt-flutter-q1-2021-user-survey-results-563e61fc68c9
-[What's New in Flutter 2.2]: https://medium.com/flutter/whats-new-in-flutter-2-2-fd00c65e2039
+[What's New in Flutter 2.2]: {{site.medium}}/flutter/whats-new-in-flutter-2-2-fd00c65e2039
 
 
 ---
 
-## March 3, 2021, Flutter Engage Edition
+## March 3, 2021, Flutter Engage Edition: 2.0 release
 
 Flutter 2 is live!!!  For more information, see
 [Announcing Flutter 2][], [What's new in Flutter 2][],
@@ -271,7 +265,7 @@ publication since the last stable release:
 
 ---
 
-## Oct 1, 2020
+## Oct 1, 2020: 1.22 release
 
 Flutter 1.22 is live! For details, see
 [Announcing Flutter 1.22][].
@@ -343,7 +337,7 @@ publication since the last stable release:
 [webview_flutter]: {{site.pub}}/packages/webview_flutter
 
 
-## Aug 5, 2020
+## Aug 5, 2020: 1.20 release
 
 Flutter 1.20 is live! For details,
 see [Announcing Flutter 1.20][].
@@ -448,7 +442,7 @@ publication since the last stable release:
 [What we learned from the Flutter Q2 2020 survey]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q2-2020-survey-a4f1fc8faac9
 [Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/
 
-## May 6, 2020, Work-From-Home Edition
+## May 6, 2020, Work-From-Home Edition: 1.17 release
 
 Flutter 1.17 is live!
 
@@ -538,7 +532,7 @@ Other newness:
 [Writing custom platform-specific code]: /docs/development/platform-integration/platform-channels
 [Xcode 11.4]: /docs/development/ios-project-migration
 
-## Dec 11, 2019, Flutter Interact Edition
+## Dec 11, 2019, Flutter Interact Edition: 1.12 release
 
 Flutter 1.12 is live!
 
@@ -604,7 +598,7 @@ Happy Fluttering!
 [write your first Flutter app on the web]: /docs/get-started/codelab-web
 [Get started]: /docs/get-started/install
 
-## Sept 10, 2019
+## Sept 10, 2019: 1.9 release
 
 Flutter 1.9 is live!
 
@@ -681,7 +675,7 @@ Happy Fluttering!
 [using the dart:ffi library]: /docs/development/platform-integration/c-interop
 [web FAQ]: /docs/development/platform-integration/web
 
-## July 9, 2019
+## July 9, 2019: 1.7 release
 
 Flutter 1.7 is live!
 
@@ -732,7 +726,7 @@ component and how to customize it, see
 [`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html
 [Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
 
-## May 7, 2019, Google I/O Edition
+## May 7, 2019, Google I/O Edition: 1.5 release
 
 [Flutter 1.5][] is live!
 
@@ -747,7 +741,7 @@ We are updating DartPad to work with Flutter. Try our new
 [Flutter 1.5]: https://developers.googleblog.com/2019/05/Flutter-io19.html
 [1.5.4 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
 
-## February 26, 2019
+## February 26, 2019: 1.2 release
 
 Flutter released [version 1.2][] at Mobile World Congress
 (MWC) in Barcelona. For more information, see the
@@ -798,7 +792,7 @@ If you have questions or comments about any of these docs,
 
 [version 1.2]: https://developers.googleblog.com/2019/02/launching-flutter-12-at-mobile-world.html
 
-## November 5, 2018
+## November 5, 2018: new website
 
 Welcome to the revamped Flutter website!
 

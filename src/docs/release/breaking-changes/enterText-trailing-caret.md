@@ -97,7 +97,7 @@ await tester.idle();
 ## Timeline
 
 Landed in version: 2.1.0-13.0.pre<br>
-In stable release: not yet
+In stable release: 2.5
 
 ## References
 
@@ -110,11 +110,11 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 79494]
+* [Issue 79494][]
 
 Relevant PRs:
 
-* [enterText to move the caret to the end]
+* [enterText to move the caret to the end][]
 
 
 <!-- Master channel link: -->

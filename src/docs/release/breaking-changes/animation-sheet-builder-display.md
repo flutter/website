@@ -139,7 +139,7 @@ images should be identical to the old ones except
 ## Timeline
 
 Landed in version: v2.3.0-13.0.pre<br>
-In stable release: not yet
+In stable release: 2.5
 
 ## References
 

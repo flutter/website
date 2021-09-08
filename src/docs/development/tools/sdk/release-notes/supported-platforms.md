@@ -5,12 +5,12 @@ description: The platforms that Flutter supports by platform version.
 ---
 
 ## Supported platforms
-As of Flutter 2.2, we support the following platforms:
+As of Flutter 2.5, we support the following platforms:
 
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
 |Android | API 19 & above               | All     |
-|iOS     | iOS 8 & above                | All     |
+|iOS     | iOS 9 & above                | All     |
 |Linux   | Debian 10 & above            | All     |
 |macOS   | El Capitan & above           | All     |
 |Web     | Chrome 84  & above           | All     |
@@ -20,7 +20,7 @@ As of Flutter 2.2, we support the following platforms:
 |Windows | Windows 7 & above            | All     |
 
 
-Note that while macOS, Linux, are in the stable channel to enable you to
+Note that while macOS and Linux, are in the stable channel to enable you to
 easily see your application running on the desktop, as of Flutter 2.0 
 they are considered beta quality. 
 
@@ -28,15 +28,16 @@ they are considered beta quality.
 
 As of Flutter 1.20, we define three tiers of support for the 
 platforms on which Flutter runs:
-1. Supported Google-tested platforms, which are platforms the Flutter team at 
-Google tests in continuous integration at every commit. 
-For these platforms, we also run post-commit  tests before 
-rolling from the master channel to the dev channel. 
-1. Best effort platforms, supported community testing, which are 
-platforms we believe we support through coding practices 
-and ad-hoc testing, but rely on the community for testing.
+1. Supported Google-tested platforms,
+   which are platforms the Flutter team at 
+   Google tests in continuous integration at every commit. 
+   For these platforms, we also run post-commit  tests before 
+   rolling from the master channel to the dev channel. 
+1. Best effort platforms, supported community testing,
+   which are platforms we believe we support through coding practices 
+    and ad-hoc testing, but rely on the community for testing.
 1. Unsupported platforms, which are platforms that may work,
-but that the development team does not directly test or support.
+   but that the development team does not directly test or support.
 
 
 ### Supported Google-tested platforms
@@ -85,19 +86,21 @@ minimal.
 |iOS     |iOS 12.1-12.3  |
 |iOS     |iOS 10 (all)   |
 |iOS     |iOS 9.0        |
-|iOS     |iOS 8.0        |
 |Windows |Windows 8      |
 |Windows |Windows 7      |
 |Linux   |Debian & below |
 
-We are considering dropping iOS8 support. See [go/rfc-ios8-deprecation](https://flutter.dev/go/rfc-ios8-deprecation) for details.
+We have dropped iOS8 support. For more information,
+see [go/rfc-ios8-deprecation] for details.
+
+[go/rfc-ios8-deprecation]: /go/rfc-ios8-deprecation
 
 ### Unsupported platforms
 
 |Platform|Version               |
 |--------|----------------------|
 |Android |Android SDK 15 & below|
-|iOS     |iOS 7 & below         |
+|iOS     |iOS 8 & below         |
 |Windows |Windows Vista & below |
 |Windows |Any 32-bit platform   |   
 |macOS   | Yosemite & below     |
