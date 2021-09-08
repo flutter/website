@@ -102,7 +102,7 @@
         - title: Advanced UI
           permalink: /docs/development/ui/advanced
           children:
-            - title: Actions & shortcuts
+            - title: Actions & shortcuts [NEW]
               permalink: /docs/development/ui/advanced/slivers
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
@@ -313,6 +313,8 @@
       match-page-url-exactly: true
     - title: App size
       permalink: /docs/perf/app-size
+    - title: Deferred components [NEW]
+      permalink: /docs/perf/deferred-components
 #    - title: Memory
 #      permalink: /docs/perf/memory
 #    - title: Power usage
