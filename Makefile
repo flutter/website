@@ -1,11 +1,13 @@
-#!make
+#!/usr/bin/make -f
 include shared.env
 -include .env
 
 
-all: gen-env up down debug shell setup serve switch-channel test-channel check-code check-links test debug-test build build-image deploy stage clean reinstall purge
+all: gen-env up down debug shell setup serve switch-channel test-channel \
+	refresh-code-excerpts check-code check-links test debug-test build \
+	build-image deploy stage clean reinstall purge
 
-.DEFAULT_TARGET: up
+.DEFAULT_GOAL := up
 .PHONY: all
 
 
