@@ -315,8 +315,9 @@ authentication issues with apps on your machine.
 Fetch the code signing files from App Store Connect:
 
 ```bash
-app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
-    --platform IOS_APP_STORE \
+app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) \
+    --platform IOS \
+    --type IOS_APP_STORE \
     --certificate-key=@file:/path/to/cert_key \
     --create
 ```
@@ -368,7 +369,7 @@ Build the Flutter the iOS project:
 
 ```bash
 flutter build ipa --release \
-    --export-options-plist=/Users/USERNAME/export_options.plist
+    --export-options-plist=$HOME/export_options.plist
 ```
 
 Note that `export_options.plist` is the output of the `xcode-project use-profiles` command.
@@ -379,9 +380,8 @@ Note that `export_options.plist` is the output of the `xcode-project use-profile
 Publish the app to App Store Connect:
 
 ```bash
-APP_FILE=$(find $(pwd) -name "*.ipa")
 app-store-connect publish \
-    --path "$APP_FILE"
+    --path $(find $(pwd) -name "*.ipa")
 ```
 
 </li>

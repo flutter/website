@@ -46,12 +46,12 @@ ENV PATH="/app/flutter/bin:$PATH"
 # Used if wanting to build the container with a different branch
 # e.g. `make FLUTTER_BRANCH=dev build`
 # This is not to be confused with the $TEST_TARGET_CHANNEL
-RUN if [[ -z $FLUTTER_BRANCH && "$FLUTTER_BRANCH" != "stable" ]]; then \
-      cd flutter; \
-      git fetch; \
-      git remote set-branches origin $FLUTTER_BRANCH; \
-      git fetch --depth 1 origin $FLUTTER_BRANCH; \
-      git checkout $FLUTTER_BRANCH --; \
+RUN if test -n "$FLUTTER_BRANCH" -a "$FLUTTER_BRANCH" != "stable" ; then \
+      cd flutter && \
+      git fetch && \
+      git remote set-branches origin "$FLUTTER_BRANCH" && \
+      git fetch --depth 1 origin "$FLUTTER_BRANCH" && \
+      git checkout "$FLUTTER_BRANCH" -- && \
       git pull; \
     fi
 

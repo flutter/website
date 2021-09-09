@@ -312,7 +312,7 @@ Relevant PRs:
 * Removed in [#83924][]
 
 [Update the TextTheme API]: /go/update-text-theme-api
-[`TextTheme`]: {{site.api}}/flutter/material/Typography-class.html
+[`Typography`]: {{site.api}}/flutter/material/Typography-class.html
 [Migrate TextTheme to 2018 APIs]: {{site.github}}/flutter/flutter/issues/45745
 [#48547]: {{site.github}}/flutter/flutter/pull/48547
 [#83924]: {{site.github}}/flutter/flutter/pull/83924
