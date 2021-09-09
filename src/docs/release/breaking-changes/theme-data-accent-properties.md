@@ -47,7 +47,7 @@ library no longer uses them.
 
 ### Application theme
 
-[`ThemeData`][] values no long need to specify accentColor,
+[`ThemeData`][] values no longer need to specify accentColor,
 accentColorBrightness, accentIconTheme, or accentTextTheme.
 
 To configure the appearance of the material components in about the
