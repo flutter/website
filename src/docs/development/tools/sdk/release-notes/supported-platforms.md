@@ -5,7 +5,8 @@ description: The platforms that Flutter supports by platform version.
 ---
 
 ## Supported platforms
-As of Flutter 2.5, we support the following platforms:
+
+As of release 2.5, Flutter supports the following platforms:
 
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
@@ -18,11 +19,6 @@ As of Flutter 2.5, we support the following platforms:
 |Web     | Safari on El Capitan & above | All     |
 |Web     | Edge 1.2.0 & above           | All     |
 |Windows | Windows 7 & above            | All     |
-
-
-Note that while macOS and Linux, are in the stable channel to enable you to
-easily see your application running on the desktop, as of Flutter 2.0 
-they are considered beta quality. 
 
 ## How we define a supported platform
 
