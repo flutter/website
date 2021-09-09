@@ -90,6 +90,12 @@ package. Note that security works somewhat
 differently because the browser (and not the app)
 controls the headers on an HTTP request.
 
+### How do I handle web-specific imports?
+
+Some plugins require platform-specific imports, particularly if they use the
+file system, which is not accessible from the browser. To use these plugins
+in your app, see the [documentation for conditional imports][].
+
 ### How do I embed a Flutter web app in a web page?
 
 You can embed a Flutter web app,
@@ -165,3 +171,4 @@ Flutter engineers routinely read and respond on Discord.
 [run your web apps in any supported browser]: /docs/get-started/web#create-and-run
 [Integration testing]: /docs/testing/integration-tests#running-in-a-browser
 [internationalizing a Flutter mobile app]: https://flutter.dev/docs/resources/faq#how-do-i-do-internationalization-i18n-localization-l10n-and-accessibility-a11y-in-flutter
+[documentation for conditional imports]: https://dart.dev/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
