@@ -12,6 +12,9 @@ releases to the stable channel.
   [Hotfixes to the Stable Channel][] on the Flutter wiki.
 {{site.alert.end}}
 
+* 2.5.0
+  * [2.5.0 announcement][]
+  * [2.5.0 release notes & change log][]
 * 2.2.0
   * [2.2.0 announcement][]
   * [2.2.0 release notes & change log][]
@@ -33,6 +36,8 @@ releases to the stable channel.
 * Earlier
   * [Archived release notes][]
 
+[2.5.0 announcement]: https://medium.com/flutter/whats-new-in-flutter-2-5-6f080c3f3dc
+[2.5.0 release notes & change log]: release-notes/release-notes-2.5.0
 [2.2.0 announcement]: https://medium.com/flutter/whats-new-in-flutter-2-2-fd00c65e2039
 [2.2.0 release notes & change log]: release-notes/release-notes-2.2.0
 [2.0.0 announcement]: https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65
