@@ -37,8 +37,21 @@ If no `theme` is provided, Flutter creates a default theme for you.
 ```dart
 MaterialApp(
   title: appName,
-  theme: theme.copyWith(
-    colorScheme: theme.colorScheme.copyWith(secondary: Colors.cyan[600]),
+  theme: ThemeData(
+    // Define the default brightness and colors.
+    brightness: Brightness.dark,
+    primaryColor: Colors.lightBlue[800],
+
+    // Define the default font family.
+    fontFamily: 'Georgia',
+
+    // Define the default `TextTheme`. Use this to specify the default
+    // text styling for headlines, titles, bodies of text, and more.
+    textTheme: const TextTheme(
+      headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+      headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+      bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+    ),
   ),
   home: const MyHomePage(
     title: appName,
@@ -65,9 +78,9 @@ create a `ThemeData()` instance and pass that to the `Theme` widget.
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
 Theme(
-  // Create a unique theme with "ThemeData"
+  // Create a unique theme with `ThemeData`
   data: ThemeData(
-    accentColor: Colors.yellow,
+    splashColor: Colors.yellow,
   ),
   child: FloatingActionButton(
     onPressed: () {},
@@ -84,9 +97,9 @@ theme. You can handle this by using the [`copyWith()`][] method.
 <?code-excerpt "lib/theme.dart (ThemeCopyWith)"?>
 ```dart
 Theme(
-  // Find and extend the parent theme using "copyWith". See the next
+  // Find and extend the parent theme using `copyWith`. See the next
   // section for more info on `Theme.of`.
-  data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+  data: Theme.of(context).copyWith(splashColor: Colors.yellow),
   child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
@@ -126,28 +139,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  final theme = ThemeData(
-    // Define the default brightness and colors.
-    brightness: Brightness.dark,
-    primaryColor: Colors.lightBlue[800],
-
-    // Define the default font family.
-    fontFamily: 'Georgia',
-
-    // Define the default TextTheme. Use this to specify the default
-    // text styling for headlines, titles, bodies of text, and more.
-    textTheme: const TextTheme(
-      headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-      headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-      bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-    ),
-  );
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -155,8 +151,21 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: appName,
-      theme: theme.copyWith(
-        colorScheme: theme.colorScheme.copyWith(secondary: Colors.cyan[600]),
+      theme: ThemeData(
+        // Define the default brightness and colors.
+        brightness: Brightness.dark,
+        primaryColor: Colors.lightBlue[800],
+
+        // Define the default font family.
+        fontFamily: 'Georgia',
+
+        // Define the default `TextTheme`. Use this to specify the default
+        // text styling for headlines, titles, bodies of text, and more.
+        textTheme: const TextTheme(
+          headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+          bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+        ),
       ),
       home: const MyHomePage(
         title: appName,
@@ -186,13 +195,10 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: Theme(
-        data: Theme.of(context).copyWith(
-          colorScheme:
-              Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
-        ),
-        child: const FloatingActionButton(
-          onPressed: null,
-          child: Icon(Icons.add),
+        data: Theme.of(context).copyWith(splashColor: Colors.yellow),
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
         ),
       ),
     );

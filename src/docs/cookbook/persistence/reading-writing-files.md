@@ -115,36 +115,6 @@ Future<int> readCounter() async {
 }
 ```
 
-## Testing
-
-To test code that interacts with files, you need to mock calls to
-the `MethodChannel`&mdash;the class that
-communicates with the host platform. For security reasons,
-you can't directly interact with the file system on a device,
-so you interact with the test environment's file system.
-
-To mock the method call, provide a `setupAll()` function in the test file.
-This function runs before the tests are executed.
-
-<?code-excerpt "test/widget_test.dart (setUpAll)"?>
-```dart
-setUpAll(() async {
-  // Create a temporary directory.
-  final directory = await Directory.systemTemp.createTemp();
-
-  // Mock out the MethodChannel for the path_provider plugin.
-  const MethodChannel('plugins.flutter.io/path_provider')
-      .setMockMethodCallHandler((MethodCall methodCall) async {
-    // If you're getting the apps documents directory, return the path to the
-    // temp directory on the test environment instead.
-    if (methodCall.method == 'getApplicationDocumentsDirectory') {
-      return directory.path;
-    }
-    return null;
-  });
-});
-```
-
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>

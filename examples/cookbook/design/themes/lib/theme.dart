@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 void theme(BuildContext context) {
   // #docregion Theme
   Theme(
-    // Create a unique theme with "ThemeData"
+    // Create a unique theme with `ThemeData`
     data: ThemeData(
-      accentColor: Colors.yellow,
+      splashColor: Colors.yellow,
     ),
     child: FloatingActionButton(
       onPressed: () {},
@@ -16,9 +16,9 @@ void theme(BuildContext context) {
 
   // #docregion ThemeCopyWith
   Theme(
-    // Find and extend the parent theme using "copyWith". See the next
+    // Find and extend the parent theme using `copyWith`. See the next
     // section for more info on `Theme.of`.
-    data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+    data: Theme.of(context).copyWith(splashColor: Colors.yellow),
     child: const FloatingActionButton(
       onPressed: null,
       child: Icon(Icons.add),

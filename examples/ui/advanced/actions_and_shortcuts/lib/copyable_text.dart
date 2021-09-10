@@ -41,11 +41,13 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                 ),
                 IconButton(
                   icon: const Icon(Icons.copy),
-                  onPressed: Actions.handler<CopyIntent>(context, const CopyIntent()),
+                  onPressed:
+                      Actions.handler<CopyIntent>(context, const CopyIntent()),
                 ),
                 IconButton(
                   icon: const Icon(Icons.select_all),
-                  onPressed: Actions.handler<SelectAllIntent>(context, const SelectAllIntent()),
+                  onPressed: Actions.handler<SelectAllIntent>(
+                      context, const SelectAllIntent()),
                 ),
                 const Spacer(),
               ],
@@ -60,7 +62,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
 /// A ShortcutManager that logs all keys that it handles.
 class LoggingShortcutManager extends ShortcutManager {
   @override
-  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event, {LogicalKeySet? keysPressed}) {
+  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
     final KeyEventResult result = super.handleKeypress(context, event);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');
@@ -167,8 +169,10 @@ class MyApp extends StatelessWidget {
         manager: LoggingShortcutManager(),
         shortcuts: <LogicalKeySet, Intent>{
           LogicalKeySet(LogicalKeyboardKey.escape): const ClearIntent(),
-          LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyC): const CopyIntent(),
-          LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA): const SelectAllIntent(),
+          LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyC):
+              const CopyIntent(),
+          LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA):
+              const SelectAllIntent(),
         },
         child: const CopyableTextField(title: title),
       ),
