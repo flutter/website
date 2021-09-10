@@ -41,12 +41,11 @@ MaterialApp(
     // Define the default brightness and colors.
     brightness: Brightness.dark,
     primaryColor: Colors.lightBlue[800],
-    accentColor: Colors.cyan[600],
 
     // Define the default font family.
     fontFamily: 'Georgia',
 
-    // Define the default TextTheme. Use this to specify the default
+    // Define the default `TextTheme`. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
     textTheme: const TextTheme(
       headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
@@ -79,9 +78,9 @@ create a `ThemeData()` instance and pass that to the `Theme` widget.
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
 Theme(
-  // Create a unique theme with "ThemeData"
+  // Create a unique theme with `ThemeData`
   data: ThemeData(
-    accentColor: Colors.yellow,
+    splashColor: Colors.yellow,
   ),
   child: FloatingActionButton(
     onPressed: () {},
@@ -98,9 +97,9 @@ theme. You can handle this by using the [`copyWith()`][] method.
 <?code-excerpt "lib/theme.dart (ThemeCopyWith)"?>
 ```dart
 Theme(
-  // Find and extend the parent theme using "copyWith". See the next
+  // Find and extend the parent theme using `copyWith`. See the next
   // section for more info on `Theme.of`.
-  data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+  data: Theme.of(context).copyWith(splashColor: Colors.yellow),
   child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
@@ -124,7 +123,7 @@ In fact, the `FloatingActionButton` uses this technique to find the
 <?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
 ```dart
 Container(
-  color: Theme.of(context).accentColor,
+  color: Theme.of(context).colorScheme.secondary,
   child: Text(
     'Text with a background color',
     style: Theme.of(context).textTheme.headline6,
@@ -156,12 +155,11 @@ class MyApp extends StatelessWidget {
         // Define the default brightness and colors.
         brightness: Brightness.dark,
         primaryColor: Colors.lightBlue[800],
-        accentColor: Colors.cyan[600],
 
         // Define the default font family.
         fontFamily: 'Georgia',
 
-        // Define the default TextTheme. Use this to specify the default
+        // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: const TextTheme(
           headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
@@ -189,7 +187,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          color: Theme.of(context).accentColor,
+          color: Theme.of(context).colorScheme.secondary,
           child: Text(
             'Text with a background color',
             style: Theme.of(context).textTheme.headline6,
@@ -197,13 +195,10 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: Theme(
-        data: Theme.of(context).copyWith(
-          colorScheme:
-              Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
-        ),
-        child: const FloatingActionButton(
-          onPressed: null,
-          child: Icon(Icons.add),
+        data: Theme.of(context).copyWith(splashColor: Colors.yellow),
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
         ),
       ),
     );

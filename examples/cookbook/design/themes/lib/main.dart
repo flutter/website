@@ -19,12 +19,11 @@ class MyApp extends StatelessWidget {
         // Define the default brightness and colors.
         brightness: Brightness.dark,
         primaryColor: Colors.lightBlue[800],
-        accentColor: Colors.cyan[600],
 
         // Define the default font family.
         fontFamily: 'Georgia',
 
-        // Define the default TextTheme. Use this to specify the default
+        // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: const TextTheme(
           headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
@@ -54,7 +53,7 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         // #docregion Container
         child: Container(
-          color: Theme.of(context).accentColor,
+          color: Theme.of(context).colorScheme.secondary,
           child: Text(
             'Text with a background color',
             style: Theme.of(context).textTheme.headline6,
@@ -63,13 +62,10 @@ class MyHomePage extends StatelessWidget {
         // #enddocregion Container
       ),
       floatingActionButton: Theme(
-        data: Theme.of(context).copyWith(
-          colorScheme:
-              Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
-        ),
-        child: const FloatingActionButton(
-          onPressed: null,
-          child: Icon(Icons.add),
+        data: Theme.of(context).copyWith(splashColor: Colors.yellow),
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
         ),
       ),
     );
