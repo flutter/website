@@ -1,9 +1,13 @@
-# Below is a list of people and organizations that have contributed
-# to the Flutter project. Names should be added to the list like so:
+# This is a list of some of the Flutter website's contributors.
+# To see the full list of contributors, see the revision history in
+# source control with a command like: git shortlog -sne
+#
+# Names should be added to the list like so:
 #
 #   Name/Organization <email address>
 
 Google Inc.
+
 Faisal Abid <faisal.abid@gmail.com>
 Iiro Krankka <iiro.krankka@gmail.com>
 Ryuji Iwata <qt.luigi@gmail.com>
