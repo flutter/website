@@ -1,11 +1,3 @@
-{% if os == 'linux' -%}
-  {% assign unzip = 'tar xf' -%}
-  {% assign file_ext = '.tar.xz' -%}
-{% else -%}
-  {% assign unzip = 'unzip' -%}
-  {% assign file_ext = '.zip' -%}
-{% endif -%}
-
 ## Get the Flutter SDK {#get-sdk}
 
 On Linux, you have two ways you can install Flutter.
@@ -52,13 +44,13 @@ install Flutter using the following steps.
 
       {% prettify shell %}
       $ cd ~/development
-      $ {{unzip}} ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}[[/end]]
+      $ tar xf ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.tar.xz[[/end]]
       {% endprettify %}
     {% endcomment -%}
 
     ```terminal
     $ cd ~/development
-    $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
+    $ tar xf ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.tar.xz
     ```
     
     If you don't want to install a fixed version of the installation bundle, 

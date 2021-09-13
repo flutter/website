@@ -26,7 +26,7 @@ your development environment must meet these minimum requirements:
   for the new Apple Silicon architecture.
 {{site.alert.end}}
 
-{% include_relative _get-sdk.md %}
+{% include_relative _get-sdk-mac.md %}
 
 {% include_relative _path-mac.md %}
 
