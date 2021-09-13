@@ -31,7 +31,7 @@ The motivation for these changes is to make the theme system easier to
 understand and use. The default colors for all components are to be
 defined by the components themselves and based on the color
 scheme. The defaults for specific component types can be overridden
-with component-specific themes like [`FloatingActionButtonTheme`][] or
+with component-specific themes like [`FloatingActionButtonThemeData`][] or
 [`CheckBoxTheme`][]. Previously, properties like accentColor were used by a
 handful of component types and only in some situations, which made it
 difficult to understand the implications of overriding them.
@@ -138,7 +138,7 @@ TextStyle style = theme.textTheme.headline1.copyWith(
 
 This property had only been used to configure the color of icons
 within a [`FloatingActionButton`][]. It's now possible to configure the icon
-color directly or with the [`FloatingActionButtonTheme`][]. See
+color directly or with the [`FloatingActionButtonThemeData`][]. See
 [FloatingActionButton and ThemeData's accent properties][].
 
 ## Timeline
@@ -151,7 +151,7 @@ In stable release: 2.5
 API documentation:
 * [`ColorScheme`][]
 * [`FloatingActionButton`][]
-* [`FloatingActionButtonTheme`][]
+* [`FloatingActionButtonThemeData`][]
 * [`TextStyle`][]
 * [`TextTheme`][]
 * [`Theme`][]
