@@ -1,11 +1,3 @@
-{% if os == 'linux' -%}
-  {% assign unzip = 'tar xf' -%}
-  {% assign file_ext = '.tar.xz' -%}
-{% else -%}
-  {% assign unzip = 'unzip' -%}
-  {% assign file_ext = '.zip' -%}
-{% endif -%}
-
 ## Get the Flutter SDK {#get-sdk}
 
  1. Download the following installation bundle to get the latest
@@ -23,13 +15,13 @@
 
       {% prettify shell %}
       $ cd ~/development
-      $ {{unzip}} ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}[[/end]]
+      $ unzip ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip[[/end]]
       {% endprettify %}
     {% endcomment -%}
 
     ```terminal
     $ cd ~/development
-    $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
+    $ unzip ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip
     ```
     
  1. Add the `flutter` tool to your path:
