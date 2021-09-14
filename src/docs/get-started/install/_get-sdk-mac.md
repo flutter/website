@@ -1,11 +1,3 @@
-{% if os == 'linux' -%}
-  {% assign unzip = 'tar xf' -%}
-  {% assign file_ext = '.tar.xz' -%}
-{% else -%}
-  {% assign unzip = 'unzip' -%}
-  {% assign file_ext = '.zip' -%}
-{% endif -%}
-
 ## Get the Flutter SDK {#get-sdk}
 
  1. Download the following installation bundle to get the latest
@@ -23,13 +15,13 @@
 
       {% prettify shell %}
       $ cd ~/development
-      $ {{unzip}} ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}[[/end]]
+      $ unzip ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip[[/end]]
       {% endprettify %}
     {% endcomment -%}
 
     ```terminal
     $ cd ~/development
-    $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
+    $ unzip ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip
     ```
     
  1. Add the `flutter` tool to your path:
@@ -80,18 +72,6 @@ process.
 
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you’ve set everything up correctly.
-
-### Downloading and installing with Homebrew
-
-If you have Homebrew installed on your machine,
-you can install Flutter using the following command:
-
-```terminal
-$ brew install --cask flutter
-```
-
-Then, run `flutter doctor`. That lets you know if there are
-other dependencies you need to install to use Flutter, such as the Android SDK.
 
 ### Downloading straight from GitHub instead of using an archive
 
