@@ -52,8 +52,6 @@ shell:
 setup:
 	make clean
 	docker-compose build site
-	docker-compose run site bundle install
-	docker-compose run site npm install
 
 # Serve the Jekyll site with livereload and incremental builds
 # NOTE this is run inside of the container on `make up`
