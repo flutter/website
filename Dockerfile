@@ -16,19 +16,19 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       diffutils \
       xdg-user-dirs \
       nodejs && \
-    rm -rf /var/lib/apt/lists/*
+      rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
 # Install Ruby deps
 ENV JEKYLL_ENV=development
 RUN gem install bundler
-COPY Gemfile .
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 # Install Node deps
 ENV NODE_ENV=development
-COPY package.json .
+COPY package.json package-lock.json ./
 RUN npm install -g npm firebase-tools superstatic
 RUN npm install
 

@@ -9,9 +9,7 @@ _site
 *.log
 *.swp
 build
-Gemfile.lock
 node_modules
-package-lock.json
 
 # Dart and Flutter, build related
 .dart_tool
