@@ -103,7 +103,7 @@
           permalink: /docs/development/ui/advanced
           children:
             - title: Actions & shortcuts [NEW]
-              permalink: /docs/development/ui/advanced/slivers
+              permalink: /docs/development/ui/advanced/actions_and_shortcuts
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
             - title: Slivers
