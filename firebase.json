@@ -225,6 +225,7 @@
       { "source": "/go/router-and-widgetsapp-integration", "destination": "https://docs.google.com/document/d/1QodTFmwVr1yk8dyQvoqkeILxvm92oikB1bVhHTtp6R4/edit", "type": 301 },
       { "source": "/go/scaffold-messenger", "destination": "https://docs.google.com/document/d/1TCH0T-X42z96lAcSkFttHAQMJ0MsvMojDKa6F4IQI3Y/edit?usp=sharing", "type": 301 },
       { "source": "/go/scalable-flutter-infrastructure", "destination": "https://docs.google.com/document/d/19GEUwAwJbNI-gO9ziV_oDESB28E_Pqppwx8ku9jdEqY", "type": 301 },
+      { "source": "/go/scale-selection-handles-ios-rich-text", "destination": "https://docs.google.com/document/d/1XuvdYUzZQAxCLYT2H1DNtOi1s6fGmFE-cgmweaijfe4/edit?usp=sharing", "type": 301 },
       { "source": "/go/scrollable-alert-dialog", "destination": "https://docs.google.com/document/d/1qtVfjoKXE8BtkNbraKk9IzfRcks5btkKcyE4iGVwkbg/edit", "type": 301 },
       { "source": "/go/sdk-per-platform-installers", "destination": "https://docs.google.com/document/d/1VooN2bddQ52Z2B4qYi1Lp20PGhyYDr1AKaXwo9e7PCw", "type": 301 },
       { "source": "/go/shaders", "destination": "https://docs.google.com/document/d/1z9K5LernwQ0LVAzfbAMW6ITx63QRdRsoax1NLYEfm4Y/edit", "type": 301 },
