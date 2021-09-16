@@ -280,7 +280,7 @@
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
         - title: Developing for iOS 14
           permalink: /docs/development/ios-14
-        - title: Xcode 11.4 support
+        - title: Xcode migration
           permalink: /docs/development/ios-project-migration
 
 - title: Testing & debugging
