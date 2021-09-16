@@ -137,7 +137,7 @@ MaterialApp(
   title: 'Custom Fonts',
   // Set Raleway as the default app font.
   theme: ThemeData(fontFamily: 'Raleway'),
-  home: MyHomePage(),
+  home: const MyHomePage(),
 );
 ```
 
@@ -211,27 +211,31 @@ flutter:
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Custom Fonts',
       // Set Raleway as the default app font.
       theme: ThemeData(fontFamily: 'Raleway'),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // The AppBar uses the app-default Raleway font.
-      appBar: AppBar(title: Text('Custom Fonts')),
-      body: Center(
+      appBar: AppBar(title: const Text('Custom Fonts')),
+      body: const Center(
         // This Text widget uses the RobotoMono font.
         child: Text(
           'Roboto Mono sample',
@@ -243,7 +247,7 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Custom Fonts Demo](/images/cookbook/fonts.png){:.site-mobile-screenshot}
+![Custom Fonts Demo](/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
 
 
 [Export fonts from a package]:  /docs/cookbook/design/package-fonts

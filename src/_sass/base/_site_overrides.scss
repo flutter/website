@@ -1,0 +1,31 @@
+// Flutter-site specific style overrides
+
+.site-toc--button__page-top { display: none; }
+
+.highlight .gp { user-select: none; }
+
+
+// NOTE external link icons in toc were tiny - 
+// correct sizing and spacing
+.site-sidebar .nav-item .nav-link i {
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: 7px;
+  font-size: 10px;
+}
+
+// TODO this should be added to shared/toc
+.site-toc--inline,
+.site-toc--side {
+  > ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    
+    ul {
+      list-style: none;
+      margin-left: 15px;
+      padding-left: 0;
+      padding-top: 8px;
+    }
+  }
+}

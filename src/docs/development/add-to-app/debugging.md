@@ -36,13 +36,13 @@ the next available Dart VM that is hosted by your engine.
 
 Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal.
 
-{% include app-figure.md image="development/add-to-app/debugging/cli-attach.png" caption="flutter attach via terminal" %}
+{% include docs/app-figure.md image="development/add-to-app/debugging/cli-attach.png" caption="flutter attach via terminal" %}
 
 #### VS Code
 
 Select the correct device using the status bar in VS Code, then run the **Flutter: Attach to Flutter on Device** command from the command palette.
 
-{% include app-figure.md image="development/add-to-app/debugging/vscode-attach.png" caption="flutter attach via VS Code" %}
+{% include docs/app-figure.md image="development/add-to-app/debugging/vscode-attach.png" caption="flutter attach via VS Code" %}
 
 Alternatively, create a `.vscode/launch.json` file in your Flutter module project to enable attaching using the **Run > Start Debugging** command or `F5`:
 
@@ -58,7 +58,7 @@ Alternatively, create a `.vscode/launch.json` file in your Flutter module projec
 
 Select the device on which the Flutter module runs so `flutter attach` filters for the right start signals.
 
-{% include app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
+{% include docs/app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
 
 
 [debugging functionalities]: /docs/testing/debugging

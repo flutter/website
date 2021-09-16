@@ -22,7 +22,7 @@ the shapes that approximate the type of content that is loading.
 
 The following animation shows the app's behavior:
 
-![Gif showing the UI loading]({% asset cookbook/effects/UILoadingAnimation.gif @path %}){:.site-mobile-screenshot}
+![Gif showing the UI loading](/assets/images/docs/cookbook/effects/UILoadingAnimation.gif){:.site-mobile-screenshot}
 
 This recipe begins with the content widgets defined and positioned.
 There is also a Floating Action Button (FAB) in the bottom-right
@@ -182,7 +182,7 @@ By temporarily commenting out the image URLs,
 you can see the two ways your UI renders.
 
 
-![Gif showing the shimmer animation]({% asset cookbook/effects/LoadingShimmer.gif @path %}){:.site-mobile-screenshot}
+![Gif showing the shimmer animation](/assets/images/docs/cookbook/effects/LoadingShimmer.gif){:.site-mobile-screenshot}
 
 The next goal is to paint all of the colored areas
 with a single gradient that looks like a shimmer.

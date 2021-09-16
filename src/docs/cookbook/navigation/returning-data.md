@@ -304,7 +304,7 @@ class SelectionScreen extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/returning-data.gif" alt="Returning data demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/returning-data.gif" alt="Returning data demo" class="site-mobile-screenshot" />
 </noscript>
 
 

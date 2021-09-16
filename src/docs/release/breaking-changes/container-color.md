@@ -18,7 +18,7 @@ It is very common to use the `Container` widget as follows:
 return Container(color: Colors.red);
 ```
 
-Previously, this code resulted in a widget heirarchy that used a
+Previously, this code resulted in a widget hierarchy that used a
 `BoxDecoration` to actually paint the background color.
 The `BoxDecoration` widget covers many cases other than
 just painting a background color,

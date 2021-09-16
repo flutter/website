@@ -40,23 +40,25 @@ import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final title = 'Fade in images';
+    const title = 'Fade in images';
 
     return MaterialApp(
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: Stack(
           children: <Widget>[
-            Center(child: CircularProgressIndicator()),
+            const Center(child: CircularProgressIndicator()),
             Center(
               child: FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
@@ -71,7 +73,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Fading In Image Demo](/images/cookbook/fading-in-images.gif){:.site-mobile-screenshot}
+![Fading In Image Demo](/assets/images/docs/cookbook/fading-in-images.gif){:.site-mobile-screenshot}
 
 ### From asset bundle
 
@@ -102,19 +104,21 @@ FadeInImage.assetNetwork(
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final title = 'Fade in images';
+    const title = 'Fade in images';
 
     return MaterialApp(
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
         ),
         body: Center(
           child: FadeInImage.assetNetwork(
@@ -128,7 +132,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Asset fade-in](/images/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
+![Asset fade-in](/assets/images/docs/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
 
 
 [Adding assets and images]: /docs/development/ui/assets-and-images

@@ -32,7 +32,7 @@ body_class: landing-page community
                 <div class="col-lg-4">
                     {% if case.logo_src -%}
                         <div class="landing-page__case-studies__logo">
-                            {% asset '{{ case.logo_src }}' %}
+                            <img src='/assets/images/{{ case.logo_src }}'>
                         </div>
                     {% endif -%}
                     <h3>{{ case.title }}</h3>
@@ -44,9 +44,9 @@ body_class: landing-page community
 
                 <div class="col-lg-8 pt-6 pt-lg-0 landing-page__card-graphic--fill">
                     {% if case.screen_class -%}
-                        {% asset '{{ case.screen_src }}' class="{{case.screen_class}}" %}
+                        <img src='/assets/images/{{ case.screen_src }}' class="{{case.screen_class}}">
                     {% else -%}
-                        {% asset '{{ case.screen_src }}' %}
+                        <img src='/assets/images/{{ case.screen_src }}'>
                     {% endif -%}
                 </div>
             </div>
@@ -86,7 +86,7 @@ body_class: landing-page community
                     <div class="card card--case-study">
                         <div class="card-header">
                             {% if case.logo_src -%}
-                                {% asset '{{ case.logo_src }}' class='landing-page__case-studies__logo' -%}
+                                <img src='/assets/images/{{ case.logo_src }}' class='landing-page__case-studies__logo'>
                             {% endif -%}
                         </div>
                         <div class="card-body">

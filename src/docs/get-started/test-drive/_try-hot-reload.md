@@ -1,6 +1,6 @@
 After the app build completes, you'll see the starter app on your device.
 
-{% include app-figure.md img-class="site-mobile-screenshot border"
+{% include docs/app-figure.md img-class="site-mobile-screenshot border"
     path-prefix="get-started" platform="iOS" image="starter-app.png"
     caption="Starter app" %}
 

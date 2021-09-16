@@ -7,7 +7,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/AbsorbPointer-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AlertDialog",
@@ -17,7 +17,7 @@
       "Dialogs, alerts, and panels"
     ],
     "link": "https://api.flutter.dev/flutter/material/AlertDialog-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-alert-dialog.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-alert-dialog.png'>"
   },
   {
     "name": "Align",
@@ -37,7 +37,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedAlign-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedBuilder",
@@ -47,7 +47,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedBuilder-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedContainer",
@@ -57,7 +57,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedCrossFade",
@@ -67,7 +67,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedCrossFade-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedDefaultTextStyle",
@@ -77,7 +77,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedDefaultTextStyle-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedListState",
@@ -87,7 +87,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedListState-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedModalBarrier",
@@ -97,7 +97,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedModalBarrier-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedOpacity",
@@ -107,7 +107,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedOpacity-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedPhysicalModel",
@@ -117,7 +117,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedPhysicalModel-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedPositioned",
@@ -127,7 +127,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedPositioned-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedSize",
@@ -137,7 +137,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedSize-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedWidget",
@@ -147,7 +147,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedWidget-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "AnimatedWidgetBaseState",
@@ -157,7 +157,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedWidgetBaseState-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Appbar",
@@ -169,7 +169,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/AppBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-app-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-app-bar.png'>"
   },
   {
     "name": "AspectRatio",
@@ -189,7 +189,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/services/AssetBundle-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Autocomplete",
@@ -199,7 +199,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/Autocomplete-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "BackdropFilter",
@@ -209,7 +209,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/BackdropFilter-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Baseline",
@@ -229,7 +229,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-bottom-navigation-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-bottom-navigation-bar.png'>"
   },
   {
     "name": "BottomSheet",
@@ -239,7 +239,7 @@
       "Dialogs, alerts, and panels"
     ],
     "link": "https://api.flutter.dev/flutter/material/BottomSheet-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-bottom-sheets.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-bottom-sheets.png'>"
   },
   {
     "name": "Card",
@@ -249,7 +249,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/Card-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-card.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-card.png'>"
   },
   {
     "name": "Center",
@@ -269,7 +269,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Checkbox-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-checkbox.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-checkbox.png'>"
   },
   {
     "name": "Chip",
@@ -279,7 +279,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/Chip-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-chip.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-chip.png'>"
   },
   {
     "name": "CircularProgressIndicator",
@@ -289,7 +289,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-circular-progress-indicator.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-circular-progress-indicator.png'>"
   },
   {
     "name": "ClipOval",
@@ -309,7 +309,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ClipPath-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "ClipRect",
@@ -363,7 +363,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-action-sheet.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-action-sheet.png'>"
   },
   {
     "name": "CupertinoActivityIndicator",
@@ -373,7 +373,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoActivityIndicator-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-activity-indicator.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-activity-indicator.png'>"
   },
   {
     "name": "CupertinoAlertDialog",
@@ -383,7 +383,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-alert-dialog.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-alert-dialog.png'>"
   },
   {
     "name": "CupertinoButton",
@@ -393,7 +393,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoButton-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-button.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-button.png'>"
   },
   {
     "name": "CupertinoContextMenu",
@@ -403,7 +403,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-context-menu.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-context-menu.png'>"
   },
   {
     "name": "CupertinoDatePicker",
@@ -413,7 +413,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoDatePicker-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-date-picker.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-date-picker.png'>"
   },
   {
     "name": "CupertinoDialogAction",
@@ -423,7 +423,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoDialogAction-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-dialog-action.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-dialog-action.png'>"
   },
   {
     "name": "CupertinoFullscreenDialogTransition",
@@ -433,7 +433,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-fullscreen-dialog-transition.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-fullscreen-dialog-transition.png'>"
   },
   {
     "name": "CupertinoNavigationBar",
@@ -443,7 +443,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-nav-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-nav-bar.png'>"
   },
   {
     "name": "CupertinoPageScaffold",
@@ -453,7 +453,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoPageScaffold-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-page-scaffold.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-page-scaffold.png'>"
   },
   {
     "name": "CupertinoPageTransition",
@@ -463,7 +463,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoPageTransition-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-page-transition.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-page-transition.png'>"
   },
   {
     "name": "CupertinoPicker",
@@ -473,7 +473,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoPicker-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-picker.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-picker.png'>"
   },
   {
     "name": "CupertinoPopupSurface",
@@ -483,7 +483,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoPopupSurface-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoScrollbar",
@@ -493,7 +493,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoScrollbar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-scrollbar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-scrollbar.png'>"
   },
   {
     "name": "CupertinoSearchTextField",
@@ -503,7 +503,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSearchTextField-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-search-field.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-search-field.png'>"
   },
   {
     "name": "CupertinoSegmentedControl",
@@ -513,7 +513,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSegmentedControl-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-segmented-control.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-segmented-control.png'>"
   },
   {
     "name": "CupertinoSlider",
@@ -523,7 +523,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSlider-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-slider.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-slider.png'>"
   },
   {
     "name": "CupertinoSlidingSegmentedControl",
@@ -533,7 +533,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-sliding-segmented-control.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-sliding-segmented-control.png'>"
   },
   {
     "name": "CupertinoSliverNavigationBar",
@@ -545,7 +545,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-sliver-navigation-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-sliver-navigation-bar.png'>"
   },
   {
     "name": "CupertinoSwitch",
@@ -555,7 +555,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSwitch-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-switch.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-switch.png'>"
   },
   {
     "name": "CupertinoTabBar",
@@ -565,7 +565,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTabBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-tab-bar.png'>"
   },
   {
     "name": "CupertinoTabScaffold",
@@ -575,7 +575,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTabScaffold-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-scaffold.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-tab-scaffold.png'>"
   },
   {
     "name": "CupertinoTabView",
@@ -585,7 +585,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTabView-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-view.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-tab-view.png'>"
   },
   {
     "name": "CupertinoTextField",
@@ -595,7 +595,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-textfield.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-textfield.png'>"
   },
   {
     "name": "CupertinoTimerPicker",
@@ -605,7 +605,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTimerPicker-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-timer-picker.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-timer-picker.png'>"
   },
   {
     "name": "CustomMultiChildLayout",
@@ -615,7 +615,7 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/CustomMultiChildLayout-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CustomPaint",
@@ -637,7 +637,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/CustomScrollView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CustomSingleChildLayout",
@@ -647,7 +647,7 @@
       "Single-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/CustomSingleChildLayout-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "DataTable",
@@ -657,7 +657,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/DataTable-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-data-table.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-data-table.png'>"
   },
   {
     "name": "Date & Time Pickers",
@@ -687,7 +687,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/DecoratedBoxTransition-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "DefaultTextStyle",
@@ -697,7 +697,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/DefaultTextStyle-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Dismissible",
@@ -707,7 +707,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Dismissible-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Divider",
@@ -717,7 +717,7 @@
       "Layout"
     ],
     "link": "https://api.flutter.dev/flutter/material/Divider-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-divider.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-divider.png'>"
   },
   {
     "name": "DragTarget",
@@ -727,7 +727,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/DragTarget-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Draggable",
@@ -737,7 +737,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Draggable-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "DraggableScrollableSheet",
@@ -749,7 +749,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/DraggableScrollableSheet-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Drawer",
@@ -759,7 +759,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/Drawer-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-drawer.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-drawer.png'>"
   },
   {
     "name": "DropdownButton",
@@ -781,7 +781,7 @@
       "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/ElevatedButton-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-elevated-button.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-elevated-button.png'>"
   },
   {
     "name": "ExcludeSemantics",
@@ -791,7 +791,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ExcludeSemantics-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Expanded",
@@ -801,7 +801,7 @@
     ],
     "description": "A widget that expands a child of a Row, Column, or Flex.",
     "link": "https://api.flutter.dev/flutter/widgets/Expanded-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "ExpansionPanel",
@@ -821,7 +821,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/FadeTransition-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "FittedBox",
@@ -831,7 +831,7 @@
       "Single-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/FittedBox-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "FloatingActionButton",
@@ -841,7 +841,7 @@
       "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/FloatingActionButton-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-floating-action-button.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-floating-action-button.png'>"
   },
   {
     "name": "Flow",
@@ -851,7 +851,7 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Flow-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "FlutterLogo",
@@ -861,7 +861,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/FlutterLogo-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Form",
@@ -871,7 +871,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/Form-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "FormField",
@@ -881,7 +881,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/FormField-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "FractionalTranslation",
@@ -891,7 +891,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/FractionalTranslation-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "FractionallySizedBox",
@@ -901,7 +901,7 @@
       "Single-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/FractionallySizedBox-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "FutureBuilder",
@@ -911,7 +911,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "GestureDetector",
@@ -921,7 +921,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/GestureDetector-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "GridView",
@@ -946,7 +946,7 @@
       "Routing"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Hero-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Icon",
@@ -979,7 +979,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/IgnorePointer-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Image",
@@ -1002,7 +1002,7 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/IndexedStack-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "InteractiveViewer",
@@ -1012,7 +1012,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/InteractiveViewer-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "IntrinsicHeight",
@@ -1022,7 +1022,7 @@
       "Single-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/IntrinsicHeight-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "IntrinsicWidth",
@@ -1032,7 +1032,7 @@
       "Single-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/IntrinsicWidth-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "LayoutBuilder",
@@ -1042,7 +1042,7 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/LayoutBuilder-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "LimitedBox",
@@ -1052,7 +1052,7 @@
       "Single-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/LimitedBox-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "LinearProgressIndicator",
@@ -1062,7 +1062,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-linear-progress-indicator.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-linear-progress-indicator.png'>"
   },
   {
     "name": "ListBody",
@@ -1072,7 +1072,7 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/ListBody-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "ListTile",
@@ -1082,7 +1082,7 @@
       "Layout"
     ],
     "link": "https://api.flutter.dev/flutter/material/ListTile-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-list-tile.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-list-tile.png'>"
   },
   {
     "name": "ListView",
@@ -1094,7 +1094,7 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/ListView-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-list-tile.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-list-tile.png'>"
   },
   {
     "name": "LongPressDraggable",
@@ -1104,7 +1104,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/LongPressDraggable-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "MaterialApp",
@@ -1124,7 +1124,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/MediaQuery-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "MergeSemantics",
@@ -1134,7 +1134,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/MergeSemantics-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Navigator",
@@ -1144,7 +1144,7 @@
       "Routing"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Navigator-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "NestedScrollView",
@@ -1154,7 +1154,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/NestedScrollView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "NotificationListener",
@@ -1164,7 +1164,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/NotificationListener-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Offstage",
@@ -1174,7 +1174,7 @@
       "Single-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Offstage-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Opacity",
@@ -1194,7 +1194,7 @@
       "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/OutlinedButton-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-outlined-button.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-outlined-button.png'>"
   },
   {
     "name": "OverflowBox",
@@ -1204,7 +1204,7 @@
       "Single-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/OverflowBox-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Padding",
@@ -1226,7 +1226,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/PageView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Placeholder",
@@ -1236,7 +1236,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/Placeholder-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "PopupMenuButton",
@@ -1246,7 +1246,7 @@
       "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/PopupMenuButton-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-popup-menu-button.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-popup-menu-button.png'>"
   },
   {
     "name": "PositionedTransition",
@@ -1256,7 +1256,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/PositionedTransition-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Radio",
@@ -1266,7 +1266,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Radio-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-radio.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-radio.png'>"
   },
   {
     "name": "RawImage",
@@ -1276,7 +1276,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RawImage-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "RawKeyboardListener",
@@ -1286,7 +1286,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RawKeyboardListener-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "RefreshIndicator",
@@ -1306,7 +1306,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/ReorderableListView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "RichText",
@@ -1316,7 +1316,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RichText-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "RotatedBox",
@@ -1326,7 +1326,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RotatedBox-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "RotationTransition",
@@ -1336,7 +1336,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RotationTransition-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Row",
@@ -1370,7 +1370,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ScaleTransition-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "ScrollConfiguration",
@@ -1380,7 +1380,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ScrollConfiguration-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Scrollable",
@@ -1392,7 +1392,7 @@
       "Touch interactions"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Scrollable-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Scrollbar",
@@ -1402,7 +1402,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/Scrollbar-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Semantics",
@@ -1412,7 +1412,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/Semantics-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SimpleDialog",
@@ -1432,7 +1432,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/SingleChildScrollView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SizeTransition",
@@ -1442,7 +1442,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/SizeTransition-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SizedBox",
@@ -1462,7 +1462,7 @@
       "Single-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SizedOverflowBox-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SlideTransition",
@@ -1472,7 +1472,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/SlideTransition-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Slider",
@@ -1482,7 +1482,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Slider-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-slider.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-slider.png'>"
   },
   {
     "name": "SliverAppBar",
@@ -1493,7 +1493,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/material/SliverAppBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-app-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-app-bar.png'>"
   },
   {
     "name": "SliverChildBuilderDelegate",
@@ -1503,7 +1503,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SliverChildBuilderDelegate-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SliverChildListDelegate",
@@ -1513,7 +1513,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SliverChildListDelegate-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SliverFixedExtentList",
@@ -1523,7 +1523,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SliverFixedExtentList-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SliverGrid",
@@ -1533,7 +1533,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SliverGrid-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SliverList",
@@ -1543,7 +1543,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SliverList-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SliverPadding",
@@ -1553,7 +1553,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SliverPadding-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SliverPersistentHeader",
@@ -1563,7 +1563,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SliverPersistentHeader-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SliverToBoxAdapter",
@@ -1573,7 +1573,7 @@
       "Sliver widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/SliverToBoxAdapter-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SnackBar",
@@ -1583,7 +1583,7 @@
       "Dialogs, alerts, and panels"
     ],
     "link": "https://api.flutter.dev/flutter/material/SnackBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-snack-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-snack-bar.png'>"
   },
   {
     "name": "Stack",
@@ -1615,7 +1615,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/StreamBuilder-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Switch",
@@ -1625,7 +1625,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Switch-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-switch.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-switch.png'>"
   },
   {
     "name": "TabBar",
@@ -1635,7 +1635,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/TabBar-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-tab-bar.png'>"
   },
   {
     "name": "TabBarView",
@@ -1645,7 +1645,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/TabBarView-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-tab-bar.png'>"
   },
   {
     "name": "Table",
@@ -1655,7 +1655,7 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Table-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "TabController",
@@ -1665,7 +1665,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/TabController-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-tab-bar.png'>"
   },
   {
     "name": "TabPageSelector",
@@ -1675,7 +1675,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/TabPageSelector-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-tab-bar.png'>"
   },
   {
     "name": "Text",
@@ -1706,7 +1706,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/TextField-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-text-field.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-text-field.png'>"
   },
   {
     "name": "Theme",
@@ -1716,7 +1716,7 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/Theme-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Tooltip",
@@ -1726,7 +1726,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/Tooltip-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-tooltip.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-tooltip.png'>"
   },
   {
     "name": "Transform",
@@ -1748,7 +1748,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/WidgetsApp-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/material-widgets-app.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-widgets-app.png'>"
   },
   {
     "name": "Wrap",
@@ -1758,6 +1758,6 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Wrap-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   }
 ]

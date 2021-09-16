@@ -1,1 +1,1 @@
-../_shared/_plugins/code_diff.rb
+../../site-shared/src/_plugins/code_diff.rb

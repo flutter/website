@@ -18,7 +18,7 @@ filter selection carousel.
 
 The following animation shows the app's behavior:
 
-![Photo Filter Carousel]({% asset cookbook/effects/PhotoFilterCarousel.gif @path %}){:.site-mobile-screenshot}
+![Photo Filter Carousel](/assets/images/docs/cookbook/effects/PhotoFilterCarousel.gif){:.site-mobile-screenshot}
 
 This recipe begins with the photo and filters
 already in place. Filters are applied with the
@@ -170,7 +170,7 @@ that displays a single list item.
 ```dart
 @immutable
 class FilterItem extends StatelessWidget {
- FilterItem({
+ const FilterItem({
    Key? key,
    required this.color,
    this.onFilterSelected,
@@ -510,9 +510,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show ViewportOffset;
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: const ExampleInstagramFilterSelection(),
+  runApp(const MaterialApp(
+      home: ExampleInstagramFilterSelection(),
       debugShowCheckedModeBanner: false,
     ),
   );
@@ -652,7 +651,7 @@ class _FilterSelectorState extends State<FilterSelector> {
     return Scrollable(
       controller: _controller,
       axisDirection: AxisDirection.right,
-      physics: PageScrollPhysics(),
+      physics: const PageScrollPhysics(),
       viewportBuilder: (context, viewportOffset) {
         return LayoutBuilder(
           builder: (context, constraints) {
@@ -806,7 +805,7 @@ class CarouselFlowDelegate extends FlowDelegate {
 
 @immutable
 class FilterItem extends StatelessWidget {
-  FilterItem({
+  const FilterItem({
     Key? key,
     required this.color,
     this.onFilterSelected,

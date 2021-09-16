@@ -1,5 +1,5 @@
 ---
-title: GestureRecognizer Cleanup
+title: GestureRecognizer cleanup
 description: OneSequenceGestureRecognizer subclasses should override `addAllowedPointer` to take a `PointerDownEvent`
 ---
 
@@ -73,7 +73,7 @@ class CustomGestureRecognizer extends ScaleGestureRecognizer {
 ## Timeline
 
 Landed in version: 2.3.0-13.0.pre<br>
-In stable release: not yet
+In stable release: 2.5
 
 ## References
 

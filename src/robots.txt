@@ -1,1 +1,1 @@
-_shared/robots.txt
+../site-shared/src/robots.txt

@@ -202,7 +202,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/floating-app-bar.gif" alt="Use list demo" class="site-mobile-screenshot"/> 
+  <img src="/assets/images/docs/cookbook/floating-app-bar.gif" alt="Use list demo" class="site-mobile-screenshot"/> 
 </noscript>
 
 

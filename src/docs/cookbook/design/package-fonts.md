@@ -129,12 +129,14 @@ flutter:
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Package Fonts',
       home: MyHomePage(),
     );
@@ -142,12 +144,14 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // The AppBar uses the app-default font.
-      appBar: AppBar(title: Text('Package Fonts')),
-      body: Center(
+      appBar: AppBar(title: const Text('Package Fonts')),
+      body: const Center(
         // This Text widget uses the Raleway font.
         child: Text(
           'Using the Raleway font from the awesome_package',
@@ -162,7 +166,7 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
+![Package Fonts Demo](/assets/images/docs/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
 [Google Fonts]: https://fonts.google.com
 [google_fonts]: {{site.pub-pkg}}/google_fonts

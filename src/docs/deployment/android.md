@@ -474,13 +474,13 @@ In Android Studio, open the existing `android/`
 folder under your app’s folder. Then,
 select **build.gradle (Module: app)** in the project panel:
 
-{% asset 'deployment/android/gradle-script-menu.png' width="100%" alt='screenshot of gradle build script menu' %}
+<img src='/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='screenshot of gradle build script menu'>
 
 Next, select the build variant. Click **Build > Select Build Variant**
 in the main menu. Select any of the variants in the **Build Variants**
 panel (debug is the default):
 
-{% asset 'deployment/android/build-variant-menu.png' width="100%" alt='screenshot of build variant menu' %}
+<img src='/assets/images/docs/deployment/android/build-variant-menu.png' width="100%" alt='screenshot of build variant menu'>
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.

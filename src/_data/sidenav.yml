@@ -41,7 +41,7 @@
       permalink: https://flutter.github.io/samples/
     - title: Cookbook
       permalink: /docs/cookbook
-    - title: Codelabs & workshops
+    - title: Codelabs
       permalink: /docs/codelabs
     - title: Tutorials
       permalink: /docs/reference/tutorials
@@ -63,17 +63,15 @@
               match-page-url-exactly: true
             - title: Tutorial
               permalink: /docs/development/ui/layout/tutorial
-            - title: Creating adaptive & responsive apps
+            - title: Creating adaptive and responsive apps
               permalink: /docs/development/ui/layout/adaptive-responsive
-            - title: Building adaptive apps
-              permalink: /docs/development/ui/layout/building-adaptive-apps
             - title: Understanding constraints
               permalink: /docs/development/ui/layout/constraints
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
         - title: Adding interactivity
           permalink: /docs/development/ui/interactive
-        - title: Assets & images
+        - title: Assets and images
           permalink: /docs/development/ui/assets-and-images
         - title: Navigation & routing
           permalink: /docs/development/ui/navigation
@@ -104,14 +102,14 @@
         - title: Advanced UI
           permalink: /docs/development/ui/advanced
           children:
-            - title: Slivers
-              permalink: /docs/development/ui/advanced/slivers
+            - title: Actions & shortcuts [NEW]
+              permalink: /docs/development/ui/advanced/actions_and_shortcuts
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
+            - title: Slivers
+              permalink: /docs/development/ui/advanced/slivers
             - title: Splash screens
               permalink: /docs/development/ui/advanced/splash-screen
-            - title: Using Actions & Shortcuts
-              permalink: /docs/development/ui/advanced/actions_and_shortcuts
         - title: Widget catalog
           permalink: /docs/development/ui/widgets
     - title: Data & backend
@@ -132,12 +130,10 @@
               permalink: /docs/development/data-and-backend/state-mgmt/options
         - title: Networking & http
           permalink: /docs/development/data-and-backend/networking
-        - title: JSON & serialization
+        - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
         - title: Firebase
           permalink: /docs/development/data-and-backend/firebase
-        - title: Google APIs
-          permalink: /docs/development/data-and-backend/google-apis
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
       permalink: /docs/development/accessibility-and-localization
       children:
@@ -156,7 +152,7 @@
           permalink: /docs/development/platform-integration/apple-watch
         - title: C interop
           permalink: /docs/development/platform-integration/c-interop
-        - title: Hosting native Android & iOS views
+        - title: Hosting native Android and iOS views
           permalink: /docs/development/platform-integration/platform-views
         - title: Web FAQ
           permalink: /docs/development/platform-integration/web
@@ -205,7 +201,7 @@
             permalink: /docs/development/add-to-app/ios/add-flutter-screen
       - title: Debugging & hot reload
         permalink: /docs/development/add-to-app/debugging
-      - title: Loading sequence & performance
+      - title: Loading sequence and performance
         permalink: /docs/development/add-to-app/performance
       - title: Multiple Flutter instances
         permalink: /docs/development/add-to-app/multiple-flutters
@@ -265,7 +261,7 @@
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4.md
                 - title: 1.2.1
                   permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1.md
-        - title: Flutter & the pubspec file
+        - title: Flutter and the pubspec file
           permalink: /docs/development/tools/pubspec
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
@@ -284,7 +280,7 @@
           permalink: /docs/development/packages-and-plugins/plugin-api-migration
         - title: Developing for iOS 14
           permalink: /docs/development/ios-14
-        - title: Xcode 11.4 support
+        - title: Xcode migration
           permalink: /docs/development/ios-project-migration
 
 - title: Testing & debugging
@@ -317,6 +313,8 @@
       match-page-url-exactly: true
     - title: App size
       permalink: /docs/perf/app-size
+    - title: Deferred components [NEW]
+      permalink: /docs/perf/deferred-components
 #    - title: Memory
 #      permalink: /docs/perf/memory
 #    - title: Power usage
@@ -333,8 +331,6 @@
         permalink: /docs/perf/rendering/ui-performance
       - title: Reduce shader compilation jank
         permalink: /docs/perf/rendering/shader
-    - title: Deferred components
-      permalink: /docs/perf/deferred-components
     - title: Performance metrics
       permalink: /docs/perf/metrics
     - title: Performance FAQ
@@ -348,15 +344,13 @@
       permalink: /docs/deployment/obfuscate
     - title: Creating flavors for Flutter
       permalink: /docs/deployment/flavors
-    - title: Build & release an Android app
+    - title: Build and release an Android app
       permalink: /docs/deployment/android
-    - title: Build & release an iOS app
+    - title: Build and release an iOS app
       permalink: /docs/deployment/ios
-    - title: Build & release a macOS app
-      permalink: /docs/deployment/macos
-    - title: Build & release a Linux app
+    - title: Build and release a Linux app
       permalink: /docs/deployment/linux
-    - title: Build & release a web app
+    - title: Build and release a web app
       permalink: /docs/deployment/web
     - title: Continuous deployment
       permalink: /docs/deployment/cd
@@ -375,7 +369,7 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Platform adaptations
       permalink: /docs/resources/platform-adaptations
-    - title: Videos & online courses
+    - title: Videos and online courses
       permalink: /docs/resources/videos
     - title: Books
       permalink: /docs/resources/books

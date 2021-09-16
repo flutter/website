@@ -24,7 +24,7 @@ those critical actions.
 
 The following animation shows the app's behavior:
 
-![Expanding and collapsing the FAB]({% asset cookbook/effects/ExpandingFAB.gif @path %}){:.site-mobile-screenshot}
+![Expanding and collapsing the FAB](/assets/images/docs/cookbook/effects/ExpandingFAB.gif){:.site-mobile-screenshot}
 
 ## Create an ExpandableFab widget
 
@@ -626,7 +626,7 @@ class _ExpandableFabState extends State<ExpandableFab>
 
 @immutable
 class _ExpandingActionButton extends StatelessWidget {
-  _ExpandingActionButton({
+  const _ExpandingActionButton({
     Key? key,
     required this.directionInDegrees,
     required this.maxDistance,

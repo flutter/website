@@ -39,7 +39,7 @@ GestureDetector(
   child: Container(
     padding: const EdgeInsets.all(12.0),
     decoration: BoxDecoration(
-      color: Theme.of(context).buttonColor,
+      color: Colors.lightBlue,
       borderRadius: BorderRadius.circular(8.0),
     ),
     child: const Text('My Button'),
@@ -113,7 +113,7 @@ class MyButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(12.0),
         decoration: BoxDecoration(
-          color: Theme.of(context).buttonColor,
+          color: Colors.lightBlue,
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: const Text('My Button'),
@@ -124,7 +124,7 @@ class MyButton extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/images/cookbook/handling-taps.gif" alt="Handle taps demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/handling-taps.gif" alt="Handle taps demo" class="site-mobile-screenshot" />
 </noscript>
 
 

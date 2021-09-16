@@ -24,7 +24,7 @@ multiple visual states, based on the status of an app download.
 
 The following animation shows the app's behavior:
 
-![The download button cycles through its stages]({% asset cookbook/effects/DownloadButton.gif @path %}){:.site-mobile-screenshot}
+![The download button cycles through its stages](/assets/images/docs/cookbook/effects/DownloadButton.gif){:.site-mobile-screenshot}
 
 ## Define a new stateful widget
 
@@ -452,8 +452,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: const ExampleCupertinoDownloadButton(),
+  runApp(const MaterialApp(
+    home: ExampleCupertinoDownloadButton(),
     debugShowCheckedModeBanner: false,
   ));
 }

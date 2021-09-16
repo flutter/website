@@ -1,1 +1,1 @@
-../_shared/_plugins/code_excerpt_processor.rb
+../../site-shared/src/_plugins/code_excerpt_processor.rb

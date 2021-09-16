@@ -75,7 +75,7 @@ For detailed procedures and descriptions, see
 
 Navigate to your target's settings in Xcode:
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
+1. In Xcode, open `Runner.xcworkspace` in your app's `macos` folder.
 1. To view your app's settings, select the **Runner** project in the Xcode
    project navigator. Then, in the main view sidebar, select the **Runner**
    target.
@@ -112,7 +112,7 @@ In the **Signing & Capabilities** section:
 The **General** tab of your project settings should resemble
 the following:
 
-![Xcode Project Settings](/images/releaseguide/macos_xcode_settings.png){:width="100%"}
+![Xcode Project Settings](/assets/images/docs/releaseguide/macos_xcode_settings.png){:width="100%"}
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].

@@ -139,11 +139,11 @@ images should be identical to the old ones except
 ## Timeline
 
 Landed in version: v2.3.0-13.0.pre<br>
-In stable release: not yet
+In stable release: 2.5
 
 ## References
 
-{% include master-api.md %}
+{% include docs/master-api.md %}
 
 API documentation:
 
@@ -155,7 +155,7 @@ Relevant PRs:
 * [Test WidgetTester handling test pointers][]
 
 <!-- Master channel link: -->
-{% include master-api.md %}
+{% include docs/master-api.md %}
 
 [`AnimationSheetBuilder`]: https://master-api.flutter.dev/flutter/flutter_test/AnimationSheetBuilder-class.html
 [`AnimationSheetBuilder.collate`]: https://master-api.flutter.dev/flutter/flutter_test/AnimationSheetBuilder/collate.html

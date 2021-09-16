@@ -80,10 +80,10 @@ and with the largest font setting selected in iOS accessibility settings.
 
 <div class="row">
   <div class="col-md-6">
-    {% include app-figure.md image="a18n/app-regular-fonts.png" caption="Default font setting" img-class="border" %}
+    {% include docs/app-figure.md image="a18n/app-regular-fonts.png" caption="Default font setting" img-class="border" %}
   </div>
   <div class="col-md-6">
-    {% include app-figure.md image="a18n/app-large-fonts.png" caption="Largest accessibility font setting" img-class="border" %}
+    {% include docs/app-figure.md image="a18n/app-large-fonts.png" caption="Largest accessibility font setting" img-class="border" %}
   </div>
 </div>
 
