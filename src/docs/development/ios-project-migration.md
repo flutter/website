@@ -1,11 +1,11 @@
 ---
-title: Xcode 11.4 Support
-description: How to migrate existing Flutter iOS projects to Xcode 11.4.
+title: Xcode Migration
+description: How to migrate older Flutter iOS projects to new versions of Xcode.
 ---
 
 {{site.alert.note}}
   You might be directed to this page if Flutter detects that your project
-  doesn't support Xcode 11.4.
+  doesn't support Xcode 11.4 or higher.
 {{site.alert.end}}
 
 To develop Flutter apps for iOS, you need a Mac with Xcode installed.
