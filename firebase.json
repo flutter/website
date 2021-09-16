@@ -110,6 +110,7 @@
       { "source": "/go/buildtextspan-buildcontext", "destination": "https://docs.google.com/document/d/1nr-g45gXcWTYoW9UmChZV7Ije3lKP4pEvDQCdz6NFdI/edit?usp=sharing", "type": 301 },
       { "source": "/go/calculating-flutter-frame-rate", "destination": "https://docs.google.com/document/d/1YGLELXWdC6YIN03QzEzcIRJc56gCnabPBW8BHCAFR58/edit", "type": 301 },
       { "source": "/go/cascading-menus", "destination": "https://docs.google.com/document/d/17XOSGzLzqbpNcCUwakM_WQ2ZOMcUOXcPC__7nPORwms/edit?usp=sharing&resourcekey=0-hg74S2vAAqwJFN984ZXQHg", "type": 301 },
+      { "source": "/go/center-floating-label-inputdecoration", "destination": "https://docs.google.com/document/d/1sxP91vZiY7McmSMmzrboklIJWQ_6pSS9MBSCrQq016M/edit#", "type": 301 },
       { "source": "/go/change-default-textselectionhandlecolor-to-accentcolor", "destination": "https://docs.google.com/document/d/1RJQd5ABWJ_7DZN19aTZBCE7xHzlC4MYBP1bWE2FWcvc/edit", "type": 301 },
       { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit", "type": 301 },
       { "source": "/go/cupertino-context-menu-action", "destination": "https://docs.google.com/document/d/1lCuPyAbIzAr0c2KIEZhREC_EnkTKBxNiqP6lGLT-KpU/edit", "type": 301 },
