@@ -348,6 +348,8 @@
       permalink: /docs/deployment/android
     - title: Build and release an iOS app
       permalink: /docs/deployment/ios
+    - title: Build and release a macOS app
+      permalink: /docs/deployment/macos
     - title: Build and release a Linux app
       permalink: /docs/deployment/linux
     - title: Build and release a web app
