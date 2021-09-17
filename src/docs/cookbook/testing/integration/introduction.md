@@ -6,7 +6,7 @@ prev:
   title: Take a picture using the camera
   path: /docs/cookbook/plugins/picture-using-camera
 next:
-  title: Handle scrolling
+  title: Performance profiling
   path: /docs/cookbook/testing/integration/scrolling
 ---
 
