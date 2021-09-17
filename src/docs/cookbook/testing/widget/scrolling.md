@@ -2,19 +2,19 @@
 title: Handle scrolling
 description: How to handle scrolling in an integration test.
 prev:
-  title: An introduction to integration testing
-  path: /docs/cookbook/testing/integration/introduction
+title: An introduction to integration testing
+path: /docs/cookbook/testing/integration/introduction
 next:
-  title: Performance profiling
-  path: /docs/cookbook/testing/integration/profiling
+title: Performance profiling
+path: /docs/cookbook/testing/integration/profiling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/scrolling/"?>
 
 {{site.alert.note}}
-  The integration_test package is now the recommended way to write integration
-  tests. See the [Integration testing](/docs/testing/integration-tests/) page
-  for details.
+The integration_test package is now the recommended way to write integration
+tests. See the [Integration testing](/docs/testing/integration-tests/) page
+for details.
 {{site.alert.end}}
 
 Many apps feature lists of content,
@@ -34,10 +34,10 @@ read through the [Introduction to integration testing][] recipe.
 
 This recipe uses the following steps:
 
-  1. Create an app with a list of items.
-  2. Instrument the app.
-  3. Write a test that scrolls through the list.
-  4. Run the test.
+1. Create an app with a list of items.
+2. Instrument the app.
+3. Write a test that scrolls through the list.
+4. Run the test.
 
 ### 1. Create an app with a list of items
 
@@ -140,15 +140,15 @@ scrolling through lists:
 While all three methods work for specific use-cases,
 `scrollUntilVisible` is oftentimes the most robust option. Why?
 
-  1. If using the `scroll()` method alone, you might incorrectly assume
-     the height of each item in the list. This could lead to scrolling
-     too much or too little.
-  2. If using the `scrollIntoView()` method, you might assume that the
-     widget has been instantiated and rendered. To verify that an app
-     works on a broad range of devices, run integration tests against
-     devices with different screen sizes. Since `ListView.builder`
-     renders items on-demand, whether a particular widget has been
-     rendered can depend on the size of the screen.
+1. If using the `scroll()` method alone, you might incorrectly assume
+   the height of each item in the list. This could lead to scrolling
+   too much or too little.
+2. If using the `scrollIntoView()` method, you might assume that the
+   widget has been instantiated and rendered. To verify that an app
+   works on a broad range of devices, run integration tests against
+   devices with different screen sizes. Since `ListView.builder`
+   renders items on-demand, whether a particular widget has been
+   rendered can depend on the size of the screen.
 
 Therefore, rather than assuming that you know the height of all the items
 in a list, or that a particular widget is rendered on all devices,
