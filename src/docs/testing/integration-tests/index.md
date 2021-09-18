@@ -273,7 +273,7 @@ void main() {
     });
 
     tearDownAll(() async {
-      driver.close();
+      await driver.close();
     });
 
     test('tap on the floating action button; verify counter', () async {
