@@ -168,7 +168,7 @@ void main() {
     });
 
     tearDownAll(() async {
-      driver.close();
+      await driver.close();
     });
 
     test('verifies the list contains a specific item', () async {
