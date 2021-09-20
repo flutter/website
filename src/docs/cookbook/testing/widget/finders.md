@@ -5,8 +5,8 @@ prev:
   title: An introduction to widget testing
   path: /docs/cookbook/testing/widget/introduction
 next:
-  title: Tap, drag, and enter text
-  path: /docs/cookbook/testing/widget/tap-drag
+  title: Handle scrolling
+  path: /docs/cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/finders/"?>
