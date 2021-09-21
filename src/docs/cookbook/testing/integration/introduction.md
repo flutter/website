@@ -142,8 +142,7 @@ counter_app/
 
 ### 4. Write the integration test
 
-Now that you have an instrumented app, you can write tests for it.
-This involves four steps:
+Now you can write tests. This involves four steps:
 
   1. Initialize `IntegrationTestWidgetsFlutterBinding`, a singleton service that
      executes tests on a physical device.
