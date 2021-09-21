@@ -91,12 +91,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
+              // Provide a Key to this specific Text widget. This allows
+              // identifying the widget from inside the test suite,
+              // and reading the text.
+              key: const Key('counter'),
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        // Provide a Key to this button. This allows finding this
+        // specific button inside the test suite, and tapping it.
+        key: const Key('increment'),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
@@ -116,8 +123,6 @@ location of the package.
 ```yaml
 dev_dependencies:
   integration_test:
-    sdk: flutter
-  flutter_driver:
     sdk: flutter
   flutter_test:
     sdk: flutter
@@ -192,6 +197,12 @@ following command from the root of the project:
 
 ```shell
 flutter test integration_test/app_test.dart
+```
+
+Or, you can specify the directory to run all integration tests:
+
+```shell
+flutter test integration_test
 ```
  
 This command runs the app and integration tests on the target device. For more
