@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-### 2. Add the `flutter_driver` dependency
+### 2. Add the `integration_test` dependency
 
 Next, use the `integration_test`, `flutter_driver`, and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
