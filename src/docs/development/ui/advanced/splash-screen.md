@@ -194,7 +194,7 @@ Android splash screen in the same positions on screen.
 {{site.alert.end}}
 
 Previously, Android Flutter apps would either set
-`io.flutter.embedding.android.SplashScreenDrawable` in thier application
+`io.flutter.embedding.android.SplashScreenDrawable` in their application
 manifest, or implement [`provideSplashScreen`][] within their Flutter Activity.
 This would be shown momentarily in between the time after the Android launch
 screen is shown and when Flutter has drawn the first frame. This is no longer
