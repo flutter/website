@@ -35,8 +35,7 @@ class ShortcutsExample extends StatelessWidget {
 class LoggingShortcutManager extends ShortcutManager {
   @override
   KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
-    final KeyEventResult result =
-        super.handleKeypress(context, event);
+    final KeyEventResult result = super.handleKeypress(context, event);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');
     }
@@ -178,3 +177,34 @@ class LoggingActionDispatcherExample extends StatelessWidget {
   }
 // #enddocregion LoggingActionDispatcherExample
 }
+
+// #docregion CallbackShortcuts
+class CallbackShortcuts extends StatelessWidget {
+  const CallbackShortcuts({
+    Key? key,
+    required this.bindings,
+    required this.child,
+  }) : super(key: key);
+
+  final Map<ShortcutActivator, VoidCallback> bindings;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Focus(
+      onKey: (FocusNode node, RawKeyEvent event) {
+        KeyEventResult result = KeyEventResult.ignored;
+        // Activates all key bindings that match, returns handled if any handle it.
+        for (final ShortcutActivator activator in bindings.keys) {
+          if (activator.accepts(event, RawKeyboard.instance)) {
+            bindings[activator]!.call();
+            result = KeyEventResult.handled;
+          }
+        }
+        return result;
+      },
+      child: child,
+    );
+  }
+}
+// #enddocregion CallbackShortcuts
