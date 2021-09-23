@@ -163,8 +163,8 @@ with a gesture detector that calls `requestFocus`, it can receive focus when
 tapped or clicked.
 
 You might pass a `FocusNode` object to the `Focus` widget to manage, but if you
-don't, it creates its own. The main reason you would want to create your own
-`FocusNode` to pass to a `Focus` widget is to be able to call `requestFocus()`
+don't, it creates its own. The main reason to create your own
+`FocusNode` is to be able to call `requestFocus()`
 on the node to control the focus from a parent widget. Most of the other
 functionality of a `FocusNode` is best accessed by changing the attributes of
 the `Focus` widget itself.
