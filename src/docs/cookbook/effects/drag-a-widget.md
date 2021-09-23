@@ -60,7 +60,7 @@ Wrap the `MenuListItem` widget with a `LongPressDraggable` widget.
 ```dart
 LongPressDraggable<Item>(
  data: item,
- dragAnchor: DragAnchor.pointer,
+ dragAnchorStrategy: pointerDragAnchorStrategy,
  feedback: DraggingListItem(
    photoProvider: item.imageProvider,
  ),
@@ -79,8 +79,8 @@ This `DraggingListItem` displays a photo of the
 selected food item, centered beneath 
 the user’s finger.
 
-The `dragAnchor` property is set to
-[`DragAnchor.pointer`][].
+The `dragAnchorStrategy` property is set to
+[`pointerDragAnchorStrategy`][].
 This property value instructs `LongPressDraggable`
 to base the `DraggableListItem`’s position on the 
 user’s finger. As the user moves a finger,
@@ -246,14 +246,14 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      home: const ExampleDragAndDrop(),
+    const MaterialApp(
+      home: ExampleDragAndDrop(),
       debugShowCheckedModeBanner: false,
     ),
   );
 }
 
-final List<Item> _items = const [
+const List<Item> _items = [
   Item(
     name: 'Spinach Pizza',
     totalPriceCents: 1299,
@@ -290,17 +290,17 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   final List<Customer> _people = [
     Customer(
       name: 'Makayla',
-      imageProvider: NetworkImage('https://flutter'
+      imageProvider: const NetworkImage('https://flutter'
           '.dev/docs/cookbook/img-files/effects/split-check/Avatar1.jpg'),
     ),
     Customer(
       name: 'Nathan',
-      imageProvider: NetworkImage('https://flutter'
+      imageProvider: const NetworkImage('https://flutter'
           '.dev/docs/cookbook/img-files/effects/split-check/Avatar2.jpg'),
     ),
     Customer(
       name: 'Emilio',
-      imageProvider: NetworkImage('https://flutter'
+      imageProvider: const NetworkImage('https://flutter'
           '.dev/docs/cookbook/img-files/effects/split-check/Avatar3.jpg'),
     ),
   ];
@@ -381,7 +381,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   }) {
     return LongPressDraggable<Item>(
       data: item,
-      dragAnchor: DragAnchor.pointer,
+      dragAnchorStrategy: pointerDragAnchorStrategy,
       feedback: DraggingListItem(
         dragKey: _draggableKey,
         photoProvider: item.imageProvider,
@@ -690,5 +690,5 @@ class Customer {
 }
 ```
 
-[`DragAnchor.pointer`]: {{site.api}}/flutter/widgets/DragAnchor-class.html 
+[`pointerDragAnchorStrategy`]: {{site.api}}/flutter/widgets/pointerDragAnchorStrategy.html
 [`LongPressDraggable`]: {{site.api}}/flutter/widgets/LongPressDraggable-class.html
