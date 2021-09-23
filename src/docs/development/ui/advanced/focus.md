@@ -3,7 +3,6 @@ title: Understanding Flutter's focus system
 description: How to use the focus system in your Flutter app.
 ---
 
-## Understanding Flutter's Focus System
 
 This article explains how to control where keyboard input is directed. If you
 are implementing an application that uses a physical keyboard, such as most
