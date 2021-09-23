@@ -51,7 +51,7 @@ Tests written with the `integration_test` package can:
  
 1. Run directly on the target device, allowing you to test on
    multiple Android or iOS devices using Firebase Test Lab.
-2. Run using `flutter test`. 
+2. Run using `flutter test integration_test`. 
 3. Use `flutter_test` APIs, making integration tests more
    like writing [widget tests][].
 
