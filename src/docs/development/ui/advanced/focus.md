@@ -66,7 +66,7 @@ various classes that implement some of these concepts are introduced below.
 The `FocusNode` and [`FocusScopeNode`][] objects implement the
 mechanics of the focus system. They are long-lived objects (longer than widgets,
 similar to render objects) that hold the focus state and attributes so that they
-are persistent between builds of the widget tree. Together, they are what form
+are persistent between builds of the widget tree. Together, they form
 the focus tree data structure.
 
 They were originally intended to be developer-facing objects used to control
