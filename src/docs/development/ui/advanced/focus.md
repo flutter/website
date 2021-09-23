@@ -351,7 +351,7 @@ If you need access to the focus node from the descendant of a `Focus` widget,
 you can call `Focus.of(context)` to obtain the focus node of the nearest `Focus
 `widget to the given context. If you need to obtain the `FocusNode` of a `Focus`
 widget within the same build function, use a [`Builder`][] to make sure you have
-the correct context. As shown in the following example:
+the correct context. This is shown in the following example:
 
 <?code-excerpt "ui/advanced/focus/lib/samples.dart (BuilderExample)"?>
 ```dart
