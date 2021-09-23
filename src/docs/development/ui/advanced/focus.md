@@ -40,7 +40,7 @@ system:
 ## Glossary
 
 Below are terms, as Flutter uses them, for elements of the focus system. The
-various classes that implement some of these concepts will be introduced below.
+various classes that implement some of these concepts are introduced below.
 
  - **Focus tree** - A tree of focus nodes that typically sparsely mirrors the
    widget tree, representing all the widgets that can receive focus.
