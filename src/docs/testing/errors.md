@@ -12,7 +12,7 @@ but you can handle them by setting up a [`Zone`][].
 All errors caught by Flutter are routed to the
 [`FlutterError.onError`][] handler. By default,
 this calls [`FlutterError.presentError`][],
-which, dumps the error to the device logs.
+which dumps the error to the device logs.
 When running from an IDE, the inspector overrides this
 behavior so that errors can also be routed to the IDE's
 console, allowing you to inspect the
