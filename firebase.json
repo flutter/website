@@ -282,6 +282,7 @@
       { "source": "/go/plugin-support-for-custom-embeddings", "destination": "https://docs.google.com/document/d/1AJTHdC20JhD3viR4JWTghagIztqL5jg_R9NFQmnwAMw/edit?usp=sharing&resourcekey=0-qAECjzHKB5tM47azrVnH1w", "type": 301 },
       { "source": "/go/text-editing-deltas", "destination": "https://docs.google.com/document/d/1PXNd_LwJudiUTnCM2AXRxbd98_p4BlFf6qFhEhv3wvs/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-editing-model", "destination": "https://docs.google.com/document/d/1lkpg4dfVZif9NJ_dDQ01QkwQC3OqzhUFahhjgv_rcbM/edit#", "type": 301 },
+      { "source": "/go/backdrop-filter-with-overlay-canvas", "destination": "https://docs.google.com/document/d/1t_offKOgkuVzvB3fqGTfcltovb-yxqV6tbuP1qIBqVI/edit?usp=sharing", "type": 301 },
 
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },
