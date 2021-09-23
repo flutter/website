@@ -136,16 +136,16 @@ The `previouslyFocusedChild` disposition will search the scope to find the
 previously focused child and request focus on it. If there is no previously
 focused child, it is equivalent to `scope`.
 
-{{site.alert.note}}
-Beware: If there is no other scope, then focus moves to the root scope node of
-the focus system, `FocusManager.rootScope`. This is generally not desirable, as
-the root scope doesn't have a `context` for the framework to determine which
-node should be focused next. If you find that your application suddenly loses
-the ability to navigate by using focus traversal, this is probably what has
-happened.  To fix it, add a `FocusScope` as an ancestor to the focus node that
-is requesting the unfocus. The `WidgetsApp` (from which `MaterialApp` and
-`CupertinoApp` are derived) has its own `FocusScope`, so this should not be an
-issue if you are using those.
+{{site.alert.secondary}}
+  **Beware**: If there is no other scope, then focus moves to the root scope node of
+  the focus system, `FocusManager.rootScope`. This is generally not desirable, as
+  the root scope doesn't have a `context` for the framework to determine which
+  node should be focused next. If you find that your application suddenly loses
+  the ability to navigate by using focus traversal, this is probably what has
+  happened.  To fix it, add a `FocusScope` as an ancestor to the focus node that
+  is requesting the unfocus. The `WidgetsApp` (from which `MaterialApp` and
+  `CupertinoApp` are derived) has its own `FocusScope`, so this should not be an
+  issue if you are using those.
 {{site.alert.end}}
 
 ## Focus widget
