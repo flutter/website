@@ -265,8 +265,8 @@ Widget build(BuildContext context) {
 }
 ```
 
-Focus key events are processed before text entry is, so handling a key event
-when the focus widget surrounds a text field will prevent that key from being
+Focus key events are processed before text entry events, so handling a key event
+when the focus widget surrounds a text field prevents that key from being
 entered into the text field.
 
 Here's an example of a widget that won't allow the letter "a" to be typed into
