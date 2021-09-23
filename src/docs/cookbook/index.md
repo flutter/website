@@ -105,9 +105,7 @@ reference to help you build up an application.
 
 ### Integration
 - [An introduction to integration testing](/docs/cookbook/testing/integration/introduction)
-- [Handle scrolling](/docs/cookbook/testing/integration/scrolling)
 - [Performance profiling](/docs/cookbook/testing/integration/profiling)
-
 
 ### Unit
 - [An introduction to unit testing](/docs/cookbook/testing/unit/introduction)
@@ -117,4 +115,5 @@ reference to help you build up an application.
 ### Widget
 - [An introduction to widget testing](/docs/cookbook/testing/widget/introduction)
 - [Find widgets](/docs/cookbook/testing/widget/finders)
+- [Handle scrolling](/docs/cookbook/testing/widget/scrolling)
 - [Tap, drag, and enter text](/docs/cookbook/testing/widget/tap-drag)

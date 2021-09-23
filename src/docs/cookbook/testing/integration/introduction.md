@@ -6,18 +6,11 @@ prev:
   title: Take a picture using the camera
   path: /docs/cookbook/plugins/picture-using-camera
 next:
-  title: Handle scrolling
+  title: Performance profiling
   path: /docs/cookbook/testing/integration/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>
-
-{{site.alert.note}}
-  The integration_test package is now the recommended way to write integration
-  tests. See the [Integration testing](/docs/testing/integration-tests/) page
-  for details.
-{{site.alert.end}}
-
 
 Unit tests and widget tests are handy for testing individual classes,
 functions, or widgets. However, they generally don't test how
@@ -25,14 +18,8 @@ individual pieces work together as a whole, or capture the performance
 of an application running on a real device. These tasks are performed
 with *integration tests*.
 
-Integration tests work as a pair: first, deploy an instrumented application
-to a real device or emulator and then "drive" the application from a
-separate test suite, checking to make sure everything is correct along
-the way.
-
-To create this test pair, use the [flutter_driver][] package.
-It provides tools to create instrumented apps and drive those apps
-from a test suite.
+Integration tests are written using the [integration_test][] package, provided
+by the SDK. 
 
 In this recipe, learn how to test a counter app. It demonstrates
 how to setup integration tests, how to verify specific text is displayed
@@ -41,11 +28,10 @@ by the app, how to tap specific widgets, and how to run integration tests.
 This recipe uses the following steps:
 
   1. Create an app to test.
-  2. Add the `flutter_driver` dependency.
+  2. Add the `integration_test` dependency.
   3. Create the test files.
-  4. Instrument the app.
-  5. Write the integration tests.
-  6. Run the integration test.
+  4. Write the integration test.
+  5. Run the integration test.
 
 ### 1. Create an app to test
 
@@ -53,11 +39,6 @@ First, create an app for testing. In this example,
 test the counter app produced by the `flutter create`
 command. This app allows a user to tap on a button
 to increase a counter.
-
-Furthermore, provide a [`ValueKey`][] to
-the `Text` and `FloatingActionButton` widgets.
-This allows identifying and interacting with these
-specific widgets inside the test suite.
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
@@ -132,189 +113,107 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-### 2. Add the `flutter_driver` dependency
+### 2. Add the `integration_test` dependency
 
-Next, use the `flutter_driver` package to write integration tests.
-Add the `flutter_driver` dependency to the `dev_dependencies` section of
-the app's `pubspec.yaml` file.
-
-Also add the `test` dependency in order to use actual test functions and
-assertions.
+Next, use the `integration_test`, `flutter_driver`, and `flutter_test` packages
+to write integration tests. Add these dependencies to the `dev_dependencies`
+section of the app's `pubspec.yaml` file, specifying the Flutter SDK as the
+location of the package.
 
 ```yaml
 dev_dependencies:
-  flutter_driver:
+  integration_test:
     sdk: flutter
-  test: any
+  flutter_test:
+    sdk: flutter
 ```
 
 ### 3. Create the test files
 
-Unlike unit and widget tests, integration test suites do not run in the same
-process as the app being tested. Therefore, create two files that
-reside in the same directory. By convention, the directory is named
-`test_driver`.
-
-  1. The first file contains an "instrumented" version of the app.
-     The instrumentation allows you to "drive" the app and record
-     performance profiles from a test suite. This file can have any
-     name that makes sense. For this example, create a file called
-    `test_driver/app.dart`.
-  2. The second file contains the test suite, which drives the app and
-     verifies that it works as expected. The test suite also records
-     performance profiles. The name of the test file must correspond
-     to the name of the file that contains the instrumented app,
-     with `_test` added at the end. Therefore,
-     create a second file called `test_driver/app_test.dart`.
-
-This creates the following directory structure:
+Create a new directory, `integration_test`, with an empty `app_test.dart` file:
 
 ```
 counter_app/
   lib/
     main.dart
-  test_driver/
-    app.dart
+  integration_test/
     app_test.dart
 ```
 
-### 4. Instrument the app
+### 4. Write the integration test
 
-Now, instrument the app. This involves two steps:
+Now you can write tests. This involves four steps:
 
-  1. Enable the flutter driver extensions.
-  2. Run the app.
-
-Add the following code inside the
-`test_driver/app.dart` file.
-
-<?code-excerpt "test_driver/app.dart"?>
-```dart
-import 'package:flutter_driver/driver_extension.dart';
-import 'package:introduction/main.dart' as app;
-
-void main() {
-  // This line enables the extension.
-  enableFlutterDriverExtension();
-
-  // Call the `main()` function of the app, or call `runApp` with
-  // any widget you are interested in testing.
-  app.main();
-}
-```
-
-### 5. Write the tests
-
-Now that you have an instrumented app, you can write tests for it.
-This involves four steps:
-
-  1. Create [`SerializableFinders`][]
-     to locate specific widgets.
-  2. Connect to the app before our tests run in the `setUpAll()` function.
+  1. Initialize `IntegrationTestWidgetsFlutterBinding`, a singleton service that
+     executes tests on a physical device.
+  2. Interact and tests widgets using the `WidgetTester` class.
   3. Test the important scenarios.
-  4. Disconnect from the app in the `teardownAll()` function after the tests
-     complete.
 
-<?code-excerpt "test_driver/app_test.dart"?>
+<?code-excerpt "integration_test/app_test.dart"?>
 ```dart
-// Imports the Flutter Driver API.
-import 'package:flutter_driver/flutter_driver.dart';
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
+
+import 'package:integration_test_experiments/main.dart' as app;
 
 void main() {
-  group('Counter App', () {
-    // First, define the Finders and use them to locate widgets from the
-    // test suite. Note: the Strings provided to the `byValueKey` method must
-    // be the same as the Strings we used for the Keys in step 1.
-    final counterTextFinder = find.byValueKey('counter');
-    final buttonFinder = find.byValueKey('increment');
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-    late FlutterDriver driver;
+  group('end-to-end test', () {
+    testWidgets('tap on the floating action button, verify counter',
+            (WidgetTester tester) async {
+          app.main();
+          await tester.pumpAndSettle();
 
-    // Connect to the Flutter driver before running any tests.
-    setUpAll(() async {
-      driver = await FlutterDriver.connect();
-    });
+          // Verify the counter starts at 0.
+          expect(find.text('0'), findsOneWidget);
 
-    // Close the connection to the driver after the tests have completed.
-    tearDownAll(() async {
-      await driver.close();
-    });
+          // Finds the floating action button to tap on.
+          final Finder fab = find.byTooltip('Increment');
 
-    test('starts at 0', () async {
-      // Use the `driver.getText` method to verify the counter starts at 0.
-      expect(await driver.getText(counterTextFinder), "0");
-    });
+          // Emulate a tap on the floating action button.
+          await tester.tap(fab);
 
-    test('increments the counter', () async {
-      // First, tap the button.
-      await driver.tap(buttonFinder);
+          // Trigger a frame.
+          await tester.pumpAndSettle();
 
-      // Then, verify the counter text is incremented by 1.
-      expect(await driver.getText(counterTextFinder), "1");
-    });
-
-    test('increments the counter during animation', () async {
-      await driver.runUnsynchronized(() async {
-        // First, tap the button.
-        await driver.tap(buttonFinder);
-
-        // Then, verify the counter text is incremented by 1.
-        expect(await driver.getText(counterTextFinder), "1");
-      });
-    });
+          // Verify the counter increments by 1.
+          expect(find.text('1'), findsOneWidget);
+        });
   });
 }
 ```
 
-By default, `flutter_driver` waits until there are no pending frames,
-and tests similar to the example above fail with a timeout if,
-for example, you have a continuous animation running.  In that case, wrap
-the driver actions in `runUnsynchronized` as follows:
+### 5. Run the integration test
 
-<?code-excerpt "test_driver/app_test.dart (Unsynchronized)"?>
-```dart
-test('increments the counter during animation', () async {
-  await driver.runUnsynchronized(() async {
-    // First, tap the button.
-    await driver.tap(buttonFinder);
+The process of running the integration tests varies depending on the platform
+you are testing against. You can test against a mobile platform or the web.
 
-    // Then, verify the counter text is incremented by 1.
-    expect(await driver.getText(counterTextFinder), "1");
-  });
-});
-```
+#### 5a. Mobile
 
-### 6. Run the tests
-
-Now that you have an instrumented app _and_ a test suite,
-run the tests. The process of running the integration
-tests varies depending on the platform you are testing
-against. You can test against a mobile platform or the web.
-
-#### 6a. Mobile
-
-To test on iOS or Android,
-launch an Android Emulator, iOS Simulator,
-or connect your computer to a real iOS / Android device.
-
-Then, run the following command from the root of the project:
+To test on a real iOS / Android device, first connect the device and run the
+following command from the root of the project:
 
 ```shell
-flutter drive --target=test_driver/app.dart
+flutter test integration_test/app_test.dart
 ```
 
-This command performs the following:
+Or, you can specify the directory to run all integration tests:
 
-* Builds the `--target` app and installs
-  it on the emulator / device.
-* Launches the app.
-* Runs the `app_test.dart` test suite located
-  in `test_driver/` folder.
+```shell
+flutter test integration_test
+```
+ 
+This command runs the app and integration tests on the target device. For more
+information, see the [Integration testing][] page.
 
 ---
 
-#### 6b. Web
+#### 5b. Web
+
+<!--
+TODO(ryjohn): Add back after other WebDriver versions are supported:
+https://github.com/flutter/flutter/issues/90158
 
 To test for web,
 determine which browser you want to test against
@@ -325,31 +224,39 @@ and download the corresponding web driver:
   * Safari: Safari can only be tested on a Mac;
     the SafariDriver is already installed on Mac machines.
   * Edge [Download EdgeDriver][]
+-->
 
-Launch the WebDriver, for example: 
+To get started testing in a web browser, [Download ChromeDriver][].
 
-```shell
-./chromedriver --port=4444
-```
-From the root of the project,
-run the following command:
+Next, create a new directory named `test_driver` containing a new file
+named`integration_test.dart`:
 
-```shell
-flutter drive --target=test_driver/app.dart --browser-name=[browser name] --release
-```
+```dart
+import 'package:integration_test/integration_test_driver.dart';
 
-To simulate different screen dimensions, you can use the `--browser-dimension` argument,
-for example:
-
-```shell
-flutter drive --target=test_driver/app.dart --browser-name=chrome --browser-dimension 300,550 --release
+Future<void> main() => integrationDriver();
 ```
 
-Will run the tests in the `chrome` browser in a window with dimensions 300 by 550.
+Launch WebDriver, for example: 
+
+```shell
+chromedriver --port=4444
+```
+
+From the root of the project, run the following command:
+
+```shell
+flutter drive \
+  --driver=test_driver/integration_test.dart \
+  --target=integration_test/app_test.dart \
+  -d web-server
+```
 
 [Download ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: https://github.com/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
+[integration_test]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test
+[Integration testing]: /docs/testing/integration-tests
 [`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
 [`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html

@@ -2,18 +2,12 @@
 title: Performance profiling
 description: How to profile performance for a Flutter app.
 prev:
-  title: Handle scrolling
-  path: /docs/cookbook/testing/integration/scrolling
+  title: An introduction to integration testing
+  path: /docs/cookbook/testing/unit/introduction 
 next:
   title: An introduction to unit testing
   path: /docs/cookbook/testing/unit/introduction
 ---
-
-{{site.alert.note}}
-  The integration_test package is now the recommended way to write integration
-  tests. See the [Integration testing](/docs/testing/integration-tests/) page
-  for details.
-{{site.alert.end}}
 
 When it comes to mobile apps, performance is critical to user experience.
 Users expect apps to have smooth scrolling and meaningful animations free of
@@ -43,10 +37,10 @@ This recipe uses the following steps:
 
 In this recipe, record the performance of an app as it scrolls through a
 list of items. To focus on performance profiling, this recipe builds
-on the [Scrolling][] recipe in integration tests.
+on the [Scrolling][] recipe in widget tests.
 
-Follow the instructions in that recipe to create an app, instrument the
-app, and write a test to verify that everything works as expected.
+Follow the instructions in that recipe to create an app and write a test to
+verify that everything works as expected.
 
 ### 2. Record the performance of the app
 
@@ -212,7 +206,7 @@ void main() {
 
 [chrome://tracing]: chrome://tracing
 [`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
-[Scrolling]: /docs/cookbook/testing/integration/scrolling
+[Scrolling]: /docs/cookbook/testing/widget/scrolling
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
 [`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html
