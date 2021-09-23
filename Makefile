@@ -13,9 +13,6 @@ all: gen-env up down debug shell setup serve switch-channel test-channel \
 
 # =================== Development Commands ==================
 
-.env:
-	touch $@
-
 # Generate .env file with defaults
 # The .env file is used to store local secrets and settings
 # NOTE that using a `FIREBASE_TOKEN` is optional and not required. 
@@ -23,11 +20,15 @@ all: gen-env up down debug shell setup serve switch-channel test-channel \
 # set in your `.env` file, it will be used for deployment. Otherwise, 
 # the command will use the manual setup described above. 
 # Usage: `make gen-env`
-gen-env: .env
+.env:
+	touch $@
+	make genenv
+genenv: .env
 	@echo "DISABLE_TESTS=1" >> $<
 	@echo "FLUTTER_BRANCH=stable" >> $<
 	@echo "FIREBASE_ALIAS=default" >> $<
 	@echo "FIREBASE_TOKEN=" >> $<
+	
 
 # Start the dev container and serve the Jekyll site. If the 
 # site is not yet built, this will run build automatically
@@ -42,16 +43,18 @@ down:
 debug:
 	docker-compose run --rm site bash
 
-# Enter the shell of the running dev container
+# Enter the shell of the *running* dev container
 shell:
 	docker-compose exec site bash
 
-# Build the dev container from scratch, overcoming 
-# a funky (documented) error with installed packages 
-# that may hav something to do with use of a volume
+# Build the dev container from scratch.
+# Runs packages installs a second time for both Gems and NPM to 
+# overcome inconsistent bugs with missing packages at runtime.
 setup:
 	make clean
 	docker-compose build site
+	docker-compose run --rm site bundle install
+	docker-compose run --rm site npm install
 
 # Serve the Jekyll site with livereload and incremental builds
 # NOTE this is run inside of the container on `make up`
@@ -64,16 +67,24 @@ serve:
 		--incremental \
 		--trace
 
+
+# =================== Testing locally from host ==================
+# NOTE that these are for convenience of testing from outside of a container. 
+# You could just as easily enter a fresh container shell and run these as any 
+# code changes on host would be reflected inside the container. e.g. 
+# ```
+# docker-compose run --rm site bash
+# $ make switch-channel CHANNEL=dev
+# $ tool/test.sh --target ${CHANNEL} --check-links --null-safety
+# ```
 CHANNEL ?= stable
 
-# Switch flutter channels inside the running container
-# NOTE this is experimental and compose is mirroring your 
-# local flutter repo via the volume, so this may have 
-# unexpected consequences on your local setup.
+# Convenience command to run inside of a container to 
+# switch the channel of the flutter submodule. 
+# NOTE that changes will be reflected in your local flutter repo 
 # Usage: `make switch-channel CHANNEL=<channel>`
 switch-channel:
-	
-	docker-compose exec site cd flutter && \
+	cd flutter && \
 		git remote set-branches origin ${CHANNEL} && \
   		git fetch --depth 1 origin ${CHANNEL} && \
   		git checkout ${CHANNEL} --  && \
@@ -81,28 +92,37 @@ switch-channel:
 		cd .. && \
   		flutter doctor
 
-# Run tests against the running dev container
-# NOTE this will mirror test artifacts to local
+# Run tests against a channel
+# NOTE this will mirror test artifacts to local via the volume
 # Usage: `make test-channel CHANNEL=<channel>`
 test-channel:
+	docker-compose run -d --rm site
 	docker-compose exec site tool/test.sh --target ${CHANNEL} --check-links --null-safety
+	docker-compose stop site
 
-# Refresh code excerpts inside the running dev container
+# Test refreshing code excerpts
+# NOTE this will mirror test artifacts to local via the volume
+# Usage: `make refresh-code-excerpts`
 refresh-code-excerpts:
+	docker-compose run -d --rm site
 	docker-compose exec site tool/refresh-code-excerpts.sh --keep-dart-tool
+	docker-compose stop site
 
-# Check code inside the running dev container, refreshing 
-# snippets and running old and null-safety examples
-# NOTE this will mirror test artifacts to local
+# Test checking code snippets
+# NOTE this will mirror test artifacts to local via the volume
 # Usage: `make check-code`
 check-code:
+	docker-compose run -d --rm site
 	docker-compose exec site tool/check-code.sh --refresh --null-safety
+	docker-compose stop site
 
-# Check links inside the running dev container
-# NOTE this will mirror test artifacts to local
+# Test checking links
+# NOTE this will mirror test artifacts to local via the volume
 # Usage: `make check-links`
 check-links:
+	docker-compose run -d --rm site
 	docker-compose exec site tool/check-links.sh
+	docker-compose stop site
 
 
 
