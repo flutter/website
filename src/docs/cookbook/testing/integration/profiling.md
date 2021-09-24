@@ -3,7 +3,7 @@ title: Performance profiling
 description: How to profile performance for a Flutter app.
 prev:
   title: An introduction to integration testing
-  path: /docs/cookbook/testing/unit/introduction 
+  path: /docs/cookbook/testing/integration/introduction.md
 next:
   title: An introduction to unit testing
   path: /docs/cookbook/testing/unit/introduction
