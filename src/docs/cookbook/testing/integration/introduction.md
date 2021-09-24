@@ -7,7 +7,7 @@ prev:
   path: /docs/cookbook/plugins/picture-using-camera
 next:
   title: Performance profiling
-  path: /docs/cookbook/testing/integration/scrolling
+  path: /docs/cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>
