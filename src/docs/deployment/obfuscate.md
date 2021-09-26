@@ -44,7 +44,7 @@ combined with the `--split-debug-info` flag.
 The `--split-debug-info` flag specifies the
 directory where Flutter can output debug files.
 This command generates a symbol map.
-The `apk`, `appbundle`, `ios`, and `ios-framework`
+The `apk`, `appbundle`, `ipa`, `ios`, and `ios-framework`
 targets are currently supported. (`macos` and
 `aar` are supported on the master and dev
 channels.)
