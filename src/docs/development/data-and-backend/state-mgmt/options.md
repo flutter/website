@@ -158,13 +158,15 @@ and an integrated router. For more information, see the following info:
 * [States Rebuilder][] project code
 * [States Rebuilder Documentation][]
 
-## Triple Pattern (Segmented State Standard)
+## Triple Pattern (Segmented State Pattern)
 
-Triple is a nickname to SSP. Some packages were created to make it easier for developers to start using the standard. We'll call it an extension. 
+Triple is a pattern for state management based on Streams or ValueNotifier.
+Working with triple value stream (Error, Loading and State). 
 
 * [Triple Documentation][], 
 * [Flutter Triple Library][],
 * [Triple Pattern: A new pattern for state management in Flutter][],
+* [VIDEO: Flutter Triple Pattern by Kevlin Ossada][],
 
 [States Rebuilder]: {{site.github}}/GIfatahTH/states_rebuilder
 [States Rebuilder Documentation]: {{site.github}}/GIfatahTH/states_rebuilder/wiki
@@ -222,3 +224,4 @@ Triple is a nickname to SSP. Some packages were created to make it easier for de
 [Triple Documentation]: https://triple.flutterando.com.br/
 [Flutter Triple Library]: https://pub.dev/packages/flutter_triple
 [Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
+[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: https://www.youtube.com/watch?v=dXc3tR15AoA
