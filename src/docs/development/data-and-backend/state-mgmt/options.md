@@ -165,7 +165,6 @@ Triple is a nickname to SSP. Some packages were created to make it easier for de
 * [Triple Documentation][], 
 * [Flutter Triple Library][],
 * [Triple Pattern: A new pattern for state management in Flutter][],
-  by Didier Boelens
 
 [States Rebuilder]: {{site.github}}/GIfatahTH/states_rebuilder
 [States Rebuilder Documentation]: {{site.github}}/GIfatahTH/states_rebuilder/wiki
