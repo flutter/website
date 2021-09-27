@@ -93,6 +93,7 @@
       { "source": "/go/android-migration-summary", "destination": "https://docs.google.com/document/d/1wKspwf6LQu6uo32uQ9NcukfiKhLL4ButV9cwpjeb8QI", "type": 301 },
       { "source": "/go/android-splash-migration", "destination": "https://flutter.dev/docs/development/ui/advanced/splash-screen#migrating-from-manifest--activity-defined-custom-splash-screens", "type": 301 },
       { "source": "/go/android-plugin-migration", "destination": "https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration", "type": 301 },
+      { "source": "/go/android-plugin-migration.", "destination": "https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration", "type": 301 },
       { "source": "/go/android-project-migration", "destination": "https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects", "type": 301 },
       { "source": "/go/androidx-transition", "destination": "https://docs.google.com/document/d/1JnMxQinUeouuV5kcenoq03TsvLyn_xaHXIT_6c5b7nQ", "type": 301 },
       { "source": "/go/annotator-tree", "destination": "https://docs.google.com/document/d/1YtkdZSx1687Ipbff06qp3XglmJym3Wc9boY4I-bYs4A/edit", "type": 301 },
