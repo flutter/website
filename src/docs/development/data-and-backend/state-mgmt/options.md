@@ -158,6 +158,15 @@ and an integrated router. For more information, see the following info:
 * [States Rebuilder][] project code
 * [States Rebuilder Documentation][]
 
+## Triple Pattern (Segmented State Standard)
+
+Triple is a nickname to SSP. Some packages were created to make it easier for developers to start using the standard. We'll call it an extension. 
+
+* [Triple Documentation][], 
+* [Flutter Triple Library][],
+* [Triple Pattern: A new pattern for state management in Flutter][],
+  by Didier Boelens
+
 [States Rebuilder]: {{site.github}}/GIfatahTH/states_rebuilder
 [States Rebuilder Documentation]: {{site.github}}/GIfatahTH/states_rebuilder/wiki
 [Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
@@ -211,3 +220,6 @@ and an integrated router. For more information, see the following info:
 [Binder package]: https://pub.dev/packages/binder
 [Binder examples]: https://github.com/letsar/binder/tree/main/examples
 [Binder snippets]: https://marketplace.visualstudio.com/items?itemName=romain-rastel.flutter-binder-snippets
+[Triple Documentation]: https://triple.flutterando.com.br/
+[Flutter Triple Library]: https://pub.dev/packages/flutter_triple
+[Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
