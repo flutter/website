@@ -279,6 +279,7 @@ values in the `defaultConfig` block:
   and the maximum API level on which the app is designed to run.
   Consult the API level section in the [versions documentation][versions]
   for details.
+
 `buildToolsVersion`
 : Specify the version of Android SDK Build Tools that your app uses. 
   Alternatively, you can use the Android Gradle Plugin in Android Studio,
