@@ -221,7 +221,8 @@ Working with triple value stream (Error, Loading and State).
 [Binder package]: https://pub.dev/packages/binder
 [Binder examples]: https://github.com/letsar/binder/tree/main/examples
 [Binder snippets]: https://marketplace.visualstudio.com/items?itemName=romain-rastel.flutter-binder-snippets
-[Triple Documentation]: https://triple.flutterando.com.br/
-[Flutter Triple Library]: https://pub.dev/packages/flutter_triple
+[Triple documentation]: https://triple.flutterando.com.br/
+[Flutter Triple package]: {{site.pub-pkg}}/flutter_triple
+[Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/
 [Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
-[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: https://www.youtube.com/watch?v=dXc3tR15AoA
+[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{site.youtube-site}}/watch?v=dXc3tR15AoA
