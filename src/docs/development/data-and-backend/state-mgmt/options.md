@@ -160,8 +160,18 @@ and an integrated router. For more information, see the following info:
 
 ## Triple Pattern (Segmented State Pattern)
 
-Triple is a pattern for state management based on Streams or ValueNotifier.
-Working with triple value stream (Error, Loading and State). 
+Triple is a pattern for state management that uses `Streams` or `ValueNotifier`.
+This mechanism (nicknamed _triple_ because the stream always uses three
+values: `Error`, `Loading`, and `State`), is based on the
+[Segmented State pattern][].
+
+For more information, refer to the following resources:
+
+* [Triple documentation][]
+* [Flutter Triple package][]
+* [Triple Pattern: A new pattern for state management in Flutter][]
+  (blog post written in Portuguese but can be auto-translated)
+* [VIDEO: Flutter Triple Pattern by Kevlin Ossada][] (recorded in English)
 
 * [Triple Documentation][], 
 * [Flutter Triple Library][],
