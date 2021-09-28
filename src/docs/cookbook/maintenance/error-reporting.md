@@ -116,5 +116,5 @@ see the [Sentry flutter example][] app.
 [Rollbar]: https://rollbar.com/
 [Sentry]: https://sentry.io/welcome/
 [`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
-[pub.dev]: {{site.pub-pkg}}/documentation/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
+[pub.dev]: https://pub.dev/documentation/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
 [Sentry's site]: https://docs.sentry.io/platforms/flutter/
