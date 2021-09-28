@@ -104,6 +104,8 @@
           children:
             - title: Actions & shortcuts [NEW]
               permalink: /docs/development/ui/advanced/actions_and_shortcuts
+            - title: Keyboard focus [NEW]
+              permalink: /docs/development/ui/advanced/focus
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
             - title: Slivers

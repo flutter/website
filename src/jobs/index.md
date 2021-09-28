@@ -10,3 +10,4 @@ We currently have the following job openings on the Flutter and Dart teams:
 * [Developer Relations Engineer](/jobs/dre)
 * [Dart Platform Engineer](/jobs/dart_platform)
 * [Flutter Engineering Productivity](/jobs/infrastructure)
+* [Flutter CLI and Tools](/jobs/tools)
