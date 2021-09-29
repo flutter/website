@@ -16,6 +16,21 @@ We appreciate your effort in sending us as much feedback as possible.
 * To report a problem with the website,
   [create an issue in the flutter/website project][Website issue].
 
+## Provide a minimal reproducible code sample
+
+Create a minimal Flutter app that shows the problem you are facing,
+and paste it into the GitHub issue.
+
+To create it you can use `flutter create bug` command and update
+the `main.dart` file.
+
+Alternatively, you can use [DartPad][], which is capable
+of creating and running small Flutter apps.
+
+If your problem goes out of what can be placed in a single file, for example
+you have a problem with native channels, you can upload the full code of
+the reproduction into a separate repository and link it.
+
 ## Provide some Flutter diagnostics
 
 * Run `flutter doctor -v` in your project directory and paste
@@ -88,5 +103,6 @@ Follow these steps only if your issue is related to the
 ![crash report](/assets/images/docs/crash_reports.png){:width="100%"}
 
 
+[DartPad]: https://dartpad.dev
 [Flutter issue]: {{site.github}}/flutter/flutter/issues/new/choose
 [Website issue]: {{site.github}}/flutter/website/issues/new/choose
