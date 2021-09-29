@@ -22,7 +22,6 @@ all: gen-env up down debug shell setup serve switch-channel test-channel \
 # Usage: `make gen-env`
 .env:
 	touch $@
-	make genenv
 genenv: .env
 	@echo "DISABLE_TESTS=1" >> $<
 	@echo "FLUTTER_BRANCH=stable" >> $<
