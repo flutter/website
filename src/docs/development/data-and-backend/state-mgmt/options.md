@@ -173,10 +173,6 @@ For more information, refer to the following resources:
   (blog post written in Portuguese but can be auto-translated)
 * [VIDEO: Flutter Triple Pattern by Kevlin Ossada][] (recorded in English)
 
-* [Triple Documentation][], 
-* [Flutter Triple Library][],
-* [Triple Pattern: A new pattern for state management in Flutter][],
-* [VIDEO: Flutter Triple Pattern by Kevlin Ossada][],
 
 [States Rebuilder]: {{site.github}}/GIfatahTH/states_rebuilder
 [States Rebuilder Documentation]: {{site.github}}/GIfatahTH/states_rebuilder/wiki
