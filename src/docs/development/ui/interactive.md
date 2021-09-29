@@ -270,7 +270,7 @@ creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
 <?code-excerpt path-base=""?>
-<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
+<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="/^[ ]+\);$/"?>
 ```diff
 --- layout/lakes/step6/lib/main.dart
 +++ layout/lakes/interactive/lib/main.dart
