@@ -1,9 +1,11 @@
 {% assign cache_bust = site.time|date:'?v=%s' %}
+{% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{{ site.title }}{% if page.title %} | {{ page.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <link rel="icon" href="/assets/images/shared/brand/flutter/icon/64.png" />
     <link rel="apple-touch-icon" href="/assets/images/shared/brand/flutter/logo/flutter-logomark-320px.png" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -28,7 +30,6 @@
       </script>
     {% endif %}
 
-    {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
     {% assign desc = page.description %}
     {% assign og_image = page.image | default: layout.image | default: site.default_share_image %}
 
