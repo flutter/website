@@ -67,6 +67,10 @@ serve:
 		--incremental \
 		--trace
 
+# Test hosting locally with FB emulator
+emulate:
+	firebase emulators:start --only hosting
+
 
 # =================== Testing locally from host ==================
 # NOTE that these are for convenience of testing from outside of a container. 
