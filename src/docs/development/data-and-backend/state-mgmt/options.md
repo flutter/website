@@ -158,6 +158,22 @@ and an integrated router. For more information, see the following info:
 * [States Rebuilder][] project code
 * [States Rebuilder Documentation][]
 
+## Triple Pattern (Segmented State Pattern)
+
+Triple is a pattern for state management that uses `Streams` or `ValueNotifier`.
+This mechanism (nicknamed _triple_ because the stream always uses three
+values: `Error`, `Loading`, and `State`), is based on the
+[Segmented State pattern][].
+
+For more information, refer to the following resources:
+
+* [Triple documentation][]
+* [Flutter Triple package][]
+* [Triple Pattern: A new pattern for state management in Flutter][]
+  (blog post written in Portuguese but can be auto-translated)
+* [VIDEO: Flutter Triple Pattern by Kevlin Ossada][] (recorded in English)
+
+
 [States Rebuilder]: {{site.github}}/GIfatahTH/states_rebuilder
 [States Rebuilder Documentation]: {{site.github}}/GIfatahTH/states_rebuilder/wiki
 [Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
@@ -211,3 +227,8 @@ and an integrated router. For more information, see the following info:
 [Binder package]: https://pub.dev/packages/binder
 [Binder examples]: https://github.com/letsar/binder/tree/main/examples
 [Binder snippets]: https://marketplace.visualstudio.com/items?itemName=romain-rastel.flutter-binder-snippets
+[Triple documentation]: https://triple.flutterando.com.br/
+[Flutter Triple package]: {{site.pub-pkg}}/flutter_triple
+[Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/
+[Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
+[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{site.youtube-site}}/watch?v=dXc3tR15AoA
