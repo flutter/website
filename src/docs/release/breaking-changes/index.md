@@ -33,7 +33,7 @@ TBD
 [Introducing package:flutter_lints]: /docs/release/breaking-changes/flutter-lints-package
 [Replace AnimationSheetBuilder.display with collate]: /docs/release/breaking-changes/animation-sheet-builder-display
 [ThemeData's accent properties have been deprecated]: /docs/release/breaking-changes/theme-data-accent-properties
-[Transition of platform channel test interfaces to flutter_test package]: /docs/release/breaking-changes/"mock-platform-channels
+[Transition of platform channel test interfaces to flutter_test package]: /docs/release/breaking-changes/mock-platform-channels
 [Using HTML slots to render platform views in the web]: /docs/release/breaking-changes/platform-views-using-html-slots-web
 
 ### Reverted change in 2.2

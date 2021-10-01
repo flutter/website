@@ -11,6 +11,9 @@
       "**/node_modules/**"
     ],
     "redirects": [
+      { "regex": "(?P<basename>.*)\\.html$", "destination": ":basename", "type": 301 },
+      { "regex": "(?P<basename>.*)\\.$", "destination": ":basename", "type": 301 },
+      { "source": "/images/catalog-widget-placeholder.png", "destination": "/assets/images/docs/catalog-widget-placeholder.png", "type": 301 },
       { "source": "/accessibility", "destination": "/docs/development/accessibility-and-localization/accessibility", "type": 301 },
       { "source": "/adaptations", "destination": "/docs/resources/platform-adaptations", "type": 301 },
       { "source": "/adaptive*", "destination": "/docs/development/ui/layout/adaptive-responsive", "type": 301 },
@@ -26,8 +29,11 @@
       { "source": "/codelabs", "destination": "/docs/codelabs", "type": 301 },
       { "source": "/cookbook", "destination": "/docs/cookbook", "type": 301 },
       { "source": "/cookbook/:rest*", "destination": "/docs/cookbook/:rest*", "type": 301 },
+      { "source": "/custom-deferred-components", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components#custom-implementations", "type": 301 },
       { "source": "/custom-fonts", "destination": "/docs/cookbook/design/fonts", "type": 301 },
       { "source": "/debugging", "destination": "/docs/testing/debugging", "type": 301 },
+      { "source": "/deferred-components", "destination": "/docs/perf/deferred-components", "type": 301 },
+      { "source": "/deferred-components-wiki", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components", "type": 301 },
       { "source": "/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/developing-packages", "destination": "/docs/development/packages-and-plugins/developing-packages", "type": 301 },
       { "source": "/devtools/:rest*", "destination": "/docs/development/tools/devtools/:rest*", "type": 301 },
@@ -79,6 +85,7 @@
       { "source": "/fastlane-cd", "destination": "/docs/deployment/cd#fastlane", "type": 301 },
       { "source": "/flutter-for-:platform*", "destination": "/docs/get-started/flutter-for/:platform*-devs", "type": 301 },
       { "source": "/formatting", "destination": "/docs/development/tools/formatting", "type": 301 },
+      { "source": "/fully-deferred-flutter", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components#fully-deferring-flutter-in-add-to-app", "type": 301 },
       { "source": "/gestures", "destination": "/docs/development/ui/advanced/gestures", "type": 301 },
       { "source": "/get-started", "destination": "/docs/get-started", "type": 301 },
       { "source": "/get-started/:rest*", "destination": "/docs/get-started/:rest*", "type": 301 },
@@ -207,6 +214,7 @@
       { "source": "/go/overridable-text-actions", "destination": "https://docs.google.com/document/d/11vmEZTjB4_E4el1IjTo2VBI2d_fR7tjQWeCajsQc-q4/edit?usp=sharing", "type": 301 },
       { "source": "/go/performance-best-practices", "destination": "https://docs.google.com/document/d/16bd3HtkuvzAk0uizDGTT3aNtjI8Mfr0f6C3ZVrYYqvI", "type": 301 },
       { "source": "/go/platform-based-key-events", "destination": "https://docs.google.com/document/d/1FDuxxEh810XpY561SgeiyUR0gU2eVz5kRpCFI55ibec/edit", "type": 301 },
+      { "source": "/go/platform-channels-in-federated-plugins", "destination": "https://docs.google.com/document/d/1BSrDA_FjLU-3T0H774RocJ4IYyc0ytMl937rAimGJdg/edit?usp=sharing", "type": 301 },
       { "source": "/go/platform-interface-breaking-changes", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#heading=h.xabf9lffxrkb", "type": 301 },
       { "source": "/go/plugin-binding-review", "destination": "https://docs.google.com/document/d/1-9Si_ocFYh-Wa1qKV4PV2ocywKDYdiR_1yO3twPvrfM", "type": 301 },
       { "source": "/go/plugin-platforms", "destination": "/docs/development/packages-and-plugins/developing-packages#plugin-platforms", "type": 301 },
@@ -284,7 +292,9 @@
       { "source": "/go/text-editing-deltas", "destination": "https://docs.google.com/document/d/1PXNd_LwJudiUTnCM2AXRxbd98_p4BlFf6qFhEhv3wvs/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-editing-model", "destination": "https://docs.google.com/document/d/1lkpg4dfVZif9NJ_dDQ01QkwQC3OqzhUFahhjgv_rcbM/edit#", "type": 301 },
       { "source": "/go/backdrop-filter-with-overlay-canvas", "destination": "https://docs.google.com/document/d/1t_offKOgkuVzvB3fqGTfcltovb-yxqV6tbuP1qIBqVI/edit?usp=sharing", "type": 301 },
-
+      { "source": "/go/os-adaptive-shortcut-activator", "destination": "https://docs.google.com/document/d/11NWj13MSDw1XQg4MpYIeqzcCFGuzQ_Cz7tYXW7fqzPY/edit?usp=sharing", "type": 301 },
+      { "source": "/go/android-startup-tracing", "destination": "https://docs.google.com/document/d/1I7jvRg3UmG7P84hdis-9A00fEr2Ntj-K7f_FbGLubGE/edit?usp=sharing", "type": 301 },
+      
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },
       { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/tools/android-studio/hot-reload.gif", "type": 301 },
@@ -347,5 +357,10 @@
         ]
       }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    }
   }
 }

@@ -22,7 +22,6 @@ all: gen-env up down debug shell setup serve switch-channel test-channel \
 # Usage: `make gen-env`
 .env:
 	touch $@
-	make genenv
 genenv: .env
 	@echo "DISABLE_TESTS=1" >> $<
 	@echo "FLUTTER_BRANCH=stable" >> $<
@@ -66,6 +65,10 @@ serve:
 		--livereload \
 		--incremental \
 		--trace
+
+# Test hosting locally with FB emulator
+emulate:
+	firebase emulators:start --only hosting
 
 
 # =================== Testing locally from host ==================

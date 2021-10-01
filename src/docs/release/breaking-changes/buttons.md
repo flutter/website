@@ -105,7 +105,7 @@ adding the `overlayColor` property to the `ButtonStyle`.
 TextButton(
   style: ButtonStyle(
     foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-    overlayColor: MaterialStateProperty.resolveWith<Color>(
+    overlayColor: MaterialStateProperty.resolveWith<Color?>(
       (Set<MaterialState> states) {
         if (states.contains(MaterialState.hovered))
           return Colors.blue.withOpacity(0.04);
@@ -130,7 +130,7 @@ the text button's focus overlay color:
 ```dart
 TextButton(
   style: ButtonStyle(
-    overlayColor: MaterialStateProperty.resolveWith<Color>(
+    overlayColor: MaterialStateProperty.resolveWith<Color?>(
       (Set<MaterialState> states) {
         if (states.contains(MaterialState.focused))
           return Colors.red;
@@ -433,7 +433,7 @@ FlatButton(
 
 TextButton(
   style: ButtonStyle(
-    overlayColor: MaterialStateProperty.resolveWith<Color>(
+    overlayColor: MaterialStateProperty.resolveWith<Color?>(
       (Set<MaterialState> states) {
         if (states.contains(MaterialState.focused))
           return Colors.red;
@@ -502,13 +502,13 @@ RaisedButton(
 
 ElevatedButton(
   style: ButtonStyle(
-    backgroundColor: MaterialStateProperty.resolveWith<Color>(
+    backgroundColor: MaterialStateProperty.resolveWith<Color?>(
       (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled))
           return Colors.red;
         return null; // Defer to the widget's default.
     }),
-    foregroundColor: MaterialStateProperty.resolveWith<Color>(
+    foregroundColor: MaterialStateProperty.resolveWith<Color?>(
       (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled))
           return Colors.blue;
@@ -577,7 +577,7 @@ RaisedButton(
 
 ElevatedButton(
   style: ButtonStyle(
-    elevation: MaterialStateProperty.resolveWith<double>(
+    elevation: MaterialStateProperty.resolveWith<double?>(
       (Set<MaterialState> states) {
         if (states.contains(MaterialState.pressed))
           return 16;

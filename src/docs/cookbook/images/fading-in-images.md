@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
 
 ![Fading In Image Demo](/assets/images/docs/cookbook/fading-in-images.gif){:.site-mobile-screenshot}
 
-### From asset bundle
+## From asset bundle
 
 You can also consider using local assets for placeholders.
 First, add the asset to the project’s `pubspec.yaml` file
