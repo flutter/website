@@ -214,6 +214,7 @@
       { "source": "/go/overridable-text-actions", "destination": "https://docs.google.com/document/d/11vmEZTjB4_E4el1IjTo2VBI2d_fR7tjQWeCajsQc-q4/edit?usp=sharing", "type": 301 },
       { "source": "/go/performance-best-practices", "destination": "https://docs.google.com/document/d/16bd3HtkuvzAk0uizDGTT3aNtjI8Mfr0f6C3ZVrYYqvI", "type": 301 },
       { "source": "/go/platform-based-key-events", "destination": "https://docs.google.com/document/d/1FDuxxEh810XpY561SgeiyUR0gU2eVz5kRpCFI55ibec/edit", "type": 301 },
+      { "source": "/go/platform-channels-in-federated-plugins", "destination": "https://docs.google.com/document/d/1BSrDA_FjLU-3T0H774RocJ4IYyc0ytMl937rAimGJdg/edit?usp=sharing", "type": 301 },
       { "source": "/go/platform-interface-breaking-changes", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#heading=h.xabf9lffxrkb", "type": 301 },
       { "source": "/go/plugin-binding-review", "destination": "https://docs.google.com/document/d/1-9Si_ocFYh-Wa1qKV4PV2ocywKDYdiR_1yO3twPvrfM", "type": 301 },
       { "source": "/go/plugin-platforms", "destination": "/docs/development/packages-and-plugins/developing-packages#plugin-platforms", "type": 301 },
