@@ -277,6 +277,19 @@ In the same location, create the stateful widget:
 @@ -10,2 +5,2 @@
  class MyApp extends StatelessWidget {
    const MyApp({Key? key}) : super(key: key);
+@@ -40,11 +35,7 @@
+               ],
+             ),
+           ),
+-          Icon(
+-            Icons.star,
+-            color: Colors.red[500],
+-          ),
+-          const Text('41'),
++          const FavoriteWidget(),
+         ],
+       ),
+     );
 ```
 
 That's it! When you hot reload the app,
