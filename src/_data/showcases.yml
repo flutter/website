@@ -146,6 +146,7 @@
     Flutter helped Grab build the merchant app for its fast-growing food
     delivery business.
   logo_src: showcase/cards/grab-logo.png
+  app_store_link: https://apps.apple.com/ph/app/grabmerchant/id1282271764
   play_store_link: https://play.google.com/store/apps/details?id=com.grab.merchant&hl=en
   logo_has_name: true
   card_image: showcase/cards/grab-top@.jpg
