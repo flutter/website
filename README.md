@@ -1,5 +1,5 @@
 [![Flutter logo]](https://flutter.dev)
-# [Flutter][] website 
+# [Flutter][] website :
 
 [![Build Status][]][Repo on GitHub Actions]
 
@@ -20,7 +20,7 @@
 > 
 > Thanks, as always, for your continued support!
 
-## Table of contents
+## Table of contents :
 * [Issues, bugs, and requests](#issues-bugs-and-requests)
 * [Before you submit a PR](#before-you-submit-a-pr)
 * [Before you build this site](#before-you-build-this-site)
@@ -34,7 +34,7 @@
 * [Writing for flutter.dev](#writing-for-flutterdev)
 
 
-## Issues, bugs, and requests
+## Issues, bugs, and requests :
 
 We welcome contributions and feedback on our website. 
 Please file a request in our
@@ -52,7 +52,7 @@ The API docs are embedded in Flutter's source code,
 so the engineering team handles those.
 
 
-## Before you submit a PR
+## Before you submit a PR :
 
 We love it when the community gets involved in improving our docs! 
 But here are a few notes to keep in mind before you submit a PR:
@@ -75,12 +75,12 @@ But here are a few notes to keep in mind before you submit a PR:
 > in keeping the website docs up to date!
 
 
-## Before you build this site
+## Before you build this site :
 
 For changes beyond simple text and CSS tweaks, 
 we recommend building the site.
 
-### 1. Get the prerequisites
+### 1. Get the prerequisites :
 Install the following tools, if you don't have them already:
 
 - **bash**, the Bourne shell. 
@@ -97,7 +97,7 @@ Install the following tools, if you don't have them already:
   For full setup details, 
   read the [Firebase CLI documentation](https://firebase.google.com/docs/cli).
 
-### 2. Clone this repo _and_ its submodules
+### 2. Clone this repo _and_ its submodules :
 
 > **Note:** This repo has git _submodules_, 
 > which affects how you clone it. 
@@ -130,7 +130,7 @@ _choose one_ of the following submodule-cloning techniques:
 > $ git pull; git submodule update --init --recursive
 > ```
 
-## Setting up your local environment and serving changes
+## Setting up your local environment and serving changes :
 
 1. _Optional:_ After cloning the repo and its submodules, 
    create a branch for your changes:
@@ -188,14 +188,14 @@ _choose one_ of the following submodule-cloning techniques:
 > For example, if you need to debug the Docker infrastructure, 
 > you can run `make debug`.  
 
-## Creating and/or editing DartPad example code
+## Creating and/or editing DartPad example code :
 
 Most of the code used to create [DartPad][] examples is hosted on GitHub. 
 However, this repo also contains some `*.dart` files
 responsible for DartPad example code.
 
 
-### DartPad example code in GitHub gists
+### DartPad example code in GitHub gists :
 
 A typical DartPad example takes the form of an `iframe`, 
 for example, within a codelab's Markdown file:
@@ -215,7 +215,7 @@ For detailed instructions on how to use this approach to DartPad examples,
 see the [DartPad embedding guide][].
 
 
-### DartPad example code in this repo 
+### DartPad example code in this repo :
 
 Some DartPad example code remains in this repo:
 - `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`
@@ -228,7 +228,7 @@ $ ./compile.sh
 ```
 
 
-## Deploying to a staging site
+## Deploying to a staging site :
 
 You can deploy your local edits to a personal staging site as follows.
 
@@ -270,7 +270,7 @@ You can deploy your local edits to a personal staging site as follows.
    Copy the serving URL from the command output.
 
 
-## Writing for flutter.dev
+## Writing for flutter.dev :
 
 The [site-shared](https://github.com/dart-lang/site-shared) repo 
 contains infrastructure shared by most of our Dart and Flutter websites. 
