@@ -30,7 +30,8 @@ Here’s what you need to do:
 1. Join one (or more!) of our [online discussions][schedule].
 1. To hear more from the Flutter team,
    subscribe to our [newsletter][].
-1. Join the Flutter community on [Twitter][] and [YouTube][].
+1. Join the Flutter community on [Twitter][], [YouTube][],
+   and [Slack][].
 
 Get started on your journey to learning Flutter
 and we’ll see you along the way!
@@ -82,4 +83,5 @@ You can find the [live stream][] on YouTube.
 [schedule]: #schedule
 [Twitter]: https://twitter.com/FlutterDev
 [YouTube]: {{site.youtube-site}}/c/FlutterCommunityVideos
+[Slack]: https://fluttercommunity.dev/joinslack
 
