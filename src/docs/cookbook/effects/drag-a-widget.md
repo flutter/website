@@ -622,39 +622,6 @@ class DraggingListItem extends StatelessWidget {
   }
 }
 
-class EmptyList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Material(
-        color: Colors.white,
-        type: MaterialType.circle,
-        child: Padding(
-          padding: const EdgeInsets.all(60),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.check,
-                size: 74.0,
-                color: Color(0xFF0E985E),
-              ),
-              Text(
-                'All set!',
-                style: Theme.of(context).textTheme.headline6?.copyWith(
-                      color: const Color(0xFF0E985E),
-                      fontSize: 48,
-                    ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 @immutable
 class Item {
   const Item({
