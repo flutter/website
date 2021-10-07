@@ -9,11 +9,20 @@ the risk of introducing a vulnerability.
 
 ## Reporting vulnerabilities
 
-In the rare event that you find a vulnerability in Flutter itself,
-email us at
-[product-security@google.com](mailto:product-security@google.com).
-For more information about how Google handles security issues, see
-[Google’s security philosophy](https://www.google.com/about/appsecurity/).
+To report a vulnerability, please e-mail `security@flutter.dev` with a description of the issue,
+the steps you took to create the issue, affected versions, and if known, mitigations for the issue.
+
+We should reply within three working days, probably much sooner.
+
+We use GitHub's security advisory feature to track open security issues. You should expect
+a close collaboration as we work to resolve the issue you have reported. Please reach out to
+`security@flutter.dev` again if you do not receive prompt attention and regular updates.
+
+You may also reach out to the team via our public [Discord](https://github.com/flutter/flutter/wiki/Chat) chat channels; however, please make
+sure to e-mail `security@flutter.dev` when reporting an issue, and avoid revealing information about
+vulnerabilities in public if that could put users at risk.
+
+For more details on how we handle security vulnerabilities, please see our [internal processes](https://github.com/flutter/flutter/blob/master/SECURITY.md).
 
 ## Best practices
 
@@ -37,4 +46,3 @@ For more information about how Google handles security issues, see
   routinely update your copy of Flutter. If you're making changes to
   improve Flutter, be sure to update your fork and consider sharing your
   changes with the community.
-
