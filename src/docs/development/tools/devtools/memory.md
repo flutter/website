@@ -539,7 +539,7 @@ Snapshots have major tree nodes:
     using a Dart embedder. The embedder creates a Dart wrapper with
     a finalizer, allowing Dart code to communicate with these native
     resources. Flutter has an embedder for Android and iOS.
-    For more information, see [Dart on the Server][] or
+    For more information, see [Dart on the Server][server] or
     [Custom Flutter Engine Embedders][embedder].
 </dd>
 <dt markdown="1">Filtered</dt>
