@@ -21,6 +21,10 @@ Every Wednesday at 12pm EST / 9am PST,
 you can join us on the Flutter Community YouTube
 channel for summaries, discussions, and more. 
 
+For more information, watch the following video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NVzIALG7CUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## How to sign up!
 
 Here’s what you need to do:
@@ -59,7 +63,7 @@ ensure maximum preparedness. The schedule is below.
 You can find the [live stream][] on YouTube.
 
 <div class="table-wrapper" markdown="1">
-|**Date**     | **Homework**                   | **Live stream topic**      |
+|**Date**     | **Homework**                    | **Live stream topic**      |
 | October 6+  | Sign up for free access!<br>Check out the first live stream for details. | 
 | October 13  | Read chapters 1, 2              | Getting started            |
 | October 20  | Read chapters 3, 4              | Widgets                    |
