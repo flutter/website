@@ -531,7 +531,7 @@ memory problems will be flagged.
 Snapshots have major tree nodes:
 <dl markdown="1">
 <dt markdown="1">External</dt>
-<dd>Memory that is not in the Dart heap but is still part
+<dd markdown="1">Memory that is not in the Dart heap but is still part
     of the total memory footprint. Objects in external memory would be
     native objects (for example, from a memory read from a file,
     or a decoded image). The native objects are exposed to the Dart
