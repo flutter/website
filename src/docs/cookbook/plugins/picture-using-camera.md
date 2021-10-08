@@ -90,6 +90,7 @@ and display a preview of the camera's feed.
   5. Dispose of the controller in the `dispose()` method.
 
 <?code-excerpt "lib/main_step3.dart (controller)"?>
+<!--skip-->
 ```dart
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
@@ -106,7 +107,6 @@ class TakePictureScreen extends StatefulWidget {
 
 class TakePictureScreenState extends State<TakePictureScreen> {
   late CameraController _controller;
-  <!--skip-->
   late Future<void> _initializeControllerFuture;
 
   @override
