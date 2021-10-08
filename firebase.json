@@ -11,6 +11,9 @@
       "**/node_modules/**"
     ],
     "redirects": [
+      { "regex": "^/(flutter(/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
+      { "regex": "^/(objcdoc(/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
+      { "regex": "^/(javadoc(/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "(?P<basename>.*)\\.html$", "destination": ":basename", "type": 301 },
       { "regex": "(?P<basename>.*)\\.$", "destination": ":basename", "type": 301 },
       { "source": "/images/catalog-widget-placeholder.png", "destination": "/assets/images/docs/catalog-widget-placeholder.png", "type": 301 },
