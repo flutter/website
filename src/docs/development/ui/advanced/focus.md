@@ -552,7 +552,8 @@ in the highlight mode.
 [`FocusTraversalPolicy`]: {{site.api}}/flutter/widgets/FocusTraversalPolicy-class.html
 [`LexicalFocusOrder`]: {{site.api}}/flutter/widgets/LexicalFocusOrder-class.html
 [`MouseRegion`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
-[`NumericalFocusOrder`]: {{site.api}}/flutter/widgets/NumericalFocusOrder-class.html
+[`NumericFocusOrder`]: {{site.api}}/flutter/widgets/NumericFocusOrder-class.html
+[`OrderedTraversalPolicy`]: {{site.api}}/flutter/widgets/OrderedTraversalPolicy-class.html
 [`ReadingOrderTraversalPolicy`]: {{site.api}}/flutter/widgets/ReadingOrderTraversalPolicy-class.html
 [`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
 [`UnfocusDisposition.scope`]: {{site.api}}/flutter/widgets/UnfocusDisposition-class.html
