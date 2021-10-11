@@ -1,13 +1,23 @@
 version: "3.9"
-services:
 
+services:
   site:
-    image: flt-dev
+    image: flutter-site-user-base
     build:
       context: .
-      target: dev
-    command: ["make", "serve"]
-    env_file: shared.env
+      target: user-base
+      args:
+        - HOST_KERNEL_NAME
+        - HOST_GROUP_ID
+        - HOST_GROUP_NAME
+        - HOST_USER_ID
+        - HOST_USER_HOME
+        - HOST_USER_NAME
+    user: $HOST_USER_ID:$HOST_GROUP_ID
+    command: make site-serve
+    env_file:
+      - shared.env
+      - .env
     environment:
       - NODE_ENV=development
       - JEKYLL_ENV=development
@@ -16,7 +26,5 @@ services:
       - "35729:35729"
     volumes:
       - ./:/app
-      - site_bundle:/usr/local/bundle
-
-volumes:
-  site_bundle:
+      - ./bundle:/usr/local/bundle
+      - ./.pub-cache:$HOST_USER_HOME/.pub-cache

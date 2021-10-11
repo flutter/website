@@ -146,14 +146,13 @@ _choose one_ of the following submodule-cloning techniques:
    ```bash
    $ make setup
    ```
+   The site is build and ready to be served.
+   The generated `_site` directory is visible locally.
 
 1. Serve the site locally (via `docker-compose`):
    ```bash
    $ make up
    ```
-   The site is generated, 
-   and then the development server runs in the Docker container, 
-   with the generated `_site` directory visible locally.
 
 1. View your changes in the browser by navigating to `http://localhost:4002`.
    > **Note:** Unless you're editing files under `site-shared`, 
@@ -161,21 +160,11 @@ _choose one_ of the following submodule-cloning techniques:
    > For details, see [#1363](https://github.com/flutter/website/issues/1363).
 
 1. Make your changes. 
-   The files are updated, 
-   and your browser view should update to reflect the changes. 
+   The files are updated, and your browser view should update to reflect 
+   the changes. 
    You can either edit files locally or use an editor like `vim` 
    directly in a shell in the container. 
    To start a container shell, run `docker-compose exec site bash`.
-
-   > **Tip:** If you aren't seeing the changes you expect,
-   > restart the server and rebuild the site from scratch:
-   > ```bash
-   > $ make down && make clean && make up
-   > ```
-   > In some rare cases you might want to force all running containers down:
-   > ```bash
-   > $ docker rm -f $(docker ps -aq)
-   > ```
 
 1. Commit your changes to the branch and submit your PR.
 
@@ -183,10 +172,22 @@ _choose one_ of the following submodule-cloning techniques:
    ```bash
    $ make down
    ```
-   
-> **Tip:** To find additional commands, read the [`Makefile`][]. 
+
+> **Tip:** If you get stuck somewhere and need to start building fresh, 
+> run the following `make mostlyclean` command and rebuild the site.
+> ```bash
+> $ make mostlyclean && make setup && make up
+> ```
+> If you still get stuck and unable to proceed then use 
+> `make maintainer-clean` command. Make sure you run this command on 
+> committed changes.
+> ```bash
+> $ make maintainer-clean && make setup && make up
+> ```
+>
+> To find additional commands, read the [`Makefile`][]. 
 > For example, if you need to debug the Docker infrastructure, 
-> you can run `make debug`.  
+> you can run `make debug`.
 
 ## Creating and/or editing DartPad example code
 
@@ -232,42 +233,34 @@ $ ./compile.sh
 
 You can deploy your local edits to a personal staging site as follows.
 
-1. If you don't already have a Firebase project, 
-   navigate to the [Firebase Console](https://console.firebase.google.com) 
-   and create your own Firebase project (for example, `my-foo`).
+1. Create a Firebase project using [Firebase Console][]. For example, 
+   `myInitials-flutter-website`.
 
-1. In a separate `bash` shell, change to the repo directory
-   and initialize Firebase:
-    ```bash
-    $ npx firebase init
-    ```
- 
-1. If you created a new project, add it using the [`firebase use` command][]:
-    ```bash
-    $ npx firebase use --add
-    ? Which project do you want to add? <select the project you created>
-    ? What alias do you want to use for this project? (e.g. staging) my-foo
-    ```
- 
-1. Tell Firebase that you want to deploy to your project:
-    ```bash
-    $ npx firebase use my-foo
-    Now using alias staging (my-foo)
-    ```
+1. Login into Firebase using your Google account by running 
+   [`firebase login`][] Firebase CLI command:
+   ```bash
+   $ firebase login
+   ```
+
+1. Tell the Firebase CLI to use your project using the 
+   [`firebase use`][] command:
+   ```bash
+   $ firebase use myInitials-flutter-website
+   ```
 
 1. Build the site via Docker with:
    ```bash
-   $ DISABLE_TESTS=1 make build
+   $ make build
    ```
-   The `_site` directory refreshes locally. 
+   The freshly created `_site` directory is ready to be deployed.
 
 1. Deploy to the staging site:
    ```bash
    $ make deploy
    ```
 
-   Your personal version of the Flutter website is now deployed to Firebase. 
-   Copy the serving URL from the command output.
+Your personal version of the Flutter website is now deployed to Firebase. 
+Copy the serving URL from the command output.
 
 
 ## Writing for flutter.dev
@@ -296,7 +289,9 @@ Also check out the site-shared [wiki](https://github.com/dart-lang/site-shared/w
 [Build Status]: https://github.com/flutter/website/workflows/build/badge.svg
 [cloning]: https://help.github.com/articles/cloning-a-repository
 [DartPad]: https://dartpad.dev
-[`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
+[Firebase Console]: https://console.firebase.google.com
+[`firebase login`]: https://firebase.google.com/docs/cli#sign-in-test-cli
+[`firebase use`]: https://firebase.google.com/docs/cli#use_aliases
 [forking]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
 [Flutter install]: https://flutter.dev/docs/get-started/install
 [Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1

@@ -10,6 +10,7 @@ _site
 *.swp
 build
 node_modules
+bundle
 
 # Dart and Flutter, build related
 .dart_tool
@@ -19,3 +20,4 @@ node_modules
 example.g
 pubspec.lock
 tmp/
+.pub-cache

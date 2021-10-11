@@ -31,11 +31,6 @@ while [[ "$1" == -* ]]; do
 done
 
 
-if [[ -n "$DISABLE_TESTS" ]]; then
-  echo "=> Tests disabled by DISABLE_TESTS=$DISABLE_TESTS"
-  exit 0;
-fi
-
 if [[ -z "$TARGET" ]]; then
   echo "=> A flutter branch target is required!"
   exit 0
@@ -60,11 +55,11 @@ SUBMODULE=submodule-commit    # Pinned flutter submodule commit
 function switch_flutter_channel() {
   pushd flutter
   git remote set-branches origin $1
-  git fetch --depth 1 origin $1
-  git checkout $1 --
-  git pull
+  git fetch --depth=1 origin $1:$1
+  git checkout $1
   popd
   flutter doctor
+  flutter --version
 }
 
 
@@ -72,10 +67,9 @@ if [[ "$TARGET" =~ ^($DEV|$BETA|$STABLE)$ ]]; then
 
   echo $'\n================== Running Tests =================='
 
-  rm -rf _site .jekyll* src/.jekyll* *.log tmp example.g .dart_tool
+  rm -rf _site .jekyll* src/.jekyll* *.log tmp example.g .dart_tool .packages
   current_branch=$(cd flutter && git rev-parse --abbrev-ref HEAD)
 
-  # NOTE when fresh, submodule will always be a pull of stable
   if [[ "$current_branch" != "$TARGET" ]]; then
     echo $'\n---------------------------------------------------'
     echo "=> Switching to \"$TARGET\" branch";
