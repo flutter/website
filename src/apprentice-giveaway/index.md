@@ -25,6 +25,8 @@ For more information, watch the following video:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NVzIALG7CUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+![Image of Dash with the book](/assets/images/homepage/DashWithApprenticeBook.png){:width="100%"}
+
 ## How to sign up!
 
 Here’s what you need to do:
