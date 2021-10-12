@@ -242,6 +242,7 @@
       { "source": "/go/text-selection-menu-modernization", "destination": "https://docs.google.com/document/d/1qSEvbgi3m-OvB_dUKch8LHOk-iyPFeLgCsXbK0bI2DA/edit", "type": 301 },
       { "source": "/go/text-selection-programatically", "destination": "https://docs.google.com/document/d/1NK4GJ0Wk5eJ3IUw_9oAtz1oYgZ-Sn-kAKHxTvsgr75o/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-selection-theme", "destination": "https://docs.google.com/document/d/1sCe7Y_lhREljtn6m0Uu_EycbS82zRvWnNtkfEwFX9W0", "type": 301 },
+      { "source": "/go/texttheme-m3", "destination": "https://docs.google.com/document/d/1y3K08vL9rMTsGmF_T65fXmWJbsPZohvaVB3T6JuqgjM", "type": 301 },
       { "source": "/go/tool-integration-test-support", "destination": "https://docs.google.com/document/d/1jMMZpRAiQC2XTUFnzFsBrWwMsf7KyMuCScYgrJQJOV0/edit?resourcekey=0-ne9HbH1hXCHcIglomNfwtw", "type": 301 },
       { "source": "/go/top-errors-analysis", "destination": "https://docs.google.com/document/d/1ZJ9t_uPeXqZnoDOIVes_Yu2BBxP42l99nSfHQPfswZw/edit?usp=sharing", "type": 301 },
       { "source": "/go/towards-improved-performance-tooling", "destination": "https://docs.google.com/document/d/1wSDNcG0ww2V6JX1EE8avilCwnOiRVy83zSCWt916O0o", "type": 301 },
