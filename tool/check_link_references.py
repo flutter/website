@@ -52,7 +52,7 @@ def check_files(folder):
 
 
 def read_config_url():
-    with open("_config.yaml", "r") as stream:
+    with open("../_config.yaml", "r") as stream:
         try:
             loaded_yaml = yaml.safe_load(stream)
             return loaded_yaml["url"]
