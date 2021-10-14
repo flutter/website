@@ -80,11 +80,18 @@ dependencies {
 
 To find out the latest version, visit [Google Maven][].
 
-2. Set the theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
+2. Set the light theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
 
 ```diff
--<style name="LaunchTheme" parent="Theme.AppCompat">
-+<style name="LaunchTheme" parent="Theme.MaterialComponents.NoActionBar">
+-<style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
++<style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+```
+
+3. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`
+
+```diff
+-<style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
++<style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 ```
 
 ## Signing the app
