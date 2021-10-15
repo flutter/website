@@ -11,6 +11,9 @@
       "**/node_modules/**"
     ],
     "redirects": [
+      { "regex": "^/(flutter(/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
+      { "regex": "^/(objcdoc(/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
+      { "regex": "^/(javadoc(/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "(?P<basename>.*)\\.html$", "destination": ":basename", "type": 301 },
       { "regex": "(?P<basename>.*)\\.$", "destination": ":basename", "type": 301 },
       { "source": "/images/catalog-widget-placeholder.png", "destination": "/assets/images/docs/catalog-widget-placeholder.png", "type": 301 },
@@ -138,6 +141,7 @@
       { "source": "/go/deprecations-removed-after-2-2", "destination": "https://docs.google.com/spreadsheets/d/18VuxojMGFKrFJCeilg3tErAtp23-_tp43XUioC_34To/edit?usp=sharing", "type": 301 },
       { "source": "/go/deprecations-removed-after-2-5", "destination": "https://docs.google.com/spreadsheets/d/191-PZEOmlT7Xw6MDFFyf5HyneTaiCqI4OITtolbXD6c/edit?usp=sharing", "type": 301 },
       { "source": "/go/desktop-multi-window-support", "destination": "https://docs.google.com/document/d/11_4wntz_9IJTQOo_Qhp7QF4RfpIMTfVygtOTxQ4OGHY/edit", "type": 301 },
+      { "source": "/go/desktop-release-conductor", "destination": "https://docs.google.com/document/d/15AwPXNd5FvItAqM0wa2VK0tRrqtRTgM8vR5LQeT2Mag/edit?usp=sharing&resourcekey=0-yZ2FAN-wEKwKT-ymdisetA", "type": 301 },
       { "source": "/go/desktop-resize", "destination": "https://docs.google.com/document/d/1OTy-qCGdP7tYfrEKCNX9A24sgnx5vshfK6FupfniyxA", "type": 301 },
       { "source": "/go/desktop-resize-macos", "destination": "https://docs.google.com/document/d/1slGllp1Jhde7wkF6snqGhdrZwHV1VVmXeIF3f0t24JU/edit?usp=sharing", "type": 301 },
       { "source": "/go/developing-plugins", "destination": "/docs/development/packages-and-plugins/developing-packages#plugin", "type": 301 },
@@ -261,6 +265,7 @@
       { "source": "/go/text-selection-menu-modernization", "destination": "https://docs.google.com/document/d/1qSEvbgi3m-OvB_dUKch8LHOk-iyPFeLgCsXbK0bI2DA/edit", "type": 301 },
       { "source": "/go/text-selection-programatically", "destination": "https://docs.google.com/document/d/1NK4GJ0Wk5eJ3IUw_9oAtz1oYgZ-Sn-kAKHxTvsgr75o/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-selection-theme", "destination": "https://docs.google.com/document/d/1sCe7Y_lhREljtn6m0Uu_EycbS82zRvWnNtkfEwFX9W0", "type": 301 },
+      { "source": "/go/texttheme-m3", "destination": "https://docs.google.com/document/d/1y3K08vL9rMTsGmF_T65fXmWJbsPZohvaVB3T6JuqgjM/edit?resourcekey=0-Gnl-tX58L4yPdV3NgeXFBg", "type": 301 },
       { "source": "/go/tool-integration-test-support", "destination": "https://docs.google.com/document/d/1jMMZpRAiQC2XTUFnzFsBrWwMsf7KyMuCScYgrJQJOV0/edit?resourcekey=0-ne9HbH1hXCHcIglomNfwtw", "type": 301 },
       { "source": "/go/top-errors-analysis", "destination": "https://docs.google.com/document/d/1ZJ9t_uPeXqZnoDOIVes_Yu2BBxP42l99nSfHQPfswZw/edit?usp=sharing", "type": 301 },
       { "source": "/go/towards-improved-performance-tooling", "destination": "https://docs.google.com/document/d/1wSDNcG0ww2V6JX1EE8avilCwnOiRVy83zSCWt916O0o", "type": 301 },
@@ -294,6 +299,7 @@
       { "source": "/go/backdrop-filter-with-overlay-canvas", "destination": "https://docs.google.com/document/d/1t_offKOgkuVzvB3fqGTfcltovb-yxqV6tbuP1qIBqVI/edit?usp=sharing", "type": 301 },
       { "source": "/go/os-adaptive-shortcut-activator", "destination": "https://docs.google.com/document/d/11NWj13MSDw1XQg4MpYIeqzcCFGuzQ_Cz7tYXW7fqzPY/edit?usp=sharing", "type": 301 },
       { "source": "/go/android-startup-tracing", "destination": "https://docs.google.com/document/d/1I7jvRg3UmG7P84hdis-9A00fEr2Ntj-K7f_FbGLubGE/edit?usp=sharing", "type": 301 },
+      { "source": "/go/idle-gc-metrics", "destination": "https://docs.google.com/document/d/1QjLTDr2cTsmS3DGIWdw9WSgqBMKJkFXD7Q8acziGIIA/edit?usp=sharing", "type": 301 },
       
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },

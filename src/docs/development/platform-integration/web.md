@@ -95,7 +95,7 @@ controls the headers on an HTTP request.
 Some plugins require platform-specific imports, particularly if they use the
 file system, which is not accessible from the browser. To use these plugins
 in your app, see the [documentation for conditional imports][]
-on [dart.dev][].
+on [dart.dev]({{site.dart-site}}).
 
 ### How do I embed a Flutter web app in a web page?
 
