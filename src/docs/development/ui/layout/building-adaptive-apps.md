@@ -3,6 +3,8 @@ title: Building adaptive apps
 description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
 ---
 
+<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+
 ## Overview
 
 Flutter provides new opportunities to build apps that can
@@ -151,26 +153,42 @@ densities, you can easily adjust your UI:
 To set a custom visual density, inject the density into
 your `MaterialApp` theme:
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (VisualDensity)"?>
 ```dart
-double densityAmt = enableTouchMode ? 0.0 : -1.0;
-VisualDensity density = VisualDensity(horizontal: density, vertical: density);
-return MaterialApp(
-  theme: ThemeData(visualDensity: density),
-  ...
-);
+          double densityAmt = touchMode ? 0.0 : -1.0;
+          VisualDensity density =
+              VisualDensity(horizontal: densityAmt, vertical: densityAmt);
+          return MaterialApp(
+            theme: ThemeData(visualDensity: density),
+            home: MainAppScaffold(),
+            debugShowCheckedModeBanner: false,
+          );
+        },
+      ),
+    );
+  }
+}
 ```
 
 To use `VisualDensity` inside your own views,
 you can look it up: 
 
-<!--skip-->
+<?code-excerpt "lib/pages/adaptive_reflow_page.dart (VisualDensityOwnView)"?>
 ```dart
-VisualDensity density = Theme.of(context).visualDensity;
-return Padding(
-  padding: EdgeInsets.all(Insets.large + density.vertical * 4), 
-  child: ...
-);
+    VisualDensity density = Theme.of(context).visualDensity;
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: 300, minWidth: 300),
+      child: Padding(
+        padding: EdgeInsets.all(Insets.large + density.vertical * 6),
+        child: Container(
+          alignment: Alignment.center,
+          color: Colors.purple.shade100,
+          child: Text(label),
+        ),
+      ),
+    );
+  }
+}
 ```
 
 Not only does the container react automatically to changes
@@ -521,29 +539,35 @@ of [`Actions`][], [`Shortcuts`][], [`MouseRegion`][], and
 and key bindings, and provides callbacks for handling focus
 and hover highlights.
 
-<!--skip-->
+<?code-excerpt "lib/pages/focus_examples_page.dart (_BasicActionDetectorState)"?>
 ```dart
 class _BasicActionDetectorState extends State<BasicActionDetector> {
- bool _hasFocus = false;
- @override
- Widget build(BuildContext context) {
-   return FocusableActionDetector(
-     onFocusChange: (value) => setState(() => _hasFocus = value),
-     actions: <Type, Action<Intent>>{
-       ActivateIntent: CallbackAction<Intent>(onInvoke: (Intent intent) {
-         print("Enter or Space was pressed!");
-       }),
-     },
-     child: Stack(
-       clipBehavior: Clip.none,
-       children: [
-         FlutterLogo(size: 100),
-         // Position focus in the negative margin
-         if (_hasFocus) Positioned(left: -4, top: -4, bottom: -4, right: -4, child: _RoundedBorder())
-       ],
-     ),
-   );
- }
+  bool _hasFocus = false;
+  @override
+  Widget build(BuildContext context) {
+    return FocusableActionDetector(
+      onFocusChange: (value) => setState(() => _hasFocus = value),
+      actions: <Type, Action<Intent>>{
+        ActivateIntent: CallbackAction<Intent>(onInvoke: (Intent intent) {
+          print("Enter or Space was pressed!");
+        }),
+      },
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          FlutterLogo(size: 100),
+          // Position focus in the negative margin for a cool effect
+          if (_hasFocus)
+            Positioned(
+                left: -4,
+                top: -4,
+                bottom: -4,
+                right: -4,
+                child: _roundedBorder())
+        ],
+      ),
+    );
+  }
 }
 ```
 
