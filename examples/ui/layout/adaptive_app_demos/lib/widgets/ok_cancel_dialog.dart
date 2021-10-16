@@ -30,24 +30,31 @@ class OkCancelDialog extends StatelessWidget {
 class _OkCancelButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    TextDirection btnDirection = DeviceType.isWindows && false ? TextDirection.rtl : TextDirection.ltr;
+    // #docregion RowTextDirection
+    TextDirection btnDirection =
+        DeviceType.isWindows && false ? TextDirection.rtl : TextDirection.ltr;
     return Row(
       children: [
         Spacer(),
         Row(
           textDirection: btnDirection,
           children: [
-            DialogButton(label: "Cancel", onPressed: () => Navigator.pop(context, false)),
-            DialogButton(label: "Ok", onPressed: () => Navigator.pop(context, true)),
+            DialogButton(
+                label: "Cancel",
+                onPressed: () => Navigator.pop(context, false)),
+            DialogButton(
+                label: "Ok", onPressed: () => Navigator.pop(context, true)),
           ],
         ),
       ],
     );
+    // #enddocregion RowTextDirection
   }
 }
 
 class DialogButton extends StatelessWidget {
-  const DialogButton({Key? key, required this.onPressed, required this.label}) : super(key: key);
+  const DialogButton({Key? key, required this.onPressed, required this.label})
+      : super(key: key);
   final VoidCallback onPressed;
   final String label;
 

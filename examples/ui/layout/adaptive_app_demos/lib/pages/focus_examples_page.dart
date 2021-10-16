@@ -43,6 +43,7 @@ class _TextListener extends StatefulWidget {
 class __TextListenerState extends State<_TextListener> {
   FocusNode focusNode = FocusNode();
 
+  // #docregion FocusRawKeyboardListener
   @override
   Widget build(BuildContext context) {
     return Focus(
@@ -63,6 +64,7 @@ class __TextListenerState extends State<_TextListener> {
     );
   }
 }
+// #enddocregion FocusRawKeyboardListener
 
 class BasicActionDetector extends StatefulWidget {
   @override
@@ -146,6 +148,7 @@ class ClickableControl extends StatelessWidget {
         builder: (context) {
           // Check whether we have focus
           bool hasFocus = Focus.of(context).hasFocus;
+          // #docregion MouseRegion
           // Show hand cursor
           return MouseRegion(
             cursor: SystemMouseCursors.click,
@@ -158,6 +161,7 @@ class ClickableControl extends StatelessWidget {
               child: Logo(showBorder: hasFocus),
             ),
           );
+          // #enddocregion MouseRegion
         },
       ),
     );

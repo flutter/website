@@ -20,21 +20,29 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
   @override
   Widget build(BuildContext context) {
     // Create a list of widgets to render, inject .isSelected into each item
-    Widget buildGridItem(int index) =>
-        _GridItem(index, isSelected: _selectedItems.contains(index), onPressed: _handleItemPressed);
+    Widget buildGridItem(int index) => _GridItem(index,
+        isSelected: _selectedItems.contains(index),
+        onPressed: _handleItemPressed);
     List<Widget> listChildren = _listItems.map(buildGridItem).toList();
     return TargetedActionBinding(
       actions: {
-        SelectAllIntent: CallbackAction(onInvoke: (Intent intent) => this._handleSelectAllPressed()),
-        SelectNoneIntent: CallbackAction(onInvoke: (Intent intent) => this._handleSelectNonePressed()),
-        DeleteIntent: CallbackAction(onInvoke: (Intent intent) => this._handleDeleteSelectedPressed()),
+        SelectAllIntent: CallbackAction(
+            onInvoke: (Intent intent) => this._handleSelectAllPressed()),
+        SelectNoneIntent: CallbackAction(
+            onInvoke: (Intent intent) => this._handleSelectNonePressed()),
+        DeleteIntent: CallbackAction(
+            onInvoke: (Intent intent) => this._handleDeleteSelectedPressed()),
       },
       child: Column(
         children: [
           Row(
             children: [
-              StyledTextButton(onPressed: _handleSelectAllPressed, child: Text("Select All")),
-              StyledTextButton(onPressed: _handleSelectNonePressed, child: Text("Select None")),
+              StyledTextButton(
+                  onPressed: _handleSelectAllPressed,
+                  child: Text("Select All")),
+              StyledTextButton(
+                  onPressed: _handleSelectNonePressed,
+                  child: Text("Select None")),
             ],
           ),
           Expanded(
@@ -42,6 +50,7 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
               builder: (BuildContext context, BoxConstraints constraints) {
                 // Calculate how many columns we want depending on available space
                 int colCount = max(1, (constraints.maxWidth / 250).floor());
+                // #docregion ScrollbarAlwaysShown
                 return Scrollbar(
                   isAlwaysShown: DeviceType.isDesktop,
                   controller: _scrollController,
@@ -52,6 +61,7 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
                       crossAxisCount: colCount,
                       children: listChildren),
                 );
+                // #enddocregion ScrollbarAlwaysShown
               },
             ),
           ),
@@ -60,7 +70,8 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
     );
   }
 
-  void _handleSelectAllPressed() => setState(() => _selectedItems = List.from(_listItems));
+  void _handleSelectAllPressed() =>
+      setState(() => _selectedItems = List.from(_listItems));
   void _handleSelectNonePressed() => setState(() => _selectedItems.clear());
   void _handleDeleteSelectedPressed() => setState(() => _selectedItems.clear());
 
@@ -75,7 +86,9 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
 }
 
 class _GridItem extends StatelessWidget {
-  const _GridItem(this.index, {Key? key, required this.isSelected, required this.onPressed}) : super(key: key);
+  const _GridItem(this.index,
+      {Key? key, required this.isSelected, required this.onPressed})
+      : super(key: key);
   final int index;
   final bool isSelected;
   final void Function(int index) onPressed;
@@ -97,9 +110,13 @@ class _GridItem extends StatelessWidget {
                   color: Colors.grey.shade600,
                   height: 50,
                   alignment: Alignment.center,
-                  child: Text("Grid Item $index", style: TextStyle(color: Colors.white)))),
+                  child: Text("Grid Item $index",
+                      style: TextStyle(color: Colors.white)))),
           // Selected border
-          Container(decoration: BoxDecoration(border: Border.all(color: Colors.blue.shade200, width: borderWidth))),
+          Container(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.blue.shade200, width: borderWidth))),
         ]),
       ),
     );
