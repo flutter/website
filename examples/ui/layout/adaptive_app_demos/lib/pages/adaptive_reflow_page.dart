@@ -73,7 +73,7 @@ class _ContentPanel extends StatelessWidget {
       constraints: BoxConstraints(minHeight: 300, minWidth: 300),
       child: Padding(
         padding: EdgeInsets.all(Insets.large + density.vertical * 6),
-        // #enddocregion VisuaDensityOwnView
+        // #enddocregion VisualDensityOwnView
         child: Container(
           alignment: Alignment.center,
           color: Colors.purple.shade100,

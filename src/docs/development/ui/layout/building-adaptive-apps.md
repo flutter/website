@@ -155,19 +155,14 @@ your `MaterialApp` theme:
 
 <?code-excerpt "lib/main.dart (VisualDensity)"?>
 ```dart
-          double densityAmt = touchMode ? 0.0 : -1.0;
-          VisualDensity density =
-              VisualDensity(horizontal: densityAmt, vertical: densityAmt);
-          return MaterialApp(
-            theme: ThemeData(visualDensity: density),
-            home: MainAppScaffold(),
-            debugShowCheckedModeBanner: false,
-          );
-        },
-      ),
-    );
-  }
-}
+double densityAmt = touchMode ? 0.0 : -1.0;
+VisualDensity density =
+    VisualDensity(horizontal: densityAmt, vertical: densityAmt);
+return MaterialApp(
+  theme: ThemeData(visualDensity: density),
+  home: MainAppScaffold(),
+  debugShowCheckedModeBanner: false,
+);
 ```
 
 To use `VisualDensity` inside your own views,
@@ -175,20 +170,11 @@ you can look it up:
 
 <?code-excerpt "lib/pages/adaptive_reflow_page.dart (VisualDensityOwnView)"?>
 ```dart
-    VisualDensity density = Theme.of(context).visualDensity;
-    return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: 300, minWidth: 300),
-      child: Padding(
-        padding: EdgeInsets.all(Insets.large + density.vertical * 6),
-        child: Container(
-          alignment: Alignment.center,
-          color: Colors.purple.shade100,
-          child: Text(label),
-        ),
-      ),
-    );
-  }
-}
+VisualDensity density = Theme.of(context).visualDensity;
+return ConstrainedBox(
+  constraints: BoxConstraints(minHeight: 300, minWidth: 300),
+  child: Padding(
+    padding: EdgeInsets.all(Insets.large + density.vertical * 6),
 ```
 
 Not only does the container react automatically to changes

@@ -31,7 +31,7 @@ class AppScaffold extends StatelessWidget {
             home: MainAppScaffold(),
             debugShowCheckedModeBanner: false,
           );
-          // #enddocregion VisuaDensity
+          // #enddocregion VisualDensity
         },
       ),
     );
