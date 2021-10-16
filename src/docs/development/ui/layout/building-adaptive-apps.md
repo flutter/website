@@ -230,34 +230,34 @@ this can be done with the `MediaQuery` API.
 There are no hard and fast rules for the sizes to use
 here, but these are general values: 
 
-<!--skip-->
+<?code-excerpt "lib/global/device_size.dart (FormFactor)"?>
 ```dart
 class FormFactor {
- static double desktop = 900;
- static double tablet = 600;
- static double handset = 300;
+  static double desktop = 900;
+  static double tablet = 600;
+  static double handset = 300;
 }
 ```
 
 Using breakpoints, you can set up a simple system
 to determine the device type:
 
-<!--skip-->
+<?code-excerpt "lib/global/device_size.dart (getFormFactor)"?>
 ```dart
 ScreenType getFormFactor(BuildContext context) {
- // Use .shortestSide to detect device type regardless of orientation
- double deviceWidth = MediaQuery.of(context).size.shortestSide;
- if (deviceWidth > FormFactor.desktop) return ScreenType.Desktop;
- if (deviceWidth > FormFactor.tablet) return ScreenType.Tablet;
- if (deviceWidth > FormFactor.handset) return ScreenType.Handset;
- return ScreenType.Watch;
+  // Use .shortestSide to detect device type regardless of orientation
+  double deviceWidth = MediaQuery.of(context).size.shortestSide;
+  if (deviceWidth > FormFactor.desktop) return ScreenType.Desktop;
+  if (deviceWidth > FormFactor.tablet) return ScreenType.Tablet;
+  if (deviceWidth > FormFactor.handset) return ScreenType.Handset;
+  return ScreenType.Watch;
 }
 ```
 
 As an alternative, you could abstract it more
 and define it in terms of small to large:
 
-<!--skip-->
+<?code-excerpt "lib/global/device_size.dart (ScreenSize)"?>
 ```dart
 enum ScreenSize { Small, Normal, Large, ExtraLarge }
 
@@ -622,17 +622,28 @@ If you have a single widget like a `TextField` or a `Button` that
 already has a focus node, you can wrap it in a
 [`RawKeyboardListener`][] and listen for keyboard events:
 
-<!--skip-->
+<?code-excerpt "lib/pages/focus_examples_page.dart (FocusRawKeyboardListener)"?>
 ```dart
-return Focus(
-  onKey: (FocusNode node, RawKeyEvent event) {
-    if (event is RawKeyDownEvent) {
-      print(event.logicalKey);
-    }
-    return KeyEventResult.ignored;
-  },
-  child: const TextField(),
-);
+  @override
+  Widget build(BuildContext context) {
+    return Focus(
+      onKey: (FocusNode node, RawKeyEvent event) {
+        if (event is RawKeyDownEvent) {
+          print(event.logicalKey);
+        }
+        return KeyEventResult.ignored;
+      },
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 400),
+        child: TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+          ),
+        ),
+      ),
+    );
+  }
+}
 ```
 
 If you’d like to apply a set of keyboard shortcuts to a
@@ -748,12 +759,20 @@ for your standard button and text cursors.
 To change the cursor from within your own widgets,
 use [`MouseRegion`][]:
 
-<!--skip-->
+<?code-excerpt "lib/pages/focus_examples_page.dart (MouseRegion)"?>
 ```dart
+// Show hand cursor
 return MouseRegion(
-  cursor: SystemMouseCursors.grab,
-  child: MyDraggableWidget(),
-)
+  cursor: SystemMouseCursors.click,
+  // Request focus when clicked
+  child: GestureDetector(
+    onTap: () {
+      Focus.of(context).requestFocus();
+      _submit();
+    },
+    child: Logo(showBorder: hasFocus),
+  ),
+);
 ```
 
 `MouseRegion` is also useful for creating custom
@@ -873,12 +892,17 @@ has support for adaptive colors and sizes according to the
 current platform. The one tweak you might want to make is to
 toggle `alwaysShown` when on a desktop platform:
 
-<!--skip-->
+<?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
 ```dart
 return Scrollbar(
-  controller: controller,
   isAlwaysShown: DeviceType.isDesktop,
-  child: ListView(controller: controller, ...),
+  controller: _scrollController,
+  child: GridView.count(
+      controller: _scrollController,
+      padding: EdgeInsets.all(Insets.extraLarge),
+      childAspectRatio: 1,
+      crossAxisCount: colCount,
+      children: listChildren),
 );
 ```
 
@@ -1058,17 +1082,21 @@ placed at the end of the row (right side).
 This can be easily handled in Flutter using the
 `TextDirection` property on `Row`: 
 
-<!--skip-->
+<?code-excerpt "lib/widgets/ok_cancel_dialog.dart (RowTextDirection)"?>
 ```dart
-TextDirection btnDirection = DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
+TextDirection btnDirection =
+    DeviceType.isWindows && false ? TextDirection.rtl : TextDirection.ltr;
 return Row(
   children: [
     Spacer(),
     Row(
       textDirection: btnDirection,
       children: [
-        DialogButton(label: 'Cancel', onPressed: () => Navigator.pop(context, false)),
-        DialogButton(label: 'Ok', onPressed: () => Navigator.pop(context, true)),
+        DialogButton(
+            label: "Cancel",
+            onPressed: () => Navigator.pop(context, false)),
+        DialogButton(
+            label: "Ok", onPressed: () => Navigator.pop(context, true)),
       ],
     ),
   ],
