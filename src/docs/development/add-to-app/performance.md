@@ -199,7 +199,7 @@ For performance details on creating more than one `FlutterEngine`,
 see [multiple Flutters][].
 
 [android-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
-[auxiliary threads]: {{site.github}}/flutter/flutter/wiki/The-Engine-architecture#threading
+[auxiliary threads]: {{site.repo.flutter}}/wiki/The-Engine-architecture#threading
 [CAEAGLLayer]: {{site.apple-dev}}/documentation/quartzcore/caeagllayer
 [CAMetalLayer]: {{site.apple-dev}}/documentation/quartzcore/cametallayer
 [Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html

@@ -150,5 +150,5 @@ Relevant PRs:
 
 [`ModalRoute`]: {{site.api}}/flutter/widgets/ModalRoute-class.html
 [`OverlayEntry`]: {{site.api}}/flutter/widgets/OverlayEntry-class.html
-[Issue 46625]: {{site.github}}/flutter/flutter/issues/46625
-[PR 59290]: {{site.github}}/flutter/flutter/pull/59290
+[Issue 46625]: {{site.repo.flutter}}/issues/46625
+[PR 59290]: {{site.repo.flutter}}/pull/59290

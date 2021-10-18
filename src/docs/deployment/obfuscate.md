@@ -114,5 +114,5 @@ expect(foo.runtimeType.toString(), equals('Foo'))
 [in alpha]: /desktop
 [Measuring your app's size]: /docs/perf/app-size
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
-[obfuscation instructions]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
+[obfuscation instructions]: {{site.repo.flutter}}/wiki/Obfuscating-Dart-Code
 [release build]: /docs/testing/build-modes

@@ -63,8 +63,8 @@ Relevant PRs:
 * [Reverse dependency between services and scheduler][]
 * [Revert bindings dependency workaround][]
 
-[Reverse dependency between services and scheduler]: {{site.github}}/flutter/flutter/pull/54212
-[Revert bindings dependency workaround]: {{site.github}}/flutter/flutter/pull/54286
+[Reverse dependency between services and scheduler]: {{site.repo.flutter}}/pull/54212
+[Revert bindings dependency workaround]: {{site.repo.flutter}}/pull/54286
 [`SchedulerBinding`]: {{site.api}}/flutter/scheduler/SchedulerBinding-mixin.html
 [`ServicesBinding`]: {{site.api}}/flutter/scheduler/ServicesBinding-mixin.html
 [`SchedulerBinding`]: {{site.api}}/flutter/scheduler/SchedulerBinding-mixin.html

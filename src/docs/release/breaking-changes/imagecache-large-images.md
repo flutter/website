@@ -90,8 +90,8 @@ Other:
 * [`ImageCache` source][]
 
 
-[Stopped increasing the cache size to accommodate large images]: {{site.github}}/flutter/flutter/pull/47387
+[Stopped increasing the cache size to accommodate large images]: {{site.repo.flutter}}/pull/47387
 [`ImageCache`]: {{site.api}}/flutter/painting/ImageCache-class.html
-[`image_cache.dart`]: {{site.github}}/flutter/flutter/blob/72a3d914ee5db0033332711224e728b8a5281d89/packages/flutter/lib/src/painting/image_cache.dart#L34
-[`ImageCache` source]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/painting/image_cache.dart
-[Issue 45643]: {{site.github}}/flutter/flutter/issues/45643
+[`image_cache.dart`]: {{site.repo.flutter}}/blob/72a3d914ee5db0033332711224e728b8a5281d89/packages/flutter/lib/src/painting/image_cache.dart#L34
+[`ImageCache` source]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/painting/image_cache.dart
+[Issue 45643]: {{site.repo.flutter}}/issues/45643

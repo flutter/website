@@ -135,7 +135,7 @@ like layout and animations:
 [Basic Flutter layout concepts]: /docs/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
-[How to debug layout issues with the Flutter Inspector]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: /docs/codelabs/implicit-animations
 [MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
 [MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
@@ -203,7 +203,7 @@ Learn how to use Flutter with other technologies.
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
 [firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
-[Get to know Firebase for Flutter]: https://firebase.google.com/learn/codelabs/firebase-get-to-know-flutter
+[Get to know Firebase for Flutter]: {{site.firebase}}/learn/codelabs/firebase-get-to-know-flutter
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 
 ## Testing
@@ -263,7 +263,7 @@ We also recommend the following online class:
 
 {{site.alert.note}}
   If you have trouble viewing any of the codelabs
-  on [`codelabs.developers.google.com`](https://codelabs.developers.google.com/), try 
+  on [`codelabs.developers.google.com`]({{site.codelabs}}), try 
   [this mirror of the Flutter codelabs][].
 {{site.alert.end}}
 

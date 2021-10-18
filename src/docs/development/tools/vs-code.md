@@ -318,7 +318,7 @@ When filing new issues, include [flutter doctor][] output.
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [Flutter inspector]: /docs/development/tools/devtools/inspector
 [Flutter's build modes]: /docs/testing/build-modes
-[let us know]: {{site.github}}/flutter/website/issues/new
+[let us know]: {{site.repo.this}}/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
 [Set up an editor]: /docs/get-started/editor?tab=vscode

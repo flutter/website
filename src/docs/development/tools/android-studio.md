@@ -401,6 +401,6 @@ When filing new issues, include the output of [`flutter doctor`][].
 [Debugging Flutter apps]: /docs/testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
-[let us know]: {{site.github}}/flutter/website/issues/new
+[let us know]: {{site.repo.this}}/issues/new
 [Running DevTools from Android Studio]: /docs/development/tools/devtools/android-studio
 [Timeline view]: /docs/development/tools/devtools/performance

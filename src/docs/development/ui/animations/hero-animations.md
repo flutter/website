@@ -24,7 +24,7 @@ one screen to another is called a _hero animation_ in Flutter, though the same
 motion is sometimes referred to as a _shared element transition_.
 
 You might want to watch this one-minute video introducing the Hero widget:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -72,7 +72,7 @@ the original route.
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
-    src="https://www.youtube.com/embed/CEcFnqRDfgw?rel=0"
+    src="{{site.youtube-site}}/embed/CEcFnqRDfgw?rel=0"
     frameborder="0" allowfullscreen>
   </iframe>
 </div>
@@ -92,7 +92,7 @@ the original route, displayed with a circular shape.
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
-    src="https://www.youtube.com/embed/LWKENpwDKiM?rel=0"
+    src="{{site.youtube-site}}/embed/LWKENpwDKiM?rel=0"
     frameborder="0" allowfullscreen>
   </iframe>
 </div>
@@ -653,8 +653,8 @@ Key information:
   but the image's aspect ratio remains constant.
 
 [Animations in Flutter tutorial]: /docs/development/ui/animations/tutorial
-[basic_hero_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/basic_hero_animation/
-[basic_radial_hero_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/basic_radial_hero_animation
+[basic_hero_animation]: {{site.repo.this}}/tree/master/examples/_animation/basic_hero_animation/
+[basic_radial_hero_animation]: {{site.repo.this}}/tree/master/examples/_animation/basic_radial_hero_animation
 [Building Layouts in Flutter]: /docs/development/ui/layout
 [`ClipOval`]: {{site.api}}/flutter/widgets/ClipOval-class.html
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
@@ -662,15 +662,15 @@ Key information:
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
 [`debugPaintSizeEnabled`]: /docs/testing/code-debugging#debug-flags-layout
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
-[hero_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/hero_animation/
+[hero_animation]: {{site.repo.this}}/tree/master/examples/_animation/hero_animation/
 [`Inkwell`]: {{site.api}}/flutter/material/InkWell-class.html
 [Material Design motion spec]: {{site.material}}/design/motion/understanding-motion.html#principles
 [`MaterialRectArcTween`]: {{site.api}}/flutter/material/MaterialRectArcTween-class.html
 [`MaterialRectCenterArcTween`]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [Radial hero animation code]: #radial-hero-animation-code
-[radial_hero_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/radial_hero_animation
-[radial_hero_animation_animate<wbr>_rectclip]: {{site.github}}/flutter/website/tree/master/examples/_animation/radial_hero_animation_animate_rectclip
+[radial_hero_animation]: {{site.repo.this}}/tree/master/examples/_animation/radial_hero_animation
+[radial_hero_animation_animate<wbr>_rectclip]: {{site.repo.this}}/tree/master/examples/_animation/radial_hero_animation_animate_rectclip
 [Radial hero animations]: #radial-hero-animations
 [Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
 [`RectTween`]: {{site.api}}/flutter/animation/RectTween-class.html
@@ -678,4 +678,4 @@ Key information:
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [Standard hero animation code]: #standard-hero-animation-code
 [Tween&lt;Rect&gt;]: {{site.api}}/flutter/animation/Tween-class.html
-[watch this issue]: {{site.github}}/flutter/flutter/issues/10667
+[watch this issue]: {{site.repo.flutter}}/issues/10667

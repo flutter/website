@@ -170,8 +170,8 @@ Relevant PRs:
 [`SemanticsProperties.button`]: {{site.api}}/flutter/semantics/SemanticsProperties/button.html
 [`SemanticsProperties.enabled`]: {{site.api}}/flutter/semantics/SemanticsProperties/enabled.html
 
-[Issue 58010]: {{site.github}}/flutter/flutter/issues/58010
+[Issue 58010]: {{site.repo.flutter}}/issues/58010
 
-[PR 60141]: {{site.github}}/flutter/flutter/pull/60141
-[PR 60645]: {{site.github}}/flutter/flutter/pull/60645
-[PR 61048]: {{site.github}}/flutter/flutter/pull/61048
+[PR 60141]: {{site.repo.flutter}}/pull/60141
+[PR 60645]: {{site.repo.flutter}}/pull/60645
+[PR 61048]: {{site.repo.flutter}}/pull/61048

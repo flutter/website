@@ -142,7 +142,7 @@ In the video below, two of our engineers take a mobile app from a dire
 accessibility state to one that takes advantage of Flutter's built-in
 widgets to offer a dramatically more accessible experience.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bWbBgbmAdQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/bWbBgbmAdQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Testing accessibility on web:
 
@@ -209,5 +209,5 @@ see the following articles written by community members:
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
-[video demo]: https://youtu.be/A6Sx0lBP8PI
+[video demo]: {{site.youtube-site}}/watch?v=A6Sx0lBP8PI
 [file a bug report]: https://goo.gle/flutter_web_issue

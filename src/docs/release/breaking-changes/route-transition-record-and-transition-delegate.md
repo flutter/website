@@ -141,8 +141,8 @@ Relevant PR:
   when there is still a route waiting
 
 
-[Issue 45938: Navigator 2.0]: {{site.github}}/flutter/flutter/issues/45938
+[Issue 45938: Navigator 2.0]: {{site.repo.flutter}}/issues/45938
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
-[PR 55998]: {{site.github}}/flutter/flutter/pull/55998
+[PR 55998]: {{site.repo.flutter}}/pull/55998
 [`TransitionDelegate`]: {{site.api}}/flutter/widgets/TransitionDelegate-class.html
 [`RouteTransitionRecord`]: {{site.api}}/flutter/widgets/RouteTransitionRecord-class.html

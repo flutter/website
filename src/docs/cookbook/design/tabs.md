@@ -150,7 +150,7 @@ class TabBarDemo extends StatelessWidget {
 
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
-[Building a Cupertino app with Flutter]: https://codelabs.developers.google.com/codelabs/flutter-cupertino
+[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
 [`DefaultTabController`]: {{site.api}}/flutter/material/DefaultTabController-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html
 [`Tab`]: {{site.api}}/flutter/material/Tab-class.html

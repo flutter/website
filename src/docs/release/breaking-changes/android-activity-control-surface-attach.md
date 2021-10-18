@@ -138,5 +138,5 @@ event crosstalk
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
 [`getActivityControlSurface()`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html#getActivityControlSurface--
-[Issue #66192]: {{site.github}}/flutter/flutter/issues/66192.
+[Issue #66192]: {{site.repo.flutter}}/issues/66192.
 [Issue #21272]: {{site.github}}/flutter/engine/pull/21272

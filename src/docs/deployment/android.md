@@ -508,14 +508,14 @@ The resulting app bundle or APK files are located in
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [crash-issue]: https://issuetracker.google.com/issues/147096055
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
-[Flutter wiki]: {{site.github}}/flutter/flutter/wiki
+[Flutter wiki]: {{site.repo.flutter}}/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
 [Getting Started guide for Android]: {{site.material}}/develop/android/docs/getting-started
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
-[Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[Issue 9253]: {{site.repo.flutter}}/issues/9253
+[Issue 18494]: {{site.repo.flutter}}/issues/18494
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element

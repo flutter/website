@@ -235,17 +235,17 @@ Relevant PRs:
 [`CupertinoUserInterfaceLevel.maybeOf`]: {{site.api}}/flutter/cupertino/CupertinoUserInterfaceLevel/maybeOf.html
 [`CupertinoTheme.maybeBrightnessOf`]: {{site.api}}/flutter/cupertino/CupertinoTheme/maybeBrightnessOf.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Issue 68637]: {{site.github}}/flutter/flutter/issues/68637
-[Remove `nullOk` in `MediaQuery.of`]: {{site.github}}/flutter/flutter/pull/68736
-[Remove `nullOk` in `Navigator.of`]: {{site.github}}/flutter/flutter/pull/70726
-[Remove `nullOk` parameter from `AnimatedList.of` and `SliverAnimatedList.of`]: {{site.github}}/flutter/flutter/pull/68925
-[Remove `nullOk` parameter from `Shortcuts.of`, `Actions.find`, and `Actions.handler`]: {{site.github}}/flutter/flutter/pull/68921
-[Remove `nullOk` parameter from `Shortcuts.of`, `Actions.find`, and `Actions.handler`]: {{site.github}}/flutter/flutter/pull/68921
-[Remove `nullOk` parameter from `Focus.of`, `FocusTraversalOrder.of`, and `FocusTraversalGroup.of`]: {{site.github}}/flutter/flutter/pull/68917
-[Remove `nullOk` parameter from `Localizations.localeOf`]: {{site.github}}/flutter/flutter/pull/68911
-[Remove `nullOk` parameter from `Router.of`]: {{site.github}}/flutter/flutter/pull/68910
-[Remove `nullOk` from `Scaffold.of` and `ScaffoldMessenger.of`]: {{site.github}}/flutter/flutter/pull/68908
-[Remove `nullOk` parameter from Cupertino color resolution APIs]: {{site.github}}/flutter/flutter/pull/68905
-[Remove vestigial `nullOk` parameter from `Localizations.localeOf`]: {{site.github}}/flutter/flutter/pull/74657
-[Remove `nullOk` from `Actions.invoke`, add `Actions.maybeInvoke`]: {{site.github}}/flutter/flutter/pull/74680
+[Issue 68637]: {{site.repo.flutter}}/issues/68637
+[Remove `nullOk` in `MediaQuery.of`]: {{site.repo.flutter}}/pull/68736
+[Remove `nullOk` in `Navigator.of`]: {{site.repo.flutter}}/pull/70726
+[Remove `nullOk` parameter from `AnimatedList.of` and `SliverAnimatedList.of`]: {{site.repo.flutter}}/pull/68925
+[Remove `nullOk` parameter from `Shortcuts.of`, `Actions.find`, and `Actions.handler`]: {{site.repo.flutter}}/pull/68921
+[Remove `nullOk` parameter from `Shortcuts.of`, `Actions.find`, and `Actions.handler`]: {{site.repo.flutter}}/pull/68921
+[Remove `nullOk` parameter from `Focus.of`, `FocusTraversalOrder.of`, and `FocusTraversalGroup.of`]: {{site.repo.flutter}}/pull/68917
+[Remove `nullOk` parameter from `Localizations.localeOf`]: {{site.repo.flutter}}/pull/68911
+[Remove `nullOk` parameter from `Router.of`]: {{site.repo.flutter}}/pull/68910
+[Remove `nullOk` from `Scaffold.of` and `ScaffoldMessenger.of`]: {{site.repo.flutter}}/pull/68908
+[Remove `nullOk` parameter from Cupertino color resolution APIs]: {{site.repo.flutter}}/pull/68905
+[Remove vestigial `nullOk` parameter from `Localizations.localeOf`]: {{site.repo.flutter}}/pull/74657
+[Remove `nullOk` from `Actions.invoke`, add `Actions.maybeInvoke`]: {{site.repo.flutter}}/pull/74680
 

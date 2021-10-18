@@ -780,4 +780,4 @@ For more information, see:
 [`UIKitView`]: {{site.api}}/flutter/widgets/UiKitView-class.html
 [`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
 [`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html
-[version 1.22.2]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel#1222--october-16-2020
+[version 1.22.2]: {{site.repo.flutter}}/wiki/Hotfixes-to-the-Stable-Channel#1222--october-16-2020

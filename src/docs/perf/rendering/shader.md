@@ -146,11 +146,11 @@ Moto G4 from ~90 ms to ~40 ms. On iPhone 4s,
 it's reduced from ~300 ms to ~80 ms. That leads to the visual
 difference as illustrated in the beginning of this article.
 
-[Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/dev/integration_tests/flutter_gallery
-[`flutter_gallery_sksl_warmup__transition_perf`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
-[`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.github}}/flutter/flutter/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
+[Flutter Gallery]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
+[`flutter_gallery_sksl_warmup__transition_perf`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
+[`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
 [integration tests]: /docs/cookbook/testing/integration/introduction
-[`transitions_perf_test.dart`]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
+[`transitions_perf_test.dart`]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
 [limitations and considerations]: /docs/perf/rendering/shader#limitations-and-considerations
 
 ## Frequently asked questions
@@ -225,19 +225,19 @@ with a [small set of statically defined shaders][] that we could bundle with the
 Engine. Stay tuned for more progress!
 
 [`FrameTiming`]: {{site.api}}/flutter/dart-ui/FrameTiming-class.html
-[SkSL-based warmup issue]: {{site.github}}/flutter/flutter/issues/53607#issuecomment-608587484
+[SkSL-based warmup issue]: {{site.repo.flutter}}/issues/53607#issuecomment-608587484
 [a solution used by the Dolphin Emulator]: https://dolphin-emu.org/blog/2017/07/30/ubershaders/
-[contribution guidelines]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
-[continuing to investigate]: {{site.github}}/flutter/flutter/projects/188
-[Early-onset jank]: {{site.github}}/flutter/flutter/projects/188
+[contribution guidelines]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+[continuing to investigate]: {{site.repo.flutter}}/projects/188
+[Early-onset jank]: {{site.repo.flutter}}/projects/188
 [reduce the number of shaders]: https://bugs.chromium.org/p/skia/issues/detail?id=11844
-[small set of statically defined shaders]: {{site.github}}/flutter/flutter/issues/77412
+[small set of statically defined shaders]: {{site.repo.flutter}}/issues/77412
 
 If you have questions on SkSL shader warm-up,
 please comment on [Issue 60313][] and [Issue 53607][].
 If you have general shader warm-up questions,
 please refer to [Issue 32170][].
 
-[Issue 32170]: {{site.github}}/flutter/flutter/issues/32170
-[Issue 53607]: {{site.github}}/flutter/flutter/issues/53607
-[Issue 60313]: {{site.github}}/flutter/flutter/issues/60313
+[Issue 32170]: {{site.repo.flutter}}/issues/32170
+[Issue 53607]: {{site.repo.flutter}}/issues/53607
+[Issue 60313]: {{site.repo.flutter}}/issues/60313

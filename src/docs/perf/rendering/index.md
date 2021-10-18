@@ -56,10 +56,10 @@ app on the web:
 * [Building performant Flutter widgets][]
 
 
-[Building performant Flutter widgets]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
+[Building performant Flutter widgets]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
 [Flutter's build modes]: /docs/testing/build-modes
 [Flutter performance profiling]: /docs/perf/rendering/ui-performance
-[images]: {{site.medium}}/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
+[images]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [Performance best practices]: /docs/perf/rendering/best-practices
-[shaking]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[shaking]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [Show performance data]: /docs/development/tools/android-studio#show-performance-data

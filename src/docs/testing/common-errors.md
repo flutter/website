@@ -106,17 +106,17 @@ child: Row(
 Another way is to wrap the `Column` in a `Flexible` widget and specify a `flex`
 factor. In fact, the `Expanded` widget is equivalent to the `Flexible` widget
 with a `flex` factor of 1.0, as [its source
-code]({{site.github}}/flutter/flutter/blob/127e67902e8bbb0dcbfb3351b8fd00f7cbdf0178/packages/flutter/lib/src/widgets/basic.dart#L4677-L4686)
+code]({{site.repo.flutter}}/blob/127e67902e8bbb0dcbfb3351b8fd00f7cbdf0178/packages/flutter/lib/src/widgets/basic.dart#L4677-L4686)
 shows. To further understand how to use the `Flex` widget in Flutter layouts,
-please check out [this Widget of the Week video](https://youtu.be/CI7x0mAZiY0)
+please check out [this Widget of the Week video]({{site.youtube-site}}/watch?v=CI7x0mAZiY0)
 on the Flexible widget.
 
 **Further information:**
 
 The resources linked below provide further information about this error. 
 
-*   [Flexible (Flutter Widget of the Week)](https://youtu.be/CI7x0mAZiY0)
-*   [How to debug layout issues with the Flutter Inspector]({{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b)
+*   [Flexible (Flutter Widget of the Week)]({{site.youtube-site}}/watch?v=CI7x0mAZiY0)
+*   [How to debug layout issues with the Flutter Inspector]({{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b)
 *   [Understanding constraints](/docs/development/ui/layout/constraints)
 
 
@@ -240,7 +240,7 @@ Widget build(BuildContext context) {
 
 The resources linked below provide further information about this error.
 
-*   [How to debug layout issues with the Flutter Inspector]({{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#1de2)
+*   [How to debug layout issues with the Flutter Inspector]({{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#1de2)
 *   [Understanding constraints](/docs/development/ui/layout/constraints)
 
 
@@ -458,7 +458,7 @@ class FirstScreen extends StatelessWidget {
 To learn more about how to debug errors, especially layout errors in Flutter, 
 check out the following resources: 
 
-*   [How to debug layout issues with the Flutter Inspector]({{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db)
+*   [How to debug layout issues with the Flutter Inspector]({{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db)
 *   [Understanding constraints](/docs/development/ui/layout/constraints)
 *   [Dealing with box constraints](/docs/development/ui/layout/box-constraints)
 *   [Flutter architectural overview](/docs/resources/architectural-overview#layout-and-rendering)

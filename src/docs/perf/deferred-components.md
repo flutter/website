@@ -597,11 +597,11 @@ Play store's delivery feature.
 [3.1]: #step-3.1
 [Android docs]: {{site.android-dev}}/guide/playcore/feature-delivery#declare_splitcompatapplication_in_the_manifest
 [`bundletool`]: {{site.android-dev}}/studio/command-line/bundletool
-[Deferred Components]: {{site.github}}/flutter/flutter/wiki/Deferred-Components
+[Deferred Components]: {{site.repo.flutter}}/wiki/Deferred-Components
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
-[Flutter Gallery’s lib/deferred_widget.dart]: {{site.github}}/flutter/gallery/blob/master/lib/deferred_widget.dart
-[Flutter wiki]: {{site.github}}/flutter/flutter/wiki
+[Flutter Gallery’s lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/master/lib/deferred_widget.dart
+[Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library
 [release or profile mode]: /docs/testing/build-modes

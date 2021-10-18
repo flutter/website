@@ -67,9 +67,9 @@ Relevant issues:
 Relevant PR:
 * [Move mouse_tracking.dart to rendering][]
 
-[Move annotations to a separate tree]: {{site.github}}/flutter/flutter/issues/49568
-[Move mouse_tracking.dart to rendering]: {{site.github}}/flutter/flutter/pull/52781 
-[Transform mouse events to the local coordinate system]: {{site.github}}/flutter/flutter/issues/33675
+[Move annotations to a separate tree]: {{site.repo.flutter}}/issues/49568
+[Move mouse_tracking.dart to rendering]: {{site.repo.flutter}}/pull/52781 
+[Transform mouse events to the local coordinate system]: {{site.repo.flutter}}/issues/33675
 [`MouseDetectorAnnotationFinder`]: {{site.api}}/flutter/gestures/MouseDetectorAnnotationFinder.html
 [`MouseTracker`]: {{site.api}}/flutter/gestures/MouseTracker-class.html
 [`MouseTrackerAnnotation`]: {{site.api}}/flutter/gestures/MouseTrackerAnnotation-class.html 

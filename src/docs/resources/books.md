@@ -9,8 +9,8 @@ If you find another one that we should add,
 [file an issue][] and (optionally)
 submit a PR ([sample][]) to add it yourself.
 
-[file an issue]: {{site.github}}/flutter/website/issues/new
-[sample]: {{site.github}}/flutter/website/pull/6019
+[file an issue]: {{site.repo.this}}/issues/new
+[sample]: {{site.repo.this}}/pull/6019
 
 {% for book in site.data.books -%}
 * [{{book.title}}]({{book.link}})
