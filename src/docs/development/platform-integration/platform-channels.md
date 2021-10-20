@@ -9,10 +9,9 @@ platform-specific functionality is available through existing packages;
 see [using packages][].
 
 {{site.alert.note}}
-  The information in this page is valid for most
-  plugins, except for any web plugin implemented
-  as a [federated plugin][]. Federated plugins
-  don't use platform channels.
+  The information in this page is valid for most platforms,
+  but platform-specific code for the web generally uses
+  `dart:html` instead.
 {{site.alert.end}}
 
 Flutter uses a flexible system that allows you to call
