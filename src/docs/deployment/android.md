@@ -245,6 +245,23 @@ flag to `flutter build apk` or `flutter build appbundle`.
   of the Android application.
 {{site.alert.end}}
 
+## Enabling multidex support
+
+When writing large apps or making use of large plugins, you may encounter
+android's dex limit of 64k methods when targeting a minimum API of 20 or
+below. Multidex support is natively included when targeting API 21+.
+This may also be encountered when running debug versions of your app
+via `flutter run` that does not have shrinking enabled.
+
+Flutter tool supports enabling multidex. The simplest way is to simply accept
+the tool's recommendations when the dex limit error is encountered. Flutter
+will automatically depend on `androidx.android.multidex` and use a generated
+`FlutterMultiDexApplication`.
+
+You may also choose to manually support multidex by following android's guides
+and modifying your project's android directory configuration. See the official
+[android documentation][multidex-docs].
+
 ## Reviewing the app manifest
 
 Review the default [App Manifest][manifest] file,
@@ -519,6 +536,7 @@ The resulting app bundle or APK files are located in
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[multidex-docs]: https://developer.android.com/studio/build/multidex
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
