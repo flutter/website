@@ -11,7 +11,7 @@ see [using packages][].
 {{site.alert.note}}
   The information in this page is valid for most platforms,
   but platform-specific code for the web generally uses
-  `dart:html` instead.
+  [JS interoperability][] or the [`dart:html` library][] instead.
 {{site.alert.end}}
 
 Flutter uses a flexible system that allows you to call
@@ -790,7 +790,8 @@ DispatchQueue.main.async {
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
 [`/examples/platform_channel/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
 [`/examples/platform_channel_swift/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift
-[federated plugin]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[JS interoperability]: {{site.dart-site}}/web/js-interop
+[`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
