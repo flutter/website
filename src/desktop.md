@@ -568,7 +568,7 @@ step-by-step walkthrough.
 [distribute it through the macOS App Store]: https://developer.apple.com/macos/submit/
 [documentation on notarizing macOS Applications]: https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution
 [on distributing an application through the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
-[Build and release a macOS app]: https://flutter.dev/docs/deployment/macos
+[Build and release a macOS app]: /docs/deployment/macos
 
 ### Linux
 
