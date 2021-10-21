@@ -249,22 +249,27 @@ flag to `flutter build apk` or `flutter build appbundle`.
 ## Enabling multidex support
 
 When writing large apps or making use of large plugins, you may encounter
-android's dex limit of 64k methods when targeting a minimum API of 20 or
+Android's dex limit of 64k methods when targeting a minimum API of 20 or
 below. Multidex support is natively included when targeting API 21+.
 This may also be encountered when running debug versions of your app
 via `flutter run` that does not have shrinking enabled.
 
 Flutter tool supports enabling multidex. The simplest way is to simply accept
 the tool's recommendations when the dex limit error is encountered. Flutter
-will automatically depend on `androidx.android.multidex` and use a generated
-`FlutterMultiDexApplication`.
+will automatically depend on `androidx.multidex:multidex` and use a generated
+`FlutterMultiDexApplication` as the project's application.
 
-You may also choose to manually support multidex by following android's guides
-and modifying your project's android directory configuration. A
-[multidex keep file][multidex-keep] must also be specified to include
-`io/flutter/embedding/engine/loader/FlutterLoader.class` and
-`io/flutter/util/PathUtils.class` as well as any classes used in app startup.
-See the official [android documentation][multidex-docs] for more information.
+You may also choose to manually support multidex by following Android's guides
+and modifying your project's Android directory configuration. A
+[multidex keep file][multidex-keep] must also be specified to include:
+
+```
+io/flutter/embedding/engine/loader/FlutterLoader.class
+io/flutter/util/PathUtils.class
+```
+Also, include any classes other used in app startup.
+See the official [android documentation][multidex-docs] for more detailed
+guidance on adding multidex support manually.
 
 Flutter does not enable multidex by default as it adds a small amount of overhead to
 app startup time and app size.
