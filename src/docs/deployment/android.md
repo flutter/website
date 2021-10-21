@@ -20,6 +20,7 @@ This page covers the following topics:
 * [Enabling Material Components](#enabling-material-components)
 * [Signing the app](#signing-the-app)
 * [Shrinking your code with R8](#shrinking-your-code-with-r8)
+* [Enabling multidex support](#enabling-multidex-support)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
@@ -259,8 +260,14 @@ will automatically depend on `androidx.android.multidex` and use a generated
 `FlutterMultiDexApplication`.
 
 You may also choose to manually support multidex by following android's guides
-and modifying your project's android directory configuration. See the official
-[android documentation][multidex-docs].
+and modifying your project's android directory configuration. A
+[multidex keep file][multidex-keep] must also be specified to include
+`io/flutter/embedding/engine/loader/FlutterLoader.class` and
+`io/flutter/util/PathUtils.class` as well as any classes used in app startup.
+See the official [android documentation][multidex-docs] for more information.
+
+Flutter does not enable multidex by default as it adds a small amount of overhead to
+app startup time and app size.
 
 ## Reviewing the app manifest
 
@@ -537,6 +544,7 @@ The resulting app bundle or APK files are located in
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [multidex-docs]: https://developer.android.com/studio/build/multidex
+[multidex-keep]: https://developer.android.com/studio/build/multidex#multidexkeepfile-property
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
