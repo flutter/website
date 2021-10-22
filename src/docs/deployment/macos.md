@@ -120,20 +120,10 @@ For a detailed overview of app signing, see
 ## Configuring the app's name, bundle identifier and copyright
 
 The configuration for the product identifiers are centralized 
-in `macos/Runner/Configs/AppInfo.xcconfig`. For an example of how 
-this can be used, please see the the 
-[Desktop Photo Search sample's `AppInfo.xcconfig`][sample AppInfo.xcconfig].
-
-```
-// The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = Photo Search
-
-// The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.desktopPhotoSearch
-
-// The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2020 com.example. All rights reserved.
-```
+in `macos/Runner/Configs/AppInfo.xcconfig`. For the app's name,
+set `PRODUCT_NAME`, for the copyright set `PRODUCT_COPYRIGHT`,
+and finally set `PRODUCT_BUNDLE_IDENTIFIER` for the app's
+bundle identifier.
 
 ## Updating the app's version number
 
@@ -493,5 +483,4 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [obfuscating your Dart code]: /docs/deployment/obfuscate
-[sample AppInfo.xcconfig]: https://github.com/flutter/samples/blob/master/experimental/desktop_photo_search/macos/Runner/Configs/AppInfo.xcconfig
 [TestFlight]: https://developer.apple.com/testflight/
