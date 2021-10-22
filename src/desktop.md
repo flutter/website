@@ -562,7 +562,7 @@ section below to understand how entitlements,
 the App Sandbox, and the Hardened Runtime
 impact your distributable application.
 
-[Build and release a macOS app] provides a more detailed
+[Build and release a macOS app][] provides a more detailed
 step-by-step walkthrough.
 
 [distribute it through the macOS App Store]: https://developer.apple.com/macos/submit/
