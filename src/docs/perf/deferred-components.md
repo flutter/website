@@ -74,12 +74,12 @@ dependencies {
     Both of these tasks can be accomplished by setting
     the `android:name` property on the application in
     `android/app/src/main/AndroidManifest.xml` to
-    `io.flutter.app.FlutterPlayStoreSplitApplication`:
+    `io.flutter.embedding.android.FlutterPlayStoreSplitApplication`:
 
 ```xml
 <manifest ...
   <application
-     android:name="io.flutter.app.FlutterPlayStoreSplitApplication"
+     android:name="io.flutter.embedding.android.FlutterPlayStoreSplitApplication"
         ...
   </application>
 </manifest>
