@@ -1790,7 +1790,7 @@ Row(
 ```
 
 Since `Row` won’t impose any constraints onto its children,
-it’s quite possible that the children might too big to fit
+it’s quite possible that the children might be too big to fit
 the available width of the `Row`. In this case, just like an
 `UnconstrainedBox`, the `Row` displays the "overflow warning".
 
