@@ -3,27 +3,35 @@ title: Navigation and routing
 description: Articles and cookbook recipes that address screen navigation.
 ---
 
-{% comment %}
-This is merely a placeholder. It should be a real page.
-{% endcomment %}
+Flutter has an imperative routing mechanism, the `Navigator` widget,
+and a more idomatic declarative routing mechanism (which is similar to
+build methods as used with widgets), the `Router` widget.
 
-To learn about Flutter's original (1.0)
-navigation and routing mechanism,
-see the [Navigation recipes][] in the
-[Flutter cookbook][] and the [`Navigator`][] API docs.
-The original navigation model uses an imperative approach.
+The two systems can be used together (indeed, the declarative system
+is built using the imperative system).
 
-To learn about Flutter's updated (2.0) navigation and
-routing mechanism, which uses a declarative approach, see
-[Learning Flutter’s new navigation and routing system][].
+Typically, small applications are served well by just using the
+`Navigator` API, via the `MaterialApp` constructor's
+[`MaterialApp.routes`][] property.
 
-Note that this new mechanism isn't a breaking change&mdash;you can continue
-to use the original approach if that serves you well.
-If you want to implement deep linking, or take advantage
-of multiple navigators, check out the 2.0 version.
+To learn about `Navigator` and its imperative API, see the
+[Navigation recipes][] in the [Flutter cookbook][], and the
+[`Navigator`][] API docs.
 
+More elaborate applications are usually better served by the `Router`
+API, via the [`MaterialApp.router`] constructor. This requires some
+more up-front work to describe how to parse deep links for your
+application and how to map the application state to the set of active
+pages, but is more expressive on the long run.
+
+To learn about `Router` and the declarative approach, see [Learning
+Flutter’s new navigation and routing system][], and the [`Router`][]
+API docs.
 
 [Flutter cookbook]: /docs/cookbook
 [Learning Flutter’s new navigation and routing system]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [Navigation recipes]: /docs/cookbook/navigation
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Router`]: {{site.api}}/flutter/widgets/Router-class.html
+[`MaterialApp.routes`]: {{site.api}}/flutter/material/MaterialApp/routes.html
+[`MaterialApp.router`]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.router.html
