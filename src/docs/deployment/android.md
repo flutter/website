@@ -250,10 +250,18 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
 When writing large apps or making use of large plugins, you may encounter
 Android's dex limit of 64k methods when targeting a minimum API of 20 or
-below. Multidex support is natively included when targeting API 21+.
-This may also be encountered when running debug versions of your app
+below. This may also be encountered when running debug versions of your app
 via `flutter run` that does not have shrinking enabled.
 
+Flutter tool supports easily enabling multidex. The simplest way is to
+opt into multidex support when prompted. The tool detects multidex build errors
+and will ask before making changes to your Android project. Opting in allows
+Flutter to automatically depend on `androidx.multidex:multidex` and use a
+generated `FlutterMultiDexApplication` as the project's application.
+
+{{site.alert.note}}
+  Multidex support is natively included when targeting min sdk 21+.
+{{site.alert.end}}
 
 You might also choose to manually support multidex by following Android's guides
 and modifying your project's Android directory configuration. A
