@@ -562,9 +562,13 @@ section below to understand how entitlements,
 the App Sandbox, and the Hardened Runtime
 impact your distributable application.
 
-[distribute it through the macOS App Store]: https://developer.apple.com/macos/submit/
-[documentation on notarizing macOS Applications]: https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution
+[Build and release a macOS app][] provides a more detailed
+step-by-step walkthrough.
+
+[distribute it through the macOS App Store]: {{site.apple-dev}}/macos/submit/
+[documentation on notarizing macOS Applications]:{{site.apple-dev}}/documentation/xcode/notarizing_macos_software_before_distribution
 [on distributing an application through the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
+[Build and release a macOS app]: /docs/deployment/macos
 
 ### Linux
 
