@@ -302,7 +302,7 @@
       { "source": "/go/os-adaptive-shortcut-activator", "destination": "https://docs.google.com/document/d/11NWj13MSDw1XQg4MpYIeqzcCFGuzQ_Cz7tYXW7fqzPY/edit?usp=sharing", "type": 301 },
       { "source": "/go/android-startup-tracing", "destination": "https://docs.google.com/document/d/1I7jvRg3UmG7P84hdis-9A00fEr2Ntj-K7f_FbGLubGE/edit?usp=sharing", "type": 301 },
       { "source": "/go/idle-gc-metrics", "destination": "https://docs.google.com/document/d/1QjLTDr2cTsmS3DGIWdw9WSgqBMKJkFXD7Q8acziGIIA/edit?usp=sharing", "type": 301 },
-      { "source": "/go/variable-refresh-rate", "destination": "https://docs.google.com/document/d/1O-ot6MydAl5pAr_XGnpR-Qq5A5CPDF6edaPu8xQtgCQ/edit?usp=sharing", "type": 301 },
+      { "source": "/go/variable-refresh-rate", "destination": "https://docs.google.com/document/d/1O-ot6MydAl5pAr_XGnpR-Qq5A5CPDF6edaPu8xQtgCQ/edit?usp=sharing&resourcekey=0-LlXeGtGRC67XL4NrGoc91A", "type": 301 },
       
       { "source": "/hot-reload", "destination": "/docs/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/docs/get-started/editor", "type": 301 },
