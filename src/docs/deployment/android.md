@@ -254,10 +254,6 @@ below. Multidex support is natively included when targeting API 21+.
 This may also be encountered when running debug versions of your app
 via `flutter run` that does not have shrinking enabled.
 
-Flutter tool supports enabling multidex. The simplest way is to simply accept
-the tool's recommendations when the dex limit error is encountered. Flutter
-will automatically depend on `androidx.multidex:multidex` and use a generated
-`FlutterMultiDexApplication` as the project's application.
 
 You may also choose to manually support multidex by following Android's guides
 and modifying your project's Android directory configuration. A
