@@ -255,7 +255,7 @@ This may also be encountered when running debug versions of your app
 via `flutter run` that does not have shrinking enabled.
 
 
-You may also choose to manually support multidex by following Android's guides
+You might also choose to manually support multidex by following Android's guides
 and modifying your project's Android directory configuration. A
 [multidex keep file][multidex-keep] must also be specified to include:
 
