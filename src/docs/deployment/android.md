@@ -264,7 +264,7 @@ io/flutter/embedding/engine/loader/FlutterLoader.class
 io/flutter/util/PathUtils.class
 ```
 Also, include any other classes used in app startup.
-See the official [android documentation][multidex-docs] for more detailed
+See the official [Android documentation][multidex-docs] for more detailed
 guidance on adding multidex support manually.
 
 Flutter does not enable multidex by default as it adds a small amount of overhead to
