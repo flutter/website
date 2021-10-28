@@ -267,9 +267,6 @@ Also, include any other classes used in app startup.
 See the official [Android documentation][multidex-docs] for more detailed
 guidance on adding multidex support manually.
 
-Flutter does not enable multidex by default as it adds a small amount of overhead to
-app startup time and app size.
-
 ## Reviewing the app manifest
 
 Review the default [App Manifest][manifest] file,
