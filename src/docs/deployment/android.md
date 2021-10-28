@@ -257,7 +257,7 @@ via `flutter run` that does not have shrinking enabled.
 
 You might also choose to manually support multidex by following Android's guides
 and modifying your project's Android directory configuration. A
-[multidex keep file][multidex-keep] must also be specified to include:
+[multidex keep file][multidex-keep] must be specified to include:
 
 ```
 io/flutter/embedding/engine/loader/FlutterLoader.class
