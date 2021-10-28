@@ -426,7 +426,7 @@ final studentState = StudentState.of(context);
 
 The `of(context)` call takes the build context (a handle to the current widget
 location), and returns [the nearest ancestor in the
-tree]({{site.api}}/flutter/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)
+tree]({{site.api}}/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)
 that matches the `StudentState` type. `InheritedWidget`s also offer an
 `updateShouldNotify()` method, which Flutter calls to determine whether a state
 change should trigger a rebuild of child widgets that use it.

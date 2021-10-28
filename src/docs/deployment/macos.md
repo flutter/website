@@ -117,6 +117,14 @@ the following:
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
 
+## Configuring the app's name, bundle identifier and copyright
+
+The configuration for the product identifiers are centralized 
+in `macos/Runner/Configs/AppInfo.xcconfig`. For the app's name,
+set `PRODUCT_NAME`, for the copyright set `PRODUCT_COPYRIGHT`,
+and finally set `PRODUCT_BUNDLE_IDENTIFIER` for the app's
+bundle identifier.
+
 ## Updating the app's version number
 
 The default version number of the app is `1.0.0`.

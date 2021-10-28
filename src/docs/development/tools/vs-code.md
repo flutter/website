@@ -43,9 +43,10 @@ starter app template:
 
  1. Open the Command Palette
     (`Ctrl`+`Shift`+`P` (`Cmd`+`Shift`+`P` on macOS)).
- 1. Select the **Flutter: New Application Project** command and press `Enter`.
- 1. Enter your desired **Project name**.
+ 1. Select the **Flutter: New Project** command and press `Enter`.
+ 1. Select **Application** and press `Enter`.
  1. Select a **Project location**.
+ 1. Enter your desired **Project name**.
 
 ### Opening a project from existing source code
 
