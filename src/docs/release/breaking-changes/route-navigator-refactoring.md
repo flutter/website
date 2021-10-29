@@ -150,12 +150,12 @@ Relevant PR:
 * [PR 44930][] - Refactor the imperative api to continue working in the new navigation system
 
 
-[Issue 45938: Navigator 2.0]: {{site.repo.flutter}}/issues/45938
+[Issue 45938: Router]: {{site.repo.flutter}}/issues/45938
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.canPop`]: {{site.api}}/flutter/widgets/Navigator/canPop.html
-[Navigator 2.0 and Router]: /go/navigator-with-router
-[PR 44930: Navigator 2.0]: {{site.repo.flutter}}/pull/44930
+[Router]: /go/navigator-with-router
+[PR 44930]: {{site.repo.flutter}}/pull/44930
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`Route.install`]: {{site.api}}/flutter/widgets/Route/install.html
 [`RouteSetting.isInitialRoute`]: {{site.api}}/flutter/widgets/RouteSettings/isInitialRoute.html
