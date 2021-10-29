@@ -1,4 +1,3 @@
-import 'package:adaptive_app_demos/global/device_type.dart';
 import 'package:adaptive_app_demos/global/styling.dart';
 import 'package:adaptive_app_demos/widgets/scroll_view_with_scrollbars.dart';
 import 'package:flutter/material.dart';
@@ -69,5 +68,7 @@ class _TableRowItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Expanded(
       child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: Insets.medium, vertical: Insets.extraLarge), child: Text(label)));
+          padding: EdgeInsets.symmetric(
+              horizontal: Insets.medium, vertical: Insets.extraLarge),
+          child: Text(label)));
 }

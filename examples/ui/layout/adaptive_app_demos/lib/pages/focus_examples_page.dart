@@ -3,6 +3,7 @@ import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/gestures.dart';
 
 class FocusExamplesPage extends StatelessWidget {
   @override
@@ -204,3 +205,58 @@ Widget _roundedBorder() => Container(
     decoration: BoxDecoration(
         border: Border.all(color: Colors.orange),
         borderRadius: BorderRadius.circular(6)));
+
+class MyFocusTraversalWidget extends StatelessWidget {
+  Widget MyFormWithMultipleColumnsAndRows() {
+    return Form(
+      child: Container(),
+    );
+  }
+
+  Widget SubmitButton() {
+    return ElevatedButton(
+      onPressed: () => {DoNothingAction /* Submit */},
+      child: Text("Submit"),
+    );
+  }
+
+  @override
+  build(BuildContext context) {
+    // #docregion FocusTraversalGroup
+    return Column(children: [
+      FocusTraversalGroup(
+        child: MyFormWithMultipleColumnsAndRows(),
+      ),
+      SubmitButton(),
+    ]);
+    // #enddocregion FocusTraversalGroup
+  }
+}
+
+class MyHoverWidget extends StatefulWidget {
+  MyHoverWidget({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _MyHoverWidgetState createState() => _MyHoverWidgetState();
+}
+
+class _MyHoverWidgetState extends State<MyHoverWidget> {
+  bool _isMouseOver = false;
+
+  @override
+  Widget build(BuildContext context) {
+    // #docregion MouseOver
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isMouseOver = true),
+      onExit: (_) => setState(() => _isMouseOver = false),
+      onHover: (PointerHoverEvent e) => print(e.localPosition),
+      child: Container(
+        height: 500,
+        color: _isMouseOver ? Colors.blue : Colors.black,
+      ),
+    );
+    // #enddocregion MouseOver
+  }
+}

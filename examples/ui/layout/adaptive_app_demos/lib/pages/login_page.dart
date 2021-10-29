@@ -12,12 +12,14 @@ class LoginPage extends StatelessWidget {
     // Hide an optional element if the screen gets too small.
     bool hideDetailPanel = screenSize.shortestSide < 250;
     return Scaffold(
-      body: Flex(direction: useVerticalLayout ? Axis.vertical : Axis.horizontal, children: [
-        if (hideDetailPanel == false) ...[
-          Flexible(child: _LoginDetailPanel()),
-        ],
-        Flexible(child: _LoginForm()),
-      ]),
+      body: Flex(
+          direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
+          children: [
+            if (hideDetailPanel == false) ...[
+              Flexible(child: _LoginDetailPanel()),
+            ],
+            Flexible(child: _LoginForm()),
+          ]),
     );
   }
 }
@@ -54,7 +56,9 @@ class _LoginForm extends StatelessWidget {
               children: [
                 TextField(decoration: _getTextDecoration("Enter email...")),
                 SizedBox(height: 16),
-                TextField(decoration: _getTextDecoration("Enter password..."), obscureText: true),
+                TextField(
+                    decoration: _getTextDecoration("Enter password..."),
+                    obscureText: true),
                 SizedBox(height: 16),
                 OutlinedButton(
                     onPressed: handleLoginPressed,
@@ -73,4 +77,5 @@ class _LoginForm extends StatelessWidget {
   }
 }
 
-InputDecoration _getTextDecoration(String hint) => InputDecoration(border: OutlineInputBorder(), hintText: hint);
+InputDecoration _getTextDecoration(String hint) =>
+    InputDecoration(border: OutlineInputBorder(), hintText: hint);

@@ -15,6 +15,7 @@ dependencies:
   flextras: ^0.0.2
   provider: ^5.0.0
   universal_platform: ^1.0.0-nullsafety
+  platform: ^3.0.2
 
 dev_dependencies:
   flutter_test:

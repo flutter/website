@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 enum ScreenType { Handset, Tablet, Desktop, Watch }
 
@@ -21,11 +22,62 @@ ScreenType getFormFactor(BuildContext context) {
 }
 // #enddocregion getFormFactor
 
+// #docregion ScreenSize
 enum ScreenSize { Small, Normal, Large, ExtraLarge }
+
 ScreenSize getSize(BuildContext context) {
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
   if (deviceWidth > 900) return ScreenSize.ExtraLarge;
   if (deviceWidth > 600) return ScreenSize.Large;
   if (deviceWidth > 300) return ScreenSize.Normal;
   return ScreenSize.Small;
+}
+// #enddocregion ScreenSize
+
+class widgetWithBreakPoints extends StatelessWidget {
+  List<Widget> _getHandsetChildren() {
+    return ([
+      Text("Handset Child 1"),
+      Text("Handset Child 2"),
+      Text("Handset Child 3"),
+    ]);
+  }
+
+  List<Widget> _getNormalChildren() {
+    return ([
+      Text("Normal Child 1"),
+      Text("Normal Child 2"),
+      Text("Normal Child 3"),
+    ]);
+  }
+
+  Widget BackButton() {
+    return ElevatedButton(
+        onPressed: () => {DoNothingAction}, child: Icon(Icons.flutter_dash));
+  }
+
+  Widget WidgetSwap(BuildContext context) {
+    bool isHandset = MediaQuery.of(context).size.width < 600;
+
+    // #docregion WidgetSwap
+    Widget foo = Row(
+      children: [
+        BackButton(),
+        ...isHandset ? _getHandsetChildren() : _getNormalChildren(),
+      ],
+    );
+    // #enddocregion WidgetSwap
+
+    return foo;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // #docregion MediaQuery
+    bool isHandset = MediaQuery.of(context).size.width < 600;
+    return Flex(
+        children: [Text("Foo"), Text("Bar"), Text("Baz")],
+        direction: isHandset ? Axis.vertical : Axis.horizontal);
+    // #enddocregion MediaQuery
+  }
 }

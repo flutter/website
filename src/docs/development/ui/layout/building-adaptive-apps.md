@@ -248,11 +248,11 @@ and define it in terms of small to large:
 enum ScreenSize { Small, Normal, Large, ExtraLarge }
 
 ScreenSize getSize(BuildContext context) {
- double deviceWidth = MediaQuery.of(context).size.shortestSide;
- if (deviceWidth > 900) return ScreenSize.ExtraLarge;
- if (deviceWidth > 600) return ScreenSize.Large;
- if (deviceWidth > 300) return ScreenSize.Normal;
- return ScreenSize.Small;
+  double deviceWidth = MediaQuery.of(context).size.shortestSide;
+  if (deviceWidth > 900) return ScreenSize.ExtraLarge;
+  if (deviceWidth > 600) return ScreenSize.Large;
+  if (deviceWidth > 300) return ScreenSize.Normal;
+  return ScreenSize.Small;
 }
 ```
  
@@ -265,27 +265,24 @@ You can also use screen-based breakpoints to reflow your
 top-level widget trees. For example, you could switch
 from a vertical to a horizontal layout when the user isn’t on a handset:
 
-<!--skip-->
+<?code-excerpt "lib/global/device_size.dart (MediaQuery)"?>
 ```dart
 bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
-  children: [...],
-  direction: isHandset ?
-    Axis.vertical :
-    Axis.horizontal
-);
+    children: [Text("Foo"), Text("Bar"), Text("Baz")],
+    direction: isHandset ? Axis.vertical : Axis.horizontal);
 ```
 In another widget,
 you might swap some of the children completely: 
 
-<!--skip-->
+<?code-excerpt "lib/global/device_size.dart (WidgetSwap)"?>
 ```dart
-Widget foo = Row(children: [
-  BackButton(),
-  ...isHandset ?
-    _getHandsetChildren() :
-    _getNormalChildren(),
-],);
+Widget foo = Row(
+  children: [
+    BackButton(),
+    ...isHandset ? _getHandsetChildren() : _getNormalChildren(),
+  ],
+);
 ```
 
 #### Use LayoutBuilder for extra flexibility
@@ -304,15 +301,14 @@ depended on a global value.
 
 The previous example could be rewritten using `LayoutBuilder`:
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
 ```dart
-Widget foo = LayoutBuilder(builder: (_, constraints, __){
- bool useVerticalLayout = constraints.maxWidth < 400.0;
- return Flex(
-     children: [...],
-     direction: useVerticalLayout ?
-     Axis.vertical : Axis.horizontal
- );
+Widget foo = LayoutBuilder(
+    builder: (BuildContext context, BoxConstraints constraints) {
+  bool useVerticalLayout = constraints.maxWidth < 400.0;
+  return Flex(
+      children: [Text("Hello"), Text("World")],
+      direction: useVerticalLayout ? Axis.vertical : Axis.horizontal);
 });
 ```
 
@@ -334,7 +330,7 @@ you can use the [`Platform`][] API along with the `kIsWeb` value:
 
 [`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
 
-<!--skip-->
+<?code-excerpt "lib/global/device_type.dart (Platforms)"?>
 ```dart
 bool get isMobileDevice => !kIsWeb && (Platform.isIOS || Platform.isAndroid);
 bool get isDesktopDevice =>
@@ -356,35 +352,36 @@ if you create a single source of truth for styling values
 like padding, spacing, corner shape, font sizes, and so on.
 This can be done easily with some helper classes:
 
-<!--skip-->
+<?code-excerpt "lib/global/device_type.dart (Styling)"?>
 ```dart
-class Insets {
- static const double xsmall = 4;
- static const double small = 8;
- // etc
+class InsetValues {
+  static const double xsmall = 4;
+  static const double small = 8;
+  // etc
 }
-
 
 class Fonts {
- static const String raleway = 'Raleway';
- // etc
+  static const String raleway = 'Raleway';
+  // etc
 }
 
-class TextStyles {
- static const TextStyle raleway = const TextStyle(fontFamily: Fonts.raleway, ... );
- static late TextStyle body1 = raleway.copyWith( ... );
- // etc
+class TextStylesValues {
+  static const TextStyle raleway = const TextStyle(
+    fontFamily: Fonts.raleway,
+  );
+  static late TextStyle body1 = raleway.copyWith(color: Color(0xFF42A5F5));
+  // etc
 }
 ```
 
 These constants can then be used in place of hard-coded numeric values:
 
-<!--skip-->
+<?code-excerpt "lib/global/device_type.dart (UseConstants)"?>
 ```dart
 return Padding(
-    insets: EdgeInsets.all(Insets.small), 
-    child: Text('Hello!', style: TextStyles.body1)
-)
+  padding: EdgeInsets.all(InsetValues.small),
+  child: Text('Hello!', style: TextStylesValues.body1),
+);
 ```
 
 With all views referencing the same shared-design system rules,
@@ -492,14 +489,13 @@ If you need to implement custom scroll behavior,
 you can use the [`Listener`][] widget, which lets you
 customize how your UI reacts to the scroll wheel.
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (PointerScroll)"?>
 ```dart
 return Listener(
- onPointerSignal: (event) {
-   if (event is PointerScrollEvent) print(event.scrollDelta.dy);
- },
- child: ...
-);
+    onPointerSignal: (event) {
+      if (event is PointerScrollEvent) print(event.scrollDelta.dy);
+    },
+    child: Container());
 ```
 
 [`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html
@@ -573,14 +569,14 @@ of the tree that should be treated as a group when tabbing.
 For example, you might to tab through all the fields in
 a form before tabbing to the submit button:
 
-<!--skip-->
+<?code-excerpt "lib/pages/focus_examples_page.dart (FocusTraversalGroup)"?>
 ```dart
 return Column(children: [
-    FocusTraversalGroup(
-      child: MyFormWithMultipleColumnsAndRows();
-    ),
-    SubmitButton(),
-])
+  FocusTraversalGroup(
+    child: MyFormWithMultipleColumnsAndRows(),
+  ),
+  SubmitButton(),
+]);
 ```
 
 Flutter has several built-in ways to traverse widgets and groups,
@@ -635,7 +631,7 @@ already has a focus node, you can wrap it in a
 If you’d like to apply a set of keyboard shortcuts to a
 large section of the tree, you can use the [`Shortcuts`][] widget:
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Shortcuts)"?>
 ```dart
 // Define a class for each type of shortcut action you want
 class CreateNewItemIntent extends Intent {
@@ -646,7 +642,8 @@ Widget build(BuildContext context) {
   return Shortcuts(
     // Bind intents to key combinations
     shortcuts: <ShortcutActivator, Intent>{
-      SingleActivator(LogicalKeyboardKey.keyN, control: true): CreateNewItemIntent(),
+      SingleActivator(LogicalKeyboardKey.keyN, control: true):
+          CreateNewItemIntent(),
     },
     child: Actions(
       // Bind intents to an actual method in your code
@@ -654,10 +651,10 @@ Widget build(BuildContext context) {
         CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
             onInvoke: (CreateNewItemIntent intent) => _createNewItem()),
       },
-      // Your sub-tree must be wrapped in a focusNode, so it can take focus. 
+      // Your sub-tree must be wrapped in a focusNode, so it can take focus.
       child: Focus(
         autofocus: true,
-        child:  ...,
+        child: Container(),
       ),
     ),
   );
@@ -674,7 +671,7 @@ panels that can accept shortcuts whenever they're visible
 (regardless of their focus state). Adding global listeners
 is easy with [`RawKeyboard`][]:
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RawKeyboard)"?>
 ```dart
 void initState() {
   super.initState();
@@ -693,7 +690,7 @@ you can use the `RawKeyboard.instance.keysPressed` map.
 For example, a method like the following can check whether any
 of the provided keys are being held down:
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (KeysPressed)"?>
 ```dart
 static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
   return keys.intersection(RawKeyboard.instance.keysPressed).isNotEmpty;
@@ -703,12 +700,12 @@ static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
 Putting these two things together,
 you can fire an action when `Shift+N` is pressed:
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (HandleKey)"?>
 ```dart
-void _handleKey(event){
+void _handleKey(event) {
   if (event is RawKeyDownEvent) {
     bool isShiftDown = isKeyDown({
-      LogicalKeyboardKey.shiftLeft, 
+      LogicalKeyboardKey.shiftLeft,
       LogicalKeyboardKey.shiftRight,
     });
     if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
@@ -764,13 +761,16 @@ return MouseRegion(
 `MouseRegion` is also useful for creating custom
 rollover and hover effects:
 
-<!--skip-->
+<?code-excerpt "lib/pages/focus_examples_page.dart (MouseOver)"?>
 ```dart
 return MouseRegion(
   onEnter: (_) => setState(() => _isMouseOver = true),
   onExit: (_) => setState(() => _isMouseOver = false),
   onHover: (PointerHoverEvent e) => print(e.localPosition),
-  child: ...,
+  child: Container(
+    height: 500,
+    color: _isMouseOver ? Colors.blue : Colors.black,
+  ),
 );
 ```
 
@@ -900,23 +900,25 @@ comfortable on a given platform.
 Dealing with multi-select within a list is another area
 with subtle differences across platforms: 
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectShift)"?>
 ```dart
-static bool get isSpanSelectModifierDown
-  => isKeyDown([LogicalKeyboardKey.shiftLeft, LogicalKeyboardKey.shiftRight]);
+static bool get isSpanSelectModifierDown =>
+    isKeyDown({LogicalKeyboardKey.shiftLeft, LogicalKeyboardKey.shiftRight});
 ```
 
 To perform a platform-aware check for control or command,
 you can write something like this: 
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectModifierDown)"?>
 ```dart
 static bool get isMultiSelectModifierDown {
   bool isDown = false;
-  if (DeviceOS.isMacOS) {
-    isDown = isKeyDown([LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight]);
+  if (Platform.isMacOS) {
+    isDown = isKeyDown(
+        {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight});
   } else {
-    isDown = isKeyDown([LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight]);
+    isDown = isKeyDown(
+        {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight});
   }
   return isDown;
 }
@@ -950,19 +952,23 @@ users on the web tend to have an adverse reaction.
 
 Luckily, this is easy to support with the [`SelectableText`][] widget: 
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (SelectableText)"?>
 ```dart
 return SelectableText('Select me!');
 ```
 
 To support rich text, then use `TextSpan`: 
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RichTextSpan)"?>
 ```dart
-return SelectableText.rich(TextSpan(children: [
-  TextSpan(text: 'Hello'),
-  TextSpan(text: 'Bold', style: TextStyle(fontWeight: FontWeight.bold)),
-]));
+return SelectableText.rich(
+  TextSpan(
+    children: [
+      TextSpan(text: 'Hello'),
+      TextSpan(text: 'Bold', style: TextStyle(fontWeight: FontWeight.bold)),
+    ],
+  ),
+);
 ```
 
 [`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
@@ -1018,7 +1024,7 @@ and positioned:
 To show basic tooltips in Flutter,
 use the built-in [`Tooltip`][] widget:
 
-<!--skip-->
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Tooltip)"?>
 ```dart
 return const Tooltip(
   message: 'I am a Tooltip',

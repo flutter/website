@@ -1,10 +1,7 @@
-import 'package:adaptive_app_demos/app_model.dart';
-import 'package:adaptive_app_demos/global/device_type.dart';
 import 'package:adaptive_app_demos/global/styling.dart';
 import 'package:adaptive_app_demos/widgets/scroll_view_with_scrollbars.dart';
 import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 /// Shows 3 types of layout, a vertical for narrow screens, wide for wide screens, and a mixed mode.
 
