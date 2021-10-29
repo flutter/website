@@ -20,7 +20,7 @@ diff2html: true
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z6KZ3cTGBWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/Z6KZ3cTGBWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
 

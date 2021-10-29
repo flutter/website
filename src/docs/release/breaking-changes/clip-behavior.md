@@ -184,18 +184,18 @@ Relevant PRs:
 [PR 5868]:  {{site.github}}/flutter/engine/pull/5868
 [PR 5952]:  {{site.github}}/flutter/engine/pull/5952
 [PR 5973]:  {{site.github}}/flutter/engine/pull/5937
-[PR 18576]: {{site.github}}/flutter/flutter/pull/18576
-[PR 18616]: {{site.github}}/flutter/flutter/pull/18616
-[PR 20205]: {{site.github}}/flutter/flutter/pull/20205
-[PR 20538]: {{site.github}}/flutter/flutter/pull/20538
-[PR 20751]: {{site.github}}/flutter/flutter/pull/20751
-[PR 20752]: {{site.github}}/flutter/flutter/pull/20752
-[PR 21012]: {{site.github}}/flutter/flutter/pull/21012
-[PR 21703]: {{site.github}}/flutter/flutter/pull/21703
-[PR 21826]: {{site.github}}/flutter/flutter/pull/21826
+[PR 18576]: {{site.repo.flutter}}/pull/18576
+[PR 18616]: {{site.repo.flutter}}/pull/18616
+[PR 20205]: {{site.repo.flutter}}/pull/20205
+[PR 20538]: {{site.repo.flutter}}/pull/20538
+[PR 20751]: {{site.repo.flutter}}/pull/20751
+[PR 20752]: {{site.repo.flutter}}/pull/20752
+[PR 21012]: {{site.repo.flutter}}/pull/21012
+[PR 21703]: {{site.repo.flutter}}/pull/21703
+[PR 21826]: {{site.repo.flutter}}/pull/21826
 
 [`Clip`]: {{site.api}}/flutter/dart-ui/Clip-class.html
-[Issue 13736]: {{site.github}}/flutter/flutter/issues/13736
-[Issue 18057]: {{site.github}}/flutter/flutter/issues/18057
-[Issue 21830]: {{site.github}}/flutter/flutter/issues/21830
-[Issue 18057]: {{site.github}}/flutter/flutter/issues/18057
+[Issue 13736]: {{site.repo.flutter}}/issues/13736
+[Issue 18057]: {{site.repo.flutter}}/issues/18057
+[Issue 21830]: {{site.repo.flutter}}/issues/21830
+[Issue 18057]: {{site.repo.flutter}}/issues/18057

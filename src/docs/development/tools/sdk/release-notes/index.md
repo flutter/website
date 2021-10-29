@@ -36,19 +36,19 @@ releases to the stable channel.
 * Earlier
   * [Archived release notes][]
 
-[2.5.0 announcement]: https://medium.com/flutter/whats-new-in-flutter-2-5-6f080c3f3dc
+[2.5.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-2-5-6f080c3f3dc
 [2.5.0 release notes & change log]: release-notes/release-notes-2.5.0
-[2.2.0 announcement]: https://medium.com/flutter/whats-new-in-flutter-2-2-fd00c65e2039
+[2.2.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-2-2-fd00c65e2039
 [2.2.0 release notes & change log]: release-notes/release-notes-2.2.0
-[2.0.0 announcement]: https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65
+[2.0.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
 [2.0.0 release notes & change log]: release-notes/release-notes-2.0.0
-[1.22.0 announcement]: https://medium.com/flutter/announcing-flutter-1-22-stable-44f146009e5f
+[1.22.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-22-stable-44f146009e5f
 [1.22.0 release notes & change log]: release-notes/release-notes-1.22.0
-[1.20.0 announcement]: https://medium.com/flutter/announcing-flutter-1-20-2aaf68c89c75
+[1.20.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-20-2aaf68c89c75
 [1.20.0 release notes & change log]: release-notes/release-notes-1.20.0
-[1.17.0 announcement]: https://medium.com/flutter/announcing-flutter-1-17-4182d8af7f8e
+[1.17.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-17-4182d8af7f8e
 [1.17.0 release notes and change log]: release-notes/release-notes-1.17.0
-[1.12.13 announcement]: https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d
+[1.12.13 announcement]: {{site.flutter-medium}}/announcing-flutter-1-12-what-a-year-22c256ba525d
 [1.12.13 release notes and change log]: release-notes/release-notes-1.12.13
 [Archived release notes]: release-notes/release-notes-archive
-[Hotfixes to the Stable Channel]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
+[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/wiki/Hotfixes-to-the-Stable-Channel

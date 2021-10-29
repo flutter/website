@@ -45,7 +45,7 @@ shell from the directory where you wish to store your local Flutter clone:
 ```terminal
 $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-$ git clone -b dev {{site.github}}/flutter/flutter.git
+$ git clone -b dev {{site.repo.flutter}}.git
 $ export PATH="$PWD/flutter/bin:$PATH"
 $ cd ./flutter
 $ flutter doctor

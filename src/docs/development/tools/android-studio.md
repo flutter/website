@@ -36,10 +36,10 @@ You can create a new project in one of several ways.
 
 To create a new Flutter project from the Flutter starter app template:
 
- 1. In the IDE, click **Create New Project** from the **Welcome**
+ 1. In the IDE, click **New Project** from the **Welcome**
     window or **File > New > Project** from the main IDE window.
- 1. Select **Flutter** in the menu, and click **Next**.
- 1. Enter your desired **Project name** and **Project location**.
+ 1. Specify the **Flutter SDK path** and click **Next**.
+ 1. Enter your desired **Project name**, **Description** and **Project location**.
  1. If you might publish this app, [set the company domain](#note).
  1. Click **Finish**.
 
@@ -401,6 +401,6 @@ When filing new issues, include the output of [`flutter doctor`][].
 [Debugging Flutter apps]: /docs/testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
-[let us know]: {{site.github}}/flutter/website/issues/new
+[let us know]: {{site.repo.this}}/issues/new
 [Running DevTools from Android Studio]: /docs/development/tools/devtools/android-studio
 [Timeline view]: /docs/development/tools/devtools/performance

@@ -20,6 +20,8 @@ repo:
 
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
+  plugins: https://github.com/flutter/plugins
+  gallery: https://github.com/flutter/gallery
 dart:
   api: https://api.dart.dev
   sdk:
@@ -27,7 +29,7 @@ dart:
 sdk:
   channel: stable # When changing this value also update it in src/_assets/js/archive.js
 social:
-  twitter: https://twitter.com/flutterdev
+  twitter: https://twitter.com/FlutterDev
   youtube: https://www.youtube.com/flutterdev
 dart-site: https://dart.dev
 news: https://news.dartlang.org
@@ -39,12 +41,15 @@ pub-pkg: https://pub.dev/packages
 flutter-medium: https://medium.com/flutter
 medium: https://medium.com
 dartpad: https://dartpad.dev
+gallery: https://gallery.flutter.dev
 material: https://material.io
 so: https://stackoverflow.com
 github: https://github.com
 flutter-assets: https://flutter.github.io/assets-for-api-docs/assets
 android-dev: https://developer.android.com
 apple-dev: https://developer.apple.com
+google-blog: https://developers.googleblog.com
+developers: https://developers.google.com
 codelabs: https://codelabs.developers.google.com
 groups: https://groups.google.com
 firebase: https://firebase.google.com

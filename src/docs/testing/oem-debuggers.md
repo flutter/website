@@ -363,9 +363,9 @@ You can find the following debugging resources on
 
 [Android Debug Bridge (adb)]: {{site.android-dev}}/studio/command-line/adb
 [Debug your app]: {{site.android-dev}}/studio/debug
-[Debugging]: https://developer.apple.com/support/debugging/
+[Debugging]: {{site.apple-dev}}/support/debugging/
 [developer.android.com]: {{site.android-dev}}
-[developer.apple.com]: https://developer.apple.com
+[developer.apple.com]: {{site.apple-dev}}
 [DevTools]: /docs/development/tools/devtools
 [Flutter inspector]: /docs/development/tools/devtools/inspector
 [Flutter's modes]: /docs/testing/build-modes

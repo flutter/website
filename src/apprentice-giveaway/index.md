@@ -23,7 +23,7 @@ channel for summaries, discussions, and more.
 
 For more information, watch the following video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NVzIALG7CUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/NVzIALG7CUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ![Image of Dash with the book](/assets/images/homepage/DashWithApprenticeBook.png){:width="100%"}
 
@@ -87,7 +87,6 @@ You can find the [live stream][] on YouTube.
 [Razeware]: https://www.raywenderlich.com/
 [raywenderlich.com/flutter]: https://store.raywenderlich.com/products/flutter-apprentice-google
 [schedule]: #schedule
-[Twitter]: https://twitter.com/FlutterDev
+[Twitter]: {{site.social.twitter}}
 [YouTube]: {{site.youtube-site}}/c/FlutterCommunityVideos
 [Slack]: https://fluttercommunity.dev/joinslack
-

@@ -18,7 +18,7 @@ Before diving into this doc, you might want to watch a
 15-minute video from the [Flutter Youtube channel][] about
 the Cupertino package.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
@@ -2197,7 +2197,7 @@ plugin documentation.
 [Animation & Motion widgets]: /docs/development/ui/widgets/animation
 [Animations overview]: /docs/development/ui/animations
 [Animations tutorial]: /docs/development/ui/animations/tutorial
-[Apple's iOS design language]: https://developer.apple.com/design/resources
+[Apple's iOS design language]: {{site.apple-dev}}/design/resources
 [`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 [arb]: {{site.github}}/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
@@ -2219,10 +2219,10 @@ plugin documentation.
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [`flutter_facebook_login`]: {{site.pub-pkg}}/flutter_facebook_login
 [Flutter cookbook]: /docs/cookbook
-[Flutter Youtube channel]: https://www.youtube.com/flutterdev
+[Flutter Youtube channel]: {{site.youtube-site}}/flutterdev
 [`geolocator`]: {{site.pub-pkg}}/geolocator
 [`http` package]: {{site.pub-pkg}}/http
-[Human Interface Guidelines]: https://developer.apple.com/ios/human-interface-guidelines/overview/themes/
+[Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
 [`image_picker`]: {{site.pub-pkg}}/image_picker
 [internationalization guide]: /docs/development/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl

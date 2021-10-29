@@ -789,7 +789,7 @@ Flutter Gallery [running app][], [repo][]
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: /docs/cookbook
-[Flutter's Layered Design]: https://www.youtube.com/watch?v=dkyY9WCGMi0
+[Flutter's Layered Design]: {{site.youtube-site}}/watch?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html
@@ -817,8 +817,8 @@ Flutter Gallery [running app][], [repo][]
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[repo]: {{site.github}}/flutter/gallery
-[running app]: https://gallery.flutter.dev
+[repo]: {{site.repo.gallery}}
+[running app]: {{site.gallery}}
 [set up]: /docs/get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html

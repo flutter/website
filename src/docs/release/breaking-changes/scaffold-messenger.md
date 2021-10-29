@@ -199,7 +199,7 @@ Relevant PRs:
 [`ScaffoldMessenger`]: {{site.api}}/flutter/material/ScaffoldMessenger-class.html
 [`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[Issue #57218]: {{site.github}}/flutter/flutter/issues/57218
-[Issue #62921]: {{site.github}}/flutter/flutter/issues/62921
-[ScaffoldMessenger]: {{site.github}}/flutter/flutter/pull/64101
-[ScaffoldMessenger Migration]: {{site.github}}/flutter/flutter/pull/64170
+[Issue #57218]: {{site.repo.flutter}}/issues/57218
+[Issue #62921]: {{site.repo.flutter}}/issues/62921
+[ScaffoldMessenger]: {{site.repo.flutter}}/pull/64101
+[ScaffoldMessenger Migration]: {{site.repo.flutter}}/pull/64170

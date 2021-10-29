@@ -19,8 +19,8 @@ about evaluating and debugging Flutter's performance.
   * [How to write a render speed test for Flutter][speed-test]
   * [How to write a memory test for Flutter][memory-test]
 
-[memory-test]: {{site.github}}/flutter/flutter/wiki/How-to-write-a-memory-test-for-Flutter
-[speed-test]: {{site.github}}/flutter/flutter/wiki/How-to-write-a-render-speed-test-for-Flutter
+[memory-test]: {{site.repo.flutter}}/wiki/How-to-write-a-memory-test-for-Flutter
+[speed-test]: {{site.repo.flutter}}/wiki/How-to-write-a-render-speed-test-for-Flutter
 
 * What are some tools for capturing and analyzing performance
   metrics?
@@ -71,13 +71,13 @@ about evaluating and debugging Flutter's performance.
     visually in your IDE.
 
 [`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
-[debug.dart]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/debug.dart
-[framework.dart]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/framework.dart
+[debug.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/debug.dart
+[framework.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/framework.dart
 
 * How do I query the target frames per second (of the display)?
   * [Get the display refresh rate][]
 
-[Get the display refresh rate]: {{site.github}}/flutter/flutter/wiki/Engine-specific-Service-Protocol-extensions#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
+[Get the display refresh rate]: {{site.repo.flutter}}/wiki/Engine-specific-Service-Protocol-extensions#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
 
 * How to solve my app’s poor animations caused by an expensive
   Dart async function call that is blocking the UI thread?
@@ -109,7 +109,7 @@ about evaluating and debugging Flutter's performance.
   * To analyze and visualize the SKP file,
     check out the [Skia WASM debugger][].
 
-[Issue 21237]: {{site.github}}/flutter/flutter/issues/21237
+[Issue 21237]: {{site.repo.flutter}}/issues/21237
 [Skia WASM debugger]: https://debugger.skia.org/
 
 * How do I retrieve the shader persistent cache from a device?

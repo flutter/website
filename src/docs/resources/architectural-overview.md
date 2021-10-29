@@ -194,7 +194,7 @@ as often as once per rendered frame).
 This approach relies on certain characteristics of a language runtime (in
 particular, fast object instantiation and deletion). Fortunately, [Dart is
 particularly well suited for this
-task](https://medium.com/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
+task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
 
 ## Widgets
 
@@ -258,9 +258,9 @@ Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
 implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of both the
 [iOS Switch
-control](https://developer.apple.com/design/human-interface-guidelines/ios/controls/switches/)
+control]({{site.apple-dev}}/design/human-interface-guidelines/ios/controls/switches/)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
-[Android equivalent](https://material.io/develop/android/components/switches).
+[Android equivalent]({{site.material}}/develop/android/components/switches).
 
 This approach provides several benefits:
 
@@ -533,7 +533,7 @@ During this process, the `build()` method can introduce new widgets, as
 necessary, based on its state. As a simple example, in the preceding code
 fragment, `Container` has `color` and `child` properties. From looking at the
 [source
-code]({{site.github}}/flutter/flutter/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)
+code]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)
 for `Container`, you can see that if the color is not null, it inserts a
 `ColoredBox` representing the color:
 
@@ -598,7 +598,7 @@ The base class for every node in the render tree is
 defines an abstract model for layout and painting. This is extremely general: it
 does not commit to a fixed number of dimensions or even a Cartesian coordinate
 system (demonstrated by [this example of a polar coordinate
-system](https://dartpad.dev/0f020197a5d4c980342d5c7d9e935cee)). Each
+system]({{site.dartpad}}/0f020197a5d4c980342d5c7d9e935cee)). Each
 `RenderObject` knows its parent, but knows little about its children other than
 how to _visit_ them and their constraints. This provides `RenderObject` with
 sufficient abstraction to be able to handle a variety of use cases.
@@ -792,7 +792,7 @@ channel.setMethodCallHandler {
 ```
 
 Further examples of using platform channels, including examples for macOS, can
-be found in the [flutter/plugins]({{site.github}}/flutter/plugins)
+be found in the [flutter/plugins]({{site.repo.plugins}})
 repository<sup><a href="#a3">3</a></sup>. There are also [thousands of plugins
 already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and

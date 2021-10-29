@@ -66,4 +66,4 @@ If you need to manually upgrade your project, use the following steps:
   contain this line.
 {{site.alert.end}}
 
-[errors]: https://github.com/flutter/flutter/issues/50568
+[errors]: {{site.repo.flutter}}/issues/50568

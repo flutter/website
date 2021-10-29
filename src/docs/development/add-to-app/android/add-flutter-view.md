@@ -16,7 +16,7 @@ described.
 
 Fundamentally, the Flutter framework on the Dart side requires access to various
 activity-level events and lifecycles to function. Since the FlutterView (which
-is an [android.view.View](https://developer.android.com/reference/android/view/View.html))
+is an [android.view.View]({{site.android-dev}}/reference/android/view/View.html))
 can be added to any activity which is owned by the developer's application
 and since the FlutterView doesn't have access to activity level events, the
 developer must bridge those connections manually to the [FlutterEngine]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html).

@@ -273,13 +273,13 @@ Relevant PRs:
 * [Automatically applying Scrollbars on desktop platforms with configurable ScrollBehaviors][]
 
 
-[`ScrollConfiguration`]: https://master-api.flutter.dev/flutter/widgets/ScrollConfiguration-class.html
-[`ScrollBehavior`]: https://master-api.flutter.dev/flutter/widgets/ScrollBehavior-class.html
-[`MaterialScrollBehavior`]: https://master-api.flutter.dev/flutter/material/MaterialScrollBehavior-class.html
-[`CupertinoScrollBehavior`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoScrollBehavior-class.html
-[`Scrollbar`]: https://master-api.flutter.dev/flutter/material/Scrollbar-class.html
-[`CupertinoScrollbar`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoScrollbar-class.html
-[Issue #40107]: {{site.github}}/flutter/flutter/issues/40107
-[Issue #70866]: {{site.github}}/flutter/flutter/issues/70866
-[Exposing ScrollBehaviors for app-wide settings]: {{site.github}}/flutter/flutter/pull/76739
-[Automatically applying Scrollbars on desktop platforms with configurable ScrollBehaviors]: {{site.github}}/flutter/flutter/pull/78588
+[`ScrollConfiguration`]: {{site.master-api}}/flutter/widgets/ScrollConfiguration-class.html
+[`ScrollBehavior`]: {{site.master-api}}/flutter/widgets/ScrollBehavior-class.html
+[`MaterialScrollBehavior`]: {{site.master-api}}/flutter/material/MaterialScrollBehavior-class.html
+[`CupertinoScrollBehavior`]: {{site.master-api}}/flutter/cupertino/CupertinoScrollBehavior-class.html
+[`Scrollbar`]: {{site.master-api}}/flutter/material/Scrollbar-class.html
+[`CupertinoScrollbar`]: {{site.master-api}}/flutter/cupertino/CupertinoScrollbar-class.html
+[Issue #40107]: {{site.repo.flutter}}/issues/40107
+[Issue #70866]: {{site.repo.flutter}}/issues/70866
+[Exposing ScrollBehaviors for app-wide settings]: {{site.repo.flutter}}/pull/76739
+[Automatically applying Scrollbars on desktop platforms with configurable ScrollBehaviors]: {{site.repo.flutter}}/pull/78588

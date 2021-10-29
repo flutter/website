@@ -40,7 +40,7 @@ The following resources can help you get started:
 
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter#0
 [Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
-[detailed implementation guide]: https://developers.google.com/admob/flutter
+[detailed implementation guide]: {{site.developers}}/admob/flutter
 [file an issue]: {{site.github}}/googleads/googleads-mobile-flutter/issues
 [Monetizing apps with Flutter]: {{site.youtube-site}}/watch?v=m0d_pbgeeG8&feature=youtu.be
 [plugin]: {{site.pub-pkg}}/google_mobile_ads
