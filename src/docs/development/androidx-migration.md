@@ -110,5 +110,5 @@ haven’t been migrated to AndroidX yet.
 
 ### I'm having issues migrating to AndroidX
 
-[Open an issue on GitHub]({{site.github}}/flutter/flutter/issues/new/choose)
+[Open an issue on GitHub]({{site.repo.flutter}}/issues/new/choose)
 and add `[androidx-migration]` to the title of the issue.

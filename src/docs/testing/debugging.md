@@ -298,11 +298,11 @@ You might find the following docs useful:
 [Performance best practices]: /docs/perf/rendering/best-practices
 [Using an OEM debugger]: /docs/testing/oem-debuggers
 
-[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 
-[GitHub wiki]: {{site.github}}/flutter/flutter/wiki/
-[Using the Dart analyzer]: {{site.github}}/flutter/flutter/wiki/Using-the-Dart-analyzer
-[The Framework architecture]: {{site.github}}/flutter/flutter/wiki/The-Framework-architecture
+[GitHub wiki]: {{site.repo.flutter}}/wiki/
+[Using the Dart analyzer]: {{site.repo.flutter}}/wiki/Using-the-Dart-analyzer
+[The Framework architecture]: {{site.repo.flutter}}/wiki/The-Framework-architecture
 
 [Android Studio/IntelliJ]: /docs/development/tools/android-studio#run-app-with-breakpoints
 [VS Code]: /docs/development/tools/vs-code#run-app-with-breakpoints
@@ -323,5 +323,5 @@ You might find the following docs useful:
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
 
 [WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
-[widget_inspector.dart]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
+[widget_inspector.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
 [kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/master/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart

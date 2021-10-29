@@ -136,5 +136,5 @@ To include your course, [submit a PR][]:
 [Flutter & Dart - the Complete Guide, 2021 edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
-[submit a PR]: {{site.github}}/flutter/website/pulls
+[submit a PR]: {{site.repo.this}}/pulls
 

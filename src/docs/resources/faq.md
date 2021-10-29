@@ -1004,7 +1004,7 @@ apps built with Flutter should follow Apple's
 [`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html
 [apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
 [architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
-[architectural overview]: https://flutter.dev/docs/resources/architectural-overview
+[architectural overview]: /docs/resources/architectural-overview
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
 [catalog of Flutter's widgets]: /docs/development/ui/widgets
@@ -1013,8 +1013,8 @@ apps built with Flutter should follow Apple's
 [`color`]: {{site.api}}/flutter/widgets/Icon/color.html
 [Community]: /community
 [`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
-[contribute to Flutter]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
-[Contributing Guide]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
+[contribute to Flutter]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+[Contributing Guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
 [CodePen]: https://codepen.io/topic/flutter
 [Dart]: {{site.dart-site}}/
 [Dart DevTools]: /docs/development/tools/devtools
@@ -1024,25 +1024,25 @@ apps built with Flutter should follow Apple's
 [Discord]: https://discord.gg/N7Yshp4
 [`Divider`]: {{site.api}}/flutter/material/Divider-class.html
 [`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
-[easy starter issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
+[easy starter issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
 [editing Dart]: {{site.dart-site}}/tools
 [editor configuration]: /docs/get-started/editor
-[example of using isolates with Flutter]: {{site.github}}/flutter/flutter/blob/master/examples/layers/services/isolate.dart
-[example project]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
+[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
+[example project]: {{site.repo.flutter}}/tree/master/examples/platform_channel
 [Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 [Flutter DevTools]: /docs/development/tools/devtools/overview
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[Flutter 1.0]: https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html
-[Flutter 2]: https://developers.googleblog.com/2021/03/announcing-flutter-2.html
-[flutter_view]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_view
+[Flutter 1.0]: {{site.google-blog}}/2018/12/flutter-10-googles-portable-ui-toolkit.html
+[Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
+[flutter_view]: {{site.repo.flutter}}/tree/master/examples/flutter_view
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3
 [gesture system]: /docs/development/ui/advanced/gestures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [get_it]: {{site.pub}}/packages/get_it
-[GitHub]: {{site.github}}/flutter/flutter
+[GitHub]: {{site.repo.flutter}}
 [`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
-[guidelines]: https://developer.apple.com/app-store/review/guidelines/
+[guidelines]: {{site.apple-dev}}/app-store/review/guidelines/
 [Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
 [Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
 [hot reload]: #hot-reload
@@ -1053,16 +1053,16 @@ apps built with Flutter should follow Apple's
 [injectable]: {{site.pub}}/packages/injectable
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
 [iOS]: #run-ios
-[iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
+[iOS App Store Specific Considerations]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
 [iOS instructions]: /docs/deployment/ios
 [install]: /docs/get-started/install
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [internationalization tutorial]: /docs/development/accessibility-and-localization/internationalization
 [is easy]: /docs/development/packages-and-plugins/using-packages
-[issue #9253]: {{site.github}}/flutter/flutter/issues/9253
-[issue #14821]: {{site.github}}/flutter/flutter/issues/14821
-[issue tracker]: {{site.github}}/flutter/flutter/issues
-[issues related to running Flutter on Chromebooks]: {{site.github}}/flutter/flutter/labels/platform-arc
+[issue #9253]: {{site.repo.flutter}}/issues/9253
+[issue #14821]: {{site.repo.flutter}}/issues/14821
+[issue tracker]: {{site.repo.flutter}}/issues
+[issues related to running Flutter on Chromebooks]: {{site.repo.flutter}}/labels/platform-arc
 [`Iterable`]: {{site.api}}/flutter/dart-core/Iterable-class.html
 [JSON tutorial]: /docs/development/data-and-backend/json
 [kiwi]: {{site.pub}}/packages/kiwi
@@ -1075,19 +1075,19 @@ apps built with Flutter should follow Apple's
 [`MaterialButton`]: {{site.api}}/flutter/material/MaterialButton-class.html
 [MDC-103 Flutter: Material Theming]: {{site.codelabs}}/codelabs/mdc-103-flutter/index.html?index=..%2F..index#0
 [Measuring your app's size]: /docs/perf/app-size
-[minimal Flutter app]: {{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
+[minimal Flutter app]: {{site.repo.flutter}}/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
 [multiple Flutter screens or views]: /docs/development/add-to-app/multiple-flutters
 [`NotificationListener`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
 [one of the top design ideas of the decade]: https://www.fastcompany.com/90442092/the-14-most-important-design-ideas-of-the-decade-according-to-the-experts
-[only one license]: {{site.github}}/flutter/flutter/blob/master/LICENSE
+[only one license]: {{site.repo.flutter}}/blob/master/LICENSE
 [package ecosystem]: {{site.pub}}/flutter
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [platform and third-party APIs]: /docs/development/platform-integration/platform-channels
 [platform channels]: /docs/development/platform-integration/platform-channels
-[platform_view]: {{site.github}}/flutter/flutter/tree/master/examples/platform_view
+[platform_view]: {{site.repo.flutter}}/tree/master/examples/platform_view
 [popped]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [pub.dev]: {{site.pub}}
-[QA1795]: https://developer.apple.com/library/archive/qa/qa1795/_index.html
+[QA1795]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html
 [ready-made packages]: {{site.pub}}/flutter/
 [`Rect`]: {{site.api}}/flutter/dart-ui/Rect-class.html
 [Reflectly]: https://apps.apple.com/us/app/reflectly-journal-ai-diary/id1241229134

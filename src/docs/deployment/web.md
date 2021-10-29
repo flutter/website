@@ -125,9 +125,9 @@ so please [give us feedback][] if you see something that doesn’t look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /docs/development/platform-integration/web-images
-[Firebase Hosting]: https://firebase.google.com/docs/hosting
+[Firebase Hosting]: {{site.firebase}}/docs/hosting
 [GitHub Pages]: https://pages.github.com/
-[give us feedback]: {{site.github}}/flutter/flutter/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/smb/web-hosting/
 [`iframe`]: https://html.com/tags/iframe/
 [Web renderers]: /docs/development/tools/web-renderers

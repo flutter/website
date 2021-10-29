@@ -3,10 +3,10 @@ title: Performance
 description: Evaluating the performance of your app from several angles
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PKGguGUwSYE" 
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/PKGguGUwSYE" 
 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
 picture-in-picture" allowfullscreen></iframe>
-[Flutter performance basics](https://www.youtube.com/watch?v=PKGguGUwSYE)
+[Flutter performance basics]({{site.youtube-site}}/watch?v=PKGguGUwSYE)
 
 What is performance? Why is performance important? How do I improve performance?
 
@@ -81,12 +81,8 @@ How to ensure a longer battery life when running your app.
 
 [Measuring your app's size]: /docs/perf/app-size
 
-[speed]: https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22perf%3A+speed%22+sort%3Aupdated-asc+
-
-[energy]: https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22perf%3A+energy%22+sort%3Aupdated-asc+
-
-[memory]: https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22perf%3A+memory%22+sort%3Aupdated-asc+
-
-[size]: https://github.com/flutter/flutter/issues?q=is%3Aopen+label%3A%22perf%3A+app+size%22+sort%3Aupdated-asc+
-
-[performance]: https://github.com/flutter/flutter/issues?q=+label%3A%22severe%3A+performance%22
+[speed]: {{site.repo.flutter}}/issues?q=is%3Aopen+label%3A%22perf%3A+speed%22+sort%3Aupdated-asc+
+[energy]: {{site.repo.flutter}}/issues?q=is%3Aopen+label%3A%22perf%3A+energy%22+sort%3Aupdated-asc+
+[memory]: {{site.repo.flutter}}/issues?q=is%3Aopen+label%3A%22perf%3A+memory%22+sort%3Aupdated-asc+
+[size]: {{site.repo.flutter}}/issues?q=is%3Aopen+label%3A%22perf%3A+app+size%22+sort%3Aupdated-asc+
+[performance]: {{site.repo.flutter}}/issues?q=+label%3A%22severe%3A+performance%22

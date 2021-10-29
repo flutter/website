@@ -52,7 +52,7 @@ $ ./flutter/bin/flutter --version
 For additional details on how our installation bundles are structured,
 see [Installation bundles][].
 
-[Flutter Spring 2020 Update]: {{site.medium}}/flutter/flutter-spring-2020-update-f723d898d7af
+[Flutter Spring 2020 Update]: {{site.flutter-medium}}/flutter-spring-2020-update-f723d898d7af
 [Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [GitHub repo]: {{site.repo.flutter}}
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

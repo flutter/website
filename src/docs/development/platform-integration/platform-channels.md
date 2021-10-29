@@ -9,10 +9,9 @@ platform-specific functionality is available through existing packages;
 see [using packages][].
 
 {{site.alert.note}}
-  The information in this page is valid for most
-  plugins, except for any web plugin implemented
-  as a [federated plugin][]. Federated plugins
-  don't use platform channels.
+  The information in this page is valid for most platforms,
+  but platform-specific code for the web generally uses
+  [JS interoperability][] or the [`dart:html` library][] instead.
 {{site.alert.end}}
 
 Flutter uses a flexible system that allows you to call
@@ -785,13 +784,14 @@ DispatchQueue.main.async {
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
 [`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
+[`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [defaultTargetPlatform]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [developing packages]: /docs/development/packages-and-plugins/developing-packages
 [plugins]: /docs/development/packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
-[`/examples/platform_channel/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel
-[`/examples/platform_channel_swift/`]: {{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift
-[federated plugin]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel
+[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel_swift
+[JS interoperability]: {{site.dart-site}}/web/js-interop
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html

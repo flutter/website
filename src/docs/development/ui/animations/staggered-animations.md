@@ -63,7 +63,7 @@ basic_staggered_animation:
 
 <div class="embedded-video-wrapper">
   <iframe class="embedded-video-wrapper__frame"
-    src="https://www.youtube.com/embed/0fFvnZemmh8?rel=0"
+    src="{{site.youtube-site}}/embed/0fFvnZemmh8?rel=0"
     frameborder="0" allowfullscreen>
   </iframe>
 </div>
@@ -370,9 +370,9 @@ Package not yet vetted.
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
 [Animations in Flutter tutorial]: /docs/development/ui/animations/tutorial
-[basic_staggered_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation
+[basic_staggered_animation]: {{site.repo.this}}/tree/master/examples/_animation/basic_staggered_animation
 [Building Layouts in Flutter]: /docs/development/ui/layout
-[staggered_pic_selection]: {{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection
+[staggered_pic_selection]: {{site.repo.this}}/tree/master/examples/_animation/staggered_pic_selection
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [flutter_sequence_animation]: {{site.pub}}/packages/flutter_sequence_animation

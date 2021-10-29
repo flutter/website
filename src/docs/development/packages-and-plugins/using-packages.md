@@ -423,7 +423,7 @@ To use this plugin:
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
 [Flutter Favorites program]: /docs/development/packages-and-plugins/favorites
 [Flutter landing page]: {{site.pub}}/flutter
-[FlutterFire]: {{site.github}}/flutter/plugins/blob/master/FlutterFire.md
+[FlutterFire]: {{site.repo.plugins}}/blob/master/FlutterFire.md
 [Gradle modules]: https://docs.gradle.org/current/userguide/declaring_dependencies.html
 [`http`]: /docs/cookbook/networking/fetch-data
 [Installing tab]: {{site.pub-pkg}}/css_colors/install

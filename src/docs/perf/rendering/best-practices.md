@@ -23,10 +23,10 @@ performant on the web:
 * [Building performant Flutter widgets][web-perf-3]
 
 
-[Flutter Gallery]: https://gallery.flutter.dev/#/
-[web-perf-1]: {{site.medium}}/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
-[web-perf-2]: {{site.medium}}/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
-[web-perf-3]: {{site.medium}}/flutter/building-performant-flutter-widgets-3b2558aa08fa
+[Flutter Gallery]: {{site.gallery}}
+[web-perf-1]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[web-perf-2]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
+[web-perf-3]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
 
 ## Best practices
 
@@ -65,7 +65,7 @@ Also see:
 * [Performance considerations][], part of the [`StatefulWidget`][] API doc
 
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
-[source code for `SlideTransition`]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/transitions.dart
+[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
 
@@ -177,7 +177,7 @@ If you are wondering why 60fps leads to a smooth visual experience,
 see the video [Why 60fps?][]
 
 [profile mode]: /docs/testing/build-modes#profile
-[Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
+[Why 60fps?]: {{site.youtube-site}}/watch?v=CaMTIgxCSqU
 
 ## Pitfalls
 

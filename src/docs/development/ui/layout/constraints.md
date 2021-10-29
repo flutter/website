@@ -1790,7 +1790,7 @@ Row(
 ```
 
 Since `Row` won’t impose any constraints onto its children,
-it’s quite possible that the children might too big to fit
+it’s quite possible that the children might be too big to fit
 the available width of the `Row`. In this case, just like an
 `UnconstrainedBox`, the `Row` displays the "overflow warning".
 
@@ -2083,8 +2083,8 @@ header image at the top of the article.
 
 
 [`Container` documentation]: {{site.api}}/flutter/widgets/Container-class.html
-[DartPad instance]: https://dartpad.dev/60174a95879612e500203084a0588f94
-[Flutter: The Advanced Layout Rule Even Beginners Must Know]: https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
+[DartPad instance]: {{site.dartpad}}/60174a95879612e500203084a0588f94
+[Flutter: The Advanced Layout Rule Even Beginners Must Know]: {{site.medium}}/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
 [GitHub]: {{site.github}}/marcglasberg
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
 [Simon Lightfoot]: {{site.github}}/slightfoot

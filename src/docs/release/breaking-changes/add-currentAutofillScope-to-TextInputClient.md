@@ -96,8 +96,8 @@ Relevant PRs:
 * [Framework PR that added autofill support][]
 
 
-[Framework PR that added autofill support]: {{site.github}}/flutter/flutter/pull/52126
-[Issue 13015: Autofill support]: {{site.github}}/flutter/flutter/issues/13015
+[Framework PR that added autofill support]: {{site.repo.flutter}}/pull/52126
+[Issue 13015: Autofill support]: {{site.repo.flutter}}/issues/13015
 
 [`AutofillGroup`]: {{site.api}}/flutter/widgets/AutofillGroup-class.html
 [`TextInputClient.currentAutofillScope`]: {{site.api}}/flutter/services/TextInputClient/currentAutofillScope.html

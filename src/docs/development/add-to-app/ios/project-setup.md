@@ -449,9 +449,9 @@ You can now [add a Flutter screen][] to your existing application.
 [Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
 [increases your app size]: /docs/resources/faq#how-big-is-the-flutter-engine
 [macOS system requirements for Flutter]: /docs/get-started/install/macos#system-requirements
-[On iOS 14 and higher]: https://developer.apple.com/news/?id=0oi77447
+[On iOS 14 and higher]: {{site.apple-dev}}/news/?id=0oi77447
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
-[static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
+[static or dynamic frameworks]: {{site.so}}/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [VS Code]: /docs/development/tools/vs-code
-[XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
+[XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
 [Xcode installed]: /docs/get-started/install/macos#install-xcode

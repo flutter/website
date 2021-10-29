@@ -1184,17 +1184,17 @@ The following videos, part of the
 [Flutter in Focus][] series,
 explain `Stateless` and `Stateful` widgets.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wE7khGHVkYY?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe width="560" height="315" src="https://www.youtube.com/embed/AqCMFXEmf3w?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter in Focus playlist](https://www.youtube.com/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/wE7khGHVkYY?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe width="560" height="315" src="{{site.youtube-site}}/embed/AqCMFXEmf3w?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter in Focus playlist]({{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
 
 Each episode of the
-[Widget of the Week series](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget of the Week series]({{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 focuses on a widget. Several of them includes layout widgets.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b_sQ9bMltGU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter Widget of the Week playlist](https://www.youtube.com/watch?v=yI-8QHpGIP4&index=5&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/b_sQ9bMltGU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter Widget of the Week playlist]({{site.youtube-site}}/watch?v=yI-8QHpGIP4&index=5&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources
 
@@ -1241,7 +1241,7 @@ The following resources might help when writing layout code.
 [Dealing with Box Constraints in Flutter]: /docs/development/ui/layout/box-constraints
 [Elevation]: {{site.material}}/design/environment/elevation.html
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
-[Flutter in Focus]: https://www.youtube.com/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus]: {{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
 [`GridTile`]: {{api}}/material/GridTile-class.html
 [HTML/CSS Analogs in Flutter]: /docs/get-started/flutter-for/web-devs
@@ -1272,5 +1272,5 @@ The following resources might help when writing layout code.
 [Debugging layout issues visually]: /docs/development/tools/devtools/inspector#debugging-layout-issues-visually
 [Understanding constraints]: /docs/development/ui/layout/constraints
 [Using the Flutter inspector]: /docs/development/tools/devtools/inspector
-[Widget of the Week series]: https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
+[Widget of the Week series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

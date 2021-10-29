@@ -992,7 +992,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Image-class.html",
-    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='20' width='60' height='60' fill='#ffffff'/><image x='22.5' y='22.5' width='55' height='55' xlink:href='/images/owl.jpg'/></svg>"
+    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='20' width='60' height='60' fill='#ffffff'/><image x='22.5' y='22.5' width='55' height='55' xlink:href='/assets/images/docs/owl.jpg'/></svg>"
   },
   {
     "name": "IndexedStack",

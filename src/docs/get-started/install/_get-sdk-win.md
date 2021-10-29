@@ -27,7 +27,7 @@ C:\src>git clone https://github.com/flutter/flutter.git -b stable
 
 You are now ready to run Flutter commands in the Flutter Console.
 
-[Flutter repo]: {{site.github}}/flutter/flutter
+[Flutter repo]: {{site.repo.flutter}}
 
 ### Update your path
 
@@ -87,6 +87,6 @@ verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 
-[Flutter repo]: {{site.github}}/flutter/flutter
+[Flutter repo]: {{site.repo.flutter}}
 [SDK releases]: /docs/development/tools/sdk/releases
 [Set up an editor]: /docs/get-started/editor?tab=androidstudio

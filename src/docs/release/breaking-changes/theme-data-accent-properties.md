@@ -177,7 +177,7 @@ Other:
 [`colorScheme.onSecondary`]: {{site.api}}/flutter/material/ColorScheme/onSecondary.html
 [`colorScheme.secondary`]: {{site.api}}/flutter/material/ColorScheme/secondary.html
 [`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
-[Issue #56918]: {{site.github}}/flutter/flutter/issues/56918
+[Issue #56918]: {{site.repo.flutter}}/issues/56918
 [FloatingActionButton and ThemeData's accent properties]: /docs/release/breaking-changes/fab-theme-data-accent-properties
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [`FloatingActionButtonTheme`]: {{site.api}}/flutter/material/FloatingActionButtonTheme-class.html
@@ -186,7 +186,7 @@ Other:
 [Material Theme System Updates]: /go/material-theme-system-updates
 [secondary color]: {{site.api}}/flutter/material/ColorScheme/secondary.html
 [onSecondary color]: {{site.api}}/flutter/material/ColorScheme/onSecondary.html
-[PR #81336]: {{site.github}}/flutter/flutter/pull/81336
+[PR #81336]: {{site.repo.flutter}}/pull/81336
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
 [`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html

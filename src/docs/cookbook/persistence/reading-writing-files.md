@@ -224,5 +224,5 @@ class _FlutterDemoState extends State<FlutterDemo> {
 [`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
 [`File`]: {{site.api}}/flutter/dart-io/File-class.html
 [`getCacheDir()`]: {{site.android-dev}}/reference/android/content/Context#getCacheDir()
-[`NSCachesDirectory`]: https://developer.apple.com/documentation/foundation/nssearchpathdirectory/nscachesdirectory
+[`NSCachesDirectory`]: {{site.apple-dev}}/documentation/foundation/nssearchpathdirectory/nscachesdirectory
 [`path_provider`]: {{site.pub-pkg}}/path_provider

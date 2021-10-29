@@ -2318,7 +2318,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Animations tutorial]: /docs/development/ui/animations/tutorial
 [Animations overview]: /docs/development/ui/animations
 [`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
-[Apple's iOS design language]: https://developer.apple.com/design/resources/
+[Apple's iOS design language]: {{site.apple-dev}}/design/resources/
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /docs/resources/architectural-overview#composition
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino

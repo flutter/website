@@ -171,7 +171,7 @@ Relevant PRs:
 * [PR #76288: Migrate to ChannelBuffers.push][]
 
 <!-- Master channel link: -->
-[`TestDefaultBinaryMessenger`]: https://master-api.flutter.dev/flutter/[link_to_relevant_page].html
-[`TestDefaultBinaryMessengerBinding`]: https://master-api.flutter.dev/flutter/[link_to_relevant_page].html
+[`TestDefaultBinaryMessenger`]: {{site.master-api}}/flutter/[link_to_relevant_page].html
+[`TestDefaultBinaryMessengerBinding`]: {{site.master-api}}/flutter/[link_to_relevant_page].html
 
-[PR #76288: Migrate to ChannelBuffers.push]: {{site.github}}/flutter/flutter/pull/76288
+[PR #76288: Migrate to ChannelBuffers.push]: {{site.repo.flutter}}/pull/76288

@@ -86,15 +86,15 @@ API documentation:
 * [`AutovalidateMode`]({{site.api}}/flutter/widgets/AutovalidateMode-class.html)
 
 Relevant issues:
-* [Issue 56363](https://github.com/flutter/flutter/issues/56363)
-* [Issue 18885](https://github.com/flutter/flutter/issues/18885)
-* [Issue 15404](https://github.com/flutter/flutter/issues/15404)
-* [Issue 36154](https://github.com/flutter/flutter/issues/36154)
-* [Issue 48876](https://github.com/flutter/flutter/issues/48876)
+* [Issue 56363]({{site.repo.flutter}}/issues/56363)
+* [Issue 18885]({{site.repo.flutter}}/issues/18885)
+* [Issue 15404]({{site.repo.flutter}}/issues/15404)
+* [Issue 36154]({{site.repo.flutter}}/issues/36154)
+* [Issue 48876]({{site.repo.flutter}}/issues/48876)
 
 Relevant PRs:
 * [PR 56365: FormField should autovalidate only if its
   content was changed]({{site.github}}/flutter/pull/56365)
 * [PR 59766: FormField should autovalidate only if its
   content was changed
-  (fixed)]({{site.github}}/flutter/flutter/pull/59766)
+  (fixed)]({{site.repo.flutter}}/pull/59766)

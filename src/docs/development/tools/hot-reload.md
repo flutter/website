@@ -362,5 +362,5 @@ widgets and render objects.
 [const-new]: https://news.dartlang.org/2012/06/const-static-final-oh-my.html
 [Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
 [Flutter editor]: /docs/get-started/editor
-[Issue 43574]: {{site.github}}/flutter/flutter/issues/43574
+[Issue 43574]: {{site.repo.flutter}}/issues/43574
 [kernel files]: {{site.github}}/dart-lang/sdk/tree/master/pkg/kernel

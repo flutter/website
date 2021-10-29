@@ -187,10 +187,10 @@ Relevant PRs:
 <!-- Master channel link: -->
 {% include docs/master-api.md %}
 
-[`ClassName`]: https://master-api.flutter.dev/flutter/[link_to_relevant_page].html
+[`ClassName`]: {{site.master-api}}/flutter/[link_to_relevant_page].html
 
-[Issue xxxx]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
-[Issue yyyy]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
-[PR title #1]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
-[PR title #2]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
+[Issue xxxx]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
+[Issue yyyy]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
+[PR title #1]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
+[PR title #2]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
 {% endcomment %}

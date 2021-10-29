@@ -270,13 +270,26 @@ creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
 <?code-excerpt path-base=""?>
-<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="}"?>
+<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="/^[ ]+\);$/"?>
 ```diff
 --- layout/lakes/step6/lib/main.dart
 +++ layout/lakes/interactive/lib/main.dart
 @@ -10,2 +5,2 @@
  class MyApp extends StatelessWidget {
    const MyApp({Key? key}) : super(key: key);
+@@ -40,11 +35,7 @@
+               ],
+             ),
+           ),
+-          Icon(
+-            Icons.star,
+-            color: Colors.red[500],
+-          ),
+-          const Text('41'),
++          const FavoriteWidget(),
+         ],
+       ),
+     );
 ```
 
 That's it! When you hot reload the app,
@@ -776,7 +789,7 @@ Flutter Gallery [running app][], [repo][]
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: /docs/cookbook
-[Flutter's Layered Design]: https://www.youtube.com/watch?v=dkyY9WCGMi0
+[Flutter's Layered Design]: {{site.youtube-site}}/watch?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html
@@ -804,8 +817,8 @@ Flutter Gallery [running app][], [repo][]
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[repo]: {{site.github}}/flutter/gallery
-[running app]: https://gallery.flutter.dev
+[repo]: {{site.repo.gallery}}
+[running app]: {{site.gallery}}
 [set up]: /docs/get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html

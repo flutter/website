@@ -97,6 +97,6 @@ Relevant PRs:
 * [iOS UITextInput autocorrection prompt][]
 
 
-[iOS UITextInput autocorrection prompt]: {{site.github}}/flutter/flutter/pull/54119/
-[Issue 12920]: {{site.github}}/flutter/flutter/issues/12920
+[iOS UITextInput autocorrection prompt]: {{site.repo.flutter}}/pull/54119/
+[Issue 12920]: {{site.repo.flutter}}/issues/12920
 [`TextInputClient`]: {{site.api}}/flutter/services/TextInputClient-class.html

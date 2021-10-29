@@ -133,8 +133,8 @@ Relevant issue:
 Relevant PR:
 * [Clean up hero controller scope][]
 
-[Clean up hero controller scope]: {{site.github}}/flutter/flutter/pull/60655
+[Clean up hero controller scope]: {{site.repo.flutter}}/pull/60655
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`HeroController`]: {{site.api}}/flutter/widgets/HeroController-class.html
 [`HeroControllerScope`]: {{site.api}}/flutter/widgets/HeroControllerScope-class.html
-[Issue 45938]: {{site.github}}/flutter/flutter/issues/45938
+[Issue 45938]: {{site.repo.flutter}}/issues/45938

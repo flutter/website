@@ -87,4 +87,4 @@ Relevant PR:
 [`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`showTimePicker`]: {{site.api}}/flutter/material/showTimePicker.html
 [`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
-[PR 58829: Matching Material Spec for Dialog shape]: {{site.github}}/flutter/flutter/pull/58829
+[PR 58829: Matching Material Spec for Dialog shape]: {{site.repo.flutter}}/pull/58829
