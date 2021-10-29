@@ -680,7 +680,7 @@ I/flutter :  └SemanticsNode(3; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
 I/flutter :    └SemanticsNode(4; Rect.fromLTRB(0.0, 0.0, 82.0, 36.0); canBeTapped; "Dump App")
 ```
 
-<!-- this tree is bad, see {{site.github}}/flutter/flutter/issues/2476 -->
+<!-- this tree is bad, see {{site.repo.flutter}}/issues/2476 -->
 
 ### Scheduling
 

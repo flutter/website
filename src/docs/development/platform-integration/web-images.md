@@ -184,10 +184,10 @@ the HTML renderer instead of CanvasKit.
 [13]: {{site.api}}/flutter/widgets/Image/Image.memory.html
 [14]: {{site.api}}/flutter/widgets/Image/Image.asset.html
 [15]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[16]: https://firebase.google.com/docs/hosting/full-config#headers
+[16]: {{site.firebase}}/docs/hosting/full-config#headers
 [17]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
 [18]: https://developers.cloudflare.com/workers/examples/cors-header-proxy
 [19]: {{site.github}}/7kfpun/cors-proxy
-[20]: {{site.github}}/flutter/flutter/issues/71884
+[20]: {{site.repo.flutter}}/issues/71884
 [21]: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 [22]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch

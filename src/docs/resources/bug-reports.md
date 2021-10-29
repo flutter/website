@@ -103,6 +103,6 @@ Follow these steps only if your issue is related to the
 ![crash report](/assets/images/docs/crash_reports.png){:width="100%"}
 
 
-[DartPad]: https://dartpad.dev
-[Flutter issue]: {{site.github}}/flutter/flutter/issues/new/choose
-[Website issue]: {{site.github}}/flutter/website/issues/new/choose
+[DartPad]: {{site.dartpad}}
+[Flutter issue]: {{site.repo.flutter}}/issues/new/choose
+[Website issue]: {{site.repo.this}}/issues/new/choose

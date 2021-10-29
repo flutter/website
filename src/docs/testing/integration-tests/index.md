@@ -327,15 +327,15 @@ Instead of calling `driver.wait*` API,
 use `WidgetTester.pumpAndSettle()` or
 equivalent methods.
 
-[Android Device Testing]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#android-device-testing
+[Android Device Testing]: {{site.repo.flutter}}/tree/master/packages/integration_test#android-device-testing
 [Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Firebase Console]: http://console.firebase.google.com/
-[Firebase Test Lab]: https://firebase.google.com/docs/test-lab
-[Firebase Test Lab section of the README]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#firebase-test-lab
-[Firebase TestLab iOS instructions]: https://firebase.google.com/docs/test-lab/ios/firebase-console
+[Firebase Test Lab]: {{site.firebase}}/docs/test-lab
+[Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/master/packages/integration_test#firebase-test-lab
+[Firebase TestLab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
-[`integration_test`]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#integration_test
-[integration_test usage]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#usage
-[iOS Device Testing]: {{site.github}}/flutter/flutter/tree/master/packages/integration_test#ios-device-testing
-[Running Flutter driver tests with web]: {{site.github}}/flutter/flutter/wiki/Running-Flutter-Driver-tests-with-Web
+[`integration_test`]: {{site.repo.flutter}}/tree/master/packages/integration_test#integration_test
+[integration_test usage]: {{site.repo.flutter}}/tree/master/packages/integration_test#usage
+[iOS Device Testing]: {{site.repo.flutter}}/tree/master/packages/integration_test#ios-device-testing
+[Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
 [widget tests]: /docs/testing#widget-tests

@@ -152,7 +152,7 @@ I haven't been able to figure out how to play the mp4 file...
 
 !["Born to Hot Reload" jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
 
-[Flutter Interact]: https://developers.google.com/events/flutter-interact
+[Flutter Interact]: {{site.developers}}/events/flutter-interact
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/
 
 {% comment %}

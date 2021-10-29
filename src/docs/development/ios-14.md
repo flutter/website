@@ -87,15 +87,15 @@ See [Issue 60657][] for more details.
 
 
 [`FlutterEngine`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
-[Issue 60657]: {{site.github}}/flutter/flutter/issues/60657#issuecomment-688478590
+[Issue 60657]: {{site.repo.flutter}}/issues/60657#issuecomment-688478590
 
 
 ## Conclusion
 
 You might also be interested in the following tracking bugs:
 
-* [Issue 60133: Support Xcode 12]({{site.github}}/flutter/flutter/issues/60133)
-* [Issue 61047: Support iOS 14]({{site.github}}/flutter/flutter/issues/61047)
+* [Issue 60133: Support Xcode 12]({{site.repo.flutter}}/issues/60133)
+* [Issue 61047: Support iOS 14]({{site.repo.flutter}}/issues/61047)
 
 If you experience other bugs or unpolished edges when developing for iOS 14,
-please [file a bug!]({{site.github}}/flutter/flutter/issues/new/choose)
+please [file a bug!]({{site.repo.flutter}}/issues/new/choose)

@@ -96,5 +96,5 @@ Relevant PRs:
 
 [`AnnotatedRegionLayer`]: {{site.api}}/flutter/rendering/AnnotatedRegionLayer-class.html
 [`AnnotationEntry`]: {{site.api}}/flutter/rendering/AnnotationEntry-class.html
-[Issue #49568]: {{site.github}}/flutter/flutter/issues/49568
-[Make Annotation's localPosition relative to object]: {{site.github}}/flutter/flutter/pull/50157
+[Issue #49568]: {{site.repo.flutter}}/issues/49568
+[Make Annotation's localPosition relative to object]: {{site.repo.flutter}}/pull/50157

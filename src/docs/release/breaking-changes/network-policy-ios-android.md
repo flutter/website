@@ -17,7 +17,7 @@ Use HTTPS instead.
 
 {{site.alert.important}}
   This change over-restricted HTTP access on local networks beyond the
-  restrictions imposed by mobile platforms ([flutter/flutter#72723](https://github.com/flutter/flutter/issues/72723)).
+  restrictions imposed by mobile platforms ([flutter/flutter#72723]({{site.repo.flutter}}/issues/72723)).
 
   This change has since been reverted.
 {{site.alert.end}}
@@ -35,8 +35,8 @@ You can override this behavior by following the
 platform-specific guidelines to define a domain-specific
 network policy. See the migration guide below for details.
 
-[API 28]: https://developer.android.com/training/articles/security-config#CleartextTrafficPermitted
-[iOS 9]: https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity
+[API 28]: {{site.android-dev}}/training/articles/security-config#CleartextTrafficPermitted
+[iOS 9]: {{site.apple-dev}}/documentation/bundleresources/information_property_list/nsapptransportsecurity
 
 Much like the platforms, the application can still open
 insecure socket connections. Flutter does not enforce
@@ -100,8 +100,8 @@ We **do not** recommend you do this for your release builds.
   cleartext connections in your app.
 
 
-[network security config]: https://developer.android.com/training/articles/security-config#CleartextTrafficPermitted
-[NSExceptionDomains]: https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity/nsexceptiondomains
+[network security config]: {{site.android-dev}}/training/articles/security-config#CleartextTrafficPermitted
+[NSExceptionDomains]: {{site.apple-dev}}/documentation/bundleresources/information_property_list/nsapptransportsecurity/nsexceptiondomains
 
 ## Timeline
 

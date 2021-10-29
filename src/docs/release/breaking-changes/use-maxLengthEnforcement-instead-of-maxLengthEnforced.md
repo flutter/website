@@ -255,10 +255,10 @@ Relevant PR:
 
 [`maxLength`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
 
-[Issue 63753]: {{site.github}}/flutter/flutter/issues/63753
+[Issue 63753]: {{site.repo.flutter}}/issues/63753
 
-[Issue 67898]: {{site.github}}/flutter/flutter/issues/67898
+[Issue 67898]: {{site.repo.flutter}}/issues/67898
 
 [PR 63754]: {{site.github}}//flutter/flutter/pull/63754
 
-[PR 68086]: {{site.github}}/flutter/flutter/pull/68086
+[PR 68086]: {{site.repo.flutter}}/pull/68086

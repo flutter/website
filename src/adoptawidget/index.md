@@ -20,7 +20,7 @@ So, for the month of November, we’re extending a special
 invitation to contribute to the Flutter project by choosing
 a Widget and improving its API documentation.
 
-[on GitHub]: {{site.github}}/flutter/flutter
+[on GitHub]: {{site.repo.flutter}}
 [api.flutter.dev]: {{site.api}}
 
 ## Contributions
@@ -29,71 +29,71 @@ a Widget and improving its API documentation.
 
 - [Chinmay-KB]({{site.github}}/Chinmay-KB) contributed to the
   [WillPopScope docs]({{site.api}}/flutter/widgets/WillPopScope-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69563))
+  ([pull request]({{site.repo.flutter}}/pull/69563))
 - [chihempat]({{site.github}}/chihempat) contributed to the
   [SliverWithKeepAliveWidget docs]({{site.api}}/flutter/widgets/SliverWithKeepAliveWidget-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69557))
+  ([pull request]({{site.repo.flutter}}/pull/69557))
 - [obitodarky]({{site.github}}/obitodarky) contributed to the
   [Stepper docs]({{site.api}}/flutter/material/Stepper-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/70092))
-- [Sameerkash]({{site.github}}/Sameerkash) found an issue with the [StatusTransitionWidget docs](https://api.flutter.dev/flutter/widgets/StatusTransitionWidget-class.html) ([issue]({{site.github}}/flutter/flutter/issues/69558))
+  ([pull request]({{site.repo.flutter}}/pull/70092))
+- [Sameerkash]({{site.github}}/Sameerkash) found an issue with the [StatusTransitionWidget docs]({{site.api}}/flutter/widgets/StatusTransitionWidget-class.html) ([issue]({{site.repo.flutter}}/issues/69558))
 - [tadaspetra]({{site.github}}/tadaspetra) contributed to the
   [MaterialBanner docs]({{site.api}}/flutter/material/MaterialBanner-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69530))
+  ([pull request]({{site.repo.flutter}}/pull/69530))
 - [IsmailAbdirahman]({{site.github}}/IsmailAbdirahman) contributed to the
   [NotificationListener docs]({{site.api}}/flutter/widgets/NotificationListener-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69524))
+  ([pull request]({{site.repo.flutter}}/pull/69524))
 - [Aneesh Rao]({{site.github}}/sidrao2006) contributed to the
   [CircularProgressIndicator docs]({{site.api}}/flutter/material/CircularProgressIndicator-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69498))
+  ([pull request]({{site.repo.flutter}}/pull/69498))
 - [Abhishek Ghaskata]({{site.github}}/Abhishek01039) contributed to the
   [Hero docs]({{site.api}}/flutter/widgets/Hero-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/74415))
+  ([pull request]({{site.repo.flutter}}/pull/74415))
 - [singhsuryanshu]({{site.github}}/singhsuryanshu) contributed to the
   [FittedBox docs](site.api}}/flutter/widgets/FittedBox-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69503))
+  ([pull request]({{site.repo.flutter}}/pull/69503))
 - [parzuko]({{site.github}}/parzuko) contributed to the
   [Draggable docs]({{site.api}}/flutter/widgets/Draggable-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69527))
+  ([pull request]({{site.repo.flutter}}/pull/69527))
 - [Oscar Robles]({{site.github}}/oroblesr) contributed to the
   [ActionListener docs]({{site.api}}/flutter/widgets/ActionListener-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69717))
+  ([pull request]({{site.repo.flutter}}/pull/69717))
 - [arps18]({{site.github}}/arps18) contributed to the
   [Shortcuts docs]({{site.api}}/flutter/widgets/Shortcuts-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69568))
+  ([pull request]({{site.repo.flutter}}/pull/69568))
 - [Sanjoli Goyal]({{site.github}}/sanjoli63) contributed to the
   [ReorderableListView docs]({{site.api}}/flutter/material/ReorderableListView-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69650))
+  ([pull request]({{site.repo.flutter}}/pull/69650))
 - [Amitpatil215]({{site.github}}/Amitpatil215) contributed to the
   [AspectRatio docs]({{site.api}}/flutter/widgets/AspectRatio-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69509))
+  ([pull request]({{site.repo.flutter}}/pull/69509))
 - [CaptainIRS]({{site.github}}/CaptainIRS) contributed to the
   [AbsorbPointer docs]({{site.api}}/flutter/widgets/AbsorbPointer-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69521))
+  ([pull request]({{site.repo.flutter}}/pull/69521))
 - [Yazeed AlKhalaf]({{site.github}}/YazeedAlKhalaf) contributed to the
   [IgnorePointer docs]({{site.api}}/flutter/widgets/IgnorePointer-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/70185))
+  ([pull request]({{site.repo.flutter}}/pull/70185))
 - [abd99]({{site.github}}/abd99) contributed to the
   [Dismissible docs]({{site.api}}/flutter/widgets/Dismissible-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69535))
+  ([pull request]({{site.repo.flutter}}/pull/69535))
 - [Mitesh Singh]({{site.github}}/singhmitesh) contributed to the
   [PageView docs]({{site.api}}/flutter/widgets/PageView-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/71174))
+  ([pull request]({{site.repo.flutter}}/pull/71174))
 - [redsolver]({{site.github}}/redsolver) contributed to the
   [Table docs]({{site.api}}/flutter/widgets/Table-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69588))
+  ([pull request]({{site.repo.flutter}}/pull/69588))
 - [tsvillain]({{site.github}}/tsvillain) contributed to the
   [Tooltip docs]({{site.api}}/flutter/material/Tooltip-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69518))
+  ([pull request]({{site.repo.flutter}}/pull/69518))
 - [Thesmader]({{site.github}}/Thesmader) contributed to the
   [SnackBar docs]({{site.api}}/flutter/material/SnackBar-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69555))
+  ([pull request]({{site.repo.flutter}}/pull/69555))
 - [Muskan Jain]({{site.github}}/Muskan4010) contributed to the
   [ColorFiltered docs]({{site.api}}/flutter/widgets/ColorFiltered-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/71093))
+  ([pull request]({{site.repo.flutter}}/pull/71093))
 - [Sergio Eric]({{site.github}}/SergioEric) contributed to the
   [PreferredSizeWidget docs]({{site.api}}/flutter/widgets/PreferredSizeWidget-class.html)
-  ([pull request]({{site.github}}/flutter/flutter/pull/69539))
+  ([pull request]({{site.repo.flutter}}/pull/69539))
 
 ## How to contribute {#how-to-contribute}
 
@@ -111,8 +111,8 @@ The [CONTRIBUTING][]
 doc has details on contributing to Flutter.
 
 
-[CONTRIBUTING]: {{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md
-[this list of issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22adopt+a+widget%22+no%3Aassignee
+[CONTRIBUTING]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+[this list of issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22adopt+a+widget%22+no%3Aassignee
 
 ## Discord {#discord}
 
@@ -149,7 +149,7 @@ You can also take a look for
 [issues with the "d: api docs" label][]
 that need attention.
 
-[issues with the "d: api docs" label]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22d%3A+api+docs%22
+[issues with the "d: api docs" label]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22d%3A+api+docs%22
 
 **Be original**
 
@@ -163,9 +163,9 @@ Each issue specifies what type of contribution we are looking for:
 * Adding references (for example, under "See also")
 * Adding more explanation to the documentation
 
-[DartPad]: {{site.github}}/flutter/flutter/tree/master/dev/snippets#templates
-[sample]: {{site.github}}/flutter/flutter/tree/master/dev/snippets#sample-tool
-[snippet]: {{site.github}}/flutter/flutter/tree/master/dev/snippets#snippet-tool
+[DartPad]: {{site.repo.flutter}}/tree/master/dev/snippets#templates
+[sample]: {{site.repo.flutter}}/tree/master/dev/snippets#sample-tool
+[snippet]: {{site.repo.flutter}}/tree/master/dev/snippets#snippet-tool
 
 ### Adding code {#adding-code}
 
@@ -173,7 +173,7 @@ There are three ways to contribute code: a `snippet`,
 a `dartpad`, or a `sample`.
 For more details, see the [Dartdoc Generation README][].
 
-[Dartdoc Generation README]: {{site.github}}/flutter/flutter/tree/master/dev/snippets
+[Dartdoc Generation README]: {{site.repo.flutter}}/tree/master/dev/snippets
 
 Please be cognizant that writing _sample_ code has a different goal
 (and some additional constraints) compared to writing production code.
@@ -221,7 +221,7 @@ the snippet tool's [templates directory][].
 /// {@end-tool}
 ```
 
-[templates directory]: {{site.github}}/flutter/flutter/tree/master/dev/snippets/config/templates
+[templates directory]: {{site.repo.flutter}}/tree/master/dev/snippets/config/templates
 
 #### DartPad sample {#dartpad-sample}
 
@@ -277,7 +277,7 @@ and [Effective Dart - Documentation][]
 for details on how to write great documentation.
 
 [Effective Dart - Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
-[Flutter Style Guide]: {{site.github}}/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc
+[Flutter Style Guide]: {{site.repo.flutter}}/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc
 
 ## Quickstart {#quickstart}
 
@@ -300,9 +300,9 @@ fork the SDK and use `git` to fetch a local copy:
 6. Run `flutter update-packages` to fetch all the Dart packages that
    Flutter uses.
 
-[Flutter repo]: {{site.github}}/flutter/flutter
+[Flutter repo]: {{site.repo.flutter}}
 [GitHub's official instructions]: https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo
-[Setting up the Framework development environment]: {{site.github}}/flutter/flutter/wiki/Setting-up-the-Framework-development-environment
+[Setting up the Framework development environment]: {{site.repo.flutter}}/wiki/Setting-up-the-Framework-development-environment
 
 ### Open the code in your IDE {#open-the-code-in-your-ide}
 
@@ -338,9 +338,9 @@ To view the generated docs, open `dev/docs/doc/api/index.html`.
 For more information, see the [Dartdoc Generation README][].
 
 
-[analyze snippets]: {{site.github}}/flutter/flutter/tree/master/dev/snippets#running-sample-analysis-locally
-[Dartdoc Generation README]: {{site.github}}/flutter/flutter/tree/master/dev/snippets
-[Windows Subsystem for Linux]:https://docs.microsoft.com/en-us/windows/wsl/about
+[analyze snippets]: {{site.repo.flutter}}/tree/master/dev/snippets#running-sample-analysis-locally
+[Dartdoc Generation README]: {{site.repo.flutter}}/tree/master/dev/snippets
+[Windows Subsystem for Linux]: https://docs.microsoft.com/en-us/windows/wsl/about
 
 ### Commit the change {#commit-the-change}
 
@@ -393,4 +393,4 @@ closes #1234
 *   [Flutter Style Guide - Documentation][]
 *   [Effective Dart - Documentation][]
 
-[Flutter Style Guide - Documentation]: {{site.github}}/flutter/flutter/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc
+[Flutter Style Guide - Documentation]: {{site.repo.flutter}}/wiki/Style-guide-for-Flutter-repo#documentation-dartdocs-javadocs-etc

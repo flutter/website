@@ -86,4 +86,4 @@ see [this StackOverflow question][zsh].
 
 [Get the Flutter SDK]: #get-sdk
 [bash]: https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
-[zsh]: https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh
+[zsh]: {{site.so}}/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh

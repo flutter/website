@@ -115,4 +115,4 @@ Relevant PRs:
   use fake_async and clock instead
 
 [`TestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding-class.html
-[PR 54125]: {{site.github}}/flutter/flutter/pull/54125
+[PR 54125]: {{site.repo.flutter}}/pull/54125

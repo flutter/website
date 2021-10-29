@@ -205,12 +205,12 @@ Relevant PRs:
 * [Deprecate GestureDetector.kind in favor of new supportedDevices][]
 
 
-[`ScrollConfiguration`]: https://master-api.flutter.dev/flutter/widgets/ScrollConfiguration-class.html
-[`ScrollBehavior`]: https://master-api.flutter.dev/flutter/widgets/ScrollBehavior-class.html
-[`MaterialScrollBehavior`]: https://master-api.flutter.dev/flutter/material/MaterialScrollBehavior-class.html
-[`CupertinoScrollBehavior`]: https://master-api.flutter.dev/flutter/cupertino/CupertinoScrollBehavior-class.html
-[`PointerDeviceKind`]: https://master-api.flutter.dev/flutter/dart-ui/PointerDeviceKind-class.html
-[`GestureDetector`]: https://master-api.flutter.dev/flutter/widgets/GestureDetector-class.html
-[Issue #71322]: {{site.github}}/flutter/flutter/issues/71322
-[Reject mouse drags by default in scrollables]: {{site.github}}/flutter/flutter/pull/81569
-[Deprecate GestureDetector.kind in favor of new supportedDevices]: {{site.github}}/flutter/flutter/pull/81858
+[`ScrollConfiguration`]: {{site.master-api}}/flutter/widgets/ScrollConfiguration-class.html
+[`ScrollBehavior`]: {{site.master-api}}/flutter/widgets/ScrollBehavior-class.html
+[`MaterialScrollBehavior`]: {{site.master-api}}/flutter/material/MaterialScrollBehavior-class.html
+[`CupertinoScrollBehavior`]: {{site.master-api}}/flutter/cupertino/CupertinoScrollBehavior-class.html
+[`PointerDeviceKind`]: {{site.master-api}}/flutter/dart-ui/PointerDeviceKind-class.html
+[`GestureDetector`]: {{site.master-api}}/flutter/widgets/GestureDetector-class.html
+[Issue #71322]: {{site.repo.flutter}}/issues/71322
+[Reject mouse drags by default in scrollables]: {{site.repo.flutter}}/pull/81569
+[Deprecate GestureDetector.kind in favor of new supportedDevices]: {{site.repo.flutter}}/pull/81858

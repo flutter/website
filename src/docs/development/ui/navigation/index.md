@@ -29,7 +29,7 @@ Flutter’s new navigation and routing system][], and the [`Router`][]
 API docs.
 
 [Flutter cookbook]: /docs/cookbook
-[Learning Flutter’s new navigation and routing system]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Learning Flutter’s new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [Navigation recipes]: /docs/cookbook/navigation
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Router`]: {{site.api}}/flutter/widgets/Router-class.html

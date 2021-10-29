@@ -23,4 +23,4 @@ session from your Dart or Flutter application.
 
 {% include_relative _profiler.md %}
 
-[analyze performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/
+[analyze performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/

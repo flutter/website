@@ -56,7 +56,7 @@ If you want the latest version of desktop support,
 you must switch to the Flutter beta channel.
 
 
-[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
+[file an issue]: {{site.repo.flutter}}/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
 
 ## Requirements
 
@@ -734,7 +734,7 @@ and `com.apple.security.device.microphone` (for App Sandbox).
 For more information on this topic,
 see [Hardened Runtime][] on the Apple Developer site.
 
-[Hardened Runtime]: https://developer.apple.com/documentation/security/hardened_runtime
+[Hardened Runtime]: {{site.apple-dev}}/documentation/security/hardened_runtime
 
 ## Plugin support
 
@@ -811,7 +811,7 @@ about endorsed plugins, see the following resources:
 [Federated Plugin proposal]: /go/federated-plugins
 [Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
 [How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
-[Modern Flutter Plugin Development]: {{site.medium}}/flutter/modern-flutter-plugin-development-4c3ee015cf5a
+[Modern Flutter Plugin Development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
 
 ## Samples and codelabs
 
@@ -846,9 +846,9 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
 
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
-[running web app]: https://gallery.flutter.dev
-[flutter-gallery-repo]: {{site.github}}/flutter/gallery
-[README]: {{site.github}}/flutter/gallery#flutter-gallery
+[running web app]: {{site.gallery}}
+[flutter-gallery-repo]: {{site.repo.gallery}}
+[README]: {{site.repo.gallery}}#flutter-gallery
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
-[Write a Flutter desktop application]: https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/index.html
