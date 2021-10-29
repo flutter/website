@@ -341,7 +341,7 @@ Add the text section to the body:
 Three of the four column elements are now complete,
 leaving only the image. Add the image file to the example:
 
-* Create an `images` directory at the top of the project.
+* Create an `assets/images` directory at the top of the project.
 * Add [`lake.jpg`][].
 
 {{site.alert.info}}
