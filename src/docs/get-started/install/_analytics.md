@@ -28,6 +28,6 @@
 
   [Google Terms of Service]: https://policies.google.com/terms
   [Privacy Policy]: https://policies.google.com/privacy
-  [crash reports]: https://github.com/flutter/flutter/wiki/Flutter-CLI-crash-reporting
-  [`dart` tool]: https://dart.dev/tools/dart-tool
+  [crash reports]: {{site.repo.flutter}}/wiki/Flutter-CLI-crash-reporting
+  [`dart` tool]: {{site.dart-site}}/tools/dart-tool
 {{site.alert.end}}

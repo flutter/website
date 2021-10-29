@@ -264,6 +264,6 @@ widget within a `Scrollable` or within the screen.
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [`Flow`]: {{site.api}}/flutter/widgets/Flow-class.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Issue 44152]: {{site.github}}/flutter/flutter/issues/44152
+[Issue 44152]: {{site.repo.flutter}}/issues/44152
 [`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
 

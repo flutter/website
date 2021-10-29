@@ -141,12 +141,12 @@ Relevant PRs:
 
 * [Defer image decoding when scrolling fast #49389][]
 
-[Stopped increasing the cache size to accommodate large images]: {{site.github}}/flutter/flutter/pull/47387
+[Stopped increasing the cache size to accommodate large images]: {{site.repo.flutter}}/pull/47387
 [`ImageCache`]: {{site.api}}/flutter/painting/ImageCache-class.html
 [`ImageProvider`]: {{site.api}}/flutter/painting/ImageProvider-class.html
 [`ScrollAwareImageProvider`]: {{site.api}}/flutter/widgets/ScrollAwareImageProvider-class.html
-[Issue #32143]: {{site.github}}/flutter/flutter/issues/32143
-[Issue #44510]: {{site.github}}/flutter/flutter/issues/44510
-[Issue #48305]: {{site.github}}/flutter/flutter/issues/48305
-[Issue #48775]: {{site.github}}/flutter/flutter/issues/48775
-[Defer image decoding when scrolling fast #49389]: {{site.github}}/flutter/flutter/pull/49389
+[Issue #32143]: {{site.repo.flutter}}/issues/32143
+[Issue #44510]: {{site.repo.flutter}}/issues/44510
+[Issue #48305]: {{site.repo.flutter}}/issues/48305
+[Issue #48775]: {{site.repo.flutter}}/issues/48775
+[Defer image decoding when scrolling fast #49389]: {{site.repo.flutter}}/pull/49389

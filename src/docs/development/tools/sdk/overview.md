@@ -39,4 +39,4 @@ The [`dart` CLI tool][] is available with the Flutter SDK at `flutter/bin/dart`.
 [`dart` CLI tool]: {{site.dart-site}}/tools/dart-tool
 [`flutter` CLI tool]: /docs/reference/flutter-cli
 [Install]: /docs/get-started/install
-[README file]: {{site.github}}/flutter/flutter/blob/master/README.md
+[README file]: {{site.repo.flutter}}/blob/master/README.md

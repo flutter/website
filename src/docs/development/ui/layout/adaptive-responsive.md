@@ -111,7 +111,7 @@ including contributions from the Flutter community:
 [`FittedBox`]: {{site.api}}/flutter/widgets/FittedBox-class.html
 
 [`FractionallySizedBox`]: {{site.api}}/flutter/widgets/FractionallySizedBox-class.html
-[How to make flutter app responsive according to different screen size?]: https://stackoverflow.com/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size
+[How to make flutter app responsive according to different screen size?]: {{site.so}}/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [Making Cross-platform Flutter Landing Page Responsive]: {{site.medium}}/flutter-community/making-cross-platform-flutter-landing-page-responsive-7fffe0655970
 [`maxWidth`]: {{site.api}}/flutter/rendering/BoxConstraints/maxWidth.html
@@ -129,17 +129,17 @@ Learn more about creating an adaptive Flutter app with
 You might also check out the following episodes
 of The Boring Show:
 
-<iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/n6Awpg1MO6M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/n6Awpg1MO6M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Adaptive layouts][]
 
-<iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/eikOZzfc0l4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/eikOZzfc0l4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Adaptive layouts, part 2][]
 
 For an excellent example of an adaptive app,
 check out Flutter Folio, a scrapbooking app created 
 in collaboration with gskinner and the Flutter team:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yytBENOnF0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/yytBENOnF0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The [Folio source code][] is also available on GitHub.
 Learn more on the [gskinner blog][].
@@ -155,13 +155,13 @@ in the following resources:
 * The [Flutter gallery app][] ([repo][]) has been written as an
   adaptive app.
 
-[Adaptive layouts]: https://www.youtube.com/watch?v=n6Awpg1MO6M&t=694s
-[Adaptive layouts, part 2]: https://www.youtube.com/watch?v=eikOZzfc0l4&t=11s
+[Adaptive layouts]: {{site.youtube-site}}/watch?v=n6Awpg1MO6M&t=694s
+[Adaptive layouts, part 2]: {{site.youtube-site}}/watch?v=eikOZzfc0l4&t=11s
 [Building adaptive apps]: /docs/development/ui/layout/building-adaptive-apps
 
 [Designing truly adaptive user interfaces]: https://aloisdeniel.com/#/posts/adaptative-ui
-[Flutter gallery app]: https://gallery.flutter.dev/#/
+[Flutter gallery app]: {{site.gallery}}
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
 [Platform-specific behaviors and adaptations]: /docs/resources/platform-adaptations
-[repo]: {{site.github}}/flutter/gallery
+[repo]: {{site.repo.gallery}}

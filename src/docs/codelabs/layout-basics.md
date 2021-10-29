@@ -3364,8 +3364,8 @@ You can download Flutter from the [install][] page.
 [Building layouts]: /docs/development/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new
-[Flutter's YouTube channel]: https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw
-[GitHub]: {{site.github}}/flutter/website/tree/master/examples/layout/sizing/images
+[Flutter's YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+[GitHub]: {{site.repo.this}}/tree/master/examples/layout/sizing/images
 [install]: /docs/get-started/install
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html
 [Material Color palette]: {{site.api}}/flutter/material/Colors-class.html

@@ -93,6 +93,6 @@ Relevant PRs:
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [`ColoredBox`]: {{site.api}}/flutter/widgets/ColoredBox-class.html
 [`BoxDecoration`]: {{site.api}}/flutter/widgets/BoxDecoration-class.html
-[Issue 9672]: {{site.github}}/flutter/flutter/issues/9672
-[Issue 28753]: {{site.github}}/flutter/flutter/issues/28753
-[Colored box and container optimization #50979]: {{site.github}}/flutter/flutter/pull/50979
+[Issue 9672]: {{site.repo.flutter}}/issues/9672
+[Issue 28753]: {{site.repo.flutter}}/issues/28753
+[Colored box and container optimization #50979]: {{site.repo.flutter}}/pull/50979

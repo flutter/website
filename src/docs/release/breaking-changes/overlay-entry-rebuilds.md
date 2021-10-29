@@ -108,12 +108,12 @@ Relevant PRs:
 * [Reland "Do not rebuild Routes when a new opaque Route is pushed on top"][]
 
 
-[Do not rebuild Routes when a new opaque Route is pushed on top]: {{site.github}}/flutter/flutter/pull/48900
-[Issue 45797]: {{site.github}}/flutter/flutter/issues/45797
+[Do not rebuild Routes when a new opaque Route is pushed on top]: {{site.repo.flutter}}/pull/48900
+[Issue 45797]: {{site.repo.flutter}}/issues/45797
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Overlay`]: {{site.api}}/flutter/widgets/Overlay-class.html
 [`OverlayEntry`]: {{site.api}}/flutter/widgets/OverlayEntry-class.html
 [`OverlayRoute`]: {{site.api}}/flutter/widgets/OverlayRoute-class.html
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`setState`]: {{site.api}}/flutter/widgets/State/setState.html
-[Reland "Do not rebuild Routes when a new opaque Route is pushed on top"]: {{site.github}}/flutter/flutter/pull/49376
+[Reland "Do not rebuild Routes when a new opaque Route is pushed on top"]: {{site.repo.flutter}}/pull/49376

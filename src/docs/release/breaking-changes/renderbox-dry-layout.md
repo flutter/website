@@ -118,5 +118,5 @@ Relevant PRs:
 [`RenderWrap`]: {{site.api}}/flutter/rendering/RenderWrap-class.html
 [`RenderParagraph`]: {{site.api}}/flutter/rendering/RenderParagraph-class.html
 
-[Issue 48679]: {{site.github}}/flutter/flutter/issues/48679
-[Fixes Intrinsics for RenderParagraph and RenderWrap]: {{site.github}}/flutter/flutter/pull/70656
+[Issue 48679]: {{site.repo.flutter}}/issues/48679
+[Fixes Intrinsics for RenderParagraph and RenderWrap]: {{site.repo.flutter}}/pull/70656

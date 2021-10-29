@@ -762,7 +762,7 @@ the `value` property to a new value.
 [Material app]: {{site.api}}/flutter/material/MaterialApp-class.html
 [performance profiling]: /docs/perf/rendering/ui-performance
 [implicit animations]: /docs/development/ui/animations/implicit-animations
-[make a Flutter app]: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1
+[make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [stateful widgets]: /docs/development/ui/interactive#stateful-and-stateless-widgets
 [step 1]: #1-use-a-tickerprovider-mixin
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html

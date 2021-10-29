@@ -14,7 +14,7 @@ and `Navigator.pop()` no longer returns a value.
 
 We refactored the navigator APIs to prepare for the new page API
 and the introduction of the `Router` widget as outlined in
-the [Navigator 2.0 and Router][] design document.
+the [Router][] design document.
 This refactoring introduced some function signature changes
 in order to make the existing navigator APIs continue to work
 with the new page API.
@@ -133,7 +133,7 @@ In stable release: 1.17
 ## References
 
 Design doc:
-* [Navigator 2.0 and Router][]
+* [Router][]
 
 API documentation:
 * [`Route`][]
@@ -144,18 +144,18 @@ API documentation:
 * [`Navigator.canPop`][]
 
 Relevant issue:
-* [Issue 45938: Navigator 2.0][]
+* [Issue 45938: Router][]
 
 Relevant PR:
-* [PR 44930: Navigator 2.0][] - Refactor the imperative api to continue working in the new navigation system
+* [PR 44930][] - Refactor the imperative api to continue working in the new navigation system
 
 
-[Issue 45938: Navigator 2.0]: {{site.github}}/flutter/flutter/issues/45938
+[Issue 45938: Router]: {{site.repo.flutter}}/issues/45938
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.canPop`]: {{site.api}}/flutter/widgets/Navigator/canPop.html
-[Navigator 2.0 and Router]: /go/navigator-with-router
-[PR 44930: Navigator 2.0]: {{site.github}}/flutter/flutter/pull/44930
+[Router]: /go/navigator-with-router
+[PR 44930]: {{site.repo.flutter}}/pull/44930
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`Route.install`]: {{site.api}}/flutter/widgets/Route/install.html
 [`RouteSetting.isInitialRoute`]: {{site.api}}/flutter/widgets/RouteSettings/isInitialRoute.html

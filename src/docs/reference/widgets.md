@@ -15,8 +15,8 @@ on the [Flutter YouTube channel]({{site.social.youtube}}). Each short
 episode features a different Flutter widget. For more video series, see
 our [videos](/docs/resources/videos) page.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b_sQ9bMltGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Widget of the Week playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/b_sQ9bMltGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Widget of the Week playlist]({{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 <div class="card-deck card-deck--responsive">
 {% for comp in sorted %}

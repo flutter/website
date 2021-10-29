@@ -84,4 +84,4 @@ Relevant PRs:
 * [Fix addAllowedPointer() overrides][]
 
 [`OneSequenceGestureRecognizer`]: {{site.api}}/flutter/gestures/OneSequenceGestureRecognizer-class.html
-[Fix addAllowedPointer() overrides]: {{site.github}}/flutter/flutter/pull/82834
+[Fix addAllowedPointer() overrides]: {{site.repo.flutter}}/pull/82834

@@ -531,7 +531,7 @@ memory problems will be flagged.
 Snapshots have major tree nodes:
 <dl markdown="1">
 <dt markdown="1">External</dt>
-<dd>Memory that is not in the Dart heap but is still part
+<dd markdown="1">Memory that is not in the Dart heap but is still part
     of the total memory footprint. Objects in external memory would be
     native objects (for example, from a memory read from a file,
     or a decoded image). The native objects are exposed to the Dart
@@ -539,7 +539,7 @@ Snapshots have major tree nodes:
     using a Dart embedder. The embedder creates a Dart wrapper with
     a finalizer, allowing Dart code to communicate with these native
     resources. Flutter has an embedder for Android and iOS.
-    For more information, see [Dart on the Server][] or
+    For more information, see [Dart on the Server][server] or
     [Custom Flutter Engine Embedders][embedder].
 </dd>
 <dt markdown="1">Filtered</dt>
@@ -874,14 +874,14 @@ understand how your application uses memory.
 </dd>
 </dl>
 
-[architecture]: https://flutter.dev/docs/resources/architectural-overview
-[performance]: https://flutter.dev/docs/development/tools/devtools/performance
+[architecture]: /docs/resources/architectural-overview
+[performance]: /docs/development/tools/devtools/performance
 [server]: https://dart-lang.github.io/server/server.html
-[embedder]: {{site.github}}/flutter/flutter/wiki/Custom-Flutter-Engine-Embedders
+[embedder]: {{site.repo.flutter}}/wiki/Custom-Flutter-Engine-Embedders
 [vm]: https://mrale.ph/dartvm/
 [event-loop]: {{site.dart-site}}/articles/archive/event-loop
 [profile mode]: /docs/testing/build-modes#profile
 [release mode]: /docs/testing/build-modes#release
 [debug mode]: /docs/testing/build-modes#debug
 [Don't Fear the Garbage Collector]: {{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
-[case_study]: {{site.github}}/flutter/devtools/tree/master/case_study/memory_leaks/images_1
+[case_study]: {{site.repo.organization}}/devtools/tree/master/case_study/memory_leaks/images_1

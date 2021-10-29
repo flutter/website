@@ -233,11 +233,11 @@ see [The Framework architecture][] on the
 [GitHub wiki][], and the community article,
 [The Layer Cake][].
 
-[GitHub wiki]: {{site.github}}/flutter/flutter/wiki/
+[GitHub wiki]: {{site.repo.flutter}}/wiki/
 [MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[The Framework architecture]: {{site.github}}/flutter/flutter/wiki/The-Framework-architecture
-[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
-[UIKit]: https://developer.apple.com/documentation/uikit
+[The Framework architecture]: {{site.repo.flutter}}/wiki/The-Framework-architecture
+[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[UIKit]: {{site.apple-dev}}/documentation/uikit
 
 ### Displaying the performance overlay
 
@@ -442,7 +442,7 @@ Flutter's tools and debugging in Flutter:
 [devtools]: /docs/development/tools/devtools
 [Flutter API]: {{site.api}}
 [Flutter inspector]: /docs/development/tools/devtools/inspector
-[Flutter inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
+[Flutter inspector talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
-[video]: https://youtu.be/5F-6n_2XWR8
+[video]: {{site.youtube-site}}/watch?v=5F-6n_2XWR8
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

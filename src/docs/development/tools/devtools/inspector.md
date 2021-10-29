@@ -97,13 +97,13 @@ Flutter layouts.
 For an overview of what you can do with this tool, see
 the Flutter Explorer video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Jakrc3Tn_y4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/Jakrc3Tn_y4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 You might also find the following step-by-step article useful:
 
 * [How to debug layout issues with the Flutter Inspector][debug-article]
 
-[debug-article]: {{site.medium}}/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[debug-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
 ### Using the Layout Explorer
 
@@ -527,7 +527,7 @@ of the Flutter inspector.
 [common problems when debugging]: /docs/testing/debugging#common-problems
 [core building block]: /docs/development/ui/widgets-intro
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
-[DartConf 2018 talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
+[DartConf 2018 talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
 [debug mode]: /docs/testing/build-modes#debug
 [Debugging Flutter apps]: /docs/testing/debugging
 [DevTools written in Flutter]: /docs/development/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter

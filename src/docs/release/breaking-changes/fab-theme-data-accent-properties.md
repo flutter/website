@@ -152,6 +152,6 @@ Other:
 [Material Theme System Updates]: /go/material-theme-system-updates
 [Remove FAB Accent Theme Dependency]: /go/remove-fab-accent-theme-dependency
 [secondary color]: {{site.material}}/design/color/the-color-system.html#color-theme-creation
-[Step 1 of 2]: {{site.github}}/flutter/flutter/pull/48435
-[Step 2 of 2]: {{site.github}}/flutter/flutter/pull/46923
+[Step 1 of 2]: {{site.repo.flutter}}/pull/48435
+[Step 2 of 2]: {{site.repo.flutter}}/pull/46923
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData/floatingActionButtonTheme.html
