@@ -157,7 +157,7 @@ Relevant PRs:
 <!-- Master channel link: -->
 {% include docs/master-api.md %}
 
-[`AnimationSheetBuilder`]: https://master-api.flutter.dev/flutter/flutter_test/AnimationSheetBuilder-class.html
-[`AnimationSheetBuilder.collate`]: https://master-api.flutter.dev/flutter/flutter_test/AnimationSheetBuilder/collate.html
-[golden testing]: {{site.github}}/flutter/flutter/wiki/Writing-a-golden-file-test-for-package%3Aflutter
-[Test WidgetTester handling test pointers]: {{site.github}}/flutter/flutter/pull/83337
+[`AnimationSheetBuilder`]: {{site.master-api}}/flutter/flutter_test/AnimationSheetBuilder-class.html
+[`AnimationSheetBuilder.collate`]: {{site.master-api}}/flutter/flutter_test/AnimationSheetBuilder/collate.html
+[golden testing]: {{site.repo.flutter}}/wiki/Writing-a-golden-file-test-for-package%3Aflutter
+[Test WidgetTester handling test pointers]: {{site.repo.flutter}}/pull/83337

@@ -87,5 +87,5 @@ Relevant PRs:
 
 [`Element`]: {{site.api}}/flutter/widgets/Element-class.html
 [`forgetChild()`]: {{site.api}}/flutter/widgets/Element/forgetChild.html
-[Issue 43780]: {{site.github}}/flutter/flutter/issues/43780
-[PR 43790: Fix global key error]: {{site.github}}/flutter/flutter/pull/46183
+[Issue 43780]: {{site.repo.flutter}}/issues/43780
+[PR 43790: Fix global key error]: {{site.repo.flutter}}/pull/46183

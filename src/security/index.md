@@ -18,18 +18,18 @@ We use GitHub's security advisory feature to track open security issues. You sho
 a close collaboration as we work to resolve the issue you have reported. Please reach out to
 `security@flutter.dev` again if you do not receive prompt attention and regular updates.
 
-You may also reach out to the team via our public [Discord](https://github.com/flutter/flutter/wiki/Chat) chat channels; however, please make
+You may also reach out to the team via our public [Discord]({{site.repo.flutter}}/wiki/Chat) chat channels; however, please make
 sure to e-mail `security@flutter.dev` when reporting an issue, and avoid revealing information about
 vulnerabilities in public if that could put users at risk.
 
-For more details on how we handle security vulnerabilities, please see our [internal processes](https://github.com/flutter/flutter/blob/master/SECURITY.md).
+For more details on how we handle security vulnerabilities, please see our [internal processes]({{site.repo.flutter}}/blob/master/SECURITY.md).
 
 ## Best practices
 
 * **Keep current with the latest Flutter SDK releases.**
   We regularly update Flutter, and these updates may fix security
   defects discovered in previous versions. Check the Flutter
-  [change log]({{site.github}}/flutter/flutter/wiki/Changelog)
+  [change log]({{site.repo.flutter}}/wiki/Changelog)
   for security-related updates.
 
 * **Keep your application’s dependencies up to date.**

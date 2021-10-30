@@ -154,8 +154,8 @@ Relevant PR:
 
 
 [`EditableText`]: {{site.api}}/flutter/widgets/EditableText-class.html
-[Fix requestExistingInputState response]: {{site.github}}/flutter/flutter/pull/47472
-[Issue 47137]: {{site.github}}/flutter/flutter/issues/47137
+[Fix requestExistingInputState response]: {{site.repo.flutter}}/pull/47472
+[Issue 47137]: {{site.repo.flutter}}/issues/47137
 [`TextInput`]: {{site.api}}/flutter/services/TextInput-class.html
 [`TextInputClient`]: {{site.api}}/flutter/services/TextInputClient-class.html
 [`SystemChannels.textInput`]: {{site.api}}/flutter/services/SystemChannels/textInput-constant.html

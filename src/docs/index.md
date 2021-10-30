@@ -103,7 +103,7 @@ The documentation on this site reflects the latest stable release of Flutter.
 [Boring Flutter Show playlist]: {{site.youtube-site}}/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
 [Building layouts]: /docs/development/ui/layout
 [FAQ]: /docs/resources/faq
-[flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
+[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Flutter in Focus]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter in Focus series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter YouTube channel]: {{site.social.youtube}}

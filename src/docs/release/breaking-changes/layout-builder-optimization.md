@@ -296,6 +296,6 @@ Relevant PRs:
 [3]: {{site.api}}/flutter/widgets/SliverLayoutBuilder-class.html
 [4]: {{site.api}}/flutter/widgets/LayoutBuilder/builder.html
 [5]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
-[6]: {{site.github}}/flutter/flutter/pull/55414
+[6]: {{site.repo.flutter}}/pull/55414
 [7]: {{site.api}}/flutter/animation/Animation/addListener.html
-[8]: {{site.github}}/flutter/flutter/issues/6469
+[8]: {{site.repo.flutter}}/issues/6469

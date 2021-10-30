@@ -118,12 +118,12 @@ Relevant PRs:
 * [Integrate package:flutter_lints into templates][]
 
 [Add flutter_lints package]: {{site.github}}/flutter/packages/pull/343
-[`analysis_options_user.yaml`]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/analysis_options_user.yaml
+[`analysis_options_user.yaml`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/analysis_options_user.yaml
 [Customizing static analysis]: {{site.dart-site}}/guides/language/analysis-options
 [dart analyzer]: {{site.dart-site}}/guides/language/analysis-options
 [IDE with Dart support]: {{site.dart-site}}/tools#ides-and-editors
-[Integrate package:flutter_lints into templates]: {{site.github}}/flutter/flutter/pull/81417
-[Issue 78432 - Update lint set for Flutter applications]: {{site.github}}/flutter/flutter/issues/78432
+[Integrate package:flutter_lints into templates]: {{site.repo.flutter}}/pull/81417
+[Issue 78432 - Update lint set for Flutter applications]: {{site.repo.flutter}}/issues/78432
 [`package:flutter_lints`]: {{site.pub}}/packages/flutter_lints
 [`package:lints`]: {{site.pub}}/packages/lints
 [Package dependencies]: {{site.dart-site}}/tools/pub/dependencies

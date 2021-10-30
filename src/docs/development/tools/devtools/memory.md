@@ -874,14 +874,14 @@ understand how your application uses memory.
 </dd>
 </dl>
 
-[architecture]: https://flutter.dev/docs/resources/architectural-overview
-[performance]: https://flutter.dev/docs/development/tools/devtools/performance
+[architecture]: /docs/resources/architectural-overview
+[performance]: /docs/development/tools/devtools/performance
 [server]: https://dart-lang.github.io/server/server.html
-[embedder]: {{site.github}}/flutter/flutter/wiki/Custom-Flutter-Engine-Embedders
+[embedder]: {{site.repo.flutter}}/wiki/Custom-Flutter-Engine-Embedders
 [vm]: https://mrale.ph/dartvm/
 [event-loop]: {{site.dart-site}}/articles/archive/event-loop
 [profile mode]: /docs/testing/build-modes#profile
 [release mode]: /docs/testing/build-modes#release
 [debug mode]: /docs/testing/build-modes#debug
 [Don't Fear the Garbage Collector]: {{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
-[case_study]: {{site.github}}/flutter/devtools/tree/master/case_study/memory_leaks/images_1
+[case_study]: {{site.repo.organization}}/devtools/tree/master/case_study/memory_leaks/images_1

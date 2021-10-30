@@ -84,10 +84,10 @@ The following resources can help you get started:
 [Creating responsive apps]: /docs/development/ui/layout/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
-[Flutter Gallery]: https://gallery.flutter.dev/
-[main Flutter repo]: {{site.github}}/flutter/flutter
+[Flutter Gallery]: {{site.gallery}}
+[main Flutter repo]: {{site.repo.flutter}}
 [Preparing an app for web release]: /docs/deployment/web
-[Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
+[Progressive Web Application]: {{site.developers}}/web/progressive-web-apps/
 [web FAQ]: /docs/development/platform-integration/web
 [web samples for Flutter]: https://flutter.github.io/samples/
 [Web renderers]: /docs/development/tools/web-renderers

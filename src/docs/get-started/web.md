@@ -153,13 +153,13 @@ $ flutter create .
 
 [Build and release a web app]: /docs/deployment/web
 [creating a new Flutter project]: /docs/get-started/test-drive
-[dart2js]: https://dart.dev/tools/dart2js
+[dart2js]: {{site.dart-site}}/tools/dart2js
 [desktop support]: /desktop
-[development compiler]: https://dart.dev/tools/dartdevc
-[file an issue]: {{site.github}}/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[development compiler]: {{site.dart-site}}/tools/dartdevc
+[file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [install the Flutter and Dart plugins]: /docs/get-started/editor
 [setting up an editor]: /docs/get-started/editor
 [web FAQ]: /docs/development/platform-integration/web
 [Chrome]: https://www.google.com/chrome/
-[Flutter SDK]: https://flutter.dev/docs/get-started/install
+[Flutter SDK]: /docs/get-started/install
 [Web renderers]: /docs/development/tools/web-renderers

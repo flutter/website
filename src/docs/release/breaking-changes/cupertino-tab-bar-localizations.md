@@ -166,6 +166,6 @@ Relevant PR:
 [`DefaultCupertinoLocalizations`]: {{site.api}}/flutter/cupertino/DefaultCupertinoLocalizations-class.html
 [`Semantics`]: {{site.api}}/flutter/widgets/Semantics-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[Internationalizing Flutter Apps]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
-[PR 55336: Adding tabSemanticsLabel to CupertinoLocalizations]: {{site.github}}/flutter/flutter/pull/55336
-[PR 56582: Update Tab semantics in Cupertino to be the same as Material]: {{site.github}}/flutter/flutter/pull/56582#issuecomment-625497951
+[Internationalizing Flutter Apps]: /docs/development/accessibility-and-localization/internationalization
+[PR 55336: Adding tabSemanticsLabel to CupertinoLocalizations]: {{site.repo.flutter}}/pull/55336
+[PR 56582: Update Tab semantics in Cupertino to be the same as Material]: {{site.repo.flutter}}/pull/56582#issuecomment-625497951

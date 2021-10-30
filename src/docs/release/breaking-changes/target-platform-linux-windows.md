@@ -163,8 +163,8 @@ Relevant issues:
 Relevant PR:
 * [Add Windows, and Linux as TargetPlatforms][]
 
-[Add Windows, and Linux as TargetPlatforms]: {{site.github}}/flutter/flutter/pull/51519
+[Add Windows, and Linux as TargetPlatforms]: {{site.repo.flutter}}/pull/51519
 [`debugDefaultTargetPlatformOverride`]: {{site.api}}/flutter/foundation/debugDefaultTargetPlatformOverride.html
-[Issue #31366]: {{site.github}}/flutter/flutter/issues/31366
+[Issue #31366]: {{site.repo.flutter}}/issues/31366
 [`missing_enum_constant_in_switch`]: {{site.dart-site}}/tools/diagnostic-messages#missing_enum_constant_in_switch
 [`TargetPlatform`]: {{site.api}}/flutter/foundation/TargetPlatform-class.html

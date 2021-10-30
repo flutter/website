@@ -700,5 +700,5 @@ Relevant PRs:
 [`TextButtonTheme`]: {{site.api}}/flutter/material/TextButtonTheme-class.html
 [`TextButtonThemeData`]: {{site.api}}/flutter/material/TextButtonThemeData-class.html
 
-[PR 59702: New Button Universe]: {{site.github}}/flutter/flutter/pull/59702
-[PR 73352: Deprecated obsolete Material classes: FlatButton, RaisedButton, OutlineButton]: {{site.github}}/flutter/flutter/pull/73352
+[PR 59702: New Button Universe]: {{site.repo.flutter}}/pull/59702
+[PR 73352: Deprecated obsolete Material classes: FlatButton, RaisedButton, OutlineButton]: {{site.repo.flutter}}/pull/73352

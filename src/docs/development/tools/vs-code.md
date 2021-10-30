@@ -43,9 +43,10 @@ starter app template:
 
  1. Open the Command Palette
     (`Ctrl`+`Shift`+`P` (`Cmd`+`Shift`+`P` on macOS)).
- 1. Select the **Flutter: New Application Project** command and press `Enter`.
- 1. Enter your desired **Project name**.
+ 1. Select the **Flutter: New Project** command and press `Enter`.
+ 1. Select **Application** and press `Enter`.
  1. Select a **Project location**.
+ 1. Enter your desired **Project name**.
 
 ### Opening a project from existing source code
 
@@ -318,7 +319,7 @@ When filing new issues, include [flutter doctor][] output.
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [Flutter inspector]: /docs/development/tools/devtools/inspector
 [Flutter's build modes]: /docs/testing/build-modes
-[let us know]: {{site.github}}/flutter/website/issues/new
+[let us know]: {{site.repo.this}}/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
 [Set up an editor]: /docs/get-started/editor?tab=vscode

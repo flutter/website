@@ -14,7 +14,7 @@ primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
 
-[Deprecation Policy]: {{site.github}}/flutter/flutter/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
 [quick reference sheet]: /go/deprecations-removed-after-2-2
 
 ## Changes
@@ -107,9 +107,9 @@ Relevant PRs:
 [`InputDecoration`]: {{site.api}}/flutter/material/InputDecoration-class.html
 [`InputDecorationTheme`]: {{site.api}}/flutter/material/InputDecorationTheme-class.html
 [`FloatingLabelBehavior`]: {{site.api}}/flutter/material/FloatingLabelBehavior-class.html
-[InputDecoration: option to always float label]: {{site.github}}/flutter/flutter/issues/30664
-[#46115]: {{site.github}}/flutter/flutter/pull/46115
-[#83923]: {{site.github}}/flutter/flutter/pull/83923
+[InputDecoration: option to always float label]: {{site.repo.flutter}}/issues/30664
+[#46115]: {{site.repo.flutter}}/pull/46115
+[#83923]: {{site.repo.flutter}}/pull/83923
 
 ---
 
@@ -261,9 +261,9 @@ Relevant PRs:
 
 [Update the TextTheme API]: /go/update-text-theme-api
 [`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
-[Migrate TextTheme to 2018 APIs]: {{site.github}}/flutter/flutter/issues/45745
-[#48547]: {{site.github}}/flutter/flutter/pull/48547
-[#83924]: {{site.github}}/flutter/flutter/pull/83924
+[Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}/issues/45745
+[#48547]: {{site.repo.flutter}}/pull/48547
+[#83924]: {{site.repo.flutter}}/pull/83924
 
 ---
 
@@ -313,9 +313,9 @@ Relevant PRs:
 
 [Update the TextTheme API]: /go/update-text-theme-api
 [`Typography`]: {{site.api}}/flutter/material/Typography-class.html
-[Migrate TextTheme to 2018 APIs]: {{site.github}}/flutter/flutter/issues/45745
-[#48547]: {{site.github}}/flutter/flutter/pull/48547
-[#83924]: {{site.github}}/flutter/flutter/pull/83924
+[Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}/issues/45745
+[#48547]: {{site.repo.flutter}}/pull/48547
+[#83924]: {{site.repo.flutter}}/pull/83924
 
 
 ---

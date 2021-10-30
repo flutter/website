@@ -189,11 +189,11 @@ Relevant PRs:
 [`CSS width`]: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 [`HtmlElementView` widgets]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
 [`PlatformViewFactory` functions]: {{site.github}}/flutter/engine/blob/58459a5e342f84c755919f2ad5029b22bcddd548/lib/web_ui/lib/src/engine/platform_views/content_manager.dart#L15-L18
-[design doc]: https://flutter.dev/go/web-slot-content
-[issue-80524]: {{site.github}}/flutter/flutter/issues/80524
+[design doc]: /go/web-slot-content
+[issue-80524]: {{site.repo.flutter}}/issues/80524
 [pull-25747]: {{site.github}}/flutter/engine/pull/25747
 [pull-364]: {{site.github}}/flutter/packages/pull/364
-[pull-3964]: {{site.github}}/flutter/plugins/pull/3964
-[pull-82926]: {{site.github}}/flutter/flutter/pull/82926
+[pull-3964]: {{site.repo.plugins}}/pull/3964
+[pull-82926]: {{site.repo.flutter}}/pull/82926
 [shadow root]: https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot
 [slot elements]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot

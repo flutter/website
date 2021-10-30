@@ -8,12 +8,6 @@ steps, you can launch and display routes by using named routes (either with the
 [`routes`][routes] parameter or [`onGenerateRoute`][onGenerateRoute]), or by
 using the [`Router`][Router] widget.
 
-{{site.alert.secondary}}
-  **Version note:** [Navigator 2.0][] is now called [`Router`][Router], which
-  allows you to declaratively set the displayed routes based on the app's
-  current state. This API is opt-in.
-{{site.alert.end}}
-
 If you're running the app in a web browser, there's no additional setup
 required. Route paths are handled in the same way as an iOS or Android deep
 link. By default, web apps read the deep link path from the url fragment using
@@ -114,13 +108,19 @@ launched and running.
 After upgrading to the [`Router`][Router] widget, your app has the ability to replace the
 current set of pages when a new deep link is opened while the app is running.
 
+## See also
+
+[Learning Flutter’s new navigation and routing system][] provides an introduction to the Router system.
+
+[Learning Flutter’s new navigation and routing system]: https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [switching-channels]: /docs/development/tools/sdk/upgrading#switching-flutter-channels
-[routes]: https://api.flutter.dev/flutter/material/MaterialApp/routes.html
-[onGenerateRoute]: https://api.flutter.dev/flutter/material/MaterialApp/onGenerateRoute.html
-[Router]: https://api.flutter.dev/flutter/widgets/Router-class.html
-[Navigator 2.0]: https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
-[intent filter]: https://developer.android.com/guide/components/intents-filters
-[plugin-linking]: https://medium.com/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
-[verify-android-links]: https://developer.android.com/training/app-links/verify-site-associations
-[router-sample]: https://github.com/flutter/samples/tree/master/navigation_and_routing
+[routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
+[onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
+[Router]: {{site.api}}/flutter/widgets/Router-class.html
+[Navigator 2.0]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[intent filter]: {{site.android-dev}}/guide/components/intents-filters
+[plugin-linking]: {{site.medium}}/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
+[verify-android-links]: {{site.android-dev}}/training/app-links/verify-site-associations
+[router-sample]: {{site.repo.samples}}/tree/master/navigation_and_routing
+
 [configuring the URL strategy]: /docs/development/ui/navigation/url-strategies

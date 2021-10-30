@@ -117,6 +117,14 @@ the following:
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
 
+## Configuring the app's name, bundle identifier and copyright
+
+The configuration for the product identifiers are centralized 
+in `macos/Runner/Configs/AppInfo.xcconfig`. For the app's name,
+set `PRODUCT_NAME`, for the copyright set `PRODUCT_COPYRIGHT`,
+and finally set `PRODUCT_BUNDLE_IDENTIFIER` for the app's
+bundle identifier.
+
 ## Updating the app's version number
 
 The default version number of the app is `1.0.0`.
@@ -453,26 +461,26 @@ The [Distribute your app][distributionguide] guide provides a
 detailed overview of the process of releasing an app to the App Store.
 
 
-[appicon]: https://developer.apple.com/design/human-interface-guidelines/macos/icons-and-images/app-icon/
-[appreview]: https://developer.apple.com/app-store/review/
+[appicon]: {{site.apple-dev}}/design/human-interface-guidelines/macos/icons-and-images/app-icon/
+[appreview]: {{site.apple-dev}}/app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
-[appstore]: https://developer.apple.com/app-store/submissions/
-[appstoreconnect]: https://developer.apple.com/support/app-store-connect/
+[appstore]: {{site.apple-dev}}/app-store/submissions/
+[appstoreconnect]: {{site.apple-dev}}/support/app-store-connect/
 [appstoreconnect_api_key]: https://appstoreconnect.apple.com/access/api
-[appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_guide]: {{site.apple-dev}}/support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
 [appstoreconnect_login]: https://appstoreconnect.apple.com/
-[codemagic_cli_tools]: https://github.com/codemagic-ci-cd/cli-tools
-[codesigning_guide]: https://developer.apple.com/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
-[Core Foundation Keys]: https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-[devportal_appids]: https://developer.apple.com/account/ios/identifier/bundle
-[devportal_certificates]: https://developer.apple.com/account/resources/certificates
-[devprogram]: https://developer.apple.com/programs/
-[devprogram_membership]: https://developer.apple.com/support/compare-memberships/
+[codemagic_cli_tools]: {{site.github}}/codemagic-ci-cd/cli-tools
+[codesigning_guide]: {{site.apple-dev}}/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
+[Core Foundation Keys]: {{site.apple-dev}}/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+[devportal_appids]: {{site.apple-dev}}/account/ios/identifier/bundle
+[devportal_certificates]: {{site.apple-dev}}/account/resources/certificates
+[devprogram]: {{site.apple-dev}}/programs/
+[devprogram_membership]: {{site.apple-dev}}/support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
 [distributionguide_config]: https://help.apple.com/xcode/mac/current/#/dev91fe7130a
 [distributionguide_macos]: https://help.apple.com/xcode/mac/current/#/dev295cc0fae
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [obfuscating your Dart code]: /docs/deployment/obfuscate
-[TestFlight]: https://developer.apple.com/testflight/
+[TestFlight]: {{site.apple-dev}}/testflight/

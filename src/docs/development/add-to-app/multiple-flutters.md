@@ -100,12 +100,12 @@ on both Android and iOS on [GitHub][].
 
 {% include docs/app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}
 
-[GitHub]: {{site.github}}/flutter/samples/tree/master/add_to_app/multiple_flutters
+[GitHub]: {{site.repo.samples}}/tree/master/add_to_app/multiple_flutters
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [performance characteristics]: /docs/development/add-to-app/performance
 [flutter.dev/go/multiple-flutters]: /go/multiple-flutters
-[Issue 72009]: {{site.github}}/flutter/flutter/issues/72009
+[Issue 72009]: {{site.repo.flutter}}/issues/72009
 [Pigeon]: {{site.pub}}/packages/pigeon
 [platform channels]: /docs/development/platform-integration/platform-channels
 [platform views]: /docs/development/platform-integration/platform-views

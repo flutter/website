@@ -133,5 +133,5 @@ Relevant PR:
 * [Make ParentDataWidget usable with different ancestor RenderObjectWidget types][]
 
 
-[Make ParentDataWidget usable with different ancestor RenderObjectWidget types]: {{site.github}}/flutter/flutter/pull/48541
+[Make ParentDataWidget usable with different ancestor RenderObjectWidget types]: {{site.repo.flutter}}/pull/48541
 [`ParentDataWidget`]: {{site.api}}/flutter/widgets/ParentDataWidget-class.html

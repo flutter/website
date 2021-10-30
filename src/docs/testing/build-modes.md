@@ -121,7 +121,7 @@ For more information on the build modes, see
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [dartdevc]: {{site.dart-site}}/tools/dartdevc
 [DevTools]: /docs/development/tools/devtools
-[Flutter wiki]: {{site.github}}/flutter/flutter/wiki/Flutter's-modes
-[Flutter's build modes]: {{site.github}}/flutter/flutter/wiki/Flutter%27s-modes
+[Flutter wiki]: {{site.repo.flutter}}/wiki/Flutter's-modes
+[Flutter's build modes]: {{site.repo.flutter}}/wiki/Flutter%27s-modes
 [hot reload]: /docs/development/tools/hot-reload
 [iOS]:  /docs/deployment/ios

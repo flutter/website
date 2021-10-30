@@ -15,4 +15,4 @@
 {{site.alert.end}}
 
 [api.flutter.dev]: {{site.api}}
-[latest docs]: https://master-api.flutter.dev/
+[latest docs]: {{site.master-api}}
