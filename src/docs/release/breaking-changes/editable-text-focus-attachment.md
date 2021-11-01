@@ -10,27 +10,35 @@ description: EditableText.focusNode is no longer attached to EditableTextState's
 
 ## Context
 
-A `FocusNode` is typically attached to the `BuildContext` of a focusable widget,
-and is used to represent and control the focus state of that widget. 
+A text input field widget (`TextField`, for example) typically owns a `FocusNode`.
+When that `FocusNode` is the primary focus of the app, events such as key presses 
+will be sent to the `BuildContext` the `FocusNode` is attached to. 
 
-In Flutter's keyboard event handling system, the user `Intent` behind a key press
-(or a sequence of key presses), such as delete or insert text, is fired from the
-`FocusNode` that currently has the primary focus, and propagates upwards in the
-widget tree until it finds the first available handler. In the context of text
-editing, text editing `Intent` handlers are typically defined in
-`EditableTextState`, and that means the `FocusNode` needs to be attached below
-(in terms of the locations in the widget tree) `EditableTextState`, so when the
-app user presses <kbd>DEL</kbd> or some other keys in the current text field, the
-corresponding handler defined in `EditableTextState` can be found.
+The `FocusNode` also plays a roll in shortcut handling: The `Shortcuts` widget 
+translates key sequences into an `Intent`, and tries to find the first suitable 
+handler of the `Intent` starting from the `BuildContext` the `FocusNode` attaches 
+to, to the root of the widget tree. This means an `Actions` widget will not be able
+to handle any shortcut `Intent` when the `BuildContext` that thas the primary
+focus is above it in the tree.
+
+Previously for `EditableText`, the `FocusNode` was attached to the `BuildContext`
+of `EditableTextState`. Any `Actions` widget defined in `EditableTextState` (which 
+will be inflated below the `BuildContext` of the `EditableTextState`) couldn't 
+handle shortcuts even when that `EditableText` was focused, for the reason stated 
+above.
 
 ## Description of change
 
 `EditableTextState` now creates a dedicated `Focus` widget to host `EditableText.focusNode`.
-This does not involve any public API changes but breaks codebases relying on that
-particular implementation detail to tell if a `FocusNode` is associated with a
+This allows `EditableTextState`s to define handlers for shortcut `Intent`s. For 
+instance, `EditableText` now has a handler that handles the "deleteCharacter" intent
+when the <kbd>DEL<kbd> key is pressed.
+
+This change does not involve any public API changes but breaks codebases relying on 
+that particular implementation detail to tell if a `FocusNode` is associated with a
 text input field.
 
-This change shouldn't break any builds but can introduce runtime issues, or
+This change does not break any builds but can introduce runtime issues, or
 cause existing tests to fail.
 
 ## Migration guide
