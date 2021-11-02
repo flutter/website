@@ -425,6 +425,21 @@ Here are some options:
 * Collect all of the necessary pieces
   and build your own zip file.
 
+#### Changing the name of the generated binary
+
+To change the name of the generated Windows application, edit the 
+`BINARY_NAME` variable set on line 4 of `windows/CMakeLists.txt` in
+your Flutter project.
+
+```cmake
+cmake_minimum_required(VERSION 3.15)
+project(windows_desktop_app LANGUAGES CXX)
+
+set(BINARY_NAME "YourNewApp")  # Change this line
+
+cmake_policy(SET CMP0063 NEW)
+```
+
 #### MSIX packaging
 
 [MSIX][], Microsoft Windows' application package format,
