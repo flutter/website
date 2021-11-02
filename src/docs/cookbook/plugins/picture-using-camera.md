@@ -89,6 +89,7 @@ and display a preview of the camera's feed.
   4. Create and initialize the controller in the `initState()` method.
   5. Dispose of the controller in the `dispose()` method.
 
+<!--skip-->
 <?code-excerpt "lib/main_step3.dart (controller)"?>
 ```dart
 // A screen that allows users to take a picture using a given camera.
@@ -106,6 +107,7 @@ class TakePictureScreen extends StatefulWidget {
 
 class TakePictureScreenState extends State<TakePictureScreen> {
   late CameraController _controller;
+  late Future<void> _initializeControllerFuture;
 
   @override
   void initState() {
@@ -120,6 +122,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     );
 
     // Next, initialize the controller. This returns a Future.
+    _initializeControllerFuture = _controller.initialize();
   }
 
   @override
