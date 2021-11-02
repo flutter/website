@@ -41,6 +41,7 @@ class TakePictureScreen extends StatefulWidget {
 
 class TakePictureScreenState extends State<TakePictureScreen> {
   late CameraController _controller;
+  // ignore_for_file: unused_field
   late Future<void> _initializeControllerFuture;
 
   @override
