@@ -2,7 +2,9 @@ import 'package:adaptive_app_demos/global/styling.dart';
 import 'package:flutter/material.dart';
 
 class StyledTextButton extends StatelessWidget {
-  const StyledTextButton({Key? key, required this.onPressed, required this.child}) : super(key: key);
+  const StyledTextButton(
+      {Key? key, required this.onPressed, required this.child})
+      : super(key: key);
   final VoidCallback onPressed;
   final Widget child;
 
@@ -35,7 +37,11 @@ class SecondaryMenuButton extends StatelessWidget {
 }
 
 class SelectedPageButton extends StatelessWidget {
-  const SelectedPageButton({Key? key, required this.onPressed, required this.label, required this.isSelected})
+  const SelectedPageButton(
+      {Key? key,
+      required this.onPressed,
+      required this.label,
+      required this.isSelected})
       : super(key: key);
   final VoidCallback? onPressed;
   final String label;

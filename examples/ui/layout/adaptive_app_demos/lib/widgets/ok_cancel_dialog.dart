@@ -32,7 +32,7 @@ class _OkCancelButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion RowTextDirection
     TextDirection btnDirection =
-        DeviceType.isWindows && false ? TextDirection.rtl : TextDirection.ltr;
+        DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
     return Row(
       children: [
         Spacer(),

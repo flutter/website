@@ -23,9 +23,7 @@ apps, but they fall into three major categories:
 * [Input](#input)
 * [Idioms and norms](#idioms-and-norms)
 
-{% comment %}
-TODO Embed Kevin's video when available.
-{% endcomment %}
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/RCdeSKVt7LI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.
@@ -35,6 +33,8 @@ were built using the concepts described here.
 
 [Flokk]: {{site.github}}/gskinnerTeam/flokk
 [Folio]: {{site.github}}/gskinnerTeam/flutter-folio
+
+Original demo code for adaptive app development techniques from [flutter-adaptive-demo](https://github.com/gskinnerTeam/flutter-adaptive-demo). Code excerpts seen on this page are available in the examples directory at [adaptive app demos](https://github.com/flutter/website/tree/main/examples/ui/layout/adaptive_app_demos)
 
 ## Building adaptive layouts
 
@@ -152,7 +152,7 @@ densities, you can easily adjust your UI:
 
 To set a custom visual density, inject the density into
 your `MaterialApp` theme:
-
+ 
 <?code-excerpt "lib/main.dart (VisualDensity)"?>
 ```dart
 double densityAmt = touchMode ? 0.0 : -1.0;
@@ -1077,7 +1077,7 @@ This can be easily handled in Flutter using the
 <?code-excerpt "lib/widgets/ok_cancel_dialog.dart (RowTextDirection)"?>
 ```dart
 TextDirection btnDirection =
-    DeviceType.isWindows && false ? TextDirection.rtl : TextDirection.ltr;
+    DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
 return Row(
   children: [
     Spacer(),

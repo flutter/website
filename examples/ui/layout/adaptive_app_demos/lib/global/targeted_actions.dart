@@ -15,7 +15,8 @@ import 'package:provider/provider.dart';
 /// binding is activated with the intent. If no action is defined for a scope
 /// for that intent, then nothing happens.
 class TargetedActionScope extends StatefulWidget {
-  TargetedActionScope({Key? key, required this.child, required this.shortcuts}) : super(key: key);
+  TargetedActionScope({Key? key, required this.child, required this.shortcuts})
+      : super(key: key);
 
   final Widget child;
   final Map<LogicalKeySet, Intent> shortcuts;
@@ -93,7 +94,8 @@ class TargetedActionBinding extends StatefulWidget {
 }
 
 class _TargetedActionBindingState extends State<TargetedActionBinding> {
-  final GlobalKey _subtreeKey = GlobalKey(debugLabel: 'Targeted Action Binding');
+  final GlobalKey _subtreeKey =
+      GlobalKey(debugLabel: 'Targeted Action Binding');
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +112,9 @@ class _TargetedActionBindingState extends State<TargetedActionBinding> {
 
   @override
   void deactivate() {
-    Provider.of<_TargetedActionRegistry>(context, listen: false).targetKeys.remove(_subtreeKey);
+    Provider.of<_TargetedActionRegistry>(context, listen: false)
+        .targetKeys
+        .remove(_subtreeKey);
     super.deactivate();
   }
 }
@@ -120,8 +124,7 @@ class _TargetedActionBindingState extends State<TargetedActionBinding> {
 //
 // It is found through a provider.
 class _TargetedActionRegistry {
-  _TargetedActionRegistry()
-      : targetKeys = <GlobalKey>{};
+  _TargetedActionRegistry() : targetKeys = <GlobalKey>{};
 
   Set<GlobalKey> targetKeys;
 
@@ -137,7 +140,8 @@ class _TargetedActionRegistry {
     // tha support the action.
     for (GlobalKey key in targetKeys) {
       if (key.currentContext != null) {
-        Action? foundAction = Actions.maybeFind<Intent>(key.currentContext!, intent: intent);
+        Action? foundAction =
+            Actions.maybeFind<Intent>(key.currentContext!, intent: intent);
         if (foundAction != null && foundAction.isEnabled(intent)) {
           return true;
         }
@@ -153,7 +157,8 @@ class _TargetedActionRegistry {
     // contexts tha support the action.
     for (GlobalKey key in targetKeys) {
       if (key.currentContext != null) {
-        if (Actions.maybeFind<Intent>(key.currentContext!, intent: intent) != null) {
+        if (Actions.maybeFind<Intent>(key.currentContext!, intent: intent) !=
+            null) {
           return Actions.invoke(key.currentContext!, intent);
         }
       }

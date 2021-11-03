@@ -21,10 +21,22 @@ List<Widget> getMainMenuChildren(BuildContext context) {
   void changePage(int value) => context.read<AppModel>().selectedIndex = value;
   int index = context.select((AppModel m) => m.selectedIndex);
   return [
-    SelectedPageButton(onPressed: () => changePage(0), label: "Adaptive Grid", isSelected: index == 0),
-    SelectedPageButton(onPressed: () => changePage(1), label: "Adaptive Data Table", isSelected: index == 1),
-    SelectedPageButton(onPressed: () => changePage(2), label: "Adaptive Reflow", isSelected: index == 2),
-    SelectedPageButton(onPressed: () => changePage(3), label: "Focus Examples", isSelected: index == 3),
+    SelectedPageButton(
+        onPressed: () => changePage(0),
+        label: "Adaptive Grid",
+        isSelected: index == 0),
+    SelectedPageButton(
+        onPressed: () => changePage(1),
+        label: "Adaptive Data Table",
+        isSelected: index == 1),
+    SelectedPageButton(
+        onPressed: () => changePage(2),
+        label: "Adaptive Reflow",
+        isSelected: index == 2),
+    SelectedPageButton(
+        onPressed: () => changePage(3),
+        label: "Focus Examples",
+        isSelected: index == 3),
   ];
 }
 
@@ -43,8 +55,10 @@ class _MainAppScaffoldState extends State<MainAppScaffold> {
     bool isLoggedOut = context.select((AppModel m) => m.isLoggedIn) == false;
     return TargetedActionScope(
       shortcuts: <LogicalKeySet, Intent>{
-        LogicalKeySet(LogicalKeyboardKey.keyA, LogicalKeyboardKey.control): SelectAllIntent(),
-        LogicalKeySet(LogicalKeyboardKey.keyS, LogicalKeyboardKey.control): SelectNoneIntent(),
+        LogicalKeySet(LogicalKeyboardKey.keyA, LogicalKeyboardKey.control):
+            SelectAllIntent(),
+        LogicalKeySet(LogicalKeyboardKey.keyS, LogicalKeyboardKey.control):
+            SelectNoneIntent(),
         LogicalKeySet(LogicalKeyboardKey.delete): DeleteIntent(),
       },
       child: WindowBorder(
@@ -59,11 +73,15 @@ class _MainAppScaffoldState extends State<MainAppScaffold> {
                     ? LoginPage()
                     // Otherwise, show the full application with dynamic scaffold
                     : Focus(
-                      autofocus: true,
-                      child: Scaffold(
+                        autofocus: true,
+                        child: Scaffold(
                           key: _scaffoldKey,
-                          drawer: useTabs ? _SideMenu(showPageButtons: false) : null,
-                          appBar: useTabs ? AppBar(backgroundColor: Colors.blue.shade300) : null,
+                          drawer: useTabs
+                              ? _SideMenu(showPageButtons: false)
+                              : null,
+                          appBar: useTabs
+                              ? AppBar(backgroundColor: Colors.blue.shade300)
+                              : null,
                           body: Stack(children: [
                             // Vertical layout with Tab controller and drawer
                             if (useTabs) ...[
@@ -85,7 +103,7 @@ class _MainAppScaffoldState extends State<MainAppScaffold> {
                             ],
                           ]),
                         ),
-                    ),
+                      ),
               ),
             ],
           ),
@@ -117,7 +135,8 @@ class _SideMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     void _handleLogoutPressed() async {
       String message = "Are you sure you want to logout?";
-      bool? doLogout = await showDialog(context: context, builder: (_) => OkCancelDialog(message: message));
+      bool? doLogout = await showDialog(
+          context: context, builder: (_) => OkCancelDialog(message: message));
       if (doLogout ?? false) {
         context.read<AppModel>().logout();
       }
@@ -131,19 +150,21 @@ class _SideMenu extends StatelessWidget {
           // Buttons
           Column(children: [
             SizedBox(height: Insets.extraLarge),
-            if (showPageButtons)...getMainMenuChildren(context),
+            if (showPageButtons) ...getMainMenuChildren(context),
             SizedBox(height: Insets.extraLarge),
             SecondaryMenuButton(label: "Submenu Item 1"),
             SecondaryMenuButton(label: "Submenu Item 2"),
             SecondaryMenuButton(label: "Submenu Item 3"),
             Spacer(),
-            OutlinedButton(child: Text("Logout"), onPressed: _handleLogoutPressed),
+            OutlinedButton(
+                child: Text("Logout"), onPressed: _handleLogoutPressed),
             SizedBox(height: Insets.large),
           ]),
           // Divider
           Align(
               alignment: Alignment.centerRight,
-              child: Container(width: 1, height: double.infinity, color: Colors.blue)),
+              child: Container(
+                  width: 1, height: double.infinity, color: Colors.blue)),
         ],
       ),
     );
@@ -154,7 +175,9 @@ class _TabMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Wrap all the main menu buttons in Expanded() so they fill up the screen horizontally
-    List<Expanded> tabButtons = getMainMenuChildren(context).map((btn) => Expanded(child: btn)).toList();
+    List<Expanded> tabButtons = getMainMenuChildren(context)
+        .map((btn) => Expanded(child: btn))
+        .toList();
     return Column(
       children: [
         // Top Divider

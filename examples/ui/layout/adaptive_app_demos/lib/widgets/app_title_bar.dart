@@ -23,7 +23,8 @@ class AppTitleBar extends StatelessWidget {
           if (hideTitle == false)
             Positioned.fill(
               child: Center(
-                child: Text("Adaptive Scaffold", style: style.copyWith(color: Colors.white)),
+                child: Text("Adaptive Scaffold",
+                    style: style.copyWith(color: Colors.white)),
               ),
             ),
 
@@ -32,7 +33,8 @@ class AppTitleBar extends StatelessWidget {
           // Enable Touch Mode Button
           Row(
             // Touch button should be right-aligned on macOS to avoid the native buttons
-            textDirection: DeviceType.isMacOS ? TextDirection.rtl : TextDirection.ltr,
+            textDirection:
+                DeviceType.isMacOS ? TextDirection.rtl : TextDirection.ltr,
             children: [
               IconButton(
                   onPressed: () => context.read<AppModel>().toggleTouchMode(),
