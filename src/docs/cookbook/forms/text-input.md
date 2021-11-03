@@ -7,6 +7,9 @@ prev:
 next:
   title: Handle changes to a text field
   path: /docs/cookbook/forms/text-field-changes
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Text fields allow users to type text into an app.
