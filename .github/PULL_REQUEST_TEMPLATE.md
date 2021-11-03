@@ -1,5 +1,4 @@
-**IMPORTANT:** Due to work on the flutter.dev infrastructure,
-**all open pull requests will be closed November 5.**
+**IMPORTANT:** Due to work on the flutter.dev infrastructure, **all open pull requests will be closed November 5.**
 
 If your PR needs to be merged by November 5, please say that in your PR. 
 
