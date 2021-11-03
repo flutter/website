@@ -4,7 +4,7 @@ short-title: Platform-views
 description: Learn how to host native Android and iOS views in your Flutter app with Platform Views.
 ---
 
-Platform views allow to embed native views in a Flutter app, so
+Platform views allow you to embed native views in a Flutter app, so
 you can apply transforms, clips, and opacity to the native view
 from Dart.
 
