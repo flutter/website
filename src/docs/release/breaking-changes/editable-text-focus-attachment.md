@@ -5,7 +5,7 @@ description: EditableText.focusNode is no longer attached to EditableTextState's
 
 ## Summary
 
-`EditableText.focusNode` is now attached to a dedicated `Focus` widget within
+`EditableText.focusNode` is now attached to a dedicated `Focus` widget below
 `EditableText`.
 
 ## Context
@@ -16,13 +16,13 @@ will be sent to the `BuildContext` the `FocusNode` is attached to.
 
 The `FocusNode` also plays a roll in shortcut handling: The `Shortcuts` widget 
 translates key sequences into an `Intent`, and tries to find the first suitable 
-handler of the `Intent` starting from the `BuildContext` the `FocusNode` attaches 
-to, to the root of the widget tree. This means an `Actions` widget will not be able
-to handle any shortcut `Intent` when the `BuildContext` that thas the primary
-focus is above it in the tree.
+handler for that `Intent` starting from the `BuildContext` the `FocusNode` attaches 
+to, to the root of the widget tree. This means an `Actions` widget (which provides 
+handlers for differetn `Intent`s) will not be able to handle any shortcut `Intent`s 
+when the `BuildContext` that thas the primary focus is above it in the tree.
 
 Previously for `EditableText`, the `FocusNode` was attached to the `BuildContext`
-of `EditableTextState`. Any `Actions` widget defined in `EditableTextState` (which 
+of `EditableTextState`. Any `Actions` widgets defined in `EditableTextState` (which 
 will be inflated below the `BuildContext` of the `EditableTextState`) couldn't 
 handle shortcuts even when that `EditableText` was focused, for the reason stated 
 above.
@@ -62,7 +62,7 @@ To avoid doing typecheck or downcasting the `BuildContext` associated with the
 `FocusNode` of interest, depending on the actual capabilities the codebase is
 trying to invoke from the given `FocusNode`, fire an `Intent` from that
 `BuildContext`. For instance, if you wish to update the text of the currently focused
-`TextField` to a specic value:
+`TextField` to a specific value:
 
 Code before migration:
 
