@@ -89,7 +89,7 @@ please refer to the documentation of the `EditableText` widget.
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 2.6.0-12.0.pre<br>
 In stable release: not yet
 Reverted in version: xxx  (OPTIONAL, delete if not used)
 
