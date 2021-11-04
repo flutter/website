@@ -34,7 +34,7 @@ were built using the concepts described here.
 [Flokk]: {{site.github}}/gskinnerTeam/flokk
 [Folio]: {{site.github}}/gskinnerTeam/flutter-folio
 
-Original demo code for adaptive app development techniques from [flutter-adaptive-demo](https://github.com/gskinnerTeam/flutter-adaptive-demo). Code excerpts seen on this page are available in the examples directory at [adaptive app demos](https://github.com/flutter/website/tree/main/examples/ui/layout/adaptive_app_demos)
+Original demo code for adaptive app development techniques from [flutter-adaptive-demo](https://github.com/gskinnerTeam/flutter-adaptive-demo).
 
 ## Building adaptive layouts
 
