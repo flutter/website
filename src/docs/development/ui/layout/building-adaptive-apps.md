@@ -491,7 +491,7 @@ return Listener(
     onPointerSignal: (event) {
       if (event is PointerScrollEvent) print(event.scrollDelta.dy);
     },
-    child: Container());
+    child: ListView());
 ```
 
 [`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html

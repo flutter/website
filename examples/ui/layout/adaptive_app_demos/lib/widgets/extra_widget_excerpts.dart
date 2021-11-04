@@ -25,7 +25,7 @@ class ScrollListen extends StatelessWidget {
         onPointerSignal: (event) {
           if (event is PointerScrollEvent) print(event.scrollDelta.dy);
         },
-        child: Container());
+        child: ListView());
     // #enddocregion PointerScroll
   }
 
