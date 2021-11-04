@@ -66,11 +66,11 @@ class _ContentPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion VisualDensityOwnView
     VisualDensity density = Theme.of(context).visualDensity;
+    // #enddocregion VisualDensityOwnView
     return ConstrainedBox(
       constraints: BoxConstraints(minHeight: 300, minWidth: 300),
       child: Padding(
         padding: EdgeInsets.all(Insets.large + density.vertical * 6),
-        // #enddocregion VisualDensityOwnView
         child: Container(
           alignment: Alignment.center,
           color: Colors.purple.shade100,
