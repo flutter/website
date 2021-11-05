@@ -20,6 +20,7 @@ This page covers the following topics:
 * [Enabling Material Components](#enabling-material-components)
 * [Signing the app](#signing-the-app)
 * [Shrinking your code with R8](#shrinking-your-code-with-r8)
+* [Enabling multidex support](#enabling-multidex-support)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
@@ -244,6 +245,35 @@ flag to `flutter build apk` or `flutter build appbundle`.
   Obfuscation and minification can considerably extend compile time
   of the Android application.
 {{site.alert.end}}
+
+## Enabling multidex support
+
+When writing large apps or making use of large plugins, you may encounter
+Android's dex limit of 64k methods when targeting a minimum API of 20 or
+below. This may also be encountered when running debug versions of your app
+via `flutter run` that does not have shrinking enabled.
+
+Flutter tool supports easily enabling multidex. The simplest way is to
+opt into multidex support when prompted. The tool detects multidex build errors
+and will ask before making changes to your Android project. Opting in allows
+Flutter to automatically depend on `androidx.multidex:multidex` and use a
+generated `FlutterMultiDexApplication` as the project's application.
+
+{{site.alert.note}}
+  Multidex support is natively included when targeting min sdk 21+.
+{{site.alert.end}}
+
+You might also choose to manually support multidex by following Android's guides
+and modifying your project's Android directory configuration. A
+[multidex keep file][multidex-keep] must be specified to include:
+
+```
+io/flutter/embedding/engine/loader/FlutterLoader.class
+io/flutter/util/PathUtils.class
+```
+Also, include any other classes used in app startup.
+See the official [Android documentation][multidex-docs] for more detailed
+guidance on adding multidex support manually.
 
 ## Reviewing the app manifest
 
@@ -514,11 +544,13 @@ The resulting app bundle or APK files are located in
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[Issue 9253]: {{site.repo.flutter}}/issues/9253
-[Issue 18494]: {{site.repo.flutter}}/issues/18494
+[Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
+[Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[multidex-docs]: {{site.android-dev}}/studio/build/multidex
+[multidex-keep]: {{site.android-dev}}/studio/build/multidex#multidexkeepfile-property
 [obfuscating your Dart code]: /docs/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
