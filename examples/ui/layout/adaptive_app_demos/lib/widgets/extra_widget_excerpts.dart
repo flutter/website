@@ -10,8 +10,12 @@ Widget LayoutBuilderWidget() {
       builder: (BuildContext context, BoxConstraints constraints) {
     bool useVerticalLayout = constraints.maxWidth < 400.0;
     return Flex(
-        children: [Text("Hello"), Text("World")],
-        direction: useVerticalLayout ? Axis.vertical : Axis.horizontal);
+      children: [
+        Text("Hello"),
+        Text("World"),
+      ],
+      direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
+    );
   });
   // #enddocregion LayoutBuilder
 
