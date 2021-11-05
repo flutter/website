@@ -93,7 +93,7 @@ fi
 # Don't check for external links 
 CMD="dart run linkcheck $ARGS--skip-file ./tool/config/linkcheck-skip-list.txt :$SERVE_PORT"
 echo "=> $CMD"
-$CMD 2>&1 | tee "linkcheck.log"
+$CMD 2>&1 | tee "linkcheck-server.log"
 STATUS=$?
 
 # When checking external links, give linkcheck 
@@ -109,5 +109,5 @@ if [[ $FAILWARN ]]; then
   echo "=> Exiting with status: $STATUS"
   exit $STATUS
 else
-  grep -qe '^\s*0 errors' "linkcheck.log"
+  grep -qe '^\s*0 errors' "linkcheck-server.log"
 fi
