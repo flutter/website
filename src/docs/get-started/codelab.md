@@ -221,11 +221,11 @@ as well as many other open source packages, on [pub.dev][].
     ```diff
     --- step1_base/pubspec.yaml
     +++ step2_use_package/pubspec.yaml
-    @@ -8,4 +8,5 @@
+    @@ -9,4 +9,5 @@
      dependencies:
        flutter:
          sdk: flutter
-       cupertino_icons: ^1.0.3
+       cupertino_icons: ^1.0.2
     +  english_words: ^4.0.0
     ```
 
