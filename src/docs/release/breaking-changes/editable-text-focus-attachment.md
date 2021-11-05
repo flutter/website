@@ -102,6 +102,6 @@ Relevant PRs:
 
 * [Move text editing Actions to EditableTextState][]
 
-[`EditableText`]: {{site.master.api}}/flutter/widgets/EditableText-class.html
+[`EditableText`]: {{site.master-api}}/flutter/widgets/EditableText-class.html
 [Move text editing Actions to EditableTextState]: {{site.github}}/flutter/flutter/pull/90684
 
