@@ -11,15 +11,15 @@ description: EditableText.focusNode is no longer attached to EditableTextState's
 ## Context
 
 A text input field widget (`TextField`, for example) typically owns a `FocusNode`.
-When that `FocusNode` is the primary focus of the app, events such as key presses 
-will be sent to the `BuildContext` the `FocusNode` is attached to. 
+When that `FocusNode` is the primary focus of the app, events (such as key presses) 
+are sent to the `BuildContext` to which the `FocusNode` is attached. 
 
 The `FocusNode` also plays a roll in shortcut handling: The `Shortcuts` widget 
 translates key sequences into an `Intent`, and tries to find the first suitable 
-handler for that `Intent` starting from the `BuildContext` the `FocusNode` attaches 
-to, to the root of the widget tree. This means an `Actions` widget (which provides 
-handlers for differetn `Intent`s) will not be able to handle any shortcut `Intent`s 
-when the `BuildContext` that thas the primary focus is above it in the tree.
+handler for that `Intent` starting from the `BuildContext` to which the `FocusNode` 
+is attached, to the root of the widget tree. This means an `Actions` widget (that provides 
+handlers for different `Intent`s) won't be able to handle any shortcut `Intent`s 
+when the `BuildContext` that has the primary focus is above it in the tree.
 
 Previously for `EditableText`, the `FocusNode` was attached to the `BuildContext`
 of `EditableTextState`. Any `Actions` widgets defined in `EditableTextState` (which 
@@ -53,16 +53,16 @@ field or a selectable text field like so:
 
 Then please read on and consider following the migration steps to avoid breakages.
 
-If you're not sure if a codebase needs migration, search for `is EditableText`,
-`as EditableText`, `is EditableTextState` and `as EditableTextState` and verify
-any of the search result are doing typecheck/typecast on a `FocusNode.context`.
-If there is then migration is needed.
+If you're not sure whether a codebase needs migration, search for `is EditableText`,
+`as EditableText`, `is EditableTextState`, and `as EditableTextState` and verify if
+any of the search results are doing a typecheck or typecast on a `FocusNode.context`.
+If so, then migration is needed.
 
-To avoid doing typecheck or downcasting the `BuildContext` associated with the
-`FocusNode` of interest, depending on the actual capabilities the codebase is
+To avoid performing a typecheck, or downcasting the `BuildContext` associated with the
+`FocusNode` of interest, and depending on the actual capabilities the codebase is
 trying to invoke from the given `FocusNode`, fire an `Intent` from that
 `BuildContext`. For instance, if you wish to update the text of the currently focused
-`TextField` to a specific value:
+`TextField` to a specific value, see the following example:
 
 Code before migration:
 
@@ -85,13 +85,12 @@ if (focusedContext != null) {
 ```
 
 For a comprehensive list of `Intent`s supported by the `EditableText` widget,
-please refer to the documentation of the `EditableText` widget.
+refer to the documentation of the `EditableText` widget.
 
 ## Timeline
 
 Landed in version: 2.6.0-12.0.pre<br>
 In stable release: not yet
-Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 ## References
 
@@ -103,6 +102,6 @@ Relevant PRs:
 
 * [Move text editing Actions to EditableTextState][]
 
-[`EditableText`]: https://master-api.flutter.dev/flutter/widgets/EditableText-class.html
+[`EditableText`]: {{site.master.api}}/flutter/widgets/EditableText-class.html
 [Move text editing Actions to EditableTextState]: {{site.github}}/flutter/flutter/pull/90684
 
