@@ -83,7 +83,7 @@ $CMD > "./linkcheck-server.log" 2>&1 &
 SERVER_PID=$!
 echo "=> Server PID: $SERVER_PID"
 
-sleep 4
+sleep 10
 
 if [ ! kill -0 $SERVER_PID > /dev/null 2>&1 ]; then
   echo $'\nWARNING: Server command failed, server may already running.\n'
