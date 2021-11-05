@@ -1,4 +1,4 @@
-name: Link validate
+name: HTML link references validate
 
 on:
   push:
@@ -13,7 +13,7 @@ env:
   NODE_VERSION: 15
 
 jobs:
-  check_reference_links:
+  check_link_references:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -30,4 +30,5 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: "3.x"
-      - run: python tool/html_check_reference_links.py _site https://flutter.dev/
+      - run: pip install PyYAML
+      - run: python tool/check_link_references.py
