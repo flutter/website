@@ -886,7 +886,7 @@ class Location {
 }
 
 const urlPrefix =
-    'https://flutter.dev/docs/cookbook/img-files/effects/parallax';
+    'https://docs.flutter.dev/cookbook/img-files/effects/parallax';
 const locations = [
   Location(
     name: 'Mount Rushmore',

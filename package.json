@@ -1,8 +1,8 @@
 {
-  "name": "flutter.dev",
+  "name": "docs.flutter.dev",
   "version": "0.0.0",
   "private": true,
-  "description": "flutter.dev",
+  "description": "Flutter docs",
   "scripts": {},
   "repository": {
     "type": "git",

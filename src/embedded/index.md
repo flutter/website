@@ -26,7 +26,7 @@ resources.
 * [Custom Flutter Engine Embedders][], on the Flutter wiki.
 * The doc comments in the
   [Flutter engine `engine.h` file][] on GitHub.
-* The [Flutter architectural overview][] on flutter.dev.
+* The [Flutter architectural overview][] on docs.flutter.dev.
 * A small, self contained [Flutter Embedder Engine GLFW example][]
   in the Flutter engine GitHub repo.
 * [Issue 31043][]: _Questions for porting flutter engine to

@@ -1,6 +1,6 @@
 name: layout
 description: >
-  Sample app from "Building Layouts", https://flutter.dev/docs/development/ui/layout.
+  Sample app from "Building Layouts", https://docs.flutter.dev/development/ui/layout.
 version: 1.0.0
 
 environment:

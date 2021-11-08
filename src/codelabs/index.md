@@ -28,7 +28,7 @@ one of these codelabs:
   for a startup company. In part one, you'll use a package
   that returns pairs of words at random and inserts them into
   an infinite scrolling list. You can also find this
-  [codelab on flutter.dev][].
+  [codelab on docs.flutter.dev][].
 
 * [Write your first Flutter app, part 2][]<br>
   Create a simple mobile app that generates proposed names
@@ -57,7 +57,7 @@ one of these codelabs:
 
 [Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
 [Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
-[codelab on flutter.dev]: /docs/get-started/codelab
+[codelab on docs.flutter.dev]: /get-started/codelab
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
 [Write your first Flutter app on the web]: /docs/get-started/codelab-web

@@ -189,7 +189,7 @@ class FilterItem extends StatelessWidget {
          padding: const EdgeInsets.all(8.0),
          child: ClipOval(
            child: Image.network(
-             'https://flutter.dev/docs/cookbook/img-files'
+             'https://docs.flutter.dev/cookbook/img-files'
              '/effects/instagram-buttons/millenial-texture.jpg',
              color: color.withOpacity(0.5),
              colorBlendMode: BlendMode.hardLight,
@@ -568,7 +568,7 @@ class _ExampleInstagramFilterSelectionState
       builder: (context, value, child) {
         final color = value as Color;
         return Image.network(
-          'https://flutter.dev/docs/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
+          'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
           color: color.withOpacity(0.5),
           colorBlendMode: BlendMode.color,
           fit: BoxFit.cover,
@@ -824,7 +824,7 @@ class FilterItem extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: ClipOval(
             child: Image.network(
-              'https://flutter.dev/docs/cookbook/img-files/effects/instagram-buttons/millenial-texture.jpg',
+              'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),

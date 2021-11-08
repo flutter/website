@@ -1231,7 +1231,7 @@ We increased our support for web, moving it from the dev channel to the beta cha
 
 [42531](https://github.com/flutter/flutter/pull/42531) Print correct hostname when web server is launched
 
-[42676](https://github.com/flutter/flutter/pull/42676) [web] Update web runner message with flutter.dev/web
+[42676](https://github.com/flutter/flutter/pull/42676) [web] Update web runner message with docs.flutter.dev/web
 
 [42701](https://github.com/flutter/flutter/pull/42701) serve correct content type from debug server
 
@@ -1354,7 +1354,7 @@ We increased our support for web, moving it from the dev channel to the beta cha
 
 ## Desktop
 
-We are also moving macOS support from tech preview to alpha, enabling it in the dev channel. For more details,  please see [flutter.dev/desktop](https://github.com/flutter/flutter/wiki/Desktop-shells).
+We are also moving macOS support from tech preview to alpha, enabling it in the dev channel. For more details,  please see [docs.flutter.dev/desktop](https://github.com/flutter/flutter/wiki/Desktop-shells).
 
 [37901](https://github.com/flutter/flutter/pull/37901) [macos] Check for special keys before creating a logical key
 
@@ -2329,7 +2329,7 @@ In this update, the core engine continues to see many improvements, including a 
 
 ## Plugins
 
-We have made significant improvements in our plugins. We upgraded a set of plugins to support web development. Also, to support Add to App scenarios, we have a new set of APIs available for existing Android plugins to be upgraded to. If you are currently maintaining an Android plugin. We encourage you to check the [Migrating your plugin to the new APIs](http://flutter.dev/go/android-plugin-migration) documentation, and upgrade your plugins accordingly.
+We have made significant improvements in our plugins. We upgraded a set of plugins to support web development. Also, to support Add to App scenarios, we have a new set of APIs available for existing Android plugins to be upgraded to. If you are currently maintaining an Android plugin. We encourage you to check the [Migrating your plugin to the new APIs](http://docs.flutter.dev/go/android-plugin-migration) documentation, and upgrade your plugins accordingly.
 
 [1984](https://github.com/flutter/plugins/pull/1984) Remove Flutterfire plugins (moved to FirebaseExtended)
 

@@ -32,7 +32,7 @@ Windows usually had a test like this in their
 <!-- skip -->
 ```dart
 // Sets a platform override for desktop to avoid exceptions. See
-// https://flutter.dev/desktop#target-platform-override for more info.
+// https://docs.flutter.dev/desktop#target-platform-override for more info.
 void _enablePlatformOverrideForDesktop() {
   if (!kIsWeb && (Platform.isWindows || Platform.isLinux)) {
     debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
