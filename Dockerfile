@@ -119,4 +119,4 @@ RUN firebase deploy -m $COMMIT \
       --token $FIREBASE_TOKEN \
       --project $FIREBASE_ALIAS \
       --debug \
-	--json
+      --json
