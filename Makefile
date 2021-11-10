@@ -10,6 +10,8 @@ all: gen-env up down debug shell setup serve switch-channel test-channel \
 .DEFAULT_GOAL := up
 .PHONY: all
 
+FIREBASE_ALIAS ?= default
+
 
 # =================== Development Commands ==================
 
@@ -68,7 +70,7 @@ serve:
 
 # Test hosting locally with FB emulator
 emulate:
-	firebase emulators:start --only hosting
+	firebase emulators:start --only hosting --project ${FIREBASE_ALIAS}
 
 
 # =================== Testing locally from host ==================
@@ -133,7 +135,6 @@ check-links:
 
 FLUTTER_BRANCH ?= stable
 TEST_TARGET_CHANNEL ?= stable
-FIREBASE_ALIAS ?= default
 BUILD_COMMIT := $(shell git rev-parse --short HEAD)
 BUILD_TAG = fltbuild
 BUILD_NAME = tmpbuild
@@ -205,13 +206,16 @@ else
 		--json
 endif
 
-STAGE_NAME ?= stage
+
 # All in one command to stage your build to a Firebase 
 # channel on your currently selected project
 # Usage: `make stage STAGE_NAME=foo`
+STAGE_NAME ?= docs
 stage:
 	make build
-	firebase hosting:channel:deploy ${STAGE_NAME}
+	firebase hosting:channel:deploy ${STAGE_NAME} \
+		--project ${FIREBASE_ALIAS} \
+		--token ${FIREBASE_TOKEN}
 
 
 

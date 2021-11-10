@@ -7,25 +7,37 @@
     </button>
 
     <a class="navbar-brand" href="/">
-      <img src='/assets/images/shared/brand/flutter/logo/flutter-lockup.png' alt='Flutter logo' height="37" width="129" class="align-middle">
+      <img 
+        src='/assets/images/shared/brand/flutter/logo/flutter-lockup.png' 
+        alt='Flutter logo' 
+        height="37" 
+        width="129" 
+        class="align-middle">
     </a>
 
     <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-      <div class="site-header__sheet-bg" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></div>
+      <div 
+        class="site-header__sheet-bg" 
+        data-toggle="collapse" 
+        data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+      </div>
       <div class="site-header__sheet">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link{% if route contains '/docs' %} active{% endif %}" href="/docs">Docs</a>
-          </li>
           <div class="site-sidebar site-sidebar--header d-md-none">
             {% include shared/sidenav-level-1.html nav=site.data.sidenav %}
           </div>
-
           <li class="nav-item">
-            <a class="nav-link{% if route contains '/showcase' %} active{% endif %}" href="/showcase">Showcase</a>
+            <a 
+              class="nav-link{% if route contains '/showcase' %} active{% endif %}" 
+              href="/showcase">Showcase</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link{% if route contains '/community' %} active{% endif %}" href="/community">Community</a>
+            <a 
+              class="nav-link{% if route contains '/community' %} active{% endif %}" 
+              href="/community">Community</a>
           </li>
         </ul>
         <form action="/search/" class="site-header__search form-inline">

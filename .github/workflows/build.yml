@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - cms-launch-refactor
   pull_request:
     branches:
       - main
@@ -12,7 +13,7 @@ on:
 
 env:
   NODE_ENV: production
-  NODE_VERSION: 15
+  NODE_VERSION: 17
 
 jobs:
 
@@ -62,6 +63,32 @@ jobs:
           DISABLE_TESTS: 1
       - name: Deploy
         run: make deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_ALIAS: default
+
+  stage:
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push'
+      && github.ref == 'refs/heads/cms-launch-refactor'
+      && github.repository == 'flutter/website'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - name: Install Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install firebase tools
+        run: npm install -g firebase-tools
+      - name: Build it
+        run: make build
+        env:
+          DISABLE_TESTS: 1
+      - name: Stage it
+        run: make stage
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_ALIAS: default
