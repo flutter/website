@@ -72,7 +72,6 @@ jobs:
     if: |
       github.event_name == 'push'
       && github.ref == 'refs/heads/cms-launch-refactor'
-      && github.repository == 'flutter/website'
     steps:
       - uses: actions/checkout@v2
         with:
