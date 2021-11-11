@@ -23,10 +23,5 @@ $enable-deprecation-messages: false;
 // as this import and the package.json lib.
 @import '../../node_modules/font-awesome/scss/font-awesome';
 
-
-// TODO attempted to use FA v5 to get the correct fa-link, but did not work
-// @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-// @import '../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims';
-
 // $fa-font-path: "../assets/fonts";
 

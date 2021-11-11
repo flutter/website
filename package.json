@@ -9,7 +9,6 @@
     "url": "https://github.com/flutter/website.git"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap-scss": "^4.6.0",
     "diff2html-cli": "^5.1.11",
     "font-awesome": "^4.7.0"

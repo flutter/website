@@ -8,6 +8,7 @@ on:
   pull_request:
     branches:
       - main
+      - cms-launch-refactor
   schedule:
     - cron: "0 0 * * 0"
 
@@ -19,6 +20,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    if: github.repository == 'flutter/website'
     strategy:
       fail-fast: false
       matrix:
@@ -69,9 +71,7 @@ jobs:
 
   stage:
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'push'
-      && github.ref == 'refs/heads/cms-launch-refactor'
+    if: github.ref == 'refs/heads/cms-launch-refactor'
     steps:
       - uses: actions/checkout@v2
         with:

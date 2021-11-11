@@ -11,7 +11,7 @@ Select the operating system on which you are installing Flutter:
 
 <div class="card-deck mb-8">
 {% for os in page.os-list %}
-  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href=/get-started/install/{{os | remove: ' ' | downcase}}">
+  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
