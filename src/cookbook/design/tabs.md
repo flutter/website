@@ -3,10 +3,10 @@ title: Work with tabs
 description: How to implement tabs in a layout.
 prev:
   title: Use themes to share colors and font styles
-  path: /docs/cookbook/design/themes
+  path: /cookbook/design/themes
 next:
   title: Create a download button
-  path: /docs/cookbook/effects/download-button
+  path: /cookbook/effects/download-button
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

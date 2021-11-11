@@ -6,7 +6,7 @@ description: How to develop Flutter apps in Visual Studio Code.
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
   <li class="nav-item">
-    <a class="nav-link" href="/docs/development/tools/android-studio" role="tab" aria-selected="false">Android Studio and IntelliJ</a>
+    <a class="nav-link" href=/development/tools/android-studio" role="tab" aria-selected="false">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link active" role="tab" aria-selected="true">Visual Studio Code</a>
@@ -315,12 +315,12 @@ Prior to filing new issues:
 When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[DevTools]: /docs/development/tools/devtools
-[flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
-[Flutter inspector]: /docs/development/tools/devtools/inspector
-[Flutter's build modes]: /docs/testing/build-modes
+[DevTools]:/development/tools/devtools
+[flutter doctor]:/resources/bug-reports/#provide-some-flutter-diagnostics
+[Flutter inspector]:/development/tools/devtools/inspector
+[Flutter's build modes]:/testing/build-modes
 [let us know]: {{site.repo.this}}/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
-[Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
-[Set up an editor]: /docs/get-started/editor?tab=vscode
+[Running DevTools from VS Code]:/development/tools/devtools/vscode
+[Set up an editor]:/get-started/editor?tab=vscode
 [VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png

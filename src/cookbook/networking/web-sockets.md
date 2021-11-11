@@ -3,10 +3,10 @@ title: Work with WebSockets
 description: How to connect to a web socket.
 prev:
   title: Update data over the internet
-  path: /docs/cookbook/networking/update-data
+  path: /cookbook/networking/update-data
 next:
   title: Persist data with SQLite
-  path: /docs/cookbook/persistence/sqlite
+  path: /cookbook/persistence/sqlite
 ---
 
 <?code-excerpt path-base="cookbook/networking/web_sockets/"?>

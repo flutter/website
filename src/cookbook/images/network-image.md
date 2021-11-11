@@ -3,10 +3,10 @@ title: Display images from the internet
 description: How to display images from the internet.
 prev:
   title: Implement swipe to dismiss
-  path: /docs/cookbook/gestures/dismissible
+  path: /cookbook/gestures/dismissible
 next:
   title: Fade in images with a placeholder
-  path: /docs/cookbook/images/fading-in-images
+  path: /cookbook/images/fading-in-images
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -76,7 +76,7 @@ class MyApp extends StatelessWidget {
 </noscript>
 
 
-[Fade in images with a placeholder]: /docs/cookbook/images/fading-in-images
+[Fade in images with a placeholder]: /cookbook/images/fading-in-images
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`Image.network()`]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[Work with cached images]: /docs/cookbook/images/cached-images
+[Work with cached images]: /cookbook/images/cached-images

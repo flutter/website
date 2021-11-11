@@ -81,11 +81,11 @@ whether or not the breakpoint was caught by application code.
 When performing a hot restart for a Flutter application,
 user breakpoints are cleared.
 
-[Logging view]: /docs/development/tools/devtools/logging
+[Logging view]:/development/tools/devtools/logging
 
 ## Other resources
 
 For more information on debugging and profiling, see the
 [Debugging][] page.
 
-[Debugging]: /docs/testing/debugging
+[Debugging]:/testing/debugging

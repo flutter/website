@@ -3,10 +3,10 @@ title: Update the UI based on orientation
 description: Respond to a change in the screen's orientation.
 prev:
   title: Export fonts from a package
-  path: /docs/cookbook/design/package-fonts
+  path: /cookbook/design/package-fonts
 next:
   title: Use custom fonts
-  path: /docs/cookbook/design/fonts
+  path: /cookbook/design/fonts
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -142,6 +142,6 @@ class OrientationList extends StatelessWidget {
 </noscript>
 
 
-[Creating a grid list]: /docs/cookbook/lists/grid-lists
+[Creating a grid list]: /cookbook/lists/grid-lists
 [`Orientation`]: {{site.api}}/flutter/widgets/Orientation-class.html
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html

@@ -23,7 +23,6 @@
       { "source": "/subscribe", "destination": "https://flutter.dev", "type": 301 },
       { "source": "/subscribe/subscribed", "destination": "https://flutter.dev", "type": 301 },
       { "source": "/support", "destination": "https://flutter.dev/community", "type": 301 },
-
       { "source": "/docs/:rest*", "destination": "/:rest*", "type": 301 },
 
       { "source": "/accessibility", "destination": "/development/accessibility-and-localization/accessibility", "type": 301 },
@@ -36,9 +35,6 @@
       { "source": "/bootstrap-into-dart", "destination": "/resources/bootstrap-into-dart", "type": 301 },
       { "source": "/bug-reports", "destination": "/resources/bug-reports", "type": 301 },
       { "source": "/cd", "destination": "/deployment/cd", "type": 301 },
-      { "source": "/codelabs", "destination": "/codelabs", "type": 301 },
-      { "source": "/cookbook", "destination": "/cookbook", "type": 301 },
-      { "source": "/cookbook/:rest*", "destination": "/cookbook/:rest*", "type": 301 },
       { "source": "/custom-fonts", "destination": "/cookbook/design/fonts", "type": 301 },
       { "source": "/debugging", "destination": "/testing/debugging", "type": 301 },
       { "source": "/deferred-components", "destination": "/perf/deferred-components", "type": 301 },
@@ -50,9 +46,6 @@
       { "source": "/flutter-for-:platform*", "destination": "/get-started/flutter-for/:platform*-devs", "type": 301 },
       { "source": "/formatting", "destination": "/development/tools/formatting", "type": 301 },
       { "source": "/gestures", "destination": "/development/ui/advanced/gestures", "type": 301 },
-      { "source": "/get-started", "destination": "/get-started", "type": 301 },
-      { "source": "/get-started/:rest*", "destination": "/get-started/:rest*", "type": 301 },
-      { "source": "/getting-started", "destination": "/get-started", "type": 301 },
       { "source": "/hot-reload", "destination": "/development/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/get-started/editor", "type": 301 },
       { "source": "/images/catalog-widget-placeholder.png", "destination": "/assets/images/docs/catalog-widget-placeholder.png", "type": 301 },

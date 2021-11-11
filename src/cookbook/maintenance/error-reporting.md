@@ -3,10 +3,10 @@ title: Report errors to a service
 description: How to keep track of errors that users encounter.
 prev:
   title: Work with long lists
-  path: /docs/cookbook/lists/long-lists
+  path: /cookbook/lists/long-lists
 next:
   title: Animate a widget across screens
-  path: /docs/cookbook/navigation/hero-animations
+  path: /cookbook/navigation/hero-animations
 ---
 
 While one always tries to create apps that are free of bugs,

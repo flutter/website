@@ -3,10 +3,10 @@ title: Update data over the internet
 description: How to use the http package to update data over the internet.
 prev:
   title: Send data to the internet
-  path: /docs/cookbook/networking/send-data
+  path: /cookbook/networking/send-data
 next:
   title: Work with WebSockets
-  path: /docs/cookbook/networking/web-sockets
+  path: /cookbook/networking/web-sockets
 ---
 
 <?code-excerpt path-base="cookbook/networking/update_data/"?>
@@ -397,7 +397,7 @@ class _MyAppState extends State<MyApp> {
 
 [ConnectionState]: {{site.api}}/flutter/widgets/ConnectionState-class.html
 [`didChangeDependencies()`]: {{site.api}}/flutter/widgets/State/didChangeDependencies.html
-[Fetch data]: /docs/cookbook/networking/fetch-data
+[Fetch data]:/cookbook/networking/fetch-data
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
@@ -405,8 +405,8 @@ class _MyAppState extends State<MyApp> {
 [`http.put()`]: {{site.pub-api}}/http/latest/http/put.html
 [`http` package]: {{site.pub}}/packages/http/install
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[Introduction to unit testing]:/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
-[JSON and serialization]: /docs/development/data-and-backend/json
-[Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
+[JSON and serialization]:/development/data-and-backend/json
+[Mock dependencies using Mockito]:/cookbook/testing/unit/mocking
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

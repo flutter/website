@@ -61,4 +61,4 @@ Select the device on which the Flutter module runs so `flutter attach` filters f
 {% include docs/app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
 
 
-[debugging functionalities]: /docs/testing/debugging
+[debugging functionalities]:/testing/debugging

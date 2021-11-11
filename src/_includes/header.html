@@ -32,12 +32,12 @@
           <li class="nav-item">
             <a 
               class="nav-link{% if route contains '/showcase' %} active{% endif %}" 
-              href="/showcase">Showcase</a>
+              href="{{site.main-url}}/showcase">Showcase</a>
           </li>
           <li class="nav-item">
             <a 
               class="nav-link{% if route contains '/community' %} active{% endif %}" 
-              href="/community">Community</a>
+              href="{{site.main-url}}/community">Community</a>
           </li>
         </ul>
         <form action="/search/" class="site-header__search form-inline">
@@ -51,7 +51,7 @@
       <a class="nav-item nav-link" href="{{site.repo.organization}}" aria-label="Github"><i class="fab fa-github fa-lg"></i></a>
     </div>
     {% if page.show-nav-get-started-button -%}
-      <a class="site-header__cta btn btn-primary" href="/docs/get-started/install/">Get started</a>
+      <a class="site-header__cta btn btn-primary" href="/get-started/install/">Get started</a>
     {% endif -%}
   </nav>
 </header>

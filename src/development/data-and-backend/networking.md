@@ -29,7 +29,7 @@ manifest (`AndroidManifest.xml `):
 
 For a practical sample of various networking tasks (incl. fetching data,
 WebSockets, and parsing data in the background) see the 
-[networking cookbook](/docs/cookbook#networking).
+[networking cookbook]/cookbook#networking).
 
 [declare]: {{site.android-dev}}/training/basics/network-ops/connecting
 [`http`]: {{site.pub-pkg}}/http

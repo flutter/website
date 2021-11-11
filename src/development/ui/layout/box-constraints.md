@@ -129,5 +129,5 @@ otherwise they would not be able to reasonably align their children.
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
-[Understanding constraints]: /docs/development/ui/layout/constraints
+[Understanding constraints]:/development/ui/layout/constraints
 [`double.infinity`]: {{site.api}}/flutter/dart-core/double/infinity-constant.html

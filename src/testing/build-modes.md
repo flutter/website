@@ -116,12 +116,12 @@ For more information on the build modes, see
 [Flutter's build modes][].
 
 
-[Android]: /docs/deployment/android
+[Android]:/deployment/android
 [Assertions]: {{site.dart-site}}/guides/language/language-tour#assert
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [dartdevc]: {{site.dart-site}}/tools/dartdevc
-[DevTools]: /docs/development/tools/devtools
+[DevTools]:/development/tools/devtools
 [Flutter wiki]: {{site.repo.flutter}}/wiki/Flutter's-modes
 [Flutter's build modes]: {{site.repo.flutter}}/wiki/Flutter%27s-modes
-[hot reload]: /docs/development/tools/hot-reload
-[iOS]:  /docs/deployment/ios
+[hot reload]:/development/tools/hot-reload
+[iOS]: /deployment/ios

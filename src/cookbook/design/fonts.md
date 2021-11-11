@@ -3,10 +3,10 @@ title: Use a custom font
 description: How to use custom fonts.
 prev:
   title: Update the UI based on orientation
-  path: /docs/cookbook/design/orientation
+  path: /cookbook/design/orientation
 next:
   title: Use themes to share colors and font styles
-  path: /docs/cookbook/design/themes
+  path: /cookbook/design/themes
 ---
 
 Although Android and iOS offer high quality system fonts,
@@ -250,7 +250,7 @@ class MyHomePage extends StatelessWidget {
 ![Custom Fonts Demo](/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
 
 
-[Export fonts from a package]:  /docs/cookbook/design/package-fonts
+[Export fonts from a package]:  /cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
 [`fontStyle`]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
 [`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
@@ -259,4 +259,4 @@ class MyHomePage extends StatelessWidget {
 [Google Fonts]: https://fonts.google.com
 [google_fonts]: {{site.pub-pkg}}/google_fonts
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
-[Using Themes to share colors and font styles]: /docs/cookbook/design/themes
+[Using Themes to share colors and font styles]: /cookbook/design/themes

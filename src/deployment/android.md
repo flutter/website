@@ -551,10 +551,10 @@ The resulting app bundle or APK files are located in
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
 [multidex-keep]: {{site.android-dev}}/studio/build/multidex#multidexkeepfile-property
-[obfuscating your Dart code]: /docs/deployment/obfuscate
+[obfuscating your Dart code]:/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
-[Platform Views]: /docs/development/platform-integration/platform-views
+[Platform Views]:/development/platform-integration/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
 [R8]: {{site.android-dev}}/studio/build/shrink-code

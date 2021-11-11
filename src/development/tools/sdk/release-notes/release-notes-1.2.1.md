@@ -238,7 +238,7 @@ Picture.toImage now returns a `Future<Image>` instead. This permits image raster
 }
 ```
 
-However, your application may well be performing other asynchronous actions, and you should consider how you want to handle image processing in that light. For more on Dart's support for asynchronous programming and the Future class, see [https://www.dartlang.org/tutorials/language/futures.](https://www.dartlang.org/tutorials/language/futures.)
+However, your application may well be performing other asynchronous actions, and you should consider how you want to handle image processing in that light. For more on Dart's support for asynchronous programming and the Future class, see [https://www.dartlang.org/tutorials/language/futures.](https://www.dartlang.org/tutorials/language/futures)
 
 
 ### [#7567](https://github.com/flutter/engine/pull/7567) Rename FlutterResult in embedder.h
@@ -286,6 +286,6 @@ In addition to Flutter framework changes in the 1.2 release, we've made a number
 
 ## Full Issue List
 
-You can see [the full list of PRs committed in this release](/docs/development/tools/sdk/release-notes/changelogs/changelog-1.2.1).
+You can see [the full list of PRs committed in this release]/development/tools/sdk/release-notes/changelogs/changelog-1.2.1).
 
 [Android App Bundles]: https://developer.android.com/guide/app-bundle/

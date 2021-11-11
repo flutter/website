@@ -4,7 +4,7 @@ description: How to install on Linux.
 short-title: Linux
 next:
   title: Set up an editor
-  path: /docs/get-started/editor
+  path: /get-started/editor
 ---
 
 {% assign os = 'linux' -%}

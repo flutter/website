@@ -3,10 +3,10 @@ title: Handle scrolling
 description: How to handle scrolling in a widget test.
 prev:
   title: Find widgets
-  path: /docs/cookbook/testing/widget/finders
+  path: /cookbook/testing/widget/finders
 next:
   title: Tap, drag, and enter text
-  path: /docs/cookbook/testing/widget/tap-drag
+  path: /cookbook/testing/widget/tap-drag
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/scrolling/"?>
@@ -159,4 +159,4 @@ flutter test test/widget_test.dart
 [`WidgetTester`]: {{site.api}}/flutter/flutter_test/WidgetTester-class.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [`scrollUntilVisible()`]: {{site.api}}/flutter/flutter_test/WidgetController/scrollUntilVisible.html
-[Work with long lists]: /docs/cookbook/lists/long-lists
+[Work with long lists]:/cookbook/lists/long-lists

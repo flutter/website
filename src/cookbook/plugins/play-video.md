@@ -3,10 +3,10 @@ title: Play and pause a video
 description: How to use the video_player plugin.
 prev:
   title: Store key-value data on disk
-  path: /docs/cookbook/persistence/key-value
+  path: /cookbook/persistence/key-value
 next:
   title: Take a picture using the camera
-  path: /docs/cookbook/plugins/picture-using-camera
+  path: /cookbook/plugins/picture-using-camera
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>

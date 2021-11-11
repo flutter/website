@@ -3,10 +3,10 @@ title: Simple app state management
 description: A simple form of state management.
 prev:
   title: Ephemeral versus app state
-  path: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+  path: /development/data-and-backend/state-mgmt/ephemeral-vs-app
 next:
   title: List of approaches
-  path: /docs/development/data-and-backend/state-mgmt/options
+  path: /development/data-and-backend/state-mgmt/options
 ---
 
 <?code-excerpt path-base="state_mgmt/simple/"?>
@@ -466,7 +466,7 @@ master these skills.
 
 [built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
 [check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper
-[declarative UI programming]: /docs/development/data-and-backend/state-mgmt/declarative
-[ephemeral and app state]: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
-[options page]: /docs/development/data-and-backend/state-mgmt/options
-[widget testing]: /docs/testing#widget-tests
+[declarative UI programming]:/development/data-and-backend/state-mgmt/declarative
+[ephemeral and app state]:/development/data-and-backend/state-mgmt/ephemeral-vs-app
+[options page]:/development/data-and-backend/state-mgmt/options
+[widget testing]:/testing#widget-tests

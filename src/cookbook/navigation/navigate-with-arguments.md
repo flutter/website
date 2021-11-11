@@ -3,10 +3,10 @@ title: Pass arguments to a named route
 description: How to pass arguments to a named route.
 prev:
   title: Navigate with named routes
-  path: /docs/cookbook/navigation/named-routes
+  path: /cookbook/navigation/named-routes
 next:
   title: Return data from a screen
-  path: /docs/cookbook/navigation/returning-data
+  path: /cookbook/navigation/returning-data
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

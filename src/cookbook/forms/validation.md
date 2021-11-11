@@ -3,10 +3,10 @@ title: Build a form with validation
 description: How to build a form that validates input.
 prev:
   title: Work with tabs
-  path: /docs/cookbook/design/tabs
+  path: /cookbook/design/tabs
 next:
   title: Create and style a text field
-  path: /docs/cookbook/forms/text-input
+  path: /cookbook/forms/text-input
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

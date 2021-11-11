@@ -3,10 +3,10 @@ title: Start thinking declaratively
 description: How to think about declarative programming.
 prev:
   title: Intro
-  path: /docs/development/data-and-backend/state-mgmt
+  path: /development/data-and-backend/state-mgmt
 next:
   title: Ephemeral versus app state
-  path: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+  path: /development/data-and-backend/state-mgmt/ephemeral-vs-app
 ---
 
 If you're coming to Flutter from an imperative framework
@@ -46,4 +46,4 @@ this style of programming might not seem as intuitive as the
 imperative style. This is why this section is here. Read on.
 
 
-[get started guide]: /docs/get-started/flutter-for/declarative
+[get started guide]:/get-started/flutter-for/declarative

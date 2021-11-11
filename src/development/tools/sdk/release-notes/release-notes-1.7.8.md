@@ -359,4 +359,4 @@ Last but not least, we continue to polish and simplify our tooling as well, incl
 
 ## Full Issue List
 
-You can see the full list of issues addressed in this release [here](/docs/development/tools/sdk/release-notes/changelogs/changelog-1.7.8).
+You can see the full list of issues addressed in this release [here]/development/tools/sdk/release-notes/changelogs/changelog-1.7.8).

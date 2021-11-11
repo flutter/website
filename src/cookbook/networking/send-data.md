@@ -3,10 +3,10 @@ title: Send data to the internet
 description: How to use the http package to send data over the internet.
 prev:
   title: Parse JSON in the background
-  path: /docs/cookbook/networking/background-parsing
+  path: /cookbook/networking/background-parsing
 next:
   title: Update data over the internet
-  path: /docs/cookbook/networking/update-data
+  path: /cookbook/networking/update-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/send_data/"?>
@@ -354,16 +354,16 @@ class _MyAppState extends State<MyApp> {
 
 [ConnectionState]: {{site.api}}/flutter/widgets/ConnectionState-class.html
 [`didChangeDependencies()`]: {{site.api}}/flutter/widgets/State/didChangeDependencies.html
-[Fetch Data]: /docs/cookbook/networking/fetch-data
+[Fetch Data]:/cookbook/networking/fetch-data
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [`http`]: {{site.pub-pkg}}/http
 [`http.post()`]: {{site.pub-api}}/http/latest/http/post.html
 [`http` package]: {{site.pub-pkg}}/http/install
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[Introduction to unit testing]:/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
-[Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
-[JSON and serialization]: /docs/development/data-and-backend/json
+[Mock dependencies using Mockito]:/cookbook/testing/unit/mocking
+[JSON and serialization]:/development/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

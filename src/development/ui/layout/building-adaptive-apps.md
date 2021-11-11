@@ -121,7 +121,7 @@ To see more available widgets and example code, see
 [`Flow`]: {{site.api}}/flutter/widgets/Flow-class.html
 [`FractionallySizedBox`]: {{site.api}}/flutter/widgets/FractionallySizedBox-class.html
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
-[Layout widgets]: /docs/development/ui/widgets/layout
+[Layout widgets]:/development/ui/widgets/layout
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html

@@ -226,19 +226,19 @@ Learn more about Flutter animations at the following links:
   takes you to a technical overview page for the library.
 
 
-[Animate a widget using a physics simulation]: /docs/cookbook/animation/physics-simulation
+[Animate a widget using a physics simulation]:/cookbook/animation/physics-simulation
 [`AnimatedList` example]: https://flutter.github.io/samples/animations.html
-[Animation and motion widgets]: /docs/development/ui/widgets/animation
+[Animation and motion widgets]:/development/ui/widgets/animation
 [Animation basics with implicit animations]: {{site.youtube-site}}/watch?v=IVTjpW3W33s&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=1
 [Animation deep dive]: {{site.youtube-site}}/watch?v=PbcILiN8rbo&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=5
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[Animation recipes]: /docs/cookbook/animation
+[Animation recipes]:/cookbook/animation
 [Animation samples]: {{site.github}}/flutter/samples/tree/master/animations#animation-samples
 [Animation videos]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw/search?query=animation
 [Animations in Flutter done right]: {{site.youtube-site}}/watch?v=wnARLByOtKA&t=3s
-[Animations: overview]: /docs/development/ui/animations/overview
+[Animations: overview]:/development/ui/animations/overview
 [animations package]: {{site.pub}}/packages/animations
-[Animations tutorial]: /docs/development/ui/animations/tutorial
+[Animations tutorial]:/development/ui/animations/tutorial
 [`AnimationController.animateWith`]: {{site.api}}/flutter/animation/AnimationController/animateWith.html
 [article1]: {{site.flutter-medium}}/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
 [article2]: {{site.flutter-medium}}/flutter-animation-basics-with-implicit-animations-95db481c5916
@@ -253,18 +253,18 @@ Learn more about Flutter animations at the following links:
 [Flutter Gallery]: {{site.repo.gallery}}
 [`Grid`]: {{site.repo.gallery}}/blob/master/lib/demos/material/grid_list_demo.dart
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
-[Hero animations]: /docs/development/ui/animations/hero-animations
+[Hero animations]:/development/ui/animations/hero-animations
 [How to choose which Flutter Animation Widget is right for you?]: {{site.youtube-site}}/watch?v=GXIJJkq_H8g
-[Implicit animations codelab]: /docs/codelabs/implicit-animations
+[Implicit animations codelab]:/codelabs/implicit-animations
 [Making your first directional animations with built-in explicit animations]: {{site.youtube-site}}/watch?v=CunyH6unILQ&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=3
-[Material widgets]: /docs/development/ui/widgets/material
+[Material widgets]:/development/ui/widgets/material
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
 [Sample app catalog]: https://flutter.github.io/samples
 [Shrine]: {{site.repo.gallery}}/tree/master/lib/studies/shrine
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
-[Staggered Animations]: /docs/development/ui/animations/staggered-animations
+[Staggered Animations]:/development/ui/animations/staggered-animations
 [Step 7 (Animate your app)]: {{site.codelabs}}/codelabs/flutter/#6
-[Write your first Flutter app on the web]: /docs/get-started/codelab-web
+[Write your first Flutter app on the web]:/get-started/codelab-web
 [Zero to One with Flutter, part 1]: {{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354

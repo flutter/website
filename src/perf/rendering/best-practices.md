@@ -176,7 +176,7 @@ render a frame as fast as possible. Why?
 If you are wondering why 60fps leads to a smooth visual experience,
 see the video [Why 60fps?][]
 
-[profile mode]: /docs/testing/build-modes#profile
+[profile mode]:/testing/build-modes#profile
 [Why 60fps?]: {{site.youtube-site}}/watch?v=CaMTIgxCSqU
 
 ## Pitfalls

@@ -470,5 +470,5 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[obfuscating your Dart code]: /docs/deployment/obfuscate
+[obfuscating your Dart code]:/deployment/obfuscate
 [TestFlight]: {{site.apple-dev}}/testflight/

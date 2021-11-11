@@ -3,10 +3,10 @@ title: Handle taps
 description: How to handle tapping and dragging.
 prev:
   title: Add Material touch ripples
-  path: /docs/cookbook/gestures/ripples
+  path: /cookbook/gestures/ripples
 next:
   title: Implement swipe to dismiss
-  path: /docs/cookbook/gestures/dismissible
+  path: /cookbook/gestures/dismissible
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -128,7 +128,7 @@ class MyButton extends StatelessWidget {
 </noscript>
 
 
-[Add Material touch ripples]: /docs/cookbook/gestures/ripples
+[Add Material touch ripples]: /cookbook/gestures/ripples
 [`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html

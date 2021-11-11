@@ -284,19 +284,19 @@ You might find the following docs useful:
 * [VS Code][]
 
 
-[Flutter enabled IDE/editor]: /docs/get-started/editor
+[Flutter enabled IDE/editor]:/get-started/editor
 
-[Debugging Flutter apps programmatically]: /docs/testing/code-debugging
-[perform traces programmatically]: /docs/testing/code-debugging#tracing-dart-code-performance
-[Debug flags: application layers]: /docs/testing/code-debugging#debug-flags-application-layers
-[Debug flags: performance]: /docs/testing/code-debugging#debug-flags-performance
-[slow the animations programmatically]: /docs/testing/code-debugging#debugging-animations
-[breakpoints]: /docs/testing/code-debugging#setting-breakpoints
-[logging]: /docs/testing/code-debugging#logging
-[Flutter's modes]: /docs/testing/build-modes
-[Flutter performance profiling]: /docs/perf/rendering/ui-performance
-[Performance best practices]: /docs/perf/rendering/best-practices
-[Using an OEM debugger]: /docs/testing/oem-debuggers
+[Debugging Flutter apps programmatically]:/testing/code-debugging
+[perform traces programmatically]:/testing/code-debugging#tracing-dart-code-performance
+[Debug flags: application layers]:/testing/code-debugging#debug-flags-application-layers
+[Debug flags: performance]:/testing/code-debugging#debug-flags-performance
+[slow the animations programmatically]:/testing/code-debugging#debugging-animations
+[breakpoints]:/testing/code-debugging#setting-breakpoints
+[logging]:/testing/code-debugging#logging
+[Flutter's modes]:/testing/build-modes
+[Flutter performance profiling]:/perf/rendering/ui-performance
+[Performance best practices]:/perf/rendering/best-practices
+[Using an OEM debugger]:/testing/oem-debuggers
 
 [The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 
@@ -304,20 +304,20 @@ You might find the following docs useful:
 [Using the Dart analyzer]: {{site.repo.flutter}}/wiki/Using-the-Dart-analyzer
 [The Framework architecture]: {{site.repo.flutter}}/wiki/The-Framework-architecture
 
-[Android Studio/IntelliJ]: /docs/development/tools/android-studio#run-app-with-breakpoints
-[VS Code]: /docs/development/tools/vs-code#run-app-with-breakpoints
-[DevTools]: /docs/development/tools/devtools
-[Flutter inspector]: /docs/development/tools/devtools/inspector
-[DevTools debugger]: /docs/development/tools/devtools/debugger
-[logging view]: /docs/development/tools/devtools/logging
-[Timeline view]: /docs/development/tools/devtools/performance
-[The performance overlay]: /docs/perf/rendering/ui-performance#the-performance-overlay
-[Flutter performance profiling]: /docs/perf/rendering/ui-performance
-[overlay]: /docs/testing/code-debugging#performance-overlay
-[debug mode]: /docs/testing/build-modes#debug
-[profile mode]: /docs/testing/build-modes#profile
-[release mode]: /docs/testing/build-modes#release
-[how the Widget Inspector uses widget creation tracking]: /docs/development/tools/devtools/inspector#track-widget-creation
+[Android Studio/IntelliJ]:/development/tools/android-studio#run-app-with-breakpoints
+[VS Code]:/development/tools/vs-code#run-app-with-breakpoints
+[DevTools]:/development/tools/devtools
+[Flutter inspector]:/development/tools/devtools/inspector
+[DevTools debugger]:/development/tools/devtools/debugger
+[logging view]:/development/tools/devtools/logging
+[Timeline view]:/development/tools/devtools/performance
+[The performance overlay]:/perf/rendering/ui-performance#the-performance-overlay
+[Flutter performance profiling]:/perf/rendering/ui-performance
+[overlay]:/testing/code-debugging#performance-overlay
+[debug mode]:/testing/build-modes#debug
+[profile mode]:/testing/build-modes#profile
+[release mode]:/testing/build-modes#release
+[how the Widget Inspector uses widget creation tracking]:/development/tools/devtools/inspector#track-widget-creation
 
 [`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour

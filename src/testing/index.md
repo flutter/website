@@ -41,7 +41,7 @@ A _unit test_ tests a single function, method, or class.
 The goal of a unit test is to verify the correctness of a
 unit of logic under a variety of conditions.
 External dependencies of the unit under test are generally
-[mocked out](/docs/cookbook/testing/unit/mocking).
+[mocked out]/cookbook/testing/unit/mocking).
 Unit tests generally don't read from or write
 to disk, render to screen, or receive user actions from
 outside the process running the test.
@@ -111,11 +111,11 @@ integration services, see the following:
 
 [code coverage]: https://en.wikipedia.org/wiki/Code_coverage
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
-[Continuous delivery using fastlane with Flutter]: /docs/deployment/cd#fastlane
+[Continuous delivery using fastlane with Flutter]:/deployment/cd#fastlane
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
 [How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing
-[mocked out]: /docs/cookbook/testing/unit/mocking
+[mocked out]:/cookbook/testing/unit/mocking
 [Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
 [Test Flutter apps on Travis]: {{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c
-[integration testing page]: /docs/testing/integration-tests
+[integration testing page]:/testing/integration-tests

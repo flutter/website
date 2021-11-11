@@ -3,10 +3,10 @@ title: Create and style a text field
 description: How to implement a text field.
 prev:
   title: Build a form with validation
-  path: /docs/cookbook/forms/validation
+  path: /cookbook/forms/validation
 next:
   title: Handle changes to a text field
-  path: /docs/cookbook/forms/text-field-changes
+  path: /cookbook/forms/text-field-changes
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -124,11 +124,11 @@ For more information on input validation, see the
 [Building a form with validation][] recipe.
 
 
-[Building a form with validation]: /docs/cookbook/forms/validation/
+[Building a form with validation]: /cookbook/forms/validation/
 [`decoration`]: {{site.api}}/flutter/material/TextField/decoration.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
-[Handle changes to a text field]: /docs/cookbook/forms/text-field-changes/
+[Handle changes to a text field]: /cookbook/forms/text-field-changes/
 [`InputDecoration`]: {{site.api}}/flutter/material/InputDecoration-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html

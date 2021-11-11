@@ -4,7 +4,7 @@ description: How to install on Chrome OS.
 short-title: Chrome OS
 next:
   title: Set up an editor
-  path: /docs/get-started/editor
+  path: /get-started/editor
 ---
 
 {% assign os = 'linux' -%}

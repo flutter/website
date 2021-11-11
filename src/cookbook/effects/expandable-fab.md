@@ -3,10 +3,10 @@ title: Create an expandable FAB
 description: How to implement a FAB that expands to multiple buttons when tapped.
 prev:
   title: Create a typing indicator
-  path:  /docs/cookbook/effects/typing-indicator
+  path:  /cookbook/effects/typing-indicator
 next:
   title: Create gradient chat bubbles
-  path:  /docs/cookbook/effects/gradient-bubbles
+  path:  /cookbook/effects/gradient-bubbles
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

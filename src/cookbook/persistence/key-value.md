@@ -3,10 +3,10 @@ title: Store key-value data on disk
 description: How to use the shared_preferences package to store key-value data.
 prev:
   title: Read and write files
-  path: /docs/cookbook/persistence/reading-writing-files
+  path: /cookbook/persistence/reading-writing-files
 next:
   title: Play and pause a video
-  path: /docs/cookbook/plugins/play-video
+  path: /cookbook/plugins/play-video
 ---
 
 <?code-excerpt path-base="cookbook/persistence/key_value/"?>

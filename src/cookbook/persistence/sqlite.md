@@ -3,10 +3,10 @@ title: Persist data with SQLite
 description: How to use SQLite to store and retrieve data.
 prev:
   title: Work with WebSockets
-  path: /docs/cookbook/networking/web-sockets
+  path: /cookbook/networking/web-sockets
 next:
   title: Read and write files
-  path: /docs/cookbook/persistence/reading-writing-files
+  path: /cookbook/persistence/reading-writing-files
 ---
 
 <?code-excerpt path-base="cookbook/persistence/sqlite/"?>

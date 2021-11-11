@@ -75,11 +75,11 @@ you need the following software:
   for more details.
 
 [Android Studio]: {{site.android-dev}}/studio/install
-[Flutter SDK]: /docs/get-started/install
-[install the Flutter and Dart plugins]: /docs/get-started/editor
+[Flutter SDK]:/get-started/install
+[install the Flutter and Dart plugins]:/get-started/editor
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
-[setting up an editor]: /docs/get-started/editor
-[Visual Studio Code]: /docs/development/tools/vs-code
+[setting up an editor]:/get-started/editor
+[Visual Studio Code]:/development/tools/vs-code
 
 ### Additional Windows requirements
 
@@ -266,7 +266,7 @@ Once you've configured your environment for desktop
 support, you can create and run a desktop application
 either in the IDE or from the command line.
 
-[creating a new Flutter project]: /docs/get-started/test-drive
+[creating a new Flutter project]:/get-started/test-drive
 
 #### Using an IDE
 
@@ -280,7 +280,7 @@ From the device pulldown, select **windows (desktop)**,
 **macOS (desktop)**, or **linux (desktop)**
 and run your application to see it launch on the desktop.
 
-[web support]: /docs/get-started/web
+[web support]:/get-started/web
 
 #### From the command line
 
@@ -583,7 +583,7 @@ step-by-step walkthrough.
 [distribute it through the macOS App Store]: {{site.apple-dev}}/macos/submit/
 [documentation on notarizing macOS Applications]:{{site.apple-dev}}/documentation/xcode/notarizing_macos_software_before_distribution
 [on distributing an application through the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
-[Build and release a macOS app]: /docs/deployment/macos
+[Build and release a macOS app]:/deployment/macos
 
 ### Linux
 
@@ -627,7 +627,7 @@ to the [Snap Store][], see
 As the tooling solidifies, stay tuned for updates
 on other ways to distribute a Linux desktop app.
 
-[Build and release a Linux application to the Snap Store]: /docs/deployment/linux
+[Build and release a Linux application to the Snap Store]:/deployment/linux
 
 ## Add desktop support to an existing Flutter app
 
@@ -784,7 +784,7 @@ provide an interface to platform-specific services.)
 [`path_provider`]: {{site.pub}}/packages/path_provider
 [`shared_preferences`]: {{site.pub}}/packages/shared_preferences
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
-[using packages]: /docs/development/packages-and-plugins/using-packages
+[using packages]:/development/packages-and-plugins/using-packages
 [windows packages]: {{site.pub}}/flutter/packages?platform=windows
 
 ### Writing a plugin
@@ -822,9 +822,9 @@ about endorsed plugins, see the following resources:
   recent enhancements to Flutter's plugin support.
 * [Federated Plugin proposal][]
 
-[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
+[Developing packages and plugins]:/development/packages-and-plugins/developing-packages
 [Federated Plugin proposal]: /go/federated-plugins
-[Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[Federated plugins]:/development/packages-and-plugins/developing-packages#federated-plugins
 [How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
 

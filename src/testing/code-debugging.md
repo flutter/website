@@ -953,20 +953,20 @@ effect by using a [`GridPaper`][] widget directly.
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
 [`InkFeature`]: {{site.api}}/flutter/material/InkFeature-class.html
 [`Material`]: {{site.api}}/flutter/material/Material-class.html
-[Flutter's modes]: /docs/testing/build-modes
-[profile mode]: /docs/testing/build-modes#profile
-[debug mode]: /docs/testing/build-modes#debug
-[release mode]: /docs/testing/build-modes#release
-[DevTools]: /docs/development/tools/devtools
-[Flutter inspector]: /docs/development/tools/devtools/inspector
-[Logging view]: /docs/development/tools/devtools/logging
-[Flutter enabled IDE/editor]: /docs/get-started/editor
+[Flutter's modes]:/testing/build-modes
+[profile mode]:/testing/build-modes#profile
+[debug mode]:/testing/build-modes#debug
+[release mode]:/testing/build-modes#release
+[DevTools]:/development/tools/devtools
+[Flutter inspector]:/development/tools/devtools/inspector
+[Logging view]:/development/tools/devtools/logging
+[Flutter enabled IDE/editor]:/get-started/editor
 [`log()`]: {{site.api}}/flutter/dart-developer/log.html
-[Timeline view]: /docs/development/tools/devtools/performance
-[Debugger]: /docs/development/tools/devtools/debugger
-[Inspector view]: /docs/development/tools/devtools/inspector
-[The performance overlay]: /docs/perf/rendering/ui-performance#the-performance-overlay
-[Profiling Flutter performance]: /docs/perf/rendering/ui-performance
-[Debugging]: /docs/testing/debugging
+[Timeline view]:/development/tools/devtools/performance
+[Debugger]:/development/tools/devtools/debugger
+[Inspector view]:/development/tools/devtools/inspector
+[The performance overlay]:/perf/rendering/ui-performance#the-performance-overlay
+[Profiling Flutter performance]:/perf/rendering/ui-performance
+[Debugging]:/testing/debugging
 [file an issue]: {{site.github}}/flutter/devtools/issues
 [rendering library]: {{site.api}}/flutter/rendering/rendering-library.html

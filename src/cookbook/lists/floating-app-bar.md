@@ -3,10 +3,10 @@ title: Place a floating app bar above a list
 description: How to place a floating app bar above a list.
 prev:
   title: Create lists with different types of items
-  path: /docs/cookbook/lists/mixed-list
+  path: /cookbook/lists/mixed-list
 next:
   title: Work with long lists
-  path: /docs/cookbook/lists/long-lists
+  path: /cookbook/lists/long-lists
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

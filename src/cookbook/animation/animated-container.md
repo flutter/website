@@ -3,10 +3,10 @@ title: Animate the properties of a container
 description: How to animate properties of a container using implicit animations.
 prev:
   title: Animate a widget using a physics simulation
-  path: /docs/cookbook/animation/physics-simulation
+  path: /cookbook/animation/physics-simulation
 next:
   title: Fade a widget in and out
-  path: /docs/cookbook/animation/opacity-animation
+  path: /cookbook/animation/opacity-animation
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

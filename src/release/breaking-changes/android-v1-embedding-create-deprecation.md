@@ -21,7 +21,7 @@ to migrate following the instructions in
 
 [Android Migration Summary]: /go/android-migration-summary
 [Upgrading pre 1.12 Android projects]: /go/android-project-migration
-[Supporting the new Android plugins APIs]: /docs/development/packages-and-plugins/plugin-api-migration
+[Supporting the new Android plugins APIs]:/development/packages-and-plugins/plugin-api-migration
 
 ## Context
 
@@ -41,7 +41,7 @@ the 7 months since the launch of Flutter v1.12,
 we disabled the creation of new app and plugin
 projects using the v1 embeddings.
 
-[add-to-app]: /docs/development/add-to-app
+[add-to-app]:/development/add-to-app
 [`io.flutter.embedding`]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/
 [`io.flutter.app`]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/app/.
 

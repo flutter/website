@@ -151,15 +151,15 @@ from your project's directory:
 $ flutter create .
 ```
 
-[Build and release a web app]: /docs/deployment/web
-[creating a new Flutter project]: /docs/get-started/test-drive
+[Build and release a web app]:/deployment/web
+[creating a new Flutter project]:/get-started/test-drive
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [desktop support]: /desktop
 [development compiler]: {{site.dart-site}}/tools/dartdevc
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
-[install the Flutter and Dart plugins]: /docs/get-started/editor
-[setting up an editor]: /docs/get-started/editor
-[web FAQ]: /docs/development/platform-integration/web
+[install the Flutter and Dart plugins]:/get-started/editor
+[setting up an editor]:/get-started/editor
+[web FAQ]:/development/platform-integration/web
 [Chrome]: https://www.google.com/chrome/
-[Flutter SDK]: /docs/get-started/install
-[Web renderers]: /docs/development/tools/web-renderers
+[Flutter SDK]:/get-started/install
+[Web renderers]:/development/tools/web-renderers

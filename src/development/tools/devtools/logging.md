@@ -36,5 +36,5 @@ page.
 To clear the log entries in the logging view,
 click the **Clear logs** button.
 
-[Logging]: /docs/testing/code-debugging#logging
-[Debugging Flutter apps programmatically]: /docs/testing/code-debugging
+[Logging]:/testing/code-debugging#logging
+[Debugging Flutter apps programmatically]:/testing/code-debugging

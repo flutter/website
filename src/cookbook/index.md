@@ -9,111 +9,111 @@ reference to help you build up an application.
 
 
 ## Animation
-- [Animate a page route transition](/docs/cookbook/animation/page-route-animation)
-- [Animate a widget using a physics simulation](/docs/cookbook/animation/physics-simulation)
-- [Animate the properties of a container](/docs/cookbook/animation/animated-container)
-- [Fade a widget in and out](/docs/cookbook/animation/opacity-animation)
+- [Animate a page route transition](/cookbook/animation/page-route-animation)
+- [Animate a widget using a physics simulation](/cookbook/animation/physics-simulation)
+- [Animate the properties of a container](/cookbook/animation/animated-container)
+- [Fade a widget in and out](/cookbook/animation/opacity-animation)
 
 
 ## Design
-- [Add a Drawer to a screen](/docs/cookbook/design/drawer)
-- [Display a snackbar](/docs/cookbook/design/snackbars)
-- [Export fonts from a package](/docs/cookbook/design/package-fonts)
-- [Update the UI based on orientation](/docs/cookbook/design/orientation)
-- [Use a custom font](/docs/cookbook/design/fonts)
-- [Use themes to share colors and font styles](/docs/cookbook/design/themes)
-- [Work with tabs](/docs/cookbook/design/tabs)
+- [Add a Drawer to a screen](/cookbook/design/drawer)
+- [Display a snackbar](/cookbook/design/snackbars)
+- [Export fonts from a package](/cookbook/design/package-fonts)
+- [Update the UI based on orientation](/cookbook/design/orientation)
+- [Use a custom font](/cookbook/design/fonts)
+- [Use themes to share colors and font styles](/cookbook/design/themes)
+- [Work with tabs](/cookbook/design/tabs)
 
 
 ## Effects
-- [Create a download button](/docs/cookbook/effects/download-button)
-- [Create a nested navigation flow](/docs/cookbook/effects/nested-nav)
-- [Create a photo filter carousel](/docs/cookbook/effects/photo-filter-carousel)
-- [Create a scrolling parallax effect](/docs/cookbook/effects/parallax-scrolling)
-- [Create a shimmer loading effect](/docs/cookbook/effects/shimmer-loading)
-- [Create a staggered menu animation](/docs/cookbook/effects/staggered-menu-animation)
-- [Create a typing indicator](/docs/cookbook/effects/typing-indicator)
-- [Create an expandable FAB](/docs/cookbook/effects/expandable-fab)
-- [Create gradient chat bubbles](/docs/cookbook/effects/gradient-bubbles)
-- [Drag a UI element](/docs/cookbook/effects/drag-a-widget)
+- [Create a download button](/cookbook/effects/download-button)
+- [Create a nested navigation flow](/cookbook/effects/nested-nav)
+- [Create a photo filter carousel](/cookbook/effects/photo-filter-carousel)
+- [Create a scrolling parallax effect](/cookbook/effects/parallax-scrolling)
+- [Create a shimmer loading effect](/cookbook/effects/shimmer-loading)
+- [Create a staggered menu animation](/cookbook/effects/staggered-menu-animation)
+- [Create a typing indicator](/cookbook/effects/typing-indicator)
+- [Create an expandable FAB](/cookbook/effects/expandable-fab)
+- [Create gradient chat bubbles](/cookbook/effects/gradient-bubbles)
+- [Drag a UI element](/cookbook/effects/drag-a-widget)
 
 
 ## Forms
-- [Build a form with validation](/docs/cookbook/forms/validation)
-- [Create and style a text field](/docs/cookbook/forms/text-input)
-- [Focus and text fields](/docs/cookbook/forms/focus)
-- [Handle changes to a text field](/docs/cookbook/forms/text-field-changes)
-- [Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input)
+- [Build a form with validation](/cookbook/forms/validation)
+- [Create and style a text field](/cookbook/forms/text-input)
+- [Focus and text fields](/cookbook/forms/focus)
+- [Handle changes to a text field](/cookbook/forms/text-field-changes)
+- [Retrieve the value of a text field](/cookbook/forms/retrieve-input)
 
 
 ## Gestures
-- [Add Material touch ripples](/docs/cookbook/gestures/ripples)
-- [Handle taps](/docs/cookbook/gestures/handling-taps)
-- [Implement swipe to dismiss](/docs/cookbook/gestures/dismissible)
+- [Add Material touch ripples](/cookbook/gestures/ripples)
+- [Handle taps](/cookbook/gestures/handling-taps)
+- [Implement swipe to dismiss](/cookbook/gestures/dismissible)
 
 
 ## Images
-- [Display images from the internet](/docs/cookbook/images/network-image)
-- [Fade in images with a placeholder](/docs/cookbook/images/fading-in-images)
-- [Work with cached images](/docs/cookbook/images/cached-images)
+- [Display images from the internet](/cookbook/images/network-image)
+- [Fade in images with a placeholder](/cookbook/images/fading-in-images)
+- [Work with cached images](/cookbook/images/cached-images)
 
 
 ## Lists
-- [Create a grid list](/docs/cookbook/lists/grid-lists)
-- [Create a horizontal list](/docs/cookbook/lists/horizontal-list)
-- [Create lists with different types of items](/docs/cookbook/lists/mixed-list)
-- [Place a floating app bar above a list](/docs/cookbook/lists/floating-app-bar)
-- [Use lists](/docs/cookbook/lists/basic-list)
-- [Work with long lists](/docs/cookbook/lists/long-lists)
+- [Create a grid list](/cookbook/lists/grid-lists)
+- [Create a horizontal list](/cookbook/lists/horizontal-list)
+- [Create lists with different types of items](/cookbook/lists/mixed-list)
+- [Place a floating app bar above a list](/cookbook/lists/floating-app-bar)
+- [Use lists](/cookbook/lists/basic-list)
+- [Work with long lists](/cookbook/lists/long-lists)
 
 
 ## Maintenance
-- [Report errors to a service](/docs/cookbook/maintenance/error-reporting)
+- [Report errors to a service](/cookbook/maintenance/error-reporting)
 
 
 ## Navigation
-- [Animate a widget across screens](/docs/cookbook/navigation/hero-animations)
-- [Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics)
-- [Navigate with named routes](/docs/cookbook/navigation/named-routes)
-- [Pass arguments to a named route](/docs/cookbook/navigation/navigate-with-arguments)
-- [Return data from a screen](/docs/cookbook/navigation/returning-data)
-- [Send data to a new screen](/docs/cookbook/navigation/passing-data)
+- [Animate a widget across screens](/cookbook/navigation/hero-animations)
+- [Navigate to a new screen and back](/cookbook/navigation/navigation-basics)
+- [Navigate with named routes](/cookbook/navigation/named-routes)
+- [Pass arguments to a named route](/cookbook/navigation/navigate-with-arguments)
+- [Return data from a screen](/cookbook/navigation/returning-data)
+- [Send data to a new screen](/cookbook/navigation/passing-data)
 
 
 ## Networking
-- [Delete data on the internet](/docs/cookbook/networking/delete-data)
-- [Fetch data from the internet](/docs/cookbook/networking/fetch-data)
-- [Make authenticated requests](/docs/cookbook/networking/authenticated-requests)
-- [Parse JSON in the background](/docs/cookbook/networking/background-parsing)
-- [Send data to the internet](/docs/cookbook/networking/send-data)
-- [Update data over the internet](/docs/cookbook/networking/update-data)
-- [Work with WebSockets](/docs/cookbook/networking/web-sockets)
+- [Delete data on the internet](/cookbook/networking/delete-data)
+- [Fetch data from the internet](/cookbook/networking/fetch-data)
+- [Make authenticated requests](/cookbook/networking/authenticated-requests)
+- [Parse JSON in the background](/cookbook/networking/background-parsing)
+- [Send data to the internet](/cookbook/networking/send-data)
+- [Update data over the internet](/cookbook/networking/update-data)
+- [Work with WebSockets](/cookbook/networking/web-sockets)
 
 
 ## Persistence
-- [Persist data with SQLite](/docs/cookbook/persistence/sqlite)
-- [Read and write files](/docs/cookbook/persistence/reading-writing-files)
-- [Store key-value data on disk](/docs/cookbook/persistence/key-value)
+- [Persist data with SQLite](/cookbook/persistence/sqlite)
+- [Read and write files](/cookbook/persistence/reading-writing-files)
+- [Store key-value data on disk](/cookbook/persistence/key-value)
 
 
 ## Plugins
-- [Play and pause a video](/docs/cookbook/plugins/play-video)
-- [Take a picture using the camera](/docs/cookbook/plugins/picture-using-camera)
+- [Play and pause a video](/cookbook/plugins/play-video)
+- [Take a picture using the camera](/cookbook/plugins/picture-using-camera)
 
 
 ## Testing
 
 ### Integration
-- [An introduction to integration testing](/docs/cookbook/testing/integration/introduction)
-- [Performance profiling](/docs/cookbook/testing/integration/profiling)
+- [An introduction to integration testing](/cookbook/testing/integration/introduction)
+- [Performance profiling](/cookbook/testing/integration/profiling)
 
 ### Unit
-- [An introduction to unit testing](/docs/cookbook/testing/unit/introduction)
-- [Mock dependencies using Mockito](/docs/cookbook/testing/unit/mocking)
+- [An introduction to unit testing](/cookbook/testing/unit/introduction)
+- [Mock dependencies using Mockito](/cookbook/testing/unit/mocking)
 
 
 ### Widget
-- [An introduction to widget testing](/docs/cookbook/testing/widget/introduction)
-- [Find widgets](/docs/cookbook/testing/widget/finders)
-- [Handle scrolling](/docs/cookbook/testing/widget/scrolling)
-- [Tap, drag, and enter text](/docs/cookbook/testing/widget/tap-drag)
+- [An introduction to widget testing](/cookbook/testing/widget/introduction)
+- [Find widgets](/cookbook/testing/widget/finders)
+- [Handle scrolling](/cookbook/testing/widget/scrolling)
+- [Tap, drag, and enter text](/cookbook/testing/widget/tap-drag)

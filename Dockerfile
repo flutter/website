@@ -4,7 +4,7 @@ FROM ruby:${RUBY_VERSION}-buster as dev
 
 ENV TZ=US/Pacific
 
-ARG NODE_VERSION=15
+ARG NODE_VERSION=17
 ENV NODE_VERSION=$NODE_VERSION
 
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x -o node_setup.sh && \
@@ -99,6 +99,9 @@ RUN flutter doctor
 # This is similarly seen in tool/check-links.sh
 RUN echo "User-agent: *" > src/robots.txt && echo "Allow: /" >> src/robots.txt
 
+ARG BUILD_CONFIGS=_config
+ENV BUILD_CONFIGS=$BUILD_CONFIGS
+
 RUN bundle exec jekyll build --config _config.yml
 
 
@@ -109,11 +112,11 @@ ARG FIREBASE_TOKEN
 ENV FIREBASE_TOKEN=$FIREBASE_TOKEN
 ARG FIREBASE_ALIAS=default
 ENV FIREBASE_ALIAS=${FIREBASE_ALIAS:-default}
-ARG COMMIT=$(git rev-parse --short HEAD)
-ENV COMMIT=$COMMIT
+ARG BUILD_COMMIT=$(git rev-parse --short HEAD)
+ENV BUILD_COMMIT=$COMMIT
 
 RUN firebase use $FIREBASE_ALIAS
-RUN firebase deploy -m $COMMIT \
+RUN firebase deploy -m $BUILD_COMMIT \
       --only hosting \
       --non-interactive \
       --token $FIREBASE_TOKEN \

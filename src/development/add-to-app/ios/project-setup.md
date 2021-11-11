@@ -439,19 +439,19 @@ Repeat for any iOS unit test targets.
 You can now [add a Flutter screen][] to your existing application.
 
 [add_to_app code samples]: {{site.github}}/flutter/samples/tree/master/add_to_app
-[add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
-[Android Studio/IntelliJ]: /docs/development/tools/android-studio
-[build modes of Flutter]: /docs/testing/build-modes
-[embed the frameworks]: /docs/development/add-to-app/ios/project-setup#embed-the-frameworks
+[add a Flutter screen]:/development/add-to-app/ios/add-flutter-screen
+[Android Studio/IntelliJ]:/development/tools/android-studio
+[build modes of Flutter]:/testing/build-modes
+[embed the frameworks]:/development/add-to-app/ios/project-setup#embed-the-frameworks
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
-[debugging functionalities such as hot-reload and DevTools]: /docs/development/add-to-app/debugging
+[debugging functionalities such as hot-reload and DevTools]:/development/add-to-app/debugging
 [Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
-[increases your app size]: /docs/resources/faq#how-big-is-the-flutter-engine
-[macOS system requirements for Flutter]: /docs/get-started/install/macos#system-requirements
+[increases your app size]:/resources/faq#how-big-is-the-flutter-engine
+[macOS system requirements for Flutter]:/get-started/install/macos#system-requirements
 [On iOS 14 and higher]: {{site.apple-dev}}/news/?id=0oi77447
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
 [static or dynamic frameworks]: {{site.so}}/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
-[VS Code]: /docs/development/tools/vs-code
+[VS Code]:/development/tools/vs-code
 [XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
-[Xcode installed]: /docs/get-started/install/macos#install-xcode
+[Xcode installed]:/get-started/install/macos#install-xcode

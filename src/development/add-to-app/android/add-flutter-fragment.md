@@ -591,7 +591,7 @@ surrounding `Activity`.
 
 [`Fragment`]: https://developer.android.com/guide/components/fragments
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
-[using a `FlutterActivity`]: /docs/development/add-to-app/android/add-flutter-screen
+[using a `FlutterActivity`]:/development/add-to-app/android/add-flutter-screen
 [`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [`FlutterEngineCache`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
-[splash screen guide]: /docs/development/ui/advanced/splash-screen
+[splash screen guide]:/development/ui/advanced/splash-screen

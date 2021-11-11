@@ -3,10 +3,10 @@ title: Performance profiling
 description: How to profile performance for a Flutter app.
 prev:
   title: An introduction to integration testing
-  path: /docs/cookbook/testing/integration/introduction
+  path: /cookbook/testing/integration/introduction
 next:
   title: An introduction to unit testing
-  path: /docs/cookbook/testing/unit/introduction
+  path: /cookbook/testing/unit/introduction
 ---
 
 When it comes to mobile apps, performance is critical to user experience.
@@ -206,7 +206,7 @@ void main() {
 
 [chrome://tracing]: chrome://tracing
 [`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
-[Scrolling]: /docs/cookbook/testing/widget/scrolling
+[Scrolling]:/cookbook/testing/widget/scrolling
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
 [`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html

@@ -3,10 +3,10 @@ title: Fade a widget in and out
 description: How to fade a widget in and out.
 prev:
   title: Animate the properties of a container
-  path: /docs/cookbook/animation/animated-container
+  path: /cookbook/animation/animated-container
 next:
   title: Add a drawer to a screen
-  path: /docs/cookbook/design/drawer
+  path: /cookbook/design/drawer
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -231,6 +231,6 @@ class _MyHomePageState extends State<MyHomePage> {
 </noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
-[Gestures]: /docs/cookbook#gestures
+[Gestures]: /cookbook#gestures
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html

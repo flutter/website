@@ -3,10 +3,10 @@ title: Create a grid list
 description: How to implement a grid list.
 prev:
   title: Create a horizontal list
-  path: /docs/cookbook/lists/horizontal-list
+  path: /cookbook/lists/horizontal-list
 next:
   title: Create lists with different types of items
-  path: /docs/cookbook/lists/mixed-list
+  path: /cookbook/lists/mixed-list
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

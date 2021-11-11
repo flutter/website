@@ -485,8 +485,8 @@ For more details, see
 [Adding a splash screen to your mobile app][].
 
 
-[add-to-app]: /docs/development/add-to-app/ios
-[Adding a splash screen to your mobile app]: /docs/development/ui/advanced/splash-screen
+[add-to-app]:/development/add-to-app/ios
+[Adding a splash screen to your mobile app]:/development/ui/advanced/splash-screen
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`AssetImage`]: {{site.api}}/flutter/painting/AssetImage-class.html
 [`DefaultAssetBundle`]: {{site.api}}/flutter/widgets/DefaultAssetBundle-class.html
@@ -505,7 +505,7 @@ For more details, see
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
 [`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
 [`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String
-[package]: /docs/development/packages-and-plugins/using-packages
+[package]:/development/packages-and-plugins/using-packages
 [`pathForResource:ofType:`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410989-pathforresource
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`pubspec.yaml`]: {{site.dart-site}}/tools/pub/pubspec

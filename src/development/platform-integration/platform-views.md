@@ -771,7 +771,7 @@ For more information, see:
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterTextureRegistry`]: {{site.api}}/objcdoc/Protocols/FlutterTextureRegistry.html
 [performance]: #performance
-[plugin migration guide]: /docs/development/packages-and-plugins/plugin-api-migration
+[plugin migration guide]:/development/packages-and-plugins/plugin-api-migration
 [`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
 [`PlatformViewFactory`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html

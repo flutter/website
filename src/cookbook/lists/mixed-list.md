@@ -3,10 +3,10 @@ title: Create lists with different types of items
 description: How to implement a list that contains different types of assets.
 prev:
   title: Create a grid list
-  path: /docs/cookbook/lists/grid-lists
+  path: /cookbook/lists/grid-lists
 next:
   title: Place a floating app bar above a list
-  path: /docs/cookbook/lists/floating-app-bar
+  path: /cookbook/lists/floating-app-bar
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

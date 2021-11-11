@@ -49,7 +49,7 @@ publication since the last stable release:
 [Improving Platform Channel Performance in Flutter]: {{site.flutter-medium}}/improving-platform-channel-performance-in-flutter-e5b4e5df04af
 [Raster thread performance optimization tips]: {{site.flutter-medium}}/raster-thread-performance-optimization-tips-e949b9dbcf06
 [README]: {{site.repo.this}}/#flutter-website
-[Using Actions and Shortcuts]: /docs/development/ui/advanced/actions_and_shortcuts
+[Using Actions and Shortcuts]: /development/ui/advanced/actions_and_shortcuts
 [What can we do to better improve Flutter?]: {{site.flutter-medium}}/what-can-we-do-better-to-improve-flutter-q2-2021-user-survey-results-1037fb8f057b
 [Writing a good code sample]: {{site.flutter-medium}}/writing-a-good-code-sample-323358edd9f3
 
@@ -127,24 +127,24 @@ publication since the last stable release:
 
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: {{site.flutter-medium}}/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
-[Building adaptive apps]: /docs/development/ui/layout/building-adaptive-apps
+[Building adaptive apps]: /development/ui/layout/building-adaptive-apps
 [Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
 [Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
 [DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
 [DartPad Workshop Authoring Guide]: {{site.github}}/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
-[Deferred components]: /docs/perf/deferred-components
+[Deferred components]: /perf/deferred-components
 [desktop]: /desktop
 [Embedded Support for Flutter]: /embedded
 [Embedding DartPad in your web page]: {{site.github}}/dart-lang/dart-pad/wiki/Embedding-Guide
 [Firebase for Flutter]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
 [Flutter and Dialogflow voice bots]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter#0
-[Google APIs]: /docs/development/data-and-backend/google-apis
+[Google APIs]: /development/data-and-backend/google-apis
 [Google I/O workshops page]: https://events.google.com/io/program/content?4=topic_flutter&5=type_workshop&lng=en
 [How It's Made: I/O Photo Booth]: {{site.flutter-medium}}/how-its-made-i-o-photo-booth-3b8355d35883
 [Inherited widgets]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
 [Inherited widgets DartPad]: /go/inheritedwidget-workshop
-[Memory view page]: /docs/development/tools/devtools/memory
+[Memory view page]: /development/tools/devtools/memory
 [Null safety]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
 [Slivers]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
 [Q1 2021 survey]: {{site.flutter-medium}}/which-factors-affected-users-decisions-to-adopt-flutter-q1-2021-user-survey-results-563e61fc68c9
@@ -226,42 +226,42 @@ publication since the last stable release:
 
 [Accessible expression with Material Icons and Flutter]: {{site.flutter-medium}}/accessible-expression-with-material-icons-and-flutter-e3f3f622200b
 [Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
-[Adding a Flutter view to an Android app]: /docs/development/add-to-app/android/add-flutter-view
+[Adding a Flutter view to an Android app]: /development/add-to-app/android/add-flutter-view
 [Announcing Dart null safety beta]: {{site.flutter-medium}}/announcing-dart-null-safety-beta-4491da22077a
 [Announcing Dart 2.12]: {{site.medium}}/dartlang/announcing-dart-2-12-499a6e689c87
 [Announcing Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
 [comp]: {{site.flutter-medium}}/providing-operating-system-compatibility-on-a-large-scale-374cc2fb0dad
-[Configuring the URL strategy on the web]: /docs/development/ui/navigation/url-strategies
-[Creating responsive and adaptive apps]: /docs/development/ui/layout/adaptive-responsive
+[Configuring the URL strategy on the web]: /development/ui/navigation/url-strategies
+[Creating responsive and adaptive apps]: /development/ui/layout/adaptive-responsive
 [Dart sound null safety: technical preview 2]: {{site.flutter-medium}}/null-safety-flutter-tech-preview-cb5c98aba187
 [Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [Desktop support for Flutter]: /desktop
-[Devtools]: /docs/development/tools/devtools/overview
+[Devtools]: /development/tools/devtools/overview
 [Flutter Ads]: /ads
-[Flutter 2 release notes]: /docs/development/tools/sdk/release-notes/release-notes-2.0.0
-[Flutter Fix]: /docs/development/tools/flutter-fix
-[Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter 2 release notes]: /development/tools/sdk/release-notes/release-notes-2.0.0
+[Flutter Fix]: /development/tools/flutter-fix
+[Flutter inspector]: /development/tools/devtools/inspector
 [Flutter web support hits the stable milestone]: {{site.flutter-medium}}/flutter-web-support-hits-the-stable-milestone-d6b84e83b425
-[implement deep linking]: /docs/development/ui/navigation/deep-linking
-[internationalization]: /docs/development/accessibility-and-localization/internationalization
+[implement deep linking]: /development/ui/navigation/deep-linking
+[internationalization]: /development/accessibility-and-localization/internationalization
 [Join us for #30DaysOfFlutter]: {{site.flutter-medium}}/join-us-for-30daysofflutter-9993e3ec847b
-[More thoughts about performance]: /docs/perf/appendix
+[More thoughts about performance]: /perf/appendix
 [New ad formats for Flutter]: {{site.flutter-medium}}/new-ads-beta-inline-banner-and-native-support-for-the-flutter-mobile-ads-plugin-e48a7e9a0e64
 [perf-H1-2020]: {{site.flutter-medium}}/flutter-performance-updates-in-the-first-half-of-2020-5c597168b6bb
-[performance]: /docs/perf
-[Performance faq]: /docs/perf/faq
-[Performance metrics]: /docs/perf/metrics
+[performance]: /perf
+[Performance faq]: /perf/faq
+[Performance metrics]: /perf/metrics
 [Performance testing on the web]: {{site.flutter-medium}}/performance-testing-on-the-web-25323252de69
 [Q3]: {{site.flutter-medium}}/flutter-on-the-web-slivers-and-platform-specific-issues-user-survey-results-from-q3-2020-f8034236b2a8
 [Q4]: {{site.flutter-medium}}/are-you-happy-with-flutter-q4-2020-user-survey-results-41cdd90aaa48
 [Testable Flutter and Cloud Firestore]: {{site.flutter-medium}}/flutter/testable-flutter-and-cloud-firestore-1cf2fbbce97b
 [Updates on Flutter Testing]: {{site.flutter-medium}}/updates-on-flutter-testing-f54aa9f74c7e
-[Using multiple Flutter instances]: /docs/development/add-to-app/multiple-flutters
-[Web FAQ]: /docs/development/platform-integration/web
+[Using multiple Flutter instances]: /development/add-to-app/multiple-flutters
+[Web FAQ]: /development/platform-integration/web
 [Web support for Flutter]: /web
 [What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
 [Who is Dash?]: /dash
-[write integration tests using the integration_test package]: /docs/testing/integration-tests
+[write integration tests using the integration_test package]: /testing/integration-tests
 
 ---
 
@@ -317,21 +317,21 @@ publication since the last stable release:
 * [Updates on Flutter and Firebase][]
 
 
-[add an iOS App Clip]: /docs/development/platform-integration/ios-app-clip
+[add an iOS App Clip]: /development/platform-integration/ios-app-clip
 [animations]: {{site.pub}}/packages/animations
 [Announcing Flutter 1.22]: {{site.flutter-medium}}/announcing-flutter-1-22-44f146009e5f
 [Announcing Flutter Windows Alpha]: {{site.flutter-medium}}/announcing-flutter-windows-alpha-33982cd0f433
-[App Size tool]: /docs/development/tools/devtools/app-size
+[App Size tool]: /development/tools/devtools/app-size
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
-[cupertino-icons]: /docs/release/breaking-changes/cupertino-icons-1.0.0
-[Developing for iOS 14]: /docs/development/ios-14
+[cupertino-icons]: /release/breaking-changes/cupertino-icons-1.0.0
+[Developing for iOS 14]: /development/ios-14
 [google_maps_flutter]: {{site.pub}}/packages/google_maps_flutter
 [Handling web gestures in Flutter]: {{site.flutter-medium}}/handling-web-gestures-in-flutter-e16946a04745
 [Integration testing with flutter_driver]: {{site.flutter-medium}}/integration-testing-with-flutter-driver-36f66ede5cf2
 [Learn testing with the new Flutter sample]: {{site.flutter-medium}}/learn-testing-with-the-new-flutter-sample-gsoc20-work-product-e872c7f6492a
 [Learning Flutter's new navigation and routing]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [Platform channel examples]: {{site.flutter-medium}}/platform-channel-examples-7edeaeba4a66
-[platform-views]: /docs/development/platform-integration/platform-views
+[platform-views]: /development/platform-integration/platform-views
 [Supporting iOS 14 and Xcode 12 with Flutter]: {{site.flutter-medium}}/supporting-ios-14-and-xcode-12-with-flutter-15fe0062e98b
 [Updates on Flutter and Firebase]: {{site.flutter-medium}}/updates-on-flutter-and-firebase-8076f70bc90e
 [webview_flutter]: {{site.pub}}/packages/webview_flutter
@@ -385,7 +385,7 @@ publication since the last stable release:
 
   * [Announcing Adobe XD support for Flutter][]
   * [What are the important & difficult tasks for Flutter
-     devs? — Q1 2020 survey results][q1-2020]
+     devs? - Q1 2020 survey results][q1-2020]
   * [Optimizing performance in Flutter web apps with tree
      shaking and deferred loading][shaking]
   * [Flutter Package Ecosystem Update][]
@@ -411,27 +411,27 @@ publication since the last stable release:
 [Announcing Adobe XD Support for Flutter]: {{site.flutter-medium}}/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e
 [Announcing Flutter 1.20]: {{site.flutter-medium}}/announcing-flutter-1-20-2aaf68c89c75
 [Building performant Flutter widgets]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
-[codelabs landing]: /docs/codelabs
+[codelabs landing]: /codelabs
 [Desktop support]: /desktop
 [dev-tools]: {{site.flutter-medium}}/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
-[Developing for iOS 14 beta]: /docs/development/ios-14
+[Developing for iOS 14 beta]: /development/ios-14
 [Enums with Extensions in Dart]: {{site.flutter-medium}}/enums-with-extensions-dart-460c42ea51f7
 [Flutter and Desktop apps]: {{site.flutter-medium}}/flutter-and-desktop-3a0dd0f8353e
-[Flutter architectural overview]: /docs/resources/architectural-overview
-[Flutter books]: /docs/resources/books
-[Flutter codelabs]: /docs/codelabs
+[Flutter architectural overview]: /resources/architectural-overview
+[Flutter books]: /resources/books
+[Flutter codelabs]: /codelabs
 [Flutter Day]: https://events.withgoogle.com/flutter-day/
 [Flutter Package Ecosystem Update]: {{site.flutter-medium}}/flutter-package-ecosystem-update-d50645f2d7bc
 [Flutter Performance Updates in 2019]: {{site.flutter-medium}}/going-deeper-with-flutters-web-support-66d7ad95eb5224
 [Going deeper with Flutter's web support]: {{site.flutter-medium}}/going-deeper-with-flutters-web-support-66d7ad95eb52
 [Handling 404: Page not found error in Flutter]: {{site.flutter-medium}}/handling-404-page-not-found-error-in-flutter-731f5a9fba29
 [How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
-[installing Flutter on Linux using snapd.]: /docs/get-started/install/linux
+[installing Flutter on Linux using snapd.]: /get-started/install/linux
 [Managing issues in a large-scale open source project]: {{site.flutter-medium}}/managing-issues-in-a-large-scale-open-source-project-b3be6eecae2b
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 [q1-2020]: {{site.flutter-medium}}/what-are-the-important-difficult-tasks-for-flutter-devs-q1-2020-survey-results-a5ef2305429b
-[Reducing shader compilation jank on mobile]: /docs/perf/rendering/shader
+[Reducing shader compilation jank on mobile]: /perf/rendering/shader
 [shaking]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [Two Months of #FlutterGoodNewsWednesday]: {{site.flutter-medium}}/two-months-of-fluttergoodnewswednesday-a12e60bab782
 [ubuntu]: {{site.flutter-medium}}/announcing-flutter-linux-alpha-with-canonical-19eb824590a9
@@ -500,22 +500,22 @@ Other newness:
   * [Flutter web support updates][]
   * [Modern Flutter plugin development][]
 
-[add2app]: /docs/development/add-to-app/android/plugin-setup
+[add2app]: /development/add-to-app/android/plugin-setup
 [Animation deep dive]: {{site.flutter-medium}}/animation-deep-dive-39d3ffea111f
-[animations landing page]: /docs/development/ui/animations
+[animations landing page]: /development/ui/animations
 [Announcing a free Flutter introductory course]: {{site.flutter-medium}}/learn-flutter-for-free-c9bc3b898c4d
 [Announcing CodePen support for Flutter]: {{site.flutter-medium}}/announcing-codepen-support-for-flutter-bb346406fe50
 [Announcing Flutter 1.17]: {{site.flutter-medium}}/announcing-flutter-1-17-4182d8af7f8e
 [Custom implicit animations in Flutter…with TweenAnimationBuilder]: {{site.flutter-medium}}/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
 [Desktop]: /desktop
-[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
-[Developing plugin packages]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[Developing packages and plugins]: /development/packages-and-plugins/developing-packages
+[Developing plugin packages]: /development/packages-and-plugins/developing-packages#federated-plugins
 [Directional animations with build-in explicit animations]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
 [Flutter Medium]: {{site.medium}}/flutter
 [Flutter Spring 2020 update]: {{site.flutter-medium}}/spring-2020-update-f723d898d7af
 [Flutter web: Navigating URLs using named routes]: {{site.flutter-medium}}/web-navigating-urls-using-named-routes-307e1b1e2050
 [Flutter web support updates]: {{site.flutter-medium}}/web-support-updates-8b14bfe6a908
-[hot reload]: /docs/development/tools/hot-reload
+[hot reload]: /development/tools/hot-reload
 [How to choose which Flutter animation widget is right for you?]: {{site.flutter-medium}}/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
 [How to embed a Flutter application in a website using DartPad]: {{site.flutter-medium}}/how-to-embed-a-flutter-application-in-a-website-using-dartpad-b8fd0ee8c4b9
 [How to float an overlay widget over a (possibly transformed) UI widget]: {{site.flutter-medium}}/how-to-float-an-overlay-widget-over-a-possibly-transformed-ui-widget-1d15ca7667b6
@@ -523,14 +523,14 @@ Other newness:
 [Improving Flutter with your opinion - Q4 2019 survey results]: {{site.flutter-medium}}/improving-flutter-with-your-opinion-q4-2019-survey-results-ba0e6721bf23
 [Introducing Google Fonts for Flutter v 1.0.0!]: {{site.flutter-medium}}/introducing-google-fonts-for-flutter-v-1-0-0-c0e993617118
 [It’s Time: The Flutter Clock contest results]: {{site.flutter-medium}}/its-time-the-flutter-clock-contest-results-dcebe2eb3957
-[Obfuscating Dart code]: /docs/deployment/obfuscate
+[Obfuscating Dart code]: /deployment/obfuscate
 [package for pre-canned Material widget animations]: {{site.pub}}/packages/animations
 [Modern Flutter plugin development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
-[Supporting the new Android plugin APIs]: /docs/development/packages-and-plugins/plugin-api-migration
-[Understanding constraints]: /docs/development/ui/layout/constraints
+[Supporting the new Android plugin APIs]: /development/packages-and-plugins/plugin-api-migration
+[Understanding constraints]: /development/ui/layout/constraints
 [When should I use AnimatedBuilder or AnimatedWidget?]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
-[Writing custom platform-specific code]: /docs/development/platform-integration/platform-channels
-[Xcode 11.4]: /docs/development/ios-project-migration
+[Writing custom platform-specific code]: /development/platform-integration/platform-channels
+[Xcode 11.4]: /development/ios-project-migration
 
 ## Dec 11, 2019, Flutter Interact Edition: 1.12 release
 
@@ -580,23 +580,23 @@ Other newness:
 
 Happy Fluttering!
 
-[add Flutter to an existing app]: /docs/development/add-to-app
+[add Flutter to an existing app]: /development/add-to-app
 [Announcing Flutter 1.12: What a year!]: {{site.flutter-medium}}/announcing-flutter-1-12-what-a-year-22c256ba525d
-[app size]: /docs/perf/app-size#ios
-[building a web app with Flutter]: /docs/get-started/web
+[app size]: /perf/app-size#ios
+[building a web app with Flutter]: /get-started/web
 [Desktop support for Flutter]: /desktop
 [Flutter: the first UI platform designed for ambient computing]: {{site.google-blog}}/2019/12/flutter-ui-ambient-computing.html?m=1
-[Flutter Favorite program]: /docs/development/packages-and-plugins/favorites
-[Flutter 1.12.13]: /docs/development/tools/sdk/release-notes/release-notes-1.12.13
+[Flutter Favorite program]: /development/packages-and-plugins/favorites
+[Flutter 1.12.13]: /development/tools/sdk/release-notes/release-notes-1.12.13
 [Flutter Gallery]: https://flutter.github.io/samples/#/
-[Flutter Layout Explorer]: /docs/development/tools/devtools/inspector#flutter-layout-explorer
+[Flutter Layout Explorer]: /development/tools/devtools/inspector#flutter-layout-explorer
 [Flutter Medium publication]: {{site.medium}}/flutter
-[Migrating your plugin to the new Android APIs]: /docs/development/packages-and-plugins/plugin-api-migration
-[implicit animations]: /docs/codelabs/implicit-animations
+[Migrating your plugin to the new Android APIs]: /development/packages-and-plugins/plugin-api-migration
+[implicit animations]: /codelabs/implicit-animations
 [Web support for Flutter]: /web
 [Web support for Flutter goes beta]: {{site.flutter-medium}}/web-support-for-flutter-goes-beta-35b64a1217c0
-[write your first Flutter app on the web]: /docs/get-started/codelab-web
-[Get started]: /docs/get-started/install
+[write your first Flutter app on the web]: /get-started/codelab-web
+[Get started]: /get-started/install
 
 ## Sept 10, 2019: 1.9 release
 
@@ -655,25 +655,25 @@ Other relevant docs:
 
 Happy Fluttering!
 
-[1.9.1 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.9.1
-[building a web application]: /docs/get-started/web
+[1.9.1 release notes]: /development/tools/sdk/release-notes/release-notes-1.9.1
+[building a web application]: /get-started/web
 [`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
-[creating responsive apps]: /docs/development/ui/layout/adaptive-responsive
+[creating responsive apps]: /development/ui/layout/adaptive-responsive
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Flutter for web]: /web
 [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: {{site.google-blog}}/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
 [Improving Flutter's Error Messages]: {{site.flutter-medium}}/improving-flutters-error-messages-e098513cecf9
-[Performance view]: /docs/development/tools/devtools/performance
-[preparing a web app for release]: /docs/deployment/web
+[Performance view]: /development/tools/devtools/performance
+[preparing a web app for release]: /deployment/web
 [`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
-[Showcase]: /showcase
+[Showcase]: {{site.main-url}}/showcase
 [`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
 [ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
-[Try it out]: /docs/codelabs/layout-basics
+[Try it out]: /codelabs/layout-basics
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
-[using the dart:ffi library]: /docs/development/platform-integration/c-interop
-[web FAQ]: /docs/development/platform-integration/web
+[using the dart:ffi library]: /development/platform-integration/c-interop
+[web FAQ]: /development/platform-integration/web
 
 ## July 9, 2019: 1.7 release
 
@@ -710,21 +710,21 @@ endpoints in a range of values. For information about this
 component and how to customize it, see
 [Material RangeSlider in Flutter].
 
-[1.7.8 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.7.8
-[Animate a page route transition]: /docs/cookbook/animation/page-route-animation
+[1.7.8 release notes]: /development/tools/sdk/release-notes/release-notes-1.7.8
+[Animate a page route transition]: /cookbook/animation/page-route-animation
 [Announcing Flutter 1.7]: {{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf
-[Cookbook]: /docs/cookbook
-[Debugging]: /docs/testing/debugging
-[Debugging apps programmatically]: /docs/testing/code-debugging
-[DevTools]: /docs/development/tools/devtools
+[Cookbook]: /cookbook
+[Debugging]: /testing/debugging
+[Debugging apps programmatically]: /testing/code-debugging
+[DevTools]: /development/tools/devtools
 [Flutter Medium Publication]: {{site.flutter-medium}}
-[Flutter's build modes]: /docs/testing/build-modes
+[Flutter's build modes]: /testing/build-modes
 [Material RangeSlider in Flutter]: {{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d
-[Performance best practices]: /docs/perf/rendering/best-practices
-[Performance profiling]: /docs/perf/rendering/ui-performance
-[Preparing an Android app for release]: /docs/deployment/android
+[Performance best practices]: /perf/rendering/best-practices
+[Performance profiling]: /perf/rendering/ui-performance
+[Preparing an Android app for release]: /deployment/android
 [`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html
-[Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
+[Simple app state management]: /development/data-and-backend/state-mgmt/simple
 
 ## May 7, 2019, Google I/O Edition: 1.5 release
 
@@ -736,10 +736,10 @@ or [download the release][].
 We are updating DartPad to work with Flutter. Try our new
 [Basic Flutter layout codelab][] and tell us what you think!
 
-[Basic Flutter layout codelab]: /docs/codelabs/layout-basics
-[download the release]: /docs/development/tools/sdk/releases
+[Basic Flutter layout codelab]: /codelabs/layout-basics
+[download the release]: /development/tools/sdk/releases
 [Flutter 1.5]: {{site.google-blog}}/2019/05/Flutter-io19.html
-[1.5.4 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.5.4
+[1.5.4 release notes]: /development/tools/sdk/release-notes/release-notes-1.5.4
 
 ## February 26, 2019: 1.2 release
 
@@ -773,21 +773,21 @@ In addition, here are some recent new and updated docs:
 If you have questions or comments about any of these docs,
 [file an issue][].
 
-[Android Studio/IntelliJ]: /docs/development/tools/android-studio
-[different state management options]: /docs/development/data-and-backend/state-mgmt/options
-[download the release]: /docs/development/tools/sdk/releases
-[ephemeral vs app state]: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+[Android Studio/IntelliJ]: /development/tools/android-studio
+[different state management options]: /development/data-and-backend/state-mgmt/options
+[download the release]: /development/tools/sdk/releases
+[ephemeral vs app state]: /development/data-and-backend/state-mgmt/ephemeral-vs-app
 [file an issue]: {{site.repo.this}}/issues
-[introduction]: /docs/development/data-and-backend/state-mgmt/intro
-[Performance profiling]: /docs/perf/rendering/ui-performance
-[1.2.1 release notes]: /docs/development/tools/sdk/release-notes/release-notes-1.2.1
-[simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
-[state management advice]: /docs/development/data-and-backend/state-mgmt/intro
-[thinking declaratively]: /docs/development/data-and-backend/state-mgmt/declarative
-[this site]: /docs/development/tools/devtools
-[timeline view]: /docs/development/tools/devtools/performance
-[VS Code]: /docs/development/tools/vs-code
-[widget inspector]: /docs/development/tools/devtools/inspector
+[introduction]: /development/data-and-backend/state-mgmt/intro
+[Performance profiling]: /perf/rendering/ui-performance
+[1.2.1 release notes]: /development/tools/sdk/release-notes/release-notes-1.2.1
+[simple app state management]: /development/data-and-backend/state-mgmt/simple
+[state management advice]: /development/data-and-backend/state-mgmt/intro
+[thinking declaratively]: /development/data-and-backend/state-mgmt/declarative
+[this site]: /development/tools/devtools
+[timeline view]: /development/tools/devtools/performance
+[VS Code]: /development/tools/vs-code
+[widget inspector]: /development/tools/devtools/inspector
 
 
 [version 1.2]: {{site.google-blog}}/2019/02/launching-flutter-12-at-mobile-world.html
@@ -822,13 +822,13 @@ Some of the new content includes:
 If you have questions or comments about the revamped site,
 [file an issue][].
 
-[a native debugger _and_ a Dart debugger to your app]: /docs/testing/oem-debuggers
-[Background Dart processes]: /docs/development/packages-and-plugins/background-processes
-[community]: /community
+[a native debugger _and_ a Dart debugger to your app]: /testing/oem-debuggers
+[Background Dart processes]: /development/packages-and-plugins/background-processes
+[community]: {{site.main-url}}/community
 [file an issue]: {{site.repo.this}}/issues
-[Flutter's build modes]: /docs/testing/build-modes
+[Flutter's build modes]: /testing/build-modes
 [front]: /
-[Inside Flutter]: /docs/resources/inside-flutter
-[showcase]: /showcase
-[State management]: /docs/development/data-and-backend/state-mgmt
-[Technical videos]: /docs/resources/videos
+[Inside Flutter]: /resources/inside-flutter
+[showcase]: {{site.main-url}}/showcase
+[State management]: /development/data-and-backend/state-mgmt
+[Technical videos]: /resources/videos

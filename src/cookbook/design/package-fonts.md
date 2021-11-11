@@ -3,10 +3,10 @@ title: Export fonts from a package
 description: How to export fonts from a package.
 prev:
   title: Display a snackbar
-  path: /docs/cookbook/design/snackbars
+  path: /cookbook/design/snackbars
 next:
   title: Update the UI based on orientation
-  path: /docs/cookbook/design/orientation
+  path: /cookbook/design/orientation
 ---
 
 Rather than declaring a font as part of an app,

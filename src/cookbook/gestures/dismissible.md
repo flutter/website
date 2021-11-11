@@ -4,10 +4,10 @@ description: How to implement swiping to dismiss or delete.
 diff2html: true
 prev:
   title: Handle taps
-  path: /docs/cookbook/gestures/handling-taps
+  path: /cookbook/gestures/handling-taps
 next:
   title: Display images from the internet
-  path: /docs/cookbook/images/network-image
+  path: /cookbook/images/network-image
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -208,4 +208,4 @@ class MyAppState extends State<MyApp> {
 
 
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
-[Working with long lists]: /docs/cookbook/lists/long-lists
+[Working with long lists]: /cookbook/lists/long-lists

@@ -121,6 +121,6 @@ supports importing files that were originally exported from DevTools.**
 
 
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[GPU graph]: /docs/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
-[Flutter performance profiling]: /docs/perf/rendering/ui-performance
+[GPU graph]:/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
+[Flutter performance profiling]:/perf/rendering/ui-performance
 [Import and export]: #import-and-export

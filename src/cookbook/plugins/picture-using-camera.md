@@ -3,10 +3,10 @@ title: Take a picture using the camera
 description: How to use a camera plugin on mobile.
 prev:
   title: Play and pause a video
-  path: /docs/cookbook/plugins/play-video
+  path: /cookbook/plugins/play-video
 next:
   title: An introduction to integration testing
-  path: /docs/cookbook/testing/integration/introduction
+  path: /cookbook/testing/integration/introduction
 ---
 
 <?code-excerpt path-base="cookbook/plugins/picture_using_camera/"?>

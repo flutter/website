@@ -116,9 +116,9 @@ dependencies, see the
 [asset images in package dependencies][]
 section in the same page.
 
-[Assets and images]: /docs/development/ui/assets-and-images
-[asset images in package dependencies]: /docs/development/ui/assets-and-images#from-packages
-[resolution aware]: /docs/development/ui/assets-and-images#resolution-aware
+[Assets and images]:/development/ui/assets-and-images
+[asset images in package dependencies]:/development/ui/assets-and-images#from-packages
+[resolution aware]:/development/ui/assets-and-images#resolution-aware
 
 ## Fonts
 
@@ -133,9 +133,9 @@ see the [Use a custom font][] and
 [Export fonts from a package][] recipes in the
 [Flutter cookbook][].
 
-[Export fonts from a package]: /docs/cookbook/design/package-fonts
-[Flutter cookbook]: /docs/cookbook
-[Use a custom font]: /docs/cookbook/design/fonts
+[Export fonts from a package]:/cookbook/design/package-fonts
+[Flutter cookbook]:/cookbook
+[Use a custom font]:/cookbook/design/fonts
 
 ## More information
 
@@ -149,9 +149,9 @@ and pubspec files, see the following:
 * [What not to commit][] on dart.dev
 
 [Creating packages]: {{site.dart-site}}/guides/libraries/create-library-packages
-[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
-[Federated plugins]: /docs/development/packages-and-plugins/developing-packages#federated-plugins
+[Developing packages and plugins]:/development/packages-and-plugins/developing-packages
+[Federated plugins]:/development/packages-and-plugins/developing-packages#federated-plugins
 [Glossary of package terms]: {{site.dart-site}}/tools/pub/glossary
 [Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
-[Using packages]: /docs/development/packages-and-plugins/using-packages
+[Using packages]:/development/packages-and-plugins/using-packages
 [What not to commit]: {{site.dart-site}}/guides/libraries/private-files#pubspeclock

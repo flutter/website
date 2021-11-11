@@ -3,10 +3,10 @@ title: Create a typing indicator
 description: How to implement a typing indicator.
 prev:
   title: Create a staggered menu animation
-  path:  /docs/cookbook/effects/staggered-menu-animation
+  path:  /cookbook/effects/staggered-menu-animation
 next:
   title: Create an expandable FAB
-  path:  /docs/cookbook/effects/expandable-fab
+  path:  /cookbook/effects/expandable-fab
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -794,5 +794,5 @@ class FakeMessage extends StatelessWidget {
 }
 ```
 
-[explicit animation]: /docs/development/ui/animations#tween-animation
-[staggered animation]: /docs/development/ui/animations/staggered-animations
+[explicit animation]: /development/ui/animations#tween-animation
+[staggered animation]: /development/ui/animations/staggered-animations

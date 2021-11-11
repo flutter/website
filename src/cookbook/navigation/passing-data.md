@@ -3,10 +3,10 @@ title: Send data to a new screen
 description: How to pass data to a new route.
 prev:
   title: Return data from a screen
-  path: /docs/cookbook/navigation/returning-data
+  path: /cookbook/navigation/returning-data
 next:
   title: Delete data on the internet
-  path: /docs/cookbook/networking/delete-data
+  path: /cookbook/networking/delete-data
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -445,4 +445,4 @@ class DetailScreen extends StatelessWidget {
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`onTap()`]: {{site.api}}/flutter/material/ListTile/onTap.html
 [`RouteSettings`]: {{site.api}}/flutter/widgets/RouteSettings-class.html
-[Use lists]: /docs/cookbook/lists/basic-list
+[Use lists]:/cookbook/lists/basic-list

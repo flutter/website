@@ -3,10 +3,10 @@ title: Find widgets
 description: How to use the Finder classes for testing widgets.
 prev:
   title: An introduction to widget testing
-  path: /docs/cookbook/testing/widget/introduction
+  path: /cookbook/testing/widget/introduction
 next:
   title: Handle scrolling
-  path: /docs/cookbook/testing/widget/scrolling
+  path: /cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/finders/"?>
@@ -161,4 +161,4 @@ void main() {
 [`CommonFinders` documentation]: {{api}}/flutter_test/CommonFinders-class.html
 [`find`]: {{api}}/flutter_test/find-constant.html
 [`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
-[Introduction to widget testing]: /docs/cookbook/testing/widget/introduction
+[Introduction to widget testing]:/cookbook/testing/widget/introduction

@@ -3,10 +3,10 @@ title: Navigate with named routes
 description: How to implement named routes for navigating between screens.
 prev:
   title: Navigate to a new screen and back
-  path: /docs/cookbook/navigation/navigation-basics
+  path: /cookbook/navigation/navigation-basics
 next:
   title: Pass arguments to a named route
-  path: /docs/cookbook/navigation/navigate-with-arguments
+  path: /cookbook/navigation/navigate-with-arguments
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -236,7 +236,7 @@ class SecondScreen extends StatelessWidget {
 
 
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[Navigate to a new screen and back]: /docs/cookbook/navigation/navigation-basics
+[Navigate to a new screen and back]:/cookbook/navigation/navigation-basics
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.pushNamed()`]: {{site.api}}/flutter/widgets/Navigator/pushNamed.html

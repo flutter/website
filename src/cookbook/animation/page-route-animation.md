@@ -3,7 +3,7 @@ title: Animate a page route transition
 description: How to animate from one page to another.
 next:
   title: Animate a widget using a physics simulation
-  path: /docs/cookbook/animation/physics-simulation
+  path: /cookbook/animation/physics-simulation
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

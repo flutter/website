@@ -127,7 +127,7 @@ SkSLs are generated and tested automatically over the lifetime of an app.
 
 {{site.alert.note}}
   The integration_test package is now the recommended way to write integration
-  tests. See the [Integration testing](/docs/testing/integration-tests/) page
+  tests. See the [Integration testing]/testing/integration-tests/) page
   for details.
 {{site.alert.end}}
 
@@ -149,9 +149,9 @@ difference as illustrated in the beginning of this article.
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
 [`flutter_gallery_sksl_warmup__transition_perf`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
 [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
-[integration tests]: /docs/cookbook/testing/integration/introduction
+[integration tests]:/cookbook/testing/integration/introduction
 [`transitions_perf_test.dart`]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
-[limitations and considerations]: /docs/perf/rendering/shader#limitations-and-considerations
+[limitations and considerations]:/perf/rendering/shader#limitations-and-considerations
 
 ## Frequently asked questions
 

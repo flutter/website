@@ -3,10 +3,10 @@ title: Create a nested navigation flow
 description: How to implement a flow with nested navigation.
 prev:
   title: Create a download button
-  path:  /docs/cookbook/effects/download-button
+  path:  /cookbook/effects/download-button
 next:
   title: Create a photo filter carousel
-  path:  /docs/cookbook/effects/photo-filter-carousel
+  path:  /cookbook/effects/photo-filter-carousel
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

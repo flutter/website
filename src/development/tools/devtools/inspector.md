@@ -524,22 +524,22 @@ of the Flutter inspector.
 
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[common problems when debugging]: /docs/testing/debugging#common-problems
-[core building block]: /docs/development/ui/widgets-intro
+[common problems when debugging]:/testing/debugging#common-problems
+[core building block]:/development/ui/widgets-intro
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
 [DartConf 2018 talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
-[debug mode]: /docs/testing/build-modes#debug
-[Debugging Flutter apps]: /docs/testing/debugging
-[DevTools written in Flutter]: /docs/development/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter
+[debug mode]:/testing/build-modes#debug
+[Debugging Flutter apps]:/testing/debugging
+[DevTools written in Flutter]:/development/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter
 [`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
 [flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html
 [`FlexFit`]: {{site.api}}/flutter/widgets/FlexFit-class.html
 [`FlexParentData.fit`]: {{site.api}}/flutter/rendering/FlexParentData/fit.html
 [`FlexParentData.flex`]: {{site.api}}/flutter/rendering/FlexParentData/flex.html
-[Flutter performance profiling]: /docs/perf/rendering/ui-performance
+[Flutter performance profiling]:/perf/rendering/ui-performance
 [`mainAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/mainAxisAlignment.html
 [`mainAxisSize`]: {{site.api}}/flutter/widgets/Flex/mainAxisSize.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
-[the performance overlay]: /docs/perf/rendering/ui-performance#the-performance-overlay
-[Understanding constraints]: /docs/development/ui/layout/constraints
+[the performance overlay]:/perf/rendering/ui-performance#the-performance-overlay
+[Understanding constraints]:/development/ui/layout/constraints

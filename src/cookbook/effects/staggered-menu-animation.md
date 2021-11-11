@@ -3,10 +3,10 @@ title: Create a staggered menu animation
 description: How to implement a staggered menu animation.
 prev:
   title: Create a shimmer loading effect
-  path:  /docs/cookbook/effects/shimmer-loading
+  path:  /cookbook/effects/shimmer-loading
 next:
   title: Create a typing indicator
-  path:  /docs/cookbook/effects/typing-indicator
+  path:  /cookbook/effects/typing-indicator
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

@@ -4,10 +4,10 @@ description: How to write unit tests.
 short-title: Introduction
 prev:
   title: Performance profiling
-  path: /docs/cookbook/testing/integration/profiling
+  path: /cookbook/testing/integration/profiling
 next:
   title: Mock dependencies using Mockito
-  path: /docs/cookbook/testing/unit/mocking
+  path: /cookbook/testing/unit/mocking
 ---
 
 How can you ensure that your app continues to work as you

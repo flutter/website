@@ -139,7 +139,7 @@ other targets.
 ## Reactive user interfaces
 
 On the surface, Flutter is [a reactive, pseudo-declarative UI
-framework](/docs/resources/faq#what-programming-paradigm-does-flutters-framework-use),
+framework]/resources/faq#what-programming-paradigm-does-flutters-framework-use),
 in which the developer provides a mapping from application state to interface
 state, and the framework takes on the task of updating the interface at runtime
 when the application state changes. This model is inspired by [work that came
@@ -344,7 +344,7 @@ href="#a1">1</a></sup>, regardless of what the widget previously returned. The
 framework does the heavy lifting work to determine which build methods need to
 be called based on the render object tree (described in more detail later). More
 information about this process can be found in the [Inside Flutter
-topic](/docs/resources/inside-flutter#linear-reconciliation).
+topic]/resources/inside-flutter#linear-reconciliation).
 
 On each rendered frame, Flutter can recreate just the parts of the UI where the
 state has changed by calling that widget’s `build()` method. Therefore it is
@@ -552,7 +552,7 @@ case<sup><a href="#a2">2</a></sup>:
 diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
 
 This explains why, when you examine the tree through a debug tool such as the
-[Flutter inspector](/docs/development/tools/devtools/inspector), part of the
+[Flutter inspector]/development/tools/devtools/inspector), part of the
 Dart DevTools, you might see a structure that is considerably deeper than what
 is in your original code.
 
@@ -672,7 +672,7 @@ Widget build(BuildContext context) {
 
 More information about the constraint and layout system, along with worked
 examples, can be found in the [Understanding
-constraints](/docs/development/ui/layout/constraints) topic.
+constraints]/development/ui/layout/constraints) topic.
 
 The root of all `RenderObject`s is the `RenderView`, which represents the total
 output of the render tree. When the platform demands a new frame to be rendered
@@ -930,7 +930,7 @@ with loading the necessary libraries.
 
 More information about how Flutter is loaded into an existing Android or iOS app
 can be found at the [Load sequence, performance and memory
-topic](/docs/development/add-to-app/performance).
+topic]/development/add-to-app/performance).
 
 ## Flutter web support
 
@@ -983,7 +983,7 @@ imports]({{site.dart-site}}/guides/language/language-tour#lazily-loading-a-libra
 ## Further information
 
 For those interested in more information about the internals of Flutter, the
-[Inside Flutter](/docs/resources/inside-flutter) whitepaper
+[Inside Flutter]/resources/inside-flutter) whitepaper
 provides a useful guide to the framework’s design philosophy.
 
 ---

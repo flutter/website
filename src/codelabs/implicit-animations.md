@@ -451,8 +451,8 @@ here are some suggestions for where to go next:
 [AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[animations tutorial]: /docs/development/ui/animations/tutorial
-[codelab]: /docs/codelabs
+[animations tutorial]: /development/ui/animations/tutorial
+[codelab]: /codelabs
 [curve]: {{site.api}}/flutter/animation/Curve-class.html
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [DartPad]: {{site.dartpad}}
@@ -461,7 +461,7 @@ here are some suggestions for where to go next:
 [fade-in complete]: #fade-in-complete
 [fade-in starter code]: #fade-in-starter-code
 [Fade-in text effect]: #example-fade-in-text-effect
-[hero animations]: /docs/development/ui/animations/hero-animations
+[hero animations]: /development/ui/animations/hero-animations
 [ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [linear animation curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
@@ -472,5 +472,5 @@ here are some suggestions for where to go next:
 [shape-shifting complete]: #shape-shifting-complete
 [Shape-shifting effect]: #example-shape-shifting-effect
 [shape-shifting starter code]: #shape-shifting-starter-code
-[staggered animations]: /docs/development/ui/animations/staggered-animations
-[stateful widgets]: /docs/development/ui/interactive#stateful-and-stateless-widgets
+[staggered animations]: /development/ui/animations/staggered-animations
+[stateful widgets]: /development/ui/interactive#stateful-and-stateless-widgets

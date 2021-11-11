@@ -35,8 +35,8 @@ steps to take, and tools that can help.
     in the [Debugging][] page.
 {{site.alert.end}}
 
-[Debugging]: /docs/testing/debugging
-[Tracing Dart code]: /docs/testing/debugging#tracing-dart-code
+[Debugging]:/testing/debugging
+[Tracing Dart code]:/testing/debugging#tracing-dart-code
 
 ## Diagnosing performance problems
 
@@ -48,7 +48,7 @@ Before you begin, you want to make sure that you're running in
 For best results, you might choose the slowest device that
 your users might use.
 
-[profile mode]: /docs/testing/build-modes#profile
+[profile mode]:/testing/build-modes#profile
 
 ### Connect to a physical device
 
@@ -115,7 +115,7 @@ see [Flutter's build modes][].
 You'll begin by opening DevTools and viewing
 the performance overlay, as discussed in the next section.
 
-[Flutter's build modes]: /docs/testing/build-modes
+[Flutter's build modes]:/testing/build-modes
 
 ## Launch DevTools
 
@@ -128,8 +128,8 @@ UI performance of your application on a frame-by-frame basis.
 Once your app is running in profile mode,
 [launch DevTools][].
 
-[launch DevTools]: /docs/development/tools/devtools
-[Timeline view]: /docs/development/tools/devtools/performance
+[launch DevTools]:/development/tools/devtools
+[Timeline view]:/development/tools/devtools/performance
 
 ## The performance overlay
 
@@ -181,7 +181,7 @@ the scene is too complicated to render quickly.
 expensive to both render and paint.<br>When both graphs
 display red, start by diagnosing the UI thread.
 
-[debug mode]: /docs/testing/build-modes#debug
+[debug mode]:/testing/build-modes#debug
 
 ## Flutter's threads
 
@@ -255,7 +255,7 @@ from the Flutter inspector, which is available in the
 **Performance Overlay** button to toggle the overlay
 on your running app.
 
-[Inspector view]: /docs/development/tools/devtools/inspector
+[Inspector view]:/development/tools/devtools/inspector
 
 #### From the command line
 
@@ -268,8 +268,8 @@ To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
 
-[Debugging Flutter apps programmatically]: /docs/testing/code-debugging
-[Performance overlay]: /docs/testing/code-debugging#performance-overlay
+[Debugging Flutter apps programmatically]:/testing/code-debugging
+[Performance overlay]:/testing/code-debugging#performance-overlay
 
 ## Identifying problems in the UI graph
 
@@ -302,7 +302,7 @@ instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise
 manipulated, a [`RepaintBoundary`][] might help.
 
-[programmatically]: /docs/testing/code-debugging#debugging-animations
+[programmatically]:/testing/code-debugging#debugging-animations
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
@@ -401,7 +401,7 @@ You can view the widget rebuilt counts for the current screen and
 frame in the Flutter plugin for Android Studio and IntelliJ.
 For details on how to do this, see [Show performance data][]
 
-[Show performance data]: /docs/development/tools/android-studio#show-performance-data
+[Show performance data]:/development/tools/android-studio#show-performance-data
 
 ## Benchmarking
 
@@ -421,8 +421,8 @@ regression is introduced that adversely affects performance.
 For more information, see [Integration testing][],
 a section in [Testing Flutter apps][].
 
-[Integration testing]: /docs/testing#integration-tests
-[Testing Flutter apps]: /docs/testing
+[Integration testing]:/testing#integration-tests
+[Testing Flutter apps]:/testing
 
 ## Other resources
 
@@ -439,9 +439,9 @@ Flutter's tools and debugging in Flutter:
   and the [dart:developer][] package
 
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[devtools]: /docs/development/tools/devtools
+[devtools]:/development/tools/devtools
 [Flutter API]: {{site.api}}
-[Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter inspector]:/development/tools/devtools/inspector
 [Flutter inspector talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: {{site.youtube-site}}/watch?v=5F-6n_2XWR8

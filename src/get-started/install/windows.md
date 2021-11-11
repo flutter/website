@@ -4,7 +4,7 @@ description: How to install on Windows.
 short-title: Windows
 next:
   title: Set up an editor
-  path: /docs/get-started/editor
+  path: /get-started/editor
 ---
 
 {% assign os = 'windows' -%}

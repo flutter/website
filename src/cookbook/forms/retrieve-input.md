@@ -3,10 +3,10 @@ title: Retrieve the value of a text field
 description: How to retrieve text from a text field.
 prev:
   title: Create an expandable FAB
-  path: /docs/cookbook/effects/expandable-fab
+  path: /cookbook/effects/expandable-fab
 next:
   title: Focus and text fields
-  path: /docs/cookbook/forms/focus
+  path: /cookbook/forms/focus
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -17,7 +17,7 @@ js:
 {% comment %}
 prev:
   title: Handle changes to a text field
-  path: /docs/cookbook/forms/text-field-changes
+  path: /cookbook/forms/text-field-changes
 {% endcomment %}
 
 In this recipe,

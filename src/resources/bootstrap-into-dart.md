@@ -46,10 +46,10 @@ Check out the [Dart community][].
 
 
 [Asynchronous programming: futures, async, await]: {{site.dart-site}}/codelabs/async-await
-[Asynchronous programming: streams]: {{site.dart-site}}/docs/tutorials/streams
+[Asynchronous programming: streams]: {{site.dart-site}}/tutorials/streams
 [Dart]: {{site.dart-site}}
 [Dart community]: {{site.dart-site}}/community
-[Dart is easy and fun to learn]: /docs/resources/faq#why-did-flutter-choose-to-use-dart
+[Dart is easy and fun to learn]:/resources/faq#why-did-flutter-choose-to-use-dart
 [Effective Dart]: {{site.dart-site}}/guides/language/effective-dart
 [`File`]: {{site.api}}/flutter/dart-io/File-class.html
 [Intro to Dart for Java Developers]: {{site.codelabs}}/codelabs/from-java-to-dart

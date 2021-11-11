@@ -60,7 +60,7 @@ one of these codelabs:
 [codelab on docs.flutter.dev]: /get-started/codelab
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
-[Write your first Flutter app on the web]: /docs/get-started/codelab-web
+[Write your first Flutter app on the web]: /get-started/codelab-web
 
 ## Next steps
 
@@ -81,7 +81,7 @@ one of these codelabs:
 
 [Dart null safety in Action]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
 [inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
-[low-level state management]: /docs/development/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
+[low-level state management]: /development/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
 [Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
 
 ## Designing a Flutter UI
@@ -132,11 +132,11 @@ like layout and animations:
   products by the selected category.
 
 [animations]: {{site.pub}}/packages/animations
-[Basic Flutter layout concepts]: /docs/codelabs/layout-basics
+[Basic Flutter layout concepts]: /codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
-[Implicit animations]: /docs/codelabs/implicit-animations
+[Implicit animations]: /codelabs/implicit-animations
 [MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
 [MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
 [MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter

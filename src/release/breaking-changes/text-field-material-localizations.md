@@ -125,5 +125,5 @@ Relevant PR:
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
 [`DefaultMaterialLocalizations`]: {{site.api}}/flutter/material/DefaultMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[Internationalizing Flutter apps]: /docs/development/accessibility-and-localization/internationalization
+[Internationalizing Flutter apps]:/development/accessibility-and-localization/internationalization
 [PR 58831: Assert debugCheckHasMaterialLocalizations on TextField]: {{site.repo.flutter}}/pull/58831

@@ -3,10 +3,10 @@ title: Add a Drawer to a screen
 description: How to implement a Material Drawer.
 prev:
   title: Fade a widget in and out
-  path: /docs/cookbook/animation/opacity-animation
+  path: /cookbook/animation/opacity-animation
 next:
   title: Display a snackbar
-  path: /docs/cookbook/design/snackbars
+  path: /cookbook/design/snackbars
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -212,7 +212,7 @@ class MyHomePage extends StatelessWidget {
 
 [`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
 [`DrawerHeader`]: {{site.api}}/flutter/material/DrawerHeader-class.html
-[list recipes]: /docs/cookbook#lists
+[list recipes]: /cookbook#lists
 [`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html

@@ -3,10 +3,10 @@ title: Display a snackbar
 description: How to implement a snackbar to display messages.
 prev:
   title: Add a drawer to a screen
-  path: /docs/cookbook/design/drawer
+  path: /cookbook/design/drawer
 next:
   title: Export fonts from a package
-  path: /docs/cookbook/design/package-fonts
+  path: /cookbook/design/package-fonts
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -151,7 +151,7 @@ class SnackBarPage extends StatelessWidget {
 </noscript>
 
 
-[Gestures]: /docs/cookbook#gestures
+[Gestures]: /cookbook#gestures
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html

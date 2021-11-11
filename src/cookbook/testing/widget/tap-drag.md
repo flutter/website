@@ -3,7 +3,7 @@ title: Tap, drag, and enter text
 description: How to test widgets for user interaction.
 prev:
   title: Handle scrolling
-  path: /docs/cookbook/testing/widget/scrolling
+  path: /cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/tap_drag/"?>
@@ -294,14 +294,14 @@ class _TodoListState extends State<TodoList> {
 }
 ```
 
-[Create a basic list]: /docs/cookbook/lists/basic-list
-[Create and style a text field]: /docs/cookbook/forms/text-input
+[Create a basic list]:/cookbook/lists/basic-list
+[Create and style a text field]:/cookbook/forms/text-input
 [`drag()`]: {{api}}/flutter_test/WidgetController/drag.html
 [`enterText()`]: {{api}}/flutter_test/WidgetTester/enterText.html
-[Finding widgets in a widget test]: /docs/cookbook/testing/widget/finders
-[Handle taps]: /docs/cookbook/gestures/handling-taps
-[Implement swipe to dismiss]: /docs/cookbook/gestures/dismissible
-[Introduction to widget testing]: /docs/cookbook/testing/widget/introduction
+[Finding widgets in a widget test]:/cookbook/testing/widget/finders
+[Handle taps]:/cookbook/gestures/handling-taps
+[Implement swipe to dismiss]:/cookbook/gestures/dismissible
+[Introduction to widget testing]:/cookbook/testing/widget/introduction
 [`pump()`]: {{api}}/flutter_test/WidgetTester/pump.html
 [`pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
 [`tap()`]: {{api}}/flutter_test/WidgetController/tap.html

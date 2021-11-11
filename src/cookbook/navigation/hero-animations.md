@@ -3,10 +3,10 @@ title: Animate a widget across screens
 description: How to animate a widget from one screen to another
 prev:
   title: Report errors to a service
-  path: /docs/cookbook/maintenance/error-reporting
+  path: /cookbook/maintenance/error-reporting
 next:
   title: Navigate to a new screen and back
-  path: /docs/cookbook/navigation/navigation-basics
+  path: /cookbook/navigation/navigation-basics
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -220,6 +220,6 @@ class DetailScreen extends StatelessWidget {
 </noscript>
 
 
-[Handle taps]: /docs/cookbook/gestures/handling-taps
+[Handle taps]:/cookbook/gestures/handling-taps
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
-[Navigate to a new screen and back]: /docs/cookbook/navigation/navigation-basics
+[Navigate to a new screen and back]:/cookbook/navigation/navigation-basics

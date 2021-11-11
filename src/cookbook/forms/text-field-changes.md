@@ -3,10 +3,10 @@ title: Handle changes to a text field
 description: How to detect changes to a text field.
 prev:
   title: Create and style a text field
-  path: /docs/cookbook/forms/text-input
+  path: /cookbook/forms/text-input
 next:
   title: Retrieve the value of a text field
-  path: /docs/cookbook/forms/retrieve-input
+  path: /cookbook/forms/retrieve-input
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

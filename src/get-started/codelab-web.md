@@ -1026,28 +1026,28 @@ Dart DevTools, or Flutter animations, see the following:
 * [Web samples][]
 
 
-[Android Studio and IntelliJ]: /docs/development/tools/devtools/android-studio
-[Animation docs]: /docs/development/ui/animations
-[Building a form with validation]: /docs/cookbook/forms/validation
-[Building a web application with Flutter]: /docs/get-started/web
+[Android Studio and IntelliJ]:/development/tools/devtools/android-studio
+[Animation docs]:/development/ui/animations
+[Building a form with validation]:/cookbook/forms/validation
+[Building a web application with Flutter]:/get-started/web
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
-[create a new Flutter project]: /docs/get-started/test-drive
-[Dart DevTools]: /docs/development/tools/devtools/overview
+[create a new Flutter project]:/get-started/test-drive
+[Dart DevTools]:/development/tools/devtools/overview
 [DartPad]: {{site.dartpad}}
-[DevTools command line]: /docs/development/tools/devtools/cli
-[DevTools documentation]: /docs/development/tools/devtools
-[DevTools installed]: /docs/development/tools/devtools/overview#how-do-i-install-devtools
+[DevTools command line]:/development/tools/devtools/cli
+[DevTools documentation]:/development/tools/devtools
+[DevTools installed]:/development/tools/devtools/overview#how-do-i-install-devtools
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
-[editor]: /docs/get-started/editor
+[editor]:/get-started/editor
 [Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
-[Flutter cookbook]: /docs/cookbook
-[Flutter SDK]: /docs/get-started/install
-[Implicit animations]: /docs/codelabs/implicit-animations
-[Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
+[Flutter cookbook]:/cookbook
+[Flutter SDK]:/get-started/install
+[Implicit animations]:/codelabs/implicit-animations
+[Introduction to declarative UI]:/get-started/flutter-for/declarative
 [Material Design]: {{site.material}}/design/introduction/#
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
-[VS Code]: /docs/development/tools/devtools/vscode
+[VS Code]:/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/master/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
-[writing your first Flutter app on mobile]: /docs/get-started/codelab
+[writing your first Flutter app on mobile]:/get-started/codelab

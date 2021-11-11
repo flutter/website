@@ -24,4 +24,4 @@ you can also see all the widgets in the [widget index][].
 </div>
 
 
-[widget index]: /docs/reference/widgets
+[widget index]:/reference/widgets

@@ -3,10 +3,10 @@ title: Make authenticated requests
 description: How to fetch authorized data from a web service.
 prev:
   title: Fetch data from the internet
-  path: /docs/cookbook/networking/fetch-data
+  path: /cookbook/networking/fetch-data
 next:
   title: Parse JSON in the background
-  path: /docs/cookbook/networking/background-parsing
+  path: /cookbook/networking/background-parsing
 ---
 
 <?code-excerpt path-base="cookbook/networking/authenticated_requests/"?>
@@ -81,6 +81,6 @@ class Album {
 ```
 
 
-[Fetching data from the internet]: /docs/cookbook/networking/fetch-data
+[Fetching data from the internet]:/cookbook/networking/fetch-data
 [`http`]: {{site.pub-pkg}}/http
 [`HttpHeaders`]: {{site.dart.api}}/stable/dart-io/HttpHeaders-class.html

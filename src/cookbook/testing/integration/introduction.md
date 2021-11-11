@@ -4,10 +4,10 @@ description: Learn about integration testing in Flutter.
 short-title: Introduction
 prev:
   title: Take a picture using the camera
-  path: /docs/cookbook/plugins/picture-using-camera
+  path: /cookbook/plugins/picture-using-camera
 next:
   title: Performance profiling
-  path: /docs/cookbook/testing/integration/profiling
+  path: /cookbook/testing/integration/profiling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>
@@ -257,6 +257,6 @@ flutter drive \
 [Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
 [integration_test]: {{site.repo.flutter}}/tree/master/packages/integration_test
-[Integration testing]: /docs/testing/integration-tests
+[Integration testing]:/testing/integration-tests
 [`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
 [`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html

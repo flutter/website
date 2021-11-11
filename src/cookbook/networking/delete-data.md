@@ -3,10 +3,10 @@ title: Delete data on the internet
 description: How to use the http package to delete data on the internet.
 prev:
   title: Send data to a new screen
-  path: /docs/cookbook/navigation/passing-data
+  path: /cookbook/navigation/passing-data
 next:
   title: Fetch data from the internet
-  path: /docs/cookbook/networking/fetch-data
+  path: /cookbook/networking/fetch-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/delete_data/"?>
@@ -276,7 +276,7 @@ class _MyAppState extends State<MyApp> {
 }
 ```
 
-[Fetch Data]: /docs/cookbook/networking/fetch-data
+[Fetch Data]:/cookbook/networking/fetch-data
 [ConnectionState]: {{site.api}}/flutter/widgets/ConnectionState-class.html
 [`didChangeDependencies()`]: {{site.api}}/flutter/widgets/State/didChangeDependencies.html
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
@@ -286,8 +286,8 @@ class _MyAppState extends State<MyApp> {
 [`http.delete()`]: {{site.pub-api}}/http/latest/http/delete.html
 [`http` package]: {{site.pub-pkg}}/http/install
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[Introduction to unit testing]:/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
-[Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
-[JSON and serialization]: /docs/development/data-and-backend/json
+[Mock dependencies using Mockito]:/cookbook/testing/unit/mocking
+[JSON and serialization]:/development/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

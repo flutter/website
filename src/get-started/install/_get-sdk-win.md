@@ -88,5 +88,5 @@ verify that you’ve set everything up correctly.
 
 
 [Flutter repo]: {{site.repo.flutter}}
-[SDK releases]: /docs/development/tools/sdk/releases
-[Set up an editor]: /docs/get-started/editor?tab=androidstudio
+[SDK releases]:/development/tools/sdk/releases
+[Set up an editor]:/get-started/editor?tab=androidstudio

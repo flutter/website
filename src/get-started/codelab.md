@@ -4,10 +4,10 @@ description: How to write a web-based app in Flutter.
 short-title: Write your first app
 prev:
   title: Test drive
-  path: /docs/get-started/test-drive
+  path: /get-started/test-drive
 next:
   title: Learn more
-  path: /docs/get-started/learn-more
+  path: /get-started/learn-more
 diff2html: true
 ---
 
@@ -630,27 +630,27 @@ where you add the following functionality:
 * Modify the theme color, making an all-white app.
 
 
-[an editor]: /docs/get-started/editor
+[an editor]:/get-started/editor
 [Android]: install/macos#set-up-your-android-device
 [Android emulator]: install/macos#set-up-the-android-emulator
 [Building a web application with Flutter]: /web
-[DevTools]: /docs/development/tools/devtools
-[enabled web]: /docs/get-started/web
+[DevTools]:/development/tools/devtools
+[enabled web]:/get-started/web
 [enforces privacy]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility
 [english_words]: {{site.pub}}/packages/english_words
-[Flutter SDK]: /docs/get-started/install
-[Getting Started with your first Flutter app]: /docs/get-started/test-drive#create-app
+[Flutter SDK]:/get-started/install
+[Getting Started with your first Flutter app]:/get-started/test-drive#create-app
 [Google Developers Codelabs]: {{site.codelabs}}
-[hot reload]: /docs/get-started/test-drive
-[in the way your IDE describes]: /docs/get-started/test-drive
+[hot reload]:/get-started/test-drive
+[in the way your IDE describes]:/get-started/test-drive
 [Icons]: https://fonts.google.com/icons
 [iOS]: install/macos#deploy-to-ios-devices
 [iOS simulator]: install/macos#set-up-the-ios-simulator
 [Material]: {{site.material}}/guidelines
 [Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
-[plugins installed for Flutter and Dart]: /docs/get-started/editor
+[plugins installed for Flutter and Dart]:/get-started/editor
 [pub.dev]: {{site.pub}}
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
-[codelab-web]: /docs/get-started/codelab-web
+[codelab-web]:/get-started/codelab-web

@@ -4,10 +4,10 @@ description: Use the Mockito package to mimic the behavior of services for testi
 short-title: Mocking
 prev:
   title: An introduction to unit testing
-  path: /docs/cookbook/testing/unit/introduction
+  path: /cookbook/testing/unit/introduction
 next:
   title: An introduction to widget testing
-  path: /docs/cookbook/testing/widget/introduction
+  path: /cookbook/testing/widget/introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/mocking"?>
@@ -351,6 +351,6 @@ the Mockito library and the concept of mocking. For more information,
 see the documentation provided by the [Mockito package][].
 
 
-[Fetch data from the internet]: /docs/cookbook/networking/fetch-data
-[Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[Fetch data from the internet]:/cookbook/networking/fetch-data
+[Introduction to unit testing]:/cookbook/testing/unit/introduction
 [Mockito package]: {{site.pub-pkg}}/mockito

@@ -3,10 +3,10 @@ title: Drag a UI element
 description: How to implement a draggable UI element.
 prev:
   title: Create gradient chat bubbles
-  path:  /docs/cookbook/effects/gradient-bubbles
+  path: /cookbook/effects/gradient-bubbles
 next:
   title: Build a form with validation 
-  path:  /docs/cookbook/forms/validation
+  path: /cookbook/forms/validation
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
