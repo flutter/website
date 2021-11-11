@@ -15,10 +15,15 @@ header.site-header {
     color: #444;
     border-radius: 4px;
 
-    &:hover {
+    &:hover,
+    &.active {
       color: #000;
       background-color: #f6f6f6;
       transition: background-color 300ms ease;
+    }
+
+    &.active {
+      font-weight: 500;
     }
   }
 
