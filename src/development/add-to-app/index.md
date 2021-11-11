@@ -93,14 +93,14 @@ To get started, see our project integration guide for
 Android and iOS:
 
 <div class="card-deck mb-8">
-  <a class="card" href=/development/add-to-app/android/project-setup">
+  <a class="card" href="/development/add-to-app/android/project-setup">
     <div class="card-body">
       <header class="card-title text-center m-0">
         Android
       </header>
     </div>
   </a>
-  <a class="card" href=/development/add-to-app/ios/project-setup">
+  <a class="card" href="/development/add-to-app/ios/project-setup">
     <div class="card-body">
       <header class="card-title text-center m-0">
         iOS
@@ -115,14 +115,14 @@ After Flutter is integrated into your project,
 see our API usage guides at the following links:
 
 <div class="card-deck mb-8">
-  <a class="card" href=/development/add-to-app/android/add-flutter-screen">
+  <a class="card" href="/development/add-to-app/android/add-flutter-screen">
     <div class="card-body">
       <header class="card-title text-center m-0">
         Android
       </header>
     </div>
   </a>
-  <a class="card" href=/development/add-to-app/ios/add-flutter-screen">
+  <a class="card" href="/development/add-to-app/ios/add-flutter-screen">
     <div class="card-body">
       <header class="card-title text-center m-0">
         iOS

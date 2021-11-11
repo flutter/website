@@ -99,6 +99,7 @@
       { "source": "/deployment/fastlane-cd", "destination": "/deployment/cd", "type": 301 },
       { "source": "/development/add-to-app/android/add-splash-screen", "destination": "/development/ui/advanced/splash-screen", "type": 301 },
       { "source": "/development/packages-and-plugins/androidx-compatibility", "destination": "/development/androidx-migration", "type": 301 },
+      { "source": "/development/tools/devtools", "destination": "/development/tools/devtools/overview", "type": 301 },
       { "source": "/development/tools/devtools/code-size", "destination": "/development/tools/devtools/app-size", "type": 301 },
       { "source": "/development/tools/devtools/codeSize", "destination": "/development/tools/devtools/app-size", "type": 301 },
       { "source": "/development/tools/devtools/timeline", "destination": "/development/tools/devtools/performance", "type": 301 },
