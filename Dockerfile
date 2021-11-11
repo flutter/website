@@ -56,7 +56,7 @@ RUN if test -n "$FLUTTER_BRANCH" -a "$FLUTTER_BRANCH" != "stable" ; then \
     fi
 
 # Set up Flutter
-RUN flutter doctor --suppress-analytics --quiet
+RUN flutter doctor
 RUN flutter --version
 RUN dart pub get
 
@@ -65,9 +65,6 @@ EXPOSE 4002
 
 
 # -- Test target
-# NOTE that instead of have a script that tests all targets,
-# we could build a new docker container for each test and 
-# start clean
 FROM dev as test
 ARG DISABLE_TESTS
 ENV DISABLE_TESTS=$DISABLE_TESTS
@@ -90,19 +87,12 @@ RUN cd flutter && \
       git fetch origin stable && \
       git checkout stable && \
       git pull
-
 RUN flutter doctor
-
-# NOTE this is a bit sneaky and we could be more clear about it 
-# by having an actual production template for robots.txt rather 
-# than changing the contents of the file at build/test time. 
-# This is similarly seen in tool/check-links.sh
 RUN echo "User-agent: *" > src/robots.txt && echo "Allow: /" >> src/robots.txt
 
 ARG BUILD_CONFIGS=_config
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
-
-RUN bundle exec jekyll build --config _config.yml
+RUN bundle exec jekyll build --config ${BUILD_CONFIGS}
 
 
 # -- Deploy target

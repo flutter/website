@@ -552,7 +552,7 @@ case<sup><a href="#a2">2</a></sup>:
 diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
 
 This explains why, when you examine the tree through a debug tool such as the
-[Flutter inspector]/development/tools/devtools/inspector), part of the
+[Flutter inspector](/development/tools/devtools/inspector), part of the
 Dart DevTools, you might see a structure that is considerably deeper than what
 is in your original code.
 
@@ -983,7 +983,7 @@ imports]({{site.dart-site}}/guides/language/language-tour#lazily-loading-a-libra
 ## Further information
 
 For those interested in more information about the internals of Flutter, the
-[Inside Flutter]/resources/inside-flutter) whitepaper
+[Inside Flutter](/resources/inside-flutter) whitepaper
 provides a useful guide to the framework’s design philosophy.
 
 ---

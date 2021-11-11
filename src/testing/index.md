@@ -41,7 +41,7 @@ A _unit test_ tests a single function, method, or class.
 The goal of a unit test is to verify the correctness of a
 unit of logic under a variety of conditions.
 External dependencies of the unit under test are generally
-[mocked out]/cookbook/testing/unit/mocking).
+[mocked out](/cookbook/testing/unit/mocking).
 Unit tests generally don't read from or write
 to disk, render to screen, or receive user actions from
 outside the process running the test.

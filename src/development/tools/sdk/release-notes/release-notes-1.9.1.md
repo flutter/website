@@ -1239,4 +1239,4 @@ In addition, this release also has a lot going on under the hood to provide you 
 
 ## Full PR List
 
-You can see the full list of merged PRs in this release [here]/development/tools/sdk/release-notes/changelogs/changelog-1.9.1).
+You can see the full list of merged PRs in this release [here](/development/tools/sdk/release-notes/changelogs/changelog-1.9.1).

@@ -31,7 +31,7 @@ plugins installed and configured.
 ### Dart debugger
 
 * Open your project in Android Studio. If you don't have a project yet,
-  create one using the instructions in [Test drive]/get-started/test-drive).
+  create one using the instructions in [Test drive](/get-started/test-drive).
 
 * Simultaneously bring up the Debug pane and run the app in the Console
   view by clicking the bug icon
@@ -339,10 +339,10 @@ iOS, and Android:
 
 ### Flutter
 
-* [Debugging Flutter apps]/testing/debugging)
+* [Debugging Flutter apps](/testing/debugging)
 * [Flutter inspector][], as well as the general
   [DevTools][] docs.
-* [Performance Profiling]/perf/rendering/ui-performance)
+* [Performance Profiling](/perf/rendering/ui-performance)
 
 ### Android
 

@@ -74,7 +74,7 @@ how Flutter framework performs layout:
 "_To perform layout, Flutter walks the render tree in a depth-first traversal
 and **passes down size constraints** from parent to child… Children respond by
 **passing up a size** to their parent object within the constraints the parent
-established._"  – [Flutter architectural overview]/resources/architectural-overview#layout-and-rendering)
+established._"  – [Flutter architectural overview](/resources/architectural-overview#layout-and-rendering)
 
 In this case, the `Row` widget doesn’t constrain the size of its children, nor
 does the `Column` widget. Lacking constraints from its parent widget, the second
@@ -117,7 +117,7 @@ The resources linked below provide further information about this error.
 
 *   [Flexible (Flutter Widget of the Week)]({{site.youtube-site}}/watch?v=CI7x0mAZiY0)
 *   [How to debug layout issues with the Flutter Inspector]({{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b)
-*   [Understanding constraints]/development/ui/layout/constraints)
+*   [Understanding constraints](/development/ui/layout/constraints)
 
 
 ## ‘RenderBox was not laid out’
@@ -241,7 +241,7 @@ Widget build(BuildContext context) {
 The resources linked below provide further information about this error.
 
 *   [How to debug layout issues with the Flutter Inspector]({{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#1de2)
-*   [Understanding constraints]/development/ui/layout/constraints)
+*   [Understanding constraints](/development/ui/layout/constraints)
 
 
 ## ‘An InputDecorator...cannot have an unbounded width’
@@ -459,6 +459,6 @@ To learn more about how to debug errors, especially layout errors in Flutter,
 check out the following resources: 
 
 *   [How to debug layout issues with the Flutter Inspector]({{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db)
-*   [Understanding constraints]/development/ui/layout/constraints)
-*   [Dealing with box constraints]/development/ui/layout/box-constraints)
-*   [Flutter architectural overview]/resources/architectural-overview#layout-and-rendering)
+*   [Understanding constraints](/development/ui/layout/constraints)
+*   [Dealing with box constraints](/development/ui/layout/box-constraints)
+*   [Flutter architectural overview](/resources/architectural-overview#layout-and-rendering)

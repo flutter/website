@@ -24,7 +24,7 @@ about evaluating and debugging Flutter's performance.
 
 * What are some tools for capturing and analyzing performance
   metrics?
-  * [Dart DevTools]/development/tools/devtools)
+  * [Dart DevTools](/development/tools/devtools)
   * [Apple instruments](https://en.wikipedia.org/wiki/Instruments_(software))
   * [Linux perf](https://en.wikipedia.org/wiki/Perf_(Linux))
   * [Chrome tracing (enter `about:tracing` in your

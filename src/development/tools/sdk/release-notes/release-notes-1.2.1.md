@@ -286,6 +286,6 @@ In addition to Flutter framework changes in the 1.2 release, we've made a number
 
 ## Full Issue List
 
-You can see [the full list of PRs committed in this release]/development/tools/sdk/release-notes/changelogs/changelog-1.2.1).
+You can see [the full list of PRs committed in this release](/development/tools/sdk/release-notes/changelogs/changelog-1.2.1).
 
 [Android App Bundles]: https://developer.android.com/guide/app-bundle/
