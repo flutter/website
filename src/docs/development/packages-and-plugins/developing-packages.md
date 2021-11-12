@@ -248,6 +248,50 @@ environment:
   flutter: ">=1.12.0"
 ```
 
+#### Federated platform packages
+
+A platform package uses the same format, but includes an `implements` entry
+indicating which app-facing package it is an implementation for. For example,
+a `hello_windows` plugin containing the Windows implementation for `hello`
+would have the following `flutter:` map:
+  
+```yaml
+flutter:
+  plugin:
+    implements: hello
+    platforms:
+      ios:
+        pluginClass: HelloPlugin
+```
+
+#### Endorsed implementations
+
+An app facing package can endorse a platform package by adding a
+dependency on it, and including it as a `default_package` in the
+`platforms:` map. If the `hello` plugin above endorsed `hello_windows`,
+it would look like this:
+
+
+```yaml
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.hello
+        pluginClass: HelloPlugin
+      ios:
+        pluginClass: HelloPlugin
+      windows:
+        default_package: hello_windows
+
+dependencies:
+  hello_windows: ^1.0.0
+```
+
+Note that as shown here, an app-facing package can have
+some platforms implementated within the package, and others in
+endorsed federated implementations.
+
 ### Step 1: Create the package
 
 To create a plugin package, use the `--template=plugin`
