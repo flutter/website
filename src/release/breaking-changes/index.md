@@ -106,18 +106,18 @@ The following breaking change was reverted in release 2.2:
 * [TestWidgetsFlutterBinding.clock][]
 * [TextField requires MaterialLocalizations][]
 
-[Actions API revision]:/release/breaking-changes/actions-api-revision
-[Adding TextInputClient.currentAutofillScope property]:/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
-[New Buttons and Button Themes]:/release/breaking-changes/buttons
-[Dialogs' Default BorderRadius]/release/breaking-changes/dialog-border-radius
-[More Strict Assertions in the Navigator and the Hero Controller Scope]:/release/breaking-changes/hero-controller-scope
-[Reversing the dependency between the scheduler and services layer]:/release/breaking-changes/services-scheduler-dependency-reversed
-[The RenderEditable needs to be laid out before hit testing]:/release/breaking-changes/rendereditable-layout-before-hit-test
-[Semantics Order of the Overlay Entries in Modal Routes]:/release/breaking-changes/modal-router-semantics-order
-[showAutocorrectionPromptRect method added to TextInputClient]:/release/breaking-changes/add-showAutocorrectionPromptRect
-[TestWidgetsFlutterBinding.clock]:/release/breaking-changes/test-widgets-flutter-binding-clock
-[TextField requires MaterialLocalizations]:/release/breaking-changes/text-field-material-localizations
-[The Route Transition record and Transition delegate updates]:/release/breaking-changes/route-transition-record-and-transition-delegate
+[Actions API revision]: /release/breaking-changes/actions-api-revision
+[Adding TextInputClient.currentAutofillScope property]: /release/breaking-changes/add-currentAutofillScope-to-TextInputClient
+[New Buttons and Button Themes]: /release/breaking-changes/buttons
+[Dialogs' Default BorderRadius]: /release/breaking-changes/dialog-border-radius
+[More Strict Assertions in the Navigator and the Hero Controller Scope]: /release/breaking-changes/hero-controller-scope
+[Reversing the dependency between the scheduler and services layer]: /release/breaking-changes/services-scheduler-dependency-reversed
+[The RenderEditable needs to be laid out before hit testing]: /release/breaking-changes/rendereditable-layout-before-hit-test
+[Semantics Order of the Overlay Entries in Modal Routes]: /release/breaking-changes/modal-router-semantics-order
+[showAutocorrectionPromptRect method added to TextInputClient]: /release/breaking-changes/add-showAutocorrectionPromptRect
+[TestWidgetsFlutterBinding.clock]: /release/breaking-changes/test-widgets-flutter-binding-clock
+[TextField requires MaterialLocalizations]: /release/breaking-changes/text-field-material-localizations
+[The Route Transition record and Transition delegate updates]: /release/breaking-changes/route-transition-record-and-transition-delegate
 
 ### Released in Flutter 1.17
 

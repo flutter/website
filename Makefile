@@ -135,7 +135,7 @@ check-links:
 
 FLUTTER_BRANCH ?= stable
 TEST_TARGET_CHANNEL ?= stable
-BUILD_CONFIGS ?= _config
+BUILD_CONFIGS ?= _config.yml
 BUILD_COMMIT := $(shell git rev-parse --short HEAD)
 BUILD_TAG = fltbuild
 BUILD_NAME = tmpbuild

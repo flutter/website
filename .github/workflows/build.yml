@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - cms-launch-refactor
   pull_request:
     branches:
       - main
-      - cms-launch-refactor
   schedule:
     - cron: "0 0 * * 0"
 
@@ -66,25 +64,5 @@ jobs:
       - name: Deploy
         run: make deploy
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          FIREBASE_ALIAS: default
-
-  stage:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/cms-launch-refactor'
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: "recursive"
-      - name: Install Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-      - name: Install firebase tools
-        run: npm install -g firebase-tools
-      - name: Build and stage
-        run: make stage
-        env:
-          DISABLE_TESTS: 1
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_ALIAS: default

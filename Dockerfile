@@ -90,9 +90,9 @@ RUN cd flutter && \
 RUN flutter doctor
 RUN echo "User-agent: *" > src/robots.txt && echo "Allow: /" >> src/robots.txt
 
-ARG BUILD_CONFIGS=_config
+ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
-RUN bundle exec jekyll build --config ${BUILD_CONFIGS}
+RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
 
 # -- Deploy target

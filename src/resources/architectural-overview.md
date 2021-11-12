@@ -139,7 +139,7 @@ other targets.
 ## Reactive user interfaces
 
 On the surface, Flutter is [a reactive, pseudo-declarative UI
-framework]/resources/faq#what-programming-paradigm-does-flutters-framework-use),
+framework](/resources/faq#what-programming-paradigm-does-flutters-framework-use),
 in which the developer provides a mapping from application state to interface
 state, and the framework takes on the task of updating the interface at runtime
 when the application state changes. This model is inspired by [work that came
@@ -344,7 +344,7 @@ href="#a1">1</a></sup>, regardless of what the widget previously returned. The
 framework does the heavy lifting work to determine which build methods need to
 be called based on the render object tree (described in more detail later). More
 information about this process can be found in the [Inside Flutter
-topic]/resources/inside-flutter#linear-reconciliation).
+topic](/resources/inside-flutter#linear-reconciliation).
 
 On each rendered frame, Flutter can recreate just the parts of the UI where the
 state has changed by calling that widget’s `build()` method. Therefore it is
@@ -672,7 +672,7 @@ Widget build(BuildContext context) {
 
 More information about the constraint and layout system, along with worked
 examples, can be found in the [Understanding
-constraints]/development/ui/layout/constraints) topic.
+constraints](/development/ui/layout/constraints) topic.
 
 The root of all `RenderObject`s is the `RenderView`, which represents the total
 output of the render tree. When the platform demands a new frame to be rendered
@@ -930,7 +930,7 @@ with loading the necessary libraries.
 
 More information about how Flutter is loaded into an existing Android or iOS app
 can be found at the [Load sequence, performance and memory
-topic]/development/add-to-app/performance).
+topic](/development/add-to-app/performance).
 
 ## Flutter web support
 
