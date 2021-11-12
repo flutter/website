@@ -88,27 +88,27 @@ defaults:
       show_banner: true
       show_footer: true
   - scope:
-      path: 'docs'
+      path: ''
     values:
       toc: true
   - scope:
-      path: 'docs/cookbook'
+      path: 'cookbook'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'docs/development'
+      path: 'development'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'docs/development/ui/widgets'
+      path: 'development/ui/widgets'
     values:
       toc: false
   - scope:
-      path: 'docs/get-started'
+      path: 'get-started'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'docs/get-started/flutter-for'
+      path: 'get-started/flutter-for'
     values:
       show_breadcrumbs: false
 
