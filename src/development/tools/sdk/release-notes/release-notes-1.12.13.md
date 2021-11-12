@@ -2551,7 +2551,7 @@ General bug fixes in the Shared Preferences plugin.
 
 #### Plugin: Url Launcher
 
-We upgraded the Url Launcher plugin to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes. Meanwhile, we have converted the Url launcher into a federated plugin to help it scale more efficiently to multiple platforms. For more information, please refer to [Federated Plugin Implementation](https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#).
+We upgraded the Url Launcher plugin to the [new plugin API](https://github.com/flutter/website/blob/main/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes. Meanwhile, we have converted the Url launcher into a federated plugin to help it scale more efficiently to multiple platforms. For more information, please refer to [Federated Plugin Implementation](https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#).
 
 [2038](https://github.com/flutter/plugins/pull/2038) [url_launcher] Removed reference to rootViewController during initialization
 
@@ -2570,7 +2570,7 @@ We upgraded the Url Launcher plugin to the [new plugin API](https://github.com/f
 
 #### Plugin: Video Player
 
-We upgraded the Video Player plugin to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes. Meanwhile, we have converted it into a federated plugin to help it scale more efficiently to multiple platforms. For more information, please refer to [Federated Plugin Implementation](https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#).
+We upgraded the Video Player plugin to the [new plugin API](https://github.com/flutter/website/blob/main/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes. Meanwhile, we have converted it into a federated plugin to help it scale more efficiently to multiple platforms. For more information, please refer to [Federated Plugin Implementation](https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#).
 
 [1813](https://github.com/flutter/plugins/pull/1813) [video-player] add support for content uris as urls
 
@@ -2587,7 +2587,7 @@ We upgraded the Video Player plugin to the [new plugin API](https://github.com/f
 
 #### Plugin: Webview Flutter
 
-We upgraded the Webview Flutter plugin to the [new plugin API](https://github.com/flutter/website/blob/staging-add-to-app-do-not-delete-until-2020/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes.
+We upgraded the Webview Flutter plugin to the [new plugin API](https://github.com/flutter/website/blob/main/src/development/packages-and-plugins/plugin-api-migration.md), and made some bug fixes.
 
 [1996](https://github.com/flutter/plugins/pull/1996) [webview_flutter] Allow underscores anywhere for Javascript Channel name
 
