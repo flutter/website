@@ -3,10 +3,10 @@ title: Create gradient chat bubbles
 description: How to implement gradient chat bubbles.
 prev:
   title: Create an expandable FAB
-  path:  /cookbook/effects/expandable-fab
+  path: /cookbook/effects/expandable-fab
 next:
   title: Drag a UI element
-  path:  /cookbook/effects/drag-a-widget
+  path: /cookbook/effects/drag-a-widget
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

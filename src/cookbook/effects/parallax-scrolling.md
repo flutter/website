@@ -6,7 +6,7 @@ prev:
   path: /cookbook/effects/photo-filter-carousel
 next:
   title: Create a shimmer loading effect
-  path:  /cookbook/effects/shimmer-loading
+  path: /cookbook/effects/shimmer-loading
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

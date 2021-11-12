@@ -3,10 +3,10 @@ title: Create a shimmer loading effect
 description: How to implement a shimmer loading effect.
 prev:
   title: Create a scrolling parallax effect
-  path:  /cookbook/effects/parallax-scrolling
+  path: /cookbook/effects/parallax-scrolling
 next:
   title: Create a staggered menu animation
-  path:  /cookbook/effects/staggered-menu-animation
+  path: /cookbook/effects/staggered-menu-animation
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

@@ -3,10 +3,10 @@ title: Create a photo filter carousel
 description: How to implement a photo filter carousel.
 prev:
   title: Create a nested navigation flow
-  path:  /cookbook/effects/nested-nav
+  path: /cookbook/effects/nested-nav
 next:
   title: Create a scrolling parallax effect
-  path:  /cookbook/effects/parallax-scrolling
+  path: /cookbook/effects/parallax-scrolling
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
