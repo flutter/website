@@ -111,11 +111,11 @@ integration services, see the following:
 
 [code coverage]: https://en.wikipedia.org/wiki/Code_coverage
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
-[Continuous delivery using fastlane with Flutter]:/deployment/cd#fastlane
+[Continuous delivery using fastlane with Flutter]: /deployment/cd#fastlane
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
 [How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing
-[mocked out]:/cookbook/testing/unit/mocking
+[mocked out]: /cookbook/testing/unit/mocking
 [Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
 [Test Flutter apps on Travis]: {{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c
-[integration testing page]:/testing/integration-tests
+[integration testing page]: /testing/integration-tests

@@ -366,7 +366,7 @@ You can find the following debugging resources on
 [Debugging]: {{site.apple-dev}}/support/debugging/
 [developer.android.com]: {{site.android-dev}}
 [developer.apple.com]: {{site.apple-dev}}
-[DevTools]:/development/tools/devtools
-[Flutter inspector]:/development/tools/devtools/inspector
-[Flutter's modes]:/testing/build-modes
+[DevTools]: /development/tools/devtools
+[Flutter inspector]: /development/tools/devtools/inspector
+[Flutter's modes]: /testing/build-modes
 [Instruments Help]: https://help.apple.com/instruments/mac/current/

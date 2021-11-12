@@ -81,6 +81,6 @@ class Album {
 ```
 
 
-[Fetching data from the internet]:/cookbook/networking/fetch-data
+[Fetching data from the internet]: /cookbook/networking/fetch-data
 [`http`]: {{site.pub-pkg}}/http
 [`HttpHeaders`]: {{site.dart.api}}/stable/dart-io/HttpHeaders-class.html

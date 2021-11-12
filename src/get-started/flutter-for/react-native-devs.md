@@ -2482,7 +2482,7 @@ and common widget properties.
 
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
-[Adding Assets and Images in Flutter]:/development/ui/assets-and-images
+[Adding Assets and Images in Flutter]: /development/ui/assets-and-images
 [`alertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
@@ -2499,7 +2499,7 @@ and common widget properties.
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`CircleAvatar`]: {{site.api}}/flutter/material/CircleAvatar-class.html
 [`CircularProgressIndicator`]: {{site.api}}/flutter/material/CircularProgressIndicator-class.html
-[Cupertino (iOS-style)]:/development/ui/widgets/cupertino
+[Cupertino (iOS-style)]: /development/ui/widgets/cupertino
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [Dart]: {{site.dart-site}}/dart-2
@@ -2511,28 +2511,28 @@ and common widget properties.
 [DartPadD]: {{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7
 [DartPadE]: {{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6
 [DartPadF]: {{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918
-[Developing Packages & Plugins]:/development/packages-and-plugins/developing-packages
-[DevTools]:/development/tools/devtools
+[Developing Packages & Plugins]: /development/packages-and-plugins/developing-packages
+[DevTools]: /development/tools/devtools
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [Flutter packages]: {{site.pub}}/flutter/
-[Flutter Architectural Overview]:/resources/architectural-overview
-[Flutter Basic Widgets]:/development/ui/widgets/basics
-[Flutter Technical Overview]:/resources/architectural-overview
-[Flutter Widget Catalog]:/development/ui/widgets
-[Flutter Widget Index]:/reference/widgets
+[Flutter Architectural Overview]: /resources/architectural-overview
+[Flutter Basic Widgets]: /development/ui/widgets/basics
+[Flutter Technical Overview]: /resources/architectural-overview
+[Flutter Widget Catalog]: /development/ui/widgets
+[Flutter Widget Index]: /reference/widgets
 [`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [functions]: {{site.dart-site}}/guides/language/language-tour#functions
 [`Future`]: {{site.dart-site}}/tutorials/language/futures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[Getting started]:/get-started
+[Getting started]: /get-started
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`IndexedWidgetBuilder`]: {{site.api}}/flutter/widgets/IndexedWidgetBuilder.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[Layout Widgets]:/development/ui/widgets/layout
+[Layout Widgets]: /development/ui/widgets/layout
 [`LinearProgressIndicator`]: {{site.api}}/flutter/material/LinearProgressIndicator-class.html
 [`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
@@ -2562,7 +2562,7 @@ and common widget properties.
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
-[State management]:/development/data-and-backend/state-mgmt
+[State management]: /development/data-and-backend/state-mgmt
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`Switch`]: {{site.api}}/flutter/material/Switch-class.html
@@ -2583,7 +2583,7 @@ and common widget properties.
 [`TickerProvider`]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
 [`TickerProviderStateMixin`]: {{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
-[Using Packages]:/development/packages-and-plugins/using-packages
+[Using Packages]: /development/packages-and-plugins/using-packages
 [variables]: {{site.dart-site}}/guides/language/language-tour#variables
 [`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
 [Write Your First Flutter App, Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1

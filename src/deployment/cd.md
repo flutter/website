@@ -190,7 +190,7 @@ secrets in pull requests that you accept and merge.
          * `bundle exec fastlane [name of the lane]`
 
 
-[Android app signing steps]:/deployment/android#signing-the-app
+[Android app signing steps]: /deployment/android#signing-the-app
 [Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Apple Developer Account console]: {{site.apple-dev}}/account/ios/certificate/
 [Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/

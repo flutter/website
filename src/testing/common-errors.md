@@ -141,7 +141,7 @@ be solved by providing more information to Flutter about how you’d like to
 constrain the widgets in question. You can learn more about how constraints work
 in Flutter on the page [Understanding constraints][]. 
 
-[Understanding constraints]:/development/ui/layout/constraints
+[Understanding constraints]: /development/ui/layout/constraints
 
 The `RenderBox was not laid out` error is often caused by one of two other errors:
 

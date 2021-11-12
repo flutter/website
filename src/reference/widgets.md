@@ -34,4 +34,4 @@ our [videos](/resources/videos) page.
 {% endfor %}
 </div>
 
-[catalog]:/development/ui/widgets
+[catalog]: /development/ui/widgets

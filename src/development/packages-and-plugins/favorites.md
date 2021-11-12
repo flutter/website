@@ -118,5 +118,5 @@ You can see the complete list of
 [committee chair]: mailto:csells@google.com
 [Flutter Favorite packages]: {{site.pub}}/flutter/favorites
 [Overall package score]: {{site.pub}}/help
-[pubspec.yaml format]:/development/packages-and-plugins/developing-packages#plugin-platforms
+[pubspec.yaml format]: /development/packages-and-plugins/developing-packages#plugin-platforms
 [Verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers

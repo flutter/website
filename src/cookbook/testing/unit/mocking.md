@@ -351,6 +351,6 @@ the Mockito library and the concept of mocking. For more information,
 see the documentation provided by the [Mockito package][].
 
 
-[Fetch data from the internet]:/cookbook/networking/fetch-data
-[Introduction to unit testing]:/cookbook/testing/unit/introduction
+[Fetch data from the internet]: /cookbook/networking/fetch-data
+[Introduction to unit testing]: /cookbook/testing/unit/introduction
 [Mockito package]: {{site.pub-pkg}}/mockito

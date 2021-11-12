@@ -117,7 +117,7 @@ For information on how to install and use the package, see the [lsp-dart documen
 [Android Studio]: {{site.android-dev}}/studio
 [IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
 [IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
-[next step: Test drive]:/get-started/test-drive
+[next step: Test drive]: /get-started/test-drive
 [VS Code]: https://code.visualstudio.com/
 [Emacs]: https://www.gnu.org/software/emacs/download.html
 [lsp-dart documentation]: https://emacs-lsp.github.io/lsp-dart/

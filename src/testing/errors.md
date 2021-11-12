@@ -206,6 +206,6 @@ class MyApp extends StatelessWidget {
 [`FlutterError.presentError`]: {{site.api}}/flutter/foundation/FlutterError/presentError.html
 [`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
 [`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
-[reporting errors to a service]:/cookbook/maintenance/error-reporting
+[reporting errors to a service]: /cookbook/maintenance/error-reporting
 [`runZonedGuarded`]: {{site.api}}/flutter/dart-async/runZonedGuarded.html
 [`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html

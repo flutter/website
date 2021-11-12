@@ -60,4 +60,4 @@ asynchronous timeline events. Viewing network activity in the timeline can be
 useful if you want to see how HTTP traffic aligns with other events happening
 in your app or in the Flutter framework.
 
-[timeline]:/development/tools/devtools/performance#timeline-events-chart
+[timeline]: /development/tools/devtools/performance#timeline-events-chart

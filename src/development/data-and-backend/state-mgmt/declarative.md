@@ -46,4 +46,4 @@ this style of programming might not seem as intuitive as the
 imperative style. This is why this section is here. Read on.
 
 
-[get started guide]:/get-started/flutter-for/declarative
+[get started guide]: /get-started/flutter-for/declarative

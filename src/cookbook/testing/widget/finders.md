@@ -161,4 +161,4 @@ void main() {
 [`CommonFinders` documentation]: {{api}}/flutter_test/CommonFinders-class.html
 [`find`]: {{api}}/flutter_test/find-constant.html
 [`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
-[Introduction to widget testing]:/cookbook/testing/widget/introduction
+[Introduction to widget testing]: /cookbook/testing/widget/introduction

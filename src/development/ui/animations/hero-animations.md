@@ -652,15 +652,15 @@ Key information:
   The hero's flight path still follows an arc,
   but the image's aspect ratio remains constant.
 
-[Animations in Flutter tutorial]:/development/ui/animations/tutorial
+[Animations in Flutter tutorial]: /development/ui/animations/tutorial
 [basic_hero_animation]: {{site.repo.this}}/tree/master/examples/_animation/basic_hero_animation/
 [basic_radial_hero_animation]: {{site.repo.this}}/tree/master/examples/_animation/basic_radial_hero_animation
-[Building Layouts in Flutter]:/development/ui/layout
+[Building Layouts in Flutter]: /development/ui/layout
 [`ClipOval`]: {{site.api}}/flutter/widgets/ClipOval-class.html
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
-[Create a new Flutter example]:/get-started/test-drive
+[Create a new Flutter example]: /get-started/test-drive
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
-[`debugPaintSizeEnabled`]:/testing/code-debugging#debug-flags-layout
+[`debugPaintSizeEnabled`]: /testing/code-debugging#debug-flags-layout
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [hero_animation]: {{site.repo.this}}/tree/master/examples/_animation/hero_animation/
 [`Inkwell`]: {{site.api}}/flutter/material/InkWell-class.html
@@ -674,7 +674,7 @@ Key information:
 [Radial hero animations]: #radial-hero-animations
 [Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
 [`RectTween`]: {{site.api}}/flutter/animation/RectTween-class.html
-[_Route_]:/cookbook/navigation/navigation-basics
+[_Route_]: /cookbook/navigation/navigation-basics
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [Standard hero animation code]: #standard-hero-animation-code
 [Tween&lt;Rect&gt;]: {{site.api}}/flutter/animation/Tween-class.html

@@ -604,5 +604,5 @@ Play store's delivery feature.
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library
-[release or profile mode]:/testing/build-modes
+[release or profile mode]: /testing/build-modes
 [step 3.3]: #step-3.3

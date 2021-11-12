@@ -369,9 +369,9 @@ Package not yet vetted.
 [animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
-[Animations in Flutter tutorial]:/development/ui/animations/tutorial
+[Animations in Flutter tutorial]: /development/ui/animations/tutorial
 [basic_staggered_animation]: {{site.repo.this}}/tree/master/examples/_animation/basic_staggered_animation
-[Building Layouts in Flutter]:/development/ui/layout
+[Building Layouts in Flutter]: /development/ui/layout
 [staggered_pic_selection]: {{site.repo.this}}/tree/master/examples/_animation/staggered_pic_selection
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html

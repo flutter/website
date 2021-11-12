@@ -338,4 +338,4 @@ equivalent methods.
 [integration_test usage]: {{site.repo.flutter}}/tree/master/packages/integration_test#usage
 [iOS Device Testing]: {{site.repo.flutter}}/tree/master/packages/integration_test#ios-device-testing
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
-[widget tests]:/testing#widget-tests
+[widget tests]: /testing#widget-tests

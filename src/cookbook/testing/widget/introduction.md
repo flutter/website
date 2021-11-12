@@ -297,9 +297,9 @@ class MyWidget extends StatelessWidget {
 [`findsWidgets`]: {{api}}/flutter_test/findsWidgets-constant.html
 [`matchesGoldenFile`]: {{api}}/flutter_test/matchesGoldenFile.html
 [`Finder`]: {{api}}/flutter_test/Finder-class.html
-[Finding widgets in a widget test]:/cookbook/testing/widget/finders
+[Finding widgets in a widget test]: /cookbook/testing/widget/finders
 [`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
-[introduction to unit testing]:/cookbook/testing/unit/introduction
+[introduction to unit testing]: /cookbook/testing/unit/introduction
 [`Matcher`]: {{api}}/package-matcher_matcher/Matcher-class.html
 [`pumpWidget()`]: {{api}}/flutter_test/WidgetTester/pumpWidget.html
 [`tester.pump(Duration duration)`]: {{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html

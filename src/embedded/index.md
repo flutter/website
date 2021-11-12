@@ -36,7 +36,7 @@ resources.
 [community]: {{site.main-url}}/community
 [Discord]: https://discord.com/invite/N7Yshp4
 [Custom Flutter Engine Embedders]: {{site.repo.flutter}}/wiki/Custom-Flutter-Engine-Embedders
-[Flutter architectural overview]:/resources/architectural-overview
+[Flutter architectural overview]: /resources/architectural-overview
 [Flutter engine `engine.h` file]: {{site.github}}/flutter/engine/blob/master/shell/platform/embedder/embedder.h
 [Flutter Embedder Engine GLFW example]: {{site.github}}/flutter/engine/tree/master/examples/glfw#flutter-embedder-engine-glfw-example
 [Issue 31043]: {{site.repo.flutter}}/issues/31043

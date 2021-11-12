@@ -410,22 +410,22 @@ To use this plugin:
    displaying the homepage for flutter.dev.
 
 
-[Adding assets and images]:/development/ui/assets-and-images
+[Adding assets and images]: /development/ui/assets-and-images
 [Android plugins]: {{site.pub}}/flutter/packages?platform=android
 [`battery`]: {{site.pub-pkg}}/battery
 [*caret syntax*]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
 [CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
 [`css_colors`]: {{site.pub-pkg}}/css_colors
 [css_colors example]: #css-example
-[write a custom package]:/development/packages-and-plugins/developing-packages
-[developing packages]:/development/packages-and-plugins/developing-packages
+[write a custom package]: /development/packages-and-plugins/developing-packages
+[developing packages]: /development/packages-and-plugins/developing-packages
 [`fluro`]: {{site.pub-pkg}}/fluro
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
-[Flutter Favorites program]:/development/packages-and-plugins/favorites
+[Flutter Favorites program]: /development/packages-and-plugins/favorites
 [Flutter landing page]: {{site.pub}}/flutter
 [FlutterFire]: {{site.repo.plugins}}/blob/master/FlutterFire.md
 [Gradle modules]: https://docs.gradle.org/current/userguide/declaring_dependencies.html
-[`http`]:/cookbook/networking/fetch-data
+[`http`]: /cookbook/networking/fetch-data
 [Installing tab]: {{site.pub-pkg}}/css_colors/install
 [iOS plugins]: {{site.pub}}/flutter/packages?platform=ios
 [lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile

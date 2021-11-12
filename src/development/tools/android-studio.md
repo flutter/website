@@ -392,15 +392,15 @@ Prior to filing new issues:
 
 When filing new issues, include the output of [`flutter doctor`][].
 
-[DevTools]:/development/tools/devtools
+[DevTools]: /development/tools/devtools
 [GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
 [JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
-[`flutter doctor`]:/resources/bug-reports#provide-some-flutter-diagnostics
-[Flutter IDE cheat sheet, MacOS version]:/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
-[Flutter IDE cheat sheet, Windows & Linux version]:/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf
-[Debugging Flutter apps]:/testing/debugging
+[`flutter doctor`]: /resources/bug-reports#provide-some-flutter-diagnostics
+[Flutter IDE cheat sheet, MacOS version]: /resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
+[Flutter IDE cheat sheet, Windows & Linux version]: /resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf
+[Debugging Flutter apps]: /testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
 [let us know]: {{site.repo.this}}/issues/new
-[Running DevTools from Android Studio]:/development/tools/devtools/android-studio
-[Timeline view]:/development/tools/devtools/performance
+[Running DevTools from Android Studio]: /development/tools/devtools/android-studio
+[Timeline view]: /development/tools/devtools/performance

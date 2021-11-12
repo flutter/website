@@ -263,5 +263,5 @@ For more information, see [App Size Documentation][].
 [Generating size files]: #generating-size-files
 [Analysis tab]: #analysis-tab
 [Diff tab]: #diff-tab
-[installation instructions]:/development/tools/devtools/overview#install-devtools
-[App Size Documentation]:/perf/app-size#breaking-down-the-size
+[installation instructions]: /development/tools/devtools/overview#install-devtools
+[App Size Documentation]: /perf/app-size#breaking-down-the-size

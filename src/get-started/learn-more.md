@@ -36,19 +36,19 @@ Reach out to us at our [mailing list][]. We'd love to hear from you!
 
 Happy Fluttering!
 
-[Add interactivity]:/development/ui/interactive
-[Bootstrap into Dart: learn more about the language]:/resources/bootstrap-into-dart
-[Building layouts]:/development/ui/layout/tutorial
+[Add interactivity]: /development/ui/interactive
+[Bootstrap into Dart: learn more about the language]: /resources/bootstrap-into-dart
+[Building layouts]: /development/ui/layout/tutorial
 [The Complete Flutter Developer Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 [Flutter API Docs]: {{site.api}}
-[Flutter cookbook]:/cookbook
-[Flutter for Android developers]:/get-started/flutter-for/android-devs
-[Flutter for iOS developers]:/get-started/flutter-for/ios-devs
-[Flutter for React Native developers]:/get-started/flutter-for/react-native-devs
+[Flutter cookbook]: /cookbook
+[Flutter for Android developers]: /get-started/flutter-for/android-devs
+[Flutter for iOS developers]: /get-started/flutter-for/ios-devs
+[Flutter for React Native developers]: /get-started/flutter-for/react-native-devs
 [Flutter samples]: https://flutter.github.io/samples
-[Flutter for web developers]:/get-started/flutter-for/web-devs
-[Flutter for Xamarin.Forms developers]:/get-started/flutter-for/xamarin-forms-devs
+[Flutter for web developers]: /get-started/flutter-for/web-devs
+[Flutter for Xamarin.Forms developers]: /get-started/flutter-for/xamarin-forms-devs
 [From Java to Dart]: {{site.codelabs}}/codelabs/from-java-to-dart
-[Introduction to widgets]:/development/ui/widgets-intro
+[Introduction to widgets]: /development/ui/widgets-intro
 [mailing list]: mailto:{{site.email}}
 [Udacity online Flutter training]: https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905

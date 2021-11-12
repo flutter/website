@@ -103,8 +103,8 @@ For additional download options, see `flutter help precache`.
 
 [Flutter repo]: {{site.repo.flutter}}
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[SDK releases]:/development/tools/sdk/releases
+[SDK releases]: /development/tools/sdk/releases
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
-[Upgrading Flutter]:/development/tools/sdk/upgrading
+[Upgrading Flutter]: /development/tools/sdk/upgrading

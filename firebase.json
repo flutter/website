@@ -20,8 +20,6 @@
 
       { "source": "/community", "destination": "https://flutter.dev/community", "type": 301 },
       { "source": "/showcase", "destination": "https://flutter.dev/showcase", "type": 301 },
-      { "source": "/subscribe", "destination": "https://flutter.dev", "type": 301 },
-      { "source": "/subscribe/subscribed", "destination": "https://flutter.dev", "type": 301 },
       { "source": "/support", "destination": "https://flutter.dev/community", "type": 301 },
       { "source": "/docs/:rest*", "destination": "/:rest*", "type": 301 },
 

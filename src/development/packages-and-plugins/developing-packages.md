@@ -629,23 +629,23 @@ PENDING
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
 [`fluro`]: {{site.pub}}/packages/fluro
-[Flutter editor]:/get-started/editor
+[Flutter editor]: /get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
-[Flutter Favorites program]:/development/packages-and-plugins/favorites
+[Flutter Favorites program]: /development/packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
 [How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
-[platform channel]:/development/platform-integration/platform-channels
+[platform channel]: /development/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
-[Supporting the new Android plugins APIs]:/development/packages-and-plugins/plugin-api-migration
+[Supporting the new Android plugins APIs]: /development/packages-and-plugins/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[Testing your plugin]:/development/packages-and-plugins/plugin-api-migration#testing-your-plugin
-[unit tests]:/testing#unit-tests
+[Testing your plugin]: /development/packages-and-plugins/plugin-api-migration#testing-your-plugin
+[unit tests]: /testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

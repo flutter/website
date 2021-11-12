@@ -319,8 +319,8 @@ You can follow the next steps in the [Adding a Flutter screen to an Android app]
 
 
 [`abiFilters`]: https://developer.android.com/reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
-[Adding a Flutter screen to an Android app]:/development/add-to-app/android/add-flutter-screen
+[Adding a Flutter screen to an Android app]: /development/add-to-app/android/add-flutter-screen
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [local repository]: https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local
-[only supports]:/resources/faq#what-devices-and-os-versions-does-flutter-run-on
+[only supports]: /resources/faq#what-devices-and-os-versions-does-flutter-run-on
 [Using Flutter in China]: /community/china

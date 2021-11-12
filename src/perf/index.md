@@ -79,7 +79,7 @@ How to ensure a longer battery life when running your app.
 
 {% endcomment %}
 
-[Measuring your app's size]:/perf/app-size
+[Measuring your app's size]: /perf/app-size
 
 [speed]: {{site.repo.flutter}}/issues?q=is%3Aopen+label%3A%22perf%3A+speed%22+sort%3Aupdated-asc+
 [energy]: {{site.repo.flutter}}/issues?q=is%3Aopen+label%3A%22perf%3A+energy%22+sort%3Aupdated-asc+

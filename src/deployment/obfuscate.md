@@ -109,10 +109,10 @@ expect(foo.runtimeType.toString(), equals('Foo'))
 ```
 
 
-[Build and release a web app]:/deployment/web
+[Build and release a web app]: /deployment/web
 [Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
 [in alpha]: /desktop
-[Measuring your app's size]:/perf/app-size
+[Measuring your app's size]: /perf/app-size
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
 [obfuscation instructions]: {{site.repo.flutter}}/wiki/Obfuscating-Dart-Code
-[release build]:/testing/build-modes
+[release build]: /testing/build-modes
