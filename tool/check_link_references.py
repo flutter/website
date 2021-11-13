@@ -1,12 +1,15 @@
 import re
 import sys
-import yaml
+
 from pathlib import Path
-from sys import argv
+from typing import Dict, List
 
 
-def check_files(folder):
-    bad_links = {}
+def find_invalid_link_references(folder: str) -> Dict[str, List[str]]:
+    """ Search for invalid link references in all HTML 
+    files within the given directory path.
+    """
+    invalid_links = {}
 
     # Iterate all `.html`s.
     for file in Path(folder).rglob("*.html"):
@@ -45,36 +48,19 @@ def check_files(folder):
         #
         # See also:
         #  * https://github.github.com/gfm/#reference-link
-        if m := re.findall(r"\[[^\[\]]+]\[[^\[\]]*]", html):
-            bad_links[file.relative_to(folder).as_posix()] = m
+        matches = re.findall(r"\[[^\[\]]+]\[[^\[\]]*]", html)
+        if matches:
+            invalid_links[file.relative_to(folder).as_posix()] = matches
 
-    return bad_links
-
-
-def read_config_url():
-    with open("_config.yml", "r") as stream:
-        try:
-            loaded_yaml = yaml.safe_load(stream)
-            return loaded_yaml["url"]
-        except yaml.YAMLError:
-            return None
+    return invalid_links
 
 
 if __name__ == "__main__":
-    # Check all files under the provided path,
-    # which is typically "_site" according to the "Makefile".
-    result = check_files("_site")
-
-    # Obtain site url as the prefix.
-    site_url = read_config_url()
-
-    # Print all invalid links and which page they're located at.
-    for i, kv in enumerate(result.items()):
-        path, link = kv
-        print(i + 1)
-        print(site_url + path)
-        print(*link, sep="\n")
-        print()
+    result = find_invalid_link_references("_site")
 
     if result:
+        for file_path, links in result.items():
+            print(f'/{file_path}')
+            print(*links, '\n', sep="\n")
+
         sys.exit(-1)
