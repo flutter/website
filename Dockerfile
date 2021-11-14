@@ -4,7 +4,7 @@ FROM ruby:${RUBY_VERSION}-buster as dev
 
 ENV TZ=US/Pacific
 
-ARG NODE_VERSION=15
+ARG NODE_VERSION=17
 ENV NODE_VERSION=$NODE_VERSION
 
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x -o node_setup.sh && \
@@ -56,7 +56,7 @@ RUN if test -n "$FLUTTER_BRANCH" -a "$FLUTTER_BRANCH" != "stable" ; then \
     fi
 
 # Set up Flutter
-RUN flutter doctor --suppress-analytics --quiet
+RUN flutter doctor
 RUN flutter --version
 RUN dart pub get
 
@@ -65,9 +65,6 @@ EXPOSE 4002
 
 
 # -- Test target
-# NOTE that instead of have a script that tests all targets,
-# we could build a new docker container for each test and 
-# start clean
 FROM dev as test
 ARG DISABLE_TESTS
 ENV DISABLE_TESTS=$DISABLE_TESTS
@@ -90,16 +87,12 @@ RUN cd flutter && \
       git fetch origin stable && \
       git checkout stable && \
       git pull
-
 RUN flutter doctor
-
-# NOTE this is a bit sneaky and we could be more clear about it 
-# by having an actual production template for robots.txt rather 
-# than changing the contents of the file at build/test time. 
-# This is similarly seen in tool/check-links.sh
 RUN echo "User-agent: *" > src/robots.txt && echo "Allow: /" >> src/robots.txt
 
-RUN bundle exec jekyll build --config _config.yml
+ARG BUILD_CONFIGS=_config.yml
+ENV BUILD_CONFIGS=$BUILD_CONFIGS
+RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
 
 # -- Deploy target
@@ -109,14 +102,14 @@ ARG FIREBASE_TOKEN
 ENV FIREBASE_TOKEN=$FIREBASE_TOKEN
 ARG FIREBASE_ALIAS=default
 ENV FIREBASE_ALIAS=${FIREBASE_ALIAS:-default}
-ARG COMMIT=$(git rev-parse --short HEAD)
-ENV COMMIT=$COMMIT
+ARG BUILD_COMMIT=$(git rev-parse --short HEAD)
+ENV BUILD_COMMIT=$COMMIT
 
 RUN firebase use $FIREBASE_ALIAS
-RUN firebase deploy -m $COMMIT \
+RUN firebase deploy -m $BUILD_COMMIT \
       --only hosting \
       --non-interactive \
       --token $FIREBASE_TOKEN \
       --project $FIREBASE_ALIAS \
       --debug \
-	--json
+      --json

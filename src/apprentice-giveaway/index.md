@@ -83,7 +83,7 @@ You can find the [live stream][] on YouTube.
 
 [Flutter Apprentice]: https://www.raywenderlich.com/books/flutter-apprentice
 [live stream]: {{site.youtube-site}}/playlist?list=PL4dBIh1xps-HAaadBRWQobCO_IJ4gMOG2
-[newsletter]: /subscribe
+[newsletter]: {{site.main-url}}/subscribe
 [Razeware]: https://www.raywenderlich.com/
 [raywenderlich.com/flutter]: https://store.raywenderlich.com/products/flutter-apprentice-google
 [schedule]: #schedule

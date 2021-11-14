@@ -11,7 +11,7 @@ Flutter website available at
 [https://flutter.cn](https://flutter.cn).
 
 If you’d like to install Flutter using an [installation
-bundle](/docs/development/tools/sdk/releases),
+bundle](/development/tools/sdk/releases),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
 
@@ -52,7 +52,7 @@ $ flutter doctor
 ```
 
 After these steps, you should be able to continue
-[setting up Flutter](/docs/get-started/editor) normally.
+[setting up Flutter](/get-started/editor) normally.
 From here on, packages fetched by `flutter pub get` are
 downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL`
 and `FLUTTER_STORAGE_BASE_URL` are set.

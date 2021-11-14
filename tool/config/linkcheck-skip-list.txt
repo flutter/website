@@ -44,7 +44,7 @@ https://material.io/guidelines/motion/transforming-material.html\#transforming-m
 /assets/fonts/fontawesome-webfont.*
 
 # FIXME Not sure here, "connection failed" on every go
-/docs/development/tools/devtools/vscode
+/development/tools/devtools/vscode
 
 # robots
 http:///robots.txt
