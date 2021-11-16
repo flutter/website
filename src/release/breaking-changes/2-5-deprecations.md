@@ -343,4 +343,4 @@ Relevant PRs:
 
 ## Timeline
 
-In stable release: 2.5
+In stable release: TBD
