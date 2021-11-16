@@ -66,7 +66,6 @@
       { "source": "/setup-:os*", "destination": "/get-started/install/:os*", "type": 301 },
       { "source": "/setup", "destination": "/get-started/install", "type": 301 },
       { "source": "/technical-overview", "destination": "/resources/architectural-overview", "type": 301 },
-      { "source": "/testing", "destination": "/testing", "type": 301 },
       { "source": "/text-input", "destination": "/cookbook/forms/text-input", "type": 301 },
       { "source": "/tutorials", "destination": "/reference/tutorials", "type": 301 },
       { "source": "/tutorials/animation", "destination": "/development/ui/animations/tutorial", "type": 301 },
