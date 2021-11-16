@@ -31,7 +31,7 @@ ENV NODE_ENV=development
 COPY package.json package-lock.json ./
 RUN npm install -g npm firebase-tools superstatic
 RUN npm install
-RUN npm i npm re2
+RUN npm i re2
 
 COPY ./ ./
 
