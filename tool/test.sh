@@ -99,12 +99,12 @@ if [[ "$TARGET" =~ ^($DEV|$BETA|$STABLE)$ ]]; then
 
   # TODO superstatic in docker is broken. Until we move away from 
   # that method of link checking, this will remain commented out :)
-  # if [[ $CHECK_LINKS ]]; then
-  #   echo $'\n---------------------------------------------------'
-  #   echo "=> Checking links for build..."
-  #   echo $'---------------------------------------------------\n'
-  #   tool/check-links.sh
-  # fi
+  if [[ $CHECK_LINKS ]]; then
+    echo $'\n---------------------------------------------------'
+    echo "=> Checking links for build..."
+    echo $'---------------------------------------------------\n'
+    tool/check-links.sh
+  fi
 
 else
   echo "=> Target branch \"$TARGET\" is invalid!"

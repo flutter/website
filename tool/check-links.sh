@@ -76,6 +76,8 @@ trap "cleanup" EXIT # original exit code is preserved
 
 unleash_robots
 
+node -e "console.log(require('superstatic').RE2mode())"
+
 # Attempt to launch the server.
 CMD="npx superstatic --port $SERVE_PORT"
 echo "=> $CMD"
