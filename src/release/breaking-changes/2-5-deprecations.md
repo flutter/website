@@ -127,19 +127,24 @@ The `vsync` for the animation should instead be specified using
 Code before migration:
 <!-- skip -->
 ```dart
-// TODO - no original migration guide
+class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+  FloatingHeaderSnapConfiguration? get snapConfiguration => FloatingHeaderSnapConfiguration(vsync: myTickerProvider);
+}
 ```
 
 Code after migration:
 <!-- skip -->
 ```dart
-// TODO - no original migration guide
+class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+  FloatingHeaderSnapConfiguration? get snapConfiguration => FloatingHeaderSnapConfiguration();
+  TickerProvider? get vsync => myTickerProvider;
+}
+
 ```
 
 **References**
 
 Design document:
-<!-- TODO - doc is spammed, also not listed on website -->
 * [Control SliverPersistentHeader's showOnScreen Behavior][]
 
 API documentation:
@@ -235,8 +240,7 @@ Relevant PRs:
 * Deprecated in [#60320]({{site.repo.flutter}}/issues/60320)
 * Removed in [#90294]({{site.repo.flutter}}/issues/90294)
 
-<!-- TODO - design doc link broken in #60320 -->
-[Flutter Hybrid Composition]: /go/something
+[Flutter Hybrid Composition]: https://github.com/flutter/flutter/wiki/Hybrid-Composition
 [`AndroidViewController`]: {{site.api}}/flutter/services/AndroidViewController-class.html
 [`TextureAndroidViewController`]: {{site.api}}/flutter/services/TextureAndroidViewController-class.html
 [`SurfaceAndroidViewController`]: {{site.api}}/flutter/services/SurfaceAndroidViewController-class.html
