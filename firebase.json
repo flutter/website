@@ -17,12 +17,13 @@
       { "regex": "^\/(javadoc(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "(?P<basename>.*)\\.html$", "destination": ":basename", "type": 301 },
       { "regex": "(?P<basename>.*)\\.$", "destination": ":basename", "type": 301 },
-
+     
       { "source": "/community", "destination": "https://flutter.dev/community", "type": 301 },
       { "source": "/showcase", "destination": "https://flutter.dev/showcase", "type": 301 },
       { "source": "/support", "destination": "https://flutter.dev/community", "type": 301 },
       { "source": "/docs/:rest*", "destination": "/:rest*", "type": 301 },
 
+      { "source": "/brand","destination":"/brand/index","type":301 },
       { "source": "/accessibility", "destination": "/development/accessibility-and-localization/accessibility", "type": 301 },
       { "source": "/adaptations", "destination": "/resources/platform-adaptations", "type": 301 },
       { "source": "/adaptive*", "destination": "/development/ui/layout/adaptive-responsive", "type": 301 },
