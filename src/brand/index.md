@@ -1,5 +1,5 @@
 ---
-title: Flutter Brand Guidelines
+# Flutter Brand Guidelines
 ---
 
 The "Flutter" name and logo are trademarks owned by Google.
