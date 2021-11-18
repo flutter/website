@@ -187,8 +187,6 @@ On both Android and IOS, the new image is stored in their
 respective cache directories,
 and the `path` to that location is returned in the `XFile`.
 
-[`XFile`]:  {{site.pub}}/documentation/camera/latest/camera/XFile-class.html
-
 In this example, create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 
@@ -387,3 +385,4 @@ class DisplayPictureScreen extends StatelessWidget {
 [`path`]: {{site.pub-pkg}}/path
 [`path_provider`]: {{site.pub-pkg}}/path_provider
 [`takePicture()`]: {{site.pub}}/documentation/camera/latest/camera/CameraController/takePicture.html
+[`XFile`]:  {{site.pub}}/documentation/cross_file/latest/cross_file/XFile-class.html
