@@ -12,12 +12,13 @@ on:
 
 env:
   NODE_ENV: production
-  NODE_VERSION: 15
+  NODE_VERSION: 17
 
 jobs:
 
   test:
     runs-on: ubuntu-latest
+    if: github.repository == 'flutter/website'
     strategy:
       fail-fast: false
       matrix:

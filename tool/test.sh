@@ -97,6 +97,8 @@ if [[ "$TARGET" =~ ^($DEV|$BETA|$STABLE)$ ]]; then
     bundle exec jekyll build --config _config.yml
   fi
 
+  # TODO superstatic in docker is broken. Until we move away from 
+  # that method of link checking, this will remain commented out :)
   if [[ $CHECK_LINKS ]]; then
     echo $'\n---------------------------------------------------'
     echo "=> Checking links for build..."

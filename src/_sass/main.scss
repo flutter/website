@@ -33,6 +33,11 @@
 @import 'components/snackbar';
 @import 'components/tabs';
 
+
+// New header
+@import 'components/header';
+
+
 // -- Pages
 
 // Page types
@@ -41,10 +46,7 @@
 // Marketing (alpha ordered)
 @import 'pages/404';
 @import 'pages/clock';
-@import 'pages/community';
 @import 'pages/create';
-@import 'pages/homepage';
-@import 'pages/showcase';
 @import 'pages/subscribe';
 
 // Docs (alpha ordered)

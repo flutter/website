@@ -9,7 +9,7 @@ body:
     id: page-url
     attributes:
       label: Page URL
-      placeholder: "Example: https://flutter.dev/docs"
+      placeholder: "Example: https://docs.flutter.dev"
     validations:
       required: true
   - type: input

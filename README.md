@@ -1,4 +1,4 @@
-[![Flutter logo]](https://flutter.dev)
+[![Flutter logo]](https://docs.flutter.dev)
 # [Flutter][] website 
 
 [![Build Status][]][Repo on GitHub Actions]
@@ -298,7 +298,7 @@ Also check out the site-shared [wiki](https://github.com/dart-lang/site-shared/w
 [DartPad]: https://dartpad.dev
 [`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
 [forking]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
-[Flutter install]: https://flutter.dev/docs/get-started/install
+[Flutter install]: https://docs.flutter.dev/get-started/install
 [Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1
 [Firebase]: https://firebase.google.com/
 [Google Developer Documentation Style Guidelines]: https://developers.google.com/style

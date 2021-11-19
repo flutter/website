@@ -1,4 +1,4 @@
-// Basic Flutter widget test. Learn more at https://flutter.dev/docs/testing.
+// Basic Flutter widget test. Learn more at https://docs.flutter.dev/testing.
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:layout/main.dart';

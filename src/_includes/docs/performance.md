@@ -5,4 +5,4 @@
   see [Using the Performance view][].
 {{site.alert.end}}
 
-[Using the Performance view]: /docs/development/tools/devtools/performance
+[Using the Performance view]: /development/tools/devtools/performance

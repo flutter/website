@@ -65,25 +65,35 @@ ensure maximum preparedness. The schedule is below.
 You can find the [live stream][] on YouTube.
 
 <div class="table-wrapper" markdown="1">
-|**Date**     | **Homework**                    | **Live stream topic**      |
+|**Date**     | **Homework**                    | **Live stream topic**      | **YouTube video** |
 | October 6+  | Sign up for free access!<br>Check out the first live stream for details. | 
-| October 13  | Read chapters 1, 2              | Getting started            |
-| October 20  | Read chapters 3, 4              | Widgets                    |
-| October 27  | Read chapters 5, 6              | More widgets               |
-| November 3  | Read chapters 7, 8              | Navigation                 |
-| November 10 | Read chapters 9, 15 (1st half)  | Data persistence           |
-| November 17 | Read chapters 10, 11            | Networking & serialization |
-| November 24 | Read chapters 12, 13            | State management           |
-| December 1  | Read chapters 14, 15 (2nd half) | Streams                    |
-| December 8  | Read chapters 16, 17, 18        | Deployment                 |
-| December 15 | Read chapter  19                | Firebase                   |
+| October 13  | Read chapters 1, 2       | Getting started            | [Oct 13th replay][] |
+| October 20  | Read chapters 3, 4       | Widgets                    | [Oct 20th replay][] |
+| October 27  | Read chapters 5, 6       | More widgets               | [Oct 27th replay][] |
+| November 3  | Read chapters 7, 8       | Navigation                 | [Nov 3rd replay][]  |
+| November 10 | Read chapters 9, 15      | Data persistence           | [Nov 10th replay][] |
+| November 17 | Read chapters 10, 11     | Networking & serialization | [Nov 17th replay][] |
+| November 24 | Read chapters 12, 14     | Chopper & streams          | [Nov 24th replay][] |
+| December 1  | Read chapters 13         | State management           | [Dec 1st replay][]  |
+| December 8  | Read chapters 19         | Firebase                   | [Dec 8th replay][]  |
+| December 15 | Read chapter  16, 17, 18 | Deployment                 | [Dec 15th replay][] |
 {:.table .table-striped .nowrap}
 </div>
 
 
 [Flutter Apprentice]: https://www.raywenderlich.com/books/flutter-apprentice
 [live stream]: {{site.youtube-site}}/playlist?list=PL4dBIh1xps-HAaadBRWQobCO_IJ4gMOG2
-[newsletter]: /subscribe
+[newsletter]: {{site.main-url}}/subscribe
+[Oct 13th replay]: {{site.youtube-site}}/watch?v=FFZkjw1PVrY
+[Oct 20th replay]: {{site.youtube-site}}/watch?v=Llnq61KyOPg
+[Oct 27th replay]: {{site.youtube-site}}/watch?v=4Ea1mhkQRxQ
+[Nov 3rd replay]:  {{site.youtube-site}}/watch?v=jJ1W52f6CiM
+[Nov 10th replay]: {{site.youtube-site}}/watch?v=Vqs9qbbTeQ0
+[Nov 17th replay]: {{site.youtube-site}}/watch?v=vDOsMxTbfoI
+[Nov 24th replay]: {{site.youtube-site}}/watch?v=lBS5a1hVxPM
+[Dec 1st replay]:  {{site.youtube-site}}/watch?v=R39i_xTXhpY
+[Dec 8th replay]:  {{site.youtube-site}}/watch?v=xy-H1d2L78c
+[Dec 15th replay]: {{site.youtube-site}}/watch?v=rg5dYnCO2vo
 [Razeware]: https://www.raywenderlich.com/
 [raywenderlich.com/flutter]: https://store.raywenderlich.com/products/flutter-apprentice-google
 [schedule]: #schedule
