@@ -378,7 +378,7 @@ These constants can then be used in place of hard-coded numeric values:
 <!--skip-->
 ```dart
 return Padding(
-    insets: EdgeInsets.all(Insets.small), 
+    padding: EdgeInsets.all(Insets.small), 
     child: Text('Hello!', style: TextStyles.body1)
 )
 ```
