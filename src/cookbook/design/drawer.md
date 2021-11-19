@@ -212,7 +212,7 @@ class MyHomePage extends StatelessWidget {
 
 [`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
 [`DrawerHeader`]: {{site.api}}/flutter/material/DrawerHeader-class.html
-[list recipes]: /cookbook#lists
+[list recipes]: {{site.url}}/cookbook#lists
 [`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html

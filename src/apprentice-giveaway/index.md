@@ -6,7 +6,7 @@ description: You can have free online access to Flutter Apprentice book through 
 We’re giving you FREE access to Flutter Apprentice from
 October 6, 2021 through January 6, 2022.
 
-![Screenshot of book cover](/assets/images/homepage/apprentice-cover.png)
+![Screenshot of book cover]({{site.url}}/assets/images/homepage/apprentice-cover.png)
 
 Flutter is partnering with [Razeware][],
 the team behind the Ray Wenderlich tutorial series,
@@ -25,7 +25,7 @@ For more information, watch the following video:
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/NVzIALG7CUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-![Image of Dash with the book](/assets/images/homepage/DashWithApprenticeBook.png){:width="100%"}
+![Image of Dash with the book]({{site.url}}/assets/images/homepage/DashWithApprenticeBook.png){:width="100%"}
 
 ## How to sign up!
 
@@ -49,7 +49,7 @@ and we’ll see you along the way!
     </div>
 </section>
 
-![Image of Professor Dash](/assets/images/homepage/smart-dash.png)
+![Image of Professor Dash]({{site.url}}/assets/images/homepage/smart-dash.png)
 
 ---
 

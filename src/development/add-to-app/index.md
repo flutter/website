@@ -134,7 +134,7 @@ see our API usage guides at the following links:
 
 [add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
 [Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
-[Android plugin APIs]: /development/packages-and-plugins/plugin-api-migration
+[Android plugin APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
 [Flutter plugins]: {{site.pub}}/flutter
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
@@ -145,5 +145,5 @@ see our API usage guides at the following links:
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
 [maintained by the Flutter team]: {{site.repo.plugins}}/tree/master/packages
-[migrated to the V2 plugins APIs]: /development/packages-and-plugins/plugin-api-migration
-[multiple Flutters]: /development/add-to-app/multiple-flutters
+[migrated to the V2 plugins APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
+[multiple Flutters]: {{site.url}}/development/add-to-app/multiple-flutters

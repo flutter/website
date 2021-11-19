@@ -28,9 +28,9 @@ To learn about `Router` and the declarative approach, see [Learning
 Flutter’s new navigation and routing system][], and the [`Router`][]
 API docs.
 
-[Flutter cookbook]: /cookbook
+[Flutter cookbook]: {{site.url}}/cookbook
 [Learning Flutter’s new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
-[Navigation recipes]: /cookbook/navigation
+[Navigation recipes]: {{site.url}}/cookbook/navigation
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Router`]: {{site.api}}/flutter/widgets/Router-class.html
 [`MaterialApp.routes`]: {{site.api}}/flutter/material/MaterialApp/routes.html

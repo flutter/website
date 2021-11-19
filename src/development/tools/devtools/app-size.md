@@ -39,13 +39,13 @@ optimize Dart code and track down size issues.
 If DevTools is already connected to a running application,
 navigate to the "App Size" tab.
 
-![Screenshot of app size tab](/assets/images/docs/tools/devtools/app_size_tab.png)
+![Screenshot of app size tab]({{site.url}}/assets/images/docs/tools/devtools/app_size_tab.png)
 
 If DevTools is not connected to a running application, you can
 access the tool from the landing page that appears once you have launched
 DevTools (see [installation instructions][]).
 
-![Screenshot of app size access on landing page](/assets/images/docs/tools/devtools/app_size_access_landing_page.png){:width="100%"}
+![Screenshot of app size access on landing page]({{site.url}}/assets/images/docs/tools/devtools/app_size_access_landing_page.png){:width="100%"}
 
 ## Analysis tab
 
@@ -56,7 +56,7 @@ and you can view code attribution data
 (for example, why a piece of code is included in your compiled
 application) using the dominator tree and call graph.
 
-![Screenshot of app size analysis](/assets/images/docs/tools/devtools/app_size_analysis.png){:width="100%"}
+![Screenshot of app size analysis]({{site.url}}/assets/images/docs/tools/devtools/app_size_analysis.png){:width="100%"}
 
 ### Loading a size file
 
@@ -64,7 +64,7 @@ When you open the Analysis tab, you'll see instructions
 to load an app size file. Drag and drop an app size
 file into the dialog, and click "Analyze Size".
 
-![Screenshot of app size analysis loading screen](/assets/images/docs/tools/devtools/app_size_load_analysis.png){:width="100%"}
+![Screenshot of app size analysis loading screen]({{site.url}}/assets/images/docs/tools/devtools/app_size_load_analysis.png){:width="100%"}
 
 See [Generating size files][] below for information on
 generating size files.
@@ -92,7 +92,7 @@ the visual root of the treemap.
 To navigate back, or up a level, use the breadcrumb
 navigator at the top of the treemap.
 
-![Screenshot of treemap breadcrumb navigator](/assets/images/docs/tools/devtools/treemap_breadcrumbs.png){:width="100%"}
+![Screenshot of treemap breadcrumb navigator]({{site.url}}/assets/images/docs/tools/devtools/treemap_breadcrumbs.png){:width="100%"}
 
 ### Dominator tree and call graph
 
@@ -138,7 +138,7 @@ For example, if you are analyzing your app size and find
 an unexpected package included in your compiled app, you can
 use the dominator tree to trace the package to its root source.
 
-![Screenshot of code size dominator tree](/assets/images/docs/tools/devtools/code_size_dominator_tree.png){:width="100%"}
+![Screenshot of code size dominator tree]({{site.url}}/assets/images/docs/tools/devtools/code_size_dominator_tree.png){:width="100%"}
 
 #### Using the call graph
 
@@ -173,7 +173,7 @@ This information is useful for understanding the
 fine-grained dependencies of between pieces of your code
 (packages, libraries, classes, functions).
 
-![Screenshot of code size call graph](/assets/images/docs/tools/devtools/code_size_call_graph.png){:width="100%"}
+![Screenshot of code size call graph]({{site.url}}/assets/images/docs/tools/devtools/code_size_call_graph.png){:width="100%"}
 
 #### Should I use the dominator tree or the call graph?
 
@@ -207,7 +207,7 @@ changes to your code. You can visualize the
 difference between the two data sets
 using the treemap and table.
 
-![Screenshot of app size diff](/assets/images/docs/tools/devtools/app_size_diff.png){:width="100%"}
+![Screenshot of app size diff]({{site.url}}/assets/images/docs/tools/devtools/app_size_diff.png){:width="100%"}
 
 ### Loading size files
 
@@ -217,7 +217,7 @@ files. Again, these files need to be generated from
 the same application. Drag and drop these files into
 their respective dialogs, and click **Analyze Diff**.
 
-![Screenshot of app size diff loading screen](/assets/images/docs/tools/devtools/app_size_load_diff.png){:width="100%"}
+![Screenshot of app size diff loading screen]({{site.url}}/assets/images/docs/tools/devtools/app_size_load_diff.png){:width="100%"}
 
 See [Generating size files][] below for information
 on generating these files.
@@ -263,5 +263,5 @@ For more information, see [App Size Documentation][].
 [Generating size files]: #generating-size-files
 [Analysis tab]: #analysis-tab
 [Diff tab]: #diff-tab
-[installation instructions]: /development/tools/devtools/overview#install-devtools
-[App Size Documentation]: /perf/app-size#breaking-down-the-size
+[installation instructions]: {{site.url}}/development/tools/devtools/overview#install-devtools
+[App Size Documentation]: {{site.url}}/perf/app-size#breaking-down-the-size

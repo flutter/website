@@ -24,7 +24,7 @@ is paying for it.
 
 The following animation shows the app's behavior:
 
-![Ordering the food by dragging it to the person](/assets/images/docs/cookbook/effects/DragAUIElement.gif){:.site-mobile-screenshot}
+![Ordering the food by dragging it to the person]({{site.url}}/assets/images/docs/cookbook/effects/DragAUIElement.gif){:.site-mobile-screenshot}
 
 This recipe begins with a prebuilt list of menu items and
 a row of customers.

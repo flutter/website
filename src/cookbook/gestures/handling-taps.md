@@ -128,7 +128,7 @@ class MyButton extends StatelessWidget {
 </noscript>
 
 
-[Add Material touch ripples]: /cookbook/gestures/ripples
+[Add Material touch ripples]: {{site.url}}/cookbook/gestures/ripples
 [`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html

@@ -861,7 +861,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Internationalization based on the `intl` package]: {{site.repo.this}}/tree/master/examples/internationalization/intl_example
-[Internationalization User's Guide]: /go/i18n-user-guide
+[Internationalization User's Guide]: {{site.url}}/go/i18n-user-guide
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl` tool]: #dart-tools
 [`Intl.message()`]: {{site.pub-api}}/intl/latest/intl/Intl/message.html

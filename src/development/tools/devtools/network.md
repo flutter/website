@@ -12,7 +12,7 @@ description: How to use the DevTools network view.
 The network view allows you to inspect HTTP, HTTPS, and web socket traffic from
 your Dart or Flutter application.
 
-![Screenshot of the network screen](/assets/images/docs/tools/devtools/network-screen.png){:width="100%"}
+![Screenshot of the network screen]({{site.url}}/assets/images/docs/tools/devtools/network-screen.png){:width="100%"}
 
 ## How to use it
 
@@ -29,12 +29,12 @@ of response and request headers and bodies.
 You can use the search and filter controls to find a specific request or filter
 requests out of the request table.
 
-![Screenshot of the network screen](/assets/images/docs/tools/devtools/network-search-and-filter.png)
+![Screenshot of the network screen]({{site.url}}/assets/images/docs/tools/devtools/network-search-and-filter.png)
 
 To apply a filter, press the filter button (right of the search bar). You will
 see a filter dialog pop up:
 
-![Screenshot of the network screen](/assets/images/docs/tools/devtools/network-filter-dialog.png)
+![Screenshot of the network screen]({{site.url}}/assets/images/docs/tools/devtools/network-filter-dialog.png)
 
 The filter query syntax is described in the dialog. You can filter network
 requests by the following keys:
@@ -60,4 +60,4 @@ asynchronous timeline events. Viewing network activity in the timeline can be
 useful if you want to see how HTTP traffic aligns with other events happening
 in your app or in the Flutter framework.
 
-[timeline]: /development/tools/devtools/performance#timeline-events-chart
+[timeline]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart

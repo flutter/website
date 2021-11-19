@@ -45,7 +45,7 @@ frame represents the amount of time it consumed the CPU. Stack frames
 that consume a lot of CPU time may be a good place to look for possible
 performance improvements.
 
-![Screenshot of a flame chart](/assets/images/docs/tools/devtools/cpu_profiler_flame_chart.png){:width="100%"}
+![Screenshot of a flame chart]({{site.url}}/assets/images/docs/tools/devtools/cpu_profiler_flame_chart.png){:width="100%"}
 
 ### Call tree
 
@@ -65,7 +65,7 @@ meaning that a method can be expanded to show its _callees_.
 <dd>File path for the method call site.</dd>
 </dl>
 
-![Screenshot of a call tree table](/assets/images/docs/tools/devtools/cpu_profiler_call_tree.png){:width="100%"}
+![Screenshot of a call tree table]({{site.url}}/assets/images/docs/tools/devtools/cpu_profiler_call_tree.png){:width="100%"}
 
 ### Bottom up
 
@@ -99,4 +99,4 @@ In this table, a method can be expanded to show its _callers_.
 <dt markdown="1">**Source**</dt>
 <dd markdown="1">File path for the method call site.
 
-![Screenshot of a bottom up table](/assets/images/docs/tools/devtools/cpu_profiler_bottom_up.png){:width="100%"}
+![Screenshot of a bottom up table]({{site.url}}/assets/images/docs/tools/devtools/cpu_profiler_bottom_up.png){:width="100%"}

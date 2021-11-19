@@ -166,7 +166,7 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Package Fonts Demo](/assets/images/docs/cookbook/package-fonts.png){:.site-mobile-screenshot}
+![Package Fonts Demo]({{site.url}}/assets/images/docs/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
 [Google Fonts]: https://fonts.google.com
 [google_fonts]: {{site.pub-pkg}}/google_fonts

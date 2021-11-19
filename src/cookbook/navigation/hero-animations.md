@@ -220,6 +220,6 @@ class DetailScreen extends StatelessWidget {
 </noscript>
 
 
-[Handle taps]: /cookbook/gestures/handling-taps
+[Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
-[Navigate to a new screen and back]: /cookbook/navigation/navigation-basics
+[Navigate to a new screen and back]: {{site.url}}/cookbook/navigation/navigation-basics

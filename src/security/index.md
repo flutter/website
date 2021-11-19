@@ -34,7 +34,7 @@ For more details on how we handle security vulnerabilities, please see our [inte
 
 * **Keep your application’s dependencies up to date.**
   Make sure you [upgrade your package
-  dependencies](/development/tools/sdk/upgrading)
+  dependencies]({{site.url}}/development/tools/sdk/upgrading)
   to keep the dependencies up to date. Avoid pinning to specific versions
   for your dependencies and, if you do, make sure you check
   periodically to see if your dependencies have had security updates,

@@ -779,34 +779,34 @@ Flutter Gallery [running app][], [repo][]
   stateless widgets.  Presented by Google engineer, Ian Hickson.
 
 
-[Android emulator]: /get-started/install/windows#set-up-the-android-emulator
+[Android emulator]: {{site.url}}/get-started/install/windows#set-up-the-android-emulator
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Dart language tour]: {{site.dart-site}}/guides/language/language-tour
-[Debugging Flutter apps]: /testing/debugging
+[Debugging Flutter apps]: {{site.url}}/testing/debugging
 [`DropdownButton`]: {{site.api}}/flutter/material/DropdownButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
-[Flutter cookbook]: /cookbook
+[Flutter cookbook]: {{site.url}}/cookbook
 [Flutter's Layered Design]: {{site.youtube-site}}/watch?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[Gestures]: /cookbook/gestures
-[Gestures in Flutter]: /development/ui/advanced/gestures
-[Handling gestures]: /development/ui/widgets-intro#handling-gestures
-[hello-world]: /get-started/codelab#step-1-create-the-starter-flutter-app
+[Gestures]: {{site.url}}/cookbook/gestures
+[Gestures in Flutter]: {{site.url}}/development/ui/advanced/gestures
+[Handling gestures]: {{site.url}}/development/ui/widgets-intro#handling-gestures
+[hello-world]: {{site.url}}/get-started/codelab#step-1-create-the-starter-flutter-app
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[Introduction to widgets]: /development/ui/widgets-intro
-[iOS simulator]: /get-started/install/macos#set-up-the-ios-simulator
-[building layouts tutorial]: /development/ui/layout/tutorial
-[building layouts tutorial (step 6)]: /development/ui/layout/tutorial#step-6-final-touch
+[Introduction to widgets]: {{site.url}}/development/ui/widgets-intro
+[iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
+[building layouts tutorial]: {{site.url}}/development/ui/layout/tutorial
+[building layouts tutorial (step 6)]: {{site.url}}/development/ui/layout/tutorial#step-6-final-touch
 [community]: {{site.main-url}}/community
-[Handle taps]: /cookbook/gestures/handling-taps
+[Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
 [`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
 [Libraries and visibility]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
@@ -819,7 +819,7 @@ Flutter Gallery [running app][], [repo][]
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [repo]: {{site.repo.gallery}}
 [running app]: {{site.gallery}}
-[set up]: /get-started/install
+[set up]: {{site.url}}/get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

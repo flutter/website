@@ -139,10 +139,10 @@ Also see:
   a community article by AbdulRahman AlHamali
 * [`Listview.builder`][] API
 
-[Cookbook]: /cookbook
+[Cookbook]: {{site.url}}/cookbook
 [Creating a ListView that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
 [`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[Working with long lists]: /cookbook/lists/long-lists
+[Working with long lists]: {{site.url}}/cookbook/lists/long-lists
 
 ###  Build and display frames in 16ms
 
@@ -176,7 +176,7 @@ render a frame as fast as possible. Why?
 If you are wondering why 60fps leads to a smooth visual experience,
 see the video [Why 60fps?][]
 
-[profile mode]: /testing/build-modes#profile
+[profile mode]: {{site.url}}/testing/build-modes#profile
 [Why 60fps?]: {{site.youtube-site}}/watch?v=CaMTIgxCSqU
 
 ## Pitfalls

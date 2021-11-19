@@ -2192,22 +2192,22 @@ Messaging API, see the [`firebase_messaging`][]
 plugin documentation.
 
 
-[Add Flutter to existing app]: /development/add-to-app
-[Adding Assets and Images in Flutter]: /development/ui/assets-and-images
-[Animation & Motion widgets]: /development/ui/widgets/animation
-[Animations overview]: /development/ui/animations
-[Animations tutorial]: /development/ui/animations/tutorial
+[Add Flutter to existing app]: {{site.url}}/development/add-to-app
+[Adding Assets and Images in Flutter]: {{site.url}}/development/ui/assets-and-images
+[Animation & Motion widgets]: {{site.url}}/development/ui/widgets/animation
+[Animations overview]: {{site.url}}/development/ui/animations
+[Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources
 [`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 [arb]: {{site.github}}/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore
-[composing]: /resources/architectural-overview#composition
+[composing]: {{site.url}}/resources/architectural-overview#composition
 [Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
-[Cupertino widgets]: /development/ui/widgets/cupertino
-[developing packages and plugins]: /development/packages-and-plugins/developing-packages
+[Cupertino widgets]: {{site.url}}/development/ui/widgets/cupertino
+[developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
-[DevTools]: /development/tools/devtools
+[DevTools]: {{site.url}}/development/tools/devtools
 [existing plugin]: {{site.pub}}/flutter
 [`firebase_admob`]: {{site.pub-pkg}}/firebase_admob
 [`firebase_analytics`]: {{site.pub-pkg}}/firebase_analytics
@@ -2218,32 +2218,32 @@ plugin documentation.
 [`firebase_storage`]: {{site.pub-pkg}}/firebase_storage
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [`flutter_facebook_login`]: {{site.pub-pkg}}/flutter_facebook_login
-[Flutter cookbook]: /cookbook
+[Flutter cookbook]: {{site.url}}/cookbook
 [Flutter Youtube channel]: {{site.youtube-site}}/flutterdev
 [`geolocator`]: {{site.pub-pkg}}/geolocator
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
 [`image_picker`]: {{site.pub-pkg}}/image_picker
-[internationalization guide]: /development/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/development/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
-[Introduction to declarative UI]: /get-started/flutter-for/declarative
-[layout tutorial]: /development/ui/widgets/layout
+[Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
+[layout tutorial]: {{site.url}}/development/ui/widgets/layout
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [Material Components]: {{site.material}}/develop/flutter/
 [Material Design guidelines]: {{site.material}}/design/
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
-[Platform adaptations]: /resources/platform-adaptations
-[platform channel]: /development/platform-integration/platform-channels
-[plugins]: /development/packages-and-plugins/using-packages
+[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[platform channel]: {{site.url}}/development/platform-integration/platform-channels
+[plugins]: {{site.url}}/development/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub}}/flutter/packages
-[publish it on pub.dev]: /development/packages-and-plugins/developing-packages#publish
-[Retrieve the value of a text field]: /cookbook/forms/retrieve-input
+[publish it on pub.dev]: {{site.url}}/development/packages-and-plugins/developing-packages#publish
+[Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
 [Shared Preferences plugin]: {{site.pub-pkg}}/shared_preferences
 [SQFlite]: {{site.pub-pkg}}/sqflite
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
-[widget]: /resources/architectural-overview#widgets
-[widget catalog]: /development/ui/widgets/layout
+[widget]: {{site.url}}/resources/architectural-overview#widgets
+[widget catalog]: {{site.url}}/development/ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
-[write your own]: /development/packages-and-plugins/developing-packages
+[write your own]: {{site.url}}/development/packages-and-plugins/developing-packages

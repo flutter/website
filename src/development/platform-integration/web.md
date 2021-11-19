@@ -149,27 +149,27 @@ Flutter engineers routinely read and respond on Discord.
 
 
 [Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
-[building a web app with Flutter]: /get-started/web
+[building a web app with Flutter]: {{site.url}}/get-started/web
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
-[Creating responsive apps]: /development/ui/layout/adaptive-responsive
-[Debugging]: /development/tools/devtools/debugger
+[Creating responsive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
+[Debugging]: {{site.url}}/development/tools/devtools/debugger
 [Discord]: https://discord.gg/N7Yshp4
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
-[Flutter DevTools]: /development/tools/devtools/overview
-[Flutter's production quality support for the web]: /web
+[Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
+[Flutter's production quality support for the web]: {{site.url}}/web
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
-[Logging]: /development/tools/devtools/logging
-[Preparing a web app for release]: /deployment/web
-[Running Flutter inspector]: /development/tools/devtools/inspector
+[Logging]: {{site.url}}/development/tools/devtools/logging
+[Preparing a web app for release]: {{site.url}}/deployment/web
+[Running Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
-[widget tests]: /testing#widget-tests
+[widget tests]: {{site.url}}/testing#widget-tests
 [pub.dev]: {{site.pub}}/flutter/packages?platform=web
-[Web support for Flutter]: /web
+[Web support for Flutter]: {{site.url}}/web
 [write your own plugins]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
-[run your web apps in any supported browser]: /get-started/web#create-and-run
-[Integration testing]: /testing/integration-tests#running-in-a-browser
-[internationalizing a Flutter mobile app]: /resources/faq#how-do-i-do-internationalization-i18n-localization-l10n-and-accessibility-a11y-in-flutter
+[run your web apps in any supported browser]: {{site.url}}/get-started/web#create-and-run
+[Integration testing]: {{site.url}}/testing/integration-tests#running-in-a-browser
+[internationalizing a Flutter mobile app]: {{site.url}}/resources/faq#how-do-i-do-internationalization-i18n-localization-l10n-and-accessibility-a11y-in-flutter
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files

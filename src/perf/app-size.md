@@ -187,15 +187,15 @@ Some other things you can do to make your app smaller are:
 * Minimize resource imported from libraries
 * Compress PNG and JPEG files
 
-[FAQ]: /resources/faq
-[How big is the Flutter engine?]: /resources/faq#how-big-is-the-flutter-engine
-[instructions]: /deployment/ios
+[FAQ]: {{site.url}}/resources/faq
+[How big is the Flutter engine?]: {{site.url}}/resources/faq#how-big-is-the-flutter-engine
+[instructions]: {{site.url}}/deployment/ios
 [Xcode App Size Report]: {{site.apple-dev}}/documentation/xcode/reducing_your_app_s_size#3458589
-[iOS create build archive instructions]: /deployment/ios#create-a-build-archive-with-xcode
+[iOS create build archive instructions]: {{site.url}}/deployment/ios#create-a-build-archive-with-xcode
 [Model ID / Hardware number]: https://en.wikipedia.org/wiki/List_of_iOS_devices#Models
-[Obfuscating Dart code]: /deployment/obfuscate
-[Test drive]: /get-started/test-drive
-[Write your first Flutter app]: /get-started/codelab
+[Obfuscating Dart code]: {{site.url}}/deployment/obfuscate
+[Test drive]: {{site.url}}/get-started/test-drive
+[Write your first Flutter app]: {{site.url}}/get-started/codelab
 [Play Console's instructions]: https://support.google.com/googleplay/android-developer/answer/9302563?hl=en
 [Google Play Console]: https://play.google.com/apps/publish/
-[DevTools documentation]: /development/tools/devtools/app-size
+[DevTools documentation]: {{site.url}}/development/tools/devtools/app-size

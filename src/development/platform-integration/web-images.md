@@ -180,7 +180,7 @@ the HTML renderer instead of CanvasKit.
 [9]: {{site.api}}/flutter/dart-ui/Codec/getNextFrame.html
 [10]: {{site.api}}/flutter/dart-ui/Scene/toImage.html
 [11]: {{site.api}}/flutter/dart-ui/Image-class.html
-[12]: /development/ui/assets-and-images
+[12]: {{site.url}}/development/ui/assets-and-images
 [13]: {{site.api}}/flutter/widgets/Image/Image.memory.html
 [14]: {{site.api}}/flutter/widgets/Image/Image.asset.html
 [15]: {{site.api}}/flutter/widgets/Image/Image.network.html

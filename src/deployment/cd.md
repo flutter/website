@@ -52,31 +52,31 @@ Visit the [fastlane docs][fastlane] for more info.
     and set it to the root directory of your Flutter SDK.
     (This is required for the scripts that deploy for iOS.)
 1. Create your Flutter project, and when ready, make sure that your project builds via
-    * ![Android](/assets/images/docs/cd/android.png) `flutter build appbundle`; and
-    * ![iOS](/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`; and
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
 1. Initialize the fastlane projects for each platform.
-    * ![Android](/assets/images/docs/cd/android.png) In your `[project]/android`
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) In your `[project]/android`
     directory, run `fastlane init`.
-    * ![iOS](/assets/images/docs/cd/ios.png) In your `[project]/ios` directory,
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) In your `[project]/ios` directory,
     run `fastlane init`.
 1. Edit the `Appfile`s to ensure they have adequate metadata for your app.
-    * ![Android](/assets/images/docs/cd/android.png) Check that `package_name` in
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) Check that `package_name` in
     `[project]/android/fastlane/Appfile` matches your package name in AndroidManifest.xml.
-    * ![iOS](/assets/images/docs/cd/ios.png) Check that `app_identifier` in
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) Check that `app_identifier` in
     `[project]/ios/fastlane/Appfile` also matches Info.plist's bundle identifier. Fill in
     `apple_id`, `itc_team_id`, `team_id` with your respective account info.
 1. Set up your local login credentials for the stores.
-    * ![Android](/assets/images/docs/cd/android.png) Follow the [Supply setup steps][]
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) Follow the [Supply setup steps][]
     and ensure that `fastlane supply init` successfully syncs data from your
     Play Store console. _Treat the .json file like your password and do not check
     it into any public source control repositories._
-    * ![iOS](/assets/images/docs/cd/ios.png) Your iTunes Connect username is already
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) Your iTunes Connect username is already
     in your `Appfile`'s `apple_id` field. Set the `FASTLANE_PASSWORD` shell
     environment variable with your iTunes Connect password. Otherwise, you'll be
     prompted when uploading to iTunes/TestFlight.
 1. Set up code signing.
-    * ![Android](/assets/images/docs/cd/android.png) Follow the [Android app signing steps][].
-    * ![iOS](/assets/images/docs/cd/ios.png) On iOS, create and sign using a
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) Follow the [Android app signing steps][].
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS, create and sign using a
       distribution certificate instead of a development certificate when you're
       ready to test and deploy using TestFlight or App Store.
         * Create and download a distribution certificate in your
@@ -84,13 +84,13 @@ Visit the [fastlane docs][fastlane] for more info.
         * `open [project]/ios/Runner.xcworkspace/` and select the distribution
           certificate in your target's settings pane.
 1. Create a `Fastfile` script for each platform.
-    * ![Android](/assets/images/docs/cd/android.png) On Android, follow the
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) On Android, follow the
       [fastlane Android beta deployment guide][].
       Your edit could be as simple as adding a `lane` that calls
       `upload_to_play_store`.
       Set the `aab` argument to `../build/app/outputs/bundle/release/app-release.aab`
       to use the app bundle `flutter build` already built.
-    * ![iOS](/assets/images/docs/cd/ios.png) On iOS, follow the
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS, follow the
       [fastlane iOS beta deployment guide][].
       Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
       `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
@@ -103,13 +103,13 @@ process to a continuous integration (CI) system.
 ### Running deployment locally
 
 1. Build the release mode app.
-    * ![Android](/assets/images/docs/cd/android.png) `flutter build appbundle`.
-    * ![iOS](/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`.
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
     No need to sign now since fastlane will sign when archiving.
 1. Run the Fastfile script on each platform.
-    * ![Android](/assets/images/docs/cd/android.png) `cd android` then
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `cd android` then
     `fastlane [name of the lane you created]`.
-    * ![iOS](/assets/images/docs/cd/ios.png) `cd ios` then
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `cd ios` then
     `fastlane [name of the lane you created]`.
 
 ### Cloud build and deploy setup
@@ -132,7 +132,7 @@ request that prints these secrets out. Be careful with interactions with these
 secrets in pull requests that you accept and merge.
 
 1. Make login credentials ephemeral.
-    * ![Android](/assets/images/docs/cd/android.png) On Android:
+    * ![Android]({{site.url}}/assets/images/docs/cd/android.png) On Android:
         * Remove the `json_key_file` field from `Appfile` and store the string
           content of the JSON in your CI system's encrypted variable. 
           Read the environment variable directly in your `Fastfile`.
@@ -148,7 +148,7 @@ secrets in pull requests that you accept and merge.
           ```bash
           echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > [path to your upload keystore]
           ```
-    * ![iOS](/assets/images/docs/cd/ios.png) On iOS:
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS:
         * Move the local environment variable `FASTLANE_PASSWORD` to use
           encrypted environment variables on the CI system.
         * The CI system needs access to your distribution certificate.
@@ -190,7 +190,7 @@ secrets in pull requests that you accept and merge.
          * `bundle exec fastlane [name of the lane]`
 
 
-[Android app signing steps]: /deployment/android#signing-the-app
+[Android app signing steps]: {{site.url}}/deployment/android#signing-the-app
 [Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Apple Developer Account console]: {{site.apple-dev}}/account/ios/certificate/
 [Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/

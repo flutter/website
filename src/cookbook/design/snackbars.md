@@ -151,7 +151,7 @@ class SnackBarPage extends StatelessWidget {
 </noscript>
 
 
-[Gestures]: /cookbook#gestures
+[Gestures]: {{site.url}}/cookbook#gestures
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html

@@ -37,7 +37,7 @@ the widget was not present.
 
 The design document for this change is [Eliminating nullOk parameters][].
 
-[Eliminating nullOk parameters]: /go/eliminating-nullok-parameters
+[Eliminating nullOk parameters]: {{site.url}}/go/eliminating-nullok-parameters
 
 
 ## Description of change

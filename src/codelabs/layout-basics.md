@@ -1915,7 +1915,7 @@ techniques that you've learned, why not apply
 those skills into building a Flutter UI that
 displays a business card!
 
- ![Completed business card](/assets/images/docs/codelab/layout/businesscarddisplay1.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay1.png){:width="400px"}{:.text-center}
 
 You'll break down Flutter's layout into parts,
 which is how you'd create a Flutter UI in the real world.
@@ -1925,7 +1925,7 @@ you'll implement a `Column` that contains the name and title.
 Then you'll wrap the `Column` in a `Row` that contains the icon,
 which is positioned to the left of the name and title.
 
- ![Completed business card](/assets/images/docs/codelab/layout/businesscarddisplay2.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay2.png){:width="400px"}{:.text-center}
 
 In [Part 2](#part-2), you'll wrap the `Row` in a `Column`,
 so the code contains a `Column` within a `Row` within a `Column`.
@@ -1935,13 +1935,13 @@ Finally, you'll add the contact information
 to the outermost `Column`'s list of children,
 so it's displayed below the name, title, and icon.
 
- ![Completed business card](/assets/images/docs/codelab/layout/businesscarddisplay3.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay3.png){:width="400px"}{:.text-center}
 
 In [Part 3](#part-3), you'll finish building
 the business card display by adding four more icons,
 which are positioned below the contact information.
 
- ![Completed business card](/assets/images/docs/codelab/layout/businesscarddisplay4.png){:width="400px"}{:.text-center}
+ ![Completed business card]({{site.url}}/assets/images/docs/codelab/layout/businesscarddisplay4.png){:width="400px"}{:.text-center}
 
 ### Part 1
 {:.no_toc}
@@ -3361,12 +3361,12 @@ You can download Flutter from the [install][] page.
 
 
 
-[Building layouts]: /development/ui/layout
+[Building layouts]: {{site.url}}/development/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new
 [Flutter's YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
 [GitHub]: {{site.repo.this}}/tree/master/examples/layout/sizing/images
-[install]: /get-started/install
+[install]: {{site.url}}/get-started/install
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html
 [Material Color palette]: {{site.api}}/flutter/material/Colors-class.html
 [Material Icon library]: {{site.api}}/flutter/material/Icons-class.html
