@@ -14,7 +14,14 @@ void main() {
       await driver.close();
     });
 
+    test('do not select any item, verify please select text is displayed',
+        () async {
+      // Wait for 'please select' text is displayed
+      await driver.waitFor(find.text('Please select a plant from the list.'));
+    });
+
     test('tap on the first item (Alder), verify selected', () async {
+      // find the item by text
       SerializableFinder item = find.text('Alder');
 
       // Wait for the list item to appear.
@@ -25,13 +32,27 @@ void main() {
 
       // Wait for species name to be displayed
       await driver.waitFor(find.text('Alnus'));
+
+      // 'please select' text should not be displayed
+      await driver
+          .waitForAbsent(find.text('Please select a plant from the list.'));
     });
 
     test('scroll, tap on the last item (Zedoary), verify selected', () async {
-      SerializableFinder item = find.text('Zedoary');
+      // find the list of plants, by Key
+      final listFinder = find.byValueKey('listOfPlants');
 
-      await driver.scroll(find.byValueKey('listOfPlants'), 0, -100000,
-          const Duration(milliseconds: 500));
+      // Scroll to the last position of the list
+      // a -100,000 pixels is enough to reach the bottom of the list
+      await driver.scroll(
+        listFinder,
+        0,
+        -100000,
+        const Duration(milliseconds: 500),
+      );
+
+      // find the item by text
+      SerializableFinder item = find.text('Zedoary');
 
       // Wait for the list item to appear.
       await driver.waitFor(item);
@@ -41,6 +62,10 @@ void main() {
 
       // Wait for species name to be displayed
       await driver.waitFor(find.text('Curcuma zedoaria'));
+
+      // 'please select' text should not be displayed
+      await driver
+          .waitForAbsent(find.text('Please select a plant from the list.'));
     });
   });
 }
