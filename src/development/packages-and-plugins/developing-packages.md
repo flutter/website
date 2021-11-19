@@ -254,7 +254,7 @@ A platform package uses the same format, but includes an `implements` entry
 indicating which app-facing package it is an implementation for. For example,
 a `hello_windows` plugin containing the Windows implementation for `hello`
 would have the following `flutter:` map:
-  
+
 ```yaml
 flutter:
   plugin:
