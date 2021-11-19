@@ -6,9 +6,6 @@ void main() {
   runApp(const PlantsApp());
 }
 
-// https://raw.githubusercontent.com/dariusk/corpora/master/data/animals/birds_antarctica.json
-// or https://github.com/dariusk/corpora/blob/master/data/plants/plants.json
-
 class Plant {
   Plant(this.name, this.species);
 
