@@ -38,10 +38,6 @@ continue to work and point to a reasonable new icon.
 The new cupertino_icons 1.0.0 package also has ~1,000
 more icons to choose from.
 
-See the [Cupertino Icons 1.0.0 gallery][]
-for a list of available icons and matching
-`CupertinoIcons` names.
-
 ### Unchanged icons
 
 No SF Symbols styled alternatives exist
