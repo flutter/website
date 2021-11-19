@@ -1,29 +1,34 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const BirdsApp());
+  runApp(const PlantsApp());
 }
 
-class Bird {
-  Bird(this.family, this.members);
+// https://raw.githubusercontent.com/dariusk/corpora/master/data/animals/birds_antarctica.json
+// or https://github.com/dariusk/corpora/blob/master/data/plants/plants.json
 
-  final String family;
+class Plant {
+  Plant(this.name, this.species);
 
-  final List<String> members;
+  final String name;
+
+  final String species;
 }
 
-class BirdsApp extends StatelessWidget {
-  const BirdsApp({Key? key}) : super(key: key);
+class PlantsApp extends StatelessWidget {
+  const PlantsApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Birds of Antartica',
+      title: 'Plants by common name',
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primarySwatch: Colors.lightGreen,
       ),
-      home: const HomePage(title: 'Birds of Antartica'),
+      home: const HomePage(title: 'Plants by common name'),
     );
   }
 }
@@ -38,7 +43,31 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Bird? _selectedBird;
+  final List<Plant> _listOfPlants = [];
+  Plant? _selectedPlant;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPlants();
+  }
+
+  void _loadPlants() {
+    DefaultAssetBundle.of(context)
+        .loadString("assets/plants.json")
+        .then((data) {
+      setState(() {
+        final jsonResult = jsonDecode(data);
+        final birdsJson = jsonResult['plants'];
+        for (final birdJson in birdsJson) {
+          final name = birdJson['name'] as String;
+          final species = birdJson['species'] as String;
+          final plant = Plant(name, species);
+          _listOfPlants.add(plant);
+        }
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +77,15 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Row(
         children: [
-          const ListOfBirdsWidget(),
+          ListOfPlantsWidget(
+            plants: _listOfPlants,
+            selectedPlant: _selectedPlant,
+            onSelectPlant: (plant) {
+              setState(() {
+                _selectedPlant = plant;
+              });
+            },
+          ),
           Expanded(
             child: Container(
               decoration: const BoxDecoration(
@@ -58,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              child: DetailBird(bird: _selectedBird),
+              child: DetailPlant(plant: _selectedPlant),
             ),
           ),
         ],
@@ -67,37 +104,102 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class ListOfBirdsWidget extends StatefulWidget {
-  const ListOfBirdsWidget({Key? key}) : super(key: key);
+class ListOfPlantsWidget extends StatefulWidget {
+  const ListOfPlantsWidget({
+    Key? key,
+    required this.plants,
+    required this.onSelectPlant,
+    this.selectedPlant,
+  }) : super(key: key);
+
+  final List<Plant> plants;
+  final Plant? selectedPlant;
+  final Function(Plant selected) onSelectPlant;
 
   @override
-  _ListOfBirdsWidgetState createState() => _ListOfBirdsWidgetState();
+  _ListOfPlantsWidgetState createState() => _ListOfPlantsWidgetState();
 }
 
-class _ListOfBirdsWidgetState extends State<ListOfBirdsWidget> {
+class _ListOfPlantsWidgetState extends State<ListOfPlantsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
+    return SizedBox(
+      width: 300,
+      child: ListView.builder(
+        itemCount: widget.plants.length,
+        itemBuilder: (context, index) {
+          var plant = widget.plants[index];
+          return ListTile(
+            key: Key(plant.name),
+            title: Text(plant.name),
+            tileColor: widget.selectedPlant?.name == plant.name
+                ? Colors.black12
+                : Colors.white,
+            onTap: () {
+              widget.onSelectPlant(plant);
+            },
+          );
+        },
+      ),
     );
   }
 }
 
-class DetailBird extends StatelessWidget {
-  const DetailBird({
+class DetailPlant extends StatelessWidget {
+  const DetailPlant({
     Key? key,
-    this.bird,
+    this.plant,
   }) : super(key: key);
 
-  final Bird? bird;
+  final Plant? plant;
 
   @override
   Widget build(BuildContext context) {
-    if (bird == null) {
+    if (plant == null) {
       return const Center(
-        child: Text('Please select a bird from the list.'),
+        child: Text('Please select a plant from the list.'),
       );
     }
-    return Container();
+    const textStyleLabel = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 20,
+    );
+    const textStyleText = TextStyle(
+      fontSize: 20,
+    );
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              const Text(
+                'Name:',
+                style: textStyleLabel,
+              ),
+              const SizedBox(width: 16),
+              Text(
+                plant!.name,
+                style: textStyleText,
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              const Text(
+                'Species:',
+                style: textStyleLabel,
+              ),
+              const SizedBox(width: 16),
+              Text(
+                plant!.species,
+                style: textStyleText,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
