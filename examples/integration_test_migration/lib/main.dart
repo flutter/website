@@ -123,6 +123,7 @@ class _ListOfPlantsWidgetState extends State<ListOfPlantsWidget> {
     return SizedBox(
       width: 300,
       child: ListView.builder(
+        key: const Key('listOfPlants'),
         itemCount: widget.plants.length,
         itemBuilder: (context, index) {
           var plant = widget.plants[index];
