@@ -117,8 +117,7 @@ All your `CupertinoIcons` should automatically
 update to the new aesthetic (except for the
 [unchanged icons](#unchanged-icons) listed above).
 
-At this point, you can also explore [`CupertinoIcons`][]
-or the [Cupertino Icons 1.0.0 gallery][]
+At this point, you can also explore [`CupertinoIcons`][] 
 for new icons to use in your application.
 
 You're encouraged to verify your application after
@@ -134,4 +133,3 @@ In stable release: 1.22
 
 [0.1.3 icons]: https://raw.githubusercontent.com/flutter/cupertino_icons/master/map.png
 [`CupertinoIcons`]: {{site.api}}/flutter/cupertino/CupertinoIcons-class.html
-[Cupertino Icons 1.0.0 gallery]: https://flutter.github.io/cupertino_icons/
