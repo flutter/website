@@ -159,4 +159,4 @@ flutter test test/widget_test.dart
 [`WidgetTester`]: {{site.api}}/flutter/flutter_test/WidgetTester-class.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [`scrollUntilVisible()`]: {{site.api}}/flutter/flutter_test/WidgetController/scrollUntilVisible.html
-[Work with long lists]: /cookbook/lists/long-lists
+[Work with long lists]: {{site.url}}/cookbook/lists/long-lists

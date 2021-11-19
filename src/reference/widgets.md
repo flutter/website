@@ -13,7 +13,7 @@ Flutter. You can also [browse widgets by category][catalog].
 You might also want to check out our Widget of the Week video series
 on the [Flutter YouTube channel]({{site.social.youtube}}). Each short
 episode features a different Flutter widget. For more video series, see
-our [videos](/resources/videos) page.
+our [videos]({{site.url}}/resources/videos) page.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/b_sQ9bMltGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Widget of the Week playlist]({{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
@@ -34,4 +34,4 @@ our [videos](/resources/videos) page.
 {% endfor %}
 </div>
 
-[catalog]: /development/ui/widgets
+[catalog]: {{site.url}}/development/ui/widgets

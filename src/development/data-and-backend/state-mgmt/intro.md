@@ -25,4 +25,4 @@ and many questions to think about.
 In the following pages,
 you will learn the basics of dealing with state in Flutter apps.
 
-[list of different approaches]: /development/data-and-backend/state-mgmt/options
+[list of different approaches]: {{site.url}}/development/data-and-backend/state-mgmt/options

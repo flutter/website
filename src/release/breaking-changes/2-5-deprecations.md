@@ -15,7 +15,7 @@ primary source to aid in migration. A
 
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
-[quick reference sheet]: /go/deprecations-removed-after-2-5
+[quick reference sheet]: {{site.url}}/go/deprecations-removed-after-2-5
 
 ## Changes
 
@@ -82,7 +82,7 @@ const DropdownButtonFormField dropDownButtonFormField = DropdownButtonFormField(
 const DropdownButtonFormField dropdownButtonFormField = DropdownButtonFormField(autovalidateMode: AutovalidateMode.disabled);
 ```
 
-[In-depth migration guide available]: /release/breaking-changes/form-field-autovalidation-api
+[In-depth migration guide available]: {{site.url}}/release/breaking-changes/form-field-autovalidation-api
 
 **References**
 
@@ -337,8 +337,8 @@ Relevant PRs:
 * Deprecated in [#59127]({{site.repo.flutter}}/issues/59127)
 * Removed in [#90295]({{site.repo.flutter}}/issues/90295)
 
-[In-depth migration guide available]: /release/breaking-changes/bottom-navigation-title-to-label
-[BottomNavigationBarItem title]: /go/bottom-navigation-bar-title-deprecation
+[In-depth migration guide available]: {{site.url}}/release/breaking-changes/bottom-navigation-title-to-label
+[BottomNavigationBarItem title]: {{site.url}}/go/bottom-navigation-bar-title-deprecation
 [`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
 [`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
 [`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html

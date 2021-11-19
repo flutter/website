@@ -113,7 +113,7 @@ current set of pages when a new deep link is opened while the app is running.
 [Learning Flutter’s new navigation and routing system][] provides an introduction to the Router system.
 
 [Learning Flutter’s new navigation and routing system]: https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
-[switching-channels]: /development/tools/sdk/upgrading#switching-flutter-channels
+[switching-channels]: {{site.url}}/development/tools/sdk/upgrading#switching-flutter-channels
 [routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
 [Router]: {{site.api}}/flutter/widgets/Router-class.html
@@ -123,4 +123,4 @@ current set of pages when a new deep link is opened while the app is running.
 [verify-android-links]: {{site.android-dev}}/training/app-links/verify-site-associations
 [router-sample]: {{site.repo.samples}}/tree/master/navigation_and_routing
 
-[configuring the URL strategy]: /development/ui/navigation/url-strategies
+[configuring the URL strategy]: {{site.url}}/development/ui/navigation/url-strategies

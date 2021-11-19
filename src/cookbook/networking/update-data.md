@@ -397,7 +397,7 @@ class _MyAppState extends State<MyApp> {
 
 [ConnectionState]: {{site.api}}/flutter/widgets/ConnectionState-class.html
 [`didChangeDependencies()`]: {{site.api}}/flutter/widgets/State/didChangeDependencies.html
-[Fetch data]: /cookbook/networking/fetch-data
+[Fetch data]: {{site.url}}/cookbook/networking/fetch-data
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
@@ -405,8 +405,8 @@ class _MyAppState extends State<MyApp> {
 [`http.put()`]: {{site.pub-api}}/http/latest/http/put.html
 [`http` package]: {{site.pub}}/packages/http/install
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Introduction to unit testing]: /cookbook/testing/unit/introduction
+[Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
-[JSON and serialization]: /development/data-and-backend/json
-[Mock dependencies using Mockito]: /cookbook/testing/unit/mocking
+[JSON and serialization]: {{site.url}}/development/data-and-backend/json
+[Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

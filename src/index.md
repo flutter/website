@@ -94,28 +94,28 @@ You might also find these docs useful:
 
 The documentation on this site reflects the latest stable release of Flutter.
 
-[A tour of the Flutter widget framework]: /development/ui/widgets-intro
-[Adding assets and images]: /development/ui/assets-and-images
-[Adding interactivity to your Flutter app]: /development/ui/interactive
-[Android]: /get-started/flutter-for/android-devs
-[Animations]: /development/ui/animations
+[A tour of the Flutter widget framework]: {{site.url}}/development/ui/widgets-intro
+[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
+[Adding interactivity to your Flutter app]: {{site.url}}/development/ui/interactive
+[Android]: {{site.url}}/get-started/flutter-for/android-devs
+[Animations]: {{site.url}}/development/ui/animations
 [Boring Flutter Show]: {{site.youtube-site}}/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
 [Boring Flutter Show playlist]: {{site.youtube-site}}/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
-[Building layouts]: /development/ui/layout
-[FAQ]: /resources/faq
+[Building layouts]: {{site.url}}/development/ui/layout
+[FAQ]: {{site.url}}/resources/faq
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Flutter in Focus]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter in Focus series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter YouTube channel]: {{site.social.youtube}}
-[Get started]: /get-started/install
-[iOS]: /get-started/flutter-for/ios-devs
-[Navigation and routing]: /development/ui/navigation
-[React Native]: /get-started/flutter-for/react-native-devs
-[State management]: /development/data-and-backend/state-mgmt/intro
-[Understanding constraints]: /development/ui/layout/constraints
-[Using packages]: /development/packages-and-plugins/using-packages
-[videos]: /resources/videos
-[Web]: /get-started/flutter-for/web-devs
-[What's new]: /whats-new
-[Write your first Flutter app]: /get-started/codelab
-[Xamarin.Forms]: /get-started/flutter-for/xamarin-forms-devs
+[Get started]: {{site.url}}/get-started/install
+[iOS]: {{site.url}}/get-started/flutter-for/ios-devs
+[Navigation and routing]: {{site.url}}/development/ui/navigation
+[React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
+[State management]: {{site.url}}/development/data-and-backend/state-mgmt/intro
+[Understanding constraints]: {{site.url}}/development/ui/layout/constraints
+[Using packages]: {{site.url}}/development/packages-and-plugins/using-packages
+[videos]: {{site.url}}/resources/videos
+[Web]: {{site.url}}/get-started/flutter-for/web-devs
+[What's new]: {{site.url}}/whats-new
+[Write your first Flutter app]: {{site.url}}/get-started/codelab
+[Xamarin.Forms]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs

@@ -14,7 +14,7 @@ including banner (inline and overlay),
 interstitial, rewarded video, native ads,
 and adaptive banner.
 
-![Pic showing different types of ads](/assets/images/ads/GoogleMobileAdTypes.png){:width="100%"}
+![Pic showing different types of ads]({{site.url}}/assets/images/ads/GoogleMobileAdTypes.png){:width="100%"}
 
 The following video tutorial,
 [Monetizing apps with Flutter][],

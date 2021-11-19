@@ -466,7 +466,7 @@ master these skills.
 
 [built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
 [check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper
-[declarative UI programming]: /development/data-and-backend/state-mgmt/declarative
-[ephemeral and app state]: /development/data-and-backend/state-mgmt/ephemeral-vs-app
-[options page]: /development/data-and-backend/state-mgmt/options
-[widget testing]: /testing#widget-tests
+[declarative UI programming]: {{site.url}}/development/data-and-backend/state-mgmt/declarative
+[ephemeral and app state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
+[options page]: {{site.url}}/development/data-and-backend/state-mgmt/options
+[widget testing]: {{site.url}}/testing#widget-tests

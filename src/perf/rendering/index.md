@@ -43,7 +43,7 @@ Do you see noticeable jank on your mobile app, but only on
 the first run of an animation? If so, see
 [Reduce shader animation jank on mobile][].
 
-[Reduce shader animation jank on mobile]: /perf/rendering/shader
+[Reduce shader animation jank on mobile]: {{site.url}}/perf/rendering/shader
 
 ## Web-only advice
 
@@ -57,9 +57,9 @@ app on the web:
 
 
 [Building performant Flutter widgets]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
-[Flutter's build modes]: /testing/build-modes
-[Flutter performance profiling]: /perf/rendering/ui-performance
+[Flutter's build modes]: {{site.url}}/testing/build-modes
+[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
 [images]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
-[Performance best practices]: /perf/rendering/best-practices
+[Performance best practices]: {{site.url}}/perf/rendering/best-practices
 [shaking]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
-[Show performance data]: /development/tools/android-studio#show-performance-data
+[Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data

@@ -231,6 +231,6 @@ class _MyHomePageState extends State<MyHomePage> {
 </noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
-[Gestures]: /cookbook#gestures
+[Gestures]: {{site.url}}/cookbook#gestures
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html

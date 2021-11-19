@@ -6,4 +6,4 @@ builds for the web. To add web support to an existing app, follow
 the instructions on [Building a web application with Flutter][] 
 when you've completed the setup above.
 
-[Building a web application with Flutter]: /get-started/web
+[Building a web application with Flutter]: {{site.url}}/get-started/web

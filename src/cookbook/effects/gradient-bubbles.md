@@ -21,7 +21,7 @@ gradient backgrounds for the chat bubbles.
 
 The following animation shows the app's behavior:
 
-![Scrolling the gradient chat bubbles](/assets/images/docs/cookbook/effects/GradientBubbles.gif){:.site-mobile-screenshot}
+![Scrolling the gradient chat bubbles]({{site.url}}/assets/images/docs/cookbook/effects/GradientBubbles.gif){:.site-mobile-screenshot}
 
 ## Understand the challenge
 

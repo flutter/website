@@ -206,7 +206,7 @@ void main() {
 
 [chrome://tracing]: chrome://tracing
 [`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
-[Scrolling]: /cookbook/testing/widget/scrolling
+[Scrolling]: {{site.url}}/cookbook/testing/widget/scrolling
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
 [`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html

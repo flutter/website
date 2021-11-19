@@ -247,10 +247,10 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Custom Fonts Demo](/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
+![Custom Fonts Demo]({{site.url}}/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
 
 
-[Export fonts from a package]: /cookbook/design/package-fonts
+[Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
 [`fontStyle`]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
 [`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
@@ -259,4 +259,4 @@ class MyHomePage extends StatelessWidget {
 [Google Fonts]: https://fonts.google.com
 [google_fonts]: {{site.pub-pkg}}/google_fonts
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
-[Using Themes to share colors and font styles]: /cookbook/design/themes
+[Using Themes to share colors and font styles]: {{site.url}}/cookbook/design/themes

@@ -84,7 +84,7 @@ You can also ask questions on the [Flutter dev mailing list][flutter-dev].
 Aside from subscribing to receive announcements,
 we'd love to hear from you!
 
-[Flutter SDK releases]: /development/tools/sdk/releases
+[Flutter SDK releases]: {{site.url}}/development/tools/sdk/releases
 [release channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [flutter-dev]: {{site.groups}}/forum/#!forum/flutter-dev

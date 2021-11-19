@@ -46,7 +46,7 @@ iOS 14][], a permission dialog box must now be accepted for
 each application in order to enable Flutter debugging
 functionalities such as hot-reload and DevTools.
 
-![Screenshot of "allow network connections" dialog](/assets/images/docs/development/device-connect.png)
+![Screenshot of "allow network connections" dialog]({{site.url}}/assets/images/docs/development/device-connect.png)
 
 This affects debug and profile builds only and won't
 appear in release builds. The permission can also be allowed
@@ -58,7 +58,7 @@ to re-enable flutter attach for debug builds on physical
 devices on iOS 14.
 
 [local network permissions in iOS 14]: {{site.apple-dev}}/news/?id=0oi77447
-[add-to-app project setup guide]: /development/add-to-app/ios/project-setup#local-network-privacy-permissions
+[add-to-app project setup guide]: {{site.url}}/development/add-to-app/ios/project-setup#local-network-privacy-permissions
 
 ## Launching debug Flutter without a host computer
 

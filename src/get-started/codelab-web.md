@@ -598,7 +598,7 @@ Go to this URL in a Chrome browser. You should see the DevTools
 launch screen. It should look like the following:
 
 {% indent %}
-  ![Screenshot of the DevTools launch screen](/assets/images/docs/get-started/devtools-launch-screen.png){:width="100%"}
+  ![Screenshot of the DevTools launch screen]({{site.url}}/assets/images/docs/get-started/devtools-launch-screen.png){:width="100%"}
 {% endindent %}
 </li>
 
@@ -609,7 +609,7 @@ and click Connect. You should now see Dart DevTools
 running successfully in your Chrome browser:
 
 {% indent %}
-  ![Screenshot of DevTools running screen](/assets/images/docs/get-started/devtools-running.png){:width="100%"}
+  ![Screenshot of DevTools running screen]({{site.url}}/assets/images/docs/get-started/devtools-running.png){:width="100%"}
 {% endindent %}
 
 Congratulations, you are now running Dart DevTools!
@@ -623,7 +623,7 @@ Congratulations, you are now running Dart DevTools!
   **Flutter Inspector** -> **More Actions** -> **Open DevTools**:
 
   {% indent %}
-  ![Screenshot of Flutter inspector with DevTools menu](/assets/images/docs/get-started/intellij-devtools.png){:width="100%"}
+  ![Screenshot of Flutter inspector with DevTools menu]({{site.url}}/assets/images/docs/get-started/intellij-devtools.png){:width="100%"}
   {% endindent %}
 {{site.alert.end}}
 
@@ -637,7 +637,7 @@ Select `signin/main.dart` to display your Dart code
 in the center pane.
 
 {% indent %}
-  ![Screenshot of the DevTools debugger](/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
+  ![Screenshot of the DevTools debugger]({{site.url}}/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
 {% endindent %}
 </li>
 
@@ -1026,28 +1026,28 @@ Dart DevTools, or Flutter animations, see the following:
 * [Web samples][]
 
 
-[Android Studio and IntelliJ]: /development/tools/devtools/android-studio
-[Animation docs]: /development/ui/animations
-[Building a form with validation]: /cookbook/forms/validation
-[Building a web application with Flutter]: /get-started/web
+[Android Studio and IntelliJ]: {{site.url}}/development/tools/devtools/android-studio
+[Animation docs]: {{site.url}}/development/ui/animations
+[Building a form with validation]: {{site.url}}/cookbook/forms/validation
+[Building a web application with Flutter]: {{site.url}}/get-started/web
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
-[create a new Flutter project]: /get-started/test-drive
-[Dart DevTools]: /development/tools/devtools/overview
+[create a new Flutter project]: {{site.url}}/get-started/test-drive
+[Dart DevTools]: {{site.url}}/development/tools/devtools/overview
 [DartPad]: {{site.dartpad}}
-[DevTools command line]: /development/tools/devtools/cli
-[DevTools documentation]: /development/tools/devtools
-[DevTools installed]: /development/tools/devtools/overview#how-do-i-install-devtools
+[DevTools command line]: {{site.url}}/development/tools/devtools/cli
+[DevTools documentation]: {{site.url}}/development/tools/devtools
+[DevTools installed]: {{site.url}}/development/tools/devtools/overview#how-do-i-install-devtools
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
-[editor]: /get-started/editor
+[editor]: {{site.url}}/get-started/editor
 [Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
-[Flutter cookbook]: /cookbook
-[Flutter SDK]: /get-started/install
-[Implicit animations]: /codelabs/implicit-animations
-[Introduction to declarative UI]: /get-started/flutter-for/declarative
+[Flutter cookbook]: {{site.url}}/cookbook
+[Flutter SDK]: {{site.url}}/get-started/install
+[Implicit animations]: {{site.url}}/codelabs/implicit-animations
+[Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
 [Material Design]: {{site.material}}/design/introduction/#
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
-[VS Code]: /development/tools/devtools/vscode
+[VS Code]: {{site.url}}/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/master/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
-[writing your first Flutter app on mobile]: /get-started/codelab
+[writing your first Flutter app on mobile]: {{site.url}}/get-started/codelab

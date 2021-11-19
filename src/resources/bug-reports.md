@@ -78,7 +78,7 @@ Follow these steps only if your issue is related to the
   If attached to the issue, the output from this command
   might aid in diagnosing the problem.
 * Attach the results of the command to the GitHub issue.
-![flutter verbose](/assets/images/docs/verbose_flag.png){:width="100%"}
+![flutter verbose]({{site.url}}/assets/images/docs/verbose_flag.png){:width="100%"}
 
 ## Provide the most recent logs
 
@@ -90,7 +90,7 @@ Follow these steps only if your issue is related to the
 * If you are getting exceptions thrown by the framework,
   include all the output between and including the dashed
   lines of the first such exception.
-![flutter logs](/assets/images/docs/logs.png){:width="100%"}
+![flutter logs]({{site.url}}/assets/images/docs/logs.png){:width="100%"}
 
 ## Provide the crash report
 
@@ -100,7 +100,7 @@ Follow these steps only if your issue is related to the
   a crash report is generated in `~/Library/Logs/CrashReporter/MobileDevice`.
 * Find the report corresponding to the crash (usually the latest)
   and attach it to the GitHub issue.
-![crash report](/assets/images/docs/crash_reports.png){:width="100%"}
+![crash report]({{site.url}}/assets/images/docs/crash_reports.png){:width="100%"}
 
 
 [DartPad]: {{site.dartpad}}

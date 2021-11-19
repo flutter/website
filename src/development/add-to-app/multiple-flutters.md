@@ -103,11 +103,11 @@ on both Android and iOS on [GitHub][].
 [GitHub]: {{site.repo.samples}}/tree/master/add_to_app/multiple_flutters
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
-[performance characteristics]: /development/add-to-app/performance
-[docs.flutter.dev/go/multiple-flutters]: /go/multiple-flutters
+[performance characteristics]: {{site.url}}/development/add-to-app/performance
+[docs.flutter.dev/go/multiple-flutters]: {{site.url}}/go/multiple-flutters
 [Issue 72009]: {{site.repo.flutter}}/issues/72009
 [Pigeon]: {{site.pub}}/packages/pigeon
-[platform channels]: /development/platform-integration/platform-channels
-[platform views]: /development/platform-integration/platform-views
+[platform channels]: {{site.url}}/development/platform-integration/platform-channels
+[platform views]: {{site.url}}/development/platform-integration/platform-views
 [Android API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/engine/FlutterEngineGroup.java
 [iOS API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/darwin/ios/framework/Headers/FlutterEngineGroup.h

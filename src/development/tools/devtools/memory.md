@@ -87,7 +87,7 @@ corresponds to the timestamp (x-axis) of measured quantities (y-axis)
 of the heap, for example, usage, capacity, external, garbage
 collection, and resident set size.
 
-![Screenshot of a memory anatomy page](/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
+![Screenshot of a memory anatomy page]({{site.url}}/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
 
 ### Events Pane
 
@@ -95,7 +95,7 @@ The event timeline displays Dart VM and DevTools events
 on a shared timeline. These events can be snapshots (manual and auto),
 Dart VM GCs, user requested GCs, or monitor and accumulator reset actions.
 
-![Screenshot of DevTools events](/assets/images/docs/tools/devtools/memory_eventtimeline.png)
+![Screenshot of DevTools events]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline.png)
 
 This chart displays DevTools events (such as manual GC, VM GC,
 Snapshot, monitor Allocations **Track** and **Reset** of accumulators button
@@ -104,18 +104,18 @@ markers in the Event timeline displays a hover card of the time when
 the event occurred. This may help identify when a memory leak might have
 occurred in the timeline (x-axis).
 
-![Screenshot of the event timeline legend](/assets/images/docs/tools/devtools/memory_eventtimeline_legend.png)
+![Screenshot of the event timeline legend]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_legend.png)
 
 This legend shows the symbol for each DevTools event and its meaning
 
 <dl markdown="1">
 <dt markdown="1">**Snapshot**</dt>
-![User Snapshot](/assets/images/docs/tools/devtools/memory_eventtimeline_snapshot.png){:width="17px"}
+![User Snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_snapshot.png){:width="17px"}
 <dd markdown="1">User initiated snapshot&mdash;all memory
                 information collected and an analysis performed.
 </dd>
 <dt markdown="1">**Auto-Snapshot**</dt>
-![Auto Snapshot](/assets/images/docs/tools/devtools/memory_eventtimeline_auto_snapshot.png){:width="18px"}
+![Auto Snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_auto_snapshot.png){:width="18px"}
 <dd markdown="1">DevTools initiated a snapshot detecting
                  that memory grow by 40% or more from previous
                  size.  This is used to quickly detect memory
@@ -124,25 +124,25 @@ This legend shows the symbol for each DevTools event and its meaning
                  snapshot).
 </dd>
 <dt markdown="1">**Track**</dt>
-![Monitor](/assets/images/docs/tools/devtools/memory_eventtimeline_monitor.png){:width="17px"}
+![Monitor]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_monitor.png){:width="17px"}
 <dd markdown="1">Collects current state of all active classes
                  number of instances and byte size of all instances.
                  In addition, the deltas are the change in the
                  accumulators since the last "Reset" button pressed.
 </dd>
 <dt markdown="1">**Reset**</dt>
-![Reset](/assets/images/docs/tools/devtools/memory_eventtimeline_reset_monitor.png){:width="18px"}
+![Reset]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_reset_monitor.png){:width="18px"}
 <dd markdown="1">When both the instance and bytes accumulators
                  were reset to zero.
 </dd>
 <dt markdown="1">**User Initiated GC**</dt>
-![GC](/assets/images/docs/tools/devtools/memory_eventtimeline_gc.png){:width="18px"}
+![GC]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_gc.png){:width="18px"}
 <dd markdown="1">User initiated request to VM to to perform a
                  garbage collection of memory (only a suggestion
                  to the VM).
 </dd>
 <dt markdown="1">**VM GC**</dt>
-![VM GC](/assets/images/docs/tools/devtools/memory_eventtimeline_vmgc.png){:width="11px"}
+![VM GC]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_vmgc.png){:width="11px"}
 <dd markdown="1">GC (VM garbage collection) has occurred, frees
                  space no longer used. For more information on
                  how Dart performs garbage collection, see
@@ -152,11 +152,11 @@ This legend shows the symbol for each DevTools event and its meaning
 <dd>Displayed as a triangle in the event pane.  The dark magenta
     triangle "Multiple Flutter or User Events"
 </dd>
-![Aggregate Events](/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
+![Aggregate Events]({{site.url}}/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
 <dd>identifies more than one event was received at this timestamp.
     The lighter magenta triangle "One Flutter or User Event" 
 </dd>
-![Single Events](/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
+![Single Events]({{site.url}}/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
 <dd>indicates only one event was received at this timestamp. To
     view the events clicking on the triangle will display a hover
     card and expanding the events at the bottom of the hovercard
@@ -218,11 +218,11 @@ hover card with the details of all events e.g., two custom events at
 the timestamp 04:36:21 with the event name 'MyFirstApp' and the two
 eventData entries method and param are displayed with their values: 
 
-![Hover Card Custom Events](/assets/images/docs/tools/devtools/memory_hover_events.png)
+![Hover Card Custom Events]({{site.url}}/assets/images/docs/tools/devtools/memory_hover_events.png)
 
 Scrolling the events displays:
 
-![Custom Events Details](/assets/images/docs/tools/devtools/memory_events_detail.png)
+![Custom Events Details]({{site.url}}/assets/images/docs/tools/devtools/memory_events_detail.png)
 
 ## Memory overview chart
 
@@ -240,7 +240,7 @@ the state of the memory as the application is running.
 Clicking on the Legend button describes the collected measurements
 and symbols/colors used to display the data.
 
-![Screenshot of a memory anatomy page](/assets/images/docs/tools/devtools/memory_chart_anatomy.png)
+![Screenshot of a memory anatomy page]({{site.url}}/assets/images/docs/tools/devtools/memory_chart_anatomy.png)
 
 The **Memory Size Scale** Y axis scale automatically adjusts to the
 range of data collected in the current visible chart range.
@@ -284,7 +284,7 @@ Clicking in a chart will display a vertical yellow line where the click
 occurred on the X-Axis (Timestamp), a hover card will be displayed with
 the information collected:
 
-![Screenshot of the basic memory chart](/assets/images/docs/tools/devtools/memory_basic_chart.png)
+![Screenshot of the basic memory chart]({{site.url}}/assets/images/docs/tools/devtools/memory_basic_chart.png)
 
 **Memory Events** Memory Events recorded in the Event Pane e.g., VM GC,
 User Initiated GC, User Initiated Snapshot, Auto-Snapshot,
@@ -307,17 +307,17 @@ triangle is displayed with the aggregate list of events. The aggregate
 vents collects all the events nearest a particular timestamp (tick)
 and displays the events to the X-Axis closest tick. Expanding the events
 will display the values for each event:
-![Aggregate Events](/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
+![Aggregate Events]({{site.url}}/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
 
 If only one event is collected, a lighter magenta triangle color is
 displayed with the single event values:
-![Single Events](/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
+![Single Events]({{site.url}}/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
 
 If the Android memory chart is displayed then the Android collect data
 will displayed between the "Dart / Flutter Memory" and the "Flutter and
 User Events" e.g.,
 
-![Hovercard of Android chart is visible](/assets/images/docs/tools/devtools/memory_android_hovercard.png)
+![Hovercard of Android chart is visible]({{site.url}}/assets/images/docs/tools/devtools/memory_android_hovercard.png)
 
 ### Android chart
 
@@ -350,7 +350,7 @@ Graphics stack, System size and total).
 Clicking on a timestamp (x-position) will display all data points
 collected for that time period.
 
-![Screenshot of Android Memory Chart](/assets/images/docs/tools/devtools/memory_android.png)
+![Screenshot of Android Memory Chart]({{site.url}}/assets/images/docs/tools/devtools/memory_android.png)
 
 The hover card will display the values of all collected Android memory data.
 
@@ -408,7 +408,7 @@ the CPU—not dedicated GPU memory.
 At the top of the memory page, above the charts, are several buttons and
 dropdowns that control how memory data is displayed.
 
-![Screenshot of a memory controls](/assets/images/docs/tools/devtools/memory_controls.png){:width="100%"}
+![Screenshot of a memory controls]({{site.url}}/assets/images/docs/tools/devtools/memory_controls.png){:width="100%"}
 
 <dl markdown="1">
 <dt markdown="1">**Pause**</dt>
@@ -448,7 +448,7 @@ Below the memory charts (Event Timeline, Memory Overview and Android Overview
 charts) are interactive actions used to collect and analyze information about
 memory usage while using the application DevTools is connected to there are two tabs:
 
-![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_two_tabs.png)
+![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_two_tabs.png)
 
 ### Analysis tab
 
@@ -460,7 +460,7 @@ Each snapshot is analyzed and an analysis is created too.
 
 The actions available for Analysis are:
 
-![Screenshot of a memory actions](/assets/images/docs/tools/devtools/memory_analysis_actions.png)
+![Screenshot of a memory actions]({{site.url}}/assets/images/docs/tools/devtools/memory_analysis_actions.png)
 
 **Snapshot** Clicking the Snapshot button makes a request to the
 Dart VM to collect the current state of memory.  The
@@ -482,7 +482,7 @@ instance or by class name.
 
 All Analyses and Snapshots are displayed in a Table Tree View:
 
-![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_table_tree_view.png)
+![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_table_tree_view.png)
 
 The snapshots are grouped by library and within library by class and
 each class will display the list of known instances for that class.
@@ -494,16 +494,16 @@ expanding the class will display all live instances (objects). Clicking on
 an instance, of a class, will bring up the memory inspector to the right-side
 of the table tree.
 
-![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_navigate_inspect.png)
+![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_navigate_inspect.png)
 
 ## Snapshots
 
-![The Snapshot button](/assets/images/docs/tools/devtools/memory_snapshot.png)
+![The Snapshot button]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot.png)
 
 Clicking the **Snapshot** button shows the current state of the heap with regard
 to all active classes and their instances. 
 
-![Screenshot of the Snapshot classes](/assets/images/docs/tools/devtools/memory_snapshot_tree.png)
+![Screenshot of the Snapshot classes]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot_tree.png)
 
 This pane shows classes allocated in the heap, all instances for a class,
 and the ability to inspect a particular instance.
@@ -560,7 +560,7 @@ Expanding a class displays the active instances for that class.
 Clicking on an particular instance displays the type and value of
 the fields for that instance.
 
-![Screenshot of the inspecting an instance](/assets/images/docs/tools/devtools/memory_inspector.png)
+![Screenshot of the inspecting an instance]({{site.url}}/assets/images/docs/tools/devtools/memory_inspector.png)
 
 ## Analysis of a snapshot
 
@@ -568,7 +568,7 @@ Every snapshot creates a corresponding Analyzed entry under the
 Analysis node (the Analyzed date/time corresponds to the matching
 Snapshot date/time).
 
-![Screenshot of a Snapshot Analysis](/assets/images/docs/tools/devtools/memory_analysis.png)
+![Screenshot of a Snapshot Analysis]({{site.url}}/assets/images/docs/tools/devtools/memory_analysis.png)
 
 Currently, Analysis looks for common problems with images e.g.,
 loading large files instead of scaled thumbnails, not using a
@@ -603,7 +603,7 @@ tracking should be used sparingly.
 
 ### Allocation actions
 
-![Screenshot of a memory actions](/assets/images/docs/tools/devtools/memory_allocations_actions.png)
+![Screenshot of a memory actions]({{site.url}}/assets/images/docs/tools/devtools/memory_allocations_actions.png)
 
 <dl markdown="1">
 <dt markdown="1">**Track**</dt>
@@ -636,7 +636,7 @@ tracking should be used sparingly.
 Allocations are displayed in a table view of each class available to
 the connected application:
 
-![Two Tabs Memory Actions](/assets/images/docs/tools/devtools/memory_allocations_overview.png)
+![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_allocations_overview.png)
 
 Each row displays the class name the number of instances and bytes
 allocated with deltas (accumulators since last reset).
@@ -676,7 +676,7 @@ For more information see [Allocation Tracking](#allocation-tracking).
 
 ### Managing the objects and statistics in the heap (Monitor Allocations)
 
-![The Monitor Allocations button](/assets/images/docs/tools/devtools/memory_monitor_allocations.png)
+![The Monitor Allocations button]({{site.url}}/assets/images/docs/tools/devtools/memory_monitor_allocations.png)
 
 Clicking the allocation **Track** button monitors the total
 number of instances and total number of bytes allocated for a class.
@@ -685,7 +685,7 @@ allocated these accumulators can be reset, to zero, by user action
 (pressing the Reset Accumulators button).  The mechanism is useful
 to find memory leaks.
 
-![Reset Accumulators button](/assets/images/docs/tools/devtools/memory_reset.png)
+![Reset Accumulators button]({{site.url}}/assets/images/docs/tools/devtools/memory_reset.png)
 
 When the **Reset** button is pressed, the accumulators for all classes
 resets to zero. When reset is occurs a "monitor reset" event to the
@@ -718,7 +718,7 @@ for all instances of a class, a stack trace can be recorded when a
 class's constructor is called to help narrow where allocations might
 be astray. To do this enable the Track checkbox for a class e.g.,
 
-![Enable Stack Trace Tracking](/assets/images/docs/tools/devtools/memory_enable_stacktrace.png)
+![Enable Stack Trace Tracking]({{site.url}}/assets/images/docs/tools/devtools/memory_enable_stacktrace.png)
 
 Interact with your application then when you want to view the
 instances allocation press the "Track" button again. This will
@@ -726,12 +726,12 @@ update the count for the instances being tracked e.g., 118 in the
 below figure. Expanding the instances tracked will display all the
 instances and timestamp when each instance was created e.g.,
 
-![Class Tracking](/assets/images/docs/tools/devtools/memory_tracking.png)
+![Class Tracking]({{site.url}}/assets/images/docs/tools/devtools/memory_tracking.png)
 
 Selecting an instance will display the call stack at the time the
 class's constructor (allocated) was called e.g.,
 
-![Call Stack](/assets/images/docs/tools/devtools/memory_tracking_callstack.png)
+![Call Stack]({{site.url}}/assets/images/docs/tools/devtools/memory_tracking_callstack.png)
 
 ## Filtering, Searching and Auto-Complete
 
@@ -757,16 +757,16 @@ Pressing a keystroke when auto-complete is visible:
 </dd>
 </dl>
 
-![Searching](/assets/images/docs/tools/devtools/memory_search_1.png)
+![Searching]({{site.url}}/assets/images/docs/tools/devtools/memory_search_1.png)
 
 Typing more characters would narrow down the possible class names e.g., typing
 **Obje** displays:
 
-![Narrower Search](/assets/images/docs/tools/devtools/memory_search_2.png)
+![Narrower Search]({{site.url}}/assets/images/docs/tools/devtools/memory_search_2.png)
 
 Finally, typing **ObjectW** displays the exact match:
 
-![Narrowed Search](/assets/images/docs/tools/devtools/memory_search_3.png)
+![Narrowed Search]({{site.url}}/assets/images/docs/tools/devtools/memory_search_3.png)
 
 ### Filtering
 
@@ -774,7 +774,7 @@ Filtering is used to move libraries and classes from the main list (tables)
 to a Filter group to help reduce the number of classes visible that are
 less important while profiling memory.
 
-![Filtering](/assets/images/docs/tools/devtools/memory_filtering.png)
+![Filtering]({{site.url}}/assets/images/docs/tools/devtools/memory_filtering.png)
 
 <dl markdown="1">
 <dt markdown="1">**Hide Private Classes**</dt>
@@ -798,7 +798,7 @@ less important while profiling memory.
 
 The Memory profiler has a specific settings dialog:
 
-![Settings](/assets/images/docs/tools/devtools/memory_settings.png)
+![Settings]({{site.url}}/assets/images/docs/tools/devtools/memory_settings.png)
 
 <dl markdown="1">
 <dt markdown="1">**Collect Android Memory Statistics using ADB**</dt>
@@ -874,14 +874,14 @@ understand how your application uses memory.
 </dd>
 </dl>
 
-[architecture]: /resources/architectural-overview
-[performance]: /development/tools/devtools/performance
+[architecture]: {{site.url}}/resources/architectural-overview
+[performance]: {{site.url}}/development/tools/devtools/performance
 [server]: https://dart-lang.github.io/server/server.html
 [embedder]: {{site.repo.flutter}}/wiki/Custom-Flutter-Engine-Embedders
 [vm]: https://mrale.ph/dartvm/
 [event-loop]: {{site.dart-site}}/articles/archive/event-loop
-[profile mode]: /testing/build-modes#profile
-[release mode]: /testing/build-modes#release
-[debug mode]: /testing/build-modes#debug
+[profile mode]: {{site.url}}/testing/build-modes#profile
+[release mode]: {{site.url}}/testing/build-modes#release
+[debug mode]: {{site.url}}/testing/build-modes#debug
 [Don't Fear the Garbage Collector]: {{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
 [case_study]: {{site.repo.organization}}/devtools/tree/master/case_study/memory_leaks/images_1

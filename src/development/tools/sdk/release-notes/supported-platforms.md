@@ -89,7 +89,7 @@ minimal.
 We have dropped iOS8 support. For more information,
 see [go/rfc-ios8-deprecation] for details.
 
-[go/rfc-ios8-deprecation]: /go/rfc-ios8-deprecation
+[go/rfc-ios8-deprecation]: {{site.url}}/go/rfc-ios8-deprecation
 
 ### Unsupported platforms
 

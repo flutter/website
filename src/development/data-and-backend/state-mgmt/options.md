@@ -28,7 +28,7 @@ Things to review before selecting an approach.
 
 
 [Flutter Architecture Samples]: https://fluttersamples.com/
-[Introduction to state management]: /development/data-and-backend/state-mgmt/intro
+[Introduction to state management]: {{site.url}}/development/data-and-backend/state-mgmt/intro
 [Pragmatic State Management in Flutter]: {{site.youtube-site}}/watch?v=d_m5csmrf7I
 
 ## Provider
@@ -43,7 +43,7 @@ A recommended approach.
 
 [Making sense of all those Flutter Providers]: {{site.medium}}/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd?sk=7859a73fac0ca414a0e911b0322e8589
 [Provider package]: {{site.pub-pkg}}/provider
-[Simple app state management]: /development/data-and-backend/state-mgmt/simple
+[Simple app state management]: {{site.url}}/development/data-and-backend/state-mgmt/simple
 [You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
 
 ## Riverpod
@@ -66,7 +66,7 @@ The low-level approach to use for widget-specific, ephemeral state.
 * [Adding interactivity to your Flutter app][], a Flutter tutorial
 * [Basic state management in Google Flutter][], by Agung Surya
 
-[Adding interactivity to your Flutter app]: /development/ui/interactive
+[Adding interactivity to your Flutter app]: {{site.url}}/development/ui/interactive
 [Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 
 ## InheritedWidget &amp; InheritedModel

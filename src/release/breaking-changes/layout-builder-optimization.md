@@ -291,7 +291,7 @@ Relevant issues:
 Relevant PRs:
 * [LayoutBuilder: skip calling builder when constraints are the same][6]
 
-[1]: /go/layout-builder-optimization
+[1]: {{site.url}}/go/layout-builder-optimization
 [2]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [3]: {{site.api}}/flutter/widgets/SliverLayoutBuilder-class.html
 [4]: {{site.api}}/flutter/widgets/LayoutBuilder/builder.html

@@ -58,7 +58,7 @@ The majority of these changes were made in the PRs for
 [Revise Action API][] and [Make Action.enabled be
 isEnabled(Intent intent) instead][], and are
 described in detail in [the design
-doc](/go/actions-and-shortcuts-design-revision).
+doc]({{site.url}}/go/actions-and-shortcuts-design-revision).
 
 ## Description of change
 

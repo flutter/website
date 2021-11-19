@@ -78,4 +78,4 @@ Relevant PR:
 [`CupertinoThemeData.brightness`]: {{site.api}}/flutter/cupertino/NoDefaultCupertinoThemeData/brightness.html
 [Issue 47255]: {{site.repo.flutter}}/issues/47255
 [Let material `ThemeData` dictate brightness if `cupertinoOverrideTheme.brightness` is null]: {{site.repo.flutter}}/pull/47249
-[Make `CupertinoThemeData.brightness nullable`]: /go/nullable-cupertinothemedata-brightness
+[Make `CupertinoThemeData.brightness nullable`]: {{site.url}}/go/nullable-cupertinothemedata-brightness

@@ -154,7 +154,7 @@ Relevant PR:
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.canPop`]: {{site.api}}/flutter/widgets/Navigator/canPop.html
-[Router]: /go/navigator-with-router
+[Router]: {{site.url}}/go/navigator-with-router
 [PR 44930]: {{site.repo.flutter}}/pull/44930
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`Route.install`]: {{site.api}}/flutter/widgets/Route/install.html
