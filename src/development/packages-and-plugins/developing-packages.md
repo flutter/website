@@ -13,7 +13,7 @@ description: How to write packages and plugins for Flutter.
   Eventually, the old plugin APIs will be deprecated. In the short term, you
   will see a warning when the framework detects that you are using an old-style
   plugin. For information on how to upgrade your plugin, see [Supporting the new
-  Android plugins APIs][].  
+  Android plugins APIs][].
 {{site.note.end}}
 
 ## Package introduction
@@ -174,7 +174,7 @@ In this way, the original author _endorses_ your
 implementation.
 
 For example, say you write a `foobar_windows`
-implementation for the (imaginary) `foobar` plugin. 
+implementation for the (imaginary) `foobar` plugin.
 In an endorsed plugin, the original `foobar` author
 adds your Windows implementation as a dependency
 in the pubspec for the app-facing package.
@@ -193,7 +193,7 @@ to the app's pubspec file. So, the developer
 must include both the `foobar` dependency _and_
 the `foobar_windows` dependency in order to achieve
 full functionality.
-  
+
 For more information on federated plugins,
 why they are useful, and how they are
 implemented, see the Medium article by Harry Terkelsen,
@@ -297,7 +297,7 @@ endorsed federated implementations.
 To create a plugin package, use the `--template=plugin`
 flag with `flutter create`.
 
-As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separated list to 
+As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separated list to
 specify the platforms that the plugin supports. Available platforms are: `android`, `ios`, `web`, `linux`, `macos`, and `windows`.
 If no platforms are specified, the resulting project doesn't support any platforms.
 
@@ -371,7 +371,7 @@ We recommend you edit the Android code using Android Studio.
 Then use the following steps:
 
 1. Launch Android Studio.
-1. Select **Open an existing Android Studio Project** 
+1. Select **Open an existing Android Studio Project**
    in the **Welcome to Android Studio** dialog,
    or select **File > Open** from the menu,
    and select the `hello/example/android/build.gradle` file.
@@ -427,6 +427,40 @@ $ flutter create --template=plugin --platforms=web .
 
 If this command displays a message about updating the `pubspec.yaml` file,
 follow the provided instructions.
+
+### Dart-only platform implementations
+
+Usually plugin implementations involve platform channels and a second language,
+as described above. In some cases, however, some platforms can be
+implemented entirely in Dart (for example, using [FFI][]). For a Dart-only
+platform implementation, replace the `pluginClass` in pubspec.yaml with
+a `dartPluginClass`. Here is the `hello_windows` example above modified for a
+Dart-only implementation:
+```yaml
+flutter:
+  plugin:
+    implements: hello
+    platforms:
+      windows:
+        dartPuginClass: HelloPluginWindows
+```
+
+In this version you would have no C++ Windows code, and would instead
+subclass the `hello` plugin's Dart platform interface class with a
+`HelloPluginWindows` class that includes a static `registerWith()` method.
+This method will be called during startup, and can be used to register the
+Dart implementation:
+
+```dart
+class HelloPluginWindows extends HelloPluginPlatform {
+  /// Registers this class as the default instance of [HelloPluginPlatform].
+  static void registerWith() {
+    HelloPluginPlatform.instance = HelloPluginWindows();
+  }
+```
+
+This is supported for Windows, macOS, and Linux starting in Flutter 2.5, and
+for Android and iOS starting in Flutter 2.8.
 
 ### Testing your plugin
 
@@ -672,6 +706,7 @@ PENDING
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
+[FFI]: {{site.url}}/development/platform-integration/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: {{site.url}}/get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
