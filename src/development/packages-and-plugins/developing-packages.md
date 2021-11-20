@@ -260,7 +260,7 @@ flutter:
   plugin:
     implements: hello
     platforms:
-      ios:
+      windows:
         pluginClass: HelloPlugin
 ```
 
