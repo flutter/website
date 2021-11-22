@@ -1,8 +1,11 @@
+// #docregion Imports
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:integration_test_migration/main.dart' as app;
+// #enddocregion Imports
 
 void main() {
+  // #docregion Test1
   testWidgets('do not select any item, verify please select text is displayed',
       (WidgetTester tester) async {
     app.main();
@@ -14,7 +17,9 @@ void main() {
     // Check if widget is displayed
     expect(finder, findsOneWidget);
   });
+  // #enddocregion Test1
 
+  // #docregion Test2
   testWidgets('tap on the first item (Alder), verify selected',
       (WidgetTester tester) async {
     app.main();
@@ -30,13 +35,15 @@ void main() {
     await tester.tap(item);
     await tester.pumpAndSettle();
 
-    // Wait for species name to be displayed
+    // Species name should be displayed
     expect(find.text('Alnus'), findsOneWidget);
 
     // 'please select' text should not be displayed
     expect(find.text('Please select a plant from the list.'), findsNothing);
   });
+  // #enddocregion Test2
 
+  // #docregion Test3
   testWidgets('scroll, tap on the last item (Zedoary), verify selected',
       (WidgetTester tester) async {
     app.main();
@@ -65,4 +72,5 @@ void main() {
     // 'please select' text should not be displayed
     expect(find.text('Please select a plant from the list.'), findsNothing);
   });
+  // #enddocregion Test3
 }
