@@ -1,14 +1,16 @@
 // #docregion Imports
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:integration_test_migration/main.dart' as app;
+import 'package:integration_test_migration/main.dart';
 // #enddocregion Imports
 
 void main() {
   // #docregion Test1
   testWidgets('do not select any item, verify please select text is displayed',
       (WidgetTester tester) async {
-    app.main();
+    // load the PlantsApp widget
+    await tester.pumpWidget(const PlantsApp());
+
+    // wait for data to load
     await tester.pumpAndSettle();
 
     // Find widget with 'please select'
@@ -22,7 +24,9 @@ void main() {
   // #docregion Test2
   testWidgets('tap on the first item (Alder), verify selected',
       (WidgetTester tester) async {
-    app.main();
+    await tester.pumpWidget(const PlantsApp());
+
+    // wait for data to load
     await tester.pumpAndSettle();
 
     // find the item by text
@@ -46,7 +50,9 @@ void main() {
   // #docregion Test3
   testWidgets('scroll, tap on the last item (Zedoary), verify selected',
       (WidgetTester tester) async {
-    app.main();
+    await tester.pumpWidget(const PlantsApp());
+
+    // wait for data to load
     await tester.pumpAndSettle();
 
     // find the item by text

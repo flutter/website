@@ -6,14 +6,17 @@ description: Learn how to migrate existing flutter_driver tests to integration_t
 <?code-excerpt path-base="integration_test_migration/"?>
 
 This page describes how to migrate an existing project using `flutter_driver`
-to the `integration_test` package to run integration tests. 
+to the `integration_test` package to run integration tests.
+
+Tests with `integration_test` use the same methods that are
+used in [widget testing][].
 
 For an introduction to the `integration_test` package, take a look at the
 [Integration Tests][] guide.
 
 ## Starter example project
 
-The starting project is a small example desktop application with this functionality:
+The project in this guide is a small example desktop application with this functionality:
 
 * On the left, there's a list of plants that the user can scroll, tap and select.
 * On the right, there's a details screen that displays the plant name and species.
@@ -21,15 +24,13 @@ The starting project is a small example desktop application with this functional
 plant is displayed
 * The list of plants is loaded from a local JSON file located in the assets folder.
 
-TODO: Add screenshot
-
-QUESTION: Should I show the app code here?
+<img src='/assets/images/docs/integration-test/migration-1.png' class="mw-100" alt="Starter project screenshot">
 
 You can find the full code example in the [Example Project][] folder.
 
 ## Existing tests
 
-The project contains the three tests performing the following checks:
+The project contains the three `flutter_driver` tests performing the following checks:
 
 * Verifying the initial status of the app.
 * Selecting the first item on the list of plants.
@@ -53,18 +54,8 @@ dev_dependencies:
 ```
 
 Next, in your project, create a new directory
-`integration_test/` with a new file, `<name>_test.dart`.
-
-You will have to import the file containing the `main()` method
-of your application, so you can call to this method on your
-integration tests:
-
-<?code-excerpt "integration_test/main_test.dart (Imports)"?>
-```dart
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:integration_test_migration/main.dart' as app;
-```
+`integration_test/`, create your tests files there 
+with the format: `<name>_test.dart`.
 
 ## Test migration
 
@@ -73,7 +64,7 @@ This section contains different examples on how to migrate existing
 
 ### Example: Verifying a widget is displayed
 
-In this example, when the app starts, the screen on the left displays 
+When the app starts the screen on the left displays 
 a text asking the user to select one of the plants on the list.
 
 This test verifies that the text is displayed.
@@ -94,14 +85,22 @@ test('do not select any item, verify please select text is displayed',
 
 **integration_test**
 
-In `integration_test`, you use `expect` and `findsOneWidget` like
-with widget tests.
+In `integration_test` you will have to perform two steps:
+
+First you have to load the main app widget using
+the `tester.pumpWidget` method.
+
+Then, you use `expect` with the matcher `findsOneWidget` to verify
+that the widget is displayed.
 
 <?code-excerpt "integration_test/main_test.dart (Test1)"?>
 ```dart
 testWidgets('do not select any item, verify please select text is displayed',
     (WidgetTester tester) async {
-  app.main();
+  // load the PlantsApp widget
+  await tester.pumpWidget(const PlantsApp());
+
+  // wait for data to load
   await tester.pumpAndSettle();
 
   // Find widget with 'please select'
@@ -117,7 +116,7 @@ testWidgets('do not select any item, verify please select text is displayed',
 This test performs a tap action on the first item on the list, which
 is a `ListTile` with the text "Alder".
 
-After the tap, the test waits for the details to be displayed.
+After the tap, the test waits for the details to appear.
 In this case, waits for the widget with the text "Alnus" to
 be displayed.
 
@@ -166,7 +165,9 @@ function with the `findsNothing` matcher.
 ```dart
 testWidgets('tap on the first item (Alder), verify selected',
     (WidgetTester tester) async {
-  app.main();
+  await tester.pumpWidget(const PlantsApp());
+
+  // wait for data to load
   await tester.pumpAndSettle();
 
   // find the item by text
@@ -248,7 +249,9 @@ using a given offset and will repeat the action until the item is visible.
 ```dart
 testWidgets('scroll, tap on the last item (Zedoary), verify selected',
     (WidgetTester tester) async {
-  app.main();
+  await tester.pumpWidget(const PlantsApp());
+
+  // wait for data to load
   await tester.pumpAndSettle();
 
   // find the item by text
@@ -277,4 +280,5 @@ testWidgets('scroll, tap on the last item (Zedoary), verify selected',
 ```
 
 [Integration Tests]: /testing/integration-tests
+[widget testing]: /testing#widget-tests
 [Example Project]: {{site.repo.this}}/tree/master/examples/integration_test_migration
