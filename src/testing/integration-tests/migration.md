@@ -19,14 +19,14 @@ For an introduction to the `integration_test` package, take a look at the
 The project in this guide is a small example desktop application with this
 functionality:
 
-* On the left, there's a list of plants that the user can scroll, tap and
-select.
-* On the right, there's a details screen that displays the plant name and
-species.
-* On app start, when no plant is selected, a text asking the user to select a
-plant is displayed
-* The list of plants is loaded from a local JSON file located in the assets
-folder.
+* On the left, there's a list of plants that the user can scroll,
+tap and select.
+* On the right, there's a details screen that displays the plant name
+and species.
+* On app start, when no plant is selected, a text asking the user to select
+a plant is displayed
+* The list of plants is loaded from a local JSON file located in the
+assets folder.
 
 <img src='/assets/images/docs/integration-test/migration-1.png'
 class="mw-100" 
@@ -36,8 +36,8 @@ You can find the full code example in the [Example Project][] folder.
 
 ## Existing tests
 
-The project contains the three `flutter_driver` tests performing the following
-checks:
+The project contains the three `flutter_driver` tests
+performing the following checks:
 
 * Verifying the initial status of the app.
 * Selecting the first item on the list of plants.
@@ -52,8 +52,8 @@ anymore when using `integration_test`.
 
 ## Setup
 
-To start using the `integration_test` package add the `integration_test` to your
-pubspec.yaml file if you still haven't:
+To start using the `integration_test` package add the `integration_test` to
+your pubspec.yaml file if you still haven't:
 
 ```yaml
 dev_dependencies:
@@ -79,8 +79,8 @@ This test verifies that the text is displayed.
 
 **flutter_driver**
 
-In `flutter_driver`, the test uses `waitFor` which waits until the `finder` can
-locate the widget. The test will fail if the widget can't be found.
+In `flutter_driver`, the test uses `waitFor` which waits until the `finder`
+can locate the widget. The test will fail if the widget can't be found.
 
 <?code-excerpt "test_driver/main_test.dart (Test1)"?>
 ```dart
@@ -198,8 +198,8 @@ testWidgets('tap on the first item (Alder), verify selected',
 
 ### Example: Scrolling
 
-This test is similar to the previous one, but it scrolls down and taps the last
-item instead.
+This test is similar to the previous one, but it scrolls down and taps
+the last item instead.
 
 **flutter_driver**
 
@@ -247,14 +247,14 @@ test('scroll, tap on the last item (Zedoary), verify selected', () async {
 
 With `integration_test` you can use the method `tester.scrollUntilVisible`.
 
-Instead of providing the widget to scroll, you provide the item you are looking
-for.
-In this case, the item with the text "Zedoary", which is the last item on the
-list.
+Instead of providing the widget to scroll, you provide the item you
+are looking for.
+In this case, the item with the text "Zedoary", which is the last item
+on the list.
 
-The method will look for any `Scrollable` widget and will perform the scrolling
-action using a given offset and will repeat the action until the item is
-visible.
+The method will look for any `Scrollable` widget
+and will perform the scrolling action using a given offset
+and will repeat the action until the item is visible.
 
 <?code-excerpt "integration_test/main_test.dart (Test3)"?>
 ```dart
