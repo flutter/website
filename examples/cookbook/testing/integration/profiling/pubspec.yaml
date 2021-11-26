@@ -1,0 +1,19 @@
+name: scrolling
+description: A new Flutter project.
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  path_provider: ^2.0.1
+  path: ^1.8.0
+  flutter_test:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^1.0.3
+
+flutter:
+  uses-material-design: true
