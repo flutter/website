@@ -342,6 +342,8 @@ has a stem/shaft on Android.
   </div>
 </div>
 
+The material library also provides a set of platform-adaptive icons through [`Icons.adaptive`].
+
 ## Haptic feedback
 
 The Material and Cupertino packages automatically
@@ -558,6 +560,7 @@ double tap and shows the selection toolbar.
 [overscrolls]: {{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html
 [`PageRoute.fullscreenDialog`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [platform_design code samples]: {{site.github}}/flutter/samples/tree/master/platform_design
+[`Icons.adaptive`]: {{site.api}}/flutter/material/PlatformAdaptiveIcons-class.html
 [slides and clip-reveals up]: {{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html
 [slides up and fades in]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
 [`startActivity()`]: {{site.android-dev}}/reference/android/app/Activity.html#startActivity(android.content.Intent
