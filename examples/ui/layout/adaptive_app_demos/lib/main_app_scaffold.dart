@@ -1,6 +1,6 @@
 import 'package:adaptive_app_demos/app_model.dart';
 import 'package:adaptive_app_demos/global/device_size.dart';
-import 'package:adaptive_app_demos/global/styling.dart';
+import 'package:adaptive_app_demos/global/device_type.dart';
 import 'package:adaptive_app_demos/pages/adaptive_data_table_page.dart';
 import 'package:adaptive_app_demos/pages/adaptive_grid_page.dart';
 import 'package:adaptive_app_demos/pages/adaptive_reflow_page.dart';

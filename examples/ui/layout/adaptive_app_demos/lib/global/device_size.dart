@@ -51,18 +51,12 @@ class widgetWithBreakPoints extends StatelessWidget {
     ]);
   }
 
-  Widget BackButton() {
-    return ElevatedButton(
-        onPressed: () => {DoNothingAction}, child: Icon(Icons.flutter_dash));
-  }
-
   Widget WidgetSwap(BuildContext context) {
     bool isHandset = MediaQuery.of(context).size.width < 600;
 
     // #docregion WidgetSwap
     Widget foo = Row(
       children: [
-        BackButton(),
         ...isHandset ? _getHandsetChildren() : _getNormalChildren(),
       ],
     );

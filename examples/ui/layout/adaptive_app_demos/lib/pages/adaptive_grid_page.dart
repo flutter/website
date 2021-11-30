@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:adaptive_app_demos/global/device_type.dart';
-import 'package:adaptive_app_demos/global/styling.dart';
 import 'package:adaptive_app_demos/global/targeted_actions.dart';
 import 'package:adaptive_app_demos/widgets/buttons.dart';
 import 'package:flutter/material.dart';
