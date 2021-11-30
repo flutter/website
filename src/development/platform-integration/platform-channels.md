@@ -15,8 +15,13 @@ see [using packages][].
 {{site.alert.end}}
 
 Flutter uses a flexible system that allows you to call
-platform-specific APIs whether available in Kotlin or
-Java code on Android, or in Swift or Objective-C code on iOS.
+platform-specific APIs in a language that works directly
+with those APIs:
+- Kotlin or Java code on Android
+- Swift or Objective-C code on iOS
+- C++ on Windows
+- Objective-C on macOS
+- C on Linux
 
 Flutter's builtin platform-specific API support does not rely on code
 generation, but rather on a flexible message passing style.  Alternatively, the
@@ -24,7 +29,7 @@ package [Pigeon][] can be used for [sending structured typesafe messages][] via
 code generation:
 
 * The Flutter portion of the app sends messages to its *host*,
-  the iOS or Android portion of the app, over a platform channel.
+  the non-Dart portion of the app, over a platform channel.
 
 * The *host* listens on the platform channel, and receives the message.
   It then calls into any number of platform-specific APIs&mdash;using
@@ -33,8 +38,8 @@ code generation:
 
 {{site.alert.note}}
   This guide addresses using the platform channel mechanism if you need
-  to use the platform's APIs or libraries in Java, Kotlin, Objective-C,
-  or Swift.  But you can also write platform-specific Dart code
+  to use the platform's APIs in a languaage.  But you can also write
+  platform-specific Dart code
   in your Flutter app by inspecting the [defaultTargetPlatform][] property.
   [Platform adaptations][] lists some platform-specific adaptations
   that Flutter automatically does for you in the framework.
@@ -84,21 +89,108 @@ messages happens automatically when you send and receive values.
 The following table shows how Dart values are received on the
 platform side and vice versa:
 
-| Dart                       | Java                | Kotlin      | Obj-C                                          | Swift                                   |
-| -------------------------- | ------------------- | ----------- | ---------------------------------------------- | --------------------------------------- |
-| null                       | null                | null        | nil (NSNull when nested)                       | nil                                     |
-| bool                       | java.lang.Boolean   | Boolean     | NSNumber numberWithBool:                       | NSNumber(value: Bool)                   |
-| int                        | java.lang.Integer   | Int         | NSNumber numberWithInt:                        | NSNumber(value: Int32)                  |
-| int, if 32 bits not enough | java.lang.Long      | Long        | NSNumber numberWithLong:                       | NSNumber(value: Int)                    |
-| double                     | java.lang.Double    | Double      | NSNumber numberWithDouble:                     | NSNumber(value: Double)                 |
-| String                     | java.lang.String    | String      | NSString                                       | String                                  |
-| Uint8List                  | byte[]              | ByteArray   | FlutterStandardTypedData typedDataWithBytes:   | FlutterStandardTypedData(bytes: Data)   |
-| Int32List                  | int[]               | IntArray    | FlutterStandardTypedData typedDataWithInt32:   | FlutterStandardTypedData(int32: Data)   |
-| Int64List                  | long[]              | LongArray   | FlutterStandardTypedData typedDataWithInt64:   | FlutterStandardTypedData(int64: Data)   |
-| Float32List                | float[]             | FloatArray  | FlutterStandardTypedData typedDataWithFloat32: | FlutterStandardTypedData(float32: Data) |
-| Float64List                | double[]            | DoubleArray | FlutterStandardTypedData typedDataWithFloat64: | FlutterStandardTypedData(float64: Data) |
-| List                       | java.util.ArrayList | List        | NSArray                                        | Array                                   |
-| Map                        | java.util.HashMap   | HashMap     | NSDictionary                                   | Dictionary                              |
+{% samplecode type-mappings %}
+{% sample Java %}
+| Dart                       | Java                |
+| -------------------------- | ------------------- |
+| null                       | null                |
+| bool                       | java.lang.Boolean   |
+| int                        | java.lang.Integer   |
+| int, if 32 bits not enough | java.lang.Long      |
+| double                     | java.lang.Double    |
+| String                     | java.lang.String    |
+| Uint8List                  | byte[]              |
+| Int32List                  | int[]               |
+| Int64List                  | long[]              |
+| Float32List                | float[]             |
+| Float64List                | double[]            |
+| List                       | java.util.ArrayList |
+| Map                        | java.util.HashMap   |
+
+{% sample Kotlin %}
+| Dart                       | Kotlin      |
+| -------------------------- | ----------- |
+| null                       | null        |
+| bool                       | Boolean     |
+| int                        | Int         |
+| int, if 32 bits not enough | Long        |
+| double                     | Double      |
+| String                     | String      |
+| Uint8List                  | ByteArray   |
+| Int32List                  | IntArray    |
+| Int64List                  | LongArray   |
+| Float32List                | FloatArray  |
+| Float64List                | DoubleArray |
+| List                       | List        |
+| Map                        | HashMap     |
+
+{% sample Obj-C %}
+| Dart                       | Objective-C                                    |
+| -------------------------- | ---------------------------------------------- |
+| null                       | nil (NSNull when nested)                       |
+| bool                       | NSNumber numberWithBool:                       |
+| int                        | NSNumber numberWithInt:                        |
+| int, if 32 bits not enough | NSNumber numberWithLong:                       |
+| double                     | NSNumber numberWithDouble:                     |
+| String                     | NSString                                       |
+| Uint8List                  | FlutterStandardTypedData typedDataWithBytes:   |
+| Int32List                  | FlutterStandardTypedData typedDataWithInt32:   |
+| Int64List                  | FlutterStandardTypedData typedDataWithInt64:   |
+| Float32List                | FlutterStandardTypedData typedDataWithFloat32: |
+| Float64List                | FlutterStandardTypedData typedDataWithFloat64: |
+| List                       | NSArray                                        |
+| Map                        | NSDictionary                                   |
+
+{% sample Swift %}
+| Dart                       | Swift                                   |
+| -------------------------- | --------------------------------------- |
+| null                       | nil                                     |
+| bool                       | NSNumber(value: Bool)                   |
+| int                        | NSNumber(value: Int32)                  |
+| int, if 32 bits not enough | NSNumber(value: Int)                    |
+| double                     | NSNumber(value: Double)                 |
+| String                     | String                                  |
+| Uint8List                  | FlutterStandardTypedData(bytes: Data)   |
+| Int32List                  | FlutterStandardTypedData(int32: Data)   |
+| Int64List                  | FlutterStandardTypedData(int64: Data)   |
+| Float32List                | FlutterStandardTypedData(float32: Data) |
+| Float64List                | FlutterStandardTypedData(float64: Data) |
+| List                       | Array                                   |
+| Map                        | Dictionary                              |
+
+{% sample C++ %}
+| Dart                       | C++                                                      |
+| -------------------------- | -------------------------------------------------------- |
+| null                       | EncodableValue()                                         |
+| bool                       | EncodableValue(bool)                                     |
+| int                        | EncodableValue(int32_t)                                  |
+| int, if 32 bits not enough | EncodableValue(int64_t)                                  |
+| double                     | EncodableValue(double)                                   |
+| String                     | EncodableValue(std::string)                              |
+| Uint8List                  | EncodableValue(std::vector<uint8_t>)                     |
+| Int32List                  | EncodableValue(std::vector<int32_t>)                     |
+| Int64List                  | EncodableValue(std::vector<int64_t>)                     |
+| Float32List                | EncodableValue(std::vector<float>)                       |
+| Float64List                | EncodableValue(std::vector<double>)                      |
+| List                       | EncodableValue(std::vector<EncodableValue>)              |
+| Map                        | EncodableValue(std::map<EncodableValue, EncodableValue>) |
+
+{% sample C %}
+| Dart                       | C (GObject)               |
+| -------------------------- | ------------------------- |
+| null                       | FlValue()                 |
+| bool                       | FlValue(bool)             |
+| int                        | FlValue(int62_t)          |
+| double                     | FlValue(double)           |
+| String                     | FlValue(gchar*)           |
+| Uint8List                  | FlValue(uint8_t*)         |
+| Int32List                  | FlValue(int32_t*)         |
+| Int64List                  | FlValue(int64_t*)         |
+| Float32List                | FlValue(float*)           |
+| Float64List                | FlValue(double*)          |
+| List                       | FlValue(FlValue)          |
+| Map                        | FlValue(FlValue, FlValue) |
+{% endsamplecode %}
 
 ## Example: Calling platform-specific iOS and Android code using platform channels {#example}
 
