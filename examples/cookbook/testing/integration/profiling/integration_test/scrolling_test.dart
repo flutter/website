@@ -35,8 +35,8 @@ void main() {
     });
     // #enddocregion traceAction
 
+    // #docregion Timeline
     final timeline = driver.Timeline.fromJson(binding.reportData?['timeline']);
-    print(timeline);
 
     // Convert the Timeline into a TimelineSummary that's easier to
     // read and understand.
@@ -51,6 +51,7 @@ void main() {
       pretty: true,
       includeSummary: true,
     );
+    // #enddocregion Timeline
   });
 }
 // #enddocregion ScrollWidgetTest

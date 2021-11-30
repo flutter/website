@@ -48,13 +48,13 @@ verify that everything works as expected.
 
 Next, record the performance of the app as it scrolls through the
 list. Perform this task using the [`traceAction()`][]
-method provided by the [`FlutterDriver`][] class.
+method provided by the [`IntegrationTestWidgetsFlutterBinding`][] class.
 
 This method runs the provided function and records a [`Timeline`][]
 with detailed information about the performance of the app. This example
 provides a function that scrolls through the list of items,
 ensuring that a specific item is displayed. When the function completes,
-the `traceAction()` method returns a `Timeline`.
+the `traceAction()` creates a report data `Map` that contains the `Timeline`.
 
 <?code-excerpt "integration_test/scrolling_test.dart (traceAction)"?>
 ```dart
@@ -88,21 +88,25 @@ to review the results:
      This file can be opened with the Chrome browser's
      tracing tools found at [chrome://tracing][].
 
-<!-- TODO: should we use TimelineSummary here? -->
+<!-- TODO: this TimelineSummary only exists in flutter_driver, explain that -->
 
-<!-- skip -->
+<?code-excerpt "integration_test/scrolling_test.dart (Timeline)"?>
 ```dart
-// Convert the Timeline into a TimelineSummary that's easier to read and
-// understand.
-final summary = new TimelineSummary.summarize(timeline);
+final timeline = driver.Timeline.fromJson(binding.reportData?['timeline']);
 
-// Then, save the summary to disk.
-await summary.writeSummaryToFile('scrolling_summary', pretty: true);
+// Convert the Timeline into a TimelineSummary that's easier to
+// read and understand.
+final summary = driver.TimelineSummary.summarize(timeline);
 
-// Optionally, write the entire timeline to disk in a json format. This
-// file can be opened in the Chrome browser's tracing tools found by
-// navigating to chrome://tracing.
-await summary.writeTimelineToFile('scrolling_timeline', pretty: true);
+// Then, write the entire timeline to disk in a json format.
+// This file can be opened in the Chrome browser's tracing tools
+// found by navigating to chrome://tracing.
+// Optionally, save the summary to disk by setting includeSummary to true
+await summary.writeTimelineToFile(
+  'scrolling_timeline',
+  pretty: true,
+  includeSummary: true,
+);
 ```
 
 ### 4. Run the test
@@ -166,6 +170,7 @@ the project contains two files:
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_driver/flutter_driver.dart' as driver;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
@@ -196,27 +201,28 @@ void main() {
       expect(itemFinder, findsOneWidget);
     });
 
-    final timeline = binding.reportData?['timeline'];
-    print(timeline);
+    final timeline = driver.Timeline.fromJson(binding.reportData?['timeline']);
 
-    // // Convert the Timeline into a TimelineSummary that's easier to
-    // // read and understand.
-    // final summary = TimelineSummary.summarize(timeline);
+    // Convert the Timeline into a TimelineSummary that's easier to
+    // read and understand.
+    final summary = driver.TimelineSummary.summarize(timeline);
 
-    // // Then, save the summary to disk.
-    // await summary.writeSummaryToFile('scrolling_summary', pretty: true);
-
-    // // Optionally, write the entire timeline to disk in a json format.
-    // // This file can be opened in the Chrome browser's tracing tools
-    // // found by navigating to chrome://tracing.
-    // await summary.writeTimelineToFile('scrolling_timeline', pretty: true);
+    // Then, write the entire timeline to disk in a json format.
+    // This file can be opened in the Chrome browser's tracing tools
+    // found by navigating to chrome://tracing.
+    // Optionally, save the summary to disk by setting includeSummary to true
+    await summary.writeTimelineToFile(
+      'scrolling_timeline',
+      pretty: true,
+      includeSummary: true,
+    );
   });
 }
 ```
 
 
 [chrome://tracing]: chrome://tracing
-[`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
+[`IntegrationTestWidgetsFlutterBinding`]: {{site.api}}/flutter/package-integration_test_integration_test/IntegrationTestWidgetsFlutterBinding-class.html
 [Scrolling]: {{site.url}}/cookbook/testing/widget/scrolling
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
