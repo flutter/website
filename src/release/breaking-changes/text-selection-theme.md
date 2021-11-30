@@ -117,8 +117,8 @@ API documentation:
 Relevant PRs:
 * [PR 62014: TextSelectionTheme support][]
 
-[Material Theme Updates]: /go/material-theme-system-updates
+[Material Theme Updates]: {{site.url}}/go/material-theme-system-updates
 [PR 62014: TextSelectionTheme support]: {{site.repo.flutter}}/pull/62014
-[Text Selection Theme]: /go/text-selection-theme
+[Text Selection Theme]: {{site.url}}/go/text-selection-theme
 [`TextSelectionThemeData`]: {{site.api}}/flutter/material/TextSelectionThemeData-class.html
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html

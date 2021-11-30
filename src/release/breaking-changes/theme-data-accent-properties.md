@@ -178,12 +178,12 @@ Other:
 [`colorScheme.secondary`]: {{site.api}}/flutter/material/ColorScheme/secondary.html
 [`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
 [Issue #56918]: {{site.repo.flutter}}/issues/56918
-[FloatingActionButton and ThemeData's accent properties]: /release/breaking-changes/fab-theme-data-accent-properties
+[FloatingActionButton and ThemeData's accent properties]: {{site.url}}/release/breaking-changes/fab-theme-data-accent-properties
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [`FloatingActionButtonTheme`]: {{site.api}}/flutter/material/FloatingActionButtonTheme-class.html
 [`FloatingActionButtonThemeData`]: {{site.api}}/flutter/material/FloatingActionButtonThemeData-class.html
 [Material Design spec]: {{site.material}}/design/color
-[Material Theme System Updates]: /go/material-theme-system-updates
+[Material Theme System Updates]: {{site.url}}/go/material-theme-system-updates
 [secondary color]: {{site.api}}/flutter/material/ColorScheme/secondary.html
 [onSecondary color]: {{site.api}}/flutter/material/ColorScheme/onSecondary.html
 [PR #81336]: {{site.repo.flutter}}/pull/81336

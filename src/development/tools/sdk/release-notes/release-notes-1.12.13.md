@@ -398,7 +398,7 @@ In this release, we’ve merged a list of changes to support Android 10, includi
 
 ## Add to App feature
 
-We’ve made a significant upgrade to Add-to-App, the feature that allows you to integrate a Flutter module into your Android or iOS app. Can’t wait to try it? Check out the [Add-to-App documentation](/development/add-to-app). 
+We’ve made a significant upgrade to Add-to-App, the feature that allows you to integrate a Flutter module into your Android or iOS app. Can’t wait to try it? Check out the [Add-to-App documentation]({{site.url}}/development/add-to-app). 
 
 [41666](https://github.com/flutter/flutter/pull/41666) Generate projects using the new Android embedding
 
@@ -2972,7 +2972,7 @@ In addition to the PRs listed below, please also check out the following release
 
 ## Full PR List
 
- See the [full list](/development/tools/sdk/release-notes/changelogs/changelog-1.12.13) of merged PRs for the 1.12 release.
+ See the [full list]({{site.url}}/development/tools/sdk/release-notes/changelogs/changelog-1.12.13) of merged PRs for the 1.12 release.
 
 
 [breaking change policy on the Flutter wiki]: {{site.github}}/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes

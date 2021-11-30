@@ -13,7 +13,7 @@ description: How to write packages and plugins for Flutter.
   Eventually, the old plugin APIs will be deprecated. In the short term, you
   will see a warning when the framework detects that you are using an old-style
   plugin. For information on how to upgrade your plugin, see [Supporting the new
-  Android plugins APIs][].  
+  Android plugins APIs][].
 {{site.note.end}}
 
 ## Package introduction
@@ -174,7 +174,7 @@ In this way, the original author _endorses_ your
 implementation.
 
 For example, say you write a `foobar_windows`
-implementation for the (imaginary) `foobar` plugin. 
+implementation for the (imaginary) `foobar` plugin.
 In an endorsed plugin, the original `foobar` author
 adds your Windows implementation as a dependency
 in the pubspec for the app-facing package.
@@ -193,7 +193,7 @@ to the app's pubspec file. So, the developer
 must include both the `foobar` dependency _and_
 the `foobar_windows` dependency in order to achieve
 full functionality.
-  
+
 For more information on federated plugins,
 why they are useful, and how they are
 implemented, see the Medium article by Harry Terkelsen,
@@ -248,12 +248,56 @@ environment:
   flutter: ">=1.12.0"
 ```
 
+#### Federated platform packages
+
+A platform package uses the same format, but includes an `implements` entry
+indicating which app-facing package it is an implementation for. For example,
+a `hello_windows` plugin containing the Windows implementation for `hello`
+would have the following `flutter:` map:
+
+```yaml
+flutter:
+  plugin:
+    implements: hello
+    platforms:
+      windows:
+        pluginClass: HelloPlugin
+```
+
+#### Endorsed implementations
+
+An app facing package can endorse a platform package by adding a
+dependency on it, and including it as a `default_package` in the
+`platforms:` map. If the `hello` plugin above endorsed `hello_windows`,
+it would look like this:
+
+
+```yaml
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.hello
+        pluginClass: HelloPlugin
+      ios:
+        pluginClass: HelloPlugin
+      windows:
+        default_package: hello_windows
+
+dependencies:
+  hello_windows: ^1.0.0
+```
+
+Note that as shown here, an app-facing package can have
+some platforms implementated within the package, and others in
+endorsed federated implementations.
+
 ### Step 1: Create the package
 
 To create a plugin package, use the `--template=plugin`
 flag with `flutter create`.
 
-As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separated list to 
+As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separated list to
 specify the platforms that the plugin supports. Available platforms are: `android`, `ios`, `web`, `linux`, `macos`, and `windows`.
 If no platforms are specified, the resulting project doesn't support any platforms.
 
@@ -327,7 +371,7 @@ We recommend you edit the Android code using Android Studio.
 Then use the following steps:
 
 1. Launch Android Studio.
-1. Select **Open an existing Android Studio Project** 
+1. Select **Open an existing Android Studio Project**
    in the **Welcome to Android Studio** dialog,
    or select **File > Open** from the menu,
    and select the `hello/example/android/build.gradle` file.
@@ -383,6 +427,40 @@ $ flutter create --template=plugin --platforms=web .
 
 If this command displays a message about updating the `pubspec.yaml` file,
 follow the provided instructions.
+
+### Dart-only platform implementations
+
+Usually plugin implementations involve platform channels and a second language,
+as described above. In some cases, however, some platforms can be
+implemented entirely in Dart (for example, using [FFI][]). For a Dart-only
+platform implementation, replace the `pluginClass` in pubspec.yaml with
+a `dartPluginClass`. Here is the `hello_windows` example above modified for a
+Dart-only implementation:
+```yaml
+flutter:
+  plugin:
+    implements: hello
+    platforms:
+      windows:
+        dartPluginClass: HelloPluginWindows
+```
+
+In this version you would have no C++ Windows code, and would instead
+subclass the `hello` plugin's Dart platform interface class with a
+`HelloPluginWindows` class that includes a static `registerWith()` method.
+This method will be called during startup, and can be used to register the
+Dart implementation:
+
+```dart
+class HelloPluginWindows extends HelloPluginPlatform {
+  /// Registers this class as the default instance of [HelloPluginPlatform].
+  static void registerWith() {
+    HelloPluginPlatform.instance = HelloPluginWindows();
+  }
+```
+
+This is supported for Windows, macOS, and Linux starting in Flutter 2.5, and
+for Android and iOS starting in Flutter 2.8.
 
 ### Testing your plugin
 
@@ -628,24 +706,25 @@ PENDING
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
+[FFI]: {{site.url}}/development/platform-integration/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
-[Flutter editor]: /get-started/editor
+[Flutter editor]: {{site.url}}/get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
-[Flutter Favorites program]: /development/packages-and-plugins/favorites
+[Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
 [How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
-[platform channel]: /development/platform-integration/platform-channels
+[platform channel]: {{site.url}}/development/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
-[Supporting the new Android plugins APIs]: /development/packages-and-plugins/plugin-api-migration
+[Supporting the new Android plugins APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[Testing your plugin]: /development/packages-and-plugins/plugin-api-migration#testing-your-plugin
-[unit tests]: /testing#unit-tests
+[Testing your plugin]: {{site.url}}/development/packages-and-plugins/plugin-api-migration#testing-your-plugin
+[unit tests]: {{site.url}}/testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

@@ -28,7 +28,7 @@ the images within each card slide down.
 
 The following animation shows the app's behavior: 
 
-![Parallax scrolling](/assets/images/docs/cookbook/effects/ParallaxScrolling.gif){:.site-mobile-screenshot}
+![Parallax scrolling]({{site.url}}/assets/images/docs/cookbook/effects/ParallaxScrolling.gif){:.site-mobile-screenshot}
 
 ## Create a list to hold the parallax items
 

@@ -5,7 +5,7 @@ title: Flutter Brand Guidelines
 The "Flutter" name and logo are trademarks owned by Google.
 These Brand Guidelines describe the appropriate uses of the Flutter
 trademarks by members of the developer community who have obtained our
-consent to use the trademarks pursuant to the [Flutter Terms of Service](/tos).
+consent to use the trademarks pursuant to the [Flutter Terms of Service]({{site.url}}/tos).
 These guidelines will ensure that the Flutter trademarks are used in a
 manner that promotes Google's mission to provide a free and open source
 SDK for crafting high-quality native interfaces on iOS and

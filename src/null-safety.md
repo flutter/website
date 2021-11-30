@@ -82,7 +82,7 @@ We're currently aware of the following issues:
     which might take longer to be migrated.
 
   * Integration testing with
-    [`flutter_driver`](/cookbook/testing/integration/introduction) and 
+    [`flutter_driver`]({{site.url}}/cookbook/testing/integration/introduction) and 
     the version of `integration_test` in the Flutter SDK.
     
       * Currently, these methods do not support null safety on the host

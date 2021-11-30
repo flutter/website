@@ -124,11 +124,11 @@ PWA support remains a work in progress,
 so please [give us feedback][] if you see something that doesn’t look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
-[Displaying images on the web]: /development/platform-integration/web-images
+[Displaying images on the web]: {{site.url}}/development/platform-integration/web-images
 [Firebase Hosting]: {{site.firebase}}/docs/hosting
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/smb/web-hosting/
 [`iframe`]: https://html.com/tags/iframe/
-[Web renderers]: /development/tools/web-renderers
+[Web renderers]: {{site.url}}/development/tools/web-renderers
 

@@ -374,5 +374,5 @@ a non-UI configuration.
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`PluginRegistry.Registrar.activity()`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--
 [`ServiceAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/service/ServiceAware.html
-[Upgrading pre 1.12 Android projects]: /go/android-project-migration
+[Upgrading pre 1.12 Android projects]: {{site.url}}/go/android-project-migration
 [verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers

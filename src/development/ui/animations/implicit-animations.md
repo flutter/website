@@ -71,9 +71,9 @@ implicitly animated widgets:
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/2W7POjFb88g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-[`AnimatedContainer` sample]: /cookbook/animation/animated-container
+[`AnimatedContainer` sample]: {{site.url}}/cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[Flutter cookbook]: /cookbook
-[Implicit animations codelab]: /codelabs/implicit-animations
+[Flutter cookbook]: {{site.url}}/cookbook
+[Implicit animations codelab]: {{site.url}}/codelabs/implicit-animations
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

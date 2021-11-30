@@ -20,5 +20,5 @@ build modes. For more details, see [Flutter's build modes][].
   see [Measuring your app's size][].
 {{site.alert.end}}
 
-[Flutter's build modes]: /testing/build-modes
-[Measuring your app's size]: /perf/app-size
+[Flutter's build modes]: {{site.url}}/testing/build-modes
+[Measuring your app's size]: {{site.url}}/perf/app-size

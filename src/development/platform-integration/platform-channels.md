@@ -46,7 +46,7 @@ Messages are passed between the client (UI)
 and host (platform) using platform
 channels as illustrated in this diagram:
 
-![Platform channels architecture](/assets/images/docs/PlatformChannels.png){:width="100%"}
+![Platform channels architecture]({{site.url}}/assets/images/docs/PlatformChannels.png){:width="100%"}
 
 Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.
@@ -786,8 +786,8 @@ DispatchQueue.main.async {
 [`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [defaultTargetPlatform]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
-[developing packages]: /development/packages-and-plugins/developing-packages
-[plugins]: /development/packages-and-plugins/developing-packages#plugin
+[developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
+[plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
 [`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel
 [`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel_swift
@@ -796,15 +796,15 @@ DispatchQueue.main.async {
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
 [`MethodChanneliOS`]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
-[Platform adaptations]: /resources/platform-adaptations
-[publishing packages]: /development/packages-and-plugins/developing-packages#publish
+[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[publishing packages]: {{site.url}}/development/packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions
 [section on threading]: #channels-and-platform-threading
 [`StandardMessageCodec`]: {{site.api}}/flutter/services/StandardMessageCodec-class.html
 [`StringCodec`]: {{site.api}}/flutter/services/StringCodec-class.html
 [the main thread]: {{site.apple-dev}}/documentation/uikit?language=objc
 [the UI thread]: {{site.android-dev}}/guide/components/processes-and-threads#Threads
-[using packages]: /development/packages-and-plugins/using-packages
+[using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 [Pigeon]: {{site.pub-pkg}}/pigeon
 [Pigeon pub.dev page]: {{site.pub-pkg}}/pigeon
 [sending structured typesafe messages]: #pigeon

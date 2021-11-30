@@ -208,4 +208,4 @@ class MyAppState extends State<MyApp> {
 
 
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
-[Working with long lists]: /cookbook/lists/long-lists
+[Working with long lists]: {{site.url}}/cookbook/lists/long-lists

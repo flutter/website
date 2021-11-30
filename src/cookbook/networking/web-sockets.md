@@ -200,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-![Web sockets demo](/assets/images/docs/cookbook/web-sockets.gif){:.site-mobile-screenshot}
+![Web sockets demo]({{site.url}}/assets/images/docs/cookbook/web-sockets.gif){:.site-mobile-screenshot}
 
 
 [`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html

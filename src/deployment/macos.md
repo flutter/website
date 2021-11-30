@@ -112,7 +112,7 @@ In the **Signing & Capabilities** section:
 The **General** tab of your project settings should resemble
 the following:
 
-![Xcode Project Settings](/assets/images/docs/releaseguide/macos_xcode_settings.png){:width="100%"}
+![Xcode Project Settings]({{site.url}}/assets/images/docs/releaseguide/macos_xcode_settings.png){:width="100%"}
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
@@ -482,5 +482,5 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_macos]: https://help.apple.com/xcode/mac/current/#/dev295cc0fae
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[obfuscating your Dart code]: /deployment/obfuscate
+[obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
 [TestFlight]: {{site.apple-dev}}/testflight/

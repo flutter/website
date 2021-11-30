@@ -3,7 +3,7 @@ title: Flutter Favorite program
 description: Guidelines for identifying a plugin or package as a Flutter Favorite.
 ---
 
-![The Flutter Favorite program logo](/assets/images/docs/development/packages-and-plugins/FlutterFavoriteLogo.png){:width="20%"}
+![The Flutter Favorite program logo]({{site.url}}/assets/images/docs/development/packages-and-plugins/FlutterFavoriteLogo.png){:width="20%"}
 
 The aim of the **Flutter Favorite** program is to identify
 packages and plugins that you should first consider when
@@ -118,5 +118,5 @@ You can see the complete list of
 [committee chair]: mailto:csells@google.com
 [Flutter Favorite packages]: {{site.pub}}/flutter/favorites
 [Overall package score]: {{site.pub}}/help
-[pubspec.yaml format]: /development/packages-and-plugins/developing-packages#plugin-platforms
+[pubspec.yaml format]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin-platforms
 [Verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers

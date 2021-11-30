@@ -18,7 +18,7 @@ filter selection carousel.
 
 The following animation shows the app's behavior:
 
-![Photo Filter Carousel](/assets/images/docs/cookbook/effects/PhotoFilterCarousel.gif){:.site-mobile-screenshot}
+![Photo Filter Carousel]({{site.url}}/assets/images/docs/cookbook/effects/PhotoFilterCarousel.gif){:.site-mobile-screenshot}
 
 This recipe begins with the photo and filters
 already in place. Filters are applied with the

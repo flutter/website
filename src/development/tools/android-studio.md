@@ -14,7 +14,7 @@ description: How to develop Flutter apps in Android Studio or other IntelliJ pro
 
 ## Installation and setup
 
-Follow the [Set up an editor](/get-started/editor?tab=androidstudio)
+Follow the [Set up an editor]({{site.url}}/get-started/editor?tab=androidstudio)
 instructions to install the Dart and Flutter plugins.
 
 ### Updating the plugins<a name="updating"/>
@@ -85,7 +85,7 @@ The Flutter plugin performs code analysis that enables the following:
 * Viewing all current source code problems
   (**View > Tool Windows > Dart Analysis**).
   Any analysis issues are shown in the Dart Analysis pane:<br>
-  ![Dart Analysis pane](/assets/images/docs/tools/android-studio/dart-analysis.png){:width="90%"}
+  ![Dart Analysis pane]({{site.url}}/assets/images/docs/tools/android-studio/dart-analysis.png){:width="90%"}
 
 ## Running and debugging
 
@@ -110,7 +110,7 @@ The Flutter plugin performs code analysis that enables the following:
 
 Running and debugging are controlled from the main toolbar:
 
-![Main IntelliJ toolbar](/assets/images/docs/tools/android-studio/main-toolbar.png){:width="90%"}
+![Main IntelliJ toolbar]({{site.url}}/assets/images/docs/tools/android-studio/main-toolbar.png){:width="90%"}
 
 ### Selecting a target
 
@@ -163,7 +163,7 @@ information, start the app in **Debug** mode, and then open
 the Performance tool window using
 **View > Tool Windows > Flutter Performance**.
 
-![Flutter performance window](/assets/images/docs/tools/android-studio/widget-rebuild-info.png){:width="90%"}
+![Flutter performance window]({{site.url}}/assets/images/docs/tools/android-studio/widget-rebuild-info.png){:width="90%"}
 
 To see the stats about which widgets are being rebuilt, and how often,
 click **Show widget rebuild information** in the **Performance** pane.
@@ -235,7 +235,7 @@ The assist can be invoked by clicking the lightbulb, or by using the
 keyboard shortcut (`Alt`+`Enter` on Linux and Windows,
 `Option`+`Return` on macOS), as illustrated here:
 
-![IntelliJ editing assists](/assets/images/docs/tools/android-studio/assists.gif){:width="100%"}
+![IntelliJ editing assists]({{site.url}}/assets/images/docs/tools/android-studio/assists.gif){:width="100%"}
 
 Quick Fixes are similar, only they are shown with a piece of code has an error
 and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -261,7 +261,7 @@ Live templates can be used to speed up entering typical code structures.
 They are invoked by typing their prefix, and then selecting it in the code
 completion window:
 
-![IntelliJ live templates](/assets/images/docs/tools/android-studio/templates.gif){:width="100%"}
+![IntelliJ live templates]({{site.url}}/assets/images/docs/tools/android-studio/templates.gif){:width="100%"}
 
 The Flutter plugin includes the following templates:
 
@@ -288,7 +288,7 @@ Keyboard mappings can be changed in the IDE Preferences/Settings: Select
 *Keymap*, then enter _flutter_ into the search box in the upper right corner.
 Right click the binding you want to change and _Add Keyboard Shortcut_.
 
-![IntelliJ settings keymap](/assets/images/docs/tools/android-studio/keymap-settings-flutter-plugin.png){:width="100%"}
+![IntelliJ settings keymap]({{site.url}}/assets/images/docs/tools/android-studio/keymap-settings-flutter-plugin.png){:width="100%"}
 
 ### Hot reload vs. hot restart
 
@@ -392,15 +392,15 @@ Prior to filing new issues:
 
 When filing new issues, include the output of [`flutter doctor`][].
 
-[DevTools]: /development/tools/devtools
+[DevTools]: {{site.url}}/development/tools/devtools
 [GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
 [JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
-[`flutter doctor`]: /resources/bug-reports#provide-some-flutter-diagnostics
-[Flutter IDE cheat sheet, MacOS version]: /resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
-[Flutter IDE cheat sheet, Windows & Linux version]: /resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf
-[Debugging Flutter apps]: /testing/debugging
+[`flutter doctor`]: {{site.url}}/resources/bug-reports#provide-some-flutter-diagnostics
+[Flutter IDE cheat sheet, MacOS version]: {{site.url}}/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
+[Flutter IDE cheat sheet, Windows & Linux version]: {{site.url}}/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf
+[Debugging Flutter apps]: {{site.url}}/testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
 [let us know]: {{site.repo.this}}/issues/new
-[Running DevTools from Android Studio]: /development/tools/devtools/android-studio
-[Timeline view]: /development/tools/devtools/performance
+[Running DevTools from Android Studio]: {{site.url}}/development/tools/devtools/android-studio
+[Timeline view]: {{site.url}}/development/tools/devtools/performance

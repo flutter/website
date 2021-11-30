@@ -19,7 +19,7 @@ In the menu, select **File > New > Target**. Once the dialog opens, select
 **watchOS** at the top and click **Watch App for iOS App**. Click **Next**, 
 enter a product name, and select **Enter**.
 
-![Adding an Apple Watch target](/assets/images/docs/AppleWatchTarget.png){:width="70%"}
+![Adding an Apple Watch target]({{site.url}}/assets/images/docs/AppleWatchTarget.png){:width="70%"}
 
 
 [Creating an iOS Bitcode enabled app]: {{site.repo.flutter}}/wiki/Creating-an-iOS-Bitcode-enabled-app-(experimental)

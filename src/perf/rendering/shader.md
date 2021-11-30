@@ -11,7 +11,7 @@ but only on the first run, you can _warm up_ the
 shader captured in the Skia Shader Language (SkSL) for a
 significant improvement.
 
-![Side-by-side screenshots of janky mobile app next to non-janky app](/assets/images/docs/perf/render/shader-jank.gif)
+![Side-by-side screenshots of janky mobile app next to non-janky app]({{site.url}}/assets/images/docs/perf/render/shader-jank.gif)
 
 ## What is shader compilation jank?
 
@@ -33,7 +33,7 @@ Definitive evidence for the presence of shader compilation jank is to see
 `GrGLProgramBuilder::finalize` in the tracing with `--trace-skia` enabled. See
 the following screenshot for an example timeline tracing.
 
-![A tracing screenshot verifying jank](/assets/images/docs/perf/render/tracing.png){:width="100%"}
+![A tracing screenshot verifying jank]({{site.url}}/assets/images/docs/perf/render/tracing.png){:width="100%"}
 
 ## What do we mean by "first run"?
 
@@ -127,7 +127,7 @@ SkSLs are generated and tested automatically over the lifetime of an app.
 
 {{site.alert.note}}
   The integration_test package is now the recommended way to write integration
-  tests. See the [Integration testing](/testing/integration-tests/) page
+  tests. See the [Integration testing]({{site.url}}/testing/integration-tests/) page
   for details.
 {{site.alert.end}}
 
@@ -149,9 +149,9 @@ difference as illustrated in the beginning of this article.
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
 [`flutter_gallery_sksl_warmup__transition_perf`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
 [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
-[integration tests]: /cookbook/testing/integration/introduction
+[integration tests]: {{site.url}}/cookbook/testing/integration/introduction
 [`transitions_perf_test.dart`]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
-[limitations and considerations]: /perf/rendering/shader#limitations-and-considerations
+[limitations and considerations]: {{site.url}}/perf/rendering/shader#limitations-and-considerations
 
 ## Frequently asked questions
 
