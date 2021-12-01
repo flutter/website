@@ -1,23 +1,19 @@
 title: Flutter
-
-url: https://flutter.dev
-
+url: https://docs.flutter.dev
+main-url: https://flutter.dev
 email: flutter-dev@googlegroups.com
 
 google_analytics_id: UA-67589403-1
 google_site_verification: HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4
 google_tag_manager_id: GTM-ND4LWWZ
 default_share_image: /assets/images/flutter-logo-sharing.png
-  
 
-branch: main
 
 github_username: flutter
+branch: main
 repo:
   organization: https://github.com/flutter
-
   this: https://github.com/flutter/website
-
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
   plugins: https://github.com/flutter/plugins
@@ -92,27 +88,27 @@ defaults:
       show_banner: true
       show_footer: true
   - scope:
-      path: 'docs'
+      path: ''
     values:
       toc: true
   - scope:
-      path: 'docs/cookbook'
+      path: 'cookbook'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'docs/development'
+      path: 'development'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'docs/development/ui/widgets'
+      path: 'development/ui/widgets'
     values:
       toc: false
   - scope:
-      path: 'docs/get-started'
+      path: 'get-started'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'docs/get-started/flutter-for'
+      path: 'get-started/flutter-for'
     values:
       show_breadcrumbs: false
 
