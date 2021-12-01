@@ -1,8 +1,5 @@
 // #docregion ScrollWidgetTest
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_driver/flutter_driver.dart' as driver;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
@@ -34,24 +31,6 @@ void main() {
       expect(itemFinder, findsOneWidget);
     });
     // #enddocregion traceAction
-
-    // #docregion Timeline
-    final timeline = driver.Timeline.fromJson(binding.reportData?['timeline']);
-
-    // Convert the Timeline into a TimelineSummary that's easier to
-    // read and understand.
-    final summary = driver.TimelineSummary.summarize(timeline);
-
-    // Then, write the entire timeline to disk in a json format.
-    // This file can be opened in the Chrome browser's tracing tools
-    // found by navigating to chrome://tracing.
-    // Optionally, save the summary to disk by setting includeSummary to true
-    await summary.writeTimelineToFile(
-      'scrolling_timeline',
-      pretty: true,
-      includeSummary: true,
-    );
-    // #enddocregion Timeline
   });
 }
 // #enddocregion ScrollWidgetTest

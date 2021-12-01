@@ -16,8 +16,8 @@ dev_dependencies:
   flutter_lints: ^1.0.3
   integration_test:
     sdk: flutter
-  flutter_driver:
-    sdk: flutter
+  # flutter_driver:
+  #   sdk: flutter
 
 flutter:
   uses-material-design: true

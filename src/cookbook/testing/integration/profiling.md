@@ -88,25 +88,37 @@ to review the results:
      This file can be opened with the Chrome browser's
      tracing tools found at [chrome://tracing][].
 
-<!-- TODO: this TimelineSummary only exists in flutter_driver, explain that -->
+To capture the results, create a file named `perf_driver.dart`
+in the `test_driver` folder and add the following code:
 
-<?code-excerpt "integration_test/scrolling_test.dart (Timeline)"?>
+<?code-excerpt "test_driver/perf_driver.dart"?>
 ```dart
-final timeline = driver.Timeline.fromJson(binding.reportData?['timeline']);
+import 'package:integration_test/integration_test_driver.dart';
+import 'package:flutter_driver/flutter_driver.dart' as driver;
 
-// Convert the Timeline into a TimelineSummary that's easier to
-// read and understand.
-final summary = driver.TimelineSummary.summarize(timeline);
+Future<void> main() {
+  return integrationDriver(
+    responseDataCallback: (data) async {
+      if (data != null) {
+        final timeline = driver.Timeline.fromJson(data['timeline']);
 
-// Then, write the entire timeline to disk in a json format.
-// This file can be opened in the Chrome browser's tracing tools
-// found by navigating to chrome://tracing.
-// Optionally, save the summary to disk by setting includeSummary to true
-await summary.writeTimelineToFile(
-  'scrolling_timeline',
-  pretty: true,
-  includeSummary: true,
-);
+        // Convert the Timeline into a TimelineSummary that's easier to
+        // read and understand.
+        final summary = driver.TimelineSummary.summarize(timeline);
+
+        // Then, write the entire timeline to disk in a json format.
+        // This file can be opened in the Chrome browser's tracing tools
+        // found by navigating to chrome://tracing.
+        // Optionally, save the summary to disk by setting includeSummary to true
+        await summary.writeTimelineToFile(
+          'scrolling_timeline',
+          pretty: true,
+          includeSummary: true,
+        );
+      }
+    },
+  );
+}
 ```
 
 ### 4. Run the test
@@ -114,15 +126,23 @@ await summary.writeTimelineToFile(
 After configuring the test to capture a performance `Timeline` and save a
 summary of the results to disk, run the test with the following command:
 
-<!-- TODO: Add the --no-dds option and explain why it is needed -->
-
 ```
-flutter drive --target=test_driver/app.dart --profile
+flutter drive \
+  --driver=test_driver/perf_driver.dart \
+  --target=integration_test/scrolling_test.dart \
+  --profile
 ```
 
 The `--profile` option means to compile the app for the "profile mode" 
 rather than the "debug mode", so that the benchmark result is closer to 
 what will be experienced by end users. 
+
+{{site.alert.note}}
+  Run the command with `--no-dds` when running on a mobile device or emulator.
+  This option disables the Dart Development Service (DDS), which won't
+  be accessible from your computer.
+{{site.alert.end}}
+
 
 ### 5. Review the results
 
@@ -167,10 +187,7 @@ the project contains two files:
 
 <?code-excerpt "integration_test/scrolling_test.dart"?>
 ```dart
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_driver/flutter_driver.dart' as driver;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
@@ -200,22 +217,6 @@ void main() {
       // Verify that the item contains the correct text.
       expect(itemFinder, findsOneWidget);
     });
-
-    final timeline = driver.Timeline.fromJson(binding.reportData?['timeline']);
-
-    // Convert the Timeline into a TimelineSummary that's easier to
-    // read and understand.
-    final summary = driver.TimelineSummary.summarize(timeline);
-
-    // Then, write the entire timeline to disk in a json format.
-    // This file can be opened in the Chrome browser's tracing tools
-    // found by navigating to chrome://tracing.
-    // Optionally, save the summary to disk by setting includeSummary to true
-    await summary.writeTimelineToFile(
-      'scrolling_timeline',
-      pretty: true,
-      includeSummary: true,
-    );
   });
 }
 ```
@@ -224,6 +225,7 @@ void main() {
 [chrome://tracing]: chrome://tracing
 [`IntegrationTestWidgetsFlutterBinding`]: {{site.api}}/flutter/package-integration_test_integration_test/IntegrationTestWidgetsFlutterBinding-class.html
 [Scrolling]: {{site.url}}/cookbook/testing/widget/scrolling
+[`flutter_driver`]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
 [`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html
