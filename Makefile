@@ -10,6 +10,8 @@ all: gen-env up down debug shell setup serve switch-channel test-channel \
 .DEFAULT_GOAL := up
 .PHONY: all
 
+FIREBASE_ALIAS ?= default
+
 
 # =================== Development Commands ==================
 
@@ -68,7 +70,7 @@ serve:
 
 # Test hosting locally with FB emulator
 emulate:
-	firebase emulators:start --only hosting
+	firebase emulators:start --only hosting --project ${FIREBASE_ALIAS}
 
 
 # =================== Testing locally from host ==================
@@ -133,7 +135,7 @@ check-links:
 
 FLUTTER_BRANCH ?= stable
 TEST_TARGET_CHANNEL ?= stable
-FIREBASE_ALIAS ?= default
+BUILD_CONFIGS ?= _config.yml
 BUILD_COMMIT := $(shell git rev-parse --short HEAD)
 BUILD_TAG = fltbuild
 BUILD_NAME = tmpbuild
@@ -164,12 +166,13 @@ debug-test:
 # those will be run on the Github action.
 # Usage: `DISABLE_TESTS=1 make build-image`
 build-image:
-	docker build --no-cache --rm --target builder \
+	docker build --rm --target builder \
 		--build-arg FIREBASE_ALIAS=${FIREBASE_ALIAS} \
 		--build-arg FIREBASE_TOKEN=${FIREBASE_TOKEN} \
 		--build-arg FLUTTER_BRANCH=${FLUTTER_BRANCH} \
 		--build-arg DISABLE_TESTS=${DISABLE_TESTS} \
-		--build-arg COMMIT=${BUILD_COMMIT} \
+		--build-arg BUILD_COMMIT=${BUILD_COMMIT} \
+		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS} \
 		--build-arg RUBY_VERSION=${RUBY_VERSION} \
 		--build-arg NODE_VERSION=${NODE_VERSION} -t ${BUILD_TAG}:${BUILD_COMMIT} .
 
@@ -205,13 +208,16 @@ else
 		--json
 endif
 
-STAGE_NAME ?= stage
+
 # All in one command to stage your build to a Firebase 
 # channel on your currently selected project
 # Usage: `make stage STAGE_NAME=foo`
+STAGE_NAME ?= docs
 stage:
-	make build
-	firebase hosting:channel:deploy ${STAGE_NAME}
+	make build BUILD_CONFIGS=_config.yml,_config_stage.yml
+	firebase hosting:channel:deploy ${STAGE_NAME} \
+		--project ${FIREBASE_ALIAS} \
+		--token ${FIREBASE_TOKEN}
 
 
 
