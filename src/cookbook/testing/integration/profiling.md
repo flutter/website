@@ -109,7 +109,8 @@ Future<void> main() {
         // Then, write the entire timeline to disk in a json format.
         // This file can be opened in the Chrome browser's tracing tools
         // found by navigating to chrome://tracing.
-        // Optionally, save the summary to disk by setting includeSummary to true
+        // Optionally, save the summary to disk by setting includeSummary
+        // to true
         await summary.writeTimelineToFile(
           'scrolling_timeline',
           pretty: true,
@@ -142,7 +143,6 @@ what will be experienced by end users.
   This option disables the Dart Development Service (DDS), which won't
   be accessible from your computer.
 {{site.alert.end}}
-
 
 ### 5. Review the results
 
@@ -185,6 +185,8 @@ the project contains two files:
 
 ### Complete example
 
+**integration_test/scrolling_test.dart**
+
 <?code-excerpt "integration_test/scrolling_test.dart"?>
 ```dart
 import 'package:flutter/material.dart';
@@ -221,11 +223,43 @@ void main() {
 }
 ```
 
+**test_driver/perf_driver.dart**
+
+<?code-excerpt "test_driver/perf_driver.dart"?>
+```dart
+import 'package:integration_test/integration_test_driver.dart';
+import 'package:flutter_driver/flutter_driver.dart' as driver;
+
+Future<void> main() {
+  return integrationDriver(
+    responseDataCallback: (data) async {
+      if (data != null) {
+        final timeline = driver.Timeline.fromJson(data['timeline']);
+
+        // Convert the Timeline into a TimelineSummary that's easier to
+        // read and understand.
+        final summary = driver.TimelineSummary.summarize(timeline);
+
+        // Then, write the entire timeline to disk in a json format.
+        // This file can be opened in the Chrome browser's tracing tools
+        // found by navigating to chrome://tracing.
+        // Optionally, save the summary to disk by setting includeSummary
+        // to true
+        await summary.writeTimelineToFile(
+          'scrolling_timeline',
+          pretty: true,
+          includeSummary: true,
+        );
+      }
+    },
+  );
+}
+```
+
 
 [chrome://tracing]: chrome://tracing
 [`IntegrationTestWidgetsFlutterBinding`]: {{site.api}}/flutter/package-integration_test_integration_test/IntegrationTestWidgetsFlutterBinding-class.html
 [Scrolling]: {{site.url}}/cookbook/testing/widget/scrolling
-[`flutter_driver`]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
 [`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html
