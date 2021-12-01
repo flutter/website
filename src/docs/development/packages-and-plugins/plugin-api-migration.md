@@ -3,6 +3,8 @@ title: Supporting the new Android plugins APIs
 description: How to update a plugin using the old APIs to support the new APIs.
 ---
 
+<?code-excerpt path-base="development/plugin_api_migration"?>
+
 {{site.alert.note}}
   You might be directed to this page if the framework detects that
   your app uses a plugin based on the old Android APIs.
@@ -250,7 +252,7 @@ but aren't required.
    This is a smoke test to ensure that the plugin properly registers
    with the new embedder. For example:
 
-    <!-- skip -->
+    <?code-excerpt "lib/test.dart (Test)"?>
     ```dart
     import 'package:flutter_test/flutter_test.dart';
     import 'package:battery/battery.dart';

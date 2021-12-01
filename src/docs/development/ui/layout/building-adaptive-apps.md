@@ -275,7 +275,6 @@ you might swap some of the children completely:
 ```dart
 Widget foo = Row(
   children: [
-    BackButton(),
     ...isHandset ? _getHandsetChildren() : _getNormalChildren(),
   ],
 );
@@ -354,9 +353,12 @@ This can be done easily with some helper classes:
 
 <?code-excerpt "lib/global/device_type.dart (Styling)"?>
 ```dart
-class InsetValues {
-  static const double xsmall = 4;
-  static const double small = 8;
+class Insets {
+  static const double xsmall = 3;
+  static const double small = 4;
+  static const double medium = 5;
+  static const double large = 10;
+  static const double extraLarge = 20;
   // etc
 }
 
@@ -365,10 +367,16 @@ class Fonts {
   // etc
 }
 
-class TextStylesValues {
+class TextStyles {
   static const TextStyle raleway = const TextStyle(
     fontFamily: Fonts.raleway,
   );
+  static TextStyle buttonText1 =
+      TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
+  static TextStyle buttonText2 =
+      TextStyle(fontWeight: FontWeight.normal, fontSize: 11);
+  static TextStyle h1 = TextStyle(fontWeight: FontWeight.bold, fontSize: 22);
+  static TextStyle h2 = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
   static late TextStyle body1 = raleway.copyWith(color: Color(0xFF42A5F5));
   // etc
 }
@@ -379,8 +387,8 @@ These constants can then be used in place of hard-coded numeric values:
 <?code-excerpt "lib/global/device_type.dart (UseConstants)"?>
 ```dart
 return Padding(
-  padding: EdgeInsets.all(InsetValues.small),
-  child: Text('Hello!', style: TextStylesValues.body1),
+  padding: EdgeInsets.all(Insets.small),
+  child: Text('Hello!', style: TextStyles.body1),
 );
 ```
 

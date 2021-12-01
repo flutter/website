@@ -3,6 +3,8 @@ title: Hot reload
 description: Speed up development using Flutter's hot reload feature.
 ---
 
+<?code-excerpt path-base="development/tools"?>
+
 Flutter's hot reload feature helps you quickly and
 easily experiment, build UIs, add features, and fix bugs.
 Hot reload works by injecting updated source code files into
@@ -122,17 +124,17 @@ changed to enumerated types.
 For example:
 
 Before the change:
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/before.dart (Enum)"?>
 ```dart
 enum Color {
   red,
   green,
-  blue
+  blue,
 }
 ```
 
 After the change:
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (Enum)"?>
 ```dart
 class Color {
   Color(this.i, this.j);
@@ -152,7 +154,7 @@ Hot reload won't work when generic type declarations
 are modified.  For example, the following won't work:
 
 Before the change:
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/before.dart (Class)"?>
 ```dart
 class A<T> {
   T? i;
@@ -160,7 +162,7 @@ class A<T> {
 ```
 
 After the change:
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (Class)"?>
 ```dart
 class A<T, V> {
   T? i;
@@ -209,25 +211,73 @@ If you change initializers of global variables and static fields,
 a full restart is necessary to see the changes.
 For example, consider the following code:
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/before.dart (SampleTable)"?>
 ```dart
 final sampleTable = [
-  Table("T1"),
-  Table("T2"),
-  Table("T3"),
-  Table("T4"),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text("T1")],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text("T2")],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text("T3")],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text("T4")],
+      )
+    ],
+  ),
 ];
 ```
 
 After running the app, you make the following change:
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (SampleTable)"?>
 ```dart
 final sampleTable = [
-  Table("T1"),
-  Table("T2"),
-  Table("T3"),
-  Table("T10"),    // modified
+  Table(
+    children: const [
+      TableRow(
+        children: [Text("T1")],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text("T2")],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text("T3")],
+      )
+    ],
+  ),
+  Table(
+    children: const [
+      TableRow(
+        children: [Text("T10")], // modified
+      )
+    ],
+  ),
 ];
 ```
 
@@ -235,7 +285,7 @@ You hot reload, but the change is not reflected.
 
 Conversely, in the following example:
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/before.dart (Const)"?>
 ```dart
 const foo = 1;
 final bar = foo;
@@ -248,9 +298,9 @@ void onClick() {
 Running the app for the first time prints `1` and `1`.
 Then, you make the following change:
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (Const)"?>
 ```dart
-const foo = 2;    // modified
+const foo = 2; // modified
 final bar = foo;
 void onClick() {
   print(foo);
@@ -268,7 +318,7 @@ The flagging mechanism is triggered for
 most of the initialization work in the above example,
 but not for cases like the following:
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/after.dart (FinalFoo)"?>
 ```dart
 final bar = foo;
 ```
@@ -278,10 +328,24 @@ consider redefining the field as `const` or using a getter to
 return the value, rather than using `final`.
 For example, either of the following solutions work:
 
-<!-- skip -->
+<?code-excerpt "lib/hot-reload/foo_const.dart (Const)"?>
 ```dart
-const bar = foo;    // Convert foo to a const...
-int get bar => foo;     // ...or provide a getter.
+const foo = 1;
+const bar = foo; // Convert foo to a const...
+void onClick() {
+  print(foo);
+  print(bar);
+}
+```
+
+<?code-excerpt "lib/hot-reload/getter.dart (Const)"?>
+```dart
+const foo = 1;
+int get bar => foo; // ...or provide a getter.
+void onClick() {
+  print(foo);
+  print(bar);
+}
 ```
 
 For more information, read about the [differences
@@ -302,6 +366,7 @@ see its effects after hot reload.
 
 For example, consider the following code:
 
+<?code-excerpt "lib/hot-reload/before.dart (Build)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -310,6 +375,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(onTap: () => print('tapped'));
   }
@@ -318,12 +386,12 @@ class MyApp extends StatelessWidget {
 
 After running this app, change the code as follows:
 
+<?code-excerpt "lib/hot-reload/after.dart (Main)"?>
 ```dart
 import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(const Center(
-      child: const Text('Hello', textDirection: TextDirection.ltr)));
+  runApp(const Center(child: Text('Hello', textDirection: TextDirection.ltr)));
 }
 ```
 

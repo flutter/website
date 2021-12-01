@@ -4,6 +4,8 @@ short-title: Platform-specific code
 description: Learn how to write custom platform-specific code in your app.
 ---
 
+<?code-excerpt path-base="development/platform_integration"?>
+
 This guide describes how to write custom platform-specific code. Some
 platform-specific functionality is available through existing packages;
 see [using packages][].
@@ -145,18 +147,17 @@ All channel names used in a single app must
 be unique; prefix the channel name with a unique 'domain
 prefix', for example: `samples.flutter.dev/battery`.
 
-<!-- skip -->
+<?code-excerpt "lib/platform_channels.dart (Import)"?>
 ```dart
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-...
+```
+<?code-excerpt "lib/platform_channels.dart (MyHomePageState)"?>
+```dart
 class _MyHomePageState extends State<MyHomePage> {
   static const platform = MethodChannel('samples.flutter.dev/battery');
-
   // Get battery level.
-}
 ```
 
 Next, invoke a method on the method channel, specifying the concrete method
@@ -168,49 +169,49 @@ platform API (such as when running in a simulator)&mdash;so wrap the
 Use the returned result to update the user interface state in `_batteryLevel`
 inside `setState`.
 
-<!-- skip -->
+<?code-excerpt "lib/platform_channels.dart (GetBattery)"?>
 ```dart
-  // Get battery level.
-  String _batteryLevel = 'Unknown battery level.';
+// Get battery level.
+String _batteryLevel = 'Unknown battery level.';
 
-  Future<void> _getBatteryLevel() async {
-    String batteryLevel;
-    try {
-      final int result = await platform.invokeMethod('getBatteryLevel');
-      batteryLevel = 'Battery level at $result % .';
-    } on PlatformException catch (e) {
-      batteryLevel = "Failed to get battery level: '${e.message}'.";
-    }
-
-    setState(() {
-      _batteryLevel = batteryLevel;
-    });
+Future<void> _getBatteryLevel() async {
+  String batteryLevel;
+  try {
+    final int result = await platform.invokeMethod('getBatteryLevel');
+    batteryLevel = 'Battery level at $result % .';
+  } on PlatformException catch (e) {
+    batteryLevel = "Failed to get battery level: '${e.message}'.";
   }
+
+  setState(() {
+    _batteryLevel = batteryLevel;
+  });
+}
 ```
 
 Finally, replace the `build` method from the template to
 contain a small user interface that displays the battery
 state in a string, and a button for refreshing the value.
 
-<!-- skip -->
+<?code-excerpt "lib/platform_channels.dart (Build)"?>
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ElevatedButton(
-              child: Text('Get Battery Level'),
-              onPressed: _getBatteryLevel,
-            ),
-            Text(_batteryLevel),
-          ],
-        ),
+@override
+Widget build(BuildContext context) {
+  return Material(
+    child: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ElevatedButton(
+            child: const Text('Get Battery Level'),
+            onPressed: _getBatteryLevel,
+          ),
+          Text(_batteryLevel),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 ```
 
 ### Step 3: Add an Android platform-specific implementation
@@ -663,33 +664,33 @@ languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
 
 **Pigeon file:**
 
-<!-- skip -->
+<?code-excerpt "lib/generated_pigeon.dart (Search)"?>
 ```dart
 import 'package:pigeon/pigeon.dart';
 
 class SearchRequest {
-  String query;
+  String query = "";
 }
 
 class SearchReply {
-  String result;
+  String result = "";
 }
 
 @HostApi()
 abstract class Api {
-  SearchReply search(SearchRequest request);
+  Future search(SearchRequest request);
 }
 ```
 
 **Dart usage:**
 
-<!-- skip -->
+<?code-excerpt "lib/use_pigeon.dart (UseApi)"?>
 ```dart
-import 'generated_pigeon.dart'
+import 'generated_pigeon.dart';
 
 void onClick() async {
   SearchRequest request = SearchRequest()..query = 'test';
-  Api api = Api();
+  Api api = SomeApi();
   SearchReply reply = await api.search(request);
   print('reply: ${reply.result}');
 }
