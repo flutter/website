@@ -103,7 +103,7 @@ that the widget is displayed.
 
 <?code-excerpt "integration_test/main_test.dart (Test1)"?>
 ```dart
-testWidgets('do not select any item, verify please select text is displayed',
+testWidgets('Verify that the please select text is displayed. when no item is selected.',
     (WidgetTester tester) async {
   // load the PlantsApp widget
   await tester.pumpWidget(const PlantsApp());
