@@ -136,7 +136,7 @@ the list." is not displayed anymore.
 In `flutter_driver`, you use the `driver.tap` method to perform
 a tap over a widget using a finder.
 
-To verify that a widget is not displayed, you use the `waitForAbsert` method.
+To verify that a widget is not displayed, you use the `waitForAbsent` method.
 
 <?code-excerpt "test_driver/main_test.dart (Test2)"?>
 ```dart
