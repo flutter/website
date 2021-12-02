@@ -25,7 +25,7 @@ void main() {
     // #docregion Test2
     test('tap on the first item (Alder), verify selected', () async {
       // find the item by text
-      SerializableFinder item = find.text('Alder');
+      final item = find.text('Alder');
 
       // Wait for the list item to appear.
       await driver.waitFor(item);
