@@ -93,7 +93,7 @@ you need the following in addition to the Flutter SDK:
   you need the "Universal Windows Platform development"
   workload installed, with the optional UWP C++ tools.
 
-[Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
+[Visual Studio 2019]: https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&rel=16
 
 ### Additional macOS requirements
 
