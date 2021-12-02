@@ -2,11 +2,11 @@
 import 'package:pigeon/pigeon.dart';
 
 class SearchRequest {
-  String query = "";
+  String query = '';
 }
 
 class SearchReply {
-  String result = "";
+  String result = '';
 }
 
 @HostApi()
