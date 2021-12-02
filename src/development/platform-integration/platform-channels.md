@@ -761,11 +761,11 @@ languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
 import 'package:pigeon/pigeon.dart';
 
 class SearchRequest {
-  String query = "";
+  String query = '';
 }
 
 class SearchReply {
-  String result = "";
+  String result = '';
 }
 
 @HostApi()
