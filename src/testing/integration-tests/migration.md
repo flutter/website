@@ -105,7 +105,7 @@ that the widget is displayed.
 ```dart
 testWidgets('Verify that the please select text is displayed. when no item is selected.',
     (WidgetTester tester) async {
-  // load the PlantsApp widget
+  // Load the PlantsApp widget.
   await tester.pumpWidget(const PlantsApp());
 
   // wait for data to load
