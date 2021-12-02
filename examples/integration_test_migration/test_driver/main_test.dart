@@ -57,7 +57,7 @@ void main() {
       );
 
       // find the item by text
-      SerializableFinder item = find.text('Zedoary');
+      final item = find.text('Zedoary');
 
       // Wait for the list item to appear.
       await driver.waitFor(item);
