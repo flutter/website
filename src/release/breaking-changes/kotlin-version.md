@@ -44,7 +44,7 @@ buildscript {
 
 ## Timeline
 
-This change will be released in v2.9.0.
+This change will be released in v2.9.0 beta.
 
 ## References
 
