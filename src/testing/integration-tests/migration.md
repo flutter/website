@@ -103,9 +103,9 @@ that the widget is displayed.
 
 <?code-excerpt "integration_test/main_test.dart (Test1)"?>
 ```dart
-testWidgets('Verify that the please select text is displayed. when no item is selected.',
+testWidgets('do not select any item, verify please select text is displayed',
     (WidgetTester tester) async {
-  // Load the PlantsApp widget.
+  // load the PlantsApp widget
   await tester.pumpWidget(const PlantsApp());
 
   // wait for data to load
@@ -142,7 +142,7 @@ To verify that a widget is not displayed, you use the `waitForAbsent` method.
 ```dart
 test('tap on the first item (Alder), verify selected', () async {
   // find the item by text
-  SerializableFinder item = find.text('Alder');
+  final item = find.text('Alder');
 
   // Wait for the list item to appear.
   await driver.waitFor(item);
@@ -226,7 +226,7 @@ test('scroll, tap on the last item (Zedoary), verify selected', () async {
   );
 
   // find the item by text
-  SerializableFinder item = find.text('Zedoary');
+  final item = find.text('Zedoary');
 
   // Wait for the list item to appear.
   await driver.waitFor(item);
