@@ -3,6 +3,8 @@ title: Using packages
 description: How to use packages in your Flutter app.
 ---
 
+<?code-excerpt path-base="development/plugin_api_migration"?>
+
 Flutter supports using shared packages contributed by other developers
 to the Flutter and Dart ecosystems. This allows quickly building
 an app without having to develop everything from scratch.
@@ -311,24 +313,29 @@ To use this package:
 
 1. Open `lib/main.dart` and replace its full contents with:
 
+    <?code-excerpt "lib/css_colors.dart (CssColors)"?>
     ```dart
     import 'package:css_colors/css_colors.dart';
     import 'package:flutter/material.dart';
 
     void main() {
-      runApp(MyApp());
+      runApp(const MyApp());
     }
 
     class MyApp extends StatelessWidget {
+      const MyApp({Key? key}) : super(key: key);
+
       @override
       Widget build(BuildContext context) {
-        return MaterialApp(
+        return const MaterialApp(
           home: DemoPage(),
         );
       }
     }
 
     class DemoPage extends StatelessWidget {
+      const DemoPage({Key? key}) : super(key: key);
+
       @override
       Widget build(BuildContext context) {
         return Scaffold(body: Container(color: CSSColors.orange));
@@ -368,24 +375,29 @@ To use this plugin:
 1. Open `lib/main.dart` and replace its full contents with the
    following:
 
+    <?code-excerpt "lib/url_launcher.dart (UrlLauncher)"?>
     ```dart
     import 'package:flutter/material.dart';
     import 'package:url_launcher/url_launcher.dart';
 
     void main() {
-      runApp(MyApp());
+      runApp(const MyApp());
     }
 
     class MyApp extends StatelessWidget {
+      const MyApp({Key? key}) : super(key: key);
+
       @override
       Widget build(BuildContext context) {
-        return MaterialApp(
+        return const MaterialApp(
           home: DemoPage(),
         );
       }
     }
 
     class DemoPage extends StatelessWidget {
+      const DemoPage({Key? key}) : super(key: key);
+
       launchURL() {
         launch('https://flutter.dev');
       }
@@ -396,7 +408,7 @@ To use this plugin:
           body: Center(
             child: ElevatedButton(
               onPressed: launchURL,
-              child: Text('Show Flutter homepage'),
+              child: const Text('Show Flutter homepage'),
             ),
           ),
         );

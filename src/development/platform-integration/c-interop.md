@@ -3,6 +3,8 @@ title: "Binding to native code using dart:ffi"
 description: "To use C code in your Flutter program, use the dart:ffi library (currently in beta)."
 ---
 
+<?code-excerpt path-base="development/platform_integration"?>
+
 Flutter mobile can use the [dart:ffi][] library
 to call native C APIs. _FFI_ stands for
 [_foreign function interface._][FFI]
@@ -159,12 +161,13 @@ Dart binding code is not important.
 First, you must create a `DynamicLibrary` handle to
 the native code. This step varies between iOS and Android:
 
+<?code-excerpt "lib/c_interop.dart (DynamicLibrary)"?>
 ```dart
 import 'dart:ffi'; // For FFI
 import 'dart:io'; // For Platform.isX
 
 final DynamicLibrary nativeAddLib = Platform.isAndroid
-    ? DynamicLibrary.open("libnative_add.so")
+    ? DynamicLibrary.open('libnative_add.so')
     : DynamicLibrary.process();
 ```
 
@@ -175,11 +178,10 @@ but on iOS it takes the plugin's name.
 With a handle to the enclosing library,
 you can resolve the `native_add` symbol:
 
-<!-- skip -->
+<?code-excerpt "lib/c_interop.dart (NativeAdd)"?>
 ```dart
-final int Function(int x, int y) nativeAdd =
-  nativeAddLib
-    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>("native_add")
+final int Function(int x, int y) nativeAdd = nativeAddLib
+    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>('native_add')
     .asFunction();
 ```
 
