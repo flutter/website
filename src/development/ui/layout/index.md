@@ -624,7 +624,7 @@ final [!leftColumn!] = Container(
 );
 ```
 
-The left column is placed in a `Container` to constrain its width.
+The left column is placed in a `SizedBox` to constrain its width.
 Finally, the UI is constructed with the entire row (containing the
 left column and the image) inside a `Card`.
 
