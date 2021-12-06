@@ -4,6 +4,8 @@ description: How to use images (and other assets) in your Flutter app.
 short-title: Assets and images
 ---
 
+<?code-excerpt path-base="ui/assets_and_images/lib"?>
+
 Flutter apps can include both code and _assets_
 (sometimes called resources). An asset is a file
 that is bundled and deployed with your app,
@@ -149,8 +151,8 @@ to an `AssetBundle` is not available,
 you can use `rootBundle` to directly load such assets.
 For example:
 
+<?code-excerpt "main.dart (RootBundle)"?>
 ```dart
-import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 
 Future<String> loadAsset() async {
@@ -223,10 +225,9 @@ class in a widget's `build()` method.
 For example, your app can load the background
 image from the asset declarations above:
 
+<?code-excerpt "main.dart (BackgroundImage)"?>
 ```dart
-Widget build(BuildContext context) {
-  return Image(image: AssetImage('graphics/background.png'));
-}
+return const Image(image: AssetImage('graphics/background.png'));
 ```
 
 Anything using the default asset bundle inherits resolution
@@ -256,9 +257,9 @@ called `my_icons`, which has the following directory structure:
 
 To load the image, use:
 
-<!-- skip -->
+<?code-excerpt "main.dart (PackageImage)"?>
 ```dart
-AssetImage('icons/heart.png', package: 'my_icons')
+return const AssetImage('icons/heart.png', package: 'my_icons');
 ```
 
 Assets used by the package itself should also be fetched

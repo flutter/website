@@ -12,8 +12,10 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Required Kotlin version][]
 * [Deprecated API removed after v2.5][]
 
+[Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 
 ### Released in Flutter 2.5

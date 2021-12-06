@@ -4,6 +4,8 @@ short-title: Platform-specific code
 description: Learn how to write custom platform-specific code in your app.
 ---
 
+<?code-excerpt path-base="development/platform_integration"?>
+
 This guide describes how to write custom platform-specific code. Some
 platform-specific functionality is available through existing packages;
 see [using packages][].
@@ -15,8 +17,13 @@ see [using packages][].
 {{site.alert.end}}
 
 Flutter uses a flexible system that allows you to call
-platform-specific APIs whether available in Kotlin or
-Java code on Android, or in Swift or Objective-C code on iOS.
+platform-specific APIs in a language that works directly
+with those APIs:
+- Kotlin or Java on Android
+- Swift or Objective-C on iOS
+- C++ on Windows
+- Objective-C on macOS
+- C on Linux
 
 Flutter's builtin platform-specific API support does not rely on code
 generation, but rather on a flexible message passing style.  Alternatively, the
@@ -24,7 +31,7 @@ package [Pigeon][] can be used for [sending structured typesafe messages][] via
 code generation:
 
 * The Flutter portion of the app sends messages to its *host*,
-  the iOS or Android portion of the app, over a platform channel.
+  the non-Dart portion of the app, over a platform channel.
 
 * The *host* listens on the platform channel, and receives the message.
   It then calls into any number of platform-specific APIs&mdash;using
@@ -33,8 +40,8 @@ code generation:
 
 {{site.alert.note}}
   This guide addresses using the platform channel mechanism if you need
-  to use the platform's APIs or libraries in Java, Kotlin, Objective-C,
-  or Swift.  But you can also write platform-specific Dart code
+  to use the platform's APIs in a non-Dart languaage.  But you can also write
+  platform-specific Dart code
   in your Flutter app by inspecting the [defaultTargetPlatform][] property.
   [Platform adaptations][] lists some platform-specific adaptations
   that Flutter automatically does for you in the framework.
@@ -84,21 +91,108 @@ messages happens automatically when you send and receive values.
 The following table shows how Dart values are received on the
 platform side and vice versa:
 
-| Dart                       | Java                | Kotlin      | Obj-C                                          | Swift                                   |
-| -------------------------- | ------------------- | ----------- | ---------------------------------------------- | --------------------------------------- |
-| null                       | null                | null        | nil (NSNull when nested)                       | nil                                     |
-| bool                       | java.lang.Boolean   | Boolean     | NSNumber numberWithBool:                       | NSNumber(value: Bool)                   |
-| int                        | java.lang.Integer   | Int         | NSNumber numberWithInt:                        | NSNumber(value: Int32)                  |
-| int, if 32 bits not enough | java.lang.Long      | Long        | NSNumber numberWithLong:                       | NSNumber(value: Int)                    |
-| double                     | java.lang.Double    | Double      | NSNumber numberWithDouble:                     | NSNumber(value: Double)                 |
-| String                     | java.lang.String    | String      | NSString                                       | String                                  |
-| Uint8List                  | byte[]              | ByteArray   | FlutterStandardTypedData typedDataWithBytes:   | FlutterStandardTypedData(bytes: Data)   |
-| Int32List                  | int[]               | IntArray    | FlutterStandardTypedData typedDataWithInt32:   | FlutterStandardTypedData(int32: Data)   |
-| Int64List                  | long[]              | LongArray   | FlutterStandardTypedData typedDataWithInt64:   | FlutterStandardTypedData(int64: Data)   |
-| Float32List                | float[]             | FloatArray  | FlutterStandardTypedData typedDataWithFloat32: | FlutterStandardTypedData(float32: Data) |
-| Float64List                | double[]            | DoubleArray | FlutterStandardTypedData typedDataWithFloat64: | FlutterStandardTypedData(float64: Data) |
-| List                       | java.util.ArrayList | List        | NSArray                                        | Array                                   |
-| Map                        | java.util.HashMap   | HashMap     | NSDictionary                                   | Dictionary                              |
+{% samplecode type-mappings %}
+{% sample Java %}
+| Dart                       | Java                |
+| -------------------------- | ------------------- |
+| null                       | null                |
+| bool                       | java.lang.Boolean   |
+| int                        | java.lang.Integer   |
+| int, if 32 bits not enough | java.lang.Long      |
+| double                     | java.lang.Double    |
+| String                     | java.lang.String    |
+| Uint8List                  | byte[]              |
+| Int32List                  | int[]               |
+| Int64List                  | long[]              |
+| Float32List                | float[]             |
+| Float64List                | double[]            |
+| List                       | java.util.ArrayList |
+| Map                        | java.util.HashMap   |
+
+{% sample Kotlin %}
+| Dart                       | Kotlin      |
+| -------------------------- | ----------- |
+| null                       | null        |
+| bool                       | Boolean     |
+| int                        | Int         |
+| int, if 32 bits not enough | Long        |
+| double                     | Double      |
+| String                     | String      |
+| Uint8List                  | ByteArray   |
+| Int32List                  | IntArray    |
+| Int64List                  | LongArray   |
+| Float32List                | FloatArray  |
+| Float64List                | DoubleArray |
+| List                       | List        |
+| Map                        | HashMap     |
+
+{% sample Obj-C %}
+| Dart                       | Objective-C                                    |
+| -------------------------- | ---------------------------------------------- |
+| null                       | nil (NSNull when nested)                       |
+| bool                       | NSNumber numberWithBool:                       |
+| int                        | NSNumber numberWithInt:                        |
+| int, if 32 bits not enough | NSNumber numberWithLong:                       |
+| double                     | NSNumber numberWithDouble:                     |
+| String                     | NSString                                       |
+| Uint8List                  | FlutterStandardTypedData typedDataWithBytes:   |
+| Int32List                  | FlutterStandardTypedData typedDataWithInt32:   |
+| Int64List                  | FlutterStandardTypedData typedDataWithInt64:   |
+| Float32List                | FlutterStandardTypedData typedDataWithFloat32: |
+| Float64List                | FlutterStandardTypedData typedDataWithFloat64: |
+| List                       | NSArray                                        |
+| Map                        | NSDictionary                                   |
+
+{% sample Swift %}
+| Dart                       | Swift                                   |
+| -------------------------- | --------------------------------------- |
+| null                       | nil                                     |
+| bool                       | NSNumber(value: Bool)                   |
+| int                        | NSNumber(value: Int32)                  |
+| int, if 32 bits not enough | NSNumber(value: Int)                    |
+| double                     | NSNumber(value: Double)                 |
+| String                     | String                                  |
+| Uint8List                  | FlutterStandardTypedData(bytes: Data)   |
+| Int32List                  | FlutterStandardTypedData(int32: Data)   |
+| Int64List                  | FlutterStandardTypedData(int64: Data)   |
+| Float32List                | FlutterStandardTypedData(float32: Data) |
+| Float64List                | FlutterStandardTypedData(float64: Data) |
+| List                       | Array                                   |
+| Map                        | Dictionary                              |
+
+{% sample C++ %}
+| Dart                       | C++                                                      |
+| -------------------------- | -------------------------------------------------------- |
+| null                       | EncodableValue()                                         |
+| bool                       | EncodableValue(bool)                                     |
+| int                        | EncodableValue(int32_t)                                  |
+| int, if 32 bits not enough | EncodableValue(int64_t)                                  |
+| double                     | EncodableValue(double)                                   |
+| String                     | EncodableValue(std::string)                              |
+| Uint8List                  | EncodableValue(std::vector<uint8_t>)                     |
+| Int32List                  | EncodableValue(std::vector<int32_t>)                     |
+| Int64List                  | EncodableValue(std::vector<int64_t>)                     |
+| Float32List                | EncodableValue(std::vector<float>)                       |
+| Float64List                | EncodableValue(std::vector<double>)                      |
+| List                       | EncodableValue(std::vector<EncodableValue>)              |
+| Map                        | EncodableValue(std::map<EncodableValue, EncodableValue>) |
+
+{% sample C %}
+| Dart                       | C (GObject)               |
+| -------------------------- | ------------------------- |
+| null                       | FlValue()                 |
+| bool                       | FlValue(bool)             |
+| int                        | FlValue(int62_t)          |
+| double                     | FlValue(double)           |
+| String                     | FlValue(gchar*)           |
+| Uint8List                  | FlValue(uint8_t*)         |
+| Int32List                  | FlValue(int32_t*)         |
+| Int64List                  | FlValue(int64_t*)         |
+| Float32List                | FlValue(float*)           |
+| Float64List                | FlValue(double*)          |
+| List                       | FlValue(FlValue)          |
+| Map                        | FlValue(FlValue, FlValue) |
+{% endsamplecode %}
 
 ## Example: Calling platform-specific iOS and Android code using platform channels {#example}
 
@@ -145,18 +239,17 @@ All channel names used in a single app must
 be unique; prefix the channel name with a unique 'domain
 prefix', for example: `samples.flutter.dev/battery`.
 
-<!-- skip -->
+<?code-excerpt "lib/platform_channels.dart (Import)"?>
 ```dart
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-...
+```
+<?code-excerpt "lib/platform_channels.dart (MyHomePageState)"?>
+```dart
 class _MyHomePageState extends State<MyHomePage> {
   static const platform = MethodChannel('samples.flutter.dev/battery');
-
   // Get battery level.
-}
 ```
 
 Next, invoke a method on the method channel, specifying the concrete method
@@ -168,49 +261,49 @@ platform API (such as when running in a simulator)&mdash;so wrap the
 Use the returned result to update the user interface state in `_batteryLevel`
 inside `setState`.
 
-<!-- skip -->
+<?code-excerpt "lib/platform_channels.dart (GetBattery)"?>
 ```dart
-  // Get battery level.
-  String _batteryLevel = 'Unknown battery level.';
+// Get battery level.
+String _batteryLevel = 'Unknown battery level.';
 
-  Future<void> _getBatteryLevel() async {
-    String batteryLevel;
-    try {
-      final int result = await platform.invokeMethod('getBatteryLevel');
-      batteryLevel = 'Battery level at $result % .';
-    } on PlatformException catch (e) {
-      batteryLevel = "Failed to get battery level: '${e.message}'.";
-    }
-
-    setState(() {
-      _batteryLevel = batteryLevel;
-    });
+Future<void> _getBatteryLevel() async {
+  String batteryLevel;
+  try {
+    final int result = await platform.invokeMethod('getBatteryLevel');
+    batteryLevel = 'Battery level at $result % .';
+  } on PlatformException catch (e) {
+    batteryLevel = "Failed to get battery level: '${e.message}'.";
   }
+
+  setState(() {
+    _batteryLevel = batteryLevel;
+  });
+}
 ```
 
 Finally, replace the `build` method from the template to
 contain a small user interface that displays the battery
 state in a string, and a button for refreshing the value.
 
-<!-- skip -->
+<?code-excerpt "lib/platform_channels.dart (Build)"?>
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ElevatedButton(
-              child: Text('Get Battery Level'),
-              onPressed: _getBatteryLevel,
-            ),
-            Text(_batteryLevel),
-          ],
-        ),
+@override
+Widget build(BuildContext context) {
+  return Material(
+    child: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ElevatedButton(
+            child: const Text('Get Battery Level'),
+            onPressed: _getBatteryLevel,
+          ),
+          Text(_batteryLevel),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 ```
 
 ### Step 3: Add an Android platform-specific implementation
@@ -663,33 +756,33 @@ languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
 
 **Pigeon file:**
 
-<!-- skip -->
+<?code-excerpt "lib/generated_pigeon.dart (Search)"?>
 ```dart
 import 'package:pigeon/pigeon.dart';
 
 class SearchRequest {
-  String query;
+  String query = '';
 }
 
 class SearchReply {
-  String result;
+  String result = '';
 }
 
 @HostApi()
 abstract class Api {
-  SearchReply search(SearchRequest request);
+  Future search(SearchRequest request);
 }
 ```
 
 **Dart usage:**
 
-<!-- skip -->
+<?code-excerpt "lib/use_pigeon.dart (UseApi)"?>
 ```dart
-import 'generated_pigeon.dart'
+import 'generated_pigeon.dart';
 
 void onClick() async {
   SearchRequest request = SearchRequest()..query = 'test';
-  Api api = Api();
+  Api api = SomeApi();
   SearchReply reply = await api.search(request);
   print('reply: ${reply.result}');
 }
