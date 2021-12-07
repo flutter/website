@@ -7,12 +7,11 @@ Monetizing apps by using ads has been one of
 the most popular requests for many Flutter developers.
 
 Flutter ads support is available through the
-[Google Mobile Ads SDK for Flutter (Beta)][plugin],
+[Google Mobile Ads SDK for Flutter][plugin],
 which works with both AdMob and AdManager.
 This plugin supports a variety of ad formats,
-including banner (inline and overlay),
-interstitial, rewarded video, native ads,
-and adaptive banner.
+including banner, interstitial, rewarded video, native ads,
+and App Open ads.
 
 ![Pic showing different types of ads]({{site.url}}/assets/images/ads/GoogleMobileAdTypes.png){:width="100%"}
 
@@ -34,7 +33,7 @@ The following resources can help you get started:
 * To learn how to implement inline banner
   and native ads, see the [Adding AdMob banner
   and native inline ads to a Flutter app][] codelab.
-* If you experience any problems with the beta release,
+* If you experience any problems with this plugin,
   please [file an issue][].
 
 
