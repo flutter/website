@@ -308,6 +308,8 @@
     - title: Integration testing
       permalink: /testing/integration-tests
       match-page-url-exactly: true
+    - title: Migrating from flutter_driver
+      permalink: /testing/integration-tests/migration
 
 - title: Performance & optimization
   permalink: /perf
