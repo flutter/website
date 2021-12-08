@@ -11,9 +11,9 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter.
 
 ![alt_text](../images-2.9.1/image2.png "Inspection after")
 
-* Added support for selecting objects in the program explorer outline
-  view. Selecting an object will automatically scroll the source code in
-  the debugger to the selected object -
+* Added support for selecting objects in the program explorer outline view.
+  Selecting an object will automatically scroll the source code
+  in the debugger to the selected object -
   [#3480](https://github.com/flutter/devtools/pull/3480)
 
 ## Performance Updates

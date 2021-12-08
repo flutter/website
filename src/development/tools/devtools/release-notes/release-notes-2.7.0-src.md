@@ -27,20 +27,22 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 ## CPU Profiler Updates
 
 * Added functionality to load an app startup profile for Flutter apps.
-  This profile will contain CPU samples from the initialization of the
-  Dart VM up until the first Flutter frame has been rendered. -
+  This profile will contain CPU samples from the initialization
+  of the Dart VM up until the first Flutter frame has been rendered. -
   [#3357](https://github.com/flutter/devtools/pull/3357)
 
 ![alt_text](../images-2.7.0/image3.png "image_tooltip")
 
-When the app startup profile has been loaded, you will see that the
-"AppStartUp" user tag is selected for the profile. You can also load the
-app startup profile by selecting this user tag filter, when present, in
-the list of available user tags.
+When the app startup profile has been loaded,
+you will see that the "AppStartUp" user tag is selected for the profile.
+You can also load the app startup profile
+by selecting this user tag filter, when present,
+in the list of available user tags.
 
 ![alt_text](../images-2.7.0/image4.png "image_tooltip")
 
-* Added multi-isolate support. Select which isolate you want to profile
+* Added multi-isolate support.
+  Select which isolate you want to profile
   from the isolate selector at the bottom of the page. -
   [#3362](https://github.com/flutter/devtools/pull/3362)
 

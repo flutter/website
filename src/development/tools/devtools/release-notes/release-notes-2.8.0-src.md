@@ -10,12 +10,12 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   particularly impactful for low-memory devices -
   [#3468](https://github.com/flutter/devtools/pull/3468)
 * For users on Flutter 2.8.0 or greater (or Dart 2.15.0 or greater),
-  DevTools should now be launched via the `dart devtools` command instead
-  of running `pub global activate devtools`. DevTools 2.8.0 will be the
-  last version of DevTools shipped on pub, and all future versions of
-  DevTools will be shipped as part of the Dart SDK. If you see this
-  warning, be sure to open DevTools via `dart devtools` instead of from
-  pub:
+  DevTools should now be launched via the `dart devtools` command
+  instead of running `pub global activate devtools`.
+  DevTools 2.8.0 will be the last version of DevTools shipped on pub,
+  and all future versions of DevTools will be shipped as part of the Dart SDK.
+  If you see this warning,
+  be sure to open DevTools via `dart devtools` instead of from pub:
 
 ![alt_text](../images-2.8.0/image1.png "dart devtools warning dialog")
 
@@ -52,10 +52,12 @@ The expected workflow is as such:
 3. User turns off the respective render layer toggle in the “More
    debugging options” feature
 4. User reproduces the UI jank in their app
-5. If the UI jank is reduced with a rendering layer turned off, the user
-   should try to optimize their app to use less clipping/opacity/physical
-   shape effects. If the UI jank is not reduced, the user now knows that
-   the performance problem is not due to these UI effects.
+5. If the UI jank is reduced with a rendering layer turned off,
+   the user should try to optimize their app to use
+   less clipping/opacity/physical shape effects.
+   If the UI jank is not reduced,
+   the user now knows that the performance problem
+   is not due to these UI effects.
 
 
 ## Debugger Updates
@@ -64,13 +66,15 @@ The expected workflow is as such:
   [#3448](https://github.com/flutter/devtools/pull/3448). The “File
   Explorer” pane has two components:
 
-1. A tree view of the libraries present in your application. You can use
-   the File Explorer to find and open a library, or you can use the
-   existing `Ctrl/Cmd + P` keyboard shortcut to search for a file.
-2. A new “Outline” view that shows the structure of the selected
-   library. This view will show classes, members, methods, etc., and when
-   an item is selected, the source view will jump to the respective line of
-   code for the selected item.
+1. A tree view of the libraries present in your application.
+   You can use the File Explorer to find and open a library,
+   or you can use the existing `Ctrl/Cmd + P` keyboard shortcut
+   to search for a file.
+2. A new “Outline” view that shows the structure of the selected library.
+   This view will show classes, members, methods, etc.,
+   and when an item is selected,
+   the source view will jump to the respective line of code
+   for the selected item.
 
 ![alt_text](../images-2.8.0/image5.png "Outline view selected library")
 
