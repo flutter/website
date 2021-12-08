@@ -18,6 +18,7 @@
       { "regex": "(?P<basename>.*)\\.html$", "destination": ":basename", "type": 301 },
       { "regex": "(?P<basename>.*)\\.$", "destination": ":basename", "type": 301 },
 
+      { "source": "/ads", "destination": "https://flutter.dev/monetization", "type": 301 },
       { "source": "/community", "destination": "https://flutter.dev/community", "type": 301 },
       { "source": "/showcase", "destination": "https://flutter.dev/showcase", "type": 301 },
       { "source": "/support", "destination": "https://flutter.dev/community", "type": 301 },
