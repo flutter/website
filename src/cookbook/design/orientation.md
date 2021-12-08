@@ -36,9 +36,9 @@ Rather than using a normal list,
 create a list that displays items in a grid.
 For now, create a grid with two columns.
 
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (GridViewCount)"?>
 ```dart
-GridView.count(
+return GridView.count(
   // A list with 2 columns
   crossAxisCount: 2,
   // ...
@@ -59,9 +59,9 @@ and rebuilds when the size of the parent changes.
 Using the `Orientation`, build a list that displays two columns in portrait
 mode, or three columns in landscape mode.
 
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (OrientationBuilder)"?>
 ```dart
-OrientationBuilder(
+body: OrientationBuilder(
   builder: (context, orientation) {
     return GridView.count(
       // Create a grid with 2 columns in portrait mode,
@@ -69,7 +69,7 @@ OrientationBuilder(
       crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
     );
   },
-);
+),
 ```
 
 {{site.alert.note}}
