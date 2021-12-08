@@ -26,7 +26,7 @@ first create a Flutter module.
 
 From the command line, run:
 
-```sh
+```terminal
 cd some/path/
 flutter create --template module my_flutter
 ```
@@ -212,7 +212,7 @@ you can skip these instructions.
 The following example assumes that you want to generate the
 frameworks to `some/path/MyApp/Flutter/`.
 
-```sh
+```terminal
 flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
@@ -307,7 +307,7 @@ instead of an engine Flutter.xcframework.
 The App.xcframework and plugin frameworks are generated
 as described in Option B.
 
-```sh
+```terminal
 flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
 ```
 
