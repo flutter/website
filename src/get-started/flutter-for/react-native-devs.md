@@ -233,7 +233,7 @@ import 'package:http/http.dart' as http;
 
 class Example {
   Future<String> _getIPAddress() {
-    final url = 'https://httpbin.org/ip';
+    final url = new Uri.https('httpbin.org', '/ip');
     return http.get(url).then((response) {
       String ip = jsonDecode(response.body)['origin'];
       return ip;
@@ -297,7 +297,7 @@ import 'package:http/http.dart' as http;
 
 class Example {
   Future<String> _getIPAddress() async {
-    final url = 'https://httpbin.org/ip';
+    final url = new Uri.https('httpbin.org', '/ip');
     final response = await http.get(url);
     String ip = jsonDecode(response.body)['origin'];
     return ip;
