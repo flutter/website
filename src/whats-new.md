@@ -237,7 +237,7 @@ publication since the last stable release:
 [Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [Desktop support for Flutter]: {{site.url}}/desktop
 [Devtools]: {{site.url}}/development/tools/devtools/overview
-[Flutter Ads]: {{site.url}}/ads
+[Flutter Ads]: {{site.main-url}}/monetization
 [Flutter 2 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-2.0.0
 [Flutter Fix]: {{site.url}}/development/tools/flutter-fix
 [Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
