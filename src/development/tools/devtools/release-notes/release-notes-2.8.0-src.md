@@ -17,14 +17,14 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   If you see this warning,
   be sure to open DevTools via `dart devtools` instead of from pub:
 
-![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image1.png "dart devtools warning dialog")
+![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image1.png "dart devtools warning dialog"){:width="60%"}
 
 ## Performance Updates
 
 * Added a new “Enhance Tracing” feature to help users diagnose UI jank
   stemming from expensive Build, Layout, and Paint operations.
 
-![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image2.png "Enhance tracing")
+![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image2.png "Enhance tracing"){:width="60%"}
 
 The expected workflow is as such:
 
@@ -36,13 +36,13 @@ The expected workflow is as such:
    additional child events for widgets built, render objects laid out,
    and/or render objects painted
 
-![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image3.png "Timeline events")
+![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image3.png "Timeline events"){:width="60%"}
 
 
 * Added new “More debugging options” feature to allow for disabling
   rendering layers for Clip, Opacity, and Physical Shapes.
 
-![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image4.png "More debugging options")
+![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image4.png "More debugging options"){:width="60%"}
 
 The expected workflow is as such:
 
@@ -76,7 +76,7 @@ The expected workflow is as such:
    the source view will jump to the respective line of code
    for the selected item.
 
-![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image5.png "Outline view selected library")
+![alt_text]({{site.url}}/development/tools/devtools/release-notes/images-2.8.0/image5.png "Outline view selected library"){:width="40%"}
 
 * Performance improvements to expression evaluation auto complete -
   [#3463](https://github.com/flutter/devtools/pull/3463)
