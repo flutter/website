@@ -132,9 +132,11 @@ To include your course, [submit a PR][]:
 * [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
 * [Flutter & Dart - the Complete Guide, 2021 edition][]
 * [Flutter Crash Course][] by Nick Manning
+* [Flutter leicht gemacht - richtige App Entwicklung 2022][] by Max Berktold
 
 [Flutter & Dart - the Complete Guide, 2021 edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
+[Flutter leicht gemacht - richtige App Entwicklung 2022]: https://www.udemy.com/course/dart-flutter-leicht-gemacht/
 [submit a PR]: {{site.repo.this}}/pulls
 
