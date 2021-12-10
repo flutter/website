@@ -43,7 +43,7 @@ install sizes.
 
 Produce an upload package for your application:
 
-```shell
+```terminal
 flutter build appbundle
 ```
 
