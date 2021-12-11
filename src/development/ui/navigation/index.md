@@ -4,7 +4,7 @@ description: Articles and cookbook recipes that address screen navigation.
 ---
 
 Flutter has an imperative routing mechanism, the `Navigator` widget,
-and a more idomatic declarative routing mechanism (which is similar to
+and a more idiomatic declarative routing mechanism (which is similar to
 build methods as used with widgets), the `Router` widget.
 
 The two systems can be used together (indeed, the declarative system
