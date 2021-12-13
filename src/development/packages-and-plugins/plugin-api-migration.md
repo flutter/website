@@ -272,7 +272,7 @@ but aren't required.
 1. Test run the e2e tests locally. In a terminal,
    do the following:
 
-    ```sh
+    ```terminal
     cd <plugin_name>/example
     flutter build apk
     cd android

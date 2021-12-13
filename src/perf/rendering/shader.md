@@ -59,14 +59,14 @@ and package the SkSL shaders:
 <li markdown="1">Run the app with `--cache-sksl` turned on
     to capture shaders in SkSL:
 
-```sh
+```terminal
 flutter run --profile --cache-sksl
 ```
 
 If the same app has been previously run without `--cache-sksl`, then the
 `--purge-persistent-cache` flag may be needed:
 
-```sh
+```terminal
 flutter run --profile --cache-sksl --purge-persistent-cache
 ```
 
@@ -89,16 +89,16 @@ shader capturing. It also purges the SkSL shaders so use it *only* on the first
     as appropriate:
 
 Android:
-```sh
+```terminal
 flutter build apk --bundle-sksl-path flutter_01.sksl.json
 ```
 or
-```sh
+```terminal
 flutter build appbundle --bundle-sksl-path flutter_01.sksl.json
 ```
 
 iOS:
-```sh
+```terminal
 flutter build ios --bundle-sksl-path flutter_01.sksl.json
 ```
 
@@ -114,7 +114,7 @@ Alternatively, you can write some integration tests to
 automate the first three steps using a single command.
 For example:
 
-```sh
+```terminal
 flutter drive --profile --cache-sksl --write-sksl-on-exit flutter_01.sksl.json -t test_driver/app.dart
 ```
 

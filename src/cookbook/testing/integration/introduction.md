@@ -194,13 +194,13 @@ you are testing against. You can test against a mobile platform or the web.
 To test on a real iOS / Android device, first connect the device and run the
 following command from the root of the project:
 
-```shell
+```terminal
 flutter test integration_test/app_test.dart
 ```
 
 Or, you can specify the directory to run all integration tests:
 
-```shell
+```terminal
 flutter test integration_test
 ```
  
@@ -239,13 +239,13 @@ Future<void> main() => integrationDriver();
 
 Launch WebDriver, for example: 
 
-```shell
+```terminal
 chromedriver --port=4444
 ```
 
 From the root of the project, run the following command:
 
-```shell
+```terminal
 flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart \

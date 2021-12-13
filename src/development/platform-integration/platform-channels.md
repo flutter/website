@@ -817,12 +817,84 @@ types than the default types.
 
 ## Channels and platform threading
 
-Invoke all channel methods on the platform's main thread when
-writing code on the platform side. On Android,
-this thread is sometimes called the "main
-thread", but it is technically defined as [the UI thread][].
-Annotate methods that need to be run on the UI thread with `@UiThread`.
-On iOS, this thread is officially referred to as [the main thread][].
+When invoking channels on the platform side destined for Flutter, they need to
+be invoked on the platform's main thread. When invoking channels in Flutter
+destined for the platform side, they need to be invoked on the root Isolate. The
+platform side's handlers can execute on the platform's main thread or they can
+execute on a background thread if a Task Queue is used. The result of the
+platform side handlers can be invoked asynchronously and on any thread.
+
+{{site.alert.note}}On Android, the platform's main thread is sometimes called
+the "main thread", but it is technically defined as [the UI thread][]. Annotate
+methods that need to be run on the UI thread with `@UiThread`. On iOS, this
+thread is officially referred to as [the main thread][].
+
+### Executing channel handlers on background threads
+
+In order for a channel's platform side handler to execute on a background
+thread, the Task Queue API has be used.  Currently this feature is only
+supported on iOS and Android.
+
+In Java:
+
+```java
+@Override
+public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+  BinaryMessenger messenger = binding.getBinaryMessenger();
+  BinaryMessenger.TaskQueue taskQueue =
+      messenger.makeBackgroundTaskQueue();
+  channel =
+      new MethodChannel(
+          messenger,
+          "com.example.foo",
+          StandardMethodCodec.INSTANCE,
+          taskQueue);
+  channel.setMethodCallHandler(this);
+}
+```
+
+In Kotlin:
+
+```kotlin
+override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+  val taskQueue =
+      flutterPluginBinding.binaryMessenger.makeBackgroundTaskQueue()
+  channel = MethodChannel(flutterPluginBinding.binaryMessenger,
+                          "com.example.foo",
+                          StandardMethodCodec.INSTANCE,
+                          taskQueue)
+  channel.setMethodCallHandler(this)
+}
+```
+
+In Swift:
+```swift
+public static func register(with registrar: FlutterPluginRegistrar) {
+  let taskQueue = registrar.messenger.makeBackgroundTaskQueue()
+  let channel = FlutterMethodChannel(name: "com.example.foo",
+                                     binaryMessenger: registrar.messenger(),
+                                     codec: FlutterStandardMethodCodec.sharedInstance,
+                                     taskQueue: taskQueue)
+  let instance = MyPlugin()
+  registrar.addMethodCallDelegate(instance, channel: channel)
+}
+```
+
+In Objective-C:
+
+```objc
++ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
+  NSObject<FlutterTaskQueue>* taskQueue =
+      [[registrar messenger] makeBackgroundTaskQueue];
+  FlutterMethodChannel* channel =
+      [FlutterMethodChannel methodChannelWithName:@"com.example.foo"
+                                  binaryMessenger:[registrar messenger]
+                                            codec:[FlutterStandardMethodCodec sharedInstance]
+                                        taskQueue:taskQueue];
+  MyPlugin* instance = [[MyPlugin alloc] init];
+  [registrar addMethodCallDelegate:instance channel:channel];
+}
+```
 
 ### Jumping to the UI thread in Android
 
