@@ -317,7 +317,7 @@ painting, positioning, and sizing. Specifically, Container is made up of the
 can see by reading its source code. A defining characteristic of Flutter is that
 you can drill down into the source for any widget and examine it. So, rather
 than subclassing `Container` to produce a customized effect, you can compose it
-and other simple widgets in novel ways, or just create a new widget using
+and other widgets in novel ways, or just create a new widget using
 `Container` as inspiration.
 
 ### Building widgets
@@ -512,7 +512,7 @@ Let’s take a look at some of these phases in greater detail.
 
 ### Build: from Widget to Element
 
-Consider this simple code fragment that demonstrates a simple widget hierarchy:
+Consider this code fragment that demonstrates a widget hierarchy:
 
 <?code-excerpt "lib/main.dart (Container2)"?>
 ```dart
@@ -530,7 +530,7 @@ Container(
 When Flutter needs to render this fragment, it calls the `build()` method, which
 returns a subtree of widgets that renders UI based on the current app state.
 During this process, the `build()` method can introduce new widgets, as
-necessary, based on its state. As a simple example, in the preceding code
+necessary, based on its state. As an example, in the preceding code
 fragment, `Container` has `color` and `child` properties. From looking at the
 [source
 code]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)
@@ -746,7 +746,7 @@ Flutter in an existing application.
 ### Platform channels
 
 For mobile and desktop apps, Flutter allows you to call into custom code through
-a _platform channel_, which is a simple mechanism for communicating between your
+a _platform channel_, which is a mechanism for communicating between your
 Dart code and the platform-specific code of your host app. By creating a common
 channel (encapsulating a name and a codec), you can send and receive messages
 between Dart and a platform component written in a language like Kotlin or
@@ -757,7 +757,7 @@ and then deserialized into an equivalent representation in Kotlin (such as
 ![How platform channels allow Flutter to communicate with host
 code]({{site.url}}/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
 
-The following is a simple platform channel example of a Dart call to a receiving
+The following is a short platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
 
 <?code-excerpt "lib/main.dart (MethodChannel)"?>
@@ -811,7 +811,7 @@ platforms other than web, where the [js package]({{site.pub}}/packages/js)
 serves an equivalent purpose.
 
 To use FFI, you create a `typedef` for each of the Dart and unmanaged method
-signatures, and instruct the Dart VM to map between them. As a simple example,
+signatures, and instruct the Dart VM to map between them. As an example,
 here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
 
 <?code-excerpt "lib/main.dart (FFI)"?>
