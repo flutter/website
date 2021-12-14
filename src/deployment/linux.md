@@ -17,7 +17,7 @@ this page can help.
 {{site.alert.warning}}
   **Work in progress!**
   This page covers desktop support for Linux,
-  which is available as an alpha-quality feature in the Flutter dev channel.
+  which is available as an beta-quality feature in the Flutter beta channel.
   There are still notable feature gaps,
   including accessibility support.
   We strongly recommend that you examine the
