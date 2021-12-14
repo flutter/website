@@ -23,7 +23,7 @@ macOS, or Linux platforms, or you can create your own.
   snapshot of desktop support on the `stable`
   channel, or you can keep up with the latest
   changes to desktop on the `beta` channel. For
-  Windows UWP you need to be on the `dev` channel.
+  Windows UWP you need to be on the `master` channel.
 
   For more information, see the **Desktop**
   section in [What's new in Flutter 2][],
@@ -170,10 +170,10 @@ $ flutter config --enable-linux-desktop
 ```
 
 For Windows UWP desktop support perform the following commands to switch to
-the `dev` channel, upgrade Flutter, and enable UWP.
+the `master` channel, upgrade Flutter, and enable UWP.
 
 ```terminal
-$ flutter channel dev
+$ flutter channel master
 $ flutter upgrade
 $ flutter config --enable-windows-uwp-desktop
 ```
@@ -312,7 +312,7 @@ $ flutter run -d linux
 {{site.alert.warning}}
   **Alpha!**
   Flutter Windows UWP desktop support is an alpha release, 
-  available on the `dev` channel. 
+  available on the `master` channel. 
 {{site.alert.end}}
 
 To get started with Windows UWP you need to be using Windows 10. 
@@ -322,11 +322,11 @@ Windows UWP C++ tools.
 
 To configure Flutter for Windows UWP development, 
 perform the following commands to switch to
-the `dev` channel, upgrade Flutter, and enable 
+the `master` channel, upgrade Flutter, and enable 
 Windows UWP desktop support.
 
 ```terminal
-PS C:\> flutter channel dev
+PS C:\> flutter channel master
 PS C:\> flutter upgrade
 PS C:\> flutter config --enable-windows-uwp-desktop
 ```
