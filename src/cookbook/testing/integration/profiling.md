@@ -122,6 +122,11 @@ Future<void> main() {
 }
 ```
 
+The `integrationDriver` function has a `responseDataCallback` 
+which you can customize. 
+By default, it writes the results to the `integration_response_data.json` file,
+but you can customize it to generate a summary like in this example.
+
 ### 4. Run the test
 
 After configuring the test to capture a performance `Timeline` and save a
