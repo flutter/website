@@ -359,7 +359,7 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "source": "**/*.@(jpg|jpeg|gif|png|md)",
         "headers": [
           { "key": "Cache-Control", "value": "max-age=3600" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }
