@@ -45,7 +45,7 @@ to download the Flutter SDK and dependent packages.
 For example:
 
 ```terminal
-$ flutter channel stable
+$ flutter channel beta
 $ flutter upgrade
 ```
 
