@@ -3,8 +3,8 @@ title: Flutter and Dart team job openings
 description: Open job listings for the Flutter and Dart teams.
 ---
 
-We are hiring on the Flutter and Dart teama! Below is a listing of our various
-openings:
+We are hiring on the Flutter and Dart teams!
+The following jobs are open:
 
 * [Windows Engineer]({{site.url}}/jobs/windows)
 * [Android Engineer]({{site.url}}/jobs/android)
