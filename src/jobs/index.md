@@ -14,4 +14,4 @@ openings:
 * [Flutter Web Engineer]({{site.url}}/jobs/engine_web)
 * [Framework Engineer]({{site.url}}/jobs/framework)
 * [Flutter & Dart Developer Experience SWE]({{site.url}}/jobs/devexp)
-* [Dart writer]({{site.url}}/jobs/writer)
+* [Dart Writer]({{site.url}}/jobs/writer)
