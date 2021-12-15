@@ -1241,13 +1241,6 @@ For further details on internationalization and localization in Flutter,
 see the [internationalization guide][],
 which has sample code with and without the `intl` package.
 
-Note that before Flutter 1.0 beta 2,
-assets defined in Flutter were not
-accessible from the native side, and vice versa,
-native assets and resources
-weren’t available to Flutter,
-as they lived in separate folders.
-
 ### What is the equivalent of CocoaPods? How do I add dependencies?
 
 In iOS, you add dependencies by adding to your `Podfile`.
