@@ -150,7 +150,7 @@ ui.Image parseMyImage(Uint8List image, int width, int height) async {
 
 ## Timeline
 
-Landed in version: not yet<br>
+Landed in version: 2.9.0-0.0.pre<br>
 In stable release: not yet
 
 ## References
