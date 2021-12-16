@@ -14,7 +14,7 @@ release, and listed in alphabetical order:
 
 * [Required Kotlin version][]
 * [Deprecated API removed after v2.5][]
-* [Correct origin and colors of raw images on Web][]
+* [Raw images on Web uses correct origin and colors][]
 
 [Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
