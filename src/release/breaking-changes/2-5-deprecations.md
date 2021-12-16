@@ -368,7 +368,7 @@ which you should migrate to.
 If you are using the `package:platform` package, note that regardless of whether
 you are using the `packageRoot` API or not, older versions of that package are
 not compatible with Dart 2.16 and later, as they depend on the now removed
-`packageConfig` API. You may see an error like this when attempting to run your
+`packageRoot` API. You may see an error like this when attempting to run your
 app:
 
 ```
