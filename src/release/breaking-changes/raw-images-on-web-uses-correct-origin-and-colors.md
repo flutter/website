@@ -1,9 +1,7 @@
 ---
 title: Raw images on Web uses correct origin and colors
-description:
+description: Raw images directly decoded by calling the Web engine functions now uses the correct pixel format and starts from the top left corner.
 
-
-Brief description similar to the "context" section below. The description shouldn't have any linebreaks - let it go long and wrap. Text below should break at 80 chars or less.
 ---
 
 ## Summary
@@ -152,23 +150,8 @@ ui.Image parseMyImage(Uint8List image, int width, int height) async {
 
 ## Timeline
 
-{% comment %}
-  The version # of the SDK where this change was
-  introduced.  If there is a deprecation window,
-  the version # to which we guarantee to maintain
-  the old API. Use the following template:
-
-  If a breaking change has been reverted in a
-  subsequent release, move that item to the
-  "Reverted" section of the index.md file.
-  Also add the "Reverted in version" line,
-  shown as optional below. Otherwise, delete
-  that line.
-{% endcomment %}
-
-Landed in version: xxx<br>
+Landed in version: not yet<br>
 In stable release: not yet
-Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 ## References
 
