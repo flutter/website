@@ -51,10 +51,7 @@ platforms on which Flutter runs:
 |Android|Android SDK 22        |
 |Android|Android SDK 21        |
 |Android|Android SDK 19        |
-|iOS    | 14 (all)             |
-|iOS    | 13.3-13.7            |
-|iOS    | 13.0                 |
-|iOS    | 12.4 & 12.4.1        |
+|iOS    | 14-15                |
 |iOS    | 9.3.6                |
 |Web    | Chrome 84            |
 |Web    | Firefox 72.0         |
@@ -78,10 +75,7 @@ minimal.
 |Android |Android SDK 18 |
 |Android |Android SDK 17 |
 |Android |Android SDK 16 |
-|iOS     |iOS 13.1       |
-|iOS     |iOS 12.1-12.3  |
-|iOS     |iOS 10 (all)   |
-|iOS     |iOS 9.0        |
+|iOS     |iOS 9-13       |
 |Windows |Windows 8      |
 |Windows |Windows 7      |
 |Linux   |Debian & below |
