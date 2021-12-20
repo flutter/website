@@ -128,7 +128,7 @@ late Future<bool> imageRawUsesCorrectBehavior = (() async {
   final ui.ImageDescriptor descriptor = ui.ImageDescriptor.raw(
     await ui.ImmutableBuffer.fromUint8List(Uint8List.fromList(<int>[0xED, 0, 0, 0])),
     width: 1, height: 1, pixelFormat: ui.PixelFormat.rgba8888);
-  final Image image = (await (await descriptor.instantiateCodec()).getNextFrame()).image;
+  final ui.Image image = (await (await descriptor.instantiateCodec()).getNextFrame()).image;
   final Uint8List resultPixels = Uint8List.sublistView(
     (await image.toByteData(format: ui.ImageByteFormat.rawStraightRgba))!);
   return resultPixels[0] == 0xED;
@@ -136,14 +136,14 @@ late Future<bool> imageRawUsesCorrectBehavior = (() async {
 
 Future<ui.Image> parseMyImage(Uint8List image, int width, int height) async {
   final Uint8List correctedImage = (await imageRawUsesCorrectBehavior) ?
-    verticallyFlipImage(image) : image;
+    verticallyFlipImage(image, width, height) : image;
   final ui.ImageDescriptor descriptor = ui.ImageDescriptor.raw(
     await ui.ImmutableBuffer.fromUint8List(correctedImage), // Use the corrected image
     width: width,
     height: height,
     pixelFormat: ui.PixelFormat.bgra8888, // Use the alternate format
   );
-  return await (await descriptor.instantiateCodec()).getNextFrame()).image;
+  return (await (await descriptor.instantiateCodec()).getNextFrame()).image;
 }
 ```
 
