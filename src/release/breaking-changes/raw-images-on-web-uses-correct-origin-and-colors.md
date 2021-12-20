@@ -49,7 +49,9 @@ find their images upside down and colored incorrectly.
 
 If the app uses the latest version of Flutter and experiences this situation,
 the most direct solution is to manually flip the image, and use the alternate
-pixel format:
+pixel format. However, this is unlikely the most optimized solution,
+since such pixel data are usually constructed from other sources,
+allowing flipping during the construction process.
 
 Code before migration:
 
@@ -62,14 +64,14 @@ import 'dart:ui' as ui;
 //
 // Each byte in `image` is a pixel channel, in the order of blue, green, red,
 // and alpha, starting from the bottom left corner and going row first.
-ui.Image parseMyImage(Uint8List image, int width, int height) async {
-  final ImageDescriptor descriptor = ImageDescriptor.raw(
+Future<ui.Image> parseMyImage(Uint8List image, int width, int height) async {
+  final ui.ImageDescriptor descriptor = ui.ImageDescriptor.raw(
     await ui.ImmutableBuffer.fromUint8List(image),
     width: width,
     height: height,
     pixelFormat: ui.PixelFormat.rgba8888,
   );
-  return await (await descriptor.instantiateCodec()).getNextFrame()).image;
+  return (await (await descriptor.instantiateCodec()).getNextFrame()).image;
 }
 ```
 
@@ -96,20 +98,17 @@ Uint8List verticallyFlipImage(Uint8List sourceBytes, int width, int height) {
   return Uint8List.sublistView(ByteData.sublistView(sourceBytes))
 }
 
-ui.Image parseMyImage(Uint8List image, int width, int height) async {
-  final Uint8List correctedImage = verticallyFlipImage(image);
+Future<ui.Image> parseMyImage(Uint8List image, int width, int height) async {
+  final Uint8List correctedImage = verticallyFlipImage(image, width, height);
   final ui.ImageDescriptor descriptor = ui.ImageDescriptor.raw(
-    await ui.ImmutableBuffer.fromUint8List(correctedImage), // Use the corrected image
+    await ui.ImmutableBuffer.fromUint8List(correctedImage),
     width: width,
     height: height,
-    pixelFormat: ui.PixelFormat.bgra8888, // Use the alternate format
+    pixelFormat: ui.PixelFormat.rgba8888,
   );
-  return await (await descriptor.instantiateCodec()).getNextFrame()).image;
+  return (await (await descriptor.instantiateCodec()).getNextFrame()).image;
 }
 ```
-
-Since such pixel data are usually constructed from other sources,
-the better way would be to flip it during the construction process.
 
 A trickier situation is when you're writing a library,
 and you want this library to work on both the most recent Flutter
@@ -135,7 +134,7 @@ late Future<bool> imageRawUsesCorrectBehavior = (() async {
   return resultPixels[0] == 0xED;
 })();
 
-ui.Image parseMyImage(Uint8List image, int width, int height) async {
+Future<ui.Image> parseMyImage(Uint8List image, int width, int height) async {
   final Uint8List correctedImage = (await imageRawUsesCorrectBehavior) ?
     verticallyFlipImage(image) : image;
   final ui.ImageDescriptor descriptor = ui.ImageDescriptor.raw(
