@@ -28,11 +28,11 @@ As of Flutter 1.20, we define three tiers of support for the
 platforms on which Flutter runs:
 1. Supported Google-tested platforms,
    which are platforms the Flutter team at 
-   Google tests in continuous integration at every commit. 
-1. Best effort platforms, supported community testing,
+   Google tests in continuous integration at every commit.
+2. Best effort platforms, supported community testing,
    which are platforms we believe we support through coding practices 
     and ad-hoc testing, but rely on the community for testing.
-1. Unsupported platforms, which are platforms that may work,
+3. Unsupported platforms, which are platforms that may work,
    but that the development team does not directly test or support.
 
 
