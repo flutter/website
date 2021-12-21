@@ -21,6 +21,7 @@ As of release 2.5, Flutter supports the following platforms:
 |Windows | Windows 7 & above            | All     |
 
 All channels include master, beta and stable channels. 
+
 **Please note - dev channel has been retired. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) for more information.**
 
 ## How we define a supported platform
