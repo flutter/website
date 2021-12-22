@@ -34,9 +34,9 @@ To remove the decoration entirely (including the
 underline and the space reserved for the label),
 set the `decoration` to null.
 
-<?code-excerpt "lib/main.dart (TextField)"?>
+<?code-excerpt "lib/main.dart (TextField)" replace="/^child\: //g"?>
 ```dart
-child: TextField(
+TextField(
   decoration: InputDecoration(
     border: OutlineInputBorder(),
     hintText: 'Enter a search term',
@@ -55,9 +55,9 @@ This provides additional functionality,
 such as validation and integration with other
 [`FormField`][] widgets.
 
-<?code-excerpt "lib/main.dart (TextFormField)"?>
+<?code-excerpt "lib/main.dart (TextFormField)" replace="/^child\: //g"?>
 ```dart
-child: TextFormField(
+TextFormField(
   decoration: const InputDecoration(
     border: UnderlineInputBorder(),
     labelText: 'Enter your username',
@@ -67,7 +67,7 @@ child: TextFormField(
 
 ## Interactive example
 
-<?code-excerpt "lib/main.dart"?>
+<?code-excerpt "lib/main.dart" replace="/^child\: //g"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
