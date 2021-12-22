@@ -264,6 +264,7 @@
       { "source": "/go/migrating-to-vertical-alignment", "destination": "https://docs.google.com/document/d/1vi6d6On6EXN82Q8KmXSLbWNnsnm9YjWtTWhSyjPF59Q/edit?usp=sharing", "type": 301 },
       { "source": "/go/mouse-tracker-no-longer-attaches-annotations", "destination": "https://docs.google.com/document/d/1YuOcepqZjNknAMz1si2m-jAiLT4MP28XEzBcKLHnNiA/edit", "type": 301 },
       { "source": "/go/move-mouse-tracker-to-rendering", "destination": "https://docs.google.com/document/d/1dYNOTZ4kdq6ndNHopjUlrGlGBw3W-3jMbnoNJouIYtE/edit", "type": 301 },
+      { "source": "/go/multiple-applications", "destination": "https://docs.google.com/document/d/1alrr7qimNDazmQx5D80BSHh62V2OINO4UQ5N3HcPnmo/edit?resourcekey=0-wPs1Go9AiKR-yG0-xStuKw", "type": 301 },
       { "source": "/go/multiple-engines", "destination": "https://docs.google.com/document/d/1NwiZPWHd1te46eP2GWwIezDV9CdMQkODAMuF5kWdtLw", "type": 301 },
       { "source": "/go/multiple-flutters", "destination": "https://docs.google.com/document/d/1fdKRufqUzQvERcqNIUSq-GdabXc4k8VIsClzRElJ6KY", "type": 301 },
       { "source": "/go/navigator-with-router", "destination": "https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit", "type": 301 },
