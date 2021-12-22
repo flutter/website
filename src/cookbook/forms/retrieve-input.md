@@ -76,9 +76,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
 Now that you have a `TextEditingController`, wire it up
 to a text field using the `controller` property:
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (TextFieldController)"?>
 ```dart
-TextField(
+return TextField(
   controller: myController,
 );
 ```
@@ -93,17 +93,17 @@ String that the user has entered into the text field.
 The following code displays an alert dialog with the current
 value of the text field when the user taps a floating action button.
 
-<!-- skip -->
+<?code-excerpt "lib/step3.dart (FloatingActionButton)" replace="/^floatingActionButton\: //g"?>
 ```dart
 FloatingActionButton(
-  // When the user presses the button, show an alert dialog containing the
-  // text that the user has entered into the text field.
+  // When the user presses the button, show an alert dialog containing
+  // the text that the user has entered into the text field.
   onPressed: () {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          // Retrieve the text the user has entered by using the
+          // Retrieve the text the that user has entered by using the
           // TextEditingController.
           content: Text(myController.text),
         );
@@ -111,8 +111,8 @@ FloatingActionButton(
     );
   },
   tooltip: 'Show me the value!',
-  child: Icon(Icons.text_fields),
-);
+  child: const Icon(Icons.text_fields),
+),
 ```
 
 ## Interactive example
