@@ -9,6 +9,8 @@ next:
   path: /cookbook/design/orientation
 ---
 
+<?code-excerpt path-base="cookbook/design/package_fonts"?>
+
 Rather than declaring a font as part of an app,
 you can declare a font as part of a separate package.
 This is a convenient way to share the same font across
@@ -81,15 +83,15 @@ Use a [`TextStyle`][] to change the appearance of text.
 To use package fonts, declare which font you'd like to use and
 which package the font belongs to.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TextStyle)"?>
 ```dart
-Text(
+child: Text(
   'Using the Raleway font from the awesome_package',
   style: TextStyle(
     fontFamily: 'Raleway',
     package: 'awesome_package',
   ),
-);
+),
 ```
 
 ## Complete example
@@ -126,6 +128,7 @@ flutter:
 
 ### `main.dart`
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 

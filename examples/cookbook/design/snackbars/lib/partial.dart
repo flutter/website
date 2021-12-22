@@ -7,17 +7,17 @@ class SnackBarDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // #docregion Scaffold
     return MaterialApp(
       title: 'SnackBar Demo',
-      // #docregion Scaffold
       home: Scaffold(
         appBar: AppBar(
           title: const Text('SnackBar Demo'),
         ),
         body: const SnackBarPage(),
       ),
-      // #enddocregion Scaffold
     );
+    // #enddocregion Scaffold
   }
 }
 
@@ -29,21 +29,15 @@ class SnackBarPage extends StatelessWidget {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          // #docregion SnackBarAction
-          final snackBar = SnackBar(
-            content: const Text('Yay! A SnackBar!'),
-            action: SnackBarAction(
-              label: 'Undo',
-              onPressed: () {
-                // Some code to undo the change.
-              },
-            ),
+          // #docregion DisplaySnackBar
+          const snackBar = SnackBar(
+            content: Text('Yay! A SnackBar!'),
           );
-          // #enddocregion SnackBarAction
 
           // Find the ScaffoldMessenger in the widget tree
           // and use it to show a SnackBar.
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          // #enddocregion DisplaySnackBar
         },
         child: const Text('Show SnackBar'),
       ),

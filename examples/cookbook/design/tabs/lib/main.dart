@@ -23,6 +23,7 @@ class TabBarDemo extends StatelessWidget {
             ),
             title: const Text('Tabs Demo'),
           ),
+          // #docregion TabBarView
           body: const TabBarView(
             children: [
               Icon(Icons.directions_car),
@@ -30,6 +31,7 @@ class TabBarDemo extends StatelessWidget {
               Icon(Icons.directions_bike),
             ],
           ),
+          // #enddocregion TabBarView
         ),
       ),
     );
