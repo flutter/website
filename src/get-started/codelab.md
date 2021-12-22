@@ -128,9 +128,13 @@ where the Dart code lives.
 
     import 'package:flutter/material.dart';
 
-    void main() => runApp(MyApp());
+    void main() {
+      runApp(const MyApp());
+    }
 
     class MyApp extends StatelessWidget {
+      const MyApp({Key? key}) : super(key: key);
+
       @override
       Widget build(BuildContext context) {
         return MaterialApp(
@@ -264,8 +268,16 @@ as well as many other open source packages, on [pub.dev][].
     ```diff
     --- step1_base/lib/main.dart
     +++ step2_use_package/lib/main.dart
-    @@ -9,14 +10,15 @@
-     class MyApp extends StatelessWidget {
+    @@ -2,6 +2,7 @@
+     // Use of this source code is governed by a BSD-style license that can be
+     // found in the LICENSE file.
+
+    +import 'package:english_words/english_words.dart';
+     import 'package:flutter/material.dart';
+
+     void main() {
+    @@ -13,14 +14,15 @@
+
        @override
        Widget build(BuildContext context) {
     +    final wordPair = WordPair.random();
@@ -402,19 +414,20 @@ class _RandomWordsState extends State<RandomWords> {
   ```diff
   --- step2_use_package/lib/main.dart
   +++ step3_stateful_widget/lib/main.dart
-  @@ -10,7 +10,6 @@
-   class MyApp extends StatelessWidget {
+  @@ -14,16 +14,15 @@
+
      @override
      Widget build(BuildContext context) {
   -    final wordPair = WordPair.random();
        return MaterialApp(
          title: 'Welcome to Flutter',
          home: Scaffold(
-  @@ -18,8 +17,8 @@
+           appBar: AppBar(
              title: const Text('Welcome to Flutter'),
            ),
-           body: Center(
+  -        body: Center(
   -          child: Text(wordPair.asPascalCase),
+  +        body: const Center(
   +          child: RandomWords(),
            ),
          ),
@@ -561,24 +574,69 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -10,15 +10,8 @@
-     class MyApp extends StatelessWidget {
+    @@ -13,27 +13,50 @@
+       const MyApp({Key? key}) : super(key: key);
+
        @override
        Widget build(BuildContext context) {
-         return MaterialApp(
+    -    return MaterialApp(
     -      title: 'Welcome to Flutter',
     -      home: Scaffold(
     -        appBar: AppBar(
     -          title: const Text('Welcome to Flutter'),
     -        ),
-    -        body: Center(
+    -        body: const Center(
     -          child: RandomWords(),
     -        ),
     -      ),
+    +    return const MaterialApp(
     +      title: 'Startup Name Generator',
     +      home: RandomWords(),
          );
        }
+     }
+
+     class _RandomWordsState extends State<RandomWords> {
+    +  final _suggestions = <WordPair>[];
+    +  final _biggerFont = const TextStyle(fontSize: 18.0);
+    +
+    +  Widget _buildSuggestions() {
+    +    return ListView.builder(
+    +        padding: const EdgeInsets.all(16.0),
+    +        itemBuilder: /*1*/ (context, i) {
+    +          if (i.isOdd) return const Divider(); /*2*/
+    +
+    +          final index = i ~/ 2; /*3*/
+    +          if (index >= _suggestions.length) {
+    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+    +          }
+    +          return _buildRow(_suggestions[index]);
+    +        });
+    +  }
+    +
+    +  Widget _buildRow(WordPair pair) {
+    +    return ListTile(
+    +      title: Text(
+    +        pair.asPascalCase,
+    +        style: _biggerFont,
+    +      ),
+    +    );
+    +  }
+    +
+       @override
+       Widget build(BuildContext context) {
+    -    final wordPair = WordPair.random();
+    -    return Text(wordPair.asPascalCase);
+    +    return Scaffold(
+    +      appBar: AppBar(
+    +        title: const Text('Startup Name Generator'),
+    +      ),
+    +      body: _buildSuggestions(),
+    +    );
+       }
+     }
+
+     class RandomWords extends StatefulWidget {
     ```
 
  6. Restart the app. You should see a list of word pairings no matter how far
