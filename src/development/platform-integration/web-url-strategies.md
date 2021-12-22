@@ -94,4 +94,4 @@ handle any path gracefully and fallback to your app's `index.html` file.
 [flutter_web_plugins]: https://api.flutter.dev/flutter/flutter_web_plugins/flutter_web_plugins-library.html
 [url_strategy]: https://pub.dev/packages/url_strategy
 [History API]: https://developer.mozilla.org/en-US/docs/Web/API/History_API
-[Configure rewrites][]
+[Configure rewrites]: {{site.url}}/development/ui/navigation/url-strategies
