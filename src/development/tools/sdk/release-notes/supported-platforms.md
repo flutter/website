@@ -20,6 +20,10 @@ As of release 2.5, Flutter supports the following platforms:
 |Web     | Edge 1.2.0 & above           | All     |
 |Windows | Windows 7 & above            | All     |
 
+All channels include master, beta and stable channels. 
+
+**Please note - dev channel has been retired. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) for more information.**
+
 ## How we define a supported platform
 
 As of Flutter 1.20, we define three tiers of support for the 
@@ -27,8 +31,6 @@ platforms on which Flutter runs:
 1. Supported Google-tested platforms,
    which are platforms the Flutter team at 
    Google tests in continuous integration at every commit. 
-   For these platforms, we also run post-commit  tests before 
-   rolling from the master channel to the dev channel. 
 1. Best effort platforms, supported community testing,
    which are platforms we believe we support through coding practices 
     and ad-hoc testing, but rely on the community for testing.
