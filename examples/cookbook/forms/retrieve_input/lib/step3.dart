@@ -43,7 +43,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                // Retrieve the text the that user has entered by using the
+                // Retrieve the text that the user has entered by using the
                 // TextEditingController.
                 content: Text(myController.text),
               );
