@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/lists/grid_lists"?>
+
 In some cases, you might want to display your items as a grid rather than
 a normal list of items that come one after the next.
 For this task, use the [`GridView`][] widget.
@@ -23,7 +25,7 @@ because it allows you to specify how many rows or columns you'd like.
 To visualize how `GridView` works,
 generate a list of 100 widgets that display their index in the list.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (GridView)" replace="/^return //g"?>
 ```dart
 GridView.count(
   // Create a grid with 2 columns. If you change the scrollDirection to
