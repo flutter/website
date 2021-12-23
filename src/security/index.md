@@ -22,7 +22,7 @@ You may also reach out to the team via our public [Discord]({{site.repo.flutter}
 sure to e-mail `security@flutter.dev` when reporting an issue, and avoid revealing information about
 vulnerabilities in public if that could put users at risk.
 
-For more details on how we handle security vulnerabilities, please see our [internal processes]({{site.repo.flutter}}/blob/master/SECURITY.md).
+For more details on how we handle security vulnerabilities, please see our [internal processes]({{site.repo.flutter}}/security/policy).
 
 ## Best practices
 
