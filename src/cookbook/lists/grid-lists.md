@@ -25,7 +25,7 @@ because it allows you to specify how many rows or columns you'd like.
 To visualize how `GridView` works,
 generate a list of 100 widgets that display their index in the list.
 
-<?code-excerpt "lib/main.dart (GridView)" replace="/^return //g"?>
+<?code-excerpt "lib/main.dart (GridView)" replace="/^body\: //g"?>
 ```dart
 GridView.count(
   // Create a grid with 2 columns. If you change the scrollDirection to
@@ -40,11 +40,12 @@ GridView.count(
       ),
     );
   }),
-);
+),
 ```
 
 ## Interactive example
 
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
