@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/lists/horizontal_list"?>
+
 You might want to create a list that scrolls
 horizontally rather than vertically.
 The [`ListView`][] widget supports horizontal lists.
@@ -19,7 +21,7 @@ The [`ListView`][] widget supports horizontal lists.
 Use the standard `ListView` constructor, passing in a horizontal
 `scrollDirection`, which overrides the default vertical direction.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ListView)" replace="/^child\: //g"?>
 ```dart
 ListView(
   // This next line does the trick.
@@ -46,11 +48,12 @@ ListView(
       color: Colors.orange,
     ),
   ],
-)
+),
 ```
 
 ## Interactive example
 
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
@@ -73,6 +76,7 @@ class MyApp extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: 20.0),
           height: 200.0,
           child: ListView(
+            // This next line does the trick.
             scrollDirection: Axis.horizontal,
             children: <Widget>[
               Container(
