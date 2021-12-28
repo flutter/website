@@ -3,11 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class BouncingBallDemo extends StatefulWidget {
+  const BouncingBallDemo({Key? key}) : super(key: key);
+
   @override
   _BouncingBallDemoState createState() => _BouncingBallDemoState();
 }
 
-class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
+class _BouncingBallDemoState extends State<BouncingBallDemo>
+    with SingleTickerProviderStateMixin {
   late AnimationController controller;
 
   @override
@@ -15,7 +18,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
     super.initState();
     controller = AnimationController(
       vsync: this, // the SingleTickerProviderStateMixin
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       lowerBound: 0,
       upperBound: 100,
     );
@@ -30,7 +33,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
     return Container(
       margin: EdgeInsets.only(top: controller.value),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.green,
         ),
@@ -48,9 +51,11 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
@@ -63,6 +68,6 @@ class MyApp extends StatelessWidget {
 
 Future<void> main() async {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }
