@@ -299,6 +299,7 @@
       { "source": "/go/restoring-anonymous-routes", "destination": "https://docs.google.com/document/d/1vnjDruoiDz0eEd4eVzg3IS6W_LRaFxNSlKWtU6iXp2M/edit", "type": 301 },
       { "source": "/go/router-api-improvement", "destination": "https://docs.google.com/document/d/1kbUPagtDl30jqYAq-mDMdd-ftHm3q9AMq55ufZCo9lE/edit?usp=sharing&resourcekey=0-JBqYh_UD3h9OSA8NS5OO4g", "type": 301 },
       { "source": "/go/rfc-android-j-deprecation", "destination": "https://docs.google.com/document/d/1N06Pm1x19AIWorENk6OdmY5T8kMzPJUOZs8aL9VccG4/edit", "type": 301 },
+      { "source": "/go/rfc-32-bit-ios-support", "destination": "https://docs.google.com/document/d/1Xz8B2w42ZGmrSdvQHo6LVLhiSZBIxnHxZxoZ-8oyRUc/edit", "type": 301 },
       { "source": "/go/rfc-ios8-deprecation", "destination": "https://docs.google.com/document/d/1HtzJLUBnvi-VjcG3XEjwVHQGWeOzlrA77ozp9TvCWVE/edit", "type": 301 },
       { "source": "/go/router-and-widgetsapp-integration", "destination": "https://docs.google.com/document/d/1QodTFmwVr1yk8dyQvoqkeILxvm92oikB1bVhHTtp6R4/edit", "type": 301 },
       { "source": "/go/scaffold-messenger", "destination": "https://docs.google.com/document/d/1TCH0T-X42z96lAcSkFttHAQMJ0MsvMojDKa6F4IQI3Y/edit?usp=sharing", "type": 301 },
