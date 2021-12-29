@@ -230,9 +230,9 @@ Therefore, you must provide a `File` to the `Image.file` constructor.
 You can create an instance of the `File` class by passing the path created in
 the previous step.
 
-<!-- skip -->
+<?code-excerpt "lib/image_file.dart (ImageFile)" replace="/^return\ //g"?>
 ```dart
-Image.file(File('path/to/my/picture.png'))
+Image.file(File('path/to/my/picture.png'));
 ```
 
 ## Complete example
