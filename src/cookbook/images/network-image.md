@@ -34,7 +34,7 @@ It supports animated gifs.
 <?code-excerpt "lib/gif.dart (Gif)" replace="/^return\ //g"?>
 ```dart
 Image.network(
-    'https://github.com/flutter/plugins/raw/master/packages/video_player/video_player/doc/demo_ipod.gif?raw=true');
+    'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif');
 ```
 
 ## Placeholders and caching

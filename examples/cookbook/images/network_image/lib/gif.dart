@@ -7,7 +7,7 @@ class MyGif extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion Gif
     return Image.network(
-        'https://github.com/flutter/plugins/raw/master/packages/video_player/video_player/doc/demo_ipod.gif?raw=true');
+        'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif');
     // #enddocregion Gif
   }
 }
