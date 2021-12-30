@@ -2,7 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+// #docregion Http
 import 'package:http/http.dart' as http;
+// #enddocregion Http
 
 // #docregion fetchAlbum
 Future<Album> fetchAlbum() async {
