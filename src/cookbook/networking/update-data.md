@@ -38,7 +38,7 @@ dependencies:
 
 Import the `http` package.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Http)"?>
 ```dart
 import 'package:http/http.dart' as http;
 ```
