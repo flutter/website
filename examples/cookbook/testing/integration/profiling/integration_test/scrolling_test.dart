@@ -19,17 +19,19 @@ void main() {
     final itemFinder = find.byKey(const ValueKey('item_50_text'));
 
     // #docregion traceAction
-    await binding.traceAction(() async {
-      // Scroll until the item to be found appears.
-      await tester.scrollUntilVisible(
-        itemFinder,
-        500.0,
-        scrollable: listFinder,
-      );
+    await binding.traceAction(
+      () async {
+        // Scroll until the item to be found appears.
+        await tester.scrollUntilVisible(
+          itemFinder,
+          500.0,
+          scrollable: listFinder,
+        );
 
-      // Verify that the item contains the correct text.
-      expect(itemFinder, findsOneWidget);
-    });
+        // Verify that the item contains the correct text.
+      },
+      reportKey: 'scrolling_timeline',
+    );
     // #enddocregion traceAction
   });
 }

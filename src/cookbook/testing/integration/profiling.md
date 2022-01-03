@@ -58,17 +58,19 @@ the `traceAction()` creates a report data `Map` that contains the `Timeline`.
 
 <?code-excerpt "integration_test/scrolling_test.dart (traceAction)"?>
 ```dart
-await binding.traceAction(() async {
-  // Scroll until the item to be found appears.
-  await tester.scrollUntilVisible(
-    itemFinder,
-    500.0,
-    scrollable: listFinder,
-  );
+await binding.traceAction(
+  () async {
+    // Scroll until the item to be found appears.
+    await tester.scrollUntilVisible(
+      itemFinder,
+      500.0,
+      scrollable: listFinder,
+    );
 
-  // Verify that the item contains the correct text.
-  expect(itemFinder, findsOneWidget);
-});
+    // Verify that the item contains the correct text.
+  },
+  reportKey: 'scrolling_timeline',
+);
 ```
 
 ### 3. Save the results to disk
@@ -100,7 +102,7 @@ Future<void> main() {
   return integrationDriver(
     responseDataCallback: (data) async {
       if (data != null) {
-        final timeline = driver.Timeline.fromJson(data['timeline']);
+        final timeline = driver.Timeline.fromJson(data['scrolling_timeline']);
 
         // Convert the Timeline into a TimelineSummary that's easier to
         // read and understand.
@@ -213,17 +215,19 @@ void main() {
     final listFinder = find.byType(Scrollable);
     final itemFinder = find.byKey(const ValueKey('item_50_text'));
 
-    await binding.traceAction(() async {
-      // Scroll until the item to be found appears.
-      await tester.scrollUntilVisible(
-        itemFinder,
-        500.0,
-        scrollable: listFinder,
-      );
+    await binding.traceAction(
+      () async {
+        // Scroll until the item to be found appears.
+        await tester.scrollUntilVisible(
+          itemFinder,
+          500.0,
+          scrollable: listFinder,
+        );
 
-      // Verify that the item contains the correct text.
-      expect(itemFinder, findsOneWidget);
-    });
+        // Verify that the item contains the correct text.
+      },
+      reportKey: 'scrolling_timeline',
+    );
   });
 }
 ```
@@ -239,7 +243,7 @@ Future<void> main() {
   return integrationDriver(
     responseDataCallback: (data) async {
       if (data != null) {
-        final timeline = driver.Timeline.fromJson(data['timeline']);
+        final timeline = driver.Timeline.fromJson(data['scrolling_timeline']);
 
         // Convert the Timeline into a TimelineSummary that's easier to
         // read and understand.
