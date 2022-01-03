@@ -56,6 +56,10 @@ provides a function that scrolls through the list of items,
 ensuring that a specific item is displayed. When the function completes,
 the `traceAction()` creates a report data `Map` that contains the `Timeline`.
 
+Specify the `reportKey` when running more than one `traceAction`.
+By default all `Timelines` are stored with the key `timeline`,
+in this example the `reportKey` is changed to `scrolling_timeline`.
+
 <?code-excerpt "integration_test/scrolling_test.dart (traceAction)"?>
 ```dart
 await binding.traceAction(
@@ -66,8 +70,6 @@ await binding.traceAction(
       500.0,
       scrollable: listFinder,
     );
-
-    // Verify that the item contains the correct text.
   },
   reportKey: 'scrolling_timeline',
 );
@@ -223,8 +225,6 @@ void main() {
           500.0,
           scrollable: listFinder,
         );
-
-        // Verify that the item contains the correct text.
       },
       reportKey: 'scrolling_timeline',
     );

@@ -27,8 +27,6 @@ void main() {
           500.0,
           scrollable: listFinder,
         );
-
-        // Verify that the item contains the correct text.
       },
       reportKey: 'scrolling_timeline',
     );
