@@ -1,11 +1,11 @@
 ---
-title: ThemeData's toggleableActiveColor property have been deprecated
+title: ThemeData's toggleableActiveColor property has been deprecated
 description: Material Widgets that use toggleableActiveColor property are migrated to use Material ColorScheme.
 ---
 
 ## Summary
 
-The widgets such as Switch, `SwitchListTile`, `Checkbox`, `CheckboxListTile`, `Radio`, `RadioListTile` have been adopted to use `ColorScheme.secondary` color for its toggleable widget. `ThemeData.toggleableActiveColor` is deprecated and will eventually be removed.
+The Material widgets `Switch`, `SwitchListTile`, `Checkbox`, `CheckboxListTile`, `Radio`, `RadioListTile` now use `ColorScheme.secondary` color for their toggleable widget. `ThemeData.toggleableActiveColor` is deprecated and will eventually be removed.
 
 ## Context
 
@@ -13,11 +13,11 @@ Migration of widget that depends on `ThemeData.toggleableActiveColor` to `ColorS
 
 ## Description of change
 
-The widgets using `ThemeData.toggleableActiveColor` color for selected state now uses `ColorScheme.secondary` color.
+The widgets using `ThemeData.toggleableActiveColor` color for selected state now uses `ColorScheme.secondary`.
 
 ## Migration guide
 
-In order to customize toggleable widgets selected color, remnove `ThemeData.toggleableActiveColor` and customize `ColorScheme.secondary` instead.
+In order to customize toggleable widgets selected color, remove `ThemeData.toggleableActiveColor` and customize `ColorScheme.secondary` instead.
 
 Code before migration:
 
@@ -51,7 +51,7 @@ In stable release: not yet
 
 API documentation:
 
-* [`toggleableActiveColor`][]
+* [`ThemeData.toggleableActiveColor`][]
 * [`ColorScheme.secondary`][]
 
 Relevant issues:
