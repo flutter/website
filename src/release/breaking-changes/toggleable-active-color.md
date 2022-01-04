@@ -9,15 +9,15 @@ The Material widgets `Switch`, `SwitchListTile`, `Checkbox`, `CheckboxListTile`,
 
 ## Context
 
-Migration of widget that depends on `ThemeData.toggleableActiveColor` to `ColorScheme.secondary` rendered toggleableActiveColor unused which caused the deprecationn of this theme property.
+Migration of widgets that depends on `ThemeData.toggleableActiveColor` to `ColorScheme.secondary` rendered toggleableActiveColor unuse, hence the deprecationn of this theme property.
 
 ## Description of change
 
-The widgets using `ThemeData.toggleableActiveColor` color for the selected state now use `ColorScheme.secondary`.
+The widgets using `ThemeData.toggleableActiveColor` color for the active/selected state now use `ColorScheme.secondary`.
 
 ## Migration guide
 
-In order to customize toggleable widgets' selected color, remove `ThemeData.toggleableActiveColor` and customize `ColorScheme.secondary` instead.
+Toggleable widgets' active/selected color can generally customized in 3 ways at the widget-level using components themes `SwitchThemeData`, `ListTileThemeData`, `CheckboxThemeData`, and `RadioThemeData` using `ColorScheme.secondary`.
 
 Code before migration:
 
