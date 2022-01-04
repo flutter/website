@@ -13,11 +13,11 @@ Migration of widget that depends on `ThemeData.toggleableActiveColor` to `ColorS
 
 ## Description of change
 
-The widgets using `ThemeData.toggleableActiveColor` color for selected state now uses `ColorScheme.secondary`.
+The widgets using `ThemeData.toggleableActiveColor` color for the selected state now use `ColorScheme.secondary`.
 
 ## Migration guide
 
-In order to customize toggleable widgets selected color, remove `ThemeData.toggleableActiveColor` and customize `ColorScheme.secondary` instead.
+In order to customize toggleable widgets' selected color, remove `ThemeData.toggleableActiveColor` and customize `ColorScheme.secondary` instead.
 
 Code before migration:
 
