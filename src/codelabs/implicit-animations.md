@@ -92,15 +92,36 @@ To create a fade-in effect, you can animate the `opacity` property using the
 ```diff
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
-@@ -21,7 +21,7 @@
+@@ -2,6 +2,8 @@
+ // Use of this source code is governed by a BSD-style license
+ // that can be found in the LICENSE file.
+
++// ignore_for_file: missing_required_argument
++
+ import 'package:flutter/material.dart';
+
+ const owlUrl =
+@@ -25,12 +27,14 @@
              style: TextStyle(color: Colors.blueAccent),
            ),
-           onPressed: () => null),
--      Container(
+           onPressed: () => {}),
+-      Column(
+-        children: const [
+-          Text('Type: Owl'),
+-          Text('Age: 39'),
+-          Text('Employment: None'),
+-        ],
 +      AnimatedOpacity(
-         child: Column(
-           children: <Widget>[
-             Text('Type: Owl'),
++        child: Column(
++          children: const [
++            Text('Type: Owl'),
++            Text('Age: 39'),
++            Text('Employment: None'),
++          ],
++        ),
+       )
+     ]);
+   }
 ```
 
 {{site.alert.info}}
@@ -117,7 +138,16 @@ the starting value for `opacity` to zero:
 ```diff
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
-@@ -11,6 +11,8 @@
+@@ -2,8 +2,6 @@
+ // Use of this source code is governed by a BSD-style license
+ // that can be found in the LICENSE file.
+
+-// ignore_for_file: missing_required_argument
+-
+ import 'package:flutter/material.dart';
+
+ const owlUrl =
+@@ -17,6 +15,8 @@
  }
 
  class _FadeInDemoState extends State<FadeInDemo> {
@@ -126,14 +156,14 @@ the starting value for `opacity` to zero:
    @override
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
-@@ -22,6 +24,8 @@
+@@ -28,6 +28,8 @@
            ),
-           onPressed: () => null),
+           onPressed: () => {}),
        AnimatedOpacity(
-+        duration: Duration(seconds: 3),
++        duration: const Duration(seconds: 3),
 +        opacity: opacity,
          child: Column(
-           children: <Widget>[
+           children: const [
              Text('Type: Owl'),
 ```
 
@@ -149,16 +179,16 @@ to set `opacity` to 1:
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -18,11 +18,14 @@
+@@ -22,11 +22,14 @@
      return Column(children: <Widget>[
-       Image.network(owl_url),
+       Image.network(owlUrl),
        TextButton(
--          child: Text(
+-          child: const Text(
 -            'Show Details',
 -            style: TextStyle(color: Colors.blueAccent),
 -          ),
--          onPressed: () => null),
-+        child: Text(
+-          onPressed: () => {}),
++        child: const Text(
 +          'Show Details',
 +          style: TextStyle(color: Colors.blueAccent),
 +        ),
@@ -167,7 +197,7 @@ to set `opacity` to 1:
 +        }),
 +      ),
        AnimatedOpacity(
-         duration: Duration(seconds: 2),
+         duration: const Duration(seconds: 2),
          opacity: opacity,
 ```
 
@@ -186,15 +216,15 @@ you can start with 2 seconds:
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -24,7 +24,7 @@
+@@ -28,7 +28,7 @@
            ),
-           onPressed: () => null),
+           onPressed: () => {}),
        AnimatedOpacity(
--        duration: Duration(seconds: 3),
-+        duration: Duration(seconds: 2),
+-        duration: const Duration(seconds: 3),
++        duration: const Duration(seconds: 2),
          opacity: opacity,
          child: Column(
-           children: <Widget>[
+           children: const [
 ```
 
 ### Fade-in (complete)
@@ -272,7 +302,16 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 ```diff
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
-@@ -44,7 +44,7 @@
+@@ -2,6 +2,8 @@
+ // Use of this source code is governed by a BSD-style license
+ // that can be found in the LICENSE file.
+
++// ignore_for_file: missing_required_argument
++
+ import 'dart:math';
+
+ import 'package:flutter/material.dart';
+@@ -47,7 +49,7 @@
              SizedBox(
                width: 128,
                height: 128,
@@ -299,7 +338,7 @@ for the `color`, `borderRadius`, and `margin` state variables:
 ```diff
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
-@@ -35,6 +35,14 @@
+@@ -40,6 +40,14 @@
      margin = randomMargin();
    }
 
@@ -324,11 +363,11 @@ invoke the `change()` method in the `onPressed()` handler:
 ```diff
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
-@@ -62,7 +62,7 @@
+@@ -67,7 +67,7 @@
              ),
              ElevatedButton(
-               child: Text('change'),
--              onPressed: () => null,
+               child: const Text('change'),
+-              onPressed: () => {},
 +              onPressed: () => change(),
              ),
            ],
@@ -342,7 +381,13 @@ between the old and new values:
 ```diff
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
-@@ -6,6 +6,8 @@
+@@ -2,12 +2,12 @@
+ // Use of this source code is governed by a BSD-style license
+ // that can be found in the LICENSE file.
+
+-// ignore_for_file: missing_required_argument
+-
+ import 'dart:math';
 
  import 'package:flutter/material.dart';
 
@@ -351,7 +396,7 @@ between the old and new values:
  double randomBorderRadius() {
    return Random().nextDouble() * 64;
  }
-@@ -58,6 +60,7 @@
+@@ -63,6 +63,7 @@
                    color: color,
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
@@ -389,7 +434,7 @@ and watch how the animation changes when you pass the
 ```diff
 --- container5/lib/main.dart
 +++ container6/lib/main.dart
-@@ -61,6 +61,7 @@
+@@ -64,6 +64,7 @@
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
                  duration: _duration,

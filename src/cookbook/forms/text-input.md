@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/forms/text_input/"?>
+
 Text fields allow users to type text into an app.
 They are used to build forms,
 send messages, create search experiences, and more.
@@ -32,14 +34,14 @@ To remove the decoration entirely (including the
 underline and the space reserved for the label),
 set the `decoration` to null.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TextField)" replace="/^child\: //g"?>
 ```dart
 TextField(
-  decoration: const InputDecoration(
+  decoration: InputDecoration(
     border: OutlineInputBorder(),
-    hintText: 'Enter a search term'
+    hintText: 'Enter a search term',
   ),
-);
+),
 ```
 
 To retrieve the value when it changes,
@@ -53,18 +55,19 @@ This provides additional functionality,
 such as validation and integration with other
 [`FormField`][] widgets.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TextFormField)" replace="/^child\: //g"?>
 ```dart
 TextFormField(
   decoration: const InputDecoration(
     border: UnderlineInputBorder(),
-    labelText: 'Enter your username'
+    labelText: 'Enter your username',
   ),
-);
+),
 ```
 
 ## Interactive example
 
+<?code-excerpt "lib/main.dart" replace="/^child\: //g"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
@@ -89,7 +92,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyCustomForm extends StatelessWidget {
-  const MyCustomForm({ Key? key }) : super(key: key);
+  const MyCustomForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -9,6 +9,8 @@ next:
   path: /cookbook/lists/basic-list
 ---
 
+<?code-excerpt path-base="cookbook/images/cached_images"?>
+
 In some cases, it's handy to cache images as they're downloaded from the
 web, so they can be used offline. For this purpose,
 use the [`cached_network_image`][] package.
@@ -17,7 +19,7 @@ In addition to caching, the `cached_network_image`
 package also supports placeholders and fading images
 in as they're loaded.
 
-<!-- skip -->
+<?code-excerpt "lib/simple.dart (SimpleCachedImage)" replace="/^return //g"?>
 ```dart
 CachedNetworkImage(
   imageUrl: 'https://picsum.photos/250?image=9',
@@ -29,17 +31,17 @@ CachedNetworkImage(
 The `cached_network_image` package allows you to use any widget as a
 placeholder. In this example, display a spinner while the image loads.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (CachedNetworkImage)" replace="/^child\: //g"?>
 ```dart
 CachedNetworkImage(
-  placeholder: (context, url) => CircularProgressIndicator(),
+  placeholder: (context, url) => const CircularProgressIndicator(),
   imageUrl: 'https://picsum.photos/250?image=9',
-);
+),
 ```
 
 ## Complete example
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -64,8 +66,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: CachedNetworkImage(
             placeholder: (context, url) => const CircularProgressIndicator(),
-            imageUrl:
-                'https://picsum.photos/250?image=9',
+            imageUrl: 'https://picsum.photos/250?image=9',
           ),
         ),
       ),

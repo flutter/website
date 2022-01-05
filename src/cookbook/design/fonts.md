@@ -9,6 +9,8 @@ next:
   path: /cookbook/design/themes
 ---
 
+<?code-excerpt path-base="cookbook/design/fonts/"?>
+
 Although Android and iOS offer high quality system fonts,
 one of the most common requests from designers is for custom fonts.
 For example, you might have a custom-built font from a designer,
@@ -98,11 +100,10 @@ outline weights and styles:
 
   * The `weight` property specifies the weight of the outlines in
     the file as an integer multiple of 100, between 100 and 900.
-    These values correspond to the [`FontWeight`][]
-    and can be used in the [`fontWeight`][] property of a
-    [`TextStyle`][] object. For example, if you want to use
-    the `RobotoMono-Bold` font defined above, you would set `fontWeight`
-    to `FontWeight.w700` in your `TextStyle`.
+    These values correspond to the [`FontWeight`][] and can be used in the
+    [`fontWeight`][fontWeight property] property of a [`TextStyle`][] object. 
+    For example, if you want to use the `RobotoMono-Bold` font defined above, 
+    you would set `fontWeight` to `FontWeight.w700` in your `TextStyle`.
     
     Note that defining the `weight` property does not
     override the actual weight of the font. You would not be able to
@@ -110,11 +111,11 @@ outline weights and styles:
     was set to 100.
 
   * The `style` property specifies whether the outlines in the file are
-    `italic` or `normal`. These values correspond to the
-    [`FontStyle`][] and can be used in the [`fontStyle`][] property of a
-    [`TextStyle`][] object. For example, if you want to use
-    the `Raleway-Italic` font defined above, you would set `fontStyle`
-    to `FontStyle.italic` in your `TextStyle`.
+    `italic` or `normal`. 
+    These values correspond to the [`FontStyle`][] and can be used in the
+    [`fontStyle`][fontStyle property] property of a [`TextStyle`][] object. 
+    For example, if you want to use the `Raleway-Italic` font defined above, 
+    you would set `fontStyle` to `FontStyle.italic` in your `TextStyle`.
     
     Note that defining the `style` property does not
     override the actual style of the font; You would not be able to
@@ -131,9 +132,9 @@ as part of the app's `theme`. The value provided to
 `fontFamily` must match the `family`
 name declared in the `pubspec.yaml`.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (MaterialApp)"?>
 ```dart
-MaterialApp(
+return MaterialApp(
   title: 'Custom Fonts',
   // Set Raleway as the default app font.
   theme: ThemeData(fontFamily: 'Raleway'),
@@ -154,12 +155,12 @@ In this example, apply the RobotoMono font to a single `Text` widget.
 Once again, the `fontFamily` must match the `family` name declared in the
 `pubspec.yaml`.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Text)"?>
 ```dart
-Text(
+child: Text(
   'Roboto Mono sample',
   style: TextStyle(fontFamily: 'RobotoMono'),
-);
+),
 ```
 
 ### TextStyle
@@ -208,6 +209,7 @@ flutter:
 
 ### `main.dart`
 
+<?code-excerpt "lib/main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -252,9 +254,9 @@ class MyHomePage extends StatelessWidget {
 
 [Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
-[`fontStyle`]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
-[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
-[`fontWeight`]: {{site.api}}/flutter/painting/TextStyle/fontWeight.html
+[fontStyle property]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
+[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle.html
+[fontWeight property]: {{site.api}}/flutter/painting/TextStyle/fontWeight.html
 [`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 [Google Fonts]: https://fonts.google.com
 [google_fonts]: {{site.pub-pkg}}/google_fonts

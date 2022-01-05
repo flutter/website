@@ -2,11 +2,17 @@
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file.
 
+// ignore_for_file: missing_required_argument
+
 import 'package:flutter/material.dart';
 
-const owl_url = 'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
+const owlUrl =
+    'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
 
 class FadeInDemo extends StatefulWidget {
+  const FadeInDemo({Key? key}) : super(key: key);
+
+  @override
   _FadeInDemoState createState() => _FadeInDemoState();
 }
 
@@ -14,16 +20,16 @@ class _FadeInDemoState extends State<FadeInDemo> {
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      Image.network(owl_url),
+      Image.network(owlUrl),
       TextButton(
-          child: Text(
+          child: const Text(
             'Show Details',
             style: TextStyle(color: Colors.blueAccent),
           ),
-          onPressed: () => null),
+          onPressed: () => {}),
       AnimatedOpacity(
         child: Column(
-          children: <Widget>[
+          children: const [
             Text('Type: Owl'),
             Text('Age: 39'),
             Text('Employment: None'),
@@ -35,9 +41,11 @@ class _FadeInDemoState extends State<FadeInDemo> {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         body: Center(
           child: FadeInDemo(),
@@ -49,6 +57,6 @@ class MyApp extends StatelessWidget {
 
 void main() {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }

@@ -31,6 +31,8 @@ Flutter has four [release channels][]:
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
+**Please note** - **dev** channel has been deprecated. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) for more information.
+
 To view your current channel, use the following command:
 
 ```terminal
@@ -43,7 +45,7 @@ to download the Flutter SDK and dependent packages.
 For example:
 
 ```terminal
-$ flutter channel dev
+$ flutter channel beta
 $ flutter upgrade
 ```
 

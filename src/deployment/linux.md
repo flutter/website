@@ -14,18 +14,6 @@ When you're ready to prepare a _release_ version of your app,
 for example to [publish to the Snap Store][snap],
 this page can help.
 
-{{site.alert.warning}}
-  **Work in progress!**
-  This page covers desktop support for Linux,
-  which is available as an alpha-quality feature in the Flutter dev channel.
-  There are still notable feature gaps,
-  including accessibility support.
-  We strongly recommend that you examine the
-  [Desktop shells][] page in the [Flutter wiki][]
-  to understand known limitations and ongoing work.
-{{site.alert.end}}
-
-
 ## Prerequisites
 
 To build and publish to the Snap Store, you need the
