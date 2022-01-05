@@ -38,13 +38,16 @@ The [`Scaffold`][] widget, from the [material library][],
 creates this visual structure and ensures that important
 widgets don't overlap.
 
-<!-- skip -->
+<?code-excerpt "lib/partial.dart (Scaffold)"?>
 ```dart
-Scaffold(
-  appBar: AppBar(
-    title: Text('SnackBar Demo'),
+return MaterialApp(
+  title: 'SnackBar Demo',
+  home: Scaffold(
+    appBar: AppBar(
+      title: const Text('SnackBar Demo'),
+    ),
+    body: const SnackBarPage(),
   ),
-  body: SnackBarPage(), // Complete this code in the next step.
 );
 ```
 
@@ -53,9 +56,11 @@ Scaffold(
 With the `Scaffold` in place, display a `SnackBar`.
 First, create a `SnackBar`, then display it using `ScaffoldMessenger`.
 
-<!-- skip -->
+<?code-excerpt "lib/partial.dart (DisplaySnackBar)"?>
 ```dart
-final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
+const snackBar = SnackBar(
+  content: Text('Yay! A SnackBar!'),
+);
 
 // Find the ScaffoldMessenger in the widget tree
 // and use it to show a SnackBar.
@@ -73,10 +78,10 @@ the message.
 Here's an example of providing
 an additional `action` to the `SnackBar` widget:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (SnackBarAction)"?>
 ```dart
 final snackBar = SnackBar(
-  content: Text('Yay! A SnackBar!'),
+  content: const Text('Yay! A SnackBar!'),
   action: SnackBarAction(
     label: 'Undo',
     onPressed: () {

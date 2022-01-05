@@ -213,6 +213,7 @@
       { "source": "/go/faster-cocoon", "destination": "https://docs.google.com/document/d/1NXP0_9TJ1qz674iYyOGVLEHWVpmbXr5yjhBrdoU_x5g/edit", "type": 301 },
       { "source": "/go/federated-platforms", "destination": "https://docs.google.com/document/d/1z_4Z5JMTbk5c4FpayVAb-PTz2wLP-aSCirbieavT3Ws/edit?usp=sharing", "type": 301 },
       { "source": "/go/federated-plugins", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit", "type": 301 },
+      { "source": "/go/ffi-plugins", "destination": "https://docs.google.com/document/d/1vMw-W6L-r-uL1SUgzDh6J5rmtqum7SZdO9khWACrZJI/edit?resourcekey=0-vvjEK88N-pApyKTPWJ2IZQ", "type": 301 },
       { "source": "/go/floating-snackbar-offset", "destination": "https://docs.google.com/document/d/1elP-y83PtvfAZHNcpHCtnOFhZO9VnnlobwfQ33QO4hg/edit", "type": 301 },
       { "source": "/go/flutter-engine-clocks", "destination": "https://docs.google.com/document/d/1Sx8QA1qXgJGw5r4ESviDnU2LSShNHiq_LjbRWPgSvXQ/edit?usp=sharing&resourcekey=0-BoBvLxgqf_nc_rwLc0zmTw", "type": 301 },
       { "source": "/go/flutter-engine-extensions", "destination": "https://docs.google.com/document/d/1xG7jR4FserdW7TdwnklF3_lXUGmt4myPQjDGF3LFtCQ/edit?resourcekey=0-Iug4D2mWuyQI6suvC_2itw#", "type": 301 },
@@ -263,6 +264,7 @@
       { "source": "/go/migrating-to-vertical-alignment", "destination": "https://docs.google.com/document/d/1vi6d6On6EXN82Q8KmXSLbWNnsnm9YjWtTWhSyjPF59Q/edit?usp=sharing", "type": 301 },
       { "source": "/go/mouse-tracker-no-longer-attaches-annotations", "destination": "https://docs.google.com/document/d/1YuOcepqZjNknAMz1si2m-jAiLT4MP28XEzBcKLHnNiA/edit", "type": 301 },
       { "source": "/go/move-mouse-tracker-to-rendering", "destination": "https://docs.google.com/document/d/1dYNOTZ4kdq6ndNHopjUlrGlGBw3W-3jMbnoNJouIYtE/edit", "type": 301 },
+      { "source": "/go/multiple-applications", "destination": "https://docs.google.com/document/d/1alrr7qimNDazmQx5D80BSHh62V2OINO4UQ5N3HcPnmo/edit?resourcekey=0-wPs1Go9AiKR-yG0-xStuKw", "type": 301 },
       { "source": "/go/multiple-engines", "destination": "https://docs.google.com/document/d/1NwiZPWHd1te46eP2GWwIezDV9CdMQkODAMuF5kWdtLw", "type": 301 },
       { "source": "/go/multiple-flutters", "destination": "https://docs.google.com/document/d/1fdKRufqUzQvERcqNIUSq-GdabXc4k8VIsClzRElJ6KY", "type": 301 },
       { "source": "/go/navigator-with-router", "destination": "https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit", "type": 301 },
@@ -296,6 +298,7 @@
       { "source": "/go/respecting-tabcontroller-animateto-duration", "destination": "https://docs.google.com/document/d/1wzSzUYstDM-Kg5kwskyXcEUX7QTb-lBOso7Z5ebrCTk/edit", "type": 301 },
       { "source": "/go/restoring-anonymous-routes", "destination": "https://docs.google.com/document/d/1vnjDruoiDz0eEd4eVzg3IS6W_LRaFxNSlKWtU6iXp2M/edit", "type": 301 },
       { "source": "/go/router-api-improvement", "destination": "https://docs.google.com/document/d/1kbUPagtDl30jqYAq-mDMdd-ftHm3q9AMq55ufZCo9lE/edit?usp=sharing&resourcekey=0-JBqYh_UD3h9OSA8NS5OO4g", "type": 301 },
+      { "source": "/go/rfc-32-bit-ios-support", "destination": "https://docs.google.com/document/d/1Xz8B2w42ZGmrSdvQHo6LVLhiSZBIxnHxZxoZ-8oyRUc/edit", "type": 301 },
       { "source": "/go/rfc-android-j-deprecation", "destination": "https://docs.google.com/document/d/1N06Pm1x19AIWorENk6OdmY5T8kMzPJUOZs8aL9VccG4/edit", "type": 301 },
       { "source": "/go/rfc-ios8-deprecation", "destination": "https://docs.google.com/document/d/1HtzJLUBnvi-VjcG3XEjwVHQGWeOzlrA77ozp9TvCWVE/edit", "type": 301 },
       { "source": "/go/router-and-widgetsapp-integration", "destination": "https://docs.google.com/document/d/1QodTFmwVr1yk8dyQvoqkeILxvm92oikB1bVhHTtp6R4/edit", "type": 301 },
@@ -348,6 +351,7 @@
       { "source": "/go/web-slot-content", "destination": "https://docs.google.com/document/d/1U6aCSuzQsFpOP8_OseL-fwl2-MC2bxJAsgt2R_-sC30", "type": 301 },
       { "source": "/go/widget-tree-image-cache", "destination": "https://docs.google.com/document/d/1deEtxZk1VYRmzvkL4gTb3sEnjBrHejQkWObQ4yrP5jE/edit?pli=1#", "type": 301 },
       { "source": "/go/widgetspan-in-selectabletext", "destination": "https://docs.google.com/document/d/1nrVRytWVF-1hr8LvUKyENE5s074UInni9ZiColtIIxI", "type": 301 },
+      { "source": "/go/windows-x86-arm64-support", "destination": "https://docs.google.com/document/d/1gAGqtTAjO0GntR8bPonIO1aZJnTghPCI_PHJPdNzEmo/edit?resourcekey=0-l1tL7iai47yw3bMl9IcpHw", "type": 301 },
       { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 }
     ],
     "headers": [
@@ -358,7 +362,7 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "source": "**/*.@(jpg|jpeg|gif|png|md)",
         "headers": [
           { "key": "Cache-Control", "value": "max-age=3600" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }

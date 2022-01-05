@@ -116,17 +116,13 @@ class _MyCustomFormState extends State<MyCustomForm> {
 Now that you have a `FocusNode`,
 pass it to a specific `TextField` in the `build()` method.
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (Build)"?>
 ```dart
-class _MyCustomFormState extends State<MyCustomForm> {
-  // Code to create the Focus node...
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      focusNode: myFocusNode,
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return TextField(
+    focusNode: myFocusNode,
+  );
 }
 ```
 
@@ -136,13 +132,13 @@ Finally, focus the text field when the user taps a floating
 action button. Use the [`requestFocus()`][] method to perform
 this task.
 
-<!-- skip -->
+<?code-excerpt "lib/step3.dart (FloatingActionButton)" replace="/^floatingActionButton\: //g"?>
 ```dart
 FloatingActionButton(
-  // When the button is pressed, give focus to the text field using
-  // myFocusNode.
+  // When the button is pressed,
+  // give focus to the text field using myFocusNode.
   onPressed: () => myFocusNode.requestFocus(),
-);
+),
 ```
 
 ## Interactive example

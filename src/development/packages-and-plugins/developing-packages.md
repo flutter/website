@@ -459,8 +459,10 @@ class HelloPluginWindows extends HelloPluginPlatform {
   }
 ```
 
-This is supported for Windows, macOS, and Linux starting in Flutter 2.5, and
-for Android and iOS starting in Flutter 2.8.
+This is supported for Windows, macOS, and Linux starting in Flutter 2.5.
+`dartPluginClass` is supported for Android and iOS starting in Flutter 2.8,
+but currently a `pluginClass` is still required for those platforms. That
+requirement will be removed in a future version of Flutter.
 
 ### Testing your plugin
 

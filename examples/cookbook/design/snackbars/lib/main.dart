@@ -9,12 +9,14 @@ class SnackBarDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SnackBar Demo',
+      // #docregion Scaffold
       home: Scaffold(
         appBar: AppBar(
           title: const Text('SnackBar Demo'),
         ),
         body: const SnackBarPage(),
       ),
+      // #enddocregion Scaffold
     );
   }
 }
@@ -27,6 +29,7 @@ class SnackBarPage extends StatelessWidget {
     return Center(
       child: ElevatedButton(
         onPressed: () {
+          // #docregion SnackBarAction
           final snackBar = SnackBar(
             content: const Text('Yay! A SnackBar!'),
             action: SnackBarAction(
@@ -36,6 +39,7 @@ class SnackBarPage extends StatelessWidget {
               },
             ),
           );
+          // #enddocregion SnackBarAction
 
           // Find the ScaffoldMessenger in the widget tree
           // and use it to show a SnackBar.

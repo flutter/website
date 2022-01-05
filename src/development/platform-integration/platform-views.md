@@ -4,6 +4,8 @@ short-title: Platform-views
 description: Learn how to host native Android and iOS views in your Flutter app with Platform Views.
 ---
 
+<?code-excerpt path-base="development/platform_integration"?>
+
 Platform views allow you to embed native views in a Flutter app, so
 you can apply transforms, clips, and opacity to the native view
 from Dart.
@@ -58,24 +60,25 @@ do the following:
 <ol markdown="1">
 <li markdown="1">Add the following imports:
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_1.dart (Import)"?>
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 ```
 </li>
 
 <li markdown="1">Implement a `build()` method:
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_1.dart (HybridCompositionWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  final String viewType = '<platform-view-type>';
+  const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
-  final Map<String, dynamic> creationParams = <String, dynamic>{};
+  const Map<String, dynamic> creationParams = <String, dynamic>{};
 
   return PlatformViewLink(
     viewType: viewType,
@@ -93,10 +96,10 @@ Widget build(BuildContext context) {
         viewType: viewType,
         layoutDirection: TextDirection.ltr,
         creationParams: creationParams,
-        creationParamsCodec: StandardMessageCodec(),
+        creationParamsCodec: const StandardMessageCodec(),
         onFocus: () {
           params.onFocusChanged(true);
-        } ,
+        },
       )
         ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
         ..create();
@@ -121,15 +124,16 @@ do the following:
 <ol markdown="1">
 <li markdown="1">Add the following imports:
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_2.dart (Import)"?>
 ```dart
-import 'package:flutter/widget.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 ```
 </li>
 
 <li markdown="1">Implement a `build()` method:
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_2.dart (VirtualDisplayWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
@@ -307,10 +311,8 @@ for example, `NativeViewFactory.java`:
 package dev.flutter.example;
 
 import android.content.Context;
-import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
-import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.StandardMessageCodec;
 import io.flutter.plugin.platform.PlatformView;
 import io.flutter.plugin.platform.PlatformViewFactory;
@@ -363,7 +365,6 @@ package dev.flutter.plugin.example;
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
-import io.flutter.plugin.common.BinaryMessenger;
 
 public class PlatformViewPlugin implements FlutterPlugin {
   @Override
@@ -422,19 +423,20 @@ do the following in `native_view_example.dart`:
 <ol markdown="1">
 <li markdown="1">Add the following imports:
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_3.dart (Import)"?>
 ```dart
 import 'package:flutter/widgets.dart';
+import 'package:flutter/services.dart';
 ```
 </li>
 
 <li markdown="1">Implement a `build()` method:
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  final String viewType = '<platform-view-type>';
+  const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
 
@@ -704,21 +706,21 @@ When implementing the `build()` method in Dart,
 you can use [`defaultTargetPlatform`][]
 to detect the platform, and decide what widget to use:
 
-<!-- skip -->
+<?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  final String viewType = '<platform-view-type>';
+  const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
 
   switch (defaultTargetPlatform) {
     case TargetPlatform.android:
-      // return widget on Android.
+    // return widget on Android.
     case TargetPlatform.iOS:
-      // return widget on iOS.
+    // return widget on iOS.
     default:
-      throw UnsupportedError("Unsupported platform view");
+      throw UnsupportedError('Unsupported platform view');
   }
 }
 ```

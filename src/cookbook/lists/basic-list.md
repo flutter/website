@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/lists/basic_list"?>
+
 Displaying lists of data is a fundamental pattern for mobile apps.
 Flutter includes the [`ListView`][]
 widget to make working with lists a breeze.
@@ -23,7 +25,7 @@ perfect for lists that contain only a few items.
 The built-in [`ListTile`][]
 widget is a way to give items a visual structure.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ListView)" replace="/^body\: //g"?>
 ```dart
 ListView(
   children: const <Widget>[
@@ -40,11 +42,12 @@ ListView(
       title: Text('Phone'),
     ),
   ],
-);
+),
 ```
 
 ## Interactive example
 
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 
