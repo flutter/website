@@ -243,6 +243,7 @@
       { "source": "/go/input-field-autofill", "destination": "https://docs.google.com/document/d/1wYLsoc7NiHl2jFueB4Ros09E3nDCotdWVovDCFSMcAk/edit", "type": 301 },
       { "source": "/go/ios-autocorrection-highlight-support", "destination": "https://docs.google.com/document/d/18ZO7ThKu2wwCofGOKZSInPsq93IzkQTRn9eiyskeh7I/edit", "type": 301 },
       { "source": "/go/ios-pull-to-refresh", "destination": "https://docs.google.com/document/d/1oUgNd3fsJ1QVuEmA6ENBT8vq3o6QKCRUPGCB6q91VgI/edit", "type": 301 },
+      { "source": "/go/ios-scribble", "destination": "https://docs.google.com/document/d/1mjQbsSRQnHuAgMNdouaSgTS-Xv-w57fdKfOUUafWpRo", "type": 301 },
       { "source": "/go/ios-switch-controll-scrolling", "destination": "https://docs.google.com/document/d/1CZ2CRXihPQ1hBUXWODpyPVJ_2Yc0es6tkXrJSnpDajA", "type": 301 },
       { "source": "/go/issue-triage-changes", "destination": "https://docs.google.com/document/d/1KJVPMxzfFaL_gIB6Z3oNRTBKA-NP25YpM8xi3xUKbBY", "type": 301 },
       { "source": "/go/key-based-mouse-tracker-annotation", "destination": "https://docs.google.com/document/d/18DCRSX4-KjJIrnru_Cv9cJjzQmUWM95r8n6uvbS45-E/edit", "type": 301 },
