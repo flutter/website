@@ -412,12 +412,13 @@ that you are animating:
 ```diff
 --- explicit1/lib/main.dart
 +++ explicit2/lib/main.dart
-@@ -7,7 +7,7 @@
+@@ -9,7 +9,8 @@
    _BouncingBallDemoState createState() => _BouncingBallDemoState();
  }
 
 -class _BouncingBallDemoState extends State<BouncingBallDemo> {
-+class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
++class _BouncingBallDemoState extends State<BouncingBallDemo>
++    with SingleTickerProviderStateMixin {
    @override
    void initState() {
      super.initState();
@@ -449,10 +450,16 @@ and call the `AnimationController.dispose()` within the
 ```diff
 --- explicit2/lib/main.dart
 +++ explicit3/lib/main.dart
-@@ -8,9 +8,12 @@
- }
+@@ -1,3 +1,5 @@
++// ignore_for_file: missing_required_argument
++
+ import 'dart:async';
 
- class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
+ import 'package:flutter/material.dart';
+@@ -11,9 +13,12 @@
+
+ class _BouncingBallDemoState extends State<BouncingBallDemo>
+     with SingleTickerProviderStateMixin {
 +  late AnimationController controller;
 +
    @override
@@ -462,7 +469,7 @@ and call the `AnimationController.dispose()` within the
    }
 
    @override
-@@ -27,6 +30,12 @@
+@@ -30,6 +35,12 @@
        ),
      );
    }
@@ -501,14 +508,20 @@ and `upperBound` to the `AnimationController` constructor:
 ```diff
 --- explicit3/lib/main.dart
 +++ explicit4/lib/main.dart
-@@ -13,7 +13,12 @@
+@@ -1,5 +1,3 @@
+-// ignore_for_file: missing_required_argument
+-
+ import 'dart:async';
+
+ import 'package:flutter/material.dart';
+@@ -18,7 +16,12 @@
    @override
    void initState() {
      super.initState();
 -    controller = AnimationController();
 +    controller = AnimationController(
 +      vsync: this, // the SingleTickerProviderStateMixin
-+      duration: Duration(seconds: 1),
++      duration: const Duration(seconds: 1),
 +      lowerBound: 0,
 +      upperBound: 100,
 +    );
@@ -552,7 +565,7 @@ changes its value:
 ```diff
 --- explicit4/lib/main.dart
 +++ explicit5/lib/main.dart
-@@ -19,12 +19,16 @@
+@@ -22,12 +22,16 @@
        lowerBound: 0,
        upperBound: 100,
      );
@@ -565,10 +578,10 @@ changes its value:
    @override
    Widget build(BuildContext context) {
      return Container(
--      margin: EdgeInsets.only(top: 0),
+-      margin: const EdgeInsets.only(top: 0),
 +      margin: EdgeInsets.only(top: controller.value),
        child: Container(
-         decoration: BoxDecoration(
+         decoration: const BoxDecoration(
            shape: BoxShape.circle,
 ```
 
@@ -591,7 +604,7 @@ it repeats indefinitely, call `AnimationController.repeat()`:
 ```diff
 --- explicit5/lib/main.dart
 +++ explicit6/lib/main.dart
-@@ -23,6 +23,8 @@
+@@ -26,6 +26,8 @@
      controller.addListener(() {
        setState(() {});
      });

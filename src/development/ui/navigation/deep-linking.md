@@ -105,7 +105,7 @@ launched and running.
 {:.table.table-striped}
 </div>
 
-After upgrading to the [`Router`][Router] widget, your app has the ability to replace the
+When using the [`Router`][Router] widget, your app has the ability to replace the
 current set of pages when a new deep link is opened while the app is running.
 
 ## See also

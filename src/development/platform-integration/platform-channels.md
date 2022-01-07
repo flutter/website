@@ -40,7 +40,7 @@ code generation:
 
 {{site.alert.note}}
   This guide addresses using the platform channel mechanism if you need
-  to use the platform's APIs in a non-Dart languaage.  But you can also write
+  to use the platform's APIs in a non-Dart language.  But you can also write
   platform-specific Dart code
   in your Flutter app by inspecting the [defaultTargetPlatform][] property.
   [Platform adaptations][] lists some platform-specific adaptations
