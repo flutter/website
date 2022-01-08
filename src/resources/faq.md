@@ -112,7 +112,7 @@ for the majority of the system.
 
 [Flutter 1.0][] was launched on Dec 4th, 2018 and
 [Flutter 2][] on March 3rd, 2021.
-Since then, over 100,000 apps have shipped using
+Since its launch, over 400,000 apps have shipped using
 Flutter to many hundreds of millions of devices.
 See some sample apps in the [showcase][].
 
