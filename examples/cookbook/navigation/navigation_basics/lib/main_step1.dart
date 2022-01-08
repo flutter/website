@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    title: 'Navigation Basics',
-    home: FirstRoute(),
-  ));
-}
-
+// #docregion FirstSecondRoutes
 class FirstRoute extends StatelessWidget {
   const FirstRoute({Key? key}) : super(key: key);
 
@@ -20,10 +14,7 @@ class FirstRoute extends StatelessWidget {
         child: ElevatedButton(
           child: const Text('Open route'),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SecondRoute()),
-            );
+            // Navigate to second route when tapped.
           },
         ),
       ),
@@ -43,7 +34,7 @@ class SecondRoute extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pop(context);
+            // Navigate back to first route when tapped.
           },
           child: const Text('Go back!'),
         ),
@@ -51,3 +42,4 @@ class SecondRoute extends StatelessWidget {
     );
   }
 }
+// #enddocregion Main
