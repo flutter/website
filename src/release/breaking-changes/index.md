@@ -12,10 +12,12 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Page transitions replaced by ZoomPageTransitionsBuilder][]
 * [Required Kotlin version][]
 * [Deprecated API removed after v2.5][]
 * [Raw images on Web uses correct origin and colors][]
 
+[Page transitions replaced by ZoomPageTransitionsBuilder]: {{site.url}}/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
 [Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 [Raw images on Web uses correct origin and colors]: {{site.url}}/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors
