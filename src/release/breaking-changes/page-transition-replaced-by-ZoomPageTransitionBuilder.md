@@ -8,8 +8,7 @@ description: Using the latest page transition instead of the old one.
 In order to keep libraries follow the latest OEM behavior,
 we've replaced the default page transition builders from
 `FadeUpwardsPageTransitionsBuilder` to
-`ZoomPageTransitionsBuilder` on `TargetPlatform.android` and
-`TargetPlatform.fuchsia`.
+`ZoomPageTransitionsBuilder` on all platforms excluded iOS and macOS.
 
 ## Context
 
@@ -21,18 +20,19 @@ similar to the one provided by Android O.
 similar to the one provided by Android Q and R.
 
 According to the [Style guide for Flutter repo][], we've switched
-the default page transitions which mainly for the Android platform.
-Since the Fuchsia is a pure new OS, we also switched the page transition.
+the default page transitions which mainly for all platforms excluded iOS and macOS.
+When the `PageTransitionsBuilder` is not found on the current platform,
+`ZoomPageTransitionsBuilder` will be the default as well.
 
-[Style guide for Flutter repo]: {{site.github}}/flutter/flutter/wiki/Style-guide-for-Flutter-repo
+[Style guide for Flutter repo]: {{site.repo.flutter}}/wiki/Style-guide-for-Flutter-repo
 
 ## Description of change
 
 `PageTransitionsBuilder`s that defined in
 `PageTransitionsTheme._defaultBuilders` have changed from
 `FadeUpwardsPageTransitionsBuilder` to
-`ZoomPageTransitionsBuilder` for `TargetPlatform.android` and
-`TargetPlatform.fuchsia`.
+`ZoomPageTransitionsBuilder` for `TargetPlatform.android`,
+`TargetPlatform.linux` and `TargetPlatform.windows`.
 
 ## Migration guide
 
@@ -81,10 +81,10 @@ Relevant issues:
 * [Issue 43277][]
 
 Relevant PR:
-* [PR 82670][]
+* [PR 96375][]
 
 [`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
 [`FadeUpwardsPageTransitionsBuilder`]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
 [`PageTransitionsTheme`]: {{site.api}}/flutter/material/PageTransitionsTheme-class.html
-[Issue 43277]: {{site.github}}/flutter/flutter/issues/43277
-[PR 82670]: {{site.github}}/flutter/flutter/pull/82670
+[Issue 43277]: {{site.repo.flutter}}/issues/43277
+[PR 96375]: {{site.repo.flutter}}/pull/96375
