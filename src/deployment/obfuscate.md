@@ -13,14 +13,8 @@ The following list describes which platforms
 support the obfuscation process described in
 this page:
 
-**Android**/**iOS**
-: Supported as of Flutter 1.16.2.  To obfuscate
-  an app built against an earlier version of Flutter,
-  use the [obfuscation instructions][] on the Flutter wiki.
-
-**macOS**
-: macOS ([in alpha][] as of Flutter 1.13),
-  supports obfuscation as of Flutter 1.16.2.
+**Android**/**iOS**/**macOS**
+: Supported. 
 
 **Linux**/**Windows**
 : Not yet supported.

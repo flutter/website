@@ -6,7 +6,7 @@ description: The platforms that Flutter supports by platform version.
 
 ## Supported platforms
 
-As of release 2.5, Flutter supports the following platforms:
+As of the current release, Flutter supports the following platforms:
 
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
@@ -26,8 +26,7 @@ All channels include master, beta and stable channels.
 
 ## How we define a supported platform
 
-As of Flutter 1.20, we define three tiers of support for the 
-platforms on which Flutter runs:
+We define three tiers of support for the platforms on which Flutter runs:
 1. Supported Google-tested platforms,
    which are platforms the Flutter team at 
    Google tests in continuous integration at every commit. 
