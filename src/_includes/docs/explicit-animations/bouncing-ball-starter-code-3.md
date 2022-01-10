@@ -45,7 +45,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> {
     return Container(
       margin: EdgeInsets.only(top: marginTop),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.green,
         ),
