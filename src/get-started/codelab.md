@@ -380,6 +380,8 @@ a child inside the existing `MyApp` stateless widget.
 
   ```dart
 class RandomWords extends StatefulWidget {
+  const RandomWords();
+  
   @override
   _RandomWordsState createState() => _RandomWordsState();
 }
@@ -482,9 +484,8 @@ lazily, on demand.
       }
     ```
 
-    Next, you'll add a `_buildSuggestions()` function to the
-    `_RandomWordsState` class. This method builds the
-    `ListView` that displays the suggested word pairing.
+    Next, you'll add a `ListView.builder` widget to the
+    `_RandomWordsState` class to display the suggested word pairing.
 
     The `ListView` class provides a builder property, `itemBuilder`,
     that's a factory builder and callback function specified as an
@@ -496,22 +497,30 @@ lazily, on demand.
     This model allows the suggested list to continue growing
     as the user scrolls.
 
- 2. Add a `_buildSuggestions()` function to the `_RandomWordsState` class:
+ 2. Add a `ListView.builder` widget to the `_RandomWordsState` build method:
 
     <?code-excerpt "lib/main.dart (_buildSuggestions)" title indent-by="2"?>
     ```dart
-      Widget _buildSuggestions() {
+      class _RandomWordsState extends State<RandomWords> {
+      // ...
+      
+      @override
+      Widget build(BuildContext context) {
         return ListView.builder(
-            padding: const EdgeInsets.all(16.0),
-            itemBuilder: /*1*/ (context, i) {
-              if (i.isOdd) return const Divider(); /*2*/
+          padding: const EdgeInsets.all(16.0),
+          itemBuilder: /*1*/ (context, i) {
+            if (i.isOdd) return const Divider(); /*2*/
 
-              final index = i ~/ 2; /*3*/
-              if (index >= _suggestions.length) {
-                _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-              }
-              return _buildRow(_suggestions[index]);
-            });
+            final index = i ~/ 2; /*3*/
+            if (index >= _suggestions.length) {
+              _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+            }
+        
+            return Row(
+              children: const [],
+            );
+          },
+        );
       }
     ```
 
@@ -529,27 +538,37 @@ lazily, on demand.
      4. If you've reached the end of the available word pairings,
         then generate 10 more and add them to the suggestions list.
 
-    The `_buildSuggestions()` function calls `_buildRow()` once per
+    The `ListView.builder` builder function creates a `Row` widget once per
     word pair. This function displays each new pair in a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
- 3. Add a `_buildRow()` function to `_RandomWordsState`:
+ 3. Define the `Row` contents of `_RandomWordsState`:
 
     <?code-excerpt "lib/main.dart (_buildRow)" title indent-by="2"?>
     ```dart
-      Widget _buildRow(WordPair pair) {
-        return ListTile(
-          title: Text(
-            pair.asPascalCase,
-            style: _biggerFont,
-          ),
-        );
-      }
+      ListView.builder(
+        padding: const EdgeInsets.all(16.0),
+        itemBuilder: (context, i) {
+          if (i.isOdd) return const Divider();
+
+          final index = i ~/ 2;
+          if (index >= _suggestions.length) {
+            _suggestions.addAll(generateWordPairs().take(10));
+          }
+        
+          return ListTile(
+            title: Text(
+              pair.asPascalCase,
+              style: _biggerFont,
+            ),
+          );
+        },
+      );
     ```
 
  4. In the `_RandomWordsState` class, update the `build()` method to use
-    `_buildSuggestions()`, rather than directly calling the word
-    generation library.  ([`Scaffold`][]
+    `ListView.builder` we've created, rather than directly calling the 
+    word generation library.  ([`Scaffold`][]
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
@@ -561,7 +580,7 @@ lazily, on demand.
         [!  appBar: AppBar(!]
         [!    title: const Text('Startup Name Generator'),!]
         [!  ),!]
-        [!  body: _buildSuggestions(),!]
+        [!  body: ListView.builder( /* ... */ ),!]
         [!);!]
       }
     ```
@@ -600,29 +619,6 @@ lazily, on demand.
     +  final _suggestions = <WordPair>[];
     +  final _biggerFont = const TextStyle(fontSize: 18.0);
     +
-    +  Widget _buildSuggestions() {
-    +    return ListView.builder(
-    +        padding: const EdgeInsets.all(16.0),
-    +        itemBuilder: /*1*/ (context, i) {
-    +          if (i.isOdd) return const Divider(); /*2*/
-    +
-    +          final index = i ~/ 2; /*3*/
-    +          if (index >= _suggestions.length) {
-    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-    +          }
-    +          return _buildRow(_suggestions[index]);
-    +        });
-    +  }
-    +
-    +  Widget _buildRow(WordPair pair) {
-    +    return ListTile(
-    +      title: Text(
-    +        pair.asPascalCase,
-    +        style: _biggerFont,
-    +      ),
-    +    );
-    +  }
-    +
        @override
        Widget build(BuildContext context) {
     -    final wordPair = WordPair.random();
@@ -631,7 +627,24 @@ lazily, on demand.
     +      appBar: AppBar(
     +        title: const Text('Startup Name Generator'),
     +      ),
-    +      body: _buildSuggestions(),
+    +      body: ListView.builder(
+    +       padding: const EdgeInsets.all(16.0),
+    +       itemBuilder: (context, i) {
+    +         if (i.isOdd) return const Divider();
+    +
+    +         final index = i ~/ 2;
+    +         if (index >= _suggestions.length) {
+    +           _suggestions.addAll(generateWordPairs().take(10));
+    +         }
+    +    
+    +         return ListTile(
+    +           title: Text(
+    +             pair.asPascalCase,
+    +             style: _biggerFont,
+    +           ),
+    +         );
+    +       },
+    +     );
     +    );
        }
      }
