@@ -1,5 +1,5 @@
 {% assign id =  include.os | downcase -%}
-{% assign channels =  'stable beta dev' | split: ' ' -%}
+{% assign channels =  'stable beta' | split: ' ' -%}
 
 <div id="{{id}}" class="tab-pane
   {%- if id == 'windows' %} active {% endif %}"
