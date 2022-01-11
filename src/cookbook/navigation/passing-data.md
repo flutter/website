@@ -67,7 +67,7 @@ final todos = List.generate(
 
 ### Display the list of todos using a ListView
 
-<!-- skip -->
+<?code-excerpt "lib/main_todoscreen.dart (ListViewBuilder)" replace="/^body: //g;/;$//g"?>
 ```dart
 ListView.builder(
   itemCount: todos.length,
@@ -76,7 +76,7 @@ ListView.builder(
       title: Text(todos[index].title),
     );
   },
-);
+),
 ```
 
 So far, so good.

@@ -9,6 +9,8 @@ next:
   path: /cookbook/testing/unit/introduction
 ---
 
+<?code-excerpt path-base="cookbook/testing/integration/profiling/"?>
+
 When it comes to mobile apps, performance is critical to user experience.
 Users expect apps to have smooth scrolling and meaningful animations free of
 stuttering or skipped frames, known as "jank." How to ensure that your app
@@ -46,26 +48,31 @@ verify that everything works as expected.
 
 Next, record the performance of the app as it scrolls through the
 list. Perform this task using the [`traceAction()`][]
-method provided by the [`FlutterDriver`][] class.
+method provided by the [`IntegrationTestWidgetsFlutterBinding`][] class.
 
 This method runs the provided function and records a [`Timeline`][]
 with detailed information about the performance of the app. This example
 provides a function that scrolls through the list of items,
 ensuring that a specific item is displayed. When the function completes,
-the `traceAction()` method returns a `Timeline`.
+the `traceAction()` creates a report data `Map` that contains the `Timeline`.
 
-<!-- skip -->
+Specify the `reportKey` when running more than one `traceAction`.
+By default all `Timelines` are stored with the key `timeline`,
+in this example the `reportKey` is changed to `scrolling_timeline`.
+
+<?code-excerpt "integration_test/scrolling_test.dart (traceAction)"?>
 ```dart
-// Record a performance timeline as the app scrolls through the list of items.
-final timeline = await driver.traceAction(() async {
-  await driver.scrollUntilVisible(
-    listFinder,
-    itemFinder,
-    dyScroll: -300.0,
-  );
-
-  expect(await driver.getText(itemFinder), 'Item 50');
-});
+await binding.traceAction(
+  () async {
+    // Scroll until the item to be found appears.
+    await tester.scrollUntilVisible(
+      itemFinder,
+      500.0,
+      scrollable: listFinder,
+    );
+  },
+  reportKey: 'scrolling_timeline',
+);
 ```
 
 ### 3. Save the results to disk
@@ -85,20 +92,44 @@ to review the results:
      This file can be opened with the Chrome browser's
      tracing tools found at [chrome://tracing][].
 
-<!-- skip -->
+To capture the results, create a file named `perf_driver.dart`
+in the `test_driver` folder and add the following code:
+
+<?code-excerpt "test_driver/perf_driver.dart"?>
 ```dart
-// Convert the Timeline into a TimelineSummary that's easier to read and
-// understand.
-final summary = new TimelineSummary.summarize(timeline);
+import 'package:integration_test/integration_test_driver.dart';
+import 'package:flutter_driver/flutter_driver.dart' as driver;
 
-// Then, save the summary to disk.
-await summary.writeSummaryToFile('scrolling_summary', pretty: true);
+Future<void> main() {
+  return integrationDriver(
+    responseDataCallback: (data) async {
+      if (data != null) {
+        final timeline = driver.Timeline.fromJson(data['scrolling_timeline']);
 
-// Optionally, write the entire timeline to disk in a json format. This
-// file can be opened in the Chrome browser's tracing tools found by
-// navigating to chrome://tracing.
-await summary.writeTimelineToFile('scrolling_timeline', pretty: true);
+        // Convert the Timeline into a TimelineSummary that's easier to
+        // read and understand.
+        final summary = driver.TimelineSummary.summarize(timeline);
+
+        // Then, write the entire timeline to disk in a json format.
+        // This file can be opened in the Chrome browser's tracing tools
+        // found by navigating to chrome://tracing.
+        // Optionally, save the summary to disk by setting includeSummary
+        // to true
+        await summary.writeTimelineToFile(
+          'scrolling_timeline',
+          pretty: true,
+          includeSummary: true,
+        );
+      }
+    },
+  );
+}
 ```
+
+The `integrationDriver` function has a `responseDataCallback` 
+which you can customize. 
+By default, it writes the results to the `integration_response_data.json` file,
+but you can customize it to generate a summary like in this example.
 
 ### 4. Run the test
 
@@ -106,12 +137,21 @@ After configuring the test to capture a performance `Timeline` and save a
 summary of the results to disk, run the test with the following command:
 
 ```
-flutter drive --target=test_driver/app.dart --profile
+flutter drive \
+  --driver=test_driver/perf_driver.dart \
+  --target=integration_test/scrolling_test.dart \
+  --profile
 ```
 
 The `--profile` option means to compile the app for the "profile mode" 
 rather than the "debug mode", so that the benchmark result is closer to 
 what will be experienced by end users. 
+
+{{site.alert.note}}
+  Run the command with `--no-dds` when running on a mobile device or emulator.
+  This option disables the Dart Development Service (DDS), which won't
+  be accessible from your computer.
+{{site.alert.end}}
 
 ### 5. Review the results
 
@@ -154,58 +194,80 @@ the project contains two files:
 
 ### Complete example
 
-<!-- skip -->
+**integration_test/scrolling_test.dart**
+
+<?code-excerpt "integration_test/scrolling_test.dart"?>
 ```dart
-import 'package:flutter_driver/flutter_driver.dart';
-import 'package:test/test.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
+
+import 'package:scrolling/main.dart';
 
 void main() {
-  group('Scrollable App', () {
-    late FlutterDriver driver;
+  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
+      as IntegrationTestWidgetsFlutterBinding;
 
-    setUpAll(() async {
-      driver = await FlutterDriver.connect();
-    });
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(MyApp(
+      items: List<String>.generate(10000, (i) => "Item $i"),
+    ));
 
-    tearDownAll(() async {
-      await driver.close();
-    });
+    final listFinder = find.byType(Scrollable);
+    final itemFinder = find.byKey(const ValueKey('item_50_text'));
 
-    test('verifies the list contains a specific item', () async {
-      final listFinder = find.byValueKey('long_list');
-      final itemFinder = find.byValueKey('item_50_text');
-
-      // Record a performance profile as the app scrolls through
-      // the list of items.
-      final timeline = await driver.traceAction(() async {
-        await driver.scrollUntilVisible(
-          listFinder,
+    await binding.traceAction(
+      () async {
+        // Scroll until the item to be found appears.
+        await tester.scrollUntilVisible(
           itemFinder,
-          dyScroll: -300.0,
+          500.0,
+          scrollable: listFinder,
         );
-
-        expect(await driver.getText(itemFinder), 'Item 50');
-      });
-
-      // Convert the Timeline into a TimelineSummary that's easier to
-      // read and understand.
-      final summary = new TimelineSummary.summarize(timeline);
-
-      // Then, save the summary to disk.
-      await summary.writeSummaryToFile('scrolling_summary', pretty: true);
-
-      // Optionally, write the entire timeline to disk in a json format.
-      // This file can be opened in the Chrome browser's tracing tools
-      // found by navigating to chrome://tracing.
-      await summary.writeTimelineToFile('scrolling_timeline', pretty: true);
-    });
+      },
+      reportKey: 'scrolling_timeline',
+    );
   });
+}
+```
+
+**test_driver/perf_driver.dart**
+
+<?code-excerpt "test_driver/perf_driver.dart"?>
+```dart
+import 'package:integration_test/integration_test_driver.dart';
+import 'package:flutter_driver/flutter_driver.dart' as driver;
+
+Future<void> main() {
+  return integrationDriver(
+    responseDataCallback: (data) async {
+      if (data != null) {
+        final timeline = driver.Timeline.fromJson(data['scrolling_timeline']);
+
+        // Convert the Timeline into a TimelineSummary that's easier to
+        // read and understand.
+        final summary = driver.TimelineSummary.summarize(timeline);
+
+        // Then, write the entire timeline to disk in a json format.
+        // This file can be opened in the Chrome browser's tracing tools
+        // found by navigating to chrome://tracing.
+        // Optionally, save the summary to disk by setting includeSummary
+        // to true
+        await summary.writeTimelineToFile(
+          'scrolling_timeline',
+          pretty: true,
+          includeSummary: true,
+        );
+      }
+    },
+  );
 }
 ```
 
 
 [chrome://tracing]: chrome://tracing
-[`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
+[`IntegrationTestWidgetsFlutterBinding`]: {{site.api}}/flutter/package-integration_test_integration_test/IntegrationTestWidgetsFlutterBinding-class.html
 [Scrolling]: {{site.url}}/cookbook/testing/widget/scrolling
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
