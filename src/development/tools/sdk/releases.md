@@ -17,7 +17,7 @@ js:
 The {{site.sdk.channel | capitalize }} channel contains the
 most stable Flutter builds. See [Flutter’s channels][] for details.
 
-**Please note - dev channel has been deprecated. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) for more information.**
+**Please note - dev channel has been deprecated. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181#34c4) for more information.**
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
