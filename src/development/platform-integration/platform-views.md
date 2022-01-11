@@ -135,7 +135,7 @@ import 'package:flutter/services.dart';
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  const String viewType = 'hybrid-view-type';
+  const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
 
@@ -309,23 +309,17 @@ for example, `NativeViewFactory.java`:
 package dev.flutter.example;
 
 import android.content.Context;
-import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
-import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.StandardMessageCodec;
 import io.flutter.plugin.platform.PlatformView;
 import io.flutter.plugin.platform.PlatformViewFactory;
 import java.util.Map;
 
 class NativeViewFactory extends PlatformViewFactory {
-  @NonNull private final BinaryMessenger messenger;
-  @NonNull private final View containerView;
 
-  NativeViewFactory(@NonNull BinaryMessenger messenger, @NonNull View containerView) {
+  NativeViewFactory() {
     super(StandardMessageCodec.INSTANCE);
-    this.messenger = messenger;
-    this.containerView = containerView;
   }
 
   @NonNull
@@ -369,7 +363,6 @@ package dev.flutter.plugin.example;
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
-import io.flutter.plugin.common.BinaryMessenger;
 
 public class PlatformViewPlugin implements FlutterPlugin {
   @Override
