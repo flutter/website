@@ -141,25 +141,29 @@ and the web server when you want to test on other browsers.
 {$ begin main.dart $}
 import 'package:flutter/material.dart';
 
-void main() => runApp(SignUpApp());
+void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
+  const SignUpApp();
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => SignUpScreen(),
+        '/': (context) => const SignUpScreen(),
       },
     );
   }
 }
 
 class SignUpScreen extends StatelessWidget {
+  const SignUpScreen();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: Center(
+      body: const Center(
         child: SizedBox(
           width: 400,
           child: Card(
@@ -172,6 +176,8 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class SignUpForm extends StatefulWidget {
+  const SignUpForm();
+  
   @override
   _SignUpFormState createState() => _SignUpFormState();
 }
@@ -195,24 +201,24 @@ class _SignUpFormState extends State<SignUpForm> {
               .textTheme
               .headline4),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _firstNameTextController,
-              decoration: InputDecoration(hintText: 'First name'),
+              decoration: const InputDecoration(hintText: 'First name'),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _lastNameTextController,
-              decoration: InputDecoration(hintText: 'Last name'),
+              decoration: const InputDecoration(hintText: 'Last name'),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _usernameTextController,
-              decoration: InputDecoration(hintText: 'Username'),
+              decoration: const InputDecoration(hintText: 'Username'),
             ),
           ),
           TextButton(
@@ -225,7 +231,7 @@ class _SignUpFormState extends State<SignUpForm> {
               }),
             ),
             onPressed: null,
-            child: Text('Sign up'),
+            child: const Text('Sign up'),
           ),
         ],
       ),
@@ -312,6 +318,8 @@ add the following class definition for the
 
 ```dart
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -389,6 +397,10 @@ You get that behavior for free.
   method as a callback function. Callback functions are often
   used in Dart code and, in this case, this means
   “call this method when the button is pressed”.
+* The `const` keyword in front of the constructor is very
+  important. When Flutter encounters a constant widget, it
+  short-circuits most of the rebuilding work under the hood 
+  making the rendering more efficient.
 * Flutter has only one `Navigator` object.
   This widget manages Flutter’s screens
   (also called _routes_ or _pages_) inside a stack.
@@ -712,7 +724,7 @@ At the bottom of the file, add this widget:
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
-  AnimatedProgressIndicator({
+  const AnimatedProgressIndicator({
     required this.value,
   });
 
@@ -728,6 +740,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   late Animation<Color?> _colorAnimation;
   late Animation<double> _curveAnimation;
 
+  @override
   void initState() {
     super.initState();
     _controller = AnimationController(
@@ -810,21 +823,25 @@ the animation works, and that clicking the
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
 import 'package:flutter/material.dart';
 
-void main() => runApp(SignUpApp());
+void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
+  const SignUpApp();
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => SignUpScreen(),
-        '/welcome': (context) => WelcomeScreen(),
+        '/': (context) => const SignUpScreen(),
+        '/welcome': (context) => const WelcomeScreen(),
       },
     );
   }
 }
 
 class SignUpScreen extends StatelessWidget {
+  const SignUpScreen();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -842,6 +859,8 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -897,24 +916,24 @@ class _SignUpFormState extends State<SignUpForm> {
           AnimatedProgressIndicator(value: _formProgress),
           Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _firstNameTextController,
-              decoration: InputDecoration(hintText: 'First name'),
+              decoration: const InputDecoration(hintText: 'First name'),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _lastNameTextController,
-              decoration: InputDecoration(hintText: 'Last name'),
+              decoration: const InputDecoration(hintText: 'Last name'),
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _usernameTextController,
-              decoration: InputDecoration(hintText: 'Username'),
+              decoration: const InputDecoration(hintText: 'Username'),
             ),
           ),
           TextButton(
@@ -927,7 +946,7 @@ class _SignUpFormState extends State<SignUpForm> {
               }),
             ),
             onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
-            child: Text('Sign up'),
+            child: const Text('Sign up'),
           ),
         ],
       ),
@@ -938,7 +957,7 @@ class _SignUpFormState extends State<SignUpForm> {
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
-  AnimatedProgressIndicator({
+  const AnimatedProgressIndicator({
     required this.value,
   });
 
@@ -954,10 +973,13 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   late Animation<Color?> _colorAnimation;
   late Animation<double> _curveAnimation;
 
+  @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: Duration(milliseconds: 1200), vsync: this);
+      duration: const Duration(milliseconds: 1200), 
+      vsync: this,
+    );
 
     final colorTween = TweenSequence([
       TweenSequenceItem(
@@ -978,6 +1000,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     _curveAnimation = _controller.drive(CurveTween(curve: Curves.easeIn));
   }
 
+  @override
   void didUpdateWidget(oldWidget) {
     super.didUpdateWidget(oldWidget);
     _controller.animateTo(widget.value);
