@@ -8,7 +8,7 @@ description: Using the latest page transition instead of the old one.
 In order to keep libraries follow the latest OEM behavior,
 we've replaced the default page transition builders from
 `FadeUpwardsPageTransitionsBuilder` to
-`ZoomPageTransitionsBuilder` on all platforms excluded iOS and macOS.
+`ZoomPageTransitionsBuilder` on all platforms excluding iOS and macOS.
 
 ## Context
 
@@ -22,13 +22,13 @@ similar to the one provided by Android Q and R.
 According to the [Style guide for Flutter repo][], we've switched
 the default page transitions which mainly for all platforms excluded iOS and macOS.
 When the `PageTransitionsBuilder` is not found on the current platform,
-`ZoomPageTransitionsBuilder` will be the default as well.
+`ZoomPageTransitionsBuilder` will be the default.
 
 [Style guide for Flutter repo]: {{site.repo.flutter}}/wiki/Style-guide-for-Flutter-repo
 
 ## Description of change
 
-`PageTransitionsBuilder`s that defined in
+`PageTransitionsBuilder`s defined in
 `PageTransitionsTheme._defaultBuilders` have changed from
 `FadeUpwardsPageTransitionsBuilder` to
 `ZoomPageTransitionsBuilder` for `TargetPlatform.android`,
@@ -38,7 +38,7 @@ When the `PageTransitionsBuilder` is not found on the current platform,
 
 If you want to switch back to the previous page transition builder
 (`FadeUpwardsPageTransitionsBuilder`), you should define builders
-explicitly to the target platforms.
+explicitly for the target platforms.
 
 Code before migration:
 
