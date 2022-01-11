@@ -2317,7 +2317,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Animation & Motion widgets]: {{site.url}}/development/ui/widgets/animation
 [Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
 [Animations overview]: {{site.url}}/development/ui/animations
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: {{site.url}}/resources/architectural-overview#composition
