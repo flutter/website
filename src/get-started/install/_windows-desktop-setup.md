@@ -1,7 +1,7 @@
 ## Windows setup
 
 {{site.alert.warning}}
-  **Beta (Win32) and Master (UWP)!**
+  **Beta (Win32) and Alpha (UWP)!**
   This area covers Windows desktop support,
   which is available in beta release (Win32)
   and alpha release (UWP).
