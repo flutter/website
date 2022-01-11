@@ -15,13 +15,11 @@ macOS, or Linux platforms, or you can create your own.
   This page covers desktop support,
   which is available as a beta release for
   Windows (Win32), macOS and Linux. The Windows UWP
-  support is available as an alpha release. Beta
-  support still has notable feature gaps,
-  including accessibility support. Meanwhile, the
-  Windows UWP alpha release is still in
-  very active development. You can try a beta
-  snapshot of desktop support on the `stable`
-  channel, or you can keep up with the latest
+  support is available as an alpha release. 
+  The UWP variant is community supported. 
+  
+  You can try a beta snapshot of desktop support on the 
+  `stable` channel, or you can keep up with the latest
   changes to desktop on the `beta` channel. For
   Windows UWP you need to be on the `master` channel.
 
@@ -30,7 +28,7 @@ macOS, or Linux platforms, or you can create your own.
   a free article on Medium.
 {{site.alert.end}}
 
-[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
+[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65#6368
 
 
 {{site.alert.note}}
@@ -86,14 +84,16 @@ you need the following software:
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
-* [Visual Studio 2019][] (not to be confused with
-  Visual Studio _Code_). For Win32 you need the
-  "Desktop development with C++" workload installed,
-  including all of its default components. For UWP
-  you need the "Universal Windows Platform development"
+* [Visual Studio 2022][] for Flutter 2.9 beta and newer,
+  [Visual Studio 2019][] for Flutter 2.8.1 and older.
+  Note, Visual Studio is different to Visual Studio _Code_.
+  For Win32 you need the "Desktop development with C++" 
+  workload installed, including all of its default components. 
+  For UWP you need the "Universal Windows Platform development"
   workload installed, with the optional UWP C++ tools.
 
-[Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
+[Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
+[Visual Studio 2019]: https://visualstudio.microsoft.com/vs/older-downloads/
 
 ### Additional macOS requirements
 
