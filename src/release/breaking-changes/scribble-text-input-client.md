@@ -36,9 +36,9 @@ while single line inputs should provide horizontal space.
 
 ## Migration guide
 
-If you previously implemented or extended `TextEditingClient`, you may override
-`showToolbar`, `insertTextPlaceholder`, and `removeTextPlaceholder` in order to
-support these Scribble features.
+If you previously implemented `TextEditingClient`, you must override
+`showToolbar`, `insertTextPlaceholder`, and `removeTextPlaceholder` and either
+support these Scribble features or provide an empty implementation.
 
 To migrate, implement `showToolbar`, `insertTextPlaceholder`, and
 `removeTextPlaceholder`.
