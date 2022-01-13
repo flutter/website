@@ -37,7 +37,7 @@ while single line inputs should provide horizontal space.
 ## Migration guide
 
 If you previously implemented `TextEditingClient`, you must override
-`showToolbar`, `insertTextPlaceholder`, and `removeTextPlaceholder` and either
+`showToolbar`, `insertTextPlaceholder`, and `removeTextPlaceholder` to either
 support these Scribble features or provide an empty implementation.
 
 To migrate, implement `showToolbar`, `insertTextPlaceholder`, and
@@ -84,12 +84,12 @@ In stable release: not yet
 
 API documentation:
 
-* [`TextInputClient`][{{site.master-api}}/flutter/services/TextInputClient-class.html]
+* [`TextInputClient`](https://master-api.flutter.dev/flutter/services/TextInputClient-class.html)
 
 Relevant issues:
 
-* [Issue 61278][{{site.repo.flutter}}/issues/61278]
+* [Issue 61278](https://github.com/flutter/flutter/issues/61278)
 
 Relevant PRs:
 
-* [Support Scribble Handwriting][{{site.repo.flutter}}/pull/75472]
+* [Support Scribble Handwriting](https://github.com/flutter/flutter/pull/75472)
