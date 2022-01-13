@@ -108,8 +108,6 @@ with the mouse wheel / trackpad
 You can click an event to view CPU profiling information in the CPU profiler
 below, described in the next section.
 
-{% include_relative _profiler.md %}
-
 ## Import and export
 
 DevTools supports importing and exporting performance snapshots.
