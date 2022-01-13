@@ -20,17 +20,18 @@ add, delete, select, and modify text.
 ## Description of change
 
 In native text widgets, the text toolbar is shown when a user uses the pencil
-to select text on an iPad running iOS 14 or higher. To replicate this behavior,
-the platform sends a `textInput` channel message called
-`TextInputClient.showToolbar`. This notifies the Dart code that the toolbar
-should be shown.
+to select text on an iPad running iOS 14 or higher.
+To replicate this behavior, the platform sends a `textInput` channel message
+called `TextInputClient.showToolbar`.
+This notifies the Dart code that the toolbar should be shown.
 
 When a user holds the pencil down, a visual gap in the text is shown to allow
-the user extra space to write. To replicate this behavior, the platform sends
-`textInput` channel messages called `TextInputClient.insertTextPlaceholder`
-and `TextInputClient.removeTextPlaceholder`. Multiline text inputs should have
-placeholders that provide vertical space, while single line inputs should
-provide horizontal space.
+the user extra space to write.
+To replicate this behavior, the platform sends `textInput` channel messages
+called `TextInputClient.insertTextPlaceholder` and
+`TextInputClient.removeTextPlaceholder`.
+Multiline text inputs should have placeholders that provide vertical space,
+while single line inputs should provide horizontal space.
 
 
 ## Migration guide
