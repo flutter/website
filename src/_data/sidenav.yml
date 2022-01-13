@@ -162,8 +162,6 @@
           permalink: /development/platform-integration/web
         - title: Writing platform-specific code
           permalink: /development/platform-integration/platform-channels
-        - title: Web URL strategies
-          permalink: /development/platform-integration/web-url-strategies
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:
