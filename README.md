@@ -276,7 +276,8 @@ A build that fails with the error `=> ERROR: some code excerpts were not refresh
 means that one or more code excerpts in the markdown file aren't identical to the
 code in the corresponding `.dart` file. 
 
-To resolve this error, from the root of the `website` directory, run `./tool/refresh-code-excerpts.sh`. 
+To resolve this error, from the root of the `website` directory,
+run `./tool/refresh-code-excerpts.sh`. 
 
 For more information see [Code excerpts][] . 
 
