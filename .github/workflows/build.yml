@@ -23,9 +23,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Dev channel"
-            channel: dev
-            experimental: true
           - name: "Beta channel"
             channel: beta
             experimental: true

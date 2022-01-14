@@ -21,6 +21,7 @@ class TodosScreen extends StatelessWidget {
         title: const Text('Todos'),
       ),
       //passing in the ListView.builder
+      // #docregion ListViewBuilder
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
@@ -29,6 +30,7 @@ class TodosScreen extends StatelessWidget {
           );
         },
       ),
+      // #enddocregion ListViewBuilder
     );
   }
 }

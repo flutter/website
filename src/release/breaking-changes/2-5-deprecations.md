@@ -345,6 +345,68 @@ Relevant PRs:
 
 ---
 
+### `packageRoot` in `dart:core`, `dart:isolate`, and `package:platform`
+
+The following APIs have been removed:
+
+* [`Platform.packageRoot`][] in `dart:core`
+* [`Isolate.packageRoot`][] in `dart:isolate`
+* [`Platform.packageRoot`][] in `package:platform`
+
+These APIs were marked deprecated [in Dart 2.0][dart-deprecated], and did not
+work correctly in any Dart 2.x release.
+
+**Migration guide**
+
+These `packageRoot` APIs have been replaced by a new set of `packageConfig` APIs,
+which you should migrate to.
+
+* [`Platform.packageConfig`][] in `dart:core`
+* [`Isolate.packageConfig`][] in `dart:isolate`
+* [`Platform.packageConfig`][] in `package:platform`
+
+If you are using the `package:platform` package, note that regardless of whether
+you are using the `packageRoot` API or not, older versions of that package are
+not compatible with Dart 2.16 and later, as they depend on the now removed
+`packageRoot` API. You may see an error like this when attempting to run your
+app:
+
+```
+../../.pub-cache/hosted/pub.dartlang.org/platform-3.0.0/
+  lib/src/interface/local_platform.dart:46:19:
+  Error: Member not found: 'packageRoot'.
+      io.Platform.packageRoot; // ignore: deprecated_member_use
+                  ^^^^^^^^^^^
+```
+
+To resolve that, upgrade to version `3.1.0` or later of `package:platform` by
+upgrading the constraint in your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  platform: ^3.1.0
+```
+
+**References**
+
+Relevant PRs:
+* Removed from the Dart libraries in [#47769][]
+* Removed from `package:platform` in [PR #38][]
+* Updated Flutter to use `package:platform` 3.1.0 in [PR #94603][]
+
+[`Platform.packageRoot`]: {{site.dart.api}}/stable/2.15.1/dart-io/Platform/packageRoot.html
+[`Isolate.packageRoot`]: {{site.dart.api}}/stable/2.15.1/dart-isolate/Isolate/packageRoot.html
+[`Platform.packageRoot`]: {{site.pub-api}}/platform/3.0.0/platform/Platform/packageRoot.html
+[dart-deprecated]: https://dart-review.googlesource.com/c/sdk/+/59100/16/CHANGELOG.md
+[`Platform.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-io/Platform/packageConfig.html
+[`Isolate.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-isolate/Isolate/packageConfig.html
+[`Platform.packageConfig`]: {{site.pub-api}}/platform/3.0.0/platform/Platform/packageConfig.html
+[#47769]: https://github.com/dart-lang/sdk/issues/47769
+[PR #38]: https://github.com/google/platform.dart/pull/38
+[PR #94603]: {{site.repo.flutter}}/pull/94603
+
+---
+
 ## Timeline
 
 In stable release: TBD
