@@ -1,4 +1,4 @@
-name: introduction
+name: counter_app
 description: Flutter project for unit testing introduction.
 
 publish_to: 'none'
@@ -11,10 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  test: ^1.20.1
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   flutter_lints: ^1.0.0
 
 flutter:
