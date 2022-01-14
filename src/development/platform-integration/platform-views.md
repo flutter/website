@@ -28,9 +28,7 @@ Which one to use depends on the use case. Let's take a look:
   Certain platform interactions such as keyboard handling, and accessibility
   features might not work.
 
-* Hybrid composition requires Flutter 1.22
-  ([version 1.22.2][] or higher is recommended).
-  This mode appends the native `android.view.View`
+* Hybrid composition appends the native `android.view.View`
   to the view hierarchy. Therefore, keyboard
   handling, and accessibility work out of the box.
   Prior to Android 10, this mode might significantly
@@ -137,7 +135,7 @@ import 'package:flutter/services.dart';
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
-  const String viewType = 'hybrid-view-type';
+  const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
 
@@ -311,23 +309,17 @@ for example, `NativeViewFactory.java`:
 package dev.flutter.example;
 
 import android.content.Context;
-import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
-import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.StandardMessageCodec;
 import io.flutter.plugin.platform.PlatformView;
 import io.flutter.plugin.platform.PlatformViewFactory;
 import java.util.Map;
 
 class NativeViewFactory extends PlatformViewFactory {
-  @NonNull private final BinaryMessenger messenger;
-  @NonNull private final View containerView;
 
-  NativeViewFactory(@NonNull BinaryMessenger messenger, @NonNull View containerView) {
+  NativeViewFactory() {
     super(StandardMessageCodec.INSTANCE);
-    this.messenger = messenger;
-    this.containerView = containerView;
   }
 
   @NonNull
@@ -371,7 +363,6 @@ package dev.flutter.plugin.example;
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
-import io.flutter.plugin.common.BinaryMessenger;
 
 public class PlatformViewPlugin implements FlutterPlugin {
   @Override
@@ -411,10 +402,6 @@ android {
 iOS only uses Hybrid composition,
 which means that the native
 `UIView` is appended to view hierarchy.
-
-Prior to Flutter 1.22, platform views were in developers preview.
-In 1.22 or above, this is no longer the case, so there's no need to
-set the `io.flutter.embedded_views_preview` flag in `Info.plist`.
 
 To create a platform view on iOS, follow these steps:
 

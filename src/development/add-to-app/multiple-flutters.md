@@ -4,40 +4,15 @@ short-title: Adding multiple Flutters
 description: How to integrate multiple instances of Flutter engine, screens or views to your application.
 ---
 
-## Experimental
 
-{{site.alert.note}}
-  Support for adding multiple instances of Flutter became available
-  as of Flutter 2.0.0. Use at your own risk since stability or
-  performance issues, and API changes are still possible.
-{{site.alert.end}}
-
-The current memory footprint for each additional Flutter instance beyond the
-first instance is ~180kB on Android and iOS.
-
-As of the 2.0.0 release, communication between Flutter instances is handled using
-[platform channels][] (or [Pigeon][]) through the host platform. To see
-our roadmap on communication, or other multiple-Flutters issues, see [Issue 72009][].
-
-{{site.alert.warning}}
-  In 2.0.0, the use of [platform views][] is not supported in conjunction with
-  multiple Flutters. When a second Flutter instance is created, platform views
-  will be globally disabled.
-{{site.alert.end}}
-
-{{site.alert.warning}}
-  In 2.0.0, the memory usage is only fully optimized in AOT mode (in profile
-  and release builds). Some memory redundancy will still be present in JIT mode
-  (in debug builds) and will be addressed in a future release.
-{{site.alert.end}}
 
 ## Scenarios
 
-Before Flutter 2.0.0, multiple instances of `FlutterEngine` and its associated
-UI could be launched, but each instance came with significant latency
-and fixed memory cost.
 
-Multiple Flutter instances can be useful in the following scenarios:
+If you're integrating Flutter into an existing app, or gradually migrating an
+existing app to use Flutter, you may find yourself wanting to add multiple
+Flutter instances to the same project. In particular, this can be useful in the
+following scenarios:
 
 * An application where the integrated Flutter screen is not a leaf node of
   the navigation graph, and the navigation stack might be a hybrid mixture of
@@ -52,10 +27,16 @@ responsibility for state keeping and improves modularity. More details on the
 scenarios motivating the usage of multiple Flutters can be found at
 [docs.flutter.dev/go/multiple-flutters][].
 
-The 2.0.0 Flutter release drastically reduces the memory footprint of additional
-Flutter engines from **~19MB** on Android and **~13MB** on iOS, to **~180kB** on Android and
-iOS. This ~99% fixed cost reduction allows the multiple Flutters pattern to be
-used more liberally in your add-to-app integration.
+Flutter 2 and above are optimized for this scenario, with a low incremental
+memory cost (~180kB) for adding additional Flutter instances. This fixed cost
+reduction allows the multiple Flutter instance pattern to be used more liberally
+in your add-to-app integration.
+
+{{site.alert.warning}}
+  Memory usage is only fully optimized in AOT mode (in profile and release
+  builds). Some memory redundancy will still be present in JIT mode (in debug
+  builds). This is tracked in [issue 74520][].
+{{site.alert.end}}
 
 ## Components
 
@@ -83,20 +64,26 @@ rendering latency and lower memory footprint.
   the same [performance characteristics][] as constructing a
   `FlutterEngine` using the constructors did previously.
 
-* When all `FlutterEngine`s from a `FlutterEngineGroup` are destroyed,
-the next `FlutterEngine` created has the same performance
-characteristics as the very first engine.
+* When all `FlutterEngine`s from a `FlutterEngineGroup` are destroyed, the next
+  `FlutterEngine` created has the same performance characteristics as the very
+  first engine.
 
 * The `FlutterEngineGroup` itself doesn't need to live beyond all of the spawned
-engines. Destroying the `FlutterEngineGroup` doesn't affect existing spawned
-`FlutterEngine`s but does remove the ability to spawn additional
-`FlutterEngine`s that share resources with existing spawned engines.
+  engines. Destroying the `FlutterEngineGroup` doesn't affect existing spawned
+  `FlutterEngine`s but does remove the ability to spawn additional
+  `FlutterEngine`s that share resources with existing spawned engines.
+
+## Communication
+
+Communication between Flutter instances is handled using [platform channels][]
+(or [Pigeon][]) through the host platform. To see our roadmap on communication,
+or other planned work on enhancing multiple Flutter instances, see 
+[Issue 72009][].
 
 ## Samples
 
 You can find a sample demonstrating how to use `FlutterEngineGroup`
 on both Android and iOS on [GitHub][].
-
 
 {% include docs/app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}
 
@@ -108,6 +95,6 @@ on both Android and iOS on [GitHub][].
 [Issue 72009]: {{site.repo.flutter}}/issues/72009
 [Pigeon]: {{site.pub}}/packages/pigeon
 [platform channels]: {{site.url}}/development/platform-integration/platform-channels
-[platform views]: {{site.url}}/development/platform-integration/platform-views
 [Android API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/engine/FlutterEngineGroup.java
 [iOS API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/darwin/ios/framework/Headers/FlutterEngineGroup.h
+[issue 74520]: https://github.com/flutter/flutter/issues/74520

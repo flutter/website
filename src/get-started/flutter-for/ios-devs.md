@@ -2191,7 +2191,7 @@ plugin documentation.
 [Animations overview]: {{site.url}}/development/ui/animations
 [Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources
-[`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 [arb]: {{site.github}}/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore

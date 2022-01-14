@@ -88,6 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // #docregion close
     _channel.sink.close();
     // #enddocregion close
+    _controller.dispose();
     super.dispose();
   }
 }
