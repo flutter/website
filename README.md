@@ -268,6 +268,18 @@ You can deploy your local edits to a personal staging site as follows.
 
    Your personal version of the Flutter website is now deployed to Firebase. 
    Copy the serving URL from the command output.
+   
+## Refreshing code excerpts
+
+
+A build that fails with the error `=> ERROR: some code excerpts were not refreshed!`
+means that one or more code excerpts in the markdown file aren't identical to the
+code in the corresponding `.dart` file. 
+
+To resolve this error, from the root of the `website` directory,
+run `./tool/refresh-code-excerpts.sh`. 
+
+For more information see [Code excerpts][] . 
 
 
 ## Writing for flutter.dev
@@ -282,7 +294,7 @@ For more information on using and writing for this repo, refer to the following 
 * [Infrastructure](https://github.com/dart-lang/site-shared/blob/master/doc/infrastructure.md)
 * [Markdown](https://github.com/dart-lang/site-shared/blob/master/doc/markdown.md)
 * [Examples](https://github.com/dart-lang/site-shared/blob/master/doc/examples.md)
-* [Code excerpts](https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md)
+* [Code excerpts][]
 
 Also check out the site-shared [wiki](https://github.com/dart-lang/site-shared/wiki):
 
@@ -305,3 +317,4 @@ Also check out the site-shared [wiki](https://github.com/dart-lang/site-shared/w
 [DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
 [`Makefile`]: https://github.com/flutter/website/blob/main/Makefile
 [Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amaster
+[Code excerpts]: https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md
