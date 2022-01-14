@@ -126,7 +126,7 @@ Accomplish this task by:
   2. Using the [`enterText()`][]
      method from the `WidgetTester`.
 
-<!-- skip -->
+<?code-excerpt "test/main_steps.dart (TestWidgetStep2)"?>
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Build the widget
@@ -158,7 +158,7 @@ This involves three steps:
     [`pump()`][] method.
  3. Ensure that the list item appears on screen.
 
-<!-- skip -->
+<?code-excerpt "test/main_steps.dart (TestWidgetStep3)"?>
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Enter text code...
@@ -186,7 +186,7 @@ item removes it from the list. This involves three steps:
      animation is complete.
   3. Ensure that the item no longer appears on screen.
 
-<!-- skip -->
+<?code-excerpt "test/main_steps.dart (TestWidgetStep4)"?>
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Enter text and add the item...
