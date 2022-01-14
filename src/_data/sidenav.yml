@@ -102,7 +102,6 @@
             - title: Staggered animations
               permalink: /development/ui/animations/staggered-animations
         - title: Advanced UI
-          permalink: /development/ui/advanced
           children:
             - title: Actions & shortcuts [NEW]
               permalink: /development/ui/advanced/actions_and_shortcuts
