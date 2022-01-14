@@ -1,7 +1,3 @@
-**Notice:** Due to the upcoming holidays, PR reviews will be slower than usual. We hope that you have a wonderful holiday season. Happy 2022! – The Flutter Team
-
----
-
 _Description of what this PR is changing or adding, and why:_
 
 _Issues fixed by this PR (if any):_
