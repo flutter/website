@@ -271,7 +271,10 @@ You can deploy your local edits to a personal staging site as follows.
    
 ## Refreshing code excerpts
 
-If the build is failing with the following error: `=> ERROR: some code excerpts were not refreshed!` this means that some code excerpt(s) in the markdown files don't match up with the code in its correlated dart file. 
+
+A build that fails with the error `=> ERROR: some code excerpts were not refreshed!`
+means that one or more code excerpts in the markdown file aren't identical to the
+code in the corresponding `.dart` file. 
 
 To resolve this error, from the root of the `website` directory, run `./tool/refresh-code-excerpts.sh`. 
 
