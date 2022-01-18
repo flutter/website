@@ -10,6 +10,8 @@ next:
   path: /cookbook/testing/unit/mocking
 ---
 
+<?code-excerpt path-base="cookbook/testing/unit/counter_app"?>
+
 How can you ensure that your app continues to work as you
 add more features or change existing functionality?
 By writing tests.
@@ -73,7 +75,7 @@ function, method, or class. For this example, create a `Counter` class
 inside the `lib/counter.dart` file. It is responsible for incrementing
 and decrementing a `value` starting at `0`.
 
-<!-- skip -->
+<?code-excerpt "lib/counter.dart"?>
 ```dart
 class Counter {
   int value = 0;
@@ -95,7 +97,7 @@ defined using the top-level `test` function, and you can check if the results
 are correct by using the top-level `expect` function.
 Both of these functions come from the `test` package.
 
-<!-- skip -->
+<?code-excerpt "test/counter_test.dart"?>
 ```dart
 // Import the test package and Counter class
 import 'package:test/test.dart';
@@ -117,7 +119,7 @@ void main() {
 If you have several tests that are related to one another,
 combine them using the `group` function provided by the `test` package.
 
-<!-- skip -->
+<?code-excerpt "test/group.dart"?>
 ```dart
 import 'package:test/test.dart';
 import 'package:counter_app/counter.dart';
