@@ -3,6 +3,14 @@ title: Get free access to Flutter Apprentice
 description: You can have free online access to Flutter Apprentice book through January 6, 2022.
 ---
 
+{{site.alert.note}}
+  The Flutter Fall event is ended. Thanks to those of
+  you who participated! If you missed the event,
+  you can purchase the Flutter Apprentice from
+  [Raywenderlich.com][], and watch the
+  [videos of the livestreamed book club][].
+{{site.alert.end}}
+
 We’re giving you FREE access to Flutter Apprentice from
 October 6, 2021 through January 6, 2022.
 
@@ -62,6 +70,7 @@ Wednesday at 9am PT / 12pm EST.
 Read each week’s chapter(s) prior to the livestream to
 ensure maximum preparedness. The schedule is below.
 
+<a name="videos"></a>
 You can find the [live stream][] on YouTube.
 
 <div class="table-wrapper" markdown="1">
@@ -96,7 +105,9 @@ You can find the [live stream][] on YouTube.
 [Dec 15th replay]: {{site.youtube-site}}/watch?v=rg5dYnCO2vo
 [Razeware]: https://www.raywenderlich.com/
 [raywenderlich.com/flutter]: https://store.raywenderlich.com/products/flutter-apprentice-google
+[raywenderlich.com]: https://www.raywenderlich.com/books/flutter-apprentice/v1.0.ea2
 [schedule]: #schedule
 [Twitter]: {{site.social.twitter}}
 [YouTube]: {{site.youtube-site}}/c/FlutterCommunityVideos
 [Slack]: https://fluttercommunity.dev/joinslack
+[videos of the livestreamed book club]: #videos
