@@ -76,7 +76,7 @@ MaterialApp(
     pageTransitionsTheme: PageTransitionsTheme(
       builders: Map<TargetPlatform, PageTransitionsBuilder>.fromIterable(
         TargetPlatform.values,
-        value: (dynamic _) => const ZoomPageTransitionsBuilder(),
+        value: (dynamic _) => const FadeUpwardsPageTransitionsBuilder(),
       ),
     ),
   ),
