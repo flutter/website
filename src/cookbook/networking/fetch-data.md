@@ -235,7 +235,7 @@ The `fetchAlbum()` method, if placed inside `build()`, is repeatedly
 called on each rebuild causing the app to slow down.
 
 Storing the `fetchAlbum()` result in a state variable ensures that
-the `Future` is executed only once and then "cached" for subsequent
+the `Future` is executed only once and then cached for subsequent
 rebuilds.
 
 ## Testing
