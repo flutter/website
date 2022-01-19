@@ -15,10 +15,12 @@ release, and listed in alphabetical order:
 * [Required Kotlin version][]
 * [Deprecated API removed after v2.5][]
 * [Raw images on Web uses correct origin and colors][]
+* [Scribble Text Input Client][]
 
 [Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 [Raw images on Web uses correct origin and colors]: {{site.url}}/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors
+[Scribble Text Input Client]: {{site.url}}/release/breaking-changes/scribble-text-input-client
 
 ### Released in Flutter 2.5
 
