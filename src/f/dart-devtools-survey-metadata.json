@@ -4,9 +4,9 @@
     "title should not exceed 45 characters.",
     "startDate and endDate should follow ISO 8601 standard with a timezone offset."
   ],
-  "uniqueId": "2022Q1",
+  "uniqueId": "2022-Q1",
   "title": "Help improve DevTools! Take our 2022 Q1 survey.",
   "url": "https://google.qualtrics.com/jfe/form/SV_2l4XcyscF8mQtDM",
-  "startDate": "2022-01-19T09:00:00-07:00",
-  "endDate": "2022-02-19T09:00:00-07:00"
+  "startDate": "2022-02-19T09:00:00-07:00",
+  "endDate": "2022-03-19T09:00:00-07:00"
 }
