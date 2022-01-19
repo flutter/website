@@ -19,10 +19,13 @@ similar to the one provided by Android O.
 `ZoomPageTransitionsBuilder` defines a page transition that's
 similar to the one provided by Android Q and R.
 
-According to the [Style guide for Flutter repo][], we've switched
-the default page transitions which mainly for all platforms excluded iOS and macOS.
-When the `PageTransitionsBuilder` is not found on the current platform,
-`ZoomPageTransitionsBuilder` will be the default.
+According to the [Style guide for Flutter repo][],
+the framework will follow the latest OEM behavior.
+Page transition builders using `FadeUpwardsPageTransitionsBuilder`
+are all switched to the `ZoomPageTransitionsBuilder`.
+When the current `TargetPlatform` doesn't have
+`PageTransitionsBuilder` defined in the `ThemeData.pageTransitionsTheme`,
+`ZoomPageTransitionsBuilder` will be use as default.
 
 [Style guide for Flutter repo]: {{site.repo.flutter}}/wiki/Style-guide-for-Flutter-repo
 
@@ -55,7 +58,6 @@ Code after migration:
 ```dart
 MaterialApp(
   theme: ThemeData(
-    primarySwatch: Colors.blue,
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: <TargetPlatform, PageTransitionsBuilder>{
         TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(), // Apply this to every platforms you need.
@@ -63,6 +65,23 @@ MaterialApp(
     ),
   ),
 )
+```
+
+If you want to apply the same page transition builder to all platforms:
+
+<!-- skip -->
+```dart
+MaterialApp(
+  theme: ThemeData(
+    pageTransitionsTheme: PageTransitionsTheme(
+      builders: Map<TargetPlatform, PageTransitionsBuilder>.fromIterable(
+        TargetPlatform.values,
+        value: (dynamic _) => const ZoomPageTransitionsBuilder(),
+      ),
+    ),
+  ),
+)
+
 ```
 
 ## Timeline
