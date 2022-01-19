@@ -97,7 +97,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({
+  const Album({
     required this.userId,
     required this.id,
     required this.title,
@@ -231,8 +231,10 @@ it's not recommended to put an API call in a `build()` method.
 Flutter calls the `build()` method every time it needs
 to change anything in the view,
 and this happens surprisingly often.
-Leaving the `fetch` call in your `build()` method
-floods the API with unnecessary calls and slows down your app.
+Leaving the `fetch` call in your `build()` method would
+flood the API with unnecessary calls because `futureAlbum` would
+repeatedly be executed on each rebuild and so you app would also
+slow down.
 
 ## Testing
 
@@ -272,7 +274,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({
+  const Album({
     required this.userId,
     required this.id,
     required this.title,
