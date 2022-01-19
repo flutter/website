@@ -89,11 +89,6 @@
 # - lib/liquid/block.rb
 # - lib/liquid/block_body.rb
 module Jekyll
-    
-    def language_as_id(language)
-        language_sanitized = language.downcase
-        language_sanitized.gsub(/\+/, "-plus")
-    end
 
     class SampleCode < Liquid::Block
 
@@ -182,6 +177,11 @@ module Jekyll
         def addLanguage(language)
             @languages << language
         end
+        
+        def language_as_id(language)
+            language_sanitized = language.downcase
+            language_sanitized.gsub(/\+/, "-plus")
+        end
 
         def render(context)
             output = %Q(<ul class="nav nav-tabs sample-code-tabs" id="#{@title}-language" role="tablist">)
@@ -211,6 +211,11 @@ module Jekyll
             @title = title
             @language_name = language_name
             @is_active = false
+        end
+        
+        def language_as_id(language)
+            language_sanitized = language.downcase
+            language_sanitized.gsub(/\+/, "-plus")
         end
 
         def render(context)
