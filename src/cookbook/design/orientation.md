@@ -143,5 +143,5 @@ class OrientationList extends StatelessWidget {
 
 
 [Creating a grid list]: {{site.url}}/cookbook/lists/grid-lists
-[`Orientation`]: {{site.api}}/flutter/widgets/Orientation-class.html
+[`Orientation`]: {{site.api}}/flutter/widgets/Orientation.html
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
