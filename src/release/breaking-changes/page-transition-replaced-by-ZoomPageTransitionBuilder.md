@@ -84,6 +84,42 @@ MaterialApp(
 
 ```
 
+### Tests migration
+
+If you used to find widgets but failed with *Too many elements*
+using the new transition, and errors are like these:
+
+```
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:656:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:69:30)
+#2      main.<anonymous closure> (file:///path/to/your/test.dart:1:2)
+```
+
+You should migrate your tests by using the
+`descendant` scope for `Finder`s with the specific widget type.
+Below is the example of `DataTable`'s test:
+
+Test before migrate:
+```dart
+final Finder finder = find.widgetWithIcon(Transform, Icons.arrow_upward);
+```
+
+Test after migrate:
+```dart
+final Finder finder = find.descendant(
+  of: find.byType(DataTable),
+  matching: find.widgetWithIcon(Transform, Icons.arrow_upward),
+);
+```
+
+Widgets that typically needs to migrate the finder scope are:
+`Transform`, `FadeTransition`, `ScaleTransition`, and `ColoredBox`.
+
 ## Timeline
 
 Landed in version: v2.9.0-1.0.pre<br>
