@@ -190,9 +190,6 @@ where the Dart code lives.
   in the `flutter` section of your `pubspec.yaml` file. 
   This will allow you to use more features of Material,
   such as their set of predefined [Icons][].
-
-* The `main()` method uses arrow (`=>`) notation.
-  Use arrow notation for one-line functions or methods.
 * The app extends `StatelessWidget`, which makes the app itself a
   widget. In Flutter, almost everything is a widget, including
   alignment, padding, and layout.
@@ -216,9 +213,22 @@ English words plus some utility functions.
 You can find the `english_words` package,
 as well as many other open source packages, on [pub.dev][].
 
- 1. The `pubspec.yaml` file manages the assets and dependencies
-    for a Flutter app. In `pubspec.yaml`, add `english_words`
-    (3.1.5 or higher) to the dependencies list:
+ 1. Add `english_words` package to your project as follows:
+
+    ```terminal
+    $ flutter pub add english_words
+    Resolving dependencies...
+    + english_words 4.0.0
+      path 1.8.0 (1.8.1 available)
+      source_span 1.8.1 (1.8.2 available)
+      test_api 0.4.3 (0.4.9 available)
+    Downloading english_words 4.0.0...
+    Changed 1 dependency!
+    ```
+ 
+    The `pubspec.yaml` file manages the assets and dependencies
+    for a Flutter app. In `pubspec.yaml`, you will see
+    that the `english_words` dependency has been added:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
@@ -380,6 +390,8 @@ a child inside the existing `MyApp` stateless widget.
 
   ```dart
 class RandomWords extends StatefulWidget {
+  const RandomWords({ Key? key }) : super(key: key);
+
   @override
   _RandomWordsState createState() => _RandomWordsState();
 }
