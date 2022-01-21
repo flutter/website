@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:flutter/material.dart';
 
@@ -89,6 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // #docregion close
     _channel.sink.close();
     // #enddocregion close
+    _controller.dispose();
     super.dispose();
   }
 }

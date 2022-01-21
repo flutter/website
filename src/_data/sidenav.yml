@@ -243,6 +243,8 @@
               permalink: /development/tools/devtools/logging
             - title: App size tool
               permalink: /development/tools/devtools/app-size
+            - title: Release notes
+              permalink: /development/tools/devtools/release-notes
         - title: Flutter SDK
           permalink: /development/tools/sdk
           children:

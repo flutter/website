@@ -26,8 +26,8 @@ and then run `flutter upgrade`.
 
 ## Switching Flutter channels
 
-Flutter has four [release channels][]:
-**stable**, **beta**, **dev**, and **master**.
+Flutter has three [release channels][]:
+**stable**, **beta** and **master**.
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
@@ -43,7 +43,7 @@ to download the Flutter SDK and dependent packages.
 For example:
 
 ```terminal
-$ flutter channel dev
+$ flutter channel beta
 $ flutter upgrade
 ```
 

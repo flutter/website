@@ -9,6 +9,8 @@ next:
   path: /cookbook/images/cached-images
 ---
 
+<?code-excerpt path-base="cookbook/images/fading_in_images"?>
+
 When displaying images using the default `Image` widget,
 you might notice they simply pop onto the screen as they're loaded.
 This might feel visually jarring to your users.
@@ -25,16 +27,17 @@ or images from the internet.
 In this example, use the [`transparent_image`][]
 package for a simple transparent placeholder.
 
-<!-- skip -->
+<?code-excerpt "lib/memory_main.dart (MemoryNetwork)" replace="/^child\: //g"?>
 ```dart
 FadeInImage.memoryNetwork(
   placeholder: kTransparentImage,
   image: 'https://picsum.photos/250?image=9',
-);
+),
 ```
 
 ### Complete example
 
+<?code-excerpt "lib/memory_main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -90,16 +93,17 @@ First, add the asset to the project’s `pubspec.yaml` file
 
 Then, use the [`FadeInImage.assetNetwork()`][] constructor:
 
-<!-- skip -->
+<?code-excerpt "lib/asset_main.dart (AssetNetwork)" replace="/^child\: //g"?>
 ```dart
 FadeInImage.assetNetwork(
   placeholder: 'assets/loading.gif',
   image: 'https://picsum.photos/250?image=9',
-);
+),
 ```
 
 ### Complete example
 
+<?code-excerpt "lib/asset_main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 

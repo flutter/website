@@ -4,7 +4,7 @@ description: Articles and cookbook recipes that address screen navigation.
 ---
 
 Flutter has an imperative routing mechanism, the `Navigator` widget,
-and a more idomatic declarative routing mechanism (which is similar to
+and a more idiomatic declarative routing mechanism (which is similar to
 build methods as used with widgets), the `Router` widget.
 
 The two systems can be used together (indeed, the declarative system
@@ -22,7 +22,7 @@ More elaborate applications are usually better served by the `Router`
 API, via the [`MaterialApp.router`] constructor. This requires some
 more up-front work to describe how to parse deep links for your
 application and how to map the application state to the set of active
-pages, but is more expressive on the long run.
+pages, but is more expressive in the long run.
 
 To learn about `Router` and the declarative approach, see [Learning
 Flutter’s new navigation and routing system][], and the [`Router`][]

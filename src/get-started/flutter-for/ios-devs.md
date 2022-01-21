@@ -1241,13 +1241,6 @@ For further details on internationalization and localization in Flutter,
 see the [internationalization guide][],
 which has sample code with and without the `intl` package.
 
-Note that before Flutter 1.0 beta 2,
-assets defined in Flutter were not
-accessible from the native side, and vice versa,
-native assets and resources
-weren’t available to Flutter,
-as they lived in separate folders.
-
 ### What is the equivalent of CocoaPods? How do I add dependencies?
 
 In iOS, you add dependencies by adding to your `Podfile`.
@@ -2198,7 +2191,7 @@ plugin documentation.
 [Animations overview]: {{site.url}}/development/ui/animations
 [Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources
-[`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 [arb]: {{site.github}}/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore

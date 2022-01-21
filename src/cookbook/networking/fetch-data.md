@@ -39,7 +39,7 @@ dependencies:
 
 Import the http package.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Http)"?>
 ```dart
 import 'package:http/http.dart' as http;
 ```
@@ -97,7 +97,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({
+  const Album({
     required this.userId,
     required this.id,
     required this.title,
@@ -231,8 +231,12 @@ it's not recommended to put an API call in a `build()` method.
 Flutter calls the `build()` method every time it needs
 to change anything in the view,
 and this happens surprisingly often.
-Leaving the `fetch` call in your `build()` method
-floods the API with unnecessary calls and slows down your app.
+The `fetchAlbum()` method, if placed inside `build()`, is repeatedly 
+called on each rebuild causing the app to slow down.
+
+Storing the `fetchAlbum()` result in a state variable ensures that
+the `Future` is executed only once and then cached for subsequent
+rebuilds.
 
 ## Testing
 
@@ -272,7 +276,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({
+  const Album({
     required this.userId,
     required this.id,
     required this.title,
