@@ -33,7 +33,7 @@ bool isMobile() {
 
 // Snippets
 
-var counter = r'''
+const counter = r'''
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
@@ -89,7 +89,7 @@ Future<void> main() async {
 
 '''
     .trim();
-var spinningLogo = r'''
+const spinningLogo = r'''
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -167,7 +167,7 @@ class _MyAppState extends State<MyApp>
 '''
     .trim();
 
-var fibonacci = r'''
+const fibonacci = r'''
 import 'package:flutter/material.dart';
 
 void main() async {
