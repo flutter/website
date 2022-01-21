@@ -177,7 +177,7 @@ module Jekyll
         def addLanguage(language)
             @languages << language
         end
-        
+
         def language_as_id(language)
             language_sanitized = language.downcase
             language_sanitized.gsub(/\+/, "-plus")
@@ -212,7 +212,7 @@ module Jekyll
             @language_name = language_name
             @is_active = false
         end
-        
+
         def language_as_id(language)
             language_sanitized = language.downcase
             language_sanitized.gsub(/\+/, "-plus")
