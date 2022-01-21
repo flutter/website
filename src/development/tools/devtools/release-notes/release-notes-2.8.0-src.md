@@ -1,5 +1,3 @@
-# Flutter DevTools 2.8.0 Release Notes
-
 Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 ## General Updates
