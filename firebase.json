@@ -241,6 +241,7 @@
       { "source": "/go/i18n-user-guide", "destination": "https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit", "type": 301 },
       { "source": "/go/idle-gc-metrics", "destination": "https://docs.google.com/document/d/1QjLTDr2cTsmS3DGIWdw9WSgqBMKJkFXD7Q8acziGIIA/edit?usp=sharing", "type": 301 },
       { "source": "/go/image-decoding-registry", "destination": "https://docs.google.com/document/d/167qWrlaSAmJm5muqQ-iiJKZy6Q7ZlugIeXmraXava5Y/edit?resourcekey=0-mVrr_zBiSI2Qmd6vqae7Bw", "type": 301 },
+      { "source": "/go/infinite-scroll", "destination": "https://docs.google.com/document/d/1TV2oF2iLIZtGd48336korxMTQrGizDAASAeZAeteMSc/edit?usp=sharing", "type": 301 },
       { "source": "/go/inheritedwidget-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/inherited_widget", "type": 301 },
       { "source": "/go/input-field-autofill", "destination": "https://docs.google.com/document/d/1wYLsoc7NiHl2jFueB4Ros09E3nDCotdWVovDCFSMcAk/edit", "type": 301 },
       { "source": "/go/ios-autocorrection-highlight-support", "destination": "https://docs.google.com/document/d/18ZO7ThKu2wwCofGOKZSInPsq93IzkQTRn9eiyskeh7I/edit", "type": 301 },
