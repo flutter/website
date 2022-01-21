@@ -7,7 +7,7 @@ import 'package:dartpad_picker/dartpad_picker.dart';
 
 void main() {
   if (isMobile()) {
-    querySelector('#dartpad-landing-page').style.display = 'none';
+    querySelector('#dartpad-landing-page')!.style.display = 'none';
     return;
   }
 
@@ -15,12 +15,12 @@ void main() {
   var select = querySelector('#dartpad-select');
 
   var snippets = [
-    Snippet('Spinning Flutter', spinning_logo),
+    Snippet('Spinning Flutter', spinningLogo),
     Snippet('Fibonacci', fibonacci),
     Snippet('Counter', counter),
   ];
 
-  DartPadPicker(dartPadHost, select, snippets);
+  DartPadPicker(dartPadHost, select as SelectElement?, snippets);
 }
 
 // Mobile browser detection
@@ -89,7 +89,7 @@ Future<void> main() async {
 
 '''
     .trim();
-var spinning_logo = r'''
+var spinningLogo = r'''
 import 'package:flutter/material.dart';
 
 void main() async {

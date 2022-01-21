@@ -13,11 +13,11 @@ class Snippet {
 
 class DartPadPicker {
   final String dartPadUrl;
-  final Element iFrameHost;
-  final SelectElement selectElement;
+  final Element? iFrameHost;
+  final SelectElement? selectElement;
   final List<Snippet> snippets;
-  IFrameElement _iFrameElement;
-  int _selected = 0;
+  late IFrameElement _iFrameElement;
+  int? _selected = 0;
 
   DartPadPicker(this.iFrameHost, this.selectElement, this.snippets,
       {this.dartPadUrl = 'https://dartpad.dev/'}) {
@@ -25,7 +25,7 @@ class DartPadPicker {
     _initDartPad();
   }
 
-  Snippet get _selectedSnippet => snippets[_selected];
+  Snippet get _selectedSnippet => snippets[_selected!];
 
   Map<String, dynamic> get _sourceCodeMessage => {
         'sourceCode': {
@@ -38,10 +38,10 @@ class DartPadPicker {
     for (var i = 0; i < snippets.length; i++) {
       var snippet = snippets[i];
       var option = OptionElement(value: '$i')..text = snippet.name;
-      selectElement.children.add(option);
+      selectElement!.children.add(option);
     }
-    selectElement.onChange.listen((Event e) {
-      _selected = selectElement.selectedIndex;
+    selectElement!.onChange.listen((Event e) {
+      _selected = selectElement!.selectedIndex;
       _sendSourceCode();
     });
   }
@@ -49,7 +49,7 @@ class DartPadPicker {
   void _initDartPad() {
     _iFrameElement = IFrameElement()
       ..src = iFrameSrc(theme: '', mode: 'flutter');
-    iFrameHost.children.add(_iFrameElement);
+    iFrameHost!.children.add(_iFrameElement);
     window.addEventListener('message', (dynamic e) {
       // Don't handle events from other iframe elements
       if (e.data != null &&
@@ -63,10 +63,10 @@ class DartPadPicker {
   }
 
   void _sendSourceCode() {
-    _iFrameElement.contentWindow.postMessage(_sourceCodeMessage, '*');
+    _iFrameElement.contentWindow!.postMessage(_sourceCodeMessage, '*');
   }
 
-  String iFrameSrc({String theme, String mode}) {
+  String iFrameSrc({String? theme, String? mode}) {
     return '${dartPadUrl}embed-$mode.html?theme=$theme&null_safety=true';
   }
 }
