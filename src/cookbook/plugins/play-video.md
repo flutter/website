@@ -121,7 +121,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   void initState() {
     super.initState();
-    
+
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
@@ -129,7 +129,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
     );
 
-    _initializeVideoPlayerFuture = _controller.initialize();    
+    _initializeVideoPlayerFuture = _controller.initialize();
   }
 
   @override
@@ -263,6 +263,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   void initState() {
+    super.initState();
+
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
@@ -275,8 +277,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
     // Use the controller to loop the video.
     _controller.setLooping(true);
-
-    super.initState();
   }
 
   @override
