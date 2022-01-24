@@ -74,38 +74,26 @@ You'll start with a simple web app that we provide for you.
 
 <ol markdown="1">
 <li markdown="1">Enable web development.<br>
-At the command line, perform the following commands to
-make sure that you have the latest web support and that
-it's enabled. You only need to run `flutter config` once
-to enable Flutter support for web.
-If you see "flutter: command not found",
-then make sure that you have installed the
-[Flutter SDK][] and that it’s in your path.
-
-```terminal
-$ flutter channel beta
-$ flutter upgrade
-$ flutter config --enable-web
-```
-
-If you have problems enabling web development,
-see [Building a web application with Flutter][].
-</li>
-
-<li markdown="1">Run `flutter doctor`.<br>
-The `flutter doctor` command reports the status of the installation.
-You should see something like the following:
+At the command line, perform the following command to
+make sure that you have Flutter installed correctly. 
 
 ```terminal
 $ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 2.8.1, on macOS 12.1 21C52 darwin-x64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 31.0.0)
+[✓] Xcode - develop for iOS and macOS (Xcode 13.2.1)
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 2020.3)
+[✓] VS Code (version 1.63.2)
+[✓] Connected device (2 available)
 
-[✓] Flutter: is fully installed. (Channel dev, v1.9.5, on Mac OS X 10.14.6 18G87, locale en-US)
-[✗] Android toolchain - develop for Android devices: is not installed.
-[✗] Xcode - develop for iOS and macOS: is not installed.
-[✓] Chrome - develop for the web: is fully installed.
-[!] Android Studio: is not available. (not installed)
-[✓] Connected device: is fully installed. (1 available)
+• No issues found!
 ```
+
+If you see "flutter: command not found",
+then make sure that you have installed the
+[Flutter SDK][] and that it’s in your path.
 
 It's okay if the Android toolchain, Android Studio,
 and the Xcode tools are not installed,
@@ -121,17 +109,13 @@ You should see something like the following:
 
 ``` terminal
 $ flutter devices
-2 connected devices:
+1 connected device:
 
-Chrome     • chrome     • web-javascript • Google Chrome 78.0.3904.108
-Web Server • web-server • web-javascript • Flutter Tools
+Chrome (web) • chrome • web-javascript • Google Chrome 97.0.4692.99
 ```
 
-The **Chrome** device automatically starts Chrome.
-The **Web Server** starts a server that hosts the app
-so that you can load it from any browser.
-Use the Chrome device during development so that you can use DevTools,
-and the web server when you want to test on other browsers.
+The **Chrome** device automatically starts Chrome and enables the use 
+of the Flutter DevTools tooling.
 </li>
 
 <li markdown="1">The starting app is displayed in the following DartPad.
