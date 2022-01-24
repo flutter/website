@@ -386,6 +386,34 @@ the command line as follows:
 PS C:\myapp> flutter run -d winuwp
 ```
 
+### UWP plugins
+
+To add UWP support to a plugin, add a `supportedVariants`
+entry to the `windows` plugin section in `pubspec.yaml`:
+
+```yaml
+flutter:
+  plugin:
+    platforms:
+      windows:
+        pluginClass: YourClassHere
+        supportedVariants:
+          - win32
+          - uwp
+```
+
+The Win32 and UWP plugins share the same build. To
+use Win32-specific or UWP-specific code, use the
+`WINUWP` define that is automatically set:
+
+```c
+#ifdef WINUWP
+// UWP-specific code goes here.
+#else
+// Win32-specific code goes here.
+#endif
+```
+
 ## Build a release app
 
 To generate a release build,
