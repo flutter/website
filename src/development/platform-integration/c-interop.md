@@ -176,7 +176,11 @@ you can resolve the `native_add` symbol:
 <?code-excerpt "lib/c_interop.dart (NativeAdd)"?>
 ```dart
 final int Function(int x, int y) nativeAdd = nativeAddLib
+<<<<<<< HEAD
     .lookup<NativeFunction<Int32 Function(Int32, Int32)>>('native_add')
+=======
+    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>("native_add")
+>>>>>>> flutter-main
     .asFunction();
 ```
 

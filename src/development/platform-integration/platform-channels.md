@@ -761,11 +761,19 @@ languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
 import 'package:pigeon/pigeon.dart';
 
 class SearchRequest {
+<<<<<<< HEAD
   String query = '';
 }
 
 class SearchReply {
   String result = '';
+=======
+  String query = "";
+}
+
+class SearchReply {
+  String result = "";
+>>>>>>> flutter-main
 }
 
 @HostApi()
