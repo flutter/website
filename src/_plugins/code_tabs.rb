@@ -178,15 +178,20 @@ module Jekyll
             @languages << language
         end
 
+        def language_as_id(language)
+            language_sanitized = language.downcase
+            language_sanitized.gsub(/\+/, "-plus")
+        end
+
         def render(context)
             output = %Q(<ul class="nav nav-tabs sample-code-tabs" id="#{@title}-language" role="tablist">)
 
             is_active = true
             for language in @languages
-                languageLower = language.downcase
+                language_id = language_as_id(language)
                 output += %Q(
 <li class="nav-item">
-  <a class="nav-link #{is_active ? "active" : ""}" id="#{@title}-#{languageLower}" href="\##{@title}-#{languageLower}-tab" role="tab" aria-controls="#{@title}-#{languageLower}" aria-selected="true">#{language}</a>
+  <a class="nav-link #{is_active ? "active" : ""}" id="#{@title}-#{language_id}" href="\##{@title}-#{language_id}-tab" role="tab" aria-controls="#{@title}-#{language_id}" aria-selected="true">#{language}</a>
 </li>
 )
                 is_active = false
@@ -208,11 +213,16 @@ module Jekyll
             @is_active = false
         end
 
+        def language_as_id(language)
+            language_sanitized = language.downcase
+            language_sanitized.gsub(/\+/, "-plus")
+        end
+
         def render(context)
             code = super
-            language_name_lower = @language_name.downcase
+            language_id = language_as_id(@language_name)
             %Q(
-<div class="tab-pane #{@is_active ? "active" : ""}" id="#{@title}-#{language_name_lower}-tab" role="tabpanel" aria-labelledby="#{@title}-#{language_name_lower}-tab" markdown="1">
+<div class="tab-pane #{@is_active ? "active" : ""}" id="#{@title}-#{language_id}-tab" role="tabpanel" aria-labelledby="#{@title}-#{language_id}-tab" markdown="1">
 #{code}
 </div>
 )

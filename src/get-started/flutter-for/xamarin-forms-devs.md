@@ -1439,7 +1439,7 @@ The observable lifecycle events are:
 For more details on the meaning of these states, see the
 [`AppLifecycleStatus` documentation][].
 
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 
 ## Layouts
 

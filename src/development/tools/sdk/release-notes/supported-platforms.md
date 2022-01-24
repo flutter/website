@@ -70,9 +70,7 @@ minimal.
 
 |Platform|Version       |
 |--------|---------------|
-|Android |Android SDK 22 |
 |Android |Android SDK 20 |
-|Android |Android SDK 19 |
 |Android |Android SDK 18 |
 |Android |Android SDK 17 |
 |Android |Android SDK 16 |

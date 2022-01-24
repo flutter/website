@@ -4,9 +4,8 @@
   **Beta (Win32) and Alpha (UWP)!**
   This area covers Windows desktop support,
   which is available in beta release (Win32)
-  and alpha release (UWP).
-
-  The UWP variant is community supported.
+  and alpha release (UWP). The UWP variant is 
+  community supported.
 
   You can try a beta snapshot of Win32 desktop support
   on the stable channel, or you can keep up

@@ -8,81 +8,111 @@ URL-based navigation on the web:
 
 **Hash (default)**
 : Paths are read and written to the [hash fragment][].
-  For example, `flutterexample.dev/#/path/to/screen`.
+For example, `flutterexample.dev/#/path/to/screen`.
 
 **Path**
 :  Paths are read and written without a hash. For example,
-  `flutterexample.dev/path/to/screen`.
-  
-These are set using the [`setUrlStrategy`][] API with
-either a [`HashUrlStrategy`][] or [`PathUrlStrategy`][].
-  
+`flutterexample.dev/path/to/screen`.
+
 ## Configuring the URL strategy
 
-{{site.alert.note}}
-  By default, Flutter uses the hash (`/#/`) location strategy.
-  These instructions are only required if you want to use
-  the URL path strategy.
-
-  Instead of using these setup instructions,
-  you can also use the [`url_strategy`][] package.
-{{site.alert.end}}
+To configure Flutter to use the path instead, use the
+[setUrlStrategy][] function provided by the [flutter_web_plugins][] library in
+the SDK.
 
 The `setUrlStrategy` API can only be called on the web.
 The following instructions show how to use a conditional
 import to call this function on the web,
 but not on other platforms.
 
-<ol markdown="1">
-<li markdown="1">Include the `flutter_web_plugins` package and call the
-   [`setUrlStrategy`][] function before your app runs:
+{{site.alert.note}}
+By default, Flutter uses the hash (`/#/`) location strategy.
+These instructions are only required if you want to use
+the URL path strategy.
 
-  ```yaml
-  dependencies:
-    flutter_web_plugins:
-      sdk: flutter
-  ```
-</li>
+Instead of using these setup instructions,
+you can also use the [`url_strategy`][] package.
+{{site.alert.end}}
 
-<li markdown="1">Create a `lib/configure_nonweb.dart` file with the
-   following code:
+First, add `flutter_web_plugins` to your `pubspec.yaml`:
 
-  ```dart
-  void configureApp() {
-    // No-op.
-  }
-  ```
-</li>
+```yaml
+dependencies:
+  flutter_web_plugins:
+    sdk: flutter
+```
 
-<li markdown="1">Create a `lib/configure_web.dart` file with the
-   following code:
+Then call [setUrlStrategy][] before `runApp()`:
 
-  <!--skip-->
-  ```dart
-  import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+```
+import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
-  void configureApp() {
-    setUrlStrategy(PathUrlStrategy());
-  }
-  ```
-</li>
-
-<li markdown="1">Open `lib/main.dart` and conditionally import
-   `configure_web.dart` when the `html` package
-   is available, or `configure_nonweb.dart` when it isn't:
-
-  <!--skip-->
-  ```dart
-  import 'package:flutter/material.dart';
-  import 'configure_nonweb.dart' if (dart.library.html) 'configure_web.dart';
-
-  void main() {
-    configureApp();
+void main() {
+  setUrlStrategy(PathUrlStrategy());
   runApp(MyApp());
-  }
-  ```
-</li>
-</ol>
+}
+```
+
+If your app is cross-platform, use Dart's conditional imports feature by
+creating three files:
+
+**url_strategy.dart**
+
+```
+export 'url_strategy_noop.dart' if (dart.library.html) 'url_strategy_web.dart';
+```
+
+**url_strategy_noop.dart**
+
+```
+void usePathUrlStrategy() {
+  // noop
+}
+```
+
+**url_strategy_web.dart**
+
+```
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+
+void usePathUrlStrategy() {
+  setUrlStrategy(PathUrlStrategy());
+}
+```
+
+Then, call `setPathUrlStrategy` before `runApp()`:
+
+**main.dart**
+
+```
+import 'package:flutter/material.dart';
+import 'url_strategy.dart';
+
+void main() {
+  usePathUrlStrategy();
+  runApp(MyApp());
+}
+```
+
+Using conditional imports ensures that the `flutter_web_plugins` library is only
+loaded when your app is running on the web.
+
+## Configuring your web server
+
+PathUrlStrategy uses the [History API][], which requires additional
+configuration for web servers.
+
+To configure your web server to support PathUrlStrategy, check your web server's
+documentation to rewrite requests to `index.html`.Check your web server's
+documentation for details on how to configure single-page apps.
+
+If you are using Firebase Hosting, choose the "Configure as a single-page app"
+option when initializing your project. For more information see Firebase's
+[Configure rewrites][] documentation.
+
+The local dev server created by running `flutter run -d chrome` is configured to
+handle any path gracefully and fallback to your app's `index.html` file.
 
 ## Hosting a Flutter app at a non-root location
 
@@ -98,3 +128,7 @@ this tag to `<base href="/flutter_app/">`.
 [`PathUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/PathUrlStrategy-class.html
 [`setUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/setUrlStrategy.html
 [`url_strategy`]: {{site.pub-pkg}}/url_strategy
+[setUrlStrategy]: https://api.flutter.dev/flutter/flutter_web_plugins/setUrlStrategy.html
+[flutter_web_plugins]: https://api.flutter.dev/flutter/flutter_web_plugins/flutter_web_plugins-library.html
+[History API]: https://developer.mozilla.org/en-US/docs/Web/API/History_API
+[Configure rewrites]: {{site.url}}/development/ui/navigation/url-strategies
