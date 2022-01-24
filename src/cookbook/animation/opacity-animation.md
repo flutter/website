@@ -33,13 +33,13 @@ animations. This recipe uses the following steps:
 First, create something to fade in and out. For this example,
 draw a green box on screen.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g;/,$//g"?>
 ```dart
 Container(
   width: 200.0,
   height: 200.0,
   color: Colors.green,
-);
+)
 ```
 
 ## 2. Define a `StatefulWidget`

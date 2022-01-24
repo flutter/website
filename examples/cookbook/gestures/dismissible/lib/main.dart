@@ -16,7 +16,9 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
+  // #docregion Items
   final items = List<String>.generate(20, (i) => 'Item ${i + 1}');
+  // #enddocregion Items
 
   @override
   Widget build(BuildContext context) {

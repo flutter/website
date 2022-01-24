@@ -2,12 +2,12 @@ name: picture_using_camera
 description: A new Flutter project.
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.15.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  camera: ^0.8.1
+  camera: ^0.9.4+6
   path_provider: ^2.0.1
   path: ^1.8.0
 
