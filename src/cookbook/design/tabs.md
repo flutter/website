@@ -42,12 +42,13 @@ or automatically by using a [`DefaultTabController`][] widget.
 Using `DefaultTabController` is the simplest option, since it
 creates a `TabController` and makes it available to all descendant widgets.
 
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (TabController)"?>
 ```dart
-DefaultTabController(
-  // The number of tabs / content sections to display.
-  length: 3,
-  child: // Complete this code in the next step.
+return MaterialApp(
+  home: DefaultTabController(
+    length: 3,
+    child: Scaffold(),
+  ),
 );
 ```
 
@@ -58,18 +59,20 @@ You can create tabs using the [`TabBar`][] widget.
 In this example, create a `TabBar` with three
 [`Tab`][] widgets and place it within an [`AppBar`][].
 
-<!-- skip -->
+<?code-excerpt "lib/partials.dart (Tabs)"?>
 ```dart
-DefaultTabController(
-  length: 3,
-  child: Scaffold(
-    appBar: AppBar(
-      bottom: TabBar(
-        tabs: [
-          Tab(icon: Icon(Icons.directions_car)),
-          Tab(icon: Icon(Icons.directions_transit)),
-          Tab(icon: Icon(Icons.directions_bike)),
-        ],
+return MaterialApp(
+  home: DefaultTabController(
+    length: 3,
+    child: Scaffold(
+      appBar: AppBar(
+        bottom: const TabBar(
+          tabs: [
+            Tab(icon: Icon(Icons.directions_car)),
+            Tab(icon: Icon(Icons.directions_transit)),
+            Tab(icon: Icon(Icons.directions_bike)),
+          ],
+        ),
       ),
     ),
   ),
@@ -90,15 +93,15 @@ For this purpose, use the [`TabBarView`][] widget.
   `TabBar`.
 {{site.alert.end}}
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (TabBarView)"?>
 ```dart
-TabBarView(
+body: const TabBarView(
   children: [
     Icon(Icons.directions_car),
     Icon(Icons.directions_transit),
     Icon(Icons.directions_bike),
   ],
-);
+),
 ```
 
 ## Interactive example

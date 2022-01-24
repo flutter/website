@@ -32,9 +32,9 @@ Most of the time, this data comes from the internet or a database.
 For this example, generate a list of 10,000 Strings using the
 [`List.generate`][] constructor.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Items)" replace="/^items: //g"?>
 ```dart
-final items = List<String>.generate(10000, (i) => "Item $i");
+List<String>.generate(10000, (i) => 'Item $i'),
 ```
 
 ## 2. Convert the data source into widgets
@@ -59,7 +59,6 @@ ListView.builder(
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {

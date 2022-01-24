@@ -2,7 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+// #docregion Http
 import 'package:http/http.dart' as http;
+// #enddocregion Http
 
 // #docregion fetchAlbum
 Future<Album> fetchAlbum() async {
@@ -27,7 +29,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({
+  const Album({
     required this.userId,
     required this.id,
     required this.title,

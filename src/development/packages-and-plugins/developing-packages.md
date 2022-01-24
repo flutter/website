@@ -297,9 +297,10 @@ endorsed federated implementations.
 To create a plugin package, use the `--template=plugin`
 flag with `flutter create`.
 
-As of Flutter 1.20.0, Use the `--platforms=` option followed by a comma separated list to
-specify the platforms that the plugin supports. Available platforms are: `android`, `ios`, `web`, `linux`, `macos`, and `windows`.
-If no platforms are specified, the resulting project doesn't support any platforms.
+Use the `--platforms=` option followed by a comma separated list to specify the
+platforms that the plugin supports. Available platforms are: `android`, `ios`,
+`web`, `linux`, `macos`, and `windows`. If no platforms are specified, the
+resulting project doesn't support any platforms.
 
 Use the `--org` option to specify your organization,
 using reverse domain name notation. This value is used
@@ -459,8 +460,10 @@ class HelloPluginWindows extends HelloPluginPlatform {
   }
 ```
 
-This is supported for Windows, macOS, and Linux starting in Flutter 2.5, and
-for Android and iOS starting in Flutter 2.8.
+This is supported for Windows, macOS, and Linux starting in Flutter 2.5.
+`dartPluginClass` is supported for Android and iOS starting in Flutter 2.8,
+but currently a `pluginClass` is still required for those platforms. That
+requirement will be removed in a future version of Flutter.
 
 ### Testing your plugin
 

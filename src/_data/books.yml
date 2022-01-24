@@ -85,6 +85,13 @@
   cover: practical-flutter.jpg
   link: "https://www.apress.com/us/book/9781484249710"
   desc: "Improve your Mobile Development with Google's latest open source SDK."
+- title: 'Pragmatic Flutter'
+  authors:
+    - Priyanka Tyagi
+  publisher: CRC Press
+  cover: pragmatic-flutter.jpg
+  link: "https://www.perlego.com/book/2554817/pragmatic-flutter-building-crossplatform-mobile-apps-for-android-ios-web-desktop-pdf"
+  desc: "Building Cross-Platform Mobile Apps for Android, iOS, Web & Desktop"  
 - title: 'Programming Flutter'
   authors:
     - Carmine Zaccagnino

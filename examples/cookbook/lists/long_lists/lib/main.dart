@@ -1,10 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     MyApp(
+      // #docregion Items
       items: List<String>.generate(10000, (i) => 'Item $i'),
+      // #enddocregion Items
     ),
   );
 }

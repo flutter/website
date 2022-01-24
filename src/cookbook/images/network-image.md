@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/images/network_image"?>
+
 Displaying images is fundamental for most mobile apps.
 Flutter provides the [`Image`][] widget to
 display different types of images.
@@ -19,9 +21,9 @@ display different types of images.
 To work with images from a URL, use the
 [`Image.network()`][] constructor.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (ImageNetwork)" replace="/^body\: //g"?>
 ```dart
-Image.network('https://picsum.photos/250?image=9')
+Image.network('https://picsum.photos/250?image=9'),
 ```
 
 ## Bonus: animated gifs
@@ -29,9 +31,10 @@ Image.network('https://picsum.photos/250?image=9')
 One useful thing about the `Image` widget:
 It supports animated gifs.
 
-<!-- skip -->
+<?code-excerpt "lib/gif.dart (Gif)" replace="/^return\ //g"?>
 ```dart
-Image.network('https://github.com/flutter/plugins/raw/master/packages/video_player/video_player/doc/demo_ipod.gif?raw=true');
+Image.network(
+    'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif');
 ```
 
 ## Placeholders and caching
@@ -46,6 +49,7 @@ the following recipes:
 
 ## Interactive example
 
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
 import 'package:flutter/material.dart';
 

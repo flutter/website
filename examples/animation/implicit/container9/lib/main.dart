@@ -23,6 +23,8 @@ class AnimatedContainerDemo extends StatelessWidget {
   final double borderRadius = randomBorderRadius();
   final double margin = randomMargin();
 
+  AnimatedContainerDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +43,8 @@ class AnimatedContainerDemo extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              child: Text('change'),
-              onPressed: () => null,
+              child: const Text('change'),
+              onPressed: () => {},
             ),
           ],
         ),
@@ -52,6 +54,8 @@ class AnimatedContainerDemo extends StatelessWidget {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -63,6 +67,6 @@ class MyApp extends StatelessWidget {
 
 void main() {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }

@@ -18,6 +18,7 @@ repo:
   samples: https://github.com/flutter/samples
   plugins: https://github.com/flutter/plugins
   gallery: https://github.com/flutter/gallery
+  engine: https://github.com/flutter/engine
 dart:
   api: https://api.dart.dev
   sdk:

@@ -67,7 +67,7 @@ final todos = List.generate(
 
 ### Display the list of todos using a ListView
 
-<!-- skip -->
+<?code-excerpt "lib/main_todoscreen.dart (ListViewBuilder)" replace="/^body: //g;/;$//g"?>
 ```dart
 ListView.builder(
   itemCount: todos.length,
@@ -76,7 +76,7 @@ ListView.builder(
       title: Text(todos[index].title),
     );
   },
-);
+),
 ```
 
 So far, so good.
@@ -195,7 +195,6 @@ body: ListView.builder(
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Todo {
@@ -349,7 +348,6 @@ ListView.builder(
 
 <?code-excerpt "lib/main_routesettings.dart"?>
 ```dart
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Todo {

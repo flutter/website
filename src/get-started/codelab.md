@@ -128,9 +128,13 @@ where the Dart code lives.
 
     import 'package:flutter/material.dart';
 
-    void main() => runApp(MyApp());
+    void main() {
+      runApp(const MyApp());
+    }
 
     class MyApp extends StatelessWidget {
+      const MyApp({Key? key}) : super(key: key);
+
       @override
       Widget build(BuildContext context) {
         return MaterialApp(
@@ -186,9 +190,6 @@ where the Dart code lives.
   in the `flutter` section of your `pubspec.yaml` file. 
   This will allow you to use more features of Material,
   such as their set of predefined [Icons][].
-
-* The `main()` method uses arrow (`=>`) notation.
-  Use arrow notation for one-line functions or methods.
 * The app extends `StatelessWidget`, which makes the app itself a
   widget. In Flutter, almost everything is a widget, including
   alignment, padding, and layout.
@@ -212,9 +213,22 @@ English words plus some utility functions.
 You can find the `english_words` package,
 as well as many other open source packages, on [pub.dev][].
 
- 1. The `pubspec.yaml` file manages the assets and dependencies
-    for a Flutter app. In `pubspec.yaml`, add `english_words`
-    (3.1.5 or higher) to the dependencies list:
+ 1. Add `english_words` package to your project as follows:
+
+    ```terminal
+    $ flutter pub add english_words
+    Resolving dependencies...
+    + english_words 4.0.0
+      path 1.8.0 (1.8.1 available)
+      source_span 1.8.1 (1.8.2 available)
+      test_api 0.4.3 (0.4.9 available)
+    Downloading english_words 4.0.0...
+    Changed 1 dependency!
+    ```
+ 
+    The `pubspec.yaml` file manages the assets and dependencies
+    for a Flutter app. In `pubspec.yaml`, you will see
+    that the `english_words` dependency has been added:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
@@ -264,8 +278,16 @@ as well as many other open source packages, on [pub.dev][].
     ```diff
     --- step1_base/lib/main.dart
     +++ step2_use_package/lib/main.dart
-    @@ -9,14 +10,15 @@
-     class MyApp extends StatelessWidget {
+    @@ -2,6 +2,7 @@
+     // Use of this source code is governed by a BSD-style license that can be
+     // found in the LICENSE file.
+
+    +import 'package:english_words/english_words.dart';
+     import 'package:flutter/material.dart';
+
+     void main() {
+    @@ -13,14 +14,15 @@
+
        @override
        Widget build(BuildContext context) {
     +    final wordPair = WordPair.random();
@@ -368,6 +390,8 @@ a child inside the existing `MyApp` stateless widget.
 
   ```dart
 class RandomWords extends StatefulWidget {
+  const RandomWords({ Key? key }) : super(key: key);
+
   @override
   _RandomWordsState createState() => _RandomWordsState();
 }
@@ -402,19 +426,20 @@ class _RandomWordsState extends State<RandomWords> {
   ```diff
   --- step2_use_package/lib/main.dart
   +++ step3_stateful_widget/lib/main.dart
-  @@ -10,7 +10,6 @@
-   class MyApp extends StatelessWidget {
+  @@ -14,16 +14,15 @@
+
      @override
      Widget build(BuildContext context) {
   -    final wordPair = WordPair.random();
        return MaterialApp(
          title: 'Welcome to Flutter',
          home: Scaffold(
-  @@ -18,8 +17,8 @@
+           appBar: AppBar(
              title: const Text('Welcome to Flutter'),
            ),
-           body: Center(
+  -        body: Center(
   -          child: Text(wordPair.asPascalCase),
+  +        body: const Center(
   +          child: RandomWords(),
            ),
          ),
@@ -561,24 +586,69 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -10,15 +10,8 @@
-     class MyApp extends StatelessWidget {
+    @@ -13,27 +13,50 @@
+       const MyApp({Key? key}) : super(key: key);
+
        @override
        Widget build(BuildContext context) {
-         return MaterialApp(
+    -    return MaterialApp(
     -      title: 'Welcome to Flutter',
     -      home: Scaffold(
     -        appBar: AppBar(
     -          title: const Text('Welcome to Flutter'),
     -        ),
-    -        body: Center(
+    -        body: const Center(
     -          child: RandomWords(),
     -        ),
     -      ),
+    +    return const MaterialApp(
     +      title: 'Startup Name Generator',
     +      home: RandomWords(),
          );
        }
+     }
+
+     class _RandomWordsState extends State<RandomWords> {
+    +  final _suggestions = <WordPair>[];
+    +  final _biggerFont = const TextStyle(fontSize: 18.0);
+    +
+    +  Widget _buildSuggestions() {
+    +    return ListView.builder(
+    +        padding: const EdgeInsets.all(16.0),
+    +        itemBuilder: /*1*/ (context, i) {
+    +          if (i.isOdd) return const Divider(); /*2*/
+    +
+    +          final index = i ~/ 2; /*3*/
+    +          if (index >= _suggestions.length) {
+    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+    +          }
+    +          return _buildRow(_suggestions[index]);
+    +        });
+    +  }
+    +
+    +  Widget _buildRow(WordPair pair) {
+    +    return ListTile(
+    +      title: Text(
+    +        pair.asPascalCase,
+    +        style: _biggerFont,
+    +      ),
+    +    );
+    +  }
+    +
+       @override
+       Widget build(BuildContext context) {
+    -    final wordPair = WordPair.random();
+    -    return Text(wordPair.asPascalCase);
+    +    return Scaffold(
+    +      appBar: AppBar(
+    +        title: const Text('Startup Name Generator'),
+    +      ),
+    +      body: _buildSuggestions(),
+    +    );
+       }
+     }
+
+     class RandomWords extends StatefulWidget {
     ```
 
  6. Restart the app. You should see a list of word pairings no matter how far

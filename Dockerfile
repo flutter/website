@@ -1,4 +1,4 @@
-ARG RUBY_VERSION=3
+ARG RUBY_VERSION=3.0
 
 FROM ruby:${RUBY_VERSION}-buster as dev
 

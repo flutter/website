@@ -40,9 +40,9 @@ In this example,
 you want 20 sample items to work with.
 To keep it simple, generate a list of strings.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Items)"?>
 ```dart
-final items = List<String>.generate(20, (i) => "Item ${i + 1}");
+final items = List<String>.generate(20, (i) => 'Item ${i + 1}');
 ```
 
 ### Convert the data source into a list
@@ -134,7 +134,6 @@ provide a `background` parameter to the `Dismissible`.
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
