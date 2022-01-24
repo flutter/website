@@ -10,11 +10,13 @@ void highlightRepaints() {
 
 // #docregion EverythingRepaints
 class EverythingRepaintsPage extends StatelessWidget {
+  const EverythingRepaintsPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Repaint Example')),
-      body: Center(
+      appBar: AppBar(title: const Text('Repaint Example')),
+      body: const Center(
         child: CircularProgressIndicator(),
       ),
     );
@@ -24,11 +26,13 @@ class EverythingRepaintsPage extends StatelessWidget {
 
 // #docregion AreaRepaints
 class AreaRepaintsPage extends StatelessWidget {
+  const AreaRepaintsPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Repaint Example')),
-      body: Center(
+      appBar: AppBar(title: const Text('Repaint Example')),
+      body: const Center(
         child: RepaintBoundary(
           child: CircularProgressIndicator(),
         ),
