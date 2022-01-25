@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 // #docregion Toggle
-import 'package:flutter/painting.dart';
-
 void showOversizedImages() {
   debugInvertOversizedImages = true;
 }
@@ -10,6 +8,8 @@ void showOversizedImages() {
 
 // #docregion ResizedImage
 class ResizedImage extends StatelessWidget {
+  const ResizedImage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Image.asset(

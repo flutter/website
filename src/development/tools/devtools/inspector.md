@@ -353,11 +353,13 @@ Here the progress indicator causes its container to repaint:
 <?code-excerpt "lib/highlight_repaints.dart (EverythingRepaints)"?>
 ```dart
 class EverythingRepaintsPage extends StatelessWidget {
+  const EverythingRepaintsPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Repaint Example')),
-      body: Center(
+      appBar: AppBar(title: const Text('Repaint Example')),
+      body: const Center(
         child: CircularProgressIndicator(),
       ),
     );
@@ -373,11 +375,13 @@ only that section of the screen to repaint:
 <?code-excerpt "lib/highlight_repaints.dart (AreaRepaints)"?>
 ```dart
 class AreaRepaintsPage extends StatelessWidget {
+  const AreaRepaintsPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Repaint Example')),
-      body: Center(
+      appBar: AppBar(title: const Text('Repaint Example')),
+      body: const Center(
         child: RepaintBoundary(
           child: CircularProgressIndicator(),
         ),
@@ -436,6 +440,8 @@ parameters on the `Image` constructor:
 <?code-excerpt "lib/oversized_images.dart (ResizedImage)"?>
 ```dart
 class ResizedImage extends StatelessWidget {
+  const ResizedImage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Image.asset(
@@ -457,8 +463,6 @@ This property can also be set in code:
 
 <?code-excerpt "lib/oversized_images.dart (Toggle)"?>
 ```dart
-import 'package:flutter/painting.dart';
-
 void showOversizedImages() {
   debugInvertOversizedImages = true;
 }
