@@ -116,7 +116,7 @@ you need the following in addition to the Flutter SDK:
 * [GTK development headers][]
 * [Ninja build][]
 * [pkg-config][]
-* [liblzma-dev][]
+* [liblzma-dev][] This might be necessary
 
 The easiest way to install the Flutter SDK along with these
 dependencies is by using [snapd][].
