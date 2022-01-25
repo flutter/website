@@ -41,6 +41,7 @@ $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-d
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [Ninja build]: https://ninja-build.org/
 [pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
+[liblzma-dev]: https://packages.debian.org/sid/liblzma-dev
 
 ### Enable desktop support
 
