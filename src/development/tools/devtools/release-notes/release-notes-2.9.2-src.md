@@ -8,14 +8,12 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 ![survey prompt]({{site.url}}/development/tools/devtools/release-notes/images-2.9.2/image1.png "survey_prompt")
 
-{{site.alert.note}}
-If you are having issues launching the survey, please make
+*Note*: If you are having issues launching the survey, please make
 sure you have upgraded to the latest Flutter stable branch 2.10.
 There was a bug in DevTools (fixed in
 [#3574](https://github.com/flutter/devtools/pull/3574)) that
 prevented the survey from being able to be opened, and unless you
 are on Flutter 2.10, this bug will still be present._
-{{site.alert.end}}
 
 * General bug fixes and improvements -
   [#3528](https://github.com/flutter/devtools/pull/3528),
