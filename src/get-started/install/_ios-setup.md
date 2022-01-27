@@ -45,8 +45,8 @@ follow these steps:
     ```
 
  2. Make sure your simulator is using a 64-bit device
-    (iPhone 5s or later) by checking the settings in
-    the simulator's **Hardware > Device** menu.
+    (iPhone 5s or later).  You can check the device by viewing the settings in
+    the simulator's **Hardware > Device** or **File > Open Simulator** menus.
  3. Depending on your development machine's screen size,
     simulated high-screen-density iOS devices
     might overflow your screen. Grab the corner of the
