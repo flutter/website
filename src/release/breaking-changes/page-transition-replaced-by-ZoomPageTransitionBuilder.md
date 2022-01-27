@@ -5,19 +5,21 @@ description: Using the latest page transition instead of the old one.
 
 ## Summary
 
-In order to keep libraries follow the latest OEM behavior,
-we've replaced the default page transition builders from
-`FadeUpwardsPageTransitionsBuilder` to
-`ZoomPageTransitionsBuilder` on all platforms excluding iOS and macOS.
+In order to ensure that libraries follow the latest OEM behavior,
+the default page transition builders now use
+`ZoomPageTransitionsBuilder` on all platforms (excluding iOS and macOS)
+instead of `FadeUpwardsPageTransitionsBuilder`.
 
 ## Context
 
-`FadeUpwardsPageTransitionsBuilder` came with the first
-Flutter release, which defines a page transition that's
-similar to the one provided by Android O.
+The `FadeUpwardsPageTransitionsBuilder` (provided with the first
+Flutter release), defined a page transition that's
+similar to the one provided by Android O. This page transitions builder
+will eventually be deprecated on Android, as per Flutter's
+[deprecation policy]({{site.url}}/resources/compatibility#deprecation-policy).
 
-`ZoomPageTransitionsBuilder` defines a page transition that's
-similar to the one provided by Android Q and R.
+`ZoomPageTransitionsBuilder`, the new page transition builder for Android, Linux, and Windows,
+defines a page transition that's similar to the one provided by Android Q and R.
 
 According to the [Style guide for Flutter repo][],
 the framework will follow the latest OEM behavior.
@@ -25,7 +27,7 @@ Page transition builders using `FadeUpwardsPageTransitionsBuilder`
 are all switched to the `ZoomPageTransitionsBuilder`.
 When the current `TargetPlatform` doesn't have
 `PageTransitionsBuilder` defined in the `ThemeData.pageTransitionsTheme`,
-`ZoomPageTransitionsBuilder` will be use as default.
+`ZoomPageTransitionsBuilder` is used as the default.
 
 [Style guide for Flutter repo]: {{site.repo.flutter}}/wiki/Style-guide-for-Flutter-repo
 
@@ -86,8 +88,8 @@ MaterialApp(
 
 ### Tests migration
 
-If you used to find widgets but failed with *Too many elements*
-using the new transition, and errors are like these:
+If you used to try to find widgets but failed with *Too many elements*
+using the new transition, and saw errors similar to the following:
 
 ```
 ══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
@@ -104,12 +106,12 @@ You should migrate your tests by using the
 `descendant` scope for `Finder`s with the specific widget type.
 Below is the example of `DataTable`'s test:
 
-Test before migrate:
+Test before migration:
 ```dart
 final Finder finder = find.widgetWithIcon(Transform, Icons.arrow_upward);
 ```
 
-Test after migrate:
+Test after migration:
 ```dart
 final Finder finder = find.descendant(
   of: find.byType(DataTable),
@@ -117,7 +119,7 @@ final Finder finder = find.descendant(
 );
 ```
 
-Widgets that typically needs to migrate the finder scope are:
+Widgets that typically need to migrate the finder scope are:
 `Transform`, `FadeTransition`, `ScaleTransition`, and `ColoredBox`.
 
 ## Timeline
