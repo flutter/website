@@ -159,6 +159,7 @@
       { "source": "/go/api-for-transform-performance", "destination": "https://docs.google.com/document/d/1Fxdlf7JsA-yAwc_RNuboMG-vhIhchRBZGvDSwg5qR0A/edit?usp=sharing", "type": 301 },
       { "source": "/go/asset-lookup-in-plugin-binding", "destination": "https://docs.google.com/document/d/1iwGFWipC0v0FKvAgbjGl0kaV9IGox1YiD8jUP8Vvkjc/edit", "type": 301 },
       { "source": "/go/autocomplete", "destination": "https://docs.google.com/document/d/1fV4FDNdcza1ITU7hlgweCDUZdWyCqd-rjz_J7K2KkfY/edit?usp=sharing", "type": 301 },
+      { "source": "/go/autosubmit", "destination": "https://docs.google.com/document/d/14oAi2gHMDnqOVe2rEl0syny7_7xsCHh83HtdomQgouM/edit?usp=sharing", "type": 301 },
       { "source": "/go/automatic-android-plugin-registration", "destination": "https://docs.google.com/document/d/1xNkBmcdVL1yEXqtZ65KzTwfr5UXDD05VVKYXIXGX7p8/edit", "type": 301 },
       { "source": "/go/backdrop-filter-with-overlay-canvas", "destination": "https://docs.google.com/document/d/1t_offKOgkuVzvB3fqGTfcltovb-yxqV6tbuP1qIBqVI/edit?usp=sharing", "type": 301 },
       { "source": "/go/base-annotations-local-position-on-region", "destination": "https://docs.google.com/document/d/1r7FQTOw2vZJZ5c0VoNqi9CWmZY3MvUfz0spdf0-nK6k/edit", "type": 301 },
