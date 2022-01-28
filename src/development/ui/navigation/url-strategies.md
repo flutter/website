@@ -57,6 +57,7 @@ void main() {
 ```
 
 ## Cross platform setup
+
 If your app is cross-platform, use Dart's conditional imports feature by
 creating three files:
 
