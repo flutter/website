@@ -1,6 +1,6 @@
-ARG RUBY_VERSION=3.1
+ARG RUBY_VERSION=3.0
 
-FROM ruby:${RUBY_VERSION}-bullseye as dev
+FROM ruby:${RUBY_VERSION}-buster as dev
 
 ENV TZ=US/Pacific
 
