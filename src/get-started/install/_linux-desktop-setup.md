@@ -27,11 +27,12 @@ you need the following in addition to the Flutter SDK:
 * [GTK development headers][]
 * [Ninja build][]
 * [pkg-config][]
+* [liblzma-dev][] This might be necessary
 
 Run the following command
 
 ```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
 ```
 
 [Clang]: https://clang.llvm.org/
@@ -40,6 +41,7 @@ $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [Ninja build]: https://ninja-build.org/
 [pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
+[liblzma-dev]: https://packages.debian.org/sid/liblzma-dev
 
 ### Enable desktop support
 
