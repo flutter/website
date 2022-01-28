@@ -34,6 +34,8 @@ Instead of using these setup instructions,
 you can also use the [`url_strategy`][] package.
 {{site.alert.end}}
 
+## Web setup
+
 First, add `flutter_web_plugins` to your `pubspec.yaml`:
 
 ```yaml
@@ -53,6 +55,8 @@ void main() {
   runApp(MyApp());
 }
 ```
+
+## Cross platform setup
 
 If your app is cross-platform, use Dart's conditional imports feature by
 creating three files:
