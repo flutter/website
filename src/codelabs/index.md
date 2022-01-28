@@ -131,6 +131,12 @@ like layout and animations:
   by adding a backdrop with a menu that filters
   products by the selected category.
 
+* [Adaptive Apps in Flutter][]<br>
+  Learn how to build a Flutter app that adapts to the 
+  platform that it is running on, be that Android, iOS, 
+  the web, Windows, macOS, or Linux.
+
+[Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
 [Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
@@ -145,6 +151,10 @@ like layout and animations:
 ## Using Flutter with...
 
 Learn how to use Flutter with other technologies.
+
+* [Adding WebView to your Flutter app][] **NEW!**<br>
+  With the WebView Flutter plugin you can add a WebView 
+  widget to your Android or iOS Flutter app.
 
 * [Adding Google Maps to a Flutter app][]<br>
   Display a Google map in an app, retrieve data from a
@@ -179,7 +189,7 @@ Learn how to use Flutter with other technologies.
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
 
-* [Get to know Firebase for Flutter][firebase-ws] (workshop) **NEW!**<br>
+* [Get to know Firebase for Flutter][firebase-ws] (workshop)<br>
   An instructor-led version of our popular
   "Get to know Firebase for Flutter" codelab
   (listed below).
@@ -195,16 +205,17 @@ Learn how to use Flutter with other technologies.
   The finished app runs on Android, iOS, and web,
   from a single Dart codebase.
 
-[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter/
+[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
 [Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Build a Photo Sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
-[Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
+[Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
+[Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/learn/codelabs/firebase-get-to-know-flutter
-[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
+[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 
 ## Testing
 
@@ -247,10 +258,10 @@ like iOS, Android, the web, and the desktop.
   and use code generation to build type-safe client libraries for GitHub's APIs.
 
 [Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
-[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin/
+[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
 [provider]: {{site.pub}}/packages/provider
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
+[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
 
 ## Other resources
 
