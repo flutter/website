@@ -1,14 +1,14 @@
 ---
-title: Fall Flutter Apprentice event
+title: Fall 2021 Flutter Apprentice event
 toc: false
 description: This event is ended.
 ---
 
-{{site.alert.note}}
-  The "Flutter Apprentice" event is ended.
+{{site.alert.info}}
+  The Flutter Apprentice event has ended.
   Thanks to all who participated!<br>
-  If you missed the event,
-  you can purchase the Flutter Apprentice from
+  If you missed the event, you can purchase
+  the _Flutter Apprentice_ book from
   [raywenderlich.com][], and watch the free
   [book club replay videos][].
 {{site.alert.end}}
