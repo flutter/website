@@ -28,6 +28,11 @@ and then run `flutter upgrade`.
 
 Flutter has three [release channels][]:
 **stable**, **beta** and **master**.
+
+{{site.alert.info}}
+  The `dev` channel was retired as of Flutter 2.8.
+{{site.alert.end}}
+
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 

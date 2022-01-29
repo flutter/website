@@ -1,7 +1,7 @@
 ---
 title: Flutter SDK releases
 short-title: Releases
-description: All current Flutter SDK releases, both stable, dev, and master.
+description: All current Flutter SDK releases, stable, beta, and master.
 toc: false
 js:
   - url: /assets/js/archive.js
