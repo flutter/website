@@ -53,7 +53,6 @@ We define three tiers of support for the platforms on which Flutter runs:
 |Android|Android SDK 21        |
 |Android|Android SDK 19        |
 |iOS    | 14-15                |
-|iOS    | 9.3.6                |
 |Web    | Chrome 84            |
 |Web    | Firefox 72.0         |
 |Web    | Safari / Catalina    |
