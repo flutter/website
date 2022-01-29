@@ -482,7 +482,7 @@ Run the app:
   to open the downloaded asset.
 
 <!--skip-->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

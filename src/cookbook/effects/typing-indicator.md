@@ -460,7 +460,7 @@ Run the app:
   on and off.
 
 <!--skip-->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';

@@ -1,4 +1,4 @@
-```run-dartpad:theme-light:mode-flutter:split-100:width-100%:height-500px:null_safety-true
+```run-dartpad:theme-light:mode-flutter:split-100:width-100%:height-500px
 {$ begin main.dart $}
 import 'dart:async';
 
