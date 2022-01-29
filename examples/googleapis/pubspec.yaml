@@ -2,7 +2,7 @@ name: google_sign_in_example
 publish_to: none
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.15.0 <3.0.0"
 
 dependencies:
   collection: ^1.15.0
@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_sign_in: ^5.0.2
-  googleapis: ^2.0.0
+  googleapis: ^7.0.0
   http: ^0.13.0
 
 dev_dependencies:

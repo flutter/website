@@ -37,7 +37,7 @@ function updateTable(releases, os) {
           $(this).closest("tr").remove();
           event.preventDefault();
         });
-        $("<tr>").append($("<td colspan=\"3\"></td></tr>").append(showAll)).appendTo(table);
+        $("<tr>").append($("<td colspan=\"5\"></td></tr>").append(showAll)).appendTo(table);
       }
 
       var className = index >= releasesToShow ? "overflow" : "";
@@ -45,10 +45,18 @@ function updateTable(releases, os) {
       var row = $("<tr />").addClass(className).appendTo(table);
       var hashLabel = $("<span />").text(release.hash.substr(0, 7)).addClass("git-hash");
       var downloadLink = $("<a />").attr("href", url).text(release.version);
+      var dartSdkVersion = $("<span />").text(
+        release.dart_sdk_version ? release.dart_sdk_version.split(' ')[0]: '-',
+      );
+      var dartSdkArch = $("<span />").text(
+        release.dart_sdk_arch ? release.dart_sdk_version: 'x64',
+      );
       var date = new Date(Date.parse(release.release_date));
       $("<td />").append(downloadLink).appendTo(row);
+      $("<td />").append(dartSdkArch).appendTo(row);
       $("<td />").append(hashLabel).appendTo(row);
       $("<td />").addClass("date").text(date.toLocaleDateString()).appendTo(row);
+      $("<td />").append(dartSdkVersion).appendTo(row);
     });
   }
 }
