@@ -12,6 +12,15 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 
+## December 8, 2021: 2.8 release
+
+Flutter 2.8 is live! For details, see
+[Announcing Flutter 2.8][] and
+[What's new in Flutter 2.8][].
+
+[Announcing Flutter 2.8]: {{site.flutter-medium}}/announcing-flutter-2-8-31d2cb7e19f5
+[What's new in Flutter 2.8]: {{site.flutter-medium}}/whats-new-in-flutter-2-8-d085b763d181
+
 ## September 8, 2021: 2.5 release
 
 Flutter 2.5 is live! For details, see
