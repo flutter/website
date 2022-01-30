@@ -54,7 +54,7 @@ $ flutter upgrade
   Running `flutter channel stable` replaces your current version of Flutter
   with the stable version and can take time if your connection is slow.
   After this, running `flutter upgrade` upgrades your install to the latest
- `stable`.  Returning to another channel (beta, dev, or master) requires calling
+ `stable`.  Returning to another channel (beta or master) requires calling
  `flutter channel <channel>` explicitly.
 {{site.alert.end}}
 
