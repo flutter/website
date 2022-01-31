@@ -823,7 +823,7 @@ destined for the platform side, they need to be invoked on the root Isolate. The
 platform side's handlers can execute on the platform's main thread or they can
 execute on a background thread if a Task Queue is used. The result of the
 platform side handlers can be invoked asynchronously and on any thread when the
-Task Queue API is available, otherwise they must be invoked on the platform
+Task Queue API is available; otherwise, they must be invoked on the platform
 thread.
 
 {{site.alert.note}}The Task Queue API is available for Android on the `stable`
