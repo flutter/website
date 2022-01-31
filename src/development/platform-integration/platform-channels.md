@@ -827,19 +827,16 @@ Task Queue API is available; otherwise, they must be invoked on the platform
 thread.
 
 {{site.alert.note}}
-  The Task Queue API is available for Android on the `stable`
-  channel. For iOS, it is currently available on the `master` channel.
+  The Task Queue API is available for Android on the `stable` channel. For iOS,
+  it is available on the `master` channel after [177cfc4][].
 {{site.alert.end}}
 
 {{site.alert.note}}
-  On Android, the platform's main thread is sometimes called
-  the "main thread", but it is technically defined as [the UI thread][].
-  Annotate methods that need to be run on the UI thread with `@UiThread`.
-  On iOS, this thread is officially referred to as [the main thread][].
+  On Android, the platform's main thread is sometimes called the "main thread",
+  but it is technically defined as [the UI thread][]. Annotate methods that need
+  to be run on the UI thread with `@UiThread`. On iOS, this thread is officially
+  referred to as [the main thread][].
 {{site.alert.end}}
-the "main thread", but it is technically defined as [the UI thread][]. Annotate
-methods that need to be run on the UI thread with `@UiThread`. On iOS, this
-thread is officially referred to as [the main thread][].
 
 ### Executing channel handlers on background threads
 
@@ -881,8 +878,10 @@ override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.Flu
 
 In Swift:
 
-{{site.alert.note}}The Task Queue API is only currently available on the
-`master` channel for iOS .
+{{site.alert.note}}
+  The Task Queue API is only available on the `master` channel for iOS after
+  [177cfc4][].
+{{site.alert.end}}
 
 ```swift
 public static func register(with registrar: FlutterPluginRegistrar) {
@@ -898,8 +897,10 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 
 In Objective-C:
 
-{{site.alert.note}}The Task Queue API is only currently available on the
-`master` channel for iOS .
+{{site.alert.note}}
+  The Task Queue API is only available on the `master` channel for iOS after
+  [177cfc4][].
+{{site.alert.end}}
 
 ```objc
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -992,3 +993,4 @@ DispatchQueue.main.async {
 [Pigeon]: {{site.pub-pkg}}/pigeon
 [Pigeon pub.dev page]: {{site.pub-pkg}}/pigeon
 [sending structured typesafe messages]: #pigeon
+[177cfc4]: {{site.github}}/flutter/flutter/commit/177cfc491a191fad37e502bd9219794546d2a455
