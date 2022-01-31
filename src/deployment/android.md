@@ -296,33 +296,36 @@ are correct, especially the following:
 
 ## Reviewing the build configuration
 
-Review the default [Gradle build file][gradlebuild],
-`build.gradle`, located in `[project]/android/app` and
-verify the values are correct, especially the following
+Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in `[project]/android/app` and the `local.properties` file located in `[project]/android` to verify the values are correct, especially the following
 values in the `defaultConfig` block:
+
+#### In `build.gradle` file
 
 `applicationId`
 : Specify the final, unique (Application Id)[appid]
 
-`versionCode` & `versionName`
-: Specify the internal app version number,
-  and the version number display string. You can do this by setting
-  the `version` property in the pubspec.yaml file. Consult the version
-  information guidance in the [versions documentation][versions].
-
-`minSdkVersion`, `compilesdkVersion`, & `targetSdkVersion`
-: Specify the minimum API level,
-  the API level on which the app was compiled,
-  and the maximum API level on which the app is designed to run.
-  Consult the API level section in the [versions documentation][versions]
-  for details.
+`compileSdkVersion`
+: Specify the API level Gradle should use to compile your app. Consult the
+  module-level build section in the [Gradle build file][gradlebuild] for details. 
 
 `buildToolsVersion`
 : Specify the version of Android SDK Build Tools that your app uses. 
   Alternatively, you can use the Android Gradle Plugin in Android Studio,
   which will automatically import the minimum required Build Tools for your app
   without the need for this property.
-  
+
+#### In `local.properties` file
+
+`flutter.versionCode` & `flutter.versionName`
+: Specify the internal app version number,
+  and the version number display string. You can do this by setting
+  the `version` property in the pubspec.yaml file. Consult the version
+  information guidance in the [versions documentation][versions].
+
+`flutter.minSdkVersion` & `flutter.targetSdkVersion`
+: Specify the minimum API level and the target API level on which 
+  the app is designed to run. Consult the API level section in the [versions documentation][versions-minsdk] for details.
+
 ## Building the app for release
 
 You have two possible release formats when publishing to
@@ -562,4 +565,5 @@ The resulting app bundle or APK files are located in
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning
+[versions-minsdk]: {{site.android-dev}}/studio/publish/versioning#minsdkversion
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
