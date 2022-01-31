@@ -305,8 +305,9 @@ values in the `defaultConfig` block:
 : Specify the final, unique (Application Id)[appid]
 
 `compileSdkVersion`
-: Specify the API level Gradle should use to compile your app. Consult the
-  module-level build section in the [Gradle build file][gradlebuild] for details. 
+: Specify the API level Gradle should use to compile your app. For more 
+  information, see the module-level build section in the 
+  [Gradle build file][gradlebuild]. 
 
 `buildToolsVersion`
 : Specify the version of Android SDK Build Tools that your app uses. 
@@ -319,12 +320,14 @@ values in the `defaultConfig` block:
 `flutter.versionCode` & `flutter.versionName`
 : Specify the internal app version number,
   and the version number display string. You can do this by setting
-  the `version` property in the pubspec.yaml file. Consult the version
-  information guidance in the [versions documentation][versions].
+  the `version` property in the pubspec.yaml file. For more 
+  information, see the version information guidance in the 
+  [versions documentation][versions].
 
 `flutter.minSdkVersion` & `flutter.targetSdkVersion`
 : Specify the minimum API level and the target API level on which 
-  the app is designed to run. Consult the API level section in the [versions documentation][versions-minsdk] for details.
+  the app is designed to run. For more information, see the API level 
+  section in the [versions documentation][versions-minsdk].
 
 ## Building the app for release
 
