@@ -175,9 +175,8 @@ where the Dart code lives.
     You should see either Android, iOS, Windows, or web output,
     depending on your device.
 
-    <!-- TODO: Add windows screenshot -->
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
+      {% include docs/ios-windows-figure-pair.md image="hello-world.png" alt="Hello world app" %}
     {% endindent %}
 
     {{site.alert.tip}}
