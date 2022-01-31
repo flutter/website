@@ -827,8 +827,8 @@ Task Queue API is available; otherwise, they must be invoked on the platform
 thread.
 
 {{site.alert.note}}
-  The Task Queue API is available for Android on the `stable` channel. For iOS,
-  it is available on the `master` channel after [177cfc4][].
+  In release 2.10, the Task Queue API is available for Android. For iOS, it is
+  only available on the `master` channel.
 {{site.alert.end}}
 
 {{site.alert.note}}
@@ -879,8 +879,8 @@ override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.Flu
 In Swift:
 
 {{site.alert.note}}
-  The Task Queue API is only available on the `master` channel for iOS after
-  [177cfc4][].
+  In release 2.10, the Task Queue API is only available on the `master` channel
+  for iOS.
 {{site.alert.end}}
 
 ```swift
@@ -898,8 +898,8 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 In Objective-C:
 
 {{site.alert.note}}
-  The Task Queue API is only available on the `master` channel for iOS after
-  [177cfc4][].
+  In release 2.10, the Task Queue API is only available on the `master` channel
+  for iOS.
 {{site.alert.end}}
 
 ```objc
@@ -993,4 +993,3 @@ DispatchQueue.main.async {
 [Pigeon]: {{site.pub-pkg}}/pigeon
 [Pigeon pub.dev page]: {{site.pub-pkg}}/pigeon
 [sending structured typesafe messages]: #pigeon
-[177cfc4]: {{site.github}}/flutter/flutter/commit/177cfc491a191fad37e502bd9219794546d2a455
