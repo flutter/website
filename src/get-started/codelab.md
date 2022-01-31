@@ -331,7 +331,7 @@ as well as many other open source packages, on [pub.dev][].
     or when toggling the Platform in Flutter Inspector.
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
+      {% include docs/ios-windows-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
 
 ### Problems?
@@ -664,7 +664,7 @@ lazily, on demand.
     you scroll.
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
+      {% include docs/ios-windows-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
     {% endindent %}
 
 ### Problems?
@@ -687,7 +687,7 @@ If needed, use the code at the following link to get back on track.
 
 Congratulations!
 
-You've written an interactive Flutter app that runs on both iOS and Android.
+You've written an interactive Flutter app that runs on iOS, Android, Windows and web.
 In this codelab, you've:
 
 * Created a Flutter app from the ground up.
