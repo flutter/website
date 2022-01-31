@@ -296,7 +296,9 @@ are correct, especially the following:
 
 ## Reviewing the build configuration
 
-Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in `[project]/android/app` and the `local.properties` file located in `[project]/android` to verify the values are correct, especially the following
+Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in 
+`[project]/android/app` and the `local.properties` file located in 
+`[project]/android` to verify the values are correct, especially the following
 values in the `defaultConfig` block:
 
 #### In `build.gradle` file
@@ -311,23 +313,22 @@ values in the `defaultConfig` block:
 
 `buildToolsVersion`
 : Specify the version of Android SDK Build Tools that your app uses. 
-  Alternatively, you can use the Android Gradle Plugin in Android Studio,
-  which will automatically import the minimum required Build Tools for your app
+  Alternatively, you can use the Android Gradle Plugin in Android Studio, which 
+  will automatically import the minimum required Build Tools for your app 
   without the need for this property.
 
 #### In `local.properties` file
 
 `flutter.versionCode` & `flutter.versionName`
-: Specify the internal app version number,
-  and the version number display string. You can do this by setting
-  the `version` property in the pubspec.yaml file. For more 
-  information, see the version information guidance in the 
+: Specify the internal app version number, and the version number display 
+  string. You can do this by setting the `version` property in the pubspec.yaml 
+  file. For more information, see the version information guidance in the 
   [versions documentation][versions].
 
 `flutter.minSdkVersion` & `flutter.targetSdkVersion`
-: Specify the minimum API level and the target API level on which 
-  the app is designed to run. For more information, see the API level 
-  section in the [versions documentation][versions-minsdk].
+: Specify the minimum API level and the target API level on which the app is 
+  designed to run. For more information, see the API level section in the 
+  [versions documentation][versions-minsdk].
 
 ## Building the app for release
 
