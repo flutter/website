@@ -831,7 +831,12 @@ thread.
   channel. For iOS, it is currently available on the `master` channel.
 {{site.alert.end}}
 
-{{site.alert.note}}On Android, the platform's main thread is sometimes called
+{{site.alert.note}}
+  On Android, the platform's main thread is sometimes called
+  the "main thread", but it is technically defined as [the UI thread][].
+  Annotate methods that need to be run on the UI thread with `@UiThread`.
+  On iOS, this thread is officially referred to as [the main thread][].
+{{site.alert.end}}
 the "main thread", but it is technically defined as [the UI thread][]. Annotate
 methods that need to be run on the UI thread with `@UiThread`. On iOS, this
 thread is officially referred to as [the main thread][].
