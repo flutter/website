@@ -12,8 +12,8 @@ Select from the following scrollable list:
 
 <div class="scrollable-table">
   <table id="downloads-{{id}}-{{channel}}" class="table table-striped">
-  <thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
-  <tr class="loading"><td colspan="3">Loading...</td></tr>
+  <thead><tr><th>Version</th><th>Architecture</th><th>Ref</th><th class="date">Release Date</th><th>Dart SDK</th></tr></thead>
+  <tr class="loading"><td colspan="5">Loading...</td></tr>
   </table>
 </div>
 {% endfor -%}

@@ -21,6 +21,7 @@ release, and listed in alphabetical order:
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 [Raw images on Web uses correct origin and colors]: {{site.url}}/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors
 [Scribble Text Input Client]: {{site.url}}/release/breaking-changes/scribble-text-input-client
+[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
 ### Released in Flutter 2.5
 

@@ -34,7 +34,7 @@ contains a simple demo app that uses [Material Components][].
       open -a simulator
       ```
 
-      In Android it is not possible to launch iOS simulator.
+      On Windows or Linux it is not possible to launch iOS simulator.
       {{site.alert.end}}
 
     - To setup a real device, follow the device-specific instructions on the
