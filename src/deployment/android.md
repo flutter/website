@@ -312,10 +312,9 @@ values in the `defaultConfig` block:
   [Gradle build file][gradlebuild]. 
 
 `buildToolsVersion`
-: Specify the version of Android SDK Build Tools that your app uses. 
-  Alternatively, you can use the Android Gradle Plugin in Android Studio, which 
-  will automatically import the minimum required Build Tools for your app 
-  without the need for this property.
+: If you're using Android plugin for Gradle 3.0.0 or higher, your project
+  automatically uses the default version of the build tools that the
+  plugin specifies. Alternatively, you can specify a version of the build tools.
 
 #### In `local.properties` file
 
