@@ -172,7 +172,12 @@ your code involves adding a couple flags to your build command.
 
 In Xcode, configure the app version and build:
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `macos` folder.
+1. Open `Runner.xcworkspace` in your app's `macos` folder. To do this from
+   the command line, run the following command from the base directory of your
+   application project.
+   ```console
+   open macos/Runner.xcworkspace
+   ```
 1. Select **Runner** in the Xcode project navigator, then select the
    **Runner** target in the settings view sidebar.
 1. In the Identity section, update the **Version** to the user-facing
@@ -183,29 +188,20 @@ In Xcode, configure the app version and build:
 
 Finally, create a build archive and upload it to App Store Connect:
 
-<ol markdown="1">
-<li markdown="1">
-
-Open Xcode and select **Product > Archive**. Run `flutter build macos` to
-produce a build archive.
-
-</li>
-<li markdown="1">
-
-Click the **Validate App** button. If any issues are reported,
-address them and produce another build. You can reuse the same
-build ID until you upload an archive.
-
-</li>
-<li markdown="1">
-
-After the archive has been successfully validated, click
-**Distribute App**. You can follow the status of your build in the
-Activities tab of your app's details page on
-[App Store Connect][appstoreconnect_login].
-
-</li>
-</ol>
+1. Create a release Archive of your application. From the base directory of
+   your application project, run the following.
+   ```console
+   flutter build macos
+   ```
+1. Open Xcode and select **Product > Archive** to open the archive created
+   in the previous step.
+1. Click the **Validate App** button. If any issues are reported,
+   address them and produce another build. You can reuse the same
+   build ID until you upload an archive.
+1. After the archive has been successfully validated, click
+   **Distribute App**. You can follow the status of your build in the
+   Activities tab of your app's details page on
+   [App Store Connect][appstoreconnect_login].
 
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers
