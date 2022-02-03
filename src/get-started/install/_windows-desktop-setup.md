@@ -26,3 +26,4 @@ you need the following in addition to the Flutter SDK:
 For more information, see [Desktop support for Flutter][]
 
 [Desktop support for Flutter]: {{site.url}}/desktop
+[Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
