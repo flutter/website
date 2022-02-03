@@ -12,6 +12,18 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 
+## Feb 3, 2022: Support for Windows
+
+Desktop support for Microsoft Windows is live!
+For more information, see
+[Announcing Flutter for Windows][],
+a free article on Medium.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g-0B_Vfc9qM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
+[What's new in Flutter 2.10]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12
+
 ## December 8, 2021: 2.8 release
 
 Flutter 2.8 is live! For details, see

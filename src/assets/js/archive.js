@@ -46,10 +46,10 @@ function updateTable(releases, os) {
       var hashLabel = $("<span />").text(release.hash.substr(0, 7)).addClass("git-hash");
       var downloadLink = $("<a />").attr("href", url).text(release.version);
       var dartSdkVersion = $("<span />").text(
-        release.dart_sdk_version ? release.dart_sdk_version.split(' ')[0]: '-',
+        release.dart_sdk_version ? release.dart_sdk_version.split(' ')[0] : '-',
       );
       var dartSdkArch = $("<span />").text(
-        release.dart_sdk_arch ? release.dart_sdk_version: 'x64',
+        release.dart_sdk_arch ? release.dart_sdk_arch : 'x64',
       );
       var date = new Date(Date.parse(release.release_date));
       $("<td />").append(downloadLink).appendTo(row);
