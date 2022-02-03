@@ -56,7 +56,7 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
   * How to write a Flutter app that looks natural on iOS, Android,
-    Windows, and the web
+    desktop (e.g. Windows), and the web
   * Basic structure of a Flutter app
   * Finding and using packages to extend functionality
   * Using hot reload for a quicker development cycle
@@ -101,9 +101,9 @@ see [Building a web application with Flutter][]
 and [Write your first Flutter app on the web][codelab-web].
 
 Also, Flutter apps can compile for desktop.
-When you are developing Flutter apps in Windows,
-you should see **Windows (desktop)** listed
+You should see your operating system listed
 in your IDE under **devices**, 
+for example: **Windows (desktop)**,
 or at the command line using `flutter devices`.
 For more information on building apps for desktop,
 see [Write a Flutter desktop application][].
