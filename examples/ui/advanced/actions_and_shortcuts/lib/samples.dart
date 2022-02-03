@@ -150,6 +150,8 @@ class LoggingActionDispatcher extends ActionDispatcher {
   ]) {
     print('Action invoked: $action($intent) from $context');
     super.invokeAction(action, intent, context);
+
+    return null;
   }
 }
 // #enddocregion LoggingActionDispatcher
