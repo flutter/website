@@ -1,5 +1,5 @@
 <figure class="site-figure">
-  <div class="site-figure-container">
+  <div class="site-figure-container" style="padding-right: 32px;">
       <img src='/assets/images/docs/get-started/windows/{{include.image}}'
            alt='{{include.alt}} on Windows'
            class='{{include.class}}'>
