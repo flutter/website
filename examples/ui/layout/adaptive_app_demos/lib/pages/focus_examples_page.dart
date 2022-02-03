@@ -81,6 +81,7 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
       actions: <Type, Action<Intent>>{
         ActivateIntent: CallbackAction<Intent>(onInvoke: (Intent intent) {
           print("Enter or Space was pressed!");
+          return null;
         }),
       },
       child: Stack(
@@ -122,6 +123,7 @@ class _ClickableActionDetectorState extends State<ClickableActionDetector> {
       actions: <Type, Action<Intent>>{
         ActivateIntent: CallbackAction<Intent>(onInvoke: (Intent intent) {
           _submit();
+          return null;
         }),
       },
       child: GestureDetector(
