@@ -81,6 +81,8 @@ class LoggingActionDispatcher extends ActionDispatcher {
   ]) {
     print('Action invoked: $action($intent) from $context');
     super.invokeAction(action, intent, context);
+
+    return null;
   }
 }
 
@@ -100,6 +102,8 @@ class ClearAction extends Action<ClearIntent> {
   @override
   Object? invoke(covariant ClearIntent intent) {
     controller.clear();
+
+    return null;
   }
 }
 
@@ -123,6 +127,8 @@ class CopyAction extends Action<CopyIntent> {
       controller.selection.extentOffset,
     );
     Clipboard.setData(ClipboardData(text: selectedString));
+
+    return null;
   }
 }
 
@@ -146,6 +152,8 @@ class SelectAllAction extends Action<SelectAllIntent> {
       extentOffset: controller.text.length,
       affinity: controller.selection.affinity,
     );
+
+    return null;
   }
 }
 

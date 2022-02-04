@@ -540,6 +540,7 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
       actions: <Type, Action<Intent>>{
         ActivateIntent: CallbackAction<Intent>(onInvoke: (Intent intent) {
           print("Enter or Space was pressed!");
+          return null;
         }),
       },
       child: Stack(

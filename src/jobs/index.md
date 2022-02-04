@@ -16,3 +16,4 @@ The following jobs are open:
 * [Flutter & Dart Developer Experience SWE]({{site.url}}/jobs/devexp)
 * [Dart Writer]({{site.url}}/jobs/writer)
 * [Dart at Google Engineer]({{site.url}}/jobs/dart_google)
+* [User Experience Researcher]({{site.url}}/jobs/uxr)
