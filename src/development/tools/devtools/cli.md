@@ -4,7 +4,7 @@ Description: Learn how to install and use DevTools from the command line.
 ---
 
 To run Dart DevTools from the CLI, you must have `dart` on your path. Then
-you can simply run the following command to launch DevTools:
+you can run the following command to launch DevTools:
 
 ```
 dart devtools
