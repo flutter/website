@@ -50,7 +50,7 @@ various primitive types, such as `setInt`, `setBool`, and `setString`.
 Setter methods do two things: First, synchronously update the
 key-value pair in-memory. Then, persist the data to disk.
 
-<?code-excerpt "lib/partial_excerpts.dart (Step2)"?>
+<!-- skip -->
 ```dart
 // obtain shared preferences
 final prefs = await SharedPreferences.getInstance();

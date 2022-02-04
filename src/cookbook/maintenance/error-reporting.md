@@ -9,8 +9,6 @@ next:
   path: /cookbook/navigation/hero-animations
 ---
 
-<?code-excerpt path-base="cookbook/maintenance/error_reporting/"?>
-
 While one always tries to create apps that are free of bugs,
 they're sure to crop up from time to time.
 Since buggy apps lead to unhappy users and customers,
@@ -65,7 +63,7 @@ dependencies:
 
 Initialize the SDK to capture different unhandled errors automatically:
 
-<?code-excerpt "lib/main.dart (InitializeSDK)"?>
+<!-- skip -->
 ```dart
 import 'package:flutter/widgets.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -73,7 +71,7 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 Future<void> main() async {
   await SentryFlutter.init(
     (options) => options.dsn = 'https://example@sentry.io/example',
-    appRunner: () => runApp(const MyApp()),
+    appRunner: () => runApp(MyApp()),
   );
 }
 ```
@@ -96,7 +94,7 @@ Besides the automatic error reporting that Sentry generates by
 importing and initializing the SDK,
 you can use the API to report errors to Sentry:
 
-<?code-excerpt "lib/main.dart (CaptureException)"?>
+<!-- skip -->
 ```dart
 await Sentry.captureException(exception, stackTrace: stackTrace);
 ```
