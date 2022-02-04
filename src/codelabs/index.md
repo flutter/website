@@ -18,7 +18,7 @@ DartPad link.
 If you're new to Flutter, we recommend starting with
 one of these codelabs:
 
-* [Building your first Flutter app][] (workshop) **NEW!**<br>
+* [Building your first Flutter app][] (workshop)<br>
   An instructor-led version of our very popular
   "Write your first Flutter app, part 1" codelab
   (listed below).
@@ -64,16 +64,16 @@ one of these codelabs:
 
 ## Next steps
 
-* [Building scrolling experiences in Flutter][] (workshop) **NEW!**<br>
+* [Building scrolling experiences in Flutter][] (workshop)<br>
   Start with an app that performs simple, straightforward scrolling
   and enhance it to create fancy and custom scrolling effects
   by using slivers.
 
-* [Dart null safety in Action][] (workshop) **NEW!**<br>
+* [Dart null safety in Action][] (workshop)<br>
   An instructor-led workshop based on the [Null safety codelab][]
   on the dart.dev site.
 
-* [How to manage application states using inherited widgets][inherited-widget-ws] (workshop) **NEW!**<br>
+* [How to manage application states using inherited widgets][inherited-widget-ws] (workshop)<br>
   Learn how to manage the state of your app's data by
   using the `InheritedWidget` class, one of the
   [low-level state management][] classes provided
@@ -152,7 +152,7 @@ like layout and animations:
 
 Learn how to use Flutter with other technologies.
 
-* [Adding WebView to your Flutter app][] **NEW!**<br>
+* [Adding WebView to your Flutter app][] **NEW**<br>
   With the WebView Flutter plugin you can add a WebView 
   widget to your Android or iOS Flutter app.
 
@@ -179,7 +179,7 @@ Learn how to use Flutter with other technologies.
   Build a field trip app that allows you and other
   members of the trip to share photos.
 
-* [Build voice bots for mobile with Dialogflow and Flutter][] (workshop) **NEW!**<br>
+* [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
 
@@ -251,7 +251,7 @@ like iOS, Android, the web, and the desktop.
   Host your app on Firebase and, finally, use a Flutter plugin to
   launch the app and open the hosted privacy policy.
 
-* [Write a Flutter desktop application][]<br>
+* [Write a Flutter desktop application][] **UPDATED FOR WINDOWS**<br>
   Build a Flutter desktop app that accesses GitHub APIs to retrieve your
   repositories, assigned issues, and pull requests. As part of this task,
   create and use plugins to interact with native APIs and desktop applications,
