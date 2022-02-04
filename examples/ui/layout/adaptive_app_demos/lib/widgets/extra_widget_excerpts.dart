@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-import 'package:flutter/widgets.dart';
->>>>>>> flutter-main
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';

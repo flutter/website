@@ -23,11 +23,7 @@ linter:
   # producing the lint.
   rules:
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-<<<<<<< HEAD
     prefer_single_quotes: true
-=======
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
->>>>>>> flutter-main
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

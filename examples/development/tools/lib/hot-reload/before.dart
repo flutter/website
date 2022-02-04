@@ -36,44 +36,28 @@ final sampleTable = [
   Table(
     children: const [
       TableRow(
-<<<<<<< HEAD
         children: [Text('T1')],
-=======
-        children: [Text("T1")],
->>>>>>> flutter-main
       )
     ],
   ),
   Table(
     children: const [
       TableRow(
-<<<<<<< HEAD
         children: [Text('T2')],
-=======
-        children: [Text("T2")],
->>>>>>> flutter-main
       )
     ],
   ),
   Table(
     children: const [
       TableRow(
-<<<<<<< HEAD
         children: [Text('T3')],
-=======
-        children: [Text("T3")],
->>>>>>> flutter-main
       )
     ],
   ),
   Table(
     children: const [
       TableRow(
-<<<<<<< HEAD
         children: [Text('T4')],
-=======
-        children: [Text("T4")],
->>>>>>> flutter-main
       )
     ],
   ),

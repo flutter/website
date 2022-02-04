@@ -1,10 +1,6 @@
 import 'package:adaptive_app_demos/global/device_type.dart';
 import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
-import 'package:flutter/rendering.dart';
->>>>>>> flutter-main
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
 
