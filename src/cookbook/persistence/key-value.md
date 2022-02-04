@@ -50,7 +50,7 @@ various primitive types, such as `setInt`, `setBool`, and `setString`.
 Setter methods do two things: First, synchronously update the
 key-value pair in-memory. Then, persist the data to disk.
 
-<!-- skip -->
+<?code-excerpt "lib/partial_excerpts.dart (Step2)"?>
 ```dart
 // obtain shared preferences
 final prefs = await SharedPreferences.getInstance();
@@ -65,7 +65,7 @@ To read data, use the appropriate getter method provided by the
 `SharedPreferences` class. For each setter there is a corresponding getter.
 For example, you can use the `getInt`, `getBool`, and `getString` methods.
 
-<!-- skip -->
+<?code-excerpt "lib/partial_excerpts.dart (Step3)"?>
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -77,7 +77,7 @@ final counter = prefs.getInt('counter') ?? 0;
 
 To delete data, use the `remove()` method.
 
-<!-- skip -->
+<?code-excerpt "lib/partial_excerpts.dart (Step4)"?>
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -107,15 +107,15 @@ Populate `SharedPreferences` with initial values in your tests
 by running the following code in a `setupAll()` method in
 your test files:
 
-<!-- skip -->
+<?code-excerpt "lib/partial_excerpts.dart (Testing)"?>
 ```dart
 const MethodChannel('plugins.flutter.io/shared_preferences')
-  .setMockMethodCallHandler((MethodCall methodCall) async {
-    if (methodCall.method == 'getAll') {
-      return <String, dynamic>{}; // set initial values here if desired
-    }
-    return null;
-  });
+    .setMockMethodCallHandler((MethodCall methodCall) async {
+  if (methodCall.method == 'getAll') {
+    return <String, dynamic>{}; // set initial values here if desired
+  }
+  return null;
+});
 ```
 
 ## Complete example
