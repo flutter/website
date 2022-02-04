@@ -3,23 +3,21 @@ title: Install and run DevTools from the command line
 Description: Learn how to install and use DevTools from the command line.
 ---
 
-If you have `dart` on your path,
-you can simply run the following command to install/update and run the latest version:
+To run Dart DevTools from the CLI, you must have `dart` on your path. Then
+you can simply run the following command to launch DevTools:
 
 ```
 dart devtools
 ```
 
-Alternatively, if you have `flutter` on your path:
+To upgrade DevTools, simply upgrade your Dart SDK. If a newer Dart SDK
+includes a newer version of DevTools, `dart devtools` will automatically
+launch this version. If `which dart` points to the Dart SDK included in
+your Flutter SDK, then DevTools will be upgraded when you upgrade your
+Flutter SDK to a newer version.
 
-```
-# Installs (or updates) DevTools on your machine
-flutter pub global activate devtools
-# Launches the DevTools application server
-flutter pub global run devtools
-```
-
-On the command line, you should see output that looks something like:
+When you run DevTools from the command line, you should see output that
+looks something like:
 
 ```
 Serving DevTools at http://127.0.0.1:9100
