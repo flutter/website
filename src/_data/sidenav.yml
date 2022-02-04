@@ -48,7 +48,6 @@
 
 - title: Development
   expanded: true
-  permalink: /development
   children:
     - title: User interface
       permalink: /development/ui
@@ -117,10 +116,8 @@
         - title: Widget catalog
           permalink: /development/ui/widgets
     - title: Data & backend
-      permalink: /development/data-and-backend
       children:
         - title: State management
-          permalink: /development/data-and-backend/state-mgmt
           children:
             - title: Introduction
               permalink: /development/data-and-backend/state-mgmt/intro
