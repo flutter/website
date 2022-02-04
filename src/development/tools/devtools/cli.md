@@ -10,7 +10,7 @@ you can run the following command to launch DevTools:
 dart devtools
 ```
 
-To upgrade DevTools, simply upgrade your Dart SDK. If a newer Dart SDK
+To upgrade DevTools, upgrade your Dart SDK. If a newer Dart SDK
 includes a newer version of DevTools, `dart devtools` will automatically
 launch this version. If `which dart` points to the Dart SDK included in
 your Flutter SDK, then DevTools will be upgraded when you upgrade your
