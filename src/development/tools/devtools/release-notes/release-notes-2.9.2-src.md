@@ -36,4 +36,4 @@ are on Flutter 2.10, this bug will still be present._
 
 ## Changelog
 More details about changes and fixes are available in our
-[changelog](https://github.com/flutter/devtools/blob/master/packages/devtools/CHANGELOG.md).
+[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).

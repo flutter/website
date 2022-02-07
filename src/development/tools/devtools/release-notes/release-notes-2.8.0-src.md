@@ -88,4 +88,4 @@ The expected workflow is as such:
 ## Changelog
 More details about changes and fixes are available in our [changelog][].
 
-[changelog]: https://github.com/flutter/devtools/blob/master/packages/devtools/CHANGELOG.md
+[changelog]: https://github.com/flutter/devtools/blob/master/CHANGELOG.md
