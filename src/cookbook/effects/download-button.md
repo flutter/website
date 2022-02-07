@@ -44,6 +44,7 @@ class DownloadButton extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     // TODO:
     return const SizedBox();
@@ -81,6 +82,7 @@ class DownloadButton extends StatelessWidget {
   final DownloadStatus status;
   final Duration transitionDuration;
 
+  @override
   Widget build(BuildContext context) {
     // TODO:
     return const SizedBox();
