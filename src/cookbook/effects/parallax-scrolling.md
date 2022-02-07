@@ -120,7 +120,7 @@ class LocationListItem extends StatelessWidget {
            colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
            begin: Alignment.topCenter,
            end: Alignment.bottomCenter,
-           stops: [0.6, 0.95],
+           stops: const [0.6, 0.95],
          ),
        ),
      ),
@@ -559,11 +559,10 @@ Run the app:
 
 <!--skip-->
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-final Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
 void main() {
   runApp(MyApp());
@@ -575,7 +574,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home: const Scaffold(
         body: Center(
           child: ExampleParallax(),
         ),
@@ -664,7 +663,7 @@ class LocationListItem extends StatelessWidget {
             colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: [0.6, 0.95],
+            stops: const [0.6, 0.95],
           ),
         ),
       ),
@@ -763,7 +762,7 @@ class ParallaxFlowDelegate extends FlowDelegate {
 }
 
 class Parallax extends SingleChildRenderObjectWidget {
-  Parallax({
+  const Parallax({
     required Widget background,
   }) : super(child: background);
 
