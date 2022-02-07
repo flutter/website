@@ -29,5 +29,5 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter.
 
 More details about changes and fixes are available in our [changelog][].
 
-[changelog]: https://github.com/flutter/devtools/blob/master/packages/devtools/CHANGELOG.md
+[changelog]: https://github.com/flutter/devtools/blob/master/CHANGELOG.md
 
