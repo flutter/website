@@ -489,7 +489,7 @@ lazily, on demand.
     ```dart
       class _RandomWordsState extends State<RandomWords> {
         [!final _suggestions = <WordPair>[];!]
-        [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
+        [!final _biggerFont = const TextStyle(fontSize: 18);!]
         // ···
       }
     ```
@@ -514,16 +514,19 @@ lazily, on demand.
     ```dart
       Widget _buildSuggestions() {
         return ListView.builder(
-            padding: const EdgeInsets.all(16.0),
-            itemBuilder: /*1*/ (context, i) {
-              if (i.isOdd) return const Divider(); /*2*/
+          padding: const EdgeInsets.all(16),
+          itemBuilder: /*1*/ (context, i) {
+            if (i.isOdd) {
+              return const Divider(); /*2*/
+            }
 
-              final index = i ~/ 2; /*3*/
-              if (index >= _suggestions.length) {
-                _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-              }
-              return _buildRow(_suggestions[index]);
-            });
+            final index = i ~/ 2; /*3*/
+            if (index >= _suggestions.length) {
+              _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+            }
+            return _buildRow(_suggestions[index]);
+          },
+        );
       }
     ```
 
@@ -586,7 +589,7 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -13,27 +13,50 @@
+    @@ -13,27 +13,53 @@
        const MyApp({Key? key}) : super(key: key);
 
        @override
@@ -610,20 +613,23 @@ lazily, on demand.
 
      class _RandomWordsState extends State<RandomWords> {
     +  final _suggestions = <WordPair>[];
-    +  final _biggerFont = const TextStyle(fontSize: 18.0);
+    +  final _biggerFont = const TextStyle(fontSize: 18);
     +
     +  Widget _buildSuggestions() {
     +    return ListView.builder(
-    +        padding: const EdgeInsets.all(16.0),
-    +        itemBuilder: /*1*/ (context, i) {
-    +          if (i.isOdd) return const Divider(); /*2*/
+    +      padding: const EdgeInsets.all(16),
+    +      itemBuilder: /*1*/ (context, i) {
+    +        if (i.isOdd) {
+    +          return const Divider(); /*2*/
+    +        }
     +
-    +          final index = i ~/ 2; /*3*/
-    +          if (index >= _suggestions.length) {
-    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-    +          }
-    +          return _buildRow(_suggestions[index]);
-    +        });
+    +        final index = i ~/ 2; /*3*/
+    +        if (index >= _suggestions.length) {
+    +          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+    +        }
+    +        return _buildRow(_suggestions[index]);
+    +      },
+    +    );
     +  }
     +
     +  Widget _buildRow(WordPair pair) {

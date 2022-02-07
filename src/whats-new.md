@@ -12,12 +12,14 @@ join the [flutter-announce][] Google group.
 
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 
-## Feb 3, 2022: Support for Windows
+## Feb 3, 2022, Windows Support: 2.10 release
 
-Desktop support for Microsoft Windows is live!
+Desktop support for Microsoft Windows
+(a central feature of the 2.10 release) is live!
 For more information, see
-[Announcing Flutter for Windows][],
-a free article on Medium.
+[Announcing Flutter for Windows][]
+and [What's new in Flutter 2.10][],
+free articles on Medium.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/g-0B_Vfc9qM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
