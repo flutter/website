@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/download_button"?>
+
 Apps are filled with buttons that execute long-running behaviors.
 For example, a button might trigger a download,
 which starts a download process, receives data over time,
@@ -34,18 +36,18 @@ stateless widget.
 
 Define a new stateless widget called `DownloadButton`.
 
-<!--skip-->
+<?code-excerpt "lib/stateful_widget.dart (DownloadButton)"?>
 ```dart
 @immutable
 class DownloadButton extends StatelessWidget {
- const DownloadButton({
-   Key? key,
- }) : super(key: key);
+  const DownloadButton({
+    Key? key,
+  }) : super(key: key);
 
- Widget build(BuildContext context) {
-   // TODO:
-   return SizedBox();
- }
+  Widget build(BuildContext context) {
+    // TODO:
+    return const SizedBox();
+  }
 }
 ```
 
@@ -57,13 +59,13 @@ the download, and then update `DownloadButton` to accept
 a `DownloadStatus` and a `Duration` for how long the button
 should take to animate from one status to another.
 
-<!--skip-->
+<?code-excerpt "lib/visual_states.dart (VisualStates)"?>
 ```dart
 enum DownloadStatus {
- notDownloaded,
- fetchingDownload,
- downloading,
- downloaded,
+  notDownloaded,
+  fetchingDownload,
+  downloading,
+  downloaded,
 }
 
 @immutable
@@ -76,13 +78,13 @@ class DownloadButton extends StatelessWidget {
     ),
   }) : super(key: key);
 
- final DownloadStatus status;
- final Duration transitionDuration;
+  final DownloadStatus status;
+  final Duration transitionDuration;
 
- Widget build(BuildContext context) {
-   // TODO:
-   return SizedBox();
- }
+  Widget build(BuildContext context) {
+    // TODO:
+    return const SizedBox();
+  }
 }
 ```
 
@@ -127,10 +129,9 @@ like `Widget _buildSomething() {}`, always prefer creating a
 considerations on this can be found in the [documentation](https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html)
 or in a dedicated video in the Flutter [YouTube channel](https://www.youtube.com/watch?v=IOyq-eTRhvo).
 
-For now, the `AnimatedContainer` child is just a `SizedBox` because we
-will come back at it in another step.
+For now, the `AnimatedContainer` child is just a `SizedBox` because we will come back at it in another step.
 
-<!--skip-->
+<?code-excerpt "lib/display.dart (Display)"?>
 ```dart
 @immutable
 class DownloadButton extends StatelessWidget {
@@ -144,12 +145,12 @@ class DownloadButton extends StatelessWidget {
 
   final DownloadStatus status;
   final Duration transitionDuration;
-  
-  bool get _isDownloading => widget.status == DownloadStatus.downloading;
 
-  bool get _isFetching => widget.status == DownloadStatus.fetchingDownload;
+  bool get _isDownloading => status == DownloadStatus.downloading;
 
-  bool get _isDownloaded => widget.status == DownloadStatus.downloaded;
+  bool get _isFetching => status == DownloadStatus.fetchingDownload;
+
+  bool get _isDownloaded => status == DownloadStatus.downloaded;
 
   @override
   Widget build(BuildContext context) {
@@ -171,26 +172,26 @@ class ButtonShapeWidget extends StatelessWidget {
     required this.isFetching,
     required this.transitionDuration,
   }) : super(key: key);
-   
+
   final bool isDownloading;
   final bool isDownloaded;
   final bool isFetching;
   final Duration transitionDuration;
-  
+
   @override
   Widget build(BuildContext context) {
     var shape = const ShapeDecoration(
       shape: StadiumBorder(),
       color: CupertinoColors.lightBackgroundGray,
     );
-    
+
     if (isDownloading || isFetching) {
-      shape =  ShapeDecoration(
+      shape = ShapeDecoration(
         shape: const CircleBorder(),
         color: Colors.white.withOpacity(0.0),
       );
     }
-    
+
     return AnimatedContainer(
       duration: transitionDuration,
       curve: Curves.ease,
@@ -226,7 +227,7 @@ and animate the text’s opacity in between. Add the text
 widget tree as a child of the `AnimatedContainer` in the
 button wrapper widget.
 
-<!--skip-->
+<?code-excerpt "lib/display_text.dart (DisplayText)"?>
 ```dart
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
@@ -237,26 +238,26 @@ class ButtonShapeWidget extends StatelessWidget {
     required this.isFetching,
     required this.transitionDuration,
   }) : super(key: key);
-   
+
   final bool isDownloading;
   final bool isDownloaded;
   final bool isFetching;
   final Duration transitionDuration;
-  
+
   @override
   Widget build(BuildContext context) {
     var shape = const ShapeDecoration(
       shape: StadiumBorder(),
       color: CupertinoColors.lightBackgroundGray,
     );
-    
+
     if (isDownloading || isFetching) {
-      shape =  ShapeDecoration(
+      shape = ShapeDecoration(
         shape: const CircleBorder(),
         color: Colors.white.withOpacity(0.0),
       );
     }
-    
+
     return AnimatedContainer(
       duration: transitionDuration,
       curve: Curves.ease,
@@ -272,9 +273,9 @@ class ButtonShapeWidget extends StatelessWidget {
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.button?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: CupertinoColors.activeBlue,
-            ),
+                  fontWeight: FontWeight.bold,
+                  color: CupertinoColors.activeBlue,
+                ),
           ),
         ),
       ),
@@ -296,38 +297,35 @@ shape and fades in and out at the appropriate times.
 We have removed the `ButtonShapeWidget`'s constructor to keep the
 focus on its build method and the `Stack` widget we've added.
 
-<!--skip-->
+<?code-excerpt "lib/spinner.dart (Spinner)"?>
 ```dart
-@immutable
-class DownloadButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _onPressed,
-      child: Stack(
-        children: [
-          ButtonShapeWidget(
-            transitionDuration: transitionDuration,
-            isDownloaded: _isDownloaded,
-            isDownloading: _isDownloading,
-            isFetching: _isFetching,
-          ),
-          Positioned.fill(
-            child: AnimatedOpacity(
-              duration: transitionDuration,
-              opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
-              curve: Curves.ease,
-              child: ProgressIndicatorWidget(
-                downloadProgress: downloadProgress,
-                isDownloading: _isDownloading,
-                isFetching: _isFetching,
-              ),
+@override
+Widget build(BuildContext context) {
+  return GestureDetector(
+    onTap: _onPressed,
+    child: Stack(
+      children: [
+        ButtonShapeWidget(
+          transitionDuration: transitionDuration,
+          isDownloaded: _isDownloaded,
+          isDownloading: _isDownloading,
+          isFetching: _isFetching,
+        ),
+        Positioned.fill(
+          child: AnimatedOpacity(
+            duration: transitionDuration,
+            opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
+            curve: Curves.ease,
+            child: ProgressIndicatorWidget(
+              downloadProgress: downloadProgress,
+              isDownloading: _isDownloading,
+              isFetching: _isFetching,
             ),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }
 ```
 
@@ -346,49 +344,46 @@ progress bar during the `downloading` phase.
 Next, add a stop button icon at the center of the
 radial progress bar.
 
-<!--skip-->
+<?code-excerpt "lib/stop.dart (StopIcon)"?>
 ```dart
-@immutable
-class DownloadButton extends StatelessWidget {
 @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _onPressed,
-      child: Stack(
-        children: [
-          ButtonShapeWidget(
-            transitionDuration: transitionDuration,
-            isDownloaded: _isDownloaded,
-            isDownloading: _isDownloading,
-            isFetching: _isFetching,
-          ),
-          Positioned.fill(
-            child: AnimatedOpacity(
-              duration: transitionDuration,
-              opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
-              curve: Curves.ease,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  ProgressIndicatorWidget(
-                    downloadProgress: downloadProgress,
-                    isDownloading: _isDownloading,
-                    isFetching: _isFetching,
+Widget build(BuildContext context) {
+  return GestureDetector(
+    onTap: _onPressed,
+    child: Stack(
+      children: [
+        ButtonShapeWidget(
+          transitionDuration: transitionDuration,
+          isDownloaded: _isDownloaded,
+          isDownloading: _isDownloading,
+          isFetching: _isFetching,
+        ),
+        Positioned.fill(
+          child: AnimatedOpacity(
+            duration: transitionDuration,
+            opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
+            curve: Curves.ease,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                ProgressIndicatorWidget(
+                  downloadProgress: downloadProgress,
+                  isDownloading: _isDownloading,
+                  isFetching: _isFetching,
+                ),
+                if (_isDownloading)
+                  const Icon(
+                    Icons.stop,
+                    size: 14.0,
+                    color: CupertinoColors.activeBlue,
                   ),
-                  if (_isDownloading)
-                    const Icon(
-                      Icons.stop,
-                      size: 14.0,
-                      color: CupertinoColors.activeBlue,
-                    ),
-                ],
-              ),
+              ],
             ),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }
 ```
 
@@ -404,7 +399,7 @@ Finally, wrap `DownloadButton`’s existing widget tree
 with a `GestureDetector` widget, and forward the
 tap event to the corresponding callback property.
 
-<!--skip-->
+<?code-excerpt "lib/button_taps.dart (TapCallbacks)"?>
 ```dart
 @immutable
 class DownloadButton extends StatelessWidget {
@@ -447,7 +442,7 @@ class DownloadButton extends StatelessWidget {
         break;
     }
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -481,7 +476,7 @@ Run the app:
   that the app is ready for the user
   to open the downloaded asset.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
