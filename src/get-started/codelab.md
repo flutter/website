@@ -83,7 +83,7 @@ The animated GIF shows how the app works at the completion of part 1.
   * The [iOS simulator][] (requires installing Xcode tools)
   * The [Android emulator][] (requires setup in Android Studio)
   * A browser (Chrome is required for debugging)
-  * As a [Windows][] desktop application
+  * As a [Windows][], [Linux][], or [macOS][] desktop application
 {{site.alert.end}}
 
 Every Flutter app you
@@ -733,5 +733,7 @@ where you add the following functionality:
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 [codelab-web]: {{site.url}}/get-started/codelab-web
-[Windows]: install/windows#windows-setup
+[Windows]: {{site.url}}/get-started/install/windows#windows-setup
+[Linux]: {{site.url}}/get-started/install/linux#linux-setup
+[macOS]: {{site.url}}/get-started/install/linux#linux-setup
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
