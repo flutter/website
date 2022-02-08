@@ -84,7 +84,7 @@ class DownloadButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO:
+    // TODO: We'll add more to this later.
     return const SizedBox();
   }
 }
