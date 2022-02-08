@@ -172,8 +172,8 @@ where the Dart code lives.
     {{site.alert.end}}
 
  2. Run the app [in the way your IDE describes][].
-    You should see either Android, iOS, Windows, or web output,
-    depending on your device.
+    You should see either Android, iOS, Windows, Linux, macOS,
+    or web output, depending on your device.
 
     {% indent %}
       {% include docs/ios-windows-figure-pair.md image="hello-world.png" alt="Hello world app" %}
