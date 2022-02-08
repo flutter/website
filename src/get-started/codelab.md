@@ -735,5 +735,5 @@ where you add the following functionality:
 [codelab-web]: {{site.url}}/get-started/codelab-web
 [Windows]: {{site.url}}/get-started/install/windows#windows-setup
 [Linux]: {{site.url}}/get-started/install/linux#linux-setup
-[macOS]: {{site.url}}/get-started/install/linux#linux-setup
+[macOS]: {{site.url}}/get-started/install/macos#macos-setup
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
