@@ -56,7 +56,7 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
   * How to write a Flutter app that looks natural on iOS, Android,
-    desktop (e.g. Windows), and the web
+    desktop (Windows, for example), and the web
   * Basic structure of a Flutter app
   * Finding and using packages to extend functionality
   * Using hot reload for a quicker development cycle
