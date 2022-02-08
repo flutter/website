@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/drag_a_widget"?>
+
 Drag and drop is a common mobile app interaction.
 As the user long presses (sometimes called _touch & hold_)
 on a widget, another widget appears beneath the
@@ -45,31 +47,32 @@ widget that the user drags.
 Each menu list item is displayed with a custom
 `MenuListItem` widget.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (MenuListItem)" replace="/^child: //g;/,$//g"?>
 ```dart
 MenuListItem(
- name: item.name,
- price: item.formattedTotalItemPrice,
- photoProvider: item.imageProvider,
+  name: item.name,
+  price: item.formattedTotalItemPrice,
+  photoProvider: item.imageProvider,
 )
 ```
 
 Wrap the `MenuListItem` widget with a `LongPressDraggable` widget.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (LongPressDraggable)" replace="/^return //g;/,$//g"?>
 ```dart
 LongPressDraggable<Item>(
- data: item,
- dragAnchorStrategy: pointerDragAnchorStrategy,
- feedback: DraggingListItem(
-   photoProvider: item.imageProvider,
- ),
- child: ListItem(
-   name: item.name,
-   price: item.formattedTotalItemPrice,
-   photoProvider: item.imageProvider,
- ),
-)
+  data: item,
+  dragAnchorStrategy: pointerDragAnchorStrategy,
+  feedback: DraggingListItem(
+    dragKey: _draggableKey,
+    photoProvider: item.imageProvider,
+  ),
+  child: MenuListItem(
+    name: item.name,
+    price: item.formattedTotalItemPrice,
+    photoProvider: item.imageProvider,
+  ),
+);
 ```
 
 In this case, when the user long presses on the
@@ -107,32 +110,35 @@ top of a `DragTarget` widget, the `DragTarget` widget
 can either accept or reject the data from the draggable.
 
 In this recipe, the user should drop a menu item on a
-`Customer` widget to add the menu item to the user’s cart.
+`CustomerCart` widget to add the menu item to the user’s cart.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (CustomerCart)" replace="/^return //g;/,$//g"?>
 ```dart
-Customer(
- hasItems: customer.items.isNotEmpty,
- highlighted: candidateItems.isNotEmpty,
- customer: customer,
-)
+CustomerCart(
+  hasItems: customer.items.isNotEmpty,
+  highlighted: candidateItems.isNotEmpty,
+  customer: customer,
+);
 ```
 
-Wrap the `Customer` widget with a `DragTarget` widget.
+Wrap the `CustomerCart` widget with a `DragTarget` widget.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (DragTarget)" replace="/^child: //g;/,$//g"?>
 ```dart
 DragTarget<Item>(
- builder: (context, candidateItems, rejectedItems) {
-   return CustomerCart(
-     hasItems: customer.items.isNotEmpty,
-     highlighted: candidateItems.isNotEmpty,
-     customer: customer,
-   );
- },
- onAccept: (item) {
-   _itemDroppedOnCustomerCart(...);
- },
+  builder: (context, candidateItems, rejectedItems) {
+    return CustomerCart(
+      hasItems: customer.items.isNotEmpty,
+      highlighted: candidateItems.isNotEmpty,
+      customer: customer,
+    );
+  },
+  onAccept: (item) {
+    _itemDroppedOnCustomerCart(
+      item: item,
+      customer: customer,
+    );
+  },
 )
 ```
 
@@ -174,24 +180,24 @@ you update the customer’s cart with the dropped menu item.
 Each customer is represented by a `Customer` object,
 which maintains a cart of items and a price total.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (CustomerClass)"?>
 ```dart
 class Customer {
- Customer({
-   required this.name,
-   required this.imageProvider,
-   List<Item>? items,
- }) : items = items ?? [];
+  Customer({
+    required this.name,
+    required this.imageProvider,
+    List<Item>? items,
+  }) : items = items ?? [];
 
- final String name;
- final ImageProvider imageProvider;
- final List<Item> items;
+  final String name;
+  final ImageProvider imageProvider;
+  final List<Item> items;
 
- String get formattedTotalItemPrice {
-   final totalPriceCents =
-       items.fold<int>(0, (prev, item) => prev + item.totalPriceCents);
-   return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
- }
+  String get formattedTotalItemPrice {
+    final totalPriceCents =
+        items.fold<int>(0, (prev, item) => prev + item.totalPriceCents);
+    return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
+  }
 }
 ```
 
@@ -201,15 +207,15 @@ name, total, and item count based on a `Customer` instance.
 To update a customer’s cart when a menu item is dropped,
 add the dropped item to the associated `Customer` object.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (AddCart)"?>
 ```dart
 void _itemDroppedOnCustomerCart({
- required Item item,
- required Customer customer,
+  required Item item,
+  required Customer customer,
 }) {
- setState(() {
-   customer.items.add(item);
- });
+  setState(() {
+    customer.items.add(item);
+  });
 }
 ```
 
@@ -240,7 +246,9 @@ Run the app:
   You can continue to add food items
   and watch the charges accumulate.
 
-<!--skip-->
+<!-- Start DartPad -->
+
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
@@ -472,7 +480,6 @@ class CustomerCart extends StatelessWidget {
                   ),
                 ),
               ),
-
               const SizedBox(height: 8.0),
               Text(
                 customer.name,

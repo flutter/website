@@ -63,6 +63,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
 
   final GlobalKey _draggableKey = GlobalKey();
 
+  // #docregion AddCart
   void _itemDroppedOnCustomerCart({
     required Item item,
     required Customer customer,
@@ -71,6 +72,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       customer.items.add(item);
     });
   }
+  // #enddocregion AddCart
 
   @override
   Widget build(BuildContext context) {
@@ -135,6 +137,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   Widget _buildMenuItem({
     required Item item,
   }) {
+    // #docregion LongPressDraggable
     return LongPressDraggable<Item>(
       data: item,
       dragAnchorStrategy: pointerDragAnchorStrategy,
@@ -142,12 +145,15 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
         dragKey: _draggableKey,
         photoProvider: item.imageProvider,
       ),
+      // #docregion MenuListItem
       child: MenuListItem(
         name: item.name,
         price: item.formattedTotalItemPrice,
         photoProvider: item.imageProvider,
       ),
+      // #enddocregion MenuListItem
     );
+    // #enddocregion LongPressDraggable
   }
 
   Widget _buildPeopleRow() {
@@ -168,13 +174,16 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
         padding: const EdgeInsets.symmetric(
           horizontal: 6.0,
         ),
+        // #docregion DragTarget
         child: DragTarget<Item>(
           builder: (context, candidateItems, rejectedItems) {
+            // #docregion CustomerCart
             return CustomerCart(
               hasItems: customer.items.isNotEmpty,
               highlighted: candidateItems.isNotEmpty,
               customer: customer,
             );
+            // #enddocregion CustomerCart
           },
           onAccept: (item) {
             _itemDroppedOnCustomerCart(
@@ -183,6 +192,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
             );
           },
         ),
+        // #enddocregion DragTarget
       ),
     );
   }
@@ -393,6 +403,7 @@ class Item {
       '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
 }
 
+// #docregion CustomerClass
 class Customer {
   Customer({
     required this.name,
@@ -410,3 +421,4 @@ class Customer {
     return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
   }
 }
+// #enddocregion CustomerClass
