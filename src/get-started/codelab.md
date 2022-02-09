@@ -35,7 +35,7 @@ This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
-previous experience with Dart, mobile, or web programming.
+previous experience with Dart, mobile, desktop, or web programming.
 
 This codelab is part 1 of a two-part codelab.
 You can find [part 2][] on [Google Developers Codelabs][]
@@ -56,7 +56,7 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
   * How to write a Flutter app that looks natural on iOS, Android,
-    and the web
+    desktop (Windows, for example), and the web
   * Basic structure of a Flutter app
   * Finding and using packages to extend functionality
   * Using hot reload for a quicker development cycle
@@ -83,6 +83,7 @@ The animated GIF shows how the app works at the completion of part 1.
   * The [iOS simulator][] (requires installing Xcode tools)
   * The [Android emulator][] (requires setup in Android Studio)
   * A browser (Chrome is required for debugging)
+  * As a [Windows][], [Linux][], or [macOS][] desktop application
 {{site.alert.end}}
 
 Every Flutter app you
@@ -98,6 +99,14 @@ and the web server when you want to test on
 other browsers. For more information,
 see [Building a web application with Flutter][]
 and [Write your first Flutter app on the web][codelab-web].
+
+Also, Flutter apps can compile for desktop.
+You should see your operating system listed
+in your IDE under **devices**, 
+for example: **Windows (desktop)**,
+or at the command line using `flutter devices`.
+For more information on building apps for desktop,
+see [Write a Flutter desktop application][].
 
 ## Step 1: Create the starter Flutter app
 
@@ -163,11 +172,11 @@ where the Dart code lives.
     {{site.alert.end}}
 
  2. Run the app [in the way your IDE describes][].
-    You should see either Android, iOS, or web output,
-    depending on your device.
+    You should see either Android, iOS, Windows, Linux, macOS,
+    or web output, depending on your device.
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
+      {% include docs/ios-windows-figure-pair.md image="hello-world.png" alt="Hello world app" %}
     {% endindent %}
 
     {{site.alert.tip}}
@@ -322,7 +331,7 @@ as well as many other open source packages, on [pub.dev][].
     or when toggling the Platform in Flutter Inspector.
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
+      {% include docs/ios-windows-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
 
 ### Problems?
@@ -661,7 +670,7 @@ lazily, on demand.
     you scroll.
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
+      {% include docs/ios-windows-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
     {% endindent %}
 
 ### Problems?
@@ -684,7 +693,7 @@ If needed, use the code at the following link to get back on track.
 
 Congratulations!
 
-You've written an interactive Flutter app that runs on both iOS and Android.
+You've written an interactive Flutter app that runs on iOS, Android, Windows and web.
 In this codelab, you've:
 
 * Created a Flutter app from the ground up.
@@ -730,3 +739,7 @@ where you add the following functionality:
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 [codelab-web]: {{site.url}}/get-started/codelab-web
+[Windows]: {{site.url}}/get-started/install/windows#windows-setup
+[Linux]: {{site.url}}/get-started/install/linux#linux-setup
+[macOS]: {{site.url}}/get-started/install/macos#macos-setup
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
