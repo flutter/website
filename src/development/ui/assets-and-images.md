@@ -297,6 +297,20 @@ flutter:
 The `lib/` is implied,
 so it should not be included in the asset path.
 
+If you are developing a package, to load an asset within the package, specify it in the 'pubspec.yaml' of the package:
+
+```yaml
+flutter:
+  assets:
+    - assets/images/
+```
+
+To load the image within your package, use:
+
+```dart
+return const AssetImage('packages/fancy_backgrounds/backgrounds/background1.png');
+```
+
 ## Sharing assets with the underlying platform
 
 Flutter assets are readily available to platform code
