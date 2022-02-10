@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/gradient_bubbles"?>
+
 Traditional chat apps display messages in chat bubbles
 with solid color backgrounds. Modern chat apps display
 chat bubbles with gradients that are based 
@@ -65,26 +67,26 @@ background with a new stateless widget called
 represent the full-screen gradient that should be
 applied to the bubble.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (BubbleBackground)" replace="/return //g"?>
 ```dart
 BubbleBackground(
- // The colors of the gradient, which are different
- // depending on which user sent this message.
- colors: message.isMine
-   ? [const Color(0xFF6C7689), const Color(0xFF3A364B)]
-   : [const Color(0xFF19B7FF), const Color(0xFF491CCB)],
- // The content within the bubble.
- child: DefaultTextStyle.merge(
-   style: const TextStyle(
-     fontSize: 18.0,
-     color: Colors.white,
-   ),
-   child: Padding(
-     padding: const EdgeInsets.all(12.0),
-     child: child,
-   ),
- ),
-),
+  // The colors of the gradient, which are different
+  // depending on which user sent this message.
+  colors: message.isMine
+      ? [const Color(0xFF6C7689), const Color(0xFF3A364B)]
+      : [const Color(0xFF19B7FF), const Color(0xFF491CCB)],
+  // The content within the bubble.
+  child: DefaultTextStyle.merge(
+    style: const TextStyle(
+      fontSize: 18.0,
+      color: Colors.white,
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Text(message.text),
+    ),
+  ),
+);
 ```
 
 ## Create a custom painter
@@ -95,47 +97,47 @@ method to return a `CustomPaint` with a `CustomPainter`
 called `BubblePainter`. `BubblePainter` is used to paint 
 the bubble gradients.
 
-<!--skip-->
+<?code-excerpt "lib/bubble_painter_empty.dart (BubblePainterEmpty)"?>
 ```dart
 @immutable
 class BubbleBackground extends StatelessWidget {
- const BubbleBackground({
-   Key? key,
-   required this.colors,
-   this.child,
- }) : super(key: key);
+  const BubbleBackground({
+    Key? key,
+    required this.colors,
+    this.child,
+  }) : super(key: key);
 
- final List<Color> colors;
- final Widget? child;
+  final List<Color> colors;
+  final Widget? child;
 
- @override
- Widget build(BuildContext context) {
-   return CustomPaint(
-     painter: BubblePainter(
-       colors: colors,
-     ),
-     child: child,
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: BubblePainter(
+        colors: colors,
+      ),
+      child: child,
+    );
+  }
 }
 
 class BubblePainter extends CustomPainter {
- BubblePainter({
-   required List<Color> colors,
- })   : _colors = colors;
+  BubblePainter({
+    required List<Color> colors,
+  }) : _colors = colors;
 
- final List<Color> _colors;
+  final List<Color> _colors;
 
- @override
- void paint(Canvas canvas, Size size) {
-   // TODO:
- }
+  @override
+  void paint(Canvas canvas, Size size) {
+    // TODO:
+  }
 
- @override
- bool shouldRepaint(BubblePainter oldDelegate) {
-   // TODO:
-   return false;
- }
+  @override
+  bool shouldRepaint(BubblePainter oldDelegate) {
+    // TODO:
+    return false;
+  }
 }
 ```
 
@@ -148,35 +150,37 @@ a reference to the ancestor `ScrollableState`
 and a reference to the `BubbleBackground`’s
 `BuildContext`. Provide each of those to the `CustomPainter`.
 
-<!--skip-->
+<?code-excerpt "lib/bubble_painter.dart (ScrollableContext)" replace="/painter: //g"?>
 ```dart
-BubbleBackground(
-  scrollable: Scrollable.of(context)!,
+BubblePainter(
+  colors: colors,
   bubbleContext: context,
-  // ...
+  scrollable: ScrollableState(),
 ),
-
-//-----
-
+```
+<!-- this code excerpt adds an extra closing bracket
+at the end because the excerpt cuts off the paint method that's required for Custom Painter. -->
+<?code-excerpt "lib/bubble_painter.dart (BPWithoutPaint)" replace="/}\n/}\n}\n/g;"?>
+```dart
 class BubblePainter extends CustomPainter {
- BubblePainter({
-   required ScrollableState scrollable,
-   required BuildContext bubbleContext,
-   required List<Color> colors,
- })   : _scrollable = scrollable,
-       _bubbleContext = bubbleContext,
-       _colors = colors;
+  BubblePainter({
+    required ScrollableState scrollable,
+    required BuildContext bubbleContext,
+    required List<Color> colors,
+  })  : _scrollable = scrollable,
+        _bubbleContext = bubbleContext,
+        _colors = colors;
 
- final ScrollableState _scrollable;
- final BuildContext _bubbleContext;
- final List<Color> _colors;
+  final ScrollableState _scrollable;
+  final BuildContext _bubbleContext;
+  final List<Color> _colors;
 
- @override
- bool shouldRepaint(BubblePainter oldDelegate) {
-   return oldDelegate._scrollable != _scrollable ||
-       oldDelegate._bubbleContext != _bubbleContext ||
-       oldDelegate._colors != _colors;
- }
+  @override
+  bool shouldRepaint(BubblePainter oldDelegate) {
+    return oldDelegate._scrollable != _scrollable ||
+        oldDelegate._bubbleContext != _bubbleContext ||
+        oldDelegate._colors != _colors;
+  }
 }
 ```
 
@@ -192,27 +196,47 @@ of the bubble, configure a shader with the given colors,
 and then use a matrix translation to offset the shader
 based on the bubble’s position within the `Scrollable`.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (BubblePainter)"?>
 ```dart
 class BubblePainter extends CustomPainter {
- @override
- void paint(Canvas canvas, Size size) {
-   final scrollableBox = _scrollable.context.findRenderObject() as RenderBox;
-   final scrollableRect = Offset.zero & scrollableBox.size;
-   final bubbleBox = _bubbleContext.findRenderObject() as RenderBox;
+  BubblePainter({
+    required ScrollableState scrollable,
+    required BuildContext bubbleContext,
+    required List<Color> colors,
+  })  : _scrollable = scrollable,
+        _bubbleContext = bubbleContext,
+        _colors = colors;
 
-   final origin = bubbleBox.localToGlobal(Offset.zero, ancestor: scrollableBox);
-   final paint = Paint()
-     ..shader = ui.Gradient.linear(
-       scrollableRect.topCenter,
-       scrollableRect.bottomCenter,
-       _colors,
-       [0.0, 1.0],
-       TileMode.clamp,
-       Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
-     );
-   canvas.drawRect(Offset.zero & size, paint);
- }
+  final ScrollableState _scrollable;
+  final BuildContext _bubbleContext;
+  final List<Color> _colors;
+
+  @override
+  bool shouldRepaint(BubblePainter oldDelegate) {
+    return oldDelegate._scrollable != _scrollable ||
+        oldDelegate._bubbleContext != _bubbleContext ||
+        oldDelegate._colors != _colors;
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final scrollableBox = _scrollable.context.findRenderObject() as RenderBox;
+    final scrollableRect = Offset.zero & scrollableBox.size;
+    final bubbleBox = _bubbleContext.findRenderObject() as RenderBox;
+
+    final origin =
+        bubbleBox.localToGlobal(Offset.zero, ancestor: scrollableBox);
+    final paint = Paint()
+      ..shader = ui.Gradient.linear(
+        scrollableRect.topCenter,
+        scrollableRect.bottomCenter,
+        _colors,
+        [0.0, 1.0],
+        TileMode.clamp,
+        Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
+      );
+    canvas.drawRect(Offset.zero & size, paint);
+  }
 }
 ```
 
