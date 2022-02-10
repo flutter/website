@@ -322,6 +322,7 @@
       { "source": "/go/sliver-flex-and-friends", "destination": "https://docs.google.com/document/d/1W4_5oD5z7JHhUjuQYwS_NJRAv27Ih7IazcMm739O5JU/edit", "type": 301 },
       { "source": "/go/sliver-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/getting_started_with_slivers", "type": 301 },
       { "source": "/go/state-restoration-design", "destination": "https://docs.google.com/document/d/1KIiq5CdqnSXxQXbZIDy2Ukc-JHFyLak1JR8e2cm3eO4/edit", "type": 301 },
+      { "source": "/go/strategy-2022", "destination": "https://docs.google.com/document/d/e/2PACX-1vTI9X2XHN_IY8wDO4epQSD1CkRT8WDxf2CEExp5Ef4Id206UOMopkYqU73FvAnnYG6NAecNSDo9TaEO/pub", "type": 301 },
       { "source": "/go/subpixel-antialiasing", "destination": "https://docs.google.com/document/d/1yEycgo5ivZ_lu2MAnMBLreZvROFdamy9-9q-QvMvL9U/edit?usp=sharing", "type": 301 },
       { "source": "/go/supporting-dart-callbacks", "destination": "https://docs.google.com/document/d/1k7OimxbxXzdv3U7-TfB88yG5hIScN3TH6Jcvdcl4izM/edit", "type": 301 },
       { "source": "/go/synchronized-widgettester", "destination": "https://docs.google.com/document/d/1VumsuG6dEFUVpPQLqqKJnhI0CoIS9fCAMN-NFHIPmo0/edit", "type": 301 },
