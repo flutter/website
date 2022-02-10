@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ### 2. Add the `integration_test` dependency
 
-Next, use the `integration_test`, `flutter_driver`, and `flutter_test` packages
+Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
 section of the app's `pubspec.yaml` file, specifying the Flutter SDK as the
 location of the package.
