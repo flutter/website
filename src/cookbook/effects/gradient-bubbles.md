@@ -73,8 +73,8 @@ BubbleBackground(
   // The colors of the gradient, which are different
   // depending on which user sent this message.
   colors: message.isMine
-      ? [const Color(0xFF6C7689), const Color(0xFF3A364B)]
-      : [const Color(0xFF19B7FF), const Color(0xFF491CCB)],
+      ? const [Color(0xFF6C7689), Color(0xFF3A364B)]
+      : const [Color(0xFF19B7FF), Color(0xFF491CCB)],
   // The content within the bubble.
   child: DefaultTextStyle.merge(
     style: const TextStyle(
