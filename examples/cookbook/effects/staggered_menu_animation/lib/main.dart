@@ -1,115 +1,313 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MaterialApp(
+      home: ExampleStaggeredAnimations(),
+      debugShowCheckedModeBanner: false,
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class ExampleStaggeredAnimations extends StatefulWidget {
+  const ExampleStaggeredAnimations({
+    Key? key,
+  }) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  _ExampleStaggeredAnimationsState createState() =>
+      _ExampleStaggeredAnimationsState();
+}
+
+class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _drawerSlideController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _drawerSlideController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 150),
+    );
+  }
+
+  @override
+  void dispose() {
+    _drawerSlideController.dispose();
+    super.dispose();
+  }
+
+  bool _isDrawerOpen() {
+    return _drawerSlideController.value == 1.0;
+  }
+
+  bool _isDrawerOpening() {
+    return _drawerSlideController.status == AnimationStatus.forward;
+  }
+
+  bool _isDrawerClosed() {
+    return _drawerSlideController.value == 0.0;
+  }
+
+  void _toggleDrawer() {
+    if (_isDrawerOpen() || _isDrawerOpening()) {
+      _drawerSlideController.reverse();
+    } else {
+      _drawerSlideController.forward();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: _buildAppBar(),
+      body: Stack(
+        children: [
+          _buildContent(),
+          _buildDrawer(),
+        ],
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+
+  PreferredSizeWidget _buildAppBar() {
+    return AppBar(
+      title: const Text(
+        'Flutter Menu',
+        style: TextStyle(
+          color: Colors.black,
+        ),
+      ),
+      backgroundColor: Colors.transparent,
+      elevation: 0.0,
+      automaticallyImplyLeading: false,
+      actions: [
+        AnimatedBuilder(
+          animation: _drawerSlideController,
+          builder: (context, child) {
+            return IconButton(
+              onPressed: _toggleDrawer,
+              icon: _isDrawerOpen() || _isDrawerOpening()
+                  ? const Icon(
+                      Icons.clear,
+                      color: Colors.black,
+                    )
+                  : const Icon(
+                      Icons.menu,
+                      color: Colors.black,
+                    ),
+            );
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _buildContent() {
+    // Put page content here.
+    return const SizedBox();
+  }
+
+  Widget _buildDrawer() {
+    return AnimatedBuilder(
+      animation: _drawerSlideController,
+      builder: (context, child) {
+        return FractionalTranslation(
+          translation: Offset(1.0 - _drawerSlideController.value, 0.0),
+          child: _isDrawerClosed() ? const SizedBox() : const Menu(),
+        );
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+class Menu extends StatefulWidget {
+  const Menu({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MenuState createState() => _MenuState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
+  static const _menuTitles = [
+    'Declarative style',
+    'Premade widgets',
+    'Stateful hot reload',
+    'Native performance',
+    'Great community',
+  ];
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  static const _initialDelayTime = Duration(milliseconds: 50);
+  static const _itemSlideTime = Duration(milliseconds: 250);
+  static const _staggerTime = Duration(milliseconds: 50);
+  static const _buttonDelayTime = Duration(milliseconds: 150);
+  static const _buttonTime = Duration(milliseconds: 500);
+  final _animationDuration = _initialDelayTime +
+      (_staggerTime * _menuTitles.length) +
+      _buttonDelayTime +
+      _buttonTime;
+
+  late AnimationController _staggeredController;
+  final List<Interval> _itemSlideIntervals = [];
+  late Interval _buttonInterval;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _createAnimationIntervals();
+
+    _staggeredController = AnimationController(
+      vsync: this,
+      duration: _animationDuration,
+    )..forward();
+  }
+
+  void _createAnimationIntervals() {
+    for (var i = 0; i < _menuTitles.length; ++i) {
+      final startTime = _initialDelayTime + (_staggerTime * i);
+      final endTime = startTime + _itemSlideTime;
+      _itemSlideIntervals.add(
+        Interval(
+          startTime.inMilliseconds / _animationDuration.inMilliseconds,
+          endTime.inMilliseconds / _animationDuration.inMilliseconds,
+        ),
+      );
+    }
+
+    final buttonStartTime =
+        Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
+    final buttonEndTime = buttonStartTime + _buttonTime;
+    _buttonInterval = Interval(
+      buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
+      buttonEndTime.inMilliseconds / _animationDuration.inMilliseconds,
+    );
+  }
+
+  @override
+  void dispose() {
+    _staggeredController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+    return Container(
+      color: Colors.white,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          _buildFlutterLogo(),
+          _buildContent(),
+        ],
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+    );
+  }
+
+  Widget _buildFlutterLogo() {
+    return const Positioned(
+      right: -100,
+      bottom: -30,
+      child: Opacity(
+        opacity: 0.2,
+        child: FlutterLogo(
+          size: 400,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  Widget _buildContent() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 16),
+        ..._buildListItems(),
+        const Spacer(),
+        _buildGetStartedButton(),
+      ],
+    );
+  }
+
+  List<Widget> _buildListItems() {
+    final listItems = <Widget>[];
+    for (var i = 0; i < _menuTitles.length; ++i) {
+      listItems.add(
+        AnimatedBuilder(
+          animation: _staggeredController,
+          builder: (context, child) {
+            final animationPercent = Curves.easeOut.transform(
+              _itemSlideIntervals[i].transform(_staggeredController.value),
+            );
+            final opacity = animationPercent;
+            final slideDistance = (1.0 - animationPercent) * 150;
+
+            return Opacity(
+              opacity: opacity,
+              child: Transform.translate(
+                offset: Offset(slideDistance, 0),
+                child: child,
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+            child: Text(
+              _menuTitles[i],
+              textAlign: TextAlign.left,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+    return listItems;
+  }
+
+  Widget _buildGetStartedButton() {
+    return SizedBox(
+      width: double.infinity,
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: AnimatedBuilder(
+          animation: _staggeredController,
+          builder: (context, child) {
+            final animationPercent = Curves.elasticOut.transform(
+                _buttonInterval.transform(_staggeredController.value));
+            final opacity = animationPercent.clamp(0.0, 1.0);
+            final scale = (animationPercent * 0.5) + 0.5;
+
+            return Opacity(
+              opacity: opacity,
+              child: Transform.scale(
+                scale: scale,
+                child: child,
+              ),
+            );
+          },
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              shape: const StadiumBorder(),
+              primary: Colors.blue,
+              padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
+            ),
+            onPressed: () {},
+            child: const Text(
+              'Get started',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
