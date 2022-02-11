@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/photo_filter_carousel"?>
+
 Everybody knows that a photo looks better with a filter.
 In this recipe, you build a scrollable,
 filter selection carousel.
@@ -36,23 +38,23 @@ Create a new stateful widget called
 `FilterSelector` that you’ll use to 
 implement the selector.
 
-<!--skip-->
+<?code-excerpt "lib/filter_selector.dart (FilterSelector)"?>
 ```dart
 @immutable
 class FilterSelector extends StatefulWidget {
- const FilterSelector({
-   Key? key,
- }) : super(key: key);
+  const FilterSelector({
+    Key? key,
+  }) : super(key: key);
 
- @override
- _FilterSelectorState createState() => _FilterSelectorState();
+  @override
+  _FilterSelectorState createState() => _FilterSelectorState();
 }
 
 class _FilterSelectorState extends State<FilterSelector> {
- @override
- Widget build(BuildContext context) {
-   return SizedBox();
- }
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox();
+  }
 }
 ```
 
@@ -60,20 +62,20 @@ Add the `FilterSelector` widget to the existing
 widget tree. Position the `FilterSelector` widget
 on top of the photo, at the bottom and centered.
 
-<!--skip-->
+<?code-excerpt "lib/filter_selector.dart (Stack)" replace="/^child: //g"?>
 ```dart
 Stack(
- children: [
-   Positioned.fill(
-     child: _buildPhotoWithFilter(),
-   ),
-   Positioned(
-     left: 0.0,
-     right: 0.0,
-     bottom: 0.0,
-     child: FilterSelector(),
-   ),
- ],
+  children: [
+    Positioned.fill(
+      child: _buildPhotoWithFilter(),
+    ),
+    const Positioned(
+      left: 0.0,
+      right: 0.0,
+      bottom: 0.0,
+      child: FilterSelector(),
+    ),
+  ],
 ),
 ```
 
@@ -81,67 +83,67 @@ Within the `FilterSelector` widget,
 display a selector ring on top of a 
 dark gradient by using a `Stack` widget.
 
-<!--skip-->
+<?code-excerpt "lib/filter_selector_pt2.dart (FilterSelectorState2)"?>
 ```dart
 class _FilterSelectorState extends State<FilterSelector> {
- static const _filtersPerScreen = 5;
- static const _viewportFractionPerItem = 1.0 / _filtersPerScreen;
+  static const _filtersPerScreen = 5;
+  static const _viewportFractionPerItem = 1.0 / _filtersPerScreen;
 
- @override
- Widget build(BuildContext context) {
-   return LayoutBuilder(
-     builder: (context, constraints) {
-       final itemSize = constraints.maxWidth * _viewportFractionPerItem;
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final itemSize = constraints.maxWidth * _viewportFractionPerItem;
 
-       return Stack(
-         alignment: Alignment.bottomCenter,
-         children: [
-           _buildShadowGradient(itemSize),
-           _buildSelectionRing(itemSize),
-         ],
-       );
-     },
-   );
- }
+        return Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            _buildShadowGradient(itemSize),
+            _buildSelectionRing(itemSize),
+          ],
+        );
+      },
+    );
+  }
 
- Widget _buildShadowGradient(double itemSize) {
-   return SizedBox(
-     height: itemSize * 2 + widget.padding.vertical,
-     child: const DecoratedBox(
-       decoration: BoxDecoration(
-         gradient: LinearGradient(
-           begin: Alignment.topCenter,
-           end: Alignment.bottomCenter,
-           colors: [
-             Colors.transparent,
-             Colors.black,
-           ],
-         ),
-       ),
-       child: SizedBox.expand(),
-     ),
-   );
- }
+  Widget _buildShadowGradient(double itemSize) {
+    return SizedBox(
+      height: itemSize * 2 + widget.padding.vertical,
+      child: const DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.transparent,
+              Colors.black,
+            ],
+          ),
+        ),
+        child: SizedBox.expand(),
+      ),
+    );
+  }
 
- Widget _buildSelectionRing(double itemSize) {
-   return IgnorePointer(
-     child: Padding(
-       padding: widget.padding,
-       child: SizedBox(
-         width: itemSize,
-         height: itemSize,
-         child: const DecoratedBox(
-           decoration: BoxDecoration(
-             shape: BoxShape.circle,
-             border: Border.fromBorderSide(
-               BorderSide(width: 6.0, color: Colors.white),
-             ),
-           ),
-         ),
-       ),
-     ),
-   );
- }
+  Widget _buildSelectionRing(double itemSize) {
+    return IgnorePointer(
+      child: Padding(
+        padding: widget.padding,
+        child: SizedBox(
+          width: itemSize,
+          height: itemSize,
+          child: const DecoratedBox(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.fromBorderSide(
+                BorderSide(width: 6.0, color: Colors.white),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
 
@@ -166,39 +168,39 @@ that corresponds to the associated filter color.
 Define a new stateless widget called `FilterItem`
 that displays a single list item.
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (FilterItem)"?>
 ```dart
 @immutable
 class FilterItem extends StatelessWidget {
- const FilterItem({
-   Key? key,
-   required this.color,
-   this.onFilterSelected,
- }) : super(key: key);
+  FilterItem({
+    Key? key,
+    required this.color,
+    this.onFilterSelected,
+  }) : super(key: key);
 
- final Color color;
- final VoidCallback? onFilterSelected;
+  final Color color;
+  final VoidCallback? onFilterSelected;
 
- @override
- Widget build(BuildContext context) {
-   return GestureDetector(
-     onTap: onFilterSelected,
-     child: AspectRatio(
-       aspectRatio: 1.0,
-       child: Padding(
-         padding: const EdgeInsets.all(8.0),
-         child: ClipOval(
-           child: Image.network(
-             'https://docs.flutter.dev/cookbook/img-files'
-             '/effects/instagram-buttons/millenial-texture.jpg',
-             color: color.withOpacity(0.5),
-             colorBlendMode: BlendMode.hardLight,
-           ),
-         ),
-       ),
-     ),
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onFilterSelected,
+      child: AspectRatio(
+        aspectRatio: 1.0,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ClipOval(
+            child: Image.network(
+              'https://docs.flutter.dev/cookbook/img-files'
+              '/effects/instagram-buttons/millenial-texture.jpg',
+              color: color.withOpacity(0.5),
+              colorBlendMode: BlendMode.hardLight,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
 
