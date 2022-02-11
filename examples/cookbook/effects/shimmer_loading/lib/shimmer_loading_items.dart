@@ -161,55 +161,43 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
 }
 // #enddocregion ShimmerLoading
 
-// #docregion Shimmer
-class Shimmer extends StatefulWidget {
-  static ShimmerState? of(BuildContext context) {
-    return context.findAncestorStateOfType<ShimmerState>();
+class ShimmeringItems extends StatefulWidget {
+  const ShimmeringItems({Key? key}) : super(key: key);
+
+  @override
+  _ShimmeringItemsState createState() => _ShimmeringItemsState();
+}
+
+class _ShimmeringItemsState extends State<ShimmeringItems> {
+  final bool _isLoading = true;
+
+  // #docregion buildTopRowItem
+  Widget _buildTopRowItem() {
+    return ShimmerLoading(
+      isLoading: _isLoading,
+      child: const CircleListItem(),
+    );
   }
+  // #enddocregion buildTopRowItem
 
-  const Shimmer({
-    Key? key,
-    required this.linearGradient,
-    this.child,
-  }) : super(key: key);
-
-  final LinearGradient linearGradient;
-  final Widget? child;
-
-  @override
-  ShimmerState createState() => ShimmerState();
-}
-
-class ShimmerState extends State<Shimmer> {
-  @override
-  Widget build(BuildContext context) {
-    return widget.child ?? const SizedBox();
-  }
-}
-// #enddocregion Shimmer
-
-class ExampleUiLoadingAnimation extends StatefulWidget {
-  const ExampleUiLoadingAnimation({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  _ExampleUiLoadingAnimationState createState() =>
-      _ExampleUiLoadingAnimationState();
-}
-
-// #docregion ExampleUiAnimationState
-class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Shimmer(
-        linearGradient: _shimmerGradient,
-        child: ListView(
-            // ListView Contents
-            ),
+  // #docregion buildListItem
+  Widget _buildListItem() {
+    return ShimmerLoading(
+      isLoading: _isLoading,
+      child: CardListItem(
+        isLoading: _isLoading,
       ),
     );
   }
+  // #enddocregion buildListItem
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        _buildTopRowItem(),
+        _buildListItem(),
+      ],
+    );
+  }
 }
-// #docregion ExampleUiAnimationState
