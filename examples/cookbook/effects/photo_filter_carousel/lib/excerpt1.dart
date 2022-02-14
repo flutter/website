@@ -30,19 +30,7 @@ class ExampleInstagramFilterSelection extends StatefulWidget {
 
 class _ExampleInstagramFilterSelectionState
     extends State<ExampleInstagramFilterSelection> {
-  final _filters = [
-    Colors.white,
-    ...List.generate(
-      Colors.primaries.length,
-      (index) => Colors.primaries[(index * 4) % Colors.primaries.length],
-    )
-  ];
-
   final _filterColor = ValueNotifier<Color>(Colors.white);
-
-  void _onFilterChanged(Color value) {
-    _filterColor.value = value;
-  }
 
   @override
   Widget build(BuildContext context) {

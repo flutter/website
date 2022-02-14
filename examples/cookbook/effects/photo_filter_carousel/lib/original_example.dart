@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 // Original example from flutter/codelabs
 // https://github.com/flutter/codelabs/blob/7638c086a53d8434b23f102ec6694f6ece178a18/cookbook/lib/examples/instagram_filter.dart
 
@@ -106,6 +108,7 @@ class _FilterSelectorState extends State<FilterSelector> {
     widget.onFilterChanged(widget.filters[page]);
   }
 
+  // #docregion FilterTapped
   void _onFilterTapped(int index) {
     _controller.animateToPage(
       index,
@@ -113,6 +116,7 @@ class _FilterSelectorState extends State<FilterSelector> {
       curve: Curves.ease,
     );
   }
+  // #enddocregion FilterTapped
 
   @override
   void dispose() {
@@ -155,6 +159,7 @@ class _FilterSelectorState extends State<FilterSelector> {
     );
   }
 
+  // #docregion FinalBuildCarousel
   Widget _buildCarousel(double itemSize) {
     return Container(
       height: itemSize,
@@ -169,31 +174,31 @@ class _FilterSelectorState extends State<FilterSelector> {
               builder: (context, child) {
                 if (!_controller.hasClients ||
                     !_controller.position.hasContentDimensions) {
-                  // The PageViewController is not connected to the
+                  // The PageViewController isn’t connected to the
                   // PageView widget yet. Return an empty box.
-                  return SizedBox();
+                  return const SizedBox();
                 }
 
                 // The integer index of the current page,
-                // 0, 1, 2, 3, etc.
+                // 0, 1, 2, 3, and so on
                 final selectedIndex = _controller.page!.roundToDouble();
 
                 // The fractional amount that the current filter
-                // is dragged to the left or right, e.g., 0.25 when
+                // is dragged to the left or right, for example, 0.25 when
                 // the current filter is dragged 25% to the left.
                 final pageScrollAmount = _controller.page! - selectedIndex;
 
                 // The page-distance of a filter just before it
-                // moves off screen.
-                final maxScrollDistance = _filtersPerScreen / 2;
+                // moves off-screen.
+                const maxScrollDistance = _filtersPerScreen / 2;
 
                 // The page-distance of this filter item from the
                 // currently selected filter item.
                 final pageDistanceFromSelected =
                     (selectedIndex - index + pageScrollAmount).abs();
 
-                // The percent distance of this filter item from the
-                // center of the carousel, i.e., where the selector
+                // The distance of this filter item from the
+                // center of the carousel as a percentage, that is, where the selector
                 // ring sits.
                 final percentFromCenter =
                     1.0 - pageDistanceFromSelected / maxScrollDistance;
@@ -205,10 +210,12 @@ class _FilterSelectorState extends State<FilterSelector> {
                   scale: itemScale,
                   child: Opacity(
                     opacity: opacity,
+                    // #docregion OnFilterTapped
                     child: FilterItem(
                       color: itemColor(index),
-                      onFilterSelected: () => _onFilterTapped(index),
+                      onFilterSelected: () => () {},
                     ),
+                    // #enddocregion OnFilterTapped
                   ),
                 );
               },
@@ -218,6 +225,7 @@ class _FilterSelectorState extends State<FilterSelector> {
       ),
     );
   }
+  // #enddocregion FinalBuildCarousel
 
   Widget _buildSelectionRing(double itemSize) {
     return IgnorePointer(
@@ -243,7 +251,7 @@ class _FilterSelectorState extends State<FilterSelector> {
 // #docregion FilterItem
 @immutable
 class FilterItem extends StatelessWidget {
-  FilterItem({
+  const FilterItem({
     Key? key,
     required this.color,
     this.onFilterSelected,

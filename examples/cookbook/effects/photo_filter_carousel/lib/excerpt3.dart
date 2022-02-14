@@ -17,27 +17,11 @@ class FilterSelector extends StatefulWidget {
   _FilterSelectorState createState() => _FilterSelectorState();
 }
 
-// #docregion FilterSelectorState2
 class _FilterSelectorState extends State<FilterSelector> {
   static const _filtersPerScreen = 5;
   static const _viewportFractionPerItem = 1.0 / _filtersPerScreen;
 
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final itemSize = constraints.maxWidth * _viewportFractionPerItem;
-
-        return Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            _buildShadowGradient(itemSize),
-            _buildSelectionRing(itemSize),
-          ],
-        );
-      },
-    );
-  }
+  Color itemColor(int index) => widget.filters[index % widget.filters.length];
 
   Widget _buildShadowGradient(double itemSize) {
     return SizedBox(
@@ -77,5 +61,35 @@ class _FilterSelectorState extends State<FilterSelector> {
       ),
     );
   }
+
+  // #docregion PageView
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, constraints) {
+      final itemSize = constraints.maxWidth * _viewportFractionPerItem;
+
+      return Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          _buildShadowGradient(itemSize),
+          _buildCarousel(itemSize),
+          _buildSelectionRing(itemSize),
+        ],
+      );
+    });
+  }
+
+  Widget _buildCarousel(double itemSize) {
+    return Container(
+      height: itemSize,
+      margin: widget.padding,
+      child: PageView.builder(
+        itemCount: widget.filters.length,
+        itemBuilder: (context, index) {
+          return const SizedBox();
+        },
+      ),
+    );
+  }
+  // #enddocregion PageView
 }
-// #enddocregion FilterSelectorState2
