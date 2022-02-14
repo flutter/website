@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/shimmer_loading"?>
+
 Loading times are unavoidable in application development.
 From a user experience (UX) perspective,
 the most important thing is to show your users 
@@ -56,30 +58,32 @@ Start with the circular list items at the top of the screen.
 Ensure that each `CircleListItem` widget displays a circle
 with a color while the image is loading.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (CircleListItem)"?>
 ```dart
 class CircleListItem extends StatelessWidget {
- @override
- Widget build(BuildContext context) {
-   return Padding(
-     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-     child: Container(
-       width: 54,
-       height: 54,
-       decoration: const BoxDecoration(
-         color: Colors.black,
-         shape: BoxShape.circle,
-       ),
-       child: ClipOval(
-         child: Image.network(
-           'https://flutter'
-           '.dev/docs/cookbook/img-files/effects/split-check/Avatar1.jpg',
-           fit: BoxFit.cover,
-         ),
-       ),
-     ),
-   );
- }
+  const CircleListItem({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      child: Container(
+        width: 54,
+        height: 54,
+        decoration: const BoxDecoration(
+          color: Colors.black,
+          shape: BoxShape.circle,
+        ),
+        child: ClipOval(
+          child: Image.network(
+            'https://flutter'
+            '.dev/docs/cookbook/img-files/effects/split-check/Avatar1.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
 
@@ -93,86 +97,86 @@ Also, in the `CardListItem` widget,
 switch between the display of the text and
 the rectangles based on the current loading status.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (CardListItem)"?>
 ```dart
 class CardListItem extends StatelessWidget {
- const CardListItem({
-   Key? key,
-   required this.isLoading,
- }) : super(key: key);
+  const CardListItem({
+    Key? key,
+    required this.isLoading,
+  }) : super(key: key);
 
- final bool isLoading;
+  final bool isLoading;
 
- @override
- Widget build(BuildContext context) {
-   return Padding(
-     padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-     child: Column(
-       crossAxisAlignment: CrossAxisAlignment.start,
-       children: [
-         _buildImage(),
-         const SizedBox(height: 16),
-         _buildText(),
-       ],
-     ),
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildImage(),
+          const SizedBox(height: 16),
+          _buildText(),
+        ],
+      ),
+    );
+  }
 
- Widget _buildImage() {
-   return AspectRatio(
-     aspectRatio: 16 / 9,
-     child: Container(
-       width: double.infinity,
-       decoration: BoxDecoration(
-         color: Colors.black,
-         borderRadius: BorderRadius.circular(16),
-       ),
-       child: ClipRRect(
-         borderRadius: BorderRadius.circular(16),
-         child: Image.network(
-           'https://flutter'
-           '.dev/docs/cookbook/img-files/effects/split-check/Food1.jpg',
-           fit: BoxFit.cover,
-         ),
-       ),
-     ),
-   );
- }
+  Widget _buildImage() {
+    return AspectRatio(
+      aspectRatio: 16 / 9,
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.network(
+            'https://flutter'
+            '.dev/docs/cookbook/img-files/effects/split-check/Food1.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
 
- Widget _buildText() {
-   if (isLoading) {
-     return Column(
-       crossAxisAlignment: CrossAxisAlignment.start,
-       children: [
-         Container(
-           width: double.infinity,
-           height: 24,
-           decoration: BoxDecoration(
-             color: Colors.black,
-             borderRadius: BorderRadius.circular(16),
-           ),
-         ),
-         const SizedBox(height: 16),
-         Container(
-           width: 250,
-           height: 24,
-           decoration: BoxDecoration(
-             color: Colors.black,
-             borderRadius: BorderRadius.circular(16),
-           ),
-         ),
-       ],
-     );
-   } else {
-     return Padding(
-       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-       child: Text(
-         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do '
-         'eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-       ),
-     );
-   }
- }
+  Widget _buildText() {
+    if (isLoading) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: double.infinity,
+            height: 24,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+          const SizedBox(height: 16),
+          Container(
+            width: 250,
+            height: 24,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+        ],
+      );
+    } else {
+      return const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        child: Text(
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do '
+          'eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        ),
+      );
+    }
+  }
 }
 ```
 
@@ -199,22 +203,22 @@ configured earlier.
 Define a chrome-colored, linear gradient that gets applied to the 
 shimmer shapes.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (shimmerGradient)"?>
 ```dart
 const _shimmerGradient = LinearGradient(
- colors: [
-   Color(0xFFEBEBF4),
-   Color(0xFFF4F4F4),
-   Color(0xFFEBEBF4),
- ],
- stops: [
-   0.1,
-   0.3,
-   0.4,
- ],
- begin: Alignment(-1.0, -0.3),
- end: Alignment(1.0, 0.3),
- tileMode: TileMode.clamp,
+  colors: [
+    Color(0xFFEBEBF4),
+    Color(0xFFF4F4F4),
+    Color(0xFFEBEBF4),
+  ],
+  stops: [
+    0.1,
+    0.3,
+    0.4,
+  ],
+  begin: Alignment(-1.0, -0.3),
+  end: Alignment(1.0, 0.3),
+  tileMode: TileMode.clamp,
 );
 ```
 
@@ -225,63 +229,63 @@ gradient as a shader with a `blendMode` of `srcATop`.
 The `srcATop` blend mode  replaces any color that your
 `child` widget painted with the shader color.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (ShimmerLoading)"?>
 ```dart
 class ShimmerLoading extends StatefulWidget {
- const ShimmerLoading({
-   Key? key,
-   required this.isLoading,
-   required this.child,
- }) : super(key: key);
+  const ShimmerLoading({
+    Key? key,
+    required this.isLoading,
+    required this.child,
+  }) : super(key: key);
 
- final bool isLoading;
- final Widget child;
+  final bool isLoading;
+  final Widget child;
 
- @override
- _ShimmerLoadingState createState() => _ShimmerLoadingState();
+  @override
+  _ShimmerLoadingState createState() => _ShimmerLoadingState();
 }
 
 class _ShimmerLoadingState extends State<ShimmerLoading> {
- @override
- Widget build(BuildContext context) {
-   if (!widget.isLoading) {
-     return widget.child;
-   }
+  @override
+  Widget build(BuildContext context) {
+    if (!widget.isLoading) {
+      return widget.child;
+    }
 
-   return ShaderMask(
-     blendMode: BlendMode.srcATop,
-     shaderCallback: (bounds) {
-       return _shimmerGradient.createShader(bounds);
-     },
-     child: widget.child,
-   );
- }
+    return ShaderMask(
+      blendMode: BlendMode.srcATop,
+      shaderCallback: (bounds) {
+        return _shimmerGradient.createShader(bounds);
+      },
+      child: widget.child,
+    );
+  }
 }
 ```
 
 Wrap your `CircleListItem` widgets with a `ShimmerLoading` widget.
 
-<!--skip-->
+<?code-excerpt "lib/shimmer_loading_items.dart (buildTopRowItem)"?>
 ```dart
 Widget _buildTopRowItem() {
- return ShimmerLoading(
-   isLoading: _isLoading,
-   child: CircleListItem(),
- );
+  return ShimmerLoading(
+    isLoading: _isLoading,
+    child: const CircleListItem(),
+  );
 }
 ```
 
 Wrap your `CardListItem` widgets with a `ShimmerLoading` widget.
 
-<!--skip-->
+<?code-excerpt "lib/shimmer_loading_items.dart (buildListItem)"?>
 ```dart
 Widget _buildListItem() {
- return ShimmerLoading(
-   isLoading: _isLoading,
-   child: CardListItem(
-     isLoading: _isLoading,
-   ),
- );
+  return ShimmerLoading(
+    isLoading: _isLoading,
+    child: CardListItem(
+      isLoading: _isLoading,
+    ),
+  );
 }
 ```
 
@@ -321,31 +325,31 @@ Define a new stateful widget called `Shimmer` that
 takes in a [`LinearGradient`][] and provides descendants
 with access to its `State` object.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (Shimmer)"?>
 ```dart
 class Shimmer extends StatefulWidget {
- static ShimmerState? of(BuildContext context) {
-   return context.findAncestorStateOfType<ShimmerState>();
- }
+  static ShimmerState? of(BuildContext context) {
+    return context.findAncestorStateOfType<ShimmerState>();
+  }
 
- const Shimmer({
-   Key? key,
-   required this.linearGradient,
-   this.child,
- }) : super(key: key);
+  const Shimmer({
+    Key? key,
+    required this.linearGradient,
+    this.child,
+  }) : super(key: key);
 
- final LinearGradient linearGradient;
- final Widget? child;
+  final LinearGradient linearGradient;
+  final Widget? child;
 
- @override
- ShimmerState createState() => ShimmerState();
+  @override
+  ShimmerState createState() => ShimmerState();
 }
 
 class ShimmerState extends State<Shimmer> {
- @override
- Widget build(BuildContext context) {
-   return widget.child ?? const SizedBox();
- }
+  @override
+  Widget build(BuildContext context) {
+    return widget.child ?? const SizedBox();
+  }
 }
 ```
 
@@ -355,92 +359,94 @@ the size of the `ShimmerState`’s `RenderBox`,
 and look up the position of a descendant within the
 `ShimmerState`’s `RenderBox`.
 
-<!--skip-->
+<?code-excerpt "lib/shimmer_state.dart (ShimmerState)"?>
 ```dart
 class ShimmerState extends State<Shimmer> {
- Gradient get gradient => LinearGradient(
-       colors: widget.linearGradient.colors,
-       stops: widget.linearGradient.stops,
-       begin: widget.linearGradient.begin,
-       end: widget.linearGradient.end,
-     );
+  Gradient get gradient => LinearGradient(
+        colors: widget.linearGradient.colors,
+        stops: widget.linearGradient.stops,
+        begin: widget.linearGradient.begin,
+        end: widget.linearGradient.end,
+      );
 
- bool get isSized => (context.findRenderObject() as RenderBox).hasSize;
+  bool get isSized => (context.findRenderObject() as RenderBox).hasSize;
 
- Size get size => (context.findRenderObject() as RenderBox).size;
+  Size get size => (context.findRenderObject() as RenderBox).size;
 
- Offset getDescendantOffset({
-   required RenderBox descendant,
-   Offset offset = Offset.zero,
- }) {
-   final shimmerBox = context.findRenderObject() as RenderBox;
-   return descendant.localToGlobal(offset, ancestor: shimmerBox);
- }
+  Offset getDescendantOffset({
+    required RenderBox descendant,
+    Offset offset = Offset.zero,
+  }) {
+    final shimmerBox = context.findRenderObject() as RenderBox;
+    return descendant.localToGlobal(offset, ancestor: shimmerBox);
+  }
 
- @override
- Widget build(BuildContext context) {
-   return widget.child ?? const SizedBox();
- }
+  @override
+  Widget build(BuildContext context) {
+    return widget.child ?? const SizedBox();
+  }
 }
 ```
 
 Wrap all of your screen’s content with the `Shimmer` widget.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (ExampleUiAnimationState)"?>
 ```dart
 class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
- @override
- Widget build(BuildContext context) {
-   return Scaffold(
-     body: Shimmer(
-       linearGradient: _shimmerGradient,
-       child: ListView(...),
-     ),
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Shimmer(
+        linearGradient: _shimmerGradient,
+        child: ListView(
+            // ListView Contents
+            ),
+      ),
+    );
+  }
 }
 ```
 
 Use the `Shimmer` widget within your
 `ShimmerLoading` widget to paint the shared gradient.
 
-<!--skip-->
+<?code-excerpt "lib/shimmer_loading_state_pt2.dart (ShimmerLoadingStatePt2)"?>
 ```dart
 class _ShimmerLoadingState extends State<ShimmerLoading> {
- @override
- Widget build(BuildContext context) {
-   if (!widget.isLoading) {
-     return widget.child;
-   }
+  @override
+  Widget build(BuildContext context) {
+    if (!widget.isLoading) {
+      return widget.child;
+    }
 
-   // Collect ancestor shimmer information.
-   final shimmer = Shimmer.of(context)!;
-   if (!shimmer.isSized) {
-     // The ancestor Shimmer widget isn’t laid
-     // out yet. Return an empty box.
-     return SizedBox();
-   }
-   final shimmerSize = shimmer.size;
-   final gradient = shimmer.gradient;
-   final offsetWithinShimmer = shimmer.getDescendantOffset(
-     descendant: context.findRenderObject() as RenderBox,
-   );
+    // Collect ancestor shimmer information.
+    final shimmer = Shimmer.of(context)!;
+    if (!shimmer.isSized) {
+      // The ancestor Shimmer widget isn’t laid
+      // out yet. Return an empty box.
+      return const SizedBox();
+    }
+    final shimmerSize = shimmer.size;
+    final gradient = shimmer.gradient;
+    final offsetWithinShimmer = shimmer.getDescendantOffset(
+      descendant: context.findRenderObject() as RenderBox,
+    );
 
-   return ShaderMask(
-     blendMode: BlendMode.srcATop,
-     shaderCallback: (bounds) {
-       return gradient.createShader(
-         Rect.fromLTWH(
-           -offsetWithinShimmer.dx,
-           -offsetWithinShimmer.dy,
-           shimmerSize.width,
-           shimmerSize.height,
-         ),
-       );
-     },
-     child: widget.child,
-   );
- }
+    return ShaderMask(
+      blendMode: BlendMode.srcATop,
+      shaderCallback: (bounds) {
+        return gradient.createShader(
+          Rect.fromLTWH(
+            -offsetWithinShimmer.dx,
+            -offsetWithinShimmer.dy,
+            shimmerSize.width,
+            shimmerSize.height,
+          ),
+        );
+      },
+      child: widget.child,
+    );
+  }
 }
 ```
 
@@ -461,19 +467,19 @@ The `transform` property accepts a `GradientTransform` instance.
 Define a class called `_SlidingGradientTransform` that implements 
 `GradientTransform` to achieve the appearance of horizontal sliding.
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (SlidingGradientTransform)"?>
 ```dart
 class _SlidingGradientTransform extends GradientTransform {
- const _SlidingGradientTransform({
-   required this.slidePercent,
- });
+  const _SlidingGradientTransform({
+    required this.slidePercent,
+  });
 
- final double slidePercent;
+  final double slidePercent;
 
- @override
- Matrix4? transform(Rect bounds, {TextDirection? textDirection}) {
-   return Matrix4.translationValues(bounds.width * slidePercent, 0.0, 0.0);
- }
+  @override
+  Matrix4? transform(Rect bounds, {TextDirection? textDirection}) {
+    return Matrix4.translationValues(bounds.width * slidePercent, 0.0, 0.0);
+  }
 }
 ```
 
@@ -482,40 +488,40 @@ in order to create the appearance of motion.
 To change the percentage, configure an
 [`AnimationController`][] in the `ShimmerState` class.
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (ShimmerStateAnimation)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
 ```dart
 class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
- late AnimationController _shimmerController;
+  late AnimationController _shimmerController;
 
- @override
- void initState() {
-   super.initState();
+  @override
+  void initState() {
+    super.initState();
 
-   _shimmerController = AnimationController.unbounded(vsync: this)
-     ..repeat(min: -0.5, max: 1.5, period: const Duration(milliseconds: 1000));
- }
+    _shimmerController = AnimationController.unbounded(vsync: this)
+      ..repeat(min: -0.5, max: 1.5, period: const Duration(milliseconds: 1000));
+  }
 
- @override
- void dispose() {
-   _shimmerController.dispose();
-   super.dispose();
- }
+  @override
+  void dispose() {
+    _shimmerController.dispose();
+    super.dispose();
+  }
 }
 ```
 
 Apply the `_SlidingGradientTransform` to the `gradient`
 by using the `_shimmerController`’s `value` as the `slidePercent`.
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (LinearGradient)"?>
 ```dart
 LinearGradient get gradient => LinearGradient(
-  colors: widget.linearGradient.colors,
-  stops: widget.linearGradient.stops,
-  begin: widget.linearGradient.begin,
-  end: widget.linearGradient.end,
-  transform: _SlidingGradientTransform(slidePercent: 
-    _shimmerController.value),
-);
+      colors: widget.linearGradient.colors,
+      stops: widget.linearGradient.stops,
+      begin: widget.linearGradient.begin,
+      end: widget.linearGradient.end,
+      transform:
+          _SlidingGradientTransform(slidePercent: _shimmerController.value),
+    );
 ```
 
 The gradient now animates, but your individual
@@ -526,7 +532,7 @@ is happening.
 Expose the `_shimmerController` from `ShimmerState`
 as a [`Listenable`][].
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (shimmerChanges)"?>
 ```dart
 Listenable get shimmerChanges => _shimmerController;
 ```
@@ -535,36 +541,36 @@ In `ShimmerLoading`, listen for changes to the ancestor
 `ShimmerState`’s `shimmerChanges` property,
 and repaint the shimmer gradient.
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (ShimmerLoadingState)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
 ```dart
 class _ShimmerLoadingState extends State<ShimmerLoading> {
- Listenable? _shimmerChanges;
+  Listenable? _shimmerChanges;
 
- @override
- void didChangeDependencies() {
-   super.didChangeDependencies();
-   if (_shimmerChanges != null) {
-     _shimmerChanges!.removeListener(_onShimmerChange);
-   }
-   _shimmerChanges = Shimmer.of(context)?.shimmerChanges;
-   if (_shimmerChanges != null) {
-     _shimmerChanges!.addListener(_onShimmerChange);
-   }
- }
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_shimmerChanges != null) {
+      _shimmerChanges!.removeListener(_onShimmerChange);
+    }
+    _shimmerChanges = Shimmer.of(context)?.shimmerChanges;
+    if (_shimmerChanges != null) {
+      _shimmerChanges!.addListener(_onShimmerChange);
+    }
+  }
 
- @override
- void dispose() {
-   _shimmerChanges?.removeListener(_onShimmerChange);
-   super.dispose();
- }
+  @override
+  void dispose() {
+    _shimmerChanges?.removeListener(_onShimmerChange);
+    super.dispose();
+  }
 
- void _onShimmerChange() {
-   if (widget.isLoading) {
-     setState(() {
-       // update the shimmer painting.
-     });
-   }
- }
+  void _onShimmerChange() {
+    if (widget.isLoading) {
+      setState(() {
+        // update the shimmer painting.
+      });
+    }
+  }
 }
 ```
 
