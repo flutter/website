@@ -503,7 +503,7 @@ lazily, on demand.
       }
     ```
 
-    Next, you'll add a `_buildSuggestions()` function to the
+    Next, you'll add a `ListView.builder` widget to the
     `_RandomWordsState` class. This method builds the
     `ListView` that displays the suggested word pairing.
 
@@ -517,9 +517,9 @@ lazily, on demand.
     This model allows the suggested list to continue growing
     as the user scrolls.
 
- 2. Add a `_buildSuggestions()` function to the `_RandomWordsState` class:
+ 2. Add a `ListView.builder` widget to the `build` method of the `_RandomWordsState` class:
 
-    <?code-excerpt "lib/main.dart (_buildSuggestions)" title indent-by="2"?>
+    <?code-excerpt "lib/main.dart (build)" title indent-by="2"?>
     ```dart
       Widget _buildSuggestions() {
         return ListView.builder(
@@ -553,13 +553,13 @@ lazily, on demand.
      4. If you've reached the end of the available word pairings,
         then generate 10 more and add them to the suggestions list.
 
-    The `_buildSuggestions()` function calls `_buildRow()` once per
+    The `ListView.builder` wigets creates a `ListTile` once per
     word pair. This function displays each new pair in a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
- 3. Add a `_buildRow()` function to `_RandomWordsState`:
+ 3. Add a `ListTile` in the `itemBuilder` body of the `ListView.builder` in `_RandomWordsState`:
 
-    <?code-excerpt "lib/main.dart (_buildRow)" title indent-by="2"?>
+    <?code-excerpt "lib/main.dart (itemBuilder)" title indent-by="2"?>
     ```dart
       Widget _buildRow(WordPair pair) {
         return ListTile(
@@ -571,9 +571,8 @@ lazily, on demand.
       }
     ```
 
- 4. In the `_RandomWordsState` class, update the `build()` method to use
-    `_buildSuggestions()`, rather than directly calling the word
-    generation library.  ([`Scaffold`][]
+ 4. We not have the `_RandomWordsState` class using a `ListView.builder`
+    rather than directly calling the word generation library.  ([`Scaffold`][]
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
