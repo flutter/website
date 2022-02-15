@@ -17,3 +17,4 @@ The following jobs are open:
 * [Dart Writer]({{site.url}}/jobs/writer)
 * [Dart at Google Engineer]({{site.url}}/jobs/dart_google)
 * [User Experience Researcher]({{site.url}}/jobs/uxr)
+* [Flutter & Dart Native Runtime Engineer]({{site.url}}/jobs/native_runtime)
