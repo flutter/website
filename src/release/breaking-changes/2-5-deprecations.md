@@ -240,7 +240,7 @@ Relevant PRs:
 * Deprecated in [#60320]({{site.repo.flutter}}/issues/60320)
 * Removed in [#90294]({{site.repo.flutter}}/issues/90294)
 
-[Flutter Hybrid Composition]: https://github.com/flutter/flutter/wiki/Hybrid-Composition
+[Flutter Hybrid Composition]: {{site.github}}/flutter/flutter/wiki/Hybrid-Composition
 [`AndroidViewController`]: {{site.api}}/flutter/services/AndroidViewController-class.html
 [`TextureAndroidViewController`]: {{site.api}}/flutter/services/TextureAndroidViewController-class.html
 [`SurfaceAndroidViewController`]: {{site.api}}/flutter/services/SurfaceAndroidViewController-class.html
@@ -401,12 +401,13 @@ Relevant PRs:
 [`Platform.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-io/Platform/packageConfig.html
 [`Isolate.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-isolate/Isolate/packageConfig.html
 [`Platform.packageConfig`]: {{site.pub-api}}/platform/3.0.0/platform/Platform/packageConfig.html
-[#47769]: https://github.com/dart-lang/sdk/issues/47769
-[PR #38]: https://github.com/google/platform.dart/pull/38
+[#47769]: {{site.github}}/dart-lang/sdk/issues/47769
+[PR #38]: {{site.github}}/google/platform.dart/pull/38
 [PR #94603]: {{site.repo.flutter}}/pull/94603
 
 ---
 
 ## Timeline
 
-In stable release: TBD
+In stable release: 2.10
+

@@ -101,8 +101,6 @@ In stable release: 2.5
 
 ## References
 
-{% include docs/master-api.md %}
-
 API documentation:
 
 * [`WidgetTester.enterText`][]
@@ -119,8 +117,8 @@ Relevant PRs:
 
 <!-- Master channel link: -->
 
-[`WidgetTester.enterText`]: {{site.master-api}}/flutter/flutter_test/WidgetTester/enterText.html
-[`TestTextInput.enterText`]: {{site.master-api}}/flutter/flutter_test/TestTextInput/enterText.html
+[`WidgetTester.enterText`]: {{site.api}}/flutter/flutter_test/WidgetTester/enterText.html
+[`TestTextInput.enterText`]: {{site.api}}/flutter/flutter_test/TestTextInput/enterText.html
 
 [Issue 79494]: {{site.repo.flutter}}/issues/79494
 [enterText to move the caret to the end]: {{site.repo.flutter}}/pull/79506

@@ -143,8 +143,6 @@ In stable release: 2.5
 
 ## References
 
-{% include docs/master-api.md %}
-
 API documentation:
 
 * [`AnimationSheetBuilder`][]
@@ -155,9 +153,9 @@ Relevant PRs:
 * [Test WidgetTester handling test pointers][]
 
 <!-- Master channel link: -->
-{% include docs/master-api.md %}
+{% include docs/api.md %}
 
-[`AnimationSheetBuilder`]: {{site.master-api}}/flutter/flutter_test/AnimationSheetBuilder-class.html
-[`AnimationSheetBuilder.collate`]: {{site.master-api}}/flutter/flutter_test/AnimationSheetBuilder/collate.html
+[`AnimationSheetBuilder`]: {{site.api}}/flutter/flutter_test/AnimationSheetBuilder-class.html
+[`AnimationSheetBuilder.collate`]: {{site.api}}/flutter/flutter_test/AnimationSheetBuilder/collate.html
 [golden testing]: {{site.repo.flutter}}/wiki/Writing-a-golden-file-test-for-package%3Aflutter
 [Test WidgetTester handling test pointers]: {{site.repo.flutter}}/pull/83337
