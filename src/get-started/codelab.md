@@ -519,7 +519,7 @@ lazily, on demand.
 
  2. Add a `ListView.builder` widget to the `build` method of the `_RandomWordsState` class:
 
-    <?code-excerpt "lib/main.dart (build)" title indent-by="2"?>
+    <?code-excerpt "lib/main.dart (itemBuilder)" title indent-by="2"?>
     ```dart
       Widget _buildSuggestions() {
         return ListView.builder(
@@ -559,7 +559,7 @@ lazily, on demand.
 
  3. Add a `ListTile` in the `itemBuilder` body of the `ListView.builder` in `_RandomWordsState`:
 
-    <?code-excerpt "lib/main.dart (itemBuilder)" title indent-by="2"?>
+    <?code-excerpt "lib/main.dart (listTile)" title indent-by="2"?>
     ```dart
       Widget _buildRow(WordPair pair) {
         return ListTile(
