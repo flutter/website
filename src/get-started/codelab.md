@@ -571,8 +571,9 @@ lazily, on demand.
       }
     ```
 
- 4. We not have the `_RandomWordsState` class using a `ListView.builder`
-    rather than directly calling the word generation library.  ([`Scaffold`][]
+ 4. In the `_RandomWordsState` class, update the `build()` method to use
+    the `ListView.builder`, rather than directly calling the word
+    generation library. ([`Scaffold`][]
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
