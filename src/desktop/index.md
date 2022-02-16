@@ -393,7 +393,7 @@ In addition to that executable, you need the following:
 At this point if desired it would be relatively simple to
 add this folder to a Windows installer such as Inno Setup, WiX, etc.
 
-[deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples?view=vs-2019
+[deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples
 
 ### macOS
 
