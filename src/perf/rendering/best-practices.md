@@ -60,14 +60,24 @@ when designing your app:
     which uses this principle to avoid rebuilding its
     descendents when animating.
 
+Try to use `const` constructors on widgets as much as possible, since
+they allow Flutter to short-circuit most of the rebuild work. To create
+reusable pieces of UIs, prefer using a [`StatelessWidget`][] rather than
+a function.
+
 Also see:
 
 * [Performance considerations][], part of the [`StatefulWidget`][] API doc
+* [Widgets vs helper methods][], a video from the official Flutter YouTube 
+  channel that explaing why widget (especially `const` ones) are better 
+  than functions.
 
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
-[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart
+[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
+[Widgets vs helper methods]: https://www.youtube.com/watch?v=IOyq-eTRhvo
 
 ### Apply effects only when needed
 
