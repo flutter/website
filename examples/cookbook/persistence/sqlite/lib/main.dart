@@ -143,7 +143,7 @@ class Dog {
   final String name;
   final int age;
 
-  Dog({
+  const Dog({
     required this.id,
     required this.name,
     required this.age,
