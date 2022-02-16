@@ -103,7 +103,7 @@ void main() async {
 
   // #docregion fido
   // Create a Dog and add it to the dogs table
-  var fido = Dog(
+  var fido = const Dog(
     id: 0,
     name: 'Fido',
     age: 35,
