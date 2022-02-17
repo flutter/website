@@ -60,7 +60,7 @@ when designing your app:
     which uses this principle to avoid rebuilding its
     descendents when animating.
 
-Try to use `const` constructors on widgets as much as possible, since
+Use `const` constructors on widgets as much as possible, since
 they allow Flutter to short-circuit most of the rebuild work. To create
 reusable pieces of UIs, prefer using a [`StatelessWidget`][] rather than
 a function.
