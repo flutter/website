@@ -353,7 +353,7 @@ see the [Desktop Photo Search][] sample.
 
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
 [msix package]: {{site.pub}}/packages/msix
-[Desktop Photo Search]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
+[Desktop Photo Search]: {{site.github}}/flutter/samples/tree/master/desktop_photo_search
 
 ##### Create a self-signed .pfx certificate for local testing
 
@@ -756,7 +756,7 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
   * [`url_launcher`][]
 
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
-[Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
+[Photo Search app]: {{site.repo.organization}}/samples/tree/master/desktop_photo_search
 [running web app]: {{site.gallery}}
 [flutter-gallery-repo]: {{site.repo.gallery}}
 [README]: {{site.repo.gallery}}#flutter-gallery
