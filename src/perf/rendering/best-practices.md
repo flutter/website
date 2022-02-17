@@ -69,8 +69,8 @@ Also see:
 
 * [Performance considerations][], part of the [`StatefulWidget`][] API doc
 * [Widgets vs helper methods][], a video from the official Flutter YouTube 
-  channel that explaing why widget (especially `const` ones) are better 
-  than functions.
+  channel that explains why widgets (especially widgets with `const` constructors)
+  are more performant than functions.
 
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
