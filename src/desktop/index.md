@@ -11,36 +11,22 @@ can install existing plugins that support the Windows,
 macOS, or Linux platforms, or you can create your own.
 
 {{site.alert.note}}
-  **Windows support is live!**
-  For more information, see
-  [Announcing Flutter for Windows][],
-  a free article on Medium.
+  Windows is fully supported as a development target. For more information, see
+  [Announcing Flutter for Windows][]. 
+
+  macOS and Linux desktop app support is still beta-quality. Snapshots of their
+  support are available on the stable channel, but we recommend that you use the
+  beta channel for access to the latest features and bug fixes on those
+  platforms.
 {{site.alert.end}}
 
 [Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 
-## Beta snapshot for macOS and Linux in stable channel
-
-Windows support is now available on the stable channel!
-To make it easier to try out desktop support for
-macOS and Linux, a snapshot of Flutter's
-desktop beta are also on the stable channel.
-This means that you can easily try desktop support
-without needing to switch to the Flutter beta channel.
-
-{{site.alert.note}}
-  To compile a desktop application, you must build it **on**
-  the targeted platform: build a Windows application on Windows,
-  a macOS application on macOS, and a Linux application on Linux.
-  If you experience a problem that hasn’t yet been reported,
-  please [file an issue][] and include
-  "desktop:windows win/macos/linux"
-  (whichever platform is appropriate) in the title.
-{{site.alert.end}}
-
-[file an issue]: {{site.repo.flutter}}/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
-
 ## Requirements
+
+To compile a desktop application, you must build it **on** the targeted
+platform: build a Windows application on Windows, a macOS application on macOS,
+and a Linux application on Linux.
 
 To create a Flutter application with desktop support,
 you need the following software:
@@ -68,9 +54,9 @@ you need the following software:
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
-* [Visual Studio 2022][] When installing Visual Studio
-  you need the "Desktop development with C++" workload installed
-  for building win, including all of its default components. 
+* [Visual Studio 2022][] When installing Visual Studio select the "Desktop
+  development with C++" workload, including all of its default components, to
+  install the necessary C++ toolchain and Windows SDK header files.
 
 {{site.alert.note}}
   **Visual Studio** is different than Visual Studio _Code_.
@@ -101,7 +87,7 @@ you need the following in addition to the Flutter SDK:
 * [pkg-config][]
 * [liblzma-dev][] This dependency may be required
 
-The easiest way to install the Flutter SDK along with these
+One easy way to install the Flutter SDK along with the necessary
 dependencies is by using [snapd][].
 For more information, see [Installing snapd][].
 
@@ -112,8 +98,8 @@ using the [Snap Store][], or at the command line:
 $ sudo snap install flutter --classic
 ```
 
-If `snapd` is unavailable on the Linux distro you're using,
-you might use the following command:
+Alternatively, if you prefer not to use `snapd`,
+you can use the following command:
 
 ```terminal
 $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
@@ -136,101 +122,74 @@ to create a new project with desktop support.
 
 ### Set up
 
-At the command line, perform the following commands to
-make sure that you have the latest desktop support and that
-it's enabled. If you see "flutter: command not found",
-then make sure that you have installed the
-[Flutter SDK][] and that it’s in your path.
+On Windows, desktop support is enabled on Flutter 2.10 or higher. 
 
-```terminal
-$ flutter config --enable-<platform>-desktop
-```
-
-Where _&lt;platform&gt;_ is `macos`, or `linux`:
+On macOS and Linux, desktop support is disabled by default in the stable
+channel. You can manually enable it with one of these commands, depending on
+which platform you are running:
 
 ```terminal
 $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
 
-To ensure that desktop _is_ enabled,
-list the devices available.
-You should see something like the following
-(you'll see Windows, macOS, or Linux,
-depending on which platform you are running on):
+{{site.alert.note}}
+  You only need to execute
+  `flutter config --enable-<platform>-desktop`
+  once. You can check the status of your configuration at any time by using
+  the command `flutter config` with no arguments.
+{{site.alert.end}}
+
+To test that desktop support is configured, use the `flutter devices` command to
+list the available targets. In addition to any mobile or web devices, you should
+see a row for the operating system you're running on, for example (on Windows):
 
 ``` terminal
-$ flutter devices
+C:\> flutter devices
 1 connected device:
 
-Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.18362.1082]
-macOS (desktop)   • macos   • darwin-x64  • macOS 11.2 20D64 darwin-x64
-Linux (desktop)   • linux   • linux-x64   • Linux
+Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.22557.1]
 ```
 
-You might also run `flutter doctor` to see if there are
-any unresolved issues. It should look something like
-the following on Windows:
+You might also run `flutter doctor` to see if there are any unresolved issues.
+You should see a checkmark for each successfully configured area. It should look
+something like the following on Windows, with an entry for "develop for Windows":
 
 ```terminal
-PS C:\> flutter doctor
+C:\> flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[√] Flutter (Channel stable, 2.0.6, on Microsoft Windows [Version 10.0.19042.804], locale en-AU)
-[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
-[√] Chrome - develop for the web
-[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.9.5)
-[√] Android Studio (version 4.1.0)
-[√] VS Code (version 1.56.2)
-[√] Connected device (3 available)
-
-! No issues found!
-```
-
-On macOS, you might see something like the following:
-
-```terminal
-$ flutter doctor
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 2.0.6, on macOS 11.3.1 20E241 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
-[✓] Xcode - develop for iOS and macOS
+[✓] Flutter (Channel stable, 2.10.1, on Microsoft Windows [Version 10.0.22557.1], locale en-US)
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 4.0)
-[✓] VS Code (version 1.56.2)
+[✓] Visual Studio - develop for Windows (Visual Studio Community 2022 17.0.5)
+[✓] VS Code (version 1.64.2)
 [✓] Connected device (3 available)
+[✓] HTTP Host Availability
 
 • No issues found!
 ```
 
-On Linux, you might see something like the following:
+On macOS, look for a line like this:
 
 ```terminal
-$ flutter doctor 
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel beta, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
-[✓] Chrome - develop for the web
-[✓] Linux toolchain - develop for Linux desktop
-[✓] Android Studio
-[✓] Connected device (2 available)
+[✓] Xcode - develop for iOS and macOS
 ```
 
-If `flutter doctor` finds problems for a platform that
-you don't want to develop for, you can ignore those warnings.
-You don't have to install Android Studio and the Android SDK,
-for example, if you're writing a Linux desktop app.
+On Linux, look for a line like this:
 
-**After enabling desktop support, restart your IDE.**
-You should now see **windows (desktop)**,
-**macOS (desktop)**, or **linux (desktop)**
-in the device pulldown.
+```terminal
+[✓] Linux toolchain - develop for Linux desktop
+```
 
-{{site.alert.note}}
-  You only need to execute
-  `flutter config --enable-<platform>-desktop`
-  once.  You can always check the status of your configuration using
-  the no-argument `flutter config` command.
-{{site.alert.end}}
+If `flutter doctor` finds problems or missing components for a platform that you
+don't want to develop for, you can ignore those warnings. Or you can disable the
+platform altogether using the `flutter config` command, for example:
+
+```terminal
+$ flutter config --no-enable-ios
+```
+
+After enabling desktop support, restart your IDE so that it can detect the new
+device.
 
 ### Create and run
 
@@ -272,7 +231,7 @@ enter one of the following commands from the top
 of the package:
 
 ```terminal
-PS C:\> flutter run -d windows
+C:\> flutter run -d windows
 $ flutter run -d macos
 $ flutter run -d linux
 ```
@@ -294,11 +253,6 @@ $ flutter build linux
 ```
 
 ## Distribution
-
-**We don't recommend releasing a desktop
-application until desktop support is stable,**
-however, here is some information that you
-might still find useful.
 
 ### Windows
 
@@ -338,11 +292,11 @@ cmake_policy(SET CMP0063 NEW)
 
 #### MSIX packaging
 
-[MSIX][], Microsoft Windows' application package format,
-provides a modern packaging experience to all Windows apps.
+[MSIX][], the new Windows application package format,
+provides a modern packaging format and installer.
 This format can either be used to ship applications
-to Microsoft Windows' Apps store, or you can
-distribute application installers directly.
+to the Microsoft Store on Windows, or you can
+distribute app installers directly.
 
 The easiest way to create an MSIX distribution
 for a Flutter project is to use the
@@ -417,8 +371,7 @@ In addition to that executable, you need the following:
     * `vcruntime140.dll`
     * `vcruntime140_1.dll`
   
-  These 3 files can be found in C:\Windows\System32 if installed on your PC.
-  Place the DLL files in the directory next to the executable
+    Place the DLL files in the directory next to the executable
   and the other DLLs, and bundle them together in a zip file.
   The resulting structure looks something like this:
   
@@ -440,7 +393,7 @@ In addition to that executable, you need the following:
 At this point if desired it would be relatively simple to
 add this folder to a Windows installer such as Inno Setup, WiX, etc.
 
-[deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples?view=vs-2019
+[deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples
 
 ### macOS
 
