@@ -77,7 +77,7 @@ Also see:
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
-[Widgets vs helper methods]: https://www.youtube.com/watch?v=IOyq-eTRhvo
+[Widgets vs helper methods]: {{site.youtube}}/watch?v=IOyq-eTRhvo
 
 ### Apply effects only when needed
 
