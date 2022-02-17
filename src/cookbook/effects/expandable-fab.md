@@ -202,7 +202,9 @@ class ActionButton extends StatelessWidget {
      color: theme.accentColor,
      elevation: 4.0,
      child: IconTheme.merge(
-       data: theme.accentIconTheme,
+       data: IconThemeData(
+         color: theme.colorScheme.onSecondary,
+       ),
        child: IconButton(
          onPressed: onPressed,
          icon: icon,
@@ -682,10 +684,12 @@ class ActionButton extends StatelessWidget {
     return Material(
       shape: const CircleBorder(),
       clipBehavior: Clip.antiAlias,
-      color: theme.accentColor,
+      color: theme.colorScheme.secondary,
       elevation: 4.0,
       child: IconTheme.merge(
-        data: theme.accentIconTheme,
+        data: IconThemeData(
+          color: theme.colorScheme.onSecondary,
+        ),
         child: IconButton(
           onPressed: onPressed,
           icon: icon,
