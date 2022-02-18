@@ -5,9 +5,9 @@ description: AnimationSheetBuilder.display and sheetSize are deprecated in favor
 
 ## Summary
 
-AnimationSheetBuilder.display and sheetSize are
-deprecated, and should be replaced by
-AnimationSheetBuilder.collate.
+The `AnimationSheetBuilder.display` and `sheetSize`
+methods are deprecated, and should be replaced with
+`AnimationSheetBuilder.collate`.
 
 ## Context
 
@@ -19,9 +19,9 @@ of composing involves `display` to list the images
 into a table-like widget, adjusting the testing
 surface with `sheetSize`, and capturing the table
 widget for comparison. A new way, `collate`, has
-been added that directly put the frames together
-into an image for comparison, which requires a less
-boilerplate and outputs a smaller image without
+been added that directly puts the frames together
+into an image for comparison, which requires less
+boilerplate code and outputs a smaller image without
 compromise in quality. APIs for the old way are thus
 deprecated.
 
@@ -37,8 +37,8 @@ pixel, making the image 9 times as large as necessary
 The following changes have been made to the
 [`AnimationSheetBuilder`][] class:
 
-* 'display' is deprecated and shouldn't be used.
-* 'sheetSize' is deprecated and shouldn't be used.
+* 'display' is deprecated and shouldn't be used
+* 'sheetSize' is deprecated and shouldn't be used
 
 ## Migration guide
 
@@ -54,22 +54,27 @@ row in the output image. It can be manually counted,
 or calculated as follows:
 
 * Find the width of frame, specified when constructing
-`AnimationSheetBuilder`. For example, in the following
-snippet it's 80:
+  `AnimationSheetBuilder`. For example, in the following
+  snippet it's 80:
+
 <!-- skip -->
 ```dart
 final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(frameSize: const Size(80, 30));
 ```
-* Find the width of surface size, specified during
-`sheetSize`, which defaults to 800. For example, in the
-following snippet it's 600:
+
+* Find the width of surface size, specified when
+  setting the surface size; the default is 800.
+  For example, in the following snippet it's 600:
+
 <!-- skip -->
 ```dart
 tester.binding.setSurfaceSize(animationSheet.sheetSize(600));
 ```
+
 * The frames per row should be the result of the two
-numbers divided, rounded down. For example, 
-600 / 80 = 7 (rounded down), therefore
+  numbers divided, rounded down. For example, 
+  600 / 80 = 7 (rounded down), therefore
+
 <!-- skip -->
 ```dart
 animationSheet.collate(7)
@@ -78,6 +83,7 @@ animationSheet.collate(7)
 ### Migrate code
 
 Code before migration:
+
 <!-- skip -->
 ```dart
   testWidgets('Indeterminate CircularProgressIndicator', (WidgetTester tester) async {
@@ -131,7 +137,7 @@ Code after migration (`cellsPerRow` is 20, derived from 800 / 40):
   }, skip: isBrowser); // https://github.com/flutter/flutter/issues/42767
 ```
 
-It's normal that related golden test reference images
+It's expected that related golden test reference images
 are invalidated, which should all be updated. The new
 images should be identical to the old ones except
 1/3 in scale.
@@ -151,9 +157,6 @@ API documentation:
 Relevant PRs:
 
 * [Test WidgetTester handling test pointers][]
-
-<!-- Master channel link: -->
-{% include docs/api.md %}
 
 [`AnimationSheetBuilder`]: {{site.api}}/flutter/flutter_test/AnimationSheetBuilder-class.html
 [`AnimationSheetBuilder.collate`]: {{site.api}}/flutter/flutter_test/AnimationSheetBuilder/collate.html

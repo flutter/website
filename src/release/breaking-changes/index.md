@@ -12,7 +12,7 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-Nothing new yet!
+[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
 ### Released in Flutter 2.10
 
@@ -45,7 +45,6 @@ Nothing new yet!
 [Introducing package:flutter_lints]: {{site.url}}/release/breaking-changes/flutter-lints-package
 [Replace AnimationSheetBuilder.display with collate]: {{site.url}}/release/breaking-changes/animation-sheet-builder-display
 [ThemeData's accent properties have been deprecated]: {{site.url}}/release/breaking-changes/theme-data-accent-properties
-[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
 [Transition of platform channel test interfaces to flutter_test package]: {{site.url}}/release/breaking-changes/mock-platform-channels
 [Using HTML slots to render platform views in the web]: {{site.url}}/release/breaking-changes/platform-views-using-html-slots-web
