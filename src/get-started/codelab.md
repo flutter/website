@@ -554,7 +554,7 @@ lazily, on demand.
      4. If you've reached the end of the available word pairings,
         then generate 10 more and add them to the suggestions list.
 
-    The `ListView.builder` wigets creates a `ListTile` once per
+    The `ListView.builder` widget creates a `ListTile` once per
     word pair. This function displays each new pair in a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
