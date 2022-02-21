@@ -1,6 +1,5 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 void main() {
   runApp(
@@ -266,14 +265,12 @@ class ActionButton extends StatelessWidget {
     return Material(
       shape: const CircleBorder(),
       clipBehavior: Clip.antiAlias,
-      color: theme.accentColor,
+      color: theme.colorScheme.secondary,
       elevation: 4.0,
-      child: IconTheme.merge(
-        data: theme.accentIconTheme,
-        child: IconButton(
-          onPressed: onPressed,
-          icon: icon,
-        ),
+      child: IconButton(
+        onPressed: onPressed,
+        icon: icon,
+        color: theme.colorScheme.secondary,
       ),
     );
   }
