@@ -105,7 +105,7 @@ class ParallaxFlowDelegate extends FlowDelegate {
     required this.scrollable,
     required this.listItemContext,
     required this.backgroundImageKey,
-  }) : super(repaint: scrollable.position);
+  });
 
   final ScrollableState scrollable;
   final BuildContext listItemContext;
