@@ -353,28 +353,18 @@ class LocationListItem extends StatelessWidget {
 }
 ```
 
-<?code-excerpt "lib/excerpt5.dart (GlobalKey)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
+<?code-excerpt "lib/excerpt5.dart (ParallaxFlowDelegateGK)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
 ```dart
-@immutable
-class LocationListItem extends StatelessWidget {
-  final GlobalKey _backgroundImageKey = GlobalKey();
+class ParallaxFlowDelegate extends FlowDelegate {
+  ParallaxFlowDelegate({
+    required this.scrollable,
+    required this.listItemContext,
+    required this.backgroundImageKey,
+  }) : super(repaint: scrollable.position);
 
-  Widget _buildParallaxBackground(BuildContext context) {
-    return Flow(
-      delegate: ParallaxFlowDelegate(
-        scrollable: Scrollable.of(context)!,
-        listItemContext: context,
-        backgroundImageKey: _backgroundImageKey,
-      ),
-      children: [
-        Image.network(
-          imageUrl,
-          key: _backgroundImageKey,
-          fit: BoxFit.cover,
-        ),
-      ],
-    );
-  }
+  final ScrollableState scrollable;
+  final BuildContext listItemContext;
+  final GlobalKey backgroundImageKey;
 }
 ```
 
