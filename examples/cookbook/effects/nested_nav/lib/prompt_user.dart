@@ -90,6 +90,7 @@ class SetupFlowState extends State<SetupFlow> {
     _navigatorKey.currentState!.pushNamed(routeDeviceSetupFinishedPage);
   }
 
+  // #docregion PromptUser
   Future<void> _onExitPressed() async {
     final isConfirmed = await _isExitDesired();
 
@@ -135,47 +136,8 @@ class SetupFlowState extends State<SetupFlow> {
       onWillPop: _isExitDesired,
       child: Scaffold(
         appBar: _buildFlowAppBar(),
-        body: Navigator(
-          key: _navigatorKey,
-          initialRoute: widget.setupPageRoute,
-          onGenerateRoute: _onGenerateRoute,
-        ),
+        body: const SizedBox(),
       ),
-    );
-  }
-
-  Route _onGenerateRoute(RouteSettings settings) {
-    late Widget page;
-    switch (settings.name) {
-      case routeDeviceSetupStartPage:
-        page = WaitingPage(
-          message: 'Searching for nearby bulb...',
-          onWaitComplete: _onDiscoveryComplete,
-        );
-        break;
-      case routeDeviceSetupSelectDevicePage:
-        page = SelectDevicePage(
-          onDeviceSelected: _onDeviceSelected,
-        );
-        break;
-      case routeDeviceSetupConnectingPage:
-        page = WaitingPage(
-          message: 'Connecting...',
-          onWaitComplete: _onConnectionEstablished,
-        );
-        break;
-      case routeDeviceSetupFinishedPage:
-        page = FinishedPage(
-          onFinishPressed: _exitSetup,
-        );
-        break;
-    }
-
-    return MaterialPageRoute<dynamic>(
-      builder: (context) {
-        return page;
-      },
-      settings: settings,
     );
   }
 
@@ -188,6 +150,7 @@ class SetupFlowState extends State<SetupFlow> {
       title: const Text('Bulb Setup'),
     );
   }
+  // #enddocregion PromptUser
 }
 
 class SelectDevicePage extends StatelessWidget {

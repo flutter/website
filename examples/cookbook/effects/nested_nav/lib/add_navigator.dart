@@ -71,12 +71,8 @@ class SetupFlow extends StatefulWidget {
 }
 
 class SetupFlowState extends State<SetupFlow> {
+// #docregion AddNavigator
   final _navigatorKey = GlobalKey<NavigatorState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   void _onDiscoveryComplete() {
     _navigatorKey.currentState!.pushNamed(routeDeviceSetupSelectDevicePage);
@@ -88,45 +84,6 @@ class SetupFlowState extends State<SetupFlow> {
 
   void _onConnectionEstablished() {
     _navigatorKey.currentState!.pushNamed(routeDeviceSetupFinishedPage);
-  }
-
-  Future<void> _onExitPressed() async {
-    final isConfirmed = await _isExitDesired();
-
-    if (isConfirmed && mounted) {
-      _exitSetup();
-    }
-  }
-
-  Future<bool> _isExitDesired() async {
-    return await showDialog<bool>(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                title: const Text('Are you sure?'),
-                content: const Text(
-                    'If you exit device setup, your progress will be lost.'),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(true);
-                    },
-                    child: const Text('Leave'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(false);
-                    },
-                    child: const Text('Stay'),
-                  ),
-                ],
-              );
-            }) ??
-        false;
-  }
-
-  void _exitSetup() {
-    Navigator.of(context).pop();
   }
 
   @override
@@ -177,6 +134,51 @@ class SetupFlowState extends State<SetupFlow> {
       },
       settings: settings,
     );
+  }
+// #enddocregion AddNavigator
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Future<void> _onExitPressed() async {
+    final isConfirmed = await _isExitDesired();
+
+    if (isConfirmed && mounted) {
+      _exitSetup();
+    }
+  }
+
+  Future<bool> _isExitDesired() async {
+    return await showDialog<bool>(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: const Text('Are you sure?'),
+                content: const Text(
+                    'If you exit device setup, your progress will be lost.'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(true);
+                    },
+                    child: const Text('Leave'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                    },
+                    child: const Text('Stay'),
+                  ),
+                ],
+              );
+            }) ??
+        false;
+  }
+
+  void _exitSetup() {
+    Navigator.of(context).pop();
   }
 
   PreferredSizeWidget _buildFlowAppBar() {
