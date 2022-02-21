@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/nested_nav"?>
+
 Apps accumulate dozens and then hundreds of routes over time.
 Some of your routes make sense as top-level (global) routes.
 For example, "/", "profile", "contact", "social_feed" are all
@@ -391,12 +393,10 @@ Run the app:
 * Click the **Finished** button to return to the
   first screen.
 
-<!--skip-->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
-// Copyright 2020, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
+<!-- Start DartPad -->
 
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 const routeHome = '/';
