@@ -18,7 +18,7 @@ class SetupFlowState extends State<SetupFlow> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildFlowAppBar(),
-      body: SizedBox(),
+      body: const SizedBox(),
     );
   }
 
