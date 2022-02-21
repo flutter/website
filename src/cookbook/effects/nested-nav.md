@@ -156,7 +156,7 @@ and include the desired `AppBar` widget.
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: _buildFlowAppBar(),
-    body: SizedBox(),
+    body: const SizedBox(),
   );
 }
 
