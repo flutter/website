@@ -1,14 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-void main() {
-  runApp(
-    const MaterialApp(
-      home: ExampleExpandableFab(),
-      debugShowCheckedModeBanner: false,
-    ),
-  );
-}
+import 'package:flutter/material.dart';
 
 @immutable
 class ExampleExpandableFab extends StatelessWidget {
@@ -46,7 +38,6 @@ class ExampleExpandableFab extends StatelessWidget {
           return FakeItem(isBig: index.isOdd);
         },
       ),
-      // #docregion FloatingActionButton
       floatingActionButton: ExpandableFab(
         distance: 112.0,
         children: [
@@ -64,7 +55,6 @@ class ExampleExpandableFab extends StatelessWidget {
           ),
         ],
       ),
-      // #enddocregion FloatingActionButton
     );
   }
 }
@@ -86,8 +76,45 @@ class ExpandableFab extends StatefulWidget {
   _ExpandableFabState createState() => _ExpandableFabState();
 }
 
+// #docregion ExpandableFabState4
 class _ExpandableFabState extends State<ExpandableFab>
     with SingleTickerProviderStateMixin {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox.expand(
+      child: Stack(
+        alignment: Alignment.bottomRight,
+        clipBehavior: Clip.none,
+        children: [
+          _buildTapToCloseFab(),
+          ..._buildExpandingActionButtons(),
+          _buildTapToOpenFab(),
+        ],
+      ),
+    );
+  }
+
+  List<Widget> _buildExpandingActionButtons() {
+    final children = <Widget>[];
+    final count = widget.children.length;
+    final step = 90.0 / (count - 1);
+    for (var i = 0, angleInDegrees = 0.0;
+        i < count;
+        i++, angleInDegrees += step) {
+      children.add(
+        _ExpandingActionButton(
+          directionInDegrees: angleInDegrees,
+          maxDistance: widget.distance,
+          progress: _expandAnimation,
+          child: widget.children[i],
+        ),
+      );
+    }
+    return children;
+  }
+// code-excerpt-closing-bracket
+// #enddocregion ExpandableFabState4
+
   late final AnimationController _controller;
   late final Animation<double> _expandAnimation;
   bool _open = false;
@@ -125,21 +152,6 @@ class _ExpandableFabState extends State<ExpandableFab>
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox.expand(
-      child: Stack(
-        alignment: Alignment.bottomRight,
-        clipBehavior: Clip.none,
-        children: [
-          _buildTapToCloseFab(),
-          ..._buildExpandingActionButtons(),
-          _buildTapToOpenFab(),
-        ],
-      ),
-    );
-  }
-
   Widget _buildTapToCloseFab() {
     return SizedBox(
       width: 56.0,
@@ -162,25 +174,6 @@ class _ExpandableFabState extends State<ExpandableFab>
         ),
       ),
     );
-  }
-
-  List<Widget> _buildExpandingActionButtons() {
-    final children = <Widget>[];
-    final count = widget.children.length;
-    final step = 90.0 / (count - 1);
-    for (var i = 0, angleInDegrees = 0.0;
-        i < count;
-        i++, angleInDegrees += step) {
-      children.add(
-        _ExpandingActionButton(
-          directionInDegrees: angleInDegrees,
-          maxDistance: widget.distance,
-          progress: _expandAnimation,
-          child: widget.children[i],
-        ),
-      );
-    }
-    return children;
   }
 
   Widget _buildTapToOpenFab() {
@@ -250,7 +243,6 @@ class _ExpandingActionButton extends StatelessWidget {
   }
 }
 
-// #docregion ActionButton
 @immutable
 class ActionButton extends StatelessWidget {
   const ActionButton({
@@ -270,15 +262,16 @@ class ActionButton extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       color: theme.colorScheme.secondary,
       elevation: 4.0,
-      child: IconButton(
-        onPressed: onPressed,
-        icon: icon,
-        color: theme.colorScheme.secondary,
+      child: IconTheme.merge(
+        data: IconThemeData(color: theme.colorScheme.secondary),
+        child: IconButton(
+          onPressed: onPressed,
+          icon: icon,
+        ),
       ),
     );
   }
 }
-// #enddocregion ActionButton
 
 @immutable
 class FakeItem extends StatelessWidget {

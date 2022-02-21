@@ -1,14 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-void main() {
-  runApp(
-    const MaterialApp(
-      home: ExampleExpandableFab(),
-      debugShowCheckedModeBanner: false,
-    ),
-  );
-}
+import 'package:flutter/material.dart';
 
 @immutable
 class ExampleExpandableFab extends StatelessWidget {
@@ -46,7 +38,6 @@ class ExampleExpandableFab extends StatelessWidget {
           return FakeItem(isBig: index.isOdd);
         },
       ),
-      // #docregion FloatingActionButton
       floatingActionButton: ExpandableFab(
         distance: 112.0,
         children: [
@@ -64,7 +55,6 @@ class ExampleExpandableFab extends StatelessWidget {
           ),
         ],
       ),
-      // #enddocregion FloatingActionButton
     );
   }
 }
@@ -250,7 +240,6 @@ class _ExpandingActionButton extends StatelessWidget {
   }
 }
 
-// #docregion ActionButton
 @immutable
 class ActionButton extends StatelessWidget {
   const ActionButton({
@@ -270,15 +259,16 @@ class ActionButton extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       color: theme.colorScheme.secondary,
       elevation: 4.0,
-      child: IconButton(
-        onPressed: onPressed,
-        icon: icon,
-        color: theme.colorScheme.secondary,
+      child: IconTheme.merge(
+        data: IconThemeData(color: theme.colorScheme.secondary),
+        child: IconButton(
+          onPressed: onPressed,
+          icon: icon,
+        ),
       ),
     );
   }
 }
-// #enddocregion ActionButton
 
 @immutable
 class FakeItem extends StatelessWidget {
