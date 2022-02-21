@@ -7,35 +7,33 @@ description: Deprecated useDeleteButtonTooltip of chips that have a delete butto
 
 Using `useDeleteButtonTooltip` of any chip that has a delete button gives a
 deprecation warning, or no longer exists when referenced. This includes the
-`Chip`, `InputChip` and `RawChip` widget.
+`Chip`, `InputChip`, and `RawChip` widgets.
 
 ## Context
 
-`useDeleteButtonTooltip` of `Chip`, `InputChip` and `RawChip` widget was
+The `useDeleteButtonTooltip` of `Chip`, `InputChip`, and `RawChip` widgets is
 deprecated in favor of `deleteButtonTooltipMessage`, as the latter can be used
 to disable the tooltip of the chip's delete button.
 
 ## Description of change
 
-For displaying a tooltip for its delete button the chip widgets use the
-`Tooltip` widget, which has the ability to disable itself when an empty string
-is provided as the message to show on the tooltip window.
+The `deleteButtonTooltipMessage` property provides a message to the
+tooltip on the delete button of the chip widgets.
+Subsequently, a change was made such that providing an empty string to this
+property disables the tooltip.
 
-This means that users can disable delete button tooltip of chips by providing an
-empty string to `deleteButtonTooltipMessage`.
-
-To avoid redundancy of the API, this change deprecated `useDeleteButtonTooltip`
-that was specifically introduced for this exact functionality. A flutter fix is
-available to help users migrate existing code from `useDeleteButtonTooltip` to
-`deleteButtonTooltipMessage`, depending on whether they explicity disabled the
-tooltip.
+To avoid redundancy of the API, this change deprecated `useDeleteButtonTooltip`,
+which was introduced for this exact functionality. A [Flutter fix][] is
+available to help you migrate existing code from `useDeleteButtonTooltip` to
+`deleteButtonTooltipMessage`, if you explicity disabled the tooltip.
 
 ## Migration guide
 
-By default, the tooltip of the delete button is always enabled. If you want to
-explicitly disable the tooltip, provide an empty string to
-`deleteButtonTooltipMessage`. The following code snippets show the migration
-changes, which are applicable for `Chip`, `InputChip` and `RawChip` widget.
+By default, the tooltip of the delete button is always enabled.
+To explicitly disable the tooltip, provide an empty string to the
+`deleteButtonTooltipMessage` property.
+The following code snippets show the migration changes, which are applicable for
+`Chip`, `InputChip`, and `RawChip` widgets:
 
 Code before migration:
 
@@ -94,3 +92,4 @@ Relevant PRs:
 [`RawChip`]: {{site.master-api}}/flutter/material/RawChip-class.html
 
 [Deprecate `useDeleteButtonTooltip` for Chips]: {{site.repo.flutter}}/pull/96174
+[Flutter fix]: {{site.url}}/development/tools/flutter-fix
