@@ -161,8 +161,6 @@ In stable release: 2.5
 
 ## References
 
-{% include docs/master-api.md %}
-
 API documentation:
 * [`TestDefaultBinaryMessenger`][]
 * [`TestDefaultBinaryMessengerBinding`][]

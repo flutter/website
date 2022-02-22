@@ -12,16 +12,19 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Required Kotlin version][]
+[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
+
+### Released in Flutter 2.10
+
 * [Deprecated API removed after v2.5][]
 * [Raw images on Web uses correct origin and colors][]
+* [Required Kotlin version][]
 * [Scribble Text Input Client][]
 
-[Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 [Raw images on Web uses correct origin and colors]: {{site.url}}/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors
+[Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Scribble Text Input Client]: {{site.url}}/release/breaking-changes/scribble-text-input-client
-[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
 ### Released in Flutter 2.5
 
@@ -42,6 +45,7 @@ release, and listed in alphabetical order:
 [Introducing package:flutter_lints]: {{site.url}}/release/breaking-changes/flutter-lints-package
 [Replace AnimationSheetBuilder.display with collate]: {{site.url}}/release/breaking-changes/animation-sheet-builder-display
 [ThemeData's accent properties have been deprecated]: {{site.url}}/release/breaking-changes/theme-data-accent-properties
+
 [Transition of platform channel test interfaces to flutter_test package]: {{site.url}}/release/breaking-changes/mock-platform-channels
 [Using HTML slots to render platform views in the web]: {{site.url}}/release/breaking-changes/platform-views-using-html-slots-web
 
