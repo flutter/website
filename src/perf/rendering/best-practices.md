@@ -77,7 +77,7 @@ Also see:
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
-[Widgets vs helper methods]: {{site.youtube}}/watch?v=IOyq-eTRhvo
+[Widgets vs helper methods]: https://youtube.com/watch?v=IOyq-eTRhvo
 
 ### Apply effects only when needed
 
@@ -187,7 +187,7 @@ If you are wondering why 60fps leads to a smooth visual experience,
 see the video [Why 60fps?][]
 
 [profile mode]: {{site.url}}/testing/build-modes#profile
-[Why 60fps?]: {{site.youtube}}/watch?v=CaMTIgxCSqU
+[Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
 
 ## Pitfalls
 
