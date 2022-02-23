@@ -74,8 +74,8 @@ Relevant PRs:
 * [Deprecate `toggleableActiveColor`][].
 
 <!-- Stable channel link: -->
-[`ThemeData.toggleableActiveColor`]: {{site.master-api}}/flutter/material/ThemeData/toggleableActiveColor.html
-[`ColorScheme.secondary`]: {{site.master-api}}/flutter/material/ColorScheme/secondary.html
+[`ThemeData.toggleableActiveColor`]: {{site.api}}/flutter/material/ThemeData/toggleableActiveColor.html
+[`ColorScheme.secondary`]: {{site.api}}/flutter/material/ColorScheme/secondary.html
 
 [`Switch` widget color doesn't use `ColorScheme`]: {{site.repo.flutter}}/issues/93709
 
