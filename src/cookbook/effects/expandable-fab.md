@@ -205,7 +205,7 @@ class ActionButton extends StatelessWidget {
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
-        color: theme.colorScheme.secondary,
+        color: theme.colorScheme.onSecondary,
       ),
     );
   }
@@ -690,7 +690,7 @@ class ActionButton extends StatelessWidget {
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
-        color: theme.colorScheme.secondary,
+        color: theme.colorScheme.onSecondary,
       ),
     );
   }
