@@ -78,18 +78,24 @@ class MyCustomTextInputClient implements TextInputClient {
 ## Timeline
 
 Landed in version: 2.9.0-1.0.pre<br>
-In stable release: not yet
+In stable release: 2.10
 
 ## References
 
 API documentation:
 
-* [`TextInputClient`](https://master-api.flutter.dev/flutter/services/TextInputClient-class.html)
+* [`TextInputClient`]({{site.api}}/flutter/services/TextInputClient-class.html)
 
 Relevant issues:
 
-* [Issue 61278](https://github.com/flutter/flutter/issues/61278)
+* [Issue 61278]({{site.github}}/flutter/flutter/issues/61278)
 
 Relevant PRs:
 
-* [Support Scribble Handwriting](https://github.com/flutter/flutter/pull/75472)
+* [24224: Support Scribble Handwriting (engine)][]
+* [75472: Support Scribble Handwriting][]
+* [97437: Re-land Support Scribble Handwriting][]
+
+[24224: Support Scribble Handwriting (engine)]: {{site.github}}/flutter/engine/pull/24224
+[97437: Re-land Support Scribble Handwriting]: {{site.github}}/flutter/flutter/pull/97437
+[75472: Support Scribble Handwriting]: ({{site.github}}/flutter/flutter/pull/75472)

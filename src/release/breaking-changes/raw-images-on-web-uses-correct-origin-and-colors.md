@@ -29,11 +29,11 @@ As a result, if the app or library uses
 `ui.ImageDescriptor.raw` or `ui.decodeImageFromPixels`,
 it had to feed pixels from bottom to top and swap their red and blue channels
 (for example, with the `ui.PixelFormat.rgba8888` format,
-the first 4 bytes of the data were considered the blue, green, red, and alpha channels
-of the first pixel instead.)
+the first 4 bytes of the data were considered the blue, green,
+red, and alpha channels of the first pixel instead.)
 
-This bug has been fixed by [engine#29593][].
-But apps and libraries will have to correct how their data are generated.
+This bug has been fixed by [engine#29593][],
+but apps and libraries have to correct how their data are generated.
 
 ## Description of change
 
@@ -150,7 +150,7 @@ Future<ui.Image> parseMyImage(Uint8List image, int width, int height) async {
 ## Timeline
 
 Landed in version: 2.9.0-0.0.pre<br>
-In stable release: not yet
+In stable release: 2.10
 
 ## References
 
