@@ -175,8 +175,8 @@ even when the close button is visible.
 
 Each of the buttons that expand from the `ExpandableFab`
 have the same design. They’re  blue circles with white icons.
-More precisely, the button background color is the theme’s
-accent color, and the icon color is the theme’s accent icon theme color. 
+More precisely, the button background color is the `ColorScheme.secondary`
+color, and the icon color is `ColorScheme.onSecondary`.
 
 Define a new stateless widget called `ActionButton` to display
 these round buttons.
@@ -205,7 +205,7 @@ class ActionButton extends StatelessWidget {
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
-        color: theme.colorScheme.secondary,
+        color: theme.colorScheme.onSecondary,
       ),
     );
   }
@@ -690,7 +690,7 @@ class ActionButton extends StatelessWidget {
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
-        color: theme.colorScheme.secondary,
+        color: theme.colorScheme.onSecondary,
       ),
     );
   }
