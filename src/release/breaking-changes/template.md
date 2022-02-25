@@ -7,7 +7,7 @@ description: Brief description similar to the "context" section below. The descr
   PLEASE READ THESE GENERAL INSTRUCTIONS:
   * All lines of text should be 80 chars OR LESS.
     The writers strongly prefer semantic line breaks:
-    https://github.com/dart-lang/site-shared/blob/master/doc/writing-for-dart-and-flutter-websites.md#semantic-line-breaks
+    https://github.com/dart-lang/site-shared/blob/main/doc/writing-for-dart-and-flutter-websites.md#semantic-line-breaks
   * DON'T SUBMIT a PR weeks and weeks in advance.
     Doing this causes it to get stanky in the website
     repo and usually develops conflicts in the index file.

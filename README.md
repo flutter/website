@@ -286,14 +286,14 @@ For more information see [Code excerpts][] .
 
 The [site-shared](https://github.com/dart-lang/site-shared) repo 
 contains infrastructure shared by most of our Dart and Flutter websites. 
-Some of this README is in the [doc](https://github.com/dart-lang/site-shared/tree/master/doc)
+Some of this README is in the [doc](https://github.com/dart-lang/site-shared/tree/main/doc)
 directory in the site-shared repo.
 
 For more information on using and writing for this repo, refer to the following docs:
 
-* [Infrastructure](https://github.com/dart-lang/site-shared/blob/master/doc/infrastructure.md)
-* [Markdown](https://github.com/dart-lang/site-shared/blob/master/doc/markdown.md)
-* [Examples](https://github.com/dart-lang/site-shared/blob/master/doc/examples.md)
+* [Infrastructure](https://github.com/dart-lang/site-shared/blob/main/doc/infrastructure.md)
+* [Markdown](https://github.com/dart-lang/site-shared/blob/main/doc/markdown.md)
+* [Examples](https://github.com/dart-lang/site-shared/blob/main/doc/examples.md)
 * [Code excerpts][]
 
 Also check out the site-shared [wiki](https://github.com/dart-lang/site-shared/wiki):
@@ -311,10 +311,10 @@ Also check out the site-shared [wiki](https://github.com/dart-lang/site-shared/w
 [`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
 [forking]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
 [Flutter install]: https://docs.flutter.dev/get-started/install
-[Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1
+[Flutter logo]: https://github.com/dart-lang/site-shared/blob/main/src/_assets/image/flutter/icon/64.png?raw=1
 [Firebase]: https://firebase.google.com/
 [Google Developer Documentation Style Guidelines]: https://developers.google.com/style
 [DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
 [`Makefile`]: https://github.com/flutter/website/blob/main/Makefile
 [Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amaster
-[Code excerpts]: https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md
+[Code excerpts]: https://github.com/dart-lang/site-shared/blob/main/doc/code-excerpts.md

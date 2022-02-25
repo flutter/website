@@ -7,4 +7,4 @@ appear in some pages none-the-less. What needs to be done is the following:
   integrated as proper code excerpts. See [Code excerpts][] for details.
 - Each app/sample should be tested, at least with a smoke test.
 
-[Code excerpts]: https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md
+[Code excerpts]: https://github.com/dart-lang/site-shared/blob/main/doc/code-excerpts.md
