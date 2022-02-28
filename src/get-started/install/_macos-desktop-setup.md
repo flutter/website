@@ -38,4 +38,4 @@ $ flutter config --enable-macos-desktop
 
 For more information, see [Desktop support for Flutter][]
 
-[Desktop support for Flutter]: {{site.url}}/desktop
+[Desktop support for Flutter]: {{site.url}}/desktop#msix-packaging
