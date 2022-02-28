@@ -42,12 +42,12 @@ that's OK, skip ahead to the [next step: Test drive][].
 
 Android Studio offers a complete, integrated IDE experience for Flutter.
 
-* [Android Studio][], version 3.0 or later
+* [Android Studio][], version 2020.3.1 (Arctic Fox) or later
 
 Alternatively, you can also use IntelliJ:
 
-* [IntelliJ IDEA Community][], version 2017.1 or later
-* [IntelliJ IDEA Ultimate][], version 2017.1 or later
+* [IntelliJ IDEA Community][], version 2021.2 or later
+* [IntelliJ IDEA Ultimate][], version 2021.2 or later
 
 ## Install the Flutter and Dart plugins
 
@@ -78,7 +78,7 @@ Use the following instructions for Linux or WIndows:
 
 ## Install VS Code
 
-VS Code is a lightweight editor with Flutter app execution and debug support.
+VS Code is a lightweight editor with complete Flutter app execution and debug support.
 
 * [VS Code][], latest stable version
 
