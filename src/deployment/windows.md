@@ -64,10 +64,10 @@ the application to the Microsoft Store for the first time.
 
 #### Codemagic CI/CD
 
-Codemagic CI/CD uses the [`msix` pub package][msix package] to package 
+[Codemagic CI/CD][codemagic] uses the [`msix` pub package][msix package] to package 
 Flutter Windows Desktop applications. 
 
-For Flutter applications, either the [Codemagic UI][codemagicuimicrosoftstore] or [codemagic.yaml][codemagicyamlmicrosotftstore]
+For Flutter applications, either the [Codemagic UI][codemagicuimicrosoftstore] or [codemagic.yaml][codemagicyamlmicrosoftstore]
 can be used to provide minimal information to create the package. Additional
 options can be configured using the aforementioned package. In addition, 
 Codemagic makes it possible to build Flutter Windows Desktop applications 
@@ -119,8 +119,9 @@ The report may contain important warnings and information,
 even if the certification passes. 
 
 [azureadassociation]: https://docs.microsoft.com/en-us/windows/uwp/publish/associate-azure-ad-with-partner-center
-[codemagicuimicrosoftstore]: [https://docs.codemagic.io/flutter-publishing/publishing-to-microsoft-store/]
-[codemagicyamlmicrosoftstore]: [https://docs.codemagic.io/yaml-publishing/microsoft-store/]
+[codemagic]: https://codemagic.io/start/
+[codemagicuimicrosoftstore]: https://docs.codemagic.io/flutter-publishing/publishing-to-microsoft-store/
+[codemagicyamlmicrosoftstore]: https://docs.codemagic.io/yaml-publishing/microsoft-store/
 [microsoftstore]: https://www.microsoft.com/en-us/store/apps/windows/
 [microsoftpartner]: https://partner.microsoft.com/en-GB/
 [msix package]: {{site.pub}}/packages/msix
