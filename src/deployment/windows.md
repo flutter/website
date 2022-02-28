@@ -67,11 +67,9 @@ the application to the Microsoft Store for the first time.
 [Codemagic CI/CD][codemagic] uses the [`msix` pub package][msix package] to package 
 Flutter Windows Desktop applications. 
 
-For Flutter applications, either the [Codemagic UI][codemagicuimicrosoftstore] or [codemagic.yaml][codemagicyamlmicrosoftstore]
-can be used to provide minimal information to create the package. Additional
-options can be configured using the aforementioned package. In addition, 
-Codemagic makes it possible to build Flutter Windows Desktop applications 
-without a Windows device.
+For Flutter applications, either the [Codemagic Workflow Editor][cmworkfloweditor] or [codemagic.yaml][cmyaml] 
+can be used to package the application and deploy to Microsoft Partner Center.
+Additional options (e.g. architecture) can be configured using the aforementioned package.
 
 For publishing, Codemagic uses the [Partner Center submission API][partnercenterapi]; thus,
 Codemagic requires [associating the Azure Active Directory and Partner Center accounts][azureadassociation].
@@ -90,10 +88,13 @@ releases. Take note to follow Microsoft's [versioning guidelines][windowspackage
 
 ## Add app icons
 
-To update the icon of a Flutter Windows Desktop application:
+To update the icon of a Flutter Windows Desktop application before packaging:
 
 1. Navigate to **windows\runner\resources** in the Flutter project.
 2. Replace the **app_icon.ico** with the wanted icon.
+
+When packaging with the [`msix` pub package][msix package], the logo path can
+also be configured inside the `pubspec.yaml` file.
 
 To update the application image in the Store listing, navigate to 
 the Store listing step of the submission and select Store logos. 
@@ -119,9 +120,9 @@ The report may contain important warnings and information,
 even if the certification passes. 
 
 [azureadassociation]: https://docs.microsoft.com/en-us/windows/uwp/publish/associate-azure-ad-with-partner-center
+[cmworkfloweditor]: https://docs.codemagic.io/flutter-publishing/publishing-to-microsoft-store/
+[cmyaml]: https://docs.codemagic.io/yaml-publishing/microsoft-store/
 [codemagic]: https://codemagic.io/start/
-[codemagicuimicrosoftstore]: https://docs.codemagic.io/flutter-publishing/publishing-to-microsoft-store/
-[codemagicyamlmicrosoftstore]: https://docs.codemagic.io/yaml-publishing/microsoft-store/
 [microsoftstore]: https://www.microsoft.com/en-us/store/apps/windows/
 [microsoftpartner]: https://partner.microsoft.com/en-GB/
 [msix package]: {{site.pub}}/packages/msix
