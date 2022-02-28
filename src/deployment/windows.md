@@ -69,7 +69,8 @@ Flutter Windows Desktop applications.
 
 For Flutter applications, either the [Codemagic Workflow Editor][cmworkfloweditor] or [codemagic.yaml][cmyaml] 
 can be used to package the application and deploy to Microsoft Partner Center.
-Additional options (e.g. architecture) can be configured using the aforementioned package.
+Additional options (such as the list of capabilites and language resources 
+contained in the package) can be configured using the aforementioned package.
 
 For publishing, Codemagic uses the [Partner Center submission API][partnercenterapi]; thus,
 Codemagic requires [associating the Azure Active Directory and Partner Center accounts][azureadassociation].
