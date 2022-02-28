@@ -17,7 +17,7 @@ Joining the [Microsoft Partner Network][microsoftpartner] is also required.
 
 ## Set up your application in the Partner Center
 
-Manage an applications life cycle in the [Microsoft Partner Center][microsoftpartner].
+Manage an application's life cycle in the [Microsoft Partner Center][microsoftpartner].
 
 First off, it is necessary to reserve the application name and ensure that the 
 required rights to the name exist. Once the name is reserved, the application 
@@ -62,17 +62,19 @@ it is possible to automate the build, package, versioning,
 and deployment process using CI/CD tooling after having submitted
 the application to the Microsoft Store for the first time.
 
-#### Codemagic CI/CD for Flutter
+#### Codemagic CI/CD
 
 Codemagic CI/CD uses the [`msix` pub package][msix package] to package 
-Flutter Windows Desktop applications. For Flutter applications, the UI can be 
-used to provide minimal information to create the package. Additional options
-can be configured using the aforementioned package. In addition, Codemagic 
-makes it possible to build your application without a Windows device.
+Flutter Windows Desktop applications. 
 
-For publishing, Codemagic uses the [Partner Center submission API][partnercenterapi];
-thus, similar to automating the submission in Visual Studio, Codemagic requires
-you to associate your Azure Active Directory with your Partner Center account.
+For Flutter applications, either the [Codemagic UI][codemagicuimicrosoftstore] or [codemagic.yaml][codemagicyamlmicrosotftstore]
+can be used to provide minimal information to create the package. Additional
+options can be configured using the aforementioned package. In addition, 
+Codemagic makes it possible to build Flutter Windows Desktop applications 
+without a Windows device.
+
+For publishing, Codemagic uses the [Partner Center submission API][partnercenterapi]; thus,
+Codemagic requires [associating the Azure Active Directory and Partner Center accounts][azureadassociation].
 
 ## Updating the app's version number
 
@@ -116,6 +118,9 @@ To validate the application:
 The report may contain important warnings and information, 
 even if the certification passes. 
 
+[azureadassociation]: https://docs.microsoft.com/en-us/windows/uwp/publish/associate-azure-ad-with-partner-center
+[codemagicuimicrosoftstore]: [https://docs.codemagic.io/flutter-publishing/publishing-to-microsoft-store/]
+[codemagicyamlmicrosoftstore]: [https://docs.codemagic.io/yaml-publishing/microsoft-store/]
 [microsoftstore]: https://www.microsoft.com/en-us/store/apps/windows/
 [microsoftpartner]: https://partner.microsoft.com/en-GB/
 [msix package]: {{site.pub}}/packages/msix
