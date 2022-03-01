@@ -1,12 +1,12 @@
 ---
 title: Removing Notification.visitAncestor
-description: Notifications only traverse parents that are notification
+description: Notifications only traverse ancestors that are notification
 listeners.
 ---
 
 ## Summary
 
-Notifications are more efficient by traversing only parents that
+Notifications are more efficient by traversing only ancestors that
 are notification listeners.
 
 ## Context
@@ -16,17 +16,18 @@ notification receiver. This led to some unfortunate performance
 characteristics:
 
   * If there was no receiver for a given notification type, the entire element
-    tree above the notification would be traversed and type checked.
+    tree above the notification dispatch point would be traversed and type
+    checked.
   * For multiple notifications in a given frame (which is common for scroll
     views) we ended up traversing the element tree multiple times.
 
-If there were multiple or nested scroll views on a given page, the situation was
-worsened significantly - each scroll view would dispatch multiple notifications
-per frame. For example, in the Dart/Flutter Devtools flamegraph page, we found
-that about 30% of CPU time was spent dispatching notifications.
+If there were multiple or nested scroll views on a given page, the situation
+was worsened significantly - each scroll view would dispatch multiple
+notifications per frame. For example, in the Dart/Flutter Devtools flamegraph
+page, we found that about 30% of CPU time was spent dispatching notifications.
 
 In order to reduce the cost of dispatching notifications, we have changed
-notification dispatch so that it only visits parents that are notification
+notification dispatch so that it only visits ancestors that are notification
 listeners, reducing the number of elements visited per frame.
 
 However, the old notification system exposed the fact that it traversed
@@ -38,8 +39,8 @@ method is no longer supported as we no longer visit all ancestor elements.
 `Notification.visitAncestor` has been removed. Any classes which extend
 `Notification` should no longer override this method.
 
-** If `Notification.visitAncestor` has not been overriden, then no changes are
-required. **
+** If you don't implement a custom Notification that overrides
+`Notification.visitAncestor`, then no changes are required. **
 
 ## Migration guide
 
