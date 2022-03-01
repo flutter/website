@@ -93,6 +93,9 @@ To update the icon of a Flutter Windows Desktop application before packaging:
 
 1. Navigate to **windows\runner\resources** in the Flutter project.
 2. Replace the **app_icon.ico** with the wanted icon.
+3. If the name of the icon is other than **app_icon.ico**, proceed to
+change the **IDI_APP_ICON** value in the **windows\runner\Runner.rc** file to
+point to the new path.
 
 When packaging with the [`msix` pub package][msix package], the logo path can
 also be configured inside the `pubspec.yaml` file.
