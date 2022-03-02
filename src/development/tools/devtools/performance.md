@@ -87,7 +87,7 @@ see [Flutter performance profiling][].
 
 ### Shader compilation
 Shader compilation occurs when a shader is first used in your Flutter
-app. Frames that are performing shader compilation are marked in dark
+app. Frames that perform shader compilation are marked in dark
 red:
 
 ![Screenshot of shader compilation for a frame]({{site.url}}/assets/images/docs/tools/devtools/shader-compilation-frames-chart.png)
@@ -120,40 +120,40 @@ below, described in the next section.
 
 ## Enhance tracing 
 
-To view more detailed tracing in the timeline events chart, use the
-options in the enhance tracing dropdown:
+To view more detailed tracing in the timeline events chart,
+use the options in the enhance tracing dropdown:
 
 {{site.alert.note}}
-Frame times may be negatively affected when these options are enabled.
+  Frame times may be negatively affected when these options are enabled.
 {{site.alert.end}}
 
 ![Screenshot of enhance tracing dropdown]({{site.url}}/assets/images/docs/tools/devtools/enhance-tracing.png)
 
-To see the new timeline events, trigger a new frame by interacting with
-your app.
+To see the new timeline events,
+reproduce the activity in your app that you are interested in tracing,
+and then select a frame to inspect the timeline.
 
 ### Track widget builds
 
-To see the build() methods in the timeline, enable the Track Widget
-Builds option. The name of the widget is shown in the timeline event.
+To see the build() method events in the timeline,
+enable the Track Widget Builds option.
+The name of the widget is shown in the timeline event.
 
 ![Screenshot of track widget builds]({{site.url}}/assets/images/docs/tools/devtools/track-widget-builds.png)
 
 ### Track layouts
 
-To see layout information, enable the Track Layouts option:
+To see render object layout events in the timeline,
+enable the Track Layouts option:
 
 ![Screenshot of track layouts]({{site.url}}/assets/images/docs/tools/devtools/track-layouts.png)
 
 ### Track paints
 
-To see paint information in the timeline, enable the Track Paints option:
+To see render object paint events in the timeline,
+enable the Track Paints option:
 
 ![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
-
-## Debugging options
-
-###
 
 ## Import and export
 
