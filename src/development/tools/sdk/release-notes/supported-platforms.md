@@ -87,7 +87,7 @@ see [go/rfc-ios8-deprecation] for details.
 
 |Platform|Version               |
 |--------|----------------------|
-|Android |Android SDK 15 & below|
+|Android |Android SDK 18 & below|
 |iOS     |iOS 8 & below         |
 |Windows |Windows Vista & below |
 |Windows |Any 32-bit platform   |   
