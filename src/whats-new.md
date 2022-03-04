@@ -10,7 +10,12 @@ To stay on top of Flutter announcements,
 including breaking changes,
 join the [flutter-announce][] Google group.
 
+For Dart, you can join the [Dart Announce][] Google group,
+and review the [Dart changelog][].
+
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart changelog]: https://github.com/dart-lang/sdk/blob/master/CHANGELOG.md
 
 ## Feb 3, 2022, Windows Support: 2.10 release
 
