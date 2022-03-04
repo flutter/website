@@ -5,11 +5,14 @@ description: A list of what’s new on flutter.dev and related sites.
 
 This page contains current and previous announcements of
 what's new on the Flutter website and blog.
+For details about what's new in the Flutter releases
+see the [release notes][] page.
 
 To stay on top of Flutter announcements,
 including breaking changes,
 join the [flutter-announce][] Google group.
 
+[release notes]: {{site.url}}/development/tools/sdk/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 
 ## Feb 3, 2022, Windows Support: 2.10 release
