@@ -299,7 +299,7 @@ are correct, especially the following:
 Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in 
 `[project]/android/app` to verify the values are correct:
 
-#### Under the defaultConfig block
+#### Under the `defaultConfig` block
 
 `applicationId`
 : Specify the final, unique (Application Id)[appid]
@@ -327,7 +327,7 @@ Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in
   automatically uses the default version of the build tools that the
   plugin specifies. Alternatively, you can specify a version of the build tools.
 
-#### Under the android block
+#### Under the `android` block
   
 `compileSdkVersion`
 : Specify the API level Gradle should use to compile your app.
