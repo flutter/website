@@ -297,10 +297,9 @@ are correct, especially the following:
 ## Reviewing the Gradle build configuration
 
 Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in 
-`[project]/android/app` to verify the values are correct, especially the following
-values in the `defaultConfig` block:
+`[project]/android/app` to verify the values are correct:
 
-#### Under defaultConfig
+#### Under the defaultConfig block
 
 `applicationId`
 : Specify the final, unique (Application Id)[appid]
@@ -328,7 +327,7 @@ values in the `defaultConfig` block:
   automatically uses the default version of the build tools that the
   plugin specifies. Alternatively, you can specify a version of the build tools.
 
-#### Under android
+#### Under the android block
   
 `compileSdkVersion`
 : Specify the API level Gradle should use to compile your app.
