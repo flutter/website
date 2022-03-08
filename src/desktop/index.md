@@ -715,4 +715,4 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
 [README]: {{site.repo.gallery}}#flutter-gallery
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/index.html
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

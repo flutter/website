@@ -420,8 +420,11 @@ for local network permission. The permission can also be allowed by enabling
 
 ## Apple Silicon (`arm64` Macs)
 
-Flutter does not yet support `arm64` iOS simulators. To run your host app on an Apple Silicon
-Mac, exclude `arm64` from the simulator architectures.
+On an Apple Silicon (M1) Mac, the host app builds for an `arm64` simulator.
+While Flutter supports `arm64` simulators, some plugins might not. If you use
+one of these plugins, you might see a compilation error like **Undefined symbols
+for architecture arm64** and you must exclude `arm64` from the simulator
+architectures in your host app.
 
 In your host app target, find the **Excluded Architectures** (`EXCLUDED_ARCHS`) build setting.
 Click the right arrow disclosure indicator icon to expand the available build configurations.

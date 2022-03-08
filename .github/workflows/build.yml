@@ -10,6 +10,9 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
+# Declare default permissions as read only.
+permissions: read-all
+
 env:
   NODE_ENV: production
   NODE_VERSION: 17
@@ -49,7 +52,7 @@ jobs:
         with:
           submodules: "recursive"
       - name: Install Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install firebase tools

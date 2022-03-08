@@ -359,6 +359,8 @@
       permalink: /deployment/macos
     - title: Build and release a Linux app
       permalink: /deployment/linux
+    - title: Build and release a Windows app
+      permalink: /deployment/windows
     - title: Build and release a web app
       permalink: /deployment/web
     - title: Continuous deployment

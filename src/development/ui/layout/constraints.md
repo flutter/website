@@ -401,7 +401,7 @@ class Example3 extends Example {
       '   child: Container(width: 100, height: 100, color: red))';
   @override
   final String explanation =
-      'The screen forces the Center to be exactly the same size as the screen,'
+      'The screen forces the Center to be exactly the same size as the screen, '
       'so the Center fills the screen.'
       '\n\n'
       'The Center tells the Container that it can be any size it wants, but not bigger than the screen.'
@@ -453,7 +453,7 @@ class Example5 extends Example {
       '              height: double.infinity))';
   @override
   final String explanation =
-      'The screen forces the Center to be exactly the same size as the screen,'
+      'The screen forces the Center to be exactly the same size as the screen, '
       'so the Center fills the screen.'
       '\n\n'
       'The Center tells the Container that it can be any size it wants, but not bigger than the screen.'
@@ -477,7 +477,7 @@ class Example6 extends Example {
   final code = 'Center(child: Container(color: red))';
   @override
   final String explanation =
-      'The screen forces the Center to be exactly the same size as the screen,'
+      'The screen forces the Center to be exactly the same size as the screen, '
       'so the Center fills the screen.'
       '\n\n'
       'The Center tells the Container that it can be any size it wants, but not bigger than the screen.'
@@ -507,7 +507,7 @@ class Example7 extends Example {
       '      child: Container(color: green, width: 30, height: 30)))';
   @override
   final String explanation =
-      'The screen forces the Center to be exactly the same size as the screen,'
+      'The screen forces the Center to be exactly the same size as the screen, '
       'so the Center fills the screen.'
       '\n\n'
       'The Center tells the red Container that it can be any size it wants, but not bigger than the screen.'
@@ -1178,7 +1178,7 @@ class Example28 extends Example {
 
   @override
   final String explanation =
-      'The screen forces the Scaffold to be exactly the same size as the screen,'
+      'The screen forces the Scaffold to be exactly the same size as the screen, '
       'so the Scaffold fills the screen.'
       '\n\n'
       'The Scaffold tells the Container that it can be any size it wants, but not bigger than the screen.'
