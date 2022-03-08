@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   check_link_references:
     runs-on: ubuntu-latest
