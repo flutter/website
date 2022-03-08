@@ -1,0 +1,41 @@
+name: "CodeQL"
+on:
+  push:
+    branches: [ main ]
+      
+permissions:
+  contents: read
+  statuses: write
+  security-events: write
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript' ]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
+
+    # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@b7dd4a6f2c343e29a9ab8e181b2f540816f28bd7
+      with:
+        languages: ${{ matrix.language }}
+        # If you wish to specify custom queries, you can do so here or in a config file.
+        # By default, queries listed here will override any specified in a config file.
+        # Prefix the list here with "+" to use these queries and those in the config file.
+        # queries: ./path/to/local/query, your-org/your-repo/queries@main
+
+    # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
+    # If this step fails, then you should remove it and run the build manually (see below)
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@b7dd4a6f2c343e29a9ab8e181b2f540816f28bd7
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@b7dd4a6f2c343e29a9ab8e181b2f540816f28bd7
