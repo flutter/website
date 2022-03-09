@@ -294,41 +294,47 @@ are correct, especially the following:
   Internet access during development to enable communication between
   Flutter tools and a running app.
 
-## Reviewing the build configuration
+## Reviewing the Gradle build configuration
 
 Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in 
-`[project]/android/app` and the `local.properties` file located in 
-`[project]/android` to verify the values are correct, especially the following
-values in the `defaultConfig` block:
+`[project]/android/app` to verify the values are correct:
 
-#### In `build.gradle` file
+#### Under the `defaultConfig` block
 
 `applicationId`
 : Specify the final, unique (Application Id)[appid]
+  
+`minSdkVersion`
+: Specify the minimum API level on which the app is designed to run.
+  Defaults to `flutter.minSdkVersion`.
 
-`compileSdkVersion`
-: Specify the API level Gradle should use to compile your app. For more 
-  information, see the module-level build section in the 
-  [Gradle build file][gradlebuild]. 
+`targetSdkVersion`
+: Specify the target API level on which the app is designed to run.
+  Defaults to `flutter.targetSdkVersion`.
+  
+`versionCode`
+: A positive integer used as an internal version number. This number
+  is used only to determine whether one version is more recent than
+  another, with higher numbers indicating more recent versions.
+  This version isn't shown to users.
+
+`versionName`
+: A string used as the version number shown to users. This setting
+  can be specified as a raw string or as a reference to a string resource.
 
 `buildToolsVersion`
 : If you're using Android plugin for Gradle 3.0.0 or higher, your project
   automatically uses the default version of the build tools that the
   plugin specifies. Alternatively, you can specify a version of the build tools.
 
-#### In `local.properties` file
+#### Under the `android` block
+  
+`compileSdkVersion`
+: Specify the API level Gradle should use to compile your app.
+  Defaults to `flutter.compileSdkVersion`.
 
-`flutter.versionCode` & `flutter.versionName`
-: Specify the internal app version number, and the version number display 
-  string. You can do this by setting the `version` property in the pubspec.yaml 
-  file. For more information, see the version information guidance in the 
-  [versions documentation][versions].
-
-`flutter.minSdkVersion` & `flutter.targetSdkVersion`
-: Specify the minimum API level and the target API level on which the app is 
-  designed to run. For more information, see the API level section in the 
-  [versions documentation][versions-minsdk].
-
+For more information, see the module-level build section in the [Gradle build file][gradlebuild].
+  
 ## Building the app for release
 
 You have two possible release formats when publishing to
