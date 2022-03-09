@@ -8,6 +8,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
+    if: github.repository == 'flutter/website'
     permissions:
       actions: read
       contents: read
@@ -26,7 +27,7 @@ jobs:
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@b7dd4a6f2c343e29a9ab8e181b2f540816f28bd7
+      uses: github/codeql-action/init@f5d822707ee6e8fb81b04a5c0040b736da22e587
       with:
         languages: ${{ matrix.language }}
         # If you wish to specify custom queries, you can do so here or in a config file.
