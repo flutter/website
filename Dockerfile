@@ -28,8 +28,8 @@ RUN bundle install
 # Install Node deps
 ENV NODE_ENV=development
 COPY package.json package-lock.json ./
-RUN npm install -g npm@8.5.3 firebase-tools@v10.2.2 superstatic@7.1.0
-RUN npm i re2@1.17.4
+RUN npm install -g npm/cli#f66290ecbbc1f766597013ed0d8e624455372de4 firebase/firebase-tools#23dc81fd065f4cfaa172cff535cafdd9a8c11c23 firebase/superstatic#2a85409ff30950a15e6da41d599a20b371e70c1d
+RUN npm i uhop/node-re2#6b1255ce38245805ff2502e320a567a3601f7459
 
 COPY ./ ./
 
