@@ -274,6 +274,7 @@
       { "source": "/go/multiple-applications", "destination": "https://docs.google.com/document/d/1alrr7qimNDazmQx5D80BSHh62V2OINO4UQ5N3HcPnmo/edit?resourcekey=0-wPs1Go9AiKR-yG0-xStuKw", "type": 301 },
       { "source": "/go/multiple-engines", "destination": "https://docs.google.com/document/d/1NwiZPWHd1te46eP2GWwIezDV9CdMQkODAMuF5kWdtLw", "type": 301 },
       { "source": "/go/multiple-flutters", "destination": "https://docs.google.com/document/d/1fdKRufqUzQvERcqNIUSq-GdabXc4k8VIsClzRElJ6KY", "type": 301 },
+      { "source": "/go/multi-window-single-isolate", "destination": "https://docs.google.com/document/d/1Wdqs79TY3b1VkOZMDmt12psg5AhO-q9k5-Uv28Snr8M/edit?resourcekey=0-qvOf6jo8bR9W4ozLrbLMcQ", "type": 301 },
       { "source": "/go/navigator-with-router", "destination": "https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit", "type": 301 },
       { "source": "/go/nshc", "destination": "https://docs.google.com/document/d/1uwHQ3ZEGN2cH6bFwa3CCXTTXCeDfOWw-kUa_B6oTMuA/edit", "type": 301 },
       { "source": "/go/null-safety-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/null_safety_workshop", "type": 301 },
