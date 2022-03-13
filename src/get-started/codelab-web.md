@@ -629,7 +629,7 @@ Now that you have DevTools running,
 select the **Debugger** tab in the blue bar along the top.
 The debugger pane appears and, in the lower left,
 see a list of libraries used in the example.
-Select `signin/main.dart` to display your Dart code
+Select `lib/main.dart` to display your Dart code
 in the center pane.
 
 {% indent %}
