@@ -6,6 +6,7 @@ description: Open job listings for the Flutter and Dart teams.
 We are hiring on the Flutter and Dart teams!
 The following jobs are open:
 
+* [Engineering Manager, Mobile Platforms & Ecosystem]({{site.url}}/jobs/eng_mgr)
 * [Windows Engineer]({{site.url}}/jobs/windows)
 * [Android Engineer]({{site.url}}/jobs/android)
 * [iOS Engineer]({{site.url}}/jobs/ios)
