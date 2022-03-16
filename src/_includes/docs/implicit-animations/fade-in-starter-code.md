@@ -1,10 +1,18 @@
 ```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-532px:ga_id-fade_in_starter_code
 {$ begin main.dart $}
+// Copyright 2019 the Dart project authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+
 import 'package:flutter/material.dart';
 
-const owl_url = 'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
+const owlUrl =
+    'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
 
 class FadeInDemo extends StatefulWidget {
+  const FadeInDemo({Key? key}) : super(key: key);
+
+  @override
   _FadeInDemoState createState() => _FadeInDemoState();
 }
 
@@ -12,32 +20,30 @@ class _FadeInDemoState extends State<FadeInDemo> {
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      Image.network(owl_url),
+      Image.network(owlUrl),
       TextButton(
-        child: Text(
-          'Show details',
-          style: TextStyle(color: Colors.blueAccent),
-        ),
-        onPressed: () => null,
-      ),
-      Container(
-        child: Column(
-          children: <Widget>[
-            Text('Type: Owl'),
-            Text('Age: 39'),
-            Text('Employment: None'),
-          ],
-        ),
+          child: const Text(
+            'Show Details',
+            style: TextStyle(color: Colors.blueAccent),
+          ),
+          onPressed: () => {}),
+      Column(
+        children: const [
+          Text('Type: Owl'),
+          Text('Age: 39'),
+          Text('Employment: None'),
+        ],
       )
     ]);
   }
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return const MaterialApp(
       home: Scaffold(
         body: Center(
           child: FadeInDemo(),
@@ -49,7 +55,7 @@ class MyApp extends StatelessWidget {
 
 void main() {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }
 {$ end main.dart $}
