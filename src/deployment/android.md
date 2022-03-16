@@ -302,7 +302,7 @@ Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in
 #### Under the `defaultConfig` block
 
 `applicationId`
-: Specify the final, unique (Application Id)[appid]
+: Specify the final, unique [application ID][]
   
 `minSdkVersion`
 : Specify the minimum API level on which the app is designed to run.
@@ -541,7 +541,7 @@ The resulting app bundle or APK files are located in
 
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
-[appid]: {{site.android-dev}}/studio/build/application-id
+[application ID]: {{site.android-dev}}/studio/build/application-id
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
