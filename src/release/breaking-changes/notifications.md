@@ -96,7 +96,7 @@ of `Notification.dispatch`.
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 2.12.0-4.1
 In stable release: not yet
 
 ## References
