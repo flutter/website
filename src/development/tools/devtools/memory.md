@@ -17,41 +17,48 @@ memory at a given moment.
 
 Memory profiling in DevTools consists of 3 main functions:
 * Charting memory usage statistics and events
-* Anaylsis to view all memory via a heap to detect memory issues and inspect objects
-* Allocations to monitor and track (stack trace) specific classes and objects when an allocation occurs
+* Analysis to view all memory via a heap
+  to detect memory issues and inspect objects
+* Allocations to monitor and track (stack trace)
+  specific classes and objects when an allocation occurs
 
 ## Charting memory statistics and events
 
-At the top-level, when the memory tab is selected memory statistics from
-the VM are collected. These statistics are displayed in the two overview
-charts (Dart memory and Android-only) the collection of general memory
-usage e.g., total heap used, external heap, maximum heap capacity,
-Resident Set Size (RSS). As you interact with your application various
-events are detected e.g., memory GC (garabage collection),Flutter events,
-user fired events (using the ```dart:developer``` package) are collected
-in the same timeline as the memory statistics. All of this collected
-statistics and events are displayed in charts see [Memory anatomy](#memory-anatomy).
+At the top-level, when the memory tab is selected,
+memory statistics from the VM are collected.
+These statistics are displayed in the two overview charts
+(Dart memory and Android-only) the collection of general memory usage
+e.g., total heap used, external heap, maximum heap capacity,
+and Resident Set Size (RSS).
+As you interact with your application various events are detected
+e.g., memory GC (garbage collection), Flutter events,
+user fired events (using the `dart:developer` package)
+are collected in the same timeline as the memory statistics.
+All of this collected statistics and events are displayed in charts.
+See [Memory anatomy](#memory-anatomy).
 
 ## Analysis and snapshots
 
-A Snapshot is a complete, the most complex and time consuming view of
-all objects in the Dart memory heap. Each time a snapshot is taken, an
-analysis is performed over the collected memory data.  The analysis
-attempts to identify any memory patterns that may cause leaks or lead to
-application crashes. For example, loading large assets for thumbnail-sized
-images inefficiently, memory usage can be improved by loading smaller
-assets or adjusting the cacheWidth/cacheHeight to decode an image to a
-smaller size reducing the memory usage of the ImageCache. The analysis
-catches issues like this see [Analysis tab](#analysis-tab).
+A Snapshot is a complete, the most complex and time-consuming view
+of all objects in the Dart memory heap. Each time a snapshot is taken,
+an analysis is performed over the collected memory data.
+The analysis attempts to identify any memory patterns
+that may cause leaks or lead to application crashes.
+For example, loading large assets for thumbnail-sized images inefficiently,
+memory usage can be improved by loading smaller assets
+or adjusting the `cacheWidth`/`cacheHeight` to decode an image
+to a smaller size reducing the memory usage of the ImageCache.
+The analysis catches issues like this.
+See [Analysis tab](#analysis-tab).
 
 ## Allocations and tracking
 
-Monitoring all allocations involes you directly interacting with DevTools
+Monitoring all allocations involves you directly interacting with DevTools
 and your application to isolate a short period of time that you are
 interested in knowing how many objects were allocated, how many bytes
 were allocated, or tracking all the places in your code where a particular
 class is allocated. This information is available under the "Allocations"
-tab of Memory profiler and his a fairly fast with less overhead than using
+tab of Memory profiler, and he's a fairly fast with less overhead than using
 a snapshot.
 
 Monitoring allocations and resetting of accumulators, helps to analyze
@@ -81,7 +88,7 @@ See [Allocation tab](#allocation-tab).
 
 ## Memory anatomy
 
-A timeseries graph is used to visualize the state of the Flutter memory
+A time-series graph is used to visualize the state of the Flutter memory
 at successive intervals of time. Each data point on the chart
 corresponds to the timestamp (x-axis) of measured quantities (y-axis)
 of the heap, for example, usage, capacity, external, garbage
@@ -164,10 +171,11 @@ This legend shows the symbol for each DevTools event and its meaning
 </dd>
 </dl>
 
-Displayed below the events pane is the [memory chart](#memory-overview-chart)
-and the [Android memory chart](#android-chart). The android-memory chart is
-specific to an Android app, and it shows Android ADB meminfo from an
-ADB app summary.
+Displayed below the event pane
+is the [memory chart](#memory-overview-chart)
+and the [Android memory chart](#android-chart).
+The android-memory chart is specific to an Android app,
+and it shows Android ADB meminfo from an ADB app summary.
 
 ### Adding user custom events to the timeline
 
@@ -178,22 +186,22 @@ your own events can be injected into the Memory Profile timeline to
 help to understand how your application's memory usage is performing
 within the Dart/Flutter framework (heap).
 
-Posting your own custom event(s) are done using the dart:developer package
-postEvent method. In particular, the event name must be prefixed with
+Posting your own custom event(s) are done
+using the `dart:developer` package `postEvent` method.
+In particular, the event name must be prefixed with
 **DevTools.Event_** then your event name would be appended e.g.,
-**DevTools.Event_**_MyEventName_
+**DevTools.Event_**_MyEventName_.
 
 To use add the following import to your code:
-
-```
+```dart
 import 'dart:developer' as developer;
 ```
 
 and a method to post custom event(s) to the Memory timeline:
-```
-  void devToolsPostEvent(String eventName, Map<String, Object> eventData) {
-    developer.postEvent('DevTools.Event_$eventName', eventData);
-  }
+```dart
+void devToolsPostEvent(String eventName, Map<String, Object> eventData) {
+  developer.postEvent('DevTools.Event_$eventName', eventData);
+}
 ```
 
 Then to post an event from your code you would call the devToolsPostEvent
@@ -201,22 +209,20 @@ e.g. In your function recordLoadedImage you could cause the 'MyImages'
 event to be posted to the Memory (event) timeline with the values method
 and param (the URL).
 
+```dart
+Widget recordLoadedImage(ImageChunkEvent imageChunkEvent, String imageUrl) {
+  // Record the event in the memory event pane.
+  devToolsPostEvent('MyFirstApp', { 'method': 'recordLoadedImage', 'param': imageUrl });
+  if (imageChunkEvent == null) return null;
+  //...
+}
 ```
-  Widget recordLoadedImage(ImageChunkEvent imageChunkEvent, String imageUrl) {
- 
-    // Record the event in the memory event pane.
-    devToolsPostEvent('MyFirstApp', { 'method': 'recordLoadedImage', 'param': imageUrl });
 
-    if (imageChunkEvent == null) return null;
-
-    ...
-
-  }
-```
-Clicking on the aggregated event triangle in the event pane will dispay a
-hover card with the details of all events e.g., two custom events at
-the timestamp 04:36:21 with the event name 'MyFirstApp' and the two
-eventData entries method and param are displayed with their values: 
+Clicking on the aggregated event triangle in the event pane
+will display a hover card with the details of all events
+e.g., two custom events at the timestamp 04:36:21
+with the event name `MyFirstApp` and the two `eventData` entries method
+and param are displayed with their values: 
 
 ![Hover Card Custom Events]({{site.url}}/assets/images/docs/tools/devtools/memory_hover_events.png)
 
@@ -226,39 +232,41 @@ Scrolling the events displays:
 
 ## Memory overview chart
 
-A timeseries graph of collected memory statistics, to visualize
-the state of the Dart/Flutter heap and Dart/Flutter native memory
-over time.
+A time-series graph of collected memory statistics,
+to visualize the state of the Dart/Flutter heap
+and Dart/Flutter native memory over time.
 
-The chart's x-axis is a timeline of events (timeseries). The data
-plotted in the y-axis all have a timestamp when the data was
-collected. In other words, it shows the polled state (capacity,
-used, external, RSS (resident set size), and GC (garbage collection))
-of the memory every 500 ms. This helps give a live appearance on
-the state of the memory as the application is running.
+The chart's x-axis is a timeline of events (time-series).
+The data plotted in the y-axis all have a timestamp
+when the data was collected. In other words, it shows the polled state
+(capacity, used, external, RSS (resident set size),
+and GC (garbage collection)) of the memory every 500 ms.
+This helps give a live appearance on the state of the memory
+as the application is running.
 
 Clicking on the Legend button describes the collected measurements
 and symbols/colors used to display the data.
 
-![Screenshot of a memory anatomy page]({{site.url}}/assets/images/docs/tools/devtools/memory_chart_anatomy.png)
+![Screenshot of a memory anatomy page]({{site.url}}/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
 
-The **Memory Size Scale** Y axis scale automatically adjusts to the
-range of data collected in the current visible chart range.
+The **Memory Size Scale** Y axis scale automatically adjusts
+to the range of data collected in the current visible chart range.
 
 The quantities plotted on the y-axis are:
 
 **Dart/Flutter Heap** Objects (Dart/Flutter objects) in the heap.
 
-**Dart/Flutter Native** Memory that is not in the Dart/Flutter heap but
-  is still part of the total memory footprint. Objects in this
-  memory would be native objects (for example, from a memory read
-  from a file, or a decoded image). The native objects are exposed
-  to the Dart VM from the native OS (such as Android, Linux, Windows,
-  iOS) using a Dart embedder. The embedder creates a Dart wrapper
-  with a finalizer, allowing Dart code to communicate with these
-  native resources. Flutter has an embedder for Android and iOS.
-  For more information, see [Dart on the Server][server] or
-  [Custom Flutter Engine Embedders][embedder].
+**Dart/Flutter Native** Memory that is not in the Dart/Flutter heap
+but is still part of the total memory footprint.
+Objects in this memory would be native objects
+(for example, from a memory read from a file, or a decoded image).
+The native objects are exposed to the Dart VM from the native OS
+(such as Android, Linux, Windows, iOS) using a Dart embedder.
+The embedder creates a Dart wrapper with a finalizer,
+allowing Dart code to communicate with these native resources.
+Flutter has an embedder for Android and iOS.
+For more information, see [Dart on the Server][server] or
+[Custom Flutter Engine Embedders][embedder].
 
 **Timeline** The timestamps of all collected memory statistics
 and events at a particular point in time (timestamp).
@@ -314,7 +322,7 @@ displayed with the single event values:
 ![Single Events]({{site.url}}/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
 
 If the Android memory chart is displayed then the Android collect data
-will displayed between the "Dart / Flutter Memory" and the "Flutter and
+will be displayed between the "Dart / Flutter Memory" and the "Flutter and
 User Events" e.g.,
 
 ![Hovercard of Android chart is visible]({{site.url}}/assets/images/docs/tools/devtools/memory_android_hovercard.png)
@@ -323,7 +331,7 @@ User Events" e.g.,
 
 When connected to an Android app, DevTools collects Android's ADB
 (Android Debug Bridge) meminfo from an ADB app summary (polled every 500 ms).
-This meminfo section is the most interesting at a high-level.  If you were
+This meminfo section is the most interesting at high-level. If you were
 to collect this info from the ADB tool, this is what it would look like:
 ```
 > adb shell dumpsys meminfo io.flutter.demo.gallery -d
@@ -342,7 +350,7 @@ to collect this info from the ADB tool, this is what it would look like:
                TOTAL:   200369       TOTAL SWAP PSS:    82168
 ```
 
-This chart is another timeseries graph of the state of Android memory as
+This chart is another time-series graph of the state of Android memory as
 the application is running. The quantities plotted on the y-axis are
 the above values (Java Heap, Native Heap, Code size, Stack size,
 Graphics stack, System size and total).
@@ -360,9 +368,9 @@ The hover card will display the values of all collected Android memory data.
     see descriptions below.
 </dd>
 <dt markdown="1">**Total**</dt>
-<dd>The total memory in use. Total memory is comprised of
-    several different categories, all of which are plotted
-    along the y-axis. These categories are described below.
+<dd>The total memory in use. Total memory comprises several
+    different categories, all of which are plotted along the y-axis.
+    These categories are described below.
 </dd>
 <dt markdown="1">**Other**</dt>
 <dd>Other memory usage corresponds to the ‘Private Other’
@@ -405,8 +413,8 @@ the CPU—not dedicated GPU memory.
 
 ## Memory controls
 
-At the top of the memory page, above the charts, are several buttons and
-dropdowns that control how memory data is displayed.
+At the top of the memory page, above the charts, are several buttons
+and dropdowns that control how memory data is displayed.
 
 ![Screenshot of a memory controls]({{site.url}}/assets/images/docs/tools/devtools/memory_controls.png){:width="100%"}
 
@@ -444,9 +452,12 @@ dropdowns that control how memory data is displayed.
 
 ## Memory actions
 
-Below the memory charts (Event Timeline, Memory Overview and Android Overview
-charts) are interactive actions used to collect and analyze information about
-memory usage while using the application DevTools is connected to there are two tabs:
+Below the memory charts
+(Event Timeline, Memory Overview and Android Overview charts)
+are interactive actions used to collect
+and analyze information about memory usage
+while using the application DevTools
+is connected to there are two tabs:
 
 ![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_two_tabs.png)
 
@@ -487,12 +498,14 @@ All Analyses and Snapshots are displayed in a Table Tree View:
 The snapshots are grouped by library and within library by class and
 each class will display the list of known instances for that class.
 
-A snapshot is a complete view of all memory objects at a particular
-point in time.  Navigating, in the tree, to a class and it's instances
-(if the constructor was called to create an instance).  If instances exists
-expanding the class will display all live instances (objects). Clicking on
-an instance, of a class, will bring up the memory inspector to the right-side
-of the table tree.
+A snapshot is a complete view of all memory objects
+at a particular point in time.
+Navigating, in the tree, to a class and it's instances
+(if the constructor was called to create an instance).
+If instances exists expanding the class will display
+all live instances (objects). Clicking on an instance,
+of a class, will bring up the memory inspector
+to the right-side of the table tree.
 
 ![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_navigate_inspect.png)
 
@@ -500,16 +513,16 @@ of the table tree.
 
 ![The Snapshot button]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot.png)
 
-Clicking the **Snapshot** button shows the current state of the heap with regard
-to all active classes and their instances. 
+Clicking the **Snapshot** button shows the current state of the heap
+with regard to all active classes and their instances. 
 
 ![Screenshot of the Snapshot classes]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot_tree.png)
 
 This pane shows classes allocated in the heap, all instances for a class,
 and the ability to inspect a particular instance.
 
-In addition, a snapshot can automatically occur when DevTools notices a
-spike in memory used (growth of > 40%).
+In addition, a snapshot can automatically occur
+when DevTools notices a spike in memory used (growth of > 40%).
 
 Every snapshot, manual or automatic, will generate an analysis of the snapshot
 e.g., groups image problems that might have occurred. In the future, other
@@ -557,8 +570,8 @@ instances (fields and values).
 ## Inspecting a class instance in a snapshot
 
 Expanding a class displays the active instances for that class.
-Clicking on an particular instance displays the type and value of
-the fields for that instance.
+Clicking on a particular instance displays the type
+and value of the fields for that instance.
 
 ![Screenshot of the inspecting an instance]({{site.url}}/assets/images/docs/tools/devtools/memory_inspector.png)
 
@@ -594,7 +607,7 @@ The numbers are displayed in absolute totals as well as accumulated totals.
 Initially, the accumulated values (number of objects and size in bytes) are
 equal to the initial totals at the time of the first monitor request. The
 accumulators can be reset, to zero, at any time such that the next monitor
-request will return the accumlated values since the last reset.
+request will return the accumulated values since the last reset.
 
 Additionally, a small set of classes can track the allocation of each instance
 of a class. The tracking captures a stack trace when the constructor was
@@ -617,7 +630,7 @@ tracking should be used sparingly.
 <dt markdown="1">**Reset**</dt>
 <dd>Resets the accumulator counts (Delta columns) for each
     instance in the allocation table.  The next time the "Monitor"
-    button is pressed, the "Delta" columns displays the populate with
+    button is pressed, the "Delta" columns display the populate with
     the new instances and sizes since the last reset.
 </dd>
 <dt markdown="1">**Search**</dt>
@@ -633,8 +646,8 @@ tracking should be used sparingly.
 
 ### Allocation view
 
-Allocations are displayed in a table view of each class available to
-the connected application:
+Allocations are displayed in a table view of each class
+available to the connected application:
 
 ![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_allocations_overview.png)
 
@@ -714,30 +727,31 @@ accumulators to zero.
 ## Allocation tracking
 
 In addition to tracking the number of objects and bytes consumed
-for all instances of a class, a stack trace can be recorded when a
-class's constructor is called to help narrow where allocations might
-be astray. To do this enable the Track checkbox for a class e.g.,
+for all instances of a class, a stack trace can be recorded
+when a class's constructor is called to help narrow
+where allocations might be astray.
+To do this, enable the Track checkbox for a class:
 
 ![Enable Stack Trace Tracking]({{site.url}}/assets/images/docs/tools/devtools/memory_enable_stacktrace.png)
 
 Interact with your application then when you want to view the
-instances allocation press the "Track" button again. This will
+instances' allocation press the "Track" button again. This will
 update the count for the instances being tracked e.g., 118 in the
 below figure. Expanding the instances tracked will display all the
-instances and timestamp when each instance was created e.g.,
+instances and timestamp when each instance was created:
 
 ![Class Tracking]({{site.url}}/assets/images/docs/tools/devtools/memory_tracking.png)
 
 Selecting an instance will display the call stack at the time the
-class's constructor (allocated) was called e.g.,
+class's constructor (allocated) was called:
 
-![Call Stack]({{site.url}}/assets/images/docs/tools/devtools/memory_tracking_callstack.png)
+![Call Stack]({{site.url}}/assets/images/docs/tools/devtools/memory_tracking_callstack.png){:width="100%"}
 
 ## Filtering, Searching and Auto-Complete
 
 Both the Analysis and Allocations tabs support searching and filtering
 Begin typing in the name of the class you'd like to find
-e.g., **Ob**_ectWithUniqueId_ will return a list that matches the characters
+e.g., **Ob**_jectWithUniqueId_ will return a list that matches the characters
 typed so far. The first item in the list is highlighted.
 
 Pressing a keystroke when auto-complete is visible:
@@ -786,7 +800,7 @@ less important while profiling memory.
                  the library is filtered.</dd>
 <dt markdown="1">**Hide Libraries or Packages**</dt>
 <dd markdown="1">List of all libraries used in your application
-                 are displayed. By default the libraries enabled
+                 are displayed. By default, the libraries enabled
                  above are filtered out (dart:*, package:flutter*,
                  etc.). The libraries automatically filtered can
                  be enabled if you are interested in Dart core
