@@ -149,7 +149,7 @@ However, if you change fonts, you'll need to hot restart.
 ### Generic types
 
 Hot reload won't work when generic type declarations
-are modified.  For example, the following won't work:
+are modified. For example, the following won't work:
 
 Before the change:
 <?code-excerpt "lib/hot-reload/before.dart (Class)"?>
@@ -187,7 +187,7 @@ State is kept, which is usually the desired behavior.
 If code changes affect the state of your app (or its dependencies),
 the data your app has to work with might not be fully consistent
 with the data it would have if it executed from scratch.
-The result might be different behavior after hot reload
+The result might be different behavior after a hot reload
 versus a hot restart.
 
 ### Recent code change is included but app state is excluded
@@ -200,7 +200,8 @@ Global variables and static fields are treated as state,
 and are therefore not reinitialized during hot reload.
 
 If you change initializers of global variables and static fields,
-a full restart is necessary to see the changes.
+a hot restart or restart the state where the initializers are hold
+is necessary to see the changes.
 For example, consider the following code:
 
 <?code-excerpt "lib/hot-reload/before.dart (SampleTable)"?>
