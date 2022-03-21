@@ -14,6 +14,7 @@ on:
 permissions: read-all
 
 env:
+  CI: true
   NODE_ENV: production
   NODE_VERSION: 17
 

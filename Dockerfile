@@ -55,8 +55,9 @@ RUN if test -n "$FLUTTER_BRANCH" -a "$FLUTTER_BRANCH" != "stable" ; then \
     fi
 
 # Set up Flutter
-RUN flutter doctor
-RUN flutter --version
+RUN flutter --no-version-check config --no-analytics
+RUN flutter --no-version-check doctor
+RUN flutter --no-version-check --version
 RUN dart pub get
 
 EXPOSE 35729
@@ -86,7 +87,8 @@ RUN cd flutter && \
       git fetch origin stable && \
       git checkout stable && \
       git pull
-RUN flutter doctor
+RUN flutter --no-version-check config --no-analytics
+RUN flutter --no-version-check doctor
 RUN echo "User-agent: *" > src/robots.txt && echo "Allow: /" >> src/robots.txt
 
 ARG BUILD_CONFIGS=_config.yml

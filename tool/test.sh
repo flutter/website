@@ -64,7 +64,7 @@ function switch_flutter_channel() {
   git checkout $1 --
   git pull
   popd
-  flutter doctor
+  flutter --no-version-check doctor
 }
 
 

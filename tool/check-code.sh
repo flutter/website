@@ -39,7 +39,7 @@ echo "=> Using Dart version:"
 dart --version
 
 echo "=> Using Flutter version:"
-flutter --version
+flutter --no-version-check --version
 
 
 if [[ $REFRESH ]]; then
@@ -98,13 +98,13 @@ if [[ -z $NULL_SAFETY ]]; then
     mkdir -pv example.g
     cp example/* example.g/
   )
-  (cd example.g && flutter packages get)
+  (cd example.g && flutter --no-version-check packages get)
 
   echo "=> EXTRACTING OLD example/* code snippets from the markdown..."
   dart tool/extract.dart
 
   echo "=> ANALYZING extracted code snippets..."
-  (cd example.g && flutter analyze .)
+  (cd example.g && flutter --no-version-check analyze .)
 
   echo "=> DART FORMAT checking of extracted code snippets..."
   check_formatting example.g
@@ -144,7 +144,7 @@ else
         (
           set -x;
           cd $ROOT;
-          flutter create --no-overwrite $sample
+          flutter create --no-overwrite --no-version-check $sample
           rm -rf $sample/integration_test # Remove unneeded integration test stubs.
         )
       fi
@@ -152,8 +152,8 @@ else
       (
         set -x;
         cd $sample
-        flutter packages get;
-        flutter analyze .;
+        flutter --no-version-check packages get;
+        flutter --no-version-check analyze .;
       )
 
       if [[ -n $TEST && -d "$sample/test" ]]; then
@@ -161,7 +161,7 @@ else
           cd $sample;
           set -x;
           echo "=> Running tests..."
-          flutter test
+          flutter --no-version-check test
         )
       elif [[ -n $TEST ]]; then
         echo "=> Sample has no tests"
