@@ -7,9 +7,9 @@ description: Speed up development using Flutter's hot reload feature.
 
 Flutter's hot reload feature helps you quickly and
 easily experiment, build UIs, add features, and fix bugs.
-Hot reload works by injecting updated source code files into
-the running [Dart Virtual Machine (VM)][]. After the VM
-updates classes with the new versions of fields and functions,
+Hot reload works by injecting updated source code files
+into the running [Dart Virtual Machine (VM)][].
+After the VM updates classes with the new versions of fields and functions,
 the Flutter framework automatically rebuilds the widget tree,
 allowing you to quickly view the effects of your changes.
 
@@ -17,20 +17,19 @@ allowing you to quickly view the effects of your changes.
 
 To hot reload a Flutter app:
 
- 1. Run the app from a supported [Flutter editor][]
-    or a terminal window.
-    Either a physical or virtual device can be the target.
-    **Only Flutter apps in debug mode can be hot reloaded.**
- 1. Modify one of the Dart files in your project.
-    Most types of code changes can be hot reloaded;
-    for a list of changes that require a hot restart, see
-    [Special cases](#special-cases).
- 1. If you're working in an IDE/editor that supports Flutter's IDE tools,
-    select **Save All** (`cmd-s`/`ctrl-s`), or click the hot reload
-    button on the toolbar.
+1. Run the app from a supported [Flutter editor][] or a terminal window.
+   Either a physical or virtual device can be the target.
+   **Only Flutter apps in debug mode can be hot reloaded.**
+1. Modify one of the Dart files in your project.
+   Most types of code changes can be hot reloaded;
+   for a list of changes that require a hot restart,
+   see [Special cases](#special-cases).
+1. If you're working in an IDE/editor that supports Flutter's IDE tools,
+   select **Save All** (`cmd-s`/`ctrl-s`),
+   or click the hot reload button on the toolbar.
 
-    If you're running the app at the command line using `flutter run`,
-    enter `r` in the terminal window.
+   If you're running the app at the command line using `flutter run`,
+   enter `r` in the terminal window.
 
 After a successful hot reload operation,
 you'll see a message in the console similar to:
@@ -42,16 +41,17 @@ Reloaded 1 of 448 libraries in 978ms.
 
 The app updates to reflect your change,
 and the current state of the app is preserved.
-Your app continues to execute from where it was prior to running
-the hot reload command. The code updates and execution continues.
+Your app continues to execute from where it was prior
+to run the hot reload command.
+The code updates and execution continues.
 
 {{site.alert.secondary}}
   **What is the difference between hot reload, hot restart,
-  and full restart?**<br>
+  and full restart?**
 
   * **Hot reload** loads code changes into the VM and re-builds
     the widget tree, preserving the app state;
-    it doesn’t rerun `main()` or `initState()`.
+    it doesn't rerun `main()` or `initState()`.
     (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
   * **Hot restart** loads code changes into the VM,
     and restarts the Flutter app, losing the app state.
@@ -72,9 +72,9 @@ Controls for run, run debug, hot reload, and hot restart in Android Studio
 
 A code change has a visible effect only if the modified
 Dart code is run again after the change. Specifically,
-a hot reload causes all of the existing widgets to rebuild.
-Only code involved in the rebuilding of the widgets is
-automatically re-executed. The `main()` and `initState()`
+a hot reload causes all the existing widgets to rebuild.
+Only code involved in the rebuilding of the widgets
+is automatically re-executed. The `main()` and `initState()`
 functions, for example, are not run again.
 
 ## Special cases
@@ -82,14 +82,12 @@ functions, for example, are not run again.
 The next sections describe specific scenarios that involve
 hot reload. In some cases, small changes to the Dart code
 enable you to continue using hot reload for your app.
-In other cases, a hot restart, or a full restart is
-needed.
+In other cases, a hot restart, or a full restart is needed.
 
 ### An app is killed
 
 Hot reload can break when the app is killed.
-For example, if the app was in the background for
-too long.
+For example, if the app was in the background for too long.
 
 ### Compilation errors
 
@@ -98,10 +96,10 @@ hot reload generates an error message similar to:
 
 ```nocode
 Hot reload was rejected:
-'/Users/obiwan/Library/Developer/CoreSimulator/Devices/AC94F0FF-16F7-46C8-B4BF-218B73C547AC/data/Containers/Data/Application/4F72B076-42AD-44A4-A7CF-57D9F93E895E/tmp/ios_testWIDYdS/ios_test/lib/main.dart': warning: line 16 pos 38: unbalanced '{' opens here
+'/path/to/project/lib/main.dart': warning: line 16 pos 38: unbalanced '{' opens here
   Widget build(BuildContext context) {
                                      ^
-'/Users/obiwan/Library/Developer/CoreSimulator/Devices/AC94F0FF-16F7-46C8-B4BF-218B73C547AC/data/Containers/Data/Application/4F72B076-42AD-44A4-A7CF-57D9F93E895E/tmp/ios_testWIDYdS/ios_test/lib/main.dart': error: line 33 pos 5: unbalanced ')'
+'/path/to/project/lib/main.dart': error: line 33 pos 5: unbalanced ')'
     );
     ^
 ```
@@ -111,9 +109,9 @@ specified lines of Dart code to keep using hot reload.
 
 ### CupertinoTabView's builder
 
-Hot reload won't apply changes made to a `builder`
-of a `CupertinoTabView`. For more information, see
-[Issue 43574][].
+Hot reload won't apply changes made to
+a `builder` of a `CupertinoTabView`.
+For more information, see [Issue 43574][].
 
 ### Enumerated types
 
@@ -151,7 +149,7 @@ However, if you change fonts, you'll need to hot restart.
 ### Generic types
 
 Hot reload won't work when generic type declarations
-are modified.  For example, the following won't work:
+are modified. For example, the following won't work:
 
 Before the change:
 <?code-excerpt "lib/hot-reload/before.dart (Class)"?>
@@ -187,9 +185,9 @@ the navigation hierarchy, without re-entering your login credentials.
 State is kept, which is usually the desired behavior.
 
 If code changes affect the state of your app (or its dependencies),
-the data your app has to work with might not be fully consistent with
-the data it would have if it executed from scratch.
-The result might be different behavior after hot reload
+the data your app has to work with might not be fully consistent
+with the data it would have if it executed from scratch.
+The result might be different behavior after a hot reload
 versus a hot restart.
 
 ### Recent code change is included but app state is excluded
@@ -202,7 +200,8 @@ Global variables and static fields are treated as state,
 and are therefore not reinitialized during hot reload.
 
 If you change initializers of global variables and static fields,
-a full restart is necessary to see the changes.
+a hot restart or restart the state where the initializers are hold
+is necessary to see the changes.
 For example, consider the following code:
 
 <?code-excerpt "lib/hot-reload/before.dart (SampleTable)"?>
