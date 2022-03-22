@@ -38,7 +38,7 @@ using the following metrics:
 
 The Flutter Ecosystem Committee (FEC) is comprised of Flutter
 team members and Flutter community members spread
-across its ecosystem. 
+across its ecosystem.
 One of their jobs is to decide when a package
 has met the quality bar to become a Flutter Favorite.
 
@@ -115,7 +115,7 @@ You can see the complete list of
 [Flutter Favorite packages][] on pub.dev.
 
 
-[committee chair]: mailto:csells@google.com
+[committee chair]: mailto:flutter-committee@googlegroups.com
 [Flutter Favorite packages]: {{site.pub}}/flutter/favorites
 [Overall package score]: {{site.pub}}/help
 [pubspec.yaml format]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin-platforms
