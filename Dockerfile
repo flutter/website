@@ -28,8 +28,7 @@ RUN bundle install
 # Install Node deps
 ENV NODE_ENV=development
 COPY package.json package-lock.json ./
-RUN npm install -g npm@8.5.3 firebase-tools@v10.2.2 superstatic@7.1.0
-RUN npm i re2@1.17.4
+RUN npm ci
 
 COPY ./ ./
 
@@ -79,7 +78,6 @@ ENV JEKYLL_ENV=production
 ENV NODE_ENV=production
 
 RUN bundle install
-RUN npm install
 RUN cd flutter && \
       git fetch && \
       git remote set-branches origin stable && \
