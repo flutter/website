@@ -56,7 +56,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install firebase tools
-        run: npm ci
+        run: npm install -g firebase-tools
       - name: Build
         run: make build
         env:
