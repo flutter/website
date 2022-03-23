@@ -39,7 +39,7 @@ For more information, see [Memory anatomy](#memory-anatomy).
 
 ## Analysis and snapshots
 
-A `Snapshot` is a complete view of
+A snapshot is a complete view of
 all objects in the Dart memory heap.
 Each time a snapshot is taken, a complex
 and time consuming analysis
@@ -114,7 +114,7 @@ Dart VM GCs, user requested GCs, or monitor and accumulator reset actions.
 ![Screenshot of DevTools events]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline.png)
 
 This chart displays DevTools events (such as manual GC, VM GC,
-Snapshot, monitor Allocations **Track** and **Reset** of accumulators button
+snapshot, monitor Allocations **Track** and **Reset** of accumulators button
 clicks) in relation to the memory chart timeline. Clicking over the
 markers in the Event timeline displays a hover card of the time when
 the event occurred. This might help identify when a memory leak has
@@ -126,12 +126,12 @@ This legend shows the symbol for each DevTools event and its meaning:
 
 <dl markdown="1">
 <dt markdown="1">**Snapshot**</dt>
-![User Snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_snapshot.png){:width="17px"}
+![User snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_snapshot.png){:width="17px"}
 <dd markdown="1">User initiated snapshot&mdash;all memory
                  information is collected and an analysis is performed.
 </dd>
 <dt markdown="1">**Auto-Snapshot**</dt>
-![Auto Snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_auto_snapshot.png){:width="18px"}
+![Auto snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_auto_snapshot.png){:width="18px"}
 <dd markdown="1">DevTools initiated a snapshot after detecting
                  that memory has grown by 40% or more from its
                  last measurement. This can help to quickly detect
@@ -443,32 +443,40 @@ dropdowns that control how memory data is displayed:
 <dt markdown="1">**Pause**</dt>
 <dd>Pauses the memory overview chart to allow inspecting
     the currently plotted data. Incoming memory data is still received;
-    notice the Range selector continues to grow to the right.</dd>
+    notice the Range selector continues to grow to the right.
+</dd>
 <dt markdown="1">**Resume**</dt>
 <dd>Resumes the memory overview chart so that it's live, displaying the
-    current time and the latest memory statistics.</dd>
+    current time and the latest memory statistics.
+</dd>
 <dt markdown="1">**Clear**</dt>
-<dd>Clears all collected data from the memory profiler.</dd>
+<dd>Clears all collected data from the memory profiler.
+</dd>
 <dt markdown="1">**Display**</dt>
 <dd>The duration of the x-axis. For example, if this dropdown
     is set to "Display 5 minutes", memory data from the last
-    5 minutes is displayed.</dd>
+    5 minutes is displayed.
+</dd>
 <dt markdown="1">- Display 1 Minute</dt>
 <dt markdown="1">- Display 5 Minutes</dt>
 <dt markdown="1">- Display 10 Minutes</dt>
 <dt markdown="1">- Display All Minutes (slider disabled)</dt>
 <dt markdown="1">**Source**</dt>
-<dd>Source can be either "Live Feed", which pulls data from the
+<dd>Source can be either **Live Feed**, which pulls data from the
     connected Flutter app, or one of the available offline data
-    files, which are created by clicking "Export".</dd>
+    files, which are created by clicking **Export**.
+</dd>
 <dt markdown="1">**Android Memory**</dt>
-<dd>Displays or hides the Android Memory Chart.</dd>
+<dd>Displays or hides the Android Memory Chart.
+</dd>
 <dt markdown="1">**GC**</dt>
-<dd>Initiates a garbage collection&mdash;a compaction of the heap.</dd>
+<dd>Initiates a garbage collection&mdash;a compaction of the heap.
+</dd>
 <dt markdown="1">**Export**</dt>
 <dd>Saves collected data for the Event Timeline, Memory Overview Chart,
     and Android Overview Chart. Files saved are displayed under the
-    **Source** dropdown. Selecting a file loads the offline data.</dd>
+    **Source** dropdown. Selecting a file loads the offline data.
+</dd>
 </dl>
 
 ## Memory actions
@@ -483,7 +491,7 @@ Two tabs are displayed:
 ### Analysis tab
 
 The **Analysis** tab collects memory snapshots, both user initiated and
-auto-collected, by DevTools (when DevTools detects memory spikes).
+auto-collected by DevTools (when DevTools detects memory spikes).
 Each snapshot is analyzed.
 
 ### Analysis actions
@@ -514,9 +522,9 @@ The actions available for Analysis are:
 **Expand All**
 : Expand all nodes in the tree table.
 
-### Analysis and Snapshots
+### Analysis and snapshots
 
-All Analyses and Snapshots are displayed in a table tree:
+All Analyses and snapshots are displayed in a table tree:
 
 ![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_table_tree_view.png){:width="100%"}
 
@@ -533,12 +541,12 @@ an instance of a class brings up the memory inspector.
 
 ## Snapshots
 
-![The Snapshot button]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot.png)
+![The snapshot button]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot.png)
 
 Clicking the **Snapshot** button shows the current state of the heap
 and displays all active classes and their instances: 
 
-![Screenshot of the Snapshot classes]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot_tree.png){:width="100%"}
+![Screenshot of the snapshot classes]({{site.url}}/assets/images/docs/tools/devtools/memory_snapshot_tree.png){:width="100%"}
 
 This pane shows classes allocated in the heap, all instances for a class,
 and the ability to inspect a particular instance.
@@ -606,7 +614,7 @@ Every snapshot creates a corresponding **Analyzed** entry under the
 **Analysis** node (the analyzed date/time corresponds to the matching
 snapshot date/time):
 
-![Screenshot of a Snapshot Analysis]({{site.url}}/assets/images/docs/tools/devtools/memory_analysis.png)
+![Screenshot of a snapshot analysis]({{site.url}}/assets/images/docs/tools/devtools/memory_analysis.png)
 
 Currently, analysis looks for common problems with images, such as
 loading large files instead of scaled thumbnails, or not using a
@@ -741,7 +749,7 @@ for finding memory leaks.
 
 Pressing the **Reset** button resets the accumulators for all classes
 to zero and a "monitor reset" event is sent to the
-Event Timeline.  Clicking the **Reset** button again resets both
+Event Timeline. Clicking the **Reset** button again resets both
 accumulators to zero.
 
 <dl markdown="1">
@@ -802,8 +810,8 @@ typed so far. The first item in the list is highlighted:
 <dl markdown="1">
 <dt markdown="1">**ENTER**</dt>
 <dd markdown="1">Selects the highlighted line (GlobalObjectKey) and
-                 navigates to the row with that class name in
-                 the active tree table (Snapshot) or table (Allocations).
+                 navigates to the row with that class name in the
+                 active **Snapshot** table or the **Allocations** table.
 </dd>
 <dt markdown="1">**UP/DOWN arrows**</dt>
 <dd markdown="1">Rotates through the list of possible matches highlighting
