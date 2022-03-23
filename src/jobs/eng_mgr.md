@@ -18,7 +18,7 @@ We are looking for a senior engineering manager who is passionate about creating
 As a manager of the Mobile Platforms Teams and the Ecosystem Team, you will:
 
 *   Build an inclusive culture which values diverse ideas, collaboration, teamwork, and fun
-*   Manage and coach a team of ~12 engineers and help them grow in their careers
+*   Manage and coach a team of ~12-15 engineers and help them grow in their careers
 *   Influence technical strategy to build a platform developers love
 *   Work closely with the product team to deliver on the team’s technical vision
 *   Drive team discussions on system architecture
