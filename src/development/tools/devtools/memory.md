@@ -20,8 +20,8 @@ Memory profiling in DevTools consists of 3 main functions:
 * Charting memory usage statistics and events
 * Anaylsis to view all memory via a heap to detect memory issues
   and inspect objects
-* Allocations to monitor and track (stack trace) specific classes
-  and objects when an allocation occurs
+* Allocation monitoring to track object allocations and
+  their stack traces for selected classes.
 
 ## Charting memory statistics and events
 
@@ -510,7 +510,7 @@ The actions available for Analysis are:
 **Treemap**
 : If the **Treemap** switch is on, the snapshot displays currently
   active memory objects, the last snapshot, and memory in a high-level
-  view as a tree map. (TBD details).
+  view as a tree map.
 
 **Group By**
 : A dropdown to select how data is grouped, which can either be by
@@ -524,7 +524,7 @@ The actions available for Analysis are:
 
 ### Analysis and snapshots
 
-All Analyses and snapshots are displayed in a table tree:
+All analyses and snapshots are displayed in a table tree:
 
 ![Two Tabs Memory Actions]({{site.url}}/assets/images/docs/tools/devtools/memory_table_tree_view.png){:width="100%"}
 
