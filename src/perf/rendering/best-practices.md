@@ -179,7 +179,7 @@ render a frame as fast as possible. Why?
   difference, but it **improves battery life** and thermal issues.
 * It might run fine on your device, but consider performance for the
   lowest device you are targeting.
-* When 120fps devices become widely available,
+* As 120fps devices become more widely available,
   you’ll want to render frames in under 8ms (total)
   in order to provide the smoothest experience.
 
