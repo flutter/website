@@ -61,10 +61,9 @@ jobs:
         run: make build
         env:
           DISABLE_TESTS: 1
-      - name: Add npm modules to path
-        run: echo "$HOME/node_modules/.bin/" >> $GITHUB_PATH
       - name: Deploy
         run: make deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_ALIAS: default
+          PATH: 'node_modules/.bin/'
