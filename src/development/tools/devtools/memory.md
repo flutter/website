@@ -18,9 +18,9 @@ memory at a given moment.
 Memory profiling in DevTools consists of 3 main functions:
 
 * Charting memory usage statistics and events
-* Anaylsis to view all memory via a heap to detect memory issues
+* Analysis to view all memory via a heap to detect memory issues
   and inspect objects
-* Allocation monitoring to track object allocations and
+* Monitoring and tracking allocations and
   their stack traces for selected classes.
 
 ## Charting memory statistics and events
@@ -49,19 +49,18 @@ that might cause leaks or lead to application crashes.
 For example, loading large assets for images displayed
 as thumbnails&mdash;memory usage can be improved by loading smaller
 assets or adjusting the `cacheWidth` and `cacheHeight`
-to decode an image to a smaller size,
-reducing the memory burden on the `ImageCache`.
-This analysis catches issues like this.
+to decode an image to a smaller size.
+This reduces the memory burden on the `ImageCache`.
 For more information, see [Analysis tab](#analysis-tab).
 
 ## Allocations and tracking
 
 Monitoring all allocations involves directly interacting
-with DevTools and your application to isolate a short period
-of time where you are interested in knowing how many objects
-were allocated, how many bytes were allocated, or in tracking
-all the places in your code where a particular
-class is allocated.
+with DevTools and your application for a specific period
+of time; this tells you how many objects and bytes were
+allocated in that timeframe, as well as tracking
+all of the places in your code where a particular
+class was allocated.
 This information is available under the **Allocations**
 tab of the Memory profiler and is a fairly fast computation
 with less overhead than using a snapshot.
@@ -69,16 +68,17 @@ with less overhead than using a snapshot.
 Monitoring allocations and resetting accumulators
 helps to analyze the accumulator counts (the number of
 objects or bytes allocated), in a short timeframe.
-If you suspect that your application is leaking memory
+If you suspect that your application is leaking memory,
 or has other bugs relating to memory allocation,
-the accumulators can be used to understand the
-allocation rate. Additionally, you can track
-allocations of a few specific classes; tracking too
-many classes might slow the running of your application
-and isn't recommended. The VM records the stack
-trace at the time a class constructor is called
-(causing an allocation). This can isolate the exact
-location in your code when and where memory is being allocated.
+use the accumulators to understand the rate.
+of allocation. Additionally, you can track
+allocations of a few specific classes. We don't
+recommend tracking too many classes at once,
+as it might slow the running of your application.
+The VM records the stack trace at the time a class
+constructor is called, resulting in an allocation.
+This isolates the exact location in your code when
+memory is allocated.
 For more information, see [Allocation tab](#allocation-tab).
 
 {{site.alert.note}}
@@ -220,7 +220,7 @@ post the 'MyImages' event to the memory timeline as follows:
 Widget recordLoadedImage(ImageChunkEvent imageChunkEvent, String imageUrl) {
  
   // Record the event in the memory event pane.
-  devToolsPostEvent('MyFirstApp', { 'method': 'recordLoadedImage', 'param': imageUrl });
+  devToolsPostEvent('MyImages', { 'method': 'recordLoadedImage', 'param': imageUrl });
 
   if (imageChunkEvent == null) return null;
 
