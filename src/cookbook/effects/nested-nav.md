@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/nested_nav"?>
+
 Apps accumulate dozens and then hundreds of routes over time.
 Some of your routes make sense as top-level (global) routes.
 For example, "/", "profile", "contact", "social_feed" are all
@@ -49,7 +51,7 @@ along with the setup flow. Define these
 route names as constants so that they can
 be referenced within code.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (Routes)"?>
 ```dart
 const routeHome = '/';
 const routeSettings = '/settings';
@@ -81,31 +83,30 @@ means that you can’t use the `routes` property of your top-level
 Implement `onGenerateRoute` to return the appropriate widget
 for each of the three top-level paths.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (OnGenerateRoute)"?>
 ```dart
 onGenerateRoute: (settings) {
- late Widget page;
- if (settings.name == routeHome) {
-   page = HomeScreen();
- } else if (settings.name == routeSettings) {
-   page = SettingsScreen();
- } else if (settings.name!.startsWith(routePrefixDeviceSetup)) {
-   final subRoute = settings.name!.substring(
-     routePrefixDeviceSetup.length,
-   );
-   page = SetupFlow(
-     setupPageRoute: subRoute,
-   );
- } else {
-   throw Exception('Unknown route: ${settings.name}');
- }
+  late Widget page;
+  if (settings.name == routeHome) {
+    page = const HomeScreen();
+  } else if (settings.name == routeSettings) {
+    page = const SettingsScreen();
+  } else if (settings.name!.startsWith(routePrefixDeviceSetup)) {
+    final subRoute =
+        settings.name!.substring(routePrefixDeviceSetup.length);
+    page = SetupFlow(
+      setupPageRoute: subRoute,
+    );
+  } else {
+    throw Exception('Unknown route: ${settings.name}');
+  }
 
- return MaterialPageRoute<dynamic>(
-   builder: (context) {
-     return page;
-   },
-   settings: settings,
- );
+  return MaterialPageRoute<dynamic>(
+    builder: (context) {
+      return page;
+    },
+    settings: settings,
+  );
 },
 ```
 
@@ -121,18 +122,18 @@ within the setup flow.
 Create a stateful widget called `SetupFlow` that
 accepts a route name.
 
-<!--skip-->
+<?code-excerpt "lib/setupflow.dart (SetupFlow)" replace="/@override\n*.*\n\s*return const SizedBox\(\);\n\s*}/\/\/.../g"?>
 ```dart
 class SetupFlow extends StatefulWidget {
- const SetupFlow({
-   Key? key,
-   required this.setupPageRoute,
- }) : super(key: key);
+  const SetupFlow({
+    Key? key,
+    required this.setupPageRoute,
+  }) : super(key: key);
 
- final String setupPageRoute;
+  final String setupPageRoute;
 
- @override
- SetupFlowState createState() => SetupFlowState();
+  @override
+  SetupFlowState createState() => SetupFlowState();
 }
 
 class SetupFlowState extends State<SetupFlow> {
@@ -149,20 +150,20 @@ Return a `Scaffold` widget from your `SetupFlow`
 widget’s `build()` method, 
 and include the desired `AppBar` widget.
 
-<!--skip-->
+<?code-excerpt "lib/setupflow2.dart (SetupFlow2)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
- return Scaffold(
-   appBar: _buildFlowAppBar(),
-   body: SizedBox(),
- );
+  return Scaffold(
+    appBar: _buildFlowAppBar(),
+    body: const SizedBox(),
+  );
 }
 
 PreferredSizeWidget _buildFlowAppBar() {
- return AppBar(
-   title: Text('Bulb Setup'),
- );
+  return AppBar(
+    title: const Text('Bulb Setup'),
+  );
 }
 ```
 
@@ -176,65 +177,66 @@ Prompt the user to confirm exiting the setup flow,
 and ensure that the prompt appears when the user
 presses the hardware back button on Android.
 
-<!--skip-->
+<?code-excerpt "lib/prompt_user.dart (PromptUser)"?>
 ```dart
 Future<void> _onExitPressed() async {
- final isConfirmed = await _isExitDesired();
+  final isConfirmed = await _isExitDesired();
 
- if (isConfirmed && mounted) {
-   _exitSetup();
- }
+  if (isConfirmed && mounted) {
+    _exitSetup();
+  }
 }
 
 Future<bool> _isExitDesired() async {
- return await showDialog<bool>(
-         context: context,
-         builder: (context) {
-           return AlertDialog(
-             title: Text('Are you sure?'),
-             content: Text('If you exit device setup, your progress will be lost.'),
-             actions: [
-               TextButton(
-                 onPressed: () {
-                   Navigator.of(context).pop(true);
-                 },
-                 child: Text('Leave'),
-               ),
-               TextButton(
-                 onPressed: () {
-                   Navigator.of(context).pop(false);
-                 },
-                 child: Text('Stay'),
-               ),
-             ],
-           );
-         }) ??
-     false;
+  return await showDialog<bool>(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('Are you sure?'),
+              content: const Text(
+                  'If you exit device setup, your progress will be lost.'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(true);
+                  },
+                  child: const Text('Leave'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(false);
+                  },
+                  child: const Text('Stay'),
+                ),
+              ],
+            );
+          }) ??
+      false;
 }
 
 void _exitSetup() {
- Navigator.of(context).pop();
+  Navigator.of(context).pop();
 }
 
 @override
 Widget build(BuildContext context) {
- return WillPopScope(
-   onWillPop: _isExitDesired,
-   child: Scaffold(
-     appBar: _buildFlowAppBar(),
-     body: SizedBox(),
-   ),
- );
+  return WillPopScope(
+    onWillPop: _isExitDesired,
+    child: Scaffold(
+      appBar: _buildFlowAppBar(),
+      body: const SizedBox(),
+    ),
+  );
 }
 
 PreferredSizeWidget _buildFlowAppBar() {
- return AppBar(
-   leading: IconButton(
-     onPressed: _onExitPressed,
-     icon: Icon(Icons.chevron_left),
-   ),
-   title: Text('Bulb Setup'),
- );
+  return AppBar(
+    leading: IconButton(
+      onPressed: _onExitPressed,
+      icon: const Icon(Icons.chevron_left),
+    ),
+    title: const Text('Bulb Setup'),
+  );
 }
 ```
 
@@ -260,76 +262,70 @@ page within the flow.
 Add a `Navigator` widget to `SetupFlow`,
 and implement the `onGenerateRoute` property.
 
-<!--skip-->
+<?code-excerpt "lib/add_navigator.dart (AddNavigator)"?>
 ```dart
 final _navigatorKey = GlobalKey<NavigatorState>();
 
 void _onDiscoveryComplete() {
- _navigatorKey.currentState!.pushNamed(
-   routeDeviceSetupSelectDevicePage,
- );
+  _navigatorKey.currentState!.pushNamed(routeDeviceSetupSelectDevicePage);
 }
 
 void _onDeviceSelected(String deviceId) {
- _navigatorKey.currentState!.pushNamed(
-   routeDeviceSetupConnectingPage,
- );
+  _navigatorKey.currentState!.pushNamed(routeDeviceSetupConnectingPage);
 }
 
 void _onConnectionEstablished() {
- _navigatorKey.currentState!.pushNamed(
-   routeDeviceSetupFinishedPage,
- );
+  _navigatorKey.currentState!.pushNamed(routeDeviceSetupFinishedPage);
 }
 
 @override
 Widget build(BuildContext context) {
- return WillPopScope(
-   onWillPop: _isExitDesired,
-   child: Scaffold(
-     appBar: _buildFlowAppBar(),
-     body: Navigator(
-       key: _navigatorKey,
-       initialRoute: widget.setupPageRoute,
-       onGenerateRoute: _onGenerateRoute,
-     ),
-   ),
- );
+  return WillPopScope(
+    onWillPop: _isExitDesired,
+    child: Scaffold(
+      appBar: _buildFlowAppBar(),
+      body: Navigator(
+        key: _navigatorKey,
+        initialRoute: widget.setupPageRoute,
+        onGenerateRoute: _onGenerateRoute,
+      ),
+    ),
+  );
 }
 
 Route _onGenerateRoute(RouteSettings settings) {
- late Widget page;
- switch (settings.name) {
-   case routeDeviceSetupStartPage:
-     page = WaitingPage(
-       message: 'Searching for nearby bulb...',
-       onWaitComplete: _onDiscoveryComplete,
-     );
-     break;
-   case routeDeviceSetupSelectDevicePage:
-     page = SelectDevicePage(
-       onDeviceSelected: _onDeviceSelected,
-     );
-     break;
-   case routeDeviceSetupConnectingPage:
-     page = WaitingPage(
-       message: 'Connecting...',
-       onWaitComplete: _onConnectionEstablished,
-     );
-     break;
-   case routeDeviceSetupFinishedPage:
-     page = FinishedPage(
-       onFinishPressed: _exitSetup,
-     );
-     break;
- }
+  late Widget page;
+  switch (settings.name) {
+    case routeDeviceSetupStartPage:
+      page = WaitingPage(
+        message: 'Searching for nearby bulb...',
+        onWaitComplete: _onDiscoveryComplete,
+      );
+      break;
+    case routeDeviceSetupSelectDevicePage:
+      page = SelectDevicePage(
+        onDeviceSelected: _onDeviceSelected,
+      );
+      break;
+    case routeDeviceSetupConnectingPage:
+      page = WaitingPage(
+        message: 'Connecting...',
+        onWaitComplete: _onConnectionEstablished,
+      );
+      break;
+    case routeDeviceSetupFinishedPage:
+      page = FinishedPage(
+        onFinishPressed: _exitSetup,
+      );
+      break;
+  }
 
- return MaterialPageRoute<dynamic>(
-   builder: (context) {
-     return page;
-   },
-   settings: settings,
- );
+  return MaterialPageRoute<dynamic>(
+    builder: (context) {
+      return page;
+    },
+    settings: settings,
+  );
 }
 ```
 
@@ -391,12 +387,10 @@ Run the app:
 * Click the **Finished** button to return to the
   first screen.
 
-<!--skip-->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
-// Copyright 2020, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
+<!-- Start DartPad -->
 
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 const routeHome = '/';

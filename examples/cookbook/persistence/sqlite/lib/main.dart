@@ -1,9 +1,10 @@
+// #docregion imports
 import 'dart:async';
-
-import 'package:flutter/widgets.dart';
 
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+// #enddocregion imports
+import 'package:flutter/widgets.dart';
 
 void main() async {
   // Avoid errors caused by flutter upgrade.
@@ -102,7 +103,7 @@ void main() async {
 
   // #docregion fido
   // Create a Dog and add it to the dogs table
-  var fido = Dog(
+  var fido = const Dog(
     id: 0,
     name: 'Fido',
     age: 35,
@@ -142,7 +143,7 @@ class Dog {
   final String name;
   final int age;
 
-  Dog({
+  const Dog({
     required this.id,
     required this.name,
     required this.age,

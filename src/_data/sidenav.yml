@@ -48,7 +48,6 @@
 
 - title: Development
   expanded: true
-  permalink: /development
   children:
     - title: User interface
       permalink: /development/ui
@@ -117,10 +116,8 @@
         - title: Widget catalog
           permalink: /development/ui/widgets
     - title: Data & backend
-      permalink: /development/data-and-backend
       children:
         - title: State management
-          permalink: /development/data-and-backend/state-mgmt
           children:
             - title: Introduction
               permalink: /development/data-and-backend/state-mgmt/intro
@@ -162,6 +159,8 @@
           permalink: /development/platform-integration/web
         - title: Writing platform-specific code
           permalink: /development/platform-integration/platform-channels
+        - title: Desktop
+          permalink: /desktop
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:
@@ -360,6 +359,8 @@
       permalink: /deployment/macos
     - title: Build and release a Linux app
       permalink: /deployment/linux
+    - title: Build and release a Windows app
+      permalink: /deployment/windows
     - title: Build and release a web app
       permalink: /deployment/web
     - title: Continuous deployment

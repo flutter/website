@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/navigation/navigation_basics"?>
+
 Most apps contain several screens for displaying different types of
 information.
 For example, an app might have a screen that displays products.
@@ -45,6 +47,7 @@ second route returns to the first route.
 
 First, set up the visual structure:
 
+<?code-excerpt "lib/main_step1.dart (FirstSecondRoutes)"?>
 ```dart
 class FirstRoute extends StatelessWidget {
   const FirstRoute({Key? key}) : super(key: key);
@@ -53,11 +56,11 @@ class FirstRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Route'),
+        title: const Text('First Route'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Open route'),
+          child: const Text('Open route'),
           onPressed: () {
             // Navigate to second route when tapped.
           },
@@ -74,14 +77,14 @@ class SecondRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Route"),
+        title: const Text('Second Route'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             // Navigate back to first route when tapped.
           },
-          child: Text('Go back!'),
+          child: const Text('Go back!'),
         ),
       ),
     );
@@ -101,13 +104,13 @@ new route using a platform-specific animation.
 In the `build()` method of the `FirstRoute` widget,
 update the `onPressed()` callback:
 
-<!-- skip -->
+<?code-excerpt "lib/main_step2.dart (FirstRouteOnPressed)"?>
 ```dart
 // Within the `FirstRoute` widget
 onPressed: () {
   Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => SecondRoute()),
+    MaterialPageRoute(builder: (context) => const SecondRoute()),
   );
 }
 ```
@@ -122,7 +125,7 @@ routes managed by the `Navigator`.
 To implement a return to the original route, update the `onPressed()`
 callback in the `SecondRoute` widget:
 
-<!-- skip -->
+<?code-excerpt "lib/main_step2.dart (SecondRouteOnPressed)"?>
 ```dart
 // Within the SecondRoute widget
 onPressed: () {
@@ -132,7 +135,8 @@ onPressed: () {
 
 ## Interactive example
 
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -173,7 +177,7 @@ class SecondRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Second Route"),
+        title: const Text('Second Route'),
       ),
       body: Center(
         child: ElevatedButton(

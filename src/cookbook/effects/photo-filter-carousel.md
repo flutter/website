@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/photo_filter_carousel"?>
+
 Everybody knows that a photo looks better with a filter.
 In this recipe, you build a scrollable,
 filter selection carousel.
@@ -36,23 +38,23 @@ Create a new stateful widget called
 `FilterSelector` that you’ll use to 
 implement the selector.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt1.dart (FilterSelector)"?>
 ```dart
 @immutable
 class FilterSelector extends StatefulWidget {
- const FilterSelector({
-   Key? key,
- }) : super(key: key);
+  const FilterSelector({
+    Key? key,
+  }) : super(key: key);
 
- @override
- _FilterSelectorState createState() => _FilterSelectorState();
+  @override
+  _FilterSelectorState createState() => _FilterSelectorState();
 }
 
 class _FilterSelectorState extends State<FilterSelector> {
- @override
- Widget build(BuildContext context) {
-   return SizedBox();
- }
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox();
+  }
 }
 ```
 
@@ -60,20 +62,20 @@ Add the `FilterSelector` widget to the existing
 widget tree. Position the `FilterSelector` widget
 on top of the photo, at the bottom and centered.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt1.dart (Stack)" replace="/^child: //g"?>
 ```dart
 Stack(
- children: [
-   Positioned.fill(
-     child: _buildPhotoWithFilter(),
-   ),
-   Positioned(
-     left: 0.0,
-     right: 0.0,
-     bottom: 0.0,
-     child: FilterSelector(),
-   ),
- ],
+  children: [
+    Positioned.fill(
+      child: _buildPhotoWithFilter(),
+    ),
+    const Positioned(
+      left: 0.0,
+      right: 0.0,
+      bottom: 0.0,
+      child: FilterSelector(),
+    ),
+  ],
 ),
 ```
 
@@ -81,67 +83,67 @@ Within the `FilterSelector` widget,
 display a selector ring on top of a 
 dark gradient by using a `Stack` widget.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt2.dart (FilterSelectorState2)"?>
 ```dart
 class _FilterSelectorState extends State<FilterSelector> {
- static const _filtersPerScreen = 5;
- static const _viewportFractionPerItem = 1.0 / _filtersPerScreen;
+  static const _filtersPerScreen = 5;
+  static const _viewportFractionPerItem = 1.0 / _filtersPerScreen;
 
- @override
- Widget build(BuildContext context) {
-   return LayoutBuilder(
-     builder: (context, constraints) {
-       final itemSize = constraints.maxWidth * _viewportFractionPerItem;
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final itemSize = constraints.maxWidth * _viewportFractionPerItem;
 
-       return Stack(
-         alignment: Alignment.bottomCenter,
-         children: [
-           _buildShadowGradient(itemSize),
-           _buildSelectionRing(itemSize),
-         ],
-       );
-     },
-   );
- }
+        return Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            _buildShadowGradient(itemSize),
+            _buildSelectionRing(itemSize),
+          ],
+        );
+      },
+    );
+  }
 
- Widget _buildShadowGradient(double itemSize) {
-   return SizedBox(
-     height: itemSize * 2 + widget.padding.vertical,
-     child: const DecoratedBox(
-       decoration: BoxDecoration(
-         gradient: LinearGradient(
-           begin: Alignment.topCenter,
-           end: Alignment.bottomCenter,
-           colors: [
-             Colors.transparent,
-             Colors.black,
-           ],
-         ),
-       ),
-       child: SizedBox.expand(),
-     ),
-   );
- }
+  Widget _buildShadowGradient(double itemSize) {
+    return SizedBox(
+      height: itemSize * 2 + widget.padding.vertical,
+      child: const DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.transparent,
+              Colors.black,
+            ],
+          ),
+        ),
+        child: SizedBox.expand(),
+      ),
+    );
+  }
 
- Widget _buildSelectionRing(double itemSize) {
-   return IgnorePointer(
-     child: Padding(
-       padding: widget.padding,
-       child: SizedBox(
-         width: itemSize,
-         height: itemSize,
-         child: const DecoratedBox(
-           decoration: BoxDecoration(
-             shape: BoxShape.circle,
-             border: Border.fromBorderSide(
-               BorderSide(width: 6.0, color: Colors.white),
-             ),
-           ),
-         ),
-       ),
-     ),
-   );
- }
+  Widget _buildSelectionRing(double itemSize) {
+    return IgnorePointer(
+      child: Padding(
+        padding: widget.padding,
+        child: SizedBox(
+          width: itemSize,
+          height: itemSize,
+          child: const DecoratedBox(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.fromBorderSide(
+                BorderSide(width: 6.0, color: Colors.white),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
 
@@ -166,39 +168,39 @@ that corresponds to the associated filter color.
 Define a new stateless widget called `FilterItem`
 that displays a single list item.
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (FilterItem)"?>
 ```dart
 @immutable
 class FilterItem extends StatelessWidget {
- const FilterItem({
-   Key? key,
-   required this.color,
-   this.onFilterSelected,
- }) : super(key: key);
+  const FilterItem({
+    Key? key,
+    required this.color,
+    this.onFilterSelected,
+  }) : super(key: key);
 
- final Color color;
- final VoidCallback? onFilterSelected;
+  final Color color;
+  final VoidCallback? onFilterSelected;
 
- @override
- Widget build(BuildContext context) {
-   return GestureDetector(
-     onTap: onFilterSelected,
-     child: AspectRatio(
-       aspectRatio: 1.0,
-       child: Padding(
-         padding: const EdgeInsets.all(8.0),
-         child: ClipOval(
-           child: Image.network(
-             'https://docs.flutter.dev/cookbook/img-files'
-             '/effects/instagram-buttons/millenial-texture.jpg',
-             color: color.withOpacity(0.5),
-             colorBlendMode: BlendMode.hardLight,
-           ),
-         ),
-       ),
-     ),
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onFilterSelected,
+      child: AspectRatio(
+        aspectRatio: 1.0,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ClipOval(
+            child: Image.network(
+              'https://docs.flutter.dev/cookbook/img-files'
+              '/effects/instagram-buttons/millenial-texture.jpg',
+              color: color.withOpacity(0.5),
+              colorBlendMode: BlendMode.hardLight,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
 
@@ -231,61 +233,61 @@ no matter where the user releases a drag.
 
 Configure your widget tree to make space for the `PageView`.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt3.dart (PageView)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
- return LayoutBuilder(builder: (context, constraints) {
-   final itemSize = constraints.maxWidth * _viewportFractionPerItem;
+  return LayoutBuilder(builder: (context, constraints) {
+    final itemSize = constraints.maxWidth * _viewportFractionPerItem;
 
-   return Stack(
-     alignment: Alignment.bottomCenter,
-     children: [
-       _buildShadowGradient(itemSize),
-       _buildCarousel(itemSize),
-       _buildSelectionRing(itemSize),
-     ],
-   );
- });
+    return Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        _buildShadowGradient(itemSize),
+        _buildCarousel(itemSize),
+        _buildSelectionRing(itemSize),
+      ],
+    );
+  });
 }
 
 Widget _buildCarousel(double itemSize) {
- return Container(
-   height: itemSize,
-   margin: widget.padding,
-   child: PageView.builder(
-     itemCount: widget.filters.length,
-     itemBuilder: (context, index) {
-       return SizedBox();
-     },
-   ),
- );
+  return Container(
+    height: itemSize,
+    margin: widget.padding,
+    child: PageView.builder(
+      itemCount: widget.filters.length,
+      itemBuilder: (context, index) {
+        return const SizedBox();
+      },
+    ),
+  );
 }
 ```
 
 Build each `FilterItem` widget within the
 `PageView` widget based on the given `index`.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt4.dart (BuildFilterItem)"?>
 ```dart
 Color itemColor(int index) => widget.filters[index % widget.filters.length];
 
 Widget _buildCarousel(double itemSize) {
- return Container(
-   height: itemSize,
-   margin: widget.padding,
-   child: PageView.builder(
-     itemCount: widget.filters.length,
-     itemBuilder: (context, index) {
-       return Center(
-         child: FilterItem(
-           color: itemColor(index),
-           onFilterSelected: () {},
-         ),
-       );
-     },
-   ),
- );
+  return Container(
+    height: itemSize,
+    margin: widget.padding,
+    child: PageView.builder(
+      itemCount: widget.filters.length,
+      itemBuilder: (context, index) {
+        return Center(
+          child: FilterItem(
+            color: itemColor(index),
+            onFilterSelected: () {},
+          ),
+        );
+      },
+    ),
+  );
 }
 ```
 
@@ -311,49 +313,54 @@ as the user scrolls.
 Create a `PageViewController` and connect it to the
 `PageView` widget.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt5.dart (PageViewController)" replace="/\/\/code-excerpt-close-bracket/\n}/g;"?>
 ```dart
 class _FilterSelectorState extends State<FilterSelector> {
- late final PageController _controller;
+  static const _filtersPerScreen = 5;
+  static const _viewportFractionPerItem = 1.0 / _filtersPerScreen;
 
- @override
- void initState() {
-   super.initState();
-   _controller = PageController(
-     viewportFraction: _viewportFractionPerItem,
-   );
-   _controller.addListener(_onPageChanged);
- }
+  late final PageController _controller;
 
- void _onPageChanged() {
-   final page = (_controller.page ?? 0).round();
-   widget.onFilterChanged(widget.filters[page]);
- }
+  Color itemColor(int index) => widget.filters[index % widget.filters.length];
 
- @override
- void dispose() {
-   _controller.dispose();
-   super.dispose();
- }
+  @override
+  void initState() {
+    super.initState();
+    _controller = PageController(
+      viewportFraction: _viewportFractionPerItem,
+    );
+    _controller.addListener(_onPageChanged);
+  }
 
- Widget _buildCarousel(double itemSize) {
-   return Container(
-     height: itemSize,
-     margin: widget.padding,
-     child: PageView.builder(
-       controller: _controller,
-       itemCount: widget.filters.length,
-       itemBuilder: (context, index) {
-         return Center(
-           child: FilterItem(
-             color: itemColor(index),
-             onFilterSelected: () {},
-           ),
-         );
-       },
-     ),
-   );
- }
+  void _onPageChanged() {
+    final page = (_controller.page ?? 0).round();
+    widget.onFilterChanged(widget.filters[page]);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Widget _buildCarousel(double itemSize) {
+    return Container(
+      height: itemSize,
+      margin: widget.padding,
+      child: PageView.builder(
+        controller: _controller,
+        itemCount: widget.filters.length,
+        itemBuilder: (context, index) {
+          return Center(
+            child: FilterItem(
+              color: itemColor(index),
+              onFilterSelected: () {},
+            ),
+          );
+        },
+      ),
+    );
+  }
 }
 ```
 
@@ -366,7 +373,7 @@ Wrap each `FilterItem` widget with an `AnimatedBuilder`
 to change the visual properties of each `FilterItem`
 widget as the scroll position changes.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt6.dart (BuildCarousel)"?>
 ```dart
 Widget _buildCarousel(double itemSize) {
   return Container(
@@ -402,7 +409,7 @@ Calculate an appropriate scale and opacity for each
 `FilterItem` widget within the `AnimatedBuilder` and
 apply those values.
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (FinalBuildCarousel)"?>
 ```dart
 Widget _buildCarousel(double itemSize) {
   return Container(
@@ -417,10 +424,10 @@ Widget _buildCarousel(double itemSize) {
             animation: _controller,
             builder: (context, child) {
               if (!_controller.hasClients ||
-                !_controller.position.hasContentDimensions) {
+                  !_controller.position.hasContentDimensions) {
                 // The PageViewController isn’t connected to the
                 // PageView widget yet. Return an empty box.
-                return SizedBox();
+                return const SizedBox();
               }
 
               // The integer index of the current page,
@@ -434,18 +441,18 @@ Widget _buildCarousel(double itemSize) {
 
               // The page-distance of a filter just before it
               // moves off-screen.
-              final maxScrollDistance = _filtersPerScreen / 2;
+              const maxScrollDistance = _filtersPerScreen / 2;
 
               // The page-distance of this filter item from the
               // currently selected filter item.
               final pageDistanceFromSelected =
-   (selectedIndex - index + pageScrollAmount).abs();
+                  (selectedIndex - index + pageScrollAmount).abs();
 
               // The distance of this filter item from the
               // center of the carousel as a percentage, that is, where the selector
               // ring sits.
               final percentFromCenter =
-   1.0 - pageDistanceFromSelected / maxScrollDistance;
+                  1.0 - pageDistanceFromSelected / maxScrollDistance;
 
               final itemScale = 0.5 + (percentFromCenter * 0.5);
               final opacity = 0.25 + (percentFromCenter * 0.75);
@@ -475,26 +482,26 @@ away as it moves farther from the center of the screen.
 Add a method to change the selected filter when a
 `FilterItem` widget is tapped.
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (FilterTapped)"?>
 ```dart
 void _onFilterTapped(int index) {
- _controller.animateToPage(
-   index,
-   duration: const Duration(milliseconds: 450),
-   curve: Curves.ease,
- );
+  _controller.animateToPage(
+    index,
+    duration: const Duration(milliseconds: 450),
+    curve: Curves.ease,
+  );
 }
 ```
 
 Configure each `FilterItem` widget to invoke
 `_onFilterTapped` when tapped.
 
-<!--skip-->
+<?code-excerpt "lib/original_example.dart (OnFilterTapped)" replace="/child: //g;/\(\) {}/_onFilterTapped/g;"?>
 ```dart
 FilterItem(
   color: itemColor(index),
   onFilterSelected: () => _onFilterTapped,
-)
+),
 ```
 
 Congratulations!
@@ -502,15 +509,16 @@ You now have a draggable, tappable photo filter carousel.
 
 ## Interactive example
 
-<!--skip-->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show ViewportOffset;
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(
+    const MaterialApp(
       home: ExampleInstagramFilterSelection(),
       debugShowCheckedModeBanner: false,
     ),

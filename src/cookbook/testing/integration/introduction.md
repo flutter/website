@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ### 2. Add the `integration_test` dependency
 
-Next, use the `integration_test`, `flutter_driver`, and `flutter_test` packages
+Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
 section of the app's `pubspec.yaml` file, specifying the Flutter SDK as the
 location of the package.
@@ -231,6 +231,7 @@ To get started testing in a web browser, [Download ChromeDriver][].
 Next, create a new directory named `test_driver` containing a new file
 named`integration_test.dart`:
 
+<?code-excerpt "lib/test_driver/integration_test.dart"?>
 ```dart
 import 'package:integration_test/integration_test_driver.dart';
 

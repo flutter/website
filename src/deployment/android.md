@@ -294,34 +294,46 @@ are correct, especially the following:
   Internet access during development to enable communication between
   Flutter tools and a running app.
 
-## Reviewing the build configuration
+## Reviewing the Gradle build configuration
 
-Review the default [Gradle build file][gradlebuild],
-`build.gradle`, located in `[project]/android/app` and
-verify the values are correct, especially the following
-values in the `defaultConfig` block:
+Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in 
+`[project]/android/app` to verify the values are correct:
+
+#### Under the `defaultConfig` block
 
 `applicationId`
-: Specify the final, unique (Application Id)[appid]
+: Specify the final, unique [application ID][]
+  
+`minSdkVersion`
+: Specify the minimum API level on which the app is designed to run.
+  Defaults to `flutter.minSdkVersion`.
 
-`versionCode` & `versionName`
-: Specify the internal app version number,
-  and the version number display string. You can do this by setting
-  the `version` property in the pubspec.yaml file. Consult the version
-  information guidance in the [versions documentation][versions].
+`targetSdkVersion`
+: Specify the target API level on which the app is designed to run.
+  Defaults to `flutter.targetSdkVersion`.
+  
+`versionCode`
+: A positive integer used as an internal version number. This number
+  is used only to determine whether one version is more recent than
+  another, with higher numbers indicating more recent versions.
+  This version isn't shown to users.
 
-`minSdkVersion`, `compilesdkVersion`, & `targetSdkVersion`
-: Specify the minimum API level,
-  the API level on which the app was compiled,
-  and the maximum API level on which the app is designed to run.
-  Consult the API level section in the [versions documentation][versions]
-  for details.
+`versionName`
+: A string used as the version number shown to users. This setting
+  can be specified as a raw string or as a reference to a string resource.
 
 `buildToolsVersion`
-: Specify the version of Android SDK Build Tools that your app uses. 
-  Alternatively, you can use the Android Gradle Plugin in Android Studio,
-  which will automatically import the minimum required Build Tools for your app
-  without the need for this property.
+: If you're using Android plugin for Gradle 3.0.0 or higher, your project
+  automatically uses the default version of the build tools that the
+  plugin specifies. Alternatively, you can specify a version of the build tools.
+
+#### Under the `android` block
+  
+`compileSdkVersion`
+: Specify the API level Gradle should use to compile your app.
+  Defaults to `flutter.compileSdkVersion`.
+
+For more information, see the module-level build section in the [Gradle build file][gradlebuild].
   
 ## Building the app for release
 
@@ -529,7 +541,7 @@ The resulting app bundle or APK files are located in
 
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
-[appid]: {{site.android-dev}}/studio/build/application-id
+[application ID]: {{site.android-dev}}/studio/build/application-id
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
@@ -562,4 +574,5 @@ The resulting app bundle or APK files are located in
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning
+[versions-minsdk]: {{site.android-dev}}/studio/publish/versioning#minsdkversion
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64

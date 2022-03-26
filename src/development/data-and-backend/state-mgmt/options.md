@@ -118,6 +118,7 @@ A state container approach familiar to many web developers.
 * [Flutter meets Redux: The Redux way of managing Flutter applications state][],
   by Amir Ghezelbash
 * [Redux and epics for better-organized code in Flutter apps][], by Nihad Delic
+* [Flutter_Redux_Gen - VS Code Plugin to generate boiler plate code][], by Balamurugan Muthusamy (BalaDhruv)
 
 
 [Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
@@ -133,6 +134,7 @@ A state container approach familiar to many web developers.
 [Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
 [Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
 [Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
+[Flutter_Redux_Gen - VS Code Plugin to generate boiler plate code]: https://marketplace.visualstudio.com/items?itemName=BalaDhruv.flutter-redux-gen
   
 ## Fish-Redux
 

@@ -35,7 +35,7 @@ This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
-previous experience with Dart, mobile, or web programming.
+previous experience with Dart, mobile, desktop, or web programming.
 
 This codelab is part 1 of a two-part codelab.
 You can find [part 2][] on [Google Developers Codelabs][]
@@ -56,7 +56,7 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
   * How to write a Flutter app that looks natural on iOS, Android,
-    and the web
+    desktop (Windows, for example), and the web
   * Basic structure of a Flutter app
   * Finding and using packages to extend functionality
   * Using hot reload for a quicker development cycle
@@ -83,6 +83,7 @@ The animated GIF shows how the app works at the completion of part 1.
   * The [iOS simulator][] (requires installing Xcode tools)
   * The [Android emulator][] (requires setup in Android Studio)
   * A browser (Chrome is required for debugging)
+  * As a [Windows][], [Linux][], or [macOS][] desktop application
 {{site.alert.end}}
 
 Every Flutter app you
@@ -98,6 +99,14 @@ and the web server when you want to test on
 other browsers. For more information,
 see [Building a web application with Flutter][]
 and [Write your first Flutter app on the web][codelab-web].
+
+Also, Flutter apps can compile for desktop.
+You should see your operating system listed
+in your IDE under **devices**, 
+for example: **Windows (desktop)**,
+or at the command line using `flutter devices`.
+For more information on building apps for desktop,
+see [Write a Flutter desktop application][].
 
 ## Step 1: Create the starter Flutter app
 
@@ -163,11 +172,11 @@ where the Dart code lives.
     {{site.alert.end}}
 
  2. Run the app [in the way your IDE describes][].
-    You should see either Android, iOS, or web output,
-    depending on your device.
+    You should see either Android, iOS, Windows, Linux, macOS,
+    or web output, depending on your device.
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
+      {% include docs/ios-windows-figure-pair.md image="hello-world.png" alt="Hello world app" %}
     {% endindent %}
 
     {{site.alert.tip}}
@@ -190,9 +199,6 @@ where the Dart code lives.
   in the `flutter` section of your `pubspec.yaml` file. 
   This will allow you to use more features of Material,
   such as their set of predefined [Icons][].
-
-* The `main()` method uses arrow (`=>`) notation.
-  Use arrow notation for one-line functions or methods.
 * The app extends `StatelessWidget`, which makes the app itself a
   widget. In Flutter, almost everything is a widget, including
   alignment, padding, and layout.
@@ -216,9 +222,22 @@ English words plus some utility functions.
 You can find the `english_words` package,
 as well as many other open source packages, on [pub.dev][].
 
- 1. The `pubspec.yaml` file manages the assets and dependencies
-    for a Flutter app. In `pubspec.yaml`, add `english_words`
-    (3.1.5 or higher) to the dependencies list:
+ 1. Add `english_words` package to your project as follows:
+
+    ```terminal
+    $ flutter pub add english_words
+    Resolving dependencies...
+    + english_words 4.0.0
+      path 1.8.0 (1.8.1 available)
+      source_span 1.8.1 (1.8.2 available)
+      test_api 0.4.3 (0.4.9 available)
+    Downloading english_words 4.0.0...
+    Changed 1 dependency!
+    ```
+ 
+    The `pubspec.yaml` file manages the assets and dependencies
+    for a Flutter app. In `pubspec.yaml`, you will see
+    that the `english_words` dependency has been added:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
@@ -312,7 +331,7 @@ as well as many other open source packages, on [pub.dev][].
     or when toggling the Platform in Flutter Inspector.
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
+      {% include docs/ios-windows-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
 
 ### Problems?
@@ -380,6 +399,8 @@ a child inside the existing `MyApp` stateless widget.
 
   ```dart
 class RandomWords extends StatefulWidget {
+  const RandomWords({ Key? key }) : super(key: key);
+
   @override
   _RandomWordsState createState() => _RandomWordsState();
 }
@@ -482,7 +503,7 @@ lazily, on demand.
       }
     ```
 
-    Next, you'll add a `_buildSuggestions()` function to the
+    Next, you'll add a `ListView.builder` widget to the
     `_RandomWordsState` class. This method builds the
     `ListView` that displays the suggested word pairing.
 
@@ -496,23 +517,27 @@ lazily, on demand.
     This model allows the suggested list to continue growing
     as the user scrolls.
 
- 2. Add a `_buildSuggestions()` function to the `_RandomWordsState` class:
+ 2. Add a `ListView.builder` widget to the `build` method of the `_RandomWordsState` class:
 
-    <?code-excerpt "lib/main.dart (_buildSuggestions)" title indent-by="2"?>
+    <?code-excerpt "lib/main.dart (itemBuilder)" title indent-by="2"?>
     ```dart
-      Widget _buildSuggestions() {
-        return ListView.builder(
-            padding: const EdgeInsets.all(16.0),
-            itemBuilder: /*1*/ (context, i) {
-              if (i.isOdd) return const Divider(); /*2*/
+      body: ListView.builder(
+        padding: const EdgeInsets.all(16.0),
+        itemBuilder: /*1*/ (context, i) {
+          if (i.isOdd) return const Divider(); /*2*/
 
-              final index = i ~/ 2; /*3*/
-              if (index >= _suggestions.length) {
-                _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-              }
-              return _buildRow(_suggestions[index]);
-            });
-      }
+          final index = i ~/ 2; /*3*/
+          if (index >= _suggestions.length) {
+            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+          }
+          return ListTile(
+            title: Text(
+              _suggestions[index].asPascalCase,
+              style: _biggerFont,
+            ),
+          );
+        },
+      ),
     ```
 
     {:.numbered-code-notes}
@@ -529,27 +554,25 @@ lazily, on demand.
      4. If you've reached the end of the available word pairings,
         then generate 10 more and add them to the suggestions list.
 
-    The `_buildSuggestions()` function calls `_buildRow()` once per
+    The `ListView.builder` widget creates a `ListTile` once per
     word pair. This function displays each new pair in a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
- 3. Add a `_buildRow()` function to `_RandomWordsState`:
+ 3. Add a `ListTile` in the `itemBuilder` body of the `ListView.builder` in `_RandomWordsState`:
 
-    <?code-excerpt "lib/main.dart (_buildRow)" title indent-by="2"?>
+    <?code-excerpt "lib/main.dart (listTile)" title indent-by="2"?>
     ```dart
-      Widget _buildRow(WordPair pair) {
-        return ListTile(
-          title: Text(
-            pair.asPascalCase,
-            style: _biggerFont,
-          ),
-        );
-      }
+      return ListTile(
+        title: Text(
+          _suggestions[index].asPascalCase,
+          style: _biggerFont,
+        ),
+      );
     ```
 
  4. In the `_RandomWordsState` class, update the `build()` method to use
-    `_buildSuggestions()`, rather than directly calling the word
-    generation library.  ([`Scaffold`][]
+    the `ListView.builder`, rather than directly calling the word
+    generation library. ([`Scaffold`][]
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
@@ -561,7 +584,23 @@ lazily, on demand.
         [!  appBar: AppBar(!]
         [!    title: const Text('Startup Name Generator'),!]
         [!  ),!]
-        [!  body: _buildSuggestions(),!]
+        [!  body: ListView.builder(!]
+        [!    padding: const EdgeInsets.all(16.0),!]
+        [!    itemBuilder: /*1*/ (context, i) {!]
+        [!      if (i.isOdd) return const Divider(); /*2*/!]
+
+        [!      final index = i ~/ 2; /*3*/!]
+        [!      if (index >= _suggestions.length) {!]
+        [!        _suggestions.addAll(generateWordPairs().take(10)); /*4*/!]
+        [!      }!]
+        [!      return ListTile(!]
+        [!        title: Text(!]
+        [!          _suggestions[index].asPascalCase,!]
+        [!          style: _biggerFont,!]
+        [!        ),!]
+        [!      );!]
+        [!    },!]
+        [!  ),!]
         [!);!]
       }
     ```
@@ -574,7 +613,7 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -13,27 +13,50 @@
+    @@ -13,27 +13,43 @@
        const MyApp({Key? key}) : super(key: key);
 
        @override
@@ -600,29 +639,6 @@ lazily, on demand.
     +  final _suggestions = <WordPair>[];
     +  final _biggerFont = const TextStyle(fontSize: 18.0);
     +
-    +  Widget _buildSuggestions() {
-    +    return ListView.builder(
-    +        padding: const EdgeInsets.all(16.0),
-    +        itemBuilder: /*1*/ (context, i) {
-    +          if (i.isOdd) return const Divider(); /*2*/
-    +
-    +          final index = i ~/ 2; /*3*/
-    +          if (index >= _suggestions.length) {
-    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-    +          }
-    +          return _buildRow(_suggestions[index]);
-    +        });
-    +  }
-    +
-    +  Widget _buildRow(WordPair pair) {
-    +    return ListTile(
-    +      title: Text(
-    +        pair.asPascalCase,
-    +        style: _biggerFont,
-    +      ),
-    +    );
-    +  }
-    +
        @override
        Widget build(BuildContext context) {
     -    final wordPair = WordPair.random();
@@ -631,7 +647,23 @@ lazily, on demand.
     +      appBar: AppBar(
     +        title: const Text('Startup Name Generator'),
     +      ),
-    +      body: _buildSuggestions(),
+    +      body: ListView.builder(
+    +        padding: const EdgeInsets.all(16.0),
+    +        itemBuilder: /*1*/ (context, i) {
+    +          if (i.isOdd) return const Divider(); /*2*/
+    +
+    +          final index = i ~/ 2; /*3*/
+    +          if (index >= _suggestions.length) {
+    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+    +          }
+    +          return ListTile(
+    +            title: Text(
+    +              _suggestions[index].asPascalCase,
+    +              style: _biggerFont,
+    +            ),
+    +          );
+    +        },
+    +      ),
     +    );
        }
      }
@@ -643,7 +675,7 @@ lazily, on demand.
     you scroll.
 
     {% indent %}
-      {% include docs/android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
+      {% include docs/ios-windows-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
     {% endindent %}
 
 ### Problems?
@@ -666,7 +698,7 @@ If needed, use the code at the following link to get back on track.
 
 Congratulations!
 
-You've written an interactive Flutter app that runs on both iOS and Android.
+You've written an interactive Flutter app that runs on iOS, Android, Windows and web.
 In this codelab, you've:
 
 * Created a Flutter app from the ground up.
@@ -712,3 +744,7 @@ where you add the following functionality:
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 [codelab-web]: {{site.url}}/get-started/codelab-web
+[Windows]: {{site.url}}/get-started/install/windows#windows-setup
+[Linux]: {{site.url}}/get-started/install/linux#linux-setup
+[macOS]: {{site.url}}/get-started/install/macos#macos-setup
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

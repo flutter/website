@@ -21,7 +21,7 @@ needs to know. The pubspec is written in
 [YAML][], which is human readable, but be aware
 that _white space (tabs v spaces) matters_.
 
-[YAML]: https://yaml.org/spec/spec.html
+[YAML]: https://yaml.org/
 
 The pubspec file specifies dependencies
 that the project requires, such as particular packages

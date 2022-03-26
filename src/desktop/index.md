@@ -1,6 +1,6 @@
 ---
 title: Desktop support for Flutter
-description: Announcing the alpha release of Flutter for desktop.
+description: Announcing the platform releases of Flutter for desktop.
 toc: true
 ---
 
@@ -10,55 +10,23 @@ Flutter's desktop support also extends to plugins&mdash;you
 can install existing plugins that support the Windows,
 macOS, or Linux platforms, or you can create your own.
 
-{{site.alert.warning}}
-  **Beta!**
-  This page covers desktop support,
-  which is available as a beta release for
-  Windows (Win32), macOS and Linux. The Windows UWP
-  support is available as an alpha release. Beta
-  support still has notable feature gaps,
-  including accessibility support. Meanwhile, the
-  Windows UWP alpha release is still in
-  very active development. You can try a beta
-  snapshot of desktop support on the `stable`
-  channel, or you can keep up with the latest
-  changes to desktop on the `beta` channel. For
-  Windows UWP you need to be on the `master` channel.
-
-  For more information, see the **Desktop**
-  section in [What's new in Flutter 2][],
-  a free article on Medium.
-{{site.alert.end}}
-
-[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
-
-
 {{site.alert.note}}
-  To compile a desktop application, you must build it **on**
-  the targeted platform: build a Windows application on Windows,
-  a macOS application on macOS, and a Linux application on Linux.
-  If you experience a problem that hasn’t yet been reported,
-  please [file an issue][] and include
-  "desktop:windows (win32)/windows (uwp)/macos/linux"
-  (whichever platform is appropriate) in the title.
+  Windows is fully supported as a development target. For more information, see
+  [Announcing Flutter for Windows][]. 
+
+  macOS and Linux desktop app support is still beta-quality. Snapshots of their
+  support are available on the stable channel, but we recommend that you use the
+  beta channel for access to the latest features and bug fixes on those
+  platforms.
 {{site.alert.end}}
 
-## Beta Snapshot in stable channel
-
-To make it easier to try out desktop support for
-Flutter, we are shipping a snapshot of Flutter's
-desktop beta on the stable channel.
-This means that you can easily try desktop support
-without needing to switch to the Flutter beta channel.
-However, the snapshot included in the stable channel
-won't be updated until the next Flutter stable release.
-If you want the latest version of desktop support,
-you must switch to the Flutter beta channel.
-
-
-[file an issue]: {{site.repo.flutter}}/issues/new?title=[desktop]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-desktop&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_desktop%20version,+browser+version
+[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 
 ## Requirements
+
+To compile a desktop application, you must build it **on** the targeted
+platform: build a Windows application on Windows, a macOS application on macOS,
+and a Linux application on Linux.
 
 To create a Flutter application with desktop support,
 you need the following software:
@@ -86,14 +54,15 @@ you need the following software:
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
-* [Visual Studio 2019][] (not to be confused with
-  Visual Studio _Code_). For Win32 you need the
-  "Desktop development with C++" workload installed,
-  including all of its default components. For UWP
-  you need the "Universal Windows Platform development"
-  workload installed, with the optional UWP C++ tools.
+* [Visual Studio 2022][] When installing Visual Studio select the "Desktop
+  development with C++" workload, including all of its default components, to
+  install the necessary C++ toolchain and Windows SDK header files.
 
-[Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
+{{site.alert.note}}
+  **Visual Studio** is different than Visual Studio _Code_.
+{{site.alert.end}}
+
+[Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
 
 ### Additional macOS requirements
 
@@ -116,8 +85,9 @@ you need the following in addition to the Flutter SDK:
 * [GTK development headers][]
 * [Ninja build][]
 * [pkg-config][]
+* [liblzma-dev][] This dependency may be required
 
-The easiest way to install the Flutter SDK along with these
+One easy way to install the Flutter SDK along with the necessary
 dependencies is by using [snapd][].
 For more information, see [Installing snapd][].
 
@@ -128,11 +98,11 @@ using the [Snap Store][], or at the command line:
 $ sudo snap install flutter --classic
 ```
 
-If `snapd` is unavailable on the Linux distro you're using,
-you might use the following command:
+Alternatively, if you prefer not to use `snapd`,
+you can use the following command:
 
 ```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
 ```
 
 [Clang]: https://clang.llvm.org/
@@ -141,6 +111,7 @@ $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [Ninja build]: https://ninja-build.org/
 [pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
+[liblzma-dev]: https://packages.debian.org/sid/liblzma-dev
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
 
@@ -151,111 +122,74 @@ to create a new project with desktop support.
 
 ### Set up
 
-At the command line, perform the following commands to
-make sure that you have the latest desktop support and that
-it's enabled. If you see "flutter: command not found",
-then make sure that you have installed the
-[Flutter SDK][] and that it’s in your path.
+On Windows, desktop support is enabled on Flutter 2.10 or higher. 
+
+On macOS and Linux, desktop support is disabled by default in the stable
+channel. You can manually enable it with one of these commands, depending on
+which platform you are running:
 
 ```terminal
-$ flutter config --enable-<platform>-desktop
-```
-
-Where _&lt;platform&gt;_ is `windows`, `macos`, or `linux`:
-
-```terminal
-$ flutter config --enable-windows-desktop
 $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
 
-For Windows UWP desktop support perform the following commands to switch to
-the `master` channel, upgrade Flutter, and enable UWP.
+{{site.alert.note}}
+  You only need to execute
+  `flutter config --enable-<platform>-desktop`
+  once. You can check the status of your configuration at any time by using
+  the command `flutter config` with no arguments.
+{{site.alert.end}}
 
-```terminal
-$ flutter channel master
-$ flutter upgrade
-$ flutter config --enable-windows-uwp-desktop
-```
-
-To ensure that desktop _is_ enabled,
-list the devices available.
-You should see something like the following
-(you'll see Windows, macOS, or Linux,
-depending on which platform you are running on):
+To test that desktop support is configured, use the `flutter devices` command to
+list the available targets. In addition to any mobile or web devices, you should
+see a row for the operating system you're running on, for example (on Windows):
 
 ``` terminal
-$ flutter devices
+C:\> flutter devices
 1 connected device:
 
-Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.18362.1082]
-macOS (desktop)   • macos   • darwin-x64  • macOS 11.2 20D64 darwin-x64
-Linux (desktop)   • linux   • linux-x64   • Linux
+Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.22557.1]
 ```
 
-You might also run `flutter doctor` to see if there are
-any unresolved issues. It should look something like
-the following on Windows:
+You might also run `flutter doctor` to see if there are any unresolved issues.
+You should see a checkmark for each successfully configured area. It should look
+something like the following on Windows, with an entry for "develop for Windows":
 
 ```terminal
-PS C:\> flutter doctor
+C:\> flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[√] Flutter (Channel stable, 2.0.6, on Microsoft Windows [Version 10.0.19042.804], locale en-AU)
-[√] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
-[√] Chrome - develop for the web
-[√] Visual Studio - develop for Windows (Visual Studio Community 2019 16.9.5)
-[√] Android Studio (version 4.1.0)
-[√] VS Code (version 1.56.2)
-[√] Connected device (3 available)
-
-! No issues found!
-```
-
-On macOS, you might see something like the following:
-
-```terminal
-$ flutter doctor
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 2.0.6, on macOS 11.3.1 20E241 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
-[✓] Xcode - develop for iOS and macOS
+[✓] Flutter (Channel stable, 2.10.1, on Microsoft Windows [Version 10.0.22557.1], locale en-US)
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 4.0)
-[✓] VS Code (version 1.56.2)
+[✓] Visual Studio - develop for Windows (Visual Studio Community 2022 17.0.5)
+[✓] VS Code (version 1.64.2)
 [✓] Connected device (3 available)
+[✓] HTTP Host Availability
 
 • No issues found!
 ```
 
-On Linux, you might see something like the following:
+On macOS, look for a line like this:
 
 ```terminal
-$ flutter doctor 
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel beta, 1.27.0-1.0.pre, on Linux, locale en_AU.UTF-8)
-[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
-[✓] Chrome - develop for the web
-[✓] Linux toolchain - develop for Linux desktop
-[✓] Android Studio
-[✓] Connected device (2 available)
+[✓] Xcode - develop for iOS and macOS
 ```
 
-If `flutter doctor` finds problems for a platform that
-you don't want to develop for, you can ignore those warnings.
-You don't have to install Android Studio and the Android SDK,
-for example, if you're writing a Linux desktop app.
+On Linux, look for a line like this:
 
-**After enabling desktop support, restart your IDE.**
-You should now see **windows (desktop)**,
-**macOS (desktop)**, or **linux (desktop)**
-in the device pulldown.
+```terminal
+[✓] Linux toolchain - develop for Linux desktop
+```
 
-{{site.alert.note}}
-  You only need to execute
-  `flutter config --enable-<platform>-desktop`
-  once.  You can always check the status of your configuration using
-  the no-argument `flutter config` command.
-{{site.alert.end}}
+If `flutter doctor` finds problems or missing components for a platform that you
+don't want to develop for, you can ignore those warnings. Or you can disable the
+platform altogether using the `flutter config` command, for example:
+
+```terminal
+$ flutter config --no-enable-ios
+```
+
+After enabling desktop support, restart your IDE so that it can detect the new
+device.
 
 ### Create and run
 
@@ -297,94 +231,15 @@ enter one of the following commands from the top
 of the package:
 
 ```terminal
-PS C:\> flutter run -d windows
+C:\> flutter run -d windows
 $ flutter run -d macos
 $ flutter run -d linux
 ```
 
 {{site.alert.note}}
-  If you do not supply the `-d` flag, `flutter run` will list
+  If you do not supply the `-d` flag, `flutter run` lists
   the available targets to choose from.
 {{site.alert.end}}
-
-## Windows UWP
-
-{{site.alert.warning}}
-  **Alpha!**
-  Flutter Windows UWP desktop support is an alpha release, 
-  available on the `master` channel. 
-{{site.alert.end}}
-
-To get started with Windows UWP you need to be using Windows 10. 
-You need to install Visual Studio (not Visual Studio _Code_) with the 
-"Universal Windows Platform development" workload and the optional 
-Windows UWP C++ tools. 
-
-To configure Flutter for Windows UWP development, 
-perform the following commands to switch to
-the `master` channel, upgrade Flutter, and enable 
-Windows UWP desktop support.
-
-```terminal
-PS C:\> flutter channel master
-PS C:\> flutter upgrade
-PS C:\> flutter config --enable-windows-uwp-desktop
-```
-
-To create a new application, run the following commands:
-
-```terminal
-PS C:\> flutter create myapp
-PS C:\> cd myapp
-```
-
-Running Flutter with Windows UWP is complicated due to UWP's 
-sandboxed runtime. You need to run an override for the sandbox 
-to enable the injection of Dart code into the running UWP 
-process to enable debugging and Hot Reload.
-
-The suggested approach during development is to first run
-`flutter run -d winuwp` from the command line, which will
-give you a command that you need to run from a PowerShell
-with Administrator privileges.
-
-```terminal
-PS C:\myapp> flutter run -d winuwp
-Launching lib\main.dart on Windows (UWP) in debug mode...
-LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification [C:\src\flutter-projects\myapp\build\winuwp\runner_uwp\app.vcxproj]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3327,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it. [C:\src\flutter-projects\myapp\build\winuwp\runner_uwp\app.vcxproj]
-Building Windows UWP application...
-Enable Flutter debugging from localhost.
-
-Windows UWP apps run in a sandboxed environment. To enable Flutter debugging
-and hot reload, you will need to enable inbound connections to the app from the
-Flutter tool running on your machine. To do so:
-  1. Launch PowerShell as an Administrator
-  2. Enter the following command:
-     checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
-
-Press "Y" once this is complete, or "N" to abort.:
-```
-
-Run this `checknetisolation` command as shown in a PowerShell
-as Administrator. You can then leave this process running for
-the length of your development session, restarting your UWP app
-as required.
-
-```terminal
-PS C:\> checknetisolation loopbackexempt -is -n=[APP_CONTAINER_NAME]
-
-Network Isolation Debug Session started.
-Reproduce your scenario, then press Ctrl-C when done.
-```
-
-Once you have this process running, you can deploy to
-Windows UWP from within your IDE as normal, or run from
-the command line as follows:
-
-```terminal
-PS C:\myapp> flutter run -d winuwp
-```
 
 ## Build a release app
 
@@ -398,11 +253,6 @@ $ flutter build linux
 ```
 
 ## Distribution
-
-**We don't recommend releasing a desktop
-application until desktop support is stable,**
-however, here is some information that you
-might still find useful.
 
 ### Windows
 
@@ -442,11 +292,11 @@ cmake_policy(SET CMP0063 NEW)
 
 #### MSIX packaging
 
-[MSIX][], Microsoft Windows' application package format,
-provides a modern packaging experience to all Windows apps.
+[MSIX][], the new Windows application package format,
+provides a modern packaging format and installer.
 This format can either be used to ship applications
-to Microsoft Windows' Apps store, or you can
-distribute application installers directly.
+to the Microsoft Store on Windows, or you can
+distribute app installers directly.
 
 The easiest way to create an MSIX distribution
 for a Flutter project is to use the
@@ -457,7 +307,7 @@ see the [Desktop Photo Search][] sample.
 
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
 [msix package]: {{site.pub}}/packages/msix
-[Desktop Photo Search]: {{site.github}}/flutter/samples/tree/master/experimental/desktop_photo_search
+[Desktop Photo Search]: {{site.github}}/flutter/samples/tree/master/desktop_photo_search
 
 ##### Create a self-signed .pfx certificate for local testing
 
@@ -521,10 +371,9 @@ In addition to that executable, you need the following:
     * `vcruntime140.dll`
     * `vcruntime140_1.dll`
   
-  These 3 files can be found in C:\Windows\System32 if installed on your PC.
-  Place the DLL files in the directory next to the executable
+    Place the DLL files in the directory next to the executable
   and the other DLLs, and bundle them together in a zip file.
-  The resulting structure will look something a little like this:
+  The resulting structure looks something like this:
   
   ```
   Release
@@ -544,7 +393,7 @@ In addition to that executable, you need the following:
 At this point if desired it would be relatively simple to
 add this folder to a Windows installer such as Inno Setup, WiX, etc.
 
-[deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples?view=vs-2019
+[deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples
 
 ### macOS
 
@@ -697,7 +546,7 @@ Another common entitlement is
 which you must add if you make any network requests.
 
 Without the `com.apple.security.network.client` entitlement,
-for example, network requests will fail with a message such as:
+for example, network requests fail with a message such as:
 
 ```terminal
 flutter: SocketException: Connection failed
@@ -860,10 +709,10 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
   * [`url_launcher`][]
 
 [`menubar`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/menubar
-[Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
+[Photo Search app]: {{site.repo.organization}}/samples/tree/master/desktop_photo_search
 [running web app]: {{site.gallery}}
 [flutter-gallery-repo]: {{site.repo.gallery}}
 [README]: {{site.repo.gallery}}#flutter-gallery
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/index.html
+[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

@@ -47,7 +47,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
         }
       })
       // #docregion print-state
-      ..addStatusListener((state) => print('$state'));
+      ..addStatusListener((status) => print('$status'));
     controller.forward();
   }
   // #enddocregion print-state

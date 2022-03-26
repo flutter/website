@@ -1,6 +1,7 @@
 {
   "projects": {
     "default": "flutter-docs-prod",
+    "devtools-staging": "flutter-website-dt-staging",
     "flutter-dev": "flutter-dev-230821",
     "flutter-io": "sweltering-fire-2088",
     "staging-1": "flutter-io-staging-1",

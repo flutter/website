@@ -5,12 +5,43 @@ description: A list of what’s new on flutter.dev and related sites.
 
 This page contains current and previous announcements of
 what's new on the Flutter website and blog.
+For details about what's new in the Flutter releases
+see the [release notes][] page.
 
 To stay on top of Flutter announcements,
 including breaking changes,
 join the [flutter-announce][] Google group.
 
+For Dart, you can join the [Dart Announce][] Google group,
+and review the [Dart changelog][].
+
+[release notes]: {{site.url}}/development/tools/sdk/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart changelog]: https://github.com/dart-lang/sdk/blob/master/CHANGELOG.md
+
+## Feb 3, 2022, Windows Support: 2.10 release
+
+Desktop support for Microsoft Windows
+(a central feature of the 2.10 release) is live!
+For more information, see
+[Announcing Flutter for Windows][]
+and [What's new in Flutter 2.10][],
+free articles on Medium.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g-0B_Vfc9qM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
+[What's new in Flutter 2.10]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12
+
+## December 8, 2021: 2.8 release
+
+Flutter 2.8 is live! For details, see
+[Announcing Flutter 2.8][] and
+[What's new in Flutter 2.8][].
+
+[Announcing Flutter 2.8]: {{site.flutter-medium}}/announcing-flutter-2-8-31d2cb7e19f5
+[What's new in Flutter 2.8]: {{site.flutter-medium}}/whats-new-in-flutter-2-8-d085b763d181
 
 ## September 8, 2021: 2.5 release
 

@@ -822,12 +822,21 @@ be invoked on the platform's main thread. When invoking channels in Flutter
 destined for the platform side, they need to be invoked on the root Isolate. The
 platform side's handlers can execute on the platform's main thread or they can
 execute on a background thread if a Task Queue is used. The result of the
-platform side handlers can be invoked asynchronously and on any thread.
+platform side handlers can be invoked asynchronously and on any thread when the
+Task Queue API is available; otherwise, they must be invoked on the platform
+thread.
 
-{{site.alert.note}}On Android, the platform's main thread is sometimes called
-the "main thread", but it is technically defined as [the UI thread][]. Annotate
-methods that need to be run on the UI thread with `@UiThread`. On iOS, this
-thread is officially referred to as [the main thread][].
+{{site.alert.note}}
+  In release 2.10, the Task Queue API is available for Android. For iOS, it is
+  only available on the `master` channel.
+{{site.alert.end}}
+
+{{site.alert.note}}
+  On Android, the platform's main thread is sometimes called the "main thread",
+  but it is technically defined as [the UI thread][]. Annotate methods that need
+  to be run on the UI thread with `@UiThread`. On iOS, this thread is officially
+  referred to as [the main thread][].
+{{site.alert.end}}
 
 ### Executing channel handlers on background threads
 
@@ -868,6 +877,12 @@ override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.Flu
 ```
 
 In Swift:
+
+{{site.alert.note}}
+  In release 2.10, the Task Queue API is only available on the `master` channel
+  for iOS.
+{{site.alert.end}}
+
 ```swift
 public static func register(with registrar: FlutterPluginRegistrar) {
   let taskQueue = registrar.messenger.makeBackgroundTaskQueue()
@@ -881,6 +896,11 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 ```
 
 In Objective-C:
+
+{{site.alert.note}}
+  In release 2.10, the Task Queue API is only available on the `master` channel
+  for iOS.
+{{site.alert.end}}
 
 ```objc
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {

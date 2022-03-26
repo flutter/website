@@ -1,4 +1,0 @@
----
-layout: toc
-title: Development
----

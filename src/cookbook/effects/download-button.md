@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/download_button"?>
+
 Apps are filled with buttons that execute long-running behaviors.
 For example, a button might trigger a download,
 which starts a download process, receives data over time,
@@ -30,28 +32,23 @@ The following animation shows the app's behavior:
 
 Your button widget needs to change its appearance over time.
 Therefore, you need to implement your button with a custom
-stateful widget. 
+stateless widget. 
 
-Define a new stateful widget called `DownloadButton`.
+Define a new stateless widget called `DownloadButton`.
 
-<!--skip-->
+<?code-excerpt "lib/stateful_widget.dart (DownloadButton)"?>
 ```dart
 @immutable
-class DownloadButton extends StatefulWidget {
- const DownloadButton({
-   Key? key,
- }) : super(key: key);
+class DownloadButton extends StatelessWidget {
+  const DownloadButton({
+    Key? key,
+  }) : super(key: key);
 
- @override
- _DownloadButtonState createState() => _DownloadButtonState();
-}
-
-class _DownloadButtonState extends State<DownloadButton> {
- @override
- Widget build(BuildContext context) {
-   // TODO:
-   return SizedBox();
- }
+  @override
+  Widget build(BuildContext context) {
+    // TODO:
+    return const SizedBox();
+  }
 }
 ```
 
@@ -63,28 +60,33 @@ the download, and then update `DownloadButton` to accept
 a `DownloadStatus` and a `Duration` for how long the button
 should take to animate from one status to another.
 
-<!--skip-->
+<?code-excerpt "lib/visual_states.dart (VisualStates)"?>
 ```dart
 enum DownloadStatus {
- notDownloaded,
- fetchingDownload,
- downloading,
- downloaded,
+  notDownloaded,
+  fetchingDownload,
+  downloading,
+  downloaded,
 }
 
 @immutable
-class DownloadButton extends StatefulWidget {
- const DownloadButton({
-   Key? key,
-   required this.status,
-   this.transitionDuration = const Duration(milliseconds: 500),
- }) : super(key: key);
+class DownloadButton extends StatelessWidget {
+  const DownloadButton({
+    Key? key,
+    required this.status,
+    this.transitionDuration = const Duration(
+      milliseconds: 500,
+    ),
+  }) : super(key: key);
 
- final DownloadStatus status;
- final Duration transitionDuration;
+  final DownloadStatus status;
+  final Duration transitionDuration;
 
- @override
- _DownloadButtonState createState() => _DownloadButtonState();
+  @override
+  Widget build(BuildContext context) {
+    // TODO: We'll add more to this later.
+    return const SizedBox();
+  }
 }
 ```
 
@@ -120,48 +122,86 @@ build an `AnimatedContainer` with a
 `ShapeDecoration` that displays a rounded
 rectangle or a circle.
 
-Consider defining the shape’s widget tree within a local
-`_buildXXXX()` method so that the main `build()`
+Consider defining the shape’s widget tree in a separated 
+`Stateless` widget so that the main `build()`
 method remains simple, allowing for the additions 
-that follow. Also, configure the shape widget tree to
-accept a child widget, which you’ll use to display text
-in a later step.
+that follow. Instead of creating a function to return a widget,
+like `Widget _buildSomething() {}`, always prefer creating a
+`StatelessWidget` or a `StatefulWidget` which is more performant. More
+considerations on this can be found in the [documentation](https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html)
+or in a dedicated video in the Flutter [YouTube channel](https://www.youtube.com/watch?v=IOyq-eTRhvo).
 
-<!--skip-->
+For now, the `AnimatedContainer` child is just a `SizedBox` because we will come back at it in another step.
+
+<?code-excerpt "lib/display.dart (Display)"?>
 ```dart
-class _DownloadButtonState extends State<DownloadButton> {
- bool get _isDownloading => widget.status == DownloadStatus.downloading;
+@immutable
+class DownloadButton extends StatelessWidget {
+  const DownloadButton({
+    Key? key,
+    required this.status,
+    this.transitionDuration = const Duration(
+      milliseconds: 500,
+    ),
+  }) : super(key: key);
 
- bool get _isFetching => widget.status == DownloadStatus.fetchingDownload;
+  final DownloadStatus status;
+  final Duration transitionDuration;
 
- bool get _isDownloaded => widget.status == DownloadStatus.downloaded;
+  bool get _isDownloading => status == DownloadStatus.downloading;
 
- @override
- Widget build(BuildContext context) {
-   return _buildButtonShape(
-     child: SizedBox(),
-   );
- }
+  bool get _isFetching => status == DownloadStatus.fetchingDownload;
 
- Widget _buildButtonShape({
-   required Widget child,
- }) {
-   return AnimatedContainer(
-     duration: widget.transitionDuration,
-     curve: Curves.ease,
-     width: double.infinity,
-     decoration: _isDownloading || _isFetching
-         ? ShapeDecoration(
-             shape: const CircleBorder(),
-             color: Colors.white.withOpacity(0.0),
-           )
-         : const ShapeDecoration(
-             shape: StadiumBorder(),
-             color: CupertinoColors.lightBackgroundGray,
-           ),
-     child: child,
-   );
- }
+  bool get _isDownloaded => status == DownloadStatus.downloaded;
+
+  @override
+  Widget build(BuildContext context) {
+    return ButtonShapeWidget(
+      transitionDuration: transitionDuration,
+      isDownloaded: _isDownloaded,
+      isDownloading: _isDownloading,
+      isFetching: _isFetching,
+    );
+  }
+}
+
+@immutable
+class ButtonShapeWidget extends StatelessWidget {
+  const ButtonShapeWidget({
+    Key? key,
+    required this.isDownloading,
+    required this.isDownloaded,
+    required this.isFetching,
+    required this.transitionDuration,
+  }) : super(key: key);
+
+  final bool isDownloading;
+  final bool isDownloaded;
+  final bool isFetching;
+  final Duration transitionDuration;
+
+  @override
+  Widget build(BuildContext context) {
+    var shape = const ShapeDecoration(
+      shape: StadiumBorder(),
+      color: CupertinoColors.lightBackgroundGray,
+    );
+
+    if (isDownloading || isFetching) {
+      shape = ShapeDecoration(
+        shape: const CircleBorder(),
+        color: Colors.white.withOpacity(0.0),
+      );
+    }
+
+    return AnimatedContainer(
+      duration: transitionDuration,
+      curve: Curves.ease,
+      width: double.infinity,
+      decoration: shape,
+      child: const SizedBox(),
+    );
+  }
 }
 ```
 
@@ -186,39 +226,63 @@ phase, and no text in between.
 
 Add widgets to display text during each download phase,
 and animate the text’s opacity in between. Add the text
-widget tree as a child of the shape widget tree.
+widget tree as a child of the `AnimatedContainer` in the
+button wrapper widget.
 
-<!--skip-->
+<?code-excerpt "lib/display_text.dart (DisplayText)"?>
 ```dart
-class _DownloadButtonState extends State<DownloadButton> {
- @override
- Widget build(BuildContext context) {
-   return _buildButtonShape(
-     child: _buildText(),
-   );
- }
+@immutable
+class ButtonShapeWidget extends StatelessWidget {
+  const ButtonShapeWidget({
+    Key? key,
+    required this.isDownloading,
+    required this.isDownloaded,
+    required this.isFetching,
+    required this.transitionDuration,
+  }) : super(key: key);
 
- Widget _buildText() {
-   final text = _isDownloaded ? 'OPEN' : 'GET';
-   final opacity = _isDownloading || _isFetching ? 0.0 : 1.0;
+  final bool isDownloading;
+  final bool isDownloaded;
+  final bool isFetching;
+  final Duration transitionDuration;
 
-   return Padding(
-     padding: const EdgeInsets.symmetric(vertical: 6),
-     child: AnimatedOpacity(
-       duration: widget.transitionDuration,
-       opacity: opacity,
-       curve: Curves.ease,
-       child: Text(
-         text,
-         textAlign: TextAlign.center,
-         style: Theme.of(context).textTheme.button?.copyWith(
-           fontWeight: FontWeight.bold,
-           color: CupertinoColors.activeBlue,
-         ),
-       ),
-     ),
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    var shape = const ShapeDecoration(
+      shape: StadiumBorder(),
+      color: CupertinoColors.lightBackgroundGray,
+    );
+
+    if (isDownloading || isFetching) {
+      shape = ShapeDecoration(
+        shape: const CircleBorder(),
+        color: Colors.white.withOpacity(0.0),
+      );
+    }
+
+    return AnimatedContainer(
+      duration: transitionDuration,
+      curve: Curves.ease,
+      width: double.infinity,
+      decoration: shape,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 6),
+        child: AnimatedOpacity(
+          duration: transitionDuration,
+          opacity: isDownloading || isFetching ? 0.0 : 1.0,
+          curve: Curves.ease,
+          child: Text(
+            isDownloaded ? 'OPEN' : 'GET',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.button?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: CupertinoColors.activeBlue,
+                ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
 
@@ -232,45 +296,38 @@ the `fetchingDownload` phase.
 Implement a radial spinner that sits on top of the button
 shape and fades in and out at the appropriate times.
 
-<!--skip-->
+We have removed the `ButtonShapeWidget`'s constructor to keep the
+focus on its build method and the `Stack` widget we've added.
+
+<?code-excerpt "lib/spinner.dart (Spinner)"?>
 ```dart
-class _DownloadButtonState extends State<DownloadButton> {
- @override
- Widget build(BuildContext context) {
-   return Stack(
-     children: [
-       _buildButtonShape(
-         child: _buildText(),
-       ),
-       _buildDownloadingProgress(),
-     ],
-   );
- }
-
- Widget _buildDownloadingProgress() {
-   return Positioned.fill(
-     child: AnimatedOpacity(
-       duration: widget.transitionDuration,
-       opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
-       curve: Curves.ease,
-       child: _buildProgressIndicator(),
-     ),
-   );
- }
-
- Widget _buildProgressIndicator() {
-   return AspectRatio(
-     aspectRatio: 1.0,
-     child: CircularProgressIndicator(
-       backgroundColor: Colors.white.withOpacity(0.0),
-       valueColor: AlwaysStoppedAnimation(
-         CupertinoColors.lightBackgroundGray
-       ),
-       strokeWidth: 2.0,
-       value: null,
-     ),
-   );
- }
+@override
+Widget build(BuildContext context) {
+  return GestureDetector(
+    onTap: _onPressed,
+    child: Stack(
+      children: [
+        ButtonShapeWidget(
+          transitionDuration: transitionDuration,
+          isDownloaded: _isDownloaded,
+          isDownloading: _isDownloading,
+          isFetching: _isFetching,
+        ),
+        Positioned.fill(
+          child: AnimatedOpacity(
+            duration: transitionDuration,
+            opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
+            curve: Curves.ease,
+            child: ProgressIndicatorWidget(
+              downloadProgress: downloadProgress,
+              isDownloading: _isDownloading,
+              isFetching: _isFetching,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }
 ```
 
@@ -289,75 +346,46 @@ progress bar during the `downloading` phase.
 Next, add a stop button icon at the center of the
 radial progress bar.
 
-<!--skip-->
+<?code-excerpt "lib/stop.dart (StopIcon)"?>
 ```dart
-@immutable
-class DownloadButton extends StatefulWidget {
- const DownloadButton({
-   Key? key,
-   this.progress = 0.0,
- }) : super(key: key);
-
- final double progress;
-
- @override
- _DownloadButtonState createState() => _DownloadButtonState();
-}
-
-class _DownloadButtonState extends State<DownloadButton> {
- @override
- Widget build(BuildContext context) {
-   return Stack(
-     children: [
-       _buildButtonShape(
-         child: _buildText(),
-       ),
-       _buildDownloadingProgress(),
-     ],
-   );
- }
-
- Widget _buildDownloadingProgress() {
-   return Positioned.fill(
-     child: AnimatedOpacity(
-       duration: widget.transitionDuration,
-       opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
-       curve: Curves.ease,
-       child: Stack(
-         alignment: Alignment.center,
-         children: [
-           _buildProgressIndicator(),
-           if (_isDownloading)
-             const Icon(
-               Icons.stop,
-               size: 14.0,
-               color: CupertinoColors.activeBlue,
-             ),
-         ],
-       ),
-     ),
-   );
- }
-
-
- Widget _buildProgressIndicator() {
-   return AspectRatio(
-     aspectRatio: 1.0,
-     child: TweenAnimationBuilder<double>(
-       tween: Tween(begin: 0.0, end: widget.progress),
-       duration: const Duration(milliseconds: 200),
-       builder: (BuildContext context, double progress, Widget? child) {
-         return CircularProgressIndicator(
-           backgroundColor: _isDownloading ? CupertinoColors.lightBackgroundGray : Colors.white.withOpacity(0.0),
-           valueColor:
-             AlwaysStoppedAnimation(_isFetching ? CupertinoColors.lightBackgroundGray : CupertinoColors.activeBlue),
-           strokeWidth: 2.0,
-           value: _isFetching ? null : progress,
-         );
-       },
-     ),
-   );
- }
+@override
+Widget build(BuildContext context) {
+  return GestureDetector(
+    onTap: _onPressed,
+    child: Stack(
+      children: [
+        ButtonShapeWidget(
+          transitionDuration: transitionDuration,
+          isDownloaded: _isDownloaded,
+          isDownloading: _isDownloading,
+          isFetching: _isFetching,
+        ),
+        Positioned.fill(
+          child: AnimatedOpacity(
+            duration: transitionDuration,
+            opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
+            curve: Curves.ease,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                ProgressIndicatorWidget(
+                  downloadProgress: downloadProgress,
+                  isDownloading: _isDownloading,
+                  isFetching: _isFetching,
+                ),
+                if (_isDownloading)
+                  const Icon(
+                    Icons.stop,
+                    size: 14.0,
+                    color: CupertinoColors.activeBlue,
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }
 ```
 
@@ -373,57 +401,61 @@ Finally, wrap `DownloadButton`’s existing widget tree
 with a `GestureDetector` widget, and forward the
 tap event to the corresponding callback property.
 
-<!--skip-->
+<?code-excerpt "lib/button_taps.dart (TapCallbacks)"?>
 ```dart
 @immutable
-class DownloadButton extends StatefulWidget {
- const DownloadButton({
-   Key? key,
-   required this.onDownload,
-   required this.onCancel,
-   required this.onOpen,
- }) : super(key: key);
+class DownloadButton extends StatelessWidget {
+  const DownloadButton({
+    Key? key,
+    required this.status,
+    this.downloadProgress = 0.0,
+    required this.onDownload,
+    required this.onCancel,
+    required this.onOpen,
+    this.transitionDuration = const Duration(milliseconds: 500),
+  }) : super(key: key);
 
- final VoidCallback onDownload;
- final VoidCallback onCancel;
- final VoidCallback onOpen;
+  final DownloadStatus status;
+  final double downloadProgress;
+  final VoidCallback onDownload;
+  final VoidCallback onCancel;
+  final VoidCallback onOpen;
+  final Duration transitionDuration;
 
- @override
- _DownloadButtonState createState() => _DownloadButtonState();
-}
+  bool get _isDownloading => status == DownloadStatus.downloading;
 
-class _DownloadButtonState extends State<DownloadButton> {
- void _onPressed() {
-   switch (widget.status) {
-     case DownloadStatus.notDownloaded:
-       widget.onDownload();
-       break;
-     case DownloadStatus.fetchingDownload:
-       // do nothing.
-       break;
-     case DownloadStatus.downloading:
-       widget.onCancel();
-       break;
-     case DownloadStatus.downloaded:
-       widget.onOpen();
-       break;
-   }
- }
+  bool get _isFetching => status == DownloadStatus.fetchingDownload;
 
- @override
- Widget build(BuildContext context) {
-   return GestureDetector(
-     onTap: _onPressed,
-     child: Stack(
-       children: [
-         _buildButtonShape(
-           child: _buildText(),
-         ),
-         _buildDownloadingProgress(),
-       ],
-     ),
-   );
- }
+  bool get _isDownloaded => status == DownloadStatus.downloaded;
+
+  void _onPressed() {
+    switch (status) {
+      case DownloadStatus.notDownloaded:
+        onDownload();
+        break;
+      case DownloadStatus.fetchingDownload:
+        // do nothing.
+        break;
+      case DownloadStatus.downloading:
+        onCancel();
+        break;
+      case DownloadStatus.downloaded:
+        onOpen();
+        break;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _onPressed,
+      child: Stack(
+        children: [
+          /* ButtonShapeWidget and progress indicator */
+        ],
+      ),
+    );
+  }
 }
 ```
 
@@ -446,16 +478,20 @@ Run the app:
   that the app is ready for the user
   to open the downloaded asset.
 
-<!--skip-->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
-import 'package:flutter/cupertino.dart';
+<!-- start dartpad -->
+
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: ExampleCupertinoDownloadButton(),
-    debugShowCheckedModeBanner: false,
-  ));
+  runApp(
+    const MaterialApp(
+      home: ExampleCupertinoDownloadButton(),
+      debugShowCheckedModeBanner: false,
+    ),
+  );
 }
 
 @immutable
@@ -494,21 +530,18 @@ class _ExampleCupertinoDownloadButtonState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Apps')),
-      body: _buildList(),
-    );
-  }
-
-  Widget _buildList() {
-    return ListView.separated(
-      itemCount: _downloadControllers.length,
-      separatorBuilder: (context, index) => const Divider(),
-      itemBuilder: _buildListItem,
+      body: ListView.separated(
+        itemCount: _downloadControllers.length,
+        separatorBuilder: (_, __) => const Divider(),
+        itemBuilder: _buildListItem,
+      ),
     );
   }
 
   Widget _buildListItem(BuildContext context, int index) {
     final theme = Theme.of(context);
     final downloadController = _downloadControllers[index];
+
     return ListTile(
       leading: const DemoAppIcon(),
       title: Text(
@@ -522,7 +555,7 @@ class _ExampleCupertinoDownloadButtonState
         style: theme.textTheme.caption,
       ),
       trailing: SizedBox(
-        width: 96.0,
+        width: 96,
         child: AnimatedBuilder(
           animation: downloadController,
           builder: (context, child) {
@@ -547,23 +580,23 @@ class DemoAppIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const AspectRatio(
-      aspectRatio: 1.0,
+      aspectRatio: 1,
       child: FittedBox(
         child: SizedBox(
-          width: 80.0,
-          height: 80.0,
+          width: 80,
+          height: 80,
           child: DecoratedBox(
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.red, Colors.blue],
               ),
-              borderRadius: BorderRadius.all(Radius.circular(20.0)),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
             child: Center(
               child: Icon(
                 Icons.ac_unit,
                 color: Colors.white,
-                size: 40.0,
+                size: 40,
               ),
             ),
           ),
@@ -595,7 +628,7 @@ class SimulatedDownloadController extends DownloadController
     DownloadStatus downloadStatus = DownloadStatus.notDownloaded,
     double progress = 0.0,
     required VoidCallback onOpenDownload,
-  })   : _downloadStatus = downloadStatus,
+  })  : _downloadStatus = downloadStatus,
         _progress = progress,
         _onOpenDownload = onOpenDownload;
 
@@ -652,7 +685,7 @@ class SimulatedDownloadController extends DownloadController
     _downloadStatus = DownloadStatus.downloading;
     notifyListeners();
 
-    const downloadProgressStops = [0.0, 0.15, 0.45, 0.80, 1.0];
+    const downloadProgressStops = [0.0, 0.15, 0.45, 0.8, 1.0];
     for (final stop in downloadProgressStops) {
       // Wait a second to simulate varying download speeds.
       await Future<void>.delayed(const Duration(seconds: 1));
@@ -730,95 +763,125 @@ class DownloadButton extends StatelessWidget {
       onTap: _onPressed,
       child: Stack(
         children: [
-          _buildButtonShape(
-            child: _buildText(context),
+          ButtonShapeWidget(
+            transitionDuration: transitionDuration,
+            isDownloaded: _isDownloaded,
+            isDownloading: _isDownloading,
+            isFetching: _isFetching,
           ),
-          _buildDownloadingProgress(),
+          Positioned.fill(
+            child: AnimatedOpacity(
+              duration: transitionDuration,
+              opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
+              curve: Curves.ease,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  ProgressIndicatorWidget(
+                    downloadProgress: downloadProgress,
+                    isDownloading: _isDownloading,
+                    isFetching: _isFetching,
+                  ),
+                  if (_isDownloading)
+                    const Icon(
+                      Icons.stop,
+                      size: 14,
+                      color: CupertinoColors.activeBlue,
+                    ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
+}
 
-  Widget _buildButtonShape({
-    required Widget child,
-  }) {
+@immutable
+class ButtonShapeWidget extends StatelessWidget {
+  const ButtonShapeWidget({
+    Key? key,
+    required this.isDownloading,
+    required this.isDownloaded,
+    required this.isFetching,
+    required this.transitionDuration,
+  }) : super(key: key);
+
+  final bool isDownloading;
+  final bool isDownloaded;
+  final bool isFetching;
+  final Duration transitionDuration;
+
+  @override
+  Widget build(BuildContext context) {
+    var shape = const ShapeDecoration(
+      shape: StadiumBorder(),
+      color: CupertinoColors.lightBackgroundGray,
+    );
+
+    if (isDownloading || isFetching) {
+      shape = ShapeDecoration(
+        shape: const CircleBorder(),
+        color: Colors.white.withOpacity(0),
+      );
+    }
+
     return AnimatedContainer(
       duration: transitionDuration,
       curve: Curves.ease,
       width: double.infinity,
-      decoration: _isDownloading || _isFetching
-          ? ShapeDecoration(
-              shape: const CircleBorder(),
-              color: Colors.white.withOpacity(0.0),
-            )
-          : const ShapeDecoration(
-              shape: StadiumBorder(),
-              color: CupertinoColors.lightBackgroundGray,
-            ),
-      child: child,
-    );
-  }
-
-  Widget _buildText(BuildContext context) {
-    final text = _isDownloaded ? 'OPEN' : 'GET';
-    final opacity = _isDownloading || _isFetching ? 0.0 : 1.0;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
-      child: AnimatedOpacity(
-        duration: transitionDuration,
-        opacity: opacity,
-        curve: Curves.ease,
-        child: Text(
-          text,
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.button?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: CupertinoColors.activeBlue,
-              ),
+      decoration: shape,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 6),
+        child: AnimatedOpacity(
+          duration: transitionDuration,
+          opacity: isDownloading || isFetching ? 0.0 : 1.0,
+          curve: Curves.ease,
+          child: Text(
+            isDownloaded ? 'OPEN' : 'GET',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.button?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: CupertinoColors.activeBlue,
+                ),
+          ),
         ),
       ),
     );
   }
+}
 
-  Widget _buildDownloadingProgress() {
-    return Positioned.fill(
-      child: AnimatedOpacity(
-        duration: transitionDuration,
-        opacity: _isDownloading || _isFetching ? 1.0 : 0.0,
-        curve: Curves.ease,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            _buildProgressIndicator(),
-            if (_isDownloading)
-              const Icon(
-                Icons.stop,
-                size: 14.0,
-                color: CupertinoColors.activeBlue,
-              ),
-          ],
-        ),
-      ),
-    );
-  }
+@immutable
+class ProgressIndicatorWidget extends StatelessWidget {
+  const ProgressIndicatorWidget({
+    Key? key,
+    required this.downloadProgress,
+    required this.isDownloading,
+    required this.isFetching,
+  }) : super(key: key);
 
-  Widget _buildProgressIndicator() {
+  final double downloadProgress;
+  final bool isDownloading;
+  final bool isFetching;
+
+  @override
+  Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.0,
+      aspectRatio: 1,
       child: TweenAnimationBuilder<double>(
-        tween: Tween(begin: 0.0, end: downloadProgress),
+        tween: Tween(begin: 0, end: downloadProgress),
         duration: const Duration(milliseconds: 200),
         builder: (context, progress, child) {
           return CircularProgressIndicator(
-            backgroundColor: _isDownloading
+            backgroundColor: isDownloading
                 ? CupertinoColors.lightBackgroundGray
-                : Colors.white.withOpacity(0.0),
-            valueColor: AlwaysStoppedAnimation(_isFetching
+                : Colors.white.withOpacity(0),
+            valueColor: AlwaysStoppedAnimation(isFetching
                 ? CupertinoColors.lightBackgroundGray
                 : CupertinoColors.activeBlue),
-            strokeWidth: 2.0,
-            value: _isFetching ? null : progress,
+            strokeWidth: 2,
+            value: isFetching ? null : progress,
           );
         },
       ),

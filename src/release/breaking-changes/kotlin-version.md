@@ -7,7 +7,8 @@ description: Flutter apps built for the Android platform require Kotlin 1.5.31 o
 
 To build a Flutter app for Android, Kotlin 1.5.31 or greater is required.
 
-If your app uses a lower version, you will receive the following error message:
+If your app uses a lower version,
+you will receive the following error message:
 
 ```
 ┌─ Flutter Fix ────────────────────────────────────────────────────────────┐
@@ -24,7 +25,7 @@ If your app uses a lower version, you will receive the following error message:
 ## Context
 
 Flutter added support for [foldable devices][1] on Android.
-This required to add an AndroidX dependency to the Flutter embedding that
+This required adding an AndroidX dependency to the Flutter embedding that
 requires apps to use Kotlin 1.5.31 or greater.
 
 ## Description of change
@@ -44,15 +45,16 @@ buildscript {
 
 ## Timeline
 
-This change will be released in v2.9.0 beta.
+Landed in version: v2.9.0 beta<br>
+In stable release: 2.10
 
 ## References
 
 Relevant PRs:
 
-* [Display Features support][]
+* [PR 29585: Display Features support][]
 
 
-[Display Features support]: https://github.com/flutter/engine/pull/29585
+[PR 29585: Display Features support]: {{site.github}}/flutter/engine/pull/29585
 
-[1]: https://developer.android.com/guide/topics/large-screens/learn-about-foldables
+[1]: {{site.android-dev}}/guide/topics/large-screens/learn-about-foldables

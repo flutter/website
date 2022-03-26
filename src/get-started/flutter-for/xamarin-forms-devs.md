@@ -1259,15 +1259,6 @@ Assets are located in any arbitrary folder&mdash;Flutter has no
 predefined folder structure. You declare the assets (with location) in
 the `pubspec.yaml` file, and Flutter picks them up.
 
-Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
-accessible from the native side, and vice versa, native assets and resources
-weren’t available to Flutter, as they lived in separate folders.
-
-As of Flutter beta 2, assets are stored in the native asset folder,
-and are accessed on the native side using Android's `AssetManager`:
-
-As of Flutter beta 2, Flutter still cannot access native resources,
-nor it can access native assets.
 
 To add a new image asset called `my_icon.png` to our Flutter project,
 for example, and deciding that it should live in a folder we
@@ -1448,7 +1439,7 @@ The observable lifecycle events are:
 For more details on the meaning of these states, see the
 [`AppLifecycleStatus` documentation][].
 
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 
 ## Layouts
 

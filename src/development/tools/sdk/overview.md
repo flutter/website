@@ -28,7 +28,8 @@ Note: For more information about the Flutter SDK, see its
 
 ## `flutter` command-line tool
 
-The [`flutter` CLI tool][] (`flutter/bin/flutter`) is how developers (or IDEs on behalf of developers) interact with Flutter.
+The [`flutter` CLI tool][] (`flutter/bin/flutter`) is how developers
+(or IDEs on behalf of developers) interact with Flutter.
 
 ## `dart` command-line tool
 

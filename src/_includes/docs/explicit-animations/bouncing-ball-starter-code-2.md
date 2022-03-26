@@ -1,4 +1,4 @@
-```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px:null_safety-true
+```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px
 {$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -24,7 +24,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> {
     increment = 25;
     start = 0;
     end = 100;
-    duration = Duration(milliseconds: 250);
+    duration = const Duration(milliseconds: 250);
 
     Timer.periodic(duration, bounce);
   }
@@ -59,7 +59,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> {
     return Container(
       margin: EdgeInsets.only(top: marginTop),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.green,
         ),

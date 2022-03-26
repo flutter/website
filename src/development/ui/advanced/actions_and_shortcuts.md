@@ -381,6 +381,8 @@ class LoggingActionDispatcher extends ActionDispatcher {
   ]) {
     print('Action invoked: $action($intent) from $context');
     super.invokeAction(action, intent, context);
+
+    return null;
   }
 }
 ```
@@ -425,7 +427,7 @@ invoke actions to accomplish their work. All the invoked actions and
 shortcuts are logged.
 
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/copyable_text.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code:null_safety-true
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -509,6 +511,8 @@ class LoggingActionDispatcher extends ActionDispatcher {
   ]) {
     print('Action invoked: $action($intent) from $context');
     super.invokeAction(action, intent, context);
+
+    return null;
   }
 }
 
@@ -528,6 +532,8 @@ class ClearAction extends Action<ClearIntent> {
   @override
   Object? invoke(covariant ClearIntent intent) {
     controller.clear();
+
+    return null;
   }
 }
 
@@ -551,6 +557,8 @@ class CopyAction extends Action<CopyIntent> {
       controller.selection.extentOffset,
     );
     Clipboard.setData(ClipboardData(text: selectedString));
+
+    return null;
   }
 }
 
@@ -574,6 +582,8 @@ class SelectAllAction extends Action<SelectAllIntent> {
       extentOffset: controller.text.length,
       affinity: controller.selection.affinity,
     );
+
+    return null;
   }
 }
 

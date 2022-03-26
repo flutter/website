@@ -6,7 +6,7 @@ description: The platforms that Flutter supports by platform version.
 
 ## Supported platforms
 
-As of release 2.5, Flutter supports the following platforms:
+As of the current release, Flutter supports the following platforms:
 
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
@@ -26,8 +26,7 @@ All channels include master, beta and stable channels.
 
 ## How we define a supported platform
 
-As of Flutter 1.20, we define three tiers of support for the 
-platforms on which Flutter runs:
+We define three tiers of support for the platforms on which Flutter runs:
 1. Supported Google-tested platforms,
    which are platforms the Flutter team at 
    Google tests in continuous integration at every commit. 
@@ -54,7 +53,6 @@ platforms on which Flutter runs:
 |Android|Android SDK 21        |
 |Android|Android SDK 19        |
 |iOS    | 14-15                |
-|iOS    | 9.3.6                |
 |Web    | Chrome 84            |
 |Web    | Firefox 72.0         |
 |Web    | Safari / Catalina    |
@@ -71,9 +69,7 @@ minimal.
 
 |Platform|Version       |
 |--------|---------------|
-|Android |Android SDK 22 |
 |Android |Android SDK 20 |
-|Android |Android SDK 19 |
 |Android |Android SDK 18 |
 |Android |Android SDK 17 |
 |Android |Android SDK 16 |
@@ -91,7 +87,7 @@ see [go/rfc-ios8-deprecation] for details.
 
 |Platform|Version               |
 |--------|----------------------|
-|Android |Android SDK 15 & below|
+|Android |Android SDK 18 & below|
 |iOS     |iOS 8 & below         |
 |Windows |Windows Vista & below |
 |Windows |Any 32-bit platform   |   

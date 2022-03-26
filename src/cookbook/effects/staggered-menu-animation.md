@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/staggered_menu_animation"?>
+
 A single app screen might contain multiple animations.
 Playing all of the animations at the same time can be
 overwhelming. Playing the animations one after the other
@@ -36,91 +38,98 @@ Define a stateful widget called `Menu`
 that displays the list and button 
 in static locations.
 
-<!--skip-->
+<?code-excerpt "lib/step1.dart (step1)"?>
 ```dart
 class Menu extends StatefulWidget {
- @override
- _MenuState createState() => _MenuState();
+  const Menu({Key? key}) : super(key: key);
+
+  @override
+  _MenuState createState() => _MenuState();
 }
 
 class _MenuState extends State<Menu> {
- static const _menuTitles = [
-   'Declarative Style',
-   'Premade Widgets',
-   'Stateful Hot Reload',
-   'Native Performance',
-   'Great Community',
- ];
+  static const _menuTitles = [
+    'Declarative Style',
+    'Premade Widgets',
+    'Stateful Hot Reload',
+    'Native Performance',
+    'Great Community',
+  ];
 
- @override
- Widget build(BuildContext context) {
-   return Container(
-     color: Colors.white,
-     child: Stack(
-       fit: StackFit.expand,
-       children: [
-         _buildFlutterLogo(),
-         _buildContent(),
-       ],
-     ),
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          _buildFlutterLogo(),
+          _buildContent(),
+        ],
+      ),
+    );
+  }
 
- Widget _buildFlutterLogo() {...}
+  Widget _buildFlutterLogo() {
+    // TODO: We'll implement this later.
+    return Container();
+  }
 
- Widget _buildContent() {
-   return Column(
-     crossAxisAlignment: CrossAxisAlignment.start,
-     children: [
-       const SizedBox(height: 16),
-       ..._buildListItems(),
-       const Spacer(),
-       _buildGetStartedButton(),
-     ],
-   );
- }
+  Widget _buildContent() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 16),
+        ..._buildListItems(),
+        const Spacer(),
+        _buildGetStartedButton(),
+      ],
+    );
+  }
 
- List<Widget> _buildListItems() {
-   final listItems = <Widget>[];
-   for (var i = 0; i < _menuTitles.length; ++i) {
-     listItems.add(
-       Padding(
-         padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
-         child: Text(
-           _menuTitles[i],
-           textAlign: TextAlign.left,
-           style: const TextStyle(
-             fontSize: 24,
-             fontWeight: FontWeight.w500,
-           ),
-         ),
-       ),
-     );
-   }
-   return listItems;
- }
+  List<Widget> _buildListItems() {
+    final listItems = <Widget>[];
+    for (var i = 0; i < _menuTitles.length; ++i) {
+      listItems.add(
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+          child: Text(
+            _menuTitles[i],
+            textAlign: TextAlign.left,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+      );
+    }
+    return listItems;
+  }
 
- Widget _buildGetStartedButton() {
-   return SizedBox(
-     width: double.infinity,
-     child: Padding(
-       padding: const EdgeInsets.all(24.0),
-       child: RaisedButton(
-         shape: const StadiumBorder(),
-         color: Colors.blue,
-         padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
-         onPressed: () {},
-         child: const Text(
-           'Get Started',
-           style: TextStyle(
-             color: Colors.white,
-             fontSize: 22,
-           ),
-         ),
-       ),
-     ),
-   );
- }
+  Widget _buildGetStartedButton() {
+    return SizedBox(
+      width: double.infinity,
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            shape: const StadiumBorder(),
+            primary: Colors.blue,
+            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
+          ),
+          onPressed: () {},
+          child: const Text(
+            'Get Started',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
 
@@ -133,26 +142,26 @@ Add the `SingleTickerProviderStateMixin`
 to the `MenuState` class. Then, declare and
 instantiate an `AnimationController`.
 
-<!--skip-->
+<?code-excerpt "lib/step2.dart (AnimationController)" replace="/}\n/}\n}\n/g;"?>
 ```dart
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
+  late AnimationController _staggeredController;
 
- late AnimationController _staggeredController;
+  @override
+  void initState() {
+    super.initState();
 
- @override
- void initState() {
-   super.initState();
+    _staggeredController = AnimationController(
+      vsync: this,
+    );
+  }
+}
 
-   _staggeredController = AnimationController(
-     vsync: this,
-   );
- }
-
- @override
- void dispose() {
-   _staggeredController.dispose();
-   super.dispose();
- }
+  @override
+  void dispose() {
+    _staggeredController.dispose();
+    super.dispose();
+  }
 }
 ```
 
@@ -161,18 +170,18 @@ up to you. Define the animation delays,
 individual animation durations, and the total 
 animation duration.
 
-<!--skip-->
+<?code-excerpt "lib/animation_delays.dart (delays)" replace="/_buttonTime;\n/_buttonTime;\n}/g;"?>
 ```dart
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
- static const _initialDelayTime = Duration(milliseconds: 50);
- static const _itemSlideTime = Duration(milliseconds: 250);
- static const _staggerTime = Duration(milliseconds: 50);
- static const _buttonDelayTime = Duration(milliseconds: 150);
- static const _buttonTime = Duration(milliseconds: 500);
- final _animationDuration = _initialDelayTime +
-     (_staggerTime * _menuTitles.length) +
-     _buttonDelayTime +
-     _buttonTime;
+  static const _initialDelayTime = Duration(milliseconds: 50);
+  static const _itemSlideTime = Duration(milliseconds: 250);
+  static const _staggerTime = Duration(milliseconds: 50);
+  static const _buttonDelayTime = Duration(milliseconds: 150);
+  static const _buttonTime = Duration(milliseconds: 500);
+  final _animationDuration = _initialDelayTime +
+      (_staggerTime * _menuTitles.length) +
+      _buttonDelayTime +
+      _buttonTime;
 }
 ```
 
@@ -206,44 +215,44 @@ an interval from 0.2 to 0.5 would start at 200 ms
 Declare and calculate each list item’s `Interval` and the 
 bottom button `Interval`.
 
-<!--skip-->
+<?code-excerpt "lib/step3.dart (step3)" replace="/\/\/code-excerpt-close-bracket/\n}/g;"?>
 ```dart
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
- final List<Interval> _itemSlideIntervals = [];
- late Interval _buttonInterval;
+  final List<Interval> _itemSlideIntervals = [];
+  late Interval _buttonInterval;
 
- @override
- void initState() {
-   super.initState();
+  @override
+  void initState() {
+    super.initState();
 
-   _createAnimationIntervals();
+    _createAnimationIntervals();
 
-   _staggeredController = AnimationController(
-     vsync: this,
-     duration: _animationDuration,
-   );
- }
+    _staggeredController = AnimationController(
+      vsync: this,
+      duration: _animationDuration,
+    );
+  }
 
- void _createAnimationIntervals() {
-   for (var i = 0; i < _menuTitles.length; ++i) {
-     final startTime = _initialDelayTime + (_staggerTime * i);
-     final endTime = startTime + _itemSlideTime;
-     _itemSlideIntervals.add(
-       Interval(
-         startTime.inMilliseconds / _animationDuration.inMilliseconds,
-         endTime.inMilliseconds / _animationDuration.inMilliseconds,
-       ),
-     );
-   }
+  void _createAnimationIntervals() {
+    for (var i = 0; i < _menuTitles.length; ++i) {
+      final startTime = _initialDelayTime + (_staggerTime * i);
+      final endTime = startTime + _itemSlideTime;
+      _itemSlideIntervals.add(
+        Interval(
+          startTime.inMilliseconds / _animationDuration.inMilliseconds,
+          endTime.inMilliseconds / _animationDuration.inMilliseconds,
+        ),
+      );
+    }
 
-   final buttonStartTime =
-       Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
-   final buttonEndTime = buttonStartTime + _buttonTime;
-   _buttonInterval = Interval(
-     buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
-     buttonEndTime.inMilliseconds / _animationDuration.inMilliseconds,
-   );
- }
+    final buttonStartTime =
+        Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
+    final buttonEndTime = buttonStartTime + _buttonTime;
+    _buttonInterval = Interval(
+      buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
+      buttonEndTime.inMilliseconds / _animationDuration.inMilliseconds,
+    );
+  }
 }
 ```
 
@@ -253,7 +262,7 @@ The staggered animation plays as soon as the menu becomes visible.
 
 Start the animation in `initState()`.
 
-<!--skip-->
+<?code-excerpt "lib/step4.dart (initState)"?>
 ```dart
 @override
 void initState() {
@@ -275,44 +284,44 @@ Use the list item’s `Interval` and an `easeOut`
 curve to animate the opacity and translation
 values for each list item.
 
-<!--skip-->
+<?code-excerpt "lib/step4.dart (buildListItems)"?>
 ```dart
 List<Widget> _buildListItems() {
- final listItems = <Widget>[];
- for (var i = 0; i < _menuTitles.length; ++i) {
-   listItems.add(
-     AnimatedBuilder(
-       animation: _staggeredController,
-       builder: (context, child) {
-         final animationPercent = Curves.easeOut.transform(
-           _itemSlideIntervals[i].transform(_staggeredController.value),
-         );
-         final opacity = animationPercent;
-         final slideDistance = (1.0 - animationPercent) * 150;
+  final listItems = <Widget>[];
+  for (var i = 0; i < _menuTitles.length; ++i) {
+    listItems.add(
+      AnimatedBuilder(
+        animation: _staggeredController,
+        builder: (context, child) {
+          final animationPercent = Curves.easeOut.transform(
+            _itemSlideIntervals[i].transform(_staggeredController.value),
+          );
+          final opacity = animationPercent;
+          final slideDistance = (1.0 - animationPercent) * 150;
 
-         return Opacity(
-           opacity: opacity,
-           child: Transform.translate(
-             offset: Offset(slideDistance, 0),
-             child: child,
-           ),
-         );
-       },
-       child: Padding(
-         padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
-         child: Text(
-           _menuTitles[i],
-           textAlign: TextAlign.left,
-           style: const TextStyle(
-             fontSize: 24,
-             fontWeight: FontWeight.w500,
-           ),
-         ),
-       ),
-     ),
-   );
- }
- return listItems;
+          return Opacity(
+            opacity: opacity,
+            child: Transform.translate(
+              offset: Offset(slideDistance, 0),
+              child: child,
+            ),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+          child: Text(
+            _menuTitles[i],
+            textAlign: TextAlign.left,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+  return listItems;
 }
 ```
 
@@ -320,45 +329,47 @@ Use the same approach to animate the opacity and
 scale of the bottom button. This time, use an
 `elasticOut` curve to give the button a springy effect.
 
-<!--skip-->
+<?code-excerpt "lib/step4.dart (buildGetStartedButton)"?>
 ```dart
 Widget _buildGetStartedButton() {
- return SizedBox(
-   width: double.infinity,
-   child: Padding(
-     padding: const EdgeInsets.all(24.0),
-     child: AnimatedBuilder(
-       animation: _staggeredController,
-       builder: (context, child) {
-         final animationPercent = Curves.elasticOut.transform(
-             _buttonInterval.transform(_staggeredController.value));
-         final opacity = animationPercent.clamp(0.0, 1.0);
-         final scale = (animationPercent * 0.5) + 0.5;
+  return SizedBox(
+    width: double.infinity,
+    child: Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: AnimatedBuilder(
+        animation: _staggeredController,
+        builder: (context, child) {
+          final animationPercent = Curves.elasticOut.transform(
+              _buttonInterval.transform(_staggeredController.value));
+          final opacity = animationPercent.clamp(0.0, 1.0);
+          final scale = (animationPercent * 0.5) + 0.5;
 
-         return Opacity(
-           opacity: opacity,
-           child: Transform.scale(
-             scale: scale,
-             child: child,
-           ),
-         );
-       },
-       child: RaisedButton(
-         shape: const StadiumBorder(),
-         color: Colors.blue,
-         padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
-         onPressed: () {},
-         child: const Text(
-           'Get Started',
-           style: TextStyle(
-             color: Colors.white,
-             fontSize: 22,
-           ),
-         ),
-       ),
-     ),
-   ),
- );
+          return Opacity(
+            opacity: opacity,
+            child: Transform.scale(
+              scale: scale,
+              child: child,
+            ),
+          );
+        },
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            shape: const StadiumBorder(),
+            primary: Colors.blue,
+            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
+          ),
+          onPressed: () {},
+          child: const Text(
+            'Get Started',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
 }
 ```
 
@@ -369,13 +380,14 @@ pops into place.
 
 ## Interactive example
 
-<!--skip-->
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example:null_safety-true
+<?code-excerpt "lib/main.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-      home: const ExampleStaggeredAnimations(),
+  runApp(
+    const MaterialApp(
+      home: ExampleStaggeredAnimations(),
       debugShowCheckedModeBanner: false,
     ),
   );
@@ -489,7 +501,7 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
       builder: (context, child) {
         return FractionalTranslation(
           translation: Offset(1.0 - _drawerSlideController.value, 0.0),
-          child: _isDrawerClosed() ? const SizedBox() : Menu(),
+          child: _isDrawerClosed() ? const SizedBox() : const Menu(),
         );
       },
     );
@@ -497,6 +509,8 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
 }
 
 class Menu extends StatefulWidget {
+  const Menu({Key? key}) : super(key: key);
+
   @override
   _MenuState createState() => _MenuState();
 }

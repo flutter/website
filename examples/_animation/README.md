@@ -11,4 +11,4 @@ As these changes are completed for a given app/sample folder, then move the
 folder into `examples/animation`. One `examples/_animation` is empty, it can be
 deleted.
 
-[Code excerpts]: https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md
+[Code excerpts]: https://github.com/dart-lang/site-shared/blob/main/doc/code-excerpts.md

@@ -64,8 +64,9 @@ and app development.
 Flutter is designed to support mobile apps that run
 on both Android and iOS, as well as interactive apps
 that you want to run on your web pages or on the desktop.
-(Note that desktop support is in beta, but a snapshot
-of the beta is available on the stable channel.)
+(Desktop support for Windows is now available
+on the stable channel; support for macOS and Linux is in beta,
+but a snapshot of the beta is also available on the stable channel.)
 
 Apps that need to deliver highly branded designs
 are particularly well suited for Flutter.
@@ -112,7 +113,7 @@ for the majority of the system.
 
 [Flutter 1.0][] was launched on Dec 4th, 2018 and
 [Flutter 2][] on March 3rd, 2021.
-Since then, over 100,000 apps have shipped using
+Since its launch, over 400,000 apps have shipped using
 Flutter to many hundreds of millions of devices.
 See some sample apps in the [showcase][].
 
@@ -470,12 +471,12 @@ For more information, see [Hot reload][].
 ### Where can I deploy my Flutter app?
 
 You can compile and deploy your Flutter app to iOS, Android,
-[web][], and [desktop][] (in beta). While more adventurous
-developers are already deploying Flutter desktop apps,
-you might want to wait for desktop support to migrate
-to the stable channel if you are uncomfortable living
-on the edge. (However, a snapshot of beta desktop support
-is available on the stable channel, so you can try it out.)
+[web][], and [desktop][] Windows support is stable,
+while macOS and Linux support are in beta.
+For more information about Windows support, see
+[Announcing Flutter for Windows][].
+
+[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 
 ### What devices and OS versions does Flutter run on?
 
@@ -502,8 +503,9 @@ For more details, check out the [web instructions][].
 
 ### Can I use Flutter to build desktop apps?
 
-Yes, desktop support is in beta for Windows, macOS, and Linux,
-but a snapshot of the beta is available on the stable channel.)
+Yes, desktop support is in stable for Windows,
+and in beta for macOS and Linux,
+but a snapshot of the beta is available on the stable channel.
 The current progress is documented on the [Desktop][desktop] page.
 
 ### Can I use Flutter inside of my existing native app?
