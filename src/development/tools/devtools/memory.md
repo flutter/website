@@ -18,7 +18,7 @@ memory at a given moment.
 Memory profiling in DevTools consists of 3 main functions:
 
 * Charting memory usage statistics and events
-* Anaylsis to view all memory via a heap to detect memory issues
+* Analysis to view all memory via a heap to detect memory issues
   and inspect objects
 * Allocation monitoring to track object allocations and
   their stack traces for selected classes.
@@ -57,11 +57,9 @@ For more information, see [Analysis tab](#analysis-tab).
 ## Allocations and tracking
 
 Monitoring all allocations involves directly interacting
-with DevTools and your application to isolate a short period
-of time where you are interested in knowing how many objects
-were allocated, how many bytes were allocated, or in tracking
-all the places in your code where a particular
-class is allocated.
+with DevTools and your application to isolate a period
+of time where you are interested in knowing how many objects,
+bytes of memory, or instances of a particular class are allocated.
 This information is available under the **Allocations**
 tab of the Memory profiler and is a fairly fast computation
 with less overhead than using a snapshot.
