@@ -1,18 +1,19 @@
 ---
 title: Migrating from flutter_driver
-description: Learn how to migrate existing flutter_driver tests to integration_test
+description: Learn how to migrate existing flutter_driver tests to integration_test.
 ---
 
 <?code-excerpt path-base="integration_test_migration/"?>
 
-This page describes how to migrate an existing project using `flutter_driver`
-to the `integration_test` package to run integration tests.
+This page describes how to migrate an existing project using
+`flutter_driver` to the `integration_test` package,
+in order to run integration tests.
 
 Tests with `integration_test` use the same methods that are
 used in [widget testing][].
 
-For an introduction to the `integration_test` package, take a look at the
-[Integration Tests][] guide.
+For an introduction to the `integration_test` package,
+check out the [Integration Tests][] guide.
 
 ## Starter example project
 
@@ -20,13 +21,13 @@ The project in this guide is a small example desktop application with this
 functionality:
 
 * On the left, there's a list of plants that the user can scroll,
-tap and select.
+  tap and select.
 * On the right, there's a details screen that displays the plant name
-and species.
+  and species.
 * On app start, when no plant is selected, a text asking the user to select
 a plant is displayed
 * The list of plants is loaded from a local JSON file located in the
-assets folder.
+  assets folder.
 
 <img src='/assets/images/docs/integration-test/migration-1.png'
 class="mw-100" 
@@ -43,17 +44,18 @@ performing the following checks:
 * Selecting the first item on the list of plants.
 * Scrolling and selecting the last item on the list of plants.
 
-The tests are contained in the `test_driver` folder, inside the `main_test.dart`
-file.
+The tests are contained in the `test_driver` folder,
+inside the `main_test.dart` file.
 
-In this folder there's also a file named `main.dart`, which contains a call to
-the method `enableFlutterDriverExtension()`. This file won't be necessary
-anymore when using `integration_test`.
+In this folder there's also a file named `main.dart`,
+which contains a call to the method `enableFlutterDriverExtension()`.
+This file won't be necessary anymore when using `integration_test`.
 
 ## Setup
 
-To start using the `integration_test` package add the `integration_test` to
-your pubspec.yaml file if you still haven't:
+To start using the `integration_test` package,
+add the `integration_test` to
+your pubspec.yaml file if you haven't yet:
 
 ```yaml
 dev_dependencies:
@@ -79,8 +81,9 @@ This test verifies that the text is displayed.
 
 **flutter_driver**
 
-In `flutter_driver`, the test uses `waitFor` which waits until the `finder`
-can locate the widget. The test will fail if the widget can't be found.
+In `flutter_driver`, the test uses `waitFor`,
+which waits until the `finder` can locate the widget.
+The test fail if the widget can't be found.
 
 <?code-excerpt "test_driver/main_test.dart (Test1)"?>
 ```dart
@@ -93,13 +96,13 @@ test('do not select any item, verify please select text is displayed',
 
 **integration_test**
 
-In `integration_test` you will have to perform two steps:
+In `integration_test` you have to perform two steps:
 
-First you have to load the main app widget using
-the `tester.pumpWidget` method.
+1. First load the main app widget using
+   the `tester.pumpWidget` method.
 
-Then, you use `expect` with the matcher `findsOneWidget` to verify
-that the widget is displayed.
+2. Then, use `expect` with the matcher `findsOneWidget` to verify
+   that the widget is displayed.
 
 <?code-excerpt "integration_test/main_test.dart (Test1)"?>
 ```dart
@@ -121,22 +124,24 @@ testWidgets('do not select any item, verify please select text is displayed',
 
 ### Example: Tap actions
 
-This test performs a tap action on the first item on the list, which
-is a `ListTile` with the text "Alder".
+This test performs a tap action on the first item on the list,
+which is a `ListTile` with the text "Alder".
 
 After the tap, the test waits for the details to appear.
-In this case, waits for the widget with the text "Alnus" to
+In this case, it waits for the widget with the text "Alnus" to
 be displayed.
 
-As well, the tests verifies that the text "Please select a plant from
-the list." is not displayed anymore. 
+Also , the test verifies that the text
+"Please select a plant from the list."
+is no longer displayed. 
 
 **flutter_driver**
 
-In `flutter_driver`, you use the `driver.tap` method to perform
+In `flutter_driver`, use the `driver.tap` method to perform
 a tap over a widget using a finder.
 
-To verify that a widget is not displayed, you use the `waitForAbsent` method.
+To verify that a widget is not displayed,
+use the `waitForAbsent` method.
 
 <?code-excerpt "test_driver/main_test.dart (Test2)"?>
 ```dart
@@ -161,10 +166,10 @@ test('tap on the first item (Alder), verify selected', () async {
 
 **integration_test**
 
-In `integration_test`, you use `tester.tap` to perform tap actions.
+In `integration_test`, use `tester.tap` to perform the tap actions.
 
 After the tap action, you must call to `tester.pumpAndSettle` to wait
-until the action has finished and all the UI changes happened.
+until the action has finished, and all the UI changes have happened.
 
 To verify that a widget is not displayed, use the same `expect`
 function with the `findsNothing` matcher.
@@ -198,17 +203,18 @@ testWidgets('tap on the first item (Alder), verify selected',
 
 ### Example: Scrolling
 
-This test is similar to the previous one, but it scrolls down and taps
-the last item instead.
+This test is similar to the previous test,
+but it scrolls down and taps the last item instead.
 
 **flutter_driver**
 
-To scroll down with `flutter_driver`, you use the `driver.scroll` method.
+To scroll down with `flutter_driver`,
+use the `driver.scroll` method.
 
-You must provide the widget where to perform the scrolling action
+You must provide the widget to perform the scrolling action,
 as well as a duration for the scroll.
 
-You have to provide also the total offset for the scrolling action. 
+You also have to provide the total offset for the scrolling action. 
 
 <?code-excerpt "test_driver/main_test.dart (Test3)"?>
 ```dart
@@ -245,16 +251,17 @@ test('scroll, tap on the last item (Zedoary), verify selected', () async {
 
 **integration_test**
 
-With `integration_test` you can use the method `tester.scrollUntilVisible`.
+With `integration_test`, can use the method `tester.scrollUntilVisible`.
 
-Instead of providing the widget to scroll, you provide the item you
-are looking for.
-In this case, the item with the text "Zedoary", which is the last item
-on the list.
+Instead of providing the widget to scroll,
+provide the item that you're searching for.
+In this case, you're searching for the
+item with the text "Zedoary",
+which is the last item on the list.
 
-The method will look for any `Scrollable` widget
-and will perform the scrolling action using a given offset
-and will repeat the action until the item is visible.
+The method searches for any `Scrollable` widget
+and performs the scrolling action using the given offset.
+The action repeats until the item is visible.
 
 <?code-excerpt "integration_test/main_test.dart (Test3)"?>
 ```dart
@@ -292,4 +299,4 @@ testWidgets('scroll, tap on the last item (Zedoary), verify selected',
 
 [Integration Tests]: /testing/integration-tests
 [widget testing]: /testing#widget-tests
-[Example Project]: {{site.repo.this}}/tree/master/examples/integration_test_migration
+[Example Project]: {{site.repo.this}}/tree/{{site.branch}}/examples/integration_test_migration
