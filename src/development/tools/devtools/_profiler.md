@@ -1,17 +1,16 @@
 ## CPU Profiler
 
-Start recording a CPU profile by clicking Record.
-When you are done recording, click Stop. At this point,
+Start recording a CPU profile by clicking **Record**.
+When you are done recording, click **Stop**. At this point,
 CPU profiling data is pulled from the VM and displayed
-in the profiler views (Call Tree,
-Bottom Up, and Flame Chart).
+in the profiler views (Call Tree, Bottom Up, and Flame Chart).
 
 ### Profile granularity
 
 The default rate at which the VM collects CPU samples
 is 1 sample / 250 μs.  This is selected by default on
 the CPU profiler view as "Profile granularity: medium".
-This rate can be modified via the selector at the top
+This rate can be modified using the selector at the top
 of the page. The sampling rates for low, medium,
 and high granularity are 1 / 1000 μs, 1 / 250 μs, and 1 / 50 μs,
 respectively. It is important to know the trade-offs
@@ -19,13 +18,13 @@ of modifying this setting.
 
 A **higher granularity** profile has a higher sampling rate,
 and therefore yields a fine-grained CPU profile with more samples.
-This may also impact performance of your app since the VM
+This might also impact performance of your app since the VM
 is being interrupted more often to collect samples. This also
 causes the VM's CPU sample buffer to overflow more quickly.
 The VM has limited space where it can store CPU sample information.
 At a higher sampling rate, the space fills up and begins
 to overflow sooner than it would have if a lower sampling
-rate was used. This means that you may not have access to CPU samples
+rate was used. This means that you might not have access to CPU samples
 from the beginning of the recorded profile.
 
 A **lower granularity** profile has a lower sampling rate,
@@ -42,7 +41,7 @@ This tab of the profiler shows CPU samples for the recorded duration.
 This chart should be viewed as a top-down stack trace, where the
 top-most stack frame calls the one below it. The width of each stack
 frame represents the amount of time it consumed the CPU. Stack frames
-that consume a lot of CPU time may be a good place to look for possible
+that consume a lot of CPU time might be a good place to look for possible
 performance improvements.
 
 ![Screenshot of a flame chart]({{site.url}}/assets/images/docs/tools/devtools/cpu_profiler_flame_chart.png){:width="100%"}

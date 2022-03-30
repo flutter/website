@@ -90,7 +90,7 @@ to be 30 fps.
 
 Numbers can still be noisy. For example, the measured time per frame might
 be a true computation time of this frame, plus a random amount of time (noise)
-that CPU/GPU spends on some unrelated work. Hence, the metric will fluctuate.
+that CPU/GPU spends on some unrelated work. Hence, the metric fluctuates.
 Nevertheless, there’s no ambiguity of what the number means. And, there are
 also rigorous theory and testing tools to handle such noise. For example, you
 could take multiple measurements to estimate the distribution of a random

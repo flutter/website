@@ -1,6 +1,6 @@
 ---
 title: Performance
-description: Evaluating the performance of your app from several angles
+description: Evaluating the performance of your app from several angles.
 ---
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/PKGguGUwSYE" 
@@ -29,15 +29,14 @@ There is a list of [Frequently asked questions]({{site.url}}/perf/faq),
 so you can find out if the questions you have or the problems you're having 
 were already answered or encountered, and whether there are existing solutions. 
 (Alternatively, you can check the Flutter GitHub issue database using the
- [performance][performance] label.)
+[performance][performance] label.)
 
 Finally, the performance issues are divided into four categories. They 
 correspond to the four labels that are used in the Flutter GitHub issue 
 database: "[perf: speed][speed]", "[perf: memory][memory]", 
 "[perf: app size][size]", "[perf: energy][energy]".
 
-The rest of the content is organized using those four categories. (Note that
-these docs are in the process of being expanded.)
+The rest of the content is organized using those four categories.
 
 <!--
 Let's put "speed" (rendering) first as it's the most popular performance issue
@@ -63,8 +62,8 @@ in some future pages.
 
 ## App size
 
-How to measure your app's size. The smaller the size, the quicker it is to 
-download.
+How to measure your app's size. The smaller the size,
+the quicker it is to download.
 
 [Measuring your app's size][]
 
