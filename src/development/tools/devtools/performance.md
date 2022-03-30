@@ -153,7 +153,29 @@ enable the Track Layouts option:
 To see render object paint events in the timeline,
 enable the Track Paints option:
 
+
 ![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
+
+## More debugging options
+
+- **Render Clip layers:** Disable this option 
+  to check whether excessive use of clipping
+  is affecting performance.
+  If performance improves with this option disabled,
+  try to reduce the use of clipping effects in your app.
+- **Render Opacity layers:** Disable this option
+  to check whether excessive use of opacity effects
+  are affecting performance.
+  If performance improves with this option disabled,
+  try to reduce the use of opacity effects in your app.
+- **Render Physical Shape Layers:** Disable this option
+  to check whether excessive use of physical modeling effects
+  are affecting performance,
+  such as shadows or elevation.
+  If performance improves with this option disabled,
+  try to reduce the use of physical modeling effects in your app.
+
+![Screenshot of more debugging options]({{site.url}}/assets/images/docs/tools/devtools/more-debugging-options.png)
 
 ## Import and export
 
