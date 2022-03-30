@@ -70,7 +70,7 @@ helps to analyze the accumulator counts (the number of
 objects or bytes allocated), in a short timeframe.
 If you suspect that your application is leaking memory,
 or has other bugs relating to memory allocation,
-use the accumulators to understand the rate.
+use the accumulators to understand the rate
 of allocation. Additionally, you can track
 allocations of a few specific classes. We don't
 recommend tracking too many classes at once,
