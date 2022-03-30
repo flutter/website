@@ -158,6 +158,16 @@ enable the Track Paints option:
 
 ## More debugging options
 
+To diagnose performance problems related to rendering layers,
+toggle off a rendering layer.
+These options are enabled by default.
+
+To see the effects on your app's performance,
+reproduce the activity in your app,
+select the new frames in the frames chart,
+to inspect the timeline events
+with the layers disabled.
+
 - **Render Clip layers:** Disable this option 
   to check whether excessive use of clipping
   is affecting performance.
