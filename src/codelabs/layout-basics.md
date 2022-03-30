@@ -1826,7 +1826,7 @@ the following example uses an image from the network.
 
   **2.** Change the non-working URL to the actual URL:
 
-  `https://raw.githubusercontent.com/flutter/website/master/examples/layout/sizing/images/pic1.jpg`
+  `https://raw.githubusercontent.com/flutter/website/main/examples/layout/sizing/images/pic1.jpg`
 
   **3.** Then change `pic1.jpg` to `pic2.jpg` or `pic3.jpg`,
          and run again.
@@ -3365,7 +3365,7 @@ You can download Flutter from the [install][] page.
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new
 [Flutter's YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
-[GitHub]: {{site.repo.this}}/tree/master/examples/layout/sizing/images
+[GitHub]: {{site.repo.this}}/tree/{{site.branch}}/examples/layout/sizing/images
 [install]: {{site.url}}/get-started/install
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html
 [Material Color palette]: {{site.api}}/flutter/material/Colors-class.html
