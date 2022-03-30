@@ -13,8 +13,8 @@ write the most performant Flutter app possible.
 
 Sometimes, apps are janky (not smooth) on some platforms.
 We have found two scenarios that can cause jankiness,
-and are worth investigating if you are having issues.
-You might have one of the following situations:
+and are worth investigating if you are having issues&mdash;you
+might have one of the following scenarios:
 
 * Excessive calls to `savelayer()`.
   For more information, check out

@@ -15,7 +15,7 @@ excellent performance.
 
 ## General advice
 
-If you _are_ seeing janky (non smooth) animations, make
+If you see janky (non smooth) animations, make
 **sure** that you are profiling performance with an
 app built in _profile_ mode.
 The default Flutter build creates an app in _debug_ mode,
