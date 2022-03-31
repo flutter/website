@@ -124,7 +124,7 @@ Widgets that typically need to migrate the finder scope are:
 
 ## Timeline
 
-Landed in version: v2.9.0-1.0.pre<br>
+Landed in version: v2.13.0-1.0.pre<br>
 In stable release: Not yet
 
 ## References
@@ -138,10 +138,10 @@ Relevant issues:
 * [Issue 43277][]
 
 Relevant PR:
-* [PR 96375][]
+* [PR 100812][]
 
 [`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
 [`FadeUpwardsPageTransitionsBuilder`]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
 [`PageTransitionsTheme`]: {{site.api}}/flutter/material/PageTransitionsTheme-class.html
 [Issue 43277]: {{site.repo.flutter}}/issues/43277
-[PR 96375]: {{site.repo.flutter}}/pull/96375
+[PR 100812]: {{site.repo.flutter}}/pull/100812
