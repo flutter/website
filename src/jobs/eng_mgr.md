@@ -48,7 +48,7 @@ Any Google office locations or fully remote in a timezone 3 hours behind or ahea
 *   Partner with engineers to guide them along the path of their career development
 *   Collaborate with product management, developer relations, user experience research, and other engineering teams to ensure we’re meeting Flutter’s goals
 
-### Traits you will help you in this role
+### Traits that will help you in this role
 
 *   Enjoys working in a team environment and building relationships with people
 *   Passionate about building inclusive teams that allow every team member to bring their whole identity to work
