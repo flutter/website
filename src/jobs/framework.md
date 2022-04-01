@@ -20,7 +20,9 @@ to creating new features, and new components.
 
 ## About the position
 
-We're seeking software engineers to join the Framework Team. In the "Framework Engineer" role you'll be part of the team that keeps Flutter vital and current, including:
+We're seeking software engineers to join the Framework Team.
+In the "Framework Engineer" role, you'll be part of the team
+that keeps Flutter vital and current, including:
 
 *   Maintaining and growing the Framework APIs, docs, and tools.
 *   Delivering outstanding performance.
