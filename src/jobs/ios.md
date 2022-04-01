@@ -13,7 +13,8 @@ engineers to join our iOS team.
 
 ## About the position
 
-In the “iOS Engineer” role, you’ll be part of a team that makes Flutter on iOS the absolute best it can be, including:
+In the “iOS Engineer” role, you’ll be part of a team that makes
+Flutter on iOS the absolute best it can be, including:
 
 *   Delivering outstanding performance.
 *   Delighting developers with a simple but powerful developer experience.
