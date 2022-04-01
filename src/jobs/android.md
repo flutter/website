@@ -70,7 +70,7 @@ behind or ahead of Pacific Standard Time (US West Coast).
 *   Maintain and improve Flutter's core plugins
     (Ads, Maps, WebView, In-App Purchase) on Android.
 
-### Traits you will help you in this role
+### Traits that will help you in this role
 
 *   Enjoys working in a team environment.
 *   Loves simple and elegant solutions to complex problems.
