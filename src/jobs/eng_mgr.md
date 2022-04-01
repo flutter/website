@@ -5,9 +5,21 @@ toc: false
 
 ## About the team
 
-Flutter is the most popular multi-platform UI toolkit, with shipped support for iOS, Android, Web, Windows, MacOS, and Linux.  The team is continuously innovating in the app development space by improving on performance, fidelity, and developer experience – and we’re in need of an engineering manager who’s interested in advancing the cutting edge of app development.
+Flutter is the most popular multi-platform UI toolkit,
+with shipped support for iOS, Android, Web, Windows, macOS, and Linux.
+The team is continuously innovating in the app development space
+by improving on performance, fidelity, and developer experience&mdash;and
+we’re in need of an engineering manager who’s interested in advancing
+the cutting edge of app development.
 
-The Flutter Mobile Platforms Teams are responsible for making Flutter the best it can be on Android and iOS.  Nearly half a million apps have been released that use Flutter, so these teams have a direct role in improving the lives of mobile developers across the world.  These teams work across the Flutter tech stack, from tooling for building and running, to the platform engine embeddings, to platform plugins, to the widget framework, to performance work.
+The Flutter Mobile Platforms Teams are responsible for
+making Flutter the best it can be on Android and iOS.
+Nearly half a million apps have been released that use Flutter,
+so these teams have a direct role in improving the lives of mobile
+developers across the world. These teams work across the Flutter
+tech stack, from tooling for building and running,
+to the platform engine embeddings,
+to platform plugins, to the widget framework, to performance work.
 
 The Flutter Ecosystem Team is responsible for making it easy for developers to build and use Flutter plugins (the means by which Flutter apps integrate native functionality from the platform into their Flutter apps).  This team not only owns the system that underpins Flutter plugins, but they also help maintain and improve core Flutter plugins (such as WebView and Camera) so as to ensure our plugin system is meeting the needs of developers.
 
@@ -46,7 +58,15 @@ Any Google office locations or fully remote in a timezone 3 hours behind or ahea
 
 *   Lead a team of dedicated and talented software engineers to grow and improve Flutter
 *   Partner with engineers to guide them along the path of their career development
-*   Collaborate with product management, developer relations, user experience research, and other engineering teams to ensure we’re meeting Flutter’s goals
+*   Collaborate with product management, developer relations,
+    user experience research, and other engineering teams to
+    ensure we’re meeting Flutter’s goals
+
+### Traits that will help you in this role
+
+*   Enjoys working in a team environment and building relationships with people
+*   Passionate about building inclusive teams that allow every
+    team member to bring their whole identity to work
 
 ## Qualifications
 
@@ -58,8 +78,6 @@ Any Google office locations or fully remote in a timezone 3 hours behind or ahea
 
 ### Preferred qualifications
 
-*   Enjoys working in a team environment and building relationships with people
-*   Passionate about building inclusive teams that allow every team member to bring their whole identity to work
 *   Experience building developer-facing products or frameworks
 *   Experience working with multiple partners or stakeholders
 *   Experience identifying opportunities for joint impact between teams
