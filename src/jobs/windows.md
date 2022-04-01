@@ -11,7 +11,11 @@ and Linux. On Windows, we're allowing Flutter developers to target
 an additional 1B users, and we're offering a better alternative to
 desktop developers who use Electron, Windows Forms, WPF, or (shudder) UWP!
 
-The Flutter Desktop Team is responsible for the desktop-specific (Windows, macOS, Linux) embeddings of the Flutter engine, which includes enabling platform plugins, nesting platform views inside Flutter apps, and wiring-up accessibility hooks on those platforms – and anything else that helps Flutter feel “native” when run in those environments.
+The Flutter Desktop Team is responsible for the desktop-specific
+(Windows, macOS, Linux) embeddings of the Flutter engine,
+which includes enabling platform plugins, nesting platform views
+inside Flutter apps, and wiring-up accessibility hooks on those
+platforms&mdash;and anything else that helps Flutter feel “native” when run in those environments.
 
 ## About the position
 
