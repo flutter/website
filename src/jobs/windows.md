@@ -24,7 +24,7 @@ Flutter apps the absolute best they can be when running on Windows, including:
 
 *   Designing and building multi-window support.
 *   Building support for Windows system menu integration.
-*   Adding support for shell / window drag ‘n drop.
+*   Adding support for shell / window drag and drop.
 *   Adding support for nesting Windows UI views inside Flutter apps.
 *   Delivering outstanding performance on Windows.
 *   Nurturing a thriving community of contributions from open-source developers by reviewing GitHub issues and pull requests (PRs).
