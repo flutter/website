@@ -48,7 +48,12 @@ and their allies with shared values of creating belonging across their communiti
 
 ### Work-Life Balance
 
-Our team also puts a high value on work-life balance. Striking a healthy balance between your personal and professional life is crucial to your happiness and success here, which is why we aren’t focused on how many hours you spend at work or online. Instead, we’re happy to offer a flexible schedule so you can have a more productive and well-balanced life—both in and outside of work.
+Our team also puts a high value on work-life balance.
+Striking a healthy balance between your personal and professional
+life is crucial to your happiness and success here, which is why we aren’t
+focused on how many hours you spend at work or online. Instead,
+we’re happy to offer a flexible schedule so you can have a more productive
+and well-balanced life&mdash;both in and outside of work.
 
 ## Job location
 
