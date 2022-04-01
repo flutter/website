@@ -58,7 +58,7 @@ Any Google office locations or fully remote in a timezone 3 hours behind or ahea
 *   Streamline Flutter’s mechanism for embedding native Windows UI views
     or communicating with native Windows libraries.
 
-### Traits you will help you in this role
+### Traits that will help you in this role
 
 *   Enjoys working in a team environment.
 *   Self-motivated and possesses a good work ethic.
