@@ -58,7 +58,9 @@ Any Google office locations or fully remote in a timezone 3 hours behind or ahea
 
 *   Lead a team of dedicated and talented software engineers to grow and improve Flutter
 *   Partner with engineers to guide them along the path of their career development
-*   Collaborate with product management, developer relations, user experience research, and other engineering teams to ensure we’re meeting Flutter’s goals
+*   Collaborate with product management, developer relations,
+    user experience research, and other engineering teams to
+    ensure we’re meeting Flutter’s goals
 
 ### Traits that will help you in this role
 
