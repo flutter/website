@@ -89,7 +89,7 @@ behind or ahead of Pacific Standard Time (US West Coast).
 
 *   Native Android application development experience across a variety of Android versions
 *   Experience with Android performance profiling and memory tooling
-*   Experience with Android build systems (e.g. Gradle)
+*   Experience with Android build systems (such as Gradle)
 
 ## To apply
 
