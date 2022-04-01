@@ -19,7 +19,8 @@ platforms&mdash;and anything else that helps Flutter feel “native” when run 
 
 ## About the position
 
-In the "Windows Engineer" role you'll be part of the team that makes Flutter apps the absolute best they can be when running on Windows, including:
+In the "Windows Engineer" role you'll be part of the team that makes
+Flutter apps the absolute best they can be when running on Windows, including:
 
 *   Designing and building multi-window support.
 *   Building support for Windows system menu integration.
