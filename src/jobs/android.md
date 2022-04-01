@@ -12,14 +12,17 @@ we’re seeking software engineers to join our Android team.
 
 ## About the position
 
-In the “Android Engineer” role, you’ll be part of a team that makes Flutter on Android the absolute best it can be, including:
+In the “Android Engineer” role, you’ll be part of a team that makes
+Flutter on Android the absolute best it can be, including:
 
 *   Delivering outstanding performance.
 *   Delighting developers with a simple but powerful developer experience.
-*   Making Flutter feel “native” on Android (e.g. by tying into system preferences and accessibility, or by integrating with native performance & memory profiling tools).
+*   Making Flutter feel “native” on Android (for example, by tying into system preferences
+     and accessibility, or by integrating with native performance and memory profiling tools).
 *   Allowing seamless and efficient interoperability with native Android views and libraries.
 *   Encouraging the growth and quality of the Flutter Android plugin ecosystem on pub.dev.
-*   Nurturing a thriving community of contributions from open-source developers by reviewing GitHub pull requests (PRs).
+*   Nurturing a thriving community of contributions from open-source developers by reviewing
+     GitHub pull requests (PRs).
 
 ## Our values
 
