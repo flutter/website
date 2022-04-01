@@ -18,7 +18,7 @@ Flutter on iOS the absolute best it can be, including:
 
 *   Delivering outstanding performance.
 *   Delighting developers with a simple but powerful developer experience.
-*   Making Flutter feel “native” on iOS (e.g. by tying into system preferences and accessibility).
+*   Making Flutter feel “native” on iOS (for example, by tying into system preferences and accessibility).
 *   Allowing seamless and efficient interoperability with native iOS views and libraries.
 *   Encouraging the growth and quality of the Flutter iOS plugin ecosystem on pub.dev.
 *   Nurturing a thriving community of contributions from open-source developers by reviewing GitHub pull requests (PRs).
