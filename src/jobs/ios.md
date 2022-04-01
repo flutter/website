@@ -69,7 +69,7 @@ behind or ahead of Pacific Standard Time (US West Coast).
     communicating with native iOS libraries.
 *   Maintain and improve Flutter's core plugins (Ads, Maps, WebView, In-App Purchase) on iOS.
 
-### Traits you will help you in this role
+### Traits that will help you in this role
 
 *   Enjoys working in a team environment
 *   Self-motivated and possesses a good work ethic
