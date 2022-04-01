@@ -47,7 +47,8 @@ and well-balanced life&mdash;both in and outside of work.
 
 ## Job location
 
-Any Google office locations or fully remote in a timezone 3 hours behind or ahead of Pacific Standard Time (US West Coast).
+Any Google office location, or fully remote in a timezone 3 hours
+behind or ahead of Pacific Standard Time (US West Coast).
 
 ## Job responsibilities
 
