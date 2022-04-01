@@ -5,7 +5,11 @@ toc: false
 
 ## About the team
 
-Flutter is the most popular multi-platform UI toolkit, with shipped support for iOS, Android, Web, Windows, macOS, and Linux. On Windows, we're allowing Flutter developers to target an additional 1B users, and we're offering a better alternative to desktop developers who use Electron, Windows Forms, WPF, or (shudder) UWP!
+Flutter is the most popular multi-platform UI toolkit,
+with shipped support for iOS, Android, Web, Windows, macOS,
+and Linux. On Windows, we're allowing Flutter developers to target
+an additional 1B users, and we're offering a better alternative to
+desktop developers who use Electron, Windows Forms, WPF, or (shudder) UWP!
 
 The Flutter Desktop Team is responsible for the desktop-specific (Windows, macOS, Linux) embeddings of the Flutter engine, which includes enabling platform plugins, nesting platform views inside Flutter apps, and wiring-up accessibility hooks on those platforms – and anything else that helps Flutter feel “native” when run in those environments.
 
