@@ -32,7 +32,13 @@ We're seeking software engineers to join the Framework Team. In the "Framework E
 
 ### Mentorship
 
-Upon joining Google, you will be paired with a formal mentor, who will help guide you in the process of ramping up, forging relationships, and learning the systems you’ll need to do your job.  Your manager can also help you find mentors who can coach you as you navigate your career at Google. In addition to formal mentors, we work and train together so that we are always learning from one another, and we celebrate and support the career progression of our team members.
+Upon joining Google, you will be paired with a formal mentor,
+who will help guide you in the process of ramping up, forging relationships,
+and learning the systems you’ll need to do your job. Your manager can also help
+you find mentors who can coach you as you navigate your career at Google.
+In addition to formal mentors, we work and train together so that we are always
+learning from one another, and we celebrate and support the career
+progression of our team members.
 
 ### Inclusion
 
