@@ -5,7 +5,11 @@ toc: false
 
 ## About the team
 
-Flutter is the most popular multi-platform UI toolkit, with shipped support for iOS, Android, Web, Windows, macOS, and Linux.  The team is constantly looking to improve our fidelity on our supported platforms. To that end, we’re seeking software engineers to join our iOS team.
+Flutter is the most popular multi-platform UI toolkit,
+with shipped support for iOS, Android, Web, Windows, macOS,
+and Linux. The team is constantly looking to improve our fidelity
+on our supported platforms. To that end, we’re seeking software
+engineers to join our iOS team.
 
 ## About the position
 
