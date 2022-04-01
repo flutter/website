@@ -65,7 +65,8 @@ behind or ahead of Pacific Standard Time (US West Coast).
 *   Simplify and improve the tooling required to build Flutter iOS apps.
 *   Respond rapidly to iOS platform updates (such as WWDC announcements)
 *   Minimize the memory and file-size footprint required by Flutter iOS apps.
-*   Streamline Flutter’s mechanism for embedding native iOS views or communicating with native iOS libraries.
+*   Streamline Flutter’s mechanism for embedding native iOS views or
+    communicating with native iOS libraries.
 *   Maintain and improve Flutter's core plugins (Ads, Maps, WebView, In-App Purchase) on iOS.
 
 ### Traits you will help you in this role
