@@ -76,7 +76,8 @@ behind or ahead of Pacific Standard Time (US West Coast).
 *   Loves simple and elegant solutions to complex problems.
 *   Possesses a good sense of API design.
 *   Ability to see how things might fail in unexpected ways.
-*   Can efficiently navigate ambiguity by evaluating potential solutions and weighing pros and cons
+*   Can efficiently navigate ambiguity by evaluating potential solutions
+    and weighing pros and cons.
 
 ## Qualifications
 
