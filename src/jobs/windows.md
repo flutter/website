@@ -28,7 +28,13 @@ Upon joining Google, you will be paired with a formal mentor, who will help guid
 
 ### Inclusion
 
-Here on the Flutter team and at Google, we embrace our differences and are [committed to furthering our culture of inclusion](https://flutter.dev/culture).  In addition to groups like the [Flutteristas](https://flutteristas.org/), [Employee Resource Groups (ERGs)](https://diversity.google/commitments/) are employee-initiated networks for supporting underrepresented employees and their allies with shared values of creating belonging across their communities and Google.
+Here on the Flutter team and at Google,
+we embrace our differences and are
+[committed to furthering our culture of inclusion](https://flutter.dev/culture).
+In addition to groups like the [Flutteristas](https://flutteristas.org/),
+[Employee Resource Groups (ERGs)](https://diversity.google/commitments/)
+are employee-initiated networks for supporting underrepresented employees
+and their allies with shared values of creating belonging across their communities and Google.
 
 ### Work-Life Balance
 
