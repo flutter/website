@@ -25,7 +25,8 @@ We're seeking software engineers to join the Framework Team. In the "Framework E
 *   Maintaining and growing the Framework APIs, docs, and tools.
 *   Delivering outstanding performance.
 *   Delighting developers with a simple but powerful developer experience.
-*   Nurturing a thriving community of contributions from open-source developers by reviewing GitHub issues and pull requests (PRs).
+*   Nurturing a thriving community of contributions from open-source
+    developers by reviewing GitHub issues and pull requests (PRs).
 
 ## Our values
 
