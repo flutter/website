@@ -5,7 +5,11 @@ toc: false
 
 ## About the team
 
-Flutter is the most popular multi-platform UI toolkit, with shipped support for iOS, Android, Web, Windows, macOS, and Linux.  The team is continuously innovating in the app development space by improving on performance, fidelity, and developer experience – and we’re in need of engineers who are interested in advancing the cutting edge of app development.
+Flutter is the most popular multi-platform UI toolkit,
+with shipped support for iOS, Android, web, Windows, macOS, and Linux.
+The team is continuously innovating in the app development space
+by improving on performance, fidelity, and developer experience&mdash;and
+we’re in need of engineers who are interested in advancing the cutting edge of app development.
 
 Flutter's Framework Team develops most of Flutter's public API: all of the user interface components as well as support for layouts, animations, accessibility, internationalization, touch, mouse, and keyboard input, and much more. The team is responsible for everything from sustaining and performance, to creating new features, and new components.
 
