@@ -55,7 +55,8 @@ Any Google office locations or fully remote in a timezone 3 hours behind or ahea
 *   Simplify and improve the tooling required to build Flutter Windows apps.
 *   Respond rapidly to Windows platform updates.
 *   Minimize the memory and file-size footprint required by Flutter Windows apps.
-*   Streamline Flutter’s mechanism for embedding native Windows UI views or communicating with native Windows libraries.
+*   Streamline Flutter’s mechanism for embedding native Windows UI views
+    or communicating with native Windows libraries.
 
 ### Traits you will help you in this role
 
