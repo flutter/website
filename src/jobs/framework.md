@@ -80,7 +80,8 @@ behind or ahead of Pacific Standard Time (US West Coast).
 *   Possesses a good sense of API design.
 *   Loves making order out of chaos.
 *   Ability to see how things might fail in unexpected ways.
-*   Can efficiently navigate ambiguity by evaluating potential solutions and weighing pros and cons
+*   Can efficiently navigate ambiguity by evaluating potential
+    solutions and weighing pros and cons.
 
 ## Qualifications
 
