@@ -5,7 +5,12 @@ toc: false
 
 ## About the team
 
-Flutter is the most popular multi-platform UI toolkit, with shipped support for iOS, Android, Web, Windows, macOS, and Linux.  The team is continuously innovating in the app development space by improving on performance, fidelity, and developer experience – and we’re in need of an engineering manager who’s interested in advancing the cutting edge of app development.
+Flutter is the most popular multi-platform UI toolkit,
+with shipped support for iOS, Android, Web, Windows, macOS, and Linux.
+The team is continuously innovating in the app development space
+by improving on performance, fidelity, and developer experience&mdash;and
+we’re in need of an engineering manager who’s interested in advancing
+the cutting edge of app development.
 
 The Flutter Mobile Platforms Teams are responsible for making Flutter the best it can be on Android and iOS.  Nearly half a million apps have been released that use Flutter, so these teams have a direct role in improving the lives of mobile developers across the world.  These teams work across the Flutter tech stack, from tooling for building and running, to the platform engine embeddings, to platform plugins, to the widget framework, to performance work.
 
