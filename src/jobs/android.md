@@ -62,11 +62,13 @@ behind or ahead of Pacific Standard Time (US West Coast).
 ## Job responsibilities
 
 *   Simplify and improve the tooling required to build Flutter Android apps.
-*   Respond rapidly to Android platform updates (e.g. Android 12)
+*   Respond rapidly to Android platform updates (such as Android 12).
 *   Minimize the memory and file-size footprint required by Flutter Android apps.
 *   Improve the interoperability between Flutter apps and Java/Kotlin code.
-*   Streamline Flutter’s mechanism for embedding native Android views or communicating with native Android libraries.
-*   Maintain and improve Flutter's core plugins (Ads, Maps, WebView, In-App Purchase) on Android.
+*   Streamline Flutter’s mechanism for embedding native Android views
+    or communicating with native Android libraries.
+*   Maintain and improve Flutter's core plugins
+    (Ads, Maps, WebView, In-App Purchase) on Android.
 
 ### Traits you will help you in this role
 
