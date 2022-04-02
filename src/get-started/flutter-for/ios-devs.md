@@ -2117,8 +2117,7 @@ Use the [`geolocator`][] community plugin.
 
 ### How do I access the camera?
 
-The [`image_picker`][] plugin is popular
-for accessing the camera.
+The [`camera`][] plugin is popular for accessing the camera.
 
 ### How do I log in with Facebook?
 
@@ -2235,7 +2234,7 @@ plugin documentation.
 [`geolocator`]: {{site.pub-pkg}}/geolocator
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[`image_picker`]: {{site.pub-pkg}}/image_picker
+[`camera`]: {{site.pub-pkg}}/camera
 [internationalization guide]: {{site.url}}/development/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
