@@ -20,19 +20,22 @@ the Cupertino package.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Your iOS knowledge and skill set are highly valuable when building with
-Flutter, because Flutter relies on the mobile operating system for numerous
-capabilities and configurations. Flutter is a new way to build UIs for mobile,
-but it has a plugin system to communicate with iOS (and Android) for non-UI
-tasks. If you're an expert in iOS development, you don't have to relearn
-everything to use Flutter.
+Your iOS knowledge and skill set
+are highly valuable when building with Flutter,
+because Flutter relies on the mobile operating system
+for numerous capabilities and configurations.
+Flutter is a new way to build UIs for mobile,
+but it has a plugin system to communicate
+with iOS (and Android) for non-UI tasks.
+If you're an expert in iOS development,
+you don't have to relearn everything to use Flutter.
 
-Flutter also already makes a number of adaptations in the
-framework for you when running on iOS. For a list,
-see [Platform adaptations][].
+Flutter also already makes a number of adaptations
+in the framework for you when running on iOS.
+For a list, see [Platform adaptations][].
 
-This document can be used as a cookbook by jumping around and finding questions
-that are most relevant to your needs.
+This document can be used as a cookbook by jumping around
+and finding questions that are most relevant to your needs.
 
 ## Views
 
@@ -45,24 +48,30 @@ that are most relevant to your needs.
   For a comparison, see [Introduction to declarative UI][].
 {{site.alert.end}}
 
-On iOS, most of what you create in the UI is done using view objects, which are
-instances of the `UIView` class. These can act as containers for other `UIView`
-classes, which form your layout.
+On iOS, most of what you create in the UI is done using view objects,
+which are instances of the `UIView` class.
+These can act as containers for other `UIView` classes,
+which form your layout.
 
-In Flutter, the rough equivalent to a `UIView` is a `Widget`. Widgets don't map
-exactly to iOS views, but while you're getting acquainted with how Flutter works
+In Flutter, the rough equivalent to a `UIView` is a `Widget`.
+Widgets don't map exactly to iOS views,
+but while you're getting acquainted with how Flutter works
 you can think of them as "the way you declare and construct UI".
 
-However, these have a few differences to a `UIView`. To start, widgets have a
-different lifespan: they are immutable and only exist until they need to be
-changed. Whenever widgets or their state change, Flutter’s framework creates
-a new tree of widget instances. In comparison, an iOS view is not recreated when
-it changes, but rather it's a mutable entity that is drawn once and doesn't
-redraw until it is invalidated using `setNeedsDisplay()`.
+However, these have a few differences to a `UIView`.
+To start, widgets have a different lifespan: they are immutable
+and only exist until they need to be changed.
+Whenever widgets or their state change,
+Flutter’s framework creates a new tree of widget instances.
+In comparison, an iOS view is not recreated when it changes,
+but rather it's a mutable entity that is drawn once
+and doesn't redraw until it is invalidated using `setNeedsDisplay()`.
 
-Furthermore, unlike `UIView`, Flutter’s widgets are lightweight, in part due
-to their immutability. Because they aren't views themselves, and aren't directly
-drawing anything, but rather are a description of the UI and its semantics
+Furthermore, unlike `UIView`, Flutter’s widgets are lightweight,
+in part due to their immutability.
+Because they aren't views themselves,
+and aren't directly drawing anything,
+but rather are a description of the UI and its semantics
 that get "inflated" into actual view objects under the hood.
 
 Flutter includes the [Material Components][] library.
@@ -71,8 +80,9 @@ These are widgets that implement the
 Material Design is a flexible design system
 [optimized for all platforms][], including iOS.
 
-But Flutter is flexible and expressive enough to implement any
-design language.  On iOS, you can use the [Cupertino widgets][]
+But Flutter is flexible and expressive enough
+to implement any design language.
+On iOS, you can use the [Cupertino widgets][]
 to produce an interface that looks like
 [Apple's iOS design language][].
 
@@ -90,28 +100,33 @@ like&mdash;a widget with no state attached.
 describing does not depend on anything other than the initial configuration
 information in the widget.
 
-For example, in iOS, this is similar to placing a `UIImageView` with
-your logo as the `image`. If the logo is not changing during runtime,
+For example, in iOS, this is similar to placing a `UIImageView`
+with your logo as the `image`. If the logo is not changing during runtime,
 use a `StatelessWidget` in Flutter.
 
-If you want to dynamically change the UI based on data received after making an
-HTTP call, use a `StatefulWidget`. After the HTTP call has
-completed, tell the Flutter framework that the widget’s `State` is
-updated, so it can update the UI.
+If you want to dynamically change the UI based on data received
+after making an HTTP call, use a `StatefulWidget`.
+After the HTTP call has completed, tell the Flutter framework
+that the widget’s `State` is updated, so it can update the UI.
 
 The important difference between stateless and
-stateful widgets is that `StatefulWidget`s have a `State` object that stores
-state data and carries it over across tree rebuilds, so it's not lost.
+stateful widgets is that `StatefulWidget`s have a `State` object
+that stores state data and carries it over across tree rebuilds,
+so it's not lost.
 
-If you are in doubt, remember this rule: if a widget changes outside of
-the `build` method (because of runtime user interactions, for example), it’s stateful.
+If you are in doubt, remember this rule:
+if a widget changes outside of the `build` method
+(because of runtime user interactions, for example),
+it’s stateful.
 If the widget never changes, once built, it's stateless.
-However, even if a widget is stateful, the containing parent widget can still
-be stateless if it isn’t itself reacting to those changes (or other inputs).
+However, even if a widget is stateful, the containing parent widget
+can still be stateless if it isn’t itself reacting to those changes
+(or other inputs).
 
-The following example shows how to use a `StatelessWidget`. A common
-`StatelessWidget` is the `Text` widget. If you look at the implementation of
-the `Text` widget you'll find it subclasses `StatelessWidget`.
+The following example shows how to use a `StatelessWidget`.
+A common`StatelessWidget` is the `Text` widget.
+If you look at the implementation of the `Text` widget,
+you'll find it subclasses `StatelessWidget`.
 
 <!-- skip -->
 ```dart
@@ -183,10 +198,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### How do I lay out my widgets? Where is my Storyboard?
 
-In iOS, you might use a Storyboard file to organize your views and set
-constraints, or you might set your constraints programmatically in your view
-controllers. In Flutter, declare your layout in code by composing
-a widget tree.
+In iOS, you might use a Storyboard file
+to organize your views and set constraints,
+or you might set your constraints programmatically in your view controllers.
+In Flutter, declare your layout in code by composing a widget tree.
 
 The following example shows how to display a simple widget with padding:
 
@@ -214,19 +229,22 @@ Widget build(BuildContext context) {
 You can add padding to any widget,
 which mimics the functionality of constraints in iOS.
 
-You can view the layouts that Flutter has to offer in the
-[widget catalog][].
+You can view the layouts that Flutter has to offer
+in the [widget catalog][].
 
 ### How do I add or remove a component from my layout?
 
-In iOS, you call `addSubview()` on the parent, or `removeFromSuperview()`
-on a child view to dynamically add or remove child views. In Flutter, because
-widgets are immutable there is no direct equivalent to `addSubview()`.
-Instead, you can pass a function to the parent that returns a widget, and
-control that child's creation with a boolean flag.
+In iOS, you call `addSubview()` on the parent,
+or `removeFromSuperview()` on a child view
+to dynamically add or remove child views.
+In Flutter, because widgets are immutable,
+there is no direct equivalent to `addSubview()`.
+Instead, you can pass a function to the parent
+that returns a widget, and control that child's creation
+with a boolean flag.
 
-The following example shows how to toggle between two widgets when the
-user clicks the `FloatingActionButton`:
+The following example shows how to toggle between two widgets
+when the user clicks the `FloatingActionButton`:
 
 <!-- skip -->
 ```dart
@@ -288,24 +306,29 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ### How do I animate a widget?
 
 In iOS, you create an animation by calling the
-`animate(withDuration:animations:)` method on a view. In Flutter,
-use the animation library to wrap widgets inside an animated widget.
+`animate(withDuration:animations:)` method on a view.
+In Flutter, use the animation library
+to wrap widgets inside an animated widget.
 
 In Flutter, use an `AnimationController`, which is an `Animation<double>`
-that can pause, seek, stop, and reverse the animation. It requires a `Ticker`
-that signals when vsync happens and produces a linear interpolation between
-0 and 1 on each frame while it's running. You then create one or more
+that can pause, seek, stop, and reverse the animation.
+It requires a `Ticker` that signals when vsync happens
+and produces a linear interpolation
+between 0 and 1 on each frame while it's running.
+You then create one or more
 `Animation`s and attach them to the controller.
 
-For example, you might use `CurvedAnimation` to implement an animation
-along an interpolated curve. In this sense, the controller
-is the "master" source of the animation progress and the `CurvedAnimation`
-computes the curve that replaces the controller's default linear motion.
+For example, you might use `CurvedAnimation`
+to implement an animation along an interpolated curve.
+In this sense, the controller is the "master" source
+of the animation progress
+and the `CurvedAnimation` computes the curve
+that replaces the controller's default linear motion.
 Like widgets, animations in Flutter work with composition.
 
 When building the widget tree you assign the `Animation` to an animated
-property of a widget, such as the opacity of a `FadeTransition`, and tell the
-controller to start the animation.
+property of a widget, such as the opacity of a `FadeTransition`,
+and tell the controller to start the animation.
 
 The following example shows how to write a `FadeTransition` that
 fades the widget into a logo when you press the `FloatingActionButton`:
@@ -388,12 +411,12 @@ the [Animations tutorial][], and the [Animations overview][].
 ### How do I draw to the screen?
 
 On iOS, you use `CoreGraphics` to draw lines and shapes to the
-screen. Flutter has a different API based on the `Canvas` class, with two
-other classes that help you draw: `CustomPaint` and `CustomPainter`, the
-latter of which implements your algorithm to draw to the canvas.
+screen. Flutter has a different API based on the `Canvas` class,
+with two other classes that help you draw: `CustomPaint` and `CustomPainter`,
+the latter of which implements your algorithm to draw to the canvas.
 
-To learn how to implement a signature painter in Flutter, see Collin's answer on
-[StackOverflow][].
+To learn how to implement a signature painter in Flutter,
+see Collin's answer on [StackOverflow][].
 
 [StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
@@ -466,21 +489,21 @@ class SignaturePainter extends CustomPainter {
 
 ### Where is the widget's opacity?
 
-On iOS, everything has .opacity or .alpha.
+On iOS, everything has `.opacity` or `.alpha`.
 In Flutter, most of the time you need to
-wrap a widget in an Opacity widget to accomplish this.
+wrap a widget in an `Opacity` widget to accomplish this.
 
 ### How do I build custom widgets?
 
-In iOS, you typically subclass `UIView`, or use a pre-existing view, to
-override and implement methods that achieve the desired behavior. In
-Flutter, build a custom widget by
-[composing][] smaller widgets
+In iOS, you typically subclass `UIView`, or use a pre-existing view,
+to override and implement methods that achieve the desired behavior.
+In Flutter, build a custom widget by [composing][] smaller widgets
 (instead of extending them).
 
-For example, how do you build a `CustomButton` that takes a label in
-the constructor? Create a CustomButton that composes a
-`ElevatedButton` with a label, rather than by extending `ElevatedButton`:
+For example, how do you build a `CustomButton`
+that takes a label in the constructor?
+Create a CustomButton that composes a `ElevatedButton` with a label,
+rather than by extending `ElevatedButton`:
 
 <!-- skip -->
 ```dart
@@ -512,8 +535,8 @@ Widget build(BuildContext context) {
 ### How do I navigate between pages?
 
 In iOS, to travel between view controllers, you can use a
-`UINavigationController` that manages the stack of view controllers to
-display.
+`UINavigationController` that manages the stack of view controllers
+to display.
 
 Flutter has a similar implementation,
 using a `Navigator` and `Routes`.
@@ -555,8 +578,8 @@ Navigator.of(context).pushNamed('/b');
 ```
 
 The `Navigator` class handles routing in Flutter and is used to get
-a result back from a route that you have pushed on the stack. This is done
-by `await`ing on the `Future` returned by `push()`.
+a result back from a route that you have pushed on the stack.
+This is done by `await`ing on the `Future` returned by `push()`.
 
 For example, to start a ‘location’ route that lets the user select their
 location, you might do the following:
@@ -576,16 +599,17 @@ Navigator.of(context).pop({'lat':43.821757, 'long':-79.226392});
 
 ### How do I navigate to another app?
 
-In iOS, to send the user to another application, you use a
-specific URL scheme. For the system level apps, the scheme
-depends on the app. To implement this functionality in Flutter,
+In iOS, to send the user to another application,
+you use a specific URL scheme.
+For the system level apps, the scheme depends on the app.
+To implement this functionality in Flutter,
 create a native platform integration, or use an
 [existing plugin][], such as [`url_launcher`][].
 
 ### How do I pop back to the iOS native viewcontroller?
 
-Calling `SystemNavigator.pop()` from your Dart code invokes the
-following iOS code:
+Calling `SystemNavigator.pop()` from your Dart code
+invokes the following iOS code:
 
 ```objc
 UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
@@ -756,13 +780,12 @@ computationally intensive tasks.
 Isolates are separate execution threads that do not share
 any memory with the main execution memory heap.
 This means you can’t access variables from the main thread,
-or update your UI by calling `setState()`. Isolates are true to
-their name, and cannot share memory
+or update your UI by calling `setState()`.
+Isolates are true to their name, and cannot share memory
 (in the form of static fields, for example).
 
 The following example shows, in a simple isolate,
-how to share data back to
-the main thread to update the UI.
+how to share data back to the main thread to update the UI.
 
 <!-- skip -->
 ```dart
@@ -971,14 +994,15 @@ In iOS, you typically use a `UIProgressView`
 while executing a long-running task in the background.
 
 In Flutter, use a `ProgressIndicator` widget.
-Show the progress programmatically by controlling when it's rendered
-through a boolean flag. Tell Flutter to update its state before your
-long-running task starts, and hide it after it ends.
+Show the progress programmatically by controlling
+when it's rendered through a boolean flag.
+Tell Flutter to update its state before your long-running task starts,
+and hide it after it ends.
 
 In the example below, the build function is separated into three different
-functions. If `showLoadingDialog` is `true` (when `widgets.length == 0`),
-then render the `ProgressIndicator`. Otherwise, render the
-`ListView` with the data returned from a network call.
+functions. If `showLoadingDialog` is `true`
+(when `widgets.length == 0`), then render the `ProgressIndicator`.
+Otherwise, render the `ListView` with the data returned from a network call.
 
 <!-- skip -->
 ```dart
@@ -1109,8 +1133,9 @@ Image assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
 The so-called [`devicePixelRatio`][]
 expresses the ratio of physical pixels in a single logical pixel.
 
-Assets are located in any arbitrary folder&mdash;Flutter has no
-predefined folder structure. You declare the assets (with location) in
+Assets are located in any arbitrary folder&mdash;
+Flutter has no predefined folder structure.
+You declare the assets (with location) in
 the `pubspec.yaml` file, and Flutter picks them up.
 
 For example, to add an image called `my_icon.png` to your Flutter
@@ -1154,11 +1179,9 @@ For more details, see
 ### Where do I store strings? How do I handle localization?
 
 Unlike iOS, which has the `Localizable.strings` file,
-Flutter doesn't currently have a dedicated system for
-handling strings. At the moment,
-the best practice is to declare your copy text in
-a class as static fields and
-access them from there. For example:
+Flutter doesn't currently have a dedicated system for handling strings.
+At the moment, the best practice is to declare your copy text
+in a class as static fields and access them from there. For example:
 
 <!-- skip -->
 ```dart
@@ -1210,33 +1233,33 @@ MaterialApp(
 ```
 
 The delegates contain the actual localized values,
-while the `supportedLocales`
-defines which locales the app supports.
+while the `supportedLocales` defines which locales the app supports.
 The above example uses a `MaterialApp`,
-so it has both a `GlobalWidgetsLocalizations` for the base
-widgets localized values,
-and a `MaterialWidgetsLocalizations` for the Material
-widgets localizations. If you use `WidgetsApp` for your app,
-you don't need the latter. Note that these two delegates contain "default"
-values, but you'll need to provide one or more delegates for your own app's
-localizable copy, if you want those to be localized too.
+so it has both a `GlobalWidgetsLocalizations`
+for the base widgets localized values,
+and a `MaterialWidgetsLocalizations` for the Material widgets localizations.
+If you use `WidgetsApp` for your app, you don't need the latter.
+Note that these two delegates contain "default" values,
+but you'll need to provide one or more delegates
+for your own app's localizable copy,
+if you want those to be localized too.
 
-When initialized, the `WidgetsApp` (or `MaterialApp`) creates a
-[`Localizations`][] widget for you, with the delegates you specify.
-The current locale for the device is always accessible from the
-`Localizations` widget from the current context
-(in the form of a `Locale` object), or using the
-[`Window.locale`][].
+When initialized, the `WidgetsApp` (or `MaterialApp`)
+creates a[`Localizations`][] widget for you,
+with the delegates you specify.
+The current locale for the device is always accessible
+from the `Localizations` widget from the current context
+(in the form of a `Locale` object), or using the [`Window.locale`][].
 
-To access localized resources, use the `Localizations.of()` method to
-access a specific localizations class that is provided by a given delegate.
+To access localized resources, use the `Localizations.of()` method
+to access a specific localizations class that is provided by a given delegate.
 Use the [`intl_translation`][] package to extract translatable copy
-to [arb][] files for translating,
-and importing them back into the app for using them with `intl`.
+to [arb][] files for translating, and importing them back into the app
+for using them with `intl`.
 
 For further details on internationalization and localization in Flutter,
-see the [internationalization guide][],
-which has sample code with and without the `intl` package.
+see the [internationalization guide][], which has sample code
+with and without the `intl` package.
 
 ### What is the equivalent of CocoaPods? How do I add dependencies?
 
@@ -1248,10 +1271,9 @@ respective build systems.
 
 While there is a Podfile in the iOS folder in your
 Flutter project, only use this if you are adding native
-dependencies needed for per-platform integration. In general, use
-`pubspec.yaml` to declare external dependencies in Flutter.
-A good place to find great packages for Flutter is on
-[pub.dev][].
+dependencies needed for per-platform integration.
+In general, use `pubspec.yaml` to declare external dependencies in Flutter.
+A good place to find great packages for Flutter is on [pub.dev][].
 
 ## ViewControllers
 
@@ -1260,21 +1282,24 @@ A good place to find great packages for Flutter is on
 In iOS, a `ViewController` represents a portion of user interface,
 most commonly used for a screen or section.
 These are composed together to build complex user interfaces,
-and help scale your application's UI. In Flutter, this
-job falls to Widgets. As mentioned in the Navigation section,
-screens in Flutter are represented by Widgets since "everything is a
-widget!" Use a `Navigator` to move between different `Route`s
+and help scale your application's UI.
+In Flutter, this job falls to Widgets.
+As mentioned in the Navigation section,
+screens in Flutter are represented by Widgets since
+"everything is a widget!"
+Use a `Navigator` to move between different `Route`s
 that represent different screens or pages,
 or maybe different states or renderings of the same data.
 
 ### How do I listen to iOS lifecycle events?
 
-In iOS, you can override methods to the `ViewController` to
-capture lifecycle methods for the view itself,
+In iOS, you can override methods to the `ViewController`
+to capture lifecycle methods for the view itself,
 or register lifecycle callbacks in the `AppDelegate`.
-In Flutter, you have neither concept, but you can instead listen
-to lifecycle events by hooking into the `WidgetsBinding` observer and
-listening to the `didChangeAppLifecycleState()` change event.
+In Flutter, you have neither concept, but you can instead
+listen to lifecycle events by hooking into
+the `WidgetsBinding` observer and listening to
+the `didChangeAppLifecycleState()` change event.
 
 The observable lifecycle events are:
 
@@ -1301,16 +1326,17 @@ For more details on the meaning of these states, see
 
 ### What is the equivalent of UITableView or UICollectionView in Flutter?
 
-In iOS, you might show a list in either a `UITableView`
-or a `UICollectionView`. In Flutter,
-you have a similar implementation using a `ListView`.
-In iOS, these views have delegate methods for deciding the
-number of rows, the cell for each index path, and the size of the cells.
+In iOS, you might show a list in
+either a `UITableView` or a `UICollectionView`.
+In Flutter, you have a similar implementation using a `ListView`.
+In iOS, these views have delegate methods
+for deciding the number of rows,
+the cell for each index path, and the size of the cells.
 
 Due to Flutter’s immutable widget pattern,
 you pass a list of widgets to your `ListView`,
-and Flutter takes care of making sure that scrolling is fast
-and smooth.
+and Flutter takes care of making sure that
+scrolling is fast and smooth.
 
 <!-- skip -->
 ```dart
@@ -1434,15 +1460,17 @@ In Flutter, if you update the list of widgets inside a `setState()`,
 you quickly see that your data doesn't change visually.
 This is because when `setState()` is called,
 the Flutter rendering engine looks at the widget tree
-to see if anything has changed. When it gets to your `ListView`,
-it performs an `==` check, and determines that the two `ListView`s
-are the same. Nothing has changed, so no update is required.
+to see if anything has changed.
+When it gets to your `ListView`, it performs an `==` check,
+and determines that the two `ListView`s are the same.
+Nothing has changed, so no update is required.
 
 For a simple way to update your `ListView`,
 create a new `List` inside of `setState()`,
 and copy the data from the old list to the new list.
 While this approach is simple,
-it is not recommended for large data sets, as shown in the next example.
+it is not recommended for large data sets,
+as shown in the next example.
 
 <!-- skip -->
 ```dart
@@ -1583,8 +1611,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
-Instead of creating a `ListView`, create a `ListView.builder` that
-takes two key parameters: the initial length of the list,
+Instead of creating a `ListView`, create a `ListView.builder`
+that takes two key parameters: the initial length of the list,
 and an `ItemBuilder` function.
 
 The `ItemBuilder` function is similar to the `cellForItemAt`
@@ -1609,7 +1637,7 @@ as you can layout widgets in a vertical format.
 @override
 Widget build(BuildContext context) {
   return ListView(
-    children: <Widget>[
+    children: const <Widget>[
       Text('Row One'),
       Text('Row Two'),
       Text('Row Three'),
@@ -1799,15 +1827,15 @@ of Material Design, which takes care of a lot of styling and
 theming needs that you would typically do.
 
 To take full advantage of Material Components in your app,
-declare a top-level widget, MaterialApp,
+declare a top-level widget, `MaterialApp`,
 as the entry point to your application.
-MaterialApp is a convenience widget that wraps a number
+`MaterialApp` is a convenience widget that wraps a number
 of widgets that are commonly required for applications
 implementing Material Design.
-It builds upon a WidgetsApp by adding Material specific functionality.
+It builds upon a `WidgetsApp` by adding Material specific functionality.
 
 But Flutter is flexible and expressive enough to implement
-any design language.  On iOS, you can use the
+any design language. On iOS, you can use the
 [Cupertino library][] to produce an interface that adheres to the
 [Human Interface Guidelines][].
 For the full set of these widgets,
@@ -1842,9 +1870,10 @@ class SampleApp extends StatelessWidget {
 
 ### How do I set custom fonts on my Text widgets?
 
-In iOS, you import any `ttf` font files into your project and create a
-reference in the `info.plist` file. In Flutter, place the font file
-in a folder and reference it in the `pubspec.yaml` file,
+In iOS, you import any `ttf` font files into your project
+and create a reference in the `info.plist` file.
+In Flutter, place the font file in a folder
+and reference it in the `pubspec.yaml` file,
 similar to how you import images.
 
 ```yaml
@@ -1875,9 +1904,8 @@ Widget build(BuildContext context) {
 
 ### How do I style my Text widgets?
 
-Along with fonts, you can customize other styling
-elements on a `Text` widget. The style parameter of
-a `Text` widget takes a `TextStyle` object,
+Along with fonts, you can customize other styling elements on a `Text` widget.
+The style parameter of a `Text` widget takes a `TextStyle` object,
 where you can customize many parameters, such as:
 
 * `color`
@@ -2063,9 +2091,9 @@ or with any native code you have.
 Flutter provides the [platform channel][],
 which communicates and exchanges data with the
 `ViewController` that hosts your Flutter view.
-Platform channels are essentially an asynchronous messaging
-mechanism that bridge the Dart code with the host
-`ViewController` and the iOS framework it runs on.
+Platform channels are essentially an asynchronous messaging mechanism
+that bridge the Dart code with the host `ViewController`
+and the iOS framework it runs on.
 You can use platform channels to execute a method on the native side,
 or to retrieve some data from the device's sensors, for example.
 
