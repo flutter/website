@@ -606,7 +606,7 @@ To implement this functionality in Flutter,
 create a native platform integration, or use an
 [existing plugin][], such as [`url_launcher`][].
 
-### How do I pop back to the iOS native viewcontroller?
+### How do I pop back to the iOS native ViewController?
 
 Calling `SystemNavigator.pop()` from your Dart code
 invokes the following iOS code:
