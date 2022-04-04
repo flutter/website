@@ -29,7 +29,7 @@ You can use fastlane with the following tooling:
 * [Travis][]
 * [GitLab][]
 * [CircleCI][]
-    *　[Building and deploying Flutter apps with Fastlane][]
+    * [Building and deploying Flutter apps with Fastlane][]
 
 This guide shows how to set up fastlane and then integrate it with 
 your existing testing and continuous integration (CI) workflows. 
