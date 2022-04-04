@@ -167,7 +167,7 @@ reproduce the activity in your app,
 select the new frames in the frames chart,
 to inspect the timeline events
 with the layers disabled.
-If Paint time or Raster time has significantly decreased,
+If Raster time has significantly decreased,
 excessive use of the effects you disabled may be contributing
 to the jank you saw in your app.
 
