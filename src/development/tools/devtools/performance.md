@@ -163,8 +163,8 @@ toggle off a rendering layer.
 These options are enabled by default.
 
 To see the effects on your app's performance,
-reproduce the activity in your app,
-select the new frames in the frames chart,
+reproduce the activity in your app.
+Then select the new frames in the frames chart
 to inspect the timeline events
 with the layers disabled.
 If Raster time has significantly decreased,
