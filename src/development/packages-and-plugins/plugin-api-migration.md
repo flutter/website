@@ -241,8 +241,8 @@ but aren't required.
     <!--code-excerpt "pubspec.yaml" title-->
     ```yaml
     environment:
-      sdk: ">=2.0.0-dev.28.0 <3.0.0"
-      flutter: ">=1.12.13+hotfix.6"
+      sdk: ">=2.16.1 <3.0.0"
+      flutter: ">=1.17.0"
     ```
 
 1. Create a simple test in `<plugin_name>/test/<plugin_name>_test.dart`.
