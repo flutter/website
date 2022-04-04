@@ -97,6 +97,7 @@ The following instructions outline the steps for supporting the new API:
             android:theme="@style/LaunchTheme"
    android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale"
             android:hardwareAccelerated="true"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
@@ -151,6 +152,7 @@ The following instructions outline the steps for supporting the new API:
         android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale"
         android:hardwareAccelerated="true"
+        android:exported="true"
         android:windowSoftInputMode="adjustResize">
     </activity>
     ```
