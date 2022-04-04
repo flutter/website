@@ -168,7 +168,7 @@ Then select the new frames in the frames chart
 to inspect the timeline events
 with the layers disabled.
 If Raster time has significantly decreased,
-excessive use of the effects you disabled may be contributing
+excessive use of the effects you disabled might be contributing
 to the jank you saw in your app.
 
 **Render Clip layers**
