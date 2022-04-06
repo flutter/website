@@ -56,7 +56,9 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install firebase tools
-        run: npm install -g firebase-tools
+        run: npm ci
+      - name: Update path
+        run: echo "./node_modules/.bin/" >> $GITHUB_PATH
       - name: Build
         run: make build
         env:
