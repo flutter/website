@@ -2576,6 +2576,7 @@ and common widget properties.
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [Dart]: {{site.dart-site}}/dart-2
 [Dart's Type System]: {{site.dart-site}}/guides/language/sound-dart
+[Sound Null Safety]: {{site.dart-site}}/null-safety
 [`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
 [DartPadA]: {{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1
 [DartPadB]: {{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5
