@@ -2133,7 +2133,7 @@ ElevatedButton(
 
 In this example, when a user clicks on the submit button an alert dialog
 displays the current text entered in the text field.
-This is achieved using an [`alertDialog`][]
+This is achieved using an [`AlertDialog`][]
 widget that displays the alert message, and the text from
 the `TextField` is accessed by the `text` property of the
 [`TextEditingController`][].
@@ -2555,7 +2555,7 @@ and common widget properties.
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
 [Adding Assets and Images in Flutter]: {{site.url}}/development/ui/assets-and-images
-[`alertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
+[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
