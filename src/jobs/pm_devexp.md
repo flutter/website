@@ -49,7 +49,7 @@ are employee-initiated networks for supporting underrepresented employees
 and their allies with shared values of creating belonging 
 across their communities and Google.
 
-### Work-Life Balance
+### Work-Life balance
 
 Our team also puts a high value on work-life balance. Striking a healthy balance
 between your personal and professional life is crucial to your happiness and
