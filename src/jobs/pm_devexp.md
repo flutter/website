@@ -1,5 +1,5 @@
 ---
-title: Product Manager, iOS and Design Agencies
+title: Product Manager, Flutter Developer Experience
 toc: false
 ---
 
