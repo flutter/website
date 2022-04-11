@@ -11,6 +11,6 @@ the repo root (`$PROJECT` represents the app project path, such as
 1. `flutter run`
 
 To learn more about setting up Flutter and running apps, see
-[flutter.io/get-started][].
+[docs.flutter.dev/get-started][].
 
-[flutter.io/get-started]: https://flutter.io/docs/get-started
+[docs.flutter.dev/get-started]: https://docs.flutter.dev/get-started/install
