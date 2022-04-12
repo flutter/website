@@ -728,7 +728,7 @@ an image from a URL.
 <!-- skip -->
 ```dart
 /// Flutter
-Image.network('https://flutter.io/images/owl.jpg'),
+Image.network('https://docs.flutter.dev/assets/images/docs/owl.jpg'),
 ```
 
 ### How do I install packages and package plugins?
