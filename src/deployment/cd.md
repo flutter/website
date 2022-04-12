@@ -53,7 +53,7 @@ Visit the [fastlane docs][fastlane] for more info.
     (This is required for the scripts that deploy for iOS.)
 1. Create your Flutter project, and when ready, make sure that your project builds via
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`; and
-    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ipa`.
 1. Initialize the fastlane projects for each platform.
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) In your `[project]/android`
     directory, run `fastlane init`.
@@ -92,10 +92,15 @@ Visit the [fastlane docs][fastlane] for more info.
       to use the app bundle `flutter build` already built.
     * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) On iOS, follow the
       [fastlane iOS beta deployment guide][].
-      Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
-      `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
-      build is required since `flutter build` builds an .app rather than archiving
-      .ipas for release.
+      You can specify the archive path to avoid rebuilding the project. For example:
+      
+      ```ruby
+      build_app(
+        skip_build_archive: true,
+        archive_path: "../build/ios/archive/Runner.xcarchive",
+      )
+      upload_to_testflight
+      ```
 
 You're now ready to perform deployments locally or migrate the deployment
 process to a continuous integration (CI) system.
@@ -104,8 +109,7 @@ process to a continuous integration (CI) system.
 
 1. Build the release mode app.
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`.
-    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
-    No need to sign now since fastlane will sign when archiving.
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ipa`.
 1. Run the Fastfile script on each platform.
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `cd android` then
     `fastlane [name of the lane you created]`.
