@@ -295,7 +295,7 @@ You might find the following docs useful:
 [logging]: {{site.url}}/testing/code-debugging#logging
 [Flutter's modes]: {{site.url}}/testing/build-modes
 [Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
-[Performance best practices]: {{site.url}}/perf/rendering/best-practices
+[Performance best practices]: {{site.url}}/perf/best-practices
 [Using an OEM debugger]: {{site.url}}/testing/oem-debuggers
 
 [The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401

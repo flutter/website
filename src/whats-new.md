@@ -751,7 +751,7 @@ component and how to customize it, see
 [Flutter Medium Publication]: {{site.flutter-medium}}
 [Flutter's build modes]: {{site.url}}/testing/build-modes
 [Material RangeSlider in Flutter]: {{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d
-[Performance best practices]: {{site.url}}/perf/rendering/best-practices
+[Performance best practices]: {{site.url}}/perf/best-practices
 [Performance profiling]: {{site.url}}/perf/rendering/ui-performance
 [Preparing an Android app for release]: {{site.url}}/deployment/android
 [`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html

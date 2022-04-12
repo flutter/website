@@ -52,9 +52,8 @@ about evaluating and debugging Flutter's performance.
 
 [`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip-class.html
 [`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
-[Performance best practices]: {{site.url}}/flutter/dart-ui/ImageFilter-class.html
 [`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
-[Performance best practices]: {{site.url}}/perf/rendering/best-practices
+[Performance best practices]: {{site.url}}/perf/best-practices
 [`savelayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
 * How do I tell which widgets in my Flutter app are rebuilt
