@@ -78,17 +78,15 @@ minimal.
 |Windows |Windows 7      |
 |Linux   |Debian & below |
 
-We have dropped iOS8 support. For more information,
-see [go/rfc-ios8-deprecation] for details.
-
-[go/rfc-ios8-deprecation]: {{site.url}}/go/rfc-ios8-deprecation
-
 ### Unsupported platforms
 
 |Platform|Version               |
 |--------|----------------------|
 |Android |Android SDK 18 & below|
-|iOS     |iOS 8 & below         |
+|iOS     |[iOS 8] & below and [`arm7v` 32-bit iOS]|
 |Windows |Windows Vista & below |
 |Windows |Any 32-bit platform   |   
 |macOS   | Yosemite & below     |
+
+[iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
+[`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
