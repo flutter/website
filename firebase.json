@@ -170,6 +170,7 @@
       { "source": "/go/build-flows", "destination": "https://docs.google.com/document/d/1imsVxbeAsttTi90EFpbnbVzov9z0xXd7tLCAr_QAJ38", "type": 301 },
       { "source": "/go/buildtextspan-buildcontext", "destination": "https://docs.google.com/document/d/1nr-g45gXcWTYoW9UmChZV7Ije3lKP4pEvDQCdz6NFdI/edit?usp=sharing", "type": 301 },
       { "source": "/go/calculating-flutter-frame-rate", "destination": "https://docs.google.com/document/d/1YGLELXWdC6YIN03QzEzcIRJc56gCnabPBW8BHCAFR58/edit", "type": 301 },
+      { "source": "/go/camera-privacy", "destination": "https://docs.google.com/document/d/1t_5FYzOTlBWC6arHc4_8VuG0BUOtIyP9xWvbDER5Y9I/edit", "type": 301 },
       { "source": "/go/cascading-menus", "destination": "https://docs.google.com/document/d/17XOSGzLzqbpNcCUwakM_WQ2ZOMcUOXcPC__7nPORwms/edit?usp=sharing&resourcekey=0-hg74S2vAAqwJFN984ZXQHg", "type": 301 },
       { "source": "/go/center-floating-label-inputdecoration", "destination": "https://docs.google.com/document/d/1sxP91vZiY7McmSMmzrboklIJWQ_6pSS9MBSCrQq016M/edit#", "type": 301 },
       { "source": "/go/change-default-textselectionhandlecolor-to-accentcolor", "destination": "https://docs.google.com/document/d/1RJQd5ABWJ_7DZN19aTZBCE7xHzlC4MYBP1bWE2FWcvc/edit", "type": 301 },
@@ -177,6 +178,7 @@
       { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit", "type": 301 },
       { "source": "/go/colorscheme-generation", "destination": "https://docs.google.com/document/d/1P7f-DGPWz6HCbwLoAruRuWtakPx4VY-e8nT_yuQ71sc/edit?usp=sharing&resourcekey=0-qxeub7yCKa_No0HlrzEk-g", "type": 301 },
       { "source": "/go/colorscheme-m3", "destination": "https://docs.google.com/document/d/1mY1ahBQEMAfsawGJMX5S34pXb7c8dHGatyotClReeas/edit#heading=h.cnnhzna3pz6d", "type": 301 },
+      { "source": "/go/contextual-menus", "destination": "https://docs.google.com/document/d/1F1itGgbSS3Cbq70hScSCNriDoux1sMGF9LHZsMdvU74/edit?resourcekey=0-RkHGwhe-tcoTGlaQyclPtQ", "type": 301 },
       { "source": "/go/cupertino-context-menu-action", "destination": "https://docs.google.com/document/d/1lCuPyAbIzAr0c2KIEZhREC_EnkTKBxNiqP6lGLT-KpU/edit", "type": 301 },
       { "source": "/go/cupertino-increase-contrast", "destination": "https://docs.google.com/document/d/1kePVlqWvJu5Ph0RL6wgg67F3SATmsJ8QY5N0S1MvaGg/edit#", "type": 301 },
       { "source": "/go/cupertino-switch-onoff-labels", "destination": "https://docs.google.com/document/d/1DD5gx8x0ej5AJzGxzpr4hpgpqsvcDu-ozKliGnhHm7c/edit#", "type": 301 },
@@ -198,6 +200,7 @@
       { "source": "/go/desktop-release-conductor", "destination": "https://docs.google.com/document/d/15AwPXNd5FvItAqM0wa2VK0tRrqtRTgM8vR5LQeT2Mag/edit?usp=sharing&resourcekey=0-yZ2FAN-wEKwKT-ymdisetA", "type": 301 },
       { "source": "/go/desktop-resize-macos", "destination": "https://docs.google.com/document/d/1slGllp1Jhde7wkF6snqGhdrZwHV1VVmXeIF3f0t24JU/edit?usp=sharing", "type": 301 },
       { "source": "/go/desktop-resize", "destination": "https://docs.google.com/document/d/1OTy-qCGdP7tYfrEKCNX9A24sgnx5vshfK6FupfniyxA", "type": 301 },
+      { "source": "/go/detect-memory-leaks", "destination": "https://docs.google.com/document/d/1hvRVpULPnwGjBc5nw52iSaDfB8hjIzbaQuECHmKvDrY/edit", "type": 301 },
       { "source": "/go/developing-plugins", "destination": "/development/packages-and-plugins/developing-packages#plugin", "type": 301 },
       { "source": "/go/dirty-region-management", "destination": "https://docs.google.com/document/d/19WDvGJql1bmnECTdEzJFeH9Ixw4AP2R7JlgujBSbDbk/edit?usp=sharing", "type": 301 },
       { "source": "/go/disable-dropdownmenuitem", "destination": "https://docs.google.com/document/d/13W6PupVZUt6TenoE3NaTP9OCYsKBIYg9YgdurKe1XKs/edit?usp=sharing&resourcekey=0-6n8D5zSLjWs2ZncIyG6HUw", "type": 301 },
@@ -238,6 +241,7 @@
       { "source": "/go/globalkey-duplication-refactoring", "destination": "https://docs.google.com/document/d/15U1XDLrP-SXfgeu5DBBsA7MQuFpDUW005Y2ObwmYWIc/", "type": 301 },
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/google-apis", "destination": "/development/data-and-backend/google-apis?utm_source=go-link&utm_medium=referral&utm_campaign=go-google-apis", "type": 301 },
+      { "source": "/go/go-router-improvements", "destination": "https://docs.google.com/document/d/1_mRXinbL_rb0mUt6DAFZ8kj0kh33ZjEMJuUq4PJgwj8/edit?usp=sharing&resourcekey=0-sYbRzE9opneOFZ5F8J3gGw", "type": 301 },
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit", "type": 301 },
       { "source": "/go/hot-ui-early-prototype-demos", "destination": "https://docs.google.com/document/d/1ZaHqKnON8-WEhke3Y6FpHeuB5BNlxDQj1cCYB1SoI_g", "type": 301 },
       { "source": "/go/i18n-user-guide", "destination": "https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit", "type": 301 },
@@ -370,7 +374,8 @@
       { "source": "/go/widget-budget", "destination": "https://docs.google.com/document/d/1JTmf7ae8hWJ3zzqhI-__I9DcUJdQ3TopWsJbKyNDO5A/edit?usp=sharing&resourcekey=0--A0AbM19K-zDXRmIIzaUAg", "type": 301 },
       { "source": "/go/windows-x86-arm64-support", "destination": "https://docs.google.com/document/d/1gAGqtTAjO0GntR8bPonIO1aZJnTghPCI_PHJPdNzEmo/edit?resourcekey=0-l1tL7iai47yw3bMl9IcpHw", "type": 301 },
       { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 },
-      { "source": "/go/verbatim-logical-keys-for-non-latin-layout", "destination": "https://docs.google.com/document/d/1ZNgNxito-NVUS1JKlcjdzHUcKyyiupy8Za-jb131dD4/edit?usp=sharing&resourcekey=0-eeEZ5X0jAzuqSTdmPWlv0w", "type": 301 }
+      { "source": "/go/verbatim-logical-keys-for-non-latin-layout", "destination": "https://docs.google.com/document/d/1ZNgNxito-NVUS1JKlcjdzHUcKyyiupy8Za-jb131dD4/edit?usp=sharing&resourcekey=0-eeEZ5X0jAzuqSTdmPWlv0w", "type": 301 },
+      { "source": "/go/io22concurrency", "destination": "https://github.com/goderbauer/io22concurrency", "type": 301 }
     ],
     "headers": [
       {

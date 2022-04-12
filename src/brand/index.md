@@ -15,8 +15,8 @@ as determined by Google.
 Use of the Flutter trademarks that is not expressly permitted by these
 guidelines is prohibited absent written permission from Google.
 
-The official Flutter logos can be found in the [Flutter and Dart logo
-assets](https://drive.google.com/corp/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT).
+The official Flutter assets and further guidelines on representing the brand
+can be found at [Representing the Flutter Brand]({{site.main-url}}/brand).
 
 ## General Rules That Govern the Use of the Flutter Trademarks
 

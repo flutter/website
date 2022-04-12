@@ -36,7 +36,7 @@ using the following metrics:
 
 ## Flutter Ecosystem  Committee
 
-The Flutter Ecosystem Committee (FEC) is comprised of Flutter
+The Flutter Ecosystem Committee is comprised of Flutter
 team members and Flutter community members spread
 across its ecosystem.
 One of their jobs is to decide when a package
@@ -48,18 +48,16 @@ are as follows:
 
 * Pooja Bhaumik
 * Hillel Coren
-* Thea Flowers
 * Simon Lightfoot
 * Lara Martín
-* Chris Sells (committee chair)
-* Michael Thomsen
+* John Ryan
 * Diego Velasquez
 * Kyle Wang
 
 If you'd like to nominate a package or plugin as a
 potential future Flutter Favorite, or would like
 to bring any other issues to the attention of the committee,
-send the [committee chair][] an email.
+[send the committee][] an email.
 
 ## Flutter Favorite usage guidelines
 
@@ -115,7 +113,7 @@ You can see the complete list of
 [Flutter Favorite packages][] on pub.dev.
 
 
-[committee chair]: mailto:flutter-committee@googlegroups.com
+[send the committee]: mailto:flutter-committee@googlegroups.com
 [Flutter Favorite packages]: {{site.pub}}/flutter/favorites
 [Overall package score]: {{site.pub}}/help
 [pubspec.yaml format]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin-platforms
