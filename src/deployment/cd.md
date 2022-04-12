@@ -53,7 +53,7 @@ Visit the [fastlane docs][fastlane] for more info.
     (This is required for the scripts that deploy for iOS.)
 1. Create your Flutter project, and when ready, make sure that your project builds via
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`; and
-    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ipa`.
 1. Initialize the fastlane projects for each platform.
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) In your `[project]/android`
     directory, run `fastlane init`.
