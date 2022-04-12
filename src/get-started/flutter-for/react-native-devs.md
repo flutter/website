@@ -2183,7 +2183,7 @@ Form(
 ```
 
 The following example shows how `Form.save()` and `formKey`
-(which is a `GlobalKey`) are used to save the form on submit.
+(which is a `GlobalKey`), are used to save the form on submit.
 
 <!-- skip -->
 ```dart
