@@ -16,7 +16,7 @@ We have found two scenarios that can cause jankiness,
 and are worth investigating if you are having issues&mdash;you
 might have one of the following scenarios:
 
-* Excessive calls to `savelayer()`.
+* Excessive calls to `saveLayer()`.
   For more information, check out
   [Use saveLayer() thoughtfully](#use-savelayer-thoughtfully).
 * Excessive layout passes.
@@ -117,7 +117,7 @@ other widgets or packages that you use might call it behind the scenes.
 Perhaps your app is calling `saveLayer()` more than necessary.
 
 {{site.alert.secondary}}
-  <h4>Why is savelayer expensive?</h4><a name="why-is-savelayer-expensive"></a>
+  <h4>Why is saveLayer expensive?</h4><a name="why-is-savelayer-expensive"></a>
   Calling `saveLayer()` allocates an offscreen buffer.
   Drawing content into the offscreen buffer might trigger
   render target switches that are particularly slow in
@@ -139,7 +139,7 @@ You have several options to handle this situation:
 
 * If the calls are coming from _your_ code, can you
   reduce or eliminate them? For example, perhaps your
-  UI overlaps two shapes, each having some transparency.
+  UI overlaps two shapes, each having non-zero transparency.
   If they always overlap in the same amount, in the same
   way, with the same transparency,
   you can precalculate what this overlapped,
@@ -147,16 +147,22 @@ You have several options to handle this situation:
   and use that instead of calling `saveLayer()`. 
   This works with any static shape that you can
   precalculate.
+{% comment %}
+TBD: It would be nice if we could link to an example.
+  Kenzie suggested to John and Tao that we add an
+  example to perf_diagnosis_demo.)
+{% endcomment %}
 * If the calls are coming from a package that you don't own,
   contact the package owner and ask why
   these calls are necessary? Can they be reduced or
   eliminated? If not, you might need to find another
   package, or write your own.
+* Perhaps you could write a (simpler) [`CustomPainter`][].
 * If all else fails, you might consider implementing
-  a custom rendering layer.
+  a custom [`RenderObject`][].
 
 {{site.alert.secondary}}
-  <h4 markdown="1">When is `savelayer()` required?</h4><a name="when-is-savelayer-required"></a>
+  <h4 markdown="1">When is `saveLayer()` required?</h4><a name="when-is-savelayer-required"></a>
   At runtime, if you need to dynamically display various shapes
   coming from a server (for example), each with some transparency,
   that might (or might not) overlap,
@@ -193,6 +199,11 @@ Here are some tips you might find to be useful:
   API page for an example of applying opacity directly
   to an image, which is faster than using the `Opacity`
   widget.
+* Instead of wrapping simple shapes or text
+  in an `Opacity` widget, it's usually faster to
+  just draw them with a semitransparent color.
+  (Though this only works if there are no overlapping
+  bits in the to-be-drawn shape.)
 * To implement fading in an image, consider using the
   [`FadeInImage`][] widget, which applies a gradual
   opacity using the GPU’s fragment shader.
@@ -263,11 +274,15 @@ _telling_ each card what size to use.
 
 If your code performs unnecessary layout passes,
 it can slow performance. To determine if this
-is your issue, enable the **Track layouts option**
+is your issue, enable the **[Track layouts option][]**
 in DevTools (disabled by default),
 and look at the app's [stack trace][]
 to learn how many layout passes were performed.
-[PENDING: Where is the track layout option in DevTools?]
+{% comment %}
+TBD: From Kenzie: Tell users to look for intrinsic timeline events.
+They will possibly be named: '$runtimeType intrinsics'.
+PR: https://github.com/flutter/flutter/pull/93086
+{% endcomment %}
 
 [PENDING: How does once determine "excessive"?]
 [PENDING: Is the primary way to fix this by lazy loading
@@ -282,6 +297,7 @@ section in the [Flutter architectural overview][].
 [how layout and constraints work]: {{site.url}}/development/ui/layout/constraints
 [layout and rendering]: {{site.url}}/resources/architectural-overview#layout-and-rendering
 [stack trace]: {{site.url}}/development/tools/devtools/cpu-profiler#flame-chart
+[Track layouts option]: {{site.url}}/development/tools/devtools/performance#track-layouts
 
 ---
 
@@ -295,9 +311,6 @@ build and display a frame in 16ms _or less_.
 Note that means built in 8ms or less,
 and rendered in 8ms or less,
 for a total of 16ms or less.
-If missing frames (jankiness) is a concern,
-then 16ms for each of
-the build and render stages is OK.
 
 If your frames are rendering in well under
 16ms total in [profile mode][],
@@ -371,5 +384,7 @@ For more performance info, check out the following resources:
 * [Performance considerations][] of a `StatefulWidget`
 
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
+[`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
+[`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
