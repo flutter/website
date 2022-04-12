@@ -2239,7 +2239,7 @@ if (platform == TargetPlatform.android) {
 if (platform == TargetPlatform.fuchsia) {
   return 'fuchsia';
 }
-return 'not recognised ';
+return 'not recognized ';
 ```
 
 ## Debugging
