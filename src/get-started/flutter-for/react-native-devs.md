@@ -110,7 +110,7 @@ Because numbers are objects in Dart, even uninitialized variables with
 numeric types have the value `null`.
 
 {{site.alert.note}}
-  Started from 2.12, Dart supports [Sound Null Safety][],
+  As of 2.12, Dart supports [Sound Null Safety][],
   all underlying types are non-nullable by default,
   which must be initialized as a non-nullable value.
 {{site.alert.end}}
