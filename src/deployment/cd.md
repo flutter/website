@@ -109,8 +109,7 @@ process to a continuous integration (CI) system.
 
 1. Build the release mode app.
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `flutter build appbundle`.
-    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ios --release --no-codesign`.
-    No need to sign now since fastlane will sign when archiving.
+    * ![iOS]({{site.url}}/assets/images/docs/cd/ios.png) `flutter build ipa`.
 1. Run the Fastfile script on each platform.
     * ![Android]({{site.url}}/assets/images/docs/cd/android.png) `cd android` then
     `fastlane [name of the lane you created]`.
