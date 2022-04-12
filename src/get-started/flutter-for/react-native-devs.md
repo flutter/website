@@ -135,7 +135,7 @@ For more information, see the documentation on
 ### Checking for null or zero
 
 In JavaScript, values of 1 or any non-null objects
-are treated as `true` when using the operator `==` comparison.
+are treated as `true` when using the `==` comparison operator.
 
 ```js
 // JavaScript
