@@ -123,17 +123,17 @@ To validate the application:
 The report may contain important warnings and information, 
 even if the certification passes. 
 
-[azureadassociation]: https://docs.microsoft.com/en-us/windows/uwp/publish/associate-azure-ad-with-partner-center
+[azureadassociation]: https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center
 [cmworkfloweditor]: https://docs.codemagic.io/flutter-publishing/publishing-to-microsoft-store/
 [cmyaml]: https://docs.codemagic.io/yaml-publishing/microsoft-store/
 [codemagic]: https://codemagic.io/start/
-[microsoftstore]: https://www.microsoft.com/en-us/store/apps/windows/
-[microsoftpartner]: https://partner.microsoft.com/en-GB/
+[microsoftstore]: https://www.microsoft.com/store/apps/windows
+[microsoftpartner]: https://partner.microsoft.com/
 [msix package]: {{site.pub}}/packages/msix
 [msix packaging]: {{site.url}}/desktop#msix-packaging
-[partnercenterapi]: https://docs.microsoft.com/en-us/azure/marketplace/azure-app-apis
-[storepolicies]: https://docs.microsoft.com/en-us/windows/uwp/publish/store-policies/
-[visualstudiopackaging]: https://docs.microsoft.com/en-us/windows/msix/package/packaging-uwp-apps
-[visualstudiosubmission]: https://docs.microsoft.com/en-us/windows/msix/package/packaging-uwp-apps#automate-store-submissions
-[windowspackageversioning]: https://docs.microsoft.com/en-us/windows/uwp/publish/package-version-numbering
-[windowsappcertification]: https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit
+[partnercenterapi]: https://docs.microsoft.com/azure/marketplace/azure-app-apis
+[storepolicies]: https://docs.microsoft.com/windows/uwp/publish/store-policies/
+[visualstudiopackaging]: https://docs.microsoft.com/windows/msix/package/packaging-uwp-apps
+[visualstudiosubmission]: https://docs.microsoft.com/windows/msix/package/packaging-uwp-apps#automate-store-submissions
+[windowspackageversioning]: https://docs.microsoft.com/windows/uwp/publish/package-version-numbering
+[windowsappcertification]: https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit
