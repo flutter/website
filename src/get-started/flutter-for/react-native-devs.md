@@ -308,8 +308,10 @@ class Example {
   }
 }
 
-/// Void function could be `async`,
-/// otherwise functions should return `Future`.
+/// An async function returns a `Future`.
+/// It can also return `void`, unless you use
+/// the `avoid_void_async` lint. In that case,
+/// return `Future<void>`.
 void main() async {
   final example = Example();
   try {
