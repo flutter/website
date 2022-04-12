@@ -123,7 +123,7 @@ var name; // == undefined
 <!-- skip -->
 ```dart
 // Dart
-var name; // == null, will also raised a lint tip.
+var name; // == null; raises a linter warning
 int? x; // == null
 ```
 
