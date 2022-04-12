@@ -1909,7 +1909,7 @@ Widget build(BuildContext context) {
 
 ## Gesture detection and touch event handling
 
-To listen for and respond to gesture,
+To listen for and respond to gestures,
 Flutter supports taps, drags, and scaling.
 The gesture system in Flutter has two separate layers.
 The first layer includes raw pointer events,
