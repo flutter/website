@@ -254,27 +254,37 @@ For more information and examples, check out:
 
 If you've done much Flutter programming, you are
 probably familiar with [how layout and constraints work][]
-when creating your UI and you might have memorized Flutter's
+when creating your UI. You might even have memorized Flutter's
 basic layout rule: **Constraints go down. Sizes go up.
 Parent sets position.**
 
 For some widgets, particularly grids and lists,
 the layout process can be expensive.
-For example, consider a 10x500 grid of `Card`s.
+Flutter strives to perform just one layout pass
+over the widgets but, sometimes,
+a second pass is needed,
+and that can slow performance.
+
+This happens when, for example,
+you want all cells to have the size
+of the biggest or smallest cell (or some
+similar calculation that requires polling all cells).
+
+For example, consider a large grid of `Card`s.
 A grid should have uniformly sized cells,
 so the layout code performs a pass,
 starting from the root of the grid (in the widget tree),
-asking each card in the visible grid to return
+asking **each** card in the visible grid to return
 its _intrinsic_ size&mdash;the size
 that the widget prefers, assuming no constraints.
 With this information,
 the framework calculates a uniform cell size,
-and re-visits the grid objects,
+and re-visits the grid objects a second time
+(called the _intrinsic pass_),
 _telling_ each card what size to use. 
 
-If your code performs unnecessary layout passes,
-it can slow performance. To determine if this
-is your issue, enable the **[Track layouts option][]**
+To determine whether you have excessive intrinsic passes,
+enable the **[Track layouts option][]**
 in DevTools (disabled by default),
 and look at the app's [stack trace][]
 to learn how many layout passes were performed.
@@ -282,11 +292,18 @@ to learn how many layout passes were performed.
 TBD: From Kenzie: Tell users to look for intrinsic timeline events.
 They will possibly be named: '$runtimeType intrinsics'.
 PR: https://github.com/flutter/flutter/pull/93086
+[PENDING: Define "excessive"]
 {% endcomment %}
 
-[PENDING: How does once determine "excessive"?]
-[PENDING: Is the primary way to fix this by lazy loading
-the grid or list? Or is there something else?]
+You have a couple options for avoiding the intrinsic pass:
+
+* Set the cells to a fixed size upfront.
+* Choose a particular cell to be the
+  "anchor" cell&mdash;all cells will be
+  sized relative to this cell.
+  Write a custom render object that
+  lays out the child anchor first and then lays
+  out the other children around it.
 
 To dive even deeper into how layout works,
 check out the [layout and rendering][]
@@ -337,8 +354,10 @@ check out the video [Why 60fps?][]
 
 If you need to tune your app’s performance,
 or perhaps the UI isn't as smooth as you expect,
-the Flutter plugin for your IDE can help.
-In the Flutter Performance window,
+the [DevTools Performance view][] can help!
+
+Also, the Flutter plugin for your IDE might
+be useful. In the Flutter Performance window,
 enable the **Show widget rebuild information** check box.
 This feature helps you detect when frames are
 being rendered and displayed in more than 16ms.
@@ -385,6 +404,7 @@ For more performance info, check out the following resources:
 
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
+[DevTools Performance view]: {{site.url}}/development/tools/devtools/performance
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
