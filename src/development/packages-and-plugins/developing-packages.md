@@ -69,8 +69,8 @@ package.
 
 ### Step 1: Create the package
 
-To create a Flutter package, use the `--template=package` flag
-with `flutter create`:
+To create a starter Flutter package,
+use the `--template=package` flag with `flutter create`:
 
 ```terminal
 $ flutter create --template=package hello
