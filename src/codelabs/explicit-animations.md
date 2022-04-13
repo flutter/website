@@ -773,7 +773,7 @@ the `value` property to a new value.
 [`AnimationController` concepts]: #animationcontroller-concepts
 [Create your first explicit animation with AnimationController]: #create-your-first-explicit-animation-with-animationcontroller
 [Material app]: {{site.api}}/flutter/material/MaterialApp-class.html
-[performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[performance profiling]: {{site.url}}/perf/ui-performance
 [implicit animations]: {{site.url}}/development/ui/animations/implicit-animations
 [make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [stateful widgets]: {{site.url}}/development/ui/interactive#stateful-and-stateless-widgets

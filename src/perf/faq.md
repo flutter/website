@@ -41,7 +41,7 @@ about evaluating and debugging Flutter's performance.
 * My Flutter app looks janky or stutters. How do I fix it?
   * [Improving rendering performance][]
 
-[Improving rendering performance]: {{site.url}}/perf/rendering
+[Improving rendering performance]: {{site.url}}/perf/rendering-performance
 
 * What are some costly performance operations that I need
   to be careful with?

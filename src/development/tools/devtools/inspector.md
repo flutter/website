@@ -540,10 +540,10 @@ of the Flutter inspector.
 [`FlexFit`]: {{site.api}}/flutter/widgets/FlexFit-class.html
 [`FlexParentData.fit`]: {{site.api}}/flutter/rendering/FlexParentData/fit.html
 [`FlexParentData.flex`]: {{site.api}}/flutter/rendering/FlexParentData/flex.html
-[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [`mainAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/mainAxisAlignment.html
 [`mainAxisSize`]: {{site.api}}/flutter/widgets/Flex/mainAxisSize.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
-[the performance overlay]: {{site.url}}/perf/rendering/ui-performance#the-performance-overlay
+[the performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints

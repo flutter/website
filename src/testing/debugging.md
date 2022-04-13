@@ -294,7 +294,7 @@ You might find the following docs useful:
 [breakpoints]: {{site.url}}/testing/code-debugging#setting-breakpoints
 [logging]: {{site.url}}/testing/code-debugging#logging
 [Flutter's modes]: {{site.url}}/testing/build-modes
-[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [Performance best practices]: {{site.url}}/perf/best-practices
 [Using an OEM debugger]: {{site.url}}/testing/oem-debuggers
 
@@ -311,8 +311,8 @@ You might find the following docs useful:
 [DevTools debugger]: {{site.url}}/development/tools/devtools/debugger
 [logging view]: {{site.url}}/development/tools/devtools/logging
 [Timeline view]: {{site.url}}/development/tools/devtools/performance
-[The performance overlay]: {{site.url}}/perf/rendering/ui-performance#the-performance-overlay
-[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[The performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
+[Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [overlay]: {{site.url}}/testing/code-debugging#performance-overlay
 [debug mode]: {{site.url}}/testing/build-modes#debug
 [profile mode]: {{site.url}}/testing/build-modes#profile

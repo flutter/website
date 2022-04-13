@@ -47,7 +47,7 @@ category.
 Are your animations janky (not smooth)? Learn how to 
 evaluate and fix rendering issues.
 
-[Improving rendering performance]({{site.url}}/perf/rendering)
+[Improving rendering performance]({{site.url}}/perf/rendering-performance)
 
 {% comment %}
 Do your apps take a long time to open? We'll also cover the startup speed issue
