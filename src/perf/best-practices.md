@@ -128,8 +128,6 @@ How can you tell how much your app calls `saveLayer()`,
 either directly or indirectly?
 The `saveLayer()` method triggers
 an event on the [DevTools timeline][].
-[Pending: What else can we say here? For example,
- how do you define _excessive_?]
 If the calls to `saveLayer()` are excessive,
 this can cause jank.
 
@@ -145,19 +143,21 @@ You have several options to handle this situation:
   you can precalculate what this overlapped,
   semi-transparent object looks like, cache it,
   and use that instead of calling `saveLayer()`. 
-  This works with any static shape that you can
-  precalculate.
+  This works with any static shape that you can precalculate.
 {% comment %}
 TBD: It would be nice if we could link to an example.
   Kenzie suggested to John and Tao that we add an
   example to perf_diagnosis_demo.)
 {% endcomment %}
+
 * If the calls are coming from a package that you don't own,
   contact the package owner and ask why
   these calls are necessary? Can they be reduced or
   eliminated? If not, you might need to find another
   package, or write your own.
+
 * Perhaps you could write a (simpler) [`CustomPainter`][].
+
 * If all else fails, you might consider implementing
   a custom [`RenderObject`][].
 
@@ -209,7 +209,7 @@ Here are some tips you might find to be useful:
   opacity using the GPU’s fragment shader.
   For more information, check out the [`Opacity`][] docs.
 * **Clipping** doesn’t call `saveLayer()` (unless
-  explicitly requested with `Clip.antiAliasWithSaveLayer`)
+  explicitly requested with `Clip.antiAliasWithSaveLayer`),
   so these operations aren’t as expensive as `Opacity`,
   but clipping is still costly, so use with caution.
   By default, clipping is disabled (`Clip.none`),
@@ -224,7 +224,7 @@ Here are some tips you might find to be useful:
 ## Implement grids and lists thoughtfully 
 
 How your grids and lists are implemented
-_might_ be causing performance problems for your app.
+might be causing performance problems for your app.
 This section describes an important best
 practice when creating grids and lists,
 and how to determine whether your app uses
@@ -274,14 +274,15 @@ For example, consider a large grid of `Card`s.
 A grid should have uniformly sized cells,
 so the layout code performs a pass,
 starting from the root of the grid (in the widget tree),
-asking **each** card in the visible grid to return
+asking **each** card in the grid (not just the
+visible cards) to return
 its _intrinsic_ size&mdash;the size
 that the widget prefers, assuming no constraints.
 With this information,
-the framework calculates a uniform cell size,
-and re-visits the grid objects a second time
+the framework determines a uniform cell size,
+and re-visits **all** grid cells a second time
 (called the _intrinsic pass_),
-_telling_ each card what size to use. 
+**telling** each card what size to use. 
 
 To determine whether you have excessive intrinsic passes,
 enable the **[Track layouts option][]**
