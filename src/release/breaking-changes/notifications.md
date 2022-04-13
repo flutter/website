@@ -1,7 +1,6 @@
 ---
 title: Removing Notification.visitAncestor
-description: Notifications only traverse ancestors that are notification
-listeners.
+description: Notifications only traverse ancestors that are notification listeners.
 ---
 
 ## Summary
