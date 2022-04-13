@@ -584,7 +584,7 @@ These methods are replaced, respectively, by:
 - `moveRenderObjectChild`
 - `removeRenderObjectChild`
 
-These changes were made as a soft breaking deprecation in order to change the\
+These changes were made as a soft breaking deprecation in order to change the
 function signature.
 
 **Migration guide**
