@@ -116,7 +116,7 @@ to redirect that stream temporarily and then
 direct it back again. On mobile GPUs this is
 particularly disruptive to rendering throughput.
 
-### When is `saveLayer()` required?
+### When is saveLayer required?
 
 At runtime, if you need to dynamically display various shapes
 coming from a server (for example), each with some transparency,
@@ -252,7 +252,7 @@ For more information and examples, check out:
 [`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [Working with long lists]: {{site.url}}/cookbook/lists/long-lists
 
-### Intrinsics
+### Avoid intrinsics
 
 For information on how intrinsic passes might be causing
 problems with your grids and lists, see the next section.
@@ -291,8 +291,8 @@ its _intrinsic_ size&mdash;the size
 that the widget prefers, assuming no constraints.
 With this information,
 the framework determines a uniform cell size,
-and re-visits **all** grid cells a second time,
-**telling** each card what size to use. 
+and re-visits all grid cells a second time,
+telling each card what size to use. 
 
 ### Debugging intrinsic passes
 
