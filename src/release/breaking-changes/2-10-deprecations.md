@@ -186,8 +186,8 @@ the generic `ButtonTheme`.
 
 <div class="table-wrapper" markdown="1">
 
-| Old Widget   | Old Theme     | New Widget      | New Theme |
-| -------------|---------------|-----------------|----------|
+| Old Widget     | Old Theme       | New Widget        | New Theme             |
+| ---------------|-----------------|-------------------|-----------------------|
 | `FlatButton`   | `ButtonTheme`   | `TextButton`      | `TextButtonTheme`     |
 | `RaisedButton` | `ButtonTheme`   | `ElevatedButton`  | `ElevatedButtonTheme` |
 | `OutlineButton`| `ButtonTheme`   | `OutlinedButton`  | `OutlinedButtonTheme` |
