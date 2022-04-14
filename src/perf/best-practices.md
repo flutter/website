@@ -93,6 +93,7 @@ For more information, check out:
   are more performant than functions.
 
 [`flutter_lints`]: {{site.pub-pkg}}/packages/flutter_lints
+[`flutter_lints` migration guide]: {{site.url}}/release/breaking-changes/flutter-lints-package#migration-guide
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
