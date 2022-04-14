@@ -71,11 +71,16 @@ Here are some things to keep in mind when designing your UI:
     the [source code for `SlideTransition`][],
     which uses this principle to avoid rebuilding its
     descendents when animating.
-
-Use `const` constructors on widgets as much as possible,
-since they allow Flutter to short-circuit most of the rebuild work.
-To create reusable pieces of UIs,
-prefer using a [`StatelessWidget`][] rather than a function.
+  * Use `const` constructors on widgets as much as possible,
+    since they allow Flutter to short-circuit most
+    of the rebuild work. To be automatically reminded
+    to use `const` when possible, enable the
+    recommended lints from the [`flutter_lints`][] package.
+    For more information, check out the
+    [`flutter_lints` migration guide][].
+  * To create reusable pieces of UIs,
+    prefer using a [`StatelessWidget`][]
+    rather than a function.
 
 For more information, check out:
 
@@ -87,6 +92,7 @@ For more information, check out:
   (especially widgets with `const` constructors)
   are more performant than functions.
 
+[`flutter_lints`]: {{site.pub-pkg}}/packages/flutter_lints
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
@@ -156,7 +162,8 @@ create your visual effects:
 {% comment %}
 TBD: It would be nice if we could link to an example.
   Kenzie suggested to John and Tao that we add an
-  example to perf_diagnosis_demo.)
+  example to perf_diagnosis_demo. Michael indicated
+  that he doesn't have a saveLayer demo.
 {% endcomment %}
 
 * If the calls are coming from a package that you don't own,
@@ -301,12 +308,8 @@ enable the **[Track layouts option][]**
 in DevTools (disabled by default),
 and look at the app's [stack trace][]
 to learn how many layout passes were performed.
-{% comment %}
-TBD: From Kenzie: Tell users to look for intrinsic timeline events.
-They will possibly be named: '$runtimeType intrinsics'.
-PR: https://github.com/flutter/flutter/pull/93086
-[PENDING: Define "excessive"]
-{% endcomment %}
+Once you enable tracking, intrinsic timeline events
+are labeled as '$runtimeType intrinsics'.
 
 ### Avoiding intrinsic passes
 
