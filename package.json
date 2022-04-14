@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "bootstrap-scss": "^4.6.0",
-    "diff2html-cli": "^5.2.0",
+    "diff2html-cli": "^5.2.1",
     "font-awesome": "^4.7.0",
     "superstatic": "^7.1.0",
     "firebase-tools": "v10.2.2"
