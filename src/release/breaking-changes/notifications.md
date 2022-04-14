@@ -1,7 +1,6 @@
 ---
 title: Removing Notification.visitAncestor
-description: Notifications only traverse ancestors that are notification
-listeners.
+description: Notifications only traverse ancestors that are notification listeners.
 ---
 
 ## Summary
@@ -36,11 +35,13 @@ method is no longer supported as we no longer visit all ancestor elements.
 
 ## Description of change
 
-`Notification.visitAncestor` has been removed. Any classes which extend
-`Notification` should no longer override this method.
+`Notification.visitAncestor` has been removed.
+Any classes that extend `Notification` should
+no longer override this method.
 
-** If you don't implement a custom Notification that overrides
-`Notification.visitAncestor`, then no changes are required. **
+** If you don't implement a custom Notification
+that overrides `Notification.visitAncestor`,
+then no changes are required. **
 
 ## Migration guide
 
@@ -91,8 +92,8 @@ void methodThatSendsNotification(BuildContext? context) {
 }
 ```
 
-Note that this will perform poorly compared to the new default behavior
-of `Notification.dispatch`.
+Note that this performs poorly compared to the
+new default behavior of `Notification.dispatch`.
 
 ## Timeline
 

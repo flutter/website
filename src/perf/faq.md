@@ -41,7 +41,7 @@ about evaluating and debugging Flutter's performance.
 * My Flutter app looks janky or stutters. How do I fix it?
   * [Improving rendering performance][]
 
-[Improving rendering performance]: {{site.url}}/perf/rendering
+[Improving rendering performance]: {{site.url}}/perf/rendering-performance
 
 * What are some costly performance operations that I need
   to be careful with?
@@ -52,9 +52,8 @@ about evaluating and debugging Flutter's performance.
 
 [`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip-class.html
 [`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
-[Performance best practices]: {{site.url}}/flutter/dart-ui/ImageFilter-class.html
 [`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
-[Performance best practices]: {{site.url}}/perf/rendering/best-practices
+[Performance best practices]: {{site.url}}/perf/best-practices
 [`savelayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
 * How do I tell which widgets in my Flutter app are rebuilt

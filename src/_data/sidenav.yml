@@ -318,26 +318,22 @@
     - title: Overview
       permalink: /perf
       match-page-url-exactly: true
+    - title: Performance best practices
+      permalink: /perf/best-practices
     - title: App size
       permalink: /perf/app-size
-    - title: Deferred components [NEW]
+    - title: Deferred components
       permalink: /perf/deferred-components
 #    - title: Memory
 #      permalink: /perf/memory
 #    - title: Power usage
 #      permalink: /perf/power
     - title: Rendering performance
-      permalink: /perf/rendering
-      children:
-      - title: Overview
-        permalink: /perf/rendering
-        match-page-url-exactly: true
-      - title: Performance best practices
-        permalink: /perf/rendering/best-practices
-      - title: Performance profiling
-        permalink: /perf/rendering/ui-performance
-      - title: Reduce shader compilation jank
-        permalink: /perf/rendering/shader
+      permalink: /perf/rendering-performance
+    - title: Performance profiling
+      permalink: /perf/ui-performance
+    - title: Reduce shader compilation jank
+      permalink: /perf/shader
     - title: Performance metrics
       permalink: /perf/metrics
     - title: Performance FAQ

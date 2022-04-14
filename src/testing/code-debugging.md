@@ -965,8 +965,8 @@ effect by using a [`GridPaper`][] widget directly.
 [Timeline view]: {{site.url}}/development/tools/devtools/performance
 [Debugger]: {{site.url}}/development/tools/devtools/debugger
 [Inspector view]: {{site.url}}/development/tools/devtools/inspector
-[The performance overlay]: {{site.url}}/perf/rendering/ui-performance#the-performance-overlay
-[Profiling Flutter performance]: {{site.url}}/perf/rendering/ui-performance
+[The performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
+[Profiling Flutter performance]: {{site.url}}/perf/ui-performance
 [Debugging]: {{site.url}}/testing/debugging
 [file an issue]: {{site.github}}/flutter/devtools/issues
 [rendering library]: {{site.api}}/flutter/rendering/rendering-library.html

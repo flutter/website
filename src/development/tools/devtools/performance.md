@@ -202,7 +202,7 @@ snapshot into DevTools from any page. **Note that DevTools only
 supports importing files that were originally exported from DevTools.**
 
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[GPU graph]: {{site.url}}/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
-[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
-[Reduce shader compilation jank on mobile]: {{site.url}}/perf/rendering/shader
+[GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
+[Flutter performance profiling]: {{site.url}}/perf/ui-performance
+[Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export
