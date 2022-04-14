@@ -188,7 +188,7 @@ Consider adding the `--obfuscate` and `--split-debug-info` flags to
 [obfuscate your Dart code][] to make it more difficult
 to reverse engineer.
 
-If you are not distributing to the App Store, you may optionally
+If you are not distributing to the App Store, you can optionally
 choose a different [export method][app_bundle_export_method] by
 adding the option `--export-method ad-hoc`,
 `--export-method development` or `--export-method enterprise`.
