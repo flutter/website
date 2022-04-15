@@ -16,24 +16,12 @@ app's UI in Flutter. Or, just to run shared Dart logic.
 In a few steps, you can bring the productivity and the expressiveness of
 Flutter into your own app.
 
-As of Flutter v1.12, add-to-app is supported for the basic scenario of
-integrating one full-screen Flutter instance at a time per app.
-It currently has the _**following limitations**_:
-
-* Packing multiple Flutter libraries into an
-  application isn't supported.
-* Plugins used in add-to-app on Android should migrate
-  to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
-* Plugins that don't support `FlutterPlugin` might have unexpected
-  behaviors if they make assumptions that are untenable in add-to-app
-  (such as assuming that a Flutter `Activity` is always present).
-* As of v1.17, the Flutter module only supports AndroidX applications on Android.
-
-As of Flutter v1.26, add-to-app experimentally supports adding multiple
-instances of Flutter engines, screens, or views into your app. This can
-help integration scenarios such as a hybrid navigation stack with mixed
+The `add-to-app` feature supports integrating multiple instances of any screen size.
+This can help scenarios such as a hybrid navigation stack with mixed
 native and Flutter screens, or a page with multiple partial-screen Flutter
-views. Having multiple Flutter instances allows each instance to maintain
+views.
+
+Having multiple Flutter instances allows each instance to maintain
 independent application and UI state while using minimal
 memory resources. See more in the [multiple Flutters][] page.
 
@@ -56,11 +44,7 @@ memory resources. See more in the [multiple Flutters][] page.
   creation/import wizard.
 * Java and Kotlin host apps are supported.
 * Flutter modules can use [Flutter plugins][] to interact
-  with the platform. Android plugins should be
-  [migrated to the V2 plugins APIs][]
-  for best add-to-app correctness. As of Flutter v1.12,
-  most of the plugins [maintained by the Flutter team][]
-  as well as [FlutterFire][] have been migrated.
+  with the platform.
 * Support for Flutter debugging and stateful hot reload by
   using `flutter attach` from IDEs or the command line to
   connect to an app that contains Flutter.
@@ -131,6 +115,16 @@ see our API usage guides at the following links:
   </a>
 </div>
 
+## Limitations
+
+* Packing multiple Flutter libraries into an
+  application isn't supported.
+* Plugins used in add-to-app on Android should migrate
+  to the [new Android plugin APIs][Android plugin APIs], based on [`FlutterPlugin`].
+* Plugins that don't support `FlutterPlugin` might have unexpected
+  behaviors if they make assumptions that are untenable in add-to-app
+  (such as assuming that a Flutter `Activity` is always present).
+* On Android, the Flutter module only supports AndroidX applications.
 
 [add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
 [Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
