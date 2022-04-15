@@ -164,6 +164,26 @@ end
 
 <li markdown="1">
 
+In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
+
+<!--code-excerpt "MyApp/Podfile" title-->
+```ruby
+post_install do |installer|
+  flutter_post_install(installer) if defined?(flutter_post_install)
+end
+```
+
+{{site.alert.note}}
+  The `flutter_post_install` method (recently added to Flutter),
+  adds build settings to support native Apple Silicon `arm64` iOS simulators.
+  Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
+  is valid if you are running on older versions of Flutter that don't have this method.
+{{site.alert.end}}
+
+</li>
+
+<li markdown="1">
+
 Run `pod install`.
 
 {{site.alert.note}}
