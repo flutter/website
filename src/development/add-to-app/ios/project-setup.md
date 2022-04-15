@@ -164,7 +164,7 @@ end
 
 <li markdown="1">
 
-In the `Podfile` `post_install` block, call `flutter_post_install(installer)`.
+In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
 
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
