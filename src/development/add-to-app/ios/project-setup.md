@@ -174,10 +174,10 @@ end
 ```
 
 {{site.alert.note}}
-  The `flutter_post_install` method has been recently added to Flutter, and
+  The `flutter_post_install` method (recently added to Flutter),
   adds build settings to support native Apple Silicon `arm64` iOS simulators.
-  Include `if defined?(flutter_post_install)` to ensure your `Podfile`
-  is valid if you are running on older versions of Flutter that do not have this method.
+  Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
+  is valid if you are running on older versions of Flutter that don't have this method.
 {{site.alert.end}}
 
 </li>
