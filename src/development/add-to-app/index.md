@@ -16,7 +16,7 @@ app's UI in Flutter. Or, just to run shared Dart logic.
 In a few steps, you can bring the productivity and the expressiveness of
 Flutter into your own app.
 
-add-to-app supports integrating multiple instances of any screen size.
+The `add-to-app` feature supports integrating multiple instances of any screen size.
 This can help scenarios such as a hybrid navigation stack with mixed
 native and Flutter screens, or a page with multiple partial-screen Flutter
 views.
