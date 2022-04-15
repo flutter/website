@@ -98,4 +98,4 @@ Relevant PRs:
 
 [24224: Support Scribble Handwriting (engine)]: {{site.github}}/flutter/engine/pull/24224
 [97437: Re-land Support Scribble Handwriting]: {{site.github}}/flutter/flutter/pull/97437
-[75472: Support Scribble Handwriting]: ({{site.github}}/flutter/flutter/pull/75472)
+[75472: Support Scribble Handwriting]: {{site.github}}/flutter/flutter/pull/75472
