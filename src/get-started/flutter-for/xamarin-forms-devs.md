@@ -256,7 +256,7 @@ The logo is not going to change during runtime,
 so use a `StatelessWidget` in Flutter.
 
 If you want to dynamically change the UI based on data received
-after making an HTTP call or user interaction,
+after making an HTTP call or a user interaction,
 then you have to work with `StatefulWidget`
 and tell the Flutter framework that
 the widget’s `State` has been updated,
