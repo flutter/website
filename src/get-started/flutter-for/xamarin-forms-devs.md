@@ -213,7 +213,7 @@ but there are many benefits to this approach.
 {{site.alert.end}}
 
 `ContentPage`, `TabbedPage`, `FlyoutPage` are all types of pages
-you might in a Xamarin.Forms application.
+you might use in a Xamarin.Forms application.
 These pages would then hold `Element`s to display the various controls.
 In Xamarin.Forms an `Entry` or `Button` are examples of an `Element`.
 
