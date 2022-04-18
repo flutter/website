@@ -290,7 +290,7 @@ As you can see, the `Text` widget has no state information associated with it,
 it renders what is passed in its constructors and nothing more.
 
 But, what if you want to make "I Like Flutter" change dynamically,
-for example when clicking a `FloatingActionButton`?
+for example, when clicking a `FloatingActionButton`?
 
 To achieve this, wrap the `Text` widget in a `StatefulWidget`
 and update it when the user clicks the button,
