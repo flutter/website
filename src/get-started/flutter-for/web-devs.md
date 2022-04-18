@@ -863,7 +863,7 @@ with some formatting characteristics.
 To display text that uses multiple styles
 (in this example, a single word with emphasis),
 use a [`RichText`][]widget instead.
-Its `text` property can specify one or more [`TextSpan`][]
+Its `text` property can specify one or more [`TextSpan`][]s
 that can be individually styled.
 
 In the following example, "Lorem" is in a `TextSpan`
