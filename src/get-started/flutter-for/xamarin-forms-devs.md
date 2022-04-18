@@ -247,7 +247,7 @@ A `StatelessWidget` is just what it sounds like&mdash;
 a widget with no state information.
 
 `StatelessWidgets` are useful when the part of the user interface
-you are describing does not depend on anything
+you are describing doesn't depend on anything
 other than the configuration information in the object.
 
 For example, in Xamarin.Forms, this is similar
