@@ -862,7 +862,7 @@ A [`Text`][] widget lets you display text
 with some formatting characteristics.
 To display text that uses multiple styles
 (in this example, a single word with emphasis),
-use a [`RichText`][]widget instead.
+use a [`RichText`][] widget instead.
 Its `text` property can specify one or more
 [`TextSpan`][] objects that can be individually styled.
 
