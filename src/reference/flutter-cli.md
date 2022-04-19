@@ -18,7 +18,7 @@ $ flutter test
 $ flutter run lib/main.dart
 ```
 
-To run [`pub`][] commands using the `flutter` tool:
+To run [`pub`][`dart pub`] commands using the `flutter` tool:
 
 ```terminal
 $ flutter pub get
