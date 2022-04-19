@@ -67,7 +67,7 @@ The following table shows which commands you can use with the `flutter` tool:
 | pub     | `flutter pub <PUB_COMMAND>`       | Works with packages.<br>Use instead of [`dart pub`][]. | 
 | run     | `flutter run <DART_FILE>`         | Runs a Flutter program. | 
 | symbolize | `flutter symbolize --input=<STACK_TRACK_FILE>` | Symbolize a stack trace from the AOT compiled flutter application. |
-| test    | `flutter test [<DIRECTORY|DART_FILE>]` | Runs tests in this package.<br>Use instead of [`pub run test`][`pub`]. |
+| test    | `flutter test [<DIRECTORY|DART_FILE>]` | Runs tests in this package.<br>Use instead of [`dart test`][`dart test`]. |
 | upgrade | `flutter upgrade` | Upgrade your copy of Flutter. |
 {:.table .table-striped .nowrap}
 
@@ -80,3 +80,4 @@ You can also get details on `pub` commands — for example,
 [`dart analyze`]: {{site.dart-site}}/tools/dart-analyze
 [`dart format`]: {{site.dart-site}}/tools/dart-format
 [`dart pub`]: {{site.dart-site}}/tools/dart-pub
+[`dart test`]: {{site.dart-site}}/tools/dart-test
