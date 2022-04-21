@@ -25,7 +25,8 @@ Flutter apps the absolute best they can be when running on macOS, including:
 
 *   Designing and building multi-window support.
 *   Building support for macOS system menu integration.
-*   Integrating Flutter with system services like accessibility, file selection, printing, clipboard, drag and drop.
+*   Integrating Flutter with system services like accessibility,
+    file selection, printing, clipboard, drag and drop.
 *   Adding support for nesting macOS UI views inside Flutter apps.
 *   Delivering outstanding performance on macOS.
 *   Nurturing a thriving community of contributions from open-source
