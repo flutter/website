@@ -7,7 +7,7 @@ toc: false
 
 Flutter is the most popular multi-platform UI toolkit, with support
 for desktop, mobile, and web applications. The team is constantly
-looking to improve integration, performance , and fidelity for each
+looking to improve integration, performance, and fidelity for each
 native platform. We’re seeking software engineers who have the skills
 and experience to help us with all that on the macOS platform.
 
