@@ -379,6 +379,7 @@ To use this plugin:
     ```dart
     import 'package:flutter/material.dart';
     import 'package:url_launcher/url_launcher.dart';
+    import 'package:path/path.dart' as p;
 
     void main() {
       runApp(const MyApp());
@@ -399,7 +400,7 @@ To use this plugin:
       const DemoPage({Key? key}) : super(key: key);
 
       launchURL() {
-        launch('https://flutter.dev');
+        launchUrl(p.toUri('https://flutter.dev'));
       }
 
       @override
