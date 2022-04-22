@@ -33,7 +33,7 @@ jobs:
             channel: stable
             experimental: false
     steps:
-      - uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Test
         run: make test
         env:
@@ -48,7 +48,7 @@ jobs:
       && github.ref == 'refs/heads/main'
       && github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
         with:
           submodules: "recursive"
       - name: Install Node
