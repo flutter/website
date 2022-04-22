@@ -24,12 +24,15 @@ the steps you took to create the issue, affected versions, and if known, mitigat
 
 We should reply within three working days.
 
-We use GitHub’s security advisory feature to track open security issues. You should expect a close collaboration as we work to resolve the issue you have reported. Please reach out to `security@flutter.dev` again if you do not receive prompt attention and regular updates. You may also reach out to the team via our public [Discord](https://github.com/flutter/flutter/wiki/Chat) chat channels; however, when reporting an issue, please e-mail `security@flutter.dev` instead of Discord or filing a github issue to avoid revealing information about vulnerabilities in public that could put users at risk.
+We use GitHub’s security advisory feature to track open security issues. You should expect a close collaboration as we work to resolve the issue you have reported. 
+
+Please reach out to `security@flutter.dev` again if you do not receive prompt attention and regular updates. You may also reach out to the team via our public [Discord](https://github.com/flutter/flutter/wiki/Chat) chat channels; however, when reporting an issue, please e-mail `security@flutter.dev` instead of Discord or filing a github issue to avoid revealing information about vulnerabilities in public that could put users at risk.
 
 For more details on how we handle security vulnerabilities, please see our [internal processes]({{site.repo.flutter}}/security/policy).
 
 ##  Flagging existing issues as security-related
-If you believe that an existing issue is security-related, we ask that you send an email to `security@flutter.dev`. The email should include the issue ID and a short description of why it should be handled according to this security policy.
+If you believe that an existing issue is security-related, we ask that you send an email to `security@flutter.dev`. 
+The email should include the issue ID and a short description of why it should be handled according to this security policy.
 
 ## Supported versions
 
