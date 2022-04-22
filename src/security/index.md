@@ -7,12 +7,13 @@ created with it seriously. This page describes how to report any
 vulnerabilities you may find, and lists best practices to minimize
 the risk of introducing a vulnerability.
 
-## Security Philosophy
+## Security philosophy
 Flutter security strategy is based on five key pillars
 
 * **Identify**: Track & prioritize key security risks by identifying core assets, key threats and vulnerabilities. 
-* **Detect**: Detect and identify vulnerabilities using techniques and tools like vulnerability scanning, static application security testing and fuzzing.
-* **Protect**: Eliminate risks by mitigating or remediating known vulnerabilities and protect critical assets against source threats.
+* **Detect**: Detect and identify vulnerabilities using techniques and tools like vulnerability scanning,
+  static application security testing and fuzzing.
+* **Protect**: Eliminate risks by mitigating known vulnerabilities and protect critical assets against source threats.
 * **Respond**: Define processes to report, triage and respond to vulnerabilities or attacks.
 * **Recover**: Build capabilities to contain and recover from an incident with minimal impact.
 
@@ -27,24 +28,27 @@ We use GitHub’s security advisory feature to track open security issues. You s
 
 For more details on how we handle security vulnerabilities, please see our [internal processes]({{site.repo.flutter}}/security/policy).
 
-##  Flagging Existing Issues as Security-related
+##  Flagging existing issues as security-related
 If you believe that an existing issue is security-related, we ask that you send an email to `security@flutter.dev`. The email should include the issue ID and a short description of why it should be handled according to this security policy.
 
-## Supported Versions
+## Supported versions
 
 We commit to publishing security updates for the version of Flutter currently
 on the `stable` branch.
 
 ## Expectations
 
-We treat security issues equivalent to a P0 priority level. We will release a beta or hotfix for any major security issues found in the most recent stable version of our SDK. Any vulnerability reported for flutter websites like flutter.dev does not require a release and will be fixed in the website itself.
+We treat security issues equivalent to a P0 priority level and release a beta or hotfix for any major security issues found in the most recent stable version of our SDK. 
+
+Any vulnerability reported for flutter websites like flutter.dev does not require a release and will be fixed in the website itself.
 
 Flutter does not have a bug bounty program.
 
 ## Receiving security updates
 
-The best way to receive security updates is to subscribe to the [flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce) mailing list or updates to the Discord [channel](https://discord.com/channels/608014603317936148/608116355836805126).
-In addition to publishing github security advisory, we will also announce security updates in the technical release blog post.
+The best way to receive security updates is to subscribe to the 
+[flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce) mailing list or updates to the Discord [channel](https://discord.com/channels/608014603317936148/608116355836805126).
+We will also announce security updates in the technical release blog post.
 
 ## Best practices
 
