@@ -26,8 +26,9 @@ contains a simple demo app that uses [Material Components][].
    ![status bar][]{:.mw-100.pt-1.pb-2}
 1. Select a device from the **Device Selector** area.
    For details, see [Quickly switching between Flutter devices][].
-   - If no device is available and you want to use a device simulator,
-     click **No Devices** and launch a simulator.
+   - If no device is available, and you want to use a device simulator,
+     click **No Devices** and click
+     **Start iOS Simulator** to launch a simulator.
 
      {{site.alert.warning}}
        You may not see **Start iOS Simulator** option
