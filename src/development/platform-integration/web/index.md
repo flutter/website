@@ -66,7 +66,7 @@ are supported as the default browsers for debugging your app.
 ### Can I build, run, and deploy web apps in any of the IDEs?
 
 You can select **Chrome** or **Edge** as the target device in
-Android Studio/IntelliJ and VS Code. 
+Android Studio/IntelliJ and VS Code.
 
 The device pulldown should now include the **Chrome (web)**
 option for all channels.
@@ -77,7 +77,7 @@ See [Creating responsive apps][].
 
 ### Can I use Flutter plugins?
 
-Yes, several plugins have web support. 
+Yes, several plugins have web support.
 Find an updated list of plugins on [pub.dev][] using the web filter.
 You can also add web support to existing plugins or
 [write your own plugins][] for the web.
