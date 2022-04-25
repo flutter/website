@@ -251,7 +251,7 @@ Learn more about Flutter animations at the following links:
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.youtube-site}}/watch?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [Flutter API documentation]: {{site.api}}
 [Flutter Gallery]: {{site.repo.gallery}}
-[`Grid`]: {{site.repo.gallery}}/blob/master/lib/demos/material/grid_list_demo.dart
+[`Grid`]: {{site.repo.gallery}}/blob/main/lib/demos/material/grid_list_demo.dart
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [Hero animations]: {{site.url}}/development/ui/animations/hero-animations
 [How to choose which Flutter Animation Widget is right for you?]: {{site.youtube-site}}/watch?v=GXIJJkq_H8g
@@ -262,7 +262,7 @@ Learn more about Flutter animations at the following links:
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
 [Sample app catalog]: https://flutter.github.io/samples
-[Shrine]: {{site.repo.gallery}}/tree/master/lib/studies/shrine
+[Shrine]: {{site.repo.gallery}}/tree/main/lib/studies/shrine
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: {{site.url}}/development/ui/animations/staggered-animations
 [Step 7 (Animate your app)]: {{site.codelabs}}/codelabs/flutter/#6
