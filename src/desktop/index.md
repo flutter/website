@@ -712,7 +712,7 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/desktop_photo_search
 [running web app]: {{site.gallery}}
 [flutter-gallery-repo]: {{site.repo.gallery}}
-[README]: {{site.repo.gallery}}#flutter-gallery
+[README]: {{site.repo.gallery}}#readme
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

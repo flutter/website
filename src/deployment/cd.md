@@ -209,7 +209,7 @@ secrets in pull requests that you accept and merge.
 [Flutter Gallery Project]: {{site.repo.gallery}}
 [Github Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
 [GitHub Actions]: {{site.github}}/features/actions
-[Github Actions workflows]: {{site.repo.gallery}}/tree/master/.github/workflows
+[Github Actions workflows]: {{site.repo.gallery}}/tree/main/.github/workflows
 [GitLab]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [CircleCI]: https://circleci.com
 [Building and deploying Flutter apps with Fastlane]: https://circleci.com/blog/deploy-flutter-android
