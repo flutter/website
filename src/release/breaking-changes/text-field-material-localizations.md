@@ -49,7 +49,9 @@ class Foo extends StatelessWidget {
       data: const MediaQueryData(),
       child: Directionality(
         textDirection: TextDirection.ltr,
-        child: TextField(),
+        child: Material(
+          child: TextField(),
+        ),
       ),
     );
   }
@@ -67,7 +69,9 @@ class Foo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: TextField(),
+      home: Material(
+        child: TextField(),
+      ),
     );
   }
 }
@@ -85,7 +89,7 @@ class Foo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Localizations(
       locale: const Locale('en', 'US'),
-      delegates: <LocalizationsDelegate<dynamic>>[
+      delegates: const <LocalizationsDelegate<dynamic>>[
         DefaultWidgetsLocalizations.delegate,
         DefaultMaterialLocalizations.delegate,
       ],
@@ -93,7 +97,9 @@ class Foo extends StatelessWidget {
         data: const MediaQueryData(),
         child: Directionality(
           textDirection: TextDirection.ltr,
-          child: TextField(),
+          child: Material(
+            child: TextField(),
+          ),
         ),
       ),
     );
