@@ -60,7 +60,7 @@ Among other initiatives, this role will help kick-start an “Experiments with F
 
 You must meet these minimum qualifications to apply for this job.
 
-- Bachelor's degree in Engineering, Computer Science, related field, or equivalent practical experience.
+- Bachelor's degree in Computer Science, HCI, Design, a related field, or equivalent practical experience.
 - 2 years of experience in a technical, UX, or design environment.
 - Experience with HTML5, CSS3, and JavaScript development.
 - Experience with development on mobile platforms.
