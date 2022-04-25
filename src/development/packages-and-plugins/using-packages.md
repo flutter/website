@@ -35,6 +35,8 @@ an app without having to develop everything from scratch.
     with the ability to use a device's camera.
 {{site.alert.end}}
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y9WifT8aN6o?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Existing packages enable many use cases—for example,
 making network requests ([`http`][]),
 custom navigation/route handling ([`fluro`][]),
