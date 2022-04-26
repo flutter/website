@@ -67,7 +67,7 @@ that calls `loadEntrypoint` from the `flutter.js` file:
 
 
 
-The `loadEntrypoint` function returns a JavaScript [Promise][js-promise]
+The `loadEntrypoint` function returns a JavaScript [`Promise`][js-promise]
 that resolves when the Service Worker is initialized
 and the `main.dart.js` entrypoint has been downloaded by the browser.
 It resolves with an **engine initializer** object
