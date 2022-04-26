@@ -61,10 +61,10 @@ that calls `loadEntrypoint` from the `flutter.js` file:
 
 
 {{site.alert.note}}
-*Note:* In Flutter 2.10 or earlier,
-this script doesn't support customization.
-To upgrade your index.html file to the latest version,
-see Upgrading an older project.
+  In Flutter 2.10 or earlier,
+  this script doesn't support customization.
+  To upgrade your `index.html` file to the latest version,
+  see [Upgrading an older project](#upgrading-an-older-project).
 {{site.alert.end}}
 
 
