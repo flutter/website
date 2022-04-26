@@ -164,7 +164,7 @@
               permalink: /development/platform-integration/web/faq
             - title: Web renderers
               permalink: /development/platform-integration/web/renderers
-            - title: Custom initialization
+            - title: Custom app initialization
               permalink: /development/platform-integration/web/initialization
         - title: Desktop
           permalink: /desktop
