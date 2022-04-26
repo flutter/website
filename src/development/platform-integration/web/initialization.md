@@ -116,7 +116,7 @@ _flutter.loader.loadEntrypoint({
 });
 ```
 
-## Example: How to display a progress indicator
+## Example: Display a progress indicator
 
 To give the user of your application feedback
 during the initialization process,
