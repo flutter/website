@@ -125,7 +125,7 @@ during the initialization process,
 use the hooks provided for each stage to update the DOM:
 
 
-```
+```html
 <html>
    <head>
       <!-- ... -->
