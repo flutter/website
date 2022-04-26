@@ -24,7 +24,6 @@ The following jobs are open:
 ## Developer Relations
 
 * [Dart Technical Writer]({{site.url}}/jobs/writer)
-* [Flutter Technical Writer]({{site.url}}/jobs/flutter_writer)
 * [Developer Relations Engineer]({{site.url}}/jobs/dre)
 
 ## Product Management & UX
