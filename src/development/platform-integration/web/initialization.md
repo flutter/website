@@ -3,8 +3,6 @@ title: Customizing web app initialization
 description: Customize how Flutter apps are initialized on the web
 ---
 
-# Customizing web app initialization
-
 You can customize how a Flutter app is initialized on the web
 using the `_flutter.loader` JavaScript API.
 This API can be used to display a loading indicator in CSS,
