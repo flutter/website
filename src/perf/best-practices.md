@@ -169,7 +169,7 @@ TBD: It would be nice if we could link to an example.
 
 * If the calls are coming from a package that you don't own,
   contact the package owner and ask why
-  these calls are necessary? Can they be reduced or
+  these calls are necessary. Can they be reduced or
   eliminated? If not, you might need to find another
   package, or write your own.
 
