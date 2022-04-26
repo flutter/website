@@ -31,7 +31,7 @@ contains a simple demo app that uses [Material Components][].
      **Start iOS Simulator** to launch a simulator.
 
      {{site.alert.warning}}
-       You may not see **Start iOS Simulator** option
+       You might not see **Start iOS Simulator** option
        when you click **No Devices** in VS Code.
        If you're on Mac, then you might have to run following command
        in terminal to launch a simulator.
