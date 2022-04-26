@@ -19,7 +19,7 @@ The initialization process is split into the following stages:
 **Running the app**
 :  Prepares the DOM for your Flutter app and runs it.
 
-This page shows how to add custom behavior
+This page shows how to customize the behavior
 at each stage of the initialization process.
 
 ## Getting started
