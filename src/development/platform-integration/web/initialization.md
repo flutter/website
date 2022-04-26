@@ -88,14 +88,20 @@ learn how to customize each stage of your app’s initialization.
 
 The `loadEntrypoint` method accepts these parameters:
 
-* `entrypointUrl`: The URL of your Flutter app's entrypoint.
-      Defaults to `main.dart.js`.
-* `serviceWorker`: The configuration of the `flutter_service_worker.js`.
-      If this isn’t set, the service worker won’t be used.
-    * `serviceWorkerVersion`: pass *the `serviceWorkerVersion` var* set by
-        the build process in your <strong><code>index.html</code></strong> file
-    * `timeoutMillis`: the timeout value for the service worker load.
-        Defaults to <strong><code>4000ms</code></strong>.
+`entrypointUrl`
+: The URL of your Flutter app's entrypoint. Defaults to `main.dart.js`.
+
+`serviceWorker`
+: The configuration of the `flutter_service_worker.js` file.
+  If this isn’t set, the service worker won’t be used.
+      
+`serviceWorkerVersion`
+: Pass *the `serviceWorkerVersion` var* set by
+  the build process in your <strong><code>index.html</code></strong> file.
+  
+`timeoutMillis`
+: The timeout value for the service worker load.
+  Defaults to <strong><code>4000ms</code></strong>.
 
 
 ### Initializing the engine
