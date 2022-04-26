@@ -40,7 +40,7 @@ contains a simple demo app that uses [Material Components][].
        $ open -a simulator
        ```
 
-       On Windows or Linux it is not possible to launch iOS simulator.
+       On Windows or Linux, it's not possible to launch an iOS simulator.
      {{site.alert.end}}
 
    - To setup a real device, follow the device-specific instructions
