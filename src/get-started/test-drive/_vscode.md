@@ -33,7 +33,7 @@ contains a simple demo app that uses [Material Components][].
      {{site.alert.warning}}
        You may not see **Start iOS Simulator** option
        when you click **No Devices** in VS Code.
-       If you are on Mac then you may have to run following command
+       If you're on Mac, then you might have to run following command
        in terminal to launch a simulator.
 
        ```terminal
