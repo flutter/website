@@ -169,7 +169,7 @@ with the latest initialization template by running `flutter create`.
 From your project directory:
 
 ```
-flutter create .
+$ flutter create .
 ```
 
 You can now customize the startup process as described above.
