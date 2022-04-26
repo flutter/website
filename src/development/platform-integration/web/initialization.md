@@ -156,7 +156,7 @@ use the hooks provided for each stage to update the DOM:
 For a more practical example using CSS animations,
 see the [initialization code][gallery-init] for the Flutter Gallery.
 
-[gallery-init]: https://github.com/flutter/gallery/blob/master/web/index.html
+[gallery-init]: {{site.github}}/flutter/gallery/blob/master/web/index.html
 
 ## Upgrading an older project
 
