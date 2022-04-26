@@ -46,7 +46,7 @@ contains a simple demo app that uses [Material Components][].
    - To setup a real device, follow the device-specific instructions
      on the [Install][] page for your OS.
 1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
-1. Wait for the app to launch &mdash; progress is printed
+1. Wait for the app to launch&mdash;progress is printed
    in the **Debug Console** view.
 
 {% capture save_changes -%}
