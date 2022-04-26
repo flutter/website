@@ -108,7 +108,7 @@ with the default configuration
 instead of using the app runner to call `runApp()`:
 
 
-```
+```js
 _flutter.loader.loadEntrypoint({
   serviceWorker: {
     serviceWorkerVersion: serviceWorkerVersion,
