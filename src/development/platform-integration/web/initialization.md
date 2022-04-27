@@ -170,7 +170,7 @@ If your project was created in Flutter 2.10 or earlier,
 you can create a new `index.html` file
 with the latest initialization template by running `flutter create`.
 
-From your project directory:
+From your project directory, run the following:
 
 ```
 $ flutter create .
