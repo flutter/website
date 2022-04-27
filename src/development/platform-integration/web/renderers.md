@@ -8,12 +8,12 @@ renderers. This page describes both renderers and how to choose the best one for
 your needs. The two renderers are:
 
 **HTML renderer**
-  : Uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
+: Uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
   This renderer has a smaller download size.
 
 **CanvasKit renderer**
-  : This renderer is fully consistent with Flutter mobile and desktop, has
-  faster performance with higher widget density, but adds about 2MB in 
+: This renderer is fully consistent with Flutter mobile and desktop, has
+  faster performance with higher widget density, but adds about 2MB in
   download size.
 
 ## Command line options
@@ -24,8 +24,8 @@ The `--web-renderer` command line option takes one of three values, `auto`,
 * `auto` (default) - automatically chooses which renderer to use. This option
   chooses the HTML renderer when the app is running in a mobile browser, and
   CanvasKit renderer when the app is running in a desktop browser.
-* `html` - always use the HTML renderer. 
-* `canvaskit` - always use the CanvasKit renderer. 
+* `html` - always use the HTML renderer
+* `canvaskit` - always use the CanvasKit renderer
 
 This flag can be used with the `run` or `build` subcommands. For example:
 
@@ -68,7 +68,7 @@ mobile browsers and optimizing for performance on desktop browsers.
 
 Choose the `html` option if you are optimizing download size over performance on
 both desktop and mobile browsers.
-  
+
 Choose the `canvaskit` option if you are prioritizing performance and
 pixel-perfect consistency on both desktop and mobile browsers.
 
