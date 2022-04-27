@@ -11,12 +11,12 @@ or wait until the user presses a button before showing the app.
 
 The initialization process is split into the following stages:
 
-**Loading the entrypoint script**
+* **Loading the entrypoint script**
 :  Fetches the `main.dart.js` script and initializes the service worker.
-**Initializing the Flutter engine**
+* **Initializing the Flutter engine**
 : Initializes Flutter's web engine by downloading required resources
   such as assets, fonts, and CanvasKit.
-**Running the app**
+* **Running the app**
 :  Prepares the DOM for your Flutter app and runs it.
 
 This page shows how to customize the behavior
