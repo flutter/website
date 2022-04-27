@@ -24,8 +24,8 @@ The `--web-renderer` command line option takes one of three values, `auto`,
 * `auto` (default) - automatically chooses which renderer to use. This option
   chooses the HTML renderer when the app is running in a mobile browser, and
   CanvasKit renderer when the app is running in a desktop browser.
-* `html` - always use the HTML renderer.
-* `canvaskit` - always use the CanvasKit renderer.
+* `html` - always use the HTML renderer
+* `canvaskit` - always use the CanvasKit renderer
 
 This flag can be used with the `run` or `build` subcommands. For example:
 
