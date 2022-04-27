@@ -13,8 +13,8 @@ your needs. The two renderers are:
 
 **CanvasKit renderer**
 : This renderer is fully consistent with Flutter mobile and desktop, has
-faster performance with higher widget density, but adds about 2MB in
-download size.
+  faster performance with higher widget density, but adds about 2MB in
+  download size.
 
 ## Command line options
 
