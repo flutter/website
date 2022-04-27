@@ -9,7 +9,7 @@ your needs. The two renderers are:
 
 **HTML renderer**
 : Uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
-This renderer has a smaller download size.
+  This renderer has a smaller download size.
 
 **CanvasKit renderer**
 : This renderer is fully consistent with Flutter mobile and desktop, has
