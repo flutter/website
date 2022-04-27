@@ -108,6 +108,7 @@
       { "source": "/development/tools/inspector", "destination": "/development/tools/devtools/inspector", "type": 301 },
       { "source": "/development/tools/sdk", "destination": "/development/tools/sdk/upgrading", "type": 301 },
       { "source": "/development/tools/sdk/archive", "destination": "/development/tools/sdk/releases", "type": 301 },
+      { "source": "/development/tools/web-renderers", "destination": "/development/platform-integration/web/renderers", "type": 301 },
       { "source": "/development/ui/layout/responsive", "destination": "/development/ui/layout/adaptive-responsive", "type": 301 },
       { "source": "/development/ui/splash-screen", "destination": "/development/ui/advanced/splash-screen", "type": 301 },
       { "source": "/development/ui/splash-screen/android-splash-screen", "destination": "/development/ui/advanced/splash-screen", "type": 301 },
