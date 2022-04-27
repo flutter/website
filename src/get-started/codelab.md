@@ -498,7 +498,7 @@ lazily, on demand.
     ```dart
       class _RandomWordsState extends State<RandomWords> {
         [!final _suggestions = <WordPair>[];!]
-        [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
+        [!final _biggerFont = const TextStyle(fontSize: 18);!]
         // ···
       }
     ```
@@ -521,7 +521,7 @@ lazily, on demand.
 
     <?code-excerpt "lib/main.dart (itemBuilder)" title indent-by="2"?>
     ```dart
-      body: ListView.builder(
+      return ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemBuilder: /*1*/ (context, i) {
           if (i.isOdd) return const Divider(); /*2*/
@@ -537,7 +537,6 @@ lazily, on demand.
             ),
           );
         },
-      ),
     ```
 
     {:.numbered-code-notes}
@@ -580,27 +579,22 @@ lazily, on demand.
     ```dart
       @override
       Widget build(BuildContext context) {
-        [!return Scaffold(!]
-        [!  appBar: AppBar(!]
-        [!    title: const Text('Startup Name Generator'),!]
-        [!  ),!]
-        [!  body: ListView.builder(!]
-        [!    padding: const EdgeInsets.all(16.0),!]
-        [!    itemBuilder: /*1*/ (context, i) {!]
-        [!      if (i.isOdd) return const Divider(); /*2*/!]
+        [!return ListView.builder(!]
+        [!  padding: const EdgeInsets.all(16.0),!]
+        [!  itemBuilder: /*1*/ (context, i) {!]
+        [!    if (i.isOdd) return const Divider(); /*2*/!]
 
-        [!      final index = i ~/ 2; /*3*/!]
-        [!      if (index >= _suggestions.length) {!]
-        [!        _suggestions.addAll(generateWordPairs().take(10)); /*4*/!]
-        [!      }!]
-        [!      return ListTile(!]
-        [!        title: Text(!]
-        [!          _suggestions[index].asPascalCase,!]
-        [!          style: _biggerFont,!]
-        [!        ),!]
-        [!      );!]
-        [!    },!]
-        [!  ),!]
+        [!    final index = i ~/ 2; /*3*/!]
+        [!    if (index >= _suggestions.length) {!]
+        [!      _suggestions.addAll(generateWordPairs().take(10)); /*4*/!]
+        [!    }!]
+        [!    return ListTile(!]
+        [!      title: Text(!]
+        [!        _suggestions[index].asPascalCase,!]
+        [!        style: _biggerFont,!]
+        [!      ),!]
+        [!    );!]
+        [!  },!]
         [!);!]
       }
     ```
@@ -613,57 +607,49 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -13,27 +13,43 @@
-       const MyApp({Key? key}) : super(key: key);
+    @@ -14,12 +14,12 @@
 
        @override
        Widget build(BuildContext context) {
-    -    return MaterialApp(
+         return MaterialApp(
     -      title: 'Welcome to Flutter',
-    -      home: Scaffold(
-    -        appBar: AppBar(
-    -          title: const Text('Welcome to Flutter'),
-    -        ),
-    -        body: const Center(
-    -          child: RandomWords(),
-    -        ),
-    -      ),
-    +    return const MaterialApp(
     +      title: 'Startup Name Generator',
-    +      home: RandomWords(),
-         );
+           home: Scaffold(
+             appBar: AppBar(
+    -          title: const Text('Welcome to Flutter'),
+    +          title: const Text('Startup Name Generator'),
+             ),
+             body: const Center(
+               child: RandomWords(),
+             ),
+    @@ -28,12 +28,30 @@
        }
      }
 
      class _RandomWordsState extends State<RandomWords> {
     +  final _suggestions = <WordPair>[];
-    +  final _biggerFont = const TextStyle(fontSize: 18.0);
+    +  final _biggerFont = const TextStyle(fontSize: 18);
     +
        @override
        Widget build(BuildContext context) {
     -    final wordPair = WordPair.random();
     -    return Text(wordPair.asPascalCase);
-    +    return Scaffold(
-    +      appBar: AppBar(
-    +        title: const Text('Startup Name Generator'),
-    +      ),
-    +      body: ListView.builder(
-    +        padding: const EdgeInsets.all(16.0),
-    +        itemBuilder: /*1*/ (context, i) {
-    +          if (i.isOdd) return const Divider(); /*2*/
+    +    return ListView.builder(
+    +      padding: const EdgeInsets.all(16.0),
+    +      itemBuilder: /*1*/ (context, i) {
+    +        if (i.isOdd) return const Divider(); /*2*/
     +
-    +          final index = i ~/ 2; /*3*/
-    +          if (index >= _suggestions.length) {
-    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-    +          }
-    +          return ListTile(
-    +            title: Text(
-    +              _suggestions[index].asPascalCase,
-    +              style: _biggerFont,
-    +            ),
-    +          );
-    +        },
-    +      ),
+    +        final index = i ~/ 2; /*3*/
+    +        if (index >= _suggestions.length) {
+    +          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+    +        }
+    +        return ListTile(
+    +          title: Text(
+    +            _suggestions[index].asPascalCase,
+    +            style: _biggerFont,
+    +          ),
+    +        );
+    +      },
     +    );
        }
      }
