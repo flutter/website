@@ -517,7 +517,8 @@ lazily, on demand.
     This model allows the suggested list to continue growing
     as the user scrolls.
 
- 2. Add a `ListView.builder` widget to the `build` method of the `_RandomWordsState` class:
+ 2. Return a `ListView` widget from the `build` method
+    of the `_RandomWordsState` class using the `ListView.builder` constructor:
 
     <?code-excerpt "lib/main.dart (itemBuilder)" title indent-by="2"?>
     ```dart
@@ -557,7 +558,8 @@ lazily, on demand.
     word pair. This function displays each new pair in a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
- 3. Add a `ListTile` in the `itemBuilder` body of the `ListView.builder` in `_RandomWordsState`:
+ 3. Add a `ListTile` in the `itemBuilder` body
+    of the `ListView.builder` in `_RandomWordsState`:
 
     <?code-excerpt "lib/main.dart (listTile)" title indent-by="2"?>
     ```dart
@@ -599,8 +601,8 @@ lazily, on demand.
       }
     ```
 
- 5. In the `MyApp` class, update the `build()` method by changing the title,
-    and changing the home to be a `RandomWords` widget:
+ 5. In the `MyApp` class, update the `build()` method
+    by changing the title of the `AppBar`:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step3_stateful_widget,step4_infinite_list}/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
