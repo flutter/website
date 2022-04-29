@@ -12,7 +12,7 @@
     "bootstrap-scss": "^4.6.1",
     "diff2html-cli": "^5.2.2",
     "font-awesome": "^4.7.0",
-    "superstatic": "^7.1.0",
-    "firebase-tools": "v10.6.0"
+    "superstatic": "^8.0.0",
+    "firebase-tools": "^v10.7.2"
   }
 }

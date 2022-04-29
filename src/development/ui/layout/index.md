@@ -9,7 +9,7 @@ diff2html: true
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 {% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
-{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/dev/integration_tests/flutter_gallery/lib/demo {%- endcapture -%}
+{% capture demo -%} {{site.repo.gallery}}/tree/{{site.branch}}/lib/demos {%- endcapture -%}
 
 <?code-excerpt path-base=""?>
 
@@ -909,7 +909,7 @@ its render box.
   the [Material Design palette][]
   for a particular color family.
 
-  **Dart code:** [colors_demo.dart]({{demo}}/colors_demo.dart) from the
+  **Dart code:** [colors_demo.dart]({{demo}}/reference/colors_demo.dart) from the
   [Flutter Gallery][repo]
 </div>
 </div>
@@ -986,13 +986,12 @@ or partially overlap the base widget.
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-5" markdown="1">
-  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="mw-100" alt="An image with a grey gradient across the top">
+  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="mw-100" alt="An image with a icon overlaid on top">
   {:.text-center}
 
-  Uses `Stack` to overlay a gradient to the top of the image. The gradient
-  ensures that the toolbar's icons are distinct against the image.
+  Uses `Stack` to overlay an icon on top of an image.
 
-  **Dart code:** [contacts_demo.dart]({{demo}}/contacts_demo.dart)
+  **Dart code:** [bottom_navigation_demo.dart]({{demo}}/material/bottom_navigation_demo.dart)
   from the [Flutter Gallery][repo]
 </div>
 </div>
@@ -1154,17 +1153,17 @@ and trailing icons. `ListTile` is most commonly used in
   <img src='/assets/images/docs/ui/layout/card.png' class="mw-100" alt="Card containing 3 ListTiles">
   {:.text-center}
 
-  A `Card` containing 3 `ListTiles`.
+  A `Card` containing 3 `ListTile`s.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6" markdown="1">
   <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' class="border mw-100" height="200px"
-      alt="3 ListTiles, each containing a pull-down button">
+      alt="4 ListTiles, each containing a leading avatar">
   {:.text-center}
 
-  Uses `ListTile` to list 3 drop down button types.<br>
-  **Dart code:** [buttons_demo.dart]({{demo}}/material/buttons_demo.dart)
+  Uses `ListTile` with leading widgets.<br>
+  **Dart code:** [list_demo.dart]({{demo}}/material/list_demo.dart)
   from the [Flutter Gallery][repo]
 </div>
 </div>
@@ -1258,9 +1257,9 @@ The following resources might help when writing layout code.
 [Material library]: {{api}}/material/material-library.html
 [pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
 [`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
-[repo]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
+[repo]: {{site.repo.gallery}}/tree/main
 [`Row`]: {{api}}/widgets/Row-class.html
-[running app]: https://flutter.github.io/gallery/#/
+[running app]: {{site.gallery}}
 [`Scaffold`]: {{api}}/material/Scaffold-class.html
 [`SizedBox`]: {{api}}/widgets/SizedBox-class.html
 [`Stack`]: {{api}}/widgets/Stack-class.html

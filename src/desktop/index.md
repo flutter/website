@@ -220,11 +220,11 @@ and run your application to see it launch on the desktop.
 
 To create a new application that includes desktop support
 (in addition to mobile and web support), run the following commands,
-substituting `myapp` with the name of your project:
+substituting `my_app` with the name of your project:
 
 ```terminal
-$ flutter create myapp
-$ cd myapp
+$ flutter create my_app
+$ cd my_app
 ```
 To launch your application from the command line,
 enter one of the following commands from the top
@@ -379,7 +379,7 @@ In addition to that executable, you need the following:
   Release
   │   flutter_windows.dll
   │   msvcp140.dll
-  │   myapp.exe
+  │   my_app.exe
   │   vcruntime140.dll
   │   vcruntime140_1.dll
   │
@@ -712,7 +712,7 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
 [Photo Search app]: {{site.repo.organization}}/samples/tree/master/desktop_photo_search
 [running web app]: {{site.gallery}}
 [flutter-gallery-repo]: {{site.repo.gallery}}
-[README]: {{site.repo.gallery}}#flutter-gallery
+[README]: {{site.repo.gallery}}#readme
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

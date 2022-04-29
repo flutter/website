@@ -33,6 +33,8 @@ an app without having to develop everything from scratch.
     or any combination thereof.
     For example, a plugin might provide Flutter apps
     with the ability to use a device's camera.
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Y9WifT8aN6o?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {{site.alert.end}}
 
 Existing packages enable many use cases—for example,
@@ -379,6 +381,7 @@ To use this plugin:
     ```dart
     import 'package:flutter/material.dart';
     import 'package:url_launcher/url_launcher.dart';
+    import 'package:path/path.dart' as p;
 
     void main() {
       runApp(const MyApp());
@@ -399,7 +402,7 @@ To use this plugin:
       const DemoPage({Key? key}) : super(key: key);
 
       launchURL() {
-        launch('https://flutter.dev');
+        launchUrl(p.toUri('https://flutter.dev'));
       }
 
       @override

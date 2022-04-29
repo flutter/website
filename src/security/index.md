@@ -7,22 +7,51 @@ created with it seriously. This page describes how to report any
 vulnerabilities you may find, and lists best practices to minimize
 the risk of introducing a vulnerability.
 
+## Security philosophy
+Flutter security strategy is based on five key pillars
+
+* **Identify**: Track & prioritize key security risks by identifying core assets, key threats and vulnerabilities. 
+* **Detect**: Detect and identify vulnerabilities using techniques and tools like vulnerability scanning,
+  static application security testing and fuzzing.
+* **Protect**: Eliminate risks by mitigating known vulnerabilities and protect critical assets against source threats.
+* **Respond**: Define processes to report, triage and respond to vulnerabilities or attacks.
+* **Recover**: Build capabilities to contain and recover from an incident with minimal impact.
+
 ## Reporting vulnerabilities
 
-To report a vulnerability, please e-mail `security@flutter.dev` with a description of the issue,
+To report a vulnerability, please email `security@flutter.dev` with a description of the issue,
 the steps you took to create the issue, affected versions, and if known, mitigations for the issue.
 
-We should reply within three working days, probably much sooner.
+We should reply within three working days.
 
-We use GitHub's security advisory feature to track open security issues. You should expect
-a close collaboration as we work to resolve the issue you have reported. Please reach out to
-`security@flutter.dev` again if you do not receive prompt attention and regular updates.
+We use GitHub’s security advisory feature to track open security issues. You should expect a close collaboration as we work to resolve the issue you have reported. 
 
-You may also reach out to the team via our public [Discord]({{site.repo.flutter}}/wiki/Chat) chat channels; however, please make
-sure to e-mail `security@flutter.dev` when reporting an issue, and avoid revealing information about
-vulnerabilities in public if that could put users at risk.
+Please reach out to `security@flutter.dev` again if you do not receive prompt attention and regular updates. You may also reach out to the team via our public [Discord](https://github.com/flutter/flutter/wiki/Chat) chat channels; however, when reporting an issue, please e-mail `security@flutter.dev` instead of Discord or filing a github issue to avoid revealing information about vulnerabilities in public that could put users at risk.
 
 For more details on how we handle security vulnerabilities, please see our [internal processes]({{site.repo.flutter}}/security/policy).
+
+##  Flagging existing issues as security-related
+If you believe that an existing issue is security-related, we ask that you send an email to `security@flutter.dev`. 
+The email should include the issue ID and a short description of why it should be handled according to this security policy.
+
+## Supported versions
+
+We commit to publishing security updates for the version of Flutter currently
+on the `stable` branch.
+
+## Expectations
+
+We treat security issues equivalent to a P0 priority level and release a beta or hotfix for any major security issues found in the most recent stable version of our SDK. 
+
+Any vulnerability reported for flutter websites like flutter.dev does not require a release and will be fixed in the website itself.
+
+Flutter does not have a bug bounty program.
+
+## Receiving security updates
+
+The best way to receive security updates is to subscribe to the 
+[flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce) mailing list or updates to the Discord [channel](https://discord.com/channels/608014603317936148/608116355836805126).
+We will also announce security updates in the technical release blog post.
 
 ## Best practices
 
