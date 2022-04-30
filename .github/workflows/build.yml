@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - io22-working
   pull_request:
     branches:
       - main
+      - io22-working
   schedule:
     - cron: "0 0 * * 0"
 
@@ -21,7 +23,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    if: github.repository == 'flutter/website'
+    if: github.repository == 'flutter/website-private'
     strategy:
       fail-fast: false
       matrix:
@@ -40,31 +42,3 @@ jobs:
           TEST_TARGET_CHANNEL: ${{ matrix.channel }}
         continue-on-error: ${{ matrix.experimental }}
 
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'push'
-      && github.ref == 'refs/heads/main'
-      && github.repository == 'flutter/website'
-    steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
-        with:
-          submodules: "recursive"
-      - name: Install Node
-        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-      - name: Install firebase tools
-        run: npm ci
-      - name: Update path
-        run: echo "./node_modules/.bin/" >> $GITHUB_PATH
-      - name: Build
-        run: make build
-        env:
-          DISABLE_TESTS: 1
-      - name: Deploy
-        run: make deploy
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          FIREBASE_ALIAS: default
