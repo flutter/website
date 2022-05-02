@@ -128,27 +128,6 @@ If you changed `Deployment Target` in your Xcode project,
 open `ios/Flutter/AppframeworkInfo.plist` in your Flutter app
 and update the `MinimumOSVersion` value to match.
 
-## Updating the app's version number
-
-The default version number of the app is `1.0.0`.
-To update it, navigate to the `pubspec.yaml` file
-and update the following line:
-
-`version: 1.0.0+1`
-
-The version number is three numbers separated by dots,
-such as `1.0.0` in the example above, followed by an optional
-build number such as `1` in the example above, separated by a `+`.
-
-Both the version and the build number may be overridden in Flutter's
-build by specifying `--build-name` and `--build-number`,
-respectively.
-
-In iOS, `build-name` uses `CFBundleShortVersionString`
-while `build-number` uses `CFBundleVersion`.
-Read more about iOS versioning at [Core Foundation Keys][]
-on the Apple Developer's site.
-
 ## Add an app icon
 
 When a new Flutter app is created, a placeholder icon set is created.
@@ -161,21 +140,36 @@ app's icons:
 1. Verify the icon has been replaced by running your app using
    `flutter run`.
 
-## Create a build archive with Xcode
-
-This step covers creating a build archive and uploading
-your build to App Store Connect.
+## Create a build archive and upload to App Store Connect
 
 During development, you've been building, debugging, and testing
 with _debug_ builds. When you're ready to ship your app to users
 on the App Store or TestFlight, you need to prepare a _release_ build.
-At this point, you might consider [obfuscating your Dart code][]
-to make it more difficult to reverse engineer. Obfuscating
-your code involves adding a couple flags to your build command.
 
-In Xcode, configure the app version and build:
+### Update the app's build and version numbers
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
+The default version number of the app is `1.0.0`.
+To update it, navigate to the `pubspec.yaml` file
+and update the following line:
+```yaml
+version: 1.0.0+1
+```
+The version number is three numbers separated by dots,
+such as `1.0.0` in the example above, followed by an optional
+build number such as `1` in the example above, separated by a `+`.
+
+Both the version and the build number can be overridden in
+`flutter build ipa` by specifying `--build-name` and `--build-number`,
+respectively.
+
+In iOS, `build-name` uses `CFBundleShortVersionString`
+while `build-number` uses `CFBundleVersion`.
+Read more about iOS versioning at [Core Foundation Keys][]
+on the Apple Developer's site.
+
+You may also override the `pubspec.yaml` build name and number in Xcode:
+
+1. Open `Runner.xcworkspace` in your app's `ios` folder.
 1. Select **Runner** in the Xcode project navigator, then select the
    **Runner** target in the settings view sidebar.
 1. In the Identity section, update the **Version** to the user-facing
@@ -184,39 +178,62 @@ In Xcode, configure the app version and build:
    build number used to track this build on App Store Connect.
    Each upload requires a unique build number.
 
-Finally, create a build archive and upload it to App Store Connect:
+### Create an app bundle
+
+Run `flutter build ipa` to produce an Xcode build archive (`.xcarchive` file)
+in your project's `build/ios/archive/` directory and an App Store app
+bundle (`.ipa` file) in `build/ios/ipa`.
+
+Consider adding the `--obfuscate` and `--split-debug-info` flags to
+[obfuscate your Dart code][] to make it more difficult
+to reverse engineer.
+
+If you are not distributing to the App Store, you can optionally
+choose a different [export method][app_bundle_export_method] by
+adding the option `--export-method ad-hoc`,
+`--export-method development` or `--export-method enterprise`.
+
+
+{{site.alert.note}}
+  On versions of Flutter where `flutter build ipa --export-method` is unavailable,
+  open `build/ios/archive/MyApp.xcarchive` and follow the instructions below
+  to validate and distribute the app from Xcode.
+{{site.alert.end}}
+
+
+### Upload the app bundle to App Store Connect
+
+Once the app bundle is created, upload it to
+[App Store Connect][appstoreconnect_login] by either:
 
 <ol markdown="1">
 <li markdown="1">
 
-Run `flutter build ipa` to produce a build archive.
-
-{{site.alert.note}}
-  On versions of Flutter where `flutter build ipa`
-  is unavailable, open Xcode and select **Product > Archive**.
-  In the sidebar of the Xcode Organizer window, select your iOS app,
-  then select the build archive you just produced.
-{{site.alert.end}}
+Install and open the [Apple Transport macOS app][apple_transport_app].
+Drag and drop the `build/ios/ipa/*.ipa` app bundle into the app.
 
 </li>
+
 <li markdown="1">
 
-Open `build/ios/archive/MyApp.xcarchive` in Xcode.
+Or upload the app bundle from the command line by running:
+```bash
+xcrun altool --upload-app --type ios -f build/ios/ipa/*.ipa --apiKey your_api_key --apiIssuer your_issuer_id
+```
+Run `man altool` for details about how to authenticate with the App Store Connect API key.
 
 </li>
+
 <li markdown="1">
+
+Or open `build/ios/archive/MyApp.xcarchive` in Xcode.
 
 Click the **Validate App** button. If any issues are reported,
 address them and produce another build. You can reuse the same
 build ID until you upload an archive.
 
-</li>
-<li markdown="1">
-
 After the archive has been successfully validated, click
-**Distribute App**. You can follow the status of your build in the
-Activities tab of your app's details page on
-[App Store Connect][appstoreconnect_login].
+**Distribute App**.
 
 {{site.alert.note}}
   When you export your app at the end of **Distribute App**,
@@ -231,6 +248,9 @@ Activities tab of your app's details page on
 </li>
 </ol>
 
+You can follow the status of your build in the
+Activities tab of your app's details page on
+[App Store Connect][appstoreconnect_login].
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers
 on TestFlight. At this point you can choose whether to release
@@ -470,5 +490,7 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
+[obfuscate your Dart code]: {{site.url}}/deployment/obfuscate
 [TestFlight]: {{site.apple-dev}}/testflight/
+[app_bundle_export_method]: https://help.apple.com/xcode/mac/current/#/dev31de635e5
+[apple_transport_app]: https://apps.apple.com/us/app/transporter/id1450874784
