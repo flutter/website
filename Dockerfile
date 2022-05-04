@@ -23,6 +23,7 @@ WORKDIR /app
 ENV JEKYLL_ENV=development
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
+RUN bundle config set force_ruby_platform true
 RUN bundle install
 
 # Install Node deps
