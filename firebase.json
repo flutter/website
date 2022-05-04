@@ -359,6 +359,7 @@
       { "source": "/go/tracking-material-states", "destination": "https://docs.google.com/document/d/1PJdsOoXhWdhnpYKlW5Nm2Di3Di5XARoYyHerMwWovXE", "type": 301 },
       { "source": "/go/trackpad-gestures", "destination": "https://docs.google.com/document/d/1oRvebwjpsC3KlxN1gOYnEdxtNpQDYpPtUFAkmTUe-K8/edit?usp=sharing&resourcekey=0-pt4_T7uggSTrsq2gWeGsYQ", "type": 301 },
       { "source": "/go/triage-2022-rfp", "destination": "https://docs.google.com/document/d/1Kyrh1WijM04XqtUkVbL2uwDthlG9v3sljgl9HRlU4bU/edit", "type": 301 },
+      { "source": "/go/try", "destination": "https://github.com/flutter/put-flutter-to-work", "type": 301 },
       { "source": "/go/ui-imitation-games", "destination": "https://docs.google.com/document/d/1SbMjMiFhD2OZGTT3TCAOx6yfG-SYQ5F_fn7wwlZMumM/edit", "type": 301 },
       { "source": "/go/union-typed-transform-stack-in-hit-test", "destination": "https://docs.google.com/document/d/1EsH7g-oyQIDZpRteg94iKJKgD7kVngZWq9ngDe6ORbM/edit?usp=sharing", "type": 301 },
       { "source": "/go/unobstructed-platform-views", "destination": "https://docs.google.com/document/d/1_P3wa_nMqnhKsy-lDlNxT9GThZX2WhfVym4O4M7Q9qs/edit#", "type": 301 },
