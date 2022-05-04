@@ -10,18 +10,6 @@ Flutter's desktop support also extends to plugins&mdash;you
 can install existing plugins that support the Windows,
 macOS, or Linux platforms, or you can create your own.
 
-{{site.alert.note}}
-  Windows is fully supported as a development target. For more information, see
-  [Announcing Flutter for Windows][]. 
-
-  macOS and Linux desktop app support is still beta-quality. Snapshots of their
-  support are available on the stable channel, but we recommend that you use the
-  beta channel for access to the latest features and bug fixes on those
-  platforms.
-{{site.alert.end}}
-
-[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
-
 ## Requirements
 
 To compile a desktop application, you must build it **on** the targeted
@@ -122,36 +110,10 @@ to create a new project with desktop support.
 
 ### Set up
 
-On Windows, desktop support is enabled on Flutter 2.10 or higher. 
+On Windows, desktop support is enabled on Flutter 2.10 or higher. On macOS and Linux, 
+desktop support is enabled on Flutter 3 or higher.
 
-On macOS and Linux, desktop support is disabled by default in the stable
-channel. You can manually enable it with one of these commands, depending on
-which platform you are running:
-
-```terminal
-$ flutter config --enable-macos-desktop
-$ flutter config --enable-linux-desktop
-```
-
-{{site.alert.note}}
-  You only need to execute
-  `flutter config --enable-<platform>-desktop`
-  once. You can check the status of your configuration at any time by using
-  the command `flutter config` with no arguments.
-{{site.alert.end}}
-
-To test that desktop support is configured, use the `flutter devices` command to
-list the available targets. In addition to any mobile or web devices, you should
-see a row for the operating system you're running on, for example (on Windows):
-
-``` terminal
-C:\> flutter devices
-1 connected device:
-
-Windows (desktop) • windows • windows-x64 • Microsoft Windows [Version 10.0.22557.1]
-```
-
-You might also run `flutter doctor` to see if there are any unresolved issues.
+You might run `flutter doctor` to see if there are any unresolved issues.
 You should see a checkmark for each successfully configured area. It should look
 something like the following on Windows, with an entry for "develop for Windows":
 
