@@ -79,7 +79,7 @@ bindings, and the implementation of those bindings, are in different places.
 If indeed all that is needed is a callback, without all the complexity (or
 flexibility) of `Actions` and `Shortcuts`, you can already use a `Focus` widget
 for this. For example, here's the implementation of Flutter's simple
-[`CallbackShortcuts`][] widget (available on the dev branch) that takes a map of
+[`CallbackShortcuts`][] widget that takes a map of
 activators and executes callbacks for them:
 
 
