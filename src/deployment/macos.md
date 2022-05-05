@@ -365,15 +365,6 @@ find . -name "Podfile" -execdir pod install \;
 </li>
 <li markdown="1">
 
-Enable the Flutter macOS option:
-
-```bash
-flutter config --enable-macos-desktop
-```
-
-</li>
-<li markdown="1">
-
 Build the Flutter macOS project:
 
 ```bash
