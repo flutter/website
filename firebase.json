@@ -339,6 +339,7 @@
       { "source": "/go/synchronized-widgettester", "destination": "https://docs.google.com/document/d/1VumsuG6dEFUVpPQLqqKJnhI0CoIS9fCAMN-NFHIPmo0/edit", "type": 301 },
       { "source": "/go/system-mouse-cursor", "destination": "https://docs.google.com/document/d/1bJLRy6flZ0wDCbpl2QA8SURUWXIvRJKMRRemxlOo1cA/edit", "type": 301 },
       { "source": "/go/tabs-and-text-fields", "destination": "https://docs.google.com/document/d/1aHucsI0NWGWu2Dm_XFsBLxiTgJRM8h2XBB7PVAnVxlU/edit?usp=sharing&resourcekey=0-zLbXFlP_A2e_Yoi43vdiiw", "type": 301 },
+      { "source": "/go/take-flutter-home", "destination": "https://github.com/flutter/put-flutter-to-work", "type": 301 },
       { "source": "/go/template", "destination": "https://docs.google.com/document/d/1SFRO8U2toOlAaZ38dsuEU7Wm5fn41wvBCWKiwADqfmw/edit", "type": 301 },
       { "source": "/go/test-all-platforms", "destination": "https://docs.google.com/document/d/1-gw2zYFs_jBqsFPpXRonRNLYn6XNgvm34jc9HT84VKE/edit?usp=sharing", "type": 301 },
       { "source": "/go/test-widgets-flutter-binding-clock", "destination": "https://docs.google.com/document/d/1EkkLbECNBwHgddBQAZqEy7iQLTIxR1rgChKzxcLwhio/edit", "type": 301 },
