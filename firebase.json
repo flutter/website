@@ -223,6 +223,7 @@
       { "source": "/go/federated-platforms", "destination": "https://docs.google.com/document/d/1z_4Z5JMTbk5c4FpayVAb-PTz2wLP-aSCirbieavT3Ws/edit?usp=sharing", "type": 301 },
       { "source": "/go/federated-plugins", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit", "type": 301 },
       { "source": "/go/ffi-plugins", "destination": "https://docs.google.com/document/d/1vMw-W6L-r-uL1SUgzDh6J5rmtqum7SZdO9khWACrZJI/edit?resourcekey=0-vvjEK88N-pApyKTPWJ2IZQ", "type": 301 },
+      { "source": "/go/flame-dartpad", "destination": "https://dartpad.dev/?id=3e52ca7b51ba15f989ad880b8b3314a2", "type": 301 },
       { "source": "/go/floating-snackbar-offset", "destination": "https://docs.google.com/document/d/1elP-y83PtvfAZHNcpHCtnOFhZO9VnnlobwfQ33QO4hg/edit", "type": 301 },
       { "source": "/go/flutter-doctor-app-folder", "destination": "https://docs.google.com/document/d/1_N70oh5rl0pMlz-epE_3fIr7gqE94dgoV-DHq5OlF2I/edit", "type": 301 },
       { "source": "/go/flutter-engine-clocks", "destination": "https://docs.google.com/document/d/1Sx8QA1qXgJGw5r4ESviDnU2LSShNHiq_LjbRWPgSvXQ/edit?usp=sharing&resourcekey=0-BoBvLxgqf_nc_rwLc0zmTw", "type": 301 },
