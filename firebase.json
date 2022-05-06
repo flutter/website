@@ -245,6 +245,7 @@
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/google-apis", "destination": "/development/data-and-backend/google-apis?utm_source=go-link&utm_medium=referral&utm_campaign=go-google-apis", "type": 301 },
       { "source": "/go/go-router-improvements", "destination": "https://docs.google.com/document/d/1_mRXinbL_rb0mUt6DAFZ8kj0kh33ZjEMJuUq4PJgwj8/edit?usp=sharing&resourcekey=0-sYbRzE9opneOFZ5F8J3gGw", "type": 301 },
+      { "source": "/go/go-router-v4-breaking-changes", "destination": "https://docs.google.com/document/d/1T2LmzMj5HpD7hEexXL4Xz6vqoJD81bEGaa9NsV24faw/edit?usp=sharing&resourcekey=0-PuQbtDVl7ZabpJ2B9AHWUg", "type": 301 },
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit", "type": 301 },
       { "source": "/go/hot-ui-early-prototype-demos", "destination": "https://docs.google.com/document/d/1ZaHqKnON8-WEhke3Y6FpHeuB5BNlxDQj1cCYB1SoI_g", "type": 301 },
       { "source": "/go/i18n-user-guide", "destination": "https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit", "type": 301 },
