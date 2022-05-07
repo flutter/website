@@ -890,7 +890,7 @@ toggle `alwaysShown` when on a desktop platform:
 <?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
 ```dart
 return Scrollbar(
-  isAlwaysShown: DeviceType.isDesktop,
+  thumbVisibility: DeviceType.isDesktop,
   controller: _scrollController,
   child: GridView.count(
       controller: _scrollController,
