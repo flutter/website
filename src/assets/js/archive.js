@@ -126,7 +126,7 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
 }
 
 function updateDownloadLink(releases, os, arch) {
-  var channel = "beta"; // !!!! SWITCH BACK TO STABLE !!!!
+  var channel = "stable";
   var releasesForChannel = releases.releases.filter(function (release) {
     return release.channel == channel;
   });
