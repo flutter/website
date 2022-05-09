@@ -104,8 +104,8 @@ $ sudo gem install cocoapods
   The default version of Ruby requires `sudo` to install the CocoaPods gem.
   If you are using a Ruby Version manager, you might need to run without `sudo`.
 
-  Additionally, if are installing on an [Apple Silicon Mac][],
-  also run the command:
+  Additionally, if you are installing on an [Apple Silicon Mac][],
+  run the command:
   ```terminal
   $ sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
   ```
