@@ -21,9 +21,11 @@ your development environment must meet these minimum requirements:
   [install `git` separately][]. 
 
 {{site.alert.important}}
-  If you're installing on a Mac with the latest [Apple M1 processor][],
-  you may find [these supplementary notes][] useful reading as we complete support
-  for the new Apple Silicon architecture.
+  If you're installing on an [Apple Silicon Mac][], you must also have the Rosetta
+  translation environment available, which you can install manually by running:
+  ```terminal
+  $ sudo softwareupdate --install-rosetta --agree-to-license
+  ```
 {{site.alert.end}}
 
 {% include_relative _get-sdk-mac.md %}
@@ -48,7 +50,7 @@ to be able to build and run your first Flutter app.
 
 Set up your preferred editor.
 
-[Apple M1 processor]: https://www.apple.com/mac/m1
+[Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
 [these supplementary notes]: {{site.repo.flutter}}/wiki/Developing-with-Flutter-on-Apple-Silicon
 [Xcode]: {{site.apple-dev}}/xcode/
 [install `git` separately]: https://git-scm.com/download/mac
