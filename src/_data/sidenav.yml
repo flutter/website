@@ -103,9 +103,9 @@
         - title: Advanced UI
           permalink: /development/ui/advanced
           children:
-            - title: Actions & shortcuts [NEW]
+            - title: Actions & shortcuts
               permalink: /development/ui/advanced/actions_and_shortcuts
-            - title: Keyboard focus [NEW]
+            - title: Keyboard focus
               permalink: /development/ui/advanced/focus
             - title: Gestures
               permalink: /development/ui/advanced/gestures
@@ -164,7 +164,7 @@
               permalink: /development/platform-integration/web/faq
             - title: Web renderers
               permalink: /development/platform-integration/web/renderers
-            - title: Custom app initialization
+            - title: Custom app initialization NEW
               permalink: /development/platform-integration/web/initialization
         - title: Desktop
           permalink: /desktop
@@ -373,34 +373,34 @@
 
 - title: Resources
   children:
-    - title: Dart resources
-      permalink: /resources/bootstrap-into-dart
-    - title: Compatibility policy
-      permalink: /resources/compatibility
     - title: Architectural overview
       permalink: /resources/architectural-overview
-    - title: Inside Flutter
-      permalink: /resources/inside-flutter
+    - title: Books
+      permalink: /resources/books
+    - title: Compatibility policy
+      permalink: /resources/compatibility
+    - title: Contributing to Flutter
+      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+    - title: Creating useful bug reports
+      permalink: /resources/bug-reports
+    - title: Dart resources
+      permalink: /resources/bootstrap-into-dart
+    - title: Design Documents
+      permalink: /resources/design-docs
+    - title: FAQ
+      permalink: /resources/faq
+    - title: Casual Games Toolkit NEW
+      permalink: /resources/games-toolkit
     - title: Google Fonts package
       permalink: https://pub.dev/packages/google_fonts
+    - title: Inside Flutter
+      permalink: /resources/inside-flutter
+    - title: Official brand assets
+      permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
     - title: Platform adaptations
       permalink: /resources/platform-adaptations
     - title: Videos and online courses
       permalink: /resources/videos
-    - title: Books
-      permalink: /resources/books
-    # - title: Flutter developer communities # TODO
-    # - title: Flutter learning resources # TODO
-    - title: FAQ
-      permalink: /resources/faq
-    - title: Design Documents
-      permalink: /resources/design-docs
-    - title: Creating useful bug reports
-      permalink: /resources/bug-reports
-    - title: Contributing to Flutter
-      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
-    - title: Official brand assets
-      permalink: https://drive.google.com/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT
 
 - title: Reference
   expanded: true
