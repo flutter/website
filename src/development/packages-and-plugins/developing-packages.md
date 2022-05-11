@@ -553,16 +553,21 @@ The native build systems that are invoked by FFI (and method channels) plugins a
 ### Step 3: Binding to native code
 
 To use the native code, bindings in Dart are needed.
+
 To avoid writing these by hand, they are generated from the header file
 (`src/hello.h`) by [`package:ffigen`][].
-Regenerate the bindings by running `flutter pub run ffigen --config ffigen.yaml`.
+Regenerate the bindings by running:
+
+```terminal
+$  flutter pub run ffigen --config ffigen.yaml
+```
 
 ### Step 4: Invoking native code
 
 Very short-running native functions can be directly invoked from any isolate.
 For an example, see `sum` in `lib/hello.dart`.
 
-Longer-running functions should be invoked on a helper isolate to avoid
+Longer-running functions should be invoked on a [helper isolate][] to avoid
 dropping frames in Flutter applications.
 For example, see `sumAsync` in `lib/hello.dart`.
 
@@ -809,6 +814,7 @@ PENDING
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
 [Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
+[helper isolate]: {{site.dart-site}}/guides/language/concurrency#background-workers
 [How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
