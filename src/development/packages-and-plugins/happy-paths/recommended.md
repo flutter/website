@@ -17,12 +17,15 @@ and you can then leverage one or more AdMob features, including the following:
 * Monetization reports to help you make decisions about your app. 
 
 #### Useful links
+{:.no_toc}
+
 * [Get started with the AdMob](https://developers.google.com/admob/flutter/quick-start) guide
 * [Create an AdMob account](https://admob.google.com/home/get-started/) tutorial
 * [`google_mobile_ads`]({{site.pub-pkg}}/google_mobile_ads/install) package on pub.dev
 
 
 ## Background processing ![Background processing happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_Processing_3d_001.png){:width="20%"}
+
 The background processing path shows you how to run a Dart function 
 in the background on mobile devices. With background processing, 
 you can perform tasks like making an HTTP request, running an 
@@ -48,11 +51,14 @@ Some features of WorkManager include:
   idle (Android only)  
  
 #### Useful links
+{:.no_toc}
+
 * [Android setup]({{site.github}}/fluttercommunity/flutter_workmanager/blob/main/ANDROID_SETUP.md)
 * [iOS setup]({{site.github}}/fluttercommunity/flutter_workmanager/blob/main/IOS_SETUP.md)
 
 
 ## Geolocation ![Geolocation happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_Geolocation_3d_001.png){:width="20%"}
+
 Geolocation, the ability to determine where in the world a user is located, is 
 critical functionality for many applications; for example, shopping apps need 
 to calculate shipping, fitness apps need to track distance traveled, and so on. 
@@ -71,6 +77,8 @@ Features include:
 * Ability to determine whether a devices's location services are enabled  
 
 #### Useful links
+{:.no_toc}
+
 * [How to get a user's location with the geolocator plugin](https://www.digitalocean.com/community/tutorials/flutter-geolocator-plugin) tutorial
 * [`geolocator`]({{site.pub-pkg}}/geolocator) plugin
 
@@ -89,6 +97,7 @@ and `json_serializable` maps those immutable
 objects to and from the JSON format.   
 
 #### Useful links
+{:.no_toc}
 
 * Freezed
   * [`freezed` package]({{site.pub-pkg}}/freezed#how-to-use) video
@@ -100,6 +109,7 @@ objects to and from the JSON format.
   * [`json_serializable`]({{site.pub-api}}/json_serializable/latest/) package
 
 ## Structured local storage ![Structured local storage happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_Storage_3d_001.png){:width="20%"}
+
 Structured local storage increases app performance and improves the user 
 experience by selectively saving expensive or slow data on a user’s device. 
 This path suggests two plugins for local persistence: `drift` and `hive`. 
@@ -115,6 +125,8 @@ require a fully relational database, especially if they use document-based stora
 on their server (like Cloud Firestore) will benefit most from this package.
 
 #### Useful links
+{:.no_toc}
+
 * Drift:
   * [The boring flutter development show using Drift]({{site.youtube-site}}/watch?v=9o_M-LjO4no) video
   * [Fluent sqlite database]({{site.youtube-site}}/watch?v=zpWsedYMczM&t=9s)
@@ -126,6 +138,7 @@ on their server (like Cloud Firestore) will benefit most from this package.
 
   
 ## Web sockets ![Web Sockets Happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_WebSockets_3d_001.png){:width="20%"}
+
 Web sockets enable communication between Flutter clients and servers. 
 This path suggests two packages to use when installing and using web sockets.
 
@@ -135,6 +148,8 @@ package for client-side web socket connections, and the
 for server-side Dart web sockets.  
 
 #### Useful links
+{:.no_toc}
+
 * web_socket_channel:
   * [`Work with WebSockets`]({{site.url}}/cookbook/networking/web-sockets) 
     cookbook recipe
