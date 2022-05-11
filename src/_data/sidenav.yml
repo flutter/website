@@ -176,7 +176,7 @@
         - title: Happy paths project NEW
           permalink: /development/packages-and-plugins/happy-paths
         - title: Happy paths recommendations NEW
-          permalink: /development/packages-and-plugins/happy-paths/recommended
+          permalink: /development/packages-and-plugins/happy-paths-recommended
         - title: Developing packages & plugins
           permalink: /development/packages-and-plugins/developing-packages
         - title: Flutter Favorites program
