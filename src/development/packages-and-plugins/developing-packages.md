@@ -569,7 +569,7 @@ For an example, see `sum` in `lib/hello.dart`.
 
 Longer-running functions should be invoked on a [helper isolate][] to avoid
 dropping frames in Flutter applications.
-For example, see `sumAsync` in `lib/hello.dart`.
+For an example, see `sumAsync` in `lib/hello.dart`.
 
 ## Adding documentation
 
