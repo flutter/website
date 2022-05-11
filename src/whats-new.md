@@ -64,7 +64,7 @@ and the [Flutter 3 release notes][].
   including how to minimize layout passes caused
   by intrinsics, and techniques to minimize
   calls to `saveLayer()`.
-* The [Flutter Firebase][] docs have been overhauled.
+* Firebase's Flutter docs have been overhauled.
   Check out the newly updated
   [Flutter Firebase get started guide][].
 * The [dart.dev][] site has its own [what's new][dart-whats-new]
@@ -72,8 +72,8 @@ and the [Flutter 3 release notes][].
   [Learning Dart as a JavaScript developer][js-to-dart].
   Stay tuned for similar articles on Swift and C#.
 
-[Customizing web app initializaton]: {{site.url}}/development/platform-integration/web/initialization
-[darts-whats-new]: {{site.dart-site}}/guides/whats-new
+[Customizing web app initialization]: {{site.url}}/development/platform-integration/web/initialization
+[dart-whats-new]: {{site.dart-site}}/guides/whats-new
 [dart.dev]: {{site.dart-site}}
 [Desktop]: {{site.url}}/desktop
 [Flutter Firebase get started guide]: https://firebase.google.com/docs/flutter/setup
