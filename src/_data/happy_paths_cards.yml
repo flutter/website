@@ -1,0 +1,24 @@
+- name: Ads
+  image: /assets/images/docs/happy-paths/HappyPaths_Icon_Ad_2d.png
+  description: Monetize your mobile app with in-app ads.
+  url: /development/packages-and-plugins/happy-paths/recommended/#ads-
+- name: Background processing
+  image: /assets/images/docs/happy-paths/HappyPaths_Icon_Processing_2d.png
+  description: Enable headless execution of Dart code. 
+  url: /development/packages-and-plugins/happy-paths/recommended/#background-processing-
+- name: Geolocation
+  image: /assets/images/docs/happy-paths/HappyPaths_Icon_Geolocation_2d.png
+  description: Determine a user's location for enhanced app functionality.
+  url: /development/packages-and-plugins/happy-paths/recommended/#geolocation-
+- name: Immutable data
+  image: /assets/images/docs/happy-paths/HappyPaths_Icon_ImmutableData_2d.png
+  description: Handle immutable data structures.
+  url: /development/packages-and-plugins/happy-paths/recommended/#immutable-data--
+- name: Structured local storage
+  image: /assets/images/docs/happy-paths/HappyPaths_Icon_Storage_2d.png
+  description: Maintain and preserve data.
+  url: /development/packages-and-plugins/happy-paths/recommended/#structured-local-storage-
+- name: Web sockets
+  image: /assets/images/docs/happy-paths/HappyPaths_Icon_WebSockets_2d.png
+  description: Handle client and server connections.
+  url: /development/packages-and-plugins/happy-paths/recommended/#web-sockets-
