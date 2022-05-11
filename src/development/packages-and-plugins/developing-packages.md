@@ -484,7 +484,7 @@ If you want to develop a package that calls into native APIs using
 
 ### Step 1: Create the package
 
-To create a starter Flutter package,
+To create a starter FFI plugin package,
 use the `--template=plugin_ffi` flag with `flutter create`:
 
 ```terminal
@@ -492,7 +492,7 @@ $ flutter create --template=plugin_ffi hello
 ```
 
 This creates a FFI plugin project in the `hello`
-folder with the following specialized content::
+folder with the following specialized content:
 
 **lib**: The Dart code that defines the API of the plugin, and which
 calls into the native code using `dart:ffi`.
@@ -539,7 +539,7 @@ A plugin can have both FFI and method channels:
         ffiPlugin: true
 ```
 
-The native build systems that are invoked by FFI (and method channel) plugins are:
+The native build systems that are invoked by FFI (and method channels) plugins are:
 
 * For Android: Gradle, which invokes the Android NDK for native builds.
   * See the documentation in `android/build.gradle`.
@@ -560,7 +560,7 @@ Regenerate the bindings by running `flutter pub run ffigen --config ffigen.yaml`
 ### Step 4: Invoking native code
 
 Very short-running native functions can be directly invoked from any isolate.
-For example, see `sum` in `lib/hello.dart`.
+For an example, see `sum` in `lib/hello.dart`.
 
 Longer-running functions should be invoked on a helper isolate to avoid
 dropping frames in Flutter applications.
