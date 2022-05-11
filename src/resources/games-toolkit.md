@@ -182,7 +182,7 @@ Bolded items in the following table are used in the games template:
 <tr>
   <td>Firebase
   </td>
-  <td><a href="https://firebase.google.com/docs/flutter/setup">Flutter Firebase getting started guide</a> NEWLY UPDATED
+  <td><a href="https://firebase.google.com/docs/flutter/setup">Flutter Firebase getting started guide</a> NEWLY UPDATED<br>
       <b><a href="{{site.pub-pkg}}/firebase_crashlytics">firebase_crashlytics</a>
       package (tracks crashes of your app)</b>
   </td>
