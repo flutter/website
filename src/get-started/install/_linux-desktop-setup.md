@@ -1,22 +1,5 @@
 ## Linux setup
 
-{{site.alert.warning}}
-  **Beta!**
-  This area covers desktop support,
-  which is available as a beta release.
-  Beta support still has notable feature gaps,
-  including accessibility support.
-  You can try a beta snapshot of desktop support
-  on the stable channel, or you can keep up
-  with the latest changes to desktop on the
-  beta channel.
-  For more information, see the **Desktop**
-  section in [What's new in Flutter 2][],
-  a free article on Medium.
-{{site.alert.end}}
-
-[What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
-
 ### Additional Linux requirements
 
 For Linux desktop development,
@@ -42,15 +25,3 @@ $ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-d
 [Ninja build]: https://ninja-build.org/
 [pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
 [liblzma-dev]: https://packages.debian.org/sid/liblzma-dev
-
-### Enable desktop support
-
-At the command line, perform the following command to enable desktop support
-
-```terminal
-$ flutter config --enable-linux-desktop
-```
-
-For more information, see [Desktop support for Flutter][]
-
-[Desktop support for Flutter]: {{site.url}}/desktop

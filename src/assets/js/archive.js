@@ -66,24 +66,51 @@ function updateTableFailed(os) {
   tab.find(".loading").text("Failed to load releases. Refresh page to try again.");
 }
 
-function updateDownloadLink(releases, os) {
-  var channel = "stable";
-  var releasesForChannel = releases.releases.filter(function (release) {
-    return release.channel == channel;
-  });
-  if (!releasesForChannel.length)
-    return;
 
-  var release = releasesForChannel[0];
+var macOSArm64ArchiveFilename = '';
+
+// Listen for the macOS arm64 download link to be clicked and update
+// the example unzip command with correct arm64 filename
+$(".download-latest-link-macos-arm64").click(function() {
+  macOSArch = 'arm64';
+
+  // Update inlined filenames in <code> element text nodes with arm64 filename:
+  var fileNamePrefix = 'flutter_';
+  var code = $('code:contains("' + fileNamePrefix + '")');
+  var textNode = $(code).contents().filter(function() {
+    return this.nodeType == 3 && this.textContent.includes(fileNamePrefix);
+  });
+  var text = $(textNode).text();
+  //var newText = text.replace(new RegExp('^(.*?)\\b' + fileNamePrefix + '\\w+_v.*'), '$1' + macOSArm64ArchiveFilename);
+  $(textNode).replaceWith(`unzip ~/Downloads/${macOSArm64ArchiveFilename}`);
+
+});
+
+/*
+releases: A list of Flutter releases 
+base_url: link for sdk download link such as storage.googleapis.com...
+os: macos, windows, or linux
+[optional] arch: Only specify if there's additional architecture, such as arm64
+*/
+function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
+  var archString = !arch.length ? archString = '': archString = '-' + arch;
+
+  var release = releases[0];
   var linkSegments = release.archive.split("/");
   var archiveFilename = linkSegments[linkSegments.length - 1]; // Just the filename part of url
-  var downloadLink = $(".download-latest-link-" + os);
+  var downloadLink = $(".download-latest-link-" + os + archString);
+
+  if (os == "macos" && arch == "arm64") {
+    macOSArm64ArchiveFilename = archiveFilename;
+  }
+  
   downloadLink
     .text(archiveFilename)
-    .attr("href", releases.base_url + "/" + release.archive);
+    .attr("href", base_url + "/" + release.archive);
 
-  // Update download-filename placeholders:
-  $(".download-latest-link-filename-" + os).text(archiveFilename);
+
+  //Update download-filename placeholders:
+  $(".download-latest-link-filename-" + os + archString).text(archiveFilename);
   $(".download-latest-link-filename").text(archiveFilename);
 
   // Update inlined filenames in <code> element text nodes:
@@ -95,6 +122,45 @@ function updateDownloadLink(releases, os) {
   var text = $(textNode).text();
   var newText = text.replace(new RegExp('^(.*?)\\b' + fileNamePrefix + '\\w+_v.*'), '$1' + archiveFilename);
   $(textNode).replaceWith(newText);
+  
+}
+
+function updateDownloadLink(releases, os, arch) {
+  var channel = "stable";
+  var releasesForChannel = releases.releases.filter(function (release) {
+    return release.channel == channel;
+  });
+  if (!releasesForChannel.length)
+    return;
+
+  // On macOS, update the download buttons for both architectures, x64 and arm64
+  if (os == 'macos') {
+    // Filter releases by x64 architecture 
+    var releasesForX64 = releasesForChannel.filter(function (release) {
+      return release.dart_sdk_arch == 'x64';
+    });
+
+    updateReleaseDownloadButton(releasesForX64, releases.base_url, os);
+
+    // Filter releases by arm64 architecture 
+    var releasesForArm64 = releasesForChannel.filter(function (release) {
+      return release.dart_sdk_arch == 'arm64';
+    });
+
+    // If no arm64 releases available, delete all apple silicon elements
+    if (!releasesForArm64.length) {
+      $(".apple-silicon").each(function(){
+        this.remove();
+      })
+      
+      return;
+    }
+    
+    updateReleaseDownloadButton(releasesForArm64, releases.base_url, os, 'arm64');
+  }
+  else {
+    updateReleaseDownloadButton(releasesForChannel, releases.base_url, os);
+  }
 }
 
 function updateDownloadLinkFailed(os) {
