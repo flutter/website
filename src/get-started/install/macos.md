@@ -20,6 +20,13 @@ your development environment must meet these minimum requirements:
   installing [Xcode][], which includes `git`, but you can also 
   [install `git` separately][]. 
 
+{{site.alert.important}}
+  If you're installing on an [Apple Silicon Mac][], you must also have the Rosetta
+  translation environment available, which you can install manually by running:
+  ```terminal
+  $ sudo softwareupdate --install-rosetta --agree-to-license
+  ```
+{{site.alert.end}}
 
 {% include_relative _get-sdk-mac.md %}
 
