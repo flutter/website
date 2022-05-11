@@ -6033,7 +6033,7 @@ For information about subsequent bug-fix releases, see
 [29758](https://github.com/flutter/engine/pull/29758) Roll Fuchsia Mac SDK from Ivf969oJw... to L2bsr8go8... (cla: yes, waiting for tree to go green)
 
 
-[29761](https://github.com/flutter/engine/pull/29761) Fix Kanji switch in Japanese IME on WIndows (cla: yes, waiting for tree to go green, platform-windows)
+[29761](https://github.com/flutter/engine/pull/29761) Fix Kanji switch in Japanese IME on Windows (cla: yes, waiting for tree to go green, platform-windows)
 
 
 [29762](https://github.com/flutter/engine/pull/29762) Roll Fuchsia Linux SDK from ghwyDtFSJ... to Vxe912PZC... (cla: yes, waiting for tree to go green)
@@ -8048,7 +8048,7 @@ For information about subsequent bug-fix releases, see
 [29760](https://github.com/flutter/engine/pull/29760) Empty commit to trigger main artifacts (cla: yes)
 
 
-[29761](https://github.com/flutter/engine/pull/29761) Fix Kanji switch in Japanese IME on WIndows (cla: yes, waiting for tree to go green, platform-windows)
+[29761](https://github.com/flutter/engine/pull/29761) Fix Kanji switch in Japanese IME on Windows (cla: yes, waiting for tree to go green, platform-windows)
 
 
 [29762](https://github.com/flutter/engine/pull/29762) Roll Fuchsia Linux SDK from ghwyDtFSJ... to Vxe912PZC... (cla: yes, waiting for tree to go green)
@@ -9506,7 +9506,7 @@ For information about subsequent bug-fix releases, see
 [29736](https://github.com/flutter/engine/pull/29736) Use Fuchsia's Windows Clang SDK (cla: yes, platform-windows)
 
 
-[29761](https://github.com/flutter/engine/pull/29761) Fix Kanji switch in Japanese IME on WIndows (cla: yes, waiting for tree to go green, platform-windows)
+[29761](https://github.com/flutter/engine/pull/29761) Fix Kanji switch in Japanese IME on Windows (cla: yes, waiting for tree to go green, platform-windows)
 
 
 [29829](https://github.com/flutter/engine/pull/29829) Win32 a11y bridge and platform node delegates (cla: yes, Work in progress (WIP), platform-windows)

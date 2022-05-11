@@ -20,7 +20,7 @@ class _ScrollViewWithScrollbarsState extends State<ScrollViewWithScrollbars> {
   Widget build(BuildContext context) {
     return Scrollbar(
       controller: _scrollController,
-      isAlwaysShown: context.select((AppModel m) => m.touchMode),
+      thumbVisibility: context.select((AppModel m) => m.touchMode),
       child: SingleChildScrollView(
         scrollDirection: widget.axis,
         controller: _scrollController,
