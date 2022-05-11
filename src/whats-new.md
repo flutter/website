@@ -79,7 +79,7 @@ and the [Flutter 3 release notes][].
 [Flutter Firebase get started guide]: https://firebase.google.com/docs/flutter/setup
 [Games page]: {{site.main-url}}/games
 [Games doc page]: {{site.url}}/resources/games-toolkit
-[Happy paths page]: {{site.url}}/development/platforms-and-plugins/happy-paths
+[Happy paths page]: {{site.url}}/development/packages-and-plugins/happy-paths
 [js-to-dart]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
 [macOS install page]: {{site.url}}/get-started/install/macos
 
