@@ -1,6 +1,6 @@
-**IMPORTANT:** Due to work on the docs.flutter.dev infrastructure, this repo is **not accepting pull requests**.
+_Description of what this PR is changing or adding, and why:_
 
-Instead of creating a PR, please file an issue (https://github.com/flutter/website/issues/new/choose) about the needed change.
+_Issues fixed by this PR (if any):_
 
 ## Presubmit checklist
 - [ ] This PR doesn’t contain automatically generated corrections (Grammarly or similar).
