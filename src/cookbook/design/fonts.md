@@ -59,6 +59,7 @@ awesome_app/
 
 Flutter supports the following font formats:
 
+* `.ttc`
 * `.ttf`
 * `.otf`
 
