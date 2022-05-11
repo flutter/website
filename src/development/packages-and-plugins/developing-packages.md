@@ -62,6 +62,11 @@ Packages can contain more than one kind of content:
   see the Medium article by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
 
+**FFI Plugin packages**
+: A specialized Dart package that contains an API written in
+  Dart code combined with one or more platform-specific
+  implementations that use [Dart FFI][FFI].
+
 ## Developing Dart packages {#dart}
 
 The following instructions explain how to write a Flutter
@@ -472,6 +477,95 @@ functionality does not regress as you make changes to your code. For more
 information, see [Testing your plugin][], a section in [Supporting the new
 Android plugins APIs][].
 
+## Developing FFI plugin packages {#plugin-ffi}
+
+If you want to develop a package that calls into native APIs using
+[Dart's FFI][FFI], you need to develop a FFI plugin package.
+
+### Step 1: Create the package
+
+To create a starter Flutter package,
+use the `--template=plugin_ffi` flag with `flutter create`:
+
+```terminal
+$ flutter create --template=plugin_ffi hello
+```
+
+This creates a FFI plugin project in the `hello`
+folder with the following specialized content::
+
+**lib**: The Dart code that defines the API of the plugin, and which
+calls into the native code using `dart:ffi`.
+
+**src**: The native source code, and a `CmakeFile.txt` file for building
+that source code into a dynamic library.
+
+**platform folders** (`android`, `ios`, `windows`, etc.): The build files
+for building and bundling the native code library with the platform application.
+
+### Step 2: Buidling and bundling native code
+
+The `pubspec.yaml` specifies FFI plugins as follows:
+
+```yaml
+  plugin:
+    platforms:
+      some_platform:
+        ffiPlugin: true
+```
+
+This configuration invokes the native build for the various target platforms
+and bundles the binaries in Flutter applications using these FFI plugins.
+
+This can be combined with `dartPluginClass`, such as when FFI is used for the
+implementation of one platform in a federated plugin:
+
+```yaml
+  plugin:
+    implements: some_other_plugin
+    platforms:
+      some_platform:
+        dartPluginClass: SomeClass
+        ffiPlugin: true
+```
+
+A plugin can have both FFI and method channels:
+
+```yaml
+  plugin:
+    platforms:
+      some_platform:
+        pluginClass: SomeName
+        ffiPlugin: true
+```
+
+The native build systems that are invoked by FFI (and method channel) plugins are:
+
+* For Android: Gradle, which invokes the Android NDK for native builds.
+  * See the documentation in `android/build.gradle`.
+* For iOS and MacOS: Xcode, via CocoaPods.
+  * See the documentation in `ios/hello.podspec`.
+  * See the documentation in `macos/hello.podspec`.
+* For Linux and Windows: CMake.
+  * See the documentation in `linux/CMakeLists.txt`.
+  * See the documentation in `windows/CMakeLists.txt`.
+
+### Step 3: Binding to native code
+
+To use the native code, bindings in Dart are needed.
+To avoid writing these by hand, they are generated from the header file
+(`src/hello.h`) by [`package:ffigen`][].
+Regenerate the bindings by running `flutter pub run ffigen --config ffigen.yaml`.
+
+### Step 4: Invoking native code
+
+Very short-running native functions can be directly invoked from any isolate.
+For example, see `sum` in `lib/hello.dart`.
+
+Longer-running functions should be invoked on a helper isolate to avoid
+dropping frames in Flutter applications.
+For example, see `sumAsync` in `lib/hello.dart`.
+
 ## Adding documentation
 
 It is recommended practice to add the following documentation
@@ -720,6 +814,7 @@ PENDING
 [issue #33302]: {{site.repo.flutter}}/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
+[`package:ffigen`]: {{site.pub}}/packages/ffigen
 [platform channel]: {{site.url}}/development/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
