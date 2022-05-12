@@ -51,7 +51,7 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
                 int colCount = max(1, (constraints.maxWidth / 250).floor());
                 // #docregion ScrollbarAlwaysShown
                 return Scrollbar(
-                  isAlwaysShown: DeviceType.isDesktop,
+                  thumbVisibility: DeviceType.isDesktop,
                   controller: _scrollController,
                   child: GridView.count(
                       controller: _scrollController,
