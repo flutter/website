@@ -9,6 +9,67 @@ For information about subsequent bug-fix releases, see
 
 [Hotfixes to the Stable Channel]: https://github.com/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
 
+## If you see warnings about bindings
+
+You may see warnings like this:
+```
+Warning: Operand of null-aware operation '!' has type 'SchedulerBinding' which excludes null.
+```
+...when migrating to Flutter 3.
+
+These are caused by a simplification of our API (the `instance` property on bindings is now non-nullable),
+combined with a very eager compiler which wants to report any case where redundant null-aware operators
+(such as `!` and `?.`) are used when they not necessary.
+
+If this happens, there may be several causes with different solutions:
+
+### Dependencies
+
+If your dependencies use bindings, they may need updating to silence the warnings.
+Your builds should be unaffected except for the verbose warnings.
+You can ignore the warnings for now (maybe reach out to your dependency's developers to convince them to update).
+
+### Your code
+
+If the problem refers to your own code, you can update it by running `dart fix --apply`.
+This should resolve all the warnings.
+
+If you need your code to support both Flutter 3 and earlier versions (maybe because your code is a library),
+then you may wrap calls to `binding.instance` with calls to a method such as the following:
+
+```dart
+/// This allows a value of type T or T? to be treated as a value of type T?.
+///
+/// We use this so that APIs that have become non-nullable can still be used
+/// with `!` and `?` to support older versions of the API as well.
+T? _ambiguate<T>(T? value) => value;
+```
+
+For example, instead of:
+
+```dart
+SchedulerBinding.instance!.addPostFrameCallback(...);
+```
+
+...use:
+
+```dart
+_ambiguate(SchedulerBinding.instance)!.addPostFrameCallback(...);
+```
+
+When you no longer need to support versions of Flutter before 3.0.0, you may remove this and replace it with:
+
+```dart
+SchedulerBinding.instance.addPostFrameCallback(...);
+```
+
+### Framework issues
+
+If the error messages do not point to one of your dependencies, and `dart fix --apply` does not fix the issue,
+or if the warnings are fatal (i.e. your application refuses to run),
+please [file a bug](https://github.com/flutter/flutter/issues/new/choose).
+
+
 ## What's Changed
 ### Framework
 * Revert "[Fonts] Update icons" by @guidezpl in https://github.com/flutter/flutter/pull/95966
