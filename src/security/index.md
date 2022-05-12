@@ -50,7 +50,7 @@ Flutter does not have a bug bounty program.
 ## Receiving security updates
 
 The best way to receive security updates is to subscribe to the 
-[flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce) mailing list or updates to the Discord [channel](https://discord.com/channels/608014603317936148/608116355836805126).
+[flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce) mailing list or updates to the Discord [channel](https://discord.gg/BS8KZyg).
 We will also announce security updates in the technical release blog post.
 
 ## Best practices
