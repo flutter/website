@@ -383,7 +383,8 @@
       { "source": "/go/windows-x86-arm64-support", "destination": "https://docs.google.com/document/d/1gAGqtTAjO0GntR8bPonIO1aZJnTghPCI_PHJPdNzEmo/edit?resourcekey=0-l1tL7iai47yw3bMl9IcpHw", "type": 301 },
       { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 },
       { "source": "/go/verbatim-logical-keys-for-non-latin-layout", "destination": "https://docs.google.com/document/d/1ZNgNxito-NVUS1JKlcjdzHUcKyyiupy8Za-jb131dD4/edit?usp=sharing&resourcekey=0-eeEZ5X0jAzuqSTdmPWlv0w", "type": 301 },
-      { "source": "/go/io22concurrency", "destination": "https://github.com/goderbauer/io22concurrency", "type": 301 }
+      { "source": "/go/io22concurrency", "destination": "https://github.com/goderbauer/io22concurrency", "type": 301 },
+      { "source": "/go/buffer-queue", "destination": "https://docs.google.com/document/d/1rXl9G-VmISVlVkKVgrnQKeX7Mexyez0x9HZ5F5yKxrQ/edit?usp=sharing", "type": 301 }
     ],
     "headers": [
       {
