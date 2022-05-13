@@ -27,7 +27,7 @@ the _only_ paths that you can choose, but are solutions that we can recommend.
 In future, we plan to add more happy path recommendations
 for different areas of functionality. If there’s a specific
 happy path recommendation that you would like to see, 
-please [file an issue][] to let us know.  
+[file an issue][] to let us know.  
    
 [file an issue]: {{site.github}}/flutter/website/issues/new/choose
 
