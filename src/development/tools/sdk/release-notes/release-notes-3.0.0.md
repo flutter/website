@@ -4,60 +4,77 @@ short-title: 3.0.0 release notes
 description: Release notes for Flutter 3.0.0.
 ---
 This page has release notes for 3.0.0.
-For information about subsequent bug-fix releases, see
-[Hotfixes to the Stable Channel][].
+For information about subsequent bug-fix releases,
+see [Hotfixes to the Stable Channel][].
 
-[Hotfixes to the Stable Channel]: https://github.com/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
+[Hotfixes to the Stable Channel]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
 
 ## If you see warnings about bindings
 
-You may see warnings like this:
+When migrating to Flutter 3,
+you might see warnings like the following:
+
 ```
 Warning: Operand of null-aware operation '!' has type 'SchedulerBinding' which excludes null.
 ```
-...when migrating to Flutter 3.
 
-These are caused by a simplification of our API (the `instance` property on bindings is now non-nullable),
-combined with a very eager compiler which wants to report any case where redundant null-aware operators
-(such as `!` and `?.`) are used when they not necessary.
+These are caused by a simplification of the API
+(the `instance` property on bindings is now non-nullable),
+combined with an eager compiler that wants to report
+any case where redundant null-aware operators
+(such as `!` and `?.`) that are used when
+they're not necessary.
 
-If this happens, there may be several causes with different solutions:
+If this happens,
+there might be several causes with different solutions:
 
 ### Dependencies
 
-If your dependencies use bindings, they may need updating to silence the warnings.
-Your builds should be unaffected except for the verbose warnings.
-You can ignore the warnings for now (maybe reach out to your dependency's developers to convince them to update).
+If your dependencies use bindings,
+they might need updating to silence the warnings.
+Your builds should be unaffected except for
+the verbose warnings.
+You can ignore the warnings for now
+(maybe reach out to your dependency's
+developers to convince them to update).
 
 ### Your code
 
-If the problem refers to your own code, you can update it by running `dart fix --apply`.
+If the problem refers to your own code,
+you can update it by running `dart fix --apply`.
 This should resolve all the warnings.
 
-If you need your code to support both Flutter 3 and earlier versions (maybe because your code is a library),
-then you may wrap calls to `binding.instance` with calls to a method such as the following:
+If you need your code to support both
+Flutter 3 and earlier versions
+(maybe because your code is a library),
+then you can wrap calls to `binding.instance`
+with calls to a method such as the following:
 
 ```dart
-/// This allows a value of type T or T? to be treated as a value of type T?.
+/// This allows a value of type T or T?
+/// to be treated as a value of type T?.
 ///
-/// We use this so that APIs that have become non-nullable can still be used
-/// with `!` and `?` to support older versions of the API as well.
+/// We use this so that APIs that have become
+/// non-nullable can still be used with `!` and `?`
+/// to support older versions of the API as well.
 T? _ambiguate<T>(T? value) => value;
 ```
 
-For example, instead of:
+For example, instead of the following:
 
 ```dart
 SchedulerBinding.instance!.addPostFrameCallback(...);
 ```
 
-...use:
+You can use:
 
 ```dart
 _ambiguate(SchedulerBinding.instance)!.addPostFrameCallback(...);
 ```
 
-When you no longer need to support versions of Flutter before 3.0.0, you may remove this and replace it with:
+When you no longer need to support versions of
+Flutter before 3.0.0, you can remove this and
+replace it with the following:
 
 ```dart
 SchedulerBinding.instance.addPostFrameCallback(...);
@@ -65,13 +82,18 @@ SchedulerBinding.instance.addPostFrameCallback(...);
 
 ### Framework issues
 
-If the error messages do not point to one of your dependencies, and `dart fix --apply` does not fix the issue,
-or if the warnings are fatal (i.e. your application refuses to run),
-please [file a bug](https://github.com/flutter/flutter/issues/new/choose).
-
+If the error messages do not point to one of your dependencies,
+and `dart fix --apply` doesn't fix the issue,
+or if the warnings are fatal
+(for example, your application refuses to run), please
+[file a bug]({{site.github}}/flutter/flutter/issues/new/choose).
 
 ## What's Changed
+
+The following changes happened in this release:
+
 ### Framework
+
 * Revert "[Fonts] Update icons" by @guidezpl in https://github.com/flutter/flutter/pull/95966
 * Improve iOS fidelity of `barrierColor`s and edge decorations for full-screen Cupertino page transitions by @willlockwood in https://github.com/flutter/flutter/pull/95537
 * [Fonts] Update icons by @guidezpl in https://github.com/flutter/flutter/pull/96115
@@ -433,7 +455,9 @@ please [file a bug](https://github.com/flutter/flutter/issues/new/choose).
 * [Cherrypick] Revert "Refactor `ToggleButtons` (remove `RawMaterialButton`) (#99493)" by @CaseyHillers in https://github.com/flutter/flutter/pull/101538
 * [flutter_releases] Flutter beta 2.13.0-0.2.pre Framework Cherrypicks by @CaseyHillers in https://github.com/flutter/flutter/pull/102193
 * [flutter_releases] Upgrade dwds to 12.1.1 by @christopherfujino in https://github.com/flutter/flutter/pull/101546
+
 ### Tooling
+
 * FFI plugin by @dcharkes in https://github.com/flutter/flutter/pull/94101
 * Revert "FFI plugin" by @zanderso in https://github.com/flutter/flutter/pull/96122
 * Add a new PrebuiltFlutterApplicationPackage interface. by @chingjun in https://github.com/flutter/flutter/pull/95290
@@ -588,10 +612,15 @@ please [file a bug](https://github.com/flutter/flutter/issues/new/choose).
 * Add note to doctor validator if script is running Rosetta by @jmagman in https://github.com/flutter/flutter/pull/101309
 * [Cherrypick] Partial revert of super params in tools (#101436) by @CaseyHillers in https://github.com/flutter/flutter/pull/101527
 * [flutter_releases] Flutter beta 2.13.0-0.3.pre Framework Cherrypicks by @CaseyHillers in https://github.com/flutter/flutter/pull/102620
+
 ### MacOS
+
 * [macOS] Add run release test in devicelab by @cbracken in https://github.com/flutter/flutter/pull/100526
 
 ## New Contributors
+
+Thanks to the following contributors in this release:
+
 * @willlockwood made their first contribution in https://github.com/flutter/flutter/pull/95537
 * @utibeabasi6 made their first contribution in https://github.com/flutter/flutter/pull/96058
 * @fbcouch made their first contribution in https://github.com/flutter/flutter/pull/75472
