@@ -97,6 +97,14 @@ and available on the [Flutter community blog][].
 [Flutter community blog]: {{site.medium}}/@flutter_community/622b52f70173
 [Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
 
+**Videos**
+
+Google I/O 2022 is over, but you can still check out
+the Flutter-specific updates and talks from Google I/O
+on the [videos] page.
+
+[videos]: {{site.url}}/resources/videos
+
 ---
 
 ## Feb 3, 2022, Windows Support: 2.10 release

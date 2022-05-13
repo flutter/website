@@ -3,8 +3,9 @@ title: Videos and online courses
 description: Available videos and online courses on various aspects of developing in Flutter.
 ---
 
-These Flutter videos, produced both internally at Google and by the
-Flutter community, might help if you are a visual learner.
+These Flutter videos, produced both internally
+at Google and by the Flutter community,
+might help if you are a visual learner.
 
 Note that many people make Flutter videos.
 This page shows some that we like,
@@ -18,6 +19,16 @@ Here are some of the series offered on the
 [flutterdev YouTube channel][].
 
 [flutterdev YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+
+### Flutter at Google I/O 2022
+
+Google I/O 2022 is over, but you can still catch
+the great Flutter content!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w_ezWG1yKQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter at Google I/O playlist][]
+
+[Flutter at Google I/O playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1kHjuHoFGBLCxjy4h2WOcP
 
 ### Flutter Engage 2021
 
