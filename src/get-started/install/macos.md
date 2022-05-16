@@ -20,21 +20,13 @@ your development environment must meet these minimum requirements:
   installing [Xcode][], which includes `git`, but you can also 
   [install `git` separately][]. 
 
-{{site.alert.important}}
-  If you're installing on an [Apple Silicon Mac][], you must also have the Rosetta
-  translation environment available, which you can install manually by running:
-  ```terminal
-  $ sudo softwareupdate --install-rosetta --agree-to-license
-  ```
-{{site.alert.end}}
-
 {% include_relative _get-sdk-mac.md %}
 
 {% include_relative _path-mac.md %}
 
 ## Platform setup
 
-macOS supports developing Flutter apps in iOS, Android,
+macOS supports developing Flutter apps for iOS, Android, macOS itself 
 and the web. Complete at least one of the platform setup steps now,
 to be able to build and run your first Flutter app.
 
