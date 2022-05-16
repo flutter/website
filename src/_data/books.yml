@@ -14,12 +14,13 @@
   desc: "Build your first app in Flutter - no experience necessary."
 - title: 'Flutter Apprentice'
   authors:
-    - Kevin David Moore
     - Michael Katz
+    - Kevin David Moore
     - Vincent Ngo
+    - Vincenzo Guzzi
   publisher: Razeware LLC
-  cover: flutter-apprentice.png
-  link: "https://www.raywenderlich.com/books/flutter-apprentice/v1.0.ea2"
+  cover: flutter-apprentice-2nd.png
+  link: "https://www.raywenderlich.com/books/flutter-apprentice"
   desc: "Build for both iOS and Android With Flutter! With Flutter and Flutter Apprentice, you can achieve the dream of building fast applications, faster."
 - title: 'Flutter Complete Reference'
   authors:
@@ -37,11 +38,12 @@
   desc: "Ce livre sur Flutter s'adresse aux développeurs, initiés comme plus aguerris, qui souhaitent disposer des connaissances nécessaires pour créer de A à Z des applications mobiles multiplateformes avec le framework de Google" 
 - title: 'Flutter for Beginners'
   authors:
+    - Thomas Bailey
     - Alessandro Biessek
   publisher: Packt Publishing
-  cover: flutter-for-beginners.jpg
-  link: "https://www.amazon.com/Flutter-Beginners-introductory-cross-platform-applications/dp/1788996089"
-  desc: "A step-by-step guide to learning Flutter and Dart 2 for creating Android and iOS mobile applications."
+  cover: flutter-beginners-2nd.png
+  link: "https://www.amazon.com/dp/1800565992"
+  desc: "An introductory guide to building cross-platform mobile applications with Flutter 2.5 and Dart."
 - title: 'Flutter in Action'
   authors:
     - Eric Windmill
