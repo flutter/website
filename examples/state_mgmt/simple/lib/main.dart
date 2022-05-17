@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
 class SomeOtherClass {}
 
 class _Menu extends StatelessWidget {
-  const _Menu({super.key});
+  const _Menu();
 
   @override
   Widget build(BuildContext context) {
