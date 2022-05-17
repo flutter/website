@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class StaggerAnimation extends StatelessWidget {
-  StaggerAnimation({Key? key, required this.controller})
+  StaggerAnimation({super.key, required this.controller})
       :
 
         // Each animation defined here transforms its value during the subset
@@ -90,8 +90,7 @@ class StaggerAnimation extends StatelessWidget {
               curve: Curves.ease,
             ),
           ),
-        ),
-        super(key: key);
+        );
 
   final Animation<double> controller;
   final Animation<double> opacity;
@@ -136,7 +135,7 @@ class StaggerAnimation extends StatelessWidget {
 }
 
 class StaggerDemo extends StatefulWidget {
-  const StaggerDemo({Key? key}) : super(key: key);
+  const StaggerDemo({super.key});
 
   @override
   _StaggerDemoState createState() => _StaggerDemoState();

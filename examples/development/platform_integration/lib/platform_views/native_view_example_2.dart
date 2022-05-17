@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 // #enddocregion Import
 
 class VirtualDisplayWidget extends StatelessWidget {
-  const VirtualDisplayWidget({Key? key}) : super(key: key);
+  const VirtualDisplayWidget({super.key});
 
   @override
   // #docregion VirtualDisplayWidget

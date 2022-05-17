@@ -2,4 +2,4 @@
 # file. If necessary for a particular example, this file can also include
 # overrides for individual lints.
 
-include: ../../../analysis_options.yaml
+include: ../../analysis_options.yaml

@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ void containerExample(BuildContext context) {
 }
 
 class OneColumnLayout extends StatelessWidget {
-  const OneColumnLayout({Key? key}) : super(key: key);
+  const OneColumnLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class OneColumnLayout extends StatelessWidget {
 }
 
 class TwoColumnLayout extends StatelessWidget {
-  const TwoColumnLayout({Key? key}) : super(key: key);
+  const TwoColumnLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +85,7 @@ class TwoColumnLayout extends StatelessWidget {
 }
 
 class LayoutBuilderExample extends StatelessWidget {
-  const LayoutBuilderExample({Key? key}) : super(key: key);
+  const LayoutBuilderExample({super.key});
 
   @override
   // #docregion LayoutBuilder

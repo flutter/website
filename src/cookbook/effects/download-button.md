@@ -41,8 +41,8 @@ Define a new stateless widget called `DownloadButton`.
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -72,12 +72,12 @@ enum DownloadStatus {
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.transitionDuration = const Duration(
       milliseconds: 500,
     ),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final Duration transitionDuration;
@@ -138,12 +138,12 @@ For now, the `AnimatedContainer` child is just a `SizedBox` because we will come
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.transitionDuration = const Duration(
       milliseconds: 500,
     ),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final Duration transitionDuration;
@@ -168,12 +168,12 @@ class DownloadButton extends StatelessWidget {
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;
@@ -234,12 +234,12 @@ button wrapper widget.
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;
@@ -406,14 +406,14 @@ tap event to the corresponding callback property.
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.downloadProgress = 0.0,
     required this.onDownload,
     required this.onCancel,
     required this.onOpen,
     this.transitionDuration = const Duration(milliseconds: 500),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final double downloadProgress;
@@ -496,7 +496,7 @@ void main() {
 
 @immutable
 class ExampleCupertinoDownloadButton extends StatefulWidget {
-  const ExampleCupertinoDownloadButton({Key? key}) : super(key: key);
+  const ExampleCupertinoDownloadButton({super.key});
 
   @override
   _ExampleCupertinoDownloadButtonState createState() =>
@@ -575,7 +575,7 @@ class _ExampleCupertinoDownloadButtonState
 
 @immutable
 class DemoAppIcon extends StatelessWidget {
-  const DemoAppIcon({Key? key}) : super(key: key);
+  const DemoAppIcon({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -718,14 +718,14 @@ class SimulatedDownloadController extends DownloadController
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.downloadProgress = 0.0,
     required this.onDownload,
     required this.onCancel,
     required this.onOpen,
     this.transitionDuration = const Duration(milliseconds: 500),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final double downloadProgress;
@@ -801,12 +801,12 @@ class DownloadButton extends StatelessWidget {
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;
@@ -855,11 +855,11 @@ class ButtonShapeWidget extends StatelessWidget {
 @immutable
 class ProgressIndicatorWidget extends StatelessWidget {
   const ProgressIndicatorWidget({
-    Key? key,
+    super.key,
     required this.downloadProgress,
     required this.isDownloading,
     required this.isFetching,
-  }) : super(key: key);
+  });
 
   final double downloadProgress;
   final bool isDownloading;

@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;
@@ -60,11 +60,11 @@ class ButtonShapeWidget extends StatelessWidget {
 @immutable
 class ProgressIndicatorWidget extends StatelessWidget {
   const ProgressIndicatorWidget({
-    Key? key,
+    super.key,
     required this.downloadProgress,
     required this.isDownloading,
     required this.isFetching,
-  }) : super(key: key);
+  });
 
   final double downloadProgress;
   final bool isDownloading;
@@ -105,14 +105,14 @@ enum DownloadStatus {
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.downloadProgress = 0.0,
     required this.onDownload,
     required this.onCancel,
     required this.onOpen,
     this.transitionDuration = const Duration(milliseconds: 500),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final double downloadProgress;

@@ -58,7 +58,7 @@ class ShoppingListItem extends StatelessWidget {
 }
 
 class ShoppingList extends StatefulWidget {
-  const ShoppingList({required this.products, Key? key}) : super(key: key);
+  const ShoppingList({required this.products, super.key});
 
   final List<Product> products;
 

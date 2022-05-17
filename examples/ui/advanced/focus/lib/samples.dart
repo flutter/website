@@ -52,7 +52,7 @@ class BuilderExample extends StatelessWidget {
 
 // #docregion OrderedButtonRowExample
 class OrderedButtonRow extends StatelessWidget {
-  const OrderedButtonRow({Key? key}) : super(key: key);
+  const OrderedButtonRow({super.key});
 
   @override
   Widget build(BuildContext context) {

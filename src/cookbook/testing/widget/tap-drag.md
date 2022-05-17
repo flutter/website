@@ -59,7 +59,7 @@ see the relevant recipes:
 <?code-excerpt "test/main_test.dart (TodoList)"?>
 ```dart
 class TodoList extends StatefulWidget {
-  const TodoList({Key? key}) : super(key: key);
+  const TodoList({super.key});
 
   @override
   _TodoListState createState() => _TodoListState();
@@ -238,7 +238,7 @@ void main() {
 }
 
 class TodoList extends StatefulWidget {
-  const TodoList({Key? key}) : super(key: key);
+  const TodoList({super.key});
 
   @override
   _TodoListState createState() => _TodoListState();

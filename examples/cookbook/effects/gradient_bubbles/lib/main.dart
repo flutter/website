@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 @immutable
 class BubbleBackground extends StatelessWidget {
   const BubbleBackground({
-    Key? key,
+    super.key,
     required this.colors,
     this.child,
-  }) : super(key: key);
+  });
 
   final List<Color> colors;
   final Widget? child;
@@ -78,7 +78,7 @@ class Message {
 }
 
 class MyChat extends StatefulWidget {
-  const MyChat({Key? key}) : super(key: key);
+  const MyChat({super.key});
 
   @override
   _MyChatState createState() => _MyChatState();

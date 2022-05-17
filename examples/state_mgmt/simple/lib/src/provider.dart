@@ -46,7 +46,7 @@ class Item {
 }
 
 class MyCartTotalWidget extends StatelessWidget {
-  const MyCartTotalWidget({Key? key}) : super(key: key);
+  const MyCartTotalWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class MyCartTotalWidget extends StatelessWidget {
 }
 
 class MyCartUsingWidget extends StatelessWidget {
-  const MyCartUsingWidget({Key? key}) : super(key: key);
+  const MyCartUsingWidget({super.key});
 
   @override
   // #docregion build
@@ -79,7 +79,7 @@ class MyCartUsingWidget extends StatelessWidget {
 }
 
 class MyCatalog extends StatelessWidget {
-  const MyCatalog({Key? key}) : super(key: key);
+  const MyCatalog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +94,7 @@ class MyCatalog extends StatelessWidget {
 }
 
 class MyCatalogItem extends StatelessWidget {
-  const MyCatalogItem(this.item, {Key? key}) : super(key: key);
+  const MyCatalogItem(this.item, {super.key});
 
   final Item item;
 
@@ -121,7 +121,7 @@ class MyCatalogItem extends StatelessWidget {
 }
 
 class MyHomepage extends StatelessWidget {
-  const MyHomepage({Key? key}) : super(key: key);
+  const MyHomepage({super.key});
 
   @override
   Widget build(BuildContext context) {

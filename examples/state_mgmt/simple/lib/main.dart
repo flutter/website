@@ -38,7 +38,7 @@ void multiProviderMain() {
 // #enddocregion multi-provider-main
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
 class SomeOtherClass {}
 
 class _Menu extends StatelessWidget {
-  const _Menu({Key? key}) : super(key: key);
+  const _Menu({super.key});
 
   @override
   Widget build(BuildContext context) {

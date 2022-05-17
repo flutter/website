@@ -182,10 +182,10 @@ class LoggingActionDispatcherExample extends StatelessWidget {
 // #docregion CallbackShortcuts
 class CallbackShortcuts extends StatelessWidget {
   const CallbackShortcuts({
-    Key? key,
+    super.key,
     required this.bindings,
     required this.child,
-  }) : super(key: key);
+  });
 
   final Map<ShortcutActivator, VoidCallback> bindings;
   final Widget child;

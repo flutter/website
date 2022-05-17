@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class OrientationList1 extends StatelessWidget {
   final String title;
 
-  const OrientationList1({Key? key, required this.title}) : super(key: key);
+  const OrientationList1({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class OrientationList1 extends StatelessWidget {
 class OrientationList2 extends StatelessWidget {
   final String title;
 
-  const OrientationList2({Key? key, required this.title}) : super(key: key);
+  const OrientationList2({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

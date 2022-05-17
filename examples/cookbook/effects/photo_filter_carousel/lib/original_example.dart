@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 @immutable
 class ExampleInstagramFilterSelection extends StatefulWidget {
-  const ExampleInstagramFilterSelection({Key? key}) : super(key: key);
+  const ExampleInstagramFilterSelection({super.key});
 
   @override
   _ExampleInstagramFilterSelectionState createState() =>
@@ -72,11 +72,11 @@ class _ExampleInstagramFilterSelectionState
 @immutable
 class FilterSelector extends StatefulWidget {
   const FilterSelector({
-    Key? key,
+    super.key,
     required this.filters,
     required this.onFilterChanged,
     this.padding = const EdgeInsets.symmetric(vertical: 24.0),
-  }) : super(key: key);
+  });
 
   final List<Color> filters;
   final void Function(Color selectedColor) onFilterChanged;
@@ -252,10 +252,10 @@ class _FilterSelectorState extends State<FilterSelector> {
 @immutable
 class FilterItem extends StatelessWidget {
   const FilterItem({
-    Key? key,
+    super.key,
     required this.color,
     this.onFilterSelected,
-  }) : super(key: key);
+  });
 
   final Color color;
   final VoidCallback? onFilterSelected;

@@ -75,7 +75,7 @@ void _createNewItem() {
 }
 
 class MyWidget extends StatefulWidget {
-  MyWidget({Key? key, required this.title}) : super(key: key);
+  MyWidget({super.key, required this.title});
 
   final String title;
 

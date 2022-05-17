@@ -87,8 +87,7 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
 
 class _GridItem extends StatelessWidget {
   const _GridItem(this.index,
-      {Key? key, required this.isSelected, required this.onPressed})
-      : super(key: key);
+      {super.key, required this.isSelected, required this.onPressed});
   final int index;
   final bool isSelected;
   final void Function(int index) onPressed;

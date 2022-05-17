@@ -183,7 +183,7 @@ class ClickableControl extends StatelessWidget {
 }
 
 class Logo extends StatelessWidget {
-  const Logo({Key? key, required this.showBorder}) : super(key: key);
+  const Logo({super.key, required this.showBorder});
   final bool showBorder;
 
   @override
@@ -235,7 +235,7 @@ class MyFocusTraversalWidget extends StatelessWidget {
 }
 
 class MyHoverWidget extends StatefulWidget {
-  MyHoverWidget({Key? key, required this.title}) : super(key: key);
+  MyHoverWidget({super.key, required this.title});
 
   final String title;
 

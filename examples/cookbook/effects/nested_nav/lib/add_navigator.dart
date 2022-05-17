@@ -60,9 +60,9 @@ class SetupFlow extends StatefulWidget {
   }
 
   const SetupFlow({
-    Key? key,
+    super.key,
     required this.setupPageRoute,
-  }) : super(key: key);
+  });
 
   final String setupPageRoute;
 
@@ -194,9 +194,9 @@ class SetupFlowState extends State<SetupFlow> {
 
 class SelectDevicePage extends StatelessWidget {
   const SelectDevicePage({
-    Key? key,
+    super.key,
     required this.onDeviceSelected,
-  }) : super(key: key);
+  });
 
   final void Function(String deviceId) onDeviceSelected;
 
@@ -244,10 +244,10 @@ class SelectDevicePage extends StatelessWidget {
 
 class WaitingPage extends StatefulWidget {
   const WaitingPage({
-    Key? key,
+    super.key,
     required this.message,
     required this.onWaitComplete,
-  }) : super(key: key);
+  });
 
   final String message;
   final VoidCallback onWaitComplete;
@@ -293,9 +293,9 @@ class _WaitingPageState extends State<WaitingPage> {
 
 class FinishedPage extends StatelessWidget {
   const FinishedPage({
-    Key? key,
+    super.key,
     required this.onFinishPressed,
-  }) : super(key: key);
+  });
 
   final VoidCallback onFinishPressed;
 
@@ -365,8 +365,8 @@ class FinishedPage extends StatelessWidget {
 @immutable
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -432,8 +432,8 @@ class HomeScreen extends StatelessWidget {
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

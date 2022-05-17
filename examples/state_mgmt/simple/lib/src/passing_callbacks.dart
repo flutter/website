@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'common.dart';
 
 class CallbackPasser extends StatelessWidget {
-  const CallbackPasser({Key? key}) : super(key: key);
+  const CallbackPasser({super.key});
 
   // #docregion methods
   @override
@@ -24,7 +24,7 @@ class Item {
 }
 
 class MyHomepage extends StatelessWidget {
-  const MyHomepage({Key? key}) : super(key: key);
+  const MyHomepage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class MyHomepage extends StatelessWidget {
 }
 
 class MyListItem extends StatelessWidget {
-  MyListItem(this.callback, {Key? key}) : super(key: key);
+  MyListItem(this.callback, {super.key});
 
   final void Function(Item) callback;
 

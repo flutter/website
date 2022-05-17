@@ -780,7 +780,7 @@ abstract class Api {
 ```dart
 import 'generated_pigeon.dart';
 
-void onClick() async {
+Future<void> onClick() async {
   SearchRequest request = SearchRequest()..query = 'test';
   Api api = SomeApi();
   SearchReply reply = await api.search(request);

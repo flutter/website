@@ -4,13 +4,13 @@ import 'provider.dart';
 
 class AnotherMonstrousWidget extends SomeExpensiveWidget {
   const AnotherMonstrousWidget({
-    Widget? child,
-    Key? key,
-  }) : super(child: child, key: key);
+    super.child,
+    super.key,
+  });
 }
 
 class ChildUsingDescendant extends StatelessWidget {
-  const ChildUsingDescendant({Key? key}) : super(key: key);
+  const ChildUsingDescendant({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class ChildUsingDescendant extends StatelessWidget {
 }
 
 class DescendantInLeafNode_Good extends StatelessWidget {
-  const DescendantInLeafNode_Good({Key? key}) : super(key: key);
+  const DescendantInLeafNode_Good({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class DescendantInLeafNode_Good extends StatelessWidget {
 }
 
 class DescendantNotInLeafNode_Bad extends StatelessWidget {
-  const DescendantNotInLeafNode_Bad({Key? key}) : super(key: key);
+  const DescendantNotInLeafNode_Bad({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,13 +76,13 @@ class DescendantNotInLeafNode_Bad extends StatelessWidget {
 
 class HumongousWidget extends SomeExpensiveWidget {
   const HumongousWidget({
-    Widget? child,
-    Key? key,
-  }) : super(child: child, key: key);
+    super.child,
+    super.key,
+  });
 }
 
 class MyHomepage extends StatelessWidget {
-  const MyHomepage({Key? key}) : super(key: key);
+  const MyHomepage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +101,7 @@ class MyHomepage extends StatelessWidget {
 }
 
 class NonRebuilding_Good extends StatelessWidget {
-  const NonRebuilding_Good({Key? key}) : super(key: key);
+  const NonRebuilding_Good({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +119,7 @@ class NonRebuilding_Good extends StatelessWidget {
 }
 
 class SomeExpensiveWidget extends StatelessWidget {
-  const SomeExpensiveWidget({this.child, Key? key}) : super(key: key);
+  const SomeExpensiveWidget({this.child, super.key});
 
   final Widget? child;
 

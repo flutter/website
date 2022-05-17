@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;

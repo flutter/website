@@ -52,7 +52,7 @@ final List<List<PhotoFrame>> photoBlockFrames = [
 ];
 
 class PhotoCheck extends StatelessWidget {
-  const PhotoCheck({Key? key}) : super(key: key);
+  const PhotoCheck({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,12 +72,12 @@ class PhotoCheck extends StatelessWidget {
 
 class PhotoItem extends StatefulWidget {
   const PhotoItem({
-    Key? key,
+    super.key,
     required this.photo,
     this.color,
     this.onTap,
     required this.selected,
-  }) : super(key: key);
+  });
 
   final Photo photo;
   final Color? color;
@@ -272,7 +272,7 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
 }
 
 class ImagesDemo extends StatefulWidget {
-  const ImagesDemo({Key? key}) : super(key: key);
+  const ImagesDemo({super.key});
 
   @override
   _ImagesDemoState createState() => _ImagesDemoState();

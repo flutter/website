@@ -25,7 +25,7 @@ void main() {
 }
 
 class TodosScreen extends StatelessWidget {
-  const TodosScreen({Key? key, required this.todos}) : super(key: key);
+  const TodosScreen({super.key, required this.todos});
 
   final List<Todo> todos;
 
@@ -67,7 +67,7 @@ class TodosScreen extends StatelessWidget {
 
 // #docregion DetailScreen
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  const DetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

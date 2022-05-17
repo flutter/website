@@ -29,7 +29,7 @@ void main() {
 }
 
 class TodosScreen extends StatelessWidget {
-  const TodosScreen({Key? key, required this.todos}) : super(key: key);
+  const TodosScreen({super.key, required this.todos});
 
   final List<Todo> todos;
 
@@ -67,7 +67,7 @@ class TodosScreen extends StatelessWidget {
 // #docregion detail
 class DetailScreen extends StatelessWidget {
   // In the constructor, require a Todo.
-  const DetailScreen({Key? key, required this.todo}) : super(key: key);
+  const DetailScreen({super.key, required this.todo});
 
   // Declare a field that holds the Todo.
   final Todo todo;

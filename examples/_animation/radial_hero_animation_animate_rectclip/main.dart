@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class Photo extends StatelessWidget {
-  const Photo({Key? key, required this.photo, this.onTap}) : super(key: key);
+  const Photo({super.key, required this.photo, this.onTap});
 
   final String photo;
   final VoidCallback? onTap;
@@ -44,15 +44,14 @@ class Photo extends StatelessWidget {
 
 class RadialExpansion extends StatelessWidget {
   RadialExpansion({
-    Key? key,
+    super.key,
     required this.minRadius,
     required this.maxRadius,
     this.child,
   })  : clipTween = Tween<double>(
           begin: 2.0 * minRadius,
           end: 2.0 * (maxRadius / math.sqrt2),
-        ),
-        super(key: key);
+        );
 
   final double minRadius;
   final double maxRadius;
@@ -83,7 +82,7 @@ class RadialExpansion extends StatelessWidget {
 }
 
 class RadialExpansionDemo extends StatelessWidget {
-  const RadialExpansionDemo({Key? key}) : super(key: key);
+  const RadialExpansionDemo({super.key});
 
   static const double kMinRadius = 32.0;
   static const double kMaxRadius = 128.0;

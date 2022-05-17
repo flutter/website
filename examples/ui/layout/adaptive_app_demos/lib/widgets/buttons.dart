@@ -4,8 +4,7 @@ import '../global/device_type.dart';
 
 class StyledTextButton extends StatelessWidget {
   const StyledTextButton(
-      {Key? key, required this.onPressed, required this.child})
-      : super(key: key);
+      {super.key, required this.onPressed, required this.child});
   final VoidCallback onPressed;
   final Widget child;
 
@@ -21,7 +20,7 @@ class StyledTextButton extends StatelessWidget {
 }
 
 class SecondaryMenuButton extends StatelessWidget {
-  const SecondaryMenuButton({Key? key, required this.label}) : super(key: key);
+  const SecondaryMenuButton({super.key, required this.label});
   final String label;
 
   @override
@@ -39,11 +38,10 @@ class SecondaryMenuButton extends StatelessWidget {
 
 class SelectedPageButton extends StatelessWidget {
   const SelectedPageButton(
-      {Key? key,
+      {super.key,
       required this.onPressed,
       required this.label,
-      required this.isSelected})
-      : super(key: key);
+      required this.isSelected});
   final VoidCallback? onPressed;
   final String label;
   final bool isSelected;

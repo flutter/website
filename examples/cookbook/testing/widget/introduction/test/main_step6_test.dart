@@ -18,10 +18,10 @@ void main() {
 
 class MyWidget extends StatelessWidget {
   const MyWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   final String title;
   final String message;

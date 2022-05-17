@@ -41,7 +41,7 @@ in static locations.
 <?code-excerpt "lib/step1.dart (step1)"?>
 ```dart
 class Menu extends StatefulWidget {
-  const Menu({Key? key}) : super(key: key);
+  const Menu({super.key});
 
   @override
   _MenuState createState() => _MenuState();
@@ -395,8 +395,8 @@ void main() {
 
 class ExampleStaggeredAnimations extends StatefulWidget {
   const ExampleStaggeredAnimations({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _ExampleStaggeredAnimationsState createState() =>
@@ -509,7 +509,7 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
 }
 
 class Menu extends StatefulWidget {
-  const Menu({Key? key}) : super(key: key);
+  const Menu({super.key});
 
   @override
   _MenuState createState() => _MenuState();

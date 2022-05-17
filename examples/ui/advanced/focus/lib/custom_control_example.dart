@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
   static const String _title = 'Focus Sample';
 
   @override
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyCustomWidget extends StatefulWidget {
-  const MyCustomWidget({Key? key}) : super(key: key);
+  const MyCustomWidget({super.key});
 
   @override
   State<MyCustomWidget> createState() => _MyCustomWidgetState();

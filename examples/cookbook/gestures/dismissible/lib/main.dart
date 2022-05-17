@@ -7,7 +7,7 @@ void main() {
 // MyApp is a StatefulWidget. This allows updating the state of the
 // widget when an item is removed.
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   MyAppState createState() {

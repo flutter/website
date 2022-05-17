@@ -65,10 +65,10 @@ create a widget that displays a `title` and `message`.
 ```dart
 class MyWidget extends StatelessWidget {
   const MyWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   final String title;
   final String message;
@@ -263,10 +263,10 @@ void main() {
 
 class MyWidget extends StatelessWidget {
   const MyWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   final String title;
   final String message;

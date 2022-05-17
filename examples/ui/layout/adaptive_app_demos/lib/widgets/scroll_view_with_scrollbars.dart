@@ -5,8 +5,7 @@ import '../app_model.dart';
 
 class ScrollViewWithScrollbars extends StatefulWidget {
   const ScrollViewWithScrollbars(
-      {Key? key, required this.child, this.axis = Axis.vertical})
-      : super(key: key);
+      {super.key, required this.child, this.axis = Axis.vertical});
   final Widget child;
   final Axis axis;
   @override

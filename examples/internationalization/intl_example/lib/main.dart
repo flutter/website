@@ -92,7 +92,7 @@ class DemoLocalizationsDelegate
 }
 
 class DemoApp extends StatelessWidget {
-  const DemoApp({Key? key}) : super(key: key);
+  const DemoApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +108,7 @@ class DemoApp extends StatelessWidget {
 }
 
 class Demo extends StatelessWidget {
-  const Demo({Key? key}) : super(key: key);
+  const Demo({super.key});
 
   @override
   Widget build(BuildContext context) {

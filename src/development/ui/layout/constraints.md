@@ -132,7 +132,7 @@ const big = TextStyle(fontSize: 30);
 //////////////////////////////////////////////////
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -173,7 +173,7 @@ class HomePage extends StatelessWidget {
 //////////////////////////////////////////////////
 
 abstract class Example extends StatelessWidget {
-  const Example({Key? key}) : super(key: key);
+  const Example({super.key});
 
   String get code;
 
@@ -185,8 +185,8 @@ abstract class Example extends StatelessWidget {
 class FlutterLayoutArticle extends StatefulWidget {
   const FlutterLayoutArticle(
     this.examples, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final List<Example> examples;
 
@@ -354,7 +354,7 @@ class Button extends StatelessWidget {
 //////////////////////////////////////////////////
 
 class Example1 extends Example {
-  const Example1({Key? key}) : super(key: key);
+  const Example1({super.key});
 
   @override
   final code = 'Container(color: red)';
@@ -374,7 +374,7 @@ class Example1 extends Example {
 //////////////////////////////////////////////////
 
 class Example2 extends Example {
-  const Example2({Key? key}) : super(key: key);
+  const Example2({super.key});
 
   @override
   final code = 'Container(width: 100, height: 100, color: red)';
@@ -394,7 +394,7 @@ class Example2 extends Example {
 //////////////////////////////////////////////////
 
 class Example3 extends Example {
-  const Example3({Key? key}) : super(key: key);
+  const Example3({super.key});
 
   @override
   final code = 'Center(\n'
@@ -418,7 +418,7 @@ class Example3 extends Example {
 //////////////////////////////////////////////////
 
 class Example4 extends Example {
-  const Example4({Key? key}) : super(key: key);
+  const Example4({super.key});
 
   @override
   final code = 'Align(\n'
@@ -443,7 +443,7 @@ class Example4 extends Example {
 //////////////////////////////////////////////////
 
 class Example5 extends Example {
-  const Example5({Key? key}) : super(key: key);
+  const Example5({super.key});
 
   @override
   final code = 'Center(\n'
@@ -471,7 +471,7 @@ class Example5 extends Example {
 //////////////////////////////////////////////////
 
 class Example6 extends Example {
-  const Example6({Key? key}) : super(key: key);
+  const Example6({super.key});
 
   @override
   final code = 'Center(child: Container(color: red))';
@@ -499,7 +499,7 @@ class Example6 extends Example {
 //////////////////////////////////////////////////
 
 class Example7 extends Example {
-  const Example7({Key? key}) : super(key: key);
+  const Example7({super.key});
 
   @override
   final code = 'Center(\n'
@@ -534,7 +534,7 @@ class Example7 extends Example {
 //////////////////////////////////////////////////
 
 class Example8 extends Example {
-  const Example8({Key? key}) : super(key: key);
+  const Example8({super.key});
 
   @override
   final code = 'Center(\n'
@@ -562,7 +562,7 @@ class Example8 extends Example {
 //////////////////////////////////////////////////
 
 class Example9 extends Example {
-  const Example9({Key? key}) : super(key: key);
+  const Example9({super.key});
 
   @override
   final code = 'ConstrainedBox(\n'
@@ -596,7 +596,7 @@ class Example9 extends Example {
 //////////////////////////////////////////////////
 
 class Example10 extends Example {
-  const Example10({Key? key}) : super(key: key);
+  const Example10({super.key});
 
   @override
   final code = 'Center(\n'
@@ -632,7 +632,7 @@ class Example10 extends Example {
 //////////////////////////////////////////////////
 
 class Example11 extends Example {
-  const Example11({Key? key}) : super(key: key);
+  const Example11({super.key});
 
   @override
   final code = 'Center(\n'
@@ -667,7 +667,7 @@ class Example11 extends Example {
 //////////////////////////////////////////////////
 
 class Example12 extends Example {
-  const Example12({Key? key}) : super(key: key);
+  const Example12({super.key});
 
   @override
   final code = 'Center(\n'
@@ -702,7 +702,7 @@ class Example12 extends Example {
 //////////////////////////////////////////////////
 
 class Example13 extends Example {
-  const Example13({Key? key}) : super(key: key);
+  const Example13({super.key});
 
   @override
   final code = 'UnconstrainedBox(\n'
@@ -723,7 +723,7 @@ class Example13 extends Example {
 //////////////////////////////////////////////////
 
 class Example14 extends Example {
-  const Example14({Key? key}) : super(key: key);
+  const Example14({super.key});
 
   @override
   final code = 'UnconstrainedBox(\n'
@@ -747,7 +747,7 @@ class Example14 extends Example {
 //////////////////////////////////////////////////
 
 class Example15 extends Example {
-  const Example15({Key? key}) : super(key: key);
+  const Example15({super.key});
 
   @override
   final code = 'OverflowBox(\n'
@@ -781,7 +781,7 @@ class Example15 extends Example {
 //////////////////////////////////////////////////
 
 class Example16 extends Example {
-  const Example16({Key? key}) : super(key: key);
+  const Example16({super.key});
 
   @override
   final code = 'UnconstrainedBox(\n'
@@ -807,7 +807,7 @@ class Example16 extends Example {
 //////////////////////////////////////////////////
 
 class Example17 extends Example {
-  const Example17({Key? key}) : super(key: key);
+  const Example17({super.key});
 
   @override
   final code = 'UnconstrainedBox(\n'
@@ -843,7 +843,7 @@ class Example17 extends Example {
 //////////////////////////////////////////////////
 
 class Example18 extends Example {
-  const Example18({Key? key}) : super(key: key);
+  const Example18({super.key});
 
   @override
   final code = 'FittedBox(\n'
@@ -868,7 +868,7 @@ class Example18 extends Example {
 //////////////////////////////////////////////////
 
 class Example19 extends Example {
-  const Example19({Key? key}) : super(key: key);
+  const Example19({super.key});
 
   @override
   final code = 'Center(\n'
@@ -896,7 +896,7 @@ class Example19 extends Example {
 ////////////////////////////////////////////////////
 
 class Example20 extends Example {
-  const Example20({Key? key}) : super(key: key);
+  const Example20({super.key});
 
   @override
   final code = 'Center(\n'
@@ -923,7 +923,7 @@ class Example20 extends Example {
 //////////////////////////////////////////////////
 
 class Example21 extends Example {
-  const Example21({Key? key}) : super(key: key);
+  const Example21({super.key});
 
   @override
   final code = 'Center(\n'
@@ -945,7 +945,7 @@ class Example21 extends Example {
 //////////////////////////////////////////////////
 
 class Example22 extends Example {
-  const Example22({Key? key}) : super(key: key);
+  const Example22({super.key});
 
   @override
   final code = 'FittedBox(\n'
@@ -971,7 +971,7 @@ class Example22 extends Example {
 //////////////////////////////////////////////////
 
 class Example23 extends Example {
-  const Example23({Key? key}) : super(key: key);
+  const Example23({super.key});
 
   @override
   final code = 'Row(children:[\n'
@@ -1000,7 +1000,7 @@ class Example23 extends Example {
 //////////////////////////////////////////////////
 
 class Example24 extends Example {
-  const Example24({Key? key}) : super(key: key);
+  const Example24({super.key});
 
   @override
   final code = 'Row(children:[\n'
@@ -1033,7 +1033,7 @@ class Example24 extends Example {
 //////////////////////////////////////////////////
 
 class Example25 extends Example {
-  const Example25({Key? key}) : super(key: key);
+  const Example25({super.key});
 
   @override
   final code = 'Row(children:[\n'
@@ -1072,7 +1072,7 @@ class Example25 extends Example {
 //////////////////////////////////////////////////
 
 class Example26 extends Example {
-  const Example26({Key? key}) : super(key: key);
+  const Example26({super.key});
 
   @override
   final code = 'Row(children:[\n'
@@ -1117,7 +1117,7 @@ class Example26 extends Example {
 //////////////////////////////////////////////////
 
 class Example27 extends Example {
-  const Example27({Key? key}) : super(key: key);
+  const Example27({super.key});
 
   @override
   final code = 'Row(children:[\n'
@@ -1166,7 +1166,7 @@ class Example27 extends Example {
 //////////////////////////////////////////////////
 
 class Example28 extends Example {
-  const Example28({Key? key}) : super(key: key);
+  const Example28({super.key});
 
   @override
   final code = 'Scaffold(\n'
@@ -1205,7 +1205,7 @@ class Example28 extends Example {
 //////////////////////////////////////////////////
 
 class Example29 extends Example {
-  const Example29({Key? key}) : super(key: key);
+  const Example29({super.key});
 
   @override
   final code = 'Scaffold(\n'
