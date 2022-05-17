@@ -118,12 +118,12 @@ class RadialExpansionDemo extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 PageRouteBuilder<void>(
-                  pageBuilder: (BuildContext context,
-                      Animation<double> animation,
-                      Animation<double> secondaryAnimation) {
+                  pageBuilder: (context,
+                      animation,
+                      secondaryAnimation) {
                     return AnimatedBuilder(
                       animation: animation,
-                      builder: (BuildContext context, Widget? child) {
+                      builder: (context, child) {
                         return Opacity(
                           opacity: opacityCurve.transform(animation.value),
                           child: _buildPage(context, imageName, description),

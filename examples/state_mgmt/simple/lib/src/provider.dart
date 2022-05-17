@@ -2,7 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:state_mgmt/src/common.dart';
+import 'common.dart';
 
 CartModel somehowGetMyCartModel(BuildContext context) {
   return Provider.of<CartModel>(context);
@@ -53,7 +53,7 @@ class MyCartTotalWidget extends StatelessWidget {
     // #docregion descendant
     return Consumer<CartModel>(
       builder: (context, cart, child) {
-        return Text("Total price: ${cart.totalPrice}");
+        return Text('Total price: ${cart.totalPrice}');
       },
     );
     // #enddocregion descendant
@@ -85,9 +85,9 @@ class MyCatalog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MyCatalogItem(Item("A")),
-        MyCatalogItem(Item("B")),
-        MyCatalogItem(Item("C")),
+        MyCatalogItem(Item('A')),
+        MyCatalogItem(Item('B')),
+        MyCatalogItem(Item('C')),
       ],
     );
   }
@@ -105,7 +105,7 @@ class MyCatalogItem extends StatelessWidget {
         Text(item.name),
         TextButton(
           onPressed: () => myTapHandler(context),
-          child: Text("Add ${item.name}"),
+          child: Text('Add ${item.name}'),
         ),
       ],
     );

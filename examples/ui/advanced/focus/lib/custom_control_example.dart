@@ -35,7 +35,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onFocusChange: (bool focused) {
+      onFocusChange: (focused) {
         setState(() {
           _color = focused ? Colors.black26 : Colors.white;
           _label = focused ? 'Focused' : 'Unfocused';

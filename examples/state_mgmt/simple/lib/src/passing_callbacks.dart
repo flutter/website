@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:state_mgmt/src/common.dart';
+import 'common.dart';
 
 class CallbackPasser extends StatelessWidget {
   const CallbackPasser({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class MyListItem extends StatelessWidget {
         const Text('Item!'),
         TextButton(
           onPressed: () => callback(item),
-          child: const Text("Add"),
+          child: const Text('Add'),
         ),
       ],
     );

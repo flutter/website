@@ -30,7 +30,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
         CopyIntent: CopyAction(controller),
         SelectAllIntent: SelectAllAction(controller),
       },
-      child: Builder(builder: (BuildContext context) {
+      child: Builder(builder: (context) {
         return Scaffold(
           body: Center(
             child: Row(

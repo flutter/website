@@ -1,10 +1,11 @@
-import 'dart:ffi';
-import 'package:ffi/ffi.dart';
-import 'package:flutter/services.dart';
 // ignore_for_file: unused_local_variable
 
+import 'dart:ffi';
+
+import 'package:ffi/ffi.dart';
 // #docregion Main
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Builder(
-            builder: (BuildContext context) {
+            builder: (context) {
               return Column(
                 children: [
                   const Text('Hello World'),
@@ -102,7 +103,7 @@ class LayoutBuilderExample extends StatelessWidget {
 // #enddocregion LayoutBuilder
 }
 
-void exampleChannels() async {
+Future<void> exampleChannels() async {
   // #docregion MethodChannel
   // Dart side
   const channel = MethodChannel('foo');

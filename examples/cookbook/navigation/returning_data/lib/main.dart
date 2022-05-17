@@ -41,7 +41,7 @@ class SelectionButton extends StatelessWidget {
   // #docregion navigateAndDisplay
   // A method that launches the SelectionScreen and awaits the result from
   // Navigator.pop.
-  void _navigateAndDisplaySelection(BuildContext context) async {
+  Future<void> _navigateAndDisplaySelection(BuildContext context) async {
     // Navigator.push returns a Future that completes after calling
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(

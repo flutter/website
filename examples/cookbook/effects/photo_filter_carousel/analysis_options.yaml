@@ -1,6 +1,5 @@
-include: package:flutter_lints/flutter.yaml
+# Take our settings from the example directory's main analysis_options.yaml
+# file. If necessary for a particular example, this file can also include
+# overrides for individual lints.
 
-linter:
-  rules:
-    avoid_print: true
-    prefer_single_quotes: true
+include: ../../../analysis_options.yaml

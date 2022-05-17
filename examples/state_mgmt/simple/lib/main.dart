@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:state_mgmt/src/passing_callbacks.dart' as callbacks;
-import 'package:state_mgmt/src/performance.dart' as performance;
-import 'package:state_mgmt/src/provider.dart';
-import 'package:state_mgmt/src/set_state.dart' as set_state;
+import 'src/passing_callbacks.dart' as callbacks;
+import 'src/performance.dart' as performance;
+import 'src/provider.dart';
+import 'src/set_state.dart' as set_state;
 
 // #docregion main
 void main() {

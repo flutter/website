@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Add and remove a todo', (WidgetTester tester) async {
+  testWidgets('Add and remove a todo', (tester) async {
     // Build the widget.
     await tester.pumpWidget(const TodoList());
 
@@ -58,7 +58,7 @@ class _TodoListState extends State<TodoList> {
             Expanded(
               child: ListView.builder(
                 itemCount: todos.length,
-                itemBuilder: (BuildContext context, int index) {
+                itemBuilder: (context, index) {
                   final todo = todos[index];
 
                   return Dismissible(

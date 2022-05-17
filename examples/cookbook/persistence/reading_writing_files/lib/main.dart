@@ -70,7 +70,7 @@ class _FlutterDemoState extends State<FlutterDemo> {
   @override
   void initState() {
     super.initState();
-    widget.storage.readCounter().then((int value) {
+    widget.storage.readCounter().then((value) {
       setState(() {
         _counter = value;
       });

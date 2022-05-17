@@ -29,7 +29,7 @@ class Photo extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints size) {
+          builder: (context, size) {
             return Image.asset(
               photo,
               fit: BoxFit.contain,
@@ -136,12 +136,12 @@ class RadialExpansionDemo extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 PageRouteBuilder<void>(
-                  pageBuilder: (BuildContext context,
-                      Animation<double> animation,
-                      Animation<double> secondaryAnimation) {
+                  pageBuilder: (context,
+                      animation,
+                      secondaryAnimation) {
                     return AnimatedBuilder(
                         animation: animation,
-                        builder: (BuildContext context, Widget? child) {
+                        builder: (context, child) {
                           return Opacity(
                             opacity: opacityCurve.transform(animation.value),
                             child: _buildPage(context, imageName, description),

@@ -1,9 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp(
-    items: List<String>.generate(10000, (i) => "Item $i"),
+    items: List<String>.generate(10000, (i) => 'Item $i'),
   ));
 }
 

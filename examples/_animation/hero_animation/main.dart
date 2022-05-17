@@ -61,7 +61,7 @@ class HeroAnimation extends StatelessWidget {
           width: 300.0,
           onTap: () {
             Navigator.of(context)
-                .push(MaterialPageRoute<void>(builder: (BuildContext context) {
+                .push(MaterialPageRoute<void>(builder: (context) {
               return Scaffold(
                 appBar: AppBar(
                   title: const Text('Flippers Page'),

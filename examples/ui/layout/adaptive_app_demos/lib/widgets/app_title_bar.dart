@@ -1,14 +1,15 @@
-import 'package:adaptive_app_demos/app_model.dart';
-import 'package:adaptive_app_demos/global/device_type.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../app_model.dart';
+import '../global/device_type.dart';
 
 class AppTitleBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isLinuxOrWindows = DeviceType.isWindows || DeviceType.isLinux;
-    bool enableTouch = context.select((AppModel m) => m.touchMode);
+    bool enableTouch = context.select<AppModel, bool>((m) => m.touchMode);
     bool useSmallHeader = MediaQuery.of(context).size.width < 600;
     bool hideTitle = MediaQuery.of(context).size.width < 400;
     TextStyle style = useSmallHeader ? TextStyles.h2 : TextStyles.h1;
@@ -22,7 +23,7 @@ class AppTitleBar extends StatelessWidget {
           if (hideTitle == false)
             Positioned.fill(
               child: Center(
-                child: Text("Adaptive Scaffold",
+                child: Text('Adaptive Scaffold',
                     style: style.copyWith(color: Colors.white)),
               ),
             ),

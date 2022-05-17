@@ -1,8 +1,8 @@
-import 'package:adaptive_app_demos/global/device_type.dart';
 import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/gestures.dart';
+
+import '../global/device_type.dart';
 
 class FocusExamplesPage extends StatelessWidget {
   @override
@@ -15,17 +15,17 @@ class FocusExamplesPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             // Basic widget that can accept traversal, built with FocusableActionDetector
-            Text("BasicActionDetector:"),
+            Text('BasicActionDetector:'),
             BasicActionDetector(),
             SizedBox(height: 10),
 
             // Clickable widget that can accept traversal, built with FocusableActionDetector
-            Text("AdvancedActionDetector:"),
+            Text('AdvancedActionDetector:'),
             ClickableActionDetector(),
             SizedBox(height: 10),
 
             // A totally custom control, built by stacking together various widgets
-            Text("CustomControl:"),
+            Text('CustomControl:'),
             ClickableControl(),
             _TextListener(),
           ],
@@ -47,7 +47,7 @@ class __TextListenerState extends State<_TextListener> {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (FocusNode node, RawKeyEvent event) {
+      onKey: (node, event) {
         if (event is RawKeyDownEvent) {
           print(event.logicalKey);
         }
@@ -79,8 +79,8 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
     return FocusableActionDetector(
       onFocusChange: (value) => setState(() => _hasFocus = value),
       actions: <Type, Action<Intent>>{
-        ActivateIntent: CallbackAction<Intent>(onInvoke: (Intent intent) {
-          print("Enter or Space was pressed!");
+        ActivateIntent: CallbackAction<Intent>(onInvoke: (intent) {
+          print('Enter or Space was pressed!');
           return null;
         }),
       },
@@ -121,7 +121,7 @@ class _ClickableActionDetectorState extends State<ClickableActionDetector> {
       mouseCursor: SystemMouseCursors.click,
       onFocusChange: (value) => setState(() => _hasFocus = value),
       actions: <Type, Action<Intent>>{
-        ActivateIntent: CallbackAction<Intent>(onInvoke: (Intent intent) {
+        ActivateIntent: CallbackAction<Intent>(onInvoke: (intent) {
           _submit();
           return null;
         }),
@@ -136,7 +136,7 @@ class _ClickableActionDetectorState extends State<ClickableActionDetector> {
     );
   }
 
-  void _submit() => print("Submit!");
+  void _submit() => print('Submit!');
 }
 
 // Example of a custom focus widget from scratch
@@ -169,7 +169,7 @@ class ClickableControl extends StatelessWidget {
     );
   }
 
-  void _submit() => print("Submit!");
+  void _submit() => print('Submit!');
 
   KeyEventResult _handleKeyDown(FocusNode node, RawKeyEvent event) {
     if (event is RawKeyDownEvent &&
@@ -217,7 +217,7 @@ class MyFocusTraversalWidget extends StatelessWidget {
   Widget SubmitButton() {
     return ElevatedButton(
       onPressed: () => {DoNothingAction /* Submit */},
-      child: Text("Submit"),
+      child: Text('Submit'),
     );
   }
 
@@ -252,7 +252,7 @@ class _MyHoverWidgetState extends State<MyHoverWidget> {
     return MouseRegion(
       onEnter: (_) => setState(() => _isMouseOver = true),
       onExit: (_) => setState(() => _isMouseOver = false),
-      onHover: (PointerHoverEvent e) => print(e.localPosition),
+      onHover: (e) => print(e.localPosition),
       child: Container(
         height: 500,
         color: _isMouseOver ? Colors.blue : Colors.black,

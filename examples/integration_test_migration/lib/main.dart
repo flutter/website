@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
 
   void _loadPlants() {
     DefaultAssetBundle.of(context)
-        .loadString("assets/plants.json")
+        .loadString('assets/plants.json')
         .then((data) {
       setState(() {
         final jsonResult = jsonDecode(data);

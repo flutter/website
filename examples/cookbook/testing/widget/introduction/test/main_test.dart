@@ -5,7 +5,7 @@ void main() {
   // Define a test. The TestWidgets function also provides a WidgetTester
   // to work with. The WidgetTester allows building and interacting
   // with widgets in the test environment.
-  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+  testWidgets('MyWidget has a title and message', (tester) async {
     // Create the widget by telling the tester to build it.
     await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
 

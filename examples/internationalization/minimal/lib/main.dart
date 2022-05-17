@@ -22,8 +22,8 @@
 
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show SynchronousFuture;
+import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 // #docregion Demo
@@ -96,7 +96,7 @@ class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (BuildContext context) =>
+      onGenerateTitle: (context) =>
           DemoLocalizations.of(context).title,
       localizationsDelegates: const [
         DemoLocalizationsDelegate(),

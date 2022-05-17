@@ -29,7 +29,7 @@ class Photo {
   int get hashCode => id.hashCode;
 }
 
-final List<Photo> allPhotos = List<Photo>.generate(30, (int index) {
+final List<Photo> allPhotos = List<Photo>.generate(30, (index) {
   return Photo('images/pic${index + 1}.jpg', index);
 });
 
@@ -345,7 +345,7 @@ class _ImagesDemoState extends State<ImagesDemo>
 
     // Number of PhotoBlockFrames in each _photoBlockHeight block
     final int photoBlockFrameCount = photoBlockFrames
-        .map((List<PhotoFrame> l) => l.length)
+        .map((l) => l.length)
         .reduce((s, n) => s + n);
 
     return Scaffold(
@@ -363,7 +363,7 @@ class _ImagesDemoState extends State<ImagesDemo>
           padding: const EdgeInsets.all(4.0),
           itemExtent: _photoBlockHeight,
           itemCount: (allPhotos.length / photoBlockFrameCount).floor(),
-          itemBuilder: (BuildContext context, int blockIndex) {
+          itemBuilder: (context, blockIndex) {
             return _buildPhotoBlock(context, blockIndex, photoBlockFrameCount);
           },
         ),

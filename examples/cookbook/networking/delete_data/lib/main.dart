@@ -117,7 +117,7 @@ class _MyAppState extends State<MyApp> {
                   );
                   // #enddocregion Column
                 } else if (snapshot.hasError) {
-                  return Text("${snapshot.error}");
+                  return Text('${snapshot.error}');
                 }
               }
 

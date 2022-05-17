@@ -1,23 +1,24 @@
-import 'package:adaptive_app_demos/global/device_type.dart';
-import 'package:adaptive_app_demos/widgets/scroll_view_with_scrollbars.dart';
 import 'package:flutter/material.dart';
+
+import '../global/device_type.dart';
+import '../widgets/scroll_view_with_scrollbars.dart';
 
 class AdaptiveDataTablePage extends StatelessWidget {
   final List<int> items = List.generate(100, (index) => index);
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
+      builder: (context, constraints) {
         bool showCol2 = constraints.maxWidth > 300;
         bool showCol3 = constraints.maxWidth > 600;
         bool showCol4 = constraints.maxWidth > 900;
         return Column(children: [
           Row(
             children: [
-              _TableHeader("Column 1"),
-              if (showCol2) _TableHeader("Column 2"),
-              if (showCol3) _TableHeader("Column 3"),
-              if (showCol4) _TableHeader("Column 4"),
+              _TableHeader('Column 1'),
+              if (showCol2) _TableHeader('Column 2'),
+              if (showCol3) _TableHeader('Column 3'),
+              if (showCol4) _TableHeader('Column 4'),
             ],
           ),
           Expanded(
@@ -28,10 +29,10 @@ class AdaptiveDataTablePage extends StatelessWidget {
                     color: i % 2 == 0 ? Colors.grey.shade300 : null,
                     child: Row(
                       children: [
-                        _TableRowItem("Item $i, Column 1"),
-                        if (showCol2) _TableRowItem("Item $i, Column 2"),
-                        if (showCol3) _TableRowItem("Item $i, Column 3"),
-                        if (showCol4) _TableRowItem("Item $i, Column 4"),
+                        _TableRowItem('Item $i, Column 1'),
+                        if (showCol2) _TableRowItem('Item $i, Column 2'),
+                        if (showCol3) _TableRowItem('Item $i, Column 3'),
+                        if (showCol4) _TableRowItem('Item $i, Column 4'),
                       ],
                     ),
                   );

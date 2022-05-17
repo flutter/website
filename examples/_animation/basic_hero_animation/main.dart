@@ -20,7 +20,7 @@ class BasicHeroAnimation extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute<void>(
-                builder: (BuildContext context) {
+                builder: (context) {
                   return Scaffold(
                     appBar: AppBar(
                       title: const Text('Flippers Page'),

@@ -10,7 +10,7 @@ Future<void> main() async {
 }
 // #enddocregion InitializeSDK
 
-void captureErrors() async {
+Future<void> captureErrors() async {
   try {
     // Do something
   } catch (exception, stackTrace) {

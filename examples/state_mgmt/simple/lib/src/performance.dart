@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:state_mgmt/src/provider.dart';
+import 'provider.dart';
 
 class AnotherMonstrousWidget extends SomeExpensiveWidget {
   const AnotherMonstrousWidget({
@@ -20,7 +20,7 @@ class ChildUsingDescendant extends StatelessWidget {
         children: [
           // Use SomeExpensiveWidget here, without rebuilding every time.
           if (child != null) child,
-          Text("Total price: ${cart.totalPrice}"),
+          Text('Total price: ${cart.totalPrice}'),
         ],
       ),
       // Build the expensive widget here.
@@ -107,7 +107,7 @@ class NonRebuilding_Good extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () => _onPressed(context),
-      child: const Text("Add"),
+      child: const Text('Add'),
     );
   }
 

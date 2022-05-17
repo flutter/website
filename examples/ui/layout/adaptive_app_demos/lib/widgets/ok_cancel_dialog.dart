@@ -1,5 +1,6 @@
-import 'package:adaptive_app_demos/global/device_type.dart';
 import 'package:flutter/material.dart';
+
+import '../global/device_type.dart';
 
 class OkCancelDialog extends StatelessWidget {
   const OkCancelDialog({Key? key, required this.message}) : super(key: key);
@@ -39,10 +40,10 @@ class _OkCancelButtons extends StatelessWidget {
           textDirection: btnDirection,
           children: [
             DialogButton(
-                label: "Cancel",
+                label: 'Cancel',
                 onPressed: () => Navigator.pop(context, false)),
             DialogButton(
-                label: "Ok", onPressed: () => Navigator.pop(context, true)),
+                label: 'Ok', onPressed: () => Navigator.pop(context, true)),
           ],
         ),
       ],

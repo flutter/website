@@ -114,7 +114,7 @@ class Demo extends StatelessWidget {
   Widget build(BuildContext context) {
 // #docregion MaterialAppTitleExample
     return MaterialApp(
-      onGenerateTitle: (BuildContext context) =>
+      onGenerateTitle: (context) =>
           DemoLocalizations.of(context).title,
 // #enddocregion MaterialAppTitleExample
       localizationsDelegates: const [
