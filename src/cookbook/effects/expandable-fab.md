@@ -299,7 +299,6 @@ and configure this widget to animate and position an individual `ActionButton`. 
 @immutable
 class _ExpandingActionButton extends StatelessWidget {
   const _ExpandingActionButton({
-    super.key,
     required this.directionInDegrees,
     required this.maxDistance,
     required this.progress,
@@ -631,7 +630,6 @@ class _ExpandableFabState extends State<ExpandableFab>
 @immutable
 class _ExpandingActionButton extends StatelessWidget {
   const _ExpandingActionButton({
-    super.key,
     required this.directionInDegrees,
     required this.maxDistance,
     required this.progress,
