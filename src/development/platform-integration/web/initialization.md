@@ -168,14 +168,12 @@ see the [initialization code][gallery-init] for the Flutter Gallery.
 
 ## Upgrading an older project
 
-If your project was created in Flutter 2.10 or earlier,
-you can create a new `index.html` file
-with the latest initialization template by running `flutter create`.
+You can create a new `index.html` file
+with the latest template by deleting the old files 
+from the `web` directory and running `flutter create`.
 
 From your project directory, run the following:
 
 ```
-$ flutter create .
+$ flutter create . --platforms=web
 ```
-
-You can now customize the startup process as described above.
