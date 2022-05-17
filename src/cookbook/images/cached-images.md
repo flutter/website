@@ -43,8 +43,8 @@ CachedNetworkImage(
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());

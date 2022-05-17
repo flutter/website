@@ -261,7 +261,7 @@ class _MyAppState extends State<MyApp> {
                     ],
                   );
                 } else if (snapshot.hasError) {
-                  return Text("${snapshot.error}");
+                  return Text('${snapshot.error}');
                 }
               }
 

@@ -479,8 +479,8 @@ All looks fine now, but if you do a print() on the user object:
 
 <?code-excerpt "lib/nested/main.dart (print)"?>
 ```dart
-Address address = Address("My st.", "New York");
-User user = User("John", address);
+Address address = Address('My st.', 'New York');
+User user = User('John', address);
 print(user.toJson());
 ```
 

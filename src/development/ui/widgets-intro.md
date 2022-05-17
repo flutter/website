@@ -776,7 +776,7 @@ class _ShoppingListState extends State<ShoppingList> {
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        children: widget.products.map((Product product) {
+        children: widget.products.map((product) {
           return ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),

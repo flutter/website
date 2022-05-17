@@ -98,7 +98,7 @@ class CallbackShortcuts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (FocusNode node, RawKeyEvent event) {
+      onKey: (node, event) {
         KeyEventResult result = KeyEventResult.ignored;
         // Activates all key bindings that match, returns handled if any handle it.
         for (final ShortcutActivator activator in bindings.keys) {
@@ -147,7 +147,7 @@ Widget build(BuildContext context) {
         SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
-        builder: (BuildContext context) => TextButton(
+        builder: (context) => TextButton(
           child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
@@ -237,7 +237,7 @@ Or, if it's too much of a bother to create a new class, use a `CallbackAction`:
 
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (CallbackAction)"?>
 ```dart
-CallbackAction(onInvoke: (Intent intent) => model.selectAll());
+CallbackAction(onInvoke: (intent) => model.selectAll());
 ```
 
 Once you have an action, you add it to your application using the [`Actions`][]
@@ -316,7 +316,7 @@ Widget build(BuildContext context) {
       SelectAllIntent: SelectAllAction(model),
     },
     child: Builder(
-      builder: (BuildContext context) => TextButton(
+      builder: (context) => TextButton(
         child: const Text('SELECT ALL'),
         onPressed: Actions.handler<SelectAllIntent>(
           context,
@@ -399,7 +399,7 @@ Widget build(BuildContext context) {
       SelectAllIntent: SelectAllAction(model),
     },
     child: Builder(
-      builder: (BuildContext context) => TextButton(
+      builder: (context) => TextButton(
         child: const Text('SELECT ALL'),
         onPressed: Actions.handler<SelectAllIntent>(
           context,
@@ -460,7 +460,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
         CopyIntent: CopyAction(controller),
         SelectAllIntent: SelectAllAction(controller),
       },
-      child: Builder(builder: (BuildContext context) {
+      child: Builder(builder: (context) {
         return Scaffold(
           body: Center(
             child: Row(
