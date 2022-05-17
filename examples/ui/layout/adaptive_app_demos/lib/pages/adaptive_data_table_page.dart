@@ -47,7 +47,7 @@ class AdaptiveDataTablePage extends StatelessWidget {
 }
 
 class _TableHeader extends StatelessWidget {
-  const _TableHeader(this.label, {super.key});
+  const _TableHeader(this.label);
   final String label;
 
   @override
@@ -63,7 +63,7 @@ class _TableHeader extends StatelessWidget {
 }
 
 class _TableRowItem extends StatelessWidget {
-  const _TableRowItem(this.label, {super.key});
+  const _TableRowItem(this.label);
   final String label;
 
   @override

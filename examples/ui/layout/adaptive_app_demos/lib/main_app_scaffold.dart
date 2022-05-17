@@ -127,7 +127,7 @@ class _PageStack extends StatelessWidget {
 }
 
 class _SideMenu extends StatelessWidget {
-  const _SideMenu({super.key, this.showPageButtons = true});
+  const _SideMenu({this.showPageButtons = true});
 
   final bool showPageButtons;
 

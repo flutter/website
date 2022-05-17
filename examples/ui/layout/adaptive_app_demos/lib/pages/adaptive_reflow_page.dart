@@ -60,7 +60,7 @@ Widget _ContentPanel2() => _ContentPanel('Panel 2');
 Widget _ContentPanel3() => _ContentPanel('Panel 3');
 
 class _ContentPanel extends StatelessWidget {
-  const _ContentPanel(this.label, {super.key});
+  const _ContentPanel(this.label);
   final String label;
 
   @override
