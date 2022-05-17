@@ -8,7 +8,7 @@ void main() {
 }
 
 class PhysicsCardDragDemo extends StatelessWidget {
-  const PhysicsCardDragDemo({Key? key}) : super(key: key);
+  const PhysicsCardDragDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class PhysicsCardDragDemo extends StatelessWidget {
 /// A draggable card that moves back to [Alignment.center] when it's
 /// released.
 class DraggableCard extends StatefulWidget {
-  const DraggableCard({required this.child, Key? key}) : super(key: key);
+  const DraggableCard({required this.child, super.key});
 
   final Widget child;
 

@@ -9,7 +9,7 @@ You can migrate your Flutter packages to use non-nullable types like this:
 <?code-excerpt "basics/lib/main.dart (MyApp)"?>
 ```dart
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   final int anInt = 3; // Cannot be null.
   final int? aNullableInt = null; // Can be null.

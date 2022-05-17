@@ -2,15 +2,15 @@
 
 // #docregion UrlLauncher
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:path/path.dart' as p;
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 }
 
 class DemoPage extends StatelessWidget {
-  const DemoPage({Key? key}) : super(key: key);
+  const DemoPage({super.key});
 
   launchURL() {
     launchUrl(p.toUri('https://flutter.dev'));

@@ -1,5 +1,6 @@
-import 'package:adaptive_app_demos/global/device_type.dart';
 import 'package:flutter/material.dart';
+
+import 'global/device_type.dart';
 
 class AppModel with ChangeNotifier {
   bool getDefaultTouchMode() => DeviceType.isMobile == true;

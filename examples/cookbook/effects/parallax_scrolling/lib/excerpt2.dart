@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 @immutable
 class LocationListItem extends StatelessWidget {
   const LocationListItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.name,
     required this.country,
-  }) : super(key: key);
+  });
 
   final String imageUrl;
   final String name;

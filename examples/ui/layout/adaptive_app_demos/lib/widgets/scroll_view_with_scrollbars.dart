@@ -1,11 +1,11 @@
-import 'package:adaptive_app_demos/app_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../app_model.dart';
+
 class ScrollViewWithScrollbars extends StatefulWidget {
   const ScrollViewWithScrollbars(
-      {Key? key, required this.child, this.axis = Axis.vertical})
-      : super(key: key);
+      {super.key, required this.child, this.axis = Axis.vertical});
   final Widget child;
   final Axis axis;
   @override
@@ -20,7 +20,7 @@ class _ScrollViewWithScrollbarsState extends State<ScrollViewWithScrollbars> {
   Widget build(BuildContext context) {
     return Scrollbar(
       controller: _scrollController,
-      thumbVisibility: context.select((AppModel m) => m.touchMode),
+      thumbVisibility: context.select<AppModel, bool>((m) => m.touchMode),
       child: SingleChildScrollView(
         scrollDirection: widget.axis,
         controller: _scrollController,

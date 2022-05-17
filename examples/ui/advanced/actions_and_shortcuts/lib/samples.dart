@@ -16,7 +16,7 @@ class ShortcutsExample extends StatelessWidget {
           SelectAllIntent: SelectAllAction(model),
         },
         child: Builder(
-          builder: (BuildContext context) => TextButton(
+          builder: (context) => TextButton(
             child: const Text('SELECT ALL'),
             onPressed: Actions.handler<SelectAllIntent>(
               context,
@@ -68,7 +68,7 @@ class SelectAllAction extends Action<SelectAllIntent> {
 
 void callbackActionSample() {
 // #docregion CallbackAction
-  CallbackAction(onInvoke: (Intent intent) => model.selectAll());
+  CallbackAction(onInvoke: (intent) => model.selectAll());
 // #enddocregion CallbackAction
 }
 
@@ -127,7 +127,7 @@ class HandlerExample extends StatelessWidget {
         SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
-        builder: (BuildContext context) => TextButton(
+        builder: (context) => TextButton(
           child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
@@ -166,7 +166,7 @@ class LoggingActionDispatcherExample extends StatelessWidget {
         SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
-        builder: (BuildContext context) => TextButton(
+        builder: (context) => TextButton(
           child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
@@ -182,10 +182,10 @@ class LoggingActionDispatcherExample extends StatelessWidget {
 // #docregion CallbackShortcuts
 class CallbackShortcuts extends StatelessWidget {
   const CallbackShortcuts({
-    Key? key,
+    super.key,
     required this.bindings,
     required this.child,
-  }) : super(key: key);
+  });
 
   final Map<ShortcutActivator, VoidCallback> bindings;
   final Widget child;
@@ -193,7 +193,7 @@ class CallbackShortcuts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (FocusNode node, RawKeyEvent event) {
+      onKey: (node, event) {
         KeyEventResult result = KeyEventResult.ignored;
         // Activates all key bindings that match, returns handled if any handle it.
         for (final ShortcutActivator activator in bindings.keys) {

@@ -345,7 +345,7 @@ This is done through the `Consumer` widget.
 ```dart
 return [!Consumer!]<CartModel>(
   builder: (context, cart, child) {
-    return Text("Total price: ${cart.totalPrice}");
+    return Text('Total price: ${cart.totalPrice}');
   },
 );
 ```
@@ -382,7 +382,7 @@ return Consumer<CartModel>(
     children: [
       // Use SomeExpensiveWidget here, without rebuilding every time.
       if ([!child!] != null) [!child!],
-      Text("Total price: ${cart.totalPrice}"),
+      Text('Total price: ${cart.totalPrice}'),
     ],
   ),
   // Build the expensive widget here.

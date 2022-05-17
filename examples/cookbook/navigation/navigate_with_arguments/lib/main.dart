@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +122,7 @@ class HomeScreen extends StatelessWidget {
 // A Widget that extracts the necessary arguments from
 // the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
-  const ExtractArgumentsScreen({Key? key}) : super(key: key);
+  const ExtractArgumentsScreen({super.key});
 
   static const routeName = '/extractArguments';
 
@@ -159,10 +159,10 @@ class PassArgumentsScreen extends StatelessWidget {
   // The arguments are extracted by the onGenerateRoute
   // function provided to the MaterialApp widget.
   const PassArgumentsScreen({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

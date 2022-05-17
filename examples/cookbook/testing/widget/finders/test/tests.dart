@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   // #docregion test1
-  testWidgets('finds a Text widget', (WidgetTester tester) async {
+  testWidgets('finds a Text widget', (tester) async {
     // Build an App with a Text widget that displays the letter 'H'.
     await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
@@ -17,7 +17,7 @@ void main() {
   // #enddocregion test1
 
   // #docregion test2
-  testWidgets('finds a widget using a Key', (WidgetTester tester) async {
+  testWidgets('finds a widget using a Key', (tester) async {
     // Define the test key.
     const testKey = Key('K');
 
@@ -30,7 +30,7 @@ void main() {
   // #enddocregion test2
 
   // #docregion test3
-  testWidgets('finds a specific instance', (WidgetTester tester) async {
+  testWidgets('finds a specific instance', (tester) async {
     const childWidget = Padding(padding: EdgeInsets.zero);
 
     // Provide the childWidget to the Container.

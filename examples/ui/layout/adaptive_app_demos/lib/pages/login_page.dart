@@ -1,6 +1,7 @@
-import 'package:adaptive_app_demos/app_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../app_model.dart';
 
 // Uses full-screen breakpoints to reflow the widget tree
 class LoginPage extends StatelessWidget {
@@ -30,7 +31,7 @@ class _LoginDetailPanel extends StatelessWidget {
         alignment: Alignment.center,
         color: Colors.grey.shade300,
         child: Text(
-          "LOGIN VIEW\nBRANDING",
+          'LOGIN VIEW\nBRANDING',
           style: TextStyle(fontSize: 64),
           textAlign: TextAlign.center,
         ),
@@ -54,10 +55,10 @@ class _LoginForm extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                TextField(decoration: _getTextDecoration("Enter email...")),
+                TextField(decoration: _getTextDecoration('Enter email...')),
                 SizedBox(height: 16),
                 TextField(
-                    decoration: _getTextDecoration("Enter password..."),
+                    decoration: _getTextDecoration('Enter password...'),
                     obscureText: true),
                 SizedBox(height: 16),
                 OutlinedButton(
@@ -66,7 +67,7 @@ class _LoginForm extends StatelessWidget {
                       width: double.infinity,
                       alignment: Alignment.center,
                       padding: EdgeInsets.all(16.0),
-                      child: Text("Log In"),
+                      child: Text('Log In'),
                     )),
               ],
             ),

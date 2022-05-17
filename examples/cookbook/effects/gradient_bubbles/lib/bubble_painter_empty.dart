@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 @immutable
 class BubbleBackground extends StatelessWidget {
   const BubbleBackground({
-    Key? key,
+    super.key,
     required this.colors,
     this.child,
-  }) : super(key: key);
+  });
 
   final List<Color> colors;
   final Widget? child;

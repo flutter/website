@@ -107,7 +107,7 @@ In `integration_test` you have to perform two steps:
 <?code-excerpt "integration_test/main_test.dart (Test1)"?>
 ```dart
 testWidgets('do not select any item, verify please select text is displayed',
-    (WidgetTester tester) async {
+    (tester) async {
   // load the PlantsApp widget
   await tester.pumpWidget(const PlantsApp());
 
@@ -177,7 +177,7 @@ function with the `findsNothing` matcher.
 <?code-excerpt "integration_test/main_test.dart (Test2)"?>
 ```dart
 testWidgets('tap on the first item (Alder), verify selected',
-    (WidgetTester tester) async {
+    (tester) async {
   await tester.pumpWidget(const PlantsApp());
 
   // wait for data to load
@@ -266,7 +266,7 @@ The action repeats until the item is visible.
 <?code-excerpt "integration_test/main_test.dart (Test3)"?>
 ```dart
 testWidgets('scroll, tap on the last item (Zedoary), verify selected',
-    (WidgetTester tester) async {
+    (tester) async {
   await tester.pumpWidget(const PlantsApp());
 
   // wait for data to load

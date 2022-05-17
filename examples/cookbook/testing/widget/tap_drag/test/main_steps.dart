@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   // #docregion TestWidgetStep2
-  testWidgets('Add and remove a todo', (WidgetTester tester) async {
+  testWidgets('Add and remove a todo', (tester) async {
     // Build the widget
     await tester.pumpWidget(const TodoList());
 
@@ -13,7 +13,7 @@ void main() {
   // #enddocregion TestWidgetStep2
 
   // #docregion TestWidgetStep3
-  testWidgets('Add and remove a todo', (WidgetTester tester) async {
+  testWidgets('Add and remove a todo', (tester) async {
     // Enter text code...
 
     // Tap the add button.
@@ -28,7 +28,7 @@ void main() {
   // #enddocregion TestWidgetStep3
 
   // #docregion TestWidgetStep4
-  testWidgets('Add and remove a todo', (WidgetTester tester) async {
+  testWidgets('Add and remove a todo', (tester) async {
     // Enter text and add the item...
 
     // Swipe the item to dismiss it.
@@ -44,7 +44,7 @@ void main() {
 }
 
 class TodoList extends StatefulWidget {
-  const TodoList({Key? key}) : super(key: key);
+  const TodoList({super.key});
 
   @override
   _TodoListState createState() => _TodoListState();
@@ -71,7 +71,7 @@ class _TodoListState extends State<TodoList> {
             Expanded(
               child: ListView.builder(
                 itemCount: todos.length,
-                itemBuilder: (BuildContext context, int index) {
+                itemBuilder: (context, index) {
                   final todo = todos[index];
 
                   return Dismissible(

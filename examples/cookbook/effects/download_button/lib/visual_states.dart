@@ -11,12 +11,12 @@ enum DownloadStatus {
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.transitionDuration = const Duration(
       milliseconds: 500,
     ),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final Duration transitionDuration;

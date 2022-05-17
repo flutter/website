@@ -10,7 +10,7 @@ void main() {
 }
 
 class TutorialHome extends StatelessWidget {
-  const TutorialHome({Key? key}) : super(key: key);
+  const TutorialHome({super.key});
 
   @override
   Widget build(BuildContext context) {

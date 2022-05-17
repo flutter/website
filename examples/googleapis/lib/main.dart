@@ -33,7 +33,7 @@ void main() {
 }
 
 class _LikedVideosWidget extends StatefulWidget {
-  const _LikedVideosWidget({Key? key}) : super(key: key);
+  const _LikedVideosWidget();
 
   @override
   State createState() => _LikedVideosWidgetState();

@@ -15,7 +15,7 @@ class Plant {
 }
 
 class PlantsApp extends StatelessWidget {
-  const PlantsApp({Key? key}) : super(key: key);
+  const PlantsApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -31,7 +31,7 @@ class PlantsApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
+  const HomePage({super.key, required this.title});
 
   final String title;
 
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
 
   void _loadPlants() {
     DefaultAssetBundle.of(context)
-        .loadString("assets/plants.json")
+        .loadString('assets/plants.json')
         .then((data) {
       setState(() {
         final jsonResult = jsonDecode(data);
@@ -103,11 +103,11 @@ class _HomePageState extends State<HomePage> {
 
 class ListOfPlantsWidget extends StatefulWidget {
   const ListOfPlantsWidget({
-    Key? key,
+    super.key,
     required this.plants,
     required this.onSelectPlant,
     this.selectedPlant,
-  }) : super(key: key);
+  });
 
   final List<Plant> plants;
   final Plant? selectedPlant;
@@ -145,9 +145,9 @@ class _ListOfPlantsWidgetState extends State<ListOfPlantsWidget> {
 
 class DetailPlant extends StatelessWidget {
   const DetailPlant({
-    Key? key,
+    super.key,
     this.plant,
-  }) : super(key: key);
+  });
 
   final Plant? plant;
 
