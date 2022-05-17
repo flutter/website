@@ -7,7 +7,7 @@
 import 'package:flutter/material.dart';
 
 class BasicHeroAnimation extends StatelessWidget {
-  const BasicHeroAnimation({Key? key}) : super(key: key);
+  const BasicHeroAnimation({super.key});
 
   @override
   Widget build(BuildContext context) {
