@@ -464,8 +464,8 @@ improved your ability to create state-based applications.
 Try building an application with `provider` yourself to 
 master these skills. 
 
-[built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
-[check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper
+[built with `provider`]: {{site.github}}/flutter/samples/tree/main/provider_counter
+[check out the example]: {{site.github}}/flutter/samples/tree/main/provider_shopper
 [declarative UI programming]: {{site.url}}/development/data-and-backend/state-mgmt/declarative
 [ephemeral and app state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
 [options page]: {{site.url}}/development/data-and-backend/state-mgmt/options

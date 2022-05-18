@@ -146,7 +146,7 @@ Moto G4 from ~90 ms to ~40 ms. On iPhone 4s,
 it's reduced from ~300 ms to ~80 ms. That leads to the visual
 difference as illustrated in the beginning of this article.
 
-[Flutter Gallery]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flutter_gallery
+[Flutter Gallery]: {{site.repo.flutter}}/tree/main/dev/integration_tests/flutter_gallery
 [`flutter_gallery_sksl_warmup__transition_perf`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
 [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
 [integration tests]: {{site.url}}/cookbook/testing/integration/introduction

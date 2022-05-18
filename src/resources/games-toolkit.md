@@ -110,7 +110,7 @@ Are you ready? To get started:
 
 [direct-discord]: https://discord.com/login?redirect_to=%2Fchannels%2F420324994703163402%2F964110538986651658
 [game-discord]: https://discord.com/invite/WY5NwwjBQz
-[game-template]: {{site.github}}/flutter/samples/tree/master/game_template
+[game-template]: {{site.github}}/flutter/samples/tree/main/game_template
 [game-video]: {{site.youtube-site}}/watch?v=zGgeBNiRy-8&t=3s
 
 ## Video games

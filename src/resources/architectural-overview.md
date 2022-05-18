@@ -83,7 +83,7 @@ and network I/O, accessibility support, plugin architecture, and a Dart runtime
 and compile toolchain.
 
 The engine is exposed to the Flutter framework through
-[`dart:ui`]({{site.github}}/flutter/engine/tree/master/lib/ui),
+[`dart:ui`]({{site.github}}/flutter/engine/tree/main/lib/ui),
 which wraps the underlying C++ code in Dart classes. This library
 exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.

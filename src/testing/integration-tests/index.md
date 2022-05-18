@@ -244,16 +244,16 @@ See the [iOS Device Testing][] section in the README
 for instructions on how to upload the .zip file
 from the command line.
 
-[Android Device Testing]: {{site.repo.flutter}}/tree/master/packages/integration_test#android-device-testing
+[Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing
 [Download and install ChromeDriver]: https://chromedriver.chromium.org/downloads
 [Firebase Console]: http://console.firebase.google.com/
 [Firebase Test Lab]: {{site.firebase}}/docs/test-lab
-[Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/master/packages/integration_test#firebase-test-lab
+[Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab
 [Firebase TestLab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
-[`integration_test`]: {{site.repo.flutter}}/tree/master/packages/integration_test#integration_test
-[integration_test usage]: {{site.repo.flutter}}/tree/master/packages/integration_test#usage
-[iOS Device Testing]: {{site.repo.flutter}}/tree/master/packages/integration_test#ios-device-testing
+[`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
+[integration_test usage]: {{site.repo.flutter}}/tree/main/packages/integration_test#usage
+[iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
 [Migrating from flutter_drive]: {{site.url}}/testing/integration-tests/migration
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
 [widget tests]: {{site.url}}/testing#widget-tests

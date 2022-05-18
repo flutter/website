@@ -974,8 +974,8 @@ DispatchQueue.main.async {
 [developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
 [plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
-[`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel
-[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel_swift
+[`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel
+[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel_swift
 [JS interoperability]: {{site.dart-site}}/web/js-interop
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
