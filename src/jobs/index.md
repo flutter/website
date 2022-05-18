@@ -8,7 +8,6 @@ The following jobs are open:
 
 ## Software Engineering
 
-* [Engineering Manager, Mobile Platforms & Ecosystem]({{site.url}}/jobs/eng_mgr)
 * [Windows Engineer]({{site.url}}/jobs/windows)
 * [macOS Engineer]({{site.url}}/jobs/macos)
 * [Android Engineer]({{site.url}}/jobs/android)
