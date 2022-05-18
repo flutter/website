@@ -18,7 +18,6 @@ The following jobs are open:
 * [Flutter CLI and Tools]({{site.url}}/jobs/tools)
 * [Flutter Web Engineer]({{site.url}}/jobs/engine_web)
 * [Framework Engineer]({{site.url}}/jobs/framework)
-* [Dart at Google Engineer]({{site.url}}/jobs/dart_google)
 * [Flutter & Dart Developer Experience SWE]({{site.url}}/jobs/devexp)
 * [Flutter & Dart Native Runtime Engineer]({{site.url}}/jobs/native_runtime)
 
