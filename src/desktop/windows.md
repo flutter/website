@@ -55,7 +55,7 @@ such as [`url_launcher`], [`shared_preferences`], [`file_selector`], and
 ## Supporting Windows UI guidelines
 
 While you can use any visual style or theme you choose, including Material, some
-app authors may wish to build an app that matches the conventions of Microsoft's
+app authors might wish to build an app that matches the conventions of Microsoft's
 [Fluent design system][]. The [fluent_ui][] package, a [Flutter Favorite][],
 provides support for visuals and common controls that are commonly found in
 modern Windows apps, including navigation views, content dialogs, flyouts, date
