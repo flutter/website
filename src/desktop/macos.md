@@ -151,10 +151,10 @@ Once you have enabled it, you need a valid signing
 certificate in order to build.
 
 By default, the entitlements file allows JIT for
-debug builds but, as with App Sandbox, you may
+debug builds but, as with App Sandbox, you might
 need to manage other entitlements.
 If you have both App Sandbox and Hardened
-Runtime enabled, you may need to add multiple
+Runtime enabled, you might need to add multiple
 entitlements for the same resource.
 For instance, microphone access would require both
 `com.apple.security.device.audio-input` (for Hardened Runtime)
