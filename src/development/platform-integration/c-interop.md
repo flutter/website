@@ -1,6 +1,6 @@
 ---
 title: "Binding to native code using dart:ffi"
-description: "To use C code in your Flutter program, use the dart:ffi library (currently in beta)."
+description: "To use C code in your Flutter program, use the dart:ffi library."
 ---
 
 <?code-excerpt path-base="development/platform_integration"?>

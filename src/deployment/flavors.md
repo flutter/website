@@ -14,18 +14,14 @@ These articles address flavors for both iOS and Android.
 * [Flutter Ready to Go][]
 * [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor][]
 * [Flutter 1.17 — no more Flavors, no more iOS Schemas.
-   Command argument that changes everything][]
+  Command argument that changes everything][]
 * [Multi-environment Flutter Projects with Flavors][]
-   (including support for web, Firebase and FlutterFire CLI)
+  (including support for web, Firebase and FlutterFire CLI)
 
 The following packages are listed alphabetically:
 
 * [`flutter_flavor`][]
 * [`flutter_flavorizr`][]
-
-
-
-
 
 [Creating flavors of a Flutter app]: https://cogitas.net/creating-flavors-of-a-flutter-app/
 [Flavoring Flutter]: {{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36

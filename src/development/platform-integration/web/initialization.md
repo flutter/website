@@ -170,7 +170,8 @@ see the [initialization code][gallery-init] for the Flutter Gallery.
 
 If your project was created in Flutter 2.10 or earlier,
 you can create a new `index.html` file
-with the latest initialization template by running `flutter create`.
+with the latest initialization template by running
+`flutter create` as follows.
 
 From your project directory, run the following:
 
