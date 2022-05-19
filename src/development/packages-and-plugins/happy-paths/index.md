@@ -3,7 +3,7 @@ title: Happy paths project
 description: The Happy paths page lists areas of technology where we recommend specific Flutter packages and plugins that add functionality to your app.
 ---
 
-![Header image for Happy Paths](/assets/images/docs/happy-paths/HappyPaths_HeaderImage_Cropped.png){:width="30%"}
+![Header image for Happy Paths](/assets/images/docs/happy-paths/HappyPaths_HeaderImage_003.png){:width="100%"}
 
 Once you’ve learned Flutter basics and are ready to move on to developing more 
 advanced apps, how do you make that leap? The [pub.dev][] website 
