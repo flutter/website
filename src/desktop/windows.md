@@ -61,7 +61,7 @@ provides support for visuals and common controls that are commonly found in
 modern Windows apps, including navigation views, content dialogs, flyouts, date
 pickers, and tree view widgets.
 
-In addition, Microsoft offers [fluentui_system_icons][], a package which
+In addition, Microsoft offers [fluentui_system_icons][], a package that
 provides easy access to thousands of Fluent icons for use in your Flutter app.
 
 Lastly, the [bitsdojo_window][] package provides support for "owner draw" title
