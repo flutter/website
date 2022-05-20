@@ -74,11 +74,37 @@ that matches the rest of your app.
 [fluentui_system_icons]: {{site.pub}}/packages/fluentui_system_icons
 [bitsdojo_window]: {{site.pub}}/packages/bitsdojo_window
 
-## Changing the name of the executable
+## Customizing the Windows host application
 
-To change the name of the generated Windows app, edit the
-`BINARY_NAME` variable in `windows/CMakeLists.txt` in
-your Flutter project.
+When you create a Windows app, Flutter generates a small C++ application that
+hosts Flutter. This "runner app" is responsible for creating and sizing a
+traditional Win32 window, initializing the Flutter engine and any native
+plugins, and running the Windows message loop (passing relevant messages on to
+Flutter for further processing).
+
+You can, of course, make changes to this code to suit your needs, including
+modifying the app name and icon, and setting the window's initial size and
+location. The relevant code is in main.cpp, where you will find code similar to
+the following:
+
+```cpp
+Win32Window::Point origin(10, 10);
+Win32Window::Size size(1280, 720);
+if (!window.CreateAndShow(L"myapp", origin, size))
+{
+    return EXIT_FAILURE;
+}
+```
+
+Replace `myapp` with the title you would like displayed in the Windows caption
+bar, as well as optionally adjusting the dimensions for size and the window
+coordinates.
+
+To change the Windows application icon, replace the `app_icon.ico` file in the
+`windows\runner\resources` directory with an icon of your preference.
+
+The generated Windows executable can be changed by editing the
+`BINARY_NAME` variable in `windows/CMakeLists.txt`:
 
 ```cmake
 cmake_minimum_required(VERSION 3.14)
@@ -90,6 +116,9 @@ set(BINARY_NAME "YourNewApp")
 
 cmake_policy(SET CMP0063 NEW)
 ```
+
+When you run `flutter build windows`, the executable file generated in the
+`build\windows\runner\Release` directory will match the newly given name.
 
 ## Distributing Windows apps
 
