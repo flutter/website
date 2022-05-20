@@ -1,8 +1,3 @@
-// ignore_for_file: unused_local_variable
-
-import 'dart:ffi';
-
-import 'package:ffi/ffi.dart';
 // #docregion Main
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

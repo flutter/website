@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 // #docregion FFI
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
