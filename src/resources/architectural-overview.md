@@ -817,6 +817,9 @@ here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
 
 <?code-excerpt "lib/main.dart (FFI)"?>
 ```dart
+import 'dart:ffi';
+import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
+
 typedef MessageBoxNative = Int32 Function(
   IntPtr hWnd,
   Pointer<Utf16> lpText,
