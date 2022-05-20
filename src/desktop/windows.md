@@ -120,6 +120,32 @@ cmake_policy(SET CMP0063 NEW)
 When you run `flutter build windows`, the executable file generated in the
 `build\windows\runner\Release` directory will match the newly given name.
 
+## Compiling with Visual Studio
+
+For most apps, it is sufficient to allow Flutter to handle the compilation
+process using the `flutter run` and `flutter build` commands. If you are making
+significant changes to the runner app or integrating Flutter into an existing
+app, you may want to load or compile the Flutter app in Visual Studio itself.
+
+Follow these steps:
+
+1. Run `flutter build windows` to create the `build\` directory.
+
+1. Open the Visual Studio solution file for the Windows runner, which can now be
+found in the `build\windows` directory, named according to the parent Flutter
+app.
+
+1. In Solution Explorer, you will see a number of projects. Right-click the one
+   that has the same name as the Flutter app, and choose "Set as Startup
+   Project".
+
+1. Run Build / Build Solution (or press Ctrl+Shift+B) to generate the necessary
+   dependencies. You should now be able to run Debug / Start Debugging (or press
+   F5) to run the Windows app from Visual Studio.
+
+1. Use the toolbar to switch between Debug and Release configurations as
+   appropriate.
+
 ## Distributing Windows apps
 
 There are various approaches you can use for
