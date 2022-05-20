@@ -815,7 +815,7 @@ To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
 here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
 
-<?code-excerpt "lib/main.dart (FFI)"?>
+<?code-excerpt "lib/ffi.dart (FFI)"?>
 ```dart
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
