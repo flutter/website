@@ -103,7 +103,7 @@ coordinates.
 To change the Windows application icon, replace the `app_icon.ico` file in the
 `windows\runner\resources` directory with an icon of your preference.
 
-The generated Windows executable can be changed by editing the
+The generated Windows executable filename can be changed by editing the
 `BINARY_NAME` variable in `windows/CMakeLists.txt`:
 
 ```cmake
@@ -119,6 +119,13 @@ cmake_policy(SET CMP0063 NEW)
 
 When you run `flutter build windows`, the executable file generated in the
 `build\windows\runner\Release` directory will match the newly given name.
+
+Finally, further properties for the app executable itself can be found in the
+`Runner.rc` file in the `windows\runner` directory. Here you can change the
+copyright information and application version that is embedded in the Windows
+app, which is displayed in the Windows Explorer properties dialog box. To change
+the version number, edit the `VERSION_AS_NUMBER` and `VERSION_AS_STRING`
+properties; other information can be edited in the `StringFileInfo` block.
 
 ## Compiling with Visual Studio
 
