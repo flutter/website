@@ -10,9 +10,6 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
-# Only one deploy at a time
-concurrency: prod-deploy-group
-
 # Declare default permissions as read only.
 permissions: read-all
 
@@ -45,6 +42,8 @@ jobs:
 
   deploy:
     needs: test
+    concurrency: 
+      group: prod-deploy-group
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'push'
