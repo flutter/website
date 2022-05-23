@@ -179,6 +179,16 @@
               permalink: /development/platform-integration/web/initialization
         - title: Desktop
           permalink: /desktop
+          children:
+            - title: Overview
+              permalink: /desktop
+              match-page-url-exactly: true
+            - title: Windows development
+              permalink: /desktop/windows
+            - title: macOS development
+              permalink: /desktop/macos
+            - title: Linux development
+              permalink: /desktop/linux
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:
