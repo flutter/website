@@ -13,8 +13,9 @@ account with [AdMob][] and you can then leverage
 one or more AdMob features, including the following:  
 
 * Several ad formats: Banner, full-screen, native, and rewarded.
-* Control over when ads display. For example, in between levels of a game, 
-  after completing a task, or before starting a new game 
+* Control over when ads display. For example,
+  in between levels of a game, after completing a task,
+  or before starting a new game 
 * Monetization reports to help you make decisions about your app. 
 
 [AdMob]: https://developers.google.com/admob/flutter/quick-start 
@@ -31,10 +32,12 @@ one or more AdMob features, including the following:
 
 ## Background processing ![Background processing happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_Processing_3d_001.png){:width="20%"}
 
-The background processing path shows you how to run a Dart function 
-in the background on mobile devices. With background processing, 
-you can perform tasks like making an HTTP request, running an 
-expensive calculation, or displaying a notification in another isolate
+The background processing path shows you how to
+run a Dart function in the background on mobile devices.
+With background processing, 
+you can perform tasks like making an HTTP request,
+running an expensive calculation,
+or displaying a notification in another isolate
 (similar to a lightweight thread).  
 
 One way to incorporate background processing in your
@@ -43,19 +46,20 @@ This plugin enables headless execution of Dart code
 in the background. 
 
 {{site.alert.secondary}}
-  **Is there a difference between a package and a plugin?** Yes, there is! 
-  Both are packages, but a plugin is a type of package that contains 
-  platform-specific code (such as Kotlin, Java, Swift, Objective C) that 
-  communicates with the underlying platform. For more information, see 
-  [Using packages][].
+  **Is there a difference between a package and a plugin?**
+  Yes, there is! Both are packages,
+  but a plugin is a type of package that contains 
+  platform-specific code (such as Kotlin, Java, Swift, Objective C)
+  that communicates with the underlying platform.
+  For more information, see [Using packages][].
 {{site.alert.end}}  
   
 Some features of WorkManager include:
 
 * Control over how many times a job should run: once or periodically
-* Ability to apply constraints on jobs like checking for a network connection, 
-  only running when the device is charging, or only running when a device is 
-  idle (Android only)  
+* Ability to apply constraints on jobs like checking for a
+  network connection, only running when the device is charging,
+  or only running when a device is idle (Android only)  
  
 [WorkManager]: {{site.pub-pkg}}/workmanager
 
@@ -89,7 +93,8 @@ Features include:
 
 * Ability to get a device's current location
 * Receive location updates
-* Ability to determine whether a devices's location services are enabled  
+* Ability to determine whether a devices's
+  location services are enabled  
 
 [Flutter favorite]: {{site.url}}/development/packages-and-plugins/favorites
 [`geolocator`]: {{site.pub-pkg}}/geolocator
@@ -97,7 +102,8 @@ Features include:
 #### Useful links
 {:.no_toc}
 
-* [How to get a user's location with the geolocator plugin][geolocation-tutorial] tutorial
+* [How to get a user's location with the
+  geolocator plugin][geolocation-tutorial] tutorial
 * [`geolocator`][] plugin
 
 [geolocation-tutorial]: https://www.digitalocean.com/community/tutorials/flutter-geolocator-plugin
@@ -180,10 +186,12 @@ will benefit most from this package.
 ## Web sockets ![Web Sockets Happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_WebSockets_3d_001.png){:width="20%"}
 
 Web sockets enable communication between Flutter clients and servers. 
-This path suggests two packages to use when installing and using web sockets.
+This path suggests two packages to use when installing
+and using web sockets.
 
 Use the [`web_socket_channel`][] package for client-side
-web socket connections, and the [`web_socket_connections`][] package 
+web socket connections,
+and the [`web_socket_connections`][] package 
 for server-side Dart web sockets.  
 
 [`web_socket_channel`]: {{site.pub-pkg}}/web_socket_channel

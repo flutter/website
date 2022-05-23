@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyGif extends StatelessWidget {
-  const MyGif({Key? key}) : super(key: key);
+  const MyGif({super.key});
 
   @override
   Widget build(BuildContext context) {

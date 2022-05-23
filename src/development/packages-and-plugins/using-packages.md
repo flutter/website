@@ -73,6 +73,7 @@ be a Flutter Favorite, see the
 
 You can also browse the packages on pub.dev by filtering
 on [Android plugins][], [iOS plugins][], [web plugins][],
+[Linux plugins][], [Windows plugins][], [macOS plugins][],
 or any combination thereof.
 
 ### Adding a package dependency to an app
@@ -325,7 +326,7 @@ To use this package:
     }
 
     class MyApp extends StatelessWidget {
-      const MyApp({Key? key}) : super(key: key);
+      const MyApp({super.key});
 
       @override
       Widget build(BuildContext context) {
@@ -336,7 +337,7 @@ To use this package:
     }
 
     class DemoPage extends StatelessWidget {
-      const DemoPage({Key? key}) : super(key: key);
+      const DemoPage({super.key});
 
       @override
       Widget build(BuildContext context) {
@@ -380,15 +381,15 @@ To use this plugin:
     <?code-excerpt "lib/url_launcher.dart (UrlLauncher)"?>
     ```dart
     import 'package:flutter/material.dart';
-    import 'package:url_launcher/url_launcher.dart';
     import 'package:path/path.dart' as p;
+    import 'package:url_launcher/url_launcher.dart';
 
     void main() {
       runApp(const MyApp());
     }
 
     class MyApp extends StatelessWidget {
-      const MyApp({Key? key}) : super(key: key);
+      const MyApp({super.key});
 
       @override
       Widget build(BuildContext context) {
@@ -399,7 +400,7 @@ To use this plugin:
     }
 
     class DemoPage extends StatelessWidget {
-      const DemoPage({Key? key}) : super(key: key);
+      const DemoPage({super.key});
 
       launchURL() {
         launchUrl(p.toUri('https://flutter.dev'));
@@ -443,7 +444,9 @@ To use this plugin:
 [`http`]: {{site.url}}/cookbook/networking/fetch-data
 [Installing tab]: {{site.pub-pkg}}/css_colors/install
 [iOS plugins]: {{site.pub}}/flutter/packages?platform=ios
+[Linux plugins]: {{site.pub-pkg}}?q=platform%3Alinux
 [lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
+[macOS plugins]: {{site.pub-pkg}}?q=platform%3Amacos
 [Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
 [package versioning guide]: {{site.dart-site}}/tools/pub/versioning
 [pub.dev]: {{site.pub}}
@@ -451,3 +454,4 @@ To use this plugin:
 [`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
 [version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
 [web plugins]: {{site.pub}}/flutter/packages?platform=web
+[Windows plugins]: {{site.pub-pkg}}?q=platform%3Awindows

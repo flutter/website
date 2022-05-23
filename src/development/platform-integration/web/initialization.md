@@ -173,10 +173,10 @@ you can create a new `index.html` file
 with the latest initialization template by running
 `flutter create` as follows.
 
-From your project directory, run the following:
+First, remove the files from your `/web` directory.
+
+Then, from your project directory, run the following:
 
 ```
-$ flutter create .
+$ flutter create . --platforms=web
 ```
-
-You can now customize the startup process as described above.

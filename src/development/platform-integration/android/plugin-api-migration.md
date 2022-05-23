@@ -254,13 +254,12 @@ but aren't required.
     <?code-excerpt "lib/test.dart (Test)"?>
     ```dart
     import 'package:flutter_test/flutter_test.dart';
-    import 'package:battery/battery.dart';
     import 'package:integration_test/integration_test.dart';
 
     void main() {
       IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-      testWidgets('Can get battery level', (WidgetTester tester) async {
+      testWidgets('Can get battery level', (tester) async {
         final Battery battery = Battery();
         final int batteryLevel = await battery.batteryLevel;
         expect(batteryLevel, isNotNull);
@@ -366,7 +365,7 @@ a non-UI configuration.
 
 [`ActivityAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
 [Basic plugin]: #basic-plugin
-[battery package]: {{site.repo.plugins}}/tree/master/packages/battery
+[battery package]: {{site.repo.plugins}}/tree/main/packages/battery
 [Flutter plugins]: {{site.pub}}/flutter/packages
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html

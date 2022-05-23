@@ -122,6 +122,7 @@ Import this file to use them.
 <?code-excerpt "test/fetch_album_test.dart (mockClient)" plaster="none"?>
 ```dart
 import 'package:http/http.dart' as http;
+import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
 
 // Generate a MockClient using the Mockito package.
@@ -154,9 +155,9 @@ Mockito:
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
+import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:mocking/main.dart';
 
 import 'fetch_album_test.mocks.dart';
 
@@ -251,7 +252,7 @@ class Album {
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -304,9 +305,9 @@ class _MyAppState extends State<MyApp> {
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
+import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:mocking/main.dart';
 
 import 'fetch_album_test.mocks.dart';
 

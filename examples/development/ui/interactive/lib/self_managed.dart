@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 //------------------------- TapboxA ----------------------------------
 
 class TapboxA extends StatefulWidget {
-  const TapboxA({Key? key}) : super(key: key);
+  const TapboxA({super.key});
 
   @override
   _TapboxAState createState() => _TapboxAState();
@@ -44,7 +44,7 @@ class _TapboxAState extends State<TapboxA> {
 //------------------------- MyApp ----------------------------------
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

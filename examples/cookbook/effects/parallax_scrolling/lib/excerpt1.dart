@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // #docregion ParallaxRecipe
 class ParallaxRecipe extends StatelessWidget {
-  const ParallaxRecipe({Key? key}) : super(key: key);
+  const ParallaxRecipe({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -29,7 +29,7 @@ class Photo {
   int get hashCode => id.hashCode;
 }
 
-final List<Photo> allPhotos = List<Photo>.generate(30, (int index) {
+final List<Photo> allPhotos = List<Photo>.generate(30, (index) {
   return Photo('images/pic${index + 1}.jpg', index);
 });
 
@@ -52,7 +52,7 @@ final List<List<PhotoFrame>> photoBlockFrames = [
 ];
 
 class PhotoCheck extends StatelessWidget {
-  const PhotoCheck({Key? key}) : super(key: key);
+  const PhotoCheck({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,12 +72,12 @@ class PhotoCheck extends StatelessWidget {
 
 class PhotoItem extends StatefulWidget {
   const PhotoItem({
-    Key? key,
+    super.key,
     required this.photo,
     this.color,
     this.onTap,
     required this.selected,
-  }) : super(key: key);
+  });
 
   final Photo photo;
   final Color? color;
@@ -272,7 +272,7 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
 }
 
 class ImagesDemo extends StatefulWidget {
-  const ImagesDemo({Key? key}) : super(key: key);
+  const ImagesDemo({super.key});
 
   @override
   _ImagesDemoState createState() => _ImagesDemoState();
@@ -345,7 +345,7 @@ class _ImagesDemoState extends State<ImagesDemo>
 
     // Number of PhotoBlockFrames in each _photoBlockHeight block
     final int photoBlockFrameCount = photoBlockFrames
-        .map((List<PhotoFrame> l) => l.length)
+        .map((l) => l.length)
         .reduce((s, n) => s + n);
 
     return Scaffold(
@@ -363,7 +363,7 @@ class _ImagesDemoState extends State<ImagesDemo>
           padding: const EdgeInsets.all(4.0),
           itemExtent: _photoBlockHeight,
           itemCount: (allPhotos.length / photoBlockFrameCount).floor(),
-          itemBuilder: (BuildContext context, int blockIndex) {
+          itemBuilder: (context, blockIndex) {
             return _buildPhotoBlock(context, blockIndex, photoBlockFrameCount);
           },
         ),

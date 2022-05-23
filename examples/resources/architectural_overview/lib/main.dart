@@ -1,15 +1,16 @@
-import 'dart:ffi';
-import 'package:ffi/ffi.dart';
-import 'package:flutter/services.dart';
 // ignore_for_file: unused_local_variable
 
+import 'dart:ffi';
+
+import 'package:ffi/ffi.dart';
 // #docregion Main
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Builder(
-            builder: (BuildContext context) {
+            builder: (context) {
               return Column(
                 children: [
                   const Text('Hello World'),
@@ -66,7 +67,7 @@ void containerExample(BuildContext context) {
 }
 
 class OneColumnLayout extends StatelessWidget {
-  const OneColumnLayout({Key? key}) : super(key: key);
+  const OneColumnLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +76,7 @@ class OneColumnLayout extends StatelessWidget {
 }
 
 class TwoColumnLayout extends StatelessWidget {
-  const TwoColumnLayout({Key? key}) : super(key: key);
+  const TwoColumnLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +85,7 @@ class TwoColumnLayout extends StatelessWidget {
 }
 
 class LayoutBuilderExample extends StatelessWidget {
-  const LayoutBuilderExample({Key? key}) : super(key: key);
+  const LayoutBuilderExample({super.key});
 
   @override
   // #docregion LayoutBuilder
@@ -102,7 +103,7 @@ class LayoutBuilderExample extends StatelessWidget {
 // #enddocregion LayoutBuilder
 }
 
-void exampleChannels() async {
+Future<void> exampleChannels() async {
   // #docregion MethodChannel
   // Dart side
   const channel = MethodChannel('foo');

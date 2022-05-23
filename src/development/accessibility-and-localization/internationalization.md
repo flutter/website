@@ -260,7 +260,7 @@ string into [`MaterialApp.onGenerateTitle`][]:
 <?code-excerpt "intl_example/lib/main.dart (MaterialAppTitleExample)"?>
 ```dart
 return MaterialApp(
-  onGenerateTitle: (BuildContext context) =>
+  onGenerateTitle: (context) =>
       DemoLocalizations.of(context).title,
 ```
 
@@ -408,8 +408,8 @@ whatever locale the user selects:
 ```dart
 MaterialApp(
   localeResolutionCallback: (
-    Locale? locale,
-    Iterable<Locale> supportedLocales,
+    locale,
+    supportedLocales,
   ) {
     return locale;
   },

@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:intl/intl.dart' as intl;
-import 'package:intl/date_symbols.dart' as intl;
-import 'package:intl/date_symbol_data_custom.dart' as date_symbol_data_custom;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/date_symbol_data_custom.dart' as date_symbol_data_custom;
+import 'package:intl/date_symbols.dart' as intl;
+import 'package:intl/intl.dart' as intl;
 
 /// A custom set of date patterns for the `nn` locale.
 ///
@@ -314,28 +314,17 @@ class _NnMaterialLocalizationsDelegate
 /// and formatting.
 class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   const NnMaterialLocalizations({
-    String localeName = 'nn',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat compactDateFormat,
-    required intl.DateFormat shortDateFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat longDateFormat,
-    required intl.DateFormat yearMonthFormat,
-    required intl.DateFormat shortMonthDayFormat,
-    required intl.NumberFormat decimalFormat,
-    required intl.NumberFormat twoDigitZeroPaddedFormat,
-  }) : super(
-          localeName: localeName,
-          fullYearFormat: fullYearFormat,
-          compactDateFormat: compactDateFormat,
-          shortDateFormat: shortDateFormat,
-          mediumDateFormat: mediumDateFormat,
-          longDateFormat: longDateFormat,
-          yearMonthFormat: yearMonthFormat,
-          shortMonthDayFormat: shortMonthDayFormat,
-          decimalFormat: decimalFormat,
-          twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat,
-        );
+    super.localeName = 'nn',
+    required super.fullYearFormat,
+    required super.compactDateFormat,
+    required super.shortDateFormat,
+    required super.mediumDateFormat,
+    required super.longDateFormat,
+    required super.yearMonthFormat,
+    required super.shortMonthDayFormat,
+    required super.decimalFormat,
+    required super.twoDigitZeroPaddedFormat,
+  });
 
 // #docregion Getters
   @override

@@ -31,7 +31,7 @@
     {% endif %}
 
     {% assign desc = page.description %}
-    {% assign og_image = page.image | default: layout.image | default: site.default_share_image %}
+    {% assign og_image_path = page.image.path | default: layout.image.path | default: site.default_share_image %}
 
     <meta name="description" content="{{desc}}">
     <meta name="keywords" content="{% if page.tags %}{{page.tags}}, {% endif %}{{page.keywords}}">

@@ -1,13 +1,13 @@
 // ignore_for_file: unused_local_variable
 
-// #docregion Import
-import 'package:flutter/widgets.dart';
-import 'package:flutter/services.dart';
 // #enddocregion Import
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
+// #docregion Import
+import 'package:flutter/widgets.dart';
 
 class IOSCompositionWidget extends StatelessWidget {
-  const IOSCompositionWidget({Key? key}) : super(key: key);
+  const IOSCompositionWidget({super.key});
 
   @override
   // #docregion iOSCompositionWidget
@@ -28,7 +28,7 @@ class IOSCompositionWidget extends StatelessWidget {
 }
 
 class TogetherWidget extends StatelessWidget {
-  const TogetherWidget({Key? key}) : super(key: key);
+  const TogetherWidget({super.key});
 
   @override
   // #docregion TogetherWidget

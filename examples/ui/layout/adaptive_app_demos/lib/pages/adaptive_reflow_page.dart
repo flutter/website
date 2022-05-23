@@ -1,7 +1,8 @@
-import 'package:adaptive_app_demos/global/device_type.dart';
-import 'package:adaptive_app_demos/widgets/scroll_view_with_scrollbars.dart';
 import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
+
+import '../global/device_type.dart';
+import '../widgets/scroll_view_with_scrollbars.dart';
 
 /// Shows 3 types of layout, a vertical for narrow screens, wide for wide screens, and a mixed mode.
 
@@ -54,12 +55,12 @@ class AdaptiveReflowPage extends StatelessWidget {
 }
 
 /// For demo purposes, simulate 3 different content areas
-Widget _ContentPanel1() => _ContentPanel("Panel 1");
-Widget _ContentPanel2() => _ContentPanel("Panel 2");
-Widget _ContentPanel3() => _ContentPanel("Panel 3");
+Widget _ContentPanel1() => _ContentPanel('Panel 1');
+Widget _ContentPanel2() => _ContentPanel('Panel 2');
+Widget _ContentPanel3() => _ContentPanel('Panel 3');
 
 class _ContentPanel extends StatelessWidget {
-  const _ContentPanel(this.label, {Key? key}) : super(key: key);
+  const _ContentPanel(this.label);
   final String label;
 
   @override

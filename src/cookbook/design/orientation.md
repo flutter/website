@@ -90,7 +90,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +108,7 @@ class MyApp extends StatelessWidget {
 class OrientationList extends StatelessWidget {
   final String title;
 
-  const OrientationList({Key? key, required this.title}) : super(key: key);
+  const OrientationList({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

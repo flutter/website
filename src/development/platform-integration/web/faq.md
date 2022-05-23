@@ -28,6 +28,18 @@ interactive experiences into these websites.
 For more information on how you can use Flutter on the web,
 see [Web support for Flutter][].
 
+### Search Engine Optimization (SEO)
+
+In general, Flutter is geared towards dynamic application experiences. Flutter's
+web support is no exception. Flutter web prioritizes performance, fidelity, and
+consistency. This means application output does not align with what search
+engines need to properly index. For web content that is static or document-like,
+we recommend using HTML—just like we do on [flutter.dev]({{site.main-url}}),
+[dart.dev]({{site.dart-site}}), and [pub.dev]({{site.pub}}). You should also
+consider separating your primary application experience—created in Flutter—from
+your landing page, marketing content, and help content—created using
+search-engine optimized HTML.
+
 ### How do I file an issue about web support?
 
 You can [file an issue][] on the main Flutter repo.

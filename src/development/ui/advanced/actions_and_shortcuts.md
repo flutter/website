@@ -87,10 +87,10 @@ callbacks for them:
 ```dart
 class CallbackShortcuts extends StatelessWidget {
   const CallbackShortcuts({
-    Key? key,
+    super.key,
     required this.bindings,
     required this.child,
-  }) : super(key: key);
+  });
 
   final Map<ShortcutActivator, VoidCallback> bindings;
   final Widget child;
@@ -98,7 +98,7 @@ class CallbackShortcuts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (FocusNode node, RawKeyEvent event) {
+      onKey: (node, event) {
         KeyEventResult result = KeyEventResult.ignored;
         // Activates all key bindings that match, returns handled if any handle it.
         for (final ShortcutActivator activator in bindings.keys) {
@@ -147,7 +147,7 @@ Widget build(BuildContext context) {
         SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
-        builder: (BuildContext context) => TextButton(
+        builder: (context) => TextButton(
           child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
@@ -237,7 +237,7 @@ Or, if it's too much of a bother to create a new class, use a `CallbackAction`:
 
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (CallbackAction)"?>
 ```dart
-CallbackAction(onInvoke: (Intent intent) => model.selectAll());
+CallbackAction(onInvoke: (intent) => model.selectAll());
 ```
 
 Once you have an action, you add it to your application using the [`Actions`][]
@@ -316,7 +316,7 @@ Widget build(BuildContext context) {
       SelectAllIntent: SelectAllAction(model),
     },
     child: Builder(
-      builder: (BuildContext context) => TextButton(
+      builder: (context) => TextButton(
         child: const Text('SELECT ALL'),
         onPressed: Actions.handler<SelectAllIntent>(
           context,
@@ -399,7 +399,7 @@ Widget build(BuildContext context) {
       SelectAllIntent: SelectAllAction(model),
     },
     child: Builder(
-      builder: (BuildContext context) => TextButton(
+      builder: (context) => TextButton(
         child: const Text('SELECT ALL'),
         onPressed: Actions.handler<SelectAllIntent>(
           context,
@@ -434,7 +434,7 @@ import 'package:flutter/services.dart';
 /// A text field that also has buttons to select all the text and copy the
 /// selected text to the clipboard.
 class CopyableTextField extends StatefulWidget {
-  const CopyableTextField({Key? key, required this.title}) : super(key: key);
+  const CopyableTextField({super.key, required this.title});
 
   final String title;
 
@@ -460,7 +460,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
         CopyIntent: CopyAction(controller),
         SelectAllIntent: SelectAllAction(controller),
       },
-      child: Builder(builder: (BuildContext context) {
+      child: Builder(builder: (context) {
         return Scaffold(
           body: Center(
             child: Row(
@@ -592,7 +592,7 @@ class SelectAllAction extends Action<SelectAllIntent> {
 /// Shortcuts defined here are in effect for the whole app,
 /// although different widgets may fulfill them differently.
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   static const String title = 'Shortcuts and Actions Demo';
 

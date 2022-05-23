@@ -1,9 +1,10 @@
 import 'dart:math';
 
-import 'package:adaptive_app_demos/global/device_type.dart';
-import 'package:adaptive_app_demos/global/targeted_actions.dart';
-import 'package:adaptive_app_demos/widgets/buttons.dart';
 import 'package:flutter/material.dart';
+
+import '../global/device_type.dart';
+import '../global/targeted_actions.dart';
+import '../widgets/buttons.dart';
 
 class AdaptiveGridPage extends StatefulWidget {
   @override
@@ -26,11 +27,11 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
     return TargetedActionBinding(
       actions: {
         SelectAllIntent: CallbackAction(
-            onInvoke: (Intent intent) => this._handleSelectAllPressed()),
+            onInvoke: (intent) => this._handleSelectAllPressed()),
         SelectNoneIntent: CallbackAction(
-            onInvoke: (Intent intent) => this._handleSelectNonePressed()),
+            onInvoke: (intent) => this._handleSelectNonePressed()),
         DeleteIntent: CallbackAction(
-            onInvoke: (Intent intent) => this._handleDeleteSelectedPressed()),
+            onInvoke: (intent) => this._handleDeleteSelectedPressed()),
       },
       child: Column(
         children: [
@@ -38,15 +39,15 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
             children: [
               StyledTextButton(
                   onPressed: _handleSelectAllPressed,
-                  child: Text("Select All")),
+                  child: Text('Select All')),
               StyledTextButton(
                   onPressed: _handleSelectNonePressed,
-                  child: Text("Select None")),
+                  child: Text('Select None')),
             ],
           ),
           Expanded(
             child: LayoutBuilder(
-              builder: (BuildContext context, BoxConstraints constraints) {
+              builder: (context, constraints) {
                 // Calculate how many columns we want depending on available space
                 int colCount = max(1, (constraints.maxWidth / 250).floor());
                 // #docregion ScrollbarAlwaysShown
@@ -86,8 +87,7 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
 
 class _GridItem extends StatelessWidget {
   const _GridItem(this.index,
-      {Key? key, required this.isSelected, required this.onPressed})
-      : super(key: key);
+      {required this.isSelected, required this.onPressed});
   final int index;
   final bool isSelected;
   final void Function(int index) onPressed;
@@ -109,7 +109,7 @@ class _GridItem extends StatelessWidget {
                   color: Colors.grey.shade600,
                   height: 50,
                   alignment: Alignment.center,
-                  child: Text("Grid Item $index",
+                  child: Text('Grid Item $index',
                       style: TextStyle(color: Colors.white)))),
           // Selected border
           Container(

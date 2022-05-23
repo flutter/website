@@ -50,7 +50,7 @@ First, set up the visual structure:
 <?code-excerpt "lib/main_step1.dart (FirstSecondRoutes)"?>
 ```dart
 class FirstRoute extends StatelessWidget {
-  const FirstRoute({Key? key}) : super(key: key);
+  const FirstRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,7 @@ class FirstRoute extends StatelessWidget {
 }
 
 class SecondRoute extends StatelessWidget {
-  const SecondRoute({Key? key}) : super(key: key);
+  const SecondRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +147,7 @@ void main() {
 }
 
 class FirstRoute extends StatelessWidget {
-  const FirstRoute({Key? key}) : super(key: key);
+  const FirstRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +171,7 @@ class FirstRoute extends StatelessWidget {
 }
 
 class SecondRoute extends StatelessWidget {
-  const SecondRoute({Key? key}) : super(key: key);
+  const SecondRoute({super.key});
 
   @override
   Widget build(BuildContext context) {

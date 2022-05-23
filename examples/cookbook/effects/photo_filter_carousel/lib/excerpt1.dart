@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 @immutable
 class FilterSelector extends StatefulWidget {
   const FilterSelector({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _FilterSelectorState createState() => _FilterSelectorState();
@@ -21,7 +21,7 @@ class _FilterSelectorState extends State<FilterSelector> {
 
 @immutable
 class ExampleInstagramFilterSelection extends StatefulWidget {
-  const ExampleInstagramFilterSelection({Key? key}) : super(key: key);
+  const ExampleInstagramFilterSelection({super.key});
 
   @override
   _ExampleInstagramFilterSelectionState createState() =>

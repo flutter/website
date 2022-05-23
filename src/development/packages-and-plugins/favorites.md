@@ -15,12 +15,15 @@ own evaluation of packages and plugins for your project.
 You can see the complete list of
 [Flutter Favorite packages][] on pub.dev.
 
-Looking to add more functionality to your app?
-The [Happy paths project][] guides you with
-opinionated recommendations for 
-plugins and packages that can take your app to the next level.
+{{site.alert.note}}
+  Looking to add more functionality to your app?
+  The [Happy paths project][] guides you with
+  opinionated recommendations for 
+  plugins and packages that can take your app
+  to the next level.
+{{site.alert.end}}
 
- [Happy paths project]: {{site.url}}/development/packages-and-plugins/happy-paths
+[Happy paths project]: {{site.url}}/development/packages-and-plugins/happy-paths
 
 ## Metrics
 
@@ -77,7 +80,8 @@ you must adhere to the following guidelines:
   logo in the package’s GitHub README, on the package’s
   pub.dev **Overview** tab,
   and on social media as related to posts about that package.
-* We encourage you to use the **#FlutterFavorite** hashtag in social media.
+* We encourage you to use the **#FlutterFavorite**
+  hashtag in social media.
 * When using the Flutter Favorite logo,
   the author must link to (this) Flutter Favorite landing page,
   to provide context for the designation.
@@ -86,12 +90,13 @@ you must adhere to the following guidelines:
   at which point the author must immediately remove all uses
   of “Flutter Favorite” and the Flutter Favorite logo from
   the affected package.
-* Don’t alter, distort, or modify the Flutter Favorite logo in any way,
-  including displaying the logo with color variations or unapproved
-  visual elements.
-* Don’t display the Flutter Favorite logo in a manner that is misleading,
-  unfair, defamatory, infringing, libelous, disparaging,
-  obscene, or otherwise objectionable to Google.
+* Don’t alter, distort,
+  or modify the Flutter Favorite logo in any way,
+  including displaying the logo with color variations
+  or unapproved visual elements.
+* Don’t display the Flutter Favorite logo in a manner that
+  is misleading, unfair, defamatory, infringing, libelous,
+  disparaging, obscene, or otherwise objectionable to Google.
 
 ## What's next
 

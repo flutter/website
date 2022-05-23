@@ -13,11 +13,11 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 
 class PhotoHero extends StatelessWidget {
   const PhotoHero({
-    Key? key,
+    super.key,
     required this.photo,
     this.onTap,
     required this.width,
-  }) : super(key: key);
+  });
 
   final String photo;
   final VoidCallback? onTap;
@@ -45,7 +45,7 @@ class PhotoHero extends StatelessWidget {
 }
 
 class HeroAnimation extends StatelessWidget {
-  const HeroAnimation({Key? key}) : super(key: key);
+  const HeroAnimation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class HeroAnimation extends StatelessWidget {
           width: 300.0,
           onTap: () {
             Navigator.of(context)
-                .push(MaterialPageRoute<void>(builder: (BuildContext context) {
+                .push(MaterialPageRoute<void>(builder: (context) {
               return Scaffold(
                 appBar: AppBar(
                   title: const Text('Flippers Page'),

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 enum DownloadStatus {
   notDownloaded,
@@ -12,12 +12,12 @@ enum DownloadStatus {
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.transitionDuration = const Duration(
       milliseconds: 500,
     ),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final Duration transitionDuration;
@@ -42,12 +42,12 @@ class DownloadButton extends StatelessWidget {
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;
