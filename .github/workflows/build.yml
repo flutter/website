@@ -10,6 +10,9 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
+# Only one deploy at a time
+concurrency: prod-deploy-group
+
 # Declare default permissions as read only.
 permissions: read-all
 
