@@ -1,0 +1,46 @@
+.cookie-notice {
+  background-color: white;
+  padding: 2.5rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  display: none;
+  z-index: 999;
+
+  @keyframes fadein {
+      0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  a.btn {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  &.show {
+    display: block;
+    animation-duration: 500ms;
+    animation-delay: 200ms;
+    animation-name: fadein;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+  }
+}
