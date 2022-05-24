@@ -69,6 +69,8 @@
 
   </head>
   <body {% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
+
+    {% include cookie-notice.html %}
   
     {% if jekyll.environment == "production" %}
       <noscript>
@@ -94,7 +96,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" integrity="sha512-hPzAQ7RgUQ/jsM6VWPWBpv2btjd9HWvEm8WIwAngYpMuaoMpihN6ROj8cRFUeYnV0vTYHepksRyzzskrhoL5Zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="{{ '/assets/js/vendor/code-prettify/prettify.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/vendor/code-prettify/lang-css.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/vendor/code-prettify/lang-dart.js' | append: cache_bust }}"></script>

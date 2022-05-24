@@ -4,6 +4,7 @@ $(function () {
   initVideoModal();
   initCarousel();
   initSnackbar();
+  initCookieNotice();
 
   addCopyCodeButtonsEverywhere(); // Must be before tooltip activation.
   $('[data-toggle="tooltip"]').tooltip();
@@ -200,4 +201,28 @@ function addCopyCodeButtonsEverywhere() {
         '  <i class="material-icons">content_copy</i>' +
         '</button>';
     });
+}
+
+/**
+ * Activate the cookie notice footer
+ * @returns null
+ */
+function initCookieNotice() {
+  const notice = document.querySelector('.cookie-notice');
+  const agreeBtn = document.getElementById('cookie-consent');
+  const cookieKey = 'cookie-consent';
+  const cookieConsentValue = 'true'
+  const activeClass = 'show';
+
+  if (Cookies.get(cookieKey) === cookieConsentValue) {
+    return;
+  }
+
+  notice.classList.add(activeClass);
+
+  agreeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    Cookies.set(cookieKey, cookieConsentValue);
+    notice.classList.remove(activeClass);
+  });
 }
