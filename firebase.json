@@ -301,7 +301,7 @@
       { "source": "/go/platform-based-key-events", "destination": "https://docs.google.com/document/d/1FDuxxEh810XpY561SgeiyUR0gU2eVz5kRpCFI55ibec/edit", "type": 301 },
       { "source": "/go/platform-channels-in-federated-plugins", "destination": "https://docs.google.com/document/d/1BSrDA_FjLU-3T0H774RocJ4IYyc0ytMl937rAimGJdg/edit?usp=sharing", "type": 301 },
       { "source": "/go/platform-interface-breaking-changes", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#heading=h.xabf9lffxrkb", "type": 301 },
-      { "source": "/go/platform-view-focus", "destination": "https://docs.google.com/document/d/1GG8VfYeuVtTQHiMWQXbrSG5HEUorzqU8IGbNySVJ-bY/edit", "type": 301 },
+      { "source": "/go/platform-view-focus", "destination": "https://docs.google.com/document/d/1GG8VfYeuVtTQHiMWQXbrSG5HEUorzqU8IGbNySVJ-bY", "type": 301 },
       { "source": "/go/plugin-binding-review", "destination": "https://docs.google.com/document/d/1-9Si_ocFYh-Wa1qKV4PV2ocywKDYdiR_1yO3twPvrfM", "type": 301 },
       { "source": "/go/plugin-platforms", "destination": "/development/packages-and-plugins/developing-packages#plugin-platforms", "type": 301 },
       { "source": "/go/plugin-support-for-custom-embeddings", "destination": "https://docs.google.com/document/d/1AJTHdC20JhD3viR4JWTghagIztqL5jg_R9NFQmnwAMw/edit?usp=sharing&resourcekey=0-qAECjzHKB5tM47azrVnH1w", "type": 301 },
