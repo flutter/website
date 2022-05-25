@@ -260,7 +260,7 @@ Flutter to automatically depend on `androidx.multidex:multidex` and use a
 generated `FlutterMultiDexApplication` as the project's application.
 
 {{site.alert.note}}
-  Multidex support is natively included when targeting min sdk 21+.
+  Multidex support is natively included when targeting min sdk 21+. However, we do not recommend targeting API 21+ purely to resolve the multidex issue as this may inadvertently exclude potential users running older devices.
 {{site.alert.end}}
 
 You might also choose to manually support multidex by following Android's guides
