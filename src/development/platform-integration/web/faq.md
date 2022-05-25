@@ -109,6 +109,15 @@ file system, which is not accessible from the browser. To use these plugins
 in your app, see the [documentation for conditional imports][]
 on [dart.dev]({{site.dart-site}}).
 
+### Does Flutter web support concurrency?
+
+Dart's concurrency support via [isolates][]
+is not currently supported in Flutter web.
+
+Flutter web apps can potentially work around this
+by using [web workers][],
+although no such support is built in.
+
 ### How do I embed a Flutter web app in a web page?
 
 You can embed a Flutter web app,
@@ -172,6 +181,7 @@ Flutter engineers routinely read and respond on Discord.
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
+[isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
 [Logging]: {{site.url}}/development/tools/devtools/logging
 [Preparing a web app for release]: {{site.url}}/deployment/web
@@ -180,6 +190,7 @@ Flutter engineers routinely read and respond on Discord.
 [widget tests]: {{site.url}}/testing#widget-tests
 [pub.dev]: {{site.pub}}/flutter/packages?platform=web
 [Web support for Flutter]: {{site.url}}/web
+[web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [write your own plugins]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [run your web apps in any supported browser]: {{site.url}}/get-started/web#create-and-run
 [Integration testing]: {{site.url}}/testing/integration-tests#running-in-a-browser
