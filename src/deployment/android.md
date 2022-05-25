@@ -261,7 +261,7 @@ generated `FlutterMultiDexApplication` as the project's application.
 
 {{site.alert.note}}
   Multidex support is natively included when targeting min sdk 21+. However,
-  we do not recommend targeting API 21+ purely to resolve the multidex issue
+  it is not recommended to target API 21+ purely to resolve the multidex issue
   as this may inadvertently exclude users running older devices.
 {{site.alert.end}}
 
