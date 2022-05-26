@@ -1602,7 +1602,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       body: ListView.builder(
         itemCount: widgets.length,
         itemBuilder: (BuildContext context, int index) {
-          return getRow(index);
+          return widgets[index];
         },
       ),
     );
