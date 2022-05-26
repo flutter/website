@@ -19,7 +19,7 @@ toc: false
   {% else -%}
     {% assign path = path | append: '/' | append: path_part -%}
   {% endif -%}
-  {% if forloop.index0 > 1 -%}
+  {% if forloop.index0 > 0 -%}
     {% assign topics = topics | where: "permalink", path -%}
     {% assign topics = topics[0].children -%}
   {% endif -%}
