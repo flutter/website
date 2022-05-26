@@ -57,14 +57,6 @@ one of these codelabs:
   Android and iOS tooling, the completed app
   works on Android and iOS devices, as well.
 
-* [Building beautiful UIs with Flutter][]<br>
-  A deeper "first dive" than "Write your first Flutter app."
-  Create a chat app that includes a simple animation,
-  and customizes the UI for iOS and Android. As part of
-  this codelab, learn how to use keyboard shortcuts in
-  Android Studio.
-
-[Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
 [Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
 [codelab on docs.flutter.dev]: {{site.url}}/get-started/codelab
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
