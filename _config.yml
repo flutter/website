@@ -95,7 +95,7 @@ defaults:
   - scope:
       path: 'cookbook'
     values:
-      show_breadcrumbs: true
+      show_breadcrumbs: false
   - scope:
       path: 'development'
     values:
