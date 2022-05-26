@@ -258,6 +258,7 @@
       { "source": "/go/input-field-autofill", "destination": "https://docs.google.com/document/d/1wYLsoc7NiHl2jFueB4Ros09E3nDCotdWVovDCFSMcAk/edit", "type": 301 },
       { "source": "/go/ios-autocorrection-highlight-support", "destination": "https://docs.google.com/document/d/18ZO7ThKu2wwCofGOKZSInPsq93IzkQTRn9eiyskeh7I/edit", "type": 301 },
       { "source": "/go/ios-camera-plugin-thread-model", "destination": "https://docs.google.com/document/d/1Znjp-BduXIb1Ix3JOE1YKyJi1Z0d6rB-2q6Lt7j8xSo/edit", "type": 301 },
+      { "source": "/go/ios-platform-view-focus", "destination": "https://docs.google.com/document/d/1GG8VfYeuVtTQHiMWQXbrSG5HEUorzqU8IGbNySVJ-bY", "type": 301 },
       { "source": "/go/ios-pull-to-refresh", "destination": "https://docs.google.com/document/d/1oUgNd3fsJ1QVuEmA6ENBT8vq3o6QKCRUPGCB6q91VgI/edit", "type": 301 },
       { "source": "/go/ios-scribble", "destination": "https://docs.google.com/document/d/1mjQbsSRQnHuAgMNdouaSgTS-Xv-w57fdKfOUUafWpRo", "type": 301 },
       { "source": "/go/ios-switch-controll-scrolling", "destination": "https://docs.google.com/document/d/1CZ2CRXihPQ1hBUXWODpyPVJ_2Yc0es6tkXrJSnpDajA", "type": 301 },
