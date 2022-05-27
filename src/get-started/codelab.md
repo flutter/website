@@ -402,7 +402,7 @@ class RandomWords extends StatefulWidget {
   const RandomWords({ Key? key }) : super(key: key);
 
   @override
-  _RandomWordsState createState() => _RandomWordsState();
+  State<RandomWords> createState() => _RandomWordsState();
 }
 
 class _RandomWordsState extends State<RandomWords> {
