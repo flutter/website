@@ -12,6 +12,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="cookbook/effects/typing_indicator"?>
+
 Modern chat apps display indicators when other users
 are actively typing responses. These indicators help
 prevent rapid and conflicting responses between you
@@ -35,32 +37,32 @@ phases of the flashing circles within the large speech bubble.
 
 Define a new stateful widget called `TypingIndicator`.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt1.dart (TypingIndicator)"?>
 ```dart
 class TypingIndicator extends StatefulWidget {
- const TypingIndicator({
-   Key? key,
-   this.showIndicator = false,
-   this.bubbleColor = const Color(0xFF646b7f),
-   this.flashingCircleDarkColor = const Color(0xFF333333),
-   this.flashingCircleBrightColor = const Color(0xFFaec1dd),
- }) : super(key: key);
+  const TypingIndicator({
+    Key? key,
+    this.showIndicator = false,
+    this.bubbleColor = const Color(0xFF646b7f),
+    this.flashingCircleDarkColor = const Color(0xFF333333),
+    this.flashingCircleBrightColor = const Color(0xFFaec1dd),
+  }) : super(key: key);
 
- final bool showIndicator;
- final Color bubbleColor;
- final Color flashingCircleDarkColor;
- final Color flashingCircleBrightColor;
+  final bool showIndicator;
+  final Color bubbleColor;
+  final Color flashingCircleDarkColor;
+  final Color flashingCircleBrightColor;
 
- @override
- _TypingIndicatorState createState() => _TypingIndicatorState();
+  @override
+  _TypingIndicatorState createState() => _TypingIndicatorState();
 }
 
 class _TypingIndicatorState extends State<TypingIndicator> {
- @override
- Widget build(BuildContext context) {
-   // TODO:
-   return SizedBox();
- }
+  @override
+  Widget build(BuildContext context) {
+    // TODO:
+    return SizedBox();
+  }
 }
 ```
 
@@ -86,77 +88,77 @@ Define an animation for the height of the typing indicator,
 and then apply that animated value to the `SizedBox`
 widget within the typing indicator.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt2.dart (TypingIndicatorState)"?>
 ```dart
-class _TypingIndicatorState extends State<TypingIndicator> with TickerProviderStateMixin {
+class _TypingIndicatorState extends State<TypingIndicator>
+    with TickerProviderStateMixin {
+  late AnimationController _appearanceController;
+  late Animation<double> _indicatorSpaceAnimation;
 
- late AnimationController _appearanceController;
- late Animation<double> _indicatorSpaceAnimation;
+  @override
+  void initState() {
+    super.initState();
 
- @override
- void initState() {
-   super.initState();
+    _appearanceController = AnimationController(
+      vsync: this,
+    );
 
-   _appearanceController = AnimationController(
-     vsync: this,
-   );
+    _indicatorSpaceAnimation = CurvedAnimation(
+      parent: _appearanceController,
+      curve: const Interval(0.0, 0.4, curve: Curves.easeOut),
+      reverseCurve: const Interval(0.0, 1.0, curve: Curves.easeOut),
+    ).drive(Tween<double>(
+      begin: 0.0,
+      end: 60.0,
+    ));
 
-   _indicatorSpaceAnimation = CurvedAnimation(
-     parent: _appearanceController,
-     curve: const Interval(0.0, 0.4, curve: Curves.easeOut),
-     reverseCurve: const Interval(0.0, 1.0, curve: Curves.easeOut),
-   ).drive(Tween<double>(
-     begin: 0.0,
-     end: 60.0,
-   ));
+    if (widget.showIndicator) {
+      _showIndicator();
+    }
+  }
 
-   if (widget.showIndicator) {
-     _showIndicator();
-   }
- }
+  @override
+  void didUpdateWidget(TypingIndicator oldWidget) {
+    super.didUpdateWidget(oldWidget);
 
- @override
- void didUpdateWidget(TypingIndicator oldWidget) {
-   super.didUpdateWidget(oldWidget);
+    if (widget.showIndicator != oldWidget.showIndicator) {
+      if (widget.showIndicator) {
+        _showIndicator();
+      } else {
+        _hideIndicator();
+      }
+    }
+  }
 
-   if (widget.showIndicator != oldWidget.showIndicator) {
-     if (widget.showIndicator) {
-       _showIndicator();
-     } else {
-       _hideIndicator();
-     }
-   }
- }
+  @override
+  void dispose() {
+    _appearanceController.dispose();
+    super.dispose();
+  }
 
- @override
- void dispose() {
-   _appearanceController.dispose();
-   super.dispose();
- }
+  void _showIndicator() {
+    _appearanceController
+      ..duration = const Duration(milliseconds: 750)
+      ..forward();
+  }
 
- void _showIndicator() {
-   _appearanceController
-     ..duration = const Duration(milliseconds: 750)
-     ..forward();
- }
+  void _hideIndicator() {
+    _appearanceController
+      ..duration = const Duration(milliseconds: 150)
+      ..reverse();
+  }
 
- void _hideIndicator() {
-   _appearanceController
-     ..duration = const Duration(milliseconds: 150)
-     ..reverse();
- }
-
- @override
- Widget build(BuildContext context) {
-   return AnimatedBuilder(
-     animation: _indicatorSpaceAnimation,
-     builder: (context, child) {
-       return SizedBox(
-         height: _indicatorSpacerAnimation.value,
-       );
-     },
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _indicatorSpaceAnimation,
+      builder: (context, child) {
+        return SizedBox(
+          height: _indicatorSpaceAnimation.value,
+        );
+      },
+    );
+  }
 }
 ```
 
@@ -205,9 +207,10 @@ lower left. Then, animate the scale of the bubbles
 so that the bubbles are staggered whenever the `showIndicator`
 property changes.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt3.dart (Bubbles)"?>
 ```dart
-class _TypingIndicatorState extends State<TypingIndicator> with TickerProviderStateMixin {
+class _TypingIndicatorState extends State<TypingIndicator>
+    with TickerProviderStateMixin {
   late AnimationController _appearanceController;
 
   late Animation<double> _indicatorSpaceAnimation;
@@ -440,9 +443,10 @@ Introduce a repeating `AnimationController` to
 implement the circle flashing and pass it to the
 `StatusBubble`.
 
-<!--skip-->
+<?code-excerpt "lib/excerpt4.dart (AnimationController)"?>
 ```dart
-class _TypingIndicatorState extends State<TypingIndicator> with TickerProviderStateMixin {
+class _TypingIndicatorState extends State<TypingIndicator>
+    with TickerProviderStateMixin {
   late AnimationController _appearanceController;
 
   late Animation<double> _indicatorSpaceAnimation;
@@ -530,7 +534,7 @@ class _TypingIndicatorState extends State<TypingIndicator> with TickerProviderSt
             left: 12,
             bottom: 12,
             bubble: StatusBubble(
-              repeatingController: _repeatingController,  // <-- Add this
+              repeatingController: _repeatingController, // <-- Add this
               dotIntervals: _dotIntervals,
               flashingCircleDarkColor: widget.flashingCircleDarkColor,
               flashingCircleBrightColor: widget.flashingCircleBrightColor,
@@ -663,7 +667,7 @@ Run the app:
   of the screen to turn the typing indicator bubble
   on and off.
 
-<!--skip-->
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'dart:math';
 
