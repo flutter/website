@@ -1,17 +1,16 @@
 ---
 title: Adding ImageProvider.loadBuffer
-description: ImageProviders must now be implemented using the new loadBuffer
-API instead of the existing load API.
+description: ImageProviders must now be implemented using the new loadBuffer API instead of the existing load API.
 ---
 
 ## Summary
 
-* `ImageProvider` now has a method called `loadBuffer` which functions
+* `ImageProvider` now has a method called `loadBuffer` that functions
    similarly to `load`, except that it decodes from an `ui.ImmutableBuffer`.
 * `ui.ImmutableBuffer` can now be created directly from an asset key.
 * The `AssetBundle` classes can now load an `ui.ImmutableBuffer`.
 * The `PaintingBinding` now has a method called
-  `instantiateImageCodecFromBuffer` which functions similarly to
+  `instantiateImageCodecFromBuffer`, which functions similarly to
   `instantiateImageCodec`.
 * `ImageProvider.load` is now deprecated, it will be removed in a future
    release.
@@ -29,11 +28,11 @@ and with less memory impact on application.
 When loading asset images, previously the image provider API required multiple
 copies of the compressed data. First, when opening the asset the data was
 copied into the external heap and exposed to Dart as a typed data array. Then
-that typed data array was eventually converted into an `ui.ImmutableBuffer`
+that typed data array was eventually converted into an `ui.ImmutableBuffer`,
 which internally copies the data into a second structure for decoding.
 
 With the addition of `ui.ImmutableBuffer.fromAsset`, compressed image bytes can
-be loaded directly into the structure used for decoding. Utilizing this
+be loaded directly into the structure used for decoding. Using this approach
 requires changes to the byte loading pipeline of `ImageProvider`. This process
 is also faster, because it bypasses some additional scheduling overhead of the
 previous method channel based loader.
@@ -41,13 +40,13 @@ previous method channel based loader.
 `ImageProvider.loadBuffer` otherwise has the same contract as
 `ImageProvider.load`, except it provides a new decoding callback that expects
 an `ui.ImmutableBuffer` instead of a `Uint8List`. For `ImageProvider` classes
-that acquire bytes from places other than assets, the convience method
+that acquire bytes from places other than assets, the convenience method
 `ui.ImmutableBuffer.fromUint8List` can be used for compatibility.
 
 ## Migration guide
 
-Class which subclass `ImageProvider` must implement the `loadBuffer` method for
-loading assets. Classes which delegate to or call the methods of an
+Classes that subclass `ImageProvider` must implement the `loadBuffer` method for
+loading assets. Classes that delegate to or call the methods of an
 `ImageProvider` directly must use `loadBuffer` instead of `load`.
 
 Code before migration:
@@ -111,7 +110,7 @@ class MyDelegatingProvider extends ImageProvider<MyDelegatingProvider> {
 }
 ```
 
-In both cases you may choose to keep the previous implementation of `ImageProvider.load`
+In both cases you might choose to keep the previous implementation of `ImageProvider.load`
 to give users of your code time to migrate as well.
 
 ## Timeline
