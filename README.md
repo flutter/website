@@ -104,8 +104,8 @@ Install the following tools, if you don't have them already:
 > The GitHub documentation has general help on [forking][] and [cloning][] repos.
 
 If you are working in the Windows desktop environment, make sure you have Git
-`autocrlf` set to `input` **before** initialising the submodules. This will
-ensure that line endings are handled correctly _before_ any Bash scripts are
+`autocrlf` set to `input` **before** initializing the submodules. This
+ensures that line endings are handled correctly _before_ any Bash scripts are
 executed within the submodules.
 See [issue 6201](https://github.com/flutter/website#6201) for details.
 
