@@ -107,7 +107,7 @@ If you are working in the Windows desktop environment, make sure you have Git
 `autocrlf` set to `input` **before** initialising the submodules. This will
 ensure that line endings are handled correctly _before_ any Bash scripts are
 executed within the submodules.
-See flutter/website#6201 for details.
+See [issue 6201](https://github.com/flutter/website#6201) for details.
 
 If you're outside of the Flutter organization, 
 we recommend you **create a fork** of the repo under your own account, 
