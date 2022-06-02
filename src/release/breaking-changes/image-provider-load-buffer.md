@@ -1,6 +1,6 @@
 ---
 title: Adding ImageProvider.loadBuffer
-description: ImageProviders should now be implemented using the new loadBuffer
+description: ImageProviders must now be implemented using the new loadBuffer
 API instead of the existing load API.
 ---
 
@@ -116,62 +116,16 @@ to give users of your code time to migrate as well.
 
 ## Timeline
 
-
-Landed in version: xxx<br>
+Landed in version: 3.1.0-0.0.pre.976
 In stable release: not yet
-Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 ## References
 
-{% comment %}
-  These links are commented out because they
-  cause the GitHubActions (GHA) linkcheck to fail.
-  Remove the comment tags once you fill this in with
-  real links. Only use the "master-api" include if
-  you link to "master-api.flutter.dev".
-
-{% include docs/master-api.md %}
-
 API documentation:
 
-* [`ClassName`][]
-
-Relevant issues:
-
-* [Issue xxxx][]
-* [Issue yyyy][]
+* [`ImmutableBuffer`]: {{site.master-api}}/flutter/dart-ui/ImmutableBuffer-class.html
+* [`ImageProvider`]: {{site.master-api}}/painting/ImageProvider-class.html
 
 Relevant PRs:
 
-* [PR title #1][]
-* [PR title #2][]
-{% endcomment %}
-
-{% comment %}
-  Add the links to the end of the file in alphabetical order.
-  The following links are commented out because they make
-  the GitHubActions (GHA) link checker believe they are broken links,
-  but please remove the comment tags before you commit!
-
-  If you are sharing new API that hasn't landed in
-  the stable channel yet, use the master channel link.
-  To link to docs on the master channel,
-  include the following note and make sure that
-  the URL includes the master link (as shown below).
-
-  Here's an example of defining a stable (site.api) link
-  and a master channel (master-api) link.
-
-<!-- Stable channel link: -->
-[`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
-
-<!-- Master channel link: -->
-{% include docs/master-api.md %}
-
-[`ClassName`]: {{site.master-api}}/flutter/[link_to_relevant_page].html
-
-[Issue xxxx]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
-[Issue yyyy]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
-[PR title #1]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
-[PR title #2]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
-{% endcomment %}
+* [Use immutable buffer for loading asset images]: {{site.repo.flutter}}/pull/103496
