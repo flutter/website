@@ -1,4 +1,4 @@
-name: typing_indicator
+name: how_to
 description: A new Flutter project.
 
 publish_to: 'none' 
@@ -13,9 +13,11 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  integration_test:
+    sdk: flutter
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.1
 
 
 flutter:

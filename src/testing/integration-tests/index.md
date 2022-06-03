@@ -3,6 +3,8 @@ title: Integration testing
 description: Learn how to write integration tests
 ---
 
+<?code-excerpt path-base="testing/integration_tests/how_to"?>
+
 This page describes how to use the [`integration_test`][] package to run
 integration tests. Tests written using this package have the following
 properties:
@@ -72,12 +74,13 @@ dev_dependencies:
 In your project, create a new directory
 `integration_test/` with a new file, `<name>_test.dart`:
 
+<?code-excerpt "integration_test/counter_test.dart" replace="/IntegrationTestWidgetsFlutterBinding\.ensureInitialized\(\); \/\/ NEW\n\n//g"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
 void main() {
-  testWidgets("failing test example", (WidgetTester tester) async {
+    testWidgets("failing test example", (WidgetTester tester) async {
     expect(2 + 2, equals(5));
   });
 }
@@ -135,6 +138,7 @@ chromedriver --port=4444
 To run tests with `flutter drive`, create a new directory containing a new file,
 `test_driver/integration_test.dart`:
 
+<?code-excerpt "test_driver/integration_test.dart"?>
 ```dart
 import 'package:integration_test/integration_test_driver.dart';
 
@@ -144,6 +148,7 @@ Future<void> main() => integrationDriver();
 Then add `IntegrationTestWidgetsFlutterBinding.ensureInitialized()` in your 
 `integration_test/<name>_test.dart` file:
 
+<?code-excerpt "integration_test/counter_test.dart"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
