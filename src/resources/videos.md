@@ -112,6 +112,20 @@ Introducing the Boring Flutter show<br>
 
 [The Boring Flutter show playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl
 
+### Learning to Fly
+
+Follow along with Khanh’s journey as she builds her first Flutter app. 
+From ideation down to the moments of confusion,
+learn alongside her as she asks important questions like: 
+“What is the best way to build out a theme? How to approach using fonts?” 
+And more!
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/CkcvVZZEsJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Building my first Flutter app | Learning to Fly<br>
+[Learning to Fly playlist][]
+
+[Learning to Fly playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU3X18pAQWLyCJaa79RpqWnn
+
 ## Conference talks
 
 Here are a some Flutter talks given at various conferences.
