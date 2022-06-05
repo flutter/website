@@ -94,12 +94,6 @@ shows how to write animation code.
   that uses animation to show the user's progress
   as they fill in the fields.
 
-* [Building Beautiful UIs with Flutter][]<br>
-  Codelab demonstrating how to build a simple chat app.
-  [Step 7 (Animate your app)][] shows how to animate
-  the new message&mdash;sliding it from the input area up
-  to the message list.
-
 ## Animation types
 
 Generally, animations are either tween- or physics-based.
@@ -246,7 +240,6 @@ Learn more about Flutter animations at the following links:
 [article4]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
 [article5]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [article6]: {{site.flutter-medium}}/animation-deep-dive-39d3ffea111f
-[Building Beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
 [Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.youtube-site}}/watch?v=6KiPEqzJIKQ&feature=youtu.be
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.youtube-site}}/watch?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [Flutter API documentation]: {{site.api}}

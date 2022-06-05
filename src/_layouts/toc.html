@@ -9,8 +9,6 @@ toc: false
 
 {% comment %}
   - path_parts[0] == '' because page.url always starts with '/'
-  - (path_parts | size) > 2 since we don't use this layout at
-    the top level, nor at the second level (under our current IA)
 {% endcomment -%}
 
 {% for path_part in path_parts -%}
@@ -19,7 +17,7 @@ toc: false
   {% else -%}
     {% assign path = path | append: '/' | append: path_part -%}
   {% endif -%}
-  {% if forloop.index0 > 1 -%}
+  {% if forloop.index0 > 0 -%}
     {% assign topics = topics | where: "permalink", path -%}
     {% assign topics = topics[0].children -%}
   {% endif -%}
