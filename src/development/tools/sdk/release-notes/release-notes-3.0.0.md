@@ -593,7 +593,7 @@ The following changes happened in this release:
 * Filter out some stray Xcode logging during macOS builds by @jmagman in https://github.com/flutter/flutter/pull/100707
 * [flutter_tools] Fix VersionUpstreamValidator to respect FLUTTER_GIT_URL by @RoyARG02 in https://github.com/flutter/flutter/pull/100605
 * Add `CADisableMinimumFrameDurationOnPhone` migration by @cyanglaz in https://github.com/flutter/flutter/pull/100647
-* [flutter_tool] Adds --enable-impeller flag to the run command by @zanderso in https://github.com/flutter/flutter/pull/100835
+* [flutter_tool] Adds `--enable-impeller` flag to the run command by @zanderso in https://github.com/flutter/flutter/pull/100835
 * Pass ARCHS build setting to flutter assemble on macOS by @jmagman in https://github.com/flutter/flutter/pull/100811
 * [flutter_tools] warn when doctor takes long by @christopherfujino in https://github.com/flutter/flutter/pull/100805
 * [macOS] Remove beta-quality wording from messages by @cbracken in https://github.com/flutter/flutter/pull/99699
