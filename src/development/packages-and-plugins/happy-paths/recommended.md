@@ -63,7 +63,7 @@ Some features of WorkManager include:
   only running when the device is charging, or only running when a device is 
   idle (Android only)  
 
-[persistent]: {{android-dev}}/topic/libraries/architecture/workmanager
+[persistent]: {{site.android-dev}}/topic/libraries/architecture/workmanager
 [WorkManager]: {{site.pub-pkg}}/workmanager
 
 #### Useful links
@@ -74,7 +74,7 @@ Some features of WorkManager include:
 * [Dart concurrency][]
 
 [Android setup]: {{site.github}}/fluttercommunity/flutter_workmanager/blob/main/ANDROID_SETUP.md
-[Dart concurrency]: {{dart-site}}/guides/language/concurrency 
+[Dart concurrency]: {{site.dart-site}}/guides/language/concurrency 
 [iOS setup]: {{site.github}}/fluttercommunity/flutter_workmanager/blob/main/IOS_SETUP.md
 [Using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 
