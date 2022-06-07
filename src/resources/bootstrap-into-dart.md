@@ -23,6 +23,11 @@ you to learn, too.
   Learn about Dart's support for collections, async,
   math, numbers, strings, JSON, and more.
 
+[Learning Dart as a JavaScript developer][]
+: Use your JavaScript knowledge to get up and running quickly with Dart.
+  Learn about the key similarities and differences between the languages
+  as well as concepts and conventions not present in vanilla JavaScript.
+
 [Intro to Dart for Java Developers][] codelab
 : Use your Java knowledge to get up and running quickly with Dart.
   Learn about classes, constructors, parameters,
@@ -52,6 +57,7 @@ Check out the [Dart community][].
 [Dart is easy and fun to learn]: {{site.url}}/resources/faq#why-did-flutter-choose-to-use-dart
 [Effective Dart]: {{site.dart-site}}/guides/language/effective-dart
 [`File`]: {{site.api}}/flutter/dart-io/File-class.html
+[Learning Dart as a JavaScript developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
 [Intro to Dart for Java Developers]: {{site.codelabs}}/codelabs/from-java-to-dart
 [Language tour]: {{site.dart-site}}/guides/language/language-tour
 [Library tour]: {{site.dart-site}}/guides/libraries/library-tour

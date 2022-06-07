@@ -142,7 +142,7 @@ where the Dart code lives.
     }
 
     class MyApp extends StatelessWidget {
-      const MyApp({Key? key}) : super(key: key);
+      const MyApp({super.key});
 
       @override
       Widget build(BuildContext context) {
@@ -402,7 +402,7 @@ class RandomWords extends StatefulWidget {
   const RandomWords({ Key? key }) : super(key: key);
 
   @override
-  _RandomWordsState createState() => _RandomWordsState();
+  State<RandomWords> createState() => _RandomWordsState();
 }
 
 class _RandomWordsState extends State<RandomWords> {

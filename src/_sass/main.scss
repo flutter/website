@@ -1,10 +1,10 @@
 
 // -- Vars/config
-@import "base/variables";
+@import 'base/variables';
 
 // -- Vendor (NPM)
 @import 'shared/bootstrap_config_shared';
-@import "vendor";
+@import 'vendor';
 
 // -- Base
 @import 'base/base';
@@ -32,11 +32,10 @@
 @import 'components/next-prev-nav';
 @import 'components/snackbar';
 @import 'components/tabs';
-
+@import 'components/cookie-notice';
 
 // New header
 @import 'components/header';
-
 
 // -- Pages
 
