@@ -108,15 +108,15 @@ Consider an `onPressed` callback that invokes an asynchronous function,
 such as `MethodChannel.invokeMethod` (or pretty much any plugin).
 For example:
 
-<?code-excerpt "lib/excerpts.dart (OnPressed)" replace="/return //;//g"?>
+<?code-excerpt "lib/excerpts.dart (OnPressed)" replace="/return //g;/\;//g"?>
 ```dart
-return OutlinedButton(
+OutlinedButton(
   child: Text('Click me!'),
   onPressed: () async {
-    final channel = const MethodChannel('crashy-custom-channel');
-    await channel.invokeMethod('blah');
+    final channel = const MethodChannel('crashy-custom-channel')
+    await channel.invokeMethod('blah')
   },
-);
+)
 ```
 
 If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onError`.
