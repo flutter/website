@@ -4,15 +4,31 @@ description: General information about Flutter support for desktop apps.
 ---
 
 Flutter provides support for compiling
- a native Windows, macOS, or Linux desktop app.
+a native Windows, macOS, or Linux desktop app.
 Flutter's desktop support also extends to plugins&mdash;you
 can install existing plugins that support the Windows,
 macOS, or Linux platforms, or you can create your own.
 
+{{site.alert.note}}
+  This page covers developing apps for all desktop
+  platforms. Once you've read this, you can dive into
+  specific platform information at the following links:
+
+  * [Building Windows apps with Flutter][]
+  * [Building macOS apps with Flutter][]
+  * [Building Linux apps with Flutter][]
+{{site.alert.end}}
+
+[Building Windows apps with Flutter]: {{site.url}}/development/platform-integration/windows/building
+[Building macOS apps with Flutter]: {{site.url}}/development/platform-integration/macos/building
+[Building Linux apps with Flutter]{{site.url}}/development/platform-integration/linux/building
+
 ## Requirements
 
-To compile a desktop application, you must build it **on** the targeted
-platform: build a Windows application on Windows, a macOS application on macOS,
+To compile a desktop application,
+you must build it **on** the targeted
+platform: build a Windows application on Windows,
+a macOS application on macOS,
 and a Linux application on Linux.
 
 To create a Flutter application with desktop support,
@@ -41,9 +57,11 @@ you need the following software:
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
-* [Visual Studio 2022][] When installing Visual Studio select the "Desktop
-  development with C++" workload, including all of its default components, to
-  install the necessary C++ toolchain and Windows SDK header files.
+* [Visual Studio 2022][] When installing Visual Studio,
+  select the "Desktop development with C++" workload,
+  including all of its default components,
+  to install the necessary C++ toolchain and
+  Windows SDK header files.
 
 {{site.alert.note}}
   **Visual Studio** is different than Visual Studio _Code_.
@@ -109,12 +127,16 @@ to create a new project with desktop support.
 
 ### Set up
 
-On Windows, desktop support is enabled on Flutter 2.10 or higher.
-On macOS and Linux, desktop support is enabled on Flutter 3 or higher.
+On Windows, desktop support is enabled on
+Flutter 2.10 or higher. On macOS and Linux,
+desktop support is enabled on Flutter 3 or higher.
 
-You might run `flutter doctor` to see if there are any unresolved issues.
-You should see a checkmark for each successfully configured area. It should look
-something like the following on Windows, with an entry for "develop for Windows":
+You might run `flutter doctor` to see if
+there are any unresolved issues.
+You should see a checkmark for each successfully
+configured area. It should look something like
+the following on Windows,
+with an entry for "develop for Windows":
 
 ```terminal
 C:\> flutter doctor
@@ -141,16 +163,26 @@ On Linux, look for a line like this:
 [✓] Linux toolchain - develop for Linux desktop
 ```
 
-If `flutter doctor` finds problems or missing components for a platform that you
-don't want to develop for, you can ignore those warnings. Or you can disable the
-platform altogether using the `flutter config` command, for example:
+If `flutter doctor` finds problems or missing components
+for a platform that you don't want to develop for,
+you can ignore those warnings. Or you can disable the
+platform altogether using the `flutter config` command,
+for example:
 
 ```terminal
 $ flutter config --no-enable-ios
 ```
 
-After enabling desktop support, restart your IDE so that it can detect the new
-device.
+Other available flags:
+
+* `--no-enable-windows`
+* `--no-enable-linux`
+* `--no-enable-web`
+* `--no-enable-android`
+* `--no-enable-ios`
+
+After enabling desktop support,
+restart your IDE so that it can detect the new device.
 
 ### Create and run
 
@@ -174,8 +206,6 @@ creates iOS, Android, web, and desktop versions of your app.
 From the device pulldown, select **windows (desktop)**,
 **macOS (desktop)**, or **linux (desktop)**
 and run your application to see it launch on the desktop.
-
-[web support]: {{site.url}}/get-started/web
 
 #### From the command line
 

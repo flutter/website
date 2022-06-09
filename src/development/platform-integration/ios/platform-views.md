@@ -357,4 +357,5 @@ Widget build(BuildContext context) {
 
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 
-{% include /development/platform-integration/_platform-views %}
+{% include docs/platform-view-perf.md %}
+

@@ -423,4 +423,6 @@ android {
 ```
 
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
-{% include {{site.url}}/development/platform-integration/_platform-view-perf %}
+
+{% include docs/platform-view-perf.md %}
+

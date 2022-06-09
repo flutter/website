@@ -25,7 +25,7 @@ lifecycle dependent components compared to the old APIs. For instance
 [`PluginRegistry.Registrar.activity()`][] could return null if
 Flutter isn't attached to any activities.
 
-In other words, plugins using the old API may produce undefined
+In other words, plugins using the old API might produce undefined
 behaviors when embedding Flutter into an Android app.
 Most of the [Flutter plugins][] provided by the flutter.dev
 team have been migrated already. (Learn how to become a
@@ -69,7 +69,7 @@ The following instructions outline the steps for supporting the new API:
 1. Update the example app's `MainActivity.java` to use the
    v2 embedding `FlutterActivity`. For details, see
    [Upgrading pre 1.12 Android projects][].
-   You may have to make a public constructor for your plugin class
+   You might have to make a public constructor for your plugin class
    if one didn't exist already. For example:
 
    <!--code-excerpt "MainActivity.java" title-->
@@ -293,8 +293,9 @@ public class MyPlugin implements FlutterPlugin {
 }
 ```
 
-As shown above, your plugin may or may not be associated with
-a given Flutter experience at any given moment in time.
+As shown above, your plugin might (or might not)
+be associated with a given Flutter experience at
+any given moment in time.
 You should take care to initialize your plugin's behavior
 in `onAttachedToEngine()`, and then cleanup your plugin's
 references in `onDetachedFromEngine()`.
