@@ -1,6 +1,7 @@
 ---
 title: Cookbook
 description: The Flutter cookbook provides recipes for many commonly performed tasks.
+show_breadcrumbs: false
 ---
 
 This cookbook contains recipes that demonstrate how to solve common problems 

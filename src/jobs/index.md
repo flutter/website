@@ -13,11 +13,10 @@ The following jobs are open:
 * [Android Engineer]({{site.url}}/jobs/android)
 * [Android Technical Lead]({{site.url}}/jobs/android_tl)
 * [iOS Engineer]({{site.url}}/jobs/ios)
-* [Flutter Engineering Productivity]({{site.url}}/jobs/infrastructure)
+* [Ecosystem Engineer]({{site.url}}/jobs/ecosystem)
 * [Flutter CLI and Tools]({{site.url}}/jobs/tools)
 * [Flutter Web Engineer]({{site.url}}/jobs/engine_web)
 * [Framework Engineer]({{site.url}}/jobs/framework)
-* [Flutter & Dart Developer Experience SWE]({{site.url}}/jobs/devexp)
 * [Flutter & Dart Native Runtime Engineer]({{site.url}}/jobs/native_runtime)
 
 ## Developer Relations

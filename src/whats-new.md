@@ -49,8 +49,8 @@ and the [Flutter 3 release notes][].
   [Customizing web app initialization][],
   which has been added to the newly updated
   and collected web docs under
-  `/development/platform-integraton/web`.
-* Flutter 3 supports the Apple Silicon Mac (aka M1).
+  `/development/platform-integration/web`.
+* Flutter 3 supports Apple Silicon processors.
   We've updated the [macOS install page][]
   to offer an Apple Silicon download button.
 * In Flutter 3, the macOS and Linux platforms
