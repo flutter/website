@@ -529,7 +529,7 @@ folder with the following specialized content:
   build files for building and bundling the native code
   library with the platform application.
 
-### Step 2: Buidling and bundling native code
+### Step 2: Building and bundling native code
 
 The `pubspec.yaml` specifies FFI plugins as follows:
 

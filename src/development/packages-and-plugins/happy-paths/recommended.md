@@ -40,10 +40,15 @@ running an expensive calculation,
 or displaying a notification in another isolate
 (similar to a lightweight thread).  
 
-One way to incorporate background processing in your
-mobile app is through the [WorkManager][] plugin. 
-This plugin enables headless execution of Dart code
-in the background. 
+There are a of couple ways to incorporate background processing 
+into your mobile app. One way is through a Dart isolate. 
+With a Dart isolate, you can create a separate thread to 
+run tasks concurrently in the background. 
+
+Another way to incorporate background processing is through the 
+[WorkManager][] plugin. 
+With this plugin, you can enable [persistent][] headless execution of Dart code.
+Your tasks remain scheduled through app restarts and system reboots.
 
 {{site.alert.secondary}}
   **Is there a difference between a package and a plugin?**
@@ -56,11 +61,13 @@ in the background.
   
 Some features of WorkManager include:
 
-* Control over how many times a job should run: once or periodically
-* Ability to apply constraints on jobs like checking for a
-  network connection, only running when the device is charging,
-  or only running when a device is idle (Android only)  
- 
+* Persistent work handling 
+* Flexible scheduling
+* Ability to apply constraints on jobs like checking for a network connection, 
+  only running when the device is charging, or only running when a device is 
+  idle (Android only)  
+
+[persistent]: {{site.android-dev}}/topic/libraries/architecture/workmanager
 [WorkManager]: {{site.pub-pkg}}/workmanager
 
 #### Useful links
@@ -68,8 +75,10 @@ Some features of WorkManager include:
 
 * [Android setup][]
 * [iOS setup][]
+* [Dart concurrency][]
 
 [Android setup]: {{site.github}}/fluttercommunity/flutter_workmanager/blob/main/ANDROID_SETUP.md
+[Dart concurrency]: {{site.dart-site}}/guides/language/concurrency 
 [iOS setup]: {{site.github}}/fluttercommunity/flutter_workmanager/blob/main/IOS_SETUP.md
 [Using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 
