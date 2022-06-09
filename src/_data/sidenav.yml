@@ -175,10 +175,10 @@
               permalink: /development/platform-integration/ios/platform-views
             - title: iOS debugging
               permalink: /development/platform-integration/ios/ios-debugging
-        - title: linux
+        - title: Linux
           permalink: /development/platform-integration/linux
           children:
-            - title: Building linux apps
+            - title: Building Linux apps
               permalink: /development/platform-integration/linux/building
         - title: macOS
           permalink: /development/platform-integration/macos

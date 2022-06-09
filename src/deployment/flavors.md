@@ -5,7 +5,7 @@ description: How to create build flavors specific to different release types or 
 ---
 
 {% comment %}
-Eventually, we should actually include instructions, but by platform and we canthen move the platform-specific instructions to /development/platform-integration/macos or ios or android, etc.
+Eventually, we should actually include instructions, but by platform and we can then move the platform-specific instructions to /development/platform-integration/macos or ios or android, etc.
 {% endcomment %}
 
 Do you need to set up product flavors for different development

@@ -4,14 +4,25 @@ description: How to release a Flutter app to the Microsoft Store.
 short-title: windows
 ---
 
-This guide provides a step-by-step walkthrough of releasing a
-Flutter app to the [Microsoft Store][microsoftstore].
+One convenient approach to distributing Windows apps
+is the [Microsoft Store][microsoftstore].
+This guide provides a step-by-step walkthrough
+of packaging and deploying a Flutter app in this way.
+
+{{site.alert.note}}
+  You are not required to publish Windows apps through the
+  Microsoft Store, particularly if you prefer more control
+  over the distribution experience or don't want to deal
+  with the certification process. The Microsoft documentation
+  includes more information about traditional installation
+  approaches, including [Windows Installer][msidocs].
+{{site.alert.end}}
 
 ## Preliminaries
 
-Before beginning the process of releasing 
-a Flutter Windows desktop app, first confirm
-that it satisfies [Microsoft Store Policies][storepolicies].
+Before beginning the process of releasing
+a Flutter Windows desktop app to the Microsoft Store,
+first confirm that it satisfies [Microsoft Store Policies][storepolicies].
 
 Also, join the
 [Microsoft Partner Network][microsoftpartner].
@@ -41,7 +52,7 @@ The valid formats are **.msix**, **.msixbundle**,
 **.msixupload**, **.appx**, **.appxbundle**,
 **.appxupload**, and **.xap**.
 
-### Manual packaging and deployment
+### Manual packaging and deployment for the Microsoft Store
 
 Check out [MSIX packaging][msix packaging]
 to learn about packaging 
@@ -163,6 +174,7 @@ even if the certification passes.
 [cmyaml]: https://docs.codemagic.io/yaml-publishing/microsoft-store/
 [codemagic]: https://codemagic.io/start/
 [microsoftstore]: https://www.microsoft.com/store/apps/windows
+[msidocs]: https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal
 [microsoftpartner]: https://partner.microsoft.com/
 [msix package]: {{site.pub}}/packages/msix
 [msix packaging]: {{site.url}}/desktop#msix-packaging

@@ -21,7 +21,7 @@ macOS, or Linux platforms, or you can create your own.
 
 [Building Windows apps with Flutter]: {{site.url}}/development/platform-integration/windows/building
 [Building macOS apps with Flutter]: {{site.url}}/development/platform-integration/macos/building
-[Building Linux apps with Flutter]{{site.url}}/development/platform-integration/linux/building
+[Building Linux apps with Flutter]: {{site.url}}/development/platform-integration/linux/building
 
 ## Requirements
 
