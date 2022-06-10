@@ -24,7 +24,7 @@ Before beginning the process of releasing
 a Flutter Windows desktop app to the Microsoft Store,
 first confirm that it satisfies [Microsoft Store Policies][storepolicies].
 
-Also, join the
+Also, you must join the
 [Microsoft Partner Network][microsoftpartner].
 
 ## Set up your application in the Partner Center
