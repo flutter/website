@@ -88,7 +88,7 @@ Firebase and GCP accounts to use credits for
 Firebase services and verify your business
 email during sign up to earn an additional $100
 on top of the normal $300 credit. For the Ads offer,
-[check your region's eligibility][].
+[check your region's eligibility][]).
 
 [Ads]: https://ads.google.com/intl/en_us/home/flutter/#!/
 [check your region's eligibility]: https://www.google.com/intl/en/ads/coupons/terms/flutter/
