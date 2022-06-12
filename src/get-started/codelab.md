@@ -503,8 +503,8 @@ lazily, on demand.
       }
     ```
 
-    Next, you'll add a `ListView` widget to the
-    `_RandomWordsState` class with the `ListView.builder` constructor. 
+ 2. Next, you'll add a `ListView` widget to the
+    `_RandomWordsState` class with the `ListView.builder` constructor.
     This method creates the `ListView` that displays the suggested word pairing.
 
     The `ListView` class provides a builder property, `itemBuilder`,
@@ -517,7 +517,7 @@ lazily, on demand.
     This model allows the suggested list to continue growing
     as the user scrolls.
 
- 2. Return a `ListView` widget from the `build` method
+    Return a `ListView` widget from the `build` method
     of the `_RandomWordsState` class using the `ListView.builder` constructor:
 
     <?code-excerpt "lib/main.dart (itemBuilder)" title replace="/ListTile([\S\s]*?)\);/Text(_suggestions[index].asPascalCase);/g" indent-by="2"?>
