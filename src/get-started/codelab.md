@@ -533,6 +533,7 @@ lazily, on demand.
           }
           return Text(_suggestions[index].asPascalCase);
         },
+      );
     ```
 
     {:.numbered-code-notes}
