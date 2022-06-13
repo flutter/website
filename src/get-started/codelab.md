@@ -102,7 +102,7 @@ and [Write your first Flutter app on the web][codelab-web].
 
 Also, Flutter apps can compile for desktop.
 You should see your operating system listed
-in your IDE under **devices**, 
+in your IDE under **devices**,
 for example: **Windows (desktop)**,
 or at the command line using `flutter devices`.
 For more information on building apps for desktop,
@@ -196,7 +196,7 @@ where the Dart code lives.
   that is standard on mobile and the web.
   Flutter offers a rich set of Material widgets.
   It's a good idea to have a `uses-material-design: true` entry
-  in the `flutter` section of your `pubspec.yaml` file. 
+  in the `flutter` section of your `pubspec.yaml` file.
   This will allow you to use more features of Material,
   such as their set of predefined [Icons][].
 * The app extends `StatelessWidget`, which makes the app itself a
@@ -234,7 +234,7 @@ as well as many other open source packages, on [pub.dev][].
     Downloading english_words 4.0.0...
     Changed 1 dependency!
     ```
- 
+
     The `pubspec.yaml` file manages the assets and dependencies
     for a Flutter app. In `pubspec.yaml`, you will see
     that the `english_words` dependency has been added:
@@ -533,6 +533,7 @@ lazily, on demand.
           }
           return Text(_suggestions[index].asPascalCase);
         },
+      );
     ```
 
     {:.numbered-code-notes}
@@ -550,7 +551,7 @@ lazily, on demand.
         then generate 10 more and add them to the suggestions list.
 
     The `ListView.builder` constructor creates and displays
-    a `Text` widget once per word pairing. 
+    a `Text` widget once per word pairing.
     In the next step, you'll instead return each new pair as a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
@@ -567,7 +568,7 @@ lazily, on demand.
         ),
       );
     ```
-    
+
     A `ListTile` is a fixed height row that contains text
     as well as leading or trailing icons or other widgets.
 
