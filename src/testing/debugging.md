@@ -3,6 +3,8 @@ title: Debugging Flutter apps
 description: How to debug your app using the DevTools suite.
 ---
 
+<?code-excerpt path-base="testing/debugging"?>
+
 There's a wide variety of tools and features to help debug
 Flutter applications. Here are some of the available tools:
 
@@ -229,9 +231,10 @@ appearances be equal (because of Dart's constant deduplication) are not.
 
 For example, this code should print 1:
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (Syntax)"?>
 ```dart
-print(<Widget>{ // this is the syntax for a Set<Widget> literal
+print(<Widget>{
+  // this is the syntax for a Set<Widget> literal
   const SizedBox(),
   const SizedBox(),
 }.length);
@@ -244,11 +247,11 @@ builds, it does print 1. However, in debug builds it prints 2. This is because t
 flutter tool injects the source location of Widget constructors into the code at compile
 time, so the code is effectively:
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (SyntaxExplain)"?>
 ```dart
 print(<Widget>{
-  const SizedBox(location: Location(file: 'foo.dart', line: 12)),
-  const SizedBox(location: Location(file: 'foo.dart', line: 13)),
+  const SizedBox(/* location: Location(file: 'foo.dart', line: 12) */),
+  const SizedBox(/* location: Location(file: 'foo.dart', line: 13) */),
 }.length);
 ```
 

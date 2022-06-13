@@ -3,6 +3,8 @@ title: Debugging Flutter apps programmatically
 description: How to enable various debugging tools from your code and at the command line.
 ---
 
+<?code-excerpt path-base="testing/code_debugging"?>
+
 This doc describes debugging features that you can enable in code.
 For a full list of debugging and profiling tools, see the
 [Debugging][] page.
@@ -21,7 +23,7 @@ Generally, this is done using `print()` statements,
 or by importing `dart:io` and invoking methods on
 `stderr` and `stdout`. For example:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (stderr)"?>
 ```dart
 stderr.writeln('print me');
 ```
@@ -37,7 +39,7 @@ The other option for application logging is to use the
 bit more granularity and information in the logging output.
 Here's an example:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (log)"?>
 ```dart
 import 'dart:developer' as developer;
 
@@ -55,13 +57,13 @@ parameter on the `log()` call, JSON encode the object
 you want to send, and pass the encoded string to the
 error parameter.
 
-<!-- skip -->
+<?code-excerpt "lib/app_data.dart (PassAppData)"?>
 ```dart
 import 'dart:convert';
 import 'dart:developer' as developer;
 
 void main() {
-  var myCustomObject = ...;
+  var myCustomObject = MyCustomObject();
 
   developer.log(
     'log me',
@@ -93,7 +95,7 @@ The `debugger()` statement takes an optional `when`
 argument that you can specify to only break when a
 certain condition is true, as in the following example:
 
-<!-- skip -->
+<?code-excerpt "lib/debugger.dart"?>
 ```dart
 import 'dart:developer';
 
@@ -126,6 +128,7 @@ the middle of running a build phase (in other words, not anywhere inside a
 
 For example, the following application:
 
+<?code-excerpt "lib/dump_app.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -710,13 +713,13 @@ enabled at any time and affects all painting while it is true.
 The easiest way to set it is at the top of your `void main()`
 entry point. See an example in the following code:
 
-<!-- skip -->
+<?code-excerpt "lib/debug_flags.dart (debugPaintSizeEnabled)"?>
 ```dart
 //add import to rendering library
 import 'package:flutter/rendering.dart';
 
 void main() {
-  debugPaintSizeEnabled=true;
+  debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 ```
@@ -842,13 +845,15 @@ similar to what would be done on Android with [systrace][],
 use `dart:developer` [Timeline][] utilities to wrap the
 code you want to measure such as:
 
-<!-- skip -->
+<?code-excerpt "lib/perf_trace.dart"?>
 ```dart
 import 'dart:developer';
 
-Timeline.startSync('interesting function');
-// iWonderHowLongThisTakes();
-Timeline.finishSync();
+void main() {
+  Timeline.startSync('interesting function');
+  // iWonderHowLongThisTakes();
+  Timeline.finishSync();
+}
 ```
 
 Then open your app's Observatory's timeline page, check the 'Dart'
@@ -875,8 +880,10 @@ setting the `showPerformanceOverlay` property to `true` on the
 [`MaterialApp`][], [`CupertinoApp`][], or [`WidgetsApp`][]
 constructor:
 
-<!-- skip -->
+<?code-excerpt "lib/performance_overlay.dart (PerfOverlay)" replace="/showPerformanceOverlay: true,/[[highlight]]$&[[\/highlight]]/g"?>
 {% prettify dart %}
+import 'package:flutter/material.dart';
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
