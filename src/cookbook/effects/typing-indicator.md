@@ -41,12 +41,12 @@ Define a new stateful widget called `TypingIndicator`.
 ```dart
 class TypingIndicator extends StatefulWidget {
   const TypingIndicator({
-    Key? key,
+    super.key,
     this.showIndicator = false,
     this.bubbleColor = const Color(0xFF646b7f),
     this.flashingCircleDarkColor = const Color(0xFF333333),
     this.flashingCircleBrightColor = const Color(0xFFaec1dd),
-  }) : super(key: key);
+  });
 
   final bool showIndicator;
   final Color bubbleColor;
@@ -54,14 +54,14 @@ class TypingIndicator extends StatefulWidget {
   final Color flashingCircleBrightColor;
 
   @override
-  _TypingIndicatorState createState() => _TypingIndicatorState();
+  State<TypingIndicator> createState() => _TypingIndicatorState();
 }
 
 class _TypingIndicatorState extends State<TypingIndicator> {
   @override
   Widget build(BuildContext context) {
     // TODO:
-    return SizedBox();
+    return const SizedBox();
   }
 }
 ```
@@ -346,10 +346,10 @@ class _TypingIndicatorState extends State<TypingIndicator>
 
 class CircleBubble extends StatelessWidget {
   const CircleBubble({
-    Key? key,
+    super.key,
     required this.size,
     required this.bubbleColor,
-  }) : super(key: key);
+  });
 
   final double size;
   final Color bubbleColor;
@@ -369,12 +369,12 @@ class CircleBubble extends StatelessWidget {
 
 class AnimatedBubble extends StatelessWidget {
   const AnimatedBubble({
-    Key? key,
+    super.key,
     required this.animation,
     required this.left,
     required this.bottom,
     required this.bubble,
-  }) : super(key: key);
+  });
 
   final Animation<double> animation;
   final double left;
@@ -403,12 +403,12 @@ class AnimatedBubble extends StatelessWidget {
 
 class StatusBubble extends StatelessWidget {
   const StatusBubble({
-    Key? key,
+    super.key,
     required this.dotIntervals,
     required this.flashingCircleBrightColor,
     required this.flashingCircleDarkColor,
     required this.bubbleColor,
-  }) : super(key: key);
+  });
 
   final List<Interval> dotIntervals;
   final Color flashingCircleDarkColor;
@@ -549,13 +549,13 @@ class _TypingIndicatorState extends State<TypingIndicator>
 
 class StatusBubble extends StatelessWidget {
   const StatusBubble({
-    Key? key,
+    super.key,
     required this.repeatingController,
     required this.dotIntervals,
     required this.flashingCircleBrightColor,
     required this.flashingCircleDarkColor,
     required this.bubbleColor,
-  }) : super(key: key);
+  });
 
   final AnimationController repeatingController;
   final List<Interval> dotIntervals;
@@ -605,13 +605,13 @@ class StatusBubble extends StatelessWidget {
 
 class FlashingCircle extends StatelessWidget {
   const FlashingCircle({
-    Key? key,
+    super.key,
     required this.index,
     required this.repeatingController,
     required this.dotIntervals,
     required this.flashingCircleBrightColor,
     required this.flashingCircleDarkColor,
-  }) : super(key: key);
+  });
 
   final int index;
   final AnimationController repeatingController;
@@ -687,11 +687,11 @@ const _backgroundColor = Color(0xFF333333);
 
 class ExampleIsTyping extends StatefulWidget {
   const ExampleIsTyping({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
-  _ExampleIsTypingState createState() => _ExampleIsTypingState();
+  State<ExampleIsTyping> createState() => _ExampleIsTypingState();
 }
 
 class _ExampleIsTypingState extends State<ExampleIsTyping> {
@@ -747,12 +747,12 @@ class _ExampleIsTypingState extends State<ExampleIsTyping> {
 
 class TypingIndicator extends StatefulWidget {
   const TypingIndicator({
-    Key? key,
+    super.key,
     this.showIndicator = false,
     this.bubbleColor = const Color(0xFF646b7f),
     this.flashingCircleDarkColor = const Color(0xFF333333),
     this.flashingCircleBrightColor = const Color(0xFFaec1dd),
-  }) : super(key: key);
+  });
 
   final bool showIndicator;
   final Color bubbleColor;
@@ -760,7 +760,7 @@ class TypingIndicator extends StatefulWidget {
   final Color flashingCircleBrightColor;
 
   @override
-  _TypingIndicatorState createState() => _TypingIndicatorState();
+  State<TypingIndicator> createState() => _TypingIndicatorState();
 }
 
 class _TypingIndicatorState extends State<TypingIndicator>
@@ -909,10 +909,10 @@ class _TypingIndicatorState extends State<TypingIndicator>
 
 class CircleBubble extends StatelessWidget {
   const CircleBubble({
-    Key? key,
+    super.key,
     required this.size,
     required this.bubbleColor,
-  }) : super(key: key);
+  });
 
   final double size;
   final Color bubbleColor;
@@ -932,12 +932,12 @@ class CircleBubble extends StatelessWidget {
 
 class AnimatedBubble extends StatelessWidget {
   const AnimatedBubble({
-    Key? key,
+    super.key,
     required this.animation,
     required this.left,
     required this.bottom,
     required this.bubble,
-  }) : super(key: key);
+  });
 
   final Animation<double> animation;
   final double left;
@@ -966,13 +966,13 @@ class AnimatedBubble extends StatelessWidget {
 
 class StatusBubble extends StatelessWidget {
   const StatusBubble({
-    Key? key,
+    super.key,
     required this.repeatingController,
     required this.dotIntervals,
     required this.flashingCircleBrightColor,
     required this.flashingCircleDarkColor,
     required this.bubbleColor,
-  }) : super(key: key);
+  });
 
   final AnimationController repeatingController;
   final List<Interval> dotIntervals;
@@ -1022,13 +1022,13 @@ class StatusBubble extends StatelessWidget {
 
 class FlashingCircle extends StatelessWidget {
   const FlashingCircle({
-    Key? key,
+    super.key,
     required this.index,
     required this.repeatingController,
     required this.dotIntervals,
     required this.flashingCircleBrightColor,
     required this.flashingCircleDarkColor,
-  }) : super(key: key);
+  });
 
   final int index;
   final AnimationController repeatingController;
@@ -1065,9 +1065,9 @@ class FlashingCircle extends StatelessWidget {
 
 class FakeMessage extends StatelessWidget {
   const FakeMessage({
-    Key? key,
+    super.key,
     required this.isBig,
-  }) : super(key: key);
+  });
 
   final bool isBig;
 
