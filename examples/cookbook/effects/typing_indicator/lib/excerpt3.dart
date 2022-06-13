@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element, unused_field
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -141,10 +143,10 @@ class _TypingIndicatorState extends State<TypingIndicator>
 
 class CircleBubble extends StatelessWidget {
   const CircleBubble({
-    Key? key,
+    super.key,
     required this.size,
     required this.bubbleColor,
-  }) : super(key: key);
+  });
 
   final double size;
   final Color bubbleColor;
@@ -164,12 +166,12 @@ class CircleBubble extends StatelessWidget {
 
 class AnimatedBubble extends StatelessWidget {
   const AnimatedBubble({
-    Key? key,
+    super.key,
     required this.animation,
     required this.left,
     required this.bottom,
     required this.bubble,
-  }) : super(key: key);
+  });
 
   final Animation<double> animation;
   final double left;
@@ -198,12 +200,12 @@ class AnimatedBubble extends StatelessWidget {
 
 class StatusBubble extends StatelessWidget {
   const StatusBubble({
-    Key? key,
+    super.key,
     required this.dotIntervals,
     required this.flashingCircleBrightColor,
     required this.flashingCircleDarkColor,
     required this.bubbleColor,
-  }) : super(key: key);
+  });
 
   final List<Interval> dotIntervals;
   final Color flashingCircleDarkColor;

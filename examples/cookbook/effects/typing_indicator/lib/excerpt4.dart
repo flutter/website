@@ -1,9 +1,11 @@
+// ignore_for_file: unused_element
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import './excerpt1.dart';
+import './excerpt3.dart';
 
 // #docregion AnimationController
 class _TypingIndicatorState extends State<TypingIndicator>
@@ -110,13 +112,13 @@ class _TypingIndicatorState extends State<TypingIndicator>
 
 class StatusBubble extends StatelessWidget {
   const StatusBubble({
-    Key? key,
+    super.key,
     required this.repeatingController,
     required this.dotIntervals,
     required this.flashingCircleBrightColor,
     required this.flashingCircleDarkColor,
     required this.bubbleColor,
-  }) : super(key: key);
+  });
 
   final AnimationController repeatingController;
   final List<Interval> dotIntervals;
@@ -166,13 +168,13 @@ class StatusBubble extends StatelessWidget {
 
 class FlashingCircle extends StatelessWidget {
   const FlashingCircle({
-    Key? key,
+    super.key,
     required this.index,
     required this.repeatingController,
     required this.dotIntervals,
     required this.flashingCircleBrightColor,
     required this.flashingCircleDarkColor,
-  }) : super(key: key);
+  });
 
   final int index;
   final AnimationController repeatingController;

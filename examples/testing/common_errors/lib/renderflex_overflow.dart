@@ -34,7 +34,6 @@ class SolutionWidget extends StatelessWidget {
   const SolutionWidget({Key? key}) : super(key: key);
 
   @override
-  // #docregion Build
   Widget build(BuildContext context) {
     return Container(
       // #docregion Fix
@@ -51,5 +50,4 @@ class SolutionWidget extends StatelessWidget {
       // #enddocregion Fix
     );
   }
-  // #enddocregion Build
 }

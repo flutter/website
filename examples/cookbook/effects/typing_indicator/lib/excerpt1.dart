@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 // #docregion TypingIndicator
 class TypingIndicator extends StatefulWidget {
   const TypingIndicator({
-    Key? key,
+    super.key,
     this.showIndicator = false,
     this.bubbleColor = const Color(0xFF646b7f),
     this.flashingCircleDarkColor = const Color(0xFF333333),
     this.flashingCircleBrightColor = const Color(0xFFaec1dd),
-  }) : super(key: key);
+  });
 
   final bool showIndicator;
   final Color bubbleColor;
@@ -17,14 +17,14 @@ class TypingIndicator extends StatefulWidget {
   final Color flashingCircleBrightColor;
 
   @override
-  _TypingIndicatorState createState() => _TypingIndicatorState();
+  State<TypingIndicator> createState() => _TypingIndicatorState();
 }
 
 class _TypingIndicatorState extends State<TypingIndicator> {
   @override
   Widget build(BuildContext context) {
     // TODO:
-    return SizedBox();
+    return const SizedBox();
   }
 }
 // #enddocregion TypingIndicator

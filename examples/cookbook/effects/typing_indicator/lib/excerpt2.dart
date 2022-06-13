@@ -1,7 +1,11 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import './excerpt1.dart';
+
+
 
 // #docregion TypingIndicatorState
 class _TypingIndicatorState extends State<TypingIndicator>
