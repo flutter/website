@@ -3,13 +3,8 @@ title: iOS debugging
 description: iOS-specific debugging techniques for Flutter apps
 ---
 
-{{site.alert.note}}
-  To ensure correct font rendering,
-  you should build your production apps with
-  Flutter 1.22 or later.
-{{site.alert.end}}
-
-Due to security around [local network permissions][],
+Due to security around
+[local network permissions in iOS 14 or later][],
 you must accept a permission dialog box to enable
 Flutter debugging functionalities such as hot-reload
 and DevTools.
@@ -21,4 +16,5 @@ appear in release builds. You can also allow this
 permission by enabling
 **Settings > Privacy > Local Network > Your App**.
 
-[local network permissions]: {{site.apple-dev}}/news/?id=0oi77447
+[local network permissions in iOS 14 or later]: {{site.apple-dev}}/news/?id=0oi77447
+
