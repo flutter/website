@@ -22,7 +22,7 @@ check out the following workshop:
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/Z6KZ3cTGBWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-{% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
+{% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/main' -%}
 
 <img src="/assets/images/docs/get-started/startup-namer-part-1.gif" alt="The app that you'll be building" class='site-image-right'>
 
@@ -503,8 +503,8 @@ lazily, on demand.
       }
     ```
 
-    Next, you'll add a `ListView` widget to the
-    `_RandomWordsState` class with the `ListView.builder` constructor. 
+ 2. Next, you'll add a `ListView` widget to the
+    `_RandomWordsState` class with the `ListView.builder` constructor.
     This method creates the `ListView` that displays the suggested word pairing.
 
     The `ListView` class provides a builder property, `itemBuilder`,
@@ -517,7 +517,7 @@ lazily, on demand.
     This model allows the suggested list to continue growing
     as the user scrolls.
 
- 2. Return a `ListView` widget from the `build` method
+    Return a `ListView` widget from the `build` method
     of the `_RandomWordsState` class using the `ListView.builder` constructor:
 
     <?code-excerpt "lib/main.dart (itemBuilder)" title replace="/ListTile([\S\s]*?)\);/Text(_suggestions[index].asPascalCase);/g" indent-by="2"?>
