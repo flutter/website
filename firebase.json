@@ -353,6 +353,7 @@
       { "source": "/go/text-editing-actions", "destination": "https://docs.google.com/document/d/1QaVIr1bbOWJGNyyNsB75sXgTDRMuxP268sLGTBNDut0/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-editing-deltas", "destination": "https://docs.google.com/document/d/1PXNd_LwJudiUTnCM2AXRxbd98_p4BlFf6qFhEhv3wvs/edit?usp=sharing", "type": 301 },
       { "source": "/go/text-editing-model", "destination": "https://docs.google.com/document/d/1lkpg4dfVZif9NJ_dDQ01QkwQC3OqzhUFahhjgv_rcbM/edit#", "type": 301 },
+      { "source": "/go/text-editing-magnifying-glass", "destination": "https://docs.google.com/document/d/1RWq0Kd_xsHR8j7IXtgc25feV3RV8Hzq2KSQEVaDDXUs/edit?resourcekey=0-qLXzpPdvKRwQM8nlCijclQ", "type": 301 },
       { "source": "/go/text-field-characters", "destination": "https://docs.google.com/document/d/1OOFW0PEZf0orBl445YXJ3nfjyKOqZdmeQ6KU3glUh7s/edit", "type": 301 },
       { "source": "/go/text-selection-menu-appearance", "destination": "https://docs.google.com/document/d/1Or32nViSjym0Sk29HccxEzcEITj2oWdielOaeR5cmiY/edit", "type": 301 },
       { "source": "/go/text-selection-menu-customization", "destination": "https://docs.google.com/document/d/1hyay1TyUZB7DXzWw45-ruGMZM1yCMWEnC3DzOJYemuc/edit", "type": 301 },
