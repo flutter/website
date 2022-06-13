@@ -9,7 +9,7 @@ class FadeInDemo extends StatefulWidget {
   const FadeInDemo({Key? key}) : super(key: key);
 
   @override
-  _FadeInDemoState createState() => _FadeInDemoState();
+  State<FadeInDemo> createState() => _FadeInDemoState();
 }
 
 class _FadeInDemoState extends State<FadeInDemo> {
