@@ -12,8 +12,7 @@ import 'package:http/src/response.dart' as _i2;
 import 'package:http/src/streamed_response.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
-// ignore_for_file: comment_references
-// ignore_for_file: unnecessary_parenthesis
+// ignore_for_file: comment_references, unnecessary_parenthesis, subtype_of_disallowed_type
 
 class _FakeResponse extends _i1.Fake implements _i2.Response {}
 

@@ -3,6 +3,8 @@ title: Obfuscating Dart code
 description: How to remove function and class names from your Dart binary.
 ---
 
+<?code-excerpt path-base="deployment/obfuscate"?>
+
 [Code obfuscation][] is the process of modifying an
 app's binary to make it harder for humans to understand.
 Obfuscation hides function and class names in your
@@ -97,9 +99,9 @@ eventually be an obfuscated binary.
   For example, the following call to `expect()` will not
   work in an obfuscated binary:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Expect)"?>
 ```dart
-expect(foo.runtimeType.toString(), equals('Foo'))
+expect(foo.runtimeType.toString(), equals('Foo'));
 ```
 
 
