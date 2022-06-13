@@ -229,7 +229,7 @@ Some DartPad example code remains in this repo:
 This code must be manually compiled, 
 which also regenerates the associated JavaScript file in `src/assets/js`:
 ```bash
-$ cd `src/_packages/dartpad_picker
+$ cd src/_packages/dartpad_picker
 $ ./compile.sh
 ```
 
