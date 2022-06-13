@@ -96,8 +96,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -119,7 +119,7 @@ Future<void> main() async {
   
   runApp(MyApp());
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final columns = controller.widgetList(find.byType(Column));
 
@@ -238,8 +238,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -259,7 +259,7 @@ Future<void> main() async {
 
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -380,8 +380,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -400,7 +400,7 @@ Future<void> main() async {
   });
 
   await completer.future;
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -554,8 +554,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -575,7 +575,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -715,8 +715,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -736,7 +736,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -873,8 +873,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -894,7 +894,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1031,8 +1031,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1052,7 +1052,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1163,8 +1163,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1184,7 +1184,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1272,7 +1272,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         BlueBox(),
-        SizedBox(width: 50),
+        const SizedBox(width: 50),
         BlueBox(),
         BlueBox(),
       ],
@@ -1304,8 +1304,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1325,7 +1325,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1440,7 +1440,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         BlueBox(),
-        Spacer(flex: 1),
+        const Spacer(flex: 1),
         BlueBox(),
         BlueBox(),
       ],
@@ -1472,8 +1472,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1493,7 +1493,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1579,7 +1579,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       textBaseline: TextBaseline.alphabetic,
-      children: [
+      children: const [
         Text(
           'Hey!',
           style: TextStyle(
@@ -1619,8 +1619,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1640,7 +1640,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1718,7 +1718,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       textBaseline: TextBaseline.alphabetic,
-      children: [
+      children: const [
         Icon(
           Icons.widgets,
           size: 50,
@@ -1744,8 +1744,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1765,7 +1765,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1861,8 +1861,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1882,7 +1882,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -2054,7 +2054,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
@@ -2247,7 +2247,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
@@ -2503,7 +2503,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
@@ -2682,7 +2682,7 @@ class MyWidget extends StatelessWidget {
         Row(
           children: [
             const Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.account_circle, size: 50),
             ),
             Column(
@@ -2814,7 +2814,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
@@ -3155,7 +3155,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
