@@ -41,7 +41,7 @@ or displaying a notification in another isolate
 (similar to a lightweight thread).  
 
 There are a of couple ways to incorporate background processing 
-into your mobile app. One way is through a Dart isolate. 
+into your mobile app. One way is through a [Dart isolate][]. 
 With a Dart isolate, you can create a separate thread to 
 run tasks concurrently in the background. 
 
@@ -67,6 +67,7 @@ Some features of WorkManager include:
   only running when the device is charging, or only running when a device is 
   idle (Android only)  
 
+[Dart isolate]: {{site.dart-site}}/guides/language/concurrency
 [persistent]: {{site.android-dev}}/topic/libraries/architecture/workmanager
 [WorkManager]: {{site.pub-pkg}}/workmanager
 
