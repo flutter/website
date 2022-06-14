@@ -66,8 +66,8 @@ Register your app on App Store Connect:
 1. In the General Information section, select the Bundle ID
    you registered in the preceding step.
 
-For a detailed overview,
-see [Add an app to your account][appstoreconnect_guide_register].
+For a detailed overview, see
+[Add an app to your account][appstoreconnect_guide_register].
 
 ## Review Xcode project settings
 
