@@ -26,7 +26,8 @@ Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-While you can do a lot on the web, Flutter’s web support is most valuable in the
+While you can do a lot on the web,
+Flutter’s web support is most valuable in the
 following scenarios:
 
 **A [Progressive Web Application][] built with Flutter**

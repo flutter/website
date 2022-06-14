@@ -150,16 +150,46 @@
       children:
         - title: Supported platforms
           permalink: /development/tools/sdk/release-notes/supported-platforms
-        - title: Adding iOS App Clip support
-          permalink: /development/platform-integration/ios-app-clip
-        - title: Apple Watch support
-          permalink: /development/platform-integration/apple-watch
-        - title: C interop
-          permalink: /development/platform-integration/c-interop
-        - title: Hosting native Android and iOS views
-          permalink: /development/platform-integration/platform-views
+        - title: Building desktop apps with Flutter
+          permalink: /development/platform-integration/desktop
         - title: Writing platform-specific code
           permalink: /development/platform-integration/platform-channels
+        - title: Android
+          permalink: /development/platform-integration/android
+          children:
+            - title: C interop
+              permalink: /development/platform-integration/android/c-interop
+            - title: Hosting native Android views
+              permalink: /development/platform-integration/android/platform-views
+            - title: Android plugin upgrade
+              permalink: /development/platform-integration/android/plugin-api-migration
+            - title: AndroidX migration
+              permalink: /development/platform-integration/android/androidx-migration
+        - title: iOS
+          permalink: /development/platform-integration/ios
+          children:
+            - title: Adding iOS App Clip support
+              permalink: /development/platform-integration/ios/ios-app-clip
+            - title: Apple Watch support
+              permalink: /development/platform-integration/ios/apple-watch
+            - title: C interop
+              permalink: /development/platform-integration/ios/c-interop
+            - title: Hosting native iOS views
+              permalink: /development/platform-integration/ios/platform-views
+            - title: iOS debugging
+              permalink: /development/platform-integration/ios/ios-debugging
+        - title: Linux
+          permalink: /development/platform-integration/linux
+          children:
+            - title: Building Linux apps
+              permalink: /development/platform-integration/linux/building
+        - title: macOS
+          permalink: /development/platform-integration/macos
+          children:
+            - title: Building macOS apps
+              permalink: /development/platform-integration/macos/building
+            - title: C interop
+              permalink: /development/platform-integration/macos/c-interop
         - title: Web
           permalink: /development/platform-integration/web
           children:
@@ -167,29 +197,22 @@
               permalink: /development/platform-integration/web/faq
             - title: Web renderers
               permalink: /development/platform-integration/web/renderers
-            - title: Custom app initialization NEW
+            - title: Custom app initialization
               permalink: /development/platform-integration/web/initialization
-        - title: Desktop
-          permalink: /desktop
+        - title: Windows
+          permalink: /development/platform-integration/windows
           children:
-            - title: Overview
-              permalink: /desktop
-              match-page-url-exactly: true
-            - title: Windows development
-              permalink: /desktop/windows
-            - title: macOS development
-              permalink: /desktop/macos
-            - title: Linux development
-              permalink: /desktop/linux
+            - title: Building Windows apps
+              permalink: /development/platform-integration/windows/building
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:
         - title: Using packages
           permalink: /development/packages-and-plugins/using-packages
-        - title: Happy paths project NEW
+        - title: Happy paths project
           permalink: /development/packages-and-plugins/happy-paths
           match-page-url-exactly: true
-        - title: Happy paths recommendations NEW
+        - title: Happy paths recommendations
           permalink: /development/packages-and-plugins/happy-paths/recommended
         - title: Developing packages & plugins
           permalink: /development/packages-and-plugins/developing-packages
@@ -197,11 +220,9 @@
           permalink: /development/packages-and-plugins/favorites
         - title: Background processes
           permalink: /development/packages-and-plugins/background-processes
-        - title: Android plugin upgrade
-          permalink: /development/packages-and-plugins/plugin-api-migration
         - title: Package site
           permalink: https://pub.dev/flutter
-    - title: Add Flutter to existing app
+    - title: Add Flutter to an existing app
       permalink: /development/add-to-app
       children:
       - title: Introduction
@@ -299,17 +320,6 @@
           permalink: /development/tools/flutter-fix
         - title: Code formatting
           permalink: /development/tools/formatting
-    - title: Migration notes
-      permalink: /development/androidx-migration
-      children:
-        - title: AndroidX migration
-          permalink: /development/androidx-migration
-        - title: Android plugin upgrade
-          permalink: /development/packages-and-plugins/plugin-api-migration
-        - title: Developing for iOS 14
-          permalink: /development/ios-14
-        - title: Xcode migration
-          permalink: /development/ios-project-migration
 
 - title: Testing & debugging
   permalink: /testing
@@ -403,7 +413,7 @@
       permalink: /resources/design-docs
     - title: FAQ
       permalink: /resources/faq
-    - title: Casual Games Toolkit NEW
+    - title: Casual Games Toolkit
       permalink: /resources/games-toolkit
     - title: Google Fonts package
       permalink: https://pub.dev/packages/google_fonts

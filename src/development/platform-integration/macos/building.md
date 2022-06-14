@@ -5,21 +5,28 @@ toc: true
 short-title: macOS development
 ---
 
-This page discusses considerations unique to building macOS apps with Flutter,
-including shell integration and distribution of macOS apps through the
-Apple Store.
+This page discusses considerations unique to building
+macOS apps with Flutter, including shell integration
+and distribution of macOS apps through the Apple Store.
 
 ## Integrating with macOS look and feel
 
-While you can use any visual style or theme you choose to build a macOS app, you
-may want to adapt your app to more fully align with the macOS look and feel.
-Flutter includes the [Cupertino] widget set, which provides a set of widgets for
-the current iOS design language. Many of these widgets, including sliders,
-switches and segmented controls, are also appropriate for use on macOS.
+While you can use any visual style or theme you choose
+to build a macOS app, you might want to adapt your app
+to more fully align with the macOS look and feel.
+Flutter includes the [Cupertino] widget set,
+which provides a set of widgets for
+the current iOS design language.
+Many of these widgets, including sliders,
+switches and segmented controls,
+are also appropriate for use on macOS.
 
-Alternatively, you may find the [macos_ui] package a good fit for your needs.
-This package provides widgets and themes that implement the macOS design
-language, including a `MacosWindow` frame and scaffold, toolbars, pulldown and
+Alternatively, you might find the [macos_ui][]
+package a good fit for your needs.
+This package provides widgets and themes that
+implement the macOS design language,
+including a `MacosWindow` frame and scaffold,
+toolbars, pulldown and
 pop-up buttons, and modal dialogs.
 
 [Cupertino]: {{site.url}}/development/ui/widgets/cupertino
@@ -48,8 +55,8 @@ open macos/Runner.xcworkspace
 ```
 
 Once inside of Xcode, follow either Apple's
-[documentation on notarizing macOS Applications][],
-or [on distributing an application through the App Store][].
+[documentation on notarizing macOS Applications][], or
+[on distributing an application through the App Store][].
 You should also read through the
 [macOS-specific support](#macos-specific-support)
 section below to understand how entitlements,
