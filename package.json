@@ -13,6 +13,6 @@
     "diff2html-cli": "^5.2.4",
     "font-awesome": "^4.7.0",
     "superstatic": "^8.0.0",
-    "firebase-tools": "^v11.0.1"
+    "firebase-tools": "^v11.1.0"
   }
 }
