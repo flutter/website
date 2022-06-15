@@ -333,7 +333,7 @@ This can be achieved by using the following Files and Folders conditions:
 
 Xcode Cloud defaults the build number for new workflows to `1` and increments
 it per successful build. If you're using an existing app with a higher build
-number, You'll need to configure Xcode Cloud to use the correct build number
+number, you'll need to configure Xcode Cloud to use the correct build number
 for it's builds by simply specifying the `Next Build Number` in your iteration.
 
 Check out [Setting the next build number for Xcode Cloud builds][] for more
