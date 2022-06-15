@@ -203,7 +203,7 @@ testing and distributing apps and frameworks for Apple platforms.
 * Xcode Version 13.4.1 or higher.
 * Be enrolled in the [Apple Developer Program][].
 
-### Custom Build Script
+### Custom build script
 
 Xcode Cloud recognizes three different [custom build scripts][] that can be
 used to perform additional tasks at a designated time.
