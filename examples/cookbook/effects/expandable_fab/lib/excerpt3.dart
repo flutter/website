@@ -264,7 +264,7 @@ class ActionButton extends StatelessWidget {
       color: theme.colorScheme.secondary,
       elevation: 4.0,
       child: IconTheme.merge(
-        data: IconThemeData(color: theme.colorScheme.secondary),
+        data: IconThemeData(color: theme.colorScheme.onSecondary),
         child: IconButton(
           onPressed: onPressed,
           icon: icon,
