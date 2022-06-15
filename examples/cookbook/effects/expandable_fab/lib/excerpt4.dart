@@ -73,11 +73,11 @@ class ExpandableFab extends StatefulWidget {
   final List<Widget> children;
 
   @override
-  _ExpandableFabState createState() => _ExpandableFabState();
+  ExpandableFabState createState() => ExpandableFabState();
 }
 
 // #docregion ExpandableFabState4
-class _ExpandableFabState extends State<ExpandableFab>
+class ExpandableFabState extends State<ExpandableFab>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
