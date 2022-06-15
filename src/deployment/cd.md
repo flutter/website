@@ -193,6 +193,148 @@ secrets in pull requests that you accept and merge.
          * `cd android` or `cd ios`
          * `bundle exec fastlane [name of the lane]`
 
+## Xcode Cloud
+
+[Xcode Cloud][] is a continuous integration and delivery service for building, testing 
+and distributing apps and frameworks for Apple platforms.
+
+### Requirements
+
+* Xcode Version 13.4.1 or higher.
+* Be enrolled in the [Apple Developer Program][].
+
+### Custom Build Script
+
+Xcode Cloud recognizes three different [custom build scripts][] that can be used to perform
+additional tasks at a designated time.
+
+{{site.alert.note}}
+The temporary build environment that Xcode Cloud uses includes tools that are part of macOS
+and Xcode — for example, Python — and additionally Homebrew to support installing third-party
+dependencies and tools.
+{{site.alert.end}}
+
+#### Post-clone script
+
+We'll leverage the `post-clone` script that runs after Xcode Cloud clones your Git repository.
+
+1. Navigate to the `ios` folder in your project root.
+
+2. Create a new folder named `ci_scripts`. 
+
+3. Create a file named `ci_post_clone.sh` in the `ci_scripts` folder.
+    * Add a shebang line at the top of the script.
+      ```sh
+      #!/bin/sh
+      ```
+
+4. This file should be added to your git repository and marked as executable.
+    ```terminal
+    $ git add --chmod=+x ios/ci_scripts/ci_post_clone.sh
+    ```
+
+#### Working Directory
+
+Xcode Cloud includes a set of [predefined environment variables][], such as `$CI_WORKSPACE`
+which is the locaiton of your cloned repository.
+
+The working directory for Xcode Cloud's custom build scripts is the `ci_scripts/` folder,
+hence we need to navigate to the root of your cloned project by adding the following command
+to your `ci_post_clone` script below the shebang line.
+
+```sh
+cd $CI_WORKSPACE
+```
+
+#### Install Flutter
+
+The Flutter SDK must be installed manually, we'll [Download Flutter via Git][] by adding
+the commands below to your `ci_post_clone` script:
+
+```sh
+git clone https://github.com/flutter/flutter.git -b stable $HOME/flutter
+export PATH="$PATH:$HOME/flutter/bin"
+```
+
+#### Install CocoaPods
+
+CocoaPods can be installed by adding the following to your `ci_post_clone` script:
+
+```sh
+HOMEBREW_NO_AUTO_UPDATE=1 # disable homebrew's automatic updates
+brew install cocoapods
+```
+
+#### Complete Script
+
+```sh
+#!/bin/sh
+
+# by default, the execution directory of this script is the ci_scripts directory.
+# CI_WORKSPACE is the directory of your cloned repo.
+cd $CI_WORKSPACE # change working directory to the root of your cloned repo.
+
+# Install Flutter using git.
+git clone https://github.com/flutter/flutter.git -b stable $HOME/flutter
+export PATH="$PATH:$HOME/flutter/bin"
+
+# Install Flutter artifacts for iOS (--ios), or macOS (--macos) platforms.
+flutter precache --ios
+
+# Install Flutter dependencies.
+flutter pub get
+
+# Install CocoaPods using Homebrew.
+HOMEBREW_NO_AUTO_UPDATE=1 # disable homebrew's automatic updates.
+brew install cocoapods
+
+# Install CocoaPods dependencies".
+cd ios && pod install # run `pod install` in the `ios` directory.
+
+exit 0
+```
+
+### Workflow Configuration
+
+A [Xcode Cloud workflow][] defines the steps performed in the CI/CD process when
+your workflow is triggered.
+
+{{site.alert.note}}
+This requires that your project is already initialized with Git and linked to a
+remote repository.
+{{site.alert.end}}
+
+To create a new workflow in Xcode:
+
+1. Choose Product > Xcode Cloud > Create Workflow to open the Create Workflow sheet.
+
+2. Select the product (app) that the workflow should be attached to, then click
+   the Next button.
+
+3. The next sheet displays an overview of the default workflow provided by Xcode, and can
+    be customized by clicking the Edit Workflow button.
+
+#### Branch Changes
+
+By default Xcode suggests the Branch Changes condition that starts a new build for
+every change to your Git repository’s default branch.
+
+For your app's iOS variant, it's reasonable that you would want Xcode Cloud to
+trigger your workflow after you've made changes to your flutter packages, or modified
+either the Dart or iOS source files within the `lib\` and `ios\` directories.
+
+We recommended that you use the following Files and Folders conditions:
+
+![Xcode Workflow Branch Changes]({{site.url}}/assets/images/docs/releaseguide/xcode_workflow_branch_changes.png){:width="100%"}
+
+### Next Build Number
+
+Xcode Cloud defaults the build number for new workflows to `1` and increments it per successful
+build. If you're using an existing app with a higher build number, You'll need to configure
+Xcode Cloud to use the correct build number for it's builds by simply specifying the `Next
+Build Number` in your iteration.
+
+Check out [Setting the next build number for Xcode Cloud builds][] for more information.
 
 [Android app signing steps]: {{site.url}}/deployment/android#signing-the-app
 [Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
@@ -216,3 +358,10 @@ secrets in pull requests that you accept and merge.
 [Match]: https://docs.fastlane.tools/actions/match/
 [Supply setup steps]: https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply
 [Travis]: https://travis-ci.org/
+[Apple Developer Program]: https://developer.apple.com/programs
+[Xcode Cloud]: https://developer.apple.com/xcode-cloud
+[Xcode Cloud workflow]: https://developer.apple.com/documentation/xcode/xcode-cloud-workflow-reference
+[Download Flutter via Git]: {{site.url}}/get-started/install/macos#downloading-straight-from-github-instead-of-using-an-archive
+[custom build scripts]: https://developer.apple.com/documentation/xcode/writing-custom-build-scripts
+[predefined environment variables]: https://developer.apple.com/documentation/xcode/environment-variable-reference
+[Setting the next build number for Xcode Cloud builds]: https://developer.apple.com/documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds#Set-the-next-build-number-to-a-custom-value
