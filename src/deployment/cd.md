@@ -237,7 +237,7 @@ clones your Git repository using the following instructions:
 #### Working Directory
 
 Xcode Cloud includes a set of [predefined environment variables][], such as
-`$CI_WORKSPACE` which is the locaiton of your cloned repository.
+`$CI_WORKSPACE`, which is the location of your cloned repository.
 
 The working directory for Xcode Cloud's custom build scripts is the `ci_scripts/`
 folder, hence you need to navigate to the root of your cloned project by adding
