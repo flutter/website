@@ -196,7 +196,7 @@ secrets in pull requests that you accept and merge.
 ## Xcode Cloud
 
 [Xcode Cloud][] is a continuous integration and delivery service for building,
-testing and distributing apps and frameworks for Apple platforms.
+testing, and distributing apps and frameworks for Apple platforms.
 
 ### Requirements
 
