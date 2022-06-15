@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class BouncingBallDemo extends StatefulWidget {
   @override
-  _BouncingBallDemoState createState() => _BouncingBallDemoState();
+  State<BouncingBallDemo> createState() => _BouncingBallDemoState();
 }
 
 class _BouncingBallDemoState extends State<BouncingBallDemo>
