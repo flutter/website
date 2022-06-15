@@ -54,10 +54,10 @@ class ExpandableFab extends StatefulWidget {
   final List<Widget> children;
 
   @override
-  _ExpandableFabState createState() => _ExpandableFabState();
+  ExpandableFabState createState() => ExpandableFabState();
 }
 
-class _ExpandableFabState extends State<ExpandableFab> {
+class ExpandableFabState extends State<ExpandableFab> {
   @override
   Widget build(BuildContext context) {
     return const SizedBox();
@@ -75,7 +75,7 @@ Implement the expand and collapse cross-fade between the two different FABs.
 
 <?code-excerpt "lib/excerpt2.dart (ExpandableFabState)"?>
 ```dart
-class _ExpandableFabState extends State<ExpandableFab> {
+class ExpandableFabState extends State<ExpandableFab> {
   bool _open = false;
 
   @override
@@ -250,7 +250,7 @@ control the rate at which the various `ActionButton`s expand and collapse.
 
 <?code-excerpt "lib/excerpt3.dart (ExpandableFabState3)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
 ```dart
-class _ExpandableFabState extends State<ExpandableFab>
+class ExpandableFabState extends State<ExpandableFab>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _expandAnimation;
@@ -357,7 +357,7 @@ within the `ExpandableFab` to complete the exercise.
 
 <?code-excerpt "lib/excerpt4.dart (ExpandableFabState4)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
 ```dart
-class _ExpandableFabState extends State<ExpandableFab>
+class ExpandableFabState extends State<ExpandableFab>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
@@ -501,10 +501,10 @@ class ExpandableFab extends StatefulWidget {
   final List<Widget> children;
 
   @override
-  _ExpandableFabState createState() => _ExpandableFabState();
+  ExpandableFabState createState() => ExpandableFabState();
 }
 
-class _ExpandableFabState extends State<ExpandableFab>
+class ExpandableFabState extends State<ExpandableFab>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _expandAnimation;
