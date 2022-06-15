@@ -209,9 +209,9 @@ Xcode Cloud recognizes three different [custom build scripts][] that can be
 used to perform additional tasks at a designated time.
 
 {{site.alert.note}}
-The temporary build environment that Xcode Cloud uses includes tools that are
-part of macOS and Xcode — for example, Python — and additionally Homebrew to
-support installing third-party dependencies and tools.
+  The temporary build environment that Xcode Cloud uses includes tools that are
+  part of macOS and Xcode&mdash;for example, Python&mdash;and additionally Homebrew to
+  support installing third-party dependencies and tools.
 {{site.alert.end}}
 
 #### Post-clone script
@@ -297,7 +297,7 @@ exit 0
 
 ### Workflow configuration
 
-A [Xcode Cloud workflow][] defines the steps performed in the CI/CD process
+An [Xcode Cloud workflow][] defines the steps performed in the CI/CD process
 when your workflow is triggered.
 
 {{site.alert.note}}
@@ -305,10 +305,10 @@ when your workflow is triggered.
   and linked to a remote repository.
 {{site.alert.end}}
 
-To create a new workflow in Xcode:
+To create a new workflow in Xcode, use the following instructions:
 
-1. Choose Product > Xcode Cloud > Create Workflow to open the Create Workflow
-    sheet.
+1. Choose **Product > Xcode Cloud > Create Workflow** to open the
+   **Create Workflow** sheet.
 
 2. Select the product (app) that the workflow should be attached to, then click
    the **Next** button.
