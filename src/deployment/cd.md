@@ -301,8 +301,8 @@ A [Xcode Cloud workflow][] defines the steps performed in the CI/CD process
 when your workflow is triggered.
 
 {{site.alert.note}}
-This requires that your project is already initialized with Git and linked to a
-remote repository.
+  This requires that your project is already initialized with Git
+  and linked to a remote repository.
 {{site.alert.end}}
 
 To create a new workflow in Xcode:
