@@ -14,11 +14,11 @@ class ExpandableFab extends StatefulWidget {
   final List<Widget> children;
 
   @override
-  _ExpandableFabState createState() => _ExpandableFabState();
+  ExpandableFabState createState() => ExpandableFabState();
 }
 
 // #docregion ExpandableFabState
-class _ExpandableFabState extends State<ExpandableFab> {
+class ExpandableFabState extends State<ExpandableFab> {
   bool _open = false;
 
   @override
