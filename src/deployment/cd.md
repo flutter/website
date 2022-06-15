@@ -216,7 +216,8 @@ support installing third-party dependencies and tools.
 
 #### Post-clone script
 
-Leverage the `post-clone` script that runs after Xcode Cloud clones your Git repository.
+Leverage the `post-clone` script that runs after Xcode Cloud
+clones your Git repository using the following instructions:
 
 1. Navigate to the `ios` folder in your project root.
 
