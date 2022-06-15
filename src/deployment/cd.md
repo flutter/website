@@ -325,7 +325,7 @@ trigger your workflow after you've made changes to your flutter packages, or
 modified either the Dart or iOS source files within the `lib\` and `ios\`
 directories.
 
-You can use the following Files and Folders conditions:
+This can be achieved by using the following Files and Folders conditions:
 
 ![Xcode Workflow Branch Changes]({{site.url}}/assets/images/docs/releaseguide/xcode_workflow_branch_changes.png){:width="100%"}
 
