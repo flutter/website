@@ -314,7 +314,7 @@ To create a new workflow in Xcode:
    the Next button.
 
 3. The next sheet displays an overview of the default workflow provided by Xcode,
-    and can be customized by clicking the Edit Workflow button.
+    and can be customized by clicking the **Edit Workflow** button.
 
 #### Branch Changes
 
