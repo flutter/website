@@ -234,7 +234,7 @@ clones your Git repository using the following instructions:
     $ git add --chmod=+x ios/ci_scripts/ci_post_clone.sh
     ```
 
-#### Working Directory
+#### Working directory
 
 Xcode Cloud includes a set of [predefined environment variables][], such as
 `$CI_WORKSPACE`, which is the location of your cloned repository.
