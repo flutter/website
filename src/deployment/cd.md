@@ -266,7 +266,7 @@ HOMEBREW_NO_AUTO_UPDATE=1 # disable homebrew's automatic updates
 brew install cocoapods
 ```
 
-#### Complete Script
+#### Complete script
 
 ```sh
 #!/bin/sh
