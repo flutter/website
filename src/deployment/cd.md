@@ -295,7 +295,7 @@ cd ios && pod install # run `pod install` in the `ios` directory.
 exit 0
 ```
 
-### Workflow Configuration
+### Workflow configuration
 
 A [Xcode Cloud workflow][] defines the steps performed in the CI/CD process
 when your workflow is triggered.
