@@ -311,7 +311,7 @@ To create a new workflow in Xcode:
     sheet.
 
 2. Select the product (app) that the workflow should be attached to, then click
-   the Next button.
+   the **Next** button.
 
 3. The next sheet displays an overview of the default workflow provided by Xcode,
     and can be customized by clicking the **Edit Workflow** button.
