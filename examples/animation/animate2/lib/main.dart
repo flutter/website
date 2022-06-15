@@ -4,8 +4,8 @@ void main() => runApp(const LogoApp());
 
 // #docregion AnimatedLogo
 class AnimatedLogo extends AnimatedWidget {
-  const AnimatedLogo({Key? key, required Animation<double> animation})
-      : super(key: key, listenable: animation);
+  const AnimatedLogo({super.key, required Animation<double> animation})
+      : super(listenable: animation);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class AnimatedLogo extends AnimatedWidget {
 // #enddocregion AnimatedLogo
 
 class LogoApp extends StatefulWidget {
-  const LogoApp({Key? key}) : super(key: key);
+  const LogoApp({super.key});
 
   @override
   _LogoAppState createState() => _LogoAppState();

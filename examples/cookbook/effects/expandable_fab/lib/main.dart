@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(
@@ -14,7 +15,7 @@ void main() {
 class ExampleExpandableFab extends StatelessWidget {
   static const _actionTitles = ['Create Post', 'Upload Photo', 'Upload Video'];
 
-  const ExampleExpandableFab({Key? key}) : super(key: key);
+  const ExampleExpandableFab({super.key});
 
   void _showAction(BuildContext context, int index) {
     showDialog<void>(
@@ -72,11 +73,11 @@ class ExampleExpandableFab extends StatelessWidget {
 @immutable
 class ExpandableFab extends StatefulWidget {
   const ExpandableFab({
-    Key? key,
+    super.key,
     this.initialOpen,
     required this.distance,
     required this.children,
-  }) : super(key: key);
+  });
 
   final bool? initialOpen;
   final double distance;
@@ -212,12 +213,11 @@ class _ExpandableFabState extends State<ExpandableFab>
 @immutable
 class _ExpandingActionButton extends StatelessWidget {
   const _ExpandingActionButton({
-    Key? key,
     required this.directionInDegrees,
     required this.maxDistance,
     required this.progress,
     required this.child,
-  }) : super(key: key);
+  });
 
   final double directionInDegrees;
   final double maxDistance;
@@ -254,10 +254,10 @@ class _ExpandingActionButton extends StatelessWidget {
 @immutable
 class ActionButton extends StatelessWidget {
   const ActionButton({
-    Key? key,
+    super.key,
     this.onPressed,
     required this.icon,
-  }) : super(key: key);
+  });
 
   final VoidCallback? onPressed;
   final Widget icon;
@@ -283,9 +283,9 @@ class ActionButton extends StatelessWidget {
 @immutable
 class FakeItem extends StatelessWidget {
   const FakeItem({
-    Key? key,
+    super.key,
     required this.isBig,
-  }) : super(key: key);
+  });
 
   final bool isBig;
 

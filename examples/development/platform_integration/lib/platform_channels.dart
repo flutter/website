@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 // #enddocregion Import
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();

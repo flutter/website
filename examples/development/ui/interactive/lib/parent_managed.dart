@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 //------------------------ ParentWidget --------------------------------
 
 class ParentWidget extends StatefulWidget {
-  const ParentWidget({Key? key}) : super(key: key);
+  const ParentWidget({super.key});
 
   @override
   _ParentWidgetState createState() => _ParentWidgetState();
@@ -35,10 +35,10 @@ class _ParentWidgetState extends State<ParentWidget> {
 
 class TapboxB extends StatelessWidget {
   const TapboxB({
-    Key? key,
+    super.key,
     this.active = false,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final bool active;
   final ValueChanged<bool> onChanged;

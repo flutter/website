@@ -36,7 +36,7 @@ it launches the selection screen.
 <?code-excerpt "lib/main_step2.dart (HomeScreen)"?>
 ```dart
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ Now, create the SelectionButton, which does the following:
 <?code-excerpt "lib/main_step2.dart (SelectionButton)"?>
 ```dart
 class SelectionButton extends StatelessWidget {
-  const SelectionButton({Key? key}) : super(key: key);
+  const SelectionButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class SelectionButton extends StatelessWidget {
     );
   }
 
-  void _navigateAndDisplaySelection(BuildContext context) async {
+  Future<void> _navigateAndDisplaySelection(BuildContext context) async {
     // Navigator.push returns a Future that completes after calling
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
@@ -100,7 +100,7 @@ The next step adds code to return data.
 <?code-excerpt "lib/main_step2.dart (SelectionScreen)"?>
 ```dart
 class SelectionScreen extends StatelessWidget {
-  const SelectionScreen({Key? key}) : super(key: key);
+  const SelectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -184,7 +184,7 @@ In this case, show a snackbar displaying the result by using the
 ```dart
 // A method that launches the SelectionScreen and awaits the result from
 // Navigator.pop.
-void _navigateAndDisplaySelection(BuildContext context) async {
+Future<void> _navigateAndDisplaySelection(BuildContext context) async {
   // Navigator.push returns a Future that completes after calling
   // Navigator.pop on the Selection Screen.
   final result = await Navigator.push(
@@ -216,7 +216,7 @@ void main() {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -232,7 +232,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class SelectionButton extends StatelessWidget {
-  const SelectionButton({Key? key}) : super(key: key);
+  const SelectionButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -246,7 +246,7 @@ class SelectionButton extends StatelessWidget {
 
   // A method that launches the SelectionScreen and awaits the result from
   // Navigator.pop.
-  void _navigateAndDisplaySelection(BuildContext context) async {
+  Future<void> _navigateAndDisplaySelection(BuildContext context) async {
     // Navigator.push returns a Future that completes after calling
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
@@ -263,7 +263,7 @@ class SelectionButton extends StatelessWidget {
 }
 
 class SelectionScreen extends StatelessWidget {
-  const SelectionScreen({Key? key}) : super(key: key);
+  const SelectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

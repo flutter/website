@@ -53,9 +53,10 @@ shell:
 # overcome inconsistent bugs with missing packages at runtime.
 setup:
 	make clean
-	docker-compose build site
-	docker-compose run --rm site bundle install
+	docker-compose build --no-cache site
 	docker-compose run --rm site npm install
+	docker-compose run --rm site bundle config set force_ruby_platform true
+	docker-compose run --rm site bundle install
 
 # Serve the Jekyll site with livereload and incremental builds
 # NOTE this is run inside of the container on `make up`

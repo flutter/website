@@ -15,14 +15,14 @@ jobs:
   check_link_references:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
         with:
           submodules: "recursive"
       - name: Build
         run: make build
         env:
           DISABLE_TESTS: 1
-      - uses: actions/setup-python@98f2ad02fd48d057ee3b4d4f66525b231c3e52b6
+      - uses: actions/setup-python@d09bd5e6005b175076f227b13d9730d56e9dcfcb
         with:
           python-version: "3.x"
       - run: python tool/check_link_references.py

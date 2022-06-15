@@ -1,12 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.4.1)
+    activesupport (7.0.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     colorator (1.1.0)
@@ -57,13 +56,13 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     mini_portile2 (2.8.0)
-    minitest (5.14.4)
-    nokogiri (1.13.4)
+    minitest (5.15.0)
+    nokogiri (1.13.6)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.13.4-aarch64-linux)
+    nokogiri (1.13.6-aarch64-linux)
       racc (~> 1.4)
-    nokogiri (1.13.4-x86_64-linux)
+    nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -83,7 +82,6 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
     webrick (1.7.0)
-    zeitwerk (2.4.2)
 
 PLATFORMS
   aarch64-linux
@@ -91,11 +89,11 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activesupport (~> 6.1.4)
+  activesupport (~> 7.0.3)
   jekyll (= 4.2.2)
   jekyll-toc (~> 0.17.1)
   liquid-tag-parser (~> 2.0.2)
   webrick
 
 BUNDLED WITH
-   2.2.27
+   2.3.12

@@ -83,7 +83,7 @@ and network I/O, accessibility support, plugin architecture, and a Dart runtime
 and compile toolchain.
 
 The engine is exposed to the Flutter framework through
-[`dart:ui`]({{site.github}}/flutter/engine/tree/master/lib/ui),
+[`dart:ui`]({{site.github}}/flutter/engine/tree/main/lib/ui),
 which wraps the underlying C++ code in Dart classes. This library
 exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.
@@ -210,11 +210,12 @@ way up to the root widget (the container that hosts the Flutter app, typically
 <?code-excerpt "lib/main.dart (Main)"?>
 ```dart
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -225,7 +226,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Builder(
-            builder: (BuildContext context) {
+            builder: (context) {
               return Column(
                 children: [
                   const Text('Hello World'),
@@ -814,8 +815,11 @@ To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
 here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
 
-<?code-excerpt "lib/main.dart (FFI)"?>
+<?code-excerpt "lib/ffi.dart (FFI)"?>
 ```dart
+import 'dart:ffi';
+import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
+
 typedef MessageBoxNative = Int32 Function(
   IntPtr hWnd,
   Pointer<Utf16> lpText,

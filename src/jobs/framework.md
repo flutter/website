@@ -25,6 +25,7 @@ In the "Framework Engineer" role, you'll be part of the team
 that keeps Flutter vital and current, including:
 
 *   Maintaining and growing the Framework APIs, docs, and tools.
+*   Supporting accessibility on all platforms
 *   Delivering outstanding performance.
 *   Delighting developers with a simple but powerful developer experience.
 *   Nurturing a thriving community of contributions from open-source

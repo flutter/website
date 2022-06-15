@@ -10,7 +10,7 @@ Future<void> main() async {
 }
 // #enddocregion InitializeSDK
 
-void captureErrors() async {
+Future<void> captureErrors() async {
   try {
     // Do something
   } catch (exception, stackTrace) {
@@ -21,7 +21,7 @@ void captureErrors() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

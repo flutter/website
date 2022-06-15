@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 // #docregion main
 void main() {
-  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+  testWidgets('MyWidget has a title and message', (tester) async {
     await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
     final titleFinder = find.text('T');
     final messageFinder = find.text('M');
@@ -18,10 +18,10 @@ void main() {
 
 class MyWidget extends StatelessWidget {
   const MyWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   final String title;
   final String message;

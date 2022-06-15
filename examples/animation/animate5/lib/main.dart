@@ -8,8 +8,8 @@ void main() => runApp(const LogoApp());
 
 // #docregion diff
 class AnimatedLogo extends AnimatedWidget {
-  const AnimatedLogo({Key? key, required Animation<double> animation})
-      : super(key: key, listenable: animation);
+  const AnimatedLogo({super.key, required Animation<double> animation})
+      : super(listenable: animation);
 
   // Make the Tweens static because they don't change.
   static final _opacityTween = Tween<double>(begin: 0.1, end: 1);
@@ -33,7 +33,7 @@ class AnimatedLogo extends AnimatedWidget {
 }
 
 class LogoApp extends StatefulWidget {
-  const LogoApp({Key? key}) : super(key: key);
+  const LogoApp({super.key});
 
   @override
   _LogoAppState createState() => _LogoAppState();

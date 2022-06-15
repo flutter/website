@@ -23,7 +23,7 @@ class AnimatedContainerDemo extends StatelessWidget {
   final double borderRadius = randomBorderRadius();
   final double margin = randomMargin();
 
-  AnimatedContainerDemo({Key? key}) : super(key: key);
+  AnimatedContainerDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class AnimatedContainerDemo extends StatelessWidget {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

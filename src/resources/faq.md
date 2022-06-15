@@ -1030,13 +1030,13 @@ apps built with Flutter should follow Apple's
 [editing Dart]: {{site.dart-site}}/tools
 [editor configuration]: {{site.url}}/get-started/editor
 [example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
-[example project]: {{site.repo.flutter}}/tree/master/examples/platform_channel
+[example project]: {{site.repo.flutter}}/tree/main/examples/platform_channel
 [Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 [Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [Flutter 1.0]: {{site.google-blog}}/2018/12/flutter-10-googles-portable-ui-toolkit.html
 [Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
-[flutter_view]: {{site.repo.flutter}}/tree/master/examples/flutter_view
+[flutter_view]: {{site.repo.flutter}}/tree/main/examples/flutter_view
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3
 [gesture system]: {{site.url}}/development/ui/advanced/gestures
@@ -1086,7 +1086,7 @@ apps built with Flutter should follow Apple's
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [platform and third-party APIs]: {{site.url}}/development/platform-integration/platform-channels
 [platform channels]: {{site.url}}/development/platform-integration/platform-channels
-[platform_view]: {{site.repo.flutter}}/tree/master/examples/platform_view
+[platform_view]: {{site.repo.flutter}}/tree/main/examples/platform_view
 [popped]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [pub.dev]: {{site.pub}}
 [QA1795]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html

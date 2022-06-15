@@ -63,7 +63,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   _MyAppState createState() {
@@ -117,7 +117,7 @@ class _MyAppState extends State<MyApp> {
                   );
                   // #enddocregion Column
                 } else if (snapshot.hasError) {
-                  return Text("${snapshot.error}");
+                  return Text('${snapshot.error}');
                 }
               }
 

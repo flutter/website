@@ -48,14 +48,14 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp(
-    items: List<String>.generate(10000, (i) => "Item $i"),
+    items: List<String>.generate(10000, (i) => 'Item $i'),
   ));
 }
 
 class MyApp extends StatelessWidget {
   final List<String> items;
 
-  const MyApp({Key? key, required this.items}) : super(key: key);
+  const MyApp({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -124,10 +124,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:scrolling/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Counter increments smoke test', (tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp(
-      items: List<String>.generate(10000, (i) => "Item $i"),
+      items: List<String>.generate(10000, (i) => 'Item $i'),
     ));
 
     final listFinder = find.byType(Scrollable);

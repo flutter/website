@@ -106,7 +106,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const SnackBarDemo());
 
 class SnackBarDemo extends StatelessWidget {
-  const SnackBarDemo({Key? key}) : super(key: key);
+  const SnackBarDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +123,7 @@ class SnackBarDemo extends StatelessWidget {
 }
 
 class SnackBarPage extends StatelessWidget {
-  const SnackBarPage({Key? key}) : super(key: key);
+  const SnackBarPage({super.key});
 
   @override
   Widget build(BuildContext context) {

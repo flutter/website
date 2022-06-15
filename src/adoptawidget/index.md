@@ -163,9 +163,9 @@ Each issue specifies what type of contribution we are looking for:
 * Adding references (for example, under "See also")
 * Adding more explanation to the documentation
 
-[DartPad]: {{site.repo.flutter}}/tree/master/dev/snippets#templates
-[sample]: {{site.repo.flutter}}/tree/master/dev/snippets#sample-tool
-[snippet]: {{site.repo.flutter}}/tree/master/dev/snippets#snippet-tool
+[DartPad]: {{site.repo.flutter}}/tree/main/dev/snippets#templates
+[sample]: {{site.repo.flutter}}/tree/main/dev/snippets#sample-tool
+[snippet]: {{site.repo.flutter}}/tree/main/dev/snippets#snippet-tool
 
 ### Adding code {#adding-code}
 
@@ -173,7 +173,7 @@ There are three ways to contribute code: a `snippet`,
 a `dartpad`, or a `sample`.
 For more details, see the [Dartdoc Generation README][].
 
-[Dartdoc Generation README]: {{site.repo.flutter}}/tree/master/dev/snippets
+[Dartdoc Generation README]: {{site.repo.flutter}}/tree/main/dev/snippets
 
 Please be cognizant that writing _sample_ code has a different goal
 (and some additional constraints) compared to writing production code.
@@ -221,7 +221,7 @@ the snippet tool's [templates directory][].
 /// {@end-tool}
 ```
 
-[templates directory]: {{site.repo.flutter}}/tree/master/dev/snippets/config/templates
+[templates directory]: {{site.repo.flutter}}/tree/main/dev/snippets/config/templates
 
 #### DartPad sample {#dartpad-sample}
 
@@ -338,8 +338,8 @@ To view the generated docs, open `dev/docs/doc/api/index.html`.
 For more information, see the [Dartdoc Generation README][].
 
 
-[analyze snippets]: {{site.repo.flutter}}/tree/master/dev/snippets#running-sample-analysis-locally
-[Dartdoc Generation README]: {{site.repo.flutter}}/tree/master/dev/snippets
+[analyze snippets]: {{site.repo.flutter}}/tree/main/dev/snippets#running-sample-analysis-locally
+[Dartdoc Generation README]: {{site.repo.flutter}}/tree/main/dev/snippets
 [Windows Subsystem for Linux]: https://docs.microsoft.com/en-us/windows/wsl/about
 
 ### Commit the change {#commit-the-change}

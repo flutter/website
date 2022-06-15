@@ -8,7 +8,7 @@ void showOversizedImages() {
 
 // #docregion ResizedImage
 class ResizedImage extends StatelessWidget {
-  const ResizedImage({Key? key}) : super(key: key);
+  const ResizedImage({super.key});
 
   @override
   Widget build(BuildContext context) {

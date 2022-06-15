@@ -600,7 +600,7 @@ Play store's delivery feature.
 [Deferred Components]: {{site.repo.flutter}}/wiki/Deferred-Components
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
-[Flutter Gallery’s lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/master/lib/deferred_widget.dart
+[Flutter Gallery’s lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library

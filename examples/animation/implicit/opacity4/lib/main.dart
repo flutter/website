@@ -8,7 +8,7 @@ const owlUrl =
     'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
 
 class FadeInDemo extends StatefulWidget {
-  const FadeInDemo({Key? key}) : super(key: key);
+  const FadeInDemo({super.key});
 
   @override
   _FadeInDemoState createState() => _FadeInDemoState();
@@ -43,7 +43,7 @@ class _FadeInDemoState extends State<FadeInDemo> {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

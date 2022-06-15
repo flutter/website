@@ -183,7 +183,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
   static const String _title = 'Focus Sample';
 
   @override
@@ -202,7 +202,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyCustomWidget extends StatefulWidget {
-  const MyCustomWidget({Key? key}) : super(key: key);
+  const MyCustomWidget({super.key});
 
   @override
   State<MyCustomWidget> createState() => _MyCustomWidgetState();
@@ -215,7 +215,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onFocusChange: (bool focused) {
+      onFocusChange: (focused) {
         setState(() {
           _color = focused ? Colors.black26 : Colors.white;
           _label = focused ? 'Focused' : 'Unfocused';
@@ -258,7 +258,7 @@ doesn't handle, without being able to be the primary focus:
 @override
 Widget build(BuildContext context) {
   return Focus(
-    onKey: (FocusNode node, RawKeyEvent event) => KeyEventResult.handled,
+    onKey: (node, event) => KeyEventResult.handled,
     canRequestFocus: false,
     child: child,
   );
@@ -277,7 +277,7 @@ the text field:
 @override
 Widget build(BuildContext context) {
   return Focus(
-    onKey: (FocusNode node, RawKeyEvent event) {
+    onKey: (node, event) {
       return (event.logicalKey == LogicalKeyboardKey.keyA)
           ? KeyEventResult.handled
           : KeyEventResult.ignored;
@@ -359,7 +359,7 @@ the correct context. This is shown in the following example:
 Widget build(BuildContext context) {
   return Focus(
     child: Builder(
-      builder: (BuildContext context) {
+      builder: (context) {
         final bool hasPrimary = Focus.of(context).hasPrimaryFocus;
         print('Building with primary focus: $hasPrimary');
         return const SizedBox(width: 100, height: 100);
@@ -458,7 +458,7 @@ row of buttons in the order TWO, ONE, THREE using `NumericFocusOrder`.
 <?code-excerpt "ui/advanced/focus/lib/samples.dart (OrderedButtonRowExample)"?>
 ```dart
 class OrderedButtonRow extends StatelessWidget {
-  const OrderedButtonRow({Key? key}) : super(key: key);
+  const OrderedButtonRow({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -59,7 +59,7 @@ see the relevant recipes:
 <?code-excerpt "test/main_test.dart (TodoList)"?>
 ```dart
 class TodoList extends StatefulWidget {
-  const TodoList({Key? key}) : super(key: key);
+  const TodoList({super.key});
 
   @override
   _TodoListState createState() => _TodoListState();
@@ -86,7 +86,7 @@ class _TodoListState extends State<TodoList> {
             Expanded(
               child: ListView.builder(
                 itemCount: todos.length,
-                itemBuilder: (BuildContext context, int index) {
+                itemBuilder: (context, index) {
                   final todo = todos[index];
 
                   return Dismissible(
@@ -128,7 +128,7 @@ Accomplish this task by:
 
 <?code-excerpt "test/main_steps.dart (TestWidgetStep2)"?>
 ```dart
-testWidgets('Add and remove a todo', (WidgetTester tester) async {
+testWidgets('Add and remove a todo', (tester) async {
   // Build the widget
   await tester.pumpWidget(const TodoList());
 
@@ -160,7 +160,7 @@ This involves three steps:
 
 <?code-excerpt "test/main_steps.dart (TestWidgetStep3)"?>
 ```dart
-testWidgets('Add and remove a todo', (WidgetTester tester) async {
+testWidgets('Add and remove a todo', (tester) async {
   // Enter text code...
 
   // Tap the add button.
@@ -188,7 +188,7 @@ item removes it from the list. This involves three steps:
 
 <?code-excerpt "test/main_steps.dart (TestWidgetStep4)"?>
 ```dart
-testWidgets('Add and remove a todo', (WidgetTester tester) async {
+testWidgets('Add and remove a todo', (tester) async {
   // Enter text and add the item...
 
   // Swipe the item to dismiss it.
@@ -210,7 +210,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Add and remove a todo', (WidgetTester tester) async {
+  testWidgets('Add and remove a todo', (tester) async {
     // Build the widget.
     await tester.pumpWidget(const TodoList());
 
@@ -238,7 +238,7 @@ void main() {
 }
 
 class TodoList extends StatefulWidget {
-  const TodoList({Key? key}) : super(key: key);
+  const TodoList({super.key});
 
   @override
   _TodoListState createState() => _TodoListState();
@@ -265,7 +265,7 @@ class _TodoListState extends State<TodoList> {
             Expanded(
               child: ListView.builder(
                 itemCount: todos.length,
-                itemBuilder: (BuildContext context, int index) {
+                itemBuilder: (context, index) {
                   final todo = todos[index];
 
                   return Dismissible(

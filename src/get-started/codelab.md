@@ -22,7 +22,7 @@ check out the following workshop:
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/Z6KZ3cTGBWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-{% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
+{% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/main' -%}
 
 <img src="/assets/images/docs/get-started/startup-namer-part-1.gif" alt="The app that you'll be building" class='site-image-right'>
 
@@ -102,7 +102,7 @@ and [Write your first Flutter app on the web][codelab-web].
 
 Also, Flutter apps can compile for desktop.
 You should see your operating system listed
-in your IDE under **devices**, 
+in your IDE under **devices**,
 for example: **Windows (desktop)**,
 or at the command line using `flutter devices`.
 For more information on building apps for desktop,
@@ -142,7 +142,7 @@ where the Dart code lives.
     }
 
     class MyApp extends StatelessWidget {
-      const MyApp({Key? key}) : super(key: key);
+      const MyApp({super.key});
 
       @override
       Widget build(BuildContext context) {
@@ -196,7 +196,7 @@ where the Dart code lives.
   that is standard on mobile and the web.
   Flutter offers a rich set of Material widgets.
   It's a good idea to have a `uses-material-design: true` entry
-  in the `flutter` section of your `pubspec.yaml` file. 
+  in the `flutter` section of your `pubspec.yaml` file.
   This will allow you to use more features of Material,
   such as their set of predefined [Icons][].
 * The app extends `StatelessWidget`, which makes the app itself a
@@ -234,7 +234,7 @@ as well as many other open source packages, on [pub.dev][].
     Downloading english_words 4.0.0...
     Changed 1 dependency!
     ```
- 
+
     The `pubspec.yaml` file manages the assets and dependencies
     for a Flutter app. In `pubspec.yaml`, you will see
     that the `english_words` dependency has been added:
@@ -402,7 +402,7 @@ class RandomWords extends StatefulWidget {
   const RandomWords({ Key? key }) : super(key: key);
 
   @override
-  _RandomWordsState createState() => _RandomWordsState();
+  State<RandomWords> createState() => _RandomWordsState();
 }
 
 class _RandomWordsState extends State<RandomWords> {
@@ -498,14 +498,14 @@ lazily, on demand.
     ```dart
       class _RandomWordsState extends State<RandomWords> {
         [!final _suggestions = <WordPair>[];!]
-        [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
+        [!final _biggerFont = const TextStyle(fontSize: 18);!]
         // ···
       }
     ```
 
-    Next, you'll add a `ListView.builder` widget to the
-    `_RandomWordsState` class. This method builds the
-    `ListView` that displays the suggested word pairing.
+ 2. Next, you'll add a `ListView` widget to the
+    `_RandomWordsState` class with the `ListView.builder` constructor.
+    This method creates the `ListView` that displays the suggested word pairing.
 
     The `ListView` class provides a builder property, `itemBuilder`,
     that's a factory builder and callback function specified as an
@@ -517,11 +517,12 @@ lazily, on demand.
     This model allows the suggested list to continue growing
     as the user scrolls.
 
- 2. Add a `ListView.builder` widget to the `build` method of the `_RandomWordsState` class:
+    Return a `ListView` widget from the `build` method
+    of the `_RandomWordsState` class using the `ListView.builder` constructor:
 
-    <?code-excerpt "lib/main.dart (itemBuilder)" title indent-by="2"?>
+    <?code-excerpt "lib/main.dart (itemBuilder)" title replace="/ListTile([\S\s]*?)\);/Text(_suggestions[index].asPascalCase);/g" indent-by="2"?>
     ```dart
-      body: ListView.builder(
+      return ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemBuilder: /*1*/ (context, i) {
           if (i.isOdd) return const Divider(); /*2*/
@@ -530,14 +531,9 @@ lazily, on demand.
           if (index >= _suggestions.length) {
             _suggestions.addAll(generateWordPairs().take(10)); /*4*/
           }
-          return ListTile(
-            title: Text(
-              _suggestions[index].asPascalCase,
-              style: _biggerFont,
-            ),
-          );
+          return Text(_suggestions[index].asPascalCase);
         },
-      ),
+      );
     ```
 
     {:.numbered-code-notes}
@@ -554,11 +550,14 @@ lazily, on demand.
      4. If you've reached the end of the available word pairings,
         then generate 10 more and add them to the suggestions list.
 
-    The `ListView.builder` widget creates a `ListTile` once per
-    word pair. This function displays each new pair in a `ListTile`,
+    The `ListView.builder` constructor creates and displays
+    a `Text` widget once per word pairing.
+    In the next step, you'll instead return each new pair as a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
- 3. Add a `ListTile` in the `itemBuilder` body of the `ListView.builder` in `_RandomWordsState`:
+ 3. Replace the returned `Text` in the `itemBuilder` body
+    of the `ListView.builder` in `_RandomWordsState`
+    with a `ListTile` displaying the suggestion:
 
     <?code-excerpt "lib/main.dart (listTile)" title indent-by="2"?>
     ```dart
@@ -570,100 +569,88 @@ lazily, on demand.
       );
     ```
 
- 4. In the `_RandomWordsState` class, update the `build()` method to use
-    the `ListView.builder`, rather than directly calling the word
-    generation library. ([`Scaffold`][]
-    implements the basic Material Design visual layout.)
-    Replace the method body with the highlighted code:
+    A `ListTile` is a fixed height row that contains text
+    as well as leading or trailing icons or other widgets.
+
+ 4. Once complete, the `build()` method in the `_RandomWordsState` class
+    should match the following highlighted code:
 
     <?code-excerpt "lib/main.dart (build)" title region="RWS-build" replace="/(\n  )(return.*|  .*|\);)/$1[!$2!]/g" indent-by="2"?>
     ```dart
       @override
       Widget build(BuildContext context) {
-        [!return Scaffold(!]
-        [!  appBar: AppBar(!]
-        [!    title: const Text('Startup Name Generator'),!]
-        [!  ),!]
-        [!  body: ListView.builder(!]
-        [!    padding: const EdgeInsets.all(16.0),!]
-        [!    itemBuilder: /*1*/ (context, i) {!]
-        [!      if (i.isOdd) return const Divider(); /*2*/!]
+        [!return ListView.builder(!]
+        [!  padding: const EdgeInsets.all(16.0),!]
+        [!  itemBuilder: /*1*/ (context, i) {!]
+        [!    if (i.isOdd) return const Divider(); /*2*/!]
 
-        [!      final index = i ~/ 2; /*3*/!]
-        [!      if (index >= _suggestions.length) {!]
-        [!        _suggestions.addAll(generateWordPairs().take(10)); /*4*/!]
-        [!      }!]
-        [!      return ListTile(!]
-        [!        title: Text(!]
-        [!          _suggestions[index].asPascalCase,!]
-        [!          style: _biggerFont,!]
-        [!        ),!]
-        [!      );!]
-        [!    },!]
-        [!  ),!]
+        [!    final index = i ~/ 2; /*3*/!]
+        [!    if (index >= _suggestions.length) {!]
+        [!      _suggestions.addAll(generateWordPairs().take(10)); /*4*/!]
+        [!    }!]
+        [!    return ListTile(!]
+        [!      title: Text(!]
+        [!        _suggestions[index].asPascalCase,!]
+        [!        style: _biggerFont,!]
+        [!      ),!]
+        [!    );!]
+        [!  },!]
         [!);!]
       }
     ```
 
- 5. In the `MyApp` class, update the `build()` method by changing the title,
-    and changing the home to be a `RandomWords` widget:
+ 5. To put it all together, update the displayed title of the app
+    by updating the `build()` method in the `MyApp` class
+    and changing the title of the `AppBar`:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step3_stateful_widget,step4_infinite_list}/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -13,27 +13,43 @@
-       const MyApp({Key? key}) : super(key: key);
+    @@ -14,12 +14,12 @@
 
        @override
        Widget build(BuildContext context) {
-    -    return MaterialApp(
+         return MaterialApp(
     -      title: 'Welcome to Flutter',
-    -      home: Scaffold(
-    -        appBar: AppBar(
-    -          title: const Text('Welcome to Flutter'),
-    -        ),
-    -        body: const Center(
-    -          child: RandomWords(),
-    -        ),
-    -      ),
-    +    return const MaterialApp(
     +      title: 'Startup Name Generator',
-    +      home: RandomWords(),
-         );
+           home: Scaffold(
+             appBar: AppBar(
+    -          title: const Text('Welcome to Flutter'),
+    +          title: const Text('Startup Name Generator'),
+             ),
+             body: const Center(
+               child: RandomWords(),
+             ),
+    @@ -28,12 +28,30 @@
        }
      }
 
      class _RandomWordsState extends State<RandomWords> {
     +  final _suggestions = <WordPair>[];
-    +  final _biggerFont = const TextStyle(fontSize: 18.0);
+    +  final _biggerFont = const TextStyle(fontSize: 18);
     +
        @override
        Widget build(BuildContext context) {
     -    final wordPair = WordPair.random();
     -    return Text(wordPair.asPascalCase);
-    +    return Scaffold(
-    +      appBar: AppBar(
-    +        title: const Text('Startup Name Generator'),
-    +      ),
-    +      body: ListView.builder(
-    +        padding: const EdgeInsets.all(16.0),
-    +        itemBuilder: /*1*/ (context, i) {
-    +          if (i.isOdd) return const Divider(); /*2*/
+    +    return ListView.builder(
+    +      padding: const EdgeInsets.all(16.0),
+    +      itemBuilder: /*1*/ (context, i) {
+    +        if (i.isOdd) return const Divider(); /*2*/
     +
-    +          final index = i ~/ 2; /*3*/
-    +          if (index >= _suggestions.length) {
-    +            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-    +          }
-    +          return ListTile(
-    +            title: Text(
-    +              _suggestions[index].asPascalCase,
-    +              style: _biggerFont,
-    +            ),
-    +          );
-    +        },
-    +      ),
+    +        final index = i ~/ 2; /*3*/
+    +        if (index >= _suggestions.length) {
+    +          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+    +        }
+    +        return ListTile(
+    +          title: Text(
+    +            _suggestions[index].asPascalCase,
+    +            style: _biggerFont,
+    +          ),
+    +        );
+    +      },
     +    );
        }
      }
