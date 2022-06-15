@@ -316,7 +316,7 @@ To create a new workflow in Xcode:
 3. The next sheet displays an overview of the default workflow provided by Xcode,
     and can be customized by clicking the **Edit Workflow** button.
 
-#### Branch Changes
+#### Branch changes
 
 By default Xcode suggests the Branch Changes condition that starts a new build
 for every change to your Git repository’s default branch.
