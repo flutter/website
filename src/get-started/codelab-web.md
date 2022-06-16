@@ -7,6 +7,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="get-started/codelab_web"?>
+
 {{site.alert.tip}}
   This codelab walks you through writing your first Flutter
   app on the web. You might prefer to try
@@ -120,7 +122,7 @@ of the Flutter DevTools tooling.
 
 <li markdown="1">The starting app is displayed in the following DartPad.
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart" replace="/\/\* //g;/ \*\///g;/_ignore_for_file/ignore_for_file/g"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 {$ begin main.dart $}
 import 'package:flutter/material.dart';
@@ -129,7 +131,7 @@ void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
   const SignUpApp();
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -142,7 +144,7 @@ class SignUpApp extends StatelessWidget {
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,7 +163,7 @@ class SignUpScreen extends StatelessWidget {
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm();
-  
+
   @override
   _SignUpFormState createState() => _SignUpFormState();
 }
@@ -180,10 +182,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme
-              .of(context)
-              .textTheme
-              .headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headline4),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
@@ -207,11 +206,17 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              foregroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              backgroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.blue;
               }),
             ),
             onPressed: null,
@@ -225,7 +230,7 @@ class _SignUpFormState extends State<SignUpForm> {
 {$ end main.dart $}
 {$ begin test.dart $}
 // Avoid warning on "double _formProgress = 0;"
-// ignore_for_file: prefer_final_fields
+//ignore_for_file: prefer_final_fields
 {$ end test.dart $}
 ```
 
@@ -300,10 +305,11 @@ First, in your `lib/main.dart` file,
 add the following class definition for the
 `WelcomeScreen` widget after the `SignUpScreen` class:
 
+<?code-excerpt "lib/step1.dart (WelcomeScreen)"?>
 ```dart
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -335,7 +341,7 @@ method that will display the welcome screen.
 
 Change `onPressed: null` to the following:
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (onPressed)"?>
 ```dart
 onPressed: _showWelcomeScreen,
 ```
@@ -346,7 +352,7 @@ Fix the error reported by the analyzer that `_showWelcomeScreen`
 is not defined. Directly above the `build()` method,
 add the following function:
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (showWelcomeScreen)"?>
 ```dart
 void _showWelcomeScreen() {
   Navigator.of(context).pushNamed('/welcome');
@@ -359,9 +365,9 @@ Create the connection to show the new screen.
 In the `build()` method for `SignUpApp`,
 add the following route below `'/'`:
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (WelcomeRoute)"?>
 ```dart
-'/welcome': (context) => WelcomeScreen(),
+'/welcome': (context) => const WelcomeScreen(),
 ```
 </li>
 
@@ -418,9 +424,8 @@ and update the app’s UI when the form is complete.
 In the `_SignUpFormState` class, add a new method called
 `_updateFormProgress()`:
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (updateFormProgress)"?>
 ```dart
-...
 void _updateFormProgress() {
   var progress = 0.0;
   final controllers = [
@@ -439,7 +444,6 @@ void _updateFormProgress() {
     _formProgress = progress;
   });
 }
-...
 ```
 
 This method updates the `_formProgress` field based on the
@@ -453,13 +457,11 @@ In the `build()` method of the `_SignUpFormState` class,
 add a callback to the `Form` widget's `onChanged` argument.
 Add the code below marked as NEW:
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (onChanged)"?>
 ```dart
-...
 return Form(
-  onChanged: _updateFormProgress,  // NEW
+  onChanged: _updateFormProgress, // NEW
   child: Column(
-...
 ```
 </li>
 
@@ -469,23 +471,27 @@ In `step 1`, you modified the `onPressed` property for the
 Now, update that button to display the welcome
 screen only when the form is completely filled in:
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (onPressed)"?>
 ```dart
-...
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-      return states.contains(MaterialState.disabled) ? null : Colors.white;
+    foregroundColor: MaterialStateProperty.resolveWith(
+        (Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled)
+          ? null
+          : Colors.white;
     }),
-    backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-      return states.contains(MaterialState.disabled) ? null : Colors.blue;
+    backgroundColor: MaterialStateProperty.resolveWith(
+        (Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled)
+          ? null
+          : Colors.blue;
     }),
   ),
-  onPressed: _formProgress == 1 ? _showWelcomeScreen : null, // UPDATED
-  child: Text('Sign up'),
+  onPressed:
+      _formProgress == 1 ? _showWelcomeScreen : null, // UPDATED
+  child: const Text('Sign up'),
 ),
-...
-
 ```
 </li>
 
@@ -528,9 +534,9 @@ but becomes enabled when all three text fields contain
   callback function as an argument.
 * The Dart syntax in the last step that displays the
   welcome screen is:
-  <!-- skip -->
+  <?code-excerpt "lib/step2.dart (ternary)" replace="/, \/\/ UPDATED//g"?>
   ```dart
-  onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
+  _formProgress == 1 ? _showWelcomeScreen : null
   ```
   This is a Dart conditional assignment and has the syntax:
   `condition ? expression1 : expression2`.
@@ -641,13 +647,13 @@ in the center pane.
 In the Dart code,
 scroll down to where `progress` is updated:
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (forLoop)"?>
 ```dart
-    for (final controller in controllers) {
-      if (controller.value.text.isNotEmpty) {
-        progress += 1 / controllers.length;
-      }
-    }
+for (final controller in controllers) {
+  if (controller.value.text.isNotEmpty) {
+    progress += 1 / controllers.length;
+  }
+}
 ```
 
 Place a breakpoint on the line with the for loop by clicking to the
@@ -703,7 +709,7 @@ area. The animation has the following behavior:
 <li markdown="1">Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
-<!--skip-->
+<?code-excerpt "lib/step3.dart (AnimatedProgressIndicator)"?>
 ```dart
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
@@ -778,16 +784,14 @@ the `AnimatedProgressIndicatorState` whenever
 Then, replace the `LinearProgressIndicator` in the `Form`
 with this new `AnimatedProgressIndicator`:
 
-<!--skip-->
+<?code-excerpt "lib/step3.dart (UseAnimatedProgressIndicator)"?>
 ```dart
-...
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          AnimatedProgressIndicator(value: _formProgress), // NEW
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
-          Padding(
-...
+child: Column(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    AnimatedProgressIndicator(value: _formProgress), // NEW
+    Text('Sign up', style: Theme.of(context).textTheme.headline4),
+    Padding(
 ```
 
 This widget uses an `AnimatedBuilder` to animate the
@@ -803,7 +807,7 @@ the animation works, and that clicking the
 
 ### Complete sample
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
@@ -811,7 +815,7 @@ void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
   const SignUpApp();
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -825,7 +829,7 @@ class SignUpApp extends StatelessWidget {
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -844,7 +848,7 @@ class SignUpScreen extends StatelessWidget {
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -922,11 +926,17 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              foregroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              backgroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.blue;
               }),
             ),
             onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
@@ -961,7 +971,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 1200), 
+      duration: const Duration(milliseconds: 1200),
       vsync: this,
     );
 
