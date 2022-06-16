@@ -50,17 +50,17 @@ Scaffold(
 The implementation changes `ScrollView.primary` to be nullable, with the fallback
 decision-making being relocated to the `PrimaryScrollController`.
 When `primary` is null, and no `ScrollController` has been provided, the `ScrollView`
-will look up the `PrimaryScrollController` and instead calls `shouldInherit` to
+will look up the `PrimaryScrollController` and instead call `shouldInherit` to
 determine if the given `ScrollView` should use the `PrimaryScrollController`.
 
 The new members of the `PrimaryScrollController` class,
-`automaticallyInheritForPlatforms`, and `scrollDirection` are evaluated in
+`automaticallyInheritForPlatforms` and `scrollDirection`, are evaluated in
 `shouldInherit`, allowing users clarity and control over the
 `PrimaryScrollController`'s behavior.
 
 By default, backwards compatibility is maintained for mobile platforms.
-`PrimaryScrollController.shouldInherit` will return true for vertical
-`ScrollView`s. On desktop, this will return false by default.
+`PrimaryScrollController.shouldInherit` returns true for vertical
+`ScrollView`s. On desktop, this returns false by default.
 
 <!-- skip -->
 ```dart
@@ -81,7 +81,7 @@ For behavior across multiple `ScrollView`s, the `PrimaryScrollController` is now
 configurable by setting the specific platform, as well as the scroll direction
 that is preferred for inheritance.
 
-Widgets that use the `PrimaryScrollController` such as the `NestedScrollView`,
+Widgets that use the `PrimaryScrollController`, such as `NestedScrollView`,
 `Scrollbar`, and `DropdownMenuButton` will experience no change to existing
 functionality. Features like the iOS scroll-to-top will also continue to work as
 expected without any migration.
@@ -90,13 +90,13 @@ expected without any migration.
 this change, requiring migration. By default, the `PrimaryScrollController` is
 used to execute fallback keyboard scrolling `Shortcuts` if the current `Focus` is
 contained within a `Scrollable`. Since displaying more than one `ScrollView`
-side-by-side is common on desktop platforms, it is not possible for
+side-by-side is common on desktop platforms, it isn't possible for
 Flutter to decide "Which `ScrollView` should be primary in this view and receive
 the keyboard scroll action?"
 
-If more than one `ScrollVie`w were present previous to this change, the same
+If more than one `ScrollView` was present previous to this change, the same
 assertion (`ScrollController attached to multiple ScrollViews.`) would be thrown.
-Now, on desktop platforms, users will need to specify `primary: true` to
+Now, on desktop platforms, users need to specify `primary: true` to
 designate which `ScrollView` is the fallback to receive unhandled keyboard
 `Shortcuts`.
 
