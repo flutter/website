@@ -3,6 +3,8 @@ title: Deferred components
 description: How to create deferred components for improved download performance.
 ---
 
+<?code-excerpt path-base="perf/deferred_components"?>
+
 ## Introduction
 
 Flutter has the capability to build apps that can
@@ -101,8 +103,7 @@ To support `SplitCompat`, there are three methods
 <ul markdown="1">
 <li markdown="1">Make your application class extend
     `SplitCompatApplication`:
-<!-- skip -->
-```dart
+```java
 public class MyApplication extends SplitCompatApplication {
     ...
 }
@@ -112,8 +113,7 @@ public class MyApplication extends SplitCompatApplication {
 <li markdown="1">Call `SplitCompat.install(this);`
     in the `attachBaseContext()` method:
 
-<!-- skip -->
-```dart
+```java
 @Override
 protected void attachBaseContext(Context base) {
     super.attachBaseContext(base);
@@ -143,8 +143,7 @@ Provide a `PlayStoreDeferredComponentManager` into
 the Flutter embedder by adding the following code
 to your app initialization:
 
-<!-- skip -->
-```dart
+```java
 import io.flutter.embedding.engine.dynamicfeatures.PlayStoreDeferredComponentManager;
 import io.flutter.FlutterInjector;
 ... 
@@ -198,15 +197,14 @@ guarding usages of deferred code behind `loadLibrary()`
     To create a simple blue box widget,
     create `box.dart` with the following contents:
 
-<!-- skip -->
+<?code-excerpt "lib/box.dart"?>
 ```dart
 // box.dart
-
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 /// A simple blue 30x30 box.
 class DeferredBox extends StatelessWidget {
-  DeferredBox() {}
+  const DeferredBox({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -232,19 +230,20 @@ class DeferredBox extends StatelessWidget {
     won't ever attempt to access the deferred Dart code until
     it has successfully loaded.
 
-<!-- skip -->
+<?code-excerpt "lib/use_deferred_box.dart"?>
 ```dart
+import 'package:flutter/material.dart';
 import 'box.dart' deferred as box;
 
-// ...
-
 class SomeWidget extends StatefulWidget {
+  const SomeWidget({super.key});
+
   @override
-  _SomeWidgetState createState() => _SomeWidgetState();
+  State<SomeWidget> createState() => _SomeWidgetState();
 }
 
 class _SomeWidgetState extends State<SomeWidget> {
-  Future<void> _libraryFuture;
+  late Future<void> _libraryFuture;
 
   @override
   void initState() {
@@ -263,12 +262,11 @@ class _SomeWidgetState extends State<SomeWidget> {
           }
           return box.DeferredBox();
         }
-        return CircularProgressIndicator();
+        return const CircularProgressIndicator();
       },
     );
   }
 }
-// ...
 ```
 
 The `loadLibrary()` function returns a `Future<void>`
