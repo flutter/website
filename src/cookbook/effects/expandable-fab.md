@@ -31,7 +31,7 @@ The following animation shows the app's behavior:
 ## Create an ExpandableFab widget
 
 Start by creating a new stateful widget called `ExpandableFab`.
-This widget displays the primary FAB and coordinate the expansion
+This widget displays the primary FAB and coordinates the expansion
 and collapse of the other action buttons. The widget takes
 in parameters for whether or not the `ExpandedFab` begins in
 the expanded position, what the maximum distance of each action button is,
