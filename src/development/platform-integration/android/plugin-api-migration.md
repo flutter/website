@@ -31,7 +31,7 @@ Most of the [Flutter plugins][] provided by the flutter.dev
 team have been migrated already. (Learn how to become a
 [verified publisher][] on pub.dev!) For an example of
 a plugin that uses the new APIs, see the
-[battery package][].
+[battery plus package][].
 
 ## Upgrade steps
 
@@ -366,7 +366,7 @@ a non-UI configuration.
 
 [`ActivityAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
 [Basic plugin]: #basic-plugin
-[battery package]: {{site.repo.plugins}}/tree/main/packages/battery
+[battery plus package]: {{site.github}}/fluttercommunity/plus_plugins/tree/main/packages/battery_plus/battery_plus
 [Flutter plugins]: {{site.pub}}/flutter/packages
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
