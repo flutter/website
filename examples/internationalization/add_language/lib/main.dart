@@ -7,12 +7,12 @@ void main() {
   runApp(
     // #docregion MaterialApp
     const MaterialApp(
-      localizationsDelegates: const [
+      localizationsDelegates: [
         GlobalWidgetsLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         NnMaterialLocalizations.delegate, // Add the newly created delegate
       ],
-      supportedLocales: const [
+      supportedLocales: [
         Locale('en', 'US'),
         Locale('nn'),
       ],
