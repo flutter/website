@@ -81,12 +81,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 ```dart
 return const MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: [
+  localizationsDelegates: const [
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
   ],
-  supportedLocales: [
+  supportedLocales: const [
     Locale('en', ''), // English, no country code
     Locale('es', ''), // Spanish, no country code
   ],
@@ -211,13 +211,13 @@ project called `l10n.yaml` with the following content:
    ```dart
    return const MaterialApp(
      title: 'Localizations Sample App',
-     localizationsDelegates: [
+     localizationsDelegates: const [
        AppLocalizations.delegate, // Add this line
        GlobalMaterialLocalizations.delegate,
        GlobalWidgetsLocalizations.delegate,
        GlobalCupertinoLocalizations.delegate,
      ],
-     supportedLocales: [
+     supportedLocales: const [
        Locale('en', ''), // English, no country code
        Locale('es', ''), // Spanish, no country code
      ],
@@ -319,7 +319,7 @@ locales should include:
 
 <?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
 ```dart
-supportedLocales: [
+supportedLocales: const [
   Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
   Locale.fromSubtags(
       languageCode: 'zh',
@@ -711,12 +711,12 @@ adds the `NnMaterialLocalizations` delegate instance to the app's
 <?code-excerpt "add_language/lib/main.dart (MaterialApp)"?>
 ```dart
 const MaterialApp(
-  localizationsDelegates: [
+  localizationsDelegates: const [
     GlobalWidgetsLocalizations.delegate,
     GlobalMaterialLocalizations.delegate,
     NnMaterialLocalizations.delegate, // Add the newly created delegate
   ],
-  supportedLocales: [
+  supportedLocales: const [
     Locale('en', 'US'),
     Locale('nn'),
   ],

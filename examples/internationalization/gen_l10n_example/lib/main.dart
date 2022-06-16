@@ -16,13 +16,13 @@ class MyApp extends StatelessWidget {
 // #docregion MaterialApp
     return const MaterialApp(
       title: 'Localizations Sample App',
-      localizationsDelegates: [
+      localizationsDelegates: const [
         AppLocalizations.delegate, // Add this line
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
+      supportedLocales: const [
         Locale('en', ''), // English, no country code
         Locale('es', ''), // Spanish, no country code
       ],

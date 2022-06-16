@@ -32,7 +32,7 @@ void examples(BuildContext context) {
 
   const MaterialApp(
 // #docregion SupportedLocales
-    supportedLocales: [
+    supportedLocales: const [
       Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
       Locale.fromSubtags(
           languageCode: 'zh',
