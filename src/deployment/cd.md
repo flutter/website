@@ -200,13 +200,15 @@ testing, and distributing apps and frameworks for Apple platforms.
 
 ### Requirements
 
-* Xcode Version 13.4.1 or higher.
+* Xcode 13.4.1 or higher.
 * Be enrolled in the [Apple Developer Program][].
 
 ### Custom build script
 
 Xcode Cloud recognizes three different [custom build scripts][] that can be
-used to perform additional tasks at a designated time.
+used to perform additional tasks at a designated time. It also includes a set
+of [predefined environment variables][], such as `$CI_WORKSPACE`, which is the
+location of your cloned repository.
 
 {{site.alert.note}}
   The temporary build environment that Xcode Cloud uses includes tools that are
@@ -219,60 +221,12 @@ used to perform additional tasks at a designated time.
 Leverage the `post-clone` script that runs after Xcode Cloud
 clones your Git repository using the following instructions:
 
-1. Navigate to the `ios` folder in your project root.
-
-2. Create a new folder named `ci_scripts`. 
-
-3. Create a file named `ci_post_clone.sh` in the `ci_scripts` folder.
-    * Add a shebang line at the top of the script.
-      ```sh
-      #!/bin/sh
-      ```
-
-4. This file should be added to your git repository and marked as executable.
-    ```terminal
-    $ git add --chmod=+x ios/ci_scripts/ci_post_clone.sh
-    ```
-
-#### Working directory
-
-Xcode Cloud includes a set of [predefined environment variables][], such as
-`$CI_WORKSPACE`, which is the location of your cloned repository.
-
-The working directory for Xcode Cloud's custom build scripts is the `ci_scripts/`
-folder, hence you need to navigate to the root of your cloned project by adding
-the following command to your `ci_post_clone` script below the shebang line.
-
-```sh
-cd $CI_WORKSPACE
-```
-
-#### Install Flutter
-
-The Flutter SDK must be installed manually, [Download Flutter via Git][] by
-adding the commands below to your `ci_post_clone` script:
-
-```sh
-git clone https://github.com/flutter/flutter.git -b stable $HOME/flutter
-export PATH="$PATH:$HOME/flutter/bin"
-```
-
-#### Install CocoaPods
-
-CocoaPods can be installed by adding the following to your `ci_post_clone` script:
-
-```sh
-HOMEBREW_NO_AUTO_UPDATE=1 # disable homebrew's automatic updates
-brew install cocoapods
-```
-
-#### Complete script
+Create a file at `ios/ci_scripts/ci_post_clone.sh` and add the content below.
 
 ```sh
 #!/bin/sh
 
-# by default, the execution directory of this script is the ci_scripts directory.
-# CI_WORKSPACE is the directory of your cloned repo.
+# The default execution directory of this script is the ci_scripts directory.
 cd $CI_WORKSPACE # change working directory to the root of your cloned repo.
 
 # Install Flutter using git.
@@ -289,10 +243,15 @@ flutter pub get
 HOMEBREW_NO_AUTO_UPDATE=1 # disable homebrew's automatic updates.
 brew install cocoapods
 
-# Install CocoaPods dependencies".
+# Install CocoaPods dependencies.
 cd ios && pod install # run `pod install` in the `ios` directory.
 
 exit 0
+```
+
+This file should be added to your git repository and marked as executable.
+```terminal
+$ git add --chmod=+x ios/ci_scripts/ci_post_clone.sh
 ```
 
 ### Workflow configuration
@@ -365,7 +324,6 @@ information.
 [Apple Developer Program]: https://developer.apple.com/programs
 [Xcode Cloud]: https://developer.apple.com/xcode-cloud
 [Xcode Cloud workflow]: https://developer.apple.com/documentation/xcode/xcode-cloud-workflow-reference
-[Download Flutter via Git]: {{site.url}}/get-started/install/macos#downloading-straight-from-github-instead-of-using-an-archive
 [custom build scripts]: https://developer.apple.com/documentation/xcode/writing-custom-build-scripts
 [predefined environment variables]: https://developer.apple.com/documentation/xcode/environment-variable-reference
 [Setting the next build number for Xcode Cloud builds]: https://developer.apple.com/documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds#Set-the-next-build-number-to-a-custom-value
