@@ -223,6 +223,7 @@ Xcode Cloud clones your Git repository using the following instructions:
 
 Create a file at `ios/ci_scripts/ci_post_clone.sh` and add the content below.
 
+<?code-excerpt "ios/ci_scripts/ci_post_clone.sh"?>
 ```sh
 #!/bin/sh
 
