@@ -205,7 +205,7 @@ testing, and distributing apps and frameworks for Apple platforms.
 
 ### Custom build script
 
-Xcode Cloud recognizes three different [custom build scripts][] that can be
+Xcode Cloud recognizes three different custom build scripts that can be
 used to perform additional tasks at a designated time. It also includes a set
 of [predefined environment variables][], such as `$CI_WORKSPACE`, which is the
 location of your cloned repository.
@@ -218,8 +218,8 @@ location of your cloned repository.
 
 #### Post-clone script
 
-Leverage the `post-clone` script that runs after Xcode Cloud
-clones your Git repository using the following instructions:
+Leverage the post-clone [custom build script][] that runs after
+Xcode Cloud clones your Git repository using the following instructions:
 
 Create a file at `ios/ci_scripts/ci_post_clone.sh` and add the content below.
 
@@ -324,6 +324,6 @@ information.
 [Apple Developer Program]: https://developer.apple.com/programs
 [Xcode Cloud]: https://developer.apple.com/xcode-cloud
 [Xcode Cloud workflow]: https://developer.apple.com/documentation/xcode/xcode-cloud-workflow-reference
-[custom build scripts]: https://developer.apple.com/documentation/xcode/writing-custom-build-scripts
+[custom build script]: https://developer.apple.com/documentation/xcode/writing-custom-build-scripts
 [predefined environment variables]: https://developer.apple.com/documentation/xcode/environment-variable-reference
 [Setting the next build number for Xcode Cloud builds]: https://developer.apple.com/documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds#Set-the-next-build-number-to-a-custom-value
