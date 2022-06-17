@@ -15,10 +15,10 @@ class ExpandableFab extends StatefulWidget {
   final List<Widget> children;
 
   @override
-  ExpandableFabState createState() => ExpandableFabState();
+  State<ExpandableFab> createState() => _ExpandableFabState();
 }
 
-class ExpandableFabState extends State<ExpandableFab> {
+class _ExpandableFabState extends State<ExpandableFab> {
   @override
   Widget build(BuildContext context) {
     return const SizedBox();
