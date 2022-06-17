@@ -205,7 +205,7 @@ testing, and distributing apps and frameworks for Apple platforms.
 
 ### Custom build script
 
-Xcode Cloud recognizes three different custom build scripts that can be
+Xcode Cloud recognizes [custom build scripts][] that can be 
 used to perform additional tasks at a designated time. It also includes a set
 of [predefined environment variables][], such as `$CI_WORKSPACE`, which is the
 location of your cloned repository.
