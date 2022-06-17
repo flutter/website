@@ -244,10 +244,19 @@ as well as many other open source packages, on [pub.dev][].
     ```diff
     --- step1_base/pubspec.yaml
     +++ step2_use_package/pubspec.yaml
-    @@ -9,4 +9,5 @@
+    @@ -24,13 +23,5 @@
+    -# To automatically upgrade your package dependencies to the latest versions
+    -# consider running `flutter pub upgrade --major-versions`. Alternatively,
+    -# dependencies can be manually updated by changing the version numbers below to
+    -# the latest version available on pub.dev. To see which dependencies have newer
+    -# versions available, run `flutter pub outdated`.
      dependencies:
        flutter:
          sdk: flutter
+    -
+    -
+    -  # The following adds the Cupertino Icons font to your application.
+    -  # Use with the CupertinoIcons class for iOS style icons.
        cupertino_icons: ^1.0.2
     +  english_words: ^4.0.0
     ```
