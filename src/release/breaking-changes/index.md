@@ -12,11 +12,13 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Default PrimaryScrollController on Desktop][]
 * [Deprecated API removed after v2.10][]
 * [Page transitions replaced by ZoomPageTransitionsBuilder][]
 * [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
 
+[Default PrimaryScrollController on Desktop]: {{site.url}}/release/breaking-changes/primary-scroll-controller-desktop
 [Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
 [Page transitions replaced by ZoomPageTransitionsBuilder]: {{site.url}}/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
 [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
