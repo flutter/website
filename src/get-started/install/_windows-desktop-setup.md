@@ -1,13 +1,5 @@
 ## Windows setup
 
-{{site.alert.warning}}
-  **Windows support!**
-  As of Flutter 2.10, Windows support is available
-  on the `stable` channel! For more information, see
-  [Announcing Flutter for Windows][], a free article
-  on Medium.
-{{site.alert.end}}
-
 [Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 
 ### Additional Windows requirements
