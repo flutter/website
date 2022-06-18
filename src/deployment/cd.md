@@ -218,7 +218,7 @@ location of your cloned repository.
 
 #### Post-clone script
 
-Leverage the post-clone [custom build script][] that runs after
+Leverage the post-clone custom build script that runs after
 Xcode Cloud clones your Git repository using the following instructions:
 
 Create a file at `ios/ci_scripts/ci_post_clone.sh` and add the content below.
@@ -325,6 +325,6 @@ information.
 [Apple Developer Program]: https://developer.apple.com/programs
 [Xcode Cloud]: https://developer.apple.com/xcode-cloud
 [Xcode Cloud workflow]: https://developer.apple.com/documentation/xcode/xcode-cloud-workflow-reference
-[custom build script]: https://developer.apple.com/documentation/xcode/writing-custom-build-scripts
+[custom build scripts]: https://developer.apple.com/documentation/xcode/writing-custom-build-scripts
 [predefined environment variables]: https://developer.apple.com/documentation/xcode/environment-variable-reference
 [Setting the next build number for Xcode Cloud builds]: https://developer.apple.com/documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds#Set-the-next-build-number-to-a-custom-value
