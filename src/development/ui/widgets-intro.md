@@ -117,7 +117,6 @@ class MyAppBar extends StatelessWidget {
       decoration: BoxDecoration(color: Colors.blue[500]),
       // Row is a horizontal, linear layout.
       child: Row(
-        // <Widget> is the type of items in the list.
         children: [
           const IconButton(
             icon: Icon(Icons.menu),
