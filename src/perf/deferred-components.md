@@ -255,7 +255,7 @@ class _SomeWidgetState extends State<SomeWidget> {
   Widget build(BuildContext context) {
     return FutureBuilder<void>(
       future: _libraryFuture,
-      builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+      builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasError) {
             return Text('Error: ${snapshot.error}');
