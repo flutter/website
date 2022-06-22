@@ -1,8 +1,10 @@
 import 'package:flutter/widgets.dart';
 
 class LifecycleWatcher extends StatefulWidget {
+  const LifecycleWatcher({super.key});
+
   @override
-  _LifecycleWatcherState createState() => _LifecycleWatcherState();
+  State<LifecycleWatcher> createState() => _LifecycleWatcherState();
 }
 
 class _LifecycleWatcherState extends State<LifecycleWatcher>
@@ -45,5 +47,5 @@ class _LifecycleWatcherState extends State<LifecycleWatcher>
 }
 
 void main() {
-  runApp(Center(child: LifecycleWatcher()));
+  runApp(const Center(child: LifecycleWatcher()));
 }

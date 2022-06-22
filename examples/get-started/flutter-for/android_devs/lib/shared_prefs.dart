@@ -18,7 +18,7 @@ void main() {
   );
 }
 
-void _incrementCounter() async {
+Future<void> _incrementCounter() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   int counter = (prefs.getInt('counter') ?? 0) + 1;
   await prefs.setInt('counter', counter);

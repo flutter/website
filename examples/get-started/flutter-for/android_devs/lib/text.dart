@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
+  const MyWidget({super.key});
 
   // #docregion CustomFont
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: const Center(
         child: Text(

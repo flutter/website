@@ -2,13 +2,16 @@
 import 'package:flutter/material.dart';
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.red),
+        textSelectionTheme:
+            const TextSelectionThemeData(selectionColor: Colors.red),
       ),
       home: const SampleAppPage(),
     );
@@ -17,7 +20,7 @@ class SampleApp extends StatelessWidget {
 // #enddocregion Theme
 
 class SampleAppPage extends StatelessWidget {
-  const SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
   Widget build(BuildContext context) {

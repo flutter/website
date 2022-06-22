@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -14,16 +16,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -37,11 +39,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget _getToggleChild() {
     if (toggle) {
-      return Text('Toggle One');
+      return const Text('Toggle One');
     } else {
       return ElevatedButton(
         onPressed: () {},
-        child: Text('Toggle Two'),
+        child: const Text('Toggle Two'),
       );
     }
   }
@@ -50,7 +52,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: Center(
         child: _getToggleChild(),
@@ -58,7 +60,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _toggle,
         tooltip: 'Update Text',
-        child: Icon(Icons.update),
+        child: const Icon(Icons.update),
       ),
     );
   }
@@ -66,22 +68,22 @@ class _SampleAppPageState extends State<SampleAppPage> {
 // #enddocregion ToggleWidget
 
 class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
+  const MyWidget({super.key});
 
   // #docregion SimpleWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.only(left: 20.0, right: 30.0),
+            padding: const EdgeInsets.only(left: 20.0, right: 30.0),
           ),
           onPressed: () {},
-          child: Text('Hello'),
+          child: const Text('Hello'),
         ),
       ),
     );
@@ -90,7 +92,7 @@ class MyWidget extends StatelessWidget {
 }
 
 class RowExample extends StatelessWidget {
-  const RowExample({Key? key}) : super(key: key);
+  const RowExample({super.key});
 
   // #docregion Row
   @override
@@ -109,7 +111,7 @@ class RowExample extends StatelessWidget {
 }
 
 class ColumnExample extends StatelessWidget {
-  const ColumnExample({Key? key}) : super(key: key);
+  const ColumnExample({super.key});
 
   // #docregion Column
   @override
@@ -128,7 +130,7 @@ class ColumnExample extends StatelessWidget {
 }
 
 class ListViewExample extends StatelessWidget {
-  const ListViewExample({Key? key}) : super(key: key);
+  const ListViewExample({super.key});
 
   // #docregion ListView
   @override

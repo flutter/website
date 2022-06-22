@@ -1,16 +1,18 @@
+import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton({Key? key}) : super(key: key);
+  const MyButton({super.key});
 
   // #docregion onPressed
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        print('click');
+        developer.log('click');
       },
-      child: Text('Button'),
+      child: const Text('Button'),
     );
   }
   // #enddocregion onPressed
@@ -18,13 +20,15 @@ class MyButton extends StatelessWidget {
 
 // #docregion onTap
 class SampleTapApp extends StatelessWidget {
+  const SampleTapApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: GestureDetector(
           onTap: () {
-            print('tap');
+            developer.log('tap');
           },
           child: const FlutterLogo(
             size: 200.0,
@@ -38,8 +42,10 @@ class SampleTapApp extends StatelessWidget {
 
 // #docregion SampleApp
 class SampleApp extends StatefulWidget {
+  const SampleApp({super.key});
+
   @override
-  _SampleAppState createState() => _SampleAppState();
+  State<SampleApp> createState() => _SampleAppState();
 }
 
 class _SampleAppState extends State<SampleApp>
@@ -74,7 +80,7 @@ class _SampleAppState extends State<SampleApp>
           },
           child: RotationTransition(
             turns: curve,
-            child: FlutterLogo(
+            child: const FlutterLogo(
               size: 200.0,
             ),
           ),

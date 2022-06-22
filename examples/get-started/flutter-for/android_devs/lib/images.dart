@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
+  const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MyWidget extends StatelessWidget {
 }
 
 class ImageExample extends StatelessWidget {
-  const ImageExample({Key? key}) : super(key: key);
+  const ImageExample({super.key});
 
   // #docregion Imageasset
   @override

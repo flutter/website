@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String label;
 
-  CustomButton(this.label);
+  const CustomButton(this.label, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +17,13 @@ class CustomButton extends StatelessWidget {
 // #enddocregion CustomButton
 
 class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
+  const MyWidget({super.key});
 
   // #docregion UseCustomButton
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: CustomButton("Hello"),
+    return const Center(
+      child: CustomButton('Hello'),
     );
   }
   // #enddocregion UseCustomButton

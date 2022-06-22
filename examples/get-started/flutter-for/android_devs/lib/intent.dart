@@ -5,16 +5,16 @@ void main() {
   runApp(MaterialApp(
     home: const MyAppHome(), // Becomes the route named '/'.
     routes: <String, WidgetBuilder>{
-      '/a': (BuildContext context) => const MyPage(title: 'page A'),
-      '/b': (BuildContext context) => const MyPage(title: 'page B'),
-      '/c': (BuildContext context) => const MyPage(title: 'page C'),
+      '/a': (context) => const MyPage(title: 'page A'),
+      '/b': (context) => const MyPage(title: 'page B'),
+      '/c': (context) => const MyPage(title: 'page C'),
     },
   ));
 }
 // #enddocregion Map
 
 class MyAppHome extends StatefulWidget {
-  const MyAppHome({Key? key}) : super(key: key);
+  const MyAppHome({super.key});
 
   @override
   State<MyAppHome> createState() => _MyAppHomeState();
@@ -28,7 +28,7 @@ class _MyAppHomeState extends State<MyAppHome> {
 }
 
 class MyPage extends StatelessWidget {
-  const MyPage({Key? key, required this.title}) : super(key: key);
+  const MyPage({super.key, required this.title});
   final String title;
 
   void navigate(BuildContext context) {

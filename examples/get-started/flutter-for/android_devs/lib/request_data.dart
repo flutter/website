@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -14,16 +16,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -41,7 +43,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return Scaffold(body: Center(child: Text(dataShared)));
   }
 
-  void getSharedText() async {
+  Future<void> getSharedText() async {
     var sharedData = await platform.invokeMethod('getSharedText');
     if (sharedData != null) {
       setState(() {

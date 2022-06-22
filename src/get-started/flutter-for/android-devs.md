@@ -124,10 +124,11 @@ For example:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -136,16 +137,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -163,13 +164,13 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: Center(child: Text(textToShow)),
       floatingActionButton: FloatingActionButton(
         onPressed: _updateText,
         tooltip: 'Update Text',
-        child: Icon(Icons.update),
+        child: const Icon(Icons.update),
       ),
     );
   }
@@ -189,15 +190,15 @@ The following example shows how to display a simple widget with padding:
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      title: Text('Sample App'),
+      title: const Text('Sample App'),
     ),
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.only(left: 20.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
         ),
         onPressed: () {},
-        child: Text('Hello'),
+        child: const Text('Hello'),
       ),
     ),
   );
@@ -224,10 +225,12 @@ widgets when you click on a `FloatingActionButton`:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -236,16 +239,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -259,11 +262,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget _getToggleChild() {
     if (toggle) {
-      return Text('Toggle One');
+      return const Text('Toggle One');
     } else {
       return ElevatedButton(
         onPressed: () {},
-        child: Text('Toggle Two'),
+        child: const Text('Toggle Two'),
       );
     }
   }
@@ -272,7 +275,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: Center(
         child: _getToggleChild(),
@@ -280,7 +283,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _toggle,
         tooltip: 'Update Text',
-        child: Icon(Icons.update),
+        child: const Icon(Icons.update),
       ),
     );
   }
@@ -317,10 +320,11 @@ widget into a logo when you press the `FloatingActionButton`:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(FadeAppTest());
+  runApp(const FadeAppTest());
 }
 
 class FadeAppTest extends StatelessWidget {
+  const FadeAppTest({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -329,16 +333,17 @@ class FadeAppTest extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyFadeTest(title: 'Fade Demo'),
+      home: const MyFadeTest(title: 'Fade Demo'),
     );
   }
 }
 
 class MyFadeTest extends StatefulWidget {
-  MyFadeTest({Key? key, required this.title}) : super(key: key);
+  const MyFadeTest({super.key, required this.title});
+
   final String title;
   @override
-  _MyFadeTest createState() => _MyFadeTest();
+  State<MyFadeTest> createState() => _MyFadeTest();
 }
 
 class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
@@ -367,7 +372,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: FlutterLogo(
+          child: const FlutterLogo(
             size: 100.0,
           ),
         ),
@@ -377,7 +382,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
         onPressed: () {
           controller.forward();
         },
-        child: Icon(Icons.brush),
+        child: const Icon(Icons.brush),
       ),
     );
   }
@@ -407,21 +412,28 @@ see Collin's answer on [Custom Paint][].
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: DemoApp()));
+void main() => runApp(const MaterialApp(home: DemoApp()));
 
 class DemoApp extends StatelessWidget {
-  Widget build(BuildContext context) => Scaffold(body: Signature());
+  const DemoApp({super.key});
+
+  @override
+  Widget build(BuildContext context) => const Scaffold(body: Signature());
 }
 
 class Signature extends StatefulWidget {
+  const Signature({super.key});
+
+  @override
   SignatureState createState() => SignatureState();
 }
 
 class SignatureState extends State<Signature> {
   List<Offset?> _points = <Offset>[];
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onPanUpdate: (DragUpdateDetails details) {
+      onPanUpdate: (details) {
         setState(() {
           RenderBox? referenceBox = context.findRenderObject() as RenderBox;
           Offset localPosition =
@@ -429,7 +441,7 @@ class SignatureState extends State<Signature> {
           _points = List.from(_points)..add(localPosition);
         });
       },
-      onPanEnd: (DragEndDetails details) => _points.add(null),
+      onPanEnd: (details) => _points.add(null),
       child: CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
@@ -441,18 +453,22 @@ class SignatureState extends State<Signature> {
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
   final List<Offset?> points;
+  @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 5.0;
     for (int i = 0; i < points.length - 1; i++) {
-      if (points[i] != null && points[i + 1] != null)
+      if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
+      }
     }
   }
 
-  bool shouldRepaint(SignaturePainter other) => other.points != points;
+  @override
+  bool shouldRepaint(SignaturePainter oldDelegate) =>
+      oldDelegate.points != points;
 }
 ```
 
@@ -477,7 +493,7 @@ a label, rather than by extending `ElevatedButton`:
 class CustomButton extends StatelessWidget {
   final String label;
 
-  CustomButton(this.label);
+  const CustomButton(this.label, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -495,8 +511,8 @@ Then use `CustomButton`, just as you'd use any other Flutter widget:
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Center(
-    child: CustomButton("Hello"),
+  return const Center(
+    child: CustomButton('Hello'),
   );
 }
 ```
@@ -536,9 +552,9 @@ void main() {
   runApp(MaterialApp(
     home: const MyAppHome(), // Becomes the route named '/'.
     routes: <String, WidgetBuilder>{
-      '/a': (BuildContext context) => const MyPage(title: 'page A'),
-      '/b': (BuildContext context) => const MyPage(title: 'page B'),
-      '/c': (BuildContext context) => const MyPage(title: 'page C'),
+      '/a': (context) => const MyPage(title: 'page A'),
+      '/b': (context) => const MyPage(title: 'page B'),
+      '/c': (context) => const MyPage(title: 'page C'),
     },
   ));
 }
@@ -657,10 +673,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -669,16 +687,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -696,7 +714,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return Scaffold(body: Center(child: Text(dataShared)));
   }
 
-  void getSharedText() async {
+  Future<void> getSharedText() async {
     var sharedData = await platform.invokeMethod('getSharedText');
     if (sharedData != null) {
       setState(() {
@@ -775,10 +793,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -786,16 +805,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -811,11 +830,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView.builder(
         itemCount: widgets.length,
-        itemBuilder: (BuildContext context, int position) {
+        itemBuilder: (context, position) {
           return getRow(position);
         },
       ),
@@ -824,7 +843,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -957,10 +976,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -968,16 +989,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -999,14 +1020,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Widget getProgressDialog() {
-    return Center(child: CircularProgressIndicator());
+    return const Center(child: CircularProgressIndicator());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: getBody(),
     );
@@ -1015,7 +1036,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   ListView getListView() {
     return ListView.builder(
       itemCount: widgets.length,
-      itemBuilder: (BuildContext context, int position) {
+      itemBuilder: (context, position) {
         return getRow(position);
       },
     );
@@ -1023,7 +1044,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1093,13 +1114,13 @@ To make a network call, call `await` on the `async` function `http.get()`:
 
 <?code-excerpt "lib/network.dart"?>
 ```dart
-import 'dart:convert';
-
+import 'dart:developer' as developer;
 import 'package:http/http.dart' as http;
 
 Future<void> loadData() async {
   var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   http.Response response = await http.get(dataURL);
+  developer.log(response.body);
 }
 ```
 
@@ -1126,10 +1147,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -1137,16 +1160,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -1168,14 +1191,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Widget getProgressDialog() {
-    return Center(child: CircularProgressIndicator());
+    return const Center(child: CircularProgressIndicator());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: getBody(),
     );
@@ -1184,7 +1207,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   ListView getListView() {
     return ListView.builder(
       itemCount: widgets.length,
-      itemBuilder: (BuildContext context, int position) {
+      itemBuilder: (context, position) {
         return getRow(position);
       },
     );
@@ -1192,7 +1215,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1388,8 +1411,10 @@ containing activity:
 import 'package:flutter/widgets.dart';
 
 class LifecycleWatcher extends StatefulWidget {
+  const LifecycleWatcher({super.key});
+
   @override
-  _LifecycleWatcherState createState() => _LifecycleWatcherState();
+  State<LifecycleWatcher> createState() => _LifecycleWatcherState();
 }
 
 class _LifecycleWatcherState extends State<LifecycleWatcher>
@@ -1432,7 +1457,7 @@ class _LifecycleWatcherState extends State<LifecycleWatcher>
 }
 
 void main() {
-  runApp(Center(child: LifecycleWatcher()));
+  runApp(const Center(child: LifecycleWatcher()));
 }
 ```
 
@@ -1549,9 +1574,9 @@ In Flutter there are two ways of adding touch listeners:
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        print('click');
+        developer.log('click');
       },
-      child: Text('Button'),
+      child: const Text('Button'),
     );
   }
   ```
@@ -1562,13 +1587,15 @@ In Flutter there are two ways of adding touch listeners:
   <?code-excerpt "lib/events.dart (onTap)"?>
   ```dart
   class SampleTapApp extends StatelessWidget {
+    const SampleTapApp({super.key});
+
     @override
     Widget build(BuildContext context) {
       return Scaffold(
         body: Center(
           child: GestureDetector(
             onTap: () {
-              print('tap');
+              developer.log('tap');
             },
             child: const FlutterLogo(
               size: 200.0,
@@ -1631,8 +1658,10 @@ that rotates the Flutter logo on a double tap:
 <?code-excerpt "lib/events.dart (SampleApp)"?>
 ```dart
 class SampleApp extends StatefulWidget {
+  const SampleApp({super.key});
+
   @override
-  _SampleAppState createState() => _SampleAppState();
+  State<SampleApp> createState() => _SampleAppState();
 }
 
 class _SampleAppState extends State<SampleApp>
@@ -1667,7 +1696,7 @@ class _SampleAppState extends State<SampleApp>
           },
           child: RotationTransition(
             turns: curve,
-            child: FlutterLogo(
+            child: const FlutterLogo(
               size: 200.0,
             ),
           ),
@@ -1698,10 +1727,11 @@ that scrolling is fast and smooth.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -1710,16 +1740,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -1727,7 +1757,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView(children: _getListData()),
     );
@@ -1737,7 +1767,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Text('Row $i'),
       ));
     }
@@ -1754,13 +1784,16 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 
 <?code-excerpt "lib/list_item_tapped.dart"?>
 ```dart
+import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -1769,16 +1802,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -1786,7 +1819,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView(children: _getListData()),
     );
@@ -1798,10 +1831,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
       widgets.add(
         GestureDetector(
           onTap: () {
-            print('row tapped');
+            developer.log('row tapped');
           },
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Text('Row $i'),
           ),
         ),
@@ -1830,13 +1863,16 @@ as shown in the next example.
 
 <?code-excerpt "lib/listview_dynamic.dart"?>
 ```dart
+import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -1845,16 +1881,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -1872,7 +1908,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView(children: widgets),
     );
@@ -1884,11 +1920,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
         setState(() {
           widgets = List.from(widgets);
           widgets.add(getRow(widgets.length));
-          print('row $i');
+          developer.log('row $i');
         });
       },
       child: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Text('Row $i'),
       ),
     );
@@ -1904,13 +1940,16 @@ recycles list elements for you:
 
 <?code-excerpt "lib/listview_builder.dart"?>
 ```dart
+import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -1919,16 +1958,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -1946,11 +1985,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView.builder(
         itemCount: widgets.length,
-        itemBuilder: (BuildContext context, int position) {
+        itemBuilder: (context, position) {
           return getRow(position);
         },
       ),
@@ -1962,11 +2001,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
       onTap: () {
         setState(() {
           widgets.add(getRow(widgets.length));
-          print('row $i');
+          developer.log('row $i');
         });
       },
       child: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Text('Row $i'),
       ),
     );
@@ -2011,7 +2050,7 @@ Then assign the font to your `Text` widget:
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: const Center(
         child: Text(
@@ -2081,10 +2120,11 @@ update the state, and pass a new `InputDecoration` object.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -2093,16 +2133,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -2112,11 +2152,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: Center(
         child: TextField(
-          onSubmitted: (String text) {
+          onSubmitted: (text) {
             setState(() {
               if (!isEmail(text)) {
                 _errorText = 'Error: This is not an email';
@@ -2239,13 +2279,16 @@ the primary swatch is set to blue and text selection color is red.
 import 'package:flutter/material.dart';
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.red),
+        textSelectionTheme:
+            const TextSelectionThemeData(selectionColor: Colors.red),
       ),
       home: const SampleAppPage(),
     );
@@ -2288,7 +2331,7 @@ void main() {
   );
 }
 
-void _incrementCounter() async {
+Future<void> _incrementCounter() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   int counter = (prefs.getInt('counter') ?? 0) + 1;
   await prefs.setInt('counter', counter);

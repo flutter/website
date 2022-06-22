@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(SampleApp());
+  runApp(const SampleApp());
 }
 
 class SampleApp extends StatelessWidget {
+  const SampleApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,16 +16,16 @@ class SampleApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SampleAppPage(),
+      home: const SampleAppPage(),
     );
   }
 }
 
 class SampleAppPage extends StatefulWidget {
-  SampleAppPage({Key? key}) : super(key: key);
+  const SampleAppPage({super.key});
 
   @override
-  _SampleAppPageState createState() => _SampleAppPageState();
+  State<SampleAppPage> createState() => _SampleAppPageState();
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
@@ -40,11 +41,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sample App'),
+        title: const Text('Sample App'),
       ),
       body: ListView.builder(
         itemCount: widgets.length,
-        itemBuilder: (BuildContext context, int position) {
+        itemBuilder: (context, position) {
           return getRow(position);
         },
       ),
@@ -53,7 +54,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }

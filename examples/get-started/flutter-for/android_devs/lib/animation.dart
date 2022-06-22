@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(FadeAppTest());
+  runApp(const FadeAppTest());
 }
 
 class FadeAppTest extends StatelessWidget {
+  const FadeAppTest({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -13,16 +14,17 @@ class FadeAppTest extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyFadeTest(title: 'Fade Demo'),
+      home: const MyFadeTest(title: 'Fade Demo'),
     );
   }
 }
 
 class MyFadeTest extends StatefulWidget {
-  MyFadeTest({Key? key, required this.title}) : super(key: key);
+  const MyFadeTest({super.key, required this.title});
+
   final String title;
   @override
-  _MyFadeTest createState() => _MyFadeTest();
+  State<MyFadeTest> createState() => _MyFadeTest();
 }
 
 class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
@@ -51,7 +53,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: FlutterLogo(
+          child: const FlutterLogo(
             size: 100.0,
           ),
         ),
@@ -61,7 +63,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
         onPressed: () {
           controller.forward();
         },
-        child: Icon(Icons.brush),
+        child: const Icon(Icons.brush),
       ),
     );
   }

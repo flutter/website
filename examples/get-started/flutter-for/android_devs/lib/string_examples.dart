@@ -7,7 +7,7 @@ class Strings {
 // #enddocregion Strings
 
 class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
+  const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
