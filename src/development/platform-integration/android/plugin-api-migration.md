@@ -20,8 +20,9 @@ won't be immediately deprecated,
 but we encourage you to migrate to the new APIs based on
 [`FlutterPlugin`][].
 
-The new API has the advantage of providing a cleaner set of accessors for
-lifecycle dependent components compared to the old APIs. For instance
+The new API has the advantage of providing a cleaner set
+of accessors for lifecycle dependent components compared
+to the old APIs. For instance
 [`PluginRegistry.Registrar.activity()`][] could return null if
 Flutter isn't attached to any activities.
 
@@ -372,5 +373,5 @@ a non-UI configuration.
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`PluginRegistry.Registrar.activity()`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--
 [`ServiceAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/service/ServiceAware.html
-[Upgrading pre 1.12 Android projects]: {{site.url}}/go/android-project-migration
+[Upgrading pre 1.12 Android projects]: {{site.github}}/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects
 [verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers
