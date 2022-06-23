@@ -80,6 +80,13 @@
   cover: learn-google-flutter-fast.jpg
   link: "https://www.amazon.com/Learn-Google-Flutter-Fast-Example/dp/1092297375"
   desc: "Learn Google Flutter by example. Over 65 example mini-apps."
+- title: 'Managing State in Flutter Pragmatically'
+  authors:
+    - Waleed Arshad
+  publisher: Self-published
+  cover: managing-state-in-flutter.jpg
+  link: "https://www.amazon.com/Managing-State-Flutter-Pragmatically-management-dp-1801070776/dp/1801070776"
+  desc: "Explore popular state management techniques in Flutter."
 - title: 'Practical Flutter'
   authors:
     - Frank Zammetti
