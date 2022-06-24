@@ -2345,7 +2345,7 @@ We encourage you to check the
 [Migrating your plugin to the new APIs][] documentation,
 and upgrade your plugins accordingly.
 
-Migrating your plugin to the new APis): {{site.url}}/development/platform-integration/android/plugin-api-migration
+[Migrating your plugin to the new APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 
 [1984]({{site.github}}/flutter/plugins/pull/1984) Remove Flutterfire plugins (moved to FirebaseExtended)
 
