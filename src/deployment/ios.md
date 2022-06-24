@@ -185,9 +185,12 @@ in your project's `build/ios/archive/` directory and an App Store app
 bundle (`.ipa` file) in `build/ios/ipa`.
 
 {{site.alert.note}}
- Running `flutter build ipa` command line method but without a .plist file to specify how the IPA is built, it will only generate a .xarchive file. To
- export an IPA, create a new file called `ExportOptions.plist` and add as a option `--export-options-plist=ios/ExportOptions.plist` to command. See
- `xcodebuild -h` for available exportOptionsPlist keys.
+  Running the `flutter build ipa` command without specifying
+  a `.plist` file only generates an `.xarchive` file.
+  To export an IPA, create a new file called `ExportOptions.plist`
+  and run the command with
+  `--export-options-plist=ios/ExportOptions.plist`.
+  See`xcodebuild -h` for available `exportOptionsPlist` keys.
 {{site.alert.end}}
 
 Consider adding the `--obfuscate` and `--split-debug-info` flags to
