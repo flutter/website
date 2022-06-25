@@ -194,7 +194,7 @@ versus a hot restart.
 
 In Dart, [static fields are lazily initialized][const-new].
 This means that the first time you run a Flutter app and a
-static field is read, it is set to whatever value its
+static field is read, it's set to whatever value its
 initializer was evaluated to.
 Global variables and static fields are treated as state,
 and are therefore not reinitialized during hot reload.
@@ -420,7 +420,7 @@ to trigger a rebuild/re-layout/repaint of all existing
 widgets and render objects.
 
 
-[const-new]: https://news.dartlang.org/2012/06/const-static-final-oh-my.html
+[const-new]: {{site.dart-site}}/guides/language/language-tour#final-and-const
 [Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
 [Flutter editor]: {{site.url}}/get-started/editor
 [Issue 43574]: {{site.repo.flutter}}/issues/43574
