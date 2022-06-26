@@ -192,7 +192,7 @@ versus a hot restart.
 
 ### Recent code change is included but app state is excluded
 
-In Dart, [static fields are lazily initialized][const-new].
+In Dart, [static fields are lazily initialized][static-variables].
 This means that the first time you run a Flutter app and a
 static field is read, it's set to whatever value its
 initializer was evaluated to.
