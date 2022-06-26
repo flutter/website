@@ -47,13 +47,13 @@ which Flutter runs:
 |Android |Android SDK 21–30     |
 |Android |Android SDK 19        |
 |iOS     |14-15                 |
+|Linux   |Debian 10             |
+|macOS   |El Capitan & greater  |
 |Web     |Chrome 84             |
 |Web     |Firefox 72.0          |
 |Web     |Safari / Catalina     |
 |Web     |Edge 1.2.0            |
 |Windows |Windows 10            |
-|macOS   |El Capitan & greater  |
-|Linux   |Debian 10             |
 
 Note that Android SDK 20 is covered by
 testing Android SDK 19, as the differences
@@ -68,9 +68,9 @@ between the two platform versions are minimal.
 |Android |Android SDK 17      |
 |Android |Android SDK 16      |
 |iOS     |iOS 9-13            |
+|Linux   |Debian 9 & below    |
 |Windows |Windows 8           |
 |Windows |Windows 7           |
-|Linux   |Debian 9 & below    |
 
 ### Unsupported platforms
 
@@ -78,10 +78,10 @@ between the two platform versions are minimal.
 |--------|--------------------------------------------|
 |Android |Android SDK 15 & below                      |
 |iOS     |[iOS 8][] & below and [`arm7v` 32-bit iOS][]|
+|Linux   |Any 32-bit platform                         |
+|macOS   |Yosemite (10.10) & below                    |
 |Windows |Windows Vista & below                       |
 |Windows |Any 32-bit platform                         |
-|macOS   |Yosemite (10.10) & below                    |
-|Linux   |Any 32-bit platform                         |
 
 [iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
 [`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
