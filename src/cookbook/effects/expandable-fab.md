@@ -31,7 +31,7 @@ The following animation shows the app's behavior:
 ## Create an ExpandableFab widget
 
 Start by creating a new stateful widget called `ExpandableFab`.
-This widget displays the primary FAB and coordinate the expansion
+This widget displays the primary FAB and coordinates the expansion
 and collapse of the other action buttons. The widget takes
 in parameters for whether or not the `ExpandedFab` begins in
 the expanded position, what the maximum distance of each action button is,
@@ -54,7 +54,7 @@ class ExpandableFab extends StatefulWidget {
   final List<Widget> children;
 
   @override
-  _ExpandableFabState createState() => _ExpandableFabState();
+  State<ExpandableFab> createState() => _ExpandableFabState();
 }
 
 class _ExpandableFabState extends State<ExpandableFab> {
@@ -205,7 +205,7 @@ class ActionButton extends StatelessWidget {
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
-        color: theme.colorScheme.secondary,
+        color: theme.colorScheme.onSecondary,
       ),
     );
   }
@@ -501,7 +501,7 @@ class ExpandableFab extends StatefulWidget {
   final List<Widget> children;
 
   @override
-  _ExpandableFabState createState() => _ExpandableFabState();
+  State<ExpandableFab> createState() => _ExpandableFabState();
 }
 
 class _ExpandableFabState extends State<ExpandableFab>
@@ -689,7 +689,7 @@ class ActionButton extends StatelessWidget {
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
-        color: theme.colorScheme.secondary,
+        color: theme.colorScheme.onSecondary,
       ),
     );
   }
