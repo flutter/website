@@ -193,7 +193,7 @@ called Dart DevTools). For more information, see
 We don't ship with an opinionated solution,
 but there are a variety of packages that offer
 dependency injection and service location, such as [injectable][],
-[get_it][], and [kiwi][].
+[get_it][], [kiwi][] and [riverpod][].
 
 ## Technology
 
@@ -1118,3 +1118,4 @@ apps built with Flutter should follow Apple's
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: {{site.url}}/development/ui/widgets
 [supported platforms]: {{site.url}}/development/tools/sdk/release-notes/supported-platforms
+[riverpod]: {{site.pub}}/packages/riverpod
