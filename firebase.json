@@ -157,6 +157,7 @@
       { "source": "/go/a11y-text-attributes", "destination": "https://docs.google.com/document/d/1vhbwxFOTRTUvW2C_onFffEH5Fn2pAfMQDyv-gekias0/edit?usp=sharing&resourcekey=0-ChQvjIoWYO7jXcaCXMj5Qw", "type": 301 },
       { "source": "/go/actions-and-shortcuts-design-revision", "destination": "https://docs.google.com/document/d/1A9yald55O_C6Weqp4tOtyMisfOC1ZC0UMq7Yc-pNfVQ/edit", "type": 301 },
       { "source": "/go/adaptive", "destination": "/development/ui/layout/building-adaptive-apps", "type": 301 },
+      { "source": "/go/adaptive-layout-foldables", "destination": "https://docs.google.com/document/d/1N3IaA9bk_HlCFAJSRPof4gtU4fl-1C6_RBxtwnJ-xIs/edit?usp=sharing", "type": 301 },
       { "source": "/go/add-to-app-samples", "destination": "https://docs.google.com/document/d/1M_GsAL8C1NxbsmzI35w2Th1wvX1KMoPHY5yeeNbzjY0", "type": 301 },
       { "source": "/go/android-assets-in-flutter", "destination": "https://docs.google.com/document/d/1jymgQYxRTe5rdprt74ERh7Jsa0lfnRuMnkOmJusLWsE/edit", "type": 301 },
       { "source": "/go/android-embedding-dependencies", "destination": "https://docs.google.com/document/d/1vITp2mUZRa-cmll0sPH0zjNgPlyvOMx7awxPNRAPyic/edit", "type": 301 },
