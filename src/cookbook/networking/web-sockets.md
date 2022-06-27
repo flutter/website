@@ -116,11 +116,9 @@ channel.sink.close();
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     const title = 'WebSocket Demo';
@@ -135,9 +133,9 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
-    super.key,
+    Key? key,
     required this.title,
-  });
+  }) : super(key: key);
 
   final String title;
 
@@ -165,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Form(
               child: TextFormField(
                 controller: _controller,
-                decoration: const InputDecoration(labelText: 'Send a message'),
+                decoration: const InputDecoration(labelText: 'メッセージを送る'),
               ),
             ),
             const SizedBox(height: 24),
@@ -182,7 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _sendMessage,
         tooltip: 'Send message',
         child: const Icon(Icons.send),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 
@@ -199,6 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
   }
 }
+
 ```
 ![Web sockets demo]({{site.url}}/assets/images/docs/cookbook/web-sockets.gif){:.site-mobile-screenshot}
 
