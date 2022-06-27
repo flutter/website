@@ -8,19 +8,17 @@ hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
 
 Flutter workshops are similar to the codelabs,
-but are instructor led and always use DartPad. The
-provided workshop link takes you to the relevant YouTube
-video, which tells you where to find the associated
-DartPad link.
+but are instructor led and always use DartPad.
+The provided workshop link takes you to the relevant YouTube video,
+which tells you where to find the associated DartPad link.
 
 {{site.alert.secondary}}
-  **New workshops for Google I/O!**
-  Our GDEs have created new Flutter workshops!
-  For more information, check out
-  the [Flutter community blog][].
+  You might want to check out the workshops
+  created by our Google Developer Experts (GDEs).
+  You can find them on the [Flutter community blog][].
 {{site.alert.end}}
 
-[Flutter community blog]: {{site.medium}}/@flutter_community/622b52f70173
+[Flutter community blog]: {{site.medium}}/flutter-community/dartpad-workshops-from-flutter-gdes-622b52f70173
 
 ## Good for beginners
 
@@ -108,7 +106,7 @@ like layout and animations:
   Learn how to use the Material [animations][] package to
   add pre-built transitions to a Material app called Reply.
 
-* [Take your Flutter app from boring to beautiful][] **NEW**<br>
+* [Take your Flutter app from boring to beautiful][]<br>
   Learn how to use some of the features in Material 3
   to make your app more beautiful *and* more responsive.
 
