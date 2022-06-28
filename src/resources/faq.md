@@ -193,7 +193,7 @@ called Dart DevTools). For more information, see
 We don't ship with an opinionated solution,
 but there are a variety of packages that offer
 dependency injection and service location, such as [injectable][],
-[get_it][], [kiwi][] and [riverpod][].
+[get_it][], [kiwi][], and [riverpod][].
 
 ## Technology
 
