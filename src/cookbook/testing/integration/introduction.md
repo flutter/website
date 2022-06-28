@@ -229,7 +229,7 @@ and download the corresponding web driver:
 To get started testing in a web browser, [Download ChromeDriver][].
 
 Next, create a new directory named `test_driver` containing a new file
-named`integration_test.dart`:
+named `integration_test.dart`:
 
 <?code-excerpt "lib/test_driver/integration_test.dart"?>
 ```dart
@@ -238,13 +238,23 @@ import 'package:integration_test/integration_test_driver.dart';
 Future<void> main() => integrationDriver();
 ```
 
-Launch WebDriver, for example: 
+Launch `chromedriver` as follows: 
 
 ```terminal
 chromedriver --port=4444
 ```
 
 From the root of the project, run the following command:
+
+```terminal
+flutter drive \
+  --driver=test_driver/integration_test.dart \
+  --target=integration_test/app_test.dart \
+  -d chrome
+```
+
+For a headless testing experience, you can also run `flutter drive` 
+with `web-server` as the target device identifier as follows:
 
 ```terminal
 flutter drive \
