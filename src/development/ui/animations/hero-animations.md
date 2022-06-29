@@ -134,17 +134,6 @@ widgets: one describing the widget in the source route,
 and another describing the widget in the destination route.
 From the user’s point of view, the hero appears to be shared, and
 only the programmer needs to understand this implementation detail.
-
-{{site.alert.secondary}}
-  **Note about dialogs:**
-  Heroes fly from one `PageRoute` to another. Dialogs
-  (displayed with `showDialog()`, for example), use `PopupRoute`s,
-  which are not `PageRoute`s.  At least for now,
-  you can't animate a hero to a `Dialog`.
-  For further developments (and a possible workaround),
-  [watch this issue][].
-{{site.alert.end}}
-
 Hero animation code has the following structure:
 
 1. Define a starting Hero widget, referred to as the _source
