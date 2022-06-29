@@ -49,6 +49,14 @@ For more information regarding unit tests,
 you can view the following recipes 
 or run `flutter test --help` in your terminal.
 
+{{site.alert.note}}
+  If you're writing unit tests for code that
+  uses plugins, see
+  [Plugins in Flutter tests][].
+{{site.alert.end}}
+
+[Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugin-testing
+
 ### Recipes
 
 {% include docs/testing-toc.md type='unit' %}
