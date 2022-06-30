@@ -332,16 +332,16 @@ or the `-i` option to specify the language for ios.
 Please choose **one** of the following:
 
 ```terminal
-$ flutter create --org com.example --template=plugin --platforms=android,ios -a kotlin hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -a kotlin hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin --platforms=android,ios -a java hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -a java hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin --platforms=android,ios -i objc hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -i objc hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin --platforms=android,ios -i swift hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -i swift hello
 ```
 
 This creates a plugin project in the `hello` folder
@@ -429,7 +429,84 @@ in the Project Navigator.
 
 You can run the example app by pressing the run (&#9654;) button.
 
-#### Step 2d: Connect the API and the platform code
+#### Step 2d: Add Linux platform code (.h+.cc)
+
+We recommend you edit the Linux code using an IDE with
+C++ integration. The instructions below are for
+Visual Studio Code with the "C/C++" and "CMake" extensions
+installed, but can be adjusted for other IDEs.
+
+Before editing the Linux platform code in an IDE,
+first make sure that the code has been built at least once
+(in other words, run the example app from your Flutter
+IDE/editor, or in a terminal execute
+`cd hello/example; flutter build linux`).
+
+Then use the following steps:
+
+1. Launch Visual Studio Code.
+1. Open the `hello/example/linux/` directory.
+1. Choose **Yes** in the prompt asking:
+   `Would you like to configure project "linux"?`.
+   This will allow C++ autocomplete to work.
+
+The Linux platform code for your plugin is located in
+`flutter/ephemeral/.plugin_symlinks/hello/linux/`.
+
+You can run the example app using `flutter run`.
+**Note:** Creating a runnable Flutter application
+on Linux requires steps that are part of the `flutter`
+tool, so even if your editor provides CMake
+integration building and running that way won't
+work correctly.
+
+#### Step 2e: Add macOS platform code (.swift)
+
+We recommend you edit the macOS code using Xcode.
+
+Before editing the macOS platform code in Xcode,
+first make sure that the code has been built at least once
+(in other words, run the example app from your IDE/editor,
+or in a terminal execute
+`cd hello/example; flutter build macos`).
+
+Then use the following steps:
+
+1. Launch Xcode.
+1. Select **File > Open**, and select the
+   `hello/example/macos/Runner.xcworkspace` file.
+
+The macOS platform code for your plugin is located in
+`Pods/Development Pods/hello/../../example/macos/Flutter/ephemeral/.symlinks/plugins/hello/macos/Classes`
+in the Project Navigator.
+
+You can run the example app by pressing the run (&#9654;) button.
+
+#### Step 2f: Add Windows platform code (.h+.cpp)
+
+We recommend you edit the Windows code using Visual Studio.
+
+Before editing the Windows platform code in Visual Studio,
+first make sure that the code has been built at least once
+(in other words, run the example app from your IDE/editor,
+or in a terminal execute
+`cd hello/example; flutter build windows`).
+
+Then use the following steps:
+
+1. Launch Visual Studio.
+1. Select **Open a project or solution**, and select the
+   `hello/example/build/windows/hello_example.sln` file.
+
+The Windows platform code for your plugin is located in
+`hello_plugin/Source Files` and `hello_plugin/Header Files` in
+the Solution Explorer.
+
+You can run the example app by right-clicking `hello_example` in
+the Solution Explorer and selecting **Set as Startup Project**,
+then pressing the run (&#9654;) button.
+
+#### Step 2g: Connect the API and the platform code
 
 Finally, you need to connect the API written in Dart code with
 the platform-specific implementations.
