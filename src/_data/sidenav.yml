@@ -207,19 +207,21 @@
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:
-        - title: Using packages
-          permalink: /development/packages-and-plugins/using-packages
+        - title: Background processes
+          permalink: /development/packages-and-plugins/background-processes
+        - title: Developing packages & plugins
+          permalink: /development/packages-and-plugins/developing-packages
+        - title: Flutter Favorites program
+          permalink: /development/packages-and-plugins/favorites
         - title: Happy paths project
           permalink: /development/packages-and-plugins/happy-paths
           match-page-url-exactly: true
         - title: Happy paths recommendations
           permalink: /development/packages-and-plugins/happy-paths/recommended
-        - title: Developing packages & plugins
-          permalink: /development/packages-and-plugins/developing-packages
-        - title: Flutter Favorites program
-          permalink: /development/packages-and-plugins/favorites
-        - title: Background processes
-          permalink: /development/packages-and-plugins/background-processes
+        - title: Plugins in Flutter tests  **NEW**
+          permalink: /development/packages-and-plugins/plugins-in-tests
+        - title: Using packages
+          permalink: /development/packages-and-plugins/using-packages
         - title: Package site
           permalink: https://pub.dev/flutter
     - title: Add Flutter to an existing app

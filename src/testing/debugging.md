@@ -226,7 +226,7 @@ flutter/.travis.yml, or flutter/.cirrus.yml, respectively.
 
 ### Widgets marked const that should be equal to each other, aren't
 
-In debug mode, you may find that two `const` widgets that should to all
+In debug mode, you might find that two `const` widgets that should to all
 appearances be equal (because of Dart's constant deduplication) are not.
 
 For example, this code should print 1:
