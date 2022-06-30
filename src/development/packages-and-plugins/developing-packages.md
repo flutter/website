@@ -504,7 +504,11 @@ the Solution Explorer.
 
 You can run the example app by right-clicking `hello_example` in
 the Solution Explorer and selecting **Set as Startup Project**,
-then pressing the run (&#9654;) button.
+then pressing the run (&#9654;) button. **Important:** After
+making changes to plugin code, you must select
+**Build > Build Solution** before running again, otherwise
+an outdated copy of the built plugin will be run instead
+of the latest version containing your changes.
 
 #### Step 2g: Connect the API and the platform code
 
