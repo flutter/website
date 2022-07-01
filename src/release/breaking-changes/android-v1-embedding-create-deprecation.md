@@ -75,9 +75,8 @@ as plugin developers create and publish v2 plugins.
 
 ## Migration guide
 
-See the [migration guide][].
-
-[migration guide]: {{site.url}}/go/android-project-migration
+For more information,
+see [Upgrading pre 1.12 Android projects][].
 
 ## Timeline
 

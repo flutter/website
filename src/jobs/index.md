@@ -21,8 +21,8 @@ The following jobs are open:
 
 ## Developer Relations
 
-* [Dart Technical Writer]({{site.url}}/jobs/writer)
-* [Developer Relations Engineer]({{site.url}}/jobs/dre)
+* [Tech Lead Manager]({{site.url}}/jobs/tlm)
+* [Developer Relations Engineer, iOS Focus]({{site.url}}/jobs/dre)
 
 ## Product Management & UX
 

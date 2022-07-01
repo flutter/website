@@ -64,9 +64,6 @@ and app development.
 Flutter is designed to support mobile apps that run
 on both Android and iOS, as well as interactive apps
 that you want to run on your web pages or on the desktop.
-(Desktop support for Windows is now available
-on the stable channel; support for macOS and Linux is in beta,
-but a snapshot of the beta is also available on the stable channel.)
 
 Apps that need to deliver highly branded designs
 are particularly well suited for Flutter.
@@ -193,7 +190,7 @@ called Dart DevTools). For more information, see
 We don't ship with an opinionated solution,
 but there are a variety of packages that offer
 dependency injection and service location, such as [injectable][],
-[get_it][], and [kiwi][].
+[get_it][], [kiwi][], and [riverpod][].
 
 ## Technology
 
@@ -471,12 +468,7 @@ For more information, see [Hot reload][].
 ### Where can I deploy my Flutter app?
 
 You can compile and deploy your Flutter app to iOS, Android,
-[web][], and [desktop][] Windows support is stable,
-while macOS and Linux support are in beta.
-For more information about Windows support, see
-[Announcing Flutter for Windows][].
-
-[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
+[web][], and [desktop][].
 
 ### What devices and OS versions does Flutter run on?
 
@@ -504,9 +496,7 @@ For more details, check out the [web instructions][].
 ### Can I use Flutter to build desktop apps?
 
 Yes, desktop support is in stable for Windows,
-and in beta for macOS and Linux,
-but a snapshot of the beta is available on the stable channel.
-The current progress is documented on the [Desktop][desktop] page.
+macOS, and Linux.
 
 ### Can I use Flutter inside of my existing native app?
 
@@ -1118,3 +1108,4 @@ apps built with Flutter should follow Apple's
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: {{site.url}}/development/ui/widgets
 [supported platforms]: {{site.url}}/development/tools/sdk/release-notes/supported-platforms
+[riverpod]: {{site.pub}}/packages/riverpod
