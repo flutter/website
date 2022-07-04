@@ -29,7 +29,7 @@ class Counter extends StatefulWidget {
   const Counter({super.key});
 
   @override
-  _CounterState createState() => _CounterState();
+  State<Counter> createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
