@@ -33,17 +33,17 @@ dependencies:
   url_launcher: ^6.0.18
   battery: ^2.0.3
   e2e: ^0.7.0+1
-
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  path: ^1.8.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  integration_test:
-    sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
