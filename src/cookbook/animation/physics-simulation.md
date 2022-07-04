@@ -64,7 +64,7 @@ class DraggableCard extends StatefulWidget {
   final Widget child;
 
   @override
-  _DraggableCardState createState() => _DraggableCardState();
+  State<DraggableCard> createState() => _DraggableCardState();
 }
 
 class _DraggableCardState extends State<DraggableCard> {
@@ -105,7 +105,7 @@ Then construct an [AnimationController][] in
 --- lib/starter.dart
 +++ lib/step1.dart
 @@ -29,14 +29,20 @@
-   _DraggableCardState createState() => _DraggableCardState();
+   State<DraggableCard> createState() => _DraggableCardState();
  }
 
 -class _DraggableCardState extends State<DraggableCard> {
@@ -376,7 +376,7 @@ class DraggableCard extends StatefulWidget {
   final Widget child;
 
   @override
-  _DraggableCardState createState() => _DraggableCardState();
+  State<DraggableCard> createState() => _DraggableCardState();
 }
 
 class _DraggableCardState extends State<DraggableCard>
