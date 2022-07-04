@@ -114,7 +114,7 @@ class ListOfPlantsWidget extends StatefulWidget {
   final Function(Plant selected) onSelectPlant;
 
   @override
-  _ListOfPlantsWidgetState createState() => _ListOfPlantsWidgetState();
+  State<ListOfPlantsWidget> createState() => _ListOfPlantsWidgetState();
 }
 
 class _ListOfPlantsWidgetState extends State<ListOfPlantsWidget> {
