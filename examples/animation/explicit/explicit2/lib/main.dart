@@ -6,7 +6,7 @@ class BouncingBallDemo extends StatefulWidget {
   const BouncingBallDemo({super.key});
 
   @override
-  _BouncingBallDemoState createState() => _BouncingBallDemoState();
+  State<BouncingBallDemo> createState() => _BouncingBallDemoState();
 }
 
 class _BouncingBallDemoState extends State<BouncingBallDemo>
