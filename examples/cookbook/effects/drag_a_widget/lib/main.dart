@@ -38,7 +38,7 @@ class ExampleDragAndDrop extends StatefulWidget {
   const ExampleDragAndDrop({super.key});
 
   @override
-  _ExampleDragAndDropState createState() => _ExampleDragAndDropState();
+  State<ExampleDragAndDrop> createState() => _ExampleDragAndDropState();
 }
 
 class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
