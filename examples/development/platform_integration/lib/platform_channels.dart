@@ -8,7 +8,7 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 // #docregion MyHomePageState
@@ -43,8 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(
-              child: const Text('Get Battery Level'),
               onPressed: _getBatteryLevel,
+              child: const Text('Get Battery Level'),
             ),
             Text(_batteryLevel),
           ],
