@@ -174,7 +174,7 @@ class FlutterDemo extends StatefulWidget {
   final CounterStorage storage;
 
   @override
-  _FlutterDemoState createState() => _FlutterDemoState();
+  State<FlutterDemo> createState() => _FlutterDemoState();
 }
 
 class _FlutterDemoState extends State<FlutterDemo> {
