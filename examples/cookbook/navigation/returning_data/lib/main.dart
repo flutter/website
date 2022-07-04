@@ -25,9 +25,14 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class SelectionButton extends StatelessWidget {
+class SelectionButton extends StatefulWidget {
   const SelectionButton({super.key});
 
+  @override
+  State<SelectionButton> createState() => _SelectionButtonState();
+}
+
+class _SelectionButtonState extends State<SelectionButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -39,8 +44,6 @@ class SelectionButton extends StatelessWidget {
   }
 
   // #docregion navigateAndDisplay
-  // A method that launches the SelectionScreen and awaits the result from
-  // Navigator.pop.
   Future<void> _navigateAndDisplaySelection(BuildContext context) async {
     // Navigator.push returns a Future that completes after calling
     // Navigator.pop on the Selection Screen.
@@ -49,13 +52,14 @@ class SelectionButton extends StatelessWidget {
       MaterialPageRoute(builder: (context) => const SelectionScreen()),
     );
 
+    if (!mounted) return;
+
     // After the Selection Screen returns a result, hide any previous snackbars
     // and show the new result.
     ScaffoldMessenger.of(context)
       ..removeCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text('$result')));
   }
-  // #enddocregion navigateAndDisplay
 }
 
 class SelectionScreen extends StatelessWidget {
