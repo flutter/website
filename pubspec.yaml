@@ -12,5 +12,5 @@ dev_dependencies:
   linkcheck: ^2.0.6
   yaml: ^3.1.0
   path: ^1.6.2
-  github: ^8.1.0
+  github: ^9.3.0
   firebase: ^9.0.1
