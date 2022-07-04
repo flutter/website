@@ -19,7 +19,8 @@ class LogoWidget extends StatelessWidget {
 
 // #docregion GrowTransition
 class GrowTransition extends StatelessWidget {
-  const GrowTransition({required this.child, required this.animation, super.key});
+  const GrowTransition(
+      {required this.child, required this.animation, super.key});
 
   final Widget child;
   final Animation<double> animation;
@@ -47,7 +48,7 @@ class LogoApp extends StatefulWidget {
   const LogoApp({super.key});
 
   @override
-  _LogoAppState createState() => _LogoAppState();
+  State<LogoApp> createState() => _LogoAppState();
 }
 
 // #docregion print-state
@@ -68,8 +69,8 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return GrowTransition(
-      child: const LogoWidget(),
       animation: animation,
+      child: const LogoWidget(),
     );
   }
 
