@@ -85,7 +85,7 @@ class PhotoItem extends StatefulWidget {
   final bool selected;
 
   @override
-  _PhotoItemState createState() => _PhotoItemState();
+  State<PhotoItem> createState() => _PhotoItemState();
 }
 
 class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
@@ -275,7 +275,7 @@ class ImagesDemo extends StatefulWidget {
   const ImagesDemo({super.key});
 
   @override
-  _ImagesDemoState createState() => _ImagesDemoState();
+  State<ImagesDemo> createState() => _ImagesDemoState();
 }
 
 class _ImagesDemoState extends State<ImagesDemo>
@@ -344,9 +344,8 @@ class _ImagesDemoState extends State<ImagesDemo>
     timeDilation = 20.0; // 1.0 is normal animation speed.
 
     // Number of PhotoBlockFrames in each _photoBlockHeight block
-    final int photoBlockFrameCount = photoBlockFrames
-        .map((l) => l.length)
-        .reduce((s, n) => s + n);
+    final int photoBlockFrameCount =
+        photoBlockFrames.map((l) => l.length).reduce((s, n) => s + n);
 
     return Scaffold(
       appBar: AppBar(
