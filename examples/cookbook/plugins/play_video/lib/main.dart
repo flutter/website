@@ -21,7 +21,7 @@ class VideoPlayerScreen extends StatefulWidget {
   const VideoPlayerScreen({super.key});
 
   @override
-  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
+  State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
@@ -43,7 +43,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     _initializeVideoPlayerFuture = _controller.initialize();
 
     // Use the controller to loop the video.
-    _controller.setLooping(true);    
+    _controller.setLooping(true);
   }
 
   @override
