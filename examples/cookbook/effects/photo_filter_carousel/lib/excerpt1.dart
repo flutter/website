@@ -8,7 +8,7 @@ class FilterSelector extends StatefulWidget {
   });
 
   @override
-  _FilterSelectorState createState() => _FilterSelectorState();
+  State<FilterSelector> createState() => _FilterSelectorState();
 }
 
 class _FilterSelectorState extends State<FilterSelector> {
@@ -24,7 +24,7 @@ class ExampleInstagramFilterSelection extends StatefulWidget {
   const ExampleInstagramFilterSelection({super.key});
 
   @override
-  _ExampleInstagramFilterSelectionState createState() =>
+  State<ExampleInstagramFilterSelection> createState() =>
       _ExampleInstagramFilterSelectionState();
 }
 
