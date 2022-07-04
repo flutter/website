@@ -271,8 +271,8 @@ class TutorialHome extends StatelessWidget {
       ),
       floatingActionButton: const FloatingActionButton(
         tooltip: 'Add', // used by assistive technologies
-        child: Icon(Icons.add),
         onPressed: null,
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -398,7 +398,7 @@ class Counter extends StatefulWidget {
   const Counter({super.key});
 
   @override
-  _CounterState createState() => _CounterState();
+  State<Counter> createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
@@ -508,7 +508,7 @@ class Counter extends StatefulWidget {
   const Counter({super.key});
 
   @override
-  _CounterState createState() => _CounterState();
+  State<Counter> createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
@@ -744,7 +744,7 @@ class ShoppingList extends StatefulWidget {
   // the State object instead of creating a new State object.
 
   @override
-  _ShoppingListState createState() => _ShoppingListState();
+  State<ShoppingList> createState() => _ShoppingListState();
 }
 
 class _ShoppingListState extends State<ShoppingList> {
