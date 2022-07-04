@@ -413,7 +413,7 @@ that you are animating:
 --- explicit1/lib/main.dart
 +++ explicit2/lib/main.dart
 @@ -9,7 +9,8 @@
-   _BouncingBallDemoState createState() => _BouncingBallDemoState();
+   State<BouncingBallDemo> createState() => _BouncingBallDemoState();
  }
 
 -class _BouncingBallDemoState extends State<BouncingBallDemo> {
