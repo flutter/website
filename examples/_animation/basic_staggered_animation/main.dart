@@ -138,7 +138,7 @@ class StaggerDemo extends StatefulWidget {
   const StaggerDemo({super.key});
 
   @override
-  _StaggerDemoState createState() => _StaggerDemoState();
+  State<StaggerDemo> createState() => _StaggerDemoState();
 }
 
 class _StaggerDemoState extends State<StaggerDemo>
