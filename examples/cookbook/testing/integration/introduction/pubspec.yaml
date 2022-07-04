@@ -9,12 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-dev_dependencies:
   integration_test:
     sdk: flutter
   flutter_test:
     sdk: flutter
+
+dev_dependencies:
   test: any
   flutter_lints: ^2.0.1
 
