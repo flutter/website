@@ -116,7 +116,7 @@ class FavoriteWidget extends StatefulWidget {
   const FavoriteWidget({super.key});
 
   @override
-  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+  State<FavoriteWidget> createState() => _FavoriteWidgetState();
 }
 // #enddocregion FavoriteWidget
 
