@@ -19,7 +19,7 @@ class MyHomepage extends StatefulWidget {
   const MyHomepage({super.key});
 
   @override
-  _MyHomepageState createState() => _MyHomepageState();
+  State<MyHomepage> createState() => _MyHomepageState();
 }
 
 class _MyHomepageState extends State<MyHomepage> {
