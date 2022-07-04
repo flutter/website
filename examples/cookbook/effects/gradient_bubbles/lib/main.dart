@@ -81,7 +81,7 @@ class MyChat extends StatefulWidget {
   const MyChat({super.key});
 
   @override
-  _MyChatState createState() => _MyChatState();
+  State<MyChat> createState() => _MyChatState();
 }
 
 class _MyChatState extends State<MyChat> {
