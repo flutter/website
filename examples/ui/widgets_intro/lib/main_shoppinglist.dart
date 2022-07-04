@@ -69,7 +69,7 @@ class ShoppingList extends StatefulWidget {
   // the State object instead of creating a new State object.
 
   @override
-  State<ShoppingList> createState() => _ShoppingListState();
+  _ShoppingListState createState() => _ShoppingListState();
 }
 
 class _ShoppingListState extends State<ShoppingList> {
