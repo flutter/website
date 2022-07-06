@@ -4,6 +4,8 @@ layout: default
 show_banner: False
 ---
 
+<?code-excerpt path-base="adopt_a_widget"?>
+
 <img src="/adoptawidget/images/image1.png" alt="Adopt a Widget logo" width="100%" />
 
 {{site.alert.note}}
@@ -186,6 +188,7 @@ but 95% of it applies to any platform).
 
 Snippets can be added using the following syntax:
 
+<?code-excerpt "lib/snippets.dart"?>
 ```dart
 /// {@tool snippet}
 ///
@@ -206,6 +209,7 @@ so you don't have to write boilerplate code.
 The `--template` can be any of the templates found in
 the snippet tool's [templates directory][].
 
+<?code-excerpt "lib/sample.dart"?>
 ```dart
 /// {@tool sample --template=stateless_widget_scaffold_center}
 ///
@@ -230,6 +234,7 @@ use `{@tool dartpad}` and provide the same
 templates found in the [templates directory][]:
 
 
+<?code-excerpt "lib/dartpad.dart"?>
 ```dart
 /// {@tool dartpad --template=stateless_widget_material}
 ///
@@ -251,6 +256,7 @@ If a `Widget` needs references,
 add a `See also:` section to the end of a widget's
 documentation comment:
 
+<?code-excerpt "lib/references.dart"?>
 ```dart
 /// Creates a route for the given route settings.
 ///
