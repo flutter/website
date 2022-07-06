@@ -316,8 +316,8 @@ Widget build(BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ElevatedButton(
-            child: const Text('Get Battery Level'),
             onPressed: _getBatteryLevel,
+            child: const Text('Get Battery Level'),
           ),
           Text(_batteryLevel),
         ],

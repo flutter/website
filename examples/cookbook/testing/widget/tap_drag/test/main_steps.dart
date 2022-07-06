@@ -47,7 +47,7 @@ class TodoList extends StatefulWidget {
   const TodoList({super.key});
 
   @override
-  _TodoListState createState() => _TodoListState();
+  State<TodoList> createState() => _TodoListState();
 }
 
 class _TodoListState extends State<TodoList> {
@@ -77,8 +77,8 @@ class _TodoListState extends State<TodoList> {
                   return Dismissible(
                     key: Key('$todo$index'),
                     onDismissed: (direction) => todos.removeAt(index),
-                    child: ListTile(title: Text(todo)),
                     background: Container(color: Colors.red),
+                    child: ListTile(title: Text(todo)),
                   );
                 },
               ),

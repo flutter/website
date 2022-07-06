@@ -55,7 +55,7 @@ class AnimatedContainerApp extends StatefulWidget {
   const AnimatedContainerApp({super.key});
 
   @override
-  _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
+  State<AnimatedContainerApp> createState() => _AnimatedContainerAppState();
 }
 
 class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
@@ -156,7 +156,7 @@ class AnimatedContainerApp extends StatefulWidget {
   const AnimatedContainerApp({super.key});
 
   @override
-  _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
+  State<AnimatedContainerApp> createState() => _AnimatedContainerAppState();
 }
 
 class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
