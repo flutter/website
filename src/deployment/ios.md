@@ -78,15 +78,12 @@ For detailed procedures and descriptions, see
 
 Navigate to your target's settings in Xcode:
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `ios` folder.
-1. To view your app's settings, select the **Runner** project in the Xcode
-   project navigator. Then, in the main view sidebar, select the **Runner**
-   target.
-1. Select the **General** tab.
+1. Open the default Xcode workspace in your project by running `open ios/Runner.xcworkspace` in a terminal window from your Flutter project directory.
+1. To view your app's settings, select the **Runner** target in the Xcode navigator.
 
 Verify the most important settings.
 
-In the **Identity** section:
+In the **Identity** section of the **General** tab:
 
 `Display Name`
 : The display name of your app.
@@ -94,7 +91,7 @@ In the **Identity** section:
 `Bundle Identifier`
 : The App ID you registered on App Store Connect.
 
-In the **Signing & Capabilities** section:
+In the **Signing & Capabilities** tab:
 
 `Automatically manage signing`
 : Whether Xcode should automatically manage app signing
@@ -107,7 +104,7 @@ In the **Signing & Capabilities** section:
   account. If required, select **Add Account...**,
   then update this setting.
 
-In the **Build Settings** section:
+In the **Deployment** section of the **Build Settings** tab:
 
 `iOS Deployment Target`
 : The minimum iOS version that your app supports.
