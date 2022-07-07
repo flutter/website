@@ -205,14 +205,15 @@ platform side and vice versa:
 | Map                        | FlValue(FlValue, FlValue) |
 {% endsamplecode %}
 
-## Example: Calling platform-specific iOS and Android code using platform channels {#example}
+## Example: Calling platform-specific Android, iOS, and Windows code using platform channels {#example}
 
 The following code demonstrates how to call
 a platform-specific API to retrieve and display
 the current battery level.  It uses the Android
-`BatteryManager` API, and the iOS
-`device.batteryLevel` API, with a single platform message,
-`getBatteryLevel()`.
+`BatteryManager` API, the iOS
+`device.batteryLevel` API, and the Windows
+`GetSystemPowerStatus` API with a single
+platform message, `getBatteryLevel()`.
 
 The example adds the platform-specific code inside
 the main app itself.  If you want to reuse the
@@ -225,7 +226,8 @@ is still written in the same way.
 {{site.alert.note}}
   The full, runnable source-code for this example is
   available in [`/examples/platform_channel/`][]
-  for Android with Java and iOS with Objective-C.
+  for Android with Java, iOS with Objective-C, and
+  Windows with C++.
   For iOS with Swift,
   see [`/examples/platform_channel_swift/`][].
 {{site.alert.end}}
@@ -627,7 +629,7 @@ private func receiveBatteryLevel(result: FlutterResult) {
   device.isBatteryMonitoringEnabled = true
   if device.batteryState == UIDevice.BatteryState.unknown {
     result(FlutterError(code: "UNAVAILABLE",
-                        message: "Battery info unavailable",
+                        message: "Battery level not available.",
                         details: nil))
   } else {
     result(Int(device.batteryLevel * 100))
@@ -734,7 +736,7 @@ __weak typeof(self) weakSelf = self;
 
     if (batteryLevel == -1) {
       result([FlutterError errorWithCode:@"UNAVAILABLE"
-                                 message:@"Battery info unavailable"
+                                 message:@"Battery level not available."
                                  details:nil]);
     } else {
       result(@(batteryLevel));
@@ -749,7 +751,127 @@ __weak typeof(self) weakSelf = self;
 You should now be able to run the app on iOS.
 If using the iOS Simulator,
 note that it doesn't support battery APIs,
-and the app displays 'battery info unavailable'.
+and the app displays 'Battery level not available'.
+  
+### Step 5: Add a Windows platform-specific implementation
+
+Start by opening the Windows host portion of your Flutter app in Visual Studio:
+
+1. Run `flutter build windows` in your project directory once to generate
+   the Visual Studio solution file.
+
+1. Start Visual Studio.
+
+1. Select **Open a project or solution**.
+
+1. Navigate to the directory holding your Flutter app, then into the **build**
+   folder, then the **windows** folder, then select the `batterylevel.sln` file.
+   Click **Open**.
+
+Add the C++ implementation of the platform channel method:
+
+1. Expand **batterylevel > Source Files** in the Solution Explorer.
+
+1. Open the file `flutter_window.cpp`.
+  
+First, add the necessary includes to the top of the file, just
+after `#include "flutter_window.h"`:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+#include <flutter/event_channel.h>
+#include <flutter/event_sink.h>
+#include <flutter/event_stream_handler_functions.h>
+#include <flutter/method_channel.h>
+#include <flutter/standard_method_codec.h>
+#include <windows.h>
+
+#include <memory>
+```
+
+Edit the `FlutterWindow::OnCreate` method and create
+a `flutter::MethodChannel` tied to the channel name
+`samples.flutter.dev/battery`:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+bool FlutterWindow::OnCreate() {
+  // ...
+  RegisterPlugins(flutter_controller_->engine());
+
+  flutter::MethodChannel<> channel(
+      flutter_controller_->engine()->messenger(), "samples.flutter.dev/battery",
+      &flutter::StandardMethodCodec::GetInstance());
+  channel.SetMethodCallHandler(
+      [](const flutter::MethodCall<>& call,
+         std::unique_ptr<flutter::MethodResult<>> result) {
+        // TODO
+      });
+
+  SetChildContent(flutter_controller_->view()->GetNativeWindow());
+  return true;
+}
+```
+
+Next, add the C++ code that uses the Windows battery APIs to
+retrieve the battery level. This code is exactly the same as
+you would write in a native Windows application.
+
+Add the following as a new function at the top of
+`flutter_window.cpp` just after the `#include` section:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+static int GetBatteryLevel() {
+  SYSTEM_POWER_STATUS status;
+  if (GetSystemPowerStatus(&status) == 0 || status.BatteryLifePercent == 255) {
+    return -1;
+  }
+  return status.BatteryLifePercent;
+}
+```
+
+Finally, complete the `setMethodCallHandler()` method added earlier.
+You need to handle a single platform method, `getBatteryLevel()`,
+so test for that in the `call` argument.
+The implementation of this platform method calls
+the Windows code written in the previous step. If an unknown method
+is called, report that instead.
+  
+Remove the following code:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+  channel.SetMethodCallHandler(
+      [](const flutter::MethodCall<>& call,
+         std::unique_ptr<flutter::MethodResult<>> result) {
+        // TODO
+      });
+```
+
+And replace with the following:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+  channel.SetMethodCallHandler(
+      [](const flutter::MethodCall<>& call,
+         std::unique_ptr<flutter::MethodResult<>> result) {
+        if (call.method_name() == "getBatteryLevel") {
+          int battery_level = GetBatteryLevel();
+          if (battery_level != -1) {
+            result->Success(battery_level);
+          } else {
+            result->Error("UNAVAILABLE", "Battery level not available.");
+          }
+        } else {
+          result->NotImplemented();
+        }
+      });
+```
+
+You should now be able to run the application on Windows.
+If your device doesn't have a battery,
+it displays 'Battery level not available'.
 
 ## Typesafe platform channels using Pigeon {#pigeon}
 
