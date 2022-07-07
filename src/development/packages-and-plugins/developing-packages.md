@@ -945,7 +945,7 @@ PENDING
 [Supporting the new Android plugins APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[Testing your plugin]: {{site.url}}/development/package-integration/android/plugin-api-migration#testing-your-plugin
+[Testing your plugin]: {{site.url}}/development/platform-integration/android/plugin-api-migration#testing-your-plugin
 [unit tests]: {{site.url}}/testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c
