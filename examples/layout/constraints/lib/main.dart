@@ -69,7 +69,7 @@ class FlutterLayoutArticle extends StatefulWidget {
   final List<Example> examples;
 
   @override
-  _FlutterLayoutArticleState createState() => _FlutterLayoutArticleState();
+  State<FlutterLayoutArticle> createState() => _FlutterLayoutArticleState();
 }
 
 //////////////////////////////////////////////////
@@ -139,6 +139,8 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                     ),
                   ),
                   Container(
+                    height: 273,
+                    color: Colors.grey[50],
                     child: Scrollbar(
                       child: SingleChildScrollView(
                         key: ValueKey(count),
@@ -159,8 +161,6 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                         ),
                       ),
                     ),
-                    height: 273,
-                    color: Colors.grey[50],
                   ),
                 ],
               ),

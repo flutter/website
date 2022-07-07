@@ -201,6 +201,7 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
   // must be checked after an asynchronous gap.
   if (!mounted) return;
   
+
   // After the Selection Screen returns a result, hide any previous snackbars
   // and show the new result.
   ScaffoldMessenger.of(context)
@@ -268,8 +269,10 @@ class _SelectionButtonState extends State<SelectionButton> {
       MaterialPageRoute(builder: (context) => const SelectionScreen()),
     );
 
+
     // When a BuildContext is used from a StatefulWidget, the mounted property
     // must be checked after an asynchronous gap.
+
     if (!mounted) return;
 
     // After the Selection Screen returns a result, hide any previous snackbars
