@@ -382,7 +382,7 @@ PACKAGE_NAME=$(basename "$APP_NAME" .app).pkg
 xcrun productbuild --component "$APP_NAME" /Applications/ unsigned.pkg
 
 INSTALLER_CERT_NAME=$(keychain list-certificates \
-          | jq '.[0]
+          | jq '.[]
             | select(.common_name
             | contains("Mac Developer Installer"))
             | .common_name' \
