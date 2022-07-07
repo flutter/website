@@ -1,4 +1,4 @@
-name: ios_devs
+name: xamarin_devs
 description: A new Flutter project.
 
 publish_to: 'none' 
@@ -10,13 +10,60 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    cupertino_icons: ^1.0.2
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-    flutter_lints: ^2.0.0
+
+  
+  
+  
+  
+  
+  flutter_lints: ^2.0.0
+
+
+
 
 
 flutter:
+
+  
+  
+  
   uses-material-design: true
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
