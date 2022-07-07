@@ -25,9 +25,14 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class SelectionButton extends StatelessWidget {
+class SelectionButton extends StatefulWidget {
   const SelectionButton({super.key});
 
+  @override
+  State<SelectionButton> createState() => _SelectionButtonState();
+}
+
+class _SelectionButtonState extends State<SelectionButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -48,6 +53,10 @@ class SelectionButton extends StatelessWidget {
       context,
       MaterialPageRoute(builder: (context) => const SelectionScreen()),
     );
+
+    // When a BuildContext is used from a StatefulWidget, the mounted property
+    // must be checked after an asynchronous gap.
+    if (!mounted) return;
 
     // After the Selection Screen returns a result, hide any previous snackbars
     // and show the new result.
