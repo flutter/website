@@ -23,7 +23,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 // #docregion UseStatefulWidget
 class MyStatelessWidget extends StatelessWidget {
   // This widget is the root of your application.
-  const MyStatelessWidget({Key? key}) : super(key: key);
+  const MyStatelessWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

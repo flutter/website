@@ -5,8 +5,9 @@ void main() {
 }
 
 class LogoFade extends StatefulWidget {
-  const LogoFade({Key? key}) : super(key: key);
+  const LogoFade({super.key});
 
+  @override
   _LogoFadeState createState() => _LogoFadeState();
 }
 
@@ -36,6 +37,7 @@ class _LogoFadeState extends State<LogoFade>
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: animation,

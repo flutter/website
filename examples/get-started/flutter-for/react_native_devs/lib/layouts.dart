@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColumnExample extends StatelessWidget {
-  const ColumnExample({Key? key}) : super(key: key);
+  const ColumnExample({super.key});
 
   // #docregion Column
   @override
@@ -32,7 +32,7 @@ class ColumnExample extends StatelessWidget {
 }
 
 class StackExample extends StatelessWidget {
-  const StackExample({Key? key}) : super(key: key);
+  const StackExample({super.key});
 
   // #docregion Stack
   @override

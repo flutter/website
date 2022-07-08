@@ -1,14 +1,13 @@
 import 'dart:convert';
-// ignore_for_file: avoid_print
-import 'package:flutter/material.dart';
-// #docregion PackageImport
-import 'package:google_sign_in/google_sign_in.dart';
-// #enddocregion PackageImport
-// #docregion SharedPrefs
-import 'package:shared_preferences/shared_preferences.dart';
 // #enddocregion SharedPrefs
 // #docregion ImportDartIO
 import 'dart:io';
+
+// ignore_for_file: avoid_print
+import 'package:flutter/material.dart';
+// #enddocregion PackageImport
+// #docregion SharedPrefs
+import 'package:shared_preferences/shared_preferences.dart';
 // #enddocregion ImportDartIO
 
 // #docregion Main
@@ -19,7 +18,7 @@ void main() {
 // #enddocregion Main
 
 class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
+  const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class MyWidget extends StatelessWidget {
 }
 
 class NetworkImage extends StatelessWidget {
-  const NetworkImage({Key? key}) : super(key: key);
+  const NetworkImage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +40,7 @@ class NetworkImage extends StatelessWidget {
 }
 
 class ListViewExample extends StatelessWidget {
-  const ListViewExample({Key? key}) : super(key: key);
+  const ListViewExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +51,7 @@ class ListViewExample extends StatelessWidget {
     ];
     return ListView.builder(
       itemCount: data.length,
-      itemBuilder: (BuildContext context, int index) {
+      itemBuilder: (context, index) {
         return Text(data[index]);
       },
     );
@@ -81,7 +80,7 @@ class MyCanvasPainter extends CustomPainter {
 }
 
 class MyCanvasWidget extends StatelessWidget {
-  const MyCanvasWidget({Key? key}) : super(key: key);
+  const MyCanvasWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +92,7 @@ class MyCanvasWidget extends StatelessWidget {
 // #enddocregion CustomPaint
 
 class TextStyleExample extends StatelessWidget {
-  const TextStyleExample({Key? key}) : super(key: key);
+  const TextStyleExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +123,7 @@ class TextStyleExample extends StatelessWidget {
 }
 
 class IconExample extends StatelessWidget {
-  const IconExample({Key? key}) : super(key: key);
+  const IconExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +135,7 @@ class IconExample extends StatelessWidget {
 
 // #docregion Swatch
 class SampleApp extends StatelessWidget {
-  const SampleApp({Key? key}) : super(key: key);
+  const SampleApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -210,7 +209,7 @@ class ThemeDataExample extends StatelessWidget {
 }
 
 class SharedPrefsExample extends StatefulWidget {
-  const SharedPrefsExample({Key? key}) : super(key: key);
+  const SharedPrefsExample({super.key});
 
   @override
   State<SharedPrefsExample> createState() => _SharedPrefsExampleState();
@@ -283,7 +282,7 @@ class ScaffoldExample extends StatelessWidget {
 }
 
 class GestureDetectorExample extends StatelessWidget {
-  const GestureDetectorExample({Key? key}) : super(key: key);
+  const GestureDetectorExample({super.key});
 
   // #docregion GestureDetector
   @override
@@ -305,10 +304,10 @@ class GestureDetectorExample extends StatelessWidget {
       onLongPress: () {
         print('Long Pressed');
       },
-      onVerticalDragEnd: (DragEndDetails value) {
+      onVerticalDragEnd: (value) {
         print('Swiped Vertically');
       },
-      onHorizontalDragEnd: (DragEndDetails value) {
+      onHorizontalDragEnd: (value) {
         print('Swiped Horizontally');
       },
     );
@@ -317,7 +316,7 @@ class GestureDetectorExample extends StatelessWidget {
 }
 
 class HttpExample extends StatefulWidget {
-  const HttpExample({Key? key}) : super(key: key);
+  const HttpExample({super.key});
 
   @override
   State<HttpExample> createState() => _HttpExampleState();
@@ -347,7 +346,7 @@ class _HttpExampleState extends State<HttpExample> {
 }
 
 class TextEditingExample extends StatefulWidget {
-  const TextEditingExample({Key? key}) : super(key: key);
+  const TextEditingExample({super.key});
 
   @override
   State<TextEditingExample> createState() => _TextEditingExampleState();
@@ -386,7 +385,7 @@ class _TextEditingExampleState extends State<TextEditingExample> {
 }
 
 class FormExample extends StatefulWidget {
-  const FormExample({Key? key}) : super(key: key);
+  const FormExample({super.key});
 
   @override
   State<FormExample> createState() => _FormExampleState();
@@ -422,7 +421,7 @@ class _FormExampleState extends State<FormExample> {
       child: Column(
         children: <Widget>[
           TextFormField(
-            validator: (String? value) {
+            validator: (value) {
               if (value != null && value.contains('@')) {
                 return null;
               }
@@ -448,7 +447,7 @@ class _FormExampleState extends State<FormExample> {
 }
 
 class PlatformExample extends StatelessWidget {
-  const PlatformExample({Key? key}) : super(key: key);
+  const PlatformExample({super.key});
 
   String whichPlatform(BuildContext context) {
     // #docregion Platform

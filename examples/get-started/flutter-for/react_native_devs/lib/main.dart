@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_print
 
-import 'package:flutter/material.dart';
 
 // #docregion Main
 /// Dart
@@ -34,7 +33,7 @@ void nullCode() {
 void trueExample() {
   // #docregion True
   /// Dart
-  var myNull = null;
+  var myNull;
   if (myNull == null) {
     print('use "== null" to check null');
   }

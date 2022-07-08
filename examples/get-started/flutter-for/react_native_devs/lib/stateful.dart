@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 // #docregion StatefulWidget
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   final String title;
 
@@ -26,7 +26,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       toggleState = !toggleState;
     });
     if (!toggleState) {
-      t2 = Timer.periodic(const Duration(milliseconds: 1000), (Timer t) {
+      t2 = Timer.periodic(const Duration(milliseconds: 1000), (t) {
         toggleShowText();
       });
     } else {

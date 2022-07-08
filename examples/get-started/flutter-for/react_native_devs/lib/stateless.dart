@@ -8,9 +8,9 @@ void main() => runApp(
 
 class MyStatelessWidget extends StatelessWidget {
   const MyStatelessWidget({
-    Key? key,
+    super.key,
     required this.text,
-  }) : super(key: key);
+  });
 
   final String text;
 

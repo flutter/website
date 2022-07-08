@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 // #docregion Navigator
 class NavigationApp extends StatelessWidget {
   // This widget is the root of your application.
-  const NavigationApp({Key? key}) : super(key: key);
+  const NavigationApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       //...
       routes: <String, WidgetBuilder>{
-        '/a': (BuildContext context) => const UsualNavScreen(),
-        '/b': (BuildContext context) => const DrawerNavScreen(),
+        '/a': (context) => const UsualNavScreen(),
+        '/b': (context) => const DrawerNavScreen(),
       },
       //...
     );
@@ -42,7 +42,7 @@ class DrawerNavScreen extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => UsualNavScreen(),
+        builder: (context) => const UsualNavScreen(),
       ),
     );
     // #enddocregion NavigatorPush
@@ -55,7 +55,7 @@ class DrawerNavScreen extends StatelessWidget {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 // #enddocregion TabNav
 
 class NavigationHomePage extends StatefulWidget {
-  const NavigationHomePage({Key? key}) : super(key: key);
+  const NavigationHomePage({super.key});
 
   @override
   State<NavigationHomePage> createState() => _NavigationHomePageState();
@@ -116,7 +116,7 @@ class _NavigationHomePageState extends State<NavigationHomePage>
 // #enddocregion NavigationHomePageState
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +125,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class TabScreen extends StatelessWidget {
-  const TabScreen({Key? key}) : super(key: key);
+  const TabScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +134,7 @@ class TabScreen extends StatelessWidget {
 }
 
 class DrawerExample extends StatelessWidget {
-  const DrawerExample({Key? key}) : super(key: key);
+  const DrawerExample({super.key});
 
   // #docregion Drawer
   @override
