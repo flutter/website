@@ -164,6 +164,8 @@ simple objects such as the `List<Photo>` in this example.
 You might experience errors if you try to pass more complex objects,
 such as a `Future` or `http.Response` between isolates.
 
+Also, you can use [worker_manager](https://pub.dev/packages/worker_manager) to use isolates with extra perks.
+
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
