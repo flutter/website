@@ -34,7 +34,7 @@ class ExampleUiLoadingAnimation extends StatefulWidget {
   });
 
   @override
-  _ExampleUiLoadingAnimationState createState() =>
+  State<ExampleUiLoadingAnimation> createState() =>
       _ExampleUiLoadingAnimationState();
 }
 
@@ -207,7 +207,7 @@ class ShimmerLoading extends StatefulWidget {
   final Widget child;
 
   @override
-  _ShimmerLoadingState createState() => _ShimmerLoadingState();
+  State<ShimmerLoading> createState() => _ShimmerLoadingState();
 }
 
 // #docregion ShimmerLoadingState

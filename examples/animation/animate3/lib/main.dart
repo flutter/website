@@ -24,7 +24,7 @@ class LogoApp extends StatefulWidget {
   const LogoApp({super.key});
 
   @override
-  _LogoAppState createState() => _LogoAppState();
+  State<LogoApp> createState() => _LogoAppState();
 }
 
 // #docregion print-state

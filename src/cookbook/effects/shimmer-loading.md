@@ -242,7 +242,7 @@ class ShimmerLoading extends StatefulWidget {
   final Widget child;
 
   @override
-  _ShimmerLoadingState createState() => _ShimmerLoadingState();
+  State<ShimmerLoading> createState() => _ShimmerLoadingState();
 }
 
 class _ShimmerLoadingState extends State<ShimmerLoading> {
