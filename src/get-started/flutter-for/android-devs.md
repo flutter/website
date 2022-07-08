@@ -2046,21 +2046,19 @@ Then assign the font to your `Text` widget:
 
 <?code-excerpt "lib/text.dart (CustomFont)"?>
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Sample App'),
+    ),
+    body: const Center(
+      child: Text(
+        'This is a custom font text',
+        style: TextStyle(fontFamily: 'MyCustomFont'),
       ),
-      body: const Center(
-        child: Text(
-          'This is a custom font text',
-          style: TextStyle(fontFamily: 'MyCustomFont'),
-        ),
-      ),
-    );
-  }
-
+    ),
+  );
 }
 ```
 
