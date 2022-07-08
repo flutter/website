@@ -18,6 +18,6 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
-  // #docregion CustomFont
+  // #enddocregion CustomFont
 
 }

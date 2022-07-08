@@ -200,6 +200,12 @@ Snippets can be added using the following syntax:
 /// )
 /// ```
 /// {@end-tool}
+/// ```dart
+/// MyWidget(
+///   color: Colors.green,
+/// )
+/// ```
+/// {@end-tool}
 ```
 
 #### Sample {#sample}
@@ -215,6 +221,14 @@ the snippet tool's [templates directory][].
 ///
 /// This is a comment explaining the snippet below:
 ///
+/// ```dart
+///  Widget build(BuildContext context) {
+///    return MyWidget(
+///      color: Colors.green,
+///    );
+///  }
+/// ```
+/// {@end-tool}
 /// ```dart
 ///  Widget build(BuildContext context) {
 ///    return MyWidget(
@@ -240,6 +254,14 @@ templates found in the [templates directory][]:
 ///
 /// This is a comment explaining the snippet below:
 ///
+/// ```dart
+///  Widget build(BuildContext context) {
+///    return MyWidget(
+///      color: Colors.green,
+///    );
+///  }
+/// ```
+/// {@end-tool}
 /// ```dart
 ///  Widget build(BuildContext context) {
 ///    return MyWidget(
