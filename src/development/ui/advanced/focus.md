@@ -1,5 +1,5 @@
 ---
-title: Understanding Flutter's focus system
+title: Understanding Flutter's keyboard focus system
 description: How to use the focus system in your Flutter app.
 ---
 

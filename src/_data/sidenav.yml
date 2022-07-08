@@ -106,7 +106,7 @@
           children:
             - title: Actions & shortcuts
               permalink: /development/ui/advanced/actions_and_shortcuts
-            - title: Keyboard focus
+            - title: Keyboard focus system
               permalink: /development/ui/advanced/focus
             - title: Gestures
               permalink: /development/ui/advanced/gestures
