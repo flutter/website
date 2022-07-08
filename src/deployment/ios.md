@@ -78,8 +78,11 @@ For detailed procedures and descriptions, see
 
 Navigate to your target's settings in Xcode:
 
-1. Open the default Xcode workspace in your project by running `open ios/Runner.xcworkspace` in a terminal window from your Flutter project directory.
-1. To view your app's settings, select the **Runner** target in the Xcode navigator.
+1. Open the default Xcode workspace in your project by running
+   `open ios/Runner.xcworkspace` in a terminal window from your
+   Flutter project directory.
+1. To view your app's settings, select the **Runner** target in the
+   Xcode navigator.
 
 Verify the most important settings.
 
