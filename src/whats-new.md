@@ -646,7 +646,7 @@ Other newness:
 [Obfuscating Dart code]: {{site.url}}/deployment/obfuscate
 [package for pre-canned Material widget animations]: {{site.pub}}/packages/animations
 [Modern Flutter plugin development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
-[Supporting the new Android plugin APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
+[Supporting the new Android plugin APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints
 [When should I use AnimatedBuilder or AnimatedWidget?]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [Writing custom platform-specific code]: {{site.url}}/development/platform-integration/platform-channels
@@ -711,7 +711,7 @@ Happy Fluttering!
 [Flutter Gallery]: https://flutter.github.io/samples/#/
 [Flutter Layout Explorer]: {{site.url}}/development/tools/devtools/inspector#flutter-layout-explorer
 [Flutter Medium publication]: {{site.medium}}/flutter
-[Migrating your plugin to the new Android APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
+[Migrating your plugin to the new Android APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 [implicit animations]: {{site.url}}/codelabs/implicit-animations
 [Web support for Flutter]: {{site.url}}/web
 [Web support for Flutter goes beta]: {{site.flutter-medium}}/web-support-for-flutter-goes-beta-35b64a1217c0

@@ -253,7 +253,7 @@ class WaitingPage extends StatefulWidget {
   final VoidCallback onWaitComplete;
 
   @override
-  _WaitingPageState createState() => _WaitingPageState();
+  State<WaitingPage> createState() => _WaitingPageState();
 }
 
 class _WaitingPageState extends State<WaitingPage> {

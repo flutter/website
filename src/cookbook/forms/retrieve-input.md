@@ -47,7 +47,7 @@ class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
   @override
-  _MyCustomFormState createState() => _MyCustomFormState();
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class.
@@ -140,7 +140,7 @@ class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
   @override
-  _MyCustomFormState createState() => _MyCustomFormState();
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class.

@@ -14,7 +14,7 @@ class ExpandableFab extends StatefulWidget {
   final List<Widget> children;
 
   @override
-  _ExpandableFabState createState() => _ExpandableFabState();
+  State<ExpandableFab> createState() => _ExpandableFabState();
 }
 
 // #docregion ExpandableFabState

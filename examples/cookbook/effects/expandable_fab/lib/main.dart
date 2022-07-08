@@ -84,7 +84,7 @@ class ExpandableFab extends StatefulWidget {
   final List<Widget> children;
 
   @override
-  _ExpandableFabState createState() => _ExpandableFabState();
+  State<ExpandableFab> createState() => _ExpandableFabState();
 }
 
 class _ExpandableFabState extends State<ExpandableFab>
@@ -273,7 +273,7 @@ class ActionButton extends StatelessWidget {
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
-        color: theme.colorScheme.secondary,
+        color: theme.colorScheme.onSecondary,
       ),
     );
   }

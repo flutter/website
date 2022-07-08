@@ -117,7 +117,6 @@ class MyAppBar extends StatelessWidget {
       decoration: BoxDecoration(color: Colors.blue[500]),
       // Row is a horizontal, linear layout.
       child: Row(
-        // <Widget> is the type of items in the list.
         children: [
           const IconButton(
             icon: Icon(Icons.menu),
@@ -272,8 +271,8 @@ class TutorialHome extends StatelessWidget {
       ),
       floatingActionButton: const FloatingActionButton(
         tooltip: 'Add', // used by assistive technologies
-        child: Icon(Icons.add),
         onPressed: null,
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -399,7 +398,7 @@ class Counter extends StatefulWidget {
   const Counter({super.key});
 
   @override
-  _CounterState createState() => _CounterState();
+  State<Counter> createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
@@ -509,7 +508,7 @@ class Counter extends StatefulWidget {
   const Counter({super.key});
 
   @override
-  _CounterState createState() => _CounterState();
+  State<Counter> createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
@@ -745,7 +744,7 @@ class ShoppingList extends StatefulWidget {
   // the State object instead of creating a new State object.
 
   @override
-  _ShoppingListState createState() => _ShoppingListState();
+  State<ShoppingList> createState() => _ShoppingListState();
 }
 
 class _ShoppingListState extends State<ShoppingList> {

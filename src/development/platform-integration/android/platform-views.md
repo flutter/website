@@ -59,7 +59,7 @@ and add the following build implementation:
   [plugin migration guide][].
 {{site.alert.end}}
 
-[plugin migration guide]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
+[plugin migration guide]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 
 In your Dart file,
 for example `native_view_example.dart`,

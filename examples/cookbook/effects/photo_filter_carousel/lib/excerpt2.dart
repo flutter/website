@@ -14,7 +14,7 @@ class FilterSelector extends StatefulWidget {
   final EdgeInsets padding;
 
   @override
-  _FilterSelectorState createState() => _FilterSelectorState();
+  State<FilterSelector> createState() => _FilterSelectorState();
 }
 
 // #docregion FilterSelectorState2
