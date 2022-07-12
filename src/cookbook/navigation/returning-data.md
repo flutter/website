@@ -196,7 +196,6 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
     context,
     MaterialPageRoute(builder: (context) => const SelectionScreen()),
   );
-  
   // When a BuildContext is used from a StatefulWidget, the mounted property
   // must be checked after an asynchronous gap.
   if (!mounted) return;
@@ -267,7 +266,6 @@ class _SelectionButtonState extends State<SelectionButton> {
       context,
       MaterialPageRoute(builder: (context) => const SelectionScreen()),
     );
-
 
     // When a BuildContext is used from a StatefulWidget, the mounted property
     // must be checked after an asynchronous gap.
