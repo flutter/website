@@ -532,13 +532,24 @@ $ flutter create --template=plugin --platforms=web .
 If this command displays a message about updating the
 `pubspec.yaml` file, follow the provided instructions.
 
-### Dart-only platform implementations
+### Dart platform implementations
 
-Usually plugin implementations involve platform channels
-and a second language, as described above.
-In some cases, however, some platforms can be
+In many cases, non-web platform implementations only use the
+platform-specific implementation language, as shown above. However,
+platform implementations can also use platform-specific Dart as well.
+
+{{site.alert.note}}
+  The examples below only apply to non-web platforms. Web
+  plugin implementations are always written in Dart, and use
+  `pluginClass` and `fileName` for their Dart implementations
+  as shown above.
+{{site.alert.end}}
+
+#### Dart-only platform implementations
+
+In some cases, some platforms can be
 implemented entirely in Dart (for example, using FFI).
-For a Dart-only platform implementation,
+For a Dart-only platform implementation on a platform other than web,
 replace the `pluginClass` in pubspec.yaml with a `dartPluginClass`.
 Here is the `hello_windows` example above modified for a
 Dart-only implementation:
@@ -566,14 +577,29 @@ class HelloPluginWindows extends HelloPluginPlatform {
   }
 ```
 
-This is supported for Windows, macOS,
-and Linux starting in Flutter 2.5.
-`dartPluginClass` is supported for
-Android and iOS starting in Flutter 2.8,
-but currently a `pluginClass` is still
-required for those platforms.
-That requirement will be removed
-in a future version of Flutter.
+#### Hybrid platform implementations
+
+Platform implementations can also use both Dart and a platform-specific
+language. For example, a plugin could use a different platform channel
+for each platform so that the channels can be customized per platform.
+
+A hybrid implementation uses both of the registration systems
+described above. Here is the `hello_windows` example above modified for a
+hybrid implementation:
+
+```yaml
+flutter:
+  plugin:
+    implements: hello
+    platforms:
+      windows:
+        dartPluginClass: HelloPluginWindows
+        pluginClass: HelloPlugin
+```
+
+The Dart `HelloPluginWindows` class would use the `registerWith()`
+shown above for Dart-only implementations, while the C++ `HelloPlugin`
+class would be the same as in a C++-only implementation.
 
 ### Testing your plugin
 
