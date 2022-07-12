@@ -68,7 +68,7 @@ Packages can contain more than one kind of content:
 **FFI Plugin packages**
 : A specialized Dart package that contains an API written in
   Dart code combined with one or more platform-specific
-  implementations that use [Dart FFI][FFI].
+  implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
 
 ## Developing Dart packages {#dart}
 
@@ -532,13 +532,24 @@ $ flutter create --template=plugin --platforms=web .
 If this command displays a message about updating the
 `pubspec.yaml` file, follow the provided instructions.
 
-### Dart-only platform implementations
+### Dart platform implementations
 
-Usually plugin implementations involve platform channels
-and a second language, as described above.
-In some cases, however, some platforms can be
-implemented entirely in Dart (for example, using [FFI][]).
-For a Dart-only platform implementation,
+In many cases, non-web platform implementations only use the
+platform-specific implementation language, as shown above. However,
+platform implementations can also use platform-specific Dart as well.
+
+{{site.alert.note}}
+  The examples below only apply to non-web platforms. Web
+  plugin implementations are always written in Dart, and use
+  `pluginClass` and `fileName` for their Dart implementations
+  as shown above.
+{{site.alert.end}}
+
+#### Dart-only platform implementations
+
+In some cases, some platforms can be
+implemented entirely in Dart (for example, using FFI).
+For a Dart-only platform implementation on a platform other than web,
 replace the `pluginClass` in pubspec.yaml with a `dartPluginClass`.
 Here is the `hello_windows` example above modified for a
 Dart-only implementation:
@@ -566,14 +577,29 @@ class HelloPluginWindows extends HelloPluginPlatform {
   }
 ```
 
-This is supported for Windows, macOS,
-and Linux starting in Flutter 2.5.
-`dartPluginClass` is supported for
-Android and iOS starting in Flutter 2.8,
-but currently a `pluginClass` is still
-required for those platforms.
-That requirement will be removed
-in a future version of Flutter.
+#### Hybrid platform implementations
+
+Platform implementations can also use both Dart and a platform-specific
+language. For example, a plugin could use a different platform channel
+for each platform so that the channels can be customized per platform.
+
+A hybrid implementation uses both of the registration systems
+described above. Here is the `hello_windows` example above modified for a
+hybrid implementation:
+
+```yaml
+flutter:
+  plugin:
+    implements: hello
+    platforms:
+      windows:
+        dartPluginClass: HelloPluginWindows
+        pluginClass: HelloPlugin
+```
+
+The Dart `HelloPluginWindows` class would use the `registerWith()`
+shown above for Dart-only implementations, while the C++ `HelloPlugin`
+class would be the same as in a C++-only implementation.
 
 ### Testing your plugin
 
@@ -586,7 +612,7 @@ a section in [Supporting the new Android plugins APIs][].
 ## Developing FFI plugin packages {#plugin-ffi}
 
 If you want to develop a package that calls into native APIs using
-[Dart's FFI][FFI], you need to develop an FFI plugin package.
+Dart's FFI, you need to develop an FFI plugin package.
 
 ### Step 1: Create the package
 
@@ -925,7 +951,9 @@ PENDING
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
-[FFI]: {{site.url}}/development/platform-integration/c-interop
+[Android]: {{site.url}}/development/platform-integration/android/c-interop
+[iOS]: {{site.url}}/development/platform-integration/ios/c-interop
+[macOS]: {{site.url}}/development/platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: {{site.url}}/get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
@@ -945,7 +973,7 @@ PENDING
 [Supporting the new Android plugins APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[Testing your plugin]: {{site.url}}/development/package-integration/android/plugin-api-migration#testing-your-plugin
+[Testing your plugin]: {{site.url}}/development/platform-integration/android/plugin-api-migration#testing-your-plugin
 [unit tests]: {{site.url}}/testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c
