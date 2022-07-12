@@ -164,7 +164,11 @@ simple objects such as the `List<Photo>` in this example.
 You might experience errors if you try to pass more complex objects,
 such as a `Future` or `http.Response` between isolates.
 
-Also, you can use [worker_manager](https://pub.dev/packages/worker_manager) to use isolates with extra perks.
+As an alternate solution, check out the [`worker_manager`][] or
+[`workmanager`][] packages for background processing.
+
+[`worker_manager`]:  {{site.pub}}/packages/worker_manager
+[`workmanager`]: {{site.pub}}/packages/workmanager
 
 ## Complete example
 
