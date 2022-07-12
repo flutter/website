@@ -1,12 +1,13 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
-// #enddocregion SharedPrefs
 // #docregion ImportDartIO
 import 'dart:io';
 // #enddocregion ImportDartIO
 
-// ignore_for_file: avoid_print
 // #docregion PackageImport
 import 'package:flutter/material.dart';
+// #enddocregion PackageImport
 // #docregion SharedPrefs
 import 'package:shared_preferences/shared_preferences.dart';
 // #enddocregion SharedPrefs

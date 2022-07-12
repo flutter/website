@@ -149,6 +149,6 @@ class DrawerExample extends StatelessWidget {
         },
       ),
     );
-    // #docregion Drawer
   }
+  // #enddocregion Drawer
 }
