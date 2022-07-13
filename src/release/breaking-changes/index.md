@@ -18,7 +18,7 @@ release, and listed in alphabetical order:
 [Default PrimaryScrollController on Desktop]: {{site.url}}/release/breaking-changes/primary-scroll-controller-desktop
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
-### Released in Flutter 3.0
+### Released in Flutter 3
 
 * [Deprecated API removed after v2.10][]
 * [Page transitions replaced by ZoomPageTransitionsBuilder][]
