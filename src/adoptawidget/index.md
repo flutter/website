@@ -229,7 +229,6 @@ To add a sample that runs in DartPad,
 use `{@tool dartpad}` and provide the same
 templates found in the [templates directory][]:
 
-
 ```dart
 /// {@tool dartpad --template=stateless_widget_material}
 ///
