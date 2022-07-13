@@ -387,6 +387,9 @@ Or, you can write your own widget library and import that.
 
 <?code-excerpt "lib/imports.dart (Imports)"?>
 ```dart
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:my_widgets/my_widgets.dart';
 ```
 
