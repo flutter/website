@@ -8,7 +8,7 @@ class LogoFade extends StatefulWidget {
   const LogoFade({super.key});
 
   @override
-  _LogoFadeState createState() => _LogoFadeState();
+  State<LogoFade> createState() => _LogoFadeState();
 }
 
 class _LogoFadeState extends State<LogoFade>
