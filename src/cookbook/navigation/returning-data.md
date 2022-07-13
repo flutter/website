@@ -62,9 +62,14 @@ Now, create the SelectionButton, which does the following:
 
 <?code-excerpt "lib/main_step2.dart (SelectionButton)"?>
 ```dart
-class SelectionButton extends StatelessWidget {
+class SelectionButton extends StatefulWidget {
   const SelectionButton({super.key});
 
+  @override
+  State<SelectionButton> createState() => _SelectionButtonState();
+}
+
+class _SelectionButtonState extends State<SelectionButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -192,6 +197,8 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
     MaterialPageRoute(builder: (context) => const SelectionScreen()),
   );
 
+  // When a BuildContext is used from a StatefulWidget, the mounted property
+  // must be checked after an asynchronous gap.
   if (!mounted) return;
 
   // After the Selection Screen returns a result, hide any previous snackbars
@@ -261,6 +268,8 @@ class _SelectionButtonState extends State<SelectionButton> {
       MaterialPageRoute(builder: (context) => const SelectionScreen()),
     );
 
+    // When a BuildContext is used from a StatefulWidget, the mounted property
+    // must be checked after an asynchronous gap.
     if (!mounted) return;
 
     // After the Selection Screen returns a result, hide any previous snackbars

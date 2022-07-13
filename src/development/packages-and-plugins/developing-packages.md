@@ -68,7 +68,7 @@ Packages can contain more than one kind of content:
 **FFI Plugin packages**
 : A specialized Dart package that contains an API written in
   Dart code combined with one or more platform-specific
-  implementations that use [Dart FFI][FFI].
+  implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
 
 ## Developing Dart packages {#dart}
 
@@ -548,7 +548,7 @@ platform implementations can also use platform-specific Dart as well.
 #### Dart-only platform implementations
 
 In some cases, some platforms can be
-implemented entirely in Dart (for example, using [FFI][]).
+implemented entirely in Dart (for example, using FFI).
 For a Dart-only platform implementation on a platform other than web,
 replace the `pluginClass` in pubspec.yaml with a `dartPluginClass`.
 Here is the `hello_windows` example above modified for a
@@ -612,7 +612,7 @@ a section in [Supporting the new Android plugins APIs][].
 ## Developing FFI plugin packages {#plugin-ffi}
 
 If you want to develop a package that calls into native APIs using
-[Dart's FFI][FFI], you need to develop an FFI plugin package.
+Dart's FFI, you need to develop an FFI plugin package.
 
 ### Step 1: Create the package
 
@@ -951,7 +951,9 @@ PENDING
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
-[FFI]: {{site.url}}/development/platform-integration/c-interop
+[Android]: {{site.url}}/development/platform-integration/android/c-interop
+[iOS]: {{site.url}}/development/platform-integration/ios/c-interop
+[macOS]: {{site.url}}/development/platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: {{site.url}}/get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
