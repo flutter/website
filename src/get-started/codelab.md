@@ -397,21 +397,21 @@ a child inside the existing `MyApp` stateless widget.
   the list by toggling the heart icon.<br><br>
   Both classes now look as follows:
 
-<?code-excerpt "lib/main.dart (RandomWordsWidget)" replace="/final wordPair = WordPair.random\(\);\n *return Text\(wordPair.asPascalCase\);/return Container();/g"?>
+<?code-excerpt "lib/main.dart (RandomWordsWidget)" replace="/final wordPair = WordPair.random\(\);\n *return Text\(wordPair.asPascalCase\);/return Container();/g" indent-by="2"?>
   ```dart
-class RandomWords extends StatefulWidget {
-  const RandomWords({super.key});
+  class RandomWords extends StatefulWidget {
+    const RandomWords({super.key});
 
-  @override
-  State<RandomWords> createState() => _RandomWordsState();
-}
-
-class _RandomWordsState extends State<RandomWords> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
+    @override
+    State<RandomWords> createState() => _RandomWordsState();
   }
-}
+
+  class _RandomWordsState extends State<RandomWords> {
+    @override
+    Widget build(BuildContext context) {
+      return Container();
+    }
+  }
   ```
 </li>
 
