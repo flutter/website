@@ -385,7 +385,7 @@ import the Cupertino library. To use a more basic widget set,
 import the Widgets library.
 Or, you can write your own widget library and import that.
 
-<?code-excerpt "lib/imports.dart"?>
+<?code-excerpt "lib/imports.dart (Imports)"?>
 ```dart
 import 'package:my_widgets/my_widgets.dart';
 ```
@@ -2427,7 +2427,7 @@ class LogoFade extends StatefulWidget {
   const LogoFade({super.key});
 
   @override
-  _LogoFadeState createState() => _LogoFadeState();
+  State<LogoFade> createState() => _LogoFadeState();
 }
 
 class _LogoFadeState extends State<LogoFade>
