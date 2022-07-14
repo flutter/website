@@ -26,7 +26,7 @@ Geofencing][background-processes].  At the end of this article,
 you’ll find links to example code, and relevant documentation for Dart,
 iOS, and Android.
  
-See the [Happy paths recommendation][] for more information 
+See the [Happy paths recommendations][] for more information 
 on background processing. 
 
 [background-processes]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
