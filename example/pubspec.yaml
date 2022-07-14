@@ -20,5 +20,5 @@ dev_dependencies:
   css_colors: ^1.0.2
   web_socket_channel: ^2.2.0
   sqflite: ^2.0.2+1
-  camera: ^0.9.8+1
+  camera: ^0.10.0
   video_player: ^2.4.5
