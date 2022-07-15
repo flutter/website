@@ -71,11 +71,9 @@ RawChip(
 ## Timeline
 
 Landed in version: 2.11.0-0.1.pre<br>
-In stable release: not yet
+In stable release: 3.0.0
 
 ## References
-
-{% include docs/master-api.md %}
 
 API documentation:
 
@@ -87,9 +85,9 @@ Relevant PRs:
 
 * [Deprecate `useDeleteButtonTooltip` for Chips][]
 
-[`Chip`]: {{site.master-api}}/flutter/material/Chip-class.html
-[`InputChip`]: {{site.master-api}}/flutter/material/InputChip-class.html
-[`RawChip`]: {{site.master-api}}/flutter/material/RawChip-class.html
+[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`InputChip`]: {{site.api}}/flutter/material/InputChip-class.html
+[`RawChip`]: {{site.api}}/flutter/material/RawChip-class.html
 
 [Deprecate `useDeleteButtonTooltip` for Chips]: {{site.repo.flutter}}/pull/96174
 [Flutter fix]: {{site.url}}/development/tools/flutter-fix
