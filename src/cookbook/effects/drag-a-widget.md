@@ -163,7 +163,7 @@ In this case, the item is always accepted and processed.
 You might choose to inspect the incoming item to make a
 different decision. 
 
-Notice that the type of item dropped on`DragTarget`
+Notice that the type of item dropped on `DragTarget`
 must match the type of the item dragged from `LongPressDraggable`.
 If the types are not compatible, then 
 the `onAccept` method isn’t invoked.
