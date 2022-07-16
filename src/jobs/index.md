@@ -19,7 +19,3 @@ The following jobs are open:
 * [Tech Lead Manager]({{site.url}}/jobs/tlm)
 * [Developer Relations Engineer, iOS Focus]({{site.url}}/jobs/dre)
 
-## Product Management & UX
-
-* [Interaction Designer]({{site.url}}/jobs/ixd)
-* [User Experience Engineer]({{site.url}}/jobs/uxe)
