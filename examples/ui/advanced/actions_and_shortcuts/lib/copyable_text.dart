@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 /// A text field that also has buttons to select all the text and copy the
 /// selected text to the clipboard.
 class CopyableTextField extends StatefulWidget {
-  const CopyableTextField({Key? key, required this.title}) : super(key: key);
+  const CopyableTextField({super.key, required this.title});
 
   final String title;
 
@@ -30,7 +30,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
         CopyIntent: CopyAction(controller),
         SelectAllIntent: SelectAllAction(controller),
       },
-      child: Builder(builder: (BuildContext context) {
+      child: Builder(builder: (context) {
         return Scaffold(
           body: Center(
             child: Row(
@@ -162,7 +162,7 @@ class SelectAllAction extends Action<SelectAllIntent> {
 /// Shortcuts defined here are in effect for the whole app,
 /// although different widgets may fulfill them differently.
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   static const String title = 'Shortcuts and Actions Demo';
 

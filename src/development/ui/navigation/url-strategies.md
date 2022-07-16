@@ -123,7 +123,7 @@ handle any path gracefully and fallback to your app's `index.html` file.
 Update the `<base href="/">` tag in `web/index.html`
 to the path where your app is hosted.
 For example, to host your Flutter app at
-`myapp.dev/flutter_app`, change
+`my_app.dev/flutter_app`, change
 this tag to `<base href="/flutter_app/">`.
 
 

@@ -10,7 +10,7 @@ class Todo {
 // #docregion TodosScreen
 class TodosScreen extends StatelessWidget {
   // Requiring the list of todos.
-  const TodosScreen({Key? key, required this.todos}) : super(key: key);
+  const TodosScreen({super.key, required this.todos});
 
   final List<Todo> todos;
 

@@ -103,6 +103,12 @@ Install the following tools, if you don't have them already:
 > which affects how you clone it. 
 > The GitHub documentation has general help on [forking][] and [cloning][] repos.
 
+If you are working in the Windows desktop environment, make sure you have Git
+`autocrlf` set to `input` **before** initializing the submodules. This
+ensures that line endings are handled correctly _before_ any Bash scripts are
+executed within the submodules.
+See [issue 6201](https://github.com/flutter/website/issues/6201) for details.
+
 If you're outside of the Flutter organization, 
 we recommend you **create a fork** of the repo under your own account, 
 and then submit a PR from that fork. 
@@ -223,7 +229,7 @@ Some DartPad example code remains in this repo:
 This code must be manually compiled, 
 which also regenerates the associated JavaScript file in `src/assets/js`:
 ```bash
-$ cd `src/_packages/dartpad_picker
+$ cd src/_packages/dartpad_picker
 $ ./compile.sh
 ```
 

@@ -64,9 +64,6 @@ and app development.
 Flutter is designed to support mobile apps that run
 on both Android and iOS, as well as interactive apps
 that you want to run on your web pages or on the desktop.
-(Desktop support for Windows is now available
-on the stable channel; support for macOS and Linux is in beta,
-but a snapshot of the beta is also available on the stable channel.)
 
 Apps that need to deliver highly branded designs
 are particularly well suited for Flutter.
@@ -193,7 +190,7 @@ called Dart DevTools). For more information, see
 We don't ship with an opinionated solution,
 but there are a variety of packages that offer
 dependency injection and service location, such as [injectable][],
-[get_it][], and [kiwi][].
+[get_it][], [kiwi][], and [riverpod][].
 
 ## Technology
 
@@ -471,12 +468,7 @@ For more information, see [Hot reload][].
 ### Where can I deploy my Flutter app?
 
 You can compile and deploy your Flutter app to iOS, Android,
-[web][], and [desktop][] Windows support is stable,
-while macOS and Linux support are in beta.
-For more information about Windows support, see
-[Announcing Flutter for Windows][].
-
-[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
+[web][], and [desktop][].
 
 ### What devices and OS versions does Flutter run on?
 
@@ -504,9 +496,7 @@ For more details, check out the [web instructions][].
 ### Can I use Flutter to build desktop apps?
 
 Yes, desktop support is in stable for Windows,
-and in beta for macOS and Linux,
-but a snapshot of the beta is available on the stable channel.
-The current progress is documented on the [Desktop][desktop] page.
+macOS, and Linux.
 
 ### Can I use Flutter inside of my existing native app?
 
@@ -1030,13 +1020,13 @@ apps built with Flutter should follow Apple's
 [editing Dart]: {{site.dart-site}}/tools
 [editor configuration]: {{site.url}}/get-started/editor
 [example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
-[example project]: {{site.repo.flutter}}/tree/master/examples/platform_channel
+[example project]: {{site.repo.flutter}}/tree/main/examples/platform_channel
 [Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 [Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [Flutter 1.0]: {{site.google-blog}}/2018/12/flutter-10-googles-portable-ui-toolkit.html
 [Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
-[flutter_view]: {{site.repo.flutter}}/tree/master/examples/flutter_view
+[flutter_view]: {{site.repo.flutter}}/tree/main/examples/flutter_view
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3
 [gesture system]: {{site.url}}/development/ui/advanced/gestures
@@ -1086,7 +1076,7 @@ apps built with Flutter should follow Apple's
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [platform and third-party APIs]: {{site.url}}/development/platform-integration/platform-channels
 [platform channels]: {{site.url}}/development/platform-integration/platform-channels
-[platform_view]: {{site.repo.flutter}}/tree/master/examples/platform_view
+[platform_view]: {{site.repo.flutter}}/tree/main/examples/platform_view
 [popped]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [pub.dev]: {{site.pub}}
 [QA1795]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html
@@ -1118,3 +1108,4 @@ apps built with Flutter should follow Apple's
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: {{site.url}}/development/ui/widgets
 [supported platforms]: {{site.url}}/development/tools/sdk/release-notes/supported-platforms
+[riverpod]: {{site.pub}}/packages/riverpod

@@ -10,7 +10,7 @@ void highlightRepaints() {
 
 // #docregion EverythingRepaints
 class EverythingRepaintsPage extends StatelessWidget {
-  const EverythingRepaintsPage({Key? key}) : super(key: key);
+  const EverythingRepaintsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class EverythingRepaintsPage extends StatelessWidget {
 
 // #docregion AreaRepaints
 class AreaRepaintsPage extends StatelessWidget {
-  const AreaRepaintsPage({Key? key}) : super(key: key);
+  const AreaRepaintsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

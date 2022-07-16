@@ -365,15 +365,6 @@ find . -name "Podfile" -execdir pod install \;
 </li>
 <li markdown="1">
 
-Enable the Flutter macOS option:
-
-```bash
-flutter config --enable-macos-desktop
-```
-
-</li>
-<li markdown="1">
-
 Build the Flutter macOS project:
 
 ```bash
@@ -391,7 +382,7 @@ PACKAGE_NAME=$(basename "$APP_NAME" .app).pkg
 xcrun productbuild --component "$APP_NAME" /Applications/ unsigned.pkg
 
 INSTALLER_CERT_NAME=$(keychain list-certificates \
-          | jq '.[0]
+          | jq '.[]
             | select(.common_name
             | contains("Mac Developer Installer"))
             | .common_name' \

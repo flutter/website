@@ -4,7 +4,7 @@ void main() => runApp(const LogoApp());
 
 // #docregion LogoWidget
 class LogoWidget extends StatelessWidget {
-  const LogoWidget({Key? key}) : super(key: key);
+  const LogoWidget({super.key});
 
   // Leave out the height and width so it fills the animating parent
   @override
@@ -19,8 +19,8 @@ class LogoWidget extends StatelessWidget {
 
 // #docregion GrowTransition
 class GrowTransition extends StatelessWidget {
-  const GrowTransition({required this.child, required this.animation, Key? key})
-      : super(key: key);
+  const GrowTransition(
+      {required this.child, required this.animation, super.key});
 
   final Widget child;
   final Animation<double> animation;
@@ -45,10 +45,10 @@ class GrowTransition extends StatelessWidget {
 // #enddocregion GrowTransition
 
 class LogoApp extends StatefulWidget {
-  const LogoApp({Key? key}) : super(key: key);
+  const LogoApp({super.key});
 
   @override
-  _LogoAppState createState() => _LogoAppState();
+  State<LogoApp> createState() => _LogoAppState();
 }
 
 // #docregion print-state
@@ -69,8 +69,8 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return GrowTransition(
-      child: const LogoWidget(),
       animation: animation,
+      child: const LogoWidget(),
     );
   }
 

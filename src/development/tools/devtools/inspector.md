@@ -353,7 +353,7 @@ Here the progress indicator causes its container to repaint:
 <?code-excerpt "lib/highlight_repaints.dart (EverythingRepaints)"?>
 ```dart
 class EverythingRepaintsPage extends StatelessWidget {
-  const EverythingRepaintsPage({Key? key}) : super(key: key);
+  const EverythingRepaintsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -375,7 +375,7 @@ only that section of the screen to repaint:
 <?code-excerpt "lib/highlight_repaints.dart (AreaRepaints)"?>
 ```dart
 class AreaRepaintsPage extends StatelessWidget {
-  const AreaRepaintsPage({Key? key}) : super(key: key);
+  const AreaRepaintsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -440,7 +440,7 @@ parameters on the `Image` constructor:
 <?code-excerpt "lib/oversized_images.dart (ResizedImage)"?>
 ```dart
 class ResizedImage extends StatelessWidget {
-  const ResizedImage({Key? key}) : super(key: key);
+  const ResizedImage({super.key});
 
   @override
   Widget build(BuildContext context) {

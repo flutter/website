@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 // #docregion main
 void main() {
-  testWidgets('MyWidget has a title and message', (WidgetTester tester) async {
+  testWidgets('MyWidget has a title and message', (tester) async {
     // Create the widget by telling the tester to build it.
     await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
   });
@@ -12,10 +12,10 @@ void main() {
 
 class MyWidget extends StatelessWidget {
   const MyWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   final String title;
   final String message;

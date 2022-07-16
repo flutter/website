@@ -107,6 +107,20 @@ dd {
   }
 }
 
+.happy-paths-image-holder {
+  align-items: left;
+  display: flex;
+  height: 120px;
+  justify-content: left;
+
+  img {
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+  }
+}
+
 .fixed-col {
   @include media-breakpoint-up(md) {
     bottom: 0;

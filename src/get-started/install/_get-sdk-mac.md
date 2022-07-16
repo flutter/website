@@ -3,10 +3,17 @@
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
-    [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
+    |Intel | | <span class="apple-silicon">Apple Silicon</span> |
+    |------| | ---------------|
+    |[(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary} | | [(loading...)](#){:.download-latest-link-{{os}}-arm64.apple-silicon.btn.btn-primary} |
 
+    <br>
     For other release channels, and older builds,
     see the [SDK releases][] page.
+
+    <div class="apple-silicon">{{site.alert.tip}}
+      To determine whether your Mac uses an Apple silicon processor, refer to [Mac computers with Apple silicon]{:target="_blank"} on apple.com
+    {{site.alert.end}}</div>
 
  1. Extract the file in the desired location, for example:
 
@@ -108,3 +115,4 @@ For additional download options, see `flutter help precache`.
 [snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
 [Upgrading Flutter]: {{site.url}}/development/tools/sdk/upgrading
+[Mac computers with Apple silicon]: https://support.apple.com/en-us/HT211814

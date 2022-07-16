@@ -14,8 +14,8 @@ void examples(BuildContext context) {
 // #docregion LocaleResolution
   MaterialApp(
     localeResolutionCallback: (
-      Locale? locale,
-      Iterable<Locale> supportedLocales,
+      locale,
+      supportedLocales,
     ) {
       return locale;
     },

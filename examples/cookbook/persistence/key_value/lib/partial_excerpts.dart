@@ -1,10 +1,10 @@
 // ignore_for_file: unused_local_variable
 
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void step2() async {
+Future<void> step2() async {
   int counter = 0;
 
   // #docregion Step2
@@ -12,11 +12,11 @@ void step2() async {
   final prefs = await SharedPreferences.getInstance();
 
   // set value
-  prefs.setInt('counter', counter);
+  await prefs.setInt('counter', counter);
   // #enddocregion Step2
 }
 
-void step3() async {
+Future<void> step3() async {
   // #docregion Step3
   final prefs = await SharedPreferences.getInstance();
 
@@ -25,18 +25,18 @@ void step3() async {
   // #enddocregion Step3
 }
 
-void step4() async {
+Future<void> step4() async {
   // #docregion Step4
   final prefs = await SharedPreferences.getInstance();
 
-  prefs.remove('counter');
+  await prefs.remove('counter');
   // #enddocregion Step4
 }
 
 void testing() {
   // #docregion Testing
   const MethodChannel('plugins.flutter.io/shared_preferences')
-      .setMockMethodCallHandler((MethodCall methodCall) async {
+      .setMockMethodCallHandler((methodCall) async {
     if (methodCall.method == 'getAll') {
       return <String, dynamic>{}; // set initial values here if desired
     }

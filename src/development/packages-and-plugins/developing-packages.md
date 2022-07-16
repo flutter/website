@@ -5,21 +5,23 @@ description: How to write packages and plugins for Flutter.
 ---
 
 {{site.note.alert}}
-  The plugin API has been updated and now supports [federated plugins][] that
-  enable separation of different platform implementations. You can also now
-  indicate [which platforms a plugin][supported-platforms] supports, for example
-  web and macOS.
+  The plugin API supports [federated plugins][] that
+  enable separation of different platform implementations.
+  You can also now indicate
+  [which platforms a plugin][supported-platforms]
+  supports, for example web and macOS.
 
-  Eventually, the old plugin APIs will be deprecated. In the short term, you
-  will see a warning when the framework detects that you are using an old-style
-  plugin. For information on how to upgrade your plugin, see [Supporting the new
-  Android plugins APIs][].
+  Eventually, the old plugin APIs will be deprecated.
+  In the short term, you will see a warning when the
+  framework detects that you are using an old-style
+  plugin. For information on how to upgrade your plugin,
+  see [Supporting the new Android plugins APIs][].
 {{site.note.end}}
 
 ## Package introduction
 
-Packages enable the creation of modular code that can be shared easily. A
-minimal package consists of the following:
+Packages enable the creation of modular code that can be shared easily.
+A minimal package consists of the following:
 
 **`pubspec.yaml`**
 : A metadata file that declares the package name,
@@ -52,8 +54,9 @@ Packages can contain more than one kind of content:
   Dart code combined with one or more platform-specific
   implementations.
 
-  Plugin packages can be written for Android (using Kotlin or Java), iOS (using
-  Swift or Objective-C), web, macOS, Windows, or Linux, or any combination
+  Plugin packages can be written for Android
+  (using Kotlin or Java), iOS (using Swift or Objective-C),
+  web, macOS, Windows, or Linux, or any combination
   thereof.
 
   A concrete example is the [`url_launcher`][] plugin package.
@@ -61,6 +64,11 @@ Packages can contain more than one kind of content:
   was extended to implement support for web,
   see the Medium article by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
+
+**FFI Plugin packages**
+: A specialized Dart package that contains an API written in
+  Dart code combined with one or more platform-specific
+  implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
 
 ## Developing Dart packages {#dart}
 
@@ -130,19 +138,22 @@ see the [Dart library package][] documentation.
 
 ## Developing plugin packages {#plugin}
 
-If you want to develop a package that calls into platform-specific APIs, you
-need to develop a plugin package.
+If you want to develop a package that calls into
+platform-specific APIs,
+you need to develop a plugin package.
 
-The API is connected to the platform-specific implementation(s) using a
-[platform channel][].
+The API is connected to the platform-specific
+implementation(s) using a [platform channel][].
 
 ### Federated plugins
 
-Federated plugins are a way of splitting support for different platforms into
-separate packages. So, a federated plugin can use one package for iOS, another
-for Android, another for web, and yet another for a car (as an example of an IoT
-device). Among other benefits, this approach allows a domain expert to extend an
-existing plugin to work for the platform they know best.
+Federated plugins are a way of splitting support for
+different platforms into separate packages.
+So, a federated plugin can use one package for iOS,
+another for Android, another for web,
+and yet another for a car (as an example of an IoT device).
+Among other benefits, this approach allows a domain expert
+to extend an existing plugin to work for the platform they know best.
 
 A federated plugin requires the following packages:
 
@@ -201,9 +212,12 @@ implemented, see the Medium article by Harry Terkelsen,
 
 ### Specifying a plugin's supported platforms {#plugin-platforms}
 
-Plugins can specify the platforms they support by adding keys to the `platforms`
-map in the `pubspec.yaml` file. For example, the following pubspec file shows
-the `flutter:` map for the `hello` plugin, which supports only iOS and Android:
+Plugins can specify the platforms they support by
+adding keys to the `platforms` map in the
+`pubspec.yaml` file. For example,
+the following pubspec file shows the
+`flutter:` map for the `hello` plugin,
+which supports only iOS and Android:
 
 ```yaml
 flutter:
@@ -222,9 +236,11 @@ environment:
   flutter: ">=1.12.0"
 ```
 
-When adding plugin implementations for more platforms, the `platforms` map
-should be updated accordingly. For example, here's the map in the pubspec file
-for the `hello` plugin, when updated to add support for macOS and web:
+When adding plugin implementations for more platforms,
+the `platforms` map should be updated accordingly.
+For example, here's the map in the pubspec file
+for the `hello` plugin,
+when updated to add support for macOS and web:
 
 ```yaml
 flutter:
@@ -250,9 +266,11 @@ environment:
 
 #### Federated platform packages
 
-A platform package uses the same format, but includes an `implements` entry
-indicating which app-facing package it is an implementation for. For example,
-a `hello_windows` plugin containing the Windows implementation for `hello`
+A platform package uses the same format,
+but includes an `implements` entry indicating
+which app-facing package it implements. For example,
+a `hello_windows` plugin containing the Windows
+implementation for `hello`
 would have the following `flutter:` map:
 
 ```yaml
@@ -269,7 +287,7 @@ flutter:
 An app facing package can endorse a platform package by adding a
 dependency on it, and including it as a `default_package` in the
 `platforms:` map. If the `hello` plugin above endorsed `hello_windows`,
-it would look like this:
+it would look as follows:
 
 
 ```yaml
@@ -289,17 +307,19 @@ dependencies:
 ```
 
 Note that as shown here, an app-facing package can have
-some platforms implementated within the package, and others in
-endorsed federated implementations.
+some platforms implementated within the package,
+and others in endorsed federated implementations.
 
 ### Step 1: Create the package
 
 To create a plugin package, use the `--template=plugin`
 flag with `flutter create`.
 
-Use the `--platforms=` option followed by a comma separated list to specify the
-platforms that the plugin supports. Available platforms are: `android`, `ios`,
-`web`, `linux`, `macos`, and `windows`. If no platforms are specified, the
+Use the `--platforms=` option followed by a
+comma-separated list to specify the platforms
+that the plugin supports. Available platforms are:
+`android`, `ios`, `web`, `linux`, `macos`, and `windows`.
+If no platforms are specified, the
 resulting project doesn't support any platforms.
 
 Use the `--org` option to specify your organization,
@@ -307,20 +327,21 @@ using reverse domain name notation. This value is used
 in various package and bundle identifiers in the
 generated plugin code.
 
-Use the `-a` option to specify the language for android or the `-i` option to
-specify the language for ios. Please choose **one** of the following:
+Use the `-a` option to specify the language for android
+or the `-i` option to specify the language for ios.
+Please choose **one** of the following:
 
 ```terminal
-$ flutter create --org com.example --template=plugin --platforms=android,ios -a kotlin hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -a kotlin hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin --platforms=android,ios -a java hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -a java hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin --platforms=android,ios -i objc hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -i objc hello
 ```
 ```terminal
-$ flutter create --org com.example --template=plugin --platforms=android,ios -i swift hello
+$ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -i swift hello
 ```
 
 This creates a plugin project in the `hello` folder
@@ -408,7 +429,88 @@ in the Project Navigator.
 
 You can run the example app by pressing the run (&#9654;) button.
 
-#### Step 2d: Connect the API and the platform code
+#### Step 2d: Add Linux platform code (.h+.cc)
+
+We recommend you edit the Linux code using an IDE with
+C++ integration. The instructions below are for
+Visual Studio Code with the "C/C++" and "CMake" extensions
+installed, but can be adjusted for other IDEs.
+
+Before editing the Linux platform code in an IDE,
+first make sure that the code has been built at least once
+(in other words, run the example app from your Flutter
+IDE/editor, or in a terminal execute
+`cd hello/example; flutter build linux`).
+
+Then use the following steps:
+
+1. Launch Visual Studio Code.
+1. Open the `hello/example/linux/` directory.
+1. Choose **Yes** in the prompt asking:
+   `Would you like to configure project "linux"?`.
+   This will allow C++ autocomplete to work.
+
+The Linux platform code for your plugin is located in
+`flutter/ephemeral/.plugin_symlinks/hello/linux/`.
+
+You can run the example app using `flutter run`.
+**Note:** Creating a runnable Flutter application
+on Linux requires steps that are part of the `flutter`
+tool, so even if your editor provides CMake
+integration building and running that way won't
+work correctly.
+
+#### Step 2e: Add macOS platform code (.swift)
+
+We recommend you edit the macOS code using Xcode.
+
+Before editing the macOS platform code in Xcode,
+first make sure that the code has been built at least once
+(in other words, run the example app from your IDE/editor,
+or in a terminal execute
+`cd hello/example; flutter build macos`).
+
+Then use the following steps:
+
+1. Launch Xcode.
+1. Select **File > Open**, and select the
+   `hello/example/macos/Runner.xcworkspace` file.
+
+The macOS platform code for your plugin is located in
+`Pods/Development Pods/hello/../../example/macos/Flutter/ephemeral/.symlinks/plugins/hello/macos/Classes`
+in the Project Navigator.
+
+You can run the example app by pressing the run (&#9654;) button.
+
+#### Step 2f: Add Windows platform code (.h+.cpp)
+
+We recommend you edit the Windows code using Visual Studio.
+
+Before editing the Windows platform code in Visual Studio,
+first make sure that the code has been built at least once
+(in other words, run the example app from your IDE/editor,
+or in a terminal execute
+`cd hello/example; flutter build windows`).
+
+Then use the following steps:
+
+1. Launch Visual Studio.
+1. Select **Open a project or solution**, and select the
+   `hello/example/build/windows/hello_example.sln` file.
+
+The Windows platform code for your plugin is located in
+`hello_plugin/Source Files` and `hello_plugin/Header Files` in
+the Solution Explorer.
+
+You can run the example app by right-clicking `hello_example` in
+the Solution Explorer and selecting **Set as Startup Project**,
+then pressing the run (&#9654;) button. **Important:** After
+making changes to plugin code, you must select
+**Build > Build Solution** before running again, otherwise
+an outdated copy of the built plugin will be run instead
+of the latest version containing your changes.
+
+#### Step 2g: Connect the API and the platform code
 
 Finally, you need to connect the API written in Dart code with
 the platform-specific implementations.
@@ -418,7 +520,8 @@ interface package.
 
 ### Add support for platforms in an existing plugin project
 
-To add support for specific platforms to an existing plugin project, run `flutter create` with
+To add support for specific platforms to an
+existing plugin project, run `flutter create` with
 the `--template=plugin` flag again in the project directory.
 For example, to add web support in an existing plugin, run:
 
@@ -426,17 +529,31 @@ For example, to add web support in an existing plugin, run:
 $ flutter create --template=plugin --platforms=web .
 ```
 
-If this command displays a message about updating the `pubspec.yaml` file,
-follow the provided instructions.
+If this command displays a message about updating the
+`pubspec.yaml` file, follow the provided instructions.
 
-### Dart-only platform implementations
+### Dart platform implementations
 
-Usually plugin implementations involve platform channels and a second language,
-as described above. In some cases, however, some platforms can be
-implemented entirely in Dart (for example, using [FFI][]). For a Dart-only
-platform implementation, replace the `pluginClass` in pubspec.yaml with
-a `dartPluginClass`. Here is the `hello_windows` example above modified for a
+In many cases, non-web platform implementations only use the
+platform-specific implementation language, as shown above. However,
+platform implementations can also use platform-specific Dart as well.
+
+{{site.alert.note}}
+  The examples below only apply to non-web platforms. Web
+  plugin implementations are always written in Dart, and use
+  `pluginClass` and `fileName` for their Dart implementations
+  as shown above.
+{{site.alert.end}}
+
+#### Dart-only platform implementations
+
+In some cases, some platforms can be
+implemented entirely in Dart (for example, using FFI).
+For a Dart-only platform implementation on a platform other than web,
+replace the `pluginClass` in pubspec.yaml with a `dartPluginClass`.
+Here is the `hello_windows` example above modified for a
 Dart-only implementation:
+
 ```yaml
 flutter:
   plugin:
@@ -448,9 +565,9 @@ flutter:
 
 In this version you would have no C++ Windows code, and would instead
 subclass the `hello` plugin's Dart platform interface class with a
-`HelloPluginWindows` class that includes a static `registerWith()` method.
-This method will be called during startup, and can be used to register the
-Dart implementation:
+`HelloPluginWindows` class that includes a static
+`registerWith()` method.  This method is called during startup,
+and can be used to register the Dart implementation:
 
 ```dart
 class HelloPluginWindows extends HelloPluginPlatform {
@@ -460,17 +577,137 @@ class HelloPluginWindows extends HelloPluginPlatform {
   }
 ```
 
-This is supported for Windows, macOS, and Linux starting in Flutter 2.5.
-`dartPluginClass` is supported for Android and iOS starting in Flutter 2.8,
-but currently a `pluginClass` is still required for those platforms. That
-requirement will be removed in a future version of Flutter.
+#### Hybrid platform implementations
+
+Platform implementations can also use both Dart and a platform-specific
+language. For example, a plugin could use a different platform channel
+for each platform so that the channels can be customized per platform.
+
+A hybrid implementation uses both of the registration systems
+described above. Here is the `hello_windows` example above modified for a
+hybrid implementation:
+
+```yaml
+flutter:
+  plugin:
+    implements: hello
+    platforms:
+      windows:
+        dartPluginClass: HelloPluginWindows
+        pluginClass: HelloPlugin
+```
+
+The Dart `HelloPluginWindows` class would use the `registerWith()`
+shown above for Dart-only implementations, while the C++ `HelloPlugin`
+class would be the same as in a C++-only implementation.
 
 ### Testing your plugin
 
-We encourage you test your plugin with automated tests, to ensure that
-functionality does not regress as you make changes to your code. For more
-information, see [Testing your plugin][], a section in [Supporting the new
-Android plugins APIs][].
+We encourage you test your plugin with automated tests,
+to ensure that functionality does not regress
+as you make changes to your code. For more information,
+see [Testing your plugin][],
+a section in [Supporting the new Android plugins APIs][].
+
+## Developing FFI plugin packages {#plugin-ffi}
+
+If you want to develop a package that calls into native APIs using
+Dart's FFI, you need to develop an FFI plugin package.
+
+### Step 1: Create the package
+
+To create a starter FFI plugin package,
+use the `--template=plugin_ffi` flag with `flutter create`:
+
+```terminal
+$ flutter create --template=plugin_ffi hello
+```
+
+This creates an FFI plugin project in the `hello`
+folder with the following specialized content:
+
+**lib**: The Dart code that defines the API of the plugin,
+  and which calls into the native code using `dart:ffi`.
+
+**src**: The native source code, and a `CmakeFile.txt`
+  file for building that source code into a dynamic library.
+
+**platform folders** (`android`, `ios`, `windows`, etc.): The
+  build files for building and bundling the native code
+  library with the platform application.
+
+### Step 2: Building and bundling native code
+
+The `pubspec.yaml` specifies FFI plugins as follows:
+
+```yaml
+  plugin:
+    platforms:
+      some_platform:
+        ffiPlugin: true
+```
+
+This configuration invokes the native build
+for the various target platforms and bundles
+the binaries in Flutter applications using these FFI plugins.
+
+This can be combined with `dartPluginClass`,
+such as when FFI is used for the
+implementation of one platform in a federated plugin:
+
+```yaml
+  plugin:
+    implements: some_other_plugin
+    platforms:
+      some_platform:
+        dartPluginClass: SomeClass
+        ffiPlugin: true
+```
+
+A plugin can have both FFI and method channels:
+
+```yaml
+  plugin:
+    platforms:
+      some_platform:
+        pluginClass: SomeName
+        ffiPlugin: true
+```
+
+The native build systems that are invoked by FFI
+(and method channels) plugins are:
+
+* For Android: Gradle, which invokes the Android NDK for native builds.
+  * See the documentation in `android/build.gradle`.
+* For iOS and macOS: Xcode, via CocoaPods.
+  * See the documentation in `ios/hello.podspec`.
+  * See the documentation in `macos/hello.podspec`.
+* For Linux and Windows: CMake.
+  * See the documentation in `linux/CMakeLists.txt`.
+  * See the documentation in `windows/CMakeLists.txt`.
+
+### Step 3: Binding to native code
+
+To use the native code, bindings in Dart are needed.
+
+To avoid writing these by hand, they are generated from the header file
+(`src/hello.h`) by [`package:ffigen`][].
+Regenerate the bindings by running the following:
+
+```terminal
+$  flutter pub run ffigen --config ffigen.yaml
+```
+
+### Step 4: Invoking native code
+
+Very short-running native functions can be directly
+invoked from any isolate.
+For an example, see `sum` in `lib/hello.dart`.
+
+Longer-running functions should be invoked on a
+[helper isolate][] to avoid dropping frames in
+Flutter applications.
+For an example, see `sumAsync` in `lib/hello.dart`.
 
 ## Adding documentation
 
@@ -528,16 +765,21 @@ For tips on how to write API documentation, see
 
 ### Adding licenses to the LICENSE file
 
-Individual licenses inside each LICENSE file should be separated by 80 hyphens
+Individual licenses inside each LICENSE file
+should be separated by 80 hyphens
 on their own on a line.
 
-If a LICENSE file contains more than one component license, then each component
-license must start with the names of the packages to which the component license
-applies, with each package name on its own line, and the list of package names
-separated from the actual license text by a blank line. (The packages need not
-match the names of the pub package. For example, a package might itself contain
-code from multiple third-party sources, and might need to include a license for
-each one.)
+If a LICENSE file contains more than one
+component license, then each component
+license must start with the names of the
+packages to which the component license applies,
+with each package name on its own line,
+and the list of package names separated from
+the actual license text by a blank line.
+(The packages need not match the names of
+the pub package. For example, a package might itself contain
+code from multiple third-party sources,
+and might need to include a license for each one.)
 
 The following example shows a well-organized license file:
 
@@ -709,25 +951,29 @@ PENDING
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
-[FFI]: {{site.url}}/development/platform-integration/c-interop
+[Android]: {{site.url}}/development/platform-integration/android/c-interop
+[iOS]: {{site.url}}/development/platform-integration/ios/c-interop
+[macOS]: {{site.url}}/development/platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: {{site.url}}/get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
 [Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
+[helper isolate]: {{site.dart-site}}/guides/language/concurrency#background-workers
 [How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
+[`package:ffigen`]: {{site.pub}}/packages/ffigen
 [platform channel]: {{site.url}}/development/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
-[Supporting the new Android plugins APIs]: {{site.url}}/development/packages-and-plugins/plugin-api-migration
+[Supporting the new Android plugins APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[Testing your plugin]: {{site.url}}/development/packages-and-plugins/plugin-api-migration#testing-your-plugin
+[Testing your plugin]: {{site.url}}/development/platform-integration/android/plugin-api-migration#testing-your-plugin
 [unit tests]: {{site.url}}/testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

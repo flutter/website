@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  const MyAppBar({required this.title, Key? key}) : super(key: key);
+  const MyAppBar({required this.title, super.key});
 
   // Fields in a Widget subclass are always marked "final".
 
@@ -15,7 +15,6 @@ class MyAppBar extends StatelessWidget {
       decoration: BoxDecoration(color: Colors.blue[500]),
       // Row is a horizontal, linear layout.
       child: Row(
-        // <Widget> is the type of items in the list.
         children: [
           const IconButton(
             icon: Icon(Icons.menu),
@@ -39,7 +38,7 @@ class MyAppBar extends StatelessWidget {
 }
 
 class MyScaffold extends StatelessWidget {
-  const MyScaffold({Key? key}) : super(key: key);
+  const MyScaffold({super.key});
 
   @override
   Widget build(BuildContext context) {

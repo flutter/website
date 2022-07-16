@@ -52,7 +52,7 @@ jobs:
         with:
           submodules: "recursive"
       - name: Install Node
-        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854
+        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install firebase tools

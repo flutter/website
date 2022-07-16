@@ -5,10 +5,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class BouncingBallDemo extends StatefulWidget {
-  const BouncingBallDemo({Key? key}) : super(key: key);
+  const BouncingBallDemo({super.key});
 
   @override
-  _BouncingBallDemoState createState() => _BouncingBallDemoState();
+  State<BouncingBallDemo> createState() => _BouncingBallDemoState();
 }
 
 class _BouncingBallDemoState extends State<BouncingBallDemo>
@@ -44,7 +44,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo>
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -45,7 +45,7 @@ a list.
 <?code-excerpt "lib/excerpt1.dart (ParallaxRecipe)"?>
 ```dart
 class ParallaxRecipe extends StatelessWidget {
-  const ParallaxRecipe({Key? key}) : super(key: key);
+  const ParallaxRecipe({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -79,11 +79,11 @@ Later, you’ll replace that widget with a parallax version.
 @immutable
 class LocationListItem extends StatelessWidget {
   const LocationListItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.name,
     required this.country,
-  }) : super(key: key);
+  });
 
   final String imageUrl;
   final String name;
@@ -166,7 +166,7 @@ Next, add the list items to your `ParallaxRecipe` widget.
 <?code-excerpt "lib/excerpt3.dart (ParallaxRecipeItems)"?>
 ```dart
 class ParallaxRecipe extends StatelessWidget {
-  const ParallaxRecipe({Key? key}) : super(key: key);
+  const ParallaxRecipe({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -582,7 +582,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -600,8 +600,8 @@ class MyApp extends StatelessWidget {
 
 class ExampleParallax extends StatelessWidget {
   const ExampleParallax({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -622,11 +622,11 @@ class ExampleParallax extends StatelessWidget {
 
 class LocationListItem extends StatelessWidget {
   LocationListItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.name,
     required this.country,
-  }) : super(key: key);
+  });
 
   final String imageUrl;
   final String name;
@@ -779,9 +779,9 @@ class ParallaxFlowDelegate extends FlowDelegate {
 
 class Parallax extends SingleChildRenderObjectWidget {
   const Parallax({
-    Key? key,
+    super.key,
     required Widget background,
-  }) : super(key: key, child: background);
+  }) : super(child: background);
 
   @override
   RenderObject createRenderObject(BuildContext context) {

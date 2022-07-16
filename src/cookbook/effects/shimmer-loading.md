@@ -61,7 +61,7 @@ with a color while the image is loading.
 <?code-excerpt "lib/main.dart (CircleListItem)"?>
 ```dart
 class CircleListItem extends StatelessWidget {
-  const CircleListItem({Key? key}) : super(key: key);
+  const CircleListItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -101,9 +101,9 @@ the rectangles based on the current loading status.
 ```dart
 class CardListItem extends StatelessWidget {
   const CardListItem({
-    Key? key,
+    super.key,
     required this.isLoading,
-  }) : super(key: key);
+  });
 
   final bool isLoading;
 
@@ -233,16 +233,16 @@ The `srcATop` blend mode  replaces any color that your
 ```dart
 class ShimmerLoading extends StatefulWidget {
   const ShimmerLoading({
-    Key? key,
+    super.key,
     required this.isLoading,
     required this.child,
-  }) : super(key: key);
+  });
 
   final bool isLoading;
   final Widget child;
 
   @override
-  _ShimmerLoadingState createState() => _ShimmerLoadingState();
+  State<ShimmerLoading> createState() => _ShimmerLoadingState();
 }
 
 class _ShimmerLoadingState extends State<ShimmerLoading> {
@@ -333,10 +333,10 @@ class Shimmer extends StatefulWidget {
   }
 
   const Shimmer({
-    Key? key,
+    super.key,
     required this.linearGradient,
     this.child,
-  }) : super(key: key);
+  });
 
   final LinearGradient linearGradient;
   final Widget? child;

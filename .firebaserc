@@ -3,21 +3,11 @@
     "default": "flutter-docs-prod",
     "devtools-staging": "flutter-website-dt-staging",
     "flutter-dev": "flutter-dev-230821",
-    "flutter-io": "sweltering-fire-2088",
     "staging-1": "flutter-io-staging-1",
     "staging-2": "flutter-io-staging-2",
-    "pc2": "ng2-io",
     "sz": "sz-flutter",
     "sz2": "sz-flutter-2",
-    "kw": "kw-flutter-1",
-    "kw2": "kw-flutter-2",
     "ft": "flutter-web-staging",
-    "filip": "flutter-website-filiph-staging",
-    "brianegan": "brianegan-flutter-staging",
-    "xster-staging": "flutter-website-staging-6f2ad",
-    "jr": "flutter-website-jr-stagi-988d4",
-    "add-to-app-2019": "add-to-app-2019",
-    "kf6gpe": "kf6gpe-flutter-staging",
     "vgv": "dash-site-dev"
   }
 }

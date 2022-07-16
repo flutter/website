@@ -47,7 +47,52 @@ Code after migration:
 final ThemeData theme = ThemeData();
 MaterialApp(
   theme: theme.copyWith(
-    colorScheme: theme.colorScheme.copyWith(secondary: myColor),
+    switchTheme: SwitchThemeData(
+      thumbColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+        if (states.contains(MaterialState.disabled)) {
+          return null;
+        }
+        if (states.contains(MaterialState.selected)) {
+          return myColor;
+        }
+        return null;
+      }),
+      trackColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+        if (states.contains(MaterialState.disabled)) {
+          return null;
+        }
+        if (states.contains(MaterialState.selected)) {
+          return myColor;
+        }
+        return null;
+      }),
+    ),
+    radioTheme: RadioThemeData(
+      fillColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+        if (states.contains(MaterialState.disabled)) {
+          return null;
+        }
+        if (states.contains(MaterialState.selected)) {
+          return myColor;
+        }
+        return null;
+      }),
+    ),
+    checkboxTheme: CheckboxThemeData(
+      fillColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+        if (states.contains(MaterialState.disabled)) {
+          return null;
+        }
+        if (states.contains(MaterialState.selected)) {
+          return myColor;
+        }
+        return null;
+      }),
+    ),
   ),
   //...
 )
@@ -55,7 +100,7 @@ MaterialApp(
 
 ## Timeline
 
-Landed in version: 2.9.0-1.0.pre.209<br>
+Landed in version: TBD<br>
 In stable release: not yet
 
 ## References

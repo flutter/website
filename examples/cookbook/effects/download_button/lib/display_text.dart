@@ -1,16 +1,16 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 // #docregion DisplayText
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;

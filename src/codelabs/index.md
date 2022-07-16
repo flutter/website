@@ -8,10 +8,17 @@ hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
 
 Flutter workshops are similar to the codelabs,
-but are instructor led and always use DartPad. The
-provided workshop link takes you to the relevant YouTube
-video, which tells you where to find the associated
-DartPad link.
+but are instructor led and always use DartPad.
+The provided workshop link takes you to the relevant YouTube video,
+which tells you where to find the associated DartPad link.
+
+{{site.alert.secondary}}
+  You might want to check out the workshops
+  created by our Google Developer Experts (GDEs).
+  You can find them on the [Flutter community blog][].
+{{site.alert.end}}
+
+[Flutter community blog]: {{site.medium}}/flutter-community/dartpad-workshops-from-flutter-gdes-622b52f70173
 
 ## Good for beginners
 
@@ -48,14 +55,6 @@ one of these codelabs:
   Android and iOS tooling, the completed app
   works on Android and iOS devices, as well.
 
-* [Building beautiful UIs with Flutter][]<br>
-  A deeper "first dive" than "Write your first Flutter app."
-  Create a chat app that includes a simple animation,
-  and customizes the UI for iOS and Android. As part of
-  this codelab, learn how to use keyboard shortcuts in
-  Android Studio.
-
-[Building beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
 [Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
 [codelab on docs.flutter.dev]: {{site.url}}/get-started/codelab
 [Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
@@ -107,6 +106,10 @@ like layout and animations:
   Learn how to use the Material [animations][] package to
   add pre-built transitions to a Material app called Reply.
 
+* [Take your Flutter app from boring to beautiful][]<br>
+  Learn how to use some of the features in Material 3
+  to make your app more beautiful *and* more responsive.
+
 * [MDC-101 Flutter: Material Components (MDC) Basics][]<br>
   Learn the basics of using Material Components by building
   a simple app with core components.  The four MDC codelabs
@@ -147,12 +150,13 @@ like layout and animations:
 [MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
 [MDC-103 Flutter: Material Theming with Color, Shape, Elevation, and Type]: {{site.codelabs}}/codelabs/mdc-103-flutter
 [MDC-104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
+[Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
 
 ## Using Flutter with...
 
 Learn how to use Flutter with other technologies.
 
-* [Adding WebView to your Flutter app][] **NEW**<br>
+* [Adding WebView to your Flutter app][]<br>
   With the WebView Flutter plugin you can add a WebView 
   widget to your Android or iOS Flutter app.
 

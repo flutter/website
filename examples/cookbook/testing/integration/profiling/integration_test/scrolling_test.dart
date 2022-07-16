@@ -6,13 +6,12 @@ import 'package:integration_test/integration_test.dart';
 import 'package:scrolling/main.dart';
 
 void main() {
-  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
-      as IntegrationTestWidgetsFlutterBinding;
+  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Counter increments smoke test', (tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp(
-      items: List<String>.generate(10000, (i) => "Item $i"),
+      items: List<String>.generate(10000, (i) => 'Item $i'),
     ));
 
     final listFinder = find.byType(Scrollable);

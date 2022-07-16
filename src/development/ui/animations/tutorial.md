@@ -290,10 +290,10 @@ import 'package:flutter/material.dart';
 void main() => runApp(const LogoApp());
 
 class LogoApp extends StatefulWidget {
-  const LogoApp({Key? key}) : super(key: key);
+  const LogoApp({super.key});
 
   @override
-  _LogoAppState createState() => _LogoAppState();
+  State<LogoApp> createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> {
@@ -326,7 +326,7 @@ The changes from the non-animated example are highlighted:
 --- animate0/lib/main.dart
 +++ animate1/lib/main.dart
 @@ -9,16 +9,39 @@
-   _LogoAppState createState() => _LogoAppState();
+   State<LogoApp> createState() => _LogoAppState();
  }
 
 -class _LogoAppState extends State<LogoApp> {
@@ -443,8 +443,8 @@ object to hold the animation. Add the following `AnimatedLogo` class:
 <?code-excerpt "lib/main.dart (AnimatedLogo)" title?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
-  const AnimatedLogo({Key? key, required Animation<double> animation})
-      : super(key: key, listenable: animation);
+  const AnimatedLogo({super.key, required Animation<double> animation})
+      : super(listenable: animation);
 
   @override
   Widget build(BuildContext context) {
@@ -478,8 +478,8 @@ and it passes the `Animation` object to `AnimatedLogo`:
  void main() => runApp(const LogoApp());
 
 +class AnimatedLogo extends AnimatedWidget {
-+  const AnimatedLogo({Key? key, required Animation<double> animation})
-+      : super(key: key, listenable: animation);
++  const AnimatedLogo({super.key, required Animation<double> animation})
++      : super(listenable: animation);
 +
 +  @override
 +  Widget build(BuildContext context) {
@@ -496,10 +496,10 @@ and it passes the `Animation` object to `AnimatedLogo`:
 +}
 +
  class LogoApp extends StatefulWidget {
-   const LogoApp({Key? key}) : super(key: key);
+   const LogoApp({super.key});
 
    @override
-   _LogoAppState createState() => _LogoAppState();
+   State<LogoApp> createState() => _LogoAppState();
  }
 @@ -15,32 +33,18 @@
 
@@ -661,7 +661,7 @@ the logo is straightforward:
 <?code-excerpt "animate4/lib/main.dart (LogoWidget)"?>
 ```dart
 class LogoWidget extends StatelessWidget {
-  const LogoWidget({Key? key}) : super(key: key);
+  const LogoWidget({super.key});
 
   // Leave out the height and width so it fills the animating parent
   @override
@@ -696,8 +696,8 @@ in the render tree.
 <?code-excerpt "animate4/lib/main.dart (GrowTransition)"?>
 ```dart
 class GrowTransition extends StatelessWidget {
-  const GrowTransition({required this.child, required this.animation, Key? key})
-      : super(key: key);
+  const GrowTransition(
+      {required this.child, required this.animation, super.key});
 
   final Widget child;
   final Animation<double> animation;
@@ -740,10 +740,10 @@ in the bullet points above.
  void main() => runApp(const LogoApp());
 
 -class AnimatedLogo extends AnimatedWidget {
--  const AnimatedLogo({Key? key, required Animation<double> animation})
--      : super(key: key, listenable: animation);
+-  const AnimatedLogo({super.key, required Animation<double> animation})
+-      : super(listenable: animation);
 +class LogoWidget extends StatelessWidget {
-+  const LogoWidget({Key? key}) : super(key: key);
++  const LogoWidget({super.key});
 +
 +  // Leave out the height and width so it fills the animating parent
 +  @override
@@ -756,8 +756,8 @@ in the bullet points above.
 +}
 +
 +class GrowTransition extends StatelessWidget {
-+  const GrowTransition({required this.child, required this.animation, Key? key})
-+      : super(key: key);
++  const GrowTransition(
++      {required this.child, required this.animation, super.key});
 +
 +  final Widget child;
 +  final Animation<double> animation;
@@ -787,10 +787,10 @@ in the bullet points above.
  }
 
  class LogoApp extends StatefulWidget {
-   const LogoApp({Key? key}) : super(key: key);
+   const LogoApp({super.key});
 
    @override
-   _LogoAppState createState() => _LogoAppState();
+   State<LogoApp> createState() => _LogoAppState();
 @@ -34,18 +54,23 @@
    @override
    void initState() {
@@ -805,8 +805,8 @@ in the bullet points above.
 -  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
 +  Widget build(BuildContext context) {
 +    return GrowTransition(
-+      child: const LogoWidget(),
 +      animation: animation,
++      child: const LogoWidget(),
 +    );
 +  }
 
@@ -871,8 +871,8 @@ The following code shows the changes with highlights:
 <?code-excerpt "animate5/lib/main.dart (diff)" replace="/(static final|child: Opacity|opacity:|_sizeTween\.|CurvedAnimation).*/[!$&!]/g"?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
-  const AnimatedLogo({Key? key, required Animation<double> animation})
-      : super(key: key, listenable: animation);
+  const AnimatedLogo({super.key, required Animation<double> animation})
+      : super(listenable: animation);
 
   // Make the Tweens static because they don't change.
   [!static final _opacityTween = Tween<double>(begin: 0.1, end: 1);!]
@@ -896,10 +896,10 @@ class AnimatedLogo extends AnimatedWidget {
 }
 
 class LogoApp extends StatefulWidget {
-  const LogoApp({Key? key}) : super(key: key);
+  const LogoApp({super.key});
 
   @override
-  _LogoAppState createState() => _LogoAppState();
+  State<LogoApp> createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {

@@ -108,10 +108,10 @@ To create and initialize the `VideoPlayerController` do the following:
 <?code-excerpt "lib/main_step3.dart (VideoPlayerScreen)"?>
 ```dart
 class VideoPlayerScreen extends StatefulWidget {
-  const VideoPlayerScreen({Key? key}) : super(key: key);
+  const VideoPlayerScreen({super.key});
 
   @override
-  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
+  State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
@@ -239,7 +239,7 @@ import 'package:video_player/video_player.dart';
 void main() => runApp(const VideoPlayerApp());
 
 class VideoPlayerApp extends StatelessWidget {
-  const VideoPlayerApp({Key? key}) : super(key: key);
+  const VideoPlayerApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -251,10 +251,10 @@ class VideoPlayerApp extends StatelessWidget {
 }
 
 class VideoPlayerScreen extends StatefulWidget {
-  const VideoPlayerScreen({Key? key}) : super(key: key);
+  const VideoPlayerScreen({super.key});
 
   @override
-  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
+  State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {

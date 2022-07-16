@@ -1,15 +1,16 @@
-import 'package:adaptive_app_demos/app_model.dart';
-import 'package:adaptive_app_demos/main_app_scaffold.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'app_model.dart';
+import 'main_app_scaffold.dart';
 
 void main() {
   runApp(AppScaffold());
 
   // Required when using bits_dojo for custom TitleBars
   doWhenWindowReady(() {
-    appWindow.title = "Adaptive App Demo";
+    appWindow.title = 'Adaptive App Demo';
     appWindow.show();
   });
 }
@@ -21,7 +22,7 @@ class AppScaffold extends StatelessWidget {
       create: (_) => AppModel(),
       child: Builder(
         builder: (context) {
-          bool touchMode = context.select((AppModel m) => m.touchMode);
+          bool touchMode = context.select<AppModel, bool>((m) => m.touchMode);
           // #docregion VisualDensity
           double densityAmt = touchMode ? 0.0 : -1.0;
           VisualDensity density =

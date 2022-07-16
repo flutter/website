@@ -126,7 +126,7 @@ Uint8List verticallyFlipImage(Uint8List sourceBytes, int width, int height) {
 
 late Future<bool> imageRawUsesCorrectBehavior = (() async {
   final ui.ImageDescriptor descriptor = ui.ImageDescriptor.raw(
-    await ui.ImmutableBuffer.fromUint8List(Uint8List.fromList(<int>[0xED, 0, 0, 0])),
+    await ui.ImmutableBuffer.fromUint8List(Uint8List.fromList(<int>[0xED, 0, 0, 0xFF])),
     width: 1, height: 1, pixelFormat: ui.PixelFormat.rgba8888);
   final ui.Image image = (await (await descriptor.instantiateCodec()).getNextFrame()).image;
   final Uint8List resultPixels = Uint8List.sublistView(
@@ -161,19 +161,21 @@ API documentation:
 
 Relevant issues:
 
-* [[Web] Regression in Master - PDF display distorted due to change in BMP Encoder][]
-* [[web] ImageDescriptor.raw flips and inverts images (partial reason included)][]
+* [Web: Regression in Master - PDF display distorted due to change in BMP Encoder][]
+* [Web: ImageDescriptor.raw flips and inverts images (partial reason included)][]
 
 Relevant PRs:
 
-* [[Web] Reland: Fix BMP encoder][]
+* [Web: Reland: Fix BMP encoder][]
+* [Clarify ImageDescriptor.raw pixel order and add version detector][]
 
 <!-- Stable channel link: -->
 [`decodeImageFromPixels`]: {{site.api}}/flutter/dart-ui/decodeImageFromPixels.html
 [`ImageDescriptor.raw`]: {{site.api}}/flutter/dart-ui/ImageDescriptor/ImageDescriptor.raw.html
 
-[[Web] Regression in Master - PDF display distorted due to change in BMP Encoder]: {{site.repo.flutter}}/issues/93615
-[[web] ImageDescriptor.raw flips and inverts images (partial reason included)]: {{site.repo.flutter}}/issues/89610
+[Web: Regression in Master - PDF display distorted due to change in BMP Encoder]: {{site.repo.flutter}}/issues/93615
+[Web: ImageDescriptor.raw flips and inverts images (partial reason included)]: {{site.repo.flutter}}/issues/89610
 
 [engine#29593]: {{site.repo.engine}}/pull/29593
-[[Web] Reland: Fix BMP encoder]: {{site.repo.engine}}/pull/29593
+[Web: Reland: Fix BMP encoder]: {{site.repo.engine}}/pull/29593
+[Clarify ImageDescriptor.raw pixel order and add version detector]: {{site.repo.engine}}/pull/30343

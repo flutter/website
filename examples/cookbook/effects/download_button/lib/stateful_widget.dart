@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

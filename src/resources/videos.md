@@ -3,8 +3,9 @@ title: Videos and online courses
 description: Available videos and online courses on various aspects of developing in Flutter.
 ---
 
-These Flutter videos, produced both internally at Google and by the
-Flutter community, might help if you are a visual learner.
+These Flutter videos, produced both internally
+at Google and by the Flutter community,
+might help if you are a visual learner.
 
 Note that many people make Flutter videos.
 This page shows some that we like,
@@ -18,6 +19,16 @@ Here are some of the series offered on the
 [flutterdev YouTube channel][].
 
 [flutterdev YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+
+### Flutter at Google I/O 2022
+
+Google I/O 2022 is over, but you can still catch
+the great Flutter content!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w_ezWG1yKQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter at Google I/O playlist][]
+
+[Flutter at Google I/O playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU1kHjuHoFGBLCxjy4h2WOcP
 
 ### Flutter Engage 2021
 
@@ -100,6 +111,20 @@ Introducing the Boring Flutter show<br>
 [The Boring Flutter show playlist][]
 
 [The Boring Flutter show playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl
+
+### Learning to Fly
+
+Follow along with Khanh’s journey as she builds her first Flutter app. 
+From ideation down to the moments of confusion,
+learn alongside her as she asks important questions like: 
+“What is the best way to build out a theme? How to approach using fonts?” 
+And more!
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/CkcvVZZEsJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Building my first Flutter app | Learning to Fly<br>
+[Learning to Fly playlist][]
+
+[Learning to Fly playlist]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU3X18pAQWLyCJaa79RpqWnn
 
 ## Conference talks
 

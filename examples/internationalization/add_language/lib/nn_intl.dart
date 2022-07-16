@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:intl/intl.dart' as intl;
-import 'package:intl/date_symbols.dart' as intl;
-import 'package:intl/date_symbol_data_custom.dart' as date_symbol_data_custom;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/date_symbol_data_custom.dart' as date_symbol_data_custom;
+import 'package:intl/date_symbols.dart' as intl;
+import 'package:intl/intl.dart' as intl;
 
 /// A custom set of date patterns for the `nn` locale.
 ///
@@ -314,28 +314,17 @@ class _NnMaterialLocalizationsDelegate
 /// and formatting.
 class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   const NnMaterialLocalizations({
-    String localeName = 'nn',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat compactDateFormat,
-    required intl.DateFormat shortDateFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat longDateFormat,
-    required intl.DateFormat yearMonthFormat,
-    required intl.DateFormat shortMonthDayFormat,
-    required intl.NumberFormat decimalFormat,
-    required intl.NumberFormat twoDigitZeroPaddedFormat,
-  }) : super(
-          localeName: localeName,
-          fullYearFormat: fullYearFormat,
-          compactDateFormat: compactDateFormat,
-          shortDateFormat: shortDateFormat,
-          mediumDateFormat: mediumDateFormat,
-          longDateFormat: longDateFormat,
-          yearMonthFormat: yearMonthFormat,
-          shortMonthDayFormat: shortMonthDayFormat,
-          decimalFormat: decimalFormat,
-          twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat,
-        );
+    super.localeName = 'nn',
+    required super.fullYearFormat,
+    required super.compactDateFormat,
+    required super.shortDateFormat,
+    required super.mediumDateFormat,
+    required super.longDateFormat,
+    required super.yearMonthFormat,
+    required super.shortMonthDayFormat,
+    required super.decimalFormat,
+    required super.twoDigitZeroPaddedFormat,
+  });
 
 // #docregion Getters
   @override
@@ -346,6 +335,7 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get alertDialogLabel => r'Alert';
+
 // #enddocregion Getters
 
   @override
@@ -620,4 +610,236 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get unspecifiedDateRange => 'Date Range';
+
+  @override
+  // TODO: implement keyboardKeyAlt
+  String get keyboardKeyAlt => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyAltGraph
+  String get keyboardKeyAltGraph => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyBackspace
+  String get keyboardKeyBackspace => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyCapsLock
+  String get keyboardKeyCapsLock => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyChannelDown
+  String get keyboardKeyChannelDown => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyChannelUp
+  String get keyboardKeyChannelUp => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyControl
+  String get keyboardKeyControl => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyDelete
+  String get keyboardKeyDelete => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyEisu
+  String get keyboardKeyEisu => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyEject
+  String get keyboardKeyEject => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyEnd
+  String get keyboardKeyEnd => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyEscape
+  String get keyboardKeyEscape => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyFn
+  String get keyboardKeyFn => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyHangulMode
+  String get keyboardKeyHangulMode => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyHanjaMode
+  String get keyboardKeyHanjaMode => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyHankaku
+  String get keyboardKeyHankaku => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyHiragana
+  String get keyboardKeyHiragana => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyHiraganaKatakana
+  String get keyboardKeyHiraganaKatakana => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyHome
+  String get keyboardKeyHome => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyInsert
+  String get keyboardKeyInsert => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyKanaMode
+  String get keyboardKeyKanaMode => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyKanjiMode
+  String get keyboardKeyKanjiMode => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyKatakana
+  String get keyboardKeyKatakana => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyMeta
+  String get keyboardKeyMeta => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyMetaMacOs
+  String get keyboardKeyMetaMacOs => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyMetaWindows
+  String get keyboardKeyMetaWindows => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumLock
+  String get keyboardKeyNumLock => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad0
+  String get keyboardKeyNumpad0 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad1
+  String get keyboardKeyNumpad1 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad2
+  String get keyboardKeyNumpad2 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad3
+  String get keyboardKeyNumpad3 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad4
+  String get keyboardKeyNumpad4 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad5
+  String get keyboardKeyNumpad5 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad6
+  String get keyboardKeyNumpad6 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad7
+  String get keyboardKeyNumpad7 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad8
+  String get keyboardKeyNumpad8 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpad9
+  String get keyboardKeyNumpad9 => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadAdd
+  String get keyboardKeyNumpadAdd => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadComma
+  String get keyboardKeyNumpadComma => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadDecimal
+  String get keyboardKeyNumpadDecimal => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadDivide
+  String get keyboardKeyNumpadDivide => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadEnter
+  String get keyboardKeyNumpadEnter => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadEqual
+  String get keyboardKeyNumpadEqual => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadMultiply
+  String get keyboardKeyNumpadMultiply => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadParenLeft
+  String get keyboardKeyNumpadParenLeft => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadParenRight
+  String get keyboardKeyNumpadParenRight => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyNumpadSubtract
+  String get keyboardKeyNumpadSubtract => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyPageDown
+  String get keyboardKeyPageDown => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyPageUp
+  String get keyboardKeyPageUp => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyPower
+  String get keyboardKeyPower => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyPowerOff
+  String get keyboardKeyPowerOff => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyPrintScreen
+  String get keyboardKeyPrintScreen => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyRomaji
+  String get keyboardKeyRomaji => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyScrollLock
+  String get keyboardKeyScrollLock => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeySelect
+  String get keyboardKeySelect => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeySpace
+  String get keyboardKeySpace => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyZenkaku
+  String get keyboardKeyZenkaku => throw UnimplementedError();
+
+  @override
+  // TODO: implement keyboardKeyZenkakuHankaku
+  String get keyboardKeyZenkakuHankaku => throw UnimplementedError();
 }

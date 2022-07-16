@@ -6,9 +6,12 @@ description: Learn how to write custom platform-specific code in your app.
 
 <?code-excerpt path-base="development/platform_integration"?>
 
-This guide describes how to write custom platform-specific code. Some
-platform-specific functionality is available through existing packages;
+This guide describes how to write custom platform-specific code.
+Some platform-specific functionality is available
+through existing packages;
 see [using packages][].
+
+[using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 
 {{site.alert.note}}
   The information in this page is valid for most platforms,
@@ -19,33 +22,41 @@ see [using packages][].
 Flutter uses a flexible system that allows you to call
 platform-specific APIs in a language that works directly
 with those APIs:
-- Kotlin or Java on Android
-- Swift or Objective-C on iOS
-- C++ on Windows
-- Objective-C on macOS
-- C on Linux
 
-Flutter's builtin platform-specific API support does not rely on code
-generation, but rather on a flexible message passing style.  Alternatively, the
-package [Pigeon][] can be used for [sending structured typesafe messages][] via
-code generation:
+* Kotlin or Java on Android
+* Swift or Objective-C on iOS
+* C++ on Windows
+* Objective-C on macOS
+* C on Linux
 
-* The Flutter portion of the app sends messages to its *host*,
+Flutter's builtin platform-specific API support
+doesn't rely on code generation,
+but rather on a flexible message passing style.
+Alternatively, you can use the [Pigeon][pigeon]
+package for [sending structured typesafe messages][]
+with code generation:
+
+* The Flutter portion of the app sends messages to its _host_,
   the non-Dart portion of the app, over a platform channel.
 
-* The *host* listens on the platform channel, and receives the message.
+* The _host_ listens on the platform channel, and receives the message.
   It then calls into any number of platform-specific APIs&mdash;using
   the native programming language&mdash;and sends a response back to the
-  *client*, the Flutter portion of the app.
+  _client_, the Flutter portion of the app.
 
 {{site.alert.note}}
-  This guide addresses using the platform channel mechanism if you need
-  to use the platform's APIs in a non-Dart language.  But you can also write
-  platform-specific Dart code
-  in your Flutter app by inspecting the [defaultTargetPlatform][] property.
-  [Platform adaptations][] lists some platform-specific adaptations
-  that Flutter automatically does for you in the framework.
+  This guide addresses using the platform channel mechanism
+  if you need to use the platform's APIs in a non-Dart language.
+  But you can also write platform-specific Dart code
+  in your Flutter app by inspecting the
+  [`defaultTargetPlatform`][] property.
+  [Platform adaptations][] lists some
+  platform-specific adaptations that Flutter
+  automatically performs for you in the framework.
 {{site.alert.end}}
+
+[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+[pigeon]: {{site.pub-pkg}}/pigeon
 
 ## Architectural overview: platform channels {#architecture}
 
@@ -76,7 +87,7 @@ with very little 'boilerplate' code.
 {{site.alert.note}}
   If desired, method calls can also be sent in the reverse direction,
   with the platform acting as client to methods implemented in Dart.
-  A concrete example of this is the [`quick_actions`][] plugin.
+  For a concrete example, check out the [`quick_actions`][] plugin.
 {{site.alert.end}}
 
 ### Platform channel data types support and codecs {#codec}
@@ -194,24 +205,32 @@ platform side and vice versa:
 | Map                        | FlValue(FlValue, FlValue) |
 {% endsamplecode %}
 
-## Example: Calling platform-specific iOS and Android code using platform channels {#example}
+## Example: Calling platform-specific Android, iOS, and Windows code using platform channels {#example}
 
-The following code demonstrates how to call a platform-specific API
-to retrieve and display the current battery level.
-It uses the Android `BatteryManager` API,
-and the iOS `device.batteryLevel` API, via a single platform message,
-`getBatteryLevel()`.
+The following code demonstrates how to call
+a platform-specific API to retrieve and display
+the current battery level.  It uses the Android
+`BatteryManager` API, the iOS
+`device.batteryLevel` API, and the Windows
+`GetSystemPowerStatus` API with a single
+platform message, `getBatteryLevel()`.
 
-The example adds the platform-specific code inside the main app itself.
-If you want to reuse the platform-specific code for multiple apps,
+The example adds the platform-specific code inside
+the main app itself.  If you want to reuse the
+platform-specific code for multiple apps,
 the project creation step is slightly different
-(see [developing packages][plugins]), but the platform channel code
+(see [developing packages][plugins]),
+but the platform channel code
 is still written in the same way.
 
-*Note*: The full, runnable source-code for this example is available in
-[`/examples/platform_channel/`][] for Android with Java and
-iOS with Objective-C. For iOS with Swift,
-see [`/examples/platform_channel_swift/`][].
+{{site.alert.note}}
+  The full, runnable source-code for this example is
+  available in [`/examples/platform_channel/`][]
+  for Android with Java, iOS with Objective-C, and
+  Windows with C++.
+  For iOS with Swift,
+  see [`/examples/platform_channel_swift/`][].
+{{site.alert.end}}
 
 ### Step 1: Create a new app project {#example-project}
 
@@ -252,11 +271,13 @@ class _MyHomePageState extends State<MyHomePage> {
   // Get battery level.
 ```
 
-Next, invoke a method on the method channel, specifying the concrete method
-to call using the String identifier `getBatteryLevel`.
-The call might fail&mdash;for example if the platform does not support the
-platform API (such as when running in a simulator)&mdash;so wrap the
-`invokeMethod` call in a try-catch statement.
+Next, invoke a method on the method channel,
+specifying the concrete method to call using
+the `String` identifier `getBatteryLevel`.
+The call might fail&mdash;for example,
+if the platform doesn't support the
+platform API (such as when running in a simulator),
+so wrap the `invokeMethod` call in a try-catch statement.
 
 Use the returned result to update the user interface state in `_batteryLevel`
 inside `setState`.
@@ -295,8 +316,8 @@ Widget build(BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ElevatedButton(
-            child: const Text('Get Battery Level'),
             onPressed: _getBatteryLevel,
+            child: const Text('Get Battery Level'),
           ),
           Text(_batteryLevel),
         ],
@@ -321,8 +342,7 @@ in Android Studio:
    and select the **android** folder inside it. Click **OK**.
 
 1. Open the file `MainActivity.kt` located in the **kotlin** folder in the
-   Project view. (Note: If editing with Android Studio 2.3,
-   note that the **kotlin** folder is shown as if named **java**.)
+   Project view.
 
 Inside the `configureFlutterEngine()` method, create a `MethodChannel` and call
 `setMethodCallHandler()`. Make sure to use the same channel name as
@@ -342,7 +362,7 @@ class MainActivity: FlutterActivity() {
     super.configureFlutterEngine(flutterEngine)
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
-      // Note: this method is invoked on the main thread.
+      // This method is invoked on the main thread.
       // TODO
     }
   }
@@ -399,7 +419,7 @@ Remove the following code:
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
-      // Note: this method is invoked on the main thread.
+      // This method is invoked on the main thread.
       // TODO
     }
 ```
@@ -409,7 +429,7 @@ And replace with the following:
 <!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
-      // Note: this method is invoked on the main thread.
+      // This method is invoked on the main thread.
       call, result ->
       if (call.method == "getBatteryLevel") {
         val batteryLevel = getBatteryLevel()
@@ -460,7 +480,7 @@ public class MainActivity extends FlutterActivity {
     new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
         .setMethodCallHandler(
           (call, result) -> {
-            // Note: this method is invoked on the main thread.
+            // This method is invoked on the main thread.
             // TODO
           }
         );
@@ -519,7 +539,7 @@ Remove the following code:
 <!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
-            // Note: this method is invoked on the main thread.
+            // This method is invoked on the main thread.
             // TODO
           }
 ```
@@ -529,7 +549,7 @@ And replace with the following:
 <!--code-excerpt "MainActivity.java" title-->
 ```java
           (call, result) -> {
-            // Note: this method is invoked on the main thread.
+            // This method is invoked on the main thread.
             if (call.method.equals("getBatteryLevel")) {
               int batteryLevel = getBatteryLevel();
 
@@ -586,7 +606,7 @@ a `FlutterMethodChannel` tied to the channel name
                                               binaryMessenger: controller.binaryMessenger)
     batteryChannel.setMethodCallHandler({
       (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
-      // Note: this method is invoked on the UI thread.
+      // This method is invoked on the UI thread.
       // Handle battery messages.
     })
 
@@ -609,7 +629,7 @@ private func receiveBatteryLevel(result: FlutterResult) {
   device.isBatteryMonitoringEnabled = true
   if device.batteryState == UIDevice.BatteryState.unknown {
     result(FlutterError(code: "UNAVAILABLE",
-                        message: "Battery info unavailable",
+                        message: "Battery level not available.",
                         details: nil))
   } else {
     result(Int(device.batteryLevel * 100))
@@ -628,7 +648,7 @@ is called, report that instead.
 ```swift
 batteryChannel.setMethodCallHandler({
   [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
-  // Note: this method is invoked on the UI thread.
+  // This method is invoked on the UI thread.
   guard call.method == "getBatteryLevel" else {
     result(FlutterMethodNotImplemented)
     return
@@ -671,7 +691,7 @@ as was used on the Flutter client side.
                                           binaryMessenger:controller.binaryMessenger];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
-    // Note: this method is invoked on the UI thread.
+    // This method is invoked on the UI thread.
     // TODO
   }];
 
@@ -710,13 +730,13 @@ the `result` argument. If an unknown method is called, report that instead.
 ```objectivec
 __weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
-  // Note: this method is invoked on the UI thread.
+  // This method is invoked on the UI thread.
   if ([@"getBatteryLevel" isEqualToString:call.method]) {
     int batteryLevel = [weakSelf getBatteryLevel];
 
     if (batteryLevel == -1) {
       result([FlutterError errorWithCode:@"UNAVAILABLE"
-                                 message:@"Battery info unavailable"
+                                 message:@"Battery level not available."
                                  details:nil]);
     } else {
       result(@(batteryLevel));
@@ -730,27 +750,158 @@ __weak typeof(self) weakSelf = self;
 
 You should now be able to run the app on iOS.
 If using the iOS Simulator,
-note that it does not support battery APIs,
-and the app displays 'battery info unavailable'.
+note that it doesn't support battery APIs,
+and the app displays 'Battery level not available'.
+  
+### Step 5: Add a Windows platform-specific implementation
 
-## Typesafe platform channels via Pigeon {#pigeon}
+Start by opening the Windows host portion of your Flutter app in Visual Studio:
 
-The previous example uses `MethodChannel` to communicate between the host and
-client which isn't typesafe.  Calling and receiving messages depends on the host
-and client declaring the same arguments and datatypes in order for messages to
-work.  The [Pigeon][] package can be used as an alternative to `MethodChannel`
-to generate code that sends messages in a structured typesafe manner.
+1. Run `flutter build windows` in your project directory once to generate
+   the Visual Studio solution file.
 
-With [Pigeon][] the messaging protocol is defined in a subset of Dart which then
-generates messaging code for Android or iOS.  A more complete example and more
-information can be found on the [Pigeon pub.dev page][];
+1. Start Visual Studio.
 
-Using [Pigeon][] eliminates the need to match strings between host and client
-for the names and datatypes of messages.  It supports: nested classes, grouping
-messages into APIs, generation of asynchronous wrapper code and sending messages
-in either direction. The generated code is readable and guarantees there will
-be no conflicts between multiple clients of different versions. Supported
-languages are Objective-C, Java, Kotlin and Swift (via Objective-C interop).
+1. Select **Open a project or solution**.
+
+1. Navigate to the directory holding your Flutter app, then into the **build**
+   folder, then the **windows** folder, then select the `batterylevel.sln` file.
+   Click **Open**.
+
+Add the C++ implementation of the platform channel method:
+
+1. Expand **batterylevel > Source Files** in the Solution Explorer.
+
+1. Open the file `flutter_window.cpp`.
+  
+First, add the necessary includes to the top of the file, just
+after `#include "flutter_window.h"`:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+#include <flutter/event_channel.h>
+#include <flutter/event_sink.h>
+#include <flutter/event_stream_handler_functions.h>
+#include <flutter/method_channel.h>
+#include <flutter/standard_method_codec.h>
+#include <windows.h>
+
+#include <memory>
+```
+
+Edit the `FlutterWindow::OnCreate` method and create
+a `flutter::MethodChannel` tied to the channel name
+`samples.flutter.dev/battery`:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+bool FlutterWindow::OnCreate() {
+  // ...
+  RegisterPlugins(flutter_controller_->engine());
+
+  flutter::MethodChannel<> channel(
+      flutter_controller_->engine()->messenger(), "samples.flutter.dev/battery",
+      &flutter::StandardMethodCodec::GetInstance());
+  channel.SetMethodCallHandler(
+      [](const flutter::MethodCall<>& call,
+         std::unique_ptr<flutter::MethodResult<>> result) {
+        // TODO
+      });
+
+  SetChildContent(flutter_controller_->view()->GetNativeWindow());
+  return true;
+}
+```
+
+Next, add the C++ code that uses the Windows battery APIs to
+retrieve the battery level. This code is exactly the same as
+you would write in a native Windows application.
+
+Add the following as a new function at the top of
+`flutter_window.cpp` just after the `#include` section:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+static int GetBatteryLevel() {
+  SYSTEM_POWER_STATUS status;
+  if (GetSystemPowerStatus(&status) == 0 || status.BatteryLifePercent == 255) {
+    return -1;
+  }
+  return status.BatteryLifePercent;
+}
+```
+
+Finally, complete the `setMethodCallHandler()` method added earlier.
+You need to handle a single platform method, `getBatteryLevel()`,
+so test for that in the `call` argument.
+The implementation of this platform method calls
+the Windows code written in the previous step. If an unknown method
+is called, report that instead.
+  
+Remove the following code:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+  channel.SetMethodCallHandler(
+      [](const flutter::MethodCall<>& call,
+         std::unique_ptr<flutter::MethodResult<>> result) {
+        // TODO
+      });
+```
+
+And replace with the following:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```cpp
+  channel.SetMethodCallHandler(
+      [](const flutter::MethodCall<>& call,
+         std::unique_ptr<flutter::MethodResult<>> result) {
+        if (call.method_name() == "getBatteryLevel") {
+          int battery_level = GetBatteryLevel();
+          if (battery_level != -1) {
+            result->Success(battery_level);
+          } else {
+            result->Error("UNAVAILABLE", "Battery level not available.");
+          }
+        } else {
+          result->NotImplemented();
+        }
+      });
+```
+
+You should now be able to run the application on Windows.
+If your device doesn't have a battery,
+it displays 'Battery level not available'.
+
+## Typesafe platform channels using Pigeon {#pigeon}
+
+The previous example uses `MethodChannel`
+to communicate between the host and client,
+which isn't typesafe. Calling and receiving
+messages depends on the host and client declaring
+the same arguments and datatypes in order for messages to work.
+You can use the [Pigeon][pigeon] package as
+an alternative to `MethodChannel`
+to generate code that sends messages in a
+structured, typesafe manner.
+
+With [Pigeon][pigeon], the messaging protocol is defined
+in a subset of Dart that then generates messaging
+code for Android or iOS. You can find a more complete
+example and more information on the [`pigeon`][pigeon]
+page on pub.dev.
+
+Using [Pigeon][pigeon] eliminates the need to match
+strings between host and client
+for the names and datatypes of messages.
+It supports: nested classes, grouping
+messages into APIs, generation of
+asynchronous wrapper code and sending messages
+in either direction. The generated code is readable
+and guarantees there are no conflicts between
+multiple clients of different versions.
+Supported languages are Objective-C, Java, Kotlin,
+and Swift (with Objective-C interop).
 
 ### Pigeon example
 
@@ -780,7 +931,7 @@ abstract class Api {
 ```dart
 import 'generated_pigeon.dart';
 
-void onClick() async {
+Future<void> onClick() async {
   SearchRequest request = SearchRequest()..query = 'test';
   Api api = SomeApi();
   SearchReply reply = await api.search(request);
@@ -790,8 +941,9 @@ void onClick() async {
 
 ## Separate platform-specific code from UI code {#separate}
 
-If you expect to use your platform-specific code in multiple Flutter apps,
-it can be useful to separate the code into a platform plugin located
+If you expect to use your platform-specific code
+in multiple Flutter apps, you might consider
+separating the code into a platform plugin located
 in a directory outside your main application.
 See [developing packages][] for details.
 
@@ -817,31 +969,31 @@ types than the default types.
 
 ## Channels and platform threading
 
-When invoking channels on the platform side destined for Flutter, they need to
-be invoked on the platform's main thread. When invoking channels in Flutter
-destined for the platform side, they need to be invoked on the root Isolate. The
-platform side's handlers can execute on the platform's main thread or they can
-execute on a background thread if a Task Queue is used. The result of the
-platform side handlers can be invoked asynchronously and on any thread when the
-Task Queue API is available; otherwise, they must be invoked on the platform
-thread.
+When invoking channels on the platform side destined
+for Flutter, invoke them on the platform's main thread.
+When invoking channels in Flutter destined
+for the platform side, invoke on the root `Isolate`.
+The platform side's handlers can execute
+on the platform's main thread or they can execute on
+a background thread if using a Task Queue.
+You can invoke the platform side handlers asynchronously
+and on any thread when the Task Queue API is available;
+otherwise, they must be invoked on the platform thread.
 
 {{site.alert.note}}
-  In release 2.10, the Task Queue API is available for Android. For iOS, it is
-  only available on the `master` channel.
-{{site.alert.end}}
-
-{{site.alert.note}}
-  On Android, the platform's main thread is sometimes called the "main thread",
-  but it is technically defined as [the UI thread][]. Annotate methods that need
-  to be run on the UI thread with `@UiThread`. On iOS, this thread is officially
+  On Android, the platform's main thread is sometimes
+  called the "main thread", but it is technically defined
+  as [the UI thread][]. Annotate methods that need
+  to be run on the UI thread with `@UiThread`.
+  On iOS, this thread is officially
   referred to as [the main thread][].
 {{site.alert.end}}
 
 ### Executing channel handlers on background threads
 
-In order for a channel's platform side handler to execute on a background
-thread, the Task Queue API has be used.  Currently this feature is only
+In order for a channel's platform side handler to
+execute on a background thread, you must use the
+Task Queue API. Currently this feature is only
 supported on iOS and Android.
 
 In Java:
@@ -918,11 +1070,13 @@ In Objective-C:
 
 ### Jumping to the UI thread in Android
 
-To comply with channels' UI thread requirement, you may need to jump from a
-background thread to Android's UI thread to execute a channel method. In
-Android this is accomplished by `post()`ing a `Runnable` to Android's UI
-thread `Looper`, which causes the `Runnable` to execute on the main thread
-at the next opportunity.
+To comply with channels' UI thread requirement,
+you might need to jump from a background thread
+to Android's UI thread to execute a channel method.
+In Android, you can accomplish this by `post()`ing a
+`Runnable` to Android's UI thread `Looper`,
+which causes the `Runnable` to execute on the
+main thread at the next opportunity.
 
 In Java:
 
@@ -945,9 +1099,11 @@ Handler(Looper.getMainLooper()).post {
 
 ### Jumping to the main thread in iOS
 
-To comply with channel's main thread requirement, you may need to jump from a
-background thread to iOS's main thread to execute a channel method. In iOS this
-is accomplished by executing a [block][] on the main [dispatch queue][]:
+To comply with channel's main thread requirement,
+you might need to jump from a background thread to
+iOS's main thread to execute a channel method.
+Youc an accomplish this in iOS by executing a
+[block][] on the main [dispatch queue][]:
 
 In Objective-C:
 
@@ -970,12 +1126,11 @@ DispatchQueue.main.async {
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
 [`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
-[defaultTargetPlatform]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
 [plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
-[`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel
-[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/master/examples/platform_channel_swift
+[`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel
+[`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel_swift
 [JS interoperability]: {{site.dart-site}}/web/js-interop
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
@@ -989,7 +1144,4 @@ DispatchQueue.main.async {
 [`StringCodec`]: {{site.api}}/flutter/services/StringCodec-class.html
 [the main thread]: {{site.apple-dev}}/documentation/uikit?language=objc
 [the UI thread]: {{site.android-dev}}/guide/components/processes-and-threads#Threads
-[using packages]: {{site.url}}/development/packages-and-plugins/using-packages
-[Pigeon]: {{site.pub-pkg}}/pigeon
-[Pigeon pub.dev page]: {{site.pub-pkg}}/pigeon
 [sending structured typesafe messages]: #pigeon

@@ -3,6 +3,8 @@ title: Common Flutter errors
 description: How to recognize and resolve common Flutter framework errors.
 ---
 
+<?code-excerpt path-base="testing/common_errors"?>
+
 ## Introduction
 
 This page explains several frequently-encountered Flutter framework errors and
@@ -40,7 +42,7 @@ The error often occurs when a `Column` or `Row` has a child widget that is not
 constrained in its size. For example, the code snippet below demonstrates a
 common scenario:
 
-<!-- skip -->
+<?code-excerpt "lib/renderflex_overflow.dart (Problem)"?>
 ```dart
 Widget build(BuildContext context) {
   return Container(
@@ -89,18 +91,18 @@ Well, you need to make sure the `Column` won’t attempt to be wider than it can
 be. To achieve this, you need to constrain its width. One way to do it is to
 wrap the `Column` in an `Expanded` widget:
 
-<!-- skip -->
+<?code-excerpt "lib/renderflex_overflow.dart (Fix)"?>
 ```dart
 child: Row(
   children: [
     Icon(Icons.message),
     Expanded(
       child: Column(
-        // code omitted
-      ),
+          // code omitted
+          ),
     ),
-  ]
-)
+  ],
+),
 ```
 
 Another way is to wrap the `Column` in a `Flexible` widget and specify a `flex`
@@ -177,7 +179,7 @@ widget. However, a `Column` doesn’t impose any constraint on its children’s
 height by default. The combination of the two behaviors leads to the failure of
 determining the size of the `ListView`. 
 
-<!-- skip -->
+<?code-excerpt "lib/unbounded_height.dart (Problem)"?>
 ```dart
 Widget build(BuildContext context) {
   return Center(
@@ -209,7 +211,7 @@ as the remaining space in the `Column`, wrap it using an `Expanded` widget (see
 the example below). Otherwise, specify an absolute height using a `SizedBox`
 widget or a relative height using a `Flexible` widget.
 
-<!-- skip -->
+<?code-excerpt "lib/unbounded_height.dart (Fix)"?>
 ```dart
 Widget build(BuildContext context) {
   return Center(
@@ -270,14 +272,13 @@ width of the InputDecorator or the TextField that contains it.
 This error occurs, for example, when a `Row` contains a `TextFormField` or a
 `TextField` but the latter has no width constraint.
 
-<!-- skip -->
+<?code-excerpt "lib/unbounded_width.dart (Problem)"?>
 ```dart
 Widget build(BuildContext context) {
   return MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title:
-            Text('Unbounded Width of the TextField'),
+        title: Text('Unbounded Width of the TextField'),
       ),
       body: Row(
         children: [
@@ -295,24 +296,22 @@ As suggested by the error message, fix this error by constraining the text field
 using either an `Expanded` or `SizedBox` widget. The following example
 demonstrates using an `Expanded` widget:
 
-<!-- skip -->
+<?code-excerpt "lib/unbounded_width.dart (Fix)"?>
 ```dart
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Unbounded Width of the TextField'),
-        ),
-        body: Row(
-          children: [
-            Expanded(
-                child: TextFormField()
-            ),
-          ],
-        ),
+Widget build(BuildContext context) {
+  return MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text('Unbounded Width of the TextField'),
       ),
-    );
-  }
+      body: Row(
+        children: [
+          Expanded(child: TextFormField()),
+        ],
+      ),
+    ),
+  );
+}
 ```
 
 ## ‘Incorrect use of ParentData widget’
@@ -385,11 +384,10 @@ from a `build` method.
 
 Below is a snippet that seems to be a common culprit of this error:
 
-<!-- skip -->
+<?code-excerpt "lib/set_state_build.dart (Problem)"?>
 ```dart
 Widget build(BuildContext context) {
-
-  // Don't do this. 
+  // Don't do this.
   showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -421,7 +419,7 @@ dialog to be displayed upon entry. When the user requests the second page from
 clicking on a button on the first page, the `Navigator` pushes two routes in a
 row – one for the second page and another for the dialog.  
 
-<!-- skip -->
+<?code-excerpt "lib/set_state_build.dart (Fix)"?>
 ```dart
 class FirstScreen extends StatelessWidget {
   @override
@@ -431,7 +429,7 @@ class FirstScreen extends StatelessWidget {
         title: Text('First Screen'),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Launch screen'),
           onPressed: () {
             // Navigate to the second screen using a named route.

@@ -461,7 +461,7 @@ Repeat for any iOS unit test targets.
 
 You can now [add a Flutter screen][] to your existing application.
 
-[add_to_app code samples]: {{site.github}}/flutter/samples/tree/master/add_to_app
+[add_to_app code samples]: {{site.github}}/flutter/samples/tree/main/add_to_app
 [add a Flutter screen]: {{site.url}}/development/add-to-app/ios/add-flutter-screen
 [Android Studio/IntelliJ]: {{site.url}}/development/tools/android-studio
 [build modes of Flutter]: {{site.url}}/testing/build-modes

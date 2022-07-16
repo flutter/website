@@ -67,7 +67,7 @@ Use the following instructions for macos:
 
 ### Linux or Windows
 
-Use the following instructions for Linux or WIndows:
+Use the following instructions for Linux or Windows:
 
    1. Open plugin preferences (**File > Settings > Plugins**).
    1. Select **Marketplace**,  select the Flutter plugin and click

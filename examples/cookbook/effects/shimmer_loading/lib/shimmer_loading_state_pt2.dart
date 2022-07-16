@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class ShimmerLoading extends StatefulWidget {
   const ShimmerLoading({
-    Key? key,
+    super.key,
     required this.isLoading,
     required this.child,
-  }) : super(key: key);
+  });
 
   final bool isLoading;
   final Widget child;
 
   @override
-  _ShimmerLoadingState createState() => _ShimmerLoadingState();
+  State<ShimmerLoading> createState() => _ShimmerLoadingState();
 }
 
 // #docregion ShimmerLoadingStatePt2
@@ -59,10 +59,10 @@ class Shimmer extends StatefulWidget {
   }
 
   const Shimmer({
-    Key? key,
+    super.key,
     required this.linearGradient,
     this.child,
-  }) : super(key: key);
+  });
 
   final LinearGradient linearGradient;
   final Widget? child;

@@ -50,10 +50,10 @@ In this example, `_index` is ephemeral state.
 <?code-excerpt "state_mgmt/simple/lib/src/set_state.dart (Ephemeral)" plaster="// ... items ..."?>
 ```dart
 class MyHomepage extends StatefulWidget {
-  const MyHomepage({Key? key}) : super(key: key);
+  const MyHomepage({super.key});
 
   @override
-  _MyHomepageState createState() => _MyHomepageState();
+  State<MyHomepage> createState() => _MyHomepageState();
 }
 
 class _MyHomepageState extends State<MyHomepage> {

@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class Photo extends StatelessWidget {
-  const Photo({Key? key, required this.photo, this.onTap}) : super(key: key);
+  const Photo({super.key, required this.photo, this.onTap});
 
   final String photo;
   final VoidCallback? onTap;
@@ -29,7 +29,7 @@ class Photo extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints size) {
+          builder: (context, size) {
             return Image.asset(
               photo,
               fit: BoxFit.contain,
@@ -43,11 +43,10 @@ class Photo extends StatelessWidget {
 
 class RadialExpansion extends StatelessWidget {
   const RadialExpansion({
-    Key? key,
+    super.key,
     required this.maxRadius,
     this.child,
-  })  : clipRectSize = 2.0 * (maxRadius / math.sqrt2),
-        super(key: key);
+  })  : clipRectSize = 2.0 * (maxRadius / math.sqrt2);
 
   final double maxRadius;
   final double clipRectSize;
@@ -70,7 +69,7 @@ class RadialExpansion extends StatelessWidget {
 }
 
 class RadialExpansionDemo extends StatelessWidget {
-  const RadialExpansionDemo({Key? key}) : super(key: key);
+  const RadialExpansionDemo({super.key});
 
   static double kMinRadius = 32.0;
   static double kMaxRadius = 128.0;
@@ -136,12 +135,12 @@ class RadialExpansionDemo extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 PageRouteBuilder<void>(
-                  pageBuilder: (BuildContext context,
-                      Animation<double> animation,
-                      Animation<double> secondaryAnimation) {
+                  pageBuilder: (context,
+                      animation,
+                      secondaryAnimation) {
                     return AnimatedBuilder(
                         animation: animation,
-                        builder: (BuildContext context, Widget? child) {
+                        builder: (context, child) {
                           return Opacity(
                             opacity: opacityCurve.transform(animation.value),
                             child: _buildPage(context, imageName, description),

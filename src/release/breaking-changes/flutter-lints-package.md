@@ -7,7 +7,7 @@ description: Migrate to package:flutter_lints to get the latest set of recommend
 
 The [`package:flutter_lints`][] defines the latest set of recommended lints that
 encourage good coding practices for Flutter apps, packages, and plugins. Projects
-created with `flutter create` using Flutter version 2.3.0-12.0.pre or newer are
+created with `flutter create` using Flutter version 2.5 or newer are
 already enabled to use the latest set of recommended lints. Projects created
 prior to that version can upgrade to it with the instructions in this guide.
 

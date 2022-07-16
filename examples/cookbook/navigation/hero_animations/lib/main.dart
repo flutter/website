@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const HeroApp());
 
 class HeroApp extends StatelessWidget {
-  const HeroApp({Key? key}) : super(key: key);
+  const HeroApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class HeroApp extends StatelessWidget {
 }
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class MainScreen extends StatelessWidget {
 }
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  const DetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

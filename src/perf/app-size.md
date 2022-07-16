@@ -71,9 +71,8 @@ First, by configuring the app version and build as described in the
 
 Then:
 
-1. Select **Product > Archive** to produce a build archive.
-1. In the sidebar of the Xcode Organizer window, select your iOS app,
-   then select the build archive you just produced.
+1. Run `flutter build ipa --export-method development`.
+1. Run `open build/ios/archive/*.xcarchive` to open the archive in Xcode.
 1. Click **Distribute App**.
 1. Select a method of distribution. **Development** is the simplest if you don't
    intend to distribute the application.
@@ -191,7 +190,7 @@ Some other things you can do to make your app smaller are:
 [How big is the Flutter engine?]: {{site.url}}/resources/faq#how-big-is-the-flutter-engine
 [instructions]: {{site.url}}/deployment/ios
 [Xcode App Size Report]: {{site.apple-dev}}/documentation/xcode/reducing_your_app_s_size#3458589
-[iOS create build archive instructions]: {{site.url}}/deployment/ios#create-a-build-archive-with-xcode
+[iOS create build archive instructions]: {{site.url}}/deployment/ios#update-the-apps-build-and-version-numbers
 [Model ID / Hardware number]: https://en.wikipedia.org/wiki/List_of_iOS_devices#Models
 [Obfuscating Dart code]: {{site.url}}/deployment/obfuscate
 [Test drive]: {{site.url}}/get-started/test-drive

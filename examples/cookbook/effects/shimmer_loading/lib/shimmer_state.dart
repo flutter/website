@@ -6,10 +6,10 @@ class Shimmer extends StatefulWidget {
   }
 
   const Shimmer({
-    Key? key,
+    super.key,
     required this.linearGradient,
     this.child,
-  }) : super(key: key);
+  });
 
   final LinearGradient linearGradient;
   final Widget? child;

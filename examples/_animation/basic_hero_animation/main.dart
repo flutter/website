@@ -7,7 +7,7 @@
 import 'package:flutter/material.dart';
 
 class BasicHeroAnimation extends StatelessWidget {
-  const BasicHeroAnimation({Key? key}) : super(key: key);
+  const BasicHeroAnimation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class BasicHeroAnimation extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute<void>(
-                builder: (BuildContext context) {
+                builder: (context) {
                   return Scaffold(
                     appBar: AppBar(
                       title: const Text('Flippers Page'),

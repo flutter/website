@@ -87,7 +87,7 @@ on both Android and iOS on [GitHub][].
 
 {% include docs/app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}
 
-[GitHub]: {{site.repo.samples}}/tree/master/add_to_app/multiple_flutters
+[GitHub]: {{site.repo.samples}}/tree/main/add_to_app/multiple_flutters
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [performance characteristics]: {{site.url}}/development/add-to-app/performance

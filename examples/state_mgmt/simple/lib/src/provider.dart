@@ -2,7 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:state_mgmt/src/common.dart';
+import 'common.dart';
 
 CartModel somehowGetMyCartModel(BuildContext context) {
   return Provider.of<CartModel>(context);
@@ -46,14 +46,14 @@ class Item {
 }
 
 class MyCartTotalWidget extends StatelessWidget {
-  const MyCartTotalWidget({Key? key}) : super(key: key);
+  const MyCartTotalWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     // #docregion descendant
     return Consumer<CartModel>(
       builder: (context, cart, child) {
-        return Text("Total price: ${cart.totalPrice}");
+        return Text('Total price: ${cart.totalPrice}');
       },
     );
     // #enddocregion descendant
@@ -61,7 +61,7 @@ class MyCartTotalWidget extends StatelessWidget {
 }
 
 class MyCartUsingWidget extends StatelessWidget {
-  const MyCartUsingWidget({Key? key}) : super(key: key);
+  const MyCartUsingWidget({super.key});
 
   @override
   // #docregion build
@@ -79,22 +79,22 @@ class MyCartUsingWidget extends StatelessWidget {
 }
 
 class MyCatalog extends StatelessWidget {
-  const MyCatalog({Key? key}) : super(key: key);
+  const MyCatalog({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MyCatalogItem(Item("A")),
-        MyCatalogItem(Item("B")),
-        MyCatalogItem(Item("C")),
+        MyCatalogItem(Item('A')),
+        MyCatalogItem(Item('B')),
+        MyCatalogItem(Item('C')),
       ],
     );
   }
 }
 
 class MyCatalogItem extends StatelessWidget {
-  const MyCatalogItem(this.item, {Key? key}) : super(key: key);
+  const MyCatalogItem(this.item, {super.key});
 
   final Item item;
 
@@ -105,7 +105,7 @@ class MyCatalogItem extends StatelessWidget {
         Text(item.name),
         TextButton(
           onPressed: () => myTapHandler(context),
-          child: Text("Add ${item.name}"),
+          child: Text('Add ${item.name}'),
         ),
       ],
     );
@@ -121,7 +121,7 @@ class MyCatalogItem extends StatelessWidget {
 }
 
 class MyHomepage extends StatelessWidget {
-  const MyHomepage({Key? key}) : super(key: key);
+  const MyHomepage({super.key});
 
   @override
   Widget build(BuildContext context) {

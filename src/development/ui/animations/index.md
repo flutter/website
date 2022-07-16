@@ -94,12 +94,6 @@ shows how to write animation code.
   that uses animation to show the user's progress
   as they fill in the fields.
 
-* [Building Beautiful UIs with Flutter][]<br>
-  Codelab demonstrating how to build a simple chat app.
-  [Step 7 (Animate your app)][] shows how to animate
-  the new message&mdash;sliding it from the input area up
-  to the message list.
-
 ## Animation types
 
 Generally, animations are either tween- or physics-based.
@@ -233,7 +227,7 @@ Learn more about Flutter animations at the following links:
 [Animation deep dive]: {{site.youtube-site}}/watch?v=PbcILiN8rbo&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=5
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
 [Animation recipes]: {{site.url}}/cookbook/animation
-[Animation samples]: {{site.github}}/flutter/samples/tree/master/animations#animation-samples
+[Animation samples]: {{site.github}}/flutter/samples/tree/main/animations#animation-samples
 [Animation videos]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw/search?query=animation
 [Animations in Flutter done right]: {{site.youtube-site}}/watch?v=wnARLByOtKA&t=3s
 [Animations: overview]: {{site.url}}/development/ui/animations/overview
@@ -246,12 +240,11 @@ Learn more about Flutter animations at the following links:
 [article4]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
 [article5]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [article6]: {{site.flutter-medium}}/animation-deep-dive-39d3ffea111f
-[Building Beautiful UIs with Flutter]: {{site.codelabs}}/codelabs/flutter
 [Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.youtube-site}}/watch?v=6KiPEqzJIKQ&feature=youtu.be
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.youtube-site}}/watch?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [Flutter API documentation]: {{site.api}}
 [Flutter Gallery]: {{site.repo.gallery}}
-[`Grid`]: {{site.repo.gallery}}/blob/master/lib/demos/material/grid_list_demo.dart
+[`Grid`]: {{site.repo.gallery}}/blob/main/lib/demos/material/grid_list_demo.dart
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [Hero animations]: {{site.url}}/development/ui/animations/hero-animations
 [How to choose which Flutter Animation Widget is right for you?]: {{site.youtube-site}}/watch?v=GXIJJkq_H8g
@@ -262,7 +255,7 @@ Learn more about Flutter animations at the following links:
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
 [Sample app catalog]: https://flutter.github.io/samples
-[Shrine]: {{site.repo.gallery}}/tree/master/lib/studies/shrine
+[Shrine]: {{site.repo.gallery}}/tree/main/lib/studies/shrine
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: {{site.url}}/development/ui/animations/staggered-animations
 [Step 7 (Animate your app)]: {{site.codelabs}}/codelabs/flutter/#6

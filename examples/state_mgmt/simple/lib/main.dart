@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:state_mgmt/src/passing_callbacks.dart' as callbacks;
-import 'package:state_mgmt/src/performance.dart' as performance;
-import 'package:state_mgmt/src/provider.dart';
-import 'package:state_mgmt/src/set_state.dart' as set_state;
+import 'src/passing_callbacks.dart' as callbacks;
+import 'src/performance.dart' as performance;
+import 'src/provider.dart';
+import 'src/set_state.dart' as set_state;
 
 // #docregion main
 void main() {
@@ -38,7 +38,7 @@ void multiProviderMain() {
 // #enddocregion multi-provider-main
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
 class SomeOtherClass {}
 
 class _Menu extends StatelessWidget {
-  const _Menu({Key? key}) : super(key: key);
+  const _Menu();
 
   @override
   Widget build(BuildContext context) {
