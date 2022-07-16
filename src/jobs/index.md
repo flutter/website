@@ -19,9 +19,3 @@ The following jobs are open:
 * [Tech Lead Manager]({{site.url}}/jobs/tlm)
 * [Developer Relations Engineer, iOS Focus]({{site.url}}/jobs/dre)
 
-## Product Management & UX
-
-* [Product Manager, Flutter Developer Experience]({{site.url}}/jobs/pm_devexp)
-* [Product Manager, iOS and Design Agencies]({{site.url}}/jobs/pm_ios)
-* [Interaction Designer]({{site.url}}/jobs/ixd)
-* [User Experience Engineer]({{site.url}}/jobs/uxe)
