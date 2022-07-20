@@ -6,9 +6,15 @@ description: A list of migration guides for breaking changes in Flutter.
 As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
+To be notified about future breaking changes,
+join the groups [Flutter announce][] and [Dart announce][].
 
 The following guides are available. They are sorted by
 release, and listed in alphabetical order:
+
+[breaking change policy]: {{site.url}}/resources/compatibility
+[Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
 
 ### Not yet released to stable
 
@@ -28,6 +34,7 @@ release, and listed in alphabetical order:
 [Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
 [Page transitions replaced by ZoomPageTransitionsBuilder]: {{site.url}}/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
 [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
+
 ### Released in Flutter 2.10
 
 * [Deprecated API removed after v2.5][]
@@ -167,7 +174,6 @@ The following breaking change was reverted in release 2.2:
 
 [Adding 'linux' and 'windows' to TargetPlatform enum]: {{site.url}}/release/breaking-changes/target-platform-linux-windows
 [Annotations return local position relative to object]: {{site.url}}/release/breaking-changes/annotations-return-local-position-relative-to-object
-[breaking change policy]: {{site.url}}/resources/compatibility
 [Container color optimization]: {{site.url}}/release/breaking-changes/container-color
 [CupertinoTabBar requires Localizations parent]: {{site.url}}/release/breaking-changes/cupertino-tab-bar-localizations
 [Generic type of ParentDataWidget changed to ParentData]: {{site.url}}/release/breaking-changes/parent-data-widget-generic-type
