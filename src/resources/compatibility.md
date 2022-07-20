@@ -48,7 +48,7 @@ listed above for making breaking changes in removing the deprecated API.
 
 ## Dart and other libraries used by Flutter
 
-The Dart language itself has a [separate breaking-change policy],
+The Dart language itself has a [separate breaking-change policy][],
 with announcements on [Dart announce][].
 
 In general, the Flutter team does not currently have any commitment
