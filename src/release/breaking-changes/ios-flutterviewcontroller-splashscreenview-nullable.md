@@ -1,11 +1,11 @@
 ---
-title: iOS FlutterViewController splashScreenView make nullable
+title: iOS FlutterViewController splashScreenView made nullable
 description: FlutterViewController splashScreenView changed from nonnull to nullable.
 ---
 
 ## Summary
 
-We changed property `splashScreenView` of `FlutterViewController` from `nonnull` to `nullable`.
+The `FlutterViewController` property `splashScreenView` has been changed from `nonnull` to `nullable`.
 
 Old declaration of `splashScreenView`:
 
@@ -21,54 +21,24 @@ New declaration of `splashScreenView`:
 
 ## Context
 
-This allows iOS add-to-app users writen in `Swift` to remove the splash screen view.
-
-However, the previous declaration would build error when set `nil` value using `Swift`, only supported if using `Objective-C`.
+Prior to this change, on iOS the `splashScreenView` property returned `nil` when no splash screen view
+was set, and setting the property to `nil` removed the splash screen view. However, the 
+`splashScreenView` API was incorrectly marked `nonnull`. This property is most often used
+when transitioning to Flutter views in iOS add-to-app scenarios.
 
 ## Description of change
 
-Before migrated, it would be a compilation error if the calling code is in Swift and gets the splash screen and stores in a nonnull UIView variable.
-
+While it was possible in Objective-C to work around the incorrect `nonnull` annotation by setting
+`splashScreenView` to a `nil` `UIView`, in Swift this caused a compilation error:
 ```
 error build: Value of optional type 'UIView?' must be unwrapped to a value of type 'UIView'
 ```
-
-After [PR #34743][], you need to update code to instead store in a UIView?. Instead of declare variable `splashScreenView` as type `UIView`:
-
-```swift
-@UIApplicationMain
-@objc class AppDelegate: FlutterAppDelegate {
-  var splashScreenView = UIView()
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-  ) -> Bool {
-    var flutterEngine = FlutterEngine(name: "my flutter engine")
-    let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
-    splashScreenView = flutterViewController.splashScreenView // compilation error: Value of optional type 'UIView?' must be unwrapped to a value of type 'UIView'
-```
-
-instead use `UIView?`:
-
-```swift
-@UIApplicationMain
-@objc class AppDelegate: FlutterAppDelegate {
-  var splashScreenView : UIView? = UIView()
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-  ) -> Bool {
-    var flutterEngine = FlutterEngine(name: "my flutter engine")
-    let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
-    let splashScreenView = flutterViewController.splashScreenView // compiles successfully
-    if let splashScreenView = splashScreenView {
-      
-    }
-```
-
+[PR #34743][] updates the property attribute to `nullable`. It can return `nil` and can be set to `nil` to remove the view in both Objective-C and Swift.
 
 ## Migration guide
 
+If `splashScreenView` is stored in a `UIView` variable in Swift, update to an optional type `UIView?`.
+ 
 Code before migration:
 
 ```swift
@@ -91,7 +61,7 @@ Code after migration:
 
 ## Timeline
 
-In stable release: not yet
+In stable release: TBD
 
 ## References
 
