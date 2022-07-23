@@ -50,7 +50,7 @@ Flutter DevTools for an Android app with ports
 that will work:
 
 ```terminal
-$ flutter pub global run devtools -p 8000
+$ flutter pub global run devtools --port 8000
 $ cd path/to/your/app
 $ flutter run --observatory-port=8080
 ```
