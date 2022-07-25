@@ -9,7 +9,7 @@
     "url": "https://github.com/flutter/website.git"
   },
   "dependencies": {
-    "bootstrap-scss": "^4.6.1",
+    "bootstrap-scss": "^5.2.0",
     "diff2html-cli": "^5.2.5",
     "font-awesome": "^4.7.0",
     "superstatic": "^8.0.0",
