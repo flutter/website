@@ -568,12 +568,13 @@ from the command line, use `flutter run -d chrome`,
 At the command line, or in the IDE,
 you should see a message stating something like the following:
 
-```terminal
+<pre>
 Launching lib/main.dart on Chrome in debug mode...
 Building application for the web...                                11.7s
 Attempting to connect to browser instance..
-Debug service listening on **ws://127.0.0.1:54998/pJqWWxNv92s=**
-```
+Debug service listening on <b>ws://127.0.0.1:54998/pJqWWxNv92s=</b>
+</pre>
+
 Copy the address of the debug service, shown in bold.
 You will need that to launch DevTools.
 </li>
