@@ -15,7 +15,7 @@ void main() {
       myErrorsHandler.onErrorDetails(details);
       exit(1);
     };
-    runApp(MyApp());
+    runApp(const MyApp());
   }, (error, stack) {
     myErrorsHandler.onError(error, stack);
     exit(1);
@@ -23,6 +23,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
