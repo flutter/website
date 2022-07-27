@@ -10,14 +10,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'My Awesome App'),
+      home: const MyHomePage(title: 'My Awesome App'),
     );
   }
 }
 // #enddocregion PerfOverlay
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProblemWidget extends StatelessWidget {
-  const ProblemWidget({Key? key}) : super(key: key);
+  const ProblemWidget({super.key});
 
   @override
   // #docregion Problem
@@ -9,18 +9,18 @@ class ProblemWidget extends StatelessWidget {
     return Container(
       child: Row(
         children: [
-          Icon(Icons.message),
+          const Icon(Icons.message),
           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Title", style: Theme.of(context).textTheme.headline4),
-              Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
-                  " do eiusmod tempor incididunt ut labore et dolore magna "
-                  "aliqua. Ut enim ad minim veniam, quis nostrud "
-                  "exercitation ullamco laboris nisi ut aliquip ex ea "
-                  "commodo consequat."),
+              Text('Title', style: Theme.of(context).textTheme.headline4),
+              const Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed'
+                  ' do eiusmod tempor incididunt ut labore et dolore magna '
+                  'aliqua. Ut enim ad minim veniam, quis nostrud '
+                  'exercitation ullamco laboris nisi ut aliquip ex ea '
+                  'commodo consequat.'),
             ],
           ),
         ],
@@ -31,7 +31,7 @@ class ProblemWidget extends StatelessWidget {
 }
 
 class SolutionWidget extends StatelessWidget {
-  const SolutionWidget({Key? key}) : super(key: key);
+  const SolutionWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class SolutionWidget extends StatelessWidget {
       // #docregion Fix
       child: Row(
         children: [
-          Icon(Icons.message),
+          const Icon(Icons.message),
           Expanded(
             child: Column(
                 // code omitted
