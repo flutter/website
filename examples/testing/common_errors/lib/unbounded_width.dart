@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProblemWidget extends StatelessWidget {
-  const ProblemWidget({Key? key}) : super(key: key);
+  const ProblemWidget({super.key});
 
   @override
   // #docregion Problem
@@ -9,10 +9,10 @@ class ProblemWidget extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Unbounded Width of the TextField'),
+          title: const Text('Unbounded Width of the TextField'),
         ),
         body: Row(
-          children: [
+          children: const [
             TextField(),
           ],
         ),
@@ -23,7 +23,7 @@ class ProblemWidget extends StatelessWidget {
 }
 
 class SolutionWidget extends StatelessWidget {
-  const SolutionWidget({Key? key}) : super(key: key);
+  const SolutionWidget({super.key});
 
   @override
   // #docregion Fix
@@ -31,7 +31,7 @@ class SolutionWidget extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Unbounded Width of the TextField'),
+          title: const Text('Unbounded Width of the TextField'),
         ),
         body: Row(
           children: [

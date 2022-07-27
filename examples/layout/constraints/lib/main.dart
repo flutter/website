@@ -203,11 +203,11 @@ class Button extends StatelessWidget {
   final VoidCallback onPressed;
 
   const Button({
-    required Key key,
+    super.key,
     required this.isSelected,
     required this.exampleNumber,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -60,11 +60,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  FlutterError.onError = (FlutterErrorDetails details) {
+  FlutterError.onError = (details) {
     FlutterError.presentError(details);
     if (kReleaseMode) exit(1);
   };
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 // rest of `flutter create` code...
@@ -86,14 +86,17 @@ the builder fails to build a widget, use [`MaterialApp.builder`][].
 <?code-excerpt "lib/excerpts.dart (CustomError)"?>
 ```dart
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder: (BuildContext context, Widget? widget) {
-        Widget error = Text('...rendering error...');
-        if (widget is Scaffold || widget is Navigator)
+      builder: (context, widget) {
+        Widget error = const Text('...rendering error...');
+        if (widget is Scaffold || widget is Navigator) {
           error = Scaffold(body: Center(child: error));
-        ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
+        }
+        ErrorWidget.builder = (errorDetails) => error;
         if (widget != null) return widget;
         throw ('widget is null');
       },
@@ -111,9 +114,9 @@ For example:
 <?code-excerpt "lib/excerpts.dart (OnPressed)" replace="/return //g;/\;//g"?>
 ```dart
 OutlinedButton(
-  child: Text('Click me!'),
+  child: const Text('Click me!'),
   onPressed: () async {
-    final channel = const MethodChannel('crashy-custom-channel')
+    const channel = MethodChannel('crashy-custom-channel')
     await channel.invokeMethod('blah')
   },
 )
@@ -130,8 +133,8 @@ import 'dart:async';
 
 void main() {
     runZonedGuarded(() {
-    runApp(MyApp());
-  }, (Object error, StackTrace stack) {
+    runApp(const MyApp());
+  }, (error, stack) {
     myBackend.sendError(error, stack);
   });
 }
@@ -147,8 +150,8 @@ manually to perform some initialization before calling `runApp` (e.g.
 runZonedGuarded(() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
-}, (Object error, StackTrace stack) {
+  runApp(const MyApp());
+}, (error, stack) {
   myBackend.sendError(error, stack);
 });
 ```
@@ -174,27 +177,30 @@ void main() {
   runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
     await myErrorsHandler.initialize();
-    FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.onError = (details) {
       FlutterError.presentError(details);
       myErrorsHandler.onErrorDetails(details);
       exit(1);
     };
-    runApp(MyApp());
-  }, (Object error, StackTrace stack) {
+    runApp(const MyApp());
+  }, (error, stack) {
     myErrorsHandler.onError(error, stack);
     exit(1);
   });
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder: (BuildContext context, Widget? widget) {
-        Widget error = Text('...rendering error...');
-        if (widget is Scaffold || widget is Navigator)
+      builder: (context, widget) {
+        Widget error = const Text('...rendering error...');
+        if (widget is Scaffold || widget is Navigator) {
           error = Scaffold(body: Center(child: error));
-        ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
+        }
+        ErrorWidget.builder = (errorDetails) => error;
         if (widget != null) return widget;
         throw ('widget is null');
       },

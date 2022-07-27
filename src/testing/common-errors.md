@@ -45,25 +45,23 @@ common scenario:
 <?code-excerpt "lib/renderflex_overflow.dart (Problem)"?>
 ```dart
 Widget build(BuildContext context) {
-  return Container(
-    child: Row(
-      children: [
-        Icon(Icons.message),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Title", style: Theme.of(context).textTheme.headline4),
-            Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
-                " do eiusmod tempor incididunt ut labore et dolore magna "
-                "aliqua. Ut enim ad minim veniam, quis nostrud "
-                "exercitation ullamco laboris nisi ut aliquip ex ea "
-                "commodo consequat."),
-          ],
-        ),
-      ],
-    ),
+  return Row(
+    children: [
+      const Icon(Icons.message),
+      Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Title', style: Theme.of(context).textTheme.headline4),
+          const Text(
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed'
+              ' do eiusmod tempor incididunt ut labore et dolore magna '
+              'aliqua. Ut enim ad minim veniam, quis nostrud '
+              'exercitation ullamco laboris nisi ut aliquip ex ea '
+              'commodo consequat.'),
+        ],
+      ),
+    ],
   );
 }
 ```
@@ -93,16 +91,16 @@ wrap the `Column` in an `Expanded` widget:
 
 <?code-excerpt "lib/renderflex_overflow.dart (Fix)"?>
 ```dart
-child: Row(
+return Row(
   children: [
-    Icon(Icons.message),
+    const Icon(Icons.message),
     Expanded(
       child: Column(
           // code omitted
           ),
     ),
   ],
-),
+);
 ```
 
 Another way is to wrap the `Column` in a `Flexible` widget and specify a `flex`
@@ -185,9 +183,9 @@ Widget build(BuildContext context) {
   return Center(
     child: Column(
       children: <Widget>[
-        Text('Header'),
+        const Text('Header'),
         ListView(
-          children: <Widget>[
+          children: const <Widget>[
             ListTile(
               leading: Icon(Icons.map),
               title: Text('Map'),
@@ -217,10 +215,10 @@ Widget build(BuildContext context) {
   return Center(
     child: Column(
       children: <Widget>[
-        Text('Header'),
+        const Text('Header'),
         Expanded(
           child: ListView(
-            children: <Widget>[
+            children: const <Widget>[
               ListTile(
                 leading: Icon(Icons.map),
                 title: Text('Map'),
@@ -278,10 +276,10 @@ Widget build(BuildContext context) {
   return MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: Text('Unbounded Width of the TextField'),
+        title: const Text('Unbounded Width of the TextField'),
       ),
       body: Row(
-        children: [
+        children: const [
           TextField(),
         ],
       ),
@@ -302,7 +300,7 @@ Widget build(BuildContext context) {
   return MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: Text('Unbounded Width of the TextField'),
+        title: const Text('Unbounded Width of the TextField'),
       ),
       body: Row(
         children: [
@@ -390,15 +388,15 @@ Widget build(BuildContext context) {
   // Don't do this.
   showDialog(
       context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text("Alert Dialog"),
+      builder: (context) {
+        return const AlertDialog(
+          title: Text('Alert Dialog'),
         );
       });
 
   return Center(
     child: Column(
-      children: <Widget>[
+      children: const <Widget>[
         Text('Show Material Dialog'),
       ],
     ),
@@ -422,15 +420,17 @@ row – one for the second page and another for the dialog.
 <?code-excerpt "lib/set_state_build.dart (Fix)"?>
 ```dart
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: const Text('First Screen'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Launch screen'),
+          child: const Text('Launch screen'),
           onPressed: () {
             // Navigate to the second screen using a named route.
             Navigator.pushNamed(context, '/second');
@@ -440,7 +440,7 @@ class FirstScreen extends StatelessWidget {
               PageRouteBuilder(
                 barrierDismissible: true,
                 opaque: false,
-                pageBuilder: (_, anim1, anim2) => MyDialog(),
+                pageBuilder: (_, anim1, anim2) => const MyDialog(),
               ),
             );
           },
