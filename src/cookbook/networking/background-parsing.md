@@ -164,6 +164,12 @@ simple objects such as the `List<Photo>` in this example.
 You might experience errors if you try to pass more complex objects,
 such as a `Future` or `http.Response` between isolates.
 
+As an alternate solution, check out the [`worker_manager`][] or
+[`workmanager`][] packages for background processing.
+
+[`worker_manager`]:  {{site.pub}}/packages/worker_manager
+[`workmanager`]: {{site.pub}}/packages/workmanager
+
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
