@@ -45,25 +45,23 @@ common scenario:
 <?code-excerpt "lib/renderflex_overflow.dart (Problem)"?>
 ```dart
 Widget build(BuildContext context) {
-  return Container(
-    child: Row(
-      children: [
-        const Icon(Icons.message),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Title', style: Theme.of(context).textTheme.headline4),
-            const Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed'
-                ' do eiusmod tempor incididunt ut labore et dolore magna '
-                'aliqua. Ut enim ad minim veniam, quis nostrud '
-                'exercitation ullamco laboris nisi ut aliquip ex ea '
-                'commodo consequat.'),
-          ],
-        ),
-      ],
-    ),
+  return Row(
+    children: [
+      const Icon(Icons.message),
+      Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Title', style: Theme.of(context).textTheme.headline4),
+          const Text(
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed'
+              ' do eiusmod tempor incididunt ut labore et dolore magna '
+              'aliqua. Ut enim ad minim veniam, quis nostrud '
+              'exercitation ullamco laboris nisi ut aliquip ex ea '
+              'commodo consequat.'),
+        ],
+      ),
+    ],
   );
 }
 ```
@@ -93,7 +91,7 @@ wrap the `Column` in an `Expanded` widget:
 
 <?code-excerpt "lib/renderflex_overflow.dart (Fix)"?>
 ```dart
-child: Row(
+return Row(
   children: [
     const Icon(Icons.message),
     Expanded(
@@ -102,7 +100,7 @@ child: Row(
           ),
     ),
   ],
-),
+);
 ```
 
 Another way is to wrap the `Column` in a `Flexible` widget and specify a `flex`
@@ -422,6 +420,8 @@ row – one for the second page and another for the dialog.
 <?code-excerpt "lib/set_state_build.dart (Fix)"?>
 ```dart
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
