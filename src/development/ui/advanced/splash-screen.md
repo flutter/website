@@ -185,18 +185,95 @@ class MainActivity : FlutterActivity() {
 {% endsamplecode %}
 
 Then, you can reimplement the first frame in Flutter that shows elements of your
-Android splash screen in the same positions on screen.
+Android splash screen in the same positions on screen. To see an example of this,
+see the [Android splash screen sample app][].
 
 ### Migrating from Manifest / Activity defined custom splash screens
 
-Previously, Android Flutter apps would either set
-`io.flutter.embedding.android.SplashScreenDrawable` in their application
-manifest, or implement [`provideSplashScreen`][] within their Flutter Activity.
-This would be shown momentarily in between the time after the Android launch
-screen is shown and when Flutter has drawn the first frame. This is no longer
-needed and is deprecated – in Flutter 2.5 and later, Flutter automatically keeps 
-the Android launch screen displayed until Flutter has drawn the first frame. 
-Developers should instead remove usage of these APIs.
+Previous to Flutter 2.5, Flutter apps could add a splash
+screen by defining it within the metadata of their application manifest
+(`AndroidManifest.xml`) or implementing [`provideSplashScreen`][] within
+their [`FlutterActivity`][]. This would show momentarily in between
+the time after the Android launch screen is shown and when Flutter has
+drawn the first frame. This is now deprecated and no longer needed –
+in Flutter 2.5 and later, because Flutter now automatically keeps the
+Android launch screen displayed until Flutter has drawn the first frame.
+
+To migrate from defining a custom splash screen to defining a custom
+launch screen for your application, follow the steps that correspond
+to how your application's custom splash screen is defined.
+
+**Custom splash screen defined in [`FlutterActivity`][]**
+
+1. Locate your application's implementation of `provideSplashScreen()`
+   within its `FlutterActivity`. This implementation should involve
+   the construction of your application's custom splash screen
+   `Drawable`, for example:
+
+```Java
+@Override
+public SplashScreen provideSplashScreen() {
+    // ...
+    return new DrawableSplashScreen(
+        new SomeDrawable(
+            ContextCompat.getDrawable(this, R.some_splash_screen)));
+}
+```
+
+   Note this `Drawable`, as this is the `Drawable` that you will specify
+   in your application's launch theme. Then, delete this implementation.
+
+2. Follow the steps below to ensure your splash screen `Drawable`
+   (`R.some_splash_screen` in the example above) is properly
+   configured as your application's custom launch screen.
+
+**Custom splash screen defined in Manifest**
+
+1. Locate your application's `AndroidManifest.xml` file. Within this file,
+   find the `activity` element. Within this element, identify the
+   `android:theme` attribute and `meta-data` element that defines
+   some splash screen as the
+   `io.flutter.embedding.android.SplashScreenDrawable`:
+
+```xml
+<activity
+    // ...
+    android:theme="@style/SomeTheme">
+  // ...
+  <meta-data
+      android:name="io.flutter.embedding.android.SplashScreenDrawable"
+      android:resource="@drawable/some_splash_screen"
+      />
+</activity>
+```
+
+   If no `android:theme` attribute is specified, add the attribute and
+   [define a launch theme][] for your application's launch screen.
+2. Delete the `meta-data` tag, as Flutter no longer displays the `Drawable`
+   that it specifies before showing the application's launch screen.
+3. Locate the definition of the theme specified by the `android:theme` attribute
+   within your application's `style` resources. This theme is what specifies the
+   launch theme of your application. Ensure that this `style` configures the
+   `android:windowBackground` attribute with your custom splash screen:
+
+```xml
+<resources>
+    <style
+        name="SomeTheme"
+        // ...
+        >
+        <!-- Show a splash screen on the activity. Automatically removed when
+             Flutter draws its first frame -->
+        <item name="android:windowBackground">@drawable/some_splash_screen</item>
+    </style>
+</resources>
+```
+
+This custom splash screen `Drawable` will automatically be shown as your
+Flutter application's launch screen until Flutter draws its first frame.
+If you wish to specify a theme to show briefly between the time
+that the launch screen disappears and during orientation change and
+`Activity` restoration, [define a normal theme][].
 
 [Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
@@ -204,3 +281,7 @@ Developers should instead remove usage of these APIs.
 [`provideSplashScreen`]: {{site.api}}/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
 [must use an Xcode storyboard]: {{site.apple-dev}}/news/?id=03042020b
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
+[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
+[define a launch theme]: {{site.url}}/development/ui/advanced/splash-screen?tab=android-splash-alignment-kotlin-tab#initializing-the-app
+[Android splash screen sample app]: {{site.github}}/flutter/samples/blob/3a0a652984e9b974342d172b9f0ffa161d0dcb2f/android_splash_screen/android/app/src/main/res/values-night/styles.xml
+[define a normal theme]: {{site.url}}/development/ui/advanced/splash-screen?tab=android-splash-alignment-kotlin-tab#initializing-the-app
