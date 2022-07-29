@@ -191,13 +191,13 @@ For an example of this, see the [Android splash screen sample app][].
 ### Migrating from Manifest / Activity defined custom splash screens
 
 Prior to Flutter 2.5, Flutter apps could add a splash
-screen by defining it within the metadata of their application manifest
-(`AndroidManifest.xml`) or implementing [`provideSplashScreen`][] within
-their [`FlutterActivity`][]. This would show momentarily in between
+screen by defining it within the metadata of their application manifest file
+(`AndroidManifest.xml`), or by implementing [`provideSplashScreen`][] within
+their [`FlutterActivity`][]. This would display momentarily in between
 the time after the Android launch screen is shown and when Flutter has
-drawn the first frame. This is now deprecated and no longer needed –
-in Flutter 2.5 and later, because Flutter now automatically keeps the
-Android launch screen displayed until Flutter has drawn the first frame.
+drawn the first frame. This approach is now deprecated as of Flutter 2.5;
+Flutter now automatically keeps the Android launch screen displayed
+until it draws the first frame.
 
 To migrate from defining a custom splash screen to defining a custom
 launch screen for your application, follow the steps that correspond
@@ -281,5 +281,4 @@ prior to the 2.5 release.
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [define a theme]:  #initializing-the-app
-[Android splash screen sample app]: {{site.github}}/flutter/samples/blob/3a0a652984e9b974342d172b9f0ffa161d0dcb2f/android_splash_screen/android/app/src/main/res/values-night/styles.xml
-[define a normal theme]: {{site.url}}/development/ui/advanced/splash-screen?tab=android-splash-alignment-kotlin-tab#initializing-the-app
+[Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
