@@ -1,0 +1,95 @@
+---
+title: Splash Screen migration
+description: How to migrate from Manifest / Activity defined custom splash
+             screen to launch screen.
+---
+
+Prior to Flutter 2.5, Flutter apps could add a splash
+screen by defining it within the metadata of their application manifest file
+(`AndroidManifest.xml`), or by implementing [`provideSplashScreen`][] within
+their [`FlutterActivity`][]. This would display momentarily in between
+the time after the Android launch screen is shown and when Flutter has
+drawn the first frame. This approach is now deprecated as of Flutter 2.5;
+Flutter now automatically keeps the Android launch screen displayed
+until it draws the first frame.
+
+To migrate from defining a custom splash screen to defining a custom
+launch screen for your application, follow the steps that correspond
+to how your application's custom splash screen was defined
+prior to the 2.5 release.
+
+**Custom splash screen defined in [`FlutterActivity`][]**
+
+1. Locate your application's implementation of `provideSplashScreen()`
+   within its `FlutterActivity`. This implementation should involve
+   the construction of your application's custom splash screen:
+   as a `Drawable`, for example:
+
+   ```Java
+   @Override
+   public SplashScreen provideSplashScreen() {
+       // ...
+       return new DrawableSplashScreen(
+           new SomeDrawable(
+               ContextCompat.getDrawable(this, R.some_splash_screen)));
+   }
+   ```
+
+2. In the next step, you'll specify this `Drawable` as your application's
+    launch theme, so delete this implementation.
+
+3. Use the following steps to ensure that your `Drawable` splash screen
+   (`R.some_splash_screen` in the previous example) is properly
+   configured as your application's custom launch screen.
+
+**Custom splash screen defined in Manifest**
+
+1. Locate your application's `AndroidManifest.xml` file.
+   Within this file, find the `activity` element.
+   Within this element, identify the `android:theme` attribute
+   and the `meta-data` element that defines
+   a splash screen as an
+   `io.flutter.embedding.android.SplashScreenDrawable`:
+
+   ```xml
+   <activity
+       // ...
+       android:theme="@style/SomeTheme">
+     // ...
+     <meta-data
+         android:name="io.flutter.embedding.android.SplashScreenDrawable"
+         android:resource="@drawable/some_splash_screen"
+         />
+   </activity>
+   ```
+
+2. If the `android:theme` attribute isn't specified, add the attribute and
+   [define a launch theme][define a theme] for your application's launch screen.
+
+3. Delete the `meta-data` tag, as Flutter no longer
+   displays that information.
+
+4. Locate the definition of the theme specified by the `android:theme` attribute
+   within your application's `style` resources. This theme is what specifies the
+   launch theme of your application. Ensure that this `style` configures the
+   `android:windowBackground` attribute with your custom splash screen:
+
+   ```xml
+   <resources>
+       <style
+           name="SomeTheme"
+           // ...
+           >
+           <!-- Show a splash screen on the activity. Automatically removed when
+                Flutter draws its first frame -->
+           <item name="android:windowBackground">@drawable/some_splash_screen</item>
+       </style>
+   </resources>
+   ```
+
+   [`provideSplashScreen`]: {{site.api}}/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
+[must use an Xcode storyboard]: {{site.apple-dev}}/news/?id=03042020b
+[Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
+[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
+[define a theme]:  #initializing-the-app
+[Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
