@@ -230,10 +230,11 @@ prior to the 2.5 release.
 
 **Custom splash screen defined in Manifest**
 
-1. Locate your application's `AndroidManifest.xml` file. Within this file,
-   find the `activity` element. Within this element, identify the
-   `android:theme` attribute and `meta-data` element that defines
-   some splash screen as the
+1. Locate your application's `AndroidManifest.xml` file.
+   Within this file, find the `activity` element.
+   Within this element, identify the `android:theme` attribute
+   and the `meta-data` element that defines
+   a splash screen as an
    `io.flutter.embedding.android.SplashScreenDrawable`:
 
    ```xml
