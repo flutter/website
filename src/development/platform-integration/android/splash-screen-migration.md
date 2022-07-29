@@ -1,7 +1,6 @@
 ---
-title: Splash Screen migration
-description: How to migrate from Manifest / Activity defined custom splash
-             screen to launch screen.
+title: Deprecated Splash Screen API Migration
+description: How to migrate from Manifest/Activity defined splash screen.
 ---
 
 Prior to Flutter 2.5, Flutter apps could add a splash
@@ -87,9 +86,7 @@ prior to the 2.5 release.
    </resources>
    ```
 
-   [`provideSplashScreen`]: {{site.api}}/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
-[must use an Xcode storyboard]: {{site.apple-dev}}/news/?id=03042020b
-[Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
+[`provideSplashScreen`]: {{site.api}}/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
-[define a theme]:  #initializing-the-app
+[define a theme]:  {{site.url}}/development/ui/advanced/splash-screen?tab=android-splash-alignment-kotlin-tab#initializing-the-app
 [Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
