@@ -210,20 +210,20 @@ to how your application's custom splash screen is defined.
    the construction of your application's custom splash screen
    `Drawable`, for example:
 
-```Java
-@Override
-public SplashScreen provideSplashScreen() {
-    // ...
-    return new DrawableSplashScreen(
-        new SomeDrawable(
-            ContextCompat.getDrawable(this, R.some_splash_screen)));
-}
-```
+   ```Java
+   @Override
+   public SplashScreen provideSplashScreen() {
+       // ...
+       return new DrawableSplashScreen(
+           new SomeDrawable(
+               ContextCompat.getDrawable(this, R.some_splash_screen)));
+   }
+   ```
 
-   Note this `Drawable`, as this is the `Drawable` that you will specify
+2. Note this `Drawable`, as this is the `Drawable` that you will specify
    in your application's launch theme. Then, delete this implementation.
 
-2. Follow the steps below to ensure your splash screen `Drawable`
+3. Follow the steps below to ensure your splash screen `Drawable`
    (`R.some_splash_screen` in the example above) is properly
    configured as your application's custom launch screen.
 
@@ -235,45 +235,41 @@ public SplashScreen provideSplashScreen() {
    some splash screen as the
    `io.flutter.embedding.android.SplashScreenDrawable`:
 
-```xml
-<activity
-    // ...
-    android:theme="@style/SomeTheme">
-  // ...
-  <meta-data
-      android:name="io.flutter.embedding.android.SplashScreenDrawable"
-      android:resource="@drawable/some_splash_screen"
-      />
-</activity>
-```
+   ```xml
+   <activity
+       // ...
+       android:theme="@style/SomeTheme">
+     // ...
+     <meta-data
+         android:name="io.flutter.embedding.android.SplashScreenDrawable"
+         android:resource="@drawable/some_splash_screen"
+         />
+   </activity>
+   ```
 
-   If no `android:theme` attribute is specified, add the attribute and
+2. If the `android:theme` attribute is not specified, add the attribute and
    [define a launch theme][] for your application's launch screen.
-2. Delete the `meta-data` tag, as Flutter no longer displays the `Drawable`
+
+3. Delete the `meta-data` tag, as Flutter no longer displays the `Drawable`
    that it specifies before showing the application's launch screen.
-3. Locate the definition of the theme specified by the `android:theme` attribute
+
+4. Locate the definition of the theme specified by the `android:theme` attribute
    within your application's `style` resources. This theme is what specifies the
    launch theme of your application. Ensure that this `style` configures the
    `android:windowBackground` attribute with your custom splash screen:
 
-```xml
-<resources>
-    <style
-        name="SomeTheme"
-        // ...
-        >
-        <!-- Show a splash screen on the activity. Automatically removed when
-             Flutter draws its first frame -->
-        <item name="android:windowBackground">@drawable/some_splash_screen</item>
-    </style>
-</resources>
-```
-
-This custom splash screen `Drawable` will automatically be shown as your
-Flutter application's launch screen until Flutter draws its first frame.
-If you wish to specify a theme to show briefly between the time
-that the launch screen disappears and during orientation change and
-`Activity` restoration, [define a normal theme][].
+   ```xml
+   <resources>
+       <style
+           name="SomeTheme"
+           // ...
+           >
+           <!-- Show a splash screen on the activity. Automatically removed when
+                Flutter draws its first frame -->
+           <item name="android:windowBackground">@drawable/some_splash_screen</item>
+       </style>
+   </resources>
+   ```
 
 [Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
