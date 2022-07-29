@@ -252,8 +252,8 @@ prior to the 2.5 release.
 2. If the `android:theme` attribute isn't specified, add the attribute and
    [define a launch theme][define a theme] for your application's launch screen.
 
-3. Delete the `meta-data` tag, as Flutter no longer displays the `Drawable`
-   that it specifies before showing the application's launch screen.
+3. Delete the `meta-data` tag, as Flutter no longer
+    displays that information.
 
 4. Locate the definition of the theme specified by the `android:theme` attribute
    within your application's `style` resources. This theme is what specifies the
