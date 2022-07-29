@@ -186,6 +186,7 @@ class MainActivity : FlutterActivity() {
 
 Then, you can reimplement the first frame in Flutter that shows elements of your
 Android splash screen in the same positions on screen.
+For an example of this, see the [Android splash screen sample app][].
 
 ### Migrating from Manifest / Activity defined custom splash screens
 
@@ -204,3 +205,4 @@ Developers should instead remove usage of these APIs.
 [`provideSplashScreen`]: {{site.api}}/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
 [must use an Xcode storyboard]: {{site.apple-dev}}/news/?id=03042020b
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
+[Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
