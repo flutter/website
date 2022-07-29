@@ -190,7 +190,7 @@ see the [Android splash screen sample app][].
 
 ### Migrating from Manifest / Activity defined custom splash screens
 
-Previous to Flutter 2.5, Flutter apps could add a splash
+Prior to Flutter 2.5, Flutter apps could add a splash
 screen by defining it within the metadata of their application manifest
 (`AndroidManifest.xml`) or implementing [`provideSplashScreen`][] within
 their [`FlutterActivity`][]. This would show momentarily in between
