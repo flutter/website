@@ -253,7 +253,7 @@ prior to the 2.5 release.
    [define a launch theme][define a theme] for your application's launch screen.
 
 3. Delete the `meta-data` tag, as Flutter no longer
-    displays that information.
+   displays that information.
 
 4. Locate the definition of the theme specified by the `android:theme` attribute
    within your application's `style` resources. This theme is what specifies the
