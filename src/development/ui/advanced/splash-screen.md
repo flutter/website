@@ -278,6 +278,6 @@ to how your application's custom splash screen is defined.
 [must use an Xcode storyboard]: {{site.apple-dev}}/news/?id=03042020b
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
-[define a launch theme]: {{site.url}}/development/ui/advanced/splash-screen?tab=android-splash-alignment-kotlin-tab#initializing-the-app
+[define a theme]:  #initializing-the-app
 [Android splash screen sample app]: {{site.github}}/flutter/samples/blob/3a0a652984e9b974342d172b9f0ffa161d0dcb2f/android_splash_screen/android/app/src/main/res/values-night/styles.xml
 [define a normal theme]: {{site.url}}/development/ui/advanced/splash-screen?tab=android-splash-alignment-kotlin-tab#initializing-the-app
