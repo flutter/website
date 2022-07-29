@@ -185,8 +185,8 @@ class MainActivity : FlutterActivity() {
 {% endsamplecode %}
 
 Then, you can reimplement the first frame in Flutter that shows elements of your
-Android splash screen in the same positions on screen. To see an example of this,
-see the [Android splash screen sample app][].
+Android splash screen in the same positions on screen.
+For an example of this, see the [Android splash screen sample app][].
 
 ### Migrating from Manifest / Activity defined custom splash screens
 
