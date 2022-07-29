@@ -221,8 +221,8 @@ prior to the 2.5 release.
    }
    ```
 
-2. Note this `Drawable`, as this is the `Drawable` that you will specify
-   in your application's launch theme. Then, delete this implementation.
+2. In the next step, you'll specify this `Drawable` as your application's
+    launch theme, so delete this implementation.
 
 3. Follow the steps below to ensure your splash screen `Drawable`
    (`R.some_splash_screen` in the example above) is properly
