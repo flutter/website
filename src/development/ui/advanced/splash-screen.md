@@ -201,7 +201,8 @@ Android launch screen displayed until Flutter has drawn the first frame.
 
 To migrate from defining a custom splash screen to defining a custom
 launch screen for your application, follow the steps that correspond
-to how your application's custom splash screen is defined.
+to how your application's custom splash screen was defined
+prior to the 2.5 release.
 
 **Custom splash screen defined in [`FlutterActivity`][]**
 
