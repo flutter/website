@@ -29,6 +29,8 @@ This recipe uses the following steps:
   3. Read data.
   4. Remove data.
 
+<iframe class="full-width" src="{{site.youtube-site}}/embed/sa_U0jffQII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+
 ## 1. Add the dependency
 
 Before starting, add the [`shared_preferences`][]
