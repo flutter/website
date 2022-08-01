@@ -57,7 +57,7 @@ The animated GIF shows how the app works at the completion of part 1.
 
   * How to write a Flutter app that looks natural on iOS, Android,
     desktop (Windows, for example), and the web
-  * Using a Flutter app with a screen readers (<a href="#talkback">TalkBack</a>, <a href="#voiceover">VoiceOver</a>), enabling visually impaired users to get spoken feedback about the app contents 
+  * Using a Flutter app with screen readers (<a href="#talkback">TalkBack</a> and <a href="#talkback">VoiceOver</a>), technologies that enable visually impaired users to get spoken feedback about app contents 
   * Basic structure of a Flutter app
   * Finding and using packages to extend functionality
   * Using hot reload for a quicker development cycle
@@ -66,8 +66,8 @@ The animated GIF shows how the app works at the completion of part 1.
   <!-- * Learn about basic accessibility terminologies such as screen readers and their use -->
 
   In [part 2][] of this codelab, you'll add interactivity,
-  modify the app's theme, and add the ability to navigate
-  to a new screen (called a _route_ in Flutter).
+  modify the app's theme, add the ability to navigate
+  to a new screen (called a _route_ in Flutter), and ensure the app meets certain accessibility requirements (e.g. text constrast, icon size, labels). 
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -82,7 +82,7 @@ The animated GIF shows how the app works at the completion of part 1.
 
   * A physical device ([Android][] or [iOS][]) connected to your
     computer and set to developer mode
-  * Screen reader enabled on the physical device (TalkBack on Android, VoiceOver on iPhone)
+  * Screen reader enabled on the physical device (<a href="#talkback">TalkBack</a> on Android, <a href="#talkback">VoiceOver</a> on iPhone)
   * The [iOS simulator][] (requires installing Xcode tools)
   * The [Android emulator][] (requires setup in Android Studio)
   * A browser (Chrome is required for debugging)
@@ -326,9 +326,7 @@ as well as many other open source packages, on [pub.dev][].
       "Pascal case" (also known as "upper camel case"),
       means that each word in the string, including the first one,
       begins with an uppercase letter. So, "uppercamelcase" becomes
-      "UpperCamelCase". Using pascal case in our app also helps screen readers 
-      identify the individual words in the string and provides a better 
-      experience to visually impaired users.
+      "UpperCamelCase".
     {{site.alert.end}}
 
     {{site.alert.important}}
