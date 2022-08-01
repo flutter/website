@@ -217,6 +217,8 @@ before the widget is painted. In other words,
 you can intercept the painting phase and take control
 to reposition your child widgets however you want.
 
+<iframe class="full-width" src="{{site.youtube-site}}/embed/NG6pvXpnIso" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 {{site.alert.note}}
   In cases where you need control over what a child paints,
   rather than where a child is painted,
