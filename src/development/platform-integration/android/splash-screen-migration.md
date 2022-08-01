@@ -37,9 +37,9 @@ prior to the 2.5 release.
 2. In the next step, you'll specify this `Drawable` as your application's
     launch theme, so delete this implementation.
 
-3. Use the following steps to ensure that your `Drawable` splash screen
-   (`R.some_splash_screen` in the previous example) is properly
-   configured as your application's custom launch screen.
+3. Use the steps in the section directly following to ensure that your
+   `Drawable` splash screen (`R.some_splash_screen` in the previous example)
+   is properly configured as your application's custom launch screen.
 
 **Custom splash screen defined in Manifest**
 
@@ -63,10 +63,10 @@ prior to the 2.5 release.
    ```
 
 2. If the `android:theme` attribute isn't specified, add the attribute and
-   [define a launch theme][define a theme] for your application's launch screen.
+   [define a launch theme][] for your application's launch screen.
 
-3. Delete the `meta-data` tag, as Flutter no longer
-   displays that information.
+3. Delete the `meta-data` element, as Flutter no longer
+   displays that splash screen.
 
 4. Locate the definition of the theme specified by the `android:theme` attribute
    within your application's `style` resources. This theme is what specifies the
@@ -88,4 +88,4 @@ prior to the 2.5 release.
 
 [`provideSplashScreen`]: {{site.api}}/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
-[define a theme]:  {{site.url}}/development/ui/advanced/splash-screen?tab=android-splash-alignment-kotlin-tab#initializing-the-app
+[define a launch theme]:  {{site.url}}/development/ui/advanced/splash-screen?tab=android-splash-alignment-kotlin-tab#initializing-the-app
