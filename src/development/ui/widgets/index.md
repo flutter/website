@@ -62,16 +62,4 @@ you can also see all the widgets in the [widget index][].
 
 <a class="btn btn-primary full-width" target="_blank" href="https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG" >See more Widget of the Weeks</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
 [widget index]: {{site.url}}/reference/widgets
