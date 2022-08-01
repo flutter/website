@@ -147,7 +147,7 @@ objects to and from the JSON format.
   * [`json_serializable`][json-example] example on GitHub
   * [`json_serializable`][] package
 
-[`freezed` package]: {{site.pub-pkg}}/freezed#how-to-use
+[`freezed` package]: {{site.youtube-site}}/watch?v=RaThk0fiphA
 [`freezed`]: {{site.pub-pkg}}/freezed#how-to-use
 [`json_serializable`]: {{site.pub-api}}/json_serializable/latest/
 [json-example]: {{site.github}}/google/json_serializable.dart/tree/master/example
