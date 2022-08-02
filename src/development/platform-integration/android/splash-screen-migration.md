@@ -24,7 +24,7 @@ prior to the 2.5 release.
    the construction of your application's custom splash screen
    as a `Drawable`, for example:
 
-   ```Java
+   ```java
    @Override
    public SplashScreen provideSplashScreen() {
        // ...
