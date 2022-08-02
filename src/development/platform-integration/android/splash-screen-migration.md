@@ -48,7 +48,8 @@ prior to the 2.5 release.
    Within this element, identify the `android:theme` attribute
    and the `meta-data` element that defines
    a splash screen as an
-   `io.flutter.embedding.android.SplashScreenDrawable`:
+   `io.flutter.embedding.android.SplashScreenDrawable`,
+   and update it. For example:
 
    ```xml
    <activity
