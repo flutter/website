@@ -15,6 +15,12 @@ engine to load and your app to initialize.
 This guide teaches you how to use splash screens
 appropriately on iOS and Android.
 
+{{site.alert.note}}
+For more information on implementing splash screens
+on web and desktop platforms, see the
+[Customizing web app initialization guide][].
+{{site.alert.end}}
+
 ## iOS launch screen
 
 All apps submitted to the Apple App Store
@@ -206,3 +212,4 @@ For an example of this, see the [Android splash screen sample app][].
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
 [Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
 [Deprecated Splash Screen API Migration]: {{site.url}}/development/platform-integration/android/splash-screen-migration
+[Customizing web app initialization guide]: {{site.url}}/development/platform-integration/web/initialization
