@@ -39,6 +39,12 @@ part of the [Human Interface Guidelines][].
 
 ## Android launch screen
 
+{{site.alert.warning}}
+If you are experiencing a crash from implementing a splash screen, you might
+need to deprecate your code. See detailed instructions in the
+[Splash Screen Migration Guide][].
+{{site.alert.warning}}
+
 In Android, there are two separate screens that you can control:
 a _launch screen_ shown while your Android app initializes,
 and a _splash screen_ that displays while the Flutter experience
@@ -188,17 +194,6 @@ Then, you can reimplement the first frame in Flutter that shows elements of your
 Android splash screen in the same positions on screen.
 For an example of this, see the [Android splash screen sample app][].
 
-### Migrating from Manifest / Activity defined custom splash screens
-
-Previously, Android Flutter apps would either set
-`io.flutter.embedding.android.SplashScreenDrawable` in their application
-manifest, or implement [`provideSplashScreen`][] within their Flutter Activity.
-This would be shown momentarily in between the time after the Android launch
-screen is shown and when Flutter has drawn the first frame. This is no longer
-needed and is deprecated – in Flutter 2.5 and later, Flutter automatically keeps 
-the Android launch screen displayed until Flutter has drawn the first frame. 
-Developers should instead remove usage of these APIs.
-
 [Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: {{site.url}}/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
@@ -206,3 +201,4 @@ Developers should instead remove usage of these APIs.
 [must use an Xcode storyboard]: {{site.apple-dev}}/news/?id=03042020b
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
 [Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
+[Splash Screen Migration Guide]: {{site.url}}/development/platform-integration/android/splash-screen-migration
