@@ -144,6 +144,44 @@ widgets to offer a dramatically more accessible experience.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/bWbBgbmAdQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Testing accessibility on mobile: 
+
+You can use Flutter's <a href="https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html">Accessibility Guideline API</a> to test if each UI screen of your mobile app meets the accessibility recommendations for text contrast, target size, and target labels. 
+
+The example below shows how to use the Guideline API on <a href="https://yenkhanh-flutter-project.web.app/get-started/codelab/?tab=talkback">Startup Name Generator</a>, the app built as part of the codelab on creating your first Flutter app.
+
+<!-- {% indent %}
+<container class="site-image-right">
+<iframe width="auto" height="502" src="{{site.youtube-site}}/embed/6b-ZQe98oJk?feature=share" title="App on TalkBack " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+  Startup Name Generator on TalkBack
+</container>
+
+{% include docs/app-figure.md img-class="border" class="site-image-right"
+    image="get-started/startup-namer.gif" caption="Startup Name Generator App" %}
+{% endindent %} -->
+
+  <?code-excerpt path-base="codelabs/startup_namer/step3_stateful_widget"?>
+  <?code-excerpt "test/widget_test.dart (guidelineApi)" indent-by="2"?>
+  ```dart
+  final SemanticsHandle handle = tester.ensureSemantics();
+  await tester.pumpWidget(const MaterialApp(home: MyApp()));
+
+  // Checks that tappable nodes have a minimum size of 48 by 48 pixels for android.
+  await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+
+  // Checks that tappable nodes have a minimum size of 44 by 44 pixels for iOS.
+  await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
+
+  // Checks that touch targets with a tap or long press action are labeled.
+  await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+
+  // Checks whether semantic nodes meet the minimum text contrast levels.
+  // The recommended text contrast is 3:1 for larger text (18 point and above regular)
+  await expectLater(tester, meetsGuideline(textContrastGuideline));
+  handle.dispose();
+  ```
+
 ## Testing accessibility on web:
 
 You can debug accessibility by visualizing the semantic nodes created for your web app

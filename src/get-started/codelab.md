@@ -755,7 +755,8 @@ class="site-image-right" img-class="border" image="get-started/startup-namer-sem
 
 Congratulations!
 
-You've written an interactive Flutter app that runs on iOS, Android, Windows, web and works on screen readers. 
+You've written an interactive Flutter app that runs on iOS, Android, Windows, web, and screen readers. 
+
 In this codelab, you've:
 
 * Created a Flutter app from the ground up.
@@ -777,6 +778,13 @@ where you add the following functionality:
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
 * Ensure the app meets basic accessibility requirements of text contrast, icon size, and interactive labels for screen readers.
+
+## Explore the Flutter SDK
+
+* <a href="https://docs.flutter.dev/get-started/flutter-for/react-native-devs">Flutter for React Native developers</a>
+* <a href="https://yenkhanh-flutter-project.web.app/development/accessibility-and-localization/accessibility//#testing-accessibility-on-mobile">Flutter's Accessibility Guideline API to test accessibility in mobile apps</a>
+* <a href="https://flutter.dev/docs/get-started/flutter-for/web-devs">Flutter for web developers</a>
+* <a href="https://flutter.dev/docs/development/ui/widgets-intro">Introduction to widgets</a>
 
 [an editor]: {{site.url}}/get-started/editor
 [Android]: {{site.url}}/get-started/install/macos#set-up-your-android-device
