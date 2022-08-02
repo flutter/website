@@ -21,7 +21,7 @@ prior to the 2.5 release.
 
 1. Locate your application's implementation of `provideSplashScreen()`
    within its `FlutterActivity`. This implementation should involve
-   the construction of your application's custom splash screen:
+   the construction of your application's custom splash screen
    as a `Drawable`, for example:
 
    ```Java
