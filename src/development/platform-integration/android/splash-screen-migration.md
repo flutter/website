@@ -70,8 +70,8 @@ prior to the 2.5 release.
    displays that splash screen.
 
 4. Locate the definition of the theme specified by the `android:theme` attribute
-   within your application's `style` resources. This theme is what specifies the
-   launch theme of your application. Ensure that this `style` configures the
+   within your application's `style` resources. This theme specifies the
+   launch theme of your application. Ensure that the `style` attribute configures the
    `android:windowBackground` attribute with your custom splash screen:
 
    ```xml
