@@ -165,6 +165,8 @@
               permalink: /development/platform-integration/android/plugin-api-migration
             - title: AndroidX migration
               permalink: /development/platform-integration/android/androidx-migration
+            - title: Deprecated Splash Screen API Migration
+              permalink: /development/platform-integration/android/splash-screen-migration
         - title: iOS
           permalink: /development/platform-integration/ios
           children:

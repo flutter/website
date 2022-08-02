@@ -465,8 +465,8 @@ Flutter renders the first frame of your application.
 
 #### Android
 
-To add a "splash screen" to your Flutter application,
-navigate to `.../android/app/src/main`.
+To add a launch screen (also known as "splash screen") to your
+Flutter application, navigate to `.../android/app/src/main`.
 In `res/drawable/launch_background.xml`,
 use this [layer list drawable][] XML to customize
 the look of your launch screen. The existing template provides

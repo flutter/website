@@ -41,14 +41,18 @@ part of the [Human Interface Guidelines][].
 
 {{site.alert.warning}}
 If you are experiencing a crash from implementing a splash screen, you might
-need to deprecate your code. See detailed instructions in the
-[Splash Screen Migration Guide][].
+need to migrate your code. See detailed instructions in the
+[Deprecated Splash Screen API Migration][].
 {{site.alert.warning}}
 
 In Android, there are two separate screens that you can control:
 a _launch screen_ shown while your Android app initializes,
 and a _splash screen_ that displays while the Flutter experience
 initializes.
+
+As of Flutter 2.5, Flutter has consolidated these two screens
+into one Android launch screen. Flutter automatically keeps this
+launch screen displayed until it draws the first frame.
 
 {{site.alert.note}}
   For apps that embed one or more Flutter screens within an
@@ -122,15 +126,15 @@ while the app initializes.
 
 ### Android S
 
-See [Android Splash Screens][] first on how to configure your splash screen on
+See [Android Splash Screens][] first on how to configure your launch screen on
 Android S.
 
 Make sure neither `io.flutter.embedding.android.SplashScreenDrawable` is set in
 your manifest, nor is `provideSplashScreen` implemented, as these APIs are
-deprecated. Doing so will cause the Android splash screen to fade smoothly into
-the Flutter when the app is launched.
+deprecated. Doing so will cause the Android launch screen to fade smoothly into
+the Flutter when the app is launched and you may experience a crash.
 
-Some apps may want to continue showing the last frame of the Android splash
+Some apps may want to continue showing the last frame of the Android launch
 screen in Flutter. For example, this preserves the illusion of a single frame
 while additional loading continues in Dart. To achieve this, the following
 Android APIs may be helpful:
@@ -191,7 +195,7 @@ class MainActivity : FlutterActivity() {
 {% endsamplecode %}
 
 Then, you can reimplement the first frame in Flutter that shows elements of your
-Android splash screen in the same positions on screen.
+Android launch screen in the same positions on screen.
 For an example of this, see the [Android splash screen sample app][].
 
 [Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
@@ -201,4 +205,4 @@ For an example of this, see the [Android splash screen sample app][].
 [must use an Xcode storyboard]: {{site.apple-dev}}/news/?id=03042020b
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
 [Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
-[Splash Screen Migration Guide]: {{site.url}}/development/platform-integration/android/splash-screen-migration
+[Deprecated Splash Screen API Migration]: {{site.url}}/development/platform-integration/android/splash-screen-migration
