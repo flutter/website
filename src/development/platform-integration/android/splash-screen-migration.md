@@ -8,11 +8,11 @@ screen by defining it within the metadata of their application manifest file
 (`AndroidManifest.xml`), or by implementing [`provideSplashScreen`][] within
 their [`FlutterActivity`][]. This would display momentarily in between
 the time after the Android launch screen is shown and when Flutter has
-drawn the first frame. This approach is now deprecated as of Flutter 2.5;
+drawn the first frame. This approach is now deprecated as of Flutter 2.5.
 Flutter now automatically keeps the Android launch screen displayed
 until it draws the first frame.
 
-To migrate from defining a custom splash screen to defining a custom
+To migrate from defining a custom splash screen to just defining a custom
 launch screen for your application, follow the steps that correspond
 to how your application's custom splash screen was defined
 prior to the 2.5 release.
@@ -22,7 +22,7 @@ prior to the 2.5 release.
 1. Locate your application's implementation of `provideSplashScreen()`
    within its `FlutterActivity`. This implementation should involve
    the construction of your application's custom splash screen
-   as a `Drawable`, for example:
+   as a `Drawable`. For example:
 
    ```java
    @Override
@@ -34,10 +34,10 @@ prior to the 2.5 release.
    }
    ```
 
-2. In the next step, you'll specify this `Drawable` as your application's
-    launch theme, so delete this implementation.
+   In the next step, you'll specify this `Drawable` as your application's
+   launch theme, so delete this implementation.
 
-3. Use the steps in the section directly following to ensure that your
+2. Use the steps in the section directly following to ensure that your
    `Drawable` splash screen (`R.some_splash_screen` in the previous example)
    is properly configured as your application's custom launch screen.
 
@@ -72,7 +72,7 @@ prior to the 2.5 release.
 4. Locate the definition of the theme specified by the `android:theme` attribute
    within your application's `style` resources. This theme specifies the
    launch theme of your application. Ensure that the `style` attribute configures the
-   `android:windowBackground` attribute with your custom splash screen:
+   `android:windowBackground` attribute with your custom splash screen. For example:
 
    ```xml
    <resources>

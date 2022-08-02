@@ -26,7 +26,7 @@ at each stage of the initialization process.
 
 {{site.alert.note}}
 For more information on implementing splash screens
-on mobile platforms, see the
+on mobile platforms, see
 [Adding a splash screen to your mobile app][].
 {{site.alert.end}}
 
