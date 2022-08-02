@@ -144,7 +144,7 @@ widgets to offer a dramatically more accessible experience.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/bWbBgbmAdQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Testing accessibility on mobile: 
+## Testing accessibility on mobile
 
 You can use Flutter's <a href="https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html">Accessibility Guideline API</a> to test if each UI screen of your mobile app meets the accessibility recommendations for text contrast, target size, and target labels. 
 
