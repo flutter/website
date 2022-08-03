@@ -74,8 +74,8 @@ the two kinds of widgets, `Stateless` and `Stateful`, see
 
 <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/QlwiL_yLh6E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[How do I make my firt Flutter app?]: {{site.youtube-site}}/watch?v=xWV71C2kp38&t=32s
-[What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E&t=3s
+[How do I make my first Flutter app?]: {{site.youtube-site}}/watch?v=xWV71C2kp38
+[What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
 
 ## Want to skill up?
 
