@@ -412,9 +412,9 @@ use the ones you need, but it is a convenient way to build these behaviors into
 your custom controls.
 
 {{site.alert.note}}
-To learn more, watch this short Widget of the Week video on the FocusableActionDetector widget:
+  To learn more, watch this short Widget of the Week video on the FocusableActionDetector widget:
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/R84AGg0lKs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/R84AGg0lKs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 {{site.alert.end}}
 
 ## Controlling focus traversal

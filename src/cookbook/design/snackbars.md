@@ -67,9 +67,9 @@ const snackBar = SnackBar(
 ScaffoldMessenger.of(context).showSnackBar(snackBar);
 ```
 {{site.alert.note}}
-To learn more, watch this short Widget of the Week video on the ScaffoldMessenger widget:
+  To learn more, watch this short Widget of the Week video on the ScaffoldMessenger widget:
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/lytQi-slT5Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/lytQi-slT5Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {{site.alert.end}}
 
 ## 3. Provide an optional action

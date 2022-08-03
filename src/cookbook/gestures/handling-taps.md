@@ -20,9 +20,9 @@ Use the [`GestureDetector`][] widget to respond
 to fundamental actions, such as tapping and dragging.
 
 {{site.alert.note}}
-To learn more, watch this short Widget of the Week video on the GestureDetector widget:
+  To learn more, watch this short Widget of the Week video on the GestureDetector widget:
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/WhVXkCFPmK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/WhVXkCFPmK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {{site.alert.end}}
 
 This recipe shows how to make a custom button that shows
