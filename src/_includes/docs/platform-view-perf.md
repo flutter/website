@@ -13,7 +13,7 @@ which competes with other tasks like handling OS or plugin messages.
 Prior to Android 10, Hybrid composition copied each Flutter frame
 out of the graphic memory into main memory, and then copied it back
 to a GPU texture. As this copy happens per frame, the performance of
-the entire Flutter UI may be impacted. In Android 10 or above, the
+the entire Flutter UI might be impacted. In Android 10 or above, the
 graphics memory is copied once.
 
 Virtual display, on the other hand,
