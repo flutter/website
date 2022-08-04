@@ -106,7 +106,10 @@ class MyApp extends StatelessWidget {
 
 ## Children's extent
 
-To specify each item's extent, we can use either `itemExtent` or `prototypeItem`. Specifying either of them is more efficient than letting the children determine their own extent because the scrolling machinery can make use of the foreknowledge of the children's extent to save work, for example when the scroll position changes drastically.
+To specify each item's extent, you can use either `itemExtent` or `prototypeItem`.
+Specifying either is more efficient than letting the children determine their own extent
+because the scrolling machinery can make use of the foreknowledge of the children's
+extent to save work, for example when the scroll position changes drastically.
 
 <noscript>
   <img src="/assets/images/docs/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
