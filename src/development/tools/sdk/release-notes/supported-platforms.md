@@ -29,9 +29,9 @@ and stable channels.
 We define three tiers of support for the platforms on
 which Flutter runs:
 
-1. Supported Google-tested platforms,
-   which are platforms the Flutter team at
-   Google tests in continuous integration at every commit.
+1. Supported Google-tested platforms
+  are automatically tested at every commit
+  by continuous integration testing.
 1. Best-effort platforms, supported through community
    testing, are platforms we believe we support through
    coding practices and ad-hoc testing,
@@ -54,8 +54,9 @@ which Flutter runs:
 |Web     |Edge 1.2.0            |
 |Windows |Windows 10            |
 
-* Android SDK 20 is covered by testing Android SDK 19. SDK 20 is effectively
-  API 19 with additional support for Android Wear and no new or deprecated API.
+* Passing tests on Android SDK 19 also confers a passing result on SDK 20.
+  This is because Android SDK 20 has additional support for Android Wear,
+  but otherwise no new or deprecated API.
 
 ### Best-effort platforms
 
