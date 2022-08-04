@@ -22,7 +22,7 @@ Flutter supports the following platforms:
 |Windows | Windows 7 & above, 64-bit    | All     |
 
 All channels include master, beta,
-and stable channels. 
+and stable channels.
 
 ## How we define a supported platform
 
@@ -30,8 +30,8 @@ We define three tiers of support for the platforms on
 which Flutter runs:
 
 1. Supported Google-tested platforms,
-   which are platforms the Flutter team at 
-   Google tests in continuous integration at every commit. 
+   which are platforms the Flutter team at
+   Google tests in continuous integration at every commit.
 1. Best-effort platforms, supported through community
    testing, are platforms we believe we support through
    coding practices and ad-hoc testing,
@@ -44,8 +44,7 @@ which Flutter runs:
 
 |Platform|Version               |
 |--------|----------------------|
-|Android |Android SDK 21–30     |
-|Android |Android SDK 19        |
+|Android |Android SDK 19–30*    |
 |iOS     |14-15                 |
 |Linux   |Debian 10             |
 |macOS   |El Capitan & greater  |
@@ -55,15 +54,13 @@ which Flutter runs:
 |Web     |Edge 1.2.0            |
 |Windows |Windows 10            |
 
-Note that Android SDK 20 is covered by
-testing Android SDK 19, as the differences
-between the two platform versions are minimal.
+* Android SDK 20 is covered by testing Android SDK 19. SDK 20 is effectively
+  API 19 with additional support for Android Wear and no new or deprecated API.
 
 ### Best-effort platforms
 
 |Platform|Version             |
 |--------|--------------------|
-|Android |Android SDK 20      |
 |Android |Android SDK 16–18   |
 |Android |Android SDK 17      |
 |Android |Android SDK 16      |
