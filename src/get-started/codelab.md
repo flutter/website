@@ -782,8 +782,8 @@ where you add the following functionality:
 ## Explore the Flutter SDK
 
 * <a href="https://docs.flutter.dev/get-started/flutter-for/react-native-devs">Flutter for React Native developers</a>
-* <a href="https://yenkhanh-flutter-project.web.app/development/accessibility-and-localization/accessibility//#testing-accessibility-on-mobile">Flutter's Accessibility Guideline API to test accessibility in mobile apps</a>
-* <a href="https://flutter.dev/docs/get-started/flutter-for/web-devs">Flutter for web developers</a>
+* <a href="https://yenkhanh-flutter-project.web.app/development/accessibility-and-localization/accessibility//#testing-accessibility-on-mobile">Testing accessibility in Flutter mobile apps</a>
+* <a href="https://docs.flutter.dev/development/ui/layout">Building layouts with Flutter</a>
 * <a href="https://flutter.dev/docs/development/ui/widgets-intro">Introduction to widgets</a>
 
 [an editor]: {{site.url}}/get-started/editor

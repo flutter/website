@@ -151,11 +151,11 @@ You can use Flutter's <a href="https://api.flutter.dev/flutter/flutter_test/Acce
 <!-- {% include docs/app-figure.md class="site-image-right" img-class="border"
     image="get-started/startup-namer.gif" caption="The app from part 2 on iOS" %} -->
 
-The example below shows how to use the Guideline API on <a href="https://yenkhanh-flutter-project.web.app/get-started/codelab/?tab=talkback">Startup Name Generator</a>, the app built as part of the codelab on creating your first Flutter app. Each list tile on the app's main screen is tappable target with text represented in 18 point. 
+The example below shows how to use the Guideline API on <a href="https://yenkhanh-flutter-project.web.app/get-started/codelab/?tab=talkback">Startup Name Generator</a>, the app built as part of the codelab on creating your first Flutter app. Each list tile on the app's main screen is tappable target with text represented in 18 point. You can add the tests provided by the Guideline API in `test/widget_test.dart` of your app directory.
 
 
 <?code-excerpt path-base="codelabs/startup_namer/step3_stateful_widget"?>
-<?code-excerpt "test/widget_test.dart (guidelineApi)" indent-by="2"?>
+<?code-excerpt "test/widget_test.dart" title indent-by="2"?>
 ```dart
 final SemanticsHandle handle = tester.ensureSemantics();
 await tester.pumpWidget(const MaterialApp(home: MyApp()));
