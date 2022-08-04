@@ -115,6 +115,6 @@ extent to save work, for example when the scroll position changes drastically.
   <img src="/assets/images/docs/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[`list.generate`]: {{site.api}}/flutter/dart-core/List/List.generate.html
-[`listview`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`List.generate`]: {{site.api}}/flutter/dart-core/List/List.generate.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
