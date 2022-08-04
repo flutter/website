@@ -19,6 +19,8 @@ or perhaps you downloaded a font from [Google Fonts][].
 {{site.alert.note}}
   Check out the [google_fonts][] package for direct access
   to over 1,000 open-sourced font families.
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/8Vzv2CdbEY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {{site.alert.end}}
 
 {{site.alert.note}}

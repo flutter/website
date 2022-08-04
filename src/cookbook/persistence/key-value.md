@@ -29,6 +29,12 @@ This recipe uses the following steps:
   3. Read data.
   4. Remove data.
 
+{{site.alert.note}}
+  To learn more, watch this short Package of the Week video on the shared_preferences package:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/sa_U0jffQII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+{{site.alert.end}}
+
 ## 1. Add the dependency
 
 Before starting, add the [`shared_preferences`][]

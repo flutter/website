@@ -70,6 +70,12 @@ wrap a section of the app in a `Theme` widget.
 There are two ways to approach this: creating a unique `ThemeData`,
 or extending the parent theme.
 
+{{site.alert.note}}
+  To learn more, watch this short Widget of the Week video on the Theme widget:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
+
 ### Creating unique `ThemeData`
 
 If you don't want to inherit any application colors or font styles,

@@ -218,6 +218,12 @@ you can intercept the painting phase and take control
 to reposition your child widgets however you want.
 
 {{site.alert.note}}
+  To learn more, watch this short Widget of the Week video on the Flow widget:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/NG6pvXpnIso" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
+
+{{site.alert.note}}
   In cases where you need control over what a child paints,
   rather than where a child is painted,
   consider using a [`CustomPaint`][] widget.

@@ -55,7 +55,7 @@ Register your app on App Store Connect:
 1. Click **+** in the top-left corner of the My Apps page,
    then select **New App**.
 1. Fill in your app details in the form that appears.
-   In the Platforms section, ensure that iOS is checked.
+   In the Platforms section, ensure that macOS is checked.
    Since Flutter does not currently support tvOS,
    leave that checkbox unchecked. Click **Create**.
 1. Navigate to the application details for your app and select

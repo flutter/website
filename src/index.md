@@ -60,20 +60,22 @@ Coming from another platform? Check out Flutter for:
 
 ### Videos
 
-We also have some helpful videos on our [Flutter YouTube channel][]! In particular, check out the [Flutter in Focus series][], and learn about other series on our [videos][] page.
+We also have some helpful videos on our [Flutter YouTube channel][]!
+In particular, check out the [Flutter in Focus series][],
+and learn about other series on our [videos][] page.
 
-First up, why use Flutter? What makes it different than other app frameworks?
+Learn Flutter basics in [How do I make my first Flutter app?][]
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/l-YO9CmaSUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/xWV71C2kp38" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 
-Flutter in Focus: Learn Flutter features in 10 minutes or less.
+In Flutter, "everything is a widget"! To better understand
+the two kinds of widgets, `Stateless` and `Stateful`, see 
+[What is State?][]
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/QlwiL_yLh6E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-In Flutter, "everything is a widget"! If you want to better understand
-the two kinds of widgets, Stateless and Stateful, see the following videos,
-
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/wE7khGHVkYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/AqCMFXEmf3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[How do I make my first Flutter app?]: {{site.youtube-site}}/watch?v=xWV71C2kp38
+[What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
 
 ## Want to skill up?
 

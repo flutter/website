@@ -25,6 +25,12 @@ This recipe uses the following steps:
   3. Write data to the file.
   4. Read data from the file.
 
+{{site.alert.note}}
+To learn more, watch this Package of the Week video on the path_provider package:
+
+<iframe class="full-width" src="{{site.youtube-site}}/embed/Ci4t-NkOY3I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
+
 ## 1. Find the correct local path
 
 This example displays a counter. When the counter changes,

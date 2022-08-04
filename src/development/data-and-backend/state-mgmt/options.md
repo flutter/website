@@ -181,6 +181,11 @@ doesn't need a `BuildContext`.
   case you already use `flutter_hooks`.
 * [Flutter state management for minimalists][], by Suragch
 
+{{site.alert.note}}
+  To learn more, watch this short Package of the Week video on the GetIt package:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/f9XQD5mf6FY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
 
 [Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
 [GetIt package]: {{site.pub-pkg}}/get_it

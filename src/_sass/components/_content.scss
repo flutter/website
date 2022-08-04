@@ -80,3 +80,27 @@
     border: 1px solid #ccc;
   }
 }
+
+.video-card {
+  flex: 0 0 calc((100% / 2) - 1rem);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+iframe.full-width {
+  aspect-ratio: 16 / 9;
+}
