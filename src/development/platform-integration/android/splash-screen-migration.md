@@ -20,7 +20,7 @@ prior to the 2.5 release.
 **Custom splash screen defined in [`FlutterActivity`][]**
 
 1. Locate your application's implementation of `provideSplashScreen()`
-   within its `FlutterActivity`. This implementation should involve
+   within its `FlutterActivity` and **delete it**. This implementation should involve
    the construction of your application's custom splash screen
    as a `Drawable`. For example:
 
