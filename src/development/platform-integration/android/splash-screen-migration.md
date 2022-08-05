@@ -5,8 +5,8 @@ description: How to migrate from Manifest/Activity defined splash screen.
 
 Prior to Flutter 2.5, Flutter apps could add a splash
 screen by defining it within the metadata of their application manifest file
-(`AndroidManifest.xml`), or by implementing [`provideSplashScreen`][] within
-their [`FlutterActivity`][]. This would display momentarily in between
+(`AndroidManifest.xml`), by implementing [`provideSplashScreen`][] within
+their [`FlutterActivity`][], or both. This would display momentarily in between
 the time after the Android launch screen is shown and when Flutter has
 drawn the first frame. This approach is now deprecated as of Flutter 2.5.
 Flutter now automatically keeps the Android launch screen displayed
