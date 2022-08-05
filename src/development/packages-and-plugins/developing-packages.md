@@ -618,7 +618,8 @@ Both FFI plugin packages and (non-FFI) plugin packages support
 bundling native code, but FFI plugin packages do not support
 method channels and do include method channel registration code.
 If you want to implement a plugin that uses both method channels
-and FFI, use a (non-FFI) plugin. You can chose this per platform.
+and FFI, use a (non-FFI) plugin. You can chose per platform to
+use an FFI or (non-FFI) plugin.
 
 FFI plugin packages were introduced in Flutter 3.0, if you're
 targeting older Flutter versions, you can use a (non-FFI) plugin.
