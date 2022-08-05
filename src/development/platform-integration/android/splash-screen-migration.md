@@ -67,7 +67,7 @@ prior to the 2.5 release.
    [define a launch theme][] for your application's launch screen.
 
 3. Delete the `meta-data` element, as Flutter no longer
-   displays that splash screen.
+   uses that, but it can cause a crash.
 
 4. Locate the definition of the theme specified by the `android:theme` attribute
    within your application's `style` resources. This theme specifies the
