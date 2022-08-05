@@ -60,6 +60,10 @@ initializes.
   As of Flutter 2.5, the launch and splash screens have been
   consolidated—Flutter now only implements the Android launch screen,
   which is displayed until the framework draws the first frame.
+  This launch screen can act as both an Android launch screen and an
+  Android splash screen via customization, and thus, is referred to
+  as both terms. For example of such customization, see the
+  [Android splash screen sample app][].
 
   If, prior to 2.5, you used `flutter create` to create an app,
   and you run the app on 2.5 or later, it can cause the app to crash.
