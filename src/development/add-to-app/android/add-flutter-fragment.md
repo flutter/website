@@ -326,9 +326,9 @@ The initial display of Flutter content requires some wait time,
 even if a pre-warmed `FlutterEngine` is used.
 To help improve the user experience around
 this brief waiting period, Flutter supports the
-display of a splash screen until Flutter renders
-its first frame. For instructions about how to show a splash screen,
-see the [splash screen guide][].
+display of a splash screen (also known as "launch screen") until Flutter
+renders its first frame. For instructions about how to show a launch
+screen, see the [splash screen guide][].
 
 ## Run Flutter with a specified initial route
 
