@@ -16,9 +16,9 @@ This guide teaches you how to use splash screens
 appropriately on iOS and Android.
 
 {{site.alert.note}}
-For more information on implementing splash screens
-on web and desktop platforms, see the
-[Customizing web app initialization guide][].
+    For more information on implementing splash screens
+    on web and desktop platforms, see the
+    [Customizing web app initialization guide][].
 {{site.alert.end}}
 
 ## iOS launch screen
@@ -46,9 +46,9 @@ part of the [Human Interface Guidelines][].
 ## Android launch screen
 
 {{site.alert.warning}}
-If you are experiencing a crash from implementing a splash screen, you might
-need to migrate your code. See detailed instructions in the
-[Deprecated Splash Screen API Migration][].
+    If you are experiencing a crash from implementing a splash screen, you
+    might need to migrate your code. See detailed instructions in the
+    [Deprecated Splash Screen API Migration][].
 {{site.alert.warning}}
 
 In Android, there are two separate screens that you can control:
@@ -56,9 +56,15 @@ a _launch screen_ shown while your Android app initializes,
 and a _splash screen_ that displays while the Flutter experience
 initializes.
 
-As of Flutter 2.5, Flutter has consolidated these two screens
-into one Android launch screen. Flutter automatically keeps this
-launch screen displayed until it draws the first frame.
+{{site.alert.note}}
+  As of Flutter 2.5, the launch and splash screens have been
+  consolidated—Flutter now only implements the Android launch screen,
+  which is displayed until the framework draws the first frame.
+
+  If, prior to 2.5, you used `flutter create` to create an app,
+  and you run the app on 2.5 or later, it can cause the app to crash.
+  For more info, see the [Deprecated Splash Screen API Migration][].
+{{site.alert.end}}
 
 {{site.alert.note}}
   For apps that embed one or more Flutter screens within an

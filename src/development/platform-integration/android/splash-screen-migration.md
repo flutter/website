@@ -34,9 +34,6 @@ prior to the 2.5 release.
    }
    ```
 
-   In the next step, you'll specify this `Drawable` as your application's
-   launch theme, so delete this implementation.
-
 2. Use the steps in the section directly following to ensure that your
    `Drawable` splash screen (`R.some_splash_screen` in the previous example)
    is properly configured as your application's custom launch screen.
