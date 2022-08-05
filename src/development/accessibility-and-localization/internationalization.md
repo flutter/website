@@ -10,6 +10,7 @@ description: How to internationalize your Flutter app.
   <h4 class="no_toc">What you’ll learn</h4>
 
   * How to track the device's locale (the user's preferred language).
+  * How to enable locale-specific Material/Cupertino widgets.
   * How to manage locale-specific app values.
   * How to define the locales an app supports.
 {{site.alert.end}}
@@ -45,7 +46,7 @@ be internationalized using the same classes and logic.
 ## Introduction to localizations in Flutter
 
 This section provides a tutorial on how to internationalize
-a Flutter application, along with any additional setup that a
+a new Flutter application, along with any additional setup that a
 target platform might require.
 
 ### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {#setting-up}
@@ -57,8 +58,16 @@ properties, and include a package called
 `flutter_localizations`. As of November 2020,
 this package supports 78 languages.
 
+To begin, start by creating a new Flutter application in a directory of your choice with
+the `flutter create` command.
+
+<?code-excerpt ?>
+```
+flutter create <name_of_flutter_app>
+```
+
 To use flutter_localizations,
-add the package as a dependency to your `pubspec.yaml` file:
+add the package as a dependency to your `pubspec.yaml` file, as well as the `intl` package:
 
 <?code-excerpt "gen_l10n_example/pubspec.yaml (FlutterLocalizations)"?>
 ```yaml
@@ -81,14 +90,14 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 ```dart
 return const MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: [
+  localizationsDelegates: const [
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
   ],
-  supportedLocales: [
-    Locale('en', ''), // English, no country code
-    Locale('es', ''), // Spanish, no country code
+  supportedLocales: const [
+    Locale('en'),
+    Locale('es'),
   ],
   home: MyHomePage(),
 );
@@ -124,6 +133,50 @@ library.
 More information about these app properties, the types they
 depend on, and how internationalized Flutter apps are typically
 structured, can be found below.
+
+<a name="overriding-locale"></a>
+### Overriding the Locale
+
+Localizations.override is a factory constructor for the Localizations widget that allows for (the usually rare) situation where a section of your application needs to be localized to a different locale than the locale configured for your device. 
+
+Let’s add some code to the body of your Flutter application to observe this behavior:
+```dart
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            // New code
+            Localizations.override(
+              context: context,
+              locale: const Locale('es'),
+              // Using a Builder here to get the correct BuildContext.
+              // Alternatively, you can create a new widget and Localizations.override
+              // will pass the updated BuildContext to the new widget.
+              child: Builder(
+                builder: (BuildContext context) {
+                  // A toy example for an internationalized Material widget.
+                  return CalendarDatePicker(
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900),
+                    lastDate: DateTime(2100),
+                    onDateChanged: (value) {},
+                  );
+                }
+              )
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+Upon hot-reloading, you will observe that the `CalendarDatePicker` widget is rendered in the Spanish language.
 
 <a name="adding-localized-messages"></a>
 ### Adding your own localized messages
@@ -198,6 +251,8 @@ project called `l10n.yaml` with the following content:
 
 6. Now, run your app so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
+   Alternatively, you can also run `flutter gen-l10n` to generate the same
+   files without running the app.
 
 7. Add the import statement on `app_localizations.dart` and `AppLocalizations.delegate`
    in your call to the constructor for `MaterialApp`.
@@ -218,8 +273,8 @@ project called `l10n.yaml` with the following content:
        GlobalCupertinoLocalizations.delegate,
      ],
      supportedLocales: [
-       Locale('en', ''), // English, no country code
-       Locale('es', ''), // Spanish, no country code
+       Locale('en'), // English, no country code
+       Locale('es'), // Spanish, no country code
      ],
      home: MyHomePage(),
    );
@@ -264,9 +319,170 @@ return MaterialApp(
       DemoLocalizations.of(context).title,
 ```
 
-For more information about the localization tool,
-such as dealing with DateTime and handling plurals,
-see the [Internationalization User's Guide][].
+### Placeholders, Plurals, and Selects
+It’s often useful to include application values in messages. These
+messages support a syntax for including such application values, which we
+call placeholders. Placeholders become positional method parameters in the
+ generated AppLocalizations class. Placeholder names must be valid Dart 
+ method parameter names. Use placeholder names wrapped in curly braces to
+  add placeholders inyour localized messages as follows:
+```json
+"{placeholderName}"
+```
+
+Each placeholder must be defined in the "placeholders" object. For example, to define a hello message with a userName parameter:
+
+```json
+{
+  "hello": "Hello {userName}",
+  "@hello": {
+    "description": "A message with a single parameter",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Bob"
+      }
+    }
+  }
+}
+```
+
+The `userName` parameter has type `String`. The generated `hello()` method returns a `String`:
+
+```dart
+// Returns "Hello John".
+AppLocalizations.of(context).hello("John")
+```
+
+You can also use numerical placeholders to specify pluralization. A plural message must have a `num` parameter that represents the number of items the message is referring to. The specific syntax is
+```json
+"{countPlaceholder, plural, =0{message0} =1{message1} ... other{messageOther}}"
+```
+The expression above will be replaced by the message variation corresponding to the value of the `countPlaceholder`. 
+Each variation has a standard name and only the "other" variation is required. The table below shows how each variation is formatted. Each variation has a prefix that identifies the variation and a message variation bracketed with curly braces.
+
+// TODO add the table of the 6 different variations. 
+
+For example, to define a message with a plural:
+```json
+{
+  "nWombats": "{count,plural, =0{no wombats} other{{count} wombats}}",
+  "@nWombats": {
+    "description": "A plural message",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  }
+}
+```
+Using a plural method is easy enough, just pass it the item count parameter:
+
+```dart
+// Returns "no wombats"
+AppLocalizations.of(context).nWombats(0)
+// Returns "5 wombats"
+AppLocalizations.of(context).nWombats(5)
+```
+
+
+Similar to plurals, there is a syntax to choose a value based on a `String` placeholder. The syntax is
+```json
+"{selectPlaceholder, select, value0{message0} ... other{messageOther}}"
+```
+
+For example to define a message with a select:
+```json
+{
+  "pronoun": "{gender, select, male{he} female{she} other{they}}",
+  "@pronoun": {
+    "description": "A gendered message",
+    "placeholders": {
+      "gender": {
+        "type": "String"
+      }
+    }
+  }
+}
+```
+Similar to above, just pass in the gender as a parameter:
+```dart
+// Returns "he"
+AppLocalizations.of(context).pronoun("male")
+// Returns "she"
+AppLocalizations.of(context).pronoun("female")
+// Returns "they"
+AppLocalizations.of(context).pronoun("other")
+```
+
+### Messages with Numbers and Currencies
+Numbers and numbers that represent currency values are displayed very differently in different locales. The Dart intl package provides support for formatting the strings they’re converted to.
+
+The localizations generation tool makes use of the intl package
+NumberFormat class to properly format numbers based on the locale and the
+desired format. For example,  the following expression produces the string “1.2million”:
+
+```dart
+NumberFormat.compactLong("en_US").format(1200000)
+```
+
+The “format” for placeholders whose type is int or double, can be any one of the following NumberFormat named constructors.
+
+| Message "format" value | Output for 1200000 |
+| - | - |
+| "compact" | "1.2M" |
+| "compactCurrency" (*) | "$1.2M" |
+| "compactSimpleCurrency" (*) | "$1.2M" |
+| "compactLong" | "1.2 million" |
+| "currency" (*) | "USD1,200,000.00" |
+| "decimalPattern" | "1,200,000" |
+| "decimalPercentPattern" (*) | "120,000,000%" |
+| "percentPattern" | "120,000,000%" |
+| "scientificPattern" | "1E6" |
+| "simpleCurrency" (*) | "$1,200,000" |
+
+The five starred (“*”) NumberFormat constructors have optional, named parameters. Those parameters can be specified as the value of the placeholder’s “optionalParameters” object. For example, to specify the optional decimalDigits parameter for "compactCurrency":
+
+```json
+"numberOfDataPoints": "Number of data points: {value}",
+"@numberOfDataPoints": {
+  "description": "A message with a formatted int parameter",
+  "placeholders": {
+    "value": {
+      "type": "int",
+      "format": "compactCurrency",
+       "optionalParameters": {
+         "decimalDigits": 2
+       }
+    }
+  }
+}
+```
+
+### Messages with Dates
+Dates strings are formatted in many different ways depending both the locale and the app’s needs.  
+
+DateTime placeholder values are formatted with the DateFormat class from Dart’s intl package.  There are 41 format variations, identified by the names of their DateFormat factory constructors. In the following example, the DateTime value that appears in the helloWorldOn message is formatted with DartFormat.yMd:
+
+```json
+"helloWorldOn": "Hello World on {date}",
+"@helloWorldOn": {
+  "description": "A message with a date parameter",
+  "placeholders": {
+    "date": {
+      "type": "DateTime",
+      "format": "yMd"
+    }
+  }
+}
+```
+
+In an app, when the locale is US English, the following expression would produce  “7/10/1996”. If the locale was ‘Russian’, then it would produce “10.07.1996”.
+
+```dart
+AppLocalizations.of(context).helloWorldOn(DateTime.utc(1996, 7, 10))
+```
 
 <a name="ios-specifics"></a>
 ### Localizing for iOS: Updating the iOS app bundle
