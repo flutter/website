@@ -159,6 +159,7 @@
       { "source": "/go/adaptive", "destination": "/development/ui/layout/building-adaptive-apps", "type": 301 },
       { "source": "/go/adaptive-layout-foldables", "destination": "https://docs.google.com/document/d/1qhrpTWYs5f67X8v32NCCNTRMIjSrVHuaMEFAul-Q_Ms/edit?usp=sharing", "type": 301 },
       { "source": "/go/add-to-app-samples", "destination": "https://docs.google.com/document/d/1M_GsAL8C1NxbsmzI35w2Th1wvX1KMoPHY5yeeNbzjY0", "type": 301 },
+      { "source": "/go/allow-datatable-row-height-to-expand", "destination": "https://docs.google.com/document/d/1qr1IgaU2z9eaM6zCa4u-Q8kJD5Zq7IcdxVyrgR7CwZc/edit?usp=sharing&resourcekey=0-1bNp0ocF4AwGBj6NvRfrEA", "type": 301 },
       { "source": "/go/android-assets-in-flutter", "destination": "https://docs.google.com/document/d/1jymgQYxRTe5rdprt74ERh7Jsa0lfnRuMnkOmJusLWsE/edit", "type": 301 },
       { "source": "/go/android-embedding-dependencies", "destination": "https://docs.google.com/document/d/1vITp2mUZRa-cmll0sPH0zjNgPlyvOMx7awxPNRAPyic/edit", "type": 301 },
       { "source": "/go/android-embedding-move", "destination": "https://docs.google.com/document/d/1nQujwZfEe3QOHTyZn160eImpoJOYioADP09DtumcLcc/edit?ts=5d8041db#", "type": 301 },
