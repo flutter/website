@@ -18,7 +18,7 @@ diff2html: true
 {{site.alert.end}}
 
 If you prefer an instructor-led version of this codelab,
-check out the following workshop:
+check out the following workshop (45 min):
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/Z6KZ3cTGBWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -48,7 +48,7 @@ You’ll implement a simple app that generates proposed
 names for a startup company. The user can select and unselect names,
 saving the best ones. The code lazily generates 10 names at a time.
 As the user scrolls, more names are generated.
-There is no limit to how far a user can scroll.
+There is no limit to how far a user can scroll. 
 
 The animated GIF shows how the app works at the completion of part 1.
 
@@ -215,10 +215,12 @@ where the Dart code lives.
 * The body for this example consists of a `Center` widget containing
   a `Text` child widget. The Center widget aligns its widget subtree
   to the center of the screen.
-* The app automatically creates a semantics tree with SemanticNodes 
-  for screen readers. Each node can correspond to one or several 
-  widgets and can be <a href="https://api.flutter.dev/flutter/widgets/Semantics-class.html">customized</a> to tell screen readers how to 
-  behave with the node.  
+
+{{site.alert.note}}
+      The app automatically creates a semantics tree for screen readers. 
+      Each node in the tree can correspond to one or several 
+      widgets and can be <a href="https://api.flutter.dev/flutter/widgets/Semantics-class.html">further customized</a> to tell screen readers how to behave with the node. 
+{{site.alert.end}} 
 
 ## Step 2: Use an external package
 
@@ -747,7 +749,7 @@ class="site-image-right" img-class="border" image="get-started/startup-namer-sem
 <container class="site-image-right">
 <iframe width="auto" height="502" src="{{site.youtube-site}}/embed/6b-ZQe98oJk?feature=share" title="App on TalkBack " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-  The app from part 2 on TalkBack screen reader
+  The app from part 2 on TalkBack screen reader (26 sec)
 </container>
 
 {% include docs/app-figure.md class="site-image-right" img-class="border"
