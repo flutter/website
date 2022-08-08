@@ -505,9 +505,9 @@ is set to "Display 5 minutes", memory data from the last
 \- Display All Minutes (slider disabled)
 
 **Source**  
-Source can be either _Live Feed_, which pulls data from the
+Source can be either **Live Feed**, which pulls data from the
 connected Flutter app, or one of the available offline data
-files, which are created by clicking _Export_.
+files, which are created by clicking **Export**.
 
 **Android Memory**  
 Displays or hides the Android Memory Chart.
