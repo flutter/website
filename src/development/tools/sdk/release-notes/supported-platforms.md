@@ -25,6 +25,8 @@ which Flutter runs:
 As of the current release,
 Flutter supports the following platforms as part of Google-tested and best-effort platform tier:
 
+<div class="table-wrapper" markdown="1">
+
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
 |Android | API 16 (Android 4.1) & above | All     |
@@ -37,10 +39,15 @@ Flutter supports the following platforms as part of Google-tested and best-effor
 |Web     | Edge 1.2.0 & above           | All     |
 |Windows | Windows 7 & above, 64-bit    | All     |
 
+{:.table.table-striped}
+</div>
+
 All channels include master, beta,
 and stable channels.
 
 ### Google-tested platforms
+
+<div class="table-wrapper" markdown="1">
 
 |Platform|Version               |
 |--------|----------------------|
@@ -55,11 +62,16 @@ and stable channels.
 |Web     |Edge 1.2.0            |
 |Windows |Windows 10            |
 
+{:.table.table-striped}
+</div>
+
 \* Passing tests on Android SDK 19 also confers a passing result on SDK 20.
   This is because Android SDK 20 has additional support for Android Wear,
   but otherwise no new or deprecated API.
 
 ### Best-effort platforms
+
+<div class="table-wrapper" markdown="1">
 
 |Platform|Version             |
 |--------|--------------------|
@@ -74,9 +86,14 @@ and stable channels.
 |Windows |Windows 8           |
 |Windows |Windows 7           |
 
+{:.table.table-striped}
+</div>
+
 \* Flutter 3.0 is the last stable release with iOS 9 and 10 best-effort support.
 
 ### Unsupported platforms
+
+<div class="table-wrapper" markdown="1">
 
 |Platform|Version                                     |
 |--------|--------------------------------------------|
@@ -86,6 +103,9 @@ and stable channels.
 |macOS   |Yosemite (10.10) & below                    |
 |Windows |Windows Vista & below                       |
 |Windows |Any 32-bit platform                         |
+
+{:.table.table-striped}
+</div>
 
 [iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
 [`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
