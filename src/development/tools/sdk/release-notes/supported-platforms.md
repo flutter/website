@@ -25,6 +25,7 @@ which Flutter runs:
 As of the current release,
 Flutter supports the following platforms as part of Google-tested and best-effort platform tier:
 
+<div class="table-wrapper" markdown="1">
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
 |Android | API 16 (Android 4.1) & above | All     |
@@ -36,12 +37,15 @@ Flutter supports the following platforms as part of Google-tested and best-effor
 |Web     | Safari on El Capitan & above | All     |
 |Web     | Edge 1.2.0 & above           | All     |
 |Windows | Windows 7 & above, 64-bit    | All     |
+{:.table.table-striped}
+</div>
 
 All channels include master, beta,
 and stable channels.
 
 ### Google-tested platforms
 
+<div class="table-wrapper" markdown="1">
 |Platform|Version               |
 |--------|----------------------|
 |Android |Android SDK 19–30*    |
@@ -54,6 +58,8 @@ and stable channels.
 |Web     |Safari / Catalina     |
 |Web     |Edge 1.2.0            |
 |Windows |Windows 10            |
+{:.table.table-striped}
+</div>
 
 \* Passing tests on Android SDK 19 also confers a passing result on SDK 20.
   This is because Android SDK 20 has additional support for Android Wear,
@@ -61,6 +67,7 @@ and stable channels.
 
 ### Best-effort platforms
 
+<div class="table-wrapper" markdown="1">
 |Platform|Version             |
 |--------|--------------------|
 |Android |Android SDK 16–18   |
@@ -73,11 +80,14 @@ and stable channels.
 |Windows |Windows 11 (Aspirational Google-tested platform)          |
 |Windows |Windows 8           |
 |Windows |Windows 7           |
+{:.table.table-striped}
+</div>
 
 \* Flutter 3.0 is the last stable release with iOS 9 and 10 best-effort support.
 
 ### Unsupported platforms
 
+<div class="table-wrapper" markdown="1">
 |Platform|Version                                     |
 |--------|--------------------------------------------|
 |Android |Android SDK 15 & below                      |
@@ -87,5 +97,7 @@ and stable channels.
 |Windows |Windows Vista & below                       |
 |Windows |Any 32-bit platform                         |
 
+{:.table.table-striped}
+</div>
 [iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
 [`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
