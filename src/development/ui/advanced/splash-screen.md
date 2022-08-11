@@ -48,8 +48,8 @@ part of the [Human Interface Guidelines][].
 {{site.alert.warning}}
     If you are experiencing a crash from implementing a splash screen, you
     might need to migrate your code. See detailed instructions in the
-    [Deprecated Splash Screen API Migration][].
-{{site.alert.warning}}
+    [Deprecated Splash Screen API Migration guide][].
+{{site.alert.end}}
 
 In Android, there are two separate screens that you can control:
 a _launch screen_ shown while your Android app initializes,
@@ -67,7 +67,7 @@ initializes.
 
   If, prior to 2.5, you used `flutter create` to create an app,
   and you run the app on 2.5 or later, it can cause the app to crash.
-  For more info, see the [Deprecated Splash Screen API Migration][].
+  For more info, see the [Deprecated Splash Screen API Migration guide][].
 {{site.alert.end}}
 
 {{site.alert.note}}
@@ -221,5 +221,5 @@ For an example of this, see the [Android splash screen sample app][].
 [must use an Xcode storyboard]: {{site.apple-dev}}/news/?id=03042020b
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/ios/visual-design/launch-screen/
 [Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
-[Deprecated Splash Screen API Migration]: {{site.url}}/development/platform-integration/android/splash-screen-migration
+[Deprecated Splash Screen API Migration guide]: {{site.url}}/development/platform-integration/android/splash-screen-migration
 [Customizing web app initialization guide]: {{site.url}}/development/platform-integration/web/initialization
