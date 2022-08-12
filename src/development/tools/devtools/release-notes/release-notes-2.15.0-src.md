@@ -8,9 +8,10 @@ DevTools (logging view, network profiler, CPU profiler, and so on).
 See [#4175](https://github.com/flutter/devtools/pull/4175)
 
 ## Performance Updates
-* Added outlines to each layer displayed in the Raster Metrics tool - [#4192](https://github.com/flutter/devtools/pull/4192)
+* Added outlines to each layer displayed in the Raster Metrics
+   tool&mdash;[#4192](https://github.com/flutter/devtools/pull/4192)
 ![raster-metrics-layer-outlines]({{site.url}}/development/tools/devtools/release-notes/images-2.15.0/image1.png "raster metrics layer outlines")
-* Fix a bug with loading offline data - [#4189](https://github.com/flutter/devtools/pull/4189)
+* Fix a bug with loading offline data&mdash;[#4189](https://github.com/flutter/devtools/pull/4189)
 
 ## Network Updates
 * Added a Json viewer with syntax highlighting for network responses - [#4167](https://github.com/flutter/devtools/pull/4167)
