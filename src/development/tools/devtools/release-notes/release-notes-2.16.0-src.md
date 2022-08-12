@@ -9,5 +9,5 @@ See the full list of commits for DevTools 2.16.0
 [in the changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md#2160).
 
 ## Changelog
-More details about changes and fixes are available in our
+More details about changes and fixes are available in the DevTools
 [changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
