@@ -3,7 +3,9 @@
 Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 ## General Updates
-* Made performance improvements to all tables in DevTools (logging view, network profiler, CPU profiler etc.) - [#4175](https://github.com/flutter/devtools/pull/4175)
+The DevTools 2.15 release includes improvements to all tables in
+DevTools (logging view, network profiler, CPU profiler, and so on).
+See [#4175](https://github.com/flutter/devtools/pull/4175)
 
 ## Performance Updates
 * Added outlines to each layer displayed in the Raster Metrics tool - [#4192](https://github.com/flutter/devtools/pull/4192)
