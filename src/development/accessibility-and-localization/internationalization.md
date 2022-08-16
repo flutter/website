@@ -337,7 +337,7 @@ call placeholders. Placeholders become positional method parameters in the
 ```
 
 Each placeholder must be defined in the `placeholders` object. For example, to define a hello
-message with a userName parameter, add the following to the `app_en.arb`:
+message with a `userName` parameter, add the following to the `app_en.arb`:
 
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb (Placeholder)" replace="/},$/}/g"?>
 ```json
@@ -354,7 +354,8 @@ message with a userName parameter, add the following to the `app_en.arb`:
 ```
 
 Upon regenerating the `AppLocalizations` file, `AppLocalizations.of(context)` has a new `hello` method
-which accepts a parameter of type `String`. The method itself returns a string. Replace the body of the builder passed into `Builder` with
+which accepts a parameter of type `String`. The method itself returns a string.
+Replace the body of the builder passed into `Builder` with
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/wombat|Wombats|he'|they|pronoun/"?>
 ```dart
@@ -411,7 +412,8 @@ return Column(
 ```
 
 
-Similar to plurals, there is a syntax to choose a value based on a `String` placeholder. The syntax is
+Similar to plurals, there is a syntax to choose a value based on a `String` placeholder.
+This is most often used to support gendered languages. The syntax is
 <?code-excerpt "gen_l10n_example/lib/examples.dart (SelectSyntax)"?>
 ```json
 "{selectPlaceholder, select, case{message} ... other{messageOther}}"
@@ -447,7 +449,7 @@ return Column(
 ),
 ```
 
-### Messages with Numbers and Currencies
+### Messages with numbers and currencies
 Numbers and numbers that represent currency values are displayed very differently in different locales. 
 The localizations generation tool in `flutter_localizations` makes use of the
 [`intl` package's `NumberFormat` class](https://api.flutter.dev/flutter/intl/NumberFormat-class.html) to properly format numbers based on the locale and the
@@ -490,7 +492,7 @@ The five starred `NumberFormat` constructors have optional, named parameters. Th
 }
 ```
 
-### Messages with Dates
+### Messages with dates
 Dates strings are formatted in many different ways depending both the locale and the app’s needs.  
 
 Placeholder values with type `DateTime` are formatted with
@@ -671,18 +673,19 @@ where all the output files should be created, and what Dart class name to give y
 The full list of options is described in the table below:
 
 <div class="table-wrapper" markdown="1">
-| Option      | Description |
-| --------------------------- | ------------------ |
-| `arb-dir`                   | "1.2M"             |
-| `output-dir`          | "$1.2M"            |
-| `template-arb-file`    | "$1.2M"            |
-| `output-localization-file`               | "1.2 million"      |
-| `untranslated-messages-file`                 | "USD1,200,000.00"  |
-| `output-class`            | "1,200,000"        |
-| `decimalPercentPattern`*    | "120,000,000%"     |
-| `percentPattern`            | "120,000,000%"     |
-| `scientificPattern`         | "1E6"              |
-| `simpleCurrency`*           | "$1,200,000"       |
+| Option                        | Description |
+| ------------------------------| ------------------ |
+| `arb-dir`                     | The directory where the template and translated arb files are located. The default is `lib/l10n`. |
+| `output-dir`                  | The directory where the generated localization classes will be written. This option is only relevant if you want to generate the localizations code somewhere else in the Flutter project. You will also need to set the `synthetic-package` flag to false. <br /><br /> The app must import the file specified in the `output-localization-file` option from this directory. If unspecified, this defaults to the same directory as the input directory specified in `arb-dir`. |
+| `template-arb-file`           | The template arb file that will be used as the basis for generating the Dart localization and messages files. The default is `app_en.arb`. |
+| `output-localization-file`    | The filename for the output localization and localizations delegate classes. The default is `app_localizations.dart`. |
+| `untranslated-messages-file`  | The location of a file that describes the localization messages have not been translated yet. Using this option will create a JSON file at the target location, in the following format: <br /> <br />`"locale": ["message_1", "message_2" ... "message_n"]`<br /><br /> If this option is not specified, a summary of the messages that have not been translated will be printed on the command line. |
+| `output-class`                | The Dart class name to use for the output localization and localizations delegate classes. The default is `AppLocalizations`. |
+| `preferred-supported-locales` | The list of preferred supported locales for the application. By default, the tool will generate the supported locales list in alphabetical order. Use this flag if you would like to default to a different locale. <br /><br /> For example, pass in `[ en_US ]` if you would like your app to default to American English if a device supports it. |
+| `synthetic-package`           | Determines  whether or not the generated output files will be generated as a synthetic package or at a  specified directory in the Flutter project. This flag is set to `true` by default. When `synthetic-package` is set to `false`, it will generate the localizations files in the directory specified by `arb-dir` by default. If `output-dir` is specified, files will be generated there. |
+| `header`                      | The header to prepend to the generated Dart localizations files. This option takes in a string. <br /><br /> For example, pass in `"/// All localized files."` if you would like this string prepended to the generated Dart file. <br /><br /> Alternatively, see the `header-file` option to pass in a text file for longer headers. |
+| `header-file`                 | The header to prepend to the generated Dart localizations files. The value of this option is the name of the file that contains the header text which will be inserted at the top of each generated Dart file. <br /><br /> Alternatively, see the `header` option to pass in a string for a simpler header. <br /><br />This file should be placed in the directory specified in `arb-dir`. |
+| `[no-]use-deferred-loading`   | Whether to generate the Dart localization file with locales imported as deferred, allowing for lazy loading of each locale in Flutter web. <br /><br /> This can reduce a web app’s initial startup time by decreasing the size of the JavaScript bundle. When this flag is set to true, the messages for a particular locale are only downloaded and loaded by the Flutter app as they are needed. For projects with a lot of different locales and many localization strings, it can be a performance improvement to have deferred loading. For projects with a small number of locales, the difference is negligible, and might slow down the start up compared to bundling the localizations with the rest of the application. <br /><br /> Note that this flag does not affect other platforms such as mobile or desktop. |
 {:.table.table-striped}
 </div>
 

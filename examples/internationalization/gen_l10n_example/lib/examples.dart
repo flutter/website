@@ -79,6 +79,10 @@ void examples(BuildContext context) {
   Locale myLocale = Localizations.localeOf(context);
 // #enddocregion MyLocale
 
+// #docregion PluralSyntax
+"{countPlaceholder, plural, =0{message0} =1{message1} =2{message2} few{messageFew} many{messageMany} other{messageOther}}"
+// #enddocregion PluralSyntax
+
   const MaterialApp(
 // #docregion SupportedLocales
     supportedLocales: [
