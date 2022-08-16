@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 // ignore_for_file: unused_local_variable
 
+// #docregion Create
+flutter create <name_of_flutter_app>
+// #enddocregion Create
+
 void examples(BuildContext context) {
 // #docregion MaterialAppExample
   const MaterialApp(
@@ -22,9 +26,54 @@ void examples(BuildContext context) {
   );
 // #enddocregion LocaleResolution
 
+// #docregion CalendarDatePicker
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            // New code
+            Localizations.override(
+              context: context,
+              locale: const Locale('es'),
+              // Using a Builder here to get the correct BuildContext.
+              // Alternatively, you can create a new widget and Localizations.override
+              // will pass the updated BuildContext to the new widget.
+              child: Builder(
+                builder: (BuildContext context) {
+                  // A toy example for an internationalized Material widget.
+                  return CalendarDatePicker(
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900),
+                    lastDate: DateTime(2100),
+                    onDateChanged: (value) {},
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+// #enddocregion CalendarDatePicker
 // #docregion Example
   Text(AppLocalizations.of(context)!.helloWorld);
 // #enddocregion Example
+
+// #docregion PlaceholderSyntax
+"{placeholder}"
+// #enddocregion PlaceholderSyntax
+// #docregion PluralSyntax
+"{countPlaceholder, plural, =0{message0} =1{message1} ... other{messageOther}}"
+// #enddocregion PluralSyntax
+// #docregion SelectSyntax
+"{selectPlaceholder, select, case{message} ... other{messageOther}}"
+// #enddocregion SelectSyntax
 
 // #docregion MyLocale
   Locale myLocale = Localizations.localeOf(context);
