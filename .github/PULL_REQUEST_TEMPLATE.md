@@ -1,11 +1,3 @@
-**IMPORTANT:** Due to work on the docs.flutter.dev infrastructure, **all open pull requests will be closed August 17.**
-
-If your PR needs to be merged by August 17, please say that in your PR. 
-
-Otherwise, please [file an issue](https://github.com/flutter/website/issues/new/choose) about the needed change, and (if you submit a PR) be prepared to recreate the PR August 31 or later.
-
----
-
 _Description of what this PR is changing or adding, and why:_
 
 _Issues fixed by this PR (if any):_
