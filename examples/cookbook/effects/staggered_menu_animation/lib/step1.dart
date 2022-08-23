@@ -76,7 +76,7 @@ class _MenuState extends State<Menu> {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
-            primary: Colors.blue,
+            backgroundColor: Colors.blue,
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
           ),
           onPressed: () {},
