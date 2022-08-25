@@ -65,6 +65,6 @@ In stable release: TBD
 
 ## References
 
-Related PR [][PR #34743] Make splashScreenView of FlutterViewController nullable
+Related [PR #34743][] Make splashScreenView of FlutterViewController nullable
 
 [PR #34743]: {{site.github}}/flutter/engine/pull/34743
