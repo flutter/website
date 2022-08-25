@@ -18,13 +18,17 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Default PrimaryScrollController on Desktop][]
-* [ThemeData's toggleableActiveColor property has been deprecated][]
 * [iOS FlutterViewController splashScreenView made nullable][]
+* [ThemeData's toggleableActiveColor property has been deprecated][]
 
-[Default PrimaryScrollController on Desktop]: {{site.url}}/release/breaking-changes/primary-scroll-controller-desktop
+
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
+
+### Released in Flutter 3.3
+* [Default PrimaryScrollController on Desktop][]
+
+[Default PrimaryScrollController on Desktop]: {{site.url}}/release/breaking-changes/primary-scroll-controller-desktop
 
 ### Released in Flutter 3
 
