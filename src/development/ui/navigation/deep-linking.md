@@ -3,16 +3,27 @@ title: Deep linking
 description: Navigate to routes when the app receives a new URL
 ---
 
-Flutter supports deep linking on iOS, Android, and web browsers. Opening a URL displays that screen in your app. With the following
-steps, you can launch and display routes by using named routes (either with the
-[`routes`][routes] parameter or [`onGenerateRoute`][onGenerateRoute]), or by
+Flutter supports deep linking on iOS, Android, and web browsers.
+Opening a URL displays that screen in your app. With the following
+steps, you can launch and display routes by using named routes
+(either with the [`routes`][routes] parameter or
+[`onGenerateRoute`][onGenerateRoute]), or by
 using the [`Router`][Router] widget.
+
+{{site.alert.note}}
+  Named routes are no longer recommended for most
+  applications. For more information, see
+  [Limitations][] in the [navigation overview][] page.
+{{site.alert.note}}
+
+[Limitations]: {{site.url}}/development/ui/navigation#limitations
+[navigation overview]: {{site.url}}/development/ui/navigation
 
 If you're running the app in a web browser, there's no additional setup
 required. Route paths are handled in the same way as an iOS or Android deep
 link. By default, web apps read the deep link path from the url fragment using
-the pattern: `/#/path/to/app/screen`, but this can be changed by [configuring
-the URL strategy] for your app.
+the pattern: `/#/path/to/app/screen`, but this can be changed by
+[configuring the URL strategy][] for your app.
 
 To follow along, clone the [Navigation and Routing][router-sample] in
 flutter/samples.
@@ -37,6 +48,7 @@ inside the `<activity> `tag with the `".MainActivity"` name:
 A full restart is required to apply these changes.
 
 ## Test on Android emulator
+
 To test with an Android emulator, give the `adb` command an intent where the
 host name matches the name defined in `AndroidManifest.xml`:
 
@@ -70,12 +82,14 @@ Add two new keys to `Info.plist` in the ios/Runner directory:
 </array>
 ```
 
-The `CFBundleURLName` is a unique URL used to distinguish your app from others
-that use the same scheme. The scheme (`customscheme://`)  can also be unique.
+The `CFBundleURLName` is a unique URL used to distinguish
+your app from others that use the same scheme.
+The scheme (`customscheme://`)  can also be unique.
 
 A full restart is required to apply these changes.
 
 ## Test on iOS simulator
+
 Use the `xcrun` command to test on the iOS Simulator:
 
 ```
@@ -84,11 +98,12 @@ xcrun simctl openurl booted customscheme://flutterbooksample.com/book/1
 
 ## Migrating from plugin-based deep linking
 
-If you have written a plugin to handle deep links, as described in ["Deep Links
-and Flutter applications" on Medium][plugin-linking], it will continue to work
-until you opt-in to this behavior by adding `FlutterDeepLinkingEnabled` to
-`Info.plist` or `flutter_deeplinking_enabled` to `AndroidManifest.xml`,
-respectively.
+If you have written a plugin to handle deep links, as described in
+["Deep Links and Flutter applications"][plugin-linking]
+(an article on Medium),
+it will continue to work until you opt-in to this behavior by adding
+`FlutterDeepLinkingEnabled` to `Info.plist` or
+`flutter_deeplinking_enabled` to `AndroidManifest.xml`, respectively.
 
 ## Behavior
 
