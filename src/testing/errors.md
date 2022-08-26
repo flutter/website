@@ -9,7 +9,8 @@ The Flutter framework catches errors that occur during callbacks
 triggered by the framework itself, including errors encountered
 during the build, layout, and paint phases. Errors that don't occur
 within Flutter's callbacks can't be caught by the framework,
-but you can handle them by setting up a [`Zone`][].
+but you can handle them by setting up a error handler on the
+[`PlatformDispatcher`][].
 
 All errors caught by Flutter are routed to the
 [`FlutterError.onError`][] handler. By default,
@@ -34,8 +35,8 @@ in debug mode this shows an error message in red,
 and in release mode this shows a gray background.
 
 When errors occur without a Flutter callback on the call stack,
-they are handled by the `Zone` where they occur. By default,
-a `Zone` only prints errors and does nothing else.
+they are handled by the `PlatformDispatcher`'s error callback. By default,
+this only prints errors and does nothing else.
 
 You can customize these behaviors,
 typically by setting them to values in
@@ -75,7 +76,7 @@ void main() {
 {{site.alert.end}}
 
 This handler can also be used to report errors to a logging service.
-For more details, see our cookbook chapter for 
+For more details, see our cookbook chapter for
 [reporting errors to a service][].
 
 ## Define a custom error widget for build phase errors
@@ -123,43 +124,24 @@ OutlinedButton(
 ```
 
 If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onError`.
-Instead, it's forwarded to the `Zone` where `runApp` was run.
+Instead, it's forwarded to the `PlatformDispatcher`.
 
-To catch such an error, use [`runZonedGuarded`][].
+To catch such an error, use [`PlatformDispatcher.onError`][].
 
-<?code-excerpt "lib/excerpts.dart (CatchError)" replace="/MyBackend myBackend = MyBackend\(\);\n//g"?>
+<?code-excerpt "lib/excerpts.dart (CatchError)"?>
 ```dart
-import 'dart:async';
+import 'package:flutter/material.dart';
+import 'dart:ui';
 
 void main() {
-    runZonedGuarded(() {
-    runApp(const MyApp());
-  }, (error, stack) {
+  MyBackend myBackend = MyBackend();
+  PlatformDispatcher.instance.onError = (error, stack) {
     myBackend.sendError(error, stack);
-  });
+    return true;
+  };
+  runApp(const MyApp());
 }
 ```
-
-Note that if in your app you call `WidgetsFlutterBinding.ensureInitialized()`
-manually to perform some initialization before calling `runApp` (e.g.
-`Firebase.initializeApp()`), you **must** call
-`WidgetsFlutterBinding.ensureInitialized()` inside `runZonedGuarded`:
-
-<?code-excerpt "lib/run_zoned_guarded.dart (Initialize)"?>
-```dart
-runZonedGuarded(() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MyApp());
-}, (error, stack) {
-  myBackend.sendError(error, stack);
-});
-```
-
-{{site.alert.note}}
-    Error handling wouldn't work if `WidgetsFlutterBinding.ensureInitialized()`
-    was called from the outside.
-{{site.alert.end}}
 
 ## Handling all types of errors
 
@@ -169,24 +151,20 @@ your errors handling on next code snippet:
 
 <?code-excerpt "lib/main.dart (Main)"?>
 ```dart
-import 'dart:async';
-import 'dart:io';
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
-void main() {
-  runZonedGuarded(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await myErrorsHandler.initialize();
-    FlutterError.onError = (details) {
-      FlutterError.presentError(details);
-      myErrorsHandler.onErrorDetails(details);
-      exit(1);
-    };
-    runApp(const MyApp());
-  }, (error, stack) {
+Future<void> main() async {
+  await myErrorsHandler.initialize();
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    myErrorsHandler.onErrorDetails(details);
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
     myErrorsHandler.onError(error, stack);
-    exit(1);
-  });
+    return true;
+  };
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -215,5 +193,5 @@ class MyApp extends StatelessWidget {
 [`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
 [`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
 [reporting errors to a service]: {{site.url}}/cookbook/maintenance/error-reporting
-[`runZonedGuarded`]: {{site.api}}/flutter/dart-async/runZonedGuarded.html
-[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
+[`PlatformDispatcher.instance.onError`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/onError.html
+[`PlatformDispatcher`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher-class.html
