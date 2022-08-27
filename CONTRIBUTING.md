@@ -35,7 +35,7 @@ or the [flutter.dev website][doc-issues].
 
 Other ways you can contribute:
 
-* [Ask HOWTO questions that can be answered with specific solutions][so]
+* [Ask HOW-TO questions that can be answered with specific solutions][so]
 * [Live chat with Flutter engineers and users][gitter]
 * [Discuss Flutter, best practices, app design, and more on our
    mailing list][mailinglist]
