@@ -139,60 +139,66 @@ possibly occurred in the timeline (x-axis).
 The following legend shows the symbol for each
 DevTools event and its meaning:
 
-<dl markdown="1">
-<dt markdown="1">**Snapshot**</dt>
+**Snapshot**  
 ![User snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_snapshot.png){:width="17px"}
-<dd markdown="1">User initiated snapshot&mdash;all memory
-                 information is collected and an analysis is performed.
-</dd>
-<dt markdown="1">**Auto-Snapshot**</dt>
+
+User initiated snapshot&mdash;all memory
+information is collected and an analysis is performed.
+
+**Auto-Snapshot**  
 ![Auto snapshot]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_auto_snapshot.png){:width="18px"}
-<dd markdown="1">DevTools initiated a snapshot after detecting
-                 that memory has grown by 40% or more from its
-                 last measurement. This can help to quickly detect
-                 memory spikes in your Flutter application for later
-                 analysis, and is the same information collected
-		 in a manual snapshot.
-</dd>
-<dt markdown="1">**Track**</dt>
+
+DevTools initiated a snapshot after detecting
+that memory has grown by 40% or more from its
+last measurement. This can help to quickly detect
+memory spikes in your Flutter application for later
+analysis, and is the same information collected
+in a manual snapshot.
+
+**Track**  
 ![Monitor]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_monitor.png){:width="17px"}
-<dd markdown="1">Collects the current state of all active classes, the
-                 number of instances, and the byte size of all instances.
-                 In addition, the deltas indicate the change in the
-                 accumulators since the last **Reset**.
-</dd>
-<dt markdown="1">**Reset**</dt>
+
+Collects the current state of all active classes, the
+number of instances, and the byte size of all instances.
+In addition, the deltas indicate the change in the
+accumulators since the last **Reset**.
+
+**Reset**  
 ![Reset]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_reset_monitor.png){:width="18px"}
-<dd markdown="1">When both the instance and byte accumulators
-                 were reset to zero.
-</dd>
-<dt markdown="1">**User Initiated GC**</dt>
+
+When both the instance and byte accumulators
+were reset to zero.
+
+**User Initiated GC**  
 ![GC]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_gc.png){:width="18px"}
-<dd markdown="1">User initiated request to the VM to perform a
-                 garbage collection on memory. This is not a guarantee
-                 that GC occured&mdash;it's only a request.
-</dd>
-<dt markdown="1">**VM GC**</dt>
+
+User initiated request to the VM to perform a
+garbage collection on memory. This is not a guarantee
+that GC occured&mdash;it's only a request.
+
+**VM GC**  
 ![VM GC]({{site.url}}/assets/images/docs/tools/devtools/memory_eventtimeline_vmgc.png){:width="11px"}
-<dd markdown="1">GC (VM garbage collection) has occurred and has freed
-                 up space that is no longer used. For more information on
-                 how Dart performs garbage collection, see
-                 [Don't Fear the Garbage Collector][].
-</dd>
-<dt markdown="1">**User and Flutter Event**</dt>
-<dd>The dark magenta triangle displayed in the event pane indicates
-    that "Multiple Flutter or User Events" occurred at this timestamp.
-</dd>
+
+GC (VM garbage collection) has occurred and has freed
+up space that is no longer used. For more information on
+how Dart performs garbage collection, see
+[Don't Fear the Garbage Collector][].
+
+**User and Flutter Event**  
+
+The dark magenta triangle displayed in the event pane indicates
+that "Multiple Flutter or User Events" occurred at this timestamp.
+
 ![Aggregate Events]({{site.url}}/assets/images/docs/tools/devtools/memory_multi_events.png){:width="25px"}
-<dd>The lighter magenta triangle indicates that
-    "One Flutter or User Event" occurred at this timestamp.
-</dd>
+
+The lighter magenta triangle indicates that
+"One Flutter or User Event" occurred at this timestamp.
+
 ![Single Events]({{site.url}}/assets/images/docs/tools/devtools/memory_one_event.png){:width="23px"}
-<dd>To view the events, click on the triangle to display a hover card.
-    Expand the events at the bottom of the hover card
-    to display all events for that timestamp.
-</dd>
-</dl>
+
+To view the events, click on the triangle to display a hover card.
+Expand the events at the bottom of the hover card
+to display all events for that timestamp.
 
 Displayed below the events pane is the [memory chart](#memory-overview-chart)
 and the [Android memory chart](#android-chart). The android-memory chart is
@@ -421,56 +427,52 @@ collected for that time period:
 The hover card displays the values of all
 collected Android memory data.
 
-<dl markdown="1">
-<dt markdown="1">**Time**</dt>
-<dd>The timestamp for the current data values
-    collected&mdash;see descriptions below.
-</dd>
-<dt markdown="1">**Total**</dt>
-<dd>The total memory in use. Total memory is comprised of
-    several different categories, all of which are plotted
-    along the y-axis. These categories are described below.
-</dd>
-<dt markdown="1">**Other**</dt>
-<dd>Other memory usage corresponds to the ‘Private Other’
-    field from ADB. This is memory used by the app that the
-    system isn't sure how to categorize. Note: The Other trace
-    is a combination of Other and System (shared and system
-    memory usage), and corresponds to ‘System’ field from ADB.
-</dd>
-<dt markdown="1">**Code**</dt>
-<dd>Code memory usage corresponds to the ‘Code’ field from ADB.
-    This is memory that your app uses for static
-    code and resources, such as dex byte code,
-    optimized or compiled dex code, .so libraries, and fonts.
-</dd>
-<dt markdown="1">**Native Heap**</dt>
-<dd>Native Heap usage corresponds to the ‘Native Heap’ field
-    from ADB. This is memory from objects allocated from C or
-    C++ code. Even if you're not using C++ in your app, you might
-    see some native memory used here because the Android framework
-    uses native memory to handle various tasks on your behalf. Some
-    examples of these tasks are handling image assets and other
-    graphics&mdash;even though the code you've written is in Java or Kotlin.
-</dd>
-<dt markdown="1">**Java Heap**</dt>
-<dd>Java Heap usage corresponds to the ‘Java Heap’ field from ADB.
-    This is memory from objects allocated from Java or Kotlin code.
-</dd>
-<dt markdown="1">**Stack**</dt>
-<dd>Stack usage corresponds to the ‘Stack’ field from ADB.
-    This is memory used by both native and Java stacks
-    in your app and usually relates to how many threads
-    your app is running.
-</dd>
-<dt markdown="1">**Graphics**</dt>
-<dd>Graphics usage corresponds to the ‘Graphics’ field from ADB.
-    This is memory used for graphics buffer queues to
-    display pixels on the screen, including GL surfaces,
-    GL textures, and so on. Note: This is memory shared
-    with the CPU&mdash;not dedicated GPU memory.
-</dd>
-</dl>
+**Time**  
+The timestamp for the current data values
+collected&mdash;see descriptions below.
+
+**Total**  
+The total memory in use. Total memory is comprised of
+several different categories, all of which are plotted
+along the y-axis. These categories are described below.
+
+**Other**  
+Other memory usage corresponds to the ‘Private Other’
+field from ADB. This is memory used by the app that the
+system isn't sure how to categorize. Note: The Other trace
+is a combination of Other and System (shared and system
+memory usage), and corresponds to ‘System’ field from ADB.
+
+**Code**  
+Code memory usage corresponds to the ‘Code’ field from ADB.
+This is memory that your app uses for static
+code and resources, such as dex byte code,
+
+**Native Heap**  
+Native Heap usage corresponds to the ‘Native Heap’ field
+from ADB. This is memory from objects allocated from C or
+C++ code. Even if you're not using C++ in your app, you might
+see some native memory used here because the Android framework
+uses native memory to handle various tasks on your behalf. Some
+examples of these tasks are handling image assets and other
+graphics&mdash;even though the code you've written is in Java or Kotlin.
+
+**Java Heap**  
+Java Heap usage corresponds to the ‘Java Heap’ field from ADB.
+This is memory from objects allocated from Java or Kotlin code.
+
+**Stack**  
+Stack usage corresponds to the ‘Stack’ field from ADB.
+This is memory used by both native and Java stacks
+in your app and usually relates to how many threads
+your app is running.
+
+**Graphics**  
+Graphics usage corresponds to the ‘Graphics’ field from ADB.
+This is memory used for graphics buffer queues to
+display pixels on the screen, including GL surfaces,
+GL textures, and so on. Note: This is memory shared
+with the CPU&mdash;not dedicated GPU memory.
 
 ## Memory controls
 
@@ -480,45 +482,43 @@ how memory data is displayed:
 
 ![Screenshot of a memory controls]({{site.url}}/assets/images/docs/tools/devtools/memory_controls.png){:width="100%"}
 
-<dl markdown="1">
-<dt markdown="1">**Pause**</dt>
-<dd>Pauses the memory overview chart to allow inspecting
-    the currently plotted data. Incoming memory data is still received;
-    notice the Range selector continues to grow to the right.
-</dd>
-<dt markdown="1">**Resume**</dt>
-<dd>Resumes the memory overview chart so that it's live, displaying the
-    current time and the latest memory statistics.
-</dd>
-<dt markdown="1">**Clear**</dt>
-<dd>Clears all collected data from the memory profiler.
-</dd>
-<dt markdown="1">**Display**</dt>
-<dd>The duration of the x-axis. For example, if this dropdown
-    is set to "Display 5 minutes", memory data from the last
-    5 minutes is displayed.
-</dd>
-<dt markdown="1">- Display 1 Minute</dt>
-<dt markdown="1">- Display 5 Minutes</dt>
-<dt markdown="1">- Display 10 Minutes</dt>
-<dt markdown="1">- Display All Minutes (slider disabled)</dt>
-<dt markdown="1">**Source**</dt>
-<dd>Source can be either **Live Feed**, which pulls data from the
-    connected Flutter app, or one of the available offline data
-    files, which are created by clicking **Export**.
-</dd>
-<dt markdown="1">**Android Memory**</dt>
-<dd>Displays or hides the Android Memory Chart.
-</dd>
-<dt markdown="1">**GC**</dt>
-<dd>Initiates a garbage collection&mdash;a compaction of the heap.
-</dd>
-<dt markdown="1">**Export**</dt>
-<dd>Saves collected data for the Event Timeline, Memory Overview Chart,
-    and Android Overview Chart. Files saved are displayed under the
-    **Source** dropdown. Selecting a file loads the offline data.
-</dd>
-</dl>
+**Pause**  
+Pauses the memory overview chart to allow inspecting
+the currently plotted data. Incoming memory data is still received;
+notice the Range selector continues to grow to the right.
+
+**Resume**  
+Resumes the memory overview chart so that it's live, displaying the
+current time and the latest memory statistics.
+
+**Clear**
+Clears all collected data from the memory profiler.
+
+**Display**
+The duration of the x-axis. For example, if this dropdown
+is set to "Display 5 minutes", memory data from the last
+5 minutes is displayed.
+
+\- Display 1 Minute  
+\- Display 5 Minutes  
+\- Display 10 Minutes  
+\- Display All Minutes (slider disabled)
+
+**Source**  
+Source can be either **Live Feed**, which pulls data from the
+connected Flutter app, or one of the available offline data
+files, which are created by clicking **Export**.
+
+**Android Memory**  
+Displays or hides the Android Memory Chart.
+
+**GC**  
+Initiates a garbage collection&mdash;a compaction of the heap.
+
+**Export**  
+Saves collected data for the Event Timeline, Memory Overview Chart,
+and Android Overview Chart. Files saved are displayed under the
+**Source** dropdown. Selecting a file loads the offline data.
 
 ## Memory actions
 
@@ -602,39 +602,35 @@ that image problems have occurred. In the future, other
 common Flutter coding issues will be flagged, such as problems
 with fonts, files, or JSON.
 
-<dl markdown="1">
-<dt markdown="1">**Tree View of Memory**</dt>
-<dd>The tree table view displays outstanding memory events (user
-    requested snapshots, automatic snapshots, snapshot analyses,
-    memory allocation monitoring).
-</dd>
-<dt markdown="1">**Memory Inspector**</dt>
-<dd>Displays either the contents of an analysis, snapshot, or
-    monitoring based on the currently selected row in the tree view.
-</dd>
-</dl>
+**Tree View of Memory**  
+The tree table view displays outstanding memory events (user
+requested snapshots, automatic snapshots, snapshot analyses,
+memory allocation monitoring).
+
+**Memory Inspector**  
+Displays either the contents of an analysis, snapshot, or
+monitoring based on the currently selected row in the tree view.
 
 Snapshots have major tree nodes:
 
-<dl markdown="1">
-<dt markdown="1">**External**</dt>
-<dd markdown="1">Memory that is not in the Dart heap but is still part
-    of the total memory footprint. Objects in external memory would be
-    native objects (for example, from a memory read from a file,
-    or a decoded image). The native objects are exposed to the Dart
-    VM from the native OS (such as Android, Linux, Windows, iOS)
-    using a Dart embedder. The embedder creates a Dart wrapper with
-    a finalizer, allowing Dart code to communicate with these native
-    resources. Flutter has an embedder for Android and iOS.
-    For more information, see [Dart on the Server][server] or
-    [Custom Flutter Engine Embedders][embedder].
-</dd>
-<dt markdown="1">**Filtered**</dt>
-<dd>Displays the packages being filtered.</dd>
-<dt markdown="1">**Packages**</dt>
-<dd>User packages used by the application and
-    Src&mdash;the empty Dart package.</dd>
-</dl>
+**External**  
+Memory that is not in the Dart heap but is still part
+of the total memory footprint. Objects in external memory would be
+native objects (for example, from a memory read from a file,
+or a decoded image). The native objects are exposed to the Dart
+VM from the native OS (such as Android, Linux, Windows, iOS)
+using a Dart embedder. The embedder creates a Dart wrapper with
+a finalizer, allowing Dart code to communicate with these native
+resources. Flutter has an embedder for Android and iOS.
+For more information, see [Dart on the Server][server] or
+[Custom Flutter Engine Embedders][embedder].
+
+**Filtered**  
+Displays the packages being filtered.
+
+**Packages**  
+User packages used by the application and
+Src&mdash;the empty Dart package.
 
 Under each node are class nodes, an aggregate of the
 objects allocated to this class.
@@ -699,31 +695,30 @@ You can perform the following Allocation actions:
 
 ![Screenshot of a memory actions]({{site.url}}/assets/images/docs/tools/devtools/memory_allocations_actions.png){:width="100%"}
 
-<dl markdown="1">
-<dt markdown="1">**Track**</dt>
-<dd markdown="1">Records and monitors the number of instances
-                 and size of all instances in bytes. Clicking
-                 the **Track** button populates a table with
-                 instance allocation data. For each instance in
-                 the allocation table, the **Delta** column reflects
-                 the number of memory allocations since the last reset.
-</dd>
-<dt markdown="1">**Reset**</dt>
-<dd markdown="1">Resets the accumulator counts (**Delta** columns) for each
-                 instance in the allocation table. The next time the **Monitor**
-                 button is pressed, the **Delta** columns populate with
-                 the new instances and sizes since the last reset.
-</dd>
-<dt markdown="1">**Search**</dt>
-<dd markdown="1">The **Search** field is enabled when the instance allocation data
-                 exists. Typing, or selecting a name from the dropdown,
-                 navigates to that class name in the table.
-</dd>
-<dt markdown="1">**Filter**</dt>
-<dd markdown="1">When clicked, displays a dialog box listing libraries and class names
-                 that you can select.
-</dd>
-</dl>
+**Track**  
+Records and monitors the number of instances
+and size of all instances in bytes. Clicking
+the **Track** button populates a table with
+instance allocation data. For each instance in
+the allocation table, the **Delta** column reflects
+the number of memory allocations since the last reset.
+
+**Reset**  
+Resets the accumulator counts (**Delta** columns) for each
+instance in the allocation table. The next time the **Monitor**
+button is pressed, the **Delta** columns populate with
+the new instances and sizes since the last reset.
+
+**Search**  
+The **Search** field is enabled when the instance allocation data
+exists. Typing, or selecting a name from the dropdown,
+navigates to that class name in the table.
+
+**Filter**  
+When clicked, displays a dialog box listing libraries and class names
+that you can select.
+
+
 
 ### Allocation view
 
@@ -735,41 +730,38 @@ classes available to the connected application:
 Each row displays the class name, the number of instances and bytes
 allocated, with deltas for each (the count since the last reset).
 
-<dl markdown="1">
-<dt markdown="1">**Track with Stack Trace**</dt>
-<dd markdown="1">If enabled, records the stack trace when the instance
-                 is created (when the class constructor is called).
-</dd>
-<dt markdown="1">**Class Name**</dt>
-<dd markdown="1">Class allocations monitored.
-</dd>
-<dt markdown="1">**Total Instances**</dt>
-<dd markdown="1">Total number of active instances for the class.
-</dd>
-<dt markdown="1">**Delta Instances**</dt>
-<dd markdown="1">An accumulator indicating a change to the instance count.
-                 When **Reset** is pressed, the accumulators reset to zero;
-                 then each time the **Track** button is pressed,
-                 the data in the table is updated.
-</dd>
-<dt markdown="1">**Total Bytes**</dt>
-<dd markdown="1">Total number of bytes allocated to all instances of the class.
-</dd>
-<dt markdown="1">**Delta Bytes**</dt>
-<dd markdown="1">An accumulator indicating a change to the number of
-                 instance bytes created. When **Reset** is pressed,
-                 the accumulators reset to zero; then each time the
-                 **Track** button is pressed, the data in the table
-                 is updated.
-</dd>
-<dt markdown="1">**Timestamp of Last Track**</dt>
-<dd markdown="1">The timestamp when the **Track** button was pressed.
-</dd>
-<dt markdown="1">**Change Bubble**</dt>
-<dd markdown="1">A small bubble indicating that data in the table has
-                 been updated.
-</dd>
-</dl>
+**Track with Stack Trace**  
+If enabled, records the stack trace when the instance
+is created (when the class constructor is called).
+
+**Class Name**  
+Class allocations monitored.
+
+**Total Instances**  
+Total number of active instances for the class.
+
+**Delta Instances**  
+An accumulator indicating a change to the instance count.
+When **Reset** is pressed, the accumulators reset to zero;
+then each time the **Track** button is pressed,
+the data in the table is updated.
+
+**Total Bytes**  
+Total number of bytes allocated to all instances of the class.
+
+**Delta Bytes**  
+An accumulator indicating a change to the number of
+instance bytes created. When **Reset** is pressed,
+the accumulators reset to zero; then each time the
+**Track** button is pressed, the data in the table
+is updated.
+
+**Timestamp of Last Track**  
+The timestamp when the **Track** button was pressed.
+
+**Change Bubble**  
+A small bubble indicating that data in the table has
+been updated.
 
 For more information, see [Allocation tracking](#allocation-tracking).
 
@@ -794,27 +786,25 @@ to zero and a "monitor reset" event is sent to the
 Event Timeline. Clicking the **Reset** button again resets both
 accumulators to zero.
 
-<dl markdown="1">
-<dt markdown="1">**Classes**</dt>
-<dd markdown="1">Active classes in the heap.
-</dd>
-<dt markdown="1">**Instances column**</dt>
-<dd>Total active objects (instances) for all classes in the heap.
-</dd>
-<dt markdown="1">**Delta column**</dt>
-<dd>Total number of instances since last **Reset** was pressed.
-    Clicking the **Reset** button initializes the accumulated
-    (Delta) instances of a class. This is useful for finding memory leaks.
-</dd>
-<dt markdown="1">**Bytes column**</dt>
-<dd>Total bytes consumed for all instances of a class in the heap.
-</dd>
-<dt markdown="1">**Delta column**</dt>
-<dd>The number of bytes allocated since the **Reset** was last pressed.
-    Clicking the **Reset** button initializes the accumulated (Delta) bytes for
-    all instances of a class. This is useful for finding memory leaks.
-</dd>
-</dl>
+
+**Classes**  
+Active classes in the heap.
+
+**Instances column**  
+Total active objects (instances) for all classes in the heap.
+
+**Delta column**  
+Total number of instances since last **Reset** was pressed.
+Clicking the **Reset** button initializes the accumulated
+(Delta) instances of a class. This is useful for finding memory leaks.
+
+**Bytes column**  
+Total bytes consumed for all instances of a class in the heap.
+
+**Delta column**  
+The number of bytes allocated since the **Reset** was last pressed.
+Clicking the **Reset** button initializes the accumulated (Delta) bytes for
+all instances of a class. This is useful for finding memory leaks.
 
 ## Allocation tracking
 
@@ -845,24 +835,21 @@ class's constructor was called and the instance was allocated:
 
 Both the **Analysis** and **Allocations** tabs support
 searching and filtering. Begin typing name of the class
-you'd like to find (for example, **Ob**_ectWithUniqueId_)
+you'd like to find (for example, `ObjectWithUniqueId`)
 to display a list that matches the characters
 typed so far. The first item in the list is highlighted:
 
-<dl markdown="1">
-<dt markdown="1">**ENTER**</dt>
-<dd markdown="1">Selects the highlighted line (GlobalObjectKey) and
-                 navigates to the row with that class name in the
-                 active **Snapshot** table or the **Allocations** table.
-</dd>
-<dt markdown="1">**UP/DOWN arrows**</dt>
-<dd markdown="1">Rotates through the list of possible matches highlighting
-                 the next item in the list.
-</dd>
-<dt markdown="1">**ESCAPE**</dt>
-<dd markdown="1">Clears and cancels all searching.
-</dd>
-</dl>
+**ENTER**  
+Selects the highlighted line (GlobalObjectKey) and
+navigates to the row with that class name in the
+active **Snapshot** table or the **Allocations** table.
+
+**UP/DOWN arrows**  
+Rotates through the list of possible matches highlighting
+the next item in the list.
+
+**ESCAPE**  
+Clears and cancels all searching.
 
 ![Searching]({{site.url}}/assets/images/docs/tools/devtools/memory_search_1.png)
 
@@ -883,56 +870,49 @@ less important while profiling memory:
 
 ![Filtering]({{site.url}}/assets/images/docs/tools/devtools/memory_filtering.png){:width="100%"}
 
-<dl markdown="1">
-<dt markdown="1">**Hide Private Classes**</dt>
-<dd markdown="1">Class names prefix with an underscore.
-</dd>
-<dt markdown="1">**Hide Classes with No Instances**</dt>
-<dd markdown="1">Classes never constructed are filtered.
-</dd>
-<dt markdown="1">**Hide Libraries with No Instances**</dt>
-<dd markdown="1">All classes in a library never constructed
-                 the library is filtered.
-</dd>
-<dt markdown="1">**Hide Libraries or Packages**</dt>
-<dd markdown="1">List of all libraries used in your application
-                 are displayed. By default the libraries enabled
-                 above are filtered out (for example, dart:*,
-                 package:flutter*, and so on).
-                 The libraries filtered out can
-                 be enabled if you are interested in Dart core
-                 libraries and classes or the Flutter framework.
-</dd>
-</dl>
+**Hide Private Classes**  
+Class names prefix with an underscore.
 
+**Hide Classes with No Instances**  
+Classes never constructed are filtered.
+
+**Hide Libraries with No Instances**  
+All classes in a library never constructed
+the library is filtered.
+
+**Hide Libraries or Packages**  
+List of all libraries used in your application
+are displayed. By default the libraries enabled
+above are filtered out (for example, dart:*,
+package:flutter*, and so on).
+The libraries filtered out can
+be enabled if you are interested in Dart core
+libraries and classes or the Flutter framework.
 ### Setting
 
 The Memory profiler has its own settings dialog:
 
 ![Settings]({{site.url}}/assets/images/docs/tools/devtools/memory_settings.png){:width="100%"}
 
-<dl markdown="1">
-<dt markdown="1">**Collect Android Memory Statistics using ADB**</dt>
-<dd markdown="1">By default, if DevTools is connected to your
-                 application through an Android device or emulator,
-                 Android memory statistics are not collected.
-                 Collecting with ADB can be expensive and might hide
-                 performance issues in your app.
-</dd>
-<dt markdown="1">**Display Data in Units (B, K, MB, GB)**</dt>
-<dd markdown="1">By default, data displayed in the hover card
-                 is scaled using units instead of raw values.
-                 Turning this off displays the raw numbers.
-                 For example, 125M displays as 125,235,712
-</dd>
-<dt markdown="1">**Enable advanced memory settings**</dt>
-<dd markdown="1">If enabled, the GC button is available to
-                 ask the VM to garbage collect memory (manually).
-                 This manual GC is only a request to the VM. The
-                 VM might decide to do no compaction, some compaction,
-                 or complete compaction of the heap.
-</dd>
-</dl>
+**Collect Android Memory Statistics using ADB**  
+By default, if DevTools is connected to your
+application through an Android device or emulator,
+Android memory statistics are not collected.
+Collecting with ADB can be expensive and might hide
+performance issues in your app.
+
+**Display Data in Units (B, K, MB, GB)**  
+By default, data displayed in the hover card
+is scaled using units instead of raw values.
+Turning this off displays the raw numbers.
+For example, 125M displays as 125,235,712
+
+**Enable advanced memory settings**  
+If enabled, the GC button is available to
+ask the VM to garbage collect memory (manually).
+This manual GC is only a request to the VM. The
+VM might decide to do no compaction, some compaction,
+or complete compaction of the heap.
 
 ## Memory problem case study
 
@@ -947,46 +927,44 @@ see the [memory leak case study][case_study].
 The following computer science terms will help you better
 understand how your application uses memory.
 
-<dl markdown="1">
-<dt markdown="1">**Garbage collection (GC)**</dt>
-<dd>GC is the process of searching the
-    heap to locate, and reclaim, regions of "dead" memory&mdash;memory
-    that is no longer being used by an application. This process
-    allows the memory to be re-used and minimizes the risk of an
-    application running out of memory, causing it to crash. Garbage
-    collection is performed automatically by the Dart VM. In DevTools,
-    you can perform garbage collection on demand by clicking the
-    GC button.
-</dd>
-<dt markdown="1">**Heap**</dt>
-<dd>Dart objects that are dynamically allocated live in a portion of
-    memory called _the heap_. An object allocated from the heap is freed
-    (eligible for garbage collection) when nothing points to it,
-    or when the application terminates. When nothing points to an
-    object, it is considered to be dead. When an object is pointed
-    to by another object, it is live.
-</dd>
-<dt markdown="1">**Isolates**</dt>
-<dd markdown="1">Dart supports concurrent execution by way of isolates,
-    which you can think of processes without the overhead.
-    Each isolate has its own memory and code that can't be
-    affected by any other isolate. For more information,
-    see [The Event Loop and Dart][event-loop].
-</dd>
-<dt markdown="1">**Memory leak**</dt>
-<dd>A memory leak occurs when an object is live
-    (meaning that another object points to it), but it is not being
-    used (so it shouldn't have any references from other objects).
-    Such an object can't be garbage collected, so it takes up space
-    in the heap and contributes to memory fragmentation.
-    Memory leaks put unnecessary pressure on the VM and can be
-    difficult to debug.
-</dd>
-<dt markdown="1">**Virtual machine (VM)**</dt>
-<dd>The Dart virtual machine is a piece of
-    software that directly executes Dart code.
-</dd>
-</dl>
+**Garbage collection (GC)**  
+GC is the process of searching the
+heap to locate, and reclaim, regions of "dead" memory&mdash;memory
+that is no longer being used by an application. This process
+allows the memory to be re-used and minimizes the risk of an
+application running out of memory, causing it to crash. Garbage
+collection is performed automatically by the Dart VM. In DevTools,
+you can perform garbage collection on demand by clicking the
+GC button.
+
+**Heap**  
+Dart objects that are dynamically allocated live in a portion of
+memory called _the heap_. An object allocated from the heap is freed
+(eligible for garbage collection) when nothing points to it,
+or when the application terminates. When nothing points to an
+object, it is considered to be dead. When an object is pointed
+to by another object, it is live.
+
+**Isolates**  
+Dart supports concurrent execution by way of isolates,
+which you can think of processes without the overhead.
+Each isolate has its own memory and code that can't be
+affected by any other isolate. For more information,
+see [The Event Loop and Dart][event-loop].
+
+**Memory leak** 
+A memory leak occurs when an object is live
+(meaning that another object points to it), but it is not being
+used (so it shouldn't have any references from other objects).
+Such an object can't be garbage collected, so it takes up space
+in the heap and contributes to memory fragmentation.
+Memory leaks put unnecessary pressure on the VM and can be
+difficult to debug.
+
+**Virtual machine (VM)**  
+The Dart virtual machine is a piece of
+software that directly executes Dart code.
+
 
 [architecture]: {{site.url}}/resources/architectural-overview
 [performance]: {{site.url}}/development/tools/devtools/performance

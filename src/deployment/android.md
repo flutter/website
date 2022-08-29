@@ -123,7 +123,7 @@ If not, create one by either:
     On Windows, use the following command:
 
     ```terminal
-    keytool -genkey -v -keystore c:\Users\USER_NAME\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
     ```
 
     This command stores the `upload-keystore.jks` file in your home

@@ -196,7 +196,7 @@ project called `l10n.yaml` with the following content:
    }
    ```
 
-6. Now, run your app so that codegen takes place. You should see generated files in
+6. Now, run `flutter gen-l10n` so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
 
 7. Add the import statement on `app_localizations.dart` and `AppLocalizations.delegate`
