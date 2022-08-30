@@ -18,10 +18,12 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Adding ImageProvider.loadBuffer][]
 * [Default PrimaryScrollController on Desktop][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
 * [iOS FlutterViewController splashScreenView made nullable][]
 
+[Adding ImageProvider.loadBuffer]: {{site.url}}/release/breaking-changes/image-provider-load-buffer
 [Default PrimaryScrollController on Desktop]: {{site.url}}/release/breaking-changes/primary-scroll-controller-desktop
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
