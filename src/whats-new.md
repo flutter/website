@@ -23,7 +23,9 @@ and review the [Dart changelog][].
 ## Aug 31, 2022, Flutter Vikings Edition: 3.3 release
 
 Flutter 3.3 is live! For more information, see
+{% comment %}
 [Announcing Flutter 3.3 at Flutter Vikings][],
+{% endcomment %}
 [What's new in Flutter 3.3][],
 and [Dart 2.18: Objective-C & Swift interop][] (free articles on Medium),
 and the [Flutter 3.3 release notes][3.3 release notes].
@@ -63,7 +65,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
 [Handling errors in Flutter]: {{site.url}}/testing/errors
 [macOS install]: {{site.url}}/get-started/install/macos#install-xcode
 [navigation and routing overview]: {{site.url}}/development/ui/navigation
-[URL stratgies]: {{site.url}}/development/ui/navigation/url-strategies
+[URL strategies]: {{site.url}}/development/ui/navigation/url-strategies
 
 
 ## May 11, 2022, Google I/O Edition: Flutter 3 release
