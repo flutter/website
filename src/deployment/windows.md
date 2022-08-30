@@ -110,20 +110,50 @@ and Partner Center accounts][azureadassociation].
 
 ## Updating the app's version number
 
-With Flutter Windows desktop,
+For apps published to the Microsoft Store,
 the version number must be set during the
-packaging process and can not be set using
-the `pubspec.yaml` or command line arguments.
+packaging process.
 
 The default version number of the app is `1.0.0.0`.
 
 {{site.alert.note}}
-  Applications are not allowed to have a
+  Microsoft Store apps are not allowed to have a
   Version with a revision number other than zero.
   Therefore, the last number of the version must
   remain zero for all releases.
   Ensure that you follow Microsoft's
   [versioning guidelines][windowspackageversioning].
+{{site.alert.end}}
+
+For apps not published to the Microsoft Store, you
+can set the app's executable's file and product versions.
+The executable's default file version is `1.0.0.1`,
+and its default product version is `1.0.0+1`. To update these,
+navigate to the `pubspec.yaml` file and update the
+following line:
+
+```yaml
+version: 1.0.0+1
+```
+
+The build name is three numbers separated by dots,
+followed by an optional build number that is separated
+by a `+`. In the example above, the build name is `1.0.0`
+and the build number is `1`.
+
+The build name becomes the first three numbers of the
+file and product versions, while the build number becomes
+the fourth number of the file and product versions.
+
+Both the build name and number can be overridden in
+`flutter build windows` by specifying `--build-name` and
+`--build-number`, respectively.
+
+{{site.alert.note}}
+  Flutter projects created before Flutter 3.3
+  need to be updated to set the executable's version
+  information. For more information,
+  refer to the [version migration guide][].
 {{site.alert.end}}
 
 ## Add app icons
@@ -184,3 +214,4 @@ even if the certification passes.
 [visualstudiosubmission]: https://docs.microsoft.com/windows/msix/package/packaging-uwp-apps#automate-store-submissions
 [windowspackageversioning]: https://docs.microsoft.com/windows/uwp/publish/package-version-numbering
 [windowsappcertification]: https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit
+[version migration guide]: {{site.url}}/development/platform-integration/windows/version-migration
