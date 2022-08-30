@@ -126,7 +126,7 @@ OutlinedButton(
 If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onError`.
 Instead, it's forwarded to the `PlatformDispatcher`.
 
-To catch such an error, use [`PlatformDispatcher.onError`][].
+To catch such an error, use [PlatformDispatcher.onError][].
 
 <?code-excerpt "lib/excerpts.dart (CatchError)"?>
 ```dart

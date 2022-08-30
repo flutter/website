@@ -505,7 +505,7 @@ The following changes happened in this release:
 * [flutter_tools] pub roll by @christopherfujino in https://github.com/flutter/flutter/pull/103220
 * Provide flutter sdk kernel files to dwds launcher instead of dart ones by @annagrin in https://github.com/flutter/flutter/pull/103436
 * Add tests for migrate command methods by @GaryQian in https://github.com/flutter/flutter/pull/103466
-* [tools][web] Make Plugin Registrant file ephemeral. by @ditman in https://github.com/flutter/flutter/pull/102185
+* tools web Make Plugin Registrant file ephemeral. by @ditman in https://github.com/flutter/flutter/pull/102185
 * [gen_l10n] Better blank lines in the header of generated files by @AlexV525 in https://github.com/flutter/flutter/pull/103414
 * [flutter_tools] migrate some integration tests to null safety by @jonahwilliams in https://github.com/flutter/flutter/pull/103560
 * Enforce minimum plugin version iOS 11 by @jmagman in https://github.com/flutter/flutter/pull/103545
@@ -547,7 +547,7 @@ The following changes happened in this release:
 * Add link to more detailed multidex information. by @GaryQian in https://github.com/flutter/flutter/pull/104558
 * Retry getting tabs in chrome launcher on ConnectionException by @annagrin in https://github.com/flutter/flutter/pull/104218
 * Update Windows manifest to declare Windows 11 by @timsneath in https://github.com/flutter/flutter/pull/104768
-* [tool][web] Fix flutter.js in Safari 13 by @ditman in https://github.com/flutter/flutter/pull/104761
+* tool web Fix flutter.js in Safari 13 by @ditman in https://github.com/flutter/flutter/pull/104761
 * Fix plugin_ffi bindings regen command and bump ffigen by @dcharkes in https://github.com/flutter/flutter/pull/104844
 * Support string compileSdkVersion for preview android SDKs by @GaryQian in https://github.com/flutter/flutter/pull/104662
 * [tool] Migrate off deprecated coverage parameters by @cbracken in https://github.com/flutter/flutter/pull/104997
@@ -599,7 +599,7 @@ The following changes happened in this release:
 * plugin_ffi warn about lack of platform support by @dcharkes in https://github.com/flutter/flutter/pull/106813
 * [flutter_tool] Pass --input-type to impellerc by @zanderso in https://github.com/flutter/flutter/pull/106845
 * Ignore invalid description in vswhere.exe JSON output by @loic-sharma in https://github.com/flutter/flutter/pull/106836
-* [tool][web] Create an early web plugin_registrant for dartpad. by @ditman in https://github.com/flutter/flutter/pull/106921
+* tool web Create an early web plugin_registrant for dartpad. by @ditman in https://github.com/flutter/flutter/pull/106921
 * manual pub package roll; remove test_api pin, unblock bumping dwds by @christopherfujino in https://github.com/flutter/flutter/pull/106887
 * Ensure flutter run build is done in incremental mode. by @aam in https://github.com/flutter/flutter/pull/107184
 * Pass URI converter from context to DDS by @helin24 in https://github.com/flutter/flutter/pull/106840
