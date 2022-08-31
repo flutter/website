@@ -111,9 +111,9 @@ In the **Deployment** section of the **Build Settings** tab:
 
 `iOS Deployment Target`
 : The minimum iOS version that your app supports.
-  Flutter supports iOS 9.0 and later. If your app or plugins
+  Flutter supports iOS 11 and later. If your app or plugins
   include Objective-C or Swift code that makes use of APIs newer
-  than iOS 9, update this setting to the highest required version.
+  than iOS 11, update this setting to the highest required version.
 
 The **General** tab of your project settings should resemble
 the following:

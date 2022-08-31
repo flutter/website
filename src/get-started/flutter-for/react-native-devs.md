@@ -1674,6 +1674,15 @@ A list of routes might be specified in the [`MaterialApp`][] widget,
 or they might be built on the fly, for example, in hero animations.
 The following example specifies named routes in the `MaterialApp` widget.
 
+{{site.alert.note}}
+  Named routes are no longer recommended for most
+  applications. For more information, see
+  [Limitations][] in the [navigation overview][] page.
+{{site.alert.note}}
+
+[Limitations]: {{site.url}}/development/ui/navigation#limitations
+[navigation overview]: {{site.url}}/development/ui/navigation
+
 <?code-excerpt "lib/navigation.dart (Navigator)"?>
 ```dart
 class NavigationApp extends StatelessWidget {
