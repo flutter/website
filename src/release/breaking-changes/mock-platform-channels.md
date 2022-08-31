@@ -169,7 +169,7 @@ Relevant PRs:
 * [PR #76288: Migrate to ChannelBuffers.push][]
 
 <!-- Master channel link: -->
-[`TestDefaultBinaryMessenger`]: {{site.master-api}}/flutter/flutter_test/TestDefaultBinaryMessenger-class.html
-[`TestDefaultBinaryMessengerBinding`]: {{site.master-api}}/flutter/flutter_test/TestDefaultBinaryMessengerBinding-mixin.html
+[`TestDefaultBinaryMessenger`]: {{site.api}}/flutter/flutter_test/TestDefaultBinaryMessenger-class.html
+[`TestDefaultBinaryMessengerBinding`]: {{site.api}}/flutter/flutter_test/TestDefaultBinaryMessengerBinding-mixin.html
 
 [PR #76288: Migrate to ChannelBuffers.push]: {{site.repo.flutter}}/pull/76288

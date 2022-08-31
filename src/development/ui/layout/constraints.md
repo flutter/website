@@ -335,7 +335,7 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        primary: Colors.white,
+        foregroundColor: Colors.white,
         backgroundColor: isSelected ? Colors.grey : Colors.grey[800],
       ),
       child: Text(exampleNumber.toString()),

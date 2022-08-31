@@ -53,9 +53,6 @@ follow these steps:
     simulator and drag it to change the scale. You can also
     use the **Window > Physical Size** or **Window > Pixel Accurate**
     options if your computer's resolution is high enough.
-    * If you are using a version of Xcode older
-    than 9.1, you should instead set the device scale
-    in the **Window > Scale** menu.
 
 ### Create and run a simple Flutter app
 
@@ -85,12 +82,37 @@ follow these steps:
 
 ### Deploy to iOS devices
 
-To deploy your Flutter app to a physical iOS device
+To deploy your Flutter app to a physical iPhone or iPad
 you'll need to set up physical device deployment in Xcode
 and an Apple Developer account. If your app is using Flutter plugins,
 you will also need the third-party CocoaPods dependency manager.
 
 <ol markdown="1">
+
+<li markdown="1">
+
+<a name="trust"></a>
+The first time you use an attached physical device for iOS
+development, you need to trust both your Mac and the
+Development Certificate on that device.
+On iOS 16 and higher you must also enable [Developer Mode][].
+
+Select **Trust** in the dialog prompt when
+first connecting the iOS device to your Mac.
+
+![Trust Mac][]{:.mw-100}
+
+Then, go to the Settings app on the iOS device,
+select **General > Device Management**
+and trust your Certificate.
+For first time users, you might need to select
+**General > Profiles > Device Management** instead.
+On iOS 16 and higher, navigate back to the top level
+of the Settings app, select **Privacy & Security > Developer Mode**,
+and toggle Developer Mode on.
+
+</li>
+
 <li markdown="1">
 
 You can skip this step if your apps do not depend on
@@ -142,21 +164,6 @@ Follow the Xcode signing flow to provision your project:
         For details about membership types,
         see [Choosing a Membership][].
 
-      <a name="trust"></a>
-      * The first time you use an attached physical device for iOS
-        development, you need to trust both your Mac and the
-        Development Certificate on that device.
-        Select `Trust` in the dialog prompt when
-        first connecting the iOS device to your Mac.
-
-        ![Trust Mac][]{:.mw-100}
-
-        Then, go to the Settings app on the iOS device,
-        select **General > Device Management**
-        and trust your Certificate.
-        For first time users, you may need to select
-        **General > Profiles > Device Management** instead.
-
       * If automatic signing fails in Xcode, verify that the project's
         **General > Identity > Bundle Identifier** value is unique.
         ![Check the app's Bundle ID][]{:.mw-100}
@@ -180,3 +187,4 @@ or clicking the Run button in Xcode.
 [web download]: {{site.apple-dev}}/xcode/
 [Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
+[Developer Mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device

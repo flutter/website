@@ -206,6 +206,8 @@
           children:
             - title: Building Windows apps
               permalink: /development/platform-integration/windows/building
+            - title: Version information migration
+              permalink: /development/platform-integration/windows/version-migration
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:

@@ -178,8 +178,8 @@ Scaffold(
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: TBD
+Landed in version: 3.3.0-0.0.pre  
+In stable release: 3.3
 
 ## References
 
