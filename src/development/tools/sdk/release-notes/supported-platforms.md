@@ -29,7 +29,7 @@ Flutter supports the following platforms as part of Google-tested and best-effor
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
 |Android | API 16 (Android 4.1) & above | All     |
-|iOS     | iOS 9 & above                | All     |
+|iOS     | iOS 11 & above               | All     |
 |Linux   | Debian, 64-bit               | All     |
 |macOS   | El Capitan (10.11) & above   | All     |
 |Web     | Chrome 84  & above           | All     |
@@ -71,19 +71,19 @@ and stable channels.
 |Platform|Version             |
 |--------|--------------------|
 |Android |Android SDK 16–18   |
-|iOS     |iOS 9-13*           |
+|iOS     |iOS 11-13           |
 |Linux   |Debian 11           |
 |Linux   |Debian 9 & below    |
 |Linux   |Ubuntu 20.04        |
 |Linux   |Ubuntu 22.04 (Aspirational Google-tested platform)        |
-|macOS   |El Capitan (10.11) - Big Sur (11)   |
+|macOS   |El Capitan (10.11) - Big Sur (11)*   |
 |Windows |Windows 11 (Aspirational Google-tested platform)          |
 |Windows |Windows 8           |
 |Windows |Windows 7           |
 {:.table.table-striped}
 </div>
 
-\* Flutter 3.0 is the last stable release with iOS 9 and 10 best-effort support.
+\* Flutter 3.3 is the last stable release with macOS 10.11 and 10.12 best-effort support.
 
 ### Unsupported platforms
 
@@ -91,7 +91,7 @@ and stable channels.
 |Platform|Version                                     |
 |--------|--------------------------------------------|
 |Android |Android SDK 15 & below                      |
-|iOS     |[iOS 8][] & below and [`arm7v` 32-bit iOS][]|
+|iOS     |[iOS 10 & below and `arm7v` 32-bit iOS][]   |
 |Linux   |Any 32-bit platform                         |
 |macOS   |Yosemite (10.10) & below                    |
 |Windows |Windows Vista & below                       |
@@ -99,5 +99,4 @@ and stable channels.
 
 {:.table.table-striped}
 </div>
-[iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
-[`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
+[iOS 10 & below and `arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported

@@ -604,7 +604,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Shortcuts(
-        manager: LoggingShortcutManager(),
         shortcuts: <LogicalKeySet, Intent>{
           LogicalKeySet(LogicalKeyboardKey.escape): const ClearIntent(),
           LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyC):
