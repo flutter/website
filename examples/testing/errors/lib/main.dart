@@ -2,24 +2,20 @@
 
 import './error_handler.dart';
 // #docregion Main
-import 'dart:async';
-import 'dart:io';
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
-void main() {
-  runZonedGuarded(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await myErrorsHandler.initialize();
-    FlutterError.onError = (details) {
-      FlutterError.presentError(details);
-      myErrorsHandler.onErrorDetails(details);
-      exit(1);
-    };
-    runApp(const MyApp());
-  }, (error, stack) {
+Future<void> main() async {
+  await myErrorsHandler.initialize();
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    myErrorsHandler.onErrorDetails(details);
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
     myErrorsHandler.onError(error, stack);
-    exit(1);
-  });
+    return true;
+  };
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
