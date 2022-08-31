@@ -61,10 +61,13 @@ Code after migration:
 
 ## Timeline
 
+Landed in version: TBD  
 In stable release: TBD
 
 ## References
 
-Related PR [][PR #34743] Make splashScreenView of FlutterViewController nullable
+Relavant PR:
+* [Make splashScreenView of FlutterViewController nullable][]
 
+[Make splashScreenView of FlutterViewController nullable]: {{site.github}}/flutter/engine/pull/34743
 [PR #34743]: {{site.github}}/flutter/engine/pull/34743

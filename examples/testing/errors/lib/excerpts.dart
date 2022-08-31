@@ -2,19 +2,19 @@
 
 import './backend.dart';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // #docregion CatchError
-import 'dart:async';
+import 'package:flutter/material.dart';
+import 'dart:ui';
 
 void main() {
   MyBackend myBackend = MyBackend();
-  runZonedGuarded(() {
-    runApp(const MyApp());
-  }, (error, stack) {
+  PlatformDispatcher.instance.onError = (error, stack) {
     myBackend.sendError(error, stack);
-  });
+    return true;
+  };
+  runApp(const MyApp());
 }
 // #enddocregion CatchError
 

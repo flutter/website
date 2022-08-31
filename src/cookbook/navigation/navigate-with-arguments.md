@@ -21,6 +21,15 @@ In some cases, you might also need to pass arguments to a
 named route. For example, you might wish to navigate to the `/user` route and
 pass information about the user to that route.
 
+{{site.alert.note}}
+  Named routes are no longer recommended for most
+  applications. For more information, see
+  [Limitations][] in the [navigation overview][] page.
+{{site.alert.note}}
+
+[Limitations]: {{site.url}}/development/ui/navigation#limitations
+[navigation overview]: {{site.url}}/development/ui/navigation
+
 You can accomplish this task using the `arguments` parameter of the
 [`Navigator.pushNamed()`][] method. Extract the arguments using the
 [`ModalRoute.of()`][] method or inside an [`onGenerateRoute()`][]
