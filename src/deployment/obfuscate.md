@@ -83,7 +83,7 @@ use the following steps to make it human readable:
    For example:
 
 ```terminal
-flutter symbolize -i <stack trace file> -d /out/android/app.android-arm64.symbols
+flutter symbolize -i <stack trace file> -d out/android/app.android-arm64.symbols
 ```
 
    For more information on the `symbolize` command,
