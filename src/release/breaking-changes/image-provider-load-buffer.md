@@ -116,7 +116,7 @@ to give users of your code time to migrate as well.
 ## Timeline
 
 Landed in version: 3.1.0-0.0.pre.976<br>
-In stable release: not yet
+In stable release: 3.3.0
 
 ## References
 
