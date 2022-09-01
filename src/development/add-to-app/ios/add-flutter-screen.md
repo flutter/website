@@ -43,6 +43,30 @@ to your host app. As an example, we demonstrate creating a
 the app delegate.
 
 {% samplecode engine %}
+
+{% sample Swift %}
+**In `AppDelegate.swift`:**
+
+<!--code-excerpt "AppDelegate.swift" title-->
+```swift
+import UIKit
+import Flutter
+// Used to connect plugins (only if you have plugins with iOS platform code).
+import FlutterPluginRegistrant
+
+@UIApplicationMain
+class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
+  lazy var flutterEngine = FlutterEngine(name: "my flutter engine")
+
+  override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // Runs the default Dart entrypoint with a default Flutter route.
+    flutterEngine.run();
+    // Used to connect plugins (only if you have plugins with iOS platform code).
+    GeneratedPluginRegistrant.register(with: self.flutterEngine);
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions);
+  }
+}
+```
 {% sample Objective-C %}
 **In `AppDelegate.h`:**
 
@@ -79,29 +103,6 @@ the app delegate.
 
 @end
 ```
-{% sample Swift %}
-**In `AppDelegate.swift`:**
-
-<!--code-excerpt "AppDelegate.swift" title-->
-```swift
-import UIKit
-import Flutter
-// Used to connect plugins (only if you have plugins with iOS platform code).
-import FlutterPluginRegistrant
-
-@UIApplicationMain
-class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
-  lazy var flutterEngine = FlutterEngine(name: "my flutter engine")
-
-  override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Runs the default Dart entrypoint with a default Flutter route.
-    flutterEngine.run();
-    // Used to connect plugins (only if you have plugins with iOS platform code).
-    GeneratedPluginRegistrant.register(with: self.flutterEngine);
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions);
-  }
-}
-```
 {% endsamplecode %}
 
 ### Show a FlutterViewController with your FlutterEngine
@@ -112,6 +113,33 @@ The `FlutterViewController` uses the `FlutterEngine` instance
 created in the `AppDelegate`.
 
 {% samplecode vc %}
+{% sample Swift %}
+<!--code-excerpt "ViewController.swift" title-->
+```swift
+import UIKit
+import Flutter
+
+class ViewController: UIViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    // Make a button to call the showFlutter function when pressed.
+    let button = UIButton(type:UIButton.ButtonType.custom)
+    button.addTarget(self, action: #selector(showFlutter), for: .touchUpInside)
+    button.setTitle("Show Flutter!", for: UIControl.State.normal)
+    button.frame = CGRect(x: 80.0, y: 210.0, width: 160.0, height: 40.0)
+    button.backgroundColor = UIColor.blue
+    self.view.addSubview(button)
+  }
+
+  @objc func showFlutter() {
+    let flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
+    let flutterViewController =
+        FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
+    present(flutterViewController, animated: true, completion: nil)
+  }
+}
+```
 {% sample Objective-C %}
 <!--code-excerpt "ViewController.m" title-->
 ```objectivec
@@ -143,33 +171,6 @@ created in the `AppDelegate`.
 }
 @end
 ```
-{% sample Swift %}
-<!--code-excerpt "ViewController.swift" title-->
-```swift
-import UIKit
-import Flutter
-
-class ViewController: UIViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    // Make a button to call the showFlutter function when pressed.
-    let button = UIButton(type:UIButton.ButtonType.custom)
-    button.addTarget(self, action: #selector(showFlutter), for: .touchUpInside)
-    button.setTitle("Show Flutter!", for: UIControl.State.normal)
-    button.frame = CGRect(x: 80.0, y: 210.0, width: 160.0, height: 40.0)
-    button.backgroundColor = UIColor.blue
-    self.view.addSubview(button)
-  }
-
-  @objc func showFlutter() {
-    let flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
-    let flutterViewController =
-        FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
-    present(flutterViewController, animated: true, completion: nil)
-  }
-}
-```
 {% endsamplecode %}
 
 Now, you have a Flutter screen embedded in your iOS app.
@@ -200,6 +201,15 @@ To let the `FlutterViewController` present without an existing
 `FlutterViewController` without an engine reference.
 
 {% samplecode no-engine-vc %}
+{% sample Swift %}
+<!--code-excerpt "ViewController.swift" title-->
+```swift
+// Existing code omitted.
+func showFlutter() {
+  let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
+  present(flutterViewController, animated: true, completion: nil)
+}
+```
 {% sample Objective-C %}
 <!--code-excerpt "ViewController.m" title-->
 ```objectivec
@@ -210,15 +220,6 @@ To let the `FlutterViewController` present without an existing
   [self presentViewController:flutterViewController animated:YES completion:nil];
 }
 @end
-```
-{% sample Swift %}
-<!--code-excerpt "ViewController.swift" title-->
-```swift
-// Existing code omitted.
-func showFlutter() {
-  let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
-  present(flutterViewController, animated: true, completion: nil)
-}
 ```
 {% endsamplecode %}
 
@@ -407,15 +408,15 @@ For instance the following runs `myOtherEntrypoint()`
 in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 
 {% samplecode entrypoint-library %}
-{% sample Objective-C %}
-<!--code-excerpt "Objective-C" title-->
-```objectivec
-[flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
-```
 {% sample Swift %}
 <!--code-excerpt "Swift" title-->
 ```swift
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
+```
+{% sample Objective-C %}
+<!--code-excerpt "Objective-C" title-->
+```objectivec
+[flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
 {% endsamplecode %}
 
@@ -427,14 +428,6 @@ Starting in Flutter version 1.22, an initial route can be set for your Flutter
 FlutterViewController.
 
 {% samplecode initial-route %}
-{% sample Objective-C %}
-<!--code-excerpt "Creating engine" title-->
-```objectivec
-FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
-// FlutterDefaultDartEntrypoint is the same as nil, which will run main().
-[flutterEngine runWithEntrypoint:FlutterDefaultDartEntrypoint
-                    initialRoute:@"/onboarding"];
-```
 {% sample Swift %}
 <!--code-excerpt "Creating engine" title-->
 ```swift
@@ -442,6 +435,14 @@ let flutterEngine = FlutterEngine()
 // FlutterDefaultDartEntrypoint is the same as nil, which will run main().
 engine.run(
   withEntrypoint: FlutterDefaultDartEntrypoint, initialRoute: "/onboarding")
+```
+{% sample Objective-C %}
+<!--code-excerpt "Creating engine" title-->
+```objectivec
+FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
+// FlutterDefaultDartEntrypoint is the same as nil, which will run main().
+[flutterEngine runWithEntrypoint:FlutterDefaultDartEntrypoint
+                    initialRoute:@"/onboarding"];
 ```
 {% endsamplecode %}
 
@@ -452,6 +453,12 @@ Alternatively, to construct a FlutterViewController directly without pre-warming
 a FlutterEngine:
 
 {% samplecode initial-route-without-pre-warming %}
+{% sample Swift %}
+<!--code-excerpt "Creating view controller" title-->
+```swift
+let flutterViewController = FlutterViewController(
+      project: nil, initialRoute: "/onboarding", nibName: nil, bundle: nil)
+```
 {% sample Objective-C %}
 <!--code-excerpt "Creating view controller" title-->
 ```objectivec
@@ -460,12 +467,6 @@ FlutterViewController* flutterViewController =
                                         initialRoute:@"/onboarding"
                                              nibName:nil
                                               bundle:nil];
-```
-{% sample Swift %}
-<!--code-excerpt "Creating view controller" title-->
-```swift
-let flutterViewController = FlutterViewController(
-      project: nil, initialRoute: "/onboarding", nibName: nil, bundle: nil)
 ```
 {% endsamplecode %}
 
