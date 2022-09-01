@@ -1678,7 +1678,7 @@ The following example specifies named routes in the `MaterialApp` widget.
   Named routes are no longer recommended for most
   applications. For more information, see
   [Limitations][] in the [navigation overview][] page.
-{{site.alert.note}}
+{{site.alert.end}}
 
 [Limitations]: {{site.url}}/development/ui/navigation#limitations
 [navigation overview]: {{site.url}}/development/ui/navigation
