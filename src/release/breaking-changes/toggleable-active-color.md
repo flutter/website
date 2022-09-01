@@ -100,8 +100,8 @@ MaterialApp(
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: not yet
+Landed in version: TBD  
+In stable release: TBD
 
 ## References
 

@@ -20,6 +20,54 @@ and review the [Dart changelog][].
 [Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 
+## Aug 31, 2022, Flutter Vikings Edition: 3.3 release
+
+Flutter 3.3 is live! For more information, see
+{% comment %}
+[Announcing Flutter 3.3 at Flutter Vikings][],
+{% endcomment %}
+[What's new in Flutter 3.3][],
+and [Dart 2.18: Objective-C & Swift interop][] (free articles on Medium),
+and the [Flutter 3.3 release notes][3.3 release notes].
+
+[3.3 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-3.3.0
+[Announcing Flutter 3.3 at Flutter Vikings]: {{site.medium}}/flutter/announcing-flutter-3-3-at-flutter-vikings-6f213e068793
+[Dart 2.18: Objective-C & Swift interop]: {{site.medium}}/dartlang/dart-2-18-f4b3101f146c
+[What's new in Flutter 3.3]: {{site.medium}}/flutter/whats-new-in-flutter-3-3-893c7b9af1ff
+
+**Docs updated or added since the 3.0 release**
+
+* The [navigation and routing overview][] page has been
+  rewritten with more guidance on using `Navigator`
+  and `Router` together, named routes, and
+  using a routing package.
+* The [URL strategies][] page has also been updated
+  to reflect a more streamlined API.
+* For apps not published to the Microsoft Store, you
+  can now set the app's executable's file and
+  product versions in the pubspec file.
+  For more information, see
+  [Build and release a Windows desktop app][].
+* If you are developing software for iOS 16 and higher, 
+  you must enable [Developer mode][].
+  The [macOS install][] page is updated
+  with this information.
+* As described in the [3.3 release notes][],
+  you should catch all errors and exceptions 
+  in your app by setting
+  the `PlatformDispatcher.onError` callback,
+  instead of using a custom `Zone`.
+  The [Handling errors in Flutter][]
+  page has been updated with this advice.
+
+[Build and release a Windows desktop app]: {{site.url}}/deployment/windows
+[Developer mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
+[Handling errors in Flutter]: {{site.url}}/testing/errors
+[macOS install]: {{site.url}}/get-started/install/macos#install-xcode
+[navigation and routing overview]: {{site.url}}/development/ui/navigation
+[URL strategies]: {{site.url}}/development/ui/navigation/url-strategies
+
+
 ## May 11, 2022, Google I/O Edition: Flutter 3 release
 
 Flutter 3 is live!!! For more information, see
@@ -156,12 +204,12 @@ publication since the last stable release:
 * [GSoC'21: Creating a desktop sample for Flutter][]
 * [Flutter Hot Reload][]
 * [What can we do to better improve Flutter?][]
-* [Adding Flutter to  your existing iOS and Android codebases][]
+* [Adding Flutter to your existing iOS and Android codebases][]
 * [Google I/O Spotlight: Flutter in action at ByteDance][] 
 * [Improving Platform Channel Performance in Flutter][]
 
 
-[Adding Flutter to  your existing iOS and Android codebases]: {{site.flutter-medium}}/adding-flutter-to-your-existing-ios-and-android-codebases-3e2c5a4797c1
+[Adding Flutter to your existing iOS and Android codebases]: {{site.flutter-medium}}/adding-flutter-to-your-existing-ios-and-android-codebases-3e2c5a4797c1
 [What's new in Flutter 2.5]: {{site.flutter-medium}}/whats-new-in-flutter-2-5-6f080c3f3dc
 [Flutter Hot Reload]: {{site.flutter-medium}}/flutter-hot-reload-f3c5994e2cee
 [Google I/O Spotlight: Flutter in action at ByteDance]: {{site.flutter-medium}}/google-i-o-spotlight-flutter-in-action-at-bytedance-c22f4b6dc9ef

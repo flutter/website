@@ -344,7 +344,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
 
 - (void)application:(UIApplication*)application
 performActionForShortcutItem:(UIApplicationShortcutItem*)shortcutItem
-  completionHandler:(void (^)(BOOL succeeded))completionHandler NS_AVAILABLE_IOS(9_0) {
+  completionHandler:(void (^)(BOOL succeeded))completionHandler {
     [_lifeCycleDelegate application:application
        performActionForShortcutItem:shortcutItem
                   completionHandler:completionHandler];
