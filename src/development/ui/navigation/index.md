@@ -104,7 +104,7 @@ same screen(s) when a deep link is received.
 {{site.alert.secondary}}
   **Note for advanced developers**:  If you prefer not to use a routing package
   and would like full control over navigation and routing in your app, override
-  `RouteInformationParser` and a`RouterDelegate`. When the state in your app
+  `RouteInformationParser` and `RouterDelegate`. When the state in your app
   changes, you can precisely control the stack of screens by providing a list of
   `Page` objects using the `Navigator.pages` parameter. For more details, see the
   `Router` API documentation.
