@@ -244,7 +244,7 @@ as well as many other open source packages, on [pub.dev][].
     ```diff
     --- step1_base/pubspec.yaml
     +++ step2_use_package/pubspec.yaml
-    @@ -23,4 +23,5 @@
+    @@ -9,4 +9,5 @@
      dependencies:
        flutter:
          sdk: flutter
@@ -624,20 +624,18 @@ lazily, on demand.
              body: const Center(
                child: RandomWords(),
              ),
-    @@ -27,18 +27,36 @@
-         );
+    @@ -28,12 +28,30 @@
        }
      }
 
-    -class RandomWords extends StatefulWidget {
-    -  const RandomWords({super.key});
-    +class _RandomWordsState extends State<RandomWords> {
+     class _RandomWordsState extends State<RandomWords> {
     +  final _suggestions = <WordPair>[];
     +  final _biggerFont = const TextStyle(fontSize: 18);
-
+    +
        @override
-    -  State<RandomWords> createState() => _RandomWordsState();
-    +  Widget build(BuildContext context) {
+       Widget build(BuildContext context) {
+    -    final wordPair = WordPair.random();
+    -    return Text(wordPair.asPascalCase);
     +    return ListView.builder(
     +      padding: const EdgeInsets.all(16.0),
     +      itemBuilder: /*1*/ (context, i) {
@@ -655,20 +653,10 @@ lazily, on demand.
     +        );
     +      },
     +    );
-    +  }
+       }
      }
 
-    -class _RandomWordsState extends State<RandomWords> {
-    +class RandomWords extends StatefulWidget {
-    +  const RandomWords({super.key});
-    +
-       @override
-    -  Widget build(BuildContext context) {
-    -    final wordPair = WordPair.random();
-    -    return Text(wordPair.asPascalCase);
-    -  }
-    +  State<RandomWords> createState() => _RandomWordsState();
-     }
+     class RandomWords extends StatefulWidget {
     ```
 
  6. Restart the app. You should see a list of word pairings no matter how far
