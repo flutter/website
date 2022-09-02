@@ -62,4 +62,4 @@ this tag to `<base href="/flutter_app/">`.
 [usePathUrlStrategy]: https://api.flutter.dev/flutter/flutter_web_plugins/usePathUrlStrategy.html
 [flutter_web_plugins]: https://api.flutter.dev/flutter/flutter_web_plugins/flutter_web_plugins-library.html
 [History API]: https://developer.mozilla.org/en-US/docs/Web/API/History_API
-[Configure rewrites]: {{site.url}}/development/ui/navigation/url-strategies
+[Configure rewrites]: https://firebase.google.com/docs/hosting/full-config#rewrites
