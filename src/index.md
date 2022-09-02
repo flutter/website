@@ -60,31 +60,61 @@ Coming from another platform? Check out Flutter for:
 
 ### Videos
 
-We also have some helpful videos on our [Flutter YouTube channel][]!
-In particular, check out the [Flutter in Focus series][],
-and learn about other series on our [videos][] page.
+Check out the Introducing Flutter series. Learn Flutter basics like [how do I make my first Flutter app?][] In Flutter, "everything is a widget"! Learn more about `Stateless` and `Stateful` widgets in [What is State?][]
 
-Learn Flutter basics in [How do I make my first Flutter app?][]
-
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/xWV71C2kp38" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-
-In Flutter, "everything is a widget"! To better understand
-the two kinds of widgets, `Stateless` and `Stateful`, see 
-[What is State?][]
-
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/QlwiL_yLh6E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="card-deck card-deck--responsive">
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/xWV71C2kp38" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/QlwiL_yLh6E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+</div>
 
 [How do I make my first Flutter app?]: {{site.youtube-site}}/watch?v=xWV71C2kp38
 [What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
 
+
+
+
+<div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <h4>Only have 60 seconds? Learn how to build and deploy a Flutter App!</h4>
+
+  <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/ZnufaryH43s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Want to skill up?
 
-If you learn best by watching engineers write code,
-make mistakes, and fix them,
-check out the [Boring Flutter Show][] video series:
+Dive deeper into how Flutter works under the hood! Learn [why you write standalone widgets instead of using helper methods][] or [what is “BuildContext” and how is it used][]?
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Boring Flutter Show playlist][]
+<div class="card-deck card-deck--responsive">
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/IOyq-eTRhvo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/rIaaH87z1-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+</div>
+
+[why you write standalone widgets instead of using helper methods]: {{site.youtube-site}}/IOyq-eTRhvo
+[what is “BuildContext” and how is it used]: {{site.youtube-site}}/rIaaH87z1-g
+
+To learn about all of the Flutter video series, see our [videos][] page.
+
+We release new videos every week on the Flutter YouTube channel.
+
+<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/c/flutterdev">Explore more Flutter videos</a>
+
+
+
 
 You might also find these docs useful:
 
