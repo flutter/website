@@ -1,6 +1,6 @@
 _Description of what this PR is changing or adding, and why:_
 
-_Issues fixed by this PR (if any):_
+_Issues fixed by this PR (if any):_ Fixes #ISSUE-NUMBER
 
 ## Presubmit checklist
 - [ ] This PR doesn’t contain automatically generated corrections (Grammarly or similar).
