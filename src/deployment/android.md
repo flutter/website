@@ -476,12 +476,9 @@ In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For more information,
 see [Version your app][] in the Android documentation.
 
-After updating the version number in the pubspec file,
-run `flutter pub get` from the top of the project, or
-use the **Pub get** button in your IDE. This updates
-the `versionName` and `versionCode` in the `local.properties` file,
-which are later updated in the `build.gradle` file when you
-rebuild the Flutter app.
+When you rebuild the app for Android, any updates in the version number
+from the pubspec file will update the `versionName` and `versionCode` 
+in the `local.properties` file.
 
 ## Android release FAQ
 
