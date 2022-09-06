@@ -28,7 +28,7 @@ The following animation shows the app's behavior:
 
 ![The download button cycles through its stages]({{site.url}}/assets/images/docs/cookbook/effects/DownloadButton.gif){:.site-mobile-screenshot}
 
-## Define a new stateful widget
+## Define a new stateless widget
 
 Your button widget needs to change its appearance over time.
 Therefore, you need to implement your button with a custom
