@@ -30,6 +30,21 @@ you can also see all the widgets in the [widget index][].
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/1z6YP7YmvwA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/VdkRy3yZiPo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+    <div class="video-card">
+        <div class="card-body">
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/gYNTcgZVcWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div>
+    </div>
+    <div class="video-card">
+        <div class="card-body">
             <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/-Nny8kzW380" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
     </div>
@@ -41,21 +56,6 @@ you can also see all the widgets in the [widget index][].
     <div class="video-card">
         <div class="card-body">
             <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/qjA0JFiPMnQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-        </div>
-    </div>
-    <div class="video-card">
-        <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/R84AGg0lKs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-        </div>
-    </div>
-    <div class="video-card">
-        <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/sa_U0jffQII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-        </div>
-    </div>
-    <div class="video-card">
-        <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/8Vzv2CdbEY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
     </div>
 </div>
