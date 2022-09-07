@@ -1,33 +1,51 @@
 ---
-title: Reduce shader compilation jank on mobile
+title: Shader compilation jank
 short-title: Shader jank
 description: What is shader jank and how to minimize it.
 ---
 
 {% include docs/performance.md %}
 
-If the animations on your mobile app appear to be janky,
-but only on the first run, you can _warm up_ the
-shader captured in the Skia Shader Language (SkSL) for a
-significant improvement.
+If the animations on your mobile app appear to be janky, but only on the first
+run, this is likely due to shader compilation. Flutter's long term solution to
+shader compilation jank is [Impeller][], which is in developer preview on the
+master channel for iOS. Before continuing with the instructions below, please
+try Impeller on iOS, and let us know in a GitHub issue if it doesn't address
+your issue. Impeller on Android is being actively developed, but is not yet in
+developer preview.
 
-![Side-by-side screenshots of janky mobile app next to non-janky app]({{site.url}}/assets/images/docs/perf/render/shader-jank.gif)
+While we work on making Impeller production ready, you can mitigate shader
+compilation jank by bundling precompiled shaders with an iOS app.
+Unfortunately, this approach doesn't work well on Android due to precompiled
+shaders being device or GPU-specific. The Android hardware ecosystem is large
+enough that the GPU-specific precompiled shaders bundled with an application
+will work on only a small subset of devices, and will likely make jank worse on
+the other devices, or even create rendering errors.
+
+Also, please note that we aren't planning to make improvements to the developer
+experience for creating precompiled shaders described below. Instead, we are
+focusing our energies on the more robust solution to this problem that Impeller
+offers.
 
 ## What is shader compilation jank?
 
-If an app has janky animations during the first run,
-and later becomes smooth for the same animation,
-then it's very likely due to shader compilation jank.
+A shader is a piece of code that runs on a GPU (graphics processing unit). When
+the Skia graphics backend that Flutter uses for rendering sees a new sequence
+of draw commands for the first time, it sometimes generates and compiles a
+custom GPU shader for that sequence of commands. This allows that sequence and
+potentially similar sequences to render as fast as possible.
 
-More technically, a shader is a piece of code that runs on
-a GPU (graphics processing unit).
-When a shader is first used, it needs to be compiled on the device.
-The compilation could cost up to a few hundred milliseconds
-whereas a smooth frame needs to be drawn within 16 milliseconds
-for a 60 fps (frame-per-second) display.
-Therefore, a compilation could cause tens of frames to be missed,
-and drop the fps from 60 to 6. This is _compilation jank_.
-After the compilation is complete, the animation should be smooth.
+Unfortunately, Skia's shader generation and compilation happen in sequence with
+the frame workload. The compilation could cost up to a few hundred milliseconds
+whereas a smooth frame needs to be drawn within 16 milliseconds for a 60 fps
+(frame-per-second) display. Therefore, a compilation could cause tens of frames
+to be missed, and drop the fps from 60 to 6. This is _compilation jank_. After
+the compilation is complete, the animation should be smooth.
+
+On the other hand, Impeller generates and compiles all necessary shaders when
+we build the Flutter Engine. Therefore apps running on Impeller already have
+all the shaders they need, and the shaders can be used without introducing jank
+into animations.
 
 Definitive evidence for the presence of shader compilation jank is to see
 `GrGLProgramBuilder::finalize` in the tracing with `--trace-skia` enabled. See
@@ -36,10 +54,6 @@ the following screenshot for an example timeline tracing.
 ![A tracing screenshot verifying jank]({{site.url}}/assets/images/docs/perf/render/tracing.png){:width="100%"}
 
 ## What do we mean by "first run"?
-
-On Android, "first run" means that the user might see
-jank the first time opening the app after a fresh
-installation. Subsequent runs should be fine.
 
 On iOS, "first run" means that the user might see
 jank when an animation first occurs every time
@@ -81,28 +95,21 @@ shader capturing. It also purges the SkSL shaders so use it *only* on the first
 
 <li markdown="1"> Press `M` at the command line of `flutter run` to
     write the captured SkSL shaders into a file named something like
-   `flutter_01.sksl.json`. For best results, capture SkSL shaders on actual
-   Android and iOS devices separately.
+   `flutter_01.sksl.json`. For best results, capture SkSL shaders on an actual
+   iOS device. A shader captured on a simulator isn't likely to work correctly
+   on actual hardware.
 </li>
 
 <li markdown="1"> Build the app with SkSL warm-up using the following,
     as appropriate:
 
-Android:
-```terminal
-flutter build apk --bundle-sksl-path flutter_01.sksl.json
-```
-or
-```terminal
-flutter build appbundle --bundle-sksl-path flutter_01.sksl.json
-```
-
-iOS:
 ```terminal
 flutter build ios --bundle-sksl-path flutter_01.sksl.json
 ```
 
-If it's built for a driver test like `test_driver/app.dart`, make sure to also specify `--target=test_driver/app.dart` (e.g., `flutter build ios --bundle-sksl-path flutter_01.sksl.json --target=test_driver/app.dart`).
+If it's built for a driver test like `test_driver/app.dart`, make sure to also
+specify `--target=test_driver/app.dart` (for example, `flutter build
+ios --bundle-sksl-path flutter_01.sksl.json --target=test_driver/app.dart`).
 
 </li>
 
@@ -151,93 +158,4 @@ difference as illustrated in the beginning of this article.
 [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
 [integration tests]: {{site.url}}/cookbook/testing/integration/introduction
 [`transitions_perf_test.dart`]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
-[limitations and considerations]: {{site.url}}/perf/shader#limitations-and-considerations
-
-## Frequently asked questions
-
-1. **Why not just compile or warm up _all_ possible shaders?**<br><br>
-   If there were only a limited number of possible shaders,
-   then Flutter could compile all of them when an application is built.
-   However, for the best overall performance,
-   the Skia GPU backend used by Flutter dynamically generates
-   shaders based on many parameters at runtime
-   (for example draws, device models, and driver versions).
-   Due to all possible combinations of those parameters,
-   the number of possible shaders multiplies quickly.
-   In short, Flutter uses programs (app, Flutter, and Skia code)
-   to generate some other programs (shaders). The number of possible
-   shader programs that Flutter can generate is too large to
-   precompute and bundle with an application.
-
-2. **Can SkSLs captured from one device help shader compilation jank
-   on another device?**<br><br>
-   Theoretically, there's no guarantee that the SkSLs from one device
-   would help on another device (but they also won't cause any troubles
-   if SkSLs aren't compatible across devices).
-   Practically, as shown in the table on this [SkSL-based warmup issue][],
-   SkSLs work surprisingly well
-   even if 1) SkSLs are captured from iOS and then applied to Android devices,
-   or 2) SkSLs are captured from emulators and then applied to real mobile
-   devices. As the Flutter team has only a limited number of devices in the lab,
-   we currently don't have enough data to provide a big picture of cross-device
-   effectiveness. We'd love you to provide us more data points to see how it
-   works in the wild&mdash;[`FrameTiming`][] can be used to compute the worst frame
-   rasterization time in release mode; the worst frame rasterization time is
-   a good indicator on how severe the shader compilation jank is.
-   
-3. **Why can't you create a single "ubershader" and just compile that once?**<br><br>
-   One idea that people sometimes suggest is to create a single large shader that
-   implements all of Skia's features, and use that shader while the more optimized
-   bespoke shaders are being compiled.<br><br>
-   This is similar to [a solution used by the Dolphin Emulator][].<br><br>
-   In practice we believe implementing this for Flutter (or more specifically for
-   Skia) would be impractical. Such a shader would be fantastically large, essentially
-   reimplementing all of Skia on the GPU. This would itself take a long time to compile,
-   thus introducing more jank; it would not necessarily be fast enough to avoid jank 
-   even when compiled; and it would likely introduce fidelity issues (e.g. flickering)
-   since there would likely be differences in precise rendering between the optimized
-   shaders and the "ubershader".<br><br>
-   That said, Flutter and Skia are open source and we are eager to see proofs-of-concept
-   along these lines if this is something that interests you. To get started, please
-   see our [contribution guidelines].
-
-4. **This process would be easier if the `flutter` tool could do X!**<br><br>
-   There are a number of possible ways that the tooling around shader warm-up
-   could be improved. Some are already listed as ideas under our [Early-onset jank][]
-   project on GitHub. Please let us know what is important to you by giving
-   a thumbs-up to your feature request, or by filing a new one if one doesn't
-   already exist.
-
-## Future work
-
-On both Android and iOS, shader warm-up has a few drawbacks:
-1. The size of the deployed app is larger because it contains the bundled shaders.
-2. App startup latency is longer because the bundled shaders need to be precompiled.
-3. Most importantly, we are not happy with the developer experience of shader
-warm-up. In particular we view the process of performing training runs, and reasoning
-about the trade-offs imposed by (1) and (2) to be too onerous.
-
-Therefore, we are [continuing to investigate][] approaches to shader compilation jank, and
-jank more generally, that do not rely on shader warm-up. In particular, we are both
-working with Skia to [reduce the number of shaders][] it generates in response to
-Flutter’s requests, as well as investigating how much of Flutter could be implemented
-with a [small set of statically defined shaders][] that we could bundle with the Flutter
-Engine. Stay tuned for more progress!
-
-[`FrameTiming`]: {{site.api}}/flutter/dart-ui/FrameTiming-class.html
-[SkSL-based warmup issue]: {{site.repo.flutter}}/issues/53607#issuecomment-608587484
-[a solution used by the Dolphin Emulator]: https://dolphin-emu.org/blog/2017/07/30/ubershaders/
-[contribution guidelines]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
-[continuing to investigate]: {{site.repo.flutter}}/projects/188
-[Early-onset jank]: {{site.repo.flutter}}/projects/188
-[reduce the number of shaders]: https://bugs.chromium.org/p/skia/issues/detail?id=11844
-[small set of statically defined shaders]: {{site.repo.flutter}}/issues/77412
-
-If you have questions on SkSL shader warm-up,
-please comment on [Issue 60313][] and [Issue 53607][].
-If you have general shader warm-up questions,
-please refer to [Issue 32170][].
-
-[Issue 32170]: {{site.repo.flutter}}/issues/32170
-[Issue 53607]: {{site.repo.flutter}}/issues/53607
-[Issue 60313]: {{site.repo.flutter}}/issues/60313
+[Impeller]: {{site.repo.flutter}}/wiki/Impeller
