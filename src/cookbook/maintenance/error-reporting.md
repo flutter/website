@@ -23,7 +23,7 @@ How can you determine how often your users experiences bugs?
 Whenever an error occurs, create a report containing the
 error that occurred and the associated stacktrace.
 You can then send the report to an error tracking
-service, such as [Bugsnag][], Fabric, [Rollbar][], or Sentry.
+service, such as [Bugsnag][], Fabric, [Firebase Crashlytics][], [Rollbar][], or Sentry.
 
 The error tracking service aggregates all of the crashes your users
 experience and groups them together. This allows you to know how often your
@@ -121,3 +121,4 @@ see the [Sentry flutter example][] app.
 [`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
 [Sentry API]: {{site.pub-api}}/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
 [Sentry's site]: https://docs.sentry.io/platforms/flutter/
+[Firebase Crashlytics]: https://firebase.google.com/docs/crashlytics
