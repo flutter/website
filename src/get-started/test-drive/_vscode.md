@@ -37,9 +37,8 @@ contains a simple demo app that uses [Material Components][].
        in terminal to launch a simulator.
 
        ```terminal
-       $ open -a simulator
+   $ open -a simulator
        ```
-
        On Windows or Linux, it's not possible to launch an iOS simulator.
      {{site.alert.end}}
 
