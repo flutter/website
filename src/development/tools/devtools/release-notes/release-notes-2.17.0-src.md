@@ -23,11 +23,14 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 />
 
 ## Performance Updates
-* Added a Frame Analysis tab to the Performance page. When analyzing a janky Flutter frame,
-  this view provides hints for how to diagnose the jank and detects expensive operations
-  that may have contributed to the slow frame time. This view also shows a breakdown of
-  your Flutter frame time per phase (Build, Layout, Paint, and Raster) to try to guide
-  you in the right direction - [#4339](https://github.com/flutter/devtools/pull/4339)
+* Added a **Frame Analysis** tab to the Performance page.
+  When analyzing a janky Flutter frame,
+  this view provides hints for how to diagnose the jank and
+  detects expensive operations that might have contributed
+  to the slow frame time. This view also shows a breakdown of
+  your Flutter frame time per phase (**Build**, **Layout**, **Paint**, and **Raster**)
+  to try to guide you in the right direction
+  - [#4339](https://github.com/flutter/devtools/pull/4339)
 
 ![frame_analysis]({{site.url}}/development/tools/devtools/release-notes/images-2.17.0/frame_analysis.png "frame analysis")
 
