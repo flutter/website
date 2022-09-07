@@ -3,14 +3,17 @@
 Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 ## Inspector Updates
-* Added support for manually setting the package directories for your app. If you've ever 
-  loaded the Inspector and noticed that some of your widgets are not present in the 
-  Widget tree, this may be an indication that the package directories for your app 
-  have not been set or detected properly. Your package directories determine which 
-  widgets the Inspector considers to be from "your" application. If you see an 
-  empty Inspector widget tree, or if you develop widgets across multiple packages 
-  and want widgets from all these locations to show up in your tree, check the 
-  Inspector Settings dialog to ensure that your package directories are properly
+* Added support for manually setting the package directories for your app.
+  If you've ever loaded the Inspector and noticed that some of your widgets
+  aren't present in the widget tree, this might indicate that the package directories
+  for your app haven't been set or detected properly.
+  Your package directories determine which widgets
+  the Inspector considers to be from _your_ application.
+  If you see an empty Inspector widget tree,
+  or if you develop widgets across multiple packages 
+  and want widgets from all these locations to show up in your tree,
+  check the **Inspector Settings** dialog to ensure that your package
+  directories are properly
   configured. - [#4306](https://github.com/flutter/devtools/pull/4306)
   
 <img
