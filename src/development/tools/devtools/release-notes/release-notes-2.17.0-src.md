@@ -15,12 +15,8 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   check the **Inspector Settings** dialog to ensure that your package
   directories are properly
   configured. - [#4306](https://github.com/flutter/devtools/pull/4306)
-  
-<img
-  alt="package directories"
-  src="{{site.url}}/development/tools/devtools/release-notes/images-2.17.0/package_directories.png"
-  width="800"
-/>
+
+![frame_analysis]({{site.url}}/development/tools/devtools/release-notes/images-2.17.0/package_directories.png "package directories")
 
 ## Performance Updates
 * Added a **Frame Analysis** tab to the Performance page.
