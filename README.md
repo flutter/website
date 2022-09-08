@@ -1,7 +1,9 @@
 [![Flutter logo]](https://docs.flutter.dev)
+
 # [Flutter][] website 
 
 [![Build Status][]][Repo on GitHub Actions]
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/website/badge)](https://api.securityscorecards.dev/projects/github.com/flutter/website)
 
 > **Note:** We've made significant changes to this
 > repo to make it easier to use and maintain.
