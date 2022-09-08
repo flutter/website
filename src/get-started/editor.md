@@ -25,7 +25,7 @@ that's OK, skip ahead to the [next step: Test drive][].
   <li class="nav-item">
     <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
   </li>
-    <li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
