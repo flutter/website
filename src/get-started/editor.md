@@ -23,7 +23,7 @@ that's OK, skip ahead to the [next step: Test drive][].
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
   <li class="nav-item">
-    <a class="nav-link" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
+    <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
   </li>
     <li class="nav-item">
     <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
@@ -35,7 +35,7 @@ that's OK, skip ahead to the [next step: Test drive][].
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-<div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
 ## Install VS Code
 
@@ -58,7 +58,7 @@ VS Code is a lightweight editor with complete Flutter app execution and debug su
  1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
 
 </div>
-<div class="tab-pane active" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
+<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
 
 ## Install Android Studio
 
