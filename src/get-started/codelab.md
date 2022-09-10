@@ -538,7 +538,7 @@ lazily, on demand.
     ```
 
     {:.numbered-code-notes}
-     1. The `itemBuilder` callback is called once per suggested word pairing,
+     1. The `itemBuilder` callback is called once per row,
         and places each suggestion into a `ListTile` row. For even rows, the
         function adds a `ListTile` row for the word pairing. For odd rows, the
         function adds a `Divider` widget to visually separate the entries. Note
