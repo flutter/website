@@ -23,10 +23,10 @@ that's OK, skip ahead to the [next step: Test drive][].
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="true">Android Studio and IntelliJ</a>
+    <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="false">Visual Studio Code</a>
+    <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="emacs-tab" href="#emacs" role="tab" aria-controls="emacs" aria-selected="false">Emacs</a>
@@ -35,8 +35,30 @@ that's OK, skip ahead to the [next step: Test drive][].
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
-<div class="tab-pane active" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
+## Install VS Code
+
+VS Code is a lightweight editor with complete Flutter app execution and debug support.
+
+* [VS Code][], latest stable version
+
+## Install the Flutter and Dart plugins
+
+ 1. Start VS Code.
+ 1. Invoke **View > Command Palette...**.
+ 1. Type "install", and select **Extensions: Install Extensions**.
+ 1. Type "flutter" in the extensions search field, select **Flutter** in the list,
+    and click **Install**. This also installs the required Dart plugin.
+
+## Validate your setup with the Flutter Doctor
+
+ 1. Invoke **View > Command Palette...**.
+ 1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
+ 1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
+
+</div>
+<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
 
 ## Install Android Studio
 
@@ -72,29 +94,6 @@ Use the following instructions for Linux or Windows:
    1. Open plugin preferences (**File > Settings > Plugins**).
    1. Select **Marketplace**,  select the Flutter plugin and click
       **Install**.
-
-</div>
-<div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
-
-## Install VS Code
-
-VS Code is a lightweight editor with complete Flutter app execution and debug support.
-
-* [VS Code][], latest stable version
-
-## Install the Flutter and Dart plugins
-
- 1. Start VS Code.
- 1. Invoke **View > Command Palette...**.
- 1. Type "install", and select **Extensions: Install Extensions**.
- 1. Type "flutter" in the extensions search field, select **Flutter** in the list,
-    and click **Install**. This also installs the required Dart plugin.
-
-## Validate your setup with the Flutter Doctor
-
- 1. Invoke **View > Command Palette...**.
- 1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
- 1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
 
 </div>
 <div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">

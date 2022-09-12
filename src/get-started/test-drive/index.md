@@ -19,10 +19,10 @@ Flutter apps.
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="true">Android Studio and IntelliJ</a>
+    <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="false">Visual Studio Code</a>
+    <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="terminal-tab" href="#terminal" role="tab" aria-controls="terminal" aria-selected="false">Terminal & editor</a>
@@ -31,8 +31,8 @@ Flutter apps.
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-  {% include_relative _androidstudio.md %}
   {% include_relative _vscode.md %}
+  {% include_relative _androidstudio.md %}
   {% include_relative _terminal.md %}
 </div>
 
