@@ -226,6 +226,8 @@ as well as many other open source packages, on [pub.dev][].
 
     ```terminal
     $ flutter pub add english_words
+    ```
+    ```terminal
     Resolving dependencies...
     + english_words 4.0.0
       path 1.8.0 (1.8.1 available)
@@ -258,6 +260,8 @@ as well as many other open source packages, on [pub.dev][].
 
     ```terminal
     $ flutter pub get
+    ```
+    ```terminal
     Running "flutter pub get" in startup_namer...
     Process finished with exit code 0
     ```
