@@ -262,7 +262,7 @@ The output will look something like the following:
     your project. You should see the following in the console:
 
     ```terminal
-    $ flutter pub get
+$ flutter pub get
     ```
     ```terminal
     Running "flutter pub get" in startup_namer...
