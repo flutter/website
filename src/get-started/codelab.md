@@ -225,7 +225,7 @@ as well as many other open source packages, on [pub.dev][].
  1. Add `english_words` package to your project as follows:
 
     ```terminal
-    $ flutter pub add english_words
+$ flutter pub add english_words
     ```
 
 The output will look something like the following:
