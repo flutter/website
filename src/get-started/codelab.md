@@ -227,6 +227,9 @@ as well as many other open source packages, on [pub.dev][].
     ```terminal
     $ flutter pub add english_words
     ```
+
+The output will look something like the following:
+
     ```terminal
     Resolving dependencies...
     + english_words 4.0.0
