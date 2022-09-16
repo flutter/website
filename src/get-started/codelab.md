@@ -73,8 +73,6 @@ The animated GIF shows how the app works at the completion of part 1.
 
   You need two pieces of software to complete this lab: the
   [Flutter SDK][] and [an editor][].
-  This codelab assumes Android Studio,
-  but you can use your preferred editor.
 
   You can run this codelab by using any of the following devices:
 
@@ -83,7 +81,7 @@ The animated GIF shows how the app works at the completion of part 1.
   * The [iOS simulator][] (requires installing Xcode tools)
   * The [Android emulator][] (requires setup in Android Studio)
   * A browser (Chrome is required for debugging)
-  * As a [Windows][], [Linux][], or [macOS][] desktop application
+  * A [Windows][], [Linux][], or [macOS][] desktop application
 {{site.alert.end}}
 
 Every Flutter app you
@@ -163,17 +161,17 @@ where the Dart code lives.
 
     {{site.alert.tip}}
       When pasting code into your app, indentation can become skewed.
-      You can fix this with the following Flutter tools:
+      You can fix this with the following formatting tool:
 
+      * VS Code: Right-click and select **Format Document**.
       * Android Studio and IntelliJ IDEA: Right-click the code and
         select **Reformat Code with dartfmt**.
-      * VS Code: Right-click and select **Format Document**.
       * Terminal: Run `flutter format <filename>`.
     {{site.alert.end}}
 
  2. Run the app [in the way your IDE describes][].
     You should see either Android, iOS, Windows, Linux, macOS,
-    or web output, depending on your device.
+    or web output, depending on your chosen device.
 
     {% indent %}
       {% include docs/ios-windows-figure-pair.md image="hello-world.png" alt="Hello world app" %}
@@ -197,15 +195,15 @@ where the Dart code lives.
   Flutter offers a rich set of Material widgets.
   It's a good idea to have a `uses-material-design: true` entry
   in the `flutter` section of your `pubspec.yaml` file.
-  This will allow you to use more features of Material,
-  such as their set of predefined [Icons][].
+  This allows you to use more features of Material,
+  such as its set of predefined [Icons][].
 * The app extends `StatelessWidget`, which makes the app itself a
-  widget. In Flutter, almost everything is a widget, including
-  alignment, padding, and layout.
+  widget. In Flutter, almost everything is a widget,
+  including alignment, padding, and layout.
 * The `Scaffold` widget, from the Material library,
   provides a default app bar, and a body property that
-  holds the widget tree for the home screen. The widget subtree
-  can be quite complex.
+  holds the widget tree for the home screen.
+  The widget subtree can be quite complex.
 * A widget’s main job is to provide a `build()` method
   that describes how to display the widget in terms of other,
   lower level widgets.
@@ -222,47 +220,29 @@ English words plus some utility functions.
 You can find the `english_words` package,
 as well as many other open source packages, on [pub.dev][].
 
+The `pubspec.yaml` file manages the assets and dependencies
+for a Flutter app.
+
  1. Add `english_words` package to your project as follows:
 
-    ```terminal
-    $ flutter pub add english_words
+    In your IDE, add the line `english_words 4.0.0`
+    just after the `cupertino_icons 1.0.4` line 
+    and save the file.
+
+    Saving the file causes the dependencies to be
+    fetched. You should now see 
+    output similar to the following:
+
+    ```
     Resolving dependencies...
+    These packages are no longer being depended on:
     + english_words 4.0.0
-      path 1.8.0 (1.8.1 available)
-      source_span 1.8.1 (1.8.2 available)
-      test_api 0.4.3 (0.4.9 available)
     Downloading english_words 4.0.0...
+
     Changed 1 dependency!
     ```
 
-    The `pubspec.yaml` file manages the assets and dependencies
-    for a Flutter app. In `pubspec.yaml`, you will see
-    that the `english_words` dependency has been added:
-
-    <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
-    ```diff
-    --- step1_base/pubspec.yaml
-    +++ step2_use_package/pubspec.yaml
-    @@ -25,4 +25,5 @@
-     dependencies:
-       flutter:
-         sdk: flutter
-       cupertino_icons: ^1.0.2
-    +  english_words: ^4.0.0
-    ```
-
- 2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
-    click **Pub get**. This pulls the package into
-    your project. You should see the following in the console:
-
-    ```terminal
-    $ flutter pub get
-    Running "flutter pub get" in startup_namer...
-    Process finished with exit code 0
-    ```
-
-    Performing `Pub get` also auto-generates the `pubspec.lock`
+    Getting the dependencies also auto-generates the `pubspec.lock`
     file with a list of all packages pulled into the project and
     their version numbers.
 
@@ -275,7 +255,7 @@ as well as many other open source packages, on [pub.dev][].
       import 'package:flutter/material.dart';
     ```
 
-    As you type, Android Studio gives you suggestions for libraries to import.
+    As you type, the IDE gives you suggestions for libraries to import.
     It then renders the import string in gray, letting you know that the
     imported library is unused (so far).
 
