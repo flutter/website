@@ -224,8 +224,13 @@ as well as many other open source packages, on [pub.dev][].
 
  1. Add `english_words` package to your project as follows:
 
-    ```terminal
-    $ flutter pub add english_words
+```terminal
+ $ flutter pub add english_words
+```
+
+The output will look something like the following:
+
+ ```terminal
     Resolving dependencies...
     + english_words 4.0.0
       path 1.8.0 (1.8.1 available)
@@ -233,38 +238,41 @@ as well as many other open source packages, on [pub.dev][].
       test_api 0.4.3 (0.4.9 available)
     Downloading english_words 4.0.0...
     Changed 1 dependency!
-    ```
-
-    The `pubspec.yaml` file manages the assets and dependencies
-    for a Flutter app. In `pubspec.yaml`, you will see
-    that the `english_words` dependency has been added:
-
-    <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
-    ```diff
-    --- step1_base/pubspec.yaml
-    +++ step2_use_package/pubspec.yaml
-    @@ -25,4 +25,5 @@
-     dependencies:
-       flutter:
-         sdk: flutter
-       cupertino_icons: ^1.0.2
-    +  english_words: ^4.0.0
-    ```
+```
+The `pubspec.yaml` file manages the assets and dependencies
+for a Flutter app. In `pubspec.yaml`, you will see
+that the `english_words` dependency has been added:
+    
+<?code-excerpt path-base="codelabs/startup_namer"?>
+<?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
+```diff
+--- step1_base/pubspec.yaml
++++ step2_use_package/pubspec.yaml
+@@ -25,4 +25,5 @@
+ dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+ +  english_words: ^4.0.0
+```
 
  2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
     click **Pub get**. This pulls the package into
     your project. You should see the following in the console:
 
-    ```terminal
-    $ flutter pub get
-    Running "flutter pub get" in startup_namer...
-    Process finished with exit code 0
-    ```
+```terminal
+$ `flutter pub get`
+```
+The output will look something like the following:
 
-    Performing `Pub get` also auto-generates the `pubspec.lock`
-    file with a list of all packages pulled into the project and
-    their version numbers.
+```terminal
+Running "flutter pub get" in startup_namer...
+Process finished with exit code 0
+```
+
+Performing `Pub get` also auto-generates the `pubspec.lock`
+file with a list of all packages pulled into the project and
+their version numbers.
 
  3. In `lib/main.dart`, import the new package:
 
