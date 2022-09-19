@@ -80,6 +80,16 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "AnimatedList",
+    "description": "A scrolling container that animates items when they are inserted or removed.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/widgets/AnimatedList-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "AnimatedListState",
     "description": "The state for a scrolling container that animates items when they are inserted or removed.",
     "categories": [
