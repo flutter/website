@@ -5,29 +5,12 @@
 [![Build Status][]][Repo on GitHub Actions]
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/website/badge)](https://api.securityscorecards.dev/projects/github.com/flutter/website)
 
-> **Note:** We've made significant changes to this
-> repo to make it easier to use and maintain.
-> If you've already cloned this repo, please do it again.
-> The most significant differences include:
-> * If you want to build the site,
->   a Docker container now makes build setup simpler.
->   For example, you no longer need to install nvm.
-> * The default branch is now called `main`
->   (it was previously `master`).
-> * Some files — in particular, image files —
->   have been moved.
-> 
-> Stay tuned for another significant update to
-> the website repo later this year.
-> 
-> Thanks, as always, for your continued support!
-
 ## Table of contents
 * [Issues, bugs, and requests](#issues-bugs-and-requests)
 * [Before you submit a PR](#before-you-submit-a-pr)
 * [Before you build this site](#before-you-build-this-site)
   - [1. Get the prerequisites](#1-get-the-prerequisites)
-  - [2. Clone this repo _and_ its submodules](#2-clone-this-repo-and-its-submodules)
+  - [2. Clone this repo _and_ its submodules][]
 * [Setting up your local environment and serving changes](#setting-up-your-local-environment-and-serving-changes)
 * [Creating and/or editing DartPad example code](#creating-andor-editing-dartpad-example-code)
   - [DartPad example code in GitHub gists](#dartpad-example-code-in-github-gists)
@@ -35,6 +18,7 @@
 * [Deploying to a staging site](#deploying-to-a-staging-site)
 * [Writing for flutter.dev](#writing-for-flutterdev)
 
+[2. Clone this repo _and_ its submodules]: #2-clone-this-repo-and-its-submodules
 
 ## Issues, bugs, and requests
 
@@ -103,7 +87,8 @@ Install the following tools, if you don't have them already:
 
 > **Note:** This repo has git _submodules_, 
 > which affects how you clone it. 
-> The GitHub documentation has general help on [forking][] and [cloning][] repos.
+> The GitHub documentation has general help on [forking][] and
+> [cloning][] repos.
 
 If you are working in the Windows desktop environment, make sure you have Git
 `autocrlf` set to `input` **before** initializing the submodules. This
@@ -146,9 +131,10 @@ _choose one_ of the following submodule-cloning techniques:
    $ git checkout -b <BRANCH_NAME>
    ```
    
-1. If the Docker Desktop application isn't already running, start it.
-   Look at its status icon: 
-   if it has an exclamation point (`!`), then update Docker Desktop.
+1. If the Docker Desktop application isn't already running,
+   start it. Look at its status icon: 
+   if it has an exclamation point (`!`),
+   then update Docker Desktop.
 
 1. Run the initial setup command:
    ```bash
