@@ -31,8 +31,8 @@ check out the following workshop:
 {% endcomment -%}
 <style>pre .highlight { background-color: #dfd; }</style>
 
-This is a guide to creating your first Flutter app. If you
-are familiar with object-oriented code and basic programming
+This is a guide to creating your first Flutter app.
+If you are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
 previous experience with Dart, mobile, desktop, or web programming.
@@ -83,6 +83,11 @@ The animated GIF shows how the app works at the completion of part 1.
   * A browser (Chrome is required for debugging)
   * A [Windows][], [Linux][], or [macOS][] desktop application
 {{site.alert.end}}
+
+[Android]: {{site.url}}/get-started/install/macos#set-up-your-android-device
+[Android emulator]: {{site.url}}/get-started/install/macos#set-up-the-android-emulator
+[iOS]: {{site.url}}/get-started/install/macos#deploy-to-ios-devices
+[iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
 
 Every Flutter app you
 create also compiles for the web. In your IDE under
@@ -223,28 +228,66 @@ as well as many other open source packages, on [pub.dev][].
 The `pubspec.yaml` file manages the assets and dependencies
 for a Flutter app.
 
- 1. Add `english_words` package to your project as follows:
+ 1. Add the `english_words` package to your project as follows:
 
     In your IDE, add the line `english_words 4.0.0`
     just after the `cupertino_icons 1.0.4` line 
     and save the file.
 
     Saving the file causes the dependencies to be
-    fetched. You should now see 
-    output similar to the following:
+    fetched. The equivalent command-line prompt is
+    the following:
 
-    ```
-    Resolving dependencies...
-    These packages are no longer being depended on:
-    + english_words 4.0.0
-    Downloading english_words 4.0.0...
+```terminal
+$ `flutter pub add english_words`
+```
 
-    Changed 1 dependency!
-    ```
+The output will look something like the following:
 
-    Getting the dependencies also auto-generates the `pubspec.lock`
-    file with a list of all packages pulled into the project and
-    their version numbers.
+```terminal
+Resolving dependencies...
+These packages are no longer being depended on:
++ english_words 4.0.0
+Downloading english_words 4.0.0...
+
+Changed 1 dependency!
+```
+
+Fetching the dependencies also auto-generates the `pubspec.lock`
+file with a list of all packages pulled into the project and
+their version numbers.
+
+The `pubspec.yaml` file manages the assets and dependencies
+for a Flutter app. In `pubspec.yaml`, you will see
+that the `english_words` dependency has been added:
+    
+<?code-excerpt path-base="codelabs/startup_namer"?>
+<?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
+```diff
+--- step1_base/pubspec.yaml
++++ step2_use_package/pubspec.yaml
+@@ -25,4 +25,5 @@
+ dependencies:
+   flutter:
+     sdk: flutter
+   cupertino_icons: ^1.0.2
++  english_words: ^4.0.0
+```
+
+ 2. While viewing the `pubspec.yaml` file in your IDE's editor view,
+    click **Pub get**. This pulls the package into
+    your project. The equivalent command-line prompt is as follows:
+
+```terminal
+$ `flutter pub get`
+```
+
+The output will look something like the following:
+
+```terminal
+Running "flutter pub get" in startup_namer...
+Process finished with exit code 0
+```
 
  3. In `lib/main.dart`, import the new package:
 
@@ -339,8 +382,9 @@ that creates an instance of 2) a `State` class. The `StatefulWidget`
 class is, itself, immutable and can be thrown away and regenerated,
 but the `State` class persists over the lifetime of the widget.
 
-In this step, you’ll add a stateful widget, `RandomWords`, which creates
-its `State` class, `_RandomWordsState`. You'll then use `RandomWords` as
+In this step, you’ll add a stateful widget, `RandomWords`,
+which creates its `State` class, `_RandomWordsState`.
+You'll then use `RandomWords` as
 a child inside the existing `MyApp` stateless widget.
 
 <ol markdown="1">
@@ -701,8 +745,6 @@ where you add the following functionality:
 
 
 [an editor]: {{site.url}}/get-started/editor
-[Android]: install/macos#set-up-your-android-device
-[Android emulator]: install/macos#set-up-the-android-emulator
 [Building a web application with Flutter]: {{site.url}}/web
 [DevTools]: {{site.url}}/development/tools/devtools
 [enabled web]: {{site.url}}/get-started/web
@@ -714,8 +756,6 @@ where you add the following functionality:
 [hot reload]: {{site.url}}/get-started/test-drive
 [in the way your IDE describes]: {{site.url}}/get-started/test-drive
 [Icons]: https://fonts.google.com/icons
-[iOS]: install/macos#deploy-to-ios-devices
-[iOS simulator]: install/macos#set-up-the-ios-simulator
 [Material]: {{site.material}}/guidelines
 [Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
