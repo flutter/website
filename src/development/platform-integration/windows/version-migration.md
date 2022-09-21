@@ -24,11 +24,21 @@ files
 5. Run `flutter create --platforms=windows .`
 6. Review the changes to your `windows/runner/CMakeLists.txt` and
 `windows/runner/Runner.rc` files
+7. Verify your app builds using `flutter build windows`
+
+{{site.alert.note}}
+  Follow the [run loop migration guide][] if the build fails
+  with the following error message:
+
+  ```
+  flutter_window.obj : error LNK2019: unresolved external symbol "public: void __cdecl RunLoop::RegisterFlutterInstance(class flutter::FlutterEngine *)" (?RegisterFlutterInstance@RunLoop@@QEAAXPEAVFlutterEngine@flutter@@@Z) referenced in function "protected: virtual bool __cdecl FlutterWindow::OnCreate(void)" (?OnCreate@FlutterWindow@@MEAA_NXZ)
+  ```
+{{site.alert.end}}
 
 ## Example
 
 Here's an example of migrating a project: [flutter/gallery#721][].
 
 [Build and release a Windows app]: {{site.url}}/deployment/windows#updating-the-apps-version-number
-[`flutter migrate` command]: https://flutter.dev/go/flutter-migrate
+[run loop migration guide]: {{site.url}}/development/platform-integration/windows/run-loop-migration
 [flutter/gallery#721]: {{site.github}}/flutter/gallery/pull/721/files
