@@ -25,7 +25,9 @@ Your project can be updated using these steps:
 1. Verify you are on Flutter version 2.5 or newer using `flutter --version`
 2. If needed, use `flutter upgrade` to update to the latest version of the
 Flutter SDK
-3. Backup your project, possibly using git or some other version control system
+3. Backup your project, possibly using git or some other version control system,
+   since you'll need to reapply any local changes you've made  (if any) to your
+   project in a later step
 4. Delete all files under the `windows/runner` folder
 5. Run `flutter create --platforms=windows .` to recreate the Windows project
 6. Review the changes to files in the `windows/runner` folder
