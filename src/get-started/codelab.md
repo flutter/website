@@ -250,10 +250,10 @@ that the `english_words` dependency has been added:
 +++ step2_use_package/pubspec.yaml
 @@ -25,4 +25,5 @@
  dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^1.0.2
- +  english_words: ^4.0.0
+   flutter:
+     sdk: flutter
+   cupertino_icons: ^1.0.2
++  english_words: ^4.0.0
 ```
 
  2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
