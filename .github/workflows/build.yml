@@ -27,17 +27,17 @@ jobs:
       matrix:
         include:
           - name: "Beta channel"
-            channel: beta
+            branch: beta
             experimental: true
           - name: "Stable channel"
-            channel: stable
+            branch: stable
             experimental: false
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+        with:
+          submodules: recursive
       - name: Test
-        run: make test
-        env:
-          TEST_TARGET_CHANNEL: ${{ matrix.channel }}
+        run: make test FLUTTER_TEST_BRANCH=${{ matrix.branch }}
         continue-on-error: ${{ matrix.experimental }}
 
   deploy:
@@ -50,20 +50,16 @@ jobs:
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
         with:
-          submodules: "recursive"
-      - name: Install Node
+          submodules: recursive
+      - name: Build site and check links
+        run: make build
+      - name: Install Node for Firebase install
         uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: Install firebase tools
-        run: npm ci
-      - name: Update path
-        run: echo "./node_modules/.bin/" >> $GITHUB_PATH
-      - name: Build
-        run: make build
-        env:
-          DISABLE_TESTS: 1
-      - name: Deploy
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools@11.0.1
+      - name: Deploy to Firebase hosting
         run: make deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
