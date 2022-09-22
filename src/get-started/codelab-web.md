@@ -61,11 +61,6 @@ The animated GIF shows how the app works at the completion of this lab.
   * [Chrome browser][]
   * [Text editor or IDE][editor]
 
-  For a web-only codelab,
-  we recommend either [IntelliJ IDEA or VS Code][editor].
-  Android Studio and Xcode aren’t required.
-  You can also use a text editor, if you prefer.
-
   While developing, run your web app in Chrome
   so you can debug with Dart DevTools.
 {{site.alert.end}}
@@ -82,13 +77,15 @@ make sure that you have Flutter installed correctly.
 ```terminal
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 2.8.1, on macOS 12.1 21C52 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 31.0.0)
-[✓] Xcode - develop for iOS and macOS (Xcode 13.2.1)
+[✓] Flutter (Channel master, 3.4.0-19.0.pre.254, on macOS 12.6 21G115
+    darwin-arm64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+[✓] Xcode - develop for iOS and macOS (Xcode 14.0)
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 2020.3)
-[✓] VS Code (version 1.63.2)
-[✓] Connected device (2 available)
+[✓] Android Studio (version 2021.2)
+[✓] VS Code (version 1.71.1)
+[✓] Connected device (4 available)
+[✓] HTTP Host Availability
 
 • No issues found!
 ```
@@ -98,10 +95,10 @@ then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
 It's okay if the Android toolchain, Android Studio,
-and the Xcode tools are not installed,
+and the Xcode tools aren't installed,
 since the app is intended for the web only.
 If you later want this app to work on mobile,
-you will need to do additional installation and setup.
+you'll need to do additional installation and setup.
 </li>
 
 <li markdown="1">List the devices.<br>
@@ -111,9 +108,17 @@ You should see something like the following:
 
 ``` terminal
 $ flutter devices
-1 connected device:
+4 connected devices:
 
-Chrome (web) • chrome • web-javascript • Google Chrome 97.0.4692.99
+sdk gphone64 arm64 (mobile) • emulator-5554                        •
+android-arm64  • Android 13 (API 33) (emulator)
+iPhone 14 Pro Max (mobile)  • 45A72BE1-2D4E-4202-9BB3-D6AE2601BEF8 • ios
+• com.apple.CoreSimulator.SimRuntime.iOS-16-0 (simulator)
+macOS (desktop)             • macos                                •
+darwin-arm64   • macOS 12.6 21G115 darwin-arm64
+Chrome (web)                • chrome                               •
+web-javascript • Google Chrome 105.0.5195.125
+
 ```
 
 The **Chrome** device automatically starts Chrome and enables the use 

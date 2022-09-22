@@ -31,8 +31,8 @@ check out the following workshop:
 {% endcomment -%}
 <style>pre .highlight { background-color: #dfd; }</style>
 
-This is a guide to creating your first Flutter app. If you
-are familiar with object-oriented code and basic programming
+This is a guide to creating your first Flutter app.
+If you are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
 previous experience with Dart, mobile, desktop, or web programming.
@@ -73,8 +73,6 @@ The animated GIF shows how the app works at the completion of part 1.
 
   You need two pieces of software to complete this lab: the
   [Flutter SDK][] and [an editor][].
-  This codelab assumes Android Studio,
-  but you can use your preferred editor.
 
   You can run this codelab by using any of the following devices:
 
@@ -83,8 +81,13 @@ The animated GIF shows how the app works at the completion of part 1.
   * The [iOS simulator][] (requires installing Xcode tools)
   * The [Android emulator][] (requires setup in Android Studio)
   * A browser (Chrome is required for debugging)
-  * As a [Windows][], [Linux][], or [macOS][] desktop application
+  * A [Windows][], [Linux][], or [macOS][] desktop application
 {{site.alert.end}}
+
+[Android]: {{site.url}}/get-started/install/macos#set-up-your-android-device
+[Android emulator]: {{site.url}}/get-started/install/macos#set-up-the-android-emulator
+[iOS]: {{site.url}}/get-started/install/macos#deploy-to-ios-devices
+[iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
 
 Every Flutter app you
 create also compiles for the web. In your IDE under
@@ -163,17 +166,17 @@ where the Dart code lives.
 
     {{site.alert.tip}}
       When pasting code into your app, indentation can become skewed.
-      You can fix this with the following Flutter tools:
+      You can fix this with the following formatting tool:
 
+      * VS Code: Right-click and select **Format Document**.
       * Android Studio and IntelliJ IDEA: Right-click the code and
         select **Reformat Code with dartfmt**.
-      * VS Code: Right-click and select **Format Document**.
       * Terminal: Run `flutter format <filename>`.
     {{site.alert.end}}
 
  2. Run the app [in the way your IDE describes][].
     You should see either Android, iOS, Windows, Linux, macOS,
-    or web output, depending on your device.
+    or web output, depending on your chosen device.
 
     {% indent %}
       {% include docs/ios-windows-figure-pair.md image="hello-world.png" alt="Hello world app" %}
@@ -197,15 +200,15 @@ where the Dart code lives.
   Flutter offers a rich set of Material widgets.
   It's a good idea to have a `uses-material-design: true` entry
   in the `flutter` section of your `pubspec.yaml` file.
-  This will allow you to use more features of Material,
-  such as their set of predefined [Icons][].
+  This allows you to use more features of Material,
+  such as its set of predefined [Icons][].
 * The app extends `StatelessWidget`, which makes the app itself a
-  widget. In Flutter, almost everything is a widget, including
-  alignment, padding, and layout.
+  widget. In Flutter, almost everything is a widget,
+  including alignment, padding, and layout.
 * The `Scaffold` widget, from the Material library,
   provides a default app bar, and a body property that
-  holds the widget tree for the home screen. The widget subtree
-  can be quite complex.
+  holds the widget tree for the home screen.
+  The widget subtree can be quite complex.
 * A widget’s main job is to provide a `build()` method
   that describes how to display the widget in terms of other,
   lower level widgets.
@@ -222,23 +225,38 @@ English words plus some utility functions.
 You can find the `english_words` package,
 as well as many other open source packages, on [pub.dev][].
 
- 1. Add `english_words` package to your project as follows:
+The `pubspec.yaml` file manages the assets and dependencies
+for a Flutter app.
+
+ 1. Add the `english_words` package to your project as follows:
+
+    In your IDE, add the line `english_words 4.0.0`
+    just after the `cupertino_icons 1.0.4` line 
+    and save the file.
+
+    Saving the file causes the dependencies to be
+    fetched. The equivalent command-line prompt is
+    the following:
 
 ```terminal
- $ flutter pub add english_words
+$ `flutter pub add english_words`
 ```
 
 The output will look something like the following:
 
- ```terminal
-    Resolving dependencies...
-    + english_words 4.0.0
-      path 1.8.0 (1.8.1 available)
-      source_span 1.8.1 (1.8.2 available)
-      test_api 0.4.3 (0.4.9 available)
-    Downloading english_words 4.0.0...
-    Changed 1 dependency!
+```terminal
+Resolving dependencies...
+These packages are no longer being depended on:
++ english_words 4.0.0
+Downloading english_words 4.0.0...
+
+Changed 1 dependency!
 ```
+
+Fetching the dependencies also auto-generates the `pubspec.lock`
+file with a list of all packages pulled into the project and
+their version numbers.
+
 The `pubspec.yaml` file manages the assets and dependencies
 for a Flutter app. In `pubspec.yaml`, you will see
 that the `english_words` dependency has been added:
@@ -256,23 +274,20 @@ that the `english_words` dependency has been added:
 +  english_words: ^4.0.0
 ```
 
- 2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
+ 2. While viewing the `pubspec.yaml` file in your IDE's editor view,
     click **Pub get**. This pulls the package into
-    your project. You should see the following in the console:
+    your project. The equivalent command-line prompt is as follows:
 
 ```terminal
 $ `flutter pub get`
 ```
+
 The output will look something like the following:
 
 ```terminal
 Running "flutter pub get" in startup_namer...
 Process finished with exit code 0
 ```
-
-Performing `Pub get` also auto-generates the `pubspec.lock`
-file with a list of all packages pulled into the project and
-their version numbers.
 
  3. In `lib/main.dart`, import the new package:
 
@@ -283,7 +298,7 @@ their version numbers.
       import 'package:flutter/material.dart';
     ```
 
-    As you type, Android Studio gives you suggestions for libraries to import.
+    As you type, the IDE gives you suggestions for libraries to import.
     It then renders the import string in gray, letting you know that the
     imported library is unused (so far).
 
@@ -367,8 +382,9 @@ that creates an instance of 2) a `State` class. The `StatefulWidget`
 class is, itself, immutable and can be thrown away and regenerated,
 but the `State` class persists over the lifetime of the widget.
 
-In this step, you’ll add a stateful widget, `RandomWords`, which creates
-its `State` class, `_RandomWordsState`. You'll then use `RandomWords` as
+In this step, you’ll add a stateful widget, `RandomWords`,
+which creates its `State` class, `_RandomWordsState`.
+You'll then use `RandomWords` as
 a child inside the existing `MyApp` stateless widget.
 
 <ol markdown="1">
@@ -729,8 +745,6 @@ where you add the following functionality:
 
 
 [an editor]: {{site.url}}/get-started/editor
-[Android]: install/macos#set-up-your-android-device
-[Android emulator]: install/macos#set-up-the-android-emulator
 [Building a web application with Flutter]: {{site.url}}/web
 [DevTools]: {{site.url}}/development/tools/devtools
 [enabled web]: {{site.url}}/get-started/web
@@ -742,8 +756,6 @@ where you add the following functionality:
 [hot reload]: {{site.url}}/get-started/test-drive
 [in the way your IDE describes]: {{site.url}}/get-started/test-drive
 [Icons]: https://fonts.google.com/icons
-[iOS]: install/macos#deploy-to-ios-devices
-[iOS simulator]: install/macos#set-up-the-ios-simulator
 [Material]: {{site.material}}/guidelines
 [Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
 [part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2

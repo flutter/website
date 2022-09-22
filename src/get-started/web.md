@@ -21,9 +21,9 @@ you need the following software:
 * [Chrome][]; debugging a web app requires
   the Chrome browser.
 * Optional: An IDE that supports Flutter.
-  You can install [Android Studio][], [IntelliJ IDEA][],
-  or [Visual Studio Code][] and
-  [install the Flutter and Dart plugins][]
+  You can install [Visual Studio Code][],
+  [Android Studio][], [IntelliJ IDEA][].
+  Also [install the Flutter and Dart plugins][]
   to enable language support and tools for refactoring,
   running, debugging, and reloading your web app
   within an editor. See [setting up an editor][]
