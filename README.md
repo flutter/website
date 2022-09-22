@@ -1,40 +1,32 @@
 [![Flutter logo]](https://docs.flutter.dev)
 
+[Flutter logo]: https://github.com/dart-lang/site-shared/blob/main/src/_assets/image/flutter/icon/64.png?raw=1
+
 # [Flutter][] website 
 
 [![Build Status][]][Repo on GitHub Actions]
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/website/badge)](https://api.securityscorecards.dev/projects/github.com/flutter/website)
 
-> **Note:** We've made significant changes to this
-> repo to make it easier to use and maintain.
-> If you've already cloned this repo, please do it again.
-> The most significant differences include:
-> * If you want to build the site,
->   a Docker container now makes build setup simpler.
->   For example, you no longer need to install nvm.
-> * The default branch is now called `main`
->   (it was previously `master`).
-> * Some files — in particular, image files —
->   have been moved.
-> 
-> Stay tuned for another significant update to
-> the website repo later this year.
-> 
-> Thanks, as always, for your continued support!
+[Build Status]: https://github.com/flutter/website/workflows/build/badge.svg
+[Flutter]: https://docs.flutter.dev/
+[Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amaster
 
 ## Table of contents
+
 * [Issues, bugs, and requests](#issues-bugs-and-requests)
 * [Before you submit a PR](#before-you-submit-a-pr)
 * [Before you build this site](#before-you-build-this-site)
   - [1. Get the prerequisites](#1-get-the-prerequisites)
-  - [2. Clone this repo _and_ its submodules](#2-clone-this-repo-and-its-submodules)
-* [Setting up your local environment and serving changes](#setting-up-your-local-environment-and-serving-changes)
+  - [2. Clone this repo _and_ its submodules][]
+* [Setting up your local environment and serving changes][]
 * [Creating and/or editing DartPad example code](#creating-andor-editing-dartpad-example-code)
   - [DartPad example code in GitHub gists](#dartpad-example-code-in-github-gists)
   - [DartPad example code in this repo](#dartpad-example-code-in-this-repo)
 * [Deploying to a staging site](#deploying-to-a-staging-site)
 * [Writing for flutter.dev](#writing-for-flutterdev)
 
+[2. Clone this repo _and_ its submodules]: #2-clone-this-repo-and-its-submodules
+[Setting up your local environment and serving changes]: #setting-up-your-local-environment-and-serving-changes
 
 ## Issues, bugs, and requests
 
@@ -67,7 +59,8 @@ But here are a few notes to keep in mind before you submit a PR:
   and submit those changes as a PR.
 - We follow the [Google Developer Documentation Style Guidelines][] —
   for example, don't use "i.e." or "e.g.", 
-  and avoid writing in first person. 
+  avoid writing in first person,
+  and avoid writing in future tense.
   You can start with the
   [style guide highlights](https://developers.google.com/style/highlights) 
   or the [word list](https://developers.google.com/style/word-list), 
@@ -76,6 +69,7 @@ But here are a few notes to keep in mind before you submit a PR:
 > We truly thank you for your willingness and helpfulness
 > in keeping the website docs up to date!
 
+[Google Developer Documentation Style Guidelines]: https://developers.google.com/style
 
 ## Before you build this site
 
@@ -83,33 +77,41 @@ For changes beyond simple text and CSS tweaks,
 we recommend building the site.
 
 ### 1. Get the prerequisites
+
 Install the following tools, if you don't have them already:
 
-- **bash**, the Bourne shell. 
+- **bash**, the Bourne shell<br> 
   These instructions assume you're using `bash`, 
   and setup might not work if you use another shell.
-- **GNU Make**. 
+- **GNU Make**<br>
   On Windows the easiest way to install Make is `choco install make`. 
-  Other options include using a [subsystem](https://docs.microsoft.com/en-us/windows/wsl/install-win10). 
+  Other options include using a
+  [subsystem](https://docs.microsoft.com/en-us/windows/wsl/install-win10). 
 - **Docker**. 
   We use Docker for local dev, tests, and building the site. 
   Install it from https://docs.docker.com/get-docker/.
 - **Firebase CLI**, for hosting the site locally. 
   One way to get this is to run `npm install -g firebase-tools`. 
-  For full setup details, 
-  read the [Firebase CLI documentation](https://firebase.google.com/docs/cli).
+  For full setup details, read the
+  [Firebase CLI documentation](https://firebase.google.com/docs/cli).
 
 ### 2. Clone this repo _and_ its submodules
 
 > **Note:** This repo has git _submodules_, 
 > which affects how you clone it. 
-> The GitHub documentation has general help on [forking][] and [cloning][] repos.
+> The GitHub documentation has general help on
+> [forking][] and [cloning][] repos.
 
-If you are working in the Windows desktop environment, make sure you have Git
-`autocrlf` set to `input` **before** initializing the submodules. This
-ensures that line endings are handled correctly _before_ any Bash scripts are
-executed within the submodules.
-See [issue 6201](https://github.com/flutter/website/issues/6201) for details.
+If you are working in the Windows desktop environment,
+make sure you have Git `autocrlf` set to `input`
+**before** initializing the submodules.
+This ensures that line endings are handled correctly
+_before_ any Bash scripts are executed within the submodules.
+See [issue 6201][] for details.
+
+[cloning]: https://help.github.com/articles/cloning-a-repository
+[forking]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
+[issue 6201]: https://github.com/flutter/website/issues/6201
 
 If you're outside of the Flutter organization, 
 we recommend you **create a fork** of the repo under your own account, 
@@ -134,6 +136,7 @@ _choose one_ of the following submodule-cloning techniques:
 
 > **Note:** At any time during development 
 > you can use the `git submodule` command to refresh submodules:
+>
 > ```bash
 > $ git pull; git submodule update --init --recursive
 > ```
@@ -146,9 +149,10 @@ _choose one_ of the following submodule-cloning techniques:
    $ git checkout -b <BRANCH_NAME>
    ```
    
-1. If the Docker Desktop application isn't already running, start it.
-   Look at its status icon: 
-   if it has an exclamation point (`!`), then update Docker Desktop.
+1. If the Docker Desktop application isn't already running,
+   start it. Look at its status icon: 
+   if it has an exclamation point (`!`),
+   then update Docker Desktop.
 
 1. Run the initial setup command:
    ```bash
@@ -165,7 +169,8 @@ _choose one_ of the following submodule-cloning techniques:
 
 1. View your changes in the browser by navigating to `http://localhost:4002`.
    > **Note:** Unless you're editing files under `site-shared`, 
-   > you can safely ignore `ERROR: directory is already being watched` messages. 
+   > you can safely ignore
+   > `ERROR: directory is already being watched` messages. 
    > For details, see [#1363](https://github.com/flutter/website/issues/1363).
 
 1. Make your changes. 
@@ -196,12 +201,15 @@ _choose one_ of the following submodule-cloning techniques:
 > For example, if you need to debug the Docker infrastructure, 
 > you can run `make debug`.  
 
+[`Makefile`]: https://github.com/flutter/website/blob/main/Makefile
+
 ## Creating and/or editing DartPad example code
 
 Most of the code used to create [DartPad][] examples is hosted on GitHub. 
 However, this repo also contains some `*.dart` files
 responsible for DartPad example code.
 
+[DartPad]: https://dartpad.dev
 
 ### DartPad example code in GitHub gists
 
@@ -219,8 +227,10 @@ for example, within a codelab's Markdown file:
 This `iframe` depends on the following GitHub gist URL:
 > https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5
 
-For detailed instructions on how to use this approach to DartPad examples, 
-see the [DartPad embedding guide][].
+For detailed instructions on how to use this approach
+to DartPad examples, see the [DartPad embedding guide][].
+
+[DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
 
 
 ### DartPad example code in this repo 
@@ -241,23 +251,30 @@ $ ./compile.sh
 You can deploy your local edits to a personal staging site as follows.
 
 1. If you don't already have a Firebase project, 
-   navigate to the [Firebase Console](https://console.firebase.google.com) 
+   navigate to the
+   [Firebase Console](https://console.firebase.google.com) 
    and create your own Firebase project (for example, `my-foo`).
 
 1. In a separate `bash` shell, change to the repo directory
    and initialize Firebase:
+
     ```bash
     $ npx firebase init
     ```
  
-1. If you created a new project, add it using the [`firebase use` command][]:
+1. If you created a new project, add it using the
+   [`firebase use` command][]:
+
     ```bash
     $ npx firebase use --add
     ? Which project do you want to add? <select the project you created>
     ? What alias do you want to use for this project? (e.g. staging) my-foo
     ```
+
+[`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
  
 1. Tell Firebase that you want to deploy to your project:
+
     ```bash
     $ npx firebase use my-foo
     Now using alias staging (my-foo)
@@ -274,55 +291,50 @@ You can deploy your local edits to a personal staging site as follows.
    $ make deploy
    ```
 
-   Your personal version of the Flutter website is now deployed to Firebase. 
+   Your personal version of the Flutter website
+   ow deployed to Firebase. 
    Copy the serving URL from the command output.
    
 ## Refreshing code excerpts
 
 
-A build that fails with the error `=> ERROR: some code excerpts were not refreshed!`
-means that one or more code excerpts in the markdown file aren't identical to the
+A build that fails with the error
+`=> ERROR: some code excerpts were not refreshed!`
+means that one or more code excerpts in the markdown file
+aren't identical to the
 code in the corresponding `.dart` file. 
 
-To resolve this error, from the root of the `website` directory,
+To resolve this error,
+from the root of the `website` directory,
 run `./tool/refresh-code-excerpts.sh`. 
 
 For more information see [Code excerpts][] . 
 
+[Code excerpts]: https://github.com/dart-lang/site-shared/blob/main/doc/code-excerpts.md
 
 ## Writing for flutter.dev
 
 The [site-shared](https://github.com/dart-lang/site-shared) repo 
 contains infrastructure shared by most of our Dart and Flutter websites. 
-Some of this README is in the [doc](https://github.com/dart-lang/site-shared/tree/main/doc)
+Some of this README is in the
+[doc](https://github.com/dart-lang/site-shared/tree/main/doc)
 directory in the site-shared repo.
 
-For more information on using and writing for this repo, refer to the following docs:
+For more information on using and writing for this repo,
+refer to the following docs:
 
 * [Infrastructure](https://github.com/dart-lang/site-shared/blob/main/doc/infrastructure.md)
 * [Markdown](https://github.com/dart-lang/site-shared/blob/main/doc/markdown.md)
 * [Examples](https://github.com/dart-lang/site-shared/blob/main/doc/examples.md)
 * [Code excerpts][]
 
-Also check out the site-shared [wiki](https://github.com/dart-lang/site-shared/wiki):
+Also check out the site-shared
+[wiki](https://github.com/dart-lang/site-shared/wiki):
 
 * [Images](https://github.com/dart-lang/site-shared/wiki/Images)
-* [Mobile friendly pages: tips & tricks](https://github.com/dart-lang/site-shared/wiki/Mobile-friendly-pages:-tips-&-tricks)
-* [Writing for Dart and Flutter websites](https://github.com/dart-lang/site-shared/wiki/Writing-for-Dart-and-Flutter-websites)
+* [Mobile friendly pages: tips & tricks][]
+* [Writing for Dart and Flutter websites][]
 
 
-
-[Flutter]: https://flutter.dev
-[Build Status]: https://github.com/flutter/website/workflows/build/badge.svg
-[cloning]: https://help.github.com/articles/cloning-a-repository
-[DartPad]: https://dartpad.dev
-[`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
-[forking]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
-[Flutter install]: https://docs.flutter.dev/get-started/install
-[Flutter logo]: https://github.com/dart-lang/site-shared/blob/main/src/_assets/image/flutter/icon/64.png?raw=1
-[Firebase]: https://firebase.google.com/
-[Google Developer Documentation Style Guidelines]: https://developers.google.com/style
-[DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
-[`Makefile`]: https://github.com/flutter/website/blob/main/Makefile
-[Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amaster
-[Code excerpts]: https://github.com/dart-lang/site-shared/blob/main/doc/code-excerpts.md
+[Mobile friendly pages: tips & tricks]: https://github.com/dart-lang/site-shared/wiki/Mobile-friendly-pages:-tips-&-tricks
+[Writing for Dart and Flutter websites]: https://github.com/dart-lang/site-shared/wiki/Writing-for-Dart-and-Flutter-websites
