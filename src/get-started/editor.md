@@ -10,14 +10,16 @@ next:
 toc: false
 ---
 
-You can build apps with Flutter using any text editor combined with our
-command-line tools. However, we recommend using one of our editor
+You can build apps with Flutter using any text editor
+combined with Flutter's command-line tools.
+However, we recommend using one of our editor
 plugins for an even better experience.
 These plugins provide you with code completion, syntax
 highlighting, widget editing assists, run & debug support, and more.
 
-Follow the steps below to add an editor plugin for Android Studio,
-IntelliJ, VS Code, or Emacs. If you want to use a different editor,
+Use the following steps to add an editor plugin for VS Code,
+Android Studio, IntelliJ, or Emacs.
+If you want to use a different editor,
 that's OK, skip ahead to the [next step: Test drive][].
 
 {% comment %} Nav tabs {% endcomment -%}
@@ -39,7 +41,8 @@ that's OK, skip ahead to the [next step: Test drive][].
 
 ## Install VS Code
 
-VS Code is a lightweight editor with complete Flutter app execution and debug support.
+VS Code is a lightweight editor with complete Flutter
+app execution and debug support.
 
 * [VS Code][], latest stable version
 
@@ -47,22 +50,28 @@ VS Code is a lightweight editor with complete Flutter app execution and debug su
 
  1. Start VS Code.
  1. Invoke **View > Command Palette...**.
- 1. Type "install", and select **Extensions: Install Extensions**.
- 1. Type "flutter" in the extensions search field, select **Flutter** in the list,
-    and click **Install**. This also installs the required Dart plugin.
+ 1. Type "install", and select
+    **Extensions: Install Extensions**.
+ 1. Type "flutter" in the extensions search field,
+    select **Flutter** in the list, and click **Install**.
+    This also installs the required Dart plugin.
 
 ## Validate your setup with the Flutter Doctor
 
  1. Invoke **View > Command Palette...**.
- 1. Type "doctor", and select the **Flutter: Run Flutter Doctor**.
- 1. Review the output in the **OUTPUT** pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
+ 1. Type "doctor", and select the
+    **Flutter: Run Flutter Doctor**.
+ 1. Review the output in the **OUTPUT** pane for any issues.
+    Make sure to select Flutter from the dropdown
+    in the different Output Options.
 
 </div>
 <div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
 
 ## Install Android Studio
 
-Android Studio offers a complete, integrated IDE experience for Flutter.
+Android Studio offers a complete,
+integrated IDE experience for Flutter.
 
 * [Android Studio][], version 2020.3.1 (Arctic Fox) or later
 
@@ -106,7 +115,8 @@ Emacs is a lightweight editor with support for Flutter and Dart.
 
 ## Install the lsp-dart package
 
-For information on how to install and use the package, see the [lsp-dart documentation][].
+For information on how to install and use the package,
+see the [lsp-dart documentation][].
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
