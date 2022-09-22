@@ -37,8 +37,6 @@ A recommended approach.
 
 * [Simple app state management][], the previous page in this section
 * [Provider package][]
-* [You might not need Redux: The Flutter edition][], by Ryan Edge
-* [Making sense of all those Flutter Providers][]
 
 
 [Making sense of all those Flutter Providers]: {{site.medium}}/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd?sk=7859a73fac0ca414a0e911b0322e8589
