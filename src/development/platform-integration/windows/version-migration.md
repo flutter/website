@@ -42,4 +42,5 @@ files
 
 [Build and release a Windows app]: {{site.url}}/deployment/windows#updating-the-apps-version-number
 [run loop migration guide]: {{site.url}}/development/platform-integration/windows/run-loop-migration
-[flutter/gallery#721]: {{site.github}}/flutter/gallery/pull/721/files
+[PR 721]: {{site.github}}/flutter/gallery/pull/721/files
+[Flutter Gallery]: https://gallery.flutter.dev/
