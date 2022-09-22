@@ -33,4 +33,4 @@ Flutter SDK
 6. Review the changes to files in the `windows/runner` folder
 7. Reapply any custom changes made to the files in the
 `windows/runner` folder prior to this migration
-8. Verify your app builds using `flutter build windows`
+8. Verify that your app builds using `flutter build windows`
