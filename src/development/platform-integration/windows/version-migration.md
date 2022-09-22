@@ -37,7 +37,8 @@ files
 
 ## Example
 
-Here's an example of migrating a project: [flutter/gallery#721][].
+[PR 721][] shows the migration work for the
+[Flutter Gallery][] app.
 
 [Build and release a Windows app]: {{site.url}}/deployment/windows#updating-the-apps-version-number
 [run loop migration guide]: {{site.url}}/development/platform-integration/windows/run-loop-migration
