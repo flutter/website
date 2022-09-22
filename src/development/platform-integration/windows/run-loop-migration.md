@@ -14,10 +14,10 @@ file exists in your project.
 ## Migration steps
 
 {{site.alert.note}}
-  You will need to recreate the Windows project for this
-  migration. Any custom changes to the files in the
-  `windows/runner` folder will need to be reapplied after
-  the project has been recreated.
+ As part of this migration, you must recreate your Windows project,
+  which clobbers any custom changes to the
+  files in the `windows/runner` folder.  The following steps
+  include instructions for this scenario.
 {{site.alert.end}}
 
 Your project can be updated using these steps:
