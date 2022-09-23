@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Check for non-200 links in built Jekyll site using Firebase emulator
+# Check for non-200 links in built Jekyll site using Firebase 
+# emulator and Dart linkcheck utility
 set -eu -o pipefail 
-trap clean_up EXIT # SIGINT SIGTERM ERR EXIT
+trap clean_up EXIT
 
 EMULATOR_PORT=5500 # airplay runs on :5000
 

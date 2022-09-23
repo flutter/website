@@ -52,8 +52,7 @@ RUN if test -n "$FLUTTER_BRANCH" -a "$FLUTTER_BRANCH" != "stable" ; then \
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."  
 # and this is to be disregarded since this image is never deployed to production.
 # It is not worth setting up a Docker user or mirroring host, but you may run into 
-# conflicts with the local host repo and the Docker one. This can be mitigated by 
-# never running git commands in the host version. 
+# conflicts with the local host repo and the Docker one.
 RUN flutter doctor
 RUN flutter --version
 RUN dart pub get
@@ -77,7 +76,6 @@ RUN npm install -g npm firebase-tools@11.0.1
 # ============== FLUTTER CODE TESTS ==============
 FROM flutter AS tests
 
-WORKDIR /app
 COPY ./ ./
 
 ARG FLUTTER_TEST_BRANCH=stable
@@ -85,7 +83,6 @@ ENV FLUTTER_TEST_BRANCH=$FLUTTER_TEST_BRANCH
 
 # Only test the code here, checking links is purely for site deployment
 # NOTE bash scripts will switch the Flutter branch based on $FLUTTER_TEST_BRANCH
-# RUN tool/test.sh --target $FLUTTER_TEST_BRANCH
 ENTRYPOINT ["tool/test.sh"]
 
 
