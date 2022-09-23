@@ -112,4 +112,3 @@ expect(foo.runtimeType.toString(), equals('Foo'));
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
 [obfuscation instructions]: {{site.repo.flutter}}/wiki/Obfuscating-Dart-Code
 [release build]: {{site.url}}/testing/build-modes
-
