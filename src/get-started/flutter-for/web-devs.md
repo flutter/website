@@ -1014,9 +1014,9 @@ and the `overflow` property for handling overflow text.
     padding: 16px;
     color: #ffffff;
     [[highlight]]overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;[[/highlight]]
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;[[/highlight]]
 }
 {% endprettify %}
 </div>
