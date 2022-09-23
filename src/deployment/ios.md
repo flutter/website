@@ -485,7 +485,7 @@ detailed overview of the process of releasing an app to the App Store.
 [devportal_certificates]: {{site.apple-dev}}/account/resources/certificates
 [devprogram]: {{site.apple-dev}}/programs/
 [devprogram_membership]: {{site.apple-dev}}/support/compare-memberships/
-[distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
+[distributionguide]: https://help.apple.com/xcode/mac/current/#/devac02c5ab8
 [distributionguide_config]: https://help.apple.com/xcode/mac/current/#/dev91fe7130a
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
