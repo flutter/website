@@ -36,8 +36,9 @@ ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/app/flutter/bin:$PATH"
 
-# Used if wanting to build the container with a different branch
-# e.g. `make FLUTTER_BRANCH=dev build`
+# Used if wanting to build the container with a different branch, this 
+# would change the current branch of and update the mirrored submodule
+# e.g. `make build FLUTTER_BRANCH=beta`
 # This is not to be confused with the $FLUTTER_TEST_BRANCH
 RUN if test -n "$FLUTTER_BRANCH" -a "$FLUTTER_BRANCH" != "stable" ; then \
       cd flutter && \
@@ -103,9 +104,6 @@ RUN npm install
 
 COPY ./ ./
 
-# So that we have the most up to date submodules
-RUN git submodule update --init --recursive
-
 # Jekyl ports
 EXPOSE 35729
 EXPOSE 4002
@@ -123,7 +121,7 @@ ENV JEKYLL_ENV=production
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
-RUN BUNDLE_WITHOUT="test development" bundle install --jobs=4 --retry=2 --quiet
+RUN BUNDLE_WITHOUT="test development" bundle install --jobs=4 --retry=2
 
 ENV NODE_ENV=production
 COPY package.json package-lock.json ./
