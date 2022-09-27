@@ -6,26 +6,40 @@ description: What is shader jank and how to minimize it.
 
 {% include docs/performance.md %}
 
-If the animations on your mobile app appear to be janky, but only on the first
-run, this is likely due to shader compilation. Flutter's long term solution to
-shader compilation jank is [Impeller][], which is in developer preview on the
-master channel for iOS. Before continuing with the instructions below, please
-try Impeller on iOS, and let us know in a GitHub issue if it doesn't address
-your issue. Impeller on Android is being actively developed, but is not yet in
-developer preview.
+If the animations on your mobile app appear to be janky,
+but only on the first run,
+this is likely due to shader compilation.
+Flutter's long term solution to
+shader compilation jank is [Impeller][],
+which is in early developer preview
+(behind a flag) on the
+master channel for iOS.
+(It's not yet available on Android.)
+Before continuing with the instructions below,
+please try Impeller on iOS, and let us know
+in a [GitHub issue][] if it doesn't address your issue.
+Impeller on Android is being actively developed,
+but is not yet in developer preview.
 
-While we work on making Impeller production ready, you can mitigate shader
-compilation jank by bundling precompiled shaders with an iOS app.
-Unfortunately, this approach doesn't work well on Android due to precompiled
-shaders being device or GPU-specific. The Android hardware ecosystem is large
-enough that the GPU-specific precompiled shaders bundled with an application
-will work on only a small subset of devices, and will likely make jank worse on
-the other devices, or even create rendering errors.
+[Impeller]: {{site.repo.flutter}}/wiki/Impeller
+[GitHub issue]: {{site.github}}/orgs/flutter/projects/21
 
-Also, please note that we aren't planning to make improvements to the developer
-experience for creating precompiled shaders described below. Instead, we are
-focusing our energies on the more robust solution to this problem that Impeller
-offers.
+While we work on making Impeller production ready,
+you can mitigate shader compilation jank by bundling
+precompiled shaders with an iOS app.
+Unfortunately, this approach doesn't work well on Android
+due to precompiled shaders being device or GPU-specific.
+The Android hardware ecosystem is large enough that the
+GPU-specific precompiled shaders bundled with an application
+will work on only a small subset of devices,
+and will likely make jank worse on the other devices,
+or even create rendering errors.
+
+Also, please note that we aren't planning to make
+improvements to the developer experience for creating
+precompiled shaders described below. Instead,
+we are focusing our energies on the more robust
+solution to this problem that Impeller offers.
 
 ## What is shader compilation jank?
 
@@ -132,6 +146,8 @@ before and after the SkSL warm-up. Even better, you can put
 those tests into a CI (continuous integration) system so the
 SkSLs are generated and tested automatically over the lifetime of an app.
 
+[integration tests]: {{site.url}}/cookbook/testing/integration/introduction
+
 {{site.alert.note}}
   The integration_test package is now the recommended way to write integration
   tests. See the [Integration testing]({{site.url}}/testing/integration-tests/) page
@@ -144,6 +160,11 @@ and verifies the performance, in the [`transitions_perf_test.dart`][] test.
 For more details, see the [`flutter_gallery_sksl_warmup__transition_perf`][]
 and [`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`][] tasks.
 
+[Flutter Gallery]: {{site.repo.flutter}}/tree/main/dev/integration_tests/flutter_gallery
+[`flutter_gallery_sksl_warmup__transition_perf`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
+[`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
+[`transitions_perf_test.dart`]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
+
 The worst frame rasterization time is a nice metric from
 such integration tests to indicate the severity of shader
 compilation jank. For instance,
@@ -153,9 +174,3 @@ Moto G4 from ~90 ms to ~40 ms. On iPhone 4s,
 it's reduced from ~300 ms to ~80 ms. That leads to the visual
 difference as illustrated in the beginning of this article.
 
-[Flutter Gallery]: {{site.repo.flutter}}/tree/main/dev/integration_tests/flutter_gallery
-[`flutter_gallery_sksl_warmup__transition_perf`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf.dart
-[`flutter_gallery_sksl_warmup__transition_perf_e2e_ios32`]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_sksl_warmup__transition_perf_e2e_ios32.dart
-[integration tests]: {{site.url}}/cookbook/testing/integration/introduction
-[`transitions_perf_test.dart`]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flutter_gallery/test_driver/transitions_perf_test.dart
-[Impeller]: {{site.repo.flutter}}/wiki/Impeller
