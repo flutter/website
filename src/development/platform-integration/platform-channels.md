@@ -969,13 +969,15 @@ types than the default types.
 
 ## Channels and platform threading
 
-When invoking channels on the platform side destined for Flutter, invoke them on
-the platform's main thread. When invoking channels in Flutter destined for the
-platform side, they can be invoked from any `Isolate` that is the root
-`Isolate`, or is registered as a background `Isolate`. The platform side's
-handlers can execute on the platform's main thread or they can execute on a
-background thread if using a Task Queue. You can invoke the platform side
-handlers asynchronously and on any thread when the Task Queue API is available;
+When invoking channels on the platform side destined for Flutter,
+invoke them on the platform's main thread.
+When invoking channels in Flutter destined for the platform side,
+either invoke them from any `Isolate` that is the root
+`Isolate`, _or_ that is registered as a background `Isolate`.
+The handlers for the platform side can execute on the platform's main thread
+or they can execute on a background thread if using a Task Queue.
+You can invoke the platform side handlers asynchronously
+and on any thread when the Task Queue API is available;
 otherwise, they must be invoked on the platform thread.
 
 {{site.alert.note}}
