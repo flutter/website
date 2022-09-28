@@ -987,8 +987,6 @@ final container = Container(
 
 An excerpt displays the initial line(s) of text in a paragraph,
 and handles the overflow text, often using an ellipsis.
-In HTML/CSS an excerpt can be no longer than one line.
-Truncating after multiple lines requires some JavaScript code.
 
 In Flutter, use the `maxLines` property of a [`Text`][] widget
 to specify the number of lines to include in the excerpt,
@@ -1016,8 +1014,9 @@ and the `overflow` property for handling overflow text.
     padding: 16px;
     color: #ffffff;
     [[highlight]]overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;[[/highlight]]
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;[[/highlight]]
 }
 {% endprettify %}
 </div>
