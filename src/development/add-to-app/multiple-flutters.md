@@ -32,12 +32,6 @@ memory cost (~180kB) for adding additional Flutter instances. This fixed cost
 reduction allows the multiple Flutter instance pattern to be used more liberally
 in your add-to-app integration.
 
-{{site.alert.warning}}
-  Memory usage is only fully optimized in AOT mode (in profile and release
-  builds). Some memory redundancy will still be present in JIT mode (in debug
-  builds). This is tracked in [issue 74520][].
-{{site.alert.end}}
-
 ## Components
 
 The primary API for adding multiple Flutter instances on both Android and iOS
