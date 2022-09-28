@@ -463,7 +463,9 @@ class User {
 }
 ```
 
-Running `flutter pub run build_runner build --delete-conflicting-outputs` in the terminal creates
+Running 
+`flutter pub run build_runner build --delete-conflicting-outputs`
+in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function
 looks something like the following:
 
