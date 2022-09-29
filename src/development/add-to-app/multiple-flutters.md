@@ -91,4 +91,3 @@ on both Android and iOS on [GitHub][].
 [platform channels]: {{site.url}}/development/platform-integration/platform-channels
 [Android API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/engine/FlutterEngineGroup.java
 [iOS API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/darwin/ios/framework/Headers/FlutterEngineGroup.h
-[issue 74520]: https://github.com/flutter/flutter/issues/74520
