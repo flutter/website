@@ -18,9 +18,11 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecated API removed after v3.3][]
 * [iOS FlutterViewController splashScreenView made nullable][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
 
+[Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
 

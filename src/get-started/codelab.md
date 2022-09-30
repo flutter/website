@@ -230,7 +230,7 @@ for a Flutter app.
 
  1. Add the `english_words` package to your project as follows:
 
-    In your IDE, add the line `english_words 4.0.0`
+    In your IDE, add the line `english_words: ^4.0.0`
     just after the `cupertino_icons 1.0.4` line 
     and save the file.
 

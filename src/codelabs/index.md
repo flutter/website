@@ -203,12 +203,6 @@ Learn how to use Flutter with other technologies.
   and iOS using Flutter, authenticating users with Firebase
   Authentication and sync data using Cloud Firestore.
 
-* [Multi-platform Firestore Flutter][]<br>
-  Build a multi-platform restaurant recommendation app
-  powered by Flutter and Cloud Firestore.
-  The finished app runs on Android, iOS, and web,
-  from a single Dart codebase.
-
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
 [Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
@@ -219,7 +213,6 @@ Learn how to use Flutter with other technologies.
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/learn/codelabs/firebase-get-to-know-flutter
-[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 
 ## Testing
 
