@@ -6,8 +6,8 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 - Auto scrolling behavior improved when snapping to a widget into focus -
   [#4283](https://github.com/flutter/devtools/pull/4283)
-- Fix issue where widget inspector wouldn't load when connecting to a paused app
-  - [#4527](https://github.com/flutter/devtools/pull/4527)
+- Fix issue where widget inspector wouldn't load when connecting to a paused
+  app - [#4527](https://github.com/flutter/devtools/pull/4527)
 - Improve widget inspector hover cards to show progress while waiting for data -
   [#4488](https://github.com/flutter/devtools/pull/4488)
 
@@ -45,8 +45,8 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   [#4501](https://github.com/flutter/devtools/pull/4501)
 - Remove settings for displaying units -
   [#4370](https://github.com/flutter/devtools/pull/4370)
-- Advanced memory behavior is now always on and no longer controlled by settings
-  - [#4370](https://github.com/flutter/devtools/pull/4370)
+- Advanced memory behavior is now always on and no longer controlled by
+  settings - [#4370](https://github.com/flutter/devtools/pull/4370)
 - Remove android button from chart control pane. It can be turned on/off in
   settings - [#4370](https://github.com/flutter/devtools/pull/4370)
 - Add Call Tree view - [#4403](https://github.com/flutter/devtools/pull/4403)
