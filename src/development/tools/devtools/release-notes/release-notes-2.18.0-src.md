@@ -3,50 +3,50 @@
 Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 # Inspector updates
-- Auto scrolling behavior improved when snapping to a widget into focus.
-- Fix issue where widget inspector wouldn't load when connecting to a paused app.
-- Improve widget inspector hover cards to show progress while waiting for data.
+- Auto scrolling behavior improved when snapping to a widget into focus - [#4283](https://github.com/flutter/devtools/pull/4283)
+- Fix issue where widget inspector wouldn't load when connecting to a paused app - [#4527](https://github.com/flutter/devtools/pull/4527)
+- Improve widget inspector hover cards to show progress while waiting for data - [#4488](https://github.com/flutter/devtools/pull/4488)
 
 # Performance updates
-- Fix issue where scrollbar would go out of sync with the frame content.
-- Add offline support for raster stats.
-- Add 'Rendering time' column to Raster Metrics tab.
+- Fix issue where scrollbar would go out of sync with the frame content - [#4503](https://github.com/flutter/devtools/pull/4503)
+- Add offline support for raster stats - [#4491](https://github.com/flutter/devtools/pull/4491)
+- Add 'Rendering time' column to Raster Metrics tab - [#4474](https://github.com/flutter/devtools/pull/4474)
 
 # CPU profiler updates
-- Fix crash when an empty frame is filtered.
-- Fix bugs in CPU profile trees.
-- UI Cleanup
+- Fix crash when an empty frame is filtered - [#4502](https://github.com/flutter/devtools/pull/4502)
+- Fix bugs in CPU profile trees - [#4413](https://github.com/flutter/devtools/pull/4413)
+- UI Cleanup - [#4404](https://github.com/flutter/devtools/pull/4404)
 
 # Memory updates
-- UI cleanup.
-- Allocation tracing on multiple isolates is now supported.
-- Clear button added to allocation tracing tab.
-- Fix sorting column not being correctly updated.
-- Add Profile and Allocation Tracing sub-tabs.
-- Implement snapshot visualization.
-- Implement comparing memory profiles.
-- Remove settings for displaying units.
-- Advanced memory behavior is now always on and no longer controlled by settings.
-- Remove android button from chart control pane. It can be turned on/off in settings.
-- Add Call Tree view.
-- Persist profile sort order.
+- UI cleanup - [#4520](https://github.com/flutter/devtools/pull/4520)
+- Allocation tracing on multiple isolates is now supported - [#4538](https://github.com/flutter/devtools/pull/4538)
+- Clear button added to allocation tracing tab - [#4534](https://github.com/flutter/devtools/pull/4534)
+- Fix sorting column not being correctly updated - [#4532](https://github.com/flutter/devtools/pull/4532)
+- Add Profile and Allocation Tracing sub-tabs - [#4523](https://github.com/flutter/devtools/pull/4523)
+- Implement snapshot visualization - [#4473](https://github.com/flutter/devtools/pull/4473)
+- Implement comparing memory profiles - [#4501](https://github.com/flutter/devtools/pull/4501)
+- Remove settings for displaying units - [#4370](https://github.com/flutter/devtools/pull/4370)
+- Advanced memory behavior is now always on and no longer controlled by settings - [#4370](https://github.com/flutter/devtools/pull/4370)
+- Remove android button from chart control pane. It can be turned on/off in settings - [#4370](https://github.com/flutter/devtools/pull/4370)
+- Add Call Tree view - [#4403](https://github.com/flutter/devtools/pull/4403)
+- Persist profile sort order - [#4405](https://github.com/flutter/devtools/pull/4405)
 
 # Debugger updates
-- Fix bug for file opener and search
-- Fix the codeview's scrollable area.
-- Allow syntax highlighting on nested captures in parser.
+- Fix bug for file opener and search -  [#4525](https://github.com/flutter/devtools/pull/4525)
+- Fix the codeview's scrollable area - [#4448](https://github.com/flutter/devtools/pull/4448)
+- Allow syntax highlighting on nested captures in parser - [#4427](https://github.com/flutter/devtools/pull/4427)
 
 # Network profiler updates
-- When on the Network tab, network recordings now continue working after the app hot restarts.
+- When on the Network tab, network recordings now continue working after the app hot restarts - [#4438](https://github.com/flutter/devtools/pull/4438)
 
 # Logging updates
-- Log messages from non-stdout sources are now shown.
+- Log messages from non-stdout sources are now shown - [#4487](https://github.com/flutter/devtools/pull/4487)
 
 # VM tool updates
-- Add support for inspecting objects in an isolate's object store.
-- Enable object inspector / program explore view.
-- Add "Code Preview" section to Object Inspector views
-- UI polish.
+- Add support for inspecting objects in an isolate's object store - [#4513](https://github.com/flutter/devtools/pull/4513)
+- Enable object inspector / program explore view - [#4514](https://github.com/flutter/devtools/pull/4514)
+- Add "Code Preview" section to Object Inspector views - [#4447](https://github.com/flutter/devtools/pull/4447)
+- UI polish - [#4436](https://github.com/flutter/devtools/pull/4436)
 
 ## Changelog
 More details about changes and fixes are available in the DevTools
