@@ -77,7 +77,6 @@ Then:
 1. Select a method of distribution. **Development** is the simplest if you don't
    intend to distribute the application.
 1. In **App Thinning**, select 'all compatible device variants'.
-1. Select **Rebuild from Bitcode** (available if bitcode is enabled on your project).
 1. Select **Strip Swift symbols**.
 
 Sign and export the IPA. The exported directory contains
