@@ -4,7 +4,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 # Inspector updates
 
-- Auto scrolling behavior improved when snapping to a widget into focus -
+- Auto scrolling behavior improved when snapping a widget into focus -
   [#4283](https://github.com/flutter/devtools/pull/4283)
 - Fix issue where widget inspector wouldn't load when connecting to a paused
   app - [#4527](https://github.com/flutter/devtools/pull/4527)
@@ -35,14 +35,10 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   [#4538](https://github.com/flutter/devtools/pull/4538)
 - Clear button added to allocation tracing tab -
   [#4534](https://github.com/flutter/devtools/pull/4534)
-- Fix sorting column not being correctly updated -
-  [#4532](https://github.com/flutter/devtools/pull/4532)
 - Add Profile and Allocation Tracing sub-tabs -
   [#4523](https://github.com/flutter/devtools/pull/4523)
 - Implement snapshot visualization -
   [#4473](https://github.com/flutter/devtools/pull/4473)
-- Implement comparing memory profiles -
-  [#4501](https://github.com/flutter/devtools/pull/4501)
 - Remove settings for displaying units -
   [#4370](https://github.com/flutter/devtools/pull/4370)
 - Advanced memory behavior is now always on and no longer controlled by
