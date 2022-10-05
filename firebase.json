@@ -45,7 +45,6 @@
       { "source": "/developing-packages", "destination": "/development/packages-and-plugins/developing-packages", "type": 301 },
       { "source": "/development/ios-14", "destination": "/development/platform-integration/ios/ios-debugging", "type": 301 },
       { "source": "/development/ios-project-migration", "destination": "/development/platform-integration/ios", "type": 301 },
-      { "source": "/development/platform-integration/apple-watch", "destination": "/development/platform-integration/ios/apple-watch", "type": 301 },
       { "source": "/development/platform-integration/ios-app-clip", "destination": "/development/platform-integration/ios/ios-app-clip", "type": 301 },
       { "source": "/development/platform-integration/platform-views", "destination": "/development/platform-integration/android/platform-views", "type": 301 },
       { "source": "/development/platform-integration/web-images", "destination": "/development/platform-integration/web/web-images", "type": 301 },
