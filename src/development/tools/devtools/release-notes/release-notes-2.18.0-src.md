@@ -30,24 +30,13 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 # Memory updates
 
-- UI cleanup - [#4520](https://github.com/flutter/devtools/pull/4520)
-- Allocation tracing on multiple isolates is now supported -
-  [#4538](https://github.com/flutter/devtools/pull/4538)
-- Clear button added to allocation tracing tab -
-  [#4534](https://github.com/flutter/devtools/pull/4534)
 - Add Profile and Allocation Tracing sub-tabs -
   [#4523](https://github.com/flutter/devtools/pull/4523)
+  ![profile-sub-tab]({{site.url}}/development/tools/devtools/release-notes/images-2.18.0/profile.png "Profile in Memory tab")
+  ![allocation-tracing-sub-tab]({{site.url}}/development/tools/devtools/release-notes/images-2.18.0/allocation-tracing.png "Profile in Memory tab")
+
 - Implement snapshot visualization -
   [#4473](https://github.com/flutter/devtools/pull/4473)
-- Remove settings for displaying units -
-  [#4370](https://github.com/flutter/devtools/pull/4370)
-- Advanced memory behavior is now always on and no longer controlled by
-  settings - [#4370](https://github.com/flutter/devtools/pull/4370)
-- Remove android button from chart control pane. It can be turned on/off in
-  settings - [#4370](https://github.com/flutter/devtools/pull/4370)
-- Add Call Tree view - [#4403](https://github.com/flutter/devtools/pull/4403)
-- Persist profile sort order -
-  [#4405](https://github.com/flutter/devtools/pull/4405)
 
 # Debugger updates
 
