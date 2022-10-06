@@ -60,16 +60,6 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 - Log messages from non-stdout sources are now shown -
   [#4487](https://github.com/flutter/devtools/pull/4487)
 
-# VM tool updates
-
-- Add support for inspecting objects in an isolate's object store -
-  [#4513](https://github.com/flutter/devtools/pull/4513)
-- Enable object inspector / program explore view -
-  [#4514](https://github.com/flutter/devtools/pull/4514)
-- Add "Code Preview" section to Object Inspector views -
-  [#4447](https://github.com/flutter/devtools/pull/4447)
-- UI polish - [#4436](https://github.com/flutter/devtools/pull/4436)
-
 ## Changelog
 
 More details about changes and fixes are available in the DevTools
