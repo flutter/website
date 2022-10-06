@@ -19,6 +19,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   [#4491](https://github.com/flutter/devtools/pull/4491)
 - Add 'Rendering time' column to Raster Metrics tab -
   [#4474](https://github.com/flutter/devtools/pull/4474)
+  ![rendering-time-for-raster-metrics]({{site.url}}/development/tools/devtools/release-notes/images-2.18.0/render-time-column.png "Rendering time column in the Raster Meterics tab")
 
 # CPU profiler updates
 
@@ -33,6 +34,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 - Add Profile and Allocation Tracing sub-tabs -
   [#4523](https://github.com/flutter/devtools/pull/4523)
   ![profile-sub-tab]({{site.url}}/development/tools/devtools/release-notes/images-2.18.0/profile.png "Profile in Memory tab")
+
   ![allocation-tracing-sub-tab]({{site.url}}/development/tools/devtools/release-notes/images-2.18.0/allocation-tracing.png "Profile in Memory tab")
 
 - Implement snapshot visualization -
