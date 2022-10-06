@@ -34,6 +34,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 - Add Profile and Allocation Tracing sub-tabs -
   [#4523](https://github.com/flutter/devtools/pull/4523)
+
   <img src="{{site.url}}/development/tools/devtools/release-notes/images-2.18.0/profile.png" alt="Profile in Memory tab" width="900"/>
 
   <img src="{{site.url}}/development/tools/devtools/release-notes/images-2.18.0/allocation-tracing.png" alt="Allocation Tracing in Memory tab" width="900"/>
