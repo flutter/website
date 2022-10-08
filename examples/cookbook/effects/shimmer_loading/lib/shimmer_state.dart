@@ -27,7 +27,7 @@ class ShimmerState extends State<Shimmer> {
         end: widget.linearGradient.end,
       );
 
-  bool get isSized => (context.findRenderObject() as RenderBox).hasSize;
+  bool get isSized => (context.findRenderObject() as RenderBox?)?.hasSize ?? false;
 
   Size get size => (context.findRenderObject() as RenderBox).size;
 
