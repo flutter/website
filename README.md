@@ -282,7 +282,7 @@ You can deploy your local edits to a personal staging site as follows.
 
 1. Build the site via Docker with:
    ```bash
-   $ DISABLE_TESTS=1 make build
+   $ make build
    ```
    The `_site` directory refreshes locally. 
 
@@ -295,8 +295,8 @@ You can deploy your local edits to a personal staging site as follows.
    ow deployed to Firebase. 
    Copy the serving URL from the command output.
    
-## Refreshing code excerpts
 
+## Refreshing code excerpts
 
 A build that fails with the error
 `=> ERROR: some code excerpts were not refreshed!`
