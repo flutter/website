@@ -177,8 +177,9 @@ $ flutter config --no-enable-ios
 
 Other available flags:
 
-* `--no-enable-windows`
-* `--no-enable-linux`
+* `--no-enable-windows-desktop`
+* `--no-enable-linux-desktop`
+* `--no-enable-macos-desktop`
 * `--no-enable-web`
 * `--no-enable-android`
 * `--no-enable-ios`

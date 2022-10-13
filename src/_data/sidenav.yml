@@ -172,8 +172,6 @@
           children:
             - title: Adding iOS App Clip support
               permalink: /development/platform-integration/ios/ios-app-clip
-            - title: Apple Watch support
-              permalink: /development/platform-integration/ios/apple-watch
             - title: C interop
               permalink: /development/platform-integration/ios/c-interop
             - title: Hosting native iOS views
