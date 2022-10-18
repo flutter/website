@@ -18,7 +18,7 @@ diff2html: true
 {{site.alert.end}}
 
 If you prefer an instructor-led version of this codelab,
-check out the following workshop (45 min):
+check out the following workshop:
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/Z6KZ3cTGBWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -65,9 +65,11 @@ The animated GIF shows how the app works at the completion of part 1.
   * How to create an infinite, lazily loaded list
   <!-- * Learn about basic accessibility terminologies such as screen readers and their use -->
 
-  In [part 2][] of this codelab, you'll add interactivity,
+  <!-- In [part 2][] of this codelab, you'll add interactivity,
   modify the app's theme, add the ability to navigate
-  to a new screen (called a _route_ in Flutter), and ensure the app meets certain accessibility requirements (e.g. text constrast, icon size, labels). 
+  to a new screen (called a _route_ in Flutter), and ensure the app meets certain accessibility requirements (e.g. text constrast, icon size, labels).  -->
+  In [part 2][] of this codelab, you'll add interactivity, modify the app's theme, add the ability to navigate
+  to a new screen (called a _route_ in Flutter). 
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -747,9 +749,9 @@ If needed, use the code at the following link to get back on track.
 class="site-image-right" img-class="border" image="get-started/startup-namer-semantic-debugger.png" caption="The app from part 2 as seen in the semantic debugger -- will add a video here"%} -->
 
 <container class="site-image-right">
-<iframe width="auto" height="502" src="{{site.youtube-site}}/embed/6b-ZQe98oJk?feature=share" title="App on TalkBack " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="auto" height="502" src="{{site.youtube-site}}/embed/pKimFYkOfFk?feature=share" title="App on TalkBack " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-  The app from part 2 on TalkBack screen reader (26 sec)
+  The app from part 2 on TalkBack screen reader
 </container>
 
 {% include docs/app-figure.md class="site-image-right" img-class="border"
@@ -779,7 +781,6 @@ where you add the following functionality:
 * Implement navigation to a new route by adding a new screen
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
-* Ensure the app meets basic accessibility requirements of text contrast, icon size, and interactive labels for screen readers.
 
 ## Explore the Flutter SDK
 
