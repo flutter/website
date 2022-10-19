@@ -57,6 +57,7 @@ The animated GIF shows how the app works at the completion of part 1.
 
   * How to write a Flutter app that looks natural on iOS, Android,
     desktop (Windows, for example), and the web
+  * Using a Flutter app with screen readers (<a href="#talkback">TalkBack</a> and <a href="#talkback">VoiceOver</a>), technologies that enable visually impaired users to get spoken feedback about app contents 
   * Basic structure of a Flutter app
   * Finding and using packages to extend functionality
   * Using hot reload for a quicker development cycle
@@ -78,6 +79,7 @@ The animated GIF shows how the app works at the completion of part 1.
 
   * A physical device ([Android][] or [iOS][]) connected to your
     computer and set to developer mode
+  * Screen reader enabled on the physical device (<a href="#talkback">TalkBack</a> on Android, <a href="#talkback">VoiceOver</a> on iPhone)
   * The [iOS simulator][] (requires installing Xcode tools)
   * The [Android emulator][] (requires setup in Android Studio)
   * A browser (Chrome is required for debugging)
@@ -216,6 +218,12 @@ where the Dart code lives.
   a `Text` child widget. The Center widget aligns its widget subtree
   to the center of the screen.
 
+{{site.alert.note}}
+      The app automatically creates a semantics tree for screen readers. 
+      Each node in the tree can correspond to one or several 
+      widgets and can be <a href="https://api.flutter.dev/flutter/widgets/Semantics-class.html">further customized</a> to tell screen readers how to behave with the node. 
+{{site.alert.end}} 
+
 ## Step 2: Use an external package
 
 In this step, you’ll start using an open-source package named
@@ -345,6 +353,12 @@ Process finished with exit code 0
       "UpperCamelCase".
     {{site.alert.end}}
 
+    {{site.alert.important}}
+    Using pascal case also helps screen readers identify the individual words 
+    in the compound word and provides a better 
+    experience to visually impaired users.
+    {{site.alert.end}}
+
  5. If the app is running, [hot reload][]
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
@@ -356,6 +370,54 @@ Process finished with exit code 0
     {% indent %}
       {% include docs/ios-windows-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
+
+    **You can also try out the app with a screen reader. All you need to do is turn on the screen reader on your device by following the steps below:** 
+
+    {% comment %} Nav tabs {% endcomment -%}
+    <ul class="nav nav-tabs" id="editor-setup" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="talkback-tab" href="#talkback" role="tab" aria-controls="talkback" aria-selected="true">TalkBack on Android</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="voiceover-tab" href="#voiceover" role="tab" aria-controls="voiceover" aria-selected="false">VoiceOver on iPhone</a>
+      </li>
+    </ul>
+
+    {% comment %} Tab panes {% endcomment -%}
+    <div class="tab-content">
+    
+    <div class="tab-pane active" id="talkback" role="tabpanel" aria-labelledby="talkback-tab" markdown="1">
+
+    <!-- **Turn on TalkBack on your Android phone to try the app with a screen reader** -->
+
+    1. On your device, open Settings. 
+    2. Select Accessibility and then TalkBack.
+    3. Turn 'Use TalkBack' on or off.
+    4. Select Ok.
+
+    You can also view this video to learn how to find and customize all accessibility features provided by Android.
+
+    <iframe width="560" height="315" src="{{site.youtube-site}}/embed/FQyj_XTl01w" title="Customize accessibility features on Pixel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+    </div>
+
+    <div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab" markdown="1">
+
+
+    <!-- **Turn on VoiceOver on your iPhone to try the app with a screen reader** -->
+
+    1. On your device, open **Settings > Accessibility > VoiceOver**
+    2. Turn the VoiceOver setting on or off    
+
+    You can also view this video to learn how to find and customize VoiceOver on an iPhone.  
+
+
+    <iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+    </div>
+    </div>{% comment %} End: Tab panes. {% endcomment -%}  
 
 ### Problems?
 {:.no_toc}
@@ -717,6 +779,12 @@ If needed, use the code at the following link to get back on track.
 ## Next steps
 {:.no_toc}
 
+<container class="site-image-right">
+<iframe width="auto" height="502" src="{{site.youtube-site}}/embed/pKimFYkOfFk?feature=share" title="App on TalkBack " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+  The app from part 2 on TalkBack screen reader
+</container>
+
 {% include docs/app-figure.md class="site-image-right" img-class="border"
     image="get-started/startup-namer.gif" caption="The app from part 2" %}
 
@@ -731,6 +799,7 @@ In this codelab, you've:
 * Used hot reload for a faster development cycle.
 * Implemented a stateful widget.
 * Created a lazily loaded, infinite scrolling list.
+* Learned about basic accessibility terms such as screen readers. 
 
 If you would like to extend this app, proceed to
 [part 2][] on the
@@ -743,6 +812,12 @@ where you add the following functionality:
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
 
+## Explore the Flutter SDK
+
+* <a href="https://docs.flutter.dev/get-started/flutter-for/react-native-devs">Flutter for React Native developers</a>
+* <a href="https://docs.flutter.dev/development/accessibility-and-localization/accessibility//#testing-accessibility-on-mobile">Testing accessibility in Flutter mobile apps</a>
+* <a href="https://docs.flutter.dev/development/ui/layout">Building layouts with Flutter</a>
+* <a href="https://flutter.dev/docs/development/ui/widgets-intro">Introduction to widgets</a>
 
 [an editor]: {{site.url}}/get-started/editor
 [Building a web application with Flutter]: {{site.url}}/web
