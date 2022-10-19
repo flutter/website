@@ -144,7 +144,34 @@ widgets to offer a dramatically more accessible experience.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/bWbBgbmAdQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Testing accessibility on web:
+## Testing accessibility on mobile
+
+You can use Flutter's <a href="https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html">Accessibility Guideline API</a> to test if your mobile app's UI meets the accessibility recommendations for text contrast, target size, and target labels. 
+
+The example below shows how to use the Guideline API on <a href="https://https://docs.flutter.dev/get-started/codelab/?tab=talkback">Startup Name Generator</a>, the app built as part of the codelab on creating your first Flutter app. Each list tile on the app's main screen is tappable target with text represented in 18 point. You can add the tests provided by the Guideline API in `test/widget_test.dart` of your app directory.
+
+<?code-excerpt path-base="codelabs/startup_namer/step3_stateful_widget"?>
+<?code-excerpt "test/widget_test.dart" title indent-by="2"?>
+```dart
+final SemanticsHandle handle = tester.ensureSemantics();
+await tester.pumpWidget(const MaterialApp(home: MyApp()));
+
+// Checks that tappable nodes have a minimum size of 48 by 48 pixels for android.
+await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+
+// Checks that tappable nodes have a minimum size of 44 by 44 pixels for iOS.
+await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
+
+// Checks that touch targets with a tap or long press action are labeled.
+await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+
+// Checks whether semantic nodes meet the minimum text contrast levels.
+// The recommended text contrast is 3:1 for larger text (18 point and above regular)
+await expectLater(tester, meetsGuideline(textContrastGuideline));
+handle.dispose();
+```
+
+## Testing accessibility on web
 
 You can debug accessibility by visualizing the semantic nodes created for your web app
 using the following command line flag in profile and release modes:
