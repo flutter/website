@@ -4,7 +4,7 @@ description: How to install on Windows v2.
 short-title: Windows
 next:
   title: Set up an editor
-  path: /get-started/windowstest
+  path: /get-started/windows-quick
 ---
 
 ## Get the Flutter SDK
