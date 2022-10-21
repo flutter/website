@@ -199,6 +199,8 @@
               permalink: /development/platform-integration/web/renderers
             - title: Custom app initialization
               permalink: /development/platform-integration/web/initialization
+            - title: Displaying images on the web
+              permalink: /development/platform-integration/web/web-images
         - title: Windows
           permalink: /development/platform-integration/windows
           children:
