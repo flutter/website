@@ -1,40 +1,34 @@
-ARG RUBY_VERSION=3.0
-FROM ruby:${RUBY_VERSION}-buster@sha256:6986a308eab6b20c612e6e0376196fa05e79973dd6e42c588c498dee9ce54832 as dev
+FROM ruby:3.1.2-buster@sha256:d7f09eedf86908861a1812ea89016c264e5758d80fa716e6fe50045e6f007b52 AS base
 
 ENV TZ=US/Pacific
-
-ARG NODE_VERSION=17
-ENV NODE_VERSION=$NODE_VERSION
-
-RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x -o node_setup.sh && \
-      bash node_setup.sh 1> /dev/null
 RUN apt-get update && apt-get install -yq --no-install-recommends \
       build-essential \
-      vim \
-      git \
       diffutils \
+      git \
+      lsof \
+      vim-nox \
       xdg-user-dirs \
-      nodejs && \
-      rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
+RUN echo "alias lla='ls -lAhG --color=auto'" >> ~/.bashrc
 WORKDIR /app
 
-# Install Ruby deps
-ENV JEKYLL_ENV=development
-RUN gem install bundler
-COPY Gemfile Gemfile.lock ./
-RUN bundle config set force_ruby_platform true
-RUN bundle install
 
-# Install Node deps
-ENV NODE_ENV=development
-COPY package.json package-lock.json ./
-RUN npm ci
 
-COPY ./ ./
+# ============== INSTALL FLUTTER ==============
+# TODO recommended to move to a SHA based install for security reasons
+FROM base AS flutter
 
-# So that we have the most up to date submodules
-RUN git submodule update --init --recursive
+# TODO to avoid issues/clashes with the host repo, and to one day remove 
+# the flutter submodule in the host repo, test with clone. Only issue we need 
+# more information on is why the local version would ever be detached or pinned 
+# at a specific commit/hash???
+# RUN git clone https://github.com/flutter/website.git
+
+# This Flutter install uses/requires the local ./flutter submodule
+COPY ./flutter ./flutter
+COPY ./site-shared ./site-shared
+COPY pubspec.yaml ./
 
 ARG FLUTTER_BRANCH
 ENV FLUTTER_BRANCH=$FLUTTER_BRANCH
@@ -42,9 +36,10 @@ ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/app/flutter/bin:$PATH"
 
-# Used if wanting to build the container with a different branch
-# e.g. `make FLUTTER_BRANCH=dev build`
-# This is not to be confused with the $TEST_TARGET_CHANNEL
+# Used if wanting to build the container with a different branch, this 
+# would change the current branch of and update the mirrored submodule
+# e.g. `make build FLUTTER_BRANCH=beta`
+# This is not to be confused with the $FLUTTER_TEST_BRANCH
 RUN if test -n "$FLUTTER_BRANCH" -a "$FLUTTER_BRANCH" != "stable" ; then \
       cd flutter && \
       git fetch && \
@@ -55,59 +50,94 @@ RUN if test -n "$FLUTTER_BRANCH" -a "$FLUTTER_BRANCH" != "stable" ; then \
     fi
 
 # Set up Flutter
+# NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."  
+# and this is to be disregarded since this image is never deployed to production.
+# It is not worth setting up a Docker user or mirroring host, but you may run into 
+# conflicts with the local host repo and the Docker one.
 RUN flutter doctor
 RUN flutter --version
 RUN dart pub get
 
+
+
+# ============== NODEJS INTSALL ==============
+# TODO recommended to move to a SHA based install for security reasons
+FROM flutter AS node
+
+RUN curl -sL https://deb.nodesource.com/setup_17.x -o node_setup.sh && \
+      bash node_setup.sh 1> /dev/null
+RUN apt-get update -q && apt-get install -yq --no-install-recommends \
+      nodejs \
+    && rm -rf /var/lib/apt/lists/*
+# Ensure latest NPM, install global Firebase CLI
+RUN npm install -g npm firebase-tools@11.0.1
+
+
+
+# ============== FLUTTER CODE TESTS ==============
+FROM flutter AS tests
+
+COPY ./ ./
+
+ARG FLUTTER_TEST_BRANCH=stable
+ENV FLUTTER_TEST_BRANCH=$FLUTTER_TEST_BRANCH
+
+# Only test the code here, checking links is purely for site deployment
+# NOTE bash scripts will switch the Flutter branch based on $FLUTTER_TEST_BRANCH
+ENTRYPOINT ["tool/test.sh"]
+
+
+
+# ============== DEV / JEKYLL SETUP ==============
+FROM node AS dev
+
+ENV JEKYLL_ENV=development
+RUN gem install bundler
+COPY Gemfile Gemfile.lock ./
+RUN bundle config set force_ruby_platform true
+RUN bundle install
+
+# Install Node deps
+ENV NODE_ENV=development
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY ./ ./
+
+# Jekyl ports
 EXPOSE 35729
 EXPOSE 4002
 
-
-# -- Test target
-FROM dev as test
-ARG DISABLE_TESTS
-ENV DISABLE_TESTS=$DISABLE_TESTS
-ARG TEST_TARGET_CHANNEL=stable
-ENV TEST_TARGET_CHANNEL=$TEST_TARGET_CHANNEL
-RUN tool/test.sh --target $TEST_TARGET_CHANNEL --check-links --null-safety
+# Firebase emulator port
+# Airplay runs on :5000 by default now
+EXPOSE 5500
 
 
-# -- Build target
-FROM test AS builder
+
+# ============== BUILD PROD JEKYLL SITE ==============
+FROM node AS build
 
 ENV JEKYLL_ENV=production
-ENV NODE_ENV=production
+RUN gem install bundler
+COPY Gemfile Gemfile.lock ./
+RUN bundle config set force_ruby_platform true
+RUN BUNDLE_WITHOUT="test development" bundle install --jobs=4 --retry=2
 
-RUN bundle install
-RUN cd flutter && \
-      git fetch && \
-      git remote set-branches origin stable && \
-      git fetch origin stable && \
-      git checkout stable && \
-      git pull
-RUN flutter doctor
-RUN echo "User-agent: *" > src/robots.txt && echo "Allow: /" >> src/robots.txt
+ENV NODE_ENV=production
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY ./ ./
+
+RUN echo $'User-agent: *\nAllow: /' > src/robots.txt
 
 ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
 RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
 
-# -- Deploy target
-FROM builder AS deploy
 
-ARG FIREBASE_TOKEN
-ENV FIREBASE_TOKEN=$FIREBASE_TOKEN
-ARG FIREBASE_ALIAS=default
-ENV FIREBASE_ALIAS=${FIREBASE_ALIAS:-default}
-ARG BUILD_COMMIT=$(git rev-parse --short HEAD)
-ENV BUILD_COMMIT=$COMMIT
+# ============== TEST BUILT SITE LINKS ==============
+FROM build as checklinks
 
-RUN firebase use $FIREBASE_ALIAS
-RUN firebase deploy -m $BUILD_COMMIT \
-      --only hosting \
-      --non-interactive \
-      --token $FIREBASE_TOKEN \
-      --project $FIREBASE_ALIAS \
-      --debug \
-      --json
+CMD ["tool/check-links.sh"]

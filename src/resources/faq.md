@@ -430,7 +430,8 @@ Whether you ship with bitcode or not,
 the increased size of the release framework is
 stripped out during the final steps of the build.
 These steps happen after archiving your app and
-shipping it to the store.
+shipping it to the store. Note bitcode has been deprecated
+and will be removed from Flutter in a future release.
 
 Of course, we recommend that you measure your own app.
 To do that, see [Measuring your app's size][].

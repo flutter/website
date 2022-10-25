@@ -77,7 +77,6 @@ Then:
 1. Select a method of distribution. **Development** is the simplest if you don't
    intend to distribute the application.
 1. In **App Thinning**, select 'all compatible device variants'.
-1. Select **Rebuild from Bitcode** (available if bitcode is enabled on your project).
 1. Select **Strip Swift symbols**.
 
 Sign and export the IPA. The exported directory contains
@@ -149,10 +148,8 @@ Through the summary, you can get a quick idea of the size usage per category
 native library is further broken down by package for quick analysis.
 
 {{site.alert.warning}}
-  This tool on iOS creates a .app rather than an IPA. It also contains bitcode
-  which drastically increases the .framework file sizes in the .app.
-
-  Use this tool to evaluate the relative size of the .app's content. To get
+  This tool on iOS creates a .app rather than an IPA. Use this tool to
+  evaluate the relative size of the .app's content. To get
   a closer estimate of the download size, reference the
   [Estimating total size](#estimating-total-size) section above.
 {{site.alert.end}}

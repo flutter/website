@@ -179,10 +179,6 @@ Learn how to use Flutter with other technologies.
   currency to offer three types of in-app purchases:
   consumable, non-consumable, and subscription.
 
-* [Build a Photo Sharing app with Google Photos and Flutter][]<br>
-  Build a field trip app that allows you and other
-  members of the trip to share photos.
-
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
@@ -207,7 +203,6 @@ Learn how to use Flutter with other technologies.
 [Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
-[Build a Photo Sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview

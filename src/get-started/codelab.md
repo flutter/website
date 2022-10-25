@@ -262,16 +262,16 @@ for a Flutter app. In `pubspec.yaml`, you will see
 that the `english_words` dependency has been added:
     
 <?code-excerpt path-base="codelabs/startup_namer"?>
-<?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
+<?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="sdk"?>
 ```diff
 --- step1_base/pubspec.yaml
 +++ step2_use_package/pubspec.yaml
-@@ -25,4 +25,5 @@
+@@ -9,4 +9,5 @@
  dependencies:
+   cupertino_icons: ^1.0.5
++  english_words: ^4.0.0
    flutter:
      sdk: flutter
-   cupertino_icons: ^1.0.2
-+  english_words: ^4.0.0
 ```
 
  2. While viewing the `pubspec.yaml` file in your IDE's editor view,

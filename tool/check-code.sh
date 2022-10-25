@@ -10,18 +10,16 @@ while [[ "$1" == -* ]]; do
   case "$1" in
     --filter)          shift; FILTER="$1"; shift;;
     --refresh|-r)      REFRESH=1; shift;;
-    --null-safety|-n)  NULL_SAFETY=1; shift;;
     --no-test)         TEST=; shift;;
     --help|-h)         echo ""
                        echo "Analyze and test examples."
                        echo ""
                        echo "Usage: $(basename $0) [options]"
                        echo ""
-                       echo "  -r, --refresh      Refresh code excerpts"
-                       echo "  -n, --null-safety  Run null safety examples, else runs with markdown examples"
-                       echo "      --filter       Filter examples by glob pattern"
-                       echo "      --no-test      Don't run tests"
-                       echo "  -h, --help         Print this usage information"
+                       echo "  -r, --refresh  Refresh code excerpts"
+                       echo "      --filter   Filter examples by glob pattern"
+                       echo "      --no-test  Don't run tests"
+                       echo "  -h, --help     Print this usage information"
                        echo "";
                        exit 0;;
     *)                 echo "Unrecognized option: $1. Use --help for usage."; exit 0;;
@@ -40,7 +38,6 @@ dart --version
 
 echo "=> Using Flutter version:"
 flutter --version
-
 
 if [[ $REFRESH ]]; then
   echo "=> Refreshing code excerpts..."
@@ -87,86 +84,62 @@ function check_formatting() {
   fi
 }
 
+# Extract snippets, analyze and check formatting
+# Null safety flag set
+EXAMPLE_ROOT="examples"
+echo "=> ANALYZING and testing apps in $EXAMPLE_ROOT/* --null-safety"
 
-if [[ -z $NULL_SAFETY ]]; then 
-  # NOTE These snippets will never be migrated to null safety
+for sample in $EXAMPLE_ROOT/*/*{,/*}; do
 
-  echo "=> Resetting packages..."
-  (
-    set -x;
-    rm -rf example.g
-    mkdir -pv example.g
-    cp example/* example.g/
-  )
-  (cd example.g && flutter packages get)
+  # Does it have a pubspec?
+  if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
 
-  echo "=> EXTRACTING OLD example/* code snippets from the markdown..."
-  dart tool/extract.dart
+    # Does it match our filter?
+    if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
+      echo "=> Example: $sample - skipped because of filter"
+      continue;
+    
+    # Skip submodules
+    elif [[ "$(cd $sample ; git rev-parse --show-superproject-working-tree)" ]]; then
+      echo "=> Example: $sample - skipped because it's in a sumbodule."
+      continue;
 
-  echo "=> ANALYZING extracted code snippets..."
-  (cd example.g && flutter analyze .)
+    # TODO(filiph): Fix the example and remove this special case
+    elif [[ $sample =~ "intl_example" ]]; then
+      echo "=> Example: $sample - skipped because it fails now"
+      continue;
+    
+    else
+      echo "=> Example: $sample"
+    fi
 
-  echo "=> DART FORMAT checking of extracted code snippets..."
-  check_formatting example.g
-
-else
-  # Extract snippets, analyze and check formatting
-  # Null safety flag set
-  EXAMPLE_ROOT="examples"
-  echo "=> ANALYZING and testing apps in $EXAMPLE_ROOT/* --null-safety"
-  
-  for sample in $EXAMPLE_ROOT/*/*{,/*}; do
-
-    # Does it have a pubspec?
-    if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
-
-      # Does it match our filter?
-      if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
-        echo "=> Example: $sample - skipped because of filter"
-        continue;
-      
-      # Skip submodules
-      elif [[ "$(cd $sample ; git rev-parse --show-superproject-working-tree)" ]]; then
-        echo "=> Example: $sample - skipped because it's in a sumbodule."
-        continue;
-
-      # TODO(filiph): Fix the example and remove this special case
-      elif [[ $sample =~ "intl_example" ]]; then
-        echo "=> Example: $sample - skipped because it fails now"
-        continue;
-      
-      else
-        echo "=> Example: $sample"
-      fi
-
-      # Only hydrate the sample if we're going to test it.
-      if [[ -n $TEST && -d "$sample/test" ]]; then
-        (
-          set -x;
-          cd $ROOT;
-          flutter create --no-overwrite $sample
-          rm -rf $sample/integration_test # Remove unneeded integration test stubs.
-        )
-      fi
-
+    # Only hydrate the sample if we're going to test it.
+    if [[ -n $TEST && -d "$sample/test" ]]; then
       (
         set -x;
-        cd $sample
-        flutter packages get;
-        flutter analyze .;
+        cd $ROOT;
+        flutter create --no-overwrite $sample
+        rm -rf $sample/integration_test # Remove unneeded integration test stubs.
       )
-
-      if [[ -n $TEST && -d "$sample/test" ]]; then
-        (
-          cd $sample;
-          set -x;
-          echo "=> Running tests..."
-          flutter test
-        )
-      elif [[ -n $TEST ]]; then
-        echo "=> Sample has no tests"
-      fi
-      echo ""
     fi
-  done
-fi
+
+    (
+      set -x;
+      cd $sample
+      flutter packages get;
+      flutter analyze .;
+    )
+
+    if [[ -n $TEST && -d "$sample/test" ]]; then
+      (
+        cd $sample;
+        set -x;
+        echo "=> Running tests..."
+        flutter test
+      )
+    elif [[ -n $TEST ]]; then
+      echo "=> Sample has no tests"
+    fi
+    echo ""
+  fi
+done
