@@ -21,10 +21,12 @@ release, and listed in alphabetical order:
 * [Deprecated API removed after v3.3][]
 * [iOS FlutterViewController splashScreenView made nullable][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
+* [Insert Content Text Input Client]
 
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
+[Insert Content Text Input Client]: {{site.url}}/release/breaking-changes/insert-content-text-input-client
 
 ### Released in Flutter 3.3
 
