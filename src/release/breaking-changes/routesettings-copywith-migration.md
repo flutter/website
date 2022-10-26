@@ -9,7 +9,7 @@ RouteSettings copyWith was removed, and existing apps needed to use the construc
 
 ## Context
 
-With the introduction of [Page](https://api.flutter.dev/flutter/widgets/Page-class.html) class,
+With the introduction of [`Page`][] class,
 the RouteSettings.copyWith was no longer a viable API.
 
 ## Description of change
@@ -40,4 +40,7 @@ In stable release: 1.22
 
 Relevant PRs:
 
-* [PR 113860][]: Removes RouteSetting.copyWith
+* [PR 113860][]: Removes RouteSetting.copyWith.
+
+[PR 113860]: {{site.repo.flutter}}/pull/113860
+[`Page`]: {{site.api}}/flutter/widgets/Page-class.html
