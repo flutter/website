@@ -141,11 +141,6 @@ class Color {
 }
 ```
 
-### Changing fonts
-
-Hot reload supports changing assets, for the most part.
-However, if you change fonts, you'll need to hot restart.
-
 ### Generic types
 
 Hot reload won't work when generic type declarations
