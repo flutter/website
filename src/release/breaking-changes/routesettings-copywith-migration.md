@@ -5,16 +5,16 @@ description: Removal of RouteSettings copyWith and how to migrate
 
 ## Summary
 
-RouteSettings copyWith was removed, and existing apps needed to use the constructor to create a new RouteSettings instead.
+`RouteSettings.copyWith` was removed, and existing apps needed to use the constructor to create a new `RouteSettings` instead.
 
 ## Context
 
 With the introduction of [`Page`][] class,
-the RouteSettings.copyWith was no longer a viable API.
+the `RouteSettings.copyWith` was no longer a viable API.
 
 ## Description of change
 
-RouteSettings copyWith was removed
+`RouteSettings.copyWith` was removed
 
 ## Migration guide
 
@@ -34,7 +34,7 @@ RouteSettings newSettings = RouteSettings(name: 'new name', arguments: oldSettin
 ## Timeline
 
 Landed in version: 3.5.0-9.0.pre-137-gc6f6095acd<br>
-In stable release: NEXT
+In stable release: TBD
 
 ## References
 
