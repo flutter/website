@@ -33,8 +33,8 @@ RouteSettings newSettings = RouteSettings(name: 'new name', arguments: oldSettin
 
 ## Timeline
 
-Landed in version: 1.20.0-8.0<br>
-In stable release: 1.22
+Landed in version: 3.5.0-9.0.pre-137-gc6f6095acd<br>
+In stable release: NEXT
 
 ## References
 
