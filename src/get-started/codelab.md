@@ -298,8 +298,8 @@ Process finished with exit code 0
       import 'package:flutter/material.dart';
     ```
 
-    Depending on your IDE, you may see suggestions for libraries to import
-    as you type. Some IDEs will even render the import string in gray, letting 
+    Your IDE might provide suggestions for libraries to import
+    as you type. Some IDEs render the import string in gray to let
     you know that the imported library is unused (so far).
 
  4. Use the English words package to generate the text instead of
