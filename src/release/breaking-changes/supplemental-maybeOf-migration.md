@@ -1,0 +1,158 @@
+---
+title: Supplemental `maybeOf` migration
+description: To eliminate nullOk parameters to help with API sanity in the face of null safety.
+---
+
+## Summary
+
+This migration guide describes conversion of code that uses various static `of`
+functions to retrieve information from a context that used to return nullable
+values, but now return non-nullable values.
+
+## Context
+
+Flutter has a common pattern of allowing lookup of some types of widgets
+(typically [`InheritedWidget`][]s, but also others) using static member
+functions that are typically called `of`.
+
+When non-nullability was made the default, it was then desirable to have the
+most commonly used APIs return a non-nullable value. This is because saying
+`Scrollable.of(context)` and then still requiring an `!` operator or `?` and a
+fallback value after that call felt awkward, and was not idiomatic for
+non-nullable Dart code.
+
+A lot of this migration was performed when we eliminated `nullOk` parameters in
+a [previous migration][], but some `of` methods were missed in that migration,
+and some were subsequently added with nullable return types, counter to our
+common pattern.
+
+In this migration, the affected `of` accessors were split into two calls: one
+that returned a non-nullable value and threw an exception when the sought-after
+value was not present (still called `of`), and one that returned a nullable
+value that didn't throw an exception, and returned null if the value was not
+present (a new method called `maybeOf`).
+
+## Description of change
+
+The change modified these static `of` APIs to return non-nullable values. If a
+value is not found, they will also now assert in debug mode, and throw an
+exception in release mode.
+
+* [`AutofillGroup.of`]
+* [`DefaultTabController.of`]
+* [`DefaultTextHeightBehavior.of`]
+* [`Form.of`]
+* [`HeroControllerScope.of`]
+* [`Material.of`]
+* [`PageStorage.of`]
+* [`PrimaryScrollController.of`]
+* [`RenderAbstractViewport.of`]
+* [`RestorationScope.of`]
+* [`Scrollable.of`]
+* [`ScrollNotificationObserver.of`]
+
+And, introduced these new static `maybeOf` APIs alongside the above functions,
+which return a nullable version of the same value, and simply return null if the
+value is not found, without throwing any exceptions.
+
+* [`AutofillGroup.maybeOf`]
+* [`DefaultTabController.maybeOf`]
+* [`DefaultTextHeightBehavior.maybeOf`]
+* [`Form.maybeOf`]
+* [`HeroControllerScope.maybeOf`]
+* [`Material.maybeOf`]
+* [`PageStorage.maybeOf`]
+* [`PrimaryScrollController.maybeOf`]
+* [`RenderAbstractViewport.maybeOf`]
+* [`RestorationScope.maybeOf`]
+* [`Scrollable.maybeOf`]
+* [`ScrollNotificationObserver.maybeOf`]
+
+## Migration guide
+
+In order to modify your code to use the new form of the APIs, first convert all
+instances of the original static `of` functions where its nullability is
+important so that they use the `maybeOf` form of the API instead.
+
+So this:
+
+```dart
+ScrollController? controller = Scrollable.of(context);
+```
+
+becomes:
+
+```dart
+ScrollController? controller = Scrollable.maybeOf(context);
+```
+
+Then, for instances where the code calls the `of` API followed by an exclamation
+point, just remove the exclamation point: it can no longer return a nullable
+value.
+
+```dart
+ScrollController controller = Scrollable.of(context)!;
+```
+
+becomes:
+
+```dart
+ScrollController controller = Scrollable.of(context);
+```
+
+The [`unnecessary_non_null_assertion`][] linter message will help find finding
+the places where an extra `!` operator should be removed. The
+[`unnecessary_null_checks`][] analysis option can be helpful to find places
+where the `?` operator is no longer needed. The
+[`unnecessary_null_in_if_null_operators`][] helps to find places where a `??`
+operator is no longer needed. And the
+[`unnecessary_nullable_for_final_variable_declarations`][] analysis option can
+be helpful in finding unnecessary question mark operators on `final` and `const`
+variables.
+
+## Timeline
+
+Landed in version: 1.24.0<br>
+In stable release: 2.0.0
+
+## References
+
+API documentation:
+
+* [`Material.of`][]
+
+Relevant PRs:
+
+* [Add `maybeOf` for all the cases when `of` returns nullable][]
+
+[previous migration]: eliminating-nullok-parameters
+[`unnecessary_non_null_assertion`]: {{site.dart}}/tools/diagnostic-messages#unnecessary_non_null_assertion
+[`unnecessary_null_checks`]: {{site.dart}}/tools/linter-rules#unnecessary_null_checks
+[`unnecessary_null_in_if_null_operators`]: {{site.dart}}/tools/linter-rules#unnecessary_null_in_if_null_operators
+[`unnecessary_nullable_for_final_variable_declarations`]: {{site.dart}}/tools/linter-rules#unnecessary_nullable_for_final_variable_declarations
+[`AutofillGroup.maybeOf`]: {{site.api}}/flutter/widgets/AutofillGroup/maybeOf.html
+[`AutofillGroup.of`]: {{site.api}}/flutter/widgets/AutofillGroup/of.html
+[`DefaultTabController.maybeOf`]: {{site.api}}/flutter/material/DefaultTabController/maybeOf.html
+[`DefaultTabController.of`]: {{site.api}}/flutter/material/DefaultTabController/of.html
+[`DefaultTextHeightBehavior.maybeOf`]: {{site.api}}/flutter/widgets/DefaultTextHeightBehavior/maybeOf.html
+[`DefaultTextHeightBehavior.of`]: {{site.api}}/flutter/widgets/DefaultTextHeightBehavior/of.html
+[`Form.maybeOf`]: {{site.api}}/flutter/widgets/Form/maybeOf.html
+[`Form.of`]: {{site.api}}/flutter/widgets/Form/of.html
+[`HeroControllerScope.maybeOf`]: {{site.api}}/flutter/widgets/HeroControllerScope/maybeOf.html
+[`HeroControllerScope.of`]: {{site.api}}/flutter/widgets/HeroControllerScope/of.html
+[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+[`Material.maybeOf`]: {{site.api}}/flutter/material/Material/maybeOf.html
+[`Material.of`]: {{site.api}}/flutter/material/Material/of.html
+[`PageStorage.maybeOf`]: {{site.api}}/flutter/widgets/PageStorage/maybeOf.html
+[`PageStorage.of`]: {{site.api}}/flutter/widgets/PageStorage/of.html
+[`PrimaryScrollController.maybeOf`]: {{site.api}}/flutter/widgets/PrimaryScrollController/maybeOf.html
+[`PrimaryScrollController.of`]: {{site.api}}/flutter/widgets/PrimaryScrollController/of.html
+[`RenderAbstractViewport.maybeOf`]: {{site.api}}/flutter/rendering/RenderAbstractViewport/maybeOf.html
+[`RenderAbstractViewport.of`]: {{site.api}}/flutter/rendering/RenderAbstractViewport/of.html
+[`RestorationScope.maybeOf`]: {{site.api}}/flutter/widgets/RestorationScope/maybeOf.html
+[`RestorationScope.of`]: {{site.api}}/flutter/widgets/RestorationScope/of.html
+[`Scrollable.maybeOf`]: {{site.api}}/flutter/widgets/Scrollable/maybeOf.html
+[`Scrollable.of`]: {{site.api}}/flutter/widgets/Scrollable/of.html
+[`ScrollNotificationObserver.maybeOf`]: {{site.api}}/flutter/widgets/ScrollNotificationObserver/maybeOf.html
+[`ScrollNotificationObserver.of`]: {{site.api}}/flutter/widgets/ScrollNotificationObserver/of.html
+[Add `maybeOf` for all the cases when `of` returns nullable]: {{site.github}}/flutter/flutter/pull/114120
