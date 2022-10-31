@@ -129,10 +129,10 @@ Relevant PRs:
 * [Add `maybeOf` for all the cases when `of` returns nullable][]
 
 [previous migration]: eliminating-nullok-parameters
-[`unnecessary_non_null_assertion`]: {{site.dart}}/tools/diagnostic-messages#unnecessary_non_null_assertion
-[`unnecessary_null_checks`]: {{site.dart}}/tools/linter-rules#unnecessary_null_checks
-[`unnecessary_null_in_if_null_operators`]: {{site.dart}}/tools/linter-rules#unnecessary_null_in_if_null_operators
-[`unnecessary_nullable_for_final_variable_declarations`]: {{site.dart}}/tools/linter-rules#unnecessary_nullable_for_final_variable_declarations
+[`unnecessary_non_null_assertion`]: {{site.dart-site}}/tools/diagnostic-messages#unnecessary_non_null_assertion
+[`unnecessary_null_checks`]: {{site.dart-site}}/tools/linter-rules#unnecessary_null_checks
+[`unnecessary_null_in_if_null_operators`]: {{site.dart-site}}/tools/linter-rules#unnecessary_null_in_if_null_operators
+[`unnecessary_nullable_for_final_variable_declarations`]: {{site.dart-site}}/tools/linter-rules#unnecessary_nullable_for_final_variable_declarations
 [`AutofillGroup.maybeOf`]: {{site.api}}/flutter/widgets/AutofillGroup/maybeOf.html
 [`AutofillGroup.of`]: {{site.api}}/flutter/widgets/AutofillGroup/of.html
 [`DefaultTabController.maybeOf`]: {{site.api}}/flutter/material/DefaultTabController/maybeOf.html
