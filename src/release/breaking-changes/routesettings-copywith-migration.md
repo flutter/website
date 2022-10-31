@@ -5,7 +5,9 @@ description: Removal of RouteSettings copyWith and how to migrate
 
 ## Summary
 
-`RouteSettings.copyWith` was removed, and existing apps needed to use the constructor to create a new `RouteSettings` instead.
+The `RouteSettings.copyWith` method is removed, and apps that use
+it need to use the constructor to create a new `RouteSettings`
+instance instead.
 
 ## Context
 
