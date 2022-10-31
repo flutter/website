@@ -20,7 +20,7 @@ the `RouteSettings.copyWith` was no longer a viable API.
 
 ## Migration guide
 
-Existing apps:
+Code before migration:
 
 ```dart
 RouteSettings newSettings = oldSettings.copyWith(name: 'new name');
