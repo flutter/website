@@ -1,5 +1,5 @@
 ---
-title: Supplemental `maybeOf` migration
+title: Migrate `of` to non-nullable return values, and add `maybeOf`
 description: To eliminate nullOk parameters to help with API sanity in the face of null safety.
 ---
 
@@ -51,7 +51,7 @@ exception in release mode.
 * [`Scrollable.of`]
 * [`ScrollNotificationObserver.of`]
 
-And, introduced these new static `maybeOf` APIs alongside the above functions,
+This change also introduced new static `maybeOf` APIs alongside the above functions,
 which return a nullable version of the same value, and simply return null if the
 value is not found, without throwing any exceptions.
 
@@ -70,17 +70,17 @@ value is not found, without throwing any exceptions.
 
 ## Migration guide
 
-In order to modify your code to use the new form of the APIs, first convert all
-instances of the original static `of` functions where its nullability is
-important so that they use the `maybeOf` form of the API instead.
+To modify your code to use the new form of the APIs, first convert all
+instances of the original static `of` functions (where its nullability is
+important) to use the `maybeOf` form instead.
 
-So this:
+Code before migration:
 
 ```dart
 ScrollController? controller = Scrollable.of(context);
 ```
 
-becomes:
+Code after migration:
 
 ```dart
 ScrollController? controller = Scrollable.maybeOf(context);
@@ -90,30 +90,33 @@ Then, for instances where the code calls the `of` API followed by an exclamation
 point, just remove the exclamation point: it can no longer return a nullable
 value.
 
+Code before migration:
+
 ```dart
 ScrollController controller = Scrollable.of(context)!;
 ```
 
-becomes:
+Code after migration:
 
 ```dart
 ScrollController controller = Scrollable.of(context);
 ```
 
-The [`unnecessary_non_null_assertion`][] linter message will help find finding
-the places where an extra `!` operator should be removed. The
-[`unnecessary_null_checks`][] analysis option can be helpful to find places
-where the `?` operator is no longer needed. The
-[`unnecessary_null_in_if_null_operators`][] helps to find places where a `??`
-operator is no longer needed. And the
-[`unnecessary_nullable_for_final_variable_declarations`][] analysis option can
-be helpful in finding unnecessary question mark operators on `final` and `const`
-variables.
+The following can also be helpful:
+
+* [`unnecessary_non_null_assertion`][] (linter message) identifies
+  places where an  `!` operator should be removed
+* [`unnecessary_null_checks`][] (analysis option) identifies places
+  where the `?` operator isn't needed
+* [`unnecessary_null_in_if_null_operators`][] identifies places
+  where a `??` operator isn't needed
+* [`unnecessary_nullable_for_final_variable_declarations`][] (analysis option)
+  finds unnecessary question mark operators on `final` and `const` variables
 
 ## Timeline
 
-Landed in version: 1.24.0<br>
-In stable release: 2.0.0
+Landed in version: TBD<br>
+In stable release: TBD
 
 ## References
 
