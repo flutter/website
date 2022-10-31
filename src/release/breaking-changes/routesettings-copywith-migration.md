@@ -26,7 +26,7 @@ Code before migration:
 RouteSettings newSettings = oldSettings.copyWith(name: 'new name');
 ```
 
-After migrations:
+Code after migration:
 
 ```dart
 RouteSettings newSettings = RouteSettings(name: 'new name', arguments: oldSettings.arguments);
