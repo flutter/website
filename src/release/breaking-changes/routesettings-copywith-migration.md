@@ -11,7 +11,7 @@ instance instead.
 
 ## Context
 
-With the introduction of [`Page`][] class,
+With the introduction of the [`Page`][] class,
 the `RouteSettings.copyWith` was no longer a viable API.
 
 ## Description of change
