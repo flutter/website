@@ -158,4 +158,4 @@ Relevant PRs:
 [`Scrollable.of`]: {{site.api}}/flutter/widgets/Scrollable/of.html
 [`ScrollNotificationObserver.maybeOf`]: {{site.api}}/flutter/widgets/ScrollNotificationObserver/maybeOf.html
 [`ScrollNotificationObserver.of`]: {{site.api}}/flutter/widgets/ScrollNotificationObserver/of.html
-[Add `maybeOf` for all the cases when `of` returns nullable]: {{site.github}}/flutter/flutter/pull/114120
+[Add `maybeOf` for all the cases when `of` returns nullable]: {{site.repo.flutter}}/pull/114120
