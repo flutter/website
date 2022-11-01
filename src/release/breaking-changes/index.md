@@ -18,10 +18,12 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Migrate `of` to non-nullable return values, and add `maybeOf`][]
 * [Deprecated API removed after v3.3][]
 * [iOS FlutterViewController splashScreenView made nullable][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
 
+[Migrate `of` to non-nullable return values, and add `maybeOf`]: /docs/release/breaking-changes/supplemental-maybeOf-migration
 [Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
