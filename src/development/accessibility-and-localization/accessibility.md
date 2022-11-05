@@ -151,9 +151,9 @@ Test your app using Flutter's
 This API checks if your app's UI meets Flutter's accessibility recommendations.
 These cover recommendations for text contrast, target size, and target labels.
 
-The following example shows how to use the Guideline API on
-<a href="https://docs.flutter.dev/get-started/codelab/?tab=talkback">Startup Name Generator</a>,
-the app built as part of the codelab on creating your first Flutter app.
+The following example shows how to use the Guideline API on Startup Name Generator.
+You created this app as part of the <a href="https://docs.flutter.dev/get-started/codelab/?tab=talkback">codelab</a> 
+on how to create your first Flutter app.
 Each list tile on the app's main screen serves as a tappable target
 with text represented in 18 point. You can add Guideline API tests
 in `test/widget_test.dart` of your app directory.

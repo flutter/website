@@ -56,14 +56,12 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
   * How to write a Flutter app that looks natural on iOS, Android,
-    desktop (Windows, for example), and the web
-  * Using a Flutter app with screen readers (<a href="#talkback">TalkBack</a> and <a href="#talkback">VoiceOver</a>), 
-    technologies that enable visually impaired users to get spoken feedback about app contents 
-  * Basic structure of a Flutter app
-  * Finding and using packages to extend functionality
-  * Using hot reload for a quicker development cycle
-  * How to implement a stateful widget
-  * How to create an infinite, lazily loaded list
+    desktop (Windows, for example), and the web.
+  * How to use a Flutter app with screen readers (<a href="#talkback">TalkBack</a> and <a href="#talkback">VoiceOver</a>). These  
+    technologies enable visually impaired users to get spoken feedback about app contents.
+  * How to structure a Flutter app.
+  * How to find and use packages to extend functionality.
+  * How to use hot reload for a quicker development cycle.
 
   In [part 2][] of this codelab, you'll add interactivity,
   modify the app's theme, and add the ability to navigate
@@ -220,8 +218,8 @@ where the Dart code lives.
   to the center of the screen.
 
 {{site.alert.note}}
-      The app creates a semantics tree for screen readers. 
-      Each node in the tree can correspond to one or several 
+      The app creates a semantic tree for screen readers. 
+      Each node in the tree corresponds to one or several 
       widgets. These nodes can be <a href="https://api.flutter.dev/flutter/widgets/Semantics-class.html">customized</a>
       to tell screen readers how to behave with the node. 
 {{site.alert.end}} 
@@ -373,7 +371,7 @@ Process finished with exit code 0
     {% endindent %}
 
     **You can try the app with a screen reader.
-    Turn on the screen reader on your device using the following steps:** 
+    To turn on the screen reader on your device, complete the following steps:** 
 
     {% comment %} Nav tabs {% endcomment -%}
     <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -397,7 +395,7 @@ Process finished with exit code 0
     3. Turn 'Use TalkBack' on or off.
     4. Select Ok.
 
-    You can also view this video to learn how to find and customize all accessibility features provided by Android.
+    To learn how to find and customize Android's accessibility features, view this video.
 
     <iframe width="560" height="315" src="{{site.youtube-site}}/embed/FQyj_XTl01w" title="Customize accessibility features on Pixel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
@@ -412,7 +410,7 @@ Process finished with exit code 0
     1. On your device, open **Settings > Accessibility > VoiceOver**
     2. Turn the VoiceOver setting on or off    
 
-    You can also view this video to learn how to find and customize all accessibility features provided by iOS.
+    To learn how to find and customize iOS accessibility features, view this video.
 
 
     <iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -782,8 +780,7 @@ If needed, use the code at the following link to get back on track.
 {:.no_toc}
 
 <container class="site-image-right">
-<!-- <iframe width="auto" height="502" src="{{site.youtube-site}}/embed/pKimFYkOfFk?feature=share" title="App on TalkBack " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> -->
-<iframe width="auto" height="502" src="https://www.youtube.com/embed/TSb8fjmKY1I" title="FOO040 talkback flutter app draft2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="auto" height="502" src="{{site.youtube-site}}/embed/TSb8fjmKY1I" title="FOO040 talkback flutter app draft2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   The app from part 2 on TalkBack screen reader
 </container>
 
