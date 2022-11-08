@@ -697,10 +697,10 @@ counter app to the one created previously:
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
   @override
-  [!State<MyHomePage> createState() => _MyHomePageState()!];
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class [!_MyHomePageState extends State<MyHomePage>!] {
+class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   @override
@@ -1010,7 +1010,6 @@ class DetailsPage extends StatelessWidget {
     );
   }
 }
-
 ```
 
 For more advanced navigation and routing requirements, 
@@ -1127,7 +1126,7 @@ using the `theme` property of either your `App` class as follows:
 
 <?code-excerpt "lib/cupertino_themes.dart (Theme)"?>
 ```dart
-CupertinoApp(
+    CupertinoApp(
   theme: CupertinoThemeData(
     brightness: Brightness.dark,
   ),
@@ -1162,7 +1161,7 @@ parameter of the `Text` widget as follows:
 
 <?code-excerpt "lib/cupertino_themes.dart (StylingTextExample)"?>
 ```dart
-Text(
+    Text(
   'Hello, world!',
   style: TextStyle(
     fontSize: 30,
@@ -1749,8 +1748,7 @@ class SignatureState extends State<Signature> {
         });
       },
       onPanEnd: (details) => _points.add(null),
-      child:
-          CustomPaint(
+      child: CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
       ),
