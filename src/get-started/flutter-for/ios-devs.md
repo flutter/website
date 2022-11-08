@@ -813,7 +813,7 @@ with two other classes that help you draw. [`CustomPaint`][], which requires a p
 
 <?code-excerpt "lib/canvas.dart (CustomPaint)"?>
 ```dart
-    CustomPaint(
+CustomPaint(
   painter: SignaturePainter(_points),
   size: Size.infinite,
 ),
@@ -1748,7 +1748,8 @@ class SignatureState extends State<Signature> {
         });
       },
       onPanEnd: (details) => _points.add(null),
-      child: CustomPaint(
+      child:
+      CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
       ),
