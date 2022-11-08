@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(pub
+    return const CupertinoApp(
       home: HomePage(),
     );
   }
