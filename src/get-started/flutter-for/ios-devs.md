@@ -229,8 +229,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // the widget returned here is a CupertinoApp
     // that has the look and feel of an iOS app by default
-    return CupertinoApp(
-      home: const HomePage(),
+    return const CupertinoApp(
+      home: HomePage(),
     );
   }
 }
@@ -253,11 +253,11 @@ that accepts a widget as its body:
 <?code-excerpt "lib/get_started.dart (homepage)"?>
 ```dart
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text(
           'Hello, World!',
@@ -305,7 +305,7 @@ To achieve the same  you can use the `CupertinoButton` class, as follows:
 
 <?code-excerpt "lib/text_button.dart (textbutton)"?>
 ```dart
-CupertinoButton(
+        CupertinoButton(
   onPressed: () {
     // this closure gets called when your button is tapped
   },
@@ -469,7 +469,7 @@ var items = [
 ];
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -557,7 +557,7 @@ const widgets = [
 ];
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -715,7 +715,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () => setState(() {
                 _counter++;
               }),
-              child: Text("+"),
+              child: const Text('+'),
             ),
           ],
         ),
@@ -773,7 +773,7 @@ For example, to rotate a button you can use the
           turns += .125;
         });
       },
-      child: Text('Tap me!')),
+      child: const Text('Tap me!')),
 )
 ```
 
@@ -915,8 +915,8 @@ const detailsPageRouteName = '/details';
 
 class App extends StatelessWidget {
   const App({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -995,7 +995,7 @@ and extracted using `ModalRoute.of()`:
 <?code-excerpt "lib/navigation.dart (DetailsPage)"?>
 ```dart
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+  const DetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1086,7 +1086,7 @@ To achieve the same results in Flutter, you use the [`url_launcher`][] plugin.
 
 <?code-excerpt "lib/openapp.dart (OpenAppExample)"?>
 ```dart
-CupertinoButton(
+    CupertinoButton(
   onPressed: () async {
     await launchUrl(
       Uri.parse('https://google.com'),
@@ -1275,7 +1275,7 @@ but this time in Flutter:
 
 <?code-excerpt "lib/stylingbutton.dart (CustomFont)"?>
 ```dart
-Text(
+        Text(
   'Cupertino',
   style: TextStyle(
     fontSize: 40,

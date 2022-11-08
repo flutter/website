@@ -16,8 +16,8 @@ const detailsPageRouteName = '/details';
 
 class App extends StatelessWidget {
   const App({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ final mockPersons = Iterable.generate(
 // that we get from the mockPersons list and allows the user
 // to tap each person to see their details
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +102,7 @@ class HomePage extends StatelessWidget {
 
 // #docregion DetailsPage
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+  const DetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

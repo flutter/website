@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(
@@ -9,13 +9,13 @@ void main() {
 
 class App extends StatelessWidget {
   const App({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      home: const HomePage(),
+    return const CupertinoApp(
+      home: HomePage(),
     );
   }
 }
@@ -34,7 +34,7 @@ var items = [
 ];
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {

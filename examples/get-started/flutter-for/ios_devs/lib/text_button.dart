@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,29 +10,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      home: const HomePage(),
+    return const CupertinoApp(
+      home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Center(
-        child: 
-       // #docregion textbutton
-        CupertinoButton(
-          onPressed: () {
-            // this closure gets called when your button is tapped
-          },
-          child: const Text('Do something'),
-        )
-       // #enddocregion textbutton
-      ),
+          child:
+              // #docregion textbutton
+              CupertinoButton(
+        onPressed: () {
+          // this closure gets called when your button is tapped
+        },
+        child: const Text('Do something'),
+      )
+          // #enddocregion textbutton
+          ),
     );
   }
 }

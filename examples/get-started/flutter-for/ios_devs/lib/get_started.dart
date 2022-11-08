@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // the widget returned here is a CupertinoApp
     // that has the look and feel of an iOS app by default
-    return CupertinoApp(
-      home: const HomePage(),
+    return const CupertinoApp(
+      home: HomePage(),
     );
   }
 }
@@ -24,11 +24,11 @@ class MyApp extends StatelessWidget {
 
 // #docregion homepage
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text(
           'Hello, World!',

@@ -9,8 +9,8 @@ void main() {
 
 class App extends StatelessWidget {
   const App({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,6 @@ class App extends StatelessWidget {
   }
 }
 
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -31,9 +30,9 @@ class HomePage extends StatelessWidget {
     return CupertinoPageScaffold(
       child: SafeArea(
         child: Center(
-          child: 
-          // #docregion OpenAppExample
-          CupertinoButton(
+          child:
+              // #docregion OpenAppExample
+              CupertinoButton(
             onPressed: () async {
               await launchUrl(
                 Uri.parse('https://google.com'),
