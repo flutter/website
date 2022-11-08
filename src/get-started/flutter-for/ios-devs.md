@@ -3477,7 +3477,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`ListTitle`]: {{site.api}}/flutter/widgets/ListTitle-class.html
+[`ListTile`]: {{site.api}}/flutter/widgets/ListTitle-class.html
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
 [`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
@@ -3495,3 +3495,4 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
+[go_router]:{{site.pub-pkg}}/go_router
