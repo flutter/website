@@ -763,16 +763,17 @@ For example, to rotate a button you can use the
 
 <?code-excerpt "lib/simple_animation.dart (AnimatedButton)"?>
 ```dart
-      AnimatedRotation(
-        duration: const Duration(seconds:1),
-turns: turns,
-curve: Curves.easeIn,
-child: TextButton(
- onPressed: () {
-   setState(() {
-     turns += .125;
-   });
-}, child: Text('Tap me!')),
+        AnimatedRotation(
+  duration: const Duration(seconds: 1),
+  turns: turns,
+  curve: Curves.easeIn,
+  child: TextButton(
+      onPressed: () {
+        setState(() {
+          turns += .125;
+        });
+      },
+      child: Text('Tap me!')),
 )
 ```
 
