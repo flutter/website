@@ -48,6 +48,20 @@ a.card {
   }
 }
 
+// navbar for viewing code samples on Github / DaprtPad
+.navbar-code {
+  flex-direction:row;
+}
+
+// navbar for viewing code samples on Github / DaprtPad
+.btn-navbar-code {
+  font-size: $font-size-sm;
+  color: $site-color-primary;
+  background-color: $site-color-white;
+  font-weight: bold;
+  margin-left: bs-spacer(1);
+}
+
 .btn {
   font-family: $site-font-family-alt;
   font-weight: 500;
