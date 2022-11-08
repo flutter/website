@@ -87,7 +87,7 @@ function check_formatting() {
 # Extract snippets, analyze and check formatting
 # Null safety flag set
 EXAMPLE_ROOT="examples"
-echo "=> ANALYZING and testing apps in $EXAMPLE_ROOT/* --null-safety"
+echo "=> ANALYZING and testing apps in $EXAMPLE_ROOT/*"
 
 for sample in $EXAMPLE_ROOT/*/*{,/*}; do
 
