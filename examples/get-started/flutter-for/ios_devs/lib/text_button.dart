@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
               // #docregion textbutton
               CupertinoButton(
         onPressed: () {
-          // this closure gets called when your button is tapped
+          // This closure is called when your button is tapped.
         },
         child: const Text('Do something'),
       )
