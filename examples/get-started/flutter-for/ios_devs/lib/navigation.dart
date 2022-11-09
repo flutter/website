@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     // create an instance of our app
-    // and pass it to the runApp function
+    // and passes it to the runApp function
     const App(),
   );
 }
