@@ -64,6 +64,7 @@ but the full working examples can be tested on DartPad or viewed on Github.
 
 
 ## SwiftUI Overview
+This section gives an overview of the core similarities and differences between SwiftUI and Flutter.
 
 ### Views vs. widgets
 
@@ -1055,9 +1056,9 @@ TextButton(
 ),
 ```
 
-### Navigating to another app
+### Navigating to a URL
 
-In SwiftUI, to open a URL to another application, you use the `openURL` environment 
+In SwiftUI, to open a URL, you use the `openURL` environment 
 variable, as follows:
 
 ```swift
@@ -1331,6 +1332,8 @@ class to load and play your video file. See [video_player example][] for a compl
 
 
 ## UIKit Overview
+
+This section gives an overview of the core similarities and differences between UIKit and Flutter.
 
 ### Views vs. Widgets
 
