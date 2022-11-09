@@ -53,7 +53,7 @@ final mockPersons = Iterable.generate(
   ),
 );
 
-// This is stateless widget that displays the list of persons
+// This stateless widget displays the list of persons
 // that we get from the mockPersons list and allows the user
 // to tap each person to see their details
 class HomePage extends StatelessWidget {
