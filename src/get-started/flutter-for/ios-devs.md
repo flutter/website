@@ -228,8 +228,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // the widget returned here is a CupertinoApp
-    // that has the look and feel of an iOS app by default
+    // Returns a CupertinoApp that, by default,
+    // has the look and feel of an iOS app.
     return const CupertinoApp(
       home: HomePage(),
     );
@@ -308,7 +308,7 @@ To achieve the same  you can use the `CupertinoButton` class, as follows:
 ```dart
         CupertinoButton(
   onPressed: () {
-    // this closure gets called when your button is tapped
+    // This closure is called when your button is tapped.
   },
   child: const Text('Do something'),
 )
@@ -910,8 +910,8 @@ First, you name your define your routes in the class passed to the
 
 <?code-excerpt "lib/navigation.dart (Routes)"?>
 ```dart
-// define route name as a constant
-// so it is reusable
+// defines the route name as a constant
+// so that it's reusable
 const detailsPageRouteName = '/details';
 
 class App extends StatelessWidget {
@@ -923,7 +923,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoApp(
       home: const HomePage(),
-      // routes property defines the available named routes
+      // The routes property defines the available named routes
       // and the widgets to build when navigating to those routes
       routes: {
         detailsPageRouteName: (context) => const DetailsPage(),
@@ -1048,8 +1048,8 @@ function of the `Navigator` class as follows:
 ```dart
 TextButton(
   onPressed: () {
-    // this is the main code that allows the
-    // view to pop back to its presenter
+    // This code allows the
+    // view to pop back to its presenter.
     Navigator.of(context).pop();
   },
   child: const Text('Pop back'),
