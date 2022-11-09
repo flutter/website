@@ -21,8 +21,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // the widget we return from here is a CupertinoApp
-    // that has the look and feel of an iOS app by default
+    // Return a CupertinoApp that, by default,
+    // has the look and feel of an iOS app.
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
