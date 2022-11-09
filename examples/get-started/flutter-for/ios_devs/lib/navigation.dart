@@ -23,7 +23,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoApp(
       home: const HomePage(),
-      // routes property defines the available named routes
+      // The routes property defines the available named routes
       // and the widgets to build when navigating to those routes
       routes: {
         detailsPageRouteName: (context) => const DetailsPage(),
