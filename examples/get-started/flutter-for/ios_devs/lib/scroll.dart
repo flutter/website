@@ -31,8 +31,8 @@ class Person {
   });
 }
 
-// like in SwiftUI, we create a widget (view in SwiftUI),
-// that represents each person visually on the screen
+// As in SwiftUI, create a widget (a view in SwiftUI),
+// that represents each person visually on the screen.
 class PersonView extends StatelessWidget {
   final Person person;
   const PersonView({
@@ -77,9 +77,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // and last but not least, we display the list
-      // of people on the screen inside a scroll viwe of type
-      // SingleChildScrollView (equivalent of ScrollView in SwiftUI)
+      // Finally, display the list of people on the screen,
+      // inside a scroll view of type
+      // SingleChildScrollView (equivalent of a ScrollView in SwiftUI).
       body:
           // #docregion ScrollExample
           SingleChildScrollView(

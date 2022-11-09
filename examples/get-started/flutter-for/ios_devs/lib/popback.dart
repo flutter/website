@@ -57,9 +57,9 @@ final mockPersons = Iterable.generate(
   ),
 );
 
-// This is stateless widget that displays the list of persons
+// This stateless widget displays the list of persons
 // that we get from the mockPersons list and allows the user
-// to tap each person to see their details
+// to tap each person to see their details.
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -84,8 +84,8 @@ class HomePage extends StatelessWidget {
                 Icons.arrow_forward_ios,
               ),
               onTap: () {
-                // when a ListTile that represents a person is
-                // tapped, we push the detailsPageRouteName route
+                // When a ListTile that represents a person is
+                // tapped, push the detailsPageRouteName route
                 // to the Navigator and pass the person's instance
                 // to the route
                 Navigator.of(context).pushNamed(
@@ -127,8 +127,8 @@ class DetailsPage extends StatelessWidget {
               // #docregion PopBackExample
               TextButton(
                 onPressed: () {
-                  // this is the main code that allows the
-                  // view to pop back to its presenter
+                  // This code allows the
+                  // view to pop back to its presenter.
                   Navigator.of(context).pop();
                 },
                 child: const Text('Pop back'),
