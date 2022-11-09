@@ -9,10 +9,9 @@ void main() {
   );
 }
 
-// define the name of the route as a constant so that
-// you can not only use it to create the list of your app-routes,
-// but also use it in the Navigator to push the route using
-// its name
+// Define the name of the route as a constant so that
+// you can use it in the Navigator to push the route using
+// its name, as well as use it to create the list of your app-routes
 const detailsPageRouteName = '/details';
 
 class App extends StatelessWidget {
