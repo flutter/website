@@ -26,10 +26,10 @@ class App extends StatelessWidget {
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      // then you define your routes using a Map where the keys
-      // to the map are the route names and the values are the
-      // a function each of which receives a BuildContext and returns
-      // a Widget
+      // Define your routes using a Map where the keys
+      // are the route names and the values are
+      // a function that receives a BuildContext and returns
+      // the corresponding Widget.
       routes: {
         detailsPageRouteName: (context) => const DetailsPage(),
       },
