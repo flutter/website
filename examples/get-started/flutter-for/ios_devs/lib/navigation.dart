@@ -44,7 +44,7 @@ class Person {
   });
 }
 
-// then we create a list of people
+// then create a list of people
 final mockPersons = Iterable.generate(
   100,
   (index) => Person(
