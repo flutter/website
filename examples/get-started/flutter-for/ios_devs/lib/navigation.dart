@@ -10,8 +10,8 @@ void main() {
 }
 
 // #docregion Routes
-// define route name as a constant
-// so it is reusable
+// defines the route name as a constant
+// so that it's reusable
 const detailsPageRouteName = '/details';
 
 class App extends StatelessWidget {
