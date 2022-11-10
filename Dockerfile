@@ -60,8 +60,9 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x -o node_setup.sh && \
 RUN apt-get update -q && apt-get install -yq --no-install-recommends \
       nodejs \
     && rm -rf /var/lib/apt/lists/*
-# Ensure latest NPM, install global Firebase CLI
-RUN npm install -g npm firebase-tools@11.16.0
+
+# Install global Firebase CLI
+RUN npm install -g firebase-tools@11.16.0
 
 
 
