@@ -11,8 +11,6 @@ services:
     environment:
       - NODE_ENV=development
       - JEKYLL_ENV=development
-      - FIREBASE_ALIAS=${FIREBASE_ALIAS:-default}
-      - FIREBASE_TOKEN=$FIREBASE_TOKEN
     ports:
       - "4002:4002"
       - "35729:35729"
