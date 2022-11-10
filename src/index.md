@@ -104,8 +104,8 @@ Dive deeper into how Flutter works under the hood! Learn [why you write standalo
     </div>
 </div>
 
-[why you write standalone widgets instead of using helper methods]: {{site.youtube-site}}/IOyq-eTRhvo
-[what is “BuildContext” and how is it used]: {{site.youtube-site}}/rIaaH87z1-g
+[why you write standalone widgets instead of using helper methods]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo   
+[what is “BuildContext” and how is it used]: {{site.youtube-site}}/watch?v=rIaaH87z1-g
 
 To learn about all of the Flutter video series, see our [videos][] page.
 
