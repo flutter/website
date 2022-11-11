@@ -60,13 +60,13 @@ adb shell am start -a android.intent.action.VIEW \
 ```
 
 Replace the `<package name>` with the package name of your android app. If the package
-name is `com.example.myFlutterApp`, the command will then be:
+name is `com.example.myflutterapp`, the command will then be:
 
 ```
 adb shell am start -a android.intent.action.VIEW \
     -c android.intent.category.BROWSABLE \
     -d "http://flutterbooksample.com/book/1" \
-    com.example.myFlutterApp
+    com.example.myflutterapp
 ```
 
 For more details, see the [Verify Android App Links][verify-android-links]
