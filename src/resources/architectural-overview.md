@@ -733,9 +733,6 @@ platform-specific notes:
   rendered using
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md), a
   library that translates OpenGL API calls to the DirectX 11 equivalents.
-  Efforts are currently underway to also offer a Windows embedder using the UWP
-  app model, as well as to replace ANGLE with a more direct path to the GPU via
-  DirectX 12.
 
 ## Integrating with other code
 

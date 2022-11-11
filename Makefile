@@ -14,7 +14,7 @@ BUILD_CONFIGS ?= _config.yml
 BUILD_NAME = tmpbuild
 BUILD_TAG = "fltbuild:${BUILD_COMMIT}"
 FIREBASE_ALIAS ?= default
-FLUTTER_BRANCH ?= stable
+FLUTTER_BUILD_BRANCH ?= stable
 FLUTTER_TEST_BRANCH ?= stable
 JEKYLL_SITE_HOST ?= 0.0.0.0
 JEKYLL_SITE_PORT ?= 4002
@@ -33,7 +33,7 @@ STAGE_NAME ?= docs
 .env:
 	touch $@
 genenv: .env
-	@echo "FLUTTER_BRANCH=stable" >> $<
+	@echo "FLUTTER_BUILD_BRANCH=stable" >> $<
 	@echo "FIREBASE_ALIAS=default" >> $<
 	@echo "FIREBASE_TOKEN=" >> $<
 	
