@@ -15,7 +15,7 @@ permissions: read-all
 
 env:
   NODE_ENV: production
-  NODE_VERSION: 17
+  NODE_VERSION: 18
 
 jobs:
 
@@ -58,7 +58,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install Firebase CLI
-        run: npm install -g firebase-tools@11.0.1
+        run: npm install -g firebase-tools@11.16.0
       - name: Deploy to Firebase hosting
         run: make deploy
         env:
