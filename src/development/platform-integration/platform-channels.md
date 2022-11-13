@@ -193,7 +193,7 @@ platform side and vice versa:
 | -------------------------- | ------------------------- |
 | null                       | FlValue()                 |
 | bool                       | FlValue(bool)             |
-| int                        | FlValue(int62_t)          |
+| int                        | FlValue(int64_t)          |
 | double                     | FlValue(double)           |
 | String                     | FlValue(gchar*)           |
 | Uint8List                  | FlValue(uint8_t*)         |
