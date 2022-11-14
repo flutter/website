@@ -16,8 +16,7 @@ see [Learning Flutter as a SwiftUI developer][].  -->
 When developing an app with Flutter, you can interact 
 with system libraries using plugins. 
 Dart calls libraries that contain platform-specific code _plugins_. 
-In the case of an iOS app, 
-the platform code can be written in Objective-C or Swift. 
+With an iOS app, you can write the code in Objective-C or Swift. 
 
 In your Dart code, you use the plugin's Dart API and 
 behind the scenes the native plugin code directly calls
