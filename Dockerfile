@@ -121,7 +121,7 @@ RUN npm ci
 
 COPY ./ ./
 
-RUN echo $'User-agent: *\nAllow: /' > src/robots.txt
+RUN echo 'User-agent: *\nDisallow:\n\nSitemap: https://docs.flutter.dev/sitemap.xml' > src/robots.txt
 
 ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
