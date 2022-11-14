@@ -200,3 +200,4 @@ In Flutter, you can use the [`quick_actions`][] plugin.
 [`weather`]: {{site.pub-pkg}}/weather
 [`contacts_service`]: {{site.pub-pkg}}/contacts_service
 [`health`]: {{site.pub-pkg}}/health
+[OpenWeatherMap API]: https://openweathermap.org/api
