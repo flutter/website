@@ -15,46 +15,46 @@ see [Learning Flutter as a SwiftUI developer][].  -->
 ### Flutter plugin overview
 When developing an app with Flutter, you can interact 
 with system libraries using plugins. 
-Plugins are Dart libraries that contain platform-specific code. 
+Dart calls libraries that contain platform-specific code _plugins_. 
 In the case of an iOS app, 
 the platform code can be written in Objective-C or Swift. 
 
 In your Dart code, you use the plugin's Dart API and 
-behind the scenes the native plugin code will directly call 
+behind the scenes the native plugin code directly calls
 the system library being used. This means that you can write 
 the code to call the Dart API once, 
-and it will work for all the platforms 
-that the plugin has been written for. 
+and it works for all platforms that the plugin supports.
 
-To learn more about plugins see [Using packages][]. 
+To learn more about plugins, see [Using packages][]. 
 This document links out to some commonly used plugins, 
 and their examples, but there are thousands more available on [pub.dev][]. 
 And, if you can't find what you're looking for, you can create your own. 
 
 ### Adding a plugin to your project
 When using Apple frameworks within your native project, 
-you usually just need to import it into your Swift or Objective-C file. 
+import it into your Swift or Objective-C file. 
 
-In Flutter, you must first run `flutter pub add package_name` 
-in the terminal, from the root of your project. This adds 
-the dependency to your [`pubspec.yaml`][] file. You can then import 
-the package in your Dart file. 
+Flutter requires you to run `flutter pub add package_name` 
+from the root of your project. This adds 
+the dependency to your [`pubspec.yaml`][] file.
+After you add the dependency, `import` the package
+in your Dart file. 
 
-Occasionally, you may also need to change app settings or 
-initialization logic- which will be explained in the package's 
+Occasionally, you might also need to change app settings or 
+initialization logic- which should be explained in the package's 
 "Readme" page on [pub.dev][].
 
 ### Accessing the photo library
 In Swift and Objective-C, you use `PhotoKit` and the `PhotosUI` framework
 to access user photos.
 
-In Flutter, you can use the [`image_picker`][] plugin, 
-which supplies an `ImpagePicker` class that is used to 
-display the user's photo library.
+In Flutter, you can use the [`image_picker`][] plugin 
+that supplies an `ImpagePicker` class, which  
+displays the user's photo library.
 
 ### Accessing the camera
 In SwiftUI and UIKit, to allow your app's users to take a photo, 
-you use the `UIImagePickerController` class, 
+use the `UIImagePickerController` class
 with the `.camera` `sourceType`.
 
 In Flutter, to access the camera, 
@@ -136,7 +136,7 @@ or `VisionKit` for text recognition.
 
 In Flutter, you can leverage Google's ML Kit with the [`google_ml_kit`][] plugin. 
 This supports various features like text recognition, 
-face detection, image labeling, landmark recognition and barcode scanning.
+face detection, image labeling, landmark recognition, and barcode scanning.
 Alternatively, you can create a custom model with Firebase. For more information, 
 see [Use a custom TensorFlow Lite model with Flutter][].
 
@@ -158,7 +158,7 @@ In Swift and Objective-C, you might use the `WeatherKit` framework
 for accessing weather conditions and forecasts. 
 
 In Flutter, you can use the [`weather`][] package, 
-which uses the [OpenWeatherMap API]. 
+which uses the [OpenWeatherMap API][]. 
 Alternatively, there are other packages 
 that pull from different weather APIs.
 
