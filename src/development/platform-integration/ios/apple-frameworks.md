@@ -25,9 +25,11 @@ the code to call the Dart API once,
 and it works for all platforms that the plugin supports.
 
 To learn more about plugins, see [Using packages][]. 
-This document links out to some commonly used plugins, 
-and their examples, but there are thousands more available on [pub.dev][]. 
-And, if you can't find what you're looking for, you can create your own. 
+Though this page links to some popular plugins,
+you can find thousands more, along with examples, 
+on [pub.dev][]. 
+If you can't find a package that meets your need, 
+you can create your own. 
 
 ### Adding a plugin to your project
 When using Apple frameworks within your native project, 
@@ -58,17 +60,17 @@ with the `.camera` `sourceType`.
 
 In Flutter, to access the camera, 
 you'll use the same [`image_picker`][] plugin that was 
-referenced above. The code will look similar, 
+used for accessing the photo library. The code will look similar, 
 only now the `source` for `pickImage` is the camera.
 
 ### In-app purchases
 In Swift and Objective-c, you use `StoreKit` to 
 offer in-app purchases.
 
-In Flutter, you can support in-app purchases through the 
-Google Play store on Android and the 
-Apple App Store on iOS by using the 
-[`in_app_purchase`][] plugin.
+You can support in-app purchases by using 
+the [`in_app_purchase`][] plugin, 
+which supports both Google Play Store on 
+Android and Apple App Store on iOS
 
 ### Payment processing
 In Swift and Objective-C, you use `PassKit` to process 
@@ -116,7 +118,8 @@ In Flutter, you can use the [`http`][] package.
 
 ### Persisting data
 In SwiftUI, to persist small pieces of data in your application, 
-you would likely use the `@AppStorage` property wrapper.
+you would likely use the `@AppStorage` property wrapper 
+or NSUserDefaults.
 
 In Flutter, to utilize the operating system's key-value storage, 
 you can use the [`shared_preferences`][] plugin. 
