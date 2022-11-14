@@ -59,8 +59,8 @@ adb shell am start -a android.intent.action.VIEW \
     <package name>
 ```
 
-Replace the `<package name>` with the package name of your android app. If the package
-name is `com.example.myflutterapp`, the command will then be:
+Replace the `<package name>` with the package name of your Android app.
+If you named the package `com.example.myflutterapp`, run the following command:
 
 ```
 adb shell am start -a android.intent.action.VIEW \
