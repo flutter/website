@@ -1,0 +1,37 @@
+{% comment %} Canonicalize page URL path {% endcomment -%}
+{% assign page_url_path = page.url | regex_replace: '/index$|/index\.html$|\.html$|/$' -%}
+
+{% assign active_entries = include.nav | active_nav_entry_index_array: page_url_path -%}
+{% assign show_entries_wo_pages = false -%}
+
+<ul class="nav flex-column">
+  {%- for entry1 in include.nav -%}
+
+    {% assign class1 = '' -%}
+    {% assign id1 = 'sidenav-' | append: forloop.index -%}
+    {% assign isActive1 = false -%}
+    {% if forloop.index == active_entries[0] -%}
+      {% assign isActive1 = true -%}
+      {% assign class1 = 'active' -%}
+    {% endif -%}
+
+    {% if isActive1 or entry1.expanded -%}
+      {% assign expanded = 'true' -%}
+      {% assign show = 'show' -%}
+    {% else -%}
+      {% assign class1 = 'collapsed' -%}
+      {% assign expanded = 'false' -%}
+      {% assign show = '' -%}
+    {% endif -%}
+
+    <li class="nav-item">
+      <a class="nav-link {{class1}}" data-toggle="collapse" href="#{{id1}}" role="button"
+        aria-expanded="{{expanded}}" aria-controls="{{id1}}"
+      >{{entry1.title}}</a>
+
+      <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id1}}">
+        {% include sidenav-level-2.html -%}
+      </ul>
+    </li>
+  {%- endfor -%}
+</ul>
