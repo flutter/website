@@ -97,12 +97,12 @@ RUN npm install
 COPY ./ ./
 
 # Jekyl ports
-EXPOSE 35729
+EXPOSE 35730
 EXPOSE 4002
 
 # Firebase emulator port
 # Airplay runs on :5000 by default now
-EXPOSE 5500
+EXPOSE 5502
 
 
 

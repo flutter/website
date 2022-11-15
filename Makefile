@@ -73,6 +73,7 @@ serve:
 		--port ${JEKYLL_SITE_PORT} \
 		--config _config.yml,_config_dev.yml \
 		--livereload \
+		--livereload_port 37530 \
 		--incremental \
 		--trace
 
