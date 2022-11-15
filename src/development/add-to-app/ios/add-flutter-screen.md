@@ -44,7 +44,43 @@ the app delegate.
 
 {% samplecode engine %}
 
-{% sample Swift %}
+{% sample SwiftUI %}
+As an example, we demonstrate creating a
+`FlutterEngine` inside an `ObservableObject`, 
+and passing that into a `View` using the 
+ `environmentObject()` modifier. 
+
+ **In `MyApp.swift`:**
+ <!--code-excerpt "MyApp.swift" title-->
+ ```swift
+import SwiftUI
+import Flutter
+// Used to connect plugins (only if you have plugins with iOS platform code).
+import FlutterPluginRegistrant
+
+class FlutterDependencies: ObservableObject {
+  let npsFlutterEngine = FlutterEngine(name: "flutter_nps_engine")
+  init(){
+    // Prepare a Flutter engine in advance.
+    npsFlutterEngine.run()
+    // Used to connect plugins (only if you have plugins with iOS platform code).
+    GeneratedPluginRegistrant.register(with: self.npsFlutterEngine);
+  }
+}
+
+@main
+struct MyApp: App {
+  // flutterDependencies will be injected using EnvironmentObject.
+  @StateObject var flutterDependencies = FlutterDependencies()
+    var body: some Scene {
+        WindowGroup {
+          ContentView().environmentObject(flutterDependencies)
+        }
+    }
+}
+```
+
+{% sample UIKit-Swift %}
 **In `AppDelegate.swift`:**
 
 <!--code-excerpt "AppDelegate.swift" title-->
@@ -67,7 +103,7 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
   }
 }
 ```
-{% sample Objective-C %}
+{% sample UIKit-ObjC %}
 **In `AppDelegate.h`:**
 
 <!--code-excerpt "AppDelegate.h" title-->
@@ -107,13 +143,56 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 
 ### Show a FlutterViewController with your FlutterEngine
 
+{% samplecode vc %}
+
+{% sample SwiftUI %}
+The following example shows a generic `ContentView` with a
+`Button` hooked to present a [`FlutterViewController`][].
+The `FlutterViewController` uses the `FlutterEngine` instance
+passed in as an `EnvironmentObject`.
+<!--code-excerpt "ContentView.swift" title-->
+```swift
+import SwiftUI
+import Flutter
+
+struct ContentView: View {
+  // Flutter engine is passed in as an EnvironmentObject.
+  @EnvironmentObject var flutterDependencies: FlutterDependencies
+
+  // Button is created to call the showFlutter function when pressed.
+  var body: some View {
+    Button("Show Flutter!") {
+      showFlutter()
+    }
+  }
+
+func showFlutter() {
+    // Get the RootViewController.
+    guard
+      let windowScene = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
+      let window = windowScene.windows.first(where: \.isKeyWindow),
+      let rootViewController = window.rootViewController
+    else { return }
+
+    // Create the FlutterViewController.
+    let flutterViewController = FlutterViewController(
+      engine: flutterDependencies.npsFlutterEngine,
+      nibName: nil,
+      bundle: nil)
+    flutterViewController.modalPresentationStyle = .overCurrentContext
+    flutterViewController.isViewOpaque = false
+
+    rootViewController.present(flutterViewController, animated: true)
+  }
+}
+```
+
+{% sample UIKit-Swift %}
 The following example shows a generic `ViewController` with a
 `UIButton` hooked to present a [`FlutterViewController`][].
 The `FlutterViewController` uses the `FlutterEngine` instance
 created in the `AppDelegate`.
-
-{% samplecode vc %}
-{% sample Swift %}
 <!--code-excerpt "ViewController.swift" title-->
 ```swift
 import UIKit
@@ -140,7 +219,12 @@ class ViewController: UIViewController {
   }
 }
 ```
-{% sample Objective-C %}
+
+{% sample UIKit-ObjC %}
+The following example shows a generic `ViewController` with a
+`UIButton` hooked to present a [`FlutterViewController`][].
+The `FlutterViewController` uses the `FlutterEngine` instance
+created in the `AppDelegate`.
 <!--code-excerpt "ViewController.m" title-->
 ```objectivec
 @import Flutter;
@@ -201,7 +285,41 @@ To let the `FlutterViewController` present without an existing
 `FlutterViewController` without an engine reference.
 
 {% samplecode no-engine-vc %}
-{% sample Swift %}
+{% sample SwiftUI %}
+```swift
+import SwiftUI
+import Flutter
+
+struct ContentView: View {
+  // No EnvironmentObject needed.
+  var body: some View {
+    Button("Show Flutter!") {
+      openFlutterApp()
+    }
+  }
+
+func openFlutterApp() {
+    // Get the RootViewController.
+    guard
+      let windowScene = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
+      let window = windowScene.windows.first(where: \.isKeyWindow),
+      let rootViewController = window.rootViewController
+    else { return }
+
+    // Create the FlutterViewController without an existing FlutterEngine.
+    let flutterViewController = FlutterViewController(
+      project: nil,
+      nibName: nil,
+      bundle: nil)
+    flutterViewController.modalPresentationStyle = .overCurrentContext
+    flutterViewController.isViewOpaque = false
+
+    rootViewController.present(flutterViewController, animated: true)
+  }
+}
+```
+{% sample UIKit-Swift %}
 <!--code-excerpt "ViewController.swift" title-->
 ```swift
 // Existing code omitted.
@@ -210,7 +328,7 @@ func showFlutter() {
   present(flutterViewController, animated: true, completion: nil)
 }
 ```
-{% sample Objective-C %}
+{% sample UIKit-ObjC %}
 <!--code-excerpt "ViewController.m" title-->
 ```objectivec
 // Existing code omitted.
