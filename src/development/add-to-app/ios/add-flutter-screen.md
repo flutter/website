@@ -360,9 +360,8 @@ The `FlutterAppDelegate` performs functions such as:
 
 * Forwarding application callbacks such as [`openURL`][]
   to plugins such as [local_auth][].
-* Forwarding status bar taps
-  (which can only be detected in the AppDelegate) to
-  Flutter for scroll-to-top behavior.
+* Keeping the Flutter connection open 
+  in debug mode when the phone screen locks.
 
 ### Creating a FlutterAppDelegate subclass
 Creating a subclass of the the `FlutterAppDelegate` in UIKit apps was shown 
@@ -403,7 +402,7 @@ struct MyApp: App {
 }
 ```
 
-Then, in your view, the `AppDelegate`is accessible as an `EnvionrmentObject`.
+Then, in your view, the `AppDelegate`is accessible as an `EnvironmentObject`.
 
 ```swift
 import SwiftUI
@@ -497,15 +496,6 @@ didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id>*)
         return (FlutterViewController*)viewController;
     }
     return nil;
-}
-
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
-    [super touchesBegan:touches withEvent:event];
-
-    // Pass status bar taps to key window Flutter rootViewController.
-    if (self.rootFlutterViewController != nil) {
-        [self.rootFlutterViewController handleStatusBarTouches:event];
-    }
 }
 
 - (void)application:(UIApplication*)application
