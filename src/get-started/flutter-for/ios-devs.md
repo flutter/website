@@ -773,7 +773,7 @@ AnimatedRotation(
         });
       },
       child: const Text('Tap me!')),
-)
+),
 ```
 
 SwiftUI and Flutter take a similar approach, 
