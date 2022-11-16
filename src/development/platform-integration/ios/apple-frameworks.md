@@ -96,3 +96,4 @@ initialization logic- which should be explained in the package's
 [OpenWeatherMap API]: https://openweathermap.org/api
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [Writing platform-specific code]: {{ site.url }}/development/platform-integration/platform-channels
+[`camera`]: {{site.pub-pkg}}/camera
