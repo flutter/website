@@ -64,9 +64,8 @@ but the full working examples can be tested on DartPad or viewed on Github.
 
 
 ## SwiftUI Overview
-This section gives an overview of the core similarities and differences between SwiftUI and Flutter.
 
-### Views vs. widgets
+### Views vs. Widgets
 
 Flutter and SwiftUI are both declarative frameworks, 
 meaning the code simply describes how the UI should look 
@@ -399,7 +398,7 @@ except for changing `Row` to [`Column`][]:
 
 <?code-excerpt "lib/column.dart (column)"?>
 ```dart
-    Column(
+Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: const [
     Icon(CupertinoIcons.globe),
@@ -457,7 +456,6 @@ and build a widget for each item.
 
 <?code-excerpt "lib/list.dart (SimpleList)"?>
 ```dart
-// create a class that holds each person's data
 class Person {
   String name;
   Person(this.name);
@@ -764,7 +762,7 @@ For example, to rotate a button you can use the
 
 <?code-excerpt "lib/simple_animation.dart (AnimatedButton)"?>
 ```dart
-        AnimatedRotation(
+AnimatedRotation(
   duration: const Duration(seconds: 1),
   turns: turns,
   curve: Curves.easeIn,
@@ -910,8 +908,8 @@ First, you name your define your routes in the class passed to the
 
 <?code-excerpt "lib/navigation.dart (Routes)"?>
 ```dart
-// defines the route name as a constant
-// so that it's reusable
+// Defines the route name as a constant
+// so that it's reusable.
 const detailsPageRouteName = '/details';
 
 class App extends StatelessWidget {
@@ -923,8 +921,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoApp(
       home: const HomePage(),
-      // The routes property defines the available named routes
-      // and the widgets to build when navigating to those routes
+      // The [routes] property defines the available named routes
+      // and the widgets to build when navigating to those routes.
       routes: {
         detailsPageRouteName: (context) => const DetailsPage(),
       },
@@ -951,7 +949,7 @@ to the `Navigator`.
 
 <?code-excerpt "lib/navigation.dart (ListView)"?>
 ```dart
-    ListView.builder(
+ListView.builder(
   itemCount: mockPersons.length,
   itemBuilder: (context, index) {
     final person = mockPersons.elementAt(index);
@@ -963,10 +961,10 @@ to the `Navigator`.
         Icons.arrow_forward_ios,
       ),
       onTap: () {
-        // when a ListTile that represents a person is
+        // When a [ListTile] that represents a person is
         // tapped, push the detailsPageRouteName route
         // to the Navigator and pass the person's instance
-        // to the route
+        // to the route.
         Navigator.of(context).pushNamed(
           detailsPageRouteName,
           arguments: person,
@@ -1000,14 +998,14 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // read the person instance from the arguments
+    // Read the person instance from the arguments.
     final Person person = ModalRoute.of(
       context,
     )?.settings.arguments as Person;
-    // extract the age
+    // Extract the age.
     final age = '${person.age} years old';
     return Scaffold(
-      // display name and age
+      // Display name and age.
       body: Column(children: [Text(person.name), Text(age)]),
     );
   }
@@ -1056,9 +1054,9 @@ TextButton(
 ),
 ```
 
-### Navigating to a URL
+### Navigating to another app
 
-In SwiftUI, to open a URL, you use the `openURL` environment 
+In SwiftUI, to open a URL to another application, you use the `openURL` environment 
 variable, as follows:
 
 ```swift
@@ -1163,7 +1161,7 @@ parameter of the `Text` widget as follows:
 
 <?code-excerpt "lib/cupertino_themes.dart (StylingTextExample)"?>
 ```dart
-    Text(
+Text(
   'Hello, world!',
   style: TextStyle(
     fontSize: 30,
@@ -1276,7 +1274,7 @@ but this time in Flutter:
 
 <?code-excerpt "lib/stylingbutton.dart (CustomFont)"?>
 ```dart
-        Text(
+Text(
   'Cupertino',
   style: TextStyle(
     fontSize: 40,
@@ -1332,8 +1330,6 @@ class to load and play your video file. See [video_player example][] for a compl
 
 
 ## UIKit Overview
-
-This section gives an overview of the core similarities and differences between UIKit and Flutter.
 
 ### Views vs. Widgets
 
@@ -3500,4 +3496,3 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
-[go_router]:{{site.pub-pkg}}/go_router

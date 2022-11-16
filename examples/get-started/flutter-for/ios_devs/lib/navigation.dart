@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    // create an instance of our app
-    // and passes it to the runApp function
     const App(),
   );
 }
 
 // #docregion Routes
-// defines the route name as a constant
-// so that it's reusable
+// Defines the route name as a constant
+// so that it's reusable.
 const detailsPageRouteName = '/details';
 
 class App extends StatelessWidget {
@@ -23,8 +21,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoApp(
       home: const HomePage(),
-      // The routes property defines the available named routes
-      // and the widgets to build when navigating to those routes
+      // The [routes] property defines the available named routes
+      // and the widgets to build when navigating to those routes.
       routes: {
         detailsPageRouteName: (context) => const DetailsPage(),
       },
@@ -33,7 +31,7 @@ class App extends StatelessWidget {
 }
 // #enddocregion Routes
 
-// create a class that holds each person's data
+// Create a class that holds each person's data.
 @immutable
 class Person {
   final String name;
@@ -44,7 +42,7 @@ class Person {
   });
 }
 
-// then create a list of people
+// Next, create a list of 100 Persons.
 final mockPersons = Iterable.generate(
   100,
   (index) => Person(
@@ -54,8 +52,8 @@ final mockPersons = Iterable.generate(
 );
 
 // This stateless widget displays the list of persons
-// that we get from the mockPersons list and allows the user
-// to tap each person to see their details
+// that we get from the [mockPersons] list and allows the user
+// to tap each person to see their details.
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -69,32 +67,32 @@ class HomePage extends StatelessWidget {
       ),
       child: Material(
         child:
-            // #docregion ListView
-            ListView.builder(
-          itemCount: mockPersons.length,
-          itemBuilder: (context, index) {
-            final person = mockPersons.elementAt(index);
-            final age = '${person.age} years old';
-            return ListTile(
-              title: Text(person.name),
-              subtitle: Text(age),
-              trailing: const Icon(
-                Icons.arrow_forward_ios,
-              ),
-              onTap: () {
-                // when a ListTile that represents a person is
-                // tapped, push the detailsPageRouteName route
-                // to the Navigator and pass the person's instance
-                // to the route
-                Navigator.of(context).pushNamed(
-                  detailsPageRouteName,
-                  arguments: person,
-                );
-              },
-            );
-          },
-        ),
-        // #enddocregion ListView
+          // #docregion ListView
+          ListView.builder(
+            itemCount: mockPersons.length,
+            itemBuilder: (context, index) {
+              final person = mockPersons.elementAt(index);
+              final age = '${person.age} years old';
+              return ListTile(
+                title: Text(person.name),
+                subtitle: Text(age),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios,
+                ),
+                onTap: () {
+                  // When a [ListTile] that represents a person is
+                  // tapped, push the detailsPageRouteName route
+                  // to the Navigator and pass the person's instance
+                  // to the route.
+                  Navigator.of(context).pushNamed(
+                    detailsPageRouteName,
+                    arguments: person,
+                  );
+                },
+              );
+            },
+          ),
+          // #enddocregion ListView
       ),
     );
   }
@@ -106,14 +104,14 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // read the person instance from the arguments
+    // Read the person instance from the arguments.
     final Person person = ModalRoute.of(
       context,
     )?.settings.arguments as Person;
-    // extract the age
+    // Extract the age.
     final age = '${person.age} years old';
     return Scaffold(
-      // display name and age
+      // Display name and age.
       body: Column(children: [Text(person.name), Text(age)]),
     );
   }

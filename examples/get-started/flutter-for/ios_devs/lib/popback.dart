@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    // we create an instance of our app
-    // and pass it to the runApp function
     const App(),
   );
 }
 
 // Define the name of the route as a constant so that
 // you can use it in the Navigator to push the route using
-// its name, as well as use it to create the list of your app-routes
+// its name, as well as use it to create the list of your app-routes.
 const detailsPageRouteName = '/details';
 
 class App extends StatelessWidget {
@@ -21,7 +19,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Return a CupertinoApp that, by default,
+    // Return a [CupertinoApp] that, by default,
     // has the look and feel of an iOS app.
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
@@ -37,7 +35,7 @@ class App extends StatelessWidget {
   }
 }
 
-// create a class that holds each person's data
+// Create a class that holds each person's data.
 @immutable
 class Person {
   final String name;
@@ -48,7 +46,7 @@ class Person {
   });
 }
 
-// then we create a list of people
+// Next, create a list of 100 persons.
 final mockPersons = Iterable.generate(
   100,
   (index) => Person(
@@ -84,10 +82,10 @@ class HomePage extends StatelessWidget {
                 Icons.arrow_forward_ios,
               ),
               onTap: () {
-                // When a ListTile that represents a person is
-                // tapped, push the detailsPageRouteName route
-                // to the Navigator and pass the person's instance
-                // to the route
+                // When a [ListTile] that represents a person is
+                // tapped, push the [detailsPageRouteName] route
+                // to the [Navigator] and pass the person's instance
+                // to the route.
                 Navigator.of(context).pushNamed(
                   detailsPageRouteName,
                   arguments: person,

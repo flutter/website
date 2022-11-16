@@ -21,7 +21,6 @@ class App extends StatelessWidget {
 }
 
 // #docregion SimpleList
-// create a class that holds each person's data
 class Person {
   String name;
   Person(this.name);
