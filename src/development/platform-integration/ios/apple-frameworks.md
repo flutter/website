@@ -1,11 +1,12 @@
 ---
-title: Leveraging Apple's System Libraries
-description: Learn how to apply knowledge of Apple's APIs and frameworks when building Flutter apps.
+title: Leveraging Apple's System APIs and Frameworks
+description: Learn about Flutter plugins that offer equivalent functionalities to Apple's frameworks
 ---
 
-This document is for iOS developers looking to apply
-their existing knowledge of Apple's APIs within Flutter.
-This includes accessing the device hardware and interacting 
+This document is for iOS developers looking to learn about 
+Flutter plugins that offer equivalent functionalities 
+to Apple's system libraries. This includes accessing 
+the device hardware and interacting 
 with specific frameworks like `HealthKit` or `MapKit`.
 
 <!-- Add once SwiftUI PR is merged -->
@@ -27,9 +28,10 @@ and it works for all platforms that the plugin supports.
 To learn more about plugins, see [Using packages][]. 
 Though this page links to some popular plugins,
 you can find thousands more, along with examples, 
-on [pub.dev][]. 
+on [pub.dev][]. This is not an endorsement for any plugin.
 If you can't find a package that meets your need, 
-you can create your own. 
+you can create your own or use platform channels directly in your project. 
+For more details, see [Writing platform-specific code][]. 
 
 ### Adding a plugin to your project
 When using Apple frameworks within your native project, 
@@ -45,139 +47,29 @@ Occasionally, you might also need to change app settings or
 initialization logic- which should be explained in the package's 
 "Readme" page on [pub.dev][].
 
-### Accessing the photo library
-In Swift and Objective-C, you use `PhotoKit` and the `PhotosUI` framework
-to access user photos.
+### Flutter Plugins and Apple Frameworks
 
-In Flutter, you can use the [`image_picker`][] plugin 
-that supplies an `ImpagePicker` class, which  
-displays the user's photo library.
+| Use Case | Apple Framework or Class | Flutter Plugin |
+| -------- | --------------- | -------------- |
+| Accessing the photo library | `PhotoKit` (`Photos` and `PhotosUI ` frameworks) | [`image_picker`][] |
+| Accessing the camera | `UIImagePickerController` class with the `.camera` `sourceType` | [`image_picker`][] |
+| In-app purchases | `StoreKit` | [`in_app_purchase`][], which supports both Google Play Store on Android and Apple App Store on iOS |
+| Payment processing | `PassKit` | [`pay`][], which adds Google Pay payments on Android and Apple Pay payments on iOS. |
+| Push notifications | `UserNotifications` | [`firebase_messaging`][], which uses Firebase Cloud Messaging and integrates with APNs| 
+| Accessing GPS coordinates | `CoreLocation` | [`geolocator`][] |
+| Accessing sensor data (e.g. accelerometer, gyroscope) | `CoreMotion`  | [`sensors_plus`][] |
+| Embedding maps | `MapKit` | [`google_maps_flutter`][] |
+| Network requests| `URLSession` class | [`http`][] |
+| Store key-values | `@AppStorage` property wrapper or `NSUserDefaults` class| [`shared_preferences`][] |
+| Persisting data | `CoreData` | [`sqflite`][] |
+| Accessing health data | `HealthKit`| [`health`][] |
+| Leveraging machine learning | `CoreML` for integrating machine learning models into your app, or `VisionKit` for text recognition | [`google_ml_kit`][], which leverages Google's ML Kit and supports various features like text recognition, face detection, image labeling, landmark recognition, and barcode scanning. Alternatively, you can create a custom model with Firebase. For more information, see [Use a custom TensorFlow Lite model with Flutter][]. |
+| Leveraging speech recognition | `Speech`| [`speech_to_text`][]|
+| Leveraging augmented reality  | `ARKit`| [`ar_flutter_plugin`][]|
+| Accessing weather data  | `WeatherKit`| [`weather`][] package, which uses the [OpenWeatherMap API][]. Alternatively, there are other packages that pull from different weather APIs.|
+| Accessing and managing contacts | `Contacts`| [`contacts_service`][]|
+| Exposing quick actions on the home screen | `UIApplicationShortcutItem` class | [`quick_actions`][]|
 
-### Accessing the camera
-In SwiftUI and UIKit, to allow your app's users to take a photo, 
-use the `UIImagePickerController` class
-with the `.camera` `sourceType`.
-
-In Flutter, to access the camera, 
-you'll use the same [`image_picker`][] plugin that was 
-used for accessing the photo library. The code will look similar, 
-only now the `source` for `pickImage` is the camera.
-
-### In-app purchases
-In Swift and Objective-c, you use `StoreKit` to 
-offer in-app purchases.
-
-You can support in-app purchases by using 
-the [`in_app_purchase`][] plugin, 
-which supports both Google Play Store on 
-Android and Apple App Store on iOS
-
-### Payment processing
-In Swift and Objective-C, you use `PassKit` to process 
-Apple Pay payments in your app. 
-
-In Flutter, you can use the [`pay`][] plugin to 
-add Google Pay payments on Android
- and Apple pay payments on iOS.
-
-### Push notifications
-In Swift and Objective-C, you use the `UserNotifications` 
-framework for pushing user-facing notifications.
-
-In Flutter, you can use the [`firebase_messaging`][] plugin, 
-which uses Firebase Cloud Messaging. 
-
-### Accessing GPS coordinates
-In Swift and Objective-C, you use the `CLLocationManager` class, 
-of the `CoreLocation` framework, 
-to access the user's location. 
-
-In Flutter, to access the user's location, 
-you can use the [`geolocator`][] plugin. 
-
-### Accessing sensor data
-In Swift and Objective-C, you use the `CMMotionManager` class,
-of the `CoreMotion` framework, to access sensor data
-like the accelerometer or the gyroscope.
-
-In Flutter, to read sensor data, 
-you can use the [`sensors_plus`][] plugin.
-
-### Embedding maps
-In Swift and Objective-c, you use `MapKit` to embed 
-Apple Maps within your app. 
-
-In Flutter, you can embed Google Maps using the 
-[`google_maps_flutter`][] plugin. 
-
-### Network requests
-In Swift and Objective-C, to make an HTTP request you use the
- `URLSession` class.
-
-In Flutter, you can use the [`http`][] package.
-
-### Persisting data
-In SwiftUI, to persist small pieces of data in your application, 
-you would likely use the `@AppStorage` property wrapper 
-or NSUserDefaults.
-
-In Flutter, to utilize the operating system's key-value storage, 
-you can use the [`shared_preferences`][] plugin. 
-
-### Accessing health data
-In Swift and Objective-C, you use the `HealthKit` framework
-to access health and fitness data.
-
-In Flutter, you can use the [`health`][] plugin 
-to access `HealthKit` data.
-
-### Leveraging machine learning
-In Swift and Objective-C, you might use the `CoreML` framework 
-for integrating machine learning models into your app, 
-or `VisionKit` for text recognition.
-
-In Flutter, you can leverage Google's ML Kit with the [`google_ml_kit`][] plugin. 
-This supports various features like text recognition, 
-face detection, image labeling, landmark recognition, and barcode scanning.
-Alternatively, you can create a custom model with Firebase. For more information, 
-see [Use a custom TensorFlow Lite model with Flutter][].
-
-### Leveraging speech recognition
-In Swift and Objective-C, you might use the `Speech` framework for performing 
-speech recognition.
-
-In Flutter, you can use the [`speech_to_text`][] plugin, which exposes 
-device specific speech recognition capabilities.
-
-### Leveraging augmented reality 
-In Swift and Objective-C, you might use the `ARKit` framework 
-for creating augmented reality apps. 
-
-In Flutter, you can use the [`ar_flutter_plugin`][]. 
-
-### Accessing weather data
-In Swift and Objective-C, you might use the `WeatherKit` framework 
-for accessing weather conditions and forecasts. 
-
-In Flutter, you can use the [`weather`][] package, 
-which uses the [OpenWeatherMap API][]. 
-Alternatively, there are other packages 
-that pull from different weather APIs.
-
-### Accessing and managing contacts
-In Swift and Objective-C, you might use the `Contacts` framework 
-for accessing the user's contacts. 
-
-In Flutter, you can use the [`contacts_service`][] plugin, 
-for accessing and managing contacts.
-
-### Adding quick actions
-In Swift and Objective-C, you use the 
-`UIApplicationShortcutItem` class 
-for defining quick actions. Quick actions 
-expose commonly used functionality on the home screen.
-
-In Flutter, you can use the [`quick_actions`][] plugin.
 
 <!-- [Learning Flutter as a SwiftUI developer]: -->
 [Using packages]: {{ site.url }}/development/packages-and-plugins/using-packages
@@ -201,3 +93,4 @@ In Flutter, you can use the [`quick_actions`][] plugin.
 [`contacts_service`]: {{site.pub-pkg}}/contacts_service
 [`health`]: {{site.pub-pkg}}/health
 [OpenWeatherMap API]: https://openweathermap.org/api
+[`sqflite`]: {{site.pub-pkg}}/sqflite
