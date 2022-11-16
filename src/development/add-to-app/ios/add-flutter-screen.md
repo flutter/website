@@ -59,7 +59,7 @@ import Flutter
 import FlutterPluginRegistrant
 
 class FlutterDependencies: ObservableObject {
-  let npsFlutterEngine = FlutterEngine(name: "flutter_nps_engine")
+  let npsFlutterEngine = FlutterEngine(name: "my flutter engine")
   init(){
     // Prepare a Flutter engine in advance.
     npsFlutterEngine.run()
@@ -357,6 +357,87 @@ The `FlutterAppDelegate` performs functions such as:
   (which can only be detected in the AppDelegate) to
   Flutter for scroll-to-top behavior.
 
+### Creating a FlutterAppDelegate subclass
+Creating a subclass of the the `FlutterAppDelegate` in UIKit apps was shown 
+in the [Start a FlutterEngine and FlutterViewController section][]. 
+In a SwiftUI app, you can create a subclass of the 
+`FlutterAppDelegate` that conforms to the `ObservabeObject` protocol as follows:
+
+```swift
+import SwiftUI
+import Flutter
+import FlutterPluginRegistrant
+
+class AppDelegate: FlutterAppDelegate, ObservableObject {
+  let flutterEngine = FlutterEngine(name: "my flutter engine")
+
+  override func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      // Runs the default Dart entrypoint with a default Flutter route.
+      flutterEngine.run();
+      // Used to connect plugins (only if you have plugins with iOS platform code).
+      GeneratedPluginRegistrant.register(with: self.flutterEngine);
+      return true;
+    }
+}
+
+@main
+struct MyApp: App {
+//  Use this property wrapper to tell SwiftUI
+//  it should use the AppDelegate class for the application delegate
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
+  var body: some Scene {
+      WindowGroup {
+        ContentView()
+      }
+  }
+}
+```
+
+Then, in your view, the `AppDelegate`is accessible as an `EnvionrmentObject`.
+
+```swift
+import SwiftUI
+import Flutter
+
+struct ContentView: View {
+  // Access the AppDelegate using an EnvironmentObject.
+  @EnvironmentObject var appDelegate: AppDelegate
+
+  var body: some View {
+    Button("Show Flutter!") {
+      openFlutterApp()
+    }
+  }
+
+func openFlutterApp() {
+    let flutterEngine = appDelegate.flutterEngine
+
+    // Get the RootViewController.
+    guard
+      let windowScene = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
+      let window = windowScene.windows.first(where: \.isKeyWindow),
+      let rootViewController = window.rootViewController
+    else { return }
+
+    // Create the FlutterViewController.
+    let flutterViewController = FlutterViewController(
+      engine: flutterEngine,
+      nibName: nil,
+      bundle: nil)
+    flutterViewController.modalPresentationStyle = .overCurrentContext
+    flutterViewController.isViewOpaque = false
+
+    rootViewController.present(flutterViewController, animated: true)
+  }
+}
+
+```
+
+### If you can't directly make FlutterAppDelegate as subclass
 If your app delegate can't directly make `FlutterAppDelegate` a subclass,
 make your app delegate implement the `FlutterAppLifeCycleProvider`
 protocol in order to make sure your plugins receive the necessary callbacks.
@@ -626,3 +707,4 @@ in any way you'd like, before presenting the Flutter UI using a
 [tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`window.defaultRouteName`]: {{site.api}}/flutter/dart-ui/SingletonFlutterWindow/defaultRouteName.html
+[Start a FlutterEngine and FlutterViewController section]:{{site.url}}/development/add-to-app/ios/add-flutter-screen/#start-a-flutterengine-and-flutterviewcontroller
