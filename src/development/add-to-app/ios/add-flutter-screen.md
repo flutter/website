@@ -442,7 +442,7 @@ func openFlutterApp() {
 
 ```
 
-### If you can't directly make FlutterAppDelegate as subclass
+### If you can't directly make FlutterAppDelegate a subclass
 If your app delegate can't directly make `FlutterAppDelegate` a subclass,
 make your app delegate implement the `FlutterAppLifeCycleProvider`
 protocol in order to make sure your plugins receive the necessary callbacks.
