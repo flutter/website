@@ -55,7 +55,18 @@ host name matches the name defined in `AndroidManifest.xml`:
 ```
 adb shell am start -a android.intent.action.VIEW \
     -c android.intent.category.BROWSABLE \
-    -d "http://flutterbooksample.com/book/1"
+    -d "http://flutterbooksample.com/book/1" \
+    <package name>
+```
+
+Replace the `<package name>` with the package name of your Android app.
+If you named the package `com.example.myflutterapp`, run the following command:
+
+```
+adb shell am start -a android.intent.action.VIEW \
+    -c android.intent.category.BROWSABLE \
+    -d "http://flutterbooksample.com/book/1" \
+    com.example.myflutterapp
 ```
 
 For more details, see the [Verify Android App Links][verify-android-links]
