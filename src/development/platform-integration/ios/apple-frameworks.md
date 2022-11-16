@@ -51,8 +51,9 @@ initialization logic- which should be explained in the package's
 
 | Use Case | Apple Framework or Class | Flutter Plugin |
 | -------- | --------------- | -------------- |
-| Accessing the photo library | `PhotoKit` (`Photos` and `PhotosUI ` frameworks) | [`image_picker`][] |
+| Accessing the photo library | `PhotoKit` (`Photos` and `PhotosUI ` frameworks) or `UIImagePickerController` class | [`image_picker`][] |
 | Accessing the camera | `UIImagePickerController` class with the `.camera` `sourceType` | [`image_picker`][] |
+| Advanced camera features | `AVFoundation` | [`camera`][]  |
 | In-app purchases | `StoreKit` | [`in_app_purchase`][], which supports both Google Play Store on Android and Apple App Store on iOS |
 | Payment processing | `PassKit` | [`pay`][], which adds Google Pay payments on Android and Apple Pay payments on iOS. |
 | Push notifications | `UserNotifications` | [`firebase_messaging`][], which uses Firebase Cloud Messaging and integrates with APNs| 
@@ -61,7 +62,7 @@ initialization logic- which should be explained in the package's
 | Embedding maps | `MapKit` | [`google_maps_flutter`][] |
 | Network requests| `URLSession` class | [`http`][] |
 | Store key-values | `@AppStorage` property wrapper or `NSUserDefaults` class| [`shared_preferences`][] |
-| Persisting data | `CoreData` | [`sqflite`][] |
+| Persisting to a database | `CoreData` or SQLite | [`sqflite`][] |
 | Accessing health data | `HealthKit`| [`health`][] |
 | Leveraging machine learning | `CoreML` for integrating machine learning models into your app, or `VisionKit` for text recognition | [`google_ml_kit`][], which leverages Google's ML Kit and supports various features like text recognition, face detection, image labeling, landmark recognition, and barcode scanning. Alternatively, you can create a custom model with Firebase. For more information, see [Use a custom TensorFlow Lite model with Flutter][]. |
 | Leveraging speech recognition | `Speech`| [`speech_to_text`][]|
@@ -94,3 +95,4 @@ initialization logic- which should be explained in the package's
 [`health`]: {{site.pub-pkg}}/health
 [OpenWeatherMap API]: https://openweathermap.org/api
 [`sqflite`]: {{site.pub-pkg}}/sqflite
+[Writing platform-specific code]: {{ site.url }}/development/platform-integration/platform-channels
