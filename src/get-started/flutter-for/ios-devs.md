@@ -3496,3 +3496,4 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
+[go_router]:{{site.pub-pkg}}/go_router
