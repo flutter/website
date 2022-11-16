@@ -12,22 +12,22 @@ feature to insert content into a Flutter `TextField`.
 
 ## Context
 
-As of Android 7.1, IMEs (virtual keyboards) are able to directly send images and rich content
-into a text editor. This allows users to directly insert gifs, stickers, or context-aware rich
-content into a text field.
+As of Android 7.1, IMEs (input method editors or virtual keyboards) can send
+images and rich content into a text editor. This allows users to insert gifs,
+stickers, or context-aware rich content into a text field.
 
 
 ## Description of change
 
 When the user inserts rich content via the IME, the platform sends a `commitContent` channel message
 called `TextInputClient.commitContent`.
-This notifies the Dart code that rich content was inserted. 
+This notifies the Dart code that the IME inserted rich content.
 The channel message contains the mime type, URI, and bytedata for the inserted content in JSON form.
 
 
 ## Migration guide
 
-If you previously implemented `TextInputClient`, you must override
+If you had implemented `TextInputClient`, you must override
 `insertContent` to either support rich content insertion or provide an empty implementation.
 
 To migrate, implement `insertContent`.
@@ -54,6 +54,26 @@ class MyCustomTextInputClient implements TextInputClient {
   ...
 }
 ```
+
+If your implementation of `TextInputClient` does not require the ability to receive rich content 
+inserted from the IME, you may leave the implementation of `insertContent` empty with no 
+consequences.
+
+<!-- skip -->
+```dart
+class MyCustomTextInputClient implements TextInputClient {
+  ...
+  @override
+  void insertContent() {}
+  ...
+}
+```
+
+Alternatively, you may use a similar implementation to the default `TextInputClient`.<br>
+See the [insertContent implementation]({{site.repo.flutter}}/TBD) for more details.
+
+In the future, you can prevent being broken by changes like this by using `with TextInputClient`
+rather than `implements TextInputClient`.
 
 ## Timeline
 
