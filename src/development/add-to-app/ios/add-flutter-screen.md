@@ -59,12 +59,12 @@ import Flutter
 import FlutterPluginRegistrant
 
 class FlutterDependencies: ObservableObject {
-  let npsFlutterEngine = FlutterEngine(name: "my flutter engine")
+  let flutterEngine = FlutterEngine(name: "my flutter engine")
   init(){
     // Prepare a Flutter engine in advance.
-    npsFlutterEngine.run()
+    flutterEngine.run()
     // Used to connect plugins (only if you have plugins with iOS platform code).
-    GeneratedPluginRegistrant.register(with: self.npsFlutterEngine);
+    GeneratedPluginRegistrant.register(with: self.flutterEngine);
   }
 }
 
@@ -73,9 +73,9 @@ struct MyApp: App {
   // flutterDependencies will be injected using EnvironmentObject.
   @StateObject var flutterDependencies = FlutterDependencies()
     var body: some Scene {
-        WindowGroup {
-          ContentView().environmentObject(flutterDependencies)
-        }
+      WindowGroup {
+        ContentView().environmentObject(flutterDependencies)
+      }
     }
 }
 ```
@@ -148,15 +148,17 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 {% sample SwiftUI %}
 The following example shows a generic `ContentView` with a
 `Button` hooked to present a [`FlutterViewController`][].
-The `FlutterViewController` uses the `FlutterEngine` instance
-passed in as an `EnvironmentObject`.
+The `FlutterViewController` constructor takes the pre-warmed 
+`FlutterEngine` as an argument. `FlutterEngine` is passed in 
+as an `EnvironmentObject` via `flutterDependencies`.
+
 <!--code-excerpt "ContentView.swift" title-->
 ```swift
 import SwiftUI
 import Flutter
 
 struct ContentView: View {
-  // Flutter engine is passed in as an EnvironmentObject.
+  // Flutter dependencies are passed in as an EnvironmentObject.
   @EnvironmentObject var flutterDependencies: FlutterDependencies
 
   // Button is created to call the showFlutter function when pressed.
@@ -177,7 +179,7 @@ func showFlutter() {
 
     // Create the FlutterViewController.
     let flutterViewController = FlutterViewController(
-      engine: flutterDependencies.npsFlutterEngine,
+      engine: flutterDependencies.flutterEngine,
       nibName: nil,
       bundle: nil)
     flutterViewController.modalPresentationStyle = .overCurrentContext
@@ -291,7 +293,6 @@ import SwiftUI
 import Flutter
 
 struct ContentView: View {
-  // No EnvironmentObject needed.
   var body: some View {
     Button("Show Flutter!") {
       openFlutterApp()
@@ -413,8 +414,6 @@ struct ContentView: View {
   }
 
 func openFlutterApp() {
-    let flutterEngine = appDelegate.flutterEngine
-
     // Get the RootViewController.
     guard
       let windowScene = UIApplication.shared.connectedScenes
@@ -425,7 +424,8 @@ func openFlutterApp() {
 
     // Create the FlutterViewController.
     let flutterViewController = FlutterViewController(
-      engine: flutterEngine,
+      // Access the Flutter Engine via AppDelegate.
+      engine: appDelegate.flutterEngine,
       nibName: nil,
       bundle: nil)
     flutterViewController.modalPresentationStyle = .overCurrentContext
