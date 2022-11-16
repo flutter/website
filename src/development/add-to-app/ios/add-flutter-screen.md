@@ -38,9 +38,7 @@ trade-offs of pre-warming an engine.
 ### Create a FlutterEngine
 
 The proper place to create a `FlutterEngine` is specific
-to your host app. As an example, we demonstrate creating a
-`FlutterEngine`, exposed as a property, on app startup in
-the app delegate.
+to your host app. 
 
 {% samplecode engine %}
 
@@ -81,6 +79,10 @@ struct MyApp: App {
 ```
 
 {% sample UIKit-Swift %}
+As an example, we demonstrate creating a
+`FlutterEngine`, exposed as a property, on app startup in
+the app delegate.
+
 **In `AppDelegate.swift`:**
 
 <!--code-excerpt "AppDelegate.swift" title-->
@@ -104,6 +106,10 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 }
 ```
 {% sample UIKit-ObjC %}
+As an example, we demonstrate creating a
+`FlutterEngine`, exposed as a property, on app startup in
+the app delegate.
+
 **In `AppDelegate.h`:**
 
 <!--code-excerpt "AppDelegate.h" title-->
