@@ -976,4 +976,4 @@ software that directly executes Dart code.
 [release mode]: {{site.url}}/testing/build-modes#release
 [debug mode]: {{site.url}}/testing/build-modes#debug
 [Don't Fear the Garbage Collector]: {{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
-[case_study]: {{site.repo.organization}}/devtools/tree/master/case_study/memory_leaks/images_1_null_safe
+[case_study]: {{site.repo.organization}}/devtools/tree/master/case_study/memory_leaks/images_1
