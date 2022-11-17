@@ -131,10 +131,6 @@ Use [Chrome DevTools][] for the following tasks:
 Use [widget tests][] or integration tests. To learn more about
 running integration tests in a browser, see the [Integration testing][] page.
 
-### How do I internationalize a web app?
-
-This isn’t any different than [internationalizing a Flutter mobile app][].
-
 ### How do I deploy a web app?
 
 See [Preparing a web app for release][].
@@ -163,5 +159,4 @@ Not currently.
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [run your web apps in any supported browser]: {{site.url}}/get-started/web#create-and-run
 [Integration testing]: {{site.url}}/testing/integration-tests#running-in-a-browser
-[internationalizing a Flutter mobile app]: {{site.url}}/resources/faq#how-do-i-do-internationalization-i18n-localization-l10n-and-accessibility-a11y-in-flutter
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
