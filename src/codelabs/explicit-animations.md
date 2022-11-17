@@ -6,8 +6,8 @@ diff2html: true
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
-  - defer: true
-    url: /assets/js/codelabs/animations_examples.js
+#  - defer: true
+#    url: /assets/js/codelabs/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/explicit"?>
