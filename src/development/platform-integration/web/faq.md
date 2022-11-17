@@ -144,6 +144,7 @@ Not currently.
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
 [Creating responsive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
 [Debugging]: {{site.url}}/development/tools/devtools/debugger
+[file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
