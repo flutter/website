@@ -3,7 +3,7 @@ const animation1PlayButton =
 const animation1 =
     document.getElementById("animation_1");
 
-if (animation1PlayButton) {
+if (animation1PlayButton && animation1) {
   animation1PlayButton.addEventListener('click', function (_) {
     if (animation1.paused) {
       animation1.play();
@@ -13,9 +13,7 @@ if (animation1PlayButton) {
       this.style.display = 'block';
     }
   }, false);
-}
 
-if (animation1) {
   animation1.addEventListener('click', function (_) {
     if (this.paused) {
       this.play();
