@@ -1054,7 +1054,7 @@ final container = Container(
 [`BorderRadius`]: {{site.api}}/flutter/painting/BorderRadius-class.html
 [`BoxDecoration`]: {{site.api}}/flutter/painting/BoxDecoration-class.html
 [`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
-[`BoxShape` enum]: {{site.api}}/flutter/painting/BoxShape-class.html
+[`BoxShape` enum]: {{site.api}}/flutter/painting/BoxShape.html
 [`BoxShadow`]: {{site.api}}/flutter/painting/BoxShadow-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
