@@ -204,8 +204,8 @@ colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
 ```
 
 A `Tween` object does not store any state. Instead, it provides the
-`evaluate(Animation<double> animation)` method that
-applies the mapping function to the current value of the animation.
+[`Animation.value`][] method that applies the mapping function 
+to the current value of the animation.
 The current value of the `Animation` object can be found in the
 `.value` method. The evaluate function also performs some housekeeping,
 such as ensuring that begin and end are returned when the
@@ -957,6 +957,7 @@ for the latest available documents and examples.
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
 [`Animatable`]: {{site.api}}/flutter/animation/Animatable-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
+[`Animation.value`]: {{site.api}}/flutter/animation/Animation/value.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
 [animations landing page]: {{site.url}}/development/ui/animations
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
