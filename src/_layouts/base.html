@@ -10,6 +10,11 @@
     <link rel="apple-touch-icon" href="/assets/images/shared/brand/flutter/logo/flutter-logomark-320px.png" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
+    {% unless page.strip_fonts == true %}
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://use.fontawesome.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {% endunless %}
 
     {% if jekyll.environment == "production" %}
       <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
