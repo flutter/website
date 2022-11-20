@@ -293,25 +293,25 @@
       permalink: /development/tools/android-studio
     - title: Visual Studio Code
       permalink: /development/tools/vs-code
-        - title: Flutter SDK
-          permalink: /development/tools/sdk
-          children:
-            - title: Overview
-              permalink: /development/tools/sdk/overview
-            - title: Upgrading
-              permalink: /development/tools/sdk/upgrading
-            - title: Releases
-              permalink: /development/tools/sdk/releases
-            - title: Breaking changes
-              permalink: /release/breaking-changes
-                - title: Flutter & the pubspec file
-                  permalink: /development/tools/pubspec
-                - title: Hot reload
-                  permalink: /development/tools/hot-reload
-                - title: Flutter Fix
-                  permalink: /development/tools/flutter-fix
-                - title: Code formatting
-                  permalink: /development/tools/formatting
+    - title: Flutter SDK
+      permalink: /development/tools/sdk
+      children:
+        - title: Overview
+          permalink: /development/tools/sdk/overview
+        - title: Upgrading
+          permalink: /development/tools/sdk/upgrading
+        - title: Releases
+          permalink: /development/tools/sdk/releases
+        - title: Breaking changes
+          permalink: /release/breaking-changes
+        - title: Flutter & the pubspec file
+          permalink: /development/tools/pubspec
+        - title: Hot reload
+          permalink: /development/tools/hot-reload
+        - title: Flutter Fix
+          permalink: /development/tools/flutter-fix
+        - title: Code formatting
+          permalink: /development/tools/formatting
 
 - title: Testing & debugging
   permalink: /testing
