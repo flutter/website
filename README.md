@@ -9,7 +9,7 @@
 
 [Build Status]: https://github.com/flutter/website/workflows/build/badge.svg
 [Flutter]: https://docs.flutter.dev/
-[Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amaster
+[Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amain
 
 ## Table of contents
 
