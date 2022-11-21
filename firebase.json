@@ -136,7 +136,7 @@
       { "source": "/testing/ui-performance", "destination": "/perf/ui-performance", "type": 301 },
       { "source": "/whats-new-archive", "destination": "/whats-new", "type": 301 },
 
-      { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/master/src/assets/images/docs/tools/android-studio/hot-reload.gif", "type": 301 },
+      { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/tools/android-studio/hot-reload.gif", "type": 301 },
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/catalog/samples/*", "destination": "https://flutter.github.io/samples/#", "type": 301 },
@@ -179,7 +179,6 @@
       { "source": "/go/base-annotations-local-position-on-region", "destination": "https://docs.google.com/document/d/1r7FQTOw2vZJZ5c0VoNqi9CWmZY3MvUfz0spdf0-nK6k/edit", "type": 301 },
       { "source": "/go/blankcanvas", "destination": "https://docs.google.com/document/d/1rS_RO2DQ_d4_roc3taAB6vXFjv7-9hJP7pyZ9NhPOdA/edit?resourcekey=0-VBzTPoqLwsruo0j9dokuOg", "type": 301 },
       { "source": "/go/bottom-navigation-bar-title-deprecation", "destination": "https://docs.google.com/document/d/1L-2nPf5hbLGNoRvOSUmnxgUHahBVzW1ybhTXGY3ObDw/edit?usp=sharing", "type": 301 },
-      { "source": "/go/breaking-changes-template", "destination": "https://github.com/flutter/website/blob/master/src/docs/release/breaking-changes/template.md", "type": 301 },
       { "source": "/go/buffer-queue", "destination": "https://docs.google.com/document/d/1rXl9G-VmISVlVkKVgrnQKeX7Mexyez0x9HZ5F5yKxrQ/edit?usp=sharing", "type": 301 },
       { "source": "/go/build-aar", "destination": "/development/add-to-app/android/project-setup#option-a---depend-on-the-android-archive-aar", "type": 301 },
       { "source": "/go/build-dashboard-v2", "destination": "https://docs.google.com/document/d/1kwh48xYuoVtadYFb2I2t6BJMGEW07K7T5WYcieAZZiY", "type": 301 },
