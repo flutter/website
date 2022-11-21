@@ -254,7 +254,6 @@ The output will look something like the following:
 
 ```terminal
 Resolving dependencies...
-These packages are no longer being depended on:
 + english_words 4.0.0
 Downloading english_words 4.0.0...
 
