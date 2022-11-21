@@ -183,7 +183,7 @@ to the jank you saw in your app.
    If performance improves with this option disabled,
    try to reduce the use of opacity effects in your app.
   
-**Render Physical Shape Layers**
+**Render Physical Shape layers**
 :  Disable this option to check whether excessive
    use of physical modeling effects are affecting performance,
   such as shadows or elevation.
