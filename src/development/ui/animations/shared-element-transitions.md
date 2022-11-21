@@ -1,8 +1,10 @@
 ---
-title: Hero animations
+title: Shared element transitions
 description: How to animate a widget to fly between two screens.
 short-title: Hero
 ---
+
+Note: This page was formerly titled "Hero animations".
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>

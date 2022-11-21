@@ -107,7 +107,7 @@
     - title: Fade a widget in & out
       permalink: /cookbook/animation/opacity-animation
     - title: Shared element transitions
-      permalink: /development/ui/animations/hero-animations
+      permalink: /development/ui/animations/shared-element-transitions
     - title: Staggered animations
       permalink: /development/ui/animations/staggered-animations
     - title: Page route transition
