@@ -77,6 +77,8 @@
     - title: Introduction
       permalink: /development/ui/navigation
       match-page-url-exactly: true
+    - title: Animate a widget across screens
+      permalink: /cookbook/animation/hero-animations
     - title: Navigate to a new screen & back
       permalink: /cookbook/navigation/navigation-basics
     - title: Navigate with named routes
@@ -102,8 +104,6 @@
       permalink: /development/ui/animations/implicit-animations
     - title: Animate the properties of a container
       permalink: /cookbook/animation/animated-container
-    - title: Animate a widget across screens
-      permalink: /cookbook/animation/hero-animations
     - title: Fade a widget in & out
       permalink: /cookbook/animation/opacity-animation
     - title: Shared element transitions
@@ -111,7 +111,7 @@
     - title: Staggered animations
       permalink: /development/ui/animations/staggered-animations
     - title: Page route transition
-      permalink: /cookbook/animation/page-route-animations
+      permalink: /cookbook/animation/page-route-animation
     - title: Animate a widget using a physics simulation
       permalink: /cookbook/animation/physics-simulation
     - title: Explicit animations
@@ -193,8 +193,8 @@
           permalink: /development/platform-integration/ios/apple-frameworks
         - title: Adding iOS App Clip support
           permalink: /development/platform-integration/ios/ios-app-clip
-        - title: Apple Watch support
-          permalink: /development/platform-integration/ios/apple-watch
+#        - title: Apple Watch support
+#          permalink: /development/platform-integration/ios/apple-watch
         - title: C interop
           permalink: /development/platform-integration/ios/c-interop
         - title: Hosting native iOS views
