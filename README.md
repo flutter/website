@@ -94,6 +94,9 @@ Install the following tools, if you don't have them already:
   One way to get this is to run `npm install -g firebase-tools`. 
   For full setup details, read the
   [Firebase CLI documentation](https://firebase.google.com/docs/cli).
+  After installing the Firebase tools, make sure that the `firebase`
+  command is in your PATH. Then run "firebase login" to make sure
+  that you are logged into Firebase.
 
 ### 2. Clone this repo _and_ its submodules
 
@@ -166,6 +169,10 @@ _choose one_ of the following submodule-cloning techniques:
    The site is generated, 
    and then the development server runs in the Docker container, 
    with the generated `_site` directory visible locally.
+
+   > **Note:** If you make changes to the `/src/_data/sidenav.yml` file,
+   > it isn't sufficient to just re-run "make up". You must re-run
+   > "make setup".
 
 1. View your changes in the browser by navigating to `http://localhost:4002`.
    > **Note:** Unless you're editing files under `site-shared`, 
