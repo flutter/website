@@ -78,7 +78,7 @@
       permalink: /development/ui/navigation
       match-page-url-exactly: true
     - title: Animate a widget across screens
-      permalink: /cookbook/animation/hero-animations
+      permalink: /cookbook/navigation/hero-animations
     - title: Navigate to a new screen & back
       permalink: /cookbook/navigation/navigation-basics
     - title: Navigate with named routes
