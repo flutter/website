@@ -15,7 +15,7 @@ To contribute a fix to a repo, submit a [pull request
 
 For information on contributing code or API docs to the Flutter SDK, see
 [Contributing to
-Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
+Flutter](https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md)
 in the [Flutter SDK](https://github.com/flutter/flutter) repo.
 
 We are also happy to accept your PRs to the
