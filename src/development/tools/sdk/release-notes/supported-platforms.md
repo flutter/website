@@ -83,7 +83,8 @@ and stable channels.
 {:.table.table-striped}
 </div>
 
-\* Flutter 3.3 is the last stable release with macOS 10.11 and 10.12 best-effort support.
+\* Flutter 3.3 is the last stable release with macOS 10.11 through 10.13
+best-effort support.
 
 ### Unsupported platforms
 
