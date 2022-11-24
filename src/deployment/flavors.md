@@ -27,6 +27,7 @@ These articles address flavors for both iOS and Android.
   Command argument that changes everything][]
 * [Multi-environment Flutter Projects with Flavors][]
   (including support for web, Firebase and FlutterFire CLI)
+* [Flutter new app setup with Flavors in one go] (including different Firebase & icons)
 
 The following packages are listed alphabetically:
 
@@ -41,3 +42,4 @@ The following packages are listed alphabetically:
 [Multi-environment Flutter Projects with Flavors]: https://sebastien-arbogast.com/2022/05/02/multi-environment-flutter-projects-with-flavors/
 [`flutter_flavor`]: {{site.pub}}/packages/flutter_flavor
 [`flutter_flavorizr`]: {{site.pub}}/packages/flutter_flavorizr
+[Flutter new app setup with Flavors in one go]: https://medium.com/itnext/flutter-new-app-setup-with-flavors-in-one-go-331471b127e3
