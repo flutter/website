@@ -67,6 +67,9 @@
       <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
     {% endfor %}
 
+    {% for script in page.js %}
+    <link rel="preload" as="script" href="{{ script.url | default: js }}" />
+    {% endfor %}
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -80,10 +83,6 @@
     <script defer src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
     <script defer src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
     <script defer src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
-    
-    {% for script in page.js %}
-      <script defer src="{{ script.url | default: js }}" {% if script.defer %}defer{% endif %}></script>
-    {% endfor %}
 
   </head>
   <body {% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
@@ -109,6 +108,10 @@
     {% if page.show_footer %}
       {% include footer.html %}
     {% endif %}
+
+    {% for script in page.js %}
+      <script src="{{ script.url | default: js }}" {% if script.defer %}defer{% endif %}></script>
+    {% endfor %}
 
   </body>
 </html>
