@@ -13,7 +13,7 @@ To launch a Flutter screen from an existing iOS, you start a
 
 {{site.alert.secondary}}
   The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime,
-  and the `FlutterViewController` attaches to a `FlutterEngine` to pass UIKit
+  and the `FlutterViewController` attaches to a `FlutterEngine` to pass 
   input events into Flutter and to display frames rendered by the
   `FlutterEngine`.
 {{site.alert.end}}
@@ -37,8 +37,7 @@ trade-offs of pre-warming an engine.
 
 ### Create a FlutterEngine
 
-The proper place to create a `FlutterEngine` is specific
-to your host app. 
+Where you create a `FlutterEngine` depends on your host app.
 
 {% samplecode engine %}
 
@@ -53,15 +52,15 @@ and passing that into a `View` using the
  ```swift
 import SwiftUI
 import Flutter
-// Used to connect plugins (only if you have plugins with iOS platform code).
+// The following library connects plugins with iOS platform code to this app.
 import FlutterPluginRegistrant
 
 class FlutterDependencies: ObservableObject {
   let flutterEngine = FlutterEngine(name: "my flutter engine")
   init(){
-    // Prepare a Flutter engine in advance.
+    // Runs the default Dart entrypoint with a default Flutter route.
     flutterEngine.run()
-    // Used to connect plugins (only if you have plugins with iOS platform code).
+    // Connects plugins with iOS platform code to this app.
     GeneratedPluginRegistrant.register(with: self.flutterEngine);
   }
 }
@@ -89,7 +88,7 @@ the app delegate.
 ```swift
 import UIKit
 import Flutter
-// Used to connect plugins (only if you have plugins with iOS platform code).
+// The following library connects plugins with iOS platform code to this app.
 import FlutterPluginRegistrant
 
 @UIApplicationMain
@@ -99,16 +98,18 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Runs the default Dart entrypoint with a default Flutter route.
     flutterEngine.run();
-    // Used to connect plugins (only if you have plugins with iOS platform code).
+    // Connects plugins with iOS platform code to this app.
     GeneratedPluginRegistrant.register(with: self.flutterEngine);
     return super.application(application, didFinishLaunchingWithOptions: launchOptions);
   }
 }
 ```
 {% sample UIKit-ObjC %}
-As an example, we demonstrate creating a
-`FlutterEngine`, exposed as a property, on app startup in
-the app delegate.
+
+In this example, we create a `FlutterEngine` 
+object inside a SwiftUI `ObservableObject`. 
+We then pass this `FlutterEngine` into a 
+`ContentView` using the `environmentObject()` property. 
 
 **In `AppDelegate.h`:**
 
@@ -126,7 +127,7 @@ the app delegate.
 
 <!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
-// Used to connect plugins (only if you have plugins with iOS platform code).
+// The following library connects plugins with iOS platform code to this app.
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
 
 #import "AppDelegate.h"
@@ -138,7 +139,7 @@ the app delegate.
   self.flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
   // Runs the default Dart entrypoint with a default Flutter route.
   [self.flutterEngine run];
-  // Used to connect plugins (only if you have plugins with iOS platform code).
+  // Connects plugins with iOS platform code to this app.
   [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
