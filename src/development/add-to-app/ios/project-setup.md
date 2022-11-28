@@ -19,10 +19,10 @@ in your existing application.
   to have the Flutter SDK and Cocoapods installed locally.
 
 1. **Create frameworks for your compiled Dart code,
-  and all Flutter plugins. Create a Pod library for the Flutter engine.** 
-  With this option,  you embed the frameworks for your application
+  and all Flutter plugins. Use CocoaPods for the Flutter engine.** 
+  With this option, embed the frameworks for your application
   and the plugins in Xcode, but distribute the
-  Flutter engine as a Cocoapods podspec.
+  Flutter engine as a CocoaPods podspec.
   This is similar to the second option, but it provides
   an alternative to distributing the large Flutter.xcframework.
 
@@ -117,7 +117,7 @@ you can embed it using the methods described at the top of the page.
 
 {{site.alert.note}}
   You can run in Debug mode on a simulator or a real device,
-  and Release on a real device. Learn more at 
+  and Release on a real device. Learn more about
   [Flutter's build modes][build modes of Flutter]
 
   To leverage Flutter debugging functionality 
@@ -156,7 +156,7 @@ If your existing application (`MyApp`) doesn't
 already have a Podfile, run `pod init` in the  
 `MyApp` directory to create one. 
 You can find more details on using 
-Cocoapods in the [CocoaPods getting started guide][].
+CocoaPods in the [CocoaPods getting started guide][].
 
 <ol markdown="1">
 <li markdown="1">

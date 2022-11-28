@@ -164,7 +164,7 @@ import SwiftUI
 import Flutter
 
 struct ContentView: View {
-  // Flutter dependencies are passed in as an EnvironmentObject.
+  // Flutter dependencies are passed in an EnvironmentObject.
   @EnvironmentObject var flutterDependencies: FlutterDependencies
 
   // Button is created to call the showFlutter function when pressed.
