@@ -145,6 +145,18 @@ while the app initializes.
 See [Android Splash Screens][] first on how to configure your launch screen on
 Android S.
 
+As of Android S, you must use the new splash screen API in your `styles.xml` file.
+Consider creating an alternate resource file for Android 12 and higher.
+Also make sure that your background image is in line with the icon guidelines,
+see [Android Splash Screens][] for more details.
+
+```xml
+<style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+    <item name="android:windowSplashScreenBackground">@color/bgColor</item>
+    <item name="android:windowSplashScreenAnimatedIcon">@drawable/launch_background</item>
+</style>
+```
+
 Make sure neither `io.flutter.embedding.android.SplashScreenDrawable` is set in
 your manifest, nor is `provideSplashScreen` implemented, as these APIs are
 deprecated. Doing so will cause the Android launch screen to fade smoothly into
