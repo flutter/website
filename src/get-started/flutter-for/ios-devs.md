@@ -65,6 +65,9 @@ but the full working examples can be tested on DartPad or viewed on GitHub.
 
 ## SwiftUI Overview
 
+This section gives an overview of the core similarities 
+and differences between SwiftUI and Flutter.
+
 ### Views vs. Widgets
 
 Flutter and SwiftUI are both declarative frameworks, 
@@ -194,7 +197,7 @@ In Flutter, to begin you pass in an instance of your app to the `runApp` functio
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=d3d38ae68f7d6444421d0485a1fd02db">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/get_started.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/get_started.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -215,7 +218,7 @@ It’s common to begin your app with a [`WidgetApp`][] class, like [`CupertinoAp
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=d3d38ae68f7d6444421d0485a1fd02db">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/get_started.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/get_started.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -245,7 +248,7 @@ that accepts a widget as its body:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=d3d38ae68f7d6444421d0485a1fd02db">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/get_started.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/get_started.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -297,7 +300,7 @@ To achieve the same  you can use the `CupertinoButton` class, as follows:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=b776dfe43c91e580c66b2b93368745eb">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/text_button.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/text_button.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -346,7 +349,7 @@ which lays out its children horizontally:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5715d4f269f629d274ef1b0e9546853b">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/row.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/row.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -391,7 +394,7 @@ except for changing `Row` to [`Column`][]:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5e85473354959c0712f05e86d111c584">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/column.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/column.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -449,7 +452,7 @@ and build a widget for each item.
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=66e6728e204021e3b9e0190be50d014b">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/list.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/list.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -539,7 +542,7 @@ This example uses the `.builder()` initializer:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=4ac2d2433390042d25c97f1e819ec337">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/grid.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/grid.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -616,7 +619,7 @@ create the custom `PersonView` widget:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=63039c5371995ae53d971d613a936f7b">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/scroll.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/scroll.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -686,7 +689,7 @@ counter app to the one created previously:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=c5fcf5897c21456c518ea954c2587ada">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/state.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/state.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -755,7 +758,7 @@ For example, to rotate a button you can use the
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=4b9cfedfe9ca09baeb83456fdf7cbe32">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/simple_animation.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/simple_animation.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -806,7 +809,7 @@ with two other classes that help you draw. [`CustomPaint`][], which requires a p
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=fccb26fc4bca4c08ca37931089a837e7">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/canvas.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/canvas.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -827,7 +830,7 @@ And [`CustomPainter`][], which implements your algorithm to draw to the canvas.
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=fccb26fc4bca4c08ca37931089a837e7">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/canvas.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/canvas.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -901,7 +904,7 @@ First, name each route in the class passed to the
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5ae0624689958c4775b064d39d108d9e">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/navigation.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/navigation.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -942,7 +945,7 @@ to the `Navigator`.
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5ae0624689958c4775b064d39d108d9e">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/navigation.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/navigation.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -986,7 +989,7 @@ and extracted using `ModalRoute.of()`:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=5ae0624689958c4775b064d39d108d9e">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/navigation.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/navigation.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1037,7 +1040,7 @@ function of the `Navigator` class as follows:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=0cf352feaeaea2eb107f784d879e480d">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/popback.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/popback.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1078,7 +1081,7 @@ To achieve the same results in Flutter use the [`url_launcher`][] plugin.
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/openapp.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/openapp.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1119,7 +1122,7 @@ using the `theme` property of your `App` class as follows:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=c446775c3224787e51fb18b054a08a1c">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/cupertino_themes.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/cupertino_themes.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1154,7 +1157,7 @@ parameter of the `Text` widget as follows:
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=c446775c3224787e51fb18b054a08a1c">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/cupertino_themes.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/cupertino_themes.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1195,7 +1198,7 @@ or modifying properties on the button itself –  like background color.
     <a class="btn btn-navbar-code" href="{{site.dartpad}}/?id=8ffd244574c98f510c29712f6e6c2204">Test in DartPad</a>
   </li>
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/stylingbutton.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/stylingbutton.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1267,7 +1270,7 @@ but this time in Flutter:
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
   <li class="nav-item">
-    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/stylingbutton.dart">View on Github</a>
+    <a class="btn btn-navbar-code" href="{{site.repo.this}}/{{sample_path}}/lib/stylingbutton.dart">View on GitHub</a>
   </li>
 </ul>
 </nav>
@@ -1332,6 +1335,9 @@ for a complete walkthrough.
 
 
 ## UIKit Overview
+
+This section gives an overview of the core similarities 
+and differences between UIKit and Flutter.
 
 ### Views vs. Widgets
 
@@ -1833,6 +1839,9 @@ Widget build(BuildContext context) {
 
 ## Navigation
 
+This section of the document discusses navigation 
+between pages of an app, the push and pop mechanism, and more.
+
 ### Navigating between pages
 
 In UIKit, to travel between view controllers, you can use a
@@ -2017,7 +2026,7 @@ with and without the `intl` package.
 
 ### Managing dependencies
 
-In iOS, you add dependencies with Cocoapods by adding to your `Podfile`.
+In iOS, you add dependencies with CocoaPods by adding to your `Podfile`.
 Flutter uses Dart’s build system and the Pub package manager
 to handle dependencies. The tools delegate the building of the
 native Android and iOS wrapper apps to the
@@ -2030,6 +2039,10 @@ In general, use `pubspec.yaml` to declare external dependencies in Flutter.
 A good place to find great packages for Flutter is on [pub.dev][].
 
 ## ViewControllers
+
+This section of the document discusses the equivalent 
+of ViewController in Flutter and how to listen to 
+lifecycle events.
 
 ### Equivalent of ViewController in Flutter
 
@@ -2077,6 +2090,9 @@ For more details on the meaning of these states, see
 [`AppLifecycleState` documentation][].
 
 ## Layouts
+
+This section discusses different layouts in Flutter 
+and how they compare with UIKit.
 
 ### Displaying a list view
 
@@ -2419,6 +2435,10 @@ see the [layout tutorial][].
 
 ## Gesture detection and touch event handling
 
+This section discusses how to detect gestures 
+and handle different events in Flutter, 
+and how they compare with UIKit.
+
 ### Adding a click listener
 
 In UIKit, you attach a `GestureRecognizer` to a view to
@@ -2590,6 +2610,12 @@ class _SampleAppState extends State<SampleApp>
 ```
 
 ## Themes, styles, and media
+
+Flutter applications are easy to style; you can switch 
+between light and dark themes, 
+change the style of your text and UI components, 
+and more. This section covers aspects of styling your Flutter apps 
+and compares how you might do the same in UIKit.
 
 ### Using a theme
 
@@ -2781,6 +2807,9 @@ For more details, see
 
 ## Form input
 
+This section discusses how to use forms in Flutter 
+and how they compare with UIKit.
+
 ### Retrieving user input
 
 Given how Flutter uses immutable widgets with a separate state,
@@ -2937,6 +2966,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ```
 
 ## Threading & asynchronicity
+
+This section discusses concurrency in Flutter and 
+how it compares with UIKit.
 
 ### Writing asynchronous code
 
@@ -3412,7 +3444,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
-## Localization and dependencies
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
