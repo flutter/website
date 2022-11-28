@@ -145,10 +145,10 @@ while the app initializes.
 See [Android Splash Screens][] first on how to configure your launch screen on
 Android S.
 
-From Android S and higher it is required to use the new splash screen Api in your 
-`styles.xml` consider creating an alternate resource file for Android 12 and higher.
-Also make sure that your background image is in line with the icon guidelines, see
-[Android Splash Screens][] for more details.
+As of Android S, you must use the new splash screen API in your `styles.xml` file.
+Consider creating an alternate resource file for Android 12 and higher.
+Also make sure that your background image is in line with the icon guidelines,
+see [Android Splash Screens][] for more details.
 
 ```xml
 <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
