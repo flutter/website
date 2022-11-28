@@ -5,11 +5,11 @@ description: How to create build flavors specific to different release types or 
 ---
 ## What are flavors
 Have you ever wondered how to set up different environments in your Flutter app?
-Flavors (known as build configurations in iOS), create separate environments 
+Flavors (known as _build configurations_ in iOS), create separate environments 
 for your app using the same code base. 
 You can use flavors to supply your app with different development versions.
 
-Let’s say, you want to make a free and paid version of your Flutter app. 
+Imagine that you want to make both free and paid versions of your Flutter app. 
 You can use flavors to set up both app versions 
 without writing two separate apps. 
 The free version of the app has basic functionality. 
@@ -24,27 +24,26 @@ until you are ready to deploy your new feature to production.
 
 Flavors function by letting you define compile time configurations 
 and set parameters that are read at runtime depending on your app needs.
-Setting up flavors is straightforward in Android, but requires more in-depth
-set up in iOS through Xcode. 
 
 This document guides you through setting up Flutter flavors for iOS and Android. 
 
 ## Environment set up
 Prerequisites:
 * Xcode installed
+* Android Studio
 * An existing project 
 
-To set up flavors in iOS, you’ll need to create build configurations in Xcode. 
+To set up flavors in iOS, you’ll define build configurations in Xcode. 
 
 ## Creating flavors in iOS
 1. Open your project in Xcode.
 
-2. Click the Runner > New Scheme from the menu to add a new Scheme. 
-A scheme is used to describe how Xcode runs different actions. 
-For the purposes of this guide the example flavor and scheme is 
+2. Select the **Runner > New Scheme** from the menu to add a new Scheme. 
+A scheme describes how Xcode runs different actions. 
+For the purposes of this guide the example _flavor_ and _scheme_ are 
 named `development`. 
 The build configurations in the development scheme 
-have the -development suffix. 
+have the `-development` suffix. 
 
 3. Duplicate the build configurations to differentiate between the 
 default configurations that are already available and the new configurations 
@@ -55,13 +54,12 @@ Duplicate the listed production configurations, once for each environment.
 
 ![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
 
-4. To match the development flavor, add -development 
+4. To match the development flavor, add `-development` 
 at the end of each new configuration name. 
 
-5. Change the `development` Scheme to match the development 
-build configurations you’ve created to assign the correct build configurations 
-to the `development` scheme. 
-* In the Runner project, click Manage Schemes… a pop up window opens. 
+5. Change the `development` scheme to match the development 
+build configurations already created.
+* In the **Runner** project, click **Manage Schemes…** and a pop up window opens. 
 * Double click the development scheme. In the next step 
 (as shown in the screenshot), you’ll modify each scheme 
 to match its dev build configuration:
@@ -72,14 +70,14 @@ to match its dev build configuration:
 
 Now that you’ve set up your development flavor, 
 you can add different product bundle identifiers per flavor. 
-A bundle identifier is a way to uniquely identify your application. 
-In this example, we want the Debug-development value to equal 
-com.flavor-test.dev. 
+A _bundle identifier_ uniquely identifies your application. 
+In this example, we set the **Debug-development** value to equal 
+`com.flavor-test.dev`. 
 
 1. Change the app bundle identifier to differentiate between schemes. 
 In **Product Bundle Identifier**, append `.dev` to each -development scheme value.            
 ![Step 1 using flavors image.](/assets/images/docs/flavors/step1-using-flavors.png){:width="100%"}        
-2. In the Build Settings, set the Product Name value to match each flavor.        
+2. In the **Build Settings**, set the **Product Name** value to match each flavor.        
 ![Step 2 using flavors image.](/assets/images/docs/flavors/step2-using-flavors.png){:width="100%"}             
 3. Add the display name to info.plist.        
 Create a new key in info.plist called **Bundle Display Name** 
@@ -102,14 +100,13 @@ navigate to **android** > **app** > **build.gradle**.
 
 ![Step 1 using flavors in Android image.](/assets/images/docs/flavors/android-step1.png){:width="100%"}    
 
-Add a flavors object with the specified environments along with values for 
-dimension, resValue, and applicationId. 
-The name of the application for each build is located in resValue 
+Add a flavor object with the specified environments along with values for 
+**dimension**, **resValue**, and **applicationId**. 
+The name of the application for each build is located in **resValue** 
 (as shown in the screenshot below from VSCode).
 ## Setting up launch configurations
 
-If you are using VS Code as your IDE, the following steps 
-show you how to set up launch configurations. 
+In VSCode, set up the launch configurations as follows:  
 Adding a **launch.json** file allows you to run the terminal command 
 `flutter run --flavor [environment name]`. 
 1. In the root directory of your project, add a folder called **.vscode**.    
@@ -118,17 +115,21 @@ Adding a **launch.json** file allows you to run the terminal command
 Each configuration has a **name**, **request**, **type**, **program**, 
 and **args** key.
 
+You can now run the terminal command 
+`flutter run --flavor [environment name]` or you can set up a run 
+configuration in your IDE.
+
 ![Image for VSCode launch configuration step.](/assets/images/docs/flavors/vscode-config.png){:width="100%"}  
 
 ## Launching your app flavors
 
-Once you’ve set up your flavors in iOS and/or Android, 
-make modifications to your Dart code in **lib** > **main.dart** 
-that allow you to consume the flavors. 
-Run `flutter run --flavor [environment name]` in your terminal. 
-Check out the [Flutter repo][] for integration test examples of 
-build flavors for [iOS(Xcode)][] and [Android][]. 
+1. Once the flavors are set up, modify the Dart code in 
+**lib** > **main.dart** to consume the flavors. 
+2. Test the setup using `flutter run --flavor [environment name]` 
+at the command line, or by setting up a run configuration in your IDE. 
 
+For examples of build flavors for [iOS(Xcode)][] and [Android][], 
+check out the integration test samples in the [Flutter repo][]. 
 
 With this document you were able to: 
 * Set up flavors in iOS by creating a scheme and 
