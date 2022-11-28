@@ -43,7 +43,7 @@ For a list, see [Platform adaptations][].
 This document can be used as a cookbook by jumping around
 and finding questions that are most relevant to your needs.
 Pieces of sample code are embedded within this document, 
-but the full working examples can be tested on DartPad or viewed on Github.
+but the full working examples can be tested on DartPad or viewed on GitHub.
 
 <!-- Embed intro to iOS video when published -->
 
@@ -591,8 +591,8 @@ how the grid should lay out its components.
 
 In SwiftUI, to create custom scrolling components, 
 you would use `ScrollView`. 
-For example, to display a series of `PersonView` 
- instances on the screen in a vertically scrollable fashion. 
+The following example displays a series of `PersonView` 
+instances on the screen in a vertically scrollable fashion:
 
 ```swift
 ScrollView {
@@ -607,8 +607,8 @@ ScrollView {
 The closest equivalent of `ScrollView` in Flutter is 
 [`SingleChildScrollView`][]. 
 In the following example, the function `mockPerson` mocks up instances 
-'of the defined `Person` class to 
-create the custom `PersonView` widget. 
+of the defined `Person` class to 
+create the custom `PersonView` widget:
 
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
@@ -636,7 +636,7 @@ create the custom `PersonView` widget.
 ),
 ```
 
-### Responsive & adaptive design
+### Responsive and adaptive design
 
 In SwiftUI, you often use `GeometryReader` to create relative view sizes. 
 For example by setting the _width _to `geometry.size.width` multiplied by 
@@ -778,7 +778,7 @@ AnimatedRotation(
 
 SwiftUI and Flutter take a similar approach, 
 where you can specify parameters like `duration`, and `curve`. 
-If there's no built in widget for what you're trying to do, 
+If there's no built-in widget for what you're trying to do, 
 you can use the [`TweenAnimationBuilder`][] to easily 
 compose an animated widget.
 
@@ -787,7 +787,7 @@ SwiftUI uses the `withAnimation{}` closure. Flutter,
 on the other hand, 
 has built in explicitly animated widgets called `FooTransition`. 
 For example, the [`RotationTransition`][] class. 
-If there's no built in widget for what you're trying to do,
+If there's no built-in widget for what you're trying to do,
 you can use an `AnimatedWidget` for a standalone widget, 
 or `AnimatedBuilder` in another widget’s build method
 
@@ -869,7 +869,7 @@ In SwiftUI, this stack of pages is represented by the `NavigationStack` struct,
 and contains `NavigationLink` structs. 
 
 The next example creates an application that displays a list of persons, 
-and tapping on each person display's the person's details in a new navigation link. 
+and tapping each person displays that person's details in a new navigation link. 
 
 
 ```swift
@@ -892,7 +892,7 @@ In Flutter, small applications without complex deep linking can use [`Navigator`
 with named routes, as shown below. After defining your navigation routes, 
 you can call upon your navigation routes using their names. 
 
-First, you name your define your routes in the class passed to the 
+First, name each route in the class passed to the 
 `runApp()` function, in this case `App`:
 
 <nav class="navbar bg-primary">
@@ -975,7 +975,7 @@ ListView.builder(
 ),
 ```
 
-Next you'll define the `DetailsPage` widget responsible for 
+Next, define the `DetailsPage` widget responsible for 
 displaying the details of each person. In Flutter, arguments can be 
 dynamically passed into the widget, when navigating to the new route, 
 and extracted using `ModalRoute.of()`:
@@ -1018,9 +1018,9 @@ You can find more details at Navigation in Flutter.
 
 ### Manually pop back
 
-In SwiftUI, for situations where your view needs 
-to perform a manual pop-back to the previous screen, 
-you use the `dismiss` environment value as follows:
+In SwiftUI, for situations where a view needs 
+to perform a manual pop-back to the previous screen,
+use the `dismiss` environment value as follows:
 
 ```swift
 Button("Pop back") {
@@ -1028,7 +1028,7 @@ Button("Pop back") {
       }
 ```
 
-In Flutter, to achieve the same effect, you use the `pop()` 
+In Flutter, to achieve the same effect, use the `pop()` 
 function of the `Navigator` class as follows:
 
 <nav class="navbar bg-primary">
@@ -1056,8 +1056,8 @@ TextButton(
 
 ### Navigating to another app
 
-In SwiftUI, to open a URL to another application, you use the `openURL` environment 
-variable, as follows:
+In SwiftUI, to open a URL to another application,
+use the `openURL` environment variable, as follows:
 
 ```swift
 @Environment(\.openURL) private var openUrl
@@ -1073,7 +1073,7 @@ variable, as follows:
     }
 ```
 
-To achieve the same results in Flutter, you use the [`url_launcher`][] plugin. 
+To achieve the same results in Flutter use the [`url_launcher`][] plugin. 
 
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
@@ -1097,8 +1097,8 @@ To achieve the same results in Flutter, you use the [`url_launcher`][] plugin.
 ),
 ```
 
-## Themes, styles and media
-Flutter applications are easy to style; you can easily switch 
+## Themes, styles, and media
+Flutter applications are easy to style; you can switch 
 between light and dark themes, 
 change the style of your text and UI components, 
 and more. This section covers aspects of styling your Flutter apps 
@@ -1110,7 +1110,7 @@ you can call the `preferredColorScheme()` function that is implemented
 on a `View`.
     
 In Flutter, you control light and dark mode at the app-level 
-using the `theme` property of either your `App` class as follows:
+using the `theme` property of your `App` class as follows:
 
 
 <nav class="navbar bg-primary">
@@ -1284,13 +1284,13 @@ Text(
 ```
 
 
-{{site.alert.secondary}}
+{{site.alert.note}}
   Check out [Google Fonts](https://fonts.google.com) to download custom fonts that you can use in your apps.
 {{site.alert.end}}
 
 ### Bundling images in apps
-In SwiftUI, to add an image to your application, 
-'add the files to `Assets.xcassets` 
+In SwiftUI, to add images to your application, 
+add the files to `Assets.xcassets` 
 and then display them using the `Image` view. 
 
 In Flutter, you add images similar to how you add custom fonts. 
@@ -1307,7 +1307,7 @@ After defining your image, you can display it on the screen using
 the `Image` widget's `.asset()` constructor. 
 This constructor instantiates the given image using the provided path, 
 reads the image from the assets that are bundled with your app, 
-and displays the image on the screen. See the [`Image`] for a complete example. 
+and displays the image on the screen. See the [`Image`][] docs for a complete example. 
 
 
 ### Bundling videos in apps
@@ -1319,11 +1319,13 @@ create an instance of the `VideoPlayer` view.
 In Flutter, to do the same thing, you'll need to add the [video_player][] 
 plugin to your project. 
 This plugin allows you to create a video player that works on 
-Android, iOS and on the web from the same codebase. 
-You'll need to add the plugin to your app- and similar to above, add the video file to your project, 
+Android, iOS, and on the web from the same codebase. 
+You'll need to add the plugin to your app and, similar to above,
+add the video file to your project, 
 and add the asset to your `pubspec.yaml` file. Once these steps are complete, 
 you can use the `VideoPlayerController` 
-class to load and play your video file. See [video_player example][] for a complete walk through. 
+class to load and play your video file. See the [video_player example][]
+for a complete walkthrough. 
 
 </div>
 <div class="tab-pane" id="uikit" role="tabpanel" aria-labelledby="uikit-tab" markdown="1">
@@ -1489,7 +1491,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
-### Widget Layout
+### Widget layout
 
 In UIKit, you might use a Storyboard file
 to organize your views and set constraints,
@@ -1880,7 +1882,7 @@ The `Navigator` class handles routing in Flutter and is used to get
 a result back from a route that you have pushed on the stack.
 This is done by `await`ing on the `Future` returned by `push()`.
 
-For example, to start a ‘location’ route that lets the user select their
+For example, to start a `location` route that lets the user select their
 location, you might do the following:
 
 <?code-excerpt "lib/intent.dart (PushAwait)"?>
@@ -1888,7 +1890,7 @@ location, you might do the following:
 Object? coordinates = await Navigator.of(context).pushNamed('/location');
 ```
 
-And then, inside your ‘location’ route, once the user has selected their
+And then, inside your `location` route, once the user has selected their
 location, `pop()` the stack with the result:
 
 <?code-excerpt "lib/intent.dart (Pop)"?>
@@ -2142,7 +2144,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
-### Understanding what was clicked
+### Detecting what was clicked
 
 In UIKit, you implement the delegate method,
 `tableView:didSelectRowAtIndexPath:`.
@@ -2587,7 +2589,7 @@ class _SampleAppState extends State<SampleApp>
 }
 ```
 
-## Themes, styles and media
+## Themes, styles, and media
 
 ### Using a theme
 
@@ -2940,7 +2942,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 Dart has a single-threaded execution model,
 with support for `Isolate`s
-(a way to run Dart codes on another thread),
+(a way to run Dart code on another thread),
 an event loop, and asynchronous programming.
 Unless you spawn an `Isolate`,
 your Dart code runs in the main UI thread and is
