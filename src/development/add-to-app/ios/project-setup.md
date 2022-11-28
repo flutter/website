@@ -249,14 +249,14 @@ You must run `flutter build ios-framework`
 every time you make code changes in your Flutter module.
 
 The following example assumes that you want to generate the
-frameworks to `some/path/Flutter/`.
+frameworks to `some/path/MyApp/Flutter/`.
 
 ```terminal
-flutter build ios-framework --output=some/path/Flutter/
+flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
 ```text
-some/path/
+some/path/MyApp/
 └── Flutter/
     ├── Debug/
     │   ├── Flutter.xcframework
@@ -354,11 +354,11 @@ To generate the `Flutter.podspec` and frameworks, run the following
 from the command line in the root of your Flutter module:
 
 ```terminal
-flutter build ios-framework --cocoapods --output=some/path/Flutter/
+flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
 ```
 
 ```text
-some/path/
+some/path/MyApp/
 └── Flutter/
     ├── Debug/
     │   ├── Flutter.podspec
@@ -381,7 +381,7 @@ Host apps using CocoaPods can add Flutter to their Podfile:
 
 <!--code-excerpt "MyApp/Podfile" title-->
 ```ruby
-pod 'Flutter', :podspec => 'some/path/Flutter/[build mode]/Flutter.podspec'
+pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
 {{site.alert.note}}
   You must hard code the `[build mode]` value.
