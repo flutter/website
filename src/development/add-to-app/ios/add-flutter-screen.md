@@ -42,10 +42,9 @@ Where you create a `FlutterEngine` depends on your host app.
 {% samplecode engine %}
 
 {% sample SwiftUI %}
-As an example, we demonstrate creating a
-`FlutterEngine` inside an `ObservableObject`, 
-and passing that into a `View` using the 
- `environmentObject()` modifier. 
+In this example, we create a `FlutterEngine` object inside a SwiftUI `ObservableObject`. 
+We then pass this `FlutterEngine` into a `ContentView` using the 
+ `environmentObject()` property. 
 
  **In `MyApp.swift`:**
  <!--code-excerpt "MyApp.swift" title-->
