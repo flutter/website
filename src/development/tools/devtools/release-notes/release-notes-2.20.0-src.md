@@ -6,11 +6,17 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 - Add support for grouping samples by tag - [#4693](https://github.com/flutter/devtools/pull/4693)
 
-  ![samples by tag]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4693.jpeg "samples by tag")
+  ![samples by tag]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4693.png "samples by tag")
 
 - Enable guidelines for tree view - [#4722](https://github.com/flutter/devtools/pull/4722)
 
   ![guidelines]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4722.png "guidelines")
+
+- Rename "Profile granularity" to "CPU sampling rate" and move down to the area it
+  relates to - [#4803](https://github.com/flutter/devtools/pull/4722)
+
+  ![sampling rate]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4803.png "sampling rate")
+
 
 ## Memory updates
 
@@ -31,3 +37,7 @@ paths - [#4714](https://github.com/flutter/devtools/pull/4714)
 
   ![coverage]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4700.png "coverage in CodeView")
 
+## Network updates
+
+- Display request data if content type is not json
+  (thanks to leungpuikuen@!) - [#4602](https://github.com/flutter/devtools/pull/4602)
