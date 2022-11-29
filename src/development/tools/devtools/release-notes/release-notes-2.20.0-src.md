@@ -2,12 +2,32 @@
 
 Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
+## CPU profiler updates
+
+- Add support for grouping samples by tag - [#4693](https://github.com/flutter/devtools/pull/4693)
+
+  ![samples by tag]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4693.jpeg "samples by tag")
+
+- Enable reference guidelines - [#4722](https://github.com/flutter/devtools/pull/4722)
+
+  ![reference guidelines]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4722.png "reference guidelines")
+
 ## Memory updates
 
 - Retire the Analysis tab - [#4714](https://github.com/flutter/devtools/pull/4714)
+
 - Add a new tab, Diff, to enable memory leak detection and troubleshooting
 by comparing heap snapshots, and providing insights about the number of
 instances, shallow size, retained size, and retaining
 paths - [#4714](https://github.com/flutter/devtools/pull/4714)
 
-  ![diff]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/diff.png "Diff in Memory tab")
+  ![diff]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4714.png "Diff in Memory tab")
+
+## Debugger updates
+
+- Support for inspecting more types of instances in the variables viewer (Expandos, Types, TypeArguments, Parameters, Closures + closure Contexts, WeakProperty, Function, FunctionType, ReceivePort, Closure, RegExp) - [#4760](https://github.com/flutter/devtools/pull/4760)
+
+- Add support for displaying coverage in CodeView - [#4700](https://github.com/flutter/devtools/pull/4700)
+
+  ![coverage]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4700.png "coverage in CodeView")
+
