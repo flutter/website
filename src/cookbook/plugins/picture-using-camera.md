@@ -50,10 +50,12 @@ dependencies:
 ```
 {{site.alert.tip}}
   - For android, You must have to update `minSdkVersion` to 21 (or higher).
-  - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera.
+  - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.
     ```
     <key>NSCameraUsageDescription</key>
     <string>Explanation on why the camera access is needed.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Explanation on why the microphone access is needed.</string>
     ```
 {{site.alert.end}}
 
