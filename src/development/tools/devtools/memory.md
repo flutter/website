@@ -77,7 +77,7 @@ void myFunction() {
   Parent? parent2 = Parent()..child = child;
   parent1.child = child;
   
-  // At this point the object `child` has three retaining paths:
+  // At this point the `child` object has three retaining paths:
   // root …-> myFunction -> child
   // root …-> myFunction -> parent2 -> child
   // root -> parent1 -> child
@@ -86,7 +86,7 @@ void myFunction() {
   parent1.child = null;
   parent2 = null;
   
-  // The `child` instance is unreachable at this point
+  // At this point, the `child` instance is unreachable
   // and will therefore be garbage collected.
   
   …
@@ -164,7 +164,7 @@ stored in the closure context and passed to `setHandler`.
 As a result, `myHugeObject` won’t be garbage collected
 as long as `handler` is reachable. 
 
-<!-skip-->
+<!--skip-->
 ```Dart
   final handler = () => print(myHugeObject.name);  
   setHandler(handler);
