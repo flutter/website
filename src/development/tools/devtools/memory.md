@@ -325,7 +325,7 @@ The quantities plotted on the y-axis are as follows:
 [DevTools Performance view]: {{site.url}}/development/tools/devtools/performance
 [Flutter architectural overview]: {{site.url}}/architectural-overview
 [frog]: https://dartfrog.vgv.dev/
-[heroku]: {{site.youtube}}/watch?v=nkTUMVNelXA
+[heroku]: {{site.youtube-site}}/watch?v=nkTUMVNelXA
 
 # Profile
 
