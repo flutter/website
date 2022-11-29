@@ -8,9 +8,9 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
   ![samples by tag]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4693.jpeg "samples by tag")
 
-- Enable reference guidelines - [#4722](https://github.com/flutter/devtools/pull/4722)
+- Enable guidelines for tree view - [#4722](https://github.com/flutter/devtools/pull/4722)
 
-  ![reference guidelines]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4722.png "reference guidelines")
+  ![guidelines]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4722.png "guidelines")
 
 ## Memory updates
 
