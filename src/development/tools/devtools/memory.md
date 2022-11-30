@@ -8,19 +8,19 @@ memory allocations (both in the heap and external),
 memory leaks, memory bloat, and more. The view
 has the following features:
 
-**Expandable chart**
+[**Expandable chart**](#expandable-chart)
 : Get a high-level trace of memory allocation,
   and view both standard events (like garbage collection)
   and custom events (like image allocation).
 
-**Profile** tab
+[**Profile** tab](#profile-tab)
 : See current memory allocation listed by class and
   memory type (Dart or external). 
 
-**Diff** tab
+[**Diff** tab](#diff-tab)
 : Detect and investigate a feature’s memory management issues.
 
-**Trace** tab
+[**Trace** tab](#trace-tab)
 : Investigate a feature’s memory management for
   a specified set of classes.
 
@@ -36,7 +36,7 @@ is no longer used (see [Dart garbage collection][]).
 
 [Dart garbage collection]: {{site.medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
 
-## Root object, retaining path, and reachability
+### Root object, retaining path, and reachability
 
 Every Dart application creates a _root object_ that references,
 directly or indirectly, all other objects the application allocates. 
@@ -93,7 +93,7 @@ void myFunction() {
 }
 ```
 
-## Shallow size vs retained size
+### Shallow size vs retained size
 
 Shallow size includes only the size of the object
 and its references, while retained size also includes
@@ -133,7 +133,7 @@ root -> a -> b -> c -> x
 root -> d -> e -> x
 ```
 
-## Dart size vs external (native) size
+### Dart size vs external (native) size
 
 Some parts of an object (for example, graphics)
 might be stored outside of Dart heap,
@@ -144,7 +144,7 @@ and total memory allocation breakdown on the **Profile** tab:
 
 ![Screenshot of a profile page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab.png)
 
-## How do memory leaks happen in Dart?
+### How can memory leaks happen in Dart?
 
 While the garbage collector takes care of all
 unreachable objects, it’s the responsibility
@@ -218,7 +218,7 @@ collected together with the widget.
 
 [interactive]: {{site.url}}/development/ui/interactive#creating-a-stateful-widget
 
-## Memory leak vs memory bloat
+### Memory leak vs memory bloat
 
 In a memory leak, an application progressively uses memory,
 for example, by repeatedly creating a listener,
@@ -233,10 +233,73 @@ cause an application to crash with an `out-of-memory` error.
 However, leaks are more dangerous, because even a small leak,
 if repeated many times, leads to a crash. 
 
-# Expandable chart
+## Memory view guide
+
+The memory view supports the following features:
+
+### Expandable chart
 
 The Memory view's expandable chart offers the
 following features:
+
+### Profile tab
+
+Use the **Profile** tab to see current memory
+allocation by class and memory type. For a
+deeper analysis in Google Sheets or other tools,
+download the data in CSV format.
+Toggle **Refresh on GC**, to see allocation in real time.
+
+![Screenshot of the profile tab page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab-2.png)
+
+### Diff tab
+
+Use the **Diff** tab to investigate a feature’s
+memory management. Follow the guidance on the tab
+to take snapshots before and after interaction
+with the application, and diff the snapshots:
+
+![Screenshot of the diff tab page]({{site.url}}/assets/images/docs/tools/devtools/diff-tab.png)
+
+Tap the **Filter classes and packages** button,
+to narrow the data:
+
+![Screenshot of the filter options ui]({{site.url}}/assets/images/docs/tools/devtools/filter-ui.png)
+
+For a deeper analysis in Google Sheets
+or other tools, download the data in CSV format.
+
+### Trace tab
+
+Use the **Trace** tab to investigate what methods
+allocate memory for a set of classes
+during feature execution:
+
+1. Select classes to trace
+1. Interact with your app to trigger the code
+   you are interested in
+1. Tap **Refresh**
+1. Select a traced class
+1. Review the collected data
+
+![Screenshot of a trace tab]({{site.url}}/assets/images/docs/tools/devtools/trace-tab.png)
+
+#### Bottom up vs call tree view
+
+Switch between bottom-up and call tree views
+depending on specifics of your tasks.
+
+![Screenshot of a trace allocations]({{site.url}}/assets/images/docs/tools/devtools/trace-view.png)
+
+The call tree view shows the method allocations
+for each instance. The view is a top-down representation
+of the call stack, meaning that a method can be expanded
+to show its callees.
+
+The bottom-up view shows the list of different
+call stacks that have allocated the instances.
+
+---
 
 ## Memory anatomy
 
@@ -326,61 +389,4 @@ The quantities plotted on the y-axis are as follows:
 [Flutter architectural overview]: {{site.url}}/architectural-overview
 [frog]: https://dartfrog.vgv.dev/
 [heroku]: {{site.youtube-site}}/watch?v=nkTUMVNelXA
-
-# Profile
-
-Use the **Profile** tab to see current memory
-allocation by class and memory type. For a
-deeper analysis in Google Sheets or other tools,
-download the data in CSV format.
-Toggle **Refresh on GC**, to see allocation in real time.
-
-![Screenshot of the profile tab page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab-2.png)
-
-# Diff
-
-Use the **Diff** tab to investigate a feature’s
-memory management. Follow the guidance on the tab
-to take snapshots before and after interaction
-with the application, and diff the snapshots:
-
-![Screenshot of the diff tab page]({{site.url}}/assets/images/docs/tools/devtools/diff-tab.png)
-
-Tap the **Filter classes and packages** button,
-to narrow the data:
-
-![Screenshot of the filter options ui]({{site.url}}/assets/images/docs/tools/devtools/filter-ui.png)
-
-For a deeper analysis in Google Sheets
-or other tools, download the data in CSV format.
-
-# Trace
-
-Use the **Trace** tab to investigate what methods
-allocate memory for a set of classes
-during feature execution:
-
-1. Select classes to trace
-1. Interact with your app to trigger the code
-   you are interested in
-1. Tap **Refresh**
-1. Select a traced class
-1. Review the collected data
-
-![Screenshot of a trace tab]({{site.url}}/assets/images/docs/tools/devtools/trace-tab.png)
-
-# Bottom Up vs Call Tree view
-
-Switch between bottom-up and call tree views
-depending on specifics of your tasks.
-
-![Screenshot of a trace allocations]({{site.url}}/assets/images/docs/tools/devtools/trace-view.png)
-
-The call tree view shows the method allocations
-for each instance. The view is a top-down representation
-of the call stack, meaning that a method can be expanded
-to show its callees.
-
-The bottom-up view shows the list of different
-call stacks that have allocated the instances.
 
