@@ -21,8 +21,8 @@ description: Get started with Flutter. Widgets, examples, updates, and API docs 
   {% endif %}
 {% endfor -%}
 
-<b>To see changes to the site since our last release,
-see [What's new][].</b>
+**To see changes to the site since our last release,
+see [What's new][].**
 
 [What's new]: {{site.url}}/whats-new
 
@@ -96,10 +96,10 @@ widgets in [What is State?][]
 [first-app]: {{site.youtube-site}}/watch?v=xWV71C2kp38
 [What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
 
+{:.text-center}
+#### Only have 60 seconds? Learn how to build and deploy a Flutter App!
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <h4>Only have 60 seconds? Learn how to build and deploy a Flutter App!</h4>
-
   <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/ZnufaryH43s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
@@ -129,11 +129,11 @@ using helper methods][standalone-widgets] or
 To learn about all of the Flutter video series,
 see our [videos][] page.
 
-We release new videos most every week on the Flutter YouTube channel:
+We release new videos almost every week on the Flutter YouTube channel:
 
 <a class="btn btn-primary" target="_blank" href="https://www.youtube.com/c/flutterdev">Explore more Flutter videos</a>
 
-<b>The documentation on this site reflects the
-latest stable release of Flutter.</b>
+**The documentation on this site reflects the
+latest stable release of Flutter.**
 
 [videos]: {{site.url}}/resources/videos
