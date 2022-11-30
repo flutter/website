@@ -126,7 +126,8 @@ retained only to the members of the shortest retaining path.
 
 For example, if the object `x` has two retaining paths,
 in DevTools the retaining size of `d` and `e` includes
-the size of `x`, while the retaining path of `a`, `b`, and `c` won't:
+the size of `x`, while the retaining path of `a`, `b`,
+and `c` won't:
 
 ```terminal
 root -> a -> b -> c -> x
@@ -239,69 +240,7 @@ The memory view supports the following features:
 
 ### Expandable chart
 
-The Memory view's expandable chart offers the
-following features:
-
-### Profile tab
-
-Use the **Profile** tab to see current memory
-allocation by class and memory type. For a
-deeper analysis in Google Sheets or other tools,
-download the data in CSV format.
-Toggle **Refresh on GC**, to see allocation in real time.
-
-![Screenshot of the profile tab page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab-2.png)
-
-### Diff tab
-
-Use the **Diff** tab to investigate a feature’s
-memory management. Follow the guidance on the tab
-to take snapshots before and after interaction
-with the application, and diff the snapshots:
-
-![Screenshot of the diff tab page]({{site.url}}/assets/images/docs/tools/devtools/diff-tab.png)
-
-Tap the **Filter classes and packages** button,
-to narrow the data:
-
-![Screenshot of the filter options ui]({{site.url}}/assets/images/docs/tools/devtools/filter-ui.png)
-
-For a deeper analysis in Google Sheets
-or other tools, download the data in CSV format.
-
-### Trace tab
-
-Use the **Trace** tab to investigate what methods
-allocate memory for a set of classes
-during feature execution:
-
-1. Select classes to trace
-1. Interact with your app to trigger the code
-   you are interested in
-1. Tap **Refresh**
-1. Select a traced class
-1. Review the collected data
-
-![Screenshot of a trace tab]({{site.url}}/assets/images/docs/tools/devtools/trace-tab.png)
-
-#### Bottom up vs call tree view
-
-Switch between bottom-up and call tree views
-depending on specifics of your tasks.
-
-![Screenshot of a trace allocations]({{site.url}}/assets/images/docs/tools/devtools/trace-view.png)
-
-The call tree view shows the method allocations
-for each instance. The view is a top-down representation
-of the call stack, meaning that a method can be expanded
-to show its callees.
-
-The bottom-up view shows the list of different
-call stacks that have allocated the instances.
-
----
-
-## Memory anatomy
+#### Memory anatomy
 
 A timeseries graph visualizes the state of
 Flutter memory at successive intervals of time.
@@ -312,7 +251,7 @@ garbage collection, and resident set size are captured.
 
 ![Screenshot of a memory anatomy page]({{site.url}}/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
 
-## Memory overview chart
+#### Memory overview chart
 
 The memory overview chart is a timeseries graph
 of collected memory statistics. It visually presents
@@ -390,3 +329,59 @@ The quantities plotted on the y-axis are as follows:
 [frog]: https://dartfrog.vgv.dev/
 [heroku]: {{site.youtube-site}}/watch?v=nkTUMVNelXA
 
+### Profile tab
+
+Use the **Profile** tab to see current memory
+allocation by class and memory type. For a
+deeper analysis in Google Sheets or other tools,
+download the data in CSV format.
+Toggle **Refresh on GC**, to see allocation in real time.
+
+![Screenshot of the profile tab page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab-2.png)
+
+### Diff tab
+
+Use the **Diff** tab to investigate a feature’s
+memory management. Follow the guidance on the tab
+to take snapshots before and after interaction
+with the application, and diff the snapshots:
+
+![Screenshot of the diff tab page]({{site.url}}/assets/images/docs/tools/devtools/diff-tab.png)
+
+Tap the **Filter classes and packages** button,
+to narrow the data:
+
+![Screenshot of the filter options ui]({{site.url}}/assets/images/docs/tools/devtools/filter-ui.png)
+
+For a deeper analysis in Google Sheets
+or other tools, download the data in CSV format.
+
+### Trace tab
+
+Use the **Trace** tab to investigate what methods
+allocate memory for a set of classes
+during feature execution:
+
+1. Select classes to trace
+1. Interact with your app to trigger the code
+   you are interested in
+1. Tap **Refresh**
+1. Select a traced class
+1. Review the collected data
+
+![Screenshot of a trace tab]({{site.url}}/assets/images/docs/tools/devtools/trace-tab.png)
+
+#### Bottom up vs call tree view
+
+Switch between bottom-up and call tree views
+depending on specifics of your tasks.
+
+![Screenshot of a trace allocations]({{site.url}}/assets/images/docs/tools/devtools/trace-view.png)
+
+The call tree view shows the method allocations
+for each instance. The view is a top-down representation
+of the call stack, meaning that a method can be expanded
+to show its callees.
+
+The bottom-up view shows the list of different
+call stacks that have allocated the instances.
