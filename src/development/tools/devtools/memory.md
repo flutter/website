@@ -3,26 +3,14 @@ title: Using the Memory view
 description: Learn how to use the DevTools memory view.
 ---
 
-The DevTools memory view helps you investigate
-memory allocations (both in the heap and external),
-memory leaks, memory bloat, and more. The view
-has the following features:
+The memory view provides insights into details
+of the application’s memory allocation and
+provides tools to detect and debug specific issues.
 
-[**Expandable chart**](#expandable-chart)
-: Get a high-level trace of memory allocation,
-  and view both standard events (like garbage collection)
-  and custom events (like image allocation).
-
-[**Profile** tab](#profile-tab)
-: See current memory allocation listed by class and
-  memory type (Dart or external). 
-
-[**Diff** tab](#diff-tab)
-: Detect and investigate a feature’s memory management issues.
-
-[**Trace** tab](#trace-tab)
-: Investigate a feature’s memory management for
-  a specified set of classes.
+To better understand the insights found on this page,
+the first section explains how Dart manages memory.
+If you already understand Dart’s memory management,
+you can skip to the [Memory view guide](#memory-view-guide).
 
 ## Basic memory concepts
 
@@ -57,7 +45,7 @@ called _reachable_ objects.
 The following example illustrates the concepts:
 
 <!--skip-->
-```Dart
+```dart
 class Child{}
  
 class Parent {
@@ -107,7 +95,7 @@ isn't part of the parent’s or child’s shallow sizes,
 but is part of their retained sizes: 
 
 <!--skip-->
-```Dart
+```dart
 class Child{
   final myHugeInstance = MyHugeInstance();
 }
@@ -117,7 +105,6 @@ class Parent {
 }
  
 Parent parent = Parent()..child = Child();
-
 ```
 
 In DevTools calculations, if an object has more
@@ -166,7 +153,7 @@ As a result, `myHugeObject` won’t be garbage collected
 as long as `handler` is reachable. 
 
 <!--skip-->
-```Dart
+```dart
   final handler = () => print(myHugeObject.name);  
   setHandler(handler);
 ```
@@ -180,7 +167,7 @@ as `useHandler` might store the handler
 in a long-living area:
 
 <!--skip-->
-```Dart
+```dart
 @override
 Widget build(BuildContext context) {
   final handler = () => apply(Theme.of(context));  
@@ -195,7 +182,7 @@ and (2) the theme is a long-living object
 and is therefore ok to pass to a long-living area:
 
 <!--skip-->
-```Dart
+```dart
 @override
 Widget build(BuildContext context) {
   final theme = Theme.of(context);
@@ -236,9 +223,30 @@ if repeated many times, leads to a crash.
 
 ## Memory view guide
 
-The memory view supports the following features:
+The DevTools memory view helps you investigate
+memory allocations (both in the heap and external),
+memory leaks, memory bloat, and more. The view
+has the following features:
+
+[**Expandable chart**](#expandable-chart)
+: Get a high-level trace of memory allocation,
+  and view both standard events (like garbage collection)
+  and custom events (like image allocation).
+
+[**Profile** tab](#profile-tab)
+: See current memory allocation listed by class and
+  memory type (Dart or external/native). 
+
+[**Diff** tab](#diff-tab)
+: Detect and investigate a feature’s memory management issues.
+
+[**Trace** tab](#trace-tab)
+: Investigate a feature’s memory management for
+  a specified set of classes.
 
 ### Expandable chart
+
+The expandable chart provides the following features:
 
 #### Memory anatomy
 
