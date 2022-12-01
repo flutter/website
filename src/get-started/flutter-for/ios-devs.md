@@ -42,8 +42,8 @@ For a list, see [Platform adaptations][].
 
 This document can be used as a cookbook by jumping around
 and finding questions that are most relevant to your needs.
-Pieces of sample code are embedded within this document, 
-but the full working examples can be tested on DartPad or viewed on GitHub.
+This guide embeds sample code. 
+You can test full working examples on DartPad or view them on GitHub.
 
 <!-- Embed intro to iOS video when published -->
 
@@ -70,9 +70,8 @@ and differences between SwiftUI and Flutter.
 
 ### Views vs. Widgets
 
-Flutter and SwiftUI are both declarative frameworks, 
-meaning the code simply describes how the UI should look 
-and what it should do. 
+Flutter and SwiftUI code describes how the UI looks and works. 
+Developers call this type of code a _declarative framework_.
 
 In SwiftUI, you use **_views_** 
 to represent parts of your app's UI, 
@@ -97,7 +96,7 @@ respectively, within one another.
 
 ### Layout process
 
-In SwiftUI, the layout process is composed of a few different steps:
+SwiftUI lays out views using the following process:
 
 1. The parent view proposes some size to the child view.
 1. The child decides the size it requires by going through 
@@ -107,7 +106,7 @@ asks its child what size it wishes to be.
 It then returns the size it requires to its parent.
 1. The parent lays out the child, respecting the size that the child requested.
 
-Flutter follows a similar process, with a few notable differences:
+Flutter differs somewhat with its process:
 
 1. The parent widget passes constraints down to its children 
 (maximum height and width, and minimum height and width). 
@@ -117,11 +116,11 @@ It tells its child what its constraints are,
 and asks it what size it wishes to be. 
 1. The parent lays out the child, ensuring that it’s within the original constraints.
 
-The main differences are that in Flutter the size can be asserted by 
-the parent widget, and overrule the child’s desired size. 
-Parents can force a child to be a specific size by using tight 
-constraints where the minimum height is equal to the maximum height, 
-or the minimum width is equal to the maximum width.
+Flutter differs in how the parent widget asserts its size and
+can overrule the child’s desired size. 
+To force a child to be a specific size, the parent can use tight 
+constraints. Consider a constraint tight when its minimum value
+equals its maximum value.
 
 In SwiftUI, views can choose to expand to the space that the parent 
 has said is available, or choose to be the size of its content. 
@@ -140,18 +139,19 @@ UnconstrainedBox(
 
 <img src="/assets/images/docs/ui/layout/layout-14.png" alt="When parents pass unbounded constraints to children, and the children are expanding, then there is an overflow warning">
 
-For more information on how constraints work in Flutter, 
+To learn how constraints work in Flutter, 
 see [Understanding constraints][]. 
 
 
 ### Design system
 
-Because Flutter is multi-platform, your app doesn’t need to conform to a stock design system. 
-While many examples in the Flutter documentation feature Material widgets, 
-which leverage the [Material Design guidelines][], you have a lot of options 
-for designing your Flutter app.  You can customize Material widgets, leverage 
-widgets built by the community, build your own widgets, 
-or use the [Cupertino widgets][] that follow Apple’s Human Interface Guidelines.
+As Flutter targets multiple platforms, your app doesn’t need to conform to any design system. 
+Though many examples in this documentation feature [Material][] widgets, your Flutter app can use many different design systems. Your app can use:
+
+- Custom Material widgets
+- Community built widgets
+- Your own custom widgets
+- [Cupertino widgets][] that follow Apple’s Human Interface Guidelines
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -189,7 +189,7 @@ struct HomePage: View {
 }
 ```
 
-In Flutter, to begin you pass in an instance of your app to the `runApp` function. 
+To start your Flutter app, pass in an instance of your app to the `runApp` function. 
 
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
