@@ -287,6 +287,7 @@
       { "source": "/go/io22concurrency", "destination": "https://github.com/goderbauer/io22concurrency", "type": 301 },
       { "source": "/go/ios-autocorrection-highlight-support", "destination": "https://docs.google.com/document/d/18ZO7ThKu2wwCofGOKZSInPsq93IzkQTRn9eiyskeh7I/edit", "type": 301 },
       { "source": "/go/ios-camera-plugin-thread-model", "destination": "https://docs.google.com/document/d/1Znjp-BduXIb1Ix3JOE1YKyJi1Z0d6rB-2q6Lt7j8xSo/edit", "type": 301 },
+      { "source": "/go/ios-storekit2", "destination": "https://docs.google.com/document/d/1YBlb6J6rjgdtfnHYrQLJ4i_FLpboh41UnFoEF8TfyE0/edit?usp=sharing&resourcekey=0-3-p9q6ludxmTw6u3uMehgA", "type": 301 },
       { "source": "/go/ios-keyboard-calculating-inset", "destination": "https://docs.google.com/document/d/1pb1oqTanWSxwM8nAdm_-_ero3P6MM05vR1JjcdeFkiM/edit?usp=sharing&resourcekey=0-syHrzFB8A4zywVaHBicZNg", "type": 301 },
       { "source": "/go/ios-platformview-backdrop-filter-blur", "destination": "https://docs.google.com/document/d/1V7Jc_RGaknrBBPPBBKB8lT7f3PKhYr8sin35MSMFAf4/edit?usp=sharing", "type": 301 },
       { "source": "/go/ios-platform-view-focus", "destination": "https://docs.google.com/document/d/1GG8VfYeuVtTQHiMWQXbrSG5HEUorzqU8IGbNySVJ-bY", "type": 301 },
