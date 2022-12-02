@@ -39,9 +39,6 @@ https://material.io/guidelines/motion/transforming-material.html\#transforming-m
 # All redirects via firebase.json, which will be picked up via Firebase emulator
 /go/.*?
 
-# Fonts
-/assets/fonts/fontawesome-webfont.*
-
 # FIXME Not sure here, "connection failed" on every go
 /development/tools/devtools/vscode
 
