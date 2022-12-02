@@ -977,8 +977,7 @@ The platform side's handlers can execute
 on the platform's main thread or they can execute on
 a background thread if using a Task Queue.
 You can invoke the platform side handlers asynchronously
-and on any thread when the Task Queue API is available;
-otherwise, they must be invoked on the platform thread.
+and on any thread.
 
 {{site.alert.note}}
   On Android, the platform's main thread is sometimes
