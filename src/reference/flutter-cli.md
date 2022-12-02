@@ -59,13 +59,13 @@ The following table shows which commands you can use with the `flutter` tool:
 | downgrade | `flutter downgrade` | Downgrade Flutter to the last active version for the current channel. |
 | drive | `flutter drive` | Runs Flutter Driver tests for the current project. |
 | emulators | `flutter emulators` | List, launch and create emulators. |
-| format  | `flutter format <DIRECTORY|DART_FILE>` | Formats Flutter source code.<br>Use instead of [`dart format`][]. | 
+| format  | `flutter format <DIRECTORY|DART_FILE>` | Formats Flutter source code.<br>Deprecated, instead use [`dart format`][]. |
 | gen-l10n | `flutter gen-l10n <DIRECTORY>` | Generate localizations for the Flutter project. |
 | install | `flutter install -d <DEVICE_ID>` | Install a Flutter app on an attached device. |
-| logs | `flutter logs` | Show log output for running Flutter apps. | 
+| logs | `flutter logs` | Show log output for running Flutter apps. |
 | precache | `flutter precache <ARGUMENTS>` | Populates the Flutter tool's cache of binary artifacts. |
-| pub     | `flutter pub <PUB_COMMAND>`       | Works with packages.<br>Use instead of [`dart pub`][]. | 
-| run     | `flutter run <DART_FILE>`         | Runs a Flutter program. | 
+| pub     | `flutter pub <PUB_COMMAND>`       | Works with packages.<br>Use instead of [`dart pub`][]. |
+| run     | `flutter run <DART_FILE>`         | Runs a Flutter program. |
 | symbolize | `flutter symbolize --input=<STACK_TRACK_FILE>` | Symbolize a stack trace from the AOT compiled flutter application. |
 | test    | `flutter test [<DIRECTORY|DART_FILE>]` | Runs tests in this package.<br>Use instead of [`dart test`][`dart test`]. |
 | upgrade | `flutter upgrade` | Upgrade your copy of Flutter. |
