@@ -5,7 +5,7 @@ description: Learn how to use the DevTools memory view.
 
 The memory view provides insights into details
 of the application’s memory allocation and
-provides tools to detect and debug specific issues.
+tools to detect and debug specific issues.
 
 To better understand the insights found on this page,
 the first section explains how Dart manages memory.
