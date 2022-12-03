@@ -10,7 +10,4 @@ dev_dependencies:
   code_excerpter:
     path: site-shared/packages/code_excerpter
   linkcheck: ^2.0.6
-  yaml: ^3.1.0
   path: ^1.6.2
-  github: ^9.3.0
-  firebase: ^9.0.1
