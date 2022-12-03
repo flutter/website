@@ -50,10 +50,6 @@ description: Brief description similar to the "context" section below. The descr
            the code throws an exception."
     Good use of "will": "In release 2.0, the xxx API
           will be deprecated."
-  * If your included Dart code won't pass analysis
-    on its own (using the analyzer from the latest
-    stable release), then preface that code with an
-    HTML `<!-- skip -->` tag.
   * Finally, delete the comment tags and text from the
     final PR.
 {% endcomment %}
@@ -108,14 +104,12 @@ error messages.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 // Example of code before the change.
 ```
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // Example of code after the change.
 ```

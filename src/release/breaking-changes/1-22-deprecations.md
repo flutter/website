@@ -41,13 +41,11 @@ Use `CupertinoAlertDialog` or `CupertinoPopupSurface` instead.
 *CupertinoAlertDialog*
 
 Code before migration:
-<!-- skip -->
 ```dart
 CupertinoDialog(child: myWidget);
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 CupertinoAlertDialog(content: myWidget);
 ```
@@ -55,13 +53,11 @@ CupertinoAlertDialog(content: myWidget);
 *CupertinoPopupSurface*
 
 Code before migration:
-<!-- skip -->
 ```dart
 CupertinoDialog(child: myWidget);
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 CupertinoPopupSurface(child: myWidget);
 ```
@@ -101,7 +97,6 @@ call `CupertinoTheme.of(context).primaryColor`.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
 ```dart
 CupertinoNavigationBar(
   actionsForegroundColor: CupertinoColors.systemBlue,
@@ -112,7 +107,6 @@ CupertinoSliverNavigationBar(
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 CupertinoTheme(
   data: CupertinoThemeData(
@@ -162,14 +156,12 @@ parameter, references should be removed.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
 ```dart
 const CupertinoTextThemeData themeData = CupertinoTextThemeData(brightness: Brightness.dark);
 themeData.copyWith(brightness: Brightness.light);
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 const CupertinoTextThemeData themeData = CupertinoTextThemeData();
 themeData.copyWith();
@@ -205,14 +197,12 @@ The `fromMouseEvent` constructor should be used instead.
 **Migration guide**
  
 Code before migration:
-<!-- skip -->
 ```dart
 final PointerEnterEvent enterEvent = PointerEnterEvent.fromHoverEvent(PointerHoverEvent());
 final PointerExitEvent exitEvent = PointerExitEvent.fromHoverEvent(PointerHoverEvent());
 ```
  
 Code after migration:
-<!-- skip -->
 ```dart
 final PointerEnterEvent enterEvent = PointerEnterEvent.fromMouseEvent(PointerHoverEvent());
 final PointerExitEvent exitEvent = PointerExitEvent.fromMouseEvent(PointerHoverEvent());
@@ -250,13 +240,11 @@ The `builder` parameter should be used instead.
 **Migration guide**
  
 Code before migration:
-<!-- skip -->
 ```dart
 showDialog(child: myWidget);
 ```
  
 Code after migration:
-<!-- skip -->
 ```dart
 showDialog(builder: (context) => myWidget);
 ```
@@ -290,13 +278,11 @@ The `resizeToAvoidBottomInset` parameter should be used instead.
 **Migration guide**
  
 Code before migration:
-<!-- skip -->
 ```dart
 Scaffold(resizeToAvoidBottomPadding: true);
 ```
  
 Code after migration:
-<!-- skip -->
 ```dart
 Scaffold(resizeToAvoidBottomInset: true);
 ```
@@ -345,7 +331,7 @@ each corresponding with the appropriate button class,
 **Migration guide**
  
 Code before migration:
-<!-- skip -->
+
 ```dart
 ButtonTheme.bar(
   minWidth: 10.0,
@@ -355,7 +341,7 @@ ButtonTheme.bar(
 ```
  
 Code after migration, using `ButtonTheme`:
-<!-- skip -->
+
 ```dart
 ButtonTheme(
   minWidth: 10.0,
@@ -365,7 +351,7 @@ ButtonTheme(
 ```
 
 Code after migration, using `ButtonBarTheme`:
-<!-- skip -->
+
 ```dart
 ButtonBarTheme(
   data: ButtonBarThemeData(
@@ -478,13 +464,13 @@ splash screens from being taken down too early, resulting in a black screen. Thi
 **Migration guide**
  
 Code before migration:
-<!-- skip -->
+
 ```dart
 scheduleInitialFrame();
 ```
  
 Code after migration:
-<!-- skip -->
+
 ```dart
 prepareInitialFrame();	
 owner.requestVisualUpdate();
@@ -525,13 +511,13 @@ return value of `findAll` in `AnnotationResult.annotations`.
 **Migration guide**
  
 Code before migration:
-<!-- skip -->
+
 ```dart
 findAll(offset);
 ```
  
 Code after migration:
-<!-- skip -->
+
 ```dart
 findAllAnnotations(offset).annotations;
 ```
@@ -626,13 +612,13 @@ These method changes affect the `BuildContext`, `Element`, and `StatefulElement`
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
+
 ```dart
 ComplexLayoutState state = context.ancestorStateOfType(const TypeMatcher<ComplexLayoutState>()) as ComplexLayoutState;
 ```
 
 Code after migration:
-<!-- skip -->
+
 ```dart
 ComplexLayoutState state = context.ancestorStateOfType<ComplexLayoutState>();
 ```
@@ -708,7 +694,7 @@ The `deferFirstFrame` and `allowFirstFrame` methods should be used respectively 
 **Migration guide**
  
 Code before migration:
-<!-- skip -->
+
 ```dart
 final WidgetsBinding binding = WidgetsBinding.instance;
 binding.deferFirstFrameReport();
@@ -716,7 +702,7 @@ binding.allowFirstFrameReport();
 ```
  
 Code after migration:
-<!-- skip -->
+
 ```dart
 final WidgetsBinding binding = WidgetsBinding.instance;
 binding.deferFirstFrame();

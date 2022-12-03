@@ -55,7 +55,6 @@ allowing flipping during the construction process.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 import 'dart:typed_data';
 import 'dart:ui' as ui;
@@ -77,7 +76,6 @@ Future<ui.Image> parseMyImage(Uint8List image, int width, int height) async {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 import 'dart:typed_data';
 import 'dart:ui' as ui;
@@ -118,7 +116,6 @@ by letting it decode a single pixel first.
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 Uint8List verticallyFlipImage(Uint8List sourceBytes, int width, int height) {
   // Same as the example above.

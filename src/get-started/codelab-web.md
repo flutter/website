@@ -531,7 +531,7 @@ but becomes enabled when all three text fields contain
 * Notice that the `_updateFormProgress` passes a function to `setState()`.
   This is called an anonymous
   function and has the following syntax:
-  <!-- skip -->
+
   ```dart
   methodName(() {...});
   ```

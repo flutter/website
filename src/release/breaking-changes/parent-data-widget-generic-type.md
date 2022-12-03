@@ -45,7 +45,6 @@ upgrade to the Flutter version that includes this change:
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class FrogSize extends ParentDataWidget<FrogJar> {
   FrogSize({
@@ -80,7 +79,6 @@ class FrogJar extends RenderObjectWidget {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class FrogSize extends ParentDataWidget<FrogJarParentData> { // FrogJar changed to FrogJarParentData
   FrogSize({

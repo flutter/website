@@ -318,7 +318,6 @@ For example, if the API returns objects with _snake\_case_,
 and you want to use _lowerCamelCase_ in your models,
 you can use the `@JsonKey` annotation with a name parameter:
 
-<!-- skip -->
 ```dart
 /// Tell json_serializable that "registration_date_millis" should be
 /// mapped to this property.
@@ -337,7 +336,6 @@ Sometimes server data is uncertain, so it is necessary to verify and protect dat
  on client.  
 Other commonly used `@JsonKey` annotations include: 
 
-<!-- skip -->
 ```dart
 /// Tell json_serializable to use "defaultValue" if the JSON doesn't
 /// contain this key or if the value is `null`.
@@ -469,7 +467,6 @@ in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function
 looks something like the following:
 
-<!-- skip -->
 ```dart
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'name': instance.name,

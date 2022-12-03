@@ -265,7 +265,6 @@ logic of your builder function depends on the value of the animation, it may
 require a `setState` to update in tandem with the animation. To do that, add an
 [animation listener][7] that calls `setState`, like so:
 
-<!-- skip -->
 ```dart
 Animation animation = … create animation …;
 animation.addListener(() {

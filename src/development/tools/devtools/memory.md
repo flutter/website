@@ -44,7 +44,6 @@ called _reachable_ objects.
 
 The following example illustrates the concepts:
 
-<!--skip-->
 ```dart
 class Child{}
  
@@ -94,7 +93,6 @@ In the following example, the size of `myHugeInstance`
 isn't part of the parent’s or child’s shallow sizes,
 but is part of their retained sizes: 
 
-<!--skip-->
 ```dart
 class Child{
   final myHugeInstance = MyHugeInstance();
@@ -152,7 +150,6 @@ stored in the closure context and passed to `setHandler`.
 As a result, `myHugeObject` won’t be garbage collected
 as long as `handler` is reachable. 
 
-<!--skip-->
 ```dart
   final handler = () => print(myHugeObject.name);  
   setHandler(handler);
@@ -166,7 +163,6 @@ The following code is leak prone,
 as `useHandler` might store the handler
 in a long-living area:
 
-<!--skip-->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -181,7 +177,6 @@ and (2) the theme is a long-living object
 (not created repeatedly),
 and is therefore ok to pass to a long-living area:
 
-<!--skip-->
 ```dart
 @override
 Widget build(BuildContext context) {
