@@ -73,17 +73,17 @@ and differences between SwiftUI and Flutter.
 Flutter and SwiftUI code describes how the UI looks and works. 
 Developers call this type of code a _declarative framework_.
 
-In SwiftUI, you use **_views_** 
-to represent parts of your app's UI, 
-and you can provide modifiers that are used to configure those views. 
+SwiftUI represents UI components as _views_.
+You can configure views using _modifiers_.
 
 <img src="/assets/images/docs/get-started/ios/swiftui-modifiers.png" alt="SwiftUI Text view uses a padding modifier">
 
-Flutter is similar in that it uses **_widgets_** 
-to represent parts of your app's UI. Both views and widgets are immutable, 
-meaning they only exist until they need to be changed. 
-Additionally, both SwiftUI and Flutter are designed to use composition 
-rather than inheritance. However, Flutter uses individual widget classes 
+Flutter represents UI components as _widgets_. 
+Both views and widgets only exist until they need to be changed.
+These languages call this property _immutability_.
+Additionally, SwiftUI and Flutter relate classes using composition, 
+rather than inheritance. 
+However, Flutter uses individual widget classes 
 for many aspects of the UI. This means that properties 
 that might normally be represented as modifiers in SwiftUI 
 are instead represented as separate widgets in Flutter. 
@@ -159,14 +159,15 @@ If you're looking for a great reference app that features a custom design system
 
 ## UI Basics
 
-This section covers how basic UI components in Flutter compare to those in SwiftUI. 
-This includes how to start your app, display static text, 
+This section covers the basics of UI development in 
+Flutter and how it compares to SwiftUI. 
+This includes how to start developing your app, display static text, 
 create buttons, react to on-press events, display lists, grids, and more.
 
 
 ### Getting started
 
-Usually, when you implement your SwiftUI app, you begin with **App:**
+When beginning to develop your app in SwiftUI, you use **App:**
 
 ```swift
 @main
@@ -179,7 +180,8 @@ struct MyApp: App {
 }
 ```
 
-The body is usually created in a struct that conforms to the **View** protocol as follows:
+Another common SwiftUI development practice places the app body 
+with a `struct` that conforms to the **View** protocol as follows:
 
 ```swift
 struct HomePage: View {
@@ -642,7 +644,7 @@ create the custom `PersonView` widget:
 ### Responsive and adaptive design
 
 In SwiftUI, you often use `GeometryReader` to create relative view sizes. 
-For example by setting the _width _to `geometry.size.width` multiplied by 
+For example, by setting the _width _to `geometry.size.width` multiplied by 
 some factor, or using it as a breakpoint to change the design of your app. 
 Alternatively, you can use environments such as `horizontalSizeClass` 
 that tell you if the size class is `.regular` or `.compact`.
@@ -781,7 +783,7 @@ AnimatedRotation(
 
 SwiftUI and Flutter take a similar approach, 
 where you can specify parameters like `duration`, and `curve`. 
-If there's no built-in widget for what you're trying to do, 
+If there's no built-in Flutter widget for what you're trying to do, 
 you can use the [`TweenAnimationBuilder`][] to easily 
 compose an animated widget.
 
@@ -798,10 +800,9 @@ To learn more about animations in Flutter, see [Animations overview][].
 
 ### Drawing on the Screen
 
-On iOS, you use `CoreGraphics` to draw lines and shapes to the
+With SwiftUI, you use `CoreGraphics` to draw lines and shapes to the
 screen. Flutter has a different API based on the `Canvas` class,
 with two other classes that help you draw. [`CustomPaint`][], which requires a painter:
-
 
 <nav class="navbar bg-primary">
  <ul class="navbar-nav navbar-code ml-auto">
@@ -873,7 +874,6 @@ and contains `NavigationLink` structs.
 
 The next example creates an application that displays a list of persons, 
 and tapping each person displays that person's details in a new navigation link. 
-
 
 ```swift
 NavigationStack(path: $path) {
@@ -1108,8 +1108,8 @@ and more. This section covers aspects of styling your Flutter apps
 and compares how you might do the same in SwiftUI.
 
 ### Using dark mode
-In SwiftUI, if you want to use dark mode for your views, 
-you can call the `preferredColorScheme()` function that is implemented 
+In SwiftUI, to use dark mode for your views, 
+you can call the `preferredColorScheme()` function 
 on a `View`.
     
 In Flutter, you control light and dark mode at the app-level 
@@ -1232,7 +1232,7 @@ from the previous section comes in handy when styling a `CupertinoButton`.
 
 ### Using Custom Fonts
 In SwiftUI, to use a custom font in your application, 
-you need to add the font to your project and use 
+you add the font to your project and use 
 the `.font()` modifier 
 to apply it to your UI components as follows:
 
@@ -1314,12 +1314,11 @@ and displays the image on the screen. See the [`Image`][] docs for a complete ex
 
 
 ### Bundling videos in apps
-To play a local video file bundled within your app in SwiftUI, 
+To play a local video file bundled within your SwiftUI app, 
 you need to import the `AVKit` framework and 
 create an instance of the `VideoPlayer` view.
 
-
-In Flutter, to do the same thing, you'll need to add the [video_player][] 
+In Flutter, to do the same thing, you'll add the [video_player][] 
 plugin to your project. 
 This plugin allows you to create a video player that works on 
 Android, iOS, and on the web from the same codebase. 
@@ -1328,7 +1327,7 @@ add the video file to your project,
 and add the asset to your `pubspec.yaml` file. Once these steps are complete, 
 you can use the `VideoPlayerController` 
 class to load and play your video file. See the [video_player example][]
-for a complete walkthrough. 
+for a complete walk through. 
 
 </div>
 <div class="tab-pane" id="uikit" role="tabpanel" aria-labelledby="uikit-tab" markdown="1">
