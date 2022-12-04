@@ -72,23 +72,6 @@
       <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
     {% endfor %}
 
-    {% for script in page.js %}
-    <link rel="preload" as="script" href="{{ script.url | default: js }}" />
-    {% endfor %}
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script defer src="{{ '/assets/js/vendor/code-prettify/prettify.js' | append: cache_bust }}"></script>
-    <script defer src="{{ '/assets/js/vendor/code-prettify/lang-css.js' | append: cache_bust }}"></script>
-    <script defer src="{{ '/assets/js/vendor/code-prettify/lang-dart.js' | append: cache_bust }}"></script>
-    <script defer src="{{ '/assets/js/vendor/code-prettify/lang-yaml.js' | append: cache_bust }}"></script>
-    <script defer src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
-    <script defer src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
-    <script defer src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
-
   </head>
   <body {% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
 
@@ -113,7 +96,21 @@
     {% if page.show_footer %}
       {% include footer.html %}
     {% endif %}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script src="{{ '/assets/js/vendor/code-prettify/prettify.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/vendor/code-prettify/lang-css.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/vendor/code-prettify/lang-dart.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/vendor/code-prettify/lang-yaml.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
+    
     {% for script in page.js %}
       <script src="{{ script.url | default: js }}" {% if script.defer %}defer{% endif %}></script>
     {% endfor %}
