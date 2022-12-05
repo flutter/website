@@ -74,7 +74,7 @@ void paint(Canvas canvas, Size size, FragmentShader shader) {
 
 ## Authoring Shaders
 
-Shaders are authored as GLSL source files. Any version from 460 down to 100 is supported, though some available features are restricted. For the rest of the examples in this document `460 core` will be used. Notably:
+Shaders are authored as GLSL source files. Any version from 460 down to 100 is supported, though some available features are restricted. For the rest of the examples in this document `460 core` will be used.
 
 * UBOs and SSBOs are unsupported.
 * `sampler2D` is the only supported sampler type, and only the two argument version of `texture` (sampler and uv) is supported when targeting SkSL.
@@ -88,7 +88,7 @@ A fragment program is configured by defining uniform values in the shader source
 
 Uniforms are set using [FragmentShader.setFloat] or [FragmentShader.setSampler], depending on the type of uniform. Float values includes floats and vec2, vec3, and vec4. Sampler values are only `sampler2D`.
 
-The correct index for each uniform is determined by the order of the uniforms as defined in the fragment program. For data types that are composed of multiple floats such as a vec4, more than one call to [setFloat] is required.
+The correct index for each uniform is determined by the order of the uniforms as defined in the fragment program. For data types that are composed of multiple floats such as a vec4, more than one call to [FragmentShader.setFloat] is required.
 
 For example, given the following uniforms in a fragment program:
 
@@ -102,23 +102,23 @@ uniform vec4 uColor;
 Then the corresponding Dart code to correctly initialize these uniforms is:
 
 ```dart
-void updateShader(ui.FragmentShader shader, Color color, ui.Image image) {
-   shader.setFloat(0, 23);  // uScale
-   shader.setFloat(1, 114); // uMagnitude x
-   shader.setFloat(2, 83);  // uMagnitude y
+void updateShader(FragmentShader shader, Color color, Image image) {
+  shader.setFloat(0, 23);  // uScale
+  shader.setFloat(1, 114); // uMagnitude x
+  shader.setFloat(2, 83);  // uMagnitude y
 
-   // Convert color to premultiplied opacity.
-   shader.setFloat(3, color.red / 255 * color.opacity);   // uColor r
-   shader.setFloat(4, color.green / 255 * color.opacity); // uColor g
-   shader.setFloat(5, color.blue / 255 * color.opacity);  // uColor b
-   shader.setFloat(6, color.opacity);                     // uColor a
+  // Convert color to premultiplied opacity.
+  shader.setFloat(3, color.red / 255 * color.opacity);   // uColor r
+  shader.setFloat(4, color.green / 255 * color.opacity); // uColor g
+  shader.setFloat(5, color.blue / 255 * color.opacity);  // uColor b
+  shader.setFloat(6, color.opacity);                     // uColor a
 
-   // initialize sampler uniform.
-    shader.setImageSampler(0, image);
+  // initialize sampler uniform.
+  shader.setImageSampler(0, image);
  }
  ```
 
-Note how the indexes used does not count the `sampler2D` uniform. This uniform will be set separately with [setImageSampler], with the index starting over at 0.
+Note how the indexes used does not count the `sampler2D` uniform. This uniform will be set separately with [FragmentShader.setImageSampler], with the index starting over at 0.
 
 Any float uniforms that are left uninitialized will default to `0`.
 
@@ -148,7 +148,6 @@ unpremultipled alpha.
 
 A sampler provides access to a dart:ui Image object. This image can be acquired either from a decoded image or from part of the application using [Scene.toImageSync] or [Picture.toImageSync].
 
-
 ```glsl
 #include <flutter/runtime_effect.glsl>
 
@@ -163,6 +162,8 @@ void main() {
 }
 ```
 
+By default, the image uses a clamping address mode. Currently customization of the addressing mode is not supported and needs to be emulated in the shader.
+
 ### Performance Considerations
 
 When targeting the Skia backend loading the shader may be expensive, since it must be compiled to the appropriate platform specific shader. If you intend to use one or more shaders during an animation, prefer to precache the fragment program objects before starting the animation.
@@ -176,3 +177,8 @@ For more information, here are a few resources.
 
 * https://thebookofshaders.com/
 * https://www.shadertoy.com/
+
+[`Canvas`]: {{site.api}}/flutter/dart-ui/Canvas-class.html
+[`Scene`]: {{site.api}}/flutter/dart-ui/Scene-class.html
+[`FragmentProgram`]: {{site.api}}/flutter/dart-ui/FragmentProgram-class.html
+[`FragmentShader`]: {{site.api}}/flutter/dart-ui/FragmentShader-class.html
