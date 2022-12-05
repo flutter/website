@@ -53,7 +53,10 @@ each configuration name (Debug, Release, and Profile).
 Duplicate the listed production configurations, once for each environment.   
 
 ![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
-
+{{site.alert.note}}
+  Your configurations should be based on your **Debug.xconfig** or **Release.xcconfig**
+  file, not the **Pods-Runner.xcconfigs**. You can check this by expanding the configuration names. 
+{{site.alert.end}}
 4. To match the development flavor, add `-development` 
 at the end of each new configuration name. 
 
