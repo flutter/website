@@ -4,8 +4,10 @@ description: How to author and use fragment shaders.
 short-title: Fragment Shaders
 ---
 
+{{site.alert.secondary}}
 Note: The HTML backend does not support the FragmentProgram API. The CanvasKit
 backend will support this API in a future release.
+{{site.alert.end}}
 
 A shader is a program that is executed by the GPU, usually authored in a small,
 dart-like language such as GLSL. User authored shaders can be incorporated into
@@ -103,7 +105,7 @@ A fragment program is configured by defining uniform values in the shader
 source and then setting these values per fragment shader instance.
 
 Uniforms are set using [FragmentShader.setFloat] or
-[FragmentShader.setSampler], depending on the type of uniform. Float values
+[FragmentShader.setImageSampler], depending on the type of uniform. Float values
 includes floats and vec2, vec3, and vec4. Sampler values are only `sampler2D`.
 
 The correct index for each uniform is determined by the order of the uniforms
@@ -204,9 +206,9 @@ the addressing mode is not supported and needs to be emulated in the shader.
 ### Performance Considerations
 
 When targeting the Skia backend loading the shader may be expensive, since it
-must be compiled to the appropriate platform specific shader. If you intend to
-use one or more shaders during an animation, prefer to precache the fragment
-program objects before starting the animation.
+must be compiled to the appropriate platform specific shader at runtime. If you
+intend to use one or more shaders during an animation, prefer to precache the
+fragment program objects before starting the animation.
 
 The FragmentShader object can be reused across frames, and this will be more
 efficient than creating a new FragmentShader per-frame.
