@@ -101,7 +101,6 @@ For the `ListWheelViewport` widget, if you previously specified
 
 Code before migration:
 
-<!-- skip -->
 ```dart
     await tester.pumpWidget(
       Directionality(
@@ -123,7 +122,6 @@ Code before migration:
 
 Code after migration:
 
-<!-- skip -->
 ```dart
     await tester.pumpWidget(
       Directionality(

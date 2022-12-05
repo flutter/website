@@ -170,7 +170,7 @@ stage:
 
 # Clean all caches, and test/build files
 clean:
-	rm -rf _site .jekyll* src/.jekyll* *.log tmp example.g .dart_tool
+	rm -rf _site .jekyll* src/.jekyll* *.log tmp .dart_tool
 
 # Helpful to reinstall all Ruby packages from inside container
 reinstall:

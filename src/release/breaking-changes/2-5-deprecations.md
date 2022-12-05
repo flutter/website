@@ -47,7 +47,6 @@ The following classes all have the same change of API:
 [In-depth migration guide available][]
 
 Code before migration:
-<!-- skip -->
 ```dart
 const Form form = Form(autovalidate: true);
 const Form form = Form(autovalidate: false);
@@ -65,7 +64,6 @@ const DropdownButtonFormField dropdownButtonFormField = DropdownButtonFormField(
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 const Form form = Form(autovalidateMode: AutovalidateMode.always);
 const Form form = Form(autovalidateMode: AutovalidateMode.disabled);
@@ -125,7 +123,6 @@ The `vsync` for the animation should instead be specified using
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
 ```dart
 class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   FloatingHeaderSnapConfiguration? get snapConfiguration => FloatingHeaderSnapConfiguration(vsync: myTickerProvider);
@@ -133,7 +130,6 @@ class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   FloatingHeaderSnapConfiguration? get snapConfiguration => FloatingHeaderSnapConfiguration();
@@ -178,7 +174,7 @@ For all of these use cases, `viewId` should be used instead.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
+
 ```dart
 final SurfaceAndroidViewController surfaceController = SurfaceAndroidViewController(
   viewId: 10,
@@ -201,7 +197,7 @@ viewId = textureController.id;
 ```
 
 Code after migration:
-<!-- skip -->
+
 ```dart
 final SurfaceAndroidViewController surfaceController = SurfaceAndroidViewController(
   viewId: 10,
@@ -260,7 +256,7 @@ Their functionality has been rewritten into a single class,
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
+
 ```dart
 formatter = BlacklistingTextInputFormatter(pattern, replacementString: 'replacedPattern');
 formatter = BlacklistingTextInputFormatter.singleLineFormatter;
@@ -271,7 +267,7 @@ pattern = formatter.whitelistedPattern;
 ```
 
 Code after migration:
-<!-- skip -->
+
 ```dart
 formatter = FilteringTextInputFormatter.deny(pattern, replacementString: 'replacedPattern');
 formatter = FilteringTextInputFormatter.singleLineFormatter;
@@ -308,7 +304,7 @@ in the context of a `BottomNavigationBar`.
 [In-depth migration guide available][]
 
 Code before migration:
-<!-- skip -->
+
 ```dart
 const BottomNavigationBarItem bottomNavigationBarItem = BottomNavigationBarItem(title: myTitle);
 const BottomNavigationBarItem bottomNavigationBarItem = BottomNavigationBarItem();
@@ -316,7 +312,7 @@ bottomNavigationBarItem.title;
 ```
 
 Code after migration:
-<!-- skip -->
+
 ```dart
 const BottomNavigationBarItem bottomNavigationBarItem = BottomNavigationBarItem(label: myTitle);
 const BottomNavigationBarItem bottomNavigationBarItem = BottomNavigationBarItem();

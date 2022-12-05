@@ -94,7 +94,6 @@ if you also upgrade the `cupertino_icons`
 pubspec dependency from 0.1.3 to 1.0.0,
 for example, by changing:
 
-<!-- skip -->
 ```yaml
 dependencies:
   ... // Other dependencies

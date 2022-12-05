@@ -36,7 +36,6 @@ This getter is used by the input client to collect autofill
 related information from other autofillable input fields
 within the same scope.
 
-<!-- skip -->
 ```dart
 abstract class TextInputClient {
   AutofillScope get currentAutofillScope;
@@ -53,7 +52,6 @@ If you're not planning to add multifield autofill
 support to your `TextInputClient` subclass,
 simply return `null` in the getter:
 
-<!-- skip -->
 ```dart
 class CustomTextField implements TextInputClient {
   // Not having an AutofillScope does not prevent the input field
@@ -68,7 +66,6 @@ If multifield autofill support is desirable, a common
 To get the closest `AutofillGroup` widget to the text
 input, use `AutofillGroup.of(context)`:
 
-<!-- skip -->
 ```dart
 class CustomTextFieldState extends State<CustomTextField> implements TextInputClient {
   AutofillScope get currentAutofillScope => AutofillGroup.of(context);
