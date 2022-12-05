@@ -16,8 +16,8 @@
 //   sdk: flutter
 //  flutter_localizations:
 //    sdk: flutter
-//  intl: 0.15.1
-//  intl_translation: 0.15.0
+//  intl: 0.17.0
+//  intl_generator: 0.3.0
 
 // If you run this app with the device's locale set to anything but
 // English or Spanish, the app's locale will be English. If you
@@ -35,8 +35,8 @@ import 'package:intl/intl.dart';
 // directory:
 //
 // flutter pub get
-// flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
-// flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n --no-use-deferred-loading lib/main.dart lib/l10n/intl_*.arb
+// flutter pub run intl_generator:extract_to_arb --output-dir=lib/l10n lib/main.dart
+// flutter pub run intl_generator:generate_from_arb --output-dir=lib/l10n --no-use-deferred-loading lib/main.dart lib/l10n/intl_*.arb
 //
 // The second command generates intl_messages.arb and the third generates
 // messages_all.dart. There's more about this process in
