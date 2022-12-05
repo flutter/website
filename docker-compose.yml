@@ -11,12 +11,10 @@ services:
     environment:
       - NODE_ENV=development
       - JEKYLL_ENV=development
-      - FIREBASE_ALIAS=${FIREBASE_ALIAS:-default}
-      - FIREBASE_TOKEN=$FIREBASE_TOKEN
     ports:
       - "4002:4002"
-      - "35729:35729"
-      - "5500:5500"
+      - "35730:35730"
+      - "5502:5502"
     volumes:
       - ./:/app
       - site_bundle:/usr/local/bundle

@@ -6,8 +6,8 @@ diff2html: true
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
-  - defer: true
-    url: /assets/js/codelabs/animations_examples.js
+#  - defer: true
+#    url: /assets/js/codelabs/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/explicit"?>
@@ -688,7 +688,6 @@ and `duration`:
 
 Instantiate `AnimationController`:
 
-<!-- skip -->
  ```dart
 controller = AnimationController(
   lowerBound: 0,
@@ -742,7 +741,6 @@ of the editor:
 You can access this property directly&mdash;there
 is no getter method for `value`:
 
-  <!-- skip -->
    ```dart
    print(controller.value);
    ```

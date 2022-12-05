@@ -1306,7 +1306,6 @@ arbitrarily called `images`, you would put the base image (1.0x)
 in the `images` folder, and all the other variants in sub-folders
 called with the appropriate ratio multiplier:
 
-<!-- skip -->
 ```
 images/my_icon.png       // Base: 1.0x image
 images/2.0x/my_icon.png  // 2.0x image

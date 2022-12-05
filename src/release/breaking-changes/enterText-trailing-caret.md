@@ -61,13 +61,11 @@ the previous behavior can be achieved using`updateEditingValue`:
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 await testTextInput.enterText(text);
 ```
 Code after migration:
 
-<!-- skip -->
 ```dart
 await testTextInput.updateEditingValue(TextEditingValue(
   text: text,
@@ -78,14 +76,12 @@ await testTextInput.updateEditingValue(TextEditingValue(
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 await tester.enterText(finder, text);
 ```
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 await tester.showKeyboard(finder);
 await tester.updateEditingValue(TextEditingValue(

@@ -84,7 +84,6 @@ You can also consider using local assets for placeholders.
 First, add the asset to the project’s `pubspec.yaml` file
 (for more details, see [Adding assets and images][]):
 
-<!-- skip -->
 ```diff
  flutter:
    assets:

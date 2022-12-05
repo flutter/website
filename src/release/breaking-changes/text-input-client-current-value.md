@@ -69,7 +69,6 @@ If you want to migrate _before_ this change lands,
 you can add a class to your class
 similar to the following:
 
-<!-- skip -->
 ```dart
 abstract class _TemporaryTextEditingClient {
   TextEditingValue get currentTextEditingValue;
@@ -83,7 +82,6 @@ temporary interface definition.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class _MyCustomTextWidgetState extends State<MyCustomWidget> implements TextEditingClient {
   ...
@@ -107,7 +105,6 @@ class _MyCustomTextWidgetState extends State<MyCustomWidget> implements TextEdit
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class _MyCustomTextWidgetState extends State<MyCustomWidget> implements TextEditingClient {
   ...
