@@ -57,13 +57,11 @@ void updateShader(Canvas canvas, Rect rect, FragmentProgram program) {
 
 ## Canvas API
 
-Fragment shaders can be used with most Canvas APIs that accept either solid
-colors or gradients via a [Paint] object. And will cover an area determined
-by the geometry of the canvas API used. For example, with a call to
-[Canvas.drawRect] the shader will be evaluated for all fragments within
-the rectangle. For an API like [Canvas.drawPath] with a stroked path, the
-shader will be evaluated for all fragments within the stroked line. Some
-APIs such as drawImage ignore the value of the shader.
+Fragment shaders can be used with most Canvas APIs by setting [Paint.shader].
+For example, when using [Canvas.drawRect] the shader will be evaluated for all
+fragments within the rectangle. For an API like [Canvas.drawPath] with a
+stroked path, the shader will be evaluated for all fragments within the stroked
+line. Some APIs such as [Canvas.drawImage] ignore the value of the shader.
 
 ```dart
 void paint(Canvas canvas, Size size, FragmentShader shader) {
@@ -175,9 +173,9 @@ There is no built-in data type for colors. Instead they are commonly
 represented as a `vec4` with each component corresponding to one of the RGBA
 color channels.
 
-The single output `fragColor` expects that the color value is normalized colors
-to be in the range of `0.0` to `1.0` and that it has premultiplied alpha. This
-is different than typical Flutter colors which use a `0-255` value encoding and
+The single output `fragColor` expects that the color value is normalized to be
+in the range of `0.0` to `1.0` and that it has premultiplied alpha. This is
+different than typical Flutter colors which use a `0-255` value encoding and
 have unpremultipled alpha.
 
 #### Samplers
@@ -201,7 +199,7 @@ void main() {
 ```
 
 By default, the image uses a clamping address mode. Currently customization of
-the addressing mode is not supported and needs to be emulated in the shader.
+the address mode is not supported and needs to be emulated in the shader.
 
 ### Performance Considerations
 
