@@ -10,7 +10,7 @@ backend will support this API in a future release.
 {{site.alert.end}}
 
 A shader is a program that is executed by the GPU, usually authored in a small,
-dart-like language such as GLSL. User authored shaders can be incorporated into
+Dart-like language such as GLSL. User authored shaders can be incorporated into
 Flutter applications and packages via the FragmentProgram API. These can be
 used to provide rich graphical effects beyond those provided by the Flutter SDK.
 
