@@ -38,7 +38,6 @@ The previous approach called on developers to create their own `Scrollbar`s on
 all platforms. In some use cases, a `ScrollController` would need to be provided
 to the `Scrollbar` and the scrollable widget.
 
-<!-- skip -->
 ```dart
 final ScrollController controller = ScrollController();
 Scrollbar(
@@ -56,7 +55,6 @@ The `ScrollBehavior` now applies the `Scrollbar` automatically
 when executing on desktop, and handles providing the `ScrollController`
 to the `Scrollbar` for you.
 
-<!-- skip -->
 ```dart
 final ScrollController controller = ScrollController();
 ListView.builder(
@@ -111,7 +109,6 @@ desired feature.
 ### Removing manual `Scrollbar`s on desktop
 Code before migration:
 
-<!-- skip -->
 ```dart
 final ScrollController controller = ScrollController();
 Scrollbar(
@@ -127,7 +124,6 @@ Scrollbar(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 final ScrollController controller = ScrollController();
 final Widget child = ListView.builder(
@@ -156,7 +152,6 @@ switch (currentPlatform) {
 ### Setting a custom `ScrollBehavior` for your application
 Code before migration:
 
-<!-- skip -->
 ```dart
 // MaterialApps previously had a private ScrollBehavior.
 MaterialApp(
@@ -166,7 +161,6 @@ MaterialApp(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // MaterialApps previously had a private ScrollBehavior.
 // This is available to extend now.
@@ -184,7 +178,6 @@ MaterialApp(
 ### Setting a custom `ScrollBehavior` for a specific widget
 Code before migration:
 
-<!-- skip -->
 ```dart
 final ScrollController controller = ScrollController();
 ListView.builder(
@@ -197,7 +190,6 @@ ListView.builder(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // MaterialApps previously had a private ScrollBehavior.
 // This is available to extend now.
@@ -221,7 +213,6 @@ ScrollConfiguration(
 ### Copy and modify existing `ScrollBehavior`
 Code before migration:
 
-<!-- skip -->
 ```dart
 final ScrollController controller = ScrollController();
 ListView.builder(
@@ -234,7 +225,6 @@ ListView.builder(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // ScrollBehavior can be copied and adjusted.
 final ScrollController controller = ScrollController();

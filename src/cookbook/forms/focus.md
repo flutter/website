@@ -37,7 +37,6 @@ when a button is tapped.
 To give focus to a text field as soon as it's visible,
 use the `autofocus` property.
 
-<!-- skip -->
 ```dart
 TextField(
   autofocus: true,

@@ -31,7 +31,6 @@ This resulted in the following issues:
 The previous approach listed the title and content
 widgets consecutively in a `Column` widget.
 
-<!-- skip -->
 ```dart
 Column(
   mainAxisSize: MainAxisSize.min,
@@ -69,7 +68,6 @@ The new approach wraps both widgets in a
 making both widgets part of the same scrollable
 and exposing the button bar at the bottom of the dialog.
 
-<!-- skip -->
 ```dart
 Column(
   mainAxisSize: MainAxisSize.min,
@@ -141,7 +139,6 @@ flutter:              label: "Huge content"
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 AlertDialog(
   title: Text(
@@ -160,7 +157,6 @@ AlertDialog(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 AlertDialog(
   title: Text('Very, very large title', textScaleFactor: 5),

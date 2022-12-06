@@ -80,7 +80,6 @@ Future<void> main() async {
 
 Alternatively, you can pass the DSN to Flutter using the `dart-define` tag:
 
-<!-- skip -->
 ```sh
 --dart-define SENTRY_DSN=https://example@sentry.io/example
 ```

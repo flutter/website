@@ -55,7 +55,6 @@ Add the following permission to the `AndroidManifest.xml` file just after the
 `<application>` definition. The `AndroidManifest.xml` file is found at
 `<project root>/android/app/src/main/AndroidManifest.xml`.
 
-<!-- skip -->
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application ...>
@@ -71,7 +70,6 @@ Add the following permission to the `AndroidManifest.xml` file just after the
 For iOS, add the following to the `Info.plist` file found at
 `<project root>/ios/Runner/Info.plist`.
 
-<!-- skip -->
 ```xml
 <key>NSAppTransportSecurity</key>
 <dict>

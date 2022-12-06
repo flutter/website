@@ -76,7 +76,6 @@ but the same process applies to [`ActionChip`][],
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 Widget myInputChip = InputChip(
   onPressed: () {},
@@ -89,7 +88,6 @@ Widget myInputChip = InputChip(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 Widget myInputChip = InputChip(
   onPressed: () {},
@@ -101,7 +99,6 @@ Widget myInputChip = InputChip(
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 Widget myInputChip = InputChip(
   onPressed: () {},
@@ -115,7 +112,6 @@ Widget myInputChip = InputChip(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 Widget myInputChip = InputChip(
   onPressed: () {},

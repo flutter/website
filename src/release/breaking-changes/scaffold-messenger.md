@@ -34,7 +34,6 @@ to further control _which_ `Scaffold`s receive your `SnackBar`s.
 
 The previous approach called upon the `Scaffold` to show a `SnackBar`.
 
-<!-- skip -->
 ```dart
 Scaffold(
   key: scaffoldKey,
@@ -63,7 +62,6 @@ the `SnackBar`. In this case, the `Builder` is no longer
 required to provide a new scope with a `BuildContext` that
 is "under" the `Scaffold`.
 
-<!-- skip -->
 ```dart
 Scaffold(
   key: scaffoldKey,
@@ -113,7 +111,6 @@ at the top of your application widget tree.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 // The ScaffoldState of the current context was used for managing SnackBars.
 Scaffold.of(context).showSnackBar(mySnackBar);
@@ -138,7 +135,6 @@ scaffoldKey.currentState.removeCurrentSnackBar(mySnackBar);
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // The ScaffoldMessengerState of the current context is used for managing SnackBars.
 ScaffoldMessenger.of(context).showSnackBar(mySnackBar);

@@ -43,7 +43,6 @@ validate on first build and every time it changes.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   @override
@@ -60,7 +59,6 @@ class MyWidget extends StatelessWidget {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyWidget extends StatelessWidget {
   @override
