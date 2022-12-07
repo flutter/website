@@ -51,7 +51,6 @@ loading assets. Classes that delegate to or call the methods of an
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class MyImageProvider extends ImageProvider<MyImageProvider> {
   @override
@@ -81,7 +80,6 @@ class MyDelegatingProvider extends ImageProvider<MyDelegatingProvider> {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyImageProvider extends ImageProvider<MyImageProvider> {
   @override

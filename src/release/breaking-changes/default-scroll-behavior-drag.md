@@ -59,7 +59,6 @@ than one valid `PointerDeviceKind`.
 ### Setting a custom `ScrollBehavior` for your application
 Code before migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   // ...
@@ -68,7 +67,6 @@ MaterialApp(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
@@ -90,7 +88,6 @@ MaterialApp(
 ### Setting a custom `ScrollBehavior` for a specific widget
 Code before migration:
 
-<!-- skip -->
 ```dart
 final ScrollController controller = ScrollController();
 ListView.builder(
@@ -103,7 +100,6 @@ ListView.builder(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
@@ -131,7 +127,6 @@ ScrollConfiguration(
 ### Copy and modify existing `ScrollBehavior`
 Code before migration:
 
-<!-- skip -->
 ```dart
 final ScrollController controller = ScrollController();
 ListView.builder(
@@ -144,7 +139,6 @@ ListView.builder(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // ScrollBehavior can be copied and adjusted.
 final ScrollController controller = ScrollController();
@@ -166,7 +160,6 @@ ScrollConfiguration(
 ### Migrate `GestureDetector`s from `kind` to `supportedDevices`
 Code before migration:
 
-<!-- skip -->
 ```dart
 VerticalDragGestureRecognizer(
   kind: PointerDeviceKind.touch,
@@ -175,7 +168,6 @@ VerticalDragGestureRecognizer(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 VerticalDragGestureRecognizer(
   supportedDevices: <PointerDeviceKind>{ PointerDeviceKind.touch },

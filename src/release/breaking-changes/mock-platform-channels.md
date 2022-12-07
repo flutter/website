@@ -103,7 +103,6 @@ it is recommended to use the following patterns to
 replace calls to those methods
 (where `tester` is the `WidgetTester` instance):
 
-<!-- skip -->
 ```dart
 // old code
 ServicesBinding.defaultBinaryMessenger.setMockMessageHandler(...);
@@ -113,7 +112,6 @@ tester.binding.defaultBinaryMessenger.setMockMessageHandler(...);
 tester.binding.defaultBinaryMessenger.checkMockMessageHandler(...);
 ```
 
-<!-- skip -->
 ```dart
 // old code
 myChannel.setMockMessageHandler(...);
@@ -123,7 +121,6 @@ tester.binding.defaultBinaryMessenger.setMockDecodedMessageHandler(myChannel, ..
 tester.binding.defaultBinaryMessenger.checkMockMessageHandler(myChannel, ...);
 ```
 
-<!-- skip -->
 ```dart
 // old code
 myMethodChannel.setMockMethodCallHandler(...);
