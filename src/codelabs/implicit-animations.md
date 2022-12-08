@@ -192,7 +192,7 @@ you can start with 2 seconds:
 
 Configure the animation to trigger when the user clicks the **Show details**
 button. To do this, change `opacity` state using the `onPressed()` handler for
-`TextlButton`. To make the `FadeInDemo` widget become fully visible when
+`TextButton`. To make the `FadeInDemo` widget become fully visible when
 the user clicks the **Show details** button, use the `onPressed()` handler
 to set `opacity` to 1:
 
