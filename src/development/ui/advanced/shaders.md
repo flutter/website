@@ -156,19 +156,20 @@ void updateShader(FragmentShader shader, Color color, Image image) {
  }
  ```
 
-Note how the indexes used does not count the `sampler2D` uniform. This uniform
-will be set separately with [FragmentShader.setImageSampler], with the
-index starting over at 0.
+Note that the `setFloat` method isn't called on the `sampler2D` uniform value,
+so it doesn't appear in its index. Set the index of any `shader2D` values
+separately with [`FragmentShader.setImageSampler`[]]
+and start the index over at 0.
 
 Any float uniforms that are left uninitialized will default to `0`.
 
 #### Current position
 
-The shader has access to a varying which contains the local coordinates for
-the particular fragment that is being evaluated. This can be used to compute
-effects that depend on the position. This position can be accessed by
+The shader has access to a `varying` value that contains the local coordinates for
+the particular fragment being evaluated. Use this feature to compute
+effects that depend on the current position, which can be accessed by
 importing the `flutter/runtime_effect.glsl` library and calling the
-`FlutterFragCoord` function like below.
+`FlutterFragCoord` function . For example:
 
 ```glsl
 #include <flutter/runtime_effect.glsl>
@@ -235,8 +236,11 @@ fragment program objects before starting the animation.
 You can reuse a `FragmentShader` object across frames;
 this is more efficient than creating a new `FragmentShader` for each frame.
 
-For a more detailed guide on writing performant shaders, see
-[shader_optimization.md] from the flutter/engine.
+For a more detailed guide on writing performant shaders,
+check out [Writing efficient shaders][] on GitHub.
+
+[Shader compilation jank]: {{site.url}}/perf/shader
+[Writing efficient shaders]: {{site.github}}/flutter/engine/blob/main/impeller/docs/shader_optimization.md)
 
 ### Other resources
 
