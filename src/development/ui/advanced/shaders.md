@@ -1,7 +1,7 @@
 ---
 title: Writing and using fragment shaders
 description: How to author and use fragment shaders.
-short-title: Fragment Shaders
+short-title: Fragment shaders
 ---
 
 {{site.alert.note}}
@@ -9,18 +9,21 @@ short-title: Fragment Shaders
   The `CanvasKit` backend will support this API in a future release.
 {{site.alert.end}}
 
-A shader is a program that is executed by the GPU, usually authored in a small,
-Dart-like language such as GLSL. User authored shaders can be incorporated into
-Flutter applications and packages via the FragmentProgram API. These can be
-used to provide rich graphical effects beyond those provided by the Flutter SDK.
+A shader is a program executed by the GPU and usually authored in a small,
+Dart-like language, such as GLSL. User-authored shaders can be added to
+Flutter projects using the [`FragmentProgram`][] API. 
+You can use custom shaders to provide rich graphical effects beyond those
+provided by the Flutter SDK.
+
+[`FragmentProgram`]: {{site.api}}/flutter/dart-ui/FragmentProgram-class.html
 
 ## Adding shaders to an application
 
-Shaders must be declared in the new `shaders` section of your application or
-package pubspec.yaml file. This allows the Flutter command line tool to compile
-the shader to the appropriate backend format, as well as generate the necessary
-runtime metadata. When running in debug mode, changes to a shader program will
-trigger a recompilation and update of the shader during hot reload or hot
+Shaders must be declared in the `shaders` section of your project's `pubspec.yaml` file.
+The Flutter command-line tool to compiles the shader to its appropriate backend format,
+as well as generates the necessary runtime metadata.
+When running in debug mode, changes to a shader program
+triggers recompilation and updates the shader during hot reload or hot
 restart.
 
 ```yaml
@@ -29,13 +32,14 @@ flutter:
     - shaders/myshader.frag
 ```
 
-Shaders from packages can be included using the same technique as other assets.
+Shaders from packages are added to a project using the same technique as other assets.
 
 #### Loading shaders at runtime
 
-FragmentPrograms can be loaded at runtime using the [FragmentProgram.fromAsset]
-constructor. The key should be the file path specified in the pubspec.yaml
-above.
+Load a `FragmentProgram` at runtime using the [`FragmentProgram.fromAsset`][]
+constructor. Specify the path to the shader in the `pubspec.yaml` file, as shown above.
+
+[`FragmentProgram.fromAsset`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentProgram/fromAsset.html
 
 ```dart
 void loadMyShader() async {
@@ -57,11 +61,17 @@ void updateShader(Canvas canvas, Rect rect, FragmentProgram program) {
 
 ## Canvas API
 
-Fragment shaders can be used with most Canvas APIs by setting [Paint.shader].
-For example, when using [Canvas.drawRect] the shader will be evaluated for all
-fragments within the rectangle. For an API like [Canvas.drawPath] with a
-stroked path, the shader will be evaluated for all fragments within the stroked
-line. Some APIs such as [Canvas.drawImage] ignore the value of the shader.
+Fragment shaders can be used with most Canvas APIs by setting [`Paint.shader`][].
+For example, when using [`Canvas.drawRect`][] the shader is evaluated for all
+fragments within the rectangle. For an API like [`Canvas.drawPath`][] with a
+stroked path, the shader is evaluated for all fragments within the stroked
+line. Some APIs, such as [`Canvas.drawImage`][], ignore the value of the shader.
+
+[`Canvas.drawImage`]:  {{site.api}}/flutter/dart-ui/Canvas/drawImage.html
+[`Canvas.drawRect`]:    {{site.api}}/flutter/dart-ui/Canvas/drawRect.html
+[`Canvas.drawPath`]:    {{site.api}}/flutter/dart-ui/Canvas/drawPath.html
+[`Paint.shader`]:            {{site.api}}/flutter/dart-ui/Paint/shader.html
+
 
 ```dart
 void paint(Canvas canvas, Size size, FragmentShader shader) {
@@ -83,11 +93,12 @@ void paint(Canvas canvas, Size size, FragmentShader shader) {
 
 ```
 
-## Authoring Shaders
+## Authoring shaders
 
-Shaders are authored as GLSL source files. Any version from 460 down to 100
-is supported, though some available features are restricted. For the rest
-of the examples in this document `460 core` will be used.
+Shaders are authored as GLSL source files.
+Any GLSL version from 460 down to 100 is supported,
+though some available features are restricted.
+The rest of the examples in this document use version `460 core`.
 
 * UBOs and SSBOs are unsupported.
 * `sampler2D` is the only supported sampler type
@@ -99,17 +110,17 @@ of the examples in this document `460 core` will be used.
 
 #### Uniforms
 
-A fragment program is configured by defining uniform values in the shader
-source and then setting these values per fragment shader instance.
+Configure a fragment program by defining `uniform` values in the GLSL shader
+source and then setting these values in Dart for each fragment shader instance.
 
 Uniforms are set using [FragmentShader.setFloat] or
 [FragmentShader.setImageSampler], depending on the type of uniform. Float values
 includes floats and vec2, vec3, and vec4. Sampler values are only `sampler2D`.
 
-The correct index for each uniform is determined by the order of the uniforms
-as defined in the fragment program. For data types that are composed of
-multiple floats such as a vec4, more than one call to [FragmentShader.setFloat]
-is required.
+The correct index for each `uniform` value is determined by the order that the uniform values
+are defined in the fragment program. For data types composed of
+multiple floats, such as a `vec4`, you must call [`FragmentShader.setFloat`][]
+once for each value.
 
 For example, given the following uniforms in a fragment program:
 
@@ -120,7 +131,8 @@ uniform vec2 uMagnitude;
 uniform vec4 uColor;
 ```
 
-The corresponding Dart code to correctly initialize these uniforms is:
+The corresponding Dart code to initialize these `uniform` values is
+as follows:
 
 ```dart
 void updateShader(FragmentShader shader, Color color, Image image) {
@@ -134,7 +146,7 @@ void updateShader(FragmentShader shader, Color color, Image image) {
   shader.setFloat(5, color.blue / 255 * color.opacity);  // uColor b
   shader.setFloat(6, color.opacity);                     // uColor a
 
-  // initialize sampler uniform.
+  // Initialize sampler uniform.
   shader.setImageSampler(0, image);
  }
  ```
@@ -145,7 +157,7 @@ index starting over at 0.
 
 Any float uniforms that are left uninitialized will default to `0`.
 
-#### Current Position
+#### Current position
 
 The shader has access to a varying which contains the local coordinates for
 the particular fragment that is being evaluated. This can be used to compute
@@ -163,13 +175,13 @@ void main() {
 
 The value returned from `FlutterFragCoord` is distinct from `gl_FragCoord`.
 `gl_FragCoord` provides the screen space coordinates and should generally be
-avoided to ensure shaders are consistent across backends. When targeting a
-Skia backend the calls to gl_FragCoord are rewritten to access local
-coordinates but this rewriting is not possible with Impeller.
+avoided to ensure that shaders are consistent across backends. When targeting a
+Skia backend, the calls to `gl_FragCoord` are rewritten to access local
+coordinates but this rewriting isn't possible with Impeller.
 
 #### Colors
 
-There is no built-in data type for colors. Instead they are commonly
+There isn't a built-in data type for colors. Instead they are commonly
 represented as a `vec4` with each component corresponding to one of the RGBA
 color channels.
 
@@ -180,9 +192,13 @@ have unpremultipled alpha.
 
 #### Samplers
 
-A sampler provides access to a dart:ui Image object. This image can be acquired
-either from a decoded image or from part of the application using
-[Scene.toImageSync] or [Picture.toImageSync].
+A sampler provides access to a `dart:ui` `Image` object.
+This image can be acquired either from a decoded image
+or from part of the application using
+[`Scene.toImageSync`][] or [`Picture.toImageSync`][].
+
+[Picture.toImageSync`]: https://master-api.flutter.dev/flutter/dart-ui/Picture/toImageSync.html
+[`Scene.toImageSync`]: https://master-api.flutter.dev/flutter/dart-ui/Scene/toImageSync.html
 
 ```glsl
 #include <flutter/runtime_effect.glsl>
@@ -201,15 +217,15 @@ void main() {
 By default, the image uses a clamping address mode. Currently customization of
 the address mode is not supported and needs to be emulated in the shader.
 
-### Performance Considerations
+### Performance considerations
 
-When targeting the Skia backend loading the shader may be expensive, since it
-must be compiled to the appropriate platform specific shader at runtime. If you
-intend to use one or more shaders during an animation, prefer to precache the
+When targeting the Skia backend, loading the shader might be expensive since it
+must be compiled to the appropriate platform-specific shader at runtime. If you
+intend to use one or more shaders during an animation, consider precaching the
 fragment program objects before starting the animation.
 
-The FragmentShader object can be reused across frames, and this will be more
-efficient than creating a new FragmentShader per-frame.
+You can reuse a `FragmentShader` object across frames;
+this is more efficient than creating a new `FragmentShader` for each frame.
 
 For a more detailed guide on writing performant shaders, see
 [shader_optimization.md] from the flutter/engine.
@@ -218,11 +234,9 @@ For a more detailed guide on writing performant shaders, see
 
 For more information, here are a few resources.
 
-* https://thebookofshaders.com/
-* https://www.shadertoy.com/
+* [The Book of Shaders][] by Patricio Gonzalez Vivo and Jen Lowe
+* [Shader toy][], a collaborative shader playground
 
-[shader_optimization.md]: https://github.com/flutter/engine/blob/main/impeller/docs/shader_optimization.md
-[`Canvas`]: {{site.api}}/flutter/dart-ui/Canvas-class.html
-[`Scene`]: {{site.api}}/flutter/dart-ui/Scene-class.html
-[`FragmentProgram`]: {{site.api}}/flutter/dart-ui/FragmentProgram-class.html
-[`FragmentShader`]: {{site.api}}/flutter/dart-ui/FragmentShader-class.html
+[Shader toy]: https://www.shadertoy.com/
+[The Book of Shaders]: https://thebookofshaders.com/
+
