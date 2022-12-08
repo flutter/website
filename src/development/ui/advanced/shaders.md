@@ -124,7 +124,7 @@ are defined in the fragment program. For data types composed of
 multiple floats, such as a `vec4`, you must call [`FragmentShader.setFloat`][]
 once for each value.
 
-[FragmentShader.setFloat`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setFloat.html
+[`FragmentShader.setFloat`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setFloat.html
 [`FragmentShader.setImageSampler`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setImageSampler.html
 
 For example, given the following uniforms declarations in a GLSL fragment program:
@@ -202,7 +202,7 @@ This image can be acquired either from a decoded image
 or from part of the application using
 [`Scene.toImageSync`][] or [`Picture.toImageSync`][].
 
-[Picture.toImageSync`]: https://master-api.flutter.dev/flutter/dart-ui/Picture/toImageSync.html
+[`Picture.toImageSync`]: https://master-api.flutter.dev/flutter/dart-ui/Picture/toImageSync.html
 [`Scene.toImageSync`]: https://master-api.flutter.dev/flutter/dart-ui/Scene/toImageSync.html
 
 ```glsl
