@@ -25,7 +25,7 @@ The following animation shows the app's behavior:
 This recipe begins with the photo and filters
 already in place. Filters are applied with the
 `color` and `colorBlendMode` properties of the
-[`Image`][] widget].
+[`Image`][] widget.
 
 ## Add a selector ring and dark gradient
 
