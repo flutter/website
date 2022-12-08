@@ -1,5 +1,5 @@
 ---
-title: Writing and using Fragment Shaders
+title: Writing and using fragment shaders
 description: How to author and use fragment shaders.
 short-title: Fragment Shaders
 ---
