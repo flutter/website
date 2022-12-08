@@ -14,7 +14,7 @@ Dart-like language such as GLSL. User authored shaders can be incorporated into
 Flutter applications and packages via the FragmentProgram API. These can be
 used to provide rich graphical effects beyond those provided by the Flutter SDK.
 
-## Adding Shaders to an Application
+## Adding shaders to an application
 
 Shaders must be declared in the new `shaders` section of your application or
 package pubspec.yaml file. This allows the Flutter command line tool to compile
