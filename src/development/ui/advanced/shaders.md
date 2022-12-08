@@ -4,9 +4,9 @@ description: How to author and use fragment shaders.
 short-title: Fragment Shaders
 ---
 
-{{site.alert.secondary}}
-Note: The HTML backend does not support the FragmentProgram API. The CanvasKit
-backend will support this API in a future release.
+{{site.alert.note}}
+  The HTML backend doesn't support the `FragmentProgram` API.
+  The `CanvasKit` backend will support this API in a future release.
 {{site.alert.end}}
 
 A shader is a program that is executed by the GPU, usually authored in a small,
