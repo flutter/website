@@ -110,6 +110,8 @@
               permalink: /development/ui/advanced/focus
             - title: Gestures
               permalink: /development/ui/advanced/gestures
+            - title: Shaders
+              permalink: /development/ui/advanced/shaders
             - title: Slivers
               permalink: /development/ui/advanced/slivers
             - title: Splash screens

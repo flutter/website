@@ -11,7 +11,7 @@ short-title: Fragment shaders
 
 A shader is a program executed by the GPU and usually authored in a small,
 Dart-like language, such as GLSL. User-authored shaders can be added to
-Flutter projects using the [`FragmentProgram`][] API. 
+Flutter projects using the [`FragmentProgram`][] API.
 You can use custom shaders to provide rich graphical effects beyond those
 provided by the Flutter SDK.
 
@@ -48,8 +48,8 @@ void loadMyShader() async {
 ```
 
 The FragmentProgram object can be used to create one or more FragmentShader
-instances. A FragmentShader represents a particular combination of a
-program and bound uniforms.
+instances. A FragmentShader object represents a fragment program along with
+a particular set of uniforms.
 
 ```dart
 void updateShader(Canvas canvas, Rect rect, FragmentProgram program) {
@@ -100,29 +100,34 @@ Any GLSL version from 460 down to 100 is supported,
 though some available features are restricted.
 The rest of the examples in this document use version `460 core`.
 
-* UBOs and SSBOs are unsupported.
+Also note the following special cases:
+
+* UBOs and SSBOs aren't supported
 * `sampler2D` is the only supported sampler type
-* Only the two argument version of `texture` (sampler and uv) is supported.
-* No varyings may be declared.
-  * Note: A position varying is available for each shader
-* All precision hints are ignored when targeting Skia.
-* Unsigned integers and booleans are unsupported.
+* Only the two-argument version of `texture` (sampler and uv) is supported
+* No additional varying inputs may be declared
+* All precision hints are ignored when targeting Skia
+* Unsigned integers and booleans aren't supported
 
 #### Uniforms
 
 Configure a fragment program by defining `uniform` values in the GLSL shader
 source and then setting these values in Dart for each fragment shader instance.
 
-Uniforms are set using [FragmentShader.setFloat] or
-[FragmentShader.setImageSampler], depending on the type of uniform. Float values
-includes floats and vec2, vec3, and vec4. Sampler values are only `sampler2D`.
+Set the `uniform` value using the [`FragmentShader.setFloat`][] or
+[`FragmentShader.setImageSampler`][] methods, depending on the _type_˜ of uniform value.
+In GLSL, floating point values includes `float`, `vec2`, `vec3`, and `vec4` types.
+A GLSL sampler value is a `sampler2D` type.
+
+[FragmentShader.setFloat`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setFloat.html
+[`FragmentShader.setImageSampler`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setImageSampler.html
 
 The correct index for each `uniform` value is determined by the order that the uniform values
 are defined in the fragment program. For data types composed of
 multiple floats, such as a `vec4`, you must call [`FragmentShader.setFloat`][]
 once for each value.
 
-For example, given the following uniforms in a fragment program:
+For example, given the following uniforms declarations in a GLSL fragment program:
 
 ```glsl
 uniform float uScale;
@@ -214,8 +219,11 @@ void main() {
 }
 ```
 
-By default, the image uses a clamping address mode. Currently customization of
-the address mode is not supported and needs to be emulated in the shader.
+By default, the image uses [`TileMode.clamp`][] to determine how values outside
+of the range of `[0, 1]` behave. Customization of the tile mode is not
+supported and needs to be emulated in the shader.
+
+[`TileMode.clamp`]: https://master-api.flutter.dev/flutter/dart-ui/TileMode.html
 
 ### Performance considerations
 
