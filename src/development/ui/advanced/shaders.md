@@ -119,13 +119,13 @@ Set the `uniform` value using the [`FragmentShader.setFloat`][] or
 In GLSL, floating point values includes `float`, `vec2`, `vec3`, and `vec4` types.
 A GLSL sampler value is a `sampler2D` type.
 
-[FragmentShader.setFloat`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setFloat.html
-[`FragmentShader.setImageSampler`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setImageSampler.html
-
 The correct index for each `uniform` value is determined by the order that the uniform values
 are defined in the fragment program. For data types composed of
 multiple floats, such as a `vec4`, you must call [`FragmentShader.setFloat`][]
 once for each value.
+
+[FragmentShader.setFloat`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setFloat.html
+[`FragmentShader.setImageSampler`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setImageSampler.html
 
 For example, given the following uniforms declarations in a GLSL fragment program:
 
@@ -156,10 +156,9 @@ void updateShader(FragmentShader shader, Color color, Image image) {
  }
  ```
 
-Note that the `setFloat` method isn't called on the `sampler2D` uniform value,
-so it doesn't appear in its index. Set the index of any `shader2D` values
-separately with [`FragmentShader.setImageSampler`[]]
-and start the index over at 0.
+Note how the indexes used does not count the `sampler2D` uniform. This uniform
+will be set separately with [`FragmentShader.setImageSampler`][], with the
+index starting over at 0.
 
 Any float uniforms that are left uninitialized will default to `0`.
 
