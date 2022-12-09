@@ -38,29 +38,31 @@ To set up flavors in iOS, you’ll define build configurations in Xcode.
 ## Creating flavors in iOS
 1. Open your project in Xcode.
 
-2. Select **Runner** > **New Scheme** from the menu to add a new Scheme. 
-A scheme describes how Xcode runs different actions. 
-For the purposes of this guide, the example _flavor_ and _scheme_ are 
-named `development`. 
-The build configurations in the development scheme 
-have the `-development` suffix. 
+2. Select **Runner** > **New Scheme** from the menu to add a new Scheme.  
+* A scheme describes how Xcode runs different actions. 
+  For the purposes of this guide, the example _flavor_ and _scheme_ are 
+  named `development`. 
+  The build configurations in the development scheme 
+  have the `-development` suffix. 
 
 3. Duplicate the build configurations to differentiate between the 
 default configurations that are already available and the new configurations 
-for the `development` scheme. Under the **Info** tab at the end of the 
+for the `development` scheme. 
+* Under the **Info** tab at the end of the 
 **Configurations** dropdown list, click the plus button and duplicate 
 each configuration name (Debug, Release, and Profile). 
-Duplicate the listed production configurations, once for each environment.   
+Duplicate the listed production configurations, once for each environment. 
 
 ![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
 {{site.alert.note}}
   Your configurations should be based on your **Debug.xconfig** or **Release.xcconfig**
   file, not the **Pods-Runner.xcconfigs**. You can check this by expanding the configuration names. 
 {{site.alert.end}}
-4. To match the development flavor, add `-development` 
+
+&nbsp;4. To match the development flavor, add `-development` 
 at the end of each new configuration name. 
 
-5. Change the `development` scheme to match the development 
+&nbsp;5. Change the `development` scheme to match the development 
 build configurations already created.
 * In the **Runner** project, click **Manage Schemes…** and a pop up window opens. 
 * Double click the development scheme. In the next step 
@@ -77,15 +79,19 @@ A _bundle identifier_ uniquely identifies your application.
 In this example, we set the **Debug-development** value to equal 
 `com.flavor-test.dev`. 
 
-1. Change the app bundle identifier to differentiate between schemes. 
-In **Product Bundle Identifier**, append `.dev` to each -development scheme value.            
-![Step 1 using flavors image.](/assets/images/docs/flavors/step1-using-flavors.png){:width="100%"}        
-2. In the **Build Settings**, set the **Product Name** value to match each flavor.        
-![Step 2 using flavors image.](/assets/images/docs/flavors/step2-using-flavors.png){:width="100%"}             
-3. Add the display name to info.plist.        
-Create a new key in info.plist called **Bundle Display Name** 
+&nbsp;1. Change the app bundle identifier to differentiate between schemes. 
+In **Product Bundle Identifier**, append `.dev` to each -development scheme value.
+
+![Step 1 using flavors image.](/assets/images/docs/flavors/step1-using-flavors.png){:width="100%"}  
+
+&nbsp;2. In the **Build Settings**, set the **Product Name** value to match each flavor. 
+
+![Step 2 using flavors image.](/assets/images/docs/flavors/step2-using-flavors.png){:width="100%"}  
+
+&nbsp;3. Add the display name to **info.plist**. Create a new key in **info.plist** called **Bundle Display Name** 
 with the value `$(PRODUCT_NAME)`. 
-![Step 2 using flavors image.](/assets/images/docs/flavors/step2-using-flavors.png){:width="100%"}    
+
+![Step 3 using flavors image.](/assets/images/docs/flavors/step3-using-flavors.png){:width="100%"}    
 
 Now you have set up your development flavor by making a `development` scheme 
 in Xcode and setting the build configurations for that scheme. 
