@@ -631,7 +631,6 @@ Key information:
 
   Here's the code:
 
-  <!-- skip -->
   {% prettify dart %}
   static RectTween _createRectTween(Rect begin, Rect end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);

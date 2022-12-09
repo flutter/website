@@ -107,14 +107,12 @@ See the [Context](#context) section for more information._
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 TextField(maxLength: 6)
 ```
 
 or 
 
-<!-- skip -->
 ```dart
 TextField(
   maxLength: 6,
@@ -124,7 +122,6 @@ TextField(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 TextField(
   maxLength: 6,
@@ -141,7 +138,6 @@ use `MaxLengthEnforcement.none` instead of
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 TextField(
   maxLength: 6,
@@ -151,7 +147,6 @@ TextField(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 TextField(
   maxLength: 6,
@@ -164,7 +159,6 @@ just don't set the `maxLength` value.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 CupertinoTextField(
   maxLength: 6,
@@ -174,7 +168,6 @@ CupertinoTextField(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 CupertinoTextField()
 ```
@@ -201,7 +194,6 @@ that use temporarily long composing regions such as CJK text._
 
 Code for the implementation:
 
-<!-- skip -->
 ```dart
 TextField(
   maxLength: 6,

@@ -43,7 +43,6 @@ With this change, the default behavior uses the color scheme's
 Previously, the `accentIconTheme` provided a default for the
 `FloatingActionButton`'s `foregroundColor` property:
 
-<!-- skip -->
 ```dart
     final Color foregroundColor = this.foregroundColor
       ?? floatingActionButtonTheme.foregroundColor
@@ -63,7 +62,6 @@ created by `FloatingActionButton`. Previously,
 this text style was based on the button style of
 `ThemeData.accentTextTheme`:
 
-<!-- skip -->
 ```dart
 // theme.accentTextTheme becomes theme.textTheme
 final TextStyle textStyle = theme.accentTextTheme.button.copyWith(
@@ -94,7 +92,6 @@ for all FABs, you can configure the theme's
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(
@@ -105,7 +102,6 @@ MaterialApp(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(

@@ -197,7 +197,7 @@ use the following instructions:
     list in the Android docs. This lists stable native APIs.
  1. Load the library using [`DynamicLibrary.open`][].
     For example, to load OpenGL ES (v3):
-    <!-- skip -->
+
     ```dart
     DynamicLibrary.open('libGLES_v3.so');
     ```

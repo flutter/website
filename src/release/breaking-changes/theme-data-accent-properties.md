@@ -56,7 +56,6 @@ instead of accentColor.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(accentColor: myColor),
@@ -66,7 +65,6 @@ MaterialApp(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 final ThemeData theme = ThemeData();
 MaterialApp(
@@ -89,14 +87,12 @@ the `ColorScheme.secondary` instead.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 Color myColor = Theme.of(context).accentColor;
 ```
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 Color myColor = Theme.of(context).colorScheme.secondary;
 ```
@@ -119,14 +115,12 @@ the same result now, specify the text style's color as
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 TextStyle style = Theme.of(context).accentTextTheme.headline1;
 ```
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 final ThemeData theme = Theme.of(context);
 TextStyle style = theme.textTheme.headline1.copyWith(

@@ -40,7 +40,6 @@ equivalent properties on `ThemeData.textSelectionTheme`:
 
 **Code before migration:**
 
-<!-- skip -->
 ```dart
 ThemeData(
   cursorColor: Colors.red,
@@ -51,7 +50,6 @@ ThemeData(
 
 **Code after migration:**
 
-<!-- skip -->
 ```dart
 ThemeData(
   textSelectionTheme: TextSelectionThemeData(
@@ -70,7 +68,6 @@ for text selection you can add a new field to your
 `ThemeData` for your app to return to the old defaults
 as shown:
 
-<!-- skip -->
 ```dart
 // Old defaults for a light theme
 ThemeData(
@@ -82,7 +79,6 @@ ThemeData(
 )
 ```
 
-<!-- skip -->
 ```dart
 // Old defaults for a dark theme
 ThemeData(

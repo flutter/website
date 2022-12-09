@@ -460,7 +460,6 @@ Instances of this class are created by a `LocalizationDelegate`
 provided by the [`MaterialApp`][] class.
 They can be retrieved with `Localizations.of()`:
 
-<!-- skip -->
 ```dart
 Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 ```
@@ -468,7 +467,6 @@ Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 This particular `Localizations.of()` expression is used frequently,
 so the `MaterialLocalizations` class provides a convenient shorthand:
 
-<!-- skip -->
 ```dart
 static MaterialLocalizations of(BuildContext context) {
   return Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);

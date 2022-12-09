@@ -57,7 +57,6 @@ or calculated as follows:
   `AnimationSheetBuilder`. For example, in the following
   snippet it's 80:
 
-<!-- skip -->
 ```dart
 final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(frameSize: const Size(80, 30));
 ```
@@ -66,7 +65,6 @@ final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(frameSize: co
   setting the surface size; the default is 800.
   For example, in the following snippet it's 600:
 
-<!-- skip -->
 ```dart
 tester.binding.setSurfaceSize(animationSheet.sheetSize(600));
 ```
@@ -75,7 +73,6 @@ tester.binding.setSurfaceSize(animationSheet.sheetSize(600));
   numbers divided, rounded down. For example, 
   600 / 80 = 7 (rounded down), therefore
 
-<!-- skip -->
 ```dart
 animationSheet.collate(7)
 ```
@@ -84,7 +81,6 @@ animationSheet.collate(7)
 
 Code before migration:
 
-<!-- skip -->
 ```dart
   testWidgets('Indeterminate CircularProgressIndicator', (WidgetTester tester) async {
     final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(frameSize: const Size(40, 40));
@@ -115,7 +111,6 @@ Code before migration:
 
 Code after migration (`cellsPerRow` is 20, derived from 800 / 40):
 
-<!-- skip -->
 ```dart
   testWidgets('Indeterminate CircularProgressIndicator', (WidgetTester tester) async {
     final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(frameSize: const Size(40, 40));
