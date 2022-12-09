@@ -99,6 +99,15 @@ in Xcode and setting the build configurations for that scheme.
 For more information, skip to the [“Launching your app flavors”][] 
 section at the end of this document.
 
+### Plugin configurations
+
+If your app has a Flutter plugin, you will need to update the `ios/Podfile`. 
+
+* in `iOS/Podfile` change the default of **Debug**, **Profile**, and **Release** 
+to match the Xcode build configurations for the `development` scheme.
+
+![Podfile configuration image.](/assets/images/docs/flavors/podfile-config.png){:width="80%"}
+
 ## Using flavors in Android
 
 Setting up flavors in Android can be done in your projects 
