@@ -1,44 +1,62 @@
 // Fetches Go link redirects from firebase.json
 // Since we can't access it from the site directly, fetch it from GitHub main.
-const fetchGoLinks = function (callback, errorCallback) {
-  // OS: windows, macos, linux
-  const url = "https://raw.githubusercontent.com/flutter/website/main/firebase.json";
-  $.ajax({
-    type: "GET",
-    url: url,
-    dataType: "json",
-    success: function (data) { callback(data); },
-    error: function (xhr, textStatus, errorThrown) {
-      if (errorCallback) errorCallback();
-    }
-  })
+function fetchGoLinks(callback, errorCallback, goLinksElement) {
+  const firebaseConfigUrl = 'https://raw.githubusercontent.com/flutter/website/main/firebase.json';
+
+  fetch(firebaseConfigUrl)
+      .then(response => {
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          throw Error('Failed to load resources.');
+        }
+      })
+      .then(firebaseConfig => updateList(firebaseConfig.hosting.redirects, goLinksElement))
+      .catch(_ => {
+        if (errorCallback) errorCallback(goLinksElement);
+      });
 }
 
-function updateList(links) {
-  const go_links = $('#go-links');
-  if (!go_links) {
-    return;
-  }
-
-  links.hosting.redirects.filter(
+function updateList(redirects, goLinksElement) {
+  redirects.filter(
       redirect =>
           redirect.source &&
           redirect.source.startsWith('/go/') &&
-          redirect.source !== '/go/template'
+          redirect.source !== '/go/template' &&
+          redirect.destination.startsWith('https://docs.google.com/')
   ).forEach(
-      redirect => go_links.append(`<li><a href="${redirect.destination}">${redirect.source}</a></li>`)
+      redirect => {
+        const anchorElement = document.createElement('a');
+        anchorElement.href = redirect.destination;
+        anchorElement.textContent = redirect.source;
+
+        const listItemElement = document.createElement('li');
+        listItemElement.appendChild(anchorElement);
+
+        goLinksElement.appendChild(listItemElement);
+      }
   );
 }
 
-function updateListFailed() {
-  const go_links = $('#go-links');
-  if (!go_links) {
-    return;
-  }
-  go_links.append(`<li>Failed to load resources. Refresh page to try again.</li>`);
+function updateListFailed(goLinksElement) {
+  const failedElement = document.createElement('li');
+  failedElement.textContent = 'Failed to load resources. Refresh page to try again.';
+
+  goLinksElement.appendChild(failedElement);
 }
 
-// Send requests to render the tables.
-$(function () {
-  fetchGoLinks(updateList, updateListFailed);
-});
+function setup() {
+  const goLinksElement = document.getElementById('go-links');
+  if (!goLinksElement) {
+    return;
+  }
+
+  // Send request to get list, then render the list
+  fetchGoLinks(updateList, updateListFailed, goLinksElement);
+}
+
+if (document.readyState !== "loading") {
+  setup();
+} else {
+  document.addEventListener("DOMContentLoaded", setup);
+}
