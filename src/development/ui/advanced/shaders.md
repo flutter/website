@@ -20,7 +20,7 @@ provided by the Flutter SDK.
 ## Adding shaders to an application
 
 Shaders must be declared in the `shaders` section of your project's `pubspec.yaml` file.
-The Flutter command-line tool to compiles the shader to its appropriate backend format,
+The Flutter command-line tool compiles the shader to its appropriate backend format,
 as well as generates the necessary runtime metadata.
 When running in debug mode, changes to a shader program
 triggers recompilation and updates the shader during hot reload or hot
