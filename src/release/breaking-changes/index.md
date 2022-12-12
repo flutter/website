@@ -18,11 +18,13 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Dart 3 API removals & no unsound null safety support][]
 * [Migrate `of` to non-nullable return values, and add `maybeOf`][]
 * [Deprecated API removed after v3.3][]
 * [iOS FlutterViewController splashScreenView made nullable][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
 
+[Dart 3 API removals & no unsound null safety support]: {{site.url}}/release/breaking-changes/dart-3
 [Migrate `of` to non-nullable return values, and add `maybeOf`]: /docs/release/breaking-changes/supplemental-maybeOf-migration
 [Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
