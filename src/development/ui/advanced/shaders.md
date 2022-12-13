@@ -1,6 +1,6 @@
 ---
 title: Writing and using fragment shaders
-description: How to author and use fragment shaders.
+description: How to author and use fragment shaders to create custom visual effects in your Flutter app.
 short-title: Fragment shaders
 ---
 
