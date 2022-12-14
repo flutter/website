@@ -146,7 +146,7 @@ Similar to the app icon, you may also want to replace the placeholder launch ima
 
 1. In the Xcode project navigator, select `Assets.xcassets` in the
    `Runner` folder. Update the placeholder launch image with your own launch image. 
-1. Verify the launch image has been replaced by running your app using `flutter run`.
+1. Verify the new launch image by hot restarting your app. (Don't use `hot reload`.)
 
 ## Create a build archive and upload to App Store Connect
 
