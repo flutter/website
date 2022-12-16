@@ -22,7 +22,7 @@ conditions:
 * Causes the device to slow down or become unresponsive
 * Shuts down because it exceeded the operating system memory usage
 * Exceeds memory usage limit 
-  * This limit can vary depending on the type of devices your app targets
+  * This limit can vary depending on the type of devices your app targets.
 * Suspect a memory leak 
 
 ## Basic memory concepts
