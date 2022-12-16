@@ -5,6 +5,14 @@ description: The Happy paths page lists areas of technology where we recommend s
 
 ![Header image for Happy Paths](/assets/images/docs/happy-paths/HappyPaths_HeaderImage_003.png){:width="100%"}
 
+{{site.alert.note}}
+  Due to limited staffing resources,
+  we are pausing the
+  Flutter Favorites and Happy Path programs.
+  We will update (and possibly combine)
+  these programs as soon as possible.
+{{site.alert.end}}
+
 Once you’ve learned Flutter basics and are ready to move on
 to developing more advanced apps, how do you make that leap?
 The [pub.dev][] website lists thousands of packages and plugins
