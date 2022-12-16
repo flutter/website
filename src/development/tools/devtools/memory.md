@@ -12,6 +12,19 @@ the first section explains how Dart manages memory.
 If you already understand Dart’s memory management,
 you can skip to the [Memory view guide](#memory-view-guide).
 
+## Reasons to use the memory view
+
+Use the memory view when your application experiences one of the following
+conditions:
+
+* Crashes when it runs out of memory
+* Slows down
+* Causes the device to slow down or become unresponsive
+* Shuts down because it exceeded the operating system memory usage
+* Exceeds memory usage limit 
+  * This limit can vary depending on the type of devices your app targets.
+* Suspect a memory leak 
+
 ## Basic memory concepts
 
 Dart objects created using a class constructor
