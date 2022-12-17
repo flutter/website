@@ -116,6 +116,8 @@
               permalink: /development/ui/advanced/slivers
             - title: Splash screens
               permalink: /development/ui/advanced/splash-screen
+        - title: Material 3
+          permalink: /development/ui/material3-guide
         - title: Widget catalog
           permalink: /development/ui/widgets
     - title: Data & backend
