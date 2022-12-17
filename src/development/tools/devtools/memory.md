@@ -35,7 +35,7 @@ The VM allocates memory for the object on object creation,
 and releases (or deallocates) the memory when the object
 is no longer used (see [Dart garbage collection][]). 
 
-[Dart garbage collection]: {{site.medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
+[Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
 
 ### Root object, retaining path, and reachability
 
