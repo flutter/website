@@ -307,7 +307,7 @@ dependencies:
 ```
 
 Note that as shown here, an app-facing package can have
-some platforms implementated within the package,
+some platforms implemented within the package,
 and others in endorsed federated implementations.
 
 ### Step 1: Create the package
