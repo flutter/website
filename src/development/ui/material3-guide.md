@@ -2,7 +2,7 @@
 title: Material 3 development guide
 description: Learn about Material 3 for Flutter.
 ---
-Material 3, also known as Material You, is the next phase of Material Design. 
+Material 3, also known as Material You, is the next version of Material Design. 
 With new features and widget updates, cross-platform design is more uniform. 
 This guide gives a high-level overview of Material 3, highlights key updates, 
 and shows you how to enable Material 3 for your Flutter application.
