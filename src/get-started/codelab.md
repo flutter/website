@@ -813,7 +813,7 @@ where you add the following functionality:
 
 * [Flutter for React Native developers]({{site.url}}/get-started/flutter-for/react-native-devs)
 * [Testing accessibility in Flutter mobile apps]({{site.url}}/development/accessibility-and-localization/accessibility#testing-accessibility-on-mobile)
-* [Layouts with Flutter]({{site.url}}/development/ui/layout)
+* [Building layouts with Flutter]({{site.url}}/development/ui/layout)
 * [Introduction to widgets]({{site.urll}}/development/ui/widgets-intro)
 
 [an editor]: {{site.url}}/get-started/editor
