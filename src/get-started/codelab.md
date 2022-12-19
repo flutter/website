@@ -433,7 +433,7 @@ If needed, use the code at the following links to get back on track.
 <?code-excerpt path-base="codelabs/startup_namer/step3_stateful_widget"?>
 
 State<em>less</em> widgets are immutable, meaning that their
-properties can’t change&mdash;all values are final.1
+properties can’t change&mdash;all values are final.
 
 State<em>ful</em> widgets maintain state that might change
 during the lifetime of the widget. Implementing a stateful
