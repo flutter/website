@@ -246,55 +246,55 @@ for a Flutter app.
     fetched. The equivalent command-line prompt is
     the following:
 
-```terminal
-$ `flutter pub add english_words`
-```
-
-The output will look something like the following:
-
-```terminal
-Resolving dependencies...
-+ english_words 4.0.0
-Downloading english_words 4.0.0...
-
-Changed 1 dependency!
-```
-
-Fetching the dependencies also auto-generates the `pubspec.lock`
-file with a list of all packages pulled into the project and
-their version numbers.
-
-The `pubspec.yaml` file manages the assets and dependencies
-for a Flutter app. In `pubspec.yaml`, you will see
-that the `english_words` dependency has been added:
+    ```terminal
+    $ flutter pub add english_words
+    ```
     
-<?code-excerpt path-base="codelabs/startup_namer"?>
-<?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="sdk"?>
-```diff
---- step1_base/pubspec.yaml
-+++ step2_use_package/pubspec.yaml
-@@ -9,4 +9,5 @@
- dependencies:
-   cupertino_icons: ^1.0.5
-+  english_words: ^4.0.0
-   flutter:
-     sdk: flutter
-```
+    The output will look something like the following:
+    
+    ```terminal
+    Resolving dependencies...
+    + english_words 4.0.0
+    Downloading english_words 4.0.0...
+    
+    Changed 1 dependency!
+    ```
+    
+    Fetching the dependencies also auto-generates the `pubspec.lock`
+    file with a list of all packages pulled into the project and
+    their version numbers.
+    
+    The `pubspec.yaml` file manages the assets and dependencies
+    for a Flutter app. In `pubspec.yaml`, you will see
+    that the `english_words` dependency has been added:
+        
+    <?code-excerpt path-base="codelabs/startup_namer"?>
+    <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="sdk"?>
+    ```diff
+    --- step1_base/pubspec.yaml
+    +++ step2_use_package/pubspec.yaml
+    @@ -9,4 +9,5 @@
+     dependencies:
+       cupertino_icons: ^1.0.5
+    +  english_words: ^4.0.0
+       flutter:
+         sdk: flutter
+    ```
 
  2. While viewing the `pubspec.yaml` file in your IDE's editor view,
     click **Pub get**. This pulls the package into
     your project. The equivalent command-line prompt is as follows:
 
-```terminal
-$ `flutter pub get`
-```
-
-The output will look something like the following:
-
-```terminal
-Running "flutter pub get" in startup_namer...
-Process finished with exit code 0
-```
+    ```terminal
+    $ flutter pub get
+    ```
+    
+    The output will look something like the following:
+    
+    ```terminal
+    Running "flutter pub get" in startup_namer...
+    Process finished with exit code 0
+    ```
 
  3. In `lib/main.dart`, import the new package:
 
@@ -353,8 +353,9 @@ Process finished with exit code 0
     {{site.alert.end}}
 
     {{site.alert.important}}
-    Using upper camel case also helps screen readers identify the individual words in the compound word and provides a better 
-    experience to visually impaired users.
+      Using upper camel case also helps screen readers
+      identify the individual words in the compound word
+      and provides a better experience to visually impaired users.
     {{site.alert.end}}
 
  5. If the app is running, [hot reload][]
@@ -403,20 +404,18 @@ Process finished with exit code 0
 
     <div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab" markdown="1">
 
-
-    <!-- **Turn on VoiceOver on your iPhone to try the app with a screen reader** -->
-
     1. On your device, open **Settings > Accessibility > VoiceOver**
     2. Turn the VoiceOver setting on or off    
 
-    To learn how to find and customize iOS accessibility features, view this video.
-
+    To learn how to find and customize iOS accessibility features, view this video:
 
     <iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
 
     </div>
-    </div>{% comment %} End: Tab panes. {% endcomment -%}  
+    </div>{% comment %} End: Tab panes. {% endcomment -%}
+
+<!-- End ordered list -->
 
 ### Problems?
 {:.no_toc}
@@ -812,10 +811,10 @@ where you add the following functionality:
 
 ## Explore the Flutter SDK
 
-* <a href="https://docs.flutter.dev/get-started/flutter-for/react-native-devs">Flutter for React Native developers</a>
-* <a href="https://docs.flutter.dev/development/accessibility-and-localization/accessibility//#testing-accessibility-on-mobile">Testing accessibility in Flutter mobile apps</a>
-* <a href="https://docs.flutter.dev/development/ui/layout">Building layouts with Flutter</a>
-* <a href="https://flutter.dev/docs/development/ui/widgets-intro">Introduction to widgets</a>
+* [Flutter for React Native developers]({{site.url}}/get-started/flutter-for/react-native-devs)
+* [Testing accessibility in Flutter mobile apps]({{site.url}}/development/accessibility-and-localization/accessibility#testing-accessibility-on-mobile)
+* [Building layouts with Flutter]({{site.url}}/development/ui/layout)
+* [Introduction to widgets]({{site.urll}}/development/ui/widgets-intro)
 
 [an editor]: {{site.url}}/get-started/editor
 [Building a web application with Flutter]: {{site.url}}/web
