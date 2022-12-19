@@ -73,7 +73,7 @@ void main() {
 ```
 
 {{site.alert.note}}
-  The migration to Material 3 is still in progress, 
+  The migration to Material 3 is ongoing, 
   opting in may produce an inconsistent look.
 {{site.alert.end}}
 
