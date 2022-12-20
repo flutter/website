@@ -49,16 +49,16 @@ Open your project in Xcode.
 Select **Runner** > **New Scheme** from the menu to add a new `Scheme`.  
 * A scheme describes how Xcode runs different actions. 
   For the purposes of this guide, the example _flavor_ and _scheme_ are 
-  named `paid`. 
+  named `free-example`. 
   The build configurations in the development scheme 
-  have the `-paid` suffix. 
+  have the `-free-example` suffix. 
 
 </li>
 <li markdown="1">
 
 Duplicate the build configurations to differentiate between the 
 default configurations that are already available and the new configurations 
-for the `paid` scheme. 
+for the `free-example` scheme. 
 * Under the **Info** tab at the end of the 
 **Configurations** dropdown list, click the plus button and duplicate 
 each configuration name (Debug, Release, and Profile). 
@@ -73,13 +73,13 @@ Duplicate the listed production configurations, once for each environment.
 </li>
 <li markdown="1">
 
-To match the development flavor, add `-paid` 
+To match the development flavor, add `-free-example` 
 at the end of each new configuration name. 
 
 </li>
 <li markdown="1">
 
-Change the `paid` scheme to match the development 
+Change the `free-example` scheme to match the development 
 build configurations already created.
 * In the **Runner** project, click **Manage Schemes…** and a pop up window opens. 
 * Double click the development scheme. In the next step 
@@ -96,14 +96,14 @@ to match its dev build configuration:
 Now that you’ve set up your development flavor, 
 you can, for example, add different product bundle identifiers per flavor. 
 A _bundle identifier_ uniquely identifies your application. 
-In this example, we set the **Debug-development** value to equal 
+In this example, we set the **Debug-free-example** value to equal 
 `com.flavor-test.dev`. 
 
 <ol markdown="1">
 <li markdown="1">
 
 Change the app bundle identifier to differentiate between schemes. 
-In **Product Bundle Identifier**, append `.dev` to each -development scheme value.
+In **Product Bundle Identifier**, append `.dev` to each -free-example scheme value.
 
 ![Step 1 using flavors image.](/assets/images/docs/flavors/step1-using-flavors.png){:width="100%"}  
 
@@ -169,7 +169,20 @@ You can now run the terminal command
 `flutter run --flavor [environment name]` or you can set up a run 
 configuration in your IDE.
 
-![Image for VSCode launch configuration step.](/assets/images/docs/flavors/vscode-config.png){:width="100%"}  
+```ruby
+productFlavors {
+    development {
+        dimension "default"
+        resValue "string", "app_name", "dev free flavor example"
+        applicationId ".dev"
+    }
+    production {
+        dimension "default"
+        resValue "string", "app_name", "prod free flavor example"
+        applicationId ""
+    }
+}
+``` 
 
 ## Launching your app flavors
 
