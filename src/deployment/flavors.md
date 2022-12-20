@@ -49,16 +49,16 @@ Open your project in Xcode.
 Select **Runner** > **New Scheme** from the menu to add a new `Scheme`.  
 * A scheme describes how Xcode runs different actions. 
   For the purposes of this guide, the example _flavor_ and _scheme_ are 
-  named `free-example`. 
-  The build configurations in the development scheme 
-  have the `-free-example` suffix. 
+  named `free`. 
+  The build configurations in the `free` scheme 
+  have the `-free` suffix. 
 
 </li>
 <li markdown="1">
 
 Duplicate the build configurations to differentiate between the 
 default configurations that are already available and the new configurations 
-for the `free-example` scheme. 
+for the `free` scheme. 
 * Under the **Info** tab at the end of the 
 **Configurations** dropdown list, click the plus button and duplicate 
 each configuration name (Debug, Release, and Profile). 
@@ -73,13 +73,13 @@ Duplicate the listed production configurations, once for each environment.
 </li>
 <li markdown="1">
 
-To match the development flavor, add `-free-example` 
+To match the development flavor, add `-free` 
 at the end of each new configuration name. 
 
 </li>
 <li markdown="1">
 
-Change the `free-example` scheme to match the development 
+Change the `free` scheme to match the development 
 build configurations already created.
 * In the **Runner** project, click **Manage Schemes…** and a pop up window opens. 
 * Double click the development scheme. In the next step 
@@ -103,7 +103,7 @@ In this example, we set the **Debug-free-example** value to equal
 <li markdown="1">
 
 Change the app bundle identifier to differentiate between schemes. 
-In **Product Bundle Identifier**, append `.dev` to each -free-example scheme value.
+In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 
 ![Step 1 using flavors image.](/assets/images/docs/flavors/step1-using-flavors.png){:width="100%"}  
 
@@ -125,7 +125,7 @@ with the value `$(PRODUCT_NAME)`.
 </li>
 </ol>
 
-Now you have set up your development flavor by making a `development` scheme 
+Now you have set up your development flavor by making a `free` scheme 
 in Xcode and setting the build configurations for that scheme. 
 
 For more information, skip to the [“Launching your app flavors”][] 
@@ -136,9 +136,18 @@ section at the end of this document.
 If your app has a Flutter plugin, you will need to update the `ios/Podfile`. 
 
 1. In `ios/Podfile` change the default of **Debug**, **Profile**, and **Release** 
-to match the Xcode build configurations for the `paid` scheme.
+to match the Xcode build configurations for the `free` scheme.
 
-![Podfile configuration image.](/assets/images/docs/flavors/podfile-config.png){:width="80%"}
+```ruby
+project 'Runner', {
+  'Debug-free' => :debug,
+  'Debug-production' => :debug,
+  'Profile-free' => :release,
+  'Profile-production' => :release,
+  'Release-free' => :release,
+  'Release-production' => :release,
+}
+```
 
 ## Using flavors in Android
 
