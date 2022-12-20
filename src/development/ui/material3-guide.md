@@ -19,7 +19,7 @@ and typography.
 ## Key updates
 Though the migration to Material 3 continues, 
 it introduces several major changes from older Material versions. 
-You can demo the Material 3 features with the [Material 3 Flutter] showcase[].
+You can demo the Material 3 features with the [Material 3 Flutter][] showcase.
 
 ### New widgets
 
