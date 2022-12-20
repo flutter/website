@@ -19,7 +19,7 @@ and typography.
 ## Key updates
 Though the migration to Material 3 continues, 
 it introduces several major changes from older Material versions. 
-You can demo the Material 3 features with the Material 3 Flutter Showcase.
+You can demo the Material 3 features with the [Material 3 Flutter] showcase[].
 
 ### New widgets
 
@@ -55,7 +55,7 @@ The community tracks the migration of Material 3 to Flutter in the
 ## How to use Material 3 in your Flutter app
 
 By default, all Material widgets use Material 2.
-To enable Material 3, construct [`ThemeData()`][] with the 
+To enable Material 3, construct [`ThemeData`][] with the 
 [`useMaterial3` property][] set to `true`.
 In using this property, you choose, or opt-in to use Material 3. 
 
@@ -64,8 +64,8 @@ void main() {
   runApp(
     MaterialApp(
       title: 'Material 3 Property',
-      theme: ThemeData(),
-        useMaterial3: true,
+      theme: ThemeData(
+        useMaterial3: true
       ),
     ),
   );
@@ -84,6 +84,7 @@ check out:
 
 * [Bring Material 3 to Flutter][] GitHub issue 
 * [Material 3 - Flutter][] page 
+* [Material 3 Flutter][] showcase
 * [Migrating a Flutter app to Material 3][] blog post by Taha Tesser
 * [Migrating to Material Design 3][] blog post by James Williams
 
@@ -98,11 +99,12 @@ check out:
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`MaterialApp()`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [Material 3 - Flutter]: https://m3.material.io/develop/flutter
+[Material 3 Flutter]: https://flutter.github.io/samples/web/material_3_demo
 [Migrating a Flutter app to Material 3]: https://blog.codemagic.io/migrating-a-flutter-app-to-material-3/
 [Migrating to Material Design 3]: https://material.io/blog/blog/blog/migrating-material-3
 [`NavigationBar`]: {{site.api}}/flutter/material/NavigationBar-class.html
 [`NavigationDrawer`]: https://m3.material.io/components/navigation-drawer/overview 
 [`OutlinedButton`]:  {{site.api}}/flutter/material/OutlinedButton-class.html
 [`SegmentedButton`]: https://m3.material.io/components/segmented-buttons/overview
-[`ThemeData()`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
 [`useMaterial3` property]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
