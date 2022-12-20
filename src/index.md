@@ -131,7 +131,7 @@ see our [videos][] page.
 
 We release new videos almost every week on the Flutter YouTube channel:
 
-<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/c/flutterdev">Explore more Flutter videos</a>
+<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
 
 **The documentation on this site reflects the
 latest stable release of Flutter.**

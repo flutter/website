@@ -18,7 +18,7 @@ but there are many others.
 Here are some of the series offered on the
 [flutterdev YouTube channel][].
 
-[flutterdev YouTube channel]: {{site.youtube-site}}/@flutterdev
+[flutterdev YouTube channel]: {{site.social.youtube}}
 
 ### Flutter at Google I/O 2022
 

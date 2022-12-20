@@ -228,7 +228,7 @@ Learn more about Flutter animations at the following links:
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
 [Animation recipes]: {{site.url}}/cookbook/animation
 [Animation samples]: {{site.github}}/flutter/samples/tree/main/animations#animation-samples
-[Animation videos]: {{site.youtube-site}}/@flutterdev/search?query=animation
+[Animation videos]: {{site.social.youtube}}/search?query=animation
 [Animations in Flutter done right]: {{site.youtube-site}}/watch?v=wnARLByOtKA&t=3s
 [Animations: overview]: {{site.url}}/development/ui/animations/overview
 [animations package]: {{site.pub}}/packages/animations

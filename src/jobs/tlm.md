@@ -14,7 +14,7 @@ A few of our projects:
 
 * Learning tools like the online code editor [DartPad](https://dartpad.dev)
 * Learning resources like [codelabs, guides, and samples](https://docs.flutter.dev)
-* Outreach via channels like [YouTube](https://youtube.com/flutterdev), social
+* Outreach via channels like [YouTube](https://youtube.com/@flutterdev), social
   media, and events
 * Partnership with engineering on Dart/Flutter's developer experience
 * A worldwide community of Flutter Meetups, conferences, and other groups.
