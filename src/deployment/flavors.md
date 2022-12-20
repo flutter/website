@@ -17,14 +17,15 @@ The free version of the app has basic functionality and ads (for example).
 In contrast, the paid version has basic app functionality, extra features, 
 different styles for paid users, and no ads. 
 
-Another example where you might use flavors is for feature development. 
+You also might use flavors for feature development. 
 If you’ve built a new feature and want to try it out, 
-you could set up a flavor to test out the feature. 
+you could set up a flavor to test it out. 
 Your production code remains unaffected 
-until you are ready to deploy your new feature.
+until you're ready to deploy your new feature.
 
-Flavors function by letting you define compile time configurations 
-and set parameters that are read at runtime depending on your app needs.
+Flavors let you define compile-time configurations 
+and set parameters that are read at runtime to customize
+your app's behavior.
 
 This document guides you through setting up Flutter flavors for iOS and Android. 
 
@@ -45,19 +46,19 @@ Open your project in Xcode.
 </li>
 <li markdown=1>
 
-Select **Runner** > **New Scheme** from the menu to add a new Scheme.  
+Select **Runner** > **New Scheme** from the menu to add a new `Scheme`.  
 * A scheme describes how Xcode runs different actions. 
   For the purposes of this guide, the example _flavor_ and _scheme_ are 
-  named `development`. 
+  named `paid`. 
   The build configurations in the development scheme 
-  have the `-development` suffix. 
+  have the `-paid` suffix. 
 
 </li>
 <li markdown="1">
 
 Duplicate the build configurations to differentiate between the 
 default configurations that are already available and the new configurations 
-for the `development` scheme. 
+for the `paid` scheme. 
 * Under the **Info** tab at the end of the 
 **Configurations** dropdown list, click the plus button and duplicate 
 each configuration name (Debug, Release, and Profile). 
@@ -72,13 +73,13 @@ Duplicate the listed production configurations, once for each environment.
 </li>
 <li markdown="1">
 
-To match the development flavor, add `-development` 
+To match the development flavor, add `-paid` 
 at the end of each new configuration name. 
 
 </li>
 <li markdown="1">
 
-Change the `development` scheme to match the development 
+Change the `paid` scheme to match the development 
 build configurations already created.
 * In the **Runner** project, click **Manage Schemes…** and a pop up window opens. 
 * Double click the development scheme. In the next step 
@@ -135,13 +136,13 @@ section at the end of this document.
 If your app has a Flutter plugin, you will need to update the `ios/Podfile`. 
 
 1. In `ios/Podfile` change the default of **Debug**, **Profile**, and **Release** 
-to match the Xcode build configurations for the `development` scheme.
+to match the Xcode build configurations for the `paid` scheme.
 
 ![Podfile configuration image.](/assets/images/docs/flavors/podfile-config.png){:width="80%"}
 
 ## Using flavors in Android
 
-Setting up flavors in Android can be done in your projects 
+Setting up flavors in Android can be done in your project's 
 **build.gradle** file.
 
 1. In your IDE, inside your Flutter project, 
@@ -155,9 +156,9 @@ The name of the application for each build is located in **resValue**
 (as shown in the screenshot below from VSCode).
 ## Setting up launch configurations
 
-In VSCode, set up the launch configurations as follows:  
-Adding a **launch.json** file allows you to run the terminal command 
-`flutter run --flavor [environment name]`. 
+Next, you'll add a **launch.json** file allows you to run the command 
+`flutter run --flavor [environment name]`.    
+In VSCode, set up the launch configurations as follows:    
 1. In the root directory of your project, add a folder called **.vscode**.    
 2. Inside the **.vscode** folder, create a file named **launch.json**.    
 3. In the **launch.json** file, add a configuration object for each flavor. 
@@ -181,7 +182,8 @@ For examples of build flavors for [iOS (Xcode)][] and [Android][],
 check out the integration test samples in the [Flutter repo][]. 
 
 ## More information
-
+For more information on creating and using flavors, checkout
+the following resources:
 * [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor Flutter Ready to Go][]
 * [Flavoring Flutter Applications (Android & iOS)][]
 * [Flutter Flavors Setup with multiple Firebase Environments using FlutterFire and Very Good CLI][]
