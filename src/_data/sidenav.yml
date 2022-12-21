@@ -431,6 +431,8 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Inside Flutter
       permalink: /resources/inside-flutter
+    - title: Flutter vs. Swift Concurrency
+      permalink: /resources/dart-swift-concurrency
     - title: Official brand assets
       permalink: https://flutter.dev/brand
     - title: Platform adaptations
