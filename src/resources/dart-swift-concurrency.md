@@ -33,8 +33,8 @@ An `Isolate` is Dart's implementation of a lightweight thread.
 Unless you spawn an `Isolate`, your Dart code runs in the 
 main UI thread driven by an event loop. 
 Flutter’s event loop is 
-equivalent to the iOS main loop—that is, 
-the Looper that is attached to the main thread.
+equivalent to the iOS main loop—in other words, 
+the Looper attached to the main thread.
 
 Dart’s single-threaded model doesn’t mean 
 you are required to run everything 
@@ -54,17 +54,18 @@ and `await` tells the system to await a result
 from function. This means that the Dart VM _could_ 
 suspend the function, if necessary. 
 For more details on asynchronous programming, 
-see (Concurrency in Dart)[{{site.url}}/guides/language/concurrency].
+see [Concurrency in Dart]({{site.url}}/guides/language/concurrency).
 
-### Leveraging the Main Thread or Isolate
-For Apple operating systems, the primary– or main– 
+### Leveraging the main thread/isolate
+
+For Apple operating systems, the primary (also called the main) 
 thread is where the application begins running. 
-Drawing the user interface always happens on the main thread. 
-One difference between Swift and Dart is  
-Swift might use different threads for different tasks. 
-Swift also doesn’t guarantee which one is used. 
+Rendering the user interface always happens on the main thread. 
+One difference between Swift and Dart is that  
+Swift might use different threads for different tasks, 
+and Swift doesn’t guarantee which thread is used. 
 So, when dispatching UI updates in Swift, 
-you might need to ensure that work is run on the main thread. 
+you might need to ensure that the work occurs on the main thread. 
 
 Say you want to write a function that fetches the 
 weather asynchronously and 
@@ -76,7 +77,7 @@ you might do something like the following.
 First, define the `Weather` `enum`:
 
 ```swift
-// 1 second delay is used in mocked api-call. 
+// 1 second delay is used in mocked API call. 
 extension UInt64 {
   static let oneSecond = UInt64(1_000_000_000)
 } 
@@ -88,7 +89,7 @@ enum Weather: String {
 
 Next, define the view model and mark it as an `ObservableObject` 
 so that it can return a value of type `Weather?`. 
-Use GCD create a `DispatchQueue` to 
+Use GCD create to a `DispatchQueue` to 
 send the work to the pool of threads
 
 ```swift
@@ -124,8 +125,8 @@ struct ContentView: View {
 More recently, Swift introduced _actors_ to support 
 synchronization for shared, mutable state. 
 To ensure that work is performed on the main thread,
-use a view model class that is marked as a `@MainActor`, 
-and a `load()` function that internally calls an 
+define a view model class that is marked as a `@MainActor`, 
+with a `load()` function that internally calls an 
 asynchronous function using `Task`.   
 
 ```swift
@@ -139,8 +140,8 @@ asynchronous function using `Task`.
 }
 ```
 
-Next, the view model is defined as a state object using `@StateObject`, 
-and the `load()` function can be called by the view model:
+Next, define the view model as a state object using `@StateObject`, 
+with a `load()` function that can be called by the view model:
 
 ```swift
 struct ContentView: View {
@@ -198,7 +199,7 @@ inside functions marked as `async`.
 For the last step, display the weather value. 
 In Flutter, [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) and 
 [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)  
-widgets can be used to display the results of a Future in the UI. 
+widgets are used to display the results of a Future in the UI. 
 The following example uses a `FutureBuilder`:
 
 <?code-excerpt "lib/async_weather.dart (HomePageWidget)"?>
@@ -240,9 +241,10 @@ class HomePage extends StatelessWidget {
 For the complete example, see the [async_weather][] file on GitHub. 
 [async_weather]: {{site.github}}/flutter/website/tree/main/examples/resources/lib/async_weather.dart
 
-### Leveraging Background Threads or Isolates
-Flutter apps can run on a variety of multi-core hardware.  
-This includes devices running macOS and iOS. 
+### Leveraging a background thread/isolate
+
+Flutter apps can run on a variety of multi-core hardware, 
+including devices running macOS and iOS. 
 To improve the performance of these applications, 
 you must sometimes run tasks on different cores
 concurrently. This is especially important 
@@ -250,7 +252,7 @@ to avoid blocking UI rendering with long-running operations.
 
 In Swift, you can leverage GCD to run tasks on global queues
 with different quality of service class (qos) properties. 
-This indicates the tasks’ priority.
+This indicates the task's priority.
 
 ```swift
 func parse(string: String, completion: @escaping ([String:Any]) -> Void) {
@@ -266,8 +268,8 @@ func parse(string: String, completion: @escaping ([String:Any]) -> Void) {
 
 In Dart, you can offload computation to a worker isolate, 
 often called a background worker. 
-A common case is spawning a simple worker isolate and 
-returning the results in a message when the worker exits. 
+A common scenario spawns a simple worker isolate and 
+returns the results in a message when the worker exits. 
 As of Dart 2.19, you can use `Isolate.run()` to 
 spawn an isolate and run computations:
 
