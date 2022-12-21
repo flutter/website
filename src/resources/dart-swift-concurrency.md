@@ -238,8 +238,11 @@ class HomePage extends StatelessWidget {
 }
 ```
 
+{% comment %}
+Add the following text back when the example is available.
 For the complete example, see the [async_weather][] file on GitHub. 
 [async_weather]: {{site.github}}/flutter/website/tree/main/examples/resources/lib/async_weather.dart
+{% endcomment %}
 
 ### Leveraging a background thread/isolate
 
