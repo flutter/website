@@ -2280,7 +2280,7 @@ plugin documentation.
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [`flutter_facebook_login`]: {{site.pub-pkg}}/flutter_facebook_login
 [Flutter cookbook]: {{site.url}}/cookbook
-[Flutter Youtube channel]: {{site.youtube-site}}/flutterdev
+[Flutter Youtube channel]: {{site.social.youtube}}
 [`geolocator`]: {{site.pub-pkg}}/geolocator
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/

@@ -573,8 +573,7 @@ class _ExampleInstagramFilterSelectionState
   Widget _buildPhotoWithFilter() {
     return ValueListenableBuilder(
       valueListenable: _filterColor,
-      builder: (context, value, child) {
-        final color = value as Color;
+      builder: (context, color, child) {
         return Image.network(
           'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
           color: color.withOpacity(0.5),
