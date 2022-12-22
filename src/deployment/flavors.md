@@ -73,31 +73,30 @@ Duplicate the existing configurations, once for each environment.
 </li>
 <li markdown="1">
 
-To match the development flavor, add `-free` 
+To match the free flavor, add `-free` 
 at the end of each new configuration name. 
 
 </li>
 <li markdown="1">
 
-Change the `free` scheme to match the development 
-build configurations already created.
+Change the `free` scheme to match the build configurations already created.
 * In the **Runner** project, click **Manage Schemes…** and a pop up window opens. 
-* Double click the development scheme. In the next step 
+* Double click the free scheme. In the next step 
 (as shown in the screenshot), you’ll modify each scheme 
 to match its free build configuration:
 
-![Step 5 Xcode image](/assets/images/docs/flavors/step5-ios-scheme.png){:width="100%"}
+![Step 5 Xcode image](/assets/images/docs/flavors/step-5-ios-scheme.png){:width="100%"}
 
 </li>
 </ol>
 
 ## Using flavors in iOS
 
-Now that you’ve set up your development flavor, 
+Now that you’ve set up your free flavor, 
 you can, for example, add different product bundle identifiers per flavor. 
 A _bundle identifier_ uniquely identifies your application. 
-In this example, we set the **Debug-free-example** value to equal 
-`com.flavor-test.dev`. 
+In this example, we set the **Debug-free** value to equal 
+`com.flavor-test.free`. 
 
 <ol markdown="1">
 <li markdown="1">
@@ -105,15 +104,15 @@ In this example, we set the **Debug-free-example** value to equal
 Change the app bundle identifier to differentiate between schemes. 
 In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 
-![Step 1 using flavors image.](/assets/images/docs/flavors/step1-using-flavors.png){:width="100%"}  
+![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors.png){:width="100%"}  
 
 </li>
 <li markdown=1>
 
 In the **Build Settings**, set the **Product Name** value to match each flavor. 
-For example, add Debug free. 
+For example, add Debug Free. 
 
-![Step 2 using flavors image.](/assets/images/docs/flavors/step2-using-flavors.png){:width="100%"}  
+![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors.png){:width="100%"}  
 
 </li>
 <li markdown=1>
@@ -126,7 +125,7 @@ with the value `$(PRODUCT_NAME)`.
 </li>
 </ol>
 
-Now you have set up your development flavor by making a `free` scheme 
+Now you have set up your flavor by making a `free` scheme 
 in Xcode and setting the build configurations for that scheme. 
 
 For more information, skip to the [Launching your app flavors][] 
@@ -153,26 +152,19 @@ Setting up flavors in Android can be done in your project's
 **build.gradle** file.
 
 1. In VSCode, inside your Flutter project, 
-navigate to **android** > **app** > **build.gradle**.   
+navigate to **android**/**app**/**build.gradle**.     
 
-![Step 1 using flavors in Android image.](/assets/images/docs/flavors/android-step1.png){:width="100%"}    
-
-Add a flavor object with the specified environments along with values for 
+2. Add a flavor object with the specified environments along with values for 
 **dimension**, **resValue**, and **applicationId**. 
-The name of the application for each build is located in **resValue** 
+  * The name of the application for each build is located in **resValue** 
 (as shown in the snippet below from VSCode).
 
 ```ruby
-productFlavors {
+flavor {
     free {
         dimension "default"
         resValue "string", "app_name", "free flavor example"
         applicationId ".free"
-    }
-    production {
-        dimension "default"
-        resValue "string", "app_name", "prod free flavor example"
-        applicationId ""
     }
 }
 ```
@@ -189,10 +181,28 @@ In VSCode, set up the launch configurations as follows:
 Each configuration has a **name**, **request**, **type**, **program**, 
 and **args** key.
 
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "free",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_development.dart",
+      "args": ["--flavor", "development", "--target", "lib/main_development.dart" ]
+    }
+  ],
+  "compounds": []
+}
+```
 You can now run the terminal command 
 `flutter run --flavor free` or you can set up a run 
-configuration in your IDE. {} in comment if you don't have an example. TBD - when available add a screenshot  
+configuration in your IDE.
 
+{% comment %}
+TODO: When available, add an app sample.
+{% endcomment -%}
 ## Launching your app flavors
 
 1. Once the flavors are set up, modify the Dart code in 
