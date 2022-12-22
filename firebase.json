@@ -62,6 +62,7 @@
       { "source": "/intellij-ide", "destination": "/development/tools/android-studio", "type": 301 },
       { "source": "/intellij-setup", "destination": "/get-started/editor", "type": 301 },
       { "source": "/ios-release", "destination": "/deployment/ios", "type": 301 },
+      { "source": "/jobs/**", "destination": "/jobs", "type": 301 },
       { "source": "/json", "destination": "/development/data-and-backend/json", "type": 301 },
       { "source": "/layout", "destination": "/development/ui/layout/box-constraints", "type": 301 },
       { "source": "/networking", "destination": "/cookbook/networking/fetch-data", "type": 301 },
