@@ -2,7 +2,7 @@
 title: Using the Memory view
 description: Learn how to use the DevTools memory view.
 ---
-
+<!-- IT might be good to indicate where memory view can be found so the reader can understand this in the context that they have seen it before. For example putting a picture of it and the tab that it is on -->
 The memory view provides insights into details
 of the application’s memory allocation and
 tools to detect and debug specific issues.
@@ -24,6 +24,7 @@ conditions:
 * Exceeds memory usage limit 
   * This limit can vary depending on the type of devices your app targets.
 * Suspect a memory leak 
+<!-- might be worth mentioning that this can be used for preemptive optimizations too. -->
 
 ## Basic memory concepts
 
@@ -31,24 +32,27 @@ Dart objects created using a class constructor
 (for example, by using `MyClass()`) live in a
 portion of memory called the _heap_. The memory
 in the heap is managed by the Dart VM (virtual machine).
-The VM allocates memory for the object on object creation,
+The Dart VM allocates memory for the object on object creation,
 and releases (or deallocates) the memory when the object
 is no longer used (see [Dart garbage collection][]). 
 
 [Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
 
-### Root object, retaining path, and reachability
+### Root object, reachability, and retaining path
+<!-- These aspects would benefit from the ability to skim them, something like these bullets might be effective-->
+- Root Object
+  - Every Dart application creates a _root object_ that references,
+  directly or indirectly, all other objects the application allocates. 
 
-Every Dart application creates a _root object_ that references,
-directly or indirectly, all other objects the application allocates. 
-
-If, at some moment of the application run,
+- Reachability
+  - If, at some moment of the application run,
 the root object stops referencing an allocated object,
 the object becomes _unreachable_,
 which is a signal for the garbage collector (GC)
 to deallocate the object’s memory. 
 
-The sequence of references from root to an object
+- Retaining Path
+  - The sequence of references from root to an object
 is called the object's _retaining_ path,
 as it retains the object’s memory from the garbage collection.
 One object can have many retaining paths.
@@ -71,7 +75,7 @@ void myFunction() {
   Child? child = Child();
   
   // The `child` object was allocated memory
-  // and is retained (exempt) from garbage collection
+  // and is retained. It is currently exempt from garbage collection
   // by one retaining path (root …-> myFunction -> child).
   
   Parent? parent2 = Parent()..child = child;
@@ -87,7 +91,7 @@ void myFunction() {
   parent2 = null;
   
   // At this point, the `child` instance is unreachable
-  // and will therefore be garbage collected.
+  // and will eventually be garbage collected.
   
   …
 }
@@ -95,9 +99,10 @@ void myFunction() {
 
 ### Shallow size vs retained size
 
-Shallow size includes only the size of the object
-and its references, while retained size also includes
-the size of the retained objects.
+- Shallow size:
+  - the size of the object and its references.
+- Retained size:
+  - the size of the object, its references, and the size of the retained objects.
 
 The retaining size of the root object includes
 all reachable Dart objects.
@@ -110,7 +115,7 @@ but is part of their retained sizes:
 class Child{
   final myHugeInstance = MyHugeInstance();
 }
- 
+ <!-- Perhaps pull the infor out of the paragraph above and add comments to the example so each of the individual important parts can be clearer-->
 class Parent {
   Child? child;
 }
@@ -122,10 +127,11 @@ In DevTools calculations, if an object has more
 than one retaining path, its size is assigned as
 retained only to the members of the shortest retaining path.
 
+<!-- this paragraph and it's example take a lot of re-reading to understand. I think it might need a clearer way of being explained. -->
 For example, if the object `x` has two retaining paths,
 in DevTools the retaining size of `d` and `e` includes
 the size of `x`, while the retaining path of `a`, `b`,
-and `c` won't:
+and `c` won't: 
 
 ```terminal
 root -> a -> b -> c -> x
@@ -144,6 +150,7 @@ and total memory allocation breakdown on the **Profile** tab:
 ![Screenshot of a profile page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab.png)
 
 ### How can memory leaks happen in Dart?
+<!-- This section has a lot of important aspects and seems to be long enough that it is hard to parse each of them. I feel like it might benefit from some more sections or ways of breaking up the content into its parts -->
 
 While the garbage collector takes care of all
 unreachable objects, it’s the responsibility
@@ -156,6 +163,7 @@ or as a field of a long-living object),
 the memory allocation grows progressively,
 and the app eventually crashes with an `out-of-memory` error.
 
+<!-- perhaps this hard to reach example have its own section? -->
 One hard-to-catch leak pattern relates to using closures.
 In the following code, a reference to the
 designed-to-be short-living `myHugeObject` is implicitly
@@ -184,6 +192,7 @@ Widget build(BuildContext context) {
 …
 ```
 
+<!-- The long living aspect here is a bit confusing. Won't it still be a leak, it just wont grow with time? -->
 The following code is not leak prone,
 as (1) the closure doesn’t use the context directly,
 and (2) the theme is a long-living object
@@ -198,7 +207,7 @@ Widget build(BuildContext context) {
   useHandler(handler);
 …
 ```
-
+<!-- This seems like it is an important statement and is kind of buried in a really long section. -->
 In general, use the following rule for a
 `BuildContext`: if the closure doesn’t outlive
 the widget, it's ok to pass the context to the closure. 
@@ -226,6 +235,7 @@ images or keeping streams open through their lifetime.
 
 Both leaks and bloats, when large,
 cause an application to crash with an `out-of-memory` error.
+<!-- r/dangerous/likely to cause memory issues/ -->
 However, leaks are more dangerous, because even a small leak,
 if repeated many times, leads to a crash. 
 
@@ -246,7 +256,7 @@ has the following features:
   memory type (Dart or external/native). 
 
 [**Diff** tab](#diff-tab)
-: Detect and investigate a feature’s memory management issues.
+: Detect and investigate a feature’s memory management.
 
 [**Trace** tab](#trace-tab)
 : Investigate a feature’s memory management for
