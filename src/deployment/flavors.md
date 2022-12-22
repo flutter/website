@@ -10,7 +10,7 @@ create separate environments for your app using the same code base.
 For example, you might have one flavor for your full-fledged production app, 
 another as a limited "free" app, another for testing experimental features, and so on. 
 
-Let's say you want to make both free and paid versions of your Flutter app. 
+Say you want to make both free and paid versions of your Flutter app. 
 You can use flavors to set up both app versions 
 without writing two separate apps. 
 The free version of the app has basic functionality and ads (for example). 
@@ -32,7 +32,7 @@ This document guides you through setting up Flutter flavors for iOS and Android.
 ## Environment set up
 Prerequisites:
 * Xcode installed
-* An existing project 
+* An existing Flutter project 
 
 To set up flavors in iOS, you’ll define build configurations in Xcode. 
 
@@ -62,7 +62,7 @@ for the `free` scheme.
 * Under the **Info** tab at the end of the 
 **Configurations** dropdown list, click the plus button and duplicate 
 each configuration name (Debug, Release, and Profile). 
-Duplicate the listed production configurations, once for each environment. 
+Duplicate the existing configurations, once for each environment. 
 
 ![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
 {{site.alert.note}}
@@ -84,7 +84,7 @@ build configurations already created.
 * In the **Runner** project, click **Manage Schemes…** and a pop up window opens. 
 * Double click the development scheme. In the next step 
 (as shown in the screenshot), you’ll modify each scheme 
-to match its dev build configuration:
+to match its free build configuration:
 
 ![Step 5 Xcode image](/assets/images/docs/flavors/step5-ios-scheme.png){:width="100%"}
 
@@ -111,6 +111,7 @@ In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 <li markdown=1>
 
 In the **Build Settings**, set the **Product Name** value to match each flavor. 
+For example, add Debug free. 
 
 ![Step 2 using flavors image.](/assets/images/docs/flavors/step2-using-flavors.png){:width="100%"}  
 
@@ -128,24 +129,21 @@ with the value `$(PRODUCT_NAME)`.
 Now you have set up your development flavor by making a `free` scheme 
 in Xcode and setting the build configurations for that scheme. 
 
-For more information, skip to the [“Launching your app flavors”][] 
+For more information, skip to the [Launching your app flavors][] 
 section at the end of this document.
 
 ### Plugin configurations
 
-If your app has a Flutter plugin, you will need to update the `ios/Podfile`. 
+If your app uses a Flutter plugin, you need to update the `ios/Podfile`. 
 
-1. In `ios/Podfile` change the default of **Debug**, **Profile**, and **Release** 
+1. In `ios/Podfile` change the default for **Debug**, **Profile**, and **Release** 
 to match the Xcode build configurations for the `free` scheme.
 
 ```ruby
 project 'Runner', {
   'Debug-free' => :debug,
-  'Debug-production' => :debug,
   'Profile-free' => :release,
-  'Profile-production' => :release,
   'Release-free' => :release,
-  'Release-production' => :release,
 }
 ```
 
@@ -154,7 +152,7 @@ project 'Runner', {
 Setting up flavors in Android can be done in your project's 
 **build.gradle** file.
 
-1. In your IDE, inside your Flutter project, 
+1. In VSCode, inside your Flutter project, 
 navigate to **android** > **app** > **build.gradle**.   
 
 ![Step 1 using flavors in Android image.](/assets/images/docs/flavors/android-step1.png){:width="100%"}    
@@ -162,11 +160,28 @@ navigate to **android** > **app** > **build.gradle**.
 Add a flavor object with the specified environments along with values for 
 **dimension**, **resValue**, and **applicationId**. 
 The name of the application for each build is located in **resValue** 
-(as shown in the screenshot below from VSCode).
+(as shown in the snippet below from VSCode).
+
+```ruby
+productFlavors {
+    free {
+        dimension "default"
+        resValue "string", "app_name", "free flavor example"
+        applicationId ".free"
+    }
+    production {
+        dimension "default"
+        resValue "string", "app_name", "prod free flavor example"
+        applicationId ""
+    }
+}
+```
+
 ## Setting up launch configurations
 
-Next, you'll add a **launch.json** file allows you to run the command 
-`flutter run --flavor [environment name]`.    
+Next, add a **launch.json** file; this allows you to run the command 
+`flutter run --flavor [environment name]`.
+
 In VSCode, set up the launch configurations as follows:    
 1. In the root directory of your project, add a folder called **.vscode**.    
 2. Inside the **.vscode** folder, create a file named **launch.json**.    
@@ -175,49 +190,33 @@ Each configuration has a **name**, **request**, **type**, **program**,
 and **args** key.
 
 You can now run the terminal command 
-`flutter run --flavor [environment name]` or you can set up a run 
-configuration in your IDE.
-
-```ruby
-productFlavors {
-    development {
-        dimension "default"
-        resValue "string", "app_name", "dev free flavor example"
-        applicationId ".dev"
-    }
-    production {
-        dimension "default"
-        resValue "string", "app_name", "prod free flavor example"
-        applicationId ""
-    }
-}
-``` 
+`flutter run --flavor free` or you can set up a run 
+configuration in your IDE. {} in comment if you don't have an example. TBD - when available add a screenshot  
 
 ## Launching your app flavors
 
 1. Once the flavors are set up, modify the Dart code in 
-**lib** > **main.dart** to consume the flavors. 
-2. Test the setup using `flutter run --flavor [environment name]` 
-at the command line, or by setting up a run configuration in your IDE. 
+**lib** / **main.dart** to consume the flavors. 
+2. Test the setup using `flutter run --flavor free` 
+at the command line, or in your IDE. 
 
 For examples of build flavors for [iOS (Xcode)][] and [Android][], 
 check out the integration test samples in the [Flutter repo][]. 
 
 ## More information
-For more information on creating and using flavors, checkout
+For more information on creating and using flavors, check out
 the following resources:
 * [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor Flutter Ready to Go][]
 * [Flavoring Flutter Applications (Android & iOS)][]
 * [Flutter Flavors Setup with multiple Firebase Environments using FlutterFire and Very Good CLI][]
 
 ### Packages
-There are packages available that support creating flavors for your app. 
-
+For packages that support creating flavors, check out the following: 
 
 * [`flutter_flavor`][]
 * [`flutter_flavorizr`][]
 
-[“Launching your app flavors”]: {{site.url}}/deployment/flavors/#launching-your-app-flavors
+[Launching your app flavors]: {{site.url}}/deployment/flavors/#launching-your-app-flavors
 [Flutter repo]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flavors/lib/main.dart
 [iOS (Xcode)]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
 [Android]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/android
