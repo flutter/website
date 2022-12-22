@@ -13,7 +13,7 @@ another as a limited "free" app, another for testing experimental features, and 
 Say you want to make both free and paid versions of your Flutter app. 
 You can use flavors to set up both app versions 
 without writing two separate apps. 
-The free version of the app has basic functionality and ads (for example). 
+For example, the free version of the app has basic functionality and ads. 
 In contrast, the paid version has basic app functionality, extra features, 
 different styles for paid users, and no ads. 
 
