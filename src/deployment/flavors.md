@@ -117,8 +117,8 @@ For example, add Debug Free.
 </li>
 <li markdown=1>
 
-Add the display name to **info.plist**. Create a new key in **info.plist** called **Bundle Display Name** 
-with the value `$(PRODUCT_NAME)`. 
+Add the display name to **Info.plist**. Update the **Bundle Display Name** 
+value to `$(PRODUCT_NAME)`. 
 
 ![Step 3 using flavors image.](/assets/images/docs/flavors/step3-using-flavors.png){:width="100%"}    
 
@@ -190,7 +190,7 @@ and **args** key.
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",
-      "args": ["--flavor", "development", "--target", "lib/main_development.dart" ]
+      "args": ["--flavor", "free", "--target", "lib/main_free.dart" ]
     }
   ],
   "compounds": []
