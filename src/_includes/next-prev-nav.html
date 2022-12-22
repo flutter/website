@@ -1,7 +1,8 @@
 {% if page.next or page.prev -%}
-  {% assign nav_class = 'site-nextprev-nav__single' -%}
   {% if page.next and page.prev -%}
     {% assign nav_class = 'site-nextprev-nav' -%}
+  {% else -%}
+    {% assign nav_class = 'site-nextprev-nav__single' -%}
   {% endif -%}
   <nav class="{{nav_class}}">
     <ul>
