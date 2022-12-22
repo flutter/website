@@ -85,7 +85,7 @@ Change the `free` scheme to match the build configurations already created.
 (as shown in the screenshot), you’ll modify each scheme 
 to match its free build configuration:
 
-![Step 5 Xcode image](/assets/images/docs/flavors/step-5-ios-scheme.png){:width="100%"}
+![Step 5 Xcode image](/assets/images/docs/flavors/step-5-ios-scheme-free.png){:width="100%"}
 
 </li>
 </ol>
@@ -104,7 +104,7 @@ In this example, we set the **Debug-free** value to equal
 Change the app bundle identifier to differentiate between schemes. 
 In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 
-![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors.png){:width="100%"}  
+![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors-free.png){:width="100%"}  
 
 </li>
 <li markdown=1>
@@ -112,7 +112,7 @@ In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 In the **Build Settings**, set the **Product Name** value to match each flavor. 
 For example, add Debug Free. 
 
-![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors.png){:width="100%"}  
+![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors-free.png){:width="100%"}  
 
 </li>
 <li markdown=1>
