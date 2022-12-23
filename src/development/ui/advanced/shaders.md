@@ -239,7 +239,7 @@ For a more detailed guide on writing performant shaders,
 check out [Writing efficient shaders][] on GitHub.
 
 [Shader compilation jank]: {{site.url}}/perf/shader
-[Writing efficient shaders]: {{site.github}}/flutter/engine/blob/main/impeller/docs/shader_optimization.md)
+[Writing efficient shaders]: {{site.github}}/flutter/engine/blob/main/impeller/docs/shader_optimization.md
 
 ### Other resources
 
