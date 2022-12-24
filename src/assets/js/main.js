@@ -20,15 +20,15 @@ $(function () {
   prettyPrint();
 });
 
-// TODO(chalin): Copied (& tweaked) from site-www, consider moving into site-shared
 function adjustToc() {
   // Adjustments to the jekyll-toc TOC.
 
   var tocId = '#site-toc--side';
-  var tocWrapper = $(tocId);
-  $(tocWrapper).find('.site-toc--button__page-top').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 'fast');
-  })
+  // Uncomment to enable 'page top' button
+  // var tocWrapper = $(tocId);
+  // $(tocWrapper).find('.site-toc--button__page-top').click(function () {
+  //   $('html, body').animate({ scrollTop: 0 }, 'fast');
+  // })
 
   $('body').scrollspy({ offset: 100, target: tocId });
 }

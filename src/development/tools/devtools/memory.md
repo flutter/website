@@ -12,6 +12,19 @@ the first section explains how Dart manages memory.
 If you already understand Dart’s memory management,
 you can skip to the [Memory view guide](#memory-view-guide).
 
+## Reasons to use the memory view
+
+Use the memory view when your application experiences one of the following
+conditions:
+
+* Crashes when it runs out of memory
+* Slows down
+* Causes the device to slow down or become unresponsive
+* Shuts down because it exceeded the operating system memory usage
+* Exceeds memory usage limit 
+  * This limit can vary depending on the type of devices your app targets.
+* Suspect a memory leak 
+
 ## Basic memory concepts
 
 Dart objects created using a class constructor
@@ -22,7 +35,7 @@ The VM allocates memory for the object on object creation,
 and releases (or deallocates) the memory when the object
 is no longer used (see [Dart garbage collection][]). 
 
-[Dart garbage collection]: {{site.medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
+[Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
 
 ### Root object, retaining path, and reachability
 

@@ -1,0 +1,27 @@
+{% comment %}
+  Include parameters:
+
+  - toc_content: The HTML toc content
+  - class: CSS classes to add to toc element.
+  - header: header text, default 'Contents'
+
+  If you don't want the back-to-top button style `site-toc__back-to-top` as `display: none`.
+{% endcomment -%}
+
+{% assign toc = include.toc_content -%}
+
+{% comment %}
+  A TOC without <li> elements is empty. Only generate a TOC <div> for non-empty TOCs.
+{% endcomment -%}
+
+{% if toc contains "<li" -%}
+  <div
+    id="site-toc--inline"
+    class="site-toc site-toc--inline {{include.class}}"
+  >
+    <header class="site-toc__title">
+      {{include.header | default: 'Contents'}}
+    </header>
+    {{ toc }}
+  </div>
+{% endif -%}

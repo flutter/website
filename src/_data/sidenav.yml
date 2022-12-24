@@ -116,6 +116,8 @@
               permalink: /development/ui/advanced/slivers
             - title: Splash screens
               permalink: /development/ui/advanced/splash-screen
+        - title: Material 3 updates
+          permalink: /development/ui/material3-updates
         - title: Widget catalog
           permalink: /development/ui/widgets
     - title: Data & backend
@@ -431,6 +433,8 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Inside Flutter
       permalink: /resources/inside-flutter
+    - title: Flutter vs. Swift Concurrency
+      permalink: /resources/dart-swift-concurrency
     - title: Official brand assets
       permalink: https://flutter.dev/brand
     - title: Platform adaptations
