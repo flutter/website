@@ -47,10 +47,15 @@ function initFixedColumns() {
     }
 
     var headerHeight = $(headerSelector).outerHeight();
-    var bannerHeight = $(bannerSelector).outerHeight();
-    var bannerOffset = $(bannerSelector).offset().top;
-    var bannerPosition = bannerOffset - $(window).scrollTop();
-    var bannerVisibleHeight = Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
+    var bannerVisibleHeight = 0;
+    // First, make sure the banner element even exists on the page.
+    if ($(bannerSelector).length > 0) {
+      var bannerHeight = $(bannerSelector).outerHeight();
+      var bannerOffset = $(bannerSelector).offset().top;
+      var bannerPosition = bannerOffset - $(window).scrollTop();
+      bannerVisibleHeight =
+          Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
+    }
     var topOffset = headerHeight + bannerVisibleHeight;
 
     var footerOffset = $(footerSelector).offset().top;
