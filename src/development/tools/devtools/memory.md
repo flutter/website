@@ -17,7 +17,7 @@ you can skip to the [Memory view guide](#memory-view-guide).
 
 ## Reasons to use the memory view
 
-Use the memory view when for preemptive memory optimization or if
+Use the memory view for preemptive memory optimization or when
 your application experiences one of the following conditions:
 
 * Crashes when it runs out of memory
