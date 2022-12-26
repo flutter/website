@@ -185,7 +185,7 @@ as long as `handler` is reachable.
   final handler = () => print(myHugeObject.name);  
   setHandler(handler);
 ```
-#### Why `buildContext` require extra attention?
+#### Why `BuildContext` requires extra attention?
 
 An example of a large, short-living object that
 might squeeze into a long-living area and thus cause leaks,
@@ -198,7 +198,7 @@ in a long-living area:
 
 ```dart
 // BAD: DO NOT DO THIS
-// Leak prone code;
+// This code is leak prone:
 @override
 Widget build(BuildContext context) {
   final handler = () => apply(Theme.of(context));  
@@ -209,10 +209,11 @@ Widget build(BuildContext context) {
 #### How to fix leak prone code?
 
 The following code is not leak prone,
-as (1) the closure doesn’t use the big and short 
-object `context` directly,
+as (1) the closure doesn’t use the big and short living
+object `context`,
 and (2) the used instead `theme` is a long-living object
-(not created repeatedly, but shared between instatances of `BuildContext`),
+(not created repeatedly, but created one time and
+shared between instatances of `BuildContext`),
 and is therefore ok to pass to a long-living area:
 
 ```dart
@@ -237,8 +238,8 @@ widget state][interactive],
 where the widget is short living,
 and the state is long living. The build context,
 owned by the widget, should never be referenced
-from the state’s fields, as it might be garbage
-collected together with the widget.
+from the state’s fields, as the state will not be garbage
+collected together with the widget, and can significantly outlive it.
 
 [interactive]: {{site.url}}/development/ui/interactive#creating-a-stateful-widget
 
