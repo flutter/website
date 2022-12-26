@@ -7,6 +7,9 @@ The memory view provides insights into details
 of the application’s memory allocation and
 tools to detect and debug specific issues.
 
+Read [DevTools overview](https://docs.flutter.dev/development/tools/devtools/overview)
+on how to locate DevTools screens in different IDEs.
+
 To better understand the insights found on this page,
 the first section explains how Dart manages memory.
 If you already understand Dart’s memory management,
