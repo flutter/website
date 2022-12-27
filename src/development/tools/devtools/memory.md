@@ -192,7 +192,7 @@ as long as `handler` is reachable.
 
 An example of a large, short-living object that
 might squeeze into a long-living area and thus cause leaks,
-is the parameter `context` provided to the Flutter's 
+is the `context` parameter passed to Flutter's 
 `build` method. 
 
 The following code is leak prone,
