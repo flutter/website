@@ -188,7 +188,7 @@ as long as `handler` is reachable.
   final handler = () => print(myHugeObject.name);  
   setHandler(handler);
 ```
-#### Why `BuildContext` requires extra attention?
+#### Why `BuildContext` requires extra attention
 
 An example of a large, short-living object that
 might squeeze into a long-living area and thus cause leaks,
