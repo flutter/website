@@ -156,7 +156,10 @@ and total memory allocation breakdown on the **Profile** tab:
 
 ![Screenshot of a profile page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab.png)
 
-### How can memory leaks happen in Dart?
+### Memory leaks happen in Dart?
+
+Garbage collector cannot prevent all types of memory leaks, and developers
+still need to watch objects to have leak-free lifecycle. 
 
 #### Why garbage collector cannot prevent all leaks?
 
