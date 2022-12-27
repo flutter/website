@@ -34,7 +34,7 @@ Dart objects created using a class constructor
 (for example, by using `MyClass()`) live in a
 portion of memory called the _heap_. The memory
 in the heap is managed by the Dart VM (virtual machine).
-The Dart VM allocates memory for the object on object creation,
+The Dart VM allocates memory for the object at the moment of the object creation,
 and releases (or deallocates) the memory when the object
 is no longer used (see [Dart garbage collection][]). 
 
