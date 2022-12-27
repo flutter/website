@@ -171,7 +171,7 @@ are no longer reachable (referenced from the root).
 So, if non needed objects are left referenced
 (in a global or static variable,
 or as a field of a long-living object),
-garbage collector cannot recognize them,
+the garbage collector can't recognize them,
 the memory allocation grows progressively,
 and the app eventually crashes with an `out-of-memory` error.
 
