@@ -98,7 +98,7 @@ void myFunction() {
   parent2 = null;
   
   // At this point, the `child` instance is unreachable
-  // and this will be eventually garbage collected.
+  // and will eventually be garbage collected.
   
   …
 }
