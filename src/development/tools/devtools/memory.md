@@ -241,7 +241,7 @@ widget state][interactive],
 where the widget is short living,
 and the state is long living. The build context,
 owned by the widget, should never be referenced
-from the state’s fields, as the state will not be garbage
+from the state’s fields, as the state won't be garbage
 collected together with the widget, and can significantly outlive it.
 
 [interactive]: {{site.url}}/development/ui/interactive#creating-a-stateful-widget
