@@ -82,7 +82,7 @@ void myFunction() {
   Child? child = Child();
   
   // The `child` object was allocated in memory.
-  // It is now retained from garbage collection
+  // It's now retained from garbage collection
   // by one retaining path (root …-> myFunction -> child).
   
   Parent? parent2 = Parent()..child = child;
