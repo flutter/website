@@ -24,7 +24,6 @@ and programming with Swift, see [Learning Dart as a Swift Developer][]
 and [Comparing Dart Concurrency with Swift][]. -->
 
 Your iOS knowledge helps when building Flutter apps.
-Flutter uses iOS to manage non-UI tasks using plugins.
 <!-- Add this sentence once published -->
 <!-- To learn more, check out [iOS and Apple hardware interactions with Flutter][] -->
 
@@ -102,7 +101,7 @@ SwiftUI nests Views while Flutter nests Widgets.
 
 **Flutter** differs somewhat with its process:
 
-1. The parent widget passes constraints down to its children
+1. The parent widget passes constraints down to its children.
 Constraints include minimum and maximum values for height and width.
 1. The child tries to decide its size. It repeats the same process with its own list of children:
    - It informs its child of the child's constraints.
@@ -181,32 +180,29 @@ create buttons, react to on-press events, display lists, grids, and more.
 
 ### Getting started
 
-To start your app in **SwiftUI**, you can use one of two formats:
+In **SwiftUI**, you use `App` to start your app.
 
-1. Place the app body within an `App` structure:
-
-    {:.include-lang}
-    ```swift
-    @main
-    struct MyApp: App {
-        var body: some Scene {
-            WindowGroup {
-                HomePage()
-            }
+```swift
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            HomePage()
         }
     }
-    ```
+}
+```
 
-2. Place the app body within a `View` structure:
+Another common SwiftUI practice places the app body within a `struct`
+that conforms to the `View` protocol as follows:
 
-    {:.include-lang}
-    ```swift
-    struct HomePage: View {
-      var body: some View {
-        Text("Hello, World!")
-      }
-    }
-    ```
+```swift
+struct HomePage: View {
+  var body: some View {
+    Text("Hello, World!")
+  }
+}
+```
 
 To start your **Flutter** app, pass in an instance of your app to
 the `runApp` function.
@@ -303,7 +299,7 @@ the [Widget catalog][].
 
 ### Adding Buttons
 
-To create a button in **SwiftUI**, use the `Button` struct.
+In **SwiftUI**, you use the `Button` struct to create a button.
 
 {:.include-lang}
 ```swift
@@ -337,7 +333,7 @@ use the `CupertinoButton` class:
 )
 ```
 
-To add a button in **SwiftUI**, you must use the `Button` struct.
+In **SwiftUI**, you use the `Button` struct to add a button.
 
 **Flutter** gives you access to a variety of buttons with predefined styles.
 The [`CupertinoButton`][] class comes from the Cupertino library.
@@ -397,8 +393,8 @@ axis.
 
 The following examples build on those in the previous section.
 
-To arrange the components into a vertical pillar, this **SwiftUI**
-example uses `VStack`:
+In **SwiftUI**, you use `VStack` to arrange the components into a
+vertical pillar.
 
 {:.include-lang}
 ```swift
@@ -435,7 +431,8 @@ Column(
 
 ### Displaying a list view
 
-To display sequences of items, **SwiftUI** uses the `List` base component.
+In **SwiftUI**, you use the `List` base component to display sequences
+of items.
 To display a sequence of model objects, make sure that the user can
 identify your model objects.
 To make an object identifiable, use the `Identifiable` protocol.
@@ -531,7 +528,7 @@ most any widget that represents your data.
 
 ### Displaying a grid
 
-In **SwiftUI**, when constructing non-conditional grids,
+When constructing non-conditional grids in **SwiftUI**,
 use `Grid` with `GridRow`.
 
 {:.include-lang}
@@ -607,7 +604,8 @@ grid should lay out its components.
 
 ### Creating a scroll view
 
-To create custom scrolling components in **SwiftUI**, use `ScrollView`.
+In **SwiftUI**, you use `ScrollView` to create custom scrolling
+components.
 The following example displays a series of `PersonView` instances
 in a scrollable fashion.
 
@@ -654,7 +652,7 @@ of the `Person` class to create the custom `PersonView` widget.
 
 ### Responsive and adaptive design
 
-To create relative view sizes in **SwiftUI**, use `GeometryReader`.
+In **SwiftUI**, you use `GeometryReader` to create relative view sizes.
 
 For example, you could:
 * Multiply `geometry.size.width` by some factor to set the _width_.
@@ -672,8 +670,8 @@ To learn more, check out [Creating responsive and adaptive apps][].
 
 ### Managing state
 
-To represent the internal state of a SwiftUI view in **SwiftUI**,
-use the `@State` property wrapper.
+In **SwiftUI**, you use the `@State` property wrapper to represent the
+internal state of a SwiftUI view.
 
 {:.include-lang}
 ```swift
@@ -687,8 +685,8 @@ struct ContentView: View {
   }}
 ```
 
-**SwiftUI** includes several options for more complex state management
-such as the `ObservableObject` protocol.
+**SwiftUI** also includes several options for more complex state
+management such as the `ObservableObject` protocol.
 
 **Flutter** manages local state using a [`StatefulWidget`][].
 Implement a stateful widget with the following two classes:
@@ -696,7 +694,7 @@ Implement a stateful widget with the following two classes:
 - a subclass of `State`
 
 The `State` object stores the widget's state.
-When a widget’s state changes, the `State` object calls `setState()`
+To change a widget’s state, call `setState()` from the `State` object
 to tell the framework to redraw the widget.
 
 The following example shows a part of a counter app:
@@ -758,7 +756,8 @@ Two main types of UI animations exist.
 SwiftUI and Flutter take a similar approach to animation.
 In both frameworks, you specify parameters like `duration`, and `curve`.
 
-To handle implicit animation, **SwiftUI** uses the `animate()` modifier.
+In **SwiftUI**, you use the `animate()` modifier to handle implicit
+animation.
 
 {:.include-lang}
 ```swift
@@ -821,8 +820,8 @@ To learn more about animations in Flutter, see [Animations overview][].
 
 ### Drawing on the Screen
 
-To draw lines and shapes to the screen with **SwiftUI**,
-use `CoreGraphics`.
+In **SwiftUI**, you use `CoreGraphics` to draw lines and shapes to the
+screen.
 
 **Flutter** has an API based on the `Canvas` class,
 with two classes that help you draw:
@@ -1051,8 +1050,8 @@ To learn more, check out [Navigation and routing][].
 
 ### Manually pop back
 
-To pop-back to the previous screen in **SwiftUI**, use the `dismiss`
-environment value.
+In **SwiftUI**, you use the `dismiss` environment value to pop-back to
+the previous screen.
 
 {:.include-lang}
 ```swift
@@ -1088,8 +1087,8 @@ TextButton(
 
 ### Navigating to another app
 
-To open a URL to another application in **SwiftUI**,
-use the `openURL` environment variable:
+In **SwiftUI**, you use the `openURL` environment variable to open a
+URL to another application.
 
 {:.include-lang}
 ```swift
@@ -1139,8 +1138,8 @@ and more. This section covers how to style your apps.
 
 ### Using dark mode
 
-To use dark mode in **SwiftUI**, call the `preferredColorScheme()`
-function on a `View`.
+In **SwiftUI**, you call the `preferredColorScheme()`
+function on a `View` to use dark mode.
 
 In **Flutter**, you can control light and dark mode at the app-level.
 To control the brightness mode, use the `theme` property
@@ -1169,7 +1168,7 @@ CupertinoApp(
 
 ### Styling text
 
-To style text in **SwiftUI**, use modifier functions.
+In **SwiftUI**, you use modifier functions to style text.
 For example, to change the font of a `Text` string,
 use the `font()` modifier:
 
@@ -1208,7 +1207,7 @@ Text(
 
 ### Styling buttons
 
-To style buttons in **SwiftUI**, use modifier functions.
+In **SwiftUI**, you use modifier functions to style buttons.
 
 {:.include-lang}
 ```swift
@@ -1259,8 +1258,8 @@ child: CupertinoButton(
 
 ### Using custom fonts
 
-To use a custom font in your **SwiftUI** app,
-add the font file to your SwiftUI project. After adding the file,
+In **SwiftUI**, you can use a custom font in your app in two steps.
+First, add the font file to your SwiftUI project. After adding the file,
 use the `.font()` modifier to apply it to your UI components.
 
 {:.include-lang}
@@ -1322,9 +1321,8 @@ Text(
 
 ### Bundling images in apps
 
-To add images to your application in **SwiftUI**:
-1. Add the files to `Assets.xcassets`.
-1. Use the `Image` view to display the images.
+In **SwiftUI**, you first add the image files to `Assets.xcassets`,
+then use the `Image` view to display the images.
 
 To add images in **Flutter**, follow a method similar to how you added
 custom fonts.
@@ -1347,9 +1345,10 @@ To review a complete example, check out the [`Image`][] docs.
 
 ### Bundling videos in apps
 
-To play a local video file bundled within your **SwiftUI** app:
-1. Import the `AVKit` framework.
-1. Instantiate a `VideoPlayer` view.
+In **SwiftUI**, you bundle a local video file with your app in two
+steps.
+First, you import the `AVKit` framework, then you instantiate a
+`VideoPlayer` view.
 
 In **Flutter**, add the [video_player][] plugin to your project.
 This plugin allows you to create a video player that works on
@@ -3504,6 +3503,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
 [layout tutorial]: {{site.url}}/development/ui/widgets/layout
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
+[Material]: {{site.material}}/develop/flutter/
 [Material Components]: {{site.material}}/develop/flutter/
 [Material Design guidelines]: {{site.material}}/design/
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
