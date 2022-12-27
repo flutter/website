@@ -175,7 +175,7 @@ the garbage collector can't recognize them,
 the memory allocation grows progressively,
 and the app eventually crashes with an `out-of-memory` error.
 
-#### Why closures require extra attention?
+#### Why closures require extra attention
 
 One hard-to-catch leak pattern relates to using closures.
 In the following code, a reference to the
