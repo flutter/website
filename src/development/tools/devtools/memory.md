@@ -212,12 +212,12 @@ Widget build(BuildContext context) {
 #### How to fix leak prone code?
 
 The following code is not leak prone,
-as (1) the closure doesn’t use the big and short living
-object `context`,
-and (2) the used instead `theme` is a long-living object
-(not created repeatedly, but created one time and
-shared between instatances of `BuildContext`),
-and is therefore ok to pass to a long-living area:
+because:
+
+1. The closure doesn’t use the large and short-living `context` object.
+2. The `theme` object (used instead) is long-living. It is created once and
+shared between `BuildContext` instances.
+
 
 ```dart
 // GOOD
