@@ -1,25 +1,29 @@
-<div class="catalog">
-    {% for section in site.data.catalog.index %}
-        {% if section.name contains include.category %}
-            <div class="category-description"><p>{{section.description}}</p></div>
-        {% endif %}
-    {% endfor %}
+{% for section in site.data.catalog.index %}
+    {% if section.name == include.category %}
+        {% assign category = section %}
+        {% break %}
+    {% endif %}
+{% endfor %}
 
+<div class="catalog">
+    <div class="category-description">
+        <p>{{category.description}}</p>
+    </div>
+    {% if category.subcategories and category.subcategories.size != 0 -%}
     <ul>
-        {% for category in site.data.catalog.index %}
-            {% if category.name == include.category %}
-                {% for sub in category.subcategories %}
-                    <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
-                {% endfor %}
-            {% endif %}
-        {% endfor %}
+        {% for sub in category.subcategories -%}
+            <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
+        {% endfor -%}
     </ul>
+    {% endif -%}
 
     <p>See more widgets in the <a href="/development/ui/widgets">widget catalog</a>.</p>
 
-    <div class="card-deck card-deck--responsive">
-        {% for comp in site.data.catalog.widgets %}
-            {% if comp.categories contains include.category %}
+    {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.categories contains include.category" -%}
+
+    {% if components.size != 0 -%}
+        <div class="card-deck card-deck--responsive">
+            {% for comp in components -%}
                 <div class="card">
                     <a href="{{comp.link}}">
                         <div class="card-image-holder">
@@ -31,34 +35,33 @@
                         <p class="card-text">{{ comp.description | truncatewords: 25 }}</p>
                     </div>
                 </div>
-            {% endif %}
-        {% endfor %}
-    </div>
+            {% endfor -%}
+        </div>
+    {% endif -%}
 
-    {% for category in site.data.catalog.index %}
-        {% if category.name == include.category %}
-            {% for sub in category.subcategories %}
-                <h2 id="{{sub.name}}">{{sub.name}}</h2>
-                <div class="card-deck card-deck--responsive">
-                    {% for comp in site.data.catalog.widgets %}
-                        {% if comp.subcategories contains sub.name %}
-                            <div class="card">
-                                <a href="{{comp.link}}">
-                                    <div class="card-image-holder">
-                                        {{comp.image}}
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
-                                    <p class="card-text">{{ comp.description | truncatewords: 25 }}</p>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+    {% if category.subcategories and category.subcategories.size != 0 -%}
+    {% for sub in category.subcategories -%}
+        {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.subcategories contains sub.name" -%}
+        {% if components.size != 0 -%}
+        <h2 id="{{sub.name}}">{{sub.name}}</h2>
+        <div class="card-deck card-deck--responsive">
+            {% for comp in components -%}
+                <div class="card">
+                    <a href="{{comp.link}}">
+                        <div class="card-image-holder">
+                            {{comp.image}}
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
+                        <p class="card-text">{{ comp.description | truncatewords: 25 }}</p>
+                    </div>
                 </div>
-            {% endfor %}
-        {% endif %}
-    {% endfor %}
+            {% endfor -%}
+        </div>
+        {% endif -%}
+    {% endfor -%}
+    {% endif -%}
 
     <p>See more widgets in the <a href="/development/ui/widgets">widget catalog</a>.</p>
 </div>

@@ -13,7 +13,8 @@ layout: base
 <div class="container-fluid position-relative">
   <div class="row flex-xl-nowrap">
     <div class="fixed-col site-sidebar site-sidebar--fixed {{sidebar-col}} d-none d-md-block" data-fixed-column>
-      {% include sidenav-level-1.html nav=site.data.sidenav %}
+      {% assign route = page.url | regex_replace:'/index$|/index\.html$|\.html$|/$' %}
+      {% include_cached sidenav-level-1.html nav=site.data.sidenav page_url_path=route %}
     </div>
 
     {% if page.toc and layout.toc != false -%}
@@ -21,7 +22,7 @@ layout: base
       {% include side-toc.html toc_content=toc_content -%}
     {% endif -%}
 
-    <main class="site-content {{main-col}}" role="main">
+    <main class="site-content {{main-col}}">
       <div class="container">
 
         {% if page.deprecated %}
