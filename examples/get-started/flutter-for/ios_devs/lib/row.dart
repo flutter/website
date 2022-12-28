@@ -25,13 +25,13 @@ class HomePage extends StatelessWidget {
       body: Center(
         child:
             // #docregion row
-            Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(CupertinoIcons.globe),
-            Text('Hello, world!'),
-          ],
-        ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(CupertinoIcons.globe),
+              Text('Hello, world!'),
+            ],
+          ),
         // #enddocregion row
       ),
     );

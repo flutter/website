@@ -128,7 +128,7 @@ In **SwiftUI**, views may expand to the available space or
 limit their size to that of its content.
 **Flutter** widgets behave in similar manner.
 
-Parent components can offer unbounded constraints.
+However, in Flutter parent widgets can offer unbounded constraints.
 Unbounded constraints set their maximum values to infinity.
 
 {:.include-lang}
@@ -257,7 +257,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-The widget used in `home` might begin with the `Scaffold` class.
+The widget used in `HomePage` might begin with the `Scaffold` class.
 `Scaffold` implements a basic layout structure for an app.
 
 <nav class="navbar bg-primary">
@@ -332,8 +332,6 @@ use the `CupertinoButton` class:
   child: const Text('Do something'),
 )
 ```
-
-In **SwiftUI**, you use the `Button` struct to add a button.
 
 **Flutter** gives you access to a variety of buttons with predefined styles.
 The [`CupertinoButton`][] class comes from the Cupertino library.
@@ -513,23 +511,21 @@ Flutter has some caveats for lists:
 - The [`ListView`] widget has a builder method.
 This works like the `ForEach` within SwiftUI's `List` struct.
 
-- The `itemCount` parameter of the `ListView` sets how many items
-that the `ListView` displays.
+- The `itemCount` parameter of the `ListView` sets how many items 
+the `ListView` displays.
 
-- The `.builder` method calls the `itemBuilder` widget with bounds.
-  - Set the lower bound to any positive number including 0.
-  - Set the upper bound to any positive number excluding the item count.
-  - This widget must return one `Widget` instance per list item.
+- The `itemBuilder` has an index parameter that will be between zero 
+and one less than itemCount.
 
 The previous example returned a [`ListTile`][] widget for each item.
 The `ListTile` widget includes properties like `height` and `font-size`.
-These properties help build a list. Flutter allows you to return
-most any widget that represents your data.
+These properties help build a list. However, Flutter allows you to return
+almost any widget that represents your data.
 
 ### Displaying a grid
 
 When constructing non-conditional grids in **SwiftUI**,
-use `Grid` with `GridRow`.
+you use `Grid` with `GridRow`.
 
 {:.include-lang}
 ```swift
@@ -694,7 +690,7 @@ Implement a stateful widget with the following two classes:
 - a subclass of `State`
 
 The `State` object stores the widget's state.
-To change a widget’s state, call `setState()` from the `State` object
+To change a widget’s state, call `setState()` from the `State` subclass
 to tell the framework to redraw the widget.
 
 The following example shows a part of a counter app:
@@ -748,7 +744,7 @@ To learn more ways to manage state, check out [State management][].
 ### Animations
 
 Two main types of UI animations exist.
-- Implicit that includes a current and new target value.
+- Implicit that animated from a current value to a new target.
 - Explicit that animates when asked.
 
 #### Implicit Animation
@@ -807,7 +803,7 @@ To compose a new animated widget, use the [`TweenAnimationBuilder`][].
 
 #### Explicit Animation
 
-For explicit animations, **SwiftUI** uses the `withAnimation{}` closure.
+For explicit animations, **SwiftUI** uses the `withAnimation()` function.
 
 **Flutter** includes explicitly animated widgets with names formatted
 like `FooTransition`.
