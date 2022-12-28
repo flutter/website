@@ -1,36 +1,38 @@
 {% comment %} Canonicalize page URL path {% endcomment -%}
-{% assign page_url_path = page.url | regex_replace: '/index$|/index\.html$|\.html$|/$' -%}
 
-{% assign active_entries = include.nav | active_nav_entry_index_array: page_url_path -%}
-{% assign show_entries_wo_pages = false -%}
+{% assign active_entries = include.nav | active_nav_entry_index_array: include.page_url_path -%}
 
 <ul class="nav flex-column">
-  {%- for entry1 in include.nav -%}
-
-    {% assign class1 = '' -%}
-    {% assign id1 = 'sidenav-' | append: forloop.index -%}
-    {% assign isActive1 = false -%}
+  {%- for entry in include.nav -%}
+    {% assign id = 'sidenav-' | append: forloop.index -%}
     {% if forloop.index == active_entries[0] -%}
-      {% assign isActive1 = true -%}
-      {% assign class1 = 'active' -%}
+      {% assign isActive = true -%}
+      {% assign class = 'active' -%}
+    {% else -%}
+      {% assign isActive = false -%}
+      {% assign class = '' -%}
     {% endif -%}
 
-    {% if isActive1 or entry1.expanded -%}
+    {% if isActive or entry.expanded -%}
       {% assign expanded = 'true' -%}
       {% assign show = 'show' -%}
     {% else -%}
-      {% assign class1 = 'collapsed' -%}
+      {% assign class = 'collapsed' -%}
       {% assign expanded = 'false' -%}
       {% assign show = '' -%}
     {% endif -%}
 
     <li class="nav-item">
-      <a class="nav-link {{class1}}" data-toggle="collapse" href="#{{id1}}" role="button"
-        aria-expanded="{{expanded}}" aria-controls="{{id1}}"
-      >{{entry1.title}}</a>
+      <a class="nav-link {{class}}" data-toggle="collapse" href="#{{id}}" role="button"
+        aria-expanded="{{expanded}}" aria-controls="{{id}}"
+      >{{entry.title}}</a>
 
-      <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id1}}">
-        {% include sidenav-level-2.html -%}
+      <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id}}">
+        {% if isActive -%}
+          {% include sidenav-level-2.html parent_id=id children=entry.children active_entries=active_entries -%}
+        {% else -%}
+          {% include_cached sidenav-level-2.html parent_id=id children=entry.children -%}
+        {% endif -%}
       </ul>
     </li>
   {%- endfor -%}

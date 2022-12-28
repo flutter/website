@@ -38,10 +38,10 @@ To automatically format code whenever you save a file, set the
 ## Automatically formatting code with the 'flutter' command
 
 You can also automatically format code in the command line interface
-(CLI) using the `flutter format` command:
+(CLI) using the `dart format` command:
 
 ```terminal
-$ flutter format path1 path2 ...
+$ dart format path1 path2 ...
 ```
 
 ## Using trailing commas
