@@ -9,7 +9,9 @@ description: Learn how to use the DevTools performance view.
   for a web app.
 {{site.alert.end}}
 
-## What is the Performance view?
+## Basic performance concepts
+
+### What is the Performance view?
 
 The performance view offers timing and performance information for activity in
 your application. It consists of three parts, each increasing in granularity.
@@ -19,23 +21,27 @@ your application. It consists of three parts, each increasing in granularity.
 * CPU profiler
 
 {{site.alert.secondary}}
-  **Use a profile build of your application to analyze performance.**
+  **Use a [profile build][] of your application to analyze performance.**
   Frame rendering times aren't indicative of release performance
-  unless your application is run in profile mode.
+  when running in debug mode. Run your app in profile mode,
+  which still preserves useful debugging information.
 {{site.alert.end}}
+
+[profile build]: {{site.url}}/testing/build-modes#profile
 
 The performance view also supports importing and exporting of
 data snapshots. For more information,
 check out the [Import and export][] section.
 
-## What is a frame in Flutter?
+### What is a frame in Flutter?
 
 Flutter is designed to render its UI at 60 frames per second
 (fps), or 120 fps on devices capable of 120Hz updates.
+Each render is called a _frame_.
 This means that, approximately every 16ms, the UI updates
-to reflect animations, or other changes to the UI. A frame
-that takes longer than 16ms to render can cause jank 
-(jerky movement).
+to reflect animations or other changes to the UI. A frame
+that takes longer than 16ms to render causes jank 
+(jerky motion) on the display device.
 
 ## Flutter frames chart
 
@@ -81,7 +87,7 @@ difficult for the GPU. They might involve unnecessary calls to
 `saveLayer()`, intersecting opacities with multiple objects,
 and clips or shadows in specific situations.
 
-For more information on profiling, see
+For more information on profiling, check out
 [Identifying problems in the GPU graph][GPU graph].
 
 ### Jank (slow frame)
@@ -94,7 +100,7 @@ A frame is considered to be janky if it takes more than
 experience UI jank or dropped frames.
 
 For more information on how to analyze your app's performance,
-see [Flutter performance profiling][].
+check out [Flutter performance profiling][].
 
 ### Shader compilation
 
@@ -143,8 +149,8 @@ use the options in the enhance tracing dropdown:
 
 ![Screenshot of enhance tracing dropdown]({{site.url}}/assets/images/docs/tools/devtools/enhance-tracing.png)
 
-To see the new timeline events,
-reproduce the activity in your app that you are interested in tracing,
+To see the new timeline events, reproduce the activity
+in your app that you are interested in tracing,
 and then select a frame to inspect the timeline.
 
 ### Track widget builds
