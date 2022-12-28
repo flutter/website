@@ -5,7 +5,7 @@ description: Learn how to apply iOS developer knowledge when building Flutter ap
 
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
-{% assign sample_path = "get-started/flutter-for/ios_devs" %}
+{% assign sample_path = "blob/main/examples/get-started/flutter-for/ios_devs" %}
 
 iOS developers who want to write mobile apps using Flutter
 should review this guide.
