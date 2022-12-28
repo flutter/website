@@ -4,20 +4,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <link rel="icon" href="/assets/images/shared/brand/flutter/icon/64.png" />
-    <link rel="apple-touch-icon" href="/assets/images/shared/brand/flutter/logo/flutter-logomark-320px.png" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/assets/images/shared/brand/flutter/icon/64.png">
+    <link rel="apple-touch-icon" href="/assets/images/shared/brand/flutter/logo/flutter-logomark-320px.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
     {% unless page.strip_fonts == true %}
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
-     <link rel="preload" href="https://use.fontawesome.com/releases/v5.15.1/js/all.js" as="script" />
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preload" href="https://use.fontawesome.com/releases/v5.15.1/js/all.js" as="script">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {% endunless %}
 
     {% if jekyll.environment == "production" %}
-      <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
+      <meta name="google-site-verification" content="{{ site.google_site_verification }}">
       <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
