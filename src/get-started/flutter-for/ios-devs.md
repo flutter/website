@@ -374,7 +374,7 @@ HStack {
 
 <?code-excerpt "lib/row.dart (row)"?>
 ```dart
-    Row(
+Row(
   mainAxisAlignment: MainAxisAlignment.center,
   children: const [
     Icon(CupertinoIcons.globe),
@@ -1117,15 +1117,15 @@ In **Flutter**, use the [`url_launcher`][] plugin.
 
 <?code-excerpt "lib/openapp.dart (OpenAppExample)"?>
 ```dart
-    CupertinoButton(
-  onPressed: () async {
-    await launchUrl(
-      Uri.parse('https://google.com'),
-    );
-  },
-  child: const Text(
-    'Open website',
-  ),
+ CupertinoButton(
+   onPressed: () async {
+     await launchUrl(
+       Uri.parse('https://google.com'),
+     );
+   },
+   child: const Text(
+     'Open website',
+   ),
 ),
 ```
 
@@ -1158,7 +1158,7 @@ of the `App` class:
 
 <?code-excerpt "lib/cupertino_themes.dart (Theme)"?>
 ```dart
-CupertinoApp(
+    CupertinoApp(
   theme: CupertinoThemeData(
     brightness: Brightness.dark,
   ),
