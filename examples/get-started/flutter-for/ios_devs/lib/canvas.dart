@@ -30,14 +30,18 @@ class SignatureState extends State<Signature> {
         });
       },
       onPanEnd: (details) => _points.add(null),
-      child: CustomPaint(
+      child: 
+      // #docregion CustomPaint
+      CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
       ),
+      // #enddocregion CustomPaint
     );
   }
 }
 
+// #docregion CustomPainter
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
 
@@ -60,3 +64,4 @@ class SignaturePainter extends CustomPainter {
   bool shouldRepaint(SignaturePainter oldDelegate) =>
       oldDelegate.points != points;
 }
+// #enddocregion CustomPainter
