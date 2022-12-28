@@ -58,6 +58,7 @@ or run `flutter test --help` in your terminal.
 [Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
 
 ### Recipes
+{:.no_toc}
 
 {% include docs/testing-toc.md type='unit' %}
 
@@ -76,6 +77,7 @@ However, like a unit test, a widget test's environment is replaced with
 an implementation much simpler than a full-blown UI system.
 
 ### Recipes
+{:.no_toc}
 
 {% include docs/testing-toc.md type='widget' %}
 
@@ -96,6 +98,7 @@ For more information on how to write integration tests, see the [integration
 testing page][].
 
 ### Recipes
+{:.no_toc}
 
 {% include docs/testing-toc.md type='integration' %}
 
