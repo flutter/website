@@ -1,5 +1,19 @@
 ## Get the Flutter SDK {#get-sdk}
 
+You can get the Flutter SDK for macOS either through [Homebrew][],
+or by downloading the official installation bundle.
+
+### Get the Flutter SDK through Homebrew {#get-sdk-homebrew}
+
+If you have [Homebrew][] installed in your macOS environment,
+you can get the Flutter SDK by running the following command:
+
+```
+brew install --cask flutter
+```
+
+### Get the Flutter SDK installation bundle {#get-sdk-bundle}
+
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
@@ -113,6 +127,7 @@ For additional download options, see `flutter help precache`.
 [SDK releases]: {{site.url}}/development/tools/sdk/releases
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
+[Homebrew]: https://brew.sh
 [Update your path]: #update-your-path
 [Upgrading Flutter]: {{site.url}}/development/tools/sdk/upgrading
 [Mac computers with Apple silicon]: https://support.apple.com/en-us/HT211814
