@@ -171,8 +171,8 @@ where the Dart code lives.
 
       * VS Code: Right-click and select **Format Document**.
       * Android Studio and IntelliJ IDEA: Right-click the code and
-        select **Reformat Code with dartfmt**.
-      * Terminal: Run `flutter format <filename>`.
+        select **Reformat Code with 'dart format'**.
+      * Terminal: Run `dart format <filename>`.
     {{site.alert.end}}
 
  2. Run the app [in the way your IDE describes][].
