@@ -14,8 +14,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const
-        // #docregion Theme
-        CupertinoApp(
+     // #docregion Theme
+     CupertinoApp(
       theme: CupertinoThemeData(
         brightness: Brightness.dark,
       ),
