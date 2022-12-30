@@ -97,8 +97,8 @@ following structure:
 ```
 
 {{site.alert.note}}
-The `canvaskit` directory and its contents will only be present when the
-CanvasKit renderer is selected — but not when the HTML renderer is selected.
+  The `canvaskit` directory and its contents are only present when the
+  CanvasKit renderer is selected—not when the HTML renderer is selected.
 {{site.alert.end}}
 
 Launch a web server (for example,
