@@ -92,7 +92,56 @@ and with the largest font setting selected in iOS accessibility settings.
 For mobile, screen readers ([TalkBack][], [VoiceOver][]) enable visually
 impaired users to get spoken feedback about the contents of the screen 
 and interact with the UI via gestures on mobile and keyboard shortcuts on desktop. 
-Turn on VoiceOver or TalkBack on your mobile device and navigate around your app. 
+Turn on VoiceOver or TalkBack on your mobile device and navigate around your app.
+
+**To turn on the screen reader on your device, complete the following steps:**
+
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="editor-setup" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="talkback-tab" href="#talkback" role="tab" aria-controls="talkback" aria-selected="true">TalkBack on Android</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="voiceover-tab" href="#voiceover" role="tab" aria-controls="voiceover" aria-selected="false">VoiceOver on iPhone</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="browsers-tab" href="#browsers" role="tab" aria-controls="browsers" aria-selected="false">Browsers</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="desktop-tab" href="#desktop" role="tab" aria-controls="desktop" aria-selected="false">Desktop</a>
+    </li>
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+
+<div class="tab-pane active" id="talkback" role="tabpanel" aria-labelledby="talkback-tab" markdown="1">
+
+1. On your device, open **Settings**.
+2. Select **Accessibility** and then **TalkBack**.
+3. Turn 'Use TalkBack' on or off.
+4. Select Ok.
+
+To learn how to find and customize Android's accessibility features, view this video.
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/FQyj_XTl01w" title="Customize accessibility features on Pixel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab" markdown="1">
+
+1. On your device, open **Settings > Accessibility > VoiceOver**
+2. Turn the VoiceOver setting on or off
+
+To learn how to find and customize iOS accessibility features, view this video.
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="tab-pane" id="browsers" role="tabpanel" aria-labelledby="browsers-tab" markdown="1">
 
 For web, the following screen readers are currently supported:
 
@@ -104,12 +153,38 @@ Desktop Browsers:
 * MacOS - VoiceOver
 * Windows - JAWs & NVDA
 
-Screen Readers users on web will need to toggle 
+Screen Readers users on web will need to toggle
 "Enable accessibility" button to build the semantics tree.
-Users can skip this step if you programmatically auto-enable 
-accessibility for your app using this API: 
+Users can skip this step if you programmatically auto-enable
+accessibility for your app using this API:
 
 `RendererBinding.instance.setSemanticsEnabled(true)`
+
+</div>
+
+<div class="tab-pane" id="desktop" role="tabpanel" aria-labelledby="desktop-tab" markdown="1">
+
+Windows comes with a screen reader called Narrator
+but some developers recommend using the more popular
+NVDA screen reader. Learn about using NVDA to test
+Windows apps [here](https://get-evinced.com/blog/screen-readers-101-for-front-end-developers-windows/).
+
+On a Mac, you can use the desktop version of VoiceOver,
+which is included in macOS.
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/5R-6WvAihms" title="Screen Reader Basics: VoiceOver -- A11ycasts #07" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+On Linux, a popular screen reader is called Orca.
+It comes pre-installed with some distributions
+and is available on package repositories such as `apt`.
+Learn about using Orca
+[here](https://www.a11yproject.com/posts/getting-started-with-orca/).
+
+</div>
+</div>{% comment %} End: Tab panes. {% endcomment -%}
+
+<br/>
 
 Check out this [video demo][] to see 
 Victor Tsaran, who leads the Accessibility program for Material Design, 

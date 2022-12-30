@@ -5,21 +5,21 @@ description: Get started with Flutter. Widgets, examples, updates, and API docs 
 ---
 
 {% for card in site.data.docs_cards -%}
-  {% capture index0Modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
-  {% capture indexModulo3 %}{{ forloop.index | modulo:3 }}{% endcapture %}
-  {% if index0Modulo3 == '0' %}
+  {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
+  {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
+  {% if index0Modulo3 == '0' -%}
   <div class="card-deck mb-4">
-  {% endif %}
+  {% endif -%}
     <a class="card" href="{{card.url}}">
       <div class="card-body">
         <header class="card-title">{{card.name}}</header>
         <p class="card-text">{{card.description}}</p>
       </div>
     </a>
-  {% if indexModulo3 == '0' %}
+  {% if indexModulo3 == '0' -%}
   </div>
-  {% endif %}
-{% endfor -%}
+  {% endif -%}
+{% endfor %}
 
 **To see changes to the site since our last release,
 see [What's new][].**
@@ -131,7 +131,7 @@ see our [videos][] page.
 
 We release new videos almost every week on the Flutter YouTube channel:
 
-<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/c/flutterdev">Explore more Flutter videos</a>
+<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
 
 **The documentation on this site reflects the
 latest stable release of Flutter.**

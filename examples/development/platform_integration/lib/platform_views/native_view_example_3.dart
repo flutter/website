@@ -1,9 +1,9 @@
 // ignore_for_file: unused_local_variable
 
-// #enddocregion Import
+// #docregion import
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-// #docregion Import
+// #enddocregion import
 import 'package:flutter/widgets.dart';
 
 class IOSCompositionWidget extends StatelessWidget {

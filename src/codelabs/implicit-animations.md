@@ -85,7 +85,7 @@ Click the **Run** button to run the example:
 #### 1. Pick a widget property to animate
 
 To create a fade-in effect, you can animate the `opacity` property using the
-`AnimatedOpacity` widget. Change the `Container` widget to an
+`AnimatedOpacity` widget. Change the `Column` widget to an
 `AnimatedOpacity` widget:
 
 <?code-excerpt "opacity{1,2}/lib/main.dart"?>
@@ -192,7 +192,7 @@ you can start with 2 seconds:
 
 Configure the animation to trigger when the user clicks the **Show details**
 button. To do this, change `opacity` state using the `onPressed()` handler for
-`TextlButton`. To make the `FadeInDemo` widget become fully visible when
+`TextButton`. To make the `FadeInDemo` widget become fully visible when
 the user clicks the **Show details** button, use the `onPressed()` handler
 to set `opacity` to 1:
 
