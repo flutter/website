@@ -56,7 +56,7 @@ by sending an album title to the
 [JSONPlaceholder][] using the
 [`http.post()`][] method.
 
-Import `dart:convert` for encoding the data:
+Import `dart:convert` for access to `jsonEncode` to encode the data:
 
 <?code-excerpt "lib/create_album.dart (convert-import)"?>
 ```dart
