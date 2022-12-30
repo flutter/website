@@ -29,7 +29,7 @@ layout: base
           {% include snackbar.html class="snackbar--dismissible" label="This page is deprecated and its content may be out of date." action="Dismiss" %}
         {% endif %}
 
-        {% include next-prev-nav.html %}
+        {% include_cached next-prev-nav.html prev=page.prev next=page.next %}
 
         <header class="site-content__title">
           {% include shared/page-github-links.html %}
@@ -44,7 +44,7 @@ layout: base
         {% endif -%}
         {{ content | inject_anchors }}
 
-        {% include next-prev-nav.html %}
+        {% include_cached next-prev-nav.html prev=page.prev next=page.next %}
       </div>
     </main>
   </div>
