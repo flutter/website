@@ -88,7 +88,10 @@
     <div id="overlay-under-drawer"></div>
 
     {% include header.html %}
-    {% include_cached banner.html %}
+
+    {% if page.show_banner -%}
+      {% include_cached banner.html %}
+    {% endif -%}
 
     {{ content }}
 
