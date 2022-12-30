@@ -74,7 +74,7 @@
   </head>
   <body{% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
 
-    {% include cookie-notice.html %}
+    {% include_cached cookie-notice.html %}
   
     {% if jekyll.environment == "production" %}
       <noscript>
@@ -88,12 +88,15 @@
     <div id="overlay-under-drawer"></div>
 
     {% include header.html %}
-    {% include banner.html %}
+
+    {% if page.show_banner -%}
+      {% include_cached banner.html %}
+    {% endif -%}
 
     {{ content }}
 
     {% if page.show_footer %}
-      {% include footer.html %}
+      {% include_cached footer.html %}
     {% endif %}
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
