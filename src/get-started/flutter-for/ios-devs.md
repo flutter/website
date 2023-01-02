@@ -16,12 +16,11 @@ It explains how to apply existing iOS knowledge to Flutter.
   [Add Flutter to existing app][].
 {{site.alert.end}}
 
-<!-- Add this blurb once published -->
-<!-- Flutter is a framework for building cross-platform applications
+Flutter is a framework for building cross-platform applications
 that uses the Dart programming language.
 To understand some differences between programming with Dart
 and programming with Swift, see [Learning Dart as a Swift Developer][]
-and [Comparing Dart Concurrency with Swift][]. -->
+and [Flutter concurrency for Swift developers][].
 
 Your iOS knowledge helps when building Flutter apps.
 <!-- Add this sentence once published -->
@@ -3487,6 +3486,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Cupertino widgets]: {{site.url}}/development/ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
+[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
 [Flutter cookbook]: {{site.url}}/cookbook
 [Flutter Youtube channel]: {{site.social.youtube}}
 [`geolocator`]: {{site.pub-pkg}}/geolocator
@@ -3519,6 +3519,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[Learning Dart as a Swift Developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ListTile`]: {{site.api}}/flutter/widgets/ListTitle-class.html
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
