@@ -1,5 +1,5 @@
 ---
-title: Flutter Concurrency for Swift developers
+title: Flutter concurrency for Swift developers
 description: Leverage your Swift concurrency knowledge while learning Flutter and Dart
 ---
 
