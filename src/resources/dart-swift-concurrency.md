@@ -296,7 +296,7 @@ final jsonData = await compute(getNumberOfKeys, jsonString);
 In this case, the call back function is a top-level
 function as shown below:
 
-```
+```dart
 Map<String, dynamic> getNumberOfKeys(String jsonString) {
  return jsonDecode(jsonString);
 }
