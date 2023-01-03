@@ -291,8 +291,12 @@ to spin up an isolate to run a callback function:
 
 ```dart
 final jsonData = await compute(getNumberOfKeys, jsonString);
+```
 
-In this case, the call back function is a top-level function as shown below:
+In this case, the call back function is a top-level
+function as shown below:
+
+```
 Map<String, dynamic> getNumberOfKeys(String jsonString) {
  return jsonDecode(jsonString);
 }
