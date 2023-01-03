@@ -287,6 +287,7 @@
       { "source": "/go/inheritedwidget-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/inherited_widget", "type": 301 },
       { "source": "/go/input-field-autofill", "destination": "https://docs.google.com/document/d/1wYLsoc7NiHl2jFueB4Ros09E3nDCotdWVovDCFSMcAk/edit", "type": 301 },
       { "source": "/go/io22concurrency", "destination": "https://github.com/goderbauer/io22concurrency", "type": 301 },
+      { "source": "/go/ios16_video_player_blank_screen", "destination": "https://docs.google.com/document/d/1zelzxGf6kUEvtF6hbFRExs5UOz8ODtUCa7ogiouxbpo/edit", "type": 301 },
       { "source": "/go/ios-autocorrection-highlight-support", "destination": "https://docs.google.com/document/d/18ZO7ThKu2wwCofGOKZSInPsq93IzkQTRn9eiyskeh7I/edit", "type": 301 },
       { "source": "/go/ios-camera-plugin-thread-model", "destination": "https://docs.google.com/document/d/1Znjp-BduXIb1Ix3JOE1YKyJi1Z0d6rB-2q6Lt7j8xSo/edit", "type": 301 },
       { "source": "/go/ios-storekit2", "destination": "https://docs.google.com/document/d/1YBlb6J6rjgdtfnHYrQLJ4i_FLpboh41UnFoEF8TfyE0/edit?usp=sharing&resourcekey=0-3-p9q6ludxmTw6u3uMehgA", "type": 301 },
