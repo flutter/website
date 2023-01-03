@@ -56,12 +56,35 @@ dev_dependencies:
     sdk: flutter
 ```
 
-### 2. Create a widget to test
+## 2. Create a test file
+
+In this example, create two files: `my_widget.dart` and `my_widget_test.dart`.
+
+The `my_widget.dart` file contains a widget that you want to test and
+resides in the `lib` folder. The `my_widget_test.dart` file contains
+the tests for that widget and lives inside the `test` folder.
+
+In general, test files should reside inside a `test` folder
+located at the root of your Flutter application or package.
+Test files should always end with `_test.dart`,
+this is the convention used by the test runner when searching for tests.
+
+When you're finished, the folder structure should look like this:
+
+```
+my_app/
+  lib/
+    my_widget.dart
+  test/
+    my_widget_test.dart
+```
+
+### 3. Create a widget to test
 
 Next, create a widget for testing. For this recipe,
-create a widget that displays a `title` and `message`.
+create a widget inside the `lib/my_widget.dart` file that displays a `title` and `message`.
 
-<?code-excerpt "test/main_test.dart (widget)"?>
+<?code-excerpt "lib/my_widget_test.dart (widget)"?>
 ```dart
 class MyWidget extends StatelessWidget {
   const MyWidget({
@@ -90,7 +113,7 @@ class MyWidget extends StatelessWidget {
 }
 ```
 
-### 3. Create a `testWidgets` test
+### 4. Create a `testWidgets` test
 
 With a widget to test, begin by writing your first test.
 Use the [`testWidgets()`][] function provided by the
@@ -101,7 +124,7 @@ widget test and creates a `WidgetTester` to work with.
 This test verifies that `MyWidget` displays a given title and message.
 It is titled accordingly, and it will be populated in the next section.
 
-<?code-excerpt "test/main_step3_test.dart (main)"?>
+<?code-excerpt "test/my_widget_test.dart (main)"?>
 ```dart
 void main() {
   // Define a test. The TestWidgets function also provides a WidgetTester
@@ -113,7 +136,7 @@ void main() {
 }
 ```
 
-### 4. Build the widget using the `WidgetTester`
+### 5. Build the widget using the `WidgetTester`
 
 Next, build `MyWidget` inside the test environment by using the
 [`pumpWidget()`][] method provided by `WidgetTester`.
@@ -122,7 +145,7 @@ The `pumpWidget` method builds and renders the provided widget.
 Create a `MyWidget` instance that displays "T" as the title
 and "M" as the message.
 
-<?code-excerpt "test/main_step4_test.dart (main)"?>
+<?code-excerpt "test/my_widget_test.dart (main)"?>
 ```dart
 void main() {
   testWidgets('MyWidget has a title and message', (tester) async {
@@ -163,7 +186,7 @@ Use one of the following methods to ask Flutter to rebuild the widget.
 These methods provide fine-grained control over the build lifecycle,
 which is particularly useful while testing.
 
-### 5. Search for our widget using a `Finder`
+### 6. Search for our widget using a `Finder`
 
 With a widget in the test environment, search
 through the widget tree for the `title` and `message`
@@ -178,7 +201,7 @@ Since you know you're looking for `Text` widgets, use the
 For more information about `Finder` classes, see the
 [Finding widgets in a widget test][] recipe.
 
-<?code-excerpt "test/main_step5_test.dart (main)"?>
+<?code-excerpt "test/my_widget_test.dart (main)"?>
 ```dart
 void main() {
   testWidgets('MyWidget has a title and message', (tester) async {
@@ -191,7 +214,7 @@ void main() {
 }
 ```
 
-### 6. Verify the widget using a `Matcher`
+### 7. Verify the widget using a `Matcher`
 
 Finally, verify the title and message `Text` widgets appear on screen
 using the `Matcher` constants provided by `flutter_test`.
@@ -202,7 +225,7 @@ value meets expectations.
 Ensure that the widgets appear on screen exactly one time.
 For this purpose, use the [`findsOneWidget`][] `Matcher`.
 
-<?code-excerpt "test/main_step6_test.dart (main)"?>
+<?code-excerpt "test/my_widget_test.dart (main)"?>
 ```dart
 void main() {
   testWidgets('MyWidget has a title and message', (tester) async {
@@ -237,7 +260,7 @@ matchers for common cases.
 
 ### Complete example
 
-<?code-excerpt "test/main_test.dart"?>
+<?code-excerpt "test/my_widget_test.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
