@@ -50,7 +50,7 @@ use the following steps:
 ### On the Dart side
 
 On the Dart side, create a `Widget`
-and add the following build implementation:
+and add the following build implementation.
 
 {{site.alert.warning}}
   For this to work, your plugin or app must use
@@ -60,6 +60,8 @@ and add the following build implementation:
 {{site.alert.end}}
 
 [plugin migration guide]: {{site.url}}/development/platform-integration/android/plugin-api-migration
+
+#### Virtual Display
 
 In your Dart file,
 for example `native_view_example.dart`,
@@ -128,7 +130,7 @@ For more information, see the API docs for:
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
 [`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
 
-#### Virtual Display
+#### Hybrid Composition
 
 In your Dart file,
 for example `native_view_example.dart`,

@@ -118,7 +118,7 @@ see [Write a Flutter desktop application][].
 
 Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app][].
-Name the project **startup_namer** (instead of _flutter_app_).
+Name the project **startup_namer** (instead of _my_app_).
 
 {{site.alert.tip}}
   If you don't see "New Flutter Project" as an option in your IDE,
@@ -171,8 +171,8 @@ where the Dart code lives.
 
       * VS Code: Right-click and select **Format Document**.
       * Android Studio and IntelliJ IDEA: Right-click the code and
-        select **Reformat Code with dartfmt**.
-      * Terminal: Run `flutter format <filename>`.
+        select **Reformat Code with 'dart format'**.
+      * Terminal: Run `dart format <filename>`.
     {{site.alert.end}}
 
  2. Run the app [in the way your IDE describes][].

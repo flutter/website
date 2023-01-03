@@ -107,6 +107,9 @@ Turn on VoiceOver or TalkBack on your mobile device and navigate around your app
     <li class="nav-item">
         <a class="nav-link" id="browsers-tab" href="#browsers" role="tab" aria-controls="browsers" aria-selected="false">Browsers</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" id="desktop-tab" href="#desktop" role="tab" aria-controls="desktop" aria-selected="false">Desktop</a>
+    </li>
 </ul>
 
 {% comment %} Tab panes {% endcomment -%}
@@ -156,6 +159,27 @@ Users can skip this step if you programmatically auto-enable
 accessibility for your app using this API:
 
 `RendererBinding.instance.setSemanticsEnabled(true)`
+
+</div>
+
+<div class="tab-pane" id="desktop" role="tabpanel" aria-labelledby="desktop-tab" markdown="1">
+
+Windows comes with a screen reader called Narrator
+but some developers recommend using the more popular
+NVDA screen reader. Learn about using NVDA to test
+Windows apps [here](https://get-evinced.com/blog/screen-readers-101-for-front-end-developers-windows/).
+
+On a Mac, you can use the desktop version of VoiceOver,
+which is included in macOS.
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/5R-6WvAihms" title="Screen Reader Basics: VoiceOver -- A11ycasts #07" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+On Linux, a popular screen reader is called Orca.
+It comes pre-installed with some distributions
+and is available on package repositories such as `apt`.
+Learn about using Orca
+[here](https://www.a11yproject.com/posts/getting-started-with-orca/).
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
