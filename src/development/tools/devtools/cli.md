@@ -54,7 +54,7 @@ so it's different for each run of your app.
 This means that if you stop your application and re-run it, 
 you need to connect to DevTools again with the new URL.
 
-## Connecting to a new app
+## Connect to a new app instance
 
 If your app stops running
 or you opened DevTools manually,
