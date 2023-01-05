@@ -12,7 +12,7 @@ js:
 {{site.alert.tip}}
   This codelab walks you through writing your first Flutter
   app on the web. You might prefer to try
-  [writing your first Flutter app on mobile][].
+  [writing your first Flutter app on desktop or mobile][].
   **Note that if you have downloaded and configured
   Android and iOS tooling,
   the completed app just works on all of these devices!**
@@ -1073,4 +1073,4 @@ Dart DevTools, or Flutter animations, see the following:
 [VS Code]: {{site.url}}/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
-[writing your first Flutter app on mobile]: {{site.url}}/get-started/codelab
+[writing your first Flutter app on desktop or mobile]: {{site.url}}/get-started/codelab
