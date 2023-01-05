@@ -30,6 +30,11 @@ https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher
 https://material.io/guidelines/motion/transforming-material.html\#transforming-material-radial-transformation
 
 # -----------------------------------------------------------------------------
+# Preconnect links that return 404s
+fonts.gstatic.com
+fonts.googleapis.com
+
+# -----------------------------------------------------------------------------
 # Temporary skip rules below this point
 
 # FIXME(Temporary): linkcheck seems to be intermittently failing when accessing main.css

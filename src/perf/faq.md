@@ -50,7 +50,7 @@ about evaluating and debugging Flutter's performance.
   * [`ImageFilter`][]
   * Also see [Performance best practices][]
 
-[`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip-class.html
+[`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip.html#antiAliasWithSaveLayer
 [`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
 [`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
 [Performance best practices]: {{site.url}}/perf/best-practices

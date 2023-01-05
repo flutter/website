@@ -120,8 +120,8 @@ In stable release: 3.3.0
 
 API documentation:
 
-* [`ImmutableBuffer`]({{site.master-api}}/flutter/dart-ui/ImmutableBuffer-class.html)
-* [`ImageProvider`]({{site.master-api}}/painting/ImageProvider-class.html)
+* [`ImmutableBuffer`]({{site.api}}/flutter/dart-ui/ImmutableBuffer-class.html)
+* [`ImageProvider`]({{site.api}}/flutter/painting/ImageProvider-class.html)
 
 Relevant PRs:
 
