@@ -22,7 +22,7 @@ This page covers the following topics:
 * [Shrinking your code with R8](#shrinking-your-code-with-r8)
 * [Enabling multidex support](#enabling-multidex-support)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
-* [Reviewing the build configuration](#reviewing-the-build-configuration)
+* [Reviewing the build configuration](#reviewing-the-gradle-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
 * [Publishing to the Google Play Store](#publishing-to-the-google-play-store)
 * [Updating the app's version number](#updating-the-apps-version-number)
