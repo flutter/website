@@ -8,14 +8,13 @@ prev:
 next:
   title: Learn more
   path: /get-started/learn-more
-diff2html: true
 ---
 
 You are now ready to start the “First Flutter app” codelab.
 In about an hour and a half,
 you will learn the basics of Flutter
 by creating an app
-that works on mobile, desktop and web.
+that works on mobile, desktop, and web.
 
 <div class="juicy-button-container">
   <img src="/assets/images/docs/get-started/codelab-goal-background.jpg" alt="The illustration of the initial and the resulting app that you will build in this codelab.">
@@ -33,8 +32,6 @@ that works on mobile, desktop and web.
 
 </div>
 
-
-
 {{site.alert.tip}}
   The codelab above walks you through writing your first Flutter
   app for all platforms &mdash; mobile, desktop and web.
@@ -43,7 +40,6 @@ that works on mobile, desktop and web.
 {{site.alert.end}}
 
 [codelab-web]: {{site.url}}/get-started/codelab-web
-
 
 {% comment %}
 TODO: replace with video walkthrough once that's ready
