@@ -858,11 +858,9 @@ void main() {
 }
 ```
 
-Then open your app's Observatory's timeline page, check the 'Dart'
-recording option and perform the function you want to measure.
-
-Refreshing the page displays the chronological timeline records
-of your app in Chrome's [tracing tool][].
+Then open your DevTools' [Timeline view][] while connected to your app, 
+verify the **Dart** recording option is checked in the **Performance settings**,
+and perform the function you want to measure.
 
 Be sure to run your app in [profile mode][] to ensure that the
 runtime performance characteristics closely match that of your
