@@ -1,6 +1,7 @@
 $(function () {
   adjustToc();
   initFixedColumns();
+  scrollSidebarIntoView();
   initVideoModal();
   initCarousel();
   initSnackbar();
@@ -19,6 +20,24 @@ $(function () {
 
   prettyPrint();
 });
+
+function scrollSidebarIntoView() {
+  const fixedSidebar = document.querySelector('.site-sidebar--fixed');
+
+  if (!fixedSidebar) {
+    return;
+  }
+
+  const activeEntries = fixedSidebar.querySelectorAll('a.nav-link.active');
+
+  if (activeEntries.length > 0) {
+    const activeEntry = activeEntries[activeEntries.length - 1];
+
+    fixedSidebar.scrollTo({
+      top: activeEntry.offsetTop - window.innerHeight / 3,
+    });
+  }
+}
 
 function adjustToc() {
   // Adjustments to the jekyll-toc TOC.
