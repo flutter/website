@@ -25,25 +25,19 @@ which tells you where to find the associated DartPad link.
 If you're new to Flutter, we recommend starting with
 one of these codelabs:
 
+{% comment %}
+TODO(filiph): add the video for the new codelab when ready
+
 * [Building your first Flutter app][] (workshop)<br>
   An instructor-led version of our very popular
   "Write your first Flutter app, part 1" codelab
   (listed below).
+{% endcomment %}
 
-* [Write your first Flutter app, part 1][]<br>
-  Create a simple mobile app that generates proposed names
-  for a startup company. In part one, you'll use a package
-  that returns pairs of words at random and inserts them into
-  an infinite scrolling list. You can also find this
-  [codelab on docs.flutter.dev][].
-
-* [Write your first Flutter app, part 2][]<br>
-  Create a simple mobile app that generates proposed names
-  for a startup company. In part two, you'll extend the
-  example from part 1 to allow the user to select favorite
-  word pairs, and add a second "Saved Favorites"
-  page where users can view the selected names.
-  Finally, you'll change the app's theme color.
+* [Your first Flutter app][]<br>
+  Create a simple app that automatically generates cool-sounding names,
+  such as "newstay", "lightstream", "mainbrake", or "graypine".
+  This app is responsive and runs on mobile, desktop, and web.
 
 * [Write your first Flutter app on the web][]<br>
   Implement a simple web app in DartPad (no downloads
@@ -56,9 +50,7 @@ one of these codelabs:
   works on Android and iOS devices, as well.
 
 [Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
-[codelab on docs.flutter.dev]: {{site.url}}/get-started/codelab
-[Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-[Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 
 ## Next steps
