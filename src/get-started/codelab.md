@@ -118,7 +118,7 @@ see [Write a Flutter desktop application][].
 
 Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app][].
-Name the project **startup_namer** (instead of _flutter_app_).
+Name the project **startup_namer** (instead of _my_app_).
 
 {{site.alert.tip}}
   If you don't see "New Flutter Project" as an option in your IDE,

@@ -1,5 +1,5 @@
 ---
-title: Flutter Concurrency for Swift developers
+title: Flutter concurrency for Swift developers
 description: Leverage your Swift concurrency knowledge while learning Flutter and Dart
 ---
 
@@ -291,8 +291,12 @@ to spin up an isolate to run a callback function:
 
 ```dart
 final jsonData = await compute(getNumberOfKeys, jsonString);
+```
 
-In this case, the call back function is a top-level function as shown below:
+In this case, the callback function is a top-level
+function as shown below:
+
+```dart
 Map<String, dynamic> getNumberOfKeys(String jsonString) {
  return jsonDecode(jsonString);
 }

@@ -10,6 +10,12 @@ This page is for users who are familiar with the HTML
 and CSS syntax for arranging components of an application's UI.
 It maps HTML/CSS code snippets to their Flutter/Dart code equivalents.
 
+Flutter is a framework for building cross-platform applications
+that uses the Dart programming language.
+To understand some differences between programming with Dart
+and programming with Javascript, 
+see [Learning Dart as a JavaScript Developer][].
+
 One of the fundamental differences between
 designing a web layout and a Flutter layout,
 is learning how constraints work,
@@ -1059,6 +1065,7 @@ final container = Container(
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
+[Learning Dart as a JavaScript Developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
 [`Matrix4`]: {{site.api}}/flutter/vector_math_64/Matrix4-class.html
 [`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html
 [`RichText`]: {{site.api}}/flutter/widgets/RichText-class.html
