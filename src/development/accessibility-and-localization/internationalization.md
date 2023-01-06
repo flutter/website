@@ -231,7 +231,7 @@ project called `l10n.yaml` with the following content:
 4. In `${FLUTTER_PROJECT}/lib/l10n`,
    add the `app_en.arb` template file. For example:
 
-   <?code-excerpt "gen_l10n_example/lib/l10n/app_en_incomplete.arb"?>
+   <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" take="5" replace="/},/}\n}/g"?>
    ```json
    {
      "helloWorld": "Hello World!",
@@ -340,7 +340,7 @@ add placeholders inyour localized messages as follows:
 Each placeholder must be defined in the `placeholders` object. For example, to define a hello
 message with a `userName` parameter, add the following to the `app_en.arb`:
 
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb (Placeholder)" replace="/},$/}/g"?>
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="5" take="10" replace="/},$/}/g"?>
 ```json
 "hello": "Hello {userName}",
 "@hello": {
@@ -382,7 +382,7 @@ of the `countPlaceholder`. Of the 6 possible message variations in the syntax ab
 only the "other" case is required.
 
 For example, to define a message with a plural:
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb (Pluralization)" replace="/{{/{{ '{{' }}/g"?>
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="15" take="9" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
 ```json
 "nWombats": "{count, plural, =0{no wombats} =1{1 wombat} other{{ '{{' }}count} wombats}}",
 "@nWombats": {
@@ -392,7 +392,7 @@ For example, to define a message with a plural:
       "type": "num"
     }
   }
-},
+}
 ```
 
 Using a plural method is easy enough, just pass it the item count parameter:
@@ -421,7 +421,7 @@ This is most often used to support gendered languages. The syntax is
 ```
 
 For example to define a message with a select:
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb (Selection)"?>
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="24" take="9" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
 ```json
 "pronoun": "{gender, select, male{he} female{she} other{they}}",
 "@pronoun": {
@@ -481,7 +481,7 @@ The five starred `NumberFormat` constructors have optional, named parameters. Th
 parameters can be specified as the value of the placeholder’s “optionalParameters” object.
 For example, to specify the optional decimalDigits parameter for "compactCurrency":
 
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb (Number)" replace="/{{/{{ '{{' }}/g"?>
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="33" take="13" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
 ```json
 "numberOfDataPoints": "Number of data points: {value}",
 "@numberOfDataPoints": {
