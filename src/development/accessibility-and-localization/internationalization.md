@@ -382,7 +382,7 @@ of the `countPlaceholder`. Of the 6 possible message variations in the syntax ab
 only the "other" case is required.
 
 For example, to define a message with a plural:
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="15" take="9" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="15" take="10" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
 ```json
 "nWombats": "{count, plural, =0{no wombats} =1{1 wombat} other{{ '{{' }}count} wombats}}",
 "@nWombats": {

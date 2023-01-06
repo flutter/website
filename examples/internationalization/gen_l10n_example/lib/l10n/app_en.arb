@@ -18,7 +18,8 @@
     "description": "A plural message",
     "placeholders": {
       "count": {
-        "type": "num"
+        "type": "num",
+        "format": "compact"
       }
     }
   },
