@@ -76,7 +76,7 @@ dependencies:
     sdk: flutter
   flutter_localizations: # Add this line
     sdk: flutter         # Add this line
-  intl: ^0.17.0
+  intl: ^0.17.0 # Add this line
 ```
 
 Next, run `pub get packages`, then import the `flutter_localizations` library and specify
@@ -153,7 +153,7 @@ Widget build(BuildContext context) {
       child: Column(
        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          // New code
+          // Add the following code
           Localizations.override(
             context: context,
             locale: const Locale('es'),
