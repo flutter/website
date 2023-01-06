@@ -98,13 +98,13 @@ new default behavior of `Notification.dispatch`.
 ## Timeline
 
 Landed in version: 2.12.0-4.1
-In stable release: not yet
+In stable release: 3.0.0
 
 ## References
 
 API documentation:
 
-* [`Notification`]: {{site.master-api}}/flutter[widgets/Notification-class.html
+* [`Notification`]: {{site.api}}/flutter/widgets/Notification-class.html
 
 Relevant issues:
 
