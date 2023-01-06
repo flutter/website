@@ -76,6 +76,7 @@ dependencies:
     sdk: flutter
   flutter_localizations: # Add this line
     sdk: flutter         # Add this line
+  intl: ^0.17.0
 ```
 
 Next, run `pub get packages`, then import the `flutter_localizations` library and specify
