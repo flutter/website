@@ -204,7 +204,7 @@ in the Layout Explorer. You can see size, constraint, and padding
 information for both the selected widget and its nearest upstream
 RenderObject.
 
-![The Layout Explorer fixed size tool]({{site.url}}/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png)
+![The Layout Explorer fixed size tool]({{site.url}}/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png){:width="100%"}
 
 ## Visual debugging
 
@@ -487,7 +487,7 @@ selected widget.
 From the details tree, you can gather useful information about a
 widget's properties, render object, and children.
 
-![The Details Tree view]({{site.url}}/assets/images/docs/tools/devtools/details_tree.png)
+![The Details Tree view]({{site.url}}/assets/images/docs/tools/devtools/details_tree.png){:width="100%"}
 
 
 ## Track widget creation
