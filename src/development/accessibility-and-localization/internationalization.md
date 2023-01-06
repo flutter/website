@@ -139,7 +139,7 @@ structured, can be found below.
 
 `Localizations.override` is a factory constructor for the Localizations widget that allows for (the usually rare) situation where a section of your application needs to be localized to a different locale than the locale configured for your device. 
 
-To observer this behavior, let's add a `Localizations.override` and a simple `CalendarDatePicker`:
+To observe this behavior, let's add a `Localizations.override` and a simple `CalendarDatePicker`:
 
 <?code-excerpt "gen_l10n_example/lib/examples.dart (CalendarDatePicker)"?>
 ```dart
@@ -329,9 +329,9 @@ return MaterialApp(
 It’s often useful to include application values in messages. These
 messages support a syntax for including such application values, which we
 call placeholders. Placeholders become positional method parameters in the
- generated AppLocalizations class. Placeholder names must be valid Dart 
- method parameter names. Use placeholder names wrapped in curly braces to
-  add placeholders inyour localized messages as follows:
+generated AppLocalizations class. Placeholder names must be valid Dart 
+method parameter names. Use placeholder names wrapped in curly braces to
+add placeholders inyour localized messages as follows:
 ```json
 "{placeholderName}"
 ```
@@ -450,12 +450,15 @@ return Column(
 ```
 
 ### Messages with numbers and currencies
-Numbers and numbers that represent currency values are displayed very differently in different locales. 
+Numbers and numbers that represent currency values are
+displayed very differently in different locales. 
 The localizations generation tool in `flutter_localizations` makes use of the
-[`intl` package's `NumberFormat` class](https://api.flutter.dev/flutter/intl/NumberFormat-class.html) to properly format numbers based on the locale and the
+[`intl` package's `NumberFormat` class](https://api.flutter.dev/flutter/intl/NumberFormat-class.html)
+to properly format numbers based on the locale and the
 desired format.
 
-The “format” for placeholders whose type is `int`, `double`, or `number` can be any one of the following `NumberFormat` constructors.
+The “format” for placeholders whose type is `int`, `double`, or `number`
+can be any one of the following `NumberFormat` constructors.
 
 <div class="table-wrapper" markdown="1">
 | Message "format" value      | Output for 1200000 |
@@ -473,7 +476,9 @@ The “format” for placeholders whose type is `int`, `double`, or `number` can
 {:.table.table-striped}
 </div>
 
-The five starred `NumberFormat` constructors have optional, named parameters. Those parameters can be specified as the value of the placeholder’s “optionalParameters” object. For example, to specify the optional decimalDigits parameter for "compactCurrency":
+The five starred `NumberFormat` constructors have optional, named parameters. Those
+parameters can be specified as the value of the placeholder’s “optionalParameters” object.
+For example, to specify the optional decimalDigits parameter for "compactCurrency":
 
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb (Number)" replace="/{{/{{ '{{' }}/g"?>
 ```json
@@ -513,7 +518,7 @@ In the following example, the `DateTime` value that appears in the `helloWorldOn
 }
 ```
 
-In an app, when the locale is US English, the following expression would produce  “7/10/1996”. If the locale was ‘Russian’, then it would produce “10.07.1996”.
+In an app, when the locale is US English, the following expression would produce  “7/10/1996”. If the locale was Russian, then it would produce “10.07.1996”.
 
 ```dart
 AppLocalizations.of(context).helloWorldOn(DateTime.utc(1996, 7, 10))
@@ -668,8 +673,10 @@ MaterialApp(
 ```
 
 ### Configuring the l10n.yaml file
-The `l10n.yaml` file allows you to configure the `gen-l10n` tool, such as where all the input files are located,
-where all the output files should be created, and what Dart class name to give your localizations delegate.
+The `l10n.yaml` file allows you to configure the `gen-l10n` tool,
+such as where all the input files are located,
+where all the output files should be created, and what Dart class
+name to give your localizations delegate.
 The full list of options is described in the table below:
 
 <div class="table-wrapper" markdown="1">
