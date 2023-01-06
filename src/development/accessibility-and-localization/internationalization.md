@@ -389,7 +389,8 @@ For example, to define a message with a plural:
   "description": "A plural message",
   "placeholders": {
     "count": {
-      "type": "num"
+      "type": "num",
+      "format": "compact"
     }
   }
 }
@@ -421,7 +422,7 @@ This is most often used to support gendered languages. The syntax is
 ```
 
 For example to define a message with a select:
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="24" take="9" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="25" take="9" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
 ```json
 "pronoun": "{gender, select, male{he} female{she} other{they}}",
 "@pronoun": {
@@ -481,7 +482,7 @@ The five starred `NumberFormat` constructors have optional, named parameters. Th
 parameters can be specified as the value of the placeholder’s “optionalParameters” object.
 For example, to specify the optional decimalDigits parameter for "compactCurrency":
 
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="33" take="13" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="34" take="13" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
 ```json
 "numberOfDataPoints": "Number of data points: {value}",
 "@numberOfDataPoints": {
