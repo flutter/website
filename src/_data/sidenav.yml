@@ -110,10 +110,14 @@
               permalink: /development/ui/advanced/focus
             - title: Gestures
               permalink: /development/ui/advanced/gestures
+            - title: Shaders
+              permalink: /development/ui/advanced/shaders
             - title: Slivers
               permalink: /development/ui/advanced/slivers
             - title: Splash screens
               permalink: /development/ui/advanced/splash-screen
+        - title: Material 3 updates
+          permalink: /development/ui/material3-updates
         - title: Widget catalog
           permalink: /development/ui/widgets
     - title: Data & backend
@@ -165,13 +169,15 @@
               permalink: /development/platform-integration/android/plugin-api-migration
             - title: AndroidX migration
               permalink: /development/platform-integration/android/androidx-migration
+            - title: Deprecated Splash Screen API Migration
+              permalink: /development/platform-integration/android/splash-screen-migration
         - title: iOS
           permalink: /development/platform-integration/ios
           children:
+            - title: Leveraging Apple's system libraries
+              permalink: /development/platform-integration/ios/apple-frameworks
             - title: Adding iOS App Clip support
               permalink: /development/platform-integration/ios/ios-app-clip
-            - title: Apple Watch support
-              permalink: /development/platform-integration/ios/apple-watch
             - title: C interop
               permalink: /development/platform-integration/ios/c-interop
             - title: Hosting native iOS views
@@ -199,11 +205,17 @@
               permalink: /development/platform-integration/web/renderers
             - title: Custom app initialization
               permalink: /development/platform-integration/web/initialization
+            - title: Displaying images on the web
+              permalink: /development/platform-integration/web/web-images
         - title: Windows
           permalink: /development/platform-integration/windows
           children:
             - title: Building Windows apps
               permalink: /development/platform-integration/windows/building
+            - title: Run loop migration
+              permalink: /development/platform-integration/windows/run-loop-migration
+            - title: Version information migration
+              permalink: /development/platform-integration/windows/version-migration
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:
@@ -367,7 +379,7 @@
       permalink: /perf/rendering-performance
     - title: Performance profiling
       permalink: /perf/ui-performance
-    - title: Reduce shader compilation jank
+    - title: Shader compilation jank
       permalink: /perf/shader
     - title: Performance metrics
       permalink: /perf/metrics
@@ -411,7 +423,7 @@
       permalink: /resources/bug-reports
     - title: Dart resources
       permalink: /resources/bootstrap-into-dart
-    - title: Design Documents
+    - title: Design documents
       permalink: /resources/design-docs
     - title: FAQ
       permalink: /resources/faq
@@ -421,6 +433,8 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Inside Flutter
       permalink: /resources/inside-flutter
+    - title: Flutter vs. Swift Concurrency
+      permalink: /resources/dart-swift-concurrency
     - title: Official brand assets
       permalink: https://flutter.dev/brand
     - title: Platform adaptations

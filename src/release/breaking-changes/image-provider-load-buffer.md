@@ -51,7 +51,6 @@ loading assets. Classes that delegate to or call the methods of an
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class MyImageProvider extends ImageProvider<MyImageProvider> {
   @override
@@ -81,7 +80,6 @@ class MyDelegatingProvider extends ImageProvider<MyDelegatingProvider> {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyImageProvider extends ImageProvider<MyImageProvider> {
   @override
@@ -115,16 +113,16 @@ to give users of your code time to migrate as well.
 
 ## Timeline
 
-Landed in version: 3.1.0-0.0.pre.976
-In stable release: not yet
+Landed in version: 3.1.0-0.0.pre.976<br>
+In stable release: 3.3.0
 
 ## References
 
 API documentation:
 
-* [`ImmutableBuffer`]: {{site.master-api}}/flutter/dart-ui/ImmutableBuffer-class.html
-* [`ImageProvider`]: {{site.master-api}}/painting/ImageProvider-class.html
+* [`ImmutableBuffer`]({{site.api}}/flutter/dart-ui/ImmutableBuffer-class.html)
+* [`ImageProvider`]({{site.api}}/flutter/painting/ImageProvider-class.html)
 
 Relevant PRs:
 
-* [Use immutable buffer for loading asset images]: {{site.repo.flutter}}/pull/103496
+* [Use immutable buffer for loading asset images]({{site.repo.flutter}}/pull/103496)

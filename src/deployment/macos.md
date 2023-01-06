@@ -55,7 +55,7 @@ Register your app on App Store Connect:
 1. Click **+** in the top-left corner of the My Apps page,
    then select **New App**.
 1. Fill in your app details in the form that appears.
-   In the Platforms section, ensure that iOS is checked.
+   In the Platforms section, ensure that macOS is checked.
    Since Flutter does not currently support tvOS,
    leave that checkbox unchecked. Click **Create**.
 1. Navigate to the application details for your app and select
@@ -382,10 +382,10 @@ PACKAGE_NAME=$(basename "$APP_NAME" .app).pkg
 xcrun productbuild --component "$APP_NAME" /Applications/ unsigned.pkg
 
 INSTALLER_CERT_NAME=$(keychain list-certificates \
-          | jq '.[]
+          | jq '[.[]
             | select(.common_name
             | contains("Mac Developer Installer"))
-            | .common_name' \
+            | .common_name][0]' \
           | xargs)
 xcrun productsign --sign "$INSTALLER_CERT_NAME" unsigned.pkg "$PACKAGE_NAME"
 rm -f unsigned.pkg 

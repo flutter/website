@@ -48,8 +48,8 @@ listed above for making breaking changes in removing the deprecated API.
 
 ## Dart and other libraries used by Flutter
 
-The Dart language itself has a separate breaking-change policy,
-[documented on the Dart wiki][].
+The Dart language itself has a [separate breaking-change policy][],
+with announcements on [Dart announce][].
 
 In general, the Flutter team does not currently have any commitment
 regarding breaking changes for other dependencies. For example,
@@ -60,7 +60,8 @@ tests. Such changes would not necessarily be accompanied by a
 migration guide.
 
 
-[documented on the Dart wiki]: {{site.github}}/dart-lang/sdk/blob/master/docs/process/breaking-changes.md
 [flutter/tests repository]: {{site.github}}/flutter/tests
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [guides for migrating code]: {{site.url}}/release/breaking-changes
+[separate breaking-change policy]: {{site.github}}/dart-lang/sdk/blob/master/docs/process/breaking-changes.md
+[Dart announce]: https://groups.google.com/a/dartlang.org/g/announce

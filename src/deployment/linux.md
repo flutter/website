@@ -310,14 +310,14 @@ same as your app name in yaml file!
 For example:
 
 ```desktop
-  [Desktop Entry]
-  Name=Super Cool App
-  Comment=Super Cool App that does everything
-  Exec=super-cool-app 
-  Icon=${SNAP}/meta/gui/super-cool-app.png # replace name to your app name
-  Terminal=false
-  Type=Application
-  Categories=Education; #adjust accordingly your snap category
+[Desktop Entry]
+Name=Super Cool App
+Comment=Super Cool App that does everything
+Exec=super-cool-app 
+Icon=${SNAP}/meta/gui/super-cool-app.png # replace name to your app name
+Terminal=false
+Type=Application
+Categories=Education; #adjust accordingly your snap category
 ```
 
 Place your icon with .png extension in your Flutter 

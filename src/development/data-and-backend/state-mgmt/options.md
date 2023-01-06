@@ -37,14 +37,10 @@ A recommended approach.
 
 * [Simple app state management][], the previous page in this section
 * [Provider package][]
-* [You might not need Redux: The Flutter edition][], by Ryan Edge
-* [Making sense of all those Flutter Providers][]
 
 
-[Making sense of all those Flutter Providers]: {{site.medium}}/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd?sk=7859a73fac0ca414a0e911b0322e8589
 [Provider package]: {{site.pub-pkg}}/provider
 [Simple app state management]: {{site.url}}/development/data-and-backend/state-mgmt/simple
-[You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
 
 ## Riverpod
 
@@ -181,6 +177,11 @@ doesn't need a `BuildContext`.
   case you already use `flutter_hooks`.
 * [Flutter state management for minimalists][], by Suragch
 
+{{site.alert.note}}
+  To learn more, watch this short Package of the Week video on the GetIt package:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/f9XQD5mf6FY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
 
 [Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
 [GetIt package]: {{site.pub-pkg}}/get_it

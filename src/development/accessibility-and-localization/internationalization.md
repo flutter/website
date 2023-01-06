@@ -250,7 +250,7 @@ project called `l10n.yaml` with the following content:
    }
    ```
 
-6. Now, run your app so that codegen takes place. You should see generated files in
+6. Now, run `flutter gen-l10n` so that codegen takes place. You should see generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
    Alternatively, you can also run `flutter gen-l10n` to generate the same
    files without running the app.
@@ -734,7 +734,6 @@ Instances of this class are created by a `LocalizationDelegate`
 provided by the [`MaterialApp`][] class.
 They can be retrieved with `Localizations.of()`:
 
-<!-- skip -->
 ```dart
 Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 ```
@@ -742,7 +741,6 @@ Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 This particular `Localizations.of()` expression is used frequently,
 so the `MaterialLocalizations` class provides a convenient shorthand:
 
-<!-- skip -->
 ```dart
 static MaterialLocalizations of(BuildContext context) {
   return Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);

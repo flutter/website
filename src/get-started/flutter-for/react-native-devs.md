@@ -857,8 +857,8 @@ return ListView.builder(
 
 {% include docs/android-ios-figure-pair.md image="react-native/flatlist.gif" alt="Flat list" class="border" %}
 
-To learn how to implement an infinite scrolling list, see the
-[Write Your First Flutter App, Part 1][] codelab.
+To learn how to implement an infinite scrolling list, see the official
+[`infinite_list`][infinite_list] sample.
 
 ### How do I use a Canvas to draw or paint?
 
@@ -1673,6 +1673,15 @@ like [`Navigator.push`][] and [`Navigator.pop`][].
 A list of routes might be specified in the [`MaterialApp`][] widget,
 or they might be built on the fly, for example, in hero animations.
 The following example specifies named routes in the `MaterialApp` widget.
+
+{{site.alert.note}}
+  Named routes are no longer recommended for most
+  applications. For more information, see
+  [Limitations][] in the [navigation overview][] page.
+{{site.alert.end}}
+
+[Limitations]: {{site.url}}/development/ui/navigation#limitations
+[navigation overview]: {{site.url}}/development/ui/navigation
 
 <?code-excerpt "lib/navigation.dart (Navigator)"?>
 ```dart
@@ -2684,4 +2693,4 @@ and common widget properties.
 [Using Packages]: {{site.url}}/development/packages-and-plugins/using-packages
 [variables]: {{site.dart-site}}/guides/language/language-tour#variables
 [`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
-[Write Your First Flutter App, Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[infinite_list]: {{site.repo.samples}}/tree/main/infinite_list

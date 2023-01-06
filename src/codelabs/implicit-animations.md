@@ -85,7 +85,7 @@ Click the **Run** button to run the example:
 #### 1. Pick a widget property to animate
 
 To create a fade-in effect, you can animate the `opacity` property using the
-`AnimatedOpacity` widget. Change the `Container` widget to an
+`AnimatedOpacity` widget. Change the `Column` widget to an
 `AnimatedOpacity` widget:
 
 <?code-excerpt "opacity{1,2}/lib/main.dart"?>
@@ -167,11 +167,32 @@ the starting value for `opacity` to zero:
              Text('Type: Owl'),
 ```
 
-#### 3. Set up a trigger for the animation, and choose an end value
+#### 3. Set the duration of the animation
+
+In addition to an `opacity` parameter, `AnimatedOpacity` requires a
+[duration] to use for its animation. For this example,
+you can start with 2 seconds:
+
+<?code-excerpt "opacity{3,4}/lib/main.dart"?>
+```diff
+--- opacity3/lib/main.dart
++++ opacity4/lib/main.dart
+@@ -28,7 +28,7 @@
+           ),
+           onPressed: () => {}),
+       AnimatedOpacity(
+-        duration: const Duration(seconds: 3),
++        duration: const Duration(seconds: 2),
+         opacity: opacity,
+         child: Column(
+           children: const [
+```
+
+#### 4. Set up a trigger for the animation, and choose an end value
 
 Configure the animation to trigger when the user clicks the **Show details**
 button. To do this, change `opacity` state using the `onPressed()` handler for
-`TextlButton`. To make the `FadeInDemo` widget become fully visible when
+`TextButton`. To make the `FadeInDemo` widget become fully visible when
 the user clicks the **Show details** button, use the `onPressed()` handler
 to set `opacity` to 1:
 
@@ -205,27 +226,6 @@ to set `opacity` to 1:
   Notice that you only need to set the start and end values of `opacity`.
   The `AnimatedOpacity` widget manages everything in between.
 {{site.alert.end}}
-
-#### 4. Set the duration of the animation
-
-In addition to an `opacity` parameter, `AnimatedOpacity` requires a
-[duration] to use for its animation. For this example,
-you can start with 2 seconds:
-
-<?code-excerpt "opacity{3,4}/lib/main.dart"?>
-```diff
---- opacity3/lib/main.dart
-+++ opacity4/lib/main.dart
-@@ -28,7 +28,7 @@
-           ),
-           onPressed: () => {}),
-       AnimatedOpacity(
--        duration: const Duration(seconds: 3),
-+        duration: const Duration(seconds: 2),
-         opacity: opacity,
-         child: Column(
-           children: const [
-```
 
 ### Fade-in (complete)
 
@@ -512,7 +512,7 @@ here are some suggestions for where to go next:
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [list of common implicitly animated widgets]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [list of curve constants]: {{site.api}}/flutter/animation/Curves-class.html
-[make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1/
+[make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
 [shape-shifting complete]: #shape-shifting-complete
 [Shape-shifting effect]: #example-shape-shifting-effect

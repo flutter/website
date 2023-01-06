@@ -1,4 +1,4 @@
-<div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
 ## Create the app {#create-app}
 
@@ -37,9 +37,8 @@ contains a simple demo app that uses [Material Components][].
        in terminal to launch a simulator.
 
        ```terminal
-       $ open -a simulator
+   $ open -a simulator
        ```
-
        On Windows or Linux, it's not possible to launch an iOS simulator.
      {{site.alert.end}}
 

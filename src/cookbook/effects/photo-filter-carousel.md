@@ -25,7 +25,7 @@ The following animation shows the app's behavior:
 This recipe begins with the photo and filters
 already in place. Filters are applied with the
 `color` and `colorBlendMode` properties of the
-[`Image`][] widget].
+[`Image`][] widget.
 
 ## Add a selector ring and dark gradient
 
@@ -573,8 +573,7 @@ class _ExampleInstagramFilterSelectionState
   Widget _buildPhotoWithFilter() {
     return ValueListenableBuilder(
       valueListenable: _filterColor,
-      builder: (context, value, child) {
-        final color = value as Color;
+      builder: (context, color, child) {
         return Image.network(
           'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
           color: color.withOpacity(0.5),

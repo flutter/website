@@ -32,7 +32,6 @@ and `RadioThemeData`.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(toggleableActiveColor: myColor),
@@ -42,7 +41,6 @@ MaterialApp(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 final ThemeData theme = ThemeData();
 MaterialApp(
@@ -100,8 +98,8 @@ MaterialApp(
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: not yet
+Landed in version: TBD  
+In stable release: TBD
 
 ## References
 

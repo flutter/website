@@ -18,7 +18,7 @@ but there are many others.
 Here are some of the series offered on the
 [flutterdev YouTube channel][].
 
-[flutterdev YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+[flutterdev YouTube channel]: {{site.social.youtube}}
 
 ### Flutter at Google I/O 2022
 
@@ -157,11 +157,15 @@ To include your course, [submit a PR][]:
 * [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
 * [Flutter & Dart - the Complete Guide, 2021 edition][]
 * [Flutter Crash Course][] by Nick Manning
-* [Flutter leicht gemacht 2022 - Zero to Mastery!][] by Max Berktold
+* [Flutter leicht gemacht 2022 - Zero to Mastery!][] by Max Berktold (German)
+* [Flutter Zero to Hero][] by Veli Bacik (Turkish)
+* [Dart & Flutter - Zero to Mastery 2023 + Clean Architecture][] by Max Berktold & Max Steffen
 
 [Flutter & Dart - the Complete Guide, 2021 edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
 [Flutter leicht gemacht 2022 - Zero to Mastery!]: https://www.udemy.com/course/dart-flutter-leicht-gemacht/
+[Flutter Zero to Hero]: {{site.youtube-site}}/watch?v=lpvuM9lo3HU&list=PL1k5oWAuBhgXdw1BbxVGxxWRmkGB1C11l
+[Dart & Flutter - Zero to Mastery 2023 + Clean Architecture]: https://www.udemy.com/course/flutter-made-easy-zero-to-mastery/?referralCode=CCBFCD16CC71F359EE3C
 [submit a PR]: {{site.repo.this}}/pulls
 

@@ -102,6 +102,31 @@ To add the package, `css_colors`, to an app:
      Hot reload and hot restart only update the Dart code,
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
+     
+### Adding a package dependency to an app using `flutter pub add`
+
+To add the package, `css_colors`, to an app:
+
+1. Issue the command while being inside the project directory
+   * `flutter pub add css_colors`
+
+1. Import it
+   * Add a corresponding `import` statement in the Dart code.
+
+1. Stop and restart the app, if necessary
+   * If the package brings platform-specific code
+     (Kotlin/Java for Android, Swift/Objective-C for iOS),
+     that code must be built into your app.
+     Hot reload and hot restart only update the Dart code,
+     so a full restart of the app might be required to avoid
+     errors like `MissingPluginException` when using the package.
+     
+### Removing a package dependency to an app using `flutter pub remove`
+
+To remove the package, `css_colors`, to an app:
+
+1. Issue the command while being inside the project directory
+   * `flutter pub remove css_colors`
 
 The [Installing tab][],
 available on any package page on pub.dev,
@@ -265,7 +290,18 @@ additional dependency options are available:
   dependencies:
     plugin1:
       git:
-        url: git://github.com/flutter/plugin1.git
+        url: https://github.com/flutter/plugin1.git
+  ```
+
+**Git dependency using SSH**
+: If the repository is private and you can connect to it using SSH,
+  depend on the package by using the repo's SSH url:
+
+  ```yaml
+  dependencies:
+    plugin1:
+      git:
+        url: git@github.com:flutter/plugin1.git
   ```
 
 **Git dependency on a package in a folder**
@@ -278,7 +314,7 @@ additional dependency options are available:
   dependencies:
     package1:
       git:
-        url: git://github.com/flutter/packages.git
+        url: https://github.com/flutter/packages.git
         path: packages/package1
   ```
 

@@ -1,11 +1,14 @@
-{% if page.show_banner -%}
+{% comment %}
+  For headings use <h3> elements.
+{% endcomment -%}
+<div class="site-banner site-banner--default" role="alert">
+  Join us for 17 Days of Flutter!<br>
+  New content leading up to the Flutter Forward event.
+  <a href="https://flutter.dev/events/flutter-forward/#17-days-of-flutter">Learn more</a>
   {% comment %}
-    For headings use <h3> elements.
-    Note that tabbed pages will NOT work correctly if no banner is present.
-    https://github.com/flutter/website/issues/3897
-  {% endcomment %}
-  <div class="site-banner site-banner--default" role="alert">
-    See <a href="https://medium.com/flutter/whats-new-in-flutter-3-8c74a5bc32d0">What's new in Flutter 3</a> and <a href="https://docs.flutter.dev/whats-new">what's new in the docs</a><br>
-   The Flutter and Dart teams are hiring. <a href="https://docs.flutter.dev/jobs">Learn more</a><br>
-  </div>
-{% endif -%}
+  <br>The Flutter and Dart teams are hiring.
+  <a href="https://docs.flutter.dev/jobs">Learn more</a><br>
+  {% endcomment -%}
+</div>
+
+

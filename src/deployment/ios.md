@@ -111,9 +111,9 @@ In the **Deployment** section of the **Build Settings** tab:
 
 `iOS Deployment Target`
 : The minimum iOS version that your app supports.
-  Flutter supports iOS 9.0 and later. If your app or plugins
+  Flutter supports iOS 11 and later. If your app or plugins
   include Objective-C or Swift code that makes use of APIs newer
-  than iOS 9, update this setting to the highest required version.
+  than iOS 11, update this setting to the highest required version.
 
 The **General** tab of your project settings should resemble
 the following:
@@ -139,6 +139,14 @@ app's icons:
    `Runner` folder. Update the placeholder icons with your own app icons.
 1. Verify the icon has been replaced by running your app using
    `flutter run`.
+
+## Add a launch image
+
+Similar to the app icon, you may also want to replace the placeholder launch image: 
+
+1. In the Xcode project navigator, select `Assets.xcassets` in the
+   `Runner` folder. Update the placeholder launch image with your own launch image. 
+1. Verify the new launch image by hot restarting your app. (Don't use `hot reload`.)
 
 ## Create a build archive and upload to App Store Connect
 
@@ -485,7 +493,7 @@ detailed overview of the process of releasing an app to the App Store.
 [devportal_certificates]: {{site.apple-dev}}/account/resources/certificates
 [devprogram]: {{site.apple-dev}}/programs/
 [devprogram_membership]: {{site.apple-dev}}/support/compare-memberships/
-[distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
+[distributionguide]: https://help.apple.com/xcode/mac/current/#/devac02c5ab8
 [distributionguide_config]: https://help.apple.com/xcode/mac/current/#/dev91fe7130a
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f

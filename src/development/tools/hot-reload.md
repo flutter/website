@@ -19,7 +19,7 @@ To hot reload a Flutter app:
 
 1. Run the app from a supported [Flutter editor][] or a terminal window.
    Either a physical or virtual device can be the target.
-   **Only Flutter apps in debug mode can be hot reloaded.**
+   **Only Flutter apps in debug mode can be hot reloaded or hot restarted.**
 1. Modify one of the Dart files in your project.
    Most types of code changes can be hot reloaded;
    for a list of changes that require a hot restart,
@@ -140,11 +140,6 @@ class Color {
   final int j;
 }
 ```
-
-### Changing fonts
-
-Hot reload supports changing assets, for the most part.
-However, if you change fonts, you'll need to hot restart.
 
 ### Generic types
 

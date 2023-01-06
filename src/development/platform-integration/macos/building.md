@@ -58,13 +58,14 @@ Once inside of Xcode, follow either Apple's
 [documentation on notarizing macOS Applications][], or
 [on distributing an application through the App Store][].
 You should also read through the
-[macOS-specific support](#macos-specific-support)
+[macOS-specific support](#entitlements-and-the-app-sandbox)
 section below to understand how entitlements,
 the App Sandbox, and the Hardened Runtime
 impact your distributable application.
 
 [Build and release a macOS app][] provides a more detailed
-step-by-step walkthrough.
+step-by-step walkthrough of releasing a Flutter app to the
+App Store.
 
 [distribute it through the macOS App Store]: {{site.apple-dev}}/macos/submit/
 [documentation on notarizing macOS Applications]:{{site.apple-dev}}/documentation/xcode/notarizing_macos_software_before_distribution

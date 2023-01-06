@@ -1,0 +1,36 @@
+{% comment %}
+  Include parameters:
+
+  - toc_content: The HTML toc content
+  - class: CSS classes to add to toc element.
+  - header: header text, default 'Contents'
+
+  If you don't want the back-to-top button style `site-toc__back-to-top` as `display: none`.
+{% endcomment -%}
+
+{% assign toc = include.toc_content -%}
+
+{% comment %}
+  A TOC without <li> elements is empty. Only generate a TOC <div> for non-empty TOCs.
+{% endcomment -%}
+
+{% if toc contains "<li" -%}
+  {% assign toc = toc | replace: '<ul>', '<ul class="nav">' %}
+  {% assign toc = toc | replace: '<ul class="section-nav">', '<ul class="section-nav nav">' %}
+  {% assign toc = toc | replace: 'class="toc-entry', 'class="toc-entry nav-item' %}
+  {% assign toc = toc | replace: '<a href="#', '<a class="nav-link" href="#' %}
+  <div
+    id="site-toc--side"
+    class="site-toc site-toc--side fixed-col col-xl-2 order-3 {{include.class}}"
+    data-fixed-column
+  >
+    <header class="site-toc__title">
+      {{include.header | default: 'Contents'}}
+      {% comment %}
+        Uncomment to enable 'page top' button
+        <button type="button" class="btn site-toc--button__page-top" aria-label="Page top"></button>
+      {% endcomment -%}
+    </header>
+    {{ toc }}
+  </div>
+{% endif -%}

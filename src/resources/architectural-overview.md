@@ -400,7 +400,6 @@ As with any other class, you can use a constructor in a widget to initialize its
 data, so a `build()` method can ensure that any child widget is instantiated
 with the data it needs:
 
-<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -420,7 +419,6 @@ widget tree, as shown in this example:
 Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
 
-<!-- skip -->
 ```dart
 final studentState = StudentState.of(context);
 ```
@@ -538,7 +536,6 @@ code]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packag
 for `Container`, you can see that if the color is not null, it inserts a
 `ColoredBox` representing the color:
 
-<!-- skip -->
 ```dart
 if (color != null)
   current = ColoredBox(color: color!, child: current);
@@ -733,9 +730,6 @@ platform-specific notes:
   rendered using
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md), a
   library that translates OpenGL API calls to the DirectX 11 equivalents.
-  Efforts are currently underway to also offer a Windows embedder using the UWP
-  app model, as well as to replace ANGLE with a more direct path to the GPU via
-  DirectX 12.
 
 ## Integrating with other code
 
@@ -880,7 +874,6 @@ Typically, a Flutter app instantiates these widgets in a `build()` method based
 on a platform test. As an example, from the
 [google_maps_flutter]({{site.pub}}/packages/google_maps_flutter) plugin:
 
-<!-- skip -->
 ```dart
 if (defaultTargetPlatform == TargetPlatform.android) {
   return AndroidView(

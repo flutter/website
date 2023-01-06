@@ -47,7 +47,6 @@ explicitly for the target platforms.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(primarySwatch: Colors.blue),
@@ -56,7 +55,6 @@ MaterialApp(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(
@@ -71,7 +69,6 @@ MaterialApp(
 
 If you want to apply the same page transition builder to all platforms:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(

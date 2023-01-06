@@ -34,7 +34,6 @@ default for all vertical `ScrollView`s that did not already have a
 `ScrollController`, on all platforms. This default behavior was not always clear,
 particularly because it is separate from the `PrimaryScrollController` itself.
 
-<!-- skip -->
 ```dart
 // Previously, this ListView would always result in primary being true,
 // and attached to the PrimaryScrollController on all platforms.
@@ -62,7 +61,6 @@ By default, backwards compatibility is maintained for mobile platforms.
 `PrimaryScrollController.shouldInherit` returns true for vertical
 `ScrollView`s. On desktop, this returns false by default.
 
-<!-- skip -->
 ```dart
 // Only on mobile platforms will this attach to the PrimaryScrollController by
 // default.
@@ -104,7 +102,6 @@ designate which `ScrollView` is the fallback to receive unhandled keyboard
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 // These side-by-side ListViews would throw errors from Scrollbars and
 // ScrollActions previously due to the PrimaryScrollController.
@@ -140,7 +137,6 @@ Scaffold(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // These side-by-side ListViews will no longer throw errors, but for
 // default ScrollActions, one will need to be designated as primary.
@@ -178,8 +174,8 @@ Scaffold(
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: TBD
+Landed in version: 3.3.0-0.0.pre  
+In stable release: 3.3
 
 ## References
 

@@ -13,7 +13,6 @@ if a user specifies a `color` instead of a `decoration`.
 
 It is very common to use the `Container` widget as follows:
 
-<!-- skip -->
 ```dart
 return Container(color: Colors.red);
 ```
@@ -43,7 +42,6 @@ or that expected it to create a
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 testWidgets('Container color', (WidgetTester tester) async {
   await tester.pumpWidget(Container(color: Colors.red));
@@ -57,7 +55,6 @@ testWidgets('Container color', (WidgetTester tester) async {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 testWidgets('Container color', (WidgetTester tester) async {
   await tester.pumpWidget(Container(color: Colors.red));

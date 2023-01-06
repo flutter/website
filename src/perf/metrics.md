@@ -43,8 +43,8 @@ For a complete list of performance metrics Flutter measures per commit, visit
 the following sites, click **Query**, and filter the **test** and 
 **sub_result** fields:
 
-  * https://flutter-flutter-perf.skia.org/e/
-  * https://flutter-engine-perf.skia.org/e/
+  * [https://flutter-flutter-perf.skia.org/e/](https://flutter-flutter-perf.skia.org/e/)
+  * [https://flutter-engine-perf.skia.org/e/](https://flutter-engine-perf.skia.org/e/)
 
 [firstFrameRasterized]: {{site.api}}/flutter/widgets/WidgetsBinding/firstFrameRasterized.html
 

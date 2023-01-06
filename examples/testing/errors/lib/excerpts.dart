@@ -1,31 +1,36 @@
+// ignore_for_file: directives_ordering
+
 import './backend.dart';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // #docregion CatchError
-import 'dart:async';
+import 'package:flutter/material.dart';
+import 'dart:ui';
 
 void main() {
   MyBackend myBackend = MyBackend();
-  runZonedGuarded(() {
-    runApp(MyApp());
-  }, (Object error, StackTrace stack) {
+  PlatformDispatcher.instance.onError = (error, stack) {
     myBackend.sendError(error, stack);
-  });
+    return true;
+  };
+  runApp(const MyApp());
 }
 // #enddocregion CatchError
 
 // #docregion CustomError
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder: (BuildContext context, Widget? widget) {
-        Widget error = Text('...rendering error...');
-        if (widget is Scaffold || widget is Navigator)
+      builder: (context, widget) {
+        Widget error = const Text('...rendering error...');
+        if (widget is Scaffold || widget is Navigator) {
           error = Scaffold(body: Center(child: error));
-        ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
+        }
+        ErrorWidget.builder = (errorDetails) => error;
         if (widget != null) return widget;
         throw ('widget is null');
       },
@@ -35,15 +40,15 @@ class MyApp extends StatelessWidget {
 // #enddocregion CustomError
 
 class MyButton extends StatelessWidget {
-  const MyButton({Key? key}) : super(key: key);
+  const MyButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     // #docregion OnPressed
     return OutlinedButton(
-      child: Text('Click me!'),
+      child: const Text('Click me!'),
       onPressed: () async {
-        final channel = const MethodChannel('crashy-custom-channel');
+        const channel = MethodChannel('crashy-custom-channel');
         await channel.invokeMethod('blah');
       },
     );

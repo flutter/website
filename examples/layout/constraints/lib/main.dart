@@ -203,17 +203,17 @@ class Button extends StatelessWidget {
   final VoidCallback onPressed;
 
   const Button({
-    required Key key,
+    super.key,
     required this.isSelected,
     required this.exampleNumber,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        primary: Colors.white,
+        foregroundColor: Colors.white,
         backgroundColor: isSelected ? Colors.grey : Colors.grey[800],
       ),
       child: Text(exampleNumber.toString()),

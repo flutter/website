@@ -101,7 +101,6 @@ For the `ListWheelViewport` widget, if you previously specified
 
 Code before migration:
 
-<!-- skip -->
 ```dart
     await tester.pumpWidget(
       Directionality(
@@ -123,7 +122,6 @@ Code before migration:
 
 Code after migration:
 
-<!-- skip -->
 ```dart
     await tester.pumpWidget(
       Directionality(
@@ -194,7 +192,7 @@ Relevant PRs:
 [PR 21703]: {{site.repo.flutter}}/pull/21703
 [PR 21826]: {{site.repo.flutter}}/pull/21826
 
-[`Clip`]: {{site.api}}/flutter/dart-ui/Clip-class.html
+[`Clip`]: {{site.api}}/flutter/dart-ui/Clip.html
 [Issue 13736]: {{site.repo.flutter}}/issues/13736
 [Issue 18057]: {{site.repo.flutter}}/issues/18057
 [Issue 21830]: {{site.repo.flutter}}/issues/21830

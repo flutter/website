@@ -22,7 +22,6 @@ have to cast their argument to the right class.
 The previous declaration forced `OneSequenceGestureRecognizer` descendants to
 override `addAllowedPointer()` like so:
 
-<!-- skip -->
 ```dart
 class CustomGestureRecognizer extends ScaleGestureRecognizer {
   @override
@@ -46,7 +45,6 @@ super.addAllowedPointer(event); The argument type 'PointerEvent' can't be assign
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class CustomGestureRecognizer extends ScaleGestureRecognizer {
   @override
@@ -59,7 +57,6 @@ class CustomGestureRecognizer extends ScaleGestureRecognizer {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class CustomGestureRecognizer extends ScaleGestureRecognizer {
   @override

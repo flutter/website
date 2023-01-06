@@ -25,25 +25,19 @@ which tells you where to find the associated DartPad link.
 If you're new to Flutter, we recommend starting with
 one of these codelabs:
 
+{% comment %}
+TODO(filiph): add the video for the new codelab when ready
+
 * [Building your first Flutter app][] (workshop)<br>
   An instructor-led version of our very popular
   "Write your first Flutter app, part 1" codelab
   (listed below).
+{% endcomment %}
 
-* [Write your first Flutter app, part 1][]<br>
-  Create a simple mobile app that generates proposed names
-  for a startup company. In part one, you'll use a package
-  that returns pairs of words at random and inserts them into
-  an infinite scrolling list. You can also find this
-  [codelab on docs.flutter.dev][].
-
-* [Write your first Flutter app, part 2][]<br>
-  Create a simple mobile app that generates proposed names
-  for a startup company. In part two, you'll extend the
-  example from part 1 to allow the user to select favorite
-  word pairs, and add a second "Saved Favorites"
-  page where users can view the selected names.
-  Finally, you'll change the app's theme color.
+* [Your first Flutter app][]<br>
+  Create a simple app that automatically generates cool-sounding names,
+  such as "newstay", "lightstream", "mainbrake", or "graypine".
+  This app is responsive and runs on mobile, desktop, and web.
 
 * [Write your first Flutter app on the web][]<br>
   Implement a simple web app in DartPad (no downloads
@@ -56,9 +50,7 @@ one of these codelabs:
   works on Android and iOS devices, as well.
 
 [Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
-[codelab on docs.flutter.dev]: {{site.url}}/get-started/codelab
-[Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-[Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 
 ## Next steps
@@ -179,10 +171,6 @@ Learn how to use Flutter with other technologies.
   currency to offer three types of in-app purchases:
   consumable, non-consumable, and subscription.
 
-* [Build a Photo Sharing app with Google Photos and Flutter][]<br>
-  Build a field trip app that allows you and other
-  members of the trip to share photos.
-
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
@@ -203,23 +191,15 @@ Learn how to use Flutter with other technologies.
   and iOS using Flutter, authenticating users with Firebase
   Authentication and sync data using Cloud Firestore.
 
-* [Multi-platform Firestore Flutter][]<br>
-  Build a multi-platform restaurant recommendation app
-  powered by Flutter and Cloud Firestore.
-  The finished app runs on Android, iOS, and web,
-  from a single Dart codebase.
-
 [Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
 [Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
-[Build a Photo Sharing app with Google Photos and Flutter]: {{site.codelabs}}/codelabs/google-photos-sharing
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/learn/codelabs/firebase-get-to-know-flutter
-[Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter
 
 ## Testing
 

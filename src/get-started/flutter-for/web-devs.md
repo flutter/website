@@ -10,6 +10,12 @@ This page is for users who are familiar with the HTML
 and CSS syntax for arranging components of an application's UI.
 It maps HTML/CSS code snippets to their Flutter/Dart code equivalents.
 
+Flutter is a framework for building cross-platform applications
+that uses the Dart programming language.
+To understand some differences between programming with Dart
+and programming with Javascript, 
+see [Learning Dart as a JavaScript Developer][].
+
 One of the fundamental differences between
 designing a web layout and a Flutter layout,
 is learning how constraints work,
@@ -987,8 +993,6 @@ final container = Container(
 
 An excerpt displays the initial line(s) of text in a paragraph,
 and handles the overflow text, often using an ellipsis.
-In HTML/CSS an excerpt can be no longer than one line.
-Truncating after multiple lines requires some JavaScript code.
 
 In Flutter, use the `maxLines` property of a [`Text`][] widget
 to specify the number of lines to include in the excerpt,
@@ -1016,8 +1020,9 @@ and the `overflow` property for handling overflow text.
     padding: 16px;
     color: #ffffff;
     [[highlight]]overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;[[/highlight]]
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;[[/highlight]]
 }
 {% endprettify %}
 </div>
@@ -1055,11 +1060,12 @@ final container = Container(
 [`BorderRadius`]: {{site.api}}/flutter/painting/BorderRadius-class.html
 [`BoxDecoration`]: {{site.api}}/flutter/painting/BoxDecoration-class.html
 [`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
-[`BoxShape` enum]: {{site.api}}/flutter/painting/BoxShape-class.html
+[`BoxShape` enum]: {{site.api}}/flutter/painting/BoxShape.html
 [`BoxShadow`]: {{site.api}}/flutter/painting/BoxShadow-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
+[Learning Dart as a JavaScript Developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
 [`Matrix4`]: {{site.api}}/flutter/vector_math_64/Matrix4-class.html
 [`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html
 [`RichText`]: {{site.api}}/flutter/widgets/RichText-class.html

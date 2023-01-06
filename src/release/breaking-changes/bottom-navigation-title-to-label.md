@@ -31,7 +31,6 @@ widget, the BottomNavigationBar wraps the
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 BottomNavigationBarItem(
   icon: Icons.add,
@@ -41,7 +40,6 @@ BottomNavigationBarItem(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 BottomNavigationBarItem(
   icon: Icons.add,

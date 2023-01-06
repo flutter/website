@@ -325,17 +325,17 @@ class Button extends StatelessWidget {
   final VoidCallback onPressed;
 
   const Button({
-    required Key key,
+    super.key,
     required this.isSelected,
     required this.exampleNumber,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        primary: Colors.white,
+        foregroundColor: Colors.white,
         backgroundColor: isSelected ? Colors.grey : Colors.grey[800],
       ),
       child: Text(exampleNumber.toString()),
@@ -1987,7 +1987,6 @@ If you go to Flutter’s `box.dart` file and search for
 the `BoxConstraints` constructors, you'll find the
 following:
 
-<!-- skip -->
 ```dart
 BoxConstraints.tight(Size size)
    : minWidth = size.width,
@@ -2008,7 +2007,6 @@ be as small as it wants. In other words,
 a loose constraint has a **minimum** width and height
 both equal to **zero**:
 
-<!-- skip -->
 ```dart
 BoxConstraints.loose(Size size)
    : minWidth = 0.0,

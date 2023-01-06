@@ -25,7 +25,7 @@ your development environment must meet these minimum requirements:
   translation environment available for [some ancillary tools]. 
   You can install this manually by running:
   ```terminal
-  $ sudo softwareupdate --install-rosetta --agree-to-license
+$ sudo softwareupdate --install-rosetta --agree-to-license
   ```
 {{site.alert.end}}
 

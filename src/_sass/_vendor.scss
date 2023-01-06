@@ -11,17 +11,3 @@
 
 // NOTE Suppress any warning messages - we know we're behind the times
 $enable-deprecation-messages: false;
-
-// -- FontAwesome v4.x --
-// NOTE(rearch) this is only being included for use of `.fa-link`
-// in the jekyll-toc plugin for heading anchor tags, and the macos link
-// SEE src/_sass/components/_content.scss
-// NOTE In order to support this, FA fonts have been copied 
-// from node_modules/font-awesome/fonts -> src/assets/fonts
-// --> https://fontawesome.com/v4.7/get-started
-// TODO when not needed, those fonts should be removed as well as 
-// as this import and the package.json lib.
-@import '../../node_modules/font-awesome/scss/font-awesome';
-
-// $fa-font-path: "../assets/fonts";
-

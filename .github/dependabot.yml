@@ -21,6 +21,11 @@ updates:
       interval: "daily"
     allow:
       - dependency-type: "production"
+  # Automatically update submodules
+  - package-ecosystem: 'gitsubmodule'
+    directory: '/'
+    schedule:
+      interval: 'daily'
   - package-ecosystem: "pub"
     directory: "/"
     schedule:

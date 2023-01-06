@@ -57,7 +57,8 @@ you need the following software:
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:
 
-* [Visual Studio 2022][] When installing Visual Studio,
+* [Visual Studio 2022][] or [Visual Studio Build Tools 2022][]
+  When installing Visual Studio or only the Build Tools,
   select the "Desktop development with C++" workload,
   including all of its default components,
   to install the necessary C++ toolchain and
@@ -68,6 +69,7 @@ you need the following in addition to the Flutter SDK:
 {{site.alert.end}}
 
 [Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
+[Visual Studio Build Tools 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
 
 ### Additional macOS requirements
 
@@ -175,8 +177,9 @@ $ flutter config --no-enable-ios
 
 Other available flags:
 
-* `--no-enable-windows`
-* `--no-enable-linux`
+* `--no-enable-windows-desktop`
+* `--no-enable-linux-desktop`
+* `--no-enable-macos-desktop`
 * `--no-enable-web`
 * `--no-enable-android`
 * `--no-enable-ios`

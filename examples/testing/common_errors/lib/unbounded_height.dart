@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProblemWidget extends StatelessWidget {
-  const ProblemWidget({Key? key}) : super(key: key);
+  const ProblemWidget({super.key});
 
   @override
   // #docregion Problem
@@ -9,9 +9,9 @@ class ProblemWidget extends StatelessWidget {
     return Center(
       child: Column(
         children: <Widget>[
-          Text('Header'),
+          const Text('Header'),
           ListView(
-            children: <Widget>[
+            children: const <Widget>[
               ListTile(
                 leading: Icon(Icons.map),
                 title: Text('Map'),
@@ -30,7 +30,7 @@ class ProblemWidget extends StatelessWidget {
 }
 
 class SolutionWidget extends StatelessWidget {
-  const SolutionWidget({Key? key}) : super(key: key);
+  const SolutionWidget({super.key});
 
   @override
   // #docregion Fix
@@ -38,10 +38,10 @@ class SolutionWidget extends StatelessWidget {
     return Center(
       child: Column(
         children: <Widget>[
-          Text('Header'),
+          const Text('Header'),
           Expanded(
             child: ListView(
-              children: <Widget>[
+              children: const <Widget>[
                 ListTile(
                   leading: Icon(Icons.map),
                   title: Text('Map'),

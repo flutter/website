@@ -13,7 +13,7 @@
       <i class="material-icons">menu</i>
     </button>
 
-    <a class="navbar-brand" href="{{site.main-url}}">
+    <a class="navbar-brand" href="{{site.url}}">
       <img 
         src='/assets/images/shared/brand/flutter/logo/flutter-lockup.png' 
         alt='Flutter logo' 
@@ -36,16 +36,16 @@
       <div class="site-header__sheet">
         <ul class="navbar-nav">
           <div class="site-sidebar site-sidebar--header d-md-none">
-            {% include shared/sidenav-level-1.html nav=site.data.sidenav %}
+            {% include_cached sidenav-level-1.html nav=site.data.sidenav page_url_path=route %}
           </div>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" 
+            <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
                href="{{site.main-url}}/multi-platform" 
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                Multi-Platform
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="platform-navbar-dropdown">
               <a class="dropdown-item" href="{{site.main-url}}/multi-platform/mobile">Mobile</a>
               <a class="dropdown-item" href="{{site.main-url}}/multi-platform/web">Web</a>
               <a class="dropdown-item" href="{{site.main-url}}/multi-platform/desktop">Desktop</a>
@@ -53,26 +53,26 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" 
+            <a class="nav-link dropdown-toggle" id="dev-navbar-dropdown"
                href="{{site.main-url}}/development"
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                Development
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="dev-navbar-dropdown">
               <a class="dropdown-item" href="{{site.main-url}}/learn">Learn</a>
               <a class="dropdown-item" href="https://pub.dev/flutter/favorites" target="_blank">Flutter Favorites</a>
               <a class="dropdown-item" href="https://pub.dev/" target="_blank">Packages</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" 
+            <a class="nav-link dropdown-toggle" id="ecosystem-navbar-dropdown"
                href="{{site.main-url}}/ecosystem"
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                Ecosystem
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="ecosystem-navbar-dropdown">
               <a class="dropdown-item" href="{{site.main-url}}/community">Community</a>
               <a class="dropdown-item" href="{{site.main-url}}/events">Events</a>
               <a class="dropdown-item" href="{{site.main-url}}/monetization">Monetization</a>
@@ -83,25 +83,25 @@
           </li>
           <li class="nav-item dropdown docs-item">
             <a class="nav-link dropdown-toggle{% if route == '/' %} active{% endif %}"
-               id="navbarDropdown" 
+               id="docs-navbar-dropdown"
                href="/"
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                Docs
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
               <a class="dropdown-item {% if route == '/' %} active{% endif %}"
-                 href="/whats-new">What's New</a>
+                 href="/whats-new">What's new</a>
               <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
-                 href="/get-started/editor?tab=androidstudio">Editor Support</a>
+                 href="/get-started/editor">Editor support</a>
               <a class="dropdown-item {% if route contains '/development/tools/hot-reload' %} active{% endif %}"
-                 href="/development/tools/hot-reload">Hot Reload</a>
+                 href="/development/tools/hot-reload">Hot reload</a>
               <a class="dropdown-item {% if route contains '/perf/rendering/ui-performance' %} active{% endif %}"
                  href="/perf/rendering/ui-performance">Profiling</a>
               <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
                  href="/get-started/install">Install Flutter</a>
               <a class="dropdown-item {% if route contains '/development/tools/devtools' %} active{% endif %}"
-                 href="/development/tools/devtools/overview">Dev Tools</a>
+                 href="/development/tools/devtools/overview">DevTools</a>
               <a class="dropdown-item {% if route contains '/cookbook' %} active{% endif %}"
                  href="/cookbook">Cookbook</a>
               <a class="dropdown-item {% if route contains '/reference/tutorials' %} active{% endif %}"
@@ -121,7 +121,7 @@
       <a 
         class="nav-item nav-link" 
         href="{{site.social.twitter}}" 
-        aria-label="Twittter">
+        aria-label="Twitter">
         <i class="fab fa-twitter fa-lg"></i>
       </a>
       <a 
@@ -133,7 +133,7 @@
       <a 
         class="nav-item nav-link" 
         href="{{site.repo.organization}}" 
-        aria-label="Github">
+        aria-label="GitHub">
         <i class="fab fa-github fa-lg"></i>
     </a>
     </div>
