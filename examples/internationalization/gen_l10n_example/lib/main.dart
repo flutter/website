@@ -64,27 +64,27 @@ class _MyHomePageState extends State<MyHomePage> {
               // Alternatively, you can create a new widget and Localizations.override
               // will pass the updated BuildContext to the new widget.
               child: Builder(
-                builder: (BuildContext context) {
+                builder: (context) {
                   // #docregion Placeholder
                   // Examples of internationalized strings.
                   return Column(
                     children: <Widget>[
                       // Returns 'Hello John'
-                      Text(AppLocalizations.of(context).hello('John')),
+                      Text(AppLocalizations.of(context)!.hello('John')),
                       // Returns 'no wombats'
-                      Text(AppLocalizations.of(context).nWombats(0)),
+                      Text(AppLocalizations.of(context)!.nWombats(0)),
                       // Returns '1 wombat'
-                      Text(AppLocalizations.of(context).nWombats(1)),
+                      Text(AppLocalizations.of(context)!.nWombats(1)),
                       // Returns '5 wombats'
-                      Text(AppLocalizations.of(context).nWombats(5)),
+                      Text(AppLocalizations.of(context)!.nWombats(5)),
                       // Returns 'he'
-                      Text(AppLocalizations.of(context).pronoun('male')),
+                      Text(AppLocalizations.of(context)!.pronoun('male')),
                       // Returns 'she'
-                      Text(AppLocalizations.of(context).pronoun('female')),
+                      Text(AppLocalizations.of(context)!.pronoun('female')),
                       // Returns 'they'
-                      Text(AppLocalizations.of(context).pronoun('other')),
+                      Text(AppLocalizations.of(context)!.pronoun('other')),
                     ],
-                  ),
+                  );
                   // #enddocregion Placeholder
                 },
               ),

@@ -61,7 +61,7 @@ this package supports 78 languages.
 To begin, start by creating a new Flutter application in a directory of your choice with
 the `flutter create` command.
 
-<?code-excerpt "gen_l10n_example/lib/examples.dart (Create)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.txt (Create)"?>
 ```
 flutter create <name_of_flutter_app>
 ```
@@ -142,7 +142,7 @@ structured, can be found below.
 
 To observe this behavior, let's add a `Localizations.override` and a simple `CalendarDatePicker`:
 
-<?code-excerpt "gen_l10n_example/lib/examples.dart (CalendarDatePicker)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.txt (CalendarDatePicker)"?>
 ```dart
 Widget build(BuildContext context) {
   return Scaffold(
@@ -285,7 +285,7 @@ project called `l10n.yaml` with the following content:
    The `AppLocalizations` class also provides a generated `localizationsDelegates` and `supportedLocales` list
    and we may use these instead of providing the manually.
 
-   <?code-excerpt "gen_l10n_example/lib/examples.dart (MaterialAppExample)"?>
+   <?code-excerpt "gen_l10n_example/lib/examples.txt (MaterialAppExample)"?>
    ```dart
    const MaterialApp(
      title: 'Localizations Sample App',
@@ -364,9 +364,9 @@ Replace the body of the builder passed into `Builder` with
 return Column(
   children: <Widget>[
     // Returns 'Hello John'
-    Text(AppLocalizations.of(context).hello('John')),
+    Text(AppLocalizations.of(context)!.hello('John')),
   ],
-),
+);
 ```
 
 You can also use numerical placeholders to specify pluralization.
@@ -404,19 +404,19 @@ return Column(
   children: <Widget>[
     ...
     // Returns 'he'
-    Text(AppLocalizations.of(context).pronoun('male')),
+    Text(AppLocalizations.of(context)!.pronoun('male')),
     // Returns 'she'
-    Text(AppLocalizations.of(context).pronoun('female')),
+    Text(AppLocalizations.of(context)!.pronoun('female')),
     // Returns 'they'
-    Text(AppLocalizations.of(context).pronoun('other')),
+    Text(AppLocalizations.of(context)!.pronoun('other')),
   ],
-),
+);
 ```
 
 
 Similar to plurals, there is a syntax to choose a value based on a `String` placeholder.
 This is most often used to support gendered languages. The syntax is
-<?code-excerpt "gen_l10n_example/lib/examples.dart (SelectSyntax)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.txt (SelectSyntax)"?>
 ```json
 "{selectPlaceholder, select, case{message} ... other{messageOther}}"
 ```
@@ -442,13 +442,13 @@ return Column(
   children: <Widget>[
     ...
     // Returns 'he'
-    Text(AppLocalizations.of(context).pronoun('male')),
+    Text(AppLocalizations.of(context)!.pronoun('male')),
     // Returns 'she'
-    Text(AppLocalizations.of(context).pronoun('female')),
+    Text(AppLocalizations.of(context)!.pronoun('female')),
     // Returns 'they'
-    Text(AppLocalizations.of(context).pronoun('other')),
+    Text(AppLocalizations.of(context)!.pronoun('other')),
   ],
-),
+);
 ```
 
 ### Messages with numbers and currencies
@@ -575,7 +575,7 @@ In order to fully express every variant of Chinese for the
 country codes `CN`, `TW`, and `HK`, the list of supported
 locales should include:
 
-<?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.txt (SupportedLocales)"?>
 ```dart
 supportedLocales: [
   Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
@@ -635,7 +635,7 @@ and rebuilds it if the system's locale changes.
 You can always lookup an app's current locale with
 `Localizations.localeOf()`:
 
-<?code-excerpt "gen_l10n_example/lib/examples.dart (MyLocale)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.txt (MyLocale)"?>
 ```dart
 Locale myLocale = Localizations.localeOf(context);
 ```
@@ -662,7 +662,7 @@ method can provide a [`localeResolutionCallback`][].
 For example, to have your app unconditionally accept
 whatever locale the user selects:
 
-<?code-excerpt "gen_l10n_example/lib/examples.dart (LocaleResolution)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.txt (LocaleResolution)"?>
 ```dart
 MaterialApp(
   localeResolutionCallback: (
