@@ -37,7 +37,7 @@ here are some next steps.
 ### Docs
 
 Coming from another platform? Check out Flutter for:
-[Android][], [iOS][], [web][], [React Native][], and
+[Android][], [SwiftUI][], [SwiftUI][], [UIKit][], [React Native][], and
 [Xamarin.Forms][] developers.
 
 [Building layouts][]
@@ -65,7 +65,8 @@ Coming from another platform? Check out Flutter for:
 [FAQ]: {{site.url}}/resources/faq
 [Get started]: {{site.url}}/get-started/install
 [interactivity]: {{site.url}}/development/ui/interactive
-[iOS]: {{site.url}}/get-started/flutter-for/ios-devs
+[SwiftUI]: {{site.url}}/get-started/flutter-for/swiftui-devs
+[UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
 [React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints
 [web]: {{site.url}}/get-started/flutter-for/web-devs
