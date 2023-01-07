@@ -128,6 +128,7 @@
       { "source": "/development/ui/widgets/widgetindex", "destination": "/reference/widgets", "type": 301 },
       { "source": "/get-started", "destination": "/get-started/install", "type": 301 },
       { "source": "/get-started/flutter-for", "destination": "/get-started/flutter-for/android-devs", "type": 301 },
+      { "source": "/get-started/flutter-for/ios-devs", "destination": "/get-started/flutter-for/swiftui-devs", "type": 301 },
       { "source": "/get-started/install/null", "destination": "/get-started/install", "type": 301 },
       { "source": "/reference/widgets/:catalogpage+", "destination": "/development/ui/widgets/:catalogpage+", "type": 301 },
       { "source": "/reference/widgets/widgetindex", "destination": "/reference/widgets", "type": 301 },
