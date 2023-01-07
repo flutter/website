@@ -16,8 +16,10 @@
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
-        - title: Flutter for iOS devs
-          permalink: /get-started/flutter-for/ios-devs
+        - title: Flutter for SwiftUI devs
+          permalink: /get-started/flutter-for/swiftui-devs
+        - title: Flutter for UIKit devs
+          permalink: /get-started/flutter-for/uikit-devs
         - title: Flutter for React Native devs
           permalink: /get-started/flutter-for/react-native-devs
         - title: Flutter for web devs
