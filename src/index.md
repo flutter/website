@@ -37,7 +37,7 @@ here are some next steps.
 ### Docs
 
 Coming from another platform? Check out Flutter for:
-[Android][], [SwiftUI][], [SwiftUI][], [UIKit][], [React Native][], and
+[Android][], [SwiftUI][], [UIKit][], [React Native][], and
 [Xamarin.Forms][] developers.
 
 [Building layouts][]
