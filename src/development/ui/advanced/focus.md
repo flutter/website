@@ -545,7 +545,7 @@ in the highlight mode.
 
 [`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
 [`Builder`]: {{site.api}}/flutter/widgets/Builder-class.html
-[`DirectionalFocusTraversalPolicyMixin`]: {{site.api}}/flutter/widgets/DirectionalFocusTraversalPolicyMixin-class.html
+[`DirectionalFocusTraversalPolicyMixin`]: {{site.api}}/flutter/widgets/DirectionalFocusTraversalPolicyMixin-mixin.html
 [`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
 [`FocusableActionDetector`]: {{site.api}}/flutter/widgets/FocusableActionDetector-class.html
 [`FocusManager`]: {{site.api}}/flutter/widgets/FocusManager-class.html
@@ -562,4 +562,4 @@ in the highlight mode.
 [`OrderedTraversalPolicy`]: {{site.api}}/flutter/widgets/OrderedTraversalPolicy-class.html
 [`ReadingOrderTraversalPolicy`]: {{site.api}}/flutter/widgets/ReadingOrderTraversalPolicy-class.html
 [`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
-[`UnfocusDisposition.scope`]: {{site.api}}/flutter/widgets/UnfocusDisposition-class.html
+[`UnfocusDisposition.scope`]: {{site.api}}/flutter/widgets/UnfocusDisposition.html
