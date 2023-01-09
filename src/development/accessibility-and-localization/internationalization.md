@@ -285,8 +285,9 @@ project called `l10n.yaml` with the following content:
    );
    ```
 
-   The `AppLocalizations` class also provides a generated `localizationsDelegates` and `supportedLocales` list
-   and we may use these instead of providing the manually.
+   The `AppLocalizations` class also provides auto-generated
+   `localizationsDelegates` and `supportedLocales` lists.
+   You can use these instead of providing them manually.
 
    <?code-excerpt "gen_l10n_example/lib/examples.txt (MaterialAppExample)"?>
    ```dart
