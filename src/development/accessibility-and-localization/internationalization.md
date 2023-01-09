@@ -477,15 +477,15 @@ parameter and the actual value is case-sensitive. That is,
 "other" case, and return "they".
 
 ### Messages with numbers and currencies
-Numbers and numbers that represent currency values are
-displayed very differently in different locales. 
-The localizations generation tool in `flutter_localizations` makes use of the
-[`intl` package's `NumberFormat` class](https://api.flutter.dev/flutter/intl/NumberFormat-class.html)
+Numbers, including those that represent currency values,
+are displayed very differently in different locales. 
+The localizations generation tool in `flutter_localizations` uses the
+[`intl` package's `NumberFormat` class]({{site.api}}/flutter/intl/NumberFormat-class.html)
 to properly format numbers based on the locale and the
 desired format.
 
-The “format” for placeholders whose type is `int`, `double`, or `number`
-can be any one of the following `NumberFormat` constructors.
+The `int`, `double`, and `number` types can use any of the
+following `NumberFormat` constructors:
 
 <div class="table-wrapper" markdown="1">
 | Message "format" value      | Output for 1200000 |
@@ -503,9 +503,10 @@ can be any one of the following `NumberFormat` constructors.
 {:.table.table-striped}
 </div>
 
-The five starred `NumberFormat` constructors have optional, named parameters. Those
-parameters can be specified as the value of the placeholder’s “optionalParameters” object.
-For example, to specify the optional decimalDigits parameter for "compactCurrency":
+The starred `NumberFormat` constructors in the table offer optional, named parameters.
+Those parameters can be specified as the value of the placeholder’s `optionalParameters` object.
+For example, to specify the optional `decimalDigits` parameter for `compactCurrency`,
+make the following changes to the `lib/l10n/app_en.arg` file:
 
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="34" take="13" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
 ```json
@@ -528,7 +529,7 @@ For example, to specify the optional decimalDigits parameter for "compactCurrenc
 Dates strings are formatted in many different ways depending both the locale and the app’s needs.  
 
 Placeholder values with type `DateTime` are formatted with
-[`intl`'s `DateFormat` class](https://api.flutter.dev/flutter/intl/DateFormat-class.html).
+[`intl`'s `DateFormat` class]({{site.api}}/flutter/intl/DateFormat-class.html).
 There are 41 format variations, identified by the names of their `DateFormat` factory constructors.
 In the following example, the `DateTime` value that appears in the `helloWorldOn` message is formatted with `DateFormat.yMd`:
 
@@ -545,7 +546,7 @@ In the following example, the `DateTime` value that appears in the `helloWorldOn
 }
 ```
 
-In an app, when the locale is US English, the following expression would produce  “7/10/1996”. If the locale was Russian, then it would produce “10.07.1996”.
+In an app where the locale is US English, the following expression would produce  “7/10/1996”. In a Russian locale, it would produce “10.07.1996”.
 
 ```dart
 AppLocalizations.of(context).helloWorldOn(DateTime.utc(1996, 7, 10))
@@ -700,11 +701,15 @@ MaterialApp(
 ```
 
 ### Configuring the l10n.yaml file
-The `l10n.yaml` file allows you to configure the `gen-l10n` tool,
-such as where all the input files are located,
-where all the output files should be created, and what Dart class
-name to give your localizations delegate.
-The full list of options is described in the table below:
+
+The `l10n.yaml` file allows you to configure the `gen-l10n` tool
+to specify:
+
+* where all the input files are located
+* where all the output files should be created
+* what Dart class name to give your localizations delegate
+
+For a full list of options, check out the following table:
 
 <div class="table-wrapper" markdown="1">
 | Option                        | Description |
