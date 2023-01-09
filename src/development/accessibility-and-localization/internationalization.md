@@ -181,7 +181,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-Upon hot-reloading, you will observe that the `CalendarDatePicker` widget is rendered in the Spanish language.
+Hot reload the app and observe that the `CalendarDatePicker` widget re-renders in Spanish.
 
 <a name="adding-localized-messages"></a>
 ### Adding your own localized messages
