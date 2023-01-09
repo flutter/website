@@ -114,7 +114,7 @@ If you've already built the app in the
 skip to the next section.
 
  1. Make sure you've [set up][] your environment.
- 1. [Create a basic "Hello World" Flutter app][hello-world].
+ 1. [Create a new Flutter app][new-flutter-app].
  1. Replace the `lib/main.dart` file with [`main.dart`][].
  1. Replace the `pubspec.yaml` file with [`pubspec.yaml`][].
  1. Create an `images` directory in your project, and add
@@ -797,7 +797,7 @@ Flutter Gallery [running app][], [repo][]
 [Gestures]: {{site.url}}/cookbook/gestures
 [Gestures in Flutter]: {{site.url}}/development/ui/advanced/gestures
 [Handling gestures]: {{site.url}}/development/ui/widgets-intro#handling-gestures
-[hello-world]: {{site.url}}/get-started/codelab#step-1-create-the-starter-flutter-app
+[new-flutter-app]: {{site.url}}/get-started/test-drive
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
