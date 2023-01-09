@@ -23,7 +23,7 @@ apps, but they fall into three major categories:
 * [Input](#input)
 * [Idioms and norms](#idioms-and-norms)
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/RCdeSKVt7LI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/RCdeSKVt7LI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.
@@ -989,7 +989,7 @@ the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI. 
  
-![Samples of title bars]({{site.url}}/assets/images/docs/development/ui/layout/titlebar.png)
+![Samples of title bars]({{site.url}}/assets/images/docs/development/ui/layout/titlebar.png){:width="100%"}
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
@@ -1104,9 +1104,9 @@ return Row(
 );
 ```
 
-![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image1.png)
+![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image1.png){:width="75%"}
 
-![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image2.png)
+![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image2.png){:width="90%"}
 
 #### Menu bar
 
