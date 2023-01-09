@@ -142,7 +142,8 @@ structured, can be found below.
 that allows for (the typically rare) situation where a section of your application
 needs to be localized to a different locale than the locale configured for your device. 
 
-To observe this behavior, let's add a `Localizations.override` and a simple `CalendarDatePicker`:
+To observe this behavior, add a call to `Localizations.override`
+and a simple `CalendarDatePicker`:
 
 <?code-excerpt "gen_l10n_example/lib/examples.txt (CalendarDatePicker)"?>
 ```dart
