@@ -190,9 +190,11 @@ For example, consider the following asset layout for an
 image named `my_icon.png`:
 
 ```text
-.../my_icon.png
-.../2.0x/my_icon.png
-.../3.0x/my_icon.png
+.../my_icon.png       (mdpi baseline)
+.../1.5x/my_icon.png  (hdpi)
+.../2.0x/my_icon.png  (xhdpi)
+.../3.0x/my_icon.png  (xxhdpi)
+.../4.0x/my_icon.png  (xxxhdpi)
 ```
 
 On devices with a device pixel ratio of 1.8, the asset
