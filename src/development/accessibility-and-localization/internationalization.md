@@ -97,8 +97,8 @@ return const MaterialApp(
     GlobalCupertinoLocalizations.delegate,
   ],
   supportedLocales: [
-    Locale('en'), // English, no country code
-    Locale('es'), // Spanish, no country code
+    Locale('en'), // English
+    Locale('es'), // Spanish
   ],
   home: MyHomePage(),
 );
@@ -278,8 +278,8 @@ project called `l10n.yaml` with the following content:
        GlobalCupertinoLocalizations.delegate,
      ],
      supportedLocales: [
-       Locale('en'), // English, no country code
-       Locale('es'), // Spanish, no country code
+       Locale('en'), // English
+       Locale('es'), // Spanish
      ],
      home: MyHomePage(),
    );
