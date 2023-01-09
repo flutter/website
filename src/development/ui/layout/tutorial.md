@@ -173,7 +173,7 @@ Widget titleSection = Container(
 ```diff
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
-@@ -14,13 +48,15 @@
+@@ -14,11 +48,13 @@
      return MaterialApp(
        title: 'Flutter layout demo',
        home: Scaffold(
@@ -189,10 +189,6 @@ Widget titleSection = Container(
          ),
        ),
      );
-   }
--}
-\ No newline at end of file
-+}
 ```
 
 {{site.alert.tip}}
