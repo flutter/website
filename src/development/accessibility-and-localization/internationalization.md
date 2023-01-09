@@ -55,8 +55,8 @@ By default, Flutter only provides US English localizations.
 To add support for other languages,
 an application must specify additional `MaterialApp` (or `CupertinoApp`)
 properties, and include a package called
-`flutter_localizations`. As of November 2020,
-this package supports 78 languages.
+`flutter_localizations`. As of January 2023,
+this package supports 79 languages.
 
 To begin, start by creating a new Flutter application in a directory of your choice with
 the `flutter create` command.
@@ -97,8 +97,8 @@ return const MaterialApp(
     GlobalCupertinoLocalizations.delegate,
   ],
   supportedLocales: [
-    Locale('en'), // English
-    Locale('es'), // Spanish
+    Locale('en'), // English, no country code
+    Locale('es'), // Spanish, no country code
   ],
   home: MyHomePage(),
 );
@@ -298,7 +298,7 @@ project called `l10n.yaml` with the following content:
    );
    ```
 
-8. Now you can use `AppLocalizations` anywhere in your app by
+8. Now you can use `AppLocalizations` anywhere in your app:
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (InternationalizedTitle)"?>
    ```dart
@@ -331,12 +331,14 @@ return MaterialApp(
 ```
 
 ### Placeholders, plurals, and selects
-It’s often useful to include application values in messages. These
-messages support a syntax for including such application values, which we
-call placeholders. Placeholders become positional method parameters in the
-generated AppLocalizations class. Placeholder names must be valid Dart 
-method parameter names. Use placeholder names wrapped in curly braces to
-add placeholders inyour localized messages as follows:
+You can also include application values in a message with
+special syntax that uses a _placeholder_ to generate a method
+instead of a getter.
+A placeholder, which must be a valid Dart identifier name,
+becomes a positional parameter in the generated method in the
+`AppLocalizations` code. Define a placeholder name by wrapping
+it in curly braces as follows:
+
 ```json
 "{placeholderName}"
 ```
@@ -359,9 +361,12 @@ add the following to `lib/l10n/app_en.arb`:
 }
 ```
 
-Upon regenerating the `AppLocalizations` file, `AppLocalizations.of(context)` has a new `hello` method
-which accepts a parameter of type `String`. The method itself returns a string.
-Replace the body of the builder passed into `Builder` with
+Regenerate the `AppLocalizations` file. This adds a `hello` method call to
+the `AppLocalizations.of(context)` object, and the method accepts
+a parameter of type `String`; the `hello` method returns a string.
+
+Implement this by replacing the code passed into `Builder`
+with the following:
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/wombat|Wombats|he'|they|pronoun/"?>
 ```dart
