@@ -160,7 +160,7 @@ Widget build(BuildContext context) {
           Localizations.override(
             context: context,
             locale: const Locale('es'),
-            // Using a Builder here to get the correct BuildContext.
+            // Using a Builder to get the correct BuildContext.
             // Alternatively, you can create a new widget and Localizations.override
             // will pass the updated BuildContext to the new widget.
             child: Builder(
