@@ -471,6 +471,11 @@ return Column(
 );
 ```
 
+Keep in mind that when using `select` statements, comparison between the
+parameter and the actual value is case-sensitive. That is,
+`AppLocalizations.of(context)!.pronoun("Male")` will default to the
+"other" case, and return "they".
+
 ### Messages with numbers and currencies
 Numbers and numbers that represent currency values are
 displayed very differently in different locales. 
