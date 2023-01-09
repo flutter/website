@@ -138,7 +138,9 @@ structured, can be found below.
 <a name="overriding-locale"></a>
 ### Overriding the Locale
 
-`Localizations.override` is a factory constructor for the Localizations widget that allows for (the usually rare) situation where a section of your application needs to be localized to a different locale than the locale configured for your device. 
+`Localizations.override` is a factory constructor for the `Localizations` widget
+that allows for (the typically rare) situation where a section of your application
+needs to be localized to a different locale than the locale configured for your device. 
 
 To observe this behavior, let's add a `Localizations.override` and a simple `CalendarDatePicker`:
 
