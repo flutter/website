@@ -229,7 +229,6 @@ These cover recommendations for text contrast, target size, and target labels.
 The following example shows how to use the Guideline API on Name Generator.
 You created this app as part of the
 [Write your first Flutter app]({{site.url}}/get-started/codelab) codelab.
-on how to create your first Flutter app.
 Each button on the app's main screen serves as a tappable target
 with text represented in 18 point.
 
