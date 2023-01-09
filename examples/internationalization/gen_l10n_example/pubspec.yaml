@@ -11,8 +11,8 @@ dependencies:
     sdk: flutter
   flutter_localizations: # Add this line
     sdk: flutter         # Add this line
-# #enddocregion FlutterLocalizations
   intl: ^0.17.0 # Add this line
+# #enddocregion FlutterLocalizations
 # #enddocregion Intl
 
 dev_dependencies:
