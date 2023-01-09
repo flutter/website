@@ -379,19 +379,28 @@ return Column(
 );
 ```
 
-You can also use numerical placeholders to specify pluralization.
-A plural message must have a `num` parameter that represents the
-number of items the message is referring to. The specific syntax is
+You can also use numerical placeholders to specify multiple values.
+Different languages have different ways to pluralize words.
+The syntax also supports specifying _how_ a word should be pluralized.
+A _pluralized_ message must include a `num` parameter indicating
+how to pluralize the word in different situations.  English, for example,
+pluralizes "person" to "people", but that doesn't go far enough. The
+`message0` plural might be "no people" or "zero people".
+The `messageFew` plural might be
+"several people", "some people", or "a few people". 
+The `messageMany` plural might
+be  "most people" or "many people", or "a crowd". 
+Only the more general `messageOther` field is required.
+The following example shows what options are available:
 
 ```json
 "{countPlaceholder, plural, =0{message0} =1{message1} =2{message2} few{messageFew} many{messageMany} other{messageOther}}"
 ```
 The expression above will be replaced by the message variation
 (`message0`, `message1`, ...) corresponding to the value
-of the `countPlaceholder`. Of the 6 possible message variations in the syntax above,
-only the "other" case is required.
+of the `countPlaceholder`. Only the `messageOther` field is required.
 
-For example, to define a message with a plural:
+The following example defines a message that pluralizes the word, "wombat":
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="15" take="10" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
 ```json
 "nWombats": "{count, plural, =0{no wombats} =1{1 wombat} other{{ '{{' }}count} wombats}}",
@@ -424,14 +433,15 @@ return Column(
 ```
 
 
-Similar to plurals, there is a syntax to choose a value based on a `String` placeholder.
+Similar to plurals, you can also choose a value based on a `String` placeholder.
 This is most often used to support gendered languages. The syntax is
 <?code-excerpt "gen_l10n_example/lib/examples.txt (SelectSyntax)"?>
 ```json
 "{selectPlaceholder, select, case{message} ... other{messageOther}}"
 ```
 
-For example to define a message with a select:
+The following example defines a message that selects a pronoun based on gender:
+
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="25" take="9" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
 ```json
 "pronoun": "{gender, select, male{he} female{she} other{they}}",
@@ -444,7 +454,7 @@ For example to define a message with a select:
   }
 }
 ```
-Similar to above, just pass in the gender as a parameter:
+To use this feature, pass the gender string as a parameter:
 <?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/'He|hello|ombat/" replace="/\[/[\n    .../g"?>
 ```dart
 // Examples of internationalized strings.
