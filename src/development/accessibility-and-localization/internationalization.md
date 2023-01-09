@@ -401,9 +401,10 @@ The expression above will be replaced by the message variation
 of the `countPlaceholder`. Only the `messageOther` field is required.
 
 The following example defines a message that pluralizes the word, "wombat":
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="15" take="10" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
+{% raw %}
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="15" take="10" replace="/},$/}/g"?>
 ```json
-"nWombats": "{count, plural, =0{no wombats} =1{1 wombat} other{{ '{{' }}count} wombats}}",
+"nWombats": "{count, plural, =0{no wombats} =1{1 wombat} other{{count} wombats}}",
 "@nWombats": {
   "description": "A plural message",
   "placeholders": {
@@ -414,6 +415,7 @@ The following example defines a message that pluralizes the word, "wombat":
   }
 }
 ```
+{% endraw %}
 
 Using a plural method is easy enough, just pass it the item count parameter:
 <?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/'He|hello|ombat/" replace="/\[/[\n    .../g"?>
@@ -442,7 +444,8 @@ This is most often used to support gendered languages. The syntax is
 
 The following example defines a message that selects a pronoun based on gender:
 
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="25" take="9" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
+{% raw %}
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="25" take="9" replace="/},$/}/g"?>
 ```json
 "pronoun": "{gender, select, male{he} female{she} other{they}}",
 "@pronoun": {
@@ -454,6 +457,8 @@ The following example defines a message that selects a pronoun based on gender:
   }
 }
 ```
+{% endraw %}
+
 To use this feature, pass the gender string as a parameter:
 <?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/'He|hello|ombat/" replace="/\[/[\n    .../g"?>
 ```dart
@@ -508,7 +513,8 @@ Those parameters can be specified as the value of the placeholder’s `optionalP
 For example, to specify the optional `decimalDigits` parameter for `compactCurrency`,
 make the following changes to the `lib/l10n/app_en.arg` file:
 
-<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="34" take="13" replace="/{{/{{ '{{' }}/g;/},$/}/g"?>
+{% raw %}
+<?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="34" take="13" replace="/},$/}/g"?>
 ```json
 "numberOfDataPoints": "Number of data points: {value}",
 "@numberOfDataPoints": {
@@ -524,6 +530,7 @@ make the following changes to the `lib/l10n/app_en.arg` file:
   }
 }
 ```
+{% endraw %}
 
 ### Messages with dates
 Dates strings are formatted in many different ways depending both the locale and the app’s needs.  
