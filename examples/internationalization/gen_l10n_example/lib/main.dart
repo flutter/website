@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [
-        Locale('en'), // English, no country code
-        Locale('es'), // Spanish, no country code
+        Locale('en'), // English
+        Locale('es'), // Spanish
       ],
       home: MyHomePage(),
     );

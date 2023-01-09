@@ -10,7 +10,7 @@ description: How to internationalize your Flutter app.
   <h4 class="no_toc">What you’ll learn</h4>
 
   * How to track the device's locale (the user's preferred language).
-  * How to enable locale-specific Material/Cupertino widgets.
+  * How to enable locale-specific Material or Cupertino widgets.
   * How to manage locale-specific app values.
   * How to define the locales an app supports.
 {{site.alert.end}}
@@ -160,7 +160,7 @@ Widget build(BuildContext context) {
           Localizations.override(
             context: context,
             locale: const Locale('es'),
-            // Using a Builder here to get the correct BuildContext.
+            // Using a Builder to get the correct BuildContext.
             // Alternatively, you can create a new widget and Localizations.override
             // will pass the updated BuildContext to the new widget.
             child: Builder(
