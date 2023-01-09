@@ -2594,7 +2594,7 @@ and common widget properties.
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support
-[`Axis`]: {{site.api}}/flutter/painting/Axis-class.html
+[`Axis`]: {{site.api}}/flutter/painting/Axis.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [color palette]: {{site.material}}/design/color
@@ -2678,7 +2678,7 @@ and common widget properties.
 [`TabBarView`]: {{site.api}}/flutter/material/TabBarView-class.html
 [`TabController`]: {{site.api}}/flutter/material/TabController-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign-class.html
+[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
