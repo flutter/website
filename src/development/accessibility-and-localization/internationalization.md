@@ -341,8 +341,9 @@ add placeholders inyour localized messages as follows:
 "{placeholderName}"
 ```
 
-Each placeholder must be defined in the `placeholders` object. For example, to define a hello
-message with a `userName` parameter, add the following to the `app_en.arb`:
+Define each placeholder in the `placeholders` object in the app's `.arb` file.
+For example, to define a hello message with a `userName` parameter,
+add the following to `lib/l10n/app_en.arb`:
 
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="5" take="10" replace="/},$/}/g"?>
 ```json
