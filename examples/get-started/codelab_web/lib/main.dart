@@ -50,7 +50,7 @@ class WelcomeScreen extends StatelessWidget {
 
 class SignUpForm extends StatefulWidget {
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -145,7 +145,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() {
+  State<AnimatedProgressIndicator> createState() {
     return _AnimatedProgressIndicatorState();
   }
 }
