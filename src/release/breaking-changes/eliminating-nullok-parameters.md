@@ -54,7 +54,7 @@ return a non-nullable value:
 * [`FocusTraversalOrder.of`][]
 * [`FocusTraversalGroup.of`][]
 * [`Focus.of`][]
-* [`Shortcuts.of`][]
+* `Shortcuts.of`
 * [`Actions.handler`][]
 * [`Actions.find`][]
 * [`Actions.invoke`][]
@@ -81,7 +81,7 @@ value:
 * [`FocusTraversalOrder.maybeOf`][]
 * [`FocusTraversalGroup.maybeOf`][]
 * [`Focus.maybeOf`][]
-* [`Shortcuts.maybeOf`][]
+* `Shortcuts.maybeOf`
 * [`Actions.maybeFind`][]
 * [`Actions.maybeInvoke`][]
 * [`AnimatedList.maybeOf`][]
@@ -98,13 +98,13 @@ instances of calls that include `nullOk = true` as a parameter to use the
 
 So this:
 
-```
+```dart
 MediaQueryData? data = MediaQuery.of(context, nullOk: true);
 ```
 
 becomes:
 
-```
+```dart
 MediaQueryData? data = MediaQuery.maybeOf(context);
 ```
 
@@ -113,13 +113,15 @@ false` (often the default), to accept non-nullable return values, or remove any
 `!` operators:
 
 So either of:
-```
+
+```dart
 MediaQueryData data = MediaQuery.of(context)!; // nullOk false by default.
 MediaQueryData? data = MediaQuery.of(context); // nullOk false by default.
 ```
 
 both become:
-```
+
+```dart
 MediaQueryData data = MediaQuery.of(context); // No ! or ? operator here now.
 ```
 
@@ -137,6 +139,7 @@ In stable release: 2.0.0
 ## References
 
 API documentation:
+
  * [`MediaQuery.of`][]
  * [`Navigator.of`][]
  * [`ScaffoldMessenger.of`][]
@@ -146,7 +149,7 @@ API documentation:
  * [`FocusTraversalOrder.of`][]
  * [`FocusTraversalGroup.of`][]
  * [`Focus.of`][]
- * [`Shortcuts.of`][]
+ * `Shortcuts.of`
  * [`Actions.handler`][]
  * [`Actions.find`][]
  * [`Actions.invoke`][]
@@ -169,7 +172,7 @@ API documentation:
  * [`FocusTraversalOrder.maybeOf`][]
  * [`FocusTraversalGroup.maybeOf`][]
  * [`Focus.maybeOf`][]
- * [`Shortcuts.maybeOf`][]
+ * `Shortcuts.maybeOf`
  * [`Actions.maybeFind`][]
  * [`Actions.maybeInvoke`][]
  * [`AnimatedList.maybeOf`][]
@@ -203,7 +206,6 @@ Relevant PRs:
 [`FocusTraversalOrder.of`]: {{site.api}}/flutter/widgets/FocusTraversalOrder/of.html
 [`FocusTraversalGroup.of`]: {{site.api}}/flutter/widgets/FocusTraversalGroup/of.html
 [`Focus.of`]: {{site.api}}/flutter/widgets/Focus/of.html
-[`Shortcuts.of`]: {{site.api}}/flutter/widgets/Shortcuts/of.html
 [`Actions.handler`]: {{site.api}}/flutter/widgets/Actions/handler.html
 [`Actions.find`]: {{site.api}}/flutter/widgets/Actions/find.html
 [`Actions.invoke`]: {{site.api}}/flutter/widgets/Actions/invoke.html
@@ -216,7 +218,7 @@ Relevant PRs:
 [`CupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/CupertinoThemeData/resolveFrom.html
 [`NoDefaultCupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/NoDefaultCupertinoThemeData/resolveFrom.html
 [`CupertinoTextThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/CupertinoTextThemeData/resolveFrom.html
-[`MaterialBasedCupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/MaterialBasedCupertinoThemeData/resolveFrom.html
+[`MaterialBasedCupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/material/MaterialBasedCupertinoThemeData/resolveFrom.html
 [`MediaQuery.maybeOf`]: {{site.api}}/flutter/widgets/MediaQuery/maybeOf.html
 [`Navigator.maybeOf`]: {{site.api}}/flutter/widgets/Navigator/maybeOf.html
 [`ScaffoldMessenger.maybeOf`]: {{site.api}}/flutter/material/ScaffoldMessenger/maybeOf.html
@@ -226,7 +228,6 @@ Relevant PRs:
 [`FocusTraversalOrder.maybeOf`]: {{site.api}}/flutter/widgets/FocusTraversalOrder/maybeOf.html
 [`FocusTraversalGroup.maybeOf`]: {{site.api}}/flutter/widgets/FocusTraversalGroup/maybeOf.html
 [`Focus.maybeOf`]: {{site.api}}/flutter/widgets/Focus/maybeOf.html
-[`Shortcuts.maybeOf`]: {{site.api}}/flutter/widgets/Shortcuts/maybeOf.html
 [`Actions.maybeFind`]: {{site.api}}/flutter/widgets/Actions/maybeFind.html
 [`Actions.maybeInvoke`]: {{site.api}}/flutter/widgets/Actions/maybeInvoke.html
 [`AnimatedList.maybeOf`]: {{site.api}}/flutter/widgets/AnimatedList/maybeOf.html
@@ -248,4 +249,3 @@ Relevant PRs:
 [Remove `nullOk` parameter from Cupertino color resolution APIs]: {{site.repo.flutter}}/pull/68905
 [Remove vestigial `nullOk` parameter from `Localizations.localeOf`]: {{site.repo.flutter}}/pull/74657
 [Remove `nullOk` from `Actions.invoke`, add `Actions.maybeInvoke`]: {{site.repo.flutter}}/pull/74680
-

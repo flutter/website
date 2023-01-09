@@ -537,7 +537,7 @@ of the Flutter inspector.
 [DevTools written in Flutter]: {{site.url}}/development/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter
 [`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
 [flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html
-[`FlexFit`]: {{site.api}}/flutter/widgets/FlexFit-class.html
+[`FlexFit`]: {{site.api}}/flutter/rendering/FlexFit.html
 [`FlexParentData.fit`]: {{site.api}}/flutter/rendering/FlexParentData/fit.html
 [`FlexParentData.flex`]: {{site.api}}/flutter/rendering/FlexParentData/flex.html
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance

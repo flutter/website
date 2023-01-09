@@ -139,7 +139,7 @@ For an excellent example of an adaptive app,
 check out Flutter Folio, a scrapbooking app created 
 in collaboration with gskinner and the Flutter team:
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/yytBENOnF0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/yytBENOnF0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The [Folio source code][] is also available on GitHub.
 Learn more on the [gskinner blog][].
