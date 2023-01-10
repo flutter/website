@@ -8,9 +8,8 @@ Flutter plugins that offer the same abilities as Apple's system
 libraries. This might include accessing device hardware or interacting
 with specific frameworks like `HealthKit` or `MapKit`.
 
-<!-- Add once SwiftUI PR is merged -->
-<!-- For an overview of how the SwiftUI framework compares to Flutter,
-see [Learning Flutter as a SwiftUI developer][].  -->
+For an overview of how the SwiftUI framework compares to Flutter,
+see [Flutter for SwiftUI developers][].
 
 ### Introducing Flutter plugins
 Dart calls libraries that contain platform-specific code _plugins_.
@@ -310,8 +309,8 @@ Expose quick actions on the home screen
 [^5]: Uses Google's ML Kit and supports various features like text recognition, face detection, image labeling, landmark recognition, and barcode scanning. You can also create a custom model with Firebase. To learn more, see [Use a custom TensorFlow Lite model with Flutter][].
 [^6]: Uses the [OpenWeatherMap API][]. Other packages exist that can pull from different weather APIs.
 
-<!-- [Learning Flutter as a SwiftUI developer]: -->
-[Using packages]: {{ site.url }}/development/packages-and-plugins/using-packages
+[Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
+[Using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub-pkg}}
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
 [`http`]: {{site.pub-pkg}}/http

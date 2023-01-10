@@ -54,7 +54,7 @@ and `await` tells the system to await a result
 from function. This means that the Dart VM _could_ 
 suspend the function, if necessary. 
 For more details on asynchronous programming, 
-see [Concurrency in Dart]({{site.url}}/guides/language/concurrency).
+see [Concurrency in Dart]({{site.dart-site}}/guides/language/concurrency).
 
 ### Leveraging the main thread/isolate
 
@@ -303,5 +303,11 @@ Map<String, dynamic> getNumberOfKeys(String jsonString) {
 ```
 
 
-You can find more information on Dart at [Learning Dart as a Swift developer]({{site.dart-site}}/guides/language/coming-from/swift-to-dart), 
-and more information on Flutter at [Flutter for iOS developers]({{site.url}}/get-started/flutter-for/ios-devs).
+You can find more information on Dart at
+[Learning Dart as a Swift developer][], 
+and more information on Flutter at
+[Flutter for SwiftUI developers][] or [Flutter for UIKit developers][].
+
+[Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
+[Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
+[Flutter for UIKit developers]: {{site.url}}/get-started/flutter-for/uikit-devs

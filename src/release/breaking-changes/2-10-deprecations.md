@@ -593,8 +593,8 @@ Code after migration:
 
 ```dart
 element.insertRenderObjectChild(child, slot);
-element.moveChildRenderObject(child, oldSlot, newSlot);
-element.removeChildRenderObject(child, slot);
+element.moveRenderObjectChild(child, oldSlot, newSlot);
+element.removeRenderObjectChild(child, slot);
 ```
 
 **References**

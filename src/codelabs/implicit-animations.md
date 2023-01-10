@@ -512,7 +512,7 @@ here are some suggestions for where to go next:
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [list of common implicitly animated widgets]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [list of curve constants]: {{site.api}}/flutter/animation/Curves-class.html
-[make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1/
+[make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
 [shape-shifting complete]: #shape-shifting-complete
 [Shape-shifting effect]: #example-shape-shifting-effect

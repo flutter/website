@@ -301,7 +301,7 @@ the `Animatable` but is driven from the given parent.
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
-[`AnimationStatus`]: {{site.api}}/flutter/animation/AnimationStatus-class.html
+[`AnimationStatus`]: {{site.api}}/flutter/animation/AnimationStatus.html
 [`begin`]: {{site.api}}/flutter/animation/Tween/begin.html
 [`BouncingScrollSimulation`]: {{site.api}}/flutter/widgets/BouncingScrollSimulation-class.html
 [`build`]: {{site.api}}/flutter/widgets/AnimatedWidget/build.html
