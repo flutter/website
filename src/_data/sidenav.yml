@@ -218,6 +218,8 @@
               permalink: /development/platform-integration/windows/run-loop-migration
             - title: Version information migration
               permalink: /development/platform-integration/windows/version-migration
+            - title: Dark mode migration
+              permalink: /development/platform-integration/windows/dark-mode-migration
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:
