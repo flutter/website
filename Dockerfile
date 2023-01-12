@@ -1,4 +1,4 @@
-FROM ruby:3.1.3-buster@sha256:0c11f1c83646da663bbf0be421d6e3536c49b7d792d2d7d5dcbe31db65a7fe09 AS base
+FROM ruby:3.2.0-buster@sha256:41e7629503400c13b71dea1564f56132a1454e8d8df7a57bc41e9c7b0350b34c AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
