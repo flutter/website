@@ -16,8 +16,7 @@
 //   sdk: flutter
 //  flutter_localizations:
 //    sdk: flutter
-//  intl: 0.17.0
-//  intl_generator: 0.3.0
+//  intl: any # Use the pinned version from flutter_localizations
 
 // If you run this app with the device's locale set to anything but
 // English or Spanish, the app's locale will be English. If you

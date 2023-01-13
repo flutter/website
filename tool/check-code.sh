@@ -101,12 +101,7 @@ for sample in $EXAMPLE_ROOT/*/*{,/*}; do
     
     # Skip submodules
     elif [[ "$(cd $sample ; git rev-parse --show-superproject-working-tree)" ]]; then
-      echo "=> Example: $sample - skipped because it's in a sumbodule."
-      continue;
-
-    # TODO(filiph): Fix the example and remove this special case
-    elif [[ $sample =~ "intl_example" ]]; then
-      echo "=> Example: $sample - skipped because it fails now"
+      echo "=> Example: $sample - skipped because it's in a submodule."
       continue;
     
     else

@@ -61,26 +61,34 @@ this package supports 79 languages.
 To begin, start by creating a new Flutter application in a directory of your choice with
 the `flutter create` command.
 
-<?code-excerpt "gen_l10n_example/lib/examples.txt (Create)"?>
-```
-flutter create <name_of_flutter_app>
+```terminal
+$ flutter create <name_of_flutter_app>
 ```
 
-To use flutter_localizations,
-add the package as a dependency to your `pubspec.yaml` file, as well as the `intl` package:
+To use `flutter_localizations`,
+add the package as a dependency to your `pubspec.yaml` file, 
+as well as the `intl` package:
+
+```terminal
+$ flutter pub add flutter_localizations --sdk=flutter
+$ flutter pub add intl:any
+```
+
+This results in a `pubspec.yml` with the following entries:
 
 <?code-excerpt "gen_l10n_example/pubspec.yaml (FlutterLocalizations)"?>
 ```yaml
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations: # Add this line
-    sdk: flutter         # Add this line
-  intl: ^0.17.0 # Add this line
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 ```
 
-Next, run `pub get packages`, then import the `flutter_localizations` library and specify
-`localizationsDelegates` and `supportedLocales` for `MaterialApp`:
+Then import the `flutter_localizations` library and specify
+`localizationsDelegates` and `supportedLocales` for
+your `MaterialApp` or `CupertinoApp`:
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (LocalizationDelegatesImport)"?>
 ```dart
@@ -145,7 +153,7 @@ needs to be localized to a different locale than the locale configured for your 
 To observe this behavior, add a call to `Localizations.override`
 and a simple `CalendarDatePicker`:
 
-<?code-excerpt "gen_l10n_example/lib/examples.txt (CalendarDatePicker)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (CalendarDatePicker)"?>
 ```dart
 Widget build(BuildContext context) {
   return Scaffold(
@@ -154,7 +162,7 @@ Widget build(BuildContext context) {
     ),
     body: Center(
       child: Column(
-       mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           // Add the following code
           Localizations.override(
@@ -164,7 +172,7 @@ Widget build(BuildContext context) {
             // Alternatively, you can create a new widget and Localizations.override
             // will pass the updated BuildContext to the new widget.
             child: Builder(
-              builder: (BuildContext context) {
+              builder: (context) {
                 // A toy example for an internationalized Material widget.
                 return CalendarDatePicker(
                   initialDate: DateTime.now(),
@@ -189,25 +197,16 @@ Hot reload the app and observe that the `CalendarDatePicker` widget re-renders i
 Once the `flutter_localizations` package is added, use the
 following instructions to add localized text to your application.
 
-1. Add the `intl` package to the `pubspec.yaml` file:
+1. Add the `intl` package as a dependency,
+   using the version pinned by `flutter_localizations` with `any`:
 
-{% comment %}
-RegEx removes "# Add this line" from lines "flutter_localizations:" and "sdk: flutter"
-{% endcomment %}
-   <?code-excerpt "gen_l10n_example/pubspec.yaml (Intl)" replace="/(?<!0) # Add this line//g" ?>
-   ```yaml
-   dependencies:
-     flutter:
-       sdk: flutter
-     flutter_localizations:
-       sdk: flutter
-     intl: ^0.17.0 # Add this line
+   ```terminal
+   $ flutter pub add intl:any
    ```
 
-2. Also, in the `pubspec.yaml` file, enable the `generate`
-flag. This is added to the section of the pubspec that is
-specific to Flutter, and usually comes later in the pubspec
-file.
+2. Then in the `pubspec.yaml` file, enable the `generate` flag. 
+   This is added to the section of the pubspec that is specific to Flutter, 
+   and usually comes later in the pubspec file.
 
    <?code-excerpt "gen_l10n_example/pubspec.yaml (Generate)"?>
    ```yaml
@@ -216,8 +215,8 @@ file.
      generate: true # Add this line
    ```
 
-3. Add a new yaml file to the root directory of the Flutter
-project called `l10n.yaml` with the following content:
+3. Add a new yaml file to the root directory of the Flutter project 
+   called `l10n.yaml` with the following content:
 
    <?code-excerpt "gen_l10n_example/l10n.yaml"?>
    ```yaml
@@ -244,7 +243,7 @@ project called `l10n.yaml` with the following content:
    }
    ```
 
-5. Next, add an `app_es.arb` file in the same directory for
+5. Next, add an `app_es.arb` file in the same directory with a
    Spanish translation of the same message:
 
    <?code-excerpt "gen_l10n_example/lib/l10n/app_es.arb"?>
@@ -289,7 +288,7 @@ project called `l10n.yaml` with the following content:
    `localizationsDelegates` and `supportedLocales` lists.
    You can use these instead of providing them manually.
 
-   <?code-excerpt "gen_l10n_example/lib/examples.txt (MaterialAppExample)"?>
+   <?code-excerpt "gen_l10n_example/lib/examples.dart (MaterialAppExample)"?>
    ```dart
    const MaterialApp(
      title: 'Localizations Sample App',
@@ -436,8 +435,8 @@ return Column(
 
 
 Similar to plurals, you can also choose a value based on a `String` placeholder.
-This is most often used to support gendered languages. The syntax is
-<?code-excerpt "gen_l10n_example/lib/examples.txt (SelectSyntax)"?>
+This is most often used to support gendered languages. The syntax is:
+
 ```json
 "{selectPlaceholder, select, case{message} ... other{messageOther}}"
 ```
@@ -608,7 +607,7 @@ In order to fully express every variant of Chinese for the
 country codes `CN`, `TW`, and `HK`, the list of supported
 locales should include:
 
-<?code-excerpt "gen_l10n_example/lib/examples.txt (SupportedLocales)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
 ```dart
 supportedLocales: [
   Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
@@ -668,7 +667,7 @@ and rebuilds it if the system's locale changes.
 You can always lookup an app's current locale with
 `Localizations.localeOf()`:
 
-<?code-excerpt "gen_l10n_example/lib/examples.txt (MyLocale)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (MyLocale)"?>
 ```dart
 Locale myLocale = Localizations.localeOf(context);
 ```
@@ -695,7 +694,7 @@ method can provide a [`localeResolutionCallback`][].
 For example, to have your app unconditionally accept
 whatever locale the user selects:
 
-<?code-excerpt "gen_l10n_example/lib/examples.txt (LocaleResolution)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (LocaleResolution)"?>
 ```dart
 MaterialApp(
   localeResolutionCallback: (
