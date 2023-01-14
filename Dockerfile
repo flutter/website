@@ -1,11 +1,16 @@
-FROM ruby:3.2.0-buster@sha256:41e7629503400c13b71dea1564f56132a1454e8d8df7a57bc41e9c7b0350b34c AS base
+FROM ruby:3.2-0-slim-bullseye@sha256:8fa9d24fc80b48ba9dd2223b4e8c8ffaa2fbc4d5f63e5f8028e5d047a3aa7b55 AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
+      apt-transport-https \
       build-essential \
+      ca-certificates \
+      curl \
       diffutils \
       git \
       lsof \
+      make \
+      unzip \
       vim-nox \
       xdg-user-dirs \
     && rm -rf /var/lib/apt/lists/*
