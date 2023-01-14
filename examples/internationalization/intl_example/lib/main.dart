@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // A simple example of localizing a Flutter app written with the
-// Dart intl package (see https://pub.dartlang.org/packages/intl).
+// Dart intl package (see https://pub.dev/packages/intl).
 //
 // Spanish and English (locale language codes 'en' and 'es') are
 // supported.
@@ -34,8 +34,8 @@ import 'package:intl/intl.dart';
 // directory:
 //
 // flutter pub get
-// flutter pub run intl_generator:extract_to_arb --output-dir=lib/l10n lib/main.dart
-// flutter pub run intl_generator:generate_from_arb --output-dir=lib/l10n --no-use-deferred-loading lib/main.dart lib/l10n/intl_*.arb
+// dart run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
+// dart run intl_translation:generate_from_arb --output-dir=lib/l10n --no-use-deferred-loading lib/main.dart lib/l10n/intl_*.arb
 //
 // The second command generates intl_messages.arb and the third generates
 // messages_all.dart. There's more about this process in
@@ -111,14 +111,13 @@ class Demo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-// #docregion MaterialAppTitleExample
+    // #docregion MaterialAppTitleExample
     return MaterialApp(
-      onGenerateTitle: (context) =>
-          DemoLocalizations.of(context).title,
-// #enddocregion MaterialAppTitleExample
+      onGenerateTitle: (context) => DemoLocalizations.of(context).title,
+      // #enddocregion MaterialAppTitleExample
       localizationsDelegates: const [
         DemoLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
+        ...GlobalMaterialLocalizations.delegates,
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: const [
