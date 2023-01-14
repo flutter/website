@@ -325,8 +325,7 @@ string into [`MaterialApp.onGenerateTitle`][]:
 <?code-excerpt "intl_example/lib/main.dart (MaterialAppTitleExample)"?>
 ```dart
 return MaterialApp(
-  onGenerateTitle: (context) =>
-      DemoLocalizations.of(context).title,
+  onGenerateTitle: (context) => DemoLocalizations.of(context).title,
 ```
 
 ### Placeholders, plurals, and selects
@@ -1133,7 +1132,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     generate `l10n/intl_messages.arb` from `lib/main.dart`:
 
     ```terminal
-    $ flutter pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
+    $ dart run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
     ```
 
     The `intl_messages.arb` file is a JSON format map with one entry for
@@ -1148,7 +1147,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     which imports all of the messages files:
 
     ```terminal
-    $ flutter pub run intl_translation:generate_from_arb \
+    $ dart run intl_translation:generate_from_arb \
         --output-dir=lib/l10n --no-use-deferred-loading \
         lib/main.dart lib/l10n/intl_*.arb
     ```
@@ -1158,7 +1157,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     `intl_translation:extract_to_arb` command.
 
     ```terminal
-    $ flutter pub run intl_translation:generate_from_arb \
+    $ dart run intl_translation:generate_from_arb \
         --output-dir=lib/l10n --no-use-deferred-loading \
         lib/main.dart \
         lib/l10n/intl_en.arb lib/l10n/intl_fr.arb lib/l10n/intl_messages.arb
