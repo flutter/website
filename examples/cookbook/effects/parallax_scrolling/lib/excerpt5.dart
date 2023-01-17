@@ -8,7 +8,7 @@ class LocationListItem extends StatelessWidget {
   Widget _buildParallaxBackground(BuildContext context) {
     return Flow(
       delegate: ParallaxFlowDelegate(
-        scrollable: Scrollable.of(context)!,
+        scrollable: Scrollable.of(context),
         listItemContext: context,
         backgroundImageKey: _backgroundImageKey,
       ),
