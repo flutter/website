@@ -444,7 +444,7 @@ Container(
   color: Theme.of(context).secondaryHeaderColor,
   child: Text(
     'Text with a background color',
-    style: Theme.of(context).textTheme.headline6,
+    style: Theme.of(context).textTheme.titleLarge,
   ),
 );
 ```
