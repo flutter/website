@@ -443,6 +443,8 @@
       permalink: https://flutter.dev/brand
     - title: Platform adaptations
       permalink: /resources/platform-adaptations
+    - title: Security false positives **NEW**
+      permalink: /resources/security-false-positives
     - title: Videos and online courses
       permalink: /resources/videos
 
