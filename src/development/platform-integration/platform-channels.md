@@ -205,7 +205,7 @@ platform side and vice versa:
 | Map                        | FlValue(FlValue, FlValue) |
 {% endsamplecode %}
 
-## Example: Calling platform-specific Android, iOS, Windows, and Linux code using platform channels {#example}
+## Example: Calling platform-specific code using platform channels {#example}
 
 The following code demonstrates how to call
 a platform-specific API to retrieve and display
