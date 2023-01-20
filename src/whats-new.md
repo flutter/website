@@ -229,8 +229,7 @@ Flutter 2.2 is live! For details, see
 [Announcing Flutter 2.2][] and
 [What's New in Flutter 2.2][].
 
-We continue migrating code on the website to use
-null safety, but that work is not yet completed.
+The website's code continues to be migrated to implement null safety, thus this work is not yet complete.
 
 **Docs updated or added since the 2.0 release**
 
