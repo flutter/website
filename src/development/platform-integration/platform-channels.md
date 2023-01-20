@@ -927,7 +927,7 @@ static void my_application_dispose(GObject* object) {
 }
 ```
 
-Edit the `my_application_activate` method and initilize
+Edit the `my_application_activate` method and initialize
 `battery_channel` using the channel name
 `samples.flutter.dev/battery`, just after the call to
 `fl_register_plugins`:
