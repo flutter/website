@@ -42,24 +42,38 @@ target is selected.
 To override the web renderer at runtime:
 
 * Build the app with the `auto` option.
-* Insert a `<script>` tag  in `web/index.html` file before the `main.dart.js`
-  script.
-* Set `window.flutterWebRenderer` to `"canvaskit"` or `"html"`:
+* Prepare a configuration object with the `renderer` property set to
+  `"canvaskit"` or `"html"`.
+* Pass that object to the `engineInitializer.initializeEngine(configuration);`
+  method on your [Flutter Web app initialization][web-app-init].
 
-```html
-  <script type="text/javascript">
-    let useHtml = // ...
-    if(useHtml) {
-      window.flutterWebRenderer = "html";
-    } else {
-      window.flutterWebRenderer = "canvaskit";
+```javascript
+let useHtml = // ...
+_flutter.loader.loadEntrypoint({
+  onEntrypointLoaded: async function(engineInitializer) {
+    // Run-time engine configuration
+    let config = {
+      renderer: useHtml ? "html" : "canvaskit",
     }
-  </script>
-  <script src="main.dart.js" type="application/javascript"></script>
+    let appRunner = await engineInitializer.initializeEngine(config);
+
+    await appRunner.runApp();
+  }
+});
 ```
 
 The web renderer can't be changed after the Flutter engine startup process
 begins in `main.dart.js`.
+
+{{site.alert.note}}
+  As of **Flutter 3.7.0**,  setting a `window.flutterWebRenderer`
+  (an approach used in previous releases) displays a
+  **deprecation notice** in the JS console. For more information,
+  check out [Customizing web app initialization][web-app-init].
+{{site.alert.end}}
+
+[web-app-init]: {{site.url}}/development/platform-integration/web/initialization
+
 
 ## Choosing which option to use
 
