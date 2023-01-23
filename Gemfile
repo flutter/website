@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '4.3.1'
+gem 'jekyll', '4.3.2'
 gem 'webrick'
 
 # Used for custom _plugins
