@@ -969,13 +969,13 @@ types than the default types.
 
 ## Channels and platform threading
 
-When invoking channels on the platform side destined
-for Flutter, invoke them on the platform's main thread.
-When invoking channels in Flutter destined
-for the platform side, invoke on the root `Isolate`.
-The platform side's handlers can execute
-on the platform's main thread or they can execute on
-a background thread if using a Task Queue.
+When invoking channels on the platform side destined for Flutter,
+invoke them on the platform's main thread.
+When invoking channels in Flutter destined for the platform side,
+either invoke them from any `Isolate` that is the root
+`Isolate`, _or_ that is registered as a background `Isolate`.
+The handlers for the platform side can execute on the platform's main thread
+or they can execute on a background thread if using a Task Queue.
 You can invoke the platform side handlers asynchronously
 and on any thread when the Task Queue API is available;
 otherwise, they must be invoked on the platform thread.
@@ -988,6 +988,31 @@ otherwise, they must be invoked on the platform thread.
   On iOS, this thread is officially
   referred to as [the main thread][].
 {{site.alert.end}}
+
+### Using plugins and channels from background isolates
+
+Plugins and channels can be used by any `Isolate`, but that `Isolate` has to be
+a root `Isolate` (the one created by Flutter) or registered as a background
+`Isolate` for a root `Isolate`.
+
+The following example shows how to register a background `Isolate` in order to
+use a plugin from a background `Isolate`.
+
+```dart
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+void _isolateMain(RootIsolateToken rootIsolateToken) async {
+  BackgroundIsolateBinaryMessenger.ensureInitialized(rootIsolateToken);
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  print(sharedPreferences.getBool('isDebug'));
+}
+
+void main() {
+  RootIsolateToken rootIsolateToken = RootIsolateToken.instance!;
+  Isolate.spawn(_isolateMain, rootIsolateToken);
+}
+```
 
 ### Executing channel handlers on background threads
 
