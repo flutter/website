@@ -21,7 +21,7 @@ GEM
     http_parser.rb (0.8.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    jekyll (4.3.1)
+    jekyll (4.3.2)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
@@ -93,7 +93,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (~> 7.0.4)
-  jekyll (= 4.3.1)
+  jekyll (= 4.3.2)
   jekyll-include-cache (~> 0.2.1)
   jekyll-sass-converter (~> 2.2.0)
   jekyll-toc (~> 0.17.1)
