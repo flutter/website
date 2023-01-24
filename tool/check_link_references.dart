@@ -16,8 +16,9 @@ final _htmlCommentPattern = RegExp(r'<!--.*?-->', dotAll: true);
 /// ```
 final _codeBlockPattern = RegExp(r'<pre.*?</pre>', dotAll: true);
 
-/// Remove PRs title that looks like a link,
-/// they're typically laid in release notes:
+/// Ignore PR titles that look like a link
+/// directly embedded in a paragraph
+/// and often found in release notes:
 ///
 /// ```html
 /// <p><a href="https://github.com/flutter/engine/pull/27070">27070</a>
@@ -29,11 +30,23 @@ final _pullRequestTitlePattern = RegExp(
     r'<p><a href="https://github.com/.*?/pull/\d+">\d+</a>.*?</p>',
     dotAll: true);
 
+/// Ignore PR titles that look like a link,
+/// directly embedded in a `<li>`
+/// and often found in release notes:
+///
+/// ```html
+/// <li>[docs][FWW] DropdownButton, ScaffoldMessenger, and StatefulBuilder links
+/// by @craiglabenz in https://github.com/flutter/flutter/pull/100316</li>
+/// ```
+final _pullRequestTitleInListItemPattern =
+    RegExp(r'<li>.*? in https://github.com/.*?/pull/.*?</li>', dotAll: true);
+
 /// All replacements to run on file content before finding invalid references.
 final _allReplacements = [
   _htmlCommentPattern,
   _codeBlockPattern,
   _pullRequestTitlePattern,
+  _pullRequestTitleInListItemPattern,
 ];
 
 final _invalidLinkReferencePattern = RegExp(r'\[[^\[\]]+]\[[^\[\]]*]');
