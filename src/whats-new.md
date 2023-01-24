@@ -1,6 +1,6 @@
 ---
 title: What’s new
-description: A list of what’s new on flutter.dev and related sites.
+description: A list of what’s new on flutter.dev and related documentation sites.
 ---
 
 This page contains current and previous announcements of
@@ -20,12 +20,191 @@ and review the [Dart changelog][].
 [Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 
+## Jan 25, 2023, Flutter Forward edition: 3.7 release
+
+Flutter 3.7 is live! This release contains many updates
+and improvements. This page lists the documentation changes,
+but you can also check out the [3.7 blog post][] and the
+[3.7 release notes][].
+
+[3.7 blog post]: {{site.flutter-medium}}/whats-new-in-flutter-3-7-38cbea71133c
+[3.7 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-3.7.0
+
+{% comment %}
+Add later, once more blog posts are published...
+[What's next for Flutter xxx][],
+and [Dart 2.19 xxx][] (free articles on Medium),
+{% endcomment %}
+
+**Docs updated or added since the 3.3 release**
+
+* Learn about improvements for the web platform;
+  for example, you can now pass configuration
+  information to the engine in the `initializeEngine`
+  method. For more information, check out
+  [Customizing web app initialization][].
+* [Creating Flavors for Flutter][]
+  Learn how to create a flavor in Flutter
+  (also known as a _build configuration_ in iOS).
+* Internationalization support has been
+  revamped and the
+  [Internationalizing Flutter apps][] page
+  is updated.
+* The DevTools memory debugging tool has been
+  completely overhauled and the corresponding 
+  page, [Using the memory view][], is rewritten.
+* This release includes numerous improvements to
+  Flutter’s support for custom fragment shaders. 
+  For more information, see the new
+  [Writing and using fragment shaders][] page.
+* Some security tools falsely report security
+  vulnerabilities in Flutter apps. The new
+  [Security false positives][] page lists
+  the known false positives and why you can
+  ignore them.
+* You can now invoke a platform channel from any
+  isolate, including background isolates.
+  For more information, check out
+  [Writing custom platform-specific code][]
+  and the [Introducing isolate background channels][]
+  article on Medium.
+* We've updated our Swift documentation.
+  New and updated pages include:
+  * [Flutter for SwiftUI developers][] - updated
+  * [Add a Flutter screen to an iOS app][] - updated for SwiftUI
+  * [Flutter concurrency for Swift developers][] - new
+  * [Learning Dart as a Swift developer][] on dart.dev - new
+* As of Xcode 14, Apple no longer supports bitcode.
+  Two of our pages, [Adding an iOS clip target][]
+  and the [Flutter FAQ][],
+  are updated to reflect this fact.
+* For developers who enjoy living on the bleeding edge,
+  you might want to try Flutter's future rendering
+  engine, Impeller. Because Impeller isn't yet
+  ready for a stable release, you can find more
+  information on our [Flutter GitHub wiki][Impeller].
+
+{% comment %}
+* Missing docs (xxx):
+  * Frame analysis tab in Performance view - Kenzie
+  * Menu bars (M3) - Greg Spencer
+    No docs yet (other than API docs)
+  * Cascading menus (M3) - Greg Spencer
+    No docs yet (other than API docs)
+  * Custom context menus - Justin
+    No docs yet (he volunteered to do something after 3.7)
+  * CupertinoListSelection, CupertinoListTile (new Cupertino) - Mitchell Goodwin
+  * AnimatedGrid, AnimatedSliverGrid (new widgets) - Kate
+  * Material 3 - what had been worked on? started? who in eng owns this?
+  * Global selection improvements - ChunHeng Tai (chtai)
+  * magnification property (who owns this? - I asked Justin)
+    No docs yet (other than API docs)
+    https://master-api.flutter.dev/flutter/material/TextField/magnifierConfiguration.html
+  * Implementing iOS PlatformView BackdropFilter. (Blur) - Leigha and Chris Yang
+    https://docs.google.com/document/d/1V7Jc_RGaknrBBPPBBKB8lT7f3PKhYr8sin35MSMFAf4/edit
+  * Memory management updates - Zach Anderson
+  * toImageSync - new API for rendering improvement - Zach Anderson
+    Nope, nothing available
+  * Font asset hot reload - Jonah
+{% endcomment -%}
+
+
+[Add a Flutter screen to an iOS app]: {{site.url}}/development/add-to-app/ios/add-flutter-screen
+[Adding an iOS clip target]: {{site.url}}/development/platform-integration/ios/ios-app-clip
+[Creating Flavors for Flutter]: {{site.url}}/deployment/flavors
+[Customizing web app initialization]: {{site.url}}/development/platform-integration/web/initialization
+[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
+[Flutter FAQ]: {{site.url}}/resources/faq
+[Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
+[Impeller]: {{site.github}}/flutter/flutter/wiki/Impeller
+[Internationalizing Flutter apps]: {{site.url}}/development/accessibility-and-localization/internationalization
+[Introducing isolate background channels]: {{site.medium}}/flutter/introducing-background-isolate-channels-7a299609cad8
+[Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
+[Security false positives]: {{site.url}}/resources/security-false-positives
+[Using the memory view]: {{site.url}}/development/tools/devtools/memory
+[Writing and using fragment shaders]: {{site.url}}/development/ui/advanced/shaders
+[Writing custom platform-specific code]: {{site.url}}/development/platform-integration/platform-channels
+
+**Codelabs and workshops**
+
+We have new codelabs since the last stable release:
+
+* [Your first Flutter app][]<br>
+  Learn about Flutter as you build an application that
+  generates cool-sounding names, such as "newstay",
+  "lightstream", "mainbrake", or "graypine".
+  The user can ask for the next name, favorite the current one,
+  and review the list of favorited names on a separate page.
+  The final app is responsive to different screen sizes.
+  (Note that this codelab replaces the previous "Write
+  your first Flutter codelab for mobile, part 1 and part 2.")
+* [Using FFI in a Flutter plugin][]<br>
+  Dart's FFI (foreign function interface) allows Flutter apps
+  to use of existing native libraries that expose a C API.
+  Dart supports FFI on Android, iOS, Windows, macOS, and Linux.
+* [Building a game with Flutter and Flame][]<br>
+  Learn how to build a platformer game with Flutter and Flame!
+  In the Doodle Dash game, inspired by Doodle Jump,
+  you play as either Dash (the Flutter mascot),
+  or her best friend Sparky (the Firebase mascot),
+  and try to reach as high as possible by jumping on platforms.
+* [Add a user authentication flow to a Flutter app using FirebaseUI][]<br>
+  Learn how to add Firebase Authentication to your Flutter app
+  using the FlutterFire UI package. You'll add both email/password
+  and Google Sign In authorization to a Flutter app. You'll also learn
+  how to set up a Firebase project,
+  and use the FlutterFire CLI to initialize Firebase in your Flutter app.
+* [Local development for your Flutter apps using the Firebase Emulator Suite][]<br>
+  Learn how to use the Firebase Emulator Suite with Flutter during local development,
+  including how to use email-password authentication with the Emulator Suite,
+  and how to read and write data to the Firestore emulator. Also, you'll import
+  and export data from the emulators, to work with the same faked data each
+  time you return to development.
+
+In addition, we've updated all of our existing
+codelabs to support multiplatform.
+The [codelabs & workshops][] page is updated
+to reflect the latest available codelabs.
+
+[Add a user authentication flow to a Flutter app using FirebaseUI]: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
+[Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
+[codelabs & workshops]: {{site.url}}/codelabs
+[Local development for your Flutter apps using the Firebase Emulator Suite]: https://firebase.google.com/codelabs/get-started-firebase-emulators-and-flutter
+[Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
+[Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
+
+**Articles**
+
+We've published the following articles on the [Flutter Medium][]
+publication since the last stable release:
+
+* [What's next for Flutter][]
+* [Adapting Wonderous to larger device formats][]
+* [How it's made: Holobooth][]
+* [Playful typography with Flutter][]
+* [Material 3 for Flutter][]
+* [Introducing background isolate channels][]
+* [How can we improve the Flutter experience for desktop?][]
+* [What we learned from the Flutter Q3 2022 survey][]
+* [Supporting six platforms with two keyboards][]
+* [Studying developer’s usage of IDEs for Flutter development][]
+
+
+[Adapting Wonderous to larger device formats]: {{site.flutter-medium}}/adapting-wonderous-to-larger-device-formats-ac51e1c00bc0
+[How can we improve the Flutter experience for desktop?]: {{site.medium}}/flutter/how-can-we-improve-the-flutter-experience-for-desktop-70b34bff9392
+[How it's made: Holobooth]: {{site.flutter-medium}}/how-its-made-holobooth-6473f3d018dd
+[Introducing background isolate channels]: {{site.flutter-medium}}/introducing-background-isolate-channels-7a299609cad8
+[Material 3 for Flutter]: {{site.flutter-medium}}/material-3-for-flutter-d417a8a65564
+[Playful typography with Flutter]: {{site.medium}}/flutter/playful-typography-with-flutter-f030385058b4
+[Studying developer’s usage of IDEs for Flutter development]: {{site.medium}}/flutter/studying-developers-usage-of-ides-for-flutter-development-4c0a648a48
+[Supporting six platforms with two keyboards]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
+[What's next for Flutter]: {{site.flutter-medium}}/whats-next-for-flutter-b94ce089f49c
+[What we learned from the Flutter Q3 2022 survey]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
+
 ## Aug 31, 2022, Flutter Vikings Edition: 3.3 release
 
 Flutter 3.3 is live! For more information, see
-{% comment %}
-[Announcing Flutter 3.3 at Flutter Vikings][],
-{% endcomment %}
+
 [What's new in Flutter 3.3][],
 and [Dart 2.18: Objective-C & Swift interop][] (free articles on Medium),
 and the [Flutter 3.3 release notes][3.3 release notes].
@@ -296,7 +475,7 @@ publication since the last stable release:
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: {{site.flutter-medium}}/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
 [Building adaptive apps]: {{site.url}}/development/ui/layout/building-adaptive-apps
-[Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F#0
+[Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
 [DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
 [DartPad Workshop Authoring Guide]: {{site.github}}/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
