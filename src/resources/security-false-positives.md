@@ -16,9 +16,9 @@ are incorrect and explains why the concerns are misplaced.
 
 ### Shared objects should use fortified functions
 
-> "The shared object does not have any fortified functions.
+> The shared object does not have any fortified functions.
 > Fortified functions provides buffer overflow checks against glibc's commons insecure functions like `strcpy`, `gets` etc.
-> Use the compiler option `-D_FORTIFY_SOURCE=2` to fortify functions."
+> Use the compiler option `-D_FORTIFY_SOURCE=2` to fortify functions.
 
 When this refers to compiled Dart code
 (such as the `libapp.so` file in Flutter applications),
@@ -35,7 +35,7 @@ non-fortified calls.)
 
 ### Shared objects should use RELRO
 
-> "no RELRO found for `libapp.so` binaries"
+> no RELRO found for `libapp.so` binaries
 
 Dart doesn't use the normal Procedure Linkage Table
 (PLT) or Global Offsets Table (GOT) mechanisms at all,
@@ -52,11 +52,11 @@ assuming it's used with C code that itself uses RELRO appropriately.
 
 ### Shared objects should use stack canary values
 
-> "no canary are found for `libapp.so` binaries"
+> no canary are found for `libapp.so` binaries
 
-> "This shared object does not have a stack canary value added to the stack.
+> This shared object does not have a stack canary value added to the stack.
 > Stack canaries are used to detect and prevent exploits from overwriting return address.
-> Use the option -fstack-protector-all to enable stack canaries."
+> Use the option -fstack-protector-all to enable stack canaries.
 
 Dart doesn't generate stack canaries because,
 unlike C++, Dart doesn't have stack-allocated arrays
@@ -75,7 +75,7 @@ appropriately.
 
 ### Code should avoid using the `_sscanf`, `_strlen`, and `_fopen` APIs
 
-> "The binary may contain the following insecure API(s) `_sscanf` , `_strlen` , `_fopen`."
+> The binary may contain the following insecure API(s) `_sscanf` , `_strlen` , `_fopen`.
 
 The tools that report these issues tend to be
 overly-simplistic in their scans;
@@ -90,7 +90,7 @@ due to the sheer number of false positives.
 
 ### Code should use `calloc` (instead of `_malloc`) for memory allocations
 
-> "The binary may use `_malloc` function instead of `calloc`."
+> The binary may use `_malloc` function instead of `calloc`.
 
 Memory allocation is a nuanced topic,
 where trade-offs have to be made between performance
@@ -104,9 +104,9 @@ replace all `malloc` calls with `calloc`.
 
 ### The iOS binary has a Runpath Search Path (`@rpath`) set
 
-> "The binary has Runpath Search Path (`@rpath`) set.
+> The binary has Runpath Search Path (`@rpath`) set.
 > In certain cases an attacker can abuse this feature to run arbitrary executable for code execution and privilege escalation.
-> Remove the compiler option `-rpath` to remove `@rpath`."
+> Remove the compiler option `-rpath` to remove `@rpath`.
 
 When the app is being built, Runpath Search Path refers
 to the paths the linker searches to find dynamic libraries
@@ -150,12 +150,12 @@ to limit the user's ability to fully use their software and hardware.
 
 ### Apps can read and write to external storage
 
-> "App can read/write to External Storage." Any App can read data written to External Storage"
+> App can read/write to External Storage. Any App can read data written to External Storage.
 
-> "As with data from any untrusted source, you should perform input validation when handling data from external storage.
+> As with data from any untrusted source, you should perform input validation when handling data from external storage.
 > We strongly recommend that you not store executables or class files on external storage prior to dynamic loading.
 > If your app does retrieve executable files from external storage,
-the files should be signed and cryptographically verified prior to dynamic loading."
+> the files should be signed and cryptographically verified prior to dynamic loading.
 
 We have received reports that some vulnerability
 scanning tools interpret the ability for image
@@ -166,8 +166,8 @@ this is not a vulnerability.
 
 ### Apps delete data using file.delete()
 
-> "When you delete a file using file. delete, only the reference to the file is removed from the file system table.
-> The file still exists on disk until other data overwrites it, leaving it vulnerable to recovery."
+> When you delete a file using file. delete, only the reference to the file is removed from the file system table.
+> The file still exists on disk until other data overwrites it, leaving it vulnerable to recovery.
 
 Some vulnerability scanning tools interpret the deletion of
 temporary files after a camera plugin records data from
@@ -187,16 +187,16 @@ please report them (see the section at the end of this document).
 
 ### The stack should have its NX bit set
 
-> "The shared object does not have NX bit set.
+> The shared object does not have NX bit set.
 > NX bit offer protection against exploitation of memory corruption vulnerabilities by marking memory page as non-executable.
-> Use option `--noexecstack` or `-z noexecstack` to mark stack as non executable."
+> Use option `--noexecstack` or `-z noexecstack` to mark stack as non executable.
 
 (The message from MobSF is misleading; it's looking
 for whether the stack is marked as non-executable,
 not the shared object.)
 
 In older versions of Dart and Flutter there was a bug
-where the ELF generator didn't emit the "`gnustack`"
+where the ELF generator didn't emit the `gnustack`
 segment with the `~X` permission, but this is now fixed.
 
 ## Reporting real concerns
