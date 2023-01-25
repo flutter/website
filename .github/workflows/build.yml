@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - flutter-forward-23
   pull_request:
     branches:
       - main
-      - flutter-forward-23
   schedule:
     - cron: "0 0 * * 0"
 
@@ -23,17 +21,17 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    if: github.repository == 'flutter/website-private'
+    if: github.repository == 'flutter/website'
     strategy:
       fail-fast: false
       matrix:
         include:
           - name: "Beta channel"
             branch: beta
-            experimental: false
+            experimental: true
           - name: "Stable channel"
             branch: stable
-            experimental: true
+            experimental: false
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
         with:
@@ -41,3 +39,28 @@ jobs:
       - name: Test
         run: make test FLUTTER_TEST_BRANCH=${{ matrix.branch }}
         continue-on-error: ${{ matrix.experimental }}
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push'
+      && github.ref == 'refs/heads/main'
+      && github.repository == 'flutter/website'
+    steps:
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+        with:
+          submodules: recursive
+      - name: Build site and check links
+        run: make build
+      - name: Install Node for Firebase install
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools@11.16.0
+      - name: Deploy to Firebase hosting
+        run: make deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_ALIAS: default
