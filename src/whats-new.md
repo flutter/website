@@ -178,8 +178,6 @@ to reflect the latest available codelabs.
 We've published the following articles on the [Flutter Medium][]
 publication since the last stable release:
 
-* [What's next for Flutter][]
-* [Adapting Wonderous to larger device formats][]
 * [How it's made: Holobooth][]
 * [Playful typography with Flutter][]
 * [Material 3 for Flutter][]
@@ -190,7 +188,6 @@ publication since the last stable release:
 * [Studying developer’s usage of IDEs for Flutter development][]
 
 
-[Adapting Wonderous to larger device formats]: {{site.flutter-medium}}/adapting-wonderous-to-larger-device-formats-ac51e1c00bc0
 [How can we improve the Flutter experience for desktop?]: {{site.medium}}/flutter/how-can-we-improve-the-flutter-experience-for-desktop-70b34bff9392
 [How it's made: Holobooth]: {{site.flutter-medium}}/how-its-made-holobooth-6473f3d018dd
 [Introducing background isolate channels]: {{site.flutter-medium}}/introducing-background-isolate-channels-7a299609cad8
@@ -198,7 +195,6 @@ publication since the last stable release:
 [Playful typography with Flutter]: {{site.medium}}/flutter/playful-typography-with-flutter-f030385058b4
 [Studying developer’s usage of IDEs for Flutter development]: {{site.medium}}/flutter/studying-developers-usage-of-ides-for-flutter-development-4c0a648a48
 [Supporting six platforms with two keyboards]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
-[What's next for Flutter]: {{site.flutter-medium}}/whats-next-for-flutter-b94ce089f49c
 [What we learned from the Flutter Q3 2022 survey]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
 
 ## Aug 31, 2022, Flutter Vikings Edition: 3.3 release
