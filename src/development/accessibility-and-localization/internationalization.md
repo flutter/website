@@ -424,12 +424,12 @@ Using a plural method is easy enough, just pass it the item count parameter:
 return Column(
   children: <Widget>[
     ...
-    // Returns 'he'
-    Text(AppLocalizations.of(context)!.pronoun('male')),
-    // Returns 'she'
-    Text(AppLocalizations.of(context)!.pronoun('female')),
-    // Returns 'they'
-    Text(AppLocalizations.of(context)!.pronoun('other')),
+    // Returns 'no wombats'
+    Text(AppLocalizations.of(context)!.nWombats(0)),
+    // Returns '1 wombat'
+    Text(AppLocalizations.of(context)!.nWombats(1)),
+    // Returns '2 wombats'
+    Text(AppLocalizations.of(context)!.nWombats(2)),
   ],
 );
 ```
