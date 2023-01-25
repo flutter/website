@@ -268,6 +268,7 @@
       { "source": "/go/generating-flutter-localizations", "destination": "https://docs.google.com/document/d/18saQREDwBMPA_svFe9IkU22ljNXsLpYxiy__jzPCzEc/edit", "type": 301 },
       { "source": "/go/global-selection", "destination": "https://docs.google.com/document/d/1q_ns8VVTS2vaKqGwr_hheZpsoli52wAM0QWi9_uBdnk", "type": 301 },
       { "source": "/go/globalkey-duplication-refactoring", "destination": "https://docs.google.com/document/d/15U1XDLrP-SXfgeu5DBBsA7MQuFpDUW005Y2ObwmYWIc/", "type": 301 },
+      { "source": "/go/gn-ninja-engine-artifacts", "destination": "https://docs.google.com/document/d/10C0yexPKlx4CdlF-fO4efGhQXEvDH92-RiAhBTj5EF8/", "type": 301 },
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/google-apis", "destination": "/development/data-and-backend/google-apis?utm_source=go-link&utm_medium=referral&utm_campaign=go-google-apis", "type": 301 },
       { "source": "/go/go-router-improvements", "destination": "https://docs.google.com/document/d/1_mRXinbL_rb0mUt6DAFZ8kj0kh33ZjEMJuUq4PJgwj8/edit?usp=sharing&resourcekey=0-sYbRzE9opneOFZ5F8J3gGw", "type": 301 },
