@@ -426,8 +426,8 @@ return Column(
     Text(AppLocalizations.of(context)!.nWombats(0)),
     // Returns '1 wombat'
     Text(AppLocalizations.of(context)!.nWombats(1)),
-    // Returns '2 wombats'
-    Text(AppLocalizations.of(context)!.nWombats(2)),
+    // Returns '5 wombats'
+    Text(AppLocalizations.of(context)!.nWombats(5)),
   ],
 );
 ```
