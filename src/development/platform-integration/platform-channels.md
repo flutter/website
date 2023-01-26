@@ -891,7 +891,7 @@ of your choice. The instructions below are for Visual Studio Code with the
 1. Open the **linux** directory inside your project.
 
 1. Choose **Yes** in the prompt asking: `Would you like to configure project "linux"?`.
-   This will allow C++ autocomplete to work.
+   This enables C++ autocomplete.
 
 1. Open the file `my_application.cc`.
   
