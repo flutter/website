@@ -66,7 +66,6 @@ trying to invoke from the given `FocusNode`, fire an `Intent` from that
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 final Widget? focusedWidget = primaryFocus?.context?.widget;
 if (focusedWidget is EditableText) {
@@ -76,7 +75,6 @@ if (focusedWidget is EditableText) {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 final BuildContext? focusedContext = primaryFocus?.context;
 if (focusedContext != null) {

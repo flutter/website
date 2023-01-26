@@ -14,6 +14,7 @@ targets:
         - '**/ios/**'
         - '**/node_modules/**'
         - '**/*.jar'
+        - '**/codelab_rebuild.yaml'
     builders:
       code_excerpter|code_excerpter:
         enabled: true

@@ -43,7 +43,6 @@ You also need to rename all the references from `isEntering` to
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 import 'package:flutter/widgets.dart';
 
@@ -81,7 +80,6 @@ class NoAnimationTransitionDelegate extends TransitionDelegate<void> {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 import 'package:flutter/widgets.dart';
 

@@ -39,7 +39,6 @@ Code before migration:
 In a `widgetsTest`, before actually changing text on a
 text editing widget, this call might have succeeded:
 
-<!-- skip -->
 ```dart
     expect(tester.testTextInput.editingState['text'], isEmpty);
 ```
@@ -49,7 +48,6 @@ Code after migration:
 Either remove the call entirely, or consider using the
 following to assert that the state hasn't been modified yet:
 
-<!-- skip -->
 ```dart
     expect(tester.testTextInput.editingState, isNull);
 ```

@@ -37,7 +37,6 @@ The following code snippets show the migration changes, which are applicable for
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 Chip(
   label: const Text('Disabled delete button tooltip'),
@@ -54,7 +53,6 @@ RawChip(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 Chip(
   label: const Text('Disabled delete button tooltip'),

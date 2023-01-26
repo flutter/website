@@ -1,7 +1,5 @@
 ## Profile or release runs
 
-
-
 {{site.alert.important}}
   Do _not_ test the performance of your app with debug and
   hot reload enabled.

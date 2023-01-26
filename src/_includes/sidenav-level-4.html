@@ -1,0 +1,30 @@
+{% for entry in include.children -%}
+  {% if entry.permalink -%}
+
+  {% if include.active_entries and forloop.index == include.active_entries[3] -%}
+    {% assign isActive = true -%}
+    {% assign class = 'nav-link active' -%}
+  {% else -%}
+    {% assign isActive = false -%}
+    {% assign class = 'nav-link' -%}
+  {% endif -%}
+
+  {% if entry.permalink contains '://' -%}
+    {% assign isExternal = true -%}
+  {% else -%}
+    {% assign isExternal = false -%}
+  {% endif -%}
+
+  <li class="nav-item">
+    <a class="{{class}}" href="{{entry.permalink}}"
+      {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}
+    >{{entry.title}}
+      {%- if isExternal -%}
+        <span class="material-icons md-24">
+          open_in_new
+        </span>
+      {%- endif -%}
+    </a>
+  </li>
+  {% endif -%}
+{% endfor -%}

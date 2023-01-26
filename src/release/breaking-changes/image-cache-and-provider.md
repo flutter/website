@@ -26,7 +26,6 @@ which can trigger an undesired call to `ImageProvider.load`.
 The default implementation checks both pending and cached
 image buckets.
 
-<!-- skip -->
 ```dart
   bool containsKey(Object key) {
     return _pendingImages[key] != null || _cache[key] != null;
@@ -61,7 +60,6 @@ Before migration, the code would not have an override of `containsKey`.
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyImageCache implements ImageCache {
   @override
@@ -77,7 +75,6 @@ class MyImageCache implements ImageCache {
 
 Code before the migration:
 
-<!-- skip -->
 ```dart
 class MyImageProvider extends ImageProvider<Object> {
   @override
@@ -93,7 +90,6 @@ class MyImageProvider extends ImageProvider<Object> {
 
 Code after the migration:
 
-<!-- skip -->
 ```dart
 class MyImageProvider extends ImageProvider<Object> {
   @override

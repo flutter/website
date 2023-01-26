@@ -688,7 +688,6 @@ and `duration`:
 
 Instantiate `AnimationController`:
 
-<!-- skip -->
  ```dart
 controller = AnimationController(
   lowerBound: 0,
@@ -742,7 +741,6 @@ of the editor:
 You can access this property directly&mdash;there
 is no getter method for `value`:
 
-  <!-- skip -->
    ```dart
    print(controller.value);
    ```
@@ -775,7 +773,7 @@ the `value` property to a new value.
 [Material app]: {{site.api}}/flutter/material/MaterialApp-class.html
 [performance profiling]: {{site.url}}/perf/ui-performance
 [implicit animations]: {{site.url}}/development/ui/animations/implicit-animations
-[make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [stateful widgets]: {{site.url}}/development/ui/interactive#stateful-and-stateless-widgets
 [step 1]: #1-use-a-tickerprovider-mixin
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html

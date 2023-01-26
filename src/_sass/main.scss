@@ -19,7 +19,6 @@
 @import 'shared/prettify_shared';
 @import 'shared/code_shared';
 @import 'shared/header_shared';
-@import 'shared/sidebar_shared';
 @import 'shared/toc_shared';
 
 // (alpha ordered)
@@ -29,7 +28,9 @@
 @import 'components/content';
 @import 'd2h'; // TODO too small to be included as an entire file
 @import 'components/footer';
+@import 'components/juicy_button';
 @import 'components/next-prev-nav';
+@import 'components/sidebar';
 @import 'components/snackbar';
 @import 'components/tabs';
 @import 'components/cookie-notice';
@@ -53,3 +54,4 @@
 
 // -- Overrides
 @import 'base/site_overrides';
+@import 'base/print_overrides';

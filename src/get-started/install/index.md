@@ -15,12 +15,12 @@ Select the operating system on which you are installing Flutter:
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
-          {% assign icon = os | downcase %}
-          {% if icon == 'macos' %}
+          {% assign icon = os | downcase -%}
+          {% if icon == 'macos' -%}
             <i class="fab fa-apple"></i>
-          {% else %}
+          {% else -%}
             <i class="fab fa-{{icon}}"></i>
-          {% endif %}
+          {% endif -%}
         </span>
         <span class="text-muted text-nowrap">{{os}}</span>
       </header>

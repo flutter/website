@@ -11,39 +11,40 @@ Obfuscation hides function and class names in your
 compiled Dart code, making it difficult for an attacker
 to reverse engineer your proprietary app.
 
-The following list describes which platforms
-support the obfuscation process described in
-this page:
-
-**Android**/**iOS**/**macOS**
-: Supported. 
-
-**Linux**/**Windows**
-: Not yet supported.
-
-**web**
-: Obfuscation is not supported for web apps,
-  but a web app can be [minified][],
-  which is similar. When you build a
-  release version of a Flutter web app, it
-  is automatically minified. For more information,
-  see [Build and release a web app][].
-
-**Flutter's code obfuscation, when supported, works
+**Flutter's code obfuscation works
 only on a [release build][].**
+
+The following build targets
+support the obfuscation process 
+described on this page:
+
+* `aar`
+* `apk`
+* `appbundle`
+* `ios`
+* `ios-framework`
+* `ipa`
+* `linux`
+* `macos`
+* `macos-framework`
+* `windows`
+
+{{site.alert.info}}
+  Web apps don't support obfuscation.
+  A web app can be [minified][], which provides a similar result.
+  When you build a release version of a Flutter web app, the
+  web compiler minifies the app. To learn more,
+  see [Build and release a web app][].
+{{site.alert.end}}
 
 ## Obfuscating your app
 
-To obfuscate your app, build a release
-version using the `--obfuscate` flag,
-combined with the `--split-debug-info` flag.
-The `--split-debug-info` flag specifies the
-directory where Flutter can output debug files.
-This command generates a symbol map.
-The `apk`, `appbundle`, `ipa`, `ios`, and `ios-framework`
-targets are currently supported. (`macos` and
-`aar` are supported on the master and dev
-channels.)
+To obfuscate your app, use the `flutter build` command
+in release mode
+with the `--obfuscate` and  `--split-debug-info` options.
+The `--split-debug-info` option specifies the directory
+where Flutter outputs debug files.
+In the case of obfuscation, it outputs a symbol map.
 For example:
 
 ```terminal
@@ -54,10 +55,11 @@ Once you've obfuscated your binary, save
 the symbols file. You need this if you later
 want to de-obfuscate a stack trace.
 
-**Note that the `--split-debug-info` flag can also
-be used by itself. In fact, it can dramatically
-reduce code size. For more information on
-app size, see [Measuring your app's size][].**
+{{site.alert.tip}}
+  The `--split-debug-info` option can also be used without `--obfuscate`
+  to extract Dart program symbols, reducing code size.
+  To learn more about app size, see [Measuring your app's size][].
+{{site.alert.end}}
 
 For detailed information on these flags, run
 the help command for your specific target, for example:
@@ -82,9 +84,9 @@ use the following steps to make it human readable:
    and the symbols file to the `flutter symbolize` command.
    For example:
 
-```terminal
-$ flutter symbolize -i <stack trace file> -d out/android/app.android-arm64.symbols
-```
+   ```terminal
+   $ flutter symbolize -i <stack trace file> -d out/android/app.android-arm64.symbols
+   ```
 
    For more information on the `symbolize` command,
    run `flutter symbolize -h`.
@@ -107,8 +109,6 @@ expect(foo.runtimeType.toString(), equals('Foo'));
 
 [Build and release a web app]: {{site.url}}/deployment/web
 [Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
-[in alpha]: {{site.url}}/desktop
 [Measuring your app's size]: {{site.url}}/perf/app-size
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
-[obfuscation instructions]: {{site.repo.flutter}}/wiki/Obfuscating-Dart-Code
-[release build]: {{site.url}}/testing/build-modes
+[release build]: {{site.url}}/testing/build-modes#release

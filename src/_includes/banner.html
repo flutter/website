@@ -1,16 +1,13 @@
-{% if page.show_banner -%}
+{% comment %}
+  For headings use <h3> elements.
+{% endcomment -%}
+<div class="site-banner site-banner--default" role="alert">
+  Flutter Forward is happening now. 
+  <a href="https://www.youtube.com/watch?v=zKQYGKAe5W8">Tune in</a>.
   {% comment %}
-    For headings use <h3> elements.
-    Note that tabbed pages will NOT work correctly if no banner is present.
-    https://github.com/flutter/website/issues/3897
-  {% endcomment %}
-  <div class="site-banner site-banner--default" role="alert">
-    See how Flutter is pushing UI development at Flutter Forward;<br>
-    streaming live from Kenya on January 25, 2023.
-    <a href="https://flutter.dev/events/flutter-forward">Register now</a>
-<!--
-    <br>The Flutter and Dart teams are hiring.
-    <a href="https://docs.flutter.dev/jobs">Learn more</a><br>
--->
-  </div>
-{% endif -%}
+  <br>The Flutter and Dart teams are hiring.
+  <a href="https://docs.flutter.dev/jobs">Learn more</a><br>
+  {% endcomment -%}
+</div>
+
+

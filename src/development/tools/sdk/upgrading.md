@@ -85,12 +85,10 @@ $ flutter pub outdated
 
 We publish breaking change announcements to the
 [Flutter announcements mailing list][flutter-announce].
-You can also ask questions on the [Flutter dev mailing list][flutter-dev].
 Aside from subscribing to receive announcements,
 we'd love to hear from you!
 
 [Flutter SDK releases]: {{site.url}}/development/tools/sdk/releases
 [release channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[flutter-dev]: {{site.groups}}/forum/#!forum/flutter-dev
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
