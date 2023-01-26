@@ -876,7 +876,7 @@ it displays 'Battery level not available'.
   
 ### Step 6: Add a Linux platform-specific implementation
   
-For this example you will need the `upower` developer headers installed.
+For this example you need to install the `upower` developer headers.
 This is likely available from your distribution, for example with:
 ```sh
 sudo apt install libupower-glib-dev
