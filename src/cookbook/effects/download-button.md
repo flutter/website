@@ -274,7 +274,7 @@ class ButtonShapeWidget extends StatelessWidget {
           child: Text(
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.button?.copyWith(
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: CupertinoColors.activeBlue,
                 ),
@@ -547,12 +547,12 @@ class _ExampleCupertinoDownloadButtonState
       title: Text(
         'App ${index + 1}',
         overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.headline6,
+        style: theme.textTheme.titleLarge,
       ),
       subtitle: Text(
         'Lorem ipsum dolor #${index + 1}',
         overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.caption,
+        style: theme.textTheme.bodySmall,
       ),
       trailing: SizedBox(
         width: 96,
@@ -841,7 +841,7 @@ class ButtonShapeWidget extends StatelessWidget {
           child: Text(
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.button?.copyWith(
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: CupertinoColors.activeBlue,
                 ),
