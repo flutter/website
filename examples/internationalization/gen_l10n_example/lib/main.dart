@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-// #docregion MaterialApp
+    // #docregion MaterialApp
     return const MaterialApp(
       title: 'Localizations Sample App',
       localizationsDelegates: [
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       home: MyHomePage(),
     );
-// #enddocregion MaterialApp
+    // #enddocregion MaterialApp
   }
 }
 
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // #enddocregion InternationalizedTitle
       body: Center(
         child: Column(
-         mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             // Add the following code
             Localizations.override(

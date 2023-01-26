@@ -55,8 +55,7 @@ a pubspec for a basic Flutter app.
 Here is an example of a Flutter project pubspec file.
 The Flutter only fields are highlighted.
 
-<div class="righthighlight">
-{% prettify dart %}
+{% prettify yaml %}
 name: <project name>
 description: A new Flutter project.
 
@@ -65,13 +64,15 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.18.0 <3.0.0"
 
 dependencies:
   [[highlight]]flutter:[[/highlight]]       # Required for every Flutter project
     [[highlight]]sdk: flutter[[/highlight]] # Required for every Flutter project
+  [[highlight]]flutter_localizations:[[/highlight]] # Required to enable localization
+    [[highlight]]sdk: flutter[[/highlight]]         # Required to enable localization
 
-  [[highlight]]cupertino_icons: ^1.0.2[[/highlight]] # Only required if you use Cupertino (iOS style) icons
+  [[highlight]]cupertino_icons: ^1.0.5[[/highlight]] # Only required if you use Cupertino (iOS style) icons
 
 dev_dependencies:
   [[highlight]]flutter_test:[[/highlight]]
@@ -80,6 +81,8 @@ dev_dependencies:
 [[highlight]]flutter:[[/highlight]]
 
   [[highlight]]uses-material-design: true[[/highlight]] # Required if you use the Material icon font
+
+  [[highlight]]generate: true[[/highlight]] # Enables generation of localized strings from arb files
 
   [[highlight]]assets:[[/highlight]]  # Lists assets, such as image files
     [[highlight]]- images/a_dot_burr.jpeg[[/highlight]]
@@ -97,7 +100,6 @@ dev_dependencies:
         [[highlight]]- asset: fonts/TrajanPro_Bold.ttf[[/highlight]]
           [[highlight]]weight: 700[[/highlight]]
 {% endprettify %}
-</div>
  
 ## Assets
 
