@@ -47,7 +47,6 @@ The following classes all have the same change of API:
 [In-depth migration guide available][]
 
 Code before migration:
-<!-- skip -->
 ```dart
 const TextField textField = TextField(maxLengthEnforced: true);
 const TextField textField = TextField(maxLengthEnforced: false);
@@ -63,7 +62,6 @@ final lengthEnforced = cupertinoTextField.maxLengthEnforced;
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 const TextField textField = TextField(maxLengthEnforcement: MaxLengthEnforcement.enforce);
 const TextField textField = TextField(maxLengthEnforcement: MaxLengthEnforcement.none);
@@ -112,13 +110,11 @@ The `VelocityTracker.withKind()` should be used instead. This allows for a
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
 ```dart
 final VelocityTracker tracker = VelocityTracker();
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 final VelocityTracker tracker = VelocityTracker.withKind(PointerDeviceKind.touch);
 ```
@@ -199,7 +195,6 @@ the generic `ButtonTheme`.
 [In-depth migration guide available for detailed styling][]
 
 Code before migration:
-<!-- skip -->
 ```dart
 FlatButton(
   onPressed: onPressed,
@@ -221,7 +216,6 @@ OutlineButton(
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 TextButton(
   onPressed: onPressed,
@@ -299,7 +293,6 @@ default `ScaffoldMessenger` is already created in every `MaterialApp`.
 [In-depth migration guide available][]
 
 Code before migration:
-<!-- skip -->
 ```dart
 Scaffold.of(context).showSnackBar(mySnackBar);
 Scaffold.of(context).removeCurrentSnackBar(mySnackBar);
@@ -307,7 +300,6 @@ Scaffold.of(context).hideCurrentSnackBar(mySnackBar);
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 ScaffoldMessenger.of(context).showSnackBar(mySnackBar);
 ScaffoldMessenger.of(context).removeCurrentSnackBar(mySnackBar);
@@ -358,13 +350,13 @@ no longer occurs when disabled.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
+
 ```dart
 RectangularSliderTrackShape(disabledThumbGapWidth: 2.0);
 ```
 
 Code after migration:
-<!-- skip -->
+
 ```dart
 RectangularSliderTrackShape();
 ```
@@ -406,7 +398,7 @@ distinguish the two APIs, it can be removed now.
 [In-depth migration guide available][]
 
 Code before migration:
-<!-- skip -->
+
 ```dart
 ThemeData(
   useTextSelectionTheme: false,
@@ -417,7 +409,7 @@ ThemeData(
 ```
 
 Code after migration:
-<!-- skip -->
+
 ```dart
 ThemeData(
   textSelectionTheme: TextSelectionThemeData(
@@ -468,14 +460,14 @@ Instead of calling one or both of these methods, call
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
+
 ```dart
 renderEditable.onSelectionChanged(selection, renderObject, cause);
 textSelectionDelegate.textEditingValue = value;
 ```
 
 Code after migration:
-<!-- skip -->
+
 ```dart
 textSelectionDelegate.userUpdateTextEditingValue(value, cause);
 ```
@@ -513,14 +505,14 @@ use `Clip.none`. Where `Overflow.clip` was used, use `Clip.hardEdge`.
 [In-depth migration guide available][]
 
 Code before migration:
-<!-- skip -->
+
 ```dart
 const Stack stack = Stack(overflow: Overflow.visible);
 const Stack stack = Stack(overflow: Overflow.clip);
 ```
 
 Code after migration:
-<!-- skip -->
+
 ```dart
 const Stack stack = Stack(clipBehavior: Clip.none);
 const Stack stack = Stack(clipBehavior: Clip.hardEdge);
@@ -590,7 +582,7 @@ function signature.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
+
 ```dart
 element.insertChildRenderObject(child, slot);
 element.moveChildRenderObject(child, slot);
@@ -598,11 +590,11 @@ element.removeChildRenderObject(child);
 ```
 
 Code after migration:
-<!-- skip -->
+
 ```dart
 element.insertRenderObjectChild(child, slot);
-element.moveChildRenderObject(child, oldSlot, newSlot);
-element.removeChildRenderObject(child, slot);
+element.moveRenderObjectChild(child, oldSlot, newSlot);
+element.removeRenderObjectChild(child, slot);
 ```
 
 **References**

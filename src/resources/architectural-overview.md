@@ -400,7 +400,6 @@ As with any other class, you can use a constructor in a widget to initialize its
 data, so a `build()` method can ensure that any child widget is instantiated
 with the data it needs:
 
-<!-- skip -->
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -420,7 +419,6 @@ widget tree, as shown in this example:
 Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
 
-<!-- skip -->
 ```dart
 final studentState = StudentState.of(context);
 ```
@@ -446,7 +444,7 @@ Container(
   color: Theme.of(context).secondaryHeaderColor,
   child: Text(
     'Text with a background color',
-    style: Theme.of(context).textTheme.headline6,
+    style: Theme.of(context).textTheme.titleLarge,
   ),
 );
 ```
@@ -538,7 +536,6 @@ code]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packag
 for `Container`, you can see that if the color is not null, it inserts a
 `ColoredBox` representing the color:
 
-<!-- skip -->
 ```dart
 if (color != null)
   current = ColoredBox(color: color!, child: current);
@@ -877,7 +874,6 @@ Typically, a Flutter app instantiates these widgets in a `build()` method based
 on a platform test. As an example, from the
 [google_maps_flutter]({{site.pub}}/packages/google_maps_flutter) plugin:
 
-<!-- skip -->
 ```dart
 if (defaultTargetPlatform == TargetPlatform.android) {
   return AndroidView(

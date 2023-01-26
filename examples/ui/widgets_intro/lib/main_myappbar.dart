@@ -53,7 +53,7 @@ class MyScaffold extends StatelessWidget {
               'Example title',
               style: Theme.of(context) //
                   .primaryTextTheme
-                  .headline6,
+                  .titleLarge,
             ),
           ),
           const Expanded(

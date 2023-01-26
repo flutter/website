@@ -27,7 +27,6 @@ their route changes. This change only surfaced this problem.
 
 An example application that starts to throw exceptions.
 
-<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 
@@ -70,7 +69,6 @@ void main() {
 
 You can fix this application by introducing your own hero controller scopes.
 
-<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 

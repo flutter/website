@@ -70,7 +70,6 @@ imperatively change a widget from outside, by calling a method on it.
 And even if you could make this work, you would be fighting the
 framework instead of letting it help you.
 
-<!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
 void myTapHandler() {
@@ -83,7 +82,6 @@ Even if you get the above code to work,
 you would then have to deal
 with the following in the `MyCart` widget:
 
-<!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
 Widget build(BuildContext context) {

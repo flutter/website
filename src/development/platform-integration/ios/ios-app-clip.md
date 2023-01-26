@@ -298,24 +298,14 @@ image="development/platform-integration/ios-app-clip/xcode-backend-embed.png"
 This ensures that your Flutter app and engine are embedded
 into the App Clip bundle.
 
-## Step 8 - Disable Bitcode
-
-In the App Clip target's **Build Settings** tab,
-set the **Enable Bitcode** setting to No. On Xcode 14
-and higher bitcode has been deprecated and this step is unnecessary.
-
-{% include docs/app-figure.md
-image="development/platform-integration/ios-app-clip/bitcode.png"
-%}
-
-## Step 9 - Integrate plugins
+## Step 8 - Integrate plugins
 
 {{site.alert.warning}}
   CocoaPods version 1.10.0.beta.1 or higher is required
   to run Flutter apps with plugins.
 {{site.alert.end}}
 
-**9.1**
+**8.1**
 
 Open the `Podfile` for your Flutter project
 or add-to-app host project.
@@ -367,7 +357,7 @@ target '<name of your App Clip target>'
 end
 ```
 
-**9.2**
+**8.2**
 
 From the command line,
 enter your Flutter project directory

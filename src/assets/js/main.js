@@ -1,6 +1,7 @@
 $(function () {
   adjustToc();
   initFixedColumns();
+  scrollSidebarIntoView();
   initVideoModal();
   initCarousel();
   initSnackbar();
@@ -20,15 +21,33 @@ $(function () {
   prettyPrint();
 });
 
-// TODO(chalin): Copied (& tweaked) from site-www, consider moving into site-shared
+function scrollSidebarIntoView() {
+  const fixedSidebar = document.querySelector('.site-sidebar--fixed');
+
+  if (!fixedSidebar) {
+    return;
+  }
+
+  const activeEntries = fixedSidebar.querySelectorAll('a.nav-link.active');
+
+  if (activeEntries.length > 0) {
+    const activeEntry = activeEntries[activeEntries.length - 1];
+
+    fixedSidebar.scrollTo({
+      top: activeEntry.offsetTop - window.innerHeight / 3,
+    });
+  }
+}
+
 function adjustToc() {
   // Adjustments to the jekyll-toc TOC.
 
   var tocId = '#site-toc--side';
-  var tocWrapper = $(tocId);
-  $(tocWrapper).find('.site-toc--button__page-top').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 'fast');
-  })
+  // Uncomment to enable 'page top' button
+  // var tocWrapper = $(tocId);
+  // $(tocWrapper).find('.site-toc--button__page-top').click(function () {
+  //   $('html, body').animate({ scrollTop: 0 }, 'fast');
+  // })
 
   $('body').scrollspy({ offset: 100, target: tocId });
 }
@@ -47,10 +66,15 @@ function initFixedColumns() {
     }
 
     var headerHeight = $(headerSelector).outerHeight();
-    var bannerHeight = $(bannerSelector).outerHeight();
-    var bannerOffset = $(bannerSelector).offset().top;
-    var bannerPosition = bannerOffset - $(window).scrollTop();
-    var bannerVisibleHeight = Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
+    var bannerVisibleHeight = 0;
+    // First, make sure the banner element even exists on the page.
+    if ($(bannerSelector).length > 0) {
+      var bannerHeight = $(bannerSelector).outerHeight();
+      var bannerOffset = $(bannerSelector).offset().top;
+      var bannerPosition = bannerOffset - $(window).scrollTop();
+      bannerVisibleHeight =
+          Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
+    }
     var topOffset = headerHeight + bannerVisibleHeight;
 
     var footerOffset = $(footerSelector).offset().top;

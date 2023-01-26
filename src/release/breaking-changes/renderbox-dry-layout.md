@@ -43,7 +43,6 @@ implementation of `performResize` can be removed.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
   @override
   void performResize() {
@@ -53,7 +52,6 @@ Code before migration:
 
 Code after migration:
 
-<!-- skip -->
 ```dart
   // This replaces the old performResize method.
   @override
@@ -75,7 +73,6 @@ must call `debugCannotComputeDryLayout` from within an assert and return a dummy
 size of `const Size(0, 0)`. Calculating a dry layout is, for example, impossible
 if the size of a `RenderBox` depends on the baseline metrics of its children.
 
-<!-- skip -->
 ```dart
   @override
   Size computeDryLayout(BoxConstraints constraints) {

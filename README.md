@@ -323,18 +323,11 @@ directory in the site-shared repo.
 For more information on using and writing for this repo,
 refer to the following docs:
 
+* [Writing for Dart and Flutter websites](https://github.com/dart-lang/site-shared/blob/main/doc/writing-for-dart-and-flutter-websites.md)
 * [Infrastructure](https://github.com/dart-lang/site-shared/blob/main/doc/infrastructure.md)
 * [Markdown](https://github.com/dart-lang/site-shared/blob/main/doc/markdown.md)
 * [Examples](https://github.com/dart-lang/site-shared/blob/main/doc/examples.md)
 * [Code excerpts][]
+* [Images](https://github.com/dart-lang/site-shared/blob/main/doc/images.md)
+* [Mobile friendly pages: tips & tricks](https://github.com/dart-lang/site-shared/blob/main/doc/mobile-friendly-pages.md)
 
-Also check out the site-shared
-[wiki](https://github.com/dart-lang/site-shared/wiki):
-
-* [Images](https://github.com/dart-lang/site-shared/wiki/Images)
-* [Mobile friendly pages: tips & tricks][]
-* [Writing for Dart and Flutter websites][]
-
-
-[Mobile friendly pages: tips & tricks]: https://github.com/dart-lang/site-shared/wiki/Mobile-friendly-pages:-tips-&-tricks
-[Writing for Dart and Flutter websites]: https://github.com/dart-lang/site-shared/wiki/Writing-for-Dart-and-Flutter-websites

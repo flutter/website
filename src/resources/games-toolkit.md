@@ -123,10 +123,13 @@ For video games, you might want to look into the
 [Flame package][flame-package],
 join the [Flame community on Discord][flame-discord],
 and play with the [Flame demo app on DartPad][flame-demo].
+You might also check out the [Flutter + Flame codelab][].
+
+[Flutter + Flame codelab]: {{site.codelabs}}/flutter-flame-game
 
 In fact, the people at Very Good Ventures wrote a
-[Pinball game][pinball-game] for Google I/O 2022 using the Flame engine.
-For more information, check out
+[Pinball game][pinball-game] for Google I/O 2022
+using the Flame engine. For more information, check out
 [I/O Pinball Powered by Flutter and Firebase][],
 a free article on Medium and [play the game][pinball-game].
 

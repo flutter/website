@@ -40,28 +40,29 @@ for `flutter run` to work. Once the app starts, you'll see a
 message in your terminal that looks like the following:
 
 ```
-An Observatory debugger and profiler on iPhone X is available
-at: http://127.0.0.1:50976/Swm0bjIe0ks=/
+An Observatory debugger and profiler on macOS is available at:
+http://127.0.0.1:52129/QjqebSY4lQ8=/
+The Flutter DevTools debugger and profiler on macOS is available at:
+http://127.0.0.1:9100?uri=http://127.0.0.1:52129/QjqebSY4lQ8=/
 ```
 
-Keep note of this URL,
-as you will use it to connect your app to DevTools.
+Open the DevTools instance connected to your app
+by opening the second link in Chrome.
 
-## Open DevTools and connect to the target app
+This URL contains a security token, 
+so it's different for each run of your app. 
+This means that if you stop your application and re-run it, 
+you need to connect to DevTools again with the new URL.
 
-Once it's set up, using DevTools is as simple as opening a
-Chrome browser window and navigating to `http://localhost:9100`.
+## Connect to a new app instance
 
-Once DevTools opens, you should see a connect dialog:
+If your app stops running
+or you opened DevTools manually,
+you should see a **Connect** dialog:
 
-![Screenshot of a logging view]({{site.url}}/assets/images/docs/tools/devtools/connect_dialog.png){:width="100%"}
+![Screenshot of the DevTools connect dialog]({{site.url}}/assets/images/docs/tools/devtools/connect_dialog.png){:width="100%"}
 
-Paste the URL you got from running your app (in this example,
-`http://127.0.0.1:50976/Swm0bjIe0ks=/`) into the connect dialog
-to connect your app to DevTools.
-
-This URL contains a security token, so it's different
-for each run of your app. This means that if you stop your
-application and re-run it, you need to connect to DevTools
-with the new URL.
-
+You can manually connect DevTools to a new app instance
+by copying the Observatory link you got from running your app,
+such as `http://127.0.0.1:52129/QjqebSY4lQ8=/`
+and pasting it into the connect dialog:

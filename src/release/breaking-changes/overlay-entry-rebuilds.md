@@ -47,7 +47,6 @@ explicit `setState` call.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class FooState extends State<Foo> {
   String buttonLabel = 'Click Me';
@@ -66,7 +65,6 @@ class FooState extends State<Foo> {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class FooState extends State<Foo> {
   String buttonLabel = 'Click Me';

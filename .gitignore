@@ -16,7 +16,6 @@ node_modules
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
-example.g
 pubspec.lock
 tmp/
 _config_stage.yml

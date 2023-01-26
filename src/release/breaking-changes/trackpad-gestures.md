@@ -383,7 +383,6 @@ class Foo extends StatelessWidget {
 
 Code after migration: (Flutter 3.4.0):
 
-<!-- skip -->
 ```dart
 void main() => runApp(Foo());
 
