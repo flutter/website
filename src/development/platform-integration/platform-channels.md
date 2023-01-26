@@ -1127,7 +1127,7 @@ Handler(Looper.getMainLooper()).post {
 To comply with channel's main thread requirement,
 you might need to jump from a background thread to
 iOS's main thread to execute a channel method.
-Youc an accomplish this in iOS by executing a
+You can accomplish this in iOS by executing a
 [block][] on the main [dispatch queue][]:
 
 In Objective-C:
