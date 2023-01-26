@@ -209,7 +209,7 @@ class SelectDevicePage extends StatelessWidget {
             children: [
               Text(
                 'Select a nearby device:',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 24),
               SizedBox(
