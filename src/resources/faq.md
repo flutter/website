@@ -420,18 +420,13 @@ compression less efficient (see the
 [iOS App Store Specific Considerations][]
 section of Apple’s [QA1795][]).
 
-The release engine binary includes LLVM IR (bitcode).
-Xcode uses this bitcode to produce a final binary for
-the App Store containing the latest compiler
-optimizations and features. The profile and debug
-frameworks contain only a _bitcode marker_, and are
-more representative of the engine's actual binary size.
-Whether you ship with bitcode or not,
-the increased size of the release framework is
-stripped out during the final steps of the build.
-These steps happen after archiving your app and
-shipping it to the store. Note bitcode has been deprecated
-and will be removed from Flutter in a future release.
+{{site.alert.note}}
+  The release engine binary used to include LLVM IR (bitcode).
+  However, Apple [deprecated bitcode in Xcode 14][] and removed support,
+  so it has been removed from the Flutter 3.7 release.
+{{site.alert.end}}
+
+[deprecated bitcode in Xcode 14]: {{site.apple-dev}}/documentation/xcode-release-notes/xcode-14-release-notes
 
 Of course, we recommend that you measure your own app.
 To do that, see [Measuring your app's size][].

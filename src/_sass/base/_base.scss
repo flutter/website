@@ -227,3 +227,14 @@ dd {
     width:100%
   }
 }
+
+blockquote {
+  background-color: $site-color-codeblock-bg;
+  padding: bs-spacer(3) bs-spacer(4);
+  border-left: solid 5px $border-color;
+  margin-bottom: bs-spacer(4);
+
+  p {
+    margin-bottom: 0;
+  }
+}
