@@ -205,14 +205,15 @@ platform side and vice versa:
 | Map                        | FlValue(FlValue, FlValue) |
 {% endsamplecode %}
 
-## Example: Calling platform-specific Android, iOS, and Windows code using platform channels {#example}
+## Example: Calling platform-specific code using platform channels {#example}
 
 The following code demonstrates how to call
 a platform-specific API to retrieve and display
-the current battery level.  It uses the Android
-`BatteryManager` API, the iOS
-`device.batteryLevel` API, and the Windows
-`GetSystemPowerStatus` API with a single
+the current battery level.  It uses
+the Android `BatteryManager` API,
+the iOS `device.batteryLevel` API,
+the Windows `GetSystemPowerStatus` API,
+and the Linux `UPower` API with a single
 platform message, `getBatteryLevel()`.
 
 The example adds the platform-specific code inside
@@ -226,8 +227,8 @@ is still written in the same way.
 {{site.alert.note}}
   The full, runnable source-code for this example is
   available in [`/examples/platform_channel/`][]
-  for Android with Java, iOS with Objective-C, and
-  Windows with C++.
+  for Android with Java, iOS with Objective-C,
+  Windows with C++, and Linux with C.
   For iOS with Swift,
   see [`/examples/platform_channel_swift/`][].
 {{site.alert.end}}
@@ -870,6 +871,142 @@ And replace with the following:
 ```
 
 You should now be able to run the application on Windows.
+If your device doesn't have a battery,
+it displays 'Battery level not available'.
+  
+### Step 6: Add a Linux platform-specific implementation
+  
+For this example you need to install the `upower` developer headers.
+This is likely available from your distribution, for example with:
+```sh
+sudo apt install libupower-glib-dev
+```
+
+Start by opening the Linux host portion of your Flutter app in the editor
+of your choice. The instructions below are for Visual Studio Code with the
+“C/C++” and “CMake” extensions installed, but can be adjusted for other IDEs.
+
+1. Launch Visual Studio Code.
+
+1. Open the **linux** directory inside your project.
+
+1. Choose **Yes** in the prompt asking: `Would you like to configure project "linux"?`.
+   This enables C++ autocomplete.
+
+1. Open the file `my_application.cc`.
+  
+First, add the necessary includes to the top of the file, just
+after `#include <flutter_linux/flutter_linux.h`:
+
+<!--code-excerpt "my_application.cc" title-->
+```c
+#include <math.h>
+#include <upower.h>
+```
+
+Add an `FlMethodChannel` to the `_MyApplication` struct:
+
+<!--code-excerpt "my_application.cc" title-->
+```c
+struct _MyApplication {
+  GtkApplication parent_instance;
+  char** dart_entrypoint_arguments;
+  FlMethodChannel* battery_channel;
+};
+```
+
+Make sure to clean it up in `my_application_dispose`:
+
+<!--code-excerpt "my_application.cc" title-->
+```c
+static void my_application_dispose(GObject* object) {
+  MyApplication* self = MY_APPLICATION(object);
+  g_clear_pointer(&self->dart_entrypoint_arguments, g_strfreev);
+  g_clear_object(&self->battery_channel);
+  G_OBJECT_CLASS(my_application_parent_class)->dispose(object);
+}
+```
+
+Edit the `my_application_activate` method and initialize
+`battery_channel` using the channel name
+`samples.flutter.dev/battery`, just after the call to
+`fl_register_plugins`:
+
+<!--code-excerpt "my_application.cc" title-->
+```c
+static void my_application_activate(GApplication* application) {
+  // ...
+  fl_register_plugins(FL_PLUGIN_REGISTRY(self->view));
+
+  g_autoptr(FlStandardMethodCodec) codec = fl_standard_method_codec_new();
+  self->battery_channel = fl_method_channel_new(
+      fl_engine_get_binary_messenger(fl_view_get_engine(view)),
+      "samples.flutter.dev/battery", FL_METHOD_CODEC(codec));
+  fl_method_channel_set_method_call_handler(
+      self->battery_channel, battery_method_call_handler, self, nullptr);
+
+  gtk_widget_grab_focus(GTK_WIDGET(self->view));
+}
+```
+
+Next, add the C code that uses the Linux battery APIs to
+retrieve the battery level. This code is exactly the same as
+you would write in a native Linux application.
+
+Add the following as a new function at the top of
+`my_application.cc` just after the `G_DEFINE_TYPE` line:
+
+<!--code-excerpt "my_application.cc" title-->
+```c
+static FlMethodResponse* get_battery_level() {
+  // Find the first available battery and report that.
+  g_autoptr(UpClient) up_client = up_client_new();
+  g_autoptr(GPtrArray) devices = up_client_get_devices2(up_client);
+  if (devices->len == 0) {
+    return FL_METHOD_RESPONSE(fl_method_error_response_new(
+        "UNAVAILABLE", "Device does not have a battery.", nullptr));
+  }
+
+  UpDevice* device = (UpDevice*)(g_ptr_array_index(devices, 0));
+  double percentage = 0;
+  g_object_get(device, "percentage", &percentage, nullptr);
+
+  g_autoptr(FlValue) result =
+      fl_value_new_int(static_cast<int64_t>(round(percentage)));
+  return FL_METHOD_RESPONSE(fl_method_success_response_new(result));
+}
+```
+
+Finally, add the `battery_method_call_handler` function referenced
+in the earlier call to `fl_method_channel_set_method_call_handler`.
+You need to handle a single platform method, `getBatteryLevel`,
+so test for that in the `method_call` argument.
+The implementation of this function calls
+the Linux code written in the previous step. If an unknown method
+is called, report that instead.
+  
+Add the following code after the `get_battery_level` function:
+
+<!--code-excerpt "flutter_window.cpp" title-->
+```c
+static void battery_method_call_handler(FlMethodChannel* channel,
+                                        FlMethodCall* method_call,
+                                        gpointer user_data) {
+  g_autoptr(FlMethodResponse) response = nullptr;
+  if (strcmp(fl_method_call_get_name(method_call), "getBatteryLevel") == 0) {
+    response = get_battery_level();
+  } else {
+    response = FL_METHOD_RESPONSE(fl_method_not_implemented_response_new());
+  }
+
+  g_autoptr(GError) error = nullptr;
+  if (!fl_method_call_respond(method_call, response, &error)) {
+    g_warning("Failed to send response: %s", error->message);
+  }
+}
+```
+
+You should now be able to run the application on Linux.
 If your device doesn't have a battery,
 it displays 'Battery level not available'.
 
