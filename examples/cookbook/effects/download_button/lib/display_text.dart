@@ -45,7 +45,7 @@ class ButtonShapeWidget extends StatelessWidget {
           child: Text(
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.button?.copyWith(
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: CupertinoColors.activeBlue,
                 ),
