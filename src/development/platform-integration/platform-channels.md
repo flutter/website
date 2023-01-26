@@ -915,7 +915,7 @@ struct _MyApplication {
 };
 ```
 
-Make sure it is cleaned up in `my_application_dispose`
+Make sure to clean it up in `my_application_dispose`:
 
 <!--code-excerpt "my_application.cc" title-->
 ```c
