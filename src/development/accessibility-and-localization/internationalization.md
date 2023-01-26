@@ -416,7 +416,7 @@ The following example defines a message that pluralizes the word, "wombat":
 {% endraw %}
 
 Using a plural method is easy enough, just pass it the item count parameter:
-<?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/'He|hello|ombat/" replace="/\[/[\n    .../g"?>
+<?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/John|he|she|they|pronoun/" replace="/\[/[\n    .../g"?>
 ```dart
 // Examples of internationalized strings.
 return Column(
