@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
-# Check for non-200 links in built Jekyll site using Firebase 
-# emulator and Dart linkcheck utility
-set -eu -o pipefail 
+# Check for non-200 links in built Jekyll site
+# first looking for invalid link references then
+# using Firebase emulator and Dart linkcheck utility
+set -eu -o pipefail
+
+# Eliminate clutter
+dart --disable-analytics
+
+echo "Checking for valid link references..."
+# Check for invalid link references before checking for links
+dart run tool/check_link_references.dart
+echo $'No invalid link references found!\n'
+
 trap clean_up EXIT
 
 EMULATOR_PORT=5500 # airplay runs on :5000
@@ -21,9 +31,6 @@ clean_up() {
     exit 0
   fi
 }
-
-# Eliminate clutter
-dart --disable-analytics
 
 echo "Starting Firebase emulator async..."
 npx firebase emulators:start \

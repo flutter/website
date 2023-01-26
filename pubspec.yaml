@@ -9,4 +9,5 @@ dev_dependencies:
     path: site-shared/packages/code_excerpt_updater
   code_excerpter:
     path: site-shared/packages/code_excerpter
-  linkcheck: ^2.0.19
+  linkcheck: ^3.0.0
+  path: ^1.8.3

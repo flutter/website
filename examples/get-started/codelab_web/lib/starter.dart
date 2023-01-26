@@ -56,7 +56,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
@@ -106,5 +106,3 @@ class _SignUpFormState extends State<SignUpForm> {
 // Avoid warning on "double _formProgress = 0;"
 //_ignore_for_file: prefer_final_fields
 /* {$ end test.dart $} */
-
-

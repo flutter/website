@@ -42,7 +42,8 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
+        child:
+            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium),
       ),
     );
   }
@@ -91,7 +92,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
