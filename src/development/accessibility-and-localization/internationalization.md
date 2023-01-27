@@ -416,18 +416,18 @@ The following example defines a message that pluralizes the word, "wombat":
 {% endraw %}
 
 Using a plural method is easy enough, just pass it the item count parameter:
-<?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/'He|hello|ombat/" replace="/\[/[\n    .../g"?>
+<?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/John|he|she|they|pronoun/" replace="/\[/[\n    .../g"?>
 ```dart
 // Examples of internationalized strings.
 return Column(
   children: <Widget>[
     ...
-    // Returns 'he'
-    Text(AppLocalizations.of(context)!.pronoun('male')),
-    // Returns 'she'
-    Text(AppLocalizations.of(context)!.pronoun('female')),
-    // Returns 'they'
-    Text(AppLocalizations.of(context)!.pronoun('other')),
+    // Returns 'no wombats'
+    Text(AppLocalizations.of(context)!.nWombats(0)),
+    // Returns '1 wombat'
+    Text(AppLocalizations.of(context)!.nWombats(1)),
+    // Returns '5 wombats'
+    Text(AppLocalizations.of(context)!.nWombats(5)),
   ],
 );
 ```
