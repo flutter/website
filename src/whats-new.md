@@ -178,7 +178,7 @@ publication since the last stable release:
 
 * [What's next for Flutter][]
 * [Adapting Wonderous to larger device formats][]
-* [What's new in Flutter 3.7][]
+* [What's new in Flutter 3.7][3.7 blog post]
 * [Announcing the Flutter News Toolkit][]
 * [How it's made: Holobooth][]
 * [Playful typography with Flutter][]
