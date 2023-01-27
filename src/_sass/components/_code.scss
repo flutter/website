@@ -37,7 +37,7 @@ pre > span.strike { text-decoration: line-through; }
       display: table-cell;
       text-align: right;
       color: $teal;
-      padding-right: $font-size-base / 2;
+      padding-right: $font-size-base * 0.5;
       // background-color: lightyellow;
     }
   }
