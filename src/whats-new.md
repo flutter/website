@@ -27,19 +27,17 @@ and improvements. This page lists the documentation changes,
 but you can also check out the [3.7 blog post][] and the
 [3.7 release notes][].
 
+You might also check out [What's next for Flutter][]
+and [Introducing Dart 3 alpha][].
+
 [3.7 blog post]: {{site.flutter-medium}}/whats-new-in-flutter-3-7-38cbea71133c
 [3.7 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-3.7.0
-
-{% comment %}
-Add later, once more blog posts are published...
-[What's next for Flutter xxx][],
-and [Dart 2.19 xxx][] (free articles on Medium),
-{% endcomment %}
+[Introducing Dart 3 alpha]: {{site.medium}}/dartlang/dart-3-alpha-f1458fb9d232
+[What's next for Flutter]: {{site.flutter-medium}}/whats-next-for-flutter-b94ce089f49c
 
 **Docs updated or added since the 3.3 release**
 
-* Learn about improvements for the web platform;
-  for example, you can now pass configuration
+* You can now pass configuration
   information to the engine in the `initializeEngine`
   method. For more information, check out
   [Customizing web app initialization][].
@@ -178,6 +176,10 @@ to reflect the latest available codelabs.
 We've published the following articles on the [Flutter Medium][]
 publication since the last stable release:
 
+* [What's next for Flutter][]
+* [Adapting Wonderous to larger device formats][]
+* [What's new in Flutter 3.7][]
+* [Announcing the Flutter News Toolkit][]
 * [How it's made: Holobooth][]
 * [Playful typography with Flutter][]
 * [Material 3 for Flutter][]
@@ -188,6 +190,8 @@ publication since the last stable release:
 * [Studying developer’s usage of IDEs for Flutter development][]
 
 
+[Announcing the Flutter News Toolkit]: {{site.flutter-medium}}/announcing-the-flutter-news-toolkit-180a0d32c012
+[Adapting Wonderous to larger device formats]: {{site.flutter-medium}}/adapting-wonderous-to-larger-device-formats-ac51e1c00bc0
 [How can we improve the Flutter experience for desktop?]: {{site.medium}}/flutter/how-can-we-improve-the-flutter-experience-for-desktop-70b34bff9392
 [How it's made: Holobooth]: {{site.flutter-medium}}/how-its-made-holobooth-6473f3d018dd
 [Introducing background isolate channels]: {{site.flutter-medium}}/introducing-background-isolate-channels-7a299609cad8

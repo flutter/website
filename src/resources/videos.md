@@ -16,12 +16,23 @@ some in different languages.
 
 ## Series
 
+### Flutter Forward
+
+Even if you couldn't make it to Nairobi for the in-person
+event, you can enjoy the content created for Flutter Forward!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zKQYGKAe5W8?start=2778" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Flutter Forward livestream<br>
+[Flutter Forward playlist][]
+
+[Flutter Forward playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU3LvrdR8Hv_phLrTj0xmjnD
+
 ### Get ready for Flutter Forward
 
 Flutter Forward is happening on Jan 25th, in Nairobi, Kenya.
 Before the event, the Flutter team provided 17 days of Flutter
 featuring new content and activities leading up to the event.
-This playlist contains these and other videos relating to
+This playlist contains these and other pre-event videos relating to
 Flutter Forward.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hpgkrUPRBjc?start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

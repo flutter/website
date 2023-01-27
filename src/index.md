@@ -98,7 +98,7 @@ widgets in [What is State?][]
 [What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
 
 {:.text-center}
-#### Only have 60 seconds? Learn how to build and deploy a Flutter App!
+<b>Only have 60 seconds? Learn how to build and deploy a Flutter App!</b>
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
   <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/ZnufaryH43s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
