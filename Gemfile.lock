@@ -84,7 +84,7 @@ GEM
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
-    webrick (1.7.0)
+    webrick (1.8.0)
 
 PLATFORMS
   aarch64-linux
