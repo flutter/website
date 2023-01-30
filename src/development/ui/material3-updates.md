@@ -2,15 +2,17 @@
 title: Material 3 updates
 description: Learn about Material 3 for Flutter.
 ---
+
 Material 3, also known as Material You, is the next generation of Material 
 Design. 
 With new features and widget updates, UI design is more uniform 
-across platforms. So your app will look similar whether running 
+across platforms. So your app looks similar whether running 
 on mobile or on a desktop.
 This guide gives a high-level overview of Material 3, highlights key updates, 
 and shows you how to enable Material 3 for your Flutter application.
 
 ## What is Material 3? 
+
 Material 3 is the latest version of Material Design, 
 a UI/UX design system created by Google. 
 Material design enables developers and designers to build optimal user 
@@ -19,6 +21,7 @@ Material 3 provides updated features like dynamic color, elevation,
 and typography.
 
 ## Key updates
+
 Material 3 introduced several major changes from Material 2. 
 The Flutter team continues migrating Flutter's UI components to the Material 3 
 specifications, and most (but not all) will be implemented 
