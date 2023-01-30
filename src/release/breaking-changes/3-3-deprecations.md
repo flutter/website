@@ -248,4 +248,4 @@ Relevant PRs:
 
 ## Timeline
 
-In stable release: TBD
+In stable release: 3.7.0

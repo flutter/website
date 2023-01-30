@@ -16,16 +16,21 @@ release, and listed in alphabetical order:
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
 
+{% comment %}
 ### Not yet released to stable
+{% endcomment -%}
 
-* [Migrate `of` to non-nullable return values, and add `maybeOf`][]
+### Released in Flutter 3.7
+
 * [Deprecated API removed after v3.3][]
-* [iOS FlutterViewController splashScreenView made nullable][]
+* [Migrate `of` to non-nullable return values, and add `maybeOf`][]
+* [Removed RouteSettings.copyWith][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
+* [iOS FlutterViewController splashScreenView made nullable][]
 
+[Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [Migrate `of` to non-nullable return values, and add `maybeOf`]: /docs/release/breaking-changes/supplemental-maybeOf-migration
 [Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
-[Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
 

@@ -115,8 +115,8 @@ The following can also be helpful:
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: TBD
+Landed in version: 3.4.0-17.0.pre<br>
+In stable release: 3.7.0
 
 ## References
 

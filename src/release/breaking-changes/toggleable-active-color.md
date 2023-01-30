@@ -98,8 +98,8 @@ MaterialApp(
 
 ## Timeline
 
-Landed in version: TBD  
-In stable release: TBD
+Landed in version: 3.4.0-17.0.pre<br>
+In stable release: 3.7.0
 
 ## References
 
@@ -122,4 +122,4 @@ Relevant PRs:
 
 [`Switch` widget color doesn't use `ColorScheme`]: {{site.repo.flutter}}/issues/93709
 
-[Deprecate `toggleableActiveColor`]: {{site.repo.flutter}}/pull/95870
+[Deprecate `toggleableActiveColor`]: {{site.repo.flutter}}/pull/97972
