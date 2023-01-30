@@ -121,4 +121,4 @@ Relevant PRs:
 
 [`Switch` widget color doesn't use `ColorScheme`]: {{site.repo.flutter}}/issues/93709
 
-[Deprecate `toggleableActiveColor`]: {{site.repo.flutter}}/pull/95870
+[Deprecate `toggleableActiveColor`]: {{site.repo.flutter}}/pull/97972
