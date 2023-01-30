@@ -261,10 +261,10 @@ For more information, see [App Size Documentation][].
 
 ## Other resources
 
-Check out this [App Size Tool Tutorial][app-size-tutorial] to learn how 
-to perform a step-by-step size analysis of the Wonderous App using 
-the App Size Tool. Various strategies are also discussed that can help 
-reduce an app's size.
+Check out this [App Size Tool Tutorial][app-size-tutorial] 
+to learn how to perform a step-by-step size analysis of 
+the Wonderous App using the App Size Tool. Various strategies 
+are also discussed that can help reduce an app's size.
 
 [Using the treemap]: #using-the-treemap
 [Generating size files]: #generating-size-files

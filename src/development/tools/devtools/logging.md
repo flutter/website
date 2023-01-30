@@ -42,8 +42,8 @@ click the **Clear logs** button.
 ## Other resources
 
 Check out this step-by-step guided [Logging View Tutorial][logging-tutorial] 
-to learn about the various methods of logging available in Flutter and 
-how you can effectively use the Logging View to analyze the logs 
-and debug Flutter apps faster.
+to learn about the various methods of logging available in 
+Flutter and how you can effectively use the Logging View to 
+analyze the logs and debug Flutter apps faster.
 
 [logging-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-logging-view-part-5-of-8-b634f3a3af26
