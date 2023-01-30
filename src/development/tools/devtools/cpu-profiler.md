@@ -24,3 +24,12 @@ session from your Dart or Flutter application.
 {% include_relative _profiler.md %}
 
 [analyze performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/
+
+## Other resources
+
+Dive into a step-by-step guided [CPU Profiler View Tutorial][profiler-tutorial] 
+to learn how the CPU Profiler View can be used to analyze the CPU usage of a compute 
+intensive Flutter Mandelbrot app. Also, learn how to analyze the CPU usage when the 
+app uses parallel computing using isolates.
+
+[profiler-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-cpu-profiler-view-part-6-of-8-31e24eae6bf8

@@ -259,9 +259,17 @@ In this example, import the `build/apk-code-size-analysis_01.json`
 file into the app size tool to analyze further.
 For more information, see [App Size Documentation][].
 
+## Other resources
+
+Check out this [App Size Tool Tutorial][app-size-tutorial] to learn how 
+to perform a step-by-step size analysis of the Wonderous App using 
+the App Size Tool. Various strategies are also discussed that can help 
+reduce an app's size.
+
 [Using the treemap]: #using-the-treemap
 [Generating size files]: #generating-size-files
 [Analysis tab]: #analysis-tab
 [Diff tab]: #diff-tab
 [installation instructions]: {{site.url}}/development/tools/devtools/overview#install-devtools
 [App Size Documentation]: {{site.url}}/perf/app-size#breaking-down-the-size
+[app-size-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-app-size-tool-part-3-of-8-9be6e9ec42a2
