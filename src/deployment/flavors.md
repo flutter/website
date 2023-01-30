@@ -164,7 +164,7 @@ navigate to **android**/**app**/**build.gradle**.
     it is appended to the "base" application id.
 
 ```gradle
-flavor {
+productFlavors {
     free {
         dimension "default"
         resValue "string", "app_name", "free flavor example"
