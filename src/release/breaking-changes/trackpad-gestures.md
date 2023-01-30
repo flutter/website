@@ -546,8 +546,7 @@ In stable release: 3.3.0
 
 API documentation:
 
-* [`GestureDetector` (3.3.0)][]
-* [`GestureDetector` (3.4.0)][]
+* [`GestureDetector`][]
 * [`RawGestureDetector`][]
 * [`GestureRecognizer`][]
 
