@@ -485,8 +485,9 @@ such tokens from being parsed, enable the `use-escaping` flag by adding the foll
 ```yaml
 use-escaping: true
 ```
-Then any string of characters wrapped around a pair of single quotes will be ignored during parsing.
-To use a normal single quote character, use a pair of consecutive single quotes. For example,
+The parser ignores any string of characters wrapped with a pair of single quotes.
+To use a normal single quote character, use a pair of consecutive single quotes. For example:
+
 ```json
 {
   "helloWorld": "Hello! '{Isn''t}' this a wonderful day?"
