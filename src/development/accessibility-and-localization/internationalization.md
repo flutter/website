@@ -479,6 +479,25 @@ parameter and the actual value is case-sensitive. That is,
 `AppLocalizations.of(context)!.pronoun("Male")` will default to the
 "other" case, and return "they".
 
+### Escaping syntax
+Sometimes, you have to use tokens, such as `{` and `}`, as normal characters. To ignore
+such tokens from being parsed, enable the `use-escaping` flag by adding the following to `l10n.yaml`.
+```yaml
+use-escaping: true
+```
+The parser ignores any string of characters wrapped with a pair of single quotes.
+To use a normal single quote character, use a pair of consecutive single quotes. For example:
+
+```json
+{
+  "helloWorld": "Hello! '{Isn''t}' this a wonderful day?"
+}
+```
+becomes the following Dart `String`:
+```dart
+"Hello! {Isn't} this a wonderful day?"
+```
+
 ### Messages with numbers and currencies
 Numbers, including those that represent currency values,
 are displayed very differently in different locales. 
@@ -730,6 +749,7 @@ For a full list of options, check out the following table:
 | `header`                      | The header to prepend to the generated Dart localizations files. This option takes in a string. <br /><br /> For example, pass in `"/// All localized files."` if you would like this string prepended to the generated Dart file. <br /><br /> Alternatively, see the `header-file` option to pass in a text file for longer headers. |
 | `header-file`                 | The header to prepend to the generated Dart localizations files. The value of this option is the name of the file that contains the header text which will be inserted at the top of each generated Dart file. <br /><br /> Alternatively, see the `header` option to pass in a string for a simpler header. <br /><br />This file should be placed in the directory specified in `arb-dir`. |
 | `[no-]use-deferred-loading`   | Whether to generate the Dart localization file with locales imported as deferred, allowing for lazy loading of each locale in Flutter web. <br /><br /> This can reduce a web app’s initial startup time by decreasing the size of the JavaScript bundle. When this flag is set to true, the messages for a particular locale are only downloaded and loaded by the Flutter app as they are needed. For projects with a lot of different locales and many localization strings, it can be a performance improvement to have deferred loading. For projects with a small number of locales, the difference is negligible, and might slow down the start up compared to bundling the localizations with the rest of the application. <br /><br /> Note that this flag does not affect other platforms such as mobile or desktop. |
+| `use-escaping`                | Whether to enable the use of single quotes as escaping syntax. |
 {:.table.table-striped}
 </div>
 
