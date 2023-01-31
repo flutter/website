@@ -437,8 +437,8 @@ call stacks that have allocated the instances.
 
 ## Other resources
 
-Check out this step-by-step guided [Memory View Tutorial][memory-tutorial] 
-to learn how you can monitor a Flutter app's memory usage 
-and detect any memory leaks using the Memory View.
+To learn how to monitor an app's memory usage
+and detect memory leaks using DevTools,
+check out a guided [Memory View tutorial][memory-tutorial].
 
-[memory-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
+[memory-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
