@@ -42,12 +42,13 @@ function scrollSidebarIntoView() {
 function adjustToc() {
   // Adjustments to the jekyll-toc TOC.
 
-  var tocId = '#site-toc--side';
-  // Uncomment to enable 'page top' button
-  // var tocWrapper = $(tocId);
-  // $(tocWrapper).find('.site-toc--button__page-top').click(function () {
-  //   $('html, body').animate({ scrollTop: 0 }, 'fast');
-  // })
+  const tocId = '#site-toc--side';
+
+  document
+      .querySelector(tocId + ' header')
+      .addEventListener('click', function (_) {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+      });
 
   $('body').scrollspy({ offset: 100, target: tocId });
 }
