@@ -38,3 +38,12 @@ click the **Clear logs** button.
 
 [Logging]: {{site.url}}/testing/code-debugging#logging
 [Debugging Flutter apps programmatically]: {{site.url}}/testing/code-debugging
+
+## Other resources
+
+To learn about different methods of logging
+and how to effectively use DevTools to
+analyze and debug Flutter apps faster,
+check out a guided [Logging View tutorial][logging-tutorial].
+
+[logging-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-logging-view-part-5-of-8-b634f3a3af26
