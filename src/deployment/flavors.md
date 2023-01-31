@@ -156,7 +156,7 @@ Setting up flavors in Android can be done in your project's
 1. Inside your Flutter project, 
    navigate to **android**/**app**/**build.gradle**.
 
-2. Create a [`flavorDimension`][] to group the product flavors you add.
+2. Create a [`flavorDimension`][] to group your added product flavors.
    Gradle doesn't combine product flavors that share the same `dimension`.
 
 3. Add a `productFlavors` object with the desired flavors along
