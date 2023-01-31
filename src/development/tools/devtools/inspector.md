@@ -526,10 +526,9 @@ For a demonstration of what's generally possible with the inspector,
 see the [DartConf 2018 talk][] demonstrating the IntelliJ version
 of the Flutter inspector.
 
-Dive into this step-by-step guided 
-[Flutter Inspector Tutorial][inspector-tutorial] 
-to learn how you can visually debug layout issues of an 
-app using the Flutter Inspector.
+To learn how to visually debug layout issues
+using DevTools, check out a guided
+[Flutter Inspector tutorial][inspector-tutorial].
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [common problems when debugging]: {{site.url}}/testing/debugging#common-problems
