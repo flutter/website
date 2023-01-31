@@ -479,7 +479,7 @@ parameter and the actual value is case-sensitive. That is,
 `AppLocalizations.of(context)!.pronoun("Male")` will default to the
 "other" case, and return "they".
 
-### Escaping Syntax
+### Escaping syntax
 Sometimes, it is necessary to use tokens such as `{` and `}` as normal characters. To ignore
 such tokens from being parsed, enable the `use-escaping` flag by adding the following to `l10n.yaml`.
 ```yaml
