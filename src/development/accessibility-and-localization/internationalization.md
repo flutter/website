@@ -479,6 +479,24 @@ parameter and the actual value is case-sensitive. That is,
 `AppLocalizations.of(context)!.pronoun("Male")` will default to the
 "other" case, and return "they".
 
+### Escaping Syntax
+Sometimes, it is necessary to use tokens such as `{` and `}` as normal characters. To ignore
+such tokens from being parsed, enable the `use-escaping` flag by adding the following to `l10n.yaml`.
+```yaml
+use-escaping: true
+```
+Then any string of characters wrapped around a pair of single quotes will be ignored during parsing.
+To use a normal single quote character, use a pair of consecutive single quotes. For example,
+```json
+{
+  "helloWorld": "Hello! '{Isn''t}' this a wonderful day?"
+}
+```
+becomes the following Dart `String`:
+```dart
+"Hello! {Isn't} this a wonderful day?"
+```
+
 ### Messages with numbers and currencies
 Numbers, including those that represent currency values,
 are displayed very differently in different locales. 
