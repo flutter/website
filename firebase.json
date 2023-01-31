@@ -175,6 +175,7 @@
       { "source": "/go/annotator-tree", "destination": "https://docs.google.com/document/d/1YtkdZSx1687Ipbff06qp3XglmJym3Wc9boY4I-bYs4A/edit", "type": 301 },
       { "source": "/go/api-for-transform-performance", "destination": "https://docs.google.com/document/d/1Fxdlf7JsA-yAwc_RNuboMG-vhIhchRBZGvDSwg5qR0A/edit?usp=sharing", "type": 301 },
       { "source": "/go/application-lifecycle-events", "destination": "https://docs.google.com/document/d/1FL5Fgk7EzMNOpJL0GZJt-lfWtGt2igHuC2ZznItS2l8/edit?usp=sharing&resourcekey=0-IZNfpSVPkMbigQLLXoJcfw", "type": 301 },
+      { "source": "/go/apple-pencil-double-tap-support", "destination": "https://docs.google.com/document/d/1r4P5r-jGt2Sjqro3ldCU2axUiHTpu3yhIycnI94OKQw/edit?usp=sharing", "type": 301 },
       { "source": "/go/asset-lookup-in-plugin-binding", "destination": "https://docs.google.com/document/d/1iwGFWipC0v0FKvAgbjGl0kaV9IGox1YiD8jUP8Vvkjc/edit", "type": 301 },
       { "source": "/go/autocomplete", "destination": "https://docs.google.com/document/d/1fV4FDNdcza1ITU7hlgweCDUZdWyCqd-rjz_J7K2KkfY/edit?usp=sharing", "type": 301 },
       { "source": "/go/autosubmit", "destination": "https://docs.google.com/document/d/14oAi2gHMDnqOVe2rEl0syny7_7xsCHh83HtdomQgouM/edit?usp=sharing", "type": 301 },
