@@ -44,11 +44,13 @@ function adjustToc() {
 
   const tocId = '#site-toc--side';
 
-  document
-      .querySelector(tocId + ' header')
-      .addEventListener('click', function (_) {
-        $('html, body').animate({ scrollTop: 0 }, 'fast');
-      });
+  const tocHeader = document.querySelector(tocId + ' header');
+
+  if (tocHeader) {
+    tocHeader.addEventListener('click', function (_) {
+      $('html, body').animate({scrollTop: 0}, 'fast');
+    });
+  }
 
   $('body').scrollspy({ offset: 100, target: tocId });
 }
