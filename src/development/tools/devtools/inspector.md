@@ -550,4 +550,4 @@ using DevTools, check out a guided
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
 [the performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints
-[inspector-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7
+[inspector-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7
