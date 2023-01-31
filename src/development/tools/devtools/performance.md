@@ -222,11 +222,9 @@ supports importing files that were originally exported from DevTools.**
 
 ## Other resources
 
-Check out the step-by-step guided 
-[Performance View Tutorial][performance-tutorial] to learn 
-how you can monitor an app's perceived performance and 
-detect janks using the Performance View.
-
+To learn how to monitor an app's performance and
+detect jank using DevTools, check out a guided
+[Performance View tutorial][performance-tutorial].
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
