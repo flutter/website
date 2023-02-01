@@ -153,18 +153,24 @@ project 'Runner', {
 Setting up flavors in Android can be done in your project's 
 **build.gradle** file.
 
-1. In VSCode, inside your Flutter project, 
-navigate to **android**/**app**/**build.gradle**.     
+1. Inside your Flutter project, 
+   navigate to **android**/**app**/**build.gradle**.
 
-2. Add a flavor object with the specified environments along with values for 
-**dimension**, **resValue**, and **applicationId** or **applicationSuffix**. 
-  * The name of the application for each build is located in **resValue** 
-(as shown in the snippet below from VSCode).
-  * If you specify a **applicationSuffix** instead of a **applicationId**, 
-    it is appended to the "base" application id.
+2. Create a [`flavorDimension`][] to group your added product flavors.
+   Gradle doesn't combine product flavors that share the same `dimension`.
+
+3. Add a `productFlavors` object with the desired flavors along
+   with values for **dimension**, **resValue**,
+   and **applicationId** or **applicationSuffix**.
+
+   * The name of the application for each build is located in **resValue**.
+   * If you specify a **applicationSuffix** instead of a **applicationId**, 
+     it is appended to the "base" application id.
 
 ```gradle
-flavor {
+flavorDimensions "default"
+
+productFlavors {
     free {
         dimension "default"
         resValue "string", "app_name", "free flavor example"
@@ -172,6 +178,8 @@ flavor {
     }
 }
 ```
+
+[`flavorDimension`]: {{site.android-dev}}/studio/build/build-variants#flavor-dimensions
 
 ## Setting up launch configurations
 
