@@ -434,3 +434,11 @@ to show its callees.
 
 The bottom-up view shows the list of different
 call stacks that have allocated the instances.
+
+## Other resources
+
+To learn how to monitor an app's memory usage
+and detect memory leaks using DevTools,
+check out a guided [Memory View tutorial][memory-tutorial].
+
+[memory-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
