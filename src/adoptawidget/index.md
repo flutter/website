@@ -2,6 +2,8 @@
 title: Adopt a Widget
 layout: default
 show_banner: False
+description: >
+  Learn more about Flutter's past Adopt a Widget documentation campaign.
 ---
 
 <img src="/adoptawidget/images/image1.png" alt="Adopt a Widget logo" width="100%" />
