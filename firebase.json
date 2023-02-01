@@ -50,6 +50,7 @@
       { "source": "/development/platform-integration/web-images", "destination": "/development/platform-integration/web/web-images", "type": 301 },
       { "source": "/devtools/:rest*", "destination": "/development/tools/devtools/:rest*", "type": 301 },
       { "source": "/downloads/:resource*", "destination": "/resources/:resource*", "type": 301 },
+      { "source": "/f/flutter-survey-metadata.json", "destination": "https://storage.googleapis.com/flutter-uxr/surveys/flutter-survey-metadata.json", "type": 301 },
       { "source": "/faq", "destination": "/resources/faq", "type": 301 },
       { "source": "/fastlane-cd", "destination": "/deployment/cd#fastlane", "type": 301 },
       { "source": "/flutter-for-:platform*", "destination": "/get-started/flutter-for/:platform*-devs", "type": 301 },
