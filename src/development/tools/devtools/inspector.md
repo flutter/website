@@ -526,6 +526,9 @@ For a demonstration of what's generally possible with the inspector,
 see the [DartConf 2018 talk][] demonstrating the IntelliJ version
 of the Flutter inspector.
 
+To learn how to visually debug layout issues
+using DevTools, check out a guided
+[Flutter Inspector tutorial][inspector-tutorial].
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [common problems when debugging]: {{site.url}}/testing/debugging#common-problems
@@ -547,3 +550,4 @@ of the Flutter inspector.
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
 [the performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints
+[inspector-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7

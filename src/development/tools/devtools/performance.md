@@ -220,8 +220,15 @@ performance page. To import a performance snapshot, you can drag and drop the
 snapshot into DevTools from any page. **Note that DevTools only
 supports importing files that were originally exported from DevTools.**
 
+## Other resources
+
+To learn how to monitor an app's performance and
+detect jank using DevTools, check out a guided
+[Performance View tutorial][performance-tutorial].
+
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export
+[performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
