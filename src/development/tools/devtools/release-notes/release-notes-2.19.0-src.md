@@ -36,5 +36,5 @@ for Dart and Flutter
 
 ## Changelog
 
-More details about changes and fixes are available in the
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md#2190).
+More details about changes and fixes are available in the DevTools
+[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
