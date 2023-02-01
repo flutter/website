@@ -5,7 +5,7 @@
 # [Flutter][] website 
 
 [![Build Status][]][Repo on GitHub Actions]
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/website/badge)](https://api.securityscorecards.dev/projects/github.com/flutter/website)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/website/badge)](https://deps.dev/project/github/flutter%2Fwebsite)
 
 [Build Status]: https://github.com/flutter/website/workflows/build/badge.svg
 [Flutter]: https://docs.flutter.dev/
