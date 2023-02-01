@@ -1,11 +1,14 @@
 ---
-title: Material
+title: Material Design for Flutter
 description: Learn about Material Design for Flutter.
 ---
 
 Material is a design system created by Google to
 help teams build high-quality digital experiences
 for Android, iOS, Flutter, desktop, and the web.
+
+Material 3 is the latest generation of Material Design.
+Flutter is in the process of migrating to Material 3.
 
 {{site.alert.note}}
   A few facts about Material 3 (M3),
@@ -43,10 +46,11 @@ To play with the Material widgets, check out the
 [interactive Material & Flutter showcase][demo]:
 
 <iframe src="https://flutter.github.io/samples/web/material_3_demo/#/"
-        title="Material 3 Demo App"></iframe>
+        width="100%" height="500px" title="Material 3 Demo App"></iframe>
 
 
 ## More information
+{:.no_toc}
 
 To learn more about Material Design and Flutter,
 check out:    
@@ -55,3 +59,5 @@ check out:
 * [Migrating a Flutter app to Material 3][] blog post by Taha Tesser
 
 
+[Flutter Material blog and announcements]: https://m3.material.io/develop/flutter
+[Migrating a Flutter app to Material 3]: https://blog.codemagic.io/migrating-a-flutter-app-to-material-3/
