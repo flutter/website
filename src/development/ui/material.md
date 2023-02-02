@@ -3,11 +3,9 @@ title: Material Design for Flutter
 description: Learn about Material Design for Flutter.
 ---
 
-Material is a design system created by Google to
-help teams build high-quality digital experiences
-for Android, iOS, Flutter, desktop, and the web.
+Material Design is an open-source design system built and supported by Google designers and developers.
 
-Material 3 is the latest generation of Material Design.
+The latest version, Material 3, enables personal, adaptive, and expressive experiences – from dynamic color and enhanced accessibility, to foundations for large screen layouts and design tokens.
 Flutter is in the process of migrating to Material 3.
 
 {{site.alert.note}}
