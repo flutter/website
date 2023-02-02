@@ -28,7 +28,7 @@ Flutter is in the process of migrating to Material 3.
     However, a couple of widgets have substantially different
     behavior in M3, so new widgets have been created.
   * Once migration is complete, Material 3 will
-    become Flutter's default look and feel.
+    become the Material library's default look and feel.
   * Material 2 will eventually be removed according
     to Flutter's [deprecation policy][].
 {{site.alert.end}}
