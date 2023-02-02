@@ -40,7 +40,7 @@ Flutter is in the process of migrating to Material 3.
 [Material 3/Flutter GitHub project]: {{site.github}}/orgs/flutter/projects/19/views/22
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
-To play with the Material widgets, check out the
+Explore the updated components, typography, color system and elevation support with the
 [interactive Material & Flutter showcase][demo]:
 
 <iframe src="https://flutter.github.io/samples/web/material_3_demo/#/"
