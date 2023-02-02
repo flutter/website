@@ -158,6 +158,7 @@
       { "source": "/style-guide*", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/youtube", "destination": "https://youtube.com/@flutterdev", "type": 301 },
 
+      { "source": "/go/a11y-links", "destination": "https://docs.google.com/document/d/1FxzANiyJFkoRxJ7V2IejpfB5DX19gxiJps-8N2oUW_U/edit#", "type": 301 },
       { "source": "/go/a11y-text-attributes", "destination": "https://docs.google.com/document/d/1vhbwxFOTRTUvW2C_onFffEH5Fn2pAfMQDyv-gekias0/edit?usp=sharing&resourcekey=0-ChQvjIoWYO7jXcaCXMj5Qw", "type": 301 },
       { "source": "/go/actions-and-shortcuts-design-revision", "destination": "https://docs.google.com/document/d/1A9yald55O_C6Weqp4tOtyMisfOC1ZC0UMq7Yc-pNfVQ/edit", "type": 301 },
       { "source": "/go/adaptive", "destination": "/development/ui/layout/building-adaptive-apps", "type": 301 },
