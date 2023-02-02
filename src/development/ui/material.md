@@ -3,11 +3,9 @@ title: Material Design for Flutter
 description: Learn about Material Design for Flutter.
 ---
 
-Material is a design system created by Google to
-help teams build high-quality digital experiences
-for Android, iOS, Flutter, desktop, and the web.
+Material Design is an open-source design system built and supported by Google designers and developers.
 
-Material 3 is the latest generation of Material Design.
+The latest version, Material 3, enables personal, adaptive, and expressive experiences – from dynamic color and enhanced accessibility, to foundations for large screen layouts and design tokens.
 Flutter is in the process of migrating to Material 3.
 
 {{site.alert.note}}
@@ -18,20 +16,20 @@ Flutter is in the process of migrating to Material 3.
     but you can follow progress on the
     [Material 3 Flutter GitHub project][] and the
     [GitHub umbrella issue][].
-  * For the latest list of Flutter's widgets that
-    are new and migrated to Material 3, see
-    [Affected widgets][].
-  * Until migration is complete, you can opt in to
-    Material 3 using the [`useMaterial3`][] property.
+  * You can opt in to
+    Material 3 using the [`useMaterial3`][] flag.
     However, your UI might be inconsistent until
-    _all_ of Flutter _and_ your code is migrated.
+    _all_ of Flutter _and_ your code are migrated.
+   * For the latest list of Flutter's widgets that
+    are affected by the [`useMaterial3`][] flag, see
+    [Affected widgets][].
   * Some Flutter widgets have similar behavior in M2 and
     M3, so those widget names are unchanged.
-    However, other widgets have substantially different
+    However, a couple of widgets have substantially different
     behavior in M3, so new widgets have been created.
   * Once migration is complete, Material 3 will
-    become Flutter's default look and feel.
-  * Material 2 will eventually be removed according
+    become the Material library's default look and feel.
+  * Support for Material 2 will eventually be removed according
     to Flutter's [deprecation policy][].
 {{site.alert.end}}
 
@@ -42,8 +40,8 @@ Flutter is in the process of migrating to Material 3.
 [Material 3 Flutter GitHub project]: {{site.github}}/orgs/flutter/projects/19/views/22
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
-To play with the Material widgets, check out the
-[interactive Material & Flutter showcase][demo]:
+Explore the updated components, typography, color system and elevation support with the
+[interactive Material 3 demo][demo]:
 
 <iframe src="https://flutter.github.io/samples/web/material_3_demo/#/"
         width="100%" height="500px" title="Material 3 Demo App"></iframe>
@@ -55,7 +53,7 @@ To play with the Material widgets, check out the
 To learn more about Material Design and Flutter,
 check out:    
 
-* [Flutter Material blog and announcements][]
+* [Material.io developer documentation][]
 * [Migrating a Flutter app to Material 3][] blog post by Taha Tesser
 
 
