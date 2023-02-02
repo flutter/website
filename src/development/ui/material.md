@@ -39,7 +39,7 @@ Flutter is in the process of migrating to Material 3.
 [deprecation policy]: {{site.url}}/resources/compatibility
 [GitHub umbrella issue]: {{site.github}}//flutter/flutter/issues/91605
 [demo]: https://flutter.github.io/samples/web/material_3_demo/#/
-[Material 3/Flutter GitHub project]: {{site.github}}/orgs/flutter/projects/19/views/22
+[Material 3 Flutter GitHub project]: {{site.github}}/orgs/flutter/projects/19/views/22
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
 To play with the Material widgets, check out the
