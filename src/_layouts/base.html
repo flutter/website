@@ -36,6 +36,11 @@
     {% endif -%}
 
     {% assign desc = page.description -%}
+    {% unless desc and desc != '' -%}
+      {% assign error = page.url | append: ' must have a description specified!' -%}
+      {{ error | throw_error }}
+    {% endunless %}
+
     {% assign og_image_path = page.image.path | default: layout.image.path | default: site.default_share_image -%}
 
     <meta name="description" content="{{desc}}">

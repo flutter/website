@@ -17,19 +17,24 @@ release, and listed in alphabetical order:
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
 
 ### Not yet released to stable
+* [Insert Content Text Input Client]
+
+[Insert Content Text Input Client]: {{site.url}}/release/breaking-changes/insert-content-text-input-client
+
+### Released in Flutter 3.7
 
 * [Migrate `of` to non-nullable return values, and add `maybeOf`][]
+* [Removed RouteSettings.copyWith][]
 * [Deprecated API removed after v3.3][]
 * [iOS FlutterViewController splashScreenView made nullable][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
-* [Insert Content Text Input Client]
 
-[Migrate `of` to non-nullable return values, and add `maybeOf`]: /docs/release/breaking-changes/supplemental-maybeOf-migration
-[Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
+
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
-[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
-[Insert Content Text Input Client]: {{site.url}}/release/breaking-changes/insert-content-text-input-client
+[Migrate `of` to non-nullable return values, and add `maybeOf`]: {{site.url}}/docs/release/breaking-changes/supplemental-maybeOf-migration
+[Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
+[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
 ### Released in Flutter 3.3
 

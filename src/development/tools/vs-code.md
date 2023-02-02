@@ -80,10 +80,7 @@ enables the following:
   You can debug your app in a couple of ways.
 
   * Using [DevTools][], a suite of debugging and profiling
-    tools that run in a browser. DevTools replaces the previous
-    browser-based profiling tool, Observatory, and includes
-    functionality previously only available to Android Studio
-    and IntelliJ, such as the Flutter inspector.
+    tools that run in a browser. 
   * Using VS Code's built-in debugging features,
     such as setting breakpoints.
 

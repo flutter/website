@@ -3,7 +3,9 @@ title: Creating flavors for Flutter
 short-title: Flavors
 description: How to create build flavors specific to different release types or development environments.
 ---
+
 ## What are flavors
+
 Have you ever wondered how to set up different environments in your Flutter app?
 Flavors (known as _build configurations_ in iOS), allow you (the developer) to 
 create separate environments for your app using the same code base. 
@@ -151,23 +153,33 @@ project 'Runner', {
 Setting up flavors in Android can be done in your project's 
 **build.gradle** file.
 
-1. In VSCode, inside your Flutter project, 
-navigate to **android**/**app**/**build.gradle**.     
+1. Inside your Flutter project, 
+   navigate to **android**/**app**/**build.gradle**.
 
-2. Add a flavor object with the specified environments along with values for 
-**dimension**, **resValue**, and **applicationId**. 
-  * The name of the application for each build is located in **resValue** 
-(as shown in the snippet below from VSCode).
+2. Create a [`flavorDimension`][] to group your added product flavors.
+   Gradle doesn't combine product flavors that share the same `dimension`.
 
-```ruby
-flavor {
+3. Add a `productFlavors` object with the desired flavors along
+   with values for **dimension**, **resValue**,
+   and **applicationId** or **applicationSuffix**.
+
+   * The name of the application for each build is located in **resValue**.
+   * If you specify a **applicationSuffix** instead of a **applicationId**, 
+     it is appended to the "base" application id.
+
+```gradle
+flavorDimensions "default"
+
+productFlavors {
     free {
         dimension "default"
         resValue "string", "app_name", "free flavor example"
-        applicationId ".free"
+        applicationSuffix ".free"
     }
 }
 ```
+
+[`flavorDimension`]: {{site.android-dev}}/studio/build/build-variants#flavor-dimensions
 
 ## Setting up launch configurations
 

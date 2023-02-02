@@ -95,8 +95,6 @@ The Flutter plugin performs code analysis that enables the following:
   * Using [DevTools][], a suite of debugging and profiling
     tools that run in a browser
     _and include the Flutter inspector_.
-    DevTools replaces the previous browser-based profiling
-    tool, Observatory.
   * Using Android Studio's (or IntelliJ's) built-in debugging
     features, such as the ability to set breakpoints.
   * Using the Flutter inspector, directly available in

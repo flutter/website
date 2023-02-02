@@ -165,8 +165,8 @@ touch and mouse usage.
 
 #### Using `GestureDetector`
 
-No change is needed, `GestureDetector` will automatically process trackpad
-gesture events and trigger callbacks if recognized.
+No change is needed, `GestureDetector` automatically processes trackpad
+gesture events and triggers callbacks if recognized.
 
 #### Using `GestureRecognizer` and `Listener`
 
@@ -303,16 +303,16 @@ class Foo extends StatelessWidget {
 ```
 
 Please note: Use of raw `Listener` in this way could cause conflicts with other
-gesture interactions as it does not participate in the gesture disambiguation arena.
+gesture interactions as it doesn't participate in the gesture disambiguation arena.
 
 ### For gesture interactions not suitable for trackpad usage
 
 #### Using `GestureDetector`
 
-If using Flutter 3.3.0, `RawGestureDetector` can be used instead of `GestureDetector`
+If using Flutter 3.3.0, `RawGestureDetector` could be used instead of `GestureDetector`
 to ensure each `GestureRecognizer` created by the `GestureDetector` has
 `supportedDevices` set to exclude `PointerDeviceKind.trackpad`. Starting in
-version 3.4.0, there will be a `supportedDevices` parameter directly on
+version 3.4.0, there is a `supportedDevices` parameter directly on
 `GestureDetector`.
 
 Code before migration:
@@ -414,7 +414,8 @@ class Foo extends StatelessWidget {
 
 #### Using `RawGestureRecognizer`
 
-Explicitly ensure that `supportedDevices` does not include `PointerDeviceKind.trackpad`.
+Explicitly ensure that `supportedDevices`
+doesn't include `PointerDeviceKind.trackpad`.
 
 Code before migration:
 
@@ -494,9 +495,9 @@ class Foo extends StatelessWidget {
 #### Using `GestureRecognizer` and `Listener`
 
 After upgrading to Flutter 3.3.0, there won't be a change in behavior, as
-`addPointerPanZoom` needs to be called on each `GestureRecognizer` to allow
-it to track gestures. The following code will not receive pan gesture callbacks
-when the trackpad is scrolled.
+`addPointerPanZoom` must be called on each `GestureRecognizer` to allow
+it to track gestures. The following code won't receive pan gesture callbacks
+when the trackpad is scrolled:
 
 ```dart
 void main() => runApp(Foo());
@@ -545,8 +546,7 @@ In stable release: 3.3.0
 
 API documentation:
 
-* [`GestureDetector` (3.3.0)][]
-* [`GestureDetector` (3.4.0)][]
+* [`GestureDetector`][]
 * [`RawGestureDetector`][]
 * [`GestureRecognizer`][]
 
@@ -566,8 +566,7 @@ Relevant PRs:
 * [Win32 trackpad gestures][]
 * [ChromeOS/Android trackpad gestures][]
 
-[`GestureDetector` (3.3.0)]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[`GestureDetector` (3.4.0)]: {{site.master-api}}/flutter/widgets/GestureDetector-class.html
+[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [`GestureRecognizer`]: {{site.api}}/flutter/gestures/GestureRecognizer-class.html
 [`RawGestureDetector`]: {{site.api}}/flutter/widgets/RawGestureDetector-class.html
 [Flutter Trackpad Gestures]: https://docs.google.com/document/d/1oRvebwjpsC3KlxN1gOYnEdxtNpQDYpPtUFAkmTUe-K8
