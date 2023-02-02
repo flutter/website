@@ -16,13 +16,13 @@ Flutter is in the process of migrating to Material 3.
     but you can follow progress on the
     [Material 3 Flutter GitHub project][] and the
     [GitHub umbrella issue][].
-  * For the latest list of Flutter's widgets that
-    are new and migrated to Material 3, see
-    [Affected widgets][].
-  * Until migration is complete, you can opt in to
-    Material 3 using the [`useMaterial3`][] property.
+  * You can opt in to
+    Material 3 using the [`useMaterial3`][] flag.
     However, your UI might be inconsistent until
-    _all_ of Flutter _and_ your code is migrated.
+    _all_ of Flutter _and_ your code are migrated.
+   * For the latest list of Flutter's widgets that
+    are affected by the [`useMaterial3`][] flag, see
+    [Affected widgets][].
   * Some Flutter widgets have similar behavior in M2 and
     M3, so those widget names are unchanged.
     However, other widgets have substantially different
