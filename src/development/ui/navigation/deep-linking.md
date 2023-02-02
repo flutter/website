@@ -25,8 +25,13 @@ link. By default, web apps read the deep link path from the url fragment using
 the pattern: `/#/path/to/app/screen`, but this can be changed by
 [configuring the URL strategy][] for your app.
 
-To follow along, clone the [Navigation and Routing][router-sample] in
-flutter/samples.
+If you are a visual learner, check out the following video:
+
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/KNAb2XL7k2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<b>Deep linking in Flutter</b>
+
+To follow along with the instructions on this page, clone the
+[Navigation and Routing][router-sample] in flutter/samples.
 
 ## Enable deep linking on Android
 
@@ -73,6 +78,7 @@ For more details, see the [Verify Android App Links][verify-android-links]
 documentation in the Android docs.
 
 ## Enable deep linking on iOS
+
 Add two new keys to `Info.plist` in the ios/Runner directory:
 
 ```
@@ -110,8 +116,8 @@ xcrun simctl openurl booted customscheme://flutterbooksample.com/book/1
 ## Migrating from plugin-based deep linking
 
 If you have written a plugin to handle deep links, as described in
-["Deep Links and Flutter applications"][plugin-linking]
-(an article on Medium),
+[Deep Links and Flutter applications][plugin-linking]
+(a free article on Medium),
 it will continue to work until you opt-in to this behavior by adding
 `FlutterDeepLinkingEnabled` to `Info.plist` or
 `flutter_deeplinking_enabled` to `AndroidManifest.xml`, respectively.
@@ -131,14 +137,16 @@ launched and running.
 {:.table.table-striped}
 </div>
 
-When using the [`Router`][Router] widget, your app has the ability to replace the
-current set of pages when a new deep link is opened while the app is running.
+When using the [`Router`][Router] widget,
+your app has the ability to replace the
+current set of pages when a new deep link
+is opened while the app is running.
 
-## See also
+## For more information
 
 [Learning Flutter’s new navigation and routing system][] provides an introduction to the Router system.
 
-[Learning Flutter’s new navigation and routing system]: https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Learning Flutter’s new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [switching-channels]: {{site.url}}/development/tools/sdk/upgrading#switching-flutter-channels
 [routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
