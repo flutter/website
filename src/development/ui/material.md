@@ -53,7 +53,7 @@ Explore the updated components, typography, color system and elevation support w
 To learn more about Material Design and Flutter,
 check out:    
 
-* [Flutter Material blog and announcements][]
+* [Material.io developer documentation][]
 * [Migrating a Flutter app to Material 3][] blog post by Taha Tesser
 
 
