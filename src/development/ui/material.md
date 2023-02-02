@@ -41,7 +41,7 @@ Flutter is in the process of migrating to Material 3.
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
 Explore the updated components, typography, color system and elevation support with the
-[interactive Material & Flutter showcase][demo]:
+[interactive Material 3 demo][demo]:
 
 <iframe src="https://flutter.github.io/samples/web/material_3_demo/#/"
         width="100%" height="500px" title="Material 3 Demo App"></iframe>
