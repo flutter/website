@@ -1,5 +1,7 @@
 ---
 title: Security
+description: >
+  An overview of the Flutter's team philosophy and processes for security.
 ---
 
 The Flutter team takes the security of Flutter and the applications
