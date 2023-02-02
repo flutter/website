@@ -1,12 +1,11 @@
 ---
 title: Insert Content Text Input Client
-description: Add a new method to the TextInputClient interface to allow Android virtual keyboards to
-insert rich content into Flutter TextFields. 
+description: Add a new method to the TextInputClient interface to allow Android virtual keyboards to insert rich content into Flutter TextFields. 
 ---
 
 ## Summary
 
-Adds `insertContent` method to the `TextInputClient` interface to allow Android's image keyboard 
+Added an `insertContent` method to the `TextInputClient` interface to allow Android's image keyboard 
 feature to insert content into a Flutter `TextField`.
 
 
@@ -19,15 +18,14 @@ stickers, or context-aware rich content into a text field.
 
 ## Description of change
 
-When the user inserts rich content via the IME, the platform sends a `commitContent` channel message
-called `TextInputClient.commitContent`.
-This notifies the Dart code that the IME inserted rich content.
+When the user inserts rich content in the IME, the platform sends a `TextInputClient.commitContent`
+channel message, notifying the Dart code that the IME inserted rich content.
 The channel message contains the mime type, URI, and bytedata for the inserted content in JSON form.
 
 
 ## Migration guide
 
-If you had implemented `TextInputClient`, you must override
+If you previously implemented the `TextInputClient` interface, you must override
 `insertContent` to either support rich content insertion or provide an empty implementation.
 
 To migrate, implement `insertContent`.
@@ -55,8 +53,8 @@ class MyCustomTextInputClient implements TextInputClient {
 }
 ```
 
-If your implementation of `TextInputClient` does not require the ability to receive rich content 
-inserted from the IME, you may leave the implementation of `insertContent` empty with no 
+If your implementation of `TextInputClient` doesn't require the ability to receive rich content 
+inserted from the IME, you can leave the implementation of `insertContent` empty with no 
 consequences.
 
 <!-- skip -->
@@ -69,15 +67,15 @@ class MyCustomTextInputClient implements TextInputClient {
 }
 ```
 
-Alternatively, you may use a similar implementation to the default `TextInputClient`.<br>
-See the [insertContent implementation]({{site.repo.flutter}}/TBD) for more details.
+Alternatively, you can use a similar implementation to the default `TextInputClient`.<br>
+For more details, see the [insertContent implementation]({{site.master-api}}/flutter/services/TextInputClient/insertContent.html) for more details.
 
-In the future, you can prevent being broken by changes like this by using `with TextInputClient`
-rather than `implements TextInputClient`.
+In the future, you can prevent being broken by changes to an interface
+by using `with TextInputClient` rather than `implements TextInputClient`.
 
 ## Timeline
 
-Landed in version: TBD<br>
+Landed in version: 3.8.0-1.0.pre<br>
 In stable release: TBD
 
 ## References

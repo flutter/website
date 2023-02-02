@@ -17,7 +17,7 @@ release, and listed in alphabetical order:
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
 
 ### Not yet released to stable
-* [Insert Content Text Input Client]
+* [Insert content text input client]
 
 [Insert Content Text Input Client]: {{site.url}}/release/breaking-changes/insert-content-text-input-client
 
