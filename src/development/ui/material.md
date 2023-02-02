@@ -62,5 +62,5 @@ check out:
 * [Migrating a Flutter app to Material 3][] blog post by Taha Tesser
 
 
-[Flutter Material blog and announcements]: https://m3.material.io/develop/flutter
+[Material.io developer documentation]: https://m3.material.io/develop/flutter
 [Migrating a Flutter app to Material 3]: https://blog.codemagic.io/migrating-a-flutter-app-to-material-3/
