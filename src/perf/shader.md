@@ -11,10 +11,10 @@ but only on the first run,
 this is likely due to shader compilation.
 Flutter's long term solution to
 shader compilation jank is [Impeller][],
-which is in early developer preview
-(behind a flag) on the
-master channel for iOS.
+which is in preview
+(behind a flag) for iOS.
 (It's not yet available on Android.)
+
 Before continuing with the instructions below,
 please try Impeller on iOS, and let us know
 in a [GitHub issue][] if it doesn't address your issue.
