@@ -23,8 +23,8 @@ only on a [release build][].**
 ## Limitations
 
 Note that obfuscating your code does _not_
-encrypt resources nor does it make your
-app impervious to reverse engineering.
+encrypt resources nor does it protect against
+reverse engineering.
 It only renames symbols with more obscure names.
 
 {{site.alert.info}}
