@@ -281,8 +281,10 @@ For more information, refer to the following resources:
 
 A simple but powerful state management solution inspired by SolidJS.
 
+* [Official Documentation][]
 * [solidart package][]
 * [flutter_solidart package][]
 
+[Official Documentation]: https://docs.page/nank1ro/solidart
 [solidart package]: {{site.pub-pkg}}/solidart
 [flutter_solidart package]: {{site.pub-pkg}}/flutter_solidart
