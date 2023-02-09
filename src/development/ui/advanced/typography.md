@@ -9,6 +9,16 @@ called OpenType fonts), allow you to control various
 aspects of text styling, such as font weight, width, slant,
 and so on.
 
+The following video shows you some of the capabilities
+of Flutter's typography and combines it with the Material
+_and_ Cupertino look and feel (depending on the platform
+the app runs on), animation, and custom fragment shaders:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sA5MRFFUuOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<b>Prototyping beautiful designs with Flutter</b>
+
+Also, check out the [article][].
+
 ## API docs
 
 Here are some Flutter classes that allow you to
@@ -27,6 +37,6 @@ uses a custom shader.
 
 [`FontFeature`]: {{site.api}}/flutter/dart-ui/FontFeature-class.html
 [`FontVariation`]: {{site.api}}/flutter/dart-ui/FontVariation-class.html
-[Playful typography with Flutter]: {{site.flutter-medium}}/playful-typography-with-flutter-f030385058b4
-[typography]: https://en.wikipedia.org/wiki/Typography
+[article]: {{site.flutter-medium}}/playful-typography-with-flutter-f030385058b4
+[_typography_]: https://en.wikipedia.org/wiki/Typography
 [Variable fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
