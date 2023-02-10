@@ -110,8 +110,6 @@
           children:
             - title: Actions & shortcuts
               permalink: /development/ui/advanced/actions_and_shortcuts
-            - title: Fonts & typography
-              permalink: /development/ui/advanced/typography
             - title: Keyboard focus system
               permalink: /development/ui/advanced/focus
             - title: Gestures
