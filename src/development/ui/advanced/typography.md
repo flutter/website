@@ -5,22 +5,24 @@ description: Learn about Flutter's support for typography.
 
 If you aren't familiar with [_typography_][], it essentially
 means how text is styled. Typography specifies how heavy
-the font it, the slant of the font, the spacing between
+the font is, the slant of the font, the spacing between
 the letters, and other visual aspects of the text.
 
 All fonts are _not_ created the same. Fonts are a huge
-topic and beyond the scope of this site, however you
-might want to know more about Flutter's support for
-variable fonts.
+topic and beyond the scope of this site, however 
+this page discusses Flutter's support for variable
+and static fonts.
+
+[_typography_]: https://en.wikipedia.org/wiki/Typography
 
 ## Variable fonts
 
 [Variable fonts][] (also called OpenType fonts),
-allow you to control pre-defined aspects of text styling,
-such as font weight, width, slant, and so on.
+allow you to control pre-defined aspects of text styling.
 Variable fonts support specific axes, such as width,
-weight, slant (to name a few). The user can select
-_any value along the axis_ when specifying the type.
+weight, slant (to name a few).
+The user can select _any value along the axis_
+when specifying the type.
 
 <img src='/assets/images/docs/development/ui/typography/variable-font-axes.png'
 class="mw-100" alt="Example of two variable font axes">
@@ -29,6 +31,8 @@ However, the font must first define what axes are available,
 and that isn't always easy to figure out. If you are using
 a Google Font, you _can_ learn what axes are available using
 the **type tester**, described in the next section.
+
+[Variable fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
 
 ### Using the Google Fonts type tester
 
@@ -44,17 +48,19 @@ Use the type tester to learn more about its variable fonts.
    checkbox.
 1. Either scroll down (or use the search field) to find Roboto.
    This lists several Roboto variable fonts.
-1. Select **Roboto Serif** to open up its detail page.
-1. On the detail page, select the **Type tester** tab. For the
-   Roboto Serif type, the **Variable axes** column looks like the following:
+1. Select **Roboto Serif** to open up its details page.
+1. On the details page, select the **Type tester** tab.
+   For the Roboto Serif font,
+   the **Variable axes** column looks like the following:
 
 <img src='/assets/images/docs/development/ui/typography/roboto-serif-font-axes.png'
 class="mw-100" alt="Listing of available font axes for Roboto Serif">
 
 In real time, you can move the slider on any of the axes to
 see how it affects the font. When programming a variable font,
-use the [`FontVariation`][] class modify the font's design axes.
+use the [`FontVariation`][] class to modify the font's design axes.
 
+[`FontVariation`]: {{site.api}}/flutter/dart-ui/FontVariation-class.html
 [Google Fonts]: https://fonts.google.com/
 
 ## Static fonts
@@ -62,11 +68,11 @@ use the [`FontVariation`][] class modify the font's design axes.
 Google Fonts also contains static fonts. As with variable fonts,
 you need to know how the font is designed to know what options
 are available to you.
-Once again, the Google Fonts type tester can help.
+Once again, the Google Fonts site can help.
 
-### Using the Google Fonts type tester
+### Using the Google Fonts site
 
-Use the type tester to learn more about its static fonts.
+Use the Font details page to learn more about its static fonts.
 
 1. To investigate a variable Google font, go to the [Google Fonts][]
    website. Note that in the upper right corner of each font card,
@@ -79,7 +85,7 @@ Use the type tester to learn more about its static fonts.
    checkbox, and move the slider to 10+.
 1. Select a font, such as **Roboto** to open up its details page.
 1. Roboto has 12 styles, and each style is previewed on its details
-   page, along with its name.
+   page, along with the name of that variation.
 1. In real time, you can move the pixel slider to preview the font at
    different pixel sizes.
 1. Select the **Type tester** tab to see the supported styles for
@@ -94,6 +100,10 @@ to support the feature):
 * [`FontFeature`][] to select glyphs
 * [`FontWeight`][] to modify weight
 * [`FontStyle`][] to italicize
+
+[`FontFeature`]: {{site.api}}/flutter/dart-ui/FontFeature-class.html
+[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
+[`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 
 ## More info
 
@@ -112,9 +122,4 @@ check out [Playful typography with Flutter][],
 a free article on Medium. The associated example also
 uses a custom shader. 
 
-[`FontFeature`]: {{site.api}}/flutter/dart-ui/FontFeature-class.html
-[`FontVariation`]: {{site.api}}/flutter/dart-ui/FontVariation-class.html
-[`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 [article]: {{site.flutter-medium}}/playful-typography-with-flutter-f030385058b4
-[_typography_]: https://en.wikipedia.org/wiki/Typography
-[Variable fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
