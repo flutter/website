@@ -332,6 +332,7 @@
       { "source": "/go/max-length-enforcement", "destination": "https://docs.google.com/document/d/1S900lQaTPOsePnIeE7o3-Ia8f39VZaSv0JnjNyBfCvU", "type": 301 },
       { "source": "/go/medium-sized-code-samples", "destination": "https://docs.google.com/document/d/1-jjYru2ljRSRSY4hn4qwLj9oQj8UiqrDOgY10-FE2tY/edit?usp=sharing", "type": 301 },
       { "source": "/go/migrating-to-vertical-alignment", "destination": "https://docs.google.com/document/d/1vi6d6On6EXN82Q8KmXSLbWNnsnm9YjWtTWhSyjPF59Q/edit?usp=sharing", "type": 301 },
+      { "source": "/go/mixin-modifier", "destination": "https://docs.google.com/document/d/1la2S1uJrNAawc1yja8hrSxFZJ0cFHnYopmaBYDLwMjg/edit?usp=sharing&resourcekey=0-br1LWMlYC63Q30VGiPtAHg", "type": 301 },
       { "source": "/go/mouse-tracker-no-longer-attaches-annotations", "destination": "https://docs.google.com/document/d/1YuOcepqZjNknAMz1si2m-jAiLT4MP28XEzBcKLHnNiA/edit", "type": 301 },
       { "source": "/go/move-mouse-tracker-to-rendering", "destination": "https://docs.google.com/document/d/1dYNOTZ4kdq6ndNHopjUlrGlGBw3W-3jMbnoNJouIYtE/edit", "type": 301 },
       { "source": "/go/multiple-applications", "destination": "https://docs.google.com/document/d/1alrr7qimNDazmQx5D80BSHh62V2OINO4UQ5N3HcPnmo/edit?resourcekey=0-wPs1Go9AiKR-yG0-xStuKw", "type": 301 },
@@ -450,8 +451,7 @@
       { "source": "/go/widget-budget", "destination": "https://docs.google.com/document/d/1JTmf7ae8hWJ3zzqhI-__I9DcUJdQ3TopWsJbKyNDO5A/edit?usp=sharing&resourcekey=0--A0AbM19K-zDXRmIIzaUAg", "type": 301 },
       { "source": "/go/windows-x86-arm64-support", "destination": "https://docs.google.com/document/d/1gAGqtTAjO0GntR8bPonIO1aZJnTghPCI_PHJPdNzEmo/edit?resourcekey=0-l1tL7iai47yw3bMl9IcpHw", "type": 301 },
       { "source": "/go/wrap-layout", "destination": "https://docs.google.com/document/d/1auZtWT1T5CkUKOUTUld8rF91iN7PvQoOF0IlBNXiDSo/edit?usp=sharing", "type": 301 },
-      { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 },
-      { "source": "/go/mixin-modifier", "destination": "https://docs.google.com/document/d/1la2S1uJrNAawc1yja8hrSxFZJ0cFHnYopmaBYDLwMjg/edit?usp=sharing&resourcekey=0-br1LWMlYC63Q30VGiPtAHg", "type": 301 }
+      { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 }
     ],
     "headers": [
       {
