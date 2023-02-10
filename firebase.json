@@ -243,6 +243,7 @@
       { "source": "/go/engine-build-definition-language", "destination": "https://docs.google.com/document/d/1R2X4-YztJMyt82nPLXbQhDA50PcMDgavXN4JUu39hKI", "type": 301 },
       { "source": "/go/engine-cpu-profiling", "destination": "https://docs.google.com/document/d/1z_V69XzRct3vR7mBZ9tuuS1pZ_e7FQkuzbVJjXxMeaI/edit", "type": 301 },
       { "source": "/go/engine-rtree", "destination": "https://docs.google.com/document/d/1UGV0qerZ8o3eGrjm1axp0NoLWrT0KmTonMamb-xifEM/edit?usp=sharing&resourcekey=0-wh0paKk1H1vZbzxKxIj2jA", "type": 301 },
+      { "source": "/go/engine-v2-recipes", "destination": "https://docs.google.com/document/d/1vP26tMAJqqHlIF2QZUfcirFe5zmei7gZ1zQ6IVGQPU4", "type": 301 },
       { "source": "/go/error-handling", "destination": "https://docs.google.com/document/d/1HdGLKoVw_KWLrVzDNZ8Lk5nN-biHQzi_CS5mCkpiDwA/edit", "type": 301 },
       { "source": "/go/everything-builds-from-a-module", "destination": "https://docs.google.com/document/d/1fkUpos4hbJF0NYSwjNLWct2UGDg-AfhxzlR6p2g0w9M", "type": 301 },
       { "source": "/go/exposing-scroll-behaviors", "destination": "https://docs.google.com/document/d/1W5PSIO1cVj7v6_xayydyFN3abWFOJTmFHKGBA9VKbbg/edit?usp=sharing&resourcekey=0-AHb9dJP8Knv3GWwZLnzZWQ", "type": 301 },
