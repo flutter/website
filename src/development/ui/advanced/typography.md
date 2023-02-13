@@ -56,12 +56,16 @@ Use the type tester to learn more about its variable fonts.
 <img src='/assets/images/docs/development/ui/typography/roboto-serif-font-axes.png'
 class="mw-100" alt="Listing of available font axes for Roboto Serif">
 
-In real time, you can move the slider on any of the axes to
+In real time, move the slider on any of the axes to
 see how it affects the font. When programming a variable font,
-use the [`FontVariation`][] class to modify the font's design axes.
+use the [`FontVariation`][] class
+to modify the font's design axes.
+The `FontVariation` class conforms to the
+[OpenType font variables spec][].
 
 [`FontVariation`]: {{site.api}}/flutter/dart-ui/FontVariation-class.html
 [Google Fonts]: https://fonts.google.com/
+[OpenType font variables]: https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
 
 ## Static fonts
 
@@ -86,7 +90,7 @@ Use the Font details page to learn more about its static fonts.
 1. Select a font, such as **Roboto** to open up its details page.
 1. Roboto has 12 styles, and each style is previewed on its details
    page, along with the name of that variation.
-1. In real time, you can move the pixel slider to preview the font at
+1. In real time, move the pixel slider to preview the font at
    different pixel sizes.
 1. Select the **Type tester** tab to see the supported styles for
    the font. In this case, there are 3 supported styles.
@@ -101,9 +105,19 @@ to support the feature):
 * [`FontWeight`][] to modify weight
 * [`FontStyle`][] to italicize
 
+A `FontFeature` corresponds to an [OpenType feature tag][]
+and can be thought of as a boolean flag to enable or disable
+a feature of a given font.
+The following example is for CSS, but illustrates the concept:
+
+<img src='/assets/images/docs/development/ui/typography/feature-tag-example.png'
+class="mw-100" alt="Example feature tags in CSS">
+
+
 [`FontFeature`]: {{site.api}}/flutter/dart-ui/FontFeature-class.html
 [`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
 [`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
+[OpenType feature tag]: https://learn.microsoft.com/en-us/typography/opentype/spec/featuretags
 
 ## Other resources
 
