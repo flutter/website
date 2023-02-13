@@ -161,10 +161,10 @@ Setting up flavors in Android can be done in your project's
 
 3. Add a `productFlavors` object with the desired flavors along
    with values for **dimension**, **resValue**,
-   and **applicationId** or **applicationIdSuffix **.
+   and **applicationId** or **applicationIdSuffix**.
 
    * The name of the application for each build is located in **resValue**.
-   * If you specify a **applicationIdSuffix ** instead of a **applicationId**, 
+   * If you specify a **applicationIdSuffix** instead of a **applicationId**, 
      it is appended to the "base" application id.
 
 ```gradle
@@ -174,7 +174,7 @@ productFlavors {
     free {
         dimension "default"
         resValue "string", "app_name", "free flavor example"
-        applicationIdSuffix  ".free"
+        applicationIdSuffix ".free"
     }
 }
 ```
