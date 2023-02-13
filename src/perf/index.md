@@ -38,10 +38,10 @@ database: "[perf: speed][speed]", "[perf: memory][memory]",
 
 The rest of the content is organized using those four categories.
 
-<!--
+{% comment %}
 Let's put "speed" (rendering) first as it's the most popular performance issue
 category.
--->
+{% endcomment -%}
 ## Speed
 
 Are your animations janky (not smooth)? Learn how to 
@@ -52,12 +52,17 @@ evaluate and fix rendering issues.
 {% comment %}
 Do your apps take a long time to open? We'll also cover the startup speed issue
 in some future pages.
-{% endcomment %}
+{% endcomment -%}
 
+{% comment %}
+
+TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
 
 ## Memory
 
 [Using memory wisely]({{site.url}}/perf/memory)
+
+{% endcomment -%}
 
 
 ## App size
@@ -69,6 +74,7 @@ the quicker it is to download.
 
 {% comment %}
 
+TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
 
 ## Energy
 
@@ -76,7 +82,7 @@ How to ensure a longer battery life when running your app.
 
 [Preserving your battery]({{site.url}}/perf/power)
 
-{% endcomment %}
+{% endcomment -%}
 
 [Measuring your app's size]: {{site.url}}/perf/app-size
 
