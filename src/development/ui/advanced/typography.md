@@ -64,7 +64,7 @@ The `FontVariation` class conforms to the
 
 [`FontVariation`]: {{site.api}}/flutter/dart-ui/FontVariation-class.html
 [Google Fonts]: https://fonts.google.com/
-[OpenType font variables]: https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
+[OpenType font variables spec]: https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
 
 ## Static fonts
 
@@ -131,8 +131,9 @@ the app runs on), animation, and custom fragment shaders:
 To read one engineer's experience
 customizing variable fonts and animating them as they
 morph (and was the basis for the above video),
-check out [Playful typography with Flutter][],
+check out [Playful typography with Flutter][article],
 a free article on Medium. The associated example also
 uses a custom shader. 
 
 [article]: {{site.flutter-medium}}/playful-typography-with-flutter-f030385058b4
+
