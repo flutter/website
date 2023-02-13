@@ -56,7 +56,7 @@ in some future pages.
 
 {% comment %}
 
-TODO: Reintroduce this article and add this link back.
+TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
 
 ## Memory
 
@@ -74,7 +74,7 @@ the quicker it is to download.
 
 {% comment %}
 
-TODO: Reintroduce this article and add this link back.
+TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
 
 ## Energy
 
