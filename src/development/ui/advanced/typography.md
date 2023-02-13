@@ -4,12 +4,12 @@ description: Learn about Flutter's support for typography.
 ---
 
 [_Typography_][] covers the style and appearance of
-type or fonts; it specifies how heavy the font is,
+type or fonts: it specifies how heavy the font is,
 the slant of the font, the spacing between
 the letters, and other visual aspects of the text.
 
 All fonts are _not_ created the same. Fonts are a huge
-topic and beyond the scope of this site, however 
+topic and beyond the scope of this site, however,
 this page discusses Flutter's support for variable
 and static fonts.
 
@@ -21,7 +21,7 @@ and static fonts.
 allow you to control pre-defined aspects of text styling.
 Variable fonts support specific axes, such as width,
 weight, slant (to name a few).
-The user can select _any value along the axis_
+The user can select _any value along the continuous axis_
 when specifying the type.
 
 <img src='/assets/images/docs/development/ui/typography/variable-font-axes.png'
@@ -36,7 +36,7 @@ the **type tester** feature, described in the next section.
 
 ### Using the Google Fonts type tester
 
-The Google Fonts site has both variable and static fonts.
+The Google Fonts site offers both variable and static fonts.
 Use the type tester to learn more about its variable fonts.
 
 1. To investigate a variable Google font, go to the [Google Fonts][]
@@ -58,8 +58,7 @@ class="mw-100" alt="Listing of available font axes for Roboto Serif">
 
 In real time, move the slider on any of the axes to
 see how it affects the font. When programming a variable font,
-use the [`FontVariation`][] class
-to modify the font's design axes.
+use the [`FontVariation`][] class to modify the font's design axes.
 The `FontVariation` class conforms to the
 [OpenType font variables spec][].
 
@@ -76,7 +75,7 @@ Once again, the Google Fonts site can help.
 
 ### Using the Google Fonts site
 
-Use the Font details page to learn more about its static fonts.
+Use the font's details page to learn more about its static fonts.
 
 1. To investigate a variable Google font, go to the [Google Fonts][]
    website. Note that in the upper right corner of each font card,
@@ -129,7 +128,7 @@ the app runs on), animation, and custom fragment shaders:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sA5MRFFUuOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <b>Prototyping beautiful designs with Flutter</b>
 
-To read about one engineer's experience
+To read one engineer's experience
 customizing variable fonts and animating them as they
 morph (and was the basis for the above video),
 check out [Playful typography with Flutter][],
