@@ -3,9 +3,9 @@ title: Flutter's fonts and typography
 description: Learn about Flutter's support for typography.
 ---
 
-If you aren't familiar with [_typography_][], it essentially
-means how text is styled. Typography specifies how heavy
-the font is, the slant of the font, the spacing between
+[_Typography_][] covers the style and appearance of
+type or fonts; it specifies how heavy the font is,
+the slant of the font, the spacing between
 the letters, and other visual aspects of the text.
 
 All fonts are _not_ created the same. Fonts are a huge
@@ -13,7 +13,7 @@ topic and beyond the scope of this site, however
 this page discusses Flutter's support for variable
 and static fonts.
 
-[_typography_]: https://en.wikipedia.org/wiki/Typography
+[_Typography_]: https://en.wikipedia.org/wiki/Typography
 
 ## Variable fonts
 
@@ -30,7 +30,7 @@ class="mw-100" alt="Example of two variable font axes">
 However, the font must first define what axes are available,
 and that isn't always easy to figure out. If you are using
 a Google Font, you _can_ learn what axes are available using
-the **type tester**, described in the next section.
+the **type tester** feature, described in the next section.
 
 [Variable fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
 
@@ -105,7 +105,7 @@ to support the feature):
 [`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
 [`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 
-## More info
+## Other resources
 
 The following video shows you some of the capabilities
 of Flutter's typography and combines it with the Material
@@ -115,7 +115,7 @@ the app runs on), animation, and custom fragment shaders:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sA5MRFFUuOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <b>Prototyping beautiful designs with Flutter</b>
 
-If you would like to read about one engineer's experience
+To read about one engineer's experience
 customizing variable fonts and animating them as they
 morph (and was the basis for the above video),
 check out [Playful typography with Flutter][],
