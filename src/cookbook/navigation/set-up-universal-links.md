@@ -14,13 +14,13 @@ js:
 
 <?code-excerpt path-base="cookbook/navigation/deeplink"?>
 
-Deeplink is a mechanism to launch an app with a uri. This uri contains
-scheme, hostnamethat leads users to a specific screen 
-of an app. A universal link is a deep link with http or https
-scheme that is exclusive to Apple devices.
+Deeplink is a mechanism to launch an app with a uri. This uri
+contains scheme, host, and path and leads users to a specific
+screen of an app.
 
-Universal links lead users to apps instead of web browsers if
-the apps are installed on their Apple devices.
+A universal link is a deeplink with http or https scheme that
+is exclusive to Apple devices.
+
 
 ## Prerequisite
 1. A mac with Flutter SDK and Xcode installed
