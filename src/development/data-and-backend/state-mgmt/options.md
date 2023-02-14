@@ -291,12 +291,14 @@ A simple but powerful state management solution inspired by SolidJS.
 
 ## flutter_reactive_widget
 
-An ultra-low-boilerplate solution for state management, which defines `ReactiveWidget` and `ReactiveValue`.
-Any read of a `ReactiveValue`'s value within a `ReactiveWidget` definition automatically causes the `ReactiveWidget`
-to listen for changes on the `ReactiveValue`.
+An ultra-low-boilerplate solution for state management, which defines
+`ReactiveWidget` and `ReactiveValue`. Any read of a `ReactiveValue`'s
+value within a `ReactiveWidget` definition automatically causes the
+`ReactiveWidget` to listen for changes on the `ReactiveValue`.
 
-Also includes a definition for `PersistentReactiveValue`, a subclass of `ReactiveValue` whose latest value is persisted,
-surviving app restarts.
+Also includes a definition for `PersistentReactiveValue`, a subclass
+of `ReactiveValue` whose latest value is persisted, surviving app
+restarts.
 
 * [`flutter_reactive_widget`][] source and documentation
 
