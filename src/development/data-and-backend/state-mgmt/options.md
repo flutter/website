@@ -298,7 +298,7 @@ value within a `ReactiveWidget` definition automatically causes the
 `ReactiveWidget` to listen for changes on the `ReactiveValue`.
 
 Also includes a definition for `PersistentReactiveValue`, a subclass
-of `ReactiveValue` whose latest value is persisted, surviving app
+of `ReactiveValue` whose latest value persists, surviving app
 restarts.
 
 * [`flutter_reactive_widget`][] source and documentation
