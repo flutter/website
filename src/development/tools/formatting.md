@@ -33,7 +33,7 @@ Install the `Dart` plugin (see
 to get automatic formatting of code in Android Studio and IntelliJ.
 To automatically format your code in the current source code window,
 use `Cmd+Alt+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
-Android Studio and IntelliJ also provides a check box named
+Android Studio and IntelliJ also provide a check box named
 **Format code on save** on the Flutter page in Preferences
 (on Mac) or Settings (on Windows and Linux)
 which formats the current file automatically when you save it.
