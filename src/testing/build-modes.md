@@ -126,5 +126,6 @@ For more information on the build modes, see
 [DevTools]: {{site.url}}/development/tools/devtools
 [Flutter wiki]: {{site.repo.flutter}}/wiki/Flutter's-modes
 [Flutter's build modes]: {{site.repo.flutter}}/wiki/Flutter%27s-modes
+[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [hot reload]: {{site.url}}/development/tools/hot-reload
 [iOS]: {{site.url}}/deployment/ios
