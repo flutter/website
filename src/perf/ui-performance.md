@@ -85,11 +85,15 @@ functionality to allow debugging performance problems.
 For example, profile mode provides tracing information to the
 profiling tools.
 
+{{site.alert.note}}
+  DevTools can't connect to a Flutter web app running
+  in profile mode. Use Chrome DevTools to
+  [generate timeline events][] for a web app.
+{{site.alert.end}}
+
 Launch the app in profile mode as follows:
 
-- In Android Studio and IntelliJ, use the
-  **Run > Flutter Run main.dart in Profile Mode** menu item.
-- In VS Code, open your `launch.json` file, and set the
+* In VS Code, open your `launch.json` file, and set the
   `flutterMode` property to `profile`
   (when done profiling, change it back to `release` or `debug`):
 
@@ -103,7 +107,9 @@ Launch the app in profile mode as follows:
     }
   ]
   ```
-- From the command line, use the `--profile` flag:
+* In Android Studio and IntelliJ, use the
+  **Run > Flutter Run main.dart in Profile Mode** menu item.
+* From the command line, use the `--profile` flag:
 
   ```terminal
   $ flutter run --profile
