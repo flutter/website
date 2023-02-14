@@ -3,136 +3,155 @@ title: Adding iOS App Extensions
 description: Learn how to add app extensions to your Flutter apps
 ---
 
-Application extensions allow you to extend functionality beyond your app. 
-With an app extension, you make content available for users 
-in other parts of the system. 
+App extensions for Apple platforms allow you to expand functionality
+outside your app. Your app could appear as a home screen widget or add
+new buttons in another app.
 
-There are many different types of app extension available. 
-You can learn more at [Apple's documentation][].
+Apple categorizes the available app extensions.
+To learn more about these app extensions, check out
+[Apple's documentation][].
 
 ## How do you add an app extension to your Flutter app?
-App extensions are essentially miniature apps. 
-To add an app extension to your Flutter app, 
-you must add the extension point *target* to your Xcode project.
+App extensions create miniature apps.
 
-First, open your Flutter app in Xcode. To do so, right click on the `ios` 
-directory in your IDE and select **Open in Xcode.**
+To add an app extension to your Flutter app,
+add the extension point *target* to your Xcode project.
 
-Next, select **File -> New -> Target** from the menu bar. 
+1. Open your Flutter app in Xcode.
+   Right-click on the `ios` directory in your Flutter app directory in
+   your IDE and select **Open in Xcode.**
 
-{% include docs/app-figure.md
-image="development/platform-integration/app-extensions/xcode-new-target.png" %}
+1. In Xcode, select **File -> New -> Target** from the menu bar. 
 
-Next, you select the app extension you intend to add. 
-This will generate extension-specific 
-code. To learn more about the generated code and the SDKs for each extension point, 
-see the resources in [Apple's documentation][].
+   {% include docs/app-figure.md
+    image="development/platform-integration/app-extensions/xcode-new-target.png" %}
+
+1. Select the app extension you intend to add.
+   This selection then generates extension-specific code.
+   To learn more about the generated code and the SDKs for each
+   extension point, check out the resources in
+   [Apple's documentation][].
 
 ## How do Flutter apps interact with App Extensions? 
-Flutter apps can interact with app extensions in the same ways that UIKit or SwiftUI apps do. 
-There is no direct communication between the containing app and the app extension. 
-Instead, they communicate indirectly by reading and writing to shared resources or 
-using higher level APIs.
+Flutter apps can interact with app extensions in the same ways that
+UIKit or SwiftUI apps do.
+The containing app and the app extension don't communicate directly.
+These components read and write to shared resources or
+use higher level APIs to communicate with each other.
 
 
 ### Using higher level APIs
-Some extension points have APIs to configure or update the app extension. 
-For example, the [Core Spotlight][] framework allows you to index your app 
-so users can search from Spotlight and Safari. The [WidgetKit][] framework allows you 
-to trigger an update of your Home Screen Widget.
+Some extension points have APIs to configure or update the app
+extension.
 
-For APIs that do not display UI, you can use a plugin to make calls 
-to and from your Flutter app. You can find plugins that wrap around 
-app extension APIs at [Leveraging Apple's System APIs and Frameworks][] 
-or by searching on [pub.dev][].
+For example: The [Core Spotlight][] framework indexes your app. 
+This allows users to search from Spotlight and Safari. The
+[WidgetKit][] framework can trigger an update of your Home Screen
+Widget.
+
+For APIs that don't display a UI, use a plugin to make calls to and
+from your Flutter app. To find plugins that wrap app extension APIs,
+check out at [Leveraging Apple's System APIs and Frameworks][] or
+search [pub.dev][].
 
 ### Sharing resources
-To share resources between your Flutter app and your app extension, the `Runner` app target 
-and the extension target must be in the same [App Group][]. 
-To add a target to an App Group, open the target in Xcode and navigate 
-to the **Signing & Capabilities** tab. 
+To share resources between your Flutter app and your app extension, put
+the `Runner` app target and the extension target in the same
+[App Group][].
 
-Add an App Group by selecting **+ Capability**, and selecting **App Groups**. Next, 
-select or create the App Group. 
+To add a target to an App Group:
+
+1. Open the target in Xcode.
+1. Navigate to the **Signing & Capabilities** tab.
+1. Select **+ Capability** then **App Groups**.
+1. Select or create the App Group.
 
 {{site.alert.note}}
 You must be signed in to your Apple Developer account.
 {{site.alert.end}}
 
-
 {% include docs/app-figure.md
 image="development/platform-integration/app-extensions/xcode-app-groups.png" %}
 
-When two targets are in the same App Group, they can read and write data to the same 
-container. There are a few different data storage options:
+When two targets belong to the same App Group, they can read and write
+data to the same container. They can store data using one of the following
+options:
 
-- **Key/value:** The [`shared_preference_app_group`][] plugin gives access to 
-`UserDefaults` within App Groups
-- **File:** Use the App Group container path from the [`path_provider`][] 
-plugin to [read and write files][]
-- **Database:** Use the App Group container path from the [`path_provider`][] 
-plugin to create a database with the [`sqflite`][] plugin. 
+- **Key/value:** This option uses the [`shared_preference_app_group`][]
+  plugin grants access to `UserDefaults` within App Groups
+- **File:** This option uses the App Group container path from the
+  [`path_provider`][] plugin to [read and write files][]
+- **Database:** This option uses the App Group container path from
+  the [`path_provider`][] plugin to create a database with the
+  [`sqflite`][] plugin.
 
 ### Background updates
-Background tasks allow you to programmatically update 
-your extension, even while your app is not running. To schedule 
-background work from your Flutter app, use the [`workmanager`][] plugin.
+Background tasks provide a means to update your extension through code
+regardless of the status of your app.
+
+To schedule background work from your Flutter app, use the
+[`workmanager`][] plugin.
 
 ### Deep linking
-You may want to direct users from an App Extension to a 
-specific page in your Flutter app. You can use deep linking 
-so that a URL opens a specified route in your app. For more 
-information, see [Deep Linking][].
-
+You might want to direct users from an App Extension to a
+specific page in your Flutter app.
+To have a URL open a specified route in your app, you can use
+[Deep Linking][].
 
 ## Creating app extension UIs with Flutter
-Some app extensions display UI. For example, iMessage extensions allow users 
-to access your app's content directly from the Messages app. 
+Some app extensions display a user interface.
+For example: iMessage extensions allow users to access your app's
+content directly from the **Messages** app.
 
 {% include docs/app-figure.md
 image="development/platform-integration/app-extensions/imessage-extension.png" %}
 
-Flutter tooling does **not** officially support targeting app extensions. 
-However, in some cases it may be possible by embedding the `FlutterViewController` 
-as described below. 
+Flutter tooling does **not** support targeting app extensions. 
+To enable targeting in some cases, embed the `FlutterViewController`
+widget as described in the following section.
 
 {{site.alert.note}}
-This requires a custom build of the Flutter engine. You can learn more at [Compiling the engine][]
+This requires a custom build of the Flutter engine. To learn more,
+check out [Compiling the engine][]
 {{site.alert.end}}
 
-1. Create a custom build of the Flutter engine that removes uses of `sharedApplication` 
-and corrects the path for the bundle. See an [example from the community on Github][].
-2. Share build configurations by opening the Flutter app project settings in Xcode. 
-In the **Info** tab, under the **Configurations** expandable group, expand the
- **Debug**, **Profile**, and **Release** entries. For each, select the same value from 
- the drop-down menu for the extension target as the entry selected for the normal app target. 
-    {% include docs/app-figure.md
+1. Create a custom build of the Flutter engine that removes uses of
+   `sharedApplication` and corrects the path for the bundle.
+   Check out an [example from the community on Github][].
+2. Open the Flutter app project settings in Xcode to share build
+   configurations. 
+
+   In the **Info** tab,
+   under the **Configurations** expandable group,
+   expand the **Debug**, **Profile**, and **Release** entries.
+   For each, select the same value from the drop-down menu for the
+   extension target as the entry selected for the normal app target. 
+
+   {% include docs/app-figure.md
     image="development/platform-integration/app-extensions/xcode-configurations.png" %}
-3. Embed the `FlutterViewController` as described in [Adding a Flutter Screen][]. 
-If the extension UI code leverages storyboard, 
-remove the storyboard file and change references to point to the `ViewController` class. 
 
+3. Embed the `FlutterViewController` as described in
+   [Adding a Flutter Screen][]. 
+   If the extension UI code leverages storyboard, remove the storyboard
+   file and change references to point to the `ViewController` class.
 
-You can see a complete tutorial of these steps at [Adding an iMessage Extension][].
-
+To see a complete tutorial of these steps, check out
+[Adding an iMessage Extension][].
 
 {{site.alert.important}}
 This has not been tested in App Store submissions.
-Also, this may not work for some app extensions. 
-For example, Home Screen Widgets are not able to use some 
-lower level APIs that are needed to draw Flutter UI.
-{{site.alert.end}} 
+This may not work for some app extensions.
+For example, Home Screen Widgets can't use some
+lower level APIs needed to draw Flutter UI.
+{{site.alert.end}}
 
 ## Tutorials
-For a step-by-step tutorial of leveraging app extensions with your Flutter iOS app, see the 
-codelabs linked below:
+For a step-by-step tutorial of leveraging app extensions with your
+Flutter iOS app, check out the following codelabs:
 
 - [Adding an iMessage Extension][]: creating an iMessage extension using Flutter
 - [Adding Home Screen Widgets to your Flutter app][]: creating Android and iOS Widgets 
 that communicate with your Flutter app
-
-
-
 
 [Apple's documentation]: https://developer.apple.com/app-extensions/
 [Core Spotlight]: https://developer.apple.com/documentation/corespotlight
