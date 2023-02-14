@@ -38,7 +38,7 @@ Android Studio and IntelliJ also provides a check box named
 (on Mac) or Settings (on Windows and Linux)
 which formats the current file automatically when you save it.
 
-## Automatically formatting code with the 'flutter' command
+## Automatically formatting code with the `dart` command
 
 You can also automatically format code in the command line interface
 (CLI) using the `dart format` command:
