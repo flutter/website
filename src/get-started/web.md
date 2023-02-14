@@ -148,7 +148,7 @@ run the following command
 from your project's top-level directory:
 
 ```terminal
-$ flutter create --platforms web
+$ flutter create --platforms web .
 ```
 
 [Build and release a web app]: {{site.url}}/deployment/web
