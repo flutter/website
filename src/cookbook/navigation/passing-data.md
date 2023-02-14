@@ -6,7 +6,7 @@ prev:
   path: /cookbook/navigation/returning-data
 next:
   title: Delete data on the internet
-  path: /cookbook/networking/delete-data
+  path: /cookbook/navigation/set-up-universal-links
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
