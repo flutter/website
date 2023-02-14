@@ -91,6 +91,9 @@ profiling tools.
   [generate timeline events][] for a web app.
 {{site.alert.end}}
 
+[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
+
+
 Launch the app in profile mode as follows:
 
 * In VS Code, open your `launch.json` file, and set the
