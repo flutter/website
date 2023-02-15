@@ -180,7 +180,7 @@
               permalink: /development/platform-integration/ios/apple-frameworks
             - title: Adding iOS App Clip support
               permalink: /development/platform-integration/ios/ios-app-clip
-            - title: Adding iOS App Extensions
+            - title: Adding iOS app extensions
               permalink: /development/platform-integration/ios/app-extensions
             - title: C interop
               permalink: /development/platform-integration/ios/c-interop
