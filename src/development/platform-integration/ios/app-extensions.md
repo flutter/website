@@ -11,14 +11,12 @@ To learn more about app extensions, check out
 [Apple's documentation][].
 
 ## How do you add an app extension to your Flutter app?
-App extensions are miniature apps.
-
 To add an app extension to your Flutter app,
 add the extension point *target* to your Xcode project.
 
-1. Open your project in Xcode.
-   In your IDE, right-click on the `ios` directory in your project
-   and select **Open in Xcode**.
+1. Open the default Xcode workspace in your project by running
+   `open ios/Runner.xcworkspace` in a terminal window from your
+   Flutter project directory.
 1. In Xcode, select **File -> New -> Target** from the menu bar. 
 
     <figure class="site-figure {{include.class}}">
@@ -38,20 +36,21 @@ add the extension point *target* to your Xcode project.
 Flutter apps interact with app extensions using the same
 techniques as UIKit or SwiftUI apps.
 The containing app and the app extension don't communicate directly.
-These components read and write to shared resources or
+The containing app may also not be running while the extension 
+is being used.
+Instead, the app and the extension read and write to shared resources or
 use higher-level APIs to communicate with each other.
 
 ### Using higher-level APIs
-Some extension points have APIs to configure or update the app
-extension.
-
-For example, the [Core Spotlight][] framework indexes your app 
+Some extensions have APIs. For example, 
+the [Core Spotlight][] framework indexes your app 
 allowing users to search from Spotlight and Safari. The
 [WidgetKit][] framework can trigger an update of your home screen
 widget.
 
-For APIs that don't display a UI, use a plugin to make calls to and
-from your Flutter app. To find plugins that wrap app extension APIs,
+Flutter plugins make it easier for your app to communicate 
+with extensions by wrapping these APIs. 
+To find plugins that wrap extension APIs,
 check out [Leveraging Apple's System APIs and Frameworks][] or
 search [pub.dev][].
 
@@ -111,9 +110,12 @@ content directly from the **Messages** app.
     </div>
 </figure>
 
-Flutter tooling does **not** support targeting app extensions. 
-To enable targeting in some cases, embed the `FlutterViewController`
-widget as described in the following section.
+The Flutter command line tool does **not** support 
+building Flutter UI for app extensions. 
+To create the UI for 
+an app extension using Flutter, you must compile 
+a custom engine and embed the `FlutterViewController`
+as described in the following section.
 
 {{site.alert.note}}
   This requires a custom build of the Flutter engine and
