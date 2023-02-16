@@ -90,7 +90,7 @@ or any combination thereof.
 
 [Android]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aandroid
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
-[Flutter Favorites program]: https://docs.flutter.dev/development/packages-and-plugins/favorites
+[Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
 [Flutter landing page]: {{site.pub}}/flutter
 [Linux]: {{site.pub-pkgs}}?q=sdk%3Aflutter+platform%3Alinux
 [iOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aios
