@@ -16,9 +16,9 @@ This guide teaches you how to use splash screens
 appropriately on iOS and Android.
 
 {{site.alert.note}}
-    For more information on implementing splash screens
-    on web and desktop platforms, see the
-    [Customizing web app initialization guide][].
+  For more information on implementing splash screens
+  on web and desktop platforms, check out the
+  [Customizing web app initialization guide][].
 {{site.alert.end}}
 
 ## iOS launch screen
@@ -29,9 +29,8 @@ provide the app's launch screen.
 
 The default Flutter template includes an Xcode
 storyboard named `LaunchScreen.storyboard`
-that can be customized as you see fit with
-your own assets. By default,
-the storyboard displays a blank image,
+that can be customized your own assets.
+By default, the storyboard displays a blank image,
 but you can change this. To do so,
 open the Flutter app's Xcode project
 by typing `open ios/Runner.xcworkspace`
@@ -46,9 +45,9 @@ part of the [Human Interface Guidelines][].
 ## Android launch screen
 
 {{site.alert.warning}}
-    If you are experiencing a crash from implementing a splash screen, you
-    might need to migrate your code. See detailed instructions in the
-    [Deprecated Splash Screen API Migration guide][].
+  If you are experiencing a crash from implementing a splash screen, you
+  might need to migrate your code. See detailed instructions in the
+  [Deprecated Splash Screen API Migration guide][].
 {{site.alert.end}}
 
 In Android, there are two separate screens that you can control:
@@ -62,11 +61,11 @@ initializes.
   which is displayed until the framework draws the first frame.
   This launch screen can act as both an Android launch screen and an
   Android splash screen via customization, and thus, is referred to
-  as both terms. For example of such customization, see the
+  as both terms. For example of such customization, check out the
   [Android splash screen sample app][].
 
   If, prior to 2.5, you used `flutter create` to create an app,
-  and you run the app on 2.5 or later, it can cause the app to crash.
+  and you run the app on 2.5 or later, the app might app crash.
   For more info, see the [Deprecated Splash Screen API Migration guide][].
 {{site.alert.end}}
 
@@ -142,13 +141,15 @@ while the app initializes.
 
 ### Android S
 
-See [Android Splash Screens][] first on how to configure your launch screen on
-Android S.
+To configure your launch screen on Android S,
+check out [Android Splash Screens][].
 
-As of Android S, you must use the new splash screen API in your `styles.xml` file.
+As of Android S, you must use the new splash screen
+API in your `styles.xml` file.
 Consider creating an alternate resource file for Android 12 and higher.
-Also make sure that your background image is in line with the icon guidelines,
-see [Android Splash Screens][] for more details.
+Also make sure that your background image is in line with
+the icon guidelines;
+check out [Android Splash Screens][] for more details.
 
 ```xml
 <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
@@ -157,15 +158,20 @@ see [Android Splash Screens][] for more details.
 </style>
 ```
 
-Make sure neither `io.flutter.embedding.android.SplashScreenDrawable` is set in
-your manifest, nor is `provideSplashScreen` implemented, as these APIs are
-deprecated. Doing so will cause the Android launch screen to fade smoothly into
-the Flutter when the app is launched and you may experience a crash.
+Make sure that
+`io.flutter.embedding.android.SplashScreenDrawable` is
+**not** set in your manifest, and that `provideSplashScreen`
+is **not** implemented, as these APIs are deprecated.
+Doing so causes the Android launch screen to fade smoothly
+into the Flutter when the
+app is launched and the app might crash.
 
-Some apps may want to continue showing the last frame of the Android launch
-screen in Flutter. For example, this preserves the illusion of a single frame
-while additional loading continues in Dart. To achieve this, the following
-Android APIs may be helpful:
+Some apps might want to continue showing the last frame of
+the Android launch screen in Flutter. For example,
+this preserves the illusion of a single frame
+while additional loading continues in Dart.
+To achieve this, the following
+Android APIs might be helpful:
 
 {% samplecode android-splash-alignment %}
 {% sample Java %}
@@ -197,6 +203,7 @@ public class MainActivity extends FlutterActivity {
     }
 }
 ```
+
 {% sample Kotlin %}
 <!--code-excerpt "MainActivity.kt" title-->
 ```kotlin
@@ -222,9 +229,11 @@ class MainActivity : FlutterActivity() {
 ```
 {% endsamplecode %}
 
-Then, you can reimplement the first frame in Flutter that shows elements of your
-Android launch screen in the same positions on screen.
-For an example of this, see the [Android splash screen sample app][].
+Then, you can reimplement the first frame in Flutter
+that shows elements of your Android launch screen in
+the same positions on screen.
+For an example of this, check out the
+[Android splash screen sample app][].
 
 [Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
