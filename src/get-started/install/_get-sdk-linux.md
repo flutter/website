@@ -15,7 +15,6 @@ or at the command line:
 ```terminal
 $ sudo snap install flutter --classic
 ```
-
 {{site.alert.note}}
   Once the snap is installed, you can use the following command to display your Flutter SDK path:
 
@@ -23,6 +22,20 @@ $ sudo snap install flutter --classic
   $ flutter sdk-path
   ```
 {{site.alert.end}}
+
+
+### Remove Flutter using snapd
+
+In case you run with some problems with flutter 
+tools and you need to remove to installed fresh version.
+
+you need to check that snapd it's installed before run this command, in case you don't have, see
+[Installing snapd][].
+once you have snapd run at your command line:
+
+```terminal
+$ sudo snap remove flutter
+```
 
 ### Install Flutter manually
 
