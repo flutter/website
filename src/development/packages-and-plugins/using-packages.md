@@ -54,7 +54,7 @@ see [Adding assets and images][].
 [Adding assets and images]: {{site.url}}/development/ui/assets-and-images
 [`battery`]: {{site.pub-pkg}}/battery
 [developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
-[FlutterFire]: {{site.repo.plugins}}/blob/master/FlutterFire.md
+[FlutterFire]: {{site.github}}/firebase/flutterfire
 
 
 [`go_router`]: {{site.pub-pkg}}/go_router
