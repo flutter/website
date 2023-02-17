@@ -58,7 +58,7 @@ void loadMyShader() async {
 }
 ```
 
-The `FragmentProgram` object can be used to create one or more [FragmentShader][] instances.
+The `FragmentProgram` object can be used to create one or more [`FragmentShader`][] instances.
 A `FragmentShader` object represents a fragment program
 along with a particular set of _uniforms_ (configuration parameters).
 The available uniforms depends on how the shader was defined.
