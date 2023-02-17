@@ -10,11 +10,14 @@ short-title: Fragment shaders
   There are no current plans to support this feature in the HTML backend.
 {{site.alert.end}}
 
-Custom shaders can be used to provide rich graphical effects beyond those provided by the Flutter SDK.
-A shader is a program authored in a small, Dart-like language, known as GLSL,
+Custom shaders can be used to provide rich graphical effects
+beyond those provided by the Flutter SDK.
+A shader is a program authored in a small, Dart-like language,
+known as GLSL,
 and executed on the user's GPU.
 
-User-authored shaders are added to a Flutter project by listing them in the `pubspec.yaml` file,
+User-authored shaders are added to a Flutter project
+by listing them in the `pubspec.yaml` file,
 and obtained using the [`FragmentProgram`][] API.
 
 [`FragmentProgram`]: {{site.api}}/flutter/dart-ui/FragmentProgram-class.html
