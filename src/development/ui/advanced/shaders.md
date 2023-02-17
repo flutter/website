@@ -5,8 +5,9 @@ short-title: Fragment shaders
 ---
 
 {{site.alert.note}}
-  The `CanvasKit` backend supports this feature on the `beta` branch and should support this API in the next stable release.
-  We do not currently plan to support this feature in the HTML backend.
+  The `CanvasKit` backend supports this feature on the `beta` branch
+  and should support this API in the next stable release.
+  There are no current plans to support this feature in the HTML backend.
 {{site.alert.end}}
 
 Custom shaders can be used to provide rich graphical effects beyond those provided by the Flutter SDK.
@@ -20,7 +21,8 @@ and obtained using the [`FragmentProgram`][] API.
 
 ## Adding shaders to an application
 
-Shaders, in the form of GLSL files with the `.frag` extension, must be declared in the `shaders` section of your project's `pubspec.yaml` file.
+Shaders, in the form of GLSL files with the `.frag` extension,
+must be declared in the `shaders` section of your project's `pubspec.yaml` file.
 The Flutter command-line tool compiles the shader to its appropriate backend format,
 and generates its necessary runtime metadata.
 The compiled shader is then included in the application just like an asset.
@@ -32,9 +34,11 @@ flutter:
 ```
 
 When running in debug mode,
-changes to a shader program trigger recompilation and update the shader during hot reload or hot restart.
+changes to a shader program trigger recompilation
+and update the shader during hot reload or hot restart.
 
-Shaders from packages are added to a project with `packages/$pkgname` prefixed to the shader program's name
+Shaders from packages are added to a project
+with `packages/$pkgname` prefixed to the shader program's name
 (where `$pkgname` is the name of the package).
 
 ### Loading shaders at runtime
@@ -52,7 +56,8 @@ void loadMyShader() async {
 ```
 
 The `FragmentProgram` object can be used to create one or more [FragmentShader][] instances.
-A `FragmentShader` object represents a fragment program along with a particular set of _uniforms_ (configuration parameters).
+A `FragmentShader` object represents a fragment program
+along with a particular set of _uniforms_ (configuration parameters).
 The available uniforms depends on how the shader was defined.
 
 [`FragmentShader`]: {{site.api}}/flutter/dart-ui/FragmentShader-class.html
@@ -122,10 +127,14 @@ Shaders are subject to the following limitations when used with Flutter:
 A fragment program can be configured by defining `uniform` values in the GLSL shader source
 and then setting these values in Dart for each fragment shader instance.
 
-Floating point uniforms with the GLSL types `float`, `vec2`, `vec3`, and `vec4` are set using the [`FragmentShader.setFloat`][] method.
-GLSL sampler values, which use the `sampler2D` type, are set using the [`FragmentShader.setImageSampler`][] method,
+Floating point uniforms with the GLSL types
+`float`, `vec2`, `vec3`, and `vec4`
+are set using the [`FragmentShader.setFloat`][] method.
+GLSL sampler values, which use the `sampler2D` type,
+are set using the [`FragmentShader.setImageSampler`][] method.
 
-The correct index for each `uniform` value is determined by the order that the uniform values are defined in the fragment program.
+The correct index for each `uniform` value is determined by the order
+that the uniform values are defined in the fragment program.
 For data types composed of multiple floats, such as a `vec4`,
 you must call [`FragmentShader.setFloat`][] once for each value.
 
@@ -160,8 +169,10 @@ void updateShader(FragmentShader shader, Color color, Image image) {
  }
  ```
 
-Observe that the indices used with [`FragmentShader.setFloat`][] do not count the `sampler2D` uniform.
-This uniform is set separately with [`FragmentShader.setImageSampler`][], with the index starting over at 0.
+Observe that the indices used with [`FragmentShader.setFloat`][]
+do not count the `sampler2D` uniform.
+This uniform is set separately with [`FragmentShader.setImageSampler`][],
+with the index starting over at 0.
 
 Any float uniforms that are left uninitialized will default to `0.0`.
 
