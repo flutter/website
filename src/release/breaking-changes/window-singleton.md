@@ -5,7 +5,7 @@ description: In preparation for supporting multiple views and multiple windows t
 
 ## Summary
 
-Originally, Flutter assummed that an application would only consist of a single
+Originally, Flutter assumed that an application would only consist of a single
 view (the `window`) into which content can be drawn. In preparation for
 supporting multiple views and multiples windows, this single view assumtion and
 the APIs that exposed it have been deprecated. Applications and libraries that
@@ -14,7 +14,7 @@ outlined in this migration guide.
 
 ## Context
 
-In a multi-view world APIs that just assume a single window do not make sense
+In a multi-view world, APIs that assume a single window do not make sense
 anymore. Instead, applications and libraries must chose the specific
 view they want to operate on. 
 
@@ -22,19 +22,19 @@ view they want to operate on.
 
 The APIs that have been deprecated as part of this change are:
 
-* the global `window` property exposed by `dart:ui`
-* the `window` property on the `BaseBinding` class, 
+* The global `window` property exposed by `dart:ui`.
+* The `window` property on the `BaseBinding` class,
   which is usually accessed via
-  * `GestureBinding.instance.window`
-  * `SchedulerBinding.instance.window`
-  * `ServicesBinding.instance.window`
-  * `PaintingBinding.instance.window`
-  * `SemanticsBinding.instance.window`
-  * `RendererBinding.instance.window`
-  * `WidgetsBinding.instance.window`
-  * `WidgetTester.binding.window`
-* the `SingletonFlutterView` class from `dart:ui`
-* TODO: mention any test related classes/properties (e.g. TestWindow)
+  * `GestureBinding.instance.window`,
+  * `SchedulerBinding.instance.window`,
+  * `ServicesBinding.instance.window`,
+  * `PaintingBinding.instance.window`,
+  * `SemanticsBinding.instance.window`,
+  * `RendererBinding.instance.window`,
+  * `WidgetsBinding.instance.window`, or
+  * `WidgetTester.binding.window`.
+* The `SingletonFlutterView` class from `dart:ui`.
+* TODO: mention any test related classes/properties (e.g. TestWindow).
 
 The following options exist to migrate application and library code that relies
 on these deprecated APIs:
