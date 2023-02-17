@@ -16,7 +16,7 @@ A shader is a program authored in a small, Dart-like language,
 known as GLSL,
 and executed on the user's GPU.
 
-User-authored shaders are added to a Flutter project
+Custom shaders are added to a Flutter project
 by listing them in the `pubspec.yaml` file,
 and obtained using the [`FragmentProgram`][] API.
 
