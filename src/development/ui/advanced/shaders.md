@@ -5,26 +5,25 @@ short-title: Fragment shaders
 ---
 
 {{site.alert.note}}
-  The HTML backend doesn't support the `FragmentProgram` API.
-  The `CanvasKit` backend will support this API in a future release.
+  The `CanvasKit` backend supports this feature on the `beta` branch and should support this API in the next stable release.
+  We do not currently plan to support this feature in the HTML backend.
 {{site.alert.end}}
 
-A shader is a program executed by the GPU and usually authored in a small,
-Dart-like language, such as GLSL. User-authored shaders can be added to
-Flutter projects using the [`FragmentProgram`][] API.
-You can use custom shaders to provide rich graphical effects beyond those
-provided by the Flutter SDK.
+Custom shaders can be used to provide rich graphical effects beyond those provided by the Flutter SDK.
+A shader is a program authored in a small, Dart-like language, known as GLSL,
+and executed on the user's GPU.
+
+User-authored shaders are added to a Flutter project by listing them in the `pubspec.yaml` file,
+and obtained using the [`FragmentProgram`][] API.
 
 [`FragmentProgram`]: {{site.api}}/flutter/dart-ui/FragmentProgram-class.html
 
 ## Adding shaders to an application
 
-Shaders must be declared in the `shaders` section of your project's `pubspec.yaml` file.
+Shaders, in the form of GLSL files with the `.frag` extension, must be declared in the `shaders` section of your project's `pubspec.yaml` file.
 The Flutter command-line tool compiles the shader to its appropriate backend format,
-as well as generates the necessary runtime metadata.
-When running in debug mode, changes to a shader program
-triggers recompilation and updates the shader during hot reload or hot
-restart.
+and generates its necessary runtime metadata.
+The compiled shader is then included in the application just like an asset.
 
 ```yaml
 flutter:
@@ -32,14 +31,19 @@ flutter:
     - shaders/myshader.frag
 ```
 
-Shaders from packages are added to a project using the same technique as other assets.
+When running in debug mode,
+changes to a shader program trigger recompilation and update the shader during hot reload or hot restart.
 
-#### Loading shaders at runtime
+Shaders from packages are added to a project with `packages/$pkgname` prefixed to the shader program's name
+(where `$pkgname` is the name of the package).
 
-Load a `FragmentProgram` at runtime using the [`FragmentProgram.fromAsset`][]
-constructor. Specify the path to the shader in the `pubspec.yaml` file, as shown above.
+### Loading shaders at runtime
 
-[`FragmentProgram.fromAsset`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentProgram/fromAsset.html
+To load a shader into a `FragmentProgram` object at runtime,
+use the [`FragmentProgram.fromAsset`][] constructor.
+The asset's name is the same as the path to the shader given in the `pubspec.yaml` file.
+
+[`FragmentProgram.fromAsset`]: {{site.api}}/flutter/dart-ui/FragmentProgram/fromAsset.html
 
 ```dart
 void loadMyShader() async {
@@ -47,9 +51,11 @@ void loadMyShader() async {
 }
 ```
 
-The FragmentProgram object can be used to create one or more FragmentShader
-instances. A FragmentShader object represents a fragment program along with
-a particular set of uniforms.
+The `FragmentProgram` object can be used to create one or more [FragmentShader][] instances.
+A `FragmentShader` object represents a fragment program along with a particular set of _uniforms_ (configuration parameters).
+The available uniforms depends on how the shader was defined.
+
+[`FragmentShader`]: {{site.api}}/flutter/dart-ui/FragmentShader-class.html
 
 ```dart
 void updateShader(Canvas canvas, Rect rect, FragmentProgram program) {
@@ -59,7 +65,7 @@ void updateShader(Canvas canvas, Rect rect, FragmentProgram program) {
 }
 ```
 
-## Canvas API
+### Canvas API
 
 Fragment shaders can be used with most Canvas APIs by setting [`Paint.shader`][].
 For example, when using [`Canvas.drawRect`][] the shader is evaluated for all
@@ -70,8 +76,7 @@ line. Some APIs, such as [`Canvas.drawImage`][], ignore the value of the shader.
 [`Canvas.drawImage`]:  {{site.api}}/flutter/dart-ui/Canvas/drawImage.html
 [`Canvas.drawRect`]:    {{site.api}}/flutter/dart-ui/Canvas/drawRect.html
 [`Canvas.drawPath`]:    {{site.api}}/flutter/dart-ui/Canvas/drawPath.html
-[`Paint.shader`]:            {{site.api}}/flutter/dart-ui/Paint/shader.html
-
+[`Paint.shader`]:          {{site.api}}/flutter/dart-ui/Paint/shader.html
 
 ```dart
 void paint(Canvas canvas, Size size, FragmentShader shader) {
@@ -95,34 +100,34 @@ void paint(Canvas canvas, Size size, FragmentShader shader) {
 
 ## Authoring shaders
 
-Shaders are authored as GLSL source files.
+Fragment shaders are authored as GLSL source files.
+By convention, these files have the `.frag` extension.
+(Flutter does not support vertex shaders, which would have the `.vert` extension.)
+
 Any GLSL version from 460 down to 100 is supported,
 though some available features are restricted.
 The rest of the examples in this document use version `460 core`.
 
-Also note the following special cases:
+Shaders are subject to the following limitations when used with Flutter:
 
-* UBOs and SSBOs aren't supported
-* `sampler2D` is the only supported sampler type
-* Only the two-argument version of `texture` (sampler and uv) is supported
-* No additional varying inputs may be declared
-* All precision hints are ignored when targeting Skia
-* Unsigned integers and booleans aren't supported
+* UBOs and SSBOs aren't supported.
+* `sampler2D` is the only supported sampler type.
+* Only the two-argument version of `texture` (sampler and uv) is supported.
+* No additional varying inputs may be declared.
+* All precision hints are ignored when targeting Skia.
+* Unsigned integers and booleans aren't supported.
 
-#### Uniforms
+### Uniforms
 
-Configure a fragment program by defining `uniform` values in the GLSL shader
-source and then setting these values in Dart for each fragment shader instance.
+A fragment program can be configured by defining `uniform` values in the GLSL shader source
+and then setting these values in Dart for each fragment shader instance.
 
-Set the `uniform` value using the [`FragmentShader.setFloat`][] or
-[`FragmentShader.setImageSampler`][] methods, depending on the _type_˜ of uniform value.
-In GLSL, floating point values includes `float`, `vec2`, `vec3`, and `vec4` types.
-A GLSL sampler value is a `sampler2D` type.
+Floating point uniforms with the GLSL types `float`, `vec2`, `vec3`, and `vec4` are set using the [`FragmentShader.setFloat`][] method.
+GLSL sampler values, which use the `sampler2D` type, are set using the [`FragmentShader.setImageSampler`][] method,
 
-The correct index for each `uniform` value is determined by the order that the uniform values
-are defined in the fragment program. For data types composed of
-multiple floats, such as a `vec4`, you must call [`FragmentShader.setFloat`][]
-once for each value.
+The correct index for each `uniform` value is determined by the order that the uniform values are defined in the fragment program.
+For data types composed of multiple floats, such as a `vec4`,
+you must call [`FragmentShader.setFloat`][] once for each value.
 
 [`FragmentShader.setFloat`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setFloat.html
 [`FragmentShader.setImageSampler`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setImageSampler.html
@@ -136,8 +141,7 @@ uniform vec2 uMagnitude;
 uniform vec4 uColor;
 ```
 
-The corresponding Dart code to initialize these `uniform` values is
-as follows:
+The corresponding Dart code to initialize these `uniform` values is as follows:
 
 ```dart
 void updateShader(FragmentShader shader, Color color, Image image) {
@@ -156,11 +160,10 @@ void updateShader(FragmentShader shader, Color color, Image image) {
  }
  ```
 
-Note how the indexes used does not count the `sampler2D` uniform. This uniform
-will be set separately with [`FragmentShader.setImageSampler`][], with the
-index starting over at 0.
+Observe that the indices used with [`FragmentShader.setFloat`][] do not count the `sampler2D` uniform.
+This uniform is set separately with [`FragmentShader.setImageSampler`][], with the index starting over at 0.
 
-Any float uniforms that are left uninitialized will default to `0`.
+Any float uniforms that are left uninitialized will default to `0.0`.
 
 #### Current position
 
@@ -168,7 +171,7 @@ The shader has access to a `varying` value that contains the local coordinates f
 the particular fragment being evaluated. Use this feature to compute
 effects that depend on the current position, which can be accessed by
 importing the `flutter/runtime_effect.glsl` library and calling the
-`FlutterFragCoord` function . For example:
+`FlutterFragCoord` function. For example:
 
 ```glsl
 #include <flutter/runtime_effect.glsl>
