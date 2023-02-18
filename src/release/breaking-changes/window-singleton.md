@@ -5,18 +5,19 @@ description: In preparation for supporting multiple views and multiple windows t
 
 ## Summary
 
-Originally, Flutter assumed that an application would only consist of a single
-view (the `window`) into which content can be drawn. In preparation for
-supporting multiple views and multiples windows, this single view assumtion and
-the APIs that exposed it have been deprecated. Applications and libraries that
-relied on these APIs need to migrate to new multi-view compatible APIs as
-outlined in this migration guide.
+In preparation for supporting multiple views and multiple windows, the `window`
+singleton has been deprecated. Code previously relying on the `window` singleton
+needs to look up the specific view it wants to operate on via the `View.of` API
+or interact with the `PlatformDispatcher` directly.
 
 ## Context
 
-In a multi-view world, APIs that assume a single window do not make sense
-anymore. Instead, applications and libraries must chose the specific
-view they want to operate on. 
+Originally, Flutter assumed that an application would only consist of a single
+view (the `window`) into which content can be drawn. In a multi-view world, this
+assumption no longer makes sense and the APIs encoding this assumption have
+been deprecated. Instead, applications and libraries that relied on these APIs
+must chose a specific view they want to operate on and migrate to new multi-view
+compatible APIs as outlined in this migration guide.
 
 ## Description of change
 
@@ -47,7 +48,7 @@ that was previously available on the deprecated `SingletonFlutterView` class
 returned by the deprecated `window` properties mentioned above. However, some
 of the platform-specific functionality has moved to the `PlatformDispatcher`,
 which can be accessed from the `FlutterView` returned by `View.of` via 
-`FlutterView.platformDispatcher`. Using `View.of` is the prefered way of
+`FlutterView.platformDispatcher`. Using `View.of` is the preferred way of
 migrating away from the deprecated properties mentioned above.
 
 If no `BuildContext` is available to look up a `FlutterView`, the
