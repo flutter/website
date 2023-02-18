@@ -42,8 +42,8 @@ on these deprecated APIs:
 
 If a `BuildContext` is available, consider looking up the current `FlutterView`
 via `View.of`. This returns the `FlutterView` into
-which the `build` method associated with the given context is drawing the
-widgets it builds. The `FlutterView` provides access to the same functionality
+which the widgets built by the `build` method associated with the given context
+will be drawn. The `FlutterView` provides access to the same functionality
 that was previously available on the deprecated `SingletonFlutterView` class
 returned by the deprecated `window` properties mentioned above. However, some
 of the platform-specific functionality has moved to the `PlatformDispatcher`,
