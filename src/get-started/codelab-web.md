@@ -278,7 +278,7 @@ From your IDE, editor, or at the command line,
 * If you know Java, the Dart language should feel very familiar.
 * All of the app's UI is created in Dart code.
   For more information, see [Introduction to declarative UI][].
-* The app’s UI adheres [Material Design][],
+* The app’s UI adheres to [Material Design][],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
   but if you prefer something else,
