@@ -22,9 +22,8 @@ A _universal link_ is a type of deep link that uses `http` or `https` and
 is exclusive to Apple devices.
 
 
-Setting up universal links requires you to own a web domain. If you don’t
-own a web domain and still want to test the universal link, consider using
-[Firebase Hosting][] or [GitHub Pages][] as a temporary solution.
+Setting up universal links requires one to own a web domain. Otherwise, consider
+using [Firebase Hosting][] or [GitHub Pages][] as a temporary solution.
 
 
 ## 1. Customize a Flutter application
