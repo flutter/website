@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 void main() => runApp(MaterialApp.router(routerConfig: router));
 
-/// The handles '/' and '/details'.
+/// This handles '/' and '/details'.
 final router = GoRouter(
   routes: [
     GoRoute(
