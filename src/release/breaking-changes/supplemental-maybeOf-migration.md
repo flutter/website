@@ -130,7 +130,7 @@ Relevant PRs:
 * [Add `maybeOf` for all the cases when `of` returns nullable][]
 * [Add `Overlay.maybeOf`, make `Overlay.of` return a non-nullable instance][]
 
-[previous migration]: eliminating-nullok-parameters
+[previous migration]: {{site.url}}/release/breaking-changes/eliminating-nullok-parameters
 [`unnecessary_non_null_assertion`]: {{site.dart-site}}/tools/diagnostic-messages#unnecessary_non_null_assertion
 [`unnecessary_null_checks`]: {{site.dart-site}}/tools/linter-rules#unnecessary_null_checks
 [`unnecessary_null_in_if_null_operators`]: {{site.dart-site}}/tools/linter-rules#unnecessary_null_in_if_null_operators
