@@ -177,8 +177,8 @@ You can read more about them in [Flutter's build modes][].
 
 Flutter offers a best-in-class developer cycle enabling you
 to see the effect of your changes almost instantly with the
-_Stateful Hot Reload_ feature. See
-[Hot reload][] for details.
+_Stateful Hot Reload_ feature.
+To learn more, check out [Hot reload][].
 
 ## Advanced debugging
 
