@@ -147,7 +147,7 @@ Flutter-specific buttons on the right-hand side of the toolbar.
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the _Stateful Hot Reload_ feature.
-See [Hot reload][] for details.
+To learn more, check out [Hot reload][].
 
 ### Show performance data
 
