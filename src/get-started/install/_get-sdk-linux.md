@@ -17,7 +17,7 @@ $ sudo snap install flutter --classic
 ```
 
 {{site.alert.note}}
-  Once the snap is installed, you can
+  Once you install the snap,
   use the following command to display your Flutter SDK path:
 
   ```terminal
