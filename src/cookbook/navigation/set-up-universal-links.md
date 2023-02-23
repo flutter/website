@@ -28,8 +28,8 @@ using [Firebase Hosting][] or [GitHub Pages][] as a temporary solution.
 
 ## 1. Customize a Flutter application
 
-First, write a flutter application that can handle an incoming
-URL. Start by creating a new application with flutter create.
+1. Write a Flutter app that can handle an incoming URL.
+   To create a new application, type `flutter create <app-name>`.
 
 ```shell
 $ flutter create universallinks
