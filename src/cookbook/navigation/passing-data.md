@@ -5,7 +5,7 @@ prev:
   title: Return data from a screen
   path: /cookbook/navigation/returning-data
 next:
-  title: Delete data on the internet
+  title: Set up universal links for iOS
   path: /cookbook/navigation/set-up-universal-links
 js:
   - defer: true
