@@ -35,11 +35,12 @@ using [Firebase Hosting][] or [GitHub Pages][] as a temporary solution.
 $ flutter create universallinks
 ```
 
-This example uses [go_router][] to handle the routing. The
-go_router is a first party package maintained by the Flutter team
-that provides a simple API to handle complex routing scenarios.
+This example uses the [go_router][] package to handle the routing.
+The Flutter team maintains the `go_router` package.
+It provides a simple API to handle complex routing scenarios.
 
-Add `go_router` to the `pubspec.yaml`:
+2. To include `go_router` package in your app,
+   add a dependency for `go_router` in the `pubspec.yaml` file.
 ```yaml
 dependencies:
   flutter:
@@ -47,8 +48,7 @@ dependencies:
   go_router: ^6.0.9
 ```
 
-In the `main.dart` file, create a `GoRouter`
-object to handle the routing:
+3. To handle the routing, create a `GoRouter` object in the `main.dart` file:
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
@@ -82,52 +82,56 @@ final router = GoRouter(
 
 ## 2. Adjust iOS build settings
 
-Launch Xcode. Open the `ios/Runner.xcworkspace`
-file inside the project’s Flutter folder. Navigate to the
-`info.Plist` file:
+1. Launch Xcode.
+2. Open the `ios/Runner.xcworkspace` file inside the project’s `Flutter` folder.
+3. Navigate to the `Info` Plist file.
 
 <noscript>
   <img src="/assets/images/docs/cookbook/set-up-universal-links-info-plist.png" alt="Xcode info.Plist screenshot"/>
 </noscript>
 
-Add a row to the `info.Plist` with the key
-`FlutterDeepLinkingEnabled` and a
+4. In the `Info` property list, add a row.
+5. Set the key to `FlutterDeepLinkingEnabled` with a
 `Boolean` value set to `YES`.
 
-<noscript>
-  <img src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png" alt="flutter deeplinking enabled screenshot"/>
+    <noscript>
+      <img src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png" alt="flutter deeplinking enabled screenshot"/>
+    </noscript>
+
+6. Click the top-level **Runner**.
+7. Click **Sign & Signature**.
+8. Click **+ Capability** to add a new domain.
+9. Click **Associated Domains**.
+
+    <noscript>
+      <img src="/assets/images/docs/cookbook/set-up-universal-links-associated-domains.png" alt="Xcode associated domains screenshot"/>
+    </noscript>
+
+10. In the **Associated Domains** section, click **+**.
+11. Enter `applinks:<web domain>`. Replace `<web domain>` with your own domain name.
+
+    <noscript>
+      <img src="/assets/images/docs/cookbook/set-up-universal-links-add-associated-domains.png" alt="Xcode add associated domains screenshot"/>
 </noscript>
 
-Next, navigate to **Runner-> Sign & Signature -> + Capability -> Associated Domains**
-
-<noscript>
-  <img src="/assets/images/docs/cookbook/set-up-universal-links-associated-domains.png" alt="Xcode associated domains screenshot"/>
-</noscript>
-
-In the **Associated Domains** section click **+**
-and enter `applinks:<web domain>`.
-Replace `<web domain>` with your own domain name.
-
-<noscript>
-  <img src="/assets/images/docs/cookbook/set-up-universal-links-add-associated-domains.png" alt="Xcode add associated domains screenshot"/>
-</noscript>
-
-At this point, the application side is ready to go.
+You have finished configuring the application for deep linking.
 
 ## 3. Hosting apple-app-site-association file
 
-You need to host an apple-app-site-association file in the web domain.
-This file tells the mobile browser which iOS application it should open
-instead of opening in the browser. You need the app ID of the Flutter
-application created in the previous step in order to create the file.
+You need to host an `apple-app-site-association` file in the web domain.
+This file tells the mobile browser which iOS application to open instead of the browser.
+To create the file, get the app ID of the Flutter app you created in the previous step.
 
 ### App ID
 
-The app ID has the format of `<team id>.<bundle id>`. The bundle ID
-is found in the Xcode project, and the team ID is found in the
-[developer account][]. For example, if the team ID is `S8QB4VV633`
-and the bundle ID is `com.myapp.deeplink_cookbook`, the app ID
-is then `S8QB4VV633.com.myapp.deeplink_cookbook`.
+Apple formats the app ID as `<team id>.<bundle id>`.
+
+* Locate the bundle ID in the Xcode project.
+* Locate the team ID in the [developer account][].
+
+**For example:** Given a team ID of `S8QB4VV633`
+and a bundle ID of `com.myapp.deeplink_cookbook`, The app ID is
+`S8QB4VV633.com.myapp.deeplink_cookbook`.
 
 ### apple-app-site-association
 
@@ -145,22 +149,26 @@ The hosted file should have the following content:
 }
 ```
 
-Replace the value of `appID` with your own. The
-`paths` field specifies the allowed universal links,
-and the asterisk, `*`, means every path is redirected
-to the Flutter application. Adjust the paths field as desired.
+1. Set the `appID` value to your Flutter application ID.
+2. Set the `paths` value to `["*"]`.
+   The `paths` field specifies the allowed universal links.
+   Using the asterisk, `*` redirects every path to the Flutter application.
+   If needed, change the `paths` value to a setting more appropriate
+   to your app.
 
-Host the file at the following URL:
-`<webdomain>/.well-known/apple-app-site-association`.
-Once this is done, make sure that the file is accessible directly
-from your browser.
+3. Host the file at a URL that resembles the following:
+`<webdomain>/.well-known/apple-app-site-association`
+
+4. Verify that your browser can access this file.
 
 
 ## Testing
 {{site.alert.note}}
-  It might take up to 24 hours before Apple’s CDN requests the AASA
-  file from your web domain. The universal link won’t work until it
-  does. To bypass Apple’s CDN, see the [alternate mode section][].
+  It might take up to 24 hours before Apple’s
+  [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN)
+  requests the apple-app-site-association (AASA) file from your web domain.
+  The universal link won’t work until the CDN requests the file.
+  To bypass Apple’s CDN, check out the [alternate mode section][].
 {{site.alert.end}}
 
 You can use a real device or the Simulator to test a universal link,
