@@ -50,32 +50,32 @@ dependencies:
 
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:
 
-<?code-excerpt "lib/main.dart"?>
+    <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-void main() => runApp(MaterialApp.router(routerConfig: router));
-
-/// The handles '/' and '/details'.
-final router = GoRouter(
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (_, __) => Scaffold(
-        appBar: AppBar(title: const Text('Home Screen')),
-      ),
+    import 'package:flutter/material.dart';
+    import 'package:go_router/go_router.dart';
+    
+    void main() => runApp(MaterialApp.router(routerConfig: router));
+    
+    /// The handles '/' and '/details'.
+    final router = GoRouter(
       routes: [
         GoRoute(
-          path: 'details',
+          path: '/',
           builder: (_, __) => Scaffold(
-            appBar: AppBar(title: const Text('Details Screen')),
+            appBar: AppBar(title: const Text('Home Screen')),
           ),
+          routes: [
+            GoRoute(
+              path: 'details',
+              builder: (_, __) => Scaffold(
+                appBar: AppBar(title: const Text('Details Screen')),
+              ),
+            ),
+          ],
         ),
       ],
-    ),
-  ],
-);
+    );
 ```
 
 
@@ -83,36 +83,28 @@ final router = GoRouter(
 ## 2. Adjust iOS build settings
 
 1. Launch Xcode.
-2. Open the `ios/Runner.xcworkspace` file inside the project’s `Flutter` folder.
-3. Navigate to the `Info` Plist file.
+2. Open the `ios/Runner.xcworkspace` file inside the project’s `ios` folder.
+3. Navigate to the `Info` Plist file in the `ios/Runner` folder.
 
-<noscript>
-  <img src="/assets/images/docs/cookbook/set-up-universal-links-info-plist.png" alt="Xcode info.Plist screenshot"/>
-</noscript>
+   ![Xcode info.Plist screenshot](/assets/images/docs/cookbook/set-up-universal-links-info-plist.png)
 
 4. In the `Info` property list, add a row.
 5. Set the key to `FlutterDeepLinkingEnabled` with a
 `Boolean` value set to `YES`.
 
-    <noscript>
-      <img src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png" alt="flutter deeplinking enabled screenshot"/>
-    </noscript>
+   ![flutter deeplinking enabled screenshot](/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png)
 
 6. Click the top-level **Runner**.
 7. Click **Sign & Signature**.
 8. Click **+ Capability** to add a new domain.
 9. Click **Associated Domains**.
 
-    <noscript>
-      <img src="/assets/images/docs/cookbook/set-up-universal-links-associated-domains.png" alt="Xcode associated domains screenshot"/>
-    </noscript>
+   ![Xcode associated domains screenshot](/assets/images/docs/cookbook/set-up-universal-links-associated-domains.png)
 
 10. In the **Associated Domains** section, click **+**.
 11. Enter `applinks:<web domain>`. Replace `<web domain>` with your own domain name.
 
-    <noscript>
-      <img src="/assets/images/docs/cookbook/set-up-universal-links-add-associated-domains.png" alt="Xcode add associated domains screenshot"/>
-</noscript>
+    ![Xcode add associated domains screenshot](/assets/images/docs/cookbook/set-up-universal-links-add-associated-domains.png)
 
 You have finished configuring the application for deep linking.
 
@@ -175,9 +167,7 @@ You can use a real device or the Simulator to test a universal link,
 but first make sure you have executed `flutter run` at least once on
 the real device. This ensures that the Flutter application is installed.
 
-<noscript>
-  <img src="/assets/images/docs/cookbook/set-up-universal-links-simulator.png" alt="Simulator screenshot"/>
-</noscript>
+![Simulator screenshot](/assets/images/docs/cookbook/set-up-universal-links-simulator.png)
 
 If using the Simulator, test using the Xcode CLI:
 ```shell
@@ -189,9 +179,7 @@ Otherwise, type the URL in the **Note** app and click it.
 If everything is set up correctly, the Flutter application
 launches and displays the details screen:
 
-<noscript>
-  <img src="/assets/images/docs/cookbook/set-up-universal-links-simulator-deeplinked.png" alt="Simulator screenshot"/>
-</noscript>
+![Deeplinked Simulator screenshot](/assets/images/docs/cookbook/set-up-universal-links-simulator-deeplinked.png)
 
 [alternate mode section]: https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains?language=objc
 [developer account]: https://developer.apple.com/account
