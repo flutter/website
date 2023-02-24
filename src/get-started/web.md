@@ -145,10 +145,10 @@ For more information, see
 To add web support to an existing project
 created using a previous version of Flutter,
 run the following command
-from your project's directory:
+from your project's top-level directory:
 
 ```terminal
-$ flutter create .
+$ flutter create --platforms web .
 ```
 
 [Build and release a web app]: {{site.url}}/deployment/web

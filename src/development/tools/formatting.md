@@ -13,19 +13,10 @@ experience&mdash;teams of developers might find it more productive to:
 The alternative is often tiring formatting debates during code reviews,
 where time might be better spent on code behavior rather than code style.
 
-## Automatically formatting code in Android Studio and IntelliJ
-
-Install the `Dart` plugin (see [Editor setup]({{site.url}}/get-started/editor))
-to get automatic formatting of code in Android Studio and IntelliJ.
-To automatically format your code in the current source code window,
-use `Cmd+Alt+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
-Android Studio and IntelliJ also provides a check box named `Format code on save` on
-the Flutter page in Preferences (on Mac) or Settings (on Windows and Linux)
-which will format the current file automatically when you save it.
-
 ## Automatically formatting code in VS Code
 
-Install the `Flutter` extension (see [Editor setup]({{site.url}}/get-started/editor))
+Install the `Flutter` extension (see
+[Editor setup]({{site.url}}/get-started/editor))
 to get automatic formatting of code in VS Code.
 
 To automatically format the code in the current source code window,
@@ -35,7 +26,19 @@ You can add a keyboard shortcut to this VS Code Preferences.
 To automatically format code whenever you save a file, set the
 `editor.formatOnSave` setting to `true`.
 
-## Automatically formatting code with the 'flutter' command
+## Automatically formatting code in Android Studio and IntelliJ
+
+Install the `Dart` plugin (see
+[Editor setup]({{site.url}}/get-started/editor))
+to get automatic formatting of code in Android Studio and IntelliJ.
+To automatically format your code in the current source code window,
+use `Cmd+Alt+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
+Android Studio and IntelliJ also provide a check box named
+**Format code on save** on the Flutter page in Preferences
+(on Mac) or Settings (on Windows and Linux)
+which formats the current file automatically when you save it.
+
+## Automatically formatting code with the `dart` command
 
 You can also automatically format code in the command line interface
 (CLI) using the `dart format` command:

@@ -10,7 +10,7 @@ $ cd my_app
 ```
 
 It is also possible to pass other arguments to `flutter create`,
-such as the project name (*pubspec.yml*), the organization name,
+such as the project name, the organization name,
 or to specify the programming language used for the native platform:
 
 ```terminal
