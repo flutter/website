@@ -268,5 +268,5 @@ For more information, here are a few resources.
 
 [Shader toy]: https://www.shadertoy.com/
 [The Book of Shaders]: https://thebookofshaders.com/
-[`simple_shader`]: https://github.com/flutter/samples/tree/main/simple_shader
+[`simple_shader`]: {{site.repo.organization}}/samples/tree/main/simple_shader
 
