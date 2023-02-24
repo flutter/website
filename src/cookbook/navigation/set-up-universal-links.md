@@ -54,10 +54,10 @@ dependencies:
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
-    
+
     void main() => runApp(MaterialApp.router(routerConfig: router));
-    
-    /// The handles '/' and '/details'.
+
+    /// This handles '/' and '/details'.
     final router = GoRouter(
       routes: [
         GoRoute(
