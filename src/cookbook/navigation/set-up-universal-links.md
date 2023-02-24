@@ -28,30 +28,31 @@ using [Firebase Hosting][] or [GitHub Pages][] as a temporary solution.
 
 ## 1. Customize a Flutter application
 
-1. Write a Flutter app that can handle an incoming URL.
-   To create a new application, type `flutter create <app-name>`.
-
-```shell
-$ flutter create universallinks
-```
-
+Write a Flutter app that can handle an incoming URL.
 This example uses the [go_router][] package to handle the routing.
 The Flutter team maintains the `go_router` package.
 It provides a simple API to handle complex routing scenarios.
 
-2. To include `go_router` package in your app,
-   add a dependency for `go_router` in the `pubspec.yaml` file.
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  go_router: ^6.0.9
-```
+1. To create a new application, type `flutter create <app-name>`.
+
+    ```shell
+    $ flutter create deeplink_cookbook
+    ```
+
+2. To include `go_router` package in your app, add a dependency for
+`go_router` in the `pubspec.yaml` file.
+
+    ```yaml
+    dependencies:
+      flutter:
+        sdk: flutter
+      go_router: ^6.0.9
+    ```
 
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:
 
     <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+    ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
 
@@ -76,7 +77,7 @@ dependencies:
         ),
       ],
     );
-```
+    ```
 
 
 
@@ -86,25 +87,25 @@ dependencies:
 2. Open the `ios/Runner.xcworkspace` file inside the project’s `ios` folder.
 3. Navigate to the `Info` Plist file in the `ios/Runner` folder.
 
-   ![Xcode info.Plist screenshot](/assets/images/docs/cookbook/set-up-universal-links-info-plist.png)
+    <img src="/assets/images/docs/cookbook/set-up-universal-links-info-plist.png" alt="Xcode info.Plist screenshot" width="100%" />
 
 4. In the `Info` property list, add a row.
 5. Set the key to `FlutterDeepLinkingEnabled` with a
 `Boolean` value set to `YES`.
 
-   ![flutter deeplinking enabled screenshot](/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png)
+    <img src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png" alt="flutter deeplinking enabled screenshot" width="100%" />
 
 6. Click the top-level **Runner**.
 7. Click **Sign & Signature**.
 8. Click **+ Capability** to add a new domain.
 9. Click **Associated Domains**.
 
-   ![Xcode associated domains screenshot](/assets/images/docs/cookbook/set-up-universal-links-associated-domains.png)
+    <img src="/assets/images/docs/cookbook/set-up-universal-links-associated-domains.png" alt="Xcode associated domains screenshot" width="100%" />
 
 10. In the **Associated Domains** section, click **+**.
 11. Enter `applinks:<web domain>`. Replace `<web domain>` with your own domain name.
 
-    ![Xcode add associated domains screenshot](/assets/images/docs/cookbook/set-up-universal-links-add-associated-domains.png)
+    <img src="/assets/images/docs/cookbook/set-up-universal-links-add-associated-domains.png" alt="Xcode add associated domains screenshot" width="100%" />
 
 You have finished configuring the application for deep linking.
 
@@ -167,7 +168,7 @@ You can use a real device or the Simulator to test a universal link,
 but first make sure you have executed `flutter run` at least once on
 the real device. This ensures that the Flutter application is installed.
 
-![Simulator screenshot](/assets/images/docs/cookbook/set-up-universal-links-simulator.png)
+<img src="/assets/images/docs/cookbook/set-up-universal-links-simulator.png" alt="Simulator screenshot" width="50%" />
 
 If using the Simulator, test using the Xcode CLI:
 ```shell
@@ -179,7 +180,7 @@ Otherwise, type the URL in the **Note** app and click it.
 If everything is set up correctly, the Flutter application
 launches and displays the details screen:
 
-![Deeplinked Simulator screenshot](/assets/images/docs/cookbook/set-up-universal-links-simulator-deeplinked.png)
+<img src="/assets/images/docs/cookbook/set-up-universal-links-simulator-deeplinked.png" alt="Deeplinked Simulator screenshot" width="50%" />
 
 [alternate mode section]: https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains?language=objc
 [developer account]: https://developer.apple.com/account
