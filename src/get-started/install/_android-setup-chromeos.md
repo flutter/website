@@ -10,18 +10,30 @@
 
  1. Download and install [Android Studio]({{site.android-dev}}/studio/install#chrome-os).
  1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
-    This installs the latest Android SDK, Android SDK Command-line Tools,
-    and Android SDK Build-Tools, which are required by Flutter
-    when developing for Android.
+    This installs the latest Android SDK, platform tools and build tooling
+    which are required by Flutter when developing for Android.
+ 1. From the welcome dialog, choose More Actions / SDK Manager.
+    From the SDK Tools tab, select Android SDK Command-line Tools (latest) to
+    install additional necessary tooling.
  1. Accept Android licenses.
 
  ```terminal
 $ flutter doctor --android-licenses
 ```
 
+### Deploy to your Chromebook
+
+To deploy apps directly to your Chromebook, you need to do the following:
+
+ 1. [Enable ADB][] in Settings. Note that this will require you to reboot your
+    device once.
+ 1. In the Terminal, run `flutter devices`. If prompted, authorize access to
+    the Android container. Verify that `flutter devices` lists your ChromeOS
+    device as a recognized device.
+
 ### Set up your Android device
 
-To prepare to run and test your Flutter app on an Android device,
+To prepare to run and test your Flutter app on an attached device,
 you need an Android device running Android 4.1 (API level 16) or higher.
 
  1. Enable **Developer options** and **USB debugging** on your device.
@@ -37,15 +49,5 @@ you need an Android device running Android 4.1 (API level 16) or higher.
     tool is based. If you want Flutter to use a different installation
     of the Android SDK, you must set the `ANDROID_SDK_ROOT` environment
     variable to that installation directory.
-
-### Deploy to your Chromebook
-
-To deploy apps directly to your Chromebook, you need to do the following:
-
- 1. [Enable ADB][] in Settings. Note that this will require you to reboot your
-    device once.
- 1. In the Terminal, run `flutter devices`. If prompted, authorize access to
-    the Android container. Verify that `flutter devices` lists your ChromeOS
-    device as a recognized device.
 
 [Enable ADB]: https://support.google.com/chromebook/answer/9770692
