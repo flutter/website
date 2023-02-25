@@ -1,8 +1,6 @@
 ---
-title: Building for ChromeOS with Flutter
+title: Targeting ChromeOS with Android
 description: Platform-specific considerations for building for ChromeOS with Flutter.
-toc: true
-short-title: ChromeOS development
 ---
 
 This page discusses considerations unique to building
