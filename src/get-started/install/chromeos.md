@@ -1,7 +1,7 @@
 ---
-title: Chrome OS install
-description: How to install on Chrome OS.
-short-title: Chrome OS
+title: ChromeOS install
+description: How to install on ChromeOS.
+short-title: ChromeOS
 next:
   title: Set up an editor
   path: /get-started/editor
@@ -11,25 +11,11 @@ next:
 
 ## System requirements
 
-To install and run Flutter, your development environment
+To install and run Flutter on a Chromebook, your machine
 must meet these minimum requirements:
 
-* **Operating Systems**: Chrome OS (64-bit) with [Linux (Beta)][] turned on
+* **Operating Systems**: ChromeOS (64-bit) with [Linux][] turned on
 * **Disk Space**: 600 MB (does not include disk space for IDE/tools).
-* **Tools**: Flutter depends on these command-line
-  tools being available in your environment.
-  * `bash`
-  * `curl`
-  * `git` 2.x
-  * `mkdir`
-  * `rm`
-  * `unzip`
-  * `which`
-  * `xz-utils`
-* **Shared libraries**: Flutter `test` command depends on
-  this library being available in your environment.
-  * `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on
-     Ubuntu/Debian
 
 {% include_relative _get-sdk-chromeos.md %}
 
@@ -41,10 +27,10 @@ must meet these minimum requirements:
 
 Set up your preferred editor.
 
-## Flutter & Chrome OS tips & tricks
+## Flutter & ChromeOS tips & tricks
 
 For the current versions of Chrome OS, only certain ports from
-Crostini are exposed to the rest of the environments.
+Linux are exposed to the rest of the environment.
 Here’s an example of how to launch
 Flutter DevTools for an Android app with ports
 that will work:
@@ -63,14 +49,13 @@ of `http://127.0.0.1:8080/auth_code=/`. Use this URL
 and select "Connect" to start the Flutter DevTools
 for your Android app.
 
-#### Flutter Chrome OS lint analysis
+#### Flutter ChromeOS lint analysis
 
-The Flutter team is adding Chrome OS specific
-Lint Analysis checks that are available to make
-sure that the app that you're building is going
-to work well on Chrome OS. It looks for things
+Flutter has ChromeOS-specific lint analysis checks 
+to make sure that the app that you're building
+works well on ChromeOS. It looks for things
 like required hardware in your Android Manifest
-that aren’t available on Chrome OS devices,
+that aren’t available on ChromeOS devices,
 permissions that imply requests for unsupported
 hardware, as well as other properties or code
 that would bring a lesser experience on these devices.
@@ -101,11 +86,6 @@ Analyzing ...
 warning • This hardware feature is not supported on Chrome OS •
 android/app/src/main/AndroidManifest.xml:4:33 • unsupported_chrome_os_hardware
 ```
-
-This functionality is still under development,
-but check back for instructions on how you can make
-this functionality work with your Chrome OS
-targeted Flutter app.
 
 
 [Linux (Beta)]: https://support.google.com/chromebook/answer/9145439
