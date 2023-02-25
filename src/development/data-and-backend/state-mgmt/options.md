@@ -281,8 +281,27 @@ For more information, refer to the following resources:
 
 A simple but powerful state management solution inspired by SolidJS.
 
+* [Official Documentation][]
 * [solidart package][]
 * [flutter_solidart package][]
 
+[Official Documentation]: https://docs.page/nank1ro/solidart
 [solidart package]: {{site.pub-pkg}}/solidart
 [flutter_solidart package]: {{site.pub-pkg}}/flutter_solidart
+
+## flutter_reactive_widget
+
+An ultra-low-boilerplate solution for state management,
+flutter_reactive_widget defines
+`ReactiveWidget` and `ReactiveValue`. Any read of a `ReactiveValue`'s
+value within a `ReactiveWidget` definition automatically causes the
+`ReactiveWidget` to listen for changes on the `ReactiveValue`.
+
+Also includes a definition for `PersistentReactiveValue`, a subclass
+of `ReactiveValue` whose latest value persists, surviving app
+restarts.
+
+* [`flutter_reactive_widget`][] source and documentation
+
+[`flutter_reactive_widget`]: {{site.github}}/lukehutch/flutter_reactive_widget
+
