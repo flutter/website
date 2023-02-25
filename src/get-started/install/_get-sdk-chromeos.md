@@ -19,13 +19,9 @@
  1. Add the `flutter` tool to your path:
 
     ```terminal
-    $ export PATH="$PATH:`pwd`/flutter/bin"
+    $ echo PATH="$PATH:`pwd`/flutter/bin" >> ~/.profile
+    $ source ~/.profile
     ```
-
-    This command sets your `PATH` variable for the
-    _current_ terminal window only.
-    To permanently add Flutter to your path, see
-    [Update your path][].
 
 You are now ready to run Flutter commands!
 
@@ -61,4 +57,3 @@ command again to verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
-[Update your path]: #update-your-path

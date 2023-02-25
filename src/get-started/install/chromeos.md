@@ -19,8 +19,6 @@ must meet these minimum requirements:
 
 {% include_relative _get-sdk-chromeos.md %}
 
-{% include_relative _path-linux-chromeos.md %}
-
 {% include_relative _chrome-setup-chromeos.md %}
 
 {% include_relative _android-setup-chromeos.md %}
