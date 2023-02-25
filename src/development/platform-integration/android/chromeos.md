@@ -10,7 +10,7 @@ Android apps that support ChromeOS with Flutter.
 
 ## Flutter & ChromeOS tips & tricks
 
-For the current versions of Chrome OS, only certain ports from
+For the current versions of ChromeOS, only certain ports from
 Linux are exposed to the rest of the environment.
 Here’s an example of how to launch
 Flutter DevTools for an Android app with ports
@@ -64,6 +64,6 @@ Sample output for this command might look like:
 
 ```terminal
 Analyzing ...
-warning • This hardware feature is not supported on Chrome OS •
+warning • This hardware feature is not supported on ChromeOS •
 android/app/src/main/AndroidManifest.xml:4:33 • unsupported_chrome_os_hardware
 ```

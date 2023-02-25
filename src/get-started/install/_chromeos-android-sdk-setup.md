@@ -8,13 +8,13 @@ $ sudo apt install default-jre
 $ sudo apt install default-jdk
 ```
 
-### Install the Android SDK's
+### Install the Android SDKs
 
 Download the [Android SDK tools][] and
 select the “Command Line Tools only” option.
 
 Drag and drop the downloaded zip into your Linux Files folder through the
-Chrome OS Files app. This moves it to the home directory, notated as
+ChromeOS Files app. This moves it to the home directory, notated as
 $TOOLS_PATH going forward (`~/`).
 
 Unzip the tools and then add it to your path.
