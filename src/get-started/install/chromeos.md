@@ -21,6 +21,8 @@ must meet these minimum requirements:
 
 {% include_relative _path-linux-chromeos.md %}
 
+{% include_relative _chrome-setup-chromeos.md %}
+
 {% include_relative _android-setup-chromeos.md %}
 
 ## Next step
@@ -51,7 +53,7 @@ for your Android app.
 
 #### Flutter ChromeOS lint analysis
 
-Flutter has ChromeOS-specific lint analysis checks 
+Flutter has ChromeOS-specific lint analysis checks
 to make sure that the app that you're building
 works well on ChromeOS. It looks for things
 like required hardware in your Android Manifest
@@ -87,5 +89,4 @@ warning • This hardware feature is not supported on Chrome OS •
 android/app/src/main/AndroidManifest.xml:4:33 • unsupported_chrome_os_hardware
 ```
 
-
-[Linux (Beta)]: https://support.google.com/chromebook/answer/9145439
+[Linux]: https://support.google.com/chromebook/answer/9145439
