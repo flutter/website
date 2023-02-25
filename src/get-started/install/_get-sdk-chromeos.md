@@ -1,6 +1,6 @@
 ## Get the Flutter SDK {#get-sdk}
 
- 1. Install the core Linux development tools:
+ 1. Install the core Linux development tools needed for Flutter:
 
     ```terminal
     $ sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev
