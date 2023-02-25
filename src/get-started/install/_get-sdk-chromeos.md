@@ -3,7 +3,7 @@
  1. Install the core Linux development tools:
 
     ```terminal
-    sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev
+    $ sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev
     ```
 
     This will download the compiler toolchain that is necessary
@@ -13,13 +13,13 @@
     on GitHub with the following command in your home directory:
 
     ```terminal
-    git clone https://github.com/flutter/flutter.git -b stable
+    $ git clone https://github.com/flutter/flutter.git -b stable
     ```
 
  1. Add the `flutter` tool to your path:
 
     ```terminal
-    export PATH="$PATH:`pwd`/flutter/bin"
+    $ export PATH="$PATH:`pwd`/flutter/bin"
     ```
 
     This command sets your `PATH` variable for the
@@ -35,7 +35,7 @@ Run the following command to see if there are any dependencies you need to
 install to complete the setup (for verbose output, add the `-v` flag):
 
 ```terminal
-flutter doctor
+$ flutter doctor
 ```
 
 This command checks your environment and displays a report to the terminal
