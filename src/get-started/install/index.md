@@ -18,6 +18,8 @@ Select the operating system on which you are installing Flutter:
           {% assign icon = os | downcase -%}
           {% if icon == 'macos' -%}
             <i class="fab fa-apple"></i>
+          {% elsif icon == 'chromeos' -%}
+            <i class="fab fa-chrome"></i>
           {% else -%}
             <i class="fab fa-{{icon}}"></i>
           {% endif -%}
