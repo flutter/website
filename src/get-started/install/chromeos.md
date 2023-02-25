@@ -14,7 +14,7 @@ next:
 To install and run Flutter on a Chromebook, your machine
 must meet these minimum requirements:
 
-* **Operating Systems**: ChromeOS (64-bit) with [Linux][] turned on
+* **Operating Systems**: ChromeOS with [Linux][] turned on
 * **Disk Space**: 600 MB (does not include disk space for IDE/tools).
 
 {% include_relative _get-sdk-chromeos.md %}
