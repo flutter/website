@@ -264,7 +264,9 @@ For more information, here are a few resources.
 
 * [The Book of Shaders][] by Patricio Gonzalez Vivo and Jen Lowe
 * [Shader toy][], a collaborative shader playground
+* [`simple_shader`], a simple Flutter fragment shaders sample project
 
 [Shader toy]: https://www.shadertoy.com/
 [The Book of Shaders]: https://thebookofshaders.com/
+[`simple_shader`]: {{site.repo.organization}}/samples/tree/main/simple_shader
 
