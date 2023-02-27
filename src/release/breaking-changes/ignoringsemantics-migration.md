@@ -21,8 +21,8 @@ Therefore, this workaround is no longer needed.
 
 ## Migration guide
 
-If you are setting this parameter to true in these widgets, consider using
-ExcludeSemantics instead.
+If you set this parameter to true in these widgets, consider using
+`ExcludeSemantics` instead.
 
 Code before migration:
 
