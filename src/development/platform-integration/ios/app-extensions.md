@@ -58,6 +58,10 @@ To share resources between your Flutter app and your app extension, put
 the `Runner` app target and the extension target in the same
 [App Group][].
 
+{{site.alert.note}}
+  You must be signed in to your Apple Developer account.
+{{site.alert.end}}
+
 To add a target to an App Group:
 
 1. Open the target settings in Xcode.
@@ -66,10 +70,6 @@ To add a target to an App Group:
 1. Choose which App Group you want to add the target from one of two options:
     1. Select an App Group from the list.
     1. Click **+** to add a new App Group.
-
-{{site.alert.note}}
-  You must be signed in to your Apple Developer account.
-{{site.alert.end}}
 
 {% include docs/app-figure.md
 image="development/platform-integration/app-extensions/xcode-app-groups.png" %}
@@ -118,8 +118,10 @@ a custom engine and embed the `FlutterViewController`
 as described in the following section.
 
 {{site.alert.note}}
-  This requires a custom build of the Flutter engine and
-  is only for advanced users.
+  Creating an app extension user interface with Flutter
+  requires you to compile a custom build of the Flutter engine.
+  The Flutter team cautions that only advanced users
+  should try to create a custom build.
   To learn more, check out [Compiling the engine][].
 {{site.alert.end}}
 
