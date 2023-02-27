@@ -6,7 +6,7 @@
     $ sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev
     ```
 
-    This will download the compiler toolchain that is necessary
+    This downloads the compiler toolchain needed
     to compile apps for ChromeOS.
 
  1. Download Flutter from the [Flutter repo][]
