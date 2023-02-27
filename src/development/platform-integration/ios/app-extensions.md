@@ -36,9 +36,8 @@ add the extension point *target* to your Xcode project.
 Flutter apps interact with app extensions using the same
 techniques as UIKit or SwiftUI apps.
 The containing app and the app extension don't communicate directly.
-The containing app may also not be running while the extension 
-is being used.
-Instead, the app and the extension read and write to shared resources or
+The containing app might not be running while the device user interacts with the extension.
+The app and your extension can read and write to shared resources or
 use higher-level APIs to communicate with each other.
 
 ### Using higher-level APIs
@@ -48,8 +47,8 @@ allowing users to search from Spotlight and Safari. The
 [WidgetKit][] framework can trigger an update of your home screen
 widget.
 
-Flutter plugins make it easier for your app to communicate 
-with extensions by wrapping these APIs. 
+To simplify how your app communicates with extensions,
+Flutter plugins wrap these APIs.
 To find plugins that wrap extension APIs,
 check out [Leveraging Apple's System APIs and Frameworks][] or
 search [pub.dev][].
@@ -64,7 +63,9 @@ To add a target to an App Group:
 1. Open the target settings in Xcode.
 1. Navigate to the **Signing & Capabilities** tab.
 1. Select **+ Capability** then **App Groups**.
-1. Select or create the App Group.
+1. Choose which App Group you want to add the target from one of two options:
+    1. Select an App Group from the list.
+    1. Click **+** to add a new App Group.
 
 {{site.alert.note}}
   You must be signed in to your Apple Developer account.
@@ -74,8 +75,7 @@ To add a target to an App Group:
 image="development/platform-integration/app-extensions/xcode-app-groups.png" %}
 
 When two targets belong to the same App Group, they can read and write
-data to the same container using one of the following
-options:
+data to the same source. Choose one of the following sources for your data.
 
 - **Key/value:** Use the [`shared_preference_app_group`][]
   plugin to read or write to `UserDefaults` within the same App Group.
@@ -131,11 +131,12 @@ as described in the following section.
 1. Open the Flutter app project settings in Xcode to share build
    configurations. 
 
-   In the **Info** tab,
-   under the **Configurations** expandable group,
-   expand the **Debug**, **Profile**, and **Release** entries.
-   For each, select the same value from the drop-down menu for the
-   extension target as the entry selected for the normal app target. 
+   1. Navigate to the **Info** tab.
+   1. Expand the **Configurations** group. 
+   1. Expand the **Debug**, **Profile**, and **Release** entries.
+   1. For each of these configurations, make sure the value in the
+       **Based on configuration file** drop-down menu for your
+       extension matches the one selected for the normal app target.
 
     <figure class="site-figure {{include.class}}">
         <div class="site-figure-container">
@@ -144,11 +145,11 @@ as described in the following section.
         </div>
     </figure>
 
-1. If the generated extension code includes a storyboard file, delete it. 
-    In the **Info.plist** file delete the **NSExtensionMainStoryboard** property, 
-    and add add the **NSExtensionPrincipalClass** property with a value that matches the 
-    name of your `ViewController`. For example, in an iMessage extension you would use 
-    `MessageViewController`. 
+1. (Optional) Replace any storyboard files with an extension class if needed.
+    1. In the **Info.plist** file, delete the **NSExtensionMainStoryboard** property.
+    1. Add the **NSExtensionPrincipalClass** property.
+    1. Set this value for this property to the name of your `ViewController`.
+        For example, in an iMessage extension you would use `MessageViewController`. 
     
     <figure class="site-figure {{include.class}}">
         <div class="site-figure-container">
