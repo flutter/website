@@ -9,6 +9,13 @@ js:
 
 <?code-excerpt path-base="layout/constraints/"?>
 
+{{site.alert.note}}
+  To better understand how Flutter implements layout
+  constraints, check out the following 5-minute video:
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jckqXR5CrPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <p>Decoding Flutter: Unbounded height and width</p>
+{{site.alert.end}}
+
 <img src='/assets/images/docs/ui/layout/article-hero-image.png' class="mw-100" alt="Hero image from the article">
 
 When someone learning Flutter asks you why some widget
