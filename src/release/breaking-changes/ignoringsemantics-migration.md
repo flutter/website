@@ -1,6 +1,6 @@
 ---
 title: Migration guide for ignoringSemantics in IgnorePointer and its friend
-description: Removal of ignoringSemantics in IgnorePointer and its friend.
+description: Removal of ignoringSemantics in IgnorePointer and related classes.
 ---
 
 ## Summary
