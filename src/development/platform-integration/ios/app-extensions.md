@@ -110,7 +110,7 @@ content directly from the **Messages** app.
     </div>
 </figure>
 
-The Flutter command line tool does **not** support 
+Flutter does **not** support 
 building Flutter UI for app extensions. 
 To create the UI for 
 an app extension using Flutter, you must compile 
