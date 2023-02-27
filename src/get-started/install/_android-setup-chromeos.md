@@ -12,8 +12,8 @@
  1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
     This installs the latest Android SDK, platform tools and build tooling
     that are required by Flutter when developing for Android.
- 1. From the welcome dialog, choose More Actions / SDK Manager.
-    From the SDK Tools tab, select Android SDK Command-line Tools (latest) to
+ 1. From the welcome dialog, choose **More Actions -> SDK Manager **.
+    From the SDK Tools tab, select **Android SDK Command-line Tools** (latest) to
     install additional necessary tooling.
  1. Accept Android licenses.
 
