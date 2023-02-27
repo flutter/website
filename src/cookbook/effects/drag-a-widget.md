@@ -5,7 +5,7 @@ prev:
   title: Create gradient chat bubbles
   path: /cookbook/effects/gradient-bubbles
 next:
-  title: Build a form with validation 
+  title: Build a form with validation
   path: /cookbook/forms/validation
 js:
   - defer: true

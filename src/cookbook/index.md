@@ -17,7 +17,7 @@ reference to help you build up an application.
 
 
 ## Design
-- [Add a Drawer to a screen]({{site.url}}/cookbook/design/drawer)
+- [Add a drawer to a screen]({{site.url}}/cookbook/design/drawer)
 - [Display a snackbar]({{site.url}}/cookbook/design/snackbars)
 - [Export fonts from a package]({{site.url}}/cookbook/design/package-fonts)
 - [Update the UI based on orientation]({{site.url}}/cookbook/design/orientation)
