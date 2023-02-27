@@ -323,15 +323,6 @@
               permalink: /release/breaking-changes
             - title: Release notes
               permalink: /development/tools/sdk/release-notes
-              children:
-                - title: 1.9.1
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.9.1.md
-                - title: 1.7.8
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.7.8.md
-                - title: 1.5.4
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.5.4.md
-                - title: 1.2.1
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.2.1.md
         - title: Flutter and the pubspec file
           permalink: /development/tools/pubspec
         - title: Hot reload

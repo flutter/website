@@ -8,7 +8,7 @@ This page links to announcements and release notes for
 releases to the stable channel.
 
 {{site.alert.note}}
-  For information about bug-fix releases, see
+  For information about bug-fix releases, check out
   [Hotfixes to the Stable Channel][] on the Flutter wiki.
 {{site.alert.end}}
 
