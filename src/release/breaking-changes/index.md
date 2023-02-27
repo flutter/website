@@ -16,11 +16,11 @@ release, and listed in alphabetical order:
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
 
-{% comment %}
-Uncomment this anchor when there are more items that aren't yet released.
 ### Not yet released to stable
-{% endcomment %}
 
+* [Removed `ignoringSemantics`][]
+
+[Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 
 ### Released in Flutter 3.7
 
@@ -29,7 +29,6 @@ Uncomment this anchor when there are more items that aren't yet released.
 * [Deprecated API removed after v3.3][]
 * [iOS FlutterViewController splashScreenView made nullable][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
-
 
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
