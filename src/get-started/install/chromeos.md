@@ -12,7 +12,7 @@ next:
 ## System requirements
 
 To install and run Flutter on a Chromebook, your machine
-must have [Linux][] enabled from the Developers tab of Settings.
+must have [Linux][] enabled from the **Developers** tab of Settings.
 
 The amount of disk space required will vary
 depending on which target platforms you enable.
