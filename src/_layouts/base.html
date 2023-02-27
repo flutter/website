@@ -77,7 +77,7 @@
       <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
     {% endfor -%}
   </head>
-  <body{% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
+  <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
 
     {% include_cached cookie-notice.html %}
   
