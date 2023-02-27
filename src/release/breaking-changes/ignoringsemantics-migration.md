@@ -12,8 +12,8 @@ The `ignoringSemantics` properties are removed in [`IgnorePointer`][],
 ## Context
 
 The `ignoreSemantics` was introduced as a workaround to mitigate the result of
-`IgnorePointer` and its related widgets dropping entire semantics subtrees. This
-issue was later fixed, thus no longer needed
+`IgnorePointer` and its related widgets dropping entire semantics subtrees.
+Therefore, this workaround is no longer needed.
 
 ## Description of change
 
