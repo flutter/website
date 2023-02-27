@@ -11,7 +11,7 @@
  1. Download and install [Android Studio]({{site.android-dev}}/studio/install#chrome-os).
  1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
     This installs the latest Android SDK, platform tools and build tooling
-    which are required by Flutter when developing for Android.
+    that are required by Flutter when developing for Android.
  1. From the welcome dialog, choose More Actions / SDK Manager.
     From the SDK Tools tab, select Android SDK Command-line Tools (latest) to
     install additional necessary tooling.
