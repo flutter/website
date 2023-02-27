@@ -23,27 +23,23 @@ which tells you where to find the associated DartPad link.
 ## Good for beginners
 
 If you're new to Flutter, we recommend starting with
-one of these codelabs:
+one of the following codelabs:
+
+{% comment %}
+TODO(filiph): add the video for the new codelab when ready
 
 * [Building your first Flutter app][] (workshop)<br>
   An instructor-led version of our very popular
   "Write your first Flutter app, part 1" codelab
   (listed below).
+{% endcomment %}
 
-* [Write your first Flutter app, part 1][]<br>
-  Create a simple mobile app that generates proposed names
-  for a startup company. In part one, you'll use a package
-  that returns pairs of words at random and inserts them into
-  an infinite scrolling list. You can also find this
-  [codelab on docs.flutter.dev][].
-
-* [Write your first Flutter app, part 2][]<br>
-  Create a simple mobile app that generates proposed names
-  for a startup company. In part two, you'll extend the
-  example from part 1 to allow the user to select favorite
-  word pairs, and add a second "Saved Favorites"
-  page where users can view the selected names.
-  Finally, you'll change the app's theme color.
+* [Your first Flutter app][]<br>
+  Create a simple app that automatically generates cool-sounding names,
+  such as "newstay", "lightstream", "mainbrake", or "graypine".
+  This app is responsive and runs on mobile, desktop, and web.
+  (This also replaces the previous "write your first Flutter app"
+  for mobile, part 1 and part 2 codelabs.)
 
 * [Write your first Flutter app on the web][]<br>
   Implement a simple web app in DartPad (no downloads
@@ -56,9 +52,7 @@ one of these codelabs:
   works on Android and iOS devices, as well.
 
 [Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
-[codelab on docs.flutter.dev]: {{site.url}}/get-started/codelab
-[Write your First Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-[Write your First Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 
 ## Next steps
@@ -108,7 +102,7 @@ like layout and animations:
 
 * [Take your Flutter app from boring to beautiful][]<br>
   Learn how to use some of the features in Material 3
-  to make your app more beautiful *and* more responsive.
+  to make your app more beautiful _and_ more responsive.
 
 * [MDC-101 Flutter: Material Components (MDC) Basics][]<br>
   Learn the basics of using Material Components by building
@@ -136,7 +130,7 @@ like layout and animations:
 
 * [Adaptive Apps in Flutter][]<br>
   Learn how to build a Flutter app that adapts to the 
-  platform that it is running on, be that Android, iOS, 
+  platform that it's running on, be that Android, iOS, 
   the web, Windows, macOS, or Linux.
 
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
@@ -156,13 +150,12 @@ like layout and animations:
 
 Learn how to use Flutter with other technologies.
 
-* [Adding WebView to your Flutter app][]<br>
-  With the WebView Flutter plugin you can add a WebView 
-  widget to your Android or iOS Flutter app.
+{% comment %}
+  Once we get at least 3 codelabs on a specific topic,
+  add a subheader for that topic.
+{% endcomment %}
 
-* [Adding Google Maps to a Flutter app][]<br>
-  Display a Google map in an app, retrieve data from a
-  web service, and display the data as markers on the map.
+### Monetizing Flutter
 
 * [Adding AdMob Ads to a Flutter app][]<br>
   Learn how to add an AdMob banner, an interstitial ad,
@@ -179,6 +172,62 @@ Learn how to use Flutter with other technologies.
   currency to offer three types of in-app purchases:
   consumable, non-consumable, and subscription.
 
+[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
+[Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
+[Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
+
+### Flutter and Firebase
+
+* [Add a user authentication flow to a Flutter app using FirebaseUI][]<br>
+  Learn how to add Firebase authentication to a Flutter app
+  with only a few lines of code.
+
+* [Get to know Firebase for Flutter][firebase-ws] (workshop)<br>
+  An instructor-led version of our popular
+  "Get to know Firebase for Flutter" codelab
+  (listed below).
+
+* [Get to know Firebase for Flutter][]<br>
+  Build an event RSVP and guestbook chat app on both Android
+  and iOS using Flutter, authenticating users with Firebase
+  Authentication, and sync data using Cloud Firestore.
+
+* [Local development for your Flutter apps using the Firebase Emulator Suite][]<br>
+  Learn how to use the Firebase Emulator Suite when
+  developing with Flutter. You will also learn to use
+  the Auth and Firestore emulators.
+
+[Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
+[firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
+[Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
+[Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
+
+### Flutter and TensorFlow
+
+* [Create a custom text-classification model with TensorFlow Lite Model Maker][]<br>
+
+* [Create a Flutter app to classify texts with TensorFlow][]<br>
+  Learn how to run a text-classification inference from a Flutter
+  app with TensorFlow Serving through REST and gRPC.
+
+* [Train a comment-spam detection model with TensorFlow Lite Model Maker][]<br>
+  Learn how to install the TensorFlow Lite Model Maker with Colab,
+  How to use a data loader, and how to build a model.
+
+[Create a custom text-classification model with TensorFlow Lite Model Maker]: {{site.developers}}/codelabs/classify-text-update-tensorflow-serving
+[Create a Flutter app to classify texts with TensorFlow]: {{site.developers}}/codelabs/classify-texts-flutter-tensorflow-serving
+[Train a comment-spam detection model with TensorFlow Lite Model Maker]: {{site.developers}}/codelabs/classify-text-tensorflow-serving
+
+### Flutter and other technologies
+
+* [Adding Google Maps to a Flutter app][]<br>
+  Display a Google map in an app, retrieve data from a
+  web service, and display the data as markers on the map.
+
+* [Adding WebView to your Flutter app][]<br>
+  With the WebView Flutter plugin you can add a WebView 
+  widget to your Android or iOS Flutter app.
+
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
   and Flutter codelab (listed below).
@@ -189,25 +238,22 @@ Learn how to use Flutter with other technologies.
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
 
-* [Get to know Firebase for Flutter][firebase-ws] (workshop)<br>
-  An instructor-led version of our popular
-  "Get to know Firebase for Flutter" codelab
-  (listed below).
+* [Building a game with Flutter and Flame][]<br> **NEW**
+  Learn how to create a platform game (featuring
+  Dash or Sparky), using the Flame package.
 
-* [Get to know Firebase for Flutter][]<br>
-  Build an event RSVP and guestbook chat app on both Android
-  and iOS using Flutter, authenticating users with Firebase
-  Authentication and sync data using Cloud Firestore.
+* [Using FFI in a Flutter plugin][]<br> **NEW**
+  Learn how to use Dart's FFI (foreign function interface)
+  library, ffigen, allowing you to leverage
+  existing native libraries that provide a
+  C interface.
 
-[Adding AdMob Ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
-[Adding an AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
-[Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
+[Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
-[Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
-[firebase-ws]: {{site.youtube-site}}/watch?v=wUSkeTaBonA
-[Get to know Firebase for Flutter]: {{site.firebase}}/learn/codelabs/firebase-get-to-know-flutter
+[Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
+[Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 
 ## Testing
 
@@ -223,7 +269,7 @@ Learn how to test your Flutter application.
 ## Writing platform-specific code
 
 Learn how to write code that's targeted for specific platforms,
-like iOS, Android, the web, and the desktop.
+like iOS, Android, desktop, or the web.
 
 * [Building a Cupertino app with Flutter][]<br>
   Build a version of the Shrine shopping app
@@ -243,9 +289,10 @@ like iOS, Android, the web, and the desktop.
   Host your app on Firebase and, finally, use a Flutter plugin to
   launch the app and open the hosted privacy policy.
 
-* [Write a Flutter desktop application][] **UPDATED FOR WINDOWS**<br>
-  Build a Flutter desktop app that accesses GitHub APIs to retrieve your
-  repositories, assigned issues, and pull requests. As part of this task,
+* [Write a Flutter desktop application][]<br>
+  Build a Flutter desktop app (Windows, Linux, or macOS)
+  that accesses GitHub APIs to retrieve your repositories,
+  assigned issues, and pull requests. As part of this task,
   create and use plugins to interact with native APIs and desktop applications,
   and use code generation to build type-safe client libraries for GitHub's APIs.
 

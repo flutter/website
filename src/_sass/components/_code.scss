@@ -37,7 +37,7 @@ pre > span.strike { text-decoration: line-through; }
       display: table-cell;
       text-align: right;
       color: $teal;
-      padding-right: $font-size-base / 2;
+      padding-right: $font-size-base * 0.5;
       // background-color: lightyellow;
     }
   }
@@ -49,11 +49,12 @@ pre > span.strike { text-decoration: line-through; }
 
 .code-excerpt {
   &__code {
-    @include code-excerpt-border;
     margin-bottom: bs-spacer(4);
     position: relative;
 
     pre {
+      @include code-excerpt-border;
+
       background-color: $gray-100;
       margin-bottom: 0;
     }

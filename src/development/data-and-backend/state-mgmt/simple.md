@@ -277,10 +277,13 @@ here's a simple unit test of `CartModel`:
 test('adding item increases total cost', () {
   final cart = CartModel();
   final startingPrice = cart.totalPrice;
+  var i = 0;
   cart.addListener(() {
     expect(cart.totalPrice, greaterThan(startingPrice));
+    i++;
   });
   cart.add(Item('Dash'));
+  expect(i, 1);
 });
 ```
 

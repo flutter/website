@@ -8,7 +8,7 @@ description: How to develop Flutter apps in Android Studio or other IntelliJ pro
     <a class="nav-link active" role="tab" aria-selected="true">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/development/tools/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>
+    <a class="nav-link" href="{{site.url}}/development/tools/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>
   </li>
 </ul>
 
@@ -95,8 +95,6 @@ The Flutter plugin performs code analysis that enables the following:
   * Using [DevTools][], a suite of debugging and profiling
     tools that run in a browser
     _and include the Flutter inspector_.
-    DevTools replaces the previous browser-based profiling
-    tool, Observatory.
   * Using Android Studio's (or IntelliJ's) built-in debugging
     features, such as the ability to set breakpoints.
   * Using the Flutter inspector, directly available in
@@ -149,7 +147,7 @@ Flutter-specific buttons on the right-hand side of the toolbar.
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the _Stateful Hot Reload_ feature.
-See [Hot reload](hot-reload) for details.
+To learn more, check out [Hot reload][].
 
 ### Show performance data
 
@@ -245,7 +243,7 @@ and they can assist in correcting it. They are indicated with a red lightbulb.
 This can be used when you have a widget that you want to wrap in a surrounding
 widget, for example if you want to wrap a widget in a `Row` or `Column`.
 
-####  Wrap widget list with new widget assist
+#### Wrap widget list with new widget assist
 
 Similar to the assist above, but for wrapping an existing list of
 widgets rather than an individual widget.
@@ -403,4 +401,5 @@ When filing new issues, include the output of [`flutter doctor`][].
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
 [let us know]: {{site.repo.this}}/issues/new
 [Running DevTools from Android Studio]: {{site.url}}/development/tools/devtools/android-studio
+[Hot reload]: {{site.url}}/development/tools/hot-reload
 [Timeline view]: {{site.url}}/development/tools/devtools/performance

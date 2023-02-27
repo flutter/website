@@ -48,7 +48,7 @@
     @at-root {
       #page-github-links {
         float: right;
-        .btn { padding: 0 ($btn-padding-x / 2); }
+        .btn { padding: 0 ($btn-padding-x * 0.5); }
       }
     }
 

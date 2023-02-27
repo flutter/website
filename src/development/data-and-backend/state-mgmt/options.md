@@ -276,3 +276,32 @@ For more information, refer to the following resources:
 [Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/
 [Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
 [VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{site.youtube-site}}/watch?v=dXc3tR15AoA
+
+## solidart
+
+A simple but powerful state management solution inspired by SolidJS.
+
+* [Official Documentation][]
+* [solidart package][]
+* [flutter_solidart package][]
+
+[Official Documentation]: https://docs.page/nank1ro/solidart
+[solidart package]: {{site.pub-pkg}}/solidart
+[flutter_solidart package]: {{site.pub-pkg}}/flutter_solidart
+
+## flutter_reactive_widget
+
+An ultra-low-boilerplate solution for state management,
+flutter_reactive_widget defines
+`ReactiveWidget` and `ReactiveValue`. Any read of a `ReactiveValue`'s
+value within a `ReactiveWidget` definition automatically causes the
+`ReactiveWidget` to listen for changes on the `ReactiveValue`.
+
+Also includes a definition for `PersistentReactiveValue`, a subclass
+of `ReactiveValue` whose latest value persists, surviving app
+restarts.
+
+* [`flutter_reactive_widget`][] source and documentation
+
+[`flutter_reactive_widget`]: {{site.github}}/lukehutch/flutter_reactive_widget
+
