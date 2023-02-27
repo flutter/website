@@ -14,10 +14,10 @@ next:
 To install and run Flutter on a Chromebook, your machine
 must have [Linux][] enabled from the **Developers** tab of Settings.
 
-The amount of disk space required will vary
+The amount of disk space required varies
 depending on which target platforms you enable.
-However, we recommend that you increase the disk size for the Linux environment
-from the default of 10GB to 32GB or larger,
+We recommend that you increase the disk size for the
+Linux environment from the default of 10GB to 32GB or larger,
 to accommodate Android Studio and other tooling.
 
 {% include_relative _get-sdk-chromeos.md %}
