@@ -1019,7 +1019,7 @@ Happy Fluttering!
 [ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
 [Try it out]: {{site.url}}/codelabs/layout-basics
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
-[using the dart:ffi library]: {{site.url}}/development/platform-integration/c-interop
+[using the dart:ffi library]: {{site.url}}/development/platform-integration/android/c-interop
 [web FAQ]: {{site.url}}/development/platform-integration/web
 
 ## July 9, 2019: 1.7 release
