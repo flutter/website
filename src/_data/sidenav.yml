@@ -175,6 +175,8 @@
               permalink: /development/platform-integration/android/androidx-migration
             - title: Deprecated Splash Screen API Migration
               permalink: /development/platform-integration/android/splash-screen-migration
+            - title: Targeting ChromeOS with Android
+              permalink:  /development/platform-integration/android/chromeos
         - title: iOS
           permalink: /development/platform-integration/ios
           children:
