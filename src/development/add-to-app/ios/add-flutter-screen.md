@@ -13,7 +13,7 @@ To launch a Flutter screen from an existing iOS, you start a
 
 {{site.alert.secondary}}
   The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime,
-  and the `FlutterViewController` attaches to a `FlutterEngine` to pass UIKit
+  and the `FlutterViewController` attaches to a `FlutterEngine` to pass 
   input events into Flutter and to display frames rendered by the
   `FlutterEngine`.
 {{site.alert.end}}
@@ -37,21 +37,57 @@ trade-offs of pre-warming an engine.
 
 ### Create a FlutterEngine
 
-The proper place to create a `FlutterEngine` is specific
-to your host app. As an example, we demonstrate creating a
-`FlutterEngine`, exposed as a property, on app startup in
-the app delegate.
+Where you create a `FlutterEngine` depends on your host app.
 
 {% samplecode engine %}
 
-{% sample Swift %}
+{% sample SwiftUI %}
+In this example, we create a `FlutterEngine` object inside a SwiftUI `ObservableObject`. 
+We then pass this `FlutterEngine` into a `ContentView` using the 
+ `environmentObject()` property. 
+
+ **In `MyApp.swift`:**
+ <!--code-excerpt "MyApp.swift" title-->
+ ```swift
+import SwiftUI
+import Flutter
+// The following library connects plugins with iOS platform code to this app.
+import FlutterPluginRegistrant
+
+class FlutterDependencies: ObservableObject {
+  let flutterEngine = FlutterEngine(name: "my flutter engine")
+  init(){
+    // Runs the default Dart entrypoint with a default Flutter route.
+    flutterEngine.run()
+    // Connects plugins with iOS platform code to this app.
+    GeneratedPluginRegistrant.register(with: self.flutterEngine);
+  }
+}
+
+@main
+struct MyApp: App {
+  // flutterDependencies will be injected using EnvironmentObject.
+  @StateObject var flutterDependencies = FlutterDependencies()
+    var body: some Scene {
+      WindowGroup {
+        ContentView().environmentObject(flutterDependencies)
+      }
+    }
+}
+```
+
+{% sample UIKit-Swift %}
+As an example, we demonstrate creating a
+`FlutterEngine`, exposed as a property, on app startup in
+the app delegate.
+
 **In `AppDelegate.swift`:**
 
 <!--code-excerpt "AppDelegate.swift" title-->
 ```swift
 import UIKit
 import Flutter
-// Used to connect plugins (only if you have plugins with iOS platform code).
+// The following library connects plugins with iOS platform code to this app.
 import FlutterPluginRegistrant
 
 @UIApplicationMain
@@ -61,13 +97,19 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Runs the default Dart entrypoint with a default Flutter route.
     flutterEngine.run();
-    // Used to connect plugins (only if you have plugins with iOS platform code).
+    // Connects plugins with iOS platform code to this app.
     GeneratedPluginRegistrant.register(with: self.flutterEngine);
     return super.application(application, didFinishLaunchingWithOptions: launchOptions);
   }
 }
 ```
-{% sample Objective-C %}
+{% sample UIKit-ObjC %}
+
+In this example, we create a `FlutterEngine` 
+object inside a SwiftUI `ObservableObject`. 
+We then pass this `FlutterEngine` into a 
+`ContentView` using the `environmentObject()` property. 
+
 **In `AppDelegate.h`:**
 
 <!--code-excerpt "AppDelegate.h" title-->
@@ -84,7 +126,7 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 
 <!--code-excerpt "AppDelegate.m" title-->
 ```objectivec
-// Used to connect plugins (only if you have plugins with iOS platform code).
+// The following library connects plugins with iOS platform code to this app.
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
 
 #import "AppDelegate.h"
@@ -96,7 +138,7 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
   self.flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
   // Runs the default Dart entrypoint with a default Flutter route.
   [self.flutterEngine run];
-  // Used to connect plugins (only if you have plugins with iOS platform code).
+  // Connects plugins with iOS platform code to this app.
   [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
@@ -107,13 +149,58 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 
 ### Show a FlutterViewController with your FlutterEngine
 
+{% samplecode vc %}
+
+{% sample SwiftUI %}
+The following example shows a generic `ContentView` with a
+`Button` hooked to present a [`FlutterViewController`][].
+The `FlutterViewController` constructor takes the pre-warmed 
+`FlutterEngine` as an argument. `FlutterEngine` is passed in 
+as an `EnvironmentObject` via `flutterDependencies`.
+
+<!--code-excerpt "ContentView.swift" title-->
+```swift
+import SwiftUI
+import Flutter
+
+struct ContentView: View {
+  // Flutter dependencies are passed in an EnvironmentObject.
+  @EnvironmentObject var flutterDependencies: FlutterDependencies
+
+  // Button is created to call the showFlutter function when pressed.
+  var body: some View {
+    Button("Show Flutter!") {
+      showFlutter()
+    }
+  }
+
+func showFlutter() {
+    // Get the RootViewController.
+    guard
+      let windowScene = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
+      let window = windowScene.windows.first(where: \.isKeyWindow),
+      let rootViewController = window.rootViewController
+    else { return }
+
+    // Create the FlutterViewController.
+    let flutterViewController = FlutterViewController(
+      engine: flutterDependencies.flutterEngine,
+      nibName: nil,
+      bundle: nil)
+    flutterViewController.modalPresentationStyle = .overCurrentContext
+    flutterViewController.isViewOpaque = false
+
+    rootViewController.present(flutterViewController, animated: true)
+  }
+}
+```
+
+{% sample UIKit-Swift %}
 The following example shows a generic `ViewController` with a
 `UIButton` hooked to present a [`FlutterViewController`][].
 The `FlutterViewController` uses the `FlutterEngine` instance
 created in the `AppDelegate`.
-
-{% samplecode vc %}
-{% sample Swift %}
 <!--code-excerpt "ViewController.swift" title-->
 ```swift
 import UIKit
@@ -140,7 +227,12 @@ class ViewController: UIViewController {
   }
 }
 ```
-{% sample Objective-C %}
+
+{% sample UIKit-ObjC %}
+The following example shows a generic `ViewController` with a
+`UIButton` hooked to present a [`FlutterViewController`][].
+The `FlutterViewController` uses the `FlutterEngine` instance
+created in the `AppDelegate`.
 <!--code-excerpt "ViewController.m" title-->
 ```objectivec
 @import Flutter;
@@ -201,7 +293,40 @@ To let the `FlutterViewController` present without an existing
 `FlutterViewController` without an engine reference.
 
 {% samplecode no-engine-vc %}
-{% sample Swift %}
+{% sample SwiftUI %}
+```swift
+import SwiftUI
+import Flutter
+
+struct ContentView: View {
+  var body: some View {
+    Button("Show Flutter!") {
+      openFlutterApp()
+    }
+  }
+
+func openFlutterApp() {
+    // Get the RootViewController.
+    guard
+      let windowScene = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
+      let window = windowScene.windows.first(where: \.isKeyWindow),
+      let rootViewController = window.rootViewController
+    else { return }
+
+    // Create the FlutterViewController without an existing FlutterEngine.
+    let flutterViewController = FlutterViewController(
+      project: nil,
+      nibName: nil,
+      bundle: nil)
+    flutterViewController.modalPresentationStyle = .overCurrentContext
+    flutterViewController.isViewOpaque = false
+
+    rootViewController.present(flutterViewController, animated: true)
+  }
+}
+```
+{% sample UIKit-Swift %}
 <!--code-excerpt "ViewController.swift" title-->
 ```swift
 // Existing code omitted.
@@ -210,7 +335,7 @@ func showFlutter() {
   present(flutterViewController, animated: true, completion: nil)
 }
 ```
-{% sample Objective-C %}
+{% sample UIKit-ObjC %}
 <!--code-excerpt "ViewController.m" title-->
 ```objectivec
 // Existing code omitted.
@@ -235,10 +360,89 @@ The `FlutterAppDelegate` performs functions such as:
 
 * Forwarding application callbacks such as [`openURL`][]
   to plugins such as [local_auth][].
-* Forwarding status bar taps
-  (which can only be detected in the AppDelegate) to
-  Flutter for scroll-to-top behavior.
+* Keeping the Flutter connection open 
+  in debug mode when the phone screen locks.
 
+### Creating a FlutterAppDelegate subclass
+Creating a subclass of the the `FlutterAppDelegate` in UIKit apps was shown 
+in the [Start a FlutterEngine and FlutterViewController section][]. 
+In a SwiftUI app, you can create a subclass of the 
+`FlutterAppDelegate` that conforms to the `ObservableObject` protocol as follows:
+
+```swift
+import SwiftUI
+import Flutter
+import FlutterPluginRegistrant
+
+class AppDelegate: FlutterAppDelegate, ObservableObject {
+  let flutterEngine = FlutterEngine(name: "my flutter engine")
+
+  override func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      // Runs the default Dart entrypoint with a default Flutter route.
+      flutterEngine.run();
+      // Used to connect plugins (only if you have plugins with iOS platform code).
+      GeneratedPluginRegistrant.register(with: self.flutterEngine);
+      return true;
+    }
+}
+
+@main
+struct MyApp: App {
+//  Use this property wrapper to tell SwiftUI
+//  it should use the AppDelegate class for the application delegate
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
+  var body: some Scene {
+      WindowGroup {
+        ContentView()
+      }
+  }
+}
+```
+
+Then, in your view, the `AppDelegate`is accessible as an `EnvironmentObject`.
+
+```swift
+import SwiftUI
+import Flutter
+
+struct ContentView: View {
+  // Access the AppDelegate using an EnvironmentObject.
+  @EnvironmentObject var appDelegate: AppDelegate
+
+  var body: some View {
+    Button("Show Flutter!") {
+      openFlutterApp()
+    }
+  }
+
+func openFlutterApp() {
+    // Get the RootViewController.
+    guard
+      let windowScene = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
+      let window = windowScene.windows.first(where: \.isKeyWindow),
+      let rootViewController = window.rootViewController
+    else { return }
+
+    // Create the FlutterViewController.
+    let flutterViewController = FlutterViewController(
+      // Access the Flutter Engine via AppDelegate.
+      engine: appDelegate.flutterEngine,
+      nibName: nil,
+      bundle: nil)
+    flutterViewController.modalPresentationStyle = .overCurrentContext
+    flutterViewController.isViewOpaque = false
+
+    rootViewController.present(flutterViewController, animated: true)
+  }
+}
+
+```
+
+### If you can't directly make FlutterAppDelegate a subclass
 If your app delegate can't directly make `FlutterAppDelegate` a subclass,
 make your app delegate implement the `FlutterAppLifeCycleProvider`
 protocol in order to make sure your plugins receive the necessary callbacks.
@@ -246,6 +450,67 @@ Otherwise, plugins that depend on these events may have undefined behavior.
 
 For instance:
 
+{% samplecode app-delegate %}
+{% sample Swift %}
+```swift
+import Foundation
+import Flutter
+
+class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvider, ObservableObject {
+
+  private let lifecycleDelegate = FlutterPluginAppLifeCycleDelegate()
+
+  let flutterEngine = FlutterEngine(name: "flutter_nps_engine")
+
+  override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    flutterEngine.run()
+    return lifecycleDelegate.application(application, didFinishLaunchingWithOptions: launchOptions ?? [:])
+  }
+
+  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    lifecycleDelegate.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+  }
+
+  func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+    lifecycleDelegate.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+  }
+
+  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    lifecycleDelegate.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+  }
+
+  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    return lifecycleDelegate.application(app, open: url, options: options)
+  }
+
+  func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+    return lifecycleDelegate.application(application, handleOpen: url)
+  }
+
+  func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+    return lifecycleDelegate.application(application, open: url, sourceApplication: sourceApplication ?? "", annotation: annotation)
+  }
+
+  func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+    lifecycleDelegate.application(application, performActionFor: shortcutItem, completionHandler: completionHandler)
+  }
+
+  func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+    lifecycleDelegate.application(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
+  }
+
+  func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    lifecycleDelegate.application(application, performFetchWithCompletionHandler: completionHandler)
+  }
+
+  func add(_ delegate: FlutterApplicationLifeCycleDelegate) {
+    lifecycleDelegate.add(delegate)
+  }
+}
+```
+
+{% sample Objective-C %}
 <!--code-excerpt "AppDelegate.h" title-->
 ```objectivec
 @import Flutter;
@@ -361,6 +626,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 @end
 ```
 
+{% endsamplecode %}
 ## Launch options
 
 The examples demonstrate running Flutter using the default launch settings.
@@ -383,7 +649,6 @@ a different Dart function.
   must be annotated with the following in order to
   not be [tree-shaken][] away when compiling:
 
-  <!-- skip -->
   ```dart
   @pragma('vm:entry-point')
   void myOtherEntrypoint() { ... };
@@ -499,3 +764,4 @@ in any way you'd like, before presenting the Flutter UI using a
 [tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`window.defaultRouteName`]: {{site.api}}/flutter/dart-ui/SingletonFlutterWindow/defaultRouteName.html
+[Start a FlutterEngine and FlutterViewController section]:{{site.url}}/development/add-to-app/ios/add-flutter-screen/#start-a-flutterengine-and-flutterviewcontroller

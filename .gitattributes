@@ -1,2 +1,5 @@
 *.html linguist-detectable=false
 *.html linguist-documentation=false
+
+# Allow dart files in examples/ to be detectable
+examples/**/*.dart -linguist-documentation

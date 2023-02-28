@@ -149,7 +149,6 @@ It builds a [`CurvedAnimation`][],
 specifying an eased curve. See [`Curves`][] for
 other available pre-defined animation curves.
 
-<!-- skip -->
 {% prettify dart %}
 width = Tween<double>(
   begin: 50.0,

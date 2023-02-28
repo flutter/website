@@ -97,7 +97,7 @@ best-effort support.
 |macOS   |Yosemite (10.10) & below                    |
 |Windows |Windows Vista & below                       |
 |Windows |Any 32-bit platform                         |
-
 {:.table.table-striped}
 </div>
+
 [iOS 10 & below and `arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported

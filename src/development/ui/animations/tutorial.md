@@ -203,9 +203,11 @@ For example, `ColorTween` specifies a progression between two colors.
 colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
 ```
 
-A `Tween` object does not store any state. Instead, it provides the
-`evaluate(Animation<double> animation)` method that
-applies the mapping function to the current value of the animation.
+A `Tween` object doesn't store any state. Instead, it provides the
+[`evaluate(Animation<double> animation)`][] method that uses the 
+`transform` function to map the current value of the animation
+(between 0.0 and 1.0), to the actual animation value. 
+
 The current value of the `Animation` object can be found in the
 `.value` method. The evaluate function also performs some housekeeping,
 such as ensuring that begin and end are returned when the
@@ -964,6 +966,7 @@ for the latest available documents and examples.
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [Dart Language Tour]: {{site.dart-site}}/guides/language/language-tour
+[`evaluate(Animation<double> animation)`]: {{site.api}}/flutter/animation/Animation/value.html
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [Monitoring the progress of the animation]: #monitoring
 [Refactoring with AnimatedBuilder]: #refactoring-with-animatedbuilder

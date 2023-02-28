@@ -24,25 +24,23 @@ directly inside your Flutter app.
 [Hosting native iOS views]: {{site.url}}/development/platform-integration/ios/platform-views
 
 Flutter supports two modes:
-Virtual displays and Hybrid composition.
+Hybrid composition and virtual displays.
 
 Which one to use depends on the use case.
 Let's take a look:
 
-* Virtual displays render the `android.view.View`
-  instance to a texture, so it's not embedded within
-  the Android Activity's view hierachy.
+* [Hybrid composition](#hybrid-composition)
+  appends the native `android.view.View` to the view hierarchy. 
+  Therefore, keyboard handling, and accessibility work out of the box.
+  Prior to Android 10, this mode might significantly
+  reduce the frame throughput (FPS) of the Flutter UI.
+  For more context, see [Performance](#performance).
+
+* [Virtual displays](#virtual-display)
+  render the `android.view.View` instance to a texture, 
+  so it's not embedded within the Android Activity's view hierarchy.
   Certain platform interactions such as keyboard handling
   and accessibility features might not work.
-
-* Hybrid composition appends the native `android.view.View`
-  to the view hierarchy. Therefore, keyboard
-  handling, and accessibility work out of the box.
-  Prior to Android 10, this mode might significantly
-  reduce the frame throughput (FPS) of the
-  Flutter UI. See [performance][] for more info.
-
-[performance]: #performance
 
 To create a platform view on Android,
 use the following steps:
@@ -50,7 +48,7 @@ use the following steps:
 ### On the Dart side
 
 On the Dart side, create a `Widget`
-and add the following build implementation:
+and add one of the following build implementations.
 
 {{site.alert.warning}}
   For this to work, your plugin or app must use
@@ -61,62 +59,60 @@ and add the following build implementation:
 
 [plugin migration guide]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 
+#### Hybrid composition
+
 In your Dart file,
 for example `native_view_example.dart`,
 use the following instructions:
 
-<ol markdown="1">
-<li markdown="1">Add the following imports:
+1. Add the following imports:  
+   
+   <?code-excerpt "lib/platform_views/native_view_example_1.dart (Import)"?>
+   ```dart
+   import 'package:flutter/foundation.dart';
+   import 'package:flutter/gestures.dart';
+   import 'package:flutter/material.dart';
+   import 'package:flutter/rendering.dart';
+   import 'package:flutter/services.dart';
+   ```  
+    
+2. Implement a `build()` method:
+  
+   <?code-excerpt "lib/platform_views/native_view_example_1.dart (HybridCompositionWidget)"?>
+   ```dart
+   Widget build(BuildContext context) {
+     // This is used in the platform side to register the view.
+     const String viewType = '<platform-view-type>';
+     // Pass parameters to the platform side.
+     const Map<String, dynamic> creationParams = <String, dynamic>{};
 
-<?code-excerpt "lib/platform_views/native_view_example_1.dart (Import)"?>
-```dart
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
-```
-</li>
-
-<li markdown="1">Implement a `build()` method:
-
-<?code-excerpt "lib/platform_views/native_view_example_1.dart (HybridCompositionWidget)"?>
-```dart
-Widget build(BuildContext context) {
-  // This is used in the platform side to register the view.
-  const String viewType = '<platform-view-type>';
-  // Pass parameters to the platform side.
-  const Map<String, dynamic> creationParams = <String, dynamic>{};
-
-  return PlatformViewLink(
-    viewType: viewType,
-    surfaceFactory:
-        (context, controller) {
-      return AndroidViewSurface(
-        controller: controller as AndroidViewController,
-        gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
-        hitTestBehavior: PlatformViewHitTestBehavior.opaque,
-      );
-    },
-    onCreatePlatformView: (params) {
-      return PlatformViewsService.initSurfaceAndroidView(
-        id: params.id,
-        viewType: viewType,
-        layoutDirection: TextDirection.ltr,
-        creationParams: creationParams,
-        creationParamsCodec: const StandardMessageCodec(),
-        onFocus: () {
-          params.onFocusChanged(true);
-        },
-      )
-        ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
-        ..create();
-    },
-  );
-}
-```
-</li>
-</ol>
+     return PlatformViewLink(
+       viewType: viewType,
+       surfaceFactory:
+           (context, controller) {
+         return AndroidViewSurface(
+           controller: controller as AndroidViewController,
+           gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
+           hitTestBehavior: PlatformViewHitTestBehavior.opaque,
+         );
+       },
+       onCreatePlatformView: (params) {
+         return PlatformViewsService.initSurfaceAndroidView(
+           id: params.id,
+           viewType: viewType,
+           layoutDirection: TextDirection.ltr,
+           creationParams: creationParams,
+           creationParamsCodec: const StandardMessageCodec(),
+           onFocus: () {
+             params.onFocusChanged(true);
+           },
+         )
+           ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
+           ..create();
+       },
+     );
+   }
+   ```
 
 For more information, see the API docs for:
 
@@ -128,42 +124,38 @@ For more information, see the API docs for:
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
 [`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
 
-#### Virtual Display
+#### Virtual display
 
 In your Dart file,
 for example `native_view_example.dart`,
 use the following instructions:
 
-<ol markdown="1">
-<li markdown="1">Add the following imports:
+1. Add the following imports:
+   
+   <?code-excerpt "lib/platform_views/native_view_example_2.dart (Import)"?>
+   ```dart
+   import 'package:flutter/material.dart';
+   import 'package:flutter/services.dart';
+   ```
 
-<?code-excerpt "lib/platform_views/native_view_example_2.dart (Import)"?>
-```dart
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-```
-</li>
+2. Implement a `build()` method:
 
-<li markdown="1">Implement a `build()` method:
+   <?code-excerpt "lib/platform_views/native_view_example_2.dart (VirtualDisplayWidget)"?>
+   ```dart
+   Widget build(BuildContext context) {
+     // This is used in the platform side to register the view.
+     const String viewType = '<platform-view-type>';
+     // Pass parameters to the platform side.
+     final Map<String, dynamic> creationParams = <String, dynamic>{};
 
-<?code-excerpt "lib/platform_views/native_view_example_2.dart (VirtualDisplayWidget)"?>
-```dart
-Widget build(BuildContext context) {
-  // This is used in the platform side to register the view.
-  const String viewType = '<platform-view-type>';
-  // Pass parameters to the platform side.
-  final Map<String, dynamic> creationParams = <String, dynamic>{};
-
-  return AndroidView(
-    viewType: viewType,
-    layoutDirection: TextDirection.ltr,
-    creationParams: creationParams,
-    creationParamsCodec: const StandardMessageCodec(),
-  );
-}
-```
-</li>
-</ol>
+     return AndroidView(
+       viewType: viewType,
+       layoutDirection: TextDirection.ltr,
+       creationParams: creationParams,
+       creationParamsCodec: const StandardMessageCodec(),
+     );
+   }
+   ```
 
 For more information, see the API docs for:
 
@@ -183,8 +175,8 @@ in either Java or Kotlin:
 In your native code, implement the following:
 
 Extend `io.flutter.plugin.platform.PlatformView`
-to provide a reference to the `android.view.View`,
-For example, `NativeView.kt`:
+to provide a reference to the `android.view.View`
+(for example, `NativeView.kt`):
 
 ```kotlin
 package dev.flutter.example
@@ -214,8 +206,8 @@ internal class NativeView(context: Context, id: Int, creationParams: Map<String?
 ```
 
 Create a factory class that creates an instance of the
-`NativeView` created earlier,
-for example, `NativeViewFactory.kt`:
+`NativeView` created earlier
+(for example, `NativeViewFactory.kt`):
 
 ```kotlin
 package dev.flutter.example
@@ -283,8 +275,8 @@ class PlatformViewPlugin : FlutterPlugin {
 In your native code, implement the following:
 
 Extend `io.flutter.plugin.platform.PlatformView`
-to provide a reference to the `android.view.View`,
-For example, `NativeView.java`:
+to provide a reference to the `android.view.View`
+(for example, `NativeView.java`):
 
 ```java
 package dev.flutter.example;
@@ -320,8 +312,8 @@ class NativeView implements PlatformView {
 ```
 
 Create a factory class that creates an
-instance of the `NativeView` created earlier,
-for example, `NativeViewFactory.java`:
+instance of the `NativeView` created earlier
+(for example, `NativeViewFactory.java`):
 
 ```java
 package dev.flutter.example;
@@ -416,8 +408,8 @@ to require one of the minimal Android SDK versions:
 ```gradle
 android {
     defaultConfig {
-        minSdkVersion 19 // if using Hybrid composition.
-        minSdkVersion 20 // if using Virtual display.
+        minSdkVersion 19 // if using hybrid composition
+        minSdkVersion 20 // if using virtual display.
     }
 }
 ```

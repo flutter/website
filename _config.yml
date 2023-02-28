@@ -27,7 +27,7 @@ sdk:
   channel: stable # When changing this value also update it in src/_assets/js/archive.js
 social:
   twitter: https://twitter.com/FlutterDev
-  youtube: https://www.youtube.com/flutterdev
+  youtube: https://www.youtube.com/@flutterdev
 dart-site: https://dart.dev
 news: https://news.dartlang.org
 api: https://api.flutter.dev
@@ -57,8 +57,12 @@ youtube-site: https://youtube.com
 ########### Jekyll ###########
 
 source: src
+strict_front_matter: true
 permalink: pretty
 exclude: []
+liquid:
+  error_mode: strict
+  strict_filters: true
 sass:
   sass_dir: _sass
   cache: false
@@ -68,6 +72,8 @@ sass:
 
 plugins:
   - jekyll-toc
+  - jekyll-include-cache
+
 toc:
   min_level: 2
   max_level: 4

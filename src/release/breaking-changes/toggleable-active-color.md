@@ -32,7 +32,6 @@ and `RadioThemeData`.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(toggleableActiveColor: myColor),
@@ -42,7 +41,6 @@ MaterialApp(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 final ThemeData theme = ThemeData();
 MaterialApp(
@@ -100,8 +98,7 @@ MaterialApp(
 
 ## Timeline
 
-Landed in version: TBD  
-In stable release: TBD
+In stable release: 3.7
 
 ## References
 
@@ -124,4 +121,4 @@ Relevant PRs:
 
 [`Switch` widget color doesn't use `ColorScheme`]: {{site.repo.flutter}}/issues/93709
 
-[Deprecate `toggleableActiveColor`]: {{site.repo.flutter}}/pull/95870
+[Deprecate `toggleableActiveColor`]: {{site.repo.flutter}}/pull/97972

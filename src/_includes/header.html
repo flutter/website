@@ -36,7 +36,7 @@
       <div class="site-header__sheet">
         <ul class="navbar-nav">
           <div class="site-sidebar site-sidebar--header d-md-none">
-            {% include shared/sidenav-level-1.html nav=site.data.sidenav %}
+            {% include_cached sidenav-level-1.html nav=site.data.sidenav page_url_path=route %}
           </div>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
@@ -90,14 +90,14 @@
                Docs
             </a>
             <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
-              <a class="dropdown-item {% if route == '/' %} active{% endif %}"
+              <a class="dropdown-item {% if route == '/whats-new' %} active{% endif %}"
                  href="/whats-new">What's new</a>
               <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
                  href="/get-started/editor">Editor support</a>
               <a class="dropdown-item {% if route contains '/development/tools/hot-reload' %} active{% endif %}"
                  href="/development/tools/hot-reload">Hot reload</a>
-              <a class="dropdown-item {% if route contains '/perf/rendering/ui-performance' %} active{% endif %}"
-                 href="/perf/rendering/ui-performance">Profiling</a>
+              <a class="dropdown-item {% if route contains '/perf/ui-performance' %} active{% endif %}"
+                 href="/perf/ui-performance">Profiling</a>
               <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
                  href="/get-started/install">Install Flutter</a>
               <a class="dropdown-item {% if route contains '/development/tools/devtools' %} active{% endif %}"

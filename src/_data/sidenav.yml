@@ -16,8 +16,10 @@
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
-        - title: Flutter for iOS devs
-          permalink: /get-started/flutter-for/ios-devs
+        - title: Flutter for SwiftUI devs
+          permalink: /get-started/flutter-for/swiftui-devs
+        - title: Flutter for UIKit devs
+          permalink: /get-started/flutter-for/uikit-devs
         - title: Flutter for React Native devs
           permalink: /get-started/flutter-for/react-native-devs
         - title: Flutter for web devs
@@ -75,6 +77,8 @@
           permalink: /development/ui/interactive
         - title: Assets and images
           permalink: /development/ui/assets-and-images
+        - title: Material
+          permalink: /development/ui/material
         - title: Navigation & routing
           permalink: /development/ui/navigation
           children:
@@ -106,10 +110,14 @@
           children:
             - title: Actions & shortcuts
               permalink: /development/ui/advanced/actions_and_shortcuts
+            - title: Fonts & typography
+              permalink: /development/ui/advanced/typography
             - title: Keyboard focus system
               permalink: /development/ui/advanced/focus
             - title: Gestures
               permalink: /development/ui/advanced/gestures
+            - title: Shaders
+              permalink: /development/ui/advanced/shaders
             - title: Slivers
               permalink: /development/ui/advanced/slivers
             - title: Splash screens
@@ -167,6 +175,8 @@
               permalink: /development/platform-integration/android/androidx-migration
             - title: Deprecated Splash Screen API Migration
               permalink: /development/platform-integration/android/splash-screen-migration
+            - title: Targeting ChromeOS with Android
+              permalink:  /development/platform-integration/android/chromeos
         - title: iOS
           permalink: /development/platform-integration/ios
           children:
@@ -212,6 +222,8 @@
               permalink: /development/platform-integration/windows/run-loop-migration
             - title: Version information migration
               permalink: /development/platform-integration/windows/version-migration
+            - title: Dark mode migration
+              permalink: /development/platform-integration/windows/dark-mode-migration
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:
@@ -313,15 +325,6 @@
               permalink: /release/breaking-changes
             - title: Release notes
               permalink: /development/tools/sdk/release-notes
-              children:
-                - title: 1.9.1
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.9.1.md
-                - title: 1.7.8
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.7.8.md
-                - title: 1.5.4
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.5.4.md
-                - title: 1.2.1
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.2.1.md
         - title: Flutter and the pubspec file
           permalink: /development/tools/pubspec
         - title: Hot reload
@@ -419,7 +422,7 @@
       permalink: /resources/bug-reports
     - title: Dart resources
       permalink: /resources/bootstrap-into-dart
-    - title: Design Documents
+    - title: Design documents
       permalink: /resources/design-docs
     - title: FAQ
       permalink: /resources/faq
@@ -429,10 +432,14 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Inside Flutter
       permalink: /resources/inside-flutter
+    - title: Flutter vs. Swift Concurrency
+      permalink: /resources/dart-swift-concurrency
     - title: Official brand assets
       permalink: https://flutter.dev/brand
     - title: Platform adaptations
       permalink: /resources/platform-adaptations
+    - title: Security false positives **NEW**
+      permalink: /resources/security-false-positives
     - title: Videos and online courses
       permalink: /resources/videos
 

@@ -44,6 +44,7 @@ exception in release mode.
 * [`Form.of`]
 * [`HeroControllerScope.of`]
 * [`Material.of`]
+* [`Overlay.of`]
 * [`PageStorage.of`]
 * [`PrimaryScrollController.of`]
 * [`RenderAbstractViewport.of`]
@@ -61,6 +62,7 @@ value is not found, without throwing any exceptions.
 * [`Form.maybeOf`]
 * [`HeroControllerScope.maybeOf`]
 * [`Material.maybeOf`]
+* [`Overlay.maybeOf`]
 * [`PageStorage.maybeOf`]
 * [`PrimaryScrollController.maybeOf`]
 * [`RenderAbstractViewport.maybeOf`]
@@ -115,8 +117,7 @@ The following can also be helpful:
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: TBD
+In stable release: 3.7
 
 ## References
 
@@ -127,8 +128,9 @@ API documentation:
 Relevant PRs:
 
 * [Add `maybeOf` for all the cases when `of` returns nullable][]
+* [Add `Overlay.maybeOf`, make `Overlay.of` return a non-nullable instance][]
 
-[previous migration]: eliminating-nullok-parameters
+[previous migration]: {{site.url}}/release/breaking-changes/eliminating-nullok-parameters
 [`unnecessary_non_null_assertion`]: {{site.dart-site}}/tools/diagnostic-messages#unnecessary_non_null_assertion
 [`unnecessary_null_checks`]: {{site.dart-site}}/tools/linter-rules#unnecessary_null_checks
 [`unnecessary_null_in_if_null_operators`]: {{site.dart-site}}/tools/linter-rules#unnecessary_null_in_if_null_operators
@@ -146,6 +148,8 @@ Relevant PRs:
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [`Material.maybeOf`]: {{site.api}}/flutter/material/Material/maybeOf.html
 [`Material.of`]: {{site.api}}/flutter/material/Material/of.html
+[`Overlay.maybeOf`]: {{site.api}}/flutter/widgets/Overlay/maybeOf.html
+[`Overlay.of`]: {{site.api}}/flutter/widgets/Overlay/of.html
 [`PageStorage.maybeOf`]: {{site.api}}/flutter/widgets/PageStorage/maybeOf.html
 [`PageStorage.of`]: {{site.api}}/flutter/widgets/PageStorage/of.html
 [`PrimaryScrollController.maybeOf`]: {{site.api}}/flutter/widgets/PrimaryScrollController/maybeOf.html
@@ -159,3 +163,5 @@ Relevant PRs:
 [`ScrollNotificationObserver.maybeOf`]: {{site.api}}/flutter/widgets/ScrollNotificationObserver/maybeOf.html
 [`ScrollNotificationObserver.of`]: {{site.api}}/flutter/widgets/ScrollNotificationObserver/of.html
 [Add `maybeOf` for all the cases when `of` returns nullable]: {{site.repo.flutter}}/pull/114120
+[Add `Overlay.maybeOf`, make `Overlay.of` return a non-nullable instance]: {{site.repo.flutter}}/pull/110811
+

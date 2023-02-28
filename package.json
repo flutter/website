@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "bootstrap-scss": "^4.6.2",
-    "diff2html-cli": "^5.2.6",
-    "font-awesome": "^4.7.0"
+    "diff2html-cli": "^5.2.9"
   }
 }

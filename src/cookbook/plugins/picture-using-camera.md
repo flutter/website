@@ -49,7 +49,7 @@ dependencies:
   path:
 ```
 {{site.alert.tip}}
-  - For android, You must have to update `minSdkVersion` to 21 (or higher).
+  - For android, You must update `minSdkVersion` to 21 (or higher).
   - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.
     ```
     <key>NSCameraUsageDescription</key>
@@ -91,7 +91,6 @@ and display a preview of the camera's feed.
   4. Create and initialize the controller in the `initState()` method.
   5. Dispose of the controller in the `dispose()` method.
 
-<!--skip-->
 <?code-excerpt "lib/main_step3.dart (controller)"?>
 ```dart
 // A screen that allows users to take a picture using a given camera.

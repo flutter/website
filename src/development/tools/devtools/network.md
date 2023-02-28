@@ -60,4 +60,11 @@ asynchronous timeline events. Viewing network activity in the timeline can be
 useful if you want to see how HTTP traffic aligns with other events happening
 in your app or in the Flutter framework.
 
+To learn how to monitor an app's network traffic and inspect
+different types of requests using the DevTools,
+check out a guided [Network View tutorial][network-tutorial].
+The tutorial also uses the view to identify network activity that
+causes poor app performance.
+
 [timeline]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart
+[network-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-network-view-part-4-of-8-afce2463687c

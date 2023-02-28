@@ -42,7 +42,6 @@ is now the local position it received subtracted by `offset`,
 where `offset` is the location of the clipping area relative
 to the layer.
 
-<!-- skip -->
 ```dart
 class AnnotatedRegionLayer<T> extends ContainerLayer {
   @override

@@ -2,18 +2,16 @@ name: gen_l10n_example
 description: Example of an internationalized Flutter app that uses `flutter gen-l10n`
 
 environment:
-  sdk: '>=2.17.0-0 <3.0.0'
+  sdk: '>=2.18.5 <3.0.0'
 
 # #docregion FlutterLocalizations
-# #docregion Intl
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations: # Add this line
-    sdk: flutter         # Add this line
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 # #enddocregion FlutterLocalizations
-  intl: ^0.17.0 # Add this line
-# #enddocregion Intl
 
 dev_dependencies:
   flutter_lints: ^2.0.1

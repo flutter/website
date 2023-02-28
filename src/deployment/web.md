@@ -75,10 +75,31 @@ following structure:
       MaterialIcons-Regular.ttf
       <other font files>
     <image files>
+    packages
+      cupertino_icons
+        assets
+          CupertinoIcons.ttf
+    shaders
+      ink_sparkle.frag
+  canvaskit
+    canvaskit.js
+    canvaskit.wasm
+    profiling
+      canvaskit.js
+      canvaskit.wasm
+  favicon.png
+  flutter.js
+  flutter_service_worker.js
   index.html
   main.dart.js
-  main.dart.js.map
+  manifest.json
+  version.json
 ```
+
+{{site.alert.note}}
+  The `canvaskit` directory and its contents are only present when the
+  CanvasKit renderer is selected—not when the HTML renderer is selected.
+{{site.alert.end}}
 
 Launch a web server (for example,
 `python -m http.server 8000`,

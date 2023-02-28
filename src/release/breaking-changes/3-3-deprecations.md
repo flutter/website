@@ -45,7 +45,6 @@ API are compatible with the new API.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
 ```dart
 // Unconstrained
 final RenderUnconstrainedBox unconstrained = RenderUnconstrainedBox(
@@ -80,7 +79,6 @@ final RenderUnconstrainedBox unconstrained = RenderUnconstrainedBox(
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 // Unconstrained
 final RenderConstraintsTransformBox unconstrained = RenderConstraintsTransformBox(
@@ -146,7 +144,6 @@ in conjunction with other widgets like `Stack` and `InteractiveViewer`.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
 ```dart
 Draggable draggable = Draggable();
 draggable = Draggable(dragAnchor: DragAnchor.child);
@@ -158,7 +155,6 @@ longPressDraggable = LongPressDraggable(dragAnchor: DragAnchor.pointer);
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 Draggable draggable = Draggable();
 draggable = Draggable(dragAnchorStrategy: childDragAnchorStrategy);
@@ -212,14 +208,12 @@ code in order to maintain one or the other.
 [In-depth migration guide available][]
 
 Code before migration:
-<!-- skip -->
 ```dart
 final ScrollBehavior scrollBehavior = ScrollBehavior();
 scrollBehavior.buildViewportChrome(context, child, axisDirection);
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 final ScrollBehavior scrollBehavior = ScrollBehavior();
 scrollBehavior.buildOverscrollIndicator(context, child, axisDirection);
@@ -254,4 +248,4 @@ Relevant PRs:
 
 ## Timeline
 
-In stable release: TBD
+In stable release: 3.7

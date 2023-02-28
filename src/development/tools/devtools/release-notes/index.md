@@ -8,6 +8,7 @@ This page links to announcements and release notes for
 Flutter and Dart DevTools
 
 * [2.22.2 release notes][]
+* [2.21.1 release notes][]
 * [2.20.0 release notes][]
 * [2.18.0 release notes][]
 * [2.17.0 release notes][]
@@ -24,6 +25,7 @@ Flutter and Dart DevTools
 * [2.7.0 release notes][]
 
 [2.22.2 release notes]: {{site.url}}/development/tools/devtools/release-notes/release-notes-2.22.2
+[2.21.1 release notes]: {{site.url}}/development/tools/devtools/release-notes/release-notes-2.21.1
 [2.20.0 release notes]: {{site.url}}/development/tools/devtools/release-notes/release-notes-2.20.0
 [2.18.0 release notes]: {{site.url}}/development/tools/devtools/release-notes/release-notes-2.18.0
 [2.17.0 release notes]: {{site.url}}/development/tools/devtools/release-notes/release-notes-2.17.0

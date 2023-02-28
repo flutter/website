@@ -7,7 +7,7 @@ diff2html: true
 
 {% assign api = '{{site.api}}/flutter' -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
+{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/main/examples' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/examples/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
@@ -40,26 +40,35 @@ start with [Flutter's approach to layout][].
 Make sure to [set up][] your environment,
 then do the following:
 
- 1. [Create a basic "Hello World" Flutter app][hello-world].
- 2. Change the app bar title and the app title as follows:
+<?code-excerpt path-base="layout/base"?>
 
-    <?code-excerpt "layout/base/lib/{main_starter,main}.dart"?>
-    ```diff
-    --- layout/base/lib/main_starter.dart
-    +++ layout/base/lib/main.dart
-    @@ -12,10 +12,10 @@
-       @override
-       Widget build(BuildContext context) {
-         return MaterialApp(
-    -      title: 'Welcome to Flutter',
-    +      title: 'Flutter layout demo',
-           home: Scaffold(
-             appBar: AppBar(
-    -          title: const Text('Welcome to Flutter'),
-    +          title: const Text('Flutter layout demo'),
-             ),
-             body: const Center(
-               child: Text('Hello World'),
+ 1. [Create a new Flutter app][new-flutter-app].
+ 2. Replace the contents in `lib/main.dart` with the following code:
+
+    <?code-excerpt "lib/main.dart (all)" title?>
+    ```dart
+    import 'package:flutter/material.dart';
+
+    void main() => runApp(const MyApp());
+
+    class MyApp extends StatelessWidget {
+      const MyApp({super.key});
+
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          title: 'Flutter layout demo',
+          home: Scaffold(
+            appBar: AppBar(
+              title: const Text('Flutter layout demo'),
+            ),
+            body: const Center(
+              child: Text('Hello World'),
+            ),
+          ),
+        );
+      }
+    }
     ```
 
 ## Step 1: Diagram the layout
@@ -443,7 +452,7 @@ You can add interactivity to this layout by following
 [automatic reformatting support]: {{site.url}}/development/tools/formatting
 [available online]: https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=
 [Flutter's approach to layout]: {{site.url}}/development/ui/layout
-[hello-world]: {{site.url}}/get-started/codelab#step-1-create-the-starter-flutter-app
+[new-flutter-app]: {{site.url}}/get-started/test-drive
 [images]: {{examples}}/layout/lakes/step6/images
 [`lake.jpg`]: {{rawExFile}}/layout/lakes/step5/images/lake.jpg
 [`lib/main.dart`]: {{examples}}/layout/lakes/step2/lib/main.dart

@@ -608,6 +608,26 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-textfield.png'>"
   },
   {
+    "name": "CupertinoListSection",
+    "description": "An iOS-style container for a scrollable view.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoListSection-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-list-section.png'>"
+  },
+  {
+    "name": "CupertinoListTile",
+    "description": "An iOS-style tile that makes up a row in a list.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoListTile-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-list-tile.png'>"
+  },
+  {
     "name": "CupertinoTimerPicker",
     "description": "An iOS-style countdown timer picker.",
     "categories": [

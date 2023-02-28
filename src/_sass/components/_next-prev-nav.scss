@@ -27,7 +27,7 @@
       &.prev:before {
         color: $primary;
         content: "\2329"; // &lang;
-        padding-right: $spacer-base / 2;
+        padding-right: $spacer-base * 0.5;
       }
 
       &.next {
@@ -38,7 +38,7 @@
       &.next:after {
         color: $primary;
         content: "\232A"; // &rang;
-        padding-left: $spacer-base / 2;
+        padding-left: $spacer-base * 0.5;
       }
     }
   }

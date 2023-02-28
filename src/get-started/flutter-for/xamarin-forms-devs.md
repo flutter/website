@@ -1306,7 +1306,6 @@ arbitrarily called `images`, you would put the base image (1.0x)
 in the `images` folder, and all the other variants in sub-folders
 called with the appropriate ratio multiplier:
 
-<!-- skip -->
 ```
 images/my_icon.png       // Base: 1.0x image
 images/2.0x/my_icon.png  // 2.0x image
@@ -2123,8 +2122,7 @@ Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead adds to it.
 
 For more information, see
-[Write your first Flutter app, part 1][]
-and [Write your first Flutter app, part 2][].
+[Your first Flutter app][first_codelab] codelab.
 
 ## Working with text
 
@@ -2591,6 +2589,5 @@ For more information on using the Firebase Cloud Messaging API, see the
 [widget]: {{site.url}}/resources/architectural-overview#widgets
 [widget catalog]: {{site.url}}/development/ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
-[Write your first Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
-[Write your first Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[first_codelab]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [write your own]: {{site.url}}/development/packages-and-plugins/developing-packages
