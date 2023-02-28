@@ -6,7 +6,6 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 - Prevent crashes if there is no main isolate - [#5232](https://github.com/flutter/devtools/pull/5232)
 
 ## CPU profiler updates
-
 - Display stack frame uri inline with method name to ensure the URI is always visible
 in deeply nested trees - [#5181](https://github.com/flutter/devtools/pull/5181)
 
