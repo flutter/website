@@ -1007,7 +1007,7 @@ apps built with Flutter should follow Apple's
 [Dart]: {{site.dart-site}}/
 [Dart DevTools]: {{site.url}}/development/tools/devtools
 [Debugging with Flutter]: {{site.url}}/testing/debugging
-[desktop]: {{site.url}}/desktop
+[desktop]: {{site.url}}/development/platform-integration/desktop
 [detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
 [Discord]: https://discord.gg/N7Yshp4
 [`Divider`]: {{site.api}}/flutter/material/Divider-class.html
