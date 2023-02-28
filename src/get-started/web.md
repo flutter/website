@@ -80,8 +80,7 @@ than [creating a new Flutter project][] for other platforms.
 #### IDE
 
 Create a new app in your IDE and it automatically
-creates iOS, Android, and web versions of your app.
-(And macOS, too, if you've enabled [desktop support][].)
+creates iOS, Android, [desktop][], and web versions of your app.
 From the device pulldown, select **Chrome (web)**
 and run your app to see it launch in Chrome.
 
@@ -154,7 +153,7 @@ $ flutter create --platforms web .
 [Build and release a web app]: {{site.url}}/deployment/web
 [creating a new Flutter project]: {{site.url}}/get-started/test-drive
 [dart2js]: {{site.dart-site}}/tools/dart2js
-[desktop support]: {{site.url}}/desktop
+[desktop]: {{site.url}}/development/platform-integration/desktop
 [development compiler]: {{site.dart-site}}/tools/dartdevc
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [install the Flutter and Dart plugins]: {{site.url}}/get-started/editor
@@ -162,4 +161,4 @@ $ flutter create --platforms web .
 [web FAQ]: {{site.url}}/development/platform-integration/web
 [Chrome]: https://www.google.com/chrome/
 [Flutter SDK]: {{site.url}}/get-started/install
-[Web renderers]: {{site.url}}/development/tools/web-renderers
+[Web renderers]: {{site.url}}/development/platform-integration/web/renderers

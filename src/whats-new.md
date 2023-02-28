@@ -302,7 +302,7 @@ and the [Flutter 3 release notes][].
 [Customizing web app initialization]: {{site.url}}/development/platform-integration/web/initialization
 [dart-whats-new]: {{site.dart-site}}/guides/whats-new
 [dart.dev]: {{site.dart-site}}
-[Desktop]: {{site.url}}/desktop
+[Desktop]: {{site.url}}/development/platform-integration/desktop
 [Flutter Firebase get started guide]: https://firebase.google.com/docs/flutter/setup
 [Games page]: {{site.main-url}}/games
 [Games doc page]: {{site.url}}/resources/games-toolkit
@@ -480,7 +480,7 @@ publication since the last stable release:
 [DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
 [DartPad Workshop Authoring Guide]: {{site.github}}/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
 [Deferred components]: {{site.url}}/perf/deferred-components
-[desktop]: {{site.url}}/desktop
+[desktop]: {{site.url}}/development/platform-integration/desktop
 [Embedded Support for Flutter]: {{site.url}}/embedded
 [Embedding DartPad in your web page]: {{site.github}}/dart-lang/dart-pad/wiki/Embedding-Guide
 [Firebase for Flutter]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
@@ -582,7 +582,7 @@ publication since the last stable release:
 [Creating responsive and adaptive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
 [Dart sound null safety: technical preview 2]: {{site.flutter-medium}}/null-safety-flutter-tech-preview-cb5c98aba187
 [Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
-[Desktop support for Flutter]: {{site.url}}/desktop
+[Desktop support for Flutter]: {{site.url}}/development/platform-integration/desktop
 [Devtools]: {{site.url}}/development/tools/devtools/overview
 [Flutter Ads]: {{site.main-url}}/monetization
 [Flutter 2 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-2.0.0
@@ -629,9 +629,9 @@ Flutter 1.22 is live! For details, see
 * Added a page that describes how to [migrate your app to use the
   new icon glyphs available in
   `CupertinoIcons`][cupertino-icons].
-* Added a page that describes the new [implementation for
-  Platform Views and how to use them to host native Android
-  and iOS views in your Flutter app][platform-views].
+* Added a page that describes the new implementation for
+  Platform Views and how to use them to host native [Android views]
+  and [iOS views][] in your Flutter app platform-views.
   This feature has enabled the [google_maps_flutter][]
   and [webview_flutter][] plugins to be
   updated to production-ready release 1.0.
@@ -664,21 +664,22 @@ publication since the last stable release:
 * [Updates on Flutter and Firebase][]
 
 
-[add an iOS App Clip]: {{site.url}}/development/platform-integration/ios-app-clip
+[add an iOS App Clip]: {{site.url}}/development/platform-integration/ios/ios-app-clip
 [animations]: {{site.pub}}/packages/animations
 [Announcing Flutter 1.22]: {{site.flutter-medium}}/announcing-flutter-1-22-44f146009e5f
 [Announcing Flutter Windows Alpha]: {{site.flutter-medium}}/announcing-flutter-windows-alpha-33982cd0f433
 [App Size tool]: {{site.url}}/development/tools/devtools/app-size
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [cupertino-icons]: {{site.url}}/release/breaking-changes/cupertino-icons-1.0.0
-[Developing for iOS 14]: {{site.url}}/development/ios-14
+[Developing for iOS 14]: {{site.url}}/development/platform-integration/ios/ios-debugging
 [google_maps_flutter]: {{site.pub}}/packages/google_maps_flutter
 [Handling web gestures in Flutter]: {{site.flutter-medium}}/handling-web-gestures-in-flutter-e16946a04745
 [Integration testing with flutter_driver]: {{site.flutter-medium}}/integration-testing-with-flutter-driver-36f66ede5cf2
 [Learn testing with the new Flutter sample]: {{site.flutter-medium}}/learn-testing-with-the-new-flutter-sample-gsoc20-work-product-e872c7f6492a
 [Learning Flutter's new navigation and routing]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [Platform channel examples]: {{site.flutter-medium}}/platform-channel-examples-7edeaeba4a66
-[platform-views]: {{site.url}}/development/platform-integration/platform-views
+[Android views]: {{site.url}}/development/platform-integration/android/platform-views
+[iOS views]: {{site.url}}/development/platform-integration/ios/platform-views
 [Supporting iOS 14 and Xcode 12 with Flutter]: {{site.flutter-medium}}/supporting-ios-14-and-xcode-12-with-flutter-15fe0062e98b
 [Updates on Flutter and Firebase]: {{site.flutter-medium}}/updates-on-flutter-and-firebase-8076f70bc90e
 [webview_flutter]: {{site.pub}}/packages/webview_flutter
@@ -759,9 +760,9 @@ publication since the last stable release:
 [Announcing Flutter 1.20]: {{site.flutter-medium}}/announcing-flutter-1-20-2aaf68c89c75
 [Building performant Flutter widgets]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
 [codelabs landing]: {{site.url}}/codelabs
-[Desktop support]: {{site.url}}/desktop
+[Desktop support]: {{site.url}}/development/platform-integration/desktop
 [dev-tools]: {{site.flutter-medium}}/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
-[Developing for iOS 14 beta]: {{site.url}}/development/ios-14
+[Developing for iOS 14 beta]: {{site.url}}/development/platform-integration/ios/ios-debugging
 [Enums with Extensions in Dart]: {{site.flutter-medium}}/enums-with-extensions-dart-460c42ea51f7
 [Flutter and Desktop apps]: {{site.flutter-medium}}/flutter-and-desktop-3a0dd0f8353e
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
@@ -816,7 +817,7 @@ Docs added and updated since the last announcement include:
   * [Writing custom platform-specific code][]
 * Added an [Obfuscating Dart code][] page.
   (Moved from the wiki and updated as of 1.16.2.)
-* Added a page on using [Xcode 11.4][] and how to manually update
+* Added a page on using Xcode 11.4 and how to manually update
   your project. The tooling, which automatically updates your
   configuration when possible, may direct you to this page
   if it detects that it's needed.
@@ -854,7 +855,7 @@ Other newness:
 [Announcing CodePen support for Flutter]: {{site.flutter-medium}}/announcing-codepen-support-for-flutter-bb346406fe50
 [Announcing Flutter 1.17]: {{site.flutter-medium}}/announcing-flutter-1-17-4182d8af7f8e
 [Custom implicit animations in Flutter…with TweenAnimationBuilder]: {{site.flutter-medium}}/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
-[Desktop]: {{site.url}}/desktop
+[Desktop]: {{site.url}}/development/platform-integration/desktop
 [Developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
 [Developing plugin packages]: {{site.url}}/development/packages-and-plugins/developing-packages#federated-plugins
 [Directional animations with build-in explicit animations]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
@@ -877,7 +878,6 @@ Other newness:
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints
 [When should I use AnimatedBuilder or AnimatedWidget?]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [Writing custom platform-specific code]: {{site.url}}/development/platform-integration/platform-channels
-[Xcode 11.4]: {{site.url}}/development/ios-project-migration
 
 ## Dec 11, 2019, Flutter Interact Edition: 1.12 release
 
@@ -931,7 +931,7 @@ Happy Fluttering!
 [Announcing Flutter 1.12: What a year!]: {{site.flutter-medium}}/announcing-flutter-1-12-what-a-year-22c256ba525d
 [app size]: {{site.url}}/perf/app-size#ios
 [building a web app with Flutter]: {{site.url}}/get-started/web
-[Desktop support for Flutter]: {{site.url}}/desktop
+[Desktop support for Flutter]: {{site.url}}/development/platform-integration/desktop
 [Flutter: the first UI platform designed for ambient computing]: {{site.google-blog}}/2019/12/flutter-ui-ambient-computing.html?m=1
 [Flutter Favorite program]: {{site.url}}/development/packages-and-plugins/favorites
 [Flutter 1.12.13]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.12.13
