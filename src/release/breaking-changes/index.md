@@ -18,16 +18,18 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecated API removed after v3.7][]
 * [Removed `ignoringSemantics`][]
 
+[Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 
 ### Released in Flutter 3.7
 
-* [Migrate `of` to non-nullable return values, and add `maybeOf`][]
-* [Removed RouteSettings.copyWith][]
 * [Deprecated API removed after v3.3][]
 * [iOS FlutterViewController splashScreenView made nullable][]
+* [Migrate `of` to non-nullable return values, and add `maybeOf`][]
+* [Removed RouteSettings.copyWith][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
 
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
@@ -49,8 +51,8 @@ release, and listed in alphabetical order:
 ### Released in Flutter 3
 
 * [Deprecated API removed after v2.10][]
-* [Page transitions replaced by ZoomPageTransitionsBuilder][]
 * [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
+* [Page transitions replaced by ZoomPageTransitionsBuilder][]
 
 
 [Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
@@ -119,8 +121,8 @@ The following breaking change was reverted in release 2.2:
 * [Material Chip button semantics][]
 * [SnackBars managed by the ScaffoldMessenger][]
 * [TextSelectionTheme migration][]
-* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 * [Transition of platform channel test interfaces to flutter_test package][]
+* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 
 [Added BuildContext parameter to TextEditingController.buildTextSpan]: {{site.url}}/release/breaking-changes/buildtextspan-buildcontext
 [Android ActivityControlSurface attachToActivity signature change]: {{site.url}}/release/breaking-changes/android-activity-control-surface-attach
