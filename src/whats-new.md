@@ -604,7 +604,7 @@ publication since the last stable release:
 [Testable Flutter and Cloud Firestore]: {{site.flutter-medium}}/flutter/testable-flutter-and-cloud-firestore-1cf2fbbce97b
 [Updates on Flutter Testing]: {{site.flutter-medium}}/updates-on-flutter-testing-f54aa9f74c7e
 [Using multiple Flutter instances]: {{site.url}}/development/add-to-app/multiple-flutters
-[Web FAQ]: {{site.url}}/development/platform-integration/web
+[Web FAQ]: {{site.url}}/development/platform-integration/web/faq
 [Web support for Flutter]: {{site.url}}/web
 [What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
 [Who is Dash?]: {{site.url}}/dash
@@ -1020,7 +1020,7 @@ Happy Fluttering!
 [Try it out]: {{site.url}}/codelabs/layout-basics
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [using the dart:ffi library]: {{site.url}}/development/platform-integration/android/c-interop
-[web FAQ]: {{site.url}}/development/platform-integration/web
+[web FAQ]: {{site.url}}/development/platform-integration/web/faq
 
 ## July 9, 2019: 1.7 release
 

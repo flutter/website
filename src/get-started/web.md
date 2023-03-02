@@ -158,7 +158,7 @@ $ flutter create --platforms web .
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [install the Flutter and Dart plugins]: {{site.url}}/get-started/editor
 [setting up an editor]: {{site.url}}/get-started/editor
-[web FAQ]: {{site.url}}/development/platform-integration/web
+[web FAQ]: {{site.url}}/development/platform-integration/web/faq
 [Chrome]: https://www.google.com/chrome/
 [Flutter SDK]: {{site.url}}/get-started/install
 [Web renderers]: {{site.url}}/development/platform-integration/web/renderers

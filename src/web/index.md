@@ -89,6 +89,6 @@ The following resources can help you get started:
 [main Flutter repo]: {{site.repo.flutter}}
 [Preparing an app for web release]: {{site.url}}/deployment/web
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
-[web FAQ]: {{site.url}}/development/platform-integration/web
+[web FAQ]: {{site.url}}/development/platform-integration/web/faq
 [web samples for Flutter]: https://flutter.github.io/samples/#?platform=web
 [Web renderers]: {{site.url}}/development/platform-integration/web/renderers
