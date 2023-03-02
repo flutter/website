@@ -11,7 +11,7 @@ Studio and Visual Studio Code.
 
 {{site.alert.tip}}
   These automated updates are called _quick-fixes_ in IntelliJ and Android
-  Studio, and _code actions_ in VS Codes.
+  Studio, and _code actions_ in VS Code.
 {{site.alert.end}}
 
 
