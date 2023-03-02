@@ -12,7 +12,7 @@ specialized FAQs:
 * [Web FAQ][]
 * [Performance FAQ][]
 
-[Web FAQ]: {{site.url}}/development/platform-integration/web
+[Web FAQ]: {{site.url}}/development/platform-integration/web/faq
 [Performance FAQ]: {{site.url}}/perf/faq
 
 ### What is Flutter?
