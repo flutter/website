@@ -30,8 +30,6 @@
           permalink: /get-started/flutter-for/declarative
     - title: "Dart language overview"
       permalink: https://dart.dev/overview
-    - title: "Building a web app"
-      permalink: /get-started/web
 
 - title: Samples & tutorials
   children:
@@ -205,6 +203,8 @@
         - title: Web
           permalink: /development/platform-integration/web
           children:
+            - title: Building web apps
+              permalink: /development/platform-integration/web/building
             - title: Web FAQ
               permalink: /development/platform-integration/web/faq
             - title: Web renderers

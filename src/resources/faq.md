@@ -1099,8 +1099,8 @@ apps built with Flutter should follow Apple's
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`UserAccountsDrawerHeader`]: {{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html
 [VS Code]: https://code.visualstudio.com/
-[web]: {{site.url}}/web
-[web instructions]: {{site.url}}/get-started/web
+[web]: {{site.url}}/development/platform-integration/web
+[web instructions]: {{site.url}}/development/platform-integration/web/building
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: {{site.url}}/development/ui/widgets
 [supported platforms]: {{site.url}}/development/tools/sdk/release-notes/supported-platforms
