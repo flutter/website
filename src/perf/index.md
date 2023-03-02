@@ -8,6 +8,14 @@ frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
 picture-in-picture" allowfullscreen></iframe>
 [Flutter performance basics]({{site.youtube-site}}/watch?v=PKGguGUwSYE)
 
+{{site.alert.note}}
+  If your app has a performance issue and you are
+  trying to debug it, check out the DevTool's page
+  on [Using the Performance view][].
+{{site.alert.end}}
+
+[Using the Performance view]: {{site.url}}/development/tools/devtools/performance
+
 What is performance? Why is performance important? How do I improve performance?
 
 Our goal is to answer those three questions (mainly the third one), and 
@@ -15,15 +23,17 @@ anything related to them. This document should serve as the single entry
 point or the root node of a tree of resources that addresses any questions 
 that you have about performance.
 
-The answers to the first two questions are mostly philosophical, and not as 
-helpful to many developers who visit this page with specific
-performance issues that need to be solved. Therefore, the answers to those 
+The answers to the first two questions are mostly philosophical,
+and not as helpful to many developers who visit this page with specific
+performance issues that need to be solved.
+Therefore, the answers to those 
 questions are in the [appendix]({{site.url}}/perf/appendix).
 
 To improve performance, you first need metrics: some measurable numbers to
-verify the problems and improvements. In the [metrics]({{site.url}}/perf/metrics) 
-page, you'll see which metrics are currently used, and which tools and APIs 
-are available to get the metrics.
+verify the problems and improvements.
+In the [metrics]({{site.url}}/perf/metrics) page,
+you'll see which metrics are currently used,
+and which tools and APIs are available to get the metrics.
 
 There is a list of [Frequently asked questions]({{site.url}}/perf/faq), 
 so you can find out if the questions you have or the problems you're having 
