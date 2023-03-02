@@ -445,6 +445,7 @@
       { "source": "/go/verbatim-logical-keys-for-non-latin-layout", "destination": "https://docs.google.com/document/d/1ZNgNxito-NVUS1JKlcjdzHUcKyyiupy8Za-jb131dD4/edit?usp=sharing&resourcekey=0-eeEZ5X0jAzuqSTdmPWlv0w", "type": 301 },
       { "source": "/go/web-add-to-app", "destination": "https://docs.google.com/document/d/1rFM0qmYds1JkntTruBh8eO72xbT2KoP9JdbizucAAwQ/edit", "type": 301 },
       { "source": "/go/web-astral-projections", "destination": "https://docs.google.com/document/d/1pvH-J8opXsjntTpFf1bbsbU8N1vFd8tPKvBgcNn8UKQ", "type": 301 },
+      { "source": "/go/web-declarative-bootstrap", "destination": "https://docs.google.com/document/d/1jVXxC0tNDW45ypfVESyHipL2lHCX32GmFyJNO0u9c6Y/edit?resourcekey=0-AQ8z_0_U8Vq3JBdyracNuQ", "type": 301 },
       { "source": "/go/web-plugins-layout", "destination": "https://docs.google.com/document/d/1PeS-QSAFydHXhjZrqkub-GRPMs83roh8VwhbUScWuGQ", "type": 301 },
       { "source": "/go/web-programmatic-bootstrap", "destination": "https://docs.google.com/document/d/13kVA40gQ3T0FLqmV4w5rNvLHjmU6XWFbb7j0_YV7k9M", "type": 301 },
       { "source": "/go/web-renderer-options", "destination": "https://docs.google.com/document/d/1aY0iU16wf_sdT7nwfpjgT-IatHNfF3slTiYHKmxcIog", "type": 301 },
