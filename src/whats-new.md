@@ -605,7 +605,7 @@ publication since the last stable release:
 [Updates on Flutter Testing]: {{site.flutter-medium}}/updates-on-flutter-testing-f54aa9f74c7e
 [Using multiple Flutter instances]: {{site.url}}/development/add-to-app/multiple-flutters
 [Web FAQ]: {{site.url}}/development/platform-integration/web/faq
-[Web support for Flutter]: {{site.url}}/web
+[Web support for Flutter]: {{site.url}}/development/platform-integration/web
 [What's new in Flutter 2]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
 [Who is Dash?]: {{site.url}}/dash
 [write integration tests using the integration_test package]: {{site.url}}/testing/integration-tests
@@ -930,7 +930,7 @@ Happy Fluttering!
 [add Flutter to an existing app]: {{site.url}}/development/add-to-app
 [Announcing Flutter 1.12: What a year!]: {{site.flutter-medium}}/announcing-flutter-1-12-what-a-year-22c256ba525d
 [app size]: {{site.url}}/perf/app-size#ios
-[building a web app with Flutter]: {{site.url}}/get-started/web
+[building a web app with Flutter]: {{site.url}}/development/platform-integration/web/building
 [Desktop support for Flutter]: {{site.url}}/development/platform-integration/desktop
 [Flutter: the first UI platform designed for ambient computing]: {{site.google-blog}}/2019/12/flutter-ui-ambient-computing.html?m=1
 [Flutter Favorite program]: {{site.url}}/development/packages-and-plugins/favorites
@@ -940,7 +940,7 @@ Happy Fluttering!
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Migrating your plugin to the new Android APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 [implicit animations]: {{site.url}}/codelabs/implicit-animations
-[Web support for Flutter]: {{site.url}}/web
+[Web support for Flutter]: {{site.url}}/development/platform-integration/web
 [Web support for Flutter goes beta]: {{site.flutter-medium}}/web-support-for-flutter-goes-beta-35b64a1217c0
 [write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 [Get started]: {{site.url}}/get-started/install
@@ -1003,12 +1003,12 @@ Other relevant docs:
 Happy Fluttering!
 
 [1.9.1 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.9.1
-[building a web application]: {{site.url}}/get-started/web
+[building a web application]: {{site.url}}/development/platform-integration/web/building
 [`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
 [creating responsive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
 [Flutter Medium publication]: {{site.medium}}/flutter
-[Flutter for web]: {{site.url}}/web
+[Flutter for web]: {{site.url}}/development/platform-integration/web
 [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: {{site.google-blog}}/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
 [Improving Flutter's Error Messages]: {{site.flutter-medium}}/improving-flutters-error-messages-e098513cecf9
 [Performance view]: {{site.url}}/development/tools/devtools/performance
