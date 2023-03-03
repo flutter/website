@@ -89,21 +89,21 @@ It provides a simple API to handle complex routing scenarios.
 
     <img src="/assets/images/docs/cookbook/set-up-universal-links-info-plist.png" alt="Xcode info.Plist screenshot" width="100%" />
 
-4. In the `Info` property list, add a row.
-5. Set the key to `FlutterDeepLinkingEnabled` with a
-`Boolean` value set to `YES`.
+4. In the `Info` property list, control-click at the list to add a row.
+5. Control-click the newly added row and turn on the **Raw Keys and Values** mode
+6. Update the key to `FlutterDeepLinkingEnabled` with a `Boolean` value set to `YES`.
 
     <img src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png" alt="flutter deeplinking enabled screenshot" width="100%" />
 
-6. Click the top-level **Runner**.
-7. Click **Sign & Signature**.
-8. Click **+ Capability** to add a new domain.
-9. Click **Associated Domains**.
+7. Click the top-level **Runner**.
+8. Click **Sign & Signature**.
+9. Click **+ Capability** to add a new domain.
+10. Click **Associated Domains**.
 
     <img src="/assets/images/docs/cookbook/set-up-universal-links-associated-domains.png" alt="Xcode associated domains screenshot" width="100%" />
 
-10. In the **Associated Domains** section, click **+**.
-11. Enter `applinks:<web domain>`. Replace `<web domain>` with your own domain name.
+11. In the **Associated Domains** section, click **+**.
+12. Enter `applinks:<web domain>`. Replace `<web domain>` with your own domain name.
 
     <img src="/assets/images/docs/cookbook/set-up-universal-links-add-associated-domains.png" alt="Xcode add associated domains screenshot" width="100%" />
 
