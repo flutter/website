@@ -1940,7 +1940,7 @@ which are positioned below the contact information.
 <ul markdown="1">
   <li markdown="1">
   The first `Text` widget has the name `Flutter McFlutter` and
-  the `style` property set to `Theme.of(context).textTheme.headline5`.
+  the `style` property set to `Theme.of(context).textTheme.headlineSmall`.
   </li>
   <li markdown="1">
   The second `Text` widget contains the title `Experienced App Developer`.
@@ -1979,7 +1979,7 @@ class MyWidget extends StatelessWidget {
       children: [
         Text(
           'Flutter McFlutter', 
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const Text('Experienced App Developer'),
       ],
@@ -1996,7 +1996,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2080,7 +2080,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline5" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2141,7 +2141,7 @@ class MyWidget extends StatelessWidget {
       children: [
         Text(
           'Flutter McFlutter',
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const Text('Experienced App Developer'),
       ],
@@ -2169,7 +2169,7 @@ class MyWidget extends StatelessWidget {
           children: [
             Text(
               'Flutter McFlutter',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const Text('Experienced App Developer'),
           ],
@@ -2188,7 +2188,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2312,7 +2312,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2383,7 +2383,7 @@ class MyWidget extends StatelessWidget {
           children: [
             Text(
               'Flutter McFlutter',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const Text('Experienced App Developer'),
           ],
@@ -2417,7 +2417,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2442,7 +2442,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2598,7 +2598,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2671,7 +2671,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2715,7 +2715,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2752,7 +2752,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2908,7 +2908,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -3001,7 +3001,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3049,7 +3049,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3092,7 +3092,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -3248,7 +3248,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
