@@ -1996,7 +1996,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2187,7 +2187,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2441,7 +2441,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2751,7 +2751,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -3091,7 +3091,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
