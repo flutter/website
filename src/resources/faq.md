@@ -497,8 +497,7 @@ macOS, and Linux.
 ### Can I use Flutter inside of my existing native app?
 
 Yes, learn more in the [add-to-app][] section of our website.
-Also, note that experimental support for adding
-[multiple Flutter screens or views][] is available.
+Support for adding [multiple Flutter screens or views][] is also available.
 
 ### Can I access platform services and APIs like sensors and local storage?
 
