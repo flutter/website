@@ -41,12 +41,8 @@ that works on mobile, desktop, and web.
 
 [codelab-web]: {{site.url}}/get-started/codelab-web
 
-{% comment %}
-TODO: replace with video walkthrough once that's ready
 
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/Z6KZ3cTGBWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% endcomment %}
-
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/8sAyPDLorek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
