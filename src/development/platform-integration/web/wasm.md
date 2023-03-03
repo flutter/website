@@ -4,7 +4,7 @@ description: Current status of Flutter's experimental support for WebAssembly (W
 short-title: Wasm
 ---
 
-The Flutter and Dart teams are excited add
+The Flutter and Dart teams are excited to add
 [WebAssembly](https://webassembly.org/) as a compilation target when building
 applications for the web.
 
