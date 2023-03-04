@@ -63,13 +63,6 @@ Click the **Run** button to run the example:
 
 {% include docs/implicit-animations/fade-in-starter-code.md %}
 
-{{site.alert.important}}
-  This page uses an embedded version of [DartPad] to display
-  examples and exercises.
-  If you see empty boxes instead of DartPads, go to the
-  [DartPad troubleshooting page].
-{{site.alert.end}}
-
 ### Animate opacity with AnimatedOpacity widget
 
   This section contains a list of steps you can use to add an
