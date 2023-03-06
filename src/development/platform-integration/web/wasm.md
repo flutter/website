@@ -16,8 +16,8 @@ Compiling Dart to this new target requires
 an upcoming addition to the WebAssembly standard. The Chrome team is actively
 [working on WasmGC](https://chromestatus.com/feature/6062715726462976).
 
-In the mean time, checkout Flutter's
-[existing support for the web](https://flutter.dev/multi-platform/web). We are
+In the mean time, check out Flutter's
+[existing support for the web]({{site.main-url}}/multi-platform/web). We are
 optimistic that existing Flutter web applications will have to do little or no
 work to support WebAssembly once work is complete.
 
