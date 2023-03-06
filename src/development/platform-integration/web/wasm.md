@@ -25,5 +25,5 @@ You might also be interested in this talk by folks on our team:
 [Flutter, Dart, and WasmGC: A new model for web applications]
 (https://wasmio.tech/sessions/flutter-dart-and-wasm-gc-a-new-model-for-web-applications/).
 
-Check out [flutter.dev/wasm]({{site.main-url}}/wasm) for the latest updates
-on this effort.
+For the latest updates on this effort, 
+check out [flutter.dev/wasm]({{site.main-url}}/wasm).
