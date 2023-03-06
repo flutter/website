@@ -497,8 +497,6 @@ macOS, and Linux.
 ### Can I use Flutter inside of my existing native app?
 
 Yes, learn more in the [add-to-app][] section of our website.
-Also, note that experimental support for adding
-[multiple Flutter screens or views][] is available.
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -1064,7 +1062,6 @@ apps built with Flutter should follow Apple's
 [MDC-103 Flutter: Material Theming]: {{site.codelabs}}/codelabs/mdc-103-flutter/index.html?index=..%2F..index#0
 [Measuring your app's size]: {{site.url}}/perf/app-size
 [minimal Flutter app]: {{site.repo.flutter}}/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
-[multiple Flutter screens or views]: {{site.url}}/development/add-to-app/multiple-flutters
 [`NotificationListener`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
 [one of the top design ideas of the decade]: https://www.fastcompany.com/90442092/the-14-most-important-design-ideas-of-the-decade-according-to-the-experts
 [only one license]: {{site.repo.flutter}}/blob/master/LICENSE
