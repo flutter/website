@@ -85,7 +85,7 @@ and stable channels.
 |Linux   |Debian 9 & below    |
 |Linux   |Ubuntu 20.04        |
 |Linux   |Ubuntu 22.04 (Aspirational Google-tested platform)        |
-|macOS   |Mojave (10.14) - Big Sur (11)   |
+|macOS   |Mojave (10.14) - Big Sur (11)  |
 |Windows |Windows 11 (Aspirational Google-tested platform)          |
 |Windows |Windows 8           |
 |Windows |Windows 7           |
