@@ -1,5 +1,5 @@
 ---
-title: Supported platforms
+title: Supported deployment platforms
 short-title: Supported platforms
 description: The platforms that Flutter supports by platform version.
 ---
@@ -7,7 +7,7 @@ description: The platforms that Flutter supports by platform version.
 ## Support Tiers
 
 We define three tiers of support for the platforms on
-which Flutter runs:
+which built Flutter may be deployed:
 
 1. Google-tested platforms
   are automatically tested at every commit
@@ -22,8 +22,18 @@ which Flutter runs:
    
 ## Supported platforms
 
+<!--
+*IMPORTANT NOTE*:
+When changing the minimum support version of macOS, Windows, and Linux,
+make sure to make a corresponding change in the get started pages:
+  - /src/get-started/install/macos.md
+  - /src/get-started/install/windows.md
+  - /src/get-started/install/linux.md
+-->
+
 As of the current release,
-Flutter supports the following platforms as part of Google-tested and best-effort platform tier:
+Flutter supports deployment of apps on the following platforms 
+as part of Google-tested and best-effort platform tier:
 
 <div class="table-wrapper" markdown="1">
 |Platform|Version                       |Channels |
