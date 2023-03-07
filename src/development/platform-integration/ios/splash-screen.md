@@ -5,8 +5,10 @@ description: Learn how to add a splash screen to your iOS app.
 toc: false
 ---
 
-<img src='/assets/images/docs/development/ui/splash-screen/android-splash-screen/splash-screens_header.png'
-class="mw-100" alt="A graphic outlining the launch flow of an app including a splash screen">
+{% comment %}
+Consider introducing an image here similar to the android splash-screen one:
+https://github.com/flutter/website/issues/8357
+{% endcomment -%}
 
 Splash screens (also known as launch screens) provide
 a simple initial experience while your iOS app loads.
