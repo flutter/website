@@ -149,7 +149,7 @@
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/catalog/samples/*", "destination": "https://flutter.github.io/samples/#", "type": 301 },
-      { "source": "/chat", "destination": "https://gitter.im/flutter/flutter", "type": 302 },
+      { "source": "/chat", "destination": "https://github.com/flutter/flutter/wiki/Chat", "type": 302 },
       { "source": "/custom-deferred-components", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components#custom-implementations", "type": 301 },
       { "source": "/deferred-components-wiki", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components", "type": 301 },
       { "source": "/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
