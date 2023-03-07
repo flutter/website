@@ -6,7 +6,8 @@ toc: false
 ---
 
 {% comment %}
-Consider introducing an image here similar to the android splash-screen one.
+Consider introducing an image here similar to the android splash-screen one:
+https://github.com/flutter/website/issues/8357
 {% endcomment -%}
 
 Splash screens (also known as launch screens) provide
