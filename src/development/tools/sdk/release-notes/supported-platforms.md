@@ -31,7 +31,7 @@ Flutter supports the following platforms as part of Google-tested and best-effor
 |Android | API 16 (Android 4.1) & above | All     |
 |iOS     | iOS 11 & above               | All     |
 |Linux   | Debian, 64-bit               | All     |
-|macOS   | El Capitan (10.11) & above   | All     |
+|macOS   | Mojave (10.14) & above       | All     |
 |Web     | Chrome 84  & above           | All     |
 |Web     | Firefox 72.0 & above         | All     |
 |Web     | Safari on El Capitan & above | All     |
@@ -76,15 +76,12 @@ and stable channels.
 |Linux   |Debian 9 & below    |
 |Linux   |Ubuntu 20.04        |
 |Linux   |Ubuntu 22.04 (Aspirational Google-tested platform)        |
-|macOS   |El Capitan (10.11) - Big Sur (11)*   |
+|macOS   |Mojave (10.14) - Big Sur (11)  |
 |Windows |Windows 11 (Aspirational Google-tested platform)          |
 |Windows |Windows 8           |
 |Windows |Windows 7           |
 {:.table.table-striped}
 </div>
-
-\* Flutter 3.3 is the last stable release with macOS 10.11 through 10.13
-best-effort support.
 
 ### Unsupported platforms
 
@@ -94,7 +91,7 @@ best-effort support.
 |Android |Android SDK 15 & below                      |
 |iOS     |[iOS 10 & below and `arm7v` 32-bit iOS][]   |
 |Linux   |Any 32-bit platform                         |
-|macOS   |Yosemite (10.10) & below                    |
+|macOS   |High Sierra (10.13) & below                 |
 |Windows |Windows Vista & below                       |
 |Windows |Any 32-bit platform                         |
 {:.table.table-striped}
