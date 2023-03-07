@@ -6,18 +6,12 @@ js:
 - defer: true
   url: https://dartpad.dev/inject_embed.dart.js
 ---
+
 Welcome to the Flutter layout codelab,
 where you learn how to build a Flutter UI without
 downloading and installing Flutter or Dart!
 
-{{site.alert.important}}
-  This codelab covers basic Flutter layout concepts using an
-  experimental code editor called DartPad.
-  DartPad hasn't been fully tested on all browsers.
-  If you experience any difficulties while using DartPad
-  on a specific browser, please create a [DartPad issue][]
-  and specify which browser you're using in the issue title.
-{{site.alert.end}}
+{% include docs/dartpad-troubleshooting.md %}
 
 Flutter is different from other frameworks because its UI
 is built in code, not (for example) in an XML file or similar.
@@ -2124,6 +2118,7 @@ Future<void> main() async {
       ],
      );
   ```
+{{site.alert.end}}
 
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}

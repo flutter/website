@@ -75,7 +75,7 @@
           permalink: /development/ui/interactive
         - title: Assets and images
           permalink: /development/ui/assets-and-images
-        - title: Material
+        - title: Material Design
           permalink: /development/ui/material
         - title: Navigation & routing
           permalink: /development/ui/navigation
@@ -118,8 +118,6 @@
               permalink: /development/ui/advanced/shaders
             - title: Slivers
               permalink: /development/ui/advanced/slivers
-            - title: Splash screens
-              permalink: /development/ui/advanced/splash-screen
         - title: Widget catalog
           permalink: /development/ui/widgets
     - title: Data & backend
@@ -163,6 +161,8 @@
         - title: Android
           permalink: /development/platform-integration/android
           children:
+            - title: Adding a splash screen
+              permalink: /development/platform-integration/android/splash-screen
             - title: C interop
               permalink: /development/platform-integration/android/c-interop
             - title: Hosting native Android views
@@ -180,6 +180,8 @@
           children:
             - title: Leveraging Apple's system libraries
               permalink: /development/platform-integration/ios/apple-frameworks
+            - title: Adding a splash screen
+              permalink: /development/platform-integration/ios/splash-screen
             - title: Adding iOS App Clip support
               permalink: /development/platform-integration/ios/ios-app-clip
             - title: C interop

@@ -36,7 +36,7 @@ or the [flutter.dev website][doc-issues].
 Other ways you can contribute:
 
 * [Ask HOW-TO questions that can be answered with specific solutions][so]
-* [Live chat with Flutter engineers and users][gitter]
+* [Live chat with Flutter engineers and users][chat]
 * [Discuss Flutter, best practices, app design, and more on our
    mailing list][mailinglist]
 * [Report bugs and request features][issues]
@@ -61,5 +61,5 @@ Happy Fluttering!
 [doc-PRs]: https://github.com/flutter/website/pulls
 [so]: https://stackoverflow.com/tags/flutter
 [mailinglist]: https://groups.google.com/d/forum/flutter-dev
-[gitter]: https://gitter.im/flutter/flutter
+[chat]: https://github.com/flutter/flutter/wiki/Chat
 [reddit]: https://www.reddit.com/r/FlutterDev
