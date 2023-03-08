@@ -27,6 +27,10 @@ $site-color-card-link: #40C4FF;
 
   a {
     color: $site-color-primary;
+
+    &:hover {
+      color: $flutter-color-dark-blue;
+    }
   }
 
   #dartpad-host {
