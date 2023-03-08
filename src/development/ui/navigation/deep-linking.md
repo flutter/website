@@ -32,7 +32,7 @@ If you are a visual learner, check out the following video:
 
 ## Get started
 
-To get started, see our cookbook for Android and iOS:
+To get started, see our cookbooks for Android and iOS:
 
 <div class="card-deck mb-8">
   <a class="card" href="{{site.url}}/cookbook/navigation/set-up-app-links">
