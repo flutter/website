@@ -26,10 +26,10 @@
     }
   }
 
-  @mixin nav-link-hover {
+  @mixin nav-link-not-active-hover {
     &:not(.disabled) {
       &:hover {
-        color: $flutter-color-dark-blue;
+        color: $site-color-primary;
       }
     }
   }
@@ -40,7 +40,7 @@
     color: inherit;
     &.disabled { opacity: 0.5; }
 
-    @include nav-link-hover;
+    @include nav-link-not-active-hover;
   }
 
   @mixin collapsable() {
@@ -92,10 +92,14 @@
           font-weight: $font-weight-bold;
           &:not(.collapsable) {
             color: $site-color-primary;
+
+            &:hover {
+              color: $flutter-color-dark-blue;
+            }
           }
         }
 
-        @include nav-link-hover;
+        @include nav-link-not-active-hover;
 
         &.collapsable {
           &::before{
