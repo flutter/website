@@ -67,7 +67,7 @@
       { "source": "/jobs/**", "destination": "/jobs", "type": 301 },
       { "source": "/json", "destination": "/development/data-and-backend/json", "type": 301 },
       { "source": "/layout", "destination": "/development/ui/layout/box-constraints", "type": 301 },
-      { "source": "/networking", "destination": "/cookbook/networking/fetch-data", "type": 301 },
+      { "source": "/networking", "destination": "/development/data-and-backend/networking", "type": 301 },
       { "source": "/null-safety", "destination": "https://dart.dev/null-safety", "type": 301 },
       { "source": "/overview", "destination": "/resources/architectural-overview", "type": 301 },
       { "source": "/platform-channels", "destination": "/development/platform-integration/platform-channels", "type": 301 },
