@@ -140,6 +140,7 @@
       { "source": "/reference/widgets/widgetindex", "destination": "/reference/widgets", "type": 301 },
       { "source": "/release/breaking-changes/scrollable_alert_dialog", "destination": "/release/breaking-changes/scrollable-alert-dialog", "type": 301 },
       { "source": "/resources/rendering", "destination": "/resources/architectural-overview#rendering-and-layout", "type": 301 },
+      { "source": "/resources/security-false-positives", "destination": "/reference/security-false-positives", "type": 301 },
       { "source": "/resources/technical-overview", "destination": "/resources/architectural-overview", "type": 301 },
       { "source": "/testing/best-practices", "destination": "/perf/best-practices", "type": 301 },
       { "source": "/testing/ui-performance", "destination": "/perf/ui-performance", "type": 301 },
