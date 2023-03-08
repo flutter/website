@@ -12,7 +12,6 @@
       permalink: /get-started/learn-more
     - divider
     - title: From another platform?
-      expanded: true
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
