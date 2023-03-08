@@ -439,8 +439,6 @@
       permalink: https://flutter.dev/brand
     - title: Platform adaptations
       permalink: /resources/platform-adaptations
-    - title: Security false positives **NEW**
-      permalink: /resources/security-false-positives
     - title: Videos and online courses
       permalink: /resources/videos
 
@@ -455,5 +453,7 @@
       permalink: https://api.flutter.dev
     - title: flutter CLI reference
       permalink: /reference/flutter-cli
+    - title: Security false positives
+      permalink: /reference/security-false-positives
     - title: Package site
       permalink: https://pub.dev/flutter
