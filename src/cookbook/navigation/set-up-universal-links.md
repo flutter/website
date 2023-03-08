@@ -2,11 +2,11 @@
 title: Set up universal links for iOS
 description: How set up universal links for an iOS application built with Flutter
 prev:
-  title: Send data to a new screen
-  path: /cookbook/navigation/passing-data
+  title: Set up app links for Android
+  path: /cookbook/navigation/set-up-app-links
 next:
-  title: Delete data on the internet
-  path: /cookbook/networking/delete-data
+  title: Return data from a screen
+  path: /cookbook/navigation/returning-data
 js:
 - defer: true
   url: https://dartpad.dev/inject_embed.dart.js
@@ -95,6 +95,12 @@ It provides a simple API to handle complex routing scenarios.
 
     <img src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png" alt="flutter deeplinking enabled screenshot" width="100%" />
 
+   {{site.alert.note}}
+       The FlutterDeepLinkingEnabled property opts into Flutter's default deeplink handler. If
+       you are using the third-party plugins, such as [uni_links][], setting this property will
+       break these plugins. Skip this step if you prefer to use third-party plugins.
+   {{site.alert.end}}
+
 7. Click the top-level **Runner**.
 8. Click **Sign & Signature**.
 9. Click **+ Capability** to add a new domain.
@@ -123,8 +129,8 @@ Apple formats the app ID as `<team id>.<bundle id>`.
 * Locate the team ID in the [developer account][].
 
 **For example:** Given a team ID of `S8QB4VV633`
-and a bundle ID of `com.myapp.deeplink_cookbook`, The app ID is
-`S8QB4VV633.com.myapp.deeplink_cookbook`.
+and a bundle ID of `com.example.deeplinkCookbook`, The app ID is
+`S8QB4VV633.com.example.deeplinkCookbook`.
 
 ### apple-app-site-association
 
@@ -134,7 +140,7 @@ The hosted file should have the following content:
   "applinks": {
       "details": [
       {
-        "appID": "S8QB4VV633.com.myapp.deeplink_cookbook",
+        "appID": "S8QB4VV633.com.example.deeplinkCookbook",
         "paths": ["*"]
       }
     ]
@@ -143,6 +149,7 @@ The hosted file should have the following content:
 ```
 
 1. Set the `appID` value to your Flutter application ID.
+
 2. Set the `paths` value to `["*"]`.
    The `paths` field specifies the allowed universal links.
    Using the asterisk, `*` redirects every path to the Flutter application.
@@ -166,7 +173,7 @@ The hosted file should have the following content:
 
 You can use a real device or the Simulator to test a universal link,
 but first make sure you have executed `flutter run` at least once on
-the real device. This ensures that the Flutter application is installed.
+the devices. This ensures that the Flutter application is installed.
 
 <img src="/assets/images/docs/cookbook/set-up-universal-links-simulator.png" alt="Simulator screenshot" width="50%" />
 
@@ -182,8 +189,14 @@ launches and displays the details screen:
 
 <img src="/assets/images/docs/cookbook/set-up-universal-links-simulator-deeplinked.png" alt="Deeplinked Simulator screenshot" width="50%" />
 
+## Appendix
+
+Source code: [deeplink_cookbook][]
+
 [alternate mode section]: https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains?language=objc
+[deeplink_cookbook]: https://github.com/flutter/codelabs/tree/main/deeplink_cookbook
 [developer account]: https://developer.apple.com/account
 [Firebase Hosting]: https://firebase.google.com/docs/hosting
 [go_router]: https://pub.dev/packages/go_router
 [GitHub Pages]: https://pages.github.com
+[uni_links]: https://pub.dev/packages/uni_links

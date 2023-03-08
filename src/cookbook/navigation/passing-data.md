@@ -5,8 +5,8 @@ prev:
   title: Return data from a screen
   path: /cookbook/navigation/returning-data
 next:
-  title: Set up universal links for iOS
-  path: /cookbook/navigation/set-up-universal-links
+  title: Delete data on the internet
+  path: /cookbook/networking/delete-data
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
