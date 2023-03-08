@@ -1143,7 +1143,7 @@ of the `App` class:
 
 <?code-excerpt "lib/cupertino_themes.dart (Theme)"?>
 ```dart
-    CupertinoApp(
+CupertinoApp(
   theme: CupertinoThemeData(
     brightness: Brightness.dark,
   ),
