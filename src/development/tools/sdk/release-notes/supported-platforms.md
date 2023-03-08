@@ -1,5 +1,5 @@
 ---
-title: Supported platforms
+title: Supported deployment platforms
 short-title: Supported platforms
 description: The platforms that Flutter supports by platform version.
 ---
@@ -7,7 +7,7 @@ description: The platforms that Flutter supports by platform version.
 ## Support Tiers
 
 We define three tiers of support for the platforms on
-which Flutter runs:
+which built Flutter may be deployed:
 
 1. Google-tested platforms
   are automatically tested at every commit
@@ -22,8 +22,18 @@ which Flutter runs:
    
 ## Supported platforms
 
+<!--
+*IMPORTANT NOTE*:
+When changing the minimum support version of macOS, Windows, and Linux,
+make sure to make a corresponding change in the get started pages:
+  - /src/get-started/install/macos.md
+  - /src/get-started/install/windows.md
+  - /src/get-started/install/linux.md
+-->
+
 As of the current release,
-Flutter supports the following platforms as part of Google-tested and best-effort platform tier:
+Flutter supports deployment of apps on the following platforms 
+as part of Google-tested and best-effort platform tier:
 
 <div class="table-wrapper" markdown="1">
 |Platform|Version                       |Channels |
@@ -31,7 +41,7 @@ Flutter supports the following platforms as part of Google-tested and best-effor
 |Android | API 16 (Android 4.1) & above | All     |
 |iOS     | iOS 11 & above               | All     |
 |Linux   | Debian, 64-bit               | All     |
-|macOS   | El Capitan (10.11) & above   | All     |
+|macOS   | Mojave (10.14) & above       | All     |
 |Web     | Chrome 84  & above           | All     |
 |Web     | Firefox 72.0 & above         | All     |
 |Web     | Safari on El Capitan & above | All     |
@@ -76,15 +86,12 @@ and stable channels.
 |Linux   |Debian 9 & below    |
 |Linux   |Ubuntu 20.04        |
 |Linux   |Ubuntu 22.04 (Aspirational Google-tested platform)        |
-|macOS   |El Capitan (10.11) - Big Sur (11)*   |
+|macOS   |Mojave (10.14) - Big Sur (11)  |
 |Windows |Windows 11 (Aspirational Google-tested platform)          |
 |Windows |Windows 8           |
 |Windows |Windows 7           |
 {:.table.table-striped}
 </div>
-
-\* Flutter 3.3 is the last stable release with macOS 10.11 through 10.13
-best-effort support.
 
 ### Unsupported platforms
 
@@ -94,7 +101,7 @@ best-effort support.
 |Android |Android SDK 15 & below                      |
 |iOS     |[iOS 10 & below and `arm7v` 32-bit iOS][]   |
 |Linux   |Any 32-bit platform                         |
-|macOS   |Yosemite (10.10) & below                    |
+|macOS   |High Sierra (10.13) & below                 |
 |Windows |Windows Vista & below                       |
 |Windows |Any 32-bit platform                         |
 {:.table.table-striped}

@@ -594,4 +594,4 @@ surrounding `Activity`.
 [using a `FlutterActivity`]: {{site.url}}/development/add-to-app/android/add-flutter-screen
 [`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [`FlutterEngineCache`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
-[splash screen guide]: {{site.url}}/development/ui/advanced/splash-screen
+[splash screen guide]: {{site.url}}/development/platform-integration/android/splash-screen

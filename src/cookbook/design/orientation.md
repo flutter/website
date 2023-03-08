@@ -5,7 +5,7 @@ prev:
   title: Export fonts from a package
   path: /cookbook/design/package-fonts
 next:
-  title: Use custom fonts
+  title: Use a custom font
   path: /cookbook/design/fonts
 js:
   - defer: true

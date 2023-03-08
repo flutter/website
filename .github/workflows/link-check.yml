@@ -19,4 +19,6 @@ jobs:
         with:
           submodules: "recursive"
       - name: Build and check links
-        run: make build # Runs tool/check-links.sh as part of build
+        # Runs tool/check-links.sh as part of build
+        # Overrides {{site.url}} to localhost:5500 since the site use absolute URLs
+        run: make build BUILD_CONFIGS=_config.yml,_config_link_check.yml

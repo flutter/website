@@ -1,5 +1,5 @@
 ---
 layout: toc
-title: linux
-description: Content covering integration with linux in Flutter apps.
+title: Linux
+description: Content covering integration with Linux in Flutter apps.
 ---

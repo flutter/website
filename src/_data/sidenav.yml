@@ -12,7 +12,6 @@
       permalink: /get-started/learn-more
     - divider
     - title: From another platform?
-      expanded: true
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
@@ -30,8 +29,6 @@
           permalink: /get-started/flutter-for/declarative
     - title: "Dart language overview"
       permalink: https://dart.dev/overview
-    - title: "Building a web app"
-      permalink: /get-started/web
 
 - title: Samples & tutorials
   children:
@@ -77,7 +74,7 @@
           permalink: /development/ui/interactive
         - title: Assets and images
           permalink: /development/ui/assets-and-images
-        - title: Material
+        - title: Material Design
           permalink: /development/ui/material
         - title: Navigation & routing
           permalink: /development/ui/navigation
@@ -120,8 +117,6 @@
               permalink: /development/ui/advanced/shaders
             - title: Slivers
               permalink: /development/ui/advanced/slivers
-            - title: Splash screens
-              permalink: /development/ui/advanced/splash-screen
         - title: Widget catalog
           permalink: /development/ui/widgets
     - title: Data & backend
@@ -165,6 +160,8 @@
         - title: Android
           permalink: /development/platform-integration/android
           children:
+            - title: Adding a splash screen
+              permalink: /development/platform-integration/android/splash-screen
             - title: C interop
               permalink: /development/platform-integration/android/c-interop
             - title: Hosting native Android views
@@ -175,11 +172,15 @@
               permalink: /development/platform-integration/android/androidx-migration
             - title: Deprecated Splash Screen API Migration
               permalink: /development/platform-integration/android/splash-screen-migration
+            - title: Targeting ChromeOS with Android
+              permalink:  /development/platform-integration/android/chromeos
         - title: iOS
           permalink: /development/platform-integration/ios
           children:
             - title: Leveraging Apple's system libraries
               permalink: /development/platform-integration/ios/apple-frameworks
+            - title: Adding a splash screen
+              permalink: /development/platform-integration/ios/splash-screen
             - title: Adding iOS App Clip support
               permalink: /development/platform-integration/ios/ios-app-clip
             - title: Adding iOS app extensions
@@ -205,6 +206,8 @@
         - title: Web
           permalink: /development/platform-integration/web
           children:
+            - title: Building web apps
+              permalink: /development/platform-integration/web/building
             - title: Web FAQ
               permalink: /development/platform-integration/web/faq
             - title: Web renderers
@@ -325,15 +328,6 @@
               permalink: /release/breaking-changes
             - title: Release notes
               permalink: /development/tools/sdk/release-notes
-              children:
-                - title: 1.9.1
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.9.1.md
-                - title: 1.7.8
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.7.8.md
-                - title: 1.5.4
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.5.4.md
-                - title: 1.2.1
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.2.1.md
         - title: Flutter and the pubspec file
           permalink: /development/tools/pubspec
         - title: Hot reload

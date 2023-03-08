@@ -3,7 +3,7 @@ title: Use themes to share colors and font styles
 short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
 prev:
-  title: Use custom fonts
+  title: Use a custom font
   path: /cookbook/design/fonts
 next:
   title: Work with tabs

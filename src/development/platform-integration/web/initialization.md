@@ -24,12 +24,6 @@ The initialization process is split into the following stages:
 This page shows how to customize the behavior
 at each stage of the initialization process.
 
-{{site.alert.note}}
-For more information on implementing splash screens
-on mobile platforms, see
-[Adding a splash screen to your mobile app][].
-{{site.alert.end}}
-
 ## Getting started
 
 By default, the `index.html` file
@@ -230,5 +224,3 @@ Then, from your project directory, run the following:
 ```
 $ flutter create . --platforms=web
 ```
-
-[Adding a splash screen to your mobile app]: {{site.url}}/development/ui/advanced/splash-screen
