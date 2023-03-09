@@ -106,7 +106,7 @@ It provides a simple API to handle complex routing scenarios.
 
 ## 3. Hosting assetlinks.json file
 
-You need to host an `assetlinks.json` file in the web domain.
+Host an `assetlinks.json` file in using a web server with a domain that you own.
 This file tells the mobile browser which Android application to open instead of the browser.
 To create the file, get the package name of the Flutter app you created in the previous step and
 the sha256 fingerprint of the signing key you will be using to build the APK.
@@ -123,19 +123,21 @@ Process may differ depending on the way apk is signed.
 
 #### Using google play app signing
 
-You can find the sha256 fingerprint directly from play console under `Setup > App Integrity`
+You can find the sha256 fingerprint directly from play developer console. Open your app in the play
+console, under `Release> Setup > App Integrity> App Signing tab`
 
+<img src="/assets/images/docs/cookbook/set-up-app-links-pdc-signing-key.png" alt="Screenshot of sha256 fingerprint in play developer console" width="50%" />
 
 #### Using local keystore
 
-If you stores key locally, you can generate sha256 using the following command
+If you are storing the key locally, you can generate sha256 using the following command.
 ```
 keytool -list -v -keystore <path-to-keystore>
 ```
 
 ### assetlinks.json
 
-The hosted file should have the following content:
+The hosted file should look similar to this:
 ```json
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
@@ -181,7 +183,7 @@ adb shell 'am start -a android.intent.action.VIEW \
 {{site.alert.end}}
 
 To test **both** web and app setup, you need to click on a link directly through web browser or other
-apps. One way is to use the google doc by typing the url, and click.
+apps. One way is to create a Google Doc, add the link, and tap on it.
 
 If everything is set up correctly, the Flutter application
 launches and displays the details screen:
