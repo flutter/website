@@ -28,7 +28,7 @@ and look in the indicated directories.
 * <strong>Dart [unit tests][] and [widget tests][]</strong>.
   These tests allow you to test the Dart portion of your plugin
   just as you would test the Dart code of a non-plugin package.
-  However, the plugin’s native code [won’t be loaded][],
+  However, the plugin’s native code [won't be loaded][],
   so any calls to platform channels need to be [mocked in tests][].
 
   See the `test` directory for an example.
@@ -88,7 +88,7 @@ native UI interactions.
 
 [Espresso]: {{site.github}}/flutter/packages/tree/main/packages/espresso
 [GoogleTest]: {{site.github}}/google/googletest
-[integrations tests]: {{site.url}}/cookbook/testing/integration/introduction
+[integration tests]: {{site.url}}/cookbook/testing/integration/introduction
 [JUnit]: {{site.github}}/junit-team/junit4/wiki/Getting-started
 [mocked in tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests#mock-the-platform-channel
 [plugin-tests]: {{site.url}}/development/packages-and-plugins/developing-packages#step-1-create-the-package-1
