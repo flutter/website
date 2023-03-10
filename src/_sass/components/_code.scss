@@ -1,13 +1,3 @@
-
-// TODO moving this to shared, which allows better clarity and 
-// transparency of imports. Nesting is sneaky. 
-// @mixin pre-defaults {
-//   background-color: $site-color-codeblock-bg;
-//   padding: bs-spacer(3) bs-spacer(4);
-// }
-
-// @import '_code_shared';
-
 code {
   color: #008f83;
 }

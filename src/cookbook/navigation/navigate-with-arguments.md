@@ -5,8 +5,8 @@ prev:
   title: Navigate with named routes
   path: /cookbook/navigation/named-routes
 next:
-  title: Return data from a screen
-  path: /cookbook/navigation/returning-data
+  title: Set up app links for Android
+  path: /cookbook/navigation/set-up-app-links
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

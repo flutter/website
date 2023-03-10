@@ -118,7 +118,7 @@ and [Introducing Dart 3 alpha][].
 [Internationalizing Flutter apps]: {{site.url}}/development/accessibility-and-localization/internationalization
 [Introducing isolate background channels]: {{site.medium}}/flutter/introducing-background-isolate-channels-7a299609cad8
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
-[Security false positives]: {{site.url}}/resources/security-false-positives
+[Security false positives]: {{site.url}}/reference/security-false-positives
 [Using the memory view]: {{site.url}}/development/tools/devtools/memory
 [Writing and using fragment shaders]: {{site.url}}/development/ui/advanced/shaders
 [Writing custom platform-specific code]: {{site.url}}/development/platform-integration/platform-channels
