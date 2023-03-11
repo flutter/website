@@ -4,6 +4,15 @@ short-title: Plugin tests
 description: Adding plugin as part of your Flutter tests.
 ---
 
+{{site.alert.note}}
+  To learn how to avoid crashes from a plugin when
+  testing your Flutter app, read on.
+  To learn how to test your plugin code, check out
+  [Testing plugins][].
+{{site.alert.end}}
+
+[Testing plugins]: {{site.url}}/testing/testing-plugins
+
 Almost all [Flutter plugins][] have two parts:
 
 * Dart code, which provides the API your code calls.
@@ -136,5 +145,9 @@ is mainly useful in the internal tests
 of plugin implementations,
 rather than tests of code using plugins.
 
+You might also want to check out
+[Testing plugins][].
+
 [platform channels]: {{site.url}}/development/platform-integration/platform-channels
 [`TestDefaultBinaryMessenger`]: {{site.api}}/flutter/flutter_test/TestDefaultBinaryMessenger-class.html
+[Testing plugins]: {{site.url}}/testing/testing-plugins
