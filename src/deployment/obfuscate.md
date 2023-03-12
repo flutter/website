@@ -5,14 +5,34 @@ description: How to remove function and class names from your Dart binary.
 
 <?code-excerpt path-base="deployment/obfuscate"?>
 
+## What is code obfuscation?
+
 [Code obfuscation][] is the process of modifying an
 app's binary to make it harder for humans to understand.
 Obfuscation hides function and class names in your
-compiled Dart code, making it difficult for an attacker
+compiled Dart code, replacing each symbol with
+another symbol, making it difficult for an attacker
 to reverse engineer your proprietary app.
 
 **Flutter's code obfuscation works
 only on a [release build][].**
+
+[Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
+[release build]: {{site.url}}/testing/build-modes#release
+
+## Limitations
+
+Note that obfuscating your code does _not_
+encrypt resources nor does it protect against
+reverse engineering.
+It only renames symbols with more obscure names.
+
+{{site.alert.info}}
+  It is a **poor security practice** to
+  store secrets in an app.
+{{site.alert.end}}
+
+## Supported targets
 
 The following build targets
 support the obfuscation process 
@@ -32,10 +52,13 @@ described on this page:
 {{site.alert.info}}
   Web apps don't support obfuscation.
   A web app can be [minified][], which provides a similar result.
-  When you build a release version of a Flutter web app, the
-  web compiler minifies the app. To learn more,
+  When you build a release version of a Flutter web app,
+  the web compiler minifies the app. To learn more,
   see [Build and release a web app][].
 {{site.alert.end}}
+
+[Build and release a web app]: {{site.url}}/deployment/web
+[minified]: https://en.wikipedia.org/wiki/Minification_(programming)
 
 ## Obfuscating your app
 
@@ -51,8 +74,8 @@ For example:
 $ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
 ```
 
-Once you've obfuscated your binary, save
-the symbols file. You need this if you later
+Once you've obfuscated your binary, **save
+the symbols file**. You need this if you later
 want to de-obfuscate a stack trace.
 
 {{site.alert.tip}}
@@ -60,6 +83,8 @@ want to de-obfuscate a stack trace.
   to extract Dart program symbols, reducing code size.
   To learn more about app size, see [Measuring your app's size][].
 {{site.alert.end}}
+
+[Measuring your app's size]: {{site.url}}/perf/app-size
 
 For detailed information on these flags, run
 the help command for your specific target, for example:
@@ -98,17 +123,10 @@ eventually be an obfuscated binary.
 
 * Code that relies on matching specific class, function,
   or library names will fail.
-  For example, the following call to `expect()` will not
+  For example, the following call to `expect()` won't
   work in an obfuscated binary:
 
 <?code-excerpt "lib/main.dart (Expect)"?>
 ```dart
 expect(foo.runtimeType.toString(), equals('Foo'));
 ```
-
-
-[Build and release a web app]: {{site.url}}/deployment/web
-[Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
-[Measuring your app's size]: {{site.url}}/perf/app-size
-[minified]: https://en.wikipedia.org/wiki/Minification_(programming)
-[release build]: {{site.url}}/testing/build-modes#release

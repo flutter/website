@@ -13,7 +13,7 @@ Tests with `integration_test` use the same methods that are
 used in [widget testing][].
 
 For an introduction to the `integration_test` package,
-check out the [Integration Tests][] guide.
+check out the [Integration testing][] guide.
 
 ## Starter example project
 
@@ -297,6 +297,6 @@ testWidgets('scroll, tap on the last item (Zedoary), verify selected',
 });
 ```
 
-[Integration Tests]: /testing/integration-tests
-[widget testing]: /testing#widget-tests
+[Integration testing]: {{site.url}}/testing/integration-tests
+[widget testing]: {{site.url}}/testing#widget-tests
 [Example Project]: {{site.repo.this}}/tree/{{site.branch}}/examples/integration_test_migration

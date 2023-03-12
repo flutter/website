@@ -180,7 +180,7 @@
 - title: How can I share my clock face online?
   content: >
     We’re glad you asked! Flutter’s web support is in technical preview and you can use to share your clock face online.
-    Once you <a href="https://docs.flutter.dev/get-started/web" target="_blank" rel="noopener noreferrer">enable web support</a>, test your app by selecting
+    Once you <a href="https://docs.flutter.dev/development/platform-integration/web/building" target="_blank" rel="noopener noreferrer">enable web support</a>, test your app by selecting
     Chrome as the target device in your IDE, or at the command line with <em>flutter run -d chrome</em>. Build a web
     version of your app for deployment using <em>flutter build web</em>. Then, you can host it using
     <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>, <a href="https://medium.com/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469" target="_blank" rel="noopener noreferrer">Firebase</a>,

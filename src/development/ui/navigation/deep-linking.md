@@ -30,88 +30,26 @@ If you are a visual learner, check out the following video:
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/KNAb2XL7k2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <b>Deep linking in Flutter</b>
 
-To follow along with the instructions on this page, clone the
-[Navigation and Routing][router-sample] in flutter/samples.
+## Get started
 
-## Enable deep linking on Android
+To get started, see our cookbooks for Android and iOS:
 
-Add a metadata tag and [intent filter][] to `AndroidManifest.xml`
-inside the `<activity> `tag with the `".MainActivity"` name:
-
-```
-<!-- Deep linking -->
-<meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
-<intent-filter android:autoVerify="true">
-    <action android:name="android.intent.action.VIEW" />
-    <category android:name="android.intent.category.DEFAULT" />
-    <category android:name="android.intent.category.BROWSABLE" />
-    <data android:scheme="http" android:host="flutterbooksample.com" />
-    <data android:scheme="https" />
-</intent-filter>
-```
-
-A full restart is required to apply these changes.
-
-## Test on Android emulator
-
-To test with an Android emulator, give the `adb` command an intent where the
-host name matches the name defined in `AndroidManifest.xml`:
-
-```
-adb shell am start -a android.intent.action.VIEW \
-    -c android.intent.category.BROWSABLE \
-    -d "http://flutterbooksample.com/book/1" \
-    <package name>
-```
-
-Replace the `<package name>` with the package name of your Android app.
-If you named the package `com.example.myflutterapp`, run the following command:
-
-```
-adb shell am start -a android.intent.action.VIEW \
-    -c android.intent.category.BROWSABLE \
-    -d "http://flutterbooksample.com/book/1" \
-    com.example.myflutterapp
-```
-
-For more details, see the [Verify Android App Links][verify-android-links]
-documentation in the Android docs.
-
-## Enable deep linking on iOS
-
-Add two new keys to `Info.plist` in the ios/Runner directory:
-
-```
-<key>FlutterDeepLinkingEnabled</key>
-<true/>
-<key>CFBundleURLTypes</key>
-<array>
-    <dict>
-    <key>CFBundleTypeRole</key>
-    <string>Editor</string>
-    <key>CFBundleURLName</key>
-    <string>flutterbooksample.com</string>
-    <key>CFBundleURLSchemes</key>
-    <array>
-    <string>customscheme</string>
-    </array>
-    </dict>
-</array>
-```
-
-The `CFBundleURLName` is a unique URL used to distinguish
-your app from others that use the same scheme.
-The scheme (`customscheme://`)  can also be unique.
-
-A full restart is required to apply these changes.
-
-## Test on iOS simulator
-
-Use the `xcrun` command to test on the iOS Simulator:
-
-```
-xcrun simctl openurl booted customscheme://flutterbooksample.com/book/1 
-```
+<div class="card-deck mb-8">
+  <a class="card" href="{{site.url}}/cookbook/navigation/set-up-app-links">
+    <div class="card-body">
+      <header class="card-title text-center m-0">
+        Android
+      </header>
+    </div>
+  </a>
+  <a class="card" href="{{site.url}}/cookbook/navigation/set-up-universal-links">
+    <div class="card-body">
+      <header class="card-title text-center m-0">
+        iOS
+      </header>
+    </div>
+  </a>
+</div>
 
 ## Migrating from plugin-based deep linking
 

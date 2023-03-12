@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 
 const owlUrl =
-    'https://raw.githubusercontent.com/flutter/website/main/src/images/owl.jpg';
+    'https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/owl.jpg';
 
 class FadeInDemo extends StatelessWidget {
   const FadeInDemo({super.key});

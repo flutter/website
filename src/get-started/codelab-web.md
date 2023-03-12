@@ -278,7 +278,7 @@ From your IDE, editor, or at the command line,
 * If you know Java, the Dart language should feel very familiar.
 * All of the app's UI is created in Dart code.
   For more information, see [Introduction to declarative UI][].
-* The app’s UI adheres [Material Design][],
+* The app’s UI adheres to [Material Design][],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
   but if you prefer something else,
@@ -1056,7 +1056,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Android Studio and IntelliJ]: {{site.url}}/development/tools/devtools/android-studio
 [Animation docs]: {{site.url}}/development/ui/animations
 [Building a form with validation]: {{site.url}}/cookbook/forms/validation
-[Building a web application with Flutter]: {{site.url}}/get-started/web
+[Building a web application with Flutter]: {{site.url}}/development/platform-integration/web/building
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: {{site.url}}/get-started/test-drive
 [Dart DevTools]: {{site.url}}/development/tools/devtools/overview
