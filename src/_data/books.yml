@@ -65,6 +65,13 @@
   cover: flutter-succinctly.png
   link: "https://www.syncfusion.com/ebooks/flutter-succinctly"
   desc: "App UI in Flutter-from Zero to Hero."
+- title: 'Flutter UI Succinctly'
+  authors:
+    - Ed Freitas
+  publisher: Syncfusion
+  cover: flutter-ui-succinctly.png
+  link: "https://www.syncfusion.com/succinctly-free-ebooks/flutter-ui-succinctly"
+  desc: "In Flutter UI Succinctly, Ed Freitas explores the essentials of constructing user interfaces with Flutter, showing off how a handful of Flutter’s built-in widgets and tools can serve as a springboard to creating apps with impressive interfaces."
 - title: 'Google Flutter Mobile Development Quick Start Guide'
   authors:
     - Prajyot Mainkar
