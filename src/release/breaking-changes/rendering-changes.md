@@ -27,7 +27,7 @@ differences between the `FlutterTest` font and `Ahem` font are:
 **1. Different baseline location**
 
 The `FlutterTest` font's ascent and descent are 0.75 em and 0.25 em, while
-`Ahem`'s are 0.8 em and 0.2 em respectively.
+`Ahem`'s are 0.8 em and 0.2 em, respectively.
 
 In the example golden image change below, the white blocks are text rendered
 using `Ahem` and `FlutterTest`. The second character is taller in the new font
