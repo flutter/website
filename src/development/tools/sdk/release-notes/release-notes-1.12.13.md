@@ -2345,7 +2345,7 @@ We encourage you to check the
 [Migrating your plugin to the new APIs][] documentation,
 and upgrade your plugins accordingly.
 
-[Migrating your plugin to the new APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
+[Migrating your plugin to the new APIs]: {{site.url}}/release/breaking-changes/plugin-api-migration
 
 [1984]({{site.github}}/flutter/plugins/pull/1984) Remove Flutterfire plugins (moved to FirebaseExtended)
 
@@ -2400,7 +2400,7 @@ including adding the ability to pass intent flags
 (contributed by a community member!),
 and upgrading it to the [new plugin API][].
 
-[new plugin API]: {{site.url}}/development/platform-integration/android/plugin-api-migration
+[new plugin API]: {{site.url}}/release/breaking-changes/plugin-api-migration
 
 [2000]({{site.github}}/flutter/plugins/pull/2000) [android_intent] add flags option
 

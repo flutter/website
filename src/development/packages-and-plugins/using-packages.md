@@ -41,7 +41,7 @@ Existing packages enable many use cases—for example,
 making network requests ([`http`][]),
 navigation/route handling ([`go_router`][]),
 integration with device APIs
-([`url_launcher`][] and [`battery`][]),
+([`url_launcher`][] and [`battery_plus`][]),
 and using third-party platform SDKs like Firebase
 ([FlutterFire][]).
 
@@ -52,7 +52,7 @@ see [Adding assets and images][].
 
 
 [Adding assets and images]: {{site.url}}/development/ui/assets-and-images
-[`battery`]: {{site.pub-pkg}}/battery
+[`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
 [FlutterFire]: {{site.github}}/firebase/flutterfire
 
