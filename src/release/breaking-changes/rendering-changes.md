@@ -24,7 +24,7 @@ The `FlutterTest` font looks almost identical to the old default `Ahem`: the
 glyph for most characters is a box that fills the em square. The notable
 differences between the `FlutterTest` font and `Ahem` font are:
 
-**1. Different Baseline Location**
+**1. Different baseline location**
 
 The `FlutterTest` font's ascent and descent are 0.75 em and 0.25 em, while
 `Ahem`'s are 0.8 em and 0.2 em respectively.
