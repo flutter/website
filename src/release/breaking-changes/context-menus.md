@@ -3,59 +3,7 @@ title: A new way to customize context menus
 description: Several hard-coded parameters for customizing context menus have now been replaced by a generic widget builder.
 ---
 
-{% comment %}
-  PLEASE READ THESE GENERAL INSTRUCTIONS:
-  * All lines of text should be 80 chars OR LESS.
-    The writers strongly prefer semantic line breaks:
-    https://github.com/dart-lang/site-shared/blob/main/doc/writing-for-dart-and-flutter-websites.md#semantic-line-breaks
-  * DON'T SUBMIT a PR weeks and weeks in advance.
-    Doing this causes it to get stanky in the website
-    repo and usually develops conflicts in the index file.
-    Ideally, submit a PR once you have confirmed
-    info on the version number where the breaking
-    change landed.
-  * One of the most important things to fill out 
-    in this template is the *Timeline* section.
-    I won't approve/merge the PR until the "landed in"
-    release info is provided. For example:
-    `Landed in version: 1.21.0-5.0.pre<br>`.
-    Do NOT list the PR in this section. Also, don't
-    fill in the "stable" release info unless it's
-    already in a published stable release.
-    After a stable release, I go through and confirm
-    that updates have made it to stable and I then
-    update the breaking change and the index file.
-  * The text in this page should be backwards looking,
-    so write about previous behavior in past tense,
-    not future tense. People are reading this months
-    from now when the change is likely in the stable
-    release, not today. Don't say "in a month" or
-    talk about your plan to do something next week.
-    Assume you've done it, and that they're looking
-    back to figure out how to migrate their code.
-  * Use sentence case for headings and titles.
-    (`## Migration guide`, NOT `Migration Guide`)
-  * DON'T use the abbreviation `i.e.` or `e.g.`.
-    Use "for example" or "such as", and similar.
-  * For links, use the macros where possible.
-    See the examples at the end of this template,
-    but don't use "github.com" or "api.flutter.dev" or
-    "pub.dev" in your URLs. Use the {{site.github}},
-    {{site.api}}, or {{site.pub}} macros.
-  * AVOID "will" when possible, in other words,
-    stay in the present tense. For example:
-    Bad: "When encountering an xxx value,
-          the code will throw an exception."
-    Good: "When encountering an xxx value,
-           the code throws an exception."
-    Good use of "will": "In release 2.0, the xxx API
-          will be deprecated."
-  * Finally, delete the comment tags and text from the
-    final PR.
-{% endcomment %}
-
 ## Summary
-
 Context menus, or text selection toolbars, are the menus that show up when long
 pressing or right clicking on text in Flutter, and they show options like Cut,
 Copy, Paste, and Select all. Previously, it was only possible to narrowly
@@ -64,7 +12,6 @@ been made composable using widgets, just like everything else in Flutter, and
 the specific configuration parameters have been deprecated.
 
 ## Context
-
 Previously, it was possible to disable buttons from the context menus using
 TextSelectionControls, but any customization beyond that required copying and
 editing hundreds of lines of custom classes in the framework. Now, all of this
@@ -116,26 +63,35 @@ All related deprecated features were flagged with the deprecation warning "Use
 `contextMenuBuilder` instead."
 
 ## Migration guide
-
 In general, any previous changes to context menus that have been deprecated now
 require the use of the contextMenuBuilder parameter on the relevant text-editing
 or text-selection widget (
-[on TextField](https://master-api.flutter.dev/flutter/material/TextField/contextMenuBuilder.html),
+[on TextField](https://api.flutter.dev/flutter/material/TextField/contextMenuBuilder.html),
 for example). Return a built-in context menu widget like
-[AdaptiveTextSelectionToolbar](https://master-api.flutter.dev/flutter/material/AdaptiveTextSelectionToolbar-class.html)
+[AdaptiveTextSelectionToolbar](https://api.flutter.dev/flutter/material/AdaptiveTextSelectionToolbar-class.html)
 to use Flutter's built-in context menus, or return your own widget for something
 totally custom.
 
 To transition to contextMenuBuilder, the following parameters and classes have
 been deprecated.
 
-### [ToolbarOptions](https://master-api.flutter.dev/flutter/widgets/ToolbarOptions-class.html)
+### [ToolbarOptions](https://api.flutter.dev/flutter/widgets/ToolbarOptions-class.html)
 This class was previously used to explicitly enable or disable certain buttons
-in a context menu. Now, you can achieve the same effect by adjusting the
-buttonItems passed into AdaptiveTextSelectionToolbar.
+in a context menu. Before this change, you might have passed it into TextField
+or other widgets like this:
 
-For example, you could ensure that the Cut button never appears, but the other
-buttons do appear as usual:
+```dart
+// Deprecated.
+TextField(
+  toolbarOptions: ToolbarOptions(
+    copy: true,
+  ),
+)
+```
+
+Now, you can achieve the same effect by adjusting the buttonItems passed into
+AdaptiveTextSelectionToolbar. For example, you could ensure that the Cut button
+never appears, but the other buttons do appear as usual:
 
 ```dart
 TextField(
@@ -173,106 +129,200 @@ TextField(
 )
 ```
 
-### [TextSelectionControls.canCut](https://master-api.flutter.dev/flutter/widgets/TextSelectionControls/canCut.html) and other button booleans
-This previously had the same effect of enabling and disabling certain buttons as
-ToolbarOptions.cut, etc. had. See the previous section on ToolbarOptions for how
-to achieve a similar effect with contextMenuBuilder.
-
-### [TextSelectionControls.handleCut](https://master-api.flutter.dev/flutter/widgets/TextSelectionControls/handleCut.html) and other button callbacks
-This allowed the modification of the callback called when the buttons were
-pressed.
-
-// TODO(justinmc): An example of modifying the cut action here.
-
-### [buildToolbar](https://master-api.flutter.dev/flutter/widgets/TextSelectionControls/buildToolbar.html)
-
-// TODO(justinmc): An example of building a custom toolbar here.
-
-
-// TODO(justinmc): Also include code before migration above. Also, mention that you don't need to extend/replace crazy classes anymore. Just use contextMenuBuilder.
-Code before migration:
+### [TextSelectionControls.canCut](https://api.flutter.dev/flutter/widgets/TextSelectionControls/canCut.html) and other button booleans
+These booleans previously had the same effect of enabling and disabling certain
+buttons as ToolbarOptions.cut, etc. had. Before this change, you might have been
+hiding and showing buttons by overriding TextSelectionControls and setting these
+booleans like this:
 
 ```dart
-// Example of code before the change.
+// Deprecated.
+class _MyMaterialTextSelectionControls extends MaterialTextSelectionControls {
+  @override
+  bool canCut() => false,
+}
 ```
 
-Code after migration:
+See the previous section on ToolbarOptions for how to achieve a similar effect
+with contextMenuBuilder.
+
+### [TextSelectionControls.handleCut](https://api.flutter.dev/flutter/widgets/TextSelectionControls/handleCut.html) and other button callbacks
+These functions allowed the modification of the callback called when the buttons
+were pressed. Before this change, you might have been modifying context menu
+button callbacks by overriding these handler methods like this:
 
 ```dart
-// Example of code after the change.
+// Deprecated.
+class _MyMaterialTextSelectionControls extends MaterialTextSelectionControls {
+  @override
+  bool handleCut() {
+    // My custom cut implementation here.
+  },
+}
 ```
+
+This is still possible using contextMenuBuilder, including calling
+out to the original buttons' actions in the custom handler, using toolbar
+widgets like AdaptiveTextSelectionToolbar.buttonItems.
+
+This example shows modifying the Copy button to show a dialog in addition to
+doing its usual copy logic.
+
+```dart
+TextField(
+  contextMenuBuilder: (BuildContext context, EditableTextState editableTextState) {
+    final List<ContextMenuButtonItem> buttonItems =
+        editableTextState.contextMenuButtonItems;
+    final int copyButtonIndex = buttonItems.indexWhere(
+      (ContextMenuButtonItem buttonItem) {
+        return buttonItem.type == ContextMenuButtonType.copy;
+      },
+    );
+    if (copyButtonIndex >= 0) {
+      final ContextMenuButtonItem copyButtonItem =
+          buttonItems[copyButtonIndex];
+      buttonItems[copyButtonIndex] = copyButtonItem.copyWith(
+        onPressed: () {
+          copyButtonItem.onPressed();
+          Navigator.of(context).push(
+            DialogRoute<void>(
+              context: context,
+              builder: (BuildContext context) =>
+                const AlertDialog(
+                  title: Text('Copied, but also showed this dialog.'),
+                ),
+            );
+          )
+        },
+      );
+    }
+    return AdaptiveTextSelectionToolbar.buttonItems(
+      anchors: editableTextState.contextMenuAnchors,
+      buttonItems: buttonItems,
+    );
+  },
+)
+```
+
+A full example of modifying a built-in context menu action can be found in the
+samples repository
+[here](https://github.com/flutter/samples/blob/main/experimental/context_menus/lib/modified_action_page.dart).
+
+### [buildToolbar](https://api.flutter.dev/flutter/widgets/TextSelectionControls/buildToolbar.html)
+This function generated the context menu widget similarly to contextMenuBuilder,
+but required much more setup to work with. Before this change, you might have
+been overriding buildToolbar as a part of TextSelectionControls, like this:
+
+```dart
+// Deprecated.
+class _MyMaterialTextSelectionControls extends MaterialTextSelectionControls {
+  @override
+  Widget buildToolbar(
+    BuildContext context,
+    Rect globalEditableRegion,
+    double textLineHeight,
+    Offset selectionMidpoint,
+    List<TextSelectionPoint> endpoints,
+    TextSelectionDelegate delegate,
+    ClipboardStatusNotifier clipboardStatus,
+    Offset lastSecondaryTapDownPosition,
+  ) {
+    return _MyCustomToolbar();
+  },
+}
+```
+
+Now you can simply use contextMenuBuilder directly as a parameter to TextField
+(and others). The information provided in the parameters to buildToolbar can be
+obtained via the EditableTextState that is passed to contextMenuBuilder.
+
+The following example shows how to build a fully-custom toolbar from scratch
+while still using the default buttons.
+
+```dart
+class _MyContextMenu extends StatelessWidget {
+  const _MyContextMenu({
+    required this.anchor,
+    required this.children,
+  });
+
+  final Offset anchor;
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Positioned(
+          top: anchor.dy,
+          left: anchor.dx,
+          child: Container(
+            width: 200.0,
+            height: 200.0,
+            color: Colors.amberAccent,
+            child: Column(
+              children: children,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _MyTextField extends StatelessWidget {
+  const _MyTextField();
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: _controller,
+      maxLines: 4,
+      minLines: 2,
+      contextMenuBuilder: (context, editableTextState) {
+        return _MyContextMenu(
+          anchor: editableTextState.contextMenuAnchors.primaryAnchor,
+          children: AdaptiveTextSelectionToolbar.getAdaptiveButtons(
+            context,
+            editableTextState.contextMenuButtonItems,
+          ).toList(),
+        );
+      },
+    );
+  }
+}
+```
+
+A full example of building a custom context menu can be found in the samples
+repository
+[here](https://github.com/flutter/samples/blob/main/experimental/context_menus/lib/custom_menu_page.dart).
 
 ## Timeline
 
-{% comment %}
-  The version # of the SDK where this change was
-  introduced.  If there is a deprecation window,
-  the version # to which we guarantee to maintain
-  the old API. Use the following template:
-
-  If a breaking change has been reverted in a
-  subsequent release, move that item to the
-  "Reverted" section of the index.md file.
-  Also add the "Reverted in version" line,
-  shown as optional below. Otherwise, delete
-  that line.
-{% endcomment %}
-
-Landed in version: xxx<br>
-In stable release: not yet
-Reverted in version: xxx  (OPTIONAL, delete if not used)
+Landed in version: 3.6.0-0.0.pre<br>
+In stable release: 3.7.0
 
 ## References
 
-{% comment %}
-  These links are commented out because they
-  cause the GitHubActions (GHA) linkcheck to fail.
-  Remove the comment tags once you fill this in with
-  real links. Only use the "master-api" include if
-  you link to "master-api.flutter.dev".
-
-{% include docs/master-api.md %}
-
 API documentation:
 
-* [`ClassName`][]
+* [`TextField.contextMenuBuilder`] {{site.api}}/flutter/material/TextField/contextMenuBuilder.html
+* [`AdaptiveTextSelectionToolbar`] {{site.api}}/flutter/material/AdaptiveTextSelectionToolbar-class.html
 
 Relevant issues:
 
-* [Issue xxxx][]
-* [Issue yyyy][]
+* [Simple custom text selection toolbars] {{site.repo.flutter}}/issues/73574
+* [Right click menu outside of text fields] {{site.repo.flutter}}/issues/98272
+* [Text editing for desktop - stable] {{site.repo.flutter}}/issues/90563
+* [Ability to disable context menu on TextFields] {{site.repo.flutter}}/issues/79796
+* [Missing APIs for text selection toolbar styling] {{site.repo.flutter}}/issues/22210
+* [Enable copy toolbar in all widgets] {{site.repo.flutter}}/issues/49996
+* [Disable context menu from broser] {{site.repo.flutter}}/issues/78671
+* [Custom context menus don't show up for Flutter web] {{site.repo.flutter}}/issues/84219
 
 Relevant PRs:
 
-* [PR title #1][]
-* [PR title #2][]
-{% endcomment %}
-
-{% comment %}
-  Add the links to the end of the file in alphabetical order.
-  The following links are commented out because they make
-  the GitHubActions (GHA) link checker believe they are broken links,
-  but please remove the comment tags before you commit!
-
-  If you are sharing new API that hasn't landed in
-  the stable channel yet, use the master channel link.
-  To link to docs on the master channel,
-  include the following note and make sure that
-  the URL includes the master link (as shown below).
-
-  Here's an example of defining a stable (site.api) link
-  and a master channel (master-api) link.
-
-<!-- Stable channel link: -->
-[`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
-
-<!-- Master channel link: -->
-{% include docs/master-api.md %}
-
-[`ClassName`]: {{site.master-api}}/flutter/[link_to_relevant_page].html
-
-[Issue xxxx]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
-[Issue yyyy]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
-[PR title #1]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
-[PR title #2]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
-{% endcomment %}
+* [ContextMenus] {{site.repo.flutter}}/pull/107193
+* [Ability to disable the browser's context menu on web] {{site.repo.flutter}}/pull/118194
+* [Ability to disable the browser's context menu on web (engine)] {{site.repo.engine}}/pull/38682
+* [Custom context menus in SelectableRegion on web] {{site.repo.flutter}}/pull/121653
