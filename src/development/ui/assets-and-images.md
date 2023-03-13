@@ -477,7 +477,7 @@ screen in commented code. You can uncomment it or use other
 [drawables][] to achieve the intended effect.
 
 For more details, see
-[Adding a splash screen to your mobile app][].
+[Adding a splash screen to your Android app][].
 
 #### iOS
 
@@ -499,11 +499,12 @@ customization using the Interface Builder in
 ![Adding launch icons in Xcode]({{site.url}}/assets/images/docs/assets-and-images/ios-launchscreen-xcode.png){:width="100%"}
 
 For more details, see
-[Adding a splash screen to your mobile app][].
+[Adding a splash screen to your iOS app][].
 
 
 [add-to-app]: {{site.url}}/development/add-to-app/ios
-[Adding a splash screen to your mobile app]: {{site.url}}/development/ui/advanced/splash-screen
+[Adding a splash screen to your Android app]: {{site.url}}/development/platform-integration/android/splash-screen
+[Adding a splash screen to your iOS app]: {{site.url}}/development/platform-integration/ios/splash-screen
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`AssetImage`]: {{site.api}}/flutter/painting/AssetImage-class.html
 [`DefaultAssetBundle`]: {{site.api}}/flutter/widgets/DefaultAssetBundle-class.html

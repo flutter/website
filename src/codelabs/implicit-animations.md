@@ -15,6 +15,8 @@ js:
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
 
+{% include docs/dartpad-troubleshooting.md %}
+
 To get the most out of this codelab, you should have basic knowledge about:
 
 * How to [make a Flutter app].
@@ -60,13 +62,6 @@ consists of a [Material App] home screen containing:
 Click the **Run** button to run the example:
 
 {% include docs/implicit-animations/fade-in-starter-code.md %}
-
-{{site.alert.important}}
-  This page uses an embedded version of [DartPad] to display
-  examples and exercises.
-  If you see empty boxes instead of DartPads, go to the
-  [DartPad troubleshooting page].
-{{site.alert.end}}
 
 ### Animate opacity with AnimatedOpacity widget
 

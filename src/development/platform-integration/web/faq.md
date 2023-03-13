@@ -140,7 +140,7 @@ See [Preparing a web app for release][].
 Not currently.
 
 [Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
-[building a web app with Flutter]: {{site.url}}/get-started/web
+[building a web app with Flutter]: {{site.url}}/development/platform-integration/web/building
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
 [Creating responsive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
 [Debugging]: {{site.url}}/development/tools/devtools/debugger
@@ -156,8 +156,8 @@ Not currently.
 [Running Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: {{site.url}}/testing#widget-tests
-[Web support for Flutter]: {{site.url}}/web
+[Web support for Flutter]: {{site.url}}/development/platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
-[run your web apps in any supported browser]: {{site.url}}/get-started/web#create-and-run
+[run your web apps in any supported browser]: {{site.url}}/development/platform-integration/web/building#create-and-run
 [Integration testing]: {{site.url}}/testing/integration-tests#running-in-a-browser
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
