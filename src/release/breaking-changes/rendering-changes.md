@@ -36,7 +36,7 @@ since it has a larger descent.
 | :---: | :---: | :---: |
 | ![before](assets/material.ink_sparkle.bottom_right.0_masterImage.png) | ![after](assets/material.ink_sparkle.bottom_right.0_testImage.png) | ![baseline_animated](assets/baseline.gif) |
 
-**2. Different Decoration Position**
+**2. Different decoration position**
 
 The underline location is slightly higher in `FlutterTest` than `Ahem`.
 
