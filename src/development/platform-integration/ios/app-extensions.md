@@ -125,7 +125,6 @@ as described in the following section.
   To learn more, check out [Compiling the engine][].
 {{site.alert.end}}
 
-<!-- TO DO: replace link with a ghost PR -->
 1. Create a custom build of the Flutter engine that removes uses of
    `sharedApplication` and corrects the path for the bundle.
    Check out an [example from the community on GitHub][].
@@ -187,14 +186,15 @@ Commenting out `sharedApplication` disables
 many features in the Flutter framework.
 This hasn't been tested in App Store submissions
 and might not work for some app extensions.
-For example, home screen Widgets can't use some
+
+For example, home screen Widgets and Live Activities can't use some
 lower-level APIs needed to draw Flutter UI.
 {{site.alert.end}}
 
 ## Tutorials
 For step-by-step instruction for using app extensions with your
 Flutter iOS app, check out the 
-[Adding Home Screen Widgets to your Flutter app][] codelab.
+[Adding Home Screen Widgets and Live Activities to your Flutter app][] codelab.
 
 [Apple's documentation]: https://developer.apple.com/app-extensions/
 [Core Spotlight]: https://developer.apple.com/documentation/corespotlight
@@ -209,7 +209,7 @@ Flutter iOS app, check out the
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [`workmanager`]: {{site.pub-pkg}}/workmanager
 [read and write files]: {{site.url}}/cookbook/persistence/reading-writing-files
-[example from the community on GitHub]: {{site.github}}/tomduncalf/engine/pull/1/files
+[example from the community on GitHub]: {{site.github}}/flutter/engine/pull/39941
 [Deep Linking]:{{site.url}}/development/ui/navigation/deep-linking
 
 <!--  TO DO: add links when published -->
