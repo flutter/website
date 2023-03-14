@@ -28,7 +28,7 @@ for re-use. Customizing context menus now consists of using `contextMenuBuilder`
 to return whatever widget you want, possibly including reusing the built-in
 context menu widgets.
 
-Here's an example that shows how to add a "Send email" button to the default
+Here's an example that shows how to add a **Send email** button to the default
 context menus whenever an email address is selected. The full code can be found
 in the samples repository in
 [email_button_page.dart]({{site.github}}/flutter/samples/blob/main/experimental/context_menus/lib/email_button_page.dart)
