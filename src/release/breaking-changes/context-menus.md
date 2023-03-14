@@ -5,11 +5,12 @@ description: Several hard-coded parameters for customizing context menus have no
 
 ## Summary
 Context menus, or text selection toolbars, are the menus that show up when long
-pressing or right clicking on text in Flutter, and they show options like Cut,
-Copy, Paste, and Select all. Previously, it was only possible to narrowly
-customize them using `ToolbarOptions` and `TextSelectionControls`. Now, they
-have been made composable using widgets, just like everything else in Flutter,
-and the specific configuration parameters have been deprecated.
+pressing or right clicking on text in Flutter, and they show options like
+**Cut**, **Copy**, **Paste**, and **Select all**. Previously, it was only
+possible to narrowly customize them using `ToolbarOptions` and
+`TextSelectionControls`. Now, they have been made composable using widgets, just
+like everything else in Flutter, and the specific configuration parameters have
+been deprecated.
 
 ## Context
 Previously, it was possible to disable buttons from the context menus using
@@ -168,7 +169,7 @@ This is still possible using `contextMenuBuilder`, including calling
 out to the original buttons' actions in the custom handler, using toolbar
 widgets like `AdaptiveTextSelectionToolbar.buttonItems`.
 
-This example shows modifying the Copy button to show a dialog in addition to
+This example shows modifying the **Copy** button to show a dialog in addition to
 doing its usual copy logic.
 
 ```dart
