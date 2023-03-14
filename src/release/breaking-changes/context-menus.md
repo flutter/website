@@ -7,13 +7,13 @@ description: Several hard-coded parameters for customizing context menus have no
 Context menus, or text selection toolbars, are the menus that show up when long
 pressing or right clicking on text in Flutter, and they show options like Cut,
 Copy, Paste, and Select all. Previously, it was only possible to narrowly
-customize them using `ToolbarOptions` and TextSelectionControls. Now, they have
-been made composable using widgets, just like everything else in Flutter, and
-the specific configuration parameters have been deprecated.
+customize them using `ToolbarOptions` and `TextSelectionControls`. Now, they
+have been made composable using widgets, just like everything else in Flutter,
+and the specific configuration parameters have been deprecated.
 
 ## Context
 Previously, it was possible to disable buttons from the context menus using
-TextSelectionControls, but any customization beyond that required copying and
+`TextSelectionControls`, but any customization beyond that required copying and
 editing hundreds of lines of custom classes in the framework. Now, all of this
 has been replaced by a simple builder function, `contextMenuBuilder`, which
 allows any Flutter widget to be used as a context menu.
@@ -93,8 +93,8 @@ TextField(
 ```
 
 Now, you can achieve the same effect by adjusting the `buttonItems` passed into
-`AdaptiveTextSelectionToolbar`. For example, you could ensure that the **Cut** button
-never appears, but the other buttons do appear as usual:
+`AdaptiveTextSelectionToolbar`. For example, you could ensure that the **Cut**
+button never appears, but the other buttons do appear as usual:
 
 ```dart
 TextField(
@@ -134,9 +134,9 @@ TextField(
 
 ### [TextSelectionControls.canCut]({{site.api}}/flutter/widgets/TextSelectionControls/canCut.html) and other button booleans
 These booleans previously had the same effect of enabling and disabling certain
-buttons as `ToolbarOptions.cut`, and so on had. Before this change, you might have been
-hiding and showing buttons by overriding `TextSelectionControls` and setting these
-booleans like this:
+buttons as `ToolbarOptions.cut`, and so on had. Before this change, you might
+have been hiding and showing buttons by overriding `TextSelectionControls` and
+setting these booleans like this:
 
 ```dart
 // Deprecated.
@@ -166,7 +166,7 @@ class _MyMaterialTextSelectionControls extends MaterialTextSelectionControls {
 
 This is still possible using `contextMenuBuilder`, including calling
 out to the original buttons' actions in the custom handler, using toolbar
-widgets like AdaptiveTextSelectionToolbar.buttonItems.
+widgets like `AdaptiveTextSelectionToolbar.buttonItems`.
 
 This example shows modifying the Copy button to show a dialog in addition to
 doing its usual copy logic.
@@ -216,7 +216,7 @@ on GitHub.
 This function generated the context menu widget similarly to
 `contextMenuBuilder`, but required much more setup to work with. Before this
 change, you might have been overriding buildToolbar as a part of
-TextSelectionControls, like this:
+`TextSelectionControls`, like this:
 
 ```dart
 // Deprecated.
@@ -239,7 +239,7 @@ class _MyMaterialTextSelectionControls extends MaterialTextSelectionControls {
 
 Now you can simply use `contextMenuBuilder` directly as a parameter to
 `TextField` (and others). The information provided in the parameters to
-buildToolbar can be obtained via the EditableTextState that is passed to
+`buildToolbar` can be obtained via the `EditableTextState` that is passed to
 `contextMenuBuilder`.
 
 The following example shows how to build a fully-custom toolbar from scratch
