@@ -20,7 +20,7 @@ has been replaced by a simple builder function, `contextMenuBuilder`, which
 allows any Flutter widget to be used as a context menu.
 
 ## Description of change
-Context menus are now built via the `contextMenuBuilder` parameter, which has
+Context menus are now built from the `contextMenuBuilder` parameter, which has
 been added to all text-editing and text-selection widgets. If one is not
 provided, then Flutter just sets it to a default that builds the correct context
 menu for the given platform. All of these default widgets are exposed to users
@@ -215,9 +215,9 @@ on GitHub.
 
 ### [`buildToolbar`]({{site.api}}/flutter/widgets/TextSelectionControls/buildToolbar.html)
 This function generated the context menu widget similarly to
-`contextMenuBuilder`, but required much more setup to work with. Before this
-change, you might have been overriding `buildToolbar` as a part of
-`TextSelectionControls`, like this:
+`contextMenuBuilder`, but required more setup to use. Before this change, you
+might have been overriding `buildToolbar` as a part of `TextSelectionControls`,
+like this:
 
 ```dart
 // Deprecated.
@@ -240,7 +240,7 @@ class _MyMaterialTextSelectionControls extends MaterialTextSelectionControls {
 
 Now you can simply use `contextMenuBuilder` directly as a parameter to
 `TextField` (and others). The information provided in the parameters to
-`buildToolbar` can be obtained via the `EditableTextState` that is passed to
+`buildToolbar` can be obtained from the `EditableTextState` that is passed to
 `contextMenuBuilder`.
 
 The following example shows how to build a fully-custom toolbar from scratch
@@ -314,23 +314,23 @@ In stable release: 3.7.0
 
 API documentation:
 
-* [`TextField.contextMenuBuilder`] {{site.api}}/flutter/material/TextField/contextMenuBuilder.html
-* [`AdaptiveTextSelectionToolbar`] {{site.api}}/flutter/material/AdaptiveTextSelectionToolbar-class.html
+* [`TextField.contextMenuBuilder`]({{site.api}}/flutter/material/TextField/contextMenuBuilder.html)
+* [`AdaptiveTextSelectionToolbar`]({{site.api}}/flutter/material/AdaptiveTextSelectionToolbar-class.html)
 
 Relevant issues:
 
-* [Simple custom text selection toolbars] {{site.repo.flutter}}/issues/73574
-* [Right click menu outside of text fields] {{site.repo.flutter}}/issues/98272
-* [Text editing for desktop - stable] {{site.repo.flutter}}/issues/90563
-* [Ability to disable context menu on TextFields] {{site.repo.flutter}}/issues/79796
-* [Missing APIs for text selection toolbar styling] {{site.repo.flutter}}/issues/22210
-* [Enable copy toolbar in all widgets] {{site.repo.flutter}}/issues/49996
-* [Disable context menu from broser] {{site.repo.flutter}}/issues/78671
-* [Custom context menus don't show up for Flutter web] {{site.repo.flutter}}/issues/84219
+* [Simple custom text selection toolbars]({{site.repo.flutter}}/issues/73574)
+* [Right click menu outside of text fields]({{site.repo.flutter}}/issues/98272)
+* [Text editing for desktop - stable]({{site.repo.flutter}}/issues/90563)
+* [Ability to disable context menu on TextFields]({{site.repo.flutter}}/issues/79796)
+* [Missing APIs for text selection toolbar styling]({{site.repo.flutter}}/issues/22210)
+* [Enable copy toolbar in all widgets]({{site.repo.flutter}}/issues/49996)
+* [Disable context menu from browser]({{site.repo.flutter}}/issues/78671)
+* [Custom context menus don't show up for Flutter web]({{site.repo.flutter}}/issues/84219)
 
 Relevant PRs:
 
-* [ContextMenus] {{site.repo.flutter}}/pull/107193
-* [Ability to disable the browser's context menu on web] {{site.repo.flutter}}/pull/118194
-* [Ability to disable the browser's context menu on web (engine)] {{site.repo.engine}}/pull/38682
-* [Custom context menus in SelectableRegion on web] {{site.repo.flutter}}/pull/121653
+* [ContextMenus]({{site.repo.flutter}}/pull/107193)
+* [Ability to disable the browser's context menu on web]({{site.repo.flutter}}/pull/118194)
+* [Ability to disable the browser's context menu on web (engine)]({{site.repo.engine}}/pull/38682)
+* [Custom context menus in SelectableRegion on web]({{site.repo.flutter}}/pull/121653)
