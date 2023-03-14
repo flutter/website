@@ -7,7 +7,7 @@ description: Several hard-coded parameters for customizing context menus have no
 Context menus, or text selection toolbars, are the menus that show up when long
 pressing or right clicking on text in Flutter, and they show options like Cut,
 Copy, Paste, and Select all. Previously, it was only possible to narrowly
-customize them using ToolbarOptions and TextSelectionControls. Now, they have
+customize them using `ToolbarOptions` and TextSelectionControls. Now, they have
 been made composable using widgets, just like everything else in Flutter, and
 the specific configuration parameters have been deprecated.
 
@@ -146,7 +146,7 @@ class _MyMaterialTextSelectionControls extends MaterialTextSelectionControls {
 }
 ```
 
-See the previous section on ToolbarOptions for how to achieve a similar effect
+See the previous section on `ToolbarOptions` for how to achieve a similar effect
 with `contextMenuBuilder`.
 
 ### [TextSelectionControls.handleCut]({{site.api}}/flutter/widgets/TextSelectionControls/handleCut.html) and other button callbacks
