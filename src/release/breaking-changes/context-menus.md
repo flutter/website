@@ -134,8 +134,8 @@ TextField(
 
 ### [TextSelectionControls.canCut]({{site.api}}/flutter/widgets/TextSelectionControls/canCut.html) and other button booleans
 These booleans previously had the same effect of enabling and disabling certain
-buttons as ToolbarOptions.cut, etc. had. Before this change, you might have been
-hiding and showing buttons by overriding TextSelectionControls and setting these
+buttons as `ToolbarOptions.cut`, and so on had. Before this change, you might have been
+hiding and showing buttons by overriding `TextSelectionControls` and setting these
 booleans like this:
 
 ```dart
