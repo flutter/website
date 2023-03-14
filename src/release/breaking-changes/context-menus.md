@@ -112,7 +112,7 @@ TextField(
 )
 ```
 
-Or, you could ensure that the Cut button appears exclusively and always:
+Or, you could ensure that the **Cut** button appears exclusively and always:
 
 ```dart
 TextField(
