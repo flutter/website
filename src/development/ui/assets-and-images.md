@@ -376,6 +376,15 @@ NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"];
 NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 ```
 
+To access `icons/heart.png` from your Swift app you
+would do the following:
+
+```swift
+let key = controller.lookupKey(forAsset: "icons/heart.png")
+let mainBundle = Bundle.main
+let path = mainBundle.path(forResource: key, ofType: nil)
+```
+
 For a more complete example, see the implementation of the
 Flutter [`video_player` plugin][] on pub.dev.
 
