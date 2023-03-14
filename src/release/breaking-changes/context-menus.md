@@ -92,8 +92,8 @@ TextField(
 )
 ```
 
-Now, you can achieve the same effect by adjusting the buttonItems passed into
-AdaptiveTextSelectionToolbar. For example, you could ensure that the Cut button
+Now, you can achieve the same effect by adjusting the `buttonItems` passed into
+`AdaptiveTextSelectionToolbar`. For example, you could ensure that the **Cut** button
 never appears, but the other buttons do appear as usual:
 
 ```dart
