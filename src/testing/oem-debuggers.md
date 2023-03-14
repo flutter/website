@@ -20,6 +20,14 @@ This guide shows you how you can connect _two_
 debuggers to your Dart app, one for Dart,
 and one for the OEM code.
 
+{{site.alert.note}}
+  If you are looking for a way to use GDB to remotely debug the
+  Flutter engine running within an Android app process,
+  check out [`flutter_gdb`][].
+{{site.alert.end}}
+
+[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gd
+
 ## Debugging Dart code
 
 Use your IDE for standard Dart debugging.
