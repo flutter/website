@@ -79,7 +79,7 @@ totally custom.
 To transition to `contextMenuBuilder`, the following parameters and classes have
 been deprecated.
 
-### [ToolbarOptions]({{site.api}}/flutter/widgets/ToolbarOptions-class.html)
+### [`ToolbarOptions`]({{site.api}}/flutter/widgets/ToolbarOptions-class.html)
 This class was previously used to explicitly enable or disable certain buttons
 in a context menu. Before this change, you might have passed it into `TextField`
 or other widgets like this:
@@ -133,7 +133,7 @@ TextField(
 )
 ```
 
-### [TextSelectionControls.canCut]({{site.api}}/flutter/widgets/TextSelectionControls/canCut.html) and other button booleans
+### [`TextSelectionControls.canCut`]({{site.api}}/flutter/widgets/TextSelectionControls/canCut.html) and other button booleans
 These booleans previously had the same effect of enabling and disabling certain
 buttons as `ToolbarOptions.cut`, and so on had. Before this change, you might
 have been hiding and showing buttons by overriding `TextSelectionControls` and
@@ -150,7 +150,7 @@ class _MyMaterialTextSelectionControls extends MaterialTextSelectionControls {
 See the previous section on `ToolbarOptions` for how to achieve a similar effect
 with `contextMenuBuilder`.
 
-### [TextSelectionControls.handleCut]({{site.api}}/flutter/widgets/TextSelectionControls/handleCut.html) and other button callbacks
+### [`TextSelectionControls.handleCut`]({{site.api}}/flutter/widgets/TextSelectionControls/handleCut.html) and other button callbacks
 These functions allowed the modification of the callback called when the buttons
 were pressed. Before this change, you might have been modifying context menu
 button callbacks by overriding these handler methods like this:
@@ -213,10 +213,10 @@ samples repository in
 [modified_action_page.dart]({{site.github}}/flutter/samples/blob/main/experimental/context_menus/lib/modified_action_page.dart)
 on GitHub.
 
-### [buildToolbar]({{site.api}}/flutter/widgets/TextSelectionControls/buildToolbar.html)
+### [`buildToolbar`]({{site.api}}/flutter/widgets/TextSelectionControls/buildToolbar.html)
 This function generated the context menu widget similarly to
 `contextMenuBuilder`, but required much more setup to work with. Before this
-change, you might have been overriding buildToolbar as a part of
+change, you might have been overriding `buildToolbar` as a part of
 `TextSelectionControls`, like this:
 
 ```dart
