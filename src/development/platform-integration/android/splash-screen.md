@@ -67,7 +67,7 @@ whose `windowBackground` is set to the
 </style>
 ```
 
-In addition, `style.xml` defines a _normal theme_
+In addition, `styles.xml` defines a _normal theme_
 to be applied to `FlutterActivity` after the launch
 screen is gone. The normal theme background only shows
 for a very brief moment after the splash screen disappears,
