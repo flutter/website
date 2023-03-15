@@ -26,7 +26,7 @@ Flutter applications. Here are some of the available tools:
   Flutter engine running within an Android app process,
   check out [`flutter_gdb`][].
 
-[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gd
+[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
 
 ## DevTools
 
