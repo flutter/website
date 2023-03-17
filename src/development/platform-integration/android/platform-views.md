@@ -50,15 +50,6 @@ use the following steps:
 On the Dart side, create a `Widget`
 and add one of the following build implementations.
 
-{{site.alert.warning}}
-  For this to work, your plugin or app must use
-  Android embedding v2.
-  If you haven't updated your plugin, see the
-  [plugin migration guide][].
-{{site.alert.end}}
-
-[plugin migration guide]: {{site.url}}/development/platform-integration/android/plugin-api-migration
-
 #### Hybrid composition
 
 In your Dart file,
@@ -183,7 +174,6 @@ package dev.flutter.example
 
 import android.content.Context
 import android.graphics.Color
-import android.view.View
 import android.widget.TextView
 import io.flutter.plugin.platform.PlatformView
 

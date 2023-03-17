@@ -9,6 +9,14 @@ This doc describes debugging features that you can enable in code.
 For a full list of debugging and profiling tools, see the
 [Debugging][] page.
 
+{{site.alert.note}}
+  If you are looking for a way to use GDB to remotely debug the
+  Flutter engine running within an Android app process,
+  check out [`flutter_gdb`][].
+{{site.alert.end}}
+
+[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
+
 ## Logging
 
 {{site.alert.note}}

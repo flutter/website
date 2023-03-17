@@ -159,7 +159,7 @@ that contains a reference to your keystore:
 storePassword=<password from previous step>
 keyPassword=<password from previous step>
 keyAlias=upload
-storeFile=<location of the key store file, such as /Users/<user name>/upload-keystore.jks>
+storeFile=<location of the key store file, such as /Users/<user name>/upload-keystore.jks or C:\\Users\\<user name>\\upload-keystore.jks>
 ```
 
 {{site.alert.warning}}
@@ -563,7 +563,7 @@ The resulting app bundle or APK files are located in
 [obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
-[Platform Views]: {{site.url}}/development/platform-integration/platform-views
+[Platform Views]: {{site.url}}/development/platform-integration/android/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
 [R8]: {{site.android-dev}}/studio/build/shrink-code

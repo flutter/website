@@ -86,4 +86,4 @@ prior to the 2.5 release.
 
 [`provideSplashScreen`]: {{site.api}}/javadoc/io/flutter/embedding/android/SplashScreenProvider.html#provideSplashScreen--
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
-[define a launch theme]:  {{site.url}}/development/ui/advanced/splash-screen?tab=android-splash-alignment-kotlin-tab#initializing-the-app
+[define a launch theme]:  {{site.url}}/development/platform-integration/android/splash-screen

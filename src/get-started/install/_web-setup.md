@@ -7,4 +7,4 @@ before web was in stable, follow the instructions on
 [Building a web application with Flutter][] 
 when you've completed the setup above.
 
-[Building a web application with Flutter]: {{site.url}}/get-started/web
+[Building a web application with Flutter]: {{site.url}}/development/platform-integration/web/building
