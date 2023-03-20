@@ -45,8 +45,6 @@ to be able to build and run your first Flutter app.
 
 {% include_relative _macos-desktop-setup.md %}
 
-{% include_relative _web-setup.md %}
-
 ## Next step
 
 Set up your preferred editor.
