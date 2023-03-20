@@ -196,6 +196,7 @@ as described in the following section.
 For step-by-step instruction for using app extensions with your
 Flutter iOS app, check out the 
 [Adding Home Screen Widgets and Live Activities to your Flutter app][] codelab.
+{{% endcomment %}}
 
 [Apple's documentation]: https://developer.apple.com/app-extensions/
 [Core Spotlight]: https://developer.apple.com/documentation/corespotlight
