@@ -191,6 +191,7 @@ as described in the following section.
   lower-level APIs needed to draw Flutter UI.
 {{site.alert.end}}
 
+{{% comment %}}
 ## Tutorials
 For step-by-step instruction for using app extensions with your
 Flutter iOS app, check out the 
