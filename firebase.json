@@ -183,6 +183,7 @@
       { "source": "/go/androidx-transition", "destination": "https://docs.google.com/document/d/1JnMxQinUeouuV5kcenoq03TsvLyn_xaHXIT_6c5b7nQ", "type": 301 },
       { "source": "/go/annotator-tree", "destination": "https://docs.google.com/document/d/1YtkdZSx1687Ipbff06qp3XglmJym3Wc9boY4I-bYs4A/edit", "type": 301 },
       { "source": "/go/api-for-transform-performance", "destination": "https://docs.google.com/document/d/1Fxdlf7JsA-yAwc_RNuboMG-vhIhchRBZGvDSwg5qR0A/edit?usp=sharing", "type": 301 },
+      { "source": "/go/app-extensions", "destination": "https://docs.google.com/document/d/1WloBrAYpqNKOhEHytTqJEHshcXxHflLUGKvULKRHbuU/edit?usp=sharing", "type": 301 },
       { "source": "/go/application-lifecycle-events", "destination": "https://docs.google.com/document/d/1FL5Fgk7EzMNOpJL0GZJt-lfWtGt2igHuC2ZznItS2l8/edit?usp=sharing&resourcekey=0-IZNfpSVPkMbigQLLXoJcfw", "type": 301 },
       { "source": "/go/apple-pencil-double-tap-support", "destination": "https://docs.google.com/document/d/1r4P5r-jGt2Sjqro3ldCU2axUiHTpu3yhIycnI94OKQw/edit?usp=sharing", "type": 301 },
       { "source": "/go/asset-lookup-in-plugin-binding", "destination": "https://docs.google.com/document/d/1iwGFWipC0v0FKvAgbjGl0kaV9IGox1YiD8jUP8Vvkjc/edit", "type": 301 },
