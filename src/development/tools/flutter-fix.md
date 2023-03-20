@@ -11,7 +11,7 @@ Studio and Visual Studio Code.
 
 {{site.alert.tip}}
   These automated updates are called _quick-fixes_ in IntelliJ and Android
-  Studio, and _code actions_ in VS Code).
+  Studio, and _code actions_ in VS Code.
 {{site.alert.end}}
 
 
@@ -41,13 +41,15 @@ You can do any of the following:
   **Quick Fix** link.
   This presents a filtered list showing
   _only_ fixes.
+
 * Put the caret in the code with the error and click
   the light bulb icon that appears.
   This shows a list of all actions, including
   refactors.
+
 * Put the caret in the code with the error and
   press the shortcut
-  (**Command+.** on Mac, **Control+.** elsewhere)
+  (**Command+.** on macOS, **Control+.** elsewhere)
   This shows a list of all actions, including
   refactors.
 
@@ -65,14 +67,14 @@ This tool has two options:
   the following command:
 
   ```terminal
-  dart fix --dry-run
+  $ dart fix --dry-run
   ```
 
 * To apply all changes in bulk, run the
   following command:
 
   ```terminal
-  dart fix --apply
+  $ dart fix --apply
   ```
 
 For more information on Flutter deprecations, see

@@ -26,11 +26,21 @@
     }
   }
 
+  @mixin nav-link-not-active-hover {
+    &:not(.disabled) {
+      &:hover {
+        color: $site-color-primary;
+      }
+    }
+  }
+
   .nav-link {
     padding: bs-spacer(1) 0;
     position: relative;
     color: inherit;
     &.disabled { opacity: 0.5; }
+
+    @include nav-link-not-active-hover;
   }
 
   @mixin collapsable() {
@@ -82,8 +92,14 @@
           font-weight: $font-weight-bold;
           &:not(.collapsable) {
             color: $site-color-primary;
+
+            &:hover {
+              color: $flutter-color-dark-blue;
+            }
           }
         }
+
+        @include nav-link-not-active-hover;
 
         &.collapsable {
           &::before{
