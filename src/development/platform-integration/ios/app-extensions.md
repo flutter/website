@@ -182,13 +182,13 @@ as described in the following section.
     ```
 
 {{site.alert.important}}
-Commenting out `sharedApplication` disables
-many features in the Flutter framework.
-This hasn't been tested in App Store submissions
-and might not work for some app extensions.
+  Commenting out `sharedApplication` disables
+  many features in the Flutter framework.
+  This hasn't been tested in App Store submissions
+  and might not work for some app extensions.
 
-For example, home screen Widgets and Live Activities can't use some
-lower-level APIs needed to draw Flutter UI.
+  For example, home screen Widgets and Live Activities can't use some
+  lower-level APIs needed to draw Flutter UI.
 {{site.alert.end}}
 
 ## Tutorials
