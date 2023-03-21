@@ -37,7 +37,6 @@ The APIs that have been deprecated as part of this change are:
 * The `SingletonFlutterView` class from `dart:ui`.
 * `TestWindow` from `flutter_test`, its constructors,
   and all of its properties and methods.
-* The `WidgetTester.binding.window` accessor.
 
 The following options exist to migrate application and library code that relies
 on these deprecated APIs:
@@ -68,7 +67,7 @@ For tests that accessed the `WidgetTester.binding.window` property to change
 window properties for testing, the following migrations are available:
 
 In tests written with `testWidgets`, two new properties have been added that
-together replace the functionality of `TestWindow`
+together replace the functionality of `TestWindow`.
 
 * `WidgetTester.view` will provide a `TestFlutterView` that can be modified
   similarly to `WidgetTester.binding.window`, but with only view-specific
