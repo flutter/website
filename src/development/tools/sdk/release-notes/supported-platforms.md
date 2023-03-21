@@ -9,16 +9,16 @@ description: The platforms that Flutter supports by platform version.
 We define three tiers of support for the platforms on
 which built Flutter might be deployed:
 
-1. **Supported**, Google-tested platforms
+1. **Supported**<br>
+   Google-tested platforms that
    are automatically tested at every commit
    by continuous integration testing.
-1. **Best-effort** platforms, supported through community
-   testing, are platforms we believe we support through
-   coding practices and ad-hoc testing,
-   but rely on the community for testing.
-1. **Unsupported** platforms, which are platforms that
-   might work, but that the development team
-   doesn't directly test or support.
+1. **Best effort**<br>
+   Platforms that we intend to support through
+   coding practices,
+   but are only tested on an ad-hoc basis.
+1. **Unsupported**<br>
+   Platforms that we don't test or support.
    
 {% comment %}
 **IMPORTANT NOTE**:
@@ -37,42 +37,36 @@ support for deploying Flutter apps is shown in the
 following table:
 
 <div class="table-wrapper" markdown="1">
-|Platform version        | Supported | Best effort | Unsupported |
-|------------------------|-----------|-------------|-------------|
-| Android SDK 19-30<sup>1</sup> | ✓  |             |             |
-| Android SDK 16-18      |           |      ✓      |             |
-| Android SDK 15 & below |           |             |      ✓      |
-| iOS 14-15              |     ✓     |             |             |
-| iOS 11-13              |           |      ✓      |             |
-| [iOS 10 & below & `arm7v` 32-bit iOS][] |        |      ✓      |
-| Linux Debian 11        |           |      ✓      |             |
-| Linux Debian 10        |     ✓     |             |             |
-| Linux Debian 9 & below |           |      ✓      |             |
-| Linux Ubuntu 22.04 |(aspirational) |      ✓      |             |
-| Linux Ubuntu 20.04     |           |      ✓      |             |
-| Linux Ubuntu 18.04 LTS |     ✓     |             |             |
-| Linux (any 32-bit platform) |      |             |      ✓      |
-| macOS Monterey (12) & above |  ✓   |             |             |
-| macOS Mojave (10.14) - Big Sur (11) | |   ✓      |             |
-| macOS High Sierra (10.13) & below | |            |      ✓      |
-| web - Chrome 84        |     ✓     |             |             |
-| web - Firefox 72.0     |     ✓     |             |             |
-| web - Safari/Catalina  |     ✓     |             |             |
-| web - Edge 1.2.0       |     ✓     |             |             |
-| Windows 10             |     ✓     |             |             |
-| Windows 11          |(aspirational)|      ✓      |             |
-| Windows 8              |           |      ✓      |             |
-| Windows 7              |           |      ✓      |             |
-| Windows Vista & below  |           |             |      ✓      |
-| Windows (any 32-bit platform)|     |             |      ✓      |
+|Platform version|<center>Supported</center>|<center>Best effort</center>|<center>Unsupported</center>|
+|----------------|---------|-----------|-----------|
+| Android SDK 21-30        |<center>✓</center>| | |
+| Android SDK 19-20        | |<center>✓</center>| |
+| Android SDK 18 & below   | | |<center>✓</center>|
+| iOS 14-15                |<center>✓</center>| | |
+| iOS 11-13                | |<center>✓</center>| |
+| [iOS 10 & below & `arm7v` 32-bit iOS][] | | |<center>✓</center>|
+| Linux Debian 11          | |<center>✓</center>| |
+| Linux Debian 10          |<center>✓</center>| | |
+| Linux Debian 9 & below   | |<center>✓</center>| |
+| Linux Ubuntu 22.04       |in progress|<center>✓</center>| |
+| Linux Ubuntu 20.04       | |<center>✓</center>| |
+| Linux Ubuntu 18.04 LTS   |<center>✓</center>| | |
+| Linux (any 32-bit platform)| | |<center>✓</center>|
+| macOS Monterey (12) & above|<center>✓</center>| | |
+| macOS Mojave (10.14) - Big Sur (11) | |<center>✓</center>| |
+| macOS High Sierra (10.13) & below | | |<center>✓</center>|
+| web - Chrome 84          |<center>✓</center>| | |
+| web - Firefox 72.0       |<center>✓</center>| | |
+| web - Safari/Catalina    |<center>✓</center>| | |
+| web - Edge 111.0         |<center>✓</center>|           |        |
+| Windows 11               |in progress|<center>✓</center>|        |
+| Windows 10               |<center>✓</center>|           |        |
+| Windows 8                | |<center>✓</center>| |
+| Windows 7                | |<center>✓</center>| |
+| Windows Vista & below    | | |<center>✓</center>|
+| Windows (any 32-bit platform)| | |<center>✓</center>|
 {:.table.table-striped}
 </div>
-
-<sup>1</sup> Passing tests on Android SDK 19 also
-  confers a passing result on SDK 20.
-  This is because Android SDK 20 has
-  additional support for Android Wear,
-  but otherwise no new or deprecated API.
 
 [iOS 10 & below & `arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
 
