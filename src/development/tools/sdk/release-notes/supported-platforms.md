@@ -38,7 +38,7 @@ as part of Google-tested and best-effort platform tier:
 <div class="table-wrapper" markdown="1">
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
-|Android | API 16 (Android 4.1) & above | All     |
+|Android | API 19 (Android 4.1) & above | All     |
 |iOS     | iOS 11 & above               | All     |
 |Linux   | Debian, 64-bit               | All     |
 |macOS   | Mojave (10.14) & above       | All     |
@@ -58,7 +58,7 @@ and stable channels.
 <div class="table-wrapper" markdown="1">
 |Platform|Version               |
 |--------|----------------------|
-|Android |Android SDK 19–30*    |
+|Android |Android SDK 21–30*    |
 |iOS     |14-15                 |
 |Linux   |Debian 10             |
 |Linux   |Ubuntu 18.04 LTS      |
@@ -71,16 +71,13 @@ and stable channels.
 {:.table.table-striped}
 </div>
 
-\* Passing tests on Android SDK 19 also confers a passing result on SDK 20.
-  This is because Android SDK 20 has additional support for Android Wear,
-  but otherwise no new or deprecated API.
 
 ### Best-effort platforms
 
 <div class="table-wrapper" markdown="1">
 |Platform|Version             |
 |--------|--------------------|
-|Android |Android SDK 16–18   |
+|Android |Android SDK 19      |
 |iOS     |iOS 11-13           |
 |Linux   |Debian 11           |
 |Linux   |Debian 9 & below    |
@@ -98,7 +95,7 @@ and stable channels.
 <div class="table-wrapper" markdown="1">
 |Platform|Version                                     |
 |--------|--------------------------------------------|
-|Android |Android SDK 15 & below                      |
+|Android |Android SDK 18 & below                      |
 |iOS     |[iOS 10 & below and `arm7v` 32-bit iOS][]   |
 |Linux   |Any 32-bit platform                         |
 |macOS   |High Sierra (10.13) & below                 |
