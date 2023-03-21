@@ -42,8 +42,6 @@ your development environment must meet these minimum requirements:
 
 {% include_relative _linux-desktop-setup.md %}
 
-{% include_relative _web-setup.md %}
-
 ## Next step
 
 Set up your preferred editor.
