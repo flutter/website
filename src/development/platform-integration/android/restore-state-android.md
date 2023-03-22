@@ -12,29 +12,16 @@ improve performance for the app running in the foreground.
 When the user selects the app again, bringing it
 back to the foreground, the OS relaunches it.
 But, unless you've set up a way to save the
-state of the app before it was sent to the background,
+state of the app before it was killed,
 you've lost the state and the app starts from
-scratch. The user has lost the continuity they expect
-and are generally annoyed. (Imagine filling out a
-lengthy form and being interrupted by a phone call
-_before_ clicking **Submit**...)
+scratch. The user has lost the continuity they expect,
+which is clearly not ideal.
+(Imagine filling out a lengthy form and being interrupted
+by a phone call _before_ clicking **Submit**.)
 
 So, how can you restore the state of the app so that
 it looks like it did before it was sent to the
 background?
-
-{% comment %}
-xxx: Instance state vs long-lived state (2:22:28)
-xxx: Instance state:
-xxx:   UI state: active tab, current form field values
-xxx:   Limited to <1MB on Android; if you go over
-xxx:    your app will crash with TransactionToolLargeException
-xxx:    thrown in the native code.
-xxx: Long-lived state:
-xxx:   User's login token
-xxx:   Apps local data
-xxx:   use state_persistence package
-{% endcomment %}
 
 Flutter has a solution for that scenario with the
 [`RestorationManager`][] (and related classes)
@@ -44,6 +31,24 @@ provides the state data to the engine _as the state
 changes_, so that the app is ready when the OS signals
 that it's about to kill the app, giving the app only
 moments to prepare.
+
+{{site.alert.secondary}}
+  <strong>Instance state vs long-lived state</strong>
+  When should you use the `RestorationManager` and
+  when should you save state to long term storage?
+  _Instance state_ or
+  (also called _short-term_ or _ephemeral_ state),
+  includes unsubmitted form field values, the currently
+  selected tab, and so on. On Android, this is
+  limited to 1 MB and, if the app exceeds this,
+  it crashes with a `TransactionTooLargeException`
+  error in the native code.
+  To learn more about short term and long term state,
+  check out [Differentiate between ephemeral state
+  and app state][state].
+{{site.alert.end}}
+
+[state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
 
 The `RestorationManager` manages the restoration
 data, which is serialized to a tree of [`RestorationBucket`][],
@@ -56,20 +61,30 @@ Flutter automatically creates a
 [`RestorationScope`][] for each route in your
 app to track the `RestorationBucket`s in that scope.
 In general, you shouldn't need to worry about
-this object _unless_ you have two (or more) buckets with
-the same `restorationId`. If that occurs, you
-can create a new `RestorationScope` to ensure
+this object _unless_ the scope has two (or more) buckets with
+the same `restorationId`. If that occurs,
+create a new `RestorationScope` to ensure
 that each ID is unique to its scope.
 Each scope is assigned a unique [`restorationScopeId`][].
 
 You must decide what state you want to save and restore,
 but you can only save specific types to a `RestorationBucket`,
-namely: null, bool, int, double, String, Uint8List
-(and other typed data), List, Map, and child `RestorationBucket`s.
+namely: `null`, `bool`, `int`, `double`, `String`, `Uint8List`
+(and other typed data), `List`, `Map`, and child `RestorationBucket`s.
 
+{{site.alert.note}}
+  The code in this page was taken from [VeggieSeasons][].
+  VeggieSeasons is a sample app written for iOS that uses Cupertino
+  widgets. An iOS app requires [a bit of extra setup][] in Xcode, but
+  the restoration classes otherwise work the same on both iOS and Android.
+{{site.alert.end}}
+
+
+[a bit of extra setup]: {{site.api}}/flutter/services/RestorationManager-class.html#state-restoration-on-ios
 [`restorationId`]: {{site.api}}/flutter/widgets/RestorationScope/restorationId.html
 [`restorationScopeId`]: {{site.api}}/flutter/widgets/RestorationScope/restorationScopeId.html
 [`RestorationScope`]: {{site.api}}/flutter/widgets/RestorationScope-class.html
+[VeggieSeasons]: {{site.github}}/flutter/samples/tree/master/veggieseasons
 
 ## Step 1: Enabling state restoration
 
@@ -77,8 +92,8 @@ Most every Flutter app contains a `main` method that calls the
 [`runApp`][] function. You can use `runApp`
 to set up the framework and the bindings that bind
 the Dart code to the native Flutter engine.
-In this case, set up the `RestorationManager` in the
-`runApp` function.  For example:
+Set up the `RestorationManager` in the `runApp` function.
+For example:
 
 ```dart
 void main() {
@@ -93,16 +108,16 @@ void main() {
 }
 ```
 
-QUESTION: I thought that Flutter automatically created
+QUESTION for Michael: I thought that Flutter automatically created
   the Scope for every route. But this app manually
-  creats a Scope for the page... (xxx)
+  creats a Scope for the page. ?? (xxx)
 
 [`runApp`]: {{site.api}}/flutter/widgets/runApp.html
 
-## Step 2: Add RestorableMixin to the State class
+## Step 2: Add RestorationMixin to the State class
 
-The easiest way to implement restorable state is to
-add the [`RestorableMixin`][] to the app's `State` class.
+To implement restorable state,
+add the [`RestorationMixin`][] to the app's `State` class.
 
 ```dart
 class _VeggieAppState extends State<VeggieApp> with RestorationMixin
@@ -122,6 +137,7 @@ void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
 ```
 
 [`registerForRestoration`]: {{site.api}}/flutter/widgets/RestorationMixin/registerForRestoration.html
+[`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
 [`restoreState`]: {{site.api}}/flutter/widgets/RestorationMixin/restoreState.html
 
 ## Step 3: Define a restorationScopeId for each scope
@@ -130,22 +146,29 @@ Each Scope in the app should have a `restorationScopeId`,
 meaning that, at a minimum, you will have one scope per
 route. If you create additional scopes
 (to avoid `restorationId` duplication, for example),
-then those are also assigned a unique ID.
+then also assign those with a unique ID.
 
 ```dart
 restorationScopeId: 'app',
 ```
 
-Also, if you want your app to return to the page that the
-user was most recently viewing, then you need to implement
+## Step 4: Restoring navigation state
+
+If you want your app to return to the route (such
+as a specific tab) that the user was most recently viewing,
+then you need to implement
 restoration state for the navigation, as well.
 This page won't cover navigation, but the
 accompanying example, VeggieSeasons, implements this
 feature using the [go_router][] package.
 
-[go_router]: {{site.pub}}/packages/go_router
+For more information on navigation and the
+`go_router` package, check out [Navigation and routing][].
 
-## Step 4:
+[go_router]: {{site.pub}}/packages/go_router
+[Navigation and routing]: {{site.url}}/development/ui/navigation
+
+## Step 4: Save the state you want to restore
 
 Most of the state restoration work occurs in the
 `build` method on the `State` class that implements
@@ -153,179 +176,25 @@ Most of the state restoration work occurs in the
 define a `restorationId` for each piece of state
 you want to save.
 
+In the VeggieSeasons example, most of this work
+is implemented in the `lib/screens` classes.
 
-```dart
-class _VeggieAppState extends State<VeggieApp> with RestorationMixin {
-  final _RestorableAppState _appState = _RestorableAppState();
+QUESTION for Michael: This part of VeggieSeasons is fairly dense.
+I'm not sure what is a good code excerpt to include here. (xxx)
 
-  @override
-  String get restorationId => 'wrapper';
-    
-  @override
-  void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
-    registerForRestoration(_appState, 'state');
-  }
-    
-  @override
-  void dispose() {
-    _appState.dispose();
-    super.dispose();
-  }
-
- @override
-  Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(
-          value: _appState.value,
-        ),
-        ChangeNotifierProvider(
-          create: (_) => Preferences()..load(),
-        ),
-      ],
-      child: CupertinoApp.router(
-        theme: Styles.veggieThemeData,
-        debugShowCheckedModeBanner: false,
-        restorationScopeId: 'app',
-        routerConfig: GoRouter(
-          navigatorKey: _rootNavigatorKey,
-          restorationScopeId: 'router',
-          initialLocation: '/list',
-          redirect: (context, state) {
-            if (state.path == '/') {
-              return '/list';
-            }
-            return null;
-          },
-          debugLogDiagnostics: true,
-          routes: [
-            ShellRoute(
-              navigatorKey: _shellNavigatorKey,
-              pageBuilder: (context, state, child) {
-                return CupertinoPage(
-                  restorationId: 'router.shell',
-                  child: HomeScreen(
-                    restorationId: 'home',
-                    child: child,
-                    onTap: (index) {
-                      if (index == 0) {
-                        context.go('/list');
-                      } else if (index == 1) {
-                        context.go('/favorites');
-                      } else if (index == 2) {
-                        context.go('/search');
-                      } else {
-                        context.go('/settings');
-                      }
-                    },
-                  ),
-                );
-              },
-              routes: [
-                GoRoute(
-                  path: '/list',
-                  pageBuilder: (context, state) {
-                    return FadeTransitionPage(
-                      key: state.pageKey,
-                      restorationId: 'route.list',
-                      child: const ListScreen(restorationId: 'list'),
-                    );
-                  },
-                  routes: [
-                    _buildDetailsRoute(),
-                  ],
-                ),
-                GoRoute(
-                  path: '/favorites',
-                  pageBuilder: (context, state) {
-                    return FadeTransitionPage(
-                      key: state.pageKey,
-                      restorationId: 'route.favorites',
-                      child: const FavoritesScreen(restorationId: 'favorites'),
-                    );
-                  },
-                  routes: [
-                    _buildDetailsRoute(),
-                  ],
-                ),
-                GoRoute(
-                  path: '/search',
-                  pageBuilder: (context, state) {
-                    return FadeTransitionPage(
-                      key: state.pageKey,
-                      restorationId: 'route.search',
-                      child: const SearchScreen(restorationId: 'search'),
-                    );
-                  },
-                  routes: [
-                    _buildDetailsRoute(),
-                  ],
-                ),
-                GoRoute(
-                  path: '/settings',
-                  pageBuilder: (context, state) {
-                    return FadeTransitionPage(
-                      key: state.pageKey,
-                      restorationId: 'route.settings',
-                      child: const SettingsScreen(restorationId: 'settings'),
-                    );
-                  },
-                  routes: [
-                    GoRoute(
-                      parentNavigatorKey: _rootNavigatorKey,
-                      path: 'categories',
-                      pageBuilder: (context, state) {
-                        return VeggieCategorySettingsScreen.pageBuilder(
-                            context);
-                      },
-                    ),
-                    GoRoute(
-                      parentNavigatorKey: _rootNavigatorKey,
-                      path: 'calories',
-                      pageBuilder: (context, state) {
-                        return CalorieSettingsScreen.pageBuilder(context);
-                      },
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  // GoRouter does not support relative routes,
-  // see https://github.com/flutter/flutter/issues/108177
-  GoRoute _buildDetailsRoute() {
-    return GoRoute(
-      parentNavigatorKey: _rootNavigatorKey,
-      path: 'details/:id',
-      pageBuilder: (context, state) {
-        final veggieId = int.parse(state.params['id']!);
-        return CupertinoPage(
-          restorationId: 'route.details',
-          fullscreenDialog: true,
-          child: DetailsScreen(
-            id: veggieId,
-            restorationId: 'details',
-          ),
-        );
-      },
-    );
-  }
-}
-
-```
 ## Testing state restoration
 
 To test state restoration, set up your mobile device so that
 it doesn't save state once an app is backgrounded.
-To learn how to do this for iOS and Android, check out
-[Testing state restoration][] on the
-[`RestorationManager`][] page. Don't forget to reenable
-storing state once you are finished with testing!
+To learn how to do this for both iOS and Android,
+check out [Testing state restoration][] on the
+[`RestorationManager`][] page.
+
+{{site.alert.note}}
+  Don't forget to reenable
+  storing state on your device once you are
+  finished with testing!
+{{site.alert.end}}
 
 [Testing state restoration]: {{site.api}}/flutter/services/RestorationManager-class.html#testing-state-restoration
 
@@ -336,14 +205,8 @@ storing state once you are finished with testing!
 
 ## Other resources
 
-The code in this page was taken from the [VeggieSeasons][] app.
-VeggieSeasons is a sample app written for iOS that uses Cupertino
-widgets. An iOS app requires [a bit of extra setup][] in Xcode, but
-the restoration classes otherwise work the same on both iOS and Android.
-
-You might also want to check out packages on pub.dev that
+You might want to check out packages on pub.dev that
 perform state restoration, such as [`statePersistence`][].
 
 [`statePersistence`]: {{site.pub-pkg}}/state_persistence
-[VeggieSeasons]: {{site.github}}/flutter/samples/tree/master/veggieseasons
 
