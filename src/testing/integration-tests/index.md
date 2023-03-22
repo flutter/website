@@ -212,7 +212,7 @@ Where `<name>_test.dart` is the file created in the
 **Project Setup** section.
 
 {{site.alert.note}}
-  If you want to use `--dart-define` with `gradlew` you have to `base64` encode
+  To use `--dart-define` with `gradlew`, you must `base64` encode
   all parameters, and pass them to gradle in a comma separated list:
   ```bash
   ./gradlew project:task -Pdart-defines="{base64(key=value)},[...]"
