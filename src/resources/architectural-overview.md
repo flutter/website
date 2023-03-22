@@ -1017,8 +1017,9 @@ for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js), Dart’s
 highly-optimized production JavaScript compiler is used, packaging the Flutter
 core and framework along with your application into a minified source file that
 can be deployed to any web server. Code can be offered in a single file or split
-into multiple files through [deferred
-imports]({{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library).
+into multiple files through [deferred imports][].
+
+[deferred imports]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 
 ## Further information
 
