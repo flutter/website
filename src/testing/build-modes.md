@@ -120,7 +120,7 @@ For more information on the build modes, see
 
 
 [Android]: {{site.url}}/deployment/android
-[Assertions]: {{site.dart-site}}/guides/language/language-tour#assert
+[Assertions]: {{site.dart-site}}/language/control-flow#assert
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [dartdevc]: {{site.dart-site}}/tools/dartdevc
 [DevTools]: {{site.url}}/development/tools/devtools
