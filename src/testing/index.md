@@ -51,11 +51,14 @@ or run `flutter test --help` in your terminal.
 
 {{site.alert.note}}
   If you're writing unit tests for code that
-  uses plugins, see
-  [Plugins in Flutter tests][].
+  uses plugins and you want to avoid crashes,
+  check out [Plugins in Flutter tests][].
+  If you want to test your Flutter plugin,
+  check out [Testing plugins][].
 {{site.alert.end}}
 
 [Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
+[Testing plugins]: {{site.url}}/testing/testing-plugins
 
 ### Recipes
 {:.no_toc}

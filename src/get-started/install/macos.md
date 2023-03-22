@@ -14,7 +14,7 @@ next:
 To install and run Flutter,
 your development environment must meet these minimum requirements:
 
-- **Operating Systems**: macOS
+- **Operating Systems**: macOS, version 10.14 (Mojave) or later.
 - **Disk Space**: 2.8 GB (does not include disk space for IDE/tools).
 - **Tools**: Flutter uses `git` for installation and upgrade. We recommend
   installing [Xcode][], which includes `git`, but you can also 
@@ -44,8 +44,6 @@ to be able to build and run your first Flutter app.
 {% include_relative _android-setup.md %}
 
 {% include_relative _macos-desktop-setup.md %}
-
-{% include_relative _web-setup.md %}
 
 ## Next step
 

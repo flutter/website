@@ -12,7 +12,6 @@
       permalink: /get-started/learn-more
     - divider
     - title: From another platform?
-      expanded: true
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
@@ -75,7 +74,7 @@
           permalink: /development/ui/interactive
         - title: Assets and images
           permalink: /development/ui/assets-and-images
-        - title: Material
+        - title: Material Design
           permalink: /development/ui/material
         - title: Navigation & routing
           permalink: /development/ui/navigation
@@ -118,8 +117,6 @@
               permalink: /development/ui/advanced/shaders
             - title: Slivers
               permalink: /development/ui/advanced/slivers
-            - title: Splash screens
-              permalink: /development/ui/advanced/splash-screen
         - title: Widget catalog
           permalink: /development/ui/widgets
     - title: Data & backend
@@ -163,12 +160,12 @@
         - title: Android
           permalink: /development/platform-integration/android
           children:
+            - title: Adding a splash screen
+              permalink: /development/platform-integration/android/splash-screen
             - title: C interop
               permalink: /development/platform-integration/android/c-interop
             - title: Hosting native Android views
               permalink: /development/platform-integration/android/platform-views
-            - title: Android plugin upgrade
-              permalink: /development/platform-integration/android/plugin-api-migration
             - title: AndroidX migration
               permalink: /development/platform-integration/android/androidx-migration
             - title: Deprecated Splash Screen API Migration
@@ -180,8 +177,12 @@
           children:
             - title: Leveraging Apple's system libraries
               permalink: /development/platform-integration/ios/apple-frameworks
+            - title: Adding a splash screen
+              permalink: /development/platform-integration/ios/splash-screen
             - title: Adding iOS App Clip support
               permalink: /development/platform-integration/ios/ios-app-clip
+            - title: Adding iOS app extensions
+              permalink: /development/platform-integration/ios/app-extensions
             - title: C interop
               permalink: /development/platform-integration/ios/c-interop
             - title: Hosting native iOS views
@@ -238,7 +239,7 @@
           match-page-url-exactly: true
         - title: Happy paths recommendations
           permalink: /development/packages-and-plugins/happy-paths/recommended
-        - title: Plugins in Flutter tests  **NEW**
+        - title: Plugins in Flutter tests
           permalink: /development/packages-and-plugins/plugins-in-tests
         - title: Using packages
           permalink: /development/packages-and-plugins/using-packages
@@ -339,6 +340,8 @@
   children:
     - title: Debugging tools
       permalink: /testing/debugging
+    - title: Testing plugins **NEW**
+      permalink: /testing/testing-plugins
     - title: Debugging apps programmatically
       permalink: /testing/code-debugging
     - title: Using an OEM debugger
@@ -438,8 +441,6 @@
       permalink: https://flutter.dev/brand
     - title: Platform adaptations
       permalink: /resources/platform-adaptations
-    - title: Security false positives **NEW**
-      permalink: /resources/security-false-positives
     - title: Videos and online courses
       permalink: /resources/videos
 
@@ -454,5 +455,7 @@
       permalink: https://api.flutter.dev
     - title: flutter CLI reference
       permalink: /reference/flutter-cli
+    - title: Security false positives
+      permalink: /reference/security-false-positives
     - title: Package site
       permalink: https://pub.dev/flutter

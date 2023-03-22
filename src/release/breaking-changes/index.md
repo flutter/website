@@ -31,6 +31,7 @@ release, and listed in alphabetical order:
 * [Migrate `of` to non-nullable return values, and add `maybeOf`][]
 * [Removed RouteSettings.copyWith][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
+* [A new way to customize context menus]({{site.url}}/release/breaking-changes/context-menus)
 
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable

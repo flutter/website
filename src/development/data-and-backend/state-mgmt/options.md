@@ -33,8 +33,6 @@ Things to review before selecting an approach.
 
 ## Provider
 
-A recommended approach.
-
 * [Simple app state management][], the previous page in this section
 * [Provider package][]
 
