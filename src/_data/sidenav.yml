@@ -141,6 +141,8 @@
           permalink: /development/data-and-backend/json
         - title: Firebase
           permalink: /development/data-and-backend/firebase
+        - title: Google APIs
+          permalink: /development/data-and-backend/google-apis
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
       permalink: /development/accessibility-and-localization
       children:
