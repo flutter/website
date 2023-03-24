@@ -568,7 +568,7 @@ On iOS, an equivalent component called “alert” is defined in Apple’s
 
 | Basic Dialog in Material 3  |  Alert in Human Interface Guidelines |
 |---|---|
-| <img alt="Basic Dialog in Material 3" src="https://user-images.githubusercontent.com/348942/227380688-38d491c8-86b7-4dc0-ac53-79505654dc28.png">  |  <img alt="Alert in Human Interface Guidelines" src="https://user-images.githubusercontent.com/348942/227380704-5dcf852d-1a17-44d1-868a-52a7fd9b575c.png"> |
+| <img alt="Basic Dialog in Material 3" src="/assets/images/docs/platform-adaptations/m3-alert.png">  |  <img alt="Alert in Human Interface Guidelines" src="/assets/images/docs/platform-adaptations/cupertino-alert.png"> |
 
 Because alert dialogs are tightly integrated with the operating system 
 and users have been trained to recognize and respond to them, 
