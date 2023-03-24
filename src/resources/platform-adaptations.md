@@ -28,10 +28,9 @@ For an example of an app using different information
 architecture structures on Android and iOS but sharing
 the same content code, see the [platform_design code samples][].
 
-NEW: We're looking to provide guidance for case 2. 
-Preliminary guides are being added to the UI components section. 
-Let us know which topic you’re most interested in by commenting on 
-[this issue](https://github.com/flutter/website/issues/8427).
+NEW: Preliminary guides addressing case 2 
+are being added to the UI components section. 
+You can request additional guides by commenting on [issue #8427][].
 
 ## Page navigation
 
@@ -554,19 +553,32 @@ double tap and shows the selection toolbar.
 </div>
 
 ## UI components
+
+This section includes preliminary recommendations on how to adapt 
+Material widgets to deliver a natural and compelling experience on iOS. 
+Your feedback is welcomed on [issue #8427][]. 
+
 ### Alert dialog
 
-Since Android 12, the default UI of alert dialogs follows the design guidelines defined in [Material 3](https://m3.material.io/components/dialogs/overview). 
-On iOS, an equivalent component called “alert” is defined in Apple’s [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/components/presentation/alerts/). 
+Since Android 12, the default UI of alert dialogs 
+(also known as a "basic dialog") follows the design guidelines 
+defined in [Material 3](https://m3.material.io/components/dialogs/overview). 
+On iOS, an equivalent component called “alert” is defined in Apple’s 
+[Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/components/presentation/alerts/).
 
 | Basic Dialog in Material 3  |  Alert in Human Interface Guidelines |
 |---|---|
 | <img alt="Basic Dialog in Material 3" src="https://user-images.githubusercontent.com/348942/227380688-38d491c8-86b7-4dc0-ac53-79505654dc28.png">  |  <img alt="Alert in Human Interface Guidelines" src="https://user-images.githubusercontent.com/348942/227380704-5dcf852d-1a17-44d1-868a-52a7fd9b575c.png"> |
 
-Because alert dialogs are tightly integrated with the operating system, we recommend following the platform conventions. 
-Specifically, you can use Flutter’s `AlertDialog` widget on Android and the `CupertinoAlertDialog` widget on iOS. 
-Here’s a [code sample](https://gist.github.com/InMatrix/1a61ba065c0c36ae642ff934971ab97b) you can use to achieve the recommended adaptation behavior. 
-Further detail about adapting alert dialogs is available in [this article](https://github.com/InMatrix/veggieseasons_adaptive/discussions/15).
+Because alert dialogs are tightly integrated with the operating system 
+and users have been trained to recognize and respond to them, 
+it's recommended to follow the platform conventions. 
+Specifically, you can use Flutter’s `AlertDialog` widget on Android 
+and the `CupertinoAlertDialog` widget on iOS. 
+Here’s a [code sample](https://gist.github.com/InMatrix/1a61ba065c0c36ae642ff934971ab97b) 
+you can use to achieve the recommended adaptation behavior. 
+Further details about adapting alert dialogs is available in 
+[this article](https://github.com/InMatrix/veggieseasons_adaptive/discussions/15).
 
 
 [issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
@@ -585,3 +597,4 @@ Further detail about adapting alert dialogs is available in [this article](https
 [slides up and fades in]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
 [`startActivity()`]: {{site.android-dev}}/reference/android/app/Activity.html#startActivity(android.content.Intent
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+[issue #8427]: {{site.repo.this}}/issues/8427
