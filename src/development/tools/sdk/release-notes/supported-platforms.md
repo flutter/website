@@ -55,12 +55,14 @@ following table:
 | macOS Monterey (12) & above|<center>✓</center>| | |
 | macOS Mojave (10.14) - Big Sur (11) | |<center>✓</center>| |
 | macOS High Sierra (10.13) & below | | |<center>✓</center>|
-| web - Chrome 84          |<center>✓</center>| | |
-| web - Firefox 72.0       |<center>✓</center>| | |
-| web - Safari/Catalina    |<center>✓</center>| | |
-| web - Edge 111.0         |<center>✓</center>|           |        |
-| Windows 11               |in progress|<center>✓</center>|        |
-| Windows 10               |<center>✓</center>|           |        |
+| web - Chrome 111.0       |<center>✓</center>| | |
+| web - Chrome 87.0        | |<center>✓</center>| |
+| web - Chrome 96.0 & above|<center>✓</center>| | |
+| web - Firefox 79.0       | |<center>✓</center>| |
+| web - Safari 13.1        | |<center>✓</center>| |
+| web - Edge 111.0         |<center>✓</center>| | |
+| Windows 11               |in progress|<center>✓</center>| |
+| Windows 10               |<center>✓</center>| | |
 | Windows 8                | |<center>✓</center>| |
 | Windows 7                | |<center>✓</center>| |
 | Windows Vista & below    | | |<center>✓</center>|
