@@ -104,7 +104,13 @@ Select your phone, and check **Connect via Network.**
 ![Wireless Connect][]{:.mw-100}
 
 Once the network icon appears next to the device name, 
-you can unplug your device from USB. For help troubleshooting, 
+you can unplug your device from USB. 
+
+Sometimes it takes longer to find network devices. 
+If you don't see your device listed when using `flutter run`, 
+try extending the timeout: `flutter run --device-timeout 5`.
+
+For additional help troubleshooting, 
 check out [Apple's Developer Forums][]. For setting up 
 wireless debugging with `flutter attach`, 
 checkout [Debugging your add-to-app module][].
@@ -209,5 +215,5 @@ or clicking the Run button in Xcode.
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
 [Developer Mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
 [Apple's Developer Forums]: {{site.apple-dev}}/forums/
-[Debugging your add-to-app module]: {{site.url}}/development/add-to-app/debugging
-[Wireless Connect]: {{site.url}}/assets/images/docs/setup/wireless-connectwirewir.png
+[Debugging your add-to-app module]: {{site.url}}/development/add-to-app/debugging/#wireless-debugging
+[Wireless Connect]: {{site.url}}/assets/images/docs/setup/wireless-connect.png

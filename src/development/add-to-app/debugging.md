@@ -72,8 +72,8 @@ using `flutter attach`:
 as described in the [MacOS installation guide][].
 1. Open **Xcode > Product > Scheme > Edit Scheme**
 1. Select the **Arguments** tab 
-1. Add either --observatory-host=0.0.0.0 for IPv4, 
-or --observatory-host=::0 for IPv6 as launch argument
+1. Add either `--observatory-host=0.0.0.0` for IPv4, 
+or `--observatory-host=::0` for IPv6 as launch argument
 
 ![Wireless Port][]{:.mw-100}
 
