@@ -4,7 +4,7 @@ description: Customize how Flutter apps are initialized on the web
 ---
 
 You can customize how a Flutter app is initialized on the web
-using the `_flutter.loader` JavaScript API.
+using the `_flutter.loader` JavaScript API provided by `flutter.js`.
 This API can be used to display a loading indicator in CSS,
 prevent the app from loading based on a condition,
 or wait until the user presses a button before showing the app.
@@ -24,12 +24,6 @@ The initialization process is split into the following stages:
 This page shows how to customize the behavior
 at each stage of the initialization process.
 
-{{site.alert.note}}
-For more information on implementing splash screens
-on mobile platforms, see
-[Adding a splash screen to your mobile app][].
-{{site.alert.end}}
-
 ## Getting started
 
 By default, the `index.html` file
@@ -39,28 +33,28 @@ that calls `loadEntrypoint` from the `flutter.js` file:
 
 ```html
 <html>
-   <head>
-      <!-- ... -->
-      <script src="flutter.js" defer></script>
-   </head>
-   <body>
-      <script>
-         window.addEventListener('load', function (ev) {
-             // Download main.dart.js
-             _flutter.loader.loadEntrypoint({
-                 serviceWorker: {
-                     serviceWorkerVersion: serviceWorkerVersion,
-                 }
-             }).then(function (engineInitializer) {
-                 // Initialize the Flutter engine
-                 return engineInitializer.initializeEngine();
-             }).then(function (appRunner) {
-                 // Run the app
-                 return appRunner.runApp();
-             });
-         });
-      </script>
-   </body>
+  <head>
+    <!-- ... -->
+    <script src="flutter.js" defer></script>
+  </head>
+  <body>
+    <script>
+      window.addEventListener('load', function (ev) {
+        // Download main.dart.js
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
+          onEntrypointLoaded: async function(engineInitializer) {
+            // Initialize the Flutter engine
+            let appRunner = await engineInitializer.initializeEngine();
+            // Run the app
+            await appRunner.runApp();
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
 ```
 
@@ -75,15 +69,18 @@ that calls `loadEntrypoint` from the `flutter.js` file:
 
 
 
-The `loadEntrypoint` function returns a JavaScript [`Promise`][js-promise]
-that resolves when the Service Worker is initialized
-and the `main.dart.js` entrypoint has been downloaded by the browser.
-It resolves with an **engine initializer** object
-that initializes the Flutter Web engine.
+The `loadEntrypoint` function calls the `onEntrypointLoaded` callback
+once the Service Worker is initialized, and the `main.dart.js` entrypoint
+has been downloaded and run by the browser. Flutter also calls
+`onEntrypointLoaded` on every hot restart during development.
 
-The `initializeEngine()` function returns a promise
-that resolves with an **app runner** object
-that has a single method `runApp()` that runs the Flutter app.
+The `onEntrypointLoaded` callback receives an **engine initializer** object as
+its only parameter. Use the engine initializer to set the run-time
+configuration, and start the Flutter Web engine.
+
+The `initializeEngine()` function returns a [`Promise`][js-promise]
+that resolves with an **app runner** object. The app runner has a
+single method, `runApp()`, that runs the Flutter app.
 
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
@@ -96,37 +93,77 @@ learn how to customize each stage of your app’s initialization.
 
 The `loadEntrypoint` method accepts these parameters:
 
-`entrypointUrl`
-: The URL of your Flutter app's entrypoint. Defaults to `main.dart.js`.
+<div class="table-wrapper" markdown="1">
 
-`serviceWorker`
-: The configuration of the `flutter_service_worker.js` file.
-  If this isn’t set, the service worker won’t be used.
-      
-`serviceWorkerVersion`
-: Pass *the `serviceWorkerVersion` var* set by
-  the build process in your <strong><code>index.html</code></strong> file.
-  
-`timeoutMillis`
-: The timeout value for the service worker load.
-  Defaults to <strong><code>4000ms</code></strong>.
+| Name | Description | JS&nbsp;Type |
+|-|-|-|
+|`entrypointUrl`| The URL of your Flutter app's entrypoint. Defaults to `"main.dart.js"`. |`String`|
+|`onEntrypointLoaded`| The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. |`Function`|
+|`serviceWorker`| The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker won’t be used.) |`Object`|
+{:.table}
 
+</div>
+
+The `serviceWorker` JavaScript object accepts the following properties:
+
+<div class="table-wrapper" markdown="1">
+
+| Name | Description | JS&nbsp;Type |
+|-|-|-|
+|`serviceWorkerUrl`| The URL of the Service Worker JS file. The `serviceWorkerVersion` is appended to the URL. Defaults to `"flutter_service_worker.js?v="` |`String`|
+|`serviceWorkerVersion`| Pass *the `serviceWorkerVersion` variable* set by the build process in your **`index.html`** file. |`String`|
+|`timeoutMillis`| The timeout value for the service worker load. Defaults to `4000`. |`Number`|
+{:.table}
+
+</div>
 
 ### Initializing the engine
 
-Instead of calling `initializeEngine()` on the engine initializer,
-you can call `autoStart()` to immediately start the app
-with the default configuration
-instead of using the app runner to call `runApp()`:
+As of **Flutter 3.7.0**, you can use the `initializeEngine` method to
+configure several run-time options of the Flutter web engine through a
+[`JsFlutterConfiguration` object][jsflutterconfig-source].
+
+You can pass in the following (optional) parameters:
+
+<div class="table-wrapper" markdown="1">
+
+| Name | Description | Dart&nbsp;Type |
+|-|-|-|
+|`canvasKitBaseUrl`| The base URL from where `canvaskit.wasm` is downloaded. |`String`|
+|`canvasKitForceCpuOnly`| When `true`, forces CPU-only rendering in CanvasKit (the engine won't use WebGL). |`bool`|
+|`canvasKitMaximumSurfaces`| The maximum number of overlay surfaces that the CanvasKit renderer can use. |`double`|
+|`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
+|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"html"`. |`String`|
+{:.table}
+
+</div>
+
+[jsflutterconfig-source]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
+[web-renderers]: {{site.url}}/development/platform-integration/web/renderers
+
+{{site.alert.note}}
+  Some of the parameters described above might have been overridden
+  in previous releases by using properties in the `window` object.
+  That approach is still supported, but displays a **deprecation
+  notice** in the JS console, as of **Flutter 3.7.0**.
+{{site.alert.end}}
+
+#### Skipping this step
+
+Instead of calling `initializeEngine()` on the engine initializer (and then
+`runApp()` on the application runner), you can call `autoStart()` to
+initialize the engine with its default configuration, and then start the app
+immediately after the initialization is complete:
 
 
 ```js
 _flutter.loader.loadEntrypoint({
   serviceWorker: {
     serviceWorkerVersion: serviceWorkerVersion,
+  },
+  onEntrypointLoaded: async function(engineInitializer) {
+    await engineInitializer.autoStart();
   }
-}).then(function(engineInitializer) {
-  return engineInitializer.autoStart();
 });
 ```
 
@@ -139,30 +176,31 @@ use the hooks provided for each stage to update the DOM:
 
 ```html
 <html>
-   <head>
-      <!-- ... -->
-      <script src="flutter.js" defer></script>
-   </head>
-   <body>
-      <div id="loading"></div>
-      <script>
-         window.addEventListener('load', function(ev) {
-           var loading = document.querySelector('#loading');
-           loading.textContent = "Loading entrypoint...";
-           _flutter.loader.loadEntrypoint({
-             serviceWorker: {
-               serviceWorkerVersion: serviceWorkerVersion,
-             }
-           }).then(function(engineInitializer) {
-             loading.textContent = "Initializing engine...";
-             return engineInitializer.initializeEngine();
-           }).then(function(appRunner) {
-             loading.textContent = "Running app...";
-             return appRunner.runApp();
-           });
-         });
-      </script>
-   </body>
+  <head>
+    <!-- ... -->
+    <script src="flutter.js" defer></script>
+  </head>
+  <body>
+    <div id="loading"></div>
+    <script>
+      window.addEventListener('load', function(ev) {
+        var loading = document.querySelector('#loading');
+        loading.textContent = "Loading entrypoint...";
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
+          onEntrypointLoaded: async function(engineInitializer) {
+            loading.textContent = "Initializing engine...";
+            let appRunner = await engineInitializer.initializeEngine();
+
+            loading.textContent = "Running app...";
+            await appRunner.runApp();
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
 ```
 
@@ -186,5 +224,3 @@ Then, from your project directory, run the following:
 ```
 $ flutter create . --platforms=web
 ```
-
-[Adding a splash screen to your mobile app]: {{site.url}}/development/ui/advanced/splash-screen

@@ -54,3 +54,8 @@ for Dart and Flutter
 * Display request data if content type is not json
   (thanks to leungpuikuen@!) -
   [#4602](https://github.com/flutter/devtools/pull/4602)
+
+## Changelog
+
+More details about changes and fixes are available in the DevTools
+[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).

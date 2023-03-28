@@ -18,16 +18,28 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Migrate `of` to non-nullable return values, and add `maybeOf`][]
+* [Deprecated API removed after v3.7][]
+* [Removed `ignoringSemantics`][]
+* [The window singleton is deprecated][]
+
+[Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
+[Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
+[The window singleton is deprecated]: {{site.url}}/release/breaking-changes/window-singleton
+
+### Released in Flutter 3.7
+
 * [Deprecated API removed after v3.3][]
 * [iOS FlutterViewController splashScreenView made nullable][]
+* [Migrate `of` to non-nullable return values, and add `maybeOf`][]
+* [Removed RouteSettings.copyWith][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
+* [A new way to customize context menus]({{site.url}}/release/breaking-changes/context-menus)
 
-[Migrate `of` to non-nullable return values, and add `maybeOf`]: /docs/release/breaking-changes/supplemental-maybeOf-migration
-[Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
-[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
+[Migrate `of` to non-nullable return values, and add `maybeOf`]: {{site.url}}/release/breaking-changes/supplemental-maybeOf-migration
+[Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
+[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
 ### Released in Flutter 3.3
 
@@ -42,8 +54,8 @@ release, and listed in alphabetical order:
 ### Released in Flutter 3
 
 * [Deprecated API removed after v2.10][]
-* [Page transitions replaced by ZoomPageTransitionsBuilder][]
 * [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
+* [Page transitions replaced by ZoomPageTransitionsBuilder][]
 
 
 [Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
@@ -112,8 +124,8 @@ The following breaking change was reverted in release 2.2:
 * [Material Chip button semantics][]
 * [SnackBars managed by the ScaffoldMessenger][]
 * [TextSelectionTheme migration][]
-* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 * [Transition of platform channel test interfaces to flutter_test package][]
+* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 
 [Added BuildContext parameter to TextEditingController.buildTextSpan]: {{site.url}}/release/breaking-changes/buildtextspan-buildcontext
 [Android ActivityControlSurface attachToActivity signature change]: {{site.url}}/release/breaking-changes/android-activity-control-surface-attach

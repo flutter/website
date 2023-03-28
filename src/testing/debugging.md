@@ -22,6 +22,11 @@ Flutter applications. Here are some of the available tools:
   representation of the widget tree, inspect
   individual widgets and their property values,
   enable the performance overlay, and more.
+* If you are looking for a way to use GDB to remotely debug the
+  Flutter engine running within an Android app process,
+  check out [`flutter_gdb`][].
+
+[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
 
 ## DevTools
 
@@ -123,8 +128,8 @@ When an invariant is violated, it's reported to the
 console, with some context information to help track
 down the source of the problem.
 
-For more information, see [`Assert`][] in the
-[Dart language tour][].
+For more information, check out [Assert][] in the
+[Dart language documentation][].
 
 ## Debugging animations
 
@@ -322,8 +327,8 @@ You might find the following docs useful:
 [release mode]: {{site.url}}/testing/build-modes#release
 [how the Widget Inspector uses widget creation tracking]: {{site.url}}/development/tools/devtools/inspector#track-widget-creation
 
-[`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
-[Dart language tour]: {{site.dart-site}}/guides/language/language-tour
+[Assert]: {{site.dart-site}}/language/control-flow#assert
+[Dart language documentation]: {{site.dart-site}}/language
 
 [WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
 [widget_inspector.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart

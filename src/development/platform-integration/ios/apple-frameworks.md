@@ -8,9 +8,8 @@ Flutter plugins that offer the same abilities as Apple's system
 libraries. This might include accessing device hardware or interacting
 with specific frameworks like `HealthKit` or `MapKit`.
 
-<!-- Add once SwiftUI PR is merged -->
-<!-- For an overview of how the SwiftUI framework compares to Flutter,
-see [Learning Flutter as a SwiftUI developer][].  -->
+For an overview of how the SwiftUI framework compares to Flutter,
+see [Flutter for SwiftUI developers][].
 
 ### Introducing Flutter plugins
 Dart calls libraries that contain platform-specific code _plugins_.
@@ -301,6 +300,30 @@ Expose quick actions on the home screen
 </td>
 </tr>
 
+<tr>
+<td markdown="1">
+Index items in Spotlight search
+</td>
+<td markdown="1">
+`CoreSpotlight`
+</td>
+<td markdown="1">
+[`flutter_core_spotlight`][]
+</td>
+</tr>
+
+<tr>
+<td markdown="1">
+Configure, update and communicate with Widgets
+</td>
+<td markdown="1">
+`WidgetKit`
+</td>
+<td markdown="1">
+[`home_widget`][]
+</td>
+</tr>
+
 </table>
 
 [^1]: Supports both Google Play Store on Android and Apple App Store on iOS.
@@ -310,8 +333,8 @@ Expose quick actions on the home screen
 [^5]: Uses Google's ML Kit and supports various features like text recognition, face detection, image labeling, landmark recognition, and barcode scanning. You can also create a custom model with Firebase. To learn more, see [Use a custom TensorFlow Lite model with Flutter][].
 [^6]: Uses the [OpenWeatherMap API][]. Other packages exist that can pull from different weather APIs.
 
-<!-- [Learning Flutter as a SwiftUI developer]: -->
-[Using packages]: {{ site.url }}/development/packages-and-plugins/using-packages
+[Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
+[Using packages]: {{site.url}}/development/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub-pkg}}
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
 [`http`]: {{site.pub-pkg}}/http
@@ -335,3 +358,5 @@ Expose quick actions on the home screen
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [Writing platform-specific code]: {{ site.url }}/development/platform-integration/platform-channels
 [`camera`]: {{site.pub-pkg}}/camera
+[`flutter_core_spotlight`]: {{site.pub-pkg}}/flutter_core_spotlight
+[`home_widget`]: {{site.pub-pkg}}/home_widget

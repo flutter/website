@@ -12,12 +12,13 @@
       permalink: /get-started/learn-more
     - divider
     - title: From another platform?
-      expanded: true
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
-        - title: Flutter for iOS devs
-          permalink: /get-started/flutter-for/ios-devs
+        - title: Flutter for SwiftUI devs
+          permalink: /get-started/flutter-for/swiftui-devs
+        - title: Flutter for UIKit devs
+          permalink: /get-started/flutter-for/uikit-devs
         - title: Flutter for React Native devs
           permalink: /get-started/flutter-for/react-native-devs
         - title: Flutter for web devs
@@ -28,8 +29,6 @@
           permalink: /get-started/flutter-for/declarative
     - title: "Dart language overview"
       permalink: https://dart.dev/overview
-    - title: "Building a web app"
-      permalink: /get-started/web
 
 - title: Samples & tutorials
   children:
@@ -75,6 +74,8 @@
           permalink: /development/ui/interactive
         - title: Assets and images
           permalink: /development/ui/assets-and-images
+        - title: Material Design
+          permalink: /development/ui/material
         - title: Navigation & routing
           permalink: /development/ui/navigation
           children:
@@ -106,14 +107,16 @@
           children:
             - title: Actions & shortcuts
               permalink: /development/ui/advanced/actions_and_shortcuts
+            - title: Fonts & typography
+              permalink: /development/ui/advanced/typography
             - title: Keyboard focus system
               permalink: /development/ui/advanced/focus
             - title: Gestures
               permalink: /development/ui/advanced/gestures
+            - title: Shaders
+              permalink: /development/ui/advanced/shaders
             - title: Slivers
               permalink: /development/ui/advanced/slivers
-            - title: Splash screens
-              permalink: /development/ui/advanced/splash-screen
         - title: Widget catalog
           permalink: /development/ui/widgets
     - title: Data & backend
@@ -138,6 +141,8 @@
           permalink: /development/data-and-backend/json
         - title: Firebase
           permalink: /development/data-and-backend/firebase
+        - title: Google APIs
+          permalink: /development/data-and-backend/google-apis
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
       permalink: /development/accessibility-and-localization
       children:
@@ -157,23 +162,29 @@
         - title: Android
           permalink: /development/platform-integration/android
           children:
+            - title: Adding a splash screen
+              permalink: /development/platform-integration/android/splash-screen
             - title: C interop
               permalink: /development/platform-integration/android/c-interop
             - title: Hosting native Android views
               permalink: /development/platform-integration/android/platform-views
-            - title: Android plugin upgrade
-              permalink: /development/platform-integration/android/plugin-api-migration
             - title: AndroidX migration
               permalink: /development/platform-integration/android/androidx-migration
             - title: Deprecated Splash Screen API Migration
               permalink: /development/platform-integration/android/splash-screen-migration
+            - title: Targeting ChromeOS with Android
+              permalink:  /development/platform-integration/android/chromeos
         - title: iOS
           permalink: /development/platform-integration/ios
           children:
             - title: Leveraging Apple's system libraries
               permalink: /development/platform-integration/ios/apple-frameworks
+            - title: Adding a splash screen
+              permalink: /development/platform-integration/ios/splash-screen
             - title: Adding iOS App Clip support
               permalink: /development/platform-integration/ios/ios-app-clip
+            - title: Adding iOS app extensions
+              permalink: /development/platform-integration/ios/app-extensions
             - title: C interop
               permalink: /development/platform-integration/ios/c-interop
             - title: Hosting native iOS views
@@ -195,6 +206,8 @@
         - title: Web
           permalink: /development/platform-integration/web
           children:
+            - title: Building web apps
+              permalink: /development/platform-integration/web/building
             - title: Web FAQ
               permalink: /development/platform-integration/web/faq
             - title: Web renderers
@@ -212,6 +225,8 @@
               permalink: /development/platform-integration/windows/run-loop-migration
             - title: Version information migration
               permalink: /development/platform-integration/windows/version-migration
+            - title: Dark mode migration
+              permalink: /development/platform-integration/windows/dark-mode-migration
     - title: Packages & plugins
       permalink: /development/packages-and-plugins
       children:
@@ -226,7 +241,7 @@
           match-page-url-exactly: true
         - title: Happy paths recommendations
           permalink: /development/packages-and-plugins/happy-paths/recommended
-        - title: Plugins in Flutter tests  **NEW**
+        - title: Plugins in Flutter tests
           permalink: /development/packages-and-plugins/plugins-in-tests
         - title: Using packages
           permalink: /development/packages-and-plugins/using-packages
@@ -313,15 +328,6 @@
               permalink: /release/breaking-changes
             - title: Release notes
               permalink: /development/tools/sdk/release-notes
-              children:
-                - title: 1.9.1
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.9.1.md
-                - title: 1.7.8
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.7.8.md
-                - title: 1.5.4
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.5.4.md
-                - title: 1.2.1
-                  permalink: /development/tools/sdk/release-notes/release-notes-1.2.1.md
         - title: Flutter and the pubspec file
           permalink: /development/tools/pubspec
         - title: Hot reload
@@ -336,6 +342,8 @@
   children:
     - title: Debugging tools
       permalink: /testing/debugging
+    - title: Testing plugins **NEW**
+      permalink: /testing/testing-plugins
     - title: Debugging apps programmatically
       permalink: /testing/code-debugging
     - title: Using an OEM debugger
@@ -429,6 +437,8 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Inside Flutter
       permalink: /resources/inside-flutter
+    - title: Flutter vs. Swift Concurrency
+      permalink: /resources/dart-swift-concurrency
     - title: Official brand assets
       permalink: https://flutter.dev/brand
     - title: Platform adaptations
@@ -447,5 +457,7 @@
       permalink: https://api.flutter.dev
     - title: flutter CLI reference
       permalink: /reference/flutter-cli
+    - title: Security false positives
+      permalink: /reference/security-false-positives
     - title: Package site
       permalink: https://pub.dev/flutter

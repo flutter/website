@@ -58,7 +58,7 @@ Once inside of Xcode, follow either Apple's
 [documentation on notarizing macOS Applications][], or
 [on distributing an application through the App Store][].
 You should also read through the
-[macOS-specific support](#macos-specific-support)
+[macOS-specific support](#entitlements-and-the-app-sandbox)
 section below to understand how entitlements,
 the App Sandbox, and the Hardened Runtime
 impact your distributable application.

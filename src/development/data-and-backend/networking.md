@@ -6,7 +6,7 @@ description: Internet network calls in Flutter.
 ## Cross-platform http networking
 
 The [`http`][] package provides the simplest way to issue http requests. This
-package is supported on Android, iOS, and the web.
+package is supported on Android, iOS, macOS, Windows, Linux and the web.
 
 ## Platform notes
 
@@ -26,6 +26,7 @@ manifest (`AndroidManifest.xml `):
 ```
 
 ### macOS
+
 macOS apps must allow network access in the relevant `.entitlements` files. 
 
 ```
@@ -33,8 +34,9 @@ macOS apps must allow network access in the relevant `.entitlements` files.
 <true/>
 ```
 
-Learn more about
-[setting up entitlements]({{site.url}}/desktop/macos#setting-up-entitlements).
+Learn more about [setting up entitlements][].
+
+[setting up entitlements]: {{site.url}}/development/platform-integration/macos/building#setting-up-entitlements
 
 ## Samples
 

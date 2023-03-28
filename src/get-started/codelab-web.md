@@ -10,12 +10,14 @@ js:
 <?code-excerpt path-base="get-started/codelab_web"?>
 
 {{site.alert.tip}}
-  This codelab walks you through writing your first Flutter
-  app on the web. You might prefer to try
-  [writing your first Flutter app on mobile][].
-  **Note that if you have downloaded and configured
-  Android and iOS tooling,
-  the completed app just works on all of these devices!**
+  This codelab walks you through writing
+  your first Flutter app on the web, specifically. 
+  You might prefer to try
+  [another codelab][first_flutter_codelab] 
+  that takes a more generic approach.
+  Note that the codelab on this page
+  does work on mobile and desktop
+  once you download and configure the appropriate tooling.
 {{site.alert.end}}
 
 <img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building" class='site-image-right'>
@@ -170,7 +172,7 @@ class SignUpForm extends StatefulWidget {
   const SignUpForm();
 
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -187,7 +189,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
@@ -276,7 +278,7 @@ From your IDE, editor, or at the command line,
 * If you know Java, the Dart language should feel very familiar.
 * All of the app's UI is created in Dart code.
   For more information, see [Introduction to declarative UI][].
-* The app’s UI adheres [Material Design][],
+* The app’s UI adheres to [Material Design][],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
   but if you prefer something else,
@@ -319,7 +321,8 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
+        child:
+            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium),
       ),
     );
   }
@@ -725,7 +728,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() {
+  State<AnimatedProgressIndicator> createState() {
     return _AnimatedProgressIndicatorState();
   }
 }
@@ -796,7 +799,7 @@ child: Column(
   mainAxisSize: MainAxisSize.min,
   children: [
     AnimatedProgressIndicator(value: _formProgress), // NEW
-    Text('Sign up', style: Theme.of(context).textTheme.headline4),
+    Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
     Padding(
 ```
 
@@ -859,7 +862,8 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
+        child:
+            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium),
       ),
     );
   }
@@ -867,7 +871,7 @@ class WelcomeScreen extends StatelessWidget {
 
 class SignUpForm extends StatefulWidget {
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -908,7 +912,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
@@ -962,7 +966,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() {
+  State<AnimatedProgressIndicator> createState() {
     return _AnimatedProgressIndicatorState();
   }
 }
@@ -1052,7 +1056,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Android Studio and IntelliJ]: {{site.url}}/development/tools/devtools/android-studio
 [Animation docs]: {{site.url}}/development/ui/animations
 [Building a form with validation]: {{site.url}}/cookbook/forms/validation
-[Building a web application with Flutter]: {{site.url}}/get-started/web
+[Building a web application with Flutter]: {{site.url}}/development/platform-integration/web/building
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: {{site.url}}/get-started/test-drive
 [Dart DevTools]: {{site.url}}/development/tools/devtools/overview
@@ -1073,4 +1077,4 @@ Dart DevTools, or Flutter animations, see the following:
 [VS Code]: {{site.url}}/development/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
-[writing your first Flutter app on mobile]: {{site.url}}/get-started/codelab
+[first_flutter_codelab]: {{site.url}}/get-started/codelab

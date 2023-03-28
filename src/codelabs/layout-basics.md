@@ -6,18 +6,12 @@ js:
 - defer: true
   url: https://dartpad.dev/inject_embed.dart.js
 ---
+
 Welcome to the Flutter layout codelab,
 where you learn how to build a Flutter UI without
 downloading and installing Flutter or Dart!
 
-{{site.alert.important}}
-  This codelab covers basic Flutter layout concepts using an
-  experimental code editor called DartPad.
-  DartPad hasn't been fully tested on all browsers.
-  If you experience any difficulties while using DartPad
-  on a specific browser, please create a [DartPad issue][]
-  and specify which browser you're using in the issue title.
-{{site.alert.end}}
+{% include docs/dartpad-troubleshooting.md %}
 
 Flutter is different from other frameworks because its UI
 is built in code, not (for example) in an XML file or similar.
@@ -1940,7 +1934,7 @@ which are positioned below the contact information.
 <ul markdown="1">
   <li markdown="1">
   The first `Text` widget has the name `Flutter McFlutter` and
-  the `style` property set to `Theme.of(context).textTheme.headline5`.
+  the `style` property set to `Theme.of(context).textTheme.headlineSmall`.
   </li>
   <li markdown="1">
   The second `Text` widget contains the title `Experienced App Developer`.
@@ -1979,7 +1973,7 @@ class MyWidget extends StatelessWidget {
       children: [
         Text(
           'Flutter McFlutter', 
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const Text('Experienced App Developer'),
       ],
@@ -1996,7 +1990,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2080,7 +2074,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline5" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2124,6 +2118,7 @@ Future<void> main() async {
       ],
      );
   ```
+{{site.alert.end}}
 
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
@@ -2140,7 +2135,7 @@ class MyWidget extends StatelessWidget {
       children: [
         Text(
           'Flutter McFlutter',
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const Text('Experienced App Developer'),
       ],
@@ -2168,7 +2163,7 @@ class MyWidget extends StatelessWidget {
           children: [
             Text(
               'Flutter McFlutter',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const Text('Experienced App Developer'),
           ],
@@ -2187,7 +2182,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2311,7 +2306,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2382,7 +2377,7 @@ class MyWidget extends StatelessWidget {
           children: [
             Text(
               'Flutter McFlutter',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const Text('Experienced App Developer'),
           ],
@@ -2416,7 +2411,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2441,7 +2436,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2597,7 +2592,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2670,7 +2665,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2714,7 +2709,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2751,7 +2746,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2907,7 +2902,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -3000,7 +2995,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3048,7 +3043,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3091,7 +3086,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -3247,7 +3242,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -3342,7 +3337,7 @@ You can download Flutter from the [install][] page.
 [Building layouts]: {{site.url}}/development/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new
-[Flutter's YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+[Flutter's YouTube channel]: {{site.social.youtube}}
 [GitHub]: {{site.repo.this}}/tree/{{site.branch}}/examples/layout/sizing/images
 [install]: {{site.url}}/get-started/install
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html

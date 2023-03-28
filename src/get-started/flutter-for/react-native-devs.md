@@ -612,8 +612,7 @@ class UseCard extends StatelessWidget {
 ```
 
 In the previous example, the constructor for the `CustomCard`
-class uses Dart's curly brace syntax `{ }` to indicate named
-[optional parameters][].
+class uses Dart's curly brace syntax `{ }` to indicate [named parameters][].
 
 To require these fields, either remove the curly braces from
 the constructor, or add `required` to the constructor.
@@ -857,8 +856,8 @@ return ListView.builder(
 
 {% include docs/android-ios-figure-pair.md image="react-native/flatlist.gif" alt="Flat list" class="border" %}
 
-To learn how to implement an infinite scrolling list, see the
-[Write Your First Flutter App, Part 1][] codelab.
+To learn how to implement an infinite scrolling list, see the official
+[`infinite_list`][infinite_list] sample.
 
 ### How do I use a Canvas to draw or paint?
 
@@ -2593,8 +2592,8 @@ and common widget properties.
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
-[async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support
-[`Axis`]: {{site.api}}/flutter/painting/Axis-class.html
+[async and await]: {{site.dart-site}}/language/async
+[`Axis`]: {{site.api}}/flutter/painting/Axis.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [color palette]: {{site.material}}/design/color
@@ -2631,7 +2630,7 @@ and common widget properties.
 [`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[functions]: {{site.dart-site}}/guides/language/language-tour#functions
+[functions]: {{site.dart-site}}/language/functions
 [`Future`]: {{site.dart-site}}/tutorials/language/futures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [Getting started]: {{site.url}}/get-started
@@ -2654,7 +2653,7 @@ and common widget properties.
 [`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.push`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`onSaved`]: {{site.api}}/flutter/widgets/FormField/onSaved.html
-[optional parameters]: {{site.dart-site}}/guides/language/language-tour#optional-parameters
+[named parameters]: {{site.dart-site}}/language/functions#named-parameters
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [`PanResponder`]: https://facebook.github.io/react-native/docs/panresponder.html
 [pub.dev]: {{site.pub}}
@@ -2678,7 +2677,7 @@ and common widget properties.
 [`TabBarView`]: {{site.api}}/flutter/material/TabBarView-class.html
 [`TabController`]: {{site.api}}/flutter/material/TabController-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign-class.html
+[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
@@ -2691,6 +2690,6 @@ and common widget properties.
 [`TickerProviderStateMixin`]: {{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
 [Using Packages]: {{site.url}}/development/packages-and-plugins/using-packages
-[variables]: {{site.dart-site}}/guides/language/language-tour#variables
+[variables]: {{site.dart-site}}/language/variables
 [`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
-[Write Your First Flutter App, Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[infinite_list]: {{site.repo.samples}}/tree/main/infinite_list

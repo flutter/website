@@ -2,15 +2,15 @@ name: google_sign_in_example
 publish_to: none
 
 environment:
-  sdk: '>=2.17.0-0 <3.0.0'
+  sdk: '>=2.18.5 <3.0.0'
 
 dependencies:
   collection: ^1.15.0
   extension_google_sign_in_as_googleapis_auth: ^2.0.2
   flutter:
     sdk: flutter
-  google_sign_in: ^5.0.2
-  googleapis: ^9.1.0
+  google_sign_in: ^6.0.1
+  googleapis: ^10.0.0
   http: ^0.13.0
 
 dev_dependencies:

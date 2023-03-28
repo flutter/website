@@ -204,7 +204,7 @@ colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
 ```
 
 A `Tween` object doesn't store any state. Instead, it provides the
-[`evaluate(Animation<double>animation`][] method that uses the 
+[`evaluate(Animation<double> animation)`][] method that uses the 
 `transform` function to map the current value of the animation
 (between 0.0 and 1.0), to the actual animation value. 
 
@@ -411,8 +411,9 @@ you’ve created your first animation in Flutter!
     });
   {% endprettify %}
 
-  You can learn more about cascade notation in the
-  [Dart Language Tour][].
+  To learn more about cascades,
+  check out [Cascade notation][]
+  in the [Dart language documentation][].
 {{site.alert.end}}
 
 ###  Simplifying with Animated&shy;Widget
@@ -965,8 +966,9 @@ for the latest available documents and examples.
 [`AnimationController` section]: #animationcontroller
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
-[Dart Language Tour]: {{site.dart-site}}/guides/language/language-tour
-[`evaluate(Animation<double>animation`]: {{site.api}}/flutter/animation/Animation/value.html
+[Cascade notation]: {{site.dart-site}}/language/operators#cascade-notation
+[Dart language documentation]: {{site.dart-site}}/language
+[`evaluate(Animation<double> animation)`]: {{site.api}}/flutter/animation/Animation/value.html
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [Monitoring the progress of the animation]: #monitoring
 [Refactoring with AnimatedBuilder]: #refactoring-with-animatedbuilder

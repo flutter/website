@@ -88,7 +88,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       iconTheme: const IconThemeData(color: Color(0xFFF64209)),
       title: Text(
         'Order Food',
-        style: Theme.of(context).textTheme.headline4?.copyWith(
+        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
               fontSize: 36,
               color: const Color(0xFFF64209),
               fontWeight: FontWeight.bold,
@@ -241,7 +241,7 @@ class CustomerCart extends StatelessWidget {
               const SizedBox(height: 8.0),
               Text(
                 customer.name,
-                style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: textColor,
                       fontWeight:
                           hasItems ? FontWeight.normal : FontWeight.bold,
@@ -257,7 +257,7 @@ class CustomerCart extends StatelessWidget {
                     const SizedBox(height: 4.0),
                     Text(
                       customer.formattedTotalItemPrice,
-                      style: Theme.of(context).textTheme.caption!.copyWith(
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
                             color: textColor,
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
@@ -266,7 +266,7 @@ class CustomerCart extends StatelessWidget {
                     const SizedBox(height: 4.0),
                     Text(
                       '${customer.items.length} item${customer.items.length != 1 ? 's' : ''}',
-                      style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: textColor,
                             fontSize: 12.0,
                           ),
@@ -332,14 +332,14 @@ class MenuListItem extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontSize: 18.0,
                         ),
                   ),
                   const SizedBox(height: 10.0),
                   Text(
                     price,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
                         ),

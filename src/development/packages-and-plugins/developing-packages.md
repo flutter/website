@@ -4,20 +4,6 @@ short-title: Developing
 description: How to write packages and plugins for Flutter.
 ---
 
-{{site.note.alert}}
-  The plugin API supports [federated plugins][] that
-  enable separation of different platform implementations.
-  You can also now indicate
-  [which platforms a plugin][supported-platforms]
-  supports, for example web and macOS.
-
-  Eventually, the old plugin APIs will be deprecated.
-  In the short term, you will see a warning when the
-  framework detects that you are using an old-style
-  plugin. For information on how to upgrade your plugin,
-  see [Supporting the new Android plugins APIs][].
-{{site.note.end}}
-
 ## Package introduction
 
 Packages enable the creation of modular code that can be shared easily.
@@ -307,7 +293,7 @@ dependencies:
 ```
 
 Note that as shown here, an app-facing package can have
-some platforms implementated within the package,
+some platforms implemented within the package,
 and others in endorsed federated implementations.
 
 ### Step 1: Create the package
@@ -603,11 +589,18 @@ class would be the same as in a C++-only implementation.
 
 ### Testing your plugin
 
-We encourage you test your plugin with automated tests,
-to ensure that functionality does not regress
-as you make changes to your code. For more information,
-see [Testing your plugin][],
-a section in [Supporting the new Android plugins APIs][].
+We encourage you test your plugin with automated tests
+to ensure that functionality doesn't regress
+as you make changes to your code.
+
+To learn more about testing your plugins,
+check out [Testing plugins][].
+If you are writing tests for your Flutter app
+and plugins are causing crashes,
+check out [Flutter in plugin tests][].
+
+[Flutter in plugin tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
+[Testing plugins]: {{site.url}}/testing/testing-plugins
 
 ## Developing FFI plugin packages {#plugin-ffi}
 
@@ -980,10 +973,8 @@ PENDING
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
-[Supporting the new Android plugins APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[Testing your plugin]: {{site.url}}/development/platform-integration/android/plugin-api-migration#testing-your-plugin
 [unit tests]: {{site.url}}/testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

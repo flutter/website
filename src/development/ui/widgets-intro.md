@@ -155,7 +155,7 @@ class MyScaffold extends StatelessWidget {
               'Example title',
               style: Theme.of(context) //
                   .primaryTextTheme
-                  .headline6,
+                  .titleLarge,
             ),
           ),
           const Expanded(
@@ -916,7 +916,7 @@ For more information, see the [`GlobalKey`][] API.
 [`didUpdateWidget()`]: {{api}}/widgets/State-class.html#didUpdateWidget
 [`dispose()`]: {{api}}/widgets/State-class.html#dispose
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
-[`final`]: {{site.dart-site}}/guides/language/language-tour#final-and-const
+[`final`]: {{site.dart-site}}/language/variables#final-and-const
 [`flex`]: {{api}}/widgets/Expanded-class.html#flex
 [`FloatingActionButton`]: {{api}}/material/FloatingActionButton-class.html
 [Gestures in Flutter]: {{site.url}}/development/ui/advanced/gestures

@@ -25,93 +25,37 @@ link. By default, web apps read the deep link path from the url fragment using
 the pattern: `/#/path/to/app/screen`, but this can be changed by
 [configuring the URL strategy][] for your app.
 
-To follow along, clone the [Navigation and Routing][router-sample] in
-flutter/samples.
+If you are a visual learner, check out the following video:
 
-## Enable deep linking on Android
+<iframe width="560" height="315" src="{{site.youtube-site}}/embed/KNAb2XL7k2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<b>Deep linking in Flutter</b>
 
-Add a metadata tag and [intent filter][] to `AndroidManifest.xml`
-inside the `<activity> `tag with the `".MainActivity"` name:
+## Get started
 
-```
-<!-- Deep linking -->
-<meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
-<intent-filter android:autoVerify="true">
-    <action android:name="android.intent.action.VIEW" />
-    <category android:name="android.intent.category.DEFAULT" />
-    <category android:name="android.intent.category.BROWSABLE" />
-    <data android:scheme="http" android:host="flutterbooksample.com" />
-    <data android:scheme="https" />
-</intent-filter>
-```
+To get started, see our cookbooks for Android and iOS:
 
-A full restart is required to apply these changes.
-
-## Test on Android emulator
-
-To test with an Android emulator, give the `adb` command an intent where the
-host name matches the name defined in `AndroidManifest.xml`:
-
-```
-adb shell am start -a android.intent.action.VIEW \
-    -c android.intent.category.BROWSABLE \
-    -d "http://flutterbooksample.com/book/1" \
-    <package name>
-```
-
-Replace the `<package name>` with the package name of your Android app.
-If you named the package `com.example.myflutterapp`, run the following command:
-
-```
-adb shell am start -a android.intent.action.VIEW \
-    -c android.intent.category.BROWSABLE \
-    -d "http://flutterbooksample.com/book/1" \
-    com.example.myflutterapp
-```
-
-For more details, see the [Verify Android App Links][verify-android-links]
-documentation in the Android docs.
-
-## Enable deep linking on iOS
-Add two new keys to `Info.plist` in the ios/Runner directory:
-
-```
-<key>FlutterDeepLinkingEnabled</key>
-<true/>
-<key>CFBundleURLTypes</key>
-<array>
-    <dict>
-    <key>CFBundleTypeRole</key>
-    <string>Editor</string>
-    <key>CFBundleURLName</key>
-    <string>flutterbooksample.com</string>
-    <key>CFBundleURLSchemes</key>
-    <array>
-    <string>customscheme</string>
-    </array>
-    </dict>
-</array>
-```
-
-The `CFBundleURLName` is a unique URL used to distinguish
-your app from others that use the same scheme.
-The scheme (`customscheme://`)  can also be unique.
-
-A full restart is required to apply these changes.
-
-## Test on iOS simulator
-
-Use the `xcrun` command to test on the iOS Simulator:
-
-```
-xcrun simctl openurl booted customscheme://flutterbooksample.com/book/1 
-```
+<div class="card-deck mb-8">
+  <a class="card" href="{{site.url}}/cookbook/navigation/set-up-app-links">
+    <div class="card-body">
+      <header class="card-title text-center m-0">
+        Android
+      </header>
+    </div>
+  </a>
+  <a class="card" href="{{site.url}}/cookbook/navigation/set-up-universal-links">
+    <div class="card-body">
+      <header class="card-title text-center m-0">
+        iOS
+      </header>
+    </div>
+  </a>
+</div>
 
 ## Migrating from plugin-based deep linking
 
 If you have written a plugin to handle deep links, as described in
-["Deep Links and Flutter applications"][plugin-linking]
-(an article on Medium),
+[Deep Links and Flutter applications][plugin-linking]
+(a free article on Medium),
 it will continue to work until you opt-in to this behavior by adding
 `FlutterDeepLinkingEnabled` to `Info.plist` or
 `flutter_deeplinking_enabled` to `AndroidManifest.xml`, respectively.
@@ -131,14 +75,16 @@ launched and running.
 {:.table.table-striped}
 </div>
 
-When using the [`Router`][Router] widget, your app has the ability to replace the
-current set of pages when a new deep link is opened while the app is running.
+When using the [`Router`][Router] widget,
+your app has the ability to replace the
+current set of pages when a new deep link
+is opened while the app is running.
 
-## See also
+## For more information
 
 [Learning Flutter’s new navigation and routing system][] provides an introduction to the Router system.
 
-[Learning Flutter’s new navigation and routing system]: https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Learning Flutter’s new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [switching-channels]: {{site.url}}/development/tools/sdk/upgrading#switching-flutter-channels
 [routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html

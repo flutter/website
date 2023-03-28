@@ -5,21 +5,21 @@ description: Get started with Flutter. Widgets, examples, updates, and API docs 
 ---
 
 {% for card in site.data.docs_cards -%}
-  {% capture index0Modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
-  {% capture indexModulo3 %}{{ forloop.index | modulo:3 }}{% endcapture %}
-  {% if index0Modulo3 == '0' %}
+  {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
+  {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
+  {% if index0Modulo3 == '0' -%}
   <div class="card-deck mb-4">
-  {% endif %}
+  {% endif -%}
     <a class="card" href="{{card.url}}">
       <div class="card-body">
         <header class="card-title">{{card.name}}</header>
         <p class="card-text">{{card.description}}</p>
       </div>
     </a>
-  {% if indexModulo3 == '0' %}
+  {% if indexModulo3 == '0' -%}
   </div>
-  {% endif %}
-{% endfor -%}
+  {% endif -%}
+{% endfor %}
 
 **To see changes to the site since our last release,
 see [What's new][].**
@@ -37,7 +37,7 @@ here are some next steps.
 ### Docs
 
 Coming from another platform? Check out Flutter for:
-[Android][], [iOS][], [web][], [React Native][], and
+[Android][], [SwiftUI][], [UIKit][], [React Native][], and
 [Xamarin.Forms][] developers.
 
 [Building layouts][]
@@ -65,7 +65,8 @@ Coming from another platform? Check out Flutter for:
 [FAQ]: {{site.url}}/resources/faq
 [Get started]: {{site.url}}/get-started/install
 [interactivity]: {{site.url}}/development/ui/interactive
-[iOS]: {{site.url}}/get-started/flutter-for/ios-devs
+[SwiftUI]: {{site.url}}/get-started/flutter-for/swiftui-devs
+[UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
 [React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
 [Understanding constraints]: {{site.url}}/development/ui/layout/constraints
 [web]: {{site.url}}/get-started/flutter-for/web-devs
@@ -97,7 +98,7 @@ widgets in [What is State?][]
 [What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
 
 {:.text-center}
-#### Only have 60 seconds? Learn how to build and deploy a Flutter App!
+<b>Only have 60 seconds? Learn how to build and deploy a Flutter App!</b>
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
   <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/ZnufaryH43s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -131,7 +132,7 @@ see our [videos][] page.
 
 We release new videos almost every week on the Flutter YouTube channel:
 
-<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/c/flutterdev">Explore more Flutter videos</a>
+<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
 
 **The documentation on this site reflects the
 latest stable release of Flutter.**

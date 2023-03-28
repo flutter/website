@@ -196,7 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -213,4 +213,4 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
-[shared preferences documentation]: {{site.android-dev}}/guide/topics/data/data-storage#pref
+[shared preferences documentation]: {{site.android-dev}}/training/data-storage/shared-preferences

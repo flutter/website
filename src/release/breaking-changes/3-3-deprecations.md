@@ -138,7 +138,7 @@ The enum `DragAnchor`, and its uses in `Draggable.dragAnchor` &
 `LongPressDraggable.dragAnchor` were deprecated in v2.1.
 Use `dragAnchorStrategy` instead.
 
-This change allowed fo more accurate feedback of the draggable widget when used
+This change allowed for more accurate feedback of the draggable widget when used
 in conjunction with other widgets like `Stack` and `InteractiveViewer`.
 
 **Migration guide**
@@ -248,4 +248,4 @@ Relevant PRs:
 
 ## Timeline
 
-In stable release: TBD
+In stable release: 3.7

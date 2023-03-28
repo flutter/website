@@ -124,6 +124,6 @@ Relevant PRs:
 [IDE with Dart support]: {{site.dart-site}}/tools#ides-and-editors
 [Integrate package:flutter_lints into templates]: {{site.repo.flutter}}/pull/81417
 [Issue 78432 - Update lint set for Flutter applications]: {{site.repo.flutter}}/issues/78432
-[`package:flutter_lints`]: {{site.pub}}/packages/flutter_lints
+[`package:flutter_lints`]: {{site.pub-pkg}}/flutter_lints
 [`package:lints`]: {{site.pub}}/packages/lints
 [Package dependencies]: {{site.dart-site}}/tools/pub/dependencies

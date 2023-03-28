@@ -21,6 +21,8 @@ than can be achieved using implicit animations.
   This codelab is not yet complete.
 {{site.alert.end}}
 
+{% include docs/dartpad-troubleshooting.md %}
+
 To get the most out of this codelab,
 you should have basic knowledge of the following:
 
@@ -773,7 +775,7 @@ the `value` property to a new value.
 [Material app]: {{site.api}}/flutter/material/MaterialApp-class.html
 [performance profiling]: {{site.url}}/perf/ui-performance
 [implicit animations]: {{site.url}}/development/ui/animations/implicit-animations
-[make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [stateful widgets]: {{site.url}}/development/ui/interactive#stateful-and-stateless-widgets
 [step 1]: #1-use-a-tickerprovider-mixin
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html

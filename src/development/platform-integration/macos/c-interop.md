@@ -267,7 +267,7 @@ use the following instructions:
 1. Run `flutter build macos` to build a self-contained release
    version of your app.
 
-[Flutter macOS Desktop]: {{site.url}}/desktop
+[Flutter macOS Desktop]: {{site.url}}/development/platform-integration/macos/building
 
 {% comment %}
 

@@ -71,6 +71,9 @@ Here are some things to keep in mind when designing your UI:
     the [source code for `SlideTransition`][],
     which uses this principle to avoid rebuilding its
     descendents when animating.
+    ("Same instance" is evaluated using `operator ==`,
+    but see the pitfalls section at the end of this page
+    for advice on when to avoid overriding `operator ==`.)
   * Use `const` constructors on widgets as much as possible,
     since they allow Flutter to short-circuit most
     of the rebuild work. To be automatically reminded
@@ -92,7 +95,7 @@ For more information, check out:
   (especially widgets with `const` constructors)
   are more performant than functions.
 
-[`flutter_lints`]: {{site.pub-pkg}}/packages/flutter_lints
+[`flutter_lints`]: {{site.pub-pkg}}/flutter_lints
 [`flutter_lints` migration guide]: {{site.url}}/release/breaking-changes/flutter-lints-package#migration-guide
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
@@ -409,6 +412,20 @@ your app's performance.
   of children (such as `Column()` or `ListView()`)
   if most of the children are not visible
   on screen to avoid the build cost.
+  
+* Avoid overriding `operator ==` on `Widget` objects.
+  While it may seem like it would help by avoiding unnecessary rebuilds,
+  in practice it hurts performance because it results in O(N²) behavior.
+  The only exception to this rule is leaf widgets (widgets with no children),
+  in the specific case where comparing the properties of the widget
+  is likely to be significantly more efficient than rebuilding the widget
+  and where the widget will rarely change configuration.
+  Even in such cases,
+  it is generally preferable to rely on caching the widgets,
+  because even one override of `operator ==`
+  can result in across-the-board performance degradation
+  as the compiler can no longer assume that the call is always static.
+
 
 ## Resources
 

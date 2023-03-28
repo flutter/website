@@ -1,16 +1,13 @@
-{% if page.show_banner -%}
+{% comment %}
+  For headings use <h3> elements.
+{% endcomment -%}
+<div class="site-banner site-banner--default" role="alert">
+  Flutter is back at Google I/O on May 10th!
+  <a href="https://io.google/2023/?utm_source=flutter&utm_medium=embedded_marketing&utm_campaign=hpp_banner&utm_content=">Register now</a>
   {% comment %}
-    For headings use <h3> elements.
-    Note that tabbed pages will NOT work correctly if no banner is present.
-    https://github.com/flutter/website/issues/3897
-  {% endcomment %}
-  <div class="site-banner site-banner--default" role="alert">
-    See how Flutter is pushing UI development at Flutter Forward;<br>
-    streaming live from Kenya on January 25, 2023.
-    <a href="https://flutter.dev/events/flutter-forward">Register now</a>
-<!--
-    <br>The Flutter and Dart teams are hiring.
-    <a href="https://docs.flutter.dev/jobs">Learn more</a><br>
--->
-  </div>
-{% endif -%}
+  <br>The Flutter and Dart teams are hiring.
+  <a href="https://docs.flutter.dev/jobs">Learn more</a><br>
+  {% endcomment -%}
+</div>
+
+

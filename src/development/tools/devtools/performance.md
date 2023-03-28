@@ -9,7 +9,9 @@ description: Learn how to use the DevTools performance view.
   for a web app.
 {{site.alert.end}}
 
-## What is it?
+## Basic performance concepts
+
+### What is the Performance view?
 
 The performance view offers timing and performance information for activity in
 your application. It consists of three parts, each increasing in granularity.
@@ -18,28 +20,43 @@ your application. It consists of three parts, each increasing in granularity.
 * Timeline events chart
 * CPU profiler
 
-{{site.alert.note}}
-  **Use a profile build of your application to analyze performance.**
-  Frame rendering times are not indicative of release performance
-  unless your application is run in profile mode.
+{{site.alert.secondary}}
+  **Use a [profile build][] of your application to analyze performance.**
+  Frame rendering times aren't indicative of release performance
+  when running in debug mode. Run your app in profile mode,
+  which still preserves useful debugging information.
 {{site.alert.end}}
 
+[profile build]: {{site.url}}/testing/build-modes#profile
+
 The performance view also supports importing and exporting of
-data snapshots. For more information, see the [Import and export][] section.
+data snapshots. For more information,
+check out the [Import and export][] section.
+
+### What is a frame in Flutter?
+
+Flutter is designed to render its UI at 60 frames per second
+(fps), or 120 fps on devices capable of 120Hz updates.
+Each render is called a _frame_.
+This means that, approximately every 16ms, the UI updates
+to reflect animations or other changes to the UI. A frame
+that takes longer than 16ms to render causes jank 
+(jerky motion) on the display device.
 
 ## Flutter frames chart
 
-This chart contains Flutter frame information for your application. Each bar set
-in the chart represents a single Flutter frame. The bars are color-coded to
-highlight the different portions of work that occur when rendering a Flutter
-frame: work from the UI thread and work from the raster thread (previously known
+This chart contains Flutter frame information for your application.
+Each bar set in the chart represents a single Flutter frame.
+The bars are color-coded to highlight the different portions
+of work that occur when rendering a Flutter frame: work from
+the UI thread and work from the raster thread (previously known
 as the GPU thread).
 
 ![Screenshot from a performance snapshot]({{site.url}}/assets/images/docs/tools/devtools/performance-flutter-frames-chart.png){:width="100%"}
 
 Selecting a bar from this chart centers the flame chart below on the timeline
-events corresponding to the selected Flutter frame. The events are highlighted
-with blue brackets.
+events corresponding to the selected Flutter frame.
+The events are highlighted with blue brackets.
 
 ![Screenshot from a timeline recording]({{site.url}}/assets/images/docs/tools/devtools/performance-timeline-events-chart-selected-frame.png){:width="100%"}
 
@@ -70,7 +87,7 @@ difficult for the GPU. They might involve unnecessary calls to
 `saveLayer()`, intersecting opacities with multiple objects,
 and clips or shadows in specific situations.
 
-For more information on profiling, see
+For more information on profiling, check out
 [Identifying problems in the GPU graph][GPU graph].
 
 ### Jank (slow frame)
@@ -83,36 +100,39 @@ A frame is considered to be janky if it takes more than
 experience UI jank or dropped frames.
 
 For more information on how to analyze your app's performance,
-see [Flutter performance profiling][].
+check out [Flutter performance profiling][].
 
 ### Shader compilation
+
 Shader compilation occurs when a shader is first used in your Flutter
 app. Frames that perform shader compilation are marked in dark
 red:
 
 ![Screenshot of shader compilation for a frame]({{site.url}}/assets/images/docs/tools/devtools/shader-compilation-frames-chart.png)
 
-For more information on how to reduce shader compilation jank, see [Reduce
-shader compilation jank on mobile][].
+For more information on how to reduce shader compilation jank,
+check out [Reduce shader compilation jank on mobile][].
 
 ## Timeline events chart
 
 The timeline events chart shows all event tracing from your application.
-The Flutter framework emits timeline events as it works to build frames, draw
-scenes, and track other activity such as HTTP traffic. These events show up here
-in the Timeline. You can also send your own Timeline events via the
-dart:developer
-[Timeline]({{site.api}}/flutter/dart-developer/Timeline-class.html)
-and [TimelineTask]({{site.api}}/flutter/dart-developer/TimelineTask-class.html)
+The Flutter framework emits timeline events as it works to build frames,
+draw scenes, and track other activity such as HTTP traffic.
+These events show up here in the Timeline.
+You can also send your own Timeline events using the dart:developer
+[`Timeline`]({{site.api}}/flutter/dart-developer/Timeline-class.html)
+and [`TimelineTask`]({{site.api}}/flutter/dart-developer/TimelineTask-class.html)
 APIs.
 
 ![Screenshot of timeline events for a frame]({{site.url}}/assets/images/docs/tools/devtools/performance-timeline-events-chart.png){:width="100%"}
 
 The flame chart supports zooming and panning:
+
 * To zoom, scroll up and down with the mouse wheel / trackpad
-* To pan horizontally, either click and drag the chart or scroll horizontally
-with the mouse wheel / trackpad
-* To pan vertically, either click and drag the chart or use **alt + scroll**
+* To pan horizontally, either click and drag the chart or
+  scroll horizontally with the mouse wheel / trackpad
+* To pan vertically, either click and drag the chart or use
+  **alt + scroll**
 * The WASD keys also work for controlling zoom and horizontal scroll position
 
 You can click an event to view CPU profiling information in the CPU profiler
@@ -124,19 +144,19 @@ To view more detailed tracing in the timeline events chart,
 use the options in the enhance tracing dropdown:
 
 {{site.alert.note}}
-  Frame times may be negatively affected when these options are enabled.
+  Frame times might be negatively affected when these options are enabled.
 {{site.alert.end}}
 
 ![Screenshot of enhance tracing dropdown]({{site.url}}/assets/images/docs/tools/devtools/enhance-tracing.png)
 
-To see the new timeline events,
-reproduce the activity in your app that you are interested in tracing,
+To see the new timeline events, reproduce the activity
+in your app that you are interested in tracing,
 and then select a frame to inspect the timeline.
 
 ### Track widget builds
 
-To see the build() method events in the timeline,
-enable the Track Widget Builds option.
+To see the `build()` method events in the timeline,
+enable the **Track Widget Builds** option.
 The name of the widget is shown in the timeline event.
 
 ![Screenshot of track widget builds]({{site.url}}/assets/images/docs/tools/devtools/track-widget-builds.png)
@@ -144,15 +164,14 @@ The name of the widget is shown in the timeline event.
 ### Track layouts
 
 To see render object layout events in the timeline,
-enable the Track Layouts option:
+enable the **Track Layouts** option:
 
 ![Screenshot of track layouts]({{site.url}}/assets/images/docs/tools/devtools/track-layouts.png)
 
 ### Track paints
 
 To see render object paint events in the timeline,
-enable the Track Paints option:
-
+enable the **Track Paints** option:
 
 ![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
 
@@ -172,7 +191,7 @@ excessive use of the effects you disabled might be contributing
 to the jank you saw in your app.
 
 **Render Clip layers**
-:  Disable this option  to check whether excessive use of clipping
+: Disable this option to check whether excessive use of clipping
   is affecting performance.
   If performance improves with this option disabled,
   try to reduce the use of clipping effects in your app.
@@ -184,8 +203,8 @@ to the jank you saw in your app.
    try to reduce the use of opacity effects in your app.
   
 **Render Physical Shape layers**
-:  Disable this option to check whether excessive
-   use of physical modeling effects are affecting performance,
+: Disable this option to check whether excessive
+  use of physical modeling effects are affecting performance,
   such as shadows or elevation.
   If performance improves with this option disabled,
   try to reduce the use of physical modeling effects in your app.
@@ -201,8 +220,15 @@ performance page. To import a performance snapshot, you can drag and drop the
 snapshot into DevTools from any page. **Note that DevTools only
 supports importing files that were originally exported from DevTools.**
 
+## Other resources
+
+To learn how to monitor an app's performance and
+detect jank using DevTools, check out a guided
+[Performance View tutorial][performance-tutorial].
+
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export
+[performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230

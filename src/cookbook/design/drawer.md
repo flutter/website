@@ -1,5 +1,5 @@
 ---
-title: Add a Drawer to a screen
+title: Add a drawer to a screen
 description: How to implement a Material Drawer.
 prev:
   title: Fade a widget in and out

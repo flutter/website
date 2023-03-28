@@ -15,6 +15,8 @@ js:
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
 
+{% include docs/dartpad-troubleshooting.md %}
+
 To get the most out of this codelab, you should have basic knowledge about:
 
 * How to [make a Flutter app].
@@ -61,13 +63,6 @@ Click the **Run** button to run the example:
 
 {% include docs/implicit-animations/fade-in-starter-code.md %}
 
-{{site.alert.important}}
-  This page uses an embedded version of [DartPad] to display
-  examples and exercises.
-  If you see empty boxes instead of DartPads, go to the
-  [DartPad troubleshooting page].
-{{site.alert.end}}
-
 ### Animate opacity with AnimatedOpacity widget
 
   This section contains a list of steps you can use to add an
@@ -85,7 +80,7 @@ Click the **Run** button to run the example:
 #### 1. Pick a widget property to animate
 
 To create a fade-in effect, you can animate the `opacity` property using the
-`AnimatedOpacity` widget. Change the `Container` widget to an
+`AnimatedOpacity` widget. Change the `Column` widget to an
 `AnimatedOpacity` widget:
 
 <?code-excerpt "opacity{1,2}/lib/main.dart"?>
@@ -512,7 +507,7 @@ here are some suggestions for where to go next:
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [list of common implicitly animated widgets]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [list of curve constants]: {{site.api}}/flutter/animation/Curves-class.html
-[make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1/
+[make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
 [shape-shifting complete]: #shape-shifting-complete
 [Shape-shifting effect]: #example-shape-shifting-effect
