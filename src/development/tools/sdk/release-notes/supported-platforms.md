@@ -11,7 +11,7 @@ which built Flutter might be deployed:
 
 1. **Supported**<br>
    Google-tested platforms that
-   are automatically tested at every commit
+   are automatically tested on every commit
    by continuous integration testing.
 1. **Best effort**<br>
    Platforms that we intend to support through
@@ -39,36 +39,21 @@ following table:
 <div class="table-wrapper" markdown="1">
 |Platform version|<center>Supported</center>|<center>Best effort</center>|<center>Unsupported</center>|
 |----------------|---------|-----------|-----------|
-| Android SDK 21-30        |<center>✓</center>| | |
-| Android SDK 19-20        | |<center>✓</center>| |
-| Android SDK 18 & below   | | |<center>✓</center>|
-| iOS 14-15                |<center>✓</center>| | |
-| iOS 11-13                | |<center>✓</center>| |
-| [iOS 10 & below & `arm7v` 32-bit iOS][] | | |<center>✓</center>|
-| Linux Debian 11          | |<center>✓</center>| |
-| Linux Debian 10          |<center>✓</center>| | |
-| Linux Debian 9 & below   | |<center>✓</center>| |
-| Linux Ubuntu 22.04       |in progress|<center>✓</center>| |
-| Linux Ubuntu 20.04       | |<center>✓</center>| |
-| Linux Ubuntu 18.04 LTS   |<center>✓</center>| | |
-| Linux (any 32-bit platform)| | |<center>✓</center>|
-| macOS Monterey (12) & above|<center>✓</center>| | |
-| macOS Mojave (10.14) - Big Sur (11) | |<center>✓</center>| |
-| macOS High Sierra (10.13) & below | | |<center>✓</center>|
-| web - Chrome 111.0       |<center>✓</center>| | |
-| web - Chrome 87.0        | |<center>✓</center>| |
-| web - Chrome 96.0 & above|<center>✓</center>| | |
-| web - Firefox 79.0       | |<center>✓</center>| |
-| web - Safari 13.1        | |<center>✓</center>| |
-| web - Edge 111.0         |<center>✓</center>| | |
-| Windows 11               |in progress|<center>✓</center>| |
-| Windows 10               |<center>✓</center>| | |
-| Windows 8                | |<center>✓</center>| |
-| Windows 7                | |<center>✓</center>| |
-| Windows Vista & below    | | |<center>✓</center>|
-| Windows (any 32-bit platform)| | |<center>✓</center>|
+| Android SDK    |<center>21-30</center>|<center>19-20</center>|<center>18-</center>|
+| iOS            |<center>14-15</center>|<center>11-13</center>|<center>10-, arm7v 32-bit</center>|
+| Linux Debian   |<center>10-11</center>|<center>9-</center>|<center></center>|
+| Linux Ubuntu   |<center>18.04 LTS</center>|<center>20.04</center>|<center>any 32-bit</center>|
+| macOS          |<center>Monterey (12+)</center>|<center>Mojave (10.14) - Big Sur (11)</center>|<center>High Sierra (10.13-)</center> |
+| web - Chrome   |<center>latest 2 releases</center>|<center>96+</center>| |
+| web - Firefox  |<center>latest 2 releases</center>|<center>99+</center>| |
+| web - Safari   |<center>latest 2 releases</center>|<center>| |
+| web - Edge     | |<center>96+</center>| |
+| Windows        | |<center>10</center>|<center>7 & 8</center>|<center>Vista-, any 32-bit</center>|
 {:.table.table-striped}
 </div>
 
-[iOS 10 & below & `arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
-
+{{site.alert.note}}
+  A `plus` sign (`+`)` in the table indicates "and higher releases".
+  A `minus` (`-`) sign directly following a version (with no spaces)
+  indicates "and lower releases".
+{{site.alert.end}}
