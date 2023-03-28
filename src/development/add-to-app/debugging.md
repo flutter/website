@@ -62,3 +62,22 @@ Select the device on which the Flutter module runs so `flutter attach` filters f
 
 
 [debugging functionalities]: {{site.url}}/testing/debugging
+
+### Wireless Debugging
+
+You can debug your app wirelessly on an iOS device 
+using `flutter attach`: 
+
+1. Ensure that your device is wirelessly connected to Xcode 
+as described in the [MacOS installation guide][].
+1. Open **Xcode > Product > Scheme > Edit Scheme**
+1. Select the **Arguments** tab 
+1. Add either --observatory-host=0.0.0.0 for IPv4, 
+or --observatory-host=::0 for IPv6 as launch argument
+
+![Wireless Port][]{:.mw-100}
+
+
+
+[MacOS installation guide]: {{site.url}}/get-started/install/macos#deploy-to-ios-devices
+[Wireless Port]: {{site.url}}/assets/images/docs/development/add-to-app/debugging/wireless-port.png

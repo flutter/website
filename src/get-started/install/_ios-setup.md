@@ -86,6 +86,28 @@ and an Apple Developer account. If your app is using Flutter plugins,
 you will also need the third-party CocoaPods dependency manager.
 
 <ol markdown="1">
+<li markdown="1">
+<a name="connect"></a>
+To set up physical device deployment in Xcode, 
+connect your device to the USB port on your 
+computer. 
+
+<li markdown="1">
+<a name="wireless"></a>
+[Optional] To leverage wireless debugging, ensure that 
+your device is on the same network as your computer 
+and that the device has a set passcode.  
+
+While the device is attached, open **Xcode > Window > Devices and Simulators**. 
+Select your phone, and check **Connect via Network.**
+
+![Wireless Connect][]{:.mw-100}
+
+Once the network icon appears next to the device name, 
+you can unplug your device from USB. For help troubleshooting, 
+check out [Apple's Developer Forums][]. For setting up 
+wireless debugging with `flutter attach`, 
+checkout [Debugging your add-to-app module][].
 
 <li markdown="1">
 
@@ -186,3 +208,6 @@ or clicking the Run button in Xcode.
 [Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
 [Developer Mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
+[Apple's Developer Forums]: {{site.apple-dev}}/forums/
+[Debugging your add-to-app module]: {{site.url}}/development/add-to-app/debugging
+[Wireless Connect]: {{site.url}}/assets/images/docs/setup/wireless-connectwirewir.png
