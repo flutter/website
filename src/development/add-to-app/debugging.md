@@ -74,6 +74,7 @@ as described in the [MacOS installation guide][].
 1. Select the **Arguments** tab 
 1. Add either `--observatory-host=0.0.0.0` for IPv4, 
 or `--observatory-host=::0` for IPv6 as launch argument
+<!-- TO DO: add info on wifi networks -->
 
 ![Wireless Port][]{:.mw-100}
 
