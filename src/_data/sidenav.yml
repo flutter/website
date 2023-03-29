@@ -154,7 +154,7 @@
       permalink: /development/platform-integration
       children:
         - title: Supported platforms
-          permalink: /development/tools/sdk/release-notes/supported-platforms
+          permalink: /reference/supported-platforms
         - title: Building desktop apps with Flutter
           permalink: /development/platform-integration/desktop
         - title: Writing platform-specific code

@@ -27,7 +27,7 @@ make sure to make a corresponding change in the get started pages:
   * /src/get-started/install/macos.md
   * /src/get-started/install/windows.md
   * /src/get-started/install/linux.md
-{% endcomment %}
+{% endcomment -%}
 
 
 ## Deploying Flutter
@@ -37,19 +37,19 @@ support for deploying Flutter apps is shown in the
 following table:
 
 <div class="table-wrapper" markdown="1">
-|Platform version|<center>Supported</center>|<center>Best effort</center>|<center>Unsupported</center>|
+|Platform version|Supported|Best effort|Unsupported|
 |----------------|---------|-----------|-----------|
-| Android SDK    |<center>21-30</center>|<center>19-20</center>|<center>18-</center>|
-| iOS            |<center>14-15</center>|<center>11-13</center>|<center>10-, arm7v 32-bit</center>|
-| Linux Debian   |<center>10-11</center>|<center>9-</center>|<center></center>|
-| Linux Ubuntu   |<center>18.04 LTS</center>|<center>20.04</center>|<center>any 32-bit</center>|
-| macOS          |<center>Monterey (12+)</center>|<center>Mojave (10.14) to Big Sur (11)</center>|<center>High Sierra (10.13-)</center> |
-| web - Chrome   |<center>latest 2 releases</center>|<center>96+</center>| |
-| web - Firefox  |<center>latest 2 releases</center>|<center>99+</center>| |
-| web - Safari   |<center>latest 2 releases</center>|<center>| |
-| web - Edge     | |<center>96+</center>| |
-| Windows        |<center>10</center>|<center>7 & 8</center>|<center>Vista-, any 32-bit</center>|
-{:.table.table-striped}
+| Android SDK    |21-30|19-20|18-|
+| iOS            |14-15|11-13|10-, arm7v 32-bit|
+| Linux Debian   |10-11|9-||
+| Linux Ubuntu   |18.04 LTS|20.04|any 32-bit|
+| macOS          |Monterey (12+)|Mojave (10.14) to Big Sur (11)|High Sierra (10.13-) |
+| web - Chrome   |latest 2 releases|96+| |
+| web - Firefox  |latest 2 releases|99+| |
+| web - Safari   |latest 2 releases|| |
+| web - Edge     | |96+| |
+| Windows        |10|7 & 8|Vista-, any 32-bit|
+{:.table.table-striped.table-centered-after-first}
 </div>
 
 {{site.alert.note}}
