@@ -43,7 +43,7 @@ following table:
 | iOS            |<center>14-15</center>|<center>11-13</center>|<center>10-, arm7v 32-bit</center>|
 | Linux Debian   |<center>10-11</center>|<center>9-</center>|<center></center>|
 | Linux Ubuntu   |<center>18.04 LTS</center>|<center>20.04</center>|<center>any 32-bit</center>|
-| macOS          |<center>Monterey (12+)</center>|<center>Mojave (10.14) - Big Sur (11)</center>|<center>High Sierra (10.13-)</center> |
+| macOS          |<center>Monterey (12+)</center>|<center>Mojave (10.14) to Big Sur (11)</center>|<center>High Sierra (10.13-)</center> |
 | web - Chrome   |<center>latest 2 releases</center>|<center>96+</center>| |
 | web - Firefox  |<center>latest 2 releases</center>|<center>99+</center>| |
 | web - Safari   |<center>latest 2 releases</center>|<center>| |
