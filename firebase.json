@@ -288,6 +288,7 @@
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/google-apis", "destination": "/development/data-and-backend/google-apis?utm_source=go-link&utm_medium=referral&utm_campaign=go-google-apis", "type": 301 },
       { "source": "/go/go-router-improvements", "destination": "https://docs.google.com/document/d/1_mRXinbL_rb0mUt6DAFZ8kj0kh33ZjEMJuUq4PJgwj8/edit?usp=sharing&resourcekey=0-sYbRzE9opneOFZ5F8J3gGw", "type": 301 },
+      { "source": "/go/go-router-support-imperative-routing", "destination": "https://docs.google.com/document/d/1HCgLi7ialw2Eqv-f_2z9ogdOfcmepIIqCsRhF-DT9dM/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v2-5-breaking-changes", "destination": "https://docs.google.com/document/d/1MoEM3C6sDvMUuZYCxlYoMI2QJlkONu8i9G53uy5xk-M/edit", "type": 301 },
       { "source": "/go/go-router-v2-breaking-changes", "destination": "https://docs.google.com/document/d/12iXx214phOag-XCetaGbSzziXGaHX82V-wMi_-8W04M/edit", "type": 301 },
       { "source": "/go/go-router-v3-breaking-changes", "destination": "https://docs.google.com/document/d/1TZ8G_TZ6Dqcpz64qXxArGhtHKFECDEPZFEuxYwQjJz4/edit#", "type": 301 },
@@ -459,6 +460,7 @@
       { "source": "/go/widgetspan-in-selectabletext", "destination": "https://docs.google.com/document/d/1nrVRytWVF-1hr8LvUKyENE5s074UInni9ZiColtIIxI", "type": 301 },
       { "source": "/go/widget-budget", "destination": "https://docs.google.com/document/d/1JTmf7ae8hWJ3zzqhI-__I9DcUJdQ3TopWsJbKyNDO5A/edit?usp=sharing&resourcekey=0--A0AbM19K-zDXRmIIzaUAg", "type": 301 },
       { "source": "/go/windows-x86-arm64-support", "destination": "https://docs.google.com/document/d/1gAGqtTAjO0GntR8bPonIO1aZJnTghPCI_PHJPdNzEmo/edit?resourcekey=0-l1tL7iai47yw3bMl9IcpHw", "type": 301 },
+      { "source": "/go/windows-arm64", "destination": "https://docs.google.com/document/d/1yuexY-EtzeVhU3V6RGBII_kH-znLSkQCspzW70jayZk/edit?resourcekey=0-8pQRSXSHQlwOo7QtCVLvBA#heading=h.pub7jnop54q0", "type": 301 },
       { "source": "/go/wrap-layout", "destination": "https://docs.google.com/document/d/1auZtWT1T5CkUKOUTUld8rF91iN7PvQoOF0IlBNXiDSo/edit?usp=sharing", "type": 301 },
       { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 }
     ],
