@@ -29,6 +29,7 @@
       { "source": "/adaptations", "destination": "/resources/platform-adaptations", "type": 301 },
       { "source": "/adaptive*", "destination": "/development/ui/layout/adaptive-responsive", "type": 301 },
       { "source": "/android-release", "destination": "/deployment/android", "type": 301 },
+      { "source": "/android-root-predictive-back", "destination": "https://docs.google.com/document/d/1BGCWy1_LRrXEB6qeqTAKlk-U2CZlKJ5xI97g45U7azk/edit#", "type": 301 },
       { "source": "/animations", "destination": "/development/ui/animations", "type": 301 },
       { "source": "/animations/:rest*", "destination": "/development/ui/animations/:rest*", "type": 301 },
       { "source": "/assets-and-images", "destination": "/development/ui/assets-and-images", "type": 301 },
