@@ -1100,5 +1100,5 @@ apps built with Flutter should follow Apple's
 [web instructions]: {{site.url}}/development/platform-integration/web/building
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: {{site.url}}/development/ui/widgets
-[supported platforms]: {{site.url}}/development/tools/sdk/release-notes/supported-platforms
+[supported platforms]: {{site.url}}/reference/supported-platforms
 [riverpod]: {{site.pub}}/packages/riverpod
