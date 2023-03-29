@@ -48,12 +48,12 @@ following table:
 | web - Firefox  |<center>latest 2 releases</center>|<center>99+</center>| |
 | web - Safari   |<center>latest 2 releases</center>|<center>| |
 | web - Edge     | |<center>96+</center>| |
-| Windows        | |<center>10</center>|<center>7 & 8</center>|<center>Vista-, any 32-bit</center>|
+| Windows        |<center>10</center>|<center>7 & 8</center>|<center>Vista-, any 32-bit</center>|
 {:.table.table-striped}
 </div>
 
 {{site.alert.note}}
-  A `plus` sign (`+`)` in the table indicates "and higher releases".
+  A `plus` sign (`+`) in the table indicates "and higher releases".
   A `minus` (`-`) sign directly following a version (with no spaces)
   indicates "and lower releases".
 {{site.alert.end}}
