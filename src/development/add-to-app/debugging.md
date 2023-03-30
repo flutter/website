@@ -63,22 +63,49 @@ Select the device on which the Flutter module runs so `flutter attach` filters f
 
 [debugging functionalities]: {{site.url}}/testing/debugging
 
-### Wireless Debugging
+### Wireless debugging
+
+#### iOS
 
 You can debug your app wirelessly on an iOS device 
 using `flutter attach`: 
 
-1. Ensure that your device is wirelessly connected to Xcode 
-as described in the [MacOS installation guide][].
-1. Open **Xcode > Product > Scheme > Edit Scheme**
-1. Select the **Arguments** tab 
-1. Add either `--observatory-host=0.0.0.0` for IPv4, 
-or `--observatory-host=::0` for IPv6 as launch argument
-<!-- TO DO: add info on wifi networks -->
+<ol markdown="1">
+<li markdown="1">
+
+Ensure that your device is wirelessly connected to Xcode 
+as described in the [iOS setup guide][].
+
+</li>
+<li markdown="1">
+
+Open **Xcode > Product > Scheme > Edit Scheme**
+
+</li>
+<li markdown="1">
+
+Select the **Arguments** tab 
+
+</li>
+<li markdown="1">
+
+Add either `--vm-service-host=0.0.0.0` for IPv4, 
+or `--vm-service-host=::0` for IPv6 as a launch argument
+
+You can determine if you're on an IPv6 network by opening your Mac's 
+**Settings > Wi-Fi > Details (of the network you're connected to) > TCP/IP** 
+and check to see if there is an **IPv6 address** section.
 
 ![Wireless Port][]{:.mw-100}
 
+</li>
+</ol>
 
+#### Android
 
-[MacOS installation guide]: {{site.url}}/get-started/install/macos#deploy-to-ios-devices
+Ensure that your device is wirelessly connected to Android Studio 
+as described in the [Android setup guide][].
+
+[iOS setup guide]: {{site.url}}/get-started/install/macos#deploy-to-ios-devices
+[Android setup guide]: {{site.url}}/get-started/install/macos#set-up-your-android-device
 [Wireless Port]: {{site.url}}/assets/images/docs/development/add-to-app/debugging/wireless-port.png

@@ -26,6 +26,9 @@ you need an Android device running Android 4.1 (API level 16) or higher.
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the
     [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+ 1. [Optional] To leverage wireless debugging, enable **Wireless debugging** 
+    on your device. Detailed instructions are available in the 
+    [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
  1. Windows-only: Install the [Google USB
     Driver]({{site.android-dev}}/studio/run/win-usb).
  1. Using a USB cable, plug your phone into your computer. If prompted on your

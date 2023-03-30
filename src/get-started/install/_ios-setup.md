@@ -91,7 +91,7 @@ you will also need the third-party CocoaPods dependency manager.
 To set up physical device deployment in Xcode, 
 connect your device to the USB port on your 
 computer. 
-
+</li>
 <li markdown="1">
 <a name="wireless"></a>
 [Optional] To leverage wireless debugging, ensure that 
@@ -108,13 +108,13 @@ you can unplug your device from USB.
 
 Sometimes it takes longer to find network devices. 
 If you don't see your device listed when using `flutter run`, 
-try extending the timeout: `flutter run --device-timeout 5`.
+try extending the timeout: `flutter run --device-timeout 10`.
 
 For additional help troubleshooting, 
 check out [Apple's Developer Forums][]. For setting up 
 wireless debugging with `flutter attach`, 
 checkout [Debugging your add-to-app module][].
-
+</li>
 <li markdown="1">
 
 <a name="trust"></a>
