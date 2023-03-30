@@ -93,6 +93,6 @@ Relevant PRs:
 
 * [PR 119968][]: Implement url support for RouteInformation and didPushRouteInformation.
 
-[PR 113860]: {{site.repo.flutter}}/pull/119968
+[PR 119968]: {{site.repo.flutter}}/pull/119968
 [`RouteInformation`]: {{site.api}}/flutter/widgets/RouteInformation-class.html
 [`Uri`]: {{site.api}}/flutter/dart-core/Uri-class.html
