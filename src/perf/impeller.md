@@ -53,7 +53,7 @@ Where can you currently use Impeller?
 
 Impeller is currently available for preview on iOS.
 You can enable it by passing `--enable-impeller`
-to the `flutter run` tool command or add the
+to the `flutter run` command or add the
 following under the top-level `<dict>` tag in an
 application's `Info.plist` file:
 
@@ -65,17 +65,17 @@ application's `Info.plist` file:
 The team continues to make improvements to iOS support,
 and if you encounter any slow frames or rendering
 fidelity issues with Impeller on iOS,
-please file an issue in the [GitHub tracker][]
+please file an issue in the [GitHub tracker][file-issue]
 with a small reproducible test case, and include
 `[Impeller]` in the title.
 
-[GitHub tracker]: {{site.github}}/flutter/flutter/issues
+[file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
 
 ### Android
 
 Android support is under active development,
 and isn't yet ready for preview. On the master channel,
-it might not work at the tip-of-tree. (QUESTION: What is tip of tree?)
+it might not work at the tip-of-tree.
 However, you can get an indication of the direction
 that support is headed by experimenting with it in the
 3.7 stable release. To enable Impeller on Android,
@@ -110,7 +110,7 @@ The remaining gaps are as follows:
 * Support for the focal argument to `Gradient.radial`
   isn't yet implemented ([docs]({{site.api}}/flutter/dart-ui/Gradient/Gradient.radial.html)).
 
-Recently fixed issues: (QUESTION: Should I just delete these?)
+Recently fixed issues that aren't yet on the stable channel::
 
 * Setting `Paint.invertColors` to true isn't yet implemented
   ([docs]({{site.api}}/flutter/dart-ui/Paint/invertColors.html)).
@@ -130,7 +130,9 @@ The team expects to close these gaps over the coming months.
 You might notice minor visual differences in rendering between
 Skia and Impeller.
 These minor differences might (or might not) be bugs,
-so don’t hesitate to file issues.
+so don’t hesitate to [file an issue][file-issue]
+with a small reproducible test case, and include
+`[Impeller]` in the title.
 
 On Android, the team continues to make progress on a Vulkan
 backend for Impeller. Impeller isn't yet ready for preview on Android,
