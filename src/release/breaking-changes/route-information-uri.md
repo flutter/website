@@ -1,6 +1,6 @@
 ---
-title: Migration guide for RouteInformation.location
-description: Deprecation of RouteInformation.location and its related APIs
+title: Migration guide for `RouteInformation.location`
+description: Deprecation of `RouteInformation.location` and its related APIs
 ---
 
 ## Summary
