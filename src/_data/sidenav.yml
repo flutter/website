@@ -443,7 +443,7 @@
 - title: Releases
   permalink: /release
   children:
-    - title: SDK archive
+    - title: Archive
       permalink: /release/archive
     - title: Release notes
       permalink: /release/release-notes
