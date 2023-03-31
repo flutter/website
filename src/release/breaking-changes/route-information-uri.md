@@ -5,11 +5,11 @@ description: Deprecation of `RouteInformation.location` and its related APIs
 
 ## Summary
 
-The APIs around the usages of RouteInformation.location was deprecated in the favor of RouteInformation.uri.
+`RouteInformation.location` and related APIs were deprecated in the favor of `RouteInformation.uri`.
 
 ## Context
 
-To handle mobile deeplinks from different web domains, the [`RouteInformation`][] needs to contain the authority information where the deeplinks are originated. The `uri` field was added to `RouteInformation` that captures the entire deeplink informations. Since then, every route-related parameters passing through framework were converted to full [`Uri`][] format. This led to deprecation of  imcompatible APIs.
+The [`RouteInformation`][] needs the authority information to handle mobile deeplinks from different web domains. The `uri` field was added to `RouteInformation` that captures the entire deeplink information and route-related parameters were converted to the full [`Uri`][] format. This led to deprecation of incompatible APIs.
 
 ## Description of change
 
@@ -80,7 +80,6 @@ Code after migration:
 ```dart
 SystemNavigator.routeInformationUpdated(uri: Uri.parse('/myLocation'));
 ```
-
 
 ## Timeline
 
