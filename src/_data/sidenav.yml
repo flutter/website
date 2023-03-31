@@ -322,12 +322,6 @@
               permalink: /development/tools/sdk/overview
             - title: Upgrading
               permalink: /development/tools/sdk/upgrading
-            - title: Releases
-              permalink: /development/tools/sdk/releases
-            - title: Breaking changes
-              permalink: /release/breaking-changes
-            - title: Release notes
-              permalink: /development/tools/sdk/release-notes
         - title: Flutter and the pubspec file
           permalink: /development/tools/pubspec
         - title: Hot reload
@@ -445,6 +439,16 @@
       permalink: /resources/platform-adaptations
     - title: Videos and online courses
       permalink: /resources/videos
+
+- title: Releases
+  permalink: /release
+  children:
+    - title: SDK archive
+      permalink: /release/archive
+    - title: Release notes
+      permalink: /release/release-notes
+    - title: Breaking changes
+      permalink: /release/breaking-changes
 
 - title: Reference
   expanded: true

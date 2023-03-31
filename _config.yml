@@ -118,6 +118,10 @@ defaults:
       path: 'get-started/flutter-for'
     values:
       show_breadcrumbs: false
+  - scope:
+      path: 'release'
+    values:
+      show_breadcrumbs: true
 
 
 ########### Alerts ###########
