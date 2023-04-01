@@ -233,7 +233,6 @@ This package promotes the separation of concerns.
 A simplified reactive state management solution.
 
 * [GetX package][]
-* [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
 
 [Complete GetX State Management]: {{site.youtube-site}}/watch?v=CNpXbeI_slw
