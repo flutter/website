@@ -22,7 +22,7 @@ The channel message contains the mime type, URI, and bytedata for the inserted c
 
 ## Migration guide
 
-If you previously implemented the `TextInputClient` interface, you must override
+If you implemented the `TextInputClient` interface earlier, override
 `insertContent` to either support rich content insertion or provide an empty implementation.
 
 To migrate, implement `insertContent`.
@@ -50,9 +50,9 @@ class MyCustomTextInputClient implements TextInputClient {
 }
 ```
 
-If your implementation of `TextInputClient` doesn't require the ability to receive rich content
-inserted from the IME, you can leave the implementation of `insertContent` empty with no
-consequences.
+Your implementation of `TextInputClient` might not require the ability to receive rich content
+inserted from the IME. In that case, you can leave the implementation of `insertContent` empty with 
+no consequences.
 
 <!-- skip -->
 ```dart
@@ -64,11 +64,11 @@ class MyCustomTextInputClient implements TextInputClient {
 }
 ```
 
-Alternatively, you can use a similar implementation to the default `TextInputClient`.<br>
-For more details, see the [insertContent implementation]({{site.master-api}}/flutter/services/TextInputClient/insertContent.html) for more details.
+As an alternative, you can use a similar implementation to the default `TextInputClient`.
+To learn how to do this, see the [insertContent implementation]({{site.master-api}}/flutter/services/TextInputClient/insertContent.html).
 
-In the future, you can prevent being broken by changes to an interface
-by using `with TextInputClient` rather than `implements TextInputClient`.
+To prevent breaking changes to an interface, use `with TextInputClient` rather than 
+`implements TextInputClient`.
 
 ## Timeline
 
