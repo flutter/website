@@ -141,6 +141,8 @@
           permalink: /development/data-and-backend/json
         - title: Firebase
           permalink: /development/data-and-backend/firebase
+        - title: Google APIs
+          permalink: /development/data-and-backend/google-apis
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
       permalink: /development/accessibility-and-localization
       children:
@@ -152,7 +154,7 @@
       permalink: /development/platform-integration
       children:
         - title: Supported platforms
-          permalink: /development/tools/sdk/release-notes/supported-platforms
+          permalink: /reference/supported-platforms
         - title: Building desktop apps with Flutter
           permalink: /development/platform-integration/desktop
         - title: Writing platform-specific code
@@ -371,6 +373,8 @@
     - title: Overview
       permalink: /perf
       match-page-url-exactly: true
+    - title: Impeller **NEW**
+      permalink: /perf/impeller
     - title: Performance best practices
       permalink: /perf/best-practices
     - title: App size

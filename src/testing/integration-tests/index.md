@@ -211,6 +211,14 @@ popd
 Where `<name>_test.dart` is the file created in the
 **Project Setup** section.
 
+{{site.alert.note}}
+  To use `--dart-define` with `gradlew`, you must `base64` encode
+  all parameters, and pass them to gradle in a comma separated list:
+  ```bash
+  ./gradlew project:task -Pdart-defines="{base64(key=value)},[...]"
+  ```
+{{site.alert.end}}
+
 Drag the "debug" APK from
 `<flutter_project_directory>/build/app/outputs/apk/debug`
 into the **Android Robo Test** target on the web page.
