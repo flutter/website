@@ -150,7 +150,7 @@ The hosted file should look similar to this:
 }]
 ```
 
-1. Set the `package_name` value to your Flutter application package name.
+1. Set the `package_name` value to your Android app's application ID.
 
 2. Set sha256_cert_fingerprints to the value you got from the previous step.
 
