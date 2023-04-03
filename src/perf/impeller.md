@@ -101,7 +101,7 @@ The team is increasingly confident that Impeller on iOS
 will meet the rendering needs of nearly all
 existing Flutter apps. As of the 3.7 release,
 Impeller on iOS supports all but a few features.
-The remaining gaps are as follows:
+The remaining gaps (which are in progress) are as follows:
 
 * Setting `Paint.isAntiAlias` to false is not yet implemented
   ([docs]({{site.api}}/flutter/dart-ui/Paint/isAntiAlias.html)).
@@ -110,7 +110,7 @@ The remaining gaps are as follows:
 * Support for the focal argument to `Gradient.radial`
   isn't yet implemented ([docs]({{site.api}}/flutter/dart-ui/Gradient/Gradient.radial.html)).
 
-Recently fixed issues that aren't yet on the stable channel::
+Recently fixed issues that aren't yet on the stable channel:
 
 * Setting `Paint.invertColors` to true isn't yet implemented
   ([docs]({{site.api}}/flutter/dart-ui/Paint/invertColors.html)).
