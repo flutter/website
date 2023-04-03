@@ -150,7 +150,7 @@ The hosted file should look similar to this:
 }]
 ```
 
-1. Set the `package_name` value to your Android app's application ID.
+1. Set the `package_name` value to your Android application ID.
 
 2. Set sha256_cert_fingerprints to the value you got from the previous step.
 
