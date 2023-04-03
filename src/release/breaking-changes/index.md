@@ -20,10 +20,14 @@ release, and listed in alphabetical order:
 
 * [Deprecated API removed after v3.7][]
 * [Removed `ignoringSemantics`][]
+* [The window singleton is deprecated][]
+* [Migration guide for `RouteInformation.location`][]
 * [Insert content text input client][]
 
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
+[The window singleton is deprecated]: {{site.url}}/release/breaking-changes/window-singleton
+[Migration guide for `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Insert Content Text Input Client]: {{site.url}}/release/breaking-changes/insert-content-text-input-client
 
 ### Released in Flutter 3.7
