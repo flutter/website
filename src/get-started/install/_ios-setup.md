@@ -101,7 +101,7 @@ and that the device has a set passcode.
 While the device is attached, open **Xcode > Window > Devices and Simulators**. 
 Select your phone, and check **Connect via Network.**
 
-![Wireless Connect][]{:.mw-100}
+<img src="/assets/images/docs/setup/connect-wireless.png" alt="Check the box that says 'connect via network' from the devices and simulators page">
 
 Once the network icon appears next to the device name, 
 you can unplug your device from USB. 
@@ -216,4 +216,3 @@ or clicking the Run button in Xcode.
 [Developer Mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
 [Apple's Developer Forums]: {{site.apple-dev}}/forums/
 [Debugging your add-to-app module]: {{site.url}}/development/add-to-app/debugging/#wireless-debugging
-[Wireless Connect]: {{site.url}}/assets/images/docs/setup/wireless-connect.png

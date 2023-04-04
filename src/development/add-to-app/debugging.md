@@ -65,10 +65,13 @@ Select the device on which the Flutter module runs so `flutter attach` filters f
 
 ### Wireless debugging
 
+You can debug your app wirelessly on an iOS or Android device 
+using `flutter attach`.
+
+
 #### iOS
 
-You can debug your app wirelessly on an iOS device 
-using `flutter attach`: 
+On iOS, you must follow the steps below: 
 
 <ol markdown="1">
 <li markdown="1">
@@ -96,7 +99,7 @@ You can determine if you're on an IPv6 network by opening your Mac's
 **Settings > Wi-Fi > Details (of the network you're connected to) > TCP/IP** 
 and check to see if there is an **IPv6 address** section.
 
-![Wireless Port][]{:.mw-100}
+<img src="/assets/images/docs/development/add-to-app/debugging/wireless-port.png" alt="Check the box that says 'connect via network' from the devices and simulators page">
 
 </li>
 </ol>
@@ -108,4 +111,3 @@ as described in the [Android setup guide][].
 
 [iOS setup guide]: {{site.url}}/get-started/install/macos#deploy-to-ios-devices
 [Android setup guide]: {{site.url}}/get-started/install/macos#set-up-your-android-device
-[Wireless Port]: {{site.url}}/assets/images/docs/development/add-to-app/debugging/wireless-port.png
