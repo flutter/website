@@ -45,7 +45,7 @@ we recommend using automated accessibility scanners:
     1. Open the `iOS` folder of your Flutter app in Xcode
     1. Select a Simulator as the target, and click **Run** button
     1. In Xcode, select
-       **Xcode > Open Developer Tools > Accessibility Inspector**
+       **Xcode > Open Developer Tools > The change**
     1. In the Accessibility Inspector,
        select **Inspection > Enable Point to Inspect**,
        and then select the various user interface elements in running
