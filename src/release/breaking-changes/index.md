@@ -6,8 +6,18 @@ description: A list of migration guides for breaking changes in Flutter.
 As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
+
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
+
+When facing Dart errors after upgrading Flutter,
+consider using the `dart fix` command
+to automatically migrate your code.
+Not every breaking change is supported in this way,
+but many are.
+
+To avoid being broken by future versions of Flutter,
+consider submitting your tests to our [test registry].
 
 The following guides are available. They are sorted by
 release, and listed in alphabetical order:
@@ -15,6 +25,7 @@ release, and listed in alphabetical order:
 [breaking change policy]: {{site.url}}/resources/compatibility
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
+[test registry]: https://github.com/flutter/tests
 
 ### Not yet released to stable
 
