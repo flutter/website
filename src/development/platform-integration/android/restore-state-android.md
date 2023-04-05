@@ -108,9 +108,17 @@ void main() {
 }
 ```
 
-QUESTION for Michael: I thought that Flutter automatically created
-  the Scope for every route. But this app manually
-  creats a Scope for the page. ?? (xxx)
+{{site.alert.secondary}}
+  **Creating the Scope:**
+  In most cases, specifying a `restorationScopeID` on
+  [`MaterialApp`][], [`CupertinoApp`][], or [`WidgetsApp`][]
+  enables state restoration and automatically inserts
+  a [`RootRestorationScope`][] for you.
+  However, the VeggieSeasons app has restorable state
+  that lives _above_ the `CupertinoApp`,
+  which is why it manually inserts a `RootRestorationScope`.
+{{site.alert.end}}
+
 
 [`runApp`]: {{site.api}}/flutter/widgets/runApp.html
 
@@ -123,9 +131,14 @@ add the [`RestorationMixin`][] to the app's `State` class.
 class _VeggieAppState extends State<VeggieApp> with RestorationMixin
 ```
 
+You can only restore state with the `RestorationMixin`
+that is stored in `RestorableProperty` (and its subclasses).
+To restore the state in those properties,
+you have to register them in [`restoreState`][].
+
 Once you've added the restore state mixin,
 your IDE asks you to implement an abstract method
-called [`restoreState`][]. The `restoreState` method calls
+called `restoreState`. The `restoreState` method calls
 [`registerForRestoration`][] to register that you
 intend to save state. For example:
 
@@ -140,13 +153,19 @@ void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
 [`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
 [`restoreState`]: {{site.api}}/flutter/widgets/RestorationMixin/restoreState.html
 
-## Step 3: Define a restorationScopeId for each scope
+## Step 3: Define restorationScopeId and restorationIDs
 
-Each Scope in the app should have a `restorationScopeId`,
-meaning that, at a minimum, you will have one scope per
-route. If you create additional scopes
-(to avoid `restorationId` duplication, for example),
-then also assign those with a unique ID.
+Providing a `restorationScopeId` or `restorationId`
+to a widget turns on state restoration for that
+particular widget: It will now store its own state
+under the provided it in the surrounding restoration bucket.
+The difference between a `restorationId` and a
+`restorationScopeID` is that widgets that take a
+`restorationScopeID` create a new `restorationScope`
+(a `RestorationBucket`, for example) into which all
+children will store their state. A `restorationId`
+means the widget (and its children) store the data
+in the surrounding bucket.
 
 ```dart
 restorationScopeId: 'app',
@@ -168,7 +187,7 @@ For more information on navigation and the
 [go_router]: {{site.pub}}/packages/go_router
 [Navigation and routing]: {{site.url}}/development/ui/navigation
 
-## Step 4: Save the state you want to restore
+## Step 5: Save the state you want to restore
 
 Most of the state restoration work occurs in the
 `build` method on the `State` class that implements
