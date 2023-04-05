@@ -363,6 +363,80 @@ location of the Android SDK:
     Flutter (as reported by `flutter doctor`).
  1. Click **OK**.
 
+## Migration steps to run/build Flutter apps with Android Studio Flamingo
+When you upgrade from [Android studio Eel to Flamingo][], you will likely see
+an error when you try to ```flutter run``` or ```flutter build``` your Flutter Android apps.
+
+**Error in Android Studio:**
+![Android Studio error]
+
+**Terminal output:**
+```
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '…/example/android/build.gradle'
+
+* What went wrong:
+Could not compile build file '…/example/android/build.gradle'.
+> startup failed:
+  General error during conversion: Unsupported class file major version 61
+
+  java.lang.IllegalArgumentException: Unsupported class file major version 61
+  	at groovyjarjarasm.asm.ClassReader.<init>(ClassReader.java:189)
+  	at groovyjarjarasm.asm.ClassReader.<init>(ClassReader.java:170)
+  	[…
+  	 …
+  	 … 209 more lines of Groovy and Gradle stack trace …
+  	 …
+  	 …]
+  	at java.base/java.lang.Thread.run(Thread.java:833)
+```
+
+This error means that any Flutter android project created
+using ```flutter create``` has a version of Gradle older than 7.3 
+and will run into [this issue][]. 
+
+If you haven’t taken active steps to update the Gradle version,
+then your project will be incompatible with JDK 17 required for Android Studio Flamingo.
+
+More information about [compatible versions][] 
+
+### How to identify your Gradle version:
+
+#### Option 1
+1. Upgrade to 3.10 beta (required to do step 2)
+2. Run ```flutter analyze --suggestions``` 
+(an analysis tool similar to flutter doctor but specific to your project)
+to validate if your project’s Grade version is out of date. 
+	
+If you run ```flutter analyze --suggestions``` and see
+```
+┌──────────────────────────────┐
+│ General Info                 │
+│ [✗] App Name: name not found │
+└──────────────────────────────┘
+```
+you are running the tool from the wrong directory. 
+
+#### Option 2
+1. Go to project/android/gradle/wrapper/gradle-warper.properties
+2. look at the ```distributionURL``` to find your Gradle version
+
+### How to upgrade your Gradle version:
+#### Option 1
+1. Open your Flutter project’s Android sub-folder in Android Studio Flamingo
+2. You should get prompted to upgrade Gradle
+![upgrade Gradle prompt]
+4. Follow the workflow they provide to upgrade your project to the latest version
+![upgrade Gradle workflow]
+
+#### Option 2
+1. Go to gradle/wrapper/gradle-wrapper.properties 
+2. Edit the ```distributionUrl``` for the most recent version of Gradle to be as follows: ```distributionUrl=https\://services.gradle.org/distributions/gradle-7.3.3-all.zip```
+
+More instructions on [how to update gradle][] 
+
 ## Tips and tricks
 
 * [Flutter IDE cheat sheet, MacOS version][]
@@ -403,3 +477,7 @@ When filing new issues, include the output of [`flutter doctor`][].
 [Running DevTools from Android Studio]: {{site.url}}/development/tools/devtools/android-studio
 [Hot reload]: {{site.url}}/development/tools/hot-reload
 [Timeline view]: {{site.url}}/development/tools/devtools/performance
+[Android studio Eel to Flamingo]: https://developer.android.com/studio/releases
+[this issue]: https://github.com/flutter/flutter/issues/124022
+[compatible versions]: https://docs.gradle.org/current/userguide/compatibility.html#java
+[how to update gradle]: https://developer.android.com/studio/releases/gradle-plugin#updating-gradle 
