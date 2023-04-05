@@ -24,8 +24,8 @@ In the mean time, check out Flutter's
 optimistic that existing Flutter web applications will have to do little or no
 work to support WebAssembly once work is complete.
 
-You might also be interested in this talk by folks on our team:
-[Flutter, Dart, and WasmGC: A new model for web applications](https://wasmio.tech/sessions/flutter-dart-and-wasm-gc-a-new-model-for-web-applications/).
+You might also be interested in this talk, from March 2023, by a member of our team:
+[Flutter, Dart, and WasmGC: A new model for web applications](https://youtu.be/Nkjc9r0WDNo).
 
 For the latest updates on this effort, 
 check out [flutter.dev/wasm]({{site.main-url}}/wasm).

@@ -363,6 +363,8 @@
     - title: Overview
       permalink: /perf
       match-page-url-exactly: true
+    - title: Impeller **NEW**
+      permalink: /perf/impeller
     - title: Performance best practices
       permalink: /perf/best-practices
     - title: App size

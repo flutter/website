@@ -76,46 +76,35 @@ object? The main reason is that it's useful for actions to decide whether they
 are enabled by implementing `isEnabled`. Also, it is often helpful if the key
 bindings, and the implementation of those bindings, are in different places.
 
-If indeed all that is needed is a callback, without all the complexity (or
-flexibility) of `Actions` and `Shortcuts`, you can already use a `Focus` widget
-for this. For example, here's the implementation of Flutter's simple
-[`CallbackShortcuts`][] widget that takes a map of activators and executes 
-callbacks for them:
-
+If all you need are callbacks without the flexibility of `Actions` and
+`Shortcuts`, you can use the [`CallbackShortcuts`][] widget:
 
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (CallbackShortcuts)"?>
 ```dart
-class CallbackShortcuts extends StatelessWidget {
-  const CallbackShortcuts({
-    super.key,
-    required this.bindings,
-    required this.child,
-  });
-
-  final Map<ShortcutActivator, VoidCallback> bindings;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Focus(
-      onKey: (node, event) {
-        KeyEventResult result = KeyEventResult.ignored;
-        // Activates all key bindings that match, returns handled if any handle it.
-        for (final ShortcutActivator activator in bindings.keys) {
-          if (activator.accepts(event, RawKeyboard.instance)) {
-            bindings[activator]!.call();
-            result = KeyEventResult.handled;
-          }
-        }
-        return result;
+@override
+Widget build(BuildContext context) {
+  return CallbackShortcuts(
+    bindings: <ShortcutActivator, VoidCallback>{
+      const SingleActivator(LogicalKeyboardKey.arrowUp): () {
+        setState(() => count = count + 1);
       },
-      child: child,
-    );
-  }
+      const SingleActivator(LogicalKeyboardKey.arrowDown): () {
+        setState(() => count = count - 1);
+      },
+    },
+    child: Focus(
+      autofocus: true,
+      child: Column(
+        children: <Widget>[
+          const Text('Press the up arrow key to add to the counter'),
+          const Text('Press the down arrow key to subtract from the counter'),
+          Text('count: $count'),
+        ],
+      ),
+    ),
+  );
 }
 ```
-
-This may be all that is needed for some apps.
 
 ## Shortcuts
 
