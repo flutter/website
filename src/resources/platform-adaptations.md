@@ -28,9 +28,11 @@ For an example of an app using different information
 architecture structures on Android and iOS but sharing
 the same content code, see the [platform_design code samples][].
 
-NEW: Preliminary guides addressing case 2 
+{{site.alert.info}}
+Preliminary guides addressing case 2 
 are being added to the UI components section. 
 You can request additional guides by commenting on [issue #8427][].
+{{site.alert.end}}
 
 ## Page navigation
 
@@ -562,23 +564,74 @@ Your feedback is welcomed on [issue #8427][].
 
 Since Android 12, the default UI of alert dialogs 
 (also known as a "basic dialog") follows the design guidelines 
-defined in [Material 3](https://m3.material.io/components/dialogs/overview). 
+defined in [Material 3][m3-dialog] (M3). 
 On iOS, an equivalent component called “alert” is defined in Apple’s 
-[Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/components/presentation/alerts/).
+[Human Interface Guidelines][hig-alert] (HIG).
 
-| Basic Dialog in Material 3  |  Alert in Human Interface Guidelines |
-|---|---|
-| <img alt="Basic Dialog in Material 3" src="/assets/images/docs/platform-adaptations/m3-alert.png">  |  <img alt="Alert in Human Interface Guidelines" src="/assets/images/docs/platform-adaptations/cupertino-alert.png"> |
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="/assets/images/docs/platform-adaptations/m3-alert.png" 
+        class="figure-img img-fluid rounded" alt="Basic Dialog in Material 3" />
+        <figcaption class="figure-caption">
+          Basic Dialog in M3
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="/assets/images/docs/platform-adaptations/cupertino-alert.png" 
+        class="figure-img img-fluid rounded" alt="Alert in Human Interface Guidelines" />
+        <figcaption class="figure-caption">
+          Alert in HIG
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
 
-Because alert dialogs are tightly integrated with the operating system 
-and users have been trained to recognize and respond to them, 
-it's recommended to follow the platform conventions. 
-Specifically, you can use Flutter’s `AlertDialog` widget on Android 
-and the `CupertinoAlertDialog` widget on iOS. 
-Here’s a [code sample](https://gist.github.com/InMatrix/1a61ba065c0c36ae642ff934971ab97b) 
-you can use to achieve the recommended adaptation behavior. 
-Further details about adapting alert dialogs is available in 
-[this article](https://github.com/InMatrix/veggieseasons_adaptive/discussions/15).
+Since alert dialogs are often tightly integrated with the operating system, 
+their design generally needs to follow the platform conventions. 
+This is especially important when a dialog is used to request user input 
+about security, privacy, and destructive operations (e.g., deleting files 
+permanently). As an exception, a branded alert dialog design can be used on 
+non-critical user flows to highlight specific information or messages.
+
+To implement platform-specific alert dialogs, 
+you can use Flutter’s `AlertDialog` widget on Android 
+and the `CupertinoAlertDialog` widget on iOS. Below is a code snippet you can 
+adapt to show a platform-specific alert dialog.
+
+```dart
+void _showAdaptiveDialog(
+  context, {
+  required Text title,
+  required Text content,
+  required List<Widget> actions,
+}) {
+  Platform.isIOS || Platform.isMacOS
+      ? showCupertinoDialog<String>(
+          context: context,
+          builder: (BuildContext context) => CupertinoAlertDialog(
+            title: title,
+            content: content,
+            actions: actions,
+          ),
+        )
+      : showDialog(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            title: title,
+            content: content,
+            actions: actions,
+          ),
+        );
+}
+```
+
+Further detail about adapting alert dialogs is available in 
+[this post][alert-post], where you can leave feedback or ask questions.
 
 
 [issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
@@ -598,3 +651,6 @@ Further details about adapting alert dialogs is available in
 [`startActivity()`]: {{site.android-dev}}/reference/android/app/Activity.html#startActivity(android.content.Intent
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [issue #8427]: {{site.repo.this}}/issues/8427
+[m3-dialog]: https://m3.material.io/components/dialogs/overview
+[hig-alert]: https://developer.apple.com/design/human-interface-guidelines/components/presentation/alerts/
+[alert-post]: {{site.repo.uxr}}/discussions/92
