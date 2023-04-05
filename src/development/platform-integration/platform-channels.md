@@ -874,7 +874,110 @@ You should now be able to run the application on Windows.
 If your device doesn't have a battery,
 it displays 'Battery level not available'.
   
-### Step 6: Add a Linux platform-specific implementation
+### Step 6: Add a macOS platform-specific implementation
+
+Start by opening the macOS host portion of your Flutter app in Xcode:
+
+1. Start Xcode.
+
+1. Select the menu item **File > Open...**.
+
+1. Navigate to the directory holding your Flutter app, and select the **macos**
+folder inside it. Click **OK**.
+
+Add the Swift implementation of the platform channel method:
+
+1. **Expand Runner > Runner** in the Project navigator.
+
+1. Open the file `MainFlutterWindow.swift` located under **Runner > Runner**
+   in the Project navigator.
+
+First, add the necessary import to the top of the file, just after
+`import FlutterMacOS`:
+
+<!--code-excerpt "MainFlutterWindow.swift" title-->
+```swift
+import IOKit.ps
+```
+
+Create a `FlutterMethodChannel` tied to the channel name
+`samples.flutter.dev/battery` in the `awakeFromNib` method:
+
+<!--code-excerpt "MainFlutterWindow.swift" title-->
+```swift
+  override func awakeFromNib() {
+    // ...
+    self.setFrame(windowFrame, display: true)
+  
+    let batteryChannel = FlutterMethodChannel(
+      name: "samples.flutter.dev/battery",
+      binaryMessenger: flutterViewController.engine.binaryMessenger)
+    batteryChannel.setMethodCallHandler { (call, result) in
+      // This method is invoked on the UI thread.
+      // Handle battery messages.
+    }
+
+    RegisterGeneratedPlugins(registry: flutterViewController)
+
+    super.awakeFromNib()
+  }
+}
+```
+
+Next, add the macOS Swift code that uses the IOKit battery APIs to retrieve
+the battery level. This code is exactly the same as you
+would write in a native macOS app.
+
+Add the following as a new method at the bottom of `MainFlutterWindow.swift`:
+
+<!--code-excerpt "MainFlutterWindow.swift" title-->
+```swift
+private func getBatteryLevel() -> Int? {
+  let info = IOPSCopyPowerSourcesInfo().takeRetainedValue()
+  let sources: Array<CFTypeRef> = IOPSCopyPowerSourcesList(info).takeRetainedValue() as Array
+  if let source = sources.first {
+    let description =
+      IOPSGetPowerSourceDescription(info, source).takeUnretainedValue() as! [String: AnyObject]
+    if let level = description[kIOPSCurrentCapacityKey] as? Int {
+      return level
+    }
+  }
+  return nil
+}
+```
+
+Finally, complete the `setMethodCallHandler` method added earlier.
+You need to handle a single platform method, `getBatteryLevel()`,
+so test for that in the `call` argument.
+The implementation of this platform method calls
+the macOS code written in the previous step. If an unknown method
+is called, report that instead.
+
+<!--code-excerpt "MainFlutterWindow.swift" title-->
+```swift
+batteryChannel.setMethodCallHandler { (call, result) in
+  switch call.method {
+  case "getBatteryLevel":
+    guard let level = getBatteryLevel() else {
+      result(
+        FlutterError(
+          code: "UNAVAILABLE",
+          message: "Battery level not available",
+          details: nil))
+     return
+    }
+    result(level)
+  default:
+    result(FlutterMethodNotImplemented)
+  }
+}
+```
+
+You should now be able to run the application on macOS.
+If your device doesn't have a battery,
+it displays 'Battery level not available'.
+
+### Step 7: Add a Linux platform-specific implementation
   
 For this example you need to install the `upower` developer headers.
 This is likely available from your distribution, for example with:
