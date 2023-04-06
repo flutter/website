@@ -72,7 +72,7 @@ cd android/gradle/wrapper
 **Step 2**: Edit the `gradle-wrapper.properties` file to
   change the `distributionUrl` field to the new Gradle version:
 
-```sh
+```properties
 distributionUrl=https\://services.gradle.org/distributions/gradle-8.0.2-all.zip 
 ```
 
