@@ -11,7 +11,7 @@ you might have run into an error similar to the following:
 
 ![Error dialog in Android Studio Flamingo]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-error.png){:width="80%"}
 
-The terminal output for this error looks
+The terminal output for this error is
 similar to the following:
 
 
@@ -44,8 +44,8 @@ Gradle versions [prior to 7.3][] can't run
 when using Java 17.
 
 **You can fix this error by upgrading your Gradle project
-to a compatible version (7.3 or later) using one of
-the following approaches.**
+to a compatible version (7.3 through 7.6.2, inclusive)
+using one of the following approaches.**
 
 [prior to 7.3]: https://docs.gradle.org/current/userguide/compatibility.html#java
 
@@ -58,6 +58,8 @@ as follows:
   which should bring up the following dialog: 
 
 ![Dialog prompting you to upgrade Gradle]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-upgrade-alert.png){:width="50%"}
+
+Update to a Gradle release between 7.3 through 7.6.2, inclusive.
 
 **Step 2**: Follow the guided workflow to update Gradle:
 
@@ -74,7 +76,8 @@ cd android/gradle/wrapper
 ```
 
 **Step 2**: Edit the `gradle-wrapper.properties` file to
-  change the `distributionUrl` field to the preferred Gradle version:
+  change the `distributionUrl` field to the preferred
+  Gradle version (7.3 through 7.6.2, inclusive):
 
 ```properties
 distributionUrl=https\://services.gradle.org/distributions/gradle-7.6.2-all.zip 
@@ -109,8 +112,8 @@ A few notes to be aware of:
   [deprecated Gradle classes][], or changes to the
   Android file structure, such as
   [splitting out ApplicationId from PackageName][].
-  If this occurs, downgrade to the 7.6 release of
-  Gradle.
+  If this occurs, downgrade to a release of Gradle
+  between 7.3 and 7.6.2.
 
 [deprecated Gradle classes]: https://docs.gradle.org/7.6/javadoc/deprecated-list.html
 [issue 122609]: {{site.github}}/flutter/flutter/issues/122609

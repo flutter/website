@@ -30,7 +30,6 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Android Java Gradle migration guide][]
 * [Deprecated API removed after v3.7][]
 * [Removed `ignoringSemantics`][]
 * [The window singleton is deprecated][]
