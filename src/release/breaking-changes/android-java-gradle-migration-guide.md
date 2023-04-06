@@ -113,7 +113,7 @@ A few notes to be aware of:
   Android file structure, such as
   [splitting out ApplicationId from PackageName][].
   If this occurs, downgrade to a release of Gradle
-  between 7.3 and 7.6.2.
+  between 7.3 and 7.6.2, inclusive.
 
 [deprecated Gradle classes]: https://docs.gradle.org/7.6/javadoc/deprecated-list.html
 [issue 122609]: {{site.github}}/flutter/flutter/issues/122609
