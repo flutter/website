@@ -675,6 +675,21 @@ The `RepaintBoundary` widget, which creates a `RenderRepaintBoundary`
 in the render tree, creates a new layer in the layer tree. This is
 used to reduce how much needs to be repainted.
 
+### Focus tree
+
+To debug a focus or shortcut issue, you can use dump the focus tree
+using [`debugDumpFocusTree()`][].
+
+For example:
+
+```
+I/flutter : FocusManager#03d71
+I/flutter : └─rootScope: FocusScopeNode#eefc1(Root Focus Scope)
+```
+
+You can also use the [`debugFocusChanges`][] boolean flag to enable
+extensive logging when the focus changes.
+
 ### Semantics tree
 
 You can also obtain a dump of the Semantics tree
@@ -952,9 +967,11 @@ effect by using a [`GridPaper`][] widget directly.
 [`debugPrintScheduleFrameStacks`]: {{site.api}}/flutter/scheduler/debugPrintScheduleFrameStacks.html
 [`debugPrintBeginFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintBeginFrameBanner.html
 [`debugPrintEndFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintEndFrameBanner.html
+[`debugFocusChanges`]: {{site.api}}/flutter/widgets/debugFocusChanges.html
 [`debugDumpSemanticsTree()`]: {{site.api}}/flutter/rendering/debugDumpSemanticsTree.html
 [`debugDumpRenderTree()`]: {{site.api}}/flutter/rendering/debugDumpRenderTree.html
 [`debugDumpLayerTree()`]: {{site.api}}/flutter/rendering/debugDumpLayerTree.html
+[`debugDumpFocusTree()`]: {{site.api}}/flutter/widgets/debugDumpFocusTree.html
 [`debugDumpApp()`]: {{site.api}}/flutter/widgets/debugDumpApp.html
 [`debugPrint()`]: {{site.api}}/flutter/foundation/debugPrint.html
 [`RenderParagraph`]: {{site.api}}/flutter/rendering/RenderParagraph-class.html
