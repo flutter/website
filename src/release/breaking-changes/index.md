@@ -29,11 +29,13 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Android Java Gradle migration guide][]
 * [Deprecated API removed after v3.7][]
 * [Removed `ignoringSemantics`][]
 * [The window singleton is deprecated][]
 * [Migration guide for `RouteInformation.location`][]
 
+[Android Java Gradle migration guide]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [The window singleton is deprecated]: {{site.url}}/release/breaking-changes/window-singleton
