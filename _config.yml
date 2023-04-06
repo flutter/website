@@ -19,6 +19,7 @@ repo:
   plugins: https://github.com/flutter/plugins
   gallery: https://github.com/flutter/gallery
   engine: https://github.com/flutter/engine
+  uxr: https://github.com/flutter/uxr
 dart:
   api: https://api.dart.dev
   sdk:

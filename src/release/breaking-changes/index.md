@@ -11,7 +11,7 @@ To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
 
 When facing Dart errors after upgrading Flutter,
-consider using the `dart fix` command
+consider using the [`dart fix`][] command
 to automatically migrate your code.
 Not every breaking change is supported in this way,
 but many are.
@@ -25,6 +25,7 @@ release, and listed in alphabetical order:
 [breaking change policy]: {{site.url}}/resources/compatibility
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
+[`dart fix`]: {{site.url}}/development/tools/flutter-fix
 [test registry]: https://github.com/flutter/tests
 
 ### Not yet released to stable
@@ -48,13 +49,14 @@ release, and listed in alphabetical order:
 * [Migrate `of` to non-nullable return values, and add `maybeOf`][]
 * [Removed RouteSettings.copyWith][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
-* [A new way to customize context menus]({{site.url}}/release/breaking-changes/context-menus)
+* [A new way to customize context menus][]
 
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
 [Migrate `of` to non-nullable return values, and add `maybeOf`]: {{site.url}}/release/breaking-changes/supplemental-maybeOf-migration
 [Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
+[A new way to customize context menus]: {{site.url}}/release/breaking-changes/context-menus
 
 ### Released in Flutter 3.3
 
