@@ -296,6 +296,11 @@ Therefore a fallback font is used when running on Android
 if the platform is debug-overridden to iOS or the
 default Cupertino theme is used.
 
+You may choose to adapt the text styling in Material 
+widgets to match the default text styling on iOS. 
+You can see widget specific examples in the 
+[UI Component section][] below.
+
 <div class="container">
   <div class="row">
     <div class="col-sm text-center">
@@ -560,6 +565,77 @@ This section includes preliminary recommendations on how to adapt
 Material widgets to deliver a natural and compelling experience on iOS. 
 Your feedback is welcomed on [issue #8427][]. 
 
+### Top app bar and navigation bar
+
+On the latest version of Android, the default UI for top app 
+bars follow the design guidelines defined in [Material 3][m3-appbar]. 
+On iOS, an equivalent component called "Navigation Bars" 
+is defined in [Apple’s Human Interface Guidelines][hig-navbar](HIG). 
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="/assets/images/docs/platform-adaptations/m3-appbar.png" 
+        class="figure-img img-fluid rounded" alt=" Top App Bar in Material 3 " />
+        <figcaption class="figure-caption">
+          Top App Bar in Material 3 
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="/assets/images/docs/platform-adaptations/cupertino-navbar.png" 
+        class="figure-img img-fluid rounded" alt="Navigation Bar in Human Interface Guidelines" />
+        <figcaption class="figure-caption">
+          Navigation Bar in Human Interface Guidelines
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+Certain properties of app bars in Flutter apps should be adapted, 
+like system icons and page transitions. 
+These are already automatically adapted when using 
+the Material `AppBar` and `SliverAppBar` widgets. 
+You can also further customize the properties of these widgets to better 
+match iOS platform styles, as shown below. 
+
+```dart
+// Map the text theme to iOS styles
+TextTheme cupertinoTextTheme = TextTheme(
+    headlineMedium: CupertinoThemeData()
+        .textTheme
+        .navLargeTitleTextStyle
+         // fixes a small bug with spacing
+        .copyWith(letterSpacing: -1.5),
+    titleLarge: CupertinoThemeData().textTheme.navTitleTextStyle)
+...
+
+// Use iOS text theme on iOS devices
+ThemeData(
+      textTheme: Platform.isIOS ? cupertinoTextTheme : null,
+      ...
+)
+...
+
+// Modify AppBar properties
+AppBar(
+        surfaceTintColor: Platform.isIOS ? Colors.transparent : null,
+        shadowColor: Platform.isIOS ? CupertinoColors.darkBackgroundGray : null,
+        scrolledUnderElevation: Platform.isIOS ? .1 : null,
+        toolbarHeight: Platform.isIOS ? 44 : null,
+        ...
+      ),
+
+```
+
+But, because app bars are displayed alongside 
+other content in your page, it's only recommended to adapt the styling 
+so long as its cohesive with the rest of your application. You can see 
+additional code samples and a further explanation in [this article][appbar-post]. 
+
 ### Alert dialog
 
 Since Android 12, the default UI of alert dialogs 
@@ -654,3 +730,7 @@ Further detail about adapting alert dialogs is available in
 [m3-dialog]: https://m3.material.io/components/dialogs/overview
 [hig-alert]: https://developer.apple.com/design/human-interface-guidelines/components/presentation/alerts/
 [alert-post]: {{site.repo.uxr}}/discussions/92
+[UI Component section]: 
+[appbar-post]: {{site.repo.uxr}}/discussions/93
+[m3-appbar]: https://m3.material.io/components/top-app-bar/overview
+[hig-navbar]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
