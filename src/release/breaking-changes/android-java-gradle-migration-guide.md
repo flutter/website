@@ -11,7 +11,8 @@ you might have run into an error similar to the following:
 
 ![Error dialog in Android Studio Flamingo]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-error.png){:width="80%"}
 
-The terminal output looks similar to the following:
+The terminal output for this error looks
+similar to the following:
 
 
 ```sh
@@ -36,14 +37,17 @@ Could not compile build file '…/example/android/build.gradle'.
 ```
 
 This error occurs because Android Studio Flamingo
-updates the Java SDK from 11 to 17, which
-isn't compatible with the version of the Java SDK
-used to build the app's Gradle file when the project
-was originally created with `flutter create`.
+updates its bundled Java SDK from 11 to 17.
+Flutter uses the version of Java bundled with
+Android Studio to build Android apps.
+Gradle versions [prior to 7.3][] can't run
+when using Java 17.
 
 **You can fix this error by upgrading your Gradle project
 to a compatible version (7.3 or later) using one of
 the following approaches.**
+
+[prior to 7.3]: https://docs.gradle.org/current/userguide/compatibility.html#java
 
 ## Solution #1: Guided fix using Android Studio
 
@@ -70,10 +74,10 @@ cd android/gradle/wrapper
 ```
 
 **Step 2**: Edit the `gradle-wrapper.properties` file to
-  change the `distributionUrl` field to the new Gradle version:
+  change the `distributionUrl` field to the preferred Gradle version:
 
 ```properties
-distributionUrl=https\://services.gradle.org/distributions/gradle-8.0.2-all.zip 
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.6.2-all.zip 
 ```
 
 ## Notes
@@ -81,12 +85,13 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.0.2-all.zip
 A few notes to be aware of:
 
 * Repeat this step for each affected Android app.
-* This issue can also be experienced by those who
-  don't use Android Studio.
-  If you've manually upgraded the Java SDK to
+* This issue can be experienced by those who
+  _don't_ download Java and the Android SDK through
+  Android studio.
+  If you've manually upgraded your Java SDK to
   version 17 but haven't upgraded Gradle, you can
   also encounter this issue. The fix is the same:
-  upgrade Gradle.
+  upgrade Gradle to a release between 7.3 and 7.6.2.
 * Your development machine _might_ contain more
   than one copy of the Java SDK:
   * The Android Studio app includes a version of Java,
@@ -98,7 +103,7 @@ A few notes to be aware of:
     for any `java` executable in your path.
     Once [issue 122609][] lands, the `flutter doctor`
     command reports which version of Java is used.
-* If you upgrade Gradle to a release _newer_ than 7.6,
+* If you upgrade Gradle to a release _newer_ than 7.6.2,
   you might (though it's unlikely) encounter issues
   that result from changes to Gradle, such as
   [deprecated Gradle classes][], or changes to the
@@ -106,14 +111,7 @@ A few notes to be aware of:
   [splitting out ApplicationId from PackageName][].
   If this occurs, downgrade to the 7.6 release of
   Gradle.
-* If, as part of this fix, you upgraded to Flutter 3.10
-  (which isn't required), be aware that
-  the 3.10 release (which includes Dart 3) requires
-  [**sound** null safety][]
-  that might cause other migration issues.
-  
 
 [deprecated Gradle classes]: https://docs.gradle.org/7.6/javadoc/deprecated-list.html
 [issue 122609]: {{site.github}}/flutter/flutter/issues/122609
-[**sound** null safety]: {{site.dart-site}}/null-safety
 [splitting out ApplicationId from PackageName]: http://tools.android.com/tech-docs/new-build-system/applicationid-vs-packagename
