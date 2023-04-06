@@ -58,6 +58,8 @@ A sample code action in VS Code
 
 ## Applying project-wide fixes
 
+[dart fix Decoding Flutter][]
+
 To see or apply changes to an entire project,
 you can use the command-line tool, [`dart fix`][].
 
@@ -84,3 +86,4 @@ on Flutter's Medium publication.
 
 [Deprecation lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [`dart fix`]: {{site.dart-site}}/tools/dart-fix
+[dart fix Decoding Flutter]: {{site.youtube-site}}/watch?v=OBIuSrg_Quo
