@@ -150,8 +150,8 @@ ifndef FIREBASE_TOKEN
 		firebase deploy -m ${BUILD_COMMIT} --only hosting
     else
 		firebase deploy -m ${BUILD_COMMIT} \
-		--only hosting \
-		--project ${FIREBASE_ALIAS}
+			--only hosting \
+			--project ${FIREBASE_ALIAS}
     endif
 else
 	firebase use ${FIREBASE_ALIAS}
@@ -165,7 +165,7 @@ endif
 
 # All in one command to stage your build to a Firebase 
 # channel on your currently selected project
-# Usage: `make stage STAGE_NAME=foo`
+# Usage: `make stage-channel STAGE_NAME=foo`
 stage-channel:
 	make build BUILD_CONFIGS=_config.yml,_config_stage.yml
 	firebase hosting:channel:deploy ${STAGE_NAME} \
