@@ -27,7 +27,7 @@ and then run `flutter upgrade`.
 ## Switching Flutter channels
 
 Flutter has three [release channels][]:
-**stable**, **beta** and **master**.
+**stable**, **beta** and **main**.
 
 {{site.alert.info}}
   The `dev` channel was retired as of Flutter 2.8.

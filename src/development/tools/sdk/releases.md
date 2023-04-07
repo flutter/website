@@ -1,7 +1,7 @@
 ---
 title: Flutter SDK releases
 short-title: Releases
-description: All current Flutter SDK releases, stable, beta, and master.
+description: All current Flutter SDK releases, stable, beta, and main.
 toc: false
 ---
 
@@ -35,15 +35,15 @@ most stable Flutter builds. See [Flutter’s channels][] for details.
 {% include_relative _os.md os="Linux" %}
 </div>
 
-## Master channel
+## Main channel
 
-Installation bundles are not available for master.
-However, you can get the SDK directly from
-[GitHub repo][] by cloning the master channel,
+Installation bundles are not available for main.
+However, you can get the SDK directly from the
+[GitHub repo][] by cloning the main channel,
 and then triggering a download of the SDK dependencies:
 
 ```terminal
-$ git clone -b master https://github.com/flutter/flutter.git
+$ git clone -b main https://github.com/flutter/flutter.git
 $ ./flutter/bin/flutter --version
 ```
 
