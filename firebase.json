@@ -140,7 +140,7 @@
       { "source": "/get-started/flutter-for/ios-devs", "destination": "/get-started/flutter-for/swiftui-devs", "type": 301 },
       { "source": "/get-started/install/null", "destination": "/get-started/install", "type": 301 },
       { "source": "/get-started/web", "destination": "/development/platform-integration/web/building", "type": 301 },
-      { "source": "/release", "destination": "/release/archive", "type": 301 },
+      { "source": "/release", "destination": "/release/whats-new", "type": 301 },
       { "source": "/release/release-notes/changelogs/changelog-1.17.0", "destination": "/release/release-notes/release-notes-1.17.0", "type": 301 },
       { "source": "/release-notes", "destination": "/release/release-notes", "type": 301 },
       { "source": "/release-notes/:version*", "destination": "/release/release-notes/release-notes-:version*", "type": 301 },
