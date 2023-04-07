@@ -452,16 +452,6 @@
     - title: Videos and online courses
       permalink: /resources/videos
 
-- title: Releases
-  permalink: /release
-  children:
-    - title: Archive
-      permalink: /release/archive
-    - title: Release notes
-      permalink: /release/release-notes
-    - title: Breaking changes
-      permalink: /release/breaking-changes
-
 - title: Reference
   expanded: true
   children:
