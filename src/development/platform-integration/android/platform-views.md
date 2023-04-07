@@ -15,7 +15,7 @@ Google Maps from the Android SDK
 directly inside your Flutter app.
 
 {{site.alert.note}}
-  This page discusses how to host your own native views
+  This page discusses how to host your own native Android views
   within a Flutter app.
   If you'd like to embed native iOS views in your Flutter app,
   see [Hosting native iOS views][].
