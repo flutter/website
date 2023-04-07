@@ -328,7 +328,7 @@ When `sharedDawninSource` is enabled, instead of
 an `ios` directory for iOS and a `macos` directory
 for macOS, both platforms use a shared `darwin`
 directory for all code and resources. When enabling
-this option, you will need to move any existing files
+this option, you need to move any existing files
 from `ios` and `macos` to the shared directory. You
 will also need to update the podspec file to set the
 dependencies and deployment targets for both platforms,
