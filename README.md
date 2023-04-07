@@ -280,19 +280,13 @@ You can deploy your local edits to a personal staging site as follows.
     Now using alias staging (my-foo)
     ```
 
-1. Build the site via Docker with:
-   ```bash
-   $ make build
-   ```
-   The `_site` directory refreshes locally. 
+1. Build and deploy to the specified staging site:
 
-1. Deploy to the staging site:
    ```bash
-   $ make deploy
+   $ make stage-local
    ```
-
    Your personal version of the Flutter website
-   ow deployed to Firebase. 
+   is now deployed to Firebase. 
    Copy the serving URL from the command output.
    
 
