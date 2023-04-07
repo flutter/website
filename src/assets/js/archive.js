@@ -106,8 +106,10 @@ function updateDownloadLinkFailed(os) {
 function getProvenanceLink(os, release, date, channel) {
   var baseUrl = 'https://storage.googleapis.com/flutter_infra_release/releases/'
   if (os == 'windows' && date < new Date(Date.parse('4/3/2023'))) {
+    // provenance not available before 4/3/2023 for Windows
     return $("<span />").text('--');
   } else if (date < new Date(Date.parse('12/15/2022'))) {
+    // provenance not available before 12/15/2022 for macOS and Linux
     return $("<span />").text('--');
   }
   return $("<a />").attr("href", 
