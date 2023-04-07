@@ -111,7 +111,8 @@ function getProvenanceLink(os, release, date, channel) {
     return $("<span />").text('--');
   }
   return $("<a />").attr("href", 
-    `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}.zip.intoto.jsonl`
+    `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}`+
+    `.zip.intoto.jsonl`
   ).text('View provenance')
 }
 
