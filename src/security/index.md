@@ -117,5 +117,5 @@ technical release blog post.
   changes with the community.
 
 [change log]: {{site.repo.flutter}}/wiki/Changelog
-[upgrade your package dependencies]: {{site.url}}/development/tools/sdk/upgrading
+[upgrade your package dependencies]: {{site.url}}/release/upgrade
 
