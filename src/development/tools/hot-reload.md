@@ -19,7 +19,7 @@ To hot reload a Flutter app:
 
 1. Run the app from a supported [Flutter editor][] or a terminal window.
    Either a physical or virtual device can be the target.
-   **Only Flutter apps in debug mode can be hot reloaded.**
+   **Only Flutter apps in debug mode can be hot reloaded or hot restarted.**
 1. Modify one of the Dart files in your project.
    Most types of code changes can be hot reloaded;
    for a list of changes that require a hot restart,
@@ -141,11 +141,6 @@ class Color {
 }
 ```
 
-### Changing fonts
-
-Hot reload supports changing assets, for the most part.
-However, if you change fonts, you'll need to hot restart.
-
 ### Generic types
 
 Hot reload won't work when generic type declarations
@@ -192,9 +187,9 @@ versus a hot restart.
 
 ### Recent code change is included but app state is excluded
 
-In Dart, [static fields are lazily initialized][const-new].
+In Dart, [static fields are lazily initialized][static-variables].
 This means that the first time you run a Flutter app and a
-static field is read, it is set to whatever value its
+static field is read, it's set to whatever value its
 initializer was evaluated to.
 Global variables and static fields are treated as state,
 and are therefore not reinitialized during hot reload.
@@ -368,7 +363,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -419,8 +414,8 @@ The hot reload mechanism then causes the Flutter framework
 to trigger a rebuild/re-layout/repaint of all existing
 widgets and render objects.
 
-
-[const-new]: https://news.dartlang.org/2012/06/const-static-final-oh-my.html
+[static-variables]: {{site.dart-site}}/language/classes#static-variables
+[const-new]: {{site.dart-site}}/language/variables#final-and-const
 [Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
 [Flutter editor]: {{site.url}}/get-started/editor
 [Issue 43574]: {{site.repo.flutter}}/issues/43574

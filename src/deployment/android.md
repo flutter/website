@@ -22,7 +22,7 @@ This page covers the following topics:
 * [Shrinking your code with R8](#shrinking-your-code-with-r8)
 * [Enabling multidex support](#enabling-multidex-support)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
-* [Reviewing the build configuration](#reviewing-the-build-configuration)
+* [Reviewing the build configuration](#reviewing-the-gradle-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
 * [Publishing to the Google Play Store](#publishing-to-the-google-play-store)
 * [Updating the app's version number](#updating-the-apps-version-number)
@@ -123,7 +123,7 @@ If not, create one by either:
     On Windows, use the following command:
 
     ```terminal
-    keytool -genkey -v -keystore c:\Users\USER_NAME\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
     ```
 
     This command stores the `upload-keystore.jks` file in your home
@@ -159,7 +159,7 @@ that contains a reference to your keystore:
 storePassword=<password from previous step>
 keyPassword=<password from previous step>
 keyAlias=upload
-storeFile=<location of the key store file, such as /Users/<user name>/upload-keystore.jks>
+storeFile=<location of the key store file, such as /Users/<user name>/upload-keystore.jks or C:\\Users\\<user name>\\upload-keystore.jks>
 ```
 
 {{site.alert.warning}}
@@ -260,7 +260,9 @@ Flutter to automatically depend on `androidx.multidex:multidex` and use a
 generated `FlutterMultiDexApplication` as the project's application.
 
 {{site.alert.note}}
-  Multidex support is natively included when targeting min sdk 21+.
+  Multidex support is natively included when targeting Android SDK 21 or later.
+  However, it isn't recommended to target API 21+ purely to resolve the multidex issue
+  as this might inadvertently exclude users running older devices.
 {{site.alert.end}}
 
 You might also choose to manually support multidex by following Android's guides
@@ -345,8 +347,7 @@ the Play Store.
 
 {{site.alert.note}}
   The Google Play Store prefers the app bundle format.
-  For more information, see [Android App Bundle][bundle] and
-  [About Android App Bundles][bundle2].
+  For more information, see [About Android App Bundles][bundle].
 {{site.alert.end}}
 
 {{site.alert.warning}}
@@ -474,12 +475,9 @@ In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For more information,
 see [Version your app][] in the Android documentation.
 
-After updating the version number in the pubspec file,
-run `flutter pub get` from the top of the project, or
-use the **Pub get** button in your IDE. This updates
-the `versionName` and `versionCode` in the `local.properties` file,
-which are later updated in the `build.gradle` file when you
-rebuild the Flutter app.
+When you rebuild the app for Android, any updates in the version number
+from the pubspec file will update the `versionName` and `versionCode` 
+in the `local.properties` file.
 
 ## Android release FAQ
 
@@ -545,8 +543,7 @@ The resulting app bundle or APK files are located in
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
-[bundle]: {{site.android-dev}}/platform/technology/app-bundle
-[bundle2]: {{site.android-dev}}/guide/app-bundle
+[bundle]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [crash-issue]: https://issuetracker.google.com/issues/147096055
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
@@ -562,11 +559,11 @@ The resulting app bundle or APK files are located in
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
-[multidex-keep]: {{site.android-dev}}/studio/build/multidex#multidexkeepfile-property
+[multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
-[Platform Views]: {{site.url}}/development/platform-integration/platform-views
+[Platform Views]: {{site.url}}/development/platform-integration/android/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
 [R8]: {{site.android-dev}}/studio/build/shrink-code

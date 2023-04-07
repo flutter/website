@@ -3,6 +3,8 @@ title: Debugging Flutter apps
 description: How to debug your app using the DevTools suite.
 ---
 
+<?code-excerpt path-base="testing/debugging"?>
+
 There's a wide variety of tools and features to help debug
 Flutter applications. Here are some of the available tools:
 
@@ -20,6 +22,11 @@ Flutter applications. Here are some of the available tools:
   representation of the widget tree, inspect
   individual widgets and their property values,
   enable the performance overlay, and more.
+* If you are looking for a way to use GDB to remotely debug the
+  Flutter engine running within an Android app process,
+  check out [`flutter_gdb`][].
+
+[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
 
 ## DevTools
 
@@ -121,8 +128,8 @@ When an invariant is violated, it's reported to the
 console, with some context information to help track
 down the source of the problem.
 
-For more information, see [`Assert`][] in the
-[Dart language tour][].
+For more information, check out [Assert][] in the
+[Dart language documentation][].
 
 ## Debugging animations
 
@@ -224,14 +231,15 @@ flutter/.travis.yml, or flutter/.cirrus.yml, respectively.
 
 ### Widgets marked const that should be equal to each other, aren't
 
-In debug mode, you may find that two `const` widgets that should to all
+In debug mode, you might find that two `const` widgets that should to all
 appearances be equal (because of Dart's constant deduplication) are not.
 
 For example, this code should print 1:
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (Syntax)"?>
 ```dart
-print(<Widget>{ // this is the syntax for a Set<Widget> literal
+print(<Widget>{
+  // this is the syntax for a Set<Widget> literal
   const SizedBox(),
   const SizedBox(),
 }.length);
@@ -244,11 +252,11 @@ builds, it does print 1. However, in debug builds it prints 2. This is because t
 flutter tool injects the source location of Widget constructors into the code at compile
 time, so the code is effectively:
 
-<!--skip-->
+<?code-excerpt "lib/main.dart (SyntaxExplain)"?>
 ```dart
 print(<Widget>{
-  const SizedBox(location: Location(file: 'foo.dart', line: 12)),
-  const SizedBox(location: Location(file: 'foo.dart', line: 13)),
+  const SizedBox(/* location: Location(file: 'foo.dart', line: 12) */),
+  const SizedBox(/* location: Location(file: 'foo.dart', line: 13) */),
 }.length);
 ```
 
@@ -319,8 +327,8 @@ You might find the following docs useful:
 [release mode]: {{site.url}}/testing/build-modes#release
 [how the Widget Inspector uses widget creation tracking]: {{site.url}}/development/tools/devtools/inspector#track-widget-creation
 
-[`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
-[Dart language tour]: {{site.dart-site}}/guides/language/language-tour
+[Assert]: {{site.dart-site}}/language/control-flow#assert
+[Dart language documentation]: {{site.dart-site}}/language
 
 [WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
 [widget_inspector.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart

@@ -5,10 +5,10 @@
 import 'package:flutter/material.dart';
 
 const owlUrl =
-    'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
+    'https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/owl.jpg';
 
 class FadeInDemo extends StatelessWidget {
-  const FadeInDemo({Key? key}) : super(key: key);
+  const FadeInDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class FadeInDemo extends StatelessWidget {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

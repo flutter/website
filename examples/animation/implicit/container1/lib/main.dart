@@ -19,10 +19,10 @@ Color randomColor() {
 }
 
 class AnimatedContainerDemo extends StatefulWidget {
-  const AnimatedContainerDemo({Key? key}) : super(key: key);
+  const AnimatedContainerDemo({super.key});
 
   @override
-  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
+  State<AnimatedContainerDemo> createState() => _AnimatedContainerDemoState();
 }
 
 class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
@@ -67,7 +67,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

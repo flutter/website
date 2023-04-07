@@ -13,7 +13,6 @@ if a user specifies a `color` instead of a `decoration`.
 
 It is very common to use the `Container` widget as follows:
 
-<!-- skip -->
 ```dart
 return Container(color: Colors.red);
 ```
@@ -43,7 +42,6 @@ or that expected it to create a
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 testWidgets('Container color', (WidgetTester tester) async {
   await tester.pumpWidget(Container(color: Colors.red));
@@ -57,7 +55,6 @@ testWidgets('Container color', (WidgetTester tester) async {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 testWidgets('Container color', (WidgetTester tester) async {
   await tester.pumpWidget(Container(color: Colors.red));
@@ -92,7 +89,7 @@ Relevant PRs:
 
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [`ColoredBox`]: {{site.api}}/flutter/widgets/ColoredBox-class.html
-[`BoxDecoration`]: {{site.api}}/flutter/widgets/BoxDecoration-class.html
+[`BoxDecoration`]: {{site.api}}/flutter/painting/BoxDecoration-class.html
 [Issue 9672]: {{site.repo.flutter}}/issues/9672
 [Issue 28753]: {{site.repo.flutter}}/issues/28753
 [Colored box and container optimization #50979]: {{site.repo.flutter}}/pull/50979

@@ -7,10 +7,10 @@ class Counter extends StatefulWidget {
   // State. Fields in a Widget subclass are always marked
   // "final".
 
-  const Counter({Key? key}) : super(key: key);
+  const Counter({super.key});
 
   @override
-  _CounterState createState() => _CounterState();
+  State<Counter> createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {

@@ -318,7 +318,6 @@ For example, if the API returns objects with _snake\_case_,
 and you want to use _lowerCamelCase_ in your models,
 you can use the `@JsonKey` annotation with a name parameter:
 
-<!-- skip -->
 ```dart
 /// Tell json_serializable that "registration_date_millis" should be
 /// mapped to this property.
@@ -337,7 +336,6 @@ Sometimes server data is uncertain, so it is necessary to verify and protect dat
  on client.  
 Other commonly used `@JsonKey` annotations include: 
 
-<!-- skip -->
 ```dart
 /// Tell json_serializable to use "defaultValue" if the JSON doesn't
 /// contain this key or if the value is `null`.
@@ -371,7 +369,7 @@ There are two ways of running the code generator.
 
 #### One-time code generation
 
-By running `flutter pub run build_runner build` in the project root,
+By running `flutter pub run build_runner build --delete-conflicting-outputs` in the project root,
 you generate JSON serialization code for your models whenever they are needed.
 This triggers a one-time build that goes through the source files, picks the
 relevant ones, and generates the necessary serialization code for them.
@@ -384,7 +382,7 @@ build manually every time you make changes in your model classes.
 A _watcher_ makes our source code generation process more convenient. It
 watches changes in our project files and automatically builds the necessary
 files when needed. Start the watcher by running
-`flutter pub run build_runner watch` in the project root.
+`flutter pub run build_runner watch --delete-conflicting-outputs` in the project root.
 
 It is safe to start the watcher once and leave it running in the background.
 
@@ -463,11 +461,12 @@ class User {
 }
 ```
 
-Running `flutter pub run build_runner build` in the terminal creates
+Running 
+`flutter pub run build_runner build --delete-conflicting-outputs`
+in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function
 looks something like the following:
 
-<!-- skip -->
 ```dart
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'name': instance.name,
@@ -479,8 +478,8 @@ All looks fine now, but if you do a print() on the user object:
 
 <?code-excerpt "lib/nested/main.dart (print)"?>
 ```dart
-Address address = Address("My st.", "New York");
-User user = User("John", address);
+Address address = Address('My st.', 'New York');
+User user = User('John', address);
 print(user.toJson());
 ```
 

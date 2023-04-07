@@ -20,8 +20,8 @@ void main() {
     await _visitPage(tester, '/perf');
 
     expect(find.byType(TextButton).evaluate().length, 4,
-        reason: "Smoke test was expecting a different number of pages to test. "
-            "Please make sure you visit all the pages above.");
+        reason: 'Smoke test was expecting a different number of pages to test. '
+            'Please make sure you visit all the pages above.');
   });
 }
 

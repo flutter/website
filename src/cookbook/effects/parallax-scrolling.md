@@ -45,7 +45,7 @@ a list.
 <?code-excerpt "lib/excerpt1.dart (ParallaxRecipe)"?>
 ```dart
 class ParallaxRecipe extends StatelessWidget {
-  const ParallaxRecipe({Key? key}) : super(key: key);
+  const ParallaxRecipe({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -79,11 +79,11 @@ Later, you’ll replace that widget with a parallax version.
 @immutable
 class LocationListItem extends StatelessWidget {
   const LocationListItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.name,
     required this.country,
-  }) : super(key: key);
+  });
 
   final String imageUrl;
   final String name;
@@ -166,7 +166,7 @@ Next, add the list items to your `ParallaxRecipe` widget.
 <?code-excerpt "lib/excerpt3.dart (ParallaxRecipeItems)"?>
 ```dart
 class ParallaxRecipe extends StatelessWidget {
-  const ParallaxRecipe({Key? key}) : super(key: key);
+  const ParallaxRecipe({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -216,6 +216,12 @@ control over the transform of a child widget immediately
 before the widget is painted. In other words,
 you can intercept the painting phase and take control
 to reposition your child widgets however you want.
+
+{{site.alert.note}}
+  To learn more, watch this short Widget of the Week video on the Flow widget:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/NG6pvXpnIso" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
 
 {{site.alert.note}}
   In cases where you need control over what a child paints,
@@ -337,7 +343,7 @@ class LocationListItem extends StatelessWidget {
   Widget _buildParallaxBackground(BuildContext context) {
     return Flow(
       delegate: ParallaxFlowDelegate(
-        scrollable: Scrollable.of(context)!,
+        scrollable: Scrollable.of(context),
         listItemContext: context,
         backgroundImageKey: _backgroundImageKey,
       ),
@@ -582,7 +588,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -600,8 +606,8 @@ class MyApp extends StatelessWidget {
 
 class ExampleParallax extends StatelessWidget {
   const ExampleParallax({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -622,11 +628,11 @@ class ExampleParallax extends StatelessWidget {
 
 class LocationListItem extends StatelessWidget {
   LocationListItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.name,
     required this.country,
-  }) : super(key: key);
+  });
 
   final String imageUrl;
   final String name;
@@ -656,7 +662,7 @@ class LocationListItem extends StatelessWidget {
   Widget _buildParallaxBackground(BuildContext context) {
     return Flow(
       delegate: ParallaxFlowDelegate(
-        scrollable: Scrollable.of(context)!,
+        scrollable: Scrollable.of(context),
         listItemContext: context,
         backgroundImageKey: _backgroundImageKey,
       ),
@@ -779,19 +785,19 @@ class ParallaxFlowDelegate extends FlowDelegate {
 
 class Parallax extends SingleChildRenderObjectWidget {
   const Parallax({
-    Key? key,
+    super.key,
     required Widget background,
-  }) : super(key: key, child: background);
+  }) : super(child: background);
 
   @override
   RenderObject createRenderObject(BuildContext context) {
-    return RenderParallax(scrollable: Scrollable.of(context)!);
+    return RenderParallax(scrollable: Scrollable.of(context));
   }
 
   @override
   void updateRenderObject(
       BuildContext context, covariant RenderParallax renderObject) {
-    renderObject.scrollable = Scrollable.of(context)!;
+    renderObject.scrollable = Scrollable.of(context);
   }
 }
 

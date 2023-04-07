@@ -3,6 +3,8 @@ title: Flutter for React Native developers
 description: Learn how to apply React Native developer knowledge when building Flutter apps.
 ---
 
+<?code-excerpt path-base="get-started/flutter-for/react_native_devs"?>
+
 This document is for React Native (RN) developers looking to apply their
 existing RN knowledge to build mobile apps with Flutter. If you understand
 the fundamentals of the RN framework then you can use this document as a
@@ -44,7 +46,7 @@ function startHere() {
 In Dart, every app must have a top-level `main()` function that serves as the
 entry point to the app.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Main)"?>
 ```dart
 /// Dart
 void main() {}
@@ -61,7 +63,7 @@ To print to the console in Dart, use `print()`.
 console.log('Hello world!');
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Print)"?>
 ```dart
 /// Dart
 print('Hello world!');
@@ -89,7 +91,7 @@ typed or the type system must infer the proper type automatically.
 var name = 'JavaScript';
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Variables)"?>
 ```dart
 /// Dart
 /// Both variables are acceptable.
@@ -120,7 +122,7 @@ numeric types have the value `null`.
 var name; // == undefined
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Null)"?>
 ```dart
 // Dart
 var name; // == null; raises a linter warning
@@ -151,10 +153,10 @@ if (!zero) {
 
 In Dart, only the boolean value `true` is treated as true.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (True)"?>
 ```dart
 /// Dart
-var myNull = null;
+var myNull;
 if (myNull == null) {
   print('use "== null" to check null');
 }
@@ -178,7 +180,7 @@ function fn() {
 }
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Function)"?>
 ```dart
 /// Dart
 /// You can explicitly define the return type.
@@ -227,7 +229,7 @@ function main() {
 main();
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/futures.dart"?>
 ```dart
 /// Dart
 import 'dart:convert';
@@ -292,7 +294,7 @@ In Dart, an `async` function returns a `Future`,
 and the body of the function is scheduled for execution later.
 The `await` operator is used to wait for a `Future`.
 
-<!-- skip -->
+<?code-excerpt "lib/async.dart"?>
 ```dart
 // Dart
 import 'dart:convert';
@@ -383,7 +385,7 @@ import the Cupertino library. To use a more basic widget set,
 import the Widgets library.
 Or, you can write your own widget library and import that.
 
-<!-- skip -->
+<?code-excerpt "lib/imports.dart (Imports)"?>
 ```dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -431,7 +433,7 @@ In Flutter, you can create an identical "Hello world!" app using the
 The `Center` widget becomes the root of the widget tree and has one child,
 the `Text` widget.
 
-<!-- skip -->
+<?code-excerpt "lib/hello_world.dart"?>
 ```dart
 /// Flutter
 import 'package:flutter/material.dart';
@@ -446,7 +448,6 @@ void main() {
     ),
   );
 }
-
 ```
 
 The following images show the Android and iOS UI for the basic Flutter
@@ -480,7 +481,7 @@ The following example shows the "Hello world!" app using widgets from the
 Material library. In this example, the widget tree is nested inside the
 `MaterialApp` root widget.
 
-<!-- skip -->
+<?code-excerpt "lib/widget_tree.dart"?>
 ```dart
 /// Flutter
 import 'package:flutter/material.dart';
@@ -488,7 +489,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -564,49 +565,54 @@ In Flutter, define a class to create a custom widget and then reuse the
 widget. You can also define and call a function that returns a
 reusable widget as shown in the `build` function in the following example.
 
-<!-- skip -->
+<?code-excerpt "lib/components.dart (Components)"?>
 ```dart
 /// Flutter
 class CustomCard extends StatelessWidget {
   const CustomCard({
-    Key? key,
+    super.key,
     required this.index,
     required this.onPress,
-  }) : super(key: key);
+  });
 
-  final index;
+  final int index;
   final void Function() onPress;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Column(
-        children: <Widget>[
-          Text('Card $index'),
-          TextButton(
-            child: const Text('Press'),
-            onPressed: onPress,
-          ),
-        ],
-      )
-    );
+        child: Column(
+      children: <Widget>[
+        Text('Card $index'),
+        TextButton(
+          onPressed: onPress,
+          child: const Text('Press'),
+        ),
+      ],
+    ));
   }
 }
 
-/// Usage
-Widget _buildCard() {
-  return CustomCard(
-    index: index,
-    onPress: () {
-      print('Card $index');
-    },
-  );
+class UseCard extends StatelessWidget {
+  const UseCard({super.key, required this.index});
+
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    /// Usage
+    return CustomCard(
+      index: index,
+      onPress: () {
+        print('Card $index');
+      },
+    );
+  }
 }
 ```
 
 In the previous example, the constructor for the `CustomCard`
-class uses Dart's curly brace syntax `{ }` to indicate named
-[optional parameters][].
+class uses Dart's curly brace syntax `{ }` to indicate [named parameters][].
 
 To require these fields, either remove the curly braces from
 the constructor, or add `required` to the constructor.
@@ -623,10 +629,10 @@ The following screenshots show an example of the reusable
 Start with the `lib/main.dart` file.
 It's autogenerated when you create a Flutter app.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (Main)"?>
 ```dart
 // Dart
-void main(){
+void main() {
   print('Hello, this is the main function.');
 }
 ```
@@ -709,9 +715,9 @@ in a source code directory and referencing it.
 In Flutter, add a static image to your app
 using the `Image.asset` constructor in a widget’s build method.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (ImageAsset)" replace="/return //g"?>
 ```dart
-Image.asset('assets/background.png')
+Image.asset('assets/background.png');
 ```
 
 For more information, see [Adding Assets and Images in Flutter][].
@@ -725,10 +731,9 @@ size if needed.
 In Flutter, use the `Image.network` constructor to include
 an image from a URL.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (ImageNetwork)" replace="/return //g"?>
 ```dart
-/// Flutter
-Image.network('https://docs.flutter.dev/assets/images/docs/owl.jpg'),
+Image.network('https://docs.flutter.dev/assets/images/docs/owl.jpg');
 ```
 
 ### How do I install packages and package plugins?
@@ -761,9 +766,9 @@ dependencies:
    prompt you to do so.
 3. Import the package into your app code as shown below:
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (PackageImport)"?>
 ```dart
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter/material.dart';
 ```
 
 For more information, see [Using Packages][] and
@@ -835,22 +840,24 @@ For a large or infinite list, use `ListView.builder`,
 which builds its children on demand and only builds
 those children that are visible.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (ListView)"?>
 ```dart
-/// Flutter
-var data = [ ... ];
-ListView.builder(
+var data = [
+  'Hello',
+  'World',
+];
+return ListView.builder(
   itemCount: data.length,
-  itemBuilder: (BuildContext context, int index) {
+  itemBuilder: (context, index) {
     return Text(data[index]);
   },
-)
+);
 ```
 
 {% include docs/android-ios-figure-pair.md image="react-native/flatlist.gif" alt="Flat list" class="border" %}
 
-To learn how to implement an infinite scrolling list, see the
-[Write Your First Flutter App, Part 1][] codelab.
+To learn how to implement an infinite scrolling list, see the official
+[`infinite_list`][infinite_list] sample.
 
 ### How do I use a Canvas to draw or paint?
 
@@ -886,9 +893,8 @@ and passes it to `CustomPaint`'s painter property.
 `CustomPaint` subclasses must implement the `paint()`
 and `shouldRepaint()` methods.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (CustomPaint)"?>
 ```dart
-/// Flutter
 class MyCanvasPainter extends CustomPainter {
   const MyCanvasPainter();
 
@@ -909,7 +915,7 @@ class MyCanvasPainter extends CustomPainter {
 }
 
 class MyCanvasWidget extends StatelessWidget {
-  const MyCanvasWidget({Key? key}) : super(key: key);
+  const MyCanvasWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -956,30 +962,31 @@ A [`Container`][] widget takes a combination of
 layout and styling properties, and a
 [`Center`][] widget centers its child widgets.
 
-<!-- skip -->
+<?code-excerpt "lib/layouts.dart (Column)"?>
 ```dart
-/// Flutter
-Center(
-  child: Column(
-    children: <Widget>[
-      Container(
-        color: Colors.red,
-        width: 100.0,
-        height: 100.0,
-      ),
-      Container(
-        color: Colors.blue,
-        width: 100.0,
-        height: 100.0,
-      ),
-      Container(
-        color: Colors.green,
-        width: 100.0,
-        height: 100.0,
-      ),
-    ],
-  ),
-)
+@override
+Widget build(BuildContext context) {
+  return Center(
+    child: Column(
+      children: <Widget>[
+        Container(
+          color: Colors.red,
+          width: 100.0,
+          height: 100.0,
+        ),
+        Container(
+          color: Colors.blue,
+          width: 100.0,
+          height: 100.0,
+        ),
+        Container(
+          color: Colors.green,
+          width: 100.0,
+          height: 100.0,
+        ),
+      ],
+    ),
+  );
 ```
 
 Flutter provides a variety of layout widgets in its core widget library.
@@ -1000,23 +1007,24 @@ The widgets can entirely or partially overlap the base widget.
 The `Stack` widget positions its children relative to the edges of its box.
 This class is useful if you simply want to overlap several children widgets.
 
-<!-- skip -->
+<?code-excerpt "lib/layouts.dart (Stack)"?>
 ```dart
-/// Flutter
-Stack(
-  alignment: const Alignment(0.6, 0.6),
-  children: <Widget>[
-    CircleAvatar(
-      backgroundImage: NetworkImage(
-        'https://avatars3.githubusercontent.com/u/14101776?v=4',
+@override
+Widget build(BuildContext context) {
+  return Stack(
+    alignment: const Alignment(0.6, 0.6),
+    children: <Widget>[
+      const CircleAvatar(
+        backgroundImage: NetworkImage(
+          'https://avatars3.githubusercontent.com/u/14101776?v=4',
+        ),
       ),
-    ),
-    Container(
-      color: Colors.black45,
-      child: const Text('Flutter'),
-    ),
-  ],
-)
+      Container(
+        color: Colors.black45,
+        child: const Text('Flutter'),
+      ),
+    ],
+  );
 ```
 
 The previous example uses `Stack` to overlay a Container
@@ -1059,19 +1067,18 @@ for its style property. If you want to use the same text
 style in multiple places, you can create a
 [`TextStyle`][] class and use it for multiple `Text` widgets.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (TextStyle)"?>
 ```dart
-/// Flutter
 const TextStyle textStyle = TextStyle(
   color: Colors.cyan,
   fontSize: 32.0,
   fontWeight: FontWeight.w600,
 );
 
-Center(
+return Center(
   child: Column(
     children: const <Widget>[
-      Text('Sample text',style: textStyle),
+      Text('Sample text', style: textStyle),
       Padding(
         padding: EdgeInsets.all(20.0),
         child: Icon(
@@ -1082,7 +1089,7 @@ Center(
       ),
     ],
   ),
-)
+);
 ```
 
 {% include docs/android-ios-figure-pair.md image="react-native/flutterstyling.gif" alt="Styling" class="border" %}
@@ -1095,9 +1102,9 @@ so third party libraries are used.
 In Flutter, importing the Material library also pulls in the
 rich set of [Material icons][] and [colors][].
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (Icon)"?>
 ```dart
-Icon(Icons.lightbulb_outline, color: Colors.redAccent)
+return const Icon(Icons.lightbulb_outline, color: Colors.redAccent);
 ```
 
 When using the `Icons` class,
@@ -1136,19 +1143,19 @@ from the Material Design [color palette][].
 The following example sets the primary swatch to `blue`
 and the text selection to `red`.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (Swatch)"?>
 ```dart
 class SampleApp extends StatelessWidget {
-  const SampleApp({Key? key}) : super(key: key);
+  const SampleApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        textSelectionColor: Colors.red
-      ),
+          primarySwatch: Colors.blue,
+          textSelectionTheme:
+              const TextSelectionThemeData(selectionColor: Colors.red)),
       home: const SampleAppPage(),
     );
   }
@@ -1165,7 +1172,7 @@ by defining the styling in the [`ThemeData`][]
 class and passing it to the theme property in the
 [`MaterialApp`][] widget.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (Theme)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1174,7 +1181,7 @@ Widget build(BuildContext context) {
       primaryColor: Colors.cyan,
       brightness: Brightness.dark,
     ),
-    home: StylingPage(),
+    home: const StylingPage(),
   );
 }
 ```
@@ -1183,7 +1190,7 @@ A `Theme` can be applied even without using the `MaterialApp` widget.
 The [`Theme`][] widget takes a `ThemeData` in its `data` parameter
 and applies the `ThemeData` to all of its children widgets.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (ThemeData)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1225,22 +1232,21 @@ configuration information in the object itself and the
 [`AboutDialog`][], [`CircleAvatar`][], and [`Text`][] are examples
 of stateless widgets that subclass [`StatelessWidget`][].
 
-<!-- skip -->
+<?code-excerpt "lib/stateless.dart"?>
 ```dart
-/// Flutter
 import 'package:flutter/material.dart';
 
 void main() => runApp(
-  const MyStatelessWidget(
-    text: 'StatelessWidget Example to show immutable data',
-  ),
-);
+      const MyStatelessWidget(
+        text: 'StatelessWidget Example to show immutable data',
+      ),
+    );
 
 class MyStatelessWidget extends StatelessWidget {
   const MyStatelessWidget({
-    Key? key,
+    super.key,
     required this.text,
-  }) : super(key: key);
+  });
 
   final String text;
 
@@ -1296,18 +1302,18 @@ that requires a `createState()` method.
 This method creates the state object that manages the widget's state,
 `_MyStatefulWidgetState`.
 
-<!-- skip -->
+<?code-excerpt "lib/stateful.dart (StatefulWidget)"?>
 ```dart
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   final String title;
 
   @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 ```
 
@@ -1317,19 +1323,19 @@ When the state changes, for example, when the user toggles
 the button, `setState()` is called with the new toggle value.
 This causes the framework to rebuild this widget in the UI.
 
-<!-- skip -->
+<?code-excerpt "lib/stateful.dart (StatefulWidgetState)"?>
 ```dart
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   bool showText = true;
   bool toggleState = true;
   Timer? t2;
 
-  void toggleBlinkState(){
-    setState((){
+  void toggleBlinkState() {
+    setState(() {
       toggleState = !toggleState;
     });
     if (!toggleState) {
-      t2 = Timer.periodic(const Duration(milliseconds: 1000), (Timer t) {
+      t2 = Timer.periodic(const Duration(milliseconds: 1000), (t) {
         toggleShowText();
       });
     } else {
@@ -1337,8 +1343,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     }
   }
 
-  void toggleShowText(){
-    setState((){
+  void toggleShowText() {
+    setState(() {
       showText = !showText;
     });
   }
@@ -1412,18 +1418,17 @@ In this example, `createState()` creates an instance of
 `_MyStatefulWidgetState`, which
 is implemented in the next best practice.
 
-<!-- skip -->
+<?code-excerpt "lib/best_practices.dart (CreateState)" replace="/return const Text\('Hello World!'\);/\/\/.../g"?>
 ```dart
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   final String title;
-
   @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
@@ -1439,11 +1444,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 Add your custom `StatefulWidget` to the widget tree
 in the app’s build method.
 
-<!-- skip -->
+<?code-excerpt "lib/best_practices.dart (UseStatefulWidget)"?>
 ```dart
 class MyStatelessWidget extends StatelessWidget {
   // This widget is the root of your application.
-  const MyStatelessWidget({Key? key}) : super(key: key);
+  const MyStatelessWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1502,42 +1507,49 @@ class App extends React.Component {
 In Flutter, you assign a local variable or function marked
 `final` with the property received in the parameterized constructor.
 
-<!-- skip -->
+<?code-excerpt "lib/components.dart (Components)"?>
 ```dart
 /// Flutter
 class CustomCard extends StatelessWidget {
   const CustomCard({
-    Key? key,
+    super.key,
     required this.index,
     required this.onPress,
-  }) : super(key: key);
+  });
 
   final int index;
-  final VoidCallback onPress;
+  final void Function() onPress;
 
   @override
   Widget build(BuildContext context) {
-  return Card(
-    child: Column(
+    return Card(
+        child: Column(
       children: <Widget>[
         Text('Card $index'),
         TextButton(
-          child: const Text('Press'),
           onPressed: onPress,
+          child: const Text('Press'),
         ),
       ],
     ));
   }
 }
 
-/// Usage
-Widget _buildCard() {
-  return CustomCard(
-    index: index,
-    onPress: () {
-      print('Card $index');
-    },
-  );
+class UseCard extends StatelessWidget {
+  const UseCard({super.key, required this.index});
+
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    /// Usage
+    return CustomCard(
+      index: index,
+      onPress: () {
+        print('Card $index');
+      },
+    );
+  }
 }
 ```
 
@@ -1582,9 +1594,8 @@ dependencies:
   shared_preferences: ^2.0.13
 ```
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (SharedPrefs)"?>
 ```dart
-/// Flutter
 import 'package:shared_preferences/shared_preferences.dart';
 ```
 
@@ -1597,14 +1608,16 @@ by the `SharedPreferences` class. For each
 setter there is a corresponding getter method,
 for example, `getInt`, `getBool`, and `getString`.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (SharedPrefsUpdate)"?>
 ```dart
 Future<void> updateCounter() async {
   final prefs = await SharedPreferences.getInstance();
-  _counter = prefs.getInt('counter');
-  await prefs.setInt('counter', ++_counter);
+  int? counter = prefs.getInt('counter');
+  if (counter is int) {
+    await prefs.setInt('counter', ++counter);
+  }
   setState(() {
-    _counter = _counter;
+    _counter = counter;
   });
 }
 ```
@@ -1660,20 +1673,28 @@ A list of routes might be specified in the [`MaterialApp`][] widget,
 or they might be built on the fly, for example, in hero animations.
 The following example specifies named routes in the `MaterialApp` widget.
 
-<!-- skip -->
+{{site.alert.note}}
+  Named routes are no longer recommended for most
+  applications. For more information, see
+  [Limitations][] in the [navigation overview][] page.
+{{site.alert.end}}
+
+[Limitations]: {{site.url}}/development/ui/navigation#limitations
+[navigation overview]: {{site.url}}/development/ui/navigation
+
+<?code-excerpt "lib/navigation.dart (Navigator)"?>
 ```dart
-/// Flutter
 class NavigationApp extends StatelessWidget {
   // This widget is the root of your application.
-  const NavigationApp({Key? key}) : super(key: key);
+  const NavigationApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       //...
       routes: <String, WidgetBuilder>{
-        '/a': (BuildContext context) => UsualNavScreen(),
-        '/b': (BuildContext context) => DrawerNavScreen(),
+        '/a': (context) => const UsualNavScreen(),
+        '/b': (context) => const DrawerNavScreen(),
       },
       //...
     );
@@ -1687,7 +1708,7 @@ method is used to specify the `BuildContext`
 The name of the route is passed to the `pushNamed` function to
 navigate to the specified route.
 
-<!-- skip -->
+<?code-excerpt "lib/navigation.dart (PushNamed)"?>
 ```dart
 Navigator.of(context).pushNamed('/a');
 ```
@@ -1700,12 +1721,12 @@ the [`MaterialPageRoute`][] widget is a modal route that
 replaces the entire screen with a platform-adaptive
 transition. It takes a [`WidgetBuilder`][] as a required parameter.
 
-<!-- skip -->
+<?code-excerpt "lib/navigation.dart (NavigatorPush)"?>
 ```dart
 Navigator.push(
   context,
   MaterialPageRoute(
-    builder: (BuildContext context) => UsualNavScreen(),
+    builder: (context) => const UsualNavScreen(),
   ),
 );
 ```
@@ -1750,9 +1771,8 @@ tab navigation:
 : Displays the widget that corresponds to the currently selected tab.
 
 
-<!-- skip -->
+<?code-excerpt "lib/navigation.dart (TabNav)"?>
 ```dart
-/// Flutter
 class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   late TabController controller = TabController(length: 2, vsync: this);
 
@@ -1760,7 +1780,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return TabBar(
       controller: controller,
-      tabs: <Tab>[
+      tabs: const <Tab>[
         Tab(icon: Icon(Icons.person)),
         Tab(icon: Icon(Icons.email)),
       ],
@@ -1796,10 +1816,8 @@ is passed as the `body` parameter of the `Scaffold` widget.
 All screens corresponding to the `TabBar` widget’s tabs are
 children to the `TabBarView` widget along with the same `TabController`.
 
-<!-- skip -->
+<?code-excerpt "lib/navigation.dart (NavigationHomePageState)"?>
 ```dart
-/// Flutter
-
 class _NavigationHomePageState extends State<NavigationHomePage>
     with SingleTickerProviderStateMixin {
   late TabController controller = TabController(length: 2, vsync: this);
@@ -1807,24 +1825,24 @@ class _NavigationHomePageState extends State<NavigationHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Material (
-        child: TabBar(
-          tabs: <Tab> [
-            Tab(icon: Icon(Icons.person),)
-            Tab(icon: Icon(Icons.email),),
-          ],
-          controller: controller,
+        bottomNavigationBar: Material(
+          color: Colors.blue,
+          child: TabBar(
+            tabs: const <Tab>[
+              Tab(
+                icon: Icon(Icons.person),
+              ),
+              Tab(
+                icon: Icon(Icons.email),
+              ),
+            ],
+            controller: controller,
+          ),
         ),
-        color: Colors.blue,
-      ),
-      body: TabBarView(
-        children: <Widget> [
-          home.homeScreen(),
-          tabScreen.tabScreen()
-        ],
-        controller: controller,
-      )
-    );
+        body: TabBarView(
+          controller: controller,
+          children: const <Widget>[HomeScreen(), TabScreen()],
+        ));
   }
 }
 ```
@@ -1863,19 +1881,21 @@ or a list of items to display as the child to the `Drawer` widget.
 In the following example, the [`ListTile`][]
 widget provides the navigation on tap.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (Drawer)"?>
 ```dart
-/// Flutter
-Drawer(
-  child: ListTile(
-    leading: const Icon(Icons.change_history),
-    title: const Text('Screen2'),
-    onTap: () {
-      Navigator.of(context).pushNamed('/b');
-    },
-  ),
-  elevation: 20.0,
-),
+@override
+Widget build(BuildContext context) {
+  return Drawer(
+    elevation: 20.0,
+    child: ListTile(
+      leading: const Icon(Icons.change_history),
+      title: const Text('Screen2'),
+      onTap: () {
+        Navigator.of(context).pushNamed('/b');
+      },
+    ),
+  );
+}
 ```
 
 The `Scaffold` widget also includes an `AppBar` widget that automatically
@@ -1883,13 +1903,13 @@ displays an appropriate IconButton to show the `Drawer` when a Drawer is
 available in the `Scaffold`. The `Scaffold` automatically handles the
 edge-swipe gesture to show the `Drawer`.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (Scaffold)"?>
 ```dart
-/// Flutter
 @override
 Widget build(BuildContext context) {
   return Scaffold(
     drawer: Drawer(
+      elevation: 20.0,
       child: ListTile(
         leading: const Icon(Icons.change_history),
         title: const Text('Screen2'),
@@ -1897,7 +1917,6 @@ Widget build(BuildContext context) {
           Navigator.of(context).pushNamed('/b');
         },
       ),
-      elevation: 20.0,
     ),
     appBar: AppBar(title: const Text('Home')),
     body: Container(),
@@ -1974,34 +1993,35 @@ use a button or a touchable widget that has an `onPress: field`.
 Or, add gesture detection to any widget by wrapping it
 in a [`GestureDetector`][].
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (GestureDetector)"?>
 ```dart
-/// Flutter
-GestureDetector(
-  child: Scaffold(
-    appBar: AppBar(title: const Text('Gestures')),
-    body: Center(
-      child: Column(
+@override
+Widget build(BuildContext context) {
+  return GestureDetector(
+    child: Scaffold(
+      appBar: AppBar(title: const Text('Gestures')),
+      body: Center(
+          child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text('Tap, Long Press, Swipe Horizontally or Vertically'),
+        children: const <Widget>[
+          Text('Tap, Long Press, Swipe Horizontally or Vertically'),
         ],
-      )
+      )),
     ),
-  ),
-  onTap: () {
-    print('Tapped');
-  },
-  onLongPress: () {
-    print('Long Pressed');
-  },
-  onVerticalDragEnd: (DragEndDetails value) {
-    print('Swiped Vertically');
-  },
-  onHorizontalDragEnd: (DragEndDetails value) {
-    print('Swiped Horizontally');
-  },
-);
+    onTap: () {
+      print('Tapped');
+    },
+    onLongPress: () {
+      print('Long Pressed');
+    },
+    onVerticalDragEnd: (value) {
+      print('Swiped Vertically');
+    },
+    onHorizontalDragEnd: (value) {
+      print('Swiped Horizontally');
+    },
+  );
+}
 ```
 
 For more information, including a list of
@@ -2049,7 +2069,7 @@ dependencies:
 Flutter uses the [`dart:io`][] core HTTP support client.
 To create an HTTP Client, import `dart:io`.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (ImportDartIO)"?>
 ```dart
 import 'dart:io';
 ```
@@ -2057,9 +2077,8 @@ import 'dart:io';
 The client supports the following HTTP operations:
 GET, POST, PUT, and DELETE.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (HTTP)"?>
 ```dart
-/// Flutter
 final url = Uri.parse('https://httpbin.org/ip');
 final httpClient = HttpClient();
 
@@ -2107,30 +2126,35 @@ learn what the user typed into the field.
 You can access the text in `TextField`
 by the `text` property of the controller.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (TextEditingController)"?>
 ```dart
-/// Flutter
 final TextEditingController _controller = TextEditingController();
 
-TextField(
-  controller: _controller,
-  decoration: const InputDecoration(
-    hintText: 'Type something',
-    labelText: 'Text Field',
-  ),
-),
-ElevatedButton(
-  child: const Text('Submit'),
-  onPressed: () {
-    showDialog(
-      context: context,
-      child: AlertDialog(
-        title: const Text('Alert'),
-        content: Text('You typed ${_controller.text}'),
+@override
+Widget build(BuildContext context) {
+  return Column(children: [
+    TextField(
+      controller: _controller,
+      decoration: const InputDecoration(
+        hintText: 'Type something',
+        labelText: 'Text Field',
       ),
-    );
-  },
-),
+    ),
+    ElevatedButton(
+      child: const Text('Submit'),
+      onPressed: () {
+        showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: const Text('Alert'),
+                content: Text('You typed ${_controller.text}'),
+              );
+            });
+      },
+    ),
+  ]);
+}
 ```
 
 In this example, when a user clicks on the submit button an alert dialog
@@ -2155,48 +2179,55 @@ with a context whose ancestor is the `Form`,
 or pass a `GlobalKey` to the `Form` constructor and call
 `GlobalKey.currentState()`.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (FormState)"?>
 ```dart
-final formKey = GlobalKey<FormState>();
-
-Form(
-  key: formKey,
-  child: Column(
-    children: <Widget>[
-      TextFormField(
-        validator: (String value) => value.contains('@')
-            ? null
-            : 'Not a valid email.',
-        onSaved: (String val) => _email = val,
-        decoration: const InputDecoration(
-          hintText: 'Enter your email',
-          labelText: 'Email',
+@override
+Widget build(BuildContext context) {
+  return Form(
+    key: formKey,
+    child: Column(
+      children: <Widget>[
+        TextFormField(
+          validator: (value) {
+            if (value != null && value.contains('@')) {
+              return null;
+            }
+            return 'Not a valid email.';
+          },
+          onSaved: (val) {
+            _email = val;
+          },
+          decoration: const InputDecoration(
+            hintText: 'Enter your email',
+            labelText: 'Email',
+          ),
         ),
-      ),
-      ElevatedButton(
-        onPressed: _submit,
-        child: const Text('Login'),
-      ),
-    ],
-  ),
-)
+        ElevatedButton(
+          onPressed: _submit,
+          child: const Text('Login'),
+        ),
+      ],
+    ),
+  );
+}
 ```
 
 The following example shows how `Form.save()` and `formKey`
 (which is a `GlobalKey`), are used to save the form on submit.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (FormSubmit)"?>
 ```dart
 void _submit() {
   final form = formKey.currentState;
-  if (form.validate()) {
+  if (form != null && form.validate()) {
     form.save();
     showDialog(
       context: context,
-      child: AlertDialog(
-        title: const Text('Alert'),
-        content: Text('Email: $_email, password: $_password'),
-      )
+      builder: (context) {
+        return AlertDialog(
+            title: const Text('Alert'),
+            content: Text('Email: $_email, password: $_password'));
+      },
     );
   }
 }
@@ -2226,9 +2257,8 @@ if (Platform.OS === 'ios') {
 
 In Flutter, use the following implementation:
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (Platform)"?>
 ```dart
-/// Flutter
 final platform = Theme.of(context).platform;
 if (platform == TargetPlatform.iOS) {
   return 'iOS';
@@ -2396,9 +2426,8 @@ controller such as `fling()` or `repeat()`.
 For this example, the [`FlutterLogo`][]
 widget is used inside the `FadeTransition` widget.
 
-<!-- skip -->
+<?code-excerpt "lib/animation.dart"?>
 ```dart
-/// Flutter
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2406,14 +2435,15 @@ void main() {
 }
 
 class LogoFade extends StatefulWidget {
-  const LogoFade({Key? key}) : super(key: key);
+  const LogoFade({super.key});
 
-  _LogoFadeState createState() => _LogoFadeState();
+  @override
+  State<LogoFade> createState() => _LogoFadeState();
 }
 
 class _LogoFadeState extends State<LogoFade>
     with SingleTickerProviderStateMixin {
-  late Animation animation;
+  late Animation<double> animation;
   late AnimationController controller;
 
   @override
@@ -2437,10 +2467,11 @@ class _LogoFadeState extends State<LogoFade>
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: animation,
-      child: Container(
+      child: const SizedBox(
         height: 300.0,
         width: 300.0,
         child: FlutterLogo(),
@@ -2460,17 +2491,17 @@ third-party libraries are used for swipe animation.
 In Flutter, to add a swipe animation, use the
 [`Dismissible`][] widget and nest the child widgets.
 
-<!-- skip -->
+<?code-excerpt "lib/examples.dart (Dismissable)"?>
 ```dart
-Dismissible(
-  key: key,
-  onDismissed: (DismissDirection dir) {
+return Dismissible(
+  key: Key(widget.key.toString()),
+  onDismissed: (dismissDirection) {
     cards.removeLast();
   },
   child: Container(
-    //...
-  ),
-)
+      //...
+      ),
+);
 ```
 
 {% include docs/android-ios-figure-pair.md image="react-native/card-swipe.gif" alt="Card swipe" class="border" %}
@@ -2561,8 +2592,8 @@ and common widget properties.
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
-[async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support
-[`Axis`]: {{site.api}}/flutter/painting/Axis-class.html
+[async and await]: {{site.dart-site}}/language/async
+[`Axis`]: {{site.api}}/flutter/painting/Axis.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [color palette]: {{site.material}}/design/color
@@ -2599,7 +2630,7 @@ and common widget properties.
 [`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[functions]: {{site.dart-site}}/guides/language/language-tour#functions
+[functions]: {{site.dart-site}}/language/functions
 [`Future`]: {{site.dart-site}}/tutorials/language/futures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [Getting started]: {{site.url}}/get-started
@@ -2622,7 +2653,7 @@ and common widget properties.
 [`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.push`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`onSaved`]: {{site.api}}/flutter/widgets/FormField/onSaved.html
-[optional parameters]: {{site.dart-site}}/guides/language/language-tour#optional-parameters
+[named parameters]: {{site.dart-site}}/language/functions#named-parameters
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [`PanResponder`]: https://facebook.github.io/react-native/docs/panresponder.html
 [pub.dev]: {{site.pub}}
@@ -2633,7 +2664,7 @@ and common widget properties.
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`ScrollController`]: {{site.api}}/flutter/widgets/ScrollController-class.html
-[`shared_preferences`]: {{site.repo.plugins}}/tree/master/packages/shared_preferences
+[`shared_preferences`]: {{site.repo.plugins}}/tree/main/packages/shared_preferences
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
@@ -2646,7 +2677,7 @@ and common widget properties.
 [`TabBarView`]: {{site.api}}/flutter/material/TabBarView-class.html
 [`TabController`]: {{site.api}}/flutter/material/TabController-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign-class.html
+[`TextAlign`]: {{site.api}}/flutter/dart-ui/TextAlign.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
@@ -2659,6 +2690,6 @@ and common widget properties.
 [`TickerProviderStateMixin`]: {{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
 [Using Packages]: {{site.url}}/development/packages-and-plugins/using-packages
-[variables]: {{site.dart-site}}/guides/language/language-tour#variables
+[variables]: {{site.dart-site}}/language/variables
 [`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
-[Write Your First Flutter App, Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[infinite_list]: {{site.repo.samples}}/tree/main/infinite_list

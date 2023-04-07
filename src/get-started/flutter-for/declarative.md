@@ -4,6 +4,8 @@ short-title: Declarative UI
 description: Explains the difference between a declarative and imperative programming style.
 ---
 
+<?code-excerpt path-base="get-started/flutter-for/declarative"?>
+
 _This introduction describes the conceptual difference between the
 declarative style used by Flutter, and the imperative style used by
 many other UI frameworks._
@@ -49,13 +51,13 @@ are immutable and are only lightweight "blueprints". To change the UI,
 a widget triggers a rebuild on itself (most commonly by calling `setState()`
 on StatefulWidgets in Flutter) and constructs a new Widget subtree.
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (declarative)"?>
 ```dart
 // Declarative style
 return ViewB(
   color: red,
-  child: ViewC(...),
-)
+  child: const ViewC(),
+);
 ```
 
 Here, rather than mutating an old instance `b` when the UI changes,

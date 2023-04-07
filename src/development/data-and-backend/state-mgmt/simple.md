@@ -70,7 +70,6 @@ imperatively change a widget from outside, by calling a method on it.
 And even if you could make this work, you would be fighting the
 framework instead of letting it help you.
 
-<!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
 void myTapHandler() {
@@ -83,7 +82,6 @@ Even if you get the above code to work,
 you would then have to deal
 with the following in the `MyCart` widget:
 
-<!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
 Widget build(BuildContext context) {
@@ -279,10 +277,13 @@ here's a simple unit test of `CartModel`:
 test('adding item increases total cost', () {
   final cart = CartModel();
   final startingPrice = cart.totalPrice;
+  var i = 0;
   cart.addListener(() {
     expect(cart.totalPrice, greaterThan(startingPrice));
+    i++;
   });
   cart.add(Item('Dash'));
+  expect(i, 1);
 });
 ```
 
@@ -345,7 +346,7 @@ This is done through the `Consumer` widget.
 ```dart
 return [!Consumer!]<CartModel>(
   builder: (context, cart, child) {
-    return Text("Total price: ${cart.totalPrice}");
+    return Text('Total price: ${cart.totalPrice}');
   },
 );
 ```
@@ -382,7 +383,7 @@ return Consumer<CartModel>(
     children: [
       // Use SomeExpensiveWidget here, without rebuilding every time.
       if ([!child!] != null) [!child!],
-      Text("Total price: ${cart.totalPrice}"),
+      Text('Total price: ${cart.totalPrice}'),
     ],
   ),
   // Build the expensive widget here.
@@ -464,8 +465,8 @@ improved your ability to create state-based applications.
 Try building an application with `provider` yourself to 
 master these skills. 
 
-[built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
-[check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper
+[built with `provider`]: {{site.github}}/flutter/samples/tree/main/provider_counter
+[check out the example]: {{site.github}}/flutter/samples/tree/main/provider_shopper
 [declarative UI programming]: {{site.url}}/development/data-and-backend/state-mgmt/declarative
 [ephemeral and app state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
 [options page]: {{site.url}}/development/data-and-backend/state-mgmt/options

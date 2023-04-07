@@ -6156,7 +6156,8 @@ description: Release notes for Flutter 1.17.0.
 
 [2766](https://github.com/flutter/plugins/pull/2766) [url_launcher] update README with enableJavaScript info (cla: yes, documentation, webview)
 
-## All merged pull requusts
+## All merged pull requests
+
 ### Merged PRs in `flutter/flutter`
 
 There were 1526 pull requests.

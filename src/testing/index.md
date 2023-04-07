@@ -49,7 +49,19 @@ For more information regarding unit tests,
 you can view the following recipes 
 or run `flutter test --help` in your terminal.
 
+{{site.alert.note}}
+  If you're writing unit tests for code that
+  uses plugins and you want to avoid crashes,
+  check out [Plugins in Flutter tests][].
+  If you want to test your Flutter plugin,
+  check out [Testing plugins][].
+{{site.alert.end}}
+
+[Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
+[Testing plugins]: {{site.url}}/testing/testing-plugins
+
 ### Recipes
+{:.no_toc}
 
 {% include docs/testing-toc.md type='unit' %}
 
@@ -68,6 +80,7 @@ However, like a unit test, a widget test's environment is replaced with
 an implementation much simpler than a full-blown UI system.
 
 ### Recipes
+{:.no_toc}
 
 {% include docs/testing-toc.md type='widget' %}
 
@@ -88,6 +101,7 @@ For more information on how to write integration tests, see the [integration
 testing page][].
 
 ### Recipes
+{:.no_toc}
 
 {% include docs/testing-toc.md type='integration' %}
 
@@ -112,7 +126,7 @@ integration services, see the following:
 [code coverage]: https://en.wikipedia.org/wiki/Code_coverage
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
 [Continuous delivery using fastlane with Flutter]: {{site.url}}/deployment/cd#fastlane
-[Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
+[Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/en/getting-started/getting-started-with-flutter-apps
 [How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing
 [mocked out]: {{site.url}}/cookbook/testing/unit/mocking
 [Test Flutter apps on Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/#testing-the-flutter-app

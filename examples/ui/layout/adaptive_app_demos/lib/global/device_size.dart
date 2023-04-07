@@ -37,17 +37,17 @@ ScreenSize getSize(BuildContext context) {
 class widgetWithBreakPoints extends StatelessWidget {
   List<Widget> _getHandsetChildren() {
     return ([
-      Text("Handset Child 1"),
-      Text("Handset Child 2"),
-      Text("Handset Child 3"),
+      Text('Handset Child 1'),
+      Text('Handset Child 2'),
+      Text('Handset Child 3'),
     ]);
   }
 
   List<Widget> _getNormalChildren() {
     return ([
-      Text("Normal Child 1"),
-      Text("Normal Child 2"),
-      Text("Normal Child 3"),
+      Text('Normal Child 1'),
+      Text('Normal Child 2'),
+      Text('Normal Child 3'),
     ]);
   }
 
@@ -70,7 +70,7 @@ class widgetWithBreakPoints extends StatelessWidget {
     // #docregion MediaQuery
     bool isHandset = MediaQuery.of(context).size.width < 600;
     return Flex(
-        children: [Text("Foo"), Text("Bar"), Text("Baz")],
+        children: [Text('Foo'), Text('Bar'), Text('Baz')],
         direction: isHandset ? Axis.vertical : Axis.horizontal);
     // #enddocregion MediaQuery
   }

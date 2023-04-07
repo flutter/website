@@ -20,7 +20,7 @@ class AnimatedContainerDemo extends StatefulWidget {
   const AnimatedContainerDemo({Key? key}) : super(key: key);
 
   @override
-  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
+  State<AnimatedContainerDemo> createState() => _AnimatedContainerDemoState();
 }
 
 class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {

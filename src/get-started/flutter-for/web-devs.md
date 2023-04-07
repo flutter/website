@@ -4,9 +4,17 @@ description: Learn how to apply Web developer knowledge when building Flutter ap
 css-old: [two_column.css]
 ---
 
+<?code-excerpt path-base="get-started/flutter-for/web_devs"?>
+
 This page is for users who are familiar with the HTML
 and CSS syntax for arranging components of an application's UI.
 It maps HTML/CSS code snippets to their Flutter/Dart code equivalents.
+
+Flutter is a framework for building cross-platform applications
+that uses the Dart programming language.
+To understand some differences between programming with Dart
+and programming with Javascript, 
+see [Learning Dart as a JavaScript Developer][].
 
 One of the fundamental differences between
 designing a web layout and a Flutter layout,
@@ -29,8 +37,9 @@ The examples assume:
   is defined by the `bold24Roboto` variable as follows,
   to keep the syntax simple:
 
+  <?code-excerpt "lib/main.dart (TextStyle)"?>
   ```dart
-  TextStyle bold24Roboto = TextStyle(
+  TextStyle bold24Roboto = const TextStyle(
     color: Colors.white,
     fontSize: 24,
     fontWeight: FontWeight.bold,
@@ -74,19 +83,22 @@ are anchored at the top left, by default.
 {% endprettify %}
 </div>
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Container)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
-  child: Text(
+  child: const Text(
     'Lorem ipsum',
-    style: [[highlight]]const TextStyle(
+    style: [[highlight]]TextStyle(
       fontFamily: 'Georgia',
       fontSize: 24,
       fontWeight: FontWeight.bold,
-    ),[[/highlight]]
-    [[highlight]]textAlign: TextAlign.center,[[/highlight]]
+    ),
+    [[/highlight]]
+    [[highlight]]textAlign: TextAlign.center, [[/highlight]]
   ),
 );
 {% endprettify %}
@@ -121,11 +133,14 @@ The CSS examples use the hex color equivalents to the Material color palette.
 </div>
 
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Container2)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
-  [[highlight]]color: Colors.grey[300],[[/highlight]]
+  [[highlight]]color: Colors.grey[300],
+  [[/highlight]]
   child: Text(
     'Lorem ipsum',
     style: bold24Roboto,
@@ -135,13 +150,16 @@ final container = Container( // grey box
 </div>
 
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Container3)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   [[highlight]]decoration: BoxDecoration(
     color: Colors.grey[300],
-  ),[[/highlight]]
+  ),
+  [[/highlight]]
   child: Text(
     'Lorem ipsum',
     style: bold24Roboto,
@@ -178,13 +196,15 @@ behavior.
 </div>
 
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Center)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: [[highlight]]Center(
-    child:[[/highlight]] Text(
+    child: [[/highlight]]Text(
       'Lorem ipsum',
       style: bold24Roboto,
     ),
@@ -234,14 +254,19 @@ the child Container sizes itself to match the parent.
 </div>
 
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Nested)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
-  [[highlight]]width: 320,[[/highlight]]
+final container = Container(
+  // grey box
+  [[highlight]]width: 320,
+  [[/highlight]]
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: Container( // red box
-      [[highlight]]width: 240,[[/highlight]]// max-width is 240
+    child: Container(
+      // red box
+      [[highlight]]width: 240,
+      [[/highlight]]// max-width is 240
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
@@ -296,16 +321,20 @@ in turn, nested in a [`Stack`][] widget.
 </div>
 
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Absolute)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   [[highlight]]child: Stack(
-    children:[[/highlight]] [
-      Positioned( // red box
+    children: [[/highlight]][
+      Positioned(
+        // red box
         [[highlight]]left: 24,
-        top: 24,[[/highlight]]
+        top: 24,
+        [[/highlight]]
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
@@ -362,17 +391,19 @@ using radians (degrees × π / 180).
 </div>
 
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Rotating)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
     child: [[highlight]]Transform(
       alignment: Alignment.center,
-      transform: Matrix4.identity()
-        ..rotateZ(15 * 3.1415927 / 180),
-      child:[[/highlight]] Container( // red box
+      transform: Matrix4.identity()..rotateZ(15 * 3.1415927 / 180),
+      child: [[/highlight]]Container(
+        // red box
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.red[400],
@@ -430,17 +461,19 @@ its child widgets are scaled accordingly.
 </div>
 
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Scaling)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
     child: [[highlight]]Transform(
       alignment: Alignment.center,
-      transform: Matrix4.identity()
-        ..scale(1.5),
-      child:[[/highlight]] Container( // red box
+      transform: Matrix4.identity()..scale(1.5),
+      child: [[/highlight]]Container(
+        // red box
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.red[400],
@@ -499,13 +532,16 @@ The gradient “angle” is based on the Alignment (x, y) values:
 {% endprettify %}
 </div>
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Gradient)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: Container( // red box
+    child: Container(
+      // red box
       [[highlight]]decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -515,7 +551,8 @@ final container = Container( // grey box
             Color(0x00ef5350),
           ],
         ),
-      ),[[/highlight]]
+      ),
+      [[/highlight]]
       padding: const EdgeInsets.all(16),
       child: Text(
         'Lorem ipsum',
@@ -554,13 +591,16 @@ final container = Container( // grey box
 {% endprettify %}
 </div>
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (HorizontalGradient)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: Container( // red box
+    child: Container(
+      // red box
       padding: const EdgeInsets.all(16),
       [[highlight]]decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -571,7 +611,8 @@ final container = Container( // grey box
             Color(0x00ef5350),
           ],
         ),
-      ),[[/highlight]]
+      ),
+      [[/highlight]]
       child: Text(
         'Lorem ipsum',
         style: bold24Roboto,
@@ -619,19 +660,22 @@ object that specifies the radius for rounding each corner.
 {% endprettify %}
 </div>
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (RoundCorners)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: Container( // red circle
+    child: Container(
+      // red circle
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
-        [[highlight]]borderRadius: BorderRadius.all(
-          const Radius.circular(8),
-        ),[[/highlight]]
+        [[highlight]]borderRadius: const BorderRadius.all(
+          Radius.circular(8),
+        ), [[/highlight]]
       ),
       child: Text(
         'Lorem ipsum',
@@ -685,8 +729,10 @@ to customize the shadow depth, color, and so on.
 {% endprettify %}
 </div>
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (BoxShadow)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   margin: const EdgeInsets.only(bottom: 16),
@@ -694,7 +740,8 @@ final container = Container( // grey box
     color: Colors.grey[300],
   ),
   child: Center(
-    child: Container( // red box
+    child: Container(
+      // red box
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
@@ -709,7 +756,7 @@ final container = Container( // grey box
             offset: Offset(0, 6),
             blurRadius: 20,
           ),
-        ],[[/highlight]]
+        ], [[/highlight]]
       ),
       child: Text(
         'Lorem ipsum',
@@ -761,24 +808,28 @@ with [`BoxShape` enum][] for this purpose.
 {% endprettify %}
 </div>
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (Circle)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: Container( // red circle
+    child: Container(
+      // red circle
       decoration: BoxDecoration(
         color: Colors.red[400],
-        [[highlight]]shape: BoxShape.circle,[[/highlight]]
+        [[highlight]]shape: BoxShape.circle, [[/highlight]]
       ),
       padding: const EdgeInsets.all(16),
       [[highlight]]width: 160,
-      height: 160,[[/highlight]]
+      height: 160,
+      [[/highlight]]
       child: Text(
         'Lorem ipsum',
         style: bold24Roboto,
-        [[highlight]]textAlign: TextAlign.center,[[/highlight]]
+        [[highlight]]textAlign: TextAlign.center, [[/highlight]]
       ),
     ),
   ),
@@ -830,13 +881,16 @@ of a [`TextStyle`][] child of a `Text` widget.
 {% endprettify %}
 </div>
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (TextSpacing)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: Container( // red box
+    child: Container(
+      // red box
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
@@ -847,7 +901,7 @@ final container = Container( // grey box
           color: Colors.white,
           fontSize: 24,
           fontWeight: FontWeight.w900,
-          [[highlight]]letterSpacing: 4,[[/highlight]]
+          [[highlight]]letterSpacing: 4, [[/highlight]]
         ),
       ),
     ),
@@ -899,13 +953,16 @@ and "ipsum" is in a separate `TextSpan` with custom styling.
 {% endprettify %}
 </div>
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (InlineFormatting)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: Container( // red box
+    child: Container(
+      // red box
       decoration: BoxDecoration(
         color: Colors.red[400],
       ),
@@ -925,7 +982,7 @@ final container = Container( // grey box
             ),
           ],
         ),
-      ),[[/highlight]]
+      ), [[/highlight]]
     ),
   ),
 );
@@ -936,8 +993,6 @@ final container = Container( // grey box
 
 An excerpt displays the initial line(s) of text in a paragraph,
 and handles the overflow text, often using an ellipsis.
-In HTML/CSS an excerpt can be no longer than one line.
-Truncating after multiple lines requires some JavaScript code.
 
 In Flutter, use the `maxLines` property of a [`Text`][] widget
 to specify the number of lines to include in the excerpt,
@@ -965,19 +1020,23 @@ and the `overflow` property for handling overflow text.
     padding: 16px;
     color: #ffffff;
     [[highlight]]overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;[[/highlight]]
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;[[/highlight]]
 }
 {% endprettify %}
 </div>
 <div class="righthighlight">
+<?code-excerpt "lib/main.dart (TextExcerpt)" replace="/\/\*//g;/\*\/ *//g"?>
 {% prettify dart %}
-final container = Container( // grey box
+final container = Container(
+  // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: Container( // red box
+    child: Container(
+      // red box
       decoration: BoxDecoration(
         color: Colors.red[400],
       ),
@@ -986,7 +1045,7 @@ final container = Container( // grey box
         'Lorem ipsum dolor sit amet, consec etur',
         style: bold24Roboto,
         [[highlight]]overflow: TextOverflow.ellipsis,
-        maxLines: 1,[[/highlight]]
+        maxLines: 1, [[/highlight]]
       ),
     ),
   ),
@@ -1001,11 +1060,12 @@ final container = Container( // grey box
 [`BorderRadius`]: {{site.api}}/flutter/painting/BorderRadius-class.html
 [`BoxDecoration`]: {{site.api}}/flutter/painting/BoxDecoration-class.html
 [`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
-[`BoxShape` enum]: {{site.api}}/flutter/painting/BoxShape-class.html
+[`BoxShape` enum]: {{site.api}}/flutter/painting/BoxShape.html
 [`BoxShadow`]: {{site.api}}/flutter/painting/BoxShadow-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
+[Learning Dart as a JavaScript Developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
 [`Matrix4`]: {{site.api}}/flutter/vector_math_64/Matrix4-class.html
 [`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html
 [`RichText`]: {{site.api}}/flutter/widgets/RichText-class.html

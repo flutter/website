@@ -55,7 +55,6 @@ Add the following permission to the `AndroidManifest.xml` file just after the
 `<application>` definition. The `AndroidManifest.xml` file is found at
 `<project root>/android/app/src/main/AndroidManifest.xml`.
 
-<!-- skip -->
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application ...>
@@ -71,7 +70,6 @@ Add the following permission to the `AndroidManifest.xml` file just after the
 For iOS, add the following to the `Info.plist` file found at
 `<project root>/ios/Runner/Info.plist`.
 
-<!-- skip -->
 ```xml
 <key>NSAppTransportSecurity</key>
 <dict>
@@ -108,10 +106,10 @@ To create and initialize the `VideoPlayerController` do the following:
 <?code-excerpt "lib/main_step3.dart (VideoPlayerScreen)"?>
 ```dart
 class VideoPlayerScreen extends StatefulWidget {
-  const VideoPlayerScreen({Key? key}) : super(key: key);
+  const VideoPlayerScreen({super.key});
 
   @override
-  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
+  State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
@@ -239,7 +237,7 @@ import 'package:video_player/video_player.dart';
 void main() => runApp(const VideoPlayerApp());
 
 class VideoPlayerApp extends StatelessWidget {
-  const VideoPlayerApp({Key? key}) : super(key: key);
+  const VideoPlayerApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -251,10 +249,10 @@ class VideoPlayerApp extends StatelessWidget {
 }
 
 class VideoPlayerScreen extends StatefulWidget {
-  const VideoPlayerScreen({Key? key}) : super(key: key);
+  const VideoPlayerScreen({super.key});
 
   @override
-  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
+  State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {

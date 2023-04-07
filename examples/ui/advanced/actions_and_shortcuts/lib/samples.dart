@@ -16,7 +16,7 @@ class ShortcutsExample extends StatelessWidget {
           SelectAllIntent: SelectAllAction(model),
         },
         child: Builder(
-          builder: (BuildContext context) => TextButton(
+          builder: (context) => TextButton(
             child: const Text('SELECT ALL'),
             onPressed: Actions.handler<SelectAllIntent>(
               context,
@@ -68,7 +68,7 @@ class SelectAllAction extends Action<SelectAllIntent> {
 
 void callbackActionSample() {
 // #docregion CallbackAction
-  CallbackAction(onInvoke: (Intent intent) => model.selectAll());
+  CallbackAction(onInvoke: (intent) => model.selectAll());
 // #enddocregion CallbackAction
 }
 
@@ -127,7 +127,7 @@ class HandlerExample extends StatelessWidget {
         SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
-        builder: (BuildContext context) => TextButton(
+        builder: (context) => TextButton(
           child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
@@ -166,7 +166,7 @@ class LoggingActionDispatcherExample extends StatelessWidget {
         SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
-        builder: (BuildContext context) => TextButton(
+        builder: (context) => TextButton(
           child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
@@ -179,33 +179,40 @@ class LoggingActionDispatcherExample extends StatelessWidget {
 // #enddocregion LoggingActionDispatcherExample
 }
 
-// #docregion CallbackShortcuts
-class CallbackShortcuts extends StatelessWidget {
-  const CallbackShortcuts({
-    Key? key,
-    required this.bindings,
-    required this.child,
-  }) : super(key: key);
 
-  final Map<ShortcutActivator, VoidCallback> bindings;
-  final Widget child;
+class CallbackShortcutsExample extends StatefulWidget {
+  const CallbackShortcutsExample({super.key});
 
   @override
+  State<CallbackShortcutsExample> createState() => _CallbackShortcutsExampleState();
+}
+
+class _CallbackShortcutsExampleState extends State<CallbackShortcutsExample> {
+  int count = 0;
+
+// #docregion CallbackShortcuts
+  @override
   Widget build(BuildContext context) {
-    return Focus(
-      onKey: (FocusNode node, RawKeyEvent event) {
-        KeyEventResult result = KeyEventResult.ignored;
-        // Activates all key bindings that match, returns handled if any handle it.
-        for (final ShortcutActivator activator in bindings.keys) {
-          if (activator.accepts(event, RawKeyboard.instance)) {
-            bindings[activator]!.call();
-            result = KeyEventResult.handled;
-          }
-        }
-        return result;
+    return CallbackShortcuts(
+      bindings: <ShortcutActivator, VoidCallback>{
+        const SingleActivator(LogicalKeyboardKey.arrowUp): () {
+          setState(() => count = count + 1);
+        },
+        const SingleActivator(LogicalKeyboardKey.arrowDown): () {
+          setState(() => count = count - 1);
+        },
       },
-      child: child,
+      child: Focus(
+        autofocus: true,
+        child: Column(
+          children: <Widget>[
+            const Text('Press the up arrow key to add to the counter'),
+            const Text('Press the down arrow key to subtract from the counter'),
+            Text('count: $count'),
+          ],
+        ),
+      ),
     );
   }
-}
 // #enddocregion CallbackShortcuts
+}

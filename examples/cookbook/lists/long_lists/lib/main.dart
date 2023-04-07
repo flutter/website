@@ -13,7 +13,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final List<String> items;
 
-  const MyApp({Key? key, required this.items}) : super(key: key);
+  const MyApp({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +28,9 @@ class MyApp extends StatelessWidget {
         // #docregion ListView
         body: ListView.builder(
           itemCount: items.length,
+          prototypeItem: ListTile(
+            title: Text(items.first),
+          ),
           itemBuilder: (context, index) {
             return ListTile(
               title: Text(items[index]),

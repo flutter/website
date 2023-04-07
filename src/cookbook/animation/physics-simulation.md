@@ -43,7 +43,7 @@ void main() {
 }
 
 class PhysicsCardDragDemo extends StatelessWidget {
-  const PhysicsCardDragDemo({Key? key}) : super(key: key);
+  const PhysicsCardDragDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +59,12 @@ class PhysicsCardDragDemo extends StatelessWidget {
 }
 
 class DraggableCard extends StatefulWidget {
-  const DraggableCard({required this.child, Key? key}) : super(key: key);
+  const DraggableCard({required this.child, super.key});
 
   final Widget child;
 
   @override
-  _DraggableCardState createState() => _DraggableCardState();
+  State<DraggableCard> createState() => _DraggableCardState();
 }
 
 class _DraggableCardState extends State<DraggableCard> {
@@ -105,7 +105,7 @@ Then construct an [AnimationController][] in
 --- lib/starter.dart
 +++ lib/step1.dart
 @@ -29,14 +29,20 @@
-   _DraggableCardState createState() => _DraggableCardState();
+   State<DraggableCard> createState() => _DraggableCardState();
  }
 
 -class _DraggableCardState extends State<DraggableCard> {
@@ -353,7 +353,7 @@ void main() {
 }
 
 class PhysicsCardDragDemo extends StatelessWidget {
-  const PhysicsCardDragDemo({Key? key}) : super(key: key);
+  const PhysicsCardDragDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -371,12 +371,12 @@ class PhysicsCardDragDemo extends StatelessWidget {
 /// A draggable card that moves back to [Alignment.center] when it's
 /// released.
 class DraggableCard extends StatefulWidget {
-  const DraggableCard({required this.child, Key? key}) : super(key: key);
+  const DraggableCard({required this.child, super.key});
 
   final Widget child;
 
   @override
-  _DraggableCardState createState() => _DraggableCardState();
+  State<DraggableCard> createState() => _DraggableCardState();
 }
 
 class _DraggableCardState extends State<DraggableCard>

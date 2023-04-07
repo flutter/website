@@ -80,6 +80,16 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "AnimatedList",
+    "description": "A scrolling container that animates items when they are inserted or removed.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/widgets/AnimatedList-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "AnimatedListState",
     "description": "The state for a scrolling container that animates items when they are inserted or removed.",
     "categories": [
@@ -160,7 +170,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Appbar",
+    "name": "AppBar",
     "description": "A Material Design app bar. An app bar consists of a toolbar and potentially other widgets, such as a TabBar and a FlexibleSpaceBar.",
     "categories": [
       "Basics"
@@ -596,6 +606,26 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-textfield.png'>"
+  },
+  {
+    "name": "CupertinoListSection",
+    "description": "An iOS-style container for a scrollable view.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoListSection-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-list-section.png'>"
+  },
+  {
+    "name": "CupertinoListTile",
+    "description": "An iOS-style tile that makes up a row in a list.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoListTile-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-list-tile.png'>"
   },
   {
     "name": "CupertinoTimerPicker",

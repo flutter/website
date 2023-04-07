@@ -23,7 +23,7 @@ apps, but they fall into three major categories:
 * [Input](#input)
 * [Idioms and norms](#idioms-and-norms)
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/RCdeSKVt7LI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/RCdeSKVt7LI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.
@@ -265,7 +265,7 @@ from a vertical to a horizontal layout when the user isn’t on a handset:
 ```dart
 bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
-    children: [Text("Foo"), Text("Bar"), Text("Baz")],
+    children: [Text('Foo'), Text('Bar'), Text('Baz')],
     direction: isHandset ? Axis.vertical : Axis.horizontal);
 ```
 In another widget,
@@ -299,12 +299,12 @@ The previous example could be rewritten using `LayoutBuilder`:
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
 ```dart
 Widget foo = LayoutBuilder(
-    builder: (BuildContext context, BoxConstraints constraints) {
+    builder: (context, constraints) {
   bool useVerticalLayout = constraints.maxWidth < 400.0;
   return Flex(
     children: [
-      Text("Hello"),
-      Text("World"),
+      Text('Hello'),
+      Text('World'),
     ],
     direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
   );
@@ -538,8 +538,8 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
     return FocusableActionDetector(
       onFocusChange: (value) => setState(() => _hasFocus = value),
       actions: <Type, Action<Intent>>{
-        ActivateIntent: CallbackAction<Intent>(onInvoke: (Intent intent) {
-          print("Enter or Space was pressed!");
+        ActivateIntent: CallbackAction<Intent>(onInvoke: (intent) {
+          print('Enter or Space was pressed!');
           return null;
         }),
       },
@@ -618,7 +618,7 @@ already has a focus node, you can wrap it in a
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (FocusNode node, RawKeyEvent event) {
+      onKey: (node, event) {
         if (event is RawKeyDownEvent) {
           print(event.logicalKey);
         }
@@ -658,7 +658,7 @@ Widget build(BuildContext context) {
       // Bind intents to an actual method in your code
       actions: <Type, Action<Intent>>{
         CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
-            onInvoke: (CreateNewItemIntent intent) => _createNewItem()),
+            onInvoke: (intent) => _createNewItem()),
       },
       // Your sub-tree must be wrapped in a focusNode, so it can take focus.
       child: Focus(
@@ -775,7 +775,7 @@ rollover and hover effects:
 return MouseRegion(
   onEnter: (_) => setState(() => _isMouseOver = true),
   onExit: (_) => setState(() => _isMouseOver = false),
-  onHover: (PointerHoverEvent e) => print(e.localPosition),
+  onHover: (e) => print(e.localPosition),
   child: Container(
     height: 500,
     color: _isMouseOver ? Colors.blue : Colors.black,
@@ -890,7 +890,7 @@ toggle `alwaysShown` when on a desktop platform:
 <?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
 ```dart
 return Scrollbar(
-  isAlwaysShown: DeviceType.isDesktop,
+  thumbVisibility: DeviceType.isDesktop,
   controller: _scrollController,
   child: GridView.count(
       controller: _scrollController,
@@ -989,7 +989,7 @@ the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI. 
  
-![Samples of title bars]({{site.url}}/assets/images/docs/development/ui/layout/titlebar.png)
+![Samples of title bars]({{site.url}}/assets/images/docs/development/ui/layout/titlebar.png){:width="100%"}
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
@@ -1094,19 +1094,19 @@ return Row(
       textDirection: btnDirection,
       children: [
         DialogButton(
-            label: "Cancel",
+            label: 'Cancel',
             onPressed: () => Navigator.pop(context, false)),
         DialogButton(
-            label: "Ok", onPressed: () => Navigator.pop(context, true)),
+            label: 'Ok', onPressed: () => Navigator.pop(context, true)),
       ],
     ),
   ],
 );
 ```
 
-![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image1.png)
+![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image1.png){:width="75%"}
 
-![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image2.png)
+![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image2.png){:width="90%"}
 
 #### Menu bar
 

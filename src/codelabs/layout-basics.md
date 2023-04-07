@@ -6,18 +6,12 @@ js:
 - defer: true
   url: https://dartpad.dev/inject_embed.dart.js
 ---
+
 Welcome to the Flutter layout codelab,
 where you learn how to build a Flutter UI without
 downloading and installing Flutter or Dart!
 
-{{site.alert.important}}
-  This codelab covers basic Flutter layout concepts using an
-  experimental code editor called DartPad.
-  DartPad hasn't been fully tested on all browsers.
-  If you experience any difficulties while using DartPad
-  on a specific browser, please create a [DartPad issue][]
-  and specify which browser you're using in the issue title.
-{{site.alert.end}}
+{% include docs/dartpad-troubleshooting.md %}
 
 Flutter is different from other frameworks because its UI
 is built in code, not (for example) in an XML file or similar.
@@ -52,7 +46,6 @@ and `Column` lays out its widgets vertically.
   **2.** In the code, change the `Row` to a `Column`, and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -96,8 +89,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -119,7 +112,7 @@ Future<void> main() async {
   
   runApp(MyApp());
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final columns = controller.widgetList(find.byType(Column));
 
@@ -193,7 +186,6 @@ The `mainAxisSize` property has two possible values:
          and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -238,8 +230,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -259,7 +251,7 @@ Future<void> main() async {
 
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -335,7 +327,6 @@ can position their children in that extra space.
          `MainAxisAlignment.end`, and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -380,8 +371,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -400,7 +391,7 @@ Future<void> main() async {
   });
 
   await completer.future;
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -494,7 +485,6 @@ The `crossAxisAlignment` property has five possible values:
          `CrossAxisAlignment.start`, and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -554,8 +544,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -575,7 +565,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -663,7 +653,6 @@ the widgets are resized according to their
          and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -715,8 +704,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -736,7 +725,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -809,7 +798,6 @@ Future<void> main() async {
   what fraction of the total remaining space each
   `Flexible` widget receives.
 
-  <!-- skip -->
   ```dart
   remainingSpace * (flex / totalOfAllFlexValues)
   ```
@@ -821,7 +809,6 @@ Future<void> main() async {
   remains the same size.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -873,8 +860,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -894,7 +881,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -979,7 +966,6 @@ wrap a widget and force the widget to fill extra space.
 
   For example:
 
-  <!-- skip -->
   ```dart
   Expanded(child: BlueBox(),),
   ```
@@ -987,7 +973,6 @@ wrap a widget and force the widget to fill extra space.
          and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1031,8 +1016,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1052,7 +1037,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1115,7 +1100,6 @@ create empty space.
          inside the `SizedBox` widget, and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1163,8 +1147,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1184,7 +1168,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1259,7 +1243,6 @@ Future<void> main() async {
          and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1272,7 +1255,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         BlueBox(),
-        SizedBox(width: 50),
+        const SizedBox(width: 50),
         BlueBox(),
         BlueBox(),
       ],
@@ -1304,8 +1287,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1325,7 +1308,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1427,7 +1410,6 @@ can create space between widgets.
          between the second and third `BlueBox` widgets.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1440,7 +1422,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         BlueBox(),
-        Spacer(flex: 1),
+        const Spacer(flex: 1),
         BlueBox(),
         BlueBox(),
       ],
@@ -1472,8 +1454,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1493,7 +1475,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1566,7 +1548,6 @@ for different fonts, sizes, and colors.
          `CrossAxisAlignment.baseline`, and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1579,7 +1560,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       textBaseline: TextBaseline.alphabetic,
-      children: [
+      children: const [
         Text(
           'Hey!',
           style: TextStyle(
@@ -1619,8 +1600,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1640,7 +1621,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1705,7 +1686,6 @@ Flutter is preloaded with icon packages for
          [Material Color palette][], and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1718,7 +1698,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       textBaseline: TextBaseline.alphabetic,
-      children: [
+      children: const [
         Icon(
           Icons.widgets,
           size: 50,
@@ -1744,8 +1724,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1765,7 +1745,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1832,7 +1812,6 @@ the following example uses an image from the network.
          and run again.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1861,8 +1840,8 @@ class MyApp extends StatelessWidget {
         color: const Color(0xffeeeeee),
         child: Center(
           child: Container(
-            child: MyWidget(),
             color: const Color(0xffcccccc),
+            child: MyWidget(),
           ),
         ),
       ),
@@ -1882,7 +1861,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   final rows = controller.widgetList(find.byType(Row));
 
@@ -1955,7 +1934,7 @@ which are positioned below the contact information.
 <ul markdown="1">
   <li markdown="1">
   The first `Text` widget has the name `Flutter McFlutter` and
-  the `style` property set to `Theme.of(context).textTheme.headline5`.
+  the `style` property set to `Theme.of(context).textTheme.headlineSmall`.
   </li>
   <li markdown="1">
   The second `Text` widget contains the title `Experienced App Developer`.
@@ -1967,7 +1946,6 @@ which are positioned below the contact information.
   and `crossAxisAlignment` to `CrossAxisAlignment.start`.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -1995,7 +1973,7 @@ class MyWidget extends StatelessWidget {
       children: [
         Text(
           'Flutter McFlutter', 
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const Text('Experienced App Developer'),
       ],
@@ -2012,7 +1990,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2054,7 +2032,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
@@ -2096,7 +2074,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline5" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2129,7 +2107,6 @@ Future<void> main() async {
   </li>
 </ul>
 
-  <!-- skip -->
   ```dart
      Row(
        children: [
@@ -2141,8 +2118,8 @@ Future<void> main() async {
       ],
      );
   ```
+{{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -2158,7 +2135,7 @@ class MyWidget extends StatelessWidget {
       children: [
         Text(
           'Flutter McFlutter',
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         const Text('Experienced App Developer'),
       ],
@@ -2186,7 +2163,7 @@ class MyWidget extends StatelessWidget {
           children: [
             Text(
               'Flutter McFlutter',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const Text('Experienced App Developer'),
           ],
@@ -2205,7 +2182,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2247,7 +2224,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
@@ -2329,7 +2306,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2364,7 +2341,6 @@ Future<void> main() async {
   so the contact information and icons are displayed below the
   name and title:
 
-  <!-- skip -->
   ```dart
 
      ],
@@ -2380,7 +2356,6 @@ Future<void> main() async {
 
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -2402,7 +2377,7 @@ class MyWidget extends StatelessWidget {
           children: [
             Text(
               'Flutter McFlutter',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const Text('Experienced App Developer'),
           ],
@@ -2436,7 +2411,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2461,7 +2436,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2503,7 +2478,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
@@ -2617,7 +2592,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2665,7 +2640,6 @@ Future<void> main() async {
   `MainAxisAlignment.spaceBetween`.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -2682,7 +2656,7 @@ class MyWidget extends StatelessWidget {
         Row(
           children: [
             const Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.account_circle, size: 50),
             ),
             Column(
@@ -2691,7 +2665,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2735,7 +2709,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -2772,7 +2746,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -2814,7 +2788,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
@@ -2928,7 +2902,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -2996,7 +2970,6 @@ Future<void> main() async {
   `MainAxisAlignment.spaceAround`.
 {{site.alert.end}}
 
-<!-- skip -->
 ```run-dartpad:theme-dark:mode-flutter:width-100%:height-400px:split-60
 {$ begin main.dart $}
 import 'dart:async';
@@ -3022,7 +2995,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3070,7 +3043,7 @@ class MyWidget extends StatelessWidget {
               children: [
                 Text(
                   'Flutter McFlutter',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const Text('Experienced App Developer'),
               ],
@@ -3113,7 +3086,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xffeeeeee),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             fontSize: 16,
           ),
         ),
@@ -3155,7 +3128,7 @@ Future<void> main() async {
   
   await completer.future;
 
-  final controller = LiveWidgetController(WidgetsBinding.instance!);
+  final controller = LiveWidgetController(WidgetsBinding.instance);
 
   // Check MyWidget starts with one Column
 
@@ -3269,7 +3242,7 @@ Future<void> main() async {
   final nameText = innerColumnWidget.children[0] as Text;
 
   if (nameText.style?.fontSize != 24) {
-    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    _result(false, ['The Text widget for the name should use the "headlineSmall" textStyle.']);
     return;
   }
 
@@ -3364,7 +3337,7 @@ You can download Flutter from the [install][] page.
 [Building layouts]: {{site.url}}/development/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new
-[Flutter's YouTube channel]: {{site.youtube-site}}/channel/UCwXdFgeE9KYzlDdR7TG9cMw
+[Flutter's YouTube channel]: {{site.social.youtube}}
 [GitHub]: {{site.repo.this}}/tree/{{site.branch}}/examples/layout/sizing/images
 [install]: {{site.url}}/get-started/install
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html

@@ -29,6 +29,12 @@ This recipe uses the following steps:
   3. Read data.
   4. Remove data.
 
+{{site.alert.note}}
+  To learn more, watch this short Package of the Week video on the shared_preferences package:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/sa_U0jffQII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+{{site.alert.end}}
+
 ## 1. Add the dependency
 
 Before starting, add the [`shared_preferences`][]
@@ -56,7 +62,7 @@ key-value pair in-memory. Then, persist the data to disk.
 final prefs = await SharedPreferences.getInstance();
 
 // set value
-prefs.setInt('counter', counter);
+await prefs.setInt('counter', counter);
 ```
 
 ## 3. Read data
@@ -81,7 +87,7 @@ To delete data, use the `remove()` method.
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
-prefs.remove('counter');
+await prefs.remove('counter');
 ```
 
 ## Supported types
@@ -110,7 +116,7 @@ your test files:
 <?code-excerpt "lib/partial_excerpts.dart (Testing)"?>
 ```dart
 const MethodChannel('plugins.flutter.io/shared_preferences')
-    .setMockMethodCallHandler((MethodCall methodCall) async {
+    .setMockMethodCallHandler((methodCall) async {
   if (methodCall.method == 'getAll') {
     return <String, dynamic>{}; // set initial values here if desired
   }
@@ -128,7 +134,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of the application.
   @override
@@ -141,12 +147,12 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -159,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Loading counter value on start
-  void _loadCounter() async {
+  Future<void> _loadCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0);
@@ -167,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Incrementing counter after click
-  void _incrementCounter() async {
+  Future<void> _incrementCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0) + 1;
@@ -190,7 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -207,4 +213,4 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
-[shared preferences documentation]: {{site.android-dev}}/guide/topics/data/data-storage#pref
+[shared preferences documentation]: {{site.android-dev}}/training/data-storage/shared-preferences

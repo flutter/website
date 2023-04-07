@@ -2,8 +2,8 @@
 title: Build a form with validation
 description: How to build a form that validates input.
 prev:
-  title: Work with tabs
-  path: /cookbook/design/tabs
+  title: Drag a UI element
+  path: /cookbook/effects/drag-a-widget
 next:
   title: Create and style a text field
   path: /cookbook/forms/text-input
@@ -47,7 +47,7 @@ import 'package:flutter/material.dart';
 
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({super.key});
 
   @override
   MyCustomFormState createState() {
@@ -167,7 +167,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +187,7 @@ class MyApp extends StatelessWidget {
 
 // Create a Form widget.
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({super.key});
 
   @override
   MyCustomFormState createState() {

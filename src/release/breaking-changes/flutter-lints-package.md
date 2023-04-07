@@ -7,7 +7,7 @@ description: Migrate to package:flutter_lints to get the latest set of recommend
 
 The [`package:flutter_lints`][] defines the latest set of recommended lints that
 encourage good coding practices for Flutter apps, packages, and plugins. Projects
-created with `flutter create` using Flutter version 2.3.0-12.0.pre or newer are
+created with `flutter create` using Flutter version 2.5 or newer are
 already enabled to use the latest set of recommended lints. Projects created
 prior to that version can upgrade to it with the instructions in this guide.
 
@@ -124,6 +124,6 @@ Relevant PRs:
 [IDE with Dart support]: {{site.dart-site}}/tools#ides-and-editors
 [Integrate package:flutter_lints into templates]: {{site.repo.flutter}}/pull/81417
 [Issue 78432 - Update lint set for Flutter applications]: {{site.repo.flutter}}/issues/78432
-[`package:flutter_lints`]: {{site.pub}}/packages/flutter_lints
+[`package:flutter_lints`]: {{site.pub-pkg}}/flutter_lints
 [`package:lints`]: {{site.pub}}/packages/lints
 [Package dependencies]: {{site.dart-site}}/tools/pub/dependencies

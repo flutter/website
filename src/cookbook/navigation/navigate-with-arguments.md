@@ -5,8 +5,8 @@ prev:
   title: Navigate with named routes
   path: /cookbook/navigation/named-routes
 next:
-  title: Return data from a screen
-  path: /cookbook/navigation/returning-data
+  title: Set up app links for Android
+  path: /cookbook/navigation/set-up-app-links
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -20,6 +20,15 @@ a common identifier.
 In some cases, you might also need to pass arguments to a
 named route. For example, you might wish to navigate to the `/user` route and
 pass information about the user to that route.
+
+{{site.alert.note}}
+  Named routes are no longer recommended for most
+  applications. For more information, see
+  [Limitations][] in the [navigation overview][] page.
+{{site.alert.end}}
+
+[Limitations]: {{site.url}}/development/ui/navigation#limitations
+[navigation overview]: {{site.url}}/development/ui/navigation
 
 You can accomplish this task using the `arguments` parameter of the
 [`Navigator.pushNamed()`][] method. Extract the arguments using the
@@ -70,7 +79,7 @@ This method returns the current route with the arguments.
 // A Widget that extracts the necessary arguments from
 // the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
-  const ExtractArgumentsScreen({Key? key}) : super(key: key);
+  const ExtractArgumentsScreen({super.key});
 
   static const routeName = '/extractArguments';
 
@@ -203,7 +212,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -252,7 +261,7 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -315,7 +324,7 @@ class HomeScreen extends StatelessWidget {
 // A Widget that extracts the necessary arguments from
 // the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
-  const ExtractArgumentsScreen({Key? key}) : super(key: key);
+  const ExtractArgumentsScreen({super.key});
 
   static const routeName = '/extractArguments';
 
@@ -351,10 +360,10 @@ class PassArgumentsScreen extends StatelessWidget {
   // The arguments are extracted by the onGenerateRoute
   // function provided to the MaterialApp widget.
   const PassArgumentsScreen({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

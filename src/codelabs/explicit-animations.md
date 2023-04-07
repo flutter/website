@@ -6,8 +6,8 @@ diff2html: true
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
-  - defer: true
-    url: /assets/js/codelabs/animations_examples.js
+#  - defer: true
+#    url: /assets/js/codelabs/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/explicit"?>
@@ -20,6 +20,8 @@ than can be achieved using implicit animations.
 {{site.alert.note}}
   This codelab is not yet complete.
 {{site.alert.end}}
+
+{% include docs/dartpad-troubleshooting.md %}
 
 To get the most out of this codelab,
 you should have basic knowledge of the following:
@@ -413,7 +415,7 @@ that you are animating:
 --- explicit1/lib/main.dart
 +++ explicit2/lib/main.dart
 @@ -9,7 +9,8 @@
-   _BouncingBallDemoState createState() => _BouncingBallDemoState();
+   State<BouncingBallDemo> createState() => _BouncingBallDemoState();
  }
 
 -class _BouncingBallDemoState extends State<BouncingBallDemo> {
@@ -688,7 +690,6 @@ and `duration`:
 
 Instantiate `AnimationController`:
 
-<!-- skip -->
  ```dart
 controller = AnimationController(
   lowerBound: 0,
@@ -742,7 +743,6 @@ of the editor:
 You can access this property directly&mdash;there
 is no getter method for `value`:
 
-  <!-- skip -->
    ```dart
    print(controller.value);
    ```
@@ -775,7 +775,7 @@ the `value` property to a new value.
 [Material app]: {{site.api}}/flutter/material/MaterialApp-class.html
 [performance profiling]: {{site.url}}/perf/ui-performance
 [implicit animations]: {{site.url}}/development/ui/animations/implicit-animations
-[make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [stateful widgets]: {{site.url}}/development/ui/interactive#stateful-and-stateless-widgets
 [step 1]: #1-use-a-tickerprovider-mixin
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html

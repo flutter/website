@@ -66,6 +66,11 @@ const snackBar = SnackBar(
 // and use it to show a SnackBar.
 ScaffoldMessenger.of(context).showSnackBar(snackBar);
 ```
+{{site.alert.note}}
+  To learn more, watch this short Widget of the Week video on the ScaffoldMessenger widget:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/lytQi-slT5Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
 
 ## 3. Provide an optional action
 
@@ -106,7 +111,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const SnackBarDemo());
 
 class SnackBarDemo extends StatelessWidget {
-  const SnackBarDemo({Key? key}) : super(key: key);
+  const SnackBarDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +128,7 @@ class SnackBarDemo extends StatelessWidget {
 }
 
 class SnackBarPage extends StatelessWidget {
-  const SnackBarPage({Key? key}) : super(key: key);
+  const SnackBarPage({super.key});
 
   @override
   Widget build(BuildContext context) {

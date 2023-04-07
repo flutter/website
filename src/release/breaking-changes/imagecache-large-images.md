@@ -22,7 +22,6 @@ made working in memory-limited systems more difficult.
 The following "before" and "after" pseudocode demonstrates
 the changes made to the `ImageCache` algorithm:
 
-<!-- skip -->
 ```dart
 // Old logic pseudocode
 void onLoadImage(Image image) {
@@ -37,7 +36,6 @@ void onLoadImage(Image image) {
 }
 ```
 
-<!-- skip -->
 ```dart
 // New logic pseudocode
 void onLoadImage(Image image) {

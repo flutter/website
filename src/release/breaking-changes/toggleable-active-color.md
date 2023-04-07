@@ -32,7 +32,6 @@ and `RadioThemeData`.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(toggleableActiveColor: myColor),
@@ -42,12 +41,56 @@ MaterialApp(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 final ThemeData theme = ThemeData();
 MaterialApp(
   theme: theme.copyWith(
-    colorScheme: theme.colorScheme.copyWith(secondary: myColor),
+    switchTheme: SwitchThemeData(
+      thumbColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+        if (states.contains(MaterialState.disabled)) {
+          return null;
+        }
+        if (states.contains(MaterialState.selected)) {
+          return myColor;
+        }
+        return null;
+      }),
+      trackColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+        if (states.contains(MaterialState.disabled)) {
+          return null;
+        }
+        if (states.contains(MaterialState.selected)) {
+          return myColor;
+        }
+        return null;
+      }),
+    ),
+    radioTheme: RadioThemeData(
+      fillColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+        if (states.contains(MaterialState.disabled)) {
+          return null;
+        }
+        if (states.contains(MaterialState.selected)) {
+          return myColor;
+        }
+        return null;
+      }),
+    ),
+    checkboxTheme: CheckboxThemeData(
+      fillColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+        if (states.contains(MaterialState.disabled)) {
+          return null;
+        }
+        if (states.contains(MaterialState.selected)) {
+          return myColor;
+        }
+        return null;
+      }),
+    ),
   ),
   //...
 )
@@ -55,8 +98,7 @@ MaterialApp(
 
 ## Timeline
 
-Landed in version: 2.9.0-1.0.pre.209<br>
-In stable release: not yet
+In stable release: 3.7
 
 ## References
 
@@ -79,4 +121,4 @@ Relevant PRs:
 
 [`Switch` widget color doesn't use `ColorScheme`]: {{site.repo.flutter}}/issues/93709
 
-[Deprecate `toggleableActiveColor`]: {{site.repo.flutter}}/pull/95870
+[Deprecate `toggleableActiveColor`]: {{site.repo.flutter}}/pull/97972

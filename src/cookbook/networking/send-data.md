@@ -40,7 +40,9 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
-If you develop for android, add the following permission inside manifest tag in the AndroidManifest.xml file located at android/app/src/main.
+If you develop for android, 
+add the following permission inside the manifest tag
+in the `AndroidManifest.xml` file located at `android/app/src/main`.
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -53,6 +55,15 @@ This recipe covers how to create an `Album`
 by sending an album title to the
 [JSONPlaceholder][] using the
 [`http.post()`][] method.
+
+Import `dart:convert` for access to `jsonEncode` to encode the data:
+
+<?code-excerpt "lib/create_album.dart (convert-import)"?>
+```dart
+import 'dart:convert';
+```
+
+Use the `http.post()` method to send the encoded data:
 
 <?code-excerpt "lib/create_album.dart (CreateAlbum)"?>
 ```dart
@@ -283,10 +294,10 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
-  _MyAppState createState() {
+  State<MyApp> createState() {
     return _MyAppState();
   }
 }

@@ -17,10 +17,10 @@ an app without having to develop everything from scratch.
 
   **Packages**
   : At a minimum, a Dart package is a directory
-    containing a pubspec file. Additionally,
+    containing a `pubspec.yaml` file. Additionally,
     a package can contain dependencies
     (listed in the pubspec), Dart libraries, apps,
-    resources, tests, images, and examples.
+    resources, tests, images, fonts, and examples.
     The [pub.dev][] site lists many packages—developed by Google engineers
     and generous members of the Flutter and Dart community—
     that you can use in your app.
@@ -33,20 +33,34 @@ an app without having to develop everything from scratch.
     or any combination thereof.
     For example, a plugin might provide Flutter apps
     with the ability to use a device's camera.
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Y9WifT8aN6o?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {{site.alert.end}}
 
 Existing packages enable many use cases—for example,
 making network requests ([`http`][]),
-custom navigation/route handling ([`fluro`][]),
+navigation/route handling ([`go_router`][]),
 integration with device APIs
-([`url_launcher`][] and [`battery`][]),
+([`url_launcher`][] and [`battery_plus`][]),
 and using third-party platform SDKs like Firebase
 ([FlutterFire][]).
 
 To write a new package, see [developing packages][].
-To add assets, images or fonts,
+To add assets, images, or fonts,
 whether stored in files or packages,
 see [Adding assets and images][].
+
+
+[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
+[`battery_plus`]: {{site.pub-pkg}}/battery_plus
+[developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
+[FlutterFire]: {{site.github}}/firebase/flutterfire
+
+
+[`go_router`]: {{site.pub-pkg}}/go_router
+[`http`]: {{site.url}}/cookbook/networking/fetch-data
+[pub.dev]: {{site.pub}}
+[`url_launcher`]: {{site.pub-pkg}}/url_launcher
 
 ## Using packages
 
@@ -70,8 +84,19 @@ be a Flutter Favorite, see the
 [Flutter Favorites program][].
 
 You can also browse the packages on pub.dev by filtering
-on [Android plugins][], [iOS plugins][], [web plugins][],
+on [Android][], [iOS][], [web][],
+[Linux][], [Windows][], [macOS][],
 or any combination thereof.
+
+[Android]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aandroid
+[Flutter Favorites]: {{site.pub}}/flutter/favorites
+[Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
+[Flutter landing page]: {{site.pub}}/flutter
+[Linux]: {{site.pub-pkgs}}?q=sdk%3Aflutter+platform%3Alinux
+[iOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aios
+[macOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Amacos
+[web]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aweb
+[Windows]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Awindows
 
 ### Adding a package dependency to an app
 
@@ -84,9 +109,9 @@ To add the package, `css_colors`, to an app:
 1. Install it
    * From the terminal: Run `flutter pub get`.<br/>
    **OR**
-   * From Android Studio/IntelliJ: Click **Packages get** in the action
-     ribbon at the top of `pubspec.yaml`.
    * From VS Code: Click **Get Packages** located in right side of the action
+     ribbon at the top of `pubspec.yaml` indicated by the Download icon.
+   * From Android Studio/IntelliJ: Click **Pub get** in the action
      ribbon at the top of `pubspec.yaml`.
 
 1. Import it
@@ -99,6 +124,31 @@ To add the package, `css_colors`, to an app:
      Hot reload and hot restart only update the Dart code,
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
+     
+### Adding a package dependency to an app using `flutter pub add`
+
+To add the package, `css_colors`, to an app:
+
+1. Issue the command while being inside the project directory
+   * `flutter pub add css_colors`
+
+1. Import it
+   * Add a corresponding `import` statement in the Dart code.
+
+1. Stop and restart the app, if necessary
+   * If the package brings platform-specific code
+     (Kotlin/Java for Android, Swift/Objective-C for iOS),
+     that code must be built into your app.
+     Hot reload and hot restart only update the Dart code,
+     so a full restart of the app might be required to avoid
+     errors like `MissingPluginException` when using the package.
+     
+### Removing a package dependency to an app using `flutter pub remove`
+
+To remove the package, `css_colors`, to an app:
+
+1. Issue the command while being inside the project directory
+   * `flutter pub remove css_colors`
 
 The [Installing tab][],
 available on any package page on pub.dev,
@@ -106,6 +156,10 @@ is a handy reference for these steps.
 
 For a complete example,
 see the [css_colors example][] below.
+
+
+[css_colors example]: #css-example
+[Installing tab]: {{site.pub-pkg}}/css_colors/install
 
 ### Conflict resolution
 
@@ -167,13 +221,20 @@ configurations.all {
 }
 ```
 
-CocoaPods does not currently offer dependency
+CocoaPods doesn't currently offer dependency
 override functionality.
+
+
+[CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
+[Gradle modules]: https://docs.gradle.org/current/userguide/declaring_dependencies.html
+[version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
 
 ## Developing new packages
 
 If no package exists for your specific use case,
 you can [write a custom package][].
+
+[write a custom package]: {{site.url}}/development/packages-and-plugins/developing-packages
 
 ## Managing package dependencies and versions
 
@@ -189,9 +250,6 @@ see the [`url_launcher`][] package), as
 well as a list of all prior versions
 (see [`url_launcher` versions][]).
 
-When a package is added to `pubspec.yaml`,
-the shorthand form `plugin1:` means that any
-version of the plugin1 package can be used.
 To ensure that the app doesn't break when a
 package is updated,
 specify a version range using one of the
@@ -215,10 +273,15 @@ following formats:
 For additional details,
 see the [package versioning guide][].
 
+
+[*caret syntax*]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
+[package versioning guide]: {{site.dart-site}}/tools/pub/versioning
+[`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
+
 ### Updating package dependencies
 
-When running `flutter pub get` (**Packages get** in IntelliJ
-or Android Studio) for the first time after adding a package,
+When running `flutter pub get` 
+for the first time after adding a package,
 Flutter saves the concrete package version found in the `pubspec.lock`
 [lockfile][]. This ensures that you get the same version again
 if you, or another developer on your team, run `flutter pub get`.
@@ -226,7 +289,6 @@ if you, or another developer on your team, run `flutter pub get`.
 To upgrade to a new version of the package,
 for example to use new features in that package,
 run `flutter pub upgrade`
-(**Upgrade dependencies** in IntelliJ or Android Studio)
 to retrieve the highest available version of the package
 that is allowed by the version constraint specified in
 `pubspec.yaml`.
@@ -234,23 +296,27 @@ Note that this is a different command from
 `flutter upgrade` or `flutter update-packages`,
 which both update Flutter itself.
 
+[lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
+
 ### Dependencies on unpublished packages
 
 Packages can be used even when not published on pub.dev.
-For private plugins, or for packages not ready for publishing,
+For private packages, or for packages not ready for publishing,
 additional dependency options are available:
 
 **Path dependency**
-: A Flutter app can depend on a plugin via a file system
+: A Flutter app can depend on a package using a file system
   `path:` dependency. The path can be either relative or absolute.
-  Relative paths are evaluated relative to the directory containing `pubspec.yaml`.
-  For example, to depend on a plugin `plugin1` located in a directory
-  next to the app, use the following syntax:
+  Relative paths are evaluated relative to the directory
+  containing `pubspec.yaml`. For example, to depend on a
+  package, packageA, located in a directory next to the app,
+  use the following syntax:
 
   ```yaml
-  dependencies:
-    plugin1:
-      path: ../plugin1/
+    dependencies:
+    packageA:
+      path: ../packageA/
+  
   ```
 
 **Git dependency**
@@ -259,29 +325,42 @@ additional dependency options are available:
   use the following syntax:
 
   ```yaml
-  dependencies:
-    plugin1:
-      git:
-        url: git://github.com/flutter/plugin1.git
+    dependencies:
+      packageA:
+        git:
+          url: https://github.com/flutter/packageA.git
+  ```
+
+**Git dependency using SSH**
+: If the repository is private and you can connect to it using SSH,
+  depend on the package by using the repo's SSH url:
+
+  ```yaml
+    dependencies:
+      packageA:
+        git:
+          url: git@github.com:flutter/packageA.git
   ```
 
 **Git dependency on a package in a folder**
 : Pub assumes the package is located in
-  the root of the Git repository. If that is not
+  the root of the Git repository. If that isn't
   the case, specify the location with the `path` argument.
   For example:
 
   ```yaml
   dependencies:
-    package1:
+    packageA:
       git:
-        url: git://github.com/flutter/packages.git
-        path: packages/package1
+        url: https://github.com/flutter/packages.git
+        path: packages/packageA
   ```
 
   Finally, use the `ref` argument to pin the dependency to a
   specific git commit, branch, or tag. For more details, see
   [Package dependencies][].
+
+[Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
 
 ## Examples
 
@@ -308,8 +387,7 @@ To use this package:
    ```
 
 1. Run `flutter pub get` in the terminal,
-   or click **Packages get** in
-   IntelliJ or Android Studio.
+   or click **Get Packages** in VS Code.
 
 1. Open `lib/main.dart` and replace its full contents with:
 
@@ -323,7 +401,7 @@ To use this package:
     }
 
     class MyApp extends StatelessWidget {
-      const MyApp({Key? key}) : super(key: key);
+      const MyApp({super.key});
 
       @override
       Widget build(BuildContext context) {
@@ -334,7 +412,7 @@ To use this package:
     }
 
     class DemoPage extends StatelessWidget {
-      const DemoPage({Key? key}) : super(key: key);
+      const DemoPage({super.key});
 
       @override
       Widget build(BuildContext context) {
@@ -343,6 +421,9 @@ To use this package:
     }
     ```
 
+
+[`css_colors`]: {{site.pub-pkg}}/css_colors
+
 1. Run the app. The app's background should now be orange.
 
 
@@ -350,7 +431,8 @@ To use this package:
 
 The [`url_launcher`][] plugin package enables opening
 the default browser on the mobile platform to display
-a given URL, and is supported on Android, iOS, web, and macos.
+a given URL, and is supported on Android, iOS, web,
+Windows, Linux, and macos.
 This package is a special Dart package called a
 _plugin package_ (or _plugin_),
 which includes platform-specific code.
@@ -369,8 +451,7 @@ To use this plugin:
    ```
 
 1. Run `flutter pub get` in the terminal,
-   or click **Packages get** in
-   IntelliJ or Android Studio.
+   or click **Get Packages get** in VS Code.
 
 1. Open `lib/main.dart` and replace its full contents with the
    following:
@@ -378,15 +459,15 @@ To use this plugin:
     <?code-excerpt "lib/url_launcher.dart (UrlLauncher)"?>
     ```dart
     import 'package:flutter/material.dart';
-    import 'package:url_launcher/url_launcher.dart';
     import 'package:path/path.dart' as p;
+    import 'package:url_launcher/url_launcher.dart';
 
     void main() {
       runApp(const MyApp());
     }
 
     class MyApp extends StatelessWidget {
-      const MyApp({Key? key}) : super(key: key);
+      const MyApp({super.key});
 
       @override
       Widget build(BuildContext context) {
@@ -397,7 +478,7 @@ To use this plugin:
     }
 
     class DemoPage extends StatelessWidget {
-      const DemoPage({Key? key}) : super(key: key);
+      const DemoPage({super.key});
 
       launchURL() {
         launchUrl(p.toUri('https://flutter.dev'));
@@ -422,30 +503,3 @@ To use this plugin:
    You should see the default browser open on the device,
    displaying the homepage for flutter.dev.
 
-
-[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
-[Android plugins]: {{site.pub}}/flutter/packages?platform=android
-[`battery`]: {{site.pub-pkg}}/battery
-[*caret syntax*]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
-[CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
-[`css_colors`]: {{site.pub-pkg}}/css_colors
-[css_colors example]: #css-example
-[write a custom package]: {{site.url}}/development/packages-and-plugins/developing-packages
-[developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
-[`fluro`]: {{site.pub-pkg}}/fluro
-[Flutter Favorites]: {{site.pub}}/flutter/favorites
-[Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
-[Flutter landing page]: {{site.pub}}/flutter
-[FlutterFire]: {{site.repo.plugins}}/blob/master/FlutterFire.md
-[Gradle modules]: https://docs.gradle.org/current/userguide/declaring_dependencies.html
-[`http`]: {{site.url}}/cookbook/networking/fetch-data
-[Installing tab]: {{site.pub-pkg}}/css_colors/install
-[iOS plugins]: {{site.pub}}/flutter/packages?platform=ios
-[lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
-[Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
-[package versioning guide]: {{site.dart-site}}/tools/pub/versioning
-[pub.dev]: {{site.pub}}
-[`url_launcher`]: {{site.pub-pkg}}/url_launcher
-[`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
-[version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
-[web plugins]: {{site.pub}}/flutter/packages?platform=web

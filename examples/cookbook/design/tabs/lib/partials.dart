@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class TabBarDemo1 extends StatelessWidget {
-  const TabBarDemo1({Key? key}) : super(key: key);
+  const TabBarDemo1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class TabBarDemo1 extends StatelessWidget {
 }
 
 class TabBarDemo2 extends StatelessWidget {
-  const TabBarDemo2({Key? key}) : super(key: key);
+  const TabBarDemo2({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -11,8 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class Photo extends StatelessWidget {
-  const Photo({Key? key, required this.photo, this.color, this.onTap})
-      : super(key: key);
+  const Photo({super.key, required this.photo, this.color, this.onTap});
 
   final String photo;
   final Color? color;
@@ -37,11 +36,10 @@ class Photo extends StatelessWidget {
 
 class RadialExpansion extends StatelessWidget {
   const RadialExpansion({
-    Key? key,
+    super.key,
     required this.maxRadius,
     this.child,
-  })  : clipRectExtent = 2.0 * (maxRadius / math.sqrt2),
-        super(key: key);
+  })  : clipRectExtent = 2.0 * (maxRadius / math.sqrt2);
 
   final double maxRadius;
   final double clipRectExtent;
@@ -67,7 +65,7 @@ class RadialExpansion extends StatelessWidget {
 }
 
 class RadialExpansionDemo extends StatelessWidget {
-  const RadialExpansionDemo({Key? key}) : super(key: key);
+  const RadialExpansionDemo({super.key});
 
   static double kMinRadius = 32.0;
   static double kMaxRadius = 128.0;
@@ -118,12 +116,12 @@ class RadialExpansionDemo extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 PageRouteBuilder<void>(
-                  pageBuilder: (BuildContext context,
-                      Animation<double> animation,
-                      Animation<double> secondaryAnimation) {
+                  pageBuilder: (context,
+                      animation,
+                      secondaryAnimation) {
                     return AnimatedBuilder(
                       animation: animation,
-                      builder: (BuildContext context, Widget? child) {
+                      builder: (context, child) {
                         return Opacity(
                           opacity: opacityCurve.transform(animation.value),
                           child: _buildPage(context, imageName, description),

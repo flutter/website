@@ -18,7 +18,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final List<ListItem> items;
 
-  const MyApp({Key? key, required this.items}) : super(key: key);
+  const MyApp({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,7 @@ class HeadingItem implements ListItem {
   Widget buildTitle(BuildContext context) {
     return Text(
       heading,
-      style: Theme.of(context).textTheme.headline5,
+      style: Theme.of(context).textTheme.headlineSmall,
     );
   }
 

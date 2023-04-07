@@ -13,6 +13,22 @@
   display: block;
 }
 
+// Material design icons
+@mixin md-icon-content($icon-name, $width: '', $bottom: true) {
+  font-family: 'Material Icons';
+  content: $icon-name;
+  @if $width != '' {
+    max-width: $width; // Improves UX by minimizing flicker due to delay in font rendering
+  }
+  @if $bottom {
+    vertical-align: bottom;
+  }
+}
+
+@mixin md-icon-before($icon-name, $bottom: true) {
+  &:before { @include md-icon-content($icon-name, '', $bottom); }
+}
+
 .site-content {
   padding-bottom: $site-content-top-padding;
   padding-top: $site-content-top-padding;
@@ -32,7 +48,7 @@
     @at-root {
       #page-github-links {
         float: right;
-        .btn { padding: 0 ($btn-padding-x / 2); }
+        .btn { padding: 0 ($btn-padding-x * 0.5); }
       }
     }
 
@@ -49,26 +65,31 @@
     // the Kramdown id override specified using the {#foo} markdown-extension syntax.
     > a[id]::before { @include header-clearance; }
 
-    $icon-size: 1.25rem;
+    $icon-size: 1.5rem;
     $anchor-padding: 0.25rem;
 
     > a.anchor {
       float: left;
       margin-left: -($icon-size + $anchor-padding);
       padding-right: $anchor-padding;
+      overflow: hidden;
+      text-decoration: none;
 
-      // SEE src/_sass/_vendor.scss for additional notes
-      // TODO jekyll-toc does not provide a way to override the anchor 
-      // class name, so we must extend it using font-awesome sass:
-      > .octicon-link {
+      .octicon-link {
+        transition: all 0.2s ease-in-out;
+
+        @include md-icon-before("tag", false);
+        font-size: $icon-size;
         color: $site-color-body;
-        font-size: 1rem;
         opacity: 0;
-        vertical-align: middle;
-        height: $icon-size;
-        width: $icon-size;
-        @extend .fa;
-        @extend .fa-link;
+
+        &:hover {
+          color: lighten($site-color-primary, 20%);
+        }
+      }
+
+      &:focus .octicon-link {
+        opacity: 1
       }
     }
 
@@ -79,4 +100,28 @@
   iframe {
     border: 1px solid #ccc;
   }
+}
+
+.video-card {
+  flex: 0 0 calc((100% / 2) - 1rem);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+iframe.full-width {
+  aspect-ratio: 16 / 9;
 }

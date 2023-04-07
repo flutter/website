@@ -47,7 +47,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,6 @@ You can also consider using local assets for placeholders.
 First, add the asset to the project’s `pubspec.yaml` file
 (for more details, see [Adding assets and images][]):
 
-<!-- skip -->
 ```diff
  flutter:
    assets:
@@ -112,7 +111,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

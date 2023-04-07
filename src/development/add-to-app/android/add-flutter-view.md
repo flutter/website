@@ -32,7 +32,7 @@ class="mw-100" alt="Add Flutter View sample video">
 Unlike the guides for FlutterActivity and FlutterFragment, the FlutterView
 integration could be better demonstrated with a sample project.
 
-A sample project is at [{{site.github}}/flutter/samples/tree/master/add_to_app/android_view]({{site.github}}/flutter/samples/tree/master/add_to_app/android_view)
+A sample project is at [{{site.github}}/flutter/samples/tree/main/add_to_app/android_view]({{site.github}}/flutter/samples/tree/main/add_to_app/android_view)
 to document a simple FlutterView integration where FlutterViews are used
 for some of the cells in a RecycleView list of cards as seen in the gif above.
 

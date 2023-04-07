@@ -30,7 +30,6 @@ or the class that implemented the `textInputClient` interface doesn't
 support autocorrect, you only need to add an empty implementation
 for the new method:
 
-<!-- skip -->
 ```dart
 class CustomTextInputClient implements TextInputClient {
   void showAutocorrectionPromptRect(int start, int end) {}
@@ -44,7 +43,6 @@ to your `TextInputClient` subclass.
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // Assume your `TextInputClient` is a `State` subclass, and it has a variable 
 // `_currentPromptRectRange` that controls the autocorrection highlight.

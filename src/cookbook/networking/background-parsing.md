@@ -164,6 +164,12 @@ simple objects such as the `List<Photo>` in this example.
 You might experience errors if you try to pass more complex objects,
 such as a `Future` or `http.Response` between isolates.
 
+As an alternate solution, check out the [`worker_manager`][] or
+[`workmanager`][] packages for background processing.
+
+[`worker_manager`]:  {{site.pub}}/packages/worker_manager
+[`workmanager`]: {{site.pub}}/packages/workmanager
+
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
@@ -219,7 +225,7 @@ class Photo {
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -233,7 +239,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -264,7 +270,7 @@ class MyHomePage extends StatelessWidget {
 }
 
 class PhotosList extends StatelessWidget {
-  const PhotosList({Key? key, required this.photos}) : super(key: key);
+  const PhotosList({super.key, required this.photos});
 
   final List<Photo> photos;
 

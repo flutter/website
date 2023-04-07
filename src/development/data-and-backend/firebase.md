@@ -10,12 +10,11 @@ remote configuration, and hosting for your static files.
 
 Firebase supports Flutter. For more information, see:
 
-* The [FlutterFire][] site
+* The [Firebase plugins][] page
 * [Getting started with Firebase and Flutter][started]
 * [Get to know Firebase for Flutter][workshop] video workshop
   based on the codelab
 * [Get to know Firebase for Flutter][codelab1] codelab
-* [Multi Platform Firebase Flutter][codelab2] codelab
 * [Use Firebase to host your Flutter app on the web][article]
 
 Also, the Flutter community has created docs and
@@ -30,9 +29,8 @@ videos that you might find useful. Here are a few:
 [article]: {{site.flutter-medium}}/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
-[codelab2]: {{site.codelabs}}/codelabs/friendlyeats-flutter
-[FlutterFire]: {{site.flutterfire}}
-[started]: {{site.flutterfire}}/docs/overview
+[Firebase plugins]: {{site.firebase}}/docs/flutter/setup#available-plugins
+[started]: {{site.firebase}}/docs/flutter/setup
 [video]: {{site.youtube-site}}/watch?v=DqJ_KjFzL9I&t=38s
 [video2]: {{site.youtube-site}}/watch?v=OlcYP6UXlm8
 [video3]: {{site.youtube-site}}/watch?v=u_Lyx8KJWpg

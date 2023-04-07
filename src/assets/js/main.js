@@ -1,9 +1,11 @@
 $(function () {
   adjustToc();
   initFixedColumns();
+  scrollSidebarIntoView();
   initVideoModal();
   initCarousel();
   initSnackbar();
+  initCookieNotice();
 
   addCopyCodeButtonsEverywhere(); // Must be before tooltip activation.
   $('[data-toggle="tooltip"]').tooltip();
@@ -19,15 +21,36 @@ $(function () {
   prettyPrint();
 });
 
-// TODO(chalin): Copied (& tweaked) from site-www, consider moving into site-shared
+function scrollSidebarIntoView() {
+  const fixedSidebar = document.querySelector('.site-sidebar--fixed');
+
+  if (!fixedSidebar) {
+    return;
+  }
+
+  const activeEntries = fixedSidebar.querySelectorAll('a.nav-link.active');
+
+  if (activeEntries.length > 0) {
+    const activeEntry = activeEntries[activeEntries.length - 1];
+
+    fixedSidebar.scrollTo({
+      top: activeEntry.offsetTop - window.innerHeight / 3,
+    });
+  }
+}
+
 function adjustToc() {
   // Adjustments to the jekyll-toc TOC.
 
-  var tocId = '#site-toc--side';
-  var tocWrapper = $(tocId);
-  $(tocWrapper).find('.site-toc--button__page-top').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 'fast');
-  })
+  const tocId = '#site-toc--side';
+
+  const tocHeader = document.querySelector(tocId + ' header');
+
+  if (tocHeader) {
+    tocHeader.addEventListener('click', function (_) {
+      $('html, body').animate({scrollTop: 0}, 'fast');
+    });
+  }
 
   $('body').scrollspy({ offset: 100, target: tocId });
 }
@@ -46,10 +69,15 @@ function initFixedColumns() {
     }
 
     var headerHeight = $(headerSelector).outerHeight();
-    var bannerHeight = $(bannerSelector).outerHeight();
-    var bannerOffset = $(bannerSelector).offset().top;
-    var bannerPosition = bannerOffset - $(window).scrollTop();
-    var bannerVisibleHeight = Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
+    var bannerVisibleHeight = 0;
+    // First, make sure the banner element even exists on the page.
+    if ($(bannerSelector).length > 0) {
+      var bannerHeight = $(bannerSelector).outerHeight();
+      var bannerOffset = $(bannerSelector).offset().top;
+      var bannerPosition = bannerOffset - $(window).scrollTop();
+      bannerVisibleHeight =
+          Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
+    }
     var topOffset = headerHeight + bannerVisibleHeight;
 
     var footerOffset = $(footerSelector).offset().top;
@@ -142,7 +170,7 @@ function setupClipboardJS() {
     text: function (trigger) {
       var targetId = trigger.getAttribute('data-clipboard-target');
       var target = document.querySelector(targetId);
-      var terminalRegExp = /^(\$\s*)|(C:\\(.*)>\s*)/gm;
+      var terminalRegExp = /^(\s*\$\s*)|(C:\\(.*)>\s*)/gm;
       var copy = target.textContent.replace(terminalRegExp, '');
       return copy;
     }
@@ -200,4 +228,28 @@ function addCopyCodeButtonsEverywhere() {
         '  <i class="material-icons">content_copy</i>' +
         '</button>';
     });
+}
+
+/**
+ * Activate the cookie notice footer
+ * @returns null
+ */
+function initCookieNotice() {
+  const notice = document.getElementById('cookie-notice');
+  const agreeBtn = document.getElementById('cookie-consent');
+  const cookieKey = 'cookie-consent';
+  const cookieConsentValue = 'true'
+  const activeClass = 'show';
+
+  if (Cookies.get(cookieKey) === cookieConsentValue) {
+    return;
+  }
+
+  notice.classList.add(activeClass);
+
+  agreeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    Cookies.set(cookieKey, cookieConsentValue, {sameSite: 'strict', expires: 30});
+    notice.classList.remove(activeClass);
+  });
 }

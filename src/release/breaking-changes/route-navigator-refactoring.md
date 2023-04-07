@@ -46,7 +46,6 @@ initial routes generation.
 
 Case 1: An app depends on `pop()` returning a boolean value.
 
-<!-- skip -->
 ```dart
 TextField(
   onTap: () {
@@ -61,7 +60,6 @@ TextField(
 You could use `Navigator.canPop()` in combination with
 `Navigator.pop()` to achieve the same result.
 
-<!-- skip -->
 ```dart
 TextField(
   onTap: () {
@@ -78,7 +76,6 @@ TextField(
 
 Case 2: An app generates routes based on `isInitialRoute`.
 
-<!-- skip -->
 ```dart
 MaterialApp(
   onGenerateRoute: (RouteSetting setting) {
@@ -96,7 +93,6 @@ to a fixed value and generate a specific route
 (`FakeSplashRoute` in the above example)
 for the route name.
 
-<!-- skip -->
 ```dart
 MaterialApp(
   initialRouteName: ‘fakeSplash’,
@@ -113,7 +109,6 @@ If there is a more complicated use case,
 you can use the new API, `onGenerateInitialRoutes`,
 in `MaterialApp` or `CupertinoApp`.
 
-<!-- skip -->
 ```dart
 MaterialApp(
   onGenerateRoute: (RouteSetting setting) {

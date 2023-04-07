@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 // #docregion Step1
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({super.key});
 
   @override
-  _MyCustomFormState createState() => _MyCustomFormState();
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class.

@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 // #docregion mockClient
 import 'package:http/http.dart' as http;
+import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
 // #enddocregion mockClient
 import 'package:mockito/mockito.dart';
-import 'package:mocking/main.dart';
 
 import 'fetch_album_test.mocks.dart';
 // #docregion mockClient

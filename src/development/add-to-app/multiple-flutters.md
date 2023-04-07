@@ -32,12 +32,6 @@ memory cost (~180kB) for adding additional Flutter instances. This fixed cost
 reduction allows the multiple Flutter instance pattern to be used more liberally
 in your add-to-app integration.
 
-{{site.alert.warning}}
-  Memory usage is only fully optimized in AOT mode (in profile and release
-  builds). Some memory redundancy will still be present in JIT mode (in debug
-  builds). This is tracked in [issue 74520][].
-{{site.alert.end}}
-
 ## Components
 
 The primary API for adding multiple Flutter instances on both Android and iOS
@@ -87,7 +81,7 @@ on both Android and iOS on [GitHub][].
 
 {% include docs/app-figure.md image="development/add-to-app/multiple-flutters-sample.gif" alt="A sample demonstrating multiple-Flutters" %}
 
-[GitHub]: {{site.repo.samples}}/tree/master/add_to_app/multiple_flutters
+[GitHub]: {{site.repo.samples}}/tree/main/add_to_app/multiple_flutters
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [performance characteristics]: {{site.url}}/development/add-to-app/performance
@@ -97,4 +91,3 @@ on both Android and iOS on [GitHub][].
 [platform channels]: {{site.url}}/development/platform-integration/platform-channels
 [Android API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/engine/FlutterEngineGroup.java
 [iOS API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/darwin/ios/framework/Headers/FlutterEngineGroup.h
-[issue 74520]: https://github.com/flutter/flutter/issues/74520

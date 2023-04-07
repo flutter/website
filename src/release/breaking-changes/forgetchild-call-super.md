@@ -42,7 +42,6 @@ subclass overrides the `forgetChild` method.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class CustomElement extends Element {
 
@@ -55,7 +54,6 @@ class CustomElement extends Element {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class CustomElement extends Element {
 

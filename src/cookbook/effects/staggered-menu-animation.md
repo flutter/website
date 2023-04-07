@@ -41,10 +41,10 @@ in static locations.
 <?code-excerpt "lib/step1.dart (step1)"?>
 ```dart
 class Menu extends StatefulWidget {
-  const Menu({Key? key}) : super(key: key);
+  const Menu({super.key});
 
   @override
-  _MenuState createState() => _MenuState();
+  State<Menu> createState() => _MenuState();
 }
 
 class _MenuState extends State<Menu> {
@@ -115,7 +115,7 @@ class _MenuState extends State<Menu> {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
-            primary: Colors.blue,
+            backgroundColor: Colors.blue,
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
           ),
           onPressed: () {},
@@ -355,7 +355,7 @@ Widget _buildGetStartedButton() {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
-            primary: Colors.blue,
+            backgroundColor: Colors.blue,
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
           ),
           onPressed: () {},
@@ -395,11 +395,11 @@ void main() {
 
 class ExampleStaggeredAnimations extends StatefulWidget {
   const ExampleStaggeredAnimations({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
-  _ExampleStaggeredAnimationsState createState() =>
+  State<ExampleStaggeredAnimations> createState() =>
       _ExampleStaggeredAnimationsState();
 }
 
@@ -509,10 +509,10 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
 }
 
 class Menu extends StatefulWidget {
-  const Menu({Key? key}) : super(key: key);
+  const Menu({super.key});
 
   @override
-  _MenuState createState() => _MenuState();
+  State<Menu> createState() => _MenuState();
 }
 
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
@@ -678,7 +678,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: const StadiumBorder(),
-              primary: Colors.blue,
+              backgroundColor: Colors.blue,
               padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
             ),
             onPressed: () {},

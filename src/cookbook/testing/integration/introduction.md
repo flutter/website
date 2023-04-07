@@ -47,7 +47,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +59,12 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -154,14 +154,14 @@ Now you can write tests. This involves three steps:
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
-import 'package:introduction/main.dart' as app;
+import 'package:counter_app/main.dart' as app;
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   group('end-to-end test', () {
     testWidgets('tap on the floating action button, verify counter',
-        (WidgetTester tester) async {
+        (tester) async {
       app.main();
       await tester.pumpAndSettle();
 
@@ -229,7 +229,7 @@ and download the corresponding web driver:
 To get started testing in a web browser, [Download ChromeDriver][].
 
 Next, create a new directory named `test_driver` containing a new file
-named`integration_test.dart`:
+named `integration_test.dart`:
 
 <?code-excerpt "lib/test_driver/integration_test.dart"?>
 ```dart
@@ -238,13 +238,23 @@ import 'package:integration_test/integration_test_driver.dart';
 Future<void> main() => integrationDriver();
 ```
 
-Launch WebDriver, for example: 
+Launch `chromedriver` as follows: 
 
 ```terminal
 chromedriver --port=4444
 ```
 
 From the root of the project, run the following command:
+
+```terminal
+flutter drive \
+  --driver=test_driver/integration_test.dart \
+  --target=integration_test/app_test.dart \
+  -d chrome
+```
+
+For a headless testing experience, you can also run `flutter drive` 
+with `web-server` as the target device identifier as follows:
 
 ```terminal
 flutter drive \
@@ -257,7 +267,7 @@ flutter drive \
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
-[integration_test]: {{site.repo.flutter}}/tree/master/packages/integration_test
+[integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
 [Integration testing]: {{site.url}}/testing/integration-tests
 [`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
 [`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html

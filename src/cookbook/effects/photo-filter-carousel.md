@@ -25,7 +25,7 @@ The following animation shows the app's behavior:
 This recipe begins with the photo and filters
 already in place. Filters are applied with the
 `color` and `colorBlendMode` properties of the
-[`Image`][] widget].
+[`Image`][] widget.
 
 ## Add a selector ring and dark gradient
 
@@ -43,11 +43,11 @@ implement the selector.
 @immutable
 class FilterSelector extends StatefulWidget {
   const FilterSelector({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
-  _FilterSelectorState createState() => _FilterSelectorState();
+  State<FilterSelector> createState() => _FilterSelectorState();
 }
 
 class _FilterSelectorState extends State<FilterSelector> {
@@ -173,10 +173,10 @@ that displays a single list item.
 @immutable
 class FilterItem extends StatelessWidget {
   const FilterItem({
-    Key? key,
+    super.key,
     required this.color,
     this.onFilterSelected,
-  }) : super(key: key);
+  });
 
   final Color color;
   final VoidCallback? onFilterSelected;
@@ -527,10 +527,10 @@ void main() {
 
 @immutable
 class ExampleInstagramFilterSelection extends StatefulWidget {
-  const ExampleInstagramFilterSelection({Key? key}) : super(key: key);
+  const ExampleInstagramFilterSelection({super.key});
 
   @override
-  _ExampleInstagramFilterSelectionState createState() =>
+  State<ExampleInstagramFilterSelection> createState() =>
       _ExampleInstagramFilterSelectionState();
 }
 
@@ -573,8 +573,7 @@ class _ExampleInstagramFilterSelectionState
   Widget _buildPhotoWithFilter() {
     return ValueListenableBuilder(
       valueListenable: _filterColor,
-      builder: (context, value, child) {
-        final color = value as Color;
+      builder: (context, color, child) {
         return Image.network(
           'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
           color: color.withOpacity(0.5),
@@ -596,18 +595,18 @@ class _ExampleInstagramFilterSelectionState
 @immutable
 class FilterSelector extends StatefulWidget {
   const FilterSelector({
-    Key? key,
+    super.key,
     required this.filters,
     required this.onFilterChanged,
     this.padding = const EdgeInsets.symmetric(vertical: 24.0),
-  }) : super(key: key);
+  });
 
   final List<Color> filters;
   final void Function(Color selectedColor) onFilterChanged;
   final EdgeInsets padding;
 
   @override
-  _FilterSelectorState createState() => _FilterSelectorState();
+  State<FilterSelector> createState() => _FilterSelectorState();
 }
 
 class _FilterSelectorState extends State<FilterSelector> {
@@ -814,10 +813,10 @@ class CarouselFlowDelegate extends FlowDelegate {
 @immutable
 class FilterItem extends StatelessWidget {
   const FilterItem({
-    Key? key,
+    super.key,
     required this.color,
     this.onFilterSelected,
-  }) : super(key: key);
+  });
 
   final Color color;
   final VoidCallback? onFilterSelected;

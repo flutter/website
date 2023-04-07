@@ -5,13 +5,13 @@
 import 'package:flutter/material.dart';
 
 const owlUrl =
-    'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
+    'https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/owl.jpg';
 
 class FadeInDemo extends StatefulWidget {
-  const FadeInDemo({Key? key}) : super(key: key);
+  const FadeInDemo({super.key});
 
   @override
-  _FadeInDemoState createState() => _FadeInDemoState();
+  State<FadeInDemo> createState() => _FadeInDemoState();
 }
 
 class _FadeInDemoState extends State<FadeInDemo> {
@@ -37,7 +37,7 @@ class _FadeInDemoState extends State<FadeInDemo> {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

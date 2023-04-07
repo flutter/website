@@ -19,6 +19,12 @@ you want users to interact with your app.
 Use the [`GestureDetector`][] widget to respond
 to fundamental actions, such as tapping and dragging.
 
+{{site.alert.note}}
+  To learn more, watch this short Widget of the Week video on the GestureDetector widget:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/WhVXkCFPmK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
+
 This recipe shows how to make a custom button that shows
 a snackbar when tapped with the following steps:
 
@@ -65,7 +71,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +87,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +103,7 @@ class MyHomePage extends StatelessWidget {
 }
 
 class MyButton extends StatelessWidget {
-  const MyButton({Key? key}) : super(key: key);
+  const MyButton({super.key});
 
   @override
   Widget build(BuildContext context) {

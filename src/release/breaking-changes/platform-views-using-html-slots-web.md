@@ -51,7 +51,6 @@ each platform view is rendered as a **sibling of said shadow root**.
 
 ### Before
 
-<!-- skip -->
 ```html
 ...
 
@@ -71,7 +70,6 @@ each platform view is rendered as a **sibling of said shadow root**.
 
 ### After
 
-<!-- skip -->
 ```html
 ...
 
@@ -107,7 +105,6 @@ about the internal DOM of a Flutter web app, and break.
 
 The engine may print a warning message to the console similar to:
 
-<!-- skip -->
 ```bash
 Height of Platform View type: [$viewType] may not be set. Defaulting to `height: 100%`.
 Set `style.height` to any appropriate value to stop this message.
@@ -115,7 +112,6 @@ Set `style.height` to any appropriate value to stop this message.
 
 or:
 
-<!-- skip -->
 ```bash
 Width of Platform View type: [$viewType] may not be set. Defaulting to `width: 100%`.
 Set `style.width` to any appropriate value to stop this message.
@@ -133,7 +129,6 @@ For example, to make the root `html.Element` fill all the available space
 allocated by the framework, set its `style.width` and `style.height` properties
 to `'100%'`:
 
-<!-- skip -->
 ```dart
 ui.platformViewRegistry.registerViewFactory(viewType, (int viewId) {
   final html.Element htmlElement = html.DivElement()

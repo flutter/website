@@ -12,7 +12,7 @@ specialized FAQs:
 * [Web FAQ][]
 * [Performance FAQ][]
 
-[Web FAQ]: {{site.url}}/development/platform-integration/web
+[Web FAQ]: {{site.url}}/development/platform-integration/web/faq
 [Performance FAQ]: {{site.url}}/perf/faq
 
 ### What is Flutter?
@@ -64,9 +64,6 @@ and app development.
 Flutter is designed to support mobile apps that run
 on both Android and iOS, as well as interactive apps
 that you want to run on your web pages or on the desktop.
-(Desktop support for Windows is now available
-on the stable channel; support for macOS and Linux is in beta,
-but a snapshot of the beta is also available on the stable channel.)
 
 Apps that need to deliver highly branded designs
 are particularly well suited for Flutter.
@@ -193,7 +190,7 @@ called Dart DevTools). For more information, see
 We don't ship with an opinionated solution,
 but there are a variety of packages that offer
 dependency injection and service location, such as [injectable][],
-[get_it][], and [kiwi][].
+[get_it][], [kiwi][], and [riverpod][].
 
 ## Technology
 
@@ -423,17 +420,13 @@ compression less efficient (see the
 [iOS App Store Specific Considerations][]
 section of Apple’s [QA1795][]).
 
-The release engine binary includes LLVM IR (bitcode).
-Xcode uses this bitcode to produce a final binary for
-the App Store containing the latest compiler
-optimizations and features. The profile and debug
-frameworks contain only a _bitcode marker_, and are
-more representative of the engine's actual binary size.
-Whether you ship with bitcode or not,
-the increased size of the release framework is
-stripped out during the final steps of the build.
-These steps happen after archiving your app and
-shipping it to the store.
+{{site.alert.note}}
+  The release engine binary used to include LLVM IR (bitcode).
+  However, Apple [deprecated bitcode in Xcode 14][] and removed support,
+  so it has been removed from the Flutter 3.7 release.
+{{site.alert.end}}
+
+[deprecated bitcode in Xcode 14]: {{site.apple-dev}}/documentation/xcode-release-notes/xcode-14-release-notes
 
 Of course, we recommend that you measure your own app.
 To do that, see [Measuring your app's size][].
@@ -471,12 +464,7 @@ For more information, see [Hot reload][].
 ### Where can I deploy my Flutter app?
 
 You can compile and deploy your Flutter app to iOS, Android,
-[web][], and [desktop][] Windows support is stable,
-while macOS and Linux support are in beta.
-For more information about Windows support, see
-[Announcing Flutter for Windows][].
-
-[Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
+[web][], and [desktop][].
 
 ### What devices and OS versions does Flutter run on?
 
@@ -504,15 +492,11 @@ For more details, check out the [web instructions][].
 ### Can I use Flutter to build desktop apps?
 
 Yes, desktop support is in stable for Windows,
-and in beta for macOS and Linux,
-but a snapshot of the beta is available on the stable channel.
-The current progress is documented on the [Desktop][desktop] page.
+macOS, and Linux.
 
 ### Can I use Flutter inside of my existing native app?
 
 Yes, learn more in the [add-to-app][] section of our website.
-Also, note that experimental support for adding
-[multiple Flutter screens or views][] is available.
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -1021,7 +1005,7 @@ apps built with Flutter should follow Apple's
 [Dart]: {{site.dart-site}}/
 [Dart DevTools]: {{site.url}}/development/tools/devtools
 [Debugging with Flutter]: {{site.url}}/testing/debugging
-[desktop]: {{site.url}}/desktop
+[desktop]: {{site.url}}/development/platform-integration/desktop
 [detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
 [Discord]: https://discord.gg/N7Yshp4
 [`Divider`]: {{site.api}}/flutter/material/Divider-class.html
@@ -1030,13 +1014,13 @@ apps built with Flutter should follow Apple's
 [editing Dart]: {{site.dart-site}}/tools
 [editor configuration]: {{site.url}}/get-started/editor
 [example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
-[example project]: {{site.repo.flutter}}/tree/master/examples/platform_channel
+[example project]: {{site.repo.flutter}}/tree/main/examples/platform_channel
 [Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 [Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [Flutter 1.0]: {{site.google-blog}}/2018/12/flutter-10-googles-portable-ui-toolkit.html
 [Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
-[flutter_view]: {{site.repo.flutter}}/tree/master/examples/flutter_view
+[flutter_view]: {{site.repo.flutter}}/tree/main/examples/flutter_view
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3
 [gesture system]: {{site.url}}/development/ui/advanced/gestures
@@ -1078,7 +1062,6 @@ apps built with Flutter should follow Apple's
 [MDC-103 Flutter: Material Theming]: {{site.codelabs}}/codelabs/mdc-103-flutter/index.html?index=..%2F..index#0
 [Measuring your app's size]: {{site.url}}/perf/app-size
 [minimal Flutter app]: {{site.repo.flutter}}/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
-[multiple Flutter screens or views]: {{site.url}}/development/add-to-app/multiple-flutters
 [`NotificationListener`]: {{site.api}}/flutter/widgets/NotificationListener-class.html
 [one of the top design ideas of the decade]: https://www.fastcompany.com/90442092/the-14-most-important-design-ideas-of-the-decade-according-to-the-experts
 [only one license]: {{site.repo.flutter}}/blob/master/LICENSE
@@ -1086,7 +1069,7 @@ apps built with Flutter should follow Apple's
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [platform and third-party APIs]: {{site.url}}/development/platform-integration/platform-channels
 [platform channels]: {{site.url}}/development/platform-integration/platform-channels
-[platform_view]: {{site.repo.flutter}}/tree/master/examples/platform_view
+[platform_view]: {{site.repo.flutter}}/tree/main/examples/platform_view
 [popped]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [pub.dev]: {{site.pub}}
 [QA1795]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html
@@ -1113,8 +1096,9 @@ apps built with Flutter should follow Apple's
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`UserAccountsDrawerHeader`]: {{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html
 [VS Code]: https://code.visualstudio.com/
-[web]: {{site.url}}/web
-[web instructions]: {{site.url}}/get-started/web
+[web]: {{site.url}}/development/platform-integration/web
+[web instructions]: {{site.url}}/development/platform-integration/web/building
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 [widgets]: {{site.url}}/development/ui/widgets
-[supported platforms]: {{site.url}}/development/tools/sdk/release-notes/supported-platforms
+[supported platforms]: {{site.url}}/reference/supported-platforms
+[riverpod]: {{site.pub}}/packages/riverpod

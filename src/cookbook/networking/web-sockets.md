@@ -17,7 +17,7 @@ you can connect to servers using `WebSockets`.
 without polling.
 
 In this example, connect to a
-[test server provided by websocket.org][].
+[test WebSocket server sponsored by Lob.com][].
 The server sends back the same message you send to it.
 This recipe uses the following steps:
 
@@ -113,13 +113,13 @@ channel.sink.close();
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
-import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:flutter/material.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -135,14 +135,14 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -206,6 +206,6 @@ class _MyHomePageState extends State<MyHomePage> {
 [`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html
 [`StreamBuilder`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
 [`StreamSink`]: {{site.api}}/flutter/dart-async/StreamSink-class.html
-[test server provided by websocket.org]: http://www.websocket.org/echo.html
+[test WebSocket server sponsored by Lob.com]: https://www.lob.com/blog/websocket-org-is-down-here-is-an-alternative
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`web_socket_channel`]: {{site.pub-pkg}}/web_socket_channel

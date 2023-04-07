@@ -38,7 +38,7 @@ to be slow, but can't always be avoided.
 They should be used thoughtfully,
 following the guidance below.
 
-# Minimize expensive operations
+## Minimize expensive operations
 
 Some operations are more expensive than others,
 meaning that they consume more resources.
@@ -46,7 +46,7 @@ Obviously, you want to only use these operations
 when necessary. How you design and implement your
 app's UI can have a big impact on how efficiently it runs.
 
-## Control build() cost
+### Control build() cost
 
 Here are some things to keep in mind when designing your UI:
 
@@ -71,6 +71,9 @@ Here are some things to keep in mind when designing your UI:
     the [source code for `SlideTransition`][],
     which uses this principle to avoid rebuilding its
     descendents when animating.
+    ("Same instance" is evaluated using `operator ==`,
+    but see the pitfalls section at the end of this page
+    for advice on when to avoid overriding `operator ==`.)
   * Use `const` constructors on widgets as much as possible,
     since they allow Flutter to short-circuit most
     of the rebuild work. To be automatically reminded
@@ -92,7 +95,7 @@ For more information, check out:
   (especially widgets with `const` constructors)
   are more performant than functions.
 
-[`flutter_lints`]: {{site.pub-pkg}}/packages/flutter_lints
+[`flutter_lints`]: {{site.pub-pkg}}/flutter_lints
 [`flutter_lints` migration guide]: {{site.url}}/release/breaking-changes/flutter-lints-package#migration-guide
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
@@ -103,7 +106,7 @@ For more information, check out:
 
 ---
 
-## Use saveLayer() thoughtfully
+### Use saveLayer() thoughtfully
 
 Some Flutter code uses `saveLayer()`, an expensive operation,
 to implement various visual effects in the UI.
@@ -112,7 +115,7 @@ other widgets or packages that you use might call it behind the scenes.
 Perhaps your app is calling `saveLayer()` more than necessary;
 excessive calls to `saveLayer()` can cause jank.
 
-### Why is saveLayer expensive?
+#### Why is saveLayer expensive?
 
 Calling `saveLayer()` allocates an offscreen buffer
 and drawing content into the offscreen buffer might
@@ -123,14 +126,14 @@ to redirect that stream temporarily and then
 direct it back again. On mobile GPUs this is
 particularly disruptive to rendering throughput.
 
-### When is saveLayer required?
+#### When is saveLayer required?
 
 At runtime, if you need to dynamically display various shapes
 coming from a server (for example), each with some transparency,
 that might (or might not) overlap,
 then you pretty much have to use `saveLayer()`.
 
-### Debugging calls to saveLayer
+#### Debugging calls to saveLayer
 
 How can you tell how often your app calls `saveLayer()`,
 either directly or indirectly?
@@ -142,7 +145,7 @@ switch in the [DevTools Performance view][].
 
 [DevTools timeline]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart
 
-### Minimizing calls to saveLayer
+#### Minimizing calls to saveLayer
 
 Can you avoid calls to `saveLayer`?
 It might require rethinking of how you
@@ -169,7 +172,7 @@ TBD: It would be nice if we could link to an example.
 
 * If the calls are coming from a package that you don't own,
   contact the package owner and ask why
-  these calls are necessary? Can they be reduced or
+  these calls are necessary. Can they be reduced or
   eliminated? If not, you might need to find another
   package, or write your own.
 
@@ -200,7 +203,7 @@ and are potentially costly:
 
 ---
 
-## Minimize use of opacity and clipping
+### Minimize use of opacity and clipping
 
 Opacity is another expensive operation, as is clipping.
 Here are some tips you might find to be useful:
@@ -232,7 +235,7 @@ Here are some tips you might find to be useful:
 
 ---
 
-## Implement grids and lists thoughtfully 
+### Implement grids and lists thoughtfully 
 
 How your grids and lists are implemented
 might be causing performance problems for your app.
@@ -241,7 +244,7 @@ practice when creating grids and lists,
 and how to determine whether your app uses
 excessive layout passes.
 
-### Be lazy!
+#### Be lazy!
 
 When building a large grid or list,
 use the lazy builder methods, with callbacks.
@@ -260,14 +263,14 @@ For more information and examples, check out:
 [`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [Working with long lists]: {{site.url}}/cookbook/lists/long-lists
 
-### Avoid intrinsics
+#### Avoid intrinsics
 
 For information on how intrinsic passes might be causing
 problems with your grids and lists, see the next section.
 
 ---
 
-## Minimize layout passes caused by intrinsic operations
+### Minimize layout passes caused by intrinsic operations
 
 If you've done much Flutter programming, you are
 probably familiar with [how layout and constraints work][]
@@ -282,7 +285,7 @@ over the widgets but, sometimes,
 a second pass (called an _intrinsic pass_) is needed,
 and that can slow performance.
 
-### What is an intrinsic pass?
+#### What is an intrinsic pass?
 
 An intrinsic pass happens when, for example,
 you want all cells to have the size
@@ -302,7 +305,7 @@ the framework determines a uniform cell size,
 and re-visits all grid cells a second time,
 telling each card what size to use. 
 
-### Debugging intrinsic passes
+#### Debugging intrinsic passes
 
 To determine whether you have excessive intrinsic passes,
 enable the **[Track layouts option][]**
@@ -312,7 +315,7 @@ to learn how many layout passes were performed.
 Once you enable tracking, intrinsic timeline events
 are labeled as '$runtimeType intrinsics'.
 
-### Avoiding intrinsic passes
+#### Avoiding intrinsic passes
 
 You have a couple options for avoiding the intrinsic pass:
 
@@ -337,7 +340,7 @@ section in the [Flutter architectural overview][].
 
 ---
 
-##  Build and display frames in 16ms
+### Build and display frames in 16ms
 
 Since there are two separate threads for building
 and rendering, you have 16ms for building,
@@ -369,7 +372,7 @@ check out the video [Why 60fps?][]
 [profile mode]: {{site.url}}/testing/build-modes#profile
 [Why 60fps?]: {{site.youtube-site}}/watch?v=CaMTIgxCSqU
 
-# Pitfalls
+## Pitfalls
 
 If you need to tune your app’s performance,
 or perhaps the UI isn't as smooth as you expect,
@@ -409,8 +412,22 @@ your app's performance.
   of children (such as `Column()` or `ListView()`)
   if most of the children are not visible
   on screen to avoid the build cost.
+  
+* Avoid overriding `operator ==` on `Widget` objects.
+  While it may seem like it would help by avoiding unnecessary rebuilds,
+  in practice it hurts performance because it results in O(N²) behavior.
+  The only exception to this rule is leaf widgets (widgets with no children),
+  in the specific case where comparing the properties of the widget
+  is likely to be significantly more efficient than rebuilding the widget
+  and where the widget will rarely change configuration.
+  Even in such cases,
+  it is generally preferable to rely on caching the widgets,
+  because even one override of `operator ==`
+  can result in across-the-board performance degradation
+  as the compiler can no longer assume that the call is always static.
 
-# Resources
+
+## Resources
 
 For more performance info, check out the following resources:
 

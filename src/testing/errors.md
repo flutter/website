@@ -3,11 +3,14 @@ title: Handling errors in Flutter
 description: How to control error messages and logging of errors
 ---
 
+<?code-excerpt path-base="testing/errors"?>
+
 The Flutter framework catches errors that occur during callbacks
 triggered by the framework itself, including errors encountered
 during the build, layout, and paint phases. Errors that don't occur
 within Flutter's callbacks can't be caught by the framework,
-but you can handle them by setting up a [`Zone`][].
+but you can handle them by setting up an error handler on the
+[`PlatformDispatcher`][].
 
 All errors caught by Flutter are routed to the
 [`FlutterError.onError`][] handler. By default,
@@ -32,8 +35,8 @@ in debug mode this shows an error message in red,
 and in release mode this shows a gray background.
 
 When errors occur without a Flutter callback on the call stack,
-they are handled by the `Zone` where they occur. By default,
-a `Zone` only prints errors and does nothing else.
+they are handled by the `PlatformDispatcher`'s error callback. By default,
+this only prints errors and does nothing else.
 
 You can customize these behaviors,
 typically by setting them to values in
@@ -50,7 +53,7 @@ For example, to make your application quit immediately any time an
 error is caught by Flutter in release mode, you could use the
 following handler:
 
-<!-- skip -->
+<?code-excerpt "lib/quit_immediate.dart (Main)"?>
 ```dart
 import 'dart:io';
 
@@ -58,12 +61,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  FlutterError.onError = (FlutterErrorDetails details) {
+  FlutterError.onError = (details) {
     FlutterError.presentError(details);
-    if (kReleaseMode)
-      exit(1);
+    if (kReleaseMode) exit(1);
   };
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 // rest of `flutter create` code...
@@ -74,7 +76,7 @@ void main() {
 {{site.alert.end}}
 
 This handler can also be used to report errors to a logging service.
-For more details, see our cookbook chapter for 
+For more details, see our cookbook chapter for
 [reporting errors to a service][].
 
 ## Define a custom error widget for build phase errors
@@ -82,20 +84,22 @@ For more details, see our cookbook chapter for
 To define a customized error widget that displays whenever
 the builder fails to build a widget, use [`MaterialApp.builder`][].
 
-<!-- skip -->
+<?code-excerpt "lib/excerpts.dart (CustomError)"?>
 ```dart
 class MyApp extends StatelessWidget {
-...
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      ...
-      builder: (BuildContext context, Widget widget) {
-        Widget error = Text('...rendering error...');
-        if (widget is Scaffold || widget is Navigator)
+      builder: (context, widget) {
+        Widget error = const Text('...rendering error...');
+        if (widget is Scaffold || widget is Navigator) {
           error = Scaffold(body: Center(child: error));
-        ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
-        return widget;
+        }
+        ErrorWidget.builder = (errorDetails) => error;
+        if (widget != null) return widget;
+        throw ('widget is null');
       },
     );
   }
@@ -108,53 +112,36 @@ Consider an `onPressed` callback that invokes an asynchronous function,
 such as `MethodChannel.invokeMethod` (or pretty much any plugin).
 For example:
 
-<!-- skip -->
+<?code-excerpt "lib/excerpts.dart (OnPressed)" replace="/return //g;/\;//g"?>
 ```dart
 OutlinedButton(
-  child: Text('Click me!'),
+  child: const Text('Click me!'),
   onPressed: () async {
-    final channel = const MethodChannel('crashy-custom-channel');
-    await channel.invokeMethod('blah');
+    const channel = MethodChannel('crashy-custom-channel')
+    await channel.invokeMethod('blah')
   },
-),
+)
 ```
 
 If `invokeMethod` throws an error, it won't be forwarded to `FlutterError.onError`.
-Instead, it's forwarded to the `Zone` where `runApp` was run.
+Instead, it's forwarded to the `PlatformDispatcher`.
 
-To catch such an error, use [`runZonedGuarded`][].
+To catch such an error, use [`PlatformDispatcher.instance.onError`][].
 
-<!-- skip -->
+<?code-excerpt "lib/excerpts.dart (CatchError)"?>
 ```dart
-import 'dart:async';
+import 'package:flutter/material.dart';
+import 'dart:ui';
 
 void main() {
-  runZonedGuarded(() {
-    runApp(MyApp());
-  }, (Object error, StackTrace stack) {
+  MyBackend myBackend = MyBackend();
+  PlatformDispatcher.instance.onError = (error, stack) {
     myBackend.sendError(error, stack);
-  });
+    return true;
+  };
+  runApp(const MyApp());
 }
 ```
-
-Note that if in your app you call `WidgetsFlutterBinding.ensureInitialized()`
-manually to perform some initialization before calling `runApp` (e.g.
-`Firebase.initializeApp()`), you **must** call
-`WidgetsFlutterBinding.ensureInitialized()` inside `runZonedGuarded`:
-
-<!-- skip -->
-```dart
-runZonedGuarded(() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MyApp());
-}
-```
-
-{{site.alert.note}}
-    Error handling wouldn't work if `WidgetsFlutterBinding.ensureInitialized()`
-    was called from the outside.
-{{site.alert.end}}
 
 ## Handling all types of errors
 
@@ -162,39 +149,38 @@ Say you want to exit application on any exception and to display
 a custom error widget whenever a widget building fails - you can base
 your errors handling on next code snippet:
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart (Main)"?>
 ```dart
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
-void main() {
-  runZonedGuarded(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await myErrorsHandler.initialize();
-    FlutterError.onError = (FlutterErrorDetails details) {
-      FlutterError.presentError(details);
-      myErrorsHandler.onError(details);
-      exit(1);
-    };
-    runApp(MyApp());
-  }, (Object error, StackTrace stack) {
+Future<void> main() async {
+  await myErrorsHandler.initialize();
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    myErrorsHandler.onErrorDetails(details);
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
     myErrorsHandler.onError(error, stack);
-    exit(1);
-  });
+    return true;
+  };
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder: (BuildContext context, Widget widget) {
-        Widget error = Text('...rendering error...');
-        if (widget is Scaffold || widget is Navigator)
+      builder: (context, widget) {
+        Widget error = const Text('...rendering error...');
+        if (widget is Scaffold || widget is Navigator) {
           error = Scaffold(body: Center(child: error));
-        ErrorWidget.builder = (FlutterErrorDetails errorDetails) => error;
-        return widget;
+        }
+        ErrorWidget.builder = (errorDetails) => error;
+        if (widget != null) return widget;
+        throw ('widget is null');
       },
     );
   }
@@ -207,5 +193,5 @@ class MyApp extends StatelessWidget {
 [`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
 [`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
 [reporting errors to a service]: {{site.url}}/cookbook/maintenance/error-reporting
-[`runZonedGuarded`]: {{site.api}}/flutter/dart-async/runZonedGuarded.html
-[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
+[`PlatformDispatcher.instance.onError`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/onError.html
+[`PlatformDispatcher`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher-class.html

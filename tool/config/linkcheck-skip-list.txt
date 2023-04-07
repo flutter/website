@@ -6,6 +6,7 @@
 # sometimes too long for Travis, so it is simpler just to skip all site links.
 
 https://github.com
+https://master-api.flutter.dev
 
 # -----------------------------------------------------------------------------
 # Valid external links that result in connection failures too often:
@@ -14,12 +15,12 @@ https://dart-pub.mirrors.sjtug.sjtu.edu.cn
 https://hk.saowen.com/a/fbb6e484de022173fe85248875286060ce40d069c97420bc0be49d838e19e372
 https://itunes.apple.com/cn/app/id895682747
 https://now.qq.com
-https://codelabs.developers.google.com/codelabs/google-photos-sharing
 
 # -----------------------------------------------------------------------------
 # Links with "anchors" that aren't really anchors
 # (and so linkcheck reports the anchors as missing)
 
+https://flutter.dev/events/flutter-forward/#17-days-of-flutter
 https://codelabs.developers.google.com/codelabs/flutter/\#6
 https://groups.google.com/forum/\#!forum/flutter-dev
 https://groups.google.com/forum/\#!forum/flutter-announce
@@ -31,17 +32,20 @@ https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher
 https://material.io/guidelines/motion/transforming-material.html\#transforming-material-radial-transformation
 
 # -----------------------------------------------------------------------------
+# Preconnect links that return 404s
+
+fonts.gstatic.com
+fonts.googleapis.com
+
+# -----------------------------------------------------------------------------
 # Temporary skip rules below this point
 
 # FIXME(Temporary): linkcheck seems to be intermittently failing when accessing main.css
 # https://github.com/dart-lang/site-www/issues/1107
 /assets/main(-[0-9a-f]+)?.css
 
-# All redirects via firebase.json, which won't work with superstatic (only firebase serve)
+# All redirects via firebase.json, which will be picked up via Firebase emulator
 /go/.*?
-
-# Fonts
-/assets/fonts/fontawesome-webfont.*
 
 # FIXME Not sure here, "connection failed" on every go
 /development/tools/devtools/vscode

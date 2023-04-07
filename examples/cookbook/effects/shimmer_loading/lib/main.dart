@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // #docregion CircleListItem
 class CircleListItem extends StatelessWidget {
-  const CircleListItem({Key? key}) : super(key: key);
+  const CircleListItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +31,9 @@ class CircleListItem extends StatelessWidget {
 // #docregion CardListItem
 class CardListItem extends StatelessWidget {
   const CardListItem({
-    Key? key,
+    super.key,
     required this.isLoading,
-  }) : super(key: key);
+  });
 
   final bool isLoading;
 
@@ -131,16 +131,16 @@ const _shimmerGradient = LinearGradient(
 // #docregion ShimmerLoading
 class ShimmerLoading extends StatefulWidget {
   const ShimmerLoading({
-    Key? key,
+    super.key,
     required this.isLoading,
     required this.child,
-  }) : super(key: key);
+  });
 
   final bool isLoading;
   final Widget child;
 
   @override
-  _ShimmerLoadingState createState() => _ShimmerLoadingState();
+  State<ShimmerLoading> createState() => _ShimmerLoadingState();
 }
 
 class _ShimmerLoadingState extends State<ShimmerLoading> {
@@ -168,10 +168,10 @@ class Shimmer extends StatefulWidget {
   }
 
   const Shimmer({
-    Key? key,
+    super.key,
     required this.linearGradient,
     this.child,
-  }) : super(key: key);
+  });
 
   final LinearGradient linearGradient;
   final Widget? child;
@@ -190,11 +190,11 @@ class ShimmerState extends State<Shimmer> {
 
 class ExampleUiLoadingAnimation extends StatefulWidget {
   const ExampleUiLoadingAnimation({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
-  _ExampleUiLoadingAnimationState createState() =>
+  State<ExampleUiLoadingAnimation> createState() =>
       _ExampleUiLoadingAnimationState();
 }
 
@@ -212,4 +212,4 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
     );
   }
 }
-// #docregion ExampleUiAnimationState
+// #enddocregion ExampleUiAnimationState

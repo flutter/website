@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 @immutable
 class LocationListItem extends StatelessWidget {
   const LocationListItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.name,
     required this.country,
-  }) : super(key: key);
+  });
 
   final String imageUrl;
   final String name;
@@ -86,7 +86,7 @@ class LocationListItem extends StatelessWidget {
 
 // #docregion ParallaxRecipeItems
 class ParallaxRecipe extends StatelessWidget {
-  const ParallaxRecipe({Key? key}) : super(key: key);
+  const ParallaxRecipe({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -50,10 +50,6 @@ description: Brief description similar to the "context" section below. The descr
            the code throws an exception."
     Good use of "will": "In release 2.0, the xxx API
           will be deprecated."
-  * If your included Dart code won't pass analysis
-    on its own (using the analyzer from the latest
-    stable release), then preface that code with an
-    HTML `<!-- skip -->` tag.
   * Finally, delete the comment tags and text from the
     final PR.
 {% endcomment %}
@@ -70,7 +66,7 @@ description: Brief description similar to the "context" section below. The descr
   error messages).
 {% endcomment %}
 
-## Context
+## Background
 
 {% comment %}
   High-level description of what API changed and why.
@@ -80,18 +76,14 @@ description: Brief description similar to the "context" section below. The descr
   This section should also answer the question
   "what is the problem that led to considering making
   a breaking change?"
-{% endcomment %}
 
-## Description of change
+  Include a technical description of the actual change,
+  with code samples showing how the API changed.
 
-{% comment %}
-A technical description of the actual change,
-with code samples showing how the API changed.
-
-Include examples of the error messages that are produced
-in code that has not been migrated. This helps the search
-engine find the migration guide when people search for those
-error messages.
+  Include examples of the error messages that are produced
+  in code that has not been migrated. This helps the search
+  engine find the migration guide when people search for those
+  error messages. THIS IS VERY IMPORTANT FOR DISCOVERY!
 {% endcomment %}
 
 ## Migration guide
@@ -108,17 +100,22 @@ error messages.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 // Example of code before the change.
 ```
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 // Example of code after the change.
 ```
+
+{% comment %}
+  Make sure you have looked for old tutorials online that
+  use the old API. Contact their authors and point out how
+  they should be updated. Leave a comment pointing out that
+  the API has changed and linking to this guide.
+{% endcomment %}
 
 ## Timeline
 
@@ -147,7 +144,8 @@ Reverted in version: xxx  (OPTIONAL, delete if not used)
   cause the GitHubActions (GHA) linkcheck to fail.
   Remove the comment tags once you fill this in with
   real links. Only use the "master-api" include if
-  you link to "master-api.flutter.dev".
+  you link to "master-api.flutter.dev"; prefer our
+  stable documentation if possible.
 
 {% include docs/master-api.md %}
 

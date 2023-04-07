@@ -84,7 +84,6 @@ where the default properties are computed by the button widget
 itself. For example, to override a `TextButton`'s default foreground
 (text/icon) color for all states, one could write:
 
-<!-- skip -->
 ```dart
 TextButton(
   style: ButtonStyle(
@@ -100,7 +99,6 @@ needed are overrides for the overlay colors that the text button uses
 to indicate its hovered/focus/pressed state.  This can be done by
 adding the `overlayColor` property to the `ButtonStyle`.
 
-<!-- skip -->
 ```dart
 TextButton(
   style: ButtonStyle(
@@ -126,7 +124,6 @@ colors whose default should be overridden. If it returns null, the
 widget's default will be used instead. For example, to just override
 the text button's focus overlay color:
 
-<!-- skip -->
 ```dart
 TextButton(
   style: ButtonStyle(
@@ -157,7 +154,6 @@ This example creates a button that overrides its foreground color, as
 well as its overlay color, using the specified primary color and the
 opacities from the Material Design spec.
 
-<!-- skip -->
 ```dart
 TextButton(
   style: TextButton.styleFrom(
@@ -172,7 +168,6 @@ The `TextButton` documentation indicates that the foreground color when
 the button is disabled is based on the color scheme's `onSurface`
 color. To override that as well, using styleFrom():
 
-<!-- skip -->
 ```dart
 TextButton(
   style: TextButton.styleFrom(
@@ -235,7 +230,6 @@ define button styles that match the original as closely as you
 like. For example, the following style makes a `TextButton` look
 like a default `FlatButton`:
 
-<!-- skip -->
 ```dart
 final ButtonStyle flatButtonStyle = TextButton.styleFrom(
   primary: Colors.black87,
@@ -255,7 +249,6 @@ TextButton(
 
 Similarly, to make an `ElevatedButton` look like a default `RaisedButton`:
 
-<!-- skip -->
 ```dart
 final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
   onPrimary: Colors.black87,
@@ -279,7 +272,6 @@ when the button is pressed. The outline's appearance is defined by a
 `BorderSide` and you'll use a `MaterialStateProperty` to define the pressed
 outline color:
 
-<!-- skip -->
 ```dart
 final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
   primary: Colors.black87,
@@ -312,7 +304,6 @@ To restore the default appearance for buttons throughout an
 application, you can configure the new button themes in the
 application's theme:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData.from(colorScheme: ColorScheme.light()).copyWith(
@@ -327,7 +318,6 @@ To restore the default appearance for buttons in part of an
 application you can wrap a widget subtree with `TextButtonTheme`,
 `ElevatedButtonTheme`, or `OutlinedButtonTheme`. For example:
 
-<!-- skip -->
 ```dart
 TextButtonTheme(
   data: TextButtonThemeData(style: flatButtonStyle),
@@ -340,8 +330,6 @@ TextButtonTheme(
 The following sections cover use of the following `FlatButton`,
 `RaisedButton`, and `OutlineButton` color parameters:
 
-
-<!-- skip -->
 ```dart
 textColor
 disabledTextColor
@@ -363,7 +351,6 @@ foreground color for `FlatButton`, or custom foreground and background
 colors for `RaisedButton`.  Producing the same result with the new
 button classes is simple:
 
-<!-- skip -->
 ```dart
 FlatButton(
   textColor: Colors.red, // foreground
@@ -387,7 +374,6 @@ transparent.
 
 Migrating a `RaisedButton` with custom foreground and background colors:
 
-<!-- skip -->
 ```dart
 RaisedButton(
   color: Colors.red, // background
@@ -421,7 +407,6 @@ buttons allow one to specify state-dependent values for all of the
 colors, the original buttons only supported specifying what's now
 called the “overlayColor”.
 
-<!-- skip -->
 ```dart
 FlatButton(
   focusColor: Colors.red,
@@ -471,7 +456,6 @@ with opacity 0.38 for the disabled foreground color. Only
 value is the `onSurface` color with opacity 0.12. So in many cases one
 can just use the `styleFrom` method to override the disabled colors:
 
-<!-- skip -->
 ```dart
 RaisedButton(
   disabledColor: Colors.red.withOpacity(0.12),
@@ -491,7 +475,6 @@ For complete control over the disabled colors, one must define the
 `ElevatedButton`'s style explicitly, in terms of
 `MaterialStateProperties`:
 
-<!-- skip -->
 ```dart
 RaisedButton(
   disabledColor: Colors.red,
@@ -535,7 +518,6 @@ one can override all of them quite simply.
 By default a disabled button's elevation is 0, and the remaining
 states are defined relative to a baseline of 2:
 
-<!-- skip -->
 ```dart
 disabled: 0
 hovered or focused: baseline + 2
@@ -545,7 +527,6 @@ pressed: baseline + 6
 So to migrate a `RaisedButton` for which all elevations have been
 defined:
 
-<!-- skip -->
 ```dart
 RaisedButton(
   elevation: 2,
@@ -567,7 +548,6 @@ ElevatedButton(
 To arbitrarily override just one elevation, like the pressed
 elevation:
 
-<!-- skip -->
 ```dart
 RaisedButton(
   highlightElevation: 16,
@@ -601,7 +581,6 @@ In this example the original `OutlineButton` version specifies the same
 color for border in its highlighted (pressed) state as for other
 states.
 
-<!-- skip -->
 ```dart
 OutlineButton(
   shape: StadiumBorder(),
@@ -633,7 +612,6 @@ values, which is to say that they can have different values depending
 on the button's state. To specify a different border color when the
 button is pressed, do the following:
 
-<!-- skip -->
 ```dart
 OutlineButton(
   shape: StadiumBorder(),

@@ -8,7 +8,6 @@ diff2html: true
 {% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
 {% capture demo -%} {{site.repo.gallery}}/tree/{{site.branch}}/lib/demos {%- endcapture -%}
 
 <?code-excerpt path-base=""?>
@@ -159,7 +158,7 @@ property for the home page.
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -196,7 +195,7 @@ For a non-Material app, you can add the `Center` widget to the app's
 <?code-excerpt "lib/main.dart (MyApp)" title?>
 ```dart
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -310,7 +309,7 @@ axis runs horizontally.
 </div>
 
 The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][]
-classes offer a variety of constants for controlling alignment.
+enums offer a variety of constants for controlling alignment.
 
 {{site.alert.note}}
   When you add images to your project,
@@ -1235,7 +1234,7 @@ The following resources might help when writing layout code.
 [Common layout widgets]: #common-layout-widgets
 [`Colors`]: {{api}}/material/Colors-class.html
 [`Container`]: {{api}}/widgets/Container-class.html
-[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment-class.html
+[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
 [`DataTable`]: {{api}}/material/DataTable-class.html
 [Dealing with Box Constraints in Flutter]: {{site.url}}/development/ui/layout/box-constraints
 [Elevation]: {{site.material}}/design/environment/elevation.html
@@ -1250,7 +1249,7 @@ The following resources might help when writing layout code.
 [layout widgets]: {{site.url}}/development/ui/widgets/layout
 [`ListTile`]: {{api}}/material/ListTile-class.html
 [`ListView`]: {{api}}/widgets/ListView-class.html
-[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment-class.html
+[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
 [Material card]: {{site.material}}/design/components/cards.html
 [Material Design]: {{site.material}}/design
 [Material Design palette]: {{site.material}}/design/color

@@ -89,7 +89,6 @@ child: Text(
   'Using the Raleway font from the awesome_package',
   style: TextStyle(
     fontFamily: 'Raleway',
-    package: 'awesome_package',
   ),
 ),
 ```
@@ -135,7 +134,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +146,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -160,7 +159,6 @@ class MyHomePage extends StatelessWidget {
           'Using the Raleway font from the awesome_package',
           style: TextStyle(
             fontFamily: 'Raleway',
-            package: 'awesome_package',
           ),
         ),
       ),

@@ -114,7 +114,7 @@ If you've already built the app in the
 skip to the next section.
 
  1. Make sure you've [set up][] your environment.
- 1. [Create a basic "Hello World" Flutter app][hello-world].
+ 1. [Create a new Flutter app][new-flutter-app].
  1. Replace the `lib/main.dart` file with [`main.dart`][].
  1. Replace the `pubspec.yaml` file with [`pubspec.yaml`][].
  1. Create an `images` directory in your project, and add
@@ -154,18 +154,18 @@ which you'll implement in the next step.
 <?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
 ```dart
 class FavoriteWidget extends StatefulWidget {
-  const FavoriteWidget({Key? key}) : super(key: key);
+  const FavoriteWidget({super.key});
 
   @override
-  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+  State<FavoriteWidget> createState() => _FavoriteWidgetState();
 }
 ```
 
 {{site.alert.note}}
   Members or classes that start with an underscore
   (`_`) are private. For more information,
-  see [Libraries and visibility][], a section in the
-  [Dart language tour][].
+  see [Libraries and imports][], a section in the
+  [Dart language documentation][].
 {{site.alert.end}}
 
 <a name="step-3"></a>
@@ -276,7 +276,7 @@ In the same location, create the stateful widget:
 +++ layout/lakes/interactive/lib/main.dart
 @@ -10,2 +5,2 @@
  class MyApp extends StatelessWidget {
-   const MyApp({Key? key}) : super(key: key);
+   const MyApp({super.key});
 @@ -40,11 +35,7 @@
                ],
              ),
@@ -402,10 +402,10 @@ import 'package:flutter/material.dart';
 //------------------------- TapboxA ----------------------------------
 
 class TapboxA extends StatefulWidget {
-  const TapboxA({Key? key}) : super(key: key);
+  const TapboxA({super.key});
 
   @override
-  _TapboxAState createState() => _TapboxAState();
+  State<TapboxA> createState() => _TapboxAState();
 }
 
 class _TapboxAState extends State<TapboxA> {
@@ -422,16 +422,16 @@ class _TapboxAState extends State<TapboxA> {
     return GestureDetector(
       onTap: _handleTap,
       child: Container(
+        width: 200.0,
+        height: 200.0,
+        decoration: BoxDecoration(
+          color: _active ? Colors.lightGreen[700] : Colors.grey[600],
+        ),
         child: Center(
           child: Text(
             _active ? 'Active' : 'Inactive',
             style: const TextStyle(fontSize: 32.0, color: Colors.white),
           ),
-        ),
-        width: 200.0,
-        height: 200.0,
-        decoration: BoxDecoration(
-          color: _active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
     );
@@ -441,7 +441,7 @@ class _TapboxAState extends State<TapboxA> {
 //------------------------- MyApp ----------------------------------
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -499,10 +499,10 @@ import 'package:flutter/material.dart';
 //------------------------ ParentWidget --------------------------------
 
 class ParentWidget extends StatefulWidget {
-  const ParentWidget({Key? key}) : super(key: key);
+  const ParentWidget({super.key});
 
   @override
-  _ParentWidgetState createState() => _ParentWidgetState();
+  State<ParentWidget> createState() => _ParentWidgetState();
 }
 
 class _ParentWidgetState extends State<ParentWidget> {
@@ -529,10 +529,10 @@ class _ParentWidgetState extends State<ParentWidget> {
 
 class TapboxB extends StatelessWidget {
   const TapboxB({
-    Key? key,
+    super.key,
     this.active = false,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -546,16 +546,16 @@ class TapboxB extends StatelessWidget {
     return GestureDetector(
       onTap: _handleTap,
       child: Container(
+        width: 200.0,
+        height: 200.0,
+        decoration: BoxDecoration(
+          color: active ? Colors.lightGreen[700] : Colors.grey[600],
+        ),
         child: Center(
           child: Text(
             active ? 'Active' : 'Inactive',
             style: const TextStyle(fontSize: 32.0, color: Colors.white),
           ),
-        ),
-        width: 200.0,
-        height: 200.0,
-        decoration: BoxDecoration(
-          color: active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
     );
@@ -607,10 +607,10 @@ import 'package:flutter/material.dart';
 //---------------------------- ParentWidget ----------------------------
 
 class ParentWidget extends StatefulWidget {
-  const ParentWidget({Key? key}) : super(key: key);
+  const ParentWidget({super.key});
 
   @override
-  _ParentWidgetState createState() => _ParentWidgetState();
+  State<ParentWidget> createState() => _ParentWidgetState();
 }
 
 class _ParentWidgetState extends State<ParentWidget> {
@@ -637,16 +637,16 @@ class _ParentWidgetState extends State<ParentWidget> {
 
 class TapboxC extends StatefulWidget {
   const TapboxC({
-    Key? key,
+    super.key,
     this.active = false,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final bool active;
   final ValueChanged<bool> onChanged;
 
   @override
-  _TapboxCState createState() => _TapboxCState();
+  State<TapboxC> createState() => _TapboxCState();
 }
 
 class _TapboxCState extends State<TapboxC> {
@@ -684,10 +684,6 @@ class _TapboxCState extends State<TapboxC> {
       onTap: _handleTap,
       onTapCancel: _handleTapCancel,
       child: Container(
-        child: Center(
-          child: Text(widget.active ? 'Active' : 'Inactive',
-              style: const TextStyle(fontSize: 32.0, color: Colors.white)),
-        ),
         width: 200.0,
         height: 200.0,
         decoration: BoxDecoration(
@@ -698,6 +694,10 @@ class _TapboxCState extends State<TapboxC> {
                   width: 10.0,
                 )
               : null,
+        ),
+        child: Center(
+          child: Text(widget.active ? 'Active' : 'Inactive',
+              style: const TextStyle(fontSize: 32.0, color: Colors.white)),
         ),
       ),
     );
@@ -782,7 +782,7 @@ Flutter Gallery [running app][], [repo][]
 [Android emulator]: {{site.url}}/get-started/install/windows#set-up-the-android-emulator
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
-[Dart language tour]: {{site.dart-site}}/guides/language/language-tour
+[Dart language documentation]: {{site.dart-site}}/language
 [Debugging Flutter apps]: {{site.url}}/testing/debugging
 [`DropdownButton`]: {{site.api}}/flutter/material/DropdownButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
@@ -797,7 +797,7 @@ Flutter Gallery [running app][], [repo][]
 [Gestures]: {{site.url}}/cookbook/gestures
 [Gestures in Flutter]: {{site.url}}/development/ui/advanced/gestures
 [Handling gestures]: {{site.url}}/development/ui/widgets-intro#handling-gestures
-[hello-world]: {{site.url}}/get-started/codelab#step-1-create-the-starter-flutter-app
+[new-flutter-app]: {{site.url}}/get-started/test-drive
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
@@ -808,7 +808,7 @@ Flutter Gallery [running app][], [repo][]
 [community]: {{site.main-url}}/community
 [Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
 [`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
-[Libraries and visibility]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility
+[Libraries and imports]: {{site.dart-site}}/language/libraries
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
 [Managing state]: #managing-state

@@ -25,7 +25,7 @@ resources.
 
 * [Custom Flutter Engine Embedders][], on the Flutter wiki.
 * The doc comments in the
-  [Flutter engine `engine.h` file][] on GitHub.
+  [Flutter engine `embedder.h` file][] on GitHub.
 * The [Flutter architectural overview][] on docs.flutter.dev.
 * A small, self contained [Flutter Embedder Engine GLFW example][]
   in the Flutter engine GitHub repo.
@@ -37,8 +37,8 @@ resources.
 [Discord]: https://discord.com/invite/N7Yshp4
 [Custom Flutter Engine Embedders]: {{site.repo.flutter}}/wiki/Custom-Flutter-Engine-Embedders
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
-[Flutter engine `engine.h` file]: {{site.github}}/flutter/engine/blob/master/shell/platform/embedder/embedder.h
-[Flutter Embedder Engine GLFW example]: {{site.github}}/flutter/engine/tree/master/examples/glfw#flutter-embedder-engine-glfw-example
+[Flutter engine `embedder.h` file]: {{site.github}}/flutter/engine/blob/master/shell/platform/embedder/embedder.h
+[Flutter Embedder Engine GLFW example]: {{site.github}}/flutter/engine/tree/main/examples/glfw#flutter-embedder-engine-glfw-example
 [Issue 31043]: {{site.repo.flutter}}/issues/31043
 
 

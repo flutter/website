@@ -41,7 +41,6 @@ highlight text by setting its color to `Theme.accentColor`.
 
 Before this change the controller implementation would look like this:
 
-<!-- skip -->
 ```dart
 class HighlightTextEditingController extends TextEditingController {
   HighlightTextEditingController(this.highlightColor);
@@ -61,7 +60,6 @@ With the `BuildContext` parameter available,
 the `HighlightTextEditingController` can directly access
 `Theme.accentColor` using `Theme.of(BuildContext)`:
 
-<!-- skip -->
 ```dart
 class HighlightTextEditingController extends TextEditingController {
   @override
@@ -81,7 +79,6 @@ signature of the `buildTextSpan` override.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class MyTextEditingController {
   @override
@@ -99,7 +96,6 @@ Example error message before migration:
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyTextEditingController {
   @override
@@ -116,7 +112,6 @@ Pass a named parameter 'context' of type
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 TextEditingController controller = /* ... */;
 TextSpan span = controller.buildTextSpan(withComposing: false);
@@ -131,7 +126,6 @@ Try adding the required argument.
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 BuildContext context = /* ... */;
 TextEditingController controller = /* ... */;

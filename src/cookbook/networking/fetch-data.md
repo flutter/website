@@ -47,7 +47,6 @@ import 'package:http/http.dart' as http;
 Additionally, in your AndroidManifest.xml file, 
 add the Internet permission.
 
-<!-- skip -->
 ```xml
 <!-- Required to fetch data from the internet. -->
 <uses-permission android:name="android.permission.INTERNET" />
@@ -294,10 +293,10 @@ class Album {
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {

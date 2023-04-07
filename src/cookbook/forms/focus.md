@@ -37,7 +37,6 @@ when a button is tapped.
 To give focus to a text field as soon as it's visible,
 use the `autofocus` property.
 
-<!-- skip -->
 ```dart
 TextField(
   autofocus: true,
@@ -76,10 +75,10 @@ a `FocusNode` instance inside the `initState()` method of a
 ```dart
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({super.key});
 
   @override
-  _MyCustomFormState createState() => _MyCustomFormState();
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class.
@@ -150,7 +149,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -163,10 +162,10 @@ class MyApp extends StatelessWidget {
 
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+  const MyCustomForm({super.key});
 
   @override
-  _MyCustomFormState createState() => _MyCustomFormState();
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class.

@@ -56,12 +56,12 @@ class CounterStorage {
 }
 
 class FlutterDemo extends StatefulWidget {
-  const FlutterDemo({Key? key, required this.storage}) : super(key: key);
+  const FlutterDemo({super.key, required this.storage});
 
   final CounterStorage storage;
 
   @override
-  _FlutterDemoState createState() => _FlutterDemoState();
+  State<FlutterDemo> createState() => _FlutterDemoState();
 }
 
 class _FlutterDemoState extends State<FlutterDemo> {
@@ -70,7 +70,7 @@ class _FlutterDemoState extends State<FlutterDemo> {
   @override
   void initState() {
     super.initState();
-    widget.storage.readCounter().then((int value) {
+    widget.storage.readCounter().then((value) {
       setState(() {
         _counter = value;
       });

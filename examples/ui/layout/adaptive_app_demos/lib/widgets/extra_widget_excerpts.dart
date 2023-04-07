@@ -1,17 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/services.dart';
 import 'dart:io' show Platform;
+
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 Widget LayoutBuilderWidget() {
   // #docregion LayoutBuilder
   Widget foo = LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
+      builder: (context, constraints) {
     bool useVerticalLayout = constraints.maxWidth < 400.0;
     return Flex(
       children: [
-        Text("Hello"),
-        Text("World"),
+        Text('Hello'),
+        Text('World'),
       ],
       direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
     );
@@ -56,7 +57,7 @@ Widget build(BuildContext context) {
       // Bind intents to an actual method in your code
       actions: <Type, Action<Intent>>{
         CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
-            onInvoke: (CreateNewItemIntent intent) => _createNewItem()),
+            onInvoke: (intent) => _createNewItem()),
       },
       // Your sub-tree must be wrapped in a focusNode, so it can take focus.
       child: Focus(
@@ -69,11 +70,12 @@ Widget build(BuildContext context) {
 // #enddocregion Shortcuts
 
 void _createNewItem() {
+  // ignore: unnecessary_statements
   DoNothingAction;
 }
 
 class MyWidget extends StatefulWidget {
-  MyWidget({Key? key, required this.title}) : super(key: key);
+  MyWidget({super.key, required this.title});
 
   final String title;
 
@@ -139,7 +141,7 @@ class _MyWidgetState extends State<MyWidget> {
     isSpanSelectModifierDown;
     isMultiSelectModifierDown;
 
-    return Text("Hello World!");
+    return Text('Hello World!');
   }
 }
 

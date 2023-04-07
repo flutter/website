@@ -15,6 +15,12 @@ In some cases, it's handy to cache images as they're downloaded from the
 web, so they can be used offline. For this purpose,
 use the [`cached_network_image`][] package.
 
+{{site.alert.note}}
+  To learn more, watch this short Package of the Week video on the cached_network_image package:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/fnHr_rsQwDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
+
 In addition to caching, the `cached_network_image`
 package also supports placeholders and fading images
 in as they're loaded.
@@ -43,15 +49,15 @@ CachedNetworkImage(
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -45,7 +45,6 @@ To migrate, implement `showToolbar`, `insertTextPlaceholder`, and
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 class MyCustomTextInputClient implements TextInputClient {
   ...
@@ -54,7 +53,6 @@ class MyCustomTextInputClient implements TextInputClient {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 class MyCustomTextInputClient implements TextInputClient {
   ...

@@ -14,16 +14,19 @@ next:
 To install and run Flutter,
 your development environment must meet these minimum requirements:
 
-- **Operating Systems**: macOS
+- **Operating Systems**: macOS, version 10.14 (Mojave) or later.
 - **Disk Space**: 2.8 GB (does not include disk space for IDE/tools).
 - **Tools**: Flutter uses `git` for installation and upgrade. We recommend
   installing [Xcode][], which includes `git`, but you can also 
   [install `git` separately][]. 
 
 {{site.alert.important}}
-  If you're installing on a Mac with the latest [Apple M1 processor][],
-  you may find [these supplementary notes][] useful reading as we complete support
-  for the new Apple Silicon architecture.
+  If you're installing on an [Apple Silicon Mac][], you must have the Rosetta
+  translation environment available for [some ancillary tools]. 
+  You can install this manually by running:
+  ```terminal
+$ sudo softwareupdate --install-rosetta --agree-to-license
+  ```
 {{site.alert.end}}
 
 {% include_relative _get-sdk-mac.md %}
@@ -32,7 +35,7 @@ your development environment must meet these minimum requirements:
 
 ## Platform setup
 
-macOS supports developing Flutter apps in iOS, Android,
+macOS supports developing Flutter apps for iOS, Android, macOS itself 
 and the web. Complete at least one of the platform setup steps now,
 to be able to build and run your first Flutter app.
 
@@ -42,13 +45,12 @@ to be able to build and run your first Flutter app.
 
 {% include_relative _macos-desktop-setup.md %}
 
-{% include_relative _web-setup.md %}
-
 ## Next step
 
 Set up your preferred editor.
 
-[Apple M1 processor]: https://www.apple.com/mac/m1
+[Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
+[some ancillary tools]: https://github.com/flutter/website/pull/7119#issuecomment-1124537969
 [these supplementary notes]: {{site.repo.flutter}}/wiki/Developing-with-Flutter-on-Apple-Silicon
 [Xcode]: {{site.apple-dev}}/xcode/
 [install `git` separately]: https://git-scm.com/download/mac

@@ -3,3 +3,7 @@
 # overrides for individual lints.
 
 include: ../../../../analysis_options.yaml
+
+linter:
+  rules:
+    no_leading_underscores_for_library_prefixes: false

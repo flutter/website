@@ -35,10 +35,10 @@ const List<Item> _items = [
 
 @immutable
 class ExampleDragAndDrop extends StatefulWidget {
-  const ExampleDragAndDrop({Key? key}) : super(key: key);
+  const ExampleDragAndDrop({super.key});
 
   @override
-  _ExampleDragAndDropState createState() => _ExampleDragAndDropState();
+  State<ExampleDragAndDrop> createState() => _ExampleDragAndDropState();
 }
 
 class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
@@ -88,7 +88,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       iconTheme: const IconThemeData(color: Color(0xFFF64209)),
       title: Text(
         'Order Food',
-        style: Theme.of(context).textTheme.headline4?.copyWith(
+        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
               fontSize: 36,
               color: const Color(0xFFF64209),
               fontWeight: FontWeight.bold,
@@ -200,11 +200,11 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
 
 class CustomerCart extends StatelessWidget {
   const CustomerCart({
-    Key? key,
+    super.key,
     required this.customer,
     this.highlighted = false,
     this.hasItems = false,
-  }) : super(key: key);
+  });
 
   final Customer customer;
   final bool highlighted;
@@ -241,7 +241,7 @@ class CustomerCart extends StatelessWidget {
               const SizedBox(height: 8.0),
               Text(
                 customer.name,
-                style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: textColor,
                       fontWeight:
                           hasItems ? FontWeight.normal : FontWeight.bold,
@@ -257,7 +257,7 @@ class CustomerCart extends StatelessWidget {
                     const SizedBox(height: 4.0),
                     Text(
                       customer.formattedTotalItemPrice,
-                      style: Theme.of(context).textTheme.caption!.copyWith(
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
                             color: textColor,
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
@@ -266,7 +266,7 @@ class CustomerCart extends StatelessWidget {
                     const SizedBox(height: 4.0),
                     Text(
                       '${customer.items.length} item${customer.items.length != 1 ? 's' : ''}',
-                      style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: textColor,
                             fontSize: 12.0,
                           ),
@@ -284,12 +284,12 @@ class CustomerCart extends StatelessWidget {
 
 class MenuListItem extends StatelessWidget {
   const MenuListItem({
-    Key? key,
+    super.key,
     this.name = '',
     this.price = '',
     required this.photoProvider,
     this.isDepressed = false,
-  }) : super(key: key);
+  });
 
   final String name;
   final String price;
@@ -332,14 +332,14 @@ class MenuListItem extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontSize: 18.0,
                         ),
                   ),
                   const SizedBox(height: 10.0),
                   Text(
                     price,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,
                         ),
@@ -356,10 +356,10 @@ class MenuListItem extends StatelessWidget {
 
 class DraggingListItem extends StatelessWidget {
   const DraggingListItem({
-    Key? key,
+    super.key,
     required this.dragKey,
     required this.photoProvider,
-  }) : super(key: key);
+  });
 
   final GlobalKey dragKey;
   final ImageProvider photoProvider;

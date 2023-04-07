@@ -35,7 +35,6 @@ choice, adding `FloatingLabelBehavior.always` as an additional option.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
 ```dart
 // InputDecoration
 // Base constructor
@@ -63,7 +62,6 @@ inputDecorationTheme.copyWith(hasFloatingPlaceholder: true);
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 // InputDecoration
 // Base constructor
@@ -137,7 +135,6 @@ new API.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
 ```dart
 // TextTheme
 // Base constructor
@@ -192,7 +189,6 @@ style = textTheme.overline;
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 // TextTheme
 // Base constructor
@@ -279,14 +275,12 @@ For the former, use the `material2014` constructor.
 **Migration guide**
 
 Code before migration:
-<!-- skip -->
 ```dart
 // Formerly returned 2014 TextStyle spec
 Typography();
 ```
 
 Code after migration:
-<!-- skip -->
 ```dart
 // Use 2018 TextStyle spec, either by default or explicitly.
 Typography();

@@ -58,7 +58,7 @@ class ShoppingListItem extends StatelessWidget {
 }
 
 class ShoppingList extends StatefulWidget {
-  const ShoppingList({required this.products, Key? key}) : super(key: key);
+  const ShoppingList({required this.products, super.key});
 
   final List<Product> products;
 
@@ -69,7 +69,7 @@ class ShoppingList extends StatefulWidget {
   // the State object instead of creating a new State object.
 
   @override
-  _ShoppingListState createState() => _ShoppingListState();
+  State<ShoppingList> createState() => _ShoppingListState();
 }
 
 class _ShoppingListState extends State<ShoppingList> {
@@ -99,7 +99,7 @@ class _ShoppingListState extends State<ShoppingList> {
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        children: widget.products.map((Product product) {
+        children: widget.products.map((product) {
           return ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),

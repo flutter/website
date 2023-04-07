@@ -28,7 +28,7 @@ The following animation shows the app's behavior:
 
 ![The download button cycles through its stages]({{site.url}}/assets/images/docs/cookbook/effects/DownloadButton.gif){:.site-mobile-screenshot}
 
-## Define a new stateful widget
+## Define a new stateless widget
 
 Your button widget needs to change its appearance over time.
 Therefore, you need to implement your button with a custom
@@ -41,8 +41,8 @@ Define a new stateless widget called `DownloadButton`.
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -72,12 +72,12 @@ enum DownloadStatus {
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.transitionDuration = const Duration(
       milliseconds: 500,
     ),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final Duration transitionDuration;
@@ -138,12 +138,12 @@ For now, the `AnimatedContainer` child is just a `SizedBox` because we will come
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.transitionDuration = const Duration(
       milliseconds: 500,
     ),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final Duration transitionDuration;
@@ -168,12 +168,12 @@ class DownloadButton extends StatelessWidget {
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;
@@ -234,12 +234,12 @@ button wrapper widget.
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;
@@ -274,7 +274,7 @@ class ButtonShapeWidget extends StatelessWidget {
           child: Text(
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.button?.copyWith(
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: CupertinoColors.activeBlue,
                 ),
@@ -406,14 +406,14 @@ tap event to the corresponding callback property.
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.downloadProgress = 0.0,
     required this.onDownload,
     required this.onCancel,
     required this.onOpen,
     this.transitionDuration = const Duration(milliseconds: 500),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final double downloadProgress;
@@ -482,8 +482,8 @@ Run the app:
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(
@@ -496,10 +496,10 @@ void main() {
 
 @immutable
 class ExampleCupertinoDownloadButton extends StatefulWidget {
-  const ExampleCupertinoDownloadButton({Key? key}) : super(key: key);
+  const ExampleCupertinoDownloadButton({super.key});
 
   @override
-  _ExampleCupertinoDownloadButtonState createState() =>
+  State<ExampleCupertinoDownloadButton> createState() =>
       _ExampleCupertinoDownloadButtonState();
 }
 
@@ -547,12 +547,12 @@ class _ExampleCupertinoDownloadButtonState
       title: Text(
         'App ${index + 1}',
         overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.headline6,
+        style: theme.textTheme.titleLarge,
       ),
       subtitle: Text(
         'Lorem ipsum dolor #${index + 1}',
         overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.caption,
+        style: theme.textTheme.bodySmall,
       ),
       trailing: SizedBox(
         width: 96,
@@ -575,7 +575,7 @@ class _ExampleCupertinoDownloadButtonState
 
 @immutable
 class DemoAppIcon extends StatelessWidget {
-  const DemoAppIcon({Key? key}) : super(key: key);
+  const DemoAppIcon({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -718,14 +718,14 @@ class SimulatedDownloadController extends DownloadController
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
-    Key? key,
+    super.key,
     required this.status,
     this.downloadProgress = 0.0,
     required this.onDownload,
     required this.onCancel,
     required this.onOpen,
     this.transitionDuration = const Duration(milliseconds: 500),
-  }) : super(key: key);
+  });
 
   final DownloadStatus status;
   final double downloadProgress;
@@ -801,12 +801,12 @@ class DownloadButton extends StatelessWidget {
 @immutable
 class ButtonShapeWidget extends StatelessWidget {
   const ButtonShapeWidget({
-    Key? key,
+    super.key,
     required this.isDownloading,
     required this.isDownloaded,
     required this.isFetching,
     required this.transitionDuration,
-  }) : super(key: key);
+  });
 
   final bool isDownloading;
   final bool isDownloaded;
@@ -841,7 +841,7 @@ class ButtonShapeWidget extends StatelessWidget {
           child: Text(
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.button?.copyWith(
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: CupertinoColors.activeBlue,
                 ),
@@ -855,11 +855,11 @@ class ButtonShapeWidget extends StatelessWidget {
 @immutable
 class ProgressIndicatorWidget extends StatelessWidget {
   const ProgressIndicatorWidget({
-    Key? key,
+    super.key,
     required this.downloadProgress,
     required this.isDownloading,
     required this.isFetching,
-  }) : super(key: key);
+  });
 
   final double downloadProgress;
   final bool isDownloading;

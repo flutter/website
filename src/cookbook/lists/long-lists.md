@@ -47,6 +47,9 @@ In this example, display each String on its own line.
 ```dart
 ListView.builder(
   itemCount: items.length,
+  prototypeItem: ListTile(
+    title: Text(items.first),
+  ),
   itemBuilder: (context, index) {
     return ListTile(
       title: Text(items[index]),
@@ -72,7 +75,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final List<String> items;
 
-  const MyApp({Key? key, required this.items}) : super(key: key);
+  const MyApp({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -86,6 +89,9 @@ class MyApp extends StatelessWidget {
         ),
         body: ListView.builder(
           itemCount: items.length,
+          prototypeItem: ListTile(
+            title: Text(items.first),
+          ),
           itemBuilder: (context, index) {
             return ListTile(
               title: Text(items[index]),
@@ -98,11 +104,16 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+## Children's extent
+
+To specify each item's extent, you can use either `itemExtent` or `prototypeItem`.
+Specifying either is more efficient than letting the children determine their own extent
+because the scrolling machinery can make use of the foreknowledge of the children's
+extent to save work, for example when the scroll position changes drastically.
+
 <noscript>
   <img src="/assets/images/docs/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
 </noscript>
-
-
 
 [`List.generate`]: {{site.api}}/flutter/dart-core/List/List.generate.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html

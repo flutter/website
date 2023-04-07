@@ -7,13 +7,17 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+<?code-excerpt path-base="get-started/codelab_web"?>
+
 {{site.alert.tip}}
-  This codelab walks you through writing your first Flutter
-  app on the web. You might prefer to try
-  [writing your first Flutter app on mobile][].
-  **Note that if you have downloaded and configured
-  Android and iOS tooling,
-  the completed app just works on all of these devices!**
+  This codelab walks you through writing
+  your first Flutter app on the web, specifically. 
+  You might prefer to try
+  [another codelab][first_flutter_codelab] 
+  that takes a more generic approach.
+  Note that the codelab on this page
+  does work on mobile and desktop
+  once you download and configure the appropriate tooling.
 {{site.alert.end}}
 
 <img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building" class='site-image-right'>
@@ -59,11 +63,6 @@ The animated GIF shows how the app works at the completion of this lab.
   * [Chrome browser][]
   * [Text editor or IDE][editor]
 
-  For a web-only codelab,
-  we recommend either [IntelliJ IDEA or VS Code][editor].
-  Android Studio and Xcode aren’t required.
-  You can also use a text editor, if you prefer.
-
   While developing, run your web app in Chrome
   so you can debug with Dart DevTools.
 {{site.alert.end}}
@@ -80,13 +79,15 @@ make sure that you have Flutter installed correctly.
 ```terminal
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 2.8.1, on macOS 12.1 21C52 darwin-x64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 31.0.0)
-[✓] Xcode - develop for iOS and macOS (Xcode 13.2.1)
+[✓] Flutter (Channel master, 3.4.0-19.0.pre.254, on macOS 12.6 21G115
+    darwin-arm64, locale en)
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+[✓] Xcode - develop for iOS and macOS (Xcode 14.0)
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 2020.3)
-[✓] VS Code (version 1.63.2)
-[✓] Connected device (2 available)
+[✓] Android Studio (version 2021.2)
+[✓] VS Code (version 1.71.1)
+[✓] Connected device (4 available)
+[✓] HTTP Host Availability
 
 • No issues found!
 ```
@@ -96,10 +97,10 @@ then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
 It's okay if the Android toolchain, Android Studio,
-and the Xcode tools are not installed,
+and the Xcode tools aren't installed,
 since the app is intended for the web only.
 If you later want this app to work on mobile,
-you will need to do additional installation and setup.
+you'll need to do additional installation and setup.
 </li>
 
 <li markdown="1">List the devices.<br>
@@ -109,9 +110,17 @@ You should see something like the following:
 
 ``` terminal
 $ flutter devices
-1 connected device:
+4 connected devices:
 
-Chrome (web) • chrome • web-javascript • Google Chrome 97.0.4692.99
+sdk gphone64 arm64 (mobile) • emulator-5554                        •
+android-arm64  • Android 13 (API 33) (emulator)
+iPhone 14 Pro Max (mobile)  • 45A72BE1-2D4E-4202-9BB3-D6AE2601BEF8 • ios
+• com.apple.CoreSimulator.SimRuntime.iOS-16-0 (simulator)
+macOS (desktop)             • macos                                •
+darwin-arm64   • macOS 12.6 21G115 darwin-arm64
+Chrome (web)                • chrome                               •
+web-javascript • Google Chrome 105.0.5195.125
+
 ```
 
 The **Chrome** device automatically starts Chrome and enables the use 
@@ -120,7 +129,7 @@ of the Flutter DevTools tooling.
 
 <li markdown="1">The starting app is displayed in the following DartPad.
 
-<!-- skip -->
+<?code-excerpt "lib/starter.dart" replace="/\/\* //g;/ \*\///g;/_ignore_for_file/ignore_for_file/g"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 {$ begin main.dart $}
 import 'package:flutter/material.dart';
@@ -129,7 +138,7 @@ void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
   const SignUpApp();
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -142,7 +151,7 @@ class SignUpApp extends StatelessWidget {
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,9 +170,9 @@ class SignUpScreen extends StatelessWidget {
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm();
-  
+
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -180,10 +189,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme
-              .of(context)
-              .textTheme
-              .headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
@@ -207,11 +213,17 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              foregroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              backgroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.blue;
               }),
             ),
             onPressed: null,
@@ -225,7 +237,7 @@ class _SignUpFormState extends State<SignUpForm> {
 {$ end main.dart $}
 {$ begin test.dart $}
 // Avoid warning on "double _formProgress = 0;"
-// ignore_for_file: prefer_final_fields
+//ignore_for_file: prefer_final_fields
 {$ end test.dart $}
 ```
 
@@ -266,7 +278,7 @@ From your IDE, editor, or at the command line,
 * If you know Java, the Dart language should feel very familiar.
 * All of the app's UI is created in Dart code.
   For more information, see [Introduction to declarative UI][].
-* The app’s UI adheres [Material Design][],
+* The app’s UI adheres to [Material Design][],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
   but if you prefer something else,
@@ -300,15 +312,17 @@ First, in your `lib/main.dart` file,
 add the following class definition for the
 `WelcomeScreen` widget after the `SignUpScreen` class:
 
+<?code-excerpt "lib/step1.dart (WelcomeScreen)"?>
 ```dart
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
+        child:
+            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium),
       ),
     );
   }
@@ -335,7 +349,7 @@ method that will display the welcome screen.
 
 Change `onPressed: null` to the following:
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (onPressed)"?>
 ```dart
 onPressed: _showWelcomeScreen,
 ```
@@ -346,7 +360,7 @@ Fix the error reported by the analyzer that `_showWelcomeScreen`
 is not defined. Directly above the `build()` method,
 add the following function:
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (showWelcomeScreen)"?>
 ```dart
 void _showWelcomeScreen() {
   Navigator.of(context).pushNamed('/welcome');
@@ -359,9 +373,9 @@ Create the connection to show the new screen.
 In the `build()` method for `SignUpApp`,
 add the following route below `'/'`:
 
-<!-- skip -->
+<?code-excerpt "lib/step1.dart (WelcomeRoute)"?>
 ```dart
-'/welcome': (context) => WelcomeScreen(),
+'/welcome': (context) => const WelcomeScreen(),
 ```
 </li>
 
@@ -418,9 +432,8 @@ and update the app’s UI when the form is complete.
 In the `_SignUpFormState` class, add a new method called
 `_updateFormProgress()`:
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (updateFormProgress)"?>
 ```dart
-...
 void _updateFormProgress() {
   var progress = 0.0;
   final controllers = [
@@ -439,7 +452,6 @@ void _updateFormProgress() {
     _formProgress = progress;
   });
 }
-...
 ```
 
 This method updates the `_formProgress` field based on the
@@ -453,13 +465,11 @@ In the `build()` method of the `_SignUpFormState` class,
 add a callback to the `Form` widget's `onChanged` argument.
 Add the code below marked as NEW:
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (onChanged)"?>
 ```dart
-...
 return Form(
-  onChanged: _updateFormProgress,  // NEW
+  onChanged: _updateFormProgress, // NEW
   child: Column(
-...
 ```
 </li>
 
@@ -469,23 +479,27 @@ In `step 1`, you modified the `onPressed` property for the
 Now, update that button to display the welcome
 screen only when the form is completely filled in:
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (onPressed)"?>
 ```dart
-...
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-      return states.contains(MaterialState.disabled) ? null : Colors.white;
+    foregroundColor: MaterialStateProperty.resolveWith(
+        (Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled)
+          ? null
+          : Colors.white;
     }),
-    backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-      return states.contains(MaterialState.disabled) ? null : Colors.blue;
+    backgroundColor: MaterialStateProperty.resolveWith(
+        (Set<MaterialState> states) {
+      return states.contains(MaterialState.disabled)
+          ? null
+          : Colors.blue;
     }),
   ),
-  onPressed: _formProgress == 1 ? _showWelcomeScreen : null, // UPDATED
-  child: Text('Sign up'),
+  onPressed:
+      _formProgress == 1 ? _showWelcomeScreen : null, // UPDATED
+  child: const Text('Sign up'),
 ),
-...
-
 ```
 </li>
 
@@ -520,7 +534,7 @@ but becomes enabled when all three text fields contain
 * Notice that the `_updateFormProgress` passes a function to `setState()`.
   This is called an anonymous
   function and has the following syntax:
-  <!-- skip -->
+
   ```dart
   methodName(() {...});
   ```
@@ -528,9 +542,9 @@ but becomes enabled when all three text fields contain
   callback function as an argument.
 * The Dart syntax in the last step that displays the
   welcome screen is:
-  <!-- skip -->
+  <?code-excerpt "lib/step2.dart (ternary)" replace="/, \/\/ UPDATED//g"?>
   ```dart
-  onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
+  _formProgress == 1 ? _showWelcomeScreen : null
   ```
   This is a Dart conditional assignment and has the syntax:
   `condition ? expression1 : expression2`.
@@ -562,12 +576,13 @@ from the command line, use `flutter run -d chrome`,
 At the command line, or in the IDE,
 you should see a message stating something like the following:
 
-```terminal
+<pre>
 Launching lib/main.dart on Chrome in debug mode...
 Building application for the web...                                11.7s
 Attempting to connect to browser instance..
-Debug service listening on **ws://127.0.0.1:54998/pJqWWxNv92s=**
-```
+Debug service listening on <b>ws://127.0.0.1:54998/pJqWWxNv92s=</b>
+</pre>
+
 Copy the address of the debug service, shown in bold.
 You will need that to launch DevTools.
 </li>
@@ -641,13 +656,13 @@ in the center pane.
 In the Dart code,
 scroll down to where `progress` is updated:
 
-<!-- skip -->
+<?code-excerpt "lib/step2.dart (forLoop)"?>
 ```dart
-    for (final controller in controllers) {
-      if (controller.value.text.isNotEmpty) {
-        progress += 1 / controllers.length;
-      }
-    }
+for (final controller in controllers) {
+  if (controller.value.text.isNotEmpty) {
+    progress += 1 / controllers.length;
+  }
+}
 ```
 
 Place a breakpoint on the line with the for loop by clicking to the
@@ -703,7 +718,7 @@ area. The animation has the following behavior:
 <li markdown="1">Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
-<!--skip-->
+<?code-excerpt "lib/step3.dart (AnimatedProgressIndicator)"?>
 ```dart
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
@@ -713,7 +728,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() {
+  State<AnimatedProgressIndicator> createState() {
     return _AnimatedProgressIndicatorState();
   }
 }
@@ -778,16 +793,14 @@ the `AnimatedProgressIndicatorState` whenever
 Then, replace the `LinearProgressIndicator` in the `Form`
 with this new `AnimatedProgressIndicator`:
 
-<!--skip-->
+<?code-excerpt "lib/step3.dart (UseAnimatedProgressIndicator)"?>
 ```dart
-...
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          AnimatedProgressIndicator(value: _formProgress), // NEW
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
-          Padding(
-...
+child: Column(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    AnimatedProgressIndicator(value: _formProgress), // NEW
+    Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
+    Padding(
 ```
 
 This widget uses an `AnimatedBuilder` to animate the
@@ -803,7 +816,7 @@ the animation works, and that clicking the
 
 ### Complete sample
 
-<!-- skip -->
+<?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
@@ -811,7 +824,7 @@ void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
   const SignUpApp();
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -825,7 +838,7 @@ class SignUpApp extends StatelessWidget {
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -844,12 +857,13 @@ class SignUpScreen extends StatelessWidget {
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
+        child:
+            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium),
       ),
     );
   }
@@ -857,7 +871,7 @@ class WelcomeScreen extends StatelessWidget {
 
 class SignUpForm extends StatefulWidget {
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -898,7 +912,7 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
@@ -922,11 +936,17 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.white;
+              foregroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled) ? null : Colors.blue;
+              backgroundColor: MaterialStateProperty.resolveWith(
+                  (Set<MaterialState> states) {
+                return states.contains(MaterialState.disabled)
+                    ? null
+                    : Colors.blue;
               }),
             ),
             onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
@@ -946,7 +966,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() {
+  State<AnimatedProgressIndicator> createState() {
     return _AnimatedProgressIndicatorState();
   }
 }
@@ -961,7 +981,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 1200), 
+      duration: const Duration(milliseconds: 1200),
       vsync: this,
     );
 
@@ -1036,7 +1056,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Android Studio and IntelliJ]: {{site.url}}/development/tools/devtools/android-studio
 [Animation docs]: {{site.url}}/development/ui/animations
 [Building a form with validation]: {{site.url}}/cookbook/forms/validation
-[Building a web application with Flutter]: {{site.url}}/get-started/web
+[Building a web application with Flutter]: {{site.url}}/development/platform-integration/web/building
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: {{site.url}}/get-started/test-drive
 [Dart DevTools]: {{site.url}}/development/tools/devtools/overview
@@ -1055,6 +1075,6 @@ Dart DevTools, or Flutter animations, see the following:
 [Material Design]: {{site.material}}/design/introduction/#
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: {{site.url}}/development/tools/devtools/vscode
-[Web samples]: {{site.github}}/flutter/samples/tree/master/web
+[Web samples]: {{site.github}}/flutter/samples/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
-[writing your first Flutter app on mobile]: {{site.url}}/get-started/codelab
+[first_flutter_codelab]: {{site.url}}/get-started/codelab

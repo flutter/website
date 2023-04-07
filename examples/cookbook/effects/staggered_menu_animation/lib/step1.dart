@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 // #docregion step1
 class Menu extends StatefulWidget {
-  const Menu({Key? key}) : super(key: key);
+  const Menu({super.key});
 
   @override
-  _MenuState createState() => _MenuState();
+  State<Menu> createState() => _MenuState();
 }
 
 class _MenuState extends State<Menu> {
@@ -76,7 +76,7 @@ class _MenuState extends State<Menu> {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
-            primary: Colors.blue,
+            backgroundColor: Colors.blue,
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
           ),
           onPressed: () {},

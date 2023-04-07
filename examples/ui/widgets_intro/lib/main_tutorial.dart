@@ -10,7 +10,7 @@ void main() {
 }
 
 class TutorialHome extends StatelessWidget {
-  const TutorialHome({Key? key}) : super(key: key);
+  const TutorialHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +38,8 @@ class TutorialHome extends StatelessWidget {
       ),
       floatingActionButton: const FloatingActionButton(
         tooltip: 'Add', // used by assistive technologies
-        child: Icon(Icons.add),
         onPressed: null,
+        child: Icon(Icons.add),
       ),
     );
   }

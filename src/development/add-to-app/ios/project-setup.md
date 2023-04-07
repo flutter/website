@@ -4,24 +4,46 @@ short-title: Integrate Flutter
 description: Learn how to integrate a Flutter module into your existing iOS project.
 ---
 
-Flutter can be incrementally added into your existing iOS
-application as embedded frameworks.
+Flutter UI components can be incrementally added into your existing iOS
+application as embedded frameworks. There are a few ways to embed Flutter 
+in your existing application.
 
-For examples, see the iOS directories in the [add_to_app code samples][].
+1. **Use the CocoaPods dependency manager and installed Flutter SDK.**
+  In this case, the `flutter_module` is compiled from
+  the source each time the app is built. (Recommended.)
+
+1. **Create frameworks for the Flutter engine, your compiled Dart code,
+  and all Flutter plugins.** Here, you manually embed the frameworks,
+  and update your existing application's build settings in Xcode.
+  This can be useful for teams that don't want to require every developer
+  to have the Flutter SDK and Cocoapods installed locally.
+
+1. **Create frameworks for your compiled Dart code,
+  and all Flutter plugins. Use CocoaPods for the Flutter engine.** 
+  With this option, embed the frameworks for your application
+  and the plugins in Xcode, but distribute the
+  Flutter engine as a CocoaPods podspec.
+  This is similar to the second option, but it provides
+  an alternative to distributing the large Flutter.xcframework.
+
+For examples using an app built with UIKit, 
+see the iOS directories in the [add_to_app code samples][]. 
+For an example using SwiftUI, see the iOS directory in [News Feed App][].
 
 ## System requirements
 
 Your development environment must meet the
 [macOS system requirements for Flutter][]
 with [Xcode installed][].
-Flutter supports iOS 9.0 and later.
+Flutter supports iOS 11 and later.
 Additionally, you will need [CocoaPods][]
 version 1.10 or later.
 
 
 ## Create a Flutter module
 
-To embed Flutter into your existing application,
+To embed Flutter into your existing application, 
+using any of the methods mentioned above, 
 first create a Flutter module.
 
 From the command line, run:
@@ -32,7 +54,12 @@ flutter create --template module my_flutter
 ```
 
 A Flutter module project is created at `some/path/my_flutter/`.
-From that directory, you can run the same `flutter`
+If you are using the first method mentioned above, 
+the module should be created in the same parent directory 
+as your existing iOS app. 
+
+
+From the Flutter module directory, you can run the same `flutter`
 commands you would in any other Flutter project,
 like `flutter run --debug` or `flutter build ios`.
 You can also run the module in
@@ -85,22 +112,16 @@ embedding the module into your existing application with CocoaPods.
 
 ## Embed the Flutter module in your existing application
 
-There are two ways to embed Flutter in your existing application.
-
-1. Use the CocoaPods dependency manager and installed Flutter SDK.
-   (Recommended.)
-1. Create frameworks for the Flutter engine, your compiled Dart code,
-   and all Flutter plugins. Manually embed the frameworks,
-   and update your existing application's build settings in Xcode.
+After you have developed your Flutter module,
+you can embed it using the methods described at the top of the page.
 
 {{site.alert.note}}
-  Your app does not run on a simulator in Release mode because Flutter does not
-  yet support outputting x86/x86_64 ahead-of-time (AOT) binaries for your Dart
-  code. You can run in Debug mode on a simulator or a real device,
-  and Release on a real device.
+  You can run in Debug mode on a simulator or a real device,
+  and Release on a real device. Learn more about
+  [Flutter's build modes][build modes of Flutter]
 
-  To run your app on a simulator follow the instructions
-  in the bottom of section [embed the frameworks][].
+  To leverage Flutter debugging functionality 
+  such as hot reload, see  [Debugging your add-to-app module][].
 {{site.alert.end}}
 
 Using Flutter [increases your app size][].
@@ -109,6 +130,7 @@ Using Flutter [increases your app size][].
 
 This method requires every developer working on your
 project to have a locally installed version of the Flutter SDK.
+The Flutter module is compiled from source each time the app is built.
 Simply build your application in Xcode to automatically
 run the script to embed your Dart and plugin code.
 This allows rapid iteration with the most up-to-date
@@ -131,9 +153,10 @@ some/path/
 ```
 
 If your existing application (`MyApp`) doesn't
-already have a Podfile, follow the
-[CocoaPods getting started guide][]
-to add a `Podfile` to your project.
+already have a Podfile, run `pod init` in the  
+`MyApp` directory to create one. 
+You can find more details on using 
+CocoaPods in the [CocoaPods getting started guide][].
 
 <ol markdown="1">
 <li markdown="1">
@@ -174,7 +197,7 @@ end
 ```
 
 {{site.alert.note}}
-  The `flutter_post_install` method (recently added to Flutter),
+  The `flutter_post_install` method (added in Flutter 3.1.0),
   adds build settings to support native Apple Silicon `arm64` iOS simulators.
   Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
   is valid if you are running on older versions of Flutter that don't have this method.
@@ -225,10 +248,6 @@ as a dependency manager in your existing applications.
 You must run `flutter build ios-framework`
 every time you make code changes in your Flutter module.
 
-If you're using the previous
-[Embed with CocoaPods and Flutter tools][] method,
-you can skip these instructions.
-
 The following example assumes that you want to generate the
 frameworks to `some/path/MyApp/Flutter/`.
 
@@ -263,7 +282,7 @@ some/path/MyApp/
   with `Debug/App.xcframework`) causes runtime crashes.
 {{site.alert.end}}
 
-Embed and link the generated frameworks into your existing
+Link and embed the generated frameworks into your existing
 application in Xcode.  There are multiple ways to do
 this&mdash;use the method that is best for your project.
 
@@ -279,6 +298,21 @@ to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`).
 
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
 
+{{site.alert.tip}}
+  To use the simulator, you will need to 
+  embed the Debug version of the Flutter frameworks in your
+  Debug build configuration. To do this 
+  you can use `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`
+  in the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
+  build setting. This embeds the Release frameworks in the Release configuration, 
+  and the Debug frameworks in the Debug Configuration.
+  
+  You must also open `MyApp.xcodeproj/project.pbxproj` (from Finder) 
+  and replace `path = Flutter/Release/example.xcframework;`
+  with `path = "Flutter/$(CONFIGURATION)/example.xcframework";`
+  for all added frameworks. (Note the added `"`.)
+{{site.alert.end}}
+
 #### Embed the frameworks
 
 The generated dynamic frameworks must be embedded
@@ -293,29 +327,18 @@ into your app to be loaded at runtime.
   **Found an unexpected Mach-O header code** archive error.
 {{site.alert.end}}
 
-For example, you can drag the framework
-(except for `FlutterPluginRegistrant` and any other
-static frameworks) from your application's Frameworks group
-into your target's **Build Settings > Build Phases >
-Embed Frameworks**.
-Then, select **Embed & Sign** from the drop-down list.
+After linking the frameworks, you should see them in the 
+**Frameworks, Libraries, and Embedded Content**
+section of your target's **General** settings. 
+To embed the dynamic frameworks
+select **Embed & Sign**. 
+
+They will then appear under **Embed Frameworks** within 
+**Build Phases** as follows: 
 
 {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
 
 You should now be able to build the project in Xcode using `⌘B`.
-
-{{site.alert.tip}}
-  To embed the Debug version of the Flutter frameworks in your
-  Debug build configuration and the Release version in your
-  Release configuration, in your `MyApp.xcodeproj/project.pbxproj`,
-  try replacing `path = Flutter/Release/example.xcframework;`
-  with `path = "Flutter/$(CONFIGURATION)/example.xcframework";`
-  for all added frameworks. (Note the added `"`.)
-
-  You must also add `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`
-  to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
-  build setting.
-{{site.alert.end}}
 
 ### Option C - Embed application and plugin frameworks in Xcode and Flutter framework with CocoaPods
 
@@ -326,6 +349,9 @@ the flag `--cocoapods`. This produces a `Flutter.podspec`
 instead of an engine Flutter.xcframework.
 The App.xcframework and plugin frameworks are generated
 as described in Option B.
+
+To generate the `Flutter.podspec` and frameworks, run the following 
+from the command line in the root of your Flutter module:
 
 ```terminal
 flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
@@ -363,7 +389,7 @@ pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec
   `flutter attach` and `Release` when you're ready to ship.
 {{site.alert.end}}
 
-Embed and link the generated App.xcframework,
+Link and embed the generated App.xcframework,
 FlutterPluginRegistrant.xcframework,
 and any plugin frameworks into your existing application
 as described in Option B.
@@ -461,7 +487,7 @@ Repeat for any iOS unit test targets.
 
 You can now [add a Flutter screen][] to your existing application.
 
-[add_to_app code samples]: {{site.github}}/flutter/samples/tree/master/add_to_app
+[add_to_app code samples]: {{site.github}}/flutter/samples/tree/main/add_to_app
 [add a Flutter screen]: {{site.url}}/development/add-to-app/ios/add-flutter-screen
 [Android Studio/IntelliJ]: {{site.url}}/development/tools/android-studio
 [build modes of Flutter]: {{site.url}}/testing/build-modes
@@ -478,3 +504,5 @@ You can now [add a Flutter screen][] to your existing application.
 [VS Code]: {{site.url}}/development/tools/vs-code
 [XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
 [Xcode installed]: {{site.url}}/get-started/install/macos#install-xcode
+[News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
+[Debugging your add-to-app module]: {{site.url}}/development/add-to-app/debugging/

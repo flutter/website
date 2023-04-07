@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:intl/intl.dart' as intl;
-import 'package:intl/date_symbols.dart' as intl;
-import 'package:intl/date_symbol_data_custom.dart' as date_symbol_data_custom;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/date_symbol_data_custom.dart' as date_symbol_data_custom;
+import 'package:intl/date_symbols.dart' as intl;
+import 'package:intl/intl.dart' as intl;
 
 /// A custom set of date patterns for the `nn` locale.
 ///
@@ -314,28 +314,17 @@ class _NnMaterialLocalizationsDelegate
 /// and formatting.
 class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   const NnMaterialLocalizations({
-    String localeName = 'nn',
-    required intl.DateFormat fullYearFormat,
-    required intl.DateFormat compactDateFormat,
-    required intl.DateFormat shortDateFormat,
-    required intl.DateFormat mediumDateFormat,
-    required intl.DateFormat longDateFormat,
-    required intl.DateFormat yearMonthFormat,
-    required intl.DateFormat shortMonthDayFormat,
-    required intl.NumberFormat decimalFormat,
-    required intl.NumberFormat twoDigitZeroPaddedFormat,
-  }) : super(
-          localeName: localeName,
-          fullYearFormat: fullYearFormat,
-          compactDateFormat: compactDateFormat,
-          shortDateFormat: shortDateFormat,
-          mediumDateFormat: mediumDateFormat,
-          longDateFormat: longDateFormat,
-          yearMonthFormat: yearMonthFormat,
-          shortMonthDayFormat: shortMonthDayFormat,
-          decimalFormat: decimalFormat,
-          twoDigitZeroPaddedFormat: twoDigitZeroPaddedFormat,
-        );
+    super.localeName = 'nn',
+    required super.fullYearFormat,
+    required super.compactDateFormat,
+    required super.shortDateFormat,
+    required super.mediumDateFormat,
+    required super.longDateFormat,
+    required super.yearMonthFormat,
+    required super.shortMonthDayFormat,
+    required super.decimalFormat,
+    required super.twoDigitZeroPaddedFormat,
+  });
 
 // #docregion Getters
   @override
@@ -346,6 +335,7 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get alertDialogLabel => r'Alert';
+
 // #enddocregion Getters
 
   @override
@@ -429,6 +419,9 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get popupMenuLabel => r'Popup menu';
+
+  @override
+  String get menuBarMenuLabel => r'Menu Bar Label';
 
   @override
   String get postMeridiemAbbreviation => r'PM';
@@ -620,4 +613,144 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get unspecifiedDateRange => 'Date Range';
+
+  @override
+  String get keyboardKeyAlt => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyAltGraph => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyBackspace => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyCapsLock => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyChannelDown => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyChannelUp => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyControl => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyDelete => throw UnimplementedError();
+
+  String get keyboardKeyEisu => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyEject => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyEnd => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyEscape => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyFn => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyHome => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyInsert => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyMeta => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyMetaMacOs => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyMetaWindows => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumLock => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad0 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad1 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad2 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad3 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad4 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad5 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad6 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad7 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad8 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpad9 => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadAdd => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadComma => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadDecimal => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadDivide => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadEnter => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadEqual => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadMultiply => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadParenLeft => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadParenRight => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyNumpadSubtract => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyPageDown => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyPageUp => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyPower => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyPowerOff => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyPrintScreen => throw UnimplementedError();
+
+  @override
+  String get keyboardKeyScrollLock => throw UnimplementedError();
+
+  @override
+  String get keyboardKeySelect => throw UnimplementedError();
+
+  @override
+  String get keyboardKeySpace => throw UnimplementedError();
 }

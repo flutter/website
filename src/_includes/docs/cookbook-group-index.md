@@ -4,6 +4,6 @@
       | where_exp: "recipe", "recipe.url != path_base"
       | sort: 'title' %}
 
-{% for recipe in recipes %}
+{% for recipe in recipes -%}
 - [{{ recipe.title }}]({{ recipe.url }})
 {% endfor %}

@@ -49,11 +49,13 @@ dependencies:
   path:
 ```
 {{site.alert.tip}}
-  - For android, You must have to update `minSdkVersion` to 21 (or higher).
-  - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera.
+  - For android, You must update `minSdkVersion` to 21 (or higher).
+  - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.
     ```
     <key>NSCameraUsageDescription</key>
     <string>Explanation on why the camera access is needed.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Explanation on why the microphone access is needed.</string>
     ```
 {{site.alert.end}}
 
@@ -89,15 +91,14 @@ and display a preview of the camera's feed.
   4. Create and initialize the controller in the `initState()` method.
   5. Dispose of the controller in the `dispose()` method.
 
-<!--skip-->
 <?code-excerpt "lib/main_step3.dart (controller)"?>
 ```dart
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
-    Key? key,
+    super.key,
     required this.camera,
-  }) : super(key: key);
+  });
 
   final CameraDescription camera;
 
@@ -270,9 +271,9 @@ Future<void> main() async {
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
-    Key? key,
+    super.key,
     required this.camera,
-  }) : super(key: key);
+  });
 
   final CameraDescription camera;
 
@@ -339,6 +340,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             // where it was saved.
             final image = await _controller.takePicture();
 
+            if (!mounted) return;
+
             // If the picture was taken, display it on a new screen.
             await Navigator.of(context).push(
               MaterialPageRoute(
@@ -364,8 +367,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
 
-  const DisplayPictureScreen({Key? key, required this.imagePath})
-      : super(key: key);
+  const DisplayPictureScreen({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {

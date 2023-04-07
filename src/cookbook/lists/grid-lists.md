@@ -36,7 +36,7 @@ GridView.count(
     return Center(
       child: Text(
         'Item $index',
-        style: Theme.of(context).textTheme.headline5,
+        style: Theme.of(context).textTheme.headlineSmall,
       ),
     );
   }),
@@ -54,7 +54,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
             return Center(
               child: Text(
                 'Item $index',
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
             );
           }),

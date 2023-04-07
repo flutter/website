@@ -33,18 +33,12 @@ Things to review before selecting an approach.
 
 ## Provider
 
-A recommended approach.
-
 * [Simple app state management][], the previous page in this section
 * [Provider package][]
-* [You might not need Redux: The Flutter edition][], by Ryan Edge
-* [Making sense of all those Flutter Providers][]
 
 
-[Making sense of all those Flutter Providers]: {{site.medium}}/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd?sk=7859a73fac0ca414a0e911b0322e8589
 [Provider package]: {{site.pub-pkg}}/provider
 [Simple app state management]: {{site.url}}/development/data-and-backend/state-mgmt/simple
-[You might not need Redux: The Flutter edition]: https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7
 
 ## Riverpod
 
@@ -181,6 +175,11 @@ doesn't need a `BuildContext`.
   case you already use `flutter_hooks`.
 * [Flutter state management for minimalists][], by Suragch
 
+{{site.alert.note}}
+  To learn more, watch this short Package of the Week video on the GetIt package:
+
+  <iframe class="full-width" src="{{site.youtube-site}}/embed/f9XQD5mf6FY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{site.alert.end}}
 
 [Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
 [GetIt package]: {{site.pub-pkg}}/get_it
@@ -234,10 +233,8 @@ This package promotes the separation of concerns.
 A simplified reactive state management solution.
 
 * [GetX package][]
-* [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
 
-[Complete GetX State Management]: {{site.youtube-site}}/watch?v=CNpXbeI_slw
 [GetX package]: {{site.pub-pkg}}/get
 [GetX Flutter Firebase Auth Example]: {{site.medium}}/@jeffmcmorris/getx-flutter-firebase-auth-example-b383c1dd1de2
 
@@ -275,3 +272,32 @@ For more information, refer to the following resources:
 [Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/
 [Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
 [VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{site.youtube-site}}/watch?v=dXc3tR15AoA
+
+## solidart
+
+A simple but powerful state management solution inspired by SolidJS.
+
+* [Official Documentation][]
+* [solidart package][]
+* [flutter_solidart package][]
+
+[Official Documentation]: https://docs.page/nank1ro/solidart
+[solidart package]: {{site.pub-pkg}}/solidart
+[flutter_solidart package]: {{site.pub-pkg}}/flutter_solidart
+
+## flutter_reactive_widget
+
+An ultra-low-boilerplate solution for state management,
+flutter_reactive_widget defines
+`ReactiveWidget` and `ReactiveValue`. Any read of a `ReactiveValue`'s
+value within a `ReactiveWidget` definition automatically causes the
+`ReactiveWidget` to listen for changes on the `ReactiveValue`.
+
+Also includes a definition for `PersistentReactiveValue`, a subclass
+of `ReactiveValue` whose latest value persists, surviving app
+restarts.
+
+* [`flutter_reactive_widget`][] source and documentation
+
+[`flutter_reactive_widget`]: {{site.github}}/lukehutch/flutter_reactive_widget
+
