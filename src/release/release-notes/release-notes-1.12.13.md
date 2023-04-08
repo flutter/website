@@ -3008,7 +3008,7 @@ In addition to the PRs listed below, please also check out the following release
 
 ## Full PR List
 
- See the [full list]({{site.url}}/development/tools/sdk/release-notes/changelogs/changelog-1.12.13) of merged PRs for the 1.12 release.
+ See the [full list]({{site.url}}/release/release-notes/changelogs/changelog-1.12.13) of merged PRs for the 1.12 release.
 
 
 [breaking change policy on the Flutter wiki]: {{site.github}}/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes

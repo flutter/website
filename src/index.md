@@ -24,7 +24,7 @@ description: Get started with Flutter. Widgets, examples, updates, and API docs 
 **To see changes to the site since our last release,
 see [What's new][].**
 
-[What's new]: {{site.url}}/whats-new
+[What's new]: {{site.url}}/release/whats-new
 
 ## New to Flutter?
 
