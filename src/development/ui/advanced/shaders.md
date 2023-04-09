@@ -67,7 +67,7 @@ The available uniforms depends on how the shader was defined.
 
 ```dart
 void updateShader(Canvas canvas, Rect rect, FragmentProgram program) {
-  var shader = program.createShader();
+  var shader = program.fragmentShader();
   shader.setFloat(0, 42.0);
   canvas.drawRect(rect, Paint()..shader = shader);
 }
