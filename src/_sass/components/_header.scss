@@ -52,4 +52,10 @@ header.site-header {
       display: none;
     }
   }
+
+  .nav-icon {
+    &:hover {
+      color: $site-color-body-light;
+    }
+  }
 }
