@@ -259,7 +259,8 @@ and will ask before making changes to your Android project. Opting in allows
 Flutter to automatically depend on `androidx.multidex:multidex` and use a
 generated `FlutterMultiDexApplication` as the project's application.
 
-When you try to build and run your app with the **Run** and **Debug** options in your IDE, your build may fail with the following message:
+When you try to build and run your app with the **Run** and **Debug**
+options in your IDE, your build might fail with the following message:
 <img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png' width="100%" alt='screenshot of build failure because Multidex support is required'>
 
 To use the Flutter tool to enable mulidex, run `flutter run --debug` at the command line and select an Android device.
