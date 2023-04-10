@@ -273,7 +273,8 @@ When prompted, enter `y`. The Flutter tool enables multidex support and retries 
 
 {{site.alert.note}}
   Multidex support is natively included when targeting Android SDK 21 or later.
-  However, it isn't recommended to target API 21+ purely to resolve the multidex issue
+  However, we don't recommend targeting API 21+ purely to resolve the
+  multidex issue.
   as this might inadvertently exclude users running older devices.
 {{site.alert.end}}
 
