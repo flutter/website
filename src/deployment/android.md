@@ -263,10 +263,12 @@ When you try to build and run your app with the **Run** and **Debug**
 options in your IDE, your build might fail with the following message:
 <img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png' width="100%" alt='screenshot of build failure because Multidex support is required'>
 
-To use the Flutter tool to enable mulidex, run `flutter run --debug` at the command line and select an Android device.
+To enable multidex from the command line, run `flutter run --debug` and select an Android device:
+
 <img src='/assets/images/docs/deployment/android/cli-select-device.png' width="100%" alt='screenshot of selecting an Android device'>
 
-When prompted, enter `y` to add multidex support for Android. The Flutter tool will enable multidex support and retry the build.
+When prompted, enter `y`. The Flutter tool enables multidex support and retries the build:
+
 <img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png' width="100%" alt='screenshot of a successful build after adding multidex'>
 
 {{site.alert.note}}
