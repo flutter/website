@@ -6,7 +6,7 @@
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
-    see the [SDK releases][] page.
+    check out the [SDK archive][].
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
     (for example, `C:\src\flutter`).
@@ -93,5 +93,5 @@ verify that you’ve set everything up correctly.
 
 
 [Flutter repo]: {{site.repo.flutter}}
-[SDK releases]: {{site.url}}/development/tools/sdk/releases
+[SDK archive]: {{site.url}}/release/archive
 [Set up an editor]: {{site.url}}/get-started/editor?tab=androidstudio

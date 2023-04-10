@@ -15,7 +15,7 @@ join the [flutter-announce][] Google group.
 For Dart, you can join the [Dart Announce][] Google group,
 and review the [Dart changelog][].
 
-[release notes]: {{site.url}}/development/tools/sdk/release-notes
+[release notes]: {{site.url}}/release/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
@@ -31,7 +31,7 @@ You might also check out [What's next for Flutter][]
 and [Introducing Dart 3 alpha][].
 
 [3.7 blog post]: {{site.flutter-medium}}/whats-new-in-flutter-3-7-38cbea71133c
-[3.7 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-3.7.0
+[3.7 release notes]: {{site.url}}/release/release-notes/release-notes-3.7.0
 [Introducing Dart 3 alpha]: {{site.medium}}/dartlang/dart-3-alpha-f1458fb9d232
 [What's next for Flutter]: {{site.flutter-medium}}/whats-next-for-flutter-b94ce089f49c
 
@@ -209,7 +209,7 @@ Flutter 3.3 is live! For more information, see
 and [Dart 2.18: Objective-C & Swift interop][] (free articles on Medium),
 and the [Flutter 3.3 release notes][3.3 release notes].
 
-[3.3 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-3.3.0
+[3.3 release notes]: {{site.url}}/release/release-notes/release-notes-3.3.0
 [Announcing Flutter 3.3 at Flutter Vikings]: {{site.medium}}/flutter/announcing-flutter-3-3-at-flutter-vikings-6f213e068793
 [Dart 2.18: Objective-C & Swift interop]: {{site.medium}}/dartlang/dart-2-18-f4b3101f146c
 [What's new in Flutter 3.3]: {{site.medium}}/flutter/whats-new-in-flutter-3-3-893c7b9af1ff
@@ -256,7 +256,7 @@ and [Dart 2.17: Productivity and integration][]
 and the [Flutter 3 release notes][].
 
 [Dart 2.17: Productivity and integration]: {{site.medium}}/dartlang/dart-2-17-b216bfc80c5d
-[Flutter 3 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-3.0.0
+[Flutter 3 release notes]: {{site.url}}/release/release-notes/release-notes-3.0.0
 [Introducing Flutter 3]: {{site.medium}}/flutter/introducing-flutter-3-5eb69151622f
 [What's new in Flutter 3]: {{site.medium}}/flutter/whats-new-in-flutter-3-8c74a5bc32d0
 
@@ -585,7 +585,7 @@ publication since the last stable release:
 [Desktop support for Flutter]: {{site.url}}/development/platform-integration/desktop
 [Devtools]: {{site.url}}/development/tools/devtools/overview
 [Flutter Ads]: {{site.main-url}}/monetization
-[Flutter 2 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-2.0.0
+[Flutter 2 release notes]: {{site.url}}/release/release-notes/release-notes-2.0.0
 [Flutter Fix]: {{site.url}}/development/tools/flutter-fix
 [Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
 [Flutter web support hits the stable milestone]: {{site.flutter-medium}}/flutter-web-support-hits-the-stable-milestone-d6b84e83b425
@@ -934,7 +934,7 @@ Happy Fluttering!
 [Desktop support for Flutter]: {{site.url}}/development/platform-integration/desktop
 [Flutter: the first UI platform designed for ambient computing]: {{site.google-blog}}/2019/12/flutter-ui-ambient-computing.html?m=1
 [Flutter Favorite program]: {{site.url}}/development/packages-and-plugins/favorites
-[Flutter 1.12.13]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.12.13
+[Flutter 1.12.13]: {{site.url}}/release/release-notes/release-notes-1.12.13
 [Flutter Gallery]: https://flutter.github.io/samples/#/
 [Flutter Layout Explorer]: {{site.url}}/development/tools/devtools/inspector#flutter-layout-explorer
 [Flutter Medium publication]: {{site.medium}}/flutter
@@ -1002,7 +1002,7 @@ Other relevant docs:
 
 Happy Fluttering!
 
-[1.9.1 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.9.1
+[1.9.1 release notes]: {{site.url}}/release/release-notes/release-notes-1.9.1
 [building a web application]: {{site.url}}/development/platform-integration/web/building
 [`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
@@ -1057,7 +1057,7 @@ endpoints in a range of values. For information about this
 component and how to customize it, see
 [Material RangeSlider in Flutter].
 
-[1.7.8 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.7.8
+[1.7.8 release notes]: {{site.url}}/release/release-notes/release-notes-1.7.8
 [Animate a page route transition]: {{site.url}}/cookbook/animation/page-route-animation
 [Announcing Flutter 1.7]: {{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf
 [Cookbook]: {{site.url}}/cookbook
@@ -1084,9 +1084,9 @@ We are updating DartPad to work with Flutter. Try our new
 [Basic Flutter layout codelab][] and tell us what you think!
 
 [Basic Flutter layout codelab]: {{site.url}}/codelabs/layout-basics
-[download the release]: {{site.url}}/development/tools/sdk/releases
+[download the release]: {{site.url}}/release/archive
 [Flutter 1.5]: {{site.google-blog}}/2019/05/Flutter-io19.html
-[1.5.4 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.5.4
+[1.5.4 release notes]: {{site.url}}/release/release-notes/release-notes-1.5.4
 
 ## February 26, 2019: 1.2 release
 
@@ -1122,12 +1122,12 @@ If you have questions or comments about any of these docs,
 
 [Android Studio/IntelliJ]: {{site.url}}/development/tools/android-studio
 [different state management options]: {{site.url}}/development/data-and-backend/state-mgmt/options
-[download the release]: {{site.url}}/development/tools/sdk/releases
+[download the release]: {{site.url}}/release/archive
 [ephemeral vs app state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
 [file an issue]: {{site.repo.this}}/issues
 [introduction]: {{site.url}}/development/data-and-backend/state-mgmt/intro
 [Performance profiling]: {{site.url}}/perf/ui-performance
-[1.2.1 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.2.1
+[1.2.1 release notes]: {{site.url}}/release/release-notes/release-notes-1.2.1
 [simple app state management]: {{site.url}}/development/data-and-backend/state-mgmt/simple
 [state management advice]: {{site.url}}/development/data-and-backend/state-mgmt/intro
 [thinking declaratively]: {{site.url}}/development/data-and-backend/state-mgmt/declarative
