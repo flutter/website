@@ -256,7 +256,7 @@
     "description": "A bottom app bar displays navigation and key actions at the bottom of mobile screens.",
     "categories": [],
     "subcategories": [
-      "Communication"
+      "Navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/BottomAppBar-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bottom-app-bar.png'>"
@@ -1331,7 +1331,7 @@
     "description": "Navigation bars offer a persistent and convenient way to switch between primary destinations in an apps.",
     "categories": [],
     "subcategories": [
-      "Communication"
+      "Navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/Badge-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-navigation-bar.png'>"
@@ -1987,6 +1987,16 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/TextButton-class.html",
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VNDg3V3ZjU2hsNGc/components_buttons_usage3.png'>"
+  },
+  {
+    "name": "TextField",
+    "description": "Text fields allow users to enter text into a UI. They typically appear in forms and dialogs.",
+    "categories": [],
+    "subcategories": [
+      "Text Inputs"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/TextField-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-text-field.png'>"
   },
   {
     "name": "TextField",
