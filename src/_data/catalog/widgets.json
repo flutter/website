@@ -33,7 +33,7 @@
     "name": "AnimatedAlign",
     "description": "Animated version of Align which automatically transitions the child's position over a given duration whenever the given alignment changes.",
     "categories": [
-        "Animation and Motion"
+      "Animation and Motion"
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedAlign-class.html",
@@ -261,7 +261,7 @@
     "link": "https://api.flutter.dev/flutter/material/Card-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-card.png'>"
   },
-    {
+  {
     "name": "Card",
     "description": "A Material 3 card. A card has slightly rounded corners and a shadow.",
     "categories": [],
@@ -361,7 +361,7 @@
       "Actions"
     ],
     "link": "https://api.flutter.dev/flutter/material/ButtonStyle-class.html",
-    "image": "<img alt='' src='/assets/images/docs/material-3-buttons.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-buttons.png'>"
   },
   {
     "name": "ConstrainedBox",
@@ -464,6 +464,26 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-fullscreen-dialog-transition.png'>"
+  },
+  {
+    "name": "CupertinoListSection",
+    "description": "An iOS-style container for a scrollable view.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoListSection-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-list-section.png'>"
+  },
+  {
+    "name": "CupertinoListTile",
+    "description": "An iOS-style tile that makes up a row in a list.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoListTile-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-list-tile.png'>"
   },
   {
     "name": "CupertinoNavigationBar",
@@ -626,26 +646,6 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-textfield.png'>"
-  },
-  {
-    "name": "CupertinoListSection",
-    "description": "An iOS-style container for a scrollable view.",
-    "categories": [
-      "Cupertino (iOS-style widgets)"
-    ],
-    "subcategories": [],
-    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoListSection-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-list-section.png'>"
-  },
-  {
-    "name": "CupertinoListTile",
-    "description": "An iOS-style tile that makes up a row in a list.",
-    "categories": [
-      "Cupertino (iOS-style widgets)"
-    ],
-    "subcategories": [],
-    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoListTile-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-list-tile.png'>"
   },
   {
     "name": "CupertinoTimerPicker",
@@ -1698,16 +1698,6 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-tab-bar.png'>"
   },
   {
-    "name": "Table",
-    "description": "A widget that uses the table layout algorithm for its children.",
-    "categories": [],
-    "subcategories": [
-      "Multi-child layout widgets"
-    ],
-    "link": "https://api.flutter.dev/flutter/widgets/Table-class.html",
-    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
-  },
-  {
     "name": "TabController",
     "description": "Coordinates tab selection between a TabBar and a TabBarView.",
     "categories": [],
@@ -1726,6 +1716,16 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/TabPageSelector-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-tab-bar.png'>"
+  },
+  {
+    "name": "Table",
+    "description": "A widget that uses the table layout algorithm for its children.",
+    "categories": [],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://api.flutter.dev/flutter/widgets/Table-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Text",
@@ -1809,5 +1809,115 @@
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Wrap-class.html",
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Extended FAB",
+    "description": "Extended floating action buttons (extended FABs) help people take primary actions. They're wider than FABs to accommodate a text label and larger target area.",
+    "categories": [],
+    "subcategories": [
+      "Actions"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.extended.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-extended-fab.png'>"
+  },
+  {
+    "name": "Floating Action Button",
+    "description": "The FAB represents the most important action on a screen. It puts key actions within reach.",
+    "categories": [],
+    "subcategories": [
+      "Actions"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-floating-action-button.png'>"
+  },
+  {
+    "name": "Icon Button",
+    "description": "Icon buttons help people take supplementary actions with a single tap.",
+    "categories": [],
+    "subcategories": [
+      "Actions"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/IconButton-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-icon-button.png'>"
+  },
+  {
+    "name": "Segmented Button",
+    "description": "Segmented buttons help people select options, switch views, or sort elements.",
+    "categories": [],
+    "subcategories": [
+      "Actions"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/SegmentedButton-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-segmented-button.png'>"
+  },
+  {
+    "name": "Badge",
+    "description": "Badges convey dynamic information, such as counts or status. A badge can include labels or numbers.",
+    "categories": [],
+    "subcategories": [
+      "Communication"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Badge-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-badge.png'>"
+  },
+  {
+    "name": "Progress Indicator",
+    "description": "Progress indicators inform users about the status of ongoing processes, such as loading an app or submitting a form.",
+    "categories": [],
+    "subcategories": [
+      "Communication"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-progress-indicator.png'>"
+  },
+  {
+    "name": "Snackbar",
+    "description": "Snackbars provide brief messages about app processes at the bottom of the screen.",
+    "categories": [],
+    "subcategories": [
+      "Communication"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/SnackBar-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-snack-bar.png'>"
+  },
+  {
+    "name": "Bottom Sheet",
+    "description": "Bottom sheets are surfaces containing supplementary content, anchored to the bottom of the screen.",
+    "categories": [],
+    "subcategories": [
+      "Containment"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/BottomSheet-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bottom-sheet.png'>"
+  },
+  {
+    "name": "Dialog",
+    "description": "Dialogs provide important prompts in a user flow.",
+    "categories": [],
+    "subcategories": [
+      "Containment"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Dialog-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-dialog.png'>"
+  },
+  {
+    "name": "Divider",
+    "description": "A divider is a thin line that groups content in lists and containers.",
+    "categories": [],
+    "subcategories": [
+      "Containment"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Divider-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-divider.png'>"
+  },
+  {
+    "name": "List",
+    "description": "Lists are continuous, vertical indexes of text or images.",
+    "categories": [],
+    "subcategories": [
+      "Containment"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/List-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-list.png'>"
   }
 ]
