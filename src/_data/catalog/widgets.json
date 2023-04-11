@@ -222,6 +222,16 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "Badge",
+    "description": "Badges convey dynamic information, such as counts or status. A badge can include labels or numbers.",
+    "categories": [],
+    "subcategories": [
+      "Communication"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Badge-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-badge.png'>"
+  },
+  {
     "name": "Baseline",
     "description": "A widget that positions its child according to the child's baseline.",
     "categories": [],
@@ -230,6 +240,16 @@
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Baseline-class.html",
     "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-baseline' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#ffffff'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='20' width='60' height='50' fill='#ffffff'/><rect x='20' y='45' width='60' height='30' fill='#4dd0e1'/><line x1='85' y1='20' x2='85' y2='66' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-baseline)'/><line x1='15' y1='20' x2='15' y2='66' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-baseline)'/><line x1='10' y1='70' x2='90' y2='70' stroke='#ffffff' stroke-width='2'/><text x='50' y='69' text-anchor='middle' font-family='Roboto' font-size='25' fill='#3b75ad'>Abc </text></svg>"
+  },
+  {
+    "name": "Bottom Sheet",
+    "description": "Bottom sheets are surfaces containing supplementary content, anchored to the bottom of the screen.",
+    "categories": [],
+    "subcategories": [
+      "Containment"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/BottomSheet-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bottom-sheet.png'>"
   },
   {
     "name": "BottomNavigationBar",
@@ -750,6 +770,16 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "Dialog",
+    "description": "Dialogs provide important prompts in a user flow.",
+    "categories": [],
+    "subcategories": [
+      "Containment"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Dialog-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-dialog.png'>"
+  },
+  {
     "name": "Dismissible",
     "description": "A widget that can be dismissed by dragging in the indicated direction. Dragging or flinging this widget in the DismissDirection causes the child to slide out of view. Following the slide animation, if resizeDuration is non-null, the Dismissible widget animates its height (or width, whichever is perpendicular to the dismiss direction) to zero over the resizeDuration.",
     "categories": [],
@@ -768,6 +798,16 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/Divider-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-divider.png'>"
+  },
+  {
+    "name": "Divider",
+    "description": "A divider is a thin line that groups content in lists and containers.",
+    "categories": [],
+    "subcategories": [
+      "Containment"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Divider-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-divider.png'>"
   },
   {
     "name": "DragTarget",
@@ -864,6 +904,16 @@
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VOXF3eEJ3azZMSjg/components_expansion_panels.png'>"
   },
   {
+    "name": "Extended FAB",
+    "description": "Extended floating action buttons (extended FABs) help people take primary actions. They're wider than FABs to accommodate a text label and larger target area.",
+    "categories": [],
+    "subcategories": [
+      "Actions"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.extended.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-extended-fab.png'>"
+  },
+  {
     "name": "FadeTransition",
     "description": "Animates the opacity of a widget.",
     "categories": [
@@ -882,6 +932,16 @@
     ],
     "link": "https://api.flutter.dev/flutter/widgets/FittedBox-class.html",
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Floating Action Button",
+    "description": "The FAB represents the most important action on a screen. It puts key actions within reach.",
+    "categories": [],
+    "subcategories": [
+      "Actions"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-floating-action-button.png'>"
   },
   {
     "name": "FloatingActionButton",
@@ -1012,6 +1072,16 @@
     "image": "<img alt='' src='https://flutter.github.io/assets-for-api-docs/assets/widgets/icon.png'>"
   },
   {
+    "name": "Icon Button",
+    "description": "Icon buttons help people take supplementary actions with a single tap.",
+    "categories": [],
+    "subcategories": [
+      "Actions"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/IconButton-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-icon-button.png'>"
+  },
+  {
     "name": "IconButton",
     "description": "An icon button is a picture printed on a Material widget that reacts to touches by filling with color (ink).",
     "categories": [],
@@ -1113,6 +1183,16 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-linear-progress-indicator.png'>"
+  },
+  {
+    "name": "List",
+    "description": "Lists are continuous, vertical indexes of text or images.",
+    "categories": [],
+    "subcategories": [
+      "Containment"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/List-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-list.png'>"
   },
   {
     "name": "ListBody",
@@ -1309,6 +1389,16 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "Progress Indicator",
+    "description": "Progress indicators inform users about the status of ongoing processes, such as loading an app or submitting a form.",
+    "categories": [],
+    "subcategories": [
+      "Communication"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-progress-indicator.png'>"
+  },
+  {
     "name": "Radio",
     "description": "Radio buttons allow the user to select one option from a set. Use radio buttons for exclusive selection if you think that the user needs to see all available options side-by-side. ",
     "categories": [],
@@ -1453,6 +1543,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/Scrollbar-class.html",
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Segmented Button",
+    "description": "Segmented buttons help people select options, switch views, or sort elements.",
+    "categories": [],
+    "subcategories": [
+      "Actions"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/SegmentedButton-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-segmented-button.png'>"
   },
   {
     "name": "Semantics",
@@ -1636,6 +1736,16 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-snack-bar.png'>"
   },
   {
+    "name": "Snackbar",
+    "description": "Snackbars provide brief messages about app processes at the bottom of the screen.",
+    "categories": [],
+    "subcategories": [
+      "Communication"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/SnackBar-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-snack-bar.png'>"
+  },
+  {
     "name": "Stack",
     "description": "This class is useful if you want to overlap several children in a simple way, for example having some text and an image, overlaid with a gradient and a button attached to the bottom.",
     "categories": [
@@ -1809,115 +1919,5 @@
     ],
     "link": "https://api.flutter.dev/flutter/widgets/Wrap-class.html",
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
-  },
-  {
-    "name": "Extended FAB",
-    "description": "Extended floating action buttons (extended FABs) help people take primary actions. They're wider than FABs to accommodate a text label and larger target area.",
-    "categories": [],
-    "subcategories": [
-      "Actions"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.extended.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-extended-fab.png'>"
-  },
-  {
-    "name": "Floating Action Button",
-    "description": "The FAB represents the most important action on a screen. It puts key actions within reach.",
-    "categories": [],
-    "subcategories": [
-      "Actions"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-floating-action-button.png'>"
-  },
-  {
-    "name": "Icon Button",
-    "description": "Icon buttons help people take supplementary actions with a single tap.",
-    "categories": [],
-    "subcategories": [
-      "Actions"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/IconButton-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-icon-button.png'>"
-  },
-  {
-    "name": "Segmented Button",
-    "description": "Segmented buttons help people select options, switch views, or sort elements.",
-    "categories": [],
-    "subcategories": [
-      "Actions"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/SegmentedButton-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-segmented-button.png'>"
-  },
-  {
-    "name": "Badge",
-    "description": "Badges convey dynamic information, such as counts or status. A badge can include labels or numbers.",
-    "categories": [],
-    "subcategories": [
-      "Communication"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Badge-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-badge.png'>"
-  },
-  {
-    "name": "Progress Indicator",
-    "description": "Progress indicators inform users about the status of ongoing processes, such as loading an app or submitting a form.",
-    "categories": [],
-    "subcategories": [
-      "Communication"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-progress-indicator.png'>"
-  },
-  {
-    "name": "Snackbar",
-    "description": "Snackbars provide brief messages about app processes at the bottom of the screen.",
-    "categories": [],
-    "subcategories": [
-      "Communication"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/SnackBar-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-snack-bar.png'>"
-  },
-  {
-    "name": "Bottom Sheet",
-    "description": "Bottom sheets are surfaces containing supplementary content, anchored to the bottom of the screen.",
-    "categories": [],
-    "subcategories": [
-      "Containment"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/BottomSheet-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bottom-sheet.png'>"
-  },
-  {
-    "name": "Dialog",
-    "description": "Dialogs provide important prompts in a user flow.",
-    "categories": [],
-    "subcategories": [
-      "Containment"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Dialog-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-dialog.png'>"
-  },
-  {
-    "name": "Divider",
-    "description": "A divider is a thin line that groups content in lists and containers.",
-    "categories": [],
-    "subcategories": [
-      "Containment"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Divider-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-divider.png'>"
-  },
-  {
-    "name": "List",
-    "description": "Lists are continuous, vertical indexes of text or images.",
-    "categories": [],
-    "subcategories": [
-      "Containment"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/List-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-list.png'>"
   }
 ]
