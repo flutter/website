@@ -1,10 +1,7 @@
 {{site.alert.note}}
-  As of Flutter's 1.19.0 dev release, the Flutter SDK
-  contains the `dart` command alongside the `flutter`
-  command so that you can more easily run Dart
-  command-line programs. Downloading the Flutter SDK
-  also downloads the compatible version of Dart,
-  but if you've downloaded the Dart SDK separately,
+  Downloading the Flutter SDK
+  also downloads a compatible version of Dart.
+  If you've downloaded the Dart SDK separately,
   make sure that the Flutter version of `dart` is
   first in your path, as the two versions might not be compatible.
   The following command tells you whether the `flutter` and `dart`

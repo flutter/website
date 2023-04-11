@@ -6,7 +6,7 @@ description: How to develop Flutter apps in Visual Studio Code.
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
   <li class="nav-item">
-    <a class="nav-link" href="/development/tools/android-studio" role="tab" aria-selected="false">Android Studio and IntelliJ</a>
+    <a class="nav-link" href="{{site.url}}/development/tools/android-studio" role="tab" aria-selected="false">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link active" role="tab" aria-selected="true">Visual Studio Code</a>
@@ -130,14 +130,13 @@ running or debugging.
 
  1. Click **Run > Start Without Debugging** in the
     main IDE window, or press `Ctrl`+`F5`.
-    The status bar turns orange to show you are in a debug session.<br>
-    ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
 ### Run app with breakpoints
 
  1. If desired, set breakpoints in your source code.
  1. Click **Run > Start Debugging** in the main IDE window,
-    or press `F5`.
+    or press `F5`. The status bar turns orange to show you are in a debug session.<br>
+    ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
     * The left **Debug Sidebar** shows stack frames and variables.
     * The bottom **Debug Console** pane shows detailed logging output.
@@ -177,8 +176,8 @@ You can read more about them in [Flutter's build modes][].
 
 Flutter offers a best-in-class developer cycle enabling you
 to see the effect of your changes almost instantly with the
-_Stateful Hot Reload_ feature. See
-[Using hot reload](hot-reload) for details.
+_Stateful Hot Reload_ feature.
+To learn more, check out [Hot reload][].
 
 ## Advanced debugging
 
@@ -316,6 +315,7 @@ When filing new issues, include [flutter doctor][] output.
 [flutter doctor]: {{site.url}}/resources/bug-reports/#provide-some-flutter-diagnostics
 [Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
 [Flutter's build modes]: {{site.url}}/testing/build-modes
+[Hot reload]: {{site.url}}/development/tools/hot-reload
 [let us know]: {{site.repo.this}}/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: {{site.url}}/development/tools/devtools/vscode

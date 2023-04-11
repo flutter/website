@@ -33,8 +33,6 @@ Things to review before selecting an approach.
 
 ## Provider
 
-A recommended approach.
-
 * [Simple app state management][], the previous page in this section
 * [Provider package][]
 
@@ -235,10 +233,8 @@ This package promotes the separation of concerns.
 A simplified reactive state management solution.
 
 * [GetX package][]
-* [Complete GetX State Management][], a video by Tadas Petra
 * [GetX Flutter Firebase Auth Example][], by Jeff McMorris
 
-[Complete GetX State Management]: {{site.youtube-site}}/watch?v=CNpXbeI_slw
 [GetX package]: {{site.pub-pkg}}/get
 [GetX Flutter Firebase Auth Example]: {{site.medium}}/@jeffmcmorris/getx-flutter-firebase-auth-example-b383c1dd1de2
 

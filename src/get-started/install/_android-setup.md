@@ -15,7 +15,7 @@
     when developing for Android.
  1. Run `flutter doctor` to confirm that Flutter has located
     your installation of Android Studio. If Flutter cannot locate it,
-    run `flutter config --android-studio-dir <directory>` to set the
+    run `flutter config --android-studio-dir=<directory>` to set the
     directory that Android Studio is installed to.
 
 ### Set up your Android device

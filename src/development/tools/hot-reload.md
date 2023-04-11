@@ -414,8 +414,8 @@ The hot reload mechanism then causes the Flutter framework
 to trigger a rebuild/re-layout/repaint of all existing
 widgets and render objects.
 
-[static-variables]: {{site.dart-site}}/guides/language/language-tour#static-variables
-[const-new]: {{site.dart-site}}/guides/language/language-tour#final-and-const
+[static-variables]: {{site.dart-site}}/language/classes#static-variables
+[const-new]: {{site.dart-site}}/language/variables#final-and-const
 [Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
 [Flutter editor]: {{site.url}}/get-started/editor
 [Issue 43574]: {{site.repo.flutter}}/issues/43574

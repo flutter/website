@@ -76,7 +76,7 @@ you need the following in addition to the Flutter SDK:
 For macOS desktop development,
 you need the following in addition to the Flutter SDK:
 
-* [Xcode][]
+* [Xcode][] the full version of Xcode is required, not just the commandline tools
 * [CocoaPods][] if you use plugins
 
 [CocoaPods]: https://cocoapods.org/
@@ -109,7 +109,7 @@ Alternatively, if you prefer not to use `snapd`,
 you can use the following command:
 
 ```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
 ```
 
 [Clang]: https://clang.llvm.org/

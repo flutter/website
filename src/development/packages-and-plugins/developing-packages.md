@@ -4,20 +4,6 @@ short-title: Developing
 description: How to write packages and plugins for Flutter.
 ---
 
-{{site.note.alert}}
-  The plugin API supports [federated plugins][] that
-  enable separation of different platform implementations.
-  You can also now indicate
-  [which platforms a plugin][supported-platforms]
-  supports, for example web and macOS.
-
-  Eventually, the old plugin APIs will be deprecated.
-  In the short term, you will see a warning when the
-  framework detects that you are using an old-style
-  plugin. For information on how to upgrade your plugin,
-  see [Supporting the new Android plugins APIs][].
-{{site.note.end}}
-
 ## Package introduction
 
 Packages enable the creation of modular code that can be shared easily.
@@ -310,6 +296,51 @@ Note that as shown here, an app-facing package can have
 some platforms implemented within the package,
 and others in endorsed federated implementations.
 
+#### Shared iOS and macOS implementations
+
+Many frameworks support both iOS and macOS with identical
+or mostly identical APIs, making it possible to implement
+some plugins for both iOS and macOS with the same codebase.
+Normally each platform's implementation is in its own
+folder, but the `sharedDarwinSource` option allows iOS
+and macOS to use the same folder instead:
+
+
+```yaml
+flutter:
+  plugin:
+    platforms:
+      ios:
+        pluginClass: HelloPlugin
+        sharedDarwinSource: true
+      macos:
+        pluginClass: HelloPlugin
+        sharedDarwinSource: true
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+  # Flutter versions prior to 3.7 did not support the
+  # sharedDarwinSource option.
+  flutter: ">=3.7.0"
+```
+
+When `sharedDawninSource` is enabled, instead of
+an `ios` directory for iOS and a `macos` directory
+for macOS, both platforms use a shared `darwin`
+directory for all code and resources. When enabling
+this option, you need to move any existing files
+from `ios` and `macos` to the shared directory. You
+also need to update the podspec file to set the
+dependencies and deployment targets for both platforms,
+for example:
+
+```ruby
+  s.ios.dependency 'Flutter'
+  s.osx.dependency 'FlutterMacOS'
+  s.ios.deployment_target = '11.0'
+  s.osx.deployment_target = '10.14'
+```
+
 ### Step 1: Create the package
 
 To create a plugin package, use the `--template=plugin`
@@ -425,7 +456,8 @@ Then use the following steps:
 
 The iOS platform code for your plugin is located in
 `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
-in the Project Navigator.
+in the Project Navigator. (If you are using `sharedDarwinSource`,
+the path will end with `hello/darwin/Classes` instead.)
 
 You can run the example app by pressing the run (&#9654;) button.
 
@@ -478,7 +510,8 @@ Then use the following steps:
 
 The macOS platform code for your plugin is located in
 `Pods/Development Pods/hello/../../example/macos/Flutter/ephemeral/.symlinks/plugins/hello/macos/Classes`
-in the Project Navigator.
+in the Project Navigator. (If you are using `sharedDarwinSource`,
+the path will end with `hello/darwin/Classes` instead.)
 
 You can run the example app by pressing the run (&#9654;) button.
 
@@ -603,11 +636,18 @@ class would be the same as in a C++-only implementation.
 
 ### Testing your plugin
 
-We encourage you test your plugin with automated tests,
-to ensure that functionality does not regress
-as you make changes to your code. For more information,
-see [Testing your plugin][],
-a section in [Supporting the new Android plugins APIs][].
+We encourage you test your plugin with automated tests
+to ensure that functionality doesn't regress
+as you make changes to your code.
+
+To learn more about testing your plugins,
+check out [Testing plugins][].
+If you are writing tests for your Flutter app
+and plugins are causing crashes,
+check out [Flutter in plugin tests][].
+
+[Flutter in plugin tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
+[Testing plugins]: {{site.url}}/testing/testing-plugins
 
 ## Developing FFI plugin packages {#plugin-ffi}
 
@@ -980,10 +1020,8 @@ PENDING
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
-[Supporting the new Android plugins APIs]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[Testing your plugin]: {{site.url}}/development/platform-integration/android/plugin-api-migration#testing-your-plugin
 [unit tests]: {{site.url}}/testing#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

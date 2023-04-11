@@ -21,6 +21,8 @@ than can be achieved using implicit animations.
   This codelab is not yet complete.
 {{site.alert.end}}
 
+{% include docs/dartpad-troubleshooting.md %}
+
 To get the most out of this codelab,
 you should have basic knowledge of the following:
 

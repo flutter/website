@@ -15,7 +15,7 @@ Google Maps from the Android SDK
 directly inside your Flutter app.
 
 {{site.alert.note}}
-  This page discusses how to host your own native views
+  This page discusses how to host your own native Android views
   within a Flutter app.
   If you'd like to embed native iOS views in your Flutter app,
   see [Hosting native iOS views][].
@@ -49,15 +49,6 @@ use the following steps:
 
 On the Dart side, create a `Widget`
 and add one of the following build implementations.
-
-{{site.alert.warning}}
-  For this to work, your plugin or app must use
-  Android embedding v2.
-  If you haven't updated your plugin, see the
-  [plugin migration guide][].
-{{site.alert.end}}
-
-[plugin migration guide]: {{site.url}}/development/platform-integration/android/plugin-api-migration
 
 #### Hybrid composition
 
@@ -183,7 +174,6 @@ package dev.flutter.example
 
 import android.content.Context
 import android.graphics.Color
-import android.view.View
 import android.widget.TextView
 import io.flutter.plugin.platform.PlatformView
 
