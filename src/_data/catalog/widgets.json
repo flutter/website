@@ -332,6 +332,16 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-checkbox.png'>"
   },
   {
+    "name": "Checkbox",
+    "description": "Checkboxes allow users to select one or more items from a set. Checkboxes can turn an option on or off.",
+    "categories": [],
+    "subcategories": [
+      "Selection"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Checkbox-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-checkbox.png'>"
+  },
+  {
     "name": "Chip",
     "description": "A Material Design chip. Chips represent complex entities in small blocks, such as a contact.",
     "categories": [],
@@ -340,6 +350,16 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/Chip-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-chip.png'>"
+  },
+  {
+    "name": "Chip",
+    "description": "Chips help people enter information, make selections, filter content, or trigger actions.",
+    "categories": [],
+    "subcategories": [
+      "Selection"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Chip-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-chip.png'>"
   },
   {
     "name": "CircularProgressIndicator",
@@ -758,6 +778,16 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/showDatePicker.html",
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VY2h4WElGdEhPb2c/components_pickers.png'>"
+  },
+  {
+    "name": "Date Picker",
+    "description": "Date pickers let people select a date, or a range of dates.",
+    "categories": [],
+    "subcategories": [
+      "Selection"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/showDatePicker.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-date-picker.png'>"
   },
   {
     "name": "DecoratedBox",
@@ -1277,6 +1307,16 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "Menu",
+    "description": "Menus display a list of choices on a temporary surface.",
+    "categories": [],
+    "subcategories": [
+      "Selection"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/PopupMenuButton-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-menu.png'>"
+  },
+  {
     "name": "MergeSemantics",
     "description": "A widget that merges the semantics of its descendants.",
     "categories": [
@@ -1457,6 +1497,16 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/Radio-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-radio.png'>"
+  },
+  {
+    "name": "Radio Button",
+    "description": "Radio buttons allow users to select one option from a set.",
+    "categories": [],
+    "subcategories": [
+      "Selection"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Radio-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-radio-button.png'>"
   },
   {
     "name": "RawImage",
@@ -1685,6 +1735,16 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-slider.png'>"
   },
   {
+    "name": "Slider",
+    "description": "Sliders allow users to make selections from a range of values.",
+    "categories": [],
+    "subcategories": [
+      "Selection"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Slider-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-slider.png'>"
+  },
+  {
     "name": "SliverAppBar",
     "description": "A material design app bar that integrates with a CustomScrollView.",
     "categories": [],
@@ -1838,6 +1898,16 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-switch.png'>"
   },
   {
+    "name": "Switch",
+    "description": "Switches toggle the state of a single item on or off.",
+    "categories": [],
+    "subcategories": [
+      "Selection"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Switch-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-switch.png'>"
+  },
+  {
     "name": "Tab Bar",
     "description": "Tabs organize content across different screens, data sets, and other interactions.",
     "categories": [],
@@ -1937,6 +2007,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/Theme-class.html",
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Time Picker",
+    "description": "Time pickers help users select and set a specific time.",
+    "categories": [],
+    "subcategories": [
+      "Selection"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/showTimePicker.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-time-picker.png'>"
   },
   {
     "name": "Tooltip",
