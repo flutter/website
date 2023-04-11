@@ -6,8 +6,8 @@
     "id": "basics"
   },
   {
-    "name": "Material Components",
-    "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://material.io/design/guidelines-overview\">Material Design guidelines</a>.",
+    "name": "Material 2 Components",
+    "description": "Widgets implementing the <a href=\"https://m2.material.io/design\">Material 2 Design guidelines</a>. <br /><br />The default Material version for Flutter will become Material 3 in <MONTH/YEAR>. We recommend migrating to <LINK>Material 3. ",
     "subcategories": [
       {
         "name": "App structure and navigation"
@@ -29,6 +29,31 @@
       }
     ],
     "id": "material"
+  },
+  {
+    "name": "Material 3 Components",
+    "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://material.io/design/guidelines-overview\">Material 3 Design guidelines</a>.",
+    "subcategories": [
+      {
+        "name": "Actions"
+      },
+      {
+        "name": "Communication"
+      },
+      {
+        "name": "Containment"
+      },
+      {
+        "name": "Navigation"
+      },
+      {
+        "name": "Selection"
+      },
+      {
+        "name": "Text Inputs"
+      }
+    ],
+    "id": "material3"
   },
   {
     "name": "Cupertino (iOS-style widgets)",

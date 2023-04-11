@@ -261,6 +261,16 @@
     "link": "https://api.flutter.dev/flutter/material/Card-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-card.png'>"
   },
+    {
+    "name": "Card",
+    "description": "A Material 3 card. A card has slightly rounded corners and a shadow.",
+    "categories": [],
+    "subcategories": [
+      "Containment"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/Card-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-card.png'>"
+  },
   {
     "name": "Center",
     "description": "A widget that centers its child within itself.",
