@@ -130,7 +130,7 @@ You can pass in the following (optional) parameters:
 | Name | Description | Dart&nbsp;Type |
 |-|-|-|
 |`canvasKitBaseUrl`| The base URL from where `canvaskit.wasm` is downloaded. |`String`|
-|`canvasKitVariant`| The variant of CanvasKit to be downloaded. Available options are:<br><br>1. "auto": Chooses the most optimal variant for the browser (this is the default).<br><br>2. "full": Downloads the full variant of CanvasKit that works in all browsers.<br><br>3. "chromium": Downloads a smaller variant of CanvasKit that takes advantage of APIs that are only available in Chromium (**_WARNING_**: don't use the "chromium" option unless you know what you are doing. If you use it, your app will break on non-Chromium browsers). |`String`|
+|`canvasKitVariant`| The variant of CanvasKit to be downloaded. Available options are:<br><br>1. `auto`: Chooses the most optimal variant for the browser. The option defaults to this value.<br><br>2. `full`: Downloads the full variant of CanvasKit that works in all browsers.<br><br>3. `chromium`: Downloads a smaller variant of CanvasKit that uses APIs compatible with Chromium. **_Warning_**: Don't use the `chromium` option unless you plan on only using Chromium-based browsers. |`String`|
 |`canvasKitForceCpuOnly`| When `true`, forces CPU-only rendering in CanvasKit (the engine won't use WebGL). |`bool`|
 |`canvasKitMaximumSurfaces`| The maximum number of overlay surfaces that the CanvasKit renderer can use. |`double`|
 |`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
