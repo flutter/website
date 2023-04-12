@@ -843,4 +843,4 @@ Further detail about adapting alert dialogs is available in
 [`CircularProgressIndicator.adaptive()`]: {{site.api}}/flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
 [UI Component section]: {{site.api}}/resources/platform-adaptations/#ui-components
 [mat-navbar]: https://m3.material.io/components/navigation-bar/overview
-[hig-tabba]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
+[hig-tabbar]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
