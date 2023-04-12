@@ -12,7 +12,7 @@ Select from the following scrollable list:
 
 <div class="scrollable-table">
   <table id="downloads-{{id}}-{{channel}}" class="table table-striped">
-  <thead><tr><th>Flutter version</th><th>Architecture</th><th>Ref</th><th class="date">Release Date</th><th>Dart version</th><th><a href="https://slsa.dev/provenance">Provenance</a></th></tr></thead>
+  <thead><tr><th>Flutter version</th><th>Architecture</th><th>Ref</th><th class="date">Release Date</th><th>Dart version</th><th>Provenance</th></tr></thead>
   <tr class="loading"><td colspan="6">Loading...</td></tr>
   </table>
 </div>

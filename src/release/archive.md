@@ -19,6 +19,14 @@ Check out [Flutter’s channels][] for details.
 For details about what's new in the major Flutter releases,
 check out the [release notes][] page.
 
+Flutter releases are built with
+<a href="https://slsa.dev/provenance/">provenance</a> which shows verifiable
+information about our build artifacts. The build provenance file is available
+to view and inspect for recent releases. A quick way to inspect the provenance
+materials is to parse into readable format with the following command:
+```
+curl [provenance URL] | jq -r .payload | base64 -d | jq
+```
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
   <li class="nav-item">
