@@ -11,7 +11,7 @@ localizations. These strings were deprecated in material localizations.
 
 ## Context
 
-[`ReorderableListView`][] used these strings to annotate its semantics actions. To apply the same
+[`ReorderableListView`][] uses these strings to annotate its semantics actions. To apply the same
 annotations to [`ReorderableList`][] and [`SliverReorderableList`], they need to access these
 strings from widgets library.
 
