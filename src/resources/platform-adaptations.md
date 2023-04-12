@@ -589,7 +589,7 @@ Therefore, we recommend that you follow platform conventions.
 
 ### Top app bar and navigation bar
 
-On the latest version of Android, the default UI for top app 
+Since Android 12, the default UI for top app 
 bars follow the design guidelines defined in [Material 3][mat-appbar]. 
 On iOS, an equivalent component called "Navigation Bars" 
 is defined in [Apple’s Human Interface Guidelines][hig-appbar] (HIG). 
@@ -656,7 +656,7 @@ AppBar(
 But, because app bars are displayed alongside 
 other content in your page, it's only recommended to adapt the styling 
 so long as its cohesive with the rest of your application. You can see 
-additional code samples and a further explanation in [this article][appbar-post]. 
+additional code samples and a further explanation in [the Github discussion on app bar adaptations][appbar-post]. 
 
 ### Alert dialog
 
@@ -729,7 +729,7 @@ void _showAdaptiveDialog(
 ```
 
 Further detail about adapting alert dialogs is available in 
-[this post][alert-post], where you can leave feedback or ask questions.
+[the Github discussion on dialog adaptations][alert-post], where you can leave feedback or ask questions.
 
 
 [issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
