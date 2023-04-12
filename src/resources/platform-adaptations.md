@@ -296,9 +296,9 @@ Therefore a fallback font is used when running on Android
 if the platform is debug-overridden to iOS or the
 default Cupertino theme is used.
 
-You may choose to adapt the text styling in Material 
+You might choose to adapt the text styling in Material 
 widgets to match the default text styling on iOS. 
-You can see widget specific examples in the 
+You can see widget-specific examples in the 
 [UI Component section][] below.
 
 <div class="container">
@@ -567,15 +567,15 @@ Your feedback is welcomed on [issue #8427][].
 
 ### Widgets with .adaptive() constructors
 
-There are several widgets that support`.adaptive()` constructors. 
+Several widgets support `.adaptive()` constructors. 
 Adaptive constructors substitute the corresponding Cupertino components 
 when the app is run on an iOS device. 
 
-The following widgets are used primarily for input, 
-selection and to display system information. 
+Widgets in the following table are used primarily for input, 
+selection, and to display system information. 
 Because these controls are tightly integrated with the operating system,
- users have been trained to recognize 
-and respond to them. So, it's recommended to follow the platform conventions. 
+users have been trained to recognize and respond to them.
+Therefore, we recommend that you follow platform conventions. 
 
 
 | Material Widget | Cupertino Widget | Adaptive Constructor |
