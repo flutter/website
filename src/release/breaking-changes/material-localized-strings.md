@@ -1,7 +1,6 @@
 ---
 title: Migration guide for material localized Strings
-description: ReorderableListView's localized strings are moved from material localizations to
-widgets localizations.
+description: ReorderableListView's localized strings are moved from material localizations to widgets localizations.
 ---
 
 ## Summary
