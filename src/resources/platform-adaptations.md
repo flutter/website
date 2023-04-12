@@ -658,6 +658,88 @@ other content in your page, it's only recommended to adapt the styling
 so long as its cohesive with the rest of your application. You can see 
 additional code samples and a further explanation in [the Github discussion on app bar adaptations][appbar-post]. 
 
+### Bottom navigation bars
+
+Since Android 12, the default UI for bottom navigation 
+bars follow the design guidelines defined in [Material 3][mat-navbar]. 
+On iOS, an equivalent component called "Tab Bars" 
+is defined in [Apple’s Human Interface Guidelines][hig-tabbar] (HIG). 
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="/assets/images/docs/platform-adaptations/mat-navbar.png" 
+        class="figure-img img-fluid rounded" alt="Bottom Navigation Bar in Material 3 " />
+        <figcaption class="figure-caption">
+          Bottom Navigation Bar in Material 3 
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="/assets/images/docs/platform-adaptations/hig-tabbar.png" 
+        class="figure-img img-fluid rounded" alt="Tab Bar in Human Interface Guidelines" />
+        <figcaption class="figure-caption">
+         Tab Bar in Human Interface Guidelines
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+Since tab bars are persistent across your app, they should match your
+own branding. However, if you choose to use Material's default 
+styling on Android, you may consider adapting to the default iOS
+tab bars.
+
+To implement platform-specific bottom navigation bars, 
+you can use Flutter’s `NavigationBar` widget on Android 
+and the `CupertinoTabBar` widget on iOS. 
+Below is a code snippet you can 
+adapt to show a platform-specific navigation bars.
+
+```dart
+final Map<String, Icon> _navigationItems = {
+    'Menu': Platform.isIOS ? Icon(CupertinoIcons.house_fill) : Icon(Icons.home),
+    'Order': Icon(Icons.adaptive.share),
+  };
+
+...
+
+Scaffold(
+  body: _currentWidget,
+  bottomNavigationBar: Platform.isIOS
+          ? CupertinoTabBar(
+              currentIndex: _currentIndex,
+              onTap: (index) {
+                setState(() => _currentIndex = index);
+                _loadScreen();
+              },
+              items: _navigationItems.entries
+                  .map<BottomNavigationBarItem>(
+                      (entry) => BottomNavigationBarItem(
+                            icon: entry.value,
+                            label: entry.key,
+                          ))
+                  .toList(),
+            )
+          : NavigationBar(
+              selectedIndex: _currentIndex,
+              onDestinationSelected: (index) {
+                setState(() => _currentIndex = index);
+                _loadScreen();
+              },
+              destinations: _navigationItems.entries
+                  .map<Widget>((entry) => NavigationDestination(
+                        icon: entry.value,
+                        label: entry.key,
+                      ))
+                  .toList(),
+            ));
+```
+
+
 ### Alert dialog
 
 Since Android 12, the default UI of alert dialogs 
