@@ -130,14 +130,13 @@ running or debugging.
 
  1. Click **Run > Start Without Debugging** in the
     main IDE window, or press `Ctrl`+`F5`.
-    The status bar turns orange to show you are in a debug session.<br>
-    ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
 ### Run app with breakpoints
 
  1. If desired, set breakpoints in your source code.
  1. Click **Run > Start Debugging** in the main IDE window,
-    or press `F5`.
+    or press `F5`. The status bar turns orange to show you are in a debug session.<br>
+    ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
     * The left **Debug Sidebar** shows stack frames and variables.
     * The bottom **Debug Console** pane shows detailed logging output.
