@@ -108,6 +108,28 @@ so, Codemagic requires
 [associating the Azure Active Directory
 and Partner Center accounts][azureadassociation].
 
+#### Github Actions CI/CD
+
+Github actions may use the
+[Microsoft Dev Store CLI](https://learn.microsoft.com/en-us/windows/apps/publish/msstore-dev-cli/overview)
+to package applications into an MSIX and publish them to the Microsoft Store.
+The [setup-msstore-cli](https://github.com/microsoft/setup-msstore-cli) Github action
+installs the cli so that the action can use it for packaging and publishing.
+
+As packaging the MSIX utilizes the
+[`msix` pub package][msix package], the project's `pubspec.yaml`
+must contain an appropriate `msix_config` node.
+
+The application must already be present in the Microsoft Dev Center with at least
+one complete submission, and `msstore init` must be run once within the repository
+before the action can be performed. Once complete, running `msix package .` and `msix publish`
+in a Github action will package the application into an MSIX and upload it to a new submission
+on the dev center.
+
+An example action yml file for continous deployment may be found
+[here](https://github.com/yaakovschectman/SampleFlutterMSIXGithubAction/blob/main/dart.yml).
+The environment that runs the action needs secret values provided from the Microsoft partner center.
+
 ## Updating the app's version number
 
 For apps published to the Microsoft Store,
