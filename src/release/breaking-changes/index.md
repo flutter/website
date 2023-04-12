@@ -35,6 +35,7 @@ release, and listed in alphabetical order:
 * [The window singleton is deprecated][]
 * [Migration guide for `RouteInformation.location`][]
 
+[Material localized Strings migration guide]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Android Java Gradle migration guide]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
