@@ -121,16 +121,41 @@ As packaging the MSIX utilizes the
 [`msix` pub package][msix package], the project's `pubspec.yaml`
 must contain an appropriate `msix_config` node.
 
+You must create an Azure AD directory from the Dev Center with
+[global administrator permission](https://azure.microsoft.com/en-us/documentation/articles/active-directory-assign-admin-roles/).
+
+The Github Action requires environment secrets from the partner center.
+`AZURE_AD_TENANT_ID`, `AZURE_AD_ClIENT_ID`, and `AZURE_AD_CLIENT_SECRET`
+are visible on the Dev Center following the instructions for the
+[Windows Store Publish Action](https://github.com/marketplace/actions/windows-store-publish#obtaining-your-credentials).
+You also need the `SELLER_ID` secret, which can be found in the Dev Center
+under Account Settings > Organization Profile > Legal Info.
+
 The application must already be present in the Microsoft Dev Center with at
 least one complete submission, and `msstore init` must be run once within
 the repository before the Action can be performed. Once complete, running
-`msix package .` and `msix publish` in a Github Action will package the
+[`msstore package .`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/package-command)
+and
+[`msix publish`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/publish-command)
+in a Github Action will package the
 application into an MSIX and upload it to a new submission on the dev center.
 
 An example Action yml file for continous deployment may be found
 [within a dedicated repository](https://github.com/yaakovschectman/SampleFlutterMSIXGithubAction/blob/main/dart.yml).
-The environment that runs the Action needs secret values
-provided from the Microsoft partner center.
+The steps necessary for MSIX publishing are excerpted below:
+
+```
+      - uses: microsoft/setup-msstore-cli@v1
+
+      - name: Configure the Microsoft Store CLI
+        run: msstore reconfigure --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} --clientId ${{ secrets.AZURE_AD_ClIENT_ID }} --clientSecret ${{ secrets.AZURE_AD_CLIENT_SECRET }} --sellerId ${{ secrets.SELLER_ID }}
+
+      - name: Create MSIX
+        run: msstore package .
+
+      - name: Publish MSIX to the Microsoft Store
+        run: msstore publish -v
+```
 
 ## Updating the app's version number
 
