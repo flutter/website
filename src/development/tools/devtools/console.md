@@ -52,7 +52,7 @@ To drop a variable to the console from a heap snapshot,
 do the following:
 
 1. Navigate to **Devtools > Memory > Diff Snapshots**.
-1. Click on the context menu [`⋮]` to view the number of
+1. Click on the context menu `[⋮]` to view the number of
    **Instances** for the desired **Class**.
 1. Select whether you want to store a single instance as
    a console variable, or whether you want to store _all_
