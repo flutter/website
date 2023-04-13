@@ -154,7 +154,7 @@ Only members of the shortest path (`d` and `e`) will include
 Garbage collector cannot prevent all types of memory leaks, and developers
 still need to watch objects to have leak-free lifecycle. 
 
-#### Why can't garbage collector prevent all leaks?
+#### Why can't the garbage collector prevent all leaks?
 
 While the garbage collector takes care of all
 unreachable objects, it’s the responsibility
