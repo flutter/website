@@ -132,7 +132,7 @@ print('Howdy, ${user['name']}!');
 print('We sent the verification link to ${user['email']}.');
 ```
 
-Unfortunately, `jsonDecode()` returns a `Map<String, dynamic>`, meaning
+Unfortunately, `jsonDecode()` returns a `dynamic`, meaning
 that you do not know the types of the values until runtime. With this approach,
 you lose most of the statically typed language features: type safety,
 autocompletion and most importantly, compile-time exceptions. Your code will
