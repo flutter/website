@@ -388,7 +388,7 @@ memory management. Follow the guidance on the tab
 to take snapshots before and after interaction
 with the application, and diff the snapshots:
 
-![Screenshot of the diff tab page]({{site.url}}/assets/images/docs/tools/devtools/diff-tab.png)
+![Screenshot of the diff tab page]({{site.url}}/assets/images/docs/tools/devtools/diff-tab.png){:width="100%"}
 
 Tap the **Filter classes and packages** button,
 to narrow the data:

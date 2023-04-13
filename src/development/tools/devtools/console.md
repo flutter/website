@@ -14,11 +14,7 @@ references for objects.
 {{site.alert.end}}
 
 The Debug console is available from the [Inspector][],
-[Debugger][], and [Memory][] views. To bring up
-the debug console, click the **More info** link,
-as shown:
-
-![Screenshot of how to bring up Debug console]({{site.url}}/assets/images/docs/tools/devtools/debug-console.png){:width="100%"}
+[Debugger][], and [Memory][] views.
 
 [Inspector]: {{site.url}}/development/tools/devtools/inspector
 [Debugger]:  {{site.url}}/development/tools/devtools/debugger
@@ -46,7 +42,7 @@ your app in debug mode:
 ![Screenshot showing evaluating an expression in the console]({{site.url}}/assets/images/docs/tools/devtools/console-evaluate-expressions.png)
 
 To assign an evaluated object to a variable,
-use $0, $1 … $5:
+use $0, $1 (through $5) in the form of `var x = $0`:
 
 ![Screenshot showing how to evaluate variables]({{site.url}}/assets/images/docs/tools/devtools/console-evaluate-variables.png){:width="100%"}
 
