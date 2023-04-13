@@ -271,7 +271,7 @@ has the following features:
 : See current memory allocation listed by class and
   memory type. 
 
-[**Diff Snapshots** tab](#diff-tab)
+[**Diff Snapshots** tab](#diff-snapshots-tab)
 : Detect and investigate a feature’s memory management issues.
 
 [**Trace Instances** tab](#trace-tab)
