@@ -1,6 +1,6 @@
 ---
 title: Using the Debug console
-description: Learn how to use the DevTools console to xxx.
+description: Learn how to use the DevTools console.
 ---
 
 The DevTools Debug console allows you to watch an
