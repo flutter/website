@@ -1,0 +1,96 @@
+<script>
+    var isLightMode = true;
+
+    function flipBrightness() {
+        isLightMode = !isLightMode;
+        const imgElements = document.getElementsByClassName("m3-img");
+        console.log(imgElements.length);
+
+        // Loop through each img element and replace its src with the appropriate light/dark version.
+        Array.from(imgElements).forEach((img) => {
+            const currentSrc = img.getAttribute("src");
+            const splitSrc = currentSrc.split(".");
+            const fileExtension = splitSrc.pop();
+            let fileName = splitSrc.join(".");
+            const textLabel = document.getElementsByClassName("switch label")[0];
+
+            if (!isLightMode) {
+            fileName += "-dark";
+            textLabel.innerHTML = 'Tap to view in light mode';
+            } else {
+            fileName = fileName.replace("-dark", "");
+            textLabel.innerHTML = 'Tap to view in dark mode';
+
+            }
+
+            const newSrc = fileName + "." + fileExtension;
+            img.setAttribute("src", newSrc);
+        });
+    }
+    
+</script>
+
+{% for section in site.data.catalog.index %}
+    {% if section.name == include.category %}
+        {% assign category = section %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+<div class="catalog">
+    <div class="category-description">
+        <p>{{category.description}}</p>
+    </div>
+    {% if category.subcategories and category.subcategories.size != 0 -%}
+    <ul>
+        {% for sub in category.subcategories -%}
+            <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
+        {% endfor -%}
+    </ul>
+    {% endif -%}
+
+    <p>
+        See more widgets in the <a href="{{site.url}}/development/ui/widgets">widget catalog</a>.
+    </p>
+ 
+    <label class="switch">
+        <input type="checkbox" checked="true"  onclick="flipBrightness()">
+        <span class="slider round"></span>
+    </label>
+
+    <span class="switch label">
+        Tap to view in dark mode
+    </span>
+
+    {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.categories contains include.category" -%}
+
+    {% if category.subcategories and category.subcategories.size != 0 -%}
+    {% for sub in category.subcategories -%}
+        {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.subcategories contains sub.name" -%}
+        {% if components.size != 0 -%}
+        <h2 id="{{sub.name}}">{{sub.name}}</h2>
+        <div class="card-deck card-deck--responsive">
+            {% for comp in components -%}
+                <div class="card">
+                    <a href="{{comp.link}}">
+                        <div class="card-image-holder-material-3">
+                            <img class="m3-img" src="{{ comp.image }}" alt = ''/>
+                            <div class="card-image-material-3-hover">
+                                {{comp.hoverimage}}
+                            </div>
+                        </div>
+
+                    </a>
+                    <div class="card-body">
+                        <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
+                        <p class="card-text">{{ comp.description | truncatewords: 25 }}</p>
+                    </div>
+                </div>
+            {% endfor -%}
+        </div>
+        {% endif -%}
+    {% endfor -%}
+    {% endif -%}
+
+    <p>See more widgets in the <a href="{{site.url}}/development/ui/widgets">widget catalog</a>.</p>
+</div>

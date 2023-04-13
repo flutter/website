@@ -415,13 +415,15 @@
   },
   {
     "name": "Common Buttons",
-    "description": "Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
+    "description": "<b>Hover for Dark mode</b><br /><br />Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
     "categories": [],
     "subcategories": [
       "Actions"
     ],
     "link": "https://api.flutter.dev/flutter/material/ButtonStyle-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-buttons.png'>"
+    "image": "/assets/images/docs/widget-catalog/material-3-buttons.png",
+    "darkimage": "/assets/images/docs/widget-catalog/material-3-buttons-dark.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-buttons-dark.png'>"
   },
   {
     "name": "ConstrainedBox",
@@ -985,13 +987,14 @@
   },
   {
     "name": "Floating Action Button",
-    "description": "The FAB represents the most important action on a screen. It puts key actions within reach.",
+    "description": "<b>Hover for material.io-imagery</b><br /><br />The FAB represents the most important action on a screen. It puts key actions within reach.",
     "categories": [],
     "subcategories": [
       "Actions"
     ],
     "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-floating-action-button.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-floating-action-button.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-floating-action-button-hover.png'>"
   },
   {
     "name": "FloatingActionButton",

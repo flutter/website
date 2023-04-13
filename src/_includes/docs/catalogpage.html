@@ -48,15 +48,9 @@
             {% for comp in components -%}
                 <div class="card">
                     <a href="{{comp.link}}">
-                        {% if comp.image contains "material-3" -%}
-                            <div class="card-image-holder-material-3">
-                                {{comp.image}}
-                            </div>
-                        {% else -%}
-                            <div class="card-image-holder">
-                                {{comp.image}}
-                            </div>
-                        {% endif -%}
+                        <div class="card-image-holder">
+                            {{comp.image}}
+                        </div>
                     </a>
                     <div class="card-body">
                         <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
