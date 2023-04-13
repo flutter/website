@@ -267,7 +267,7 @@ has the following features:
   and view both standard events (like garbage collection)
   and custom events (like image allocation).
 
-[**Profile Memory** tab](#profile-tab)
+[**Profile Memory** tab](#profile-memory-tab)
 : See current memory allocation listed by class and
   memory type. 
 
