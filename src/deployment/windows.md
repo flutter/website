@@ -136,7 +136,7 @@ least one complete submission, and `msstore init` must be run once within
 the repository before the Action can be performed. Once complete, running
 [`msstore package .`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/package-command)
 and
-[`msix publish`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/publish-command)
+[`msstore publish`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/publish-command)
 in a Github Action will package the
 application into an MSIX and upload it to a new submission on the dev center.
 
