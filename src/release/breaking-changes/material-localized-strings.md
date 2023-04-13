@@ -44,9 +44,6 @@ subclass.
 Code before migration:
 
 ```dart
-
-
-
 class MaterialLocalizationsMyLanguage extends MaterialLocalizationsEn {
   // ...
   @override
