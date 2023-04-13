@@ -122,7 +122,7 @@ As packaging the MSIX utilizes the
 must contain an appropriate `msix_config` node.
 
 You must create an Azure AD directory from the Dev Center with
-[global administrator permission](https://azure.microsoft.com/en-us/documentation/articles/active-directory-assign-admin-roles/).
+[global administrator permission](https://azure.microsoft.com/documentation/articles/active-directory-assign-admin-roles/).
 
 The Github Action requires environment secrets from the partner center.
 `AZURE_AD_TENANT_ID`, `AZURE_AD_ClIENT_ID`, and `AZURE_AD_CLIENT_SECRET`
