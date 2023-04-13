@@ -274,7 +274,7 @@ has the following features:
 [**Diff Snapshots** tab](#diff-snapshots-tab)
 : Detect and investigate a feature’s memory management issues.
 
-[**Trace Instances** tab](#trace-tab)
+[**Trace Instances** tab](#trace-instances-tab)
 : Investigate a feature’s memory management for
   a specified set of classes.
 
