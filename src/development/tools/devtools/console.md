@@ -42,7 +42,7 @@ your app in debug mode:
 ![Screenshot showing evaluating an expression in the console]({{site.url}}/assets/images/docs/tools/devtools/console-evaluate-expressions.png)
 
 To assign an evaluated object to a variable,
-use $0, $1 (through $5) in the form of `var x = $0`:
+use `$0`, `$1` (through `$5`) in the form of `var x = $0`:
 
 ![Screenshot showing how to evaluate variables]({{site.url}}/assets/images/docs/tools/devtools/console-evaluate-variables.png){:width="100%"}
 
