@@ -320,6 +320,8 @@
               permalink: /development/tools/devtools/cpu-profiler
             - title: Memory view
               permalink: /development/tools/devtools/memory
+            - title: Debug console view **NEW**
+              permalink: /development/tools/devtools/console
             - title: Network view
               permalink: /development/tools/devtools/network
             - title: Debugger
