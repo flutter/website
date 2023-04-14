@@ -589,7 +589,7 @@ Therefore, we recommend that you follow platform conventions.
 ### Top app bar and navigation bar
 
 Since Android 12, the default UI for top app 
-bars follow the design guidelines defined in [Material 3][mat-appbar]. 
+bars follows the design guidelines defined in [Material 3][mat-appbar]. 
 On iOS, an equivalent component called "Navigation Bars" 
 is defined in [Apple’s Human Interface Guidelines][hig-appbar] (HIG). 
 
