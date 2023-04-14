@@ -21,14 +21,16 @@ check out the [release notes][] page.
 
 
 {{site.alert.secondary}}
-  A note on provenance: [provenance](https://slsa.dev/provenance)
-  describes how software artifacts are built.
-  If you would like view provenance in a more readable format, run the
-  following command using the provenance file URL from a release:
+  **A note on provenance**: [provenance](https://slsa.dev/provenance)
+  describes how software artifacts are built, including
+  what the download contains and who created it.
+  To view provenance in a more readable format
+  (and where nothing is downloaded), run the following
+  command using the provenance file URL from a release.
+  For example:
 
   ```terminal
   curl [provenance URL] | jq -r .payload | base64 -d | jq
-  ```
 {{site.alert.end}}
 
 {% comment %} Nav tabs {% endcomment -%}
