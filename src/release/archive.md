@@ -31,6 +31,7 @@ check out the [release notes][] page.
 
   ```terminal
   curl [provenance URL] | jq -r .payload | base64 -d | jq
+  ```
 {{site.alert.end}}
 
 {% comment %} Nav tabs {% endcomment -%}
