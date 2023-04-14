@@ -25,7 +25,8 @@ check out the [release notes][] page.
   describes how software artifacts are built.
   If you would like view provenance in a more readable format, run the
   following command using the provenance file URL from a release:
-  ```
+
+  ```terminal
   curl [provenance URL] | jq -r .payload | base64 -d | jq
   ```
 {{site.alert.end}}
