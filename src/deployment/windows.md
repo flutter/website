@@ -140,7 +140,7 @@ and
 in a GitHub Action packages the
 application into an MSIX and uploads it to a new submission on the dev center.
 
-An example Action yml file for continous deployment may be found
+An example Action YAML file for continuous deployment can be found
 [within a dedicated repository](https://github.com/yaakovschectman/SampleFlutterMSIXGithubAction/blob/main/dart.yml).
 The steps necessary for MSIX publishing are excerpted below:
 
