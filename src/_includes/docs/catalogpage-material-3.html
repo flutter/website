@@ -1,12 +1,13 @@
 <script>
     var isLightMode = true;
 
-    function flipBrightness() {
+    // Flip brightness of all Material 3 widgets on the page.
+    function toggleWidgetBrightness() {
         isLightMode = !isLightMode;
         const imgElements = document.getElementsByClassName("m3-img");
-        console.log(imgElements.length);
+        const icon = document.getElementsByClassName("material-icons-outlined m3-widget-brightness-icon")[0];
 
-        // Loop through each img element and replace its src with the appropriate light/dark version.
+        // Loop through each image element and replace its src with the appropriate light/dark version.
         Array.from(imgElements).forEach((img) => {
             const currentSrc = img.getAttribute("src");
             const splitSrc = currentSrc.split(".");
@@ -15,19 +16,24 @@
             const textLabel = document.getElementsByClassName("switch label")[0];
 
             if (!isLightMode) {
-            fileName += "-dark";
-            textLabel.innerHTML = 'Tap to view in light mode';
+                fileName += "-dark";
             } else {
-            fileName = fileName.replace("-dark", "");
-            textLabel.innerHTML = 'Tap to view in dark mode';
-
+                fileName = fileName.replace("-dark", "");
             }
 
             const newSrc = fileName + "." + fileExtension;
             img.setAttribute("src", newSrc);
         });
+
+        if (!isLightMode) {
+            newIcon = "light_mode_outlined";
+        } else {
+            newIcon = "dark_mode_outlined";
+        }
+
+        // Update toggle icon.
+        icon.textContent = newIcon;
     }
-    
 </script>
 
 {% for section in site.data.catalog.index %}
@@ -49,17 +55,10 @@
     </ul>
     {% endif -%}
 
-    <p>
-        See more widgets in the <a href="{{site.url}}/development/ui/widgets">widget catalog</a>.
-    </p>
- 
-    <label class="switch">
-        <input type="checkbox" checked="true"  onclick="flipBrightness()">
-        <span class="slider round"></span>
-    </label>
+    <p>See more widgets in the <a href="{{site.url}}/development/ui/widgets">widget catalog</a>.</p>
 
-    <span class="switch label">
-        Tap to view in dark mode
+    <span class="m3-widget-brightness-icon-container">
+        <span class="material-icons-outlined m3-widget-brightness-icon" onclick="toggleWidgetBrightness()">dark_mode_outlined</span>
     </span>
 
     {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.categories contains include.category" -%}
@@ -74,7 +73,7 @@
                 <div class="card">
                     <a href="{{comp.link}}">
                         <div class="card-image-holder-material-3">
-                            <img class="m3-img" src="{{ comp.image }}" alt = ''/>
+                            <img class="m3-img" src="{{ comp.image }}" alt= ''/>
                             <div class="card-image-material-3-hover">
                                 {{comp.hoverimage}}
                             </div>

@@ -63,21 +63,50 @@ dd {
   }
 }
 
+.m3-widget-brightness-icon-container {
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  float: right;
+  right: 50px;
+  position: absolute;
+}
+
+.m3-widget-brightness-icon-container:hover {
+  background-color: $site-color-material-3-grey-hover;
+}
+
+.m3-widget-brightness-icon {
+position:relative;
+  top: 8px;
+  left: 8px;
+}
+
+.m3-subheader:after {
+  margin: 0px;
+
+padding: 0px;
+}
+
+.m3-subheader-text {
+  float: left;
+}
+
+
 .card-image-holder-material-3 {
   align-items: center;
-  display: flex;
-  justify-content: center;
+  z-index: -1;
+  background-color: $site-color-material-3-green;
+  background-size: 0%;
+  opacity: .999;
+}
 
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-  }
-
-  svg {
-    height: 100%;
-    width: 100%;
-  }
+.m3-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  z-index: 1;
 }
 
 .card-image-material-3-hover {
@@ -86,15 +115,26 @@ dd {
   bottom: 0;
   left: 0;
   right: 0;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
   opacity: 0;
   transition: .5s ease;
+  z-index: -1;
+
+ img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+   z-index: -1;
+
+   }
 }
 
 .card-image-holder-material-3:hover .card-image-material-3-hover {
   opacity: 1;
+}
+
+.brightness-icon {
+  border: 2px solid;
+  float:right;
 }
 
 .happy-paths-image-holder {
@@ -267,7 +307,7 @@ blockquote {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $site-color-light-grey;
+  background-color: $flutter-color-dark-blue;
   -webkit-transition: .4s;
   transition: .4s;
 }
