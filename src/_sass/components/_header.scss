@@ -39,6 +39,10 @@ header.site-header {
         margin-bottom: 1.5rem;
       }
     }
+
+    .site-header__sheet > * {
+      margin: 0;
+    }
   }
 
   @include media-breakpoint-down(md) {
