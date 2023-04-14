@@ -1,10 +1,19 @@
 [
     {
-        "uniqueId": "inspector_retention",
-        "title": "Have you used Flutter Inspector in the past?",
-        "url": "https://google.qualtrics.com/jfe/form/TBD",
-        "startDate": "2022-MM-DDT09:00:00-07:00",
-        "endDate": "2022-MM-DDT09:00:00-07:00",
-	  "param": "14"
+        "uniqueId": "test_channel",
+        "url": "https://google.qualtrics.com/jfe/form/SV_5gsB2EuG5Et5Yy2",
+        "startDate": "2023-06-01T09:00:00-07:00",
+        "endDate": "2023-06-30T09:00:00-07:00",
+	"description": "Help improve Flutter’s release builds with this 3-question survey!”,
+	"dismissForDays": "10",
+	"moreInfoURL": "https://docs.flutter.dev/reference/crash-reporting",
+	"samplingRate": "0.1",
+	"conditions": [
+	    {
+	        "field": "logFileStats.recordCount",
+	        "operator": ">=",
+	        "value": 1000
+            }
+	]
     }
 ]
