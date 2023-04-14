@@ -35,22 +35,30 @@
     "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://material.io/design/guidelines-overview\">Material 3 Design guidelines</a>.",
     "subcategories": [
       {
-        "name": "Actions"
+        "name": "Actions",
+        "color": "#D9E7CB"
       },
       {
-        "name": "Communication"
+        "name": "Communication",
+        "color": "#F9DBDA"
       },
       {
-        "name": "Containment"
+        "name": "Containment",
+        "color": "#F9DBDA"
       },
       {
-        "name": "Navigation"
+        "name": "Navigation",
+        "color": "#E5E4C2"
+
       },
       {
-        "name": "Selection"
+        "name": "Selection",
+        "color": "#D9E7CB"
+
       },
       {
-        "name": "Text Inputs"
+        "name": "Text Inputs",
+        "color": "#E5E4C2"
       }
     ],
     "id": "material3"

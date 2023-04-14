@@ -70,10 +70,12 @@
         <h2 id="{{sub.name}}">{{sub.name}}</h2>
         <div class="card-deck card-deck--responsive">
             {% for comp in components -%}
+            
                 <div class="card">
                     <a href="{{comp.link}}">
-                        <div class="card-image-holder-material-3">
-                            <img class="m3-img" src="{{ comp.image }}" alt= ''/>
+
+                        <div class="card-image-holder-material-3" style="--bg-color: {{sub.color}}">
+                                {{ comp.image }}
                             <div class="card-image-material-3-hover">
                                 {{comp.hoverimage}}
                             </div>

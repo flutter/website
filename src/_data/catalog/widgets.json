@@ -415,14 +415,14 @@
   },
   {
     "name": "Common Buttons",
-    "description": "<b>Hover for Dark mode</b><br /><br />Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
+    "description": "Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
     "categories": [],
     "subcategories": [
       "Actions"
     ],
     "link": "https://api.flutter.dev/flutter/material/ButtonStyle-class.html",
-    "image": "/assets/images/docs/widget-catalog/material-3-buttons.png",
-    "darkimage": "/assets/images/docs/widget-catalog/material-3-buttons-dark.png'>",
+    "image": "<img class='m3-img' alt='' src='/assets/images/docs/widget-catalog/material-3-buttons.png'>",
+    "darkimage": "<img class='m3-img' alt='' src='/assets/images/docs/widget-catalog/material-3-buttons-dark.png'>",
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {

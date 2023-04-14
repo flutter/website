@@ -71,31 +71,31 @@ dd {
   float: right;
   right: 50px;
   position: absolute;
+
+  .m3-widget-brightness-icon {
+    position: relative;
+    top: 8px;
+    left: 8px;
+  }
 }
 
 .m3-widget-brightness-icon-container:hover {
   background-color: $site-color-material-3-grey-hover;
 }
 
-.m3-widget-brightness-icon {
-position:relative;
-  top: 8px;
-  left: 8px;
-}
-
 .card-image-holder-material-3 {
   align-items: center;
   z-index: -1;
-  background-color: $site-color-material-3-green;
   background-size: 0%;
   opacity: .999;
-}
+  background-color: var(--bg-color, blue);
 
-.m3-img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  z-index: 1;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    z-index: 1;
+  }
 }
 
 .card-image-material-3-hover {
