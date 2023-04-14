@@ -656,7 +656,7 @@ AppBar(
 But, because app bars are displayed alongside 
 other content in your page, it's only recommended to adapt the styling 
 so long as its cohesive with the rest of your application. You can see 
-additional code samples and a further explanation in [the Github discussion on app bar adaptations][appbar-post]. 
+additional code samples and a further explanation in [the GitHub discussion on app bar adaptations][appbar-post]. 
 
 ### Alert dialog
 
