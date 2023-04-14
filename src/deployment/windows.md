@@ -108,7 +108,7 @@ so, Codemagic requires
 [associating the Azure Active Directory
 and Partner Center accounts][azureadassociation].
 
-#### Github Actions CI/CD
+#### GitHub Actions CI/CD
 
 Github Actions can use the
 [Microsoft Dev Store CLI](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview)
