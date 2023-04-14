@@ -67,7 +67,7 @@ RUN apt-get update -q && apt-get install -yq --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install global Firebase CLI
-RUN npm install -g firebase-tools@11.24.0
+RUN npm install -g firebase-tools@11.27.0
 
 
 
