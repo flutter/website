@@ -296,10 +296,10 @@ Therefore a fallback font is used when running on Android
 if the platform is debug-overridden to iOS or the
 default Cupertino theme is used.
 
-You might choose to adapt the text styling in Material 
+You might choose to adapt the text styling of Material 
 widgets to match the default text styling on iOS. 
 You can see widget-specific examples in the 
-[UI Component section][] below.
+[UI Component section][].
 
 <div class="container">
   <div class="row">
