@@ -117,7 +117,7 @@ The [setup-msstore-cli](https://github.com/microsoft/setup-msstore-cli)
 GitHub Action installs the cli so that the Action can use it for packaging
 and publishing.
 
-As packaging the MSIX utilizes the
+As packaging the MSIX uses the
 [`msix` pub package][msix package], the project's `pubspec.yaml`
 must contain an appropriate `msix_config` node.
 
