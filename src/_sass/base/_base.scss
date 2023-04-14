@@ -68,16 +68,20 @@ dd {
   width: 40px;
   height: 40px;
   position: absolute;
+  display: block;
 
   .m3-widget-brightness-icon {
     position: relative;
     top: 8px;
     left: 8px;
+    width: 24px;
+    overflow:hidden;
   }
 }
 
 .m3-widget-brightness-icon-container:hover {
   background-color: $site-color-material-3-grey-hover;
+  cursor: pointer;
 }
 
 .card-image-holder-material-3 {
@@ -102,7 +106,7 @@ dd {
   left: 0;
   right: 0;
   opacity: 0;
-  transition: .5s ease;
+  transition: .25s ease;
   z-index: -1;
 
  img {
@@ -116,11 +120,6 @@ dd {
 
 .card-image-holder-material-3:hover .card-image-material-3-hover {
   opacity: 1;
-}
-
-.brightness-icon {
-  border: 2px solid;
-  float:right;
 }
 
 .happy-paths-image-holder {
