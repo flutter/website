@@ -21,7 +21,7 @@ check out the [release notes][] page.
 
 
 {{site.alert.secondary}}
-  A note on provenance: <a href="https://slsa.dev/provenance">provenance</a>
+  A note on provenance: [provenance](https://slsa.dev/provenance)
   describes how software artifacts are built.
   If you would like view provenance in a more readable format, run the
   following command using the provenance file URL from a release:
