@@ -95,6 +95,7 @@ function initFixedColumns() {
 
     // listen for scroll and execute once
     $(window).scroll(adjustFixedColumns);
+    $(window).resize(adjustFixedColumns);
     adjustFixedColumns();
   }
 }
