@@ -114,7 +114,7 @@ GitHub Actions can use the
 [Microsoft Dev Store CLI](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview)
 to package applications into an MSIX and publish them to the Microsoft Store.
 The [setup-msstore-cli](https://github.com/microsoft/setup-msstore-cli)
-Github Action installs the cli so that the Action can use it for packaging
+GitHub Action installs the cli so that the Action can use it for packaging
 and publishing.
 
 As packaging the MSIX utilizes the
