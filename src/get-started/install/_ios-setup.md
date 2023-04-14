@@ -100,7 +100,8 @@ and that the device has a set passcode.
 
 While the device is attached, open **Xcode > Window > Devices and Simulators**. 
 Select your phone, and check **Connect via Network.** 
-Checkout [Apple's documentation on pairing a wireless device with Xcode] for more details.
+For more details, check out 
+[Apple's documentation on pairing a wireless device with Xcode][].
 
 Once the network icon appears next to the device name, 
 you can unplug your device from USB. 
