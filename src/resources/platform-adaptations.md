@@ -690,7 +690,7 @@ is defined in [Apple’s Human Interface Guidelines][hig-tabbar] (HIG).
 
 Since tab bars are persistent across your app, they should match your
 own branding. However, if you choose to use Material's default 
-styling on Android, you may consider adapting to the default iOS
+styling on Android, you might consider adapting to the default iOS
 tab bars.
 
 To implement platform-specific bottom navigation bars, 
