@@ -108,6 +108,55 @@ so, Codemagic requires
 [associating the Azure Active Directory
 and Partner Center accounts][azureadassociation].
 
+#### GitHub Actions CI/CD
+
+GitHub Actions can use the
+[Microsoft Dev Store CLI](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview)
+to package applications into an MSIX and publish them to the Microsoft Store.
+The [setup-msstore-cli](https://github.com/microsoft/setup-msstore-cli)
+GitHub Action installs the cli so that the Action can use it for packaging
+and publishing.
+
+As packaging the MSIX uses the
+[`msix` pub package][msix package], the project's `pubspec.yaml`
+must contain an appropriate `msix_config` node.
+
+You must create an Azure AD directory from the Dev Center with
+[global administrator permission](https://azure.microsoft.com/documentation/articles/active-directory-assign-admin-roles/).
+
+The GitHub Action requires environment secrets from the partner center.
+`AZURE_AD_TENANT_ID`, `AZURE_AD_ClIENT_ID`, and `AZURE_AD_CLIENT_SECRET`
+are visible on the Dev Center following the instructions for the
+[Windows Store Publish Action](https://github.com/marketplace/actions/windows-store-publish#obtaining-your-credentials).
+You also need the `SELLER_ID` secret, which can be found in the Dev Center
+under **Account Settings** > **Organization Profile** > **Legal Info**.
+
+The application must already be present in the Microsoft Dev Center with at
+least one complete submission, and `msstore init` must be run once within
+the repository before the Action can be performed. Once complete, running
+[`msstore package .`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/package-command)
+and
+[`msstore publish`](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/publish-command)
+in a GitHub Action packages the
+application into an MSIX and uploads it to a new submission on the dev center.
+
+An example Action YAML file for continuous deployment can be found
+[within a dedicated repository](https://github.com/yaakovschectman/SampleFlutterMSIXGithubAction/blob/main/dart.yml).
+The steps necessary for MSIX publishing are excerpted below:
+
+```
+      - uses: microsoft/setup-msstore-cli@v1
+
+      - name: Configure the Microsoft Store CLI
+        run: msstore reconfigure --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} --clientId ${{ secrets.AZURE_AD_ClIENT_ID }} --clientSecret ${{ secrets.AZURE_AD_CLIENT_SECRET }} --sellerId ${{ secrets.SELLER_ID }}
+
+      - name: Create MSIX
+        run: msstore package .
+
+      - name: Publish MSIX to the Microsoft Store
+        run: msstore publish -v
+```
+
 ## Updating the app's version number
 
 For apps published to the Microsoft Store,
