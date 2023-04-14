@@ -129,7 +129,7 @@ The GitHub Action requires environment secrets from the partner center.
 are visible on the Dev Center following the instructions for the
 [Windows Store Publish Action](https://github.com/marketplace/actions/windows-store-publish#obtaining-your-credentials).
 You also need the `SELLER_ID` secret, which can be found in the Dev Center
-under Account Settings > Organization Profile > Legal Info.
+under **Account Settings** > **Organization Profile** > **Legal Info**.
 
 The application must already be present in the Microsoft Dev Center with at
 least one complete submission, and `msstore init` must be run once within
