@@ -60,6 +60,7 @@
     <span class="m3-widget-brightness-icon-container">
         <span class="material-icons-outlined m3-widget-brightness-icon" onclick="toggleWidgetBrightness()">dark_mode_outlined</span>
     </span>
+    <br />
 
     {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.categories contains include.category" -%}
 

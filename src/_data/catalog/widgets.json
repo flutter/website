@@ -415,7 +415,7 @@
   },
   {
     "name": "Common Buttons",
-    "description": "Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
+    "description": "<b>Hover me!</b><br /><br />Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
     "categories": [],
     "subcategories": [
       "Actions"
@@ -987,7 +987,7 @@
   },
   {
     "name": "Floating Action Button",
-    "description": "<b>Hover for material.io-imagery</b><br /><br />The FAB represents the most important action on a screen. It puts key actions within reach.",
+    "description": "The FAB represents the most important action on a screen. It puts key actions within reach.",
     "categories": [],
     "subcategories": [
       "Actions"
