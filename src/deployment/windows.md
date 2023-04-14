@@ -110,7 +110,7 @@ and Partner Center accounts][azureadassociation].
 
 #### GitHub Actions CI/CD
 
-Github Actions can use the
+GitHub Actions can use the
 [Microsoft Dev Store CLI](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview)
 to package applications into an MSIX and publish them to the Microsoft Store.
 The [setup-msstore-cli](https://github.com/microsoft/setup-msstore-cli)
