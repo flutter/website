@@ -567,7 +567,7 @@ Your feedback is welcomed on [issue #8427][].
 
 ### Widgets with .adaptive() constructors
 
-Several widgets support `.adaptive()` constructors. 
+Several widgets (listed in the following table) support `.adaptive()` constructors. 
 Adaptive constructors substitute the corresponding Cupertino components 
 when the app is run on an iOS device. 
 
