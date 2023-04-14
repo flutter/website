@@ -811,7 +811,8 @@ void _showAdaptiveDialog(
 ```
 
 Further detail about adapting alert dialogs is available in 
-[the Github discussion on dialog adaptations][alert-post], where you can leave feedback or ask questions.
+[the GitHub discussion on dialog adaptations][alert-post],
+where you can leave feedback or ask questions.
 
 
 [issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
