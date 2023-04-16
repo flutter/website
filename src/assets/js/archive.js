@@ -37,7 +37,7 @@ function updateTable(releases, os) {
           $(this).closest("tr").remove();
           event.preventDefault();
         });
-        $("<tr>").append($("<td colspan=\"5\"></td></tr>").append(showAll)).appendTo(table);
+        $("<tr>").append($("<td colspan=\"6\"></td></tr>").append(showAll)).appendTo(table);
       }
 
       var className = index >= releasesToShow ? "overflow" : "";
@@ -52,11 +52,13 @@ function updateTable(releases, os) {
         release.dart_sdk_arch ? release.dart_sdk_arch : 'x64',
       );
       var date = new Date(Date.parse(release.release_date));
+      var provenance = getProvenanceLink(os, release, date, channel);
       $("<td />").append(downloadLink).appendTo(row);
       $("<td />").append(dartSdkArch).appendTo(row);
       $("<td />").append(hashLabel).appendTo(row);
       $("<td />").addClass("date").text(date.toLocaleDateString()).appendTo(row);
       $("<td />").append(dartSdkVersion).appendTo(row);
+      $("<td />").append(provenance).appendTo(row);
     });
   }
 }
@@ -165,6 +167,21 @@ function updateDownloadLink(releases, os, arch) {
 
 function updateDownloadLinkFailed(os) {
   $(".download-latest-link-" + os).text("(failed)");
+}
+
+function getProvenanceLink(os, release, date, channel) {
+  var baseUrl = 'https://storage.googleapis.com/flutter_infra_release/releases/'
+  if (os == 'windows' && date < new Date(Date.parse('4/3/2023'))) {
+    // provenance not available before 4/3/2023 for Windows
+    return $("<span />").text('-');
+  } else if (date < new Date(Date.parse('12/15/2022'))) {
+    // provenance not available before 12/15/2022 for macOS and Linux
+    return $("<span />").text('-');
+  }
+  return $("<a />").attr("href", 
+    `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}`+
+    `.zip.intoto.jsonl`
+  ).text(`${release.version} file`)
 }
 
 // Send requests to render the tables.

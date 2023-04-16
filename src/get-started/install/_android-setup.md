@@ -45,14 +45,14 @@ follow these steps:
  1. Enable
     [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
     on your machine.
- 1. Launch **Android Studio**, click the **AVD Manager**
-    icon, and select **Create Virtual Device...**
+ 1. Launch **Android Studio**, click the **Device Manager**
+    icon, and select **Create Device** under **Virtual** tab...
     * In older versions of Android Studio, you should instead
     launch **Android Studio > Tools > Android > AVD Manager** and select
     **Create Virtual Device...**. (The **Android** submenu is only present
     when inside an Android project.)
     * If you do not have a project open, you can choose 
-    **Configure > AVD Manager** and select **Create Virtual Device...**
+    **3-Dot Menu / More Actions > Virtual Device Manager** and select **Create Device...**
  1. Choose a device definition and select **Next**.
  1. Select one or more system images for the Android versions you want
     to emulate, and select **Next**.
