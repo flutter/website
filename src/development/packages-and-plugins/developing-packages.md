@@ -296,6 +296,51 @@ Note that as shown here, an app-facing package can have
 some platforms implemented within the package,
 and others in endorsed federated implementations.
 
+#### Shared iOS and macOS implementations
+
+Many frameworks support both iOS and macOS with identical
+or mostly identical APIs, making it possible to implement
+some plugins for both iOS and macOS with the same codebase.
+Normally each platform's implementation is in its own
+folder, but the `sharedDarwinSource` option allows iOS
+and macOS to use the same folder instead:
+
+
+```yaml
+flutter:
+  plugin:
+    platforms:
+      ios:
+        pluginClass: HelloPlugin
+        sharedDarwinSource: true
+      macos:
+        pluginClass: HelloPlugin
+        sharedDarwinSource: true
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+  # Flutter versions prior to 3.7 did not support the
+  # sharedDarwinSource option.
+  flutter: ">=3.7.0"
+```
+
+When `sharedDawninSource` is enabled, instead of
+an `ios` directory for iOS and a `macos` directory
+for macOS, both platforms use a shared `darwin`
+directory for all code and resources. When enabling
+this option, you need to move any existing files
+from `ios` and `macos` to the shared directory. You
+also need to update the podspec file to set the
+dependencies and deployment targets for both platforms,
+for example:
+
+```ruby
+  s.ios.dependency 'Flutter'
+  s.osx.dependency 'FlutterMacOS'
+  s.ios.deployment_target = '11.0'
+  s.osx.deployment_target = '10.14'
+```
+
 ### Step 1: Create the package
 
 To create a plugin package, use the `--template=plugin`
@@ -411,7 +456,8 @@ Then use the following steps:
 
 The iOS platform code for your plugin is located in
 `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
-in the Project Navigator.
+in the Project Navigator. (If you are using `sharedDarwinSource`,
+the path will end with `hello/darwin/Classes` instead.)
 
 You can run the example app by pressing the run (&#9654;) button.
 
@@ -464,7 +510,8 @@ Then use the following steps:
 
 The macOS platform code for your plugin is located in
 `Pods/Development Pods/hello/../../example/macos/Flutter/ephemeral/.symlinks/plugins/hello/macos/Classes`
-in the Project Navigator.
+in the Project Navigator. (If you are using `sharedDarwinSource`,
+the path will end with `hello/darwin/Classes` instead.)
 
 You can run the example app by pressing the run (&#9654;) button.
 
@@ -752,13 +799,13 @@ cd ~/dev/mypackage
 ```
 </li>
 
-<li markdown="1">Run the `dartdoc` tool
+<li markdown="1">Run the `dart doc` tool
     (included as part of the Flutter SDK), as follows:
 
 ```terminal
-   $FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartdoc   # on macOS or Linux
+   $FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart doc   # on macOS or Linux
 
-   %FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc  # on Windows
+   %FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dart doc  # on Windows
 ```
 </li>
 </ol>

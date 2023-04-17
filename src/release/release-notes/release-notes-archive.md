@@ -20,8 +20,8 @@ which documented changes up through and including 1.0.0.
 
 * [Flutter Changelog 0.0.21 through 1.0.0][0.0.21]
 
-[0.0.21]: {{site.url}}/development/tools/sdk/release-notes/release-notes-0.0.21-1.0.0
-[1.9.1]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.9.1
-[1.7.8]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.7.8
-[1.5.4]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.5.4
-[1.2.1]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.2.1
+[0.0.21]: {{site.url}}/release/release-notes/release-notes-0.0.21-1.0.0
+[1.9.1]: {{site.url}}/release/release-notes/release-notes-1.9.1
+[1.7.8]: {{site.url}}/release/release-notes/release-notes-1.7.8
+[1.5.4]: {{site.url}}/release/release-notes/release-notes-1.5.4
+[1.2.1]: {{site.url}}/release/release-notes/release-notes-1.2.1

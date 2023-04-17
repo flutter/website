@@ -26,6 +26,9 @@ you need an Android device running Android 4.1 (API level 16) or higher.
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the
     [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+ 1. [Optional] To leverage wireless debugging, enable **Wireless debugging** 
+    on your device. Detailed instructions are available in the 
+    [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
  1. Windows-only: Install the [Google USB
     Driver]({{site.android-dev}}/studio/run/win-usb).
  1. Using a USB cable, plug your phone into your computer. If prompted on your
@@ -45,14 +48,14 @@ follow these steps:
  1. Enable
     [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
     on your machine.
- 1. Launch **Android Studio**, click the **AVD Manager**
-    icon, and select **Create Virtual Device...**
+ 1. Launch **Android Studio**, click the **Device Manager**
+    icon, and select **Create Device** under **Virtual** tab...
     * In older versions of Android Studio, you should instead
     launch **Android Studio > Tools > Android > AVD Manager** and select
     **Create Virtual Device...**. (The **Android** submenu is only present
     when inside an Android project.)
     * If you do not have a project open, you can choose 
-    **Configure > AVD Manager** and select **Create Virtual Device...**
+    **3-Dot Menu / More Actions > Virtual Device Manager** and select **Create Device...**
  1. Choose a device definition and select **Next**.
  1. Select one or more system images for the Android versions you want
     to emulate, and select **Next**.

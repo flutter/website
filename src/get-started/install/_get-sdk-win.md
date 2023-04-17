@@ -6,7 +6,7 @@
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
-    see the [SDK releases][] page.
+    check out the [SDK archive][].
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
     (for example, `C:\src\flutter`).
@@ -20,15 +20,6 @@
   Do not install Flutter in a directory like 
   `C:\Program Files\` that requires elevated privileges.
 {{site.alert.end}}
-
-If you don't want to install a fixed version of the installation 
-bundle, you can skip steps 1 and 2. Instead, get the source code 
-from the [Flutter repo][] on 
-GitHub, and change branches or tags as needed. For example:
-
-```batchfile
-C:\src>git clone https://github.com/flutter/flutter.git -b stable
-```
 
 You are now ready to run Flutter commands in the Flutter Console.
 
@@ -93,5 +84,5 @@ verify that you’ve set everything up correctly.
 
 
 [Flutter repo]: {{site.repo.flutter}}
-[SDK releases]: {{site.url}}/development/tools/sdk/releases
+[SDK archive]: {{site.url}}/release/archive
 [Set up an editor]: {{site.url}}/get-started/editor?tab=androidstudio

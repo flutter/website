@@ -18,4 +18,3 @@ node_modules
 .packages
 pubspec.lock
 tmp/
-_config_stage.yml

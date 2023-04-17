@@ -567,7 +567,8 @@ Your feedback is welcomed on [issue #8427][].
 
 ### Widgets with .adaptive() constructors
 
-Several widgets (listed in the following table) support `.adaptive()` constructors. 
+Several widgets support `.adaptive()` constructors. 
+The following table lists these widgets.
 Adaptive constructors substitute the corresponding Cupertino components 
 when the app is run on an iOS device. 
 
@@ -810,9 +811,9 @@ void _showAdaptiveDialog(
 }
 ```
 
-Further detail about adapting alert dialogs is available in 
-[the GitHub discussion on dialog adaptations][alert-post],
-where you can leave feedback or ask questions.
+To learn more about adapting alert dialogs, check out 
+[the GitHub discussion on dialog adaptations][alert-post].
+You can leave feedback or ask questions in the discussion.
 
 
 [issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023

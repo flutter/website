@@ -30,6 +30,21 @@
     - title: "Dart language overview"
       permalink: https://dart.dev/overview
 
+- title: Stay up to date
+  permalink: /release
+  children:
+    - title: Upgrade
+      permalink: /release/upgrade
+    - title: SDK archive
+      permalink: /release/archive
+    - divider
+    - title: What's new
+      permalink: /release/whats-new
+    - title: Release notes
+      permalink: /release/release-notes
+    - title: Breaking changes
+      permalink: /release/breaking-changes
+
 - title: Samples & tutorials
   children:
     - title: Flutter Gallery [running app]
@@ -305,6 +320,8 @@
               permalink: /development/tools/devtools/cpu-profiler
             - title: Memory view
               permalink: /development/tools/devtools/memory
+            - title: Debug console view **NEW**
+              permalink: /development/tools/devtools/console
             - title: Network view
               permalink: /development/tools/devtools/network
             - title: Debugger
@@ -315,19 +332,8 @@
               permalink: /development/tools/devtools/app-size
             - title: Release notes
               permalink: /development/tools/devtools/release-notes
-        - title: Flutter SDK
+        - title: SDK overview
           permalink: /development/tools/sdk
-          children:
-            - title: Overview
-              permalink: /development/tools/sdk/overview
-            - title: Upgrading
-              permalink: /development/tools/sdk/upgrading
-            - title: Releases
-              permalink: /development/tools/sdk/releases
-            - title: Breaking changes
-              permalink: /release/breaking-changes
-            - title: Release notes
-              permalink: /development/tools/sdk/release-notes
         - title: Flutter and the pubspec file
           permalink: /development/tools/pubspec
         - title: Hot reload
