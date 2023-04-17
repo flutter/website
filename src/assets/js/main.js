@@ -96,16 +96,6 @@ function initFixedColumns() {
   }
 }
 
-function getOS() {
-  var ua = navigator.userAgent;
-  if (ua.indexOf("Win") !== -1)
-    return "windows";
-  if (ua.indexOf("Mac") !== -1)
-    return "macos";
-  if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1)
-    return "linux";
-}
-
 function initVideoModal() {
   var videoModalObject = $('[data-video-modal]');
 
