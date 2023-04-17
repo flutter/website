@@ -1,7 +1,7 @@
 ---
-title: Flutter SDK releases
-short-title: Releases
-description: All current Flutter SDK releases, stable, beta, and master.
+title: Flutter SDK archive
+short-title: Archive
+description: "All current Flutter SDK releases: stable, beta, and master."
 toc: false
 ---
 
@@ -13,7 +13,26 @@ toc: false
 </style>
 
 The {{site.sdk.channel | capitalize }} channel contains the
-most stable Flutter builds. See [Flutter’s channels][] for details.
+most stable Flutter builds. 
+Check out [Flutter’s channels][] for details.
+
+For details about what's new in the major Flutter releases,
+check out the [release notes][] page.
+
+
+{{site.alert.secondary}}
+  **A note on provenance**: [provenance](https://slsa.dev/provenance)
+  describes how software artifacts are built, including
+  what the download contains and who created it.
+  To view provenance in a more readable format
+  (and where nothing is downloaded), run the following
+  command using the provenance file URL from a release.
+  For example:
+
+  ```terminal
+  curl [provenance URL] | jq -r .payload | base64 -d | jq
+  ```
+{{site.alert.end}}
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -30,9 +49,9 @@ most stable Flutter builds. See [Flutter’s channels][] for details.
 
 {% comment %} Tab panes {% endcomment -%}
 <div id="sdk-archives" class="tab-content">
-{% include_relative _os.md os="Windows" %}
-{% include_relative _os.md os="macOS" %}
-{% include_relative _os.md os="Linux" %}
+{% include_relative _release_os.md os="Windows" %}
+{% include_relative _release_os.md os="macOS" %}
+{% include_relative _release_os.md os="Linux" %}
 </div>
 
 ## Master channel
@@ -50,7 +69,7 @@ $ ./flutter/bin/flutter --version
 For additional details on how our installation bundles are structured,
 see [Installation bundles][].
 
-[Flutter Spring 2020 Update]: {{site.flutter-medium}}/flutter-spring-2020-update-f723d898d7af
 [Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+[release notes]: {{site.url}}/release/release-notes
 [GitHub repo]: {{site.repo.flutter}}
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

@@ -109,7 +109,7 @@ Alternatively, if you prefer not to use `snapd`,
 you can use the following command:
 
 ```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
 ```
 
 [Clang]: https://clang.llvm.org/

@@ -15,7 +15,7 @@ Google Maps from the Android and iOS SDKs
 directly inside your Flutter app.
 
 {{site.alert.note}}
-  This page discusses how to host your own native views
+  This page discusses how to host your own native iOS views
   within a Flutter app.
   If you'd like to embed native Android views
   in your Flutter app,
@@ -184,7 +184,7 @@ import UIKit
 
 class FLPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let factory = FLNativeViewFactory(messenger: registrar.messenger)
+        let factory = FLNativeViewFactory(messenger: registrar.messenger())
         registrar.register(factory, withId: "<platform-view-type>")
     }
 }

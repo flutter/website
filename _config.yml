@@ -19,6 +19,7 @@ repo:
   plugins: https://github.com/flutter/plugins
   gallery: https://github.com/flutter/gallery
   engine: https://github.com/flutter/engine
+  uxr: https://github.com/flutter/uxr
 dart:
   api: https://api.dart.dev
   sdk:
@@ -118,6 +119,10 @@ defaults:
       path: 'get-started/flutter-for'
     values:
       show_breadcrumbs: false
+  - scope:
+      path: 'release'
+    values:
+      show_breadcrumbs: true
 
 
 ########### Alerts ###########

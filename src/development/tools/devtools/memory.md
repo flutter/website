@@ -7,6 +7,10 @@ The memory view provides insights into details
 of the application’s memory allocation and
 tools to detect and debug specific issues.
 
+{{site.alert.note}}
+  This page is up to date for DevTools 2.23.0.
+{{site.alert.end}}
+
 For information on how to locate DevTools screens in different IDEs,
 check out the [DevTools overview]({{site.url}}/development/tools/devtools/overview).
 
@@ -145,23 +149,12 @@ root -> d -> e -> x (shortest retaining path to `x`)
 Only members of the shortest path (`d` and `e`) will include 
 `x` into their retaining size.
 
-### Dart size vs external (native) size
-
-Some parts of an object (for example, graphics)
-might be stored outside of Dart heap,
-in native device memory.
-
-You can observe an object’s Dart heap, external,
-and total memory allocation breakdown on the **Profile** tab:
-
-![Screenshot of a profile page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab.png)
-
 ### Memory leaks happen in Dart?
 
 Garbage collector cannot prevent all types of memory leaks, and developers
 still need to watch objects to have leak-free lifecycle. 
 
-#### Why garbage collector cannot prevent all leaks?
+#### Why can't the garbage collector prevent all leaks?
 
 While the garbage collector takes care of all
 unreachable objects, it’s the responsibility
@@ -274,14 +267,14 @@ has the following features:
   and view both standard events (like garbage collection)
   and custom events (like image allocation).
 
-[**Profile** tab](#profile-tab)
+[**Profile Memory** tab](#profile-memory-tab)
 : See current memory allocation listed by class and
-  memory type (Dart or external/native). 
+  memory type. 
 
-[**Diff** tab](#diff-tab)
+[**Diff Snapshots** tab](#diff-snapshots-tab)
 : Detect and investigate a feature’s memory management issues.
 
-[**Trace** tab](#trace-tab)
+[**Trace Instances** tab](#trace-instances-tab)
 : Investigate a feature’s memory management for
   a specified set of classes.
 
@@ -378,24 +371,24 @@ The quantities plotted on the y-axis are as follows:
 [frog]: https://dartfrog.vgv.dev/
 [heroku]: {{site.youtube-site}}/watch?v=nkTUMVNelXA
 
-### Profile tab
+### Profile Memory tab
 
-Use the **Profile** tab to see current memory
+Use the **Profile Memory** tab to see current memory
 allocation by class and memory type. For a
 deeper analysis in Google Sheets or other tools,
 download the data in CSV format.
 Toggle **Refresh on GC**, to see allocation in real time.
 
-![Screenshot of the profile tab page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab-2.png)
+![Screenshot of the profile tab page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab-2.png){:width="100%"}
 
-### Diff tab
+### Diff Snapshots tab
 
-Use the **Diff** tab to investigate a feature’s
+Use the **Diff Snapshots** tab to investigate a feature’s
 memory management. Follow the guidance on the tab
 to take snapshots before and after interaction
 with the application, and diff the snapshots:
 
-![Screenshot of the diff tab page]({{site.url}}/assets/images/docs/tools/devtools/diff-tab.png)
+![Screenshot of the diff tab page]({{site.url}}/assets/images/docs/tools/devtools/diff-tab.png){:width="100%"}
 
 Tap the **Filter classes and packages** button,
 to narrow the data:
@@ -405,11 +398,10 @@ to narrow the data:
 For a deeper analysis in Google Sheets
 or other tools, download the data in CSV format.
 
-### Trace tab
+### Trace Instances tab
 
-Use the **Trace** tab to investigate what methods
-allocate memory for a set of classes
-during feature execution:
+Use the **Trace Instances** tab to investigate what methods
+allocate memory for a set of classes during feature execution:
 
 1. Select classes to trace
 1. Interact with your app to trigger the code
@@ -418,7 +410,7 @@ during feature execution:
 1. Select a traced class
 1. Review the collected data
 
-![Screenshot of a trace tab]({{site.url}}/assets/images/docs/tools/devtools/trace-tab.png)
+![Screenshot of a trace tab]({{site.url}}/assets/images/docs/tools/devtools/trace-instances-tab.png)
 
 #### Bottom up vs call tree view
 
@@ -437,8 +429,13 @@ call stacks that have allocated the instances.
 
 ## Other resources
 
-To learn how to monitor an app's memory usage
-and detect memory leaks using DevTools,
-check out a guided [Memory View tutorial][memory-tutorial].
+For more information, check out the following resources:
+
+* To learn how to monitor an app's memory usage
+  and detect memory leaks using DevTools,
+  check out a guided [Memory View tutorial][memory-tutorial].
+* To understand Android memory structure,
+  check out [Android: Memory allocation among processes][].  
 
 [memory-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
+[Android: Memory allocation among processes]: {{site.android-dev}}/topic/performance/memory-management

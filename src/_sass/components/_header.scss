@@ -39,6 +39,10 @@ header.site-header {
         margin-bottom: 1.5rem;
       }
     }
+
+    .site-header__sheet > * {
+      margin: 0;
+    }
   }
 
   @include media-breakpoint-down(md) {
@@ -50,6 +54,12 @@ header.site-header {
   @include media-breakpoint-down(lg) {
     .site-header__sheet .navbar-nav .nav-item.docs-item {
       display: none;
+    }
+  }
+
+  .nav-icon {
+    &:hover {
+      color: $site-color-body-light;
     }
   }
 }
