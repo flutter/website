@@ -568,6 +568,7 @@ Your feedback is welcomed on [issue #8427][].
 ### Widgets with .adaptive() constructors
 
 Several widgets support `.adaptive()` constructors. 
+The following table lists these widgets.
 Adaptive constructors substitute the corresponding Cupertino components 
 when the app is run on an iOS device. 
 
@@ -583,14 +584,13 @@ Therefore, we recommend that you follow platform conventions.
 |<img width=160 src="/assets/images/docs/platform-adaptations/m3-switch.png" class="figure-img img-fluid rounded" alt="Switch in Material 3" /><br/>`Switch`|<img src="/assets/images/docs/platform-adaptations/hig-switch.png" class="figure-img img-fluid rounded" alt="Switch in HIG" /><br/>`CupertinoSwitch`|[`Switch.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-slider.png" width =160 class="figure-img img-fluid rounded" alt="Slider in Material 3" /><br/>`Slider`|<img src="/assets/images/docs/platform-adaptations/hig-slider.png"  width =160  class="figure-img img-fluid rounded" alt="Slider in HIG" /><br/>`CupertinoSlider`|[`Slider.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-progress.png" width = 100 class="figure-img img-fluid rounded" alt="Circular progress indicator in Material 3" /><br/>`CircularProgressIndicator`|<img src="/assets/images/docs/platform-adaptations/hig-progress.png" class="figure-img img-fluid rounded" alt="Activity indicator in HIG" /><br/>`CupertinoActivityIndicator`|[`CircularProgressIndicator.adaptive()`][]|
-<!-- Uncomment out these lines after the next stable -->
-<!-- | <img src="/assets/images/docs/platform-adaptations/m3-checkbox.png" class="figure-img img-fluid rounded" alt=" Checkbox in Material 3" /> <br/>`Checkbox`| <img src="/assets/images/docs/platform-adaptations/hig-checkbox.png" class="figure-img img-fluid rounded" alt="Checkbox in HIG" /> <br/> `CupertinoCheckbox`|[`Checkbox.adaptive()`][]|
-|<img src="/assets/images/docs/platform-adaptations/m3-radio.png" class="figure-img img-fluid rounded" alt="Radio in Material 3" /> <br/>`Radio`|<img src="/assets/images/docs/platform-adaptations/hig-radio.png" class="figure-img img-fluid rounded" alt="Radio in HIG" /><br/>`CupertinoRadio`|[`Radio.adaptive()`][]| -->
+| <img src="/assets/images/docs/platform-adaptations/m3-checkbox.png" class="figure-img img-fluid rounded" alt=" Checkbox in Material 3" /> <br/>`Checkbox`| <img src="/assets/images/docs/platform-adaptations/hig-checkbox.png" class="figure-img img-fluid rounded" alt="Checkbox in HIG" /> <br/> `CupertinoCheckbox`|[`Checkbox.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-radio.png" class="figure-img img-fluid rounded" alt="Radio in Material 3" /> <br/>`Radio`|<img src="/assets/images/docs/platform-adaptations/hig-radio.png" class="figure-img img-fluid rounded" alt="Radio in HIG" /><br/>`CupertinoRadio`|[`Radio.adaptive()`][]|
 
 ### Top app bar and navigation bar
 
 Since Android 12, the default UI for top app 
-bars follow the design guidelines defined in [Material 3][mat-appbar]. 
+bars follows the design guidelines defined in [Material 3][mat-appbar]. 
 On iOS, an equivalent component called "Navigation Bars" 
 is defined in [Apple’s Human Interface Guidelines][hig-appbar] (HIG). 
 
@@ -656,7 +656,90 @@ AppBar(
 But, because app bars are displayed alongside 
 other content in your page, it's only recommended to adapt the styling 
 so long as its cohesive with the rest of your application. You can see 
-additional code samples and a further explanation in [the GitHub discussion on app bar adaptations][appbar-post]. 
+additional code samples and a further explanation in 
+[the GitHub discussion on app bar adaptations][appbar-post]. 
+
+### Bottom navigation bars
+
+Since Android 12, the default UI for bottom navigation 
+bars follow the design guidelines defined in [Material 3][mat-navbar]. 
+On iOS, an equivalent component called "Tab Bars" 
+is defined in [Apple’s Human Interface Guidelines][hig-tabbar] (HIG). 
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="/assets/images/docs/platform-adaptations/mat-navbar.png" 
+        class="figure-img img-fluid rounded" alt="Bottom Navigation Bar in Material 3 " />
+        <figcaption class="figure-caption">
+          Bottom Navigation Bar in Material 3 
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="/assets/images/docs/platform-adaptations/hig-tabbar.png" 
+        class="figure-img img-fluid rounded" alt="Tab Bar in Human Interface Guidelines" />
+        <figcaption class="figure-caption">
+         Tab Bar in Human Interface Guidelines
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+Since tab bars are persistent across your app, they should match your
+own branding. However, if you choose to use Material's default 
+styling on Android, you might consider adapting to the default iOS
+tab bars.
+
+To implement platform-specific bottom navigation bars, 
+you can use Flutter’s `NavigationBar` widget on Android 
+and the `CupertinoTabBar` widget on iOS. 
+Below is a code snippet you can 
+adapt to show a platform-specific navigation bars.
+
+```dart
+final Map<String, Icon> _navigationItems = {
+    'Menu': Platform.isIOS ? Icon(CupertinoIcons.house_fill) : Icon(Icons.home),
+    'Order': Icon(Icons.adaptive.share),
+  };
+
+...
+
+Scaffold(
+  body: _currentWidget,
+  bottomNavigationBar: Platform.isIOS
+          ? CupertinoTabBar(
+              currentIndex: _currentIndex,
+              onTap: (index) {
+                setState(() => _currentIndex = index);
+                _loadScreen();
+              },
+              items: _navigationItems.entries
+                  .map<BottomNavigationBarItem>(
+                      (entry) => BottomNavigationBarItem(
+                            icon: entry.value,
+                            label: entry.key,
+                          ))
+                  .toList(),
+            )
+          : NavigationBar(
+              selectedIndex: _currentIndex,
+              onDestinationSelected: (index) {
+                setState(() => _currentIndex = index);
+                _loadScreen();
+              },
+              destinations: _navigationItems.entries
+                  .map<Widget>((entry) => NavigationDestination(
+                        icon: entry.value,
+                        label: entry.key,
+                      ))
+                  .toList(),
+            ));
+```
+
 
 ### Alert dialog
 
@@ -728,7 +811,7 @@ void _showAdaptiveDialog(
 }
 ```
 
-Further detail about adapting alert dialogs is available in 
+To learn more about adapting alert dialogs, check out 
 [the GitHub discussion on dialog adaptations][alert-post].
 You can leave feedback or ask questions in the discussion.
 
@@ -756,9 +839,11 @@ You can leave feedback or ask questions in the discussion.
 [appbar-post]: {{site.repo.uxr}}/discussions/93
 [mat-appbar]: https://m3.material.io/components/top-app-bar/overview
 [hig-appbar]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
-<!-- [`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
-[`Radio.adaptive()`]: {{site.api}}/flutter/material/Radio/Radio.adaptive.html -->
+[`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
+[`Radio.adaptive()`]: {{site.api}}/flutter/material/Radio/Radio.adaptive.html
 [`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
 [`Slider.adaptive()`]: {{site.api}}/flutter/material/Slider/Slider.adaptive.html
 [`CircularProgressIndicator.adaptive()`]: {{site.api}}/flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
 [UI Component section]: {{site.api}}/resources/platform-adaptations/#ui-components
+[mat-navbar]: https://m3.material.io/components/navigation-bar/overview
+[hig-tabbar]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
