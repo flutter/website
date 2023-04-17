@@ -803,9 +803,9 @@ cd ~/dev/mypackage
     (included as part of the Flutter SDK), as follows:
 
 ```terminal
-   $FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartdoc   # on macOS or Linux
+   $FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart doc   # on macOS or Linux
 
-   %FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc  # on Windows
+   %FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dart doc  # on Windows
 ```
 </li>
 </ol>
