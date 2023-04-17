@@ -799,7 +799,7 @@ cd ~/dev/mypackage
 ```
 </li>
 
-<li markdown="1">Run the `dartdoc` tool
+<li markdown="1">Run the `dart doc` tool
     (included as part of the Flutter SDK), as follows:
 
 ```terminal
