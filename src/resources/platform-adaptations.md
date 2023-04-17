@@ -296,6 +296,11 @@ Therefore a fallback font is used when running on Android
 if the platform is debug-overridden to iOS or the
 default Cupertino theme is used.
 
+You might choose to adapt the text styling of Material 
+widgets to match the default text styling on iOS. 
+You can see widget-specific examples in the 
+[UI Component section][].
+
 <div class="container">
   <div class="row">
     <div class="col-sm text-center">
@@ -560,6 +565,99 @@ This section includes preliminary recommendations on how to adapt
 Material widgets to deliver a natural and compelling experience on iOS. 
 Your feedback is welcomed on [issue #8427][]. 
 
+### Widgets with .adaptive() constructors
+
+Several widgets support `.adaptive()` constructors. 
+Adaptive constructors substitute the corresponding Cupertino components 
+when the app is run on an iOS device. 
+
+Widgets in the following table are used primarily for input, 
+selection, and to display system information. 
+Because these controls are tightly integrated with the operating system,
+users have been trained to recognize and respond to them.
+Therefore, we recommend that you follow platform conventions. 
+
+
+| Material Widget | Cupertino Widget | Adaptive Constructor |
+|---|---|---|---|---|
+|<img width=160 src="/assets/images/docs/platform-adaptations/m3-switch.png" class="figure-img img-fluid rounded" alt="Switch in Material 3" /><br/>`Switch`|<img src="/assets/images/docs/platform-adaptations/hig-switch.png" class="figure-img img-fluid rounded" alt="Switch in HIG" /><br/>`CupertinoSwitch`|[`Switch.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-slider.png" width =160 class="figure-img img-fluid rounded" alt="Slider in Material 3" /><br/>`Slider`|<img src="/assets/images/docs/platform-adaptations/hig-slider.png"  width =160  class="figure-img img-fluid rounded" alt="Slider in HIG" /><br/>`CupertinoSlider`|[`Slider.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-progress.png" width = 100 class="figure-img img-fluid rounded" alt="Circular progress indicator in Material 3" /><br/>`CircularProgressIndicator`|<img src="/assets/images/docs/platform-adaptations/hig-progress.png" class="figure-img img-fluid rounded" alt="Activity indicator in HIG" /><br/>`CupertinoActivityIndicator`|[`CircularProgressIndicator.adaptive()`][]|
+<!-- Uncomment out these lines after the next stable -->
+<!-- | <img src="/assets/images/docs/platform-adaptations/m3-checkbox.png" class="figure-img img-fluid rounded" alt=" Checkbox in Material 3" /> <br/>`Checkbox`| <img src="/assets/images/docs/platform-adaptations/hig-checkbox.png" class="figure-img img-fluid rounded" alt="Checkbox in HIG" /> <br/> `CupertinoCheckbox`|[`Checkbox.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-radio.png" class="figure-img img-fluid rounded" alt="Radio in Material 3" /> <br/>`Radio`|<img src="/assets/images/docs/platform-adaptations/hig-radio.png" class="figure-img img-fluid rounded" alt="Radio in HIG" /><br/>`CupertinoRadio`|[`Radio.adaptive()`][]| -->
+
+### Top app bar and navigation bar
+
+Since Android 12, the default UI for top app 
+bars follow the design guidelines defined in [Material 3][mat-appbar]. 
+On iOS, an equivalent component called "Navigation Bars" 
+is defined in [Apple’s Human Interface Guidelines][hig-appbar] (HIG). 
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="/assets/images/docs/platform-adaptations/mat-appbar.png" 
+        class="figure-img img-fluid rounded" alt=" Top App Bar in Material 3 " />
+        <figcaption class="figure-caption">
+          Top App Bar in Material 3 
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="/assets/images/docs/platform-adaptations/hig-appbar.png" 
+        class="figure-img img-fluid rounded" alt="Navigation Bar in Human Interface Guidelines" />
+        <figcaption class="figure-caption">
+          Navigation Bar in Human Interface Guidelines
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+Certain properties of app bars in Flutter apps should be adapted, 
+like system icons and page transitions. 
+These are already automatically adapted when using 
+the Material `AppBar` and `SliverAppBar` widgets. 
+You can also further customize the properties of these widgets to better 
+match iOS platform styles, as shown below. 
+
+```dart
+// Map the text theme to iOS styles
+TextTheme cupertinoTextTheme = TextTheme(
+    headlineMedium: CupertinoThemeData()
+        .textTheme
+        .navLargeTitleTextStyle
+         // fixes a small bug with spacing
+        .copyWith(letterSpacing: -1.5),
+    titleLarge: CupertinoThemeData().textTheme.navTitleTextStyle)
+...
+
+// Use iOS text theme on iOS devices
+ThemeData(
+      textTheme: Platform.isIOS ? cupertinoTextTheme : null,
+      ...
+)
+...
+
+// Modify AppBar properties
+AppBar(
+        surfaceTintColor: Platform.isIOS ? Colors.transparent : null,
+        shadowColor: Platform.isIOS ? CupertinoColors.darkBackgroundGray : null,
+        scrolledUnderElevation: Platform.isIOS ? .1 : null,
+        toolbarHeight: Platform.isIOS ? 44 : null,
+        ...
+      ),
+
+```
+
+But, because app bars are displayed alongside 
+other content in your page, it's only recommended to adapt the styling 
+so long as its cohesive with the rest of your application. You can see 
+additional code samples and a further explanation in [the GitHub discussion on app bar adaptations][appbar-post]. 
+
 ### Alert dialog
 
 Since Android 12, the default UI of alert dialogs 
@@ -631,7 +729,8 @@ void _showAdaptiveDialog(
 ```
 
 Further detail about adapting alert dialogs is available in 
-[this post][alert-post], where you can leave feedback or ask questions.
+[the GitHub discussion on dialog adaptations][alert-post].
+You can leave feedback or ask questions in the discussion.
 
 
 [issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
@@ -654,3 +753,12 @@ Further detail about adapting alert dialogs is available in
 [m3-dialog]: https://m3.material.io/components/dialogs/overview
 [hig-alert]: https://developer.apple.com/design/human-interface-guidelines/components/presentation/alerts/
 [alert-post]: {{site.repo.uxr}}/discussions/92
+[appbar-post]: {{site.repo.uxr}}/discussions/93
+[mat-appbar]: https://m3.material.io/components/top-app-bar/overview
+[hig-appbar]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
+<!-- [`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
+[`Radio.adaptive()`]: {{site.api}}/flutter/material/Radio/Radio.adaptive.html -->
+[`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
+[`Slider.adaptive()`]: {{site.api}}/flutter/material/Slider/Slider.adaptive.html
+[`CircularProgressIndicator.adaptive()`]: {{site.api}}/flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
+[UI Component section]: {{site.api}}/resources/platform-adaptations/#ui-components
