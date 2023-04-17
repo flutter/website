@@ -22,8 +22,8 @@ same strings in [`WidgetsLocalizations`][].
 
 ## Migration guide
 
-If you are using these strings in you code, you can access the strings from `WidgetsLocalizations`
-instead.
+If you use these strings in your code,
+you can access them from `WidgetsLocalizations`instead.
 
 Code before migration:
 
@@ -37,9 +37,9 @@ Code after migration:
 WidgetsLocalizations.of(context).reorderItemToStart;
 ```
 
-If you are overriding `MaterialLocalizations` or `WidgetsLocalizations`, make sure you remove the
-translations from the MaterialLocalizations subclass and move them to the WidgetsLocalizations
-subclass.
+If you override `MaterialLocalizations` or `WidgetsLocalizations`,
+make sure to remove the translations from the `MaterialLocalizations`
+subclass and move them to the `WidgetsLocalizations` subclass.
 
 Code before migration:
 
