@@ -51,6 +51,8 @@ class MaterialLocalizationsMyLanguage extends MaterialLocalizationsEn {
 }
 ```
 
+Code after migration:
+
 ```dart
 class MaterialLocalizationsMyLanguage extends MaterialLocalizationsEn {
   // ...
@@ -66,7 +68,7 @@ class WidgetsLocalizationsMyLanguage extends WidgetsLocalizationsEn {
 
 ## Timeline
 
-Landed in version: TBD  <br>
+Landed in version: v3.10.0-2.0.pre
 In stable release: TBD
 
 ## References
