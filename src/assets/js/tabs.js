@@ -99,7 +99,9 @@ function setupToolsTabs(container, tabIdPrefix, storageName, defaultTab) {
   // If we have a tool in the url fragment, pre-select it
   if (location.hash && location.hash.length > 1) {
     selectTool(location.hash.substring(1));
-  } else if (storageName && window.localStorage && window.localStorage.getItem(storageName)) {
+  } else if (storageName
+      && window.localStorage
+      && window.localStorage.getItem(storageName)) {
     selectTool(window.localStorage.getItem(storageName));
   } else if (defaultTab) {
     selectTool(defaultTab);
