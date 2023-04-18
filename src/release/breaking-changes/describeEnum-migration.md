@@ -11,8 +11,12 @@ of `describeEnum(Enum.something)` should use
 
 ## Context
 
-As Dart introduced the `name` getter in Enums, `describeEnum` became redudant.
-The `describeEnum` method was used to convert an enum value to a string.
+Dart 2.17 introduced enhanced enums. With them, Enum became a type
+and all enums got a `name` getter, which made `describeEnum` redundant.
+
+The `describeEnum` method was used to convert an enum value to a string,
+since `Enum.something.toString()` would produce `Enum.something` instead
+of `something`, which a lot of users wanted. Now, the `name` getter does this.
 
 ## Description of change
 
