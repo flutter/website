@@ -35,7 +35,7 @@ Code before migration:
 ```dart
 enum MyEnum { paper, rock }
 
-print(describeEnum(paper)); // output: paper
+print(describeEnum(MyEnum.paper)); // output: paper
 ```
 
 Code after migration:
@@ -44,7 +44,7 @@ Code after migration:
 ```dart
 enum MyEnum { paper, rock }
 
-print(paper.name); // output: paper
+print(MyEnum.paper.name); // output: paper
 ```
 
 ## Timeline
