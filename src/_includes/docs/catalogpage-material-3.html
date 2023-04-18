@@ -1,41 +1,3 @@
-<script>
-    var isLightMode = true;
-
-    // Flip brightness of all Material 3 widgets on the page.
-    function toggleWidgetBrightness() {
-        isLightMode = !isLightMode;
-        const imgElements = document.getElementsByClassName("m3-img");
-        const icon = document.getElementsByClassName("material-icons-outlined m3-widget-brightness-icon")[0];
-
-        // Loop through each image element and replace its src with the appropriate light/dark version.
-        Array.from(imgElements).forEach((img) => {
-            const currentSrc = img.getAttribute("src");
-            const splitSrc = currentSrc.split(".");
-            const fileExtension = splitSrc.pop();
-            let fileName = splitSrc.join(".");
-            const textLabel = document.getElementsByClassName("switch label")[0];
-
-            if (!isLightMode) {
-                fileName += "-dark";
-            } else {
-                fileName = fileName.replace("-dark", "");
-            }
-
-            const newSrc = fileName + "." + fileExtension;
-            img.setAttribute("src", newSrc);
-        });
-
-        if (!isLightMode) {
-            newIcon = "light_mode_outlined";
-        } else {
-            newIcon = "dark_mode_outlined";
-        }
-
-        // Update toggle icon.
-        icon.textContent = newIcon;
-    }
-</script>
-
 {% for section in site.data.catalog.index %}
     {% if section.name == include.category %}
         {% assign category = section %}
@@ -56,11 +18,6 @@
     {% endif -%}
 
     <p>See more widgets in the <a href="{{site.url}}/development/ui/widgets">widget catalog</a>.</p>
-
-    <span class="m3-widget-brightness-icon-container" onclick="toggleWidgetBrightness()">
-        <i class="material-icons-outlined m3-widget-brightness-icon" >dark_mode_outlined</i>
-    </span>
-    <br />
 
     {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.categories contains include.category" -%}
 
