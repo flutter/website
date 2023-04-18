@@ -422,7 +422,7 @@
   },
   {
     "name": "Common Buttons",
-    "description": "<b>Hover me!</b><br /><br />Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
+    "description": "Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
     "categories": [],
     "subcategories": [
       "Actions"
