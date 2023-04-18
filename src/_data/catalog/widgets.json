@@ -177,7 +177,8 @@
       "Navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/AppBar-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-top-app-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-top-app-bar.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
     "name": "AppBar",
@@ -239,7 +240,8 @@
       "Communication"
     ],
     "link": "https://api.flutter.dev/flutter/material/Badge-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-badge.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-badge.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
     "name": "Baseline",
@@ -259,7 +261,8 @@
       "Navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/BottomAppBar-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bottom-app-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bottom-app-bar.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
     "name": "Bottom Sheet",
@@ -269,7 +272,8 @@
       "Containment"
     ],
     "link": "https://api.flutter.dev/flutter/material/BottomSheet-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bottom-sheet.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bottom-sheet.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
     "name": "BottomNavigationBar",
@@ -309,7 +313,8 @@
       "Containment"
     ],
     "link": "https://api.flutter.dev/flutter/material/Card-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-card.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-card.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
     "name": "Center",
@@ -339,7 +344,8 @@
       "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/Checkbox-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-checkbox.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-checkbox.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "Chip",
@@ -359,7 +365,8 @@
       "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/Chip-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-chip.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-chip.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "CircularProgressIndicator",
@@ -788,7 +795,8 @@
       "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/showDatePicker.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-date-picker.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-date-picker.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "DecoratedBox",
@@ -828,7 +836,8 @@
       "Containment"
     ],
     "link": "https://api.flutter.dev/flutter/material/Dialog-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-dialog.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-dialog.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
     "name": "Dismissible",
@@ -858,7 +867,8 @@
       "Containment"
     ],
     "link": "https://api.flutter.dev/flutter/material/Divider-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-divider.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-divider.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
     "name": "DragTarget",
@@ -962,7 +972,8 @@
       "Actions"
     ],
     "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.extended.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-extended-fab.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-extended-fab.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "FadeTransition",
@@ -993,7 +1004,7 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-floating-action-button.png'>",
-    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-floating-action-button-hover.png'>"
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "FloatingActionButton",
@@ -1131,7 +1142,8 @@
       "Actions"
     ],
     "link": "https://api.flutter.dev/flutter/material/IconButton-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-icon-button.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-icon-button.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "IconButton",
@@ -1244,7 +1256,8 @@
       "Containment"
     ],
     "link": "https://api.flutter.dev/flutter/material/List-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-list.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-list.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
     "name": "ListBody",
@@ -1316,7 +1329,8 @@
       "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/PopupMenuButton-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-menu.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-menu.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "MergeSemantics",
@@ -1335,8 +1349,9 @@
     "subcategories": [
       "Navigation"
     ],
-    "link": "https://api.flutter.dev/flutter/material/Badge-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-navigation-bar.png'>"
+    "link": "https://api.flutter.dev/flutter/material/NavigationBar-class.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-navigation-bar.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
     "name": "Navigation Drawer",
@@ -1346,7 +1361,8 @@
       "Navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/NavigationDrawer-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-navigation-drawer.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-navigation-drawer.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
     "name": "Navigation Rail",
@@ -1356,7 +1372,8 @@
       "Navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/NavigationRail-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-navigation-rail.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-navigation-rail.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
     "name": "Navigator",
@@ -1488,7 +1505,8 @@
       "Communication"
     ],
     "link": "https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-progress-indicator.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-progress-indicator.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
     "name": "Radio",
@@ -1508,7 +1526,8 @@
       "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/Radio-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-radio-button.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-radio-button.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "RawImage",
@@ -1654,7 +1673,8 @@
       "Actions"
     ],
     "link": "https://api.flutter.dev/flutter/material/SegmentedButton-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-segmented-button.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-segmented-button.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "Semantics",
@@ -1744,7 +1764,8 @@
       "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/Slider-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-slider.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-slider.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "SliverAppBar",
@@ -1855,7 +1876,8 @@
       "Communication"
     ],
     "link": "https://api.flutter.dev/flutter/material/SnackBar-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-snackbar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-snackbar.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
     "name": "Stack",
@@ -1907,7 +1929,8 @@
       "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/Switch-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-switch.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-switch.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "Tab Bar",
@@ -1917,7 +1940,8 @@
       "Navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/TabBar-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-tab-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-tab-bar.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
     "name": "TabBar",
@@ -1998,7 +2022,8 @@
       "Text Inputs"
     ],
     "link": "https://api.flutter.dev/flutter/material/TextField-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-text-field.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-text-field.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
     "name": "TextField",
@@ -2028,7 +2053,8 @@
       "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/showTimePicker.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-time-picker.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-time-picker.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "Tooltip",
