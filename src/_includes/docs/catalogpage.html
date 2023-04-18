@@ -17,6 +17,8 @@
     </ul>
     {% endif -%}
 
+    <p>{{ category.pagecontent }}</p>
+
     <p>See more widgets in the <a href="{{site.url}}/development/ui/widgets">widget catalog</a>.</p>
 
     {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.categories contains include.category" -%}
