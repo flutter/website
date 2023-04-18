@@ -170,7 +170,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "App Bar",
+    "name": "App bar",
     "description": "Top app bars display information and actions at the top of a screen.",
     "categories": [],
     "subcategories": [
@@ -254,7 +254,7 @@
     "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-baseline' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#ffffff'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='20' width='60' height='50' fill='#ffffff'/><rect x='20' y='45' width='60' height='30' fill='#4dd0e1'/><line x1='85' y1='20' x2='85' y2='66' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-baseline)'/><line x1='15' y1='20' x2='15' y2='66' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-baseline)'/><line x1='10' y1='70' x2='90' y2='70' stroke='#ffffff' stroke-width='2'/><text x='50' y='69' text-anchor='middle' font-family='Roboto' font-size='25' fill='#3b75ad'>Abc </text></svg>"
   },
   {
-    "name": "Bottom App Bar",
+    "name": "Bottom app bar",
     "description": "A bottom app bar displays navigation and key actions at the bottom of mobile screens.",
     "categories": [],
     "subcategories": [
@@ -265,7 +265,7 @@
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
-    "name": "Bottom Sheet",
+    "name": "Bottom sheet",
     "description": "Bottom sheets are surfaces containing supplementary content, anchored to the bottom of the screen.",
     "categories": [],
     "subcategories": [
@@ -421,7 +421,7 @@
     "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='40' height='80' fill='#ffffff'/><rect x='40' y='15' width='20' height='20' fill='#4dd0e1'/><rect x='35' y='40' width='30' height='30' fill='#4dd0e1'/></svg>"
   },
   {
-    "name": "Common Buttons",
+    "name": "Common buttons",
     "description": "Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
     "categories": [],
     "subcategories": [
@@ -788,7 +788,7 @@
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VY2h4WElGdEhPb2c/components_pickers.png'>"
   },
   {
-    "name": "Date Picker",
+    "name": "Date picker",
     "description": "Date pickers let people select a date, or a range of dates.",
     "categories": [],
     "subcategories": [
@@ -835,7 +835,7 @@
     "subcategories": [
       "Containment"
     ],
-    "link": "https://api.flutter.dev/flutter/material/Dialog-class.html",
+    "link": "https://api.flutter.dev/flutter/material/AlertDialog-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-dialog.png'>",
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
@@ -996,7 +996,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Floating Action Button",
+    "name": "Floating action button",
     "description": "The FAB represents the most important action on a screen. It puts key actions within reach.",
     "categories": [],
     "subcategories": [
@@ -1135,7 +1135,7 @@
     "image": "<img alt='' src='https://flutter.github.io/assets-for-api-docs/assets/widgets/icon.png'>"
   },
   {
-    "name": "Icon Button",
+    "name": "Icon button",
     "description": "Icon buttons help people take supplementary actions with a single tap.",
     "categories": [],
     "subcategories": [
@@ -1343,7 +1343,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Navigation Bar",
+    "name": "Navigation bar",
     "description": "Navigation bars offer a persistent and convenient way to switch between primary destinations in an apps.",
     "categories": [],
     "subcategories": [
@@ -1354,7 +1354,7 @@
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
-    "name": "Navigation Drawer",
+    "name": "Navigation drawer",
     "description": "Navigation drawers provide ergonomic access to destinations in an app.",
     "categories": [],
     "subcategories": [
@@ -1365,7 +1365,7 @@
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
-    "name": "Navigation Rail",
+    "name": "Navigation rail",
     "description": "Navigation rails provide access to primary destinations in apps when using tablet and desktop screens.",
     "categories": [],
     "subcategories": [
@@ -1498,7 +1498,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Progress Indicator",
+    "name": "Progress indicator",
     "description": "Progress indicators inform users about the status of ongoing processes, such as loading an app or submitting a form.",
     "categories": [],
     "subcategories": [
@@ -1519,7 +1519,7 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-radio.png'>"
   },
   {
-    "name": "Radio Button",
+    "name": "Radio button",
     "description": "Radio buttons allow users to select one option from a set.",
     "categories": [],
     "subcategories": [
@@ -1666,7 +1666,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Segmented Button",
+    "name": "Segmented button",
     "description": "Segmented buttons help people select options, switch views, or sort elements.",
     "categories": [],
     "subcategories": [
@@ -1933,7 +1933,7 @@
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
-    "name": "Tab Bar",
+    "name": "Tab bar",
     "description": "Tabs organize content across different screens, data sets, and other interactions.",
     "categories": [],
     "subcategories": [
@@ -2015,7 +2015,7 @@
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VNDg3V3ZjU2hsNGc/components_buttons_usage3.png'>"
   },
   {
-    "name": "TextField",
+    "name": "Text field",
     "description": "Text fields allow users to enter text into a UI. They typically appear in forms and dialogs.",
     "categories": [],
     "subcategories": [
@@ -2046,7 +2046,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Time Picker",
+    "name": "Time picker",
     "description": "Time pickers help users select and set a specific time.",
     "categories": [],
     "subcategories": [

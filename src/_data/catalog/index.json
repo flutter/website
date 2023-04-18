@@ -33,6 +33,7 @@
   {
     "name": "Material 3 Components",
     "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://material.io/design/guidelines-overview\">Material 3 Design guidelines</a>.<br /><br />Material 3 will become the default in late 2023 - see <a href=\"https://m3.material.io/develop/flutter\">m3.material.io/develop/flutter</a> for more details.",
+    "pagecontent": "To opt into Material 3, set the <a href=\"https://api.flutter.dev/flutter/material/ThemeData/useMaterial3.html\"><code>useMaterial3</code></a> flag to <code>true</code> in your theme.<br /><br />To see these widgets in action, check out our live Material 3 <a href=\"https://flutter.github.io/samples/web/material_3_demo\" target=\"_blank\" rel=\"noopener noreferrer\">demo app</a>.",
     "subcategories": [
       {
         "name": "Actions",
