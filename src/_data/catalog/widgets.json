@@ -966,7 +966,7 @@
   },
   {
     "name": "Extended FAB",
-    "description": "Clickable block that prompts app users to take an action. The abbreviation stands for Extended Floating Action Buttons. These buttons display wider than standard FABs to accommodate a text label and provide a larger target area.",
+    "description": "Clickable floating action button. These buttons display wider than standard FABs to accommodate a text label and provide a larger target area.",
     "categories": [],
     "subcategories": [
       "Actions"
@@ -1667,7 +1667,7 @@
   },
   {
     "name": "Segmented button",
-    "description": "Segmented buttons help people select options, switch views, or sort elements.",
+    "description": "Single or multiple selected clickable blocks to help people select options, switch views, or sort elements.",
     "categories": [],
     "subcategories": [
       "Actions"

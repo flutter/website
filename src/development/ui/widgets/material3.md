@@ -5,4 +5,4 @@ description: >
   A catalog of Flutter's widgets implementing Material 3 design guidelines.
 ---
 
-{% include docs/catalogpage-material-3.html category="Material 3 Components" %}
+{% include docs/catalogpage-material-3.html category="Material Components" %}
