@@ -15,6 +15,10 @@ In preparation for supporting multiple clipboard data variants, the
 `ClipboardData` constructor now requires that at least one data variant is
 provided.
 
+Previously, platforms were inconsistent in how they handled `null`.
+The behavior is now consistent across platforms. If you are interested
+in the low-level details, see [PR 122446].
+
 ## Description of change
 
 The [`ClipboardData constructor`][]'s `text` argument is no longer nullable.
@@ -57,6 +61,7 @@ Relevant PRs:
 
 {% include docs/master-api.md %}
 
-[`Clipboard.setData`]: {{site.api}}/flutter/services/Clipboard/setData.html
 [`ClipboardData constructor`]: {{site.master-api}}/flutter/services/ClipboardData/ClipboardData.html
+[`Clipboard.setData`]: {{site.api}}/flutter/services/Clipboard/setData.html
+[PR 122446]: {{site.repo.flutter}}/pull/122446
 [Assert at least one clipboard data variant is provided]: {{site.repo.flutter}}/pull/122446
