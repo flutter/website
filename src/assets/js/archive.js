@@ -70,7 +70,7 @@ let macOSArm64ArchiveFilename = '';
 
 // Listen for the macOS arm64 download link to be clicked and update
 // the example unzip command with correct arm64 filename
-$(".download-latest-link-macos-arm64").click(function() {
+$('.download-latest-link-macos-arm64').click(function() {
   // Update inlined filenames in <code> element text nodes with arm64 filename:
   const fileNamePrefix = 'flutter_';
   const code = $(`code:contains("${fileNamePrefix}")`);
@@ -88,7 +88,7 @@ os: macos, windows, or linux
 [optional] arch: Only specify if there's additional architecture, such as arm64
 */
 function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
-  const archString = !arch.length ? '': '-' + arch;
+  const archString = !arch.length ? '': `-${arch}`;
 
   const release = releases[0];
   const linkSegments = release.archive.split('/');
@@ -120,7 +120,7 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
 }
 
 function updateDownloadLink(releases, os, arch) {
-  const channel = "stable";
+  const channel = 'stable';
   const releasesForChannel = releases.releases.filter(function (release) {
     return release.channel === channel;
   });
@@ -143,7 +143,7 @@ function updateDownloadLink(releases, os, arch) {
 
     // If no arm64 releases available, delete all apple silicon elements
     if (!releasesForArm64.length) {
-      $(".apple-silicon").each(function(){
+      $('.apple-silicon').each(function(){
         this.remove();
       })
       
@@ -170,7 +170,7 @@ function getProvenanceLink(os, release, date, channel) {
     return $('<span />').text('-');
   }
   const extension = os === 'linux' ? 'tar.xz' : 'zip';
-  return $("<a />").attr('href',
+  return $('<a />').attr('href',
     `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}`+
     `.${extension}.intoto.jsonl`
   ).text(`${release.version} file`)
@@ -178,15 +178,15 @@ function getProvenanceLink(os, release, date, channel) {
 
 // Send requests to render the tables.
 $(function () {
-  if ($("#sdk-archives").length) {
+  if ($('#sdk-archives').length) {
     fetchFlutterReleases('windows', updateTable, updateTableFailed);
     fetchFlutterReleases('macos', updateTable, updateTableFailed);
     fetchFlutterReleases('linux', updateTable, updateTableFailed);
   }
-  if ($(".download-latest-link-windows").length)
+  if ($('.download-latest-link-windows').length)
     fetchFlutterReleases('windows', updateDownloadLink, updateDownloadLinkFailed);
-  if ($(".download-latest-link-macos").length)
+  if ($('.download-latest-link-macos').length)
     fetchFlutterReleases('macos', updateDownloadLink, updateDownloadLinkFailed);
-  if ($(".download-latest-link-linux").length)
+  if ($('.download-latest-link-linux').length)
     fetchFlutterReleases('linux', updateDownloadLink, updateDownloadLinkFailed);
 });
