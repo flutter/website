@@ -60,6 +60,8 @@
     - title: Tutorials
       permalink: /reference/tutorials
 
+- divider
+
 - title: Development
   permalink: /development
   expanded: true
@@ -420,6 +422,8 @@
       permalink: /deployment/web
     - title: Continuous deployment
       permalink: /deployment/cd
+
+- divider
 
 - title: Resources
   children:
