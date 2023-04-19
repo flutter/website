@@ -69,7 +69,6 @@ jobs:
     permissions:
       checks: write
       pull-requests: write
-    needs: test
     runs-on: ubuntu-latest
     if: ${{ github.ref != 'refs/heads/main' }}
     steps:
