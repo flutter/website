@@ -69,7 +69,7 @@ releases to the stable channel.
 [3.3.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-33
 [3.0.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-8c74a5bc32d0
 [3.0.0 release notes & change log]: {{site.url}}/release/release-notes/release-notes-3.0.0
-[3.0.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-30
+[3.0.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-3
 [2.10.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12
 [2.10.0 release notes & change log]: {{site.url}}/release/release-notes/release-notes-2.10.0
 [2.10.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-210
@@ -83,16 +83,16 @@ releases to the stable channel.
 [2.2.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-22
 [2.0.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-2-0-fe8e95ecc65
 [2.0.0 release notes & change log]: {{site.url}}/release/release-notes/release-notes-2.0.0
-[2.0.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-20
+[2.0.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-2
 [1.22.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-22-stable-44f146009e5f
 [1.22.0 release notes & change log]: {{site.url}}/release/release-notes/release-notes-1.22.0
 [1.22.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-122
 [1.20.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-20-2aaf68c89c75
 [1.20.0 release notes & change log]: {{site.url}}/release/release-notes/release-notes-1.20.0
-[1.20.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-120
+[1.20.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-12
 [1.17.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-17-4182d8af7f8e
 [1.17.0 release notes and change log]: {{site.url}}/release/release-notes/release-notes-1.17.0
-[1.17.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-17
+[1.17.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-117
 [1.12.13 announcement]: {{site.flutter-medium}}/announcing-flutter-1-12-what-a-year-22c256ba525d
 [1.12.13 release notes and change log]: {{site.url}}/release/release-notes/release-notes-1.12.13
 [Archived release notes]: {{site.url}}/release/release-notes/release-notes-archive
