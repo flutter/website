@@ -13,8 +13,8 @@ When the user selects the app again, bringing it
 back to the foreground, the OS relaunches it.
 But, unless you've set up a way to save the
 state of the app before it was killed,
-you've lost the state and the app starts from
-scratch. The user has lost the continuity they expect,
+you've lost the state and the app starts from scratch.
+The user has lost the continuity they expect,
 which is clearly not ideal.
 (Imagine filling out a lengthy form and being interrupted
 by a phone call _before_ clicking **Submit**.)
@@ -36,7 +36,7 @@ moments to prepare.
   <strong>Instance state vs long-lived state</strong>
   When should you use the `RestorationManager` and
   when should you save state to long term storage?
-  _Instance state_ or
+  _Instance state_
   (also called _short-term_ or _ephemeral_ state),
   includes unsubmitted form field values, the currently
   selected tab, and so on. On Android, this is
@@ -50,6 +50,43 @@ moments to prepare.
 
 [state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
 
+## Overview
+
+Conceptually,
+enable state restoration with just a few tasks:
+
+1. Define a `restorationId` or a `restorationScopeId`
+   for all widgets that support it,
+   such as [`TextField`][] and [`ScrollView`][].
+   This enables built-in state restoration for those widgets.
+
+2. For custom widgets,
+   you must decide what state you want to restore
+   and hold that state in a [`RestorableProperty`][].
+   (We offer various subclasses for different data types.)
+   Define those `RestorableProperty` widgets 
+   in a `State` class that uses the [`RestorationMixin`][].
+   Register those widgets with the mixin in a
+   `restoreState` method.
+
+3. Bonus step: If you use the navigator API,
+   only call methods that have "restorable" in the name.
+
+Other considerations:
+
+* If you provide a `restorationId` to
+  `MaterialApp`, `CupertinoApp`, or `WidgetsApp`,
+  it enables state restoration by injecting a
+  `RootRestorationScope`.
+  If you need to restore state _above_ the app class,
+  inject a `RootRestorationScope` manually.
+
+[`RestorableProperty']: {{site.api}}/flutter/widgets/RestorableProperty-class.html
+[`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
+[`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView/restorationId.html
+[`TextField`]: {{site.api}}/flutter/material/TextField/restorationId.html
+
+{% comment %}
 The `RestorationManager` manages the restoration
 data, which is serialized to a tree of [`RestorationBucket`][],
 that are synchronized with the Flutter engine.
@@ -71,6 +108,7 @@ You must decide what state you want to save and restore,
 but you can only save specific types to a `RestorationBucket`,
 namely: `null`, `bool`, `int`, `double`, `String`, `Uint8List`
 (and other typed data), `List`, `Map`, and child `RestorationBucket`s.
+{% endcomment %}
 
 {{site.alert.note}}
   The code in this page was taken from [VeggieSeasons][].
@@ -108,18 +146,6 @@ void main() {
 }
 ```
 
-{{site.alert.secondary}}
-  **Creating the Scope:**
-  In most cases, specifying a `restorationScopeID` on
-  [`MaterialApp`][], [`CupertinoApp`][], or [`WidgetsApp`][]
-  enables state restoration and automatically inserts
-  a [`RootRestorationScope`][] for you.
-  However, the VeggieSeasons app has restorable state
-  that lives _above_ the `CupertinoApp`,
-  which is why it manually inserts a `RootRestorationScope`.
-{{site.alert.end}}
-
-
 [`runApp`]: {{site.api}}/flutter/widgets/runApp.html
 
 ## Step 2: Add RestorationMixin to the State class
@@ -153,41 +179,7 @@ void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
 [`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
 [`restoreState`]: {{site.api}}/flutter/widgets/RestorationMixin/restoreState.html
 
-## Step 3: Define restorationScopeId and restorationIDs
-
-Providing a `restorationScopeId` or `restorationId`
-to a widget turns on state restoration for that
-particular widget: It will now store its own state
-under the provided it in the surrounding restoration bucket.
-The difference between a `restorationId` and a
-`restorationScopeID` is that widgets that take a
-`restorationScopeID` create a new `restorationScope`
-(a `RestorationBucket`, for example) into which all
-children will store their state. A `restorationId`
-means the widget (and its children) store the data
-in the surrounding bucket.
-
-```dart
-restorationScopeId: 'app',
-```
-
-## Step 4: Restoring navigation state
-
-If you want your app to return to the route (such
-as a specific tab) that the user was most recently viewing,
-then you need to implement
-restoration state for the navigation, as well.
-This page won't cover navigation, but the
-accompanying example, VeggieSeasons, implements this
-feature using the [go_router][] package.
-
-For more information on navigation and the
-`go_router` package, check out [Navigation and routing][].
-
-[go_router]: {{site.pub}}/packages/go_router
-[Navigation and routing]: {{site.url}}/development/ui/navigation
-
-## Step 5: Save the state you want to restore
+## Step 3: Save the state you want to restore
 
 Most of the state restoration work occurs in the
 `build` method on the `State` class that implements
@@ -198,8 +190,49 @@ you want to save.
 In the VeggieSeasons example, most of this work
 is implemented in the `lib/screens` classes.
 
-QUESTION for Michael: This part of VeggieSeasons is fairly dense.
-I'm not sure what is a good code excerpt to include here. (xxx)
+## Step 4: Define restorationScopeId and restorationIDs
+
+Providing a `restorationScopeId` or `restorationId`
+to a widget turns on state restoration for that
+particular widget: It will now store its own state
+under the provided it in the surrounding restoration bucket.
+The difference between a `restorationId` and a
+`restorationScopeID` is that widgets that take a
+`restorationScopeID` create a new `restorationScope`
+(a `RestorationBucket`, for example) into which all
+children of that scope  will store their state.
+A `restorationId` means the widget (and its children)
+store the data in the surrounding bucket.
+
+```dart
+restorationScopeId: 'app',
+```
+
+## Step 5: Restoring navigation state
+
+If you want your app to return to the route (such
+as a specific tab) that the user was most recently viewing,
+then you need to implement
+restoration state for the navigation, as well.
+This page won't cover navigation, but the
+accompanying example, VeggieSeasons, implements this
+feature using the [go_router][] package.
+
+{{site.alert.secondary}}
+  **Using the navigator API directly:**
+  If you use the navigator API directly,
+  you must use the methods with `restorable`
+  in the name to ensure that your routes are restored,
+  such as, [`restorablePush`][].
+{{site.alert.end}}
+
+[`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
+
+For more information on navigation and the
+`go_router` package, check out [Navigation and routing][].
+
+[go_router]: {{site.pub}}/packages/go_router
+[Navigation and routing]: {{site.url}}/development/ui/navigation
 
 ## Testing state restoration
 
