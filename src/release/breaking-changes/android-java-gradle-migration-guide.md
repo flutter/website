@@ -44,7 +44,7 @@ Gradle versions [prior to 7.3][] can't run
 when using Java 17.
 
 **You can fix this error by upgrading your Gradle project
-to a compatible version (7.3 through 7.6.2, inclusive)
+to a compatible version (7.3 through 7.6.1, inclusive)
 using one of the following approaches.**
 
 [prior to 7.3]: https://docs.gradle.org/current/userguide/compatibility.html#java
@@ -59,7 +59,7 @@ as follows:
 
 ![Dialog prompting you to upgrade Gradle]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-upgrade-alert.png){:width="50%"}
 
-Update to a Gradle release between 7.3 through 7.6.2, inclusive.
+Update to a Gradle release between 7.3 through 7.6.1, inclusive.
 
 **Step 2**: Follow the guided workflow to update Gradle:
 
@@ -77,10 +77,10 @@ cd android/gradle/wrapper
 
 **Step 2**: Edit the `gradle-wrapper.properties` file to
   change the `distributionUrl` field to the preferred
-  Gradle version (7.3 through 7.6.2, inclusive):
+  Gradle version (7.3 through 7.6.1, inclusive):
 
 ```properties
-distributionUrl=https\://services.gradle.org/distributions/gradle-7.6.2-all.zip 
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.6.1-all.zip 
 ```
 
 ## Notes
@@ -94,7 +94,7 @@ A few notes to be aware of:
   If you've manually upgraded your Java SDK to
   version 17 but haven't upgraded Gradle, you can
   also encounter this issue. The fix is the same:
-  upgrade Gradle to a release between 7.3 and 7.6.2.
+  upgrade Gradle to a release between 7.3 and 7.6.1.
 * Your development machine _might_ contain more
   than one copy of the Java SDK:
   * The Android Studio app includes a version of Java,
@@ -106,14 +106,14 @@ A few notes to be aware of:
     for any `java` executable in your path.
     Once [issue 122609][] lands, the `flutter doctor`
     command reports which version of Java is used.
-* If you upgrade Gradle to a release _newer_ than 7.6.2,
+* If you upgrade Gradle to a release _newer_ than 7.6.1,
   you might (though it's unlikely) encounter issues
   that result from changes to Gradle, such as
   [deprecated Gradle classes][], or changes to the
   Android file structure, such as
   [splitting out ApplicationId from PackageName][].
   If this occurs, downgrade to a release of Gradle
-  between 7.3 and 7.6.2, inclusive.
+  between 7.3 and 7.6.1, inclusive.
 * Upgrading to Flutter 3.10 won't fix this issue.
 
 [deprecated Gradle classes]: https://docs.gradle.org/7.6/javadoc/deprecated-list.html

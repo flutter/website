@@ -19,6 +19,21 @@ Check out [Flutter’s channels][] for details.
 For details about what's new in the major Flutter releases,
 check out the [release notes][] page.
 
+
+{{site.alert.secondary}}
+  **A note on provenance**: [provenance](https://slsa.dev/provenance)
+  describes how software artifacts are built, including
+  what the download contains and who created it.
+  To view provenance in a more readable format
+  and where nothing is downloaded, run the following
+  command using the provenance file URL from a release (you might need to 
+  download [jq](https://stedolan.github.io/jq/) to easily parse the JSON).
+
+  ```terminal
+  curl [provenance URL] | jq -r .payload | base64 -d | jq
+  ```
+{{site.alert.end}}
+
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
   <li class="nav-item">

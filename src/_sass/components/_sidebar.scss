@@ -1,11 +1,10 @@
 .site-sidebar {
-  padding: $site-content-top-padding $site-sidebar-side-padding;
+  font-family: $site-font-family-alt;
+  padding: $site-sidebar-top-padding 0 ($site-sidebar-top-padding * 2);
 
   // Customization for sidebar in mobile nav
   &.site-sidebar--header {
-    padding-left: bs-spacer(2);
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
 
     > .nav > .nav-item {
       font-size: $font-size-base;
@@ -40,6 +39,10 @@
     color: inherit;
     &.disabled { opacity: 0.5; }
 
+    &.active {
+      font-weight: $font-weight-bold;
+    }
+
     @include nav-link-not-active-hover;
   }
 
@@ -62,25 +65,33 @@
   }
 
   // Top-level nav item
-  > .nav > .nav-item {
-    font-family: $site-font-family-alt;
-
-    &:first-child {
-      > .nav-link {
-        padding-top: 0;
-      }
+  > .nav {
+    > .nav-item {
+      padding: 0 $site-sidebar-side-padding;
     }
 
-    > .nav-link {
-      padding: bs-spacer(3) 0;
+    > .nav-item {
+      &:first-child {
+        > .nav-link {
+          padding-top: 0;
+        }
+      }
 
-      @include collapsable();
+      > .nav-link {
+        padding: bs-spacer(2) 0;
+        color: $site-color-body;
+
+        @include collapsable();
+
+        @include nav-link-not-active-hover;
+      }
     }
   }
 
   // Sub navs
   > .nav .nav {
     padding-left: bs-spacer(4);
+    margin-bottom: bs-spacer(1);
 
     .nav-item {
       font-size: $font-size-sm;
@@ -89,7 +100,6 @@
         color: $site-color-body-light;
 
         &.active {
-          font-weight: $font-weight-bold;
           &:not(.collapsable) {
             color: $site-color-primary;
 
