@@ -26,7 +26,7 @@ check out the [release notes][] page.
   what the download contains and who created it.
   To view provenance in a more readable format
   and where nothing is downloaded, run the following
-  command using the provenance file URL from a release (you may need to 
+  command using the provenance file URL from a release (you might need to 
   download [jq](https://stedolan.github.io/jq/) to easily parse the JSON).
 
   ```terminal
