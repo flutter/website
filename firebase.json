@@ -308,6 +308,7 @@
       { "source": "/go/go-router-v5-1-2-breaking-changes", "destination": "https://docs.google.com/document/d/1HMUZA-lgeGFZ5JyU4g5jOFhbYAbk9ysfz9Ok1tGvqRw/edit?resourcekey=0-7otvjyBeefkQ9xQP9S2-9w#", "type": 301 },
       { "source": "/go/go-router-v6-breaking-changes", "destination": "https://docs.google.com/document/d/1CMJwd5Moq_scvHf-trRldy9RW5MU7_Y8IB1aTrny-6s/edit", "type": 301 },
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit", "type": 301 },
+      { "source": "/go/hermetic-xcode-installation", "destination": "https://docs.google.com/document/d/1EcXm4Woq48GR_ky07mEJka6NfV1vFBN2OHDEeGfPk34/edit?resourcekey=0-0Gjtt1I66mGJ8AwiCTlFNw", "type": 301 },
       { "source": "/go/hot-ui-early-prototype-demos", "destination": "https://docs.google.com/document/d/1ZaHqKnON8-WEhke3Y6FpHeuB5BNlxDQj1cCYB1SoI_g", "type": 301 },
       { "source": "/go/i18n-user-guide", "destination": "https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit", "type": 301 },
       { "source": "/go/icu-message-parser", "destination": "https://docs.google.com/document/d/1wj5rBbuz1bXM1lvt0s0d35F5JRtIPmYUs1UDk1G3HLc/edit?usp=sharing", "type": 301 },

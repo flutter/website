@@ -25,9 +25,9 @@ check out the [release notes][] page.
   describes how software artifacts are built, including
   what the download contains and who created it.
   To view provenance in a more readable format
-  (and where nothing is downloaded), run the following
-  command using the provenance file URL from a release.
-  For example:
+  and where nothing is downloaded, run the following
+  command using the provenance file URL from a release (you might need to 
+  download [jq](https://stedolan.github.io/jq/) to easily parse the JSON).
 
   ```terminal
   curl [provenance URL] | jq -r .payload | base64 -d | jq
