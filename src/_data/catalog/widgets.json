@@ -31,7 +31,7 @@
   },
   {
     "name": "AnimatedAlign",
-    "description": "Animated version of Align which automatically transitions the child's position over a given duration whenever the given alignment changes.",
+    "description": "Animated transition that moves the child's position over a given duration whenever the given alignment changes.",
     "categories": [
       "Animation and Motion"
     ],
@@ -171,7 +171,7 @@
   },
   {
     "name": "App bar",
-    "description": "Top app bars display information and actions at the top of a screen.",
+    "description": "Container that displays content and actions at the top of a screen.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -182,7 +182,7 @@
   },
   {
     "name": "AppBar",
-    "description": "A Material Design app bar. An app bar consists of a toolbar and potentially other widgets, such as a TabBar and a FlexibleSpaceBar.",
+    "description": "A toolbar that might contain other widgets such as a `TabBar` and a `FlexibleSpaceBar`.",
     "categories": [
       "Basics"
     ],
@@ -234,7 +234,7 @@
   },
   {
     "name": "Badge",
-    "description": "Badges convey dynamic information, such as counts or status. A badge can include labels or numbers.",
+    "description": "Icon-like block that conveys dynamic content such as counts or status. It can include labels or numbers.",
     "categories": [],
     "subcategories": [
       "Communication"
@@ -245,7 +245,7 @@
   },
   {
     "name": "Baseline",
-    "description": "A widget that positions its child according to the child's baseline.",
+    "description": "Container that positions its child according to the child's baseline.",
     "categories": [],
     "subcategories": [
       "Single-child layout widgets"
@@ -255,7 +255,7 @@
   },
   {
     "name": "Bottom app bar",
-    "description": "A bottom app bar displays navigation and key actions at the bottom of mobile screens.",
+    "description": "Container that displays navigation and key actions at the bottom of a screen.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -266,7 +266,7 @@
   },
   {
     "name": "Bottom sheet",
-    "description": "Bottom sheets are surfaces containing supplementary content, anchored to the bottom of the screen.",
+    "description": "Containers that anchor supplementary content to the bottom of the screen.",
     "categories": [],
     "subcategories": [
       "Containment"
@@ -277,7 +277,7 @@
   },
   {
     "name": "BottomNavigationBar",
-    "description": "Bottom navigation bars make it easy to explore and switch between top-level views in a single tap. The BottomNavigationBar widget implements this component.",
+    "description": "Container that includes tools to explore and switch between top-level views in a single tap.",
     "categories": [],
     "subcategories": [
       "App structure and navigation"
@@ -307,7 +307,7 @@
   },
   {
     "name": "Card",
-    "description": "A Material 3 card. A card has slightly rounded corners and a shadow.",
+    "description": "Container for short, related pieces of content displayed in a box with rounded corners and a drop shadow.",
     "categories": [],
     "subcategories": [
       "Containment"
@@ -318,7 +318,7 @@
   },
   {
     "name": "Center",
-    "description": "A widget that centers its child within itself.",
+    "description": "Alignment block that centers its child within itself.",
     "categories": [],
     "subcategories": [
       "Single-child layout widgets"
@@ -338,7 +338,7 @@
   },
   {
     "name": "Checkbox",
-    "description": "Checkboxes allow users to select one or more items from a set. Checkboxes can turn an option on or off.",
+    "description": "Form component that app users can select or clear to select one or more options from a set. Select the option to enable it or clear it to disable it.",
     "categories": [],
     "subcategories": [
       "Selection"
@@ -349,7 +349,7 @@
   },
   {
     "name": "Chip",
-    "description": "A Material Design chip. Chips represent complex entities in small blocks, such as a contact.",
+    "description": "Small blocks that represent complex entities such as a contact.",
     "categories": [],
     "subcategories": [
       "Information displays"
@@ -359,7 +359,7 @@
   },
   {
     "name": "Chip",
-    "description": "Chips help people enter information, make selections, filter content, or trigger actions.",
+    "description": "Small blocks that simplify entering information, making selections, filtering content, or triggering actions.",
     "categories": [],
     "subcategories": [
       "Selection"
@@ -370,7 +370,7 @@
   },
   {
     "name": "CircularProgressIndicator",
-    "description": "A material design circular progress indicator, which spins to indicate that the application is busy.",
+    "description": "Circular progress indicator that spins to indicate a busy application.",
     "categories": [],
     "subcategories": [
       "Information displays"
@@ -422,7 +422,7 @@
   },
   {
     "name": "Common buttons",
-    "description": "Buttons help people take action, such as sending an email, sharing a document, or liking a comment.",
+    "description": "Clickable blocks that start an action, such as sending an email, sharing a document, or liking a comment.",
     "categories": [],
     "subcategories": [
       "Actions"
@@ -535,7 +535,7 @@
   },
   {
     "name": "CupertinoListSection",
-    "description": "An iOS-style container for a scrollable view.",
+    "description": "Container that uses the iOS style to display a scrollable view.",
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
@@ -545,7 +545,7 @@
   },
   {
     "name": "CupertinoListTile",
-    "description": "An iOS-style tile that makes up a row in a list.",
+    "description": "A block that uses the iOS style to create a row in a list.",
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
@@ -555,7 +555,7 @@
   },
   {
     "name": "CupertinoNavigationBar",
-    "description": "An iOS-style top navigation bar. Typically used with CupertinoPageScaffold.",
+    "description": "Container at the top of a screen that uses the iOS style. Many developers use this with `CupertinoPageScaffold`.",
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
@@ -789,7 +789,7 @@
   },
   {
     "name": "Date picker",
-    "description": "Date pickers let people select a date, or a range of dates.",
+    "description": "Calendar interface used to select a date or a range of dates.",
     "categories": [],
     "subcategories": [
       "Selection"
@@ -830,7 +830,7 @@
   },
   {
     "name": "Dialog",
-    "description": "Dialogs provide important prompts in a user flow.",
+    "description": "Hovering containers that prompt app users to make a decision.",
     "categories": [],
     "subcategories": [
       "Containment"
@@ -861,7 +861,7 @@
   },
   {
     "name": "Divider",
-    "description": "A divider is a thin line that groups content in lists and containers.",
+    "description": "Thin line that groups content in lists and containers.",
     "categories": [],
     "subcategories": [
       "Containment"
@@ -966,7 +966,7 @@
   },
   {
     "name": "Extended FAB",
-    "description": "Extended floating action buttons (extended FABs) help people take primary actions. They're wider than FABs to accommodate a text label and larger target area.",
+    "description": "Clickable block that prompts app users to take an action. The abbreviation stands for Extended Floating Action Buttons. These buttons display wider than standard FABs to accommodate a text label and provide a larger target area.",
     "categories": [],
     "subcategories": [
       "Actions"
@@ -997,7 +997,7 @@
   },
   {
     "name": "Floating action button",
-    "description": "The FAB represents the most important action on a screen. It puts key actions within reach.",
+    "description": "Clickable block that represents the most important action on a screen. It puts key actions within reach.",
     "categories": [],
     "subcategories": [
       "Actions"
@@ -1136,7 +1136,7 @@
   },
   {
     "name": "Icon button",
-    "description": "Icon buttons help people take supplementary actions with a single tap.",
+    "description": "Clickable icons to prompt app users to take supplementary actions.",
     "categories": [],
     "subcategories": [
       "Actions"
@@ -1250,7 +1250,7 @@
   },
   {
     "name": "List",
-    "description": "Lists are continuous, vertical indexes of text or images.",
+    "description": "Continuous, vertical indexes that display text or images.",
     "categories": [],
     "subcategories": [
       "Containment"
@@ -1323,7 +1323,7 @@
   },
   {
     "name": "Menu",
-    "description": "Menus display a list of choices on a temporary surface.",
+    "description": "Container that displays a list of choices on a temporary surface.",
     "categories": [],
     "subcategories": [
       "Selection"
@@ -1344,7 +1344,7 @@
   },
   {
     "name": "Navigation bar",
-    "description": "Navigation bars offer a persistent and convenient way to switch between primary destinations in an apps.",
+    "description": "Persistent container that enables switching between primary destinations in an app.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1355,7 +1355,7 @@
   },
   {
     "name": "Navigation drawer",
-    "description": "Navigation drawers provide ergonomic access to destinations in an app.",
+    "description": "Container that slides from the side of the app to navigate to other sections in an app.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1366,7 +1366,7 @@
   },
   {
     "name": "Navigation rail",
-    "description": "Navigation rails provide access to primary destinations in apps when using tablet and desktop screens.",
+    "description": "Persistent container on the side of tablet and desktop screens to navigate to parts of an app.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1499,7 +1499,7 @@
   },
   {
     "name": "Progress indicator",
-    "description": "Progress indicators inform users about the status of ongoing processes, such as loading an app or submitting a form.",
+    "description": "Vertical line that changes color as an ongoing process, such as loading an app or submitting a form, completes.",
     "categories": [],
     "subcategories": [
       "Communication"
@@ -1520,7 +1520,7 @@
   },
   {
     "name": "Radio button",
-    "description": "Radio buttons allow users to select one option from a set.",
+    "description": "Form component that app users can select or clear to select only one option from a set. Select the option to enable it or clear it to disable it.",
     "categories": [],
     "subcategories": [
       "Selection"
@@ -1758,7 +1758,7 @@
   },
   {
     "name": "Slider",
-    "description": "Sliders allow users to make selections from a range of values.",
+    "description": "Form control that enables selecting a range of values.",
     "categories": [],
     "subcategories": [
       "Selection"
@@ -1870,7 +1870,7 @@
   },
   {
     "name": "Snackbar",
-    "description": "Snackbars provide brief messages about app processes at the bottom of the screen.",
+    "description": "Brief messages about app processes that display at the bottom of the screen.",
     "categories": [],
     "subcategories": [
       "Communication"
@@ -1923,7 +1923,7 @@
   },
   {
     "name": "Switch",
-    "description": "Switches toggle the state of a single item on or off.",
+    "description": "Toggle that changes the state of a single item to on or off.",
     "categories": [],
     "subcategories": [
       "Selection"
@@ -1934,7 +1934,7 @@
   },
   {
     "name": "Tab bar",
-    "description": "Tabs organize content across different screens, data sets, and other interactions.",
+    "description": "Layered containers that organize content across different screens, data sets, and other interactions.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1985,7 +1985,7 @@
   },
   {
     "name": "Table",
-    "description": "A widget that uses the table layout algorithm for its children.",
+    "description": "Displays child widgets in rows and columns.",
     "categories": [],
     "subcategories": [
       "Multi-child layout widgets"
@@ -2016,7 +2016,7 @@
   },
   {
     "name": "Text field",
-    "description": "Text fields allow users to enter text into a UI. They typically appear in forms and dialogs.",
+    "description": "Box into which app users can enter text. They appear in forms and dialogs.",
     "categories": [],
     "subcategories": [
       "Text Inputs"
@@ -2047,7 +2047,7 @@
   },
   {
     "name": "Time picker",
-    "description": "Time pickers help users select and set a specific time.",
+    "description": "Clock interface used to select and set a specific time.",
     "categories": [],
     "subcategories": [
       "Selection"
