@@ -338,7 +338,7 @@
   },
   {
     "name": "Checkbox",
-    "description": "Form component that app users can select or clear to select one or more options from a set. Select the option to enable it or clear it to disable it.",
+    "description": "Form control that app users can select or clear to select one or more options from a set. Select the option to enable it or clear it to disable it.",
     "categories": [],
     "subcategories": [
       "Selection"
@@ -830,7 +830,7 @@
   },
   {
     "name": "Dialog",
-    "description": "Hovering containers that prompt app users to make a decision.",
+    "description": "Hovering containers that prompt app users to provide more data or make a decision.",
     "categories": [],
     "subcategories": [
       "Containment"
@@ -986,7 +986,7 @@
   },
   {
     "name": "FAB",
-    "description": "Clickable floating action button that represents the most important action on a screen. It puts key actions within reach.",
+    "description": "Clickable block that triggers a key action. This block contains an icon and floats in the app interface to keep the key action within reach.",
     "categories": [],
     "subcategories": [
       "Actions"
@@ -1007,7 +1007,7 @@
   },
   {
     "name": "Extended FAB",
-    "description": "Clickable floating action button. These buttons display wider than standard FABs to accommodate a text label and provide a larger target area.",
+    "description": "Clickable block that triggers an action. These wider blocks can fit a text label and provide a larger target area.",
     "categories": [],
     "subcategories": [
       "Actions"
@@ -1355,7 +1355,7 @@
   },
   {
     "name": "Navigation drawer",
-    "description": "Container that slides from the side of the app to navigate to other sections in an app.",
+    "description": "Container that slides from the leading edge of the app to navigate to other sections in an app.  The leading edge falls on the left side for left-to-right languages.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1366,7 +1366,7 @@
   },
   {
     "name": "Navigation rail",
-    "description": "Persistent container on the side of tablet and desktop screens to navigate to parts of an app.",
+    "description": "Persistent container on the leading edge of tablet and desktop screens to navigate to parts of an app. The leading edge falls on the left side for left-to-right languages.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1520,7 +1520,7 @@
   },
   {
     "name": "Radio button",
-    "description": "Form component that app users can select or clear to select only one option from a set. Select the option to enable it or clear it to disable it.",
+    "description": "Form control that app users can select or clear to select only one option from a set. Select the option to enable it or clear it to disable it.",
     "categories": [],
     "subcategories": [
       "Selection"
@@ -1923,7 +1923,7 @@
   },
   {
     "name": "Switch",
-    "description": "Toggle that changes the state of a single item to on or off.",
+    "description": "Toggle control that changes the state of a single item to on or off.",
     "categories": [],
     "subcategories": [
       "Selection"
