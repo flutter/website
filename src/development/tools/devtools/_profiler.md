@@ -29,11 +29,13 @@ has a high _self_ time, that means that many CPU samples
 in this profile ended with that method on top of the call stack.
 
 ![Screenshot of the Bottom up view]({{site.url}}/assets/images/docs/tools/devtools/bottom-up-view.png)
+See the [Guidelines](#guidelines) section below to learn how to
+enable the blue and green vertical lines seen in this image.
 
 Tooltips can help you understand the values in each column:
 
 <dl markdown="1">
-<dt markdown="1">**Total time** (column header)
+<dt markdown="1">**Total time**
 </dt>
 <dd markdown="1">For top-level methods in the bottom-up tree
     (stack frames that were at the top of at least one
@@ -42,7 +44,7 @@ Tooltips can help you understand the values in each column:
     it called.
 </dd>
 
-<dt markdown="1">**Self time** (column header)
+<dt markdown="1">**Self time**
 </dt>
 <dd markdown="1">For top-level methods in the bottom-up tree
     (stack frames that were at the top of at least one CPU
@@ -130,7 +132,7 @@ expensive paths in a CPU profile.
 The help menu, which can be opened by clicking the `?` icon
 next to the search bar, provides information about how to
 navigate and zoom within the chart and a color-coded legend.
-![Screenshot of flame chart help]({{site.url}}/assets/images/docs/tools/devtools/flame-chart-help.png)
+![Screenshot of flame chart help]({{site.url}}/assets/images/docs/tools/devtools/flame-chart-help.png){:width="70%"}
 
 
 ### CPU sampling rate
@@ -141,7 +143,7 @@ the CPU profiler page as "Cpu sampling rate: medium".
 This rate can be modified using the selector at the top
 of the page.
 
-![Screenshot of cpu sampling rate menu]({{site.url}}/assets/images/docs/tools/devtools/cpu-sampling-rate-menu.png)
+![Screenshot of cpu sampling rate menu]({{site.url}}/assets/images/docs/tools/devtools/cpu-sampling-rate-menu.png){:width="70%"}
 
 The **low**, **medium**, and **high** sampling rates are
 1,000 Hz, 4,000 Hz, and 20,000 Hz, respectively.
