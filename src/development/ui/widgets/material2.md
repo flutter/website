@@ -13,4 +13,4 @@ description: >
   A catalog of Flutter's widgets implementing the Material 2 design guidelines.
 ---
 
-{% include docs/catalogpage-material-2.html category="Material 2 Components" %}
+{% include docs/catalogpage.html category="Material 2 Components" %}
