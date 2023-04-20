@@ -965,17 +965,6 @@
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VOXF3eEJ3azZMSjg/components_expansion_panels.png'>"
   },
   {
-    "name": "Extended FAB",
-    "description": "Clickable floating action button. These buttons display wider than standard FABs to accommodate a text label and provide a larger target area.",
-    "categories": [],
-    "subcategories": [
-      "Actions"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.extended.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-extended-fab.png'>",
-    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
-  },
-  {
     "name": "FadeTransition",
     "description": "Animates the opacity of a widget.",
     "categories": [
@@ -996,8 +985,8 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Floating action button",
-    "description": "Clickable block that represents the most important action on a screen. It puts key actions within reach.",
+    "name": "FAB",
+    "description": "Clickable floating action button that represents the most important action on a screen. It puts key actions within reach.",
     "categories": [],
     "subcategories": [
       "Actions"
@@ -1015,6 +1004,17 @@
     ],
     "link": "https://api.flutter.dev/flutter/material/FloatingActionButton-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-floating-action-button.png'>"
+  },
+  {
+    "name": "Extended FAB",
+    "description": "Clickable floating action button. These buttons display wider than standard FABs to accommodate a text label and provide a larger target area.",
+    "categories": [],
+    "subcategories": [
+      "Actions"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.extended.html",
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-extended-fab.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
     "name": "Flow",
