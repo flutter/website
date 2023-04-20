@@ -107,8 +107,6 @@ on top of the call stack, or in other words,
 the time a method spent executing only its own code.
 
 ![Screenshot of a call tree table]({{site.url}}/assets/images/docs/tools/devtools/method-table.png)
-See the [Guidelines](#guidelines) section below to learn how
-to enable the blue and green vertical lines seen in this image.
 
 Selecting a method from the table on the left shows
 the call graph for that method. The call graph shows
