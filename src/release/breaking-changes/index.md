@@ -40,6 +40,7 @@ release, and listed in alphabetical order:
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [The window singleton is deprecated]: {{site.url}}/release/breaking-changes/window-singleton
 [Migration guide for `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
+[Migration guide for `describeEnum`]: {{site.url}}/release/breaking-changes/describeEnum
 
 ### Released in Flutter 3.7
 
