@@ -25,7 +25,7 @@ property disables the tooltip.
 To avoid redundancy of the API, this change deprecated `useDeleteButtonTooltip`,
 which was introduced for this exact functionality. A [Flutter fix][] is
 available to help you migrate existing code from `useDeleteButtonTooltip` to
-`deleteButtonTooltipMessage`, if you explicity disabled the tooltip.
+`deleteButtonTooltipMessage`, if you explicitly disabled the tooltip.
 
 ## Migration guide
 

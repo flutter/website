@@ -16,7 +16,7 @@ Originally, Flutter assumed that an application would only consist of a single
 view (the `window`) into which content can be drawn. In a multi-view world, this
 assumption no longer makes sense and the APIs encoding this assumption have
 been deprecated. Instead, applications and libraries that relied on these APIs
-must chose a specific view they want to operate on and migrate to new multi-view
+must choose a specific view they want to operate on and migrate to new multi-view
 compatible APIs as outlined in this migration guide.
 
 ## Description of change
@@ -108,7 +108,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-If no `BuildContext` is availabe, the `PlatformDispatcher` exposed by the
+If no `BuildContext` is available, the `PlatformDispatcher` exposed by the
 bindings can be consulted directly.
 
 Code before migration:
@@ -173,7 +173,7 @@ testWidget('test name', (WidgetTester tester) async {
 #### Resetting view-specific properties
 
 `TestFlutterView` retains the capability to reset individual properties or the
-entire view but, in order to be more clear and consise, the naming of these
+entire view but, in order to be more clear and consist, the naming of these
 methods has changed from `clear<property>TestValue` and `clearAllTestValues` to
 `reset<property>` and `reset` respectively.
 
