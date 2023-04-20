@@ -17,7 +17,7 @@ Therefore, this workaround is no longer needed.
 
 ## Description of change
 
-`ignoringSemantics` was removed
+`ignoringSemantics` was removed.
 
 ## Migration guide
 
