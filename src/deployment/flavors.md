@@ -48,7 +48,7 @@ Open your project in Xcode.
 </li>
 <li markdown=1>
 
-Select **Runner** > **New Scheme** from the menu to add a new `Scheme`.  
+Select **Product** > **Scheme** > **New Scheme** from the menu to add a new `Scheme`.  
 * A scheme describes how Xcode runs different actions. 
   For the purposes of this guide, the example _flavor_ and _scheme_ are 
   named `free`. 
