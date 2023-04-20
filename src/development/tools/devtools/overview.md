@@ -32,8 +32,42 @@ your existing IDE or command-line based development workflow.
 <a name="install-devtools"></a>
 ## How do I install DevTools?
 
-See the [Android Studio/IntelliJ][], [VS Code][], or
+See the [VS Code][], [Android Studio/IntelliJ][], or
 [command line][] pages for installation instructions.
+
+## Troubleshooting some standard issues
+
+**Question**: My app looks janky or stutters.
+  How do I fix it?
+
+**Answer**: Performance issues can cause [UI frames][]
+  to be janky and/or slow down some operations.
+
+  1. To detect which code impacts concrete late frames,
+     start at [Performance > Timeline][].
+  2. To learn which code takes the most CPU time in
+     the background, use the [CPU profiler][].
+
+For more information, check out the
+[Performance][] page.
+
+**Question**: I see a lot of garbage collection (GC) events occurring.
+  Is this a problem?
+
+**Answer**: Frequent GC events might display on
+  the DevTools > Memory > Memory chart. In most cases,
+  it's not a problem.
+
+If your app has frequent background activity with some idle time,
+Flutter might use that opportunity to collect the created objects
+without performance impact.
+
+[CPU profiler]: {{site.url}}/development/tools/devtools/cpu-profiler
+[Performance]: {{site.url}}/perf
+[Performance > Timeline]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart 
+[UI frames]: {{site.url}}/perf/ui-performance
+
+
 
 ## Providing feedback
 
