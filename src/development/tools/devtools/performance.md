@@ -124,6 +124,73 @@ experience UI jank or dropped frames.
 For more information on how to analyze your app's performance,
 check out [Flutter performance profiling][].
 
+### Shader compilation
+
+Shader compilation occurs when a shader is first used in your Flutter
+app. Frames that perform shader compilation are marked in dark
+red:
+
+![Screenshot of shader compilation for a frame]({{site.url}}/assets/images/docs/tools/devtools/shader-compilation-frames-chart.png)
+
+For more information on how to reduce shader compilation jank,
+check out [Reduce shader compilation jank on mobile][].
+
+## Frame analysis tab
+
+Selecting a janky frame (slow, colored in red)
+from the Flutter frames chart above shows debugging hints
+in the Frame analysis tab. These hints help you diagnose
+jank in your app, and notify you of any expensive operations
+that we have detected that might have contributed to the slow frame time.
+
+![Screenshot of the frame analysis tab]({{site.url}}/assets/images/docs/tools/devtools/frame-analysis-tab.png)
+
+## Raster stats tab
+
+{{site.alert.note}}
+  For best results, this tool should be used with
+  the Impeller rendering engine. When using Skia,
+  the raster stats reported might be inconsistent
+  due to the timing of when shaders are compiled.
+{{site.alert.end}}
+
+If you have Flutter frames that are janking with
+slow raster thread times, this tool might be able
+to help you diagnose the source of the slow performance.
+To generate raster stats:
+
+1. Navigate to the screen in your app where you are seeing
+   raster thread jank.
+2. Click **Take Snapshot**.
+3. View different layers and their respective rendering times.
+
+If you see an expensive layer, find the Dart code in your app
+that is producing this layer and investigate further.
+You can make changes to your code, hot reload,
+and take new snapshots to see if the performance of a layer
+was improved by your change.
+
+![Screenshot of the raster stats tab]({{site.url}}/assets/images/docs/tools/devtools/raster-stats-tab.png)
+
+## Timeline events tab
+
+The timeline events chart shows all event tracing from your application.
+The Flutter framework emits timeline events as it works to build frames,
+draw scenes, and track other activity such as HTTP request timings
+and garbage collection. These events show up here in the Timeline.
+You can also send your own Timeline events using the dart:developer
+[`Timeline`][] and [`TimelineTask`][] APIs.
+
+[`Timeline`]: {{site.api}}/flutter/dart-developer/Timeline-class.html
+[`TimelineTask`]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
+
+![Screenshot of a timeline events tab]({{site.url}}/assets/images/docs/tools/devtools/timeline-events-tab.png)
+For help with navigating and using the trace viewer,
+click the **?** button at the top right of the timeline
+events tab bar. To refresh the timeline with new events from
+your application, click the refresh button
+(also in the upper right corner of the tab controls).
+
 ## Advanced debugging tools
 
 ### Enhance tracing 
