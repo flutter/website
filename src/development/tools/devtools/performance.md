@@ -4,21 +4,25 @@ description: Learn how to use the DevTools performance view.
 ---
 
 {{site.alert.note}}
-  The performance view works with Dart CLI and mobile apps only.
-  Use Chrome DevTools to [generate timeline events][]
-  for a web app.
+  The performance view works with Flutter mobile, Flutter desktop,
+  Use [Chrome DevTools][] to debug performance for a Dart or
+  Flutter web app.
 {{site.alert.end}}
 
-## Basic performance concepts
+[Chrome DevTools]: https://developer.chrome.com/docs/devtools/
 
-### What is the Performance view?
-
-The performance view offers timing and performance information for activity in
-your application. It consists of three parts, each increasing in granularity.
+The performance page can help you diagnose performance
+problems and UI jank in your application.
+This page offers timing and performance information
+for activity in your application.
+It consists of several tools to help you identify
+the cause of poor performance in your app:
 
 * Flutter frames chart (Flutter apps only)
-* Timeline events chart
-* CPU profiler
+* Frame analysis tab (Flutter apps only)
+* Raster stats tab (Flutter apps only)
+* Timeline events trace viewer (all native Dart applications)
+* Advanced debugging tools (Flutter apps only)
 
 {{site.alert.secondary}}
   **Use a [profile build][] of your application to analyze performance.**
@@ -52,13 +56,28 @@ of work that occur when rendering a Flutter frame: work from
 the UI thread and work from the raster thread (previously known
 as the GPU thread).
 
-![Screenshot from a performance snapshot]({{site.url}}/assets/images/docs/tools/devtools/performance-flutter-frames-chart.png){:width="100%"}
+This chart contains Flutter frame timing information for your
+application. Each pair of bars in the chart represents a single
+Flutter frame. Selecting a frame from this chart updates the data
+that is displayed below in the [Frame analysis](#frame-analysis) tab
+or the [Timeline events](#timeline-events) tab.
+(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats)
+is a standalone feature without data per frame).
 
-Selecting a bar from this chart centers the flame chart below on the timeline
-events corresponding to the selected Flutter frame.
-The events are highlighted with blue brackets.
+[DevTools 2.23.1]: {{site.url}}/development/tools/devtools/release-notes/release-notes-2.23.1
 
-![Screenshot from a timeline recording]({{site.url}}/assets/images/docs/tools/devtools/performance-timeline-events-chart-selected-frame.png){:width="100%"}
+The flutter frames chart updates when new frames
+are drawn in your app. To pause updates to this chart,
+click the pause button to the right of the chart.
+This chart can be collapsed to provide more viewing space
+for data below by clicking the **Flutter frames** button above the chart. 
+
+![Screenshot of a Flutter frames chart]({{site.url}}/assets/images/docs/tools/devtools/flutter-frames-chart.png)
+
+The pair of bars representing each Flutter frame are color-coded
+to highlight the different portions of work that occur when rendering
+a Flutter frame: work from the UI thread and work from the raster thread
+(previously known as the GPU thread).
 
 ### UI
 
@@ -76,8 +95,11 @@ graphics code from the Flutter Engine.
 This thread takes the layer tree and displays it by talking to
 the GPU (graphic processing unit). You cannot directly access
 the raster thread or its data, but if this thread is slow, it's a
-result of something you've done in the Dart code. Skia, the
-graphics library, runs on this thread.
+result of something you've done in the Dart code.
+Skia, the graphics library, runs on this thread.
+[Impeller][] (currently in preview) will also use this thread.
+
+[Impeller]: {{site.url}}/perf/impeller
 
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the raster thread. In this case, you
@@ -113,18 +135,62 @@ red:
 For more information on how to reduce shader compilation jank,
 check out [Reduce shader compilation jank on mobile][].
 
-## Timeline events chart
+## Frame analysis tab
+
+Selecting a janky frame (slow, colored in red)
+from the Flutter frames chart above shows debugging hints
+in the Frame analysis tab. These hints help you diagnose
+jank in your app, and notify you of any expensive operations
+that we have detected that might have contributed to the slow frame time.
+
+![Screenshot of the frame analysis tab]({{site.url}}/assets/images/docs/tools/devtools/frame-analysis-tab.png)
+
+## Raster stats tab
+
+{{site.alert.note}}
+  For best results, this tool should be used with
+  the Impeller rendering engine. When using Skia,
+  the raster stats reported might be inconsistent
+  due to the timing of when shaders are compiled.
+{{site.alert.end}}
+
+If you have Flutter frames that are janking with
+slow raster thread times, this tool might be able
+to help you diagnose the source of the slow performance.
+To generate raster stats:
+
+1. Navigate to the screen in your app where you are seeing
+   raster thread jank.
+2. Click **Take Snapshot**.
+3. View different layers and their respective rendering times.
+
+If you see an expensive layer, find the Dart code in your app
+that is producing this layer and investigate further.
+You can make changes to your code, hot reload,
+and take new snapshots to see if the performance of a layer
+was improved by your change.
+
+![Screenshot of the raster stats tab]({{site.url}}/assets/images/docs/tools/devtools/raster-stats-tab.png)
+
+## Timeline events tab
 
 The timeline events chart shows all event tracing from your application.
 The Flutter framework emits timeline events as it works to build frames,
-draw scenes, and track other activity such as HTTP traffic.
-These events show up here in the Timeline.
+draw scenes, and track other activity such as HTTP request timings
+and garbage collection. These events show up here in the Timeline.
 You can also send your own Timeline events using the dart:developer
-[`Timeline`]({{site.api}}/flutter/dart-developer/Timeline-class.html)
-and [`TimelineTask`]({{site.api}}/flutter/dart-developer/TimelineTask-class.html)
-APIs.
+[`Timeline`][] and [`TimelineTask`][] APIs.
 
-![Screenshot of timeline events for a frame]({{site.url}}/assets/images/docs/tools/devtools/performance-timeline-events-chart.png){:width="100%"}
+[`Timeline`]: {{site.api}}/flutter/dart-developer/Timeline-class.html
+[`TimelineTask`]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
+
+![Screenshot of a timeline events tab]({{site.url}}/assets/images/docs/tools/devtools/timeline-events-tab.png)
+For help with navigating and using the trace viewer,
+click the **?** button at the top right of the timeline
+events tab bar. To refresh the timeline with new events from
+your application, click the refresh button
+(also in the upper right corner of the tab controls).
+
 
 The flame chart supports zooming and panning:
 
@@ -138,7 +204,9 @@ The flame chart supports zooming and panning:
 You can click an event to view CPU profiling information in the CPU profiler
 below, described in the next section.
 
-## Enhance tracing 
+## Advanced debugging tools
+
+### Enhance tracing 
 
 To view more detailed tracing in the timeline events chart,
 use the options in the enhance tracing dropdown:
@@ -147,7 +215,7 @@ use the options in the enhance tracing dropdown:
   Frame times might be negatively affected when these options are enabled.
 {{site.alert.end}}
 
-![Screenshot of enhance tracing dropdown]({{site.url}}/assets/images/docs/tools/devtools/enhance-tracing.png)
+![Screenshot of enhanced tracing options]({{site.url}}/assets/images/docs/tools/devtools/enhanced-tracing.png)
 
 To see the new timeline events, reproduce the activity
 in your app that you are interested in tracing,
@@ -226,7 +294,6 @@ To learn how to monitor an app's performance and
 detect jank using DevTools, check out a guided
 [Performance View tutorial][performance-tutorial].
 
-[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
