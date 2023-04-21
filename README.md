@@ -285,9 +285,14 @@ You can deploy your local edits to a personal staging site as follows.
    ```bash
    $ make stage-local
    ```
+   
    Your personal version of the Flutter website
    is now deployed to Firebase. 
    Copy the serving URL from the command output.
+
+   > **Warning**
+   > Before staging the site on Firebase,
+   > terminate all instances serving the site locally with `make up`.
    
 
 ## Refreshing code excerpts
