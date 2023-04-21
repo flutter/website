@@ -271,7 +271,7 @@ You can deploy your local edits to a personal staging site as follows.
     ? What alias do you want to use for this project? (e.g. staging) my-foo
     ```
 
-[`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
+   [`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
  
 1. Tell Firebase that you want to deploy to your project:
 
