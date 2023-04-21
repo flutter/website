@@ -60,6 +60,8 @@
     - title: Tutorials
       permalink: /reference/tutorials
 
+- divider
+
 - title: User interface
   permalink: /ui
   children:
@@ -422,6 +424,8 @@
       permalink: /deployment/web
     - title: Continuous deployment
       permalink: /deployment/cd
+
+- divider
 
 - title: Resources
   children:
