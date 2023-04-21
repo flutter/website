@@ -6,7 +6,7 @@ description: OneSequenceGestureRecognizer subclasses should override `addAllowed
 ## Summary
 
 `OneSequenceGestureRecognizer.addAllowedPointer()` was changed to take a
-`PointerDownEvent`, like it superclass. Previously, it accepted the more
+`PointerDownEvent`, like its superclass. Previously, it accepted the more
 general `PointerEvent` type, which was incorrect.
 
 ## Context

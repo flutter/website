@@ -26,7 +26,7 @@ now supports individual methods for decorating the viewport, `buildScrollbar`
 and `buildOverscrollIndicator`. These methods can be overridden to control
 what is built around the scrollable.
 
-Further more, `ScrollBehavior` subclasses `MaterialScrollBehavior` and
+Furthermore, `ScrollBehavior` subclasses `MaterialScrollBehavior` and
 `CupertinoScrollBehavior` have been made public, allowing developers to extend
 and build upon the other existing `ScrollBehavior`s in the framework. These
 subclasses were previously private. 
