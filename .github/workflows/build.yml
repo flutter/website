@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+      - v-next-2023-1
   schedule:
     - cron: "0 0 * * 0"
 

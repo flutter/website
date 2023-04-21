@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - v-next-2023-1
 
 # Declare default permissions as read only.
 permissions: read-all
