@@ -77,7 +77,7 @@ include a small reproducible test case.
 ### Android
 
 Android development continues but it's not ready for preview.
-On the `master` channel, it might not work at the tip-of-tree.
+Impeller on Android might not work on the `master` channel.
 To see what direction Android support will take,
 experiment with Impeller in the 3.7 or later stable release.
 
