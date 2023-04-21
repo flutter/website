@@ -10,7 +10,7 @@ This section lists the notable non-API breaking changes.
 ### (Only Affects Tests) `FlutterTest` is now the default test font
 
 The `FlutterTest` font replaced `Ahem` as the default font in tests: when 
-`fontFamily` isn't specfied, or the font families specified are not registered, 
+`fontFamily` isn't specified, or the font families specified are not registered, 
 tests use the `FlutterTest` font to render text. The `Ahem` font is still 
 available in tests if specified as the `fontFamily` to use.
 
