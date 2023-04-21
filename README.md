@@ -290,7 +290,7 @@ You can deploy your local edits to a personal staging site as follows.
    is now deployed to Firebase. 
    Copy the serving URL from the command output.
 
-   > **Warning**
+   > **Warning**  
    > Before staging the site on Firebase,
    > terminate all instances serving the site locally with `make up`.
    
