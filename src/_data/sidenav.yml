@@ -60,288 +60,290 @@
     - title: Tutorials
       permalink: /reference/tutorials
 
-- title: Development
-  permalink: /development
-  expanded: true
+- title: User interface
+  permalink: /ui
   children:
-    - title: User interface
-      permalink: /development/ui
+    - title: Introduction to widgets
+      permalink: /ui/widgets-intro
+    - title: Building layouts
+      permalink: /ui/layout
       children:
-        - title: Introduction to widgets
-          permalink: /development/ui/widgets-intro
-        - title: Building layouts
-          permalink: /development/ui/layout
-          children:
-            - title: Layouts in Flutter
-              permalink: /development/ui/layout
-              match-page-url-exactly: true
-            - title: Tutorial
-              permalink: /development/ui/layout/tutorial
-            - title: Creating adaptive and responsive apps
-              permalink: /development/ui/layout/adaptive-responsive
-            - title: Building adaptive apps
-              permalink: /development/ui/layout/building-adaptive-apps
-            - title: Understanding constraints
-              permalink: /development/ui/layout/constraints
-            - title: Box constraints
-              permalink: /development/ui/layout/box-constraints
-        - title: Adding interactivity
-          permalink: /development/ui/interactive
-        - title: Assets and images
-          permalink: /development/ui/assets-and-images
-        - title: Material Design
-          permalink: /development/ui/material
-        - title: Navigation & routing
-          permalink: /development/ui/navigation
-          children:
-            - title: Navigation in Flutter
-              permalink: /development/ui/navigation
-              match-page-url-exactly: true
-            - title: Deep linking
-              permalink: /development/ui/navigation/deep-linking
-            - title: URL strategies
-              permalink: /development/ui/navigation/url-strategies
-        - title: Animations
-          permalink: /development/ui/animations
-          children:
-            - title: Introduction
-              permalink: /development/ui/animations
-              match-page-url-exactly: true
-            - title: Overview
-              permalink: /development/ui/animations/overview
-            - title: Tutorial
-              permalink: /development/ui/animations/tutorial
-            - title: Implicit animations
-              permalink: /development/ui/animations/implicit-animations
-            - title: Hero animations
-              permalink: /development/ui/animations/hero-animations
-            - title: Staggered animations
-              permalink: /development/ui/animations/staggered-animations
-        - title: Advanced UI
-          permalink: /development/ui/advanced
-          children:
-            - title: Actions & shortcuts
-              permalink: /development/ui/advanced/actions_and_shortcuts
-            - title: Fonts & typography
-              permalink: /development/ui/advanced/typography
-            - title: Keyboard focus system
-              permalink: /development/ui/advanced/focus
-            - title: Gestures
-              permalink: /development/ui/advanced/gestures
-            - title: Shaders
-              permalink: /development/ui/advanced/shaders
-            - title: Slivers
-              permalink: /development/ui/advanced/slivers
-        - title: Widget catalog
-          permalink: /development/ui/widgets
-    - title: Data & backend
-      permalink: /development/data-and-backend
-      children:
-        - title: State management
-          permalink: /development/data-and-backend/state-mgmt
-          children:
-            - title: Introduction
-              permalink: /development/data-and-backend/state-mgmt/intro
-            - title: Think declaratively
-              permalink: /development/data-and-backend/state-mgmt/declarative
-            - title: Ephemeral vs app state
-              permalink: /development/data-and-backend/state-mgmt/ephemeral-vs-app
-            - title: Simple app state management
-              permalink: /development/data-and-backend/state-mgmt/simple
-            - title: Options
-              permalink: /development/data-and-backend/state-mgmt/options
-        - title: Networking & http
-          permalink: /development/data-and-backend/networking
-        - title: JSON and serialization
-          permalink: /development/data-and-backend/json
-        - title: Firebase
-          permalink: /development/data-and-backend/firebase
-        - title: Google APIs
-          permalink: /development/data-and-backend/google-apis
-    - title: Accessibility & internationalization # TODO: use: Accessibility & localization
-      permalink: /development/accessibility-and-localization
-      children:
-        - title: Accessibility
-          permalink: /development/accessibility-and-localization/accessibility
-        - title: Internationalization
-          permalink: /development/accessibility-and-localization/internationalization
-    - title: Platform integration
-      permalink: /development/platform-integration
-      children:
-        - title: Supported platforms
-          permalink: /reference/supported-platforms
-        - title: Building desktop apps with Flutter
-          permalink: /development/platform-integration/desktop
-        - title: Writing platform-specific code
-          permalink: /development/platform-integration/platform-channels
-        - title: Android
-          permalink: /development/platform-integration/android
-          children:
-            - title: Adding a splash screen
-              permalink: /development/platform-integration/android/splash-screen
-            - title: C interop
-              permalink: /development/platform-integration/android/c-interop
-            - title: Hosting native Android views
-              permalink: /development/platform-integration/android/platform-views
-            - title: AndroidX migration
-              permalink: /development/platform-integration/android/androidx-migration
-            - title: Deprecated Splash Screen API Migration
-              permalink: /development/platform-integration/android/splash-screen-migration
-            - title: Targeting ChromeOS with Android
-              permalink:  /development/platform-integration/android/chromeos
-        - title: iOS
-          permalink: /development/platform-integration/ios
-          children:
-            - title: Leveraging Apple's system libraries
-              permalink: /development/platform-integration/ios/apple-frameworks
-            - title: Adding a splash screen
-              permalink: /development/platform-integration/ios/splash-screen
-            - title: Adding iOS App Clip support
-              permalink: /development/platform-integration/ios/ios-app-clip
-            - title: Adding iOS app extensions
-              permalink: /development/platform-integration/ios/app-extensions
-            - title: C interop
-              permalink: /development/platform-integration/ios/c-interop
-            - title: Hosting native iOS views
-              permalink: /development/platform-integration/ios/platform-views
-            - title: iOS debugging
-              permalink: /development/platform-integration/ios/ios-debugging
-        - title: Linux
-          permalink: /development/platform-integration/linux
-          children:
-            - title: Building Linux apps
-              permalink: /development/platform-integration/linux/building
-        - title: macOS
-          permalink: /development/platform-integration/macos
-          children:
-            - title: Building macOS apps
-              permalink: /development/platform-integration/macos/building
-            - title: C interop
-              permalink: /development/platform-integration/macos/c-interop
-        - title: Web
-          permalink: /development/platform-integration/web
-          children:
-            - title: Building web apps
-              permalink: /development/platform-integration/web/building
-            - title: Web FAQ
-              permalink: /development/platform-integration/web/faq
-            - title: Web renderers
-              permalink: /development/platform-integration/web/renderers
-            - title: Custom app initialization
-              permalink: /development/platform-integration/web/initialization
-            - title: Displaying images on the web
-              permalink: /development/platform-integration/web/web-images
-        - title: Windows
-          permalink: /development/platform-integration/windows
-          children:
-            - title: Building Windows apps
-              permalink: /development/platform-integration/windows/building
-            - title: Run loop migration
-              permalink: /development/platform-integration/windows/run-loop-migration
-            - title: Version information migration
-              permalink: /development/platform-integration/windows/version-migration
-            - title: Dark mode migration
-              permalink: /development/platform-integration/windows/dark-mode-migration
-    - title: Packages & plugins
-      permalink: /development/packages-and-plugins
-      children:
-        - title: Background processes
-          permalink: /development/packages-and-plugins/background-processes
-        - title: Developing packages & plugins
-          permalink: /development/packages-and-plugins/developing-packages
-        - title: Flutter Favorites program
-          permalink: /development/packages-and-plugins/favorites
-        - title: Happy paths project
-          permalink: /development/packages-and-plugins/happy-paths
+        - title: Layouts in Flutter
+          permalink: /ui/layout
           match-page-url-exactly: true
-        - title: Happy paths recommendations
-          permalink: /development/packages-and-plugins/happy-paths/recommended
-        - title: Plugins in Flutter tests
-          permalink: /development/packages-and-plugins/plugins-in-tests
-        - title: Using packages
-          permalink: /development/packages-and-plugins/using-packages
-        - title: Package site
-          permalink: https://pub.dev/flutter
-    - title: Add Flutter to an existing app
-      permalink: /development/add-to-app
+        - title: Tutorial
+          permalink: /ui/layout/tutorial
+        - title: Creating adaptive and responsive apps
+          permalink: /ui/layout/adaptive-responsive
+        - title: Building adaptive apps
+          permalink: /ui/layout/building-adaptive-apps
+        - title: Understanding constraints
+          permalink: /ui/layout/constraints
+        - title: Box constraints
+          permalink: /ui/layout/box-constraints
+    - title: Adding interactivity
+      permalink: /ui/interactive
+    - title: Assets and images
+      permalink: /ui/assets-and-images
+    - title: Material Design
+      permalink: /ui/material
+    - title: Navigation & routing
+      permalink: /ui/navigation
       children:
-      - title: Introduction
-        permalink: /development/add-to-app
-        match-page-url-exactly: true
-      - title: Adding to an Android app
-        permalink: /development/add-to-app/android
-        children:
-          - title: Project setup
-            permalink: /development/add-to-app/android/project-setup
-          - title: Add a single Flutter screen
-            permalink: /development/add-to-app/android/add-flutter-screen
-          - title: Add a Flutter Fragment
-            permalink: /development/add-to-app/android/add-flutter-fragment
-          - title: Add a Flutter View
-            permalink: /development/add-to-app/android/add-flutter-view
-          - title: Plugin setup
-            permalink: /development/add-to-app/android/plugin-setup
-      - title: Adding to an iOS app
-        permalink: /development/add-to-app/ios
-        children:
-          - title: Project setup
-            permalink: /development/add-to-app/ios/project-setup
-          - title: Add a single Flutter screen
-            permalink: /development/add-to-app/ios/add-flutter-screen
-      - title: Debugging & hot reload
-        permalink: /development/add-to-app/debugging
-      - title: Loading sequence and performance
-        permalink: /development/add-to-app/performance
-      - title: Multiple Flutter instances
-        permalink: /development/add-to-app/multiple-flutters
-    - title: Tools & features
-      permalink: /development/tools
+        - title: Navigation in Flutter
+          permalink: /ui/navigation
+          match-page-url-exactly: true
+        - title: Deep linking
+          permalink: /ui/navigation/deep-linking
+        - title: URL strategies
+          permalink: /ui/navigation/url-strategies
+    - title: Animations
+      permalink: /ui/animations
       children:
-        - title: Android Studio & IntelliJ
-          permalink: /development/tools/android-studio
-        - title: Visual Studio Code
-          permalink: /development/tools/vs-code
-        - title: DevTools
-          permalink: /development/tools/devtools
-          children:
-            - title: Overview
-              permalink: /development/tools/devtools/overview
-            - title: Install from Android Studio & IntelliJ
-              permalink: /development/tools/devtools/android-studio
-            - title: Install from VS Code
-              permalink: /development/tools/devtools/vscode
-            - title: Install from command line
-              permalink: /development/tools/devtools/cli
-            - title: Flutter inspector
-              permalink: /development/tools/devtools/inspector
-            - title: Performance view
-              permalink: /development/tools/devtools/performance
-            - title: CPU Profiler view
-              permalink: /development/tools/devtools/cpu-profiler
-            - title: Memory view
-              permalink: /development/tools/devtools/memory
-            - title: Debug console view **NEW**
-              permalink: /development/tools/devtools/console
-            - title: Network view
-              permalink: /development/tools/devtools/network
-            - title: Debugger
-              permalink: /development/tools/devtools/debugger
-            - title: Logging view
-              permalink: /development/tools/devtools/logging
-            - title: App size tool
-              permalink: /development/tools/devtools/app-size
-            - title: Release notes
-              permalink: /development/tools/devtools/release-notes
-        - title: SDK overview
-          permalink: /development/tools/sdk
-        - title: Flutter and the pubspec file
-          permalink: /development/tools/pubspec
-        - title: Hot reload
-          permalink: /development/tools/hot-reload
-        - title: Flutter Fix
-          permalink: /development/tools/flutter-fix
-        - title: Code formatting
-          permalink: /development/tools/formatting
+        - title: Introduction
+          permalink: /ui/animations
+          match-page-url-exactly: true
+        - title: Overview
+          permalink: /ui/animations/overview
+        - title: Tutorial
+          permalink: /ui/animations/tutorial
+        - title: Implicit animations
+          permalink: /ui/animations/implicit-animations
+        - title: Hero animations
+          permalink: /ui/animations/hero-animations
+        - title: Staggered animations
+          permalink: /ui/animations/staggered-animations
+    - title: Advanced UI
+      permalink: /ui/advanced
+      children:
+        - title: Actions & shortcuts
+          permalink: /ui/advanced/actions_and_shortcuts
+        - title: Fonts & typography
+          permalink: /ui/advanced/typography
+        - title: Keyboard focus system
+          permalink: /ui/advanced/focus
+        - title: Gestures
+          permalink: /ui/advanced/gestures
+        - title: Shaders
+          permalink: /ui/advanced/shaders
+        - title: Slivers
+          permalink: /ui/advanced/slivers
+    - title: Widget catalog
+      permalink: /ui/widgets
+
+- title: Data & backend
+  permalink: /data-and-backend
+  children:
+    - title: State management
+      permalink: /data-and-backend/state-mgmt
+      children:
+        - title: Introduction
+          permalink: /data-and-backend/state-mgmt/intro
+        - title: Think declaratively
+          permalink: /data-and-backend/state-mgmt/declarative
+        - title: Ephemeral vs app state
+          permalink: /data-and-backend/state-mgmt/ephemeral-vs-app
+        - title: Simple app state management
+          permalink: /data-and-backend/state-mgmt/simple
+        - title: Options
+          permalink: /data-and-backend/state-mgmt/options
+    - title: Networking & http
+      permalink: /data-and-backend/networking
+    - title: JSON and serialization
+      permalink: /data-and-backend/json
+    - title: Firebase
+      permalink: /data-and-backend/firebase
+    - title: Google APIs
+      permalink: /data-and-backend/google-apis
+
+- title: Accessibility & localization
+  permalink: /accessibility-and-localization
+  children:
+    - title: Accessibility
+      permalink: /accessibility-and-localization/accessibility
+    - title: Internationalization
+      permalink: /accessibility-and-localization/internationalization
+
+- title: Platform integration
+  permalink: /platform-integration
+  children:
+    - title: Supported platforms
+      permalink: /reference/supported-platforms
+    - title: Building desktop apps with Flutter
+      permalink: /platform-integration/desktop
+    - title: Writing platform-specific code
+      permalink: /platform-integration/platform-channels
+    - title: Android
+      permalink: /platform-integration/android
+      children:
+        - title: Adding a splash screen
+          permalink: /platform-integration/android/splash-screen
+        - title: C interop
+          permalink: /platform-integration/android/c-interop
+        - title: Hosting native Android views
+          permalink: /platform-integration/android/platform-views
+        - title: AndroidX migration
+          permalink: /platform-integration/android/androidx-migration
+        - title: Deprecated Splash Screen API Migration
+          permalink: /platform-integration/android/splash-screen-migration
+        - title: Targeting ChromeOS with Android
+          permalink:  /platform-integration/android/chromeos
+    - title: iOS
+      permalink: /platform-integration/ios
+      children:
+        - title: Leveraging Apple's system libraries
+          permalink: /platform-integration/ios/apple-frameworks
+        - title: Adding a splash screen
+          permalink: /platform-integration/ios/splash-screen
+        - title: Adding iOS App Clip support
+          permalink: /platform-integration/ios/ios-app-clip
+        - title: Adding iOS app extensions
+          permalink: /platform-integration/ios/app-extensions
+        - title: C interop
+          permalink: /platform-integration/ios/c-interop
+        - title: Hosting native iOS views
+          permalink: /platform-integration/ios/platform-views
+        - title: iOS debugging
+          permalink: /platform-integration/ios/ios-debugging
+    - title: Linux
+      permalink: /platform-integration/linux
+      children:
+        - title: Building Linux apps
+          permalink: /platform-integration/linux/building
+    - title: macOS
+      permalink: /platform-integration/macos
+      children:
+        - title: Building macOS apps
+          permalink: /platform-integration/macos/building
+        - title: C interop
+          permalink: /platform-integration/macos/c-interop
+    - title: Web
+      permalink: /platform-integration/web
+      children:
+        - title: Building web apps
+          permalink: /platform-integration/web/building
+        - title: Web FAQ
+          permalink: /platform-integration/web/faq
+        - title: Web renderers
+          permalink: /platform-integration/web/renderers
+        - title: Custom app initialization
+          permalink: /platform-integration/web/initialization
+        - title: Displaying images on the web
+          permalink: /platform-integration/web/web-images
+    - title: Windows
+      permalink: /platform-integration/windows
+      children:
+        - title: Building Windows apps
+          permalink: /platform-integration/windows/building
+        - title: Run loop migration
+          permalink: /platform-integration/windows/run-loop-migration
+        - title: Version information migration
+          permalink: /platform-integration/windows/version-migration
+        - title: Dark mode migration
+          permalink: /platform-integration/windows/dark-mode-migration
+
+- title: Packages & plugins
+  permalink: /packages-and-plugins
+  children:
+    - title: Background processes
+      permalink: /packages-and-plugins/background-processes
+    - title: Developing packages & plugins
+      permalink: /packages-and-plugins/developing-packages
+    - title: Flutter Favorites program
+      permalink: /packages-and-plugins/favorites
+    - title: Happy paths project
+      permalink: /packages-and-plugins/happy-paths
+      match-page-url-exactly: true
+    - title: Happy paths recommendations
+      permalink: /packages-and-plugins/happy-paths/recommended
+    - title: Plugins in Flutter tests
+      permalink: /packages-and-plugins/plugins-in-tests
+    - title: Using packages
+      permalink: /packages-and-plugins/using-packages
+    - title: Package site
+      permalink: https://pub.dev/flutter
+
+- title: Add to an existing app
+  permalink: /add-to-app
+  children:
+  - title: Introduction
+    permalink: /add-to-app
+    match-page-url-exactly: true
+  - title: Adding to an Android app
+    permalink: /add-to-app/android
+    children:
+      - title: Project setup
+        permalink: /add-to-app/android/project-setup
+      - title: Add a single Flutter screen
+        permalink: /add-to-app/android/add-flutter-screen
+      - title: Add a Flutter Fragment
+        permalink: /add-to-app/android/add-flutter-fragment
+      - title: Add a Flutter View
+        permalink: /add-to-app/android/add-flutter-view
+      - title: Plugin setup
+        permalink: /add-to-app/android/plugin-setup
+  - title: Adding to an iOS app
+    permalink: /add-to-app/ios
+    children:
+      - title: Project setup
+        permalink: /add-to-app/ios/project-setup
+      - title: Add a single Flutter screen
+        permalink: /add-to-app/ios/add-flutter-screen
+  - title: Debugging & hot reload
+    permalink: /add-to-app/debugging
+  - title: Loading sequence and performance
+    permalink: /add-to-app/performance
+  - title: Multiple Flutter instances
+    permalink: /add-to-app/multiple-flutters
+
+- title: Tools & features
+  permalink: /tools
+  children:
+    - title: Android Studio & IntelliJ
+      permalink: /tools/android-studio
+    - title: Visual Studio Code
+      permalink: /tools/vs-code
+    - title: DevTools
+      permalink: /tools/devtools
+      children:
+        - title: Overview
+          permalink: /tools/devtools/overview
+        - title: Install from Android Studio & IntelliJ
+          permalink: /tools/devtools/android-studio
+        - title: Install from VS Code
+          permalink: /tools/devtools/vscode
+        - title: Install from command line
+          permalink: /tools/devtools/cli
+        - title: Flutter inspector
+          permalink: /tools/devtools/inspector
+        - title: Performance view
+          permalink: /tools/devtools/performance
+        - title: CPU Profiler view
+          permalink: /tools/devtools/cpu-profiler
+        - title: Memory view
+          permalink: /tools/devtools/memory
+        - title: Debug console view **NEW**
+          permalink: /tools/devtools/console
+        - title: Network view
+          permalink: /tools/devtools/network
+        - title: Debugger
+          permalink: /tools/devtools/debugger
+        - title: Logging view
+          permalink: /tools/devtools/logging
+        - title: App size tool
+          permalink: /tools/devtools/app-size
+        - title: Release notes
+          permalink: /tools/devtools/release-notes
+    - title: SDK overview
+      permalink: /tools/sdk
+    - title: Flutter and the pubspec file
+      permalink: /tools/pubspec
+    - title: Hot reload
+      permalink: /tools/hot-reload
+    - title: Flutter Fix
+      permalink: /tools/flutter-fix
+    - title: Code formatting
+      permalink: /tools/formatting
 
 - title: Testing & debugging
   permalink: /testing
