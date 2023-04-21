@@ -141,7 +141,7 @@ in a GitHub Action packages the
 application into an MSIX and uploads it to a new submission on the dev center.
 
 An example Action YAML file for continuous deployment can be found
-[within a dedicated repository](https://github.com/yaakovschectman/SampleFlutterMSIXGithubAction/blob/main/dart.yml).
+[in the Flutter Gallery](https://github.com/flutter/gallery/blob/main/.github/workflows/release_deploy_windows.yml).
 The steps necessary for MSIX publishing are excerpted below:
 
 ```
