@@ -32,6 +32,12 @@ You can choose to have DevTools always opened in a browser with the
 in a new column next to your current editor with the `dart.devToolsLocation`
 setting.
 
+A full list of Dart/Flutter settings are available
+[here](https://dartcode.org/docs/settings/) or in the
+[VS Code settings editor](https://code.visualstudio.com/docs/getstarted/settings#_settings-editor).
+Some recommendation settings for Dart/Flutter in VS Code can be found
+[here](https://dartcode.org/docs/recommended-settings/).
+
 You can also see whether DevTools is running and launch it in a browser from the
 language status area (the `{}` icon next to **Dart** in the status bar).
 
