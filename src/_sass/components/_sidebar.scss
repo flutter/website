@@ -25,6 +25,14 @@
     }
   }
 
+  .sidebar-primary-divider {
+    height: 0;
+    margin-top: bs-spacer(1);
+    margin-bottom: bs-spacer(1);
+    overflow: hidden;
+    border-top: 1px solid $site-color-light-grey;
+  }
+
   @mixin nav-link-not-active-hover {
     &:not(.disabled) {
       &:hover {

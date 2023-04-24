@@ -1,0 +1,33 @@
+name: Check links and stage
+
+on:
+  pull_request:
+    branches:
+      - main
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  stage:
+    permissions:
+      checks: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    if: ${{ github.ref != 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+        with:
+          submodules: recursive
+      - name: Build site and check links
+        run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
+      - name: Stage site on Firebase
+        if: ${{
+          github.event.pull_request.head.repo.full_name == github.repository &&
+          github.event.pull_request.user.login != 'dependabot[bot]' }}
+        uses: FirebaseExtended/action-hosting-deploy@4d0d0023f1d92b9b7d16dda64b3d7abd2c98974b
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.SERVICE_KEY }}
+          expires: 14d
+          projectId: flutter-docs-prod

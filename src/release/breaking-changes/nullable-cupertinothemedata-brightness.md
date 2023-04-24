@@ -41,7 +41,7 @@ With this change, it is now possible to override
 subclass to change the brightness override. For example:
 
 ```dart
-class AwaysDarkCupertinoThemeData extends CupertinoThemeData {
+class AlwaysDarkCupertinoThemeData extends CupertinoThemeData {
   Brightness brightness => Brightness.dark;
 }
 ```

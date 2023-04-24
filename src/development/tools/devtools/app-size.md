@@ -138,7 +138,7 @@ For example, if you are analyzing your app size and find
 an unexpected package included in your compiled app, you can
 use the dominator tree to trace the package to its root source.
 
-![Screenshot of code size dominator tree]({{site.url}}/assets/images/docs/tools/devtools/code_size_dominator_tree.png){:width="100%"}
+![Screenshot of code size dominator tree]({{site.url}}/assets/images/docs/tools/devtools/app_size_dominator_tree.png){:width="100%"}
 
 #### Using the call graph
 
@@ -173,7 +173,7 @@ This information is useful for understanding the
 fine-grained dependencies of between pieces of your code
 (packages, libraries, classes, functions).
 
-![Screenshot of code size call graph]({{site.url}}/assets/images/docs/tools/devtools/code_size_call_graph.png){:width="100%"}
+![Screenshot of code size call graph]({{site.url}}/assets/images/docs/tools/devtools/app_size_call_graph.png){:width="100%"}
 
 #### Should I use the dominator tree or the call graph?
 

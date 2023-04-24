@@ -20,7 +20,7 @@ Some icons that have no equivalents in the
 new SF Symbols style are left as is.
 
 Some icons that have less variation
-(such as thickness, alterative looks, and so on)
+(such as thickness, alternative looks, and so on)
 are automapped and collapsed to the best matching
 variation in the new SF Symbols style but should be
 double checked to determine whether they preserve the

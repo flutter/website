@@ -137,7 +137,7 @@ the selection on the on-device inspector. **Select Widget Mode**
 needs to be enabled for this. To enable it,
 click on the **Select Widget Mode** button in the inspector.
 
-![The Select Widget Mode button in the inspector]({{site.url}}/assets/images/docs/tools/devtools/select_widget_mode_devtools_alpha.png)
+![The Select Widget Mode button in the inspector]({{site.url}}/assets/images/docs/tools/devtools/select_widget_mode_button.png)
 
 For some properties, like flex factor, flex fit, and alignment,
 you can modify the value via dropdown lists in the explorer.
@@ -209,7 +209,8 @@ RenderObject.
 ## Visual debugging
 
 The Flutter Inspector provides several options for visually debugging your app.
-These are the options available from the inspector within Flutter DevTools.
+
+![Inspector visual debugging options]({{site.url}}/assets/images/docs/tools/devtools/visual_debugging_options.png){:width="100%"}
 
 ### Slow animations
 
@@ -479,15 +480,11 @@ You can learn more at the following link:
 
 ## Details Tree
 
-Select the **Details Tree** tab to display the details tree for the
-selected widget.
-
-![The Details Tree tab]({{site.url}}/assets/images/docs/tools/devtools/details_tree_tab.png)
-
-From the details tree, you can gather useful information about a
+Select the **Widget Details Tree** tab to display the details tree for the
+selected widget. From here, you can gather useful information about a
 widget's properties, render object, and children.
 
-![The Details Tree view]({{site.url}}/assets/images/docs/tools/devtools/details_tree.png){:width="100%"}
+![The Details Tree view]({{site.url}}/assets/images/docs/tools/devtools/inspector_details_tree.png){:width="100%"}
 
 
 ## Track widget creation
