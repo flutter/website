@@ -6,7 +6,7 @@ description: "How to restore the state of your Android app after it's been kille
 When a user runs a mobile app and then selects another
 app to run, the first app is moved to the background,
 or _backgrounded_. The operating system (both iOS and Android)
-often kill the backgrounded app to release memory or
+typically kill the backgrounded app to release memory and
 improve performance for the app running in the foreground.
 
 When the user selects the app again, bringing it
@@ -23,17 +23,17 @@ So, how can you restore the state of the app so that
 it looks like it did before it was sent to the
 background?
 
-Flutter has a solution for that scenario with the
+Flutter has a solution for this with the
 [`RestorationManager`][] (and related classes)
 in the [services][] library.
-With the `RestorationManager`, the Flutter Framework
+With the `RestorationManager`, the Flutter framework
 provides the state data to the engine _as the state
 changes_, so that the app is ready when the OS signals
 that it's about to kill the app, giving the app only
 moments to prepare.
 
 {{site.alert.secondary}}
-  <strong>Instance state vs long-lived state</strong>
+  **Instance state vs long-lived state**
   When should you use the `RestorationManager` and
   when should you save state to long term storage?
   _Instance state_
@@ -43,196 +43,89 @@ moments to prepare.
   limited to 1 MB and, if the app exceeds this,
   it crashes with a `TransactionTooLargeException`
   error in the native code.
-  To learn more about short term and long term state,
-  check out [Differentiate between ephemeral state
-  and app state][state].
 {{site.alert.end}}
 
 [state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
 
 ## Overview
 
-Conceptually,
-enable state restoration with just a few tasks:
+You can enable state restoration with just a couple tasks:
 
 1. Define a `restorationId` or a `restorationScopeId`
    for all widgets that support it,
    such as [`TextField`][] and [`ScrollView`][].
-   This enables built-in state restoration for those widgets.
+   This automatically enables built-in state restoration
+   for those widgets.
 
 2. For custom widgets,
    you must decide what state you want to restore
    and hold that state in a [`RestorableProperty`][].
-   (We offer various subclasses for different data types.)
+   (The Flutter API provides various subclasses for
+   different data types.)
    Define those `RestorableProperty` widgets 
    in a `State` class that uses the [`RestorationMixin`][].
    Register those widgets with the mixin in a
    `restoreState` method.
 
-3. Bonus step: If you use the navigator API,
-   only call methods that have "restorable" in the name.
-
 Other considerations:
 
-* If you provide a `restorationId` to
-  `MaterialApp`, `CupertinoApp`, or `WidgetsApp`,
-  it enables state restoration by injecting a
-  `RootRestorationScope`.
+* Providing a `restorationId` to
+  `MaterialApp`, `CupertinoApp`, or `WidgetsApp`
+  automatically enables state restoration by
+  injecting a `RootRestorationScope`.
   If you need to restore state _above_ the app class,
   inject a `RootRestorationScope` manually.
 
-[`RestorableProperty']: {{site.api}}/flutter/widgets/RestorableProperty-class.html
-[`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
-[`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView/restorationId.html
-[`TextField`]: {{site.api}}/flutter/material/TextField/restorationId.html
+* **The difference between a `restorationId` and
+  a `restorationScopeId`:** Widgets that take a
+  `restorationScopeID` create a new `restorationScope`
+  (a new `RestorationBucket`) into which all children
+  store their state. A `restorationId` means the widget
+  (and its children) store the data in the surrounding bucket.
+  (QUESTION: Axe this?)
 
-{% comment %}
-The `RestorationManager` manages the restoration
-data, which is serialized to a tree of [`RestorationBucket`][],
-that are synchronized with the Flutter engine.
-A `RestorationBucket` contains a key/value pair
-of state information that you want to save. The key is a
-[`restorationId`][] that is unique to that `RestorationScope`.
+* You can only restore state with the `RestorationMixin`
+  that is stored in `RestorableProperty` (and its subclasses),
+  for example, [`restorablePush`][].
+  To restore the state in those properties,
+  you have to register them in `restoreState`.
+  (QUESTION: Axe this?)
 
-Flutter automatically creates a
-[`RestorationScope`][] for each route in your
-app to track the `RestorationBucket`s in that scope.
-In general, you shouldn't need to worry about
-this object _unless_ the scope has two (or more) buckets with
-the same `restorationId`. If that occurs,
-create a new `RestorationScope` to ensure
-that each ID is unique to its scope.
-Each scope is assigned a unique [`restorationScopeId`][].
-
-You must decide what state you want to save and restore,
-but you can only save specific types to a `RestorationBucket`,
-namely: `null`, `bool`, `int`, `double`, `String`, `Uint8List`
-(and other typed data), `List`, `Map`, and child `RestorationBucket`s.
-{% endcomment %}
-
-{{site.alert.note}}
-  The code in this page was taken from [VeggieSeasons][].
-  VeggieSeasons is a sample app written for iOS that uses Cupertino
-  widgets. An iOS app requires [a bit of extra setup][] in Xcode, but
-  the restoration classes otherwise work the same on both iOS and Android.
-{{site.alert.end}}
-
+* Flutter automatically creates a
+  [`RestorationScope`][] for each route in your
+  app to track the `RestorationBucket`s in that scope.
+  In general, you shouldn't need to worry about
+  this object _unless_ the scope has two (or more) buckets with
+  the same `restorationId`. If that occurs,
+  create a new `RestorationScope` to ensure
+  that each ID is unique to its scope.
+  (QUESTION: Axe this?)
 
 [a bit of extra setup]: {{site.api}}/flutter/services/RestorationManager-class.html#state-restoration-on-ios
+[`registerForRestoration`]: {{site.api}}/flutter/widgets/RestorationMixin/registerForRestoration.html
 [`restorationId`]: {{site.api}}/flutter/widgets/RestorationScope/restorationId.html
 [`restorationScopeId`]: {{site.api}}/flutter/widgets/RestorationScope/restorationScopeId.html
+[`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
 [`RestorationScope`]: {{site.api}}/flutter/widgets/RestorationScope-class.html
+[`restoreState`]: {{site.api}}/flutter/widgets/RestorationMixin/restoreState.html
 [VeggieSeasons]: {{site.github}}/flutter/samples/tree/master/veggieseasons
 
-## Step 1: Enabling state restoration
+## Restoring navigation state
 
-Most every Flutter app contains a `main` method that calls the
-[`runApp`][] function. You can use `runApp`
-to set up the framework and the bindings that bind
-the Dart code to the native Flutter engine.
-Set up the `RestorationManager` in the `runApp` function.
-For example:
+If you want your app to return to a particular route
+(the shopping cart, for example) that the user was most
+recently viewing, then you must implement
+restoration state for navigation, as well.
 
-```dart
-void main() {
-  /...
+If you use the navigator API directly,
+you must use the methods with `restorable`
+in the name to ensure that your routes are restored,
+such as [`restorablePush`][].
 
-  runApp(
-    const RootRestorationScope(
-      restorationId: 'root',
-      child: VeggieApp(),
-    ),
-  );
-}
-```
-
-[`runApp`]: {{site.api}}/flutter/widgets/runApp.html
-
-## Step 2: Add RestorationMixin to the State class
-
-To implement restorable state,
-add the [`RestorationMixin`][] to the app's `State` class.
-
-```dart
-class _VeggieAppState extends State<VeggieApp> with RestorationMixin
-```
-
-You can only restore state with the `RestorationMixin`
-that is stored in `RestorableProperty` (and its subclasses).
-To restore the state in those properties,
-you have to register them in [`restoreState`][].
-
-Once you've added the restore state mixin,
-your IDE asks you to implement an abstract method
-called `restoreState`. The `restoreState` method calls
-[`registerForRestoration`][] to register that you
-intend to save state. For example:
-
-```dart
-@override
-void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
-  registerForRestoration(_appState, 'state');
-} 
-```
-
-[`registerForRestoration`]: {{site.api}}/flutter/widgets/RestorationMixin/registerForRestoration.html
-[`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
-[`restoreState`]: {{site.api}}/flutter/widgets/RestorationMixin/restoreState.html
-
-## Step 3: Save the state you want to restore
-
-Most of the state restoration work occurs in the
-`build` method on the `State` class that implements
-`RestorationMixin`. Your primary task here is to
-define a `restorationId` for each piece of state
-you want to save.
-
-In the VeggieSeasons example, most of this work
-is implemented in the `lib/screens` classes.
-
-## Step 4: Define restorationScopeId and restorationIDs
-
-Providing a `restorationScopeId` or `restorationId`
-to a widget turns on state restoration for that
-particular widget: It will now store its own state
-under the provided it in the surrounding restoration bucket.
-The difference between a `restorationId` and a
-`restorationScopeID` is that widgets that take a
-`restorationScopeID` create a new `restorationScope`
-(a `RestorationBucket`, for example) into which all
-children of that scope  will store their state.
-A `restorationId` means the widget (and its children)
-store the data in the surrounding bucket.
-
-```dart
-restorationScopeId: 'app',
-```
-
-## Step 5: Restoring navigation state
-
-If you want your app to return to the route (such
-as a specific tab) that the user was most recently viewing,
-then you need to implement
-restoration state for the navigation, as well.
-This page won't cover navigation, but the
-accompanying example, VeggieSeasons, implements this
-feature using the [go_router][] package.
-
-{{site.alert.secondary}}
-  **Using the navigator API directly:**
-  If you use the navigator API directly,
-  you must use the methods with `restorable`
-  in the name to ensure that your routes are restored,
-  such as, [`restorablePush`][].
-{{site.alert.end}}
-
-[`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
-
-For more information on navigation and the
-`go_router` package, check out [Navigation and routing][].
-
-[go_router]: {{site.pub}}/packages/go_router
-[Navigation and routing]: {{site.url}}/development/ui/navigation
+The VeggieSeasons example (listed under "Other resources" below)
+implements navigation with the [`go_router`][] package.
+Setting the `restorationId`
+values occur in the `lib/screens` classes.
 
 ## Testing state restoration
 
@@ -242,14 +135,13 @@ To learn how to do this for both iOS and Android,
 check out [Testing state restoration][] on the
 [`RestorationManager`][] page.
 
-{{site.alert.note}}
-  Don't forget to reenable
+{{site.alert.warning}}
+  **Don't forget to reenable
   storing state on your device once you are
-  finished with testing!
+  finished with testing!**
 {{site.alert.end}}
 
 [Testing state restoration]: {{site.api}}/flutter/services/RestorationManager-class.html#testing-state-restoration
-
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [`RestorationBucket`]: {{site.api}}/flutter/services/RestorationBucket-class.html
 [`RestorationManager`]: {{site.api}}/flutter/services/RestorationManager-class.html
@@ -257,8 +149,37 @@ check out [Testing state restoration][] on the
 
 ## Other resources
 
-You might want to check out packages on pub.dev that
-perform state restoration, such as [`statePersistence`][].
+For further information on state restoration,
+check out the following resources:
 
+* For an example that implements state restoration, 
+  check out [VeggieSeasons][], a sample app written
+  for iOS that uses Cupertino widgets. An iOS app requires
+  [a bit of extra setup][] in Xcode, but the restoration
+  classes otherwise work the same on both iOS and Android.<br>
+  The following list links to relevant parts of the VeggieSeasons
+  example:
+    * [Defining a `RestorablePropery` as an instance property]({{site.github}}/flutter/samples/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L33-L37)
+    * [Registering the properties]({{site.github}}/flutter/samples/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L49-L54)
+    * [Updating the properties values]({{site.github}}/flutter/samples/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L108-L109)
+    * [Using property values in build]({{site.github}}/flutter/samples/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L205-L210)<br>
+
+* To learn more about short term and long term state,
+  check out [Differentiate between ephemeral state
+  and app state][state].
+
+* You might want to check out packages on pub.dev that
+  perform state restoration, such as [`statePersistence`][].
+
+* For more information on navigation and the
+  `go_router` package, check out [Navigation and routing][].
+
+[`RestorableProperty`]: {{site.api}}/flutter/widgets/RestorableProperty-class.html
+[`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
+[`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
+[`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView/restorationId.html
 [`statePersistence`]: {{site.pub-pkg}}/state_persistence
-
+[`TextField`]: {{site.api}}/flutter/material/TextField/restorationId.html
+[`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
+[`go_router`]: {{site.pub}}/packages/go_router
+[Navigation and routing]: {{site.url}}/development/ui/navigation
