@@ -27,9 +27,13 @@ The chosen tool will be opened embedded inside VS Code.
 
 ![Screenshot showing DevTools in a browser]({{site.url}}/assets/images/docs/tools/vs-code/vscode_embedded.png){:width="100%"}
 
-You can choose to have DevTools always opened in a browser with the `dart.embedDevTools` setting, and control whether it opens as a full window or in a new column next to your current editor with the `dart.devToolsLocation` setting.
+You can choose to have DevTools always opened in a browser with the
+`dart.embedDevTools` setting, and control whether it opens as a full window or
+in a new column next to your current editor with the `dart.devToolsLocation`
+setting.
 
-You can also see whether DevTools is running and launch it in a browser from the language status area (the `{}` icon next to **Dart** in the status bar).
+You can also see whether DevTools is running and launch it in a browser from the
+language status area (the `{}` icon next to **Dart** in the status bar).
 
 ![Screenshot showing DevTools in the VS Code status bar]({{site.url}}/assets/images/docs/tools/vs-code/vscode_status_bar.png){:width="100%"}
 
