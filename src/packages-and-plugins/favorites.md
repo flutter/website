@@ -31,7 +31,7 @@ You can see the complete list of
   to the next level.
 {{site.alert.end}}
 
-[Happy paths project]: {{site.url}}/development/packages-and-plugins/happy-paths
+[Happy paths project]: {{site.url}}/packages-and-plugins/happy-paths
 
 ## Metrics
 
@@ -136,5 +136,5 @@ You can see the complete list of
 [send the committee]: mailto:flutter-committee@googlegroups.com
 [Flutter Favorite packages]: {{site.pub}}/flutter/favorites
 [Overall package score]: {{site.pub}}/help
-[pubspec.yaml format]: {{site.url}}/development/packages-and-plugins/developing-packages#plugin-platforms
+[pubspec.yaml format]: {{site.url}}/packages-and-plugins/developing-packages#plugin-platforms
 [Verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers

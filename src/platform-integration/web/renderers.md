@@ -72,7 +72,7 @@ begins in `main.dart.js`.
   check out [Customizing web app initialization][web-app-init].
 {{site.alert.end}}
 
-[web-app-init]: {{site.url}}/development/platform-integration/web/initialization
+[web-app-init]: {{site.url}}/platform-integration/web/initialization
 
 
 ## Choosing which option to use

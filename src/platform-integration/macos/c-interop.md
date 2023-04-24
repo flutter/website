@@ -22,8 +22,8 @@ _native interface_ and _language bindings._
 {{site.alert.end}}
 
 
-[android-ffi]: {{site.url}}/development/platform-integration/android/c-interop
-[ios-ffi]: {{site.url}}/development/platform-integration/ios/c-interop
+[android-ffi]: {{site.url}}/platform-integration/android/c-interop
+[ios-ffi]: {{site.url}}/platform-integration/ios/c-interop
 [dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
@@ -267,7 +267,7 @@ use the following instructions:
 1. Run `flutter build macos` to build a self-contained release
    version of your app.
 
-[Flutter macOS Desktop]: {{site.url}}/development/platform-integration/macos/building
+[Flutter macOS Desktop]: {{site.url}}/platform-integration/macos/building
 
 {% comment %}
 

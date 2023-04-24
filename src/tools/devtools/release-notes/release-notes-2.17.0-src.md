@@ -16,7 +16,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   directories are properly
   configured. - [#4306](https://github.com/flutter/devtools/pull/4306)
 
-![frame_analysis]({{site.url}}/development/tools/devtools/release-notes/images-2.17.0/package_directories.png "package directories")
+![frame_analysis]({{site.url}}/tools/devtools/release-notes/images-2.17.0/package_directories.png "package directories")
 
 ## Performance Updates
 * Added a **Frame Analysis** tab to the Performance page.
@@ -28,7 +28,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   to try to guide you in the right direction
   - [#4339](https://github.com/flutter/devtools/pull/4339)
 
-![frame_analysis]({{site.url}}/development/tools/devtools/release-notes/images-2.17.0/frame_analysis.png "frame analysis")
+![frame_analysis]({{site.url}}/tools/devtools/release-notes/images-2.17.0/frame_analysis.png "frame analysis")
 
 ## Changelog
 More details about changes and fixes are available in the DevTools

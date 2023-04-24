@@ -6,7 +6,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 * Replace the DevTools timeline trace viewer with the Perfetto trace viewer - [#5142](https://github.com/flutter/devtools/pull/5142)
 
-![perfetto trace viewer]({{site.url}}/development/tools/devtools/release-notes/images-2.21.1/image1.png "perfetto_trace_viewer")
+![perfetto trace viewer]({{site.url}}/tools/devtools/release-notes/images-2.21.1/image1.png "perfetto_trace_viewer")
 
 * Fix several issues with loading a Performance snapshot into DevTools - [#5048](https://github.com/flutter/devtools/pull/5048), [#4929](https://github.com/flutter/devtools/pull/4929)
 * UI polish and cleanup - [#4889](https://github.com/flutter/devtools/pull/4889)

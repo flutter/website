@@ -10,12 +10,12 @@ See [#4175](https://github.com/flutter/devtools/pull/4175)
 ## Performance Updates
 * Added outlines to each layer displayed in the Raster Metrics
    tool&mdash;[#4192](https://github.com/flutter/devtools/pull/4192)
-![raster-metrics-layer-outlines]({{site.url}}/development/tools/devtools/release-notes/images-2.15.0/image1.png "raster metrics layer outlines")
+![raster-metrics-layer-outlines]({{site.url}}/tools/devtools/release-notes/images-2.15.0/image1.png "raster metrics layer outlines")
 * Fix a bug with loading offline data&mdash;[#4189](https://github.com/flutter/devtools/pull/4189)
 
 ## Network Updates
 * Added a Json viewer with syntax highlighting for network responses - [#4167](https://github.com/flutter/devtools/pull/4167)
-![network-response-json-viewer]({{site.url}}/development/tools/devtools/release-notes/images-2.15.0/image2.png "network response json viewer")
+![network-response-json-viewer]({{site.url}}/tools/devtools/release-notes/images-2.15.0/image2.png "network response json viewer")
 * Added the ability to copy network responses - [#4190](https://github.com/flutter/devtools/pull/4190)
 
 ## Memory Updates

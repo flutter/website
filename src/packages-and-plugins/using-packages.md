@@ -51,9 +51,9 @@ whether stored in files or packages,
 see [Adding assets and images][].
 
 
-[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets-and-images
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
-[developing packages]: {{site.url}}/development/packages-and-plugins/developing-packages
+[developing packages]: {{site.url}}/packages-and-plugins/developing-packages
 [FlutterFire]: {{site.github}}/firebase/flutterfire
 
 
@@ -90,7 +90,7 @@ or any combination thereof.
 
 [Android]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aandroid
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
-[Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
+[Flutter Favorites program]: {{site.url}}/packages-and-plugins/favorites
 [Flutter landing page]: {{site.pub}}/flutter
 [Linux]: {{site.pub-pkgs}}?q=sdk%3Aflutter+platform%3Alinux
 [iOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aios
@@ -234,7 +234,7 @@ override functionality.
 If no package exists for your specific use case,
 you can [write a custom package][].
 
-[write a custom package]: {{site.url}}/development/packages-and-plugins/developing-packages
+[write a custom package]: {{site.url}}/packages-and-plugins/developing-packages
 
 ## Managing package dependencies and versions
 

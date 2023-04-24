@@ -12,7 +12,7 @@ tools to detect and debug specific issues.
 {{site.alert.end}}
 
 For information on how to locate DevTools screens in different IDEs,
-check out the [DevTools overview]({{site.url}}/development/tools/devtools/overview).
+check out the [DevTools overview]({{site.url}}/tools/devtools/overview).
 
 To better understand the insights found on this page,
 the first section explains how Dart manages memory.
@@ -237,7 +237,7 @@ owned by the widget, should never be referenced
 from the state’s fields, as the state won't be garbage
 collected together with the widget, and can significantly outlive it.
 
-[interactive]: {{site.url}}/development/ui/interactive#creating-a-stateful-widget
+[interactive]: {{site.url}}/ui/interactive#creating-a-stateful-widget
 
 ### Memory leak vs memory bloat
 
@@ -366,7 +366,7 @@ The quantities plotted on the y-axis are as follows:
 [Command-line and server apps]: {{site.dart-site}}/server
 [Custom Flutter engine embedders]: {{site.github}}/flutter/flutter/wiki/Custom-Flutter-Engine-Embedders
 [Dart VM internals]: https://mrale.ph/dartvm/
-[DevTools Performance view]: {{site.url}}/development/tools/devtools/performance
+[DevTools Performance view]: {{site.url}}/tools/devtools/performance
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
 [frog]: https://dartfrog.vgv.dev/
 [heroku]: {{site.youtube-site}}/watch?v=nkTUMVNelXA

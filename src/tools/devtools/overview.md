@@ -62,9 +62,9 @@ If your app has frequent background activity with some idle time,
 Flutter might use that opportunity to collect the created objects
 without performance impact.
 
-[CPU profiler]: {{site.url}}/development/tools/devtools/cpu-profiler
+[CPU profiler]: {{site.url}}/tools/devtools/cpu-profiler
 [Performance]: {{site.url}}/perf
-[Performance > Timeline]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart 
+[Performance > Timeline]: {{site.url}}/tools/devtools/performance#timeline-events-chart 
 [UI frames]: {{site.url}}/perf/ui-performance
 
 
@@ -83,9 +83,9 @@ in particular, its list of [other resources][].
 For more information on using DevTools with Dart command-line apps, see the 
 [DevTools documentation on dart.dev]({{site.dart-site}}/tools/dart-devtools).
 
-[Android Studio/IntelliJ]: {{site.url}}/development/tools/devtools/android-studio
-[VS Code]: {{site.url}}/development/tools/devtools/vscode
-[command line]: {{site.url}}/development/tools/devtools/cli
+[Android Studio/IntelliJ]: {{site.url}}/tools/devtools/android-studio
+[VS Code]: {{site.url}}/tools/devtools/vscode
+[command line]: {{site.url}}/tools/devtools/cli
 [DevTools issue tracker]: {{site.github}}/flutter/devtools/issues
 [Debugging]: {{site.url}}/testing/debugging
 [Other resources]: {{site.url}}/testing/debugging#other-resources

@@ -81,7 +81,7 @@ Some features of WorkManager include:
 [Android setup]: {{site.github}}/fluttercommunity/flutter_workmanager/blob/main/ANDROID_SETUP.md
 [Dart concurrency]: {{site.dart-site}}/guides/language/concurrency 
 [iOS setup]: {{site.github}}/fluttercommunity/flutter_workmanager/blob/main/IOS_SETUP.md
-[Using packages]: {{site.url}}/development/packages-and-plugins/using-packages
+[Using packages]: {{site.url}}/packages-and-plugins/using-packages
 
 ## Geolocation ![Geolocation happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_Geolocation_3d_001.png){:width="20%"}
 
@@ -106,7 +106,7 @@ Features include:
 * Ability to determine whether a devices's
   location services are enabled  
 
-[Flutter favorite]: {{site.url}}/development/packages-and-plugins/favorites
+[Flutter favorite]: {{site.url}}/packages-and-plugins/favorites
 [`geolocator`]: {{site.pub-pkg}}/geolocator
 
 #### Useful links
@@ -132,7 +132,7 @@ The `freezed` package handles in-memory objects
 and `json_serializable` maps those immutable 
 objects to and from the JSON format.   
 
-[Flutter favorites]: {{site.url}}/development/packages-and-plugins/favorites
+[Flutter favorites]: {{site.url}}/packages-and-plugins/favorites
 [`freezed`]: {{site.pub-pkg}}/freezed
 [`json_serializable`]: {{site.pub-pkg}}/json_serializable
 
@@ -151,7 +151,7 @@ objects to and from the JSON format.
 [`freezed`]: {{site.pub-pkg}}/freezed#how-to-use
 [`json_serializable`]: {{site.pub-api}}/json_serializable/latest/
 [json-example]: {{site.github}}/google/json_serializable.dart/tree/master/example
-[Serializing JSON using json_serializable]: {{site.url}}/development/data-and-backend/json#serializing-json-using-code-generation-libraries
+[Serializing JSON using json_serializable]: {{site.url}}/data-and-backend/json#serializing-json-using-code-generation-libraries
 
 ## Structured local storage ![Structured local storage happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_Storage_3d_001.png){:width="20%"}
 

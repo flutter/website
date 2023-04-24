@@ -30,5 +30,5 @@ See the [Happy paths recommendations][] for more information
 on background processing. 
 
 [background-processes]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[Happy paths recommendations]: {{site.url}}/development/packages-and-plugins/happy-paths/recommended#background-processing-
+[Happy paths recommendations]: {{site.url}}/packages-and-plugins/happy-paths/recommended#background-processing-
 [WorkManager]: {{site.pub-pkg}}/workmanager 

@@ -15,7 +15,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 learn more about these features - [#3934](https://github.com/flutter/devtools/pull/3934), 
 [#3936](https://github.com/flutter/devtools/pull/3936)
 
-![enhance tracing documentation links]({{site.url}}/development/tools/devtools/release-notes/images-2.12.1/image1.png "enhance tracing documentation links")
+![enhance tracing documentation links]({{site.url}}/tools/devtools/release-notes/images-2.12.1/image1.png "enhance tracing documentation links")
 
 ## Changelog
 More details about changes and fixes are available in our

@@ -8,7 +8,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   your development experience. This survey prompt will show up directly in
   DevTools sometime in mid-February.
 
-![survey prompt]({{site.url}}/development/tools/devtools/release-notes/images-2.9.2/image1.png "survey_prompt")
+![survey prompt]({{site.url}}/tools/devtools/release-notes/images-2.9.2/image1.png "survey_prompt")
 
 *Note*: If you are having issues launching the survey, please make
 sure you have upgraded to the latest Flutter stable branch 2.10.
@@ -27,7 +27,7 @@ are on Flutter 2.10, this bug will still be present._
 * Added frame numbers to x-axis the Flutter frames chart -
   [#3526](https://github.com/flutter/devtools/pull/3526)
 
-![frame numbers]({{site.url}}/development/tools/devtools/release-notes/images-2.9.2/image2.png "frame_numbers")
+![frame numbers]({{site.url}}/tools/devtools/release-notes/images-2.9.2/image2.png "frame_numbers")
 
 ## Debugger Updates
 * Fix a bug where the File Explorer in the Debugger did not show contents

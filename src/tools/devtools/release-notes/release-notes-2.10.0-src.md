@@ -5,7 +5,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 ## Flutter Inspector Updates
 * Added search support to the Widget Tree, and added a breadcrumb navigator to the Widget Details Tree to allow for quickly navigating through the tree hierarchy - [#3525](https://github.com/flutter/devtools/pull/3525)
 
-![inspector search]({{site.url}}/development/tools/devtools/release-notes/images-2.10.0/image1.png "inspector_search")
+![inspector search]({{site.url}}/tools/devtools/release-notes/images-2.10.0/image1.png "inspector_search")
 
 ## CPU Profiler Updates
 * Fix a null ref in the CPU profiler when loading an offline snapshot - [#3596](https://github.com/flutter/devtools/pull/3596)

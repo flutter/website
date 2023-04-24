@@ -511,9 +511,9 @@ For more details, see
 [Adding a splash screen to your iOS app][].
 
 
-[add-to-app]: {{site.url}}/development/add-to-app/ios
-[Adding a splash screen to your Android app]: {{site.url}}/development/platform-integration/android/splash-screen
-[Adding a splash screen to your iOS app]: {{site.url}}/development/platform-integration/ios/splash-screen
+[add-to-app]: {{site.url}}/add-to-app/ios
+[Adding a splash screen to your Android app]: {{site.url}}/platform-integration/android/splash-screen
+[Adding a splash screen to your iOS app]: {{site.url}}/platform-integration/ios/splash-screen
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`AssetImage`]: {{site.api}}/flutter/painting/AssetImage-class.html
 [`DefaultAssetBundle`]: {{site.api}}/flutter/widgets/DefaultAssetBundle-class.html
@@ -532,7 +532,7 @@ For more details, see
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
 [`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
 [`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String)
-[package]: {{site.url}}/development/packages-and-plugins/using-packages
+[package]: {{site.url}}/packages-and-plugins/using-packages
 [`pathForResource:ofType:`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410989-pathforresource
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`pubspec.yaml`]: {{site.dart-site}}/tools/pub/pubspec

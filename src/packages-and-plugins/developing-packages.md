@@ -646,7 +646,7 @@ If you are writing tests for your Flutter app
 and plugins are causing crashes,
 check out [Flutter in plugin tests][].
 
-[Flutter in plugin tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
+[Flutter in plugin tests]: {{site.url}}/packages-and-plugins/plugins-in-tests
 [Testing plugins]: {{site.url}}/testing/testing-plugins
 
 ## Developing FFI plugin packages {#plugin-ffi}
@@ -1001,13 +1001,13 @@ PENDING
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
-[Android]: {{site.url}}/development/platform-integration/android/c-interop
-[iOS]: {{site.url}}/development/platform-integration/ios/c-interop
-[macOS]: {{site.url}}/development/platform-integration/macos/c-interop
+[Android]: {{site.url}}/platform-integration/android/c-interop
+[iOS]: {{site.url}}/platform-integration/ios/c-interop
+[macOS]: {{site.url}}/platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: {{site.url}}/get-started/editor
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
-[Flutter Favorites program]: {{site.url}}/development/packages-and-plugins/favorites
+[Flutter Favorites program]: {{site.url}}/packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
 [helper isolate]: {{site.dart-site}}/guides/language/concurrency#background-workers
 [How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
@@ -1016,7 +1016,7 @@ PENDING
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
 [`package:ffigen`]: {{site.pub}}/packages/ffigen
-[platform channel]: {{site.url}}/development/platform-integration/platform-channels
+[platform channel]: {{site.url}}/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever

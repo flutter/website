@@ -6,13 +6,13 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 * Added a link to the new DevTools [Discord channel](https://discord.com/channels/608014603317936148/958862085297672282)
 in the About DevTools dialog - [#4102](https://github.com/flutter/devtools/pull/4102)
 
-![about-devtools]({{site.url}}/development/tools/devtools/release-notes/images-2.14.0/image1.png "about devtools")
+![about-devtools]({{site.url}}/tools/devtools/release-notes/images-2.14.0/image1.png "about devtools")
 
 ## Network Updates
 * Added "Copy as URL" and "Copy as cURL" actions for selected requests in the network profiler (special thanks to
 [@jankuss](https://github.com/jankuss)!)- [#4113](https://github.com/flutter/devtools/pull/4113)
 
-![network-request-copy-actions]({{site.url}}/development/tools/devtools/release-notes/images-2.14.0/image2.png "network request copy actions")
+![network-request-copy-actions]({{site.url}}/tools/devtools/release-notes/images-2.14.0/image2.png "network request copy actions")
 
 ## Flutter Inspector Updates
 * Added a setting to control whether hovering over a widget in the inspector displays its properties and values in a
@@ -22,7 +22,7 @@ hover card - [#4090](https://github.com/flutter/devtools/pull/4090)
 * Added auto complete suggestions in the console (special thanks to [@jankuss](https://github.com/jankuss)!) - 
 [#4062](https://github.com/flutter/devtools/pull/4062)
 
-![auto-complete-suggestions]({{site.url}}/development/tools/devtools/release-notes/images-2.14.0/image3.png "auto complete suggestions")
+![auto-complete-suggestions]({{site.url}}/tools/devtools/release-notes/images-2.14.0/image3.png "auto complete suggestions")
 
 * Added the option to copy the full file path for a selected library - [#4147](https://github.com/flutter/devtools/pull/4147)
 * Fixed formatting in the debugger exception menu - [#4066](https://github.com/flutter/devtools/pull/4066)

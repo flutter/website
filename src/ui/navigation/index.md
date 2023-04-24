@@ -167,7 +167,7 @@ resources:
 
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Router`]: {{site.api}}/flutter/widgets/Router-class.html
-[Deep linking]: {{site.url}}/development/ui/navigation/deep-linking
+[Deep linking]: {{site.url}}/ui/navigation/deep-linking
 [navigation recipes]: {{site.url}}/cookbook#navigation
 [`MaterialApp.routes`]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [Navigate with named routes]: {{site.url}}/cookbook/navigation/named-routes

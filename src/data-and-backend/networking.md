@@ -36,7 +36,7 @@ macOS apps must allow network access in the relevant `.entitlements` files.
 
 Learn more about [setting up entitlements][].
 
-[setting up entitlements]: {{site.url}}/development/platform-integration/macos/building#setting-up-entitlements
+[setting up entitlements]: {{site.url}}/platform-integration/macos/building#setting-up-entitlements
 
 ## Samples
 

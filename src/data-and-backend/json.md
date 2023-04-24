@@ -534,7 +534,7 @@ For more information, see the following resources:
 [code generation libraries]: #code-generation
 [`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
-[Flutter Favorite]: {{site.url}}/development/packages-and-plugins/favorites
+[Flutter Favorite]: {{site.url}}/packages-and-plugins/favorites
 [json background parsing]: {{site.url}}/cookbook/networking/background-parsing
 [`JsonCodec`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
 [`JsonSerializable`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html

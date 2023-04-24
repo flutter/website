@@ -201,10 +201,10 @@ Flutter iOS app, check out the
 [Apple's documentation]: https://developer.apple.com/app-extensions/
 [Core Spotlight]: https://developer.apple.com/documentation/corespotlight
 [WidgetKit]: https://developer.apple.com/documentation/widgetkit
-[Leveraging Apple's System APIs and Frameworks]: {{site.url}}/development/platform-integration/ios/apple-frameworks
+[Leveraging Apple's System APIs and Frameworks]: {{site.url}}/platform-integration/ios/apple-frameworks
 [pub.dev]: {{site.pub-pkg}}
 [App Group]: https://developer.apple.com/documentation/xcode/configuring-app-groups
-[Adding a Flutter Screen]: {{site.url}}/development/add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively---create-a-flutterviewcontroller-with-an-implicit-flutterengine
+[Adding a Flutter Screen]: {{site.url}}/add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively---create-a-flutterviewcontroller-with-an-implicit-flutterengine
 [`shared_preference_app_group`]: {{site.pub-pkg}}/shared_preference_app_group
 [Compiling the Engine]: https://github.com/flutter/flutter/wiki/Compiling-the-engine
 [`path_provider`]: {{site.pub-pkg}}/path_provider
@@ -212,7 +212,7 @@ Flutter iOS app, check out the
 [`workmanager`]: {{site.pub-pkg}}/workmanager
 [read and write files]: {{site.url}}/cookbook/persistence/reading-writing-files
 [example from the community on GitHub]: {{site.github}}/flutter/engine/pull/39941
-[Deep Linking]:{{site.url}}/development/ui/navigation/deep-linking
+[Deep Linking]:{{site.url}}/ui/navigation/deep-linking
 
 <!--  TO DO: add links when published -->
 [Adding Home Screen Widgets to your Flutter app]: {{site.codelabs}}/?product=flutter

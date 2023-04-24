@@ -289,5 +289,5 @@ class _MyAppState extends State<MyApp> {
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
-[JSON and serialization]: {{site.url}}/development/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

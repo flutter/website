@@ -640,10 +640,10 @@ Key information:
   The hero's flight path still follows an arc,
   but the image's aspect ratio remains constant.
 
-[Animations in Flutter tutorial]: {{site.url}}/development/ui/animations/tutorial
+[Animations in Flutter tutorial]: {{site.url}}/ui/animations/tutorial
 [basic_hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_hero_animation/
 [basic_radial_hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_radial_hero_animation
-[Building Layouts in Flutter]: {{site.url}}/development/ui/layout
+[Building Layouts in Flutter]: {{site.url}}/ui/layout
 [`ClipOval`]: {{site.api}}/flutter/widgets/ClipOval-class.html
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
 [Create a new Flutter example]: {{site.url}}/get-started/test-drive

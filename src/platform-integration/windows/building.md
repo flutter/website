@@ -81,7 +81,7 @@ that matches the rest of your app.
 
 [Fluent design system]: https://docs.microsoft.com/en-us/windows/apps/design/
 [fluent_ui]: {{site.pub}}/packages/fluent_ui
-[Flutter Favorite]: {{site.url}}/development/packages-and-plugins/favorites
+[Flutter Favorite]: {{site.url}}/packages-and-plugins/favorites
 [fluentui_system_icons]: {{site.pub}}/packages/fluentui_system_icons
 [bitsdojo_window]: {{site.pub}}/packages/bitsdojo_window
 

@@ -334,14 +334,14 @@ Configure, update and communicate with Widgets
 [^6]: Uses the [OpenWeatherMap API][]. Other packages exist that can pull from different weather APIs.
 
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
-[Using packages]: {{site.url}}/development/packages-and-plugins/using-packages
+[Using packages]: {{site.url}}/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub-pkg}}
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
 [`http`]: {{site.pub-pkg}}/http
 [`sensors_plus`]: {{site.pub-pkg}}/sensors_plus
 [`geolocator`]: {{site.pub-pkg}}/geolocator
 [`image_picker`]: {{site.pub-pkg}}/image_picker
-[`pubspec.yaml`]: {{ site.url }}/development/tools/pubspec
+[`pubspec.yaml`]: {{site.url}}/tools/pubspec
 [`quick_actions`]: {{site.pub-pkg}}/quick_actions
 [`in_app_purchase`]: {{site.pub-pkg}}/in_app_purchase
 [`pay`]: {{site.pub-pkg}}/pay
@@ -356,7 +356,7 @@ Configure, update and communicate with Widgets
 [`health`]: {{site.pub-pkg}}/health
 [OpenWeatherMap API]: https://openweathermap.org/api
 [`sqflite`]: {{site.pub-pkg}}/sqflite
-[Writing platform-specific code]: {{ site.url }}/development/platform-integration/platform-channels
+[Writing platform-specific code]: {{site.url}}/platform-integration/platform-channels
 [`camera`]: {{site.pub-pkg}}/camera
 [`flutter_core_spotlight`]: {{site.pub-pkg}}/flutter_core_spotlight
 [`home_widget`]: {{site.pub-pkg}}/home_widget

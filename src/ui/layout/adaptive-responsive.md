@@ -157,7 +157,7 @@ in the following resources:
 
 [Adaptive layouts]: {{site.youtube-site}}/watch?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: {{site.youtube-site}}/watch?v=eikOZzfc0l4&t=11s
-[Building adaptive apps]: {{site.url}}/development/ui/layout/building-adaptive-apps
+[Building adaptive apps]: {{site.url}}/ui/layout/building-adaptive-apps
 
 [Designing truly adaptive user interfaces]: https://aloisdeniel.com/#/posts/adaptative-ui
 [Flutter gallery app]: {{site.gallery}}

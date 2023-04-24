@@ -270,6 +270,6 @@ to reduce an app's size are also discussed.
 [Generating size files]: #generating-size-files
 [Analysis tab]: #analysis-tab
 [Diff tab]: #diff-tab
-[installation instructions]: {{site.url}}/development/tools/devtools/overview#install-devtools
+[installation instructions]: {{site.url}}/tools/devtools/overview#install-devtools
 [App Size Documentation]: {{site.url}}/perf/app-size#breaking-down-the-size
 [app-size-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-app-size-tool-part-3-of-8-9be6e9ec42a2

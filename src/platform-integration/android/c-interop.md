@@ -21,9 +21,9 @@ _native interface_ and _language bindings._
 {{site.alert.end}}
 
 
-[ios-ffi]: {{site.url}}/development/platform-integration/ios/c-interop
+[ios-ffi]: {{site.url}}/platform-integration/ios/c-interop
 [dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
-[macos-ffi]: {{site.url}}/development/platform-integration/macos/c-interop
+[macos-ffi]: {{site.url}}/platform-integration/macos/c-interop
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
 Before your library or program can use the FFI library

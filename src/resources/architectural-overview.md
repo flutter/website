@@ -593,7 +593,7 @@ case<sup><a href="#a2">2</a></sup>:
 diagram]({{site.url}}/assets/images/docs/arch-overview/widgets.png){:width="35%"}
 
 This explains why, when you examine the tree through a debug tool such as the
-[Flutter inspector]({{site.url}}/development/tools/devtools/inspector), part of the
+[Flutter inspector]({{site.url}}/tools/devtools/inspector), part of the
 Dart DevTools, you might see a structure that is considerably deeper than what
 is in your original code.
 
@@ -713,7 +713,7 @@ Widget build(BuildContext context) {
 
 More information about the constraint and layout system, along with worked
 examples, can be found in the [Understanding
-constraints]({{site.url}}/development/ui/layout/constraints) topic.
+constraints]({{site.url}}/ui/layout/constraints) topic.
 
 The root of all `RenderObject`s is the `RenderView`, which represents the total
 output of the render tree. When the platform demands a new frame to be rendered
@@ -970,7 +970,7 @@ with loading the necessary libraries.
 
 More information about how Flutter is loaded into an existing Android or iOS app
 can be found at the [Load sequence, performance and memory
-topic]({{site.url}}/development/add-to-app/performance).
+topic]({{site.url}}/add-to-app/performance).
 
 ## Flutter web support
 

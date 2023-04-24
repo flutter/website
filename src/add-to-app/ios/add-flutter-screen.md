@@ -749,13 +749,13 @@ in any way you'd like, before presenting the Flutter UI using a
 
 [`FlutterEngine`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
-[Loading sequence and performance]: {{site.url}}/development/add-to-app/performance
+[Loading sequence and performance]: {{site.url}}/add-to-app/performance
 [local_auth]: {{site.pub}}/packages/local_auth
-[Navigation and routing]: {{site.url}}/development/ui/navigation
+[Navigation and routing]: {{site.url}}/ui/navigation
 [Navigator]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`NavigatorState`]: {{site.api}}/flutter/widgets/NavigatorState-class.html
 [`openURL`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623112-application
-[platform channels]: {{site.url}}/development/platform-integration/platform-channels
+[platform channels]: {{site.url}}/platform-integration/platform-channels
 [`popRoute()`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)popRoute
 [`pushRoute()`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:
 [`runApp`]: {{site.api}}/flutter/widgets/runApp.html
@@ -764,4 +764,4 @@ in any way you'd like, before presenting the Flutter UI using a
 [tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`window.defaultRouteName`]: {{site.api}}/flutter/dart-ui/SingletonFlutterWindow/defaultRouteName.html
-[Start a FlutterEngine and FlutterViewController section]:{{site.url}}/development/add-to-app/ios/add-flutter-screen/#start-a-flutterengine-and-flutterviewcontroller
+[Start a FlutterEngine and FlutterViewController section]:{{site.url}}/add-to-app/ios/add-flutter-screen/#start-a-flutterengine-and-flutterviewcontroller

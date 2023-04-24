@@ -22,7 +22,7 @@ directly inside your Flutter app.
   see [Hosting native Android views][].
 {{site.alert.end}}
 
-[Hosting native Android views]: {{site.url}}/development/platform-integration/android/platform-views
+[Hosting native Android views]: {{site.url}}/platform-integration/android/platform-views
 
 
 iOS only uses Hybrid composition,

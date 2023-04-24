@@ -19,9 +19,9 @@ macOS, or Linux platforms, or you can create your own.
   * [Building Linux apps with Flutter][]
 {{site.alert.end}}
 
-[Building Windows apps with Flutter]: {{site.url}}/development/platform-integration/windows/building
-[Building macOS apps with Flutter]: {{site.url}}/development/platform-integration/macos/building
-[Building Linux apps with Flutter]: {{site.url}}/development/platform-integration/linux/building
+[Building Windows apps with Flutter]: {{site.url}}/platform-integration/windows/building
+[Building macOS apps with Flutter]: {{site.url}}/platform-integration/macos/building
+[Building Linux apps with Flutter]: {{site.url}}/platform-integration/linux/building
 
 ## Requirements
 
@@ -50,7 +50,7 @@ you need the following software:
 [install the Flutter and Dart plugins]: {{site.url}}/get-started/editor
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
 [setting up an editor]: {{site.url}}/get-started/editor
-[Visual Studio Code]: {{site.url}}/development/tools/vs-code
+[Visual Studio Code]: {{site.url}}/tools/vs-code
 
 ### Additional Windows requirements
 
@@ -305,9 +305,9 @@ about endorsed plugins, see the following resources:
 * [Modern Flutter Plugin Development][] covers
   recent enhancements to Flutter's plugin support.
 
-[using packages]: {{site.url}}/development/packages-and-plugins/using-packages
-[Developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
-[Federated plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#federated-plugins
+[using packages]: {{site.url}}/packages-and-plugins/using-packages
+[Developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
+[Federated plugins]: {{site.url}}/packages-and-plugins/developing-packages#federated-plugins
 [How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
 

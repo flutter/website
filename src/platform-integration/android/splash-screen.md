@@ -208,7 +208,7 @@ For an example of this, check out the
 
 [Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
-[pre-warming a `FlutterEngine`]: {{site.url}}/development/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
+[pre-warming a `FlutterEngine`]: {{site.url}}/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
 [Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
-[Deprecated Splash Screen API Migration guide]: {{site.url}}/development/platform-integration/android/splash-screen-migration
-[Customizing web app initialization guide]: {{site.url}}/development/platform-integration/web/initialization
+[Deprecated Splash Screen API Migration guide]: {{site.url}}/platform-integration/android/splash-screen-migration
+[Customizing web app initialization guide]: {{site.url}}/platform-integration/web/initialization

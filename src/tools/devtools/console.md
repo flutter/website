@@ -16,9 +16,9 @@ references for objects.
 The Debug console is available from the [Inspector][],
 [Debugger][], and [Memory][] views.
 
-[Inspector]: {{site.url}}/development/tools/devtools/inspector
-[Debugger]:  {{site.url}}/development/tools/devtools/debugger
-[Memory]:    {{site.url}}/development/tools/devtools/memory
+[Inspector]: {{site.url}}/tools/devtools/inspector
+[Debugger]:  {{site.url}}/tools/devtools/debugger
+[Memory]:    {{site.url}}/tools/devtools/memory
 
 ## Watch application output
 

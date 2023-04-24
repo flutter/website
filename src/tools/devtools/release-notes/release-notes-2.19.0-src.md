@@ -7,7 +7,7 @@ for Dart and Flutter
 
 * Added a button to toggle the visibility of the Flutter Frames
   chart - [#4577](https://github.com/flutter/devtools/pull/4577) 
-  ![diff]({{site.url}}/development/tools/devtools/release-notes/images-2.19.0/4577.png "Flutter Frames")
+  ![diff]({{site.url}}/tools/devtools/release-notes/images-2.19.0/4577.png "Flutter Frames")
 * Polish the debug mode warning to better describe which data
   is accurate in debug mode and which data may be misleading -
   [#3537](https://github.com/flutter/devtools/pull/3537) 

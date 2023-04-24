@@ -17,12 +17,12 @@ migration to sound null safety. Please see our
 of the current screen shown in your app, and then break down rendering time for that scene by layer. This can help you
 identify parts of a scene that are expensive to rasterize - [#4046](https://github.com/flutter/devtools/pull/4046)
 
-![raster-metrics-feature]({{site.url}}/development/tools/devtools/release-notes/images-2.13.1/image1.png "raster metrics feature")
+![raster-metrics-feature]({{site.url}}/tools/devtools/release-notes/images-2.13.1/image1.png "raster metrics feature")
 
 * Added a scope setting for "Track Widget Builds", allowing you to specify whether widget builds should be tracked in
 your code only or in all code - [#4010](https://github.com/flutter/devtools/pull/4010)
 
-![track-widget-builds-scope-setting]({{site.url}}/development/tools/devtools/release-notes/images-2.13.1/image2.png "track widget builds scope setting")
+![track-widget-builds-scope-setting]({{site.url}}/tools/devtools/release-notes/images-2.13.1/image2.png "track widget builds scope setting")
 
 ## CPU Profiler Updates
 * Use package uris instead of file uris in the CPU profiler "Source" column - [#3932](https://github.com/flutter/devtools/pull/3932)

@@ -74,7 +74,7 @@ TODO(filiph): add the video for the new codelab when ready
 
 [Dart null safety in Action]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
 [inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
-[low-level state management]: {{site.url}}/development/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
+[low-level state management]: {{site.url}}/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
 [Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
 
 ## Designing a Flutter UI

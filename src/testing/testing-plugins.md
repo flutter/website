@@ -17,7 +17,7 @@ to test all of their functionality.
   [Plugins in Flutter tests][].
 {{site.alert.end}}
 
-[Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
+[Plugins in Flutter tests]: {{site.url}}/packages-and-plugins/plugins-in-tests
 
 ## Types of plugin tests
 
@@ -90,11 +90,11 @@ native UI interactions.
 [GoogleTest]: {{site.github}}/google/googletest
 [integration tests]: {{site.url}}/cookbook/testing/integration/introduction
 [JUnit]: {{site.github}}/junit-team/junit4/wiki/Getting-started
-[mocked in tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests#mock-the-platform-channel
-[plugin-tests]: {{site.url}}/development/packages-and-plugins/developing-packages#step-1-create-the-package-1
+[mocked in tests]: {{site.url}}/packages-and-plugins/plugins-in-tests#mock-the-platform-channel
+[plugin-tests]: {{site.url}}/packages-and-plugins/developing-packages#step-1-create-the-package-1
 [unit tests]: {{site.url}}/cookbook/testing/unit/introduction
 [widget tests]: {{site.url}}/cookbook/testing/widget/introduction
-[won't be loaded]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
+[won't be loaded]: {{site.url}}/packages-and-plugins/plugins-in-tests
 [XCTest]: https://developer.apple.com/documentation/xctest
 [XCUITest]: https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/09-ui_testing.html
 

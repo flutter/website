@@ -8,18 +8,18 @@ for Dart and Flutter
 * Add support for grouping samples by tag -
   [#4693](https://github.com/flutter/devtools/pull/4693)
 
-  ![samples by tag]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4693.png "samples by tag")
+  ![samples by tag]({{site.url}}/tools/devtools/release-notes/images-2.20.0/4693.png "samples by tag")
 
 * Enable guidelines for tree view -
   [#4722](https://github.com/flutter/devtools/pull/4722)
 
-  ![guidelines]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4722.png "guidelines")
+  ![guidelines]({{site.url}}/tools/devtools/release-notes/images-2.20.0/4722.png "guidelines")
 
 * Rename "Profile granularity" to "CPU sampling rate"
   and move down to the area it relates to -
   [#4803](https://github.com/flutter/devtools/pull/4722)
 
-  ![sampling rate]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4803.png "sampling rate")
+  ![sampling rate]({{site.url}}/tools/devtools/release-notes/images-2.20.0/4803.png "sampling rate")
 
 
 ## Memory updates
@@ -33,7 +33,7 @@ for Dart and Flutter
   shallow size, retained size, and retaining paths -
   [#4714](https://github.com/flutter/devtools/pull/4714)
 
-  ![diff]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4714.png "Diff in Memory tab")
+  ![diff]({{site.url}}/tools/devtools/release-notes/images-2.20.0/4714.png "Diff in Memory tab")
 
 ## Debugger updates
 
@@ -47,7 +47,7 @@ for Dart and Flutter
 * Add support for displaying coverage in CodeView -
   [#4700](https://github.com/flutter/devtools/pull/4700)
 
-  ![coverage]({{site.url}}/development/tools/devtools/release-notes/images-2.20.0/4700.png "coverage in CodeView")
+  ![coverage]({{site.url}}/tools/devtools/release-notes/images-2.20.0/4700.png "coverage in CodeView")
 
 ## Network updates
 

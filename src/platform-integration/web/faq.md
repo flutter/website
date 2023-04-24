@@ -140,24 +140,24 @@ See [Preparing a web app for release][].
 Not currently.
 
 [Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
-[building a web app with Flutter]: {{site.url}}/development/platform-integration/web/building
+[building a web app with Flutter]: {{site.url}}/platform-integration/web/building
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
-[Creating responsive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
-[Debugging]: {{site.url}}/development/tools/devtools/debugger
+[Creating responsive apps]: {{site.url}}/ui/layout/adaptive-responsive
+[Debugging]: {{site.url}}/tools/devtools/debugger
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
-[Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
+[Flutter DevTools]: {{site.url}}/tools/devtools/overview
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
 [isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
-[Logging]: {{site.url}}/development/tools/devtools/logging
+[Logging]: {{site.url}}/tools/devtools/logging
 [Preparing a web app for release]: {{site.url}}/deployment/web
-[Running Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
+[Running Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: {{site.url}}/testing#widget-tests
-[Web support for Flutter]: {{site.url}}/development/platform-integration/web
+[Web support for Flutter]: {{site.url}}/platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
-[run your web apps in any supported browser]: {{site.url}}/development/platform-integration/web/building#create-and-run
+[run your web apps in any supported browser]: {{site.url}}/platform-integration/web/building#create-and-run
 [Integration testing]: {{site.url}}/testing/integration-tests#running-in-a-browser
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files

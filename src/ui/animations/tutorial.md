@@ -961,7 +961,7 @@ for the latest available documents and examples.
 [`Animatable`]: {{site.api}}/flutter/animation/Animatable-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
-[animations landing page]: {{site.url}}/development/ui/animations
+[animations landing page]: {{site.url}}/ui/animations
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimationController` section]: #animationcontroller
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html

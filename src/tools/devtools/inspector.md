@@ -529,12 +529,12 @@ using DevTools, check out a guided
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [common problems when debugging]: {{site.url}}/testing/debugging#common-problems
-[core building block]: {{site.url}}/development/ui/widgets-intro
+[core building block]: {{site.url}}/ui/widgets-intro
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
 [DartConf 2018 talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
 [debug mode]: {{site.url}}/testing/build-modes#debug
 [Debugging Flutter apps]: {{site.url}}/testing/debugging
-[DevTools written in Flutter]: {{site.url}}/development/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter
+[DevTools written in Flutter]: {{site.url}}/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter
 [`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
 [flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html
 [`FlexFit`]: {{site.api}}/flutter/rendering/FlexFit.html
@@ -546,5 +546,5 @@ using DevTools, check out a guided
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
 [the performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
-[Understanding constraints]: {{site.url}}/development/ui/layout/constraints
+[Understanding constraints]: {{site.url}}/ui/layout/constraints
 [inspector-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7

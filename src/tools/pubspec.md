@@ -118,9 +118,9 @@ dependencies, see the
 [asset images in package dependencies][]
 section in the same page.
 
-[Assets and images]: {{site.url}}/development/ui/assets-and-images
-[asset images in package dependencies]: {{site.url}}/development/ui/assets-and-images#from-packages
-[resolution aware]: {{site.url}}/development/ui/assets-and-images#resolution-aware
+[Assets and images]: {{site.url}}/ui/assets-and-images
+[asset images in package dependencies]: {{site.url}}/ui/assets-and-images#from-packages
+[resolution aware]: {{site.url}}/ui/assets-and-images#resolution-aware
 
 ## Fonts
 
@@ -151,9 +151,9 @@ and pubspec files, see the following:
 * [What not to commit][] on dart.dev
 
 [Creating packages]: {{site.dart-site}}/guides/libraries/create-library-packages
-[Developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
-[Federated plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#federated-plugins
+[Developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
+[Federated plugins]: {{site.url}}/packages-and-plugins/developing-packages#federated-plugins
 [Glossary of package terms]: {{site.dart-site}}/tools/pub/glossary
 [Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
-[Using packages]: {{site.url}}/development/packages-and-plugins/using-packages
+[Using packages]: {{site.url}}/packages-and-plugins/using-packages
 [What not to commit]: {{site.dart-site}}/guides/libraries/private-files#pubspeclock

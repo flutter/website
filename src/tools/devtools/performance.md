@@ -64,7 +64,7 @@ or the [Timeline events](#timeline-events) tab.
 (As of [DevTools 2.23.1][], the [Raster stats](#raster-stats)
 is a standalone feature without data per frame).
 
-[DevTools 2.23.1]: {{site.url}}/development/tools/devtools/release-notes/release-notes-2.23.1
+[DevTools 2.23.1]: {{site.url}}/tools/devtools/release-notes/release-notes-2.23.1
 
 The flutter frames chart updates when new frames
 are drawn in your app. To pause updates to this chart,
