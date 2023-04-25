@@ -276,7 +276,7 @@ and the [Flutter 3 release notes][].
   [Customizing web app initialization][],
   which has been added to the newly updated
   and collected web docs under
-  `/development/platform-integration/web`.
+  `/platform-integration/web`.
 * Flutter 3 supports Apple Silicon processors.
   We've updated the [macOS install page][]
   to offer an Apple Silicon download button.
