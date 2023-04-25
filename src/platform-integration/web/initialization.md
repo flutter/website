@@ -141,6 +141,8 @@ You can add any of the following optional parameters:
 
 </div>
 
+[jsflutterconfig-source]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
+[web-renderers]: {{site.url}}/platform-integration/web/renderers
 [web-renderers]: {{site.url}}/platform-integration/web/renderers
 
 {{site.alert.note}}
