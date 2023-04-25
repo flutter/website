@@ -100,11 +100,15 @@ defaults:
     values:
       toc: true
   - scope:
-      path: 'cookbook'
+      path: 'accessibility-and-localization'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development'
+      path: 'add-to-app'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'cookbook'
     values:
       show_breadcrumbs: true
   - scope:
@@ -125,6 +129,10 @@ defaults:
       show_breadcrumbs: false
   - scope:
       path: 'packages-and-plugins'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'performance'
     values:
       show_breadcrumbs: true
   - scope:
