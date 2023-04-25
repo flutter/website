@@ -49,7 +49,7 @@ moments to prepare.
 
 ## Overview
 
-You can enable state restoration with just a couple tasks:
+You can enable state restoration with just a few tasks:
 
 1. Define a `restorationId` or a `restorationScopeId`
    for all widgets that support it,
