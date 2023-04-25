@@ -122,9 +122,9 @@ check out [Testing state restoration][] on the
 [`RestorationManager`][] page.
 
 {{site.alert.warning}}
-  **Don't forget to reenable
+  Don't forget to reenable
   storing state on your device once you are
-  finished with testing!**
+  finished with testing!
 {{site.alert.end}}
 
 [Testing state restoration]: {{site.api}}/flutter/services/RestorationManager-class.html#testing-state-restoration
