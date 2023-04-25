@@ -295,7 +295,7 @@
           permalink: /tools/devtools/cpu-profiler
         - title: Memory view
           permalink: /tools/devtools/memory
-        - title: Debug console view **NEW**
+        - title: Debug console view
           permalink: /tools/devtools/console
         - title: Network view
           permalink: /tools/devtools/network
