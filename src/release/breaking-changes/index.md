@@ -53,6 +53,11 @@ release, and listed in alphabetical order:
 [Deprecated the window singleton]: {{site.url}}/release/breaking-changes/window-singleton
 [Resolve the Android Java Gradle error]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
 [Require one data variant for `ClipboardData` constructor]: {{site.url}}/release/breaking-changes/clipboard-data-required
+[Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
+[The window singleton is deprecated]: {{site.url}}/release/breaking-changes/window-singleton
+[Migration guide for `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
+[Migration guide for `describeEnum`]: {{site.url}}/release/breaking-changes/describeEnum
+[At least one clipboard data variant must be provided]: {{site.url}}/release/breaking-changes/clipboard-data-required
 
 ### Released in Flutter 3.7
 
