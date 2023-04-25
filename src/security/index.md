@@ -1,5 +1,7 @@
 ---
 title: Security
+description: >
+  An overview of the Flutter's team philosophy and processes for security.
 ---
 
 The Flutter team takes the security of Flutter and the applications
@@ -53,7 +55,7 @@ For more details on how we handle security vulnerabilities,
 see our [security policy][].
 
 [Discord chat channels]: {{site.github}}/flutter/flutter/wiki/Chat
-[known false positives]: {{site.url}}/resources/security-false-positives
+[known false positives]: {{site.url}}/reference/security-false-positives
 [security policy]: {{site.repo.flutter}}/security/policy
 
 ##  Flagging existing issues as security-related
@@ -115,5 +117,5 @@ technical release blog post.
   changes with the community.
 
 [change log]: {{site.repo.flutter}}/wiki/Changelog
-[upgrade your package dependencies]: {{site.url}}/development/tools/sdk/upgrading
+[upgrade your package dependencies]: {{site.url}}/release/upgrade
 

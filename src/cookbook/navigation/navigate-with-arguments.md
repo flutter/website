@@ -5,8 +5,8 @@ prev:
   title: Navigate with named routes
   path: /cookbook/navigation/named-routes
 next:
-  title: Return data from a screen
-  path: /cookbook/navigation/returning-data
+  title: Set up app links for Android
+  path: /cookbook/navigation/set-up-app-links
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -27,8 +27,8 @@ pass information about the user to that route.
   [Limitations][] in the [navigation overview][] page.
 {{site.alert.end}}
 
-[Limitations]: {{site.url}}/development/ui/navigation#limitations
-[navigation overview]: {{site.url}}/development/ui/navigation
+[Limitations]: {{site.url}}/ui/navigation#limitations
+[navigation overview]: {{site.url}}/ui/navigation
 
 You can accomplish this task using the `arguments` parameter of the
 [`Navigator.pushNamed()`][] method. Extract the arguments using the

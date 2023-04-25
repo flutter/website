@@ -601,6 +601,6 @@ Play store's delivery feature.
 [Flutter Gallery’s lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
-[lazily loading a library]: {{site.dart-site}}/guides/language/language-tour#lazily-loading-a-library
+[lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 [release or profile mode]: {{site.url}}/testing/build-modes
 [step 3.3]: #step-3.3

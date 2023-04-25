@@ -9,8 +9,8 @@ dependencies:
   extension_google_sign_in_as_googleapis_auth: ^2.0.2
   flutter:
     sdk: flutter
-  google_sign_in: ^5.0.2
-  googleapis: ^10.0.0
+  google_sign_in: ^6.0.1
+  googleapis: ^11.0.0
   http: ^0.13.0
 
 dev_dependencies:

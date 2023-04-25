@@ -8,6 +8,14 @@ frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
 picture-in-picture" allowfullscreen></iframe>
 [Flutter performance basics]({{site.youtube-site}}/watch?v=PKGguGUwSYE)
 
+{{site.alert.note}}
+  If your app has a performance issue and you are
+  trying to debug it, check out the DevTool's page
+  on [Using the Performance view][].
+{{site.alert.end}}
+
+[Using the Performance view]: {{site.url}}/tools/devtools/performance
+
 What is performance? Why is performance important? How do I improve performance?
 
 Our goal is to answer those three questions (mainly the third one), and 
@@ -15,15 +23,17 @@ anything related to them. This document should serve as the single entry
 point or the root node of a tree of resources that addresses any questions 
 that you have about performance.
 
-The answers to the first two questions are mostly philosophical, and not as 
-helpful to many developers who visit this page with specific
-performance issues that need to be solved. Therefore, the answers to those 
+The answers to the first two questions are mostly philosophical,
+and not as helpful to many developers who visit this page with specific
+performance issues that need to be solved.
+Therefore, the answers to those 
 questions are in the [appendix]({{site.url}}/perf/appendix).
 
 To improve performance, you first need metrics: some measurable numbers to
-verify the problems and improvements. In the [metrics]({{site.url}}/perf/metrics) 
-page, you'll see which metrics are currently used, and which tools and APIs 
-are available to get the metrics.
+verify the problems and improvements.
+In the [metrics]({{site.url}}/perf/metrics) page,
+you'll see which metrics are currently used,
+and which tools and APIs are available to get the metrics.
 
 There is a list of [Frequently asked questions]({{site.url}}/perf/faq), 
 so you can find out if the questions you have or the problems you're having 
@@ -38,10 +48,10 @@ database: "[perf: speed][speed]", "[perf: memory][memory]",
 
 The rest of the content is organized using those four categories.
 
-<!--
+{% comment %}
 Let's put "speed" (rendering) first as it's the most popular performance issue
 category.
--->
+{% endcomment -%}
 ## Speed
 
 Are your animations janky (not smooth)? Learn how to 
@@ -52,12 +62,17 @@ evaluate and fix rendering issues.
 {% comment %}
 Do your apps take a long time to open? We'll also cover the startup speed issue
 in some future pages.
-{% endcomment %}
+{% endcomment -%}
 
+{% comment %}
+
+TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
 
 ## Memory
 
 [Using memory wisely]({{site.url}}/perf/memory)
+
+{% endcomment -%}
 
 
 ## App size
@@ -69,6 +84,7 @@ the quicker it is to download.
 
 {% comment %}
 
+TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
 
 ## Energy
 
@@ -76,7 +92,7 @@ How to ensure a longer battery life when running your app.
 
 [Preserving your battery]({{site.url}}/perf/power)
 
-{% endcomment %}
+{% endcomment -%}
 
 [Measuring your app's size]: {{site.url}}/perf/app-size
 

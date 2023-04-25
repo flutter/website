@@ -194,4 +194,4 @@ Some other things you can do to make your app smaller are:
 [Write your first Flutter app]: {{site.url}}/get-started/codelab
 [Play Console's instructions]: https://support.google.com/googleplay/android-developer/answer/9302563?hl=en
 [Google Play Console]: https://play.google.com/apps/publish/
-[DevTools documentation]: {{site.url}}/development/tools/devtools/app-size
+[DevTools documentation]: {{site.url}}/tools/devtools/app-size

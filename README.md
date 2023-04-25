@@ -5,7 +5,7 @@
 # [Flutter][] website 
 
 [![Build Status][]][Repo on GitHub Actions]
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/website/badge)](https://api.securityscorecards.dev/projects/github.com/flutter/website)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/website/badge)](https://deps.dev/project/github/flutter%2Fwebsite)
 
 [Build Status]: https://github.com/flutter/website/workflows/build/badge.svg
 [Flutter]: https://docs.flutter.dev/
@@ -271,7 +271,7 @@ You can deploy your local edits to a personal staging site as follows.
     ? What alias do you want to use for this project? (e.g. staging) my-foo
     ```
 
-[`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
+   [`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
  
 1. Tell Firebase that you want to deploy to your project:
 
@@ -280,20 +280,19 @@ You can deploy your local edits to a personal staging site as follows.
     Now using alias staging (my-foo)
     ```
 
-1. Build the site via Docker with:
-   ```bash
-   $ make build
-   ```
-   The `_site` directory refreshes locally. 
+1. Build and deploy to the specified staging site:
 
-1. Deploy to the staging site:
    ```bash
-   $ make deploy
+   $ make stage-local
    ```
-
+   
    Your personal version of the Flutter website
-   ow deployed to Firebase. 
+   is now deployed to Firebase. 
    Copy the serving URL from the command output.
+
+   > **Warning**  
+   > Before staging the site on Firebase,
+   > terminate all instances serving the site locally with `make up`.
    
 
 ## Refreshing code excerpts

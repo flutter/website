@@ -1,4 +1,0 @@
----
-title: iOS
-layout: toc
----

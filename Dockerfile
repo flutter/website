@@ -1,4 +1,4 @@
-FROM ruby:3.2-0-slim-bullseye@sha256:8fa9d24fc80b48ba9dd2223b4e8c8ffaa2fbc4d5f63e5f8028e5d047a3aa7b55 AS base
+FROM ruby:3.2-2-slim-bullseye@sha256:d8e5caa21b5ebc425828af1eb43a678afceaca80681cac26b457063a18488e10 AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -67,7 +67,7 @@ RUN apt-get update -q && apt-get install -yq --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install global Firebase CLI
-RUN npm install -g firebase-tools@11.16.0
+RUN npm install -g firebase-tools@11.27.0
 
 
 

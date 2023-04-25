@@ -3,7 +3,7 @@
   color: $site-color-white;
   padding: bs-spacer(5) 0;
   position: relative;
-  z-index: $site-z-footer;
+  z-index: $zindex-sticky;
 
   &__wrapper {
     align-items: center;

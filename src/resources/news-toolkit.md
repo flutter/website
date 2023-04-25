@@ -39,14 +39,12 @@ handle authentication, theming, work with an API
 server, and much more, check out the
 [Flutter News Toolkit][toolkit] documentation.
 
-{% comment %}
 You might also check out:
 
-* [Announcing General Availability for the Flutter News Toolkit][blog],
+* [Announcing the Flutter News Toolkit][blog],
   an article on Medium.
-
-[blog]: xxx
-{% endcomment %}
+* [Quick start to building a news app in Flutter][video]
+  an introduction to the toolkit on YouTube.
 
 {{site.alert.note}}
   This is the first release of the news toolkit and,
@@ -56,4 +54,6 @@ You might also check out:
 {{site.alert.end}}
 
 [toolkit]: https://flutter.github.io/news_toolkit/
-[file an issue]: {{site.github}}/flutter/news_toolkit/issues
+[blog]: {{site.flutter-medium}}/announcing-the-flutter-news-toolkit-180a0d32c012
+[video]: {{site.youtube-site}}/watch?v=dukRAS-OUMM
+[file an issue]: {{site.github}}/flutter/flutter/issues

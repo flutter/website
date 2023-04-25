@@ -15,6 +15,8 @@ js:
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
 
+{% include docs/dartpad-troubleshooting.md %}
+
 To get the most out of this codelab, you should have basic knowledge about:
 
 * How to [make a Flutter app].
@@ -60,13 +62,6 @@ consists of a [Material App] home screen containing:
 Click the **Run** button to run the example:
 
 {% include docs/implicit-animations/fade-in-starter-code.md %}
-
-{{site.alert.important}}
-  This page uses an embedded version of [DartPad] to display
-  examples and exercises.
-  If you see empty boxes instead of DartPads, go to the
-  [DartPad troubleshooting page].
-{{site.alert.end}}
 
 ### Animate opacity with AnimatedOpacity widget
 
@@ -496,7 +491,7 @@ here are some suggestions for where to go next:
 [AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[animations tutorial]: {{site.url}}/development/ui/animations/tutorial
+[animations tutorial]: {{site.url}}/ui/animations/tutorial
 [codelab]: {{site.url}}/codelabs
 [curve]: {{site.api}}/flutter/animation/Curve-class.html
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
@@ -506,7 +501,7 @@ here are some suggestions for where to go next:
 [fade-in complete]: #fade-in-complete
 [fade-in starter code]: #fade-in-starter-code
 [Fade-in text effect]: #example-fade-in-text-effect
-[hero animations]: {{site.url}}/development/ui/animations/hero-animations
+[hero animations]: {{site.url}}/ui/animations/hero-animations
 [ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [linear animation curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
@@ -517,5 +512,5 @@ here are some suggestions for where to go next:
 [shape-shifting complete]: #shape-shifting-complete
 [Shape-shifting effect]: #example-shape-shifting-effect
 [shape-shifting starter code]: #shape-shifting-starter-code
-[staggered animations]: {{site.url}}/development/ui/animations/staggered-animations
-[stateful widgets]: {{site.url}}/development/ui/interactive#stateful-and-stateless-widgets
+[staggered animations]: {{site.url}}/ui/animations/staggered-animations
+[stateful widgets]: {{site.url}}/ui/interactive#stateful-and-stateless-widgets

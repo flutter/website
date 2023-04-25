@@ -11,12 +11,8 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
   setupClipboardJS();
 
-  // New (dash) tabs
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
-  // Old tabs
-  setupToolsTabs($('#tab-set-install'), 'tab-install-', 'io.flutter.tool-id');
-  setupToolsTabs($('#tab-set-os'), 'tab-os-', null, getOS());
 
   prettyPrint();
 });
@@ -42,12 +38,15 @@ function scrollSidebarIntoView() {
 function adjustToc() {
   // Adjustments to the jekyll-toc TOC.
 
-  var tocId = '#site-toc--side';
-  // Uncomment to enable 'page top' button
-  // var tocWrapper = $(tocId);
-  // $(tocWrapper).find('.site-toc--button__page-top').click(function () {
-  //   $('html, body').animate({ scrollTop: 0 }, 'fast');
-  // })
+  const tocId = '#site-toc--side';
+
+  const tocHeader = document.querySelector(tocId + ' header');
+
+  if (tocHeader) {
+    tocHeader.addEventListener('click', function (_) {
+      $('html, body').animate({scrollTop: 0}, 'fast');
+    });
+  }
 
   $('body').scrollspy({ offset: 100, target: tocId });
 }
@@ -92,18 +91,9 @@ function initFixedColumns() {
 
     // listen for scroll and execute once
     $(window).scroll(adjustFixedColumns);
+    $(window).resize(adjustFixedColumns);
     adjustFixedColumns();
   }
-}
-
-function getOS() {
-  var ua = navigator.userAgent;
-  if (ua.indexOf("Win") !== -1)
-    return "windows";
-  if (ua.indexOf("Mac") !== -1)
-    return "macos";
-  if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1)
-    return "linux";
 }
 
 function initVideoModal() {
@@ -167,7 +157,7 @@ function setupClipboardJS() {
     text: function (trigger) {
       var targetId = trigger.getAttribute('data-clipboard-target');
       var target = document.querySelector(targetId);
-      var terminalRegExp = /^(\$\s*)|(C:\\(.*)>\s*)/gm;
+      var terminalRegExp = /^(\s*\$\s*)|(C:\\(.*)>\s*)/gm;
       var copy = target.textContent.replace(terminalRegExp, '');
       return copy;
     }

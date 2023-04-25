@@ -35,6 +35,10 @@
 
   .container {
     max-width: $site-content-max-width;
+
+    img {
+      max-width: 100%;
+    }
   }
 
   @include media-breakpoint-up(md) {
@@ -48,7 +52,7 @@
     @at-root {
       #page-github-links {
         float: right;
-        .btn { padding: 0 ($btn-padding-x / 2); }
+        .btn { padding: 0 ($btn-padding-x * 0.5); }
       }
     }
 
