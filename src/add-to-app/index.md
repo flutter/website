@@ -1,5 +1,6 @@
 ---
-title: Add Flutter to existing app
+title: Add Flutter to an existing app
+short-title: Add to app
 description: Adding Flutter as a library to an existing Android or iOS app.
 ---
 
