@@ -376,6 +376,7 @@
       permalink: /perf/appendix
 
 - title: Deployment
+  permalink: /deployment
   children:
     - title: Obfuscating Dart code
       permalink: /deployment/obfuscate
