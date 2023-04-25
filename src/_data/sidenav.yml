@@ -188,7 +188,7 @@
             - title: Deprecated Splash Screen API Migration
               permalink: /development/platform-integration/android/splash-screen-migration
             - title: Restore state on Android **NEW**
-              permalink: /development/platform-integration/ios/restore-state-android
+              permalink: /development/platform-integration/android/restore-state-android
             - title: Targeting ChromeOS with Android
               permalink:  /development/platform-integration/android/chromeos
         - title: iOS

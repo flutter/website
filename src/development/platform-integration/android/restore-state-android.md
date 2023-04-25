@@ -6,7 +6,7 @@ description: "How to restore the state of your Android app after it's been kille
 When a user runs a mobile app and then selects another
 app to run, the first app is moved to the background,
 or _backgrounded_. The operating system (both iOS and Android)
-typically kill the backgrounded app to release memory and
+might kill the backgrounded app to release memory and
 improve performance for the app running in the foreground.
 
 When the user selects the app again, bringing it
@@ -67,6 +67,11 @@ You can enable state restoration with just a couple tasks:
    Register those widgets with the mixin in a
    `restoreState` method.
 
+3. If you use any Navigator API (like `push`, `pushNamed`, and so on)
+   migrate to the API that has "restorable" in the name
+   (`restorablePush`, `resstorablePushNamed`, and so on)
+   to restore the navigation stack.
+
 Other considerations:
 
 * Providing a `restorationId` to
@@ -82,27 +87,8 @@ Other considerations:
   (a new `RestorationBucket`) into which all children
   store their state. A `restorationId` means the widget
   (and its children) store the data in the surrounding bucket.
-  (QUESTION: Axe this?)
-
-* You can only restore state with the `RestorationMixin`
-  that is stored in `RestorableProperty` (and its subclasses),
-  for example, [`restorablePush`][].
-  To restore the state in those properties,
-  you have to register them in `restoreState`.
-  (QUESTION: Axe this?)
-
-* Flutter automatically creates a
-  [`RestorationScope`][] for each route in your
-  app to track the `RestorationBucket`s in that scope.
-  In general, you shouldn't need to worry about
-  this object _unless_ the scope has two (or more) buckets with
-  the same `restorationId`. If that occurs,
-  create a new `RestorationScope` to ensure
-  that each ID is unique to its scope.
-  (QUESTION: Axe this?)
 
 [a bit of extra setup]: {{site.api}}/flutter/services/RestorationManager-class.html#state-restoration-on-ios
-[`registerForRestoration`]: {{site.api}}/flutter/widgets/RestorationMixin/registerForRestoration.html
 [`restorationId`]: {{site.api}}/flutter/widgets/RestorationScope/restorationId.html
 [`restorationScopeId`]: {{site.api}}/flutter/widgets/RestorationScope/restorationScopeId.html
 [`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
@@ -113,14 +99,14 @@ Other considerations:
 ## Restoring navigation state
 
 If you want your app to return to a particular route
-(the shopping cart, for example) that the user was most
-recently viewing, then you must implement
+that the user was most recently viewing
+(the shopping cart, for example), then you must implement
 restoration state for navigation, as well.
 
-If you use the navigator API directly,
-you must use the methods with `restorable`
-in the name to ensure that your routes are restored,
-such as [`restorablePush`][].
+If you use the Navigator API directly,
+migrate the standard methods to restorable
+methods (that have "restorable" in the name).
+For example, replace `push` with [`restorablePush`][].
 
 The VeggieSeasons example (listed under "Other resources" below)
 implements navigation with the [`go_router`][] package.
@@ -161,7 +147,7 @@ check out the following resources:
   example:
     * [Defining a `RestorablePropery` as an instance property]({{site.github}}/flutter/samples/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L33-L37)
     * [Registering the properties]({{site.github}}/flutter/samples/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L49-L54)
-    * [Updating the properties values]({{site.github}}/flutter/samples/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L108-L109)
+    * [Updating the property values]({{site.github}}/flutter/samples/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L108-L109)
     * [Using property values in build]({{site.github}}/flutter/samples/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L205-L210)<br>
 
 * To learn more about short term and long term state,
@@ -175,7 +161,6 @@ check out the following resources:
   `go_router` package, check out [Navigation and routing][].
 
 [`RestorableProperty`]: {{site.api}}/flutter/widgets/RestorableProperty-class.html
-[`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
 [`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView/restorationId.html
 [`statePersistence`]: {{site.pub-pkg}}/state_persistence
