@@ -108,9 +108,13 @@ defaults:
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development/ui/widgets'
+      path: 'data-and-backend'
     values:
-      toc: false
+      show_breadcrumbs: true
+  - scope:
+      path: 'deployment'
+    values:
+      show_breadcrumbs: true
   - scope:
       path: 'get-started'
     values:
@@ -120,9 +124,33 @@ defaults:
     values:
       show_breadcrumbs: false
   - scope:
+      path: 'packages-and-plugins'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'platform-integration'
+    values:
+      show_breadcrumbs: true
+  - scope:
       path: 'release'
     values:
       show_breadcrumbs: true
+  - scope:
+      path: 'testing'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'tools'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'ui'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'ui/widgets'
+    values:
+      toc: false
 
 
 ########### Alerts ###########
