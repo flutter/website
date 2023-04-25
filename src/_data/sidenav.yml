@@ -265,39 +265,6 @@
     - title: Package site
       permalink: https://pub.dev/flutter
 
-- title: Add to an existing app
-  permalink: /add-to-app
-  children:
-  - title: Introduction
-    permalink: /add-to-app
-    match-page-url-exactly: true
-  - title: Adding to an Android app
-    permalink: /add-to-app/android
-    children:
-      - title: Project setup
-        permalink: /add-to-app/android/project-setup
-      - title: Add a single Flutter screen
-        permalink: /add-to-app/android/add-flutter-screen
-      - title: Add a Flutter Fragment
-        permalink: /add-to-app/android/add-flutter-fragment
-      - title: Add a Flutter View
-        permalink: /add-to-app/android/add-flutter-view
-      - title: Plugin setup
-        permalink: /add-to-app/android/plugin-setup
-  - title: Adding to an iOS app
-    permalink: /add-to-app/ios
-    children:
-      - title: Project setup
-        permalink: /add-to-app/ios/project-setup
-      - title: Add a single Flutter screen
-        permalink: /add-to-app/ios/add-flutter-screen
-  - title: Debugging & hot reload
-    permalink: /add-to-app/debugging
-  - title: Loading sequence and performance
-    permalink: /add-to-app/performance
-  - title: Multiple Flutter instances
-    permalink: /add-to-app/multiple-flutters
-
 - title: Tools & features
   permalink: /tools
   children:
@@ -424,6 +391,39 @@
       permalink: /deployment/web
     - title: Continuous deployment
       permalink: /deployment/cd
+
+- title: Add to an existing app
+  permalink: /add-to-app
+  children:
+    - title: Introduction
+      permalink: /add-to-app
+      match-page-url-exactly: true
+    - title: Adding to an Android app
+      permalink: /add-to-app/android
+      children:
+        - title: Project setup
+          permalink: /add-to-app/android/project-setup
+        - title: Add a single Flutter screen
+          permalink: /add-to-app/android/add-flutter-screen
+        - title: Add a Flutter Fragment
+          permalink: /add-to-app/android/add-flutter-fragment
+        - title: Add a Flutter View
+          permalink: /add-to-app/android/add-flutter-view
+        - title: Plugin setup
+          permalink: /add-to-app/android/plugin-setup
+    - title: Adding to an iOS app
+      permalink: /add-to-app/ios
+      children:
+        - title: Project setup
+          permalink: /add-to-app/ios/project-setup
+        - title: Add a single Flutter screen
+          permalink: /add-to-app/ios/add-flutter-screen
+    - title: Debugging & hot reload
+      permalink: /add-to-app/debugging
+    - title: Loading sequence and performance
+      permalink: /add-to-app/performance
+    - title: Multiple Flutter instances
+      permalink: /add-to-app/multiple-flutters
 
 - divider
 
