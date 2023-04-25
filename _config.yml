@@ -132,7 +132,7 @@ defaults:
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'performance'
+      path: 'perf'
     values:
       show_breadcrumbs: true
   - scope:
