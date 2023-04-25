@@ -138,7 +138,7 @@ class MyApp extends StatelessWidget {
 ![Asset fade-in]({{site.url}}/assets/images/docs/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
 
 
-[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets-and-images
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
 [`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
 [`transparent_image`]: {{site.pub-pkg}}/transparent_image

@@ -25,7 +25,7 @@ release, and listed in alphabetical order:
 [breaking change policy]: {{site.url}}/resources/compatibility
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
-[`dart fix`]: {{site.url}}/development/tools/flutter-fix
+[`dart fix`]: {{site.url}}/tools/flutter-fix
 [test registry]: https://github.com/flutter/tests
 
 ### Not yet released to stable

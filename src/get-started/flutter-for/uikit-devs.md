@@ -2148,40 +2148,40 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ```
 
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
-[Add Flutter to existing app]: {{site.url}}/development/add-to-app
-[Adding Assets and Images in Flutter]: {{site.url}}/development/ui/assets-and-images
-[Animation & Motion widgets]: {{site.url}}/development/ui/widgets/animation
-[Animations overview]: {{site.url}}/development/ui/animations
-[Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
+[Add Flutter to existing app]: {{site.url}}/add-to-app
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets-and-images
+[Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
+[Animations overview]: {{site.url}}/ui/animations
+[Animations tutorial]: {{site.url}}/ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources
 [`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 [arb]: {{site.github}}/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [composing]: {{site.url}}/resources/architectural-overview#composition
 [Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
-[Cupertino widgets]: {{site.url}}/development/ui/widgets/cupertino
+[Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
 [Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
 [Flutter cookbook]: {{site.url}}/cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: {{site.url}}/development/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
-[layout tutorial]: {{site.url}}/development/ui/widgets/layout
+[layout tutorial]: {{site.url}}/ui/widgets/layout
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [Material Components]: {{site.material}}/develop/flutter/
 [Material Design guidelines]: {{site.material}}/design/
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [Platform adaptations]: {{site.url}}/resources/platform-adaptations
-[platform channel]: {{site.url}}/development/platform-integration/platform-channels
+[platform channel]: {{site.url}}/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}/flutter/packages
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 [widget]: {{site.url}}/resources/architectural-overview#widgets
-[widget catalog]: {{site.url}}/development/ui/widgets/layout
+[widget catalog]: {{site.url}}/ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [Learning Dart as a Swift Developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
