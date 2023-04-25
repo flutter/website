@@ -183,10 +183,6 @@
               permalink: /development/platform-integration/android/c-interop
             - title: Hosting native Android views
               permalink: /development/platform-integration/android/platform-views
-            - title: AndroidX migration
-              permalink: /development/platform-integration/android/androidx-migration
-            - title: Deprecated Splash Screen API Migration
-              permalink: /development/platform-integration/android/splash-screen-migration
             - title: Restore state on Android **NEW**
               permalink: /development/platform-integration/android/restore-state-android
             - title: Targeting ChromeOS with Android
@@ -370,8 +366,6 @@
     - title: Integration testing
       permalink: /testing/integration-tests
       match-page-url-exactly: true
-    - title: Migrating from flutter_driver
-      permalink: /testing/integration-tests/migration
 
 - title: Performance & optimization
   permalink: /perf
