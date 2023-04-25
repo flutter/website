@@ -48,7 +48,7 @@ fonts.googleapis.com
 /go/.*?
 
 # FIXME Not sure here, "connection failed" on every go
-/development/tools/devtools/vscode
+/tools/devtools/vscode
 
 # robots
 http:///robots.txt

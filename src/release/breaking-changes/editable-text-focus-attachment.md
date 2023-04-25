@@ -43,7 +43,7 @@ cause existing tests to fail.
 
 ## Migration guide
 
-The `EditableText` widget takes a `FocusNode` as a paramter, which was
+The `EditableText` widget takes a `FocusNode` as a parameter, which was
 previously attached to its `EditableText`'s `BuildContext`. If you are relying
 on runtime typecheck to find out if a `FocusNode` is attached to a text input
 field or a selectable text field like so:

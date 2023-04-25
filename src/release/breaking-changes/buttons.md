@@ -31,7 +31,7 @@ their value can depend on the button's state.
 Rather than try and evolve the existing button classes and their theme
 in-place, we have introduced new replacement button widgets and
 themes. In addition to freeing us from the backwards compatibility
-labyrinthe that evolving the existing classes in-place would entail,
+labyrinth that evolving the existing classes in-place would entail,
 the new names sync Flutter back up with the Material Design spec,
 which uses the new names for the button components.
 

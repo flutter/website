@@ -110,7 +110,7 @@ The following instructions outline the steps for supporting the new API:
         </activity>
     ```
 
-1. (Optional) Create an `EmbeddingV1Activity.java` file]
+1. (Optional) Create an `EmbeddingV1Activity.java` file
    that uses the v1 embedding for the example project
    in the same folder as `MainActivity` to
    keep testing the v1 embedding's compatibility

@@ -179,7 +179,7 @@ or clicking the Run button in Xcode.
 [Check the app's Bundle ID]: {{site.url}}/assets/images/docs/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: {{site.apple-dev}}/support/compare-memberships
 [Mac App Store]: https://itunes.apple.com/us/app/xcode/id497799835
-[Flutter plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#types
+[Flutter plugins]: {{site.url}}/packages-and-plugins/developing-packages#types
 [Install and set up CocoaPods]: https://guides.cocoapods.org/using/getting-started.html#installation
 [Trust Mac]: {{site.url}}/assets/images/docs/setup/trust-computer.png
 [web download]: {{site.apple-dev}}/xcode/

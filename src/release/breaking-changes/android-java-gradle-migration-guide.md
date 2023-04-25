@@ -9,7 +9,7 @@ If you've recently upgraded Android Studio to the Flamingo
 release and have either run or built an existing Android app,
 you might have run into an error similar to the following:
 
-![Error dialog in Android Studio Flamingo]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-error.png){:width="80%"}
+![Error dialog in Android Studio Flamingo: MultipleCompilationErrorsException]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-error.png){:width="80%"}
 
 The terminal output for this error is
 similar to the following:

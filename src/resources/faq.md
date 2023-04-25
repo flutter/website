@@ -12,7 +12,7 @@ specialized FAQs:
 * [Web FAQ][]
 * [Performance FAQ][]
 
-[Web FAQ]: {{site.url}}/development/platform-integration/web/faq
+[Web FAQ]: {{site.url}}/platform-integration/web/faq
 [Performance FAQ]: {{site.url}}/perf/faq
 
 ### What is Flutter?
@@ -979,13 +979,13 @@ apps built with Flutter should follow Apple's
 [guidelines][] for App Store submission.
 
 [`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
-[accessibility documentation]: {{site.url}}/development/accessibility-and-localization/accessibility
-[add-to-app]: {{site.url}}/development/add-to-app
+[accessibility documentation]: {{site.url}}/accessibility-and-localization/accessibility
+[add-to-app]: {{site.url}}/add-to-app
 [ads]: {{site.main-url}}/monetization
 [Android]: #run-android
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
-[Android Studio/IntelliJ]: {{site.url}}/development/tools/android-studio
+[Android Studio/IntelliJ]: {{site.url}}/tools/android-studio
 [`AnimatedDefaultTextStyle`]: {{site.api}}/flutter/widgets/AnimatedDefaultTextStyle-class.html
 [`AnimatedPhysicalModel`]: {{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html
 [apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
@@ -993,7 +993,7 @@ apps built with Flutter should follow Apple's
 [architectural overview]: {{site.url}}/resources/architectural-overview
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
-[catalog of Flutter's widgets]: {{site.url}}/development/ui/widgets
+[catalog of Flutter's widgets]: {{site.url}}/ui/widgets
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Chip`]: {{site.api}}/flutter/material/Chip-class.html
 [`color`]: {{site.api}}/flutter/widgets/Icon/color.html
@@ -1003,9 +1003,9 @@ apps built with Flutter should follow Apple's
 [Contributing Guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
 [CodePen]: https://codepen.io/topic/flutter
 [Dart]: {{site.dart-site}}/
-[Dart DevTools]: {{site.url}}/development/tools/devtools
+[Dart DevTools]: {{site.url}}/tools/devtools
 [Debugging with Flutter]: {{site.url}}/testing/debugging
-[desktop]: {{site.url}}/development/platform-integration/desktop
+[desktop]: {{site.url}}/platform-integration/desktop
 [detailed discussion on the API docs for `State.build`]: {{site.api}}/flutter/widgets/State/build.html
 [Discord]: https://discord.gg/N7Yshp4
 [`Divider`]: {{site.api}}/flutter/material/Divider-class.html
@@ -1016,14 +1016,14 @@ apps built with Flutter should follow Apple's
 [example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
 [example project]: {{site.repo.flutter}}/tree/main/examples/platform_channel
 [Executing Dart in the Background with Flutter Plugins and Geofencing]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[Flutter DevTools]: {{site.url}}/development/tools/devtools/overview
+[Flutter DevTools]: {{site.url}}/tools/devtools/overview
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [Flutter 1.0]: {{site.google-blog}}/2018/12/flutter-10-googles-portable-ui-toolkit.html
 [Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
 [flutter_view]: {{site.repo.flutter}}/tree/main/examples/flutter_view
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/#?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o3
-[gesture system]: {{site.url}}/development/ui/advanced/gestures
+[gesture system]: {{site.url}}/ui/advanced/gestures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [get_it]: {{site.pub}}/packages/get_it
 [GitHub]: {{site.repo.flutter}}
@@ -1032,7 +1032,7 @@ apps built with Flutter should follow Apple's
 [Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
 [Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
 [hot reload]: #hot-reload
-[Hot reload]: {{site.url}}/development/tools/hot-reload
+[Hot reload]: {{site.url}}/tools/hot-reload
 [`icon`]: {{site.api}}/flutter/widgets/Icon/icon.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`IconTheme`]: {{site.api}}/flutter/widgets/IconTheme-class.html
@@ -1043,14 +1043,14 @@ apps built with Flutter should follow Apple's
 [iOS instructions]: {{site.url}}/deployment/ios
 [install]: {{site.url}}/get-started/install
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
-[internationalization tutorial]: {{site.url}}/development/accessibility-and-localization/internationalization
-[is easy]: {{site.url}}/development/packages-and-plugins/using-packages
+[internationalization tutorial]: {{site.url}}/accessibility-and-localization/internationalization
+[is easy]: {{site.url}}/packages-and-plugins/using-packages
 [issue #9253]: {{site.repo.flutter}}/issues/9253
 [issue #14821]: {{site.repo.flutter}}/issues/14821
 [issue tracker]: {{site.repo.flutter}}/issues
 [issues related to running Flutter on Chromebooks]: {{site.repo.flutter}}/labels/platform-arc
 [`Iterable`]: {{site.api}}/flutter/dart-core/Iterable-class.html
-[JSON tutorial]: {{site.url}}/development/data-and-backend/json
+[JSON tutorial]: {{site.url}}/data-and-backend/json
 [kiwi]: {{site.pub}}/packages/kiwi
 [license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
 [`LicenseRegistry`]: {{site.api}}/flutter/foundation/LicenseRegistry-class.html
@@ -1067,8 +1067,8 @@ apps built with Flutter should follow Apple's
 [only one license]: {{site.repo.flutter}}/blob/master/LICENSE
 [package ecosystem]: {{site.pub}}/flutter
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
-[platform and third-party APIs]: {{site.url}}/development/platform-integration/platform-channels
-[platform channels]: {{site.url}}/development/platform-integration/platform-channels
+[platform and third-party APIs]: {{site.url}}/platform-integration/platform-channels
+[platform channels]: {{site.url}}/platform-integration/platform-channels
 [platform_view]: {{site.repo.flutter}}/tree/main/examples/platform_view
 [popped]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [pub.dev]: {{site.pub}}
@@ -1096,9 +1096,9 @@ apps built with Flutter should follow Apple's
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`UserAccountsDrawerHeader`]: {{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html
 [VS Code]: https://code.visualstudio.com/
-[web]: {{site.url}}/development/platform-integration/web
-[web instructions]: {{site.url}}/development/platform-integration/web/building
+[web]: {{site.url}}/platform-integration/web
+[web instructions]: {{site.url}}/platform-integration/web/building
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
-[widgets]: {{site.url}}/development/ui/widgets
+[widgets]: {{site.url}}/ui/widgets
 [supported platforms]: {{site.url}}/reference/supported-platforms
 [riverpod]: {{site.pub}}/packages/riverpod

@@ -234,7 +234,7 @@ Relevant PRs:
 
 Supported by fix tool: Yes
  
-The `child` parameter of `showDialog` was deprecated in in v0.2.3.
+The `child` parameter of `showDialog` was deprecated in v0.2.3.
 The `builder` parameter should be used instead.
  
 **Migration guide**
@@ -272,7 +272,7 @@ Relevant PRs:
 
 Supported by fix tool: Yes
  
-The `resizeToAvoidBottomPadding` parameter of `Scaffold` was deprecated in in v1.1.9.
+The `resizeToAvoidBottomPadding` parameter of `Scaffold` was deprecated in v1.1.9.
 The `resizeToAvoidBottomInset` parameter should be used instead.
  
 **Migration guide**
@@ -318,7 +318,7 @@ Relevant PRs:
 
 Supported by fix tool: No
  
-The `bar` constructor of `ButtonTheme` was deprecated in in v1.9.1.
+The `bar` constructor of `ButtonTheme` was deprecated in v1.9.1.
 `ButtonBarTheme` can be used instead for `ButtonBar`s,
 or use another constructor of `ButtonTheme`
 if the use is not specific to `ButtonBar`.

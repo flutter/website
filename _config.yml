@@ -100,17 +100,25 @@ defaults:
     values:
       toc: true
   - scope:
+      path: 'accessibility-and-localization'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'add-to-app'
+    values:
+      show_breadcrumbs: true
+  - scope:
       path: 'cookbook'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development'
+      path: 'data-and-backend'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development/ui/widgets'
+      path: 'deployment'
     values:
-      toc: false
+      show_breadcrumbs: true
   - scope:
       path: 'get-started'
     values:
@@ -120,9 +128,37 @@ defaults:
     values:
       show_breadcrumbs: false
   - scope:
+      path: 'packages-and-plugins'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'perf'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'platform-integration'
+    values:
+      show_breadcrumbs: true
+  - scope:
       path: 'release'
     values:
       show_breadcrumbs: true
+  - scope:
+      path: 'testing'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'tools'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'ui'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'ui/widgets'
+    values:
+      toc: false
 
 
 ########### Alerts ###########

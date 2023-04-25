@@ -1087,5 +1087,5 @@ class FakeMessage extends StatelessWidget {
 }
 ```
 
-[explicit animation]: {{site.url}}/development/ui/animations#tween-animation
-[staggered animation]: {{site.url}}/development/ui/animations/staggered-animations
+[explicit animation]: {{site.url}}/ui/animations#tween-animation
+[staggered animation]: {{site.url}}/ui/animations/staggered-animations
