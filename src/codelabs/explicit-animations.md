@@ -774,9 +774,9 @@ the `value` property to a new value.
 [Create your first explicit animation with AnimationController]: #create-your-first-explicit-animation-with-animationcontroller
 [Material app]: {{site.api}}/flutter/material/MaterialApp-class.html
 [performance profiling]: {{site.url}}/perf/ui-performance
-[implicit animations]: {{site.url}}/development/ui/animations/implicit-animations
+[implicit animations]: {{site.url}}/ui/animations/implicit-animations
 [make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
-[stateful widgets]: {{site.url}}/development/ui/interactive#stateful-and-stateless-widgets
+[stateful widgets]: {{site.url}}/ui/interactive#stateful-and-stateless-widgets
 [step 1]: #1-use-a-tickerprovider-mixin
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 

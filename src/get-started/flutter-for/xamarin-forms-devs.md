@@ -2540,19 +2540,19 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`][] plugin documentation.
 
 
-[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
-[Animation & Motion widgets]: {{site.url}}/development/ui/widgets/animation
-[Animations overview]: {{site.url}}/development/ui/animations
-[Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
+[Adding assets and images]: {{site.url}}/ui/assets-and-images
+[Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
+[Animations overview]: {{site.url}}/ui/animations
+[Animations tutorial]: {{site.url}}/ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
 [arb]: {{site.github}}/google/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: {{site.url}}/resources/architectural-overview#composition
-[Cupertino widgets]: {{site.url}}/development/ui/widgets/cupertino
+[Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
-[developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
-[DevTools]: {{site.url}}/development/tools/devtools/overview
+[developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
+[DevTools]: {{site.url}}/tools/devtools/overview
 [existing plugin]: {{site.pub}}/flutter
 [`firebase_admob`]: {{site.pub}}/packages/firebase_admob
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
@@ -2567,27 +2567,27 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http
-[internationalization guide]: {{site.url}}/development/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
-[Material Components]: {{site.url}}/development/ui/widgets/material
+[Material Components]: {{site.url}}/ui/widgets/material
 [Material Design]: {{site.material}}/design
 [Material Design guidelines]: {{site.material}}/design
 [`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
-[platform channels]: {{site.url}}/development/platform-integration/platform-channels
-[plugins]: {{site.url}}/development/packages-and-plugins/using-packages
+[platform channels]: {{site.url}}/platform-integration/platform-channels
+[plugins]: {{site.url}}/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub}}
-[publish it on pub.dev]: {{site.url}}/development/packages-and-plugins/developing-packages#publish
+[publish it on pub.dev]: {{site.url}}/packages-and-plugins/developing-packages#publish
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
 [`shared_preferences`]: {{site.pub}}/packages/shared_preferences
 [`sqflite`]: {{site.pub}}/packages/sqflite
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [widget]: {{site.url}}/resources/architectural-overview#widgets
-[widget catalog]: {{site.url}}/development/ui/widgets/layout
+[widget catalog]: {{site.url}}/ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [first_codelab]: {{site.codelabs}}/codelabs/flutter-codelab-first
-[write your own]: {{site.url}}/development/packages-and-plugins/developing-packages
+[write your own]: {{site.url}}/packages-and-plugins/developing-packages

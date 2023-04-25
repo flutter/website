@@ -137,8 +137,8 @@ UI performance of your application on a frame-by-frame basis.
 Once your app is running in profile mode,
 [launch DevTools][].
 
-[launch DevTools]: {{site.url}}/development/tools/devtools
-[Timeline view]: {{site.url}}/development/tools/devtools/performance
+[launch DevTools]: {{site.url}}/tools/devtools
+[Timeline view]: {{site.url}}/tools/devtools/performance
 
 ## The performance overlay
 
@@ -264,7 +264,7 @@ from the Flutter inspector, which is available in the
 **Performance Overlay** button to toggle the overlay
 on your running app.
 
-[Inspector view]: {{site.url}}/development/tools/devtools/inspector
+[Inspector view]: {{site.url}}/tools/devtools/inspector
 
 #### From the command line
 
@@ -410,7 +410,7 @@ You can view the widget rebuilt counts for the current screen and
 frame in the Flutter plugin for Android Studio and IntelliJ.
 For details on how to do this, see [Show performance data][]
 
-[Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data
+[Show performance data]: {{site.url}}/tools/android-studio#show-performance-data
 
 ## Benchmarking
 
@@ -448,9 +448,9 @@ Flutter's tools and debugging in Flutter:
   and the [dart:developer][] package
 
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[devtools]: {{site.url}}/development/tools/devtools
+[devtools]: {{site.url}}/tools/devtools
 [Flutter API]: {{site.api}}
-[Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
+[Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Flutter inspector talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: {{site.youtube-site}}/watch?v=5F-6n_2XWR8

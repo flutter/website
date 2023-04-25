@@ -18,6 +18,6 @@ you need the following in addition to the Flutter SDK:
 
 For more information, see [Building Windows apps][].
 
-[Building Windows apps]: {{site.url}}/development/platform-integration/windows/building
+[Building Windows apps]: {{site.url}}/platform-integration/windows/building
 [Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
 [Visual Studio Build Tools 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
