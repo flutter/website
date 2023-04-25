@@ -187,6 +187,8 @@
               permalink: /development/platform-integration/android/androidx-migration
             - title: Deprecated Splash Screen API Migration
               permalink: /development/platform-integration/android/splash-screen-migration
+            - title: Restore state on Android **NEW**
+              permalink: /development/platform-integration/android/restore-state-android
             - title: Targeting ChromeOS with Android
               permalink:  /development/platform-integration/android/chromeos
         - title: iOS
@@ -206,6 +208,8 @@
               permalink: /development/platform-integration/ios/platform-views
             - title: iOS debugging
               permalink: /development/platform-integration/ios/ios-debugging
+            - title: Restore state on iOS **NEW**
+              permalink: /development/platform-integration/ios/restore-state-ios
         - title: Linux
           permalink: /development/platform-integration/linux
           children:
@@ -348,7 +352,7 @@
   children:
     - title: Debugging tools
       permalink: /testing/debugging
-    - title: Testing plugins **NEW**
+    - title: Testing plugins
       permalink: /testing/testing-plugins
     - title: Debugging apps programmatically
       permalink: /testing/code-debugging
