@@ -86,7 +86,35 @@ and an Apple Developer account. If your app is using Flutter plugins,
 you will also need the third-party CocoaPods dependency manager.
 
 <ol markdown="1">
+<li markdown="1">
+<a name="connect"></a>
+To set up physical device deployment in Xcode, 
+connect your device to the USB port on your 
+computer. 
+</li>
+<li markdown="1">
+<a name="wireless"></a>
+[Optional] To leverage wireless debugging, ensure that 
+your device is on the same network as your computer 
+and that the device has a set passcode.  
 
+While the device is attached, open **Xcode > Window > Devices and Simulators**. 
+Select your phone, and check **Connect via Network.** 
+For more details, check out 
+[Apple's documentation on pairing a wireless device with Xcode][].
+
+Once the network icon appears next to the device name, 
+you can unplug your device from USB. 
+
+Sometimes it takes longer to find network devices. 
+If you don't see your device listed when using `flutter run`, 
+try extending the timeout: `flutter run --device-timeout 10`.
+
+For additional help troubleshooting, 
+check out [Apple's Developer Forums][]. For setting up 
+wireless debugging with `flutter attach`, 
+checkout [Debugging your add-to-app module][].
+</li>
 <li markdown="1">
 
 <a name="trust"></a>
@@ -179,10 +207,13 @@ or clicking the Run button in Xcode.
 [Check the app's Bundle ID]: {{site.url}}/assets/images/docs/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: {{site.apple-dev}}/support/compare-memberships
 [Mac App Store]: https://itunes.apple.com/us/app/xcode/id497799835
-[Flutter plugins]: {{site.url}}/development/packages-and-plugins/developing-packages#types
+[Flutter plugins]: {{site.url}}/packages-and-plugins/developing-packages#types
 [Install and set up CocoaPods]: https://guides.cocoapods.org/using/getting-started.html#installation
 [Trust Mac]: {{site.url}}/assets/images/docs/setup/trust-computer.png
 [web download]: {{site.apple-dev}}/xcode/
 [Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
 [Developer Mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
+[Apple's Developer Forums]: {{site.apple-dev}}/forums/
+[Debugging your add-to-app module]: {{site.url}}/development/add-to-app/debugging/#wireless-debugging
+[Apple's documentation on pairing a wireless device with Xcode]: https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad

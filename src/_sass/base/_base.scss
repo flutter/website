@@ -63,6 +63,48 @@ dd {
   }
 }
 
+.card-title-material-3 {
+  color: $site-color-body;
+}
+
+.card-image-holder-material-3 {
+  align-items: center;
+  z-index: -1;
+  background-size: 0%;
+  opacity: .999;
+  background-color: var(--bg-color, white);
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    z-index: 1;
+  }
+}
+
+.card-image-material-3-hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: .25s ease;
+  z-index: -1;
+
+ img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+   z-index: -1;
+
+   }
+}
+
+.card-image-holder-material-3:hover .card-image-material-3-hover {
+  opacity: 1;
+}
+
 .happy-paths-image-holder {
   align-items: left;
   display: flex;
