@@ -302,6 +302,7 @@
       { "source": "/go/gn-ninja-engine-artifacts", "destination": "https://docs.google.com/document/d/10C0yexPKlx4CdlF-fO4efGhQXEvDH92-RiAhBTj5EF8/", "type": 301 },
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/google-apis", "destination": "/data-and-backend/google-apis?utm_source=go-link&utm_medium=referral&utm_campaign=go-google-apis", "type": 301 },
+      { "source": "/go/google-testing-v2", "destination": "https://docs.google.com/document/d/1Sg_CsGa3VxMNOXFKvoXEPNneD6OUuXIUsmFEjhluhDw", "type": 301 },
       { "source": "/go/go-router-improvements", "destination": "https://docs.google.com/document/d/1_mRXinbL_rb0mUt6DAFZ8kj0kh33ZjEMJuUq4PJgwj8/edit?usp=sharing&resourcekey=0-sYbRzE9opneOFZ5F8J3gGw", "type": 301 },
       { "source": "/go/go-router-support-imperative-routing", "destination": "https://docs.google.com/document/d/1HCgLi7ialw2Eqv-f_2z9ogdOfcmepIIqCsRhF-DT9dM/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v2-5-breaking-changes", "destination": "https://docs.google.com/document/d/1MoEM3C6sDvMUuZYCxlYoMI2QJlkONu8i9G53uy5xk-M/edit", "type": 301 },
