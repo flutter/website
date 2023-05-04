@@ -119,27 +119,28 @@ The `serviceWorker` JavaScript object accepts the following properties:
 
 ### Initializing the engine
 
-As of **Flutter 3.7.0**, you can use the `initializeEngine` method to
+As of _Flutter 3.7.0_, you can use the `initializeEngine` method to
 configure several run-time options of the Flutter web engine through a
-[`JsFlutterConfiguration` object][jsflutterconfig-source].
+plain JavaScript object.
 
-You can pass in the following (optional) parameters:
+You can add any of the following optional parameters:
 
 <div class="table-wrapper" markdown="1">
 
 | Name | Description | Dart&nbsp;Type |
 |-|-|-|
+|`assetBase`| The base URL of the `assets` directory of the app. Add this when Flutter loads from a different domain or subdirectory than the actual web app. You may need this when you embed Flutter web into another app, or when you deploy its assets to a CDN. |`String`|
 |`canvasKitBaseUrl`| The base URL from where `canvaskit.wasm` is downloaded. |`String`|
-|`canvasKitVariant`| The variant of CanvasKit to be downloaded. Available options are:<br><br>1. `auto`: Chooses the most optimal variant for the browser. The option defaults to this value.<br><br>2. `full`: Downloads the full variant of CanvasKit that works in all browsers.<br><br>3. `chromium`: Downloads a smaller variant of CanvasKit that uses APIs compatible with Chromium. **_Warning_**: Don't use the `chromium` option unless you plan on only using Chromium-based browsers. |`String`|
+|`canvasKitVariant`| The CanvasKit variant to download. Your options cover:<br><br>1. `auto`: Downloads the optimal variant for the browser. The option defaults to this value.<br>2. `full`: Downloads the full variant of CanvasKit that works in all browsers.<br>3. `chromium`: Downloads a smaller variant of CanvasKit that uses Chromium compatible APIs. **_Warning_**: Don't use the `chromium` option unless you plan on only using Chromium-based browsers. |`String`|
 |`canvasKitForceCpuOnly`| When `true`, forces CPU-only rendering in CanvasKit (the engine won't use WebGL). |`bool`|
 |`canvasKitMaximumSurfaces`| The maximum number of overlay surfaces that the CanvasKit renderer can use. |`double`|
 |`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
+|`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"html"`. |`String`|
 {:.table}
 
 </div>
 
-[jsflutterconfig-source]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
 [web-renderers]: {{site.url}}/platform-integration/web/renderers
 
 {{site.alert.note}}
@@ -148,6 +149,33 @@ You can pass in the following (optional) parameters:
   That approach is still supported, but displays a **deprecation
   notice** in the JS console, as of **Flutter 3.7.0**.
 {{site.alert.end}}
+
+#### Engine configuration example
+
+The `initializeEngine` method lets you pass any of the configuration
+parameters described above to your Flutter app.
+
+Consider the following example.
+
+Your Flutter app should target an HTML element with `id="flutter_app"` and
+use the `canvaskit` renderer. The resulting JavaScript code would resemble
+the following:
+
+```js
+onEntrypointLoaded: async function(engineInitializer) {
+  let appRunner = await engineInitializer.initializeEngine({
+    hostElement: document.querySelector("#flutter_app"),
+    renderer: "canvaskit"
+  });
+  appRunner.runApp();
+}
+```
+
+For a more detailed explanation of each parameter, take a look at the
+**"Runtime parameters"** documentation section of the [`configuration.dart`][config-dart]
+file of the web engine.
+
+[config-dart]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L150
 
 #### Skipping this step
 
