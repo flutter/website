@@ -30,10 +30,10 @@ jobs:
         include:
           - name: "Beta channel"
             branch: beta
-            experimental: true
+            experimental: false
           - name: "Stable channel"
             branch: stable
-            experimental: false
+            experimental: true
     steps:
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
         with:
