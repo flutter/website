@@ -39,7 +39,7 @@ final _pullRequestTitlePattern = RegExp(
 /// by @craiglabenz in https://github.com/flutter/flutter/pull/100316</li>
 /// ```
 final _pullRequestTitleInListItemPattern =
-    RegExp(r'<li>.*? in https://github.com/.*?/pull/.*?</li>', dotAll: true);
+    RegExp(r'<li>.*? in.*?https://github.com/.*?/pull/.*?</li>', dotAll: true);
 
 /// All replacements to run on file content before finding invalid references.
 final _allReplacements = [

@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - main
-      - v-next-2023-1
+      - io23
 
 # Declare default permissions as read only.
 permissions: read-all
@@ -12,6 +12,7 @@ permissions: read-all
 jobs:
   stage:
     permissions:
+      contents: read
       checks: write
       pull-requests: write
     runs-on: ubuntu-latest
@@ -24,6 +25,7 @@ jobs:
         run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
       - name: Stage site on Firebase
         if: ${{
+          github.repository == 'flutter/website' &&
           github.event.pull_request.head.repo.full_name == github.repository &&
           github.event.pull_request.user.login != 'dependabot[bot]' }}
         uses: FirebaseExtended/action-hosting-deploy@4d0d0023f1d92b9b7d16dda64b3d7abd2c98974b
