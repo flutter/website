@@ -25,6 +25,9 @@ over time. A crash report may contain the following information:
 Google handles all data reported by this tool in accordance with the 
 [Google Privacy Policy][].
 
+Additionally, you may review the recently reported data in the 
+`dart-flutter-telemetry.log` file on your disk.
+
 ## Disabling analytics reporting
 
 You can opt out of anonymous crash reporting and feature
@@ -35,7 +38,7 @@ $ flutter config --no-analytics
 ```
 
 If you opt out of analytics, an opt-out event will be sent,
-and then no further information will be sent by that
+and then no further information will be stored or sent by that
 installation of Flutter. 
 
 To display the current setting, you can run the following command:
