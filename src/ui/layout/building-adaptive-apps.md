@@ -193,7 +193,7 @@ supported components, see [`VisualDensity`][] API.
 For more information about density principles in general,
 see the [Material Design guide][]. 
 
-[Material Design guide]: {{site.material}}/design/layout/applying-density.html#usage
+[Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
 [`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
 
 ### Contextual layout
@@ -1191,8 +1191,8 @@ Here are some resources to get you started:
 
 [Build high quality apps (Android)]: {{site.android-dev}}/quality
 [Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/
-[Material design for large screens]: {{site.material}}/blog/material-design-for-large-screens
+[Material design for large screens]: {{site.material2}}/blog/material-design-for-large-screens
 [Machine sizes and breakpoints (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design
-[Material guidelines on responsive UI layout]: {{site.material}}/archive/guidelines/layout/responsive-ui.html
+[Material guidelines on responsive UI layout]: {{site.material2}}/archive/guidelines/layout/responsive-ui.html
 [Responsive design techniques (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/responsive-design
 [UI design do's and don'ts (Apple)]: {{site.apple-dev}}/design/tips/
