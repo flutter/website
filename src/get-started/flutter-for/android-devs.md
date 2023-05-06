@@ -2405,8 +2405,8 @@ see the [`firebase_messaging`][] plugin documentation.
 [intl package]: {{site.pub}}/packages/intl
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
 [Material Components]: {{site.material}}/develop/flutter
-[Material Design guidelines]: {{site.material}}/design
-[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[Material Design guidelines]: {{site.material}}/styles
+[optimized for all platforms]: {{site.material}}/develop
 [a plugin]: {{site.pub}}/packages/android_intent
 [pub.dev]: {{site.pub}}/flutter/packages/
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input

@@ -2596,7 +2596,7 @@ and common widget properties.
 [`Axis`]: {{site.api}}/flutter/painting/Axis.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[color palette]: {{site.material}}/design/color
+[color palette]: {{site.material}}/styles/color
 [colors]: {{site.api}}/flutter/material/Colors-class.html
 [`Colors`]: {{site.api}}/flutter/material/Colors-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
@@ -2643,7 +2643,7 @@ and common widget properties.
 [`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[Material Design]: {{site.material}}/design
+[Material Design]: {{site.material}}/styles
 [Material icons]: {{site.api}}/flutter/material/Icons-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
