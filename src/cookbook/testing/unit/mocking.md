@@ -89,7 +89,7 @@ Future<Album> fetchAlbum(http.Client client) async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(json.decode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -98,7 +98,7 @@ Future<Album> fetchAlbum(http.Client client) async {
 }
 ```
 
-In your app code, you can provide an `http.Client` to the `fetchAlbum` method 
+In your app code, you can provide an `http.Client` to the `fetchAlbum` method
 directly with `fetchAlbum(http.Client())`. `http.Client()` creates a default
 `http.Client`.
 
@@ -225,7 +225,7 @@ Future<Album> fetchAlbum(http.Client client) async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(json.decode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -242,9 +242,9 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
+      userId: json['userId'] as int,
+      id: json['id'] as int,
+      title: json['title'] as String,
     );
   }
 }
