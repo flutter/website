@@ -26,7 +26,7 @@ Google handles all data reported by this tool in accordance with the
 [Google Privacy Policy][].
 
 Additionally, you may review the recently reported data in the 
-`dart-flutter-telemetry.log` file on your disk.
+`.dart-tool/dart-flutter-telemetry.log` file under the HOME directory. 
 
 ## Disabling analytics reporting
 
