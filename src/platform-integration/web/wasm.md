@@ -104,7 +104,7 @@ requirements:
   - `enable-experimental-webassembly-stack-switching`
   - `enable-webassembly-garbage-collection`
 
-If your configured browser meet the states the stated requirements, open
+If your configured browser meets the stated requirements, open
 `localhost:8080` in the browser to view the app.
 
 If the application doesn't load:
