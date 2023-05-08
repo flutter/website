@@ -54,7 +54,12 @@ Experimental options
     --wasm                                              Compile to WebAssembly rather than JavaScript.
                                                         See https://flutter.dev/wasm for more information.
     --omit-type-checks                                  Omit type checks in Wasm output.
-    --wasm-opt                                          Run wasm-opt on the output wasm module.
+                                                        Reduces code size and improves performance, but may affect runtime correctness. Use with care.
+    --wasm-opt                                          Optimize output wasm using the Binaryen (https://github.com/WebAssembly/binaryen) tool.
+
+          [debug]                                       Similar to `full`, but member names are preserved. Debugging is easier, but size is a bit bigger.
+          [full] (default)                              wasm-opt is run. Build time is slower, but output is smaller and faster.
+          [none]                                        wasm-opt is not run. Fastest build; bigger, slower output.
 ```
 
 #### Pick a (simple) Flutter web application
