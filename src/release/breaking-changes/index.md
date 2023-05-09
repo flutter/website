@@ -37,7 +37,7 @@ release, and listed in alphabetical order:
 * [Migration guide for `RouteInformation.location`][]
 * [At least one clipboard data variant must be provided][]
 
-[Dart 3 changes in Flutter v3.10 and later]: {{site.url}}/release/breaking-changes/dart3
+[Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
 [Material localized Strings migration guide]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Android Java Gradle migration guide]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
