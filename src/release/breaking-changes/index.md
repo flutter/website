@@ -30,12 +30,14 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Dart 3 changes in Flutter v3.10 and later][]
 * [Deprecated API removed after v3.7][]
 * [Removed `ignoringSemantics`][]
 * [The window singleton is deprecated][]
 * [Migration guide for `RouteInformation.location`][]
 * [At least one clipboard data variant must be provided][]
 
+[Dart 3 changes in Flutter v3.10 and later]: {{site.url}}/release/breaking-changes/dart3
 [Material localized Strings migration guide]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Android Java Gradle migration guide]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
