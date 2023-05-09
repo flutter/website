@@ -15,7 +15,8 @@ We run two types of surveys:
 surveys when we want to learn more about specific topics. 
 You may see a survey announcement if you meet the criteria of 
 the survey  based on data stored in the 
-`dart-flutter-telemetry.log` file on your disk.
+`.dart-tool/dart-flutter-telemetry.log` file under the home directory
+`~/` (macOS/Linux) or the `<username>\AppData` (Windows) directory. 
 
 ## How will my responses be used?
 
