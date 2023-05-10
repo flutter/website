@@ -29,6 +29,7 @@ release, and listed in alphabetical order:
 [test registry]: https://github.com/flutter/tests
 
 ### Not yet released to stable
+
 * [Moved ReorderableListView's localized strings][]  from material to widgets localizations
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
@@ -36,11 +37,6 @@ release, and listed in alphabetical order:
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
-
-{% comment %}
-* [Deprecated `describeEnum`][]
-[Deprecated `describeEnum`]: {{site.url}}/release/breaking-changes/describeEnum
-{% endcomment %}
 
 ### Released in Flutter 3.10
 
