@@ -7,7 +7,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 * Use the default Flutter service worker. [#5331](https://github.com/flutter/devtools/pull/5331)
 * Added the new verbose logging feature for helping us debug user issues. [#5404](https://github.com/flutter/devtools/pull/5404)
 
-![verbose logging](images-2.23.1/verbose-logging.png "verbose_logging")
+![verbose logging]({{site.url}}/development/tools/devtools/release-notes/images-2.23.1/verbose-logging.png "verbose_logging")
 
 * Fix a bug where some asynchronous errors were not being reported. [#5456](https://github.com/flutter/devtools/pull/5456)
 * Added support for viewing data after an app disconnects for screens that support offline viewing (currently only the Performance and CPU proiler pages).
@@ -23,7 +23,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 ## CPU profiler updates
 * Add a Method Table to the CPU profiler. [#5366](https://github.com/flutter/devtools/pull/5366)
 
-![method table](images-2.23.1/cpu-method-table.png "method_table")
+![method table]({{site.url}}/development/tools/devtools/release-notes/images-2.23.1/cpu-method-table.png "method_table")
 
 * Improve the performance of data processing in the CPU profiler. [#5468](https://github.com/flutter/devtools/pull/5468), [#5533](https://github.com/flutter/devtools/pull/5533), [#5535](https://github.com/flutter/devtools/pull/5535)
 * Polish and performance improvements for the CPU profile flame chart. [#5529](https://github.com/flutter/devtools/pull/5529)
