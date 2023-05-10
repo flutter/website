@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - main
-      - io23
 
 # Declare default permissions as read only.
 permissions: read-all
