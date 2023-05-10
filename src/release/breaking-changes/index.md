@@ -41,10 +41,12 @@ release, and listed in alphabetical order:
 ### Released in Flutter 3.10
 
 * [Deprecated API removed after v3.7][]
+* [Dart 3 changes in Flutter v3.10 and later][]
 * [Deprecated the window singleton][]
 * [Require one data variant for `ClipboardData` constructor][]
 * [Resolve the Android Java Gradle error][]
 
+[Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
 [Deprecated the window singleton]: {{site.url}}/release/breaking-changes/window-singleton
 [Resolve the Android Java Gradle error]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
