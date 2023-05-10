@@ -116,6 +116,23 @@ use the following steps to make it human readable:
    For more information on the `symbolize` command,
    run `flutter symbolize -h`.
 
+## Reading an obfuscated name
+
+To understand a name created by an obfuscated app,
+use the following steps to make it human readable:
+
+1. At app build time, save the name obfuscation map
+   using `--extra-gen-snapshot-options=--save-obfuscation-map=/<your-directory>`.
+   For example:
+
+   ```terminal
+   $ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory> --extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>
+   ```
+
+1. Use the generated obfuscation map to recover the name.
+   The obfuscation map is a simple JSON array where
+   each obfuscated name is preceded by its original name.
+
 ## Caveat
 
 Be aware of the following when coding an app that will
