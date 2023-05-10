@@ -215,5 +215,5 @@ or clicking the Run button in Xcode.
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
 [Developer Mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
 [Apple's Developer Forums]: {{site.apple-dev}}/forums/
-[Debugging your add-to-app module]: {{site.url}}/development/add-to-app/debugging/#wireless-debugging
+[Debugging your add-to-app module]: {{site.url}}/add-to-app/debugging/#wireless-debugging
 [Apple's documentation on pairing a wireless device with Xcode]: https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad

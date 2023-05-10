@@ -11,7 +11,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 ## Performance Updates
 * Added documentation links to the "Enhance Tracing" and "More debugging options" menus. Read the new
-[documentation](https://docs.flutter.dev/development/tools/devtools/performance#enhance-tracing) to
+[documentation](https://docs.flutter.dev/tools/devtools/performance#enhance-tracing) to
 learn more about these features - [#3934](https://github.com/flutter/devtools/pull/3934), 
 [#3936](https://github.com/flutter/devtools/pull/3936)
 
