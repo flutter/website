@@ -91,9 +91,9 @@ wrap the `Column` in an `Expanded` widget:
 
 <?code-excerpt "lib/renderflex_overflow.dart (Fix)"?>
 ```dart
-return Row(
+return const Row(
   children: [
-    const Icon(Icons.message),
+    Icon(Icons.message),
     Expanded(
       child: Column(
           // code omitted
@@ -278,8 +278,8 @@ Widget build(BuildContext context) {
       appBar: AppBar(
         title: const Text('Unbounded Width of the TextField'),
       ),
-      body: Row(
-        children: const [
+      body: const Row(
+        children: [
           TextField(),
         ],
       ),
@@ -394,9 +394,9 @@ Widget build(BuildContext context) {
         );
       });
 
-  return Center(
+  return const Center(
     child: Column(
-      children: const <Widget>[
+      children: <Widget>[
         Text('Show Material Dialog'),
       ],
     ),

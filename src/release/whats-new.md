@@ -8,8 +8,7 @@ what's new on the Flutter website and blog.
 For details about what's new in the Flutter releases
 see the [release notes][] page.
 
-To stay on top of Flutter announcements,
-including breaking changes,
+To stay on top of Flutter announcements including breaking changes,
 join the [flutter-announce][] Google group.
 
 For Dart, you can join the [Dart Announce][] Google group,
@@ -20,7 +19,104 @@ and review the [Dart changelog][].
 [Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 
-## Jan 25, 2023, Flutter Forward edition: 3.7 release
+## 10 May 2023: Google I/O 2023: 3.10 release
+
+Flutter 3.10 is live! This release contains many updates
+and improvements. This page lists the documentation changes,
+but you can also check out the [3.10 blog post][] and the
+[3.10 release notes][].
+
+You might also check out [Introducing Dart 3][].
+
+[3.10 blog post]: {{site.flutter-medium}}/whats-new-in-flutter-3-10-b21db2c38c73
+[3.10 release notes]: {{site.url}}/release/release-notes/release-notes-3.10.0
+[Introducing Dart 3]: {{site.medium}}/dartlang/announcing-dart-3-53f065a10635
+
+### Docs updated or added since the 3.7 release
+
+* Added section on [wireless debugging][] for iOS or Android to the
+  add-to-app module guide.
+  You can debug your iOS or Android app on a physical device over Wi-Fi.
+* Updated the [Material Widget Catalog][] to cover Material 3.
+* Add the new [canvasKitVariant runtime configuration][] setting.
+  This web initialization option lets you configure which version of
+  CanvasKit to download.
+* Updated the [Impeller][] reference.
+  iOS apps now default to the Impeller renderer.
+* Added the [Android Java Gradle migration][] guide on resolving
+  an incompatibility between Java 17 and Gradle releases prior to 7.3.
+* Updated the [DevTools][] reference material.
+* Updated the [WebAssembly support][] reference with
+  guidelines on trying out preview support.
+* Added guide on [adding iOS app extensions][] to Flutter apps.
+  This release enables using native iOS app extensions with your Flutter apps.
+* Added guide on [testing Flutter plugins][].
+* Added guide on [fonts and typography][].
+* Added guide on restoring state on [Android][] and [iOS][] Flutter apps.
+* Added a section about [sharing iOS and macOS plugin implementations][].
+* Added a guide on adapting the Material [alert dialog][], 
+  [top app bar and navigation bar][], and [bottom navigation bar][] widgets
+  to the current platform as a start of UI component platform adaptation
+  guidelines.
+* Introduced the [Anatomy of an app][] section in the Architectural overview.
+* Added provenance information per SLSA to all downloads
+  in the [SDK archive page][]. Provenance guarantees that the built artifact
+  comes from the expected source.
+
+[wireless debugging]: {{site.url}}/add-to-app/debugging
+[Material Widget Catalog]: {{site.url}}/ui/widgets/material
+[canvasKitVariant runtime configuration]: {{site.url}}/platform-integration/web/initialization#initializing-the-engine
+[Impeller]: {{site.url}}/perf/impeller
+[Android Java Gradle migration]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
+[DevTools]: {{site.url}}/tools/devtools/overview
+[WebAssembly support]: {{site.url}}/platform-integration/web/wasm
+[adding iOS app extensions]: {{site.url}}/platform-integration/ios/app-extensions
+[testing Flutter plugins]: {{site.url}}/testing/testing-plugins
+[fonts and typography]: {{site.url}}/ui/advanced/typography
+[Android]: {{site.url}}/platform-integration/android/restore-state-android
+[iOS]: {{site.url}}/platform-integration/ios/restore-state-ios
+[sharing iOS and macOS plugin implementations]: {{site.url}}/packages-and-plugins/developing-packages#shared-ios-and-macos-implementations
+[alert dialog]: {{site.url}}/resources/platform-adaptations#alert-dialog
+[top app bar and navigation bar]: {{site.url}}/resources/platform-adaptations#top-aoo-bar-and-navigation-bar
+[bottom navigation bar]: {{site.url}}/resources/platform-adaptations#bottom-navigation-bars
+[some widgets]: {{site.url}}/resources/platform-adaptations#ui-components
+[Anatomy of an app]: {{site.url}}/resources/architectural-overview#anatomy-of-an-app
+[SDK archive page]: {{site.url}}/release/archive
+
+#### Codelabs
+
+The following codelabs have been published since Flutter 3.7:
+
+* [Records and Patterns in Dart 3][]<br>
+  Discover Dart 3's new records and patterns features.
+  Learn how you can use them in a Flutter app to help you
+  write more readable and maintainable Dart code.
+* [Building next generation UIs in Flutter][]<br>
+  Learn how to build a Flutter app that uses the power of `flutter_animate`,
+  fragment shaders, and particle fields. You will craft a user interface that
+  evokes those science fiction movies and TV shows we all love
+  watching when we aren't coding.
+* [Create haikus about Google products with the PaLM API and Flutter][]<br> **NEW**
+  Learn how to build an app that uses the PaLM API to generate haikus
+  based on Google product names. The PaLM API gives you access to Google's
+  state-of-the-art large language models.
+
+[Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
+[Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
+[Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
+
+#### Articles
+
+The Flutter team published the following articles on the [Flutter Medium][]
+publication since Flutter 3.7:
+
+* [Flutter in 2023: strategy and roadmap][]
+* [Wonderous nominated for Webby Award][]
+
+[Wonderous nominated for Webby Award]: {{site.flutter-medium}}/wonderous-nominated-for-webby-award-8e00e2a648c2
+[Flutter in 2023: strategy and roadmap]: {{site.flutter-medium}}/flutter-in-2023-strategy-and-roadmap-60efc8d8b0c7
+
+## 25 Jan 2023: Flutter Forward: 3.7 release
 
 Flutter 3.7 is live! This release contains many updates
 and improvements. This page lists the documentation changes,
@@ -35,7 +131,7 @@ and [Introducing Dart 3 alpha][].
 [Introducing Dart 3 alpha]: {{site.medium}}/dartlang/dart-3-alpha-f1458fb9d232
 [What's next for Flutter]: {{site.flutter-medium}}/whats-next-for-flutter-b94ce089f49c
 
-**Docs updated or added since the 3.3 release**
+### Docs updated or added since the 3.3 release
 
 * You can now pass configuration
   information to the engine in the `initializeEngine`
@@ -201,7 +297,7 @@ publication since the last stable release:
 [Supporting six platforms with two keyboards]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
 [What we learned from the Flutter Q3 2022 survey]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
 
-## Aug 31, 2022, Flutter Vikings Edition: 3.3 release
+## 31 Aug 2022: Flutter Vikings: 3.3 release
 
 Flutter 3.3 is live! For more information, see
 
@@ -247,7 +343,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
 [URL strategies]: {{site.url}}/ui/navigation/url-strategies
 
 
-## May 11, 2022, Google I/O Edition: Flutter 3 release
+## 11 May 2022: Google I/O 2022: Flutter 3 release
 
 Flutter 3 is live!!! For more information, see
 [Introducing Flutter 3][], [What's new in Flutter 3][],
@@ -334,7 +430,7 @@ on the [videos] page.
 
 ---
 
-## Feb 3, 2022, Windows Support: 2.10 release
+## 03 Feb 2022: Windows Support: 2.10 release
 
 Desktop support for Microsoft Windows
 (a central feature of the 2.10 release) is live!
@@ -350,7 +446,7 @@ free articles on Medium.
 
 ---
 
-## December 8, 2021: 2.8 release
+## 08 Dec 2021: 2.8 release
 
 Flutter 2.8 is live! For details, see
 [Announcing Flutter 2.8][] and
@@ -359,7 +455,7 @@ Flutter 2.8 is live! For details, see
 [Announcing Flutter 2.8]: {{site.flutter-medium}}/announcing-flutter-2-8-31d2cb7e19f5
 [What's new in Flutter 2.8]: {{site.flutter-medium}}/whats-new-in-flutter-2-8-d085b763d181
 
-## September 8, 2021: 2.5 release
+## 08 Sep 2021: 2.5 release
 
 Flutter 2.5 is live! For details, see
 [What's new in Flutter 2.5][].
@@ -402,7 +498,7 @@ publication since the last stable release:
 
 ---
 
-## May 18, 2021, Google I/O Edition: 2.2 release
+## 18 May 2021: Google I/O 2021: 2.2 release
 
 Flutter 2.2 is live! For details, see
 [Announcing Flutter 2.2][] and
@@ -500,7 +596,7 @@ publication since the last stable release:
 
 ---
 
-## March 3, 2021, Flutter Engage Edition: 2.0 release
+## 03 Mar 2021: Flutter Engage: 2.0 release
 
 Flutter 2 is live!!!  For more information, see
 [Announcing Flutter 2][], [What's new in Flutter 2][],
@@ -612,7 +708,7 @@ publication since the last stable release:
 
 ---
 
-## Oct 1, 2020: 1.22 release
+## 01 Oct 2020: 1.22 release
 
 Flutter 1.22 is live! For details, see
 [Announcing Flutter 1.22][].
@@ -685,7 +781,7 @@ publication since the last stable release:
 [webview_flutter]: {{site.pub}}/packages/webview_flutter
 
 
-## Aug 5, 2020: 1.20 release
+## 05 Aug 2020: 1.20 release
 
 Flutter 1.20 is live! For details,
 see [Announcing Flutter 1.20][].
@@ -790,7 +886,7 @@ publication since the last stable release:
 [What we learned from the Flutter Q2 2020 survey]: {{site.flutter-medium}}/what-we-learned-from-the-flutter-q2-2020-survey-a4f1fc8faac9
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
 
-## May 6, 2020, Work-From-Home Edition: 1.17 release
+## 06 May 2020: Work-From-Home: 1.17 release
 
 Flutter 1.17 is live!
 
@@ -879,7 +975,7 @@ Other newness:
 [When should I use AnimatedBuilder or AnimatedWidget?]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [Writing custom platform-specific code]: {{site.url}}/platform-integration/platform-channels
 
-## Dec 11, 2019, Flutter Interact Edition: 1.12 release
+## 11 Dec 2019: Flutter Interact: 1.12 release
 
 Flutter 1.12 is live!
 
@@ -945,7 +1041,7 @@ Happy Fluttering!
 [write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 [Get started]: {{site.url}}/get-started/install
 
-## Sept 10, 2019: 1.9 release
+## 10 Sep 2019: 1.9 release
 
 Flutter 1.9 is live!
 
@@ -1022,7 +1118,7 @@ Happy Fluttering!
 [using the dart:ffi library]: {{site.url}}/platform-integration/android/c-interop
 [web FAQ]: {{site.url}}/platform-integration/web/faq
 
-## July 9, 2019: 1.7 release
+## 09 Jul 2019: 1.7 release
 
 Flutter 1.7 is live!
 
@@ -1073,7 +1169,7 @@ component and how to customize it, see
 [`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html
 [Simple app state management]: {{site.url}}/data-and-backend/state-mgmt/simple
 
-## May 7, 2019, Google I/O Edition: 1.5 release
+## 07 May 2019: Google I/O 2019: 1.5 release
 
 [Flutter 1.5][] is live!
 
@@ -1088,7 +1184,7 @@ We are updating DartPad to work with Flutter. Try our new
 [Flutter 1.5]: {{site.google-blog}}/2019/05/Flutter-io19.html
 [1.5.4 release notes]: {{site.url}}/release/release-notes/release-notes-1.5.4
 
-## February 26, 2019: 1.2 release
+## 26 Feb 2019: 1.2 release
 
 Flutter released [version 1.2][] at Mobile World Congress
 (MWC) in Barcelona. For more information, see the
@@ -1139,7 +1235,7 @@ If you have questions or comments about any of these docs,
 
 [version 1.2]: {{site.google-blog}}/2019/02/launching-flutter-12-at-mobile-world.html
 
-## November 5, 2018: new website
+## 05 Nov 2018: new website
 
 Welcome to the revamped Flutter website!
 

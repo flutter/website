@@ -753,4 +753,19 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get keyboardKeySpace => throw UnimplementedError();
+
+  @override
+  get scrimOnTapHintRaw => throw UnimplementedError();
+
+  @override
+  get bottomSheetLabel => throw UnimplementedError();
+
+  @override
+  get currentDateLabel => throw UnimplementedError();
+
+  @override
+  get keyboardKeyShift => throw UnimplementedError();
+
+  @override
+  get scrimLabel => throw UnimplementedError();
 }

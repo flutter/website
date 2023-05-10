@@ -2,7 +2,7 @@ name: error_reporting
 description: error reporting
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: ^3.0.0-0
 
 dependencies:
   flutter:

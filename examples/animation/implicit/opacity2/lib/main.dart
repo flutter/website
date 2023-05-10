@@ -28,8 +28,8 @@ class _FadeInDemoState extends State<FadeInDemo> {
           ),
           onPressed: () => {}),
       AnimatedOpacity(
-        child: Column(
-          children: const [
+        child: const Column(
+          children: [
             Text('Type: Owl'),
             Text('Age: 39'),
             Text('Employment: None'),

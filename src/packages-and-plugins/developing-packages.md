@@ -318,7 +318,7 @@ flutter:
         sharedDarwinSource: true
 
 environment:
-  sdk: ">=2.19.0 <3.0.0"
+  sdk: ^3.0.0
   # Flutter versions prior to 3.7 did not support the
   # sharedDarwinSource option.
   flutter: ">=3.7.0"
