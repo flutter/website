@@ -449,7 +449,7 @@ class DownloadButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _onPressed,
-      child: Stack(
+      child: const Stack(
         children: [
           /* ButtonShapeWidget and progress indicator */
         ],

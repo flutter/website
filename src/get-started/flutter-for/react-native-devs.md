@@ -157,9 +157,6 @@ In Dart, only the boolean value `true` is treated as true.
 ```dart
 /// Dart
 var myNull;
-if (myNull == null) {
-  print('use "== null" to check null');
-}
 var zero = 0;
 if (zero == 0) {
   print('use "== 0" to check zero');
@@ -1075,9 +1072,9 @@ const TextStyle textStyle = TextStyle(
   fontWeight: FontWeight.w600,
 );
 
-return Center(
+return const Center(
   child: Column(
-    children: const <Widget>[
+    children: <Widget>[
       Text('Sample text', style: textStyle),
       Padding(
         padding: EdgeInsets.all(20.0),
@@ -2000,10 +1997,10 @@ Widget build(BuildContext context) {
   return GestureDetector(
     child: Scaffold(
       appBar: AppBar(title: const Text('Gestures')),
-      body: Center(
+      body: const Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const <Widget>[
+        children: <Widget>[
           Text('Tap, Long Press, Swipe Horizontally or Vertically'),
         ],
       )),

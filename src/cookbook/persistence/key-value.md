@@ -115,8 +115,10 @@ your test files:
 
 <?code-excerpt "lib/partial_excerpts.dart (Testing)"?>
 ```dart
-const MethodChannel('plugins.flutter.io/shared_preferences')
-    .setMockMethodCallHandler((methodCall) async {
+TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+    .setMockMethodCallHandler(
+        const MethodChannel('plugins.flutter.io/shared_preferences'),
+        (methodCall) async {
   if (methodCall.method == 'getAll') {
     return <String, dynamic>{}; // set initial values here if desired
   }
