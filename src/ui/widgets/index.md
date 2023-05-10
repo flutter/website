@@ -11,15 +11,18 @@ you can also see all the widgets in the [widget index][].
 <div class="card-deck card-deck--responsive">
 {% assign categories = site.data.catalog.index | sort: 'name' -%}
 {% for section in categories %}
-    <div class="card">
-        <div class="card-body">
-            <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
-            <p class="card-text">{{section.description}}</p>
+    <!-- Don't display the legacy Material 2 card. It is only accessible via the Material 3 components page. -->
+    {% if section.name != "Material 2 Components" %}
+        <div class="card">
+            <div class="card-body">
+                <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
+                <p class="card-text">{{section.description}}</p>
+            </div>
+            <div class="card-footer card-footer--transparent">
+                <a href="{{page.url}}{{section.id}}">Visit</a>
+            </div>
         </div>
-        <div class="card-footer card-footer--transparent">
-            <a href="{{page.url}}{{section.id}}">Visit</a>
-        </div>
-    </div>
+    {% endif -%}
 {% endfor %}
 </div>
 

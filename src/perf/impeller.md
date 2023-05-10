@@ -1,152 +1,111 @@
 ---
-title: Impeller preview
-description: What is Impeller and how to enable it.
+title: Impeller rendering engine
+description: What is Impeller and how to enable it?
 ---
 
-## Overview
+## What is Impeller?
 
-What is Impeller?
-
-Impeller is a new rendering runtime for Flutter and
-is the Flutter team's solution to Flutter's
+Impeller provides a new rendering runtime for Flutter.
+The Flutter team's believes this solves Flutter's
 [early-onset jank][] issue.
 Impeller precompiles a [smaller, simpler set of shaders][]
-at Engine build time so that
-they won't be compiled while an app is running.
+at Engine build time so they don't compile at runtime.
 
 [early-onset jank]: {{site.github}}/flutter/flutter/projects/188
 [smaller, simpler set of shaders]: {{site.github}}/flutter/flutter/issues/77412
 
 For a video introduction to Impeller, check out the following
-talk from the Flutter Foward 2023 conference:
+talk from the Flutter Foward 2023 conference.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gKrYWC_SDxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 [What is Impeller?](https://www.youtube.com/watch?v=gKrYWC_SDxQ)
 
-Overall, Impeller has the following objectives:
+Impeller has the following objectives:
 
 * **Predictable performance**:
-  All shader compilation and reflection is performed
-  offline at build time. All pipeline state objects
-  are built upfront. Caching is explicit and under
-  the control of the engine.
-* **Instrumentable**: All graphics resources
-  (textures, buffers, pipeline state objects, and so on)
-  are tagged and labeled. Animations can be captured
-  and persisted to disk without affecting per-frame
-  rendering performance.
-* **Portable**: Not tied to a specific client rendering API.
-  Shaders are authored once and converted to
-  backend-specific formats as necessary.
-* **Uses modern graphics APIs effectively**:
-  Makes heavy use of (but doesn’t depend on)
-  features available in Modern APIs like Metal and Vulkan.
-* **Makes effective use of concurrency**:
-  Can distribute single-frame workloads across
-  multiple threads if necessary.
+  Impeller compiles all shaders and reflection offline at build time.
+  It builds all pipeline state objects upfront.
+  The engine controls caching and caches explicitly.
+* **Instrumentable**:
+  Impeller tags and labels all graphics resources like textures,
+  and buffers.
+  It can capture and persist animations to disk without affecting
+  per-frame rendering performance.
+* **Portable**:
+  Flutter doesn't tie Impeller to a specific client rendering API.
+  You can author shaders once and convert them to backend-specific
+  formats as necessary.
+* **Leverages modern graphics APIs**:
+  Impeller uses, but doesn’t depend on, features available in
+  modern APIs like Metal and Vulkan.
+* **Leverages concurrency**:
+  Impeller can distribute single-frame workloads across multiple
+  threads if necessary.
 
 ## Availability
 
-Where can you currently use Impeller?
+Where can you use Impeller?
 
 ### iOS
 
-Impeller is currently available for preview on iOS.
-You can enable it by passing `--enable-impeller`
-to the `flutter run` command or add the
-following under the top-level `<dict>` tag in an
-application's `Info.plist` file:
+Flutter enables Impeller by default on iOS.
 
-```
-  <key>FLTEnableImpeller</key>
-  <true/>
-```
+* To _disable_ Impeller on iOS when debugging,
+  pass `--disable-impeller` to the `flutter run` command.
 
-The team continues to make improvements to iOS support,
-and if you encounter any slow frames or rendering
-fidelity issues with Impeller on iOS,
-please file an issue in the [GitHub tracker][file-issue]
-with a small reproducible test case, and include
-`[Impeller]` in the title.
+  ```terminal
+  $ flutter run --disable-impeller
+  ```
+
+* To _disable_ Impeller on iOS when deploying your app,
+  add the following tags under the top-level `<dict>` tag in your
+  app's `Info.plist` file.
+
+  ```xml
+    <key>FLTDisableImpeller</key>
+    <true/>
+  ```
+
+The team continues to improve iOS support.
+If you encounter performance or fidelity issues
+with Impeller on iOS, file an issue in the [GitHub tracker][file-issue].
+Prefix the issue title with `[Impeller]` and
+include a small reproducible test case.
 
 [file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
 
 ### Android
 
-Android support is under active development,
-and isn't yet ready for preview. On the master channel,
-it might not work at the tip-of-tree.
-However, you can get an indication of the direction
-that support is headed by experimenting with it in the
-3.7 stable release. To enable Impeller on Android,
-either pass `--enable-impeller` to the `flutter run`
-command or add the following to your
-`AndroidManifest.xml` file under the `<application>` tag:
+Android development continues but it's not ready for preview.
+Impeller on Android might not work on the `master` channel.
+To see what direction Android support will take,
+experiment with Impeller in the 3.7 or later stable release.
 
-```
-  <meta-data
-    android:name="io.flutter.embedding.android.EnableImpeller"
-    android:value="true" />
-```
+To enable Impeller on Android, take one of the following actions:
 
-## Status
+* Pass `--enable-impeller` to the `flutter run` command.
 
-You can track the up-to-date status and future plans
-of Impeller by following along on the [GitHub project board][].
-However, here is a summary of recent progress.
+  ```terminal
+  $ flutter run --enable-impeller
+  ```
 
-[GitHub project board]: {{site.github}}/orgs/flutter/projects/21
+* Add the following tag to your `AndroidManifest.xml` file
+  under the `<application>` tag.
 
-The team is increasingly confident that Impeller on iOS
-will meet the rendering needs of nearly all
-existing Flutter apps. As of the 3.7 release,
-Impeller on iOS supports all but a few features.
-The remaining gaps (which are in progress) are as follows:
-
-* Setting `Paint.isAntiAlias` to false is not yet implemented
-  ([docs]({{site.api}}/flutter/dart-ui/Paint/isAntiAlias.html)).
-  ([#104721]({{site.github}}/flutter/flutter/issues/104721))
-  ([#109956]({{site.github}}/flutter/flutter/issues/109956))
-* Support for the focal argument to `Gradient.radial`
-  isn't yet implemented ([docs]({{site.api}}/flutter/dart-ui/Gradient/Gradient.radial.html)).
-
-Recently fixed issues that aren't yet on the stable channel:
-
-* Setting `Paint.invertColors` to true isn't yet implemented
-  ([docs]({{site.api}}/flutter/dart-ui/Paint/invertColors.html)).
-  ([#109739]({{site.github}}/flutter/flutter/issues/109739))
-  ([#113110]({{site.github}}/flutter/flutter/issues/113110))
-* Support for the `blendMode` argument to `Canvas.drawVertices`
-  and `Canvas.drawAtlas` isn't yet implemented
-  ([docs]({{site.api}}/flutter/dart-ui/Canvas/drawVertices.html)).
-  ([#108047]({{site.github}}/flutter/flutter/issues/108047))
-* Support for the `textureCoordinates` argument to the `Vertices`
-  constructor isn't yet implemented
-  [(docs]({{site.api}}/flutter/dart-ui/Vertices-class.html)).
-* Setting `Paint.shader` in text styles isn't yet implemented.
-  ([#120003]({{site.github}}/flutter/flutter/issues/120003))
-
-The team expects to close these gaps over the coming months.
-You might notice minor visual differences in rendering between
-Skia and Impeller.
-These minor differences might (or might not) be bugs,
-so don’t hesitate to [file an issue][file-issue]
-with a small reproducible test case, and include
-`[Impeller]` in the title.
-
-On Android, the team continues to make progress on a Vulkan
-backend for Impeller. Impeller isn't yet ready for preview on Android,
-but stay tuned for more progress in a future release.
+  ```xml
+    <meta-data
+      android:name="io.flutter.embedding.android.EnableImpeller"
+      android:value="true" />
+  ```
 
 ## Architecture
 
-For detailed information about Impeller's design
-and architecture, check out the [README.md][]
-file in the source tree.
+To learn more details about Impeller's design and architecture,
+check out the [README.md][] file in the source tree.
 
 [README.md]: {{site.github}}/flutter/engine/blob/main/impeller/README.md
 
-## Documentation, references, and additional reading
+## Additional Information
 
 * [Frequently asked questions]({{site.github}}/flutter/engine/blob/main/impeller/docs/faq.md)
 * [Impeller's coordinate system]({{site.github}}/flutter/engine/blob/main/impeller/docs/coordinate_system.md)

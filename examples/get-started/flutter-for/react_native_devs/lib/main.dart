@@ -33,9 +33,6 @@ void trueExample() {
   // #docregion True
   /// Dart
   var myNull;
-  if (myNull == null) {
-    print('use "== null" to check null');
-  }
   var zero = 0;
   if (zero == 0) {
     print('use "== 0" to check zero');

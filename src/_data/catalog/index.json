@@ -6,8 +6,9 @@
     "id": "basics"
   },
   {
-    "name": "Material Components",
-    "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://material.io/design/guidelines-overview\">Material Design guidelines</a>.",
+    "name": "Material 2 Components",
+    "description": "Widgets implementing the <a href=\"https://m2.material.io/design\">Material 2 Design guidelines</a>.",
+    "pagecontent": "Flutter will make Material 3 (M3), the latest version of Material Design, the default in late 2023. Check out our <a href=\"/ui/widgets/material/\">M3 widget catalog</a> now.",
     "subcategories": [
       {
         "name": "App structure and navigation"
@@ -26,6 +27,40 @@
       },
       {
         "name": "Layout"
+      }
+    ],
+    "id": "material2"
+  },  
+  {
+    "name": "Material Components",
+    "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://m3.material.io/get-started\">Material 3</a> design specification.<br /><br />Material 3 becomes the default Flutter interface in late 2023. To learn more about this transition, check out <a href=\"https://m3.material.io/develop/flutter\">Flutter support for Material 3</a>.",
+    "pagecontent": "To opt into Material 3, set the <a href=\"https://api.flutter.dev/flutter/material/ThemeData/useMaterial3.html\"><code>useMaterial3</code></a> flag to <code>true</code> in your theme.<br /><br />To catch these widgets in action, check out our live Material 3 <a href=\"https://flutter.github.io/samples/web/material_3_demo\" target=\"_blank\" rel=\"noopener noreferrer\">demo app</a>.<br /><br />You can still check out our legacy <a href=\"/ui/widgets/material2\">Material 2 widgets</a> over at their catalog page.",
+    "subcategories": [
+      {
+        "name": "Actions",
+        "color": "#D9E7CB"
+      },
+      {
+        "name": "Communication",
+        "color": "#F9DBDA"
+      },
+      {
+        "name": "Containment",
+        "color": "#F9DBDA"
+      },
+      {
+        "name": "Navigation",
+        "color": "#E5E4C2"
+
+      },
+      {
+        "name": "Selection",
+        "color": "#D9E7CB"
+
+      },
+      {
+        "name": "Text Inputs",
+        "color": "#E5E4C2"
       }
     ],
     "id": "material"

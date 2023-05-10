@@ -1511,9 +1511,9 @@ that can change overtime with the same children.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Row(
+  return const Row(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: const <Widget>[
+    children: <Widget>[
       Text('Row One'),
       Text('Row Two'),
       Text('Row Three'),
@@ -1527,9 +1527,9 @@ Widget build(BuildContext context) {
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Column(
+  return const Column(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: const <Widget>[
+    children: <Widget>[
       Text('Column One'),
       Text('Column Two'),
       Text('Column Three'),
@@ -1579,8 +1579,8 @@ This sample creates two icons that overlap each other.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Stack(
-    children: const <Widget>[
+  return const Stack(
+    children: <Widget>[
       Icon(
         Icons.add_box,
         size: 24.0,
