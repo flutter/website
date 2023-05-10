@@ -371,7 +371,6 @@
 
 - title: Deployment
   permalink: /deployment
-  permalink: /deployment
   children:
     - title: Obfuscating Dart code
       permalink: /deployment/obfuscate
