@@ -25,14 +25,10 @@ which tells you where to find the associated DartPad link.
 If you're new to Flutter, we recommend starting with
 one of the following codelabs:
 
-{% comment %}
-TODO(filiph): add the video for the new codelab when ready
-
 * [Building your first Flutter app][] (workshop)<br>
   An instructor-led version of our very popular
-  "Write your first Flutter app, part 1" codelab
+  "Write your first Flutter app" codelab
   (listed below).
-{% endcomment %}
 
 * [Your first Flutter app][]<br>
   Create a simple app that automatically generates cool-sounding names,
@@ -51,7 +47,7 @@ TODO(filiph): add the video for the new codelab when ready
   Android and iOS tooling, the completed app
   works on Android and iOS devices, as well.
 
-[Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
+[Building your first Flutter app]: {{site.youtube-site}}/watch?v=8sAyPDLorek
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 
