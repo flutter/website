@@ -122,7 +122,7 @@ To understand a name created by an obfuscated app,
 use the following steps to make it human readable:
 
 1. At app build time, save the name obfuscation map
-   using `--extra-gen-snapshot-options=--save-obfuscation-map=/<your-directory>`.
+   using `--extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>`.
    For example:
 
    ```terminal
