@@ -92,7 +92,7 @@ If you don't have a local HTTP server installed, you can use the
 Server started on port 8080
 ```
 
-#### Load it an a browser
+#### Load it in a browser
 
 As of {{page.last-update}}, only Chromium-based browsers can run Flutter web
 apps compiled to Wasm. Your Chromium-based browser should meet the following
