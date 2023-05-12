@@ -51,10 +51,10 @@ Where can you use Impeller?
 Flutter enables Impeller by default on iOS.
 
 * To _disable_ Impeller on iOS when debugging,
-  pass `--disable-impeller` to the `flutter run` command.
+  pass `--no-enable-impeller` to the `flutter run` command.
 
   ```terminal
-  $ flutter run --disable-impeller
+  $ flutter run --no-enable-impeller
   ```
 
 * To _disable_ Impeller on iOS when deploying your app,
@@ -62,8 +62,8 @@ Flutter enables Impeller by default on iOS.
   app's `Info.plist` file.
 
   ```xml
-    <key>FLTDisableImpeller</key>
-    <true/>
+    <key>FLTEnableImpeller</key>
+    <false />
   ```
 
 The team continues to improve iOS support.
