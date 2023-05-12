@@ -67,8 +67,8 @@ and look in the indicated directories.
     [JUnit][] tests can be found in `android/src/test/`.
 
   * <strong>iOS</strong> and <strong>macOS</strong>:
-    [XCTest][] tests can be found in  example/ios/RunnerTests/`
-    and `example/ios/RunnerTests/` respectively.
+    [XCTest][] tests can be found in `example/ios/RunnerTests/`
+    and `example/macos/RunnerTests/` respectively.
     These are in the example directory,
     not the top-level package directory,
     because they are run via the example app's project.
