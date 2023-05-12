@@ -73,7 +73,7 @@ To prevent breaking changes to an interface, use `with TextInputClient` rather t
 ## Timeline
 
 Landed in version: 3.8.0-1.0.pre<br>
-In stable release: TBD
+In stable release: 3.10.0
 
 ## References
 
