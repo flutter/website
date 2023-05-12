@@ -62,8 +62,8 @@ Flutter enables Impeller by default on iOS.
   app's `Info.plist` file.
 
   ```xml
-    <key>FLTDisableImpeller</key>
-    <true/>
+    <key>FLTEnableImpeller</key>
+    <false />
   ```
 
 The team continues to improve iOS support.
