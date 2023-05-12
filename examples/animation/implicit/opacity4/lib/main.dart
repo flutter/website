@@ -30,8 +30,8 @@ class _FadeInDemoState extends State<FadeInDemo> {
       AnimatedOpacity(
         duration: const Duration(seconds: 2),
         opacity: opacity,
-        child: Column(
-          children: const [
+        child: const Column(
+          children: [
             Text('Type: Owl'),
             Text('Age: 39'),
             Text('Employment: None'),

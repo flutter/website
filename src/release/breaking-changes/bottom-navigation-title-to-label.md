@@ -23,7 +23,8 @@ requires a `String` parameter on `BottomNavigationBarItem`s.
 The `BottomNavigationBarItem` class has a `title` parameter,
 which is a `Widget`. This made it impossible for the
 `BottomNavigationBar` to show `Tooltip` widgets,
-a change that was necessary to improve the accessibility experience. Now, instead of building the BottomNavigationBarItem.title 
+a change that was necessary to improve the accessibility experience. 
+Now, instead of building the `BottomNavigationBarItem.title` 
 widget, the BottomNavigationBar wraps the
 `BottomNavigationBarItem.label` in a Text widget and builds that.
 

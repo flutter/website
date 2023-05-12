@@ -11,12 +11,8 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
   setupClipboardJS();
 
-  // New (dash) tabs
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
-  // Old tabs
-  setupToolsTabs($('#tab-set-install'), 'tab-install-', 'io.flutter.tool-id');
-  setupToolsTabs($('#tab-set-os'), 'tab-os-', null, getOS());
 
   prettyPrint();
 });
@@ -95,18 +91,9 @@ function initFixedColumns() {
 
     // listen for scroll and execute once
     $(window).scroll(adjustFixedColumns);
+    $(window).resize(adjustFixedColumns);
     adjustFixedColumns();
   }
-}
-
-function getOS() {
-  var ua = navigator.userAgent;
-  if (ua.indexOf("Win") !== -1)
-    return "windows";
-  if (ua.indexOf("Mac") !== -1)
-    return "macos";
-  if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1)
-    return "linux";
 }
 
 function initVideoModal() {

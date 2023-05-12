@@ -63,7 +63,7 @@ Alternatively, you can do it manually using the following steps:
 
 ## Enabling Material Components
 
-If your app uses [Platform Views][], you may want to enable
+If your app uses [Platform Views][], you might want to enable
 Material Components by following the steps described in the
 [Getting Started guide for Android][].
 
@@ -105,7 +105,8 @@ download the .apk signed with the 'deployment key'. An 'upload key' is used to
 authenticate the .aab / .apk uploaded by developers onto the Play Store and is 
 re-signed with the deployment key once in the Play Store.
 * It's highly recommended to use the automatic cloud managed signing for
-  the deployment key. For more information, see the [official Play Store documentation][].
+  the deployment key. For more information,
+  check out the [official Play Store documentation][].
 
 ### Create an upload keystore
 
@@ -228,11 +229,11 @@ by editing the `[project]/android/app/build.gradle` file.
 Release builds of your app will now be signed automatically.
 
 {{site.alert.note}}
-  You may need to run `flutter clean` after changing the gradle file.
+  You might need to run `flutter clean` after changing the gradle file.
   This prevents cached builds from affecting the signing process.
 {{site.alert.end}}
 
-For more information on signing your app, see
+For more information on signing your app, check out
 [Sign your app][] on developer.android.com.
 
 ## Shrinking your code with R8
@@ -248,41 +249,59 @@ flag to `flutter build apk` or `flutter build appbundle`.
 
 ## Enabling multidex support
 
-When writing large apps or making use of large plugins, you may encounter
-Android's dex limit of 64k methods when targeting a minimum API of 20 or
-below. This may also be encountered when running debug versions of your app
-via `flutter run` that does not have shrinking enabled.
+When writing large apps or making use of large plugins,
+you might encounter Android's dex limit of 64k methods
+when targeting a minimum API of 20 or below.
+This might also be encountered when running debug versions of your app
+using `flutter run` that does not have shrinking enabled.
 
 Flutter tool supports easily enabling multidex. The simplest way is to
 opt into multidex support when prompted. The tool detects multidex build errors
-and will ask before making changes to your Android project. Opting in allows
-Flutter to automatically depend on `androidx.multidex:multidex` and use a
-generated `FlutterMultiDexApplication` as the project's application.
+and asks before making changes to your Android project.
+Opting in allows Flutter to automatically depend on
+`androidx.multidex:multidex` and use a generated
+`FlutterMultiDexApplication` as the project's application.
+
+When you try to build and run your app with the **Run** and **Debug**
+options in your IDE, your build might fail with the following message:
+
+<img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png' width="100%" alt='screenshot of build failure because Multidex support is required'>
+
+To enable multidex from the command line,
+run `flutter run --debug` and select an Android device:
+
+<img src='/assets/images/docs/deployment/android/cli-select-device.png' width="100%" alt='screenshot of selecting an Android device'>
+
+When prompted, enter `y`.
+The Flutter tool enables multidex support and retries the build:
+
+<img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png' width="100%" alt='screenshot of a successful build after adding multidex'>
 
 {{site.alert.note}}
-  Multidex support is natively included when targeting Android SDK 21 or later.
-  However, it isn't recommended to target API 21+ purely to resolve the multidex issue
+  Multidex support is natively included when targeting
+  Android SDK 21 or later. However, we don't recommend
+  targeting API 21+ purely to resolve the multidex issue
   as this might inadvertently exclude users running older devices.
 {{site.alert.end}}
 
 You might also choose to manually support multidex by following Android's guides
-and modifying your project's Android directory configuration. A
-[multidex keep file][multidex-keep] must be specified to include:
+and modifying your project's Android directory configuration.
+A [multidex keep file][multidex-keep] must be specified to include:
 
 ```
 io/flutter/embedding/engine/loader/FlutterLoader.class
 io/flutter/util/PathUtils.class
 ```
 Also, include any other classes used in app startup.
-See the official [Android documentation][multidex-docs] for more detailed
-guidance on adding multidex support manually.
+For more detailed guidance on adding multidex support manually,
+check out the official [Android documentation][multidex-docs].
 
 ## Reviewing the app manifest
 
 Review the default [App Manifest][manifest] file,
 `AndroidManifest.xml`,
-located in `[project]/android/app/src/main` and verify that the values
-are correct, especially the following:
+located in `[project]/android/app/src/main` and
+verify that the values are correct, especially the following:
 
 `application`
 : Edit the `android:label` in the
@@ -292,14 +311,15 @@ are correct, especially the following:
 `uses-permission`
 : Add the `android.permission.INTERNET`
   [permission][permissiontag] if your application code needs Internet
-  access. The standard template does not include this tag but allows
+  access. The standard template doesn't include this tag but allows
   Internet access during development to enable communication between
   Flutter tools and a running app.
 
 ## Reviewing the Gradle build configuration
 
-Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in 
-`[project]/android/app` to verify the values are correct:
+Review the default [Gradle build file][gradlebuild]
+(`build.gradle`, located in `[project]/android/app`),
+to verify that the values are correct.
 
 #### Under the `defaultConfig` block
 
@@ -321,13 +341,15 @@ Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in
   This version isn't shown to users.
 
 `versionName`
-: A string used as the version number shown to users. This setting
-  can be specified as a raw string or as a reference to a string resource.
+: A string used as the version number shown to users.
+  This setting can be specified as a raw string or as
+  a reference to a string resource.
 
 `buildToolsVersion`
-: If you're using Android plugin for Gradle 3.0.0 or higher, your project
-  automatically uses the default version of the build tools that the
-  plugin specifies. Alternatively, you can specify a version of the build tools.
+: If you're using Android plugin for Gradle 3.0.0 or higher,
+  your project automatically uses the default version of the
+  build tools that the plugin specifies. Alternatively,
+  you can specify a version of the build tools.
 
 #### Under the `android` block
   
@@ -335,7 +357,8 @@ Review the default [Gradle build file][gradlebuild] (`build.gradle`) located in
 : Specify the API level Gradle should use to compile your app.
   Defaults to `flutter.compileSdkVersion`.
 
-For more information, see the module-level build section in the [Gradle build file][gradlebuild].
+For more information, check out the module-level build
+section in the [Gradle build file][gradlebuild].
   
 ## Building the app for release
 
@@ -347,25 +370,8 @@ the Play Store.
 
 {{site.alert.note}}
   The Google Play Store prefers the app bundle format.
-  For more information, see [About Android App Bundles][bundle].
-{{site.alert.end}}
-
-{{site.alert.warning}}
-  Recently, the Flutter team has received [several reports][crash-issue]
-  from developers indicating they are experiencing app
-  crashes on certain devices on Android 6.0. If you are targeting
-  Android 6.0, use the following steps:
-
-  * If you build an App Bundle
-    Edit `android/gradle.properties` and add the flag:
-    `android.bundle.enableUncompressedNativeLibs=false`.
-
-  * If you build an APK
-    Make sure `android/app/src/AndroidManifest.xml`
-    doesn't set `android:extractNativeLibs=false`
-    in the `<application>` tag.
-
-  For more information, see the [public issue][crash-issue].
+  For more information, check out
+  [About Android App Bundles][bundle].
 {{site.alert.end}}
 
 ### Build an app bundle
@@ -454,7 +460,7 @@ From the command line:
 ## Publishing to the Google Play Store
 
 For detailed instructions on publishing your app to the Google Play Store,
-see the [Google Play launch][play] documentation.
+check out the [Google Play launch][play] documentation.
 
 ## Updating the app's version number
 
@@ -468,12 +474,12 @@ The version number is three numbers separated by dots,
 such as `1.0.0` in the example above, followed by an optional
 build number such as `1` in the example above, separated by a `+`.
 
-Both the version and the build number may be overridden in Flutter's
+Both the version and the build number can be overridden in Flutter's
 build by specifying `--build-name` and `--build-number`, respectively.
 
 In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For more information,
-see [Version your app][] in the Android documentation.
+check out [Version your app][] in the Android documentation.
 
 When you rebuild the app for Android, any updates in the version number
 from the pubspec file will update the `versionName` and `versionCode` 
@@ -490,7 +496,7 @@ The Google Play Store recommends that you deploy app bundles
 over APKs because they allow a more efficient delivery of the
 application to your users. However, if you’re distributing
 your application by means other than the Play Store,
-an APK may be your only option.
+an APK might be your only option.
 
 ### What is a fat APK?
 
@@ -563,7 +569,7 @@ The resulting app bundle or APK files are located in
 [obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
-[Platform Views]: {{site.url}}/development/platform-integration/android/platform-views
+[Platform Views]: {{site.url}}/platform-integration/android/platform-views
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
 [R8]: {{site.android-dev}}/studio/build/shrink-code

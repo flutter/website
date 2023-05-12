@@ -111,6 +111,48 @@ to view the release version of your app.
 
 ## Embedding a Flutter app into an HTML page
 
+### `hostElement`
+
+_Added in Flutter 3.10_<br>
+You can embed a Flutter web app into
+any HTML element of your web page, with `flutter.js` and the `hostElement`
+engine initialization parameter.
+
+To tell Flutter web in which element to render, use the `hostElement` parameter of the `initializeEngine`
+function:
+
+```html
+<html>
+  <head>
+    <!-- ... -->
+    <script src="flutter.js" defer></script>
+  </head>
+  <body>
+
+    <!-- Ensure your flutter target is present on the page... -->
+    <div id="flutter_host">Loading...</div>
+
+    <script>
+      window.addEventListener("load", function (ev) {
+        _flutter.loader.loadEntrypoint({
+          onEntrypointLoaded: async function(engineInitializer) {
+            let appRunner = await engineInitializer.initializeEngine({
+              // Pass a reference to "div#flutter_host" into the Flutter engine.
+              hostElement: document.querySelector("#flutter_host")
+            });
+            await appRunner.runApp();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+```
+
+To learn more, check out [Customizing web app initialization][customizing-web-init].
+
+### Iframe
+
 You can embed a Flutter web app,
 as you would embed other content,
 in an [`iframe`][] tag of an HTML file.
@@ -145,11 +187,12 @@ PWA support remains a work in progress,
 so please [give us feedback][] if you see something that doesn’t look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
-[Displaying images on the web]: {{site.url}}/development/platform-integration/web/web-images
+[Displaying images on the web]: {{site.url}}/platform-integration/web/web-images
 [Firebase Hosting]: {{site.firebase}}/docs/hosting
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting
 [`iframe`]: https://html.com/tags/iframe/
-[Web renderers]: {{site.url}}/development/platform-integration/web/renderers
+[Web renderers]: {{site.url}}/platform-integration/web/renderers
+[customizing-web-init]: {{site.url}}/platform-integration/web/initialization
 

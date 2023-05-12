@@ -143,7 +143,7 @@ your scene uses `saveLayer` by checking the
 `PerformanceOverlayLayer.checkerboardOffscreenLayers`
 switch in the [DevTools Performance view][].
 
-[DevTools timeline]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart
+[DevTools timeline]: {{site.url}}/tools/devtools/performance#timeline-events-chart
 
 #### Minimizing calls to saveLayer
 
@@ -333,10 +333,10 @@ section in the [Flutter architectural overview][].
 
 
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
-[how layout and constraints work]: {{site.url}}/development/ui/layout/constraints
+[how layout and constraints work]: {{site.url}}/ui/layout/constraints
 [layout and rendering]: {{site.url}}/resources/architectural-overview#layout-and-rendering
-[stack trace]: {{site.url}}/development/tools/devtools/cpu-profiler#flame-chart
-[Track layouts option]: {{site.url}}/development/tools/devtools/performance#track-layouts
+[stack trace]: {{site.url}}/tools/devtools/cpu-profiler#flame-chart
+[Track layouts option]: {{site.url}}/tools/devtools/performance#track-layouts
 
 ---
 
@@ -440,7 +440,7 @@ For more performance info, check out the following resources:
 
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
-[DevTools Performance view]: {{site.url}}/development/tools/devtools/performance
+[DevTools Performance view]: {{site.url}}/tools/devtools/performance
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html

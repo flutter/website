@@ -57,7 +57,7 @@ or run `flutter test --help` in your terminal.
   check out [Testing plugins][].
 {{site.alert.end}}
 
-[Plugins in Flutter tests]: {{site.url}}/development/packages-and-plugins/plugins-in-tests
+[Plugins in Flutter tests]: {{site.url}}/packages-and-plugins/plugins-in-tests
 [Testing plugins]: {{site.url}}/testing/testing-plugins
 
 ### Recipes

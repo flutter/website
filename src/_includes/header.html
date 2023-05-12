@@ -54,7 +54,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="dev-navbar-dropdown"
-               href="{{site.main-url}}/development"
+               href="{{site.main-url}}/"
                role="button" data-toggle="dropdown" 
                aria-haspopup="true" aria-expanded="false">
                Development
@@ -90,18 +90,18 @@
                Docs
             </a>
             <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
-              <a class="dropdown-item {% if route == '/whats-new' %} active{% endif %}"
-                 href="/whats-new">What's new</a>
+              <a class="dropdown-item {% if route == '/release/whats-new' %} active{% endif %}"
+                 href="/release/whats-new">What's new</a>
               <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
                  href="/get-started/editor">Editor support</a>
-              <a class="dropdown-item {% if route contains '/development/tools/hot-reload' %} active{% endif %}"
-                 href="/development/tools/hot-reload">Hot reload</a>
+              <a class="dropdown-item {% if route contains '/tools/hot-reload' %} active{% endif %}"
+                 href="/tools/hot-reload">Hot reload</a>
               <a class="dropdown-item {% if route contains '/perf/ui-performance' %} active{% endif %}"
                  href="/perf/ui-performance">Profiling</a>
               <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
                  href="/get-started/install">Install Flutter</a>
-              <a class="dropdown-item {% if route contains '/development/tools/devtools' %} active{% endif %}"
-                 href="/development/tools/devtools/overview">DevTools</a>
+              <a class="dropdown-item {% if route contains '/tools/devtools' %} active{% endif %}"
+                 href="/tools/devtools/overview">DevTools</a>
               <a class="dropdown-item {% if route contains '/cookbook' %} active{% endif %}"
                  href="/cookbook">Cookbook</a>
               <a class="dropdown-item {% if route contains '/reference/tutorials' %} active{% endif %}"
@@ -119,23 +119,29 @@
     </div>
     <div class="site-header__social navbar-nav flex-row">
       <a 
-        class="nav-item nav-link" 
+        class="nav-item nav-link nav-icon"
         href="{{site.social.twitter}}" 
         aria-label="Twitter">
         <i class="fab fa-twitter fa-lg"></i>
       </a>
       <a 
-        class="nav-item nav-link" 
+        class="nav-item nav-link nav-icon"
         href="{{site.social.youtube}}" 
         aria-label="YouTube">
         <i class="fab fa-youtube fa-lg"></i>
-    </a>
+      </a>
+      <a
+        class="nav-item nav-link nav-icon"
+        href="{{site.flutter-medium}}"
+        aria-label="Medium blog">
+        <i class="fab fa-medium fa-lg"></i>
+      </a>
       <a 
-        class="nav-item nav-link" 
+        class="nav-item nav-link nav-icon"
         href="{{site.repo.organization}}" 
         aria-label="GitHub">
         <i class="fab fa-github fa-lg"></i>
-    </a>
+      </a>
     </div>
     {% if page.show-nav-get-started-button -%}
       <a 
