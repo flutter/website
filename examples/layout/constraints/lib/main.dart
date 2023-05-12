@@ -1124,8 +1124,8 @@ class Example28 extends Example {
     return Scaffold(
       body: Container(
         color: blue,
-        child: Column(
-          children: const [
+        child: const Column(
+          children: [
             Text('Hello!'),
             Text('Goodbye!'),
           ],
@@ -1165,8 +1165,8 @@ class Example29 extends Example {
       body: SizedBox.expand(
         child: Container(
           color: blue,
-          child: Column(
-            children: const [
+          child: const Column(
+            children: [
               Text('Hello!'),
               Text('Goodbye!'),
             ],

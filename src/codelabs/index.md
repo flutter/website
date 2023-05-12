@@ -25,14 +25,10 @@ which tells you where to find the associated DartPad link.
 If you're new to Flutter, we recommend starting with
 one of the following codelabs:
 
-{% comment %}
-TODO(filiph): add the video for the new codelab when ready
-
 * [Building your first Flutter app][] (workshop)<br>
   An instructor-led version of our very popular
-  "Write your first Flutter app, part 1" codelab
+  "Write your first Flutter app" codelab
   (listed below).
-{% endcomment %}
 
 * [Your first Flutter app][]<br>
   Create a simple app that automatically generates cool-sounding names,
@@ -51,11 +47,16 @@ TODO(filiph): add the video for the new codelab when ready
   Android and iOS tooling, the completed app
   works on Android and iOS devices, as well.
 
-[Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
+[Building your first Flutter app]: {{site.youtube-site}}/watch?v=8sAyPDLorek
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 
 ## Next steps
+
+* [Records and Patterns in Dart 3][]<br> **NEW**
+  Discover Dart 3's new records and patterns features.
+  Learn how you can use them in a Flutter app to help you
+  write more readable and maintainable Dart code.
 
 * [Building scrolling experiences in Flutter][] (workshop)<br>
   Start with an app that performs simple, straightforward scrolling
@@ -72,6 +73,7 @@ TODO(filiph): add the video for the new codelab when ready
   [low-level state management][] classes provided
   by Flutter.
 
+[Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
 [Dart null safety in Action]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
 [inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
 [low-level state management]: {{site.url}}/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
@@ -133,6 +135,14 @@ like layout and animations:
   platform that it's running on, be that Android, iOS, 
   the web, Windows, macOS, or Linux.
 
+* [Building next generation UIs in Flutter][]<br> **NEW**
+  Learn how to build a Flutter app that uses the power of `flutter_animate`,
+  fragment shaders, and particle fields. You will craft a user interface that
+  evokes those science fiction movies and TV shows we all love
+  watching when we aren't coding.
+
+
+[Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
 [Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
@@ -238,15 +248,21 @@ Learn how to use Flutter with other technologies.
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
 
-* [Building a game with Flutter and Flame][]<br> **NEW**
+* [Building a game with Flutter and Flame][]<br> 
   Learn how to create a platform game (featuring
   Dash or Sparky), using the Flame package.
 
-* [Using FFI in a Flutter plugin][]<br> **NEW**
+* [Using FFI in a Flutter plugin][]<br> 
   Learn how to use Dart's FFI (foreign function interface)
   library, ffigen, allowing you to leverage
   existing native libraries that provide a
   C interface.
+
+* [Create haikus about Google products with the PaLM API and Flutter][]<br> **NEW**
+  Learn how to build an app that uses the PaLM API to 
+  generate haikus based on Google product names. The 
+  PaLM API gives you access to Google's 
+  state-of-the-art large language models. 
 
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
@@ -254,6 +270,7 @@ Learn how to use Flutter with other technologies.
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
 [Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
+[Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 
 ## Testing
 
