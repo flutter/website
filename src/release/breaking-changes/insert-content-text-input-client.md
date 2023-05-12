@@ -65,7 +65,7 @@ class MyCustomTextInputClient implements TextInputClient {
 ```
 
 As an alternative, you can use a similar implementation to the default `TextInputClient`.
-To learn how to do this, see the [insertContent implementation]({{site.master-api}}/flutter/services/TextInputClient/insertContent.html).
+To learn how to do this, see the [insertContent implementation]({{site.api}}/flutter/services/TextInputClient/insertContent.html).
 
 To prevent breaking changes to an interface, use `with TextInputClient` rather than 
 `implements TextInputClient`.
