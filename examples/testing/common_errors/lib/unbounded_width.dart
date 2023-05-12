@@ -11,8 +11,8 @@ class ProblemWidget extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Unbounded Width of the TextField'),
         ),
-        body: Row(
-          children: const [
+        body: const Row(
+          children: [
             TextField(),
           ],
         ),

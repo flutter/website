@@ -30,9 +30,9 @@ class SignatureState extends State<Signature> {
         });
       },
       onPanEnd: (details) => _points.add(null),
-      child: 
-      // #docregion CustomPaint
-      CustomPaint(
+      child:
+          // #docregion CustomPaint
+          CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
       ),

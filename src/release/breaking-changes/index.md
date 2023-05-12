@@ -30,15 +30,27 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Deprecated API removed after v3.7][]
-* [Removed `ignoringSemantics`][]
-* [The window singleton is deprecated][]
-* [Migration guide for `RouteInformation.location`][]
-* [At least one clipboard data variant must be provided][]
+* [Moved ReorderableListView's localized strings][]  from material to widgets localizations
+* [Removed `ignoringSemantics`][] properties
+* [Deprecated `RouteInformation.location`][] and its related APIs
 
-[Material localized Strings migration guide]: {{site.url}}/release/breaking-changes/material-localized-strings
-[Android Java Gradle migration guide]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
+[Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
+[Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
+[Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
+
+### Released in Flutter 3.10
+
+* [Deprecated API removed after v3.7][]
+* [Dart 3 changes in Flutter v3.10 and later][]
+* [Deprecated the window singleton][]
+* [Require one data variant for `ClipboardData` constructor][]
+* [Resolve the Android Java Gradle error][]
+
+[Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
+[Deprecated the window singleton]: {{site.url}}/release/breaking-changes/window-singleton
+[Resolve the Android Java Gradle error]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
+[Require one data variant for `ClipboardData` constructor]: {{site.url}}/release/breaking-changes/clipboard-data-required
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [The window singleton is deprecated]: {{site.url}}/release/breaking-changes/window-singleton
 [Migration guide for `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
@@ -48,18 +60,18 @@ release, and listed in alphabetical order:
 ### Released in Flutter 3.7
 
 * [Deprecated API removed after v3.3][]
+* [Replaced parameters for customizing context menus with a generic widget builder][]
 * [iOS FlutterViewController splashScreenView made nullable][]
 * [Migrate `of` to non-nullable return values, and add `maybeOf`][]
 * [Removed RouteSettings.copyWith][]
 * [ThemeData's toggleableActiveColor property has been deprecated][]
-* [A new way to customize context menus][]
 
+[Replaced parameters for customizing context menus with a generic widget builder]: {{site.url}}/release/breaking-changes/context-menus
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
 [iOS FlutterViewController splashScreenView made nullable]: {{site.url}}/release/breaking-changes/ios-flutterviewcontroller-splashscreenview-nullable
 [Migrate `of` to non-nullable return values, and add `maybeOf`]: {{site.url}}/release/breaking-changes/supplemental-maybeOf-migration
 [Removed RouteSettings.copyWith]: {{site.url}}/release/breaking-changes/routesettings-copywith-migration
 [ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
-[A new way to customize context menus]: {{site.url}}/release/breaking-changes/context-menus
 
 ### Released in Flutter 3.3
 

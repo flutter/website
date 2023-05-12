@@ -14,8 +14,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const
-    // #docregion Theme
-    CupertinoApp(
+        // #docregion Theme
+        CupertinoApp(
       theme: CupertinoThemeData(
         brightness: Brightness.dark,
       ),
@@ -40,14 +40,14 @@ class HomePage extends StatelessWidget {
         child:
             // #docregion StylingTextExample
             Text(
-              'Hello, world!',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: CupertinoColors.systemYellow,
-              ),
-            ),
-            // #enddocregion StylingTextExample
+          'Hello, world!',
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: CupertinoColors.systemYellow,
+          ),
+        ),
+        // #enddocregion StylingTextExample
       ),
     );
   }
