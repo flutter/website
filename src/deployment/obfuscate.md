@@ -129,9 +129,11 @@ use the following steps:
    $ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory> --extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>
    ```
 
-1.  To recover the name, use the generated obfuscation map.
-   The obfuscation map is a small JSON array where
-   each obfuscated name is preceded by its original name.
+1. To recover the name, use the generated obfuscation map.
+   The obfuscation map is a flat JSON array with pairs of
+   original names and obfuscated names. For example,
+   `["MaterialApp", "ex", "Scaffold", "ey"]`, where `ex`
+   is the obfuscated name of `MaterialApp`.
 
 ## Caveat
 
