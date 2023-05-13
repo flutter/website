@@ -112,7 +112,8 @@ When such a solution does not work
 because a third-party dependency requires the use of a specific type for a specific `zoneValues` key,
 all calls into the dependency can be wrapped in `Zone` calls that provide suitable values.
 
-It is strongly recommended that packages that use zones in this way migrate to more maintainable solutions.
+It is strongly recommended that packages that use zones in this way
+migrate to more maintainable solutions.
 
 
 ## Timeline
