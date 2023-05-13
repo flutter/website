@@ -118,8 +118,8 @@ use the following steps to make it human readable:
 
 ## Reading an obfuscated name
 
-To understand a name created by an obfuscated app,
-use the following steps to make it human readable:
+To make the name that an app obfuscated human readable,
+use the following steps:
 
 1. At app build time, save the name obfuscation map
    using `--extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>`.
