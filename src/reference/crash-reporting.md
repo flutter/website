@@ -38,9 +38,8 @@ usage statistics, run the following command:
 $ flutter --disable-telemetry
 ```
 
-If you opt out of analytics, an opt-out event will be sent,
-and then no further information will be stored or sent by that
-installation of Flutter. 
+If you opt out of analytics, Flutter sends an opt-out event.
+This Flutter installation neither sends nor stores any further information. 
 
 To opt into analytics, run the following command: 
 
