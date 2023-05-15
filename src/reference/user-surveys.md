@@ -28,9 +28,12 @@ check out our blogs on [Medium][].
 
 ## How can I disable it?
 
-You may mute survey announcements by clicking a button on the 
-message. Or you may choose to opt-out of analytics and crash 
-reporting, by following the steps described in the “Disabling 
-analytics reporting” section of the [Flutter crash reporting page]({{site.url}}/reference/crash-reporting).
+To mute survey announcements, you might do one of the following:
+
+1. Click the button on the message.
+2. Opt-out of analytics and crash reporting per the steps
+  given in
+  [Disabling 
+analytics reporting]({{site.url}}/reference/crash-reporting#disabling-analytics-reporting).
 
 [Medium]: https://medium.com/flutter/search?q=survey
