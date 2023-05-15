@@ -101,6 +101,10 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
         super.init()
     }
 
+    func createArgsCodec() -> FlutterMessageCodec & NSObjectProtocol {
+        return FlutterStandardMessageCodec.sharedInstance()
+    }
+    
     func create(
         withFrame frame: CGRect,
         viewIdentifier viewId: Int64,
