@@ -31,8 +31,8 @@ Additionally, you may review the recently reported data in the
 
 ## Disabling analytics reporting
 
-You can opt out of anonymous crash reporting and feature
-usage statistics from Flutter by running the following command:
+To opt out of anonymous crash reporting and feature
+usage statistics, run the following command:
 
 ```terminal
 $ flutter --disable-telemetry
