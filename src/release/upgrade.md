@@ -34,7 +34,16 @@ Flutter has three [release channels][]:
 {{site.alert.end}}
 
 We recommend using the **{{site.sdk.channel}}** channel
-unless you need a more recent release.
+for production app releases. 
+- Stable channel gets an update roughly once a quarter. 
+- We may release hotfixes for high severity, high impact 
+or security issues. 
+
+For a more up-to-date release, use the **beta** channel. 
+- Beta channel releases every month.
+- We accept cherrypick requests to fix high impact issues 
+on the beta channel. 
+- A stabilized beta becomes the next stable release.
 
 To view your current channel, use the following command:
 
