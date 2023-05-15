@@ -20,11 +20,11 @@ the survey  based on data stored in the
 
 ## How will my responses be used?
 
-Your responses submitted via survey will be used to improve 
-Flutter and Dart. This information will be stored independently 
-from the information sent to Google via analytics. You can see 
-how previous surveys were used to improve Flutter and Dart on 
-[Medium][]. 
+We use the responses you submit via survey to improve 
+Flutter and Dart. We store this information independent 
+of the information sent to Google via analytics.
+To see how we used prior surveys to improve Flutter and Dart,
+check out our blogs on [Medium][]. 
 
 ## How can I disable it?
 
