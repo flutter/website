@@ -208,6 +208,10 @@ For example, `FLNativeView.h`:
 
 @interface FLNativeView : NSObject <FlutterPlatformView>
 
+(FlutterMessageCodec<NSObject> *)createArgsCodec {
+  return [FlutterStandardMessageCodec sharedInstance];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
                viewIdentifier:(int64_t)viewId
                     arguments:(id _Nullable)args
