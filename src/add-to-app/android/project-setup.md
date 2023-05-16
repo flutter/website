@@ -40,6 +40,15 @@ android {
   the Flutter module still runs correctly.
 {{site.alert.end}}
 
+{{site.alert.warning}}
+  At least as of Flutter 3.10, note that if you wish to
+  upgrade the Android Gradle Plugin (AGP) version that
+  your module depends on to 8.0 or greater, you may need
+  to configure a `namespace` in all of your module's
+  `build.gradle` files in `.android`, `.android/app`, and
+  `.android/Flutter`.
+{{site.alert.end}}
+
 ## Using Android Studio
 
 The Android Studio IDE is a convenient way of integrating
