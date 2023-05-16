@@ -40,11 +40,17 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3.10
 
-* [Deprecated API removed after v3.7][]
 * [Dart 3 changes in Flutter v3.10 and later][]
+* [Deprecated API removed after v3.7][]
 * [Deprecated the window singleton][]
-* [Require one data variant for `ClipboardData` constructor][]
 * [Resolve the Android Java Gradle error][]
+* [Require one data variant for `ClipboardData` constructor][]
+* [Removed `ignoringSemantics`][]
+* [The window singleton is deprecated][]
+* [Migration guide for `RouteInformation.location`][]
+* [Migration guide for `describeEnum`][]
+* [At least one clipboard data variant must be provided][]
+* ["Zone mismatch" message][]
 
 [Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
@@ -56,6 +62,7 @@ release, and listed in alphabetical order:
 [Migration guide for `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Migration guide for `describeEnum`]: {{site.url}}/release/breaking-changes/describeEnum
 [At least one clipboard data variant must be provided]: {{site.url}}/release/breaking-changes/clipboard-data-required
+["Zone mismatch" message]: {{site.url}}/release/breaking-changes/zone-errors
 
 ### Released in Flutter 3.7
 
@@ -88,7 +95,6 @@ release, and listed in alphabetical order:
 * [Deprecated API removed after v2.10][]
 * [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
 * [Page transitions replaced by ZoomPageTransitionsBuilder][]
-
 
 [Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
 [Page transitions replaced by ZoomPageTransitionsBuilder]: {{site.url}}/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
