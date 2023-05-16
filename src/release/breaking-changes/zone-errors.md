@@ -56,7 +56,7 @@ the bindings are initialized (i.e. as the first statement in `void main() { }`).
 ```
 
 The warning can be made fatal by setting [`BindingBase.debugZoneErrorsAreFatal`] to true.
-This flag may be changed to default to true in a future version of Flutter.
+This flag might be changed to default to true in a future version of Flutter.
 
 
 ## Migration guide
@@ -125,17 +125,16 @@ In stable release: 3.10.0
 
 API documentation:
 
-* [`Zone`][]
-* [`BindingBase.debugZoneErrorsAreFatal`][]
+* [`Zone`]
+* [`BindingBase.debugZoneErrorsAreFatal`]
 
 Relevant issues:
 
-* [Issue 94123][]: Flutter framework does not warn when ensureInitialized is called in a different zone than runApp
+* [Issue 94123]: Flutter framework does not warn when ensureInitialized is called in a different zone than runApp
 
 Relevant PRs:
 
-* [PR 122836][https://github.com/flutter/flutter/pull/122836]: Assert that runApp is called in the same zone as binding.ensureInitialized
-https://github.com/flutter/flutter/issues/
+* [PR 122836]: Assert that runApp is called in the same zone as binding.ensureInitialized
 
 [`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
 [`BindingBase.debugZoneErrorsAreFatal`]: {{site.api}}/flutter/foundation/BindingBase/debugZoneErrorsAreFatal.html
