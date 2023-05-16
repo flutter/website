@@ -1,24 +1,27 @@
 ---
 title: "\"Zone mismatch\" message"
-description: When Flutter's bindings are initialized in a different zone than the Zone used for `runApp`, a warning is printed to the console.
+description: >
+  When Flutter's bindings are initialized in a different zone
+  than the Zone used for `runApp`, a warning is printed to the console.
 ---
 
 ## Summary
 
-Starting with Flutter 3.10, the framework detects mismatches when using Zones and reports them to the console in debug builds.
+Starting with Flutter 3.10, the framework detects mismatches
+when using Zones and reports them to the console in debug builds.
 
 ## Background
 
 Zones are a mechanism for managing callbacks in Dart.
 While primarily useful for overriding `print` and `Timer` logic in tests,
 and for catching errors in tests,
-they are sometimes used for scoping global variables to certain parts of an application.
+they are sometimes used for scoping global variables
+to certain parts of an application.
 
-Flutter requires
-(and has always required)
+Flutter requires (and has always required)
 that all framework code be run in the same zone.
-Notably,
-this means that calls to `WidgetsFlutterBinding.ensureInitialized()` should be run in the same zone
+Notably, this means that calls to
+`WidgetsFlutterBinding.ensureInitialized()` should be run in the same zone
 as calls to `runApp()`.
 
 Historically, Flutter has not detected such mismatches.
@@ -28,7 +31,8 @@ a callback for keyboard input might be invoked
 using a zone that does not have access to the `zoneValues` that it expects.
 In our experience,
 most if not all code that uses Zones
-in a way that does not guarantee that all parts of the Flutter framework are working in the same Zone
+in a way that does not guarantee that all parts of
+the Flutter framework are working in the same Zone
 has some latent bug.
 Often these bugs appear unrelated to the use of Zones.
 
@@ -55,13 +59,15 @@ the bindings are initialized (i.e. as the first statement in `void main() { }`).
 ═══════════════════════════════════════════════════════════════════════════════════
 ```
 
-The warning can be made fatal by setting [`BindingBase.debugZoneErrorsAreFatal`] to true.
-This flag might be changed to default to true in a future version of Flutter.
+The warning can be made fatal by
+setting [`BindingBase.debugZoneErrorsAreFatal`][] to `true`.
+This flag might be changed to default to `true` in a future version of Flutter.
 
 
 ## Migration guide
 
-The best way to silence this message is to remove use of Zones from within the application.
+The best way to silence this message is to
+remove use of Zones from within the application.
 Zones can be very hard to debug,
 because they are essentially global variables,
 and break encapsulation.
@@ -72,15 +78,18 @@ If removing zones is not an option
 that relies on zones for its configuration),
 then the various calls into the Flutter framework
 should be moved to all be in the same zone.
-Typically, this means moving the call to `WidgetsFlutterBinding.ensureInitialized()`
-to the same closure as the call to `runApp()`.
+Typically, this means moving the call to
+`WidgetsFlutterBinding.ensureInitialized()` to the
+same closure as the call to `runApp()`.
 
 This can be awkward when the zone in which `runApp` is run
 is being initialized with `zoneValues` obtained from a plugin
-(which requires `WidgetsFlutterBinding.ensureInitialized()` to have been called).
+(which requires `WidgetsFlutterBinding.ensureInitialized()`
+to have been called).
 
-One option in this kind of scenario is to place a mutable object in the `zoneValues`,
-and update that object with the value once the value is available.
+One option in this kind of scenario is to
+place a mutable object in the `zoneValues`, and
+update that object with the value once the value is available.
 
 ```dart
 import 'dart:async';
@@ -106,11 +115,14 @@ void main() {
 }
 ```
 
-In code that needs to use `myKey`, it can be obtained indirectly using `Zone.current['myKey'].value`.
+In code that needs to use `myKey`, 
+it can be obtained indirectly using `Zone.current['myKey'].value`.
 
 When such a solution does not work
-because a third-party dependency requires the use of a specific type for a specific `zoneValues` key,
-all calls into the dependency can be wrapped in `Zone` calls that provide suitable values.
+because a third-party dependency requires the use
+of a specific type for a specific `zoneValues` key,
+all calls into the dependency can be
+wrapped in `Zone` calls that provide suitable values.
 
 It is strongly recommended that packages that use zones in this way
 migrate to more maintainable solutions.
@@ -125,16 +137,18 @@ In stable release: 3.10.0
 
 API documentation:
 
-* [`Zone`]
-* [`BindingBase.debugZoneErrorsAreFatal`]
+* [`Zone`][]
+* [`BindingBase.debugZoneErrorsAreFatal`][]
 
 Relevant issues:
 
-* [Issue 94123]: Flutter framework does not warn when ensureInitialized is called in a different zone than runApp
+* [Issue 94123][]: Flutter framework does not warn when ensureInitialized
+  is called in a different zone than runApp
 
 Relevant PRs:
 
-* [PR 122836]: Assert that runApp is called in the same zone as binding.ensureInitialized
+* [PR 122836][]: Assert that runApp is called
+  in the same zone as binding.ensureInitialized
 
 [`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html
 [`BindingBase.debugZoneErrorsAreFatal`]: {{site.api}}/flutter/foundation/BindingBase/debugZoneErrorsAreFatal.html
