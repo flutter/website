@@ -1,5 +1,5 @@
 ---
-title: "Zone mismatch" message
+title: "\"Zone mismatch\" message"
 description: When Flutter's bindings are initialized in a different zone than the Zone used for `runApp`, a warning is printed to the console.
 ---
 
