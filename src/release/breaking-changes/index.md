@@ -42,6 +42,7 @@ release, and listed in alphabetical order:
 
 * [Deprecated API removed after v3.7][]
 * [Dart 3 changes in Flutter v3.10 and later][]
+* [Insert content text input client][]
 * [Deprecated the window singleton][]
 * [Require one data variant for `ClipboardData` constructor][]
 * [Resolve the Android Java Gradle error][]
@@ -54,8 +55,7 @@ release, and listed in alphabetical order:
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [The window singleton is deprecated]: {{site.url}}/release/breaking-changes/window-singleton
 [Migration guide for `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
-[Migration guide for `describeEnum`]: {{site.url}}/release/breaking-changes/describeEnum
-[At least one clipboard data variant must be provided]: {{site.url}}/release/breaking-changes/clipboard-data-required
+[Insert Content Text Input Client]: {{site.url}}/release/breaking-changes/insert-content-text-input-client
 
 ### Released in Flutter 3.7
 
