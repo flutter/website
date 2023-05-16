@@ -4,7 +4,7 @@ short-title: Upgrading
 description: How to upgrade Flutter.
 ---
 
-No matter which one of the Flutter [release channels][]
+No matter which one of the Flutter release channels
 you follow, you can use the `flutter` command to upgrade your
 Flutter SDK or the packages that your app depends on.
 
