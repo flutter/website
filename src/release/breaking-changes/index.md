@@ -46,11 +46,6 @@ release, and listed in alphabetical order:
 * [Deprecated the window singleton][]
 * [Resolve the Android Java Gradle error][]
 * [Require one data variant for `ClipboardData` constructor][]
-* [Removed `ignoringSemantics`][]
-* [The window singleton is deprecated][]
-* [Migration guide for `RouteInformation.location`][]
-* [Migration guide for `describeEnum`][]
-* [At least one clipboard data variant must be provided][]
 * ["Zone mismatch" message][]
 
 [Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
@@ -59,11 +54,6 @@ release, and listed in alphabetical order:
 [Deprecated the window singleton]: {{site.url}}/release/breaking-changes/window-singleton
 [Resolve the Android Java Gradle error]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
 [Require one data variant for `ClipboardData` constructor]: {{site.url}}/release/breaking-changes/clipboard-data-required
-[Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
-[The window singleton is deprecated]: {{site.url}}/release/breaking-changes/window-singleton
-[Migration guide for `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
-[Migration guide for `describeEnum`]: {{site.url}}/release/breaking-changes/describeEnum
-[At least one clipboard data variant must be provided]: {{site.url}}/release/breaking-changes/clipboard-data-required
 ["Zone mismatch" message]: {{site.url}}/release/breaking-changes/zone-errors
 
 ### Released in Flutter 3.7
