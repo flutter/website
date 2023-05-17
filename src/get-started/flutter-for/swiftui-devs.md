@@ -361,9 +361,9 @@ HStack {
 
 <?code-excerpt "lib/row.dart (row)"?>
 ```dart
-Row(
+    Row(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: const [
+  children: [
     Icon(CupertinoIcons.globe),
     Text('Hello, world!'),
   ],
@@ -407,9 +407,9 @@ except it swaps [`Column`][] for `Row`:
 
 <?code-excerpt "lib/column.dart (column)"?>
 ```dart
-Column(
+    Column(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: const [
+  children: [
     Icon(CupertinoIcons.globe),
     Text('Hello, world!'),
   ],
@@ -773,7 +773,7 @@ This animates the `Transform.rotate` widget.
 
 <?code-excerpt "lib/simple_animation.dart (AnimatedButton)"?>
 ```dart
-AnimatedRotation(
+    AnimatedRotation(
   duration: const Duration(seconds: 1),
   turns: turns,
   curve: Curves.easeIn,
@@ -826,7 +826,7 @@ with two classes that help you draw:
 
     <?code-excerpt "lib/canvas.dart (CustomPaint)"?>
     ```dart
-    CustomPaint(
+        CustomPaint(
       painter: SignaturePainter(_points),
       size: Size.infinite,
     ),
@@ -965,7 +965,7 @@ call your navigation routes using their names.
 
     <?code-excerpt "lib/navigation.dart (ListView)"?>
     ```dart
-    ListView.builder(
+        ListView.builder(
       itemCount: mockPersons.length,
       itemBuilder: (context, index) {
         final person = mockPersons.elementAt(index);
@@ -1102,15 +1102,15 @@ In **Flutter**, use the [`url_launcher`][] plugin.
 
 <?code-excerpt "lib/openapp.dart (OpenAppExample)"?>
 ```dart
- CupertinoButton(
-   onPressed: () async {
-     await launchUrl(
-       Uri.parse('https://google.com'),
-     );
-   },
-   child: const Text(
-     'Open website',
-   ),
+    CupertinoButton(
+  onPressed: () async {
+    await launchUrl(
+      Uri.parse('https://google.com'),
+    );
+  },
+  child: const Text(
+    'Open website',
+  ),
 ),
 ```
 
@@ -1143,7 +1143,7 @@ of the `App` class:
 
 <?code-excerpt "lib/cupertino_themes.dart (Theme)"?>
 ```dart
-CupertinoApp(
+    CupertinoApp(
   theme: CupertinoThemeData(
     brightness: Brightness.dark,
   ),
@@ -1180,7 +1180,7 @@ of the `style` parameter of the `Text` widget.
 
 <?code-excerpt "lib/cupertino_themes.dart (StylingTextExample)"?>
 ```dart
-Text(
+    Text(
   'Hello, world!',
   style: TextStyle(
     fontSize: 30,
@@ -1290,7 +1290,7 @@ following example:
 
 <?code-excerpt "lib/stylingbutton.dart (CustomFont)"?>
 ```dart
-Text(
+        Text(
   'Cupertino',
   style: TextStyle(
     fontSize: 40,

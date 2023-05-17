@@ -100,15 +100,15 @@ To create a fade-in effect, you can animate the `opacity` property using the
              style: TextStyle(color: Colors.blueAccent),
            ),
            onPressed: () => {}),
--      Column(
--        children: const [
+-      const Column(
+-        children: [
 -          Text('Type: Owl'),
 -          Text('Age: 39'),
 -          Text('Employment: None'),
 -        ],
 +      AnimatedOpacity(
-+        child: Column(
-+          children: const [
++        child: const Column(
++          children: [
 +            Text('Type: Owl'),
 +            Text('Age: 39'),
 +            Text('Employment: None'),
@@ -157,8 +157,8 @@ the starting value for `opacity` to zero:
        AnimatedOpacity(
 +        duration: const Duration(seconds: 3),
 +        opacity: opacity,
-         child: Column(
-           children: const [
+         child: const Column(
+           children: [
              Text('Type: Owl'),
 ```
 
@@ -179,8 +179,8 @@ you can start with 2 seconds:
 -        duration: const Duration(seconds: 3),
 +        duration: const Duration(seconds: 2),
          opacity: opacity,
-         child: Column(
-           children: const [
+         child: const Column(
+           children: [
 ```
 
 #### 4. Set up a trigger for the animation, and choose an end value

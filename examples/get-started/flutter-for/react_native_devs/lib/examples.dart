@@ -105,9 +105,9 @@ class TextStyleExample extends StatelessWidget {
       fontWeight: FontWeight.w600,
     );
 
-    return Center(
+    return const Center(
       child: Column(
-        children: const <Widget>[
+        children: <Widget>[
           Text('Sample text', style: textStyle),
           Padding(
             padding: EdgeInsets.all(20.0),
@@ -292,10 +292,10 @@ class GestureDetectorExample extends StatelessWidget {
     return GestureDetector(
       child: Scaffold(
         appBar: AppBar(title: const Text('Gestures')),
-        body: Center(
+        body: const Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Text('Tap, Long Press, Swipe Horizontally or Vertically'),
           ],
         )),

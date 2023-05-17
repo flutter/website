@@ -15,9 +15,9 @@ class ProblemWidget extends StatelessWidget {
           );
         });
 
-    return Center(
+    return const Center(
       child: Column(
-        children: const <Widget>[
+        children: <Widget>[
           Text('Show Material Dialog'),
         ],
       ),

@@ -34,9 +34,9 @@ class SolutionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // #docregion Fix
-    return Row(
+    return const Row(
       children: [
-        const Icon(Icons.message),
+        Icon(Icons.message),
         Expanded(
           child: Column(
               // code omitted
