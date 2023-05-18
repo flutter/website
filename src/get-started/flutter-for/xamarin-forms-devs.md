@@ -2576,7 +2576,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Material Design]: {{site.material}}/styles
 [Material Design guidelines]: {{site.material}}/styles
 [`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
-[optimized for all platforms]: {{site.material}}/develop
+[optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [platform channels]: {{site.url}}/platform-integration/platform-channels
 [plugins]: {{site.url}}/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub}}
