@@ -17,7 +17,6 @@ Learn more about the Flutter framework from the following pages:
 ## Apply your existing knowledge
 
 * [Flutter for Android developers][]
-* [From Java to Dart][] codelab
 * [Flutter for SwiftUI developers][]
 * [Flutter for UIKit developers][]
 * [Flutter for React Native developers][]
@@ -50,7 +49,6 @@ Happy Fluttering!
 [Flutter samples]: https://flutter.github.io/samples
 [Flutter for web developers]: {{site.url}}/get-started/flutter-for/web-devs
 [Flutter for Xamarin.Forms developers]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
-[From Java to Dart]: {{site.codelabs}}/codelabs/from-java-to-dart
 [Introduction to widgets]: {{site.url}}/ui/widgets-intro
 [mailing list]: mailto:{{site.email}}
 [Udacity online Flutter training]: https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905
