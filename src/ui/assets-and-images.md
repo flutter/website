@@ -184,8 +184,8 @@ if width and height are not specified.
 #### Bundling of resolution-aware image assets {#resolution-aware-bundling}
 
 Only the main asset (or its parent directory) needs
-to specified in `pubspec.yaml`, the variants will be bundled
-automatically. Each entry in the asset section of the `pubspec.yaml`
+to specified in the assets section of `pubspec.yaml`; the
+variants will be bundled automatically. Each entry
 should correspond to a real file, with the exception of
 the main asset entry. If the main asset entry doesn't correspond
 to a real file, then the asset with the lowest resolution
