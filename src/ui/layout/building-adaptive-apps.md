@@ -1180,8 +1180,9 @@ and results in improved productivity with better outcomes.
 
 Here are some resources to get you started: 
 
-* [Material guidelines on responsive UI layout][]
+* [Material guidelines on applying layout][]
 * [Material design for large screens][]
+* [Material guidelines on canonical layouts][]
 * [Build high quality apps (Android)][]
 * [UI design do's and don'ts (Apple)][]
 * [Human interface guidelines (Apple)][]
@@ -1190,9 +1191,10 @@ Here are some resources to get you started:
 
 
 [Build high quality apps (Android)]: {{site.android-dev}}/quality
+[Material guidelines on applying layout]: {{site.material}}/foundations/layout/applying-layout/window-size-classes
+[Material guidelines on canonical layouts]: {{site.material}}/foundations/layout/canonical-layouts/overview
 [Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/
 [Material design for large screens]: {{site.material2}}/blog/material-design-for-large-screens
-[Machine sizes and breakpoints (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design
-[Material guidelines on responsive UI layout]: {{site.material2}}/archive/guidelines/layout/responsive-ui.html
+[Machine sizes and breakpoints (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-desig
 [Responsive design techniques (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/responsive-design
 [UI design do's and don'ts (Apple)]: {{site.apple-dev}}/design/tips/
