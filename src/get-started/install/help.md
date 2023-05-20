@@ -183,7 +183,8 @@ channels:
 *   [/r/flutterhelp](https://www.reddit.com/r/flutterhelp/) on Reddit
 *   [/r/flutterdev](https://discord.gg/rflutterdev) on Discord. There’s an
     `install-and-setup` channel on this server. 
-*   [StackOverflow](https://stackoverflow.com/search?q=%5Bflutter%5D+install)
+*   [StackOverflow](https://stackoverflow.com/). Search answers with keywords 
+such as "[flutter] install" or post a new question.
 
 To be respectful to everyone’s time, try to search the archive for a similar
 issue first before you post a new one. 
