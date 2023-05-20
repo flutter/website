@@ -3,7 +3,7 @@ title: Install help
 description: This page describes some common installation issues new Flutter users have run into and offers suggestions to resolve them.
 ---
 
-This page describes some common installation issues new Flutter users have run into and offers suggestions to resolve them. Included at the bottom of the page is a list of [community support channels](/#community support channels) you can reach out to if you don’t find answers from this page. <!-- FIXME -->
+This page describes some common installation issues new Flutter users have run into and offers suggestions to resolve them. Included at the bottom of the page is a list of [community support channels][] you can reach out to if you don’t find answers from this page.
 
 If you’d like to add a topic to this page, please file an issue or a pull request against this page. 
 
@@ -116,8 +116,7 @@ The issue is related to networking. Here are a few things you can try to trouble
 *   Restart your devices, including your computer and networking equipment.
 *   Use a VPN. A VPN can help to bypass any restrictions that may be preventing you from connecting to the network.
 *   If you have tried all of these steps and you are still getting the error, print out verbose logs with the `flutter doctor -v` command and ask for help in one of the 
-[community support channels](/#community-support-channels). 
-<!-- FIXME -->
+[community support channels][].
 
 
 ## Community support
@@ -129,3 +128,6 @@ The Flutter community is helpful and welcoming. If none of the above solves your
 *   [StackOverflow](https://stackoverflow.com/search?q=%5Bflutter%5D+install)
 
 To be respectful to everyone’s time, try to search the archive for a similar issue first before you post a new one. 
+
+
+[community support channels]: #community-support
