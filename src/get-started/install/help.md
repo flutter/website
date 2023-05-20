@@ -80,16 +80,10 @@ If you do need another version of Java, try the workaround described in [this Gi
 The easiest way you get cmdline-tools is through the SDK Manager in Android Studio. To open the SDK Manager from Android Studio, click **Tools > SDK Manager** from the menu bar. 
 
 
-
 *   Select the latest Android SDK (or a specific version your app requires), Android SDK Command-line Tools, and Android SDK Build-Tools. 
 *   Click the **Apply** button to have the selected artifacts installed.
 
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>  GDC alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>> </span></p>
-
-<!-- FIXME -->
-![alt_text](images/image1.png "image_tooltip")
+![Android Studio SDK Manager](/assets/images/docs/get-started/install_android_tools.png)
 
 
 If you're not using Android Studio, you can download tools using the [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager) command-line tool.
