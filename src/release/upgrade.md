@@ -48,7 +48,8 @@ The team updates this channel about every three months.
 The channel may receive occasional hot fixes
 for high-severity or high-impact issues.
 
-The Flutter team's plugins and packages are continually tested against the latest **stable** release.
+The continuous integration for the Flutter team's plugins and packages
+includes testing against the latest **stable** release.
 
 The latest documentation for the **stable** branch is at: <https://api.flutter.dev>
 
@@ -70,7 +71,7 @@ it is updated to the latest **beta** release.
 ### Other channels
 
 We currently have one other channel, **master**.
-This is the channel used by people [contributing to Flutter][].
+People who [contribute to Flutter][] use this channel.
 
 This channel is not as thoroughly tested as the **beta** and **stable** channels.
 
@@ -119,12 +120,14 @@ $ flutter pub upgrade
 
 To update to the _latest possible version_ of
 all the dependencies listed in the `pubspec.yaml` file,
-and automatically update the constraints in that file,
-use the `upgrade` command with `--major-versions`:
+use the `upgrade --major-versions` command:
 
 ```terminal
 $ flutter pub upgrade --major-versions
 ```
+
+This also automatically update the constraints
+in the `pubspec.yaml` file.
 
 To identify out-of-date package dependencies and get advice
 on how to update them, use the `outdated` command. For details, see
@@ -138,5 +141,5 @@ $ flutter pub outdated
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
 [test registry]: https://github.com/flutter/tests
-[contributing to Flutter]: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+[contribute to Flutter]: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
 [migration guides]: {{site.url}}/release/breaking-changes
