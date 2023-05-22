@@ -6,10 +6,8 @@ description: This page describes some common installation issues new Flutter use
 This page describes some common installation issues new Flutter users have run
 into and offers suggestions to resolve them. Included at the bottom of the page
 is a list of [community support channels][] you can reach out to if you don’t
-find answers from this page.
-
-If you’d like to add a topic to this page, please file an issue or a pull
-request against this page. 
+find answers from this page. To add a topic to this page or make a correct, you
+may file an issue or a pull request using the buttons at the top of the doc.
 
 ## Get the Flutter SDK
 
@@ -31,20 +29,17 @@ You might have missed steps to add Flutter to the PATH environment variable. On
 Windows, you can follow the process demonstrated in [this
 video](https://youtu.be/0SRvmcsRu2w?t=137). 
 
-<!-- TODO: Embed YouTube video  -->
+If you’ve already [set up VS Code][set up VS Code] for Flutter development, you
+can use the Flutter extension’s “Locate SDK” prompt to identify the location of
+your `flutter` folder.
 
-If you’ve already [set up VS Code](https://docs.flutter.dev/get-started/editor)
-for Flutter development, you can use the Flutter extension’s “Locate SDK” prompt
-to identify the location of your `flutter` folder.
-
-See also: [Configuring PATH and Environment Variables - Dart
-Code](https://dartcode.org/docs/configuring-path-and-environment-variables/)
+See also: [Configuring PATH and Environment Variables - Dart Code][config path]
 
 
 ### Flutter in special folders
 
 
-__What does this issue look like? __
+__What does this issue look like?__
 
 When you try to run your Flutter project, you get an error message like this: 
 
@@ -84,22 +79,17 @@ If you don’t need multiple versions of Java, uninstall existing JDKs from your
 computer. Flutter will automatically use the JDK included in Android Studio. 
 
 If you do need another version of Java, try the workaround described in [this
-Github
-issue](https://github.com/flutter/flutter/issues/106416#issuecomment-1522198064)
-until a long-term solution is implemented. 
+Github issue][java binary path] until a long-term solution is implemented. 
 
 
-__See also__
-
-*   [flutter doctor --android-licenses not working due to
-    java.lang.UnsupportedClassVersionError - Stack
-    Overflow](https://stackoverflow.com/questions/75328050/)
+See also: [flutter doctor --android-licenses not working due to
+    java.lang.UnsupportedClassVersionError - Stack Overflow][so java version]
 
 
 ### `cmdline-tools` component is missing
 
 
-__What does this issue look like? __
+__What does this issue look like?__
 
 `flutter doctor` complains about “Android toolchain” and specifically missing
 the cmdline-tools component. 
@@ -127,8 +117,7 @@ Manager](/assets/images/docs/get-started/install_android_tools.png)
 
 
 If you're not using Android Studio, you can download tools using the
-[sdkmanager](https://developer.android.com/studio/command-line/sdkmanager)
-command-line tool.
+[sdkmanager][sdkmanager] command-line tool.
 
 
 ## Other problems
@@ -137,7 +126,7 @@ command-line tool.
 ### Exit code 69
 
 
-__What does this issue look like? __
+__What does this issue look like?__
 
 After running a `flutter` command, you get an error with “exit code: 69” as
 shown in the example below:
@@ -191,3 +180,8 @@ issue first before you post a new one.
 
 
 [community support channels]: #community-support
+[java binary path]: https://github.com/flutter/flutter/issues/106416#issuecomment-1522198064
+[so java version]: https://stackoverflow.com/questions/75328050/
+[set up VS Code]: https://docs.flutter.dev/get-started/editor
+[config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
+[sdkmanager]: https://developer.android.com/studio/command-line/sdkmanager
