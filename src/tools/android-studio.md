@@ -34,8 +34,8 @@ You can create a new project in one of several ways.
 
 ### Creating a new project
 
-The steps to create a new Flutter project from the Flutter starter app template are 
-slightly different for Android Studio and IntelliJ.
+Creating a new Flutter project from the Flutter starter app template
+differs between Android Studio and IntelliJ.
 
 **In Android Studio**
  1. In the IDE, click **New Flutter Project** from the **Welcome**
