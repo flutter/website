@@ -77,11 +77,6 @@ Before you can use Flutter, you must agree to the
 licenses of the Android SDK platform. This step should be done after
 you have installed the tools listed above.
 
- 1. Make sure that you have a version of Java 11 installed and that your 
-    `JAVA_HOME` environment variable is set to the JDK's folder.
-    
-    Android Studio versions 2.2 and higher come with a JDK, so this should
-    already be done.
  1. Open an elevated console window and run the following command to begin
     signing licenses.
     ```terminal
