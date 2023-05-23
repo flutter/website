@@ -325,7 +325,7 @@
       { "source": "/go/icu-message-parser", "destination": "https://docs.google.com/document/d/1wj5rBbuz1bXM1lvt0s0d35F5JRtIPmYUs1UDk1G3HLc/edit?usp=sharing", "type": 301 },
       { "source": "/go/idle-gc-metrics", "destination": "https://docs.google.com/document/d/1QjLTDr2cTsmS3DGIWdw9WSgqBMKJkFXD7Q8acziGIIA/edit?usp=sharing", "type": 301 },
       { "source": "/go/image-decoding-registry", "destination": "https://docs.google.com/document/d/167qWrlaSAmJm5muqQ-iiJKZy6Q7ZlugIeXmraXava5Y/edit?resourcekey=0-mVrr_zBiSI2Qmd6vqae7Bw", "type": 301 },
-      { "source": "/go/impeller-dart", "destination": "https://docs.google.com/document/d/1Sh1BAC5c_kkuMVreo7ymBzPoMzb7lamZRPsI7GBXv5M/edit?usp=sharing", "type": 301 },
+      { "source": "/go/impeller-dart", "destination": "https://docs.google.com/document/d/1Sh1BAC5c_kkuMVreo7ymBzPoMzb7lamZRPsI7GBXv5M/edit?resourcekey=0-5w8u2V-LS41tCHeoE8bDTQ", "type": 301 },
       { "source": "/go/impeller-geometry", "destination": "https://docs.google.com/document/d/1t-dzzi04nCdkIReoJp8ZyGNskqIip1TG3WhGEz7Osd8/edit?usp=sharing", "type": 301 },
       { "source": "/go/infinite-scroll", "destination": "https://docs.google.com/document/d/1TV2oF2iLIZtGd48336korxMTQrGizDAASAeZAeteMSc/edit?usp=sharing", "type": 301 },
       { "source": "/go/inheritedwidget-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/inherited_widget", "type": 301 },
