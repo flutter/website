@@ -1,1 +1,14 @@
-* @sfshaza2 @khanhnwin @domesticmouse @johnpryan @atsansone @parlough
+# Default Codeowners
+*  @atsansone @parlough @sfshaza2
+
+# Covers all web content
+/src/       @sfshaza2 @atsansone @parlough
+
+# Covers website tooling
+/tool/      @atsansone @parlough
+
+# Covers examples in files
+/examples/  @domesticmouse @johnpryan @khanhnwin @parlough
+
+# Covers all configuration files for the website
+/*          @atsansone @parlough

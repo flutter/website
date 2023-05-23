@@ -138,6 +138,7 @@ The hosted file should have the following content:
 ```json
 {
   "applinks": {
+      "apps": [],
       "details": [
       {
         "appID": "S8QB4VV633.com.example.deeplinkCookbook",
