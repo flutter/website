@@ -110,7 +110,7 @@ Flutter/Wasm content.
     - `javascript.options.wasm_function_references`
     - `javascript.options.wasm_gc`
 
-If your configured browser meets the stated requirements, open `localhost:8080`
+If your configured browser meets the requirements stated earlier, open `localhost:8080`
 in the browser to view the app.
 
 If the application doesn't load:
