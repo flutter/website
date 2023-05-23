@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description:
   Current status of Flutter's experimental support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: May 10, 2023
+last-update: May 23, 2023
 ---
 
 The Flutter and Dart teams are excited to add
@@ -16,8 +16,7 @@ remains ongoing.
 You can preview Wasm and WebAssembly garbage collection (WasmGC) in the
 [`master` channel](https://github.com/flutter/flutter/wiki/flutter-build-release-channels#master).
 As Flutter provides these features as previews, ongoing development may result
-in frequent changes. To run WasmGC code, you need special flags. For the latest
-updates, revisit this page.
+in frequent changes. Revisit this page for the latest updates.
 
 **_Last updated {{page.last-update}}_**
 
@@ -94,18 +93,25 @@ Server started on port 8080
 
 #### Load it in a browser
 
-As of {{page.last-update}}, only Chromium-based browsers can run Flutter web
-apps compiled to Wasm. Your Chromium-based browser should meet the following
-requirements:
+As of {{page.last-update}}, there are two known broswer types that should run
+Flutter/Wasm content.
 
-- Version 112 or greater.
-- [Chrome flags](https://developer.chrome.com/docs/web-platform/chrome-flags/)
-  enabled:
-  - `enable-experimental-webassembly-stack-switching`
-  - `enable-webassembly-garbage-collection`
+- Chromimum-based broswers
+  - Version 113 or greater.
+  - With the `enable-webassembly-garbage-collection`
+    [flag](https://developer.chrome.com/docs/web-platform/chrome-flags/)
+    enabled.
+- Firefox
+  - The
+    [nightly channel](https://www.mozilla.org/en-US/firefox/channel/desktop/#nightly)
+    is required. (Verified on v.115.0a1)
+  - With two additional preferences set in
+    [about:config](https://support.mozilla.org/kb/about-config-editor-firefox):
+    - `javascript.options.wasm_function_references`
+    - `javascript.options.wasm_gc`
 
-If your configured browser meets the stated requirements, open
-`localhost:8080` in the browser to view the app.
+If your configured browser meets the stated requirements, open `localhost:8080`
+in the browser to view the app.
 
 If the application doesn't load:
 
@@ -116,15 +122,11 @@ If the application doesn't load:
 
 Wasm support has some limitations. The following list covers the common issues.
 
-#### Chrome-only, with flags
+#### Chrome or Firefox nightly, with flags
 
-As mentioned [earlier](#load-it-an-a-browser), to compile web apps to Wasm,
-install Chrome 112 or later with experimental flags enabled.
-
-At this time, the Dart Wasm compiler leverages the
-[proposed JavaScript-Promise Integration (JSPI) feature](https://github.com/WebAssembly/js-promise-integration/blob/main/proposals/js-promise-integration/Overview.md).
-Firefox doesn't support the JSPI proposal. Once Dart migrates away from JSPI,
-Firefox should work with the appropriate flags.
+As mentioned [earlier](#load-it-an-a-browser), to run Flutter web apps compiled
+to Wasm, use Chrome 113 or later or Firefox nightly with experimental flags
+enabled.
 
 #### Requires preview JS-interop to access browser and JS APIs.
 
