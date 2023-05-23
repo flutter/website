@@ -1252,7 +1252,7 @@ The following resources might help when writing layout code.
 [`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
 [Material card]: {{site.material}}/components/cards
 [Material Design]: {{site.material}}/styles
-[Material Design palette]: {{site.material}}/styles/color
+[Material Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
 [Material library]: {{api}}/material/material-library.html
 [pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
 [`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
