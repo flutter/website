@@ -96,7 +96,7 @@ Server started on port 8080
 As of {{page.last-update}}, there are two known browser types that should run
 Flutter/Wasm content.
 
-- Chromimum-based browsers
+- Chromium-based browsers
   - Run version 113 or greater.
   - Set the `enable-webassembly-garbage-collection`
     [flag](https://developer.chrome.com/docs/web-platform/chrome-flags/).
