@@ -38,9 +38,8 @@ First, add the [`http`][] package to your project.
 The `http` package makes it easier to perform network
 requests, such as fetching data from a JSON endpoint.
 
-```yaml
-dependencies:
-  http: <latest_version>
+```terminal
+$ flutter pub add http
 ```
 
 ## 2. Make a network request

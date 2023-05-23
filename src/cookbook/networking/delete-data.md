@@ -23,13 +23,11 @@ This recipe uses the following steps:
 ## 1. Add the `http` package
 
 To install the `http` package,
-add it to the dependencies section of the `pubspec.yaml` file.
-You can find the latest version of the
-[`http` package][] on pub.dev.
+add it to the dependencies section of the `pubspec.yaml` file
+by running `flutter pub add`:
 
-```yaml
-dependencies:
-  http: <latest_version>
+```terminal
+$ flutter pub add http
 ```
 
 Import the `http` package.
