@@ -93,7 +93,7 @@ Server started on port 8080
 
 #### Load it in a browser
 
-As of {{page.last-update}}, there are two known broswer types that should run
+As of {{page.last-update}}, there are two known browser types that should run
 Flutter/Wasm content.
 
 - Chromimum-based broswers
