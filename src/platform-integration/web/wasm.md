@@ -96,16 +96,15 @@ Server started on port 8080
 As of {{page.last-update}}, there are two known browser types that should run
 Flutter/Wasm content.
 
-- Chromimum-based broswers
-  - Version 113 or greater.
-  - With the `enable-webassembly-garbage-collection`
-    [flag](https://developer.chrome.com/docs/web-platform/chrome-flags/)
-    enabled.
+- Chromimum-based browsers
+  - Run version 113 or greater.
+  - Set the `enable-webassembly-garbage-collection`
+    [flag](https://developer.chrome.com/docs/web-platform/chrome-flags/).
 - Firefox
-  - The
+  - Run the
     [nightly channel](https://www.mozilla.org/en-US/firefox/channel/desktop/#nightly)
-    is required. (Verified on v.115.0a1)
-  - With two additional preferences set in
+    build. (Verified on v.115.0a1)
+  - Set two additional preferences in
     [about:config](https://support.mozilla.org/kb/about-config-editor-firefox):
     - `javascript.options.wasm_function_references`
     - `javascript.options.wasm_gc`
