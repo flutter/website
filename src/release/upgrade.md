@@ -26,13 +26,13 @@ and then run `flutter upgrade`.
 
 ### Keeping informed
 
-We publish [migration guides] for known breaking changes.
+We publish [migration guides][] for known breaking changes.
 
 We send announcements regarding these changes to the
 [Flutter announcements mailing list][flutter-announce].
 
 To avoid being broken by future versions of Flutter,
-consider submitting your tests to our [test registry].
+consider submitting your tests to our [test registry][].
 
 
 ## Switching Flutter channels
@@ -51,7 +51,8 @@ for high-severity or high-impact issues.
 The continuous integration for the Flutter team's plugins and packages
 includes testing against the latest **stable** release.
 
-The latest documentation for the **stable** branch is at: <https://api.flutter.dev>
+The latest documentation for the **stable** branch
+is at: <https://api.flutter.dev>
 
 ### The **beta** channel
 
@@ -73,13 +74,16 @@ it is updated to the latest **beta** release.
 We currently have one other channel, **master**.
 People who [contribute to Flutter][] use this channel.
 
-This channel is not as thoroughly tested as the **beta** and **stable** channels.
+This channel is not as thoroughly tested as
+the **beta** and **stable** channels.
 
-We do not recommend using this channel as it more likely to contain serious regressions.
+We do not recommend using this channel as
+it is more likely to contain serious regressions.
 
-The latest documentation for the **master** branch is at: <https://master-api.flutter.dev>
+The latest documentation for the **master** branch
+is at: <https://master-api.flutter.dev>
 
-### Changing channel
+### Changing channels
 
 To view your current channel, use the following command:
 
