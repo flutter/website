@@ -12,9 +12,9 @@ This page describes how to use APIs that interact with end-user data by using
 Google authentication.
 
 Examples of user-data APIs include
-[Calendar]({{site.pub-api}}/googleapis/latest/calendar.v3/calendar.v3-library.html),
-[Gmail]({{site.pub-api}}/googleapis/latest/gmail.v1/gmail.v1-library.html), and
-[YouTube]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html).
+[Calendar]({{site.pub-api}}/googleapis/latest/calendar_v3/calendar_v3-library.html),
+[Gmail]({{site.pub-api}}/googleapis/latest/gmail_v1/gmail_v1-library.html), and
+[YouTube]({{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html).
 
 {{site.alert.info}} 
   Note: The only APIs you should use directly from your Flutter
@@ -43,21 +43,21 @@ To use Google APIs, follow these steps.
 ## 1. Pick the desired API
 
 The documentation for [package:googleapis]({{site.pub-api}}/googleapis) lists
-each API as a separate Dart library – in a `name.version` format. Let's look at
-[`youtube.v3`]({{site.pub-api}}/googleapis/latest/youtube.v3/youtube.v3-library.html)
+each API as a separate Dart library – in a `name_version` format. Let's look at
+[`youtube_v3`]({{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html)
 as an example.
 
 Each library may provide many types, but there is one _root_ class that ends in
 `Api`. For YouTube, it's
-[`YouTubeApi`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html).
+[`YouTubeApi`]({{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html).
 
 Not only is the `Api` class the one you need to instantiate – see step 3 – but
 it also exposes the scopes that represent the permissions needed to use the API.
 Look under the
-[Constants section]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi-class.html#constants)
+[Constants section]({{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html#constants)
 of the `YouTubeApi` class and you'll see the available scopes. To request access
 to simply read (but not write) an end-users YouTube data, use the
-[`youtubeReadonlyScope`]({{site.pub-api}}/googleapis/latest/youtube.v3/YouTubeApi/youtubeReadonlyScope-constant.html)
+[`youtubeReadonlyScope`]({{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi/youtubeReadonlyScope-constant.html)
 when authenticating the user.
 
 <?code-excerpt "lib/main.dart (youtubeImport)"?>
