@@ -11,3 +11,6 @@ dev_dependencies:
     path: site-shared/packages/code_excerpter
   linkcheck: ^3.0.0
   path: ^1.8.3
+
+dependency_overrides:
+  logging: 1.1.1
