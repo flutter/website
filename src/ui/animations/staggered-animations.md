@@ -377,6 +377,6 @@ Package not yet vetted.
 [flutter_sequence_animation]: {{site.pub}}/packages/flutter_sequence_animation
 [Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart
 [`Interval`]: {{site.api}}/flutter/animation/Interval-class.html
-[Material motion spec]: {{site.material}}/guidelines/motion/
+[Material motion spec]: {{site.material}}/styles/motion/overview
 [pub.dev]: {{site.pub}}/packages
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

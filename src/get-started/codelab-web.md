@@ -1072,7 +1072,7 @@ Dart DevTools, or Flutter animations, see the following:
 [Flutter SDK]: {{site.url}}/get-started/install
 [Implicit animations]: {{site.url}}/codelabs/implicit-animations
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
-[Material Design]: {{site.material}}/design/introduction/#
+[Material Design]: {{site.material}}/get-started
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: {{site.url}}/tools/devtools/vscode
 [Web samples]: {{site.github}}/flutter/samples/tree/main/web
