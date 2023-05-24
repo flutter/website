@@ -32,7 +32,7 @@ class _FadeInDemoState extends State<FadeInDemo> {
         duration: const Duration(seconds: 2),
         opacity: opacity,
         child: const Column(
-          children:  [
+          children: [
             Text('Type: Owl'),
             Text('Age: 39'),
             Text('Employment: None'),
