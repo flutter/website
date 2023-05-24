@@ -304,7 +304,7 @@ implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of bo
 [iOS Switch
 control]({{site.apple-dev}}/design/human-interface-guidelines/ios/controls/switches/)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
-[Android equivalent]({{site.material}}/develop/android/components/switches).
+[Android equivalent]({{site.material}}/components/switch).
 
 This approach provides several benefits:
 
