@@ -30,7 +30,8 @@ The fixed `TabBar` supports the following alignments:
 
 When you set `ThemeData.useMaterial3` to `true`,
 a scrollable `TabBar` aligns tabs as `TabAlignment.startOffset` by default.
-To change this alignment, set the `TabBar.tabAlignment` property.
+To change this alignment, set the `TabBar.tabAlignment` property for widget level customization.
+Or, set the `TabBarThemeData.tabAlignment` property for app level customization.
 
 ## Description of change
 
