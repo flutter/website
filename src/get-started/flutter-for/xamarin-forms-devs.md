@@ -1281,7 +1281,7 @@ Flutter follows a simple density-based format like iOS.
 Assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
 Flutter doesn't have `dp`s but there are logical pixels,
 which are basically the same as device-independent pixels.
-The so-called [`devicePixelRatio`][] expresses the ratio
+Flutter's [`devicePixelRatio`][] expresses the ratio
 of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
