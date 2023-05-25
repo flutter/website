@@ -23,8 +23,8 @@ class _FadeInDemoState extends State<FadeInDemo> {
             style: TextStyle(color: Colors.blueAccent),
           ),
           onPressed: () => {}),
-      Column(
-        children: const [
+    const Column(
+        children: [
           Text('Type: Owl'),
           Text('Age: 39'),
           Text('Employment: None'),

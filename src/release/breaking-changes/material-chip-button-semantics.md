@@ -160,7 +160,7 @@ Relevant PRs:
 [`ChoiceChip`]: {{site.api}}/flutter/material/ChoiceChip-class.html
 [`FilterChip`]: {{site.api}}/flutter/material/FilterChip-class.html
 [`InputChip`]: {{site.api}}/flutter/material/InputChip-class.html
-[Material Buttons]: {{site.material}}/components/buttons
+[Material Buttons]: {{site.material}}/components/all-buttons
 [Material Chips]: {{site.material}}/components/chips
 [`Semantics`]: {{site.api}}/flutter/widgets/Semantics-class.html
 [`SemanticsProperties.button`]: {{site.api}}/flutter/semantics/SemanticsProperties/button.html

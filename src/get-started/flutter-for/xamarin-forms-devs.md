@@ -2573,10 +2573,10 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [Material Components]: {{site.url}}/ui/widgets/material
-[Material Design]: {{site.material}}/design
-[Material Design guidelines]: {{site.material}}/design
+[Material Design]: {{site.material}}/styles
+[Material Design guidelines]: {{site.material}}/styles
 [`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
-[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [platform channels]: {{site.url}}/platform-integration/platform-channels
 [plugins]: {{site.url}}/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub}}
