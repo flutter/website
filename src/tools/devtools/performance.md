@@ -59,9 +59,9 @@ as the GPU thread).
 This chart contains Flutter frame timing information for your
 application. Each pair of bars in the chart represents a single
 Flutter frame. Selecting a frame from this chart updates the data
-that is displayed below in the [Frame analysis](#frame-analysis) tab
-or the [Timeline events](#timeline-events) tab.
-(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats)
+that is displayed below in the [Frame analysis](#frame-analysis-tab) tab
+or the [Timeline events](#timeline-events-tab) tab.
+(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats-tab)
 is a standalone feature without data per frame).
 
 [DevTools 2.23.1]: {{site.url}}/tools/devtools/release-notes/release-notes-2.23.1
