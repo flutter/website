@@ -176,22 +176,24 @@ Try the following instructions to troubleshoot:
 
 ## Community support
 
-The Flutter community is helpful and welcoming. If none of the above solves your
-installation issue, you may consider asking for support from the following
-channels:
+The Flutter community is helpful and welcoming.
+If none of the above suggestions solves your installation issue,
+consider asking for support from one of the following channels:
 
 *   [/r/flutterhelp](https://www.reddit.com/r/flutterhelp/) on Reddit
-*   [/r/flutterdev](https://discord.gg/rflutterdev) on Discord. There’s an
-    `install-and-setup` channel on this server. 
-*   [StackOverflow](https://stackoverflow.com/). Search answers with keywords 
-such as "[flutter] install" or post a new question.
+*   [/r/flutterdev](https://discord.gg/rflutterdev) on Discord,
+     particularly the `install-and-setup` channel on this server. 
+*   [StackOverflow](https://stackoverflow.com/), 
+    in particular, questions tagged with [#flutter][] or [#dart][].
 
-To be respectful to everyone’s time, try to search the archive for a similar
-issue first before you post a new one. 
+To be respectful of everyone’s time,
+search the archive for a similar issue before posting a new one. 
 
-
+[#dart]:  https://stackoverflow.com/questions/tagged/dart
+[#flutter]:  https://stackoverflow.com/questions/tagged/flutter
+[Android Java Gradle migration guide]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
 [community support channels]: #community-support
-[java binary path]: https://github.com/flutter/flutter/issues/106416#issuecomment-1522198064
+[java binary path]: {{site.github}}/flutter/flutter/issues/106416#issuecomment-1522198064
 [so java version]: https://stackoverflow.com/questions/75328050/
 [set up VS Code]: https://docs.flutter.dev/get-started/editor
 [config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
