@@ -42,14 +42,14 @@ See also: [Configuring PATH and Environment Variables - Dart Code][config path]
 
 __What does this issue look like?__
 
-When you try to run your Flutter project, you get an error message like this: 
+Running your Flutter project produces an error like the following:
 
 ```
 The Flutter SDK is installed in a protected folder and may not function correctly.
 Please move the SDK to a location that is user-writable without Administration permissions and restart.
 ```
 
-__Explanation and Suggestions__
+__Explanation and suggestions__
 
 On Windows, this usually happens when Flutter is installed in a directory like
 `C:\Program Files\` that requires elevated privileges. Try relocating flutter to
