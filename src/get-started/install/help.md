@@ -113,9 +113,9 @@ For example:
 
 __Explanation and suggestions__
 
-The easiest way you get cmdline-tools is through the SDK Manager in Android
-Studio. To open the SDK Manager from Android Studio, click **Tools > SDK
-Manager** from the menu bar. 
+The easiest way to get the cmdline-tools is through the
+SDK Manager in Android Studio.
+To do this, use the following instructions:
 
 
 *   Select the latest Android SDK (or a specific version your app requires),
