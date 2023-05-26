@@ -161,17 +161,17 @@ exit code: 69
 
 __Explanation and suggestions__
 
-The issue is related to networking. Here are a few things you can try to
-troubleshoot this:
+The issue is related to networking. 
+Try the following instructions to troubleshoot: 
 
 *   Check your internet connection. Make sure that you are connected to the
     internet and that your connection is stable.
 *   Restart your devices, including your computer and networking equipment.
-*   Use a VPN. A VPN can help to bypass any restrictions that may be preventing
+*   Use a VPN to help to bypass any restrictions that might prevent
     you from connecting to the network.
-*   If you have tried all of these steps and you are still getting the error,
-print out verbose logs with the `flutter doctor -v` command and ask for help in
-one of the [community support channels][].
+*  If you have tried all of these steps and are still getting the error,
+    print out verbose logs with the `flutter doctor -v` command and ask for help in
+    one of the [community support channels][].
 
 
 ## Community support
