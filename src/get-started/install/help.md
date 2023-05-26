@@ -90,8 +90,6 @@ or [flutter doctor --android-licenses not working due to
     java.lang.UnsupportedClassVersionError - Stack Overflow][so java version].
 
 
-See also: [flutter doctor --android-licenses not working due to
-    java.lang.UnsupportedClassVersionError - Stack Overflow][so java version]
 
 
 ### `cmdline-tools` component is missing
