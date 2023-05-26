@@ -26,7 +26,7 @@
   {% endif -%}
 
   {% assign id = include.parent_id | append: '-' | append: forloop.index -%}
-  {% assign href = entry.permalink -%}
+  {% assign href = entry.permalink | relative_url -%}
   {% unless href -%}
     {% assign href = '#' | append: id -%}
   {% endunless -%}
@@ -54,8 +54,7 @@
   {% endif -%}
 
   <li class="nav-item">
-    <a class="{{class}}" href="{{entry.permalink}}"
-       {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}
+    <a class="{{class}}" {%- if isExternal %} href="{{entry.permalink}}" target="_blank" rel="noopener" {% else -%} href="{{entry.permalink | relative_url}}" {%- endif -%}
     >{{entry.title}}
     {%- if isExternal -%}
       <span class="material-icons md-24">
