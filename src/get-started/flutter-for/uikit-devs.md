@@ -1462,8 +1462,8 @@ Future<String> loadAsset() async {
 
 For images, Flutter follows a simple density-based format like iOS.
 Image assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
-The so-called [`devicePixelRatio`][]
-expresses the ratio of physical pixels in a single logical pixel.
+Flutter's [`devicePixelRatio`][] expresses the ratio
+of physical pixels in a single logical pixel.
 
 Assets are located in any arbitrary folder&mdash;
 Flutter has no predefined folder structure.
