@@ -116,9 +116,11 @@ SDK Manager in Android Studio.
 To do this, use the following instructions:
 
 
-*   Select the latest Android SDK (or a specific version your app requires),
+1. Open the SDK Manager from Android Studio,
+    by selecting **Tools > SDK Manager** from the menu bar.
+2. Select the latest Android SDK (or a specific version that your app requires),
     Android SDK Command-line Tools, and Android SDK Build-Tools. 
-*   Click the **Apply** button to have the selected artifacts installed.
+3. Click **Apply** to install the selected artifacts.
 
 ![Android Studio SDK
 Manager](/assets/images/docs/get-started/install_android_tools.png)
