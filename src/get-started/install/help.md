@@ -126,8 +126,9 @@ To do this, use the following instructions:
 Manager](/assets/images/docs/get-started/install_android_tools.png)
 
 
-If you're not using Android Studio, you can download tools using the
-[sdkmanager][sdkmanager] command-line tool.
+If you're not using Android Studio,
+you can download the tools using the
+[sdkmanager][] command-line tool.
 
 
 ## Other problems
