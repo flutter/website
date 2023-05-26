@@ -93,8 +93,10 @@ See also: [flutter doctor --android-licenses not working due to
 
 __What does this issue look like?__
 
-`flutter doctor` complains about “Android toolchain” and specifically missing
-the cmdline-tools component. 
+The `flutter doctor` command complains that the
+`cmdline-tools` are missing from the Android toolchain.
+For example:
+
 
 ```
 [!] Android toolchain - develop for Android devices (Android SDK version 33.0.2) 
