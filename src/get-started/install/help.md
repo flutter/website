@@ -139,8 +139,8 @@ you can download the tools using the
 
 __What does this issue look like?__
 
-After running a `flutter` command, you get an error with “exit code: 69” as
-shown in the example below:
+Running a `flutter` command produces an “exit code: 69” error,
+as shown in the following example:
 
 ```
 Running "flutter pub get" in flutter_tools...
