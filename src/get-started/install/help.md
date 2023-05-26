@@ -81,8 +81,13 @@ If you don’t need multiple versions of Java,
 uninstall existing JDKs from your computer.
 Flutter will automatically use the JDK included in Android Studio. 
 
-If you do need another version of Java, try the workaround described in [this
-Github issue][java binary path] until a long-term solution is implemented. 
+If you do need another version of Java,
+try the workaround described in [this GitHub issue][java binary path]
+until a long-term solution is implemented.
+For more information,
+check out the [Android Java Gradle migration guide][]
+or [flutter doctor --android-licenses not working due to
+    java.lang.UnsupportedClassVersionError - Stack Overflow][so java version].
 
 
 See also: [flutter doctor --android-licenses not working due to
