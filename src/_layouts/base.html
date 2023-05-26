@@ -71,10 +71,10 @@
       window.__CALLBACKS = [];
     </script>
 
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | append: cache_bust }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | append: cache_bust }}">
     {% for css in page.css -%}
       {% assign asset_path = '/assets/css/{{css}}' -%}
-      <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
+      <link rel="stylesheet" href="{{ asset_path | relative_url | append: cache_bust }}">
     {% endfor -%}
   </head>
   <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
@@ -110,14 +110,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" integrity="sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="{{ '/assets/js/vendor/code-prettify/prettify.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/vendor/code-prettify/lang-css.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/vendor/code-prettify/lang-dart.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/vendor/code-prettify/lang-yaml.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
-
+    <script src="{{ '/assets/js/vendor/code-prettify/prettify.js' | relative_url | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/vendor/code-prettify/lang-css.js' | relative_url | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/vendor/code-prettify/lang-dart.js' | relative_url | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/vendor/code-prettify/lang-yaml.js' | relative_url | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/tabs.js' | relative_url | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/archive.js' | relative_url | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url | append: cache_bust }}"></script>
+    
     {% for script in page.js -%}
       <script src="{{ script.url | default: js }}" {% if script.defer %}defer{% endif %}></script>
     {% endfor %}

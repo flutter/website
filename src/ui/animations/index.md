@@ -30,7 +30,7 @@ As shown in the video, the following
 decision tree helps you decide what approach
 to use when implementing a Flutter animation:
 
-<img src='/assets/images/docs/ui/animations/animation-decision-tree.png'
+<img src={{ '/assets/images/docs/ui/animations/animation-decision-tree.png' | relative_url }}
     alt="The animation decision tree" class="mw-100">
 
 If a pre-packaged implicit animation (the easiest animation

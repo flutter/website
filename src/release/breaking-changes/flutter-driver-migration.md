@@ -29,7 +29,7 @@ a plant is displayed
 * The list of plants is loaded from a local JSON file located in the
   assets folder.
 
-<img src='/assets/images/docs/integration-test/migration-1.png'
+<img src={{ '/assets/images/docs/integration-test/migration-1.png' | relative_url }}
 class="mw-100" 
 alt="Starter project screenshot">
 

@@ -27,7 +27,7 @@ state management from other reactive frameworks,
 you can find packages and tutorials listed on the [options page][].
 
 ## Our example 
-<img src='/assets/images/docs/development/data-and-backend/state-mgmt/model-shopper-screencast.gif' alt='An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation.' class='site-image-right'>
+<img src={{ '/assets/images/docs/development/data-and-backend/state-mgmt/model-shopper-screencast.gif' | relative_url }} alt='An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation.' class='site-image-right'>
 
 For illustration, consider the following simple app.
 
@@ -42,7 +42,7 @@ and a scrolling view of many list items (`MyListItems`).
 
 Here's the app visualized as a widget tree.
 
-<img src='/assets/images/docs/development/data-and-backend/state-mgmt/simple-widget-tree.png' width="100%" alt="A widget tree with MyApp at the top, and  MyCatalog and MyCart below it. MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems.">
+<img src={{ '/assets/images/docs/development/data-and-backend/state-mgmt/simple-widget-tree.png' | relative_url }} width="100%" alt="A widget tree with MyApp at the top, and  MyCatalog and MyCart below it. MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems.">
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
@@ -134,7 +134,7 @@ it rebuilds `MyCart` from above (more on that later). Because of this,
 what to show for any given `contents`. When that changes, the old
 `MyCart` widget disappears and is completely replaced by the new one.
 
-<img src='/assets/images/docs/development/data-and-backend/state-mgmt/simple-widget-tree-with-cart.png' width="100%" alt="Same widget tree as above, but now we show a small 'cart' badge next to MyApp, and there are two arrows here. One comes from one of the MyListItems to the 'cart', and another one goes from the 'cart' to the MyCart widget.">
+<img src={{ '/assets/images/docs/development/data-and-backend/state-mgmt/simple-widget-tree-with-cart.png' | relative_url }} width="100%" alt="Same widget tree as above, but now we show a small 'cart' badge next to MyApp, and there are two arrows here. One comes from one of the MyListItems to the 'cart', and another one goes from the 'cart' to the MyCart widget.">
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1ErMyaX4fwfbIW9ABuPAlHELLGMsU6cdxPDFz_elsS9k/edit?zx=j42inp8903pt

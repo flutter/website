@@ -26,7 +26,7 @@ will be specific to your application.
 
 ## A sample
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-view/add-view-sample.gif'
+<img src={{ '/assets/images/docs/development/add-to-app/android/add-flutter-view/add-view-sample.gif' | relative_url }}
 class="mw-100" alt="Add Flutter View sample video">
 
 Unlike the guides for FlutterActivity and FlutterFragment, the FlutterView

@@ -24,7 +24,7 @@ weight, slant (to name a few).
 The user can select _any value along the continuous axis_
 when specifying the type.
 
-<img src='/assets/images/docs/development/ui/typography/variable-font-axes.png'
+<img src={{ '/assets/images/docs/development/ui/typography/variable-font-axes.png' | relative_url }}
 class="mw-100" alt="Example of two variable font axes">
 
 However, the font must first define what axes are available,
@@ -53,7 +53,7 @@ Use the type tester to learn more about its variable fonts.
    For the Roboto Serif font,
    the **Variable axes** column looks like the following:
 
-<img src='/assets/images/docs/development/ui/typography/roboto-serif-font-axes.png'
+<img src={{ '/assets/images/docs/development/ui/typography/roboto-serif-font-axes.png' | relative_url }}
 class="mw-100" alt="Listing of available font axes for Roboto Serif">
 
 In real time, move the slider on any of the axes to
@@ -109,7 +109,7 @@ and can be thought of as a boolean flag to enable or disable
 a feature of a given font.
 The following example is for CSS, but illustrates the concept:
 
-<img src='/assets/images/docs/development/ui/typography/feature-tag-example.png'
+<img src={{ '/assets/images/docs/development/ui/typography/feature-tag-example.png' | relative_url }}
 class="mw-100" alt="Example feature tags in CSS">
 
 

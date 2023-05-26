@@ -16,7 +16,7 @@ js:
   <p>Decoding Flutter: Unbounded height and width</p>
 {{site.alert.end}}
 
-<img src='/assets/images/docs/ui/layout/article-hero-image.png' class="mw-100" alt="Hero image from the article">
+<img src={{ '/assets/images/docs/ui/layout/article-hero-image.png' | relative_url }} class="mw-100" alt="Hero image from the article">
 
 When someone learning Flutter asks you why some widget
 with `width:100` isn't 100 pixels wide,
@@ -60,7 +60,7 @@ For example, if a composed widget contains a column
 with some padding, and wants to lay out its two children
 as follows:
 
-<img src='/assets/images/docs/ui/layout/children.png' class="mw-100" alt="Visual layout">
+<img src={{ '/assets/images/docs/ui/layout/children.png' | relative_url }} class="mw-100" alt="Visual layout">
 
 The negotiation goes something like this:
 
@@ -1259,7 +1259,7 @@ The examples are explained in the following sections.
 
 ### Example 1
 
-<img src='/assets/images/docs/ui/layout/layout-1.png' class="mw-100" alt="Example 1 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-1.png' | relative_url }} class="mw-100" alt="Example 1 layout">
 
 <?code-excerpt "lib/main.dart (Example1)" replace="/(return |;)//g"?>
 ```dart
@@ -1273,7 +1273,7 @@ So the `Container` fills the screen and paints it red.
 
 ### Example 2
 
-<img src='/assets/images/docs/ui/layout/layout-2.png' class="mw-100" alt="Example 2 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-2.png' | relative_url }} class="mw-100" alt="Example 2 layout">
 
 <?code-excerpt "lib/main.dart (Example2)" replace="/(return |;)//g"?>
 ```dart
@@ -1288,7 +1288,7 @@ So the `Container` fills the screen.
 
 ### Example 3
 
-<img src='/assets/images/docs/ui/layout/layout-3.png' class="mw-100" alt="Example 3 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-3.png' | relative_url }} class="mw-100" alt="Example 3 layout">
 
 <?code-excerpt "lib/main.dart (Example3)" replace="/(return |;)//g"?>
 ```dart
@@ -1306,7 +1306,7 @@ can indeed be 100 × 100.
 
 ### Example 4
 
-<img src='/assets/images/docs/ui/layout/layout-4.png' class="mw-100" alt="Example 4 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-4.png' | relative_url }} class="mw-100" alt="Example 4 layout">
 
 <?code-excerpt "lib/main.dart (Example4)" replace="/(return |;)//g"?>
 ```dart
@@ -1326,7 +1326,7 @@ available space.
 
 ### Example 5
 
-<img src='/assets/images/docs/ui/layout/layout-5.png' class="mw-100" alt="Example 5 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-5.png' | relative_url }} class="mw-100" alt="Example 5 layout">
 
 <?code-excerpt "lib/main.dart (Example5)" replace="/(return |;)//g"?>
 ```dart
@@ -1346,7 +1346,7 @@ it just fills the screen.
 
 ### Example 6
 
-<img src='/assets/images/docs/ui/layout/layout-6.png' class="mw-100" alt="Example 6 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-6.png' | relative_url }} class="mw-100" alt="Example 6 layout">
 
 <?code-excerpt "lib/main.dart (Example6)" replace="/(return |;)//g"?>
 ```dart
@@ -1373,7 +1373,7 @@ behaves, depending on the circumstances.
 
 ### Example 7
 
-<img src='/assets/images/docs/ui/layout/layout-7.png' class="mw-100" alt="Example 7 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-7.png' | relative_url }} class="mw-100" alt="Example 7 layout">
 
 <?code-excerpt "lib/main.dart (Example7)" replace="/(return |;)//g"?>
 ```dart
@@ -1404,7 +1404,7 @@ entirely covers the red `Container`.
 
 ### Example 8
 
-<img src='/assets/images/docs/ui/layout/layout-8.png' class="mw-100" alt="Example 8 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-8.png' | relative_url }} class="mw-100" alt="Example 8 layout">
 
 <?code-excerpt "lib/main.dart (Example8)" replace="/(return |;)//g"?>
 ```dart
@@ -1427,7 +1427,7 @@ in the previous example.
 
 ### Example 9
 
-<img src='/assets/images/docs/ui/layout/layout-9.png' class="mw-100" alt="Example 9 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-9.png' | relative_url }} class="mw-100" alt="Example 9 layout">
 
 <?code-excerpt "lib/main.dart (Example9)" replace="/(return |;)//g"?>
 ```dart
@@ -1454,7 +1454,7 @@ to also assume the size of the screen, thus ignoring its
 
 ### Example 10
 
-<img src='/assets/images/docs/ui/layout/layout-10.png' class="mw-100" alt="Example 10 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-10.png' | relative_url }} class="mw-100" alt="Example 10 layout">
 
 <?code-excerpt "lib/main.dart (Example10)" replace="/(return |;)//g"?>
 ```dart
@@ -1481,7 +1481,7 @@ so it ends up having 70 (the minimum).
 
 ### Example 11
 
-<img src='/assets/images/docs/ui/layout/layout-11.png' class="mw-100" alt="Example 11 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-11.png' | relative_url }} class="mw-100" alt="Example 11 layout">
 
 <?code-excerpt "lib/main.dart (Example11)" replace="/(return |;)//g"?>
 ```dart
@@ -1508,7 +1508,7 @@ so it ends up having 150 (the maximum).
 
 ### Example 12
 
-<img src='/assets/images/docs/ui/layout/layout-12.png' class="mw-100" alt="Example 12 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-12.png' | relative_url }} class="mw-100" alt="Example 12 layout">
 
 <?code-excerpt "lib/main.dart (Example12)" replace="/(return |;)//g"?>
 ```dart
@@ -1535,7 +1535,7 @@ since that’s between 70 and 150.
 
 ### Example 13
 
-<img src='/assets/images/docs/ui/layout/layout-13.png' class="mw-100" alt="Example 13 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-13.png' | relative_url }} class="mw-100" alt="Example 13 layout">
 
 <?code-excerpt "lib/main.dart (Example13)" replace="/(return |;)//g"?>
 ```dart
@@ -1551,7 +1551,7 @@ lets its child `Container` be any size it wants.
 
 ### Example 14
 
-<img src='/assets/images/docs/ui/layout/layout-14.png' class="mw-100" alt="Example 14 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-14.png' | relative_url }} class="mw-100" alt="Example 14 layout">
 
 <?code-excerpt "lib/main.dart (Example14)" replace="/(return |;)//g"?>
 ```dart
@@ -1571,7 +1571,7 @@ the much dreaded "overflow warning".
 
 ### Example 15
 
-<img src='/assets/images/docs/ui/layout/layout-15.png' class="mw-100" alt="Example 15 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-15.png' | relative_url }} class="mw-100" alt="Example 15 layout">
 
 <?code-excerpt "lib/main.dart (Example15)" replace="/(return |;)//g"?>
 ```dart
@@ -1599,7 +1599,7 @@ with no warnings given.
 
 ### Example 16
 
-<img src='/assets/images/docs/ui/layout/layout-16.png' class="mw-100" alt="Example 16 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-16.png' | relative_url }} class="mw-100" alt="Example 16 layout">
 
 <?code-excerpt "lib/main.dart (Example16)" replace="/(return |;)//g"?>
 ```dart
@@ -1618,7 +1618,7 @@ the following message: `BoxConstraints forces an infinite width.`
 
 ### Example 17
 
-<img src='/assets/images/docs/ui/layout/layout-17.png' class="mw-100" alt="Example 17 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-17.png' | relative_url }} class="mw-100" alt="Example 17 layout">
 
 <?code-excerpt "lib/main.dart (Example17)" replace="/(return |;)//g"?>
 ```dart
@@ -1650,7 +1650,7 @@ and a `ConstrainedBox`.
 
 ### Example 18
 
-<img src='/assets/images/docs/ui/layout/layout-18.png' class="mw-100" alt="Example 18 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-18.png' | relative_url }} class="mw-100" alt="Example 18 layout">
 
 <?code-excerpt "lib/main.dart (Example18)" replace="/(return |;)//g"?>
 ```dart
@@ -1671,7 +1671,7 @@ the available width.
 
 ### Example 19
 
-<img src='/assets/images/docs/ui/layout/layout-19.png' class="mw-100" alt="Example 19 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-19.png' | relative_url }} class="mw-100" alt="Example 19 layout">
 
 <?code-excerpt "lib/main.dart (Example19)" replace="/(return |;)//g"?>
 ```dart
@@ -1693,7 +1693,7 @@ no scaling happens.
 
 ### Example 20
 
-<img src='/assets/images/docs/ui/layout/layout-20.png' class="mw-100" alt="Example 20 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-20.png' | relative_url }} class="mw-100" alt="Example 20 layout">
 
 <?code-excerpt "lib/main.dart (Example20)" replace="/(return |;)//g"?>
 ```dart
@@ -1716,7 +1716,7 @@ and resizes `Text` so that it fits the screen, too.
 
 ### Example 21
 
-<img src='/assets/images/docs/ui/layout/layout-21.png' class="mw-100" alt="Example 21 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-21.png' | relative_url }} class="mw-100" alt="Example 21 layout">
 
 <?code-excerpt "lib/main.dart (Example21)" replace="/(return |;)//g"?>
 ```dart
@@ -1733,7 +1733,7 @@ and breaks the line so that it fits the screen.
 
 ### Example 22
 
-<img src='/assets/images/docs/ui/layout/layout-22.png' class="mw-100" alt="Example 22 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-22.png' | relative_url }} class="mw-100" alt="Example 22 layout">
 
 <?code-excerpt "lib/main.dart (Example22)" replace="/(return |;)//g"?>
 ```dart
@@ -1754,7 +1754,7 @@ and you'll see an error in the console.
 
 ### Example 23
 
-<img src='/assets/images/docs/ui/layout/layout-23.png' class="mw-100" alt="Example 23 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-23.png' | relative_url }} class="mw-100" alt="Example 23 layout">
 
 <?code-excerpt "lib/main.dart (Example23)" replace="/(return |;)//g"?>
 ```dart
@@ -1777,7 +1777,7 @@ and any extra space remains empty.
 
 ### Example 24
 
-<img src='/assets/images/docs/ui/layout/layout-24.png' class="mw-100" alt="Example 24 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-24.png' | relative_url }} class="mw-100" alt="Example 24 layout">
 
 <?code-excerpt "lib/main.dart (Example24)" replace="/(return |;)//g"?>
 ```dart
@@ -1804,7 +1804,7 @@ the available width of the `Row`. In this case, just like an
 
 ### Example 25
 
-<img src='/assets/images/docs/ui/layout/layout-25.png' class="mw-100" alt="Example 25 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-25.png' | relative_url }} class="mw-100" alt="Example 25 layout">
 
 <?code-excerpt "lib/main.dart (Example25)" replace="/(return |;)//g"?>
 ```dart
@@ -1838,7 +1838,7 @@ the original child’s width becomes irrelevant, and is ignored.
 
 ### Example 26
 
-<img src='/assets/images/docs/ui/layout/layout-26.png' class="mw-100" alt="Example 26 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-26.png' | relative_url }} class="mw-100" alt="Example 26 layout">
 
 <?code-excerpt "lib/main.dart (Example26)" replace="/(return |;)//g"?>
 ```dart
@@ -1876,7 +1876,7 @@ its children.
 
 ### Example 27
 
-<img src='/assets/images/docs/ui/layout/layout-27.png' class="mw-100" alt="Example 27 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-27.png' | relative_url }} class="mw-100" alt="Example 27 layout">
 
 <?code-excerpt "lib/main.dart (Example27)" replace="/(return |;)//g"?>
 ```dart
@@ -1920,7 +1920,7 @@ when sizing themselves.
 
 ### Example 28
 
-<img src='/assets/images/docs/ui/layout/layout-28.png' class="mw-100" alt="Example 28 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-28.png' | relative_url }} class="mw-100" alt="Example 28 layout">
 
 <?code-excerpt "lib/main.dart (Example28)" replace="/(return |;)//g"?>
 ```dart
@@ -1950,7 +1950,7 @@ but not bigger than the screen.
 
 ### Example 29
 
-<img src='/assets/images/docs/ui/layout/layout-29.png' class="mw-100" alt="Example 29 layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-29.png' | relative_url }} class="mw-100" alt="Example 29 layout">
 
 <?code-excerpt "lib/main.dart (Example29)" replace="/(return |;)//g"?>
 ```dart
@@ -2069,7 +2069,7 @@ Here is an example:
   `performLayout()`. This is the method that does
   the layout for the `Column`.
 
-<img src='/assets/images/docs/ui/layout/layout-final.png' class="mw-100" alt="A goodbye layout">
+<img src={{ '/assets/images/docs/ui/layout/layout-final.png' | relative_url }} class="mw-100" alt="A goodbye layout">
 
 
 

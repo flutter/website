@@ -166,7 +166,7 @@ The next section describes Flutter's process in greater detail.
 The following describes how Flutter performs the
 transition from one route to another.
 
-<img src='/assets/images/docs/ui/animations/hero-transition-0.png'
+<img src={{ '/assets/images/docs/ui/animations/hero-transition-0.png' | relative_url }}
     alt="Before the transition the source hero appears in the source route"
     class="mw-100">
 
@@ -176,7 +176,7 @@ and the overlay is empty.
 
 ---
 
-<img src='/assets/images/docs/ui/animations/hero-transition-1.png'
+<img src={{ '/assets/images/docs/ui/animations/hero-transition-1.png' | relative_url }}
     alt="The transition begins"
     class="mw-100">
 
@@ -196,7 +196,7 @@ At t=0.0, Flutter does the following:
 
 ---
 
-<img src='/assets/images/docs/ui/animations/hero-transition-2.png'
+<img src={{ '/assets/images/docs/ui/animations/hero-transition-2.png' | relative_url }}
     alt="The hero flies in the overlay to its final position and size"
     class="mw-100">
 
@@ -211,7 +211,7 @@ that uses a different Tween animation.)
 
 ---
 
-<img src='/assets/images/docs/ui/animations/hero-transition-3.png'
+<img src={{ '/assets/images/docs/ui/animations/hero-transition-3.png' | relative_url }}
     alt="When the transition is complete, the hero is moved from the overlay to the destination route"
     class="mw-100">
 
@@ -313,7 +313,7 @@ and its size, image, and behavior when tapped.
 The PhotoHero builds the following widget tree:
 
 <div class="text-center mb-4">
-  <img src='/assets/images/docs/ui/animations/photohero-class.png'
+  <img src={{ '/assets/images/docs/ui/animations/photohero-class.png' | relative_url }}
       alt="PhotoHero class widget tree"
       class="mw-100">
 </div>
@@ -495,7 +495,7 @@ provided example to your needs.** The heavy lifting is done for you.
 The following diagram shows the clipped image at the beginning
 (`t = 0.0`), and the end (`t = 1.0`) of the animation.
 
-<img src='/assets/images/docs/ui/animations/radial-hero-animation.png'
+<img src={{ '/assets/images/docs/ui/animations/radial-hero-animation.png' | relative_url }}
     alt="Radial transformation from beginning to end"
     class="mw-100">
 
@@ -577,7 +577,7 @@ with a rectangular clip (that remains a constant size throughout).
 To do this, it builds the following widget tree:
 
 <div class="text-center mb-4">
-  <img src='/assets/images/docs/ui/animations/radial-expansion-class.png'
+  <img src={{ '/assets/images/docs/ui/animations/radial-expansion-class.png' | relative_url }}
       alt="RadialExpansion widget tree" class="mw-100">
 </div>
 

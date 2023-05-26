@@ -37,7 +37,7 @@ replacing the solid star with an outline and
 decreasing the count. Tapping again favorites the lake,
 drawing a solid star and increasing the count.
 
-<img src='/assets/images/docs/ui/favorited-not-favorited.png' class="mw-100" alt="The custom widget you'll create" width="200px">
+<img src={{ '/assets/images/docs/ui/favorited-not-favorited.png' | relative_url }} class="mw-100" alt="The custom widget you'll create" width="200px">
 {:.text-center}
 
 To accomplish this, you'll create a single custom widget
@@ -363,8 +363,8 @@ color: green for active or grey for inactive.
 
 <div class="row mb-4">
   <div class="col-12 text-center">
-    <img src='/assets/images/docs/ui/tapbox-active-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Active state">
-    <img src='/assets/images/docs/ui/tapbox-inactive-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Inactive state">
+    <img src={{ '/assets/images/docs/ui/tapbox-active-state.png' | relative_url }} class="border mt-1 mb-1 mw-100" width="150px" alt="Active state">
+    <img src={{ '/assets/images/docs/ui/tapbox-inactive-state.png' | relative_url }} class="border mt-1 mb-1 mw-100" width="150px" alt="Inactive state">
   </div>
 </div>
 

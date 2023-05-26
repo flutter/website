@@ -19,7 +19,7 @@ NOTE(rearch) We second that, never a good idea.
 
 <figure class="site-figure {{include.class}}">
   <div class="site-figure-container">
-    <img src='/assets/images/docs/{{path}}{{include.image}}' 
+    <img src={{ '/assets/images/docs/' | append: path | append: include.image  | relative_url }} 
          class='{{include.img-class}}' 
          alt='{{alt}}'>
     {% if caption -%}

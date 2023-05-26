@@ -21,7 +21,7 @@ add the extension point *target* to your Xcode project.
 
     <figure class="site-figure {{include.class}}">
     <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-new-target.png'
+        <img src={{ '/assets/images/docs/development/platform-integration/app-extensions/xcode-new-target.png' | relative_url }}
         height='300'>
     </div>
     </figure>
@@ -105,7 +105,7 @@ content directly from the **Messages** app.
 
 <figure class="site-figure {{include.class}}">
     <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/imessage-extension.png'
+        <img src={{ '/assets/images/docs/development/platform-integration/app-extensions/imessage-extension.png' | relative_url }}
         height='300'>
     </div>
 </figure>
@@ -141,7 +141,7 @@ as described in the following section.
 
     <figure class="site-figure {{include.class}}">
         <div class="site-figure-container">
-            <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png'
+            <img src={{ '/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png' | relative_url }}
             height='300'>
         </div>
     </figure>
@@ -154,7 +154,7 @@ as described in the following section.
     
     <figure class="site-figure {{include.class}}">
         <div class="site-figure-container">
-            <img src='/assets/images/docs/development/platform-integration/app-extensions/extension-info.png'
+            <img src={{ '/assets/images/docs/development/platform-integration/app-extensions/extension-info.png' | relative_url }}
             height='300'>
         </div>
     </figure>

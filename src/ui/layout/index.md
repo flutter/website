@@ -34,8 +34,8 @@ under each one:
 
 <div class="row mb-4">
   <div class="col-12 text-center">
-    <img src='/assets/images/docs/ui/layout/lakes-icons.png' class="border mt-1 mb-1 mw-100" alt="Sample layout">
-    <img src='/assets/images/docs/ui/layout/lakes-icons-visual.png' class="border mt-1 mb-1 mw-100" alt="Sample layout with visual debugging">
+    <img src={{ '/assets/images/docs/ui/layout/lakes-icons.png' | relative_url }} class="border mt-1 mb-1 mw-100" alt="Sample layout">
+    <img src={{ '/assets/images/docs/ui/layout/lakes-icons-visual.png' | relative_url }} class="border mt-1 mb-1 mw-100" alt="Sample layout with visual debugging">
   </div>
 </div>
 
@@ -52,7 +52,7 @@ The second screenshot displays the visual layout, showing a row of
 
 Here's a diagram of the widget tree for this UI:
 
-<img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="mw-100" alt="Node tree">
+<img src={{ '/assets/images/docs/ui/layout/sample-flutter-layout.png' | relative_url }} class="mw-100" alt="Node tree">
 {:.text-center}
 
 Most of this should look as you might expect, but you might be wondering
@@ -269,12 +269,12 @@ columns inside of rows or columns.
 This layout is organized as a `Row`. The row contains two children:
 a column on the left, and an image on the right:
 
-<img src='/assets/images/docs/ui/layout/pavlova-diagram.png' class="mw-100"
+<img src={{ '/assets/images/docs/ui/layout/pavlova-diagram.png' | relative_url }} class="mw-100"
     alt="Screenshot with callouts showing the row containing two children">
 
 The left column's widget tree nests rows and columns.
 
-<img src='/assets/images/docs/ui/layout/pavlova-left-column-diagram.png' class="mw-100"
+<img src={{ '/assets/images/docs/ui/layout/pavlova-left-column-diagram.png' | relative_url }} class="mw-100"
     alt="Diagram showing a left column broken down to its sub-rows and sub-columns">
 
 You'll implement some of Pavlova's layout code in
@@ -302,9 +302,9 @@ vertically. For a column, the main axis runs vertically and the cross
 axis runs horizontally.
 
 <div class="mb-2 text-center">
-  <img src='/assets/images/docs/ui/layout/row-diagram.png' class="mb-2 mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/row-diagram.png' | relative_url }} class="mb-2 mw-100"
       alt="Diagram showing the main axis and cross axis for a row">
-  <img src='/assets/images/docs/ui/layout/column-diagram.png' class="mb-2 mr-2 ml-2 mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/column-diagram.png' | relative_url }} class="mb-2 mr-2 ml-2 mw-100"
       alt="Diagram showing the main axis and cross axis for a column">
 </div>
 
@@ -342,7 +342,7 @@ space evenly between, before, and after each image.
   {% endprettify %}
 </div>
 <div class="col-lg-4" markdown="1">
-  <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' class="mw-100" alt="Row with 3 evenly spaced images">
+  <img src={{ '/assets/images/docs/ui/layout/row-spaceevenly-visual.png' | relative_url }} class="mw-100" alt="Row with 3 evenly spaced images">
 
   **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
@@ -371,7 +371,7 @@ space evenly between, above, and below each image.
   **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
 <div class="col-lg-4 text-center">
-  <img src='/assets/images/docs/ui/layout/column-visual.png' class="mb-4" height="250px"
+  <img src={{ '/assets/images/docs/ui/layout/column-visual.png' | relative_url }} class="mb-4" height="250px"
       alt="Column showing 3 images spaced evenly">
 </div>
 </div>
@@ -382,7 +382,7 @@ When a layout is too large to fit a device, a yellow
 and black striped pattern appears along the affected edge.
 Here is an [example][sizing] of a row that is too wide:
 
-<img src='/assets/images/docs/ui/layout/layout-too-large.png' class="mw-100" alt="Overly-wide row">
+<img src={{ '/assets/images/docs/ui/layout/layout-too-large.png' | relative_url }} class="mw-100" alt="Overly-wide row">
 {:.text-center}
 
 Widgets can be sized to fit within a row or column by using the
@@ -411,7 +411,7 @@ wrap each image with an `Expanded` widget.
   {% endprettify %}
 </div>
 <div class="col-lg-4" markdown="1">
-  <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' class="mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/row-expanded-2-visual.png' | relative_url }} class="mw-100"
       alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
@@ -446,7 +446,7 @@ the flex factor of the middle image to 2:
   {% endprettify %}
 </div>
 <div class="col-lg-4" markdown="1">
-  <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' class="mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/row-expanded-visual.png' | relative_url }} class="mw-100"
       alt="Row of 3 images with the middle image twice as wide as the others">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
@@ -479,7 +479,7 @@ uses this property to pack the star icons together.
   {% endprettify %}
 </div>
 <div class="col-lg-4" markdown="1">
-  <img src='/assets/images/docs/ui/layout/packed.png' class="border mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/packed.png' | relative_url }} class="border mw-100"
       alt="Row of 5 stars, packed together in the middle of the row">
 
   **App source:** [pavlova]({{examples}}/layout/pavlova)
@@ -493,7 +493,7 @@ inside of rows and columns as deeply as you need.
 Let's look at the code for the outlined
 section of the following layout:
 
-<img src='/assets/images/docs/ui/layout/pavlova-large-annotated.png' class="border mw-100"
+<img src={{ '/assets/images/docs/ui/layout/pavlova-large-annotated.png' | relative_url }} class="border mw-100"
     alt="Screenshot of the pavlova app, with the ratings and icon rows outlined in red">
 {:.text-center}
 
@@ -503,7 +503,7 @@ columns of icons and text.
 
 The widget tree for the ratings row:
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' class="mw-100" alt="Ratings row widget tree">
+<img src={{ '/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' | relative_url }} class="mw-100" alt="Ratings row widget tree">
 {:.text-center}
 
 The `ratings` variable creates a row containing a smaller row
@@ -553,7 +553,7 @@ The icons row, below the ratings row, contains 3 columns;
 each column contains an icon and two lines of text,
 as you can see in its widget tree:
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' class="mw-100" alt="Icon widget tree">
+<img src={{ '/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' | relative_url }} class="mw-100" alt="Icon widget tree">
 {:.text-center}
 
 The `iconList` variable defines the icons row:
@@ -723,7 +723,7 @@ color or image.
     Column, or even the root of a widget tree
 </div>
 <div class="col-lg-6 text-center">
-  <img src='/assets/images/docs/ui/layout/margin-padding-border.png' class="mb-4 mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/margin-padding-border.png' | relative_url }} class="mb-4 mw-100"
       width="230px"
       alt="Diagram showing: margin, border, padding, and content">
 </div>
@@ -756,7 +756,7 @@ of the column to a lighter grey.
   {% endprettify %}
 </div>
 <div class="col-lg-5 text-center">
-  <img src='/assets/images/docs/ui/layout/container.png' class="mb-4 mw-100" width="230px"
+  <img src={{ '/assets/images/docs/ui/layout/container.png' | relative_url }} class="mb-4 mw-100" width="230px"
       alt="Screenshot showing 2 rows, each containing 2 images">
 </div>
 </div>
@@ -828,7 +828,7 @@ it automatically scrolls.
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/gridview-extent.png' class="mw-100" alt="A 3-column grid of photos">
+  <img src={{ '/assets/images/docs/ui/layout/gridview-extent.png' | relative_url }} class="mw-100" alt="A 3-column grid of photos">
   {:.text-center}
 
   Uses `GridView.extent` to create a grid with tiles a maximum
@@ -837,7 +837,7 @@ it automatically scrolls.
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' class="mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' | relative_url }} class="mw-100"
       alt="A 2 column grid with footers">
   {:.text-center}
 
@@ -889,7 +889,7 @@ its render box.
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/listview.png' class="border mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/listview.png' | relative_url }} class="border mw-100"
       alt="ListView containing movie theaters and restaurants">
   {:.text-center}
 
@@ -900,7 +900,7 @@ its render box.
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/listview-flutter-gallery.png' class="border mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/listview-flutter-gallery.png' | relative_url }} class="border mw-100"
       alt="ListView containing shades of blue">
   {:.text-center}
 
@@ -973,7 +973,7 @@ or partially overlap the base widget.
 
 <div class="row">
 <div class="col-lg-7" markdown="1">
-  <img src='/assets/images/docs/ui/layout/stack.png' class="mw-100" width="200px" alt="Circular avatar image with a label">
+  <img src={{ '/assets/images/docs/ui/layout/stack.png' | relative_url }} class="mw-100" width="200px" alt="Circular avatar image with a label">
   {:.text-center}
 
   Uses `Stack` to overlay a `Container`
@@ -985,7 +985,7 @@ or partially overlap the base widget.
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-5" markdown="1">
-  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="mw-100" alt="An image with a icon overlaid on top">
+  <img src={{ '/assets/images/docs/ui/layout/stack-flutter-gallery.png' | relative_url }} class="mw-100" alt="An image with a icon overlaid on top">
   {:.text-center}
 
   Uses `Stack` to overlay an icon on top of an image.
@@ -1062,7 +1062,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/card.png' class="mw-100" alt="Card containing 3 ListTiles">
+  <img src={{ '/assets/images/docs/ui/layout/card.png' | relative_url }} class="mw-100" alt="Card containing 3 ListTiles">
   {:.text-center}
 
   A `Card` containing 3 ListTiles and sized by wrapping
@@ -1072,7 +1072,7 @@ Specifying an unsupported value disables the drop shadow entirely.
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' class="mw-100"
+  <img src={{ '/assets/images/docs/ui/layout/card-flutter-gallery.png' | relative_url }} class="mw-100"
       alt="Card containing an image, text and buttons">
   {:.text-center}
 
@@ -1149,7 +1149,7 @@ and trailing icons. `ListTile` is most commonly used in
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/card.png' class="mw-100" alt="Card containing 3 ListTiles">
+  <img src={{ '/assets/images/docs/ui/layout/card.png' | relative_url }} class="mw-100" alt="Card containing 3 ListTiles">
   {:.text-center}
 
   A `Card` containing 3 `ListTile`s.
@@ -1157,7 +1157,7 @@ and trailing icons. `ListTile` is most commonly used in
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' class="border mw-100" height="200px"
+  <img src={{ '/assets/images/docs/ui/layout/listtile-flutter-gallery.png' | relative_url }} class="border mw-100" height="200px"
       alt="4 ListTiles, each containing a leading avatar">
   {:.text-center}
 

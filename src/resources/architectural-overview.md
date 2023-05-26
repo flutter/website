@@ -146,7 +146,7 @@ where the individual pieces live. The legend below clarifies
 some of the terminology commonly used to describe the
 pieces of a Flutter app.
 
-<img src='/assets/images/docs/app-anatomy.svg' alt='The layers of a Flutter app created by "flutter create": Dart app, framework, engine, embedder, runner'>
+<img src={{ '/assets/images/docs/app-anatomy.svg' | relative_url }} alt='The layers of a Flutter app created by "flutter create": Dart app, framework, engine, embedder, runner'>
 
 **Dart App**
 * Composes widgets into the desired UI.

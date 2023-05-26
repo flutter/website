@@ -126,7 +126,7 @@ You might notice the following characteristics:
 * The padding and height changes occur during
   the same exact interval, but they don't have to.
 
-<img src='/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png'
+<img src={{ '/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png' | relative_url }}
     alt="Diagram showing the interval specified for each motion"
     class="mw-100">
 
