@@ -74,8 +74,8 @@ this version of the Java Runtime only recognizes class file versions up to 52.0
 
 __Explanation and suggestions__
 
-The error occurs when an older version of Java Development Kit (JDK) is
-installed on your computer. 
+The error occurs when an older version of the Java Development Kit (JDK)
+is installed on your computer. 
 
 If you don’t need multiple versions of Java, uninstall existing JDKs from your
 computer. Flutter will automatically use the JDK included in Android Studio. 
