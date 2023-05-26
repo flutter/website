@@ -62,8 +62,9 @@ a different folder such as `C:\src\flutter`.
 
 __What does this issue look like?__ 
 
-The command `flutter doctor --android-licenses` fails. When you run `flutter
-doctor –verbose` you see an error message like this:
+The command `flutter doctor --android-licenses` fails.
+Running `flutter doctor –verbose` gives an error message like 
+the following:
 
 ```
 java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider 
