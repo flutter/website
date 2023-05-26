@@ -77,8 +77,9 @@ __Explanation and suggestions__
 The error occurs when an older version of the Java Development Kit (JDK)
 is installed on your computer. 
 
-If you don’t need multiple versions of Java, uninstall existing JDKs from your
-computer. Flutter will automatically use the JDK included in Android Studio. 
+If you don’t need multiple versions of Java,
+uninstall existing JDKs from your computer.
+Flutter will automatically use the JDK included in Android Studio. 
 
 If you do need another version of Java, try the workaround described in [this
 Github issue][java binary path] until a long-term solution is implemented. 
