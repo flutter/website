@@ -3,11 +3,12 @@ title: Install help
 description: This page describes some common installation issues new Flutter users have run into and offers suggestions to resolve them.
 ---
 
-This page describes some common installation issues new Flutter users have run
-into and offers suggestions to resolve them. Included at the bottom of the page
-is a list of [community support channels][] you can reach out to if you don’t
-find answers from this page. To add a topic to this page or make a correct, you
-may file an issue or a pull request using the buttons at the top of the doc.
+This page describes some common installation issues new Flutter users have 
+encountered and offers suggestions on how to resolve them.
+If you are still experiencing problems, consider reaching out to any of
+the resources listed under [community support channels][].
+To add a topic to this page or make a correction,
+you can file an issue or a pull request using the buttons at the top of the page.
 
 ## Get the Flutter SDK
 
