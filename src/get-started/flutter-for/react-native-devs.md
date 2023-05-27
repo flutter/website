@@ -13,7 +13,7 @@ way to get started learning Flutter development.
 This document can be used as a cookbook by jumping around and finding
 questions that are most relevant to your needs.
 
-## Introduction to Dart for JavaScript Developers
+## Introduction to Dart for JavaScript Developers (ES6)
 
 Like React Native, Flutter uses reactive-style views. However, while RN
 transpiles to native widgets, Flutter compiles all the way to native code.
@@ -88,7 +88,7 @@ typed or the type system must infer the proper type automatically.
 
 ```js
 // JavaScript
-var name = 'JavaScript';
+let name = 'JavaScript';
 ```
 
 <?code-excerpt "lib/main.dart (Variables)"?>
@@ -119,7 +119,7 @@ numeric types have the value `null`.
 
 ```js
 // JavaScript
-var name; // == undefined
+let name; // == undefined
 ```
 
 <?code-excerpt "lib/main.dart (Null)"?>
@@ -141,11 +141,11 @@ are treated as `true` when using the `==` comparison operator.
 
 ```js
 // JavaScript
-var myNull = null;
+let myNull = null;
 if (!myNull) {
   console.log('null is treated as false');
 }
-var zero = 0;
+let zero = 0;
 if (!zero) {
   console.log('0 is treated as false');
 }
@@ -405,15 +405,13 @@ implements the render method by returning a view component.
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello world!</Text>
-      </View>
-    );
-  }
-}
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Hello world!</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -423,6 +421,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+
+export default App;
 ```
 
 In Flutter, you can create an identical "Hello world!" app using the
@@ -540,19 +540,17 @@ and then used inside a parent class.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title="Press"
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title="Press"
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
 // Usage
 <CustomCard onPress={this.onPress} index={item.key} />
@@ -706,7 +704,11 @@ In React Native, you would add a static image by placing the image file
 in a source code directory and referencing it.
 
 ```js
-<Image source={require('./my-icon.png')} />
+import myIcon from './my-icon.png';
+
+// Usage
+<Image source={myIcon} />
+
 ```
 
 In Flutter, add a static image to your app
@@ -863,16 +865,16 @@ so third party libraries like `react-native-canvas` are used.
 
 ```js
 // React Native
-handleCanvas = canvas => {
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle = 'skyblue';
-  ctx.beginPath();
-  ctx.arc(75, 75, 50, 0, 2 * Math.PI);
-  ctx.fillRect(150, 100, 300, 300);
-  ctx.stroke();
-};
+const CanvasComp = () => {
+  const handleCanvas = (canvas) => {
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'skyblue';
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, 2 * Math.PI);
+    ctx.fillRect(150, 100, 300, 300);
+    ctx.stroke();
+  };
 
-render() {
   return (
     <View>
       <Canvas ref={this.handleCanvas} />
@@ -1467,38 +1469,34 @@ These parameters can be used in a child component using `this.props`.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title='Press'
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
-class App extends React.Component {
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title='Press'
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
-  onPress = index => {
+const App = () => {
+  const onPress = (index) => {
     console.log('Card ', index);
   };
 
-  render() {
-    return (
-      <View>
-        <FlatList
-          data={[ ... ]}
-          renderItem={({ item }) => (
-            <CustomCard onPress={this.onPress} index={item.key} />
-          )}
-        />
-      </View>
-    );
-  }
-}
+  return (
+    <View>
+      <FlatList
+        data={[ /* ... */ ]}
+        renderItem={({ item }) => (
+          <CustomCard onPress={onPress} index={item.key} />
+        )}
+      />
+    </View>
+  );
+};
 ```
 
 In Flutter, you assign a local variable or function marked
@@ -1567,10 +1565,12 @@ that is persistent and global to the app.
 
 ```js
 // React Native
+const [counter, setCounter] = useState(0)
+...
 await AsyncStorage.setItem( 'counterkey', json.stringify(++this.state.counter));
 AsyncStorage.getItem('counterkey').then(value => {
   if (value != null) {
-    this.setState({ counter: value });
+    setCounter(value);
   }
 });
 ```
@@ -1959,10 +1959,11 @@ a single gesture, [`PanResponder`][] is used.
 
 ```js
 // React Native
-class App extends Component {
+const App = () => {
+  const panResponderRef = useRef(null);
 
-  componentWillMount() {
-    this._panResponder = PanResponder.create({
+  useEffect(() => {
+    panResponderRef.current = PanResponder.create({
       onMoveShouldSetPanResponder: (event, gestureState) =>
         !!getDirection(gestureState),
       onPanResponderMove: (event, gestureState) => true,
@@ -1971,18 +1972,16 @@ class App extends Component {
       },
       onPanResponderTerminationRequest: (event, gestureState) => true
     });
-  }
+  }, []);
 
-  render() {
-    return (
-      <View style={styles.container} {...this._panResponder.panHandlers}>
-        <View style={styles.center}>
-          <Text>Swipe Horizontally or Vertically</Text>
-        </View>
+  return (
+    <View style={styles.container} {...panResponderRef.current.panHandlers}>
+      <View style={styles.center}>
+        <Text>Swipe Horizontally or Vertically</Text>
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 ```
 
 In Flutter, to add a click (or press) listener to a widget,
@@ -2041,11 +2040,13 @@ and then receive the response to get the data.
 
 ```js
 // React Native
-_getIPAddress = () => {
+const [ipAddress, setIpAddress] = useState('')
+
+const _getIPAddress = () => {
   fetch('https://httpbin.org/ip')
     .then(response => response.json())
     .then(responseJson => {
-      this.setState({ _ipAddress: responseJson.origin });
+      setIpAddress(responseJson.origin);
     })
     .catch(error => {
       console.error(error);
@@ -2106,10 +2107,12 @@ input box and then use the callback to store the value in a variable.
 
 ```js
 // React Native
+const [password, setPassword] = useState('')
+...
 <TextInput
   placeholder="Enter your Password"
-  onChangeText={password => this.setState({ password })}
- />
+  onChangeText={password => setPassword(password)}
+/>
 <Button title="Submit" onPress={this.validate} />
 ```
 
@@ -2365,24 +2368,22 @@ and then, `start()` is called to start the animation.
 
 ```js
 // React Native
-class FadeInView extends React.Component {
-  state = {
-    fadeAnim: new Animated.Value(0) // Initial value for opacity: 0
-  };
-  componentDidMount() {
-    Animated.timing(this.state.fadeAnim, {
+const FadeInView = ({ style, children }) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 10000
     }).start();
-  }
-  render() {
-    return (
-      <Animated.View style={%raw%}{{...this.props.style, opacity: this.state.fadeAnim }}{%endraw%} >
-        {this.props.children}
-      </Animated.View>
-    );
-  }
-}
+  }, []);
+
+  return (
+    <Animated.View style={{ ...style, opacity: fadeAnim }}>
+      {children}
+    </Animated.View>
+  );
+};
     ...
 <FadeInView>
   <Text> Fading in </Text>
