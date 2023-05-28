@@ -704,11 +704,13 @@ In React Native, you would add a static image by placing the image file
 in a source code directory and referencing it.
 
 ```js
-import myIcon from './my-icon.png';
-
-// Usage
-<Image source={myIcon} />
-
+<Image source={require('./my-icon.png')} />
+// OR
+<Image
+  source={{
+    uri: 'https://reactnative.dev/img/tiny_logo.png',
+  }}
+/>
 ```
 
 In Flutter, add a static image to your app
