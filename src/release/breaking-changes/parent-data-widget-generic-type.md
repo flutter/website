@@ -125,9 +125,11 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`ParentDataWidget`][]
 
 Relevant PR:
+
 * [Make ParentDataWidget usable with different ancestor RenderObjectWidget types][]
 
 

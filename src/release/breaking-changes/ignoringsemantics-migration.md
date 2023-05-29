@@ -67,10 +67,9 @@ class _RenderIgnorePointerWithSemantics extends RenderProxyBox {
 }
 ```
 
-
 ## Timeline
 
-Landed in version: TBD  <br>
+Landed in version: 3.10.0-2.0.pre<br>
 In stable release: TBD
 
 ## References
@@ -78,7 +77,7 @@ In stable release: TBD
 Relevant PRs:
 
 * [PR 120619][]: Fixes IgnorePointer and AbsorbPointer to only block user
-interactions in a11y.
+  interactions in a11y.
 
 [PR 120619]: {{site.repo.flutter}}/pull/120619
 [`IgnorePointer`]: {{site.api}}/flutter/widgets/IgnorePointer-class.html

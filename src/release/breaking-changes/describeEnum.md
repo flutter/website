@@ -31,7 +31,6 @@ enum, you can now call `Enum.field.name`.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 enum MyEnum { paper, rock }
 
@@ -40,7 +39,6 @@ print(describeEnum(MyEnum.paper)); // output: paper
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 enum MyEnum { paper, rock }
 
@@ -53,8 +51,6 @@ Landed in version: TBD<br>
 In stable release: not yet
 
 ## References
-
-{% include docs/master-api.md %}
 
 API documentation:
 
@@ -69,7 +65,6 @@ Relevant PRs:
 
 * [Deprecate `describeEnum` PR][]
 
-<!-- Stable channel link: -->
 [`describeEnum` stable]: {{site.api}}/flutter/lib/src/foundation/describeEnum.html
 
 <!-- Master channel link: -->

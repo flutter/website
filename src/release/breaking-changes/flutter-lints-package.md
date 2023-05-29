@@ -1,13 +1,15 @@
 ---
 title: Introducing package:flutter_lints
-description: Migrate to package:flutter_lints to get the latest set of recommended lints, which encourage good coding practices.
+description: >
+  Migrate to package:flutter_lints to get the latest set of
+  recommended lints, which encourage good coding practices.
 ---
 
 ## Summary
 
-The [`package:flutter_lints`][] defines the latest set of recommended lints that
-encourage good coding practices for Flutter apps, packages, and plugins. Projects
-created with `flutter create` using Flutter version 2.5 or newer are
+The [`package:flutter_lints`][] defines the latest set of recommended lints
+that encourage good coding practices for Flutter apps, packages, and plugins.
+Projects created with `flutter create` using Flutter version 2.5 or newer are
 already enabled to use the latest set of recommended lints. Projects created
 prior to that version can upgrade to it with the instructions in this guide.
 
@@ -16,9 +18,10 @@ prior to that version can upgrade to it with the instructions in this guide.
 Prior to the introduction of `package:flutter_lints`, the Flutter framework
 shipped with a set of lints defined in [`analysis_options_user.yaml`][] that was
 used by the [dart analyzer][] to identify code issues if a Flutter project
-didn't define a custom `analysis_options.yaml` file. Since `analysis_options_user.yaml`
-was tied to a particular framework version, it was difficult to evolve without
-breaking existing apps, packages, and plugins. As a result of that, the lints
+didn't define a custom `analysis_options.yaml` file.
+Since `analysis_options_user.yaml` was tied to a particular framework version,
+it was difficult to evolve without breaking
+existing apps, packages, and plugins. As a result of that, the lints
 defined in `analysis_options_user.yaml` are heavily outdated. To fix this,
 `package:flutter_lints` was created. The package versions the lint set to enable
 evolving it without breaking existing projects. Since the package builds on
@@ -36,6 +39,7 @@ project.
 
 Create an `analysis_options.yaml` file in the root directory of your project
 (next to the `pubspec.yaml` file) with the following content:
+
 ```yaml
 include: package:flutter_lints/flutter.yaml
 ```
@@ -108,7 +112,7 @@ Documentation:
 * [Package dependencies][]
 * [Customizing static analysis][]
 
-Relevant issues:
+Relevant issue:
 
 * [Issue 78432 - Update lint set for Flutter applications][]
 

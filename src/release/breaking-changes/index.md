@@ -33,10 +33,12 @@ release, and listed in alphabetical order:
 * [Moved ReorderableListView's localized strings][]  from material to widgets localizations
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
+* [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
+[Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 
 ### Released in Flutter 3.10
 

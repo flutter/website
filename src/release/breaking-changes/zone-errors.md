@@ -41,7 +41,7 @@ starting with Flutter 3.10,
 a non-fatal warning is printed in debug builds when a mismatch is detected.
 The warning looks like the following:
 
-```
+```text
 ════════ Exception caught by Flutter framework ════════════════════════════════════
 The following assertion was thrown during runApp:
 Zone mismatch.
@@ -62,7 +62,6 @@ the bindings are initialized (i.e. as the first statement in `void main() { }`).
 The warning can be made fatal by
 setting [`BindingBase.debugZoneErrorsAreFatal`][] to `true`.
 This flag might be changed to default to `true` in a future version of Flutter.
-
 
 ## Migration guide
 
@@ -126,7 +125,6 @@ wrapped in `Zone` calls that provide suitable values.
 
 It is strongly recommended that packages that use zones in this way
 migrate to more maintainable solutions.
-
 
 ## Timeline
 

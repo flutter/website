@@ -1,6 +1,8 @@
 ---
 title: Deprecated API removed after v3.7
-description: After reaching end of life, the following deprecated APIs were removed from Flutter.
+description: >
+  After reaching end of life, the following deprecated APIs
+  were removed from Flutter.
 ---
 
 ## Summary
@@ -12,7 +14,6 @@ deprecated APIs that reached end of life after the
 All affected APIs have been compiled into this
 primary source to aid in migration. A
 [quick reference sheet][] is available as well.
-
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
 [quick reference sheet]: {{site.url}}/go/deprecations-removed-after-3-7
@@ -29,6 +30,7 @@ Supported by Flutter Fix: yes
 Use `GestureRecognizer.supportedDevices` instead.
 
 This same change affects all subclasses of `GestureRecognizer`:
+
 * `EagerGestureRecognizer`
 * `ForcePressGestureRecognizer`
 * `LongPressGestureRecognizer`
@@ -52,6 +54,7 @@ than the single option `kind` provided.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 var myRecognizer = GestureRecognizer(
   kind: PointerDeviceKind.mouse,  
@@ -59,6 +62,7 @@ var myRecognizer = GestureRecognizer(
 ```
 
 Code after migration:
+
 ```dart
 var myRecognizer = GestureRecognizer(
   supportedDevices: <PointerDeviceKind>[ PointerDeviceKind.mouse ],
@@ -69,6 +73,7 @@ var myRecognizer = GestureRecognizer(
 **References**
 
 API documentation:
+
 * [`GestureRecognizer`][]
 * [`EagerGestureRecognizer`][]
 * [`ForcePressGestureRecognizer`][]
@@ -88,6 +93,7 @@ API documentation:
 * [`ScaleGestureRecognizer`][]
 
 Relevant PRs:
+
 * Deprecated in [#81858][]
 * Removed in [#119572][]
 
@@ -134,9 +140,10 @@ References should be removed.
 Uses of `ThemeData.accentColor` should be replaced with
 `ThemeData.colorScheme.secondary`.
 
-**Migration guide**
+## Migration guide
 
 Code before migration:
+
 ```dart
 var myTheme = ThemeData(
   //...
@@ -147,6 +154,7 @@ var color = myTheme.accentColor;
 ```
 
 Code after migration:
+
 ```dart
 var myTheme = ThemeData(
   //...
@@ -162,14 +170,15 @@ var color = myTheme.colorScheme.secondary;
 
 **References**
 
-In-depth migration guide
 * [Accent color migration guide][]
 
 API documentation:
+
 * [`ThemeData`][]
 * [`ColorScheme`][]
 
 Relevant issues:
+
 * [#56639][]
 * [#84748][]
 * [#56918][]
@@ -178,11 +187,13 @@ Relevant issues:
 Relevant PRs:
 
 Deprecated in:
+
 * [#92822][]
 * [#81336][]
 * [#85144][]
 
 Removed in:
+
 * [#118658][]
 * [#119360][]
 * [#120577][]
@@ -214,6 +225,7 @@ better align with Material Design. Several properties were deprecated at that
 time and have been removed.
 
 For `AppBar`, `SliverAppBar` and `AppBarTheme`:
+
 * `brightness` has been removed, and is replaced by `systemOverlayStyle`
 * `textTheme` has been removed, and is replaced by either `toolbarTextStyle` or `titleTextStyle`.
 * `backwardsCompatibility` can be removed, as it was a temporary migration flag for these properties.
@@ -224,6 +236,7 @@ as its replacement.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 var toolbarTextStyle = TextStyle(...);
 var titleTextStyle = TextStyle(...);
@@ -239,6 +252,7 @@ AppBarTheme(color: Colors.blue);
 ```
 
 Code after migration:
+
 ```dart
 var toolbarTextStyle = TextStyle(...);
 var titleTextStyle = TextStyle(...);
@@ -253,11 +267,13 @@ AppBarTheme(backgroundColor: Colors.blue);
 **References**
 
 API documentation:
+
 * [`AppBar`][]
 * [`SliverAppBar`][]
 * [`AppBarTheme`][]
 
 Relevant issues:
+
 * [#86127][]
 * [#70645][]
 * [#67921][]
@@ -267,10 +283,12 @@ Relevant issues:
 * [#61618][]
 
 Deprecated in:
+
 * [#86198][]
 * [#71184][]
 
 Removed in:
+
 * [#120618][]
 * [#119253][]
 * [#120575][]
@@ -333,9 +351,11 @@ SystemChrome.setEnabledSystemUIMode(
 **References**
 
 API documentation:
+
 * [`SystemChrome`][]
 
 Relevant issues:
+
 * [#35748][]
 * [#40974][]
 * [#44033][]
@@ -343,11 +363,12 @@ Relevant issues:
 * [#69999][]
 
 Deprecated in:
+
 * [#81303][]
 
 Removed in:
-* [#11957][]
 
+* [#11957][]
 
 [`SystemChrome`]: {{site.api}}/flutter/services/SystemChrome-class.html
 [#35748]: {{site.repo.flutter}}/pull/35748
@@ -374,11 +395,13 @@ history mode if a `Navigator` that reports routes is created.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 SystemNavigator.routeUpdated(routeName: 'foo', previousRouteName: 'bar');
 ```
 
 Code after migration:
+
 ```dart
 SystemNavigator.routeInformationUpdated(location: 'foo');
 ```
@@ -386,15 +409,19 @@ SystemNavigator.routeInformationUpdated(location: 'foo');
 **References**
 
 API documentation:
+
 * [`SystemNavigator`][]
 
 Relevant issues:
+
 * [#82574][]
 
 Deprecated in:
+
 * [#82594][]
 
 Removed in:
+
 * [#119187][]
 
 
@@ -419,6 +446,7 @@ Uses of `vsync` should be removed, as `AnimatedSize` now handles this property.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 AnimatedSize(
   vsync: this,
@@ -427,6 +455,7 @@ AnimatedSize(
 ```
 
 Code after migration:
+
 ```dart
 AnimatedSize(
   // ...
@@ -436,15 +465,17 @@ AnimatedSize(
 **References**
 
 API documentation:
+
 * [`AnimatedSize`][]
 
 Deprecated in:
+
 * [#80554][]
 * [#81067][]
 
 Removed in:
-* [#119186][]
 
+* [#119186][]
 
 [`AnimatedSize`]: {{site.api}}/flutter/widgets/AnimatedSize-class.html
 [#80554]: {{site.repo.flutter}}/pull/80554
