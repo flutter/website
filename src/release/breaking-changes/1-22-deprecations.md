@@ -10,7 +10,7 @@ description: >
 In accordance with Flutter's [Deprecation Policy][],
 deprecated APIs that reached end of life after the
 1.22 stable release have been removed.
-This is the first time deprecated APIs
+This is the first time that deprecated APIs
 have been removed from Flutter,
 and some of these deprecations predate our
 migration guide policy.

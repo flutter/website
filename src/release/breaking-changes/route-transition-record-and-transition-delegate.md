@@ -26,7 +26,7 @@ this is not always true. If a route is popped,
 but is still waiting for the popping animation to finish,
 this route would sit in the navigator routes stack until
 the animation was done. If a page update occurred during this time,
-this route exits but doesn't requires a decision
+this route exits but doesn't require a decision
 on how to transition off the screen. Therefore,
 `isWaitingForExitingDecision` was added to cover that case.
 

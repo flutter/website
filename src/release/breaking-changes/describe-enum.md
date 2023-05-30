@@ -26,7 +26,7 @@ Remove `describeEnum`.
 
 ## Migration guide
 
-If you used `describeEnum(Enum.field)` to acesss the string value from an
+If you used `describeEnum(Enum.field)` to access the string value from an
 enum, you can now call `Enum.field.name`.
 
 Code before migration:

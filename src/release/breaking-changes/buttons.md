@@ -433,7 +433,7 @@ TextButton(
 ```
 
 The new version is more flexible although less compact. In the
-original version, the the precedence of the different states is
+original version, the precedence of the different states is
 implicit (and undocumented) and fixed, in the new version, it's
 explicit.  For an app that specified these colors frequently, the
 easiest migration path would be to define one or more `ButtonStyles`
@@ -512,7 +512,7 @@ include elevation changes. For elevations that are proportional
 to a baseline elevation (per the Material Design specification),
 one can override all of them quite simply.
 
-By default a disabled button's elevation is 0, and the remaining
+By default, a disabled button's elevation is 0, and the remaining
 states are defined relative to a baseline of 2:
 
 ```dart

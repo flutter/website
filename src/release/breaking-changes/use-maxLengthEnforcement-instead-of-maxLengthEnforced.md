@@ -74,7 +74,7 @@ since this will be the behavior most familiar to the user._
   The native behavior of these platforms is enforced.
   The inputting value will be truncated whether
   the user is entering with composition or not.
-* iOS, MacOS: `MaxLengthEnforcement.truncateAfterCompositionEnds`.
+* iOS, macOS: `MaxLengthEnforcement.truncateAfterCompositionEnds`.
   These platforms do not have a "maximum length"
   feature and therefore require that developers implement
   the behavior themselves. No standard convention seems

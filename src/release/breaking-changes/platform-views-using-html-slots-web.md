@@ -145,7 +145,7 @@ ui.platformViewRegistry.registerViewFactory(viewType, (int viewId) {
 });
 ```
 
-If other techniques are used to layout the platform view (like `inset: 0`) a
+If other techniques are used to lay out the platform view (like `inset: 0`) a
 value of `auto` for `width` and `height` is enough to stop the warning.
 
 Read more about [`CSS width`][] and [`CSS height`][].

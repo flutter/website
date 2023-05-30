@@ -29,7 +29,7 @@ this specification and is unaffected by this change.
 
 ## Migration guide
 
-If you would prefer to maintain the old shape, you can use
+If you prefer to maintain the old shape, you can use
 the shape property of your `Dialog` to specify the original 2.0 pixel radius.
 
 Setting the Dialog shape to the original radius:
