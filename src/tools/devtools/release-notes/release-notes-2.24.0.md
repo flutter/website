@@ -1,5 +1,5 @@
 ---
-short-title: 2.24.01 release notes
+short-title: 2.24.0 release notes
 description: Release notes for Flutter and Dart DevTools 2.24.0
 toc: false
 ---
