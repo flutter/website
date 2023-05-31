@@ -1,6 +1,9 @@
 ---
 title: FloatingActionButton and ThemeData's accent properties
-description: Remove FloatingActionButton's undocumented use of the ThemeData accentTextTheme property, and its unnecessary use of accentIconTheme.
+description: >
+  Remove FloatingActionButton's undocumented use of
+  the ThemeData accentTextTheme property, and
+  its unnecessary use of accentIconTheme.
 ---
 
 ## Summary
@@ -12,7 +15,7 @@ Removed Flutter's `FloatingActionButton` (FAB) dependency on
 
 This was a small part of the [Material Theme System Updates][] project.
 
-Previously, the `ThemeData accentIconTheme` property was only
+Previously, the `ThemeData` [`accentIconTheme`] property was only
 used by [`FloatingActionButton`][] to determine the default
 color of the text or icons that appeared within the button.
 

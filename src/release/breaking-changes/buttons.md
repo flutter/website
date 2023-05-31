@@ -66,7 +66,6 @@ appearance has been configured with constructor parameters or with the
 original `ButtonTheme` may need to consult the migration guide and the
 introductory material that follows.
 
-
 ## API Change: ButtonStyle instead of individual style properties
 
 Except for simple use cases, the APIs of the new button classes are
@@ -184,7 +183,6 @@ Using the `styleFrom()` method is the preferred way to create a
 variation. The most flexible approach is defining a `ButtonStyle`
 directly, with `MaterialStateProperty` values for the states whose
 appearance you want to override.
-
 
 ## ButtonStyle defaults
 
@@ -435,7 +433,7 @@ TextButton(
 ```
 
 The new version is more flexible although less compact. In the
-original version, the the precedence of the different states is
+original version, the precedence of the different states is
 implicit (and undocumented) and fixed, in the new version, it's
 explicit.  For an app that specified these colors frequently, the
 easiest migration path would be to define one or more `ButtonStyles`
@@ -506,7 +504,6 @@ ElevatedButton(
 As with the previous case, there are obvious ways to make the new
 version more compact in an app where this migration comes up often.
 
-
 #### Migrating buttons with custom elevations
 
 This is also a relatively rare customization. Typically, only
@@ -515,7 +512,7 @@ include elevation changes. For elevations that are proportional
 to a baseline elevation (per the Material Design specification),
 one can override all of them quite simply.
 
-By default a disabled button's elevation is 0, and the remaining
+By default, a disabled button's elevation is 0, and the remaining
 states are defined relative to a baseline of 2:
 
 ```dart
@@ -644,11 +641,12 @@ OutlinedButton(
 ## Timeline
 
 Landed in version: 1.20.0-0.0.pre<br>
-In stable release: 2.0
+In stable release: 2.0.0
 
 ## References
 
 API documentation:
+
 * [`ButtonStyle`][]
 * [`ButtonStyleButton`][]
 * [`ElevatedButton`][]
@@ -662,6 +660,7 @@ API documentation:
 * [`TextButtonThemeData`][]
 
 Relevant PRs:
+
 * [PR 59702: New Button Universe][]
 * [PR 73352: Deprecated obsolete Material classes: FlatButton, RaisedButton, OutlineButton][]
 

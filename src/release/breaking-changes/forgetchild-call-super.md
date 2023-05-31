@@ -1,6 +1,7 @@
 ---
 title: The forgetChild() method must call super
-description: Any element subclasses that override forgetChild are required to call super.
+description: >
+    Any element subclasses that override forgetChild are required to call super.
 ---
 
 ## Summary
@@ -73,13 +74,16 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`Element`][]
 * [`forgetChild()`][]
 
 Relevant issues:
+
 * [Issue 43780][]
 
 Relevant PRs:
+
 * [PR 43790: Fix global key error][]
 
 

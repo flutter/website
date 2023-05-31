@@ -176,15 +176,19 @@ In stable release: 1.17
 ## References
 
 Design doc:
+
 * [Scrollable `AlertDialog`][]
 
 API documentation:
+
 * [`AlertDialog`][]
 
 Relevant issue:
+
 * [Overflow exceptions with maximum accessibility font size][]
 
 Relevant PRs:
+
 * [Update to `AlertDialog.scrollable`][]
 * [Original attempt to implement scrollable `AlertDialog`][]
 * [Revert of original attempt to implement scrollable `AlertDialog`][]
