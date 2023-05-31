@@ -5,14 +5,14 @@ description: AppLifecycleState had an additional hidden state added.
 
 ## Summary
 
-A new `hidden` state was added to the [`AppLifecycleState`][] enum to denote when
-the application is not visible.
+A new `hidden` state was added to the [`AppLifecycleState`][] enum to denote
+when the application is not visible.
 
 ## Context
 
 The `AppLifecycleState` enum is used to indicate which lifecycle state the
-application is in when [`WidgetsBindingObserver.didChangeAppLifecycleState`][] is
-called.
+application is in when [`WidgetsBindingObserver.didChangeAppLifecycleState`][]
+is called.
 
 ## Description of change
 
@@ -73,7 +73,7 @@ default case or conditional will still need to be evaluated to decide if the
 
 ## Timeline
 
-Landed in version: v3.11.0-15.0.pre
+Landed in version: 3.11.0-16.0.pre
 In stable release: TBD
 
 ## References
