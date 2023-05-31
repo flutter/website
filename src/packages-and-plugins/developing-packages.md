@@ -679,7 +679,7 @@ folder with the following specialized content:
 **lib**: The Dart code that defines the API of the plugin,
   and which calls into the native code using `dart:ffi`.
 
-**src**: The native source code, and a `CmakeFile.txt`
+**src**: The native source code, and a `CMakeLists.txt`
   file for building that source code into a dynamic library.
 
 **platform folders** (`android`, `ios`, `windows`, etc.): The
