@@ -706,10 +706,11 @@ in a source code directory and referencing it.
 ```js
 <Image source={require('./my-icon.png')} />
 // OR
+const source = {
+  url: 'https://reactnative.dev/img/tiny_logo.png'
+}
 <Image
-  source={{
-    uri: 'https://reactnative.dev/img/tiny_logo.png',
-  }}
+  source={source}
 />
 ```
 
