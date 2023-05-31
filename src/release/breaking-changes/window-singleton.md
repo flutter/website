@@ -1,6 +1,8 @@
 ---
 title: The window singleton is deprecated
-description: In preparation for supporting multiple views and multiple windows the window singleton has been deprecated.
+description: >
+  In preparation for supporting multiple views and 
+  multiple windows the window singleton has been deprecated.
 ---
 
 ## Summary
@@ -16,8 +18,8 @@ Originally, Flutter assumed that an application would only consist of a single
 view (the `window`) into which content can be drawn. In a multi-view world, this
 assumption no longer makes sense and the APIs encoding this assumption have
 been deprecated. Instead, applications and libraries that relied on these APIs
-must choose a specific view they want to operate on and migrate to new multi-view
-compatible APIs as outlined in this migration guide.
+must choose a specific view they want to operate on and
+migrate to new multi-view compatible APIs as outlined in this migration guide.
 
 ## Description of change
 
@@ -48,7 +50,7 @@ will be drawn. The `FlutterView` provides access to the same functionality
 that was previously available on the deprecated `SingletonFlutterView` class
 returned by the deprecated `window` properties mentioned above. However, some
 of the platform-specific functionality has moved to the `PlatformDispatcher`,
-which can be accessed from the `FlutterView` returned by `View.of` via 
+which can be accessed from the `FlutterView` returned by `View.of` via
 `FlutterView.platformDispatcher`. Using `View.of` is the preferred way of
 migrating away from the deprecated properties mentioned above.
 
@@ -72,7 +74,7 @@ together replace the functionality of `TestWindow`.
 * `WidgetTester.view` will provide a `TestFlutterView` that can be modified
   similarly to `WidgetTester.binding.window`, but with only view-specific
   properties such as the size of a view, its display pixel ratio, etc.
-    * `WidgetTester.viewOf` is available for certain multi-view use cases, but
+  * `WidgetTester.viewOf` is available for certain multi-view use cases, but
       should not be required for any migrations from
       `WidgetTester.binding.window`.
 * `WidgetTester.platformDispatcher` will provide access to a
@@ -83,7 +85,7 @@ together replace the functionality of `TestWindow`.
 ## Migration guide
 
 Instead of accessing the static `window` property, application and library code
-that has access to a `BuildContext` should use `View.of` to look up the 
+that has access to a `BuildContext` should use `View.of` to look up the
 `FlutterView` the context is associated with. Some properties have moved to
 the `PlatformDispatcher` accessible from the view via the `platformDispatcher`
 getter.
@@ -170,6 +172,7 @@ testWidget('test name', (WidgetTester tester) async {
   tester.view.viewPadding = FakeViewPadding.zero;
 });
 ```
+
 #### Resetting view-specific properties
 
 `TestFlutterView` retains the capability to reset individual properties or the
@@ -337,7 +340,7 @@ testWidgets('test name', (WidgetTester tester) async {
 ## Timeline
 
 Landed in version: 3.9.0-13.0.pre.20<br>
-In stable release: not yet
+In stable release: 3.10.0
 
 ## References
 
@@ -362,13 +365,12 @@ Relevant PRs:
 * [Deprecate BindingBase.window][]
 * [Deprecates `TestWindow`][]
 
-{% include docs/master-api.md %}
 
-[`View.of`]: {{site.master-api}}/flutter/widgets/View/of.html
+[`View.of`]: {{site.api}}/flutter/widgets/View/of.html
 [`FlutterView`]: {{site.api}}/flutter/dart-ui/FlutterView-class.html
 [`PlatformDispatcher`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher-class.html
 [`TestPlatformDispatcher`]: {{site.api}}/flutter/flutter_test/TestPlatformDispatcher-class.html
-[`TestFlutterView`]: {{site.master-api}}/flutter/flutter_test/TestFlutterView-class.html
+[`TestFlutterView`]: {{site.api}}/flutter/flutter_test/TestFlutterView-class.html
 [`TestWidgetsFlutterBinding.window`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding/window.html
 [Issue 116929]: {{site.repo.flutter}}/issues/116929
 [Issue 117481]: {{site.repo.flutter}}/issues/117481

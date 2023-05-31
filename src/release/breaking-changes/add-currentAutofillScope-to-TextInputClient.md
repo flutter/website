@@ -1,19 +1,21 @@
 ---
 title: Adding TextInputClient.currentAutofillScope property
-description: A new getter TextInputClient.currentAutofillScope was added to the TextInputClient interface for autofill support.
+description: >
+  A new getter TextInputClient.currentAutofillScope was
+  added to the TextInputClient interface for autofill support.
 ---
 
 ## Summary
 
 A new getter, `TextInputClient.currentAutofillScope`, was added to the
-`TextInputClient` interface; all `TextInputClient` subclasses must 
+`TextInputClient` interface; all `TextInputClient` subclasses must
 provide a concrete implementation of `currentAutofillScope`.
 
 This getter allows the `TextInputClient` to trigger an
 autofill that involves multiple logically connected input
 fields. For example, a "username" field can trigger an
 autofill that fills both itself and the "password"
-field associated with it. 
+field associated with it.
 
 ## Context
 
@@ -42,7 +44,7 @@ abstract class TextInputClient {
 }
 ```
 
-If you see the error message "missing concrete implementation of 
+If you see the error message "missing concrete implementation of
 'getter TextInputClient.currentAutofillScope'" while compiling
 a Flutter app, follow the migration steps listed below.
 
@@ -72,8 +74,7 @@ class CustomTextFieldState extends State<CustomTextField> implements TextInputCl
 }
 ```
 
-For more information, see [`AutofillGroup`][].
-
+For more information, check out [`AutofillGroup`][].
 
 ## Timeline
 
@@ -83,13 +84,16 @@ In stable release: 1.20
 ## References
 
 API documentation:
+
 * [`AutofillGroup`][]
 * [`TextInputClient.currentAutofillScope`][]
 
-Relevant issues:
+Relevant issue:
+
 * [Issue 13015: Autofill support][]
 
-Relevant PRs:
+Relevant PR:
+
 * [Framework PR that added autofill support][]
 
 
@@ -98,4 +102,3 @@ Relevant PRs:
 
 [`AutofillGroup`]: {{site.api}}/flutter/widgets/AutofillGroup-class.html
 [`TextInputClient.currentAutofillScope`]: {{site.api}}/flutter/services/TextInputClient/currentAutofillScope.html
-

@@ -1,11 +1,13 @@
 ---
 title: iOS FlutterViewController splashScreenView made nullable
-description: FlutterViewController splashScreenView changed from nonnull to nullable.
+description: >
+  FlutterViewController splashScreenView changed from nonnull to nullable.
 ---
 
 ## Summary
 
-The `FlutterViewController` property `splashScreenView` has been changed from `nonnull` to `nullable`.
+The `FlutterViewController` property `splashScreenView` has
+been changed from `nonnull` to `nullable`.
 
 Old declaration of `splashScreenView`:
 
@@ -21,24 +23,32 @@ New declaration of `splashScreenView`:
 
 ## Context
 
-Prior to this change, on iOS the `splashScreenView` property returned `nil` when no splash screen view
-was set, and setting the property to `nil` removed the splash screen view. However, the 
-`splashScreenView` API was incorrectly marked `nonnull`. This property is most often used
-when transitioning to Flutter views in iOS add-to-app scenarios.
+Prior to this change, on iOS the `splashScreenView` property returned `nil`
+when no splash screen view was set, and
+setting the property to `nil` removed the splash screen view.
+However, the `splashScreenView` API was incorrectly marked `nonnull`. 
+This property is most often used when transitioning to
+Flutter views in iOS add-to-app scenarios.
 
 ## Description of change
 
-While it was possible in Objective-C to work around the incorrect `nonnull` annotation by setting
-`splashScreenView` to a `nil` `UIView`, in Swift this caused a compilation error:
-```
+While it was possible in Objective-C to work around the
+incorrect `nonnull` annotation by setting `splashScreenView` to
+a `nil` `UIView`, in Swift this caused a compilation error:
+
+```nocode
 error build: Value of optional type 'UIView?' must be unwrapped to a value of type 'UIView'
 ```
-[PR #34743][] updates the property attribute to `nullable`. It can return `nil` and can be set to `nil` to remove the view in both Objective-C and Swift.
+
+[PR #34743][] updates the property attribute to `nullable`.
+It can return `nil` and can be set to `nil` to
+remove the view in both Objective-C and Swift.
 
 ## Migration guide
 
-If `splashScreenView` is stored in a `UIView` variable in Swift, update to an optional type `UIView?`.
- 
+If `splashScreenView` is stored in a `UIView` variable in Swift,
+update to an optional type `UIView?`.
+
 Code before migration:
 
 ```swift
@@ -66,6 +76,7 @@ In stable release: 3.7
 ## References
 
 Relevant PR:
+
 * [Make splashScreenView of FlutterViewController nullable][]
 
 [Make splashScreenView of FlutterViewController nullable]: {{site.github}}/flutter/engine/pull/34743

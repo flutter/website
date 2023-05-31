@@ -1,9 +1,12 @@
 ---
 title: Nullable CupertinoThemeData.brightness
-description: CupertinoThemeData.brightness is now nullable, and it returns the value specified by the user (defaults to null) as is.
+description: >
+  CupertinoThemeData.brightness is now nullable, and it
+  returns the value specified by the user (defaults to null) as is.
 ---
 
 ## Summary
+
 [`CupertinoThemeData.brightness`] is now nullable.
 
 ## Context
@@ -50,7 +53,6 @@ When a `CupertinoTheme` uses the above `CupertinoThemeData`,
 dark mode is enabled for all its Cupertino descendants
 that are affected by this `CupertinoTheme`.
 
-
 ## Timeline
 
 Landed in version: 1.16.3<br>
@@ -59,15 +61,19 @@ In stable release: 1.17
 ## References
 
 Design doc:
+
 * [Make `CupertinoThemeData.brightness nullable`][]
 
 API documentation:
+
 * [`CupertinoThemeData.brightness`][]
 
 Relevant issue:
+
 * [Issue 47255][]
 
 Relevant PR:
+
 * [Let material `ThemeData` dictate brightness if `cupertinoOverrideTheme.brightness` is null][]
 
 
