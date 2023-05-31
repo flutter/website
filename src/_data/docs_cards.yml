@@ -1,7 +1,7 @@
 - name: Get started
   description: Set up your environment and start building.
   url: /get-started/install
-- name: Widget catalog
+- name: Widgets catalog
   description: Dip into the rich set of Flutter widgets available in the SDK.
   url: /ui/widgets
 - name: API docs
