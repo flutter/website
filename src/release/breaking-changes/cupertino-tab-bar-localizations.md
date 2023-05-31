@@ -13,7 +13,7 @@ Instances of `CupertinoTabBar` must have a
 `CupertinoTabBar` without localizations
 results in an assertion such as the following:
 
-```text
+```nocode
 CupertinoTabBar requires a Localizations parent in order to provide an appropriate Semantics hint
 for tab indexing. A CupertinoApp provides the DefaultCupertinoLocalizations, or you can
 instantiate your own Localizations.

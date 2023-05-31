@@ -37,7 +37,7 @@ class CustomGestureRecognizer extends ScaleGestureRecognizer {
 The new method declaration will cause this code to fail with the following
 error message:
 
-```text
+```nocode
 super.addAllowedPointer(event); The argument type 'PointerEvent' can't be assigned to the parameter type 'PointerDownEvent'.
                                 #argument_type_not_assignable
 

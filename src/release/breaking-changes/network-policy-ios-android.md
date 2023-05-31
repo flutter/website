@@ -11,7 +11,7 @@ If your code tries to open an HTTP connection to a host
 on iOS or Android, a `StateException` is now thrown with
 the following message:
 
-```text
+```nocode
 Insecure HTTP is not allowed by platform: <host>
 ```
 

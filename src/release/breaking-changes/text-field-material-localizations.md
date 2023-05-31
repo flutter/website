@@ -12,7 +12,7 @@ Instances of `TextField` must have a
 Trying to instantiate a `TextField` without the proper localizations
 results in an assertion such as the following:
 
-```text
+```nocode
 No MaterialLocalizations found.
 TextField widgets require MaterialLocalizations to be provided by a Localizations widget ancestor.
 The material library uses Localizations to generate messages, labels, and abbreviations.

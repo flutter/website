@@ -36,7 +36,7 @@ While it was possible in Objective-C to work around the
 incorrect `nonnull` annotation by setting `splashScreenView` to
 a `nil` `UIView`, in Swift this caused a compilation error:
 
-```text
+```nocode
 error build: Value of optional type 'UIView?' must be unwrapped to a value of type 'UIView'
 ```
 

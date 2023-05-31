@@ -11,7 +11,7 @@ Instances of `RenderEditable` must be laid out before processing hit
 testing. Trying to hit-test a `RenderEditable` object before layout
 results in an assertion such as the following:
 
-```text
+```nocode
 Failed assertion: line 123 pos 45: '!debugNeedsLayout': is not true.
 ```
 

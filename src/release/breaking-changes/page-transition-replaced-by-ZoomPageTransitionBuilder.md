@@ -89,7 +89,7 @@ MaterialApp(
 If you used to try to find widgets but failed with *Too many elements*
 using the new transition, and saw errors similar to the following:
 
-```text
+```nocode
 ══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
 The following StateError was thrown running a test:
 Bad state: Too many elements

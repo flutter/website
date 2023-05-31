@@ -388,7 +388,7 @@ not compatible with Dart 2.16 and later, as they depend on the now removed
 `packageRoot` API. You may see an error like this when attempting to run your
 app:
 
-```text
+```nocode
 ../../.pub-cache/hosted/pub.dartlang.org/platform-3.0.0/
   lib/src/interface/local_platform.dart:46:19:
   Error: Member not found: 'packageRoot'.

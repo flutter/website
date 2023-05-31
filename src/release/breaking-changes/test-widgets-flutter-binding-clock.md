@@ -30,7 +30,7 @@ testWidgets('some test', (WidgetTester tester) {
 
 The error you might see after this change looks something like this:
 
-```text
+```nocode
 Error: The argument type 'Clock/*1*/' can't be assigned to the parameter type 'Clock/*2*/'.
  - 'Clock/*1*/' is from 'package:clock/src/clock.dart' ('<pub-cache>/clock/lib/src/clock.dart').
  - 'Clock/*2*/' is from 'package:quiver/time.dart' ('<pub-cache>/quiver/lib/time.dart').

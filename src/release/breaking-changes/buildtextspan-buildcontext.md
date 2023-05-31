@@ -92,7 +92,7 @@ class MyTextEditingController {
 
 Example error message before migration:
 
-```text
+```nocode
 'MyTextEditingController.buildTextSpan' ('TextSpan Function({TextStyle? style, required bool withComposing})') isn't a valid override of 'TextEditingController.buildTextSpan' ('TextSpan Function({required BuildContext context, TextStyle? style, required bool withComposing})').
 ```
 
@@ -121,7 +121,7 @@ TextSpan span = controller.buildTextSpan(withComposing: false);
 
 Error message before migration:
 
-```text
+```nocode
 The named parameter 'context' is required, but there's no corresponding argument.
 Try adding the required argument.
 ```

@@ -12,7 +12,7 @@ To build a Flutter app for Android, Kotlin 1.5.31 or greater is required.
 If your app uses a lower version,
 you will receive the following error message:
 
-```text
+```nocode
 ┌─ Flutter Fix ────────────────────────────────────────────────────────────┐
 │                                                                          │
 │ [!] Your project requires a newer version of the Kotlin Gradle plugin.   │

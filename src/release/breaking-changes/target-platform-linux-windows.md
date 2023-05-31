@@ -76,13 +76,13 @@ can then help you find any cases that aren't handled.
 In order to migrate to the new enum, and avoid the analyzer's
 `missing_enum_constant_in_switch` error, which looks like:
 
-```text
+```nocode
 warning: Missing case clause for 'linux'. (missing_enum_constant_in_switch at [package] path/to/file.dart:111)
 ```
 
 or:
 
-```text
+```nocode
 warning: Missing case clause for 'windows'. (missing_enum_constant_in_switch at [package] path/to/file.dart:111)
 ```
 

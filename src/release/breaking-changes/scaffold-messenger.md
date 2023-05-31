@@ -100,7 +100,7 @@ that a given context has a `ScaffoldMessenger` ancestor.
 Trying to present  a `SnackBar` without a `ScaffoldMessenger` ancestor
 present results in an assertion such as the following:
 
-```text
+```nocode
 No ScaffoldMessenger widget found.
 Scaffold widgets require a ScaffoldMessenger widget ancestor.
 Typically, the ScaffoldMessenger widget is introduced by the MaterialApp

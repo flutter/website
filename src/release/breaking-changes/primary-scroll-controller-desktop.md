@@ -18,7 +18,7 @@ had not already been provided. This allowed for common UI patterns, like the
 scroll-to-top function on iOS to work out of the box for Flutter apps.
 On desktop however, this default would often cause the following assertion error:
 
-```text
+```nocode
 ScrollController attached to multiple ScrollViews.
 ```
 

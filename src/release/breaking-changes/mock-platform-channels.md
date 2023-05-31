@@ -76,7 +76,7 @@ expose the currently registered listener for a channel.
 
 Code that needs migrating may see errors such as the following:
 
-```text
+```nocode
   error - The method 'setMockMessageHandler' isn't defined for the type 'BinaryMessenger' at test/sensors_test.dart:64:8 - (undefined_method)
 
   error • The method 'setMockMethodCallHandler' isn't defined for the type 'MethodChannel' • test/widgets/editable_text_test.dart:5623:30 • undefined_method
