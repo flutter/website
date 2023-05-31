@@ -119,7 +119,7 @@
       permalink: /ui/advanced
       children:
         - title: Actions & shortcuts
-          permalink: /ui/advanced/actions_and_shortcuts
+          permalink: /ui/advanced/actions-and-shortcuts
         - title: Fonts & typography
           permalink: /ui/advanced/typography
         - title: Keyboard focus system
