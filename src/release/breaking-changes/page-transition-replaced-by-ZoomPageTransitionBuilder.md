@@ -18,8 +18,9 @@ similar to the one provided by Android O. This page transitions builder
 will eventually be deprecated on Android, as per Flutter's
 [deprecation policy]({{site.url}}/resources/compatibility#deprecation-policy).
 
-`ZoomPageTransitionsBuilder`, the new page transition builder for Android, Linux, and Windows,
-defines a page transition that's similar to the one provided by Android Q and R.
+`ZoomPageTransitionsBuilder`, the new page transition builder for
+Android, Linux, and Windows, defines a page transition that's similar to
+the one provided by Android Q and R.
 
 According to the [Style guide for Flutter repo][],
 the framework will follow the latest OEM behavior.
@@ -88,7 +89,7 @@ MaterialApp(
 If you used to try to find widgets but failed with *Too many elements*
 using the new transition, and saw errors similar to the following:
 
-```
+```nocode
 ══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
 The following StateError was thrown running a test:
 Bad state: Too many elements
@@ -104,11 +105,13 @@ You should migrate your tests by using the
 Below is the example of `DataTable`'s test:
 
 Test before migration:
+
 ```dart
 final Finder finder = find.widgetWithIcon(Transform, Icons.arrow_upward);
 ```
 
 Test after migration:
+
 ```dart
 final Finder finder = find.descendant(
   of: find.byType(DataTable),
@@ -127,14 +130,17 @@ In stable release: v3.0.0
 ## References
 
 API documentation:
+
 * [`ZoomPageTransitionsBuilder`][]
 * [`FadeUpwardsPageTransitionsBuilder`][]
 * [`PageTransitionsTheme`][]
 
 Relevant issues:
+
 * [Issue 43277][]
 
 Relevant PR:
+
 * [PR 100812][]
 
 [`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html

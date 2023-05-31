@@ -1,6 +1,8 @@
 ---
 title: Adding ImageProvider.loadBuffer
-description: ImageProviders must now be implemented using the new loadBuffer API instead of the existing load API.
+description: >
+  ImageProviders must now be implemented using the
+  new loadBuffer API instead of the existing load API.
 ---
 
 ## Summary
@@ -108,7 +110,8 @@ class MyDelegatingProvider extends ImageProvider<MyDelegatingProvider> {
 }
 ```
 
-In both cases you might choose to keep the previous implementation of `ImageProvider.load`
+In both cases you might choose to keep the
+previous implementation of `ImageProvider.load`
 to give users of your code time to migrate as well.
 
 ## Timeline
@@ -123,6 +126,6 @@ API documentation:
 * [`ImmutableBuffer`]({{site.api}}/flutter/dart-ui/ImmutableBuffer-class.html)
 * [`ImageProvider`]({{site.api}}/flutter/painting/ImageProvider-class.html)
 
-Relevant PRs:
+Relevant PR:
 
 * [Use immutable buffer for loading asset images]({{site.repo.flutter}}/pull/103496)

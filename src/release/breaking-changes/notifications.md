@@ -1,6 +1,7 @@
 ---
 title: Removing Notification.visitAncestor
-description: Notifications only traverse ancestors that are notification listeners.
+description: >
+  Notifications only traverse ancestors that are notification listeners.
 ---
 
 ## Summary
@@ -39,9 +40,9 @@ method is no longer supported as we no longer visit all ancestor elements.
 Any classes that extend `Notification` should
 no longer override this method.
 
-** If you don't implement a custom Notification
+**If you don't implement a custom Notification
 that overrides `Notification.visitAncestor`,
-then no changes are required. **
+then no changes are required.**
 
 ## Migration guide
 
@@ -104,12 +105,12 @@ In stable release: 3.0.0
 
 API documentation:
 
-* [`Notification`]: {{site.api}}/flutter/widgets/Notification-class.html
+* [`Notification`]({{site.api}}/flutter/widgets/Notification-class.html)
 
 Relevant issues:
 
-* [Issue 97849]: {{site.repo.flutter}}/issues/97849
+* [Issue 97849]({{site.repo.flutter}}/issues/97849)
 
 Relevant PRs:
 
-* [improve Notification API performance]:  {{site.repo.flutter}}/pull/98451
+* [improve Notification API performance]({{site.repo.flutter}}/pull/98451)

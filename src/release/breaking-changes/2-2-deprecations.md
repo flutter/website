@@ -1,6 +1,8 @@
 ---
 title: Deprecated API removed after v2.2
-description: After reaching end of life, the following deprecated APIs were removed from Flutter.
+description: >
+  After reaching end of life, the following deprecated APIs
+  were removed from Flutter.
 ---
 
 ## Summary
@@ -12,7 +14,6 @@ deprecated APIs that reached end of life after the
 All affected APIs have been compiled into this
 primary source to aid in migration. A
 [quick reference sheet][] is available as well.
-
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
 [quick reference sheet]: {{site.url}}/go/deprecations-removed-after-2-2
@@ -35,6 +36,7 @@ choice, adding `FloatingLabelBehavior.always` as an additional option.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 // InputDecoration
 // Base constructor
@@ -62,6 +64,7 @@ inputDecorationTheme.copyWith(hasFloatingPlaceholder: true);
 ```
 
 Code after migration:
+
 ```dart
 // InputDecoration
 // Base constructor
@@ -91,14 +94,17 @@ inputDecorationTheme.copyWith(floatingLabelBehavior: FloatingLabelBehavior.auto)
 **References**
 
 API documentation:
+
 * [`InputDecoration`][]
 * [`InputDecorationTheme`][]
 * [`FloatingLabelBehavior`][]
 
 Relevant issues:
+
 * [InputDecoration: option to always float label][]
 
 Relevant PRs:
+
 * Deprecated in [#46115][]
 * Removed in [#83923][]
 
@@ -135,6 +141,7 @@ new API.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 // TextTheme
 // Base constructor
@@ -189,6 +196,7 @@ style = textTheme.overline;
 ```
 
 Code after migration:
+
 ```dart
 // TextTheme
 // Base constructor
@@ -243,15 +251,19 @@ style = textTheme.overline;
 **References**
 
 Design document:
+
 * [Update the TextTheme API][]
 
 API documentation:
+
 * [`TextTheme`][]
 
 Relevant issues:
+
 * [Migrate TextTheme to 2018 APIs][]
 
 Relevant PRs:
+
 * Deprecated in [#48547][]
 * Removed in [#83924][]
 
@@ -275,12 +287,14 @@ For the former, use the `material2014` constructor.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 // Formerly returned 2014 TextStyle spec
 Typography();
 ```
 
 Code after migration:
+
 ```dart
 // Use 2018 TextStyle spec, either by default or explicitly.
 Typography();
@@ -293,15 +307,19 @@ Typography.material2014();
 **References**
 
 Design document:
+
 * [Update the TextTheme API][]
 
 API documentation:
+
 * [`Typography`][]
 
 Relevant issues:
+
 * [Migrate TextTheme to 2018 APIs][]
 
 Relevant PRs:
+
 * Deprecated in [#48547][]
 * Removed in [#83924][]
 
@@ -310,7 +328,6 @@ Relevant PRs:
 [Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}/issues/45745
 [#48547]: {{site.repo.flutter}}/pull/48547
 [#83924]: {{site.repo.flutter}}/pull/83924
-
 
 ---
 
