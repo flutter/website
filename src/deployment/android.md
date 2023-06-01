@@ -192,6 +192,13 @@ by editing the `[project]/android/app/build.gradle` file.
 
 </li>
 
+{{site.alert.note}}
+  Note: If you'd prefer not to store your passwords in plain text
+  you can store your credentials [in the Keychain Access App](https://pilloxa.gitlab.io/posts/safer-passwords-in-gradle/).
+  In which case you can skip the first 2 lines of `key.properties`
+  file and follow the steps in the link above accordingly.
+{{site.alert.end}}
+
 <li markdown="1"> Find the `buildTypes` block:
 
 ```
