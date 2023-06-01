@@ -17,12 +17,16 @@ you can file an issue or a pull request using the buttons at the top of the page
 
 __What does this issue look like?__
 
-When you try to run the `flutter` command, the console fails to find it. On
-Windows, the error usually looks like this:
+When you try to run the `flutter` command, 
+the console fails to find it. 
+The error usually looks as follows:
 
 ```
 'flutter' is not recognized as an internal or external command operable program or batch file
 ```
+
+Error messages on macOS and Linux could look slightly different from 
+the one on Windows. 
 
 __Explanation and suggestions__
 
