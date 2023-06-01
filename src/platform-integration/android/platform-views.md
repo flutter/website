@@ -72,7 +72,8 @@ use the following instructions:
    <?code-excerpt "lib/platform_views/native_view_example_1.dart (HybridCompositionWidget)"?>
    ```dart
    Widget build(BuildContext context) {
-     // This is used in the platform side to register the view.
+     // 'viewType' here, is used in the platform side to register the view.
+     // It works like an ID, it can be any safe string
      const String viewType = '<platform-view-type>';
      // Pass parameters to the platform side.
      const Map<String, dynamic> creationParams = <String, dynamic>{};
