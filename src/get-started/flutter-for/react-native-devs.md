@@ -706,11 +706,10 @@ in a source code directory and referencing it.
 ```js
 <Image source={require('./my-icon.png')} />
 // OR
-const source = {
-  url: 'https://reactnative.dev/img/tiny_logo.png'
-}
 <Image
-  source={source}
+  source={%raw%}{{
+    url: 'https://reactnative.dev/img/tiny_logo.png'
+  }}{%endraw%}
 />
 ```
 
@@ -2382,7 +2381,7 @@ const FadeInView = ({ style, children }) => {
   }, []);
 
   return (
-    <Animated.View style={{ ...style, opacity: fadeAnim }}>
+    <Animated.View style={%raw%}{{ ...style, opacity: fadeAnim }}{%endraw%}>
       {children}
     </Animated.View>
   );
