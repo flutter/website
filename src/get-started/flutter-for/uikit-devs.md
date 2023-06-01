@@ -1462,8 +1462,8 @@ Future<String> loadAsset() async {
 
 For images, Flutter follows a simple density-based format like iOS.
 Image assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
-The so-called [`devicePixelRatio`][]
-expresses the ratio of physical pixels in a single logical pixel.
+Flutter's [`devicePixelRatio`][] expresses the ratio
+of physical pixels in a single logical pixel.
 
 Assets are located in any arbitrary folder&mdash;
 Flutter has no predefined folder structure.
@@ -2173,8 +2173,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [layout tutorial]: {{site.url}}/ui/widgets/layout
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [Material Components]: {{site.material}}/develop/flutter/
-[Material Design guidelines]: {{site.material}}/design/
-[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[Material Design guidelines]: {{site.material}}/styles/
+[optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [Platform adaptations]: {{site.url}}/resources/platform-adaptations
 [platform channel]: {{site.url}}/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}/flutter/packages

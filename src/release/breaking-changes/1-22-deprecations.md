@@ -1,6 +1,8 @@
 ---
 title: Deprecated API removed after v1.22
-description: After reaching end of life, the following deprecated APIs were removed from Flutter.
+description: >
+  After reaching end of life, 
+  the following deprecated APIs were removed from Flutter.
 ---
 
 ## Summary
@@ -8,7 +10,7 @@ description: After reaching end of life, the following deprecated APIs were remo
 In accordance with Flutter's [Deprecation Policy][],
 deprecated APIs that reached end of life after the
 1.22 stable release have been removed.
-This is the first time deprecated APIs
+This is the first time that deprecated APIs
 have been removed from Flutter,
 and some of these deprecations predate our
 migration guide policy.
@@ -41,11 +43,13 @@ Use `CupertinoAlertDialog` or `CupertinoPopupSurface` instead.
 *CupertinoAlertDialog*
 
 Code before migration:
+
 ```dart
 CupertinoDialog(child: myWidget);
 ```
 
 Code after migration:
+
 ```dart
 CupertinoAlertDialog(content: myWidget);
 ```
@@ -53,11 +57,13 @@ CupertinoAlertDialog(content: myWidget);
 *CupertinoPopupSurface*
 
 Code before migration:
+
 ```dart
 CupertinoDialog(child: myWidget);
 ```
 
 Code after migration:
+
 ```dart
 CupertinoPopupSurface(child: myWidget);
 ```
@@ -65,13 +71,16 @@ CupertinoPopupSurface(child: myWidget);
 **References**
 
 API documentation:
+
 * [`CupertinoAlertDialog`][]
 * [`CupertinoPopupSurface`][]
 
 Relevant issues:
+
 * [Deprecate CupertinoDialog class][]
 
 Relevant PRs:
+
 * Deprecated in [#20649][]
 * Removed in [#73604][]
 
@@ -97,6 +106,7 @@ call `CupertinoTheme.of(context).primaryColor`.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 CupertinoNavigationBar(
   actionsForegroundColor: CupertinoColors.systemBlue,
@@ -107,6 +117,7 @@ CupertinoSliverNavigationBar(
 ```
 
 Code after migration:
+
 ```dart
 CupertinoTheme(
   data: CupertinoThemeData(
@@ -122,15 +133,18 @@ CupertinoTheme.of(context).primaryColor;
 **References**
 
 API documentation:
+
 * [`CupertinoNavigationBar`][]
 * [`CupertinoSliverNavigationBar`][]
 * [`CupertinoTheme`][]
 * [`CupertinoThemeData`][]
 
 Relevant issues:
+
 * [Create a CupertinoApp and a CupertinoTheme][]
 
 Relevant PRs:
+
 * Deprecated in [#23759][]
 * Removed in [#73745][]
 
@@ -156,12 +170,14 @@ parameter, references should be removed.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 const CupertinoTextThemeData themeData = CupertinoTextThemeData(brightness: Brightness.dark);
 themeData.copyWith(brightness: Brightness.light);
 ```
 
 Code after migration:
+
 ```dart
 const CupertinoTextThemeData themeData = CupertinoTextThemeData();
 themeData.copyWith();
@@ -170,12 +186,15 @@ themeData.copyWith();
 **References**
 
 API documentation:
+
 * [`CupertinoTextThemeData`][]
 
 Relevant issues:
+
 * [Revise CupertinoColors and CupertinoTheme for dynamic colors][]
 
 Relevant PRs:
+
 * Deprecated in [#41859][]
 * Removed in [#72017][]
 
@@ -189,39 +208,44 @@ Relevant PRs:
 ### Pointer events constructed `fromHoverEvent`
 
 Supported by fix tool: Yes
- 
+
 The `fromHoverEvent` constructors for `PointerEnterEvent`
 and `PointerExitEvent` were deprecated in v1.4.3.
 The `fromMouseEvent` constructor should be used instead.
- 
+
 **Migration guide**
- 
+
 Code before migration:
+
 ```dart
 final PointerEnterEvent enterEvent = PointerEnterEvent.fromHoverEvent(PointerHoverEvent());
 final PointerExitEvent exitEvent = PointerExitEvent.fromHoverEvent(PointerHoverEvent());
 ```
- 
+
 Code after migration:
+
 ```dart
 final PointerEnterEvent enterEvent = PointerEnterEvent.fromMouseEvent(PointerHoverEvent());
 final PointerExitEvent exitEvent = PointerExitEvent.fromMouseEvent(PointerHoverEvent());
 ```
- 
+
 **References**
- 
+
 API documentation:
+
 * [`PointerEnterEvent`][]
 * [`PointerExitEvent`][]
- 
+
 Relevant issues:
+
 * [PointerEnterEvent and PointerExitEvent can only
   be created from hover events][]
- 
+
 Relevant PRs:
+
 * Deprecated in [#28602][]
 * Removed in [#72395][]
- 
+
 [`PointerEnterEvent`]: {{site.api}}/flutter/gestures/PointerEnterEvent-class.html
 [`PointerExitEvent`]: {{site.api}}/flutter/gestures/PointerExitEvent-class.html
 [PointerEnterEvent and PointerExitEvent can only be created from hover events]: {{site.repo.flutter}}/issues/29696
@@ -233,31 +257,35 @@ Relevant PRs:
 ### `showDialog` uses `builder`
 
 Supported by fix tool: Yes
- 
+
 The `child` parameter of `showDialog` was deprecated in v0.2.3.
 The `builder` parameter should be used instead.
- 
+
 **Migration guide**
- 
+
 Code before migration:
+
 ```dart
 showDialog(child: myWidget);
 ```
- 
+
 Code after migration:
 ```dart
 showDialog(builder: (context) => myWidget);
 ```
- 
+
 **References**
- 
+
 API documentation:
+
 * [`showDialog`][]
- 
+
 Relevant issues:
+
 * [showDialog should take a builder rather than a child][]
- 
+
 Relevant PRs:
+
 * Deprecated in [#15303][]
 * Removed in [#72532][]
  
@@ -271,38 +299,43 @@ Relevant PRs:
 ### `Scaffold.resizeToAvoidBottomPadding`
 
 Supported by fix tool: Yes
- 
+
 The `resizeToAvoidBottomPadding` parameter of `Scaffold` was deprecated in v1.1.9.
 The `resizeToAvoidBottomInset` parameter should be used instead.
- 
+
 **Migration guide**
  
 Code before migration:
+
 ```dart
 Scaffold(resizeToAvoidBottomPadding: true);
 ```
- 
+
 Code after migration:
+
 ```dart
 Scaffold(resizeToAvoidBottomInset: true);
 ```
- 
+
 **References**
- 
+
 API documentation:
+
 * [`Scaffold`][]
- 
+
 Relevant issues:
+
 * [Show warning when nesting Scaffolds][]
 * [SafeArea with keyboard][]
 * [Double stacked material scaffolds shouldn't double resizeToAvoidBottomPadding][]
 * [viewInsets and padding on Window and MediaQueryData should define how they interact][]
 * [bottom overflow issue, when using textfields inside tabbarview][]
- 
+
 Relevant PRs:
+
 * Deprecated in [#26259][]
 * Removed in [#72890][]
- 
+
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [Show warning when nesting Scaffolds]: {{site.repo.flutter}}/issues/23106
 [SafeArea with keyboard]: {{site.repo.flutter}}/issues/25758
@@ -317,7 +350,7 @@ Relevant PRs:
 ### `ButtonTheme.bar`
 
 Supported by fix tool: No
- 
+
 The `bar` constructor of `ButtonTheme` was deprecated in v1.9.1.
 `ButtonBarTheme` can be used instead for `ButtonBar`s,
 or use another constructor of `ButtonTheme`
@@ -327,9 +360,9 @@ Button-specific theming is also available with the `TextButtonTheme`,
 `ElevatedButtonTheme`, and `OutlinedButtonTheme` classes,
 each corresponding with the appropriate button class,
 `TextButton`, `ElevatedButton` and `OutlinedButton`.
- 
+
 **Migration guide**
- 
+
 Code before migration:
 
 ```dart
@@ -339,7 +372,7 @@ ButtonTheme.bar(
   height: 40.0,
 );
 ```
- 
+
 Code after migration, using `ButtonTheme`:
 
 ```dart
@@ -361,10 +394,11 @@ ButtonBarTheme(
   )
 );
 ```
- 
+
 **References**
- 
+
 API documentation:
+
 * [`ButtonTheme`][]
 * [`ButtonBarTheme`][]
 * [`ButtonBar`][]
@@ -374,25 +408,27 @@ API documentation:
 * [`ElevatedButton`][]
 * [`OutlinedButtonTheme`][]
 * [`OutlinedButton`][]
- 
+
 Relevant issues:
+
 * [ButtonTheme.bar uses accent color when it should be using primary color][]
 * [ThemeData.accentColor has insufficient contrast for text][]
 * [Increased height as a result of changes to materialTapTargetSize affecting AlertDialog/ButtonBar heights][]
- 
+
 Relevant PRs:
+
 * Deprecated in [#37544][]
 * Removed in [#73746][]
- 
+
 [`ButtonTheme`]: {{site.api}}/flutter/material/ButtonTheme-class.html
 [`ButtonBarTheme`]: {{site.api}}/flutter/material/ButtonBarTheme-class.html
 [`ButtonBar`]: {{site.api}}/flutter/material/ButtonBar-class.html
-[`TextButtonTheme`]: {{site.api}}/flutter/material/TextButtonTheme-class.html 
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html 
-[`ElevatedButtonTheme`]: {{site.api}}/flutter/material/ElevatedButtonTheme-class.html 
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html 
-[`OutlinedButtonTheme`]: {{site.api}}/flutter/material/OutlinedButtonTheme-class.html 
-[`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html 
+[`TextButtonTheme`]: {{site.api}}/flutter/material/TextButtonTheme-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
+[`ElevatedButtonTheme`]: {{site.api}}/flutter/material/ElevatedButtonTheme-class.html
+[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
+[`OutlinedButtonTheme`]: {{site.api}}/flutter/material/OutlinedButtonTheme-class.html
+[`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
 [ButtonTheme.bar uses accent color when it should be using primary color]: {{site.repo.flutter}}/issues/31333
 [ThemeData.accentColor has insufficient contrast for text]: {{site.repo.flutter}}/issues/19946
 [Increased height as a result of changes to materialTapTargetSize affecting AlertDialog/ButtonBar heights]: {{site.repo.flutter}}/issues/20585
@@ -404,12 +440,13 @@ Relevant PRs:
 ### `InlineSpan`, `TextSpan`, `PlaceholderSpan`
 
 Supported by fix tool: No
- 
-The following methods were deprecated in the `InlineSpan`, `TextSpan` and `PlaceholderSpan` in order
-to enable embedding widgets inline into paragraphs, like images. 
- 
+
+The following methods were deprecated in the
+`InlineSpan`, `TextSpan` and `PlaceholderSpan` in order
+to enable embedding widgets inline into paragraphs, like images.
+
 **Migration guide**
- 
+
 Code before migration | Code after migration
 -- | --
 `InlineSpan.text` | `TextSpan.text`
@@ -419,26 +456,29 @@ Code before migration | Code after migration
 `InlineSpan.describeSemantics` | `InlineSpan.computeSemanticsInformation`
 `PlaceholderSpan.visitTextSpan` | `PlaceHolderSpan.visitChildren`
 `TextSpan.visitTextSpan` |  `TextSpan.visitChildren`
- 
+
 **References**
- 
+
 API documentation:
+
 * [`InlineSpan`][]
 * [`TextSpan`][]
 * [`PlaceholderSpan`][]
 * [`WidgetSpan`][]
- 
+
 Relevant issues:
+
 * [Text: support inline images][]
 
 Relevant PRs:
+
 * Development history:
   * [#30069][]
   * [#33946][]
   * [#33794][]
 * Deprecated in [#34051][]
 * Removed in [#73747][]
- 
+
 [`InlineSpan`]: {{site.api}}/flutter/painting/InlineSpan-class.html
 [`TextSpan`]: {{site.api}}/flutter/painting/TextSpan-class.html
 [`PlaceholderSpan`]: {{site.api}}/flutter/painting/PlaceholderSpan-class.html
@@ -455,40 +495,45 @@ Relevant PRs:
 ### `RenderView.scheduleInitialFrame`
 
 Supported by fix tool: No
- 
-The `RenderView.scheduleInitialFrame` method was deprecated and removed in order to prevent
-splash screens from being taken down too early, resulting in a black screen. This would happen when
-`WidgetsFlutterBinding.ensureInitialized` was called. Instead, replace calls to this method with
-`RenderView.prepareInitialFrame`, followed by `RenderView.owner.requestVisualUpdate`.
- 
+
+The `RenderView.scheduleInitialFrame` method was deprecated and removed in
+order to prevent splash screens from being taken down too early,
+resulting in a black screen.
+This would happen when `WidgetsFlutterBinding.ensureInitialized` was called.
+Instead, replace calls to this method with `RenderView.prepareInitialFrame`, 
+followed by `RenderView.owner.requestVisualUpdate`.
+
 **Migration guide**
- 
+
 Code before migration:
 
 ```dart
 scheduleInitialFrame();
 ```
- 
+
 Code after migration:
 
 ```dart
-prepareInitialFrame();	
+prepareInitialFrame();
 owner.requestVisualUpdate();
 ```
- 
+
 **References**
- 
+
 API documentation:
+
 * [`RenderView`][]
 * [`WidgetsFlutterBinding`][]
- 
+
 Relevant issues:
+
 * [WidgetsFlutterBinding.ensureInitialized() takes down splash screen too early][]
 
 Relevant PRs:
+
 * Deprecated in [#39535][]
 * Removed in [#73748][]
- 
+
 [`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
 [`TextSpan`]: {{site.api}}/flutter/widgets/WidgetsFlutterBinding-class.html
 [`WidgetsFlutterBinding`]: {{site.api}}/flutter/widgets/WidgetsFlutterBinding-class.html
@@ -502,43 +547,47 @@ Relevant PRs:
 
 Supported by fix tool: No
 
-The `Layer.findAll` method was deprecated with the introduction of `Layer.findAnnotations` in order
-to unify the implementations of `find` and `findAll`. To migrate affected code, call
-`findAllAnnotations` instead. This method returns an `AnnotationResult`, containing the former
+The `Layer.findAll` method was deprecated with the
+introduction of `Layer.findAnnotations` in order to unify
+the implementations of `find` and `findAll`.
+To migrate affected code, call `findAllAnnotations` instead.
+This method returns an `AnnotationResult`, containing the former
 return value of `findAll` in `AnnotationResult.annotations`.
 
- 
 **Migration guide**
- 
+
 Code before migration:
 
 ```dart
 findAll(offset);
 ```
- 
+
 Code after migration:
 
 ```dart
 findAllAnnotations(offset).annotations;
 ```
- 
+
 **References**
- 
+
 API documentation:
+
 * [`Layer`][]
 * [`MouseRegion`][]
 * [`RenderMouseRegion`][]
 * [`AnnotatedRegionLayer`][]
 * [`AnnotationResult`][]
- 
+
 Relevant issues:
+
 * [Breaking Proposal: MouseRegion defaults to opaque; Layers are required to implement findAnnotations][]
 
 Relevant PRs:
+
 * Initially changed in [#37896][]
 * Deprecated in [#42953][]
 * Removed in [#73749][]
- 
+
 [`Layer`]: {{site.api}}/flutter/rendering/Layer-class.html
 [`MouseRegion`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
 [`RenderMouseRegion`]: {{site.api}}/flutter/rendering/RenderMouseRegion-class.html
@@ -561,9 +610,8 @@ This made it possible to register a different default `BinaryMessenger` under te
 by creating a `ServicesBinding` subclass for testing. Doing so allows you to track the number of
 pending platform messages for synchronization purposes.
 
- 
 **Migration guide**
- 
+
 Code before migration: | Code after migration:
 -- | --
 `defaultBinaryMessenger` | `ServicesBinding.instance.defaultBinaryMessenger`
@@ -572,21 +620,24 @@ Code before migration: | Code after migration:
 `BinaryMessages.send` | `ServicesBinding.instance.defaultBinaryMessenger.send`
 `BinaryMessages.setMessageHandler` | `ServicesBinding.instance.defaultBinaryMessenger.setMessageHandler`
 `BinaryMessages.setMockMessageHandler` | `ServicesBinding.instance.defaultBinaryMessenger.setMockMessageHandler`
- 
+
 **References**
- 
+
 API documentation:
+
 * [`ServicesBinding`][]
 * [`BinaryMessenger`][]
- 
+
 Relevant issues:
+
 * [Flutter synchronization support for Espresso/EarlGrey][]
 
 Relevant PRs:
+
 * Initially changed in [#37489][]
 * Deprecated in [#38464][]
 * Removed in [#73750][]
- 
+
 [`ServicesBinding`]: {{site.api}}/flutter/services/ServicesBinding-mixin.html
 [`BinaryMessenger`]: {{site.api}}/flutter/services/BinaryMessenger-class.html
 [Flutter synchronization support for Espresso/EarlGrey]: {{site.repo.flutter}}/issues/37409
@@ -600,15 +651,17 @@ Relevant PRs:
 
 Supported by fix tool: Yes
 
-Several methods in `BuildContext` were using `Type` to search for ancestors. Most of those methods
-implied a cast at call site because their return type was a parent type. Moreover the type provided
-was not checked at analysis time even if the type is actually constrained. Making these methods
-generics improves type safety and requires less code.
+Several methods in `BuildContext` were using `Type` to search for ancestors.
+Most of those methods implied a cast at call site because
+their return type was a parent type.
+Moreover the type provided was not checked at analysis time
+even if the type is actually constrained.
+Making these methods generics improves type safety and requires less code.
 
-These method changes affect the `BuildContext`, `Element`, and `StatefulElement` classes. The
-`TypeMatcher` class was also removed.
+These method changes affect
+the `BuildContext`, `Element`, and `StatefulElement` classes.
+The `TypeMatcher` class was also removed.
 
- 
 **Migration guide**
 
 Code before migration:
@@ -652,23 +705,25 @@ Code before migration: | Code after migration:
 Code before migration: | Code after migration:
 --  | --
 `inheritFromElement` | `dependOnInheritedElement`
- 
+
 **References**
- 
+
 API documentation:
+
 * [`Type`][]
 * [`BuildContext`][]
 * [`Element`][]
 * [`StatefulElement`][]
 
 Relevant PRs:
+
 * Deprecated in [#44189][]
 * Removed in:
   * [#69620][]
   * [#72903][]
   * [#72901][]
   * [#73751][]
- 
+
 [`Type`]: {{site.api}}/flutter/dart-core/Type-class.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Element`]: {{site.api}}/flutter/widgets/Element-class.html
@@ -685,14 +740,18 @@ Relevant PRs:
 
 Supported by fix tool: Yes
 
-The `deferFirstFrameReport` and `allowFirstFrameReport` methods of `WidgetsBinding` were deprecated
-and removed in order to provide the option to delay rendering the first frame. This is useful for
-widgets that need to obtain initialization information asynchronously and while they are waiting for
-that information no frame should render as that would take down the splash screen pre-maturely.
-The `deferFirstFrame` and `allowFirstFrame` methods should be used respectively instead.
- 
+The `deferFirstFrameReport` and `allowFirstFrameReport` methods
+of `WidgetsBinding` were deprecated and removed in order to
+provide the option to delay rendering the first frame.
+This is useful for widgets that need to obtain initialization
+information asynchronously and while they are waiting for
+that information no frame should render as that would take
+down the splash screen pre-maturely.
+The `deferFirstFrame` and `allowFirstFrame` methods
+should be used respectively instead.
+
 **Migration guide**
- 
+
 Code before migration:
 
 ```dart
@@ -700,7 +759,7 @@ final WidgetsBinding binding = WidgetsBinding.instance;
 binding.deferFirstFrameReport();
 binding.allowFirstFrameReport();
 ```
- 
+
 Code after migration:
 
 ```dart
@@ -708,19 +767,21 @@ final WidgetsBinding binding = WidgetsBinding.instance;
 binding.deferFirstFrame();
 binding.allowFirstFrame();
 ```
- 
+
 **References**
- 
+
 API documentation:
+
 * [`WidgetsBinding`][]
- 
+
 Relevant PRs:
+
 * Initially changed in
   * [#45135][]
   * [#45588][]
 * Deprecated in [#45941][]
 * Removed in [#72893][]
- 
+
 [`WidgetsBinding`]: {{site.api}}/flutter/widgets/WidgetsBinding-mixin.html
 [#45135]: {{site.repo.flutter}}/pull/45135
 [#45588]: {{site.repo.flutter}}/pull/45588
@@ -737,28 +798,31 @@ The `WaitUntilNoTransientCallbacks`, `WaitUntilNoPendingFrame`, and `WaitUntilFi
 methods from the `flutter_driver` packages were deprecated and removed in order to provide a more
 composable `waitForCondition` API that can be used to compose conditions that the client would like
 to wait for.
- 
+
 **Migration guide**
- 
+
 Code before migration: | Code after migration:
 -- | --
 `WaitUntilNoTransientCallbacks` | `WaitForCondition(NoTransientCallbacks())`
 `WaitUntilNoPendingFrame` | `WaitForCondition(NoPendingFrame())`
 `WaitUntilFirstFrameRasterized` | `WaitForCondition(FirstFrameRasterized))`
- 
+
 **References**
- 
+
 API documentation:
+
 * [`WaitForCondition`][]
 
 Relevant issues:
+
 * [Flutter synchronization support for Espresso/EarlGrey][]
- 
+
 Relevant PRs:
+
 * Initially changed in [#37736][]
 * Deprecated in [#38836][]
 * Removed in [#73754][]
- 
+
 [`WaitForCondition`]: {{site.api}}/flutter/flutter_driver/WaitForCondition-class.html
 [#37736]: {{site.repo.flutter}}/pull/37736
 [#38836]: {{site.repo.flutter}}/pull/38836
