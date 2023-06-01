@@ -172,6 +172,7 @@ to provide a reference to the `android.view.View`
 ```kotlin
 package dev.flutter.example
 
+import android.view.View
 import android.content.Context
 import android.graphics.Color
 import android.widget.TextView
