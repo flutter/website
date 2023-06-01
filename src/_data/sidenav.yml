@@ -89,16 +89,6 @@
       permalink: /ui/assets-and-images
     - title: Material Design
       permalink: /ui/material
-    - title: Navigation & routing
-      permalink: /ui/navigation
-      children:
-        - title: Navigation in Flutter
-          permalink: /ui/navigation
-          match-page-url-exactly: true
-        - title: Deep linking
-          permalink: /ui/navigation/deep-linking
-        - title: URL strategies
-          permalink: /ui/navigation/url-strategies
     - title: Animations
       permalink: /ui/animations
       children:
@@ -132,6 +122,17 @@
           permalink: /ui/advanced/slivers
     - title: Widget catalog
       permalink: /ui/widgets
+
+- title: Navigation & routing
+  permalink: /ui/navigation
+  children:
+    - title: Overview
+      permalink: /ui/navigation
+      match-page-url-exactly: true
+    - title: Setup deep linking
+      permalink: /ui/navigation/deep-linking
+    - title: Configure URL strategies
+      permalink: /ui/navigation/url-strategies
 
 - title: Data & backend
   permalink: /data-and-backend

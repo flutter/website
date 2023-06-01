@@ -1,21 +1,28 @@
 ---
 title: Migration guide for `RouteInformation.location`
-description: Deprecation of `RouteInformation.location` and its related APIs
+description: Deprecation of `RouteInformation.location` and its related APIs.
 ---
 
 ## Summary
 
-`RouteInformation.location` and related APIs were deprecated in the favor of `RouteInformation.uri`.
+`RouteInformation.location` and related APIs were deprecated
+in the favor of `RouteInformation.uri`.
 
 ## Context
 
-The [`RouteInformation`][] needs the authority information to handle mobile deeplinks from different web domains. The `uri` field was added to `RouteInformation` that captures the entire deeplink information and route-related parameters were converted to the full [`Uri`][] format. This led to deprecation of incompatible APIs.
+The [`RouteInformation`][] needs the authority information to
+handle mobile deeplinks from different web domains.
+The `uri` field was added to `RouteInformation` that captures
+the entire deeplink information and route-related parameters
+were converted to the full [`Uri`][] format.
+This led to deprecation of incompatible APIs.
 
 ## Description of change
 
 * The `RouteInformation.location` was replaced by `RouteInformation.uri`.
 * The `WidgetBindingObserver.didPushRoute` was deprecated.
-* The `location` parameter of `SystemNavigator.routeInformationUpdated` was replaced by the newly added `uri` parameter.
+* The `location` parameter of `SystemNavigator.routeInformationUpdated` was
+  replaced by the newly added `uri` parameter.
 
 ## Migration guide
 
@@ -90,7 +97,8 @@ In stable release: TBD
 
 Relevant PRs:
 
-* [PR 119968][]: Implement url support for RouteInformation and didPushRouteInformation.
+* [PR 119968][]: Implement url support for
+  RouteInformation and didPushRouteInformation.
 
 [PR 119968]: {{site.repo.flutter}}/pull/119968
 [`RouteInformation`]: {{site.api}}/flutter/widgets/RouteInformation-class.html

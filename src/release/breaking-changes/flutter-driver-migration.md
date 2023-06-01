@@ -1,6 +1,7 @@
 ---
 title: Migrating from flutter_driver
-description: Learn how to migrate existing flutter_driver tests to integration_test.
+description: >
+  Learn how to migrate existing flutter_driver tests to integration_test.
 ---
 
 <?code-excerpt path-base="integration_test_migration/"?>
@@ -133,7 +134,7 @@ be displayed.
 
 Also , the test verifies that the text
 "Please select a plant from the list."
-is no longer displayed. 
+is no longer displayed.
 
 **flutter_driver**
 

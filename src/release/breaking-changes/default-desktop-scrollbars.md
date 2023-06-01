@@ -1,6 +1,7 @@
 ---
 title: Default Scrollbars on Desktop
-description: ScrollBehaviors will now automatically build Scrollbars on Desktop platforms.
+description: >
+  ScrollBehaviors will now automatically build Scrollbars on Desktop platforms.
 ---
 
 ## Summary
@@ -65,8 +66,10 @@ ListView.builder(
 );
 ```
 
-Some widgets in the framework are exempt from this automatic `Scrollbar` application. They
-are:
+Some widgets in the framework are exempt from
+this automatic `Scrollbar` application.
+They are:
+
 - `EditableText`, when `maxLines` is 1.
 - `ListWheelScrollView`
 - `PageView`
@@ -84,29 +87,31 @@ on desktop platforms.
 If you are seeing this in your application, there are several ways to
 control and configure this feature.
 
-- Remove the manually applied `Scrollbar`s in your application when running on desktop.
+- Remove the manually applied `Scrollbar`s in your
+  application when running on desktop.
 
-- Extend `ScrollBehavior`, `MaterialScrollBehavior`, or `CupertinoScrollBehavior`
-to modify the default behavior.
+- Extend `ScrollBehavior`, `MaterialScrollBehavior`,
+  or `CupertinoScrollBehavior` to modify the default behavior.
   
-    - With your own `ScrollBehavior`, you can apply it app-wide by setting
-      `MaterialApp.scrollBehavior` or `CupertinoApp.scrollBehavior`.
-    - Or, if you wish to only apply it to specific widgets, add a
-      `ScrollConfiguration` above the widget in question with your
-      custom `ScrollBehavior`.
-      
+  - With your own `ScrollBehavior`, you can apply it app-wide by setting
+    `MaterialApp.scrollBehavior` or `CupertinoApp.scrollBehavior`.
+  - Or, if you wish to only apply it to specific widgets, add a
+    `ScrollConfiguration` above the widget in question with your
+    custom `ScrollBehavior`.
+
 Your scrollable widgets then inherits this and reflects this behavior.
 
 - Instead of creating your own `ScrollBehavior`, another option for changing
-the default behavior is to copy the existing `ScrollBehavior`, and toggle the
-desired feature.
-
-    - Create a `ScrollConfiguration` in your widget tree, and provide a modified copy
-      of the existing `ScrollBehavior` in the current context using `copyWith`.
+  the default behavior is to copy the existing `ScrollBehavior`, and toggle the
+  desired feature.
+  - Create a `ScrollConfiguration` in your widget tree, and
+    provide a modified copy of the existing `ScrollBehavior` in
+    the current context using `copyWith`.
 
 ## Migration guide
 
 ### Removing manual `Scrollbar`s on desktop
+
 Code before migration:
 
 ```dart
@@ -150,6 +155,7 @@ switch (currentPlatform) {
 ```
 
 ### Setting a custom `ScrollBehavior` for your application
+
 Code before migration:
 
 ```dart
@@ -176,6 +182,7 @@ MaterialApp(
 ```
 
 ### Setting a custom `ScrollBehavior` for a specific widget
+
 Code before migration:
 
 ```dart
@@ -211,6 +218,7 @@ ScrollConfiguration(
 ```
 
 ### Copy and modify existing `ScrollBehavior`
+
 Code before migration:
 
 ```dart
@@ -247,6 +255,7 @@ In stable release: 2.2.0
 ## References
 
 API documentation:
+
 * [`ScrollConfiguration`][]
 * [`ScrollBehavior`][]
 * [`MaterialScrollBehavior`][]
@@ -255,10 +264,12 @@ API documentation:
 * [`CupertinoScrollbar`][]
 
 Relevant issues:
+
 * [Issue #40107][]
 * [Issue #70866][]
 
 Relevant PRs:
+
 * [Exposing ScrollBehaviors for app-wide settings][]
 * [Automatically applying Scrollbars on desktop platforms with configurable ScrollBehaviors][]
 
