@@ -418,7 +418,7 @@
           permalink: /add-to-app/ios/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/ios/add-flutter-screen
-    - title: Debug Flutter module
+    - title: Debug embedded Flutter module
       permalink: /add-to-app/debugging
     - title: Add multiple Flutter instances
       permalink: /add-to-app/multiple-flutters
