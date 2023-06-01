@@ -1,6 +1,8 @@
 ---
 title: At least one clipboard data variant must be provided
-description: In preparation for supporting multiple clipboard data variants, at least one clipboard data variant must be provided.
+description: >
+  In preparation for supporting multiple clipboard data variants,
+  at least one clipboard data variant must be provided.
 ---
 
 ## Summary
@@ -17,7 +19,7 @@ provided.
 
 Previously, platforms were inconsistent in how they handled `null`.
 The behavior is now consistent across platforms. If you are interested
-in the low-level details, see [PR 122446].
+in the low-level details, see [PR 122446][].
 
 ## Description of change
 
@@ -46,7 +48,7 @@ void resetClipboard() {
 ## Timeline
 
 Landed in version: 3.10.0-9.0.pre<br>
-In stable release: not yet
+In stable release: 3.10.0
 
 ## References
 
@@ -59,9 +61,7 @@ Relevant PRs:
 
 * [Assert at least one clipboard data variant is provided][]
 
-{% include docs/master-api.md %}
-
-[`ClipboardData constructor`]: {{site.master-api}}/flutter/services/ClipboardData/ClipboardData.html
+[`ClipboardData constructor`]: {{site.api}}/flutter/services/ClipboardData/ClipboardData.html
 [`Clipboard.setData`]: {{site.api}}/flutter/services/Clipboard/setData.html
 [PR 122446]: {{site.repo.flutter}}/pull/122446
 [Assert at least one clipboard data variant is provided]: {{site.repo.flutter}}/pull/122446

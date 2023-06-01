@@ -690,7 +690,7 @@ FlutterViewController.
 let flutterEngine = FlutterEngine()
 // FlutterDefaultDartEntrypoint is the same as nil, which will run main().
 engine.run(
-  withEntrypoint: FlutterDefaultDartEntrypoint, initialRoute: "/onboarding")
+  withEntrypoint: "main", initialRoute: "/onboarding")
 ```
 {% sample Objective-C %}
 <!--code-excerpt "Creating engine" title-->

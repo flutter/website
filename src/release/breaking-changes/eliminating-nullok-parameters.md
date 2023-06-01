@@ -1,6 +1,8 @@
 ---
 title: Eliminating nullOk Parameters
-description: To eliminate nullOk parameters to help with API sanity in the face of null safety.
+description: >
+    To eliminate nullOk parameters to help with
+    API sanity in the face of null safety.
 ---
 
 ## Summary
@@ -39,7 +41,6 @@ The design document for this change is [Eliminating nullOk parameters][].
 
 [Eliminating nullOk parameters]: {{site.url}}/go/eliminating-nullok-parameters
 
-
 ## Description of change
 
 The actual change modified these APIs to not have a `nullOk` parameter, and to
@@ -69,8 +70,8 @@ return a non-nullable value:
 * [`CupertinoTextThemeData.resolveFrom`][]
 * [`MaterialBasedCupertinoThemeData.resolveFrom`][]
 
-And introduced these new APIs alongside those, to return a nullable
-value:
+And introduced these new APIs alongside those, to
+return a nullable value:
 
 * [`MediaQuery.maybeOf`][]
 * [`Navigator.maybeOf`][]
@@ -140,51 +141,53 @@ In stable release: 2.0.0
 
 API documentation:
 
- * [`MediaQuery.of`][]
- * [`Navigator.of`][]
- * [`ScaffoldMessenger.of`][]
- * [`Scaffold.of`][]
- * [`Router.of`][]
- * [`Localizations.localeOf`][]
- * [`FocusTraversalOrder.of`][]
- * [`FocusTraversalGroup.of`][]
- * [`Focus.of`][]
- * `Shortcuts.of`
- * [`Actions.handler`][]
- * [`Actions.find`][]
- * [`Actions.invoke`][]
- * [`AnimatedList.of`][]
- * [`SliverAnimatedList.of`][]
- * [`CupertinoDynamicColor.resolve`][]
- * [`CupertinoDynamicColor.resolveFrom`][]
- * [`CupertinoUserInterfaceLevel.of`][]
- * [`CupertinoTheme.brightnessOf`][]
- * [`CupertinoThemeData.resolveFrom`][]
- * [`NoDefaultCupertinoThemeData.resolveFrom`][]
- * [`CupertinoTextThemeData.resolveFrom`][]
- * [`MaterialBasedCupertinoThemeData.resolveFrom`][]
- * [`MediaQuery.maybeOf`][]
- * [`Navigator.maybeOf`][]
- * [`ScaffoldMessenger.maybeOf`][]
- * [`Scaffold.maybeOf`][]
- * [`Router.maybeOf`][]
- * [`Localizations.maybeLocaleOf`][]
- * [`FocusTraversalOrder.maybeOf`][]
- * [`FocusTraversalGroup.maybeOf`][]
- * [`Focus.maybeOf`][]
- * `Shortcuts.maybeOf`
- * [`Actions.maybeFind`][]
- * [`Actions.maybeInvoke`][]
- * [`AnimatedList.maybeOf`][]
- * [`SliverAnimatedList.maybeOf`][]
- * [`CupertinoDynamicColor.maybeResolve`][]
- * [`CupertinoUserInterfaceLevel.maybeOf`][]
- * [`CupertinoTheme.maybeBrightnessOf`][]
+* [`MediaQuery.of`][]
+* [`Navigator.of`][]
+* [`ScaffoldMessenger.of`][]
+* [`Scaffold.of`][]
+* [`Router.of`][]
+* [`Localizations.localeOf`][]
+* [`FocusTraversalOrder.of`][]
+* [`FocusTraversalGroup.of`][]
+* [`Focus.of`][]
+* `Shortcuts.of`
+* [`Actions.handler`][]
+* [`Actions.find`][]
+* [`Actions.invoke`][]
+* [`AnimatedList.of`][]
+* [`SliverAnimatedList.of`][]
+* [`CupertinoDynamicColor.resolve`][]
+* [`CupertinoDynamicColor.resolveFrom`][]
+* [`CupertinoUserInterfaceLevel.of`][]
+* [`CupertinoTheme.brightnessOf`][]
+* [`CupertinoThemeData.resolveFrom`][]
+* [`NoDefaultCupertinoThemeData.resolveFrom`][]
+* [`CupertinoTextThemeData.resolveFrom`][]
+* [`MaterialBasedCupertinoThemeData.resolveFrom`][]
+* [`MediaQuery.maybeOf`][]
+* [`Navigator.maybeOf`][]
+* [`ScaffoldMessenger.maybeOf`][]
+* [`Scaffold.maybeOf`][]
+* [`Router.maybeOf`][]
+* [`Localizations.maybeLocaleOf`][]
+* [`FocusTraversalOrder.maybeOf`][]
+* [`FocusTraversalGroup.maybeOf`][]
+* [`Focus.maybeOf`][]
+* `Shortcuts.maybeOf`
+* [`Actions.maybeFind`][]
+* [`Actions.maybeInvoke`][]
+* [`AnimatedList.maybeOf`][]
+* [`SliverAnimatedList.maybeOf`][]
+* [`CupertinoDynamicColor.maybeResolve`][]
+* [`CupertinoUserInterfaceLevel.maybeOf`][]
+* [`CupertinoTheme.maybeBrightnessOf`][]
 
-Relevant issues:
+Relevant issue:
+
 * [Issue 68637][]
 
 Relevant PRs:
+
 * [Remove `nullOk` in `MediaQuery.of`][]
 * [Remove `nullOk` in `Navigator.of`][]
 * [Remove `nullOk` parameter from `AnimatedList.of` and `SliverAnimatedList.of`][]
@@ -240,7 +243,6 @@ Relevant PRs:
 [Remove `nullOk` in `MediaQuery.of`]: {{site.repo.flutter}}/pull/68736
 [Remove `nullOk` in `Navigator.of`]: {{site.repo.flutter}}/pull/70726
 [Remove `nullOk` parameter from `AnimatedList.of` and `SliverAnimatedList.of`]: {{site.repo.flutter}}/pull/68925
-[Remove `nullOk` parameter from `Shortcuts.of`, `Actions.find`, and `Actions.handler`]: {{site.repo.flutter}}/pull/68921
 [Remove `nullOk` parameter from `Shortcuts.of`, `Actions.find`, and `Actions.handler`]: {{site.repo.flutter}}/pull/68921
 [Remove `nullOk` parameter from `Focus.of`, `FocusTraversalOrder.of`, and `FocusTraversalGroup.of`]: {{site.repo.flutter}}/pull/68917
 [Remove `nullOk` parameter from `Localizations.localeOf`]: {{site.repo.flutter}}/pull/68911

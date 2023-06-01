@@ -1,17 +1,19 @@
 ---
 title: CupertinoTabBar requires Localizations parent
-description: In order to provide locale appropriate semantics, the CupertinoTabBar requires a Localizations parent.
+description: >
+  In order to provide locale appropriate semantics, the
+  CupertinoTabBar requires a Localizations parent.
 ---
 
 ## Summary
 
 Instances of `CupertinoTabBar` must have a
 `Localizations`parent in order to provide a localized
-`Semantics` hint. Trying to instantiate  a
-`CupertinoTabBar` without localizations 
+`Semantics` hint. Trying to instantiate a
+`CupertinoTabBar` without localizations
 results in an assertion such as the following:
-       
-```
+
+```nocode
 CupertinoTabBar requires a Localizations parent in order to provide an appropriate Semantics hint
 for tab indexing. A CupertinoApp provides the DefaultCupertinoLocalizations, or you can
 instantiate your own Localizations.
@@ -144,11 +146,13 @@ class Foo extends StatelessWidget {
 
 ## Timeline
 
-This change was introduced in May 2020, in 1.18.0-9.0.pre.
+Landed in version: 1.18.0-9.0.pre<br>
+In stable release: 1.20.0
 
 ## References
 
 API documentation:
+
 * [`CupertinoTabBar`][]
 * [`Localizations`][]
 * [`DefaultCupertinoLocalizations`][]
@@ -158,6 +162,7 @@ API documentation:
 
 
 Relevant PR:
+
 * [PR 55336: Adding tabSemanticsLabel to CupertinoLocalizations][]
 * [PR 56582: Update Tab semantics in Cupertino to be the same as Material][]
 
