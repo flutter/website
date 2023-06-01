@@ -132,7 +132,7 @@ Specifically, [`AssetImage`][] understands how to map a logical requested
 asset onto one that most closely matches the current
 [device pixel ratio][].
 
-In order for this mapping to work, assets should be arranged
+For this mapping to work, assets should be arranged
 according to a particular directory structure:
 
 ```text
