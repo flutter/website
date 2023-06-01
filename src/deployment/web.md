@@ -12,45 +12,12 @@ This builds a _debug_ version of your app.
 This page helps you prepare a _release_ version
 of your app and covers the following topics:
 
+* [Building the app for release](#building-the-app-for-release)
+* [Deploying to the web](#deploying-to-the-web)
+* [Deploying to Firebase Hosting](#deploying-to-firebase-hosting)
 * [Handling images on the web](#handling-images-on-the-web)
 * [Choosing a web renderer](#choosing-a-web-renderer)
 * [Minification](#minification)
-* [Building the app for release](#building-the-app-for-release)
-* [Deploying to the web](#deploying-to-the-web)
-
-
-## Handling images on the web
-
-The web supports the standard `Image` widget to display images.
-However, because web browsers are built to run untrusted code safely,
-there are certain limitations in what you can do with images compared
-to mobile and desktop platforms.
-
-For more information, see [Displaying images on the web][].
-
-## Choosing a web renderer
-
-By default, the `flutter build` and `flutter run` commands
-use the `auto` choice for the web renderer. This means that
-your app runs with the HTML renderer on mobile browsers and
-CanvasKit on desktop browsers. This is our recommended combination
-to optimize for the characteristics of each platform.
-
-For more information, see [Web renderers][].
-
-## Minification
-
-Minification is handled for you when you
-create a release build.
-
-A debug build of a web app is not minified and
-tree shaking has not been performed.
-
-A profile build is not minified and tree shaking
-has been performed.
-
-A release build is both minified and tree shaking
-has been performed.
 
 ## Building the app for release
 
@@ -97,8 +64,8 @@ following structure:
 ```
 
 {{site.alert.note}}
-  The `canvaskit` directory and its contents are only present when the
-  CanvasKit renderer is selected—not when the HTML renderer is selected.
+The `canvaskit` directory and its contents are only present when the
+CanvasKit renderer is selected—not when the HTML renderer is selected.
 {{site.alert.end}}
 
 Launch a web server (for example,
@@ -108,6 +75,100 @@ and open the /build/web directory. Navigate to
 `localhost:8000` in your browser
 (given the python SimpleHTTPServer example)
 to view the release version of your app.
+
+## Deploying to the web
+
+When you are ready to deploy your app,
+upload the release bundle
+to Firebase, the cloud, or a similar service.
+Here are a few possibilities, but there are
+many others:
+
+* [Firebase Hosting][]
+* [GitHub Pages][]
+* [Google Cloud Hosting][]
+
+## Deploying to Firebase Hosting
+You can use the Firebase CLI to build and release your Flutter app with Firebase
+Hosting.
+
+### Before you begin
+To get started, [install or update][install-firebase-cli] the Firebase CLI:
+
+```
+npm install -g firebase-tools
+```
+
+### Initialize Firebase
+
+1. Enable the web frameworks preview to the [Firebase framework-aware CLI][]:
+
+    ```
+    firebase experiments:enable webframeworks
+    ```
+
+2. In an empty directory or an existing Flutter project, run the initialization
+command:
+
+    ```
+    firebase init hosting
+    ```
+
+3. Answer yes when asked if you want to use a web framework.
+
+4. If you are in an empty directory, you will be asked to choose your web
+framework. Choose Flutter Web.
+
+5. Choose your hosting source directory, this could be an existing flutter app.
+
+6. Select a region to host your files.
+
+7. Choose whether to set up automatic builds and deploys with GitHub.
+
+8. Deploy the app to Firebase Hosting:
+
+    ```
+    firebase deploy
+    ```
+
+    Running this command automatically runs `flutter build web --release` for you,
+    so you don't have to build your app in a separate step.
+
+For more information, visit the official [Firebase Hosting][] documentation for
+Flutter on the web.
+
+## Handling images on the web
+
+The web supports the standard `Image` widget to display images.
+However, because web browsers are built to run untrusted code safely,
+there are certain limitations in what you can do with images compared
+to mobile and desktop platforms.
+
+For more information, see [Displaying images on the web][].
+
+## Choosing a web renderer
+
+By default, the `flutter build` and `flutter run` commands
+use the `auto` choice for the web renderer. This means that
+your app runs with the HTML renderer on mobile browsers and
+CanvasKit on desktop browsers. This is our recommended combination
+to optimize for the characteristics of each platform.
+
+For more information, see [Web renderers][].
+
+## Minification
+
+Minification is handled for you when you
+create a release build.
+
+A debug build of a web app is not minified and
+tree shaking has not been performed.
+
+A profile build is not minified and tree shaking
+has been performed.
+
+A release build is both minified and tree shaking
+has been performed.
 
 ## Embedding a Flutter app into an HTML page
 
@@ -163,17 +224,6 @@ with the location of your HTML page:
 <iframe src="URL"></iframe>
 ```
 
-## Deploying to the web
-
-When you are ready to deploy your app,
-upload the release bundle
-to Firebase, the cloud, or a similar service.
-Here are a few possibilities, but there are
-many others:
-
-* [Firebase Hosting][]
-* [GitHub Pages][]
-* [Google Cloud Hosting][]
 
 ## PWA Support
 
@@ -188,7 +238,9 @@ so please [give us feedback][] if you see something that doesn’t look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: {{site.url}}/platform-integration/web/web-images
-[Firebase Hosting]: {{site.firebase}}/docs/hosting
+[Firebase Hosting]: {{site.firebase}}/docs/hosting/frameworks/flutter
+[Firebase framework-aware CLI]: {{site.firebase}}/docs/hosting/frameworks/frameworks-overview
+[Install-firebase-cli]: https://firebase.google.com/docs/cli#install_the_firebase_cli
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting
