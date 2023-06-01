@@ -1,5 +1,5 @@
 ---
-title: Adding a Flutter Fragment to an Android app
+title: Add a Flutter Fragment to an Android app
 short-title: Add a Flutter Fragment
 description: Learn how to add a Flutter Fragment to your existing Android app.
 ---
