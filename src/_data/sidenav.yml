@@ -172,58 +172,58 @@
   children:
     - title: Supported platforms
       permalink: /reference/supported-platforms
-    - title: Building desktop apps with Flutter
+    - title: Build desktop apps with Flutter
       permalink: /platform-integration/desktop
-    - title: Writing platform-specific code
+    - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
     - title: Android
       permalink: /platform-integration/android
       children:
-        - title: Adding a splash screen
+        - title: Add a splash screen
           permalink: /platform-integration/android/splash-screen
-        - title: C interop
+        - title: Bind to native code
           permalink: /platform-integration/android/c-interop
-        - title: Hosting native Android views
+        - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
         - title: Restore state on Android
           permalink: /platform-integration/android/restore-state-android
-        - title: Targeting ChromeOS with Android
+        - title: Target ChromeOS with Android
           permalink:  /platform-integration/android/chromeos
     - title: iOS
       permalink: /platform-integration/ios
       children:
-        - title: Leveraging Apple's system libraries
+        - title: Leverage Apple's system libraries
           permalink: /platform-integration/ios/apple-frameworks
-        - title: Adding a splash screen
+        - title: Add a splash screen
           permalink: /platform-integration/ios/splash-screen
-        - title: Adding iOS App Clip support
+        - title: Add iOS App Clip support
           permalink: /platform-integration/ios/ios-app-clip
-        - title: Adding iOS app extensions
+        - title: Add iOS app extensions
           permalink: /platform-integration/ios/app-extensions
-        - title: C interop
+        - title: Bind to native code
           permalink: /platform-integration/ios/c-interop
-        - title: Hosting native iOS views
+        - title: Host a native iOS view
           permalink: /platform-integration/ios/platform-views
-        - title: iOS debugging
+        - title: Enable debugging on iOS
           permalink: /platform-integration/ios/ios-debugging
         - title: Restore state on iOS
           permalink: /platform-integration/ios/restore-state-ios
     - title: Linux
       permalink: /platform-integration/linux
       children:
-        - title: Building Linux apps
+        - title: Build a Linux app
           permalink: /platform-integration/linux/building
     - title: macOS
       permalink: /platform-integration/macos
       children:
-        - title: Building macOS apps
+        - title: Build a macOS app
           permalink: /platform-integration/macos/building
         - title: C interop
           permalink: /platform-integration/macos/c-interop
     - title: Web
       permalink: /platform-integration/web
       children:
-        - title: Building web apps
+        - title: Build a web app
           permalink: /platform-integration/web/building
         - title: Web FAQ
           permalink: /platform-integration/web/faq
@@ -236,7 +236,7 @@
     - title: Windows
       permalink: /platform-integration/windows
       children:
-        - title: Building Windows apps
+        - title: Build a Windows app
           permalink: /platform-integration/windows/building
         - title: Run loop migration
           permalink: /platform-integration/windows/run-loop-migration
