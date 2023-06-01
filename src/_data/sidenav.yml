@@ -47,11 +47,9 @@
 
 - title: Samples & tutorials
   children:
-    - title: Flutter Gallery [running app]
+    - title: Flutter Gallery
       permalink: https://gallery.flutter.dev
-    - title: Flutter Gallery [repo]
-      permalink: https://github.com/flutter/gallery
-    - title: Sample apps on GitHub
+    - title: Samples and demos
       permalink: https://flutter.github.io/samples/
     - title: Cookbook
       permalink: /cookbook
