@@ -26,13 +26,13 @@ Windows, the error usually looks like this:
 
 __Explanation and suggestions__
 
-You might have missed steps to add Flutter to the PATH environment variable. On
-Windows, you can follow the process demonstrated in [this
-video](https://youtu.be/0SRvmcsRu2w?t=137). 
+Did you add Flutter to the `PATH` environment variable for your platform?
+On Windows, follow these [instructions for adding a command
+to your path][windows path].
 
-If you’ve already [set up VS Code][set up VS Code] for Flutter development, you
-can use the Flutter extension’s “Locate SDK” prompt to identify the location of
-your `flutter` folder.
+If you’ve already [set up VS Code][] for Flutter development,
+you can use the Flutter extension’s **Locate SDK** prompt
+to identify the location of your `flutter` folder.
 
 See also: [Configuring PATH and Environment Variables - Dart Code][config path]
 
@@ -198,3 +198,4 @@ search the archive for a similar issue before posting a new one.
 [set up VS Code]: https://docs.flutter.dev/get-started/editor
 [config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
 [sdkmanager]: https://developer.android.com/studio/command-line/sdkmanager
+[windows path]: https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows
