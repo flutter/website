@@ -40,9 +40,9 @@ flutter:
 ```
 
 {{site.alert.note}}
- Only files located directly in the directory are included
-  (see [Resolution-aware image assets](#resolution-aware) for
-  an exception). To add files located in subdirectories, create an entry per directory.
+ Only files located directly in the directory are included.
+ [Resolution-aware asset image variants](#resolution-aware) are the only exception.
+ To add files located in subdirectories, create an entry per directory.
 {{site.alert.end}}
 
 ### Asset bundling
