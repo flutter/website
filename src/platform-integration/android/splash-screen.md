@@ -36,7 +36,7 @@ initializes.
   [Android splash screen sample app][].
   
   If, prior to 2.5, you used `flutter create` to create an app,
-  and you run the app on 2.5 or later, the app might app crash.
+  and you run the app on 2.5 or later, the app might crash.
   For more info, see the [Deprecated Splash Screen API Migration guide][].
 {{site.alert.end}}
 
