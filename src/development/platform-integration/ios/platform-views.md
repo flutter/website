@@ -35,11 +35,11 @@ use the following instructions:
 ### On the Dart side
 
 On the Dart side, create a `Widget`
-and add the following build implementation,
+and add the build implementation,
 as shown in the following steps.
 
-In your Dart file, for example
-do the following in `native_view_example.dart`:
+In the Dart widget file, make changes similar to those
+show in `native_view_example.dart`:
 
 <ol markdown="1">
 <li markdown="1">Add the following imports:
@@ -95,7 +95,7 @@ class TogetherWidget extends StatelessWidget {
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
 ```dart
 Widget build(BuildContext context) {
-  // This is used in the platform side to register the view.
+  // Use this on the platform side to register the view.
   const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
@@ -118,7 +118,7 @@ For more information, see the API docs for:
 
 ### On the platform side
 
-On the platform side, you use the either Swift or Objective-C:
+On the platform side  use either Swift or Objective-C:
 
 {% samplecode ios-platform-views %}
 {% sample Swift %}
@@ -126,7 +126,7 @@ On the platform side, you use the either Swift or Objective-C:
 Implement the factory and the platform view.
 The `FLNativeViewFactory` creates the platform view,
 and the platform view provides a reference to the `UIView`.
-For example, `FLNativeView.swift`:
+For example, as shown in `FLNativeView.swift`:
 
 ```swift
 import Flutter
@@ -231,7 +231,7 @@ class FLPlugin: NSObject, FlutterPlugin {
 
 {% sample Objective-C %}
 
-Add the headers for the factory and the platform view.
+In Objective-C, add the headers for the factory and the platform view.
 For example, `FLNativeView.h`:
 
 ```objc
@@ -373,12 +373,12 @@ For more information, see the API docs for:
 
 When implementing the `build()` method in Dart,
 you can use [`defaultTargetPlatform`][]
-to detect the platform, and decide what widget to use:
+to detect the platform, and decide which widget to use:
 
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>
 ```dart
 Widget build(BuildContext context) {
-  // This is used in the platform side to register the view.
+  // Use this on the platform side to register the view.
   const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
