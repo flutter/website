@@ -65,7 +65,7 @@ about evaluating and debugging Flutter's performance.
     `debugProfileBuildsEnabled` and always call
     `Timeline.startSync(...)/finish`.
   * If you use IntelliJ, a GUI view of this data is available.
-    Select **show widget rebuild information**,
+    Select **Track widget rebuilds**,
     and you'll visually see which widgets rebuild
     visually in your IDE.
 
