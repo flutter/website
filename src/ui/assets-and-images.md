@@ -184,10 +184,10 @@ if width and height are not specified.
 
 #### Bundling of resolution-aware image assets {#resolution-aware-bundling}
 
-Only the main asset (or its parent directory) needs
-to specified in the assets section of `pubspec.yaml`; the
-variants will be bundled automatically. Each entry
-should correspond to a real file, with the exception of
+You only need to specify the main asset or its parent directory
+in the `assets` section of `pubspec.yaml`.
+Flutter bundles the variants for you.
+Each entry should correspond to a real file, with the exception of
 the main asset entry. If the main asset entry doesn't correspond
 to a real file, then the asset with the lowest resolution
 is used as the fallback for devices with device pixel
