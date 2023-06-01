@@ -128,7 +128,7 @@ return const Image(image: AssetImage('assets/background.png'));
 Flutter can load resolution-appropriate images for
 the current [device pixel ratio][].
 
-Specifically, [`AssetImage`][] understands how to map a logical requested
+[`AssetImage`][] will map a logical requested
 asset onto one that most closely matches the current
 [device pixel ratio][].
 
