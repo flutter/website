@@ -116,11 +116,11 @@ To load an image, use the [`AssetImage`][]
 class in a widget's `build()` method.
 
 For example, your app can load the background
-image from the asset declarations above:
+image from the asset declarations in the previous example:
 
 <?code-excerpt "main.dart (BackgroundImage)"?>
 ```dart
-return const Image(image: AssetImage('graphics/background.png'));
+return const Image(image: AssetImage('assets/background.png'));
 ```
 
 ### Resolution-aware image assets {#resolution-aware}
