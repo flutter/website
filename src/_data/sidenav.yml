@@ -266,55 +266,6 @@
     - title: Package site
       permalink: https://pub.dev/flutter
 
-- title: Tools & features
-  permalink: /tools
-  children:
-    - title: Android Studio & IntelliJ
-      permalink: /tools/android-studio
-    - title: Visual Studio Code
-      permalink: /tools/vs-code
-    - title: DevTools
-      permalink: /tools/devtools
-      children:
-        - title: Overview
-          permalink: /tools/devtools/overview
-        - title: Install from Android Studio & IntelliJ
-          permalink: /tools/devtools/android-studio
-        - title: Install from VS Code
-          permalink: /tools/devtools/vscode
-        - title: Install from command line
-          permalink: /tools/devtools/cli
-        - title: Flutter inspector
-          permalink: /tools/devtools/inspector
-        - title: Performance view
-          permalink: /tools/devtools/performance
-        - title: CPU Profiler view
-          permalink: /tools/devtools/cpu-profiler
-        - title: Memory view
-          permalink: /tools/devtools/memory
-        - title: Debug console view
-          permalink: /tools/devtools/console
-        - title: Network view
-          permalink: /tools/devtools/network
-        - title: Debugger
-          permalink: /tools/devtools/debugger
-        - title: Logging view
-          permalink: /tools/devtools/logging
-        - title: App size tool
-          permalink: /tools/devtools/app-size
-        - title: Release notes
-          permalink: /tools/devtools/release-notes
-    - title: SDK overview
-      permalink: /tools/sdk
-    - title: Flutter and the pubspec file
-      permalink: /tools/pubspec
-    - title: Hot reload
-      permalink: /tools/hot-reload
-    - title: Flutter Fix
-      permalink: /tools/flutter-fix
-    - title: Code formatting
-      permalink: /tools/formatting
-
 - title: Testing & debugging
   permalink: /testing
   children:
@@ -424,6 +375,55 @@
       permalink: /add-to-app/performance
     - title: Multiple Flutter instances
       permalink: /add-to-app/multiple-flutters
+
+- title: Tools & features
+  permalink: /tools
+  children:
+    - title: Android Studio & IntelliJ
+      permalink: /tools/android-studio
+    - title: Visual Studio Code
+      permalink: /tools/vs-code
+    - title: DevTools
+      permalink: /tools/devtools
+      children:
+        - title: Overview
+          permalink: /tools/devtools/overview
+        - title: Install from Android Studio & IntelliJ
+          permalink: /tools/devtools/android-studio
+        - title: Install from VS Code
+          permalink: /tools/devtools/vscode
+        - title: Install from command line
+          permalink: /tools/devtools/cli
+        - title: Flutter inspector
+          permalink: /tools/devtools/inspector
+        - title: Performance view
+          permalink: /tools/devtools/performance
+        - title: CPU Profiler view
+          permalink: /tools/devtools/cpu-profiler
+        - title: Memory view
+          permalink: /tools/devtools/memory
+        - title: Debug console view
+          permalink: /tools/devtools/console
+        - title: Network view
+          permalink: /tools/devtools/network
+        - title: Debugger
+          permalink: /tools/devtools/debugger
+        - title: Logging view
+          permalink: /tools/devtools/logging
+        - title: App size tool
+          permalink: /tools/devtools/app-size
+        - title: Release notes
+          permalink: /tools/devtools/release-notes
+    - title: SDK overview
+      permalink: /tools/sdk
+    - title: Flutter's pubspec options
+      permalink: /tools/pubspec
+    - title: Hot reload
+      permalink: /tools/hot-reload
+    - title: Automated fixes
+      permalink: /tools/flutter-fix
+    - title: Code formatting
+      permalink: /tools/formatting
 
 - divider
 
