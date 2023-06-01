@@ -178,7 +178,8 @@ but they both render into 72px by 72px (in logical pixels),
 if width and height are not specified.
 
 {{site.alert.note}}
-  [Device pixel ratio][] depends on [MediaQueryData.size][] which requires to have either a [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
+  [Device pixel ratio][] depends on [MediaQueryData.size][], which requires having either
+  [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
 {{site.alert.end}}
 
 #### Bundling of resolution-aware image assets {#resolution-aware-bundling}
