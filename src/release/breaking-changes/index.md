@@ -1,5 +1,5 @@
 ---
-title: Breaking changes and migrations
+title: Breaking changes and migration guides
 short-title: Breaking changes
 description: A list of migration guides for breaking changes in Flutter.
 ---
