@@ -66,8 +66,7 @@ about evaluating and debugging Flutter's performance.
     `Timeline.startSync(...)/finish`.
   * If you use IntelliJ, a GUI view of this data is available.
     Select **Track widget rebuilds**,
-    and you'll visually see which widgets rebuild
-    visually in your IDE.
+    and your IDE displays which the widgets rebuild.
 
 [`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
 [debug.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/debug.dart
