@@ -238,12 +238,6 @@
       children:
         - title: Building Windows apps
           permalink: /platform-integration/windows/building
-        - title: Run loop migration
-          permalink: /platform-integration/windows/run-loop-migration
-        - title: Version information migration
-          permalink: /platform-integration/windows/version-migration
-        - title: Dark mode migration
-          permalink: /platform-integration/windows/dark-mode-migration
 
 - title: Packages & plugins
   permalink: /packages-and-plugins
