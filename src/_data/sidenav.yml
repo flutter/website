@@ -429,11 +429,11 @@
       permalink: /resources/books
     - title: Compatibility policy
       permalink: /resources/compatibility
-    - title: Contributing to Flutter
+    - title: Contribute to Flutter
       permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
-    - title: Creating useful bug reports
+    - title: Create useful bug reports
       permalink: /resources/bug-reports
-    - title: Dart resources
+    - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
     - title: Design documents
       permalink: /resources/design-docs
@@ -445,7 +445,7 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Inside Flutter
       permalink: /resources/inside-flutter
-    - title: Flutter vs. Swift Concurrency
+    - title: Flutter versus Swift concurrency
       permalink: /resources/dart-swift-concurrency
     - title: Official brand assets
       permalink: https://flutter.dev/brand
