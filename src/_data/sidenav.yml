@@ -324,9 +324,9 @@
 - title: Deployment
   permalink: /deployment
   children:
-    - title: Obfuscating Dart code
+    - title: Obfuscate Dart code
       permalink: /deployment/obfuscate
-    - title: Creating flavors for Flutter
+    - title: Create flavors of an app
       permalink: /deployment/flavors
     - title: Build and release an Android app
       permalink: /deployment/android
@@ -340,7 +340,7 @@
       permalink: /deployment/windows
     - title: Build and release a web app
       permalink: /deployment/web
-    - title: Continuous deployment
+    - title: Set up continuous deployment
       permalink: /deployment/cd
 
 - title: Add to an existing app
