@@ -199,6 +199,7 @@ by editing the `[project]/android/app/build.gradle` file.
   file and follow the steps in the Pilloxa link.
 {{site.alert.end}}
 
+[Pilloxa Keychain Access App]: https://pilloxa.gitlab.io/posts/safer-passwords-in-gradle/
 <li markdown="1"> Find the `buildTypes` block:
 
 ```
