@@ -1,15 +1,18 @@
 ---
 title: TextField requires a MaterialLocalizations widget
-description: TextField now throws an assert error if there is no MaterialLocalizations widget in the widget tree.
+description: >
+  TextField now throws an assert error if there is
+  no MaterialLocalizations widget in the widget tree.
 ---
 
 ## Summary
 
-Instances of `TextField` must have a `MaterialLocalizations` present in the widget tree.
-Trying to instantiate a `TextField` without the proper localizations results in an assertion such
-as the following:
+Instances of `TextField` must have a
+`MaterialLocalizations` present in the widget tree.
+Trying to instantiate a `TextField` without the proper localizations
+results in an assertion such as the following:
 
-```
+```nocode
 No MaterialLocalizations found.
 TextField widgets require MaterialLocalizations to be provided by a Localizations widget ancestor.
 The material library uses Localizations to generate messages, labels, and abbreviations.
@@ -31,9 +34,11 @@ provide your own localizations.
 
 ## Migration guide
 
-If you see an assertion error, make sure that locale information is available to the `TextField`,
-either through an ancestor `MaterialApp` (that automatically provides `Localizations`), or by
-creating your own `Localizations` widget.
+If you see an assertion error, make sure that
+locale information is available to the `TextField`,
+either through an ancestor `MaterialApp`
+(that automatically provides `Localizations`), or
+by creating your own `Localizations` widget.
 
 Code before migration:
 
@@ -115,6 +120,7 @@ In stable release: 1.20
 ## References
 
 API documentation:
+
 * [`TextField`][]
 * [`Localizations`][]
 * [`MaterialLocalizations`][]
@@ -122,8 +128,8 @@ API documentation:
 * [`MaterialApp`][]
 * [Internationalizing Flutter apps][]
 
-
 Relevant PR:
+
 * [PR 58831: Assert debugCheckHasMaterialLocalizations on TextField][]
 
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html

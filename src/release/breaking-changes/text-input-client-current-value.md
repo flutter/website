@@ -1,6 +1,8 @@
 ---
 title: TextInputClient currentTextEditingValue
-description: Add a new field to the TextInputClient interface to get the current TextEditingValue from a client.
+description: >
+  Add a new field to the TextInputClient interface to
+  get the current TextEditingValue from a client.
 ---
 
 ## Summary
@@ -137,17 +139,19 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`TextInput`][]
 * [`TextInputClient`][]
 * [`EditableText`][]
 * [`SystemChannels.textInput`][]
 
 Relevant issue:
+
 * [Issue 47137][]
 
 Relevant PR:
-* [Fix requestExistingInputState response][]
 
+* [Fix requestExistingInputState response][]
 
 
 [`EditableText`]: {{site.api}}/flutter/widgets/EditableText-class.html

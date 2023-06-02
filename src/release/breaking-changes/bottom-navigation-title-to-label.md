@@ -1,6 +1,8 @@
 ---
 title: Bottom Navigation Title To Label
-description: Deprecated BottomNavigationBarItem’s title (a Widget) in favor of label (a String). 
+description: >
+  Deprecated BottomNavigationBarItem’s title (a Widget) in
+  favor of label (a String). 
 ---
 
 ## Summary
@@ -16,7 +18,6 @@ the user experience of `BottomNavigationBar`s when the text
 scale factor is increased. Items in a `BottomNavigationBar`
 now show tooltips on long press. Accomplishing this 
 requires a `String` parameter on `BottomNavigationBarItem`s.
-
 
 ## Description of change
 
@@ -56,14 +57,16 @@ In stable release: 2.0.0
 ## References
 
 API documentation:
+
 * [`BottomNavigationBarItem`][]
 
 Relevant PRs:
+
 * [PR 60655][]: Clean up hero controller scope
-* [PR 59127][]: Update BottomNavigationBar to show tooltips
-  on long press][].
+* [PR 59127][]: Update BottomNavigationBar to show tooltips on long press.
 
 Breaking change proposal:
+
 * [Breaking Change: Bottom Navigation Item Title][]
 
 

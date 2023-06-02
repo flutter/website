@@ -1,6 +1,7 @@
 ---
 title: Android Studio and IntelliJ
-description: How to develop Flutter apps in Android Studio or other IntelliJ products.
+description: >
+  How to develop Flutter apps in Android Studio or other IntelliJ products.
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">

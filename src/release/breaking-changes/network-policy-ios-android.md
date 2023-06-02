@@ -1,6 +1,8 @@
 ---
 title: Insecure HTTP connections are disabled by default on iOS and Android
-description: Accessing a URL with HTTP protocol throws an exception unless the domain is explicitly allowed by policy.
+description: >
+  Accessing a URL with HTTP protocol throws an exception unless
+  the domain is explicitly allowed by policy.
 ---
 
 ## Summary
@@ -9,7 +11,7 @@ If your code tries to open an HTTP connection to a host
 on iOS or Android, a `StateException` is now thrown with
 the following message:
 
-```
+```nocode
 Insecure HTTP is not allowed by platform: <host>
 ```
 
@@ -59,7 +61,7 @@ For instance, if you put your XML configuration under
 `res/xml/network_security_config.xml`,
 your manifest would contain the following:
 
-```
+```xml
 <application ...>
   ...
   <meta-data android:name="io.flutter.network-policy"
@@ -72,13 +74,13 @@ your manifest would contain the following:
 If you would like to allow HTTP connections for Android debug
 builds, you can add the following snippet to your $project_path\android\app\src\debug\AndroidManifest.xml:
 
-```
+```xml
 <application android:usesCleartextTraffic="true"/>
 ```
 
 For iOS, you can follow [these instructions]({{site.url}}/add-to-app/ios/project-setup#local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
 
-```
+```xml
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsArbitraryLoads</key>
@@ -98,7 +100,6 @@ We **do not** recommend you do this for your release builds.
   This is in line with what platforms support. If you would
   like to allow IP addresses, the only option is to allow
   cleartext connections in your app.
-
 
 [network security config]: {{site.android-dev}}/training/articles/security-config#CleartextTrafficPermitted
 [NSExceptionDomains]: {{site.apple-dev}}/documentation/bundleresources/information_property_list/nsapptransportsecurity/nsexceptiondomains

@@ -1,24 +1,29 @@
 ---
 title: Migration guide for material localized strings
-description: ReorderableListView's localized strings are moved from material localizations to widgets localizations.
+description: >
+  ReorderableListView's localized strings are moved from
+  material localizations to widgets localizations.
 ---
 
 ## Summary
 
-`ReorderableListView`'s localized strings were moved from material localizations to widgets
-localizations. These strings were deprecated in material localizations.
+`ReorderableListView`'s localized strings were moved from
+material localizations to widgets localizations.
+These strings were deprecated in material localizations.
 
 ## Context
 
-[`ReorderableListView`][] uses these strings to annotate its semantics actions. To apply the same
-annotations to [`ReorderableList`][] and [`SliverReorderableList`][], they need to access these
-strings from widgets library.
+[`ReorderableListView`][] uses these strings to annotate its semantics actions.
+To apply the same annotations to [`ReorderableList`][]
+and [`SliverReorderableList`][], they need to
+access these strings from widgets library.
 
 ## Description of change
 
-The [`MaterialLocalizations`][] strings for `reorderItemToStart`, `reorderItemToEnd`, `reorderItemUp`,
-`reorderItemDown`, `reorderItemLeft`, and `reorderItemRight` are deprecated and replaced by the
-same strings in [`WidgetsLocalizations`][].
+The [`MaterialLocalizations`][] strings for
+`reorderItemToStart`, `reorderItemToEnd`, `reorderItemUp`,
+`reorderItemDown`, `reorderItemLeft`, and `reorderItemRight` are deprecated and
+replaced by the same strings in [`WidgetsLocalizations`][].
 
 ## Migration guide
 
@@ -65,7 +70,6 @@ class WidgetsLocalizationsMyLanguage extends WidgetsLocalizationsEn {
 }
 ```
 
-
 ## Timeline
 
 Landed in version: v3.10.0-2.0.pre
@@ -73,9 +77,10 @@ In stable release: TBD
 
 ## References
 
-Relevant PRs:
+Relevant PR:
 
-* [PR 124711][]: Deprecates string for ReorderableList in material_localizations.
+* [PR 124711][]: Deprecates string for
+  ReorderableList in material_localizations.
 
 [PR 124711]: {{site.repo.flutter}}/pull/124711
 [`ReorderableListView`]: {{site.api}}/flutter/material/ReorderableListView-class.html

@@ -1,6 +1,7 @@
 ---
 title: Flutter concurrency for Swift developers
-description: Leverage your Swift concurrency knowledge while learning Flutter and Dart
+description: >
+  Leverage your Swift concurrency knowledge while learning Flutter and Dart.
 ---
 
 <?code-excerpt path-base="resources"?>
@@ -44,6 +45,7 @@ features that the Dart language provides,
 such as `async`/`await`.
 
 ### Asynchronous Programming
+
 An asynchronous operation allows other operations 
 to execute before it completes. 
 Both Dart and Swift support asynchronous functions 
@@ -171,7 +173,8 @@ enum Weather {
 Then, define a simple view model (similar to what was created in SwiftUI), 
 to fetch the weather. In Dart, a `Future` object represents a value to be
 provided in the future. A `Future` is similar to Swift's `ObservableObject`. 
-In this example, a function within the view model returns a `Future<Weather>` object:
+In this example, a function within the view model
+returns a `Future<Weather>` object:
 
 <?code-excerpt "lib/async_weather.dart (HomePageViewModel)"?>
 ```dart
@@ -239,7 +242,7 @@ class HomePage extends StatelessWidget {
 ```
 
 For the complete example, check out the
-[async_weather][] file on GitHub. 
+[async_weather][] file on GitHub.
 
 [async_weather]: {{site.github}}/flutter/website/examples/resources/lib/async_weather.dart
 
@@ -302,7 +305,7 @@ Map<String, dynamic> getNumberOfKeys(String jsonString) {
 ```
 
 You can find more information on Dart at
-[Learning Dart as a Swift developer][], 
+[Learning Dart as a Swift developer][],
 and more information on Flutter at
 [Flutter for SwiftUI developers][] or
 [Flutter for UIKit developers][].

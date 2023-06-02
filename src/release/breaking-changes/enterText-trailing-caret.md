@@ -1,6 +1,8 @@
 ---
 title: Change the enterText method to move the caret to the end of the input text
-description: WidgetTester.enterText and TestTextInput.enterText now move the caret to the end of the input text.
+description: >
+  WidgetTester.enterText and TestTextInput.enterText now
+  move the caret to the end of the input text.
 ---
 
 ## Summary
@@ -10,35 +12,36 @@ now move the caret to the end of the input text.
 
 ## Context
 
-The caret indicates the insertion point within the current text in an 
-active input field. Typically, when a new character is entered, the 
-caret stays immediately after it. In Flutter the caret position is 
-represented by a collapsed selection. When the selection is invalid, 
-usually the user won't be able to modify or add text until they 
+The caret indicates the insertion point within the current text in an
+active input field. Typically, when a new character is entered, the
+caret stays immediately after it. In Flutter the caret position is
+represented by a collapsed selection. When the selection is invalid,
+usually the user won't be able to modify or add text until they
 change the selection to a valid value.
 
-`WidgetTester.enterText` and `TestTextInput.enterText` are 2 methods 
-used in tests to replace the content of the target text field. Prior 
-to this change, `WidgetTester.enterText` and `TestTextInput.enterText` 
-set the selection to an invalid range (-1, -1), indicating there's 
+`WidgetTester.enterText` and `TestTextInput.enterText` are 2 methods
+used in tests to replace the content of the target text field. Prior
+to this change, `WidgetTester.enterText` and `TestTextInput.enterText`
+set the selection to an invalid range (-1, -1), indicating there's
 no selection or caret. This contradicts the typical behavior of an
 input field.
 
 ## Description of change
 
-In addition to replacing the text with the supplied text, 
-`WidgetTester.enterText` and `TestTextInput.enterText` now set the 
+In addition to replacing the text with the supplied text,
+`WidgetTester.enterText` and `TestTextInput.enterText` now set the
 selection to `TextSelection.collapsed(offset: text.length)`, instead
 of `TextSelection.collapsed(offset: -1)`.
 
 ## Migration guide
 
-It should be very uncommon for tests to have to rely on the 
-previous behavior of `enterText`, since usually the selection 
-should not be invalid. **Consider changing the expected values of 
+It should be very uncommon for tests to have to rely on the
+previous behavior of `enterText`, since usually the selection
+should not be invalid. **Consider changing the expected values of
 your tests to adopt the `enterText` change.**
 
 Common test failures this change may introduce includes:
+
 - Golden test failures: 
 
   The caret appears at the end of the text, as opposed to before
@@ -53,7 +56,6 @@ Common test failures this change may introduce includes:
   `expect(controller.value.selection.baseOffset, -1);`
   failing after `enterText` calls.
 
-
 If your tests have to rely on setting the selection to invalid,
 the previous behavior can be achieved using`updateEditingValue`:  
 
@@ -64,6 +66,7 @@ Code before migration:
 ```dart
 await testTextInput.enterText(text);
 ```
+
 Code after migration:
 
 ```dart
@@ -106,12 +109,10 @@ Relevant issues:
 
 * [Issue 79494][]
 
-Relevant PRs:
+Relevant PR:
 
 * [enterText to move the caret to the end][]
 
-
-<!-- Master channel link: -->
 
 [`WidgetTester.enterText`]: {{site.api}}/flutter/flutter_test/WidgetTester/enterText.html
 [`TestTextInput.enterText`]: {{site.api}}/flutter/flutter_test/TestTextInput/enterText.html

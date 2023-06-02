@@ -47,11 +47,9 @@
 
 - title: Samples & tutorials
   children:
-    - title: Flutter Gallery [running app]
+    - title: Flutter Gallery
       permalink: https://gallery.flutter.dev
-    - title: Flutter Gallery [repo]
-      permalink: https://github.com/flutter/gallery
-    - title: Sample apps on GitHub
+    - title: Samples and demos
       permalink: https://flutter.github.io/samples/
     - title: Cookbook
       permalink: /cookbook
@@ -89,16 +87,6 @@
       permalink: /ui/assets-and-images
     - title: Material Design
       permalink: /ui/material
-    - title: Navigation & routing
-      permalink: /ui/navigation
-      children:
-        - title: Navigation in Flutter
-          permalink: /ui/navigation
-          match-page-url-exactly: true
-        - title: Deep linking
-          permalink: /ui/navigation/deep-linking
-        - title: URL strategies
-          permalink: /ui/navigation/url-strategies
     - title: Animations
       permalink: /ui/animations
       children:
@@ -132,6 +120,17 @@
           permalink: /ui/advanced/slivers
     - title: Widget catalog
       permalink: /ui/widgets
+
+- title: Navigation & routing
+  permalink: /ui/navigation
+  children:
+    - title: Overview
+      permalink: /ui/navigation
+      match-page-url-exactly: true
+    - title: Setup deep linking
+      permalink: /ui/navigation/deep-linking
+    - title: Configure URL strategies
+      permalink: /ui/navigation/url-strategies
 
 - title: Data & backend
   permalink: /data-and-backend
@@ -237,12 +236,6 @@
       children:
         - title: Building Windows apps
           permalink: /platform-integration/windows/building
-        - title: Run loop migration
-          permalink: /platform-integration/windows/run-loop-migration
-        - title: Version information migration
-          permalink: /platform-integration/windows/version-migration
-        - title: Dark mode migration
-          permalink: /platform-integration/windows/dark-mode-migration
 
 - title: Packages & plugins
   permalink: /packages-and-plugins
@@ -264,55 +257,6 @@
       permalink: /packages-and-plugins/using-packages
     - title: Package site
       permalink: https://pub.dev/flutter
-
-- title: Tools & features
-  permalink: /tools
-  children:
-    - title: Android Studio & IntelliJ
-      permalink: /tools/android-studio
-    - title: Visual Studio Code
-      permalink: /tools/vs-code
-    - title: DevTools
-      permalink: /tools/devtools
-      children:
-        - title: Overview
-          permalink: /tools/devtools/overview
-        - title: Install from Android Studio & IntelliJ
-          permalink: /tools/devtools/android-studio
-        - title: Install from VS Code
-          permalink: /tools/devtools/vscode
-        - title: Install from command line
-          permalink: /tools/devtools/cli
-        - title: Flutter inspector
-          permalink: /tools/devtools/inspector
-        - title: Performance view
-          permalink: /tools/devtools/performance
-        - title: CPU Profiler view
-          permalink: /tools/devtools/cpu-profiler
-        - title: Memory view
-          permalink: /tools/devtools/memory
-        - title: Debug console view
-          permalink: /tools/devtools/console
-        - title: Network view
-          permalink: /tools/devtools/network
-        - title: Debugger
-          permalink: /tools/devtools/debugger
-        - title: Logging view
-          permalink: /tools/devtools/logging
-        - title: App size tool
-          permalink: /tools/devtools/app-size
-        - title: Release notes
-          permalink: /tools/devtools/release-notes
-    - title: SDK overview
-      permalink: /tools/sdk
-    - title: Flutter and the pubspec file
-      permalink: /tools/pubspec
-    - title: Hot reload
-      permalink: /tools/hot-reload
-    - title: Flutter Fix
-      permalink: /tools/flutter-fix
-    - title: Code formatting
-      permalink: /tools/formatting
 
 - title: Testing & debugging
   permalink: /testing
@@ -372,9 +316,9 @@
 - title: Deployment
   permalink: /deployment
   children:
-    - title: Obfuscating Dart code
+    - title: Obfuscate Dart code
       permalink: /deployment/obfuscate
-    - title: Creating flavors for Flutter
+    - title: Create flavors of an app
       permalink: /deployment/flavors
     - title: Build and release an Android app
       permalink: /deployment/android
@@ -388,7 +332,7 @@
       permalink: /deployment/windows
     - title: Build and release a web app
       permalink: /deployment/web
-    - title: Continuous deployment
+    - title: Set up continuous deployment
       permalink: /deployment/cd
 
 - title: Add to an existing app
@@ -424,6 +368,55 @@
     - title: Multiple Flutter instances
       permalink: /add-to-app/multiple-flutters
 
+- title: Tools & features
+  permalink: /tools
+  children:
+    - title: Android Studio & IntelliJ
+      permalink: /tools/android-studio
+    - title: Visual Studio Code
+      permalink: /tools/vs-code
+    - title: DevTools
+      permalink: /tools/devtools
+      children:
+        - title: Overview
+          permalink: /tools/devtools/overview
+        - title: Install from Android Studio & IntelliJ
+          permalink: /tools/devtools/android-studio
+        - title: Install from VS Code
+          permalink: /tools/devtools/vscode
+        - title: Install from command line
+          permalink: /tools/devtools/cli
+        - title: Flutter inspector
+          permalink: /tools/devtools/inspector
+        - title: Performance view
+          permalink: /tools/devtools/performance
+        - title: CPU Profiler view
+          permalink: /tools/devtools/cpu-profiler
+        - title: Memory view
+          permalink: /tools/devtools/memory
+        - title: Debug console view
+          permalink: /tools/devtools/console
+        - title: Network view
+          permalink: /tools/devtools/network
+        - title: Debugger
+          permalink: /tools/devtools/debugger
+        - title: Logging view
+          permalink: /tools/devtools/logging
+        - title: App size tool
+          permalink: /tools/devtools/app-size
+        - title: Release notes
+          permalink: /tools/devtools/release-notes
+    - title: SDK overview
+      permalink: /tools/sdk
+    - title: Flutter's pubspec options
+      permalink: /tools/pubspec
+    - title: Hot reload
+      permalink: /tools/hot-reload
+    - title: Automated fixes
+      permalink: /tools/flutter-fix
+    - title: Code formatting
+      permalink: /tools/formatting
+
 - divider
 
 - title: Resources
@@ -434,11 +427,11 @@
       permalink: /resources/books
     - title: Compatibility policy
       permalink: /resources/compatibility
-    - title: Contributing to Flutter
+    - title: Contribute to Flutter
       permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
-    - title: Creating useful bug reports
+    - title: Create useful bug reports
       permalink: /resources/bug-reports
-    - title: Dart resources
+    - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
     - title: Design documents
       permalink: /resources/design-docs
@@ -450,7 +443,7 @@
       permalink: https://pub.dev/packages/google_fonts
     - title: Inside Flutter
       permalink: /resources/inside-flutter
-    - title: Flutter vs. Swift Concurrency
+    - title: Flutter versus Swift concurrency
       permalink: /resources/dart-swift-concurrency
     - title: Official brand assets
       permalink: https://flutter.dev/brand
