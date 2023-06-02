@@ -81,7 +81,7 @@ In stable release: 1.22
 
 API documentation:
 
-* [`AutovalidateMode`]({{site.api}}/flutter/widgets/AutovalidateMode-class.html)
+* [`AutovalidateMode`]({{site.api}}/flutter/widgets/AutovalidateMode.html)
 
 Relevant issues:
 
