@@ -401,7 +401,7 @@
     - title: Add to an Android app
       permalink: /add-to-app/android
       children:
-        - title: Setup Android project
+        - title: Set up Android project
           permalink: /add-to-app/android/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/android/add-flutter-screen
@@ -414,7 +414,7 @@
     - title: Add to an iOS app
       permalink: /add-to-app/ios
       children:
-        - title: Setup iOS project
+        - title: Set up iOS project
           permalink: /add-to-app/ios/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/ios/add-flutter-screen
