@@ -1,10 +1,8 @@
 ---
-title: Debugging your add-to-app module
+title: Debug your add-to-app module
 short-title: Debugging
 description: How to run, debug, and hot reload your add-to-app Flutter module.
 ---
-
-## Debugging your add-to-app module
 
 Once you've integrated the Flutter module to your project and used Flutter's
 platform APIs to run the Flutter engine and/or UI,
