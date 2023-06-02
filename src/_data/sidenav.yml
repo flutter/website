@@ -389,7 +389,7 @@
       permalink: /deployment/windows
     - title: Build and release a web app
       permalink: /deployment/web
-    - title: Setup continuous deployment
+    - title: Set up continuous deployment
       permalink: /deployment/cd
 
 - title: Add to an existing app
