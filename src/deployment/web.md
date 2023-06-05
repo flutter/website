@@ -64,8 +64,8 @@ following structure:
 ```
 
 {{site.alert.note}}
-The `canvaskit` directory and its contents are only present when the
-CanvasKit renderer is selected—not when the HTML renderer is selected.
+  The `canvaskit` directory and its contents are only present when the
+  CanvasKit renderer is selected—not when the HTML renderer is selected.
 {{site.alert.end}}
 
 Launch a web server (for example,
@@ -114,12 +114,12 @@ command:
     firebase init hosting
     ```
 
-3. Answer yes when asked if you want to use a web framework.
+3. Answer `yes` when asked if you want to use a web framework.
 
-4. If you are in an empty directory, you will be asked to choose your web
-framework. Choose Flutter Web.
+4. If you're in an empty directory,
+    you'll be asked to choose your web framework. Choose `Flutter Web`.
 
-5. Choose your hosting source directory, this could be an existing flutter app.
+5. Choose your hosting source directory; this could be an existing flutter app.
 
 6. Select a region to host your files.
 
@@ -127,11 +127,11 @@ framework. Choose Flutter Web.
 
 8. Deploy the app to Firebase Hosting:
 
-    ```
+    ```terminal
     firebase deploy
     ```
 
-    Running this command automatically runs `flutter build web --release` for you,
+    Running this command automatically runs `flutter build web --release`,
     so you don't have to build your app in a separate step.
 
 For more information, visit the official [Firebase Hosting][] documentation for
@@ -240,7 +240,7 @@ so please [give us feedback][] if you see something that doesn’t look right.
 [Displaying images on the web]: {{site.url}}/platform-integration/web/web-images
 [Firebase Hosting]: {{site.firebase}}/docs/hosting/frameworks/flutter
 [Firebase framework-aware CLI]: {{site.firebase}}/docs/hosting/frameworks/frameworks-overview
-[Install-firebase-cli]: https://firebase.google.com/docs/cli#install_the_firebase_cli
+[install-firebase-cli]: https://firebase.google.com/docs/cli#install_the_firebase_cli
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting
