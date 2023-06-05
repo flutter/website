@@ -1,6 +1,8 @@
 ---
 title: Code formatting
-description: Flutter's code formatter formats your code along recommended style guidelines.
+description: >
+    Flutter's code formatter formats your code
+    following recommended style guidelines.
 ---
 
 
@@ -32,7 +34,7 @@ Install the `Dart` plugin (see
 [Editor setup]({{site.url}}/get-started/editor))
 to get automatic formatting of code in Android Studio and IntelliJ.
 To automatically format your code in the current source code window,
-use `Cmd+Alt+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
+use `Cmd+Option+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
 Android Studio and IntelliJ also provide a check box named
 **Format code on save** on the Flutter page in Preferences
 (on Mac) or Settings (on Windows and Linux)

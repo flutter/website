@@ -1,5 +1,5 @@
 ---
-title: Flutter Fix
+title: Flutter fix
 description: Keep your code up to date with the help of the Flutter Fix feature.
 ---
 
@@ -7,13 +7,12 @@ As Flutter continues to evolve, we provide a tool to help you clean up
 deprecated APIs from your codebase. The tool ships as part of Flutter, and
 suggests changes that you might want to make to your code. The tool is available
 from the command line, and is also integrated into the IDE plugins for Android
-Studio and Visual Studio Code. 
+Studio and Visual Studio Code.
 
 {{site.alert.tip}}
   These automated updates are called _quick-fixes_ in IntelliJ and Android
   Studio, and _code actions_ in VS Code.
 {{site.alert.end}}
-
 
 ## Applying individual fixes
 

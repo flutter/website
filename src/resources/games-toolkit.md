@@ -125,7 +125,7 @@ join the [Flame community on Discord][flame-discord],
 and play with the [Flame demo app on DartPad][flame-demo].
 You might also check out the [Flutter + Flame codelab][].
 
-[Flutter + Flame codelab]: {{site.codelabs}}/flutter-flame-game
+[Flutter + Flame codelab]: {{site.codelabs}}/codelabs/flutter-flame-game
 
 In fact, the people at Very Good Ventures wrote a
 [Pinball game][pinball-game] for Google I/O 2022

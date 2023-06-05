@@ -396,14 +396,16 @@ and the [Animations overview][].
 
 ### How do I use a Canvas to draw/paint?
 
-In Android, you would use the `Canvas` and `Drawable` to draw images and shapes
-to the screen. Flutter has a similar `Canvas` API as well, since it is based
-on the same low-level rendering engine, Skia. As a result, painting to a
-canvas in Flutter is a very familiar task for Android developers.
+In Android, you would use the `Canvas` and `Drawable`
+to draw images and shapes to the screen.
+Flutter has a similar `Canvas` API as well,
+since it's based on the same low-level rendering engine, Skia.
+As a result, painting to a canvas in Flutter
+is a very familiar task for Android developers.
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
-and `CustomPainter`, the latter of which implements your algorithm to draw to
-the canvas.
+and `CustomPainter`,
+the latter of which implements your algorithm to draw to the canvas.
 
 To learn how to implement a signature painter in Flutter,
 see Collin's answer on [Custom Paint][].
@@ -471,6 +473,8 @@ class SignaturePainter extends CustomPainter {
       oldDelegate.points != points;
 }
 ```
+
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 ### How do I build custom widgets?
 
@@ -1239,11 +1243,12 @@ Flutter apps have only assets. All resources that would live
 in the `res/drawable-*` folders on Android,
 are placed in an assets folder for Flutter.
 
-Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
-`2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
-are logical pixels, which are basically the same as device-independent pixels.
-The so-called [`devicePixelRatio`][]
-expresses the ratio of physical pixels in a single logical pixel.
+Flutter follows a simple density-based format like iOS.
+Assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
+Flutter doesn't have `dp`s but there are logical pixels,
+which are basically the same as device-independent pixels.
+Flutter's [`devicePixelRatio`][] expresses the ratio
+of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
 
@@ -1256,23 +1261,19 @@ The equivalent to Android's density buckets are:
  `xxhdpi` | `3.0x`
  `xxxhdpi` | `4.0x`
 
-Assets are located in any arbitrary folder&mdash;Flutter has no
-predefined folder structure. You declare the assets (with location) in
+Assets are located in any arbitrary folder&mdash;Flutter
+has no predefined folder structure.
+You declare the assets (with location) in
 the `pubspec.yaml` file, and Flutter picks them up.
 
-Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
-accessible from the native side, and vice versa, native assets and resources
-weren’t available to Flutter, as they lived in separate folders.
-
-As of Flutter beta 2, assets are stored in the native asset folder,
-and are accessed on the native side using Android's `AssetManager`:
+Assets stored in the native asset folder are
+accessed on the native side using Android's `AssetManager`:
 
 ```kotlin
 val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_asset.png")
 ```
 
-As of Flutter beta 2, Flutter still cannot access native resources,
-nor it can access native assets.
+Flutter can't access native resources or assets.
 
 To add a new image asset called `my_icon.png` to our Flutter project,
 for example, and deciding that it should live in a folder we
@@ -2380,7 +2381,6 @@ see the [`firebase_messaging`][] plugin documentation.
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: {{site.url}}/resources/architectural-overview#composition
 [Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
-[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 [developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [DevTools]: {{site.url}}/tools/devtools
@@ -2405,8 +2405,8 @@ see the [`firebase_messaging`][] plugin documentation.
 [intl package]: {{site.pub}}/packages/intl
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
 [Material Components]: {{site.material}}/develop/flutter
-[Material Design guidelines]: {{site.material}}/design
-[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[Material Design guidelines]: {{site.material}}/styles
+[optimized for all platforms]: {{site.material}}/develop
 [a plugin]: {{site.pub}}/packages/android_intent
 [pub.dev]: {{site.pub}}/flutter/packages/
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input

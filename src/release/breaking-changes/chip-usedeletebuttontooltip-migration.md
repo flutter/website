@@ -1,6 +1,8 @@
 ---
 title: Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips
-description: Deprecated useDeleteButtonTooltip of chips that have a delete button in favor of deleteButtonTooltipMessage.
+description: >
+  Deprecated useDeleteButtonTooltip of chips that have
+  a delete button in favor of deleteButtonTooltipMessage.
 ---
 
 ## Summary
@@ -79,7 +81,7 @@ API documentation:
 * [`InputChip`][]
 * [`RawChip`][]
 
-Relevant PRs:
+Relevant PR:
 
 * [Deprecate `useDeleteButtonTooltip` for Chips][]
 

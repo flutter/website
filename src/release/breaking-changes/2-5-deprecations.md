@@ -1,6 +1,8 @@
 ---
 title: Deprecated API removed after v2.5
-description: After reaching end of life, the following deprecated APIs were removed from Flutter.
+description: >
+  After reaching end of life, the following deprecated APIs
+  were removed from Flutter.
 ---
 
 ## Summary
@@ -47,6 +49,7 @@ The following classes all have the same change of API:
 [In-depth migration guide available][]
 
 Code before migration:
+
 ```dart
 const Form form = Form(autovalidate: true);
 const Form form = Form(autovalidate: false);
@@ -64,6 +67,7 @@ const DropdownButtonFormField dropdownButtonFormField = DropdownButtonFormField(
 ```
 
 Code after migration:
+
 ```dart
 const Form form = Form(autovalidateMode: AutovalidateMode.always);
 const Form form = Form(autovalidateMode: AutovalidateMode.disabled);
@@ -85,6 +89,7 @@ const DropdownButtonFormField dropdownButtonFormField = DropdownButtonFormField(
 **References**
 
 API documentation:
+
 * [`Form`][]
 * [`FormField`][]
 * [`TextFormField`][]
@@ -92,6 +97,7 @@ API documentation:
 * [`AutovalidateMode`][]
 
 Relevant issues:
+
 * [Issue 56363]({{site.repo.flutter}}/issues/56363)
 * [Issue 18885]({{site.repo.flutter}}/issues/18885)
 * [Issue 15404]({{site.repo.flutter}}/issues/15404)
@@ -99,6 +105,7 @@ Relevant issues:
 * [Issue 48876]({{site.repo.flutter}}/issues/48876)
 
 Relevant PRs:
+
 * Deprecated in [#59766]({{site.repo.flutter}}/pull/59766)
 * Removed in [#90292]({{site.repo.flutter}}/pull/90292)
 
@@ -123,6 +130,7 @@ The `vsync` for the animation should instead be specified using
 **Migration guide**
 
 Code before migration:
+
 ```dart
 class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   FloatingHeaderSnapConfiguration? get snapConfiguration => FloatingHeaderSnapConfiguration(vsync: myTickerProvider);
@@ -130,6 +138,7 @@ class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
 ```
 
 Code after migration:
+
 ```dart
 class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   FloatingHeaderSnapConfiguration? get snapConfiguration => FloatingHeaderSnapConfiguration();
@@ -141,17 +150,21 @@ class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
 **References**
 
 Design document:
+
 * [Control SliverPersistentHeader's showOnScreen Behavior][]
 
 API documentation:
+
 * [`FloatingHeaderSnapConfiguration`][]
 * [`SliverPersistentHeaderDelegate`][]
 * [`TickerProvider`][]
 
 Relevant issues:
+
 * [Issue 25507]({{site.repo.flutter}}/issues/25507)
 
 Relevant PRs:
+
 * Deprecated in [#56413]({{site.repo.flutter}}/pull/56413)
 * Removed in [#90293]({{site.repo.flutter}}/pull/90293)
 
@@ -222,17 +235,21 @@ viewId = textureController.viewId;
 **References**
 
 Design document:
+
 * [Flutter Hybrid Composition][]
 
 API documentation:
+
 * [`AndroidViewController`][]
 * [`TextureAndroidViewController`][]
 * [`SurfaceAndroidViewController`][]
 
 Relevant issues:
+
 * [Issue 55218]({{site.repo.flutter}}/issues/55218)
 
 Relevant PRs:
+
 * Deprecated in [#60320]({{site.repo.flutter}}/issues/60320)
 * Removed in [#90294]({{site.repo.flutter}}/issues/90294)
 
@@ -280,9 +297,11 @@ pattern = formatter.filterPattern;
 **References**
 
 API documentation:
+
 * [`FilteringTextInputFormatter`][]
 
 Relevant PRs:
+
 * Deprecated in [#59120]({{site.repo.flutter}}/issues/59120)
 * Removed in [#90296]({{site.repo.flutter}}/issues/90296)
 
@@ -321,15 +340,17 @@ bottomNavigationBarItem.label;
 
 **References**
 
-Design Document
+Design document:
 * [BottomNavigationBarItem title][]
 
 API documentation:
+
 * [`BottomNavigationBarItem`][]
 * [`BottomNavigationBar`][]
 * [`Tooltip`][]
 
 Relevant PRs:
+
 * Deprecated in [#59127]({{site.repo.flutter}}/issues/59127)
 * Removed in [#90295]({{site.repo.flutter}}/issues/90295)
 
@@ -367,7 +388,7 @@ not compatible with Dart 2.16 and later, as they depend on the now removed
 `packageRoot` API. You may see an error like this when attempting to run your
 app:
 
-```
+```nocode
 ../../.pub-cache/hosted/pub.dartlang.org/platform-3.0.0/
   lib/src/interface/local_platform.dart:46:19:
   Error: Member not found: 'packageRoot'.
@@ -386,6 +407,7 @@ dependencies:
 **References**
 
 Relevant PRs:
+
 * Removed from the Dart libraries in [#47769][]
 * Removed from `package:platform` in [PR #38][]
 * Updated Flutter to use `package:platform` 3.1.0 in [PR #94603][]
@@ -406,4 +428,3 @@ Relevant PRs:
 ## Timeline
 
 In stable release: 2.10
-

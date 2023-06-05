@@ -1,19 +1,23 @@
 ---
 title: Transition of platform channel test interfaces to flutter_test package
-description: The setMockMessageHandler method related APIs have moved from package:flutter to package:flutter_test
+description: >
+   The setMockMessageHandler method related APIs have
+   moved from package:flutter to package:flutter_test
 ---
 
 ## Summary
 
 The following methods have been replaced by APIs
 in the `flutter_test` package:
-`BinaryMessenger.checkMessageHandler`,
-`BinaryMessenger.setMockMessageHandler`,
-`BinaryMessenger.checkMockMessageHandler`,
-`BasicMessageChannel.setMockMessageHandler`,
-`MethodChannel.checkMethodCallHandler`,
-`MethodChannel.setMockMethodCallHandler`,
-and `MethodChannel.checkMockMethodCallHandler`.
+
+* `BinaryMessenger.checkMessageHandler`
+* `BinaryMessenger.setMockMessageHandler`
+* `BinaryMessenger.checkMockMessageHandler`
+* `BasicMessageChannel.setMockMessageHandler`
+* `MethodChannel.checkMethodCallHandler`
+* `MethodChannel.setMockMethodCallHandler`
+* `MethodChannel.checkMockMethodCallHandler`
+
 The `onPlatformMessage` callback is no longer used
 by the Flutter framework.
 
@@ -72,7 +76,7 @@ expose the currently registered listener for a channel.
 
 Code that needs migrating may see errors such as the following:
 
-```
+```nocode
   error - The method 'setMockMessageHandler' isn't defined for the type 'BinaryMessenger' at test/sensors_test.dart:64:8 - (undefined_method)
 
   error • The method 'setMockMethodCallHandler' isn't defined for the type 'MethodChannel' • test/widgets/editable_text_test.dart:5623:30 • undefined_method
@@ -159,13 +163,14 @@ In stable release: 2.5
 ## References
 
 API documentation:
+
 * [`TestDefaultBinaryMessenger`][]
 * [`TestDefaultBinaryMessengerBinding`][]
 
-Relevant PRs:
+Relevant PR:
+
 * [PR #76288: Migrate to ChannelBuffers.push][]
 
-<!-- Master channel link: -->
 [`TestDefaultBinaryMessenger`]: {{site.api}}/flutter/flutter_test/TestDefaultBinaryMessenger-class.html
 [`TestDefaultBinaryMessengerBinding`]: {{site.api}}/flutter/flutter_test/TestDefaultBinaryMessengerBinding-mixin.html
 

@@ -1,6 +1,8 @@
 ---
 title: Scribble Text Input Client
-description: Add new methods to the TextInputClient interface to allow Scribble to insert or remove text placeholders and show the toolbar.
+description: >
+  Add new methods to the TextInputClient interface to allow Scribble
+  to insert or remove text placeholders and show the toolbar.
 ---
 
 ## Summary
@@ -9,13 +11,11 @@ Adds three methods, `showToolbar`, `insertTextPlaceholder`, and
 `removeTextPlaceholder` to the `TextInputClient` interface to allow the iOS 14
 Scribble feature to insert and remove text placeholders and show the toolbar.
 
-
 ## Context
 
 As of iOS 14, iPads support the Scribble feature when using the Apple Pencil.
 This feature allows users to use the pencil to interact with text fields to
 add, delete, select, and modify text.
-
 
 ## Description of change
 
@@ -32,7 +32,6 @@ called `TextInputClient.insertTextPlaceholder` and
 `TextInputClient.removeTextPlaceholder`.
 Multiline text inputs should have placeholders that provide vertical space,
 while single line inputs should provide horizontal space.
-
 
 ## Migration guide
 

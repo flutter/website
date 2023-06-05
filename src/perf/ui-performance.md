@@ -223,11 +223,13 @@ on other threads.
     it by talking to the GPU (graphic processing unit).
     You cannot directly access the raster thread or its data but,
     if this thread is slow, it's a result of something you've done
-    in the Dart code. Skia, the graphics library, runs on this thread.
+    in the Dart code. Skia and Impeller, the graphics libraries,
+    run on this thread.
     Shown in the top row of the performance overlay.
     This thread was previously known as the "GPU thread" because it
-    rasterizes for the GPU. But it is running on the CPU. We renamed it
-    to "raster thread" because many developers wrongly (but understandably)
+    rasterizes for the GPU. But it is running on the CPU.
+    We renamed it to "raster thread" because many developers wrongly
+    (but understandably)
     assumed the thread runs on the GPU unit.
 </dd>
 <dt markdown="1">**I/O thread**</dt>

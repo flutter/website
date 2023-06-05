@@ -1,6 +1,8 @@
 ---
 title: Route and Navigator Refactoring
-description: Some APIs and function signatures of the Route and Navigator classes have changed.
+description: >
+  Some APIs and function signatures of the
+  Route and Navigator classes have changed.
 ---
 
 ## Summary
@@ -8,7 +10,7 @@ description: Some APIs and function signatures of the Route and Navigator classe
 The `Route` class no longer manages its overlay entries in overlay,
 and its `install()` method no longer has an `insertionPoint` parameter.
 The `isInitialRoute` property in `RouteSetting` has been deprecated,
-and `Navigator.pop()` no longer returns a value. 
+and `Navigator.pop()` no longer returns a value.
 
 ## Context
 
@@ -35,12 +37,11 @@ its overlay entries, while the navigator inserts or
 removes overlay entries from the overlay.
 We also removed the `insertionPoint` argument of
 `Route.install()` because it was obsolete after the change.
- 
+
 Finally, we removed the `isInitialRoute` property from
 `RouteSetting` as part of refactoring, and provided the
 `onGenerateInitialRoutes` API for full control of
 initial routes generation.
-
 
 ## Migration guide
 
@@ -72,7 +73,6 @@ TextField(
   }
 )
 ```
-
 
 Case 2: An app generates routes based on `isInitialRoute`.
 
@@ -128,9 +128,11 @@ In stable release: 1.17
 ## References
 
 Design doc:
+
 * [Router][]
 
 API documentation:
+
 * [`Route`][]
 * [`Route.install`][]
 * [`RouteSetting.isInitialRoute`][]
@@ -139,9 +141,11 @@ API documentation:
 * [`Navigator.canPop`][]
 
 Relevant issue:
+
 * [Issue 45938: Router][]
 
 Relevant PR:
+
 * [PR 44930][] - Refactor the imperative api to continue working in the new navigation system
 
 

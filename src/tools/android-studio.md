@@ -1,6 +1,7 @@
 ---
 title: Android Studio and IntelliJ
-description: How to develop Flutter apps in Android Studio or other IntelliJ products.
+description: >
+  How to develop Flutter apps in Android Studio or other IntelliJ products.
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
@@ -34,12 +35,27 @@ You can create a new project in one of several ways.
 
 ### Creating a new project
 
-To create a new Flutter project from the Flutter starter app template:
+Creating a new Flutter project from the Flutter starter app template
+differs between Android Studio and IntelliJ.
 
- 1. In the IDE, click **New Project** from the **Welcome**
-    window or **File > New > Project** from the main IDE window.
+**In Android Studio:**
+
+ 1. In the IDE, click **New Flutter Project** from the **Welcome** window or
+    **File > New > New Flutter Project** from the main IDE window.
  1. Specify the **Flutter SDK path** and click **Next**.
- 1. Enter your desired **Project name**, **Description** and **Project location**.
+ 1. Enter your desired **Project name**, 
+    **Description**, and **Project location**.
+ 1. If you might publish this app, [set the company domain](#note).
+ 1. Click **Finish**.
+
+**In IntelliJ:**
+
+ 1. In the IDE, click **New Project** from the **Welcome** window or
+    **File > New > Project** from the main IDE window.
+ 1. Select **Flutter** from the **Generators** list in the left panel
+ 1. Specify the **Flutter SDK path** and click **Next**.
+ 1. Enter your desired **Project name**,
+    **Description**, and **Project location**.
  1. If you might publish this app, [set the company domain](#note).
  1. Click **Finish**.
 
@@ -55,24 +71,21 @@ To create a new Flutter project from the Flutter starter app template:
   is released. Your organization name should be unique.
 {{site.alert.end}}
 
-### Creating a new project from existing source code
+### Opening a project from existing source code
 
-To create a new Flutter project containing existing Flutter source code
-files:
+To open an existing Flutter project:
 
- 1. In the IDE, click **Create New Project** from the
-    **Welcome** window or **File > New > Project**
-    from the main IDE window.
+ 1. In the IDE, click **Open** from the **Welcome** window, or
+    **File > Open** from the main IDE window. 
+ 1. Browse to the directory holding your existing
+    Flutter source code files.
+ 1. Click **Open**.
 
     {{site.alert.important}}
       Do *not* use the **New > Project from existing sources**
       option for Flutter projects.
     {{site.alert.end}}
- 1. Select **Flutter** in the menu, and click **Next**.
- 1. Under **Project location** enter, or browse to,
-    the directory holding your
-    existing Flutter source code files.
- 1. Click **Finish**.
+
 
 ## Editing code and viewing issues
 

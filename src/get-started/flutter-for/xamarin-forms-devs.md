@@ -568,17 +568,19 @@ the [Animations tutorial][], and the [Animations overview][].
 ### How do I draw/paint on the screen?
 
 Xamarin.Forms never had a built-in way to draw directly on the screen.
-Many would use SkiaSharp, if they needed a custom image drawn. In Flutter,
-you have direct access to the Skia Canvas and can easily draw on screen.
+Many would use SkiaSharp, if they needed a custom image drawn.
+In Flutter, you have direct access to the Skia Canvas
+and can easily draw on screen.
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
 and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
 To learn how to implement a signature painter in Flutter,
-see Collin's answer on [StackOverflow][].
+see Collin's answer on [Custom Paint][].
 
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+
 
 <?code-excerpt "lib/draw.dart"?>
 ```dart
@@ -1281,7 +1283,7 @@ Flutter follows a simple density-based format like iOS.
 Assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
 Flutter doesn't have `dp`s but there are logical pixels,
 which are basically the same as device-independent pixels.
-The so-called [`devicePixelRatio`][] expresses the ratio
+Flutter's [`devicePixelRatio`][] expresses the ratio
 of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
@@ -2573,10 +2575,10 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [Material Components]: {{site.url}}/ui/widgets/material
-[Material Design]: {{site.material}}/design
-[Material Design guidelines]: {{site.material}}/design
+[Material Design]: {{site.material}}/styles
+[Material Design guidelines]: {{site.material}}/styles
 [`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
-[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [platform channels]: {{site.url}}/platform-integration/platform-channels
 [plugins]: {{site.url}}/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub}}
