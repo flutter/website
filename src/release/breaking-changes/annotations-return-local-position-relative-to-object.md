@@ -45,7 +45,7 @@ to the layer.
 ```dart
 class AnnotatedRegionLayer<T> extends ContainerLayer {
   @override
-  bool findAnnotations<S>(AnnotationResult<S> result, Offset localPosition, { @required bool onlyFirst }) {
+  bool findAnnotations<S>(AnnotationResult<S> result, Offset localPosition, { required bool onlyFirst }) {
     ...
     if (/* shouldAddAnnotation */) {
       result.add(AnnotationEntry<S>(
