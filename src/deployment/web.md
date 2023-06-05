@@ -134,15 +134,14 @@ command:
     Running this command automatically runs `flutter build web --release`,
     so you don't have to build your app in a separate step.
 
-For more information, visit the official [Firebase Hosting][] documentation for
+To learn more, visit the official [Firebase Hosting][] documentation for
 Flutter on the web.
 
 ## Handling images on the web
 
 The web supports the standard `Image` widget to display images.
-However, because web browsers are built to run untrusted code safely,
-there are certain limitations in what you can do with images compared
-to mobile and desktop platforms.
+By design, web browsers run untrusted code without harming the host computer.
+This limits what you can do with images compared to mobile and desktop platforms.
 
 For more information, see [Displaying images on the web][].
 
@@ -151,7 +150,7 @@ For more information, see [Displaying images on the web][].
 By default, the `flutter build` and `flutter run` commands
 use the `auto` choice for the web renderer. This means that
 your app runs with the HTML renderer on mobile browsers and
-CanvasKit on desktop browsers. This is our recommended combination
+CanvasKit on desktop browsers. We recommend this combination
 to optimize for the characteristics of each platform.
 
 For more information, see [Web renderers][].
@@ -161,14 +160,11 @@ For more information, see [Web renderers][].
 Minification is handled for you when you
 create a release build.
 
-A debug build of a web app is not minified and
-tree shaking has not been performed.
-
-A profile build is not minified and tree shaking
-has been performed.
-
-A release build is both minified and tree shaking
-has been performed.
+| Type of web app build | Code minified? | Tree shaking performed? |
+|-----------------------|----------------|-------------------------|
+| debug                 | No             | No                      |
+| profile               | No             | Yes                     |
+| release               | Yes            | Yes                     |
 
 ## Embedding a Flutter app into an HTML page
 
