@@ -64,7 +64,7 @@ API documentation is available from the Dart dev channel:
 
 On Android, only dynamic libraries are supported
 (because the main executable is the JVM,
-which we don't do static linking with).
+which we don't link to statically).
 
 
 [Dart API reference documentation]: {{site.dart.api}}/dev/
