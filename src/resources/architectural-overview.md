@@ -74,13 +74,20 @@ be the entire content of the application. Flutter includes a number of embedders
 for common target platforms, but [other embedders also
 exist](https://hover.build/blog/one-year-in/).
 
-At the core of Flutter is the **Flutter engine**, which is mostly written in C++
-and supports the primitives necessary to support all Flutter applications. The
-engine is responsible for rasterizing composited scenes whenever a new frame
-needs to be painted. It provides the low-level implementation of Flutter's core
-API, including graphics (through [Skia](https://skia.org/)), text layout, file
-and network I/O, accessibility support, plugin architecture, and a Dart runtime
+At the core of Flutter is the **Flutter engine**,
+which is mostly written in C++ and supports
+the primitives necessary to support all Flutter applications.
+The engine is responsible for rasterizing composited scenes
+whenever a new frame needs to be painted.
+It provides the low-level implementation of Flutter's core API,
+including graphics (through [Impeller] on iOS and coming to Android,
+and [Skia][] on other platforms) text layout,
+file and network I/O, accessibility support,
+plugin architecture, and a Dart runtime
 and compile toolchain.
+
+[Skia]: https://skia.org
+[Impeller]: {{site.url}}/perf/impeller
 
 The engine is exposed to the Flutter framework through
 [`dart:ui`]({{site.github}}/flutter/engine/tree/main/lib/ui),
@@ -304,7 +311,7 @@ implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of bo
 [iOS Switch
 control]({{site.apple-dev}}/design/human-interface-guidelines/ios/controls/switches/)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
-[Android equivalent]({{site.material}}/develop/android/components/switches).
+[Android equivalent]({{site.material}}/components/switch).
 
 This approach provides several benefits:
 
@@ -517,29 +524,44 @@ onto a screen.
 You may be wondering: if Flutter is a cross-platform framework, then how can it
 offer comparable performance to single-platform frameworks?
 
-It’s useful to start by thinking about how traditional Android apps work. When
-drawing, you first call the Java code of the Android framework. The Android
-system libraries provide the components responsible for drawing themselves to a
-Canvas object, which Android can then render with [Skia](https://skia.org/), a
-graphics engine written in C/C++ that calls the CPU or GPU to complete the
-drawing on the device.
+It’s useful to start by thinking about how traditional
+Android apps work. When drawing,
+you first call the Java code of the Android framework.
+The Android system libraries provide the components
+responsible for drawing themselves to a `Canvas` object,
+which Android can then render with [Skia][],
+a graphics engine written in C/C++ that calls the
+CPU or GPU to complete the drawing on the device,
+or [Impeller][] (currently in preview behind a flag).
 
-Cross-platform frameworks _typically_ work by creating an abstraction layer over
-the underlying native Android and iOS UI libraries, attempting to smooth out the
-inconsistencies of each platform representation. App code is often written in an
-interpreted language like JavaScript, which must in turn interact with the
-Java-based Android or Objective-C-based iOS system libraries to display UI. All
-this adds overhead that can be significant, particularly where there is a lot of
+Cross-platform frameworks _typically_ work by creating
+an abstraction layer over the underlying native
+Android and iOS UI libraries, attempting to smooth out the
+inconsistencies of each platform representation.
+App code is often written in an interpreted language like JavaScript,
+which must in turn interact with the Java-based
+Android or Objective-C-based iOS system libraries to display UI.
+All this adds overhead that can be significant,
+particularly where there is a lot of
 interaction between the UI and the app logic.
 
-By contrast, Flutter minimizes those abstractions, bypassing the system UI
-widget libraries in favor of its own widget set. The Dart code that paints
-Flutter’s visuals is compiled into native code, which uses Skia for rendering.
-Flutter also embeds its own copy of Skia as part of the engine, allowing the
-developer to upgrade their app to stay updated with the latest performance
-improvements even if the phone hasn’t been updated with a new Android version.
-The same is true for Flutter on other native platforms, such as iOS, Windows, or
-macOS.
+By contrast, Flutter minimizes those abstractions,
+bypassing the system UI widget libraries in favor
+of its own widget set. The Dart code that paints
+Flutter’s visuals is compiled into native code,
+which uses Skia (or, in future, Impeller) for rendering.
+Flutter also embeds its own copy of Skia as part of the engine,
+allowing the developer to upgrade their app to stay
+updated with the latest performance improvements
+even if the phone hasn’t been updated with a new Android version.
+The same is true for Flutter on other native platforms,
+such as Windows or macOS.
+
+{{site.alert.note}}
+  As of Flutter 3.10, Impeller is the default
+  rendering engine on iOS. It's in preview
+  for Android, behind a flag.
+{{site.alert.end}}
 
 ### From user input to the GPU
 
@@ -985,16 +1007,22 @@ including the [advertiser tooling for Google Ads](https://ads.google.com/home/).
 Because the Flutter framework is written in Dart, compiling it to JavaScript was
 relatively straightforward.
 
-However, the Flutter engine, written in C++, is designed to interface with the
-underlying operating system rather than a web browser. A different approach is
-therefore required. On the web, Flutter provides a reimplementation of the
-engine on top of standard browser APIs. We currently have two options for
-rendering Flutter content on the web: HTML and WebGL. In HTML mode, Flutter uses
-HTML, CSS, Canvas, and SVG. To render to WebGL, Flutter uses a version of Skia
+However, the Flutter engine, written in C++,
+is designed to interface with the
+underlying operating system rather than a web browser.
+A different approach is therefore required.
+On the web, Flutter provides a reimplementation of the
+engine on top of standard browser APIs.
+We currently have two options for
+rendering Flutter content on the web: HTML and WebGL.
+In HTML mode, Flutter uses HTML, CSS, Canvas, and SVG.
+To render to WebGL, Flutter uses a version of Skia
 compiled to WebAssembly called
-[CanvasKit](https://skia.org/user/modules/canvaskit). While HTML mode offers the
-best code size characteristics, CanvasKit provides the fastest path to the
-browser's graphics stack, and offers somewhat higher graphical fidelity with the
+[CanvasKit](https://skia.org/user/modules/canvaskit).
+While HTML mode offers the best code size characteristics,
+`CanvasKit` provides the fastest path to the
+browser's graphics stack,
+and offers somewhat higher graphical fidelity with the
 native mobile targets<sup><a href="#a5">5</a></sup>.
 
 The web version of the architectural layer diagram is as follows:

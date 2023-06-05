@@ -64,15 +64,13 @@ API documentation is available from the Dart dev channel:
 
 [Dart API reference documentation]: {{site.dart.api}}/dev/
 
-## Step 1: Create a plugin
+## Create an FFI plugin
 
-If you already have a plugin, skip this step.
-
-To create a plugin called "native_add",
+To create an FFI plugin called "native_add",
 do the following:
 
 ```terminal
-$ flutter create --platforms=android,ios --template=plugin native_add
+$ flutter create --platforms=android,ios,macos,windows,linux --template=plugin_ffi native_add
 $ cd native_add
 ```
 
@@ -82,89 +80,24 @@ $ cd native_add
   the device you are testing on.
 {{site.alert.end}}
 
-## Step 2: Add C/C++ sources
-
-You need to inform the iOS build system about the
-native code so the code can be compiled
-and linked appropriately into the final application.
-
-Add the sources to the `ios` folder,
-because CocoaPods doesn't allow including sources
-above the `podspec` file.
+This will create a plugin with C/C++ sources in `native_add/src`.
+These sources are built by the native build files in the various
+os build folders.
 
 The FFI library can only bind against C symbols,
-so in C++ these symbols must be marked `extern C`.
+so in C++ these symbols are marked `extern "C"`.
+
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
 to prevent the linker from discarding the symbols
 during link-time optimization.
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
-For example,
-to create a C++ file named `ios/Classes/native_add.cpp`,
-use the following instructions. (Note that the template
-has already created this file for you.) Start from the
-root directory of your project:
+On iOS, the `native_add/ios/native_add.podspec` links the code.
 
-```bash
-cat > ios/Classes/native_add.cpp << EOF
-#include <stdint.h>
+The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
-extern "C" __attribute__((visibility("default"))) __attribute__((used))
-int32_t native_add(int32_t x, int32_t y) {
-    return x + y;
-}
-EOF
-```
-
-On iOS, you need to tell Xcode to statically link the file:
-
- 1. In Xcode, open `Runner.xcworkspace`.
- 2. Add the C/C++/Objective-C/Swift
-    source files to the Xcode project.
-
-## Step 3: Load the code using the FFI library
-
-In this example, you can add the following code to
-`lib/native_add.dart`. However the location of the
-Dart binding code isn't important.
-
-First, you must create a `DynamicLibrary` handle to
-the native code. The following example shows
-how to create a handle for an iOS app OR an Android app:
-
-<?code-excerpt "lib/c_interop.dart (DynamicLibrary)"?>
-```dart
-import 'dart:ffi'; // For FFI
-import 'dart:io'; // For Platform.isX
-
-final DynamicLibrary nativeAddLib = Platform.isAndroid
-    ? DynamicLibrary.open('libnative_add.so')
-    : DynamicLibrary.process();
-```
-
-Note that on Android the native library is named
-in `CMakeLists.txt`,
-but on iOS it takes the plugin's name.
-
-With a handle to the enclosing library,
-you can resolve the `native_add` symbol:
-
-<?code-excerpt "lib/c_interop.dart (NativeAdd)"?>
-```dart
-final int Function(int x, int y) nativeAdd = nativeAddLib
-    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>('native_add')
-    .asFunction();
-```
-
-Finally, you can call it. To demonstrate this within
-the auto-generated "example" app (`example/lib/main.dart`):
-
-```nocode
-// Inside of _MyAppState.build:
-        body: Center(
-          child: Text('1 + 2 == ${nativeAdd(1, 2)}'),
-        ),
-```
+The bindings are generated with [package:ffigen](https://pub.dev/packages/ffigen).
 
 ## Other use cases
 

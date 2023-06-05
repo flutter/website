@@ -263,4 +263,4 @@ even if the certification passes.
 [visualstudiosubmission]: https://docs.microsoft.com/windows/msix/package/packaging-uwp-apps#automate-store-submissions
 [windowspackageversioning]: https://docs.microsoft.com/windows/uwp/publish/package-version-numbering
 [windowsappcertification]: https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit
-[version migration guide]: {{site.url}}/platform-integration/windows/version-migration
+[version migration guide]: {{site.url}}/release/breaking-changes/windows-version-information

@@ -812,7 +812,7 @@ Flutter Gallery [running app][], [repo][]
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
 [Managing state]: #managing-state
-[Material Design guidelines]: {{site.material}}/design/guidelines-overview
+[Material Design guidelines]: {{site.material}}/styles
 [`meta.dart`]: {{site.pub}}/packages/meta
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html

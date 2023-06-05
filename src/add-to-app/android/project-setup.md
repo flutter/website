@@ -195,7 +195,7 @@ More specifically, this command creates
 (by default all debug/profile/release modes)
 a [local repository][], with the following files:
 
-```text
+```nocode
 build/host/outputs/repo
 └── com
     └── example
