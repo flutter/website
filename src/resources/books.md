@@ -14,7 +14,7 @@ page to view Flutter's latest release.
 
 [file an issue]: {{site.repo.this}}/issues/new
 [sample]: {{site.repo.this}}/pull/6019
-[what's new]: {{site.url}/release/whats-new
+[what's new]: {{site.url}}/release/whats-new
 
 {% for book in site.data.books -%}
 * [{{book.title}}]({{book.link}})
