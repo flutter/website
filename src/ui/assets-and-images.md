@@ -40,10 +40,9 @@ flutter:
 ```
 
 {{site.alert.note}}
-  Only files located directly in the directory are included unless
-  there are files with the same name inside a subdirectory 
-  (see [Asset Variants](#asset-variants)). To add files located in subdirectories, create 
-  an entry per directory.
+ Only files located directly in the directory are included.
+ [Resolution-aware asset image variants](#resolution-aware) are the only exception.
+ To add files located in subdirectories, create an entry per directory.
 {{site.alert.end}}
 
 ### Asset bundling
@@ -60,55 +59,6 @@ example) doesn't matter.
 During a build, Flutter places assets into a special
 archive called the _asset bundle_ that apps read
 from at runtime.
-
-### Asset variants
-
-The build process supports the notion of asset variants:
-different versions of an asset that might be displayed
-in different contexts. When an asset's path is specified
-in the `assets` section of `pubspec.yaml`,
-the build process looks for any files with the same
-name in adjacent subdirectories. Such files are then
-included in the asset bundle along with the specified asset.
-
-For example, if you have the following files in
-your application directory:
-
-```text
-.../pubspec.yaml
-.../graphics/my_icon.png
-.../graphics/background.png
-.../graphics/dark/background.png
-...etc.
-```
-
-And your `pubspec.yaml` file contains the following:
-
-```yaml
-flutter:
-  assets:
-    - graphics/background.png
-```
-
-Then both `graphics/background.png` and `graphics/dark/background.png`
-are included in your asset bundle. The former is considered the
-_main asset_, while the latter is considered a _variant_.
-
-If, on the other hand, the graphics directory is specified:
-
-```yaml
-flutter:
-  assets:
-    - graphics/
-```
-
-Then the `graphics/my_icon.png`, `graphics/background.png`
-and `graphics/dark/background.png` files are also included.
-
-Flutter uses asset variants when choosing resolution-appropriate
-images. In the future, this mechanism might be extended to
-include variants for different locales or regions,
-reading directions, and so on.
 
 ## Loading assets
 
@@ -162,15 +112,27 @@ Future<String> loadAsset() async {
 
 ### Loading images
 
+To load an image, use the [`AssetImage`][]
+class in a widget's `build()` method.
+
+For example, your app can load the background
+image from the asset declarations in the previous example:
+
+<?code-excerpt "main.dart (BackgroundImage)"?>
+```dart
+return const Image(image: AssetImage('assets/background.png'));
+```
+
+### Resolution-aware image assets {#resolution-aware}
+
 Flutter can load resolution-appropriate images for
-the current device pixel ratio.
+the current [device pixel ratio][].
 
-#### Declaring resolution-aware image assets {#resolution-aware}
-
-[`AssetImage`][] understands how to map a logical requested
+[`AssetImage`][] will map a logical requested
 asset onto one that most closely matches the current
 [device pixel ratio][].
-In order for this mapping to work, assets should be arranged
+
+For this mapping to work, assets should be arranged
 according to a particular directory structure:
 
 ```text
@@ -184,6 +146,10 @@ Where _M_ and _N_ are numeric identifiers that correspond
 to the nominal resolution of the images contained within.
 In other words, they specify the device pixel ratio that
 the images are intended for.
+
+In this example, `image.png` is considered the *main asset*,
+while `Mx/image.png` and `Nx/image.png` are considered to be
+*variants*.
 
 The main asset is assumed to correspond to a resolution of 1.0.
 For example, consider the following asset layout for an
@@ -211,35 +177,27 @@ That is, if `.../my_icon.png` is 72px by 72px, then
 but they both render into 72px by 72px (in logical pixels),
 if width and height are not specified.
 
-Each entry in the asset section of the `pubspec.yaml`
-should correspond to a real file, with the exception of
+{{site.alert.note}}
+  [Device pixel ratio][] depends on [MediaQueryData.size][], which requires having either
+  [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
+{{site.alert.end}}
+
+#### Bundling of resolution-aware image assets {#resolution-aware-bundling}
+
+You only need to specify the main asset or its parent directory
+in the `assets` section of `pubspec.yaml`.
+Flutter bundles the variants for you.
+Each entry should correspond to a real file, with the exception of
 the main asset entry. If the main asset entry doesn't correspond
 to a real file, then the asset with the lowest resolution
 is used as the fallback for devices with device pixel
 ratios below that resolution. The entry should still
 be included in the `pubspec.yaml` manifest, however.
 
-#### Loading images
-
-To load an image, use the [`AssetImage`][]
-class in a widget's `build()` method.
-
-For example, your app can load the background
-image from the asset declarations above:
-
-<?code-excerpt "main.dart (BackgroundImage)"?>
-```dart
-return const Image(image: AssetImage('graphics/background.png'));
-```
-
 Anything using the default asset bundle inherits resolution
 awareness when loading images. (If you work with some of the lower
 level classes, like [`ImageStream`][] or [`ImageCache`][],
 you'll also notice parameters related to scale.)
-
-{{site.alert.note}}
-  [Device pixel ratio][] depends on [MediaQueryData.size][] which requires to have either a [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
-{{site.alert.end}}
 
 ### Asset images in package dependencies {#from-packages}
 
