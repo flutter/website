@@ -170,58 +170,58 @@
   children:
     - title: Supported platforms
       permalink: /reference/supported-platforms
-    - title: Building desktop apps with Flutter
+    - title: Build desktop apps with Flutter
       permalink: /platform-integration/desktop
-    - title: Writing platform-specific code
+    - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
     - title: Android
       permalink: /platform-integration/android
       children:
-        - title: Adding a splash screen
+        - title: Add a splash screen
           permalink: /platform-integration/android/splash-screen
-        - title: C interop
+        - title: Bind to native code
           permalink: /platform-integration/android/c-interop
-        - title: Hosting native Android views
+        - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
         - title: Restore state on Android
           permalink: /platform-integration/android/restore-state-android
-        - title: Targeting ChromeOS with Android
+        - title: Target ChromeOS with Android
           permalink:  /platform-integration/android/chromeos
     - title: iOS
       permalink: /platform-integration/ios
       children:
-        - title: Leveraging Apple's system libraries
+        - title: Leverage Apple's system libraries
           permalink: /platform-integration/ios/apple-frameworks
-        - title: Adding a splash screen
+        - title: Add a splash screen
           permalink: /platform-integration/ios/splash-screen
-        - title: Adding iOS App Clip support
+        - title: Add iOS App Clip support
           permalink: /platform-integration/ios/ios-app-clip
-        - title: Adding iOS app extensions
+        - title: Add iOS app extensions
           permalink: /platform-integration/ios/app-extensions
-        - title: C interop
+        - title: Bind to native code
           permalink: /platform-integration/ios/c-interop
-        - title: Hosting native iOS views
+        - title: Host a native iOS view
           permalink: /platform-integration/ios/platform-views
-        - title: iOS debugging
+        - title: Enable debugging on iOS
           permalink: /platform-integration/ios/ios-debugging
         - title: Restore state on iOS
           permalink: /platform-integration/ios/restore-state-ios
     - title: Linux
       permalink: /platform-integration/linux
       children:
-        - title: Building Linux apps
+        - title: Build a Linux app
           permalink: /platform-integration/linux/building
     - title: macOS
       permalink: /platform-integration/macos
       children:
-        - title: Building macOS apps
+        - title: Build a macOS app
           permalink: /platform-integration/macos/building
         - title: C interop
           permalink: /platform-integration/macos/c-interop
     - title: Web
       permalink: /platform-integration/web
       children:
-        - title: Building web apps
+        - title: Build a web app
           permalink: /platform-integration/web/building
         - title: Web FAQ
           permalink: /platform-integration/web/faq
@@ -234,7 +234,7 @@
     - title: Windows
       permalink: /platform-integration/windows
       children:
-        - title: Building Windows apps
+        - title: Build a Windows app
           permalink: /platform-integration/windows/building
 
 - title: Packages & plugins
@@ -341,10 +341,10 @@
     - title: Introduction
       permalink: /add-to-app
       match-page-url-exactly: true
-    - title: Adding to an Android app
+    - title: Add to an Android app
       permalink: /add-to-app/android
       children:
-        - title: Project setup
+        - title: Set up Android project
           permalink: /add-to-app/android/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/android/add-flutter-screen
@@ -352,21 +352,21 @@
           permalink: /add-to-app/android/add-flutter-fragment
         - title: Add a Flutter View
           permalink: /add-to-app/android/add-flutter-view
-        - title: Plugin setup
+        - title: Use a Flutter plugin
           permalink: /add-to-app/android/plugin-setup
-    - title: Adding to an iOS app
+    - title: Add to an iOS app
       permalink: /add-to-app/ios
       children:
-        - title: Project setup
+        - title: Set up iOS project
           permalink: /add-to-app/ios/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/ios/add-flutter-screen
-    - title: Debugging & hot reload
+    - title: Debug embedded Flutter module
       permalink: /add-to-app/debugging
+    - title: Add multiple Flutter instances
+      permalink: /add-to-app/multiple-flutters
     - title: Loading sequence and performance
       permalink: /add-to-app/performance
-    - title: Multiple Flutter instances
-      permalink: /add-to-app/multiple-flutters
 
 - title: Tools & features
   permalink: /tools
