@@ -4,8 +4,29 @@ description: How gestures, such as taps and drags, work in Flutter.
 ---
 
 This document explains how to listen for, and respond to,
-_gestures_ in Flutter. Examples of gestures include
-taps, drags, and scaling.
+_gestures_ in Flutter.
+Examples of gestures include taps, drags, and scaling.
+
+You might have multiple gesture recognizers,
+as shown in the following scenarios:
+
+* A `ListTile` has a tap recognizer that responds
+  to the entire `ListTile`, and a nested one around
+  a trailing icon button. The screen rect of the
+  trailing icon is now covered by two gesture
+  recognizers that need to negotiate for who handles
+  the gesture if it turns out to be a tap.
+* A single `GestureDetector` covers a screen area
+  configured to handle multiple gestures,
+  such as a long press and a tap.
+  This gesture detector now sends multiple
+  recognizers&emdash;one for taps and
+  one for long presses&emdash;when the
+  user touches that area of the screen.
+  Depending on what happens next with that pointer,
+  one of the two recognizers receives the gesture,
+  or neither receives the gesture if the user
+  performs something that's neither a tap nor a long press.
 
 The gesture system in Flutter has two separate layers.
 The first layer has raw pointer events that describe
@@ -62,7 +83,7 @@ drag update, and drag end):
   the screen at a particular location.
 
 `onTapUp`
-: A pointer that will trigger a tap has stopped contacting
+: A pointer that triggers a tap has stopped contacting
   the screen at a particular location.
 
 `onTap`
@@ -71,7 +92,7 @@ drag update, and drag end):
 
 `onTapCancel`
 : The pointer that previously triggered the `onTapDown`
-  will not end up causing a tap.
+  won't end up causing a tap.
 
 **Double tap**
 
