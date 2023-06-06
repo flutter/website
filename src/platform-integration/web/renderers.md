@@ -8,14 +8,13 @@ renderers. This page describes both renderers and how to choose the best one for
 your needs. The two renderers are:
 
 **HTML renderer**
-: This renderer uses a combination of HTML elements, CSS, Canvas elements, and
-  SVG elements. This renderer has a smaller download size.
+: This renderer, which has a smaller download size than the CanvasKit renderer, uses a combination of
+  HTML elements, CSS, Canvas elements, and SVG elements.
 
 **CanvasKit renderer**
 : This renderer is fully consistent with Flutter mobile and desktop, has faster
   performance with higher widget density, but adds about 1.5MB in download size.
-  It uses [CanvasKit][canvaskit], which uses WebGL to render Skia paint
-  commands.
+  [CanvasKit][canvaskit] uses WebGL to render Skia paint commands.
 
 ## Command line options
 
