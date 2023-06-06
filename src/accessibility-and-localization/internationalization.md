@@ -194,8 +194,9 @@ Hot reload the app and observe that the `CalendarDatePicker` widget re-renders i
 <a name="adding-localized-messages"></a>
 ### Adding your own localized messages
 
-Once the `flutter_localizations` package is added, use the
-following instructions to add localized text to your application.
+After you add the `flutter_localizations` package, you can configure
+localization. To add localized text to your application, complete the
+following instructions.
 
 1. Add the `intl` package as a dependency,
    using the version pinned by `flutter_localizations` with `any`:
@@ -204,9 +205,8 @@ following instructions to add localized text to your application.
    $ flutter pub add intl:any
    ```
 
-2. Then in the `pubspec.yaml` file, enable the `generate` flag. 
-   This is added to the section of the pubspec that is specific to Flutter, 
-   and usually comes later in the pubspec file.
+2. Open the `pubspec.yaml` file and enable the `generate` flag. 
+   This flag can be found in the `flutter` section later in the pubspec file.
 
    <?code-excerpt "gen_l10n_example/pubspec.yaml (Generate)"?>
    ```yaml
@@ -215,8 +215,8 @@ following instructions to add localized text to your application.
      generate: true # Add this line
    ```
 
-3. Add a new yaml file to the root directory of the Flutter project 
-   called `l10n.yaml` with the following content:
+3. Add a new yaml file to the root directory of the Flutter project.
+   Name this file `l10n.yaml` and include following content:
 
    <?code-excerpt "gen_l10n_example/l10n.yaml"?>
    ```yaml
@@ -225,13 +225,17 @@ following instructions to add localized text to your application.
    output-localization-file: app_localizations.dart
    ```
 
-   This file configures the localization tool; in this example,
-   the input files are located in `${FLUTTER_PROJECT}/lib/l10n`,
-   the `app_en.arb` file provides the template, and the generated
-   localizations are placed in the `app_localizations.dart` file.
+   This file configures the localization tool. In this example, you:
+   
+   - Put the [App Resource Bundle][] (`.arb`) input files in
+     `${FLUTTER_PROJECT}/lib/l10n`. The `.arb` provide localization
+     resources for your app. 
+   - Set the English template as `app_en.arb`.
+   - Told Flutter to generate localizations in the
+     `app_localizations.dart` file.
 
-4. In `${FLUTTER_PROJECT}/lib/l10n`,
-   add the `app_en.arb` template file. For example:
+4. In `${FLUTTER_PROJECT}/lib/l10n`, add the `app_en.arb` template file.
+   For example:
 
    <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" take="5" replace="/},/}\n}/g"?>
    ```json
@@ -243,8 +247,8 @@ following instructions to add localized text to your application.
    }
    ```
 
-5. Next, add an `app_es.arb` file in the same directory with a
-   Spanish translation of the same message:
+5. Add another bundle file called `app_es.arb` in the same directory.
+   In this file, add the Spanish translation of the same message.
 
    <?code-excerpt "gen_l10n_example/lib/l10n/app_es.arb"?>
    ```json
@@ -258,7 +262,8 @@ following instructions to add localized text to your application.
    Alternatively, you can also run `flutter gen-l10n` to generate the same
    files without running the app.
 
-7. Add the import statement on `app_localizations.dart` and `AppLocalizations.delegate`
+7. Add the import statement on `app_localizations.dart` and
+   `AppLocalizations.delegate`
    in your call to the constructor for `MaterialApp`.
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (AppLocalizationsImport)"?>
@@ -1229,3 +1234,4 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [widgets-local]: {{site.api}}/flutter/widgets/Localizations-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+[App Resource Bundle]: {{site.github}}/google/app-resource-bundle
