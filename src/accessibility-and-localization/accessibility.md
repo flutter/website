@@ -160,8 +160,11 @@ Desktop browsers:
 Screen readers users on web must toggle the
 "Enable accessibility" button to build the semantics tree.
 Users can skip this step if you programmatically auto-enable
-accessibility for your app using the
-`RendererBinding.instance.setSemanticsEnabled(true)` API.
+accessibility for your app using this API:
+
+```dart
+SemanticsBinding.instance.ensureSemantics();
+```
 
 </div>
 
