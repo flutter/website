@@ -210,7 +210,7 @@ following instructions.
 
    <?code-excerpt "gen_l10n_example/pubspec.yaml (Generate)"?>
    ```yaml
-   # The following section relates only to Flutter.
+   # The following section is specific to Flutter.
    flutter:
      generate: true # Add this line
    ```
@@ -1234,4 +1234,4 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
 [widgets-local]: {{site.api}}/flutter/widgets/Localizations-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[App Resource Bundle]: https://github.com/google/app-resource-bundle
+[App Resource Bundle]: {{site.github}}/google/app-resource-bundle
