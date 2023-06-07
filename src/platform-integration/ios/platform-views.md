@@ -56,7 +56,7 @@ import 'package:flutter/services.dart';
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
 ```dart
 Widget build(BuildContext context) {
-  // Use this on the platform side to register the view.
+  // This is used in the platform side to register the view.
   const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
@@ -339,7 +339,7 @@ to detect the platform, and decide which widget to use:
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>
 ```dart
 Widget build(BuildContext context) {
-  // Use this on the platform side to register the view.
+  // This is used in the platform side to register the view.
   const String viewType = '<platform-view-type>';
   // Pass parameters to the platform side.
   final Map<String, dynamic> creationParams = <String, dynamic>{};
