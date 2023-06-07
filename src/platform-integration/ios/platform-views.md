@@ -391,5 +391,5 @@ For more details, check out the [iOS Platform View Backdrop Filter Blur design d
 [`ColorFiltered`]: {{site.api}}/flutter/foundation/ColorFiltered.html
 [`BackdropFilter`]: {{site.api}}/flutter/foundation/BackdropFilter.html
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
-[iOS Platform View Backdrop Filter Blur design doc]: flutter.dev/go/ios-platformview-backdrop-filter-blur
+[design-doc]: {{site.main-url}}/go/ios-platformview-backdrop-filter-blur
 
