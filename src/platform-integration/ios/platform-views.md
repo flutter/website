@@ -385,11 +385,11 @@ There are some limitations when composing iOS Platform Views.
 - The [`ShaderMask`][] and [`ColorFiltered`][] widgets are not supported.
 - The [`BackdropFilter`][] widget is supported, 
 but there are some limitations on how it can be used. 
-See the [iOS Platform View Backdrop Filter Blur design doc] for details.
+For more details, check out the [iOS Platform View Backdrop Filter Blur design doc][design-doc].
 
 [`ShaderMask`]: {{site.api}}/flutter/foundation/ShaderMask.html
 [`ColorFiltered`]: {{site.api}}/flutter/foundation/ColorFiltered.html
 [`BackdropFilter`]: {{site.api}}/flutter/foundation/BackdropFilter.html
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
-[iOS Platform View Backdrop Filter Blur design doc]: flutter.dev/go/ios-platformview-backdrop-filter-blur
+[design-doc]: {{site.main-url}}/go/ios-platformview-backdrop-filter-blur
 
