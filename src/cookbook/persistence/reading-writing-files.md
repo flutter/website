@@ -15,8 +15,8 @@ In some cases, you need to read and write files to disk.
 For example, you may need to persist data across app launches,
 or download data from the internet and save it for later offline use.
 
-To save files to disk, combine the [`path_provider`][]
-plugin with the [`dart:io`][] library.
+To save files to disk on mobile or desktop apps,
+combine the [`path_provider`][] plugin with the [`dart:io`][] library.
 
 This recipe uses the following steps:
 
@@ -25,10 +25,16 @@ This recipe uses the following steps:
   3. Write data to the file.
   4. Read data from the file.
 
-{{site.alert.note}}
-To learn more, watch this Package of the Week video on the path_provider package:
+To learn more, watch this Package of the Week video
+on the `path_provider` package:
 
 <iframe class="full-width" src="{{site.youtube-site}}/embed/Ci4t-NkOY3I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+{{site.alert.note}}
+This recipe doesn't work with web apps at this time.
+To follow the discusion on this issue,
+check out [issue #45296](https://github.com/flutter/flutter/issues/45296)
+in `flutter/flutter`.
 {{site.alert.end}}
 
 ## 1. Find the correct local path
