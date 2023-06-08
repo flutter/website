@@ -12,7 +12,9 @@ layout: base
       {% include_cached sidenav-level-1.html nav=site.data.sidenav page_url_path=route %}
     </div>
 
-    {% assign showToc = page.toc and layout.toc != false -%}
+    {% if page.toc and layout.toc != false -%}
+      {% assign showToc = true -%}
+    {% endif -%}
     {% if showToc -%}
     {% assign tocContent = content | toc_only -%}
     {% include side-toc.html toc_content=tocContent -%}
