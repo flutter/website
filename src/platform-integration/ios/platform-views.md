@@ -113,6 +113,7 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
             binaryMessenger: messenger)
     }
 
+    /// Implementing this method is only necessary when the `arguments` in `createWithFrame` is not `nil`.
     public func createArgsCodec() -> FlutterMessageCodec & NSObjectProtocol {
           return FlutterStandardMessageCodec.sharedInstance()
     }
@@ -246,6 +247,7 @@ and the platform view provides a reference to the
                              binaryMessenger:_messenger];
 }
 
+/// Implementing this method is only necessary when the `arguments` in `createWithFrame` is not `nil`.
 - (NSObject<FlutterMessageCodec>*)createArgsCodec {
     return [FlutterStandardMessageCodec sharedInstance];
 }
