@@ -1,7 +1,8 @@
 ---
-title: Adding a Flutter screen to an Android app
+title: Add a Flutter screen to an Android app
 short-title: Add a Flutter screen
-description: Learn how to add a single Flutter screen to your existing Android app.
+description: >
+  Learn how to add a single Flutter screen to your existing Android app.
 ---
 
 This guide describes how to add a single Flutter screen to an

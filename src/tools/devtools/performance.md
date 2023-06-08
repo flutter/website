@@ -90,14 +90,15 @@ to be rendered on the device. Do **not** block this thread.
 
 ### Raster
 
-The raster thread (previously known as the GPU thread) executes 
-graphics code from the Flutter Engine.
+The raster thread (previously known as the GPU thread)
+executes graphics code from the Flutter Engine.
 This thread takes the layer tree and displays it by talking to
-the GPU (graphic processing unit). You cannot directly access
-the raster thread or its data, but if this thread is slow, it's a
-result of something you've done in the Dart code.
+the GPU (graphic processing unit). You can't directly access
+the raster thread or its data, but if this thread is slow,
+it's a result of something you've done in the Dart code.
 Skia, the graphics library, runs on this thread.
-[Impeller][] (currently in preview) will also use this thread.
+[Impeller][] (in the stable channel for iOS)
+also uses this thread.
 
 [Impeller]: {{site.url}}/perf/impeller
 
