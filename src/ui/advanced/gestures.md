@@ -184,10 +184,9 @@ For example:
 * A single `GestureDetector` covers a screen area
   configured to handle multiple gestures,
   such as a long press and a tap.
-  This gesture detector now sends multiple
-  recognizers&emdash;one for taps and
-  one for long presses&emdash;when the
-  user touches that area of the screen.
+  The `tap` recognizer must now negotiate
+  with the `long press` recognizer when
+  the user touches that part of the screen.
   Depending on what happens next with that pointer,
   one of the two recognizers receives the gesture,
   or neither receives the gesture if the user
