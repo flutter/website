@@ -18,7 +18,7 @@ module ActiveNavEntries
       is_active = if entry['match-page-url-exactly']
                     page_url_path == entry['permalink']
                   else
-                    page_url_path.include? entry['permalink']
+                    page_url_path.start_with? entry['permalink']
                   end
 
       return [i+1] if is_active

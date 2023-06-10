@@ -355,7 +355,7 @@ is attached to an `Activity`. You can access that `Activity` and
 a number of its callbacks through the provided `ActivityPluginBinding`.
 
 Since `Activity`s can be destroyed during configuration changes,
-you must cleanup any references to the given `Activity` in
+you must clean up any references to the given `Activity` in
 `onDetachedFromActivityForConfigChanges()`,
 and then re-establish those references in
 `onReattachedToActivityForConfigChanges()`.

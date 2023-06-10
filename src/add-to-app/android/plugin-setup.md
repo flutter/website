@@ -1,7 +1,9 @@
 ---
-title: Managing plugins and dependencies in add-to-app
+title: Manage plugins and dependencies in add-to-app
 short-title: Plugin setup
-description: Learn how to use plugins and share your plugin's library dependencies with your existing app.
+description: >
+  Learn how to use plugins and share your 
+  plugin's library dependencies with your existing app.
 ---
 
 This guide describes how to set up your project to consume

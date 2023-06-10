@@ -1,6 +1,7 @@
 ---
 title: Actions API revision
-description: Removes need for FocusNode in invocations, map Intent types to Actions.
+description: >
+  Removes need for FocusNode in invocations, map Intent types to Actions.
 ---
 
 ## Summary
@@ -93,7 +94,7 @@ outdated use of the Actions API might be the cause of the problem. The specifics
 of the error might differ, and there may be other failures caused by these
 changes.
 
-```
+```nocode
 error: MyActionDispatcher.invokeAction' ('bool Function(Action<Intent>, Intent, {FocusNode focusNode})') isn't a valid override of 'ActionDispatcher.invokeAction' ('Object Function(Action<Intent>, Intent, [BuildContext])'). (invalid_override at [main] lib/main.dart:74)
 
 error: MyAction.invoke' ('void Function(FocusNode, Intent)') isn't a valid override of 'Action.invoke' ('Object Function(Intent)'). (invalid_override at [main] lib/main.dart:231)
@@ -312,16 +313,19 @@ In stable release: 1.20
 ## References
 
 API documentation:
+
 * [`Action`][]
 * [`ActionDispatcher`][]
 * [`Actions`][]
 * [`Intent`][]
 * [`Shortcuts`][]
 
-Relevant issues:
+Relevant issue:
+
 * [Issue 53276][]
 
 Relevant PRs:
+
 * [Revise Action API][]
 * [Make Action.enabled be isEnabled(Intent intent) instead][]
 

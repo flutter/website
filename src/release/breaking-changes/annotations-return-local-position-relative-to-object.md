@@ -1,6 +1,7 @@
 ---
 title: AnnotatedRegionLayers return local position relative to clipping region
-description: Provide annotation searches with reliable and meaningful local positions.
+description: >
+  Provide annotation searches with reliable and meaningful local positions.
 ---
 
 ## Summary
@@ -45,7 +46,7 @@ to the layer.
 ```dart
 class AnnotatedRegionLayer<T> extends ContainerLayer {
   @override
-  bool findAnnotations<S>(AnnotationResult<S> result, Offset localPosition, { @required bool onlyFirst }) {
+  bool findAnnotations<S>(AnnotationResult<S> result, Offset localPosition, { required bool onlyFirst }) {
     ...
     if (/* shouldAddAnnotation */) {
       result.add(AnnotationEntry<S>(
@@ -75,7 +76,6 @@ preserve the previous behavior, you can reimplement
 `AnnotatedRegionLayer` to return a local position without
 subtracting the offset.
 
-
 ## Timeline
 
 Landed in version: 1.15.2<br>
@@ -84,13 +84,16 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`AnnotatedRegionLayer`][]
 * [`AnnotationEntry`][]
 
 Relevant issues:
+
 * [Issue #49568][]
 
-Relevant PRs:
+Relevant PR:
+
 * [Make Annotation's localPosition relative to object][]
 
 [`AnnotatedRegionLayer`]: {{site.api}}/flutter/rendering/AnnotatedRegionLayer-class.html

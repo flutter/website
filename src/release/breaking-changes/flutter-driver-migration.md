@@ -1,6 +1,7 @@
 ---
 title: Migrating from flutter_driver
-description: Learn how to migrate existing flutter_driver tests to integration_test.
+description: >
+  Learn how to migrate existing flutter_driver tests to integration_test.
 ---
 
 <?code-excerpt path-base="integration_test_migration/"?>
@@ -74,7 +75,7 @@ This section contains different examples on how to migrate existing
 
 ### Example: Verifying a widget is displayed
 
-When the app starts the screen on the left displays 
+When the app starts the screen on the right displays 
 a text asking the user to select one of the plants on the list.
 
 This test verifies that the text is displayed.
@@ -133,7 +134,7 @@ be displayed.
 
 Also , the test verifies that the text
 "Please select a plant from the list."
-is no longer displayed. 
+is no longer displayed.
 
 **flutter_driver**
 
