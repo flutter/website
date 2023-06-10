@@ -8,7 +8,7 @@
 
 ### Install Android Studio
 
-{% include_relative _help-link.md section='#android-setup' %}
+{% include_relative _help-link.md location='android-studio' section='#android-setup' %}
 
  1. Download and install [Android Studio]({{site.android-dev}}/studio).
  1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
@@ -22,7 +22,7 @@
 
 ### Set up your Android device
 
-{% include_relative _help-link.md section='#android-setup' %}
+{% include_relative _help-link.md location='android-device' section='#android-setup' %}
 
 To prepare to run and test your Flutter app on an Android device,
 you need an Android device running Android 4.1 (API level 16) or higher.
@@ -46,7 +46,7 @@ you need an Android device running Android 4.1 (API level 16) or higher.
 
 ### Set up the Android emulator
 
-{% include_relative _help-link.md section='#android-setup' %}
+{% include_relative _help-link.md location='android-emulator' section='#android-setup' %}
 
 To prepare to run and test your Flutter app on the Android emulator,
 follow these steps:
@@ -79,7 +79,7 @@ follow these steps:
 
 ### Agree to Android Licenses
 
-{% include_relative _help-link.md section='#android-setup' %}
+{% include_relative _help-link.md location='android-licenses' section='#android-setup' %}
 
 Before you can use Flutter, you must agree to the
 licenses of the Android SDK platform. This step should be done after

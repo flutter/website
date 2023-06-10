@@ -4,7 +4,7 @@
 
 ### Additional Windows requirements
 
-{% include_relative _help-link.md %}
+{% include_relative _help-link.md location='win-desktop' %}
 
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:

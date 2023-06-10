@@ -1,6 +1,6 @@
 ## Get the Flutter SDK
 
-{% include_relative _help-link.md %}
+{% include_relative _help-link.md location='win-get-sdk' %}
 
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
@@ -50,7 +50,7 @@ for these changes to take effect.
 
 ### Run `flutter doctor`
 
-{% include_relative _help-link.md %}
+{% include_relative _help-link.md location='win-doctor' %}
 
 From a console window that has the Flutter directory in the
 path (see above), run the following command to see if there
