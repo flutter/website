@@ -16,7 +16,6 @@ class _FadeInDemoState extends State<FadeInDemo> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-
     return Column(children: <Widget>[
       Image.network(owlUrl, height: height * 0.8),
       TextButton(
@@ -25,7 +24,7 @@ class _FadeInDemoState extends State<FadeInDemo> {
             style: TextStyle(color: Colors.blueAccent),
           ),
           onPressed: () => {}),
-      const Column(
+    const Column(
         children: [
           Text('Type: Owl'),
           Text('Age: 39'),
