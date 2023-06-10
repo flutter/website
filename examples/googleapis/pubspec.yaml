@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
   google_sign_in: ^6.0.1
   googleapis: ^11.0.0
-  http: ^0.13.0
+  http: ^1.0.0
 
 dev_dependencies:
   flutter_lints: ^2.0.1
