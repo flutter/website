@@ -8,7 +8,7 @@ description: The Happy paths page lists areas of technology where we recommend s
 {{site.alert.note}}
   Due to limited staffing resources,
   we are pausing the
-  Happy Path program.
+  Happy Paths program.
   We will update this program (and possibly combine it with
   the Flutter Favorites program) as soon as possible.
 {{site.alert.end}}
