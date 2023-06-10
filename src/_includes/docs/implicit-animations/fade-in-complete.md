@@ -21,6 +21,7 @@ class _FadeInDemoState extends State<FadeInDemo> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Column(children: <Widget>[
       Image.network(owlUrl),
       TextButton(
