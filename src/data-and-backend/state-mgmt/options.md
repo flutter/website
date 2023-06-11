@@ -285,19 +285,20 @@ A simple but powerful state management solution inspired by SolidJS.
 [solidart package]: {{site.pub-pkg}}/solidart
 [flutter_solidart package]: {{site.pub-pkg}}/flutter_solidart
 
-## flutter_reactive_widget
+## flutter_reactive_value
 
-An ultra-low-boilerplate solution for state management,
-flutter_reactive_widget defines
-`ReactiveWidget` and `ReactiveValue`. Any read of a `ReactiveValue`'s
-value within a `ReactiveWidget` definition automatically causes the
-`ReactiveWidget` to listen for changes on the `ReactiveValue`.
+`flutter_reactive_value` is probably the simplest possible solution for state
+management in Flutter, and may be a good starting point for newcomers
+to Flutter who need a simple way to add reactivity to their UI, without
+the complexity of the mechanisms described above.
+`flutter_reactive_value` defines the `reactiveValue(BuildContext)`
+extension method on `ValueNotifier`, which allows a `Widget` to
+fetch the current value of the `ValueNotifier`, while also
+subscribing the `Widget` to changes in the value of the `ValueNotifier`,
+so that the `Widget` is rebuilt automatically if the value
+of the `ValueNotifier` changes.
 
-Also includes a definition for `PersistentReactiveValue`, a subclass
-of `ReactiveValue` whose latest value persists, surviving app
-restarts.
+* [`flutter_reactive_value`][] source and documentation
 
-* [`flutter_reactive_widget`][] source and documentation
-
-[`flutter_reactive_widget`]: {{site.github}}/lukehutch/flutter_reactive_widget
+[`flutter_reactive_value`]: {{site.github}}/lukehutch/flutter_reactive_value
 
