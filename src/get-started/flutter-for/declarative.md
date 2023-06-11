@@ -80,12 +80,11 @@ their constructor just like in the declarative style shown above.
 
 ```dart
 // Declarative extension style
-return ViewB().offset(x: 10);
+return ViewB().center();
 
 extension on Widget {
-  Widget offset({double x = 0, double y = 0}) {
-    return Transform.translate(
-      offset: Offset(x, y),
+  Widget center() {
+    return Center(
       child: this,
     );
   }
