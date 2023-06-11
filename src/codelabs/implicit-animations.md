@@ -340,7 +340,7 @@ between the old and new values:
 
 <?code-excerpt "container{4,5}/lib/main.dart"?>
 ```diff
---- container4/lib/main.dart  
+--- container4/lib/main.dart
 +++ container5/lib/main.dart
 @@ -6,6 +6,8 @@
 
@@ -438,10 +438,19 @@ the [shape-shifting complete][] example builds upon [fade-in complete][]:
 Congratulations, you've finished the codelab!
 To learn more, check out these suggestions:
 
+<<<<<<< HEAD
 - Try the [animations tutorial][].
 - Learn about [hero animations][] and [staggered animations][].
 - Checkout the [animation library][].
 - Try another [codelab][].
+=======
+* Try the [animations tutorial].
+* Learn about [hero animations] and [staggered animations].
+* Checkout the [animation library].
+* Try another [codelab].
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+>>>>>>> 9176472c (#8728 few more formatting changes)
 
 [AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
