@@ -130,7 +130,6 @@ To hide the text before the user clicks **Show details**, set
 the starting value for `opacity` to zero:
 
 <?code-excerpt "opacity{2,3}/lib/main.dart"?>
-
 ```diff
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
@@ -354,7 +353,6 @@ for the `color`, `borderRadius`, and `margin` state variables:
 ```
 
 #### 3. Set up a trigger for the animation
-
 To set the animation to trigger whenever the user presses the **Change** button,
 invoke the `change()` method in the `onPressed()` handler:
 
@@ -378,7 +376,7 @@ Finally, set the `duration` of the animation that powers the transition
 between the old and new values:
 <?code-excerpt "container{4,5}/lib/main.dart"?>
 ```diff
---- container4/lib/main.dart  
+--- container4/lib/main.dart
 +++ container5/lib/main.dart
 @@ -2,12 +2,12 @@
  // Use of this source code is governed by a BSD-style license
@@ -485,10 +483,10 @@ additional capabilities of implicit animations:
 Congratulations, you've finished the codelab! If you'd like to learn more,
 here are some suggestions for where to go next:
 
--   Try the [animations tutorial].
--   Learn about [hero animations] and [staggered animations].
--   Checkout the [animation library].
--   Try another [codelab].
+* Try the [animations tutorial].
+* Learn about [hero animations] and [staggered animations].
+* Checkout the [animation library].
+* Try another [codelab].
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
