@@ -68,3 +68,28 @@ RenderObjects persist between frames and Flutter’s lightweight Widgets
 tell the framework to mutate the RenderObjects between states.
 The Flutter framework handles the rest.
 
+## Declarative extension style
+
+There is a new declarative pattern that has emerged as a result of Dart 
+adding the `extension` language feature. While this pattern is not currently 
+in use in the Flutter framework, it is actively in use within the community.
+
+This declarative style does appear at first glance to be similar to the imperative
+style shown above, but the underlying operation is composing widgets through
+their constructor just like in the declarative style shown above.
+
+```dart
+// Declarative extension style
+return ViewB().offset(x: 10);
+
+extension on Widget {
+  Widget offset({double x = 0, double y = 0}) {
+    return Transform.translate(
+      offset: Offset(x, y),
+      child: this,
+    );
+  }
+}
+```
+
+
