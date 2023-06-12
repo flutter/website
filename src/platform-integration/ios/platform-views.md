@@ -35,11 +35,11 @@ use the following instructions:
 ### On the Dart side
 
 On the Dart side, create a `Widget`
-and add the following build implementation,
+and add the build implementation,
 as shown in the following steps.
 
-In your Dart file, for example
-do the following in `native_view_example.dart`:
+In the Dart widget file, make changes similar to those 
+shown in `native_view_example.dart`:
 
 <ol markdown="1">
 <li markdown="1">Add the following imports:
@@ -79,7 +79,7 @@ For more information, see the API docs for:
 
 ### On the platform side
 
-On the platform side, you use the either Swift or Objective-C:
+On the platform side, use either Swift or Objective-C:
 
 {% samplecode ios-platform-views %}
 {% sample Swift %}
@@ -197,8 +197,8 @@ class FLPlugin: NSObject, FlutterPlugin {
 
 {% sample Objective-C %}
 
-Add the headers for the factory and the platform view.
-For example, `FLNativeView.h`:
+In Objective-C, add the headers for the factory and the platform view.
+For example, as shown in `FLNativeView.h`:
 
 ```objc
 #import <Flutter/Flutter.h>
@@ -344,7 +344,7 @@ For more information, see the API docs for:
 
 When implementing the `build()` method in Dart,
 you can use [`defaultTargetPlatform`][]
-to detect the platform, and decide what widget to use:
+to detect the platform, and decide which widget to use:
 
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>
 ```dart
@@ -365,7 +365,41 @@ Widget build(BuildContext context) {
 }
 ```
 
-[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+## Performance
+Platform views in Flutter come with performance trade-offs.
 
-{% include docs/platform-view-perf.md %}
+For example, in a typical Flutter app, the Flutter UI is 
+composed on a dedicated raster thread. 
+This allows Flutter apps to be fast, 
+as the main platform thread is rarely blocked.
+
+When a platform view is rendered with hybrid composition, 
+the Flutter UI is composed from the platform thread. 
+The platform thread competes with other tasks 
+like handling OS or plugin messages.
+
+When an iOS PlatformView is on screen, the screen refresh rate is 
+capped at 80fps to avoid rendering janks.
+
+For complex cases, there are some techniques that can be used 
+to mitigate performance issues.
+
+For example, you could use a placeholder texture while an 
+animation is happening in Dart. 
+In other words, if an animation is slow while a platform view is rendered, 
+then consider taking a screenshot of the native view and rendering it as a texture.
+
+## Composition limitations
+There are some limitations when composing iOS Platform Views.
+
+- The [`ShaderMask`][] and [`ColorFiltered`][] widgets are not supported.
+- The [`BackdropFilter`][] widget is supported, 
+but there are some limitations on how it can be used. 
+For more details, check out the [iOS Platform View Backdrop Filter Blur design doc][design-doc].
+
+[`ShaderMask`]: {{site.api}}/flutter/foundation/ShaderMask.html
+[`ColorFiltered`]: {{site.api}}/flutter/foundation/ColorFiltered.html
+[`BackdropFilter`]: {{site.api}}/flutter/foundation/BackdropFilter.html
+[`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
+[design-doc]: {{site.main-url}}/go/ios-platformview-backdrop-filter-blur
 
