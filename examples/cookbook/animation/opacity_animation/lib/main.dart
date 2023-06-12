@@ -51,8 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // The green box must be a child of the AnimatedOpacity widget.
           // #docregion Container
           child: Container(
-            width: 200.0,
-            height: 200.0,
+            width: 200,
+            height: 200,
             color: Colors.green,
           ),
           // #enddocregion Container

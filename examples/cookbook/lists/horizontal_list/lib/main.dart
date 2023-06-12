@@ -16,31 +16,31 @@ class MyApp extends StatelessWidget {
           title: const Text(title),
         ),
         body: Container(
-          margin: const EdgeInsets.symmetric(vertical: 20.0),
-          height: 200.0,
+          margin: const EdgeInsets.symmetric(vertical: 20),
+          height: 200,
           // #docregion ListView
           child: ListView(
             // This next line does the trick.
             scrollDirection: Axis.horizontal,
             children: <Widget>[
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.red,
               ),
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.blue,
               ),
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.green,
               ),
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.yellow,
               ),
               Container(
-                width: 160.0,
+                width: 160,
                 color: Colors.orange,
               ),
             ],

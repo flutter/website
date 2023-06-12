@@ -30,7 +30,7 @@ this specification and is unaffected by this change.
 ## Migration guide
 
 If you prefer to maintain the old shape, you can use
-the shape property of your `Dialog` to specify the original 2.0 pixel radius.
+the shape property of your `Dialog` to specify the original 2 pixel radius.
 
 Setting the Dialog shape to the original radius:
 
@@ -51,7 +51,7 @@ class Foo extends StatelessWidget {
               return AlertDialog(
                 content: Text('Alert!'),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2.0))),
+                    borderRadius: BorderRadius.all(Radius.circular(2))),
               );
             },
           );

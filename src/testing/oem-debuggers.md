@@ -247,7 +247,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16),
               child: Text(toLaunch),
             ),
             ElevatedButton(
@@ -256,14 +256,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   }),
               child: Text('Launch in browser'),
             ),
-            Padding(padding: EdgeInsets.all(16.0)),
+            Padding(padding: EdgeInsets.all(16)),
             ElevatedButton(
               onPressed: () => setState(() {
                     _launched = _launchInWebViewOrVC(toLaunch);
                   }),
               child: Text('Launch in app'),
             ),
-            Padding(padding: EdgeInsets.all(16.0)),
+            Padding(padding: EdgeInsets.all(16)),
             FutureBuilder<void>(future: _launched, builder: _launchStatus),
           ],
         ),
