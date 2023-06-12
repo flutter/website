@@ -214,12 +214,6 @@ flutter:
         pluginClass: HelloPlugin
       ios:
         pluginClass: HelloPlugin
-
-environment:
-  sdk: ">=2.1.0 <3.0.0"
-  # Flutter versions prior to 1.12 did not support the
-  # flutter.plugin.platforms map.
-  flutter: ">=1.12.0"
 ```
 
 When adding plugin implementations for more platforms,
@@ -242,12 +236,6 @@ flutter:
       web:
         pluginClass: HelloPlugin
         fileName: hello_web.dart
-
-environment:
-  sdk: ">=2.1.0 <3.0.0"
-  # Flutter versions prior to 1.12 did not support the
-  # flutter.plugin.platforms map.
-  flutter: ">=1.12.0"
 ```
 
 #### Federated platform packages
