@@ -49,17 +49,17 @@ class _ExpandableFabState extends State<ExpandableFab> {
 
   Widget _buildTapToCloseFab() {
     return SizedBox(
-      width: 56.0,
-      height: 56.0,
+      width: 56,
+      height: 56,
       child: Center(
         child: Material(
           shape: const CircleBorder(),
           clipBehavior: Clip.antiAlias,
-          elevation: 4.0,
+          elevation: 4,
           child: InkWell(
             onTap: _toggle,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Icon(
                 Icons.close,
                 color: Theme.of(context).primaryColor,

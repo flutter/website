@@ -43,10 +43,10 @@ GestureDetector(
   },
   // The custom button
   child: Container(
-    padding: const EdgeInsets.all(12.0),
+    padding: const EdgeInsets.all(12),
     decoration: BoxDecoration(
       color: Colors.lightBlue,
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(8),
     ),
     child: const Text('My Button'),
   ),
@@ -117,10 +117,10 @@ class MyButton extends StatelessWidget {
       },
       // The custom button
       child: Container(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: Colors.lightBlue,
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(8),
         ),
         child: const Text('My Button'),
       ),

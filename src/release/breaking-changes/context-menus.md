@@ -274,8 +274,8 @@ class _MyContextMenu extends StatelessWidget {
           top: anchor.dy,
           left: anchor.dx,
           child: Container(
-            width: 200.0,
-            height: 200.0,
+            width: 200,
+            height: 200,
             color: Colors.amberAccent,
             child: Column(
               children: children,

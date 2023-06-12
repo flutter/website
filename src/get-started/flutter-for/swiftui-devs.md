@@ -568,7 +568,7 @@ class HomePage extends StatelessWidget {
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          mainAxisExtent: 40.0,
+          mainAxisExtent: 40,
         ),
         itemCount: widgets.length,
         itemBuilder: (context, index) => widgets[index],
@@ -857,7 +857,7 @@ with two classes that help you draw:
         final Paint paint = Paint()
           ..color = Colors.black
           ..strokeCap = StrokeCap.round
-          ..strokeWidth = 5.0;
+          ..strokeWidth = 5;
         for (int i = 0; i < points.length - 1; i++) {
           if (points[i] != null && points[i + 1] != null) {
             canvas.drawLine(points[i]!, points[i + 1]!, paint);

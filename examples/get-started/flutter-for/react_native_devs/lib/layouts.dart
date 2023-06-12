@@ -11,18 +11,18 @@ class ColumnExample extends StatelessWidget {
         children: <Widget>[
           Container(
             color: Colors.red,
-            width: 100.0,
-            height: 100.0,
+            width: 100,
+            height: 100,
           ),
           Container(
             color: Colors.blue,
-            width: 100.0,
-            height: 100.0,
+            width: 100,
+            height: 100,
           ),
           Container(
             color: Colors.green,
-            width: 100.0,
-            height: 100.0,
+            width: 100,
+            height: 100,
           ),
         ],
       ),

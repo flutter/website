@@ -92,7 +92,7 @@ class _MenuState extends State<Menu> {
     for (var i = 0; i < _menuTitles.length; ++i) {
       listItems.add(
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
@@ -111,7 +111,7 @@ class _MenuState extends State<Menu> {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
@@ -308,7 +308,7 @@ List<Widget> _buildListItems() {
           );
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
@@ -335,7 +335,7 @@ Widget _buildGetStartedButton() {
   return SizedBox(
     width: double.infinity,
     child: Padding(
-      padding: const EdgeInsets.all(24.0),
+      padding: const EdgeInsets.all(24),
       child: AnimatedBuilder(
         animation: _staggeredController,
         builder: (context, child) {
@@ -638,7 +638,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             );
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
             child: Text(
               _menuTitles[i],
               textAlign: TextAlign.left,
@@ -658,7 +658,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24),
         child: AnimatedBuilder(
           animation: _staggeredController,
           builder: (context, child) {
