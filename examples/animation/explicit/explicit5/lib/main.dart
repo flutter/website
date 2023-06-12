@@ -37,8 +37,8 @@ class _BouncingBallDemoState extends State<BouncingBallDemo>
           shape: BoxShape.circle,
           color: Colors.green,
         ),
-        width: 40.0,
-        height: 40.0,
+        width: 40,
+        height: 40,
       ),
     );
   }

@@ -6,7 +6,7 @@ class FilterSelector extends StatefulWidget {
     super.key,
     required this.filters,
     required this.onFilterChanged,
-    this.padding = const EdgeInsets.symmetric(vertical: 24.0),
+    this.padding = const EdgeInsets.symmetric(vertical: 24),
   });
 
   final List<Color> filters;

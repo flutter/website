@@ -25,15 +25,15 @@ class _TapboxAState extends State<TapboxA> {
     return GestureDetector(
       onTap: _handleTap,
       child: Container(
-        width: 200.0,
-        height: 200.0,
+        width: 200,
+        height: 200,
         decoration: BoxDecoration(
           color: _active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
         child: Center(
           child: Text(
             _active ? 'Active' : 'Inactive',
-            style: const TextStyle(fontSize: 32.0, color: Colors.white),
+            style: const TextStyle(fontSize: 32, color: Colors.white),
           ),
         ),
       ),

@@ -394,7 +394,7 @@ class HeroAnimation extends StatelessWidget {
                   body: Container(
                     // The blue background emphasizes that it's a new route.
                     color: Colors.lightBlueAccent,
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16),
                     alignment: Alignment.topLeft,
                     [[highlight]]child: PhotoHero([[/highlight]]
                       photo: 'images/flippers-alpha.png',

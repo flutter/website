@@ -147,7 +147,7 @@ class RadialExpansionDemo extends StatelessWidget {
         title: const Text('Basic Radial Hero Animation Demo'),
       ),
       body: Container(
-        padding: const EdgeInsets.all(32.0),
+        padding: const EdgeInsets.all(32),
         alignment: FractionalOffset.bottomLeft,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
