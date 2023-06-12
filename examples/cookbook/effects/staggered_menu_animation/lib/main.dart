@@ -254,7 +254,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             );
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
             child: Text(
               _menuTitles[i],
               textAlign: TextAlign.left,

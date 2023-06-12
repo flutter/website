@@ -53,7 +53,7 @@ class _MenuState extends State<Menu> {
     for (var i = 0; i < _menuTitles.length; ++i) {
       listItems.add(
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,

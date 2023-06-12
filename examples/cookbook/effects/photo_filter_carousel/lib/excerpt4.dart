@@ -73,7 +73,7 @@ class _FilterSelectorState extends State<FilterSelector> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.fromBorderSide(
-                BorderSide(width: 6.0, color: Colors.white),
+                BorderSide(width: 6, color: Colors.white),
               ),
             ),
           ),
