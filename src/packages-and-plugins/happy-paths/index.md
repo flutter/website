@@ -9,8 +9,8 @@ description: The Happy paths page lists areas of technology where we recommend s
   Due to limited staffing resources,
   we are pausing the
   Happy Paths program.
-  We will update this program (and possibly combine it with
-  the Flutter Favorites program) as soon as possible.
+  We will update this program as soon as possible.
+  It might be combined with the Flutter Favorites program.
 {{site.alert.end}}
 
 Once you’ve learned Flutter basics and are ready to move on
