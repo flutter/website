@@ -202,10 +202,11 @@ you can configure localization.
 To add localized text to your application,
 complete the following instructions:
 
-1. Add the `intl` package as a dependency:
+1. Add the `intl` package as a dependency, pulling
+   in the version pinned by `flutter_localizations`:
 
    ```terminal
-   $ flutter pub add intl
+   $ flutter pub add intl:any
    ```
 
 2. Open the `pubspec.yaml` file and enable the `generate` flag. 
