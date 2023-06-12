@@ -5,14 +5,6 @@ description: Guidelines for identifying a plugin or package as a Flutter Favorit
 
 ![The Flutter Favorite program logo]({{site.url}}/assets/images/docs/development/packages-and-plugins/FlutterFavoriteLogo.png){:width="20%"}
 
-{{site.alert.note}}
-  Due to limited staffing resources,
-  we are pausing the
-  Flutter Favorites and Happy Path programs.
-  We will update (and possibly combine)
-  these programs as soon as possible.
-{{site.alert.end}}
-
 The aim of the **Flutter Favorite** program is to identify
 packages and plugins that you should first consider when
 building your app.
@@ -70,7 +62,7 @@ are as follows:
 * Lara Martín
 * John Ryan
 * Diego Velasquez
-* Kyle Wang
+* Ander Dobo
 
 If you'd like to nominate a package or plugin as a
 potential future Flutter Favorite, or would like
