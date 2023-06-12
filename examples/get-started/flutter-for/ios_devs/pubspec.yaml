@@ -1,11 +1,11 @@
 name: ios_devs
 description: A new Flutter project.
 
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.0.0-0
+  sdk: ^3.0.3
 
 dependencies:
   flutter:
