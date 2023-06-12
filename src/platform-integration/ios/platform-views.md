@@ -193,7 +193,7 @@ class FLPlugin: NSObject, FlutterPlugin {
 {% sample Objective-C %}
 
 In Objective-C, add the headers for the factory and the platform view.
-For example, as shown in `FLNativeView.swift`:
+For example, as shown in `FLNativeView.h`:
 
 ```objc
 #import <Flutter/Flutter.h>
