@@ -1141,7 +1141,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^0.13.4
+  http: ^1.0.0
 ```
 
 To make a network request,

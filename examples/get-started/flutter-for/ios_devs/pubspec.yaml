@@ -1,7 +1,7 @@
 name: ios_devs
 description: A new Flutter project.
 
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -13,7 +13,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  http: ^0.13.4
+  http: ^1.0.0
   shared_preferences: ^2.0.15
   url_launcher: ^6.1.6
 

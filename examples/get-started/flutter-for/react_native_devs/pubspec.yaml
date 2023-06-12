@@ -1,7 +1,7 @@
 name: react_native_devs
 description: A new Flutter project.
 
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  http: ^0.13.4
+  http: ^1.0.0
   google_sign_in: ^5.4.0
   shared_preferences: ^2.0.15
   my_widgets:
@@ -26,7 +26,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-        
-    
-    
-                                      
+
+
+

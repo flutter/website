@@ -1111,7 +1111,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 ```yaml
 dependencies:
   ...
-  http: ^0.11.3+16
+  http: ^1.0.0
 ```
 
 To make a network call, call `await` on the `async` function `http.get()`:
