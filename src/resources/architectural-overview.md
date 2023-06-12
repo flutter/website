@@ -308,8 +308,8 @@ efficiently updates the user interface.
 Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
 implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of both the
-[iOS Switch
-control]({{site.apple-dev}}/design/human-interface-guidelines/ios/controls/switches/)
+[iOS Toggle
+control]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
 [Android equivalent]({{site.material}}/components/switch).
 
