@@ -62,6 +62,7 @@
 
 - title: User interface
   permalink: /ui
+  match-page-url-exactly: true
   children:
     - title: Introduction to widgets
       permalink: /ui/widgets-intro
