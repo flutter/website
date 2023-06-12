@@ -111,8 +111,8 @@ As the Flutter ecosystem grows,
 we’ll be looking at expanding the set of metrics,
 which might include the following:
 
-* Use of the new [pubspec.yaml format][] that clearly
-  indicates which platforms are supported.
+* Use of the [pubspec.yaml format][] that clearly
+  indicates which platforms a plugin supports.
 * Support for the latest stable version of Flutter.
 * Support for AndroidX.
 * Support for multiple platforms, such as web, macOS,
