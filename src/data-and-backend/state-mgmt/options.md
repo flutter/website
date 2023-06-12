@@ -43,8 +43,7 @@ Things to review before selecting an approach.
 ## Riverpod
 
 Riverpod works in a similar fashion to Provider.
-It is also compile-safe and testable.
-Riverpod doesn't depend on the Flutter SDK.
+It offers compile safety and testing without depending on the Flutter SDK.
 
 * [Riverpod][] homepage
 * [Getting started with Riverpod][]
