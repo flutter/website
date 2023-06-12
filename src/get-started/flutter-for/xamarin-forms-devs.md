@@ -568,17 +568,19 @@ the [Animations tutorial][], and the [Animations overview][].
 ### How do I draw/paint on the screen?
 
 Xamarin.Forms never had a built-in way to draw directly on the screen.
-Many would use SkiaSharp, if they needed a custom image drawn. In Flutter,
-you have direct access to the Skia Canvas and can easily draw on screen.
+Many would use SkiaSharp, if they needed a custom image drawn.
+In Flutter, you have direct access to the Skia Canvas
+and can easily draw on screen.
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
 and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
 To learn how to implement a signature painter in Flutter,
-see Collin's answer on [StackOverflow][].
+see Collin's answer on [Custom Paint][].
 
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+
 
 <?code-excerpt "lib/draw.dart"?>
 ```dart

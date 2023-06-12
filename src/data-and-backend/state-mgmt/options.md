@@ -42,9 +42,8 @@ Things to review before selecting an approach.
 
 ## Riverpod
 
-Riverpod, another good choice, is
-similar to Provider and is compile-safe and testable.
-Riverpod doesn't have a dependency on the Flutter SDK.
+Riverpod works in a similar fashion to Provider.
+It offers compile safety and testing without depending on the Flutter SDK.
 
 * [Riverpod][] homepage
 * [Getting started with Riverpod][]
@@ -285,19 +284,18 @@ A simple but powerful state management solution inspired by SolidJS.
 [solidart package]: {{site.pub-pkg}}/solidart
 [flutter_solidart package]: {{site.pub-pkg}}/flutter_solidart
 
-## flutter_reactive_widget
+## flutter_reactive_value
 
-An ultra-low-boilerplate solution for state management,
-flutter_reactive_widget defines
-`ReactiveWidget` and `ReactiveValue`. Any read of a `ReactiveValue`'s
-value within a `ReactiveWidget` definition automatically causes the
-`ReactiveWidget` to listen for changes on the `ReactiveValue`.
+The `flutter_reactive_value` library might offer the least complex solution for state
+management in Flutter. It might help Flutter newcomers add reactivity to their UI,
+without the complexity of the mechanisms described before.
+The `flutter_reactive_value` library defines the `reactiveValue(BuildContext)`
+extension method on `ValueNotifier`. This extension allows a `Widget` to
+fetch the current value of the `ValueNotifier` and 
+subscribe the `Widget` to changes in the value of the `ValueNotifier`.
+If the value of the `ValueNotifier` changes, `Widget` rebuilds.
 
-Also includes a definition for `PersistentReactiveValue`, a subclass
-of `ReactiveValue` whose latest value persists, surviving app
-restarts.
+* [`flutter_reactive_value`][] source and documentation
 
-* [`flutter_reactive_widget`][] source and documentation
-
-[`flutter_reactive_widget`]: {{site.github}}/lukehutch/flutter_reactive_widget
+[`flutter_reactive_value`]: {{site.github}}/lukehutch/flutter_reactive_value
 

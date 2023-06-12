@@ -51,12 +51,14 @@ listed above for making breaking changes in removing the deprecated API.
 The Dart language itself has a [separate breaking-change policy][],
 with announcements on [Dart announce][].
 
-In general, the Flutter team does not currently have any commitment
-regarding breaking changes for other dependencies. For example,
-it's possible that a new version of Flutter using a new version of Skia
-(the graphics engine used by Flutter) or Harfbuzz (the font shaping
-engine used by Flutter) would have changes that affect contributed
-tests. Such changes would not necessarily be accompanied by a
+In general, the Flutter team doesn't currently have any commitment
+regarding breaking changes for other dependencies.
+For example, it's possible that a new version of
+Flutter using a new version of Skia
+(the graphics engine used by some platforms on Flutter)
+or Harfbuzz (the font shaping engine used by Flutter)
+would have changes that affect contributed tests.
+Such changes wouldn't necessarily be accompanied by a
 migration guide.
 
 

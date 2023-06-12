@@ -62,129 +62,50 @@ Dart via [`DynamicLibrary.open`][].
 API documentation is available from the Dart dev channel:
 [Dart API reference documentation][].
 
+On Android, only dynamic libraries are supported
+(because the main executable is the JVM,
+which we don't link to statically).
+
 
 [Dart API reference documentation]: {{site.dart.api}}/dev/
 [`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
 [`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
 [`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 
-## Step 1: Create a plugin
+## Create an FFI plugin
 
-If you already have a plugin, skip this step.
-
-To create a plugin called "native_add",
+To create an FFI plugin called "native_add",
 do the following:
 
 ```terminal
-$ flutter create --platforms=android,ios --template=plugin native_add
+$ flutter create --platforms=android,ios,macos,windows,linux --template=plugin_ffi native_add
 $ cd native_add
 ```
 
-{{ site.alert.note }}
-  You can exclude platforms from --platforms that you don't want
+{{site.alert.note}}
+  You can exclude platforms from `--platforms` that you don't want
   to build to. However, you need to include the platform of 
   the device you are testing on.
-{{ site.alert.end }}
+{{site.alert.end}}
 
-## Step 2: Add C/C++ sources
-
-You need to inform the Android build system about
-the native code so the code can be compiled
-and linked appropriately into the final application.
-
-You can add Android-specific sources
-to the `android` folder and modify `CMakeLists.txt`
-appropriately.
-Also, Gradle allows you to point to the `ios` folder,
-if that helps, but it's not required to use the same
-sources for both iOS and Android;
+This will create a plugin with C/C++ sources in `native_add/src`.
+These sources are built by the native build files in the various
+os build folders.
 
 The FFI library can only bind against C symbols,
-so in C++ these symbols must be marked `extern C`.
+so in C++ these symbols are marked `extern "C"`.
+
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
 to prevent the linker from discarding the symbols
 during link-time optimization.
+`__attribute__((visibility("default"))) __attribute__((used))`.
 
-On Android, you need to create a `CMakeLists.txt` file
-to define how the sources should be compiled and point
-Gradle to it. From the root of your project directory,
-use the following instructions
+On Android, the `native_add/android/build.gradle` links the code.
 
-```bash
-cat > android/CMakeLists.txt << EOF
-cmake_minimum_required(VERSION 3.4.1)  # for example
+The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
-add_library( native_add
-
-             # Sets the library as a shared library.
-             SHARED
-
-             # Provides a relative path to your source file(s).
-             ../ios/Classes/native_add.cpp )
-EOF
-```
-
-Finally, add an `externalNativeBuild` section to
-`android/build.gradle`. For example:
-
-```nocode
-android {
-  // ...
-  externalNativeBuild {
-    // Encapsulates your CMake build configurations.
-    cmake {
-      // Provides a relative path to your CMake build script.
-      path "CMakeLists.txt"
-    }
-  }
-  // ...
-}
-```
-
-## Step 3: Load the code using the FFI library
-
-In this example, you can add the following code to
-`lib/native_add.dart`. However the location of the
-Dart binding code is not important.
-
-First, you must create a `DynamicLibrary` handle to
-the native code. The following example shows
-how to create a handle for an iOS app OR an Android app:
-
-<?code-excerpt "lib/c_interop.dart (DynamicLibrary)"?>
-```dart
-import 'dart:ffi'; // For FFI
-import 'dart:io'; // For Platform.isX
-
-final DynamicLibrary nativeAddLib = Platform.isAndroid
-    ? DynamicLibrary.open('libnative_add.so')
-    : DynamicLibrary.process();
-```
-
-Note that on Android the native library is named
-in `CMakeLists.txt` (see above),
-but on iOS it takes the plugin's name.
-
-With a handle to the enclosing library,
-you can resolve the `native_add` symbol:
-
-<?code-excerpt "lib/c_interop.dart (NativeAdd)"?>
-```dart
-final int Function(int x, int y) nativeAdd = nativeAddLib
-    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>('native_add')
-    .asFunction();
-```
-
-Finally, you can call it. To demonstrate this within
-the auto-generated "example" app (`example/lib/main.dart`):
-
-```nocode
-// Inside of _MyAppState.build:
-        body: Center(
-          child: Text('1 + 2 == ${nativeAdd(1, 2)}'),
-        ),
-```
+The bindings are generated with [package:ffigen](https://pub.dev/packages/ffigen).
 
 ## Other use cases
 

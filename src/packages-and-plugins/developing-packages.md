@@ -155,7 +155,7 @@ A federated plugin requires the following packages:
   accessible to the end user.
 
 **platform interface package**
-: The package that glues the app-facing packing
+: The package that glues the app-facing package
   to the platform package(s). This package declares an
   interface that any platform package must implement to
   support the app-facing package. Having a single package
@@ -324,7 +324,7 @@ environment:
   flutter: ">=3.7.0"
 ```
 
-When `sharedDawninSource` is enabled, instead of
+When `sharedDarwinSource` is enabled, instead of
 an `ios` directory for iOS and a `macos` directory
 for macOS, both platforms use a shared `darwin`
 directory for all code and resources. When enabling
