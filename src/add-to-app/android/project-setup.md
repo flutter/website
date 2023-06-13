@@ -285,7 +285,7 @@ Flutter SDK to build the host app.
 Include the Flutter module as a subproject in the host app's
 `settings.gradle`:
 
-<?code-excerpt title="MyApp/app/build.gradle"?>
+<?code-excerpt title="MyApp/settings.gradle"?>
 ```groovy
 // Include the host app project.
 include ':app'                                    // assumed existing content
