@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     // #docregion BackgroundImage
-    return const Image(image: AssetImage('graphics/background.png'));
+    return const Image(image: AssetImage('assets/background.png'));
     // #enddocregion BackgroundImage
   }
 }

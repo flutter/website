@@ -374,7 +374,7 @@ class CardListItem extends StatelessWidget {
       );
     } else {
       return const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        padding: EdgeInsets.symmetric(horizontal: 8),
         child: Text(
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do '
           'eiusmod tempor incididunt ut labore et dolore magna aliqua.',

@@ -192,7 +192,7 @@ testWidgets('Add and remove a todo', (tester) async {
   // Enter text and add the item...
 
   // Swipe the item to dismiss it.
-  await tester.drag(find.byType(Dismissible), const Offset(500.0, 0.0));
+  await tester.drag(find.byType(Dismissible), const Offset(500, 0));
 
   // Build the widget until the dismiss animation ends.
   await tester.pumpAndSettle();
@@ -227,7 +227,7 @@ void main() {
     expect(find.text('hi'), findsOneWidget);
 
     // Swipe the item to dismiss it.
-    await tester.drag(find.byType(Dismissible), const Offset(500.0, 0.0));
+    await tester.drag(find.byType(Dismissible), const Offset(500, 0));
 
     // Build the widget until the dismiss animation ends.
     await tester.pumpAndSettle();

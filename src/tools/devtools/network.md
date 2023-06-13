@@ -17,7 +17,7 @@ your Dart or Flutter application.
 ## How to use it
 
 Network traffic should be recording by default when you open the Network page.
-If it is not, click the **Record network traffic** button in the upper left to
+If it is not, click the **Resume** button in the upper left to
 begin polling.
 
 Select a network request from the table (left) to view details (right). You can

@@ -232,9 +232,9 @@ like a default `FlatButton`:
 final ButtonStyle flatButtonStyle = TextButton.styleFrom(
   primary: Colors.black87,
   minimumSize: Size(88, 36),
-  padding: EdgeInsets.symmetric(horizontal: 16.0),
+  padding: EdgeInsets.symmetric(horizontal: 16),
   shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(2.0)),
+    borderRadius: BorderRadius.all(Radius.circular(2)),
   ),
 );
 

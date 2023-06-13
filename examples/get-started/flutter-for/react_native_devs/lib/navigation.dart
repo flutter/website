@@ -140,7 +140,7 @@ class DrawerExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      elevation: 20.0,
+      elevation: 20,
       child: ListTile(
         leading: const Icon(Icons.change_history),
         title: const Text('Screen2'),

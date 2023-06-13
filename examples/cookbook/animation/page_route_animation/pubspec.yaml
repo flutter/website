@@ -2,7 +2,7 @@ name: page_route_animation
 description: Sample code for cookbook.
 
 environment:
-  sdk: ^3.0.0-0
+  sdk: ^3.0.3
 
 dependencies:
   flutter:

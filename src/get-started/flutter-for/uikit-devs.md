@@ -218,7 +218,7 @@ Widget build(BuildContext context) {
     body: Center(
       child: CupertinoButton(
         onPressed: () {},
-        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+        padding: const EdgeInsets.only(left: 10, right: 10),
         child: const Text('Hello'),
       ),
     ),
@@ -395,7 +395,7 @@ class _MyFadeTest extends State<MyFadeTest>
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: const FlutterLogo(size: 100.0),
+          child: const FlutterLogo(size: 100),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -478,7 +478,7 @@ class SignaturePainter extends CustomPainter {
     final Paint paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -844,7 +844,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     final List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ));
     }
@@ -908,7 +908,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
             developer.log('row tapped');
           },
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10),
             child: Text('Row $i'),
           ),
         ),
@@ -1002,7 +1002,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -1074,7 +1074,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -1183,7 +1183,7 @@ In Flutter, there are two ways of adding touch listeners:
               developer.log('tap');
             },
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1302,7 +1302,7 @@ class _SampleAppState extends State<SampleApp>
           child: RotationTransition(
             turns: curve,
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1545,7 +1545,7 @@ class _MyFormState extends State<MyForm> {
     return Scaffold(
       appBar: AppBar(title: const Text('Retrieve Text Input')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: TextField(controller: myController),
       ),
       floatingActionButton: FloatingActionButton(
@@ -1763,7 +1763,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1997,7 +1997,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${data[i]["title"]}"),
     );
   }
@@ -2025,7 +2025,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^0.13.4
+  http: ^1.0.0
 ```
 
 To make a network call,
@@ -2130,7 +2130,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${data[i]["title"]}"),
     );
   }
