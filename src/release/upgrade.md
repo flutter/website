@@ -145,5 +145,5 @@ $ flutter pub outdated
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
 [test registry]: https://github.com/flutter/tests
-[contribute to Flutter]: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+[contribute to Flutter]: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
 [migration guides]: {{site.url}}/release/breaking-changes

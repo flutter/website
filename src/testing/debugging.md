@@ -332,4 +332,4 @@ You might find the following docs useful:
 
 [WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
 [widget_inspector.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
-[kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/master/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart
+[kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/main/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart
