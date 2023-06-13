@@ -11,12 +11,22 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
   setupClipboardJS();
 
-  setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', getOS);
+  setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', _getOSForArchive);
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
 
   prettyPrint();
 });
+
+function _getOSForArchive() {
+  const os = getOS();
+  // The archive doesn't have chromeos, fall back to linux.
+  if (os === 'chromeos') {
+    return 'linux';
+  }
+
+  return os;
+}
 
 /**
  * Get the user's current operating system, or
