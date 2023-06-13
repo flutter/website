@@ -127,7 +127,7 @@ or implementation breaking changes between the versions.
 For example, you might use the new Crashlytics library
 in your existing app as follows:
 
-<?code-excerpt title="ExistingApp/app/build.gradle">
+<?code-excerpt title="ExistingApp/app/build.gradle"?>
 ```gradle
 …
 dependencies {
