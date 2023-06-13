@@ -11,11 +11,45 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
   setupClipboardJS();
 
+  setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', getOS);
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
 
   prettyPrint();
 });
+
+/**
+ * Get the user's current operating system, or
+ * `null` if not of one "macos", "windows", "linux", or "chromeos".
+ *
+ * @returns {'macos'|'linux'|'windows'|'chromeos'|null}
+ */
+function getOS() {
+  const userAgent = window.navigator.userAgent;
+  if (userAgent.indexOf('Mac') !== -1) {
+    // macOS or iPhone
+    return 'macos';
+  }
+
+  if (userAgent.indexOf('Win')) {
+    // Windows
+    return 'windows';
+  }
+
+  if ((userAgent.indexOf('Linux') !== -1 || userAgent.indexOf("X11") !== -1)
+      && userAgent.indexOf('Android') !== -1) {
+    // Linux, but not Android
+    return 'linux';
+  }
+
+  if (userAgent.indexOf('CrOS') !== -1) {
+    // ChromeOS
+    return 'chromeos';
+  }
+
+  // Anything else
+  return null;
+}
 
 function scrollSidebarIntoView() {
   const fixedSidebar = document.querySelector('.site-sidebar--fixed');
