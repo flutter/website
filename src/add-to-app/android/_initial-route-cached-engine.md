@@ -14,7 +14,7 @@ demonstrates the use of an initial route with a cached engine:
 
 {% samplecode cached-engine-with-initial-route %}
 {% sample Java %}
-<!--code-excerpt "MyApplication.java" title-->
+<?code-excerpt title="MyApplication.java"?>
 ```java
 public class MyApplication extends Application {
   @Override
@@ -36,7 +36,7 @@ public class MyApplication extends Application {
 }
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyApplication.kt" title-->
+<?code-excerpt title="MyApplication.kt"?>
 ```kotlin
 class MyApplication : Application() {
   lateinit var flutterEngine : FlutterEngine
