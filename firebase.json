@@ -155,6 +155,7 @@
       { "source": "/ui/material3-updates", "destination": "/ui/material", "type": 301 },
       { "source": "/ui/splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
       { "source": "/ui/splash-screen/android-splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
+      { "source": "/platform-integration/ios/splash-screen", "destination": "/platform-integration/ios/launch-screen.md", "type": 301 },
       { "source": "/ui/widgets/catalog", "destination": "/ui/widgets", "type": 301 },
       { "source": "/ui/widgets/widgetindex", "destination": "/reference/widgets", "type": 301 },
       { "source": "/web", "destination": "/platform-integration/web", "type": 301 },
