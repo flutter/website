@@ -27,7 +27,7 @@ class ButtonShapeWidget extends StatelessWidget {
     if (isDownloading || isFetching) {
       shape = ShapeDecoration(
         shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0.0),
+        color: Colors.white.withOpacity(0),
       );
     }
 

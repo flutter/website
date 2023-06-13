@@ -474,7 +474,7 @@ class OrderedButtonRow extends StatelessWidget {
         children: <Widget>[
           const Spacer(),
           FocusTraversalOrder(
-            order: NumericFocusOrder(2.0),
+            order: NumericFocusOrder(2),
             child: TextButton(
               child: const Text('ONE'),
               onPressed: () {},
@@ -482,7 +482,7 @@ class OrderedButtonRow extends StatelessWidget {
           ),
           const Spacer(),
           FocusTraversalOrder(
-            order: NumericFocusOrder(1.0),
+            order: NumericFocusOrder(1),
             child: TextButton(
               child: const Text('TWO'),
               onPressed: () {},
@@ -490,7 +490,7 @@ class OrderedButtonRow extends StatelessWidget {
           ),
           const Spacer(),
           FocusTraversalOrder(
-            order: NumericFocusOrder(3.0),
+            order: NumericFocusOrder(3),
             child: TextButton(
               child: const Text('THREE'),
               onPressed: () {},

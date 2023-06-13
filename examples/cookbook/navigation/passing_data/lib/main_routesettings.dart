@@ -79,7 +79,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Text(todo.description),
       ),
     );

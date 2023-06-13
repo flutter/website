@@ -112,8 +112,8 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 56.0, // in logical pixels
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      height: 56, // in logical pixels
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(color: Colors.blue[500]),
       // Row is a horizontal, linear layout.
       child: Row(
@@ -325,11 +325,11 @@ class MyButton extends StatelessWidget {
         print('MyButton was tapped!');
       },
       child: Container(
-        height: 50.0,
-        padding: const EdgeInsets.all(8.0),
-        margin: const EdgeInsets.symmetric(horizontal: 8.0),
+        height: 50,
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.0),
+          borderRadius: BorderRadius.circular(5),
           color: Colors.lightGreen[500],
         ),
         child: const Center(
@@ -773,7 +773,7 @@ class _ShoppingListState extends State<ShoppingList> {
         title: const Text('Shopping List'),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         children: widget.products.map((product) {
           return ShoppingListItem(
             product: product,
