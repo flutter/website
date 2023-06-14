@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bullseye@sha256:5b4bbd42b0f60dbd6c4c63b01368134ed8e510e5eb5340c273922c5c803e1dab AS base
+FROM ruby:3.2.2-slim-bullseye@sha256:00f1e87fd7d3f837ee31e40115169fc8817b5f811482bba44c857f5ba52fa1c4 AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
