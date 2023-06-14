@@ -423,7 +423,7 @@ Make a copy of it called **Info-Release.plist** and add it to your Xcode project
 
 <li markdown="1">
 In **Info-Debug.plist** _only_ add the key `NSBonjourServices`
-and set the value to an array with the string `_dartobservatory._tcp`.
+and set the value to an array with the string `_dartVmService._tcp`.
 Note Xcode will display this as "Bonjour services".
 
 Optionally, add the key `NSLocalNetworkUsageDescription` set to your
