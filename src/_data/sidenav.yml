@@ -429,7 +429,7 @@
     - title: Compatibility policy
       permalink: /resources/compatibility
     - title: Contribute to Flutter
-      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+      permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
     - title: Create useful bug reports
       permalink: /resources/bug-reports
     - title: Learn Dart

@@ -540,8 +540,8 @@ For more information, see the following resources:
 [`JsonSerializable`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
 [`json_annotation`]: {{site.pub}}/packages/json_annotation
 [`json_serializable`]: {{site.pub}}/packages/json_serializable
-[`json_serializable` examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
-[pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml
+[`json_serializable` examples]: {{site.github}}/google/json_serializable.dart/blob/master/example/lib/example.dart
+[pubspec file]: https://raw.githubusercontent.com/google/json_serializable.dart/master/example/pubspec.yaml
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [Serializing JSON manually using dart:convert]: #manual-encoding
 [Serializing JSON using code generation libraries]: #code-generation
