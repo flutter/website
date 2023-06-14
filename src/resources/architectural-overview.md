@@ -160,7 +160,7 @@ pieces of a Flutter app.
 * Implements business logic.
 * Owned by app developer.
 
-**Framework** ([source code]({{site.github}}/flutter/flutter/tree/master/packages/flutter/lib))
+**Framework** ([source code]({{site.github}}/flutter/flutter/tree/main/packages/flutter/lib))
 * Provides higher-level API to build high-quality apps
   (for example, widgets, hit-testing, gesture detection,
   accessibility, text input).
@@ -308,8 +308,8 @@ efficiently updates the user interface.
 Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
 implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of both the
-[iOS Switch
-control]({{site.apple-dev}}/design/human-interface-guidelines/ios/controls/switches/)
+[iOS Toggle
+control]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
 [Android equivalent]({{site.material}}/components/switch).
 
@@ -761,7 +761,7 @@ itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
 unique concerns of that platform. The engine is platform-agnostic, presenting a
 [stable ABI (Application Binary
-Interface)]({{site.github}}/flutter/engine/blob/master/shell/platform/embedder/embedder.h)
+Interface)]({{site.github}}/flutter/engine/blob/main/shell/platform/embedder/embedder.h)
 that provides a _platform embedder_ with a way to set up and use Flutter.
 
 The platform embedder is the native OS application that hosts all Flutter

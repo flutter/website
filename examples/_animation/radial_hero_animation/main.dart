@@ -86,7 +86,7 @@ class RadialExpansionDemo extends StatelessWidget {
       color: Theme.of(context).canvasColor,
       child: Center(
         child: Card(
-          elevation: 8.0,
+          elevation: 8,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -110,9 +110,9 @@ class RadialExpansionDemo extends StatelessWidget {
               Text(
                 description,
                 style: const TextStyle(fontWeight: FontWeight.bold),
-                textScaleFactor: 3.0,
+                textScaleFactor: 3,
               ),
-              const SizedBox(height: 16.0),
+              const SizedBox(height: 16),
             ],
           ),
         ),
@@ -165,7 +165,7 @@ class RadialExpansionDemo extends StatelessWidget {
         title: const Text('Radial Transition Demo'),
       ),
       body: Container(
-        padding: const EdgeInsets.all(32.0),
+        padding: const EdgeInsets.all(32),
         alignment: FractionalOffset.bottomLeft,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

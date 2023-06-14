@@ -1997,7 +1997,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Center(
             child: Container(
               decoration: BoxDecoration(
@@ -2010,7 +2010,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: MyWidget(),
             ),
           ),
@@ -2100,7 +2100,7 @@ Future<void> main() async {
   A `Padding` widget that creates a space of 8
   pixels around the `Icon` widget.
 
-  To do this, you can specify `const EdgeInsets.all(8.0)`
+  To do this, you can specify `const EdgeInsets.all(8)`
   for the `padding` property.
 
   The `Row` should look like this:
@@ -2111,7 +2111,7 @@ Future<void> main() async {
      Row(
        children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: Icon(Icons.account_circle, size: 50),
         ),
         Column( ... ), // <--- The Column you first implemented
@@ -2154,7 +2154,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8),
           child: Icon(Icons.account_circle, size: 50),
         ),
         Column(
@@ -2189,7 +2189,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Center(
             child: Container(
               decoration: BoxDecoration(

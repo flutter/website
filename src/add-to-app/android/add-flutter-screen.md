@@ -57,7 +57,7 @@ import io.flutter.embedding.android.FlutterActivity;
 
 {% samplecode default-activity-launch %}
 {% sample Java %}
-<!--code-excerpt "ExistingActivity.java" title-->
+<?code-excerpt title="ExistingActivity.java"?>
 ```java
 myButton.setOnClickListener(new OnClickListener() {
   @Override
@@ -69,7 +69,7 @@ myButton.setOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<!--code-excerpt "ExistingActivity.kt" title-->
+<?code-excerpt title="ExistingActivity.kt"?>
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -89,7 +89,7 @@ route in Flutter.
 
 {% samplecode custom-activity-launch %}
 {% sample Java %}
-<!--code-excerpt "ExistingActivity.java" title-->
+<?code-excerpt title="ExistingActivity.java"?>
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -104,7 +104,7 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<!--code-excerpt "ExistingActivity.kt" title-->
+<?code-excerpt title="ExistingActivity.kt"?>
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -145,7 +145,7 @@ The following example arbitrarily pre-warms a
 
 {% samplecode prewarm-engine %}
 {% sample Java %}
-<!--code-excerpt "MyApplication.java" title-->
+<?code-excerpt title="MyApplication.java"?>
 ```java
 public class MyApplication extends Application {
   public FlutterEngine flutterEngine;
@@ -169,7 +169,7 @@ public class MyApplication extends Application {
 }
 ```
 {% sample Kotlin %}
-<!--code-excerpt "MyApplication.kt" title-->
+<?code-excerpt title="MyApplication.kt"?>
 ```kotlin
 class MyApplication : Application() {
   lateinit var flutterEngine : FlutterEngine
@@ -222,7 +222,7 @@ builder:
 
 {% samplecode cached-engine-activity-launch %}
 {% sample Java %}
-<!--code-excerpt "ExistingActivity.java" title-->
+<?code-excerpt title="ExistingActivity.java"?>
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -236,7 +236,7 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin %}
-<!--code-excerpt "ExistingActivity.kt" title-->
+<?code-excerpt title="ExistingActivity.kt"?>
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -339,7 +339,7 @@ pass the appropriate `BackgroundMode` to the `IntentBuilder`:
 
 {% samplecode transparent-activity-launch %}
 {% sample Java %}
-<!--code-excerpt "ExistingActivity.java" title-->
+<?code-excerpt title="ExistingActivity.java"?>
 ```java
 // Using a new FlutterEngine.
 startActivity(
@@ -359,7 +359,7 @@ startActivity(
 ```
 
 {% sample Kotlin %}
-<!--code-excerpt "ExistingActivity.kt" title-->
+<?code-excerpt title="ExistingActivity.kt"?>
 ```kotlin
 // Using a new FlutterEngine.
 startActivity(

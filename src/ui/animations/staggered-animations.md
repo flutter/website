@@ -169,10 +169,10 @@ The following code builds the tween for the `borderRadius` property
 (which controls the roundness of the square's corners),
 using `BorderRadius.circular()`.
 
-{% prettify dart %}
+```dart
 borderRadius = BorderRadiusTween(
-  begin: BorderRadius.circular(4.0),
-  end: BorderRadius.circular(75.0),
+  begin: BorderRadius.circular(4),
+  end: BorderRadius.circular(75),
 ).animate(
   CurvedAnimation(
     parent: controller,
@@ -182,7 +182,7 @@ borderRadius = BorderRadiusTween(
     ),
   ),
 ),
-{% endprettify %}
+```
 
 ### Complete staggered animation
 

@@ -260,7 +260,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                             Container(
                               width: 58,
                               padding:
-                                  const EdgeInsets.only(left: 4.0, right: 4.0),
+                                  const EdgeInsets.only(left: 4, right: 4),
                               child: button(i + 1),
                             ),
                         ],
@@ -274,7 +274,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                       child: SingleChildScrollView(
                         key: ValueKey(count),
                         child: Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10),
                           child: Column(
                             children: [
                               Center(child: Text(code)),
@@ -546,7 +546,7 @@ class Example8 extends Example {
   @override
   final code = 'Center(\n'
       '   child: Container(color: red\n'
-      '      padding: const EdgeInsets.all(20.0),\n'
+      '      padding: const EdgeInsets.all(20),\n'
       '      child: Container(color: green, width: 30, height: 30)))';
   @override
   final String explanation =
@@ -558,7 +558,7 @@ class Example8 extends Example {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20),
         color: red,
         child: Container(color: green, width: 30, height: 30),
       ),
@@ -758,8 +758,8 @@ class Example15 extends Example {
 
   @override
   final code = 'OverflowBox(\n'
-      '   minWidth: 0.0,'
-      '   minHeight: 0.0,'
+      '   minWidth: 0,'
+      '   minHeight: 0,'
       '   maxWidth: double.infinity,'
       '   maxHeight: double.infinity,'
       '   child: Container(color: red, width: 4000, height: 50));';
@@ -776,8 +776,8 @@ class Example15 extends Example {
   @override
   Widget build(BuildContext context) {
     return OverflowBox(
-      minWidth: 0.0,
-      minHeight: 0.0,
+      minWidth: 0,
+      minHeight: 0,
       maxWidth: double.infinity,
       maxHeight: double.infinity,
       child: Container(color: red, width: 4000, height: 50),
@@ -957,7 +957,7 @@ class Example22 extends Example {
   @override
   final code = 'FittedBox(\n'
       '   child: Container(\n'
-      '      height: 20.0, width: double.infinity));';
+      '      height: 20, width: double.infinity));';
   @override
   final String explanation =
       'FittedBox can only scale a widget that is BOUNDED (has non-infinite width and height).'
@@ -967,7 +967,7 @@ class Example22 extends Example {
   Widget build(BuildContext context) {
     return FittedBox(
       child: Container(
-        height: 20.0,
+        height: 20,
         width: double.infinity,
         color: Colors.red,
       ),
@@ -1410,7 +1410,7 @@ entirely covers the red `Container`.
 ```dart
 Center(
   child: Container(
-    padding: const EdgeInsets.all(20.0),
+    padding: const EdgeInsets.all(20),
     color: red,
     child: Container(color: green, width: 30, height: 30),
   ),
@@ -1576,8 +1576,8 @@ the much dreaded "overflow warning".
 <?code-excerpt "lib/main.dart (Example15)" replace="/(return |;)//g"?>
 ```dart
 OverflowBox(
-  minWidth: 0.0,
-  minHeight: 0.0,
+  minWidth: 0,
+  minHeight: 0,
   maxWidth: double.infinity,
   maxHeight: double.infinity,
   child: Container(color: red, width: 4000, height: 50),
@@ -1739,7 +1739,7 @@ and breaks the line so that it fits the screen.
 ```dart
 FittedBox(
   child: Container(
-    height: 20.0,
+    height: 20,
     width: double.infinity,
     color: Colors.red,
   ),
