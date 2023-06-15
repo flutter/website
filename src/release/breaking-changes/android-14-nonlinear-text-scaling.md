@@ -1,21 +1,22 @@
 ---
 title: Deprecate `textScaleFactor` in favor of `TextScaler`
-description: The `textScaleFactor` scalar is replaced by `TextScaler`
+description: The `textScaleFactor` scalar is replaced by `TextScaler` in preparation for Android 14 nonlinear text scaling support.
 ---
 
 ## Summary
 
-In preparation for adopting the [Android 14 nonlinear font scaling][] capability, 
-almost all occurrances of `textScaleFactor` have been replaced by `TextScaler`.
+In preparation for adopting the [Android 14 nonlinear font scaling][] feature, 
+all occurrances of `textScaleFactor` in the Flutter framework have been 
+deprecated and replaced by `TextScaler`.
 
 ## Context
 
-Many platforms allow users to scale up or down textual contents globally in
-system preferences. In the past the exact scaling strategy was captured as a 
-single double value usually named `textScaleFactor`, and the Flutter framework 
-used it to scale text proportionally. For example, when `textScaleFactor` is 2.0 
-and the developer-specified font size is 14.0, the actual font size used to render 
-text is be 2.0 x 14.0 = 28.0.
+Many platforms allow users to scale up / down textual contents globally in
+system preferences. In the past, the scaling strategy was captured as a single 
+`double` value named `textScaleFactor`, as text scaling was proportional: 
+`scaledFontSize = textScaleFactor x unScaledFontSize`. For example, When 
+`textScaleFactor` is 2.0 and the developer-specified font size is 14.0, the 
+actual font size is 2.0 x 14.0 = 28.0.
 
 With the introduction of [Android 14 nonlinear font scaling][], larger text gets
 scaled at a lesser rate as compared to smaller text, to prevent excessive scaling
@@ -29,13 +30,13 @@ Introducing a new interface `TextScaler`, which represents a text scaling strate
 ```dart
 abstract class TextScaler { 
   double scale(double fontSize);
-  double get textScaleFactor;
+  double get textScaleFactor; // Deprecated. 
 }
 ```
 
 where the `scale` method should be used to scale font sizes in lieu of `textScaleFactor`,
-while `textScaleFactor` is a backward-compatibility field that provides an 
-estimated `textScaleFactor` value.
+while `textScaleFactor` is an already-deprecated field that provides an estimated 
+`textScaleFactor` value.
 
 The new class has replaced `double TextScaleFactor` (`double textScaleFactor` -> `TextScaleFactor textScaleFactor`),
 in the following APIs:
@@ -88,6 +89,11 @@ in the following APIs:
 
 ## Migration guide
 
+Since the new Android 14 nonlinear scaling feature could change the UI of 
+existing apps, if your app targets Android 14 devices, migration may have to be 
+done on a case-by-case basis, and extra testing is **strongly recommended** to 
+make sure the UI is usable and functional on Android 14:  
+
 Most built-in text widgets provided by the Flutter framework are already 
 migrated. Migration is usually only needed if you're:
 
@@ -97,6 +103,7 @@ migrated. Migration is usually only needed if you're:
   laying out or measuring text.
 - Directly using `RichText`, or overriding `textScaleFactor` in `EditableText` 
   and `SelectableText`.
+- Checking the value of `textScaleFactor` getters (which is common in tests).
   
 If your app targets Android 14 devices, migration may have to be done on a
 case-by-case basis, and extra testing is strongly recommended to make sure the UI 
@@ -340,6 +347,7 @@ Relevant PRs:
 [Issue yyyy]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
 [PR title #1]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
 [PR title #2]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
+[Android 14]: https://developer.android.com/about/versions/14
 [Android 14 nonlinear font scaling]: https://developer.android.com/about/versions/14/features#non-linear-font-scaling
 {% endcomment %}
 
