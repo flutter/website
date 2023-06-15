@@ -42,8 +42,8 @@ class _LogoFadeState extends State<LogoFade>
     return FadeTransition(
       opacity: animation,
       child: const SizedBox(
-        height: 300.0,
-        width: 300.0,
+        height: 300,
+        width: 300,
         child: FlutterLogo(),
       ),
     );

@@ -28,9 +28,9 @@ your application experiences one of the following conditions:
 * Slows down
 * Causes the device to slow down or become unresponsive
 * Shuts down because it exceeded the memory limit, enforced by operating system
-* Exceeds memory usage limit 
+* Exceeds memory usage limit
   * This limit can vary depending on the type of devices your app targets.
-* Suspect a memory leak 
+* Suspect a memory leak
 
 ## Basic memory concepts
 
@@ -40,7 +40,7 @@ portion of memory called the _heap_. The memory
 in the heap is managed by the Dart VM (virtual machine).
 The Dart VM allocates memory for the object at the moment of the object creation,
 and releases (or deallocates) the memory when the object
-is no longer used (see [Dart garbage collection][]). 
+is no longer used (see [Dart garbage collection][]).
 
 [Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
 
@@ -49,7 +49,7 @@ is no longer used (see [Dart garbage collection][]).
 #### Root object
 
 Every Dart application creates a _root object_ that references,
-directly or indirectly, all other objects the application allocates. 
+directly or indirectly, all other objects the application allocates.
 
 #### Reachability
 
@@ -57,7 +57,7 @@ If, at some moment of the application run,
 the root object stops referencing an allocated object,
 the object becomes _unreachable_,
 which is a signal for the garbage collector (GC)
-to deallocate the object’s memory. 
+to deallocate the object’s memory.
 
 #### Retaining path
 
@@ -74,36 +74,36 @@ The following example illustrates the concepts:
 
 ```dart
 class Child{}
- 
+
 class Parent {
   Child? child;
 }
- 
+
 Parent parent1 = Parent();
- 
-void myFunction() {  
-  
+
+void myFunction() {
+
   Child? child = Child();
-  
+
   // The `child` object was allocated in memory.
   // It's now retained from garbage collection
   // by one retaining path (root …-> myFunction -> child).
-  
+
   Parent? parent2 = Parent()..child = child;
   parent1.child = child;
-  
+
   // At this point the `child` object has three retaining paths:
   // root …-> myFunction -> child
   // root …-> myFunction -> parent2 -> child
   // root -> parent1 -> child
-  
+
   child = null;
   parent1.child = null;
   parent2 = null;
-  
+
   // At this point, the `child` instance is unreachable
   // and will eventually be garbage collected.
-  
+
   …
 }
 ```
@@ -119,7 +119,7 @@ all reachable Dart objects.
 
 In the following example, the size of `myHugeInstance`
 isn't part of the parent’s or child’s shallow sizes,
-but is part of their retained sizes: 
+but is part of their retained sizes:
 
 ```dart
 class Child{
@@ -127,11 +127,11 @@ class Child{
   /// retained sizes.
   final myHugeInstance = MyHugeInstance();
 }
- 
+
 class Parent {
   Child? child;
 }
- 
+
 Parent parent = Parent()..child = Child();
 ```
 
@@ -139,27 +139,27 @@ In DevTools calculations, if an object has more
 than one retaining path, its size is assigned as
 retained only to the members of the shortest retaining path.
 
-In this example the object `x` has two retaining paths: 
+In this example the object `x` has two retaining paths:
 
 ```terminal
 root -> a -> b -> c -> x
 root -> d -> e -> x (shortest retaining path to `x`)
 ```
 
-Only members of the shortest path (`d` and `e`) will include 
+Only members of the shortest path (`d` and `e`) will include
 `x` into their retaining size.
 
 ### Memory leaks happen in Dart?
 
 Garbage collector cannot prevent all types of memory leaks, and developers
-still need to watch objects to have leak-free lifecycle. 
+still need to watch objects to have leak-free lifecycle.
 
 #### Why can't the garbage collector prevent all leaks?
 
 While the garbage collector takes care of all
 unreachable objects, it’s the responsibility
 of the application to ensure that unneeded objects
-are no longer reachable (referenced from the root). 
+are no longer reachable (referenced from the root).
 
 So, if non needed objects are left referenced
 (in a global or static variable,
@@ -175,18 +175,18 @@ In the following code, a reference to the
 designed-to-be short-living `myHugeObject` is implicitly
 stored in the closure context and passed to `setHandler`.
 As a result, `myHugeObject` won’t be garbage collected
-as long as `handler` is reachable. 
+as long as `handler` is reachable.
 
 ```dart
-  final handler = () => print(myHugeObject.name);  
+  final handler = () => print(myHugeObject.name);
   setHandler(handler);
 ```
 #### Why `BuildContext` requires extra attention
 
 An example of a large, short-living object that
 might squeeze into a long-living area and thus cause leaks,
-is the `context` parameter passed to Flutter's 
-`build` method. 
+is the `context` parameter passed to Flutter's
+`build` method.
 
 The following code is leak prone,
 as `useHandler` might store the handler
@@ -197,7 +197,7 @@ in a long-living area:
 // This code is leak prone:
 @override
 Widget build(BuildContext context) {
-  final handler = () => apply(Theme.of(context));  
+  final handler = () => apply(Theme.of(context));
   useHandler(handler);
 …
 ```
@@ -217,7 +217,7 @@ shared between `BuildContext` instances.
 @override
 Widget build(BuildContext context) {
   final theme = Theme.of(context);
-  final handler = () => apply(theme);  
+  final handler = () => apply(theme);
   useHandler(handler);
 …
 ```
@@ -226,7 +226,7 @@ Widget build(BuildContext context) {
 
 In general, use the following rule for a
 `BuildContext`: if the closure doesn’t outlive
-the widget, it's ok to pass the context to the closure. 
+the widget, it's ok to pass the context to the closure.
 
 Stateful widgets require extra attention.
 They consist of two classes: the [widget and the
@@ -253,7 +253,7 @@ Both leaks and bloats, when large,
 cause an application to crash with an `out-of-memory` error.
 However, leaks are more likely to cause memory issues,
 because even a small leak,
-if repeated many times, leads to a crash. 
+if repeated many times, leads to a crash.
 
 ## Memory view guide
 
@@ -269,7 +269,7 @@ has the following features:
 
 [**Profile Memory** tab](#profile-memory-tab)
 : See current memory allocation listed by class and
-  memory type. 
+  memory type.
 
 [**Diff Snapshots** tab](#diff-snapshots-tab)
 : Detect and investigate a feature’s memory management issues.
@@ -410,7 +410,7 @@ allocate memory for a set of classes during feature execution:
 1. Select a traced class
 1. Review the collected data
 
-![Screenshot of a trace tab]({{site.url}}/assets/images/docs/tools/devtools/trace-instances-tab.png)
+![Screenshot of a trace tab]({{site.url}}/assets/images/docs/tools/devtools/trace-instances-tab.png){:width="100%"}
 
 #### Bottom up vs call tree view
 
@@ -435,7 +435,7 @@ For more information, check out the following resources:
   and detect memory leaks using DevTools,
   check out a guided [Memory View tutorial][memory-tutorial].
 * To understand Android memory structure,
-  check out [Android: Memory allocation among processes][].  
+  check out [Android: Memory allocation among processes][].
 
 [memory-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
 [Android: Memory allocation among processes]: {{site.android-dev}}/topic/performance/memory-management

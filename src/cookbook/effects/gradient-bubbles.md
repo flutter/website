@@ -82,7 +82,7 @@ BubbleBackground(
       color: Colors.white,
     ),
     child: Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(12),
       child: Text(message.text),
     ),
   ),

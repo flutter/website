@@ -136,7 +136,7 @@ class _FilterSelectorState extends State<FilterSelector> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.fromBorderSide(
-                BorderSide(width: 6.0, color: Colors.white),
+                BorderSide(width: 6, color: Colors.white),
               ),
             ),
           ),
@@ -188,7 +188,7 @@ class FilterItem extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1.0,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
@@ -598,7 +598,7 @@ class FilterSelector extends StatefulWidget {
     super.key,
     required this.filters,
     required this.onFilterChanged,
-    this.padding = const EdgeInsets.symmetric(vertical: 24.0),
+    this.padding = const EdgeInsets.symmetric(vertical: 24),
   });
 
   final List<Color> filters;
@@ -737,7 +737,7 @@ class _FilterSelectorState extends State<FilterSelector> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.fromBorderSide(
-                BorderSide(width: 6.0, color: Colors.white),
+                BorderSide(width: 6, color: Colors.white),
               ),
             ),
           ),
@@ -828,7 +828,7 @@ class FilterItem extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1.0,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-texture.jpg',
