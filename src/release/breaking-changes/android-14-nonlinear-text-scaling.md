@@ -34,11 +34,14 @@ abstract class TextScaler {
 }
 ```
 
-where the `scale` method should be used to scale font sizes in lieu of `textScaleFactor`,
-while `textScaleFactor` is an already-deprecated field that provides an estimated 
-`textScaleFactor` value.
+The `scale` method should be used to scale font sizes in lieu of `textScaleFactor`.
+The `textScaleFactor` getter provides an estimated `textScaleFactor` value, for 
+backward compatibility purposes. It is already marked as "deprecated", but is 
+expected to have a longer lifetime than any other deprecations in this migration 
+guide.
 
-The new class has replaced `double TextScaleFactor` (`double textScaleFactor` -> `TextScaleFactor textScaleFactor`),
+The new class has replaced 
+`double TextScaleFactor` (`double textScaleFactor` -> `TextScaleFactor textScaleFactor`),
 in the following APIs:
 
 #### `Painting` Library
@@ -89,50 +92,44 @@ in the following APIs:
 
 ## Migration guide
 
-Since the new Android 14 nonlinear scaling feature could change the UI of 
-existing apps, if your app targets Android 14 devices, migration may have to be 
-done on a case-by-case basis, and extra testing is **strongly recommended** to 
-make sure the UI is usable and functional on Android 14:  
+Widgets provided by the Flutter framework are already migrated. Migration is 
+needed only if you're using any of the deprecated symbols listed above. 
 
-Most built-in text widgets provided by the Flutter framework are already 
-migrated. Migration is usually only needed if you're:
+However, the new Android 14 nonlinear scaling feature changes the UI of existing 
+apps, even if your app does not directly use any of the deprecated APIs. If your 
+app targets Android 14 devices, it is **strongly recommended** to test your app 
+on Android 14 devices at different scaling levels, to make sure the UI is usable 
+and functional, no matter whether the codebase needs migration or not. Please 
+refer to the [Ensure Android 14 compatibility][] guide for steps to make sure 
+your app is Android 14 compatible.
 
-- Calling `MediaQuery.textScaleFactorOf`, `MediaQuery.maybeTextScaleFactorOf`, 
-  or accessing the `MediaQueryData.textScaleFactor` getter.
-- Managing your own `TextPainter`, or `RenderParagraph`/`RenderEditable` for 
-  laying out or measuring text.
-- Directly using `RichText`, or overriding `textScaleFactor` in `EditableText` 
-  and `SelectableText`.
-- Checking the value of `textScaleFactor` getters (which is common in tests).
-  
-If your app targets Android 14 devices, migration may have to be done on a
-case-by-case basis, and extra testing is strongly recommended to make sure the UI 
-is still usable, as nonlinear scaling could invalidate some assumptions the UI 
-makes. As an example, the following widget may not look great on Android 14 at 
-200% scaling:
+As an example, the following widget may not look great on Android 14 at 200% 
+scaling:
 
 ```dart 
 // It's not good for tooltips to be cutoff vertically, or to take too much space 
 // on screen as it blocks contents.
-TooltipBox( 
+MyTooltipBox( 
   size: chatBoxSize * textScaleFactor,
   child: RichText(..., style: TextStyle(fontSize: 20)),
 )
 ```
 
-With nonlinear scaling at 200%, the actual font size would be 21 instead of 40,
-as a result the `TooltipBox` would unfortunately take significantly more precious 
-screen space than needed and potentially make the tooltip annoying. On the other
-hand, at a smaller font size the tooltip's text could be cutoff due to 
-insufficient vertical space.
+With nonlinear scaling at 200%, the actual font size used by the `RichText` 
+widget is 21 (instead of 40), and the `MyTooltipBox` wigdet would take 
+significantly more screen space than needed, potentially make the tooltip 
+annoying. On the other hand, at a smaller font size the tooltip's text could be 
+cutoff due to insufficient vertical space.
 
-### Migrating APIs that expose `textScaleFactor`
+Adopting nonlinear text scaling may not be an easy task. If you're unsure about 
+how to migrate certian `textScaleFactor` usages, or when it is going to take an
+extended period of time (for example, when the UI has to be redesigned), 
+consider replacing `textScaleFactor` with `TextScaler.textScaleFactor` first. The 
+`TextScaler.textScaleFactor` getter is added for backward compatibility during 
+the migration process and is expected to have a longer lifetime than other 
+`textScaleFactor` deprecations. 
 
-The `TextScaler` interface currently provides an estimated `textScaleFactor`, so 
-it is generally safe to use it as a drop-in replacement of `textScaleFactor` in 
-APIs. However, to support Android 14, you may need to provide more information to 
-the implementer as they can no longer assume the text scales proportionally with
-`textScaleFactor`.
+### Migrating your APIs that expose `textScaleFactor`
 
 Before:
 ```dart 
@@ -179,7 +176,7 @@ your code like so:
 
 Before:
 ```dart 
-RichText( 
+UnmigratedTextWidget( 
   textScaleFactor: MediaQuery.textScaleFactorOf(context),
   ...
 )
@@ -187,22 +184,28 @@ RichText(
 
 After:
 ```dart 
-RichText( 
+UnmigratedTextWidget( 
   textScaleFactor: MediaQuery.textScalerOf(context).textScaleFactor,
   ...
 )
 ```
 
-If the API that provides the `textScaleFactor` hasn't been migrated, it might 
-not be worth to migrate the code right away.
+If the API that provides `textScaleFactor` hasn't been migrated, consider 
+waiting for the migrated version.
 
-If you do use `textScaleFactor` to scale something that are not font sizes, 
-there are no generic rules for performing such migrations. It's recommended to
-test your app at various scaling levels on Android 14 to make sure the UI looks 
-polished and functional. At the time of writing, Android 14 isn't released so 
-testing with nonlinear scaling may not be feasible. It's recommended to 
-temporarily replace `textScaleFactor` with `textScaler.textScaleFactor` if 
-available. 
+If you are using `textScaleFactor` to scale dimensions that are not font sizes, 
+there are no generic rules for migrating the code to nonlinear scaling, and it 
+may require the UI to be implemented differently. Reusing the `MyTooltipBox` 
+example:
+```dart 
+MyTooltipBox( 
+  size: chatBoxSize * textScaleFactor,
+  child: RichText(..., style: TextStyle(fontSize: 20)),
+)
+```
+You could choose to use the "effective" text scale factor by applying the 
+`TextScaler` on the font size 20: `chatBoxSize * textScaler.scale(20) / 20`, or
+redesign the UI and let the widget assume its own intrinsic size.
 
 ### Overriding the text scaling strategy in a widget subtree
 
@@ -307,17 +310,15 @@ Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 API documentation:
 
-* [`ClassName`][]
+* [`TextScaler`][]
 
 Relevant issues:
 
-* [Issue xxxx][]
-* [Issue yyyy][]
+* [New font scaling system (Issue 116231)][]
 
 Relevant PRs:
 
-* [PR title #1][]
-* [PR title #2][]
+* [Replaces `textScaleFactor` with `TextScaler`][]
 {% endcomment %}
 
 {% comment %}
@@ -336,18 +337,19 @@ Relevant PRs:
   and a master channel (master-api) link.
 
 <!-- Stable channel link: -->
-[`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
 
 <!-- Master channel link: -->
 {% include docs/master-api.md %}
 
-[`ClassName`]: {{site.master-api}}/flutter/[link_to_relevant_page].html
+[`TextScaler`]: {{site.master-api}}/flutter/painting/TextScaler-class.html
+[`MediaQuery.textScalerOf`]: {{site.master-api}}/flutter/widgets/MediaQuery/textScalerOf.html
+[`MediaQuery.maybeTextScalerOf`]: {{site.master-api}}/flutter/widgets/MediaQuery/maybeTextScalerOf.html
+[`MediaQuery.disableTextScaling`]: {{site.master-api}}/flutter/widgets/MediaQuery/disableTextScaling.html
+[`MediaQuery.withClampedTextScaling`]: {{site.master-api}}/flutter/widgets/MediaQuery/withClampedTextScaling.html
 
-[Issue xxxx]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
-[Issue yyyy]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
-[PR title #1]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
-[PR title #2]: {{site.repo.flutter}}/pull/[link_to_actual_pr]
-[Android 14]: https://developer.android.com/about/versions/14
+[New font scaling system (Issue 116231)]: {{site.repo.flutter}}/issues/116231
+[Replaces `textScaleFactor` with `TextScaler`]: {{site.repo.flutter}}/pull/128522
+[Ensure Android 14 compatibility]: https://developer.android.com/about/versions/14/migration#compat_testing
 [Android 14 nonlinear font scaling]: https://developer.android.com/about/versions/14/features#non-linear-font-scaling
 {% endcomment %}
 
