@@ -1,26 +1,26 @@
 ---
-title: Deprecate `textScaleFactor` in favor of `TextScaler`
+title: Deprecate textScaleFactor in favor of TextScaler
 description: The `textScaleFactor` scalar is replaced by `TextScaler` in preparation for Android 14 nonlinear text scaling support.
 ---
 
 ## Summary
 
 In preparation for adopting the [Android 14 nonlinear font scaling][] feature, 
-all occurrances of `textScaleFactor` in the Flutter framework have been 
+all occurrences of `textScaleFactor` in the Flutter framework have been 
 deprecated and replaced by `TextScaler`.
 
 ## Context
 
-Many platforms allow users to scale up / down textual contents globally in
+Many platforms allow users to scale textual contents up or down globally in
 system preferences. In the past, the scaling strategy was captured as a single 
 `double` value named `textScaleFactor`, as text scaling was proportional: 
-`scaledFontSize = textScaleFactor x unScaledFontSize`. For example, When 
+`scaledFontSize = textScaleFactor x unScaledFontSize`. For example, when 
 `textScaleFactor` is 2.0 and the developer-specified font size is 14.0, the 
 actual font size is 2.0 x 14.0 = 28.0.
 
 With the introduction of [Android 14 nonlinear font scaling][], larger text gets
 scaled at a lesser rate as compared to smaller text, to prevent excessive scaling
-of text that is already large enough. The `textScaleFactor` scalar value used by 
+of text that is already large. The `textScaleFactor` scalar value used by 
 "proportional" scaling is not enough to represent this new scaling strategy.
 
 ## Description of change
@@ -44,7 +44,7 @@ The new class has replaced
 `double TextScaleFactor` (`double textScaleFactor` -> `TextScaleFactor textScaleFactor`),
 in the following APIs:
 
-#### `Painting` Library
+### Painting library
 
 | Affected APIs                                                                     | Error Message                                          |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------|
@@ -56,7 +56,7 @@ in the following APIs:
 | `TextPainter.computeWidth({ double TextScaleFactor = 1.0 })` argument             | 'textScaleFactor' is deprecated and shouldn't be used. |
 | `TextPainter.computeMaxIntrinsicWidth({ double TextScaleFactor = 1.0 })` argument | 'textScaleFactor' is deprecated and shouldn't be used. |
 
-#### `Rendering` Library
+### Rendering library
 
 | Affected APIs                                                            | Error Message                                          |
 |--------------------------------------------------------------------------|--------------------------------------------------------|
@@ -65,7 +65,7 @@ in the following APIs:
 | `RenderParagraph({ double TextScaleFactor = 1.0 })` constructor argument | 'textScaleFactor' is deprecated and shouldn't be used. |
 | `RenderParagraph.textScaleFactor` getter and setter                      | 'textScaleFactor' is deprecated and shouldn't be used. |
 
-#### `Widgets` Library
+### Widgets library
 
 | Affected APIs                                                           | Error Message                                                 |
 |-------------------------------------------------------------------------|---------------------------------------------------------------|
@@ -82,7 +82,7 @@ in the following APIs:
 | `EditableText({ double? TextScaleFactor = 1.0 })` constructor argument  | 'textScaleFactor' is deprecated and shouldn't be used.        |
 | `EditableText.textScaleFactor` getter                                   | 'textScaleFactor' is deprecated and shouldn't be used.        |
 
-#### `Material` Library
+### Material library
 
 | Affected APIs                                                                 | Error Message                                          |
 |-------------------------------------------------------------------------------|--------------------------------------------------------|
@@ -103,7 +103,7 @@ and functional, no matter whether the codebase needs migration or not. Please
 refer to the [Ensure Android 14 compatibility][] guide for steps to make sure 
 your app is Android 14 compatible.
 
-As an example, the following widget may not look great on Android 14 at 200% 
+As an example, the following widget might not look great on Android 14 at 200% 
 scaling:
 
 ```dart 
@@ -116,12 +116,12 @@ MyTooltipBox(
 ```
 
 With nonlinear scaling at 200%, the actual font size used by the `RichText` 
-widget is 21 (instead of 40), and the `MyTooltipBox` wigdet would take 
-significantly more screen space than needed, potentially make the tooltip 
-annoying. On the other hand, at a smaller font size the tooltip's text could be 
+widget is 21 (instead of 40), and the `MyTooltipBox` widget would take 
+significantly more screen space than needed, potentially making the tooltip 
+annoying. On the other hand, at a smaller font size, the tooltip's text could be 
 cutoff due to insufficient vertical space.
 
-Adopting nonlinear text scaling may not be an easy task. If you're unsure about 
+Adopting nonlinear text scaling might not be an easy task. If you're unsure about 
 how to migrate certian `textScaleFactor` usages, or when it is going to take an
 extended period of time (for example, when the UI has to be redesigned), 
 consider replacing `textScaleFactor` with `TextScaler.textScaleFactor` first. The 
@@ -143,7 +143,7 @@ After:
 ```dart 
 abstract class _MyCustomPaintDelegate { 
   void paint(PaintingContext context, Offset offset, TextScaler textScaler) { 
-    // For now, implementers will still be able to access the `textScaleFactor`
+    // For now, implementers can still access the `textScaleFactor`.
     // scalar via textScaler.textScaleFactor. 
   }
 }
@@ -152,7 +152,7 @@ abstract class _MyCustomPaintDelegate {
 ### Migrating code that consumes `textScaleFactor`
 
 If you're not currently using `textScaleFactor` directly, but rather passing it 
-to a different API that receivs a `textScaleFactor`, and the receiver API has 
+to a different API that receives a `textScaleFactor`, and the receiver API has 
 already been migrated, then it's relateively straightforward:
 
 Before:
@@ -195,7 +195,7 @@ waiting for the migrated version.
 
 If you are using `textScaleFactor` to scale dimensions that are not font sizes, 
 there are no generic rules for migrating the code to nonlinear scaling, and it 
-may require the UI to be implemented differently. Reusing the `MyTooltipBox` 
+might require the UI to be implemented differently. Reusing the `MyTooltipBox` 
 example:
 ```dart 
 MyTooltipBox( 
@@ -230,9 +230,9 @@ MediaQuery(
 
 However it's rarely needed to create a custom `TextScaler` subclass.
 `MediaQuery.disableTextScaling` (which creates a widget that disables text scaling 
-altogether for its child subtree) and `MediaQuery.disableTextScaling` (which 
+altogether for its child subtree), and `MediaQuery.disableTextScaling` (which 
 creates a widget that restricts the scaled font size to within the range 
-`[minScaleFactor * fontSize, maxScaleFactor * fontSize]`) are convenience methods 
+`[minScaleFactor * fontSize, maxScaleFactor * fontSize]`), are convenience methods 
 that cover common cases where the text scaling strategy needs to be overridden. 
 
 #### Examples
@@ -284,18 +284,10 @@ MediaQuery.withClampedTextScaling(
   introduced.  If there is a deprecation window,
   the version # to which we guarantee to maintain
   the old API. Use the following template:
-
-  If a breaking change has been reverted in a
-  subsequent release, move that item to the
-  "Reverted" section of the index.md file.
-  Also add the "Reverted in version" line,
-  shown as optional below. Otherwise, delete
-  that line.
 {% endcomment %}
 
 Landed in version: xxx<br>
 In stable release: not yet
-Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 ## References
 
