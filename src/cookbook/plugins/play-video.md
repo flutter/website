@@ -79,8 +79,8 @@ For iOS, add the following to the `Info.plist` file found at
 ```
 
 {{site.alert.warning}}
-  The `video_player` plugin doesn't work on iOS simulators.
-  You must test videos on real iOS devices.
+  The `video_player` plugin can only play asset videos in iOS simulators.
+  You must test network-hosted videos on physical iOS devices.
 {{site.alert.end}}
 
 ## 3. Create and initialize a `VideoPlayerController`
