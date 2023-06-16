@@ -49,7 +49,7 @@ in the following APIs:
 | Affected APIs                                                                     | Error Message                                          |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------|
 | `InlineSpan.build({ double textScaleFactor = 1.0 })` argument                     | The named parameter 'textScaleFactor' isn't defined.   |
-| `TextStyle.getParagraphStyle({ double TextScaleFactor = 1.0 })` argument          | The named parameter 'textScaleFactor' isn't defined".  |
+| `TextStyle.getParagraphStyle({ double TextScaleFactor = 1.0 })` argument          | The named parameter 'textScaleFactor' isn't defined.  |
 | `TextStyle.getTextStyle({ double TextScaleFactor = 1.0 })`  argument              | 'textScaleFactor' is deprecated and shouldn't be used. |
 | `TextPainter({ double TextScaleFactor = 1.0 })` constructor argument              | 'textScaleFactor' is deprecated and shouldn't be used. |
 | `TextPainter.textScaleFactor` getter and setter                                   | 'textScaleFactor' is deprecated and shouldn't be used. |
@@ -110,7 +110,7 @@ scaling:
 // It's not good for tooltips to be cutoff vertically, or to take too much space 
 // on screen as it blocks contents.
 MyTooltipBox( 
-  size: chatBoxSize * textScaleFactor,
+  size: tooltipBoxSize * textScaleFactor,
   child: RichText(..., style: TextStyle(fontSize: 20)),
 )
 ```
@@ -189,6 +189,20 @@ UnmigratedTextWidget(
   ...
 )
 ```
+
+If you wish to compute the scaled font size yourself, use `TextScaler.scale` 
+instead of the `*` binary operator:
+
+Before:
+```dart 
+final scaledFontSize = textStyle.fontSize * MediaQuery.textScaleFactorOf(context);
+```
+
+After:
+```dart 
+final scaledFontSize = MediaQuery.textScalerOf(context).scale(textStyle.fontSize);
+```
+
 
 If the API that provides `textScaleFactor` hasn't been migrated, consider 
 waiting for the migrated version.
@@ -341,7 +355,7 @@ Relevant PRs:
 
 [New font scaling system (Issue 116231)]: {{site.repo.flutter}}/issues/116231
 [Replaces `textScaleFactor` with `TextScaler`]: {{site.repo.flutter}}/pull/128522
-[Ensure Android 14 compatibility]: https://developer.android.com/about/versions/14/migration#compat_testing
-[Android 14 nonlinear font scaling]: https://developer.android.com/about/versions/14/features#non-linear-font-scaling
+[Ensure Android 14 compatibility]: <https://developer.android.com/about/versions/14/migration#compat_testing>
+[Android 14 nonlinear font scaling]: <https://developer.android.com/about/versions/14/features#non-linear-font-scaling>
 {% endcomment %}
 
