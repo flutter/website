@@ -113,7 +113,9 @@
       { "source": "/packages-and-plugins/plugin-api-migration", "destination": "/release/breaking-changes/plugin-api-migration", "type": 301 },
       { "source": "/platform-integration/android/androidx-migration", "destination": "/release/breaking-changes/androidx-migration", "type": 301 },
       { "source": "/platform-integration/android/splash-screen-migration", "destination": "/release/breaking-changes/splash-screen-migration", "type": 301 },
+      { "source": "/platform-integration/c-interop", "destination": "/platform-integration", "type": 301 },
       { "source": "/platform-integration/ios-app-clip", "destination": "/platform-integration/ios/ios-app-clip", "type": 301 },
+      { "source": "/platform-integration/ios/splash-screen", "destination": "/platform-integration/ios/launch-screen", "type": 301 },
       { "source": "/platform-integration/platform-views", "destination": "/platform-integration/android/platform-views", "type": 301 },
       { "source": "/platform-integration/web-images", "destination": "/platform-integration/web/web-images", "type": 301 },
       { "source": "/platform-integration/windows/run-loop-migration", "destination": "/release/breaking-changes/windows-run-loop", "type": 301 },
@@ -155,7 +157,6 @@
       { "source": "/ui/material3-updates", "destination": "/ui/material", "type": 301 },
       { "source": "/ui/splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
       { "source": "/ui/splash-screen/android-splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
-      { "source": "/platform-integration/ios/splash-screen", "destination": "/platform-integration/ios/launch-screen", "type": 301 },
       { "source": "/ui/widgets/catalog", "destination": "/ui/widgets", "type": 301 },
       { "source": "/ui/widgets/widgetindex", "destination": "/reference/widgets", "type": 301 },
       { "source": "/web", "destination": "/platform-integration/web", "type": 301 },
@@ -178,7 +179,7 @@
       { "source": "/resources/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/style-guide*", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/youtube", "destination": "https://youtube.com/@flutterdev", "type": 301 },
-      
+
       { "source": "/go/2D-Foundation", "destination": "https://docs.google.com/document/d/1C2hAq-gMAIx4Cbym7EMhVAcPZ2hmNxlgijpYmgTpmUU/edit?usp=sharing", "type": 301 },
       { "source": "/go/a11y-links", "destination": "https://docs.google.com/document/d/1FxzANiyJFkoRxJ7V2IejpfB5DX19gxiJps-8N2oUW_U/edit#", "type": 301 },
       { "source": "/go/a11y-text-attributes", "destination": "https://docs.google.com/document/d/1vhbwxFOTRTUvW2C_onFffEH5Fn2pAfMQDyv-gekias0/edit?usp=sharing&resourcekey=0-ChQvjIoWYO7jXcaCXMj5Qw", "type": 301 },
