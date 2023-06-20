@@ -163,7 +163,7 @@ CocoaPods in the [CocoaPods getting started guide][].
 
 Add the following lines to your `Podfile`:
 
-<!--code-excerpt "MyApp/Podfile" title-->
+<?code-excerpt title="MyApp/Podfile"?>
 ```ruby
 flutter_application_path = '../my_flutter'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
@@ -176,7 +176,7 @@ load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 For each [Podfile target][] that needs to
 embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
 
-<!--code-excerpt "MyApp/Podfile" title-->
+<?code-excerpt title="MyApp/Podfile"?>
 ```ruby
 target 'MyApp' do
   install_all_flutter_pods(flutter_application_path)
@@ -189,7 +189,7 @@ end
 
 In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
 
-<!--code-excerpt "MyApp/Podfile" title-->
+<?code-excerpt title="MyApp/Podfile"?>
 ```ruby
 post_install do |installer|
   flutter_post_install(installer) if defined?(flutter_post_install)
@@ -379,10 +379,11 @@ some/path/MyApp/
 
 Host apps using CocoaPods can add Flutter to their Podfile:
 
-<!--code-excerpt "MyApp/Podfile" title-->
+<?code-excerpt title="MyApp/Podfile"?>
 ```ruby
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
+
 {{site.alert.note}}
   You must hard code the `[build mode]` value.
   For example, use `Debug` if you need to use
@@ -422,7 +423,7 @@ Make a copy of it called **Info-Release.plist** and add it to your Xcode project
 
 <li markdown="1">
 In **Info-Debug.plist** _only_ add the key `NSBonjourServices`
-and set the value to an array with the string `_dartobservatory._tcp`.
+and set the value to an array with the string `_dartVmService._tcp`.
 Note Xcode will display this as "Bonjour services".
 
 Optionally, add the key `NSLocalNetworkUsageDescription` set to your

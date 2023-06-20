@@ -193,8 +193,8 @@
       children:
         - title: Leverage Apple's system libraries
           permalink: /platform-integration/ios/apple-frameworks
-        - title: Add a splash screen
-          permalink: /platform-integration/ios/splash-screen
+        - title: Add a launch screen
+          permalink: /platform-integration/ios/launch-screen
         - title: Add iOS App Clip support
           permalink: /platform-integration/ios/ios-app-clip
         - title: Add iOS app extensions
@@ -429,7 +429,7 @@
     - title: Compatibility policy
       permalink: /resources/compatibility
     - title: Contribute to Flutter
-      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+      permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
     - title: Create useful bug reports
       permalink: /resources/bug-reports
     - title: Learn Dart

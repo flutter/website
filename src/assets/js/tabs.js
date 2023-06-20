@@ -1,4 +1,4 @@
-function setupTabs(container, storageName, defaultTab) {
+function setupTabs(container, storageName, defaultTabGetter) {
   const tabs = $(container).find('li a');
 
   function getTabIdFromQuery(query) {
@@ -37,7 +37,16 @@ function setupTabs(container, storageName, defaultTab) {
     if (!selectedTab && storageName && window.localStorage) {
       selectedTab = window.localStorage.getItem(storageName);
     }
-    return selectedTab || defaultTab;
+
+    if (selectedTab) {
+      return selectedTab;
+    }
+
+    if (defaultTabGetter) {
+      return defaultTabGetter();
+    }
+
+    return null;
   }
 
   function initializeTabs() {

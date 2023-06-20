@@ -113,7 +113,9 @@
       { "source": "/packages-and-plugins/plugin-api-migration", "destination": "/release/breaking-changes/plugin-api-migration", "type": 301 },
       { "source": "/platform-integration/android/androidx-migration", "destination": "/release/breaking-changes/androidx-migration", "type": 301 },
       { "source": "/platform-integration/android/splash-screen-migration", "destination": "/release/breaking-changes/splash-screen-migration", "type": 301 },
+      { "source": "/platform-integration/c-interop", "destination": "/platform-integration", "type": 301 },
       { "source": "/platform-integration/ios-app-clip", "destination": "/platform-integration/ios/ios-app-clip", "type": 301 },
+      { "source": "/platform-integration/ios/splash-screen", "destination": "/platform-integration/ios/launch-screen", "type": 301 },
       { "source": "/platform-integration/platform-views", "destination": "/platform-integration/android/platform-views", "type": 301 },
       { "source": "/platform-integration/web-images", "destination": "/platform-integration/web/web-images", "type": 301 },
       { "source": "/platform-integration/windows/run-loop-migration", "destination": "/release/breaking-changes/windows-run-loop", "type": 301 },
@@ -177,7 +179,7 @@
       { "source": "/resources/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/style-guide*", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/youtube", "destination": "https://youtube.com/@flutterdev", "type": 301 },
-      
+
       { "source": "/go/2D-Foundation", "destination": "https://docs.google.com/document/d/1C2hAq-gMAIx4Cbym7EMhVAcPZ2hmNxlgijpYmgTpmUU/edit?usp=sharing", "type": 301 },
       { "source": "/go/a11y-links", "destination": "https://docs.google.com/document/d/1FxzANiyJFkoRxJ7V2IejpfB5DX19gxiJps-8N2oUW_U/edit#", "type": 301 },
       { "source": "/go/a11y-text-attributes", "destination": "https://docs.google.com/document/d/1vhbwxFOTRTUvW2C_onFffEH5Fn2pAfMQDyv-gekias0/edit?usp=sharing&resourcekey=0-ChQvjIoWYO7jXcaCXMj5Qw", "type": 301 },
@@ -295,6 +297,7 @@
       { "source": "/go/flutter-engine-extensions", "destination": "https://docs.google.com/document/d/1xG7jR4FserdW7TdwnklF3_lXUGmt4myPQjDGF3LFtCQ/edit?resourcekey=0-Iug4D2mWuyQI6suvC_2itw#", "type": 301 },
       { "source": "/go/flutter-for-embedded-linux", "destination": "https://docs.google.com/document/d/1n4NXCk0QlGz16gUCtywR79H0Z1fzPqB2iNL8oxuexuk/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-iap-migrate-pblv2", "destination": "https://docs.google.com/document/d/1XM16UsLE_aPWoZnheE9waO06mhxLkkWjpPf9jtI1AdY/edit", "type": 301 },
+      { "source": "/go/flutter-ios-system-font", "destination": "https://docs.google.com/document/d/1FG9ONkG-sLuFkb9vUAL2i7oeUtUqm8qiQJe_poK754w/edit", "type": 301 },
       { "source": "/go/flutter-lints", "destination": "https://docs.google.com/document/d/1b0X0HOzvFY3WxI363U8BXx6Am13qFm96KlbS72mmFAk/edit", "type": 301 },
       { "source": "/go/flutter-migrate", "destination": "https://docs.google.com/document/d/1fPnpUI6gXE9PkNWuFoAW20m_sQ87ZSC1rrn_D7fxBvs", "type": 301 },
       { "source": "/go/flutter-nonhost", "destination": "https://docs.google.com/document/d/1rTLxAxsshEir-B2vE6DU_MaqMMusOdCgLGEGpBYG3CM", "type": 301 },

@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bullseye@sha256:5b4bbd42b0f60dbd6c4c63b01368134ed8e510e5eb5340c273922c5c803e1dab AS base
+FROM ruby:3.2.2-slim-bookworm@sha256:249c66b933130178c8fe890d56568d680e9b3c93e7906b87e4e63bee2209a6d5 AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -20,7 +20,7 @@ WORKDIR /app
 
 
 # ============== INSTALL FLUTTER ==============
-# NOTE that this will fail if you have not cloned the repo with --recurse-submodules 
+# NOTE that this will fail if you have not cloned the repo with --recurse-submodules
 # or run `git submodule update --init --recursive` after cloning.
 FROM base AS flutter
 
@@ -35,7 +35,7 @@ ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/app/flutter/bin:$PATH"
 
-# Used if wanting to build the container with a different branch, this 
+# Used if wanting to build the container with a different branch, this
 # would change the current branch of and update the mirrored submodule
 # e.g. `make build FLUTTER_BUILD_BRANCH=beta`
 # This is not to be confused with the $FLUTTER_TEST_BRANCH
@@ -49,7 +49,7 @@ RUN if test -n "$FLUTTER_BUILD_BRANCH" -a "$FLUTTER_BUILD_BRANCH" != "stable" ; 
     fi
 
 # Set up Flutter
-# NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."  
+# NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
 RUN flutter --version
