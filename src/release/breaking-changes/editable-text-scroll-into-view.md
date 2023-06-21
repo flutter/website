@@ -20,9 +20,9 @@ caret location.
 ## Description of change
 
 By removing the `Editable.onCaretChanged` callback, `EditableText` will always
-use the most up to selection extent location when scrolling to show it.
-Specifically this results in improved scroll into view behavior after
-changing selection from collapsed to non-collapsed via
+use the most up to date selection extent location when scrolling to show it.
+Specifically, this improves scroll into view behavior after
+changing selection from collapsed to non-collapsed using
 `userUpdateTextEditingValue()`.
 
 ## Timeline
