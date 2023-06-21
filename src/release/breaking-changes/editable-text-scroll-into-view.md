@@ -7,8 +7,8 @@ description: >
 
 ## Summary
 
-`Editable.onCaretChanged` callback is removed and with this change,
-`EditableText` behavior with regard to scrolling the selection into view
+The `Editable.onCaretChanged` callback is removed. With this change,
+`EditableText` behavior for scrolling the selection into view
 changes.
 
 ## Context
