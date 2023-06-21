@@ -13,8 +13,9 @@ changes.
 
 ## Context
 
-To date, `EditableText` has used multiple mechanisms ensuring the selection
-extent or caret is scrolled into view on updates. 
+Previously, upon scrolling into view to show user updates, `EditableText`
+used multiple mechanisms to determine the extent of the selection or the
+caret location.
 
 ## Description of change
 
