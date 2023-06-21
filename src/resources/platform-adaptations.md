@@ -743,8 +743,8 @@ Scaffold(
 
 Since Android 12, the default UI of text fields follows the design 
 guidelines defined in [Material 3][m3-text-field] (M3). 
-On iOS, an equivalent component is defined in 
-[Human Interface Guidelines][hig-text-field] (HIG). 
+On iOS, Apple's [Human Interface Guidelines][hig-text-field] (HIG) define
+an equivalent component. 
 
 <div class="container">
   <div class="row">
@@ -772,8 +772,8 @@ On iOS, an equivalent component is defined in
 Since text fields require user input,  
 their design should follow platform conventions. 
 
-One way to implement a platform-specific `TextField` 
-in Flutter is to adapt the styling of the 
+To implement a platform-specific `TextField` 
+in Flutter, you can adapt the styling of the 
 Material `TextField`.
 
 ```dart
