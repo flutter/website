@@ -24,7 +24,7 @@ diff2html: true
 
 The core of Flutter's layout mechanism is widgets. In Flutter, almost
 everything is a widget&mdash;even layout models are widgets.
-The images, icons, and text that you see in a Flutter app  are all widgets.
+The images, icons, and text that you see in a Flutter app are all widgets.
 But things you don't see are also widgets, such as the rows, columns,
 and grids that arrange, constrain, and align the visible widgets.
 

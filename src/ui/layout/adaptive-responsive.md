@@ -8,7 +8,7 @@ One of Flutter's primary goals is to create a framework
 that allows you to develop apps from a single codebase
 that look and feel great on any platform.
 
-This means that your app may appear on screens of
+This means that your app might appear on screens of
 many different sizes, from a watch, to a foldable
 phone with two screens, to a high def monitor.
 
@@ -66,7 +66,7 @@ apps with responsive design:
   device's height, the aspect ratio, or some other property.
   When the constraints change (for example,
   the user rotates the phone, or puts your app into a tile UI
-  in Nougat), the build function runs.
+  on Android), the build function runs.
 
 **Use the [`MediaQuery.of()`][] method in your build functions**
 : This gives you the size, orientation, etc, of your current app.
