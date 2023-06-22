@@ -33,6 +33,6 @@ your code only or in all code - [#4010](https://github.com/flutter/devtools/pull
 ## Flutter Inspector Updates
 * Add support for displaying flex values larger than 5 in the Layout Explorer - [#4055](https://github.com/flutter/devtools/pull/4055)
 
-## Changelog
-More details about changes and fixes are available in our
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

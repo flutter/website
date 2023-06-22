@@ -34,7 +34,7 @@ for Dart and Flutter
   (thanks to @netos23) -
   [#4509](https://github.com/flutter/devtools/pull/4509) 
 
-## Changelog
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).
 
-More details about changes and fixes are available in the DevTools
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
