@@ -27,14 +27,11 @@ This recipe uses the following steps:
 The [`http`][] package provides the
 simplest way to fetch data from the internet.
 
-To install the `http` package, add it to the
-dependencies section of the `pubspec.yaml` file.
-You can find the latest version of the
-[`http` package][] the pub.dev.
+To add the `http` package as a dependency,
+run `flutter pub add`:
 
-```yaml
-dependencies:
-  http: <latest_version>
+```terminal
+$ flutter pub add http
 ```
 
 Import the http package.
@@ -352,5 +349,5 @@ class _MyAppState extends State<MyApp> {
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
-[JSON and serialization]: {{site.url}}/development/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

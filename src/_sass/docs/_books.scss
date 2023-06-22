@@ -9,12 +9,5 @@
       @include media-breakpoint-up(sm) { margin-top: 0; }
       margin-bottom: 0;
     }
-    .authors {
-      color: $site-color-body; // TODO: drop once heading class styles (like .h4) are fixed.
-    }
   }
-}
-
-.help-instruction {
-  z-index: 1;
 }

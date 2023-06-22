@@ -2,7 +2,7 @@ name: basic_hero_transition
 description: Shows how to create a simple or Hero animation using the Hero class directly.
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: ^3.0.3
 
 dependencies:
   flutter:

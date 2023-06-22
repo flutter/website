@@ -195,7 +195,7 @@ Widget build(BuildContext context) {
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 20, right: 30),
         ),
         onPressed: () {},
         child: const Text('Hello'),
@@ -373,7 +373,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
         child: FadeTransition(
           opacity: curve,
           child: const FlutterLogo(
-            size: 100.0,
+            size: 100,
           ),
         ),
       ),
@@ -396,14 +396,16 @@ and the [Animations overview][].
 
 ### How do I use a Canvas to draw/paint?
 
-In Android, you would use the `Canvas` and `Drawable` to draw images and shapes
-to the screen. Flutter has a similar `Canvas` API as well, since it is based
-on the same low-level rendering engine, Skia. As a result, painting to a
-canvas in Flutter is a very familiar task for Android developers.
+In Android, you would use the `Canvas` and `Drawable`
+to draw images and shapes to the screen.
+Flutter has a similar `Canvas` API as well,
+since it's based on the same low-level rendering engine, Skia.
+As a result, painting to a canvas in Flutter
+is a very familiar task for Android developers.
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
-and `CustomPainter`, the latter of which implements your algorithm to draw to
-the canvas.
+and `CustomPainter`,
+the latter of which implements your algorithm to draw to the canvas.
 
 To learn how to implement a signature painter in Flutter,
 see Collin's answer on [Custom Paint][].
@@ -458,7 +460,7 @@ class SignaturePainter extends CustomPainter {
     var paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -471,6 +473,8 @@ class SignaturePainter extends CustomPainter {
       oldDelegate.points != points;
 }
 ```
+
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 ### How do I build custom widgets?
 
@@ -843,7 +847,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1044,7 +1048,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1107,7 +1111,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 ```yaml
 dependencies:
   ...
-  http: ^0.11.3+16
+  http: ^1.0.0
 ```
 
 To make a network call, call `await` on the `async` function `http.get()`:
@@ -1215,7 +1219,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1239,11 +1243,12 @@ Flutter apps have only assets. All resources that would live
 in the `res/drawable-*` folders on Android,
 are placed in an assets folder for Flutter.
 
-Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
-`2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
-are logical pixels, which are basically the same as device-independent pixels.
-The so-called [`devicePixelRatio`][]
-expresses the ratio of physical pixels in a single logical pixel.
+Flutter follows a simple density-based format like iOS.
+Assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
+Flutter doesn't have `dp`s but there are logical pixels,
+which are basically the same as device-independent pixels.
+Flutter's [`devicePixelRatio`][] expresses the ratio
+of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
 
@@ -1256,23 +1261,19 @@ The equivalent to Android's density buckets are:
  `xxhdpi` | `3.0x`
  `xxxhdpi` | `4.0x`
 
-Assets are located in any arbitrary folder&mdash;Flutter has no
-predefined folder structure. You declare the assets (with location) in
+Assets are located in any arbitrary folder&mdash;Flutter
+has no predefined folder structure.
+You declare the assets (with location) in
 the `pubspec.yaml` file, and Flutter picks them up.
 
-Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
-accessible from the native side, and vice versa, native assets and resources
-weren’t available to Flutter, as they lived in separate folders.
-
-As of Flutter beta 2, assets are stored in the native asset folder,
-and are accessed on the native side using Android's `AssetManager`:
+Assets stored in the native asset folder are
+accessed on the native side using Android's `AssetManager`:
 
 ```kotlin
 val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_asset.png")
 ```
 
-As of Flutter beta 2, Flutter still cannot access native resources,
-nor it can access native assets.
+Flutter can't access native resources or assets.
 
 To add a new image asset called `my_icon.png` to our Flutter project,
 for example, and deciding that it should live in a folder we
@@ -1479,9 +1480,9 @@ children.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Row(
+  return const Row(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: const <Widget>[
+    children: <Widget>[
       Text('Row One'),
       Text('Row Two'),
       Text('Row Three'),
@@ -1495,9 +1496,9 @@ Widget build(BuildContext context) {
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Column(
+  return const Column(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: const <Widget>[
+    children: <Widget>[
       Text('Column One'),
       Text('Column Two'),
       Text('Column Three'),
@@ -1598,7 +1599,7 @@ In Flutter there are two ways of adding touch listeners:
               developer.log('tap');
             },
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1697,7 +1698,7 @@ class _SampleAppState extends State<SampleApp>
           child: RotationTransition(
             turns: curve,
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1767,7 +1768,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ));
     }
@@ -1834,7 +1835,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
             developer.log('row tapped');
           },
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10),
             child: Text('Row $i'),
           ),
         ),
@@ -1924,7 +1925,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -2005,7 +2006,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -2371,19 +2372,18 @@ For more information on using the Firebase Cloud Messaging API,
 see the [`firebase_messaging`][] plugin documentation.
 
 
-[Add Flutter to existing app]: {{site.url}}/development/add-to-app
-[Animation & Motion widgets]: {{site.url}}/development/ui/widgets/animation
-[Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
-[Animations overview]: {{site.url}}/development/ui/animations
+[Add Flutter to existing app]: {{site.url}}/add-to-app
+[Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
+[Animations tutorial]: {{site.url}}/ui/animations/tutorial
+[Animations overview]: {{site.url}}/ui/animations
 [`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: {{site.url}}/resources/architectural-overview#composition
-[Cupertino widgets]: {{site.url}}/development/ui/widgets/cupertino
-[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
-[developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
+[Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
+[developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
-[DevTools]: {{site.url}}/development/tools/devtools
+[DevTools]: {{site.url}}/tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
 [`firebase_admob`]: {{site.pub}}/packages/firebase_admob
@@ -2405,12 +2405,12 @@ see the [`firebase_messaging`][] plugin documentation.
 [intl package]: {{site.pub}}/packages/intl
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
 [Material Components]: {{site.material}}/develop/flutter
-[Material Design guidelines]: {{site.material}}/design
-[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[Material Design guidelines]: {{site.material}}/styles
+[optimized for all platforms]: {{site.material}}/develop
 [a plugin]: {{site.pub}}/packages/android_intent
 [pub.dev]: {{site.pub}}/flutter/packages/
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
 [Shared_Preferences plugin]: {{site.pub}}/packages/shared_preferences
 [SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
-[widget catalog]: {{site.url}}/development/ui/widgets/layout
+[widget catalog]: {{site.url}}/ui/widgets/layout

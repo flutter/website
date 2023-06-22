@@ -1,6 +1,8 @@
 ---
 title: Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips
-description: Deprecated useDeleteButtonTooltip of chips that have a delete button in favor of deleteButtonTooltipMessage.
+description: >
+  Deprecated useDeleteButtonTooltip of chips that have
+  a delete button in favor of deleteButtonTooltipMessage.
 ---
 
 ## Summary
@@ -25,7 +27,7 @@ property disables the tooltip.
 To avoid redundancy of the API, this change deprecated `useDeleteButtonTooltip`,
 which was introduced for this exact functionality. A [Flutter fix][] is
 available to help you migrate existing code from `useDeleteButtonTooltip` to
-`deleteButtonTooltipMessage`, if you explicity disabled the tooltip.
+`deleteButtonTooltipMessage`, if you explicitly disabled the tooltip.
 
 ## Migration guide
 
@@ -79,7 +81,7 @@ API documentation:
 * [`InputChip`][]
 * [`RawChip`][]
 
-Relevant PRs:
+Relevant PR:
 
 * [Deprecate `useDeleteButtonTooltip` for Chips][]
 
@@ -88,4 +90,4 @@ Relevant PRs:
 [`RawChip`]: {{site.api}}/flutter/material/RawChip-class.html
 
 [Deprecate `useDeleteButtonTooltip` for Chips]: {{site.repo.flutter}}/pull/96174
-[Flutter fix]: {{site.url}}/development/tools/flutter-fix
+[Flutter fix]: {{site.url}}/tools/flutter-fix

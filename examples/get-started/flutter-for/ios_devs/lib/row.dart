@@ -21,17 +21,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child:
             // #docregion row
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(CupertinoIcons.globe),
-              Text('Hello, world!'),
-            ],
-          ),
+            Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(CupertinoIcons.globe),
+            Text('Hello, world!'),
+          ],
+        ),
         // #enddocregion row
       ),
     );

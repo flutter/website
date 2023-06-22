@@ -9,7 +9,7 @@
 
     <br>
     For other release channels, and older builds,
-    see the [SDK releases][] page.
+    check out the [SDK archive][].
 
     <div class="apple-silicon">{{site.alert.tip}}
       To determine whether your Mac uses an Apple silicon processor, refer to [Mac computers with Apple silicon]{:target="_blank"} on apple.com
@@ -110,9 +110,9 @@ For additional download options, see `flutter help precache`.
 
 [Flutter repo]: {{site.repo.flutter}}
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[SDK releases]: {{site.url}}/development/tools/sdk/releases
+[SDK archive]: {{site.url}}/release/archive
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
-[Upgrading Flutter]: {{site.url}}/development/tools/sdk/upgrading
+[Upgrading Flutter]: {{site.url}}/release/upgrade
 [Mac computers with Apple silicon]: https://support.apple.com/en-us/HT211814

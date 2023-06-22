@@ -5,27 +5,32 @@ description: The default BorderRadius of Dialog widgets is changing.
 
 ## Summary
 
-Instances of `Dialog`, as well as `SimpleDialog`, `AlertDialog`, and `showTimePicker`,
-now have a default shape of a `RoundedRectangleBorder` with a `BorderRadius` of 4.0 pixels.
+Instances of `Dialog`, as well as
+`SimpleDialog`, `AlertDialog`, and `showTimePicker`,
+now have a default shape of a `RoundedRectangleBorder`
+with a `BorderRadius` of 4.0 pixels.
 This matches the current specifications of Material Design.
 Prior to this change, the default behavior for
 `Dialog.shape`'s `BorderRadius` was 2.0 pixels.
 
 ## Context
 
-`Dialog`s and their associated subclasses (`SimpleDialog`, `AlertDialog`, and
-`showTimePicker`), appears slightly different as the border radius is larger. if you
-have master golden file images that have the prior rendering of the `Dialog` with a
-2.0 pixel border radius, your widget tests will fail. These golden file images can
-be updated to reflect the new rendering, or you can update your code to maintain the
-original behavior.
+`Dialog`s and their associated subclasses
+(`SimpleDialog`, `AlertDialog`, and `showTimePicker`), appears
+slightly different as the border radius is larger.
+If you have master golden file images that have the
+prior rendering of the `Dialog` with a 2.0 pixel border radius,
+your widget tests will fail.
+These golden file images can be updated to reflect the new rendering,
+or you can update your code to maintain the original behavior.
 
-The `showDatePicker` dialog already matched this specification and is unaffected by this change.
+The `showDatePicker` dialog already matched
+this specification and is unaffected by this change.
 
 ## Migration guide
 
-If you would prefer to maintain the old shape, you can use the shape property of your
-`Dialog` to specify the original 2.0 pixel radius.
+If you prefer to maintain the old shape, you can use
+the shape property of your `Dialog` to specify the original 2 pixel radius.
 
 Setting the Dialog shape to the original radius:
 
@@ -46,7 +51,7 @@ class Foo extends StatelessWidget {
               return AlertDialog(
                 content: Text('Alert!'),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2.0))),
+                    borderRadius: BorderRadius.all(Radius.circular(2))),
               );
             },
           );
@@ -60,7 +65,7 @@ class Foo extends StatelessWidget {
 If you prefer the new behavior and have failing golden file tests,
 you can update your master golden files using this command:
 
-```bash
+```terminal
 flutter test --update-goldens
 ```
 
@@ -72,14 +77,15 @@ In stable release: 1.20
 ## References
 
 API documentation:
+
 * [`Dialog`][]
 * [`SimpleDialog`][]
 * [`AlertDialog`][]
 * [`showTimePicker`][]
 * [`showDatePicker`][]
 
-
 Relevant PR:
+
 * [PR 58829: Matching Material Spec for Dialog shape][]
 
 [`Dialog`]: {{site.api}}/flutter/material/Dialog-class.html

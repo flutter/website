@@ -1,1 +1,20 @@
-* @sfshaza2 @khanhnwin @domesticmouse @johnpryan @atsansone @parlough
+# Default Codeowners
+*  @atsansone @parlough @sfshaza2
+
+# Covers all web content
+/src/       @sfshaza2 @atsansone @parlough
+
+# Covers Jekyll plugins
+/src/_plugins/ @khanhnwin @parlough @sfshaza2 @atsansone
+
+# Covers website styles
+/src/_sass/ @khanhnwin @parlough @sfshaza2 @atsansone
+
+# Covers website tooling
+/tool/      @atsansone @parlough @khanhnwin
+
+# Covers examples in files
+/examples/  @domesticmouse @johnpryan @khanhnwin @parlough
+
+# Covers all configuration files for the website
+/*          @atsansone @parlough @sfshaza2 @khanhnwin

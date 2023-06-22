@@ -1,47 +1,3 @@
-$dash-dartpad-border: lightgray;
-$dash-callout: #121a26;
-$dash-off-white: #f8f9fa;
-$site-color-card-link: #40C4FF;
-
-.dash-dartpad {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: $site-color-white;
-
-  h2 {
-    font-size: 43px;
-    margin: 1.5em 0 0.5em 0;
-    line-height: 1.2;
-    color: $site-color-black;
-  }
-
-  h3 {
-    color: $site-color-black;
-  }
-
-  select {
-    margin: 8px 0 8px 0;
-  }
-
-  a {
-    color: $site-color-primary;
-  }
-
-  #dartpad-host {
-    height: 512px;
-    width: 100%;
-    max-width: 896px;
-    display: flex;
-
-    iframe {
-      flex: 1;
-      border: 1px solid $dash-dartpad-border;
-    }
-  }
-}
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -105,6 +61,48 @@ dd {
     height: 100%;
     width: 100%;
   }
+}
+
+.card-title-material-3 {
+  color: $site-color-body;
+}
+
+.card-image-holder-material-3 {
+  align-items: center;
+  z-index: -1;
+  background-size: 0%;
+  opacity: .999;
+  background-color: var(--bg-color, white);
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    z-index: 1;
+  }
+}
+
+.card-image-material-3-hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: .25s ease;
+  z-index: -1;
+
+ img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+   z-index: -1;
+
+   }
+}
+
+.card-image-holder-material-3:hover .card-image-material-3-hover {
+  opacity: 1;
 }
 
 .happy-paths-image-holder {
@@ -236,5 +234,12 @@ blockquote {
 
   p {
     margin-bottom: 0;
+  }
+}
+
+.table-centered-after-first {
+  // Text aligns all elements in a table besides the first column to the center
+  th:not(:first-child), td:not(:first-child) {
+    text-align: center;
   }
 }

@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 
 const owlUrl =
-    'https://raw.githubusercontent.com/flutter/website/main/src/images/owl.jpg';
+    'https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/owl.jpg';
 
 class FadeInDemo extends StatefulWidget {
   const FadeInDemo({super.key});
@@ -30,8 +30,8 @@ class _FadeInDemoState extends State<FadeInDemo> {
       AnimatedOpacity(
         duration: const Duration(seconds: 2),
         opacity: opacity,
-        child: Column(
-          children: const [
+        child: const Column(
+          children: [
             Text('Type: Owl'),
             Text('Age: 39'),
             Text('Employment: None'),

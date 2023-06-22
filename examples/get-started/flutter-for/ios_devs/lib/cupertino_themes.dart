@@ -40,14 +40,14 @@ class HomePage extends StatelessWidget {
         child:
             // #docregion StylingTextExample
             Text(
-              'Hello, world!',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: CupertinoColors.systemYellow,
-              ),
-            ),
-            // #enddocregion StylingTextExample
+          'Hello, world!',
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: CupertinoColors.systemYellow,
+          ),
+        ),
+        // #enddocregion StylingTextExample
       ),
     );
   }

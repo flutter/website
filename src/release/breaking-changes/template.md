@@ -1,6 +1,8 @@
 ---
 title: Replace with title of breaking change
-description: Brief description similar to the "context" section below. The description shouldn't have any linebreaks - let it go long and wrap. Text below should break at 80 chars or less.
+description: >
+  Brief description similar to the "context" section below. 
+  Text should break at 80 chars or less.
 ---
 
 {% comment %}
@@ -66,7 +68,7 @@ description: Brief description similar to the "context" section below. The descr
   error messages).
 {% endcomment %}
 
-## Context
+## Background
 
 {% comment %}
   High-level description of what API changed and why.
@@ -76,18 +78,14 @@ description: Brief description similar to the "context" section below. The descr
   This section should also answer the question
   "what is the problem that led to considering making
   a breaking change?"
-{% endcomment %}
 
-## Description of change
+  Include a technical description of the actual change,
+  with code samples showing how the API changed.
 
-{% comment %}
-A technical description of the actual change,
-with code samples showing how the API changed.
-
-Include examples of the error messages that are produced
-in code that has not been migrated. This helps the search
-engine find the migration guide when people search for those
-error messages.
+  Include examples of the error messages that are produced
+  in code that has not been migrated. This helps the search
+  engine find the migration guide when people search for those
+  error messages. THIS IS VERY IMPORTANT FOR DISCOVERY!
 {% endcomment %}
 
 ## Migration guide
@@ -113,6 +111,13 @@ Code after migration:
 ```dart
 // Example of code after the change.
 ```
+
+{% comment %}
+  Make sure you have looked for old tutorials online that
+  use the old API. Contact their authors and point out how
+  they should be updated. Leave a comment pointing out that
+  the API has changed and linking to this guide.
+{% endcomment %}
 
 ## Timeline
 
@@ -141,7 +146,8 @@ Reverted in version: xxx  (OPTIONAL, delete if not used)
   cause the GitHubActions (GHA) linkcheck to fail.
   Remove the comment tags once you fill this in with
   real links. Only use the "master-api" include if
-  you link to "master-api.flutter.dev".
+  you link to "master-api.flutter.dev"; prefer our
+  stable documentation if possible.
 
 {% include docs/master-api.md %}
 

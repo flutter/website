@@ -1,6 +1,11 @@
 ---
 title: Using HTML slots to render platform views in the web
-description: iframes in Flutter web used to reload, because of the way some DOM operations were made. A change in the way Flutter web apps render platform views makes them stable (preventing iframe reloads, and other problems with video tags or forms potentially losing their state).
+description: >
+  iframes in Flutter web used to reload, because of
+  the way some DOM operations were made.
+  A change in the way Flutter web apps render platform views
+  makes them stable (preventing iframe reloads, and other problems
+  with video tags or forms potentially losing their state).
 ---
 
 ## Summary
@@ -140,7 +145,7 @@ ui.platformViewRegistry.registerViewFactory(viewType, (int viewId) {
 });
 ```
 
-If other techniques are used to layout the platform view (like `inset: 0`) a
+If other techniques are used to lay out the platform view (like `inset: 0`) a
 value of `auto` for `width` and `height` is enough to stop the warning.
 
 Read more about [`CSS width`][] and [`CSS height`][].

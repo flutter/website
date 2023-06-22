@@ -16,8 +16,8 @@ you need the following in addition to the Flutter SDK:
   **Visual Studio** is different than Visual Studio _Code_.
 {{site.alert.end}}
 
-For more information, see [Desktop support for Flutter][]
+For more information, see [Building Windows apps][].
 
-[Desktop support for Flutter]: {{site.url}}/desktop
+[Building Windows apps]: {{site.url}}/platform-integration/windows/building
 [Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
 [Visual Studio Build Tools 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022

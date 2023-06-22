@@ -35,6 +35,10 @@
 
   .container {
     max-width: $site-content-max-width;
+
+    img {
+      max-width: 100%;
+    }
   }
 
   @include media-breakpoint-up(md) {

@@ -17,7 +17,8 @@ $ sudo snap install flutter --classic
 ```
 
 {{site.alert.note}}
-  Once the snap is installed, you can use the following command to display your Flutter SDK path:
+  Once you install the snap,
+  use the following command to display your Flutter SDK path:
 
   ```terminal
   $ flutter sdk-path
@@ -35,7 +36,7 @@ install Flutter using the following steps.
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds,
-    see the [SDK releases][] page.
+    check out the [SDK archive][].
 
  1. Extract the file in the desired location, for example:
 
@@ -51,22 +52,6 @@ install Flutter using the following steps.
     ```terminal
     $ cd ~/development
     $ tar xf ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.tar.xz
-    ```
-    
-    If you don't want to install a fixed version of the installation bundle, 
-    you can skip steps 1 and 2. 
-    Instead, get the source code from the [Flutter repo][]
-    on GitHub with the following command:
-    
-    ```terminal
-    $ git clone https://github.com/flutter/flutter.git
-    ```
-    
-    You can also change branches or tags as needed.
-    For example, to get just the stable version:
-    
-    ```terminal
-    $ git clone https://github.com/flutter/flutter.git -b stable
     ```
     
  1. Add the `flutter` tool to your path:
@@ -137,6 +122,6 @@ command again to verify that you’ve set everything up correctly.
 [Flutter repo]: {{site.repo.flutter}}
 [install Flutter using the Snap Store]: https://snapcraft.io/flutter
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[SDK releases]: {{site.url}}/development/tools/sdk/releases
+[SDK archive]: {{site.url}}/release/archive
 [Update your path]: #update-your-path
-[Upgrading Flutter]: {{site.url}}/development/tools/sdk/upgrading
+[Upgrading Flutter]: {{site.url}}/release/upgrade

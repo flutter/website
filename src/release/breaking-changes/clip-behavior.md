@@ -1,6 +1,7 @@
 ---
 title: Clip Behavior
-description: Flutter unifies clipBehavior and defaults to not clip in most cases.
+description: >
+  Flutter unifies clipBehavior and defaults to not clip in most cases.
 ---
 
 ## Summary
@@ -33,7 +34,6 @@ axis-aligned rectangle clip) to avoid the bleeding edge artifacts
 as described in [Issue 18057][]. Such behaviors were universal to
 material apps through widgets like `Card`, `Chip`, `Button`, and so on,
 which resulted in `PhysicalShape` and `PhysicalModel` clipping their content.
-
 
 A `saveLayer` call is especially expensive in older devices because
 it creates an offscreen render target, and a render target switch
@@ -110,8 +110,8 @@ Code before migration:
             overflow: Overflow.visible,
             children: const <Widget>[
               SizedBox(
-                width: 100.0,
-                height: 100.0,
+                width: 100,
+                height: 100,
               ),
             ],
           ),
@@ -149,9 +149,11 @@ In stable release: 2.0.0
 ## References
 
 API documentation:
+
 * [`Clip`][]
 
 Relevant issues:
+
 * [Issue 13736][]
 * [Issue 18057][]
 * [Issue 21830][]
@@ -196,4 +198,3 @@ Relevant PRs:
 [Issue 13736]: {{site.repo.flutter}}/issues/13736
 [Issue 18057]: {{site.repo.flutter}}/issues/18057
 [Issue 21830]: {{site.repo.flutter}}/issues/21830
-[Issue 18057]: {{site.repo.flutter}}/issues/18057

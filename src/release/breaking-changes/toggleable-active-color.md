@@ -1,6 +1,8 @@
 ---
 title: ThemeData's toggleableActiveColor property has been deprecated
-description: Material Widgets that use toggleableActiveColor property are migrated to use Material ColorScheme.
+description: >
+  Material Widgets that use toggleableActiveColor property
+  are migrated to use Material ColorScheme.
 ---
 
 ## Summary
@@ -24,10 +26,11 @@ active/selected state now use `ColorScheme.secondary`.
 
 ## Migration guide
 
-Toggleable widgets' active/selected color can generally be customized in 3 ways
+Toggleable widgets' active/selected color can generally be customized in 3 ways:
+
 1. Using ThemeData's `ColorScheme.secondary`.
-2. Using components themes `SwitchThemeData`, `ListTileThemeData`, `CheckboxThemeData`,
-and `RadioThemeData`.
+2. Using components themes `SwitchThemeData`, `ListTileThemeData`,
+   `CheckboxThemeData`, and `RadioThemeData`.
 3. By customizing the widget's color properties.
 
 Code before migration:
@@ -115,10 +118,7 @@ Relevant PRs:
 
 * [Deprecate `toggleableActiveColor`][].
 
-<!-- Stable channel link: -->
 [`ThemeData.toggleableActiveColor`]: {{site.api}}/flutter/material/ThemeData/toggleableActiveColor.html
 [`ColorScheme.secondary`]: {{site.api}}/flutter/material/ColorScheme/secondary.html
-
 [`Switch` widget color doesn't use `ColorScheme`]: {{site.repo.flutter}}/issues/93709
-
 [Deprecate `toggleableActiveColor`]: {{site.repo.flutter}}/pull/97972

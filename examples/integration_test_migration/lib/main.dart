@@ -166,7 +166,7 @@ class DetailPlant extends StatelessWidget {
       fontSize: 20,
     );
     return Padding(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(32),
       child: Column(
         children: [
           Row(

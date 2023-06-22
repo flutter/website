@@ -11,15 +11,55 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
   setupClipboardJS();
 
-  // New (dash) tabs
+  setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', _getOSForArchive);
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
-  // Old tabs
-  setupToolsTabs($('#tab-set-install'), 'tab-install-', 'io.flutter.tool-id');
-  setupToolsTabs($('#tab-set-os'), 'tab-os-', null, getOS());
 
   prettyPrint();
 });
+
+function _getOSForArchive() {
+  const os = getOS();
+  // The archive doesn't have chromeos, fall back to linux.
+  if (os === 'chromeos') {
+    return 'linux';
+  }
+
+  return os;
+}
+
+/**
+ * Get the user's current operating system, or
+ * `null` if not of one "macos", "windows", "linux", or "chromeos".
+ *
+ * @returns {'macos'|'linux'|'windows'|'chromeos'|null}
+ */
+function getOS() {
+  const userAgent = window.navigator.userAgent;
+  if (userAgent.indexOf('Mac') !== -1) {
+    // macOS or iPhone
+    return 'macos';
+  }
+
+  if (userAgent.indexOf('Win')) {
+    // Windows
+    return 'windows';
+  }
+
+  if ((userAgent.indexOf('Linux') !== -1 || userAgent.indexOf("X11") !== -1)
+      && userAgent.indexOf('Android') !== -1) {
+    // Linux, but not Android
+    return 'linux';
+  }
+
+  if (userAgent.indexOf('CrOS') !== -1) {
+    // ChromeOS
+    return 'chromeos';
+  }
+
+  // Anything else
+  return null;
+}
 
 function scrollSidebarIntoView() {
   const fixedSidebar = document.querySelector('.site-sidebar--fixed');
@@ -95,18 +135,9 @@ function initFixedColumns() {
 
     // listen for scroll and execute once
     $(window).scroll(adjustFixedColumns);
+    $(window).resize(adjustFixedColumns);
     adjustFixedColumns();
   }
-}
-
-function getOS() {
-  var ua = navigator.userAgent;
-  if (ua.indexOf("Win") !== -1)
-    return "windows";
-  if (ua.indexOf("Mac") !== -1)
-    return "macos";
-  if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1)
-    return "linux";
 }
 
 function initVideoModal() {
@@ -170,7 +201,7 @@ function setupClipboardJS() {
     text: function (trigger) {
       var targetId = trigger.getAttribute('data-clipboard-target');
       var target = document.querySelector(targetId);
-      var terminalRegExp = /^(\$\s*)|(C:\\(.*)>\s*)/gm;
+      var terminalRegExp = /^(\s*\$\s*)|(C:\\(.*)>\s*)/gm;
       var copy = target.textContent.replace(terminalRegExp, '');
       return copy;
     }

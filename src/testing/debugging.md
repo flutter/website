@@ -22,6 +22,11 @@ Flutter applications. Here are some of the available tools:
   representation of the widget tree, inspect
   individual widgets and their property values,
   enable the performance overlay, and more.
+* If you are looking for a way to use GDB to remotely debug the
+  Flutter engine running within an Android app process,
+  check out [`flutter_gdb`][].
+
+[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
 
 ## DevTools
 
@@ -123,8 +128,8 @@ When an invariant is violated, it's reported to the
 console, with some context information to help track
 down the source of the problem.
 
-For more information, see [`Assert`][] in the
-[Dart language tour][].
+For more information, check out [Assert][] in the
+[Dart language documentation][].
 
 ## Debugging animations
 
@@ -307,24 +312,24 @@ You might find the following docs useful:
 [Using the Dart analyzer]: {{site.repo.flutter}}/wiki/Using-the-Dart-analyzer
 [The Framework architecture]: {{site.repo.flutter}}/wiki/The-Framework-architecture
 
-[Android Studio/IntelliJ]: {{site.url}}/development/tools/android-studio#run-app-with-breakpoints
-[VS Code]: {{site.url}}/development/tools/vs-code#run-app-with-breakpoints
-[DevTools]: {{site.url}}/development/tools/devtools
-[Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
-[DevTools debugger]: {{site.url}}/development/tools/devtools/debugger
-[logging view]: {{site.url}}/development/tools/devtools/logging
-[Timeline view]: {{site.url}}/development/tools/devtools/performance
+[Android Studio/IntelliJ]: {{site.url}}/tools/android-studio#run-app-with-breakpoints
+[VS Code]: {{site.url}}/tools/vs-code#run-app-with-breakpoints
+[DevTools]: {{site.url}}/tools/devtools
+[Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[DevTools debugger]: {{site.url}}/tools/devtools/debugger
+[logging view]: {{site.url}}/tools/devtools/logging
+[Timeline view]: {{site.url}}/tools/devtools/performance
 [The performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [overlay]: {{site.url}}/testing/code-debugging#performance-overlay
 [debug mode]: {{site.url}}/testing/build-modes#debug
 [profile mode]: {{site.url}}/testing/build-modes#profile
 [release mode]: {{site.url}}/testing/build-modes#release
-[how the Widget Inspector uses widget creation tracking]: {{site.url}}/development/tools/devtools/inspector#track-widget-creation
+[how the Widget Inspector uses widget creation tracking]: {{site.url}}/tools/devtools/inspector#track-widget-creation
 
-[`Assert`]: {{site.dart-site}}/guides/language/language-tour#assert
-[Dart language tour]: {{site.dart-site}}/guides/language/language-tour
+[Assert]: {{site.dart-site}}/language/control-flow#assert
+[Dart language documentation]: {{site.dart-site}}/language
 
 [WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
 [widget_inspector.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
-[kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/master/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart
+[kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/main/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart

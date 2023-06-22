@@ -281,7 +281,7 @@ class _NnMaterialLocalizationsDelegate
       NnMaterialLocalizations(
         localeName: localeName,
         // The `intl` library's NumberFormat class is generated from CLDR data
-        // (see https://github.com/dart-lang/intl/blob/master/lib/number_symbols_data.dart).
+        // (see https://github.com/dart-lang/i18n/blob/main/pkgs/intl/lib/number_symbols_data.dart).
         // Unfortunately, there is no way to use a locale that isn't defined in
         // this map and the only way to work around this is to use a listed
         // locale's NumberFormat symbols. So, here we use the number formats
@@ -753,4 +753,19 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get keyboardKeySpace => throw UnimplementedError();
+
+  @override
+  get scrimOnTapHintRaw => throw UnimplementedError();
+
+  @override
+  get bottomSheetLabel => throw UnimplementedError();
+
+  @override
+  get currentDateLabel => throw UnimplementedError();
+
+  @override
+  get keyboardKeyShift => throw UnimplementedError();
+
+  @override
+  get scrimLabel => throw UnimplementedError();
 }

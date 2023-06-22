@@ -67,8 +67,8 @@ class RadialExpansion extends StatelessWidget {
 class RadialExpansionDemo extends StatelessWidget {
   const RadialExpansionDemo({super.key});
 
-  static double kMinRadius = 32.0;
-  static double kMaxRadius = 128.0;
+  static double kMinRadius = 32;
+  static double kMaxRadius = 128;
   static Interval opacityCurve =
       const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
 
@@ -104,8 +104,8 @@ class RadialExpansionDemo extends StatelessWidget {
   Widget _buildHero(
       BuildContext context, String imageName, String description) {
     return SizedBox(
-      width: kMinRadius * 2.0,
-      height: kMinRadius * 2.0,
+      width: kMinRadius * 2,
+      height: kMinRadius * 2,
       child: Hero(
         createRectTween: _createRectTween,
         tag: imageName,
@@ -147,7 +147,7 @@ class RadialExpansionDemo extends StatelessWidget {
         title: const Text('Basic Radial Hero Animation Demo'),
       ),
       body: Container(
-        padding: const EdgeInsets.all(32.0),
+        padding: const EdgeInsets.all(32),
         alignment: FractionalOffset.bottomLeft,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

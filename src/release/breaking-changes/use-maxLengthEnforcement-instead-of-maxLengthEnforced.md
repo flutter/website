@@ -74,7 +74,7 @@ since this will be the behavior most familiar to the user._
   The native behavior of these platforms is enforced.
   The inputting value will be truncated whether
   the user is entering with composition or not.
-* iOS, MacOS: `MaxLengthEnforcement.truncateAfterCompositionEnds`.
+* iOS, macOS: `MaxLengthEnforcement.truncateAfterCompositionEnds`.
   These platforms do not have a "maximum length"
   feature and therefore require that developers implement
   the behavior themselves. No standard convention seems
@@ -111,7 +111,7 @@ Code before migration:
 TextField(maxLength: 6)
 ```
 
-or 
+or:
 
 ```dart
 TextField(
@@ -224,33 +224,30 @@ In stable release: 2.0.0
 ## References
 
 Design doc:
+
 * [`MaxLengthEnforcement` design doc][]
 
 API documentation:
+
 * [`MaxLengthEnforcement`][]
 * [`LengthLimitingTextInputFormatter`][]
 * [`maxLength`][]
 
 Relevant issues:
+
 * [Issue 63753][]
 * [Issue 67898][]
 
 Relevant PR:
+
 * [PR 63754][]: Fix TextField crashed with composing and maxLength set
 * [PR 68086][]: Introduce `MaxLengthEnforcement`
 
 [`MaxLengthEnforcement` design doc]: {{site.url}}/go/max-length-enforcement
-
 [`MaxLengthEnforcement`]: {{site.api}}/flutter/services/MaxLengthEnforcement-class.html
-
 [`LengthLimitingTextInputFormatter`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
-
 [`maxLength`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
-
 [Issue 63753]: {{site.repo.flutter}}/issues/63753
-
 [Issue 67898]: {{site.repo.flutter}}/issues/67898
-
 [PR 63754]: {{site.github}}//flutter/flutter/pull/63754
-
 [PR 68086]: {{site.repo.flutter}}/pull/68086

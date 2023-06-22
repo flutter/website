@@ -1,21 +1,41 @@
 ---
-title: Obfuscating Dart code
+title: Obfuscate Dart code
 description: How to remove function and class names from your Dart binary.
 ---
 
 <?code-excerpt path-base="deployment/obfuscate"?>
 
+## What is code obfuscation?
+
 [Code obfuscation][] is the process of modifying an
 app's binary to make it harder for humans to understand.
 Obfuscation hides function and class names in your
-compiled Dart code, making it difficult for an attacker
+compiled Dart code, replacing each symbol with
+another symbol, making it difficult for an attacker
 to reverse engineer your proprietary app.
 
 **Flutter's code obfuscation works
 only on a [release build][].**
 
+[Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
+[release build]: {{site.url}}/testing/build-modes#release
+
+## Limitations
+
+Note that obfuscating your code does _not_
+encrypt resources nor does it protect against
+reverse engineering.
+It only renames symbols with more obscure names.
+
+{{site.alert.info}}
+  It is a **poor security practice** to
+  store secrets in an app.
+{{site.alert.end}}
+
+## Supported targets
+
 The following build targets
-support the obfuscation process 
+support the obfuscation process
 described on this page:
 
 * `aar`
@@ -32,12 +52,15 @@ described on this page:
 {{site.alert.info}}
   Web apps don't support obfuscation.
   A web app can be [minified][], which provides a similar result.
-  When you build a release version of a Flutter web app, the
-  web compiler minifies the app. To learn more,
+  When you build a release version of a Flutter web app,
+  the web compiler minifies the app. To learn more,
   see [Build and release a web app][].
 {{site.alert.end}}
 
-## Obfuscating your app
+[Build and release a web app]: {{site.url}}/deployment/web
+[minified]: https://en.wikipedia.org/wiki/Minification_(programming)
+
+## Obfuscate your app
 
 To obfuscate your app, use the `flutter build` command
 in release mode
@@ -51,8 +74,8 @@ For example:
 $ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
 ```
 
-Once you've obfuscated your binary, save
-the symbols file. You need this if you later
+Once you've obfuscated your binary, **save
+the symbols file**. You need this if you later
 want to de-obfuscate a stack trace.
 
 {{site.alert.tip}}
@@ -60,6 +83,8 @@ want to de-obfuscate a stack trace.
   to extract Dart program symbols, reducing code size.
   To learn more about app size, see [Measuring your app's size][].
 {{site.alert.end}}
+
+[Measuring your app's size]: {{site.url}}/perf/app-size
 
 For detailed information on these flags, run
 the help command for your specific target, for example:
@@ -71,7 +96,7 @@ $ flutter build apk -h
 If these flags are not listed in the output,
 run `flutter --version` to check your version of Flutter.
 
-## Reading an obfuscated stack trace
+## Read an obfuscated stack trace
 
 To debug a stack trace created by an obfuscated app,
 use the following steps to make it human readable:
@@ -91,6 +116,25 @@ use the following steps to make it human readable:
    For more information on the `symbolize` command,
    run `flutter symbolize -h`.
 
+## Read an obfuscated name
+
+To make the name that an app obfuscated human readable,
+use the following steps:
+
+1. To save the name obfuscation map at app build time,
+   use `--extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>`.
+   For example:
+
+   ```terminal
+   $ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory> --extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>
+   ```
+
+1. To recover the name, use the generated obfuscation map.
+   The obfuscation map is a flat JSON array with pairs of
+   original names and obfuscated names. For example,
+   `["MaterialApp", "ex", "Scaffold", "ey"]`, where `ex`
+   is the obfuscated name of `MaterialApp`.
+
 ## Caveat
 
 Be aware of the following when coding an app that will
@@ -98,7 +142,7 @@ eventually be an obfuscated binary.
 
 * Code that relies on matching specific class, function,
   or library names will fail.
-  For example, the following call to `expect()` will not
+  For example, the following call to `expect()` won't
   work in an obfuscated binary:
 
 <?code-excerpt "lib/main.dart (Expect)"?>
@@ -106,9 +150,4 @@ eventually be an obfuscated binary.
 expect(foo.runtimeType.toString(), equals('Foo'));
 ```
 
-
-[Build and release a web app]: {{site.url}}/deployment/web
-[Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
-[Measuring your app's size]: {{site.url}}/perf/app-size
-[minified]: https://en.wikipedia.org/wiki/Minification_(programming)
-[release build]: {{site.url}}/testing/build-modes#release
+* Enum names are not obfuscated currently.

@@ -1,12 +1,14 @@
 ---
 title: GestureRecognizer cleanup
-description: OneSequenceGestureRecognizer subclasses should override `addAllowedPointer` to take a `PointerDownEvent`
+description: >
+  OneSequenceGestureRecognizer subclasses should
+  override `addAllowedPointer` to take a `PointerDownEvent`
 ---
 
 ## Summary
 
 `OneSequenceGestureRecognizer.addAllowedPointer()` was changed to take a
-`PointerDownEvent`, like it superclass. Previously, it accepted the more
+`PointerDownEvent`, like its superclass. Previously, it accepted the more
 general `PointerEvent` type, which was incorrect.
 
 ## Context
@@ -35,7 +37,7 @@ class CustomGestureRecognizer extends ScaleGestureRecognizer {
 The new method declaration will cause this code to fail with the following
 error message:
 
-```
+```nocode
 super.addAllowedPointer(event); The argument type 'PointerEvent' can't be assigned to the parameter type 'PointerDownEvent'.
                                 #argument_type_not_assignable
 
@@ -75,9 +77,11 @@ In stable release: 2.5
 ## References
 
 API documentation:
+
 * [`OneSequenceGestureRecognizer`][]
 
-Relevant PRs:
+Relevant PR:
+
 * [Fix addAllowedPointer() overrides][]
 
 [`OneSequenceGestureRecognizer`]: {{site.api}}/flutter/gestures/OneSequenceGestureRecognizer-class.html

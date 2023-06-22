@@ -80,7 +80,7 @@ class MyWidget extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+            padding: const EdgeInsets.only(left: 20, right: 30),
           ),
           onPressed: () {},
           child: const Text('Hello'),
@@ -97,9 +97,9 @@ class RowExample extends StatelessWidget {
   // #docregion Row
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         Text('Row One'),
         Text('Row Two'),
         Text('Row Three'),
@@ -116,9 +116,9 @@ class ColumnExample extends StatelessWidget {
   // #docregion Column
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         Text('Column One'),
         Text('Column Two'),
         Text('Column Three'),

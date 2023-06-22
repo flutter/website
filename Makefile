@@ -4,7 +4,7 @@
 
 all: gen-env up down debug shell setup serve emulate test debug-tests \
 		 stop-tests build-image build build-image-and-check-links debug-build \ 
-		 deploy stage clean reinstall purge
+		 deploy stage-channel stage-local clean reinstall purge
 
 .DEFAULT_GOAL := up
 .PHONY: all
@@ -146,7 +146,13 @@ build:
 # Usage: `make deploy`
 deploy:
 ifndef FIREBASE_TOKEN
-	firebase deploy -m ${BUILD_COMMIT} --only hosting
+    ifeq ("${FIREBASE_ALIAS}", "default")
+		firebase deploy -m ${BUILD_COMMIT} --only hosting
+    else
+		firebase deploy -m ${BUILD_COMMIT} \
+			--only hosting \
+			--project ${FIREBASE_ALIAS}
+    endif
 else
 	firebase use ${FIREBASE_ALIAS}
 	firebase deploy -m ${BUILD_COMMIT} \
@@ -159,11 +165,22 @@ endif
 
 # All in one command to stage your build to a Firebase 
 # channel on your currently selected project
-# Usage: `make stage STAGE_NAME=foo`
-stage:
+# Usage: `make stage-channel STAGE_NAME=foo`
+stage-channel:
 	make build BUILD_CONFIGS=_config.yml,_config_stage.yml
 	firebase hosting:channel:deploy ${STAGE_NAME} \
 		--project ${FIREBASE_ALIAS}
+
+# Utilizes the currently setup dev container or starts one.
+# Then builds your site, configured for firebase staging.
+# Then deploys to either the project configured with `firebase use`
+# or to a specific project specified through `FIREBASE_ALIAS`.
+# Usage: `make stage-local FIREBASE_ALIAS=sz-flutter-dev`
+stage-local:
+	make clean
+	docker-compose run --rm site bundle exec jekyll build \
+		--config _config.yml,_config_stage.yml
+	make deploy
 
 
 # =================== Utility Commands ==================

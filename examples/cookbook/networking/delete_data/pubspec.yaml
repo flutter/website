@@ -2,12 +2,12 @@ name: delete_data
 description: Delete Data
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: ^3.0.3
 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^0.13.3
+  http: ^1.0.0
 
 dev_dependencies:
   flutter_lints: ^2.0.1

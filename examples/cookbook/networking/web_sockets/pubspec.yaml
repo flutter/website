@@ -2,7 +2,7 @@ name: web_sockets
 description: Web Sockets
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: ^3.0.3
 
 dependencies:
   flutter:

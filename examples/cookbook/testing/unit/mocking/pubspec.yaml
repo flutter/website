@@ -2,14 +2,14 @@ name: mocking
 description: Use the Mockito package to mimic the behavior of services for testing.
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: ^3.0.3
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  http: ^0.13.0
+  http: ^1.0.0
 
 dev_dependencies:
   flutter_test:

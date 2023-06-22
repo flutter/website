@@ -710,12 +710,12 @@ class _ExampleIsTypingState extends State<ExampleIsTyping> {
         children: [
           Expanded(
             child: ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8),
               itemCount: 25,
               reverse: true,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(left: 100.0),
+                  padding: const EdgeInsets.only(left: 100),
                   child: FakeMessage(isBig: index.isOdd),
                 );
               },
@@ -1076,10 +1076,10 @@ class FakeMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
-      height: isBig ? 128.0 : 36.0,
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+      height: isBig ? 128 : 36,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
         color: Colors.grey.shade300,
       ),
     );
@@ -1087,5 +1087,5 @@ class FakeMessage extends StatelessWidget {
 }
 ```
 
-[explicit animation]: {{site.url}}/development/ui/animations#tween-animation
-[staggered animation]: {{site.url}}/development/ui/animations/staggered-animations
+[explicit animation]: {{site.url}}/ui/animations#tween-animation
+[staggered animation]: {{site.url}}/ui/animations/staggered-animations

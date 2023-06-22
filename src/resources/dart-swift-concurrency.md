@@ -1,6 +1,7 @@
 ---
 title: Flutter concurrency for Swift developers
-description: Leverage your Swift concurrency knowledge while learning Flutter and Dart
+description: >
+  Leverage your Swift concurrency knowledge while learning Flutter and Dart.
 ---
 
 <?code-excerpt path-base="resources"?>
@@ -44,6 +45,7 @@ features that the Dart language provides,
 such as `async`/`await`.
 
 ### Asynchronous Programming
+
 An asynchronous operation allows other operations 
 to execute before it completes. 
 Both Dart and Swift support asynchronous functions 
@@ -53,8 +55,8 @@ performs asynchronous work,
 and `await` tells the system to await a result 
 from function. This means that the Dart VM _could_ 
 suspend the function, if necessary. 
-For more details on asynchronous programming, 
-see [Concurrency in Dart]({{site.dart-site}}/guides/language/concurrency).
+For more details on asynchronous programming, check out
+[Concurrency in Dart]({{site.dart-site}}/guides/language/concurrency).
 
 ### Leveraging the main thread/isolate
 
@@ -171,7 +173,8 @@ enum Weather {
 Then, define a simple view model (similar to what was created in SwiftUI), 
 to fetch the weather. In Dart, a `Future` object represents a value to be
 provided in the future. A `Future` is similar to Swift's `ObservableObject`. 
-In this example, a function within the view model returns a `Future<Weather>` object:
+In this example, a function within the view model
+returns a `Future<Weather>` object:
 
 <?code-excerpt "lib/async_weather.dart (HomePageViewModel)"?>
 ```dart
@@ -238,11 +241,10 @@ class HomePage extends StatelessWidget {
 }
 ```
 
-{% comment %}
-Add the following text back when the example is available.
-For the complete example, see the [async_weather][] file on GitHub. 
-[async_weather]: {{site.github}}/flutter/website/tree/main/examples/resources/lib/async_weather.dart
-{% endcomment %}
+For the complete example, check out the
+[async_weather][] file on GitHub.
+
+[async_weather]: {{site.github}}/flutter/website/examples/resources/lib/async_weather.dart
 
 ### Leveraging a background thread/isolate
 
@@ -302,11 +304,11 @@ Map<String, dynamic> getNumberOfKeys(String jsonString) {
 }
 ```
 
-
 You can find more information on Dart at
-[Learning Dart as a Swift developer][], 
+[Learning Dart as a Swift developer][],
 and more information on Flutter at
-[Flutter for SwiftUI developers][] or [Flutter for UIKit developers][].
+[Flutter for SwiftUI developers][] or
+[Flutter for UIKit developers][].
 
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs

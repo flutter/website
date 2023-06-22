@@ -2,8 +2,8 @@
 title: Build a form with validation
 description: How to build a form that validates input.
 prev:
-  title: Work with tabs
-  path: /cookbook/design/tabs
+  title: Drag a UI element
+  path: /cookbook/effects/drag-a-widget
 next:
   title: Create and style a text field
   path: /cookbook/forms/text-input
@@ -70,7 +70,7 @@ class MyCustomFormState extends State<MyCustomForm> {
     // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: Column(
+      child: const Column(
         children: <Widget>[
           // Add TextFormFields and ElevatedButton here.
         ],
@@ -223,7 +223,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             },
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             child: ElevatedButton(
               onPressed: () {
                 // Validate returns true if the form is valid, or false otherwise.

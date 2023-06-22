@@ -218,7 +218,7 @@ Widget build(BuildContext context) {
     body: Center(
       child: CupertinoButton(
         onPressed: () {},
-        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+        padding: const EdgeInsets.only(left: 10, right: 10),
         child: const Text('Hello'),
       ),
     ),
@@ -395,7 +395,7 @@ class _MyFadeTest extends State<MyFadeTest>
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: const FlutterLogo(size: 100.0),
+          child: const FlutterLogo(size: 100),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -460,7 +460,7 @@ class SignatureState extends State<Signature> {
       },
       onPanEnd: (details) => _points.add(null),
       child:
-      CustomPaint(
+          CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
       ),
@@ -478,7 +478,7 @@ class SignaturePainter extends CustomPainter {
     final Paint paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -844,7 +844,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     final List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ));
     }
@@ -908,7 +908,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
             developer.log('row tapped');
           },
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10),
             child: Text('Row $i'),
           ),
         ),
@@ -1002,7 +1002,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -1074,7 +1074,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -1183,7 +1183,7 @@ In Flutter, there are two ways of adding touch listeners:
               developer.log('tap');
             },
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1302,7 +1302,7 @@ class _SampleAppState extends State<SampleApp>
           child: RotationTransition(
             turns: curve,
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1462,8 +1462,8 @@ Future<String> loadAsset() async {
 
 For images, Flutter follows a simple density-based format like iOS.
 Image assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
-The so-called [`devicePixelRatio`][]
-expresses the ratio of physical pixels in a single logical pixel.
+Flutter's [`devicePixelRatio`][] expresses the ratio
+of physical pixels in a single logical pixel.
 
 Assets are located in any arbitrary folder&mdash;
 Flutter has no predefined folder structure.
@@ -1545,7 +1545,7 @@ class _MyFormState extends State<MyForm> {
     return Scaffold(
       appBar: AppBar(title: const Text('Retrieve Text Input')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: TextField(controller: myController),
       ),
       floatingActionButton: FloatingActionButton(
@@ -1763,7 +1763,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1997,7 +1997,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${data[i]["title"]}"),
     );
   }
@@ -2025,7 +2025,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^0.13.4
+  http: ^1.0.0
 ```
 
 To make a network call,
@@ -2130,7 +2130,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${data[i]["title"]}"),
     );
   }
@@ -2148,40 +2148,40 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ```
 
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
-[Add Flutter to existing app]: {{site.url}}/development/add-to-app
-[Adding Assets and Images in Flutter]: {{site.url}}/development/ui/assets-and-images
-[Animation & Motion widgets]: {{site.url}}/development/ui/widgets/animation
-[Animations overview]: {{site.url}}/development/ui/animations
-[Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
+[Add Flutter to existing app]: {{site.url}}/add-to-app
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets-and-images
+[Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
+[Animations overview]: {{site.url}}/ui/animations
+[Animations tutorial]: {{site.url}}/ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources
 [`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 [arb]: {{site.github}}/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [composing]: {{site.url}}/resources/architectural-overview#composition
 [Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
-[Cupertino widgets]: {{site.url}}/development/ui/widgets/cupertino
+[Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
 [Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
 [Flutter cookbook]: {{site.url}}/cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: {{site.url}}/development/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
-[layout tutorial]: {{site.url}}/development/ui/widgets/layout
+[layout tutorial]: {{site.url}}/ui/widgets/layout
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [Material Components]: {{site.material}}/develop/flutter/
-[Material Design guidelines]: {{site.material}}/design/
-[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[Material Design guidelines]: {{site.material}}/styles/
+[optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [Platform adaptations]: {{site.url}}/resources/platform-adaptations
-[platform channel]: {{site.url}}/development/platform-integration/platform-channels
+[platform channel]: {{site.url}}/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}/flutter/packages
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 [widget]: {{site.url}}/resources/architectural-overview#widgets
-[widget catalog]: {{site.url}}/development/ui/widgets/layout
+[widget catalog]: {{site.url}}/ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [Learning Dart as a Swift Developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart

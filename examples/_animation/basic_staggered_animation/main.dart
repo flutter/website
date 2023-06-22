@@ -53,8 +53,8 @@ class StaggerAnimation extends StatelessWidget {
           ),
         ),
         padding = EdgeInsetsTween(
-          begin: const EdgeInsets.only(bottom: 16.0),
-          end: const EdgeInsets.only(bottom: 75.0),
+          begin: const EdgeInsets.only(bottom: 16),
+          end: const EdgeInsets.only(bottom: 75),
         ).animate(
           CurvedAnimation(
             parent: controller,
@@ -66,8 +66,8 @@ class StaggerAnimation extends StatelessWidget {
           ),
         ),
         borderRadius = BorderRadiusTween(
-          begin: BorderRadius.circular(4.0),
-          end: BorderRadius.circular(75.0),
+          begin: BorderRadius.circular(4),
+          end: BorderRadius.circular(75),
         ).animate(
           CurvedAnimation(
             parent: controller,
@@ -116,7 +116,7 @@ class StaggerAnimation extends StatelessWidget {
             color: color.value,
             border: Border.all(
               color: Colors.indigo[300]!,
-              width: 3.0,
+              width: 3,
             ),
             borderRadius: borderRadius.value,
           ),
@@ -182,8 +182,8 @@ class _StaggerDemoState extends State<StaggerDemo>
         },
         child: Center(
           child: Container(
-            width: 300.0,
-            height: 300.0,
+            width: 300,
+            height: 300,
             decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.1),
               border: Border.all(

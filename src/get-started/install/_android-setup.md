@@ -15,7 +15,7 @@
     when developing for Android.
  1. Run `flutter doctor` to confirm that Flutter has located
     your installation of Android Studio. If Flutter cannot locate it,
-    run `flutter config --android-studio-dir <directory>` to set the
+    run `flutter config --android-studio-dir=<directory>` to set the
     directory that Android Studio is installed to.
 
 ### Set up your Android device
@@ -26,6 +26,9 @@ you need an Android device running Android 4.1 (API level 16) or higher.
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the
     [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+ 1. [Optional] To leverage wireless debugging, enable **Wireless debugging** 
+    on your device. Detailed instructions are available in the 
+    [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
  1. Windows-only: Install the [Google USB
     Driver]({{site.android-dev}}/studio/run/win-usb).
  1. Using a USB cable, plug your phone into your computer. If prompted on your
@@ -45,14 +48,14 @@ follow these steps:
  1. Enable
     [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
     on your machine.
- 1. Launch **Android Studio**, click the **AVD Manager**
-    icon, and select **Create Virtual Device...**
+ 1. Launch **Android Studio**, click the **Device Manager**
+    icon, and select **Create Device** under **Virtual** tab...
     * In older versions of Android Studio, you should instead
     launch **Android Studio > Tools > Android > AVD Manager** and select
     **Create Virtual Device...**. (The **Android** submenu is only present
     when inside an Android project.)
     * If you do not have a project open, you can choose 
-    **Configure > AVD Manager** and select **Create Virtual Device...**
+    **3-Dot Menu / More Actions > Virtual Device Manager** and select **Create Device...**
  1. Choose a device definition and select **Next**.
  1. Select one or more system images for the Android versions you want
     to emulate, and select **Next**.
@@ -74,11 +77,6 @@ Before you can use Flutter, you must agree to the
 licenses of the Android SDK platform. This step should be done after
 you have installed the tools listed above.
 
- 1. Make sure that you have a version of Java 8 installed and that your 
-    `JAVA_HOME` environment variable is set to the JDK's folder.
-    
-    Android Studio versions 2.2 and higher come with a JDK, so this should
-    already be done.
  1. Open an elevated console window and run the following command to begin
     signing licenses.
     ```terminal

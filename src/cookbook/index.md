@@ -17,7 +17,7 @@ reference to help you build up an application.
 
 
 ## Design
-- [Add a Drawer to a screen]({{site.url}}/cookbook/design/drawer)
+- [Add a drawer to a screen]({{site.url}}/cookbook/design/drawer)
 - [Display a snackbar]({{site.url}}/cookbook/design/snackbars)
 - [Export fonts from a package]({{site.url}}/cookbook/design/package-fonts)
 - [Update the UI based on orientation]({{site.url}}/cookbook/design/orientation)
@@ -77,8 +77,11 @@ reference to help you build up an application.
 - [Navigate to a new screen and back]({{site.url}}/cookbook/navigation/navigation-basics)
 - [Navigate with named routes]({{site.url}}/cookbook/navigation/named-routes)
 - [Pass arguments to a named route]({{site.url}}/cookbook/navigation/navigate-with-arguments)
+- [Set up app links for Android]({{site.url}}/cookbook/navigation/set-up-app-links)
+- [Set up universal links for iOS]({{site.url}}/cookbook/navigation/set-up-universal-links)
 - [Return data from a screen]({{site.url}}/cookbook/navigation/returning-data)
 - [Send data to a new screen]({{site.url}}/cookbook/navigation/passing-data)
+
 
 
 ## Networking

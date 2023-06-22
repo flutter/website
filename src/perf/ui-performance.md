@@ -85,11 +85,18 @@ functionality to allow debugging performance problems.
 For example, profile mode provides tracing information to the
 profiling tools.
 
+{{site.alert.note}}
+  DevTools can't connect to a Flutter web app running
+  in profile mode. Use Chrome DevTools to
+  [generate timeline events][] for a web app.
+{{site.alert.end}}
+
+[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
+
+
 Launch the app in profile mode as follows:
 
-- In Android Studio and IntelliJ, use the
-  **Run > Flutter Run main.dart in Profile Mode** menu item.
-- In VS Code, open your `launch.json` file, and set the
+* In VS Code, open your `launch.json` file, and set the
   `flutterMode` property to `profile`
   (when done profiling, change it back to `release` or `debug`):
 
@@ -103,7 +110,9 @@ Launch the app in profile mode as follows:
     }
   ]
   ```
-- From the command line, use the `--profile` flag:
+* In Android Studio and IntelliJ, use the
+  **Run > Flutter Run main.dart in Profile Mode** menu item.
+* From the command line, use the `--profile` flag:
 
   ```terminal
   $ flutter run --profile
@@ -128,8 +137,8 @@ UI performance of your application on a frame-by-frame basis.
 Once your app is running in profile mode,
 [launch DevTools][].
 
-[launch DevTools]: {{site.url}}/development/tools/devtools
-[Timeline view]: {{site.url}}/development/tools/devtools/performance
+[launch DevTools]: {{site.url}}/tools/devtools
+[Timeline view]: {{site.url}}/tools/devtools/performance
 
 ## The performance overlay
 
@@ -214,11 +223,13 @@ on other threads.
     it by talking to the GPU (graphic processing unit).
     You cannot directly access the raster thread or its data but,
     if this thread is slow, it's a result of something you've done
-    in the Dart code. Skia, the graphics library, runs on this thread.
+    in the Dart code. Skia and Impeller, the graphics libraries,
+    run on this thread.
     Shown in the top row of the performance overlay.
     This thread was previously known as the "GPU thread" because it
-    rasterizes for the GPU. But it is running on the CPU. We renamed it
-    to "raster thread" because many developers wrongly (but understandably)
+    rasterizes for the GPU. But it is running on the CPU.
+    We renamed it to "raster thread" because many developers wrongly
+    (but understandably)
     assumed the thread runs on the GPU unit.
 </dd>
 <dt markdown="1">**I/O thread**</dt>
@@ -255,7 +266,7 @@ from the Flutter inspector, which is available in the
 **Performance Overlay** button to toggle the overlay
 on your running app.
 
-[Inspector view]: {{site.url}}/development/tools/devtools/inspector
+[Inspector view]: {{site.url}}/tools/devtools/inspector
 
 #### From the command line
 
@@ -401,7 +412,7 @@ You can view the widget rebuilt counts for the current screen and
 frame in the Flutter plugin for Android Studio and IntelliJ.
 For details on how to do this, see [Show performance data][]
 
-[Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data
+[Show performance data]: {{site.url}}/tools/android-studio#show-performance-data
 
 ## Benchmarking
 
@@ -439,9 +450,9 @@ Flutter's tools and debugging in Flutter:
   and the [dart:developer][] package
 
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[devtools]: {{site.url}}/development/tools/devtools
+[devtools]: {{site.url}}/tools/devtools
 [Flutter API]: {{site.api}}
-[Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
+[Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Flutter inspector talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: {{site.youtube-site}}/watch?v=5F-6n_2XWR8

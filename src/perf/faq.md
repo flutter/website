@@ -24,7 +24,7 @@ about evaluating and debugging Flutter's performance.
 
 * What are some tools for capturing and analyzing performance
   metrics?
-  * [Dart DevTools]({{site.url}}/development/tools/devtools)
+  * [Dart DevTools]({{site.url}}/tools/devtools)
   * [Apple instruments](https://en.wikipedia.org/wiki/Instruments_(software))
   * [Linux perf](https://en.wikipedia.org/wiki/Perf_(Linux))
   * [Chrome tracing (enter `about:tracing` in your
@@ -65,9 +65,8 @@ about evaluating and debugging Flutter's performance.
     `debugProfileBuildsEnabled` and always call
     `Timeline.startSync(...)/finish`.
   * If you use IntelliJ, a GUI view of this data is available.
-    Select **show widget rebuild information**,
-    and you'll visually see which widgets rebuild
-    visually in your IDE.
+    Select **Track widget rebuilds**,
+    and your IDE displays which the widgets rebuild.
 
 [`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
 [debug.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/debug.dart

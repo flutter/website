@@ -71,6 +71,9 @@ Here are some things to keep in mind when designing your UI:
     the [source code for `SlideTransition`][],
     which uses this principle to avoid rebuilding its
     descendents when animating.
+    ("Same instance" is evaluated using `operator ==`,
+    but see the pitfalls section at the end of this page
+    for advice on when to avoid overriding `operator ==`.)
   * Use `const` constructors on widgets as much as possible,
     since they allow Flutter to short-circuit most
     of the rebuild work. To be automatically reminded
@@ -140,7 +143,7 @@ your scene uses `saveLayer` by checking the
 `PerformanceOverlayLayer.checkerboardOffscreenLayers`
 switch in the [DevTools Performance view][].
 
-[DevTools timeline]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart
+[DevTools timeline]: {{site.url}}/tools/devtools/performance#timeline-events-chart
 
 #### Minimizing calls to saveLayer
 
@@ -330,10 +333,10 @@ section in the [Flutter architectural overview][].
 
 
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
-[how layout and constraints work]: {{site.url}}/development/ui/layout/constraints
+[how layout and constraints work]: {{site.url}}/ui/layout/constraints
 [layout and rendering]: {{site.url}}/resources/architectural-overview#layout-and-rendering
-[stack trace]: {{site.url}}/development/tools/devtools/cpu-profiler#flame-chart
-[Track layouts option]: {{site.url}}/development/tools/devtools/performance#track-layouts
+[stack trace]: {{site.url}}/tools/devtools/cpu-profiler#flame-chart
+[Track layouts option]: {{site.url}}/tools/devtools/performance#track-layouts
 
 ---
 
@@ -409,6 +412,20 @@ your app's performance.
   of children (such as `Column()` or `ListView()`)
   if most of the children are not visible
   on screen to avoid the build cost.
+  
+* Avoid overriding `operator ==` on `Widget` objects.
+  While it may seem like it would help by avoiding unnecessary rebuilds,
+  in practice it hurts performance because it results in O(N²) behavior.
+  The only exception to this rule is leaf widgets (widgets with no children),
+  in the specific case where comparing the properties of the widget
+  is likely to be significantly more efficient than rebuilding the widget
+  and where the widget will rarely change configuration.
+  Even in such cases,
+  it is generally preferable to rely on caching the widgets,
+  because even one override of `operator ==`
+  can result in across-the-board performance degradation
+  as the compiler can no longer assume that the call is always static.
+
 
 ## Resources
 
@@ -423,7 +440,7 @@ For more performance info, check out the following resources:
 
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
-[DevTools Performance view]: {{site.url}}/development/tools/devtools/performance
+[DevTools Performance view]: {{site.url}}/tools/devtools/performance
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html

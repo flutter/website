@@ -3,7 +3,7 @@ description: A library for `react_native_devs` to import
 version: 1.0.0
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: ^3.0.3
 
 dev_dependencies:
   lints: ^2.0.0

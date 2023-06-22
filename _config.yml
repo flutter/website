@@ -19,6 +19,7 @@ repo:
   plugins: https://github.com/flutter/plugins
   gallery: https://github.com/flutter/gallery
   engine: https://github.com/flutter/engine
+  uxr: https://github.com/flutter/uxr
 dart:
   api: https://api.dart.dev
   sdk:
@@ -39,7 +40,8 @@ flutter-medium: https://medium.com/flutter
 medium: https://medium.com
 dartpad: https://dartpad.dev
 gallery: https://gallery.flutter.dev
-material: https://material.io
+material: https://m3.material.io
+material2: https://m2.material.io
 so: https://stackoverflow.com
 github: https://github.com
 flutter-assets: https://flutter.github.io/assets-for-api-docs/assets
@@ -99,17 +101,25 @@ defaults:
     values:
       toc: true
   - scope:
+      path: 'accessibility-and-localization'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'add-to-app'
+    values:
+      show_breadcrumbs: true
+  - scope:
       path: 'cookbook'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development'
+      path: 'data-and-backend'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development/ui/widgets'
+      path: 'deployment'
     values:
-      toc: false
+      show_breadcrumbs: true
   - scope:
       path: 'get-started'
     values:
@@ -118,6 +128,38 @@ defaults:
       path: 'get-started/flutter-for'
     values:
       show_breadcrumbs: false
+  - scope:
+      path: 'packages-and-plugins'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'perf'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'platform-integration'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'release'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'testing'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'tools'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'ui'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'ui/widgets'
+    values:
+      toc: false
 
 
 ########### Alerts ###########

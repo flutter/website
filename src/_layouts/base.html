@@ -12,7 +12,7 @@
     <meta name="theme-color" content="#ffffff">
     {% unless page.strip_fonts == true -%}
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preload" href="https://use.fontawesome.com/releases/v5.15.1/js/all.js" as="script">
+    <link rel="preload" href="https://use.fontawesome.com/releases/v5.15.4/js/all.js" as="script">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {% endunless -%}
 
@@ -55,18 +55,18 @@
     <meta property="og:image" content="{{og_image_path | absolute_url}}">
 
     {% unless page.strip_fonts == true -%}
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
     <script
-      src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
       data-auto-replace-svg="nest">
     </script>
     {% endunless -%}
 
     {% include shared/head-diff2html.html -%}
- 
+
     <script>
       window.__CALLBACKS = [];
     </script>
@@ -77,19 +77,19 @@
       <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
     {% endfor -%}
   </head>
-  <body{% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
+  <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
 
     {% include_cached cookie-notice.html %}
-  
+
     {% if jekyll.environment == "production" %}
       <noscript>
-        <iframe 
+        <iframe
           src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
           height="0" width="0" style="display:none;visibility:hidden">
         </iframe>
       </noscript>
     {% endif %}
-    
+
     <div id="overlay-under-drawer"></div>
 
     {% include header.html %}
@@ -103,12 +103,12 @@
     {% if page.show_footer %}
       {% include_cached footer.html %}
     {% endif %}
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" integrity="sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="{{ '/assets/js/vendor/code-prettify/prettify.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/vendor/code-prettify/lang-css.js' | append: cache_bust }}"></script>
@@ -117,7 +117,7 @@
     <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
-    
+
     {% for script in page.js -%}
       <script src="{{ script.url | default: js }}" {% if script.defer %}defer{% endif %}></script>
     {% endfor %}

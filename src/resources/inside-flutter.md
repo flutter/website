@@ -586,7 +586,7 @@ Some interpolatable objects are defined by class hierarchies. For example,
 shapes are represented by the `ShapeBorder` interface, and there exists a
 variety of shapes, including `BeveledRectangleBorder`, `BoxBorder`,
 `CircleBorder`, `RoundedRectangleBorder`, and `StadiumBorder`. A single
-`lerp` function cannot have a priori knowledge of all the possible types,
+`lerp` function can't anticipate all possible types,
 and therefore the interface instead defines `lerpFrom` and `lerpTo` methods,
 which the static `lerp` method defers to. When told to interpolate from
 a shape A to a shape B, first B is asked if it can `lerpFrom` A, then,

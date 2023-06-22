@@ -2,8 +2,8 @@
 title: Return data from a screen
 description: How to return data from a new screen.
 prev:
-  title: Pass arguments to a named route
-  path: /cookbook/navigation/navigate-with-arguments
+  title: Set up universal links for iOS
+  path: /cookbook/navigation/set-up-universal-links
 next:
   title: Send data to a new screen
   path: /cookbook/navigation/passing-data
@@ -118,7 +118,7 @@ class SelectionScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 onPressed: () {
                   // Pop here with "Yep"...
@@ -127,7 +127,7 @@ class SelectionScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 onPressed: () {
                   // Pop here with "Nope"...
@@ -294,7 +294,7 @@ class SelectionScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Yep!" as the result.
@@ -304,7 +304,7 @@ class SelectionScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Nope." as the result.

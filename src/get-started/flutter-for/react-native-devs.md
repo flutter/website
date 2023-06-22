@@ -13,7 +13,7 @@ way to get started learning Flutter development.
 This document can be used as a cookbook by jumping around and finding
 questions that are most relevant to your needs.
 
-## Introduction to Dart for JavaScript Developers
+## Introduction to Dart for JavaScript Developers (ES6)
 
 Like React Native, Flutter uses reactive-style views. However, while RN
 transpiles to native widgets, Flutter compiles all the way to native code.
@@ -88,7 +88,7 @@ typed or the type system must infer the proper type automatically.
 
 ```js
 // JavaScript
-var name = 'JavaScript';
+let name = 'JavaScript';
 ```
 
 <?code-excerpt "lib/main.dart (Variables)"?>
@@ -119,7 +119,7 @@ numeric types have the value `null`.
 
 ```js
 // JavaScript
-var name; // == undefined
+let name; // == undefined
 ```
 
 <?code-excerpt "lib/main.dart (Null)"?>
@@ -141,11 +141,11 @@ are treated as `true` when using the `==` comparison operator.
 
 ```js
 // JavaScript
-var myNull = null;
+let myNull = null;
 if (!myNull) {
   console.log('null is treated as false');
 }
-var zero = 0;
+let zero = 0;
 if (!zero) {
   console.log('0 is treated as false');
 }
@@ -157,9 +157,6 @@ In Dart, only the boolean value `true` is treated as true.
 ```dart
 /// Dart
 var myNull;
-if (myNull == null) {
-  print('use "== null" to check null');
-}
 var zero = 0;
 if (zero == 0) {
   print('use "== 0" to check zero');
@@ -408,15 +405,13 @@ implements the render method by returning a view component.
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello world!</Text>
-      </View>
-    );
-  }
-}
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Hello world!</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -426,6 +421,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+
+export default App;
 ```
 
 In Flutter, you can create an identical "Hello world!" app using the
@@ -543,19 +540,17 @@ and then used inside a parent class.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title="Press"
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title="Press"
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
 // Usage
 <CustomCard onPress={this.onPress} index={item.key} />
@@ -612,8 +607,7 @@ class UseCard extends StatelessWidget {
 ```
 
 In the previous example, the constructor for the `CustomCard`
-class uses Dart's curly brace syntax `{ }` to indicate named
-[optional parameters][].
+class uses Dart's curly brace syntax `{ }` to indicate [named parameters][].
 
 To require these fields, either remove the curly braces from
 the constructor, or add `required` to the constructor.
@@ -711,6 +705,12 @@ in a source code directory and referencing it.
 
 ```js
 <Image source={require('./my-icon.png')} />
+// OR
+<Image
+  source={%raw%}{{
+    url: 'https://reactnative.dev/img/tiny_logo.png'
+  }}{%endraw%}
+/>
 ```
 
 In Flutter, add a static image to your app
@@ -867,16 +867,16 @@ so third party libraries like `react-native-canvas` are used.
 
 ```js
 // React Native
-handleCanvas = canvas => {
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle = 'skyblue';
-  ctx.beginPath();
-  ctx.arc(75, 75, 50, 0, 2 * Math.PI);
-  ctx.fillRect(150, 100, 300, 300);
-  ctx.stroke();
-};
+const CanvasComp = () => {
+  const handleCanvas = (canvas) => {
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'skyblue';
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, 2 * Math.PI);
+    ctx.fillRect(150, 100, 300, 300);
+    ctx.stroke();
+  };
 
-render() {
   return (
     <View>
       <Canvas ref={this.handleCanvas} />
@@ -902,11 +902,11 @@ class MyCanvasPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()..color = Colors.amber;
-    canvas.drawCircle(const Offset(100.0, 200.0), 40.0, paint);
+    canvas.drawCircle(const Offset(100, 200), 40, paint);
     final Paint paintRect = Paint()..color = Colors.lightBlue;
     final Rect rect = Rect.fromPoints(
-      const Offset(150.0, 300.0),
-      const Offset(300.0, 400.0),
+      const Offset(150, 300),
+      const Offset(300, 400),
     );
     canvas.drawRect(rect, paintRect);
   }
@@ -972,18 +972,18 @@ Widget build(BuildContext context) {
       children: <Widget>[
         Container(
           color: Colors.red,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.blue,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.green,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
       ],
     ),
@@ -1072,19 +1072,19 @@ style in multiple places, you can create a
 ```dart
 const TextStyle textStyle = TextStyle(
   color: Colors.cyan,
-  fontSize: 32.0,
+  fontSize: 32,
   fontWeight: FontWeight.w600,
 );
 
-return Center(
+return const Center(
   child: Column(
-    children: const <Widget>[
+    children: <Widget>[
       Text('Sample text', style: textStyle),
       Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20),
         child: Icon(
           Icons.lightbulb_outline,
-          size: 48.0,
+          size: 48,
           color: Colors.redAccent,
         ),
       ),
@@ -1361,7 +1361,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 'This execution will be done before you can blink.',
               ),
             Padding(
-              padding: const EdgeInsets.only(top: 70.0),
+              padding: const EdgeInsets.only(top: 70),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
                 child: toggleState
@@ -1471,38 +1471,34 @@ These parameters can be used in a child component using `this.props`.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title='Press'
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
-class App extends React.Component {
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title='Press'
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
-  onPress = index => {
+const App = () => {
+  const onPress = (index) => {
     console.log('Card ', index);
   };
 
-  render() {
-    return (
-      <View>
-        <FlatList
-          data={[ ... ]}
-          renderItem={({ item }) => (
-            <CustomCard onPress={this.onPress} index={item.key} />
-          )}
-        />
-      </View>
-    );
-  }
-}
+  return (
+    <View>
+      <FlatList
+        data={[ /* ... */ ]}
+        renderItem={({ item }) => (
+          <CustomCard onPress={onPress} index={item.key} />
+        )}
+      />
+    </View>
+  );
+};
 ```
 
 In Flutter, you assign a local variable or function marked
@@ -1571,10 +1567,12 @@ that is persistent and global to the app.
 
 ```js
 // React Native
+const [counter, setCounter] = useState(0)
+...
 await AsyncStorage.setItem( 'counterkey', json.stringify(++this.state.counter));
 AsyncStorage.getItem('counterkey').then(value => {
   if (value != null) {
-    this.setState({ counter: value });
+    setCounter(value);
   }
 });
 ```
@@ -1680,8 +1678,8 @@ The following example specifies named routes in the `MaterialApp` widget.
   [Limitations][] in the [navigation overview][] page.
 {{site.alert.end}}
 
-[Limitations]: {{site.url}}/development/ui/navigation#limitations
-[navigation overview]: {{site.url}}/development/ui/navigation
+[Limitations]: {{site.url}}/ui/navigation#limitations
+[navigation overview]: {{site.url}}/ui/navigation
 
 <?code-excerpt "lib/navigation.dart (Navigator)"?>
 ```dart
@@ -1887,7 +1885,7 @@ widget provides the navigation on tap.
 @override
 Widget build(BuildContext context) {
   return Drawer(
-    elevation: 20.0,
+    elevation: 20,
     child: ListTile(
       leading: const Icon(Icons.change_history),
       title: const Text('Screen2'),
@@ -1910,7 +1908,7 @@ edge-swipe gesture to show the `Drawer`.
 Widget build(BuildContext context) {
   return Scaffold(
     drawer: Drawer(
-      elevation: 20.0,
+      elevation: 20,
       child: ListTile(
         leading: const Icon(Icons.change_history),
         title: const Text('Screen2'),
@@ -1963,10 +1961,11 @@ a single gesture, [`PanResponder`][] is used.
 
 ```js
 // React Native
-class App extends Component {
+const App = () => {
+  const panResponderRef = useRef(null);
 
-  componentWillMount() {
-    this._panResponder = PanResponder.create({
+  useEffect(() => {
+    panResponderRef.current = PanResponder.create({
       onMoveShouldSetPanResponder: (event, gestureState) =>
         !!getDirection(gestureState),
       onPanResponderMove: (event, gestureState) => true,
@@ -1975,18 +1974,16 @@ class App extends Component {
       },
       onPanResponderTerminationRequest: (event, gestureState) => true
     });
-  }
+  }, []);
 
-  render() {
-    return (
-      <View style={styles.container} {...this._panResponder.panHandlers}>
-        <View style={styles.center}>
-          <Text>Swipe Horizontally or Vertically</Text>
-        </View>
+  return (
+    <View style={styles.container} {...panResponderRef.current.panHandlers}>
+      <View style={styles.center}>
+        <Text>Swipe Horizontally or Vertically</Text>
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 ```
 
 In Flutter, to add a click (or press) listener to a widget,
@@ -2001,10 +1998,10 @@ Widget build(BuildContext context) {
   return GestureDetector(
     child: Scaffold(
       appBar: AppBar(title: const Text('Gestures')),
-      body: Center(
+      body: const Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const <Widget>[
+        children: <Widget>[
           Text('Tap, Long Press, Swipe Horizontally or Vertically'),
         ],
       )),
@@ -2045,11 +2042,13 @@ and then receive the response to get the data.
 
 ```js
 // React Native
-_getIPAddress = () => {
+const [ipAddress, setIpAddress] = useState('')
+
+const _getIPAddress = () => {
   fetch('https://httpbin.org/ip')
     .then(response => response.json())
     .then(responseJson => {
-      this.setState({ _ipAddress: responseJson.origin });
+      setIpAddress(responseJson.origin);
     })
     .catch(error => {
       console.error(error);
@@ -2110,10 +2109,12 @@ input box and then use the callback to store the value in a variable.
 
 ```js
 // React Native
+const [password, setPassword] = useState('')
+...
 <TextInput
   placeholder="Enter your Password"
-  onChangeText={password => this.setState({ password })}
- />
+  onChangeText={password => setPassword(password)}
+/>
 <Button title="Submit" onPress={this.validate} />
 ```
 
@@ -2369,24 +2370,22 @@ and then, `start()` is called to start the animation.
 
 ```js
 // React Native
-class FadeInView extends React.Component {
-  state = {
-    fadeAnim: new Animated.Value(0) // Initial value for opacity: 0
-  };
-  componentDidMount() {
-    Animated.timing(this.state.fadeAnim, {
+const FadeInView = ({ style, children }) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 10000
     }).start();
-  }
-  render() {
-    return (
-      <Animated.View style={%raw%}{{...this.props.style, opacity: this.state.fadeAnim }}{%endraw%} >
-        {this.props.children}
-      </Animated.View>
-    );
-  }
-}
+  }, []);
+
+  return (
+    <Animated.View style={%raw%}{{ ...style, opacity: fadeAnim }}{%endraw%}>
+      {children}
+    </Animated.View>
+  );
+};
     ...
 <FadeInView>
   <Text> Fading in </Text>
@@ -2473,8 +2472,8 @@ class _LogoFadeState extends State<LogoFade>
     return FadeTransition(
       opacity: animation,
       child: const SizedBox(
-        height: 300.0,
-        width: 300.0,
+        height: 300,
+        width: 300,
         child: FlutterLogo(),
       ),
     );
@@ -2588,16 +2587,16 @@ and common widget properties.
 
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
-[Adding Assets and Images in Flutter]: {{site.url}}/development/ui/assets-and-images
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets-and-images
 [`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
-[async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support
+[async and await]: {{site.dart-site}}/language/async
 [`Axis`]: {{site.api}}/flutter/painting/Axis.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[color palette]: {{site.material}}/design/color
+[color palette]: {{site.material2}}/design/color/the-color-system.html#color-theme-creation
 [colors]: {{site.api}}/flutter/material/Colors-class.html
 [`Colors`]: {{site.api}}/flutter/material/Colors-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
@@ -2605,7 +2604,7 @@ and common widget properties.
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`CircleAvatar`]: {{site.api}}/flutter/material/CircleAvatar-class.html
 [`CircularProgressIndicator`]: {{site.api}}/flutter/material/CircularProgressIndicator-class.html
-[Cupertino (iOS-style)]: {{site.url}}/development/ui/widgets/cupertino
+[Cupertino (iOS-style)]: {{site.url}}/ui/widgets/cupertino
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [Dart]: {{site.dart-site}}/dart-2
@@ -2618,20 +2617,20 @@ and common widget properties.
 [DartPadD]: {{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7
 [DartPadE]: {{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6
 [DartPadF]: {{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918
-[Developing Packages & Plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
-[DevTools]: {{site.url}}/development/tools/devtools
+[Developing Packages & Plugins]: {{site.url}}/packages-and-plugins/developing-packages
+[DevTools]: {{site.url}}/tools/devtools
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [Flutter packages]: {{site.pub}}/flutter/
 [Flutter Architectural Overview]: {{site.url}}/resources/architectural-overview
-[Flutter Basic Widgets]: {{site.url}}/development/ui/widgets/basics
+[Flutter Basic Widgets]: {{site.url}}/ui/widgets/basics
 [Flutter Technical Overview]: {{site.url}}/resources/architectural-overview
-[Flutter Widget Catalog]: {{site.url}}/development/ui/widgets
+[Flutter Widget Catalog]: {{site.url}}/ui/widgets
 [Flutter Widget Index]: {{site.url}}/reference/widgets
 [`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[functions]: {{site.dart-site}}/guides/language/language-tour#functions
+[functions]: {{site.dart-site}}/language/functions
 [`Future`]: {{site.dart-site}}/tutorials/language/futures
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [Getting started]: {{site.url}}/get-started
@@ -2639,12 +2638,12 @@ and common widget properties.
 [`IndexedWidgetBuilder`]: {{site.api}}/flutter/widgets/IndexedWidgetBuilder.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[Layout Widgets]: {{site.url}}/development/ui/widgets/layout
+[Layout Widgets]: {{site.url}}/ui/widgets/layout
 [`LinearProgressIndicator`]: {{site.api}}/flutter/material/LinearProgressIndicator-class.html
 [`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[Material Design]: {{site.material}}/design
+[Material Design]: {{site.material}}/styles
 [Material icons]: {{site.api}}/flutter/material/Icons-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
@@ -2654,7 +2653,7 @@ and common widget properties.
 [`Navigator.pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.push`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`onSaved`]: {{site.api}}/flutter/widgets/FormField/onSaved.html
-[optional parameters]: {{site.dart-site}}/guides/language/language-tour#optional-parameters
+[named parameters]: {{site.dart-site}}/language/functions#named-parameters
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [`PanResponder`]: https://facebook.github.io/react-native/docs/panresponder.html
 [pub.dev]: {{site.pub}}
@@ -2669,7 +2668,7 @@ and common widget properties.
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
-[State management]: {{site.url}}/development/data-and-backend/state-mgmt
+[State management]: {{site.url}}/data-and-backend/state-mgmt
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`Switch`]: {{site.api}}/flutter/material/Switch-class.html
@@ -2690,7 +2689,7 @@ and common widget properties.
 [`TickerProvider`]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
 [`TickerProviderStateMixin`]: {{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
-[Using Packages]: {{site.url}}/development/packages-and-plugins/using-packages
-[variables]: {{site.dart-site}}/guides/language/language-tour#variables
+[Using Packages]: {{site.url}}/packages-and-plugins/using-packages
+[variables]: {{site.dart-site}}/language/variables
 [`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
 [infinite_list]: {{site.repo.samples}}/tree/main/infinite_list
