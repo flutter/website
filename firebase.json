@@ -412,6 +412,7 @@
       { "source": "/go/plugins-team", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfpPqJYuL_RzLaTCjrWYw73Zrrei3YiU8B5eTrDBh4fuGhbXw/viewform?usp=sf_link", "type": 301 },
       { "source": "/go/profile-and-release-mode-for-custom-devices", "destination": "https://docs.google.com/document/d/1jcMyJvsWLizYOIJAdyosLSW-Io0-E_MGsU_uL_Q4Wt8/edit?usp=sharing", "type": 301 },
       { "source": "/go/programmatic-sheet", "destination": "https://docs.google.com/document/d/15A3q1QrcvEU82uG4heTCKV230depmaJZTIP5rEz7V8g/edit?usp=sharing&resourcekey=0-q-TH-9-LVmygnp6Ku4xKIg", "type": 301 },
+      { "source": "/go/publish-on-homebrew", "destination": "https://docs.google.com/document/d/1dk82qavQxT633LAonAM2xsqirWBmsqoHC4caJvYE584/edit?usp=sharing", "type": 301 },
       { "source": "/go/pull-request-revert-api", "destination": "https://docs.google.com/document/d/1mVVetlCjv9PM5gtg57nipDFd5TvWsd24rXPWS0FzVvE/edit?usp=sharing&resourcekey=0-McwG6wn0s6YQ7qxHffkcdw", "type": 301 },
       { "source": "/go/pull-request-revert-api-v2", "destination": "https://docs.google.com/document/d/1lfPVtrq_6YB-I6bEHEXRPeJCE32EvKxx-nSYmLpJIYI/edit?usp=sharing&resourcekey=0-BZghqoHCZBXuoQ2alTyRiw", "type": 301 },
       { "source": "/go/rasterizer-pipeline-improvements", "destination": "https://docs.google.com/document/d/1Hg5Wfx8JTgYmLboxFRr5DDd9EfdrdEuMbNGGMvDjd6E/edit?usp=sharing", "type": 301 },
