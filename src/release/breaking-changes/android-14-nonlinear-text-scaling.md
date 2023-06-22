@@ -7,7 +7,7 @@ description: The `textScaleFactor` scalar is replaced by `TextScaler` in prepara
 
 In preparation for adopting the [Android 14 nonlinear font scaling][] feature, 
 all occurrences of `textScaleFactor` in the Flutter framework have been 
-deprecated and replaced by `TextScaler`.
+deprecated and replaced by `TextScaler`. 
 
 ## Context
 
@@ -125,7 +125,7 @@ Adopting nonlinear text scaling might not be an easy task. If you're unsure abou
 how to migrate certian `textScaleFactor` usages, or when it is going to take an
 extended period of time (for example, when the UI has to be redesigned), 
 consider replacing `textScaleFactor` with `TextScaler.textScaleFactor` first. The 
-`TextScaler.textScaleFactor` getter is added for backward compatibility during 
+`TextScaler.textScaleFactor` getter was added for backward compatibility during 
 the migration process and is expected to have a longer lifetime than other 
 `textScaleFactor` deprecations. 
 
@@ -171,8 +171,8 @@ RichText(
 )
 ```
 
-If the receiver API hasn't been migrated yet, it's still recommended to migrate
-your code like so:
+If the receiver API hasn't been migrated yet, optionally, you could migrate your 
+code like so:
 
 Before:
 ```dart 
@@ -293,30 +293,18 @@ MediaQuery.withClampedTextScaling(
 
 ## Timeline
 
-{% comment %}
-  The version # of the SDK where this change was
-  introduced.  If there is a deprecation window,
-  the version # to which we guarantee to maintain
-  the old API. Use the following template:
-{% endcomment %}
-
 Landed in version: xxx<br>
 In stable release: not yet
 
 ## References
 
-{% comment %}
-  These links are commented out because they
-  cause the GitHubActions (GHA) linkcheck to fail.
-  Remove the comment tags once you fill this in with
-  real links. Only use the "master-api" include if
-  you link to "master-api.flutter.dev".
-
-{% include docs/master-api.md %}
-
 API documentation:
 
 * [`TextScaler`][]
+* [`MediaQuery.textScalerOf`][]
+* [`MediaQuery.maybeTextScalerOf`][]
+* [`MediaQuery.disableTextScaling`][]
+* [`MediaQuery.withClampedTextScaling`][] 
 
 Relevant issues:
 
@@ -325,28 +313,10 @@ Relevant issues:
 Relevant PRs:
 
 * [Replaces `textScaleFactor` with `TextScaler`][]
-{% endcomment %}
 
-{% comment %}
-  Add the links to the end of the file in alphabetical order.
-  The following links are commented out because they make
-  the GitHubActions (GHA) link checker believe they are broken links,
-  but please remove the comment tags before you commit!
 
-  If you are sharing new API that hasn't landed in
-  the stable channel yet, use the master channel link.
-  To link to docs on the master channel,
-  include the following note and make sure that
-  the URL includes the master link (as shown below).
-
-  Here's an example of defining a stable (site.api) link
-  and a master channel (master-api) link.
-
-<!-- Stable channel link: -->
-
-<!-- Master channel link: -->
-{% include docs/master-api.md %}
-
+[Ensure Android 14 compatibility]: https://developer.android.com/about/versions/14/migration#compat_testing
+[Android 14 nonlinear font scaling]: https://developer.android.com/about/versions/14/features#non-linear-font-scaling
 [`TextScaler`]: {{site.master-api}}/flutter/painting/TextScaler-class.html
 [`MediaQuery.textScalerOf`]: {{site.master-api}}/flutter/widgets/MediaQuery/textScalerOf.html
 [`MediaQuery.maybeTextScalerOf`]: {{site.master-api}}/flutter/widgets/MediaQuery/maybeTextScalerOf.html
@@ -355,7 +325,4 @@ Relevant PRs:
 
 [New font scaling system (Issue 116231)]: {{site.repo.flutter}}/issues/116231
 [Replaces `textScaleFactor` with `TextScaler`]: {{site.repo.flutter}}/pull/128522
-[Ensure Android 14 compatibility]: <https://developer.android.com/about/versions/14/migration#compat_testing>
-[Android 14 nonlinear font scaling]: <https://developer.android.com/about/versions/14/features#non-linear-font-scaling>
-{% endcomment %}
 
