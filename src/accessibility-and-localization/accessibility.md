@@ -328,7 +328,7 @@ legible in colorblind and grayscale modes.
 large scale factors for text size and display scaling.
 
 
-## To learn more
+## Learn more
 
 To learn more about Flutter and accessibility, check out
 the following articles written by community members:
