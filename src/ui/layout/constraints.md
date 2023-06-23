@@ -27,6 +27,13 @@ Instead, first tell them that Flutter layout is very different
 from HTML layout (which is probably where they’re coming from),
 and then make them memorize the following rule:
 
+{{site.alert.note}}
+  If you are experiencing specific layout errors,
+  you might check out [Common Flutter errors][].
+{{site.alert.end}}
+
+[Common Flutter errors]: {{site.url}}/testing/common-errors
+
 <center><font size="+2">
 <b>Constraints go down. Sizes go up. Parent sets position.</b>
 </font></center>
