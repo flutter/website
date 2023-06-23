@@ -12,7 +12,7 @@ this is likely due to shader compilation.
 Flutter's long term solution to
 shader compilation jank is [Impeller][],
 which is in the stable release for iOS
-(and in preview behind a flag) on Android.
+and in preview behind a flag on Android.
 
 [Impeller]: {{site.repo.flutter}}/wiki/Impeller
 

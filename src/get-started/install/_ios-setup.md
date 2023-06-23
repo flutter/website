@@ -52,32 +52,6 @@ follow these steps:
     use the **Window > Physical Size** or **Window > Pixel Accurate**
     options if your computer's resolution is high enough.
 
-### Create and run a simple Flutter app
-
-To create your first Flutter app and test your setup,
-follow these steps:
-
- 1. Create a new Flutter app by running the following from the
-    command line:
-
-    ```terminal
-    $ flutter create my_app
-    ```
-
- 2. A `my_app` directory is created, containing Flutter's starter app.
-    Enter this directory:
-
-    ```terminal
-    $ cd my_app
-    ```
-
- 3. To launch the app in the Simulator,
-    ensure that the Simulator is running and enter:
-
-    ```terminal
-    $ flutter run
-    ```
-
 ### Deploy to iOS devices
 
 To deploy your Flutter app to a physical iPhone or iPad
