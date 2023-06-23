@@ -1,3 +1,91 @@
+// NOTE moved from _code to a shared module since imports end
+// up being sneaky and messy in terms of ordering
+@mixin pre-defaults {
+  background-color: $site-color-codeblock-bg;
+  padding: bs-spacer(3) bs-spacer(4);
+}
+
+//
+// Code-prettyprint overrides
+//
+
+pre {
+  &.prettyprint {
+    @include pre-defaults;
+    border: none;
+  }
+
+  .highlight {
+    background: #ffe600;
+    padding: 2px;
+  }
+}
+
+.pln { color: #222 }  /* plain text */
+
+@media screen {
+  .str { color: #1b87c9 }  /* string content */
+  .kwd { color: #1FBAAC }  /* a keyword */
+  .com { color: #999999 }  /* a comment */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  .pun, .opn, .clo { color: #222 }
+}
+
+//
+// Rouge / pygments classes -- https://github.com/jneen/rouge
+//
+// For CSS class names, see
+// - https://github.com/rouge-ruby/rouge/blob/master/lib/rouge/token.rb
+// - https://github.com/rouge-ruby/rouge/wiki/List-of-tokens, doc page,
+//   but doesn't seem to be as complete as token.rb.
+//
+
+$generic-output-color: white;
+
+@mixin console-base($color: $light-green-A700) {
+  background: $grey-900;
+  color: $color;
+}
+
+.language-console .highlight {
+  @include console-base;
+  .go { color: $generic-output-color; } /* Generic.Output */
+}
+
+pre.console-output {
+  @include console-base($generic-output-color)
+}
+
+// `terminal` is like `console` with prompts and output colored differently
+.language-terminal .highlight {
+  @include console-base;
+  .gp { color: $grey-500; } /* Generic.Prompt */
+  .go { color: $generic-output-color; } /* Generic.Output */
+  .nb, .nt { color: #99BB00; } /* Name.Builtin, Name.Tag */
+  .nv { color: #03bbbb; }
+  .o { color: $grey-500; font-weight: bold; } /* Operator */
+  .s, .s1, .s2 { color: #00CCEE; } /* String, .Single, .Double quotes */
+  .sb { color: #f56b78; } /* String.Backtick */
+}
+
+// Match code-prettify classes to the extent possible.
+.highlight {
+  .s, .s1, .s2 { @extend .str; } /* Literal.String.* */
+  .k, .kc, .kd, .kn, .kp, .kr, .kt { @extend .kwd; } /* Keyword.* */
+  .p { @extend .pun; } /* Punctuation */
+  .c, .c1, .cm { @extend .com; } /* Comment */
+  .cp { @extend .typ; } /* Comment.Preproc */
+  .l, .m, .mb, .mf, .mh, .mi, .mo, .mx { @extend .lit; } /* Literal.* */
+  .o { @extend .opn; } /* Operator */
+  .n { @extend .typ; } /* Name */
+  .na { @extend .kwd; } /* Name.Attribute */
+  .nb { @extend .typ; } /* Name.Builtin */
+  .nl { @extend .kwd; } /* Name.Label */
+  .no { @extend .lit; } /* Name.Constant */
+  .nt { @extend .tag; } /* Name.Tag */
+}
+
+
 code {
   color: #008f83;
 }
