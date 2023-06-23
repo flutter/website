@@ -17,6 +17,4 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 * Fix bug where source code wasn't visible if syntax highlighting for a file was disabled - [#5743](https://github.com/flutter/devtools/pull/5743)
 * Prevent file names and source code from getting out of sync - [#5827](https://github.com/flutter/devtools/pull/5827)
 
-## Full commit history
-More details about changes and fixes are available from the
-[DevTools git log.](https://github.com/flutter/devtools/commits/master).
+{% include_relative _full-commit-history.md %}
