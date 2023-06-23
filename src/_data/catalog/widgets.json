@@ -160,13 +160,13 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "AnimatedWidgetBaseState",
-    "description": "A base class for widgets with implicit animations.",
+    "name": "ImplicitlyAnimatedWidget",
+    "description": "An abstract class for building widgets that animate changes to their properties.",
     "categories": [
       "Animation and Motion"
     ],
     "subcategories": [],
-    "link": "https://api.flutter.dev/flutter/widgets/AnimatedWidgetBaseState-class.html",
+    "link": "https://api.flutter.dev/flutter/widgets/ImplicitlyAnimatedWidget-class.html",
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
