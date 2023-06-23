@@ -80,8 +80,14 @@ return MaterialApp(
       displaySmall: GoogleFonts.pacifico(),
     ),
   ),
-  home: const MyHomePage(
-    title: appName,
+
+  // Define the default `TextTheme`. Use this to specify the default
+  // text styling for headlines, titles, bodies of text, and more.
+  textTheme: TextTheme(
+    displayLarge: const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+    titleLarge: GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
+    bodyMedium: GoogleFonts.merriweather(),
+    displaySmall: GoogleFonts.pacifico(),
   ),
 );
 ```
@@ -120,6 +126,7 @@ create a `ThemeData()` instance.
 Pass that instance to the `Theme` widget.
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
+
 ```dart
 Theme(
   // Create a unique theme with `ThemeData`
