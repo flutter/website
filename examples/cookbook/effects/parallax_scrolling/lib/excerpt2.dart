@@ -35,10 +35,11 @@ class LocationListItem extends StatelessWidget {
   }
 
   Widget _buildParallaxBackground(BuildContext context) {
-    return Image.network(
+    return Positioned.fill(
+        child: Image.network(
       imageUrl,
       fit: BoxFit.cover,
-    );
+    ));
   }
 
   Widget _buildGradient() {
