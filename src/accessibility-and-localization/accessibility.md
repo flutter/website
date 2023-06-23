@@ -330,7 +330,8 @@ large scale factors for text size and display scaling.
 
 ## To learn more
 
-To learn more about Flutter and accessiblity, check out the following articles written by community members:
+To learn more about Flutter and accessibility, check out
+the following articles written by community members:
 
 * [A deep dive into Flutter's accessibility widgets][]
 * [Semantics in Flutter][]
