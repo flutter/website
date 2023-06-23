@@ -9,56 +9,90 @@ js:
 
 <?code-excerpt path-base="cookbook/design/themes"?>
 
-To share colors and font styles throughout an app, use themes.
-You can either define app-wide themes, or use `Theme` widgets
-that define the colors and font styles for a particular part
-of the application. In fact,
-app-wide themes are just `Theme` widgets created at
-the root of an app by the `MaterialApp`.
+{{site.alert.note}}
+This recipe uses the [Material 3 design specification][] and the [google_fonts] package.
+{{site.alert.end}}
 
-After defining a Theme, use it within your own widgets. Flutter's
-Material widgets also use your Theme to set the background
+[Material 3 design specification]: https://m3.material.io
+[google_fonts]: {{site.pub-pkg}}/google_fonts
+
+To share colors and font styles throughout an app, use themes.
+
+You can define app-wide themes, add widget `Theme` widgets, or both.
+Each theme defines the colors, type style, and other parameters applicable
+for the type of Material component.
+
+Many Material 3 widgets have their own `Theme` widget and related `ThemeData` data class.
+The `Theme` widget itself applies to the whole `MaterialApp`.
+
+For example: [`TextButton`][] can use both [`TextButtonTheme`][] to apply a theme
+and [`TextButtonThemeData`][] to define the visual properties of that theme.
+Unlike the general app theme, the TextButtonThemeData can include the button's
+width, height, padding, and other positioning choices.
+
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
+[`TextButtonTheme`]: {{site.api}}/flutter/material/TextButtonTheme-class.html
+[`TextButtonThemeData`]: {{site.api}}/flutter/material/TextButtonThemeData-class.html
+
+If a widget doesn't use a specific theme, the visual properties fall back
+to the main theme. Precedence in Themes rank from the specific widget,
+to the widget type theme, to the general Theme.
+
+After you define a Theme, use it within your own widgets.
+Flutter's Material widgets use your Theme to set the background
 colors and font styles for AppBars, Buttons, Checkboxes, and more.
 
 ## Creating an app theme
 
-To share a Theme across an entire app, provide a
-[`ThemeData`][] to the `MaterialApp` constructor.
+To share a Theme across your entire app, add a `theme` property
+to your `MaterialApp` constructor.
+This property takes a takes a [`ThemeData`][] widget.
 
-If no `theme` is provided, Flutter creates a default theme for you.
+To enable Material 3, add the [`useMaterial3`][] property
+to the `ThemeData` widget.
+
+If you don't add a `theme` to the constructor,
+Flutter creates a default theme for you.
+
+[`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
+
 
 <?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
+
 ```dart
-MaterialApp(
-  title: appName,
-  theme: ThemeData(
-    // Define the default brightness and colors.
-    brightness: Brightness.dark,
-    primaryColor: Colors.lightBlue[800],
+ThemeData(
+  useMaterial3: true,
 
-    // Define the default font family.
-    fontFamily: 'Georgia',
-
-    // Define the default `TextTheme`. Use this to specify the default
-    // text styling for headlines, titles, bodies of text, and more.
-    textTheme: const TextTheme(
-      displayLarge: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-      titleLarge: TextStyle(fontSize: 36, fontStyle: FontStyle.italic),
-      bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
-    ),
+  // Define the default brightness and colors.
+  colorScheme: ColorScheme.fromSwatch(
+    primarySwatch: Colors.blue,
+    brightness: Brightness.dark,  
   ),
-  home: const MyHomePage(
-    title: appName,
+
+  // Define the default `TextTheme`. Use this to specify the default
+  // text styling for headlines, titles, bodies of text, and more.
+  textTheme: TextTheme(
+    displayLarge: const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+    titleLarge: GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
+    bodyMedium: GoogleFonts.merriweather(),
+    displaySmall: GoogleFonts.pacifico(),
   ),
 );
 ```
 
-See the [`ThemeData`][] documentation to see all of
-the colors and fonts you can define.
+Most `ThemeData` widgets include two properties.
+The first defines colors: [`colorScheme`][].
+The second defines text styling: [`textTheme`][].
+
+[`colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
+[`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
+
+To learn what colors and fonts you can define,
+check out the [`ThemeData`][] documentation.
 
 ## Themes for part of an application
 
-To override the app-wide theme in part of an application,
+To override the overall theme in part of an app,
 wrap a section of the app in a `Theme` widget.
 
 There are two ways to approach this: creating a unique `ThemeData`,
@@ -72,10 +106,12 @@ or extending the parent theme.
 
 ### Creating unique `ThemeData`
 
-If you don't want to inherit any application colors or font styles,
-create a `ThemeData()` instance and pass that to the `Theme` widget.
+If you don't want your app to inherit any colors or font styles,
+create a `ThemeData()` instance.
+Pass that instance to the `Theme` widget.
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
+
 ```dart
 Theme(
   // Create a unique theme with `ThemeData`
@@ -123,10 +159,11 @@ In fact, the `FloatingActionButton` uses this technique to find the
 <?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
 ```dart
 Container(
-  color: Theme.of(context).colorScheme.secondary,
+  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+  color: Theme.of(context).colorScheme.primary,
   child: Text(
     'Text with a background color',
-    style: Theme.of(context).textTheme.titleLarge,
+    style: Theme.of(context).textTheme.bodyMedium,
   ),
 ),
 ```
@@ -136,6 +173,8 @@ Container(
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
+//Import the google_font package
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -151,19 +190,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appName,
       theme: ThemeData(
-        // Define the default brightness and colors.
-        brightness: Brightness.dark,
-        primaryColor: Colors.lightBlue[800],
+        useMaterial3: true,
 
-        // Define the default font family.
-        fontFamily: 'Georgia',
+        // Define the default brightness and colors.
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.purple,
+          brightness: Brightness.dark,
+        ),
 
         // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-          titleLarge: TextStyle(fontSize: 36, fontStyle: FontStyle.italic),
-          bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
+        textTheme: TextTheme(
+          displayLarge:
+              const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+          titleLarge:
+              GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
+          bodyMedium: GoogleFonts.merriweather(),
+          displaySmall: GoogleFonts.pacifico(),
+        ),
+
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Colors.pink,
+          splashColor: Colors.yellow,
         ),
       ),
       home: const MyHomePage(
@@ -186,19 +234,17 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          color: Theme.of(context).colorScheme.secondary,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+          color: Theme.of(context).colorScheme.primary,
           child: Text(
             'Text with a background color',
-            style: Theme.of(context).textTheme.titleLarge,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
       ),
-      floatingActionButton: Theme(
-        data: Theme.of(context).copyWith(splashColor: Colors.yellow),
-        child: FloatingActionButton(
-          onPressed: () {},
-          child: const Icon(Icons.add),
-        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
       ),
     );
   }
