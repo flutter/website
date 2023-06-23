@@ -16,7 +16,7 @@ next:
   This package only supports apps that run on macOS, iOS, or Android.
 {{site.alert.end}}
 
-[sqflite package]: {{site.pub}/packages/sqflite}
+[sqflite package]: {{site.pub-pkg}}/sqflite
 
 If you are writing an app that needs to persist and query large amounts of data on
 the local device, consider using a database instead of a local file or
