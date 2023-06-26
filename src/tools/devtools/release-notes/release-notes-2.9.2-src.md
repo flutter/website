@@ -34,6 +34,6 @@ are on Flutter 2.10, this bug will still be present._
   after a hot restart -
   [#3527](https://github.com/flutter/devtools/pull/3527)
 
-## Changelog
-More details about changes and fixes are available in our
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

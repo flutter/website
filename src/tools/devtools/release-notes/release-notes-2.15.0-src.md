@@ -25,6 +25,6 @@ See [#4175](https://github.com/flutter/devtools/pull/4175)
 ## CPU Profiler
 * Stop manually truncating source URIs in the profiler tables - [#4166](https://github.com/flutter/devtools/pull/4166)
 
-## Changelog
-More details about changes and fixes are available in our
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

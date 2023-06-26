@@ -1106,12 +1106,10 @@ While the http package doesn't have every feature found in OkHttp,
 it abstracts away much of the networking that you would normally implement
 yourself, making it a simple way to make network calls.
 
-To use the `http` package, add it to your dependencies in `pubspec.yaml`:
+To add the `http` package as a dependency, run `flutter pub add`:
 
-```yaml
-dependencies:
-  ...
-  http: ^1.0.0
+```terminal
+$ flutter pub add http
 ```
 
 To make a network call, call `await` on the `async` function `http.get()`:

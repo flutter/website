@@ -328,17 +328,18 @@ legible in colorblind and grayscale modes.
 large scale factors for text size and display scaling.
 
 
-## More information
+## Learn more
 
-For more information, particularly about how to configure
-the semantics tree,
-see the following articles written by community members:
+To learn more about Flutter and accessibility, check out
+the following articles written by community members:
 
 * [A deep dive into Flutter's accessibility widgets][]
 * [Semantics in Flutter][]
+* [Flutter: Crafting a great experience for screen readers][]
 
 [CRPD]: https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-9-accessibility.html
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
+[Flutter: Crafting a great experience for screen readers]: https://blog.gskinner.com/archives/2022/09/flutter-crafting-a-great-experience-for-screen-readers.html
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 [**Large fonts**]: #large-fonts
 [**Screen readers**]: #screen-readers

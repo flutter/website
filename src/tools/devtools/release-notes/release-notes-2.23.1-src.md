@@ -54,6 +54,6 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 * Fix a bug where JSON requests were shown in plain text, instead of the formatted JSON viewer. [#5463](https://github.com/flutter/devtools/pull/5463)
 * Fix a UI issue where the copy button on the response or request tab would let you copy while still loading the data. [#5476](https://github.com/flutter/devtools/pull/5476)
 
-## Changelog
-More details about changes and fixes are available in the DevTools
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

@@ -2,34 +2,31 @@
 layout: base
 ---
 
-{% assign sidebarColumnClass = 'col-12 col-md-3 col-xl-2' -%}
+{% assign sidebar-col = 'col-12 col-md-3 col-xl-2' -%}
 {% if page.toc -%}
-  {% assign mainColumnClass = 'col-12 col-md-9 offset-md-3 col-xl-8 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
+  {% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-8 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
   {% comment %}Side toc is col-xl-2{% endcomment -%}
 {% else -%}
-  {% assign mainColumnClass = 'col-12 col-md-9 offset-md-3 col-xl-10 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
+  {% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-10 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
 {% endif -%}
 
 <div class="container-fluid position-relative">
   <div class="row flex-xl-nowrap">
-    <div class="fixed-col site-sidebar site-sidebar--fixed {{ sidebarColumnClass }} d-none d-md-block" data-fixed-column>
+    <div class="fixed-col site-sidebar site-sidebar--fixed {{sidebar-col}} d-none d-md-block" data-fixed-column>
       {% assign route = page.url | regex_replace:'/index$|/index\.html$|\.html$|/$' %}
       {% include_cached sidenav-level-1.html nav=site.data.sidenav page_url_path=route %}
     </div>
 
     {% if page.toc and layout.toc != false -%}
-      {% assign showToc = true -%}
-    {% endif -%}
-    {% if showToc -%}
-    {% assign tocContent = content | toc_only -%}
-    {% include side-toc.html toc_content=tocContent -%}
+      {% assign toc_content = content | toc_only -%}
+      {% include side-toc.html toc_content=toc_content -%}
     {% endif -%}
 
-    <main class="site-content {{ mainColumnClass }}">
+    <main class="site-content {{main-col}}">
       <div class="container">
 
         {% if page.deprecated %}
-        {% include snackbar.html class="snackbar--dismissible" label="This page is deprecated and its content may be out of date." action="Dismiss" %}
+          {% include snackbar.html class="snackbar--dismissible" label="This page is deprecated and its content may be out of date." action="Dismiss" %}
         {% endif %}
 
         {% include_cached next-prev-nav.html prev=page.prev next=page.next %}
@@ -38,12 +35,12 @@ layout: base
           {% include shared/page-github-links.html %}
           <h1>{{ page.title }}</h1>
           {% if page.show_breadcrumbs -%}
-          {% include shared/breadcrumbs.html %}
+            {% include shared/breadcrumbs.html %}
           {% endif -%}
         </header>
-
-        {% if showToc -%}
-        {% include inline-toc.html toc_content=tocContent -%}
+        
+        {% if page.toc and layout.toc != false -%}
+          {% include inline-toc.html toc_content=toc_content -%}
         {% endif -%}
         {{ content | inject_anchors }}
 
