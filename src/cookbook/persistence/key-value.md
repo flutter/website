@@ -37,7 +37,7 @@ This recipe uses the following steps:
 
 ## 1. Add the dependency
 
-Before starting, add the [`shared_preferences`][] dependecy to your project.
+Before starting, add the [`shared_preferences`][] package as a dependency.
 
 To add the `shared_preferences` package as a dependency,
 run `flutter pub add`:
