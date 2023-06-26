@@ -113,7 +113,7 @@ the parent must set tight constraints.
 A constraint becomes tight when its constraint's minimum size value
 equals its maximum size value.
 
-In **SwiftUI**, views may expand to the available space or
+In **SwiftUI**, views might expand to the available space or
 limit their size to that of its content.
 **Flutter** widgets behave in similar manner.
 

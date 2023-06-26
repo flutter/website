@@ -137,7 +137,7 @@ The version number is three numbers separated by dots,
 such as `1.0.0` in the example above, followed by an optional
 build number such as `1` in the example above, separated by a `+`.
 
-Both the version and the build number may be overridden in Flutter's
+Both the version and the build number can be overridden in Flutter's
 build by specifying `--build-name` and `--build-number`,
 respectively.
 
