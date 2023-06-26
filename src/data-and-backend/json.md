@@ -251,7 +251,7 @@ dependency, and two _dev dependencies_. In short, _dev dependencies_
 are dependencies that are not included in our app source code&mdash;they
 are only used in the development environment.
 
-To add the packages run `flutter pub add`:
+To add the dependencies, run `flutter pub add`:
 
 ```terminal
 $ flutter pub add json_annotation dev:build_runner dev:json_serializable
