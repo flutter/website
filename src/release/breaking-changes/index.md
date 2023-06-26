@@ -36,12 +36,14 @@ release, and listed in alphabetical order:
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
+* [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
+[Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
 
 ### Released in Flutter 3.10
 
