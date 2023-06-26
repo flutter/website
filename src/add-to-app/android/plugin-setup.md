@@ -89,11 +89,14 @@ dependencies {
 And your Flutter module also depends on
 [firebase_crashlytics][] via `pubspec.yaml`:
 
-To add the `firebase_crashlytics` package as a dependency,
-run `flutter pub add`:
-
-```terminal
-$ flutter pub add firebase_crashlytics
+<?code-excerpt title="flutter_module/pubspec.yaml"?>
+```yaml
+…
+dependencies:
+  …
+  firebase_crashlytics: ^0.1.3
+  …
+…
 ```
 
 This plugin usage transitively adds a Gradle dependency again via
