@@ -54,7 +54,7 @@ so define that dependency in the `dependencies` section.
 To run the required code generation, add the `build_runner` dependency
 in the `dev_dependencies` section.
 
-To add the packages, run `flutter pub add`:
+To add the dependencies, run `flutter pub add`:
 
 ```terminal
 $ flutter pub add http dev:mockito dev:build_runner
