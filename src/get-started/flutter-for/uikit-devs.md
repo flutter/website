@@ -2021,11 +2021,10 @@ use the popular [`http` package][]. This abstracts
 away a lot of the networking that you might normally
 implement yourself, making it simple to make network calls.
 
-To use the `http` package, add it to your dependencies in `pubspec.yaml`:
+To add the `http` package as a dependency, run `flutter pub add`:
 
-```yaml
-dependencies:
-  http: ^1.0.0
+```terminal
+$ flutter pub add http
 ```
 
 To make a network call,

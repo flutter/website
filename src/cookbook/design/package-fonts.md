@@ -52,9 +52,11 @@ updating the `pubspec.yaml` in the *app's* root directory.
 
 ### Add the package to the app
 
-```yaml
-dependencies:
-  awesome_package: <latest_version>
+To add the `awesome_package` package as a dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add awesome_package
 ```
 
 ### Declare the font assets
