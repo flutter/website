@@ -22,6 +22,9 @@ With the introduction of [Android 14 nonlinear font scaling][], larger text gets
 scaled at a lesser rate as compared to smaller text, to prevent excessive scaling
 of text that is already large. The `textScaleFactor` scalar value used by 
 "proportional" scaling is not enough to represent this new scaling strategy.
+The [Replaces `textScaleFactor` with `TextScaler`][] pull request introduced a 
+new class `TextScaler` to replace `textScaleFactor` in preparation for this new
+feature. Nonlinear text scaling is introduced in a different pull request. 
 
 ## Description of change
 
@@ -35,10 +38,8 @@ abstract class TextScaler {
 ```
 
 The `scale` method should be used to scale font sizes in lieu of `textScaleFactor`.
-The `textScaleFactor` getter provides an estimated `textScaleFactor` value, for 
-backward compatibility purposes. It is already marked as "deprecated", but is 
-expected to have a longer lifetime than any other deprecations in this migration 
-guide.
+The `textScaleFactor` getter provides an estimated `textScaleFactor` value, it 
+is for backward compatibility purposes and is already marked as deprecated.
 
 The new class has replaced 
 `double textScaleFactor` (`double textScaleFactor` -> `TextScaler textScaler`),
@@ -95,40 +96,6 @@ in the following APIs:
 Widgets provided by the Flutter framework are already migrated. Migration is 
 needed only if you're using any of the deprecated symbols listed above. 
 
-However, the new Android 14 nonlinear scaling feature changes the UI of existing 
-apps, even if your app does not directly use any of the deprecated APIs. If your 
-app targets Android 14 devices, it is **strongly recommended** to test your app 
-on Android 14 devices at different scaling levels, to make sure the UI is usable 
-and functional, no matter whether the codebase needs migration or not. Please 
-refer to the [Ensure Android 14 compatibility][] guide for steps to make sure 
-your app is Android 14 compatible.
-
-As an example, the following widget might not look great on Android 14 at 200% 
-scaling:
-
-```dart 
-// It's not good for tooltips to be cutoff vertically, or to take too much space 
-// on screen as it blocks contents.
-MyTooltipBox( 
-  size: tooltipBoxSize * textScaleFactor,
-  child: RichText(..., style: TextStyle(fontSize: 20)),
-)
-```
-
-With nonlinear scaling at 200%, the actual font size used by the `RichText` 
-widget is 21 (instead of 40), and the `MyTooltipBox` widget would take 
-significantly more screen space than needed, potentially making the tooltip 
-annoying. On the other hand, at a smaller font size, the tooltip's text could be 
-cutoff due to insufficient vertical space.
-
-Adopting nonlinear text scaling might not be an easy task. If you're unsure about 
-how to migrate certian `textScaleFactor` usages, or when it is going to take an
-extended period of time (for example, when the UI has to be redesigned), 
-consider replacing `textScaleFactor` with `TextScaler.textScaleFactor` first. The 
-`TextScaler.textScaleFactor` getter was added for backward compatibility during 
-the migration process and is expected to have a longer lifetime than other 
-`textScaleFactor` deprecations. 
-
 ### Migrating your APIs that expose `textScaleFactor`
 
 Before:
@@ -143,8 +110,6 @@ After:
 ```dart 
 abstract class _MyCustomPaintDelegate { 
   void paint(PaintingContext context, Offset offset, TextScaler textScaler) { 
-    // For now, implementers can still access the `textScaleFactor`.
-    // scalar via textScaler.textScaleFactor. 
   }
 }
 ```
@@ -243,8 +208,8 @@ MediaQuery(
 ```
 
 However it's rarely needed to create a custom `TextScaler` subclass.
-`MediaQuery.disableTextScaling` (which creates a widget that disables text scaling 
-altogether for its child subtree), and `MediaQuery.disableTextScaling` (which 
+`MediaQuery.withNoTextScaling` (which creates a widget that disables text scaling 
+altogether for its child subtree), and `MediaQuery.withClampedTextScaling` (which 
 creates a widget that restricts the scaled font size to within the range 
 `[minScaleFactor * fontSize, maxScaleFactor * fontSize]`), are convenience methods 
 that cover common cases where the text scaling strategy needs to be overridden. 
@@ -265,7 +230,7 @@ MediaQuery(
 
 After 
 ```dart 
-MediaQuery.disableTextScaling(
+MediaQuery.withNoTextScaling(
   child: IconTheme(
     data: ...
     child: icon,
@@ -303,7 +268,7 @@ API documentation:
 * [`TextScaler`][]
 * [`MediaQuery.textScalerOf`][]
 * [`MediaQuery.maybeTextScalerOf`][]
-* [`MediaQuery.disableTextScaling`][]
+* [`MediaQuery.withNoTextScaling`][]
 * [`MediaQuery.withClampedTextScaling`][] 
 
 Relevant issues:
@@ -315,12 +280,11 @@ Relevant PRs:
 * [Replaces `textScaleFactor` with `TextScaler`][]
 
 
-[Ensure Android 14 compatibility]: https://developer.android.com/about/versions/14/migration#compat_testing
 [Android 14 nonlinear font scaling]: https://developer.android.com/about/versions/14/features#non-linear-font-scaling
 [`TextScaler`]: {{site.master-api}}/flutter/painting/TextScaler-class.html
 [`MediaQuery.textScalerOf`]: {{site.master-api}}/flutter/widgets/MediaQuery/textScalerOf.html
 [`MediaQuery.maybeTextScalerOf`]: {{site.master-api}}/flutter/widgets/MediaQuery/maybeTextScalerOf.html
-[`MediaQuery.disableTextScaling`]: {{site.master-api}}/flutter/widgets/MediaQuery/disableTextScaling.html
+[`MediaQuery.withNoTextScaling`]: {{site.master-api}}/flutter/widgets/MediaQuery/withNoTextScaling.html
 [`MediaQuery.withClampedTextScaling`]: {{site.master-api}}/flutter/widgets/MediaQuery/withClampedTextScaling.html
 
 [New font scaling system (Issue 116231)]: {{site.repo.flutter}}/issues/116231
