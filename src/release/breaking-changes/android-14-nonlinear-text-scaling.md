@@ -41,7 +41,7 @@ expected to have a longer lifetime than any other deprecations in this migration
 guide.
 
 The new class has replaced 
-`double TextScaleFactor` (`double textScaleFactor` -> `TextScaleFactor textScaleFactor`),
+`double textScaleFactor` (`double textScaleFactor` -> `TextScaler textScaler`),
 in the following APIs:
 
 ### Painting library
