@@ -40,9 +40,11 @@ The `test` package provides the core functionality for
 writing tests in Dart. This is the best approach when
 writing packages consumed by web, server, and Flutter apps.
 
-```yaml
-dev_dependencies:
-  test: <latest_version>
+To add the `test` package as a dev dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add dev:test
 ```
 
 ## 2. Create a test file
