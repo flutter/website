@@ -15,10 +15,10 @@ at Engine build time so they don't compile at runtime.
 [smaller, simpler set of shaders]: {{site.github}}/flutter/flutter/issues/77412
 
 For a video introduction to Impeller, check out the following
-talk from the Flutter Foward 2023 conference.
+talk from Google I/O 2023.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gKrYWC_SDxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-[What is Impeller?](https://www.youtube.com/watch?v=gKrYWC_SDxQ)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vd5NqS01rlA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Introducing Impeller - Flutter's new rendering engine](https://www.youtube.com/watch?v=vd5NqS01rlA)
 
 Impeller has the following objectives:
 

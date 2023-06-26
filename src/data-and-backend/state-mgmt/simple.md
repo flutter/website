@@ -190,20 +190,10 @@ widgets but is simple to use. It's called `provider`.
 Before working with `provider`,
 don't forget to add the dependency on it to your `pubspec.yaml`.
 
-```yaml
-name: my_name
-description: Blah blah blah.
+To add the `provider` package as a dependency, run `flutter pub add`:
 
-# ...
-
-dependencies:
-  flutter:
-    sdk: flutter
-
-  provider: ^6.0.0
-
-dev_dependencies:
-  # ...
+```terminal
+$ flutter pub add provider
 ```
 
 Now you can `import 'package:provider/provider.dart';`
