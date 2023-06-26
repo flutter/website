@@ -41,6 +41,6 @@ in deeply nested trees - [#5181](https://github.com/flutter/devtools/pull/5181)
 ## Network profiler updates
 - Improve reliability and performance of the Network tab - [#5056](https://github.com/flutter/devtools/pull/5056)
 
-## Changelog
-More details about changes and fixes are available in the DevTools
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).
