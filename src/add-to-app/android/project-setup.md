@@ -283,7 +283,8 @@ Flutter SDK to build the host app.
 {{site.alert.end}}
 
 Include the Flutter module as a subproject in the host app's
-`settings.gradle`:
+`settings.gradle`. This example assumes `flutter_module` and `MyApp`
+exist in the same directory
 
 <?code-excerpt title="MyApp/settings.gradle"?>
 ```groovy
@@ -295,8 +296,6 @@ evaluate(new File(                                                     // new
   'flutter_module/.android/include_flutter.groovy'                         // new
 ))                                                                     // new
 ```
-
-Assuming `flutter_module` is a sibling to `MyApp`.
 
 The binding and script evaluation allows the Flutter
 module to `include` itself (as `:flutter`) and any
