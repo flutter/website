@@ -37,14 +37,13 @@ This recipe uses the following steps:
 
 ## 1. Add the dependency
 
-Before starting, add the [`shared_preferences`][]
-plugin to the `pubspec.yaml` file:
+Before starting, add the [`shared_preferences`][] dependecy to your project.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  shared_preferences: "<newest version>"
+To add the `shared_preferences` package as a dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add shared_preferences
 ```
 
 ## 2. Save data

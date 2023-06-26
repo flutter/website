@@ -251,20 +251,10 @@ dependency, and two _dev dependencies_. In short, _dev dependencies_
 are dependencies that are not included in our app source code&mdash;they
 are only used in the development environment.
 
-The latest versions of these required dependencies can be seen by
-following the [pubspec file][] in the JSON serializable example.
+To add the packages run `flutter pub add`:
 
-**pubspec.yaml**
-
-```yaml
-dependencies:
-  # Your other regular dependencies here
-  json_annotation: <latest_version>
-
-dev_dependencies:
-  # Your other dev_dependencies here
-  build_runner: <latest_version>
-  json_serializable: <latest_version>
+```terminal
+$ flutter pub add json_annotation dev:build_runner dev:json_serializable
 ```
 
 Run `flutter pub get` inside your project root folder

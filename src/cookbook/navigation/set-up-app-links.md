@@ -40,13 +40,13 @@ It provides a simple API to handle complex routing scenarios.
     ```
 
 2. To include `go_router` package in your app, add a dependency for
-`go_router` in the `pubspec.yaml` file.
+`go_router` to the project.
 
-    ```yaml
-    dependencies:
-      flutter:
-        sdk: flutter
-      go_router: ^6.0.9
+    To add the `go_router` package as a dependency,
+    run `flutter pub add`:
+
+    ```terminal
+    $ flutter pub add go_router
     ```
 
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:

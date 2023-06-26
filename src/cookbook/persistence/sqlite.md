@@ -45,12 +45,11 @@ To work with SQLite databases, import the `sqflite` and `path` packages.
   * The `path` package provides functions to
     define the location for storing the database on disk.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  sqflite:
-  path:
+To add the packages as a dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add sqflite path
 ```
 
 Make sure to import the packages in the file you'll be working in.

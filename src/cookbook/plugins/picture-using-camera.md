@@ -40,14 +40,12 @@ To complete this recipe, you need to add three dependencies to your app:
 [`path`][]
 : Creates paths that work on any platform.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  camera:
-  path_provider:
-  path:
+To add the packages as dependencies, run `flutter pub add`:
+
+```terminal
+$ flutter pub add camera path_provider path
 ```
+
 {{site.alert.tip}}
   - For android, You must update `minSdkVersion` to 21 (or higher).
   - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.

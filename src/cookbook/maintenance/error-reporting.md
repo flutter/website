@@ -57,9 +57,11 @@ Import the [`sentry_flutter`][] package into the app.
 The sentry package makes it easier to send
 error reports to the Sentry error tracking service.
 
-```yaml
-dependencies:
-  sentry_flutter: <latest_version>
+To add the `sentry_flutter` package as a dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add sentry_flutter
 ```
 
 ## 3. Initialize the Sentry SDK

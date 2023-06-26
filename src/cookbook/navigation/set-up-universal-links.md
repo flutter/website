@@ -39,14 +39,10 @@ It provides a simple API to handle complex routing scenarios.
     $ flutter create deeplink_cookbook
     ```
 
-2. To include `go_router` package in your app, add a dependency for
-`go_router` in the `pubspec.yaml` file.
+2. To include `go_router` package in your app, run `flutter pub add`:
 
-    ```yaml
-    dependencies:
-      flutter:
-        sdk: flutter
-      go_router: ^6.0.9
+    ```terminal
+    $ flutter pub add go_router
     ```
 
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:
