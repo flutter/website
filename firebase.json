@@ -128,6 +128,7 @@
       { "source": "/resources/rendering", "destination": "/resources/architectural-overview#rendering-and-layout", "type": 301 },
       { "source": "/resources/security-false-positives", "destination": "/reference/security-false-positives", "type": 301 },
       { "source": "/resources/technical-overview", "destination": "/resources/architectural-overview", "type": 301 },
+      { "source": "/resources/design-docs", "destination": "https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22design+doc%22", "type": 301 },
       { "source": "/testing/best-practices", "destination": "/perf/best-practices", "type": 301 },
       { "source": "/testing/integration-tests/migration", "destination": "/release/breaking-changes/flutter-driver-migration", "type": 301 },
       { "source": "/testing/ui-performance", "destination": "/perf/ui-performance", "type": 301 },
