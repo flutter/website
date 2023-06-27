@@ -27,7 +27,7 @@ The `Theme` widget itself applies to the whole `MaterialApp`.
 
 For example: [`TextButton`][] can use both [`TextButtonTheme`][] to apply a theme
 and [`TextButtonThemeData`][] to define the visual properties of that theme.
-Unlike the general app theme, the TextButtonThemeData can include the button's
+Unlike the general app theme, the `TextButtonThemeData` can include the button's
 width, height, padding, and other positioning choices.
 
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
@@ -65,7 +65,7 @@ ThemeData(
 
   // Define the default brightness and colors.
   colorScheme: ColorScheme.fromSwatch(
-    primarySwatch: Colors.blue,
+    primarySwatch: Colors.purple,
     brightness: Brightness.dark,  
   ),
 
@@ -80,9 +80,10 @@ ThemeData(
 );
 ```
 
-Most `ThemeData` widgets include two properties.
-The first defines colors: [`colorScheme`][].
-The second defines text styling: [`textTheme`][].
+Most `ThemeData` objects include two properties.
+
+1. [`colorScheme`][] defines colors.
+1. [`textTheme`][] defines text styling.
 
 [`colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
 [`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
@@ -95,8 +96,10 @@ check out the [`ThemeData`][] documentation.
 To override the overall theme in part of an app,
 wrap a section of the app in a `Theme` widget.
 
-There are two ways to approach this: creating a unique `ThemeData`,
-or extending the parent theme.
+Two ways exist to implement this override:
+
+1. Create a unique `ThemeData`
+2. Extend the parent theme.
 
 {{site.alert.note}}
   To learn more, watch this short Widget of the Week video on the Theme widget:
@@ -116,7 +119,7 @@ Pass that instance to the `Theme` widget.
 Theme(
   // Create a unique theme with `ThemeData`
   data: ThemeData(
-    splashColor: Colors.yellow,
+    primarySwatch: Colors.yellow,
   ),
   child: FloatingActionButton(
     onPressed: () {},
@@ -173,7 +176,7 @@ Container(
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
-//Import the google_font package
+//Import the font package
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -195,24 +198,18 @@ class MyApp extends StatelessWidget {
         // Define the default brightness and colors.
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.purple,
-          brightness: Brightness.dark,
+          brightness: Brightness.dark,  
         ),
 
         // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: TextTheme(
-          displayLarge:
-              const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-          titleLarge:
-              GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
+          displayLarge: const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+          titleLarge: GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
           bodyMedium: GoogleFonts.merriweather(),
           displaySmall: GoogleFonts.pacifico(),
         ),
-
-        floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Colors.pink,
-          splashColor: Colors.yellow,
-        ),
+        
       ),
       home: const MyHomePage(
         title: appName,
@@ -228,6 +225,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -235,16 +234,21 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-          color: Theme.of(context).colorScheme.primary,
+          color: theme.colorScheme.primary,
           child: Text(
             'Text with a background color',
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: theme.textTheme.bodyMedium,
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+      floatingActionButton: Theme(
+        data: ThemeData(
+          primarySwatch: Colors.yellow,
+        ),
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+        ),
       ),
     );
   }
