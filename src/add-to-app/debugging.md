@@ -14,7 +14,7 @@ However, Flutter is now powering the UI in places where you're showing a
 
 ### Debugging
 
-You may be used to having your suite of favorite Flutter debugging tools
+You might be used to having your suite of favorite Flutter debugging tools
 available to you automatically when running `flutter run` or an equivalent
 command from an IDE. But you can also use all your Flutter
 [debugging functionalities][] such as hot reload, performance

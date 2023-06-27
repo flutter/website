@@ -6,7 +6,7 @@ description: How Google uses crash reporting, what is collected, and how to opt 
 If you have not opted-out of Flutter's analytics and crash reporting,
 when a `flutter` command crashes it attempts to send a crash report
 to Google in order to help Google contribute improvements to Flutter
-over time. A crash report may contain the following information:
+over time. A crash report might contain the following information:
 
 * The name and version of your local operating system.
 * The version of Flutter.

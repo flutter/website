@@ -142,11 +142,14 @@ app's icons:
 
 ## Add a launch image
 
-Similar to the app icon, you may also want to replace the placeholder launch image: 
+Similar to the app icon,
+you can also replace the placeholder launch image: 
 
-1. In the Xcode project navigator, select `Assets.xcassets` in the
-   `Runner` folder. Update the placeholder launch image with your own launch image. 
-1. Verify the new launch image by hot restarting your app. (Don't use `hot reload`.)
+1. In the Xcode project navigator,
+   select `Assets.xcassets` in the `Runner` folder.
+   Update the placeholder launch image with your own launch image. 
+1. Verify the new launch image by hot restarting your app.
+   (Don't use `hot reload`.)
 
 ## Create a build archive and upload to App Store Connect
 
@@ -175,7 +178,7 @@ while `build-number` uses `CFBundleVersion`.
 Read more about iOS versioning at [Core Foundation Keys][]
 on the Apple Developer's site.
 
-You may also override the `pubspec.yaml` build name and number in Xcode:
+You can also override the `pubspec.yaml` build name and number in Xcode:
 
 1. Open `Runner.xcworkspace` in your app's `ios` folder.
 1. Select **Runner** in the Xcode project navigator, then select the

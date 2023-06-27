@@ -89,7 +89,7 @@ Would you like stale cached images to be updated automatically? (yes/no) [defaul
 Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]:
 ```
 
-On the first run, LXD may not be able to connect to its socket:
+On the first run, LXD might not be able to connect to its socket:
 
 ```terminal
 An error occurred when trying to communicate with the 'LXD'
@@ -251,7 +251,7 @@ apps:
   service. Non-snap processes are allowed to 
   communicate with the providing snap following 
   traditional permissions checks. Other (consuming) 
-  snaps may only communicate with the providing 
+  snaps might only communicate with the providing 
   snap by connecting the snaps’ interface.
   
 ```
@@ -390,7 +390,7 @@ Each channel consists of three components:
 ### Snap Store automatic review
 
 The Snap Store runs several automated checks against
-your snap. There may also be a manual review,
+your snap. There might also be a manual review,
 depending on how the snap was built, and if there are
 any specific security concerns. If the checks pass
 without errors, the snap becomes available in the store.

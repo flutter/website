@@ -18,7 +18,7 @@ To launch a Flutter screen from an existing iOS, you start a
   `FlutterEngine`.
 {{site.alert.end}}
 
-The `FlutterEngine` may have the same lifespan as your
+The `FlutterEngine` might have the same lifespan as your
 `FlutterViewController` or outlive your `FlutterViewController`.
 
 {{site.alert.tip}}
@@ -438,10 +438,11 @@ func openFlutterApp() {
 ```
 
 ### If you can't directly make FlutterAppDelegate a subclass
+
 If your app delegate can't directly make `FlutterAppDelegate` a subclass,
 make your app delegate implement the `FlutterAppLifeCycleProvider`
 protocol in order to make sure your plugins receive the necessary callbacks.
-Otherwise, plugins that depend on these events may have undefined behavior.
+Otherwise, plugins that depend on these events might have undefined behavior.
 
 For instance:
 
