@@ -1,6 +1,6 @@
 ---
 title: Deprecate textScaleFactor in favor of TextScaler
-description: The `textScaleFactor` scalar is replaced by `TextScaler` in preparation for Android 14 nonlinear text scaling support.
+description: The new class, `TextScaler`, replaces the `textScaleFactor` scalar in preparation for Android 14 nonlinear text scaling support.
 ---
 
 ## Summary
@@ -37,7 +37,7 @@ abstract class TextScaler {
 }
 ```
 
-The `scale` method should be used to scale font sizes in lieu of `textScaleFactor`.
+Use the `scale` method to scale font sizes instead of `textScaleFactor`.
 The `textScaleFactor` getter provides an estimated `textScaleFactor` value, it 
 is for backward compatibility purposes and is already marked as deprecated.
 
@@ -94,7 +94,7 @@ in the following APIs:
 ## Migration guide
 
 Widgets provided by the Flutter framework are already migrated. Migration is 
-needed only if you're using any of the deprecated symbols listed above. 
+needed only if you're using any of the deprecated symbols listed in the previous tables.
 
 ### Migrating your APIs that expose `textScaleFactor`
 
@@ -118,7 +118,7 @@ abstract class _MyCustomPaintDelegate {
 
 If you're not currently using `textScaleFactor` directly, but rather passing it 
 to a different API that receives a `textScaleFactor`, and the receiver API has 
-already been migrated, then it's relateively straightforward:
+already been migrated, then it's relatively straightforward:
 
 Before:
 ```dart 
@@ -136,7 +136,7 @@ RichText(
 )
 ```
 
-If the receiver API hasn't been migrated yet, optionally, you could migrate your 
+If the receiver API hasn't been migrated yet, you could migrate your 
 code like so:
 
 Before:
@@ -207,7 +207,7 @@ MediaQuery(
 )
 ```
 
-However it's rarely needed to create a custom `TextScaler` subclass.
+However, it's rarely needed to create a custom `TextScaler` subclass.
 `MediaQuery.withNoTextScaling` (which creates a widget that disables text scaling 
 altogether for its child subtree), and `MediaQuery.withClampedTextScaling` (which 
 creates a widget that restricts the scaled font size to within the range 
