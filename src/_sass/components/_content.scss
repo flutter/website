@@ -52,7 +52,23 @@
     @at-root {
       #page-github-links {
         float: right;
-        .btn { padding: 0 ($btn-padding-x * 0.5); }
+        .btn {
+          padding: 0 ($btn-padding-x * 0.5);
+          border: none;
+          box-shadow: none;
+
+          &:hover, &:focus-visible {
+            color: $site-color-primary;
+          }
+
+          &:active {
+            color: $flutter-color-dark-blue;
+          }
+        }
+
+        .material-icons {
+          font-size: 18px;
+        }
       }
     }
 
