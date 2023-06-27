@@ -136,24 +136,8 @@ RichText(
 )
 ```
 
-If the receiver API hasn't been migrated yet, you could migrate your 
-code like so:
-
-Before:
-```dart 
-UnmigratedTextWidget( 
-  textScaleFactor: MediaQuery.textScaleFactorOf(context),
-  ...
-)
-```
-
-After:
-```dart 
-UnmigratedTextWidget( 
-  textScaleFactor: MediaQuery.textScalerOf(context).textScaleFactor,
-  ...
-)
-```
+If the API that provides `textScaleFactor` hasn't been migrated, consider 
+waiting for the migrated version.
 
 If you wish to compute the scaled font size yourself, use `TextScaler.scale` 
 instead of the `*` binary operator:
@@ -167,10 +151,6 @@ After:
 ```dart 
 final scaledFontSize = MediaQuery.textScalerOf(context).scale(textStyle.fontSize);
 ```
-
-
-If the API that provides `textScaleFactor` hasn't been migrated, consider 
-waiting for the migrated version.
 
 If you are using `textScaleFactor` to scale dimensions that are not font sizes, 
 there are no generic rules for migrating the code to nonlinear scaling, and it 

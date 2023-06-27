@@ -36,6 +36,7 @@ release, and listed in alphabetical order:
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
+* [Updated EditableText scroll into view behavior][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
@@ -43,6 +44,7 @@ release, and listed in alphabetical order:
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
+[Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/android-14-nonlinear-text-scaling
 
 ### Released in Flutter 3.10
