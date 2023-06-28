@@ -118,7 +118,7 @@ You can do this by using the [`Navigator`][].
 When a user opens the drawer, Flutter adds the drawer to the navigation
 stack. Therefore, to close the drawer, call `Navigator.pop(context)`.
 
-<?code-excerpt "lib/main.dart (CloseDrawer)"?>
+<?code-excerpt "lib/drawer.dart (CloseDrawer)"?>
 ```dart
 ListTile(
   title: const Text('Item 1'),

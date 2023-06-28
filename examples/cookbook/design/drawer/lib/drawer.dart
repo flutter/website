@@ -53,3 +53,23 @@ void drawerListview() {
   );
   // #enddocregion DrawerListView
 }
+
+void drawerClose() {
+  Drawer(
+    child: ListView(
+      children: [
+        // #docregion CloseDrawer
+        ListTile(
+          title: const Text('Item 1'),
+          onTap: () {
+            // Update the state of the app
+            // ...
+            // Then close the drawer
+            Navigator.pop(context);
+          },
+        ),
+        // #enddocregion CloseDrawer
+      ],
+    ),
+  );
+}
