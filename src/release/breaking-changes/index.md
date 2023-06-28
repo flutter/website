@@ -39,7 +39,7 @@ release, and listed in alphabetical order:
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
-[Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-10-deprecations
+[Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
