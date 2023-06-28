@@ -750,16 +750,10 @@ from the command line.
 
 In Flutter, install a package using the following instructions:
 
-1. Add the package name and version to the `pubspec.yaml` dependencies section.
-   The example below shows how to add the `google_sign_in` Dart package to the
-   `pubspec.yaml` file. Check your spaces when working in the YAML file because
-   **white space matters**!
+1. To add the `google_sign_in` package as a dependency, run `flutter pub add`:
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  google_sign_in: ^3.0.3
+```terminal
+$ flutter pub add google_sign_in
 ```
 
 2. Install the package from the command line by using `flutter pub get`.
@@ -902,11 +896,11 @@ class MyCanvasPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()..color = Colors.amber;
-    canvas.drawCircle(const Offset(100.0, 200.0), 40.0, paint);
+    canvas.drawCircle(const Offset(100, 200), 40, paint);
     final Paint paintRect = Paint()..color = Colors.lightBlue;
     final Rect rect = Rect.fromPoints(
-      const Offset(150.0, 300.0),
-      const Offset(300.0, 400.0),
+      const Offset(150, 300),
+      const Offset(300, 400),
     );
     canvas.drawRect(rect, paintRect);
   }
@@ -972,18 +966,18 @@ Widget build(BuildContext context) {
       children: <Widget>[
         Container(
           color: Colors.red,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.blue,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.green,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
       ],
     ),
@@ -1072,7 +1066,7 @@ style in multiple places, you can create a
 ```dart
 const TextStyle textStyle = TextStyle(
   color: Colors.cyan,
-  fontSize: 32.0,
+  fontSize: 32,
   fontWeight: FontWeight.w600,
 );
 
@@ -1081,10 +1075,10 @@ return const Center(
     children: <Widget>[
       Text('Sample text', style: textStyle),
       Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20),
         child: Icon(
           Icons.lightbulb_outline,
-          size: 48.0,
+          size: 48,
           color: Colors.redAccent,
         ),
       ),
@@ -1361,7 +1355,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 'This execution will be done before you can blink.',
               ),
             Padding(
-              padding: const EdgeInsets.only(top: 70.0),
+              padding: const EdgeInsets.only(top: 70),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
                 child: toggleState
@@ -1582,15 +1576,11 @@ store and retrieve key-value data that is persistent and global
 to the app. The `shared_preferences` plugin wraps
 `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
-To use the plugin,
-add `shared_preferences` as a dependency in the `pubspec.yaml`
-file then import the package in your Dart file.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  shared_preferences: ^2.0.13
+To add the `shared_preferences` package as a dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add shared_preferences
 ```
 
 <?code-excerpt "lib/examples.dart (SharedPrefs)"?>
@@ -1885,7 +1875,7 @@ widget provides the navigation on tap.
 @override
 Widget build(BuildContext context) {
   return Drawer(
-    elevation: 20.0,
+    elevation: 20,
     child: ListTile(
       leading: const Icon(Icons.change_history),
       title: const Text('Screen2'),
@@ -1908,7 +1898,7 @@ edge-swipe gesture to show the `Drawer`.
 Widget build(BuildContext context) {
   return Scaffold(
     drawer: Drawer(
-      elevation: 20.0,
+      elevation: 20,
       child: ListTile(
         leading: const Icon(Icons.change_history),
         title: const Text('Screen2'),
@@ -2056,14 +2046,12 @@ const _getIPAddress = () => {
 };
 ```
 
-Flutter uses the `http` package. To install the `http` package,
-add it to the dependencies' section of our pubspec.yaml.
+Flutter uses the `http` package. 
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  http: <latest_version>
+To add the `http` package as a dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add http
 ```
 
 Flutter uses the [`dart:io`][] core HTTP support client.
@@ -2472,8 +2460,8 @@ class _LogoFadeState extends State<LogoFade>
     return FadeTransition(
       opacity: animation,
       child: const SizedBox(
-        height: 300.0,
-        width: 300.0,
+        height: 300,
+        width: 300,
         child: FlutterLogo(),
       ),
     );

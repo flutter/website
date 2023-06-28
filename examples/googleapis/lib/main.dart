@@ -85,7 +85,7 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
     return [
       if (_currentUser == null) ...[
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8),
           child: Text('You are not currently signed in.'),
         ),
         ElevatedButton(

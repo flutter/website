@@ -193,7 +193,7 @@ Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget>[
     Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: TextField(
         controller: _controller,
         decoration: const InputDecoration(hintText: 'Enter Title'),
@@ -350,7 +350,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Container(
           alignment: Alignment.center,
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: FutureBuilder<Album>(
             future: _futureAlbum,
             builder: (context, snapshot) {

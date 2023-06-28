@@ -76,7 +76,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Container(
           alignment: Alignment.center,
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: (_futureAlbum == null) ? buildColumn() : buildFutureBuilder(),
         ),
       ),

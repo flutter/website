@@ -45,7 +45,7 @@ Flutter has two release channels:
 We recommend the **stable** channel for new users
 and for production app releases.
 The team updates this channel about every three months.
-The channel may receive occasional hot fixes
+The channel might receive occasional hot fixes
 for high-severity or high-impact issues.
 
 The continuous integration for the Flutter team's plugins and packages
@@ -145,5 +145,5 @@ $ flutter pub outdated
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
 [test registry]: https://github.com/flutter/tests
-[contribute to Flutter]: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+[contribute to Flutter]: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
 [migration guides]: {{site.url}}/release/breaking-changes

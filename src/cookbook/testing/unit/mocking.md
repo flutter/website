@@ -54,14 +54,10 @@ so define that dependency in the `dependencies` section.
 To run the required code generation, add the `build_runner` dependency
 in the `dev_dependencies` section.
 
-```yaml
-dependencies:
-  http: <newest_version>
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  mockito: <newest_version>
-  build_runner: <newest_version>
+To add the dependencies, run `flutter pub add`:
+
+```terminal
+$ flutter pub add http dev:mockito dev:build_runner
 ```
 
 ## 2. Create a function to test

@@ -75,7 +75,7 @@ class SelectionScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               // #docregion Yep
               child: ElevatedButton(
                 onPressed: () {
@@ -86,7 +86,7 @@ class SelectionScreen extends StatelessWidget {
               // #enddocregion Yep
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               // #docregion Nope
               child: ElevatedButton(
                 onPressed: () {

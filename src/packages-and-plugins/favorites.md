@@ -5,14 +5,6 @@ description: Guidelines for identifying a plugin or package as a Flutter Favorit
 
 ![The Flutter Favorite program logo]({{site.url}}/assets/images/docs/development/packages-and-plugins/FlutterFavoriteLogo.png){:width="20%"}
 
-{{site.alert.note}}
-  Due to limited staffing resources,
-  we are pausing the
-  Flutter Favorites and Happy Path programs.
-  We will update (and possibly combine)
-  these programs as soon as possible.
-{{site.alert.end}}
-
 The aim of the **Flutter Favorite** program is to identify
 packages and plugins that you should first consider when
 building your app.
@@ -70,7 +62,7 @@ are as follows:
 * Lara Martín
 * John Ryan
 * Diego Velasquez
-* Kyle Wang
+* Ander Dobo
 
 If you'd like to nominate a package or plugin as a
 potential future Flutter Favorite, or would like
@@ -84,7 +76,7 @@ by the Flutter team.
 If you own a package that has been designated as a Flutter Favorite,
 you must adhere to the following guidelines:
 
-* Flutter Favorite package authors may place the Flutter Favorite
+* Flutter Favorite package authors can place the Flutter Favorite
   logo in the package’s GitHub README, on the package’s
   pub.dev **Overview** tab,
   and on social media as related to posts about that package.
@@ -119,8 +111,8 @@ As the Flutter ecosystem grows,
 we’ll be looking at expanding the set of metrics,
 which might include the following:
 
-* Use of the new [pubspec.yaml format][] that clearly
-  indicates which platforms are supported.
+* Use of the [pubspec.yaml format][] that clearly
+  indicates which platforms a plugin supports.
 * Support for the latest stable version of Flutter.
 * Support for AndroidX.
 * Support for multiple platforms, such as web, macOS,

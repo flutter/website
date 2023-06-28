@@ -31,8 +31,9 @@ package repository in China. Instructions are below.
 
 ## Configuring Flutter to use a mirror site
 
-If you’re installing or using Flutter in China, it may be helpful to use
-a trustworthy local mirror site that hosts Flutter’s dependencies.
+If you’re installing or using Flutter in China,
+it might be helpful to use a trustworthy local
+mirror site that hosts Flutter’s dependencies.
 To instruct the Flutter tool to use an alternate storage location,
 you need to set two environment variables, `PUB_HOSTED_URL` and
 `FLUTTER_STORAGE_BASE_URL`, before running the `flutter` command.

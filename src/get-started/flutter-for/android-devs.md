@@ -195,7 +195,7 @@ Widget build(BuildContext context) {
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 20, right: 30),
         ),
         onPressed: () {},
         child: const Text('Hello'),
@@ -373,7 +373,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
         child: FadeTransition(
           opacity: curve,
           child: const FlutterLogo(
-            size: 100.0,
+            size: 100,
           ),
         ),
       ),
@@ -460,7 +460,7 @@ class SignaturePainter extends CustomPainter {
     var paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -847,7 +847,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1048,7 +1048,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1106,12 +1106,10 @@ While the http package doesn't have every feature found in OkHttp,
 it abstracts away much of the networking that you would normally implement
 yourself, making it a simple way to make network calls.
 
-To use the `http` package, add it to your dependencies in `pubspec.yaml`:
+To add the `http` package as a dependency, run `flutter pub add`:
 
-```yaml
-dependencies:
-  ...
-  http: ^0.11.3+16
+```terminal
+$ flutter pub add http
 ```
 
 To make a network call, call `await` on the `async` function `http.get()`:
@@ -1219,7 +1217,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1599,7 +1597,7 @@ In Flutter there are two ways of adding touch listeners:
               developer.log('tap');
             },
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1698,7 +1696,7 @@ class _SampleAppState extends State<SampleApp>
           child: RotationTransition(
             turns: curve,
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1768,7 +1766,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ));
     }
@@ -1835,7 +1833,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
             developer.log('row tapped');
           },
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10),
             child: Text('Row $i'),
           ),
         ),
@@ -1925,7 +1923,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -2006,7 +2004,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );

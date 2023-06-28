@@ -32,7 +32,7 @@ You might also check out [Introducing Dart 3][].
 [3.10 release notes]: {{site.url}}/release/release-notes/release-notes-3.10.0
 [Introducing Dart 3]: {{site.medium}}/dartlang/announcing-dart-3-53f065a10635
 
-### Docs updated or added since the 3.7 release
+**Docs updated or added since the 3.7 release**
 
 * Added section on [wireless debugging][] for iOS or Android to the
   add-to-app module guide.
@@ -83,7 +83,7 @@ You might also check out [Introducing Dart 3][].
 [Anatomy of an app]: {{site.url}}/resources/architectural-overview#anatomy-of-an-app
 [SDK archive page]: {{site.url}}/release/archive
 
-#### Codelabs
+**Codelabs**
 
 The following codelabs have been published since Flutter 3.7:
 
@@ -105,7 +105,7 @@ The following codelabs have been published since Flutter 3.7:
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 
-#### Articles
+**Articles**
 
 The Flutter team published the following articles on the [Flutter Medium][]
 publication since Flutter 3.7:
@@ -131,7 +131,7 @@ and [Introducing Dart 3 alpha][].
 [Introducing Dart 3 alpha]: {{site.medium}}/dartlang/dart-3-alpha-f1458fb9d232
 [What's next for Flutter]: {{site.flutter-medium}}/whats-next-for-flutter-b94ce089f49c
 
-### Docs updated or added since the 3.3 release
+**Docs updated or added since the 3.3 release**
 
 * You can now pass configuration
   information to the engine in the `initializeEngine`
@@ -915,7 +915,7 @@ Docs added and updated since the last announcement include:
   (Moved from the wiki and updated as of 1.16.2.)
 * Added a page on using Xcode 11.4 and how to manually update
   your project. The tooling, which automatically updates your
-  configuration when possible, may direct you to this page
+  configuration when possible, might direct you to this page
   if it detects that it's needed.
 * Added a page on
   [Managing plugins and dependencies in add-to-app][add2app]

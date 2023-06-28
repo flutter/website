@@ -108,7 +108,7 @@ certain condition is true, as in the following example:
 import 'dart:developer';
 
 void someFunction(double offset) {
-  debugger(when: offset > 30.0);
+  debugger(when: offset > 30);
   // ...
 }
 ```

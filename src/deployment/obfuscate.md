@@ -149,3 +149,5 @@ eventually be an obfuscated binary.
 ```dart
 expect(foo.runtimeType.toString(), equals('Foo'));
 ```
+
+* Enum names are not obfuscated currently.

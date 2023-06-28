@@ -223,7 +223,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             },
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             child: ElevatedButton(
               onPressed: () {
                 // Validate returns true if the form is valid, or false otherwise.
@@ -249,7 +249,11 @@ class MyCustomFormState extends State<MyCustomForm> {
   <img src="/assets/images/docs/cookbook/form-validation.gif" alt="Form Validation Demo" class="site-mobile-screenshot" />
 </noscript>
 
+To learn how to retrieve these values, check out the
+[Retrieve the value of a text field][] recipe.
 
+
+[Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`Form.of()`]: {{site.api}}/flutter/widgets/Form/of.html
 [`FormState`]: {{site.api}}/flutter/widgets/FormState-class.html

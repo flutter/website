@@ -414,7 +414,7 @@ your app's performance.
   on screen to avoid the build cost.
   
 * Avoid overriding `operator ==` on `Widget` objects.
-  While it may seem like it would help by avoiding unnecessary rebuilds,
+  While it might seem like it would help by avoiding unnecessary rebuilds,
   in practice it hurts performance because it results in O(N²) behavior.
   The only exception to this rule is leaf widgets (widgets with no children),
   in the specific case where comparing the properties of the widget

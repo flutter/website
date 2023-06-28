@@ -75,14 +75,14 @@ class StackExample extends StatelessWidget {
       children: <Widget>[
         Icon(
           Icons.add_box,
-          size: 24.0,
+          size: 24,
           color: Colors.black,
         ),
         Positioned(
-          left: 10.0,
+          left: 10,
           child: Icon(
             Icons.add_circle,
-            size: 24.0,
+            size: 24,
             color: Colors.black,
           ),
         ),
