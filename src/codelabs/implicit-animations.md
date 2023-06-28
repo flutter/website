@@ -191,7 +191,7 @@ to set `opacity` to 1:
 ```
 
 {{site.alert.secondary}}
-  Notice that you only need to set the start and end values of `opacity`.
+  Only set the start and end values of `opacity`.
   The `AnimatedOpacity` widget manages everything in between.
 {{site.alert.end}}
 
@@ -279,6 +279,7 @@ Change the `Container` widget to an `AnimatedContainer` widget:
                  decoration: BoxDecoration(
                    color: color,
 ```
+
 {{site.alert.info}}
   You can reference the line numbers in the example code to help track where to
   make these changes in the [shape-shifting starter code][].
@@ -438,19 +439,10 @@ the [shape-shifting complete][] example builds upon [fade-in complete][]:
 Congratulations, you've finished the codelab!
 To learn more, check out these suggestions:
 
-<<<<<<< HEAD
 - Try the [animations tutorial][].
 - Learn about [hero animations][] and [staggered animations][].
 - Checkout the [animation library][].
 - Try another [codelab][].
-=======
-* Try the [animations tutorial].
-* Learn about [hero animations] and [staggered animations].
-* Checkout the [animation library].
-* Try another [codelab].
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
->>>>>>> 9176472c (#8728 few more formatting changes)
 
 [AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
