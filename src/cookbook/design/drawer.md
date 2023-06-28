@@ -134,7 +134,7 @@ ListTile(
 ## Interactive example
 
 This example shows a [`Drawer`][] as it is used within a [`Scaffold`][] widget.
-The [`Drawer`][] has three [`ListTile][] items.
+The [`Drawer`][] has three [`ListTile`][] items.
 The `_onItemTapped` function changes the selected item's index
 and displays the corresponding text in the center of the Scaffold.
 
