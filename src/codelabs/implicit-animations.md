@@ -169,7 +169,6 @@ In addition to an `opacity` parameter, `AnimatedOpacity` requires a
 you can start with 2 seconds:
 
 <?code-excerpt "opacity{3,4}/lib/main.dart"?>
-
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
@@ -193,7 +192,6 @@ the user clicks the **Show details** button, use the `onPressed()` handler
 to set `opacity` to 1:
 
 <?code-excerpt "opacity{4,5}/lib/main.dart"?>
-
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
