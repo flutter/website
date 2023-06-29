@@ -136,11 +136,11 @@ ListTile(
 This example shows a [`Drawer`][] as it is used within a [`Scaffold`][] widget.
 The [`Drawer`][] has three [`ListTile`][] items.
 The `_onItemTapped` function changes the selected item's index
-and displays the corresponding text in the center of the Scaffold.
+and displays the corresponding text in the center of the `Scaffold`.
 
 {{site.alert.note}}
   For more information on implementing navigation,
-  see the [Navigation][] section of the cookbook.
+  check out the [Navigation][] section of the cookbook.
 {{site.alert.end}}
 
 <?code-excerpt "lib/main.dart"?>
