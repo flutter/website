@@ -13,6 +13,8 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 - Add legend for class types - [#5937](https://github.com/flutter/devtools/pull/5937)
 - Enable sampling for Memory > Profile - [#5947](https://github.com/flutter/devtools/pull/5947)
 
+![memory sampling]({{site.url}}/tools/devtools/release-notes/images-2.25.0/memory.png "memory_sampling")
+
 ## Full commit history
 
 More details about changes and fixes are available from the
